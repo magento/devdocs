@@ -24,24 +24,19 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 51440 -->* Fatal errors no longer occur when running CLI commands after compilation in some regression environments.
 
-<!--- 52612 -->* CLI is affected by the permissions configuration setting in server config.
+
+<!--- 51072 -->* The storeview now reflects changes to a configurable swatch.  
+
+<!--- 53342 -->* The Magento application no longer duplicates URL keys during the creation of a configurable product.
 
 
-<!--- 51072 -->* The storeview now reflects changes to the swatch attribute's property.  
-
-<!--- 53342 -->* Magento no longer duplicates URL keys during the creation of a configurable product.
-
-
-<!--- 46014 -->* Magento now displays error messages on the page where the error occurred. Previously, error messages invoked by actions on the login page were not displayed until you left that page.
-
-<!--- 51072 -->* The storefront now reflects changes to the swatch attribute's property.  
-
-<!--- 52284 -->* You can now insert more than two images using the WYSIWYG editor. <a href="https://github.com/magento/magento2/issues/4221" target="_blank">(GITHUB-4221)</a>
+<!--- 46014 -->* The Magento application now displays error messages on the page where the error occurred. Previously, error messages invoked by actions on the login page were not displayed until you left that page.
 
 
 
 
-<!--- 51592 -->* Single tenant compiler now works when Magento is not installed.
+
+<!--- 51592 -->* The code compiler now works when the Magento application is not installed.
 
 
 
@@ -59,20 +54,20 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 
-<!--- 52436 -->* Magento now displays categories that contain children categories. <a href="https://github.com/magento/magento2/issues/2121" target="_blank">(GITHUB-2121)</a>
+<!--- 52436 -->* Magento now displays categories that contain child categories. <a href="https://github.com/magento/magento2/issues/2121" target="_blank">(GITHUB-2121)</a>
 
-<!--- 49877 -->* Don't omit the "callable" argument type hint. <a href="https://github.com/magento/magento2/issues/2026" target="_blank">(GITHUB-2026)</a>
+<!--- 49877 -->* The callable argument type hint has been restored. <a href="https://github.com/magento/magento2/issues/2026" target="_blank">(GITHUB-2026)</a>
 
 <!--- 47999 -->* Magento now registers added themes during production mode. <a href="https://github.com/magento/magento2/issues/2797" target="_blank">(GITHUB-2797)</a>
 
 
 
-<!--- 52437 -->* Magento now successfully processes password change requests from the Amin interface. Previously, when you clicked Save Account after changing your password, Magento would continue to display the " It's time to change your password" message.
+<!--- 52437 -->* Magento now successfully processes password change requests from the Admin interface. Previously, when you clicked Save Account after changing your password, Magento would continue to display the " It's time to change your password" message.
 
 
-<!--- 45651 -->* Magento displays simple products in groups when set to out of stock. Previously, Magento did not correctly display simple products in their associated groups when set to out of stock. 
+<!--- 45651 -->* Magento displays simple products in groups when the product is set to out of stock. Previously, Magento did not correctly display simple products in their associated groups when set to out of stock. 
 
-<!--- 45402 -->* Magento no longer caches pages that contain a layout that includes a non-cacheable block. Previously, Magento would cache a page than contained a layout that included a non-cacheable block.
+<!--- 45402 -->* Magento no longer caches pages that contain a layout that includes a non-cachable block. Previously, Magento would cache a page than contained a layout that included a non-cachable block.
 
 
 <!--- 51079 -->* The Used in Product Listing option for attributes now works as expected.
@@ -86,16 +81,16 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 49769 -->* You can now assign permissions to URL rewrites from Marketing > SEO and Search. <a href="https://github.com/magento/magento2/issues/3194" target="_blank">(GITHUB-3194)</a> 
 
-<!--- 49716 -->* Magento no longer displays incorrect price in the shopping cart when using multiple  shipping addresses. 
+<!--- 49716 -->* Magento no longer displays an incorrect price in the shopping cart when using multiple  shipping addresses. 
 
 
-<!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018"" target="_blank">(GITHUB-3018)</a> 
+<!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018" target="_blank">(GITHUB-3018)</a> 
 
 
 <!--- 48729 -->* You can now refresh statistics after deleting a product. 
 
 
-<!--- 48386 -->* Scrolling now works as expected when using the Store View dropdown  menu in the Admin interface. <a href="https://github.com/magento/magento2/issues/2896" target="_blank">(GITHUB-2896)</a> 
+<!--- 48386 -->* Scrolling now works as expected when using the Store View dropdown  menu in the Magento Admin.  <a href="https://github.com/magento/magento2/issues/2896" target="_blank">(GITHUB-2896)</a> 
 
 <!--- 52629 -->* You can now refresh statistics after deleting a product. Previously, after  deleting a product that been ordered, you could not refresh lifetime statistics. 
 
@@ -105,10 +100,10 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 50522 -->* The WYSIWYG editor no longer removes HTML5 tags.
 
-<!--- 45608 -->* You can now successfully uninstall the Magento_CustomerBalanceSampleData module.
+<!--- 45608 -->* You can now successfully uninstall  Magento_CustomerBalanceSampleData.
 
 
-<!--- 53865-->* The CC model now assigns cc data that is passed in the `additional_data` field.   <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
+<!--- 53865-->* Payment methods now pass credit card data as expected in the  `additional_data` field. Previously, payment methods using this field did not complete the transactions successfully.  <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
 
 
 <!--- 51803-->* The Select All check box on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-3580)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank">(GITHUB-3580)</a>, <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>
@@ -131,78 +126,8 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 
 ###Installation instructions
 
-<h4>New installations</h4>
-New users can now complete a full installation of Magento Community Edition 2.0.8 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
+{% include install/releasenotes/ce_install_20.md %}
 
-#####Download a new installation#####
-
-1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
-
-2. Under Full Release, select a format for the download archive file. Then, click **Download**.
-
-3.	Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ce" target="_blank">installation instructions</a>.
-
-#####Install a new installation with Composer#####
-
-1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
-
-2.	Under **Download with Composer**, click **Download**.
-
-3.	Follow the instructions to download Composer, and get the Magento CE metapackage.
-
-
-<h4><b>Upgrade existing installations</b></h4>
-
-This section discusses how to upgrade to 2.0.8.
-
-
-#####Upgrade using the Setup Wizard#####
-Use the instructions in [Start System Upgrade]({{ page.baseurl }}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose 2.0.8.
-
-#####Upgrade an existing installation from the GitHub repository#####
-Developers who contribute to the CE codebase can <a href="{{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
-
-Go to the <a href="{{ page.baseurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
-Use the instructions in [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose 2.0.8.
-
-#####Upgrade an existing installation from the GitHub repository#####
-Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
-
-1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
-
-2.	Follow the instructions to pull the updates from the repository and update using Composer.
-
-
-#####Upgrade using the command line#####
-To upgrade to 2.0.8 using the command line:
-
-1.	Log in to your Magento server as, or switch to, the Magento file system owner.
-2.	Change to the directory in which you installed the Magento software.
-
-	For example, `cd /var/www/html/magento2`
-2.	Enter the following command to disable the cache:
-
-		php bin/magento cache:disable
-2.	Enter the following commands in the order shown:
-
-		composer require <product> 2.0.8 --no-update
-		composer update
-
-	To upgrade to Magento CE 2.0.8, enter:
-
-		composer require magento/product-community-edition 2.0.8 --no-update
-		composer update
-
-
-
-3.	If prompted, enter your [authentication keys]({{ page.baseurl }}comp-mgr/prereq/prereq_auth-token.html).
-
-4. Update the database schema and data:
-
-		php bin/magento setup:upgrade
-5.	Enter the following command to enable the cache:
-
-		php bin/magento cache:enable
 
 ###Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
