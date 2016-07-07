@@ -15,7 +15,7 @@ redirect_from:
 <h2 id="js_init_overview">Overview</h2>
 
 This topic talks about how to initialize a [JavaScript component]({{site.gdeurl}}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in the Magento 2 application. 
-It covers initializing JavaScript components (including jQuery widgets) in `.phtml` templates and jQuery widgets initialization in JS script. We strongly recommend that you use the described approaches and do not add inline JavaScript.
+It covers initializing JavaScript components (including jQuery widgets) in `.phtml` templates and JS scripts. We strongly recommend that you use the described approaches and do not add inline JavaScript.
 
 
 **Contents**
@@ -153,7 +153,7 @@ require([
 {%endhighlight%}
 
 
-## Widget initialization in JS {#widget_init}
+## JS components initialization in JS {#js_widget_init}
 
 To initialize a widget in JS code, use a notation similar to the following (the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the `[data-role=example]` element as illustration):
 
@@ -175,4 +175,27 @@ $(function () { // to ensure that code evaluates on page load
 });
 <%endhighlight%>
 
+In a similar way, you can initialize any  JS component that a returns callback function accepting a `config` object and `element` (a DOM node).
 
+For example:
+
+{%highlight js%}
+define ([
+    'jquery',
+    'mage/gallery/gallery'
+], function ($, Gallery) {
+
+    $(function () { // to ensure that code evaluates on page load
+        $('[data-role=example]')  // we expect that page contains markup <tag data-role="example">..</tag>
+            .each(function (index, element) {
+                Gallery({
+                    options:  {},
+                    data: [{
+                        img: 'https://c2.staticflickr.com/8/7077/27935031965_facd03b4cb_b_d.jpg'
+                    }],
+                    fullscreen: {}
+                }, element);  // 'element' is simgle DOM node. 
+            });
+    });
+});
+{endhighlight}
