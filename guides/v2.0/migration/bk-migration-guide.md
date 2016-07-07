@@ -6,7 +6,7 @@ title: Overview
 menu_title: Overview
 menu_node: parent
 menu_order: 1
-version: 2.0
+
 github_link: migration/bk-migration-guide.md
 redirect_from: /guides/v1.0/migration/bk-migration-guide.html
 ---

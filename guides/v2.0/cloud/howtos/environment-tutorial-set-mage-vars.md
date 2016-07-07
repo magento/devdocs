@@ -77,6 +77,7 @@ To change the Admin URI and administrator password:
 		| ID             | Value         | Inherited | JSON |
 		+----------------+---------------+-----------+------+
 		| ADMIN_PASSWORD | admin_A456    | Yes       | No   |
+        | ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 		| ADMIN_URL      | magento_A8v10 | Yes       | No   |
 		+----------------+---------------+-----------+------+
 

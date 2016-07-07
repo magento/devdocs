@@ -58,6 +58,16 @@ The following table lists variables that you can override using environment vari
     <td>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During development, we recommend the default setting.</td>
     <td>MAGENTO_DEVELOPER_MODE</td>
     </tr>
+    <tr><td>CLEAN_STATIC_FILES</td>
+    <td><p>The default value, <code>true</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development.</p>
+    <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
+    <p>In other words, because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p></td>
+    <td>true</td>
+    </tr>
+    <tr><td>RECOMPILE_DI</td>
+    <td>The default value, <code>true</code>, enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
+    <td>true</td>
+    </tr>
 </tbody>
 </table>
 

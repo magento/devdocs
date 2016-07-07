@@ -6,7 +6,6 @@ title: Creating a migration plan
 menu_title: Creating a migration plan
 menu_node: parent
 menu_order: 2
-version: 2.0
 github_link: migration/migration-plan.md
 redirect_from: /guides/v1.0/migration/migration-plan.html
 ---
@@ -31,9 +30,9 @@ Consider whether the new site needs to be designed with more hardware or a more 
 
 To prepare for the migration, make sure you do all of the following:
 
-* Set up a Magento 2.0 system using a topology and design that at least matches your existing Magento 1 system
+* Set up a Magento 2.x system using a topology and design that at least matches your existing Magento 1 system
 * To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database and use this Magento 1.x data for your migration
-* Install Magento 2.0 (with all modules of given release) on a system that meets our system requirements
+* Install Magento 2.x (with all modules of given release) on a system that meets our system requirements
 
 <h4>Step 4: Start your migration</h4>
 
@@ -43,10 +42,10 @@ To prepare for the migration, make sure you do all of the following:
 <pre>NOTE: Activity cannot resume until your Magento 2 store goes live.</pre>
   <li>Stop all Magento 1.x cron jobs.</li> 
   <li>Use the migration tool to migrate settings and websites.</li>
-  <li>Copy your Magento 1.x media files to Magento 2.0. (You must copy these manually from  from magento1-root/media to magento2-root/pub/media directory)</li> 
+  <li>Copy your Magento 1.x media files to Magento 2.x. (You must copy these manually from  from magento1-root/media to magento2-root/pub/media directory)</li> 
   <li>Use Data Migration Tool to bulk copy your data from Magento 1 database to Magento 2 database. If some of your extensions have data you want to migrate, you might need to install these extensions adapted for Magento 2. In case the extensions have a different structure in Magento 2 database, use the mapping files provided with the Data Migration Tool.</li>
-  <li>Reindex all Magento 2.0 indexers. For details, see the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.</li>
-  <li>Thoroughly test your Magento 2.0 site.</li>
+  <li>Reindex all Magento 2.x indexers. For details, see the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.</li>
+  <li>Thoroughly test your Magento 2.x site.</li>
 </ol>
 
 <h4>Step 5:  Incremental updates</h4>
