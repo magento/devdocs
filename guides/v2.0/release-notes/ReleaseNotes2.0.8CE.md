@@ -25,7 +25,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 51440 -->* Fatal errors no longer occur when running CLI commands after compilation in some regression environments.
 
 
-<!--- 51072 -->* The storeview now reflects changes to a configurable swatch.  
+<!--- 51072 -->* The storeview now reflects changes to configurable swatches.  
 
 <!--- 53342 -->* The Magento application no longer duplicates URL keys during the creation of a configurable product.
 

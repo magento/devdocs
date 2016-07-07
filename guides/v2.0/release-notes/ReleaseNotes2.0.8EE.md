@@ -30,7 +30,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 46014 -->* The Magento application now displays error messages on the page where the error occurred. Previously, error messages invoked by actions on the login page were not displayed until you left that page.
 
-<!--- 51072 -->* The storefront now reflects changes to a configurable swatch.  
+<!--- 51072 -->* The storefront now reflects changes to configurable swatches.  
 
 <!--- 52284 -->* You can now insert more than two images using the WYSIWYG editor. <a href="https://github.com/magento/magento2/issues/4221" target="_blank">(GITHUB-4221)</a>
 
