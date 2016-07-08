@@ -22,7 +22,7 @@ Almost every page in Magento contains personal or sensitive information that sho
 
 *	*Public*, which can display to many customers. 
 
-	Public content is stored in your cache storage (file, database, Varnish, and so on). Examples of public content includes header, footer, and category listing.
+	Public content is stored in your cache storage (file system, database, or Varnish). Examples of public content includes header, footer, and category listing.
 *	*Private*, which is not stored in the server cache; instead, it's stored on the client only. 
 
 	Examples of private content include the wishlist, shopping cart, customer name, and addresses. Private content should be limited to about 5% of the total content on a page.
@@ -51,9 +51,9 @@ Magento uses JavaScript to work with private content as follows:
 
 1.	Magento substitutes private content for variables in the HTTP response
 2.	JavaScript collects these variables in the browser and requests private content from the server
-3.	Response with private content is cached in the browser until one of the following happens:
+3.	The response with private content is cached in the browser until one of the following happens:
 
-	*  The browser sends an HTTP POST request to Magento
+	*  The browser sends an HTTP POST request to Magento (for example, to add more items to the cart)
 	*  The user clears their browser's cache
 4.	JavaScript replaces the variables in the HTML with content received from the preceding step
 
@@ -93,16 +93,16 @@ By default, unless you specify otherwise, all content on a page is public. You s
 *   Generally speaking, you should cache images for a long time.
 
     If you want to change a product image, consider giving it a different URL.
-*   Details on a specific product might be able to be cached fairly well because product details (for example, the product description) do not change very often. 
+*   Product details can generally be cached because they don't change very often.
 
-    When product details do change, be sure to clean the cache. 
+    When product details do change, be sure to [clean the cache]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html). 
 *   Avoid updating a page unnecessarily. 
 
     For example, suppose a page has two blocks that take a long time to render (for example, a category page with a merchandising block that uses a complex algorithm). To avoid updating out-of-stock products, set up the category page to hide them. This avoids updating a part of the page that isn't changing anyway.
 
 Magento 2 caching enables you to use different approaches to implement the preceding:
 
-*   Public cacheable content can be returned with tags for use by the cache (such as Varnish). 
+*   Public cacheable content can be returned with tags for use by the cache server (such as Varnish). 
 
     *Tags* hold identity information, such as the product number of the product(s) shown on the page. If you update a product, the Magento application can then send Varnish a PURGE request based on the tag to instruct Varnish to "flush all pages containing pages with this tag from your cache". 
 

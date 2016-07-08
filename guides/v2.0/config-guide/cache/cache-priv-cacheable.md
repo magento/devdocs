@@ -48,7 +48,7 @@ The preceding example keeps the page in cache for 10 seconds.
 ## Uncacheable pages {#config-page-notcache}
 To create an uncacheable page, mark your block as uncacheable in the layout. Any page that has at least one uncacheable block is itself uncacheable (that is, the entire page).
 
-Examples of uncacheable pages include the return page of payment method, Ajax data source, debug pages, and so on. 
+Examples of uncacheable pages include the return page of payment method, AJAX data source, debug pages, and so on. 
 
 To specify uncacheable pages, you can:
 
@@ -60,20 +60,23 @@ To specify uncacheable pages, you can:
 
 	Example:
 
-	{% highlight php startinline=true %}
-	class DynamicController
-	{
-    	protected $response;
- 
-    	public function __construct(Magento\Framework\App\Response\Http $response)
-    	{
-        	$this->response = $response;
-    	}
- 
-    	public function randomAction()
-    	{
-        	$this->response->setBody(mt_rand(1,100));
-        	$this->response->setNoCacheHeaders();
-    	}
-	}
-	{% endhighlight %}
+{% highlight php startinline=true %}
+class DynamicController
+{
+   	protected $response;
+
+   	public function __construct(Magento\Framework\App\Response\Http $response)
+   	{
+       	$this->response = $response;
+   	}
+
+   	public function randomAction()
+   	{
+       	$this->response->setBody(mt_rand(1,100));
+       	$this->response->setNoCacheHeaders();
+   	}
+}
+{% endhighlight %}
+
+#### Next
+[Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html)

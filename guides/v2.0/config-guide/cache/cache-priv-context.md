@@ -13,7 +13,7 @@ github_link: config-guide/cache/cache-priv-context.md
 ---
 
 ## HTTP context
-Caching servers and proxies cache resources by URL; however, Magento URLs are not unique *enough* to allow caching by URL only. We use cookies and sessions to preserve state, which can lead to issue like:
+Caching servers and proxies cache resources by URL; however, Magento URLs are not unique *enough* to allow caching by URL only. We use cookies and sessions to preserve state, which can lead to issues like:
 
 *	Cache collisions (same URL in different sessions)
 *	Information leaks (for example, content from a French website partially visible on a US website, prices for customer group visible to the public, and so on).
@@ -29,7 +29,7 @@ Context variables must not be specific to exactly one user, because variables ar
 </div>
 
 ### HTTP context example
-The following example uses variable `CONTEXT_AGE` (customer's age) to display content for `\Guide\Drinks\Helper\Data` (types of drinks). You could use this, for example, to selectively display advertisements and recommendations for adult beverages only to customers who are of legal age to drink them.
+The following example uses the variable `CONTEXT_AGE` (customer's age) to display content for `\Guide\Drinks\Helper\Data` (types of drinks). You could use this, for example, to selectively display advertisements and recommendations for adult beverages only to customers who are of legal age to drink them.
 
 {% highlight php startinline=true %}
 class CustomerAgeContextPlugin

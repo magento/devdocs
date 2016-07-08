@@ -20,7 +20,7 @@ github_link: config-guide/cache/cache-priv-inval.md
 In addition to time-to-live, the Magento application enables you to expire cached content immediately after a change is made. We use an identity interface (that is, a *cache tag*) to link system entities with cached content.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Cache storage performance is directly related to the number of tags per cache record. You should minimize the count of tags and use them only for entities that are used in production mode. In other words, do <em>not</em> use cache invalidation for actions related to store setup.</p>
+  <p>Cache storage performance is directly related to the number of tags per cache record. You should minimize the count of tags and use them only in production mode. In other words, do <em>not</em> use cache invalidation for actions related to store setup.</p>
 </div>
 
 First, a class must use [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
@@ -68,7 +68,7 @@ class View extends AbstractProduct implements \Magento\Framework\DataObject\Iden
 ## Private content versioning {#config-priv-vers}
 Private content, which is stored on the browser, uses the `private_content_version` cookie to store version information. Users who are not logged in or for whom no private content exists don't have a `private_content_version` cookie, so no private content is tracked.
 
-When we need to version private content, we do it as follows:
+You can version private content as follows:
 
 1.  User performs some action, such as adding to a cart, that results in an HTTP POST request to the Magento server.
 2.  The server generates the `private_content_version` cookie for this user and returns the response to the browser.
