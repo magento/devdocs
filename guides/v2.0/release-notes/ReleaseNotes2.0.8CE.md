@@ -23,7 +23,31 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 {:.no_toc}
 
 
-<!--- 51072 -->* The storeview now reflects changes to configurable swatches.  
+####Cache
+<!--- 52923-->* Switching to Varnish no longer causes the Category menu to force HTTPS links. <a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
+
+<!--- 48729 -->* Varnish now purges cache as expected after a scheduled update (that is, when indexes are set to UPDATE BY SCHEDULE).  
+
+
+<!--- 51803-->* The Select All check box on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-3580)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank">(GITHUB-3580)</a>, <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>
+
+<!--- 45402 -->* Magento no longer caches pages that contain a layout that includes a non-cachable block. Previously, Magento would cache a page than contained a layout that included a non-cachable block.
+
+
+
+####Installation and Upgrade
+
+<!--- 51592 -->* The code compiler now works when the Magento application is not installed.
+
+<!--- 45608 -->* You can now successfully uninstall  Magento_CustomerBalanceSampleData.
+
+
+
+
+
+####Miscellaneous
+
+
 
 <!--- 53342 -->* The Magento application no longer duplicates URL keys during the creation of a configurable product.
 
@@ -32,11 +56,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 
-<!--- 51592 -->* The code compiler now works when the Magento application is not installed.
-
-
-
-<!--- 51834 -->* Maestro credit cards can now pass validation on the application server side.
 
 
 <!--- 50507 -->* You can now successfully rest the Product Attributes mass update Admin form.
@@ -60,7 +79,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 45651 -->* Magento displays simple products in groups when a product is set to out of stock. Previously, Magento did not correctly display simple products in their associated groups when a product was set to out of stock.
 
-<!--- 45402 -->* Magento no longer caches pages that contain a layout that includes a non-cachable block. Previously, Magento would cache a page than contained a layout that included a non-cachable block.
 
 
 <!--- 51079 -->* The Used in Product Listing option for attributes now works as expected.
@@ -80,10 +98,8 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018" target="_blank">(GITHUB-3018)</a> 
 
 
-<!--- 48729 -->* Varnish now purges cache as expected after a scheduled update (that is, when indexes are set to UPDATE BY SCHEDULE).  
 
 
-<!--- 48386 -->* Scrolling now works as expected when using the Store View dropdown  menu in the Magento Admin.  <a href="https://github.com/magento/magento2/issues/2896" target="_blank">(GITHUB-2896)</a> 
 
 <!--- 52629 -->* You can now refresh statistics after deleting a product. Previously, after  deleting a product that been ordered, you could not refresh lifetime statistics. 
 
@@ -93,16 +109,29 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 50522 -->* The WYSIWYG editor no longer removes HTML5 tags.
 
-<!--- 45608 -->* You can now successfully uninstall  Magento_CustomerBalanceSampleData.
+
+
+####Payment methods
 
 
 <!--- 53865-->* Payment methods now pass credit card data as expected in the  `additional_data` field. Previously, payment methods using this field did not complete the transactions successfully.  <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
 
+<!--- 51834 -->* Maestro credit cards can now pass validation on the application server side.
 
-<!--- 51803-->* The Select All check box on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-3580)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank">(GITHUB-3580)</a>, <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>
 
 
-<!--- 52923-->* Switching to Varnish no longer causes the Category menu to force HTTPS links. <a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
+####Storefront
+<!--- 51072 -->* The storeview now reflects changes to configurable swatches.  
+
+<!--- 48386 -->* Scrolling now works as expected when using the Store View dropdown  menu in the Magento Admin.  <a href="https://github.com/magento/magento2/issues/2896" target="_blank">(GITHUB-2896)</a> 
+
+
+####WYSIWYG editor
+
+
+
+
+
 
 
 ###Known issue
