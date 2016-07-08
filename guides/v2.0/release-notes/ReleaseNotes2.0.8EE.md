@@ -22,7 +22,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 ###Fixed issues
 {:.no_toc}
 
-<!--- 51440 -->* Fatal errors no longer occur when running CLI commands after compilation in some regression environments.
 
 
 <!--- 53342 -->* The Magento application no longer duplicates URL keys during the creation of a configurable product.
@@ -50,8 +49,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 50193 -->* Layered Navigation now contains previously missing category filters.
 
 
-<!--- 52436 -->* Magento now displays categories that contain child categories. <a href="https://github.com/magento/magento2/issues/2121" target="_blank">(GITHUB-2121)</a>
-
 <!--- 49877 -->* The callable argument type hint has been restored. <a href="https://github.com/magento/magento2/issues/2026" target="_blank">(GITHUB-2026)</a>
 
 <!--- 47999 -->* Magento now registers added themes during production mode. <a href="https://github.com/magento/magento2/issues/2797" target="_blank">(GITHUB-2797)</a>
@@ -65,7 +62,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 52437 -->* Magento now successfully processes password change requests from the Admin interface. Previously, when you clicked Save Account after changing your password, Magento would continue to display the " It's time to change your password" message.
 
 
-<!--- 45651 -->* Magento displays simple products in groups when the product is set to out of stock. Previously, Magento did not correctly display simple products in their associated groups when set to out of stock.
+<!--- 45651 -->* Magento displays simple products in groups when a product is set to out of stock. Previously, Magento did not correctly display simple products in their associated groups when a product was set to out of stock.
 
 <!--- 45402 -->* Magento no longer caches pages that contain a layout that includes a non-cachable block. Previously, Magento would cache a page than contained a layout that included a non-cachable block.
 
@@ -85,8 +82,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018" target="_blank">(GITHUB-3018)</a> 
 
-
-<!--- 48729 -->* You can now refresh statistics after deleting a product. 
+<!--- 48729 -->* Varnish now purges cache as expected after a scheduled update (that is, when indexes are set to UPDATE BY SCHEDULE).  
 
 
 <!--- 48386 -->*  Scrolling now works as expected when using the Store View dropdown  menu in the Magento Admin. <a href="https://github.com/magento/magento2/issues/2896" target="_blank">(GITHUB-2896)</a> 
