@@ -76,4 +76,4 @@ class Context
 </div>
 
 #### Next
-TBD
+[Cache invalidation and private content versioning]({{ page.baseurl }}config-guide/cache/cache-priv-inval.html)

@@ -114,4 +114,4 @@ Magento 2 caching enables you to use different approaches to implement the prece
     This is of benefit only if there are different parts of a page worth caching separately. Otherwise, it is simpler to cache the entire page and to regenerate the page when required.
 
 #### Next
-TBD
+[HTTP context]({{ page.baseurl }}config-guide/cache/cache-priv-context.html)
