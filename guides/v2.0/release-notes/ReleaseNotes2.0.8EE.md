@@ -119,8 +119,6 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
-###Installation instructions
-
 {% include install/releasenotes/ee_install_20.md %}
 
 

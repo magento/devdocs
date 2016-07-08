@@ -32,8 +32,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 
-
-
 <!--- 51592 -->* The code compiler now works when the Magento application is not installed.
 
 
@@ -118,8 +116,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
-
-###Installation instructions
 
 {% include install/releasenotes/ce_install_20.md %}
 
