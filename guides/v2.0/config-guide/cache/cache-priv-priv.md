@@ -18,7 +18,7 @@ github_link: config-guide/cache/cache-priv-priv.md
 *	[Considerations for public content](#config-cache-public)  
 
 ## Public and private content {#config-cache-priv-over}
-Almost every page in Magento contains personal or sensitive information that should be delivered to only one specific user. To enable you to deliver private content in a public page, we define two broad types of content:
+Many Magento pages contain personal or sensitive information that should be delivered to only one specific user. To enable you to deliver private content in a public page, we define two broad types of content:
 
 *	*Public*, which can display to many customers. 
 
@@ -49,13 +49,13 @@ class Link
 
 Magento uses JavaScript to work with private content as follows:
 
-1.	Magento substitutes private content for variables in the HTTP response
-2.	JavaScript collects these variables in the browser and requests private content from the server
-3.	The response with private content is cached in the browser until one of the following happens:
+1.  Magento substitutes private content for variables in the HTTP response
+2.  JavaScript collects these variables in the browser and requests private content from the server
+3.  The response with private content is cached in the browser until one of the following happens:
 
 	*  The browser sends an HTTP POST request to Magento (for example, to add more items to the cart)
 	*  The user clears their browser's cache
-4.	JavaScript replaces the variables in the HTML with content received from the preceding step
+4.  JavaScript replaces the variables in the HTML with content received from the preceding step
 
 Using JavaScript has the following advantages over ESI, which uses an include URL for each piece of private content:
 
@@ -104,7 +104,7 @@ Magento 2 caching enables you to use different approaches to implement the prece
 
 *   Public cacheable content can be returned with tags for use by the cache server (such as Varnish). 
 
-    *Tags* hold identity information, such as the product number of the product(s) shown on the page. If you update a product, the Magento application can then send Varnish a PURGE request based on the tag to instruct Varnish to "flush all pages containing pages with this tag from your cache". 
+    *Tags* hold identity information, such as the product number of the products shown on the page. If you update a product, the Magento application can then send Varnish a PURGE request based on the tag to instruct Varnish to "flush all pages containing pages with this tag from your cache". 
 
     This allows selective cache invalidation, instead of flushing the entire cache (which would trigger a large spike on the server).
 *   Different content can be returned with a different Time To Live (TTL) values. This can be used in combination with ESI requests so that different parts of a page can be cached with different lifetimes.

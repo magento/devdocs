@@ -46,7 +46,7 @@ The preceding example keeps the page in cache for 10 seconds.
 </div>
 
 ## Uncacheable pages {#config-page-notcache}
-To create an uncacheable page, mark your block as uncacheable in the layout. Any page that has at least one uncacheable block is itself uncacheable (that is, the entire page).
+To create an uncacheable page, mark any block on that page as uncacheable in the layout (use `cacheable="false"`). Any page that has at least one uncacheable block is itself uncacheable (that is, the entire page).
 
 Examples of uncacheable pages include the return page of payment method, AJAX data source, debug pages, and so on. 
 
