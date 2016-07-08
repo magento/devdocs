@@ -64,10 +64,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 50193 -->* Layered Navigation now contains previously missing category filters.
 
 
-
-<!--- 52284 -->* You can now insert more than two images using the WYSIWYG editor. <a href="https://github.com/magento/magento2/issues/4221" target="_blank">(GITHUB-4221)</a>
-
-
 <!--- 49877 -->* The callable argument type hint has been restored. <a href="https://github.com/magento/magento2/issues/2026" target="_blank">(GITHUB-2026)</a>
 
 <!--- 47999 -->* Magento now registers added themes during production mode. <a href="https://github.com/magento/magento2/issues/2797" target="_blank">(GITHUB-2797)</a>
@@ -107,9 +103,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 52512 -->* Newsletter subscriptions now work correctly when the Need to confirm option is set to yes during newsletter subscription configuration.  
 
-<!--- 50522 -->* The WYSIWYG editor no longer removes HTML5 tags.
-
-
 
 ####Payment methods
 
@@ -128,6 +121,9 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ####WYSIWYG editor
 
+<!--- 52284 -->* You can now insert more than two images using the WYSIWYG editor. <a href="https://github.com/magento/magento2/issues/4221" target="_blank">(GITHUB-4221)</a>
+
+<!--- 50522 -->* The WYSIWYG editor no longer removes HTML5 tags.
 
 
 
