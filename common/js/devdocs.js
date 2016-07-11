@@ -18,6 +18,12 @@ $(document).ready(function(){
 		hideSearchBox();
 	});
 
+	//Add a class to make menus wide when there are more than 6 items to list
+	$(".menu").each(function(index){
+		if($(this).children().length>6)
+			$(this).addClass("wide");
+	});
+
 	// ** Menu **
 	var menustate ="";
 	if ( $('LI.level3Child').is("LI.active")) {
