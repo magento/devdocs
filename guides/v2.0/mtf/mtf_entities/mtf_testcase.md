@@ -75,7 +75,42 @@ In the following example, the test includes preconditions and test steps. Precon
 - editing of the found product
 - saving of the edited product
 
-<script src="https://gist.github.com/dshevtsov/27fae7c912604030e574.js"></script>
+{% highlight php %}
+
+<?php
+/**
+ * Run update product simple entity test.
+ *
+ * @param CatalogProductSimple $initialProduct
+ * @param CatalogProductSimple $product
+ * @param string $configData
+ * @return array
+ */
+public function test(CatalogProductSimple $initialProduct, CatalogProductSimple $product, $configData = '')
+{
+    $this->configData = $configData;
+    // Preconditions
+    $initialProduct->persist();
+    $initialCategory = $initialProduct->hasData('category_ids')
+        ? $initialProduct->getDataFieldConfig('category_ids')['source']->getCategories()[0]
+        : null;
+    $category = $product->hasData('category_ids') && $product->getCategoryIds()[0]
+        ? $product->getDataFieldConfig('category_ids')['source']->getCategories()[0]
+        : $initialCategory;
+    $this->objectManager->create(
+        'Magento\Config\Test\TestStep\SetupConfigurationStep',
+        ['configData' => $configData]
+    )->run();
+    // Steps
+    $filter = ['sku' => $initialProduct->getSku()];
+    $this->productGrid->open();
+    $this->productGrid->getProductGrid()->searchAndOpen($filter);
+    $this->editProductPage->getProductForm()->fill($product);
+    $this->editProductPage->getFormPageActions()->save();
+    return ['category' => $category];
+}
+
+{% endhighlight %}
 
 A returned array is available in constraints within current variation.
 
