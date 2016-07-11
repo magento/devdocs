@@ -36,7 +36,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ####Installation and Upgrade
 
-<!--- 51592 -->* The code compiler now works when the Magento application is not installed.
+<!--- 51592 -->* The <a href="[code compiler]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html" target="_blank">code compiler</a>now works when the Magento application is not installed.
 
 <!--- 45608 -->* You can now successfully uninstall  Magento_CustomerBalanceSampleData.
 
