@@ -92,7 +92,7 @@ The query returns 9 items.
 The following example searches for all products whose names contain the string `Leggings` or `Parachute`. The instances of `%25` in the example are converted into the SQL wildcard character `%`.
 
 {% highlight html %}
-GET http://magento.vg/index.php/rest/V1/products?
+GET http://<magento_host>/index.php/rest/V1/products?
 searchCriteria[filter_groups][0][filters][0][field]=name&
 searchCriteria[filter_groups][0][filters][0][value]=%25Leggings%25&
 searchCriteria[filter_groups][0][filters][0][condition_type]=like&
