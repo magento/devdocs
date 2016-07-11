@@ -14,8 +14,7 @@ Our system requirements include required software to run the Magento application
 
 See the following for more detail:
 
-*	[Magento tech stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html)
+*	[Magento technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html)
 *	[Supported browsers]({{ page.baseurl }}install-gde/system-requirements_browsers.html)
-*	[TLS 1.2 requirement for repo.magento.com]({{ page.baseurl }}install-gde/system-requirements_repo-tls1-2.html)
+*	[TLS requirement for repo.magento.com]({{ page.baseurl }}install-gde/system-requirements_repo-tls1-2.html)
 *	[TLS 1.2 requirement for PayPal]({{ page.baseurl }}install-gde/system-requirements_tls1-2.html)
->>>>>>> 5b179531044d76e6c08c9a2609ab77a4921ab93d

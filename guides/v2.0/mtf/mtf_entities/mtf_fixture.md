@@ -269,11 +269,60 @@ It is located in `Fixture` directory of corresponding module. That contains subd
        source="Magento\Widget\Test\Fixture\Widget\LayoutUpdates"
        group="storefront_properties" />
 
-{% endhighlight xml%}
+{% endhighlight%}
 
 Let's see our data source file `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php`
 
-<script src="https://gist.github.com/dshevtsov/908bd242c01aded95308.js"></script>
+{% highlight php %}
+
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ 
+namespace Magento\Widget\Test\Fixture\Widget;
+
+use Magento\Mtf\Fixture\FixtureFactory;
+use Magento\Mtf\Fixture\DataSource;
+use Magento\Mtf\Repository\RepositoryFactory;
+
+/**
+ * Prepare Layout Updates for widget.
+ */
+class LayoutUpdates extends DataSource
+{
+    /**
+     * @constructor
+     * @param RepositoryFactory $repositoryFactory
+     * @param FixtureFactory $fixtureFactory
+     * @param array $params
+     * @param array $data
+     */
+    public function __construct(
+        RepositoryFactory $repositoryFactory,
+        FixtureFactory $fixtureFactory,
+        array $params,
+        array $data = []
+    ) {
+        $this->params = $params;
+        if (isset($data['dataset']) && isset($this->params['repository'])) {
+            $this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);
+            foreach ($this->data as $index => $layouts) {
+                if (isset($layouts['entities'])) {
+                    $explodeValue = explode('::', $layouts['entities']);
+                    $fixture = $fixtureFactory->createByCode($explodeValue[0], ['dataset' => $explodeValue[1]]);
+                    $fixture->persist();
+                    $this->data[$index]['entities'] = $fixture;
+                }
+            }
+        } else {
+            $this->data = $data;
+        }
+    }
+}
+
+{% endhighlight %}
 
 To apply the changes, enter the following commands:
 
