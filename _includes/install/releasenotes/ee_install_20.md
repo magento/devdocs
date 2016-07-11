@@ -8,6 +8,8 @@ See one of the following sections:
 *	[Upgrade from an earlier version](#upgrade)
 
 ### Get Magento EE using Composer {#install-rc-composer}
+{:.no_toc}
+
 This Release Candidate is available from `repo.magento.com`. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>
@@ -19,9 +21,13 @@ For example, to install 2.0.8 in the `magento2` directory:
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.0.8 magento2
 
 ### Get Magento EE using a compressed archive {#get-zip}
+{:.no_toc}
+
 {% include install/get-software_zip.md %}
 
 ### Complete the installation {#install-complete}
+{:.no_toc}
+
 After you get the EE software:
 
 1.	[Set file system ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-system-perms.html).
