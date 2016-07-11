@@ -17,6 +17,8 @@ See one of the following sections for more information:
 </div>
 
 ### Get the Magento CE software from GitHub {#install-rc-gh}
+{:.no_toc}
+
 Before proceeding, please familiarize yourself with these prerequisites, then run
 
 	git clone git@github.com:magento/magento2.git
@@ -30,6 +32,8 @@ where
 `[-b <version>]` optionally checks out a new branch.
 
 ### Get the Magento CE software using Composer {#install-rc-composer}
+{:.no_toc}
+
 The CE software is available from `repo.magento.com`. Before getting the CE software, familiarize yourself with the Composer metapackage  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
@@ -44,6 +48,8 @@ For example, to install Magento CE 2.1.0 GA in the `magento2` directory:
 {% include install/get-software_zip.md %}
 
 ### Complete the installation {#install-finish}
+{:.no_toc}
+
 After you get the CE software:
 
 1.	[Set file system ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-system-perms.html).

@@ -8,6 +8,8 @@ See one of the following sections:
 *	[Upgrade from an earlier version](#upgrade)
 
 ### Get the Magento CE software from GitHub {#install-rc-gh}
+{:.no_toc}
+
 Before proceeding, please familiarize yourself with [these prerequisites]({{ page.baseurl }}install-gde/prereq/dev_install.html), then run
 
 	git clone git@github.com:magento/magento2.git
@@ -32,9 +34,13 @@ For example, to install Magento CE 2.0.8 in the `magento2` directory:
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.8 magento2
 
 ### Get Magento CE using a compressed archive {#get-zip}
+{:.no_toc}
+
 {% include install/get-software_zip.md %}
 
 ### Complete the installation
+{:.no_toc}
+
 After you get the CE software:
 
 1.	[Set file system ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-system-perms.html).
