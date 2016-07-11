@@ -55,7 +55,7 @@ When constructing a search, keep the following in mind:
 
 * To perform a logical OR, specify multiple `filters` within a `filter_groups`.
 * To perform a logical AND, specify multiple `filter_groups`.
-* You cannot perform a logical OR across different `filter_groups`. ORs can be performed only within the context of a single `filter_groups`.
+* You cannot perform a logical OR across different `filter_groups`, such as `(A AND B) OR (X AND Y)`. ORs can be performed only within the context of a single `filter_groups`.
 
 The following sections provide examples of each type of search. These examples use the Magento CE sample data.
 
@@ -92,7 +92,10 @@ The query returns 9 items.
 The following search finds all invoices created after the specified time (midnight, July 1 2016). You can set up a similar search to run periodically to poll for changes.
 
 {% highlight html %}
-http://<magento_host>/rest/V1/invoices?searchCriteria[filter_groups][0][filters][0][field]=created_at&searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00&searchCriteria[filter_groups][0][filters][0][condition_type]=gt
+GET http://<magento_host>/rest/V1/invoices?
+searchCriteria[filter_groups][0][filters][0][field]=created_at&
+searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00&
+searchCriteria[filter_groups][0][filters][0][condition_type]=gt
 {% endhighlight %}
 
 ####Logical OR search####
