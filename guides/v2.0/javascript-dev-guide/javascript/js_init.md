@@ -202,4 +202,5 @@ define ([
             });
     });
 });
-{endhighlight}
+{%endhighlight%}
+
