@@ -155,15 +155,18 @@ require([
 
 ## Widget initialization in JS {#widget_init}
 
-To initialize a widget in JS code, use a notation similar to the following (the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the `[data-role=example]` element as illustration):
+To initialize a widget in JS code, use a notation similar to the following [accordion]({{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html) widget is initialized on the `[data-role=example]` element as illustration):
 
-<%highlight js%>
+{%highlight js%}
+
 $('[data-role=example]').accordion();
-<%endhighlight%>
+
+{%endhighlight%}
 
 To initialize a widget with options, use notation similar to the following:
 
-<%highlight js%>
+{%highlight js%}
+
 $(function () { // to ensure that code evaluates on page load
     $('[data-role=example]')  // we expect that page contains markup <tag data-role="example">..</tag>
         .accordion({ // now we can use "accordion" as jQuery plugin
@@ -173,6 +176,7 @@ $(function () { // to ensure that code evaluates on page load
             ajaxUrlElement: 'a'
         });
 });
-<%endhighlight%>
+
+{% endhighlight %}
 
 
