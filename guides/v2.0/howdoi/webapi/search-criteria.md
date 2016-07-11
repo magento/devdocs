@@ -88,6 +88,13 @@ searchCriteria => [
 
 The query returns 9 items.
 
+###Simple search using a timestamp###
+The following search finds all invoices created after the specified time (midnight, July 1 2016). You can set up a similar search to run periodically to poll for changes.
+
+{% highlight html %}
+http://<magento_host>/rest/V1/invoices?searchCriteria[filter_groups][0][filters][0][field]=created_at&searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00&searchCriteria[filter_groups][0][filters][0][condition_type]=gt
+{% endhighlight %}
+
 ####Logical OR search####
 The following example searches for all products whose names contain the string `Leggings` or `Parachute`. The instances of `%25` in the example are converted into the SQL wildcard character `%`.
 
