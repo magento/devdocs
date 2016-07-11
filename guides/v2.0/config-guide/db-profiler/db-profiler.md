@@ -14,18 +14,33 @@ github_link: config-guide/db-profiler/db-profiler.md
 The Magento database profiler displays all queries executed on a page, including the time for each query and what parameters were executed.
 
 ## Step 1: Modify the deployment configuration
-Modify `<your Magento install dir>/app/etc/env.php` to add a reference the [database profiler class]({{ site.mage2000url }}lib/internal/Magento/Framework/DB/Profiler.php){:target="_blank"} under the `db` and `default` arrays as follows:
+Modify `<your Magento install dir>/app/etc/env.php` to add the following reference to the [database profiler class]({{ site.mage2000url }}lib/internal/Magento/Framework/DB/Profiler.php){:target="_blank"}:
 
 {% highlight php startinline=true %}
-return array (
-  ... more ...
-  'db' => 
+        'profiler' => [
+            'class' => '\Magento\Framework\DB\Profiler',
+            'enabled' => true,
+        ],
+{% endhighlight %}
+
+An example follows:
+
+{% highlight php startinline=true %}
+ 'db' =>
   array (
-    ... more ...
+    'table_prefix' => '',
+    'connection' =>
     array (
-      'default' => 
+      'default' =>
       array (
-        ... more ...
+        'host' => 'localhost',
+        'dbname' => 'magento',
+        'username' => 'magento',
+        'password' => 'magento',
+        'model' => 'mysql4',
+        'engine' => 'innodb',
+        'initStatements' => 'SET NAMES utf8;',
+        'active' => '1',
         'profiler' => [
             'class' => '\Magento\Framework\DB\Profiler',
             'enabled' => true,
@@ -33,14 +48,21 @@ return array (
       ),
     ),
   ),
-);
-{% endhighlight %}
+  {% endhighlight %}
+
 
 ## Step 2: Configure the output
+Configure the output in your Magento application boostrap file; this might be `<your Magento install dir>/index.php` or it could be located in a web server virtual host configuration.
+
+The following example displays results in a three-column table:
+
+*	Total time (displays the total amount of time to run all queries on the page)
+*	SQL (displays all SQL queries; the row header displays the count of queries)
+*	Query Params (displays the parameters for each SQL query)
+
+To configure the output, add the following after the `$bootstrap->run($app);` line in your bootstrap file:
 
 {% highlight php startinline=true %}
-$bootstrap->run($app); //This should be the last line
-//After Than add these
 /** @var \Magento\Framework\App\ResourceConnection $res */
 $res = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Framework\App\ResourceConnection');
 /** @var Magento\Framework\DB\Profiler $profiler */
@@ -61,3 +83,8 @@ foreach ($profiler->getQueryProfiles() as $query) {
 }
 echo "</table>";
 {% endhighlight %}
+
+## Step 3: View the results
+Go to any page in your storefront or Magento Admin to view the results. A sample follows:
+
+![Sample database profiler results]({{ site.baseurl }}common/images/config_db-profiler-results.png){:width="800px"}
