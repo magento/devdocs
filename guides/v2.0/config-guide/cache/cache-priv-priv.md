@@ -12,6 +12,8 @@ version: 2.0
 github_link: config-guide/cache/cache-priv-priv.md
 ---
 
+This is a sample comment.
+
 #### Contents
 *	[Public and private content](#config-cache-priv-over)
 *	[Specify private content](#config-cache-priv-how)
