@@ -47,7 +47,7 @@ Condition | Notes
 `null` | Null
 `to` | The end of a range. Must be used with `from`
 
-div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
   <p><code>condition_type</code> is optional if the operator is <code>eq</code>.</p>
 </div>
 
