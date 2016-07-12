@@ -18,11 +18,14 @@ $(document).ready(function(){
 		hideSearchBox();
 	});
 
-	//Add a class to make menus wide when there are more than 6 items to list
-	$(".menu").each(function(index){
-		if($(this).children().length>6)
-			$(this).addClass("wide");
-	});
+	//Make sub navigations wide when there is not enough space vertically
+	$("#subnav>ul.menu>li").hover(
+		function(){
+			if(($(this).children("ul").outerHeight()+50) > $("#footer-wrap").offset().top - $("#subnav-wrap").offset().top)
+				$(this).children("ul").addClass("wide");
+			else
+				$(this).children("ul").removeClass("wide");
+		});
 
 	// ** Menu **
 	var menustate ="";
