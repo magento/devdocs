@@ -31,6 +31,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 53342 -->* The Magento application no longer duplicates URL keys during the creation of a configurable product.
 
+
 <!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018" target="_blank">(GITHUB-3018)</a> 
 
 <!--- 46014 -->* The Magento application now displays error messages on the page where the error occurred. Previously, error messages invoked by actions on the login page were not displayed until you left that page.
