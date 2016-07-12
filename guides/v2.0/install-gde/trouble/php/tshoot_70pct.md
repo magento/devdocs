@@ -13,7 +13,7 @@ github_link: install-gde/trouble/php/tshoot_70pct.md
 <h2 id="install-trouble-pdo">Setup Wizard installation stops at about 70%</h2>
 During installation using the Setup Wizard, the process stops at about 70% (with or without sample data). No errors display on the screen.
 
-One common issue is the PHP setting for <a href="http://php.net/manual/en/info.configuration.php#ini.max-execution-time" target="_blank">`max_execution_time`</a>. 
+One common issue is the PHP setting for <a href="http://php.net/manual/en/info.configuration.php#ini.max-execution-time" target="_blank">`max_execution_time`</a>. Also increase the timeout value for Varnish and nginx if used.
 
 ### Solution:
 If you encounter this error, we recommend you increase the value in `php.ini` to 18000 (30 minutes). You can use a larger or smaller value if it helps.
@@ -28,5 +28,21 @@ If you encounter this error, we recommend you increase the value in `php.ini` to
 	Examples for Apache follow:
 
 	*	CentOS: `service httpd restart`
-	*	Ubuntu: `service apache2 restart`	
+	*	Ubuntu: `service apache2 restart`
+
+7. If you use Nginx use `nginx.conf.sample` or add a timeout settings in nginx host config file to the `location ~ ^/setup/index.php` section as follows:
+	
+		location ~ ^/setup/index.php {
+			.....................
+			fastcgi_read_timeout 600s;
+        	fastcgi_connect_timeout 600s;
+		}
+		
+8. If you use Varnish edit `default.vcl` and add a timeout to the `backend` stanza as follows:
+
+		backend default {
+		      .....................
+		      .first_byte_timeout = 600s;
+		}
+
 
