@@ -17,7 +17,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 *	<a href="#php-support">PHP versions supported</a>
 *	<a href="#php-ubuntu-help-beginner">Help if you're just starting out</a>
 *	<a href="#ubuntu-verify-php">Verify PHP is installed</a>
-*	[PHP 7.0 on Ubuntu 14](#instgde-prereq-php70-ubuntu)
+*	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
 *	<a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</a>
 *	<a href="#instgde-prereq-php5.65-install-ubuntu14">PHP 5.5 on Ubuntu 14</a>
 *	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
@@ -85,11 +85,11 @@ If PHP is *not* installed, see one of the following sections:
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
 	</div>
 
-2.	Enter the following command to verify PHP 7.0.2 installed properly:
+2.	Enter the following command to verify PHP 7 installed properly:
 
 		php -v
 
-	Following is a sample response that indicates PHP 7.0.2 is installed:
+	Following is a sample response that indicates PHP 7.0.8 is installed:
 
 		PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
 		Copyright (c) 1997-2016 The PHP Group

@@ -71,9 +71,9 @@ The following sections discusses how to install or upgrade Apache:
 *	Install Apache
 *	Upgrade to Apache 2.4 on Ubuntu 12 to use PHP 5.6 or PHP 7
 
-<h3 id="install-prereq-apache-ubuntu-install">Installing Apache on Ubuntu 14 or Ubuntu 12</h3>
+<h3 id="install-prereq-apache-ubuntu-install">Installing Apache on Ubuntu 16, 14, or 12</h3>
 {% collapsible Click to show/hide content %}
-To install the default version of Apache (Ubuntu 14&mdash;Apache 2.4, Ubuntu 12&mdash;Apache 2.2):
+To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu 12&mdash;Apache 2.2):
 
 1.	Install Apache
 
@@ -85,8 +85,8 @@ To install the default version of Apache (Ubuntu 14&mdash;Apache 2.4, Ubuntu 12&
 
 	The result displays similar to the following:
 
-		Server version: Apache/2.2.22 (Ubuntu)
-		Server built:   Jul 22 2014 14:35:32
+		Server version: Apache/2.4.18 (Ubuntu)
+		Server built:   2016-04-15T18:00:57
 
 3.	Enable rewrites and `.htaccess` as discussed in the following sections.
 

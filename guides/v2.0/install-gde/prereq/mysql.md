@@ -14,6 +14,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 
 *	<a href="#mysql-help-beginner">Help if you're just starting out</a>
 *	<a href="#instgde-prereq-mysql-intro">General guidelines</a>
+*	[Installing and configuring MySQL 5.7 on Ubuntu 16](#instgde-prereq-mysql57-ub16)
 *	<a href="#instgde-prereq-mysql-ubuntu">Installing and configuring MySQL 5.6 on Ubuntu</a>
 *	[Installing and configuring MySQL 5.7 on CentOS](#instgde-prereq-mysql57-centos)
 *	<a href="#instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</a>
@@ -49,8 +50,53 @@ Magento _strongly_ recommends you observe the following standard when you set up
 <h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
 See one of the following sections for more information:
 
+*	[Installing and configuring MySQL 5.7 on Ubuntu 16](#instgde-prereq-mysql57-ub16)
 *	<a href="#instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</a>
 *	<a href="#instgde-prereq-mysql56ubu12">Installing MySQL 5.6 on Ubuntu 12</a>
+
+### Installing and configuring MySQL 5.7 on Ubuntu 16 {#instgde-prereq-mysql57-ub16}
+This section discusses how to install MySQL 5.7 on Ubuntu 16.
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Magento does not support MySQL 5.7 at this time. These instructions are provided for your convenience if you'd like to test MySQL 5.7.</p></span>
+</div>
+
+To install MySQL 5.7 on Ubuntu 16:
+
+1.	Enter the following command:
+
+		sudo apt install -y mysql-server mysql-client
+
+2.	Secure the installation.
+
+		sudo mysql_secure_installation
+
+2.	Test the installation by entering the following command:
+
+		mysql -u root -p
+
+	Sample output:
+
+		Welcome to the MySQL monitor.  Commands end with ; or \g.
+		Your MySQL connection id is 45
+		Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
+
+		Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+		Oracle is a registered trademark of Oracle Corporation and/or its
+		affiliates. Other names may be trademarks of their respective
+		owners.
+
+		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+		mysql>
+
+4.	If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank">`max_allowed_packet`</a> that is larger than the default, 16MB.
+
+	{% include install/mysql_max-allowed-packet-ubuntu.md %}
+
+3.	<a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.	
 
 <h3 id="instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</h3>
 To install MySQL 5.6 on Ubuntu 14:
