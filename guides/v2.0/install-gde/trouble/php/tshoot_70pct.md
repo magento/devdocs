@@ -30,7 +30,7 @@ If you encounter this error, we recommend you increase the value in `php.ini` to
 	*	CentOS: `service httpd restart`
 	*	Ubuntu: `service apache2 restart`
 
-7. If you use Nginx use `nginx.conf.sample` or add a timeout settings in nginx host config file to the `location ~ ^/setup/index.php` section as follows:
+7. If you use Nginx, use `nginx.conf.sample` or add a timeout settings in nginx host config file to the `location ~ ^/setup/index.php` section as follows:
 	
 		location ~ ^/setup/index.php {
 			.....................
@@ -38,7 +38,7 @@ If you encounter this error, we recommend you increase the value in `php.ini` to
         	fastcgi_connect_timeout 600s;
 		}
 		
-8. If you use Varnish edit `default.vcl` and add a timeout to the `backend` stanza as follows:
+8. If you use Varnish, edit `default.vcl` and add a timeout limit value to the `backend` stanza as follows:
 
 		backend default {
 		      .....................
