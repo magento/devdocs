@@ -162,13 +162,88 @@ Step 2. What name should constraint have?
 
 Step 3. Create `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetInGrid.php` with [required structure](#mtf_constraint_assert)
 
-<script src="https://gist.github.com/dshevtsov/c9d9e77e4d48af881f69.js"></script>
+{% highlight php %}
+
+<?php
+
+namespace Magento\Widget\Test\Constraint;
+
+use Magento\Mtf\Constraint\AbstractConstraint;
+
+/**
+ * Assert widget is available in widget grid.
+ */
+class AssertWidgetInGrid extends AbstractConstraint
+{
+    /**
+     * Assert widget availability in widget grid.
+     * 
+     * @return void
+     */
+    public function processAssert()
+    {
+
+    }
+
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return 'Widget is present in widget grid.';
+    }
+}
+
+{% endhighlight %}
 
 Step 4. Implement assertion in `processAssert()`
 
 **Assertion logic**: Take title of the widget from the widget [fixture][], open the page with a grid, check if the grid has our title.
 
-<script src="https://gist.github.com/dshevtsov/c1e2a8437e0d2b2036bd.js"></script>
+{% highlight php %}
+
+<?php
+
+namespace Magento\Widget\Test\Constraint;
+
+use Magento\Widget\Test\Fixture\Widget;
+use Magento\Widget\Test\Page\Adminhtml\WidgetInstanceIndex;
+use Magento\Mtf\Constraint\AbstractConstraint;
+
+/**
+ * Assert widget is available in widget grid.
+ */
+class AssertWidgetInGrid extends AbstractConstraint
+{
+    /**
+     * Assert widget availability in widget grid.
+     * 
+     * @return void
+     */
+    public function processAssert(Widget $widget, WidgetInstanceIndex $widgetInstanceIndex)
+    {
+        $filter = ['title' => $widget->getTitle()];
+        $widgetInstanceIndex->open();
+        \PHPUnit_Framework_Assert::assertTrue(
+            $widgetInstanceIndex->getWidgetGrid()->isRowVisible($filter),
+            'Widget with title \'' . $widget->getTitle() . '\' is absent in Widget grid.'
+        );
+    }
+
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return 'Widget is present in widget grid.';
+    }
+}
+
+{% endhighlight %}
 
 ## How to use constraint {#mtf_constraint_use}
 

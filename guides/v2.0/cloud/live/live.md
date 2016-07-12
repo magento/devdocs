@@ -38,7 +38,6 @@ To go live:
 
 	*	CNAME with ALIAS record from [Dyn](http://dyn.com){:target="_blank"} 
 	*	ANAME record on [DNS Made Easy](http://www.dnsmadeeasy.com){:target="_blank"}
-	*	[Amazon's Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html){:target="_blank"} with CloudFront. 
 	*	ANAME at [easyDNS](https://www.easydns.com){:target="_blank"}
 	*	ACNAME at [CloudFlare](https://www.cloudflare.com){:target="_blank"}
 	*	ALIAS at [PointDNS](https://pointhq.com){:target="_blank"}
