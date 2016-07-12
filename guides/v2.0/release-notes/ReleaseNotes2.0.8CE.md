@@ -20,111 +20,21 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 ###Fixed issues
-
-
-####Caching subsystem
-<!--- 52923-->* Using Varnish no longer causes the Category menu to force HTTPS links. <a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
-
-<!--- 48729 -->* Varnish now purges cache as expected after a scheduled update (that is, when indexes are set to update by schedule).  
-
-
-<!--- 51803-->* The **Select All** check box on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-3580)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank">(GITHUB-3580)</a>, <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>
-
-<!--- 45402 -->* Magento no longer caches a page that contain a layout that includes a non-cachable block. Previously, Magento would cache a page than contained a layout that included a non-cachable block.
-
-
-
-####Installation and Upgrade
-
-<!--- 51592 -->* The <a href="[code compiler]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html" target="_blank">code compiler</a>now works when the Magento application is not installed.
+<!--- 50507 -->* You can now successfully reset the Product Attributes mass update Admin form.
+<!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a>
 
 <!--- 45608 -->* You can now successfully uninstall  Magento_CustomerBalanceSampleData.
 
-
-
-
-
-####Miscellaneous
-
-
-
 <!--- 53342 -->* The Magento application no longer duplicates URL keys during the creation of a configurable product.
-
+<!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018" target="_blank">(GITHUB-3018)</a> 
 
 <!--- 46014 -->* The Magento application now displays error messages on the page where the error occurred. Previously, error messages invoked by actions on the login page were not displayed until you left that page.
 
+<!--- 53814 -->* Magento now sends email using a store's specific email address when an Admin sends email. Previously, Magento would send email from the default instance email address instead of the store address.
 
+<!--- 55087 -->* Solr search now returns search results as expected from both English and Spanish stores. Previously, SOLR returned results for the English site but not for the Spanish site. 
 
-
-
-<!--- 50507 -->* You can now successfully reset the Product Attributes mass update Admin form.
-
-
-<!--- 50193 -->* Layered navigation now contains previously missing category filters.
-
-
-<!--- 49877 -->* The callable argument type hint has been restored. <a href="https://github.com/magento/magento2/issues/2026" target="_blank">(GITHUB-2026)</a>
-
-<!--- 47999 -->* Magento now registers added themes in production mode. <a href="https://github.com/magento/magento2/issues/2797" target="_blank">(GITHUB-2797)</a>
-
-
-
-<!--- 52437 -->* Magento now successfully processes password change requests from the Magento Admin. Previously, when you clicked Save Account after changing your password, Magento would continue to display the "It's time to change your password" message.
-
-
-<!--- 45651 -->* Magento displays simple products in groups when a product is set to out of stock. Previously, Magento did not correctly display simple products in their associated groups when a product was set to out of stock.
-
-
-
-<!--- 51079 -->* The Used in Product Listing option for attributes now works as expected.
-
-
-<!--- 50409-->* The order of attributes for a configurable product now corresponds to the order as specified in the Admin. Previously, Magento ordered attributes in the order of their creation.
-
-
-<!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a>
-
-
-<!--- 49769 -->* You can now assign permissions to URL rewrites from Marketing > SEO and Search. <a href="https://github.com/magento/magento2/issues/3194" target="_blank">(GITHUB-3194)</a> 
-
-<!--- 49716 -->* Magento no longer displays an incorrect price in the shopping cart when using multiple  shipping addresses. 
-
-
-<!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018" target="_blank">(GITHUB-3018)</a> 
-
-
-
-
-
-<!--- 52629 -->* You can now refresh statistics after deleting a product. Previously, after  deleting a product that been ordered, you could not refresh lifetime statistics. 
-
-<!--- 50144 -->* Magento now displays ampersands (&) correctly in attribute options.
-
-<!--- 52512 -->* Newsletter subscriptions now work correctly when **Need to confirm** is set to **yes** during newsletter subscription configuration.  
-
-
-####Payment methods
-
-
-<!--- 53865-->* Payment methods now pass credit card data as expected in the  `additional_data` field. Previously, payment methods using this field did not complete the transactions successfully.  <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
-
-<!--- 51834 -->* Maestro credit cards can now pass validation.
-
-
-
-####Storefront
-<!--- 51072 -->* The storeview now reflects changes to configurable swatches.  
-
-<!--- 48386 -->* Scrolling now works as expected when using the **Store View**  menu in the Magento Admin.  <a href="https://github.com/magento/magento2/issues/2896" target="_blank">(GITHUB-2896)</a> 
-
-
-####WYSIWYG editor
-
-<!--- 52284 -->* You can now insert more than two images using the WYSIWYG editor. <a href="https://github.com/magento/magento2/issues/4221" target="_blank">(GITHUB-4221)</a>
-
-<!--- 50522 -->* The WYSIWYG editor no longer removes HTML5 tags.
-
-
+<!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running PHP 7.0.5. 
 
 
 
