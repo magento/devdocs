@@ -36,7 +36,9 @@ Coding standards are a set of guidelines that describe how code should be writte
 To help you stick to coding standards, we recommend using the [PHP_CodeSniffer tool](https://github.com/squizlabs/PHP_CodeSniffer){:target="_blank"}.
 
 ### Write and utilize re-usable code
-Avoid using redundant or duplicate code. Instead of copying and pasting the same code throughout application, create a single class or method and reference it when needed. As a general rule of thumb, be sure to reuse code as much as possible.
+Avoid using redundant or duplicate code, which can be hard to maintain. Instead of copying and pasting the same code throughout application, create a single class or method and reference it when needed. As a general rule of thumb, be sure to reuse code as much as possible to save yourself the from the costs of duplication.
+
+The code you write should be small, focused, and provides a generic solution. This will let you re-use these pieces again in future development.
 
 ### Be consistent with case and naming conventions
 You should be consistent in your naming conventions for files, folder names, Classes, and Methods. Following standard conventions will make your code look professional and easy to read.
