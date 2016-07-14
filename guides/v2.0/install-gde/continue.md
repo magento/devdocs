@@ -47,10 +47,7 @@ Consult the following table for how to get started.
 		<td><ol><li>Creates a Composer <em>project</em> that contains the list of components to use.</li>
 			<li>Uses Composer to update package dependencies; uses <code>composer create-project</code> to get the Magento metapackage.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li></ol>
-		<td><p><a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Get the metapackage</a></p>
-			<p>Sample commands:</p>
-			<ul><li>Get the CE metapackage: <code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;install dir></code></li>
-				<li>Get the EE metapackage: <code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;install dir></li></ul></td>
+		<td><p><a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Get the metapackage</a></p></td>
 	</td>
 
 	</tr>
