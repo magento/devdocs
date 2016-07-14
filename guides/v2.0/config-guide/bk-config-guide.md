@@ -26,15 +26,20 @@ You can configure the Magento application in any of the following ways:
 	*	<a href="{{page.baseurl}}config-guide/database/database.html">Set up database caching</a>
 	*	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Set up Redis</a>
 
-*	Magento in production
-
-	*	[Deployment steps]({{page.baseurl}}config-guide/prod/prod_deploy.html)
-	*	[Magento ownership and permissions in development and production]({{page.baseurl}}config-guide/prod/prod_file-sys-perms.html)
-
 *	Session storage
 	*	[memcache]({{page.baseurl}}config-guide/memcache/memcache.html)
 	*	[Redis]({{page.baseurl}}config-guide/redis/redis-session.html)
 	*	[How to locate session files]({{page.baseurl}}config-guide/sessions.html)
+
+*	Tools and debugging
+
+	*	[Logging]({{ page.baseurl }}config-guide/log/log-intro.html)
+	*	[Database profiler]({{ page.baseurl }}config-guide/db-profiler/db-profiler.html)
+
+*	Magento in production
+
+	*	[Deployment steps]({{page.baseurl}}config-guide/prod/prod_deploy.html)
+	*	[Magento ownership and permissions in development and production]({{page.baseurl}}config-guide/prod/prod_file-sys-perms.html)
 
 *	<img src="{{ site.baseurl }}common/images/ee-only_small.png">
 
