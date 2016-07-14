@@ -19,8 +19,8 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 *	<a href="#centos-verify-php">Verify PHP is installed</a>
 *	[CentOS repositories](#centos-php-repos)
 *	[PHP 7 on CentOS](#php-centos-7)
-*	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
-*	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
+*	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a>
+*	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS 6</a>
 *	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -133,17 +133,32 @@ To upgrade to PHP 7.0.2 or later:
 	</div>
 3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
 
-<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</h2>
+<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</h2>
 There is more than one way to upgrade CentOS 6.5 to PHP 5.6; the following is a suggestion only. Consult a reference for additional options.
 
-To upgrade to PHP 5.6:
+To install PHP 5.6:
 
-1.	Enter the following commands in the order shown:
+1.	*CentOS 6*. Enter the following commands in the order shown:
 
 		yum -y update
 		yum -y install epel-release
 		wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 		wget https://centos6.iuscommunity.org/ius-release.rpm
+		rpm -Uvh ius-release*.rpm
+		yum -y update
+		yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-devel php56u-mysql php56u-intl php56u-mbstring php56u-bcmath
+
+
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+	</div>
+
+2.	*CentOS 7*. Enter the following commands in the order shown:
+
+		yum -y update
+		yum -y install epel-release
+		wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+		wget https://centos7.iuscommunity.org/ius-release.rpm
 		rpm -Uvh ius-release*.rpm
 		yum -y update
 		yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-devel php56u-mysql php56u-intl php56u-mbstring php56u-bcmath

@@ -144,7 +144,8 @@ To upgrade to Apache 2.4:
 {% endcollapsible %}
 
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS 6 or 7</h2>
-{% collapsible Click to show/hide content %}
+
+{% collapsible Click to install Apache on CentOS 6 or 7 %}
 Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code>.htaccess</code>, which Magento uses to specify rewrite rules.
 
 Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code>.htaccess</code> directives.
@@ -170,7 +171,7 @@ Installing and configuring Apache is basically a three-step process: install the
 	<p>Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.</p></span>
 </div>
 
-### Enable rewrites and .htaccess for Apache 2.2 
+### Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)
 {% include install/allowoverrides22.md %}
 
 #### Next steps
@@ -180,6 +181,8 @@ Installing and configuring Apache is basically a three-step process: install the
 {% endcollapsible %}
 
 <h2 id="403-apache">Solving 403 (Forbidden) errors</h2>
+
+{% collapsible Click to install solve 403 errors %}
 If you encounter 403 Forbidden errors when trying to access the Magento site, you can update your Apache configuration or your virtual host configuration to enable visitors to the site as discussed in one of the following sections:
 
 *	<a href="#install-apache-403_2.4">Solving 403 Forbidden errors for Apache 2.4</a>
@@ -220,11 +223,13 @@ For example:
 	<span class="glyphicon-class">
 	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p></span>
 </div>
+{% endcollapsible %}
+
 
 #### Related topics:
 
 *	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>

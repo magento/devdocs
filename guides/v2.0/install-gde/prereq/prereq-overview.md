@@ -74,7 +74,7 @@ You must run PHP version 5.5 or later as the following result indicates:
 
 To install PHP, see:
 
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
 
 ### MySQL
@@ -111,7 +111,7 @@ To install or upgrade MySQL, see <a href="{{page.baseurl}}install-gde/prereq/mys
 *	<a href="{{page.baseurl}}install-gde/system-requirements.html">Magento system requirements</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
 *	[How to get the Magento software]({{ page.baseurl }}install-gde/continue.html)
