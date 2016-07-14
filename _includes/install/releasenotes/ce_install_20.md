@@ -23,7 +23,7 @@ where
 `[-b <version>]` optionally checks out a new branch.
 
 ### Get the Magento CE software using Composer {#install-ce-composer}
-This Release Candidate is available from `repo.magento.com`. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
+This software is available from `repo.magento.com`. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
 

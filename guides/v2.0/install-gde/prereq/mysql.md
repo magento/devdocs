@@ -231,11 +231,18 @@ Continue with the next section.
 <h2 id="instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</h2>
 The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/" target="_blank">Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux</a>.
 
-1.	Install the MySQL database:
+1.	*CentOS 6* Install the MySQL database:
 
 		yum -y update
 		sudo wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el6-5.noarch.rpm
 		sudo yum -y install mysql-server
+
+2.	*CentOS 7* Install the MySQL database:
+
+		yum -y update
+		sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+		sudo yum -y install mysql-server
+
 
 2.	Start MySQL.
 
