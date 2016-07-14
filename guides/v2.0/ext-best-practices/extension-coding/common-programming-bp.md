@@ -40,6 +40,11 @@ Avoid using redundant or duplicate code, which can be hard to maintain. Instead 
 
 The code you write should be small, focused, and provides a generic solution. This will let you re-use these pieces again in future development.
 
+### Design your code to be replaceable
+Designing and writing your code to be replaceable is just as important as making it re-usable. Having a replaceable design means your code is modular and loosely coupled, therefore allowing easy updates and improvements in the future.
+
+It is common practice to replace parts of your codebase with newer and better pieces as bugs are found or newer strategies become available. Writing replaceable code in your codebase makes this practice easier and more efficient.
+
 ### Be consistent with case and naming conventions
 You should be consistent in your naming conventions for files, folder names, Classes, and Methods. Following standard conventions will make your code look professional and easy to read.
 
