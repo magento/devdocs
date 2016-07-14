@@ -38,7 +38,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 53814 -->* Magento now sends email using a store's specific email address when an Admin sends email. Previously, Magento would send email from the default instance email address instead of the store address.
 
 
-<!--- 55087 -->* Solr search now returns search results as expected from both English and Spanish stores. Previously, Solr returned results for the English site but not for the Spanish site. 
 
 
 
