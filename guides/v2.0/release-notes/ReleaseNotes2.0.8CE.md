@@ -21,9 +21,13 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ###Fixed issues
 <!--- 50507 -->* You can now successfully reset the Product Attributes mass update Admin form.
+
 <!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a>
 
 <!--- 45608 -->* You can now successfully uninstall  Magento_CustomerBalanceSampleData.
+
+<!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running PHP 7.0.5. 
+
 
 <!--- 53342 -->* The Magento application no longer duplicates URL keys during the creation of a configurable product.
 
@@ -33,18 +37,9 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 53814 -->* Magento now sends email using a store's specific email address when an Admin sends email. Previously, Magento would send email from the default instance email address instead of the store address.
 
+
 <!--- 55087 -->* Solr search now returns search results as expected from both English and Spanish stores. Previously, SOLR returned results for the English site but not for the Spanish site. 
 
-<!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running PHP 7.0.5. 
-
-
-
-
-###Known issue
-
-<!--- 49556 -->The POST V1/shipment and other APIs that include a list of items might return an error if an item's quantity (`qty`) is specified before its ID (`order_item_id`, for example).
-
-**Workaround:** Make sure to specify an item's ID before specifying quantity.
 
 
 ###System requirements
