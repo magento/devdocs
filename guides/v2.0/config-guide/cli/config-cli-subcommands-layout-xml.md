@@ -20,7 +20,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.h
 
 
 <h2 id="config-cli-xml-overview">Overview of layout XML conversion</h2>
-When XML schema are updated, you should update your layout XML files to match the new Extensible Stylesheet Language Transformations (XSLT) stylesheet. This command enables you to perform these updates.
+This command enables you to update your layout XML files if you update the corresponding Extensible Stylesheet Language Transformations (XSLT) stylesheet. 
 
 For more information about layout XML files, see:
 
@@ -39,7 +39,7 @@ Command options:
 where
 
 *	`{xml file}` is the full path and file name of a layout XML file to convert (required)
-*	`{xslt stylesheet}` is the full path and file name of an XSLT schema file to use for conversion (required)
+*	`{xslt stylesheet}` is the full path and file name of an XSLT stylesheet file to use for conversion (required)
 *	`-o|--overwrite` include this option to overwrite the existing XML file
 
 #### Related topics
