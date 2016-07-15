@@ -33,20 +33,19 @@ Since dependency management is the responsibility of the environment, some kind 
 
 In Magento, the object manager is represented by the appropriately named [Object Manager]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManagerInterface.php){:target="_blank"}.
 
-### Object Manager Configuration
+### Object Manager configuration
 
-There are three types of configuration that is required by Magento's object manager:
+Magento's object manager requires three types of configurations:
 
-*	[Class metadata(definitions)](#class-metadata) - These configurations describe the class dependencies for an object.
+*	[Class metadata (definitions)](#class-metadata) - These configurations describe the class dependencies for an object.
 * [Type configuration](#type-configuration) - These configurations describe how objects are instantiated and their lifestyle.
 * [Abstraction-Implementation mappings](#abstraction-implementation-mappings) - These configurations map which concrete implementations to use when interfaces are requested.
 
 #### Class metadata
 
-Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; i.e. to define what dependencies are to be passed to an object. If you write your code in a regular way using the dependency inversion principle, you do not have to worry about class definitions.
+Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object. If you write your code in a regular way using the dependency inversion principle, you do not have to worry about class definitions.
 
-##### Compiling dependencies
-{:.no_toc}
+#### Compiling dependencies
 By default, class definitions are read using reflection, but reflection is slow in PHP. To make Magento's ObjectManager as fast as possible, a definition compiler was introduced. One of the things the compiler does is generate all non-existing dependency injection service classes (proxies, factories and interceptors) declared in code or configuration.
 
 #### Type configurations
@@ -69,7 +68,7 @@ All object manager configuration is located under the config node in the xml fil
 
 These configurations are validated by the XML Schema file called [`config.xsd`]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/etc/config.xsd){:target="_blank"}.
 
-##### Areas and application entry points
+#### Areas and application entry points
 {:.no_toc}
 
 Magento reads all the `di.xml` configuration files declared in the system and merges them all together by appending all nodes.
@@ -90,13 +89,13 @@ During [bootstrapping]({{site.mageurl}}config-guide/bootstrap/magento-bootstrap.
 
 * In `cron.php`, the [`\Magento\Framework\App\Cron`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
 
-##### Configuring Type
+#### Configuring a type
 {:.no_toc}
 
-Type can be configured in your di.xml configuration node in the following ways:
+Type can be configured in your `di.xml` configuration node in the following ways:
 
 {% highlight xml %}
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Core\Model\Session" /> // Default instance of Magento\Core\Model\Session type. Exists by default, can be omited.
     <virtualType name="moduleConfig" type="Magento\Core\Model\Config"> // Instance with global name "moduleConfig" of Magento\Core\Model\Config type
         <arguments>
@@ -122,14 +121,22 @@ The preceding example declares the following types:
   <p>A virtual type allows you to change the arguments of a specific injectable dependency and effectively create a new type of a particular class. This allows you to use a customized type without affecting other classes that have a dependency on the original.</p>
 </div>
 
-##### Arguments
+#### Arguments
 {:.no_toc}
 
-Class constructor arguments are configured in your di.xml in the argument node. All these arguments will be injected into the class during creation. The name of the argument configured in the XML file must correspond to the name of the parameter in the constructor in the configured class.
+Class constructor arguments are configured in your `di.xml` in the argument node. All these arguments will be injected into the class during creation. The name of the argument configured in the XML file must correspond to the name of the parameter in the constructor in the configured class.
 
-The example below creates instances of `Magento\Core\Model\Session` with the class constructor argument `$sessionName` set to a value of `adminhtml`:
+The following example creates instances of `Magento\Core\Model\Session` with the class constructor argument `$sessionName` set to a value of `adminhtml`:
 
-<script src="https://gist.github.com/xcomSteveJohnson/8907e3d1d6f2cd691d46.js"></script>
+{% highlight xml %}
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Core\Model\Session">
+        <arguments>
+            <argument name="sessionName" xsi:type="string">adminhtml</argument>
+        </arguments>
+    </type>
+</config>
+{% endhighlight %}
 
 **Argument Types:**
 
@@ -238,7 +245,42 @@ When the configuration files for a given scope are merged, array arguments with 
 
 **Argument Examples:**
 
-<script src="https://gist.github.com/xcomSteveJohnson/24ffa1426734520f58a1.js"></script>
+{% highlight xml %}
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Example\Type">
+        <arguments>
+            <!-- Pass simple string -->
+            <argument name="stringParam" xsi:type="string">someStringValue</argument>
+            <!-- Pass instance of Magento\Some\Type -->
+            <argument name="instanceParam" xsi:type="object">Magento\Some\Type</argument>
+            <!-- Pass true -->
+            <argument name="boolParam" xsi:type="boolean">1</argument>
+            <!-- Pass 1 -->
+            <argument name="intParam" xsi:type="number">1</argument>
+            <!-- Pass application init argument, named by constant value -->
+            <argument name="globalInitParam" xsi:type="init_parameter">Magento\Some\Class::SOME_CONSTANT</argument>
+            <!-- Pass constant value -->
+            <argument name="constantParam" xsi:type="const">Magento\Some\Class::SOME_CONSTANT</argument>
+            <!-- Pass null value -->
+            <argument name="optionalParam" xsi:type="null"/>
+            <!-- Pass array -->
+            <argument name="arrayParam" xsi:type="array">
+                <!-- First element is value of constant -->
+                <item name="firstElem" xsi:type="const">Magento\Some\Class::SOME_CONSTANT</item>
+                <!-- Second element is null -->
+                <item name="secondElem" xsi:type="null"/>
+                <!-- Third element is a subarray -->
+                <item name="thirdElem" xsi:type="array">
+                    <!-- Subarray contains scalar value -->
+                    <item name="scalarValue" xsi:type="string">ScalarValue</item>
+                    <!-- and application init argument -->
+                    <item name="globalArgument " xsi:type="init_parameter">Magento\Some\Class::SOME_CONSTANT</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>
+{% endhighlight %}
 
 <div class="bs-callout bs-callout-info" id="merging-info">
   <b>Merging and Arguments</b><br/>
@@ -271,9 +313,22 @@ Since this mapping is in `app/code/core/Magento/Backend/etc/adminhtml/di.xml`, w
 
 #### Parameter configuration inheritance
 
-Parameters configured for a class type are automatically configured for all of its descendant classes. Any descendant can override the parameters configured for its supertype; i.e. the parent class or interface:
+Parameters configured for a class type are automatically configured for all of its descendant classes. Any descendant can override the parameters configured for its supertype; that is, the parent class or interface:
 
-<script src="https://gist.github.com/xcomSteveJohnson/8ef9264be06fba085a03.js"></script>
+{% highlight xml %}
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\Context">
+        <arguments>
+            <argument name="urlBuilder" xsi:type="object">Magento\Core\Model\Url</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Backend\Block\Context">
+        <arguments>
+            <argument name="urlBuilder" xsi:type="object">Magento\Backend\Model\Url</argument>
+        </arguments>
+    </type>
+</config>
+{% endhighlight %}
 
 In the preceding example, [`Magento\Backend\Block\Context`]({{ site.mage2000url }}app/code/Magento/Backend/Block/Context.php){:target="_blank"} is a descendant of [`Magento\Framework\View\Element\Context`]({{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Context.php){:target="_blank"}.
 
@@ -292,7 +347,7 @@ Magento's object manager supports the following lifestyles:
 
 The `shared` property determines the lifestyle of both `argument` and `type` configurations.
 
-~~~
+{% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <type name="Magento\Filesystem" shared="false">
         <arguments>
@@ -300,7 +355,7 @@ The `shared` property determines the lifestyle of both `argument` and `type` con
         </arguments>
     </type>
 </config>
-~~~
+{% endhighlight %}
 
 In this example `Magento\Filesystem` is configured as non-shared, so all clients will retrieve separate instances of `Magento\Filesystem`. Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
 
@@ -308,8 +363,7 @@ In this example `Magento\Filesystem` is configured as non-shared, so all clients
 
 This section explains the two dependency injection types used in Magento using the following example:
 
-~~~ php
-<?php
+{% highlight php startinline=true %}
 namespace Magento\Backend\Model\Menu;
 class Builder
 {
@@ -330,8 +384,7 @@ class Builder
         // processCommand Code
     }
 }
-?>
-~~~
+{% endhighlight %}
 
 #### Construction Injection
 
@@ -356,7 +409,7 @@ Method injection is usually used when an object needs to act on a dependency.
 
 **Newable:** Objects that can only be obtained by creating a new class instance every time. Transient objects, such as those that require external input from the user or database, fall into this category. Attempts to obtain these objects using dependency injections will return an undefined object.
 
-> For example a model object such as [`app/code/Magento/User/Model/User.php`]({{ site.mage2000url }}app/code/Magento/Catalog/Model/Product.php){:target="_blank"} cannot be used for dependency injection. You need to provide a product id or explicitly request a new, empty instance of that object, and since this cannot be done in the constructor signature, the object cannot be injected.
+For example, a model object such as [`app/code/Magento/User/Model/User.php`]({{ site.mage2000url }}app/code/Magento/Catalog/Model/Product.php){:target="_blank"} cannot be used for dependency injection. You need to provide a product id or explicitly request a new, empty instance of that object, and since this cannot be done in the constructor signature, the object cannot be injected.
 
 ### Rules for using dependency injection
 
@@ -366,9 +419,8 @@ Method injection is usually used when an object needs to act on a dependency.
 * You can create newable objects in services with object [factories]({{page.baseurl}}extension-dev-guide/factories.html) or you can pass them in as method parameters.
 * Newable objects should not hold a field reference to an injectable object nor should they request one in their constructor. This is a [Law of Demeter](http://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} violation.
 
----
 
-**Related Topics**
+#### Related topics
 
 *	[Plugins]({{page.baseurl}}extension-dev-guide/plugins.html)
 *	[Routing]({{page.baseurl}}extension-dev-guide/routing.html)
