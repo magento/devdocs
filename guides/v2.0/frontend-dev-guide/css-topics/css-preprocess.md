@@ -184,4 +184,29 @@ Example of how <code>@magento_import</code> is used and processed in <code>&lt;M
    </tbody>
 </table>
 
+<h3 id="debugging_less_files">Developer experience when working with LESS</h3>
 
+<p>The prefered way to check modified <code>.less</code> files is <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict">deploy static files</a>.</p> 
+<p>Any errors occured during less compilations are handled by 3rd party library - <a href="https://github.com/oyejorge/less.php" target="_blank">oyejorge/less.php</a>.</p>
+<p>
+Errors are catched as exceptions and loged using psr logger with:
+<ul>
+<li>Full path to the source file</li>
+<li>Path to processed file with error (in var/view_preprocessed folder), in case of import not the same as source file</li>
+<li>Error description</li>
+<li>Line and column of the error occurance</li>
+<li>lines of the less code prior and next to the error</li>
+</ul>
+</p>
+Error message example:
+<pre>
+Compilation from source: /var/www/magento2/app/design/adminhtml/Magento/backend/web/css/styles.less
+variable @variable-x is undefined in file /var/www/magento2/var/view_preprocessed/css/adminhtml/Magento/backend/en_US/css/styles.less in styles.less on line 56, column 17
+54|         margin-left: 0;
+55|         width: 100%;
+56|         height: @variable-x;
+57|     }
+58|
+59|     .menu-wrapper,
+</pre>
+During deploy errors are shown to the stdout in addition to the log. 
