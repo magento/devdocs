@@ -293,21 +293,21 @@ The abstraction-implementation mappings are used by Magento's object manager whe
 
 The default implementation is specified using the `preference` node:
 
-~~~
+{% highlight xml %}
 <!--  File: app/etc/di.xml -->
 <config>
     <preference for="Magento\Core\Model\UrlInterface" type="Magento\Core\Model\Url" />
 </config>
-~~~
+{% endhighlight %}
 
 Since this mapping is in `app/etc/di/config.xml`, wherever there is a request for the `Magento\Core\Model\UrlInterface` in the global scope, the `Magento\Core\Model\Url` implementation class will be used.
 
-~~~
+{% highlight xml %}
 <!-- File: app/code/core/Magento/Backend/etc/adminhtml/di.xml -->
 <config>
     <preference for="Magento\Core\Model\UrlInterface" type="Magento\Backend\Model\Url" />
 </config>
-~~~
+{% endhighlight %}
 
 Since this mapping is in `app/code/core/Magento/Backend/etc/adminhtml/di.xml`, wherever there is a request for the `Magento\Core\Model\UrlInterface` in the admin area, the `Magento\Backend\Model\Url` implementation class will be used.
 
@@ -348,7 +348,7 @@ Magento's object manager supports the following lifestyles:
 The `shared` property determines the lifestyle of both `argument` and `type` configurations.
 
 {% highlight xml %}
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Filesystem" shared="false">
         <arguments>
             <argument name="adapter" xsi:type="object" shared="false">Magento\Filesystem\Adapter\Local</argument>
