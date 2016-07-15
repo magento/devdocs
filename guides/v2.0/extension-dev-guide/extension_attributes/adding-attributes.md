@@ -143,6 +143,7 @@ In first case we will get the next result:
 {% endhighlight %}
 
 In second one: 
+{% highlight xml %}
 <product>
     <id>1</id>
     <sku>some-sku</sku>
@@ -154,6 +155,6 @@ In second one:
         </our_custom_data>
     </extension_attributes>
 </product>
-
+{% endhighlight %}
 
 <a href="https://github.com/magento-south/magento2-samples/tree/MAGETWO-55017/sample-external-links">Sample module on github</a>
