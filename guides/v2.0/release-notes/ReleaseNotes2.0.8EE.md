@@ -21,28 +21,40 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ###Fixed issues
 
-<!--- 50507 -->* You can now successfully reset the Product Attributes mass update Admin form.
 
-<!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a> 
-
-<!--- 50716 -->* The Admin Action Log archive is now formatted as expected.
+####Installation and upgrade
 
 <!--- 45608 -->* You can now successfully uninstall Magento_CustomerBalanceSampleData.
 
 <!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running PHP 7.0.5. 
 
 
-<!--- 53342 -->* The Magento application no longer duplicates URL keys during the creation of a configurable product.
+####Cloud
+
+<!--- 52447 -->* Magento now applies the correct tax when you select a shipping method while using a guest login to create an order. Previously, Magento did not apply the expected tax to an order when you selected the shipping method.  
+
+
+<!--- 52448 -->* Magento now correctly displays the customer address on the storefront. Previously,  when you selected a default billing address when creating a new customer account, Magento would not display the  address.
+
+####Miscellaneous
+<!--- 50507 -->* You can now successfully reset the Product Attributes mass update Admin form.
+
+<!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a> 
+
+<!--- 50716 -->* The Admin Action Log archive is now formatted as expected.
+
+
+
+<!--- 53342 -->* Magento  no longer duplicates URL keys during the creation of a configurable product.
 
 
 <!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018" target="_blank">(GITHUB-3018)</a> 
 
-<!--- 46014 -->* The Magento application now displays error messages on the page where the error occurred. Previously, error messages invoked by actions on the login page were not displayed until you left that page.
+<!--- 46014 -->* Magento now displays error messages on the page where the error occurred. Previously, error messages invoked by actions on the login page were not displayed until you left that page.
 
 <!--- 53814 -->* Magento now sends email using a store's specific email address when an Admin sends email. Previously, Magento would send email from the default instance email address instead of the store address.
 
 <!--- 55087 -->* Solr search now returns search results as expected from both English and Spanish stores. Previously, Solr returned results for the English site but not for the Spanish site. 
-
 
 
 ###System requirements
