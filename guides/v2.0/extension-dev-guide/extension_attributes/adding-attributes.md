@@ -7,7 +7,7 @@ menu_title: Adding extension attributes to entity
 menu_order: 20
 version: 2.0
 github_link: extension-dev-guide/extension_attributes/adding-attributes.md
-redirect_from: /guides/v2.0/extension-dev-guide/attributes.html
+redirect_from: /guides/v2.0/extension-dev-guide/extension_attributes/adding-attributes.html
 ---
 
 ##{{page.menu_title}}
