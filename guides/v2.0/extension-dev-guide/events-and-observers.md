@@ -131,7 +131,7 @@ Below is an example of how to assign observers to watch certain events:
         <observer name="myObserverName" instance="MyCompany\MyModule\Observer\MyObserver" />
     </event>
     <event name="my_module_event_after">
-        <observer name="myObserverName" instance="MyCompany\MyModule\Observer\AnotherObserver" />
+        <observer name="AnotherObserver" instance="MyCompany\MyModule\Observer\AnotherObserver" />
     </event>
 </config>
 {% endhighlight %}
