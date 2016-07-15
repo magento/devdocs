@@ -114,7 +114,7 @@ is what guarantees we can do deterministic deployments. The read-only file syste
 </div>
 
 ### Phase 5: Deployment hooks {#cloud-deploy-over-phases-hook}
-A last step allows you to run a post-deploy script. You can use this for
+A last step allows you to run a deploy script. You can use this for
 example to run an anonymization script for deployment on development
 environments, clear caches, ping external CI tools, and so on.
 

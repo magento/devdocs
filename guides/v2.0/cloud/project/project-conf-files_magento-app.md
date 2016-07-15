@@ -215,6 +215,19 @@ Possible hooks are:
 -   `deploy`: We run deploy hooks after your application has been
     deployed and started. You can access other services at this point.
 
+To add additional hooks (such as CLI commands that are offered by a custom extension), add them under the `build` or
+`deploy` sections like so:
+
+```
+hooks:
+    build: |
+        php ./bin/magento magento-cloud:build
+        php ./bin/magento additional:build:hook
+    deploy: |
+        php ./bin/magento magento-cloud:deploy
+        php ./bin/magento additional:deploy:hook
+```
+
 The home directory, where your application is mounted, is `/app`, and that is the directory from which hooks will be
 run unless you `cd` somewhere else.
 
