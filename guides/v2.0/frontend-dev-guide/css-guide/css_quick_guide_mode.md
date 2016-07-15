@@ -17,7 +17,7 @@ The first step, creating and applying a theme is done before the compilation mod
 
 In the examples in this topic the <a href="{{page.baseurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend">simplest approach for customizing theme styles</a> is used: changes are done in the `_extend.less` of the new theme. 
 
-In our examples we will change the color and font of the primary buttons. The default view of the primary buttons can be illustrated by the **Create an Account** button view on the Admin login page:
+In our examples we will change the color and font of the primary buttons. The default view of the primary buttons can be illustrated by the **Create an Account** button view on the Customer login page:
 
 <img src="{{site.baseurl}}common/images/extend_less_screenshot0.png" alt="Admin login page with the default view of the primary buttons">
 
