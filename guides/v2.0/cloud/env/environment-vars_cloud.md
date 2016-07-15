@@ -41,7 +41,7 @@ Environment variables that are specific to Magento Enterprise Cloud Edition are 
 -   **MAGENTO_CLOUD_VARIABLES**: A base64-encoded JSON object which keys are
     variables names and values are variable values (a string).
 
-Since values can change over time, the best thing is to just introspect
+Since values can change over time, the best thing is to just inspect
 the variable at runtime and use it to configure your application.
 
 For example, we use the **MAGENTO_CLOUD_RELATIONSHIPS** variable to retrieve environment-related relationships as follows:

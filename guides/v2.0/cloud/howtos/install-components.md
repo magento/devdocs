@@ -95,10 +95,11 @@ If there are errors, see [Component deployment failure]({{page.baseurl}}cloud/tr
 To verify the component installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
 1.	[SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh) on which the component is installed.
-2.	Enter the following command:
+2.	Enter the following command to display a list of enabled modules:
 
-		vi app/etc/config.php
-3.	Verify the component is listed and is set to `1` (enabled).
+		`php bin/magento module:status`
+
+3.	Verify the component is listed.
 
 	The component name is in the format `<VendorName>_<ComponentName>`; it is not the same format as the Composer name.
 
