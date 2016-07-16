@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: A_Troubleshooting
+subgroup: 01_Troubleshooting
 title: Troubleshooting suggestions
 menu_title: Troubleshooting suggestions
 menu_node: parent

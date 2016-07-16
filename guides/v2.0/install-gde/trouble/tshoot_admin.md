@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Access issues
+subgroup: 01_access
 title: Error after logging in to the Magento Admin
 menu_title: Error after logging in to the Magento Admin
 menu_node: 

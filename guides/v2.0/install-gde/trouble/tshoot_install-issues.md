@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Z_Other issues
+subgroup: 20_other
 title: Known issues that affect installation
 menu_title: Known issues that affect installation
 menu_node: 
-menu_order: 30 
+menu_order: 500
 version: 2.0
 github_link: install-gde/trouble/tshoot_install-issues.md
 ---

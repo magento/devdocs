@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Access issues
+subgroup: 01_access
 title: Exceptions during installation
 menu_title: Exceptions during installation
 menu_node: 

@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install_trouble
-subgroup: PHP issues
+subgroup: 05_php
 title: During installation, PHP date warning
 menu_title: During installation, PHP date warning
 menu_node: 
-menu_order: 20
+menu_order: 360
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_php-date.md
 redirect_from:

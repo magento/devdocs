@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Errors during installation
+subgroup: 02_install
 title: Cannot install using nginx
 menu_title: Cannot install using nginx
 menu_node: 

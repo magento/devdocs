@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Errors during installation
+subgroup: 02_install
 title: Installation stops at about 70%
 menu_title: Installation stops at about 70%
 menu_node: 

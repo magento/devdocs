@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: install_trouble
-subgroup: Errors during installation
+subgroup: 02_install
 title: During installation, Reflection Exception error
 menu_title: During installation, Reflection Exception error
 menu_node: 
