@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: 02_install
+subgroup: 03_install
 title: During installation, exception SessionHandler::read()
 menu_title: During installation, exception SessionHandler::read()
 menu_node: 

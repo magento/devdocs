@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: 03_readiness
+subgroup: 05_readiness
 title: PHP version readiness check errors
 menu_title: PHP version readiness check errors
 menu_node: 

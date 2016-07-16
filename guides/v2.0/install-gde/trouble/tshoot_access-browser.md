@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: 01_access
+subgroup: 02_access
 title: Cannot access Magento software in a web browser
 menu_title: Cannot access Magento software in a web browser
 menu_node: 

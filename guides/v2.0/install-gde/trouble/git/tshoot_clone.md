@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: 07_github
+subgroup: 10_github
 title: Cannot clone the Magento GitHub repository
 menu_title: Cannot clone the Magento GitHub repository
 menu_node:

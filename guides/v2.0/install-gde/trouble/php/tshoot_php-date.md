@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: 05_php
+subgroup: 10_php
 title: During installation, PHP date warning
 menu_title: During installation, PHP date warning
 menu_node: 

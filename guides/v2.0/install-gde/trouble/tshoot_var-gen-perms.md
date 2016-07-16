@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: 01_access
+subgroup: 02_access
 title: Cannot write to the var/generation directory
 menu_title: Cannot write to the var/generation directory
 menu_node: 

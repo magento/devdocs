@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: 03_readiness
+subgroup: 05_readiness
 title: File system permissions readiness check issues
 menu_title: File system permissions readiness check issues
 menu_node: 

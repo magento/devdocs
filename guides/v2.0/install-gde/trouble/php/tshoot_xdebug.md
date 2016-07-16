@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: install_trouble
-subgroup: 02_install
+subgroup: 03_install
 title: During installation, xdebug maximum function nesting level error
 menu_title: During installation, xdebug maximum function nesting level error
 menu_node: 

@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: install_trouble
-subgroup: 02_install
+subgroup: 03_install
 title: Errors installing optional sample data
 menu_title: Errors installing optional sample data
 menu_node: 

@@ -1,25 +1,19 @@
 ---
 layout: default
-group: compman
-subgroup: 50_trouble
-title: Troubleshoot cron
-menu_title: Troubleshoot cron
+group: install_trouble
+subgroup: 05_readiness
+title: cron readiness check errors
+menu_title: cron readiness check errors
 menu_node: 
-menu_order: 7
+menu_order: 40
 version: 2.0
 github_link: comp-mgr/trouble/cman/cron.md
 ---
 
-<h2 id="trouble-cron">Troubleshoot cron</h2>
+## Troubleshoot cron readiness check errors
 Following are symptoms of cron issues:
 
-*	Your update or upgrade never runs; it stays in a `pending` state
 *	An error message about the PHP setting `$HTTP_RAW_POST_DATA` displays even though it's set properly
-*	The cron readiness check fails
-
-	Possible errors include non-writable paths and cron not set up. An example follows:
-
-	<img src="{{ site.baseurl }}common/images/upgr-tshoot-no-cron2.png">
 *	The PHP readiness check doesn't display the PHP version as the following figure shows.
 
 	<img src="{{ site.baseurl }}common/images/upgr-tshoot-no-cron.png">

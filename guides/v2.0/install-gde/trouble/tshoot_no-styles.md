@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: 01_access
+subgroup: 02_access
 title: After installing, images and stylesheets do not load; only text displays, no graphics
 menu_title: After installing, images and stylesheets do not load; only text displays, no graphics
 menu_node:

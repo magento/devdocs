@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: 05_php
+subgroup: 10_php
 title: PHP settings errors
 menu_title: PHP settings errors
 menu_node:
