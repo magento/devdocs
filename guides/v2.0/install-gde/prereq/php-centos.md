@@ -18,7 +18,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 *	<a href="#php-centos-help-beginner">Help if you're just starting out</a>
 *	<a href="#centos-verify-php">Verify PHP is installed</a>
 *	[CentOS repositories](#centos-php-repos)
-*	[PHP 7 on CentOS](#php-centos-7)
+*	[PHP 7 on CentOS 6 or 7](#php-centos-7)
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a>
 *	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS 6</a>
 *	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
@@ -32,8 +32,9 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 
 Magento requires:
 
-*	7.0.2&ndash;7.0.6 except for 7.0.5 (supported by Magento version 2.0.1 and later only)
-	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
+*	7.0.6 up to 7.1.0
+
+	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5.
 *	PHP 5.6.x
 *	PHP 5.5.x, where x is 22 or greater 
 
@@ -85,14 +86,14 @@ Before you continue, review their [Getting Started topic](https://ius.io/Getting
 
 Continue with one of the following sections:
 
-*	[PHP 7 on CentOS](#php-centos-7)
+*	[PHP 7 on CentOS 6 or 7](#php-centos-7)
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
 *	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
 
 ## PHP 7 on CentOS {#php-centos-7}
 There is more than one way to install PHP 7.0.2 or later; the following is a suggestion only. Consult a reference for additional options.
 
-To upgrade to PHP 7.0.2 or later:
+{% collapsible To install PHP 7 on CentOS 6 or 7: %}
 
 1.	*CentOS 6*. Enter the following commands in the order shown:
 
@@ -133,10 +134,12 @@ To upgrade to PHP 7.0.2 or later:
 	</div>
 3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
 
-<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</h2>
-There is more than one way to upgrade CentOS 6.5 to PHP 5.6; the following is a suggestion only. Consult a reference for additional options.
+{% endcollapsible %}
 
-To install PHP 5.6:
+<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</h2>
+There is more than one way to install PHP 5.6 on CentOS; the following is a suggestion only. Consult a reference for additional options.
+
+{% collapsible To install PHP 5.6 on CentOS 6 or 7: %}
 
 1.	*CentOS 6*. Enter the following commands in the order shown:
 
@@ -187,10 +190,12 @@ To install PHP 5.6:
 	</div>
 3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
 
-<h2 id="instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</h2>
-There is more than one way to upgrade CentOS 6.5 to PHP 5.5; the following is a suggestion only. Consult a reference for additional options.
+{% endcollapsible %}
 
-To upgrade to PHP 5.5:
+<h2 id="instgde-prereq-php55-install-centos">PHP 5.5 on CentOS 6</h2>
+There is more than one way to upgrade CentOS 6 to PHP 5.5; the following is a suggestion only. Consult a reference for additional options.
+
+{% collapsible To install PHP 5.5 on CentOS 6: %}
 
 1.	Enter the following commands in the order shown.
 
@@ -218,6 +223,8 @@ To upgrade to PHP 5.5:
 		with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2015, by Zend Technologies
 3.	Restart Apache: `service httpd restart`
 4.	Continue with the next section.
+
+{% endcollapsible %}
 
 <h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
 {% include install/php-config.html %}
