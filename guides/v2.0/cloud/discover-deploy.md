@@ -21,13 +21,10 @@ github_link: cloud/discover-deploy.md
 Deploying Magento means simply pushing the source code to your Git repository. The Git repository is part of your projects cluster so it is totally isolated from
 other clients.
 
-The built-in Git repository is at the same time "just a
-normal Git repository" and a very smart piece of software. When you push to it, it will parse the configuration files you committed to your 
-repository so it knows what it needs to deploy.
+The built-in Git repository is at the same time "just a normal Git repository" and a very smart piece of software. When you push to it, it will parse the configuration files you committed to your repository so it knows what it needs to deploy.
 
 If you are pushing directly to the Magento Enterprise Cloud Edition Git repository, you will see in your terminal
-what is happening in real-time. The same information is going to get streamed
-in real-time to the Web Interface.
+what is happening in real-time. The same information is going to get streamed in real-time to the Web Interface.
 
 ## GitHub and Bitbucket {#cloud-deploy-over-gh}
 If you are using external Bitbucket or GitHub repositories, the log
@@ -48,25 +45,22 @@ Deployment consists of the following phases:
 6.	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
 ### Phase 1: Configuration validation and code retrieval {#cloud-deploy-over-phases-conf}
-The remote server gets your code using git. The built-in Git server checks the following:
+The remote server gets your code using Git. The built-in Git server checks the following:
 
 *	Inspects what you sent it. 
 
-	If, for example, you have a
-syntax error in a configuration file, our Git server refuses the push.
+	If, for example, you have a syntax error in a configuration file, our Git server refuses the push.
 *	Looks for critical vulnerabilities.
 
 	Refusing to push because the built-in Git server detects a vulnerability is a good thing because it means you 
 can't break your production system that easily. 
 
 The built-in Git server diffs not only the code but also the
-infrastructure (by looking at changes to the .yaml configuration files like .magento.app.yaml).
+infrastructure (by looking at changes to the `.yaml` configuration files like `.magento.app.yaml`).
 
-Suppose you had a single MySQL database in your cluster. And
-now you want two of those, or maybe add an Elasticsearch
-instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
+Suppose you had a single MySQL database in your cluster and now you want two of those, or maybe you want to add an Elasticsearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
 
-This phase also runs composer install to retrieve dependencies.
+This phase also runs `composer install` to retrieve dependencies.
 
 ### Phase 2: Build {#cloud-deploy-over-phases-build}
 We build only what has changed since the last build. This is one of the things that
@@ -91,7 +85,7 @@ This means you cannot FTP to the server and add modules. Instead, you must add c
 The default Magento build hook is a CLI command called `magento-cloud:build`. It does the following:
 
 *	Enables all extensions
-*	Regenerates code and Dependency Injection config (`var/generation` and `var/di`) using `bin/magento setup:di:compile`.
+*	Regenerates code and the dependency injection configuration (that is, the Magento `var/generation` and `var/di` directories) using `bin/magento setup:di:compile`.
 
 ### Phase 3: Prepare the slug {#cloud-deploy-over-phases-slug}
 The result of the build phase is a read-only file system we refer to as a *slug*. In this phase, we create an archive and put it in permanent storage. The next time
@@ -114,22 +108,21 @@ is what guarantees we can do deterministic deployments. The read-only file syste
 </div>
 
 ### Phase 5: Deployment hooks {#cloud-deploy-over-phases-hook}
-A last step allows you to run a deploy script. You can use this for
-example to run an anonymization script for deployment on development
-environments, clear caches, ping external CI tools, and so on.
+A last step allows you to run a deployment script. You can use this for example to run an anonymization script for deployment on development environments, clear caches, ping external continuous integration tools, and so on.
 
-When this script runs, you have access to all the services in your environment (redis, database, etc).
+When this script runs, you have access to all the services in your environment (Redis, database, and so on).
 
-The default Magento deploy hook is a CLI command called `magento-cloud:deploy`. It does the following:
-*	If Magento is not installed, it installs Magento with `php bin/magento setup:install`, and updates configuration in
-	`app/etc/env.php` and in the database based on environment variables (such as, setting redis configuration and
-	website URLs).
-*	If Magento is installed, it upgrades it (this makes sure new and upgraded extensions are properly installed) with
-	`php bin/magento setup:upgrade`, updates configuration in `app/etc/env.php` and in the database based on environment
-	 variables, and clears the cache.
-*	Sets Application Mode (i.e., `developer`, `production`) based on `APPLICATION_MODE` environment variable.
-*	If Application Mode is `production`, then it generates static web content with
-	`php bin/magento setup:static-content:deploy`.
+The default Magento deployment hook is a CLI command that does the following:
+*	If Magento is not installed, it installs Magento with `bin/magento setup:install`, updates the deployment configuraton, `app/etc/env.php`, and the database for your specified environment (for example, Redis and website URLs).
+*	If Magento is installed, performs any necessary upgrades.
+
+	The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. 
+
+	Finally, the deployment script and clears the Magento cache.
+*	Sets the mode to either [`developer`]({{ page.baseurl config-guide/bootstrap/magento-modes.html#mode-developer}}) or [`production`]({{ page.baseurl config-guide/bootstrap/magento-modes.html#mode-production) based on the environment variable [`APPLICATION_MODE`]({{ page.baseurl }}cloud/env/environment-vars_magento.html).
+
+	If Application Mode is `production`, the script generates static web content using the command
+	`bin/magento setup:static-content:deploy`.
 
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}
 While the deployment is running, we freeze the incoming traffic at the entry point
