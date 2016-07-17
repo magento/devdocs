@@ -2,8 +2,8 @@
 layout: default
 group: install_trouble
 subgroup: 05_readiness
-title: File system permissions readiness check issues
-menu_title: File system permissions readiness check issues
+title: file permissions readiness check issues
+menu_title: file permissions readiness check issues
 menu_node: 
 menu_order: 35
 version: 2.0
