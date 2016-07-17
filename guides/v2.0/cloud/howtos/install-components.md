@@ -107,6 +107,5 @@ To verify the component installed properly, you can check its functionality in t
 
 #### Related topics
 *	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
-*	[Upgrade the Magento system software]({{page.baseurl}}cloud/howtos/upgrade-magento.html)
 *	[Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
 *	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)

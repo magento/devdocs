@@ -145,8 +145,10 @@ list, we accept a *whitelist*, which means that anything not matched
 will trigger a 404 error and will be passed through to your `passthru`
 URL.
 
-The default configuration allows only web, media, and robots.txt files to be accessed from the `/` location, and any file
-type to be accessed through the `/pub/static` and `/pub/media` locations.
+Our default configuration allows the following:
+
+*   From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
+*   From the `/pub/static` and `/pub/media` paths, any file can be accessed
 
 ## `disk` {#cloud-yaml-platform-disk}
 `disk` defines the size of the persistent disk size of the
@@ -155,6 +157,8 @@ application in MB.
 <div class="bs-callout bs-callout-info" id="info">
   <p>The minimal recommended disk size is 256MB. If you see the error <code>UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
 </div>
+
+{% endcollapsible %}
 
 ## `mounts` {#cloud-yaml-platform-mounts}
 `mounts` is an object whose keys are paths relative to the root of
@@ -216,9 +220,9 @@ Possible hooks are:
     deployed and started. You can access other services at this point.
 
 To add additional hooks (such as CLI commands that are offered by a custom extension), add them under the `build` or
-`deploy` sections like so:
+`deploy` sections as follows:
 
-```
+{% highlight yaml %}
 hooks:
     build: |
         php ./bin/magento magento-cloud:build
@@ -226,7 +230,7 @@ hooks:
     deploy: |
         php ./bin/magento magento-cloud:deploy
         php ./bin/magento additional:deploy:hook
-```
+{% endhighlight %}
 
 The home directory, where your application is mounted, is `/app`, and that is the directory from which hooks will be
 run unless you `cd` somewhere else.
@@ -237,9 +241,10 @@ of the hook.
 
 After a Git push, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream
 of `git push`, so you can observe them in the terminal or capture them (along with error messages) with
-`git push > build.log 2>&1`. Logs from the deploy hook are written to the `/tmp/log/deploy.log` file when logging to
-the environment using SSH. Please note that logs for all deploys that have happened on this environment are appended to
-this file, so check the timestamps on log entries to verify that you're seeing the logs that correspond to the deploy that
+`git push > build.log 2>&1`. 
+
+Logs from the deployment hook are written to the `/tmp/log/deploy.log` file if you access the environment using [SSH]({{ page.baseurl }}cloud/env/environments-start.html#env-start-ssh). Logs for all deployments that have happened on this environment are appended to
+this file, so check the timestamps on log entries to verify that you're seeing the logs that correspond to the deployment that
 you are interested in.
 
 For example:
@@ -355,7 +360,7 @@ schedule.
 
 `crons` supports the following:
 
-*	`spec`: The cron specification. The minimum is once per 5 minutes.
+*	`spec`: The cron specification. The minimum interval is once per 5 minutes.
 *	`cmd`: The command to execute.
 
 A sample Magento cron job follows:
