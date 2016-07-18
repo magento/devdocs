@@ -99,7 +99,7 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
+*	<a href="{{page.baseurl}}install-gde/install/continue.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
 
 <h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</h3>
@@ -140,7 +140,7 @@ To upgrade to Apache 2.4:
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
+*	<a href="{{page.baseurl}}install-gde/install/continue.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
 
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS 6 or 7</h2>
@@ -177,7 +177,7 @@ Installing and configuring Apache is basically a three-step process: install the
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
+*	<a href="{{page.baseurl}}install-gde/install/continue.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
 
 <h2 id="403-apache">Solving 403 (Forbidden) errors</h2>
@@ -233,5 +233,5 @@ For example:
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
+*	<a href="{{page.baseurl}}install-gde/install/continue.html">Determine your installation or upgrade path</a>
 
