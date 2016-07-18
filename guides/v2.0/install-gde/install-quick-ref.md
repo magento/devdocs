@@ -153,7 +153,7 @@ To run the Web Setup Wizard:
 
 	You can optionally expand **Console Log** to see installation messages while the installation is in progress.
 
-	If errors display, see TBD.
+	If errors display, see [Troubleshooting suggestions]({{ page.baseurl }}install-gde/trouble/tshoot.html).
 
 {% endcollapsible %}
 
