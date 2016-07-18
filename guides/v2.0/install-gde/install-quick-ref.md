@@ -35,8 +35,8 @@ If not, see the <a href="{{page.baseurl}}install-gde/bk-install-guide.html">Inst
 ## Installation part 1: Getting started
 1.	See the System Requirements:
 
-	*	[Version 2.0.x]({{ page.baseurl }}install-gde/system-requirements.html)
-	*	[Version 2.1.x]({{ page.baseurl }}install-gde/system-requirements-tech.html)
+	*	[Version 2.0.x]({{ site.gdeurl }}install-gde/system-requirements.html)
+	*	[Version 2.1.x]({{ site.gdeurl21 }}install-gde/system-requirements-tech.html)
 2.	If your system lacks any requirements, see the prerequisites documentation:
 
 	*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
@@ -44,7 +44,7 @@ If not, see the <a href="{{page.baseurl}}install-gde/bk-install-guide.html">Inst
 	*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP (CentOS)</a>
 	*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 3.	Just as importantly, set up the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> on the server.
-4.	Switch to the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
+4.	Switch to the Magento file system owner.
 
 ### Get the Magento software
 When all prerequisites have been met, get the Magento software using Composer as follows:

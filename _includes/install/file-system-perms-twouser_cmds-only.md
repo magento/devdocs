@@ -1,6 +1,6 @@
 <div markdown="1">
 
-To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2` and the web server group name is 'apache':
+To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2` and the web server group name is `apache`:
 
 	cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; && chown -R :apache . && chmod u+x bin/magento
 
