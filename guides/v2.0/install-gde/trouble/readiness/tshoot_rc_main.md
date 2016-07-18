@@ -11,5 +11,6 @@ github_link: install-gde/trouble/readiness/tshoot_rc_main.md
 ---
 
 ## Readiness check issues
-*	TBD
-*	TBD
+*	[PHP version readiness check issues]({{ page.baseurl }}install-gde/trouble/readiness/tshoot_rc_php.html)
+*	[File permissions readiness check issues]( {{ page.baseurl }}install-gde/trouble/readiness/tshoot_rc_perms.html)
+*	[cron readiness check issues]({{ page.baseurl }}comp-mgr/trouble/cman/cron.html)

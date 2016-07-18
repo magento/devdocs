@@ -2,8 +2,8 @@
 layout: default
 group: install_trouble
 subgroup: 05_readiness
-title: PHP version readiness check errors
-menu_title: PHP version readiness check errors
+title: PHP version readiness check issues
+menu_title: PHP version readiness check issues
 menu_node: 
 menu_order: 30
 version: 2.0

@@ -11,5 +11,10 @@ github_link: install-gde/trouble/php/tshoot_access-main.md
 ---
 
 ## Access issues
-*	TBD
-*	TBD
+*	[]({{ page.baseurl }})
+*	[]({{ page.baseurl }})
+*	[]({{ page.baseurl }})
+*	[]({{ page.baseurl }})
+*	[]({{ page.baseurl }})
+*	[]({{ page.baseurl }})
+*	[]({{ page.baseurl }})

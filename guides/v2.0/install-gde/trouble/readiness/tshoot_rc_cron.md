@@ -2,8 +2,8 @@
 layout: default
 group: install_trouble
 subgroup: 05_readiness
-title: cron readiness check errors
-menu_title: cron readiness check errors
+title: cron readiness check issues
+menu_title: cron readiness check issues
 menu_node: 
 menu_order: 40
 version: 2.0
