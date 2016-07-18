@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Z_Other issues
+subgroup: 20_other
 title: Other issues
 menu_title: Other issues
 menu_node: parent
@@ -10,10 +10,3 @@ version: 2.0
 github_link: install-gde/trouble/tshoot_other.md
 ---
 
-
-The following topics discuss other installation issues:
-
-*	<a href="{{page.baseurl}}install-gde/trouble/tshoot_composer-install.html">Cannot run <code>composer install</code></a>
-*	<a href="{{page.baseurl}}comp-mgr/trouble/cman/component-depend.html">Resolve component dependency conflicts</a>
-*	<a href="{{page.baseurl}}comp-mgr/trouble/cman/updater.html">Updater not installed</a>
-*	<a href="{{page.baseurl}}install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>
