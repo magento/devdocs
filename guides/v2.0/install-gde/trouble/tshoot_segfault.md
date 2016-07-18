@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Z_Other issues
+subgroup: 20_other
 title: Segmentation fault during rollback
 menu_title: Segmentation fault during rollback
 menu_node: 
-menu_order: 100
+menu_order: 510
 version: 2.0
 github_link: install-gde/trouble/tshoot_segfault.md
 ---

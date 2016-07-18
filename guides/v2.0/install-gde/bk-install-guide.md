@@ -20,8 +20,11 @@ We have some resources here to help get you started using the eCommerce platform
 
 It’s what we do.
 
+## Ready to go?
+If your Magento server is already set up and ready to go, check out our [Installation quick reference]({{ page.baseurl }}install-gde/install-quick-ref.html) and get started right away.
+
 <h2 id="install-how-install">Step 1: Find the installation that's right for you</h2>
-<a href="{{page.baseurl}}install-gde/continue.html">Choose how to install the Magento software</a>.
+<a href="{{page.baseurl}}install-gde/continue.html">Choose how to get the Magento software</a>.
 
 <h2 id="install-verify-prereq">Step 2: Verify your prerequisites</h2>
 Use the following table to verify you have the correct prerequisites to install the Magento software. If you used a shared hosting provider, you can skip this step.

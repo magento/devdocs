@@ -1,0 +1,24 @@
+<div markdown="1">
+
+The following table discusses where to get the Magento software. We provide the following downloads:
+
+*	Magento EE software only
+*	Magento EE software with sample data (designed to help you learn Magento faster)
+
+These packages are easy to get and install. You don't need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.
+
+Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
+
+To get the Magento EE archive:
+
+1.	Go to [http://magento.com](http://magento.com){:target="_blank"}.
+2.	In the top horizontal navigation bar, click **My Account**.
+3.	Log in with your Magento user name and password.
+4.	In the left navigation bar, click **Downloads**.
+5.	In the right pane, click **Magento Enterprise Edition 2.X** > **Full Release** or **Magento Enterprise Edition 2.X** > **Full Release + Sample Data** for the software.
+6.	Follow the instructions on your screen to complete the Magento EE download:
+
+	*	`Magento-EE-<version>.*` (without sample data)
+	*	`Magento-EE-<version>+Samples.*` (with sample data)
+
+7.	Transfer the installation package to your development system.
