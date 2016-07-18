@@ -46,7 +46,7 @@ Also, in your `<your_module_dir>/etc/module.xml` specify that the Magento_Theme 
     </module>
 {%endhighlight%}
 
-## Declare the custom Admin theme
+## Declare the custom Admin theme {#declare_di}
 
 The admin theme to be used in declared in the `<your_module_dir>/etc/di.xml` file. Add it, if the file does not yet exist in your module. Check with 
 
@@ -77,3 +77,13 @@ For details about performing command line tasks, view the following topics:
 - [Uninstall or reinstall Magento: Optionally keeping generated files]({{site.gdeurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-keep)
 
 The last step is open the Admin and view the new theme applied.
+
+## Uninstall a custom Admin theme
+
+To uninstall a custom Admin theme:
+
+1. Remove its declaration in [`di.xml`](#declare_di), or uninstall the complete module.
+2. If your theme is a composer package, you can uninstall it using the [theme uninstall CLI command]({{site.gdeurl}}install-gde/install/cli/install-cli-theme-uninstall.html). In other case, do it manually:
+  1. If your theme has child themes, update the parent node information in their `theme.xml` to remove references to the theme. 
+  2. Remove theme code from the file system.
+
