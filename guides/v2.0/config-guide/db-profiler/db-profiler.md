@@ -7,6 +7,8 @@ menu_title: Configure the database profiler
 menu_order: 1
 menu_node: parent
 version: 2.0
+contributor_name: Atish Goswam
+contributor_link: http://atishgoswami.com
 github_link: config-guide/db-profiler/db-profiler.md
 ---
 
