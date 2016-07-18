@@ -52,7 +52,7 @@ To list current environment variables:
 
 6.	To decode the value of a variable, enter
 
-		<variable name> | base64 --decode
+		echo $<variable name> | base64 --decode
 
 	For example,
 

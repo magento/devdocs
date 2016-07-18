@@ -17,6 +17,7 @@ github_link: install-gde/prereq/integrator_install.md
 #### Contents
 *	<a href="#int-aud">Intended audience</a>
 *	<a href="#integrator-first-over">First steps</a>
+*	[Commands](#int-comm)
 *	<a href="#instgde-overview-composer">Composer and Magento</a>
 *	<a href="#instgde-prereq-compose-install">Install Composer</a>
 *	<a href="#integrator-first-composer-ce">Get the Magento CE metapackage</a>
@@ -32,6 +33,15 @@ As an integrator, you want to manage each of your Magento core components and th
 
 To do so, you start by creating a Composer project from our metapackage. The metapackage installs each component so it can be centrally managed after installation.
 
+## Commands {#int-comm}
+If you already have everything set up, you can get the Magento CE and EE metapackages as follows:
+
+### CE
+	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition <installation directory name>
+
+### EE
+	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <installation directory name>
+	
 {% include install/composer-overview.html %}
 
 {% include install/composer-clone.md %}

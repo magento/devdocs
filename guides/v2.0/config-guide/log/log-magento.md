@@ -55,7 +55,7 @@ class SomeModel
          try {
              //do something
          } catch (\Exception $e) {
-             $this->logger->critical($e);
+             $this->logger->critical('Error message', ['exception' => $e]);
          }
      }
  }
