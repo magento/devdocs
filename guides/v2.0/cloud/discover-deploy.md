@@ -122,7 +122,7 @@ The default Magento deployment hook is a CLI command that does the following:
 
 	Finally, the deployment script and clears the Magento cache.
 
-*	Sets the mode to either [`developer`]({{ page.baseurl config-guide/bootstrap/magento-modes.html#mode-developer}}) or [`production`]({{ page.baseurl config-guide/bootstrap/magento-modes.html#mode-production) based on the environment variable [`APPLICATION_MODE`]({{ page.baseurl }}cloud/env/environment-vars_magento.html).
+*	Sets the mode to either [`developer`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer}}) or [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production) based on the environment variable [`APPLICATION_MODE`]({{ page.baseurl }}cloud/env/environment-vars_magento.html).
 
 	In `production` mode, the script generates static web content using the command
 	[`magento setup:static-content:deploy`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html).
