@@ -108,7 +108,7 @@ is what guarantees we can do deterministic deployments. The read-only file syste
 </div>
 
 ### Phase 5: Deployment hooks {#cloud-deploy-over-phases-hook}
-A last step allows you to run a deployment script. You can use this for example to run an anonymization script for deployment on development environments, clear caches, ping external continuous integration tools, and so on.
+The last step runs a deployment script. You can use this for example to anonymize data in development environments, clear caches, ping external continuous integration tools, and so on.
 
 When this script runs, you have access to all the services in your environment (Redis, database, and so on).
 
