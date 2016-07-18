@@ -145,75 +145,10 @@ list, we accept a *whitelist*, which means that anything not matched
 will trigger a 404 error and will be passed through to your `passthru`
 URL.
 
-To extend the whitelist, you should copy the following
-whitelist and and keep only the extensions you need:
+Our default configuration allows the following:
 
-	# The configuration of app when it is exposed to the web.
-	web:
-	    # The public directory of the app, relative to its root.
-	    document_root: "/web"
-	    # The front-controller script to send non-static requests to.
-	    passthru: "/app.php"
-	    whitelist:
-	      # CSS and Javascript.
-	      - \.css$
-	      - \.js$
-	      - \.hbs$
-
-	      # image/* types.
-	      - \.gif$
-	      - \.jpe?g$
-	      - \.png$
-	      - \.tiff?$
-	      - \.wbmp$
-	      - \.ico$
-	      - \.jng$
-	      - \.bmp$
-	      - \.svgz?$
-
-	      # audio/* types.
-	      - \.midi?$
-	      - \.mpe?ga$
-	      - \.mp2$
-	      - \.mp3$
-	      - \.m4a$
-    	  - \.ra$
-	      - \.weba$
-
-	      # video/* types.
-	      - \.3gpp?$
-	      - \.mp4$
-	      - \.mpe?g$
-	      - \.mpe$
-	      - \.ogv$
-    	  - \.mov$
-	      - \.webm$
-	      - \.flv$
-	      - \.mng$
-	      - \.asx$
-	      - \.asf$
-	      - \.wmv$
-	      - \.avi$
-
-	      # application/ogg.
-	      - \.ogx$
-
-      	# application/x-shockwave-flash.
-	      - \.swf$
-
-		# application/java-archive.
-	      - \.jar$
-
-	      # fonts types.
-	      - \.ttf$
-	      - \.eot$
-	      - \.woff$
-	      - \.otf$
-
-      	# robots.txt.
-	      - /robots\.txt$
-
-{% endcollapsible %}
+*   From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
+*   From the `/pub/static` and `/pub/media` paths, any file can be accessed
 
 ## `disk` {#cloud-yaml-platform-disk}
 `disk` defines the size of the persistent disk size of the
@@ -222,6 +157,8 @@ application in MB.
 <div class="bs-callout bs-callout-info" id="info">
   <p>The minimal recommended disk size is 256MB. If you see the error <code>UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
 </div>
+
+{% endcollapsible %}
 
 ## `mounts` {#cloud-yaml-platform-mounts}
 `mounts` is an object whose keys are paths relative to the root of
@@ -282,18 +219,35 @@ Possible hooks are:
 -   `deploy`: We run deploy hooks after your application has been
     deployed and started. You can access other services at this point.
 
-Note that the home directory is `/app` while your application is
-mounted in `/app/public` (by default, you can define this yourself in your
-`.magento.app.yaml` file) so you might want to change to the `/app/public` directory before
-running those.
+To add additional hooks (such as CLI commands that are offered by a custom extension), add them under the `build` or
+`deploy` sections as follows:
+
+{% highlight yaml %}
+hooks:
+    build: |
+        php ./bin/magento magento-cloud:build
+        php ./bin/magento additional:build:hook
+    deploy: |
+        php ./bin/magento magento-cloud:deploy
+        php ./bin/magento additional:deploy:hook
+{% endhighlight %}
+
+The home directory, where your application is mounted, is `/app`, and that is the directory from which hooks will be
+run unless you `cd` somewhere else.
 
 The hooks fail if the final command in them fails. To
 cause them to fail on the first failed command, add `set -e` to the beginning
 of the hook.
 
-After a Git push, you can see the results of the `deploy` hook in the
-`/var/log/deploy.log` file when logging to the environment using SSH. It
-contains the log of the execution of the deployment hook. For example:
+After a Git push, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream
+of `git push`, so you can observe them in the terminal or capture them (along with error messages) with
+`git push > build.log 2>&1`. 
+
+Logs from the deployment hook are written to the `/tmp/log/deploy.log` file if you access the environment using [SSH]({{ page.baseurl }}cloud/env/environments-start.html#env-start-ssh). Logs for all deployments that have happened on this environment are appended to
+this file, so check the timestamps on log entries to verify that you're seeing the logs that correspond to the deployment that
+you are interested in.
+
+For example:
 
 {% highlight xml %}
 [2016-04-05 17:54:38.585827] Launching hook 'php ./vendor/magento/magento-cloud-configuration/magento-deploy.php
@@ -406,14 +360,14 @@ schedule.
 
 `crons` supports the following:
 
-*	`spec`: The cron specification. Regardless of the setting, cron runs every 5 minutes.
+*	`spec`: The cron specification. The minimum interval is once per 5 minutes.
 *	`cmd`: The command to execute.
 
 A sample Magento cron job follows:
 
 	crons:
     cronrun:
-        spec: "*/1 * * * *"
+        spec: "*/5 * * * *"
         cmd: "php bin/magento cron:run"
         
 {% endcollapsible %}
