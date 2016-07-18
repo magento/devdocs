@@ -23,8 +23,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ####Installation and upgrade
 
-<!--- 45608 -->* You can now successfully uninstall Magento_CustomerBalanceSampleData.
-
 <!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running PHP 7.0.5. 
 
 
@@ -33,7 +31,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a> 
 
-<!--- 50716 -->* The Admin Action Log archive is now formatted as expected.
 
 
 <!--- 53342 -->* Magento  no longer duplicates URL keys during the creation of a configurable product.
@@ -45,12 +42,13 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 53814 -->* Magento now sends email using a store's specific email address when an Admin sends email. Previously, Magento would send email from the default instance email address instead of the store address.
 
+<!--- 52448 -->* Magento now correctly displays the customer address on the storefront. Previously,  when you selected a default billing address when creating a new customer account, Magento would not display the  address.
 
 
 
 
 ###System requirements
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see
+Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, 7.0.4, and MySQL 5.6. For more information, see
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 

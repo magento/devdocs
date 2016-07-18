@@ -31,9 +31,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ####Cloud
 
-<!--- 52447 -->* Magento now applies the correct tax when you select a shipping method while using a guest login to create an order. Previously, Magento did not apply the expected tax to an order when you selected the shipping method.  
-
-
 <!--- 52448 -->* Magento now correctly displays the customer address on the storefront. Previously,  when you selected a default billing address when creating a new customer account, Magento would not display the  address.
 
 ####Miscellaneous
