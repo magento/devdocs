@@ -2,8 +2,8 @@
 layout: default  
 group: fedg
 subgroup: A_Themes
-title: Create a theme
-menu_title: Create a theme
+title: Create a storefront theme
+menu_title: Create a storefront theme
 menu_order: 2
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-create.md

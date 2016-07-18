@@ -4,7 +4,7 @@ group: fedg
 subgroup: A_Themes
 title: Apply a custom Admin theme
 menu_title: Apply a custom Admin theme
-menu_order: 
+menu_order: 9
 github_link: frontend-dev-guide/themes/admin_theme.md
 ---
 <h2 id="favicon-intro">What's in this topic</h2>
