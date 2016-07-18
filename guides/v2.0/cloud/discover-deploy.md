@@ -14,7 +14,7 @@ github_link: cloud/discover-deploy.md
 *	[Deployment process](#cloud-deploy-over)
 *	[GitHub and Bitbucket](#cloud-deploy-over-gh)
 *	[Project configuration](#cloud-deploy-conf)
-*	[Five phases of deployment](#cloud-deploy-over-phase)
+*	[Five phases of deployment](#cloud-deploy-over-phases)
 *	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
 ## Deployment process {#cloud-deploy-over}
@@ -41,7 +41,7 @@ Deployment consists of the following phases:
 2.	[Phase 2: Build](#cloud-deploy-over-phases-build)
 3.	[Phase 3: Prepare slug](#cloud-deploy-over-phases-slug)
 4.	[Phase 4: Deploy slugs and cluster](#cloud-deploy-over-phases-slugclus) 
-5.	[Phase 5: Deploy hooks](#cloud-deploy-over-phases-hook)
+5.	[Phase 5: Deployment hooks](#cloud-deploy-over-phases-hook)
 6.	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
 ### Phase 1: Configuration validation and code retrieval {#cloud-deploy-over-phases-conf}
@@ -113,16 +113,19 @@ A last step allows you to run a deployment script. You can use this for example 
 When this script runs, you have access to all the services in your environment (Redis, database, and so on).
 
 The default Magento deployment hook is a CLI command that does the following:
+
 *	If Magento is not installed, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment (for example, Redis and website URLs).
+
 *	If Magento is installed, performs any necessary upgrades.
 
 	The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. 
 
 	Finally, the deployment script and clears the Magento cache.
+
 *	Sets the mode to either [`developer`]({{ page.baseurl config-guide/bootstrap/magento-modes.html#mode-developer}}) or [`production`]({{ page.baseurl config-guide/bootstrap/magento-modes.html#mode-production) based on the environment variable [`APPLICATION_MODE`]({{ page.baseurl }}cloud/env/environment-vars_magento.html).
 
-	If Application Mode is `production`, the script generates static web content using the command
-	`bin/magento setup:static-content:deploy`.
+	In `production` mode, the script generates static web content using the command
+	[`magento setup:static-content:deploy`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html).
 
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}
 While the deployment is running, we freeze the incoming traffic at the entry point
