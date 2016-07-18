@@ -220,7 +220,9 @@ If you click Preview in front of [campaign](#campaign) on the Scheduled Changes 
 
 #### Remove an update
 
-Any update can be removed from campaign. **Remove this update** button is available on the Schedule Update form of an entity. The options of how you can remove an update:
+Any update can be removed from campaign. **Remove this update** button is available on the Schedule Update form of an entity. Also you can use the **Delete update** button in an entity related grid (campaign edit page).
+
+The options of how you can remove an update:
 
 - Save as a new update
 - Move to Another Campaign

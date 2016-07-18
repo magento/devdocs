@@ -53,6 +53,7 @@ If you use Varnish, edit `default.vcl` and add a timeout limit value to the `bac
     .....................
 	      .first_byte_timeout = 600s;
 	}
+
 Restart Varnish.
 
 		service varnish restart

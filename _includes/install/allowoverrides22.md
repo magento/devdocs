@@ -36,11 +36,10 @@ Magento uses server rewrites and <code>.htaccess</code> to provide directory-lev
 	</div>
 
 4.	Save the file and exit the text editor.
-
-	*	*Ubuntu only*. Configure Apache to use the `mod_rewrite` module.
+5.	*Ubuntu only*. Configure Apache to use the `mod_rewrite` module.
 
 			cd /etc/apache2/mods-enabled
 			ln -s ../mods-available/rewrite.load
-5.	If you changed Apache settings, restart Apache.
+6.	If you changed Apache settings, restart Apache.
 
 		service apache2 restart
