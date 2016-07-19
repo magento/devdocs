@@ -19,7 +19,7 @@ Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 </tr>
 <tr> 
 	<td>Magento CE</td>
-	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
+	<td><p><a href="http://magento.com/download" target="_blank">www.magento.com/download</a></p>
 		<p>Choose either the software or the software and sample data:</p>
 		<ul><li><code>Magento-CE-&lt;version>.*</code> (without sample data)</li>
 			<li><code>Magento-CE-&lt;version>+Samples.*</code> (with sample data)</li>
@@ -28,7 +28,7 @@ Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 <tr> 
 	<td>Magento EE</td>
 	<td>Use the following steps:
-	<ol><li>Go to <a href="http://www.magento.com" target="_blank">www.magento.com</a></li>
+	<ol><li>Go to <a href="http://magento.com" target="_blank">www.magento.com</a></li>
 	<li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
 	<li>Log in with your Magento user name and password.</li>
 	<li>In the left navigation bar, click <strong>Downloads</strong>.</li>

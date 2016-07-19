@@ -90,9 +90,7 @@ To set ownership and permissions before you install the Magento software:
 		chown -R :<web server group> .
 		chmod u+x bin/magento
 
-	To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2` and the web server group name is 'apache':
-
-		cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; && chown -R :apache . && chmod u+x bin/magento
+{% include install/file-system-perms-twouser_cmds-only.md %}
 
 ### Next step
 After you have set file system ownership and permissions, continue with any of the following:

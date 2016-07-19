@@ -36,7 +36,7 @@ For example, to install Magento CE 2.0.8 in the `magento2` directory:
 ### Get Magento CE using a compressed archive {#get-zip}
 {:.no_toc}
 
-{% include install/get-software_zip.md %}
+{% include install/releasenotes/get-ce-software_zip.md %}
 
 ### Complete the installation
 {:.no_toc}

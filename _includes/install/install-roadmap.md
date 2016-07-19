@@ -12,7 +12,7 @@ Do you know what a "terminal" application is? Do you know what operating system 
 {% collapsible Topics include: %}
 
 *	<a href="{{page.baseurl}}install-gde/bk-install-guide.html">Installation overview</a>
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Choose how to install Magento</a>
+*	[Choose how to get the Magento software]({{ page.baseurl }}install-gde/continue.html)
 *	<a href="{{page.baseurl}}install-gde/system-requirements.html">System requirements</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/prereq-overview.html">Prerequisites</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">The Magento file system owner</a>

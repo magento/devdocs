@@ -45,7 +45,9 @@ For example, to install Magento CE 2.1.0 GA in the `magento2` directory:
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0 magento2
 
 ### Get a compressed archive {#install-archive}
-{% include install/get-software_zip.md %}
+{:.no_toc}
+
+{% include install/releasenotes/get-ce-software_zip.md %}
 
 ### Complete the installation {#install-finish}
 {:.no_toc}
