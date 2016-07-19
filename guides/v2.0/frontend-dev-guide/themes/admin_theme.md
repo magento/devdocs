@@ -19,22 +19,24 @@ This topic describes how to apply your custom theme for Magento Admin.
 ## Prerequisites 
 
 1. [Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way static files are cached by Magento. 
-2. Create a custom theme for the Admin panel. 
+2. [Create a custom theme for the Admin panel]({{site.gdeurl}}frontend-dev-guide/themes/admin_theme_create.html). 
 
 ## Apply a custom theme in admin: Overview
 
 
 To apply the Admin theme, you need to take the following steps:
 
-1. Add a new custom module. Or you can use a custom module added for other purposes.
-2. Declare the new admin theme in your module's `di.xml`
+1. [Add a new custom module](#add_module). Or you can use a custom module added for other purposes.
+2. [Specify the new Admin theme in your module's `di.xml`](#specify_di)
 3. Update the components by running the [`magento setup:upgrade`]({{site.gdeurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-keep) command.
 
-## Add a new module
+Each step is described further in details.
 
-You can omit this step, if you has already created a custom module for other purposes. Though you need to keep in mind, that theme declaring might be affected when the module is changed.
+## Add a new module {#add_module}
 
-If you choose to create a separate dedicated module, you can use the [sample minimal module from the Magento 2 sample modules repository](https://github.com/magento/magento2-samples/tree/master/sample-module-minimal). In this case you need to change the vendor and module naming, and specify it in the `<your_module_dir>/etc/module.xml` and `<your_module_dir>/registration.php` files instead the ones used in the sample.
+You can omit this step if you have already created a custom module for other purposes. Though you need to keep in mind, that theme declaring might be affected when the module is changed.
+
+If you choose to create a separate dedicated module, you can use the [sample minimal module from the Magento 2 sample modules repository](https://github.com/magento/magento2-samples/tree/master/sample-module-minimal). In this case, you need to change the vendor and module naming, and specify it in the `<your_module_dir>/etc/module.xml` and `<your_module_dir>/registration.php` files instead the ones used in the sample.
 
 Also, in your `<your_module_dir>/etc/module.xml` specify that the Magento_Theme module loads before your module by adding:
 
@@ -46,16 +48,16 @@ Also, in your `<your_module_dir>/etc/module.xml` specify that the Magento_Theme 
     </module>
 {%endhighlight%}
 
-## Declare the custom Admin theme {#declare_di}
+## Specify the custom Admin theme in `di.xml` {#specify_di}
 
-The admin theme to be used in declared in the `<your_module_dir>/etc/di.xml` file. Add it, if the file does not yet exist in your module. Check with 
+You need to specift the admin theme to be used in the `<your_module_dir>/etc/di.xml` file. Add it, if the file does not yet exist in your module. Check with 
 
 In `<your_module_dir>/etc/di.xml` add the following:
 
 {%highlight xml%}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
-    <!-- Admin theme declaration. Start -->
+    <!-- Admin theme. Start -->
     <type name="Magento\Theme\Model\View\Design">
         <arguments>
              <argument name="themes" xsi:type="array">
@@ -63,7 +65,7 @@ In `<your_module_dir>/etc/di.xml` add the following:
              </argument>
          </arguments> 
     </type>
-    <!-- Admin theme declaration. End -->
+    <!-- Admin theme. End -->
 </config>
 {%endhighlight%}
 
@@ -76,14 +78,14 @@ For details about performing command line tasks, view the following topics:
 - [Command line configuration]({{site.gdeurl}}config-guide/cli/config-cli.html)
 - [Uninstall or reinstall Magento: Optionally keeping generated files]({{site.gdeurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-keep)
 
-The last step is open the Admin and view the new theme applied.
+The last step is open the Admin in browser and view the new theme applied.
 
 ## Uninstall a custom Admin theme
 
 To uninstall a custom Admin theme:
 
 1. Remove its declaration in [`di.xml`](#declare_di), or uninstall the complete module.
-2. If your theme is a composer package, you can uninstall it using the [theme uninstall CLI command]({{site.gdeurl}}install-gde/install/cli/install-cli-theme-uninstall.html). In other case, do it manually:
-  1. If your theme has child themes, update the parent node information in their `theme.xml` to remove references to the theme. 
-  2. Remove theme code from the file system.
+2. If your theme is a composer package, you can uninstall it using the [theme uninstall CLI command]({{site.gdeurl}}install-gde/install/cli/install-cli-subcommands-db-upgr.html). In other case, do it manually:
+	1. If your theme has child themes, update the parent node information in their `theme.xml` to remove references to the theme. 
+	2. Remove theme code from the file system.
 
