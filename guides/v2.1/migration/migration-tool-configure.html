@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Configure migration</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/migration/migration-tool-configure.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Configure migration</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/migration/migration-tool-configure.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Migration Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/bk-migration-guide.html">Overview</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-overview-practices.html">Best practices</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-overview-supported.html">Versions supported</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-overview-how.html">How migration works</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-plan.html">Creating a migration plan</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-tool.html">Data migration tool</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-tool-preconditions.html">Preconditions</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-tool-install.html">Install the Data Migration Tool</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-tool-upgrade.html">Upgrade the Data Migration Tool</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/migration/migration-tool-configure.html">Configure migration</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-migrate.html">Migrate using data migration tool</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-migrate-settings.html">Migrate settings</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-migrate-data.html">Migrate data</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-migrate-delta.html">Migrate changes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-migrate-additional.html">Additional info</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-manually.html">Data that needs to be migrated manually</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-migrate-after.html">After Migration</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-tool-internal-spec.html">Data Migration Tool Internal Specification</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#migration-configure-over">Overview of data migration tool configuration</a></li>
+  <li><a href="#migration-configure">Configuring the migration</a></li>
+  <li><a href="#migration-config">Work with configuration and mapping files</a></li>
+</ul>
+
+<h2 id="migration-configure-over">Overview of data migration tool configuration</h2>
+<p>After you install the data migration tool, the following directory contains mapping and configuration files:</p>
+
+<ul>
+  <li>
+    <p>Magento CE:</p>
+
+    <ul>
+      <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ce-to-ce</code>: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE</li>
+    </ul>
+  </li>
+  <li>
+    <p>Magento EE:</p>
+
+    <ul>
+      <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ce-to-ee</code>: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE</li>
+      <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ee-to-ee</code>: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The preceding directories contain subdirectories for each supported version.</p>
+
+<h2 id="migration-configure">Configuring the migration</h2>
+<p>Before you migrate any data, you must create a <code>config.xml</code> configuration file from the provided sample.</p>
+
+<p>To create a configuration file:</p>
+
+<ol>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>
+    <p>Change to the following directory:</p>
+
+    <pre><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;migration edition&gt;/&lt;ce or version&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>Enter the following command to create a <code>config.xml</code> from the provided sample:</p>
+
+    <pre><code>cp config.xml.dist config.xml
+</code></pre>
+  </li>
+  <li>Open <code>config.xml</code> in a text editor.</li>
+  <li>Specify the following at minimum:</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+<span class="nt">&lt;destination&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/destination&gt;</span>
+<span class="nt">&lt;options&gt;</span>
+    <span class="nt">&lt;crypt_key</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/options&gt;</span></code></pre></div>
+
+<p>The <code>&lt;crypt_key&gt;</code> tag is mandatory to fill. It can be found in <code>local.xml</code> file which is located in the directory of Magento 1 instance at <code>app/etc/local.xml</code> in <code>&lt;key&gt;</code> tag</p>
+
+<p>Optional parameters:</p>
+
+<ul>
+  <li>Database user password: <code>password=&lt;password&gt;</code></li>
+  <li>Table prefix: <code>&lt;source_prefix&gt;</code>, <code>&lt;dest_prefix&gt;</code></li>
+</ul>
+
+<p>For example, if your database owner’s user name is <code>root</code> with password <code>pass</code> and you use the prefix <code>magento1</code> in your Magento 1 database, use the following in <code>config.xml</code>:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+<span class="nt">&lt;destination&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/destination&gt;</span>
+<span class="nt">&lt;options&gt;</span>
+    <span class="nt">&lt;source_prefix&gt;</span>magento1<span class="nt">&lt;/source_prefix&gt;</span>
+    <span class="nt">&lt;crypt_key&gt;</span>f3e25abe619dae2387df9fs594f01985<span class="nt">&lt;/crypt_key&gt;</span>
+<span class="nt">&lt;/options&gt;</span></code></pre></div>
+
+<p>When you’re finished, save your changes to <code>config.xml</code> and exit the text editor.</p>
+
+<h2 id="migration-config">Work with configuration and mapping files</h2>
+<p>The Data Migration Tool uses <em>mapping files</em> to enable you to perform custom database mapping between your Magento 1 and Magento 2 databases, including:</p>
+
+<ul>
+  <li>Changing table names</li>
+  <li>Changing field names</li>
+  <li>Ignoring tables or fields</li>
+  <li>Adapt transferring data of a field to Magento 2 format</li>
+</ul>
+
+<p>Mapping files for supported Magento versions are located in subdirectories of <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code></p>
+
+<p>To use the mapping files:</p>
+
+<ol>
+  <li>Rename or copy them to remove the <code>.dist</code> extension.</li>
+  <li>Edit them using the schema located in <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code>.</li>
+  <li>Then change config.xml in <code>&lt;options&gt;</code> node with the new name of the file.</li>
+</ol>
+
+<p>The <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code> and <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;ce version&gt;</code> directories contain the following configuration files:</p>
+
+<p>Even though you will be working with <code>map.xml.dist</code> file most of the time, the following table discusses each mapping and other files.</p>
+
+<table>
+<tbody>
+	<tr>
+		<th>Mapping file name</th>
+		<th>Description</th>
+	</tr>
+<tr>
+	<td>class-map.xml.dist</td>
+	<td>Dictionary of class mappings between Magento 1 and Magento 2</td>
+</tr>
+<tr>
+	<td>config.xml.dist</td>
+	<td>Main configuration file that specifies the Magento 1 and Magento 2 database configurations, step configuration, and links to mapping files</td>
+</tr>
+<tr>
+	<td><em>EE only</em>. customer-attr-document-groups.xml.dist</td>
+	<td>List of tables used in the custom customer attributes step.</td>
+</tr>
+<tr>
+	<td><em>EE only</em>. customer-attr-map.xml.dist</td>
+	<td>Map file that is used in Custom Customer Attributes Step.</td>
+</tr>
+<tr>
+	<td>deltalog.xml.dist</td>
+	<td>Contains the list of tables required for database routines setup.</td>
+</tr>
+<tr>
+	<td>eav-attribute-groups.xml.dist</td>
+	<td>Contains list of attributes that are used in Eav Step.</td>
+</tr>
+<tr>
+	<td>eav-document-groups.xml.dist</td>
+	<td>Contains list of tables that are used in Eav Step.</td>
+</tr>
+<tr>
+	<td>log-document-groups.xml.dist</td>
+	<td>Contains list of tables that are used in Log Step.</td>
+</tr>
+<tr>
+	<td>map-eav.xml.dist</td>
+	<td>Map file that is used in EAV Step.</td>
+</tr>
+<tr>
+	<td>map-log.xml.dist</td>
+	<td>Log mapping file.</td>
+</tr>
+<tr>
+	<td><em>EE only</em>. map-sales.xml.dist</td>
+	<td>Map file that is used in SalesOrder step.</td>
+</tr>
+<tr>
+	<td>map.xml.dist</td>
+	<td>Mapping file required for the map step.</td>
+</tr>
+<tr>
+	<td>settings.xml.dist</td>
+	<td>Setting migration configuration file that specifies rules required for migrating the <code>core_config_data</code> table.</td>
+</tr>
+
+<tr>
+	<td>customer-attribute-groups.xml</td>
+	<td>Contains list of attributes that are used in Customer Attributes Step.</td>
+</tr>
+
+<tr>
+	<td>customer-document-groups.xml</td>
+	<td>Contains list of tables that are used in Customer Attributes Step.</td>
+</tr>
+
+<tr>
+	<td>map-customer.xml</td>
+	<td>Map file that is used in Customer Attributes Step.</td>
+</tr>
+
+<tr>
+	<td>order-grids-document-groups.xml</td>
+	<td>Contains list of tables that are used in OrderGrids Step.</td>
+</tr>
+
+</tbody>
+</table>
+
+<p>You can refer to <a href="/guides/v2.1/migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification</a> for more details.</p>
+
+<h4 id="next-step">Next step</h4>
+<p><a href="/guides/v2.1/migration/migration-migrate-settings.html">Migrate using data migration tool</a></p>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

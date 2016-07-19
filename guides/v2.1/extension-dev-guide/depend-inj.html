@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Dependency injection</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/depend-inj.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Dependency injection</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/depend-inj.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>PHP Developer Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/intro/developers_roadmap.html">Developer roadmap</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/prepare/prepare.html">Prepare (development quick start)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/dev-modtypes.html">Component types and versioning</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/lifecycle.html">Extension lifecycle</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/build/build.html">Build</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">The composer.json file</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/required-configuration-files.html">Define your configuration files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/component-registration.html">Register your component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/XSD-XML-validation.html">URN schema validation</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/create_component.html">Name your component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/module-load-order.html">Component load order</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/enable-module.html">Enable or disable your component</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/package/package.html">Package</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/package/package_module.html">Package a component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/package/package_mktpl.html">Upload your component to the Magento Marketplace</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/validate/validate.html">Validate</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/validate/test-module.html">Test your component</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-add.html">Add CLI commands</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/staging.html">Staging (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="staging_modules"><a href="#">List of modules</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/BundleStaging.html">BundleStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CatalogImportExportStaging.html">CatalogImportExportStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CatalogInventoryStaging.html">CatalogInventoryStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CatalogRuleStaging.html">CatalogRuleStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CatalogStaging.html">CatalogStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CatalogUrlRewriteStaging.html">CatalogUrlRewriteStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CheckoutStaging.html">CheckoutStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CmsStaging.html">CmsStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/ConfigurableProductStaging.html">ConfigurableProductStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/DownloadableStaging.html">DownloadableStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/GiftCardStaging.html">GiftCardStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/GiftMessageStaging.html">GiftMessageStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/GiftWrappingStaging.html">GiftWrappingStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/GoogleOptimizerStaging.html">GoogleOptimizerStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/GroupedProductStaging.html">GroupedProductStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/LayeredNavigationStaging.html">LayeredNavigationStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/MsrpStaging.html">MsrpStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/PaymentStaging.html">PaymentStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/ProductVideoStaging.html">ProductVideoStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/ReviewStaging.html">ReviewStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/RmaStaging.html">RmaStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/SalesRuleStaging.html">SalesRuleStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/SearchStaging.html">SearchStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/Staging.html">Staging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/WeeeStaging.html">WeeeStaging</a>
+
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/module-development.html">Component development</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/api-concepts.html">Public interfaces & APIs</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/events-and-observers.html">Events and observers</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/factories.html">Instantiating objects with factories</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/proxies.html">Proxies</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/code-generation.html">Code generation</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/plugins.html">Plugins (Interceptors)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/routing.html">Routing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/indexing.html">Indexing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/message-queues.html">Message Queues (Enterprise Edition Only)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/howdoi/php/php_clear-dirs.html">Clear directories during development</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2 class="no_toc" id="dependency-injection">Dependency injection</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#dependency-injection-overview">Dependency injection overview</a>    <ul>
+      <li><a href="#dependency-inversion-principle">Dependency inversion principle</a></li>
+    </ul>
+  </li>
+  <li><a href="#object-manager-overview">Object manager overview</a></li>
+  <li><a href="#object-manager-configuration">Object Manager configuration</a>    <ul>
+      <li><a href="#class-metadata">Class metadata</a></li>
+      <li><a href="#compiling-dependencies">Compiling dependencies</a></li>
+      <li><a href="#type-configurations">Type configurations</a></li>
+      <li><a href="#abstraction-implementation-mappings">Abstraction-Implementation mappings</a></li>
+      <li><a href="#parameter-configuration-inheritance">Parameter configuration inheritance</a></li>
+      <li><a href="#object-lifestyle-management">Object Lifestyle management</a></li>
+    </ul>
+  </li>
+  <li><a href="#injection-types-used-in-magento">Injection types used in Magento</a>    <ul>
+      <li><a href="#construction-injection">Construction Injection</a></li>
+      <li><a href="#method-injection">Method Injection</a></li>
+    </ul>
+  </li>
+  <li><a href="#injectable-and-newable-objects">Injectable and Newable Objects</a></li>
+  <li><a href="#rules-for-using-dependency-injection">Rules for using dependency injection</a>    <ul>
+      <li><a href="#related-topics">Related topics</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="dependency-injection-overview">Dependency injection overview</h3>
+
+<p>Magento 2 uses <em>dependency injection</em> as an alternative to the Magento 1.x <code>Mage</code> class. <a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank">Dependency injection</a> is when an object’s dependencies are provided to it by its external environment instead of manually creating them internally.</p>
+
+<p>In simple terms, when object A requires object or value B to fulfill a function, then B is a dependency of A.</p>
+
+<p>A dependency creates a degree of coupling between objects in your code. A large amount of coupling limits code reuse and makes moving components to new projects difficult. Using dependency injection allows for a loose coupling in your code.</p>
+
+<h4 id="dependency-inversion-principle">Dependency inversion principle</h4>
+
+<p>When using dependency injection, we encourage you to follow the  <a href="http://www.oodesign.com/dependency-inversion-principle.html" target="_blank">dependency inversion principle</a>, a coding principle that stipulates you use abstractions to reduce code dependencies. This means that high level classes should use the interface of a low level class instead of working with it directly.</p>
+
+<h3 id="object-manager-overview">Object manager overview</h3>
+
+<p>Since dependency management is the responsibility of the environment, some kind of object manager must be present in complex systems to avoid boilerplate code. The object manager is present only when composing objects, and in larger applications (such as Magento), composing objects is performed early in the bootstrapping process and boilerplate code is moved to the configuration of the object manager.</p>
+
+<p>In Magento, the object manager is represented by the appropriately named <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManagerInterface.php" target="_blank">Object Manager</a>.</p>
+
+<h3 id="object-manager-configuration">Object Manager configuration</h3>
+
+<p>Magento’s object manager requires three types of configurations:</p>
+
+<ul>
+  <li><a href="#class-metadata">Class metadata (definitions)</a> - These configurations describe the class dependencies for an object.</li>
+  <li><a href="#type-configuration">Type configuration</a> - These configurations describe how objects are instantiated and their lifestyle.</li>
+  <li><a href="#abstraction-implementation-mappings">Abstraction-Implementation mappings</a> - These configurations map which concrete implementations to use when interfaces are requested.</li>
+</ul>
+
+<h4 id="class-metadata">Class metadata</h4>
+
+<p>Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object. If you write your code in a regular way using the dependency inversion principle, you do not have to worry about class definitions.</p>
+
+<h4 id="compiling-dependencies">Compiling dependencies</h4>
+<p>By default, class definitions are read using reflection, but reflection is slow in PHP. To make Magento’s ObjectManager as fast as possible, a definition compiler was introduced. One of the things the compiler does is generate all non-existing dependency injection service classes (proxies, factories and interceptors) declared in code or configuration.</p>
+
+<h4 id="type-configurations">Type configurations</h4>
+
+<p>Type configurations describe the parameters used to instantiate a class and lifestyle of class instances. Depending on it’s scope, the configuration for Magento’s object manager is stored in the following XML files:</p>
+
+<ul>
+  <li><code>app/etc/di.xml</code> - This is the global area application configuration.</li>
+  <li><code>&lt;moduleDir&gt;/etc/di.xml</code> - This is the module global area configuration.</li>
+  <li><code>&lt;moduleDir&gt;/etc/&lt;area&gt;/di.xml</code> - This is the module area-specific configuration.</li>
+</ul>
+
+<p>The <code>&lt;area&gt;</code> can be any Magento area such as <code>adminthtml</code> or <code>frontend</code>. Each scope overrides any previously existing configuration when it is loaded. Configurations for each scope are merged across modules, so there is no way to create a configuration that is only seen by a single module.</p>
+
+<p>All object manager configuration is located under the config node in the xml files:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+    <span class="c">&lt;!-- Object Manager configuration --&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>These configurations are validated by the XML Schema file called <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank"><code>config.xsd</code></a>.</p>
+
+<h4 class="no_toc" id="areas-and-application-entry-points">Areas and application entry points</h4>
+
+<p>Magento reads all the <code>di.xml</code> configuration files declared in the system and merges them all together by appending all nodes.</p>
+
+<p>The overall configuration is loaded in the following stages:</p>
+
+<ol>
+  <li>Initial (<code>app/etc/di.xml</code>)</li>
+  <li>Global (<code>&lt;moduleDir&gt;/etc/di.xml</code>)</li>
+  <li>Area-specific (<code>&lt;moduleDir&gt;/etc/&lt;area&gt;/di.xml</code>)</li>
+</ol>
+
+<p>During <a href="config-guide/bootstrap/magento-bootstrap.html">bootstrapping</a>, each application entry point loads the appropriate <code>di.xml</code> files for the <a href="architecture/modules/mod_and_areas.html">area</a> being requested.</p>
+
+<p><strong>Examples:</strong></p>
+
+<ul>
+  <li>
+    <p>In <code>index.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Http.php#L130-L132" target="_blank"><code>\Magento\Framework\App\Http</code></a> class loads the area based on the front-name provided in url.</p>
+  </li>
+  <li>
+    <p>In <code>static.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104" target="_blank"><code>\Magento\Framework\App\StaticResource</code></a> class also loads the area based on the url in the request.</p>
+  </li>
+  <li>
+    <p>In <code>cron.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Cron.php#L68-L70" target="_blank"><code>\Magento\Framework\App\Cron</code></a> class always loads the ‘crontab’ area.</p>
+  </li>
+</ul>
+
+<h4 class="no_toc" id="configuring-a-type">Configuring a type</h4>
+
+<p>Type can be configured in your <code>di.xml</code> configuration node in the following ways:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Core\Model\Session&quot;</span> <span class="nt">/&gt;</span> // Default instance of Magento\Core\Model\Session type. Exists by default, can be omited.
+    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;moduleConfig&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Core\Model\Config&quot;</span><span class="nt">&gt;</span> // Instance with global name &quot;moduleConfig&quot; of Magento\Core\Model\Config type
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>system<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/virtualType&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Core\Model\App&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>moduleConfig<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>The preceding example declares the following types:</p>
+
+<ul>
+  <li><code>Magento\Core\Model\Session</code>: The attribute name always specifies type configured by the node.</li>
+  <li><code>moduleConfig</code>: A virtual type that extends type <code>Magento\Core\Model\Config</code>.</li>
+  <li><code>Magento\Core\Model\App</code>: All instances of this type receive an instance of <code>moduleConfig</code> as a dependency.</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <b>Virtual Type</b><br />
+  <p>A virtual type allows you to change the arguments of a specific injectable dependency and effectively create a new type of a particular class. This allows you to use a customized type without affecting other classes that have a dependency on the original.</p>
+</div>
+
+<h4 class="no_toc" id="arguments">Arguments</h4>
+
+<p>Class constructor arguments are configured in your <code>di.xml</code> in the argument node. All these arguments will be injected into the class during creation. The name of the argument configured in the XML file must correspond to the name of the parameter in the constructor in the configured class.</p>
+
+<p>The following example creates instances of <code>Magento\Core\Model\Session</code> with the class constructor argument <code>$sessionName</code> set to a value of <code>adminhtml</code>:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Core\Model\Session&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;sessionName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>adminhtml<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p><strong>Argument Types:</strong></p>
+
+<p><code>object</code></p>
+
+<dl>
+  <dt>Node Formats:</dt>
+  <dd>
+    <p><code>&lt;argument xsi:type="object"&gt;{typeName}&lt;/argument&gt;</code></p>
+  </dd>
+  <dd><code>&lt;argument xsi:type="object" shared="{shared}"&gt;{typeName}&lt;/argument&gt;</code></dd>
+</dl>
+
+<p>Creates an instance of <code>typeName</code> type and passes it in as an argument. Any class name, interface name, or virtual type name can be passed as <code>typeName</code>.</p>
+
+<p>Setting the <code>shared</code> property defines the lifestyle of a created instance. See <a href="#object-lifestyle-management">Object Lifestyle Management</a>.</p>
+
+<hr />
+
+<p><code>string</code></p>
+
+<dl>
+  <dt>Node Formats:</dt>
+  <dd>
+    <p><code>&lt;argument xsi:type="string"&gt;{strValue}&lt;/argument&gt;</code></p>
+  </dd>
+  <dd><code>&lt;argument xsi:type="string" translate="true"&gt;{strValue}&lt;/argument&gt;</code></dd>
+</dl>
+
+<p>Any value for this argument node will be interpreted as a string.</p>
+
+<hr />
+
+<p><code>boolean</code></p>
+
+<dl>
+  <dt>Node Format:</dt>
+  <dd>
+    <p><code>&lt;argument xsi:type="boolean"&gt;{boolValue}&lt;/argument&gt;</code></p>
+  </dd>
+</dl>
+
+<p>Any value for this argument node will be converted into a boolean value. See table below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input Type</th>
+      <th>Data</th>
+      <th>Boolean Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Boolean</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>String</td>
+      <td>“true”*</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>String</td>
+      <td>“false”*</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>String</td>
+      <td>“1”</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>String</td>
+      <td>“0”</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>Integer</td>
+      <td>1</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>Integer</td>
+      <td>0</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small>*These String literals are case-sensitive</small></p>
+
+<hr />
+
+<p><code>number</code></p>
+
+<dl>
+  <dt>Node Format:</dt>
+  <dd>
+    <p><code>&lt;argument xsi:type="number"&gt;{numericValue}&lt;/argument&gt;</code></p>
+  </dd>
+</dl>
+
+<p>Acceptable values for this type include: integers, floats, or <a href="http://us3.php.net/is_numeric" taget="_blank">numeric strings</a>.</p>
+
+<hr />
+
+<p><code>init_parameter</code></p>
+
+<dl>
+  <dt>Node Format:</dt>
+  <dd>
+    <p><code>&lt;argument xsi:type="init_parameter"&gt;{Constant::NAME}&lt;/argument&gt;</code></p>
+  </dd>
+</dl>
+
+<p>The global application initialization argument represented by <code>Constant::NAME</code> is looked up and passed as argument.</p>
+
+<hr />
+
+<p><code>const</code></p>
+
+<dl>
+  <dt>Node Format:</dt>
+  <dd>
+    <p><code>&lt;argument xsi:type="const"&gt;{Constant::NAME}&lt;/argument&gt;</code></p>
+  </dd>
+</dl>
+
+<p>The <code>Constant::NAME</code> constant value will be looked up and passed as the argument.</p>
+
+<hr />
+
+<p><code>null</code></p>
+
+<dl>
+  <dt>Node Format:</dt>
+  <dd>
+    <p><code>&lt;argument xsi:type="null"/&gt;</code></p>
+  </dd>
+</dl>
+
+<p>A null value will be passed in as an argument.</p>
+
+<hr />
+
+<p><code>array</code></p>
+
+<dl>
+  <dt>Node Format:</dt>
+  <dd>
+    <pre><code>&lt;argument xsi:type="array"&gt;
+  &lt;item name="someKey" xsi:type="&lt;type&gt;"&gt;someVal&lt;/item&gt;
+&lt;/argument&gt;
+</code></pre>
+  </dd>
+</dl>
+
+<p>An array with elements corresponding to the items will be passed as the argument. The array can contain an infinite number of items. Each array item can be of any object type including an array itself.</p>
+
+<p>When the configuration files for a given scope are merged, array arguments with the same name are merged into a new array. If a new configuration is loaded at a later time, either by a more specific scope or through code, then any array definitions in the new configuration will completely replace the previously loaded config instead of being merged.</p>
+
+<hr />
+
+<p><strong>Argument Examples:</strong></p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Example\Type&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="c">&lt;!-- Pass simple string --&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;stringParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>someStringValue<span class="nt">&lt;/argument&gt;</span>
+            <span class="c">&lt;!-- Pass instance of Magento\Some\Type --&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;instanceParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Some\Type<span class="nt">&lt;/argument&gt;</span>
+            <span class="c">&lt;!-- Pass true --&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;boolParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/argument&gt;</span>
+            <span class="c">&lt;!-- Pass 1 --&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;intParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/argument&gt;</span>
+            <span class="c">&lt;!-- Pass application init argument, named by constant value --&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;globalInitParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;init_parameter&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/argument&gt;</span>
+            <span class="c">&lt;!-- Pass constant value --&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;constantParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;const&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/argument&gt;</span>
+            <span class="c">&lt;!-- Pass null value --&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;optionalParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;null&quot;</span><span class="nt">/&gt;</span>
+            <span class="c">&lt;!-- Pass array --&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;arrayParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="c">&lt;!-- First element is value of constant --&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;firstElem&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;const&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/item&gt;</span>
+                <span class="c">&lt;!-- Second element is null --&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;secondElem&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;null&quot;</span><span class="nt">/&gt;</span>
+                <span class="c">&lt;!-- Third element is a subarray --&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;thirdElem&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="c">&lt;!-- Subarray contains scalar value --&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;scalarValue&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ScalarValue<span class="nt">&lt;/item&gt;</span>
+                    <span class="c">&lt;!-- and application init argument --&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;globalArgument &quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;init_parameter&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<div class="bs-callout bs-callout-info" id="merging-info">
+  <b>Merging and Arguments</b><br />
+  <p>During merging, arguments with the same name are completely replaced if their type is different. If the argument type is the same, then they are overridden.</p>
+</div>
+
+<h4 id="abstraction-implementation-mappings">Abstraction-Implementation mappings</h4>
+
+<p>The abstraction-implementation mappings are used by Magento’s object manager when the constructor signature of a class requests an object by its interface. The object manager uses these mappings to determine what the default implementation is for that class for a particular scope.</p>
+
+<p>The default implementation is specified using the <code>preference</code> node:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!--  File: app/etc/di.xml --&gt;</span>
+<span class="nt">&lt;config&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Core\Model\UrlInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Core\Model\Url&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>Since this mapping is in <code>app/etc/di/config.xml</code>, wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the global scope, the <code>Magento\Core\Model\Url</code> implementation class will be used.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- File: app/code/core/Magento/Backend/etc/adminhtml/di.xml --&gt;</span>
+<span class="nt">&lt;config&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Core\Model\UrlInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Backend\Model\Url&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>Since this mapping is in <code>app/code/core/Magento/Backend/etc/adminhtml/di.xml</code>, wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the admin area, the <code>Magento\Backend\Model\Url</code> implementation class will be used.</p>
+
+<h4 id="parameter-configuration-inheritance">Parameter configuration inheritance</h4>
+
+<p>Parameters configured for a class type are automatically configured for all of its descendant classes. Any descendant can override the parameters configured for its supertype; that is, the parent class or interface:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\View\Element\Context&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;urlBuilder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Core\Model\Url<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Backend\Block\Context&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;urlBuilder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Backend\Model\Url<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>In the preceding example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/Block/Context.php" target="_blank"><code>Magento\Backend\Block\Context</code></a> is a descendant of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Context.php" target="_blank"><code>Magento\Framework\View\Element\Context</code></a>.</p>
+
+<p>The first entry configures all instances of <code>Magento\Framework\View\Element\Context</code> as well as its children to pass in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Url.php" target="_blank"><code>Magento\Core\Model\Url</code></a> as <code>$urlBuilder</code> in their constructors.</p>
+
+<p>The second entry overrides this and configures all instances of <code>Magento\Backend\Block\Context</code> to use <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/Model/Url.php" target="_blank"><code>Magento\Backend\Model\Url</code></a> as the <code>$urlBuilder</code> instead.</p>
+
+<h4 id="object-lifestyle-management">Object Lifestyle management</h4>
+
+<p>The main responsibility of the object manager is object creation and wiring, but it can also determine how many instances of that object can exist; e.g. its <strong>lifestyle</strong>.</p>
+
+<p>Magento’s object manager supports the following lifestyles:</p>
+
+<ul>
+  <li><strong>singleton</strong>(default) - Only one instance of this class exists and it is created at the first request. Subsequent use of the class will use that one instance. The instance is released when the container with which it is registered is disposed.</li>
+  <li><strong>transient</strong> - A new instance of the class is created every time the class is requested.</li>
+</ul>
+
+<p>The <code>shared</code> property determines the lifestyle of both <code>argument</code> and <code>type</code> configurations.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Filesystem&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;adapter&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>Magento\Filesystem\Adapter\Local<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>In this example <code>Magento\Filesystem</code> is configured as non-shared, so all clients will retrieve separate instances of <code>Magento\Filesystem</code>. Also, every instance of <code>Magento\Filesystem</code> will get separate instance of <code>$adapter</code>, because it too is non-shared.</p>
+
+<h3 id="injection-types-used-in-magento">Injection types used in Magento</h3>
+
+<p>This section explains the two dependency injection types used in Magento using the following example:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Backend\Model\Menu</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Builder</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory</span>
+<span class="sd">     * @param \Magento\Backend\Model\Menu $menu</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">Magento\Backend\Model\Menu\Item\Factory</span> <span class="nv">$menuItemFactory</span><span class="p">,</span>  <span class="c1">// Service dependency</span>
+        <span class="nx">Magento\Backend\Model\Menu</span> <span class="nv">$menu</span>  <span class="c1">// Service dependency</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_itemFactory</span> <span class="o">=</span> <span class="nv">$menuItemFactory</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_menu</span> <span class="o">=</span> <span class="nv">$menu</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">processCommand</span><span class="p">(</span><span class="nx">\Magento\Backend\Model\Menu\Builder\CommandAbstract</span> <span class="nv">$command</span><span class="p">)</span> <span class="c1">// API param</span>
+    <span class="p">{</span>
+        <span class="c1">// processCommand Code</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h4 id="construction-injection">Construction Injection</h4>
+
+<p>Magento uses constructor injection to provide dependencies through an object’s class constructor. In the example above, <code>$menuItemFactory</code> and <code>$menu</code> are the dependencies provided to the class through its constructor.</p>
+
+<p>Constructor dependency injection must be used for all optional and required dependencies of an object.</p>
+
+<div class="bs-callout bs-callout-info" id="proxy-info">
+  <b>Optional dependencies</b><br />
+  <p>Optional dependencies are objects that are expensive to instantiate that may or may not be used by the dependent class. In these cases, a <a href="/guides/v2.1/extension-dev-guide/proxies.html">proxy</a> is used.</p>
+</div>
+
+<h4 id="method-injection">Method Injection</h4>
+
+<p>When an object specifies a dependency in one of its methods instead of its constructors, it is called method injection. In the example, above <code>$command</code> is the dependency passed into the class through the <code>processCommand</code> method.</p>
+
+<p>Method injection is usually used when an object needs to act on a dependency.</p>
+
+<h3 id="injectable-and-newable-objects">Injectable and Newable Objects</h3>
+
+<p><strong>Injectable:</strong> Objects that can be obtained through dependency injection. Any object that can be instantiated by the object manager, such as singletons and factories, fall into this category.</p>
+
+<p><strong>Newable:</strong> Objects that can only be obtained by creating a new class instance every time. Transient objects, such as those that require external input from the user or database, fall into this category. Attempts to obtain these objects using dependency injections will return an undefined object.</p>
+
+<p>For example, a model object such as <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/Model/Product.php" target="_blank"><code>app/code/Magento/User/Model/User.php</code></a> cannot be used for dependency injection. You need to provide a product id or explicitly request a new, empty instance of that object, and since this cannot be done in the constructor signature, the object cannot be injected.</p>
+
+<h3 id="rules-for-using-dependency-injection">Rules for using dependency injection</h3>
+
+<ul>
+  <li>Injectable objects may request dependent objects in their constructors but only if those objects are also injectable.</li>
+  <li>If an injectable object needs to produce newable objects, it must ask for a <a href="/guides/v2.1/extension-dev-guide/factories.html">factory</a> in its constructor since factories are injectable.</li>
+  <li>If an injectable object needs to perform some actions on newable object, it must receive that object as a function method argument.</li>
+  <li>You can create newable objects in services with object <a href="/guides/v2.1/extension-dev-guide/factories.html">factories</a> or you can pass them in as method parameters.</li>
+  <li>Newable objects should not hold a field reference to an injectable object nor should they request one in their constructor. This is a <a href="http://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank">Law of Demeter</a> violation.</li>
+</ul>
+
+<h4 id="related-topics">Related topics</h4>
+
+<ul>
+  <li><a href="/guides/v2.1/extension-dev-guide/plugins.html">Plugins</a></li>
+  <li><a href="/guides/v2.1/extension-dev-guide/routing.html">Routing</a></li>
+  <li><a href="/guides/v2.1/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
+  <li><a href="/guides/v2.1/architecture/archi_perspectives/components/modules/mod_depend.html">Module Dependencies</a></li>
+  <li><a href="/guides/v2.1/extension-dev-guide/api-concepts.html">Programming concepts</a></li>
+</ul>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

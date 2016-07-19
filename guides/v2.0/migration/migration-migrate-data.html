@@ -39,11 +39,29 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/guides/v2.0/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/guides/v2.0/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
 		</div><!-- #global-nav -->
 	</nav>
 
@@ -60,8 +78,9 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
             </ul>
          </li>
          <li class="first">
@@ -77,18 +96,15 @@
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a>
-   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-<li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
-               <div class="divider"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
                <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
@@ -149,12 +165,13 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Migrate data</h1>
-			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/migration/migration-migrate-data.md" target="_blank">Edit this page on GitHub</a>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/migration/migration-migrate-data.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
 </section>
+
 
 <div class="container">
 
@@ -311,10 +328,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -338,10 +355,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -397,10 +414,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -456,10 +473,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -483,10 +500,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -510,10 +527,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -537,10 +554,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -627,8 +644,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-
-      <p align="right"><i>Updated: 20 November 2015 (PST)</i></p>
+			<p align="right"><i>Updated: 7 July 2016 (PDT)</i></p>
 		<h2 id="migrate-command-data">Migrating data</h2>
 <p>When you migrate data, the Data Migration Tool verifies that tables and fields are consistent between  Magento 1 and Magento 2. If not, an error displays that lists the problematic tables and fields. These entities, for example, can belong to some extensions from Magento 1 that do not exist in the Magento 2 database.</p>
 
@@ -646,7 +662,7 @@
 
   <ol>
     <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
@@ -726,7 +742,9 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
         <div id="magento-com">
             <div class="container">
                 <div id="f-col-1">
-                    <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento Commerce" /></a>
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
                     <ul class="nav">
                         <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
                         <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
@@ -831,7 +849,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/js/app.js"></script>
 
 
 <!--Google Custom Search-->

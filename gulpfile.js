@@ -49,7 +49,7 @@ var gulp = require('gulp'),
    	fonts: 'font/**/*',
    },
    destHtml = '_site/',
-   destJS = '_site/js/',
+   destJS = 'js/',
    destImg = '_site/i/',
    destCSS = 'css/',
    destFonts = '_site/font/',
@@ -88,7 +88,7 @@ gulp.task('move', function() {
 });
 
 //  Scripts
-gulp.task('scripts', ['clean'], function () {
+gulp.task('scripts', function () {
    // Minify and copy all JavaScript (except vendor scripts)
    // with sourcemaps all the way down
    gulp.src('js/vendor/**/*')
@@ -159,7 +159,7 @@ gulp.task('browser-sync', function () {
 gulp.task('watch', function () {
    browsersync(bsconfig);
    gulp.watch(paths.html, ['jekyll']);
-   gulp.watch(paths.scripts, ['scripts']);
+//   gulp.watch(paths.scripts, ['scripts']);
    gulp.watch(paths.images, ['images']);
    gulp.watch(paths.styles, ['styles']);
 });
@@ -169,7 +169,7 @@ gulp.task('watch', function () {
 gulp.task('default',
    [
 	   'move',
-      'scripts',
+   // 'scripts',
       'images',
       'styles',
       'watch'

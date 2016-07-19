@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Service building basics</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/service-contracts/add-later/service-build.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Service building basics</h1>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<p>A <em>service interface</em> is basically a contract between code that uses the service and an integration that implements the service. The service is PHP code—typically one or more interfaces, classes, and methods.</p>
+
+<p>The code that uses a service should depend on the interface rather than on the service implementation. Doing so enables you to use a different implementation if needed.</p>
+
+<h2 id="terms-used">Terms Used</h2>
+
+<p>Terminology frequently used in this guide:</p>
+
+<ul>
+  <li>Module: The PHP code that defines your application’s business logic. The module code must be in subdirectories of <code>&lt;your Magento install dir&gt;/app/code/&lt;ModuleName&gt;</code>.</li>
+  <li>Integration: Code that enables a third-party application to get authorized access to Magento resources using either SOAP or REST calls. The merchant who activates the integration (which might be a module or extension) must agree to allow the integration to access those resources.</li>
+  <li>Extension: A tested module that is marketed to other merchants on Magento Marketplace. </li>
+</ul>
+
+<p>One extension can contain multiple modules.</p>
+
+<p>One module can expose zero or more services. (In other words, <em>module</em> is a more generic term than <em>service</em>. A module doesn’t have to expose a service at all.)</p>
+
+<h2 id="about-the-service-interface">About the Service Interface</h2>
+
+<p>Some important characteristics of a service interface:</p>
+
+<ul>
+  <li>
+    <p>The methods must be annotated to describe the types of input that are used to generate contracts for the Web API framework.</p>
+
+    <p>Input arguments can be scalar types, arrays or objects. If objects are used, they should be implemented as <a href="#about-service-data-objects">service data objects</a>.</p>
+  </li>
+  <li>
+    <p>The methods must be annotated to describe the types of the output that are used to generate contracts for Web API framework.</p>
+
+    <p>Output arguments must be scalar types, arrays or service data objects. Objects should be implemented as <a href="#about-service-data-objects">service data objects</a>.</p>
+  </li>
+  <li>
+    <p>Every interface should be versioned and numbered like V1, V2, and so on.</p>
+  </li>
+  <li>
+    <p>The namespace should use the version number as a suffix. (For example, <code>Magento\Customer\Service\V1</code>).</p>
+  </li>
+  <li>
+    <p>You <em>cannot</em> use aliases in services interfaces or in service data objects because doing so causes WSDL generation to fail.</p>
+  </li>
+</ul>
+
+<p>To see an example of a Customer service interface, see <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php</a>.</p>
+
+<h2 id="exposing-a-service-as-a-rest-or-soap-api">Exposing a Service as a REST or SOAP API</h2>
+
+<p>To expose a service as a REST or SOAP API, you must:</p>
+
+<ol>
+  <li>
+    <p>Create a <code>&lt;your Magento install dir&gt;/app/code/&lt;ModuleName&gt;/etc/webapi.xml</code> that defines a route URL, HTTP methods supported, and the Magento resources the method must access.</p>
+
+    <p>Sample:</p>
+
+    <p><code>php
+&lt;route url="/V1/customerAccounts/isEmailAvailable" method="PUT"&gt;
+    &lt;service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="isEmailAvailable"/&gt;
+    &lt;resources&gt;
+        &lt;resource ref="Magento_Customer::manage"/&gt;
+    &lt;/resources&gt;
+&lt;/route&gt;
+</code></p>
+
+    <p>(<a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Source</a>)</p>
+  </li>
+  <li>
+    <p>Create a service data object that defines any data required to pass between the service and its clients. See the next section.</p>
+  </li>
+</ol>
+
+<h2 id="about-service-data-objects">About Service Data Objects</h2>
+
+<p>A <em>service data object</em> carries data to and from service methods. Service data objects differ from <em>business objects</em> or <em>data access objects</em> in that a service data object stores and retrieves only its own data.</p>
+
+<p>Service data objects define the interface that can be used by PHP clients to understand what data is available from the service. The service data object carries data from the service’s response to PHP clients and, in the same way, PHP clients use service data objects to pass data to the service or to exchange data with other clients.</p>
+
+<p>Service data objects are:</p>
+
+<ul>
+  <li>
+    <p>Simple objects that should not contain any business logic (in other words, service data objects contain no code that requires testing).</p>
+  </li>
+  <li>
+    <p>Immutable; they have only getters and no business logic.</p>
+  </li>
+  <li>
+    <p>Constructed using a data object builder. Data is set on the service data objects by the service or by client code.</p>
+
+    <p>If data is set in client code, service data objects can be returned to the client to use the data or the data can be passed to the service to consume the data.</p>
+  </li>
+  <li>
+    <p>Located in a namespace that reflects the version of service data (same as the service itself). For example, <code>Magento\Customer\Service\V1\Data</code></p>
+  </li>
+</ul>
+
+<h3 id="implementing-a-service-data-object">Implementing a Service Data Object</h3>
+
+<p>General rules for implementing a service data object:</p>
+
+<ul>
+  <li>The service data object class must reside in the <code>[module namespace]\Service\Data\V[xx]</code> namespace.</li>
+  <li>A service data object must have getters that clearly describe all data that the data object can contain.</li>
+  <li>Annotations in the code must clearly describe the parameters and outputs of all methods.</li>
+  <li>Getters should rely on the <code>_get</code> method provided for convenience in the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Service/Data/AbstractObject.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObject</code></a> class.</li>
+  <li>A service data object should extend <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObjectBuilder</code></a> or any of its children.</li>
+  <li>Setters should rely on the <code>_set</code> method provided for convenience in the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObjectBuilder</code></a> class.</li>
+</ul>
+
+<h3 id="sample-service-data-object">Sample Service Data Object</h3>
+
+<p>Here is a sample service data object:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/6193ba94d58b7ee3b7c7.js"></script>
+
+<h3 id="sample-data-object-builder">Sample Data Object Builder</h3>
+
+<p>Here is a sample data object builder on which the preceding service data object is constructed:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/f7ccaf017ea745b895ec.js"></script>
+
+<p>Note the following:</p>
+
+<ul>
+  <li>
+    <p>A data object builder should be used to construct the service data object.</p>
+  </li>
+  <li>
+    <p>Setters should rely on the method <code>_set</code> provided for convenience in the <code>\Magento\Framework\Service\Data\AbstractObjectBuilder</code> class.</p>
+  </li>
+</ul>
+
+<h4 id="related-topics">Related topics:</h4>
+
+<ul>
+  <li><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+</ul>
+
+<!--
+*	<a href="/guides/v2.1/extension-dev-guide/service-contracts/add-later/service-how-to-use.html">How a Client Uses a Service</a>
+
+*	<a href="/guides/v2.1/extension-dev-guide/service-contracts/add-later/svcs-props.html">Service design</a>
+
+*	<a href="/guides/v2.1/extension-dev-guide/service-contracts/add-later/what-is-webapi.html">What Is the Web API Framework?</a>
+
+*	<a href="/guides/v2.1/config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a>
+ -->
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

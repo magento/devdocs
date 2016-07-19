@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Static file processing</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/architecture/view/static-process.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Static file processing</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/view/static-process.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#m2devgde-static-proc-intro">Overview</a></li>
+  <li><a href="#example-fallback">Fallback mechanism example</a></li>
+  <li><a href="#publish-static-view-files">Static view file publication</a></li>
+  <li><a href="#css-files">CSS file publication</a></li>
+  <li><a href="#static-view-files-url-resolution">URL resolution for static view files</a></li>
+</ul>
+
+<h2 id="m2devgde-static-proc-intro">Overview</h2>
+<p>When a browser loads a web page and requests a static view file such as a JavaScript, CSS, image file, or another page asset, the Magento application processes the requested file before it returns the file to the browser.</p>
+
+<p>This processing can include searching for a not-found file in additional locations, file merging, and file minification.</p>
+
+<p>Whenever a static view file is requested in the Magento application, it uses the appropriate mechanisms for the file type and system configuration, as follows:</p>
+
+<dl>
+   <dt>View file fallback mechanism</dt>
+   <dd>
+      <p>When a view file is not found in the requested location, Magento uses rules to search for the file in additional locations.</p>
+      <p>The following diagram shows how Magento processes static view files:</p>
+      <p><img src="/common/images/Preprocesing_assets.png" alt="Static view files processing flow" /></p>
+   </dd>
+   <dt>CSS files preprocessing</dt>
+   <dd>
+      <p>Magento generates CSS files from LESS files.</p>
+   </dd>
+   <dt>CSS and JavaScript file merging</dt>
+   <dd>
+      <p>Magento merges all CSS or JavaScript assets linked in the <code>&lt;head&gt;</code> element of the page into a single files and replaces referenced files with a single reference.</p>
+   </dd>
+   <dt>JavaScript files minifying</dt>
+   <dd>
+      <p>Magento removes white spaces and comments.</p>
+   </dd>
+</dl>
+
+<h2 id="example-fallback">Fallback mechanism example</h2>
+<p>As an example of static file fallback, suppose there is a request for the <code>logo.svg</code> image in the Blank theme.</p>
+
+<p>The request URL is similar to:</p>
+
+<pre><code>  http://www.example.com/pub/static/frontend/Magento/blank/en_US/images/logo.svg
+</code></pre>
+
+<p>The Magento API request is similar to:</p>
+
+<pre><code>  $this-&gt;getViewFileUrl('logo.svg');
+</code></pre>
+
+<p>The current system context is:</p>
+
+<table>
+   <tr>
+      <th>Application area</th>
+      <td>frontend</td>
+   </tr>
+   <tr>
+      <th>Theme</th>
+      <td><code>theme</code>, which inherits from <code>parent_theme</code></td>
+   </tr>
+</table>
+
+<p>Using theme inheritance and view file fallback rules, Magento uses the following search order:</p>
+
+<ol>
+   <li><code>app/design/frontend/Magento/blank/web/images/logo.svg</code></li>
+   <li><code>app/design/frontend/Magento/blank/web/logo.svg</code></li>
+   <li><code>app/design/frontend/Magento/parent_theme/web/images/logo.svg</code></li>
+   <li><code>app/design/frontend/Magento/parent_theme/web/logo.svg</code></li>
+</ol>
+
+<p>If the file is found, it is published in the following location: </p>
+
+<pre><code>  pub/static/frontend/blank/web/images/logo.svg
+</code></pre>
+
+<p>The path inside the <code>pub/static</code> directory coincides with the initial path in the <code>app/design</code> directory.</p>
+
+<h2 id="publish-static-view-files">Static view file publication</h2>
+<p>The Magento application has a <em>static view files publication command</em> that enables you to publish static view files in certain Magento <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">modes</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+ <p>Any files that you manually upload (for example, product images), are always stored in <code>pub/media</code>.</p>
+</div>
+
+<p>To use the static view file publication tool, see <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html">deploy static view files</a>.</p>
+
+<h2 id="css-files">CSS file publication</h2>
+<p>The publication flow for CSS files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.</p>
+<h3 id="merging-enabled">Merging enabled</h3>
+<p>If CSS merging is enabled in your Magento instance, a CSS file copied from <code>app/design/&lt;areaname&gt;/&lt;VendorName&gt;/&lt;ThemeName&gt;</code> to <code>pub/static</code> is also parsed for references to other static resources, such as images or other CSS files.</p>
+<p>To enable publication of these files, reference them in a CSS file, as follows:</p>
+<ul>
+   <li>Use the CSS <code>url()</code> directive to reference the file.</li>
+   <li>Use a relative path to reference the file. The Magento application does not recognize absolute URLs or URIs.</li>
+</ul>
+<!-- <p>For example, if the original CSS file is to be published from <code>app/design/frontend/Magento/blank/web/css-topics/styles.css</code>,
+the identified references are published from following locations:</p>
+
+<table>
+<col width="50%">
+<col width="50%">
+   <thead>
+      <tr>
+         <th>Reference</th>
+         <th>Resulting file</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>url('../images/arrow.gif')</code></td>
+         <td><code>app/design/frontend/Magento/blank/web/images/arrow.gif</code></td>
+      </tr>
+      <tr>
+         <td><code>url(../images/arrow.gif)</code></td>
+         <td><code>app/design/frontend/Magento/blank/web/images/arrow.gif</code></td>
+      </tr>
+      <tr>
+         <td><code>url("callout.png")</code></td>
+         <td><code>app/design/frontend/Magento/blank/web/css-topics/callout.png</code></td>
+      </tr>
+      <tr>
+         <td><code>@include url('./styles-ie.css');</code></td>
+         <td><code>app/design/frontend/default/demo/css-topics/styles-ie.css</code></td>
+      </tr>
+      <tr>
+         <td><code>@include './styles-ie.css';</code></td>
+         <td>N/A. The <code>@include</code> without <code>url()</code> is NOT recognized.</td>
+      </tr>
+      <tr>
+         <td><code>url("http://example.com/image.jpg")</code>
+            or <code>url("https://example.com/image.jpg")</code>
+         </td>
+         <td>N/A. Absolute URL.</td>
+      </tr>
+      <tr>
+         <td><code>url("/image.jpg")</code></td>
+         <td>N/A. Absolute URI.</td>
+      </tr>
+   </tbody>
+</table> -->
+
+<p>The referenced files can be located on different fallback levels, the publishing mechanism locates them recursively.</p>
+<h3 id="merging-disabled">Merging disabled</h3>
+<p>If CSS merging is disabled, CSS files are not parsed for references during the publication process.</p>
+<p>Instead, the server requests the resource as soon as it is displayed on a browser page.</p>
+<p>If the requested file is intended to be in the <code>pub/static</code> directory, the web server processes it and optionally, depending on the application mode, publishes it.</p>
+<h3 id="context-notation">Context notation in CSS file references</h3>
+<p>You can reference resources in CSS files relative to a theme or a certain module using scope notation.</p>
+<p>The resulting link to a resource in the published file is relative to the original CSS file.</p>
+<p>Examples follow:</p>
+<h4 id="merging-disabled-css1">CSS specified by path</h4>
+
+<p>Example: <code>css-topics/one/two/file.css</code></p>
+
+<table>
+
+   <thead>
+      <tr>
+         <th>Reference with context notation</th>
+         <th>Resulting reference</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>url(&lt;VendorName&gt;_&lt;ModuleName&gt;::images/image.gif)</code></td>
+		 <td><code>url(../../../../&lt;VendorName&gt;_&lt;ModuleName&gt;/images/image.gif)</code></td>
+      </tr>
+
+   </tbody>
+</table>
+
+<h4 id="merging-disabled-css1">CSS specified by module</h4>
+
+<p>Example: <code>&lt;VendorName&gt;_&lt;ModuleName&gt;::css-topics/one/two/file.css</code></p>
+
+<table>
+   <colgroup><col width="25%" />
+   <col width="75%" />
+</colgroup>
+   <thead>
+      <tr>
+         <th>Reference with context notation</th>
+         <th>Resulting reference</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+		 <td><code>&lt;VendorName&gt;_&lt;ModuleName&gt;::css-topics/one/two/file.css</code></td>
+		 <td><code>url(../../../../&lt;VendorName&gt;_&lt;ModuleName&gt;/images/image.gif)</code></td>
+      </tr>
+
+   </tbody>
+</table>
+
+<h2 id="static-view-files-url-resolution">URL resolution for static view files</h2>
+<p>The URL resolution mechanism builds URLs for static view files.</p>
+<p>The mechanism also performs file publishing, if the initial location is not web accessible.</p>
+<p>The following description of the URL resolution process illustrates the static view files processing from the prospective of the logic involved.</p>
+<p>A fully qualified context for generating a URL path to a static view file includes: area code, theme path, and locale code. The URL path is generated from a file ID an invariant relative path to the file, which does not change regardless of whether it is used as part of the absolute file name or URL. The file ID may optionally qualify module name.</p>
+<p>The following diagram illustrates how a URL to a static view file is generated:</p>
+<p><img src="/common/images/va_10.png" alt="Generate a URL to a static view file" /></p>
+<p>The diagram uses these notations:</p>
+<ul>
+   <li><b>Client code</b>. Any client code that needs a URL to a static file.
+   Typically, a page template, but can be a layout XML or helper file.</li>
+   <li><b>AbstractBlock</b>. <code>\Magento\Framework\View\Element\AbstractBlock</code></li>
+   <li><b>AssetRepository</b>. <code>\Magento\Framework\View\Asset\Repository</code></li>
+   <li><b>AssetContext</b>. <code>\Magento\Framework\View\Asset\ContextInterface</code></li>
+   <li><b>Asset</b>. <code>\Magento\Framework\View\Asset\File</code></li>
+</ul>
+<p>To generate a URL for a static file, client code uses the <code>getUrl()</code> or <code>getUrlWithParams()</code> method of the asset repository.</p>
+<p>The asset repository is <code>\Magento\Framework\View\Asset\Repository</code>.</p>
+<p>The repository:</p>
+<ol>
+   <li>Determines all necessary parameters and context.</li>
+   <li>Creates a <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/Repository.php" target="_blank">\Magento\Framework\View\Asset\File</a> object.</li>
+   <li>Uses the <code>File::getUrl()</code> method to get the necessary URL to the static view file.</li>
+</ol>
+<p>If a client requests the URL, the web server handles it as a separate request:</p>
+<ul>
+<li>If the file already exists in the specified location in the <code>pub/static</code> directory, a web server returns it as-is, as a static resource.</li>
+<li>If the file does not exist in the specified location, an internal URL rewrite rule from <code>pub/static/.htaccess</code> routes the request to the <code>pub/static.php</code> entry point, which publishes the file to this location in <code>pub/static</code> and returns the file content.</li>
+<h3 id="example-url-resolution">URL resolution example</h3>
+<p>The context:</p>
+
+<table>
+   <tbody>
+      <tr>
+         <th>Current area</th>
+         <td>frontend</td>
+      </tr>
+      <tr>
+         <th>Current theme</th>
+         <td><code>Magento/blank</code></td>
+      </tr>
+      <tr>
+         <th>Current locale</th>
+         <td><code>en_US</code></td>
+      </tr>
+      <tr>
+         <th>Requested file</th>
+         <td><code>Magento_Catalog::images/product.gif</code></td>
+      </tr>
+      <tr>
+         <th>Public static directory base URL</th>
+         <td><code>http://magento.example.com/pub/static</code></td>
+      </tr>
+   </tbody>
+</table>
+
+<p>The generated URL is: <code>http://www.example.com/pub/static/frontend/Magento/blank/en_US/Magento_Catalog/web/images/product.gif</code>.</p>
+<div class="bs-callout bs-callout-info" id="info">
+ <p>In production mode, the URL generating mechanism does not support the locale code; that is, generated URLs do not contain locale code.</p>
+</div></ul>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

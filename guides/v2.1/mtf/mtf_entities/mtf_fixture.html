@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Entities of the Functional Testing Framework</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/mtf/mtf_entities/mtf_fixture.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Entities of the Functional Testing Framework</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/mtf_entities/mtf_fixture.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Testing Framework Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_introduction.html">INTRODUCTION</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_installation.html">INSTALLATION</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_quickstart.html">QUICK START</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_magento.html">Prepare Magento application</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environment.html">Prepare environment for test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/create_test.html">CREATE A TEST</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/out-of-the-box.html">Out-of-the-box test</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/new_test.html">New functional test. Theory</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/create_new_test.html">New functional test. Practice</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_entities.html">ENTITIES</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">Fixture</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html">Fixture Repository</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_handler.html">Handler</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html">Block</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_typified-element.html">Typified element</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">Page</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">Constraint</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">Data set</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_update.html">UPDATE</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/troubleshooting.html">TROUBLESHOOTING</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_changelog.html">CHANGELOG</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_overview.html">Functional testing overview</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2>Fixture</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#mtf_fixture_overview">Fixture overview</a></li>
+  <li><a href="#mtf_fixture_create">Create new fixture</a></li>
+  <li><a href="#mtf_fixture_read">Read and update your new fixture</a></li>
+  <li><a href="#mtf_fixture_repositoy">Add a repository to the fixture field</a></li>
+  <li><a href="#mtf_fixture_source">Add the data source to the fixture field</a></li>
+  <li><a href="#mtf_fixture_merge">Merge fixtures</a></li>
+  <li><a href="#mtf_fixture_extend">Extend fixture</a></li>
+</ul>
+
+<h2 id="mtf_fixture_overview">Fixture overview</h2>
+
+<p>An FTF fixture is a list of properties of the Magento entity under test.</p>
+
+<p>A fixture is represented as an XML file located in the <code>Fixture</code> directory that corresponds to a module in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/functional</code>. Example for <code>Widget</code>:</p>
+
+<ul>
+  <li><code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code></li>
+</ul>
+
+<p>You will need fixture:</p>
+
+<ul>
+  <li>as test data for particular set</li>
+  <li>as precondition for the test</li>
+</ul>
+
+<p>In this chapter we will create a new fixture and modify it, considering different use cases.</p>
+
+<p>To apply any changes of the fixture, you should run generate tool:</p>
+
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+php generate.php
+</code></pre>
+
+<p>This tool creates PHP classes that are used by the test.</p>
+
+<p>You can check fixture PHP class in corresponding module in the <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento</code> directory.</p>
+
+<h2 id="mtf_fixture_create">Create new fixture</h2>
+
+<p>Let’s imagine that we want to create new fixture to test our Widget module.</p>
+
+<p>Magento has a tool that automatically generates your fixture with parameters you indicated in arguments.  That is <code>generateFixtureXml.php,</code> located in <code>&lt;magento2&gt;/dev/tests/functional/utils</code>.</p>
+
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
+</code></pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have <code>Widget.xml</code> fixture, you cannot create new one with the same name.</p>
+</div>
+
+<div class="bs-callout bs-callout-warning">
+<p>To work with generateFixtureXml tool, <a href="/guides/v2.1//install-gde/bk-install-guide.html">Magento must be installed.</a></p>
+</div>
+
+<p>In the following table see <code>generateFixtureXml</code> arguments.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Argument</th>
+      <th style="text-align: left">Semantics</th>
+      <th style="text-align: left">Value from command above</th>
+      <th style="text-align: left">Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>--name</code></td>
+      <td style="text-align: left">Name of fixture.</td>
+      <td style="text-align: left"><code>widget</code></td>
+      <td style="text-align: left">Required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>--type</code></td>
+      <td style="text-align: left">Table type for the entity. Can be <code>eav</code>, <code>flat</code>, <code>composite</code>.</td>
+      <td style="text-align: left"><code>flat</code></td>
+      <td style="text-align: left">Default value: <code>flat</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>--entity_type</code></td>
+      <td style="text-align: left">Database table name, where entity data is stored.</td>
+      <td style="text-align: left"><code>widget_instance</code></td>
+      <td style="text-align: left">Required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>--collection</code></td>
+      <td style="text-align: left">Collection to generate data sets</td>
+      <td style="text-align: left"><code>Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection</code></td>
+      <td style="text-align: left">Required. Escape all backslashes.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>--help</code></td>
+      <td style="text-align: left">List of arguments with definitions.</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This tool creates a new fixture using data from a database table you specified using the <code>--entity_type</code> argument.</p>
+
+<p>Following is the generated Widget fixture located in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code>.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/fixture.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fixture</span> <span class="na">name=</span><span class="s">&quot;widget&quot;</span>
+             <span class="na">module=</span><span class="s">&quot;Magento_Widget&quot;</span>
+             <span class="na">type=</span><span class="s">&quot;flat&quot;</span>
+             <span class="na">collection=</span><span class="s">&quot;Magento\Widget\Model\Resource\Widget\Instance\Collection&quot;</span>
+             <span class="na">repository_class=</span><span class="s">&quot;Magento\Widget\Test\Repository\Widget&quot;</span>
+             <span class="na">handler_interface=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span>
+             <span class="na">class=</span><span class="s">&quot;Magento\Widget\Test\Fixture\Widget&quot;</span>
+             <span class="na">entity_type=</span><span class="s">&quot;widget_instance&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;instance_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;instance_type&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;theme_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;store_ids&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;sort_order&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;widget_parameters&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fixture&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>To generate PHP classes, enter the following commands in the order shown:</p>
+
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+php generate.php
+</code></pre>
+
+<p>That’s it!</p>
+
+<p>For a detailed description of XML structure see the next section.</p>
+
+<h2 id="mtf_fixture_read">Read and update your new fixture</h2>
+
+<p>Let’s look closer at fixture structure.</p>
+
+<ul>
+  <li><code>&lt;config&gt;</code> is a root node that defines path to <code>fixture.xsd</code> schema.</li>
+  <li><code>&lt;fixture&gt;</code> defines fixture configuration.</li>
+  <li><code>&lt;data_config&gt;</code> defines additional fixture configuration for the fixture.</li>
+  <li><code>&lt;field&gt;</code> defines field in fixture.</li>
+</ul>
+
+<p>The following table describes <code>&lt;fixture&gt;</code> attributes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><code>&lt;fixture&gt;</code> attribute</th>
+      <th style="text-align: left">Semantics</th>
+      <th style="text-align: center">Value</th>
+      <th>Example</th>
+      <th style="text-align: center">Is required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>name</code></td>
+      <td style="text-align: left">Name of fixture.</td>
+      <td style="text-align: center">string</td>
+      <td>catalogProductSimple</td>
+      <td style="text-align: center">required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>module</code></td>
+      <td style="text-align: left">Name of the module in which to place the fixture.</td>
+      <td style="text-align: center">string</td>
+      <td>Magento_Catalog</td>
+      <td style="text-align: center">required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>class</code></td>
+      <td style="text-align: left">Path to the PHP class. Generator will use this path to locate automatically generated PHP file.</td>
+      <td style="text-align: center">string</td>
+      <td>Magento\Catalog\Test\Fixture\CatalogProductSimple</td>
+      <td style="text-align: center">required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>type</code></td>
+      <td style="text-align: left">Table type for the entity.</td>
+      <td style="text-align: center"><code>eav</code>, <code>flat</code>, <code>virtual</code>, <code>composite</code></td>
+      <td>eav</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>entity_type</code></td>
+      <td style="text-align: left">Database table name where the entity data is stored. Specify more than one database table as a comma-separated list (for example, <code>"eav_attribute, catalog_eav_attribute"</code>) and assign <code>type = "composite"</code>.</td>
+      <td style="text-align: center">string</td>
+      <td>catalog_product</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>product_type</code></td>
+      <td style="text-align: left">Type of product. Applicable only for product fixtures.</td>
+      <td style="text-align: center">string</td>
+      <td>simple</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>collection</code></td>
+      <td style="text-align: left">Collection to generate data sets. It is taken from <code>&lt;magento2&gt;/app/code/Magento</code>.</td>
+      <td style="text-align: center">string</td>
+      <td>Magento\Catalog\Model\Resource\Product\Collection</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>identifier</code></td>
+      <td style="text-align: left">Field used to create data set names in the repository.</td>
+      <td style="text-align: center">string</td>
+      <td>sku</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>repository_class</code></td>
+      <td style="text-align: left">Reference to the repository class.</td>
+      <td style="text-align: center">string</td>
+      <td>Magento\Catalog\Test\Repository\CatalogProductSimple</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>handler_interface</code></td>
+      <td style="text-align: left">Reference to the handler interface class.</td>
+      <td style="text-align: center">string</td>
+      <td>Magento\Catalog\Test\Handler\CatalogProductSimple\CatalogProductSimpleInterface</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>extends</code></td>
+      <td style="text-align: left">Reference to the class from which you want to extend.</td>
+      <td style="text-align: center">string</td>
+      <td>\Magento\Widget\Test\Fixture\Widget</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following table describes <code>&lt;field&gt;</code> attributes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><code>&lt;field&gt;</code> attribute</th>
+      <th style="text-align: left">Semantics</th>
+      <th style="text-align: center">Value</th>
+      <th>Example</th>
+      <th style="text-align: center">Is required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>name</code></td>
+      <td style="text-align: left">Field name.</td>
+      <td style="text-align: center">string</td>
+      <td>layout_updates</td>
+      <td style="text-align: center">required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>is_required</code></td>
+      <td style="text-align: left">Specifies whether field is required on the form.</td>
+      <td style="text-align: center">1 - required, 0 - optional</td>
+      <td>1</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>group</code></td>
+      <td style="text-align: left">Tab name that contains field (for example, <code>title</code> field is placed on <strong>Storefront properties</strong> tab on widget creation page).</td>
+      <td style="text-align: center">string</td>
+      <td>storefront_properties</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>source</code></td>
+      <td style="text-align: left">Class that prepares field data for use. See <a href="#mtf_fixture_source">Add the data source to the fixture field</a>.</td>
+      <td style="text-align: center">string</td>
+      <td>Magento\Widget\Test\Fixture\Widget\LayoutUpdates</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>repository</code></td>
+      <td style="text-align: left">Reference to  the class that stores data sets for the field. <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html">More details about the repository</a>.</td>
+      <td style="text-align: center">string</td>
+      <td>Magento\Widget\Test\Repository\Widget\LayoutUpdates</td>
+      <td style="text-align: center">optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following image shows how XML is connected with GUI of your new widget.</p>
+
+<p><a href="/common/images/mtf_fixture_xml_pic.png"><img src="/common/images/mtf_fixture_xml_pic.png" /></a></p>
+
+<p>Orange arrows show relations between <code>&lt;field&gt;</code> nodes of fixture and GUI element of Magento widget, that we are going to test.</p>
+
+<p>As you can see, we added some information to the picture. New text is highlighted in orange.</p>
+
+<p>For convenience, we added a <code>group</code> attribute that matches the name of the tab where the UI elements are located. Except for <code>instance_id</code>, this field does not display which is why it belongs to the null group.</p>
+
+<p>We also defined a new field, <code>layout_updates</code> on the UI but this field is absent from the list of fields in our XML fixture. This is because the field is not present in the database table <code>widget_instance</code> specified by the <code>entity_type</code>.</p>
+
+<p>Let’s manually add a new field and <code>group</code> attribute to the <code>Widget.xml</code>. See what we have now.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/fixture.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fixture</span> <span class="na">name=</span><span class="s">&quot;widget&quot;</span>
+             <span class="na">module=</span><span class="s">&quot;Magento_Widget&quot;</span>
+             <span class="na">type=</span><span class="s">&quot;flat&quot;</span>
+             <span class="na">collection=</span><span class="s">&quot;Magento\Widget\Model\Resource\Widget\Instance\Collection&quot;</span>
+             <span class="na">repository_class=</span><span class="s">&quot;Magento\Widget\Test\Repository\Widget&quot;</span>
+             <span class="na">handler_interface=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span>
+             <span class="na">class=</span><span class="s">&quot;Magento\Widget\Test\Fixture\Widget&quot;</span>
+             <span class="na">entity_type=</span><span class="s">&quot;widget_instance&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;instance_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;1&quot;</span> <span class="na">group=</span><span class="s">&quot;null&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;instance_type&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">group=</span><span class="s">&quot;settings&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;theme_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">group=</span><span class="s">&quot;settings&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;store_ids&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;sort_order&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;widget_parameters&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">group=</span><span class="s">&quot;frontend_options&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;layout_updates&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fixture&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>To apply the changes, enter the following commands:</p>
+
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+php generate.php
+</code></pre>
+
+<h2 id="mtf_fixture_repositoy">Add a repository to the fixture field</h2>
+
+<p>Now we have a new fixture for Widget. All fields are defined and ready to take test data. Let’s assume that we are not focused on layout updates functionality and want to use pre-defined data.</p>
+
+<p>For this goal, link to the repository where all test data has already been defined.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;layout_updates&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\Widget\Test\Repository\Widget\LayoutUpdates&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+<p>The repository is located in the <code>Repository</code> directory of the corresponding module. The <code>Repository</code> directory contains a subdirectory with the name of fixture, and repository XML file in it with the name of fixture field.</p>
+
+<p>The repository is located in <code>&lt;magento_roo&gt;/dev/tests/functional/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml</code>.</p>
+
+<p>Following is the code of <code>LayoutUpdates.xml</code>. It specifies two data sets that you can choose to define in your test.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;repository</span> <span class="na">class=</span><span class="s">&quot;Magento\Widget\Test\Repository\Widget\LayoutUpdates&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">&quot;all_pages&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;page_group&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Generic Pages/All Pages<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;block&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Main Content Area<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;/dataset&gt;</span>
+
+        <span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">&quot;on_category&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;page_group&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Categories/Non-Anchor Categories<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;for&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Yes<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;entities&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>category::default_subcategory<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;block&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Main Content Area<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;/dataset&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>To apply the changes, enter the following commands:</p>
+
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+php generate.php
+</code></pre>
+
+<h2 id="mtf_fixture_source">Add the data source to the fixture field</h2>
+
+<p>Our new field <code>layout_updates</code> is complex and contains different elements and logic, depending on the type of layout chosen.</p>
+
+<p><img src="/common/images/mtf_layout_update.jpg" alt="Layout update subelements" /></p>
+
+<p>You can use a data source that provides additional processing of the field (for example, parsing or creation of new field).</p>
+
+<p>All data source logic is defined in a PHP file which must be linked as specified in the field’s <code>source</code> attribute.</p>
+
+<p>It is located in <code>Fixture</code> directory of corresponding module. That contains subdirectory with the name of fixture, and source class in it with the name of fixture field. See the following example.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;layout_updates&quot;</span>
+       <span class="na">is_required=</span><span class="s">&quot;0&quot;</span>
+       <span class="na">repository=</span><span class="s">&quot;Magento\Widget\Test\Repository\Widget\LayoutUpdates&quot;</span>
+       <span class="na">source=</span><span class="s">&quot;Magento\Widget\Test\Fixture\Widget\LayoutUpdates&quot;</span>
+       <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+<p>Let’s see our data source file <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php</code></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="sd"> * See COPYING.txt for license details.</span>
+<span class="sd"> */</span>
+ 
+<span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Fixture\Widget</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Mtf\Fixture\FixtureFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Mtf\Fixture\DataSource</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Mtf\Repository\RepositoryFactory</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Prepare Layout Updates for widget.</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">LayoutUpdates</span> <span class="k">extends</span> <span class="nx">DataSource</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @constructor</span>
+<span class="sd">     * @param RepositoryFactory $repositoryFactory</span>
+<span class="sd">     * @param FixtureFactory $fixtureFactory</span>
+<span class="sd">     * @param array $params</span>
+<span class="sd">     * @param array $data</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">RepositoryFactory</span> <span class="nv">$repositoryFactory</span><span class="p">,</span>
+        <span class="nx">FixtureFactory</span> <span class="nv">$fixtureFactory</span><span class="p">,</span>
+        <span class="k">array</span> <span class="nv">$params</span><span class="p">,</span>
+        <span class="k">array</span> <span class="nv">$data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">params</span> <span class="o">=</span> <span class="nv">$params</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">params</span><span class="p">[</span><span class="s1">&#39;repository&#39;</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$repositoryFactory</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">params</span><span class="p">[</span><span class="s1">&#39;repository&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">]);</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="k">as</span> <span class="nv">$index</span> <span class="o">=&gt;</span> <span class="nv">$layouts</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$layouts</span><span class="p">[</span><span class="s1">&#39;entities&#39;</span><span class="p">]))</span> <span class="p">{</span>
+                    <span class="nv">$explodeValue</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;::&#39;</span><span class="p">,</span> <span class="nv">$layouts</span><span class="p">[</span><span class="s1">&#39;entities&#39;</span><span class="p">]);</span>
+                    <span class="nv">$fixture</span> <span class="o">=</span> <span class="nv">$fixtureFactory</span><span class="o">-&gt;</span><span class="na">createByCode</span><span class="p">(</span><span class="nv">$explodeValue</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;dataset&#39;</span> <span class="o">=&gt;</span> <span class="nv">$explodeValue</span><span class="p">[</span><span class="mi">1</span><span class="p">]]);</span>
+                    <span class="nv">$fixture</span><span class="o">-&gt;</span><span class="na">persist</span><span class="p">();</span>
+                    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="nv">$index</span><span class="p">][</span><span class="s1">&#39;entities&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$fixture</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>To apply the changes, enter the following commands:</p>
+
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+php generate.php
+</code></pre>
+
+<div class="bs-callout bs-callout-warning">
+<p>You should mention repository in data source class to use it for fixture field.<br />
+<br />
+Example from <code>LayoutUpdates.php</code><br />
+<code>$this-&gt;data = $repositoryFactory-&gt;get($this-&gt;params['repository'])-&gt;get($data['dataset']);</code></p>
+</div>
+
+<h2 id="mtf_fixture_merge">Merge fixtures</h2>
+
+<p>We have a module that adds new field to Widget module.</p>
+
+<p>We can create file that adds field <code>new_field</code> to our widget fixture.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/fixture.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fixture</span> <span class="na">name=</span><span class="s">&quot;widget&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;new_field&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fixture&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>To apply the changes, enter the following commands:</p>
+
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+php generate.php
+</code></pre>
+
+<p><code>new_field</code> has been added in fixture <code>Widget.php</code>.</p>
+
+<h2 id="mtf_fixture_extend">Extend fixture</h2>
+
+<p>Let’s assume that you want to add new fixture based on our <code>Widget.xml</code> fixture to another Magento entity.</p>
+
+<p>To do that you should supplement your <code>Widget.xml</code> code with <code>extends</code> attribute in <code>&lt;fixture&gt;</code> node. As you already know <code>extends</code> value stores a link to the class from which you want to extend your fixture.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/fixture.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fixture</span> <span class="na">name=</span><span class="s">&quot;adWidget&quot;</span>
+             <span class="na">repository_class=</span><span class="s">&quot;Magento\AdWidget\Test\Repository\AdWidget&quot;</span>
+             <span class="na">handler_interface=</span><span class="s">&quot;Magento\AdWidget\Test\Handler\AdWidget\AdWidgetInterface&quot;</span>
+             <span class="na">class=</span><span class="s">&quot;Magento\AdWidget\Test\Fixture\AdWidget&quot;</span>
+             <span class="na">extends=</span><span class="s">&quot;\Magento\Widget\Test\Fixture\Widget&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;custom_field&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\AdWidget\Test\Repository\AdWidget\CustomField&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fixture&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>In this example you will create a new fixture PHP class AdWidget that extends Widget fixture. It creates a fixture with the same name, and a field named <code>custom_field</code>.</p>
+
+<p>To generate your new fixture PHP class, enter the following commands:</p>
+
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+php generate.php
+</code></pre>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -18,6 +18,15 @@ $(document).ready(function(){
 		hideSearchBox();
 	});
 
+	//Make sub navigations wide when there is not enough space vertically
+	$("#subnav>ul.menu>li").hover(
+		function(){
+			if(($(this).children("ul").outerHeight()+50) > $("#footer-wrap").offset().top - $("#subnav-wrap").offset().top)
+				$(this).children("ul").addClass("wide");
+			else
+				$(this).children("ul").removeClass("wide");
+		});
+
 	// ** Menu **
 	var menustate ="";
 	if ( $('LI.level3Child').is("LI.active")) {
@@ -50,6 +59,14 @@ $(document).ready(function(){
 	});
 
 });
+
+//Allows for sticky menu
+$(document).scroll(function(){
+	if($(document).scrollTop()>66)
+		$("#subnav-wrap").addClass("sticky-nav-main");
+	else
+		$("#subnav-wrap").removeClass("sticky-nav-main");
+})
 
 //Function to get URL parameter values
 function getURLParameter(sParam) {

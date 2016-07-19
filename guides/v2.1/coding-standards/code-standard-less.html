@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>LESS coding standard</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/coding-standards/code-standard-less.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">LESS coding standard</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/coding-standards/code-standard-less.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Coding Standards</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/coding-standards/bk-coding-standards.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Coding standards</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-demarcation.html">Code demarcation standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-php.html">PHP coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/docblock-standard-general.html">DocBlock standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-javascript.html">JavaScript coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/docblock-standard-javascript.html">JavaScript DocBlock standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/coding-standards/code-standard-less.html">LESS coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-html.html">HTML style guide</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<p>This standard defines Magento internal requirements for code formatting and style for teams that develop LESS and CSS code.</p>
+
+<p>Some parts of Magento code might not comply with this coding standard yet, but we are working to gradually improve this. </p>
+
+<p>This coding standard is optional for third-party Magento developers.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#general-rules">General rules</a>    <ul>
+      <li><a href="#indentation">Indentation</a></li>
+      <li><a href="#formatting">Formatting</a>        <ul>
+          <li><a href="#braces">Braces</a></li>
+          <li><a href="#selector-delimiters">Selector delimiters</a></li>
+          <li><a href="#quotes">Quotes</a></li>
+          <li><a href="#combinator-indents">Combinator indents</a></li>
+          <li><a href="#properties-line-break">Properties line break</a></li>
+          <li><a href="#properties-colon-indents">Properties colon indents</a></li>
+          <li><a href="#end-of-file">End of file</a></li>
+          <li><a href="#end-of-selector">End of selector</a></li>
+          <li><a href="#end-of-the-property-line">End of the property line</a></li>
+          <li><a href="#important-property">!important property</a></li>
+        </ul>
+      </li>
+      <li><a href="#comments">Comments</a></li>
+      <li><a href="#selectors">Selectors</a>        <ul>
+          <li><a href="#types">Types</a></li>
+        </ul>
+      </li>
+      <li><a href="#classes-naming">Classes Naming</a>        <ul>
+          <li><a href="#standard-classes">Standard classes</a></li>
+          <li><a href="#helper-classes">Helper classes</a></li>
+          <li><a href="#size">Size</a></li>
+          <li><a href="#meaning">Meaning</a></li>
+        </ul>
+      </li>
+      <li><a href="#selectors-naming">Selectors naming</a>        <ul>
+          <li><a href="#type-selectors">Type selectors</a></li>
+          <li><a href="#formatting-1">Formatting</a></li>
+          <li><a href="#nesting">Nesting</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#properties">Properties</a>    <ul>
+      <li><a href="#sorting">Sorting</a></li>
+      <li><a href="#shorthand">Shorthand</a></li>
+      <li><a href="#and-units">0 and units</a></li>
+      <li><a href="#floating-values">Floating values</a></li>
+      <li><a href="#hexadecimal-notation">Hexadecimal notation</a></li>
+    </ul>
+  </li>
+  <li><a href="#variables">Variables</a>    <ul>
+      <li><a href="#location">Location</a>        <ul>
+          <li><a href="#local-variables">Local variables</a></li>
+          <li><a href="#theme-variables">Theme variables</a></li>
+        </ul>
+      </li>
+      <li><a href="#naming">Naming</a>        <ul>
+          <li><a href="#value-variables">Value variables</a></li>
+          <li><a href="#parameter-variables">Parameter variables</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#mixins">Mixins</a>    <ul>
+      <li><a href="#location-1">Location</a></li>
+      <li><a href="#naming-1">Naming</a></li>
+    </ul>
+  </li>
+  <li><a href="#extends">Extends</a>    <ul>
+      <li><a href="#location-2">Location</a></li>
+      <li><a href="#naming-2">Naming</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="general-rules">General rules</h2>
+
+<h3 id="indentation">Indentation</h3>
+
+<p>Use only spaces for indentation:</p>
+
+<ul>
+  <li>Tab size: 4 spaces</li>
+  <li>Indent size: 4 spaces</li>
+  <li>Continuation indent: 4 spaces</li>
+</ul>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    .nav-item {
+        ...
+    }
+}
+</code></pre>
+
+<h3 id="formatting">Formatting</h3>
+
+<h4 id="braces">Braces</h4>
+
+<p>Add one space before opening braces and a line break after. Add a line break before closing braces.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    color: @nav__color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav{color: @nav__color;}
+</code></pre>
+
+<h4 id="selector-delimiters">Selector delimiters</h4>
+
+<p>Add a line break after each selector delimiter. Do not add spaces before or after delimiters.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav,
+.bar {
+    color: @color__base;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav, .bar {
+    color: @color__base;
+}
+</code></pre>
+
+<h4 id="quotes">Quotes</h4>
+
+<p>Use single quotes.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    content: 'lorem ipsum';
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    content: "lorem ipsum";
+}
+</code></pre>
+
+<h4 id="combinator-indents">Combinator indents</h4>
+
+<p>Add spaces before and after combinators.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav + .bar {
+    color: @bar__color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav+.bar {
+    color: @bar__color;
+}
+
+.nav +.bar {
+    color: @bar__color;
+}
+
+.nav+ .bar {
+    color: @bar__color;
+}
+</code></pre>
+
+<h4 id="properties-line-break">Properties line break</h4>
+
+<p>Start each property declaration in a new line.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color;
+    color: @nav__color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    color: @nav__color; background-color: @nav__background-color;
+}
+</code></pre>
+
+<h4 id="properties-colon-indents">Properties colon indents</h4>
+
+<p>Add space after but not before the colon that separates property names from values.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    color: @nav__color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    color : @nav__color;
+}
+
+.bar {
+    color:@bar__color;
+}
+
+.item {
+    color :@item__color;
+}
+</code></pre>
+
+<h4 id="end-of-file">End of file</h4>
+
+<p>Add a blank line at the end of file.</p>
+
+<h4 id="end-of-selector">End of selector</h4>
+
+<p>Add a blank line after a selector.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>css
+    .nav {
+        background-color: @nav__background-color;
+    }
+
+    .bar {
+        background-color: @bar__background-color;
+    }
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>css
+    .nav {
+        background-color: @nav__background-color;
+    }
+    .bar {
+        background-color: @bar__background-color;
+    }
+</code></pre>
+
+<h4 id="end-of-the-property-line">End of the property line</h4>
+
+<p>Add a semicolon after property.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color
+}
+</code></pre>
+
+<h4 id="important-property">!important property</h4>
+
+<p>Avoid using the <code>!important</code> property if possible. If it is required, add a space before the property.</p>
+
+<p><strong>Correct</strong></p>
+
+<pre><code>.jquery-ui-calendar-item {
+    background-color: @nav__background-color !important;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<p><code>
+    .jquery-ui-calendar-item {
+        background-color: @nav__background-color!important;
+    }
+</code></p>
+
+<h3 id="comments">Comments</h3>
+
+<p>First and second level comments must be surrounded by empty lines.
+First, second and third level comments should have two spaces after “//”. Inline comments should have one space after “//”.</p>
+
+<p><strong>Correct</strong></p>
+
+<pre><code>//
+//  First level comment
+//  _____________________________________________
+
+.nav {
+    background-color: @nav__background-color;
+}
+
+//
+//  Second level comment
+//  ---------------------------------------------
+
+.nav {
+    background-color: @nav__background-color;
+}
+
+//  Comment
+.nav {
+    //  New line comment
+    background-color: @nav__background-color; // ToDo UI: todo inline comment
+    color: @nav__color; // inline comment
+}
+</code></pre>
+
+<h3 id="selectors">Selectors</h3>
+
+<h4 id="types">Types</h4>
+
+<p>Magento supports the two most recent versions of all major browsers. Internet Explorer is supported from version 9 and later. </p>
+
+<p>You can use almost all CSS3 selectors: descendants, attributes, pseudo classes, structural, pseudo elements, and so on.</p>
+
+<p>Exception: Avoid the <code>id</code> selector.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    ...
+}
+
+.nav + bar {
+    ...
+}
+
+.nav:not(.bar) {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>#foo {
+    ...
+}
+</code></pre>
+
+<h3 id="classes-naming">Classes Naming</h3>
+
+<h4 id="standard-classes">Standard classes</h4>
+
+<p>Class names should be lowercase, start with a letter (except helper classes), words should be separated with dash ‘-‘.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav-bar {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.navBar {
+   ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: underscore separation</p>
+
+<pre><code>.nav_bar {
+   ...
+}
+</code></pre>
+
+<h4 id="helper-classes">Helper classes</h4>
+
+<p>Helper class names should be lowercase and start with underscore (“_”).</p>
+
+<p>Some parts of Magento code might not comply with this standard yet. You might still find helper names with no underscores. We are working to gradually remove the inconsistency.  </p>
+
+<p><strong>Example</strong>:</p>
+
+<pre><code>._active {
+    ...
+}
+</code></pre>
+
+<h4 id="size">Size</h4>
+
+<p>Use class names that are as short as possible, but as long as necessary.
+Try to convey what class is about while being as brief as possible.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav-bar {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: too long</p>
+
+<pre><code>.navigation-panel-in-footer {
+   ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: too short</p>
+
+<pre><code>.nvpf {
+   ...
+}
+</code></pre>
+
+<h4 id="meaning">Meaning</h4>
+
+<p>Use meaningful, specific class names that reflect the purpose of the element. Class names should not be presentational or cryptic. </p>
+
+<p><strong>Correct</strong>: specific</p>
+
+<pre><code>.category {
+    ...
+}
+.category-title {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: cryptic</p>
+
+<pre><code>.foo-1901 {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: presentational</p>
+
+<pre><code>.button-green {
+   ...
+}
+
+.clear {
+   ...
+}
+</code></pre>
+
+<h3 id="selectors-naming">Selectors naming</h3>
+
+<h4 id="type-selectors">Type selectors</h4>
+
+<p>Avoid qualifying class names with type selectors.</p>
+
+<p>Unless necessary (for example with helper classes), do not use element names in conjunction with IDs or classes.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.error {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>div.error {
+   ...
+}
+</code></pre>
+
+<p>Type selectors must be lowercase.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav &gt; li {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav &gt; LI {
+   ...
+}
+</code></pre>
+
+<h4 id="formatting-1">Formatting</h4>
+
+<p>Write selector in one line, do not use concatenation.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.product-list-item {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.product {
+    ...
+    &amp;-list {
+        ...
+        &amp;-item {
+            ...
+        }
+    }
+}
+</code></pre>
+
+<h4 id="nesting">Nesting</h4>
+
+<p>Avoid using more than three levels of nesting.</p>
+
+<p>Exceptions are pseudo elements and states.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.footer {
+    ...
+    .nav {
+        ...
+    }
+    .nav-list {
+        ...
+        .nav-list-item {
+            ...
+        }
+    }
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.footer {
+    ...
+    .nav {
+        ...
+        .nav-list {
+            ...
+            .nav-list-item {
+                ...
+            }
+        }
+    }
+}
+</code></pre>
+
+<h2 id="properties">Properties</h2>
+
+<h3 id="sorting">Sorting</h3>
+
+<p>Sort all properties in the alphabetical order. Mixins, variables, and so on should go first.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color;
+    color: @nav__color;
+    text-align: center;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    color: @nav__color;
+    text-align: center;
+    background-color: @nav__background-color;
+}
+</code></pre>
+
+<h3 id="shorthand">Shorthand</h3>
+
+<p>Use shorthand properties where possible.</p>
+
+<p>CSS offers a variety of shorthand properties that should be used whenever possible, even in cases where only one value is explicitly set.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>border-top: 0;
+padding: 0 1em 2em;
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>border-top-style: none;
+padding-bottom: 2rem;
+padding-left: 1rem;
+padding-right: 1rem;
+padding-top: 0;
+</code></pre>
+
+<h3 id="and-units">0 and units</h3>
+
+<p>Do not specify units “0” value.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>border-width: 0;
+margin: 0;
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>border-width: 0px;
+margin: 0rem;
+</code></pre>
+
+<h3 id="floating-values">Floating values</h3>
+
+<p>Omit leading “0”s in values, use dot instead.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code> margin-left: .5rem;
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>margin-left: 0.5rem;
+</code></pre>
+
+<h3 id="hexadecimal-notation">Hexadecimal notation</h3>
+
+<ul>
+  <li>Use lowercase only.</li>
+  <li>Use three-character hexadecimal notation where possible.</li>
+  <li>Avoid using hexadecimal values for color in properties, use only variables instead.</li>
+</ul>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>@nav__color: #fafafa;
+@nav-item__color: #f00;
+...
+color: @nav-item__color;
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>color: #ff0000;
+@nav__color: #FAFAFA;
+@nav-item__color: red;
+</code></pre>
+
+<h2 id="variables">Variables</h2>
+
+<h3 id="location">Location</h3>
+
+<h4 id="local-variables">Local variables</h4>
+
+<p>If variables are local and used only in a module scope, they should be located in the module file, in the beginning of the general comment.</p>
+
+<p><strong>Example</strong> <code>_module.less</code>:</p>
+
+<pre><code>...
+
+//
+//  Variables
+//  _____________________________________________
+
+    //  Colors
+@btn__color: @color-brownie;
+@btn-primary__color: @color-white;
+@btn-secondary__color: @color-white;
+...
+</code></pre>
+
+<h4 id="theme-variables">Theme variables</h4>
+
+<p>If variables are common for several modules they should be specified in the <code>_theme.less</code> file</p>
+
+<h3 id="naming">Naming</h3>
+
+<p>All variable names must be lowercase.</p>
+
+<h4 id="value-variables">Value variables</h4>
+
+<p>General model is the following:</p>
+
+<pre><code>@property-name
+</code></pre>
+
+<p><strong>Examples</strong>:</p>
+
+<pre><code>@primary__color: @color-phoenix;
+@indent__base: 2rem;
+@border-radius-round: 100%;
+</code></pre>
+
+<h4 id="parameter-variables">Parameter variables</h4>
+
+<p>General model is the following:</p>
+
+<pre><code>@component-element__state__property__modifier
+</code></pre>
+
+<p>Component name must meaningful. It can contain the <code>primary</code>, <code>secondary</code>, <code>tertiary</code> names.</p>
+
+<p><code>base</code> is a modifier.</p>
+
+<p><strong>Examples</strong>:</p>
+
+<pre><code>@color-orange: '';
+
+@link__hover__color: '';
+
+@nav-element__background-color: '';
+
+@secondary__color: '';
+
+@side-nav__indent__s: '';
+
+@side-nav-el__background-color: '';
+
+@side-nav-el__active__background-color: '';
+
+@side-nav-el__active-focus__background-color: '';
+
+@side-nav-el__active-focus__font-size__xl: '';
+
+@text__color__base: '';
+</code></pre>
+
+<h2 id="mixins">Mixins</h2>
+
+<h3 id="location-1">Location</h3>
+
+<p>Theme mixins (except extends) should be located in the <code>source/utilities</code> directory.</p>
+
+<h3 id="naming-1">Naming</h3>
+
+<p>For mixin naming apply the class naming rules. </p>
+
+<p>For mixins grouping use the double underscore “__” prefix.</p>
+
+<p><strong>Example</strong>:</p>
+
+<pre><code>.extend__clearfix (...) {
+    ...
+}
+
+.vendor-prefix__flex-direction (...) {
+    ...
+}
+</code></pre>
+
+<h2 id="extends">Extends</h2>
+
+<h3 id="location-2">Location</h3>
+
+<p>Local extends used only in one file, should be specified in this file. 
+Extends that are used in several files should be specified in the theme’s <code>source/_extend.less</code> file.</p>
+
+<h3 id="naming-2">Naming</h3>
+
+<p>Extend names should start with the <code>.abs-</code> prefix.</p>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

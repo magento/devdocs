@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento EE 2.1 Release Candidate 3 (RC3) Release Notes</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.1_RC3EE.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.0)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.0/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Magento EE 2.1 Release Candidate 3 (RC3) Release Notes</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/ReleaseNotes2.1_RC3EE.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Release Information</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q "><a href="/guides/v2.0/release-notes/bk-release-notes.html">List of Release Notes</a></li>
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/release-notes/changes_2.0.html">Backward incompatible changes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/changes/ce_changes.html">Magento CE</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/changes/ee_changes.html">Magento EE</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Release Notes</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3CE.html">Magento CE 2.0.3 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html">Magento EE 2.0.3 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4CE.html">Magento CE 2.0.4 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4EE.html">Magento EE 2.0.4 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5CE.html">Magento CE 2.0.5 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5EE.html">Magento EE 2.0.5 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.6CE.html">Magento CE 2.0.6 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.6EE.html">Magento EE 2.0.6 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">Magento CE 2.0.7 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7EE.html">Magento EE 2.0.7 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.8CE.html">Magento CE 2.0.8 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.8EE.html">Magento EE 2.0.8 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1CE.html">Magento CE 2.1 Release Candidate 1 (RC1) Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1EE.html">Magento EE 2.1 Release Candidate 1 (RC1) Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2CE.html">Magento CE 2.1 Release Candidate 2 (RC2) Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2EE.html">Magento EE 2.1 Release Candidate 2 (RC2) Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3CE.html">Magento CE 2.1 Release Candidate 3 (RC3) Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3EE.html">Magento EE 2.1 Release Candidate 3 (RC3) Release Notes</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Technical Bulletin</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_tls-repo.html">Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_207-upgrade.html">Required patch for PHP 5.5.x and Setup Application environments (June 6, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_201-upgrade.html">Magento upgrade issues (Jan. 28, 2016)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Third Party Licenses</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/thirdparty_ce.html">Magento CE third-party licenses</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/thirdparty_ee.html">Magento EE third-party licenses</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 1 July 2016 (PDT)</i></p>
+		<h2>Magento Enterprise Edition 2.1 Release Candidate 3 (RC3)</h2>
+<p>We are pleased to present Magento 2.1 Release Candidate 3 (RC3). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: </p>
+
+<ul>
+  <li>
+    <p>preview the new features and fixes that Magento 2.1 GA will contain</p>
+  </li>
+  <li>
+    <p>contribute to the Magento 2.1 code base by identifying unresolved issues</p>
+  </li>
+  <li>
+    <p>test your 2.0 extensions against  2.1 </p>
+  </li>
+</ul>
+
+<p>We welcome your participation in this process! Enterprise Edition customers can provide feedback in these two ways: </p>
+
+<ul>
+  <li>
+    <p>Enterprise Edition GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="/guides/v2.0/contributor-guide/contributing.html" target="_blank">Code contributions</a>. </p>
+  </li>
+  <li>
+    <p>Email to DL-Magento-2.1-Feedback@magento.com.</p>
+  </li>
+</ul>
+
+<p>This Release Candidate is available from <code>repo.magento.com</code> if you have an Enterprise Edition license or GitHub  if you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub.</p>
+
+<p>Backward-incompatible changes are documented in <a href="/guides/v2.0/release-notes/backward-incompatible-changes-2.1.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.</p>
+
+<h3>Highlights</h3>
+
+<p>Magento Enterprise Edition 2.1 includes several new and exciting features:</p>
+
+<ul>
+  <li>
+    <p><strong>Content Staging and Preview</strong> improves productivity by enabling business teams to easily create, preview, and schedule a wide range of content updates without involving IT. Merchants can make updates to products, categories, CMS content, promotions, and pricing and can preview these changes based on specific dates and times or store views. User-friendly dashboards provide greater visibility into all planned site changes and updates can be automatically deployed at scheduled times.</p>
+  </li>
+  <li>
+    <p><strong>Elasticsearch is a next-generation search technology</strong> that is replacing Solr in Magento Enterprise Edition 2.1. It is simpler to set up, able to handle large catalogs, and can easily scale as search volume grows. It supports 33 languages out-of-the-box and merchants can configure stop words and synonyms to ensure high quality search results. </p>
+  </li>
+  <li>
+    <p><strong>PayPal enhancements</strong> include PayPal in-context checkout and saved credit cards. In-context checkout helps to increase conversion rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the Admin interface.</p>
+  </li>
+  <li>
+    <p><strong>Braintree enhancements enable merchants to qualify for the simplest set of PCI compliance</strong> requirements by using Braintree Hosted Fields to collect all sensitive cardholder information in checkout. Merchants retain complete control over their checkout style and layout because Braintree uses small, transparent iframes to replace individual payment fields. Merchants can now also access Braintree settlement reports from within the Magento Admin interface.</p>
+  </li>
+  <li>
+    <p><strong>Improved management interfaces</strong> make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.</p>
+  </li>
+</ul>
+
+<h3>Fixed issues</h3>
+
+<h4>Security enhancement</h4>
+
+<!--- 52867-->
+<ul>
+  <li>Magento no longer discloses sensitive information about the server when an invalid URL has been requested. </li>
+</ul>
+
+<h4>Performance enhancements</h4>
+<!--- 53530-->
+<ul>
+  <li>Category page performance has significantly improved when categories contain more than 30000 items. </li>
+</ul>
+
+<!--- 53223-->
+<ul>
+  <li>Setting the Merge CSS Files option to Yes no longer reduces product performance. <a href="https://github.com/magento/magento2/issues/4710" target="_blank">(GITHUB-4710)</a></li>
+</ul>
+
+<h4>Staging</h4>
+
+<!--- 53424 -->
+<p>Changing the update start or end time on one entity no longer overwrites update settings on other stores. Previously, changing the update start or end time on one page would overwrite settings on other stores. </p>
+
+<!--- 54357-->
+<ul>
+  <li>The product update preview now works as expected. </li>
+</ul>
+
+<!--- 50468-->
+<ul>
+  <li>You can now filter products by Category ID as expected.</li>
+</ul>
+
+<h4>Google Tag Manager</h4>
+
+<!--- 53170-->
+<ul>
+  <li>The Update Cart Quantity event now correctly observes add or remove cart actions. </li>
+</ul>
+
+<h4>Import/Export</h4>
+
+<!--- 54200-->
+<ul>
+  <li>Magento now successfully imports products with a “gift_message_available” parameter. Previously, Magento exported the wrong “gift_message_available” parameter, which resulted in a validation error. (54200)</li>
+</ul>
+
+<h4>Cache</h4>
+
+<!--- 52923-->
+<ul>
+  <li>Category menus now display as expected for installations using Varnish. <a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a></li>
+</ul>
+
+<!--- 54228-->
+<ul>
+  <li>Varnish cache is no longer disabled due to HTML requests. </li>
+</ul>
+
+<!--- 53474-->
+<ul>
+  <li>Magento now enables caches by default when upgrading by the command-line interface.  <a href="https://github.com/magento/magento2/issues/4707" target="_blank">(GITHUB-4707)</a></li>
+</ul>
+
+<!--- 54205-->
+<ul>
+  <li>Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface. </li>
+</ul>
+
+<h4>Messages and documentation</h4>
+<!--- 52993-->
+<ul>
+  <li>Media Uploader error messages now make it clear the SVG file format is not supported. <a href="https://github.com/magento/magento2/issues/2958" target="_blank">(GITHUB-2958)</a></li>
+</ul>
+
+<!--- 53008-->
+<ul>
+  <li>The Swagger-generated docs for the REST API now display the property identifiers formatted as camelCaseFormat. <a href="https://github.com/magento/magento2/issues/4925" target="_blank">(GITHUB-4925)</a></li>
+</ul>
+
+<!--- 54255-->
+<ul>
+  <li>Magento now displays enhanced messages for cache management exceptions. </li>
+</ul>
+
+<h4>Payment methods</h4>
+
+<!--- 53238-->
+<ul>
+  <li>Magento no longer displays the Payflow Pro option for the Vault Provider field for countries where that option is unavailable. </li>
+</ul>
+
+<!--- 54214-->
+<ul>
+  <li>Problems placing an order using the Payflow Pro payment method have been resolved. </li>
+</ul>
+
+<!--- 54293-->
+<ul>
+  <li>You can now place an order using the Braintree Credit card as the payment method when 3D Secure Verification is enabled. </li>
+</ul>
+
+<h4>Miscellaneous</h4>
+
+<!--- 51753-->
+<ul>
+  <li>You can now re-install Magento and use a different Admin email address than you had previously used.</li>
+</ul>
+
+<!--- 52615-->
+<ul>
+  <li>Using the Web Setup wizard to disable a module no longer results in a backup error. <a href="https://github.com/magento/magento2/issues/3562" target="_blank">(GITHUB-3562)</a></li>
+</ul>
+
+<!--- 54205-->
+<ul>
+  <li>Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface. </li>
+</ul>
+
+<!--- 54283-->
+<ul>
+  <li>The ProductsList widget now returns the identities of the products displayed by this widget. </li>
+</ul>
+
+<!--- 52124-->
+<ul>
+  <li>Magento now retains special prices as expected for grouped products. </li>
+</ul>
+
+<!--- 53121-->
+<ul>
+  <li>You can now use a custom template to successfully create New Account email for a new customer. </li>
+</ul>
+
+<!--- 52891-->
+<ul>
+  <li>Magento now  displays the thousand separator for a product’s price  price, weight, and custom option price fields. </li>
+</ul>
+
+<!--- 54262-->
+<ul>
+  <li>You can now remove products from the shopping cart as expected. Previously, if the number of products being removed exceeded half the quantity of products in stock, Magento would throw an error. </li>
+</ul>
+
+<!--- 54191-->
+<ul>
+  <li>You can now successfully save new order status. Previously, you could not save new order status when selecting Create New Status from the Go to Stores &gt; Order Status menu. <a href="https://github.com/magento/magento2/issues/4146" target="_blank">(GITHUB-4146)</a></li>
+</ul>
+
+<!--- 54186-->
+<ul>
+  <li>JavaScript validation now works as expected when you add a product to a shopping cart. Previously, if a validation error occurred during this task, Magento would still submit the form. </li>
+</ul>
+
+<!--- 54242-->
+<ul>
+  <li>Grid view pagination (as configured from Stores &gt; Configuration &gt; Catalog &gt; Catalog &gt;Storefront)  now works as expected. <a href="https://github.com/magento/magento2/issues/3861" target="_blank">(GITHUB-3861)</a></li>
+</ul>
+
+<!--- 53139-->
+<ul>
+  <li>Magento now correctly displays prices for products with several configurable price options. </li>
+</ul>
+
+<!--- 54182-->
+<ul>
+  <li>You can successfully complete an order  for a quantity of product that exceeds half of the product stock. </li>
+</ul>
+
+<!--- 54222-->
+<ul>
+  <li>You can now generate a new simple product without changing the names of already existing products.  <a href="https://github.com/magento/magento2/issues/4951" target="_blank">(GITHUB-4951)</a></li>
+</ul>
+
+<!--- 54257-->
+<ul>
+  <li>The Stock Status attribute now works as expected during creation of configurable products. </li>
+</ul>
+
+<!--- 54231-->
+<ul>
+  <li>You can successfully delete an Admin user without breaking integration if the Admin user shares the same ID as an integration user. Previously, if you deleted an Admin user who shared an ID with an integration user, the integration would be permanently broken. </li>
+</ul>
+
+<!--- 54051-->
+<ul>
+  <li>Problems related to login when inline translation is enabled have been resolved.  <a href="https://github.com/magento/magento2/issues/4925" target="_blank">(GITHUB-4925)</a></li>
+</ul>
+
+<!--- 54172-->
+<ul>
+  <li>Magento now generates URL rewrites for a new store view as expected during a mass update to a new website. </li>
+</ul>
+
+<!--- 54043-->
+<ul>
+  <li>Magento no longer prompts you to select a dropdown attribute when adding a product to the shopping cart if you have already selected an attribute. <a href="https://github.com/magento/magento2/issues/4899" target="_blank">(GITHUB-4899)</a></li>
+</ul>
+
+<!--- 53034-->
+<ul>
+  <li>You can now drag values as expected when working in the Customizable Options window.</li>
+</ul>
+
+<!--- 53366-->
+<ul>
+  <li>Tax Report now displays records as expected. </li>
+</ul>
+
+<!--- 52165 internal only-->
+
+<!--- 54120 internal only -->
+
+<!--- 54031 internal only-->
+
+<!--- 53293 internal only-->
+
+<!--- 54211 DUPLICATE-->
+
+<h3>Known issues</h3>
+<p>Magento Enterprise Edition 2.1, Release Candidate 3 includes the following known issues: </p>
+
+<!--- 54445-->
+<ul>
+  <li>The process of uninstalling modules using command-line tools unexpectedly stalls. 
+<strong>Workaround:</strong> Ensure that your <code>&lt;magento root&gt;/var/composer_home/auth.json</code> file contains your authentication keys. You can create an <code>auth.json</code> file in one of two ways:</li>
+</ul>
+
+<p><strong>Method 1:</strong> If you ran Composer commands from CLI before and specified your <code>repo.magento.com</code> credentials, you can copy the existing <code>auth.json</code> file from your home directory under <code>"~/.composer/"</code></p>
+
+<p><strong>Method 2:</strong> You can manually create the file using this format:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="p">{</span>
+    <span class="s2">&quot;http-basic&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;repo.magento.com&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;public key&gt;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;password&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;private key&gt;&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<!--- 54320-->
+<ul>
+  <li>The Category page displays the former price instead of the current price during scheduled updates. </li>
+</ul>
+
+<h3>Technology stack</h3>
+
+<p>Our technology stack is built on PHP and MySQL. Magento 2.1 RC3 supports:</p>
+
+<ul>
+  <li>PHP 5.6</li>
+  <li>PHP 7.0.2</li>
+  <li>PHP 7.0.6 + up until 7.1</li>
+  <li>MySQL 5.6.</li>
+</ul>
+
+<p>We do not support PHP 5.5.x or 7.0.5. </p>
+
+<h2 id="installation-and-upgrade-instructions">Installation and upgrade instructions</h2>
+
+<p>You can install Magento Enterprise Edition 2.1 Release Candidate 3 (RC3) using Composer. </p>
+
+<p>This Release Candidate is for test purposes only. Do not install it in a production environment.</p>
+
+<div>
+
+  <h2 id="installation-and-upgrade-instructions-1">Installation and upgrade instructions</h2>
+  <p>See one of the following sections:</p>
+
+  <ul>
+    <li><a href="#install-rc-composer">Get Magento EE using Composer</a></li>
+    <li><a href="#get-zip">Get Magento EE using a compressed archive</a></li>
+    <li><a href="#upgrade">Upgrade from an earlier version</a></li>
+  </ul>
+
+  <p>A Release Candidate is for testing purposes only. Do not install it in a production environment.</p>
+
+  <h3 id="install-rc-composer" class="no_toc">Get Magento EE using Composer</h3>
+
+  <p>Magento EE is available from <code>repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
+</code></pre>
+
+  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code> (GA release) or <code>2.1.0-rc3</code> for Release Candidate 3 (RC3)</p>
+
+  <p>For example, to install 2.1.0 in the <code>magento2</code> directory:</p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.0 magento2
+</code></pre>
+
+  <h3 id="get-zip" class="no_toc">Get Magento EE using a compressed archive</h3>
+
+  <div>
+
+    <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
+
+    <ul>
+      <li>Magento EE software only</li>
+      <li>Magento EE software with sample data (designed to help you learn Magento faster)</li>
+    </ul>
+
+    <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
+
+    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+
+    <p>To get the Magento EE archive:</p>
+
+    <ol>
+      <li>Go to <a href="https://www.magentocommerce.com/products/customer/account/login/" target="_blank">your account on magento.com</a>.</li>
+      <li>Log in with your Magento user name and password.</li>
+      <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+      <li>In the right pane, click <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Full Release</strong> or <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Full Release + Sample Data</strong> for the software.</li>
+      <li>
+        <p>Follow the instructions on your screen to complete the Magento EE download:</p>
+
+        <ul>
+          <li><code>Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code>Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+        </ul>
+      </li>
+      <li>Transfer the installation package to your development system.</li>
+    </ol>
+
+    <h3 class="no_toc" id="complete-the-installation">Complete the installation</h3>
+
+    <p>After you get the EE software:</p>
+
+    <ol>
+      <li><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
+      <li>
+        <p>Install the software:</p>
+
+        <ul>
+          <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
+          <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h3>
+    <p>To upgrade to Magento EE 2.1 from an earlier version, see <a href="/guides/v2.0/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
+
+    <h3 id="upgrades">Upgrades</h3>
+    <p>To upgrade to Magento 2.1 (including a Release Candidate), see <a href="/guides/v2.0/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
+
+    <h2 id="migration-toolkits">Migration toolkits</h2>
+    <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
+  </div>
+</div>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

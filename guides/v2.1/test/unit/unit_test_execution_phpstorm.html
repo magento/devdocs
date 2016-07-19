@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Running Unit Tests in PHPStorm</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/test/unit/unit_test_execution_phpstorm.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Running Unit Tests in PHPStorm</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/test/unit/unit_test_execution_phpstorm.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+			<a class="contributor" href="http://vinaikopp.com/" target="_blank">Thanks to Vinai Kopp for contributing this topic</a>
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/test/unit/unit_test_execution.html">Running Unit Tests</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/test/unit/unit_test_execution_cli.html">Running Unit Tests in the CLI</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/test/unit/unit_test_execution_phpstorm.html">Running Unit Tests in PHPStorm</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/test/unit/writing_testable_code.html">Writing Testable Code</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2 id="running-unit-tests-in-phpstorm">Running unit tests in PHPStorm</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#running-unit-tests-in-phpstorm">Running unit tests in PHPStorm</a>    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#configuring-the-php-interpreter">Configuring the PHP interpreter</a></li>
+      <li><a href="#configuring-phpunit">Configuring PHPUnit</a></li>
+      <li><a href="#creating-a-run-configuration">Creating a run configuration</a>        <ul>
+          <li><a href="#running-all-tests">Running all tests</a></li>
+          <li><a href="#running-the-tests-of-one-module">Running the tests of one module</a></li>
+          <li><a href="#running-the-tests-in-a-class">Running the tests in a class</a></li>
+        </ul>
+      </li>
+      <li><a href="#executing-the-run-configuration">Executing the run configuration</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="overview">Overview</h3>
+
+<p>Running tests in PHPStorm requires a couple steps to setup the system.</p>
+
+<ol>
+  <li>Configuring the PHP interpreter</li>
+  <li>Configuring PHPUnit</li>
+  <li>Creating a run configuration</li>
+</ol>
+
+<h3 id="configuring-the-php-interpreter">Configuring the PHP interpreter</h3>
+
+<p>In the PHPStorm preferences, select the PHP interpreter PHPStorm should use to run tests with.  </p>
+
+<p><img src="/common/images/phpstorm_php_language_preferences.png" alt="PHPStorm PHP preference panel" width="600px" /></p>
+
+<p>If you can not select a PHP interpreter because the dropdown is empty, you can add a one by clicking on the button with the three dots beside the dropdown.  </p>
+
+<p>Then, click the <strong>+</strong> (add) button in the top right to select the desired PHP binary on your file system.</p>
+
+<p><img src="/common/images/phpstorm_add_php_interpreter_dialogue.png" alt="Adding a PHP interpreter to PHPStorm" width="600px" /></p>
+
+<p>Please refer to the PHPStorm documentation for further information on <a href="https://www.jetbrains.com/help/phpstorm/2016.1/configuring-local-php-interpreters.html?origin=old_help">how to configure a local PHP interpreter</a>.</p>
+
+<p>It is also possible to <a href="https://www.jetbrains.com/help/phpstorm/2016.1/configuring-remote-php-interpreters.html?origin=old_help">configure a remote PHP interpreter</a>, which is a common setup when working with Vagrant or Docker based development environments.</p>
+
+<p>Please be aware that the details on configuring the PHP interpreter might vary between PHPStorm versions.</p>
+
+<h3 id="configuring-phpunit">Configuring PHPUnit</h3>
+
+<p>After configuring the interpreter, the next step is to set up the PHPStorm preferences for how to execute PHPUnit.</p>
+
+<p><img src="/common/images/phpstorm_phpunit_preferences_dialogue.png" alt="PHPStorm PHPUnit preference panel" width="600px" /></p>
+
+<ol>
+  <li>Click the <strong>Use custom autoloader</strong> option.</li>
+  <li>Select the <code>vendor/autoload.php</code> file in your Magento 2 installation.</li>
+  <li>Optionally select the <code>dev/tests/unit/phpunit.xml.dist</code> file as the <strong>Default configuration file</strong>. Doing this step makes creating temporary run configurations more convenient.</li>
+</ol>
+
+<p>Please refer to the PHPStorm documentation for further information on <a href="https://www.jetbrains.com/help/phpstorm/2016.1/enabling-phpunit-support.html#useAutoload">enabling PHPUnit in PHPStorm</a>.</p>
+
+<h3 id="creating-a-run-configuration">Creating a run configuration</h3>
+
+<p>The final step is to create a <em>run configuration</em> to execute the desired tests. </p>
+
+<p>There are many ways to create run configurations in PHPStorm. Here we just show one of the option.</p>
+
+<p>All start by creating a new run configuration. To do so, follow these steps:</p>
+
+<ol>
+  <li>Select the <strong>Run &gt; Edit Configurations</strong> action from the top menu.</li>
+  <li>Click the <strong>+</strong> symbol on the top right and select <strong>PHPUnit</strong>.</li>
+</ol>
+
+<p>Depending on what tests should be included in the run configuration, the next steps differ.  </p>
+
+<h4 id="running-all-tests">Running all tests</h4>
+
+<ol>
+  <li>Give the run configuration a descriptive name; for example <strong>All Unit Tests</strong></li>
+  <li>Test Scope: select the <strong>Defined in the configuration file</strong> radio button</li>
+  <li>Check the <strong>Use alternative configuration file</strong> check box</li>
+  <li>Select the file <code>dev/tests/unit/phpunit.xml.dist</code></li>
+  <li>Click <strong>OK</strong>.</li>
+</ol>
+
+<p><img src="/common/images/phpstorm_run_config_all_unit_tests.png" alt="All Unit Tests run configuration" width="600px" /></p>
+
+<h4 id="running-the-tests-of-one-module">Running the tests of one module</h4>
+
+<ol>
+  <li>Give the run configuration a descriptive name; for example, <strong>Example_Module Unit Tests</strong></li>
+  <li>Test Scope: select the <strong>Directory</strong> option</li>
+  <li>Select the directory containing the modules unit tests. PHPUnit will run every file ending with <code>Test.php</code> in the selected directory branch.</li>
+  <li>Click <strong>OK</strong>.</li>
+</ol>
+
+<p><img src="/common/images/phpstorm_run_config_module_unit_tests.png" alt="Module Unit Tests run configuration" width="600px" /></p>
+
+<h4 id="running-the-tests-in-a-class">Running the tests in a class</h4>
+
+<ol>
+  <li>Give the run configuration a descriptive name like the name of the test class; for example, <strong>FrontControllerPluginTest</strong>.</li>
+  <li>Test Scope: select the <strong>Class</strong> option.</li>
+  <li>Class: enter the fully qualified class name (including the PHP namespace).</li>
+  <li>File: select the file containing the test class.</li>
+  <li>Click <strong>OK</strong>.</li>
+</ol>
+
+<p><img src="/common/images/phpstorm_run_config_class_unit_tests.png" alt="Test Class run configuration" width="600px" /></p>
+
+<p>A more convenient way to create a run configuration for a test class is to open the class in PHPStorm, and then right-clicking into the class and selecting <strong>Create ‘TestClassName’</strong> or <strong>Run ‘TestClassName’</strong>.  </p>
+
+<p>Note that the test class has to inherit from <code>\PHPUnit_Framework_TestCase</code> for PHPStorm to display that option.</p>
+
+<h3 id="executing-the-run-configuration">Executing the run configuration</h3>
+
+<p>First select the run configuration to execute in the run configuration drop-down menu above the main editor window, then click the <strong>Play</strong> icon beside it.  </p>
+
+<p>By clicking the <strong>Debug</strong> icon (of a bug) next to the <strong>Play</strong> icon, it is possible to step-debug code during test execution, if the xdebug PHP extension is installed.</p>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

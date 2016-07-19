@@ -1,39 +1,30 @@
 # Magento Developer Documentation
 
-Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.0 releases.
+Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases.
 
-To contribute, please fork the 2.0 branch and submit any PRs to this same branch as well.
+To contribute, please fork the `develop` branch. 
 
-# Build this site using Jekyll
-To preview your work before submitting it to us, you can view the site locally using [Jekyll](https://jekyllrb.com){:target="_blank"}.
+# Building this site
+To check your work before submitting a pull request, you can build this site locally using Jekyll.
 
-## Update (May 10, 2016)
-The devdocs site now displays the last modified date of each topic on the right side of the page. This provides you a handy way of seeing what's new on our site.
+*	Windows users _must_ build the site in a Vagrant container running on Virtual Box as discussed in more detail in the [Vagrant README](vagrant/README.md).
 
-If you're currently building this site, you must update your Gemfile to include a new Gem, [`jekyll-last-modified-at`](https://github.com/gjtorikian/jekyll-last-modified-at). Otherwise, you cannot run Jekyll locally.
+	We use symbolic links (symlinks) in the `guides/v2.1` directory to link to topics that haven't changed since the 2.0.x release. Because symlinks aren't supported by Windows, you _cannot_ use the Windows environment; you must use a Linux environment.
 
-To update your Gemfile, enter the following command at a command prompt:
+*	Mac and Linux users can build this site locally using Jekyll or you can use Vagrant. 
 
-	bundle install
+	Vagrant might be easier because the software runs in a container that isn't dependent on, and cannot conflict with, any other software installed on your computer.
 
-(If the command fails, try `sudo bundle install`.) 
+## Build using Vagrant
+For more information, see the [Vagrant README](vagrant/README.md).
 
-## Mac OS X prerequisites
-
-El Capitan and later versions of Mac OS X require additional steps prior to installation due to security improvements.
-
-Change to the `devdocs` root directory and enter the following commands to install and run Jekyll:
+## Build locally in Mac or Linux
+To build this site locally:
 
 ```bash
-# Install Bundler into /usr/local/bin directory instead of protected /usr/bin
-$ sudo gem install bundler -n /usr/local/bin
-```
+# Copy the sample config file and name it "config.yml"
+$ cp _config.devdocs.yml _config.yml
 
-# Build this site
-
-To build this site using Jekyll:
-
-```bash
 # Install dependencies
 $ bundle install
 
@@ -41,10 +32,11 @@ $ bundle install
 $ bin/jekyll serve
 ```
 
-# Questions
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
 *	<a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
 
 *	<a href="mailto:DL-Magento-Doc-Feedback@magento.com">E-mail us</a>
+
+*	<a href="http://devdocs.magento.com">Visit our documentation site</a>, built on GitHub using [Jekyll](http://jekyllrb.com/).
 

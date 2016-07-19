@@ -1,0 +1,2943 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento CE 2.1.0 Release Notes</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/release-notes/ReleaseNotes2.1.0CE.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Magento CE 2.1.0 Release Notes</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/release-notes/ReleaseNotes2.1.0CE.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Release Information</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q "><a href="/guides/v2.1/release-notes/bk-release-notes.html">What's on this page</a></li>
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/release-notes.html">Magento 2.1 Release Notes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.0CE.html">Magento CE 2.1.0  Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.0EE.html">Magento EE 2.1.0 Release Notes</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/backward-incompatible-changes-2.1.html">Magento 2.1 backward incompatible changes</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Technical Bulletin</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/tech_bull_tls-repo.html">Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Third Party Licenses</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/thirdparty_ce.html">Magento CE third-party licenses</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/thirdparty_ee.html">Magento EE third-party licenses</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 6 July 2016 (PDT)</i></p>
+		<ul id="markdown-toc">
+  <li><a href="#magento-community-edition-210">Magento Community Edition 2.1.0</a>    <ul>
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#security-enhancements">Security enhancements</a></li>
+      <li><a href="#known-issue">Known issue</a></li>
+      <li><a href="#fixed-issues">Fixed issues</a></li>
+      <li><a href="#system-requirements">System requirements</a></li>
+      <li><a href="#installation-and-upgrade-instructions">Installation and upgrade instructions</a></li>
+    </ul>
+  </li>
+  <li><a href="#installation-and-upgrade-instructions-1">Installation and upgrade instructions</a>    <ul>
+      <li><a href="#upgrade-github">Upgrade an existing installation from the GitHub repository</a></li>
+      <li><a href="#upgrade-other">Other upgrades</a></li>
+    </ul>
+  </li>
+  <li><a href="#migration-toolkits">Migration toolkits</a></li>
+</ul>
+
+<h2 id="magento-community-edition-210">Magento Community Edition 2.1.0</h2>
+
+<p>We are pleased to present Magento Community Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.</p>
+
+<p>Backward-incompatible changes are documented in <a href="/guides/v2.1/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This version of the Magento Community Edition 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
+</div>
+
+<h3 id="highlights">Highlights</h3>
+<p>Magento Community Edition 2.1.0 includes several new and exciting features:</p>
+
+<ul>
+  <li>
+    <p><strong>PayPal enhancements</strong> include PayPal in-context checkout and saved credit cards. In-context checkout helps to increase conversion rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the Admin interface.</p>
+  </li>
+  <li>
+    <p><strong>Braintree Hosted Fields</strong> securely collect all sensitive payment information in checkout so merchants can qualify for the simplest set of PCI compliance requirements. Merchants retain complete control over their checkout style and layout because Braintree gathers credit card data using small, transparent iframes that replace individual payment fields. Braintree settlement reports are now also conveniently available within the Magento Admin.</p>
+  </li>
+  <li>
+    <p><strong>Improved management interfaces</strong> make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.</p>
+  </li>
+</ul>
+
+<h3 id="security-enhancements">Security enhancements</h3>
+<p>This release includes enhancements to improve the security of your Magento application. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.</p>
+
+<p><a href="https://magento.com/company/contact-us" target="_blank">Contact us</a> for more information.</p>
+
+<h3 id="known-issue">Known issue</h3>
+
+<p><i>Known issue <a href="https://github.com/magento/magento2/issues/5025" target="_blank"> (GITHUB-5025)</a>  removed.</i></p>
+
+<h3 id="fixed-issues">Fixed issues</h3>
+
+<h4 class="no_toc" id="installation-and-upgrade">Installation and upgrade</h4>
+
+<!--- 51033 -->
+<ul>
+  <li>System upgrades now ignore the contents of the Magento <code>var/session</code> directory.</li>
+</ul>
+
+<!--- 51327 -->
+<ul>
+  <li>You don’t need to have a <code>composer.json</code> to run Magento CLI commands.</li>
+</ul>
+
+<!--- 50794 -->
+<ul>
+  <li>Addressed an issue that caused the following error on the Magento storefront when optional sample data is installed: “We’re sorry, an error has occurred while generating this email”.</li>
+</ul>
+
+<!--- 53232 -->
+<ul>
+  <li>Resolved data loss issues during upgrade to version 2.0.4. <a href="https://github.com/magento/magento2/issues/4054" target="_blank"> (GITHUB-4054)</a>, <a href="https://github.com/magento/magento2/issues/3951" target="_blank"> (GITHUB-3951)</a>, <a href="https://github.com/magento/magento2/issues/3097" target="_blank"> (GITHUB-3097)</a>, <a href="https://github.com/magento/magento2/issues/3249" target="_blank"> (GITHUB-3249)</a></li>
+</ul>
+
+<!--- 51544 -->
+<ul>
+  <li>Upgrading the Magento system software now correctly updates the product version.</li>
+</ul>
+
+<!--- 51693 -->
+<ul>
+  <li>Improved performance of installations and upgrades by compressing packages on repo.magento.com</li>
+</ul>
+
+<!--- 52187 -->
+<ul>
+  <li>A user with limited access to the Magento Admin cannot run the Web Setup Wizard.</li>
+</ul>
+
+<!--- 52973 -->
+<ul>
+  <li>Installing optional sample data no longer throws the following exception: <code>efault: Notice: /Stage[magento_setup]/Magento::Setup::Magento_cli/Exec[Run Magento reindex]/returns: SQLSTATE[23000]: Integrity constraint violation: 1062</code>.</li>
+</ul>
+
+<!--- 45608 -->
+<ul>
+  <li>You can now successfully uninstall the Magento_CustomerBalanceSampleData module.</li>
+</ul>
+
+<!--- 51175 -->
+<ul>
+  <li>The Component Manager now displays component versions that are compatible with your Magento software version.</li>
+</ul>
+
+<!--- 51718 -->
+<ul>
+  <li>You can now successfully uninstall the Magento software after an incomplete installation.</li>
+</ul>
+
+<!--- 50742, 45652, 51102, 50508, 51956  -->
+<ul>
+  <li>Fixed issues with installing optional sample data.</li>
+</ul>
+
+<!--- 50696 -->
+<ul>
+  <li>Fixed issues with running integration tests on Microsoft Windows.</li>
+</ul>
+
+<!--- 50848 -->
+<ul>
+  <li>The <code>magento setup:di:compile</code> command no longer throws a <code>No tokens were provided</code> exceptions when it encounters directories or empty files. <a href="https://github.com/magento/magento2/issues/3824" target="_blank"> (GITHUB-3824)</a></li>
+</ul>
+
+<!--- 51953 -->
+<ul>
+  <li>Manually unselecting the DownloadableStaging during installation no longer throws a fatal error.</li>
+</ul>
+
+<!--- 45105 -->
+<ul>
+  <li>You can now successfully install Magento using a setup URL that contains a port number. <a href="https://github.com/magento/magento2/issues/2272" target="_blank"> (GITHUB-2272)</a></li>
+</ul>
+
+<!--- 46858-->
+<ul>
+  <li>The Magento CLI <code>setup:config:set</code> now accepts  hyphens and dashes “-“.  <a href="https://github.com/magento/magento2/issues/2700" target="_blank"> (GITHUB-2700)</a></li>
+</ul>
+
+<!--- 47531-->
+<ul>
+  <li>Running <code>setup:config:set</code> updates the deployment configuration properly. <a href="https://github.com/magento/magento2/issues/2852" target="_blank"> (GITHUB-2852)</a></li>
+</ul>
+
+<!--- 51779-->
+<ul>
+  <li>Magento Community Edition 2.0.4 with Sample Data.tar.bz2 (204 MB) download now works. <a href="https://github.com/magento/magento2/issues/4090" target="_blank"> (GITHUB-4090)</a></li>
+</ul>
+
+<!--- 53471-->
+<ul>
+  <li>The <code>MAGE_MODE</code> environment variable is no longer a required server config variable for NGINX configuration.</li>
+</ul>
+
+<h4 class="no_toc" id="shopping">Shopping</h4>
+
+<!--- 51987-->
+<ul>
+  <li>We’ve fixed the Add to Cart button translation. <a href="https://github.com/magento/magento2/issues/4181" target="_blank"> (GITHUB-4181)</a></li>
+</ul>
+
+<!--- 40616 -->
+<ul>
+  <li>The shopping cart for a registered user now returns a complete list of products.  </li>
+</ul>
+
+<!--- 51259 -->
+<ul>
+  <li>You can now create a fixed amount discount for an entire cart.</li>
+</ul>
+
+<!--- 51248 -->
+<ul>
+  <li>You can now generate coupon codes for Cart Price Rules.</li>
+</ul>
+
+<!--- 49449 -->
+<ul>
+  <li>Magento no longer performs redundant GET requests if the customer has items in shopping cart.</li>
+</ul>
+
+<!--- 49416 -->
+<ul>
+  <li>The Date/time fields work as expected.</li>
+</ul>
+
+<!--- 43267-->
+<ul>
+  <li>Magento now logs exceptions in a file under <code>var/report</code> when in  default mode.</li>
+</ul>
+
+<!--- 53468 -->
+<ul>
+  <li>Cart now updates and lists rates for custom shipping methods as expected when you change the shipping address. <a href="https://github.com/magento/magento2/issues/4679" target="_blank"> (GITHUB-4679)</a></li>
+</ul>
+
+<!--- 51903 -->
+<ul>
+  <li>You can now reorder a product with a required custom option (type = file). Previously, if you tried to reorder a product under these conditions, you would encounter an error when opening the shopping cart.
+<a href="https://github.com/magento/magento2/issues/4058" target="_blank"> (GITHUB-4058)</a></li>
+</ul>
+
+<!--- 32380-->
+<ul>
+  <li>Magento no longer logs out a customer who clicks first on the Go to Checkout link, then clicks on the Shopping Cart link.</li>
+</ul>
+
+<!--- 50913-->
+<ul>
+  <li>Discounts now behave consistently.</li>
+</ul>
+
+<!--- 51863-->
+<ul>
+  <li>You can now successfully save conditions in Create Cart Price Rules.</li>
+</ul>
+
+<!--- 51086-->
+<ul>
+  <li>You can now log out while persistent shopping cart functionality is enabled.</li>
+</ul>
+
+<!--- 52452-->
+<ul>
+  <li>Shopping cart shipping estimation no longer fails randomly.</li>
+</ul>
+
+<h4 class="no_toc" id="product">Product</h4>
+
+<!--- 52030 -->
+<ul>
+  <li>Downloadable products are no longer shown as out of stock on the Category page.</li>
+</ul>
+
+<!--- 48153 -->
+<ul>
+  <li>You can now save a product that’s been assigned to more than one website.</li>
+</ul>
+
+<!--- 48781 -->
+<ul>
+  <li>The performance of loading directories that contain products that include Swatches has been improved.</li>
+</ul>
+
+<!--- 48588 -->
+<ul>
+  <li>You can now add a new row to a Custom Option of Input Type when editing a simple product.</li>
+</ul>
+
+<!--- 53342 -->
+<ul>
+  <li>Magento no longer duplicates URL keys during the creation of a configurable product.</li>
+</ul>
+
+<!--- 50507 -->
+<ul>
+  <li>You can now successfully rest the Product Attributes mass update Admin form.</li>
+</ul>
+
+<!--- 51034-->
+<ul>
+  <li>You can now create a simple product with custom options.</li>
+</ul>
+
+<!--- 51407 -->
+<ul>
+  <li>You can now save a product after applying an update for it.</li>
+</ul>
+
+<!--- 52078 -->
+<ul>
+  <li>You can now successfully save products with custom options.</li>
+</ul>
+
+<!--- 51181 -->
+<ul>
+  <li>You can now configure a product whose last attribute has a price of zero, and the correct total price results. <a href="https://github.com/magento/magento2/issues/3912" target="_blank"> (GITHUB-3912)</a></li>
+</ul>
+
+<!--- 50257 -->
+<ul>
+  <li>Optional dropdown product attributes can now be left blank.</li>
+</ul>
+
+<!--- 53131 -->
+<ul>
+  <li>You can now view configurable products when using sample data.</li>
+</ul>
+
+<!--- 51611 -->
+<ul>
+  <li>Layered navigation now includes a list of all product attributes.</li>
+</ul>
+
+<!--- 51751 -->
+<ul>
+  <li>You can now filter entries in the Product Reviews report by date. </li>
+</ul>
+
+<!--- 51080 -->
+<ul>
+  <li>You can now update an existing variation of a configurable product.</li>
+</ul>
+
+<!--- 50969-->
+<ul>
+  <li>Fixed issue with incorrect or missing scope labels on the Product Creation/Editing page.</li>
+</ul>
+
+<!--- 53019 -->
+<ul>
+  <li>Magento no longer makes unexpected calls when you view a product in the storefront.</li>
+</ul>
+
+<!--- 47440 -->
+<ul>
+  <li>Magento now displays the correct product prices on the Configurable product page when catalog prices include tax. <a href="https://github.com/magento/magento2/issues/2471" target="_blank"> (GITHUB-2471)</a></li>
+</ul>
+
+<!--- 41377-->
+<ul>
+  <li>Products &gt; Catalog “Change status” mass action now works properly. <a href="https://github.com/magento/magento2/issues/1559" target="_blank"> (GITHUB-1559)</a></li>
+</ul>
+
+<h4 class="no_toc" id="api">API</h4>
+<!--- 50878 -->
+<ul>
+  <li>The Oauth handshake now clearly indicates the SAAS platform with which the Magento store is doing the Oauth handshake.</li>
+</ul>
+
+<!--- 46720 -->
+<ul>
+  <li>The Orders API now exposes Shipping Address. <a href="https://github.com/magento/magento2/issues/2628" target="_blank"> (GITHUB-2628)</a></li>
+</ul>
+
+<!--- 52613 -->
+<ul>
+  <li>The Credit Memo REST API now updates attributes as expected.  <a href="https://github.com/magento/magento2/issues/4329" target="_blank"> (GITHUB-4329)</a></li>
+</ul>
+
+<!--- 47451-->
+<ul>
+  <li>The ‘in’ filter now works in list APIs (checked customer, product, product attributes).  <a href="https://github.com/magento/magento2/issues/2892" target="_blank"> (GITHUB-2892)</a></li>
+</ul>
+
+<!--- 51451-->
+<ul>
+  <li>The SOAP API now works in production mode.  <a href="https://github.com/magento/magento2/issues/3944" target="_blank"> (GITHUB-3944)</a></li>
+</ul>
+
+<!--- 50192-->
+<ul>
+  <li>Magento now displays an error message if an error occurs when you try to set payment using the REST API. Previously, Magento creates only an internal error. <a href="https://github.com/magento/magento2/issues/3600" target="_blank"> (GITHUB-3600)</a></li>
+</ul>
+
+<!--- 47504-->
+<ul>
+  <li>USPS API includes the January 17, 2016 USPS method name changes.</li>
+</ul>
+
+<!--- 50632-->
+<ul>
+  <li>The title of the totals discount segment returned by the API is now correct.</li>
+</ul>
+
+<!--- 49558, 51009 -->
+<ul>
+  <li>You can now use the SOAP API to add product attribute options text swatch or visual swatch.</li>
+</ul>
+
+<!--- 47850-->
+<ul>
+  <li>Magento no longer creates customers when validation fails. <a href="https://github.com/magento/magento2/issues/2914" target="_blank"> (GITHUB-2914)</a></li>
+</ul>
+
+<!--- 47792-->
+<ul>
+  <li>You can now successfully update product categories through the SOAP API.</li>
+</ul>
+
+<!--- 50636-->
+<ul>
+  <li>Magento validates all the appropriate REST calls with SearchCriteria filters if the response to the <code>search_criteria</code> key is NOT null.</li>
+</ul>
+
+<!--- 53152-->
+<ul>
+  <li>REST API GET /V1/categories calls now return all the categories you expect (that is, all that are created in the product interface). <a href="https://github.com/magento/magento2/issues/4525" target="_blank"> (GITHUB-4525)</a></li>
+</ul>
+
+<!--- 53545-->
+<ul>
+  <li>System &gt; Integrations &gt; Add New Integration now returns a populated  resources list.  <a href="https://github.com/magento/magento2/issues/4537" target="_blank"> (GITHUB-4537)</a></li>
+</ul>
+
+<!--- 50611-->
+<ul>
+  <li>Web APIs no longer allow anonymous access by default. <a href="https://github.com/magento/magento2/issues/3786" target="_blank"> (GITHUB-3786)</a></li>
+</ul>
+
+<!--- 51066 -->
+<ul>
+  <li>Magento now returns available services in WSDL schema.  Previously, you could not process SOAP requests as expected.</li>
+</ul>
+
+<h4 class="no_toc" id="javascript">JavaScript</h4>
+
+<!--- 50243 -->
+<ul>
+  <li>Attribute values are now consistently persisted after reloading a form.</li>
+</ul>
+
+<!--- 50864-->
+<ul>
+  <li>You can now nest categories more than four levels deep.</li>
+</ul>
+
+<!--- 49967 -->
+<ul>
+  <li>We’ve optimized <code>registry.js</code> performance.</li>
+</ul>
+
+<h4 class="no_toc" id="php">PHP</h4>
+<!--- 53524 -->
+<ul>
+  <li>PHP errors no longer occur when you run a cron script on installations running PHP5.5. <a href="https://github.com/magento/magento2/issues/4722" target="_blank"> (GITHUB-4722)</a></li>
+</ul>
+
+<!--- 47677-->
+<ul>
+  <li>Remi PHP 7.0.1 now works with Sample Data.</li>
+</ul>
+
+<!--- 48387-->
+<ul>
+  <li>Payment/Shipping config is no longer decrypted twice in a PHP7 environment.</li>
+</ul>
+
+<h4 class="no_toc" id="paypal">PayPal</h4>
+<!--- 49148 -->
+<ul>
+  <li>The PayPal button now displays as expected in the minicart.</li>
+</ul>
+
+<!--- 50557-->
+<ul>
+  <li>The PayPal Express review rendering of tax block now works correctly.  <a href="https://github.com/magento/magento2/issues/3774" target="_blank"> (GITHUB-3774)</a></li>
+</ul>
+
+<!--- 45127-->
+<ul>
+  <li>PayPal now works correctly if the applied discount brings the subtotal to negative, but the grand total is positive.</li>
+</ul>
+
+<!--- 47544-->
+<ul>
+  <li>The “Learn More” link for Payments Pro now works correctly.</li>
+</ul>
+
+<!--- 48469-->
+<ul>
+  <li>The Get Credentials From PayPal and Sandbox credentials buttons are now rendered correctly.</li>
+</ul>
+
+<!--- 42103-->
+<ul>
+  <li>Magento now clears the minicart as expected after you complete  an order using PayPal.</li>
+</ul>
+
+<!--- 51014-->
+<ul>
+  <li>Magento now displays the relevant error message when Express Checkout fraud filters are triggered.</li>
+</ul>
+
+<!--- 50910-->
+<ul>
+  <li>Magento no longer disables the Continue button when you  submit an order with PayPal Payments Advanced.</li>
+</ul>
+
+<!--- 51789-->
+<ul>
+  <li>Magento now successfully generates the PayPal Settlement report.</li>
+</ul>
+
+<!--- 51481-->
+<ul>
+  <li>Magento now updates Shipping method  on the PayPal Order Review page.</li>
+</ul>
+
+<!--- 51099-->
+<ul>
+  <li>The PayPal Settlement report now works correctly.</li>
+</ul>
+
+<!--- 50054-->
+<ul>
+  <li>Magento now requires the Merchant Account ID field  in PayPal configuration.</li>
+</ul>
+
+<!--- 50024-->
+<ul>
+  <li>Magento still displays products  in the mini shopping cart after guest checkout with PayPal Express.</li>
+</ul>
+
+<!--- 53403-->
+<ul>
+  <li>Fixed issue with the terms and conditions agreement causes fatal error during checkout with PayPal Payments Pro method.  </li>
+</ul>
+
+<!--- 53211-->
+<ul>
+  <li>Fixed issue with incorrect transaction totals in PayPal Settlement report.</li>
+</ul>
+
+<!--- 53714-->
+<ul>
+  <li>Fixed issue with BNCODE in PayPal solutions.</li>
+</ul>
+
+<!--- 53238-->
+<ul>
+  <li>In the Vault Provider field, Magento no longer displays the Payflow Pro option for countries that don’t offer it.  </li>
+</ul>
+
+<h4 class="no_toc" id="braintree">Braintree</h4>
+<!--- 48649-->
+<ul>
+  <li>You can now change the quantity for an invoice.</li>
+</ul>
+
+<!--- 50309-->
+<ul>
+  <li>You can now  create invoice of transaction with expired authorization.</li>
+</ul>
+
+<!--- 52359-->
+<ul>
+  <li>You can now place an order through online payments in the Admin area.</li>
+</ul>
+
+<!--- 52560-->
+<ul>
+  <li>You can now use stored cards on the Admin side.  </li>
+</ul>
+
+<!--- 53237-->
+<ul>
+  <li>You can now apply Gift Card Account/Discount Code on the review page.</li>
+</ul>
+
+<!--- 53240-->
+<ul>
+  <li>You can now check out  virtual product using Braintree.</li>
+</ul>
+
+<!--- 53798-->
+<ul>
+  <li>The Braintree PayPal button is no longer active until checkout.</li>
+</ul>
+
+<!--- 53032-->
+<ul>
+  <li>The PayPal Braintree popup now appears as expected when you click the Continue to PayPal button.</li>
+</ul>
+
+<!--- 54233-->
+<ul>
+  <li>Magento no longer displays this error when you save an order:
+“Order Saving error: Table ‘magento.vault_payment_token_order_payment_link’ doesn’t exist.”</li>
+</ul>
+
+<!--- 54293-->
+<ul>
+  <li>You can now place an order from  within Braintree if 3D Secure Verification is enabled.</li>
+</ul>
+
+<h4 class="no_toc" id="integration">Integration</h4>
+
+<!--- 50857 -->
+<ul>
+  <li>You can now select API resources while creating an integration.</li>
+</ul>
+
+<!--- 51642 -->
+<ul>
+  <li>After you install and enable a module, the System &gt; Extensions &gt; Integrations page lists the new integration generated by the module. <a href="https://github.com/magento/magento2/issues/4023" target="_blank"> (GITHUB-4023)</a></li>
+</ul>
+
+<!--- 46021-->
+<ul>
+  <li>We’ve edited the <code>integration/acl.xml</code> file. </li>
+</ul>
+
+<!--- 46019-->
+<ul>
+  <li>Magento now creates an integration  after adding the <code>integration/config.xml</code> file.</li>
+</ul>
+
+<!--- 47301-->
+<ul>
+  <li>Fixed issue with PHP 7.0 Integration test.</li>
+</ul>
+
+<!--- 51112-->
+<ul>
+  <li>Magento no longer deletes Access Token and Access Token Secret from all integrations when you delete it from only one integration. <a href="https://github.com/magento/magento2/issues/3450" target="_blank"> (GITHUB-3450)</a></li>
+</ul>
+
+<!--- 54231-->
+<ul>
+  <li>You can now delete an Admin user that has the same ID as an integration user, without breaking the integration.</li>
+</ul>
+
+<h4 class="no_toc" id="testing">Testing</h4>
+
+<!--- 52414 -->
+<ul>
+  <li>We’ve fixed several integration test syntax errors. <a href="https://github.com/magento/magento2/issues/4343" target="_blank"> (GITHUB-4343)</a></li>
+</ul>
+
+<!--- 50987 -->
+<ul>
+  <li>You can now run all integration tests in developer mode.</li>
+</ul>
+
+<!--- 51715 -->
+<ul>
+  <li>CategoryTest integration test no longer fails on Travis builds. <a href="https://github.com/magento/magento2/issues/4099" target="_blank"> (GITHUB-4099)</a></li>
+</ul>
+
+<h4 class="no_toc" id="search">Search</h4>
+
+<!--- 51716-->
+<ul>
+  <li>We’ve improved search performance.  </li>
+</ul>
+
+<!--- 52482-->
+<ul>
+  <li>Magento no longer throws a fatal error if you use fewer than the minimal required characters in your search query.</li>
+</ul>
+
+<!--- 53263-->
+<ul>
+  <li>Search input on themes using the Blank theme now works as expected.
+ <a href="https://github.com/magento/magento2/issues/4282" target="_blank"> (GITHUB-4282)</a></li>
+</ul>
+
+<!--- 53530-->
+<ul>
+  <li>Performance of category pages significantly degrade when having around 3000 products or more in category.  </li>
+</ul>
+
+<h4 class="no_toc" id="checkout">Checkout</h4>
+<!--- 53193 -->
+<ul>
+  <li>We’ve resolved several address-related issues associated with Checkout.</li>
+</ul>
+
+<!--- 53217 -->
+<ul>
+  <li>Customers with an existing saved address can now add a new address during checkout.</li>
+</ul>
+
+<!--- 53464 -->
+<ul>
+  <li>Clicking the Reorder button now loads products as expected when persistent shopping cart is enabled.</li>
+</ul>
+
+<!--- 53049 -->
+<ul>
+  <li>The Go to Checkout button now works as expected. Previously, when you clicked the Go to Checkout button, Magento would display a login pop-up window.</li>
+</ul>
+
+<!--- 53307 -->
+<ul>
+  <li>Checkout now works as expected when purchasing products during a persisted session.</li>
+</ul>
+
+<!--- 53940-->
+<ul>
+  <li>Fixed problem with unnecessary redirects to checkout page after Sign-in.</li>
+</ul>
+
+<!--- 46891-->
+<ul>
+  <li>Magento now provides information about the  country you’ve selected in the address in the  checkout flow.</li>
+</ul>
+
+<!--- 50912-->
+<ul>
+  <li>Magento now saves custom customer attributes at checkout.</li>
+</ul>
+
+<!--- 51120-->
+<ul>
+  <li>Fixed issue with JaveScript error during checkout when switch between addresses that either contain or don’t contain Region data.</li>
+</ul>
+
+<!--- 50745-->
+<ul>
+  <li>Loader now disappears as expected after you click  the Place Order button.</li>
+</ul>
+
+<!--- 52262-->
+<ul>
+  <li>Fixed error on checkout page when you changed base currency at checkout.</li>
+</ul>
+
+<!--- 50830 -->
+<ul>
+  <li>Fixed problem with opening My Cart page in one-page checkout.</li>
+</ul>
+
+<h4 class="no_toc" id="bundle-products">Bundle products</h4>
+
+<!--- 51194 -->
+<ul>
+  <li>The Add Products to Option button now works as expected when you create a new update for a Bundle product.</li>
+</ul>
+
+<!--- 52832 -->
+<ul>
+  <li>You can now include quotation marks in Bundle product names. <a href="https://github.com/magento/magento2/issues/4414" target="_blank"> (GITHUB-4414)</a></li>
+</ul>
+
+<!--- 50652-->
+<ul>
+  <li>Magento no longer displays an invalid date error message when you create a Bundle Product update.</li>
+</ul>
+
+<!--- 47379-->
+<ul>
+  <li>You can now successfully move Bundle products to the Wishlist. <a href="https://github.com/magento/magento2/issues/2717" target="_blank"> (GITHUB-2717)</a></li>
+</ul>
+
+<!--- 45173-->
+<ul>
+  <li>Bundle products created using Web API are now visible on the storefront.</li>
+</ul>
+
+<!--- 46695-->
+<ul>
+  <li>Magento now saves the price for Bundle option items.</li>
+</ul>
+
+<!--- 51255-->
+<ul>
+  <li>You can now save duplicate Bundle products.</li>
+</ul>
+
+<!--- 50831-->
+<ul>
+  <li>You can now specify Bundle option title on the storeview level.</li>
+</ul>
+
+<!--- 50826-->
+<ul>
+  <li>You can now add a Bundle product to the shopping cart.</li>
+</ul>
+
+<!--- 52017-->
+<ul>
+  <li>Magento now displays Bundle product prices in the shopping cart product grid.</li>
+</ul>
+
+<!--- 49484-->
+<ul>
+  <li>Magento now correctly displays <code>sku_type</code>, <code>weight_type</code>, <code>shipment_type</code> after you save a Bundle product.</li>
+</ul>
+
+<!--- 51925 -->
+<ul>
+  <li>The Edit Bundle product page now works as expected.</li>
+</ul>
+
+<!--- 49546 -->
+<ul>
+  <li>Magento now successfully validates the price_type field during import and export.</li>
+</ul>
+
+<h4 class="no_toc" id="importexport">Import/Export</h4>
+<!--- 47555-->
+<ul>
+  <li>The Import error message you receive when an attribute exceeds maximum permitted length now inserts variable that defines the attribute name. <a href="https://github.com/magento/magento2/issues/2844" target="_blank"> (GITHUB-2844)</a></li>
+</ul>
+
+<!--- 46245-->
+<ul>
+  <li>Magento no longer throws this error when you import or export when you have multiple websites and stores:  “URL key for specified store already exists.”</li>
+</ul>
+
+<!--- 47001-->
+<ul>
+  <li>Magento no longer lets you  import two products with the same URL key.</li>
+</ul>
+
+<!--- 50973-->
+<ul>
+  <li>Magento no longer throws a general exception when you try to import more than 100,000 products.</li>
+</ul>
+
+<!--- 50899 -->
+<ul>
+  <li>You can now export products to a CSV file, edit names, then import products successfully.</li>
+</ul>
+
+<!--- 47877 -->
+<ul>
+  <li>Import process speed has been improved. <a href="https://github.com/magento/magento2/issues/2957" target="_blank"> (GITHUB-2957)</a></li>
+</ul>
+
+<!--- 52831-->
+<ul>
+  <li>You can now re-import data. <a href="https://github.com/magento/magento2/issues/4315" target="_blank"> (GITHUB-4315)</a>  </li>
+</ul>
+
+<!--- 52037-->
+<ul>
+  <li>Magento changes the order in which products are displayed  after you export or import a catalog.</li>
+</ul>
+
+<!--- 49676-->
+<ul>
+  <li>You can now import cross-sells, up-sells and related products. <a href="https://github.com/magento/magento2/issues/3286" target="_blank"> (GITHUB-3286)</a></li>
+</ul>
+
+<!--- 53781-->
+<ul>
+  <li>The Ajax loader now stops if you use an incorrect file type during import.</li>
+</ul>
+
+<!--- 50817 -->
+<ul>
+  <li>The <code>console</code> command now flushes caches without error. Cache should be flushed without errors.</li>
+</ul>
+
+<h4 class="no_toc" id="messages-and-documentation">Messages and documentation</h4>
+
+<!--- 52340 -->
+<ul>
+  <li>The <code>getList</code> method documentation has been enhanced.</li>
+</ul>
+
+<!--- 52000 -->
+<ul>
+  <li>Error messages associated with <code>cron</code> processes are now more helpful. <a href="https://github.com/magento/magento2/issues/3189" target="_blank"> (GITHUB-3189)</a></li>
+</ul>
+
+<!--- 50898 -->
+<ul>
+  <li>Magento now displays an appropriate  message when you add less than the required minimum items in your cart.</li>
+</ul>
+
+<!--- 51378 -->
+<ul>
+  <li>Message serialization now complies with AMQP specifications.</li>
+</ul>
+
+<!--- 48175 -->
+<ul>
+  <li>We’ve improved the error message that users typically received during upgrade. The message now clearly states when a user must login first to <code>magento.com</code> before continuing the upgrade process. <a href="https://github.com/magento/magento2/issues/3059" target="_blank"> (GITHUB-3059)</a></li>
+</ul>
+
+<!--- 51371, 51580-->
+<ul>
+  <li>Error messages generated during installation are now more informative.  </li>
+</ul>
+
+<!--- 51641-->
+<ul>
+  <li>Documentation now states that the iconv extension is required in installations running PHP 7.x. <a href="https://github.com/magento/magento2/issues/4002" target="_blank"> (GITHUB-4002)</a></li>
+</ul>
+
+<!--- 46415-->
+<ul>
+  <li>CLI documentation now includes <code>magento dev:css</code> command. <a href="https://github.com/magento/magento2/issues/433" target="_blank"> (GITHUB-433)</a></li>
+</ul>
+
+<h4 class="no_toc" id="admin">Admin</h4>
+<!--- 50492 -->
+<ul>
+  <li>You can now access the Web setup wizard from the Admin interface.</li>
+</ul>
+
+<!--- 50377 -->
+<ul>
+  <li>Magento now updates Attribute set after reloading a form.</li>
+</ul>
+
+<!--- 50141 -->
+<ul>
+  <li>You can now update category settings.</li>
+</ul>
+
+<!--- 50630 -->
+<ul>
+  <li>You can now open the Admin Menu when JS minification is enabled.</li>
+</ul>
+
+<!--- 49939 -->
+<ul>
+  <li>You can now assign a CMS page to multiple storeviews.</li>
+</ul>
+
+<!--- 49001 -->
+<ul>
+  <li>The Search Engine Optimization fieldset no longer displays Category url_key.</li>
+</ul>
+
+<!--- 49154 -->
+<ul>
+  <li>You can now successfully create a new update on ‘custom store view’.</li>
+</ul>
+
+<!--- 48218 -->
+<ul>
+  <li>You can now create permanent or temporary URL rewrites.  <a href="https://github.com/magento/magento2/issues/2929" target="_blank"> (GITHUB-2929)</a></li>
+</ul>
+
+<!--- 53807 -->
+<ul>
+  <li>You can now save Text Swatch “Swatch” values.</li>
+</ul>
+
+<!--- 52284 -->
+<ul>
+  <li>You can now insert more than two images using the WYSIWYG editor. <a href="https://github.com/magento/magento2/issues/4221" target="_blank"> (GITHUB-4221)</a></li>
+</ul>
+
+<!--- 52436 -->
+<ul>
+  <li>Magento now displays categories that contain children categories. <a href="https://github.com/magento/magento2/issues/2121" target="_blank"> (GITHUB-2121)</a></li>
+</ul>
+
+<!--- 50193 -->
+<ul>
+  <li>Layered Navigation now contains previously missing category filters.</li>
+</ul>
+
+<!--- 50522 -->
+<ul>
+  <li>The WYSIWYG editor no longer removes HTML5 tags.</li>
+</ul>
+
+<!--- 46807 -->
+<ul>
+  <li>You can now add new Content CMS New Blocks.</li>
+</ul>
+
+<!--- 51299-->
+<ul>
+  <li>You can now create an order from the Admin interface while using a non-default website.</li>
+</ul>
+
+<!--- 50905 -->
+<ul>
+  <li>Fatal errors no longer occur when you save configuration from the  Admin panel.</li>
+</ul>
+
+<!--- 51136 -->
+<ul>
+  <li>You can now change Video Role and Image Role.</li>
+</ul>
+
+<!--- 51113 -->
+<ul>
+  <li>Magento now displays a checkbox during the  create user role ACL if minification is set to ON.</li>
+</ul>
+
+<!--- 51068 -->
+<ul>
+  <li>Admin User sessions no longer expire prematurely in installations that are running Redis for session storage. Previously, you were directed back to the login page after logging in to the Admin panel, waiting a short period time (less than the Admin Session Lifetime value), and trying to navigate to the Dashboard.</li>
+</ul>
+
+<!--- 50768 -->
+<ul>
+  <li>Newly created categories now appear as expected on the Navigation menu.</li>
+</ul>
+
+<!--- 51238 -->
+<ul>
+  <li>Category pages now display swatches of configurable products based on color swatch attribute.</li>
+</ul>
+
+<!--- 51231 -->
+<ul>
+  <li>Magento now successfully saves future special dates in the Advanced Price page.</li>
+</ul>
+
+<!--- 52117 -->
+<ul>
+  <li>Changes to Customer group are now immediately applied to logged-in customers.</li>
+</ul>
+
+<!--- 52316 -->
+<ul>
+  <li>Product update operations by either customers or store administrators no longer result in locking queries on catalog category product index. <a href="https://github.com/magento/magento2/issues/4342" target="_blank"> (GITHUB-4342)</a></li>
+</ul>
+
+<!--- 46808 -->
+<ul>
+  <li>Admin order creation no longer fails when the “Include Tax In Order Total” option is set to YES. <a href="https://github.com/magento/magento2/issues/2675" target="_blank"> (GITHUB-2675)</a></li>
+</ul>
+
+<!--- 45019-->
+<ul>
+  <li>You can now translate the phrases “records found” and “selected” that appear in the Admin panel.  <a href="https://github.com/magento/magento2/issues/2155" target="_blank"> (GITHUB-2155)</a></li>
+</ul>
+
+<!--- 47255-->
+<ul>
+  <li>Magento now displays information in the dashboard when the Use Aggregated Data setting is turned on. <a href="https://github.com/magento/magento2/issues/3459" target="_blank"> (GITHUB-3459)</a></li>
+</ul>
+
+<h4 class="no_toc" id="storefront">Storefront</h4>
+<!--- 48714 -->
+<ul>
+  <li>You can now add form elements via layout and use the htmlContent component.</li>
+</ul>
+
+<!--- 53126 -->
+<ul>
+  <li>Multi-site cache now shows the correct site’s content. <a href="https://github.com/magento/magento2/issues/4556" target="_blank"> (GITHUB-4556)</a></li>
+</ul>
+
+<!--- 52961 -->
+<ul>
+  <li>URL Rewrites now work correctly with multiple store views.</li>
+</ul>
+
+<!--- 47999 -->
+<ul>
+  <li>Magento now registers added themes during production mode. <a href="https://github.com/magento/magento2/issues/2797" target="_blank"> (GITHUB-2797)</a></li>
+</ul>
+
+<!--- 47054 -->
+<ul>
+  <li>Deployed static view files no longer contain references to BaseURL.</li>
+</ul>
+
+<!--- 50946-->
+<ul>
+  <li>You can now configure multiple websites using NGINX.</li>
+</ul>
+
+<!--- 50937-->
+<ul>
+  <li>Magento now displays the prices for Grouped Products in the storefront.</li>
+</ul>
+
+<!--- 51314-->
+<ul>
+  <li>You can now successfully  sort products by swatch attribute.</li>
+</ul>
+
+<!--- 51276-->
+<ul>
+  <li>Magento now displays product attributes for a product on the store front as expected.</li>
+</ul>
+
+<h4 class="no_toc" id="indexing">Indexing</h4>
+<!--- 48507 -->
+<ul>
+  <li>Magento can now complete reindexing when the product flat indexer is turned on.</li>
+</ul>
+
+<!--- 48790 -->
+<ul>
+  <li>The performance of re-indexing operations after importing many products has been improved.</li>
+</ul>
+
+<h4 class="no_toc" id="varnish">Varnish</h4>
+<!--- 54228 -->
+<ul>
+  <li>Varnish cache is no longer disabled on most HTML requests.</li>
+</ul>
+
+<!--- 53919 -->
+<ul>
+  <li>We changed the HTML header used for SSL offloading from SSL-OFFLOADED{:target=”_blank”} to X-Forwarded-Proto: https{:target=”_blank”} to be compatible with Varnish and for compatibility with load balancers.</li>
+</ul>
+
+<p>To view this setting in the Magento Admin, click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Web</strong>. In the right pane, expand <strong>Base URLs (Secure)</strong>, value of the <strong>Offloader header</strong> field.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+    <span class="glyphicon-class">
+    <p>If you change the value of this field, you must regenerate your <code>.vcl</code> files.</p></span>
+</div>
+
+<!--- 51061, 51059 -->
+<ul>
+  <li>Varnish now properly invalidates or refreshes the both Catalog Event change in the Product page and Advance Inventory changes.  </li>
+</ul>
+
+<!--- 52607 -->
+<ul>
+  <li>We’ve enhanced Varnish caching performance. <a href="https://github.com/magento/magento2/issues/3926" target="_blank"> (GITHUB-3926)</a></li>
+</ul>
+
+<h4 class="no_toc" id="miscellaneous">Miscellaneous</h4>
+
+<!--- 51008 -->
+<ul>
+  <li>Magento now successfully migrates data when Google Analytics’s Content Experiments is enabled.</li>
+</ul>
+
+<!--- 47082-->
+<ul>
+  <li>Category creation from product page no longer fails when Google Content Experiments is enabled.</li>
+</ul>
+
+<!--- 51069-->
+<ul>
+  <li>Page View Optimization tab is absent on edit CMS Page.</li>
+</ul>
+
+<!--- 49774-->
+<ul>
+  <li>You no longer get a “Wrong request parameters” error when you try to assign products to a category on the store view level.</li>
+</ul>
+
+<!--- 47915-->
+<ul>
+  <li>If you enable Google’s content experiments in the Magento Admin, you can create categories as expected.</li>
+</ul>
+
+<!--- 48089-->
+<ul>
+  <li>Undeclared dynamic property gets leaked in public space. <a href="https://github.com/magento/magento2/issues/2103" target="_blank"> (GITHUB-2103)</a></li>
+</ul>
+
+<!--- 52650 -->
+<ul>
+  <li>We’ve corrected plugin sort order.</li>
+</ul>
+
+<!--- 52170 -->
+<ul>
+  <li>You can now create downloadable products.</li>
+</ul>
+
+<!--- 52371 -->
+<ul>
+  <li>Magento no longer exposes Marketplace credentials via URL.</li>
+</ul>
+
+<!--- 53678 -->
+<ul>
+  <li>The Download link in the order confirmation email now works correctly.
+ <a href="https://github.com/magento/magento2/issues/4762" target="_blank"> (GITHUB-4762)</a></li>
+</ul>
+
+<!--- 54214 -->
+<ul>
+  <li>You can now place orders using the Payflow Pro payment method.</li>
+</ul>
+
+<!--- 54182 -->
+<ul>
+  <li>You can now place an order for an item for an amount that exceeds half of item’s stock.  </li>
+</ul>
+
+<!--- 52612 -->
+<ul>
+  <li>CLI is affected by the permissions configuration setting in server config.</li>
+</ul>
+
+<!--- 51592 -->
+<ul>
+  <li>Single tenant compiler now works when Magento is not installed.</li>
+</ul>
+
+<!--- 51834 -->
+<ul>
+  <li>Maestro credit cards can now pass validation on the application server side.</li>
+</ul>
+
+<!--- 49877 -->
+<ul>
+  <li>Don’t omit the “callable” argument type hint. <a href="https://github.com/magento/magento2/issues/2026" target="_blank"> (GITHUB-2026)</a></li>
+</ul>
+
+<!--- 54092 -->
+<ul>
+  <li>We now include <code>.gitignore</code> as part of the project package. <a href="https://github.com/magento/magento2/issues/4358" target="_blank"> (GITHUB-4358)</a></li>
+</ul>
+
+<!--- 46022 -->
+<ul>
+  <li>The PHP code migration tool no longer fails with this error:  “Call to a member function xpath() on a non-object”.</li>
+</ul>
+
+<!--- 51030 -->
+<ul>
+  <li>Magento now generates data in production mode.</li>
+</ul>
+
+<!--- 51717 -->
+<ul>
+  <li>Magento now displays an error stating that user is prohibited from disabling the only default store view when you try to disable the default storeview for a store.</li>
+</ul>
+
+<!--- 45339 -->
+<ul>
+  <li>Magento now applies the Cart price rule for payment method conditions.</li>
+</ul>
+
+<!--- 51440 -->
+<ul>
+  <li>Fatal errors no longer occur when running CLI commands after compilation in some regression environments.</li>
+</ul>
+
+<!--- 53829 -->
+<ul>
+  <li>Magento no longer references empty targets in other targets.</li>
+</ul>
+
+<!--- 51731 -->
+<ul>
+  <li>Catalog Price Rules are now applied as expected, depending upon the time frame  stated in the Price Rule.</li>
+</ul>
+
+<!--- 51596 -->
+<ul>
+  <li>Phrases with escaped slash characters are now translated. Previously, if a phrase were wrapped with single quotes, Magento would not display it correctly.</li>
+</ul>
+
+<!--- 53397 -->
+<ul>
+  <li>The <code>collectRates()</code> method now obtains the full address details for a registered customer.</li>
+</ul>
+
+<!--- 53463 -->
+<ul>
+  <li>The Customer Address tab is populated as expected after you create a new order. Previously, Magento did not list addresses on this tab when you’d create a new order.</li>
+</ul>
+
+<!--- 52959 -->
+<ul>
+  <li>Logo folders have been added to the list of allowed resources. <a href="https://github.com/magento/magento2/issues/4078" target="_blank"> (GITHUB-4078)</a></li>
+</ul>
+
+<!--- 53119 -->
+<ul>
+  <li>The Force Sign-in button now works as expected.</li>
+</ul>
+
+<!--- 53362 -->
+<ul>
+  <li>Gift Message information is now present as expected in the <code>extension_attributes</code> when you request this list by Web API.  Previously, if you placed an order with a Gift Message, and then performed a Web API request to get the list of orders, Gift Message information would be absent in the <code>extension_attributes</code>. <a href="https://github.com/magento/magento2/issues/4414" target="_blank"> (GITHUB-4414)</a></li>
+</ul>
+
+<!--- 52782 -->
+<ul>
+  <li>The <code>getPassword()</code> and <code>getPasswordConfirm()</code> methods now return the <code>password</code> and <code>passwordconfirm</code> parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a></li>
+</ul>
+
+<!--- 51292 -->
+<ul>
+  <li>The OAuth Token exchange expiration period is now calculated correctly. <a href="https://github.com/magento/magento2/issues/3449" target="_blank"> (GITHUB-3449)</a></li>
+</ul>
+
+<!--- 52079 -->
+<ul>
+  <li>The Order Repository GetList method no longer returns the same shipping address for all orders. <a href="https://github.com/magento/magento2/issues/4019" target="_blank"> (GITHUB-4019)</a></li>
+</ul>
+
+<!--- 47439 -->
+<ul>
+  <li>The <code>i18n:collect-phrases -m</code> command now works correctly. Previously, this command would not find all important Magento phrases. <a href="https://github.com/magento/magento2/issues/2630" target="_blank"> (GITHUB-2630)</a></li>
+</ul>
+
+<!--- 47009 -->
+<ul>
+  <li>Plugins/interceptors now work with early stage single instance objects in Developer mode. <a href="https://github.com/magento/magento2/issues/2674" target="_blank"> (GITHUB-2674)</a></li>
+</ul>
+
+<!--- 47639 -->
+<ul>
+  <li>The <code>setup:di:compile</code> script now compiles all files as expected. <a href="https://github.com/magento/magento2/issues/2888" target="_blank"> (GITHUB-2888)</a></li>
+</ul>
+
+<!--- 46044 -->
+<ul>
+  <li>Synonyms now work as expected with Magento 2.x.  <a href="https://github.com/magento/magento2/issues/2519" target="_blank"> (GITHUB-2519)</a></li>
+</ul>
+
+<!--- 40320 -->
+<ul>
+  <li>Attribute ‘setup_version’ is missing for module error when defined as optional. <a href="https://github.com/magento/magento2/issues/1493" target="_blank"> (GITHUB-1493)</a></li>
+</ul>
+
+<!--- 53865-->
+<ul>
+  <li>The CC model now assigns cc data that is passed in the <code>additional_data</code> field.  <a href="https://github.com/magento/magento2/issues/4741" target="_blank"> (GITHUB-4741)</a></li>
+</ul>
+
+<!--- 51803-->
+<ul>
+  <li>The Select All check box on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank"> (GITHUB-3580)</a></li>
+</ul>
+
+<!--- 41378-->
+<ul>
+  <li>The locale for Chinese translation now works as expected. <a href="https://github.com/magento/magento2/issues/1547" target="_blank"> (GITHUB-1547)</a></li>
+</ul>
+
+<!--- 46924-->
+<ul>
+  <li>Magento now converts shipping_discount_amount to different currencies as needed. <a href="https://github.com/magento/magento2/issues/2708" target="_blank"> (GITHUB-2708)</a></li>
+</ul>
+
+<!--- 52780-->
+<ul>
+  <li>Magento now checks for all return values used by the webservicex.net currency converter.  <a href="https://github.com/magento/magento2/issues/3118" target="_blank"> (GITHUB-3118)</a></li>
+</ul>
+
+<!--- 52621-->
+<ul>
+  <li>Magento now parallelizes the cron setting <code>use_separate_process</code>.
+<a href="https://github.com/magento/magento2/issues/4435" target="_blank"> (GITHUB-4435)</a>
+<!--- 52590-->*  You can now set the date picker time format  to 24 hour notation.  <a href="https://github.com/magento/magento2/issues/3856" target="_blank"> (GITHUB-3856)</a>, <a href="https://github.com/magento/magento2/issues/4243" target="_blank"> (GITHUB-4243)</a></li>
+</ul>
+
+<!--- 49805-->
+<ul>
+  <li>The Credit Memo form no longer assumes that shipping amount excludes VAT when both catalog prices and shipping prices are set to ‘including tax’.
+ <a href="https://github.com/magento/magento2/issues/3406" target="_blank"> (GITHUB-3406)</a></li>
+</ul>
+
+<!--- 52919-->
+<ul>
+  <li>You can now resend order emails from the Admin interface when using Async mail. <a href="https://github.com/magento/magento2/issues/4507" target="_blank"> (GITHUB-4507)</a></li>
+</ul>
+
+<!--- 53410-->
+<ul>
+  <li><code>system.log</code> behavior has changed to reduce the number of distracting logged broken references. <a href="https://github.com/magento/magento2/issues/3507" target="_blank"> (GITHUB-3507)</a>
+<!--- 42439-->* UI form components now support customer custom attributes of ‘file’ type.
+<!--- 44598-->* Magento now identifies email validation errors after  you finish typing the email address.
+<!--- 45318-->* Fixed issues with the  New Accounts Report.
+<!--- 45723-->* Magento no longer calls plugin methods multiple times when a proxy exists for subject class.
+<!--- 46145-->* Magento now applies a discount  only for the correct attribute.
+<!--- 44789-->* Fixed issue with wrong AMQP connection alias creating message failures.
+<!--- 45215-->* Magento no longer throws an unmasked fatal error when you supply an invalid product ID.<br />
+<!--- 43336-->* Catalog Price Rules now work when based on configurable attributes
+<!--- 42982-->* Fixed issue with Magento populating <code>var/cache</code> and <code>var/page_cache</code>  after cache configuration.</li>
+</ul>
+
+<!--- 46431-->
+<ul>
+  <li>Form: Validation is disabled when you disable a field.
+<!--- 46395-->* Fixed issue with performance of customer form creation for many customers.
+<!--- 47528-->* Fixed issue with the Code  Migration tool’s handling of password hashes.<br />
+<!--- 47591-->* Fixed issue with rendering of  the “Remember Me” pop-up.
+<!--- 45953-->* We edited the error message that Magento displays when you upload a custom option file to avoid displaying internal code structure.</li>
+</ul>
+
+<!--- 45882-->
+<ul>
+  <li>“Custom option” prices are now present in Configurable product order calculations.
+<!--- 46016-->* Unauthenticated users can no longer delete product reviews from a store.
+<!--- 46010-->* Message structure is now enforced on encoder.</li>
+</ul>
+
+<!--- 46009-->
+<ul>
+  <li>Magento now updates topology  after module installation.
+<!--- 46008-->* Magento now rejects messages if an exception happens on business logic.
+<!--- 46004-->* Fixed issue with area code not being set for the consumer command.
+<!--- 46663-->* Category fields now contain the Use Default Value option in Store and StoreView scope.
+<!--- 46815, 46814 -->* Improved performance of the checkbox and removed duplicate labels.</li>
+</ul>
+
+<!--- 46295-->
+<ul>
+  <li>You can now set <code>HtmlTag</code> to <code>nav</code>.  <a href="https://github.com/magento/magento2/issues/2549" target="_blank"> (GITHUB-2549)</a></li>
+</ul>
+
+<!--- 47377-->
+<ul>
+  <li>Unnecessary StoreCookie plugins are no longer executed on each request.
+<!--- 47375-->* Unnecessary MessageBox plugin no longer duplicate message logic.
+<!--- 47321-->* MessageBox plugin is no longer triggered by frontend requests.</li>
+</ul>
+
+<!--- 47267-->
+<ul>
+  <li>URL Rewrites now work for products that you access through the category landing pages.
+<!--- 47844-->* Magento now displays  customer attribute options on the Attribute Edit page.
+<!--- 47064-->* Fixed issue with JaveScript errors when loading the product grid after cleaning the cache and static files.</li>
+</ul>
+
+<!--- 51074-->
+<ul>
+  <li>Product images now switch as expected when  you click on a swatch.</li>
+</ul>
+
+<!--- 50988-->
+<ul>
+  <li>The Create an Account form now opens as expected after checkout has been completed for a customer who is not logged in.</li>
+</ul>
+
+<!--- 51191-->
+<ul>
+  <li>Fixed issue with resetting password  after waiting an hour.</li>
+</ul>
+
+<!--- 51186-->
+<ul>
+  <li>Magento now provides an additional field in the Admin and customer login forms that prevent web browsers from caching login credentials.
+<!--- 51185-->* Magento now loads product image from product page when minification is enabled.
+<!--- 51413-->* Remove usages of DummyAttributeLoader.</li>
+</ul>
+
+<!--- 51404-->
+<ul>
+  <li>Fixed issue with changing product images.
+<!--- 51363-->*  A configurable product image’s JSON <code>isMain</code> attribute is no longer always set to false.
+<!--- 51352-->* Magento no longer throws an exception when an admin user requests a password reset password while working on a site that does not support email (for example, Vagrant).
+<!--- 51791-->* Fixed issue with Sales Order extension_attributes.<a href="https://github.com/magento/magento2/issues/3967" target="_blank"> (GITHUB-3967)</a>
+<!--- 51719-->* Fixed issue with clearing the End Date.
+<!--- 51518-->* Fixed incorrect translation function usage in template.
+<!--- 51586-->* Fixed issues with Category page caching for different users on one web client.</li>
+</ul>
+
+<!--- 51847-->
+<ul>
+  <li>Magento no longer displays a 400 Bad request error when clearing Varnish cache on GoDaddy.<br />
+<!--- 51104-->* Fixed issue with displaying special prices on the catalog or product page for the configurable products.
+<!--- 51096-->* Corrected an issue where Magento applied the wrong discount for orders when Apply to Shipping Amount is set to YES.</li>
+</ul>
+
+<!--- 51892-->
+<ul>
+  <li>Fixed issue with incorrect default rows value for Dynamic Rows pagination.</li>
+</ul>
+
+<!--- 51889-->
+<ul>
+  <li>Magento now displays an error message (instead of throwing an exception) on the Catalog product edit page with an invalid param ID.</li>
+</ul>
+
+<!--- 51881-->
+<ul>
+  <li>Magento now correctly displays  Catalog Events Carousel widgets.  </li>
+</ul>
+
+<!--- 51549-->
+<ul>
+  <li>Fixed issue with selecting correct number of filtered rows on Related Products.</li>
+</ul>
+
+<!--- 51541-->
+<ul>
+  <li>Changing configurations in an update no longer changes the original configurations.</li>
+</ul>
+
+<!--- 50313-->
+<ul>
+  <li>Magento no longer throws a fatal error  when you click on the related banner grid in Cart Price Rule form while in production mode.
+<!--- 50248-->* Customer grid indexer performance has been enhanced.
+<!--- 50772-->* Rule-based free shipping now works as expected.
+<!--- 50761-->* You can now assign a product to a custom website.
+<!--- 50752-->* We’ve enhanced the performance of the Sync button.
+<!--- 50743-->* Fixed issue with CMS Pages being corrupted during mass actions.  </li>
+</ul>
+
+<!--- 50733-->
+<ul>
+  <li>Removing all rows from a CMS grid no longer results in an error message.  	
+<!--- 50722-->* Magento now fills the confirmed email column as expected for confirmed customers.
+<!--- 50710-->* The default full page cache (FPC) implementation no longer caches content with non-HTML Content-Type headers (for example, text/css, application/JavaScript), before re-serving this content as text/HTML.</li>
+</ul>
+
+<!--- 50890-->
+<ul>
+  <li>Fixed issue with storefront prices not accurately reflecting products’ custom options settings.</li>
+</ul>
+
+<!--- 50893-->
+<ul>
+  <li>Magento now displays a  Threshold message after a customer buys a product and its quantity does not decrease.</li>
+</ul>
+
+<!--- 50876-->
+<ul>
+  <li>You can now change the base currency in website scope.
+<!--- 50873-->* Fixed issue with the missing Delete button on the Edit Store and Store View pages on websites with multiple stores and storeviews.</li>
+</ul>
+
+<!--- 50828-->
+<ul>
+  <li>Fixed issue with downloadable product Links section on global scope level after edit on the storeview level.</li>
+</ul>
+
+<!--- 50819-->
+<ul>
+  <li>Fixed issue with cache file permissions.
+<!--- 50580-->* The Configurable Product page now displays the Create Configurations button.</li>
+</ul>
+
+<!--- 50569-->
+<ul>
+  <li>Fixed problem using Internet Explorer 11 to access editable fields in a configurable product’s Current Variations grid.</li>
+</ul>
+
+<!--- 50561-->
+<ul>
+  <li>You can now save item-level gift messages for guests. <a href="https://github.com/magento/magento2/issues/3804" target="_blank"> (GITHUB-3804)</a></li>
+</ul>
+
+<!--- 50546-->
+<ul>
+  <li>Magento now correctly displays the stock status of a product with a custom attribute set after you save the product while creating it.</li>
+</ul>
+
+<!--- 50498-->
+<ul>
+  <li>The variations matrix is now populated as expected after you update a configurable product.</li>
+</ul>
+
+<!--- 50461-->
+<ul>
+  <li>The default address check boxes are  checked as expected on the Customer View page.</li>
+</ul>
+
+<!--- 50375-->
+<ul>
+  <li>Magento now displays images for configurable product variations on the storefront.</li>
+</ul>
+
+<!--- 50366-->
+<ul>
+  <li>Magento now creates a new attribute set as expected after you use the Configurable Product wizard to create a new product.</li>
+</ul>
+
+<!--- 50025-->
+<ul>
+  <li>The checkout page now loads correctly after you add an extension attribute to CartItemInterface.  <a href="https://github.com/magento/magento2/issues/3640" target="_blank"> (GITHUB-3640)</a></li>
+</ul>
+
+<!--- 50195-->
+<ul>
+  <li>The Admin URL is no longer indexed in Google.</li>
+</ul>
+
+<!--- 50184-->
+<ul>
+  <li>Fixed issue with Catalog Search Auto Suggest button.  <a href="https://github.com/magento/magento2/issues/3657" target="_blank"> (GITHUB-3657)</a></li>
+</ul>
+
+<!--- 50202-->
+<ul>
+  <li>Fixed issue with saving  shipment data. <a href="https://github.com/magento/magento2/issues/527" target="_blank"> (GITHUB-527)</a> 	</li>
+</ul>
+
+<!--- 52747-->
+<ul>
+  <li>Fixed issue with fatal error while reordering.</li>
+</ul>
+
+<!--- 52737-->
+<ul>
+  <li>Deleting a category’s image on a custom storeview no longer deletes the image on all store views.</li>
+</ul>
+
+<!--- 52701-->
+<ul>
+  <li>We’ve enhanced the decimal precision on the Product page. 	</li>
+</ul>
+
+<!--- 52674-->
+<ul>
+  <li>Fixed issue with the WYSIWYG editor not saving changes of raw content.</li>
+</ul>
+
+<!--- 52033-->
+<ul>
+  <li>You can now remove a Gift Card Product’s fixed amount.</li>
+</ul>
+
+<!--- 52023-->
+<ul>
+  <li>You can now create a store view after selecting Save and duplicate option while creating a simple product.</li>
+</ul>
+
+<!--- 51999-->
+<ul>
+  <li>Fixed issue with <code>updater/cron.php</code> processing newlines.</li>
+</ul>
+
+<!--- 51955-->
+<ul>
+  <li>Fixed invalid view ID and changelog name for the customer grid indexer.</li>
+</ul>
+
+<!--- 52176-->
+<ul>
+  <li>New Accounts Report now correctly  calculates accounts for multiple websites.</li>
+</ul>
+
+<!--- 52468-->
+<ul>
+  <li>Fixed miscellaneous errors in cron log.</li>
+</ul>
+
+<!--- 52442-->
+<ul>
+  <li>Fixed issue with AMQP consumer message processing after duplicate message.</li>
+</ul>
+
+<!--- 52441-->
+<ul>
+  <li>Customer account lockout now works as expected if the account has been unlocked previously.</li>
+</ul>
+
+<!--- 52387-->
+<ul>
+  <li>Fixed issue with the Add Product to Cart with Minimum Qty Allowed Set feature.</li>
+</ul>
+
+<!--- 52385-->
+<ul>
+  <li>Magento now transfers order data  to the new order when you initiate a reorder.</li>
+</ul>
+
+<!--- 52337-->
+<ul>
+  <li>Fixed problems with the layout of the search results page for a search on related orders for billing agreement.</li>
+</ul>
+
+<!--- 52103-->
+<ul>
+  <li>Fixed problem with exception message on <code>admin/mui/index/render/</code> page.</li>
+</ul>
+
+<!--- 52098-->
+<ul>
+  <li>Magento no longer produces an exception when you add a configurable product with out-of-stock items to your shopping cart.</li>
+</ul>
+
+<!--- 52093-->
+<ul>
+  <li>The cron updater now displays error messages instead of exceptions for permissions issues.</li>
+</ul>
+
+<!--- 52069-->
+<ul>
+  <li>Fixed issues with placing  orders using FedEx shipping method.  </li>
+</ul>
+
+<!--- 52558-->
+<ul>
+  <li>Cache is not invalidated or refreshed when product website visibility changes.</li>
+</ul>
+
+<!--- 52536-->
+<ul>
+  <li>Magento no longer throws an exception  when you create a custom widget.</li>
+</ul>
+
+<!--- 52583-->
+<ul>
+  <li>Fixed issue with updating Category products  on the storefront.</li>
+</ul>
+
+<!--- 49775-->
+<ul>
+  <li>You can now  change the title of the Product Details tab.</li>
+</ul>
+
+<!--- 49692-->
+<ul>
+  <li>Magento no longer redirects customers to checkout instead of My Account if guest checkout is disabled.</li>
+</ul>
+
+<!--- 49611-->
+<ul>
+  <li>Magento no longer saves Category global attributes twice.</li>
+</ul>
+
+<!--- 49559-->
+<ul>
+  <li>Online payment methods now display as expected when you place an order for a  virtual product as a guest.</li>
+</ul>
+
+<!--- 49538-->
+<ul>
+  <li>You can now  dynamically switch product types when creating a new product.</li>
+</ul>
+
+<!--- 49520-->
+<ul>
+  <li>You can now create a credit memo when placing an order using Eway payment method when the  payment action setting is set to Authorize only.</li>
+</ul>
+
+<!--- 49389-->
+<ul>
+  <li>Setting category permissions to DENY now hides the category as expected.</li>
+</ul>
+
+<!--- 48240-->
+<ul>
+  <li>Fixed issue with the display of forms incorporating new UI component in  Single-Store mode.</li>
+</ul>
+
+<!--- 49349-->
+<ul>
+  <li>You can now save bookmarks you’ve created in Admin data tables.</li>
+</ul>
+
+<!--- 49338-->
+<ul>
+  <li>Fixed issue with setting Custom attribute to Yes/No.</li>
+</ul>
+
+<!--- 47995-->
+<ul>
+  <li>We’ve improved the performance of local caching that uses Zend_Cache_Backend_File.</li>
+</ul>
+
+<!--- 48285-->
+<ul>
+  <li>When you enable PayPal Express Checkout but  disable PayPal Credit, only one PayPal Express Checkout option is available when the customer checks out.</li>
+</ul>
+
+<!--- 48261-->
+<ul>
+  <li>Fixed the test dev/tests/integration/testsuite/Magento/Framework/Filesystem/Driver/FileTest.php to properly set file permissions.</li>
+</ul>
+
+<!--- 48803-->
+<ul>
+  <li>The Use default value check box on a product in a non-default store view function properly.</li>
+</ul>
+
+<!--- 48809-->
+<ul>
+  <li>Tests in <code>dev/tests/integration/testsuite/Magento/Catalog/Model/ProductTest.php</code> are executed as expected.</li>
+</ul>
+
+<!--- 48659-->
+<ul>
+  <li>Corrected issues with HTML minification.</li>
+</ul>
+
+<!--- 48718-->
+<ul>
+  <li>The REST API call POST /V1/products/attributes/ now creates a product’s attributes properly.</li>
+</ul>
+
+<!--- 48722-->
+<ul>
+  <li>Improved export performance. <a href="https://github.com/magento/magento2/issues/3217" target="_blank">(GITHUB-3217)</a></li>
+</ul>
+
+<!--- 48520-->
+<ul>
+  <li>Saving a category with an invalid URL (such as a duplicate of another category’s) fails as expected.</li>
+</ul>
+
+<!--- 49446-->
+<ul>
+  <li>You can now place an order with PayPal Secure Checkout if your site uses secure URLs.</li>
+</ul>
+
+<!--- 47892-->
+<ul>
+  <li>Fixed Fatal error: Maximum execution time of 60 seconds exceeded when deploying static files. <a href="https://github.com/magento/magento2/issues/2461" target="_blank"> (GITHUB-2461)</a></li>
+</ul>
+
+<!--- 47919-->
+<ul>
+  <li>We improved the error message when you install the Magento software using composer install with the –no-dev option. (Only developers who contribute to the Magento codebase typically use composer install.) <a href="https://github.com/magento/magento2/issues/2561" target="_blank"> (GITHUB-2561)</a></li>
+</ul>
+
+<!--- 47931-->
+<ul>
+  <li>A quick edit of a CMS page no longer switches the store view to the default store.</li>
+</ul>
+
+<!--- 53352-->
+<ul>
+  <li>Resolved an exception during setup or upgrade that resulted from a non-existent directory.</li>
+</ul>
+
+<!--- 51015-->
+<ul>
+  <li>You can now use an empty value for a non-required configurable swatch attribute.</li>
+</ul>
+
+<!--- 48079-->
+<ul>
+  <li>Resolved issues with shipping providers for one-page checkout.</li>
+</ul>
+
+<!--- 48094-->
+<ul>
+  <li>Updated packages on repo.magento.com to remove conflicts between Magento CE and EE components.</li>
+</ul>
+
+<!--- 48171-->
+<ul>
+  <li>User notifications work as expected.</li>
+</ul>
+
+<!--- 47881-->
+<ul>
+  <li>Removed the listing of arguments from Magento\Framework\DataObject::__call() - print_r() to avoid memory leaks.</li>
+</ul>
+
+<!--- 46039-->
+<ul>
+  <li>You can now apply a Catalog Price rule  to a product created using the Web API. </li>
+</ul>
+
+<!--- 47465-->
+<ul>
+  <li>Fixed issue with Category products not being loaded as expected to a second website.</li>
+</ul>
+
+<!--- 51732-->
+<ul>
+  <li>Using the default values for the Enable Product and Product name fields on a non-default site during product update no longer causes the original data to be lost.</li>
+</ul>
+
+<!--- 53015-->
+<ul>
+  <li>Fixed issues with minification in forms.  </li>
+</ul>
+
+<!--- 52978-->
+<ul>
+  <li>The Order grid filter now works as expected for Purchase Date.</li>
+</ul>
+
+<!--- 53060-->
+<ul>
+  <li>You can now issue a partial refund.</li>
+</ul>
+
+<!--- 53070-->
+<ul>
+  <li>You can now unassign a product from all websites.</li>
+</ul>
+
+<!--- 53375-->
+<ul>
+  <li>We’ve improved the Catalog Events Carousel widget.</li>
+</ul>
+
+<!--- 53412-->
+<ul>
+  <li>Fixed error that occurred during the creation of an international USPS shipment label with dimensions specified in inches.  </li>
+</ul>
+
+<!--- 53286-->
+<ul>
+  <li>You can now create a shipping label for the FedEx shipping method.</li>
+</ul>
+
+<!--- 53144-->
+<ul>
+  <li>Magento now applies the license agreement automatically if Terms &amp; Conditions are in automatic application mode.</li>
+</ul>
+
+<!--- 53267-->
+<ul>
+  <li>We’ve corrected errors with currency codes in invoices.  <a href="https://github.com/magento/magento2/issues/4264" target="_blank"> (GITHUB-4264)</a></li>
+</ul>
+
+<!--- 53320-->
+<ul>
+  <li>Invoice amounts now display the currency symbol of the currency used on the store view.</li>
+</ul>
+
+<!--- 53395-->
+<ul>
+  <li>Magento no longer displays Payment Review order status  to the customer after the Authorize.net  Fraud filters are triggered.</li>
+</ul>
+
+<!--- 52552-->
+<ul>
+  <li>Invoice status now reflects the status of the captured saved invoice. <a href="https://github.com/magento/magento2/issues/4385" target="_blank"> (GITHUB-4385)</a></li>
+</ul>
+
+<!--- 53316-->
+<ul>
+  <li>The eWay capture transaction no longer closes after creating a partial refund.  </li>
+</ul>
+
+<!--- 52775-->
+<ul>
+  <li>Magento now saves the values for product attributes of type “Multiple Select” during update.  <a href="https://github.com/magento/magento2/issues/4346" target="_blank"> (GITHUB-4346)</a>, <a href="https://github.com/magento/magento2/issues/4312" target="_blank"> (GITHUB-4312)</a>, <a href="https://github.com/magento/magento2/issues/4545" target="_blank"> (GITHUB-4545)</a></li>
+</ul>
+
+<!--- 53162-->
+<ul>
+  <li>Magento no longer ignores tax when calculating totals for the shopping cart and checkout.</li>
+</ul>
+
+<!--- 51815-->
+<ul>
+  <li>Fixed an issue with unexpected behavior of  the Password Strength Validator on Create Customer Storefront page.</li>
+</ul>
+
+<!--- 52605-->
+<ul>
+  <li>Cache behavior on checkout now works as expected (the only pages  uncached  belong to the order (products and category of the products). <a href="https://github.com/magento/magento2/issues/4222" target="_blank"> (GITHUB-4222)</a></li>
+</ul>
+
+<!--- 53527-->
+<ul>
+  <li>Fixed issue with the sign-in modal overlay on the checkout page. <a href="https://github.com/magento/magento2/issues/4083" target="_blank"> (GITHUB-4083)</a></li>
+</ul>
+
+<!--- 52785-->
+<ul>
+  <li>The Save button now works as expected on the Category Edit page after you’ve manipulated  CatalogPermissions elements.</li>
+</ul>
+
+<!--- 53223-->
+<ul>
+  <li>Setting Merge CSS Files = Yes no longer erodes Magento performance.  <a href="https://github.com/magento/magento2/issues/4710" target="_blank"> (GITHUB-4710)</a></li>
+</ul>
+
+<!--- 53157-->
+<ul>
+  <li>Image previewer now works with images that contain spaces in their name.   </li>
+</ul>
+
+<!--- 53489-->
+<ul>
+  <li>The <code>setStoreId</code> method now checks for StoreInterface and Store.</li>
+</ul>
+
+<!--- 53034-->
+<ul>
+  <li>Dynamic Rows are now draggable.</li>
+</ul>
+
+<!--- 53299-->
+<ul>
+  <li>Fixed issue with the Go Today button  not working for the dates range component.</li>
+</ul>
+
+<!--- 54043-->
+<ul>
+  <li>Magento no longer prompts you to select a dropdown attribute after you’ve  selected one. <a href="https://github.com/magento/magento2/issues/4899" target="_blank"> (GITHUB-4899)</a></li>
+</ul>
+
+<!--- 52993-->
+<ul>
+  <li>The Media Uploader error messages now make clear that we do not support SVG format. <a href="https://github.com/magento/magento2/issues/2958" target="_blank"> (GITHUB-2958)</a></li>
+</ul>
+
+<!--- 51929-->
+<ul>
+  <li>The Web Setup Wizard now works when Magento is installed in <code>/pub</code>. <a href="https://github.com/magento/magento2/issues/4159" target="_blank"> (GITHUB-4159)</a></li>
+</ul>
+
+<!--- 52766-->
+<ul>
+  <li>Fixed issue with template minification on the product frontend. <a href="https://github.com/magento/magento2/issues/4365" target="_blank"> (GITHUB-4365)</a></li>
+</ul>
+
+<!--- 53795-->
+<ul>
+  <li>Added support for Chinese currency code for UPS shipping method. <a href="https://github.com/magento/magento2/issues/4578" target="_blank"> (GITHUB-4578)</a></li>
+</ul>
+
+<!--- 50972-->
+<ul>
+  <li>Move to Shopping Cart action does not work inside creation offline order.  </li>
+</ul>
+
+<!--- 53773-->
+<ul>
+  <li>The Price vs. Destination value for the condition field in the Table Rate Shipping method now works as expected.  </li>
+</ul>
+
+<!--- 46014-->
+<ul>
+  <li>Magento now displays error messages on the page where the error occurred.</li>
+</ul>
+
+<!--- 54172-->
+<ul>
+  <li>Magento now creates product URL rewrites as expected on mass update to a new website.</li>
+</ul>
+
+<!--- 52923-->
+<ul>
+  <li>Switching to Varnish causes category menu to force HTTPS links. <a href="https://github.com/magento/magento2/issues/4540" target="_blank"> (GITHUB-4540)</a></li>
+</ul>
+
+<!--- 54051-->
+<ul>
+  <li>You can now log in to the product frontend when inline translation is enabled. <a href="https://github.com/magento/magento2/issues/4925" target="_blank"> (GITHUB-4925)</a></li>
+</ul>
+
+<!--- 45613-->
+<ul>
+  <li>Magento now uses the XML schema location in both the <code>etc/adminhtml/system.xml</code>  and the <code>Magento/Config/etc/system_file.xsd</code> schema. <a href="https://github.com/magento/magento2/issues/2372" target="_blank"> (GITHUB-2372)</a>  </li>
+</ul>
+
+<!--- 46966-->
+<ul>
+  <li>Magento now reads the <code>.xml config</code> files during setup. <a href="https://github.com/magento/magento2/issues/2725" target="_blank"> (GITHUB-2725)</a></li>
+</ul>
+
+<!--- 46927-->
+<ul>
+  <li>Categories path for product URLs now working for Sample Data. <a href="https://github.com/magento/magento2/issues/2619" target="_blank"> (GITHUB-2619)</a></li>
+</ul>
+
+<!--- 46922-->
+<ul>
+  <li>SynchronizePersistentInfoObserver is no longer subscribed to a nonexistent event. <a href="https://github.com/magento/magento2/issues/2693" target="_blank"> (GITHUB-2693)</a></li>
+</ul>
+
+<!--- 46918-->
+<ul>
+  <li>Fixed possible memory leak in <code>\Magento\Framework\Image\Adapter\Gd2</code>. <a href="https://github.com/magento/magento2/issues/2696" target="_blank"> (GITHUB-2696)</a></li>
+</ul>
+
+<!--- 46877-->
+<ul>
+  <li>Fixed issue with selecting a product template for a configurable attribute. <a href="https://github.com/magento/magento2/issues/2567" target="_blank"> (GITHUB-2567)</a></li>
+</ul>
+
+<!--- 46413-->
+<ul>
+  <li>The Code Migration tool now recognizes all Magento 1.x resource models and collection classes.</li>
+</ul>
+
+<!--- 46328-->
+<ul>
+  <li>You can now print both shipment and invoice information from My Orders page. <a href="https://github.com/magento/magento2/issues/2500" target="_blank"> (GITHUB-2500)</a></li>
+</ul>
+
+<!--- 46326-->
+<ul>
+  <li>Corrected invalid user error message. <a href="https://github.com/magento/magento2/issues/2263" target="_blank"> (GITHUB-2263)</a></li>
+</ul>
+
+<!--- 47431-->
+<ul>
+  <li>Fixed issue in the <code>$product-&gt;load($id)</code> method for specific products. <a href="https://github.com/magento/magento2/issues/2800" target="_blank"> (GITHUB-2800)</a></li>
+</ul>
+
+<!--- 54051-->
+<ul>
+  <li>You can now log in on the product frontend when inline translation is enabled. <a href="https://github.com/magento/magento2/issues/4925" target="_blank"> (GITHUB-4925)</a></li>
+</ul>
+
+<!--- 48089-->
+<ul>
+  <li>
+    <p>Undeclared dynamic property is no longer leaked in public space. <a href="https://github.com/magento/magento2/issues/2103" target="_blank"> (GITHUB-2103)</a></p>
+  </li>
+  <li>
+    <p><i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/4917" target="_blank"> (GITHUB-4917)</a> removed.</i></p>
+  </li>
+  <li>
+    <p><i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/4434" target="_blank"> (GITHUB-4434)</a> removed.</i></p>
+  </li>
+  <li>
+    <p><i>Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/2910" target="_blank"> (GITHUB-2910)</a> removed.</i></p>
+  </li>
+  <li>
+    <p><i>Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/3053" target="_blank"> (GITHUB-3053)</a> removed. </i></p>
+  </li>
+  <li>
+    <p><i>Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/2946" target="_blank"> (GITHUB-2946)</a> removed. </i></p>
+  </li>
+  <li>
+    <p><i>Fixed GitHub issue   <a href="https://github.com/magento/magento2/issues/2711" target="_blank"> (GITHUB-2711)</a> removed.</i></p>
+  </li>
+  <li>
+    <p><i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/2121" target="_blank"> (GITHUB-2121)</a> removed. </i></p>
+  </li>
+  <li>
+    <p><i>Fixed GitHub issue <a href="https://git hub.com/magento/magento2/issues/3605" target="_blank"> (GITHUB-3605)</a>  removed.</i></p>
+  </li>
+  <li>
+    <p><i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/59" target="_blank"> (GITHUB-59)</a>  removed.</i></p>
+  </li>
+  <li>
+    <p><i>Fixed GitHub issues <a href="https://github.com/magento/magento2/issues/4548" target="_blank"> (GITHUB-4548)</a>, <a href="https://github.com/magento/magento2/issues/2735" target="_blank"> (GITHUB-2735)</a>, <a href="https://github.com/magento/magento2/issues/4275" target="_blank"> (GITHUB-4275)</a>, <a href="https://github.com/magento/magento2/issues/3529" target="_blank"> (GITHUB-3529)</a> removed. </i></p>
+  </li>
+</ul>
+
+<h3 id="system-requirements">System requirements</h3>
+<p>Our technology stack is built on PHP and MySQL. Magento 2.1.0 supports:</p>
+
+<ul>
+  <li>PHP 5.6
+  We do not support PHP 5.5.x</li>
+  <li>PHP 7.0.2, 7.0.6 up to 7.1</li>
+  <li>MySQL 5.6</li>
+  <li>Apache 2.2 or 2.4</li>
+  <li>nginx 1.8 (or <a href="http://nginx.org/en/linux_packages.html#mainline" target="_blank">latest mainline version</a>)</li>
+</ul>
+
+<p>For more information, <a href="/guides/v2.1/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
+
+<h3 id="installation-and-upgrade-instructions">Installation and upgrade instructions</h3>
+
+<p>You can install Magento Community Edition 2.1.0 (General Availability) release either Github or by using Composer.</p>
+
+<div>
+
+  <h2 id="installation-and-upgrade-instructions-1">Installation and upgrade instructions</h2>
+  <p>You can get Magento Community Edition 2.1 (including a Release Candidate) from Github, Composer, or using a compressed archive. </p>
+
+  <p>See one of the following sections for more information:</p>
+
+  <ul>
+    <li><a href="#install-rc-gh">Get the Magento CE software from GitHub</a></li>
+    <li><a href="#install-rc-composer">Get the Magento CE software using Composer</a></li>
+    <li><a href="#install-archive">Get a compressed archive</a></li>
+    <li><a href="#install-finish">Complete the installation</a></li>
+    <li><a href="#upgrade-github">Upgrade an existing installation from the GitHub repository</a></li>
+    <li><a href="#upgrade-other">Other upgrades</a></li>
+  </ul>
+
+  <div class="bs-callout bs-callout-warning">
+    <p><em>Do not</em> install or upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.</p>
+</div>
+
+  <h3 id="install-rc-gh" class="no_toc">Get the Magento CE software from GitHub</h3>
+
+  <p>Before proceeding, please familiarize yourself with these prerequisites, then run</p>
+
+  <pre><code>git clone git@github.com:magento/magento2.git
+cd magento2
+git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
+</code></pre>
+
+  <p>where </p>
+
+  <p><code>&lt;version&gt;</code> is <code>2.1.0</code> (GA release), <code>2.1.0-rc3</code></p>
+
+  <p><code>[-b &lt;version&gt;]</code> optionally checks out a new branch.</p>
+
+  <h3 id="install-rc-composer" class="no_toc">Get the Magento CE software using Composer</h3>
+
+  <p>The CE software is available from <code>repo.magento.com</code>. Before getting the CE software, familiarize yourself with the Composer metapackage  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run </p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+</code></pre>
+
+  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code> (GA release), or a Release Candidate; for example, <code>2.1.0-rc3</code></p>
+
+  <p>For example, to install Magento CE 2.1.0 GA in the <code>magento2</code> directory:</p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0 magento2
+</code></pre>
+
+  <h3 id="install-archive" class="no_toc">Get a compressed archive</h3>
+
+  <div>
+
+    <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
+
+    <ul>
+      <li>Magento CE software only</li>
+      <li>Magento CE software with sample data (designed to help you learn Magento faster)</li>
+    </ul>
+
+    <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
+
+    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+
+    <p>To get the Magento CE software archive:</p>
+
+    <ol>
+      <li>Go to <a href="http://magento.com/download" target="_blank">http://magento.com/download</a>.</li>
+      <li>
+        <p>Choose either the software or the software and sample data:</p>
+
+        <ul>
+          <li><code>Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code>Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+        </ul>
+
+        <p><code>&lt;version&gt;</code> is the three-digit release number (for example, <code>2.0.7</code>, <code>2.1.0</code>, and so on).</p>
+      </li>
+    </ol>
+
+    <h3 id="install-finish" class="no_toc">Complete the installation</h3>
+
+    <p>After you get the CE software:</p>
+
+    <ol>
+      <li><a href="/guides/v2.1/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
+      <li>
+        <p>Install the software:</p>
+
+        <ul>
+          <li><a href="/guides/v2.1/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
+          <li><a href="/guides/v2.1/install-gde/install/cli/install-cli.html">Command line</a></li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3 id="upgrade-github">Upgrade an existing installation from the GitHub repository</h3>
+    <p>Developers who contribute to the CE codebase can <a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.</p>
+
+    <ol>
+      <li>
+        <p>Go to the <a href="/guides/v2.1/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.</p>
+      </li>
+      <li>
+        <p>Follow the instructions to pull the updates from the repository and update using Composer.</p>
+      </li>
+    </ol>
+
+    <h3 id="upgrade-other">Other upgrades</h3>
+    <p>Other types of upgrades are discussed in <a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
+
+    <h2 id="migration-toolkits">Migration toolkits</h2>
+    <p>The <a href="/guides/v2.1/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.1/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
+
+    <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+
+    <!--- NOT DOCUMENTING THE FOLLOWING
+-- All issues marked as DUPLICATE. WONT FIX, CANNOT REPRODUCE, and NOT A BUG, plus 52239, 50665, 51578, 52667-->
+
+    <!--- OMITTED  ISSUES --->
+
+    <!--- 54588,54464, 51379, 54582, 52167, 52246,50178, 50537, 52865, 50037, 50499, 42577,52666, 50797, 50790, 50806, 50286, 50875, 51669, 50300, 50835, 50816,52791,52624,52496, 49771, 49536, 49079, 49452, 48557, 48713, 48305, 48732, 42184, 53784, 53466, 45365, 45728, 45256, 46466, 46414, 46397, 47514, 47513, 47442, 47442, 47443, 47288, 47122, 47104, 47693, 47651, 51403, 51389, 51754, 51569, 50875, 52073, 52438, 52535, 49720, 49595, 49572, 49481, 53525, 48214, 53922, 53783, 52781, 52478, 53293, 53293, 53689, 53003, 54031, 50985, 53398, 50504, 48049, 54582, 54588, 54582, 53095, 48643, 54123, 46832, 47679, 49938, 49924, 46415, 46325, 46415, 52093, 53474, 47301, 50558, 50411, 52311  -->
+  </div>
+</div>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

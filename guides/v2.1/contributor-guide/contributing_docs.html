@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>DevDocs Contributions</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/contributor-guide/contributing_docs.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">DevDocs Contributions</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/contributor-guide/contributing_docs.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+			<a class="contributor" href="http://www.vaimo.com/" target="_blank">Thanks to Staffan Palopää from Vaimo for contributing this topic</a>
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Contributor Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/contributor-guide/contributing.html">Code Contributions</a></li>
+									
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/contributor-guide/contributing_docs.html">DevDocs Contributions</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/contributor-guide/contributing_docs_suggested_topics.html"></a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/contributor-guide/contributing_dod.html">Magento Definition of Done</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<p>The following topics are included in the Guide:</p>
+
+<ul>
+  <li>
+    <p><a href="#contribute">DevDocs contributions</a></p>
+  </li>
+  <li>
+    <p><a href="#requirements">Contribution guidelines</a></p>
+  </li>
+  <li>
+    <p><a href="#fork">Fork a repository</a></p>
+  </li>
+  <li>
+    <p><a href="#pull_request">Create a pull request</a></p>
+  </li>
+  <li>
+    <p><a href="#report">Report an issue</a></p>
+  </li>
+  <li>
+    <p><a href="#edit">Edit metadata</a></p>
+  </li>
+</ul>
+
+<h2 id="contribute">DevDocs contributions</h2>
+
+<p>What’s your area of expertise? Please share your knowledge with us! Contributions can take the form of completely new topics, changes and edits to existing documentation, or just good suggestions.</p>
+
+<p>We have a <a href="/guides/v2.1/contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/2.0/guides/v2.0/contributor-guide/basic_template.md">.md file  on Github</a>.</p>
+
+<p>The language we use in our documentation is <a href="http://daringfireball.net/projects/markdown/" target="_blank">Markdown</a>, which is a simple markup language that gets converted to HTML using <a href="http://kramdown.gettalong.org/syntax.html" target="_blank">Kramdown</a>. </p>
+
+<p>We also have a <a href="/guides/v2.1/contributor-guide/contributing_docs_suggested_topics.html" target="_blank">list of suggested topics</a>, if you want to peruse and pick one that appeals to you.</p>
+
+<p>If you write and contribute a full topic, we’ll put your name (or company’s name) at the top of the page, right under the title, and link it to your blog or website! And you’ll get your face and bio in the <a href="/guides/v2.1/howdoi/howdoi_bios.html">ring of honor</a> as one of our featured contributors.</p>
+
+<p>Use the <a href="#fork">fork</a> &amp; <a href="#pull_request">pull</a> model to contribute to the Magento 2 DevDocs.
+This contribution model means that contributors maintain their own copy of the forked codebase (which can be easily synced with the main copy). The forked repository is then used to submit a request to the base repository to <em>pull</em> a set of changes (hence the phrase <em>pull request</em>).</p>
+
+<p>The Magento DevDocs team reviews all issues and contributions submitted by the community. During the review we might require clarifications from the contributor. If you know what you want to write about, but you aren’t sure where within our multiple documents the topic should go, we can help you with the “info architecture” part.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
+</div>
+
+<h2 id="requirements">Contribution guidelines</h2>
+
+<ol>
+  <li>Some common writing guidelines include:
+    <ul>
+      <li>Define what the goal of your topic is: what exactly do you want to teach the reader?</li>
+      <li>Make the title of your topic reflect the content.</li>
+      <li>Keep your sentences concise, and try to separate conceptual information from procedural steps.</li>
+      <li>Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person (for example, “You can now view the output…”)</li>
+      <li>Use Notes and even Warnings to alert readers to particularly important details.</li>
+      <li>Use cross-references to other topics if it is appropriate. We can help you with that syntax too, and the template has an example.</li>
+    </ul>
+  </li>
+  <li>Focus on the content and on creating useful information for your fellow Magento developers and community members, but do please take a few editorial passes at your work before submitting your topic and look for typos, formatting errors, or sentences that need clarifying.</li>
+  <li>Familiarize yourself with the existing documentation; taking a look at what is already there will help you decide where your topic best fits and if there are other topics to which you might want to add cross-references in your topic.</li>
+  <li>First, check the <a href="https://github.com/magento/devdocs/pulls" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work!</li>
+  <li>For large contributions or changes that include multiple files, please <a href="https://github.com/magento/devdocs/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and the DevDocs team can help find the best home for your new topics.</li>
+</ol>
+
+<h2 id="fork">Fork a repository</h2>
+<p>To fork a repository on Github, do the following:</p>
+
+<ol>
+  <li>
+    <p>Create or log in to your developemnt environment account on GitHub.</p>
+  </li>
+  <li>
+    <p>Navigate to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs repository</a>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Fork</strong> at the top right.</p>
+  </li>
+  <li>
+    <p>Clone the repo into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on mulitple changes.</p>
+  </li>
+  <li>
+    <p>You can build this site using Jekyll by following the <a href="https://github.com/magento/devdocs/blob/2.0/README.md" target="_blank">instructions in our README</a>.</p>
+  </li>
+</ol>
+
+<h3 id="sync">Update the fork with the latest changes</h3>
+<p>As community and Magento writers’ changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message <code>This branch is &lt;number&gt; commits behind magento:2.0.</code> displays, it means your fork must be updated.</p>
+
+<p>There are two ways to update your fork. The typical way is discussed in <a href="https://help.github.com/articles/syncing-a-fork" target="_blank">GitHub documentation</a>. Make sure to update from the correct branch!</p>
+
+<p>There is also a possibility to use the GitHub interface to do that. This is referred to as a <em>reverse pull request</em>. This method has the downside of inserting unnecessary information into fork commit history. On your fork GitHub page, click <strong>New pull request</strong>. You should see the following message:</p>
+
+<pre><code>There isn’t anything to compare.
+magento:2.0 is up to date with all commits from &lt;your fork&gt;:2.0. Try switching the base for your comparison.
+</code></pre>
+
+<p>Click the base link and then click <strong>Create pull request</strong>. Provide a descriptive name for your pull request in the provided field.</p>
+
+<p>Scroll to the bottom of the page and click <strong>Merge pull request</strong>, then click <strong>Confirm Merge</strong>.</p>
+
+<h2 id="pull_request">Create a pull request</h2>
+
+<p>To create a pull request do the following:</p>
+
+<ol>
+  <li>
+    <p>Push your changes to your forked repository on GitHub.</p>
+  </li>
+  <li>
+    <p>In your forked repository, click <strong>New pull request</strong>.</p>
+  </li>
+  <li>
+    <p>Be sure to create the pull request to the correct branch (the base). Our branches are numbered (2.0, 2.1, and so on). We don’t accept PRs to other branches, like gh-pages.</p>
+  </li>
+  <li>
+    <p>Review the changes, then click <strong>Create pull request</strong>. Fill out the form, and click <strong>Create pull request</strong> again to submit the PR—that’s it!</p>
+  </li>
+</ol>
+
+<p>After submitting your PR, you can head over to the DevDocs repository’s <a href="https://github.com/magento/devdocs/pulls" target="_blank">Pull Requests panel</a> to see your PR along with the others. The DevDocs team will review your contribution, and get back with you if we have any questions. Once the final content is ready, we will merge your PR into the repo, and your work will be published to the repo and to <a href="https://github.com/magento/devdocs" target="_blank">devdocs.magento.com</a>. If you write a whole topic, or make substantial contributions to an existing topic, we will add your name right below the title, linked to your blog or site!</p>
+
+<h2 id="report">Report an issue</h2>
+<p>If you find a typo or erroneous information in Magento DevDocs, you can either fix it with a PR (as described above) or you can simply report it by creating an issue in the DevDocs repository.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Before creating an issue, please check the <a href="https://github.com/magento/devdocs/issues" target="_blank"> existing issues</a> to make sure that the issue wasn't already reported.
+</p>
+</div>
+
+<p>To add an issue:</p>
+
+<ol>
+  <li>In the <a href="https://github.com/magento/devdocs/issues" target="_blank">DevDocs repository’s Issues panel</a>, click  <strong>New issue</strong>  on the right.</li>
+  <li>Fill in the Title and issue description.</li>
+  <li>Click <strong>Submit new issue</strong>.</li>
+</ol>
+
+<h2 id="report">Edit metadata</h2>
+<p>The .md (Markdown) file’s metadata is a set of key-value pairs (where the key is before the : and the value is after). The metadata section is located in the beginning of the file.</p>
+
+<h3 id="example">Example:</h3>
+<pre><code>---
+layout: default
+group: install2
+subgroup: Z_continue
+title: Continue with your installation
+menu_title: Continue with your installation
+menu_node: parent
+menu_order: 1
+version: 2.0 github_link: install-gde/continue.md
+---	
+</code></pre>
+
+<h3 id="definitions">Definitions</h3>
+<p>Refer to the following table for a description of each key value pair in the metadata section of the .md file.</p>
+
+<table style="width:100%">
+   <colgroup>
+      <col width="30%" />
+      <col width="70%" />
+   </colgroup>
+   <thead>
+      <tr style="background-color:lightgray">
+         <th>Metadata Example</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+         <td>layout: default</td>
+         <td>Selects the template Jekyll will use to render the .md file into HTML&amp;CSS.</td>
+      
+      <tr>
+         <td>group: install2</td>
+         <td>Defines what book the file belongs to, that is, which left hand menu collection the file will show up in. Note that what you put here doesn't affect the horizontal menu. That is controlled by _/includes/navigation.html.</td>
+      </tr>
+      <tr>
+         <td>subgroup: Z_continue</td>
+         <td>Defines what "chapter" or "subgroup" the file belongs to. Add the name of the subgroup here in each file that you want to collect into that subgroup.</td>
+      </tr>
+      <tr>
+         <td>title: Continue with your installation</td>
+         <td>Sets the title of the page in the HTML meta and the main title on the page.</td>
+      </tr>
+      <tr>
+         <td>menu_title: Continue with your installation</td>
+         <td>Sets the title as it appears in the menu.</td>
+      </tr>
+       <tr>
+         <td>menu_node: parent</td>
+         <td>If set to parent, makes the file the link off of the subgroup header.</td>
+      </tr>
+       <tr>
+         <td>menu_order: 1</td>
+         <td>Sets the order files display. But not the order that subgroups appear in. 
+         
+<!--
+You can order where each file appears in the list by changing its menu_order number. Subgroups, by default, will show up in alphabetical order. To get your own order instead of alphabetical, create a file for each subgroup header: introduction.md, prepare.md, build,md, etc. In the metadata section for each of the files set menu_node: parent.
+
+They still show up in alphabetical order, based on subgroup's name. Now change the name of subgroup to get the order you need using the alphabet. When you set menu_node to parent, the displayed name will be taken from menu_title instead of from subgroup. So, if you want Introduction to show up first and Prepare to show up second, set subgroup in introduction.md to for example 1_introduction and then set subgroup in prepare.md to 2_prepare. That is, just follow an alphanumeric order to get the order you want. Then set menu_title to the name you want displayed. Then, for each file you want to attach to that subgroup, you just give it that subgroup name. In those files, leave menu_node empty or omit it.
+-->
+         </td>
+      </tr>
+       <tr>
+         <td>version: 2.0
+github_link: install-gde/continue.md</td>
+         <td>Gives you the name and location of the source file in github.</td>
+      </tr>
+   </tbody>
+</table>
+
+<h3 id="how-to-add-a-contributors-name-to-a-topic">How to add a Contributor’s name to a topic</h3>
+<p>When a community member contributes an entire topic, or makes substantial improvements to an existing topic, we like to thank them by adding their name (or company name) right beneath the title of the topic, and link that name to their blog or web site.</p>
+
+<p>In the metadata secion at the top of the file, just add these two entries:</p>
+
+<ul>
+  <li>contributor_name: &lt;name_of_contributor&gt;</li>
+  <li>contributor_link: &lt;link_to_contributors_site_or_blog&gt;</li>
+</ul>
+
+<h2 id="Thanks">Thank you so much for adding your brilliance to the Magento DevDocs!! </h2>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -39,11 +39,29 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/guides/v2.0/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/guides/v2.0/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
 		</div><!-- #global-nav -->
 	</nav>
 
@@ -60,8 +78,9 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
             </ul>
          </li>
          <li class="first">
@@ -77,18 +96,15 @@
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a>
-   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-<li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
-               <div class="divider"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
                <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
@@ -149,12 +165,13 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Generate local REST API reference</h1>
-			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/rest/generate-local.md" target="_blank">Edit this page on GitHub</a>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/generate-local.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
 </section>
+
 
 <div class="container">
 
@@ -276,10 +293,18 @@
 									
 
 								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/rest/notes.html">Notes</a></li>
+
+									
+
 								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -418,15 +443,24 @@
 
 	<section class="content">
 		<div class="content-wrap">
+			<p align="right"><i>Updated: 1 July 2016 (PDT)</i></p>
+		<p>The REST documentation is generated with <a href="http://swagger.io">Swagger UI</a> using a schema derived from the latest build of Magento 2 Community Edition. However, the REST API documentation is static in that the Magento Developers website is not running an instance of Magento.</p>
 
-      <p align="right"><i>Updated: 6 November 2015 (PST)</i></p>
-		<p>The REST documentation is generated with <a href="http://swagger.io">Swagger UI</a> using a schema derived from the latest build of Magento 2.0 Community Edition. However, the REST API documentation is static in that the Magento Developers website is not running an instance of Magento.</p>
+<p>The REST documentation on the Magento devdocs website is generated with Swagger UI using a schema derived from the latest build of Magento 2 Community Edition. However, the REST API documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento and there is no live data.</p>
 
-<p>If you install Swagger UI on your server, then you can generate live REST API documentation. Use the following link to generate a JSON schema that includes third-party modules and extension attributes that have been installed on your system. </p>
+<p>The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include third-party modules and extension attributes that have been installed on your system. To view this documentation, go to:</p>
 
-<p><code>http://&lt;magento_host&gt;/rest/default/schema</code></p>
+<p><code>http://&lt;magento_host&gt;/swagger</code></p>
 
-<p>Then save the schema file and load it into your Swagger UI instance.</p>
+<p>By default, Magento returns documentation for resources available to anonymous users. If you specify a valid value in the api_key text box in the upper right corner, Swagger returns documentation for all the APIs the user has access to. To generate an API key, call the <code>POST /V1/integration/customer/token</code> or <code>POST /V1/integration/admin/token</code> as directed in <a href="/guides/v2.0/get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</p>
+
+<p>The generated Swagger documentation provides the capability to test REST API requests. A user can enter a sample request, then press the <strong>Try it out!</strong> button, and Swagger returns information such as a <code>curl</code> command, a request URL, a response body, a response code, and the response header. The <strong>Try it out!</strong> button will not work unless a bearer authorization token has been specified.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The <b>Try it out!</b> feature is not available on Swagger documentation published on the Magento devdocs website.</p>
+</div>
+
+<p>You can also use a REST client to generate the JSON schema. In the client, set the method to <code>GET</code> and the URL to <code>http://&lt;magento_host&gt;/rest/default/schema</code>. You must specify a bearer authorization token in the header.</p>
 
 
 		</div>
@@ -450,7 +484,9 @@
         <div id="magento-com">
             <div class="container">
                 <div id="f-col-1">
-                    <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento Commerce" /></a>
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
                     <ul class="nav">
                         <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
                         <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
@@ -555,7 +591,7 @@
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/js/app.js"></script>
 
 
 <!--Google Custom Search-->

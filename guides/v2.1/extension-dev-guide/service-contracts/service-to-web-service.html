@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Configure services as web APIs</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/service-contracts/service-to-web-service.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Configure services as web APIs</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+			<a class="contributor" href="http://www.classyllama.com/" target="_blank">Thanks to Classy Llama for contributing this topic</a>
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>PHP Developer Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/intro/developers_roadmap.html">Developer roadmap</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/prepare/prepare.html">Prepare (development quick start)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/dev-modtypes.html">Component types and versioning</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/lifecycle.html">Extension lifecycle</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/build/build.html">Build</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">The composer.json file</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/required-configuration-files.html">Define your configuration files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/component-registration.html">Register your component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/XSD-XML-validation.html">URN schema validation</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/create_component.html">Name your component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/module-load-order.html">Component load order</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/enable-module.html">Enable or disable your component</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/package/package.html">Package</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/package/package_module.html">Package a component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/package/package_mktpl.html">Upload your component to the Magento Marketplace</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/validate/validate.html">Validate</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/validate/test-module.html">Test your component</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-add.html">Add CLI commands</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/staging.html">Staging (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="staging_modules"><a href="#">List of modules</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/BundleStaging.html">BundleStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CatalogImportExportStaging.html">CatalogImportExportStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CatalogInventoryStaging.html">CatalogInventoryStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CatalogRuleStaging.html">CatalogRuleStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CatalogStaging.html">CatalogStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CatalogUrlRewriteStaging.html">CatalogUrlRewriteStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CheckoutStaging.html">CheckoutStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/CmsStaging.html">CmsStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/ConfigurableProductStaging.html">ConfigurableProductStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/DownloadableStaging.html">DownloadableStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/GiftCardStaging.html">GiftCardStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/GiftMessageStaging.html">GiftMessageStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/GiftWrappingStaging.html">GiftWrappingStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/GoogleOptimizerStaging.html">GoogleOptimizerStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/GroupedProductStaging.html">GroupedProductStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/LayeredNavigationStaging.html">LayeredNavigationStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/MsrpStaging.html">MsrpStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/PaymentStaging.html">PaymentStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/ProductVideoStaging.html">ProductVideoStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/ReviewStaging.html">ReviewStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/RmaStaging.html">RmaStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/SalesRuleStaging.html">SalesRuleStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/SearchStaging.html">SearchStaging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/Staging.html">Staging</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child staging_modules " data-menunode="staging_modules"><a href="/guides/v2.1/extension-dev-guide/staging/WeeeStaging.html">WeeeStaging</a>
+
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/module-development.html">Component development</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/api-concepts.html">Public interfaces & APIs</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/events-and-observers.html">Events and observers</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/factories.html">Instantiating objects with factories</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/proxies.html">Proxies</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/code-generation.html">Code generation</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/plugins.html">Plugins (Interceptors)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/routing.html">Routing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/indexing.html">Indexing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/message-queues.html">Message Queues (Enterprise Edition Only)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/howdoi/php/php_clear-dirs.html">Clear directories during development</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2 id="overview-web-service">Overview</h2>
+<p>You can configure a Magento or third-party service as a web API.</p>
+<p>To <a href="#configure-webapi">configure a web API</a>, you define XML elements and attributes in the <code>webapi.xml</code> XML configuration file for the module for the service.
+   The <code>webapi.xml</code> file for your module specifies an XML schema file for validation.
+   By default, this file is <code>app/code/&lt;VENDOR&gt;/Webapi/etc/webapi.xsd</code>.
+</p>
+<p>Your module can use the default <code>webapi.xsd</code> file or you can create a customized XML schema file for validation.</p>
+<p>Users can make REST or SOAP calls to access the web API.</p>
+<p>To configure a web API, read these topics:</p>
+<ul>
+   <li>
+      <p><a href="#configure-webapi">Configure a web API</a></p>
+   </li>
+   <li>
+      <p><a href="#configuration-options">webapi.xml configuration options</a></p>
+   </li>
+   <li>
+      <p><a href="#sample-webapi">Sample webapi.xml file</a></p>
+   </li>
+   <li>
+      <p><a href="#validate-webapi">webapi.xsd XML schema file</a></p>
+   </li>
+</ul>
+<h2 id="configure-webapi">Configure a web API</h2>
+<p>To configure a web API for a service, you define XML elements and attributes in the
+   <code>app/code/Magento/&lt;MODULE&gt;/etc/webapi.xml</code> file, where <code>&lt;MODULE&gt;</code> is the module name.
+   For example, the web API for the Customer service is defined in the <code>app/code/Magento/Customer/etc/webapi.xml</code> configuration file.
+</p>
+<h2 id="service-interface-requirements">Service Interface Requirements</h2>
+
+<p>After a service class is configured using the <code>webapi.xml</code> file, Magento dynamically makes the service method available using the web API. Because this is automatically generated, it is important that the service class be formatted a very specific way.</p>
+
+<p>This makes sense when you consider that while a service class possibly expects objects of a specific class type (such a save method) and possibly returns a result that is a class or array of classes, neither SOAP nor REST are guaranteed to have that class defined on the client end or even to have a concept similar to a PHP class. Because of this, Magento uses reflection to automatically create these classes and sets data that you have submitted in JSON or HTTP array syntax onto an instance of the expected PHP class when calling the service method.  </p>
+
+<p>Conversely, if an object is returned from one of these methods, Magento automatically converts that PHP object into a JSON or SOAP object before sending it over the web API.</p>
+
+<p>To do this conversion, the Magento application must know information about both the parameters the service method is expecting and the return type of the result the service method delivers. PHP 5.x does not allow for type-hinting for scalar parameters or for return types so in order to convert the array or JSON object to or from the appropriate class type, PHP relies on the PHP doc block. Specifically, the lines containing <code>@param</code> and <code>@return</code> must follow certain rules for Magento to be able to correctly convert between types.</p>
+
+<p>For SOAP and REST to work correctly, the following rules must be followed by the service interface’s doc block:</p>
+
+<ul>
+  <li>All methods exposed by the web API must follow these rules</li>
+  <li>All methods on objects expected as parameters or returned must follow these rules</li>
+  <li>
+    <p>Parameters must be defined in the doc block as</p>
+
+    <pre><code>* @param type $paramName
+</code></pre>
+  </li>
+  <li>
+    <p>Return type must be defined in the doc block as</p>
+
+    <pre><code>* @return type
+</code></pre>
+  </li>
+  <li>Valid scalar types include: <code>mixed</code> (or <code>anyType</code>), <code>bool</code> (or <code>boolean</code>), <code>str</code> (or <code>string</code>), <code>integer</code> (or <code>int</code>), <code>float</code>, and <code>double</code>.</li>
+  <li>Valid object types include a fully qualified class name or a fully qualified interface name.</li>
+  <li>Any parameters or return values of type array can be denoted by following any of the previous types by an empty set of square brackets <code>[]</code></li>
+</ul>
+
+<p>Following are some examples of various types and what they would look like in the doc block:</p>
+
+<ul>
+  <li>
+    <p>A parameter $types which can be an array of strings:</p>
+
+    <pre><code>* @param string[] $types
+</code></pre>
+  </li>
+  <li>
+    <p>A parameter $id which can be an integer:</p>
+
+    <pre><code>* @param int $id
+</code></pre>
+  </li>
+  <li>
+    <p>A parameter $customer which is an object of class <code>\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
+
+    <pre><code>* @param \Magento\Customer\Api\Data\CustomerInterface $customer
+</code></pre>
+
+    <p>Note that even if the class <code>\Magento\Customer\Api\Data\CustomerInterface</code> is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.</p>
+  </li>
+  <li>
+    <p>A return which is an array of objects of type <code>\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
+
+    <pre><code>* @return \Magento\Customer\Api\Data\CustomerInterface[]
+</code></pre>
+  </li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If a service method argument is called <code>item</code>, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an <code>item</code> element. </p>
+</div>
+
+<h2 id="configuration-options">webapi.xml configuration options</h2>
+<p>To define web API components, set these attributes on these XML elements in the
+   <code>webapi.xml</code> configuration file, as follows:
+</p>
+<table style="width:100%">
+   <tr bgcolor="lightgray">
+      <th>XML&nbsp;element</th>
+      <th>Description</th>
+      <th>Attributes</th>
+   </tr>
+   <tr>
+      <td>
+         <p><code>&lt;routes&gt;</code></p>
+      </td>
+      <td>
+         <p>Required. Root element that defines the namespace and location of the XML schema file.</p>
+      </td>
+      <td>
+         <ul>
+            <li>
+               <p><code>xmlns:xsi</code>. Required. Defines the namespace for the XML schema instance.</p>
+            </li>
+            <li>
+               <p><code>xsi:noNamespaceSchemaLocation</code>. Required. Defines the path and file name of the XML schema file to use to validate the web API.</p>
+            </li>
+         </ul>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>&lt;route&gt;</code></p>
+      </td>
+      <td>
+         <p>Required. Child element of <code>&lt;routes&gt;</code>. Defines the HTTP route for the web API method.</p>
+      </td>
+      <td>
+         <ul>
+            <li>
+               <p><code>method</code>. Required. String. HTTP method. Valid values are GET, POST, PUT, and DELETE.</p>
+            </li>
+            <li>
+               <p><code>url</code>. Required. String.
+                  Magento resource. Optionally, one or more template parameters.
+               </p>
+            </li>
+            <li>
+               <p><code>secure</code>. Optional. Boolean. Indicates that the route is accessible over only HTTPS. Any attempts to access this route over non-secure causes an exception.</p>
+            </li>
+         </ul>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>&lt;service&gt;</code></p>
+      </td>
+      <td>
+         <p>Required. Child element of <code>&lt;route&gt;</code>. Defines the implemented interface and the web API method name.</p>
+      </td>
+      <td>
+         <ul>
+            <li>
+               <p><code>class</code>. Required. String. Location and name of implemented interface.</p>
+            </li>
+            <li>
+               <p><code>method</code>. Required. String. Web API method name.</p>
+            </li>
+         </ul>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>&lt;resources&gt;</code></p>
+      </td>
+      <td>
+         <p>Required. Child element of <code>&lt;route&gt;</code>. Container for one or more resource definitions.</p>
+      </td>
+      <td>
+         <p>None.</p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>&lt;resource&gt;</code></p>
+      </td>
+      <td>
+         <p>Required. Child element of <code>&lt;resources&gt;</code>. Defines a resource to which the caller must have access.</p>
+      </td>
+      <td>
+         <ul>
+            <li>
+               <p><code>ref</code>.
+                  Required. Referenced resource. Valid values are <code>self</code>, <code>anonymous</code>, or a Magento resource, such as <code>Magento_Customer::group</code>.
+               </p>
+               <strong>Note</strong>:The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.
+                  <p>Any user that the framework cannot authenticate through existing <a href="/guides/v2.1/get-started/authentication/gs-authentication.html">authentication
+                     mechanisms</a> is considered a guest user.</p>
+
+            </li>
+         </ul>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>&lt;data&gt;</code></p>
+      </td>
+      <td>
+         <p>Optional. Child element of <code>&lt;route&gt;</code>. Container for one or more parameter definitions.</p>
+      </td>
+      <td>
+         <p>None.</p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>&lt;parameter&gt;</code></p>
+      </td>
+      <td>
+         <p>Required if <code>&lt;data&gt;</code> is specified. Child element of <code>&lt;data&gt;</code>. Defines a parameter.</p>
+      </td>
+      <td>
+         <ul>
+            <li>
+               <p><code>name</code>. String. Parameter name.</p>
+            </li>
+            <li>
+               <p><code>force</code>. Boolean.</p>
+            </li>
+         </ul>
+      </td>
+   </tr>
+</table>
+<h2 id="sample-webapi">Sample webapi.xml file</h2>
+<p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
+<script src="https://gist.github.com/keharper/507f485712a496ad079a.js"></script>
+
+<p>In this <code>webapi.xml</code> example:</p>
+<table style="width:100%">
+   <tr bgcolor="lightgray">
+      <th>Line</th>
+      <th>Defines</th>
+   </tr>
+   <tr>
+      <td>
+         <p>3</p>
+      </td>
+      <td>
+         <p>The XML schema file that is used to validate the XML.</p>
+         <p>The XML schema file is <code>../../../../../app/code/Magento/Webapi/etc/webapi.xsd</code>.</p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p>5</p>
+      </td>
+      <td>
+         <p>The HTTP method and web resource through which to access the route.</p>
+         <p>The HTTP method is GET.</p>
+         <p>The resource is <code>/V1/customerGroups/:id</code>. Users must substitute a customer ID for the <code>id</code> template parameter.</p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p>6</p>
+      </td>
+      <td>
+         <p>The interface that the route implements and the name of the web API method.</p>
+         <p>The route implements the <code>Magento\Customer\Api\GroupRepositoryInterface</code> interface.</p>
+         <p>The web API method name is <code>get</code>.</p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p>8</p>
+      </td>
+      <td>
+         <p>The resource to which the caller must have access.</p>
+         <p>The caller must have access to <code>Magento_Customer::group</code> resource.</p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p>18</p>
+      </td>
+      <td>
+         <p>A required parameter.</p>
+         <p>The <code>id</code> parameter is required on GET calls to <code>/V1/customers/me/billingAddress</code>.</p>
+      </td>
+   </tr>
+</table>
+<h2 id="validate-webapi">webapi.xsd XML schema file</h2>
+<p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
+<p>The default <code>webapi.xsd</code> XML schema file can be found in the <code>app/code/Magento/Webapi/etc</code> directory.</p>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

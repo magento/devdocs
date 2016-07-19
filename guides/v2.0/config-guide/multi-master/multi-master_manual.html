@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Manually configure master databases</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.0/config-guide/multi-master/multi-master_manual.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.0)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.0/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Manually configure master databases</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/multi-master/multi-master_manual.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Configuration Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/bk-config-guide.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/secy/secy.html">Security settings</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">About Magento modes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable profiling (MAGE_PROFILER)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/cli/config-cli.html">Command line configuration</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Enterprise Edition only)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/log/log-intro.html">Custom logging</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/log/log-magento.html">Magento logging in more detail</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/log/log-db.html">Example&mdash;logging database activity</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/multi-site/ms_over.html">Multiple websites or stores</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/config/config-magento.html">Magento configuration files</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/config/caching.html">Caching</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/database/database.html">Database caching</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching-cache-type.html">Create a cache type</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/redis/config-redis.html">Configure Redis</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/redis/redis-pg-cache.html">Use Redis for page caching</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/redis/redis-session.html">Use Redis for session storage</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Backend Fetch Failed) errors</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/memcache/memcache.html">Use memcached for session storage</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/db-profiler/db-profiler.html">Configure the database profiler</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/mq/config-mq.html">Configure message queue topology</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/mq/manage-mysql.html">MySQL message queues</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-magento.html">Configure Solr and Magento</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-script.html">Prepare Solr for production</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/multi-master/multi-master_manual.html">Manually configure master databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/sessions.html">How to locate your session files</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/prod/prod.html">Deploy Magento to production</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/prod/prod_deploy.html">Deployment steps</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<p><img src="/common/images/ee-only_large.png" /></p>
+
+<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#config-ee-multidb-manual-over">Overview of manual split database configuration</a></li>
+  <li><a href="#config-ee-multidb-backup">Back up the Magento system</a></li>
+  <li><a href="#config-ee-multidb-master-masters">Set up additional master databases</a></li>
+  <li><a href="#config-ee-multidb-oms">Configure the sales database</a></li>
+  <li><a href="#config-ee-multidb-checkout">Configure the quote database</a></li>
+  <li><a href="#config-ee-multidb-drop">Drop sales and quote tables from the Magento database</a></li>
+  <li><a href="#config-ee-multidb-config">Update your deployment configuration</a></li>
+  <li><a href="#split-db-ref">Reference scripts</a></li>
+  <li><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
+</ul>
+
+<h2 id="config-ee-multidb-manual-over">Overview of manual split database configuration</h2>
+<p>If the Magento application is already in production or if you’ve already installed custom code or components, you might need to configure split databases manually. Before continuing, contact Magento Support to see if this is necessary in your case.</p>
+
+<p>Manually splitting databases involves:</p>
+
+<ul>
+  <li>Create the checkout and order management system (OMS) databases</li>
+  <li>
+    <p>Run a series of SQL scripts that:</p>
+
+    <ul>
+      <li>Drop foreign keys</li>
+      <li>Back up sales and quote database tables</li>
+      <li>Move tables from your main Magento database to the sales and quote databases</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="bs-callout bs-callout-warning">
+    <p>If any custom code uses JOINs with tables in the sales and quote databases, you <em>cannot</em> use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.</p>
+</div>
+
+<p>This topic uses the following naming conventions:</p>
+
+<ul>
+  <li>The main Magento database name is <code>magento</code> and its user name and password are both <code>magento</code></li>
+  <li>
+    <p>The quote database name is <code>magento_quote</code> and its user name and password are both <code>magento_quote</code></p>
+
+    <p>The quote database is also referred to as the <em>checkout</em> database.</p>
+  </li>
+  <li>
+    <p>The sales database name is <code>magento_sales</code> and its user name and password are both <code>magento_sales</code></p>
+
+    <p>The sales database is also referred to as the order management system (<em>OMS</em>) database.</p>
+  </li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>This guide assumes all three databases are on the same host as the Magento application. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
+</div>
+
+<h2 id="config-ee-multidb-backup">Back up the Magento system</h2>
+<p>We strongly recommend you back up your current database and file system so you can restore it later in the event of issues during the process.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to show how to back up Magento </h4><div class="collapsible-content"><p>To back up your system:</p>
+
+<ol>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>
+    <p>Enter the following commands:</p>
+
+    <pre><code>magento setup:backup --code --media --db
+</code></pre>
+  </li>
+  <li>Continue with the next section.</li>
+</ol>
+</div></div>
+
+<h2 id="config-ee-multidb-master-masters">Set up additional master databases</h2>
+<p>This section discusses how to create database instances for sales and quote tables.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to show how to create database instances </h4><div class="collapsible-content"><p>Create sales and OMS quote databases as follows:</p>
+
+<ol>
+  <li>Log in to your database server as any user.</li>
+  <li>
+    <p>Enter the following command to get to a MySQL command prompt:</p>
+
+    <pre><code>mysql -u root -p
+</code></pre>
+  </li>
+  <li>Enter the MySQL <code>root</code> user’s password when prompted.</li>
+  <li>
+    <p>Enter the following commands in the order shown to create database instances named <code>magento_quote</code> and <code>magento_sales</code> with the same user names and passwords:</p>
+
+    <pre><code>create database magento_quote;
+GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
+
+create database magento_sales;
+GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
+</code></pre>
+  </li>
+  <li>
+    <p>Enter <code>exit</code> to quit the command prompt.</p>
+  </li>
+  <li>
+    <p>Verify the databases, one at a time:</p>
+
+    <p>quote database:</p>
+
+    <pre><code>mysql -u magento_quote -p
+exit
+</code></pre>
+
+    <p>Order management database:</p>
+
+    <pre><code>mysql -u magento_sales -p
+exit
+</code></pre>
+
+    <p>If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.</p>
+  </li>
+  <li>Continue with the next section.</li>
+</ol>
+</div></div>
+
+<h2 id="config-ee-multidb-oms">Configure the sales database</h2>
+<p>This section discusses how to create and run SQL scripts that alter quote database tables and back up data from those tables.</p>
+
+<p>Sales database table names start with:</p>
+
+<ul>
+  <li><code>salesrule_</code></li>
+  <li><code>sales_</code></li>
+  <li><code>magento_sales_</code></li>
+  <li>The <code>magento_customercustomattributes_sales_flat_order</code> table is also affected</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
+</div>
+
+<p>For more information, see:</p>
+
+<ul>
+  <li><a href="#config-ee-multidb-sql-oms">Create sales database SQL scripts</a></li>
+  <li><a href="#sales-backup">Back up sales data</a></li>
+</ul>
+
+<h3 id="config-ee-multidb-sql-oms">Create sales database SQL scripts</h3>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to create and run sales database SQL scripts </h4><div class="collapsible-content"><p>Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as <code>root</code>, you can create the scripts in the <code>/root/sql-scripts</code> directory.</p>
+
+<h4 id="remove-foreign-keys">Remove foreign keys</h4>
+<p>This script removes foreign keys that refer to non-sales tables from the sales database. </p>
+
+<p>Create the following script and give it a name like <code>1_foreign-sales.sql</code>. Replace <code>&lt;your main Magento DB name&gt;</code> with the name of your Magento database.</p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">Magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_coupon_aggregated_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_COUPON_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_coupon_aggregated</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_COUPON_AGGREGATED_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_coupon_aggregated_updated</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_COUPON_AGGREGATED_UPDATED_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_coupon_usage</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_COUPON_USAGE_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_customer_group</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_CSTR_GROUP_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_customer</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_CUSTOMER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_label</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_LABEL_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_product_attribute</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_PRD_ATTR_ATTR_ID_EAV_ATTR_ATTR_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_product_attribute</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_PRD_ATTR_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_product_attribute</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_PRODUCT_ATTRIBUTE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_website</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_WEBSITE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_bestsellers_aggregated_daily</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_BESTSELLERS_AGGRED_DAILY_PRD_ID_CAT_PRD_ENTT_ENTT_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_bestsellers_aggregated_monthly</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_BESTSELLERS_AGGRED_MONTHLY_PRD_ID_CAT_PRD_ENTT_ENTT_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_bestsellers_aggregated_yearly</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_BESTSELLERS_AGGRED_YEARLY_PRD_ID_CAT_PRD_ENTT_ENTT_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_bestsellers_aggregated_daily</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_BESTSELLERS_AGGREGATED_DAILY_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_bestsellers_aggregated_monthly</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_BESTSELLERS_AGGREGATED_MONTHLY_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_bestsellers_aggregated_yearly</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_BESTSELLERS_AGGREGATED_YEARLY_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_creditmemo_grid</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_CREDITMEMO_GRID_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_creditmemo</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_CREDITMEMO_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_invoiced_aggregated_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_INVOICED_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_invoiced_aggregated</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_INVOICED_AGGREGATED_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_invoice_grid</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_INVOICE_GRID_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_invoice</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_INVOICE_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_order_aggregated_created</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_ORDER_AGGREGATED_CREATED_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_order_aggregated_updated</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_ORDER_AGGREGATED_UPDATED_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_ORDER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_order_grid</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_ORDER_GRID_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_order_grid</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_ORDER_GRID_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_order_item</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_ORDER_ITEM_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_order_status_label</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_ORDER_STATUS_LABEL_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_ORDER_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_refunded_aggregated_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_REFUNDED_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_refunded_aggregated</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_REFUNDED_AGGREGATED_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_shipment_grid</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_SHIPMENT_GRID_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_shipment</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_SHIPMENT_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_shipping_aggregated_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_SHIPPING_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">sales_shipping_aggregated</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALES_SHIPPING_AGGREGATED_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">magento_sales_creditmemo_grid_archive</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">MAGENTO_SALES_CREDITMEMO_GRID_ARCHIVE_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">magento_sales_invoice_grid_archive</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">MAGENTO_SALES_INVOICE_GRID_ARCHIVE_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">magento_sales_order_grid_archive</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">MAGENTO_SALES_ORDER_GRID_ARCHIVE_CSTR_ID_CSTR_ENTT_ENTT_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">magento_sales_order_grid_archive</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">MAGENTO_SALES_ORDER_GRID_ARCHIVE_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">magento_sales_shipment_grid_archive</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">MAGENTO_SALES_SHIPMENT_GRID_ARCHIVE_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">downloadable_link_purchased_item</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">DL_LNK_PURCHASED_ITEM_ORDER_ITEM_ID_SALES_ORDER_ITEM_ITEM_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">downloadable_link_purchased</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">DOWNLOADABLE_LINK_PURCHASED_ORDER_ID_SALES_ORDER_ENTITY_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">paypal_billing_agreement_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">PAYPAL_BILLING_AGREEMENT_ORDER_ORDER_ID_SALES_ORDER_ENTITY_ID</span><span class="p">;</span></code></pre></div>
+
+<h3 id="config-ee-multidb-sql-oms-run">Configure the sales database</h3>
+<p>Run the preceding script:</p>
+
+<ol>
+  <li>
+    <p>Log in to your MySQL database as the <code>root</code> or administrative user:</p>
+
+    <pre><code>mysql -u root -p
+</code></pre>
+  </li>
+  <li>
+    <p>At the <code>mysql&gt;</code> prompt, run the script as follows:</p>
+
+    <pre><code>source &lt;path&gt;/&lt;script&gt;.sql
+</code></pre>
+
+    <p>For example,</p>
+
+    <pre><code>source /root/sql-scripts/1_foreign-sales.sql
+</code></pre>
+  </li>
+  <li>
+    <p>After the script run, enter <code>exit</code>.</p>
+  </li>
+</ol>
+</div></div>
+
+<h3 id="sales-backup">Back up sales data</h3>
+<p>This section discusses how to back up sales tables from the main Magento database so you can restore them in the separate sales database.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to back up and restore sales data </h4><div class="collapsible-content"><p>If you’re currently at the <code>mysql&gt;</code> prompt, enter <code>exit</code> to return to the command shell.</p>
+
+<p>Run the following <code>mysqldump</code> commands, one at a time, from the command shell. In each, substitute the following:</p>
+
+<ul>
+  <li><code>&lt;your database root user name&gt;</code> with the name of your database root user</li>
+  <li><code>&lt;your database root user password&gt;</code> with the user’s password</li>
+  <li><code>&lt;your main magento DB name&gt;</code> with the name of your Magento database</li>
+  <li><code>&lt;path&gt;</code> with a writable file system path</li>
+</ul>
+
+<p><strong>Script 1</strong></p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">your</span> <span class="k">database</span> <span class="n">root</span> <span class="k">user</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="n">sales_bestsellers_aggregated_daily</span> <span class="n">sales_bestsellers_aggregated_monthly</span> <span class="n">sales_bestsellers_aggregated_yearly</span> <span class="n">sales_creditmemo</span> <span class="n">sales_creditmemo_comment</span> <span class="n">sales_creditmemo_grid</span> <span class="n">sales_creditmemo_item</span> <span class="n">sales_invoice</span> <span class="n">sales_invoice_comment</span> <span class="n">sales_invoice_grid</span> <span class="n">sales_invoice_item</span> <span class="n">sales_invoiced_aggregated</span> <span class="n">sales_invoiced_aggregated_order</span> <span class="n">sales_order</span> <span class="n">sales_order_address</span> <span class="n">sales_order_aggregated_created</span> <span class="n">sales_order_aggregated_updated</span> <span class="n">sales_order_grid</span> <span class="n">sales_order_item</span> <span class="n">sales_order_payment</span> <span class="n">sales_order_status</span> <span class="n">sales_order_status_history</span> <span class="n">sales_order_status_label</span> <span class="n">sales_order_status_state</span> <span class="n">sales_order_tax</span> <span class="n">sales_order_tax_item</span> <span class="n">sales_payment_transaction</span> <span class="n">sales_refunded_aggregated</span> <span class="n">sales_refunded_aggregated_order</span> <span class="n">sales_sequence_meta</span> <span class="n">sales_sequence_profile</span> <span class="n">sales_shipment</span> <span class="n">sales_shipment_comment</span> <span class="n">sales_shipment_grid</span> <span class="n">sales_shipment_item</span> <span class="n">sales_shipment_track</span> <span class="n">sales_shipping_aggregated</span> <span class="n">sales_shipping_aggregated_order</span> <span class="o">&gt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">sales</span><span class="p">.</span><span class="k">sql</span></code></pre></div>
+
+<p><strong>Script 2</strong></p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">your</span> <span class="k">database</span> <span class="n">root</span> <span class="k">user</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="n">magento_sales_creditmemo_grid_archive</span> <span class="n">magento_sales_invoice_grid_archive</span> <span class="n">magento_sales_order_grid_archive</span> <span class="n">magento_sales_shipment_grid_archive</span> <span class="o">&gt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">salesarchive</span><span class="p">.</span><span class="k">sql</span></code></pre></div>
+
+<p><strong>Script 3</strong></p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">your</span> <span class="k">database</span> <span class="n">root</span> <span class="k">user</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="n">magento_customercustomattributes_sales_flat_order</span> <span class="n">magento_customercustomattributes_sales_flat_order_address</span> <span class="o">&gt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">customercustomattributes</span><span class="p">.</span><span class="k">sql</span></code></pre></div>
+
+<p><strong>Script 4</strong></p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">your</span> <span class="k">database</span> <span class="n">root</span> <span class="k">user</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="n">sequence_creditmemo_0</span> <span class="n">sequence_creditmemo_1</span> <span class="n">sequence_invoice_0</span> <span class="n">sequence_invoice_1</span> <span class="n">sequence_order_0</span> <span class="n">sequence_order_1</span> <span class="n">sequence_rma_item_0</span> <span class="n">sequence_rma_item_1</span> <span class="n">sequence_shipment_0</span> <span class="n">sequence_shipment_1</span> <span class="o">&gt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">sequence</span><span class="p">.</span><span class="k">sql</span></code></pre></div>
+
+<h3 id="sql-sales-restore">Restore sales data</h3>
+<p>This script restores sales data in your quote database.</p>
+
+<h4 id="ndb-requirement">NDB requirement</h4>
+<p>If you are using a <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html" target="_blank">Network Database (NDB)</a> cluster:</p>
+
+<ol>
+  <li>
+    <p>Convert tables from InnoDb to NDB type in dump files:</p>
+
+    <pre><code>sed -ei 's/InnoDb/NDB/' &lt;file name&gt;.sql
+</code></pre>
+  </li>
+  <li>
+    <p>Remove rows with a FULLTEXT key from dumps because NDB tables don’t support FULLTEXT.</p>
+  </li>
+</ol>
+
+<h4 id="restore-the-data">Restore the data</h4>
+<p>Run the following commands:</p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">root</span> <span class="k">user</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">sales</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">sales</span><span class="p">.</span><span class="k">sql</span>
+<span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">root</span> <span class="k">user</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">sales</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">sequence</span><span class="p">.</span><span class="k">sql</span>
+<span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">root</span> <span class="k">user</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">sales</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">salesarchive</span><span class="p">.</span><span class="k">sql</span>
+<span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">root</span> <span class="k">user</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">sales</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">customercustomattributes</span><span class="p">.</span><span class="k">sql</span></code></pre></div>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p><code>&lt;your sales DB name&gt;</code> with the name of your sales database. </p>
+
+    <p>In this topic, the sample database name is <code>magento_sales</code>.</p>
+  </li>
+  <li><code>&lt;root user name&gt;</code> with your MySQL root user name</li>
+  <li><code>&lt;root user password&gt;</code> with the user’s password</li>
+  <li>Verify the location of the backup files you created earlier (for example, <code>/var/sales.sql</code>)</li>
+</ul>
+</div></div>
+
+<h2 id="config-ee-multidb-checkout">Configure the quote database</h2>
+<p>This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
+</div>
+
+<p>Quote database table names start with <code>quote</code>. The <code>magento_customercustomattributes_sales_flat_quote</code> and <code>magento_customercustomattributes_sales_flat_quote_address</code> tables are also affected</p>
+
+<h3 id="drop-foreign-keys-from-quote-tables">Drop foreign keys from quote tables</h3>
+<p>This script removes foreign keys that refer to non-quote tables from quote tables. Replace <your main="" magento="" db="" name=""> with the name of your Magento database.</your></p>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to drop foreign keys from quote tables </h4><div class="collapsible-content"><p>Create the following script and give it a name like <code>2_foreign-key-quote.sql</code>:</p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">quote</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">QUOTE_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">quote_item</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">QUOTE_ITEM_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">quote_item</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">QUOTE_ITEM_STORE_ID_STORE_STORE_ID</span><span class="p">;</span></code></pre></div>
+
+<p>Run the script as follows:</p>
+
+<ol>
+  <li>
+    <p>Log in to your MySQL database as the root or administrative user:</p>
+
+    <pre><code>mysql -u root -p
+</code></pre>
+  </li>
+  <li>
+    <p>At the <code>mysql&gt;</code> prompt, run the script as follows:
+it`.
+    source <path>/<script>.sql
+For example,</script></path></p>
+
+    <pre><code>source /root/sql-scripts/2_foreign-key-quote.sql
+</code></pre>
+  </li>
+  <li>
+    <p>After the script runs, enter <code>exit</code>.</p>
+  </li>
+</ol>
+</div></div>
+
+<h3 id="back-up-quote-tables">Back up quote tables</h3>
+<p>This section discusses how to back up quote tables from the main Magento database and restore them in your quote database.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to back up and restore quote tables </h4><div class="collapsible-content"><p>Run the following command from a command prompt:</p>
+
+<pre><code>mysqldump -u &lt;your database root user name&gt; -p &lt;your main Magento DB name&gt; magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask &gt; /&lt;path&gt;/quote.sql;
+</code></pre>
+
+<h3 id="ndb-requirement">NDB requirement</h3>
+<p>If you are using a <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html" target="_blank">Network Database (NDB)</a> cluster:</p>
+
+<ol>
+  <li>
+    <p>Convert tables from InnoDb to NDB type in dump files:</p>
+
+    <pre><code>sed -ei 's/InnoDb/NDB/' &lt;file name&gt;.sql
+</code></pre>
+  </li>
+  <li>
+    <p>Remove rows with a FULLTEXT key from dumps because NDB tables don’t support FULLTEXT.</p>
+  </li>
+</ol>
+
+<h3 id="restore-tables-to-the-quote-database">Restore tables to the quote database</h3>
+
+<pre><code>mysql -u root -p magento_quote &lt; /&lt;path&gt;/quote.sql
+</code></pre>
+</div></div>
+
+<h2 id="config-ee-multidb-drop">Drop sales and quote tables from the Magento database</h2>
+<p>This script sales and quote tables from the Magento database. Replace <your main="" magento="" db="" name=""> with the name of your Magento database.</your></p>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to drop sales and quote tables </h4><div class="collapsible-content"><p>Create the following script and give it a name like <code>3_drop-tables.sql</code>:</p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">SET</span> <span class="n">foreign_key_checks</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_customercustomattributes_sales_flat_quote</span><span class="p">;</span> 
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_customercustomattributes_sales_flat_quote_address</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">quote</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">quote_address</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">quote_address_item</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">quote_item</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">quote_item_option</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">quote_payment</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">quote_shipping_rate</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">quote_id_mask</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_bestsellers_aggregated_daily</span><span class="p">;</span>                        
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_bestsellers_aggregated_monthly</span><span class="p">;</span>                      
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_bestsellers_aggregated_yearly</span><span class="p">;</span>                       
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_creditmemo</span><span class="p">;</span>                                          
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_creditmemo_comment</span><span class="p">;</span>                                  
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_creditmemo_grid</span><span class="p">;</span>                                     
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_creditmemo_item</span><span class="p">;</span>                                     
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_invoice</span><span class="p">;</span>                                             
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_invoice_comment</span><span class="p">;</span>                                     
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_invoice_grid</span><span class="p">;</span>                                        
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_invoice_item</span><span class="p">;</span>                                        
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_invoiced_aggregated</span><span class="p">;</span>                                 
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_invoiced_aggregated_order</span><span class="p">;</span>                           
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order</span><span class="p">;</span>                                               
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_address</span><span class="p">;</span>                                       
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_aggregated_created</span><span class="p">;</span>                            
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_aggregated_updated</span><span class="p">;</span>                            
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_grid</span><span class="p">;</span>                                          
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_item</span><span class="p">;</span>                                          
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_payment</span><span class="p">;</span>                                       
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_status</span><span class="p">;</span>                                        
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_status_history</span><span class="p">;</span>                                
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_status_label</span><span class="p">;</span>                                  
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_status_state</span><span class="p">;</span>                                  
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_tax</span><span class="p">;</span>                                           
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_order_tax_item</span><span class="p">;</span>                                      
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_payment_transaction</span><span class="p">;</span>                                 
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_refunded_aggregated</span><span class="p">;</span>                                 
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_refunded_aggregated_order</span><span class="p">;</span>                           
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_sequence_meta</span><span class="p">;</span>                                       
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_sequence_profile</span><span class="p">;</span>                                    
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_shipment</span><span class="p">;</span>                                            
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_shipment_comment</span><span class="p">;</span>                                    
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_shipment_grid</span><span class="p">;</span>                                       
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_shipment_item</span><span class="p">;</span>                                       
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_shipment_track</span><span class="p">;</span>                                      
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_shipping_aggregated</span><span class="p">;</span>                                 
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sales_shipping_aggregated_order</span><span class="p">;</span>                           
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_sales_creditmemo_grid_archive</span><span class="p">;</span>                     
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_sales_invoice_grid_archive</span><span class="p">;</span>                        
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_sales_order_grid_archive</span><span class="p">;</span>                          
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_sales_shipment_grid_archive</span><span class="p">;</span>                       
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_customercustomattributes_sales_flat_order</span><span class="p">;</span>         
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_customercustomattributes_sales_flat_order_address</span><span class="p">;</span> 
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_creditmemo_0</span><span class="p">;</span>                                     
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_creditmemo_1</span><span class="p">;</span>                                     
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_invoice_0</span><span class="p">;</span>                                        
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_invoice_1</span><span class="p">;</span>                                        
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_order_0</span><span class="p">;</span>                                          
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_order_1</span><span class="p">;</span>                                          
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_rma_item_0</span><span class="p">;</span>                                       
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_rma_item_1</span><span class="p">;</span>                                       
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_shipment_0</span><span class="p">;</span>                                       
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_shipment_1</span><span class="p">;</span>     
+<span class="k">SET</span> <span class="n">foreign_key_checks</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span></code></pre></div>
+
+<p>Run the script as follows:</p>
+
+<ol>
+  <li>
+    <p>Log in to your MySQL database as the root or administrative user:</p>
+
+    <pre><code>mysql -u root -p
+</code></pre>
+  </li>
+  <li>
+    <p>At the <code>mysql&gt;</code> prompt, run the script as follows:</p>
+
+    <pre><code>source &lt;path&gt;/&lt;script&gt;.sql
+</code></pre>
+
+    <p>For example,</p>
+
+    <pre><code>source /root/sql-scripts/3_drop-tables.sql
+</code></pre>
+  </li>
+  <li>
+    <p>After the script runs, enter <code>exit</code>.</p>
+  </li>
+</ol>
+</div></div>
+
+<h2 id="config-ee-multidb-config">Update your deployment configuration</h2>
+<p>The final step in manually splitting databases is to add connection and resource information to Magento’s deployment configuration, <code>env.php</code>. </p>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to update the Magento deployment configuration </h4><div class="collapsible-content"><ol>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>
+    <p>Back up your deployment configuration:</p>
+
+    <pre><code>cp &lt;your Magento install dir&gt;/app/etc/env.php &lt;your Magento install dir&gt;/app/etc/env.php.orig
+</code></pre>
+  </li>
+  <li>Open <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> in a text editor and update it using the guidelines discussed in the following sections.</li>
+</ol>
+
+<h3 id="update-database-connections">Update database connections</h3>
+
+<p>Locate the block starting with <code>'default'</code> (under <code>'connection'</code>) and add <code>'checkout'</code> and <code>'sales'</code> sections. Replace sample values with values appropriate for your site.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;default&#39;</span> <span class="o">=&gt;</span> 
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql4&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;engine&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;innodb&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;initStatements&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SET NAMES utf8;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">&#39;checkout&#39;</span> <span class="o">=&gt;</span> 
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_quote&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_quote&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_quote&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql4&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;engine&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;innodb&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;initStatements&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SET NAMES utf8;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">&#39;sales&#39;</span> <span class="o">=&gt;</span> 
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_sales&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_sales&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_sales&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql4&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;engine&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;innodb&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;initStatements&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SET NAMES utf8;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+      <span class="p">),</span>
+    <span class="p">),</span></code></pre></div>
+
+<h3 id="update-resources">Update resources</h3>
+<p>Locate the block starting with <code>'resource'</code> and add <code>'checkout'</code> and <code>'sales'</code> sections to it as follows:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;resource&#39;</span> <span class="o">=&gt;</span> 
+  <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">&#39;default_setup&#39;</span> <span class="o">=&gt;</span> 
+    <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">&#39;connection&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;checkout&#39;</span> <span class="o">=&gt;</span> 
+    <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">&#39;connection&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;checkout&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;sales&#39;</span> <span class="o">=&gt;</span> 
+    <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">&#39;connection&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sales&#39;</span><span class="p">,</span>
+    <span class="p">),</span></code></pre></div>
+</div></div>
+
+<h2 id="split-db-ref">Reference scripts</h2>
+<p>This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento database schema.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to view reference SQL scripts </h4><div class="collapsible-content"><p>To use these scripts:</p>
+
+<ol>
+  <li>Create a <code>.sql</code> script with the contents of each script in this section.</li>
+  <li>
+    <p>In each script, replace <code>&lt;your main magento DB name&gt;</code> with the name of your Magento database. </p>
+
+    <p>In this topic, the sample database name is <code>magento</code>.</p>
+  </li>
+  <li>Run each script from the <code>mysql&gt;</code> prompt as <code>source &lt;script name&gt;</code></li>
+  <li>Examine the output.</li>
+  <li>Copy the result of each script to another <code>.sql</code> script, removing the pipe characters (<code>|</code>).</li>
+  <li>
+    <p>Run each script from the <code>mysql&gt;</code> prompt as <code>source &lt;script name&gt;</code>.</p>
+
+    <p>Running this second script performs the actions in your main Magento database.</p>
+  </li>
+</ol>
+
+<h3 id="remove-foreign-keys-sales-tables">Remove foreign keys (sales tables)</h3>
+<p>This script is the removes foreign keys that refer to non-sales tables from the sales database. </p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
+    <span class="s1">&#39;ALTER TABLE &#39;</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+    <span class="s1">&#39; DROP FOREIGN KEY &#39;</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;;&#39;</span>
+    <span class="p">)</span>
+<span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
+<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span>  <span class="s1">&#39;&lt;your main magento DB name&gt;/|sales_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;|&#39;</span>
+    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">not</span> <span class="k">like</span>  <span class="s1">&#39;&lt;your main magento DB name&gt;/|sales_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;|&#39;</span>
+<span class="k">union</span> <span class="k">all</span>
+<span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
+    <span class="s1">&#39;ALTER TABLE &#39;</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+    <span class="s1">&#39; DROP FOREIGN KEY &#39;</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;;&#39;</span>
+    <span class="p">)</span>
+<span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
+<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span>  <span class="s1">&#39;&lt;your main magento DB name&gt;/|magento_sales|_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;|&#39;</span>
+    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">not</span> <span class="k">like</span>  <span class="s1">&#39;&lt;your main magento DB name&gt;/|sales|_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;|&#39;</span>
+<span class="p">;</span></code></pre></div>
+
+<h3 id="remove-foreign-keys-quote-tables">Remove foreign keys (quote tables)</h3>
+<p>This script removes foreign keys that refer to non-quote tables from quote tables. </p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
+    <span class="s1">&#39;ALTER TABLE &#39;</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+    <span class="s1">&#39; DROP FOREIGN KEY &#39;</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;;&#39;</span>
+    <span class="p">)</span>
+<span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
+<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/%&#39;</span>
+    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/sales\_%&#39;</span>
+<span class="k">union</span> <span class="k">all</span>
+<span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
+    <span class="s1">&#39;ALTER TABLE &#39;</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+    <span class="s1">&#39; DROP FOREIGN KEY &#39;</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;;&#39;</span>
+    <span class="p">)</span>
+<span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
+<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/%&#39;</span>
+    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/magento_sales\_%&#39;</span>
+<span class="k">union</span> <span class="k">all</span>
+<span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
+    <span class="s1">&#39;ALTER TABLE &#39;</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+    <span class="s1">&#39; DROP FOREIGN KEY &#39;</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;;&#39;</span>
+    <span class="p">)</span>
+<span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
+<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/%&#39;</span>
+    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/magento_customercustomattributes\_%&#39;</span>
+<span class="p">;</span></code></pre></div>
+
+<h3 id="drop-sales-tables">Drop sales tables</h3>
+<p>This script drops sales tables from the Magento database. </p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">select</span> <span class="s1">&#39; SET foreign_key_checks = 0;&#39;</span> <span class="k">as</span> <span class="n">querytext</span>
+<span class="k">union</span> <span class="k">all</span>
+<span class="k">select</span>
+    <span class="n">concat</span><span class="p">(</span><span class="s1">&#39;DROP TABLE IF EXISTS &#39;</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span>
+<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">&#39;&lt;your main magento DB name&gt;&#39;</span>
+<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">&#39;sales/_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;/&#39;</span>
+<span class="k">union</span> <span class="k">all</span>
+<span class="k">select</span>
+    <span class="n">concat</span><span class="p">(</span><span class="s1">&#39;DROP TABLE IF EXISTS &#39;</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span>
+<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">&#39;&lt;your main magento DB name&gt;&#39;</span>
+<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">&#39;magento_sales/_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;/&#39;</span>
+<span class="k">union</span> <span class="k">all</span>
+<span class="k">select</span>
+    <span class="n">concat</span><span class="p">(</span><span class="s1">&#39;DROP TABLE IF EXISTS &#39;</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span>
+<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">&#39;&lt;your main magento DB name&gt;&#39;</span>
+<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">&#39;magento_customercustomattributes_sales_flat_order%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;/&#39;</span>
+<span class="k">union</span> <span class="k">all</span>
+<span class="k">select</span>
+    <span class="n">concat</span><span class="p">(</span><span class="s1">&#39;DROP TABLE IF EXISTS &#39;</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span>
+<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">&#39;&lt;your main magento DB name&gt;&#39;</span>
+<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">&#39;sequence/_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;/&#39;</span>
+<span class="k">union</span> <span class="k">all</span>
+<span class="k">select</span> <span class="s1">&#39;SET foreign_key_checks = 1;&#39;</span><span class="p">;</span></code></pre></div>
+
+<h3 id="drop-quote-tables">Drop quote tables</h3>
+<p>Drop all tables that start with <code>quote_</code>.</p>
+</div></div>
+
+<h4 id="next-step">Next step</h4>
+<p><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></p>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -39,11 +39,29 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/guides/v2.0/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/guides/v2.0/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
 		</div><!-- #global-nav -->
 	</nav>
 
@@ -60,8 +78,9 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
             </ul>
          </li>
          <li class="first">
@@ -77,18 +96,15 @@
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a>
-   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-<li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
-               <div class="divider"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
                <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
@@ -149,12 +165,13 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Deployment process</h1>
-			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/cloud/discover-deploy.md" target="_blank">Edit this page on GitHub</a>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/discover-deploy.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
 </section>
+
 
 <div class="container">
 
@@ -278,10 +295,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -321,10 +338,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -388,10 +405,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -419,6 +436,45 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="project"><a href="#">Use the project Web Interface</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage environments (branches)</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Project backup and restore (snapshot)</a>
+
 
 									
 
@@ -586,10 +642,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -661,38 +717,110 @@
 
 								
 
-									
-
-										<li class="level3Parent " id="env-tut"><a href="#">Tutorials&mdash;Environment</a>
 
 
-									
 
-								
+						
 
-									
+					
 
+						
 
-											<li class="level3Child env-tut " data-menunode="env-tut"><a href="/guides/v2.0/cloud/env/environment-tutorial-set-mage-vars.html">Tutorial&mdash;Set Magento environment variables</a>
+						
 
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child env-tut " data-menunode="env-tut"><a href="/guides/v2.0/cloud/env/environment-tutorial-env-merge.html">Tutorial&mdash;Merge an environment</a>
-
-
-									
-
-								
-								
-								
 							
-							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/howtos/how-to.html">Tutorials</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="upgrade-update"><a href="#">Upgrade and update tutorials</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child upgrade-update " data-menunode="upgrade-update"><a href="/guides/v2.0/cloud/howtos/install-components.html">Install components</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child upgrade-update " data-menunode="upgrade-update"><a href="/guides/v2.0/cloud/howtos/update-components.html">Update components</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="env-tut"><a href="#">Environment tutorials</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child env-tut " data-menunode="env-tut"><a href="/guides/v2.0/cloud/howtos/environment-tutorial-set-mage-vars.html">Set Magento environment variables</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child env-tut " data-menunode="env-tut"><a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/howtos/sample-data.html">Install optional sample data</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/howtos/debug.html">Run a PHP debugger</a></li>
+
+									
+
+								
+
+
+
+
 						
 
 					
@@ -732,10 +860,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -767,10 +895,61 @@
 									
 
 								
-								
-								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
 							
-							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/trouble/trouble.html">Troubleshooting</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_ce-creds.html">Incorrect credentials</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_comp-deploy-fail.html">Component deployment failure</a></li>
+
+									
+
+								
+
+
+
+
 						
 
 					
@@ -913,14 +1092,13 @@
 
 	<section class="content">
 		<div class="content-wrap">
-
-      <p align="right"><i>Updated: 12 May 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 18 July 2016 (PDT)</i></p>
 		<h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#cloud-deploy-over">Deployment process</a></li>
   <li><a href="#cloud-deploy-over-gh">GitHub and Bitbucket</a></li>
   <li><a href="#cloud-deploy-conf">Project configuration</a></li>
-  <li><a href="#cloud-deploy-over-phase">Five phases of deployment</a></li>
+  <li><a href="#cloud-deploy-over-phases">Five phases of deployment</a></li>
   <li><a href="#cloud-deploy-over-phases-route">Post-deployment: configure routing</a></li>
 </ul>
 
@@ -928,13 +1106,10 @@
 <p>Deploying Magento means simply pushing the source code to your Git repository. The Git repository is part of your projects cluster so it is totally isolated from
 other clients.</p>
 
-<p>The built-in Git repository is at the same time “just a
-normal Git repository” and a very smart piece of software. When you push to it, it will parse the configuration files you committed to your 
-repository so it knows what it needs to deploy).</p>
+<p>The built-in Git repository is at the same time “just a normal Git repository” and a very smart piece of software. When you push to it, it will parse the configuration files you committed to your repository so it knows what it needs to deploy.</p>
 
 <p>If you are pushing directly to the Magento Enterprise Cloud Edition Git repository, you will see in your terminal
-what is happening in real-time. The same information is going to get streamed
-in real-time to the Web Interface.</p>
+what is happening in real-time. The same information is going to get streamed in real-time to the Web Interface.</p>
 
 <h2 id="cloud-deploy-over-gh">GitHub and Bitbucket</h2>
 <p>If you are using external Bitbucket or GitHub repositories, the log
@@ -948,23 +1123,22 @@ example, that Magento uses MySQL, some PHP extensions, and Elasticsearch. (These
 <p>Deployment consists of the following phases:</p>
 
 <ol>
-  <li><a href="#cloud-deploy-over-phases-conf">Phase 1: Configuration validation</a></li>
+  <li><a href="#cloud-deploy-over-phases-conf">Phase 1: Configuration validation and code retrieval</a></li>
   <li><a href="#cloud-deploy-over-phases-build">Phase 2: Build</a></li>
   <li><a href="#cloud-deploy-over-phases-slug">Phase 3: Prepare slug</a></li>
   <li><a href="#cloud-deploy-over-phases-slugclus">Phase 4: Deploy slugs and cluster</a> </li>
-  <li><a href="#cloud-deploy-over-phases-hook">Phase 5: Deploy hooks</a></li>
+  <li><a href="#cloud-deploy-over-phases-hook">Phase 5: Deployment hooks</a></li>
   <li><a href="#cloud-deploy-over-phases-route">Post-deployment: configure routing</a></li>
 </ol>
 
-<h3 id="cloud-deploy-over-phases-conf">Phase 1: Configuration validation</h3>
-<p>First, the built-in Git server checks the following:</p>
+<h3 id="cloud-deploy-over-phases-conf">Phase 1: Configuration validation and code retrieval</h3>
+<p>The remote server gets your code using Git. The built-in Git server checks the following:</p>
 
 <ul>
   <li>
     <p>Inspects what you sent it. </p>
 
-    <p>If, for example, you have a
-syntax error in a configuration file, our Git server refuses the push.</p>
+    <p>If, for example, you have a syntax error in a configuration file, our Git server refuses the push.</p>
   </li>
   <li>
     <p>Looks for critical vulnerabilities.</p>
@@ -975,11 +1149,11 @@ can’t break your production system that easily. </p>
 </ul>
 
 <p>The built-in Git server diffs not only the code but also the
-infrastructure.</p>
+infrastructure (by looking at changes to the <code>.yaml</code> configuration files like <code>.magento.app.yaml</code>).</p>
 
-<p>Suppose you had a single MySQL database in your cluster. And
-now you want two of those, or maybe add an Elasticsearch
-instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.</p>
+<p>Suppose you had a single MySQL database in your cluster and now you want two of those, or maybe you want to add an Elasticsearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.</p>
+
+<p>This phase also runs <code>composer install</code> to retrieve dependencies.</p>
 
 <h3 id="cloud-deploy-over-phases-build">Phase 2: Build</h3>
 <p>We build only what has changed since the last build. This is one of the things that
@@ -1000,6 +1174,13 @@ mounted on a read-only file system (you will be able to configure specific
 mount points that are going to be read/write). </p>
 
 <p>This means you cannot FTP to the server and add modules. Instead, you must add code to your environment and push the environment, which builds and deploys it.</p>
+
+<p>The default Magento build hook is a CLI command called <code>magento-cloud:build</code>. It does the following:</p>
+
+<ul>
+  <li>Enables all extensions</li>
+  <li>Regenerates code and the dependency injection configuration (that is, the Magento <code>var/generation</code> and <code>var/di</code> directories) using <code>bin/magento setup:di:compile</code>.</li>
+</ul>
 
 <h3 id="cloud-deploy-over-phases-slug">Phase 3: Prepare the slug</h3>
 <p>The result of the build phase is a read-only file system we refer to as a <em>slug</em>. In this phase, we create an archive and put it in permanent storage. The next time
@@ -1024,12 +1205,30 @@ is what guarantees we can do deterministic deployments. The read-only file syste
 </div>
 
 <h3 id="cloud-deploy-over-phases-hook">Phase 5: Deployment hooks</h3>
-<p>A last step allows you to run a post-deploy script. You can use this for
-example to run an anonymization script for deployment on development
-environments, clear caches, ping external CI tools, and so on. </p>
+<p>The last step runs a deployment script. You can use this for example to anonymize data in development environments, clear caches, ping external continuous integration tools, and so on.</p>
 
-<p>When this
-script runs. you already have access to a fully running application.</p>
+<p>When this script runs, you have access to all the services in your environment (Redis, database, and so on).</p>
+
+<p>The default Magento deployment hook is a CLI command that does the following:</p>
+
+<ul>
+  <li>
+    <p>If Magento is not installed, it installs Magento with <code>bin/magento setup:install</code>, updates the deployment configuration, <code>app/etc/env.php</code>, and the database for your specified environment (for example, Redis and website URLs).</p>
+  </li>
+  <li>
+    <p>If Magento is installed, performs any necessary upgrades.</p>
+
+    <p>The deployment script runs <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db-upgr.html"><code>bin/magento setup:upgrade</code></a> to update the database schema and data (which is necessary after extension or core code updates), and also updates the <a href="/guides/v2.0/config-guide/config/config-php.html">deployment configuration</a>, <code>app/etc/env.php</code>, and the database for your environment. </p>
+
+    <p>Finally, the deployment script and clears the Magento cache.</p>
+  </li>
+  <li>
+    <p>Sets the mode to either <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-developer}}"><code>developer</code></a> or <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production"><code>production</code></a> based on the environment variable <a href="/guides/v2.0/cloud/env/environment-vars_magento.html"><code>APPLICATION_MODE</code></a>.</p>
+
+    <p>In <code>production</code> mode, the script generates static web content using the command
+<a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html"><code>magento setup:static-content:deploy</code></a>.</p>
+  </li>
+</ul>
 
 <h3 id="cloud-deploy-over-phases-route">Post-deployment: configure routing</h3>
 <p>While the deployment is running, we freeze the incoming traffic at the entry point
@@ -1076,7 +1275,9 @@ you have the same permissions to execute commands as the web server.</p>
         <div id="magento-com">
             <div class="container">
                 <div id="f-col-1">
-                    <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento Commerce" /></a>
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
                     <ul class="nav">
                         <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
                         <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
@@ -1181,7 +1382,7 @@ you have the same permissions to execute commands as the web server.</p>
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/js/app.js"></script>
 
 
 <!--Google Custom Search-->

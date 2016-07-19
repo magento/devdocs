@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Page assets</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/architecture/view/page-assets.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Page assets</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/view/page-assets.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2 id="m2devgde-page-assets-intro">Introduction to page assets</h2>
+
+<p>An <em>asset</em> is a reference to a certain resource linked to an HTML page; that is, references to scripts, stylesheets, RSS feeds, and so on using <code>&lt;head/&gt;</code>, <code>&lt;img/&gt;</code>, <code>&lt;object/&gt;</code> elements.</p>
+
+<p>This topic discusses how to work with Magento page assets (particularly interfaces and classes). The article is mostly aimed at developers
+who have solid experience with PHP and are familiar with <a href="/guides/v2.1/architecture/view/xml-schema-layout.html">Magento XML layouts</a>.</p>
+
+<h2 id="m2devgde-page-assets-interf">Asset interfaces</h2>
+
+<p>An asset is a reference to a certain resource linked to an HTML page. An asset is not a file itself; it’s a set of information about the file. Magento has the following types of assets:</p>
+
+<ul>
+  <li>
+    <p>Asset—a basic definition of an asset that consists of:</p>
+
+    <ul>
+      <li>URL to the asset</li>
+      <li>Content type of the asset</li>
+    </ul>
+  </li>
+  <li>
+    <p>Local asset—an extended definition that, in addition to the preceding also provides information about:</p>
+
+    <ul>
+      <li>Source file—an absolute path to the asset file in the local file system.</li>
+      <li>Relative path—a relative path to the asset file.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Mergeable asset—a “marker” abstraction for local assets, indicating that their contents may be merged</p>
+  </li>
+</ul>
+
+<p>These types are represented as interfaces in the
+<a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View" target="_blank">Magento/Framework/View</a> library:</p>
+
+<p><img src="/common/images/view_asset-interfaces.png" alt="Asset interfaces" /></p>
+
+<p>The classes Implement the interfaces are responsible for:</p>
+
+<ul>
+  <li>Remote: Implements an asset for which there is only URL and content type information. Used for rendering included RSS feeds, for example.</li>
+  <li>File: Implements  a local asset that is referred using a relative path in Magento file system. The same relative path invariant is appended to the base URL when the full URL is requested. Because these assets are available locally, the Magento system can work with them in many ways; for example, transform the content, merge assets, or substitute with other assets.</li>
+</ul>
+
+<h2 id="m2devgde-page-assets-imp">Implement assets</h2>
+
+<p>This section discusses the following topics:</p>
+
+<ul>
+  <li><a href="#m2devgde-page-assets-imp-no-info">Assets with No Remote or Local Information</a></li>
+  <li><a href="#m2devgde-page-assets-imp-local">Local Assets</a></li>
+  <li><a href="#m2devgde-page-assets-imp-context">Context Implementations</a></li>
+</ul>
+
+<h3 id="m2devgde-page-assets-imp-no-info">Assets without remote or local information</h3>
+
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/Remote.php" target="_blank">\Magento\Framework\View\Asset\Remote</a> represents resources for which only the URL and content type are known, and which might reside in the local file system, or on a remote server. The class diagram for this asset implementation follows:</p>
+
+<p><img src="/common/images/view_asset-interface_no-local.png" alt="Assets with no remote or local information" /></p>
+
+<p>It accepts URL and <code>content-type</code> in the constructor and serves only as a value object.</p>
+
+<h3 id="m2devgde-page-assets-imp-local">Local assets</h3>
+
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/File.php" target="_blank">\Magento\Framework\View\Asset\File</a> represents resources that reside in the local file system and for which you know the absolute file system path and an invariant “file path”.</p>
+
+<p>This kind of asset accommodates arbitrary static view files that might be embedded in, or referred from, a web page. That might include anything from user-uploaded images to CSS files provided in Magento themes. Because these assets are available locally, the Magento software can manipulate them in many ways; for example, transform the content, merge assets, or substitute with other assets.</p>
+
+<p>Its asset class diagram follows:</p>
+
+<p><img src="/common/images/view_asset-interface_local.png" alt="Local asset interface" /></p>
+
+<p><code>File</code> specifics:</p>
+
+<ul>
+  <li><code>File</code> accepts scalar data in the constructor and is immutable, but requires an instance of “source” for lazy loading of content or a source file.</li>
+  <li>The <code>$context</code> argument in the constructor is a value object necessary for generating URLs. It contains the base URL and the context path that needs to be put in the beginning of the file path. See the next section for more information about context.</li>
+</ul>
+
+<h3 id="m2devgde-page-assets-imp-context">Context implementations</h3>
+
+<p>Magento supports the following implementations of context for the Asset\File object:</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/File/Context.php" target="_blank">\Magento\Framework\View\Asset\File\Context</a>: Basic implementation that has a bare minimum of base URL and arbitrary path.</p>
+
+    <p>Using this context and, for example, a “media” base URL, this asset generates the following URL:</p>
+
+    <pre>http://example.com/pub/media/arbitrary_path/product/placeholder.jpg</pre>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/File/FallbackContext.php" target="_blank">\Magento\Framework\View\Asset\File\FallbackContext</a>: Extended implementation used for static view files that are subject to view files fallback.</p>
+
+    <p>The URLs generated with this kind of context include fully qualified information necessary for files fallback:</p>
+
+    <pre>http://example.com/pub/static/frontend/magento_theme/en_US/Magento_Catalog/product/placeholder.jpg
+http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css</pre>
+
+    <p>The difference between the preceding URLs is that the first asset has a module context and in the second does not.</p>
+  </li>
+</ul>
+
+<h2 id="m2devgde-page-assets-static-view">Page assets and static view files</h2>
+
+<p>According to the Magento classification of view files, CSS, JavaScript, images, and other assets that are included in a web page and presented on the storefront without modification are <em>static view files</em>.</p>
+
+<p>Like all Magento view files, static view files are located using the fallback mechanism. This mechanism implements inheritance of files from one directory to others. In this way, we enable you to extend or override view files of existing components with new components.</p>
+
+<p>For example, a particular theme might extend or override files of its parent theme, all themes generally override module view files, and so on.</p>
+
+<h2 id="m2devgde-page-assets-static-manip">Manipulate page assets</h2>
+
+<p>This section discusses the following ways to work with view assets:</p>
+
+<ul>
+  <li><a href="#m2devgde-page-assets-static-manip-xml">Manipulating Assets Using Layout XML</a></li>
+  <li><a href="#m2devgde-page-assets-api">Manipulating Assets Using the APIs</a></li>
+</ul>
+
+<h3 id="m2devgde-page-assets-static-manip-xml">Use layout XML to manipulate assets</h3>
+
+<p>Although you can use the API to manipulate assets, frontend developers should use <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html">layout XML instructions</a> to register assets.</p>
+
+<p>This method is preferred because it enables you to implement particular discriminators for assets, like browser matching and conditional loading.</p>
+
+<p>Expand one of the following sections for more information:</p>
+
+<div id="accordion">
+<h3>JavaScript assets</h3>
+<div><strong>Layout instructions</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/82a10d4d61de9d832fcb.js"></script>
+<strong>Rendered HTML Output</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/d87ce5934b80a56c7292.js"></script>
+</div>
+<h3>CSS assets</h3>
+<div><strong>Layout instructions</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/5c8dc5e2eb1229c63406.js"></script>
+<strong>Rendered HTML Output</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/118d51c5af7d371f809a.js"></script>
+</div>
+<h3>RSS feed assets</h3>
+<div><strong>Layout instructions</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/6617872c0698ea1f5d07.js"></script>
+<strong>Rendered HTML Output</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/7957c6bd6b8d893da2a1.js"></script>
+</div>
+</div>
+
+<h4 id="m2devgde-page-assets-static-manip-xml-brows">Use layout XML to manipulate browser matching</h4>
+
+<p>Use <em>browser matching</em> to change the behavior of JavaScript and CSS for certain browsers only (usually because of technology-specific workarounds). The following example illustrates using layout instructions to set using a CSS file only when a page is loaded in Internet Explorer:</p>
+
+<p>Layout instructions:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/b55a26d292d849551090.js"></script>
+
+<p>Rendered HTML:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/f69e6fedd2a205f01186.js"></script>
+
+<h4 id="m2devgde-page-assets-static-manip-xml-cond">Conditional rendering</h4>
+
+<p>Sometimes the decision of whether or not to link a resource depends on other actions that might happen (or not happen). To do that, associated a flag name with the resource. The flag name defines whether to perform rendering or not.</p>
+
+<p>Magento sets the flag value when it executes.</p>
+
+<p>Define the flag value dependency:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/f7c0e61f62062867d43e.js"></script>
+
+<p>Give the flag a value:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/3ad3919afba7f689faff.js"></script>
+
+<h3 id="m2devgde-page-assets-api">Use APIs to manipulate assets</h3>
+
+<p>The Magento system uses <em>asset collections</em> to process view assets. An asset collection is an object responsible for aggregating multiple assets and passing them to the page rendering subsystem.</p>
+
+<p>That is why when you use PHP to work with assets, we recommended you add assets to an asset collection and then manipulate them as collection members.</p>
+
+<p>The following classes implement Magento asset collections:</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>—a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.</li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>—an extended collection that also implements asset grouping by properties (for example by content type)</li>
+</ul>
+
+<p>Asset collections enable you to:</p>
+
+<ul>
+  <li>Add and remove assets</li>
+  <li>Determine whether an asset is registered in a collection</li>
+  <li>Get all assets</li>
+  <li>Get assets for a specified group (for collections implemented by <code>GroupedCollection</code>)</li>
+  <li>Get groups (for collections implemented by <code>GroupedCollection</code>)</li>
+</ul>
+
+<p>To add an asset to a collection, use the following code:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/f12c706d876f1a64a363.js"></script>
+
+<p>For example, to add a local JavaScript or CSS file to the page output:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/e292aca8a49fdab644fc.js"></script>
+
+<h4 id="related-topics">Related topics</h4>
+
+<ul>
+  <li><a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a></li>
+</ul>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

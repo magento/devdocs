@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Writing Testable Code</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/test/unit/writing_testable_code.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Writing Testable Code</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/test/unit/writing_testable_code.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+			<a class="contributor" href="http://vinaikopp.com/" target="_blank">Thanks to Vinai Kopp for contributing this topic</a>
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/test/unit/unit_test_execution.html">Running Unit Tests</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/test/unit/unit_test_execution_cli.html">Running Unit Tests in the CLI</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/test/unit/unit_test_execution_phpstorm.html">Running Unit Tests in PHPStorm</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/test/unit/writing_testable_code.html">Writing Testable Code</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2 id="writing-testable-code">Writing testable code</h2>
+<p>This topic does not aim to be a replacement for existing documentation about testing, but rather tries to highlight some thoughts on the subject. Although the truth of anything depends somewhat on the context, this topic attempts to provide information that is applicable in <em>most</em> situations.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#writing-testable-code">Writing testable code</a></li>
+  <li><a href="#tests-should-be-simple">Tests should be simple</a></li>
+  <li><a href="#manage-dependencies">Manage dependencies</a>    <ul>
+      <li><a href="#creating-new-instances">Creating new instances</a></li>
+      <li><a href="#collaborator-classes">Collaborator classes</a></li>
+      <li><a href="#the-environment-file-system-time-global-variables">The environment (file system, time, global variables)</a></li>
+    </ul>
+  </li>
+  <li><a href="#interfaces-over-classes">Interfaces over classes</a></li>
+  <li><a href="#class-and-method-size">Class and method size</a>    <ul>
+      <li><a href="#testing-private-and-protected-methods">Testing private and protected methods</a></li>
+    </ul>
+  </li>
+  <li><a href="#helpful-principles">Helpful principles</a>    <ul>
+      <li><a href="#tell-dont-ask">Tell, don’t ask</a></li>
+      <li><a href="#the-law-of-demeter">The law of Demeter</a></li>
+      <li><a href="#i-dont-care">“I don’t care”</a>        <ul>
+          <li><a href="#for-more-information">For more information</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="tests-should-be-simple">Tests should be simple</h2>
+
+<p>Tests should be trivial to write. Simple, small classes with few collaborators are easy to test. If testing a class is difficult, the class probably has grown too large and does too much. Split the class into several classes, each of which does only one thing.</p>
+
+<h2 id="manage-dependencies">Manage dependencies</h2>
+
+<p>A big part of making code testable is managing its dependencies. Dependencies can take many forms and they can be clearly stated or hidden.  </p>
+
+<p>The fewer dependencies a class has and the more obvious they are, the easier it is to maintain and test the class. At the same time, the class is less likely to break because of future changes.</p>
+
+<h3 id="creating-new-instances">Creating new instances</h3>
+<p>We strongly recommend you do <em>not</em>:</p>
+
+<ul>
+  <li>Use <code>new</code> to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.  </li>
+  <li>Use the <code>ObjectManager</code> directly in production code.  </li>
+</ul>
+
+<p>There always is a better alternative, usually a <a href="/guides/v2.1/extension-dev-guide/code-generation.html">generated</a> <code>Factory</code> class, or a <a href="https://thephp.cc/news/2015/09/dependencies-in-disguise" target="_blank"><code>Locator</code></a> class of sorts.  </p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This rule applies only to production code. When writing <a href="/guides/v2.1/test/integration/integration_test_execution.html">integration tests</a>, this is not true. In fact, the object manager is recommended for integration tests.</p>
+</div>
+
+<h3 id="collaborator-classes">Collaborator classes</h3>
+
+<p>Whenever an external class property, class constant, or a class method is used in a file, this file depends on the class containing the method or constant. Even if the external class is not used as a instantiated object, the current class is still hard-wired to depend on it.  </p>
+
+<p>PHP cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as <em>dependencies</em>. Try to keep the number dependencies of to a minimum.  </p>
+
+<p>Collaborator instances should be passed into the class using <a href="/guides/v2.1/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor injection</a>.</p>
+
+<h3 id="the-environment-file-system-time-global-variables">The environment (file system, time, global variables)</h3>
+
+<p>Whenever your code requires access to some part of the environment, try to use a collaborator class that can easily be replaced by a test double (also referred to as a <em>mock</em>) instead.</p>
+
+<p>For example, if you…</p>
+
+<ul>
+  <li>
+    <p>…need file system access?  </p>
+
+    <p>Use <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Filesystem/Io/IoInterface.php" target="_blank"><code>\Magento\Framework\Filesystem\Io\IoInterface</code></a> instead of <code>fopen()</code>, <code>dir()</code> or other native methods.</p>
+  </li>
+  <li>
+    <p>…need the current time?  </p>
+
+    <p>Inject a <a href="http://php.net/manual/en/refs.calendar.php" target="_blank"><code>\DateTimeInterface</code></a> instance (for example <code>\DateTimeImmutable</code>) and use that.</p>
+  </li>
+  <li>
+    <p>…need the remote IP?  </p>
+
+    <p>Use <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/HTTP/PhpEnvironment/RemoteAddress.php" target="_blank"><code>\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress</code></a>.</p>
+  </li>
+  <li>
+    <p>…need access to <code>$_SERVER</code>?  </p>
+
+    <p>Consider using <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php" target="_blank"><code>\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()</code></a>.</p>
+  </li>
+</ul>
+
+<p>Anything that can be easily replaced by a test double is preferable to using low level functions.</p>
+
+<h2 id="interfaces-over-classes">Interfaces over classes</h2>
+
+<p>Dependencies on <em>interfaces</em> should be preferred over dependencies on <em>classes</em> because the former decouples your code from implementation details. This helps to isolate your code from future changes.  </p>
+
+<p>This guideline is true only if you exclusively use the methods and constants defined in the interface. If your code also uses other public methods specific to the class implementing the interface, your code is no longer independent of the implementation details.  </p>
+
+<p>You lose any benefits of having an interface if you use methods of a concrete class.  </p>
+
+<p>Even worse, the code is lying, because apparently there is a dependency on the interface only; however, you could not use a different implementation of the same interface. This can lead to considerable maintenance costs down the road. In such cases, using the class name of the concrete implementation is preferable to using the interface name as a dependency.  </p>
+
+<p>To illustrate, assume there is a theoretical <code>RequestInterface</code> with two methods, <code>getPathInfo()</code> and <code>getParam($name)</code>.</p>
+
+<p>For example:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">interface</span> <span class="nx">RequestInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getPathInfo</span><span class="p">();</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getParam</span><span class="p">(</span><span class="nv">$name</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Let’s also assume there is a concrete implementation <code>HttpRequest</code> that that also has a public method <code>getParams()</code> in addition to the two interface methods.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">HttpRequest</span> <span class="k">implements</span> <span class="nx">RequestInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getPathInfo</span><span class="p">()</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getParam</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getParams</span><span class="p">()</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Any code that depends on <code>RequestInterface</code> should avoid using the <code>getParams()</code> method, because it is not part of the interface.  </p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @var RequestInterface</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$request</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span> <span class="o">=</span> <span class="nv">$request</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getParams</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$paramName</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// ... some more code</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>This completely defeats the purpose of the interface. A better solution might be the following:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">([</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$paramName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$value</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getParam</span><span class="p">(</span><span class="nv">$paramName</span><span class="p">);</span>
+        <span class="c1">// ... some more code</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The second example method <code>doSomething()</code> does not call the <code>getParams()</code> method. </p>
+
+<p>If <code>getParams()</code> had been called, the class <code>MyClass</code> would have instantly depended on the <code>HttpRequest</code> implementation and the benefit of having an interface would have been completely lost.  </p>
+
+<p>If cannot avoid using <code>getParams()</code>, you can do any of the following:</p>
+
+<ul>
+  <li>Add the <code>getParams()</code> method to <code>RequestInterface</code> </li>
+  <li>Make <code>MyClass</code> dependent on <code>HttpRequest</code> directly instead of using <code>RequestInterface</code> as a constructor argument</li>
+</ul>
+
+<p>The benefit <em>interfaces</em> offer is that interfaces keep code decoupled from implementation details. This means that future changes won’t cause your code to fail unless the interface is changed too.  </p>
+
+<p>Also, interfaces can very easily be replaced by test doubles (also referred to as <em>mocks</em>). Mocking concrete classes can be much more complex.</p>
+
+<h2 id="class-and-method-size">Class and method size</h2>
+
+<p>Try to keep the number of methods in a class and the number of lines of code per method as few as possible.  </p>
+
+<p>Shorter methods do less, which in turn means they are easier to test. The same is true for small classes.</p>
+
+<p>As a rule of thumb, try to keep methods to five or fewer lines of code.</p>
+
+<h3 id="testing-private-and-protected-methods">Testing private and protected methods</h3>
+
+<p>When you see the need to write tests for <code>private</code> scope methods, it usually is a sign that the class under test is doing too much.  </p>
+
+<p>Consider extracting the private functionality into a separate class and using that class as a collaborator. The extracted class then provides the functionality using a public method and can easily be tested.</p>
+
+<h2 id="helpful-principles">Helpful principles</h2>
+
+<p>Many good practices for software development in general and object oriented programming in particular have been formulated as principles over the last decades. Applying these rules of thumb helps to keep code in good shape and also leads to more easily testable code.  </p>
+
+<p>The following list principles are by no means complete, but they might serve as a starting point when you start to write testable code.</p>
+
+<h3 id="tell-dont-ask">Tell, don’t ask</h3>
+
+<p>Try to use a few getters as possible. Instead, use methods that tell the objects directly what to do. Asking for object values is a sign of misplaced responsibilities. <a href="https://en.wikipedia.org/wiki/Kent_Beck" target="_blank">Kent Beck</a> called that “feature envy”.</p>
+
+<p>Consider moving the code in that needs the value into a class that has the data available as the following example shows:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">extractMatchingDocuments</span><span class="p">(</span><span class="nx">Document</span> <span class="nv">$searchDoc</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$documents</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nb">array_filter</span><span class="p">(</span><span class="nv">$documents</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Document</span> <span class="nv">$doc</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$searchDoc</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nv">$doc</span><span class="o">-&gt;</span><span class="na">getFieldValue</span><span class="p">()</span> <span class="o">===</span> <span class="nv">$searchDoc</span><span class="o">-&gt;</span><span class="na">getFieldValue</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The following example moves the comparison into a <code>matches()</code> method on the <code>Document</code> class instead.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">extractMatchingDocuments</span><span class="p">(</span><span class="nx">Document</span> <span class="nv">$searchDoc</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$documents</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nb">array_filter</span><span class="p">(</span><span class="nv">$documents</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Document</span> <span class="nv">$doc</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$searchDoc</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nv">$searchDoc</span><span class="o">-&gt;</span><span class="na">matches</span><span class="p">(</span><span class="nv">$doc</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="the-law-of-demeter">The law of Demeter</h3>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank">Law of Demeter</a> principle is sometimes stated “Only talk to friends” or “Don’t talk to strangers”. It states that code cannot call methods on any object, but only on objects that it received in one of the following ways:</p>
+
+<ul>
+  <li>Objects received as constructor arguments</li>
+  <li>Objects received as arguments to the current method</li>
+  <li>Objects instantiated in the current method</li>
+</ul>
+
+<p>The principle explicitly states that no method can be called on objects that are the return value of another method call. Calling method calls on returned objects introduces a hidden dependency on the returned object type.</p>
+
+<p>The following example violates the law of Demeter by calling the method <code>getByName()</code> on the return value of <code>getHeaders()</code>.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">isJsonResponse</span><span class="p">(</span><span class="nx">Response</span> <span class="nv">$response</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$headers</span> <span class="o">=</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getHeaders</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nv">$headers</span><span class="o">-&gt;</span><span class="na">getByName</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="s1">&#39;application/json&#39;</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The solution is to add the method <code>isJsonResponse()</code> to the response object instead.</p>
+
+<p>Method chaining (for example, <code>$foo-&gt;getSomething()-&gt;setThat($x)-&gt;doBar()</code>) is often a sign of this problem. When testing this type of code, you must often create test doubles that must be set up to return other test doubles and so on (“Mocks returning mocks…”).</p>
+
+<h3 id="i-dont-care">“I don’t care”</h3>
+
+<p>An interesting approach to writing more testable code is to try to delegate as much as possible to other classes. Every time any currently not available resource is needed, just think “I don’t care where that comes from” and add a collaborator class that provides it.  </p>
+
+<p>At first this might seem like it causes the number of classes to explode, but in fact each one of the classes is very short and simple and usually has very limited responsibilities.  </p>
+
+<p>Almost as a side effect, those classes are very easy to test.</p>
+
+<h4 id="for-more-information">For more information</h4>
+
+<ul>
+  <li>Kent Beck’s <a href="http://martinfowler.com/bliki/BeckDesignRules.html" target="_blank">rules of simple software design</a></li>
+  <li><a href="https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ" target="_blank">Clean Code</a> by Robert C. Martin</li>
+  <li><a href="http://martinfowler.com/books/refactoring.html" target="_blank">Refactoring</a> by Martin Fowler</li>
+  <li><a href="http://www.growing-object-oriented-software.com" target="_blank">Growing Object Oriented Software Guided by Tests</a> by Steve Freeman and Nat Pryce</li>
+</ul>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Install the Magento software</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/install-gde/install/cli/install-cli-install.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Install the Magento software</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/install/cli/install-cli-install.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Installation Guide<br>Part 2: Installing</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install-roadmap_cli.html">Installation roadmap (reference)</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install/cli/install-cli-sample-data.html">Install optional sample data modules</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-sample-data-composer.html">Install using Composer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-sample-data-clone.html">Install by cloning repositories</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/install-gde/install/cli/install-cli-install.html">Install the Magento software</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html">Uninstall or reinstall Magento</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-sample-data-other.html">Remove or update sample data</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-db-upgr.html">Update the Magento database schema and data</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-admin.html">Create or unlock a Magento administrator account</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-backup.html">Back up and roll back the file system, media, and database</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/dev_update-magento.html">Update the Magento application</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/dev_add-update.html">Add or update components</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/dev_downgrade.html">Change to a released version</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/cli/dev_reinstall.html">Reinstall the Magento software</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/continue-to-verify_cli.html">Next&mdash;Installation part 3, post-installation</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="/guides/v2.1/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="/guides/v2.1/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
+
+<h4>Contents</h4>
+
+<p>See one of the following sections:</p>
+
+<ul>
+  <li><a href="#instgde-install-cli-prereq">Before you start your installation</a></li>
+  <li><a href="#instgde-install-cli-magento">Install the Magento software from the command line</a></li>
+  <li><a href="#instgde-install-cli-magento-perms">Set file system permissions after installing</a></li>
+</ul>
+
+<p>See also <a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.</p>
+
+<h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
+
+<p>Before you begin, make sure that:</p>
+
+<ol>
+  <li>Your system meets the requirements discussed in <a href="/guides/v2.1/install-gde/system-requirements.html">Magento system requirements</a>.</li>
+  <li>You completed all prerequisite tasks discussed in <a href="/guides/v2.1/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
+  <li>You took your first installation steps as discussed in <a href="/guides/v2.1/install-gde/install/continue.html">Your install or upgrade path</a>.</li>
+  <li>After you log in to the Magento server, <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">&gt;switch to the Magento file system owner</a>.</li>
+  <li>Review the information discussed in <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.</li>
+</ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You must install Magento from its <code>bin</code> subdirectory.</p></span>
+</div>
+
+<p>The installer is designed to be run multiple times if necessary so you can:</p>
+
+<ul>
+  <li>
+    <p>Provide different values</p>
+
+    <p>For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options.</p>
+  </li>
+  <li>Correct mistakes in previous installations</li>
+  <li>Install Magento in a different database instance</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</li>
+  <li>If you get errors during the installation, see <a href="/guides/v2.1/install-gde/trouble/tshoot.html">Troubleshooting</a>.</li></ul></span>
+</div>
+
+<h2 id="instgde-cli-help-cmds">Installer help commands</h2>
+
+<p>You can run the following commands to find values for some required arguments:</p>
+
+<table>
+<tbody>
+	<tr>
+		<th>Installer argument</th>
+		<th>Command</th>
+	</tr>
+<tr>
+	<td>Language</td>
+	<td><code>magento info:language:list</code></td>
+</tr>
+<tr>
+	<td>Currency</td>
+	<td><code>magento info:currency:list</code></td>
+</tr>
+<tr>
+	<td>Time zone</td>
+	<td><code>php  magento info:timezone:list</code></td>
+</tr>
+</tbody>
+</table>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="/guides/v2.1/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
+</div>
+
+<h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
+<p>The format of the install command follows:</p>
+
+<pre><code>magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
+</code></pre>
+
+<p>The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Any options that contain spaces or special characters must be enclosed in either single or double quotes.</p></span>
+</div>
+<table>
+	<col width="35%" />
+	<col width="55%" />
+	<col width="10%" />
+	<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Value</th>
+			<th>Required?</th>
+		</tr>
+		<tr>
+		<td><p>--admin-firstname</p></td>
+		<td><p>Magento administrator user's first name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-lastname</p></td>
+		<td><p>Magento administrator user's last name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-email</p></td>
+		<td><p>Magento administrator user's e-mail address.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-user</p></td>
+		<td><p>Magento administrator user name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-password</p></td>
+		<td><p>Magento administrator user password.</p>
+			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p>
+			<p>We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, <code>--admin-password='A0b9%t_3`g'</code></p></td>
+		<td><p>Yes</p></td>
+	</tr>
+		<tr>
+		<td><p>--base-url</p></td>
+		<td><p>Base URL to use to access your Magento Admin and storefront in any of the following formats:</p>
+		<ul><li><code>http[s]://&lt;host or ip&gt;/&lt;your Magento install dir&gt;/</code>.
+		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
+		<p><code>&lt;your Magento install dir&gt;</code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.</p>
+		<p>To access Magento on localhost, you can use either <code>http://127.0.0.1/&lt;your Magento install dir&gt;/</code> or <code>http://127.0.0.1/&lt;your Magento install dir&gt;/</code>.</p></li>
+		<li><code>&#123;&#123;base_url&#125;&#125;</code> which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the host name <code>magento.example.com</code>, you can install the Magento software with <code>--base-url=&#123;&#123;base_url&#125;&#125;</code> and access the Magento Admin with a URL like <code>http://magento.example.com/admin</code>.</li></ul>
+
+		</td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--backend-frontname</p></td>
+		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.</p>
+			<p>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.</p>
+			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="/guides/v2.1/install-gde/install/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
+			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only. It can be up to 255 characters in length.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-host</p></td>
+		<td><p>Use any of the following:</p>
+		<ul><li>The database server's fully qualified host name or IP address.</li>
+		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br /><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PHP <code>PDO_MYSQL</code> documentation</a>.</li></ul>
+		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
+</td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-name</p></td>
+		<td><p>Name of the Magento database instance in which you want to install the Magento database tables.</p>
+			<p>Default is <code>magento2</code>.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-user</p></td>
+		<td><p>User name of the Magento database instance owner.</p>
+			<p>Default is <code>root</code>.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-password</p></td>
+		<td><p>Magento database instance owner's password.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-prefix</p></td>
+		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
+		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
+		<p>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.</p>
+		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	
+	<tr>
+		<td><p>--language</p></td>
+		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--currency</p></td>
+		<td><p>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>magento info:currency:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--timezone</p></td>
+		<td><p>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>magento info:timezone:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--use-rewrites</p></td>
+		<td><p><code>1</code> means you use web server rewrites for generated links in the storefront and Admin.</p>
+		<p><code>0</code> disables the use of web server rewrites. This is the default.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--use-secure</p></td>
+		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all storefront URLs. Make sure your web server supports SSL before you select this option.</p>
+		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default.</p>
+		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--base-url-secure</p></td>
+		<td>Secure base URL to use to access your Magento Admin and storefront in the following format:
+		<code>http[s]://&lt;host or ip&gt;/&lt;your Magento install dir&gt;/</code>
+		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
+		<td><p>No</p></td>
+	</tr>
+
+	<tr>
+		<td><p>--use-secure-admin</p></td>
+		<td><p><code>1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
+		<p><code>0</code> means you do not use SSL with the Admin. This is the default.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-use-security-key</p></td>
+		<td><p><code>1</code> causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29" target="_blank">cross-site script forgery attacks</a>. This is the default.</p>
+		<p><code>0</code> disables the use of the key.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<!-- <tr> 
+		<td>enable_modules=&lt;list>}</td>
+		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
+		<p>To enable and disable modules after installing Magento, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+		<p>For important information about module dependencies, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>  
+		<td>No</td>
+	</tr>
+	<tr>
+		<td>disable_modules=&lt;list>}</td>
+		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
+		<p>To enable and disable modules after installing Magento, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+		<p>For important information about module dependencies, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<td>No</td>
+	</tr> -->
+	<tr>
+		<td><p>--session-save</p></td>
+		<td><p>Use any of the following:</p>
+		<ul><li><code>db</code> to store session data in the <a href="/guides/v2.1/config-guide/database/database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+			
+			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
+	</ul></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--key</p></td>
+		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--cleanup-database</p></td>
+		<td><p>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-init-statements</p></td>
+		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p>
+			<p>Default is <code>SET NAMES utf8;</code>.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--sales-order-increment-prefix</p></td>
+		<td><p>Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<!-- <tr>
+		<td><p>--definition_format</p></td>
+		<td><p>Type of definitions used by the Object Manager. Possible values are <a href="https://github.com/phadej/igbinary" target="_blank"><code>igbinary</code></a> or <code>serialized</code>.</p></td>
+		<td><p>No</p></td>
+	</tr> -->
+<tr>
+<td><p>--amqp-host</p></td>
+<td><p>Enterprise Edition only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="/guides/v2.1/install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
+<p>The host name where RabbitMQ is installed.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-port</p></td>
+<td><p>Enterprise Edition only. The port to use to connect to RabbitMQ. The default is <code>5672</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-user</p></td>
+<td><p>Enterprise Edition only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-password</p></td>
+<td><p>Enterprise Edition only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+	</tbody>
+</table>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>To enable or disable modules after installing Magento, see <a href="/guides/v2.1/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+  	</span>
+</div>
+
+<div>
+
+  <h4 id="sens-data">What is sensitive data?</h4>
+  <p>Magento uses your encryption key to encrypt the following: </p>
+
+  <ul>
+    <li>Credit card information</li>
+    <li>User names and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)</li>
+    <li>CAPTCHA values sent over the network</li>
+  </ul>
+
+  <p>Magento does <em>not</em> encrypt:</p>
+
+  <ul>
+    <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
+    <li>Address</li>
+    <li>Phone number</li>
+    <li>Other types of personally identifiable information except for credit card numbers</li>
+  </ul>
+
+  <h4 id="install-cli-example">Sample localhost installations</h4>
+
+  <p><strong>Example 1</strong></p>
+
+  <p>The following example installs Magento with the following options:</p>
+
+  <ul>
+    <li>
+      <p>The Magento software is installed in the <code>magento2</code> directory relative to the web server docroot on <code>localhost</code> and the path to the Magento Admin is <code>admin</code>; therefore:</p>
+
+      <p>Your storefront URL is <code>http://127.0.0.1</code></p>
+    </li>
+    <li>
+      <p>The database server is on the same host as the web server.</p>
+
+      <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
+    </li>
+    <li>
+      <p>Uses server rewrites</p>
+    </li>
+    <li>
+      <p>The Magento administrator has the following properties:</p>
+
+      <ul>
+        <li>First and last name are <code>Magento User</code></li>
+        <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
+        <li>E-mail address is <code>user@example.com</code></li>
+      </ul>
+    </li>
+    <li>Default language is <code>en_US</code> (U.S. English)</li>
+    <li>Default currency is U.S. dollars</li>
+    <li>
+      <p>Default time zone is U.S. Central (America/Chicago)</p>
+
+      <pre><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
+--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+--admin-user=admin --admin-password=admin123 --language=en_US \
+--currency=USD --timezone=America/Chicago --use-rewrites=1
+</code></pre>
+    </li>
+  </ul>
+
+  <p>Messages similar to the following display to indicate a successful installation:</p>
+
+  <pre><code>Post installation file permissions check...
+For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+[Progress: 274 / 274]
+[SUCCESS]: Magento installation complete.
+[SUCCESS]: Admin Panel URI: /admin_puu71q
+</code></pre>
+
+  <p><strong>Example 2</strong> (with additional options)</p>
+
+  <p>The following example installs Magento with the following options:</p>
+
+  <ul>
+    <li>
+      <p>The Magento software is installed in the <code>magento2</code> directory relative to the web server docroot on <code>localhost</code> and the path to the Magento Admin is <code>admin</code>; therefore:</p>
+
+      <p>Your storefront URL is <code>http://127.0.0.1</code></p>
+    </li>
+    <li>
+      <p>The database server is on the same host as the web server.</p>
+
+      <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
+    </li>
+    <li>
+      <p>The Magento administrator has the following properties:</p>
+
+      <ul>
+        <li>First and last name are is <code>Magento User</code></li>
+        <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
+        <li>E-mail address is <code>user@example.com</code></li>
+      </ul>
+    </li>
+    <li>Default language is <code>en_US</code> (U.S. English)</li>
+    <li>Default currency is U.S. dollars</li>
+    <li>Default time zone is U.S. Central (America/Chicago)</li>
+    <li>The installer first cleans up the database before installing the tables and schema</li>
+    <li>You use a sales order increment prefix <code>ORD$</code> and because it contains a special character (<code>$</code>), the value must be enclosed in double quotes</li>
+    <li>Session data is saved in the database</li>
+    <li>
+      <p>Uses server rewrites</p>
+
+      <pre><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+--db-host=localhost --db-name=magento \
+--db-user=magento --db-password=magento \
+--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+--admin-user=admin --admin-password=admin123 --language=en_US \
+--currency=USD --timezone=America/Chicago --cleanup-database \
+--sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1
+</code></pre>
+    </li>
+  </ul>
+
+  <p>Messages similar to the following display to indicate a successful installation:</p>
+
+  <pre><code>Post installation file permissions check...
+For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+[Progress: 274 / 274]
+[SUCCESS]: Magento installation complete.
+[SUCCESS]: Admin Panel URI: /admin_puu71q
+</code></pre>
+
+  <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
+</div>
+
+  <h4 id="next-step">Next step</h4>
+  <ul>
+    <li>
+      <p>If you have one user account to access the Magento server, see <a href="/guides/v2.1/install-gde/install/post-install-umask.html">Optionally set a umask</a>.</p>
+
+      <p>This type of setup is typical for shared hosting.</p>
+    </li>
+    <li>
+      <p><a href="/guides/v2.1/install-gde/install/verify.html">Verify the installation</a>.</p>
+    </li>
+  </ul>
+
+  <h4 id="related-topics">Related topics</h4>
+
+  <ul>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-sample-data-other.html">Remove or update sample data</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-db-upgr.html">Update the Magento database schema and data</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-backup.html">Back up and roll back the file system, media, and database</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+  </ul>
+</div>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

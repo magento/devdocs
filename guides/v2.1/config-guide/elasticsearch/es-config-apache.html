@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Configure Apache and Elasticsearch</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/config-guide/elasticsearch/es-config-apache.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Configure Apache and Elasticsearch</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/config-guide/elasticsearch/es-config-apache.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Configuration Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/bk-config-guide.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/secy/secy.html">Security settings</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">About Magento modes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/bootstrap/mage-profiler.html">Enable profiling (MAGE_PROFILER)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/cli/config-cli.html">Command line configuration</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Enterprise Edition only)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/log/log-intro.html">Custom logging</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/log/log-magento.html">Magento logging in more detail</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/log/log-db.html">Example&mdash;logging database activity</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/multi-site/ms_over.html">Multiple websites or stores</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/config/config-magento.html">Magento configuration files</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/config/config-files.html">Module configuration files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/config/caching.html">Caching</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/config/caching_low-level.html">Low-level cache options</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/database/database.html">Database caching</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/config/caching-cache-type.html">Create a cache type</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/redis/config-redis.html">Configure Redis</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/redis/redis-pg-cache.html">Use Redis for page caching</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/redis/redis-session.html">Use Redis for session storage</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Backend Fetch Failed) errors</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/memcache/memcache.html">Use memcached for session storage</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/db-profiler/db-profiler.html">Configure the database profiler</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/elasticsearch/es-config-nginx.html">Configure nginx and Elasticsearch</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/config-guide/elasticsearch/es-config-apache.html">Configure Apache and Elasticsearch</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/mq/config-mq.html">Configure message queue topology</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/mq/manage-mysql.html">MySQL message queues</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/solr/solr-overview.html">Install and configure Solr (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/solr/solr-magento.html">Configure Solr and Magento</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/solr/solr-script.html">Prepare Solr for production</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-master/multi-master_manual.html">Manually configure master databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/sessions.html">How to locate your session files</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/prod/prod.html">Deploy Magento to production</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/prod/prod_deploy.html">Deployment steps</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 28 June 2016 (PDT)</i></p>
+		<p><img src="/common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only" /></p>
+
+<h4 id="contents">Contents</h4>
+
+<ul>
+  <li><a href="#es-ws-secure-over">Overview of secure web server communication</a></li>
+  <li><a href="#es-apache-proxy">Set up a proxy</a></li>
+  <li><a href="#elastic-m2-configure">Configure Magento to use Elasticsearch</a></li>
+  <li><a href="#es-ws-secure-apache">Secure communication with Apache</a></li>
+  <li><a href="#es-ws-secure-verify-apache">Verify communication is secure</a></li>
+</ul>
+
+<div>
+
+  <h2 id="es-ws-secure-over">Overview of secure web server communication</h2>
+  <p>This topic discusses an example of securing communication between your web server and Elasticsearch using a combination of Transport Layer Security (TLS) encryption and <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication. You can optionally configure other types of authentication as well; we provide references for that information.</p>
+
+  <p>(An older term, Secure Sockets Layer (SSL), is frequently used interchangeably with TLS. In this topic, we refer to <em>TLS</em>.)</p>
+
+  <div class="bs-callout bs-callout-warning">
+    <p>Unless otherwise noted, all commands in this topic must be entered as a user with <code>root</code> privileges.</p>
+</div>
+
+  <h3 id="recommendations">Recommendations</h3>
+  <p>We recommend the following:</p>
+
+  <ul>
+    <li>
+      <p>Your web server uses TLS.</p>
+
+      <p>TLS is beyond the scope of this topic; however, we strongly recommend you use a real certificate in production and not a self-signed certificate.</p>
+    </li>
+    <li>
+      <p>Elasticsearch runs on the same host as a web server. Running Elasticsearch and the web server on different hosts is beyond the scope of this topic.</p>
+
+      <p>The advantage of putting Elasticsearch and the web server on the same host is that it makes intercepting encrypted communication impossible. The Elasticsearch web server doesn’t have to be the same as the Magento web server; for example, Magento can run Apache and Elasticsearch can run nginx.</p>
+    </li>
+  </ul>
+
+  <h3 id="more-information-about-tls">More information about TLS</h3>
+  <p>See one of the following resources:</p>
+
+  <ul>
+    <li>
+      <p>Apache</p>
+
+      <ul>
+        <li><a href="https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html" target="_blank">Apache 2.4 strong encryption how-to</a></li>
+        <li><a href="https://httpd.apache.org/docs/2.2/en/ssl/" target="_blank">Apache 2.2 SSL/TLS page</a></li>
+        <li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04" target="_blank">How To Create a SSL Certificate on Apache for Ubuntu 14.04 (Digitalocean tutorial)</a></li>
+        <li><a href="https://wiki.centos.org/HowTos/Https" target="_blank">Setting up an SSL secured Webserver with CentOS (CentOS wiki)</a></li>
+      </ul>
+    </li>
+    <li>
+      <p>nginx</p>
+
+      <ul>
+        <li><a href="https://www.nginx.com/resources/admin-guide/nginx-ssl-termination/" target="_blank">nginx SSL termination</a></li>
+        <li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-an-ssl-certificate-on-nginx-for-ubuntu-14-04" target="_blank">How To Create an SSL Certificate on Nginx for Ubuntu 14.04 (Digitalocean tutorial)</a></li>
+        <li><a href="https://www.digicert.com/ssl-certificate-installation-nginx.htm" target="_blank">Nginx SSL Certificate Installation (digicert)</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 id="es-apache-proxy">Set up a proxy</h2>
+  <p>This section discusses how to configure Apache as an <em>unsecure</em> proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in <a href="#es-ws-secure-apache">Secure communication with Apache</a>.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+	<p>The reason the proxy is not secured in this example is it's easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure virtual host configuration.</p>
+</div>
+
+  <p>See one of the following sections:</p>
+
+  <ul>
+    <li><a href="#es-apache-proxy-24">Set up a proxy for Apache 2.4</a></li>
+    <li><a href="#es-apache-proxy-22">Set up a proxy for Apache 2.2</a></li>
+  </ul>
+
+  <h3 id="es-apache-proxy-24">Set up a proxy for Apache 2.4</h3>
+  <p>This section discusses how to configure an Elasticsearch proxy using a virtual host. </p>
+
+  <ol>
+    <li>
+      <p>Enable <code>mod_proxy</code> as follows:</p>
+
+      <pre><code>a2enmod proxy_http
+</code></pre>
+    </li>
+    <li>Use a text editor to open <code>/etc/apache2/sites-available/000-default.conf</code></li>
+    <li>
+      <p>Add the following directive at the top of the file:</p>
+
+      <pre><code>Listen 8080
+</code></pre>
+    </li>
+    <li>
+      <p>Add the following at the bottom of the file:</p>
+
+      <pre><code>&lt;VirtualHost *:8080&gt;
+   ProxyPass "/" "http://localhost:9200/"
+   ProxyPassReverse "/" http://localhost:9200/"
+&lt;/VirtualHost&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>Restart Apache:</p>
+
+      <pre><code>service apache2 restart
+</code></pre>
+    </li>
+    <li>
+      <p>Verify the proxy works by entering the following command:</p>
+
+      <pre><code>curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
+</code></pre>
+
+      <p>For example, if your proxy uses port 8080:</p>
+
+      <pre><code>curl -i http://localhost:8080/_cluster/health
+</code></pre>
+
+      <p>Messages similar to the following display to indicate success:</p>
+
+      <pre><code>HTTP/1.1 200 OK
+Date: Tue, 23 Feb 2016 20:38:03 GMT
+Content-Type: application/json; charset=UTF-8
+Content-Length: 389
+Connection: keep-alive
+
+{"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
+</code></pre>
+    </li>
+    <li>Continue with <a href="#elastic-m2-configure">Configure Magento to use Elasticsearch</a>.</li>
+  </ol>
+
+  <h3 id="es-apache-proxy-22">Set up a proxy for Apache 2.2</h3>
+  <p>This section discusses how to configure an Elasticsearch proxy using a virtual host. </p>
+
+  <ol>
+    <li>
+      <p>As a user with <code>root</code> privileges, open <code>/etc/httpd/conf/httpd.conf</code> in a text editor.</p>
+    </li>
+    <li>
+      <p>Locate the <code>Listen</code> directive and add another listen port; for example:</p>
+
+      <pre><code>Listen 8080
+</code></pre>
+    </li>
+    <li>
+      <p>Scroll to the bottom of the file and add the following lines:</p>
+
+      <pre><code>&lt;VirtualHost *:8080&gt;
+    ProxyPass http://localhost:9200/
+    ProxyPassReverse http://localhost:9200/
+&lt;/VirtualHost&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>Restart Apache:</p>
+
+      <ul>
+        <li>CentOS: <code>service httpd restart</code></li>
+        <li>Ubuntu: <code>service apache2 restart</code></li>
+      </ul>
+    </li>
+    <li>
+      <p>Verify the proxy works by entering the following command:</p>
+
+      <pre><code>curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
+</code></pre>
+
+      <p>For example, if your proxy uses port 8080:</p>
+
+      <pre><code>curl -i http://localhost:8080/_cluster/health
+</code></pre>
+
+      <p>Messages similar to the following display to indicate success:</p>
+
+      <pre><code>HTTP/1.1 200 OK
+Date: Tue, 23 Feb 2016 20:38:03 GMT
+Content-Type: application/json; charset=UTF-8
+Content-Length: 389
+Connection: keep-alive
+
+{"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
+</code></pre>
+    </li>
+  </ol>
+
+  <div>
+
+    <h2 id="elastic-m2-configure">Configure Magento to use Elasticsearch</h2>
+    <p>This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see the <a href="http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html">Magento EE User Guide</a>{:target=”_blank”).</p>
+
+    <p>To configure Magento to use Elasticsearch:</p>
+
+    <ol>
+      <li>Log in to the Magento Admin as an administrator.</li>
+      <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog Search</strong>.</li>
+      <li>
+        <p>From the <strong>Search Engine</strong> list, click <strong>Elasticsearch</strong> as the following figure shows.</p>
+
+        <p><img src="/common/images/elastic_choose-in-admin.png" width="650px" /></p>
+      </li>
+      <li>
+        <p>The following table discusses only the configuration options required to test the connection with Magento.</p>
+
+        <p>Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.</p>
+
+        <table>
+    <tbody>
+    <tr><th>Option</th>
+    <th>Description</th>
+</tr>
+<tr>
+    <td>Elasticsearch Server Hostname</td>
+    <td>Enter the fully qualified host name or IP address of the machine running Elasticsearch. </td>
+</tr>
+<tr>
+    <td>Elasticsearch Server Port</td>
+    <td>Enter the Elasticsearch web server proxy port. In our example, the port is <code>8080</code> but if you're using a secure proxy, it's typically <code>443</code>.</td>
+</tr>
+<tr>
+    <td>Enable Elasticsearch HTTP Auth</td>
+    <td>Click <strong>Yes</strong> only if you enabled authentication for your Elasticsearch server. If so, provide a user name and password in the provided fields.</td>
+</tr>
+</tbody>
+</table>
+      </li>
+      <li>Click <strong>Test Connection</strong>.</li>
+    </ol>
+
+    <p>One of the following displays:</p>
+
+    <table>
+<tbody>
+	<tr><th>Result</th>
+	<th>Meaning</th>
+	</tr>
+	<tr>
+		<td><img src="/common/images/elastic_test-success.png" /></td>
+		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="/guides/v2.1/config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>.</td>
+	</tr>
+	<tr>
+		<td><img src="/common/images/elastic_test-fail.png" /></td>
+		<td><p>Try the following:</p>
+			<ul>
+				<li>Make sure the Elasticsearch server is running.</li>
+				<li>If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.</li>
+				<li>Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue.<br />
+	In particular, make sure you started Elasticsearch as a user with <code>root</code> privileges.</li>
+<li>Make sure that <a href="/guides/v2.1/config-guide/elasticsearch/elasticsearch-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
+	<li>Verify the value of the <strong>Elasticsearch Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
+	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Elasticsearch Server Port</strong> field is not being used by another process.<br />
+	For example, to see if Elasticsearch is running on its default port, use the following command:
+	<pre>netstat -an | grep 9200</pre>
+	If Elasticsearch is running on port 9200, it displays similar to the following:
+	<pre>tcp        0      0 :::9200            :::*          LISTEN</pre></li></ul></td>
+	</tr>
+</tbody>
+</table>
+
+    <h3 id="es-reindex">Reindexing catalog search and refreshing the full page cache</h3>
+    <p>After you change Magento’s Elasticsearch configuration, you must reindex the catalog search index and refresh the full page using the Admin or command line.</p>
+
+    <p>To refresh the cache using the Admin:</p>
+
+    <ol>
+      <li>In the Admin, click <strong>System</strong> &gt; <strong>Cache Management</strong>.</li>
+      <li>Select the check box next to <strong>Page Cache</strong>. </li>
+      <li>From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
+    The following figure shows an example.<br />
+    <img src="/common/images/solr_refresh-cache.png" width="600px" /></li>
+    </ol>
+
+    <p>To clean the cache using the command line, use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean</code></a> command.</p>
+
+    <p>To reindex using the command line:</p>
+
+    <ol>
+      <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+      <li>
+        <p>Enter any of the following commands:</p>
+
+        <p>Enter the following command to reindex the catalog search index only:</p>
+
+        <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
+</code></pre>
+
+        <p>Enter the following command to reindex all indexers:</p>
+
+        <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
+</code></pre>
+      </li>
+      <li>Wait while the reindexing completes.</li>
+    </ol>
+
+    <div class="bs-callout bs-callout-info" id="info">
+	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
+</div>
+
+    <h2 id="es-ws-secure-apache">Secure communication with Apache</h2>
+    <p>This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:</p>
+
+    <ul>
+      <li><a href="http://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank">Apache 2.2 authentication and authorization tutorial</a></li>
+      <li><a href="http://httpd.apache.org/docs/2.4/howto/auth.html" target="_blank">Apache 2.4 authentication and authorization tutorial</a></li>
+    </ul>
+
+    <p>See one of the following sections:</p>
+
+    <ul>
+      <li><a href="#es-ws-secure-apache-pwd">Step 1: Create a password file</a></li>
+      <li><a href="#es-ws-secure-finish">Step 2: Configure your secure virtual host</a></li>
+      <li><a href="#es-ws-secure-verify">Verify communication is secure</a></li>
+    </ul>
+
+    <h3 id="es-ws-secure-apache-pwd">Step 1: Create a password</h3>
+    <div>
+
+      <p>For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we show how to store the password file in a new directory.</p>
+
+      <h4 id="install-htpasswd-if-necessary">Install htpasswd if necessary</h4>
+
+      <p>First, see if you have the Apache <code>htpasswd</code> utility is installed as follows:</p>
+
+      <ol>
+        <li>
+          <p>Enter the following command to determine if <code>htpasswd</code> is already installed:</p>
+
+          <pre><code>which htpasswd
+</code></pre>
+
+          <p>If a path displays, it is installed; if the command returns no output, <code>htpasswd</code> is not installed.</p>
+        </li>
+        <li>
+          <p>If necessary, install <code>htpasswd</code>:</p>
+
+          <ul>
+            <li>Ubuntu: <code>apt-get -y install apache2-utils</code></li>
+            <li>CentOS: <code>yum -y install httpd-tools</code></li>
+          </ul>
+        </li>
+      </ol>
+
+      <h4 id="create-a-password-file">Create a password file</h4>
+      <p>Enter the following commands as a user with <code>root</code> privileges:</p>
+
+      <pre><code>mkdir -p /usr/local/apache/password
+htpasswd -c /usr/local/apache/password/.&lt;password file name&gt; &lt;username&gt;
+</code></pre>
+
+      <p>where </p>
+
+      <ul>
+        <li>
+          <p><code>&lt;username&gt;</code> can be:</p>
+
+          <ul>
+            <li>
+              <p>Setting up cron: the web server user or another user. </p>
+
+              <p>In this example, we use the web server user but the choice of user is up to you.</p>
+            </li>
+            <li>
+              <p>Setting up Elasticsearch: the user is named <code>magento_elasticsearch</code> in this example</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><code>&lt;password file name&gt;</code> must be a hidden file (starts with <code>.</code>) and should reflect the name of the user. See the examples later in this section for details.</p>
+        </li>
+      </ul>
+
+      <p>Follow the prompts on your screen to create a password for the user.</p>
+
+      <h4 id="examples">Examples</h4>
+
+      <p><strong>Example 1: cron</strong>
+You must set up authentication for only one user for cron; in this example, we use the web server user. To create a password file for the web server user, enter the following commands:</p>
+
+      <pre><code>mkdir -p /usr/local/apache/password
+htpasswd -c /usr/local/apache/password/.htpasswd apache
+</code></pre>
+
+      <p><strong>Example 2: Elasticsearch</strong>
+You must set up authentication for two users: one with access to nginx and one with access to Elasticsearch. To create password files for these users, enter the following commands:</p>
+
+      <pre><code>mkdir -p /usr/local/apache/password
+htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticsearch
+</code></pre>
+
+      <h4 id="add-additional-users">Add additional users</h4>
+      <p>To add another user to your password file, enter the following command as a user with <code>root</code> privileges:</p>
+
+      <pre><code>htpasswd /usr/local/apache/password/.htpasswd &lt;username&gt;
+</code></pre>
+
+      <h3 id="es-ws-secure-finish">Step 2: Secure communication with Apache</h3>
+      <p>This section discusses how to set up <a href="https://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank">HTTP Basic authentication</a>. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.</p>
+
+      <p>This section discusses how to specify who can access the Apache server. </p>
+
+      <ol>
+        <li>
+          <p>Use a text editor to add the following contents to your secure virtual host. </p>
+
+          <ul>
+            <li>
+              <p>Apache 2.2: Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in <code>/etc/httpd/conf/httpd.conf</code> or <code>/etc/httpd/conf.d/ssl.conf</code>.</p>
+            </li>
+            <li>
+              <p>Apache 2.4: Edit <code>/etc/apache2/sites-available/default-ssl.conf</code></p>
+
+              <pre><code>&lt;Proxy *&gt;
+  Order deny,allow
+  Allow from all
+
+ AuthType Basic
+ AuthName "Elastic Server"
+ AuthBasicProvider file
+ AuthUserFile /usr/local/apache/password/.htpasswd_elasticsearch
+ Require valid-user
+  
+# This allows OPTIONS-requests without authorization
+ &lt;LimitExcept OPTIONS&gt;
+   Require valid-user
+ &lt;/LimitExcept&gt;
+ &lt;/Proxy&gt;
+</code></pre>
+            </li>
+          </ul>
+        </li>
+        <li>If you added the preceding to your secure virtual host, remove <code>Listen 8080</code> and the <code>&lt;VirtualHost *:8080&gt;</code> directives you added earlier to your unsecure virtual host.</li>
+        <li>Save your changes, exit the text editor, and restart Apache:</li>
+      </ol>
+
+      <ul>
+        <li>CentOS: <code>service httpd restart</code></li>
+        <li>Ubuntu: <code>service apache2 restart</code></li>
+      </ul>
+
+      <div>
+
+        <h2 id="es-ws-secure-verify">Verify communication is secure</h2>
+        <p>This section discusses two ways to verify that HTTP Basic authentication is working:</p>
+
+        <ul>
+          <li>Using a <code>curl</code> command to verify you must enter a user name and password to get cluster status</li>
+          <li>Configuring HTTP Basic authentication in the Magento Admin</li>
+        </ul>
+
+        <h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code>curl</code> command to verify cluster status</h3>
+        <p>Enter the following command:</p>
+
+        <pre><code>curl -i http://&lt;host name, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+</code></pre>
+
+        <p>For example, if you enter the command on the Elasticsearch server and your proxy uses port 8080:</p>
+
+        <pre><code>curl -i http://localhost:8080/_cluster/health
+</code></pre>
+
+        <p>The following message displays to indicate authentication failed:</p>
+
+        <pre><code>HTTP/1.1 401 Unauthorized
+Date: Tue, 23 Feb 2016 20:35:29 GMT
+Content-Type: text/html
+Content-Length: 194
+Connection: keep-alive
+WWW-Authenticate: Basic realm="Restricted"
+
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;401 Authorization Required&lt;/title&gt;&lt;/head&gt;
+&lt;body bgcolor="white"&gt;
+&lt;center&gt;&lt;h1&gt;401 Authorization Required&lt;/h1&gt;&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+        <p>Now try the following command:</p>
+
+        <pre><code>curl -i -u &lt;user name&gt;:&lt;password&gt; http://&lt;host name, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+</code></pre>
+
+        <p>For example:</p>
+
+        <pre><code>curl -i -u magento_elasticsearch:mypassword http://localhost:8080/_cluster/health
+</code></pre>
+
+        <p>This time the command succeeds with a message similar to the following:</p>
+
+        <pre><code>HTTP/1.1 200 OK
+Date: Tue, 23 Feb 2016 20:38:03 GMT
+Content-Type: application/json; charset=UTF-8
+Content-Length: 389
+Connection: keep-alive
+
+{"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
+</code></pre>
+
+        <h3 id="configure-http-basic-authentication-in-the-magento-admin">Configure HTTP Basic authentication in the Magento Admin</h3>
+        <p>Perform the same tasks as discussed in <a href="#elastic-m2-configure">Configure Magento to use Elasticsearch</a> <em>except</em> click <strong>Yes</strong> from the <strong>Enable Elasticsearch HTTP Auth</strong> list and enter your user name and password in the provided fields.</p>
+
+        <p>The following figure shows an example:</p>
+
+        <p><img src="/common/images/es_with-basic-auth.png" width="650px" /></p>
+
+        <p>Click <strong>Test Connection</strong> to make sure it works and then click <strong>Save Config</strong>.</p>
+
+        <p>You must flush the Magento cache and reindex before you continue.</p>
+
+        <h4 id="next">Next</h4>
+        <p><a href="/guides/v2.1/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

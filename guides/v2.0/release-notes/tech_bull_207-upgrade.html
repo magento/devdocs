@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Technical Bulletin</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.0/release-notes/tech_bull_207-upgrade.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.0)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.0/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Technical Bulletin</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/tech_bull_207-upgrade.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Release Information</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q "><a href="/guides/v2.0/release-notes/bk-release-notes.html">List of Release Notes</a></li>
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/release-notes/changes_2.0.html">Backward incompatible changes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/changes/ce_changes.html">Magento CE</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/changes/ee_changes.html">Magento EE</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Release Notes</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3CE.html">Magento CE 2.0.3 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html">Magento EE 2.0.3 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4CE.html">Magento CE 2.0.4 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4EE.html">Magento EE 2.0.4 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5CE.html">Magento CE 2.0.5 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5EE.html">Magento EE 2.0.5 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.6CE.html">Magento CE 2.0.6 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.6EE.html">Magento EE 2.0.6 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">Magento CE 2.0.7 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7EE.html">Magento EE 2.0.7 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.8CE.html">Magento CE 2.0.8 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.8EE.html">Magento EE 2.0.8 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1CE.html">Magento CE 2.1 Release Candidate 1 (RC1) Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1EE.html">Magento EE 2.1 Release Candidate 1 (RC1) Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2CE.html">Magento CE 2.1 Release Candidate 2 (RC2) Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2EE.html">Magento EE 2.1 Release Candidate 2 (RC2) Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3CE.html">Magento CE 2.1 Release Candidate 3 (RC3) Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3EE.html">Magento EE 2.1 Release Candidate 3 (RC3) Release Notes</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Technical Bulletin</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_tls-repo.html">Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.0/release-notes/tech_bull_207-upgrade.html">Required patch for PHP 5.5.x and Setup Application environments (June 6, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_201-upgrade.html">Magento upgrade issues (Jan. 28, 2016)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Third Party Licenses</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/thirdparty_ce.html">Magento CE third-party licenses</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/thirdparty_ee.html">Magento EE third-party licenses</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2>Required patch for PHP 5.5.x and Setup application 10.0.1 environments (June 6, 2016)</h2>
+<p>This bulletin informs you of a known issue updating from Magento EE and CE environments that run the following:   </p>
+
+<ul>
+  <li>
+    <p>PHP 5.5.x</p>
+
+    <p><strong>and</strong></p>
+  </li>
+  <li>
+    <p>Updater application version 10.0.1. This version is shipped by default with Magento 2.0.7. </p>
+  </li>
+</ul>
+
+<p>Patch <code>MDVA-449</code> supplies the fix for this potential upgrade issue. </p>
+
+<h3>Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application 10.0.1</h3>
+
+<p>Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and Setup application (also referred to as the <i>Updater application</i>) version 10.0.1 and you  try to upgrade to a later version of Magento.</p>
+
+<p>Magento 2.0.7 by default ships with Setup application version 10.0.1.  If you have not changed the default Setup application version that shipped with 2.0.7 and are running PHP 5.5.x, you must follow this bulletin. Failure to install patch <code>MDVA-449</code> will complicate attempts to upgrade from this version of Magento to any future versions, including 2.1. Installations using PHP 5.6.x and 7.0.x do not need this patch.</p>
+
+<p>Here is the issue you might encounter when running <code>update/cron.php</code>:</p>
+
+<pre><code>PHP Parse error: syntax error, unexpected '.', expecting ')' in /home/user/public_html/update/app/code/Magento/Update/UpdateLoggerFactory.php on line 31 
+</code></pre>
+
+<p>The following table summarizes what you need to do.</p>
+
+<table>
+	<tbody>
+<tr> 
+	<th>Upgrade path</th>
+	<th>What to do</th>
+</tr>
+
+<tr>
+	<td>PHP 5.5.x AND Magento 2.0.7</td>
+<td> Download and install patch <code>MDVA-449</code> as detailed in this bulletin. Note: You must apply patch <code>MDVA-449</code>  whether you installed the Magento software using a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
+</tr>
+
+<tr>
+	<td>PHP 5.5.x AND Updater 10.0.1</td>
+	<td>Download and install patch <code>MDVA-449</code> as detailed in this bulletin. Note: You must apply patch <code>MDVA-449</code>  whether you installed the Magento software using a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
+</tr>
+
+<tr>
+	<td>PHP 5.6.x with any Magento and Setup application version</td>
+	<td>Ignore this bulletin</td>
+</tr>
+
+<tr>
+	<td>PHP 7.0.x with any Magento and Setup application version</td>
+	<td>Ignore this bulletin</td>
+</tr>
+
+</tbody>
+</table>
+
+<h4>How to determine which version of Updater application you are running</h4>
+<ol>
+  <li>
+    <p>Log in to your Magento server as, or switch to, the Magento file system owner.</p>
+  </li>
+  <li>
+    <p>Open the following file in a text editor:</p>
+
+    <your magento="" install="" dir="">/update/composer.json
+
+</your>
+  </li>
+  <li>
+    <p>Look for the value of <code>"version"</code>. If the value of <code>"version"</code> is <code>"10.0.1"</code>, and you’re using PHP 5.5.x, you must make the changes discussed in this bulletin. For example,</p>
+
+    <p>“version”: “10.0.1”</p>
+  </li>
+  <li>
+    <p>Exit the text editor without making changes.</p>
+  </li>
+</ol>
+
+<h4>Details</h4>
+<p>The Setup application  that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. To ensure the success of future upgrades, download and install patch <code>MDVA-449</code>. </p>
+
+<h4>Download and install patch MDVA-449</h4>
+<p>If your Magento server runs PHP 5.5.x and Setup application  10.0.1,  apply patch <code>MDVA-449</code>.</p>
+
+<p>To apply this patch:</p>
+
+<ol>
+  <li>
+    <p>Download one of the following patch archives. Patches are available in the following formats: <code>.zip</code> and <code>.tar.gz</code></p>
+
+    <table>
+		
+<tbody>
+<tr> 
+    <th>Magento edition</th>
+    <th>Patch location</th>
+</tr>
+<tr> 
+<td>Magento CE</td>
+<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
+    <p>Follow the instructions on your screen to download patch <code>MDVA-449</code>.</p></td>
+</tr>
+<tr> 
+    <td>Magento EE merchant portal</td>
+    <td>Use the following steps:
+    <ol><li>Go to <a href="http://www.magento.com" target="_blank">www.magento.com</a></li>
+    <li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
+    <li>Log in with your Magento user name and password.</li>
+    <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+    <li>Click <strong>Magento Enterprise Edition</strong> <strong>2.X</strong> &gt; <strong>Magento Enterprise Edition 2.x Release</strong> &gt; <strong>Support Patches</strong></li>
+    <li>Follow the instructions on your screen to download patch <code>MDVA-449</code>.</li>
+
+
+<li>Transfer the patch to your development system.</li></ol></td>
+</tr>
+<tr>
+    <td>Magento EE partner portal</td>
+    <td>Use the following steps:
+    <ol><li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx" target="_blank">partners.magento.com</a></li>
+    <li>Click <strong>Magento Enterprise Edition</strong> &gt; <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Magento Enterprise Edition 2.x Release</strong> &gt; <strong>Support Patches</strong>.</li>
+    <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+    <li>Follow the instructions on your screen to download patch <code>MDVA-449</code>.</li>
+<li>Transfer the patch to your development system.</li></ol></td>
+    </tr>
+</tbody>
+</table>
+
+    <div class="bs-callout bs-callout-info" id="info">
+  		<p>Use patch <code>MDVA-449</code> whether or not you installed optional sample data.</p>
+</div>
+  </li>
+  <li>
+    <p>Extract the patch in your Magento installation directory.</p>
+
+    <p>Log in as or change to the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>. Use one of the following commands to extract the archive.</p>
+
+    <table>
+<tbody>
+<tr> 
+    <th>File format</th>
+    <th>Command to extract</th>
+</tr>
+<tr> 
+    <td>.tar.gz</td>
+    <td><code>tar zxf &lt;filename&gt;</code></td>
+    </tr>
+    <tr> 
+        <td>.zip</td>
+        <td><code>unzip &lt;filename&gt;</code></td>
+    </tr>
+		
+</tbody>
+</table>
+
+    <p>After extraction, Magento creates the <code>magento2-updater-10.0.2</code> directory within the installation directory. </p>
+  </li>
+  <li>
+    <p>Copy the contents of the <code>magento2-updater-10.0.2</code> directory to the  <code>update</code> directory by executing this command:</p>
+
+    <p><code>cp -R magento2-updater-10.0.2/*  update/</code></p>
+
+    <div class="bs-callout bs-callout-tip">
+     <p>If you're prompted to overwrite files repeatedly, cancel the operation and try the following command: <code>yes | cp -rf magento2-updater-10.0.2/* update/</code>. Also see <a href="http://magento.stackexchange.com/questions/119865/magento-2-patch-mdva-449-ssh-command" target="_blank">this article on stackexchange</a>.</p>
+ </div>
+  </li>
+  <li>
+    <p>After copying all  patch-related files to their appropriate locations,  remove any unwanted files and directories by executing these commands:</p>
+
+    <p><code>rm -rf magento2-updater-10.0.2/</code></p>
+
+    <p><code>rm -f MDVA-449.*</code></p>
+  </li>
+</ol>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

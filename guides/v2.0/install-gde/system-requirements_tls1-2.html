@@ -39,11 +39,29 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/guides/v2.0/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/guides/v2.0/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
 		</div><!-- #global-nav -->
 	</nav>
 
@@ -60,8 +78,9 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
             </ul>
          </li>
          <li class="first">
@@ -77,18 +96,15 @@
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a>
-   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-<li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
-               <div class="divider"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
                <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
@@ -149,12 +165,13 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">TLS 1.2 requirement for PayPal</h1>
-			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/install-gde/system-requirements_tls1-2.md" target="_blank">Edit this page on GitHub</a>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/system-requirements_tls1-2.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
 </section>
+
 
 <div class="container">
 
@@ -256,15 +273,36 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/system-requirements_tls1-2.html">TLS 1.2 requirement for PayPal</a></li>
+										<li class="level3Parent " id="tls"><a href="#">Transport Layer Security (TLS) requirements</a>
+
 
 									
 
 								
+
+									
+
+
+											<li class="level3Child tls  active " data-menunode="tls"><a href="/guides/v2.0/install-gde/system-requirements_tls1-2.html">TLS 1.2 requirement for PayPal</a>
+
+
+									
+
 								
+
+									
+
+
+											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.0/install-gde/system-requirements_repo-tls1-2.html">TLS requirement for repo.magento.com</a>
+
+
+									
+
 								
-							
-							
+
+
+
+
 						
 
 					
@@ -299,30 +337,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
 
 									
@@ -331,7 +345,65 @@
 
 									
 
+										<li class="level3Parent " id="php"><a href="#">PHP</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="umask"><a href="#">Magento file system ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a>
+
 
 									
 
@@ -377,17 +449,9 @@
 
 								
 
-									
 
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a></li>
 
-									
 
-								
-								
-								
-							
-							
 						
 
 					
@@ -411,10 +475,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -438,10 +502,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -465,10 +529,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -500,10 +564,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -527,10 +591,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -554,10 +618,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -692,8 +756,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-
-      <p align="right"><i>Updated: 25 February 2016 (PST)</i></p>
+			<p align="right"><i>Updated: 27 June 2016 (PDT)</i></p>
 		<div>
 
   <h2 id="tls-12-requirement-for-paypal">TLS 1.2 requirement for PayPal</h2>
@@ -739,20 +802,26 @@ Protocol: SSLv3*
   <p>If the version is earlier than 7.34, continue with the next section. If you’re already running version 7.34 or later, no action is necessary.</p>
 
   <h3 id="solution">Solution</h3>
-  <p>This issue is typically limited to CentOS 6 or earlier because <a href="https://wiki.centos.org/AdditionalResources/Repositories" target="_blank">recommended package repositories</a> don’t provide <code>libcurl</code> version 7.34.</p>
+  <p>The source of the issue is that the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code>libcurl</code></a> library packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default. </p>
+
+  <p>To determine the version of CentOS your server runs, enter the following command:</p>
+
+  <pre><code>cat /etc/*release*
+</code></pre>
+
+  <p>If you’re already running CentOS 6.8 or later, no action is necessary. According to the <a href="https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.8" target="_blank">CentOS 6.8 changelog</a>, “various applications now support TLS 1.2, i.e. OpenLDAP, yum, stunnel, vsftpd, git, postfix and others. Also TLS 1.2 has been enabled by default in various packages”.</p>
+
+  <p>(CentOS 7 has a newer version of <code>libcurl</code> that also defaults to TLS 1.2.)</p>
 
   <p>You have the following options:</p>
 
   <ul>
     <li>
-      <p>(Recommended). Upgrade your Magento server to CentOS 7. </p>
+      <p>(Recommended). Upgrade your Magento server to CentOS 6.8 or later. </p>
 
-      <p>Its recommended repositories support current versions of TLS with <code>libcurl</code>. Using CentOS 7 is the most secure way to continue operating your store and accepting PayPal.</p>
-    </li>
-    <li>
-      <p>(Recommended; verify first.) According to <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1289205" target="_blank">RedHat’s bug 1289205</a>, CentOS 6.8 (not released yet) will have a <code>libcurl</code> version that defaults to TLS 1.2. </p>
+      <p>Its recommended repositories support current versions of TLS with <code>libcurl</code>. Using CentOS 6.8 or later is the most secure way to continue operating your store and accepting PayPal.</p>
 
-      <p>Because Magento can’t guarantee the accuracy of this information, we encourage you to use caution and to <em>thoroughly test</em> your system with CentOS 6.8 before deploying it in a live environment.</p>
+      <p>CentOS 6.8 has a <code>libcurl</code> version that defaults to TLS 1.2. </p>
     </li>
     <li>
       <p>(Less secure, <em>not recommended</em>). Upgrade to <code>libcurl</code> 7.34 or later on CentOS 6 using a non-recommended third-party repository.</p>
@@ -789,7 +858,9 @@ Protocol: SSLv3*
         <div id="magento-com">
             <div class="container">
                 <div id="f-col-1">
-                    <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento Commerce" /></a>
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
                     <ul class="nav">
                         <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
                         <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
@@ -894,7 +965,7 @@ Protocol: SSLv3*
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/js/app.js"></script>
 
 
 <!--Google Custom Search-->

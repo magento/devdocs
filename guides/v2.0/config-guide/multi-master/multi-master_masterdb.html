@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up master databases</title>
+	<title>Automatically configure master databases</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -39,11 +39,29 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/guides/v2.0/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/guides/v2.0/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
 		</div><!-- #global-nav -->
 	</nav>
 
@@ -60,8 +78,9 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
             </ul>
          </li>
          <li class="first">
@@ -77,18 +96,15 @@
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a>
-   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-<li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
-               <div class="divider"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
                <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
@@ -148,13 +164,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Set up master databases</h1>
-			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/multi-master/multi-master_masterdb.md" target="_blank">Edit this page on GitHub</a>
+		<h1 class="page-heading">Automatically configure master databases</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/multi-master/multi-master_masterdb.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
 </section>
+
 
 <div class="container">
 
@@ -267,10 +284,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -310,10 +327,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -369,10 +386,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -516,10 +533,53 @@
 									
 
 								
-								
-								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
 							
-							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/log/log-intro.html">Custom logging</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/log/log-magento.html">Magento logging in more detail</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/log/log-db.html">Example&mdash;logging database activity</a></li>
+
+									
+
+								
+
+
+
+
 						
 
 					
@@ -559,10 +619,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -610,10 +670,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -669,10 +729,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -696,10 +756,26 @@
 
 
 								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/redis/redis-pg-cache.html">Use Redis for page caching</a></li>
+
+									
+
 								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/redis/redis-session.html">Use Redis for session storage</a></li>
+
+									
+
 								
-							
-							
+
+
+
+
 						
 
 					
@@ -779,10 +855,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -830,10 +906,37 @@
 									
 
 								
-								
-								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
 							
-							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/db-profiler/db-profiler.html">Configure the database profiler</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
 						
 
 					
@@ -873,10 +976,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -916,10 +1019,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -946,7 +1049,15 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_manual.html">Manually configure master databases</a></li>
 
 									
 
@@ -967,10 +1078,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -994,10 +1105,53 @@
 
 
 								
-								
-								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
 							
-							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/prod/prod.html">Deploy Magento to production</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/prod/prod_deploy.html">Deployment steps</a></li>
+
+									
+
+								
+
+
+
+
 						
 
 					
@@ -1104,8 +1258,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-
-      <p align="right"><i>Updated: 30 March 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<p><img src="/common/images/ee-only_large.png" /></p>
 
 <h4 id="contents">Contents</h4>
@@ -1120,93 +1273,95 @@
 
 <ol>
   <li>Installing Magento 2 EE with a single master database (named <code>magento</code>)</li>
-  <li>Creating two additional master databases for checkout and OMS (named <code>magento_checkout</code> and <code>magento_oms</code>)</li>
-  <li>Configuring EE to use the checkout and OMS databases </li>
+  <li>Creating two additional master databases for checkout and OMS (named <code>magento_quote</code> and <code>magento_sales</code>)</li>
+  <li>Configuring EE to use the checkout and sales databases </li>
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This guide assumes all three databases are on the same host as the Magento application and that they're named <code>magento</code>, <code>magento_checkout</code>, and <code>magento_oms</code>. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
+  <p>This guide assumes all three databases are on the same host as the Magento application and that they're named <code>magento</code>, <code>magento_quote</code>, and <code>magento_sales</code>. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
 </div>
 
 <h2 id="config-ee-multidb-master-install">Install the Magento EE software</h2>
 <p>You can enable split databases at any time after you install the Magento EE software; in other words, you can add split databases to an EE system that already has checkout and order data. Use the instructions in the Magento 2 EE README or the <a href="/guides/v2.0/install-gde/bk-install-guide.html">installation guide</a> to install the Magento 2 EE software using a single master database.</p>
 
-<h2 id="config-ee-multidb-master-masters">Set up additional master databases</h2>
-<p>Create checkout and OMS master databases as follows:</p>
+<div>
 
-<ol>
-  <li>Log in to your database server as any user.</li>
-  <li>
-    <p>Enter the following command to get to a MySQL command prompt:</p>
+  <h2 id="config-ee-multidb-master-masters">Set up additional master databases</h2>
+  <p>Create checkout and OMS master databases as follows:</p>
 
-    <pre><code>mysql -u root -p
+  <ol>
+    <li>Log in to your database server as any user.</li>
+    <li>
+      <p>Enter the following command to get to a MySQL command prompt:</p>
+
+      <pre><code>mysql -u root -p
 </code></pre>
-  </li>
-  <li>Enter the MySQL <code>root</code> user’s password when prompted.</li>
-  <li>
-    <p>Enter the following commands in the order shown to create database instances named <code>magento_checkout</code> and <code>magento_oms</code> with the same user names and passwords:</p>
+    </li>
+    <li>Enter the MySQL <code>root</code> user’s password when prompted.</li>
+    <li>
+      <p>Enter the following commands in the order shown to create database instances named <code>magento_checkout</code> and <code>magento_oms</code> with the same user names and passwords:</p>
 
-    <pre><code>create database magento_checkout;
+      <pre><code>create database magento_checkout;
 GRANT ALL ON magento_checkout.* TO magento_checkout@localhost IDENTIFIED BY 'magento_checkout';
 
 create database magento_oms;
 GRANT ALL ON magento_oms.* TO magento_oms@localhost IDENTIFIED BY 'magento_oms';
 </code></pre>
-  </li>
-  <li>
-    <p>Enter <code>exit</code> to quit the command prompt.</p>
-  </li>
-  <li>
-    <p>Verify the databases, one at a time:</p>
-
-    <p>Checkout database:</p>
-
-    <pre><code>mysql -u magento_checkout -p
-exit
-</code></pre>
-
-    <p>Order management database:</p>
-
-    <pre><code>mysql -u magento_oms -p
-exit
-</code></pre>
-
-    <p>If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.</p>
-  </li>
-</ol>
-
-<h2 id="config-ee-multidb-master-cli">Configure Magento EE to use the master databases</h2>
-<p>After setting up a total of three master databases, use the Magento command line to configure Magento to use them. (The command sets up database connections and distributes tables among the master databases.)</p>
-
-<h3 id="first-steps">First steps</h3>
-
-<div>
-
-  <ol>
-    <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
-
-      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
-
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
-
-sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>Enter <code>exit</code> to quit the command prompt.</p>
+    </li>
+    <li>
+      <p>Verify the databases, one at a time:</p>
 
-      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+      <p>Checkout database:</p>
 
-      <p>bash shell example for CentOS:</p>
-
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <pre><code>mysql -u magento_checkout -p
+exit
 </code></pre>
+
+      <p>Order management database:</p>
+
+      <pre><code>mysql -u magento_oms -p
+exit
+</code></pre>
+
+      <p>If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.</p>
     </li>
   </ol>
 
-  <div class="bs-callout bs-callout-info" id="info">
+  <h2 id="config-ee-multidb-master-cli">Configure Magento EE to use the master databases</h2>
+  <p>After setting up a total of three master databases, use the Magento command line to configure Magento to use them. (The command sets up database connections and distributes tables among the master databases.)</p>
+
+  <h3 id="first-steps">First steps</h3>
+
+  <div>
+
+    <ol>
+      <li>
+        <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+
+        <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+        <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
+
+sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+</code></pre>
+      </li>
+      <li>
+        <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+        <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+        <p>bash shell example for CentOS:</p>
+
+        <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+      </li>
+    </ol>
+
+    <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -1214,40 +1369,41 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-  <h3 id="config-ee-multidb-master-cli-check">Configure the checkout database</h3>
-  <p>Command syntax:</p>
+    <h3 id="config-ee-multidb-master-cli-check">Configure the checkout database</h3>
+    <p>Command syntax:</p>
 
-  <pre><code>magento setup:db-schema:split-quote --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
+    <pre><code>magento setup:db-schema:split-quote --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
 </code></pre>
 
-  <p>For example,</p>
+    <p>For example,</p>
 
-  <pre><code>magento setup:db-schema:split-quote --host="localhost" --dbname="magento_checkout" --username="magento_checkout" --password="magento_checkout"
+    <pre><code>magento setup:db-schema:split-quote --host="localhost" --dbname="magento_checkout" --username="magento_checkout" --password="magento_checkout"
 </code></pre>
 
-  <p>The following message displays to confirm a successful setup:</p>
+    <p>The following message displays to confirm a successful setup:</p>
 
-  <pre><code>Migration has been finished successfully!
+    <pre><code>Migration has been finished successfully!
 </code></pre>
 
-  <h3 id="config-ee-multidb-master-cli-oms">Configure the OMS database</h3>
-  <p>Command syntax:</p>
+    <h3 id="config-ee-multidb-master-cli-oms">Configure the OMS database</h3>
+    <p>Command syntax:</p>
 
-  <pre><code>magento setup:db-schema:split-sales --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
+    <pre><code>magento setup:db-schema:split-sales --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
 </code></pre>
 
-  <p>For example,</p>
+    <p>For example,</p>
 
-  <pre><code>magento setup:db-schema:split-sales --host="localhost" --dbname="magento_oms" --username="magento_oms" --password="magento_oms"
+    <pre><code>magento setup:db-schema:split-sales --host="localhost" --dbname="magento_oms" --username="magento_oms" --password="magento_oms"
 </code></pre>
 
-  <p>The following message displays to confirm a successful setup:</p>
+    <p>The following message displays to confirm a successful setup:</p>
 
-  <pre><code>Migration has been finished successfully!
+    <pre><code>Migration has been finished successfully!
 </code></pre>
 
-  <h4 id="next-step">Next step</h4>
-  <p><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></p>
+    <h4 id="next-step">Next step</h4>
+    <p><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></p>
+  </div>
 </div>
 
 
@@ -1272,7 +1428,9 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
         <div id="magento-com">
             <div class="container">
                 <div id="f-col-1">
-                    <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento Commerce" /></a>
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
                     <ul class="nav">
                         <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
                         <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
@@ -1377,7 +1535,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/js/app.js"></script>
 
 
 <!--Google Custom Search-->

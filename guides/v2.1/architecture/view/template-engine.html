@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Template engine</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/architecture/view/template-engine.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Template engine</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/view/template-engine.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2 id="m2devgde-temp-eng-over">Introduction to the Magento template engine</h2>
+<p>A template engine is a mechanism for rendering HTML output from templates associated with page layout blocks. The Magento template rendering subsystem can support multiple template engines, including the default PHP-based engine for processing PHTML templates.</p>
+
+<p>This article describes the design of the Magento template rendering subsystem and the implementation of the default template engine, and provides instructions on how to add a custom engine to support templates other than PHTML.</p>
+
+<h2 id="m2devgde-temp-eng-role">How the Magento template engine renders HTML output</h2>
+<p>A template engine is invoked during page layout processing. Any page layout is a hierarchy of containers, which are placeholders for content, and blocks, which actually generate content.  Each block corresponds to a certain Magento PHP class.</p>
+
+<p>All block classes are inherited from either <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank">Magento\Framework\View\Element\AbstractBlock</a> or <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\Framework\View\Element\Template</a> (which in its turn is inherited from <code>AbstractBlock</code>).</p>
+
+<p>The difference between these two classes is that the <code>Template</code> class has methods required to work with templates and allows initiating a template engine to generate HTML content based on a template, while <code>AbstractBlock</code> has no methods for working with templates, and provides only displaying the hard-coded HTML content:</p>
+
+<p><img src="/common/images/view_te2.png" alt="Blocks class diagram" /></p>
+
+<p>The AbstractBlock class implements the main <code>toHtml()</code> method, which is called by all blocks when it is necessary to generate the HTML output.</p>
+
+<p>The sequence of execution of <code>toHtml()</code> depends on whether the HTML content was previously cached:</p>
+
+<ul>
+  <li>
+    <p>Case 1: HTML was previously cached:</p>
+
+    <ol>
+      <li>
+        <p>Load the cached HTML content.</p>
+      </li>
+      <li>
+        <p>Perform the HTML content post-processing defined in <code>_afterToHtml()</code>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Case 2: HTML was not previously cached:</p>
+
+    <ol>
+      <li>
+        <p>Perform the preparatory tasks defined <code>in _beforeToHtml()</code>.</p>
+      </li>
+      <li>
+        <p>Generate the HTML content. Here is where the template engine is invoked for blocks with templates: if a block class is inherited from the <code>Template</code> class, and has a predefined or dynamically obtained  template name, then generating the HTML content is performed by calling <code>Template::fetchView()</code> which initiates the template engine, calls the <code>render()</code> method, and returns the HTML content for subsequent processing by <code>AbstractBlock::toHtml()</code>.</p>
+      </li>
+      <li>
+        <p>Cache the generated HTML.</p>
+      </li>
+      <li>
+        <p>Perform the HTML content post-processing defined in <code>_afterToHtml()</code>.</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p>Schematically, a template engine performs the following (Case 2, step 2):</p>
+
+<p><img src="/common/images/view_te4.png" alt="toHtml() execution flow" /></p>
+
+<p>The same process, with more technical details:</p>
+
+<p><img src="/common/images/view_te5.png" alt="toHtml() execution flow more details" /></p>
+
+<h3 id="m2devgde-temp-eng-invoke">Invoke a PHTML block from a PHTML block</h3>
+
+<p>The following diagram illustrates the actions executed when a PHTML block is invoked from a PHTML block by a <code>getChildHtml</code> call.</p>
+
+<p><img src="/common/images/view_te6.png" alt="Diagram: actions executed when a PHTML block is invoked from a PHTML block by a getChildHtml call" /></p>
+
+<p>Example of a <code>getChildHtml</code> call:</p>
+
+<p><code>
+&lt;?php&nbsp;echo&nbsp;$this-&gt;getChildHtml('product_type_data')&nbsp;?&gt;
+</code></p>
+
+<h3 id="m2devgde-temp-eng-temp">Template rendering</h3>
+
+<p>Template files rendering is performed by <code>\Magento\Framework\View\TemplateEngine\Php</code>:</p>
+<p><img src="/common/images/view_te7.png" alt="template rendering flow diagram" /></p>
+
+<h2 id="m2devgde-temp-eng-temp">Template engine file structure</h2>
+<p>All template engine files are stored in the <code>View</code> library:</p>
+<pre>
+_lib/Magento/View
+&nbsp;|--TemplateEngineFactory.php
+&nbsp;|--TemplateEngineInterface.php
+&nbsp;|--TemplateEnginePool.php
+&nbsp;|_/Element
+&nbsp;&nbsp;&nbsp;|--AbstractBlock.php
+&nbsp;&nbsp;&nbsp;|--Template.php
+&nbsp;|_/TemplateEngine
+&nbsp;&nbsp;&nbsp;|--Php.php
+</pre>
+
+<p>The default engine for working with templates is the <code>Magento\Framework\View\TemplateEngine\Php</code> class.</p>
+
+<h3 id="m2devgde-temp-eng-basic">Basic classes</h3>
+<p>The class diagram of the basic classes Implement the template rendering subsystem:</p>
+<p><img src="/common/images/view_te8.png" alt="template rendering diagram of classes" /></p>
+
+<h3 id="m2devgde-temp-eng-desc">Class descriptions</h3>
+
+<p class="q">Reviewer: Please verify all of this information</p>
+
+<p>This section discusses the following classes:</p>
+
+<ul>
+  <li><a href="#m2devgde-temp-eng-class-temp">Magento\Framework\View\Element\Template</a></li>
+  <li><a href="#m2devgde-temp-eng-class-tef">Magento\Framework\View\TemplateEngineFactory</a></li>
+  <li><a href="#m2devgde-temp-eng-class-tep">Magento\Framework\View\TemplateEnginePool</a></li>
+  <li><a href="#m2devgde-temp-eng-class-tei">Magento\Framework\View\TemplateEngineInterface</a></li>
+  <li><a href="#m2devgde-temp-eng-class-php">Magento\Framework\View\TemplateEngine\Php</a></li>
+</ul>
+
+<h4 id="m2devgde-temp-eng-class-temp">Magento\Framework\View\Element\Template</h4>
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\Framework\View\Element\Template</a> is the starting point for template rendering. To initiate the rendering process, <code>Template::fetchView()</code> is invoked with the name of the template file. It starts by extracting the template file extension and passing it to <code>Magento\Framework\View\TemplateEngineFactory</code>. On receiving an instance of <code>Magento\Framework\View\TemplateEngineInterface</code>, it calls the <code>render()</code> method and passes the rendered output to the caller.</p>
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code>fetchView($fileName)</code>
+      </td>
+      <td>Retrieve the block view from the file (template). </td>
+    </tr>
+    <tr>
+      <td>
+        <code>getTemplateFile() </code>
+      </td>
+      <td>Get the absolute path to the template. </td>
+    </tr>
+    <tr>
+      <td>
+        <code>setTemplate($template) </code>
+      </td>
+      <td>Set a path to the template used for generating the block output. </td>
+    </tr>
+    <tr>
+      <td>
+        <code>getTemplate() </code>
+      </td>
+      <td>Get relevant path to the template. </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="m2devgde-temp-eng-class-tef">Magento\Framework\View\TemplateEngineFactory</h4>
+
+<p>The <code>create()</code> method in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/TemplateEngineFactory.php" target="_blank">Magento\Framework\View\TemplateEngineFactory</a> receives the file extension, and constructs an instance of <code>Magento\Framework\View\TemplateEngineInterface</code> that implements the appropriate template engine.</p>
+
+<table>
+<tbody>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code>create($name)</code>
+      </td>
+      <td>Retrieve a template engine instance by its unique name.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="m2devgde-temp-eng-class-tep">Magento\Framework\View\TemplateEnginePool</h4>
+
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/TemplateEnginePool.php" target="_blank">Magento\Framework\View\TemplateEnginePool</a> maintains the list of all template engines available in the system. It uses the template engine factory to construct a template engine instance upon the first request.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code>get($name)</code>
+      </td>
+      <td>Retrieve a template engine instance by its unique name.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="m2devgde-temp-eng-class-tei">Magento\Framework\View\TemplateEngineInterface</h4>
+
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/TemplateEngineInterface.php" target="_blank">Magento\Framework\View\TemplateEngineInterface</a> defines the <code>render()</code>method. The resulting markup generated by the template engine is not sent directly to the output buffer, but it is returned to the caller.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <pre>
+render(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\Magento\Framework\View\Element\BlockInterface&nbsp;$block,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$templateFile,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array&nbsp;$dictionary&nbsp;=&nbsp;array()&nbsp;
+&nbsp;)
+</pre>
+      </td>
+      <td>
+        <br />Render the specified template in the context of a particular block and with the data provided in<code>$vars</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="m2devgde-temp-eng-class-php">Magento\Framework\View\TemplateEngine\Php</h4>
+
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/TemplateEngine/Php.php" target="_blank">Magento\Framework\View\TemplateEngine\Php</a> handles PHTML files, which use PHP as a templating language. In its <code>render()</code> implementation, it invokes <code>include()</code> to execute the PHP code contained in the template file. This means that PHP code in a template file must be written assuming that it will not be included to the template’s associated block class.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+<pre>
+render(&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BlockInterface&nbsp;$block,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$fileName,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array&nbsp;$dictionary&nbsp;=&nbsp;array())&nbsp;
+      </pre>
+      </td>
+      <td>Include the specified PHTML template using the given block as <code>$this</code> reference, though only public methods are accessible. </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="m2devgde-temp-eng-class-cust">Customize the template rendering subsystem</h2>
+<p>The Magento template rendering subsystem supports the following:</p>
+
+<ul>
+  <li>Your module can introduce a new template engine.</li>
+  <li>You can use PHTML templates together with other kinds of templates.</li>
+  <li>You can embed any block to other blocks regardless of the underlying template engine.</li>
+</ul>
+
+<h2>Add a new template engine</h2>
+<p>To add support for a new template engine:</p>
+
+<ol>
+  <li>Save the template engine code base in your Magento instance directory.</li>
+  <li>Create a new implementation of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/TemplateEngineInterface.php" target="_blank">Magento\Framework\View\TemplateEngineInterface</a>. This class is used to initialize the underlying template engine, and must also implement the <code>render()</code> function responsible for invoking the template engine on the given template file.</li>
+  <li>Register a newly introduced engine class through the DI configuration to process template files of a certain type as follows:</li>
+</ol>
+<pre>
+&lt;config&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;type&nbsp;name=&quot;Magento\Framework\View\TemplateEngineFactory&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;param&nbsp;name=&quot;engines&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;array&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;key=&quot;{template_extension}&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;value&gt;{engine_class}&lt;/value&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/array&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/type&gt;
+&lt;/config&gt;
+</pre>
+
+<p>Where:</p>
+
+<ul>
+  <li><code>{template_extension}</code> is the type of template files, which are to be processed by the template engine. For example, <code>phtml</code></li>
+  <li><code>{engine_class}</code> is the name of the class that implements a template engine</li>
+</ul>
+
+<p>Example of a dependency injection configuration file:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/03378066ca8cc938742d.js"></script>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

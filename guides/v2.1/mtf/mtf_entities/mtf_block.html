@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Entities of the Functional Testing Framework</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/mtf/mtf_entities/mtf_block.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Entities of the Functional Testing Framework</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/mtf_entities/mtf_block.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Testing Framework Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_introduction.html">INTRODUCTION</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_installation.html">INSTALLATION</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_quickstart.html">QUICK START</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_magento.html">Prepare Magento application</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environment.html">Prepare environment for test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/create_test.html">CREATE A TEST</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/out-of-the-box.html">Out-of-the-box test</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/new_test.html">New functional test. Theory</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/create_new_test.html">New functional test. Practice</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_entities.html">ENTITIES</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">Fixture</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html">Fixture Repository</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_handler.html">Handler</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html">Block</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_typified-element.html">Typified element</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">Page</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">Constraint</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">Data set</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_update.html">UPDATE</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/troubleshooting.html">TROUBLESHOOTING</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_changelog.html">CHANGELOG</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_overview.html">Functional testing overview</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2>Block</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#mtf_block_overview">Block overview</a></li>
+  <li><a href="#mtf_block_types">Create block</a>    <ul>
+      <li><a href="#mtf_block_path">How to determine a block name and a path</a>        <ul>
+          <li><a href="#mtf_block_path_ui">Get the name and the path of blocks in UI</a></li>
+          <li><a href="#mtf_block_path_code">Get the name and the path of blocks in the code</a></li>
+        </ul>
+      </li>
+      <li><a href="#mtf_block_class">Block class</a>        <ul>
+          <li><a href="#mtf_block_identifier">Block identifier</a></li>
+          <li><a href="#mtf_block_in_block">Use blocks inside blocks</a></li>
+          <li><a href="#mtf_block_basic">Basic blocks</a></li>
+        </ul>
+      </li>
+      <li><a href="#mtf_block_to-page">Add a block to the page</a>        <ul>
+          <li><a href="#mtf_run_page_gen">Run the page generator</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#mtf_block_mapping">Form mapping</a>    <ul>
+      <li><a href="#mtf_block_map_form_tab">Form tab mapping</a></li>
+      <li><a href="#mtf_block_map_form_tab_merge">Merging form tab mapping files</a></li>
+    </ul>
+  </li>
+  <li><a href="#mtf_block_render">Renders</a>    <ul>
+      <li><a href="#mtf_block_render_handl">How to use renders</a>        <ul>
+          <li><a href="#mtf_block_render_create">Create a render</a></li>
+          <li><a href="#mtf_block_render_use">Use a render</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="mtf_block_overview">Block overview</h2>
+
+<p>In functional tests we use Page Object Design Pattern. Under this pattern, a block is an area of the UI that a test interacts with, and a <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">page</a> is a container for blocks.</p>
+
+<p>The Page Object Design Pattern is used to avoid unnecessary duplication of code and to make tests easier to support.</p>
+
+<p>Block as a class represents a set of methods to manipulate with Magento UI blocks.</p>
+
+<p>A block can have the following features:</p>
+
+<ul>
+  <li>A block can contain other blocks.</li>
+  <li>A block can be used in several pages and blocks.</li>
+</ul>
+
+<p>This topic shows how to create a new block and explore its structure. It discusses how to use mapping for forms in blocks and forms in tabs.</p>
+
+<h2 id="mtf_block_types">Create block</h2>
+
+<p>A basic flow is the following:</p>
+
+<ol>
+  <li>Get name and path of the block you want to test</li>
+  <li>Create block class with logic you need for the tests</li>
+  <li>Add block to the page</li>
+  <li>Run the page generator</li>
+</ol>
+
+<h3 id="mtf_block_path">How to determine a block name and a path</h3>
+
+<p>The block name and path in the Magento functional tests (<code>&lt;magento2&gt;/dev/tests/functional/tests/app</code>) should reflect a corresponding block in the Magento code base for your convenience.
+For example, you develop a functional test for the bundle product creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the <code>.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>, so in the Magento functional tests you can create a new file <code>.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>.</p>
+
+<p>Magento can show you a full class name of the block and path to the PHTML template on the Magento page (changes web page design) or implicitly in the HTML code of the page.</p>
+
+<h4 id="mtf_block_path_ui">Get the name and the path of blocks in UI</h4>
+
+<p>To enable this feature follow:</p>
+
+<ol>
+  <li>Log in to Magento Admin as administrator</li>
+  <li>Follow <strong>STORES &gt; Configuration</strong></li>
+  <li>Change <strong>Store View</strong> to <strong>Main Website</strong> (the template path and block name will only appear for current website)</li>
+  <li>Follow <strong>ADVANCED &gt; Developer</strong></li>
+  <li>Expand the <strong>Debug</strong> tab</li>
+  <li>Set <strong>Template Path Hints</strong> to <strong>Yes</strong></li>
+  <li>Set <strong>Add Block Name to Hints</strong> to <strong>Yes</strong></li>
+  <li><strong>Save Config</strong></li>
+</ol>
+
+<p><img src="/common/images/mtf_bloch_namepath_ui_onoff.png" alt="" /></p>
+
+<p>Now each UI block has hint about its name and path. Also, you can see the path to a PHTML template, where you can find a path to the Magento block, if you cannot find it in the hint.</p>
+
+<p><a href="/common/images/mtf_block_name_path_in_ui.png"><img src="/common/images/mtf_block_name_path_in_ui.png" /></a></p>
+
+<div class="bs-callout bs-callout-tip">
+  <p>If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.</p>
+</div>
+
+<h4 id="mtf_block_path_code">Get the name and the path of blocks in the code</h4>
+
+<p>If you want to change the representation of block details, you can change a <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:</p>
+
+<ul>
+  <li>
+    <p>Open <code>&lt;magento2&gt;/lib/internal/Magento/Framework/View/Element/Template.php</code></p>
+  </li>
+  <li>
+    <p>Find the method</p>
+  </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="cp">&lt;?php</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">_toHtml</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplate</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fetchView</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplateFile</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<ul>
+  <li>Change the code to the following</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">_toHtml</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplate</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getNameInLayout</span><span class="p">();</span>
+    <span class="nv">$template</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplateFile</span><span class="p">();</span>
+    <span class="nv">$class</span> <span class="o">=</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$this</span><span class="p">);</span>
+    <span class="k">return</span> <span class="s2">&quot;&lt;!-- BEGIN </span><span class="si">$name</span><span class="s2"> using </span><span class="si">$template</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">.</span> <span class="nv">$class</span> <span class="o">.</span> <span class="s2">&quot;--&gt;&quot;</span>
+        <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fetchView</span><span class="p">(</span><span class="nv">$template</span><span class="p">)</span>
+        <span class="o">.</span> <span class="s2">&quot;&lt;!-- END </span><span class="si">$name</span><span class="s2"> using </span><span class="si">$template</span><span class="s2"> --&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<ul>
+  <li>Save the file</li>
+</ul>
+
+<p>Now you can inspect any element in a browser, and find which block contains it.</p>
+
+<p><a href="/common/images/mtf_block_name_path_in_code.png"><img src="/common/images/mtf_block_name_path_in_code.png" /></a></p>
+
+<h3 id="mtf_block_class">Block class</h3>
+
+<p>The block class contains all logic you want to apply to the Magento block under test.</p>
+
+<h4 id="mtf_block_identifier">Block identifier</h4>
+
+<p>Each block has an identifier that includes selector and search strategy. This identifier is determined by <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Locator.php">Magento\Mtf\Client\Element\Locator</a> class and is stored in the <code>_rootElement</code> property of the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php">Magento\Mtf\Block\Block</a> class.</p>
+
+<p>You can use the <code>_rootElement</code> to find an element in the current block.</p>
+
+<p>Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code>WidgetInstance.php</code></a> block:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">addLayoutUpdates</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addLayoutUpdates</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<p>This code uses <code>_rootElement</code> to search the button element by the <code>$this-&gt;addLayoutUpdates</code> selector. The advantage of the <code>_rootElement</code> is that it enables search in the context of the block to which the element belongs.</p>
+
+<h4 id="mtf_block_in_block">Use blocks inside blocks</h4>
+
+<p>You can get other blocks in the block using the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/BlockFactory.php"><code>BlockFactory</code></a> class and a selector.</p>
+
+<p>See the following example:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">getTemplateBlock</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
+        <span class="s1">&#39;Magento\Backend\Test\Block\Template&#39;</span><span class="p">,</span>
+        <span class="p">[</span><span class="s1">&#39;element&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">templateBlock</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_XPATH</span><span class="p">)]</span>
+    <span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<p>In this code we are creating the <code>Magento\Backend\Test\Block\Template</code> block with the selector <code>$this-&gt;templateBlock</code>.</p>
+
+<h4 id="mtf_block_basic">Basic blocks</h4>
+
+<p>Magento contains basic blocks for the functional testing with a logic that you can reuse. The most popular are the following:</p>
+
+<ul>
+  <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php">Magento\Mtf\Block\Block</a></li>
+  <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php">Magento\Mtf\Block\Form</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php">Magento\Backend\Test\Block\Widget\Tab</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php">Magento\Backend\Test\Block\Widget\FormTabs</a></li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php">Magento\Backend\Test\Block\Widget\Grid</a></p>
+  </li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php">Magento\Ui\Test\Block\Adminhtml\DataGrid</a></li>
+</ul>
+
+<p>For example, <a href="https://github.com/magento/magento2/blob/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php"><code>WidgetGrid.php</code></a>. This block simply reuses methods of <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php"><code>Magento\Backend\Test\Block\Widget\Grid</code></a> class.</p>
+
+<h3 id="mtf_block_to-page">Add a block to the page</h3>
+
+<p>Blocks are tested as part of the <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">page</a> object. To add the block to the page you must add a corresponding node to the XML file of the page object.</p>
+
+<p>For example, the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.</p>
+
+<p><code>block</code> is the node that adds the block to the page:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;WidgetInstanceIndex&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;admin/widget_instance/index&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Widget&quot;</span><span class="nt">&gt;</span>
+        ...
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;widgetGrid&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid&quot;</span> <span class="na">locator=</span><span class="s">&quot;#widgetInstanceGrid&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+        ...
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<div>
+
+  <p>See the <code>block</code> node attributes details in the following table:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th><code>block</code> attribute</th>
+        <th>Description</th>
+        <th>Is required</th>
+        <th>Values</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>name</code></td>
+        <td>Name of the block</td>
+        <td>Required</td>
+        <td>Unique in the page. The method to get the block class instance is generated using this value.</td>
+        <td><code>widgetGrid</code></td>
+      </tr>
+      <tr>
+        <td><code>class</code></td>
+        <td>Full name of the block class</td>
+        <td>Required</td>
+        <td>Class name</td>
+        <td><code>Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid</code></td>
+      </tr>
+      <tr>
+        <td><code>locator</code></td>
+        <td>CSS selector or XPath locator of the block</td>
+        <td>Required</td>
+        <td><a href="http://www.w3.org/TR/selectors/">CSS Selectors</a>, <a href="http://www.w3.org/TR/xpath-31/">XPath</a></td>
+        <td>CSS: <code>#widgetInstanceGrid</code>, XPath: <code>//*[@id="widgetInstanceGrid"]</code></td>
+      </tr>
+      <tr>
+        <td><code>strategy</code></td>
+        <td>Selector strategy</td>
+        <td>Required</td>
+        <td><code>css selector</code> or <code>xpath</code></td>
+        <td><code>css selector</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h4 id="mtf_run_page_gen">Run the page generator</h4>
+
+<p>To apply all changes you've made to the page (XML file), run the class generator.</p>
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php</code></pre>
+<p>The page will be updated in the <code>&lt;magento2&gt;/dev/tests/functional/generated</code> directory.</p>
+
+<h2 id="mtf_block_mapping">Form mapping</h2>
+
+<p>Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (<abbr title="Functional Testing Framework">FTF</abbr>) has a <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php">Magento\Mtf\Block\Form</a> class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the <abbr title="Functional Testing Framework">FTF</abbr> we call this process “a mapping”. You can use mapping to transfer data to the block from the <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>.</p>
+
+<p>A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.</p>
+
+<p>Let’s see the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Block/Form/Login.php">Customer Login</a> block. The block has two input fields: <code>email</code> and <code>password</code>.</p>
+
+<p><a href="/common/images/mtf_block_login_ui.png"><img src="/common/images/mtf_block_login_ui.png" /></a></p>
+
+<p>The mapping file for the block is stored in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml</code>, along with the block.</p>
+
+<p><img src="/common/images/mtf_block_login_dir.png" /></p>
+
+<p>The mapping file defines the fields from the form.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;mapping</span> <span class="na">strict=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;wrapper&gt;</span>login<span class="nt">&lt;/wrapper&gt;</span>
+    <span class="nt">&lt;fields&gt;</span>
+        <span class="nt">&lt;email&gt;</span>
+            <span class="nt">&lt;selector&gt;</span>[name=&#39;login[username]&#39;]<span class="nt">&lt;/selector&gt;</span>
+        <span class="nt">&lt;/email&gt;</span>
+        <span class="nt">&lt;password</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fields&gt;</span>
+<span class="nt">&lt;/mapping&gt;</span></code></pre></div>
+
+<p id="mtf_block_form_xml_nodes">See a description of the nodes in the following table.</p>
+
+<table><tbody>
+<tr><th>Node </th><th>Description </th><th>Value from example</th></tr>
+<tr><td><code>mapping</code> </td><td>Root node with a <code>strict</code> attribute. If <code>strict</code> equals <code>0</code>, then all the fixture field data must be entered in the block form. If <code>strict</code> equals <code>1</code>, then only the mapping file fields data must be entered in the block form. </td><td><code>"1"</code>. <i>Only</i> the <i>mapping</i> file fields data <i>must</i> be entered in the block form.</td></tr>
+<tr><td><code>wrapper</code> </td><td>Automatically adds <code>group_name</code> to the selector of the field, when <code>selector</code> has not been specified. </td><td><code>login</code></td></tr>
+<tr><td><code>fields</code> </td><td>The node containing mapping fields. </td><td><code>&lt;email&gt;</code>, <code>&lt;password /&gt;</code>.</td></tr>
+<tr><td><code>selector</code> </td><td>Value for the selector that is used to find the field. Default: <code>[name='group_name[field_node_name]']</code>. Default value is assigned automatically if the node is absent in the field. </td><td>For the <code>&lt;email&gt;</code>, the <code>[name='login[username]']</code>.<br /> For the <code>&lt;password /&gt;</code>, the <code>[name='login[password]']</code> that is the default value where <code>wrapper="login"</code>.</td></tr>
+<tr><td><code>strategy</code> </td><td>The strategy of the selection. Available values: <code>css selector</code>, <code>xpath</code>. Default: <code>css selector</code>. </td><td><code>css selector</code> as a default value.</td></tr>
+<tr><td><code>input</code> </td><td>Type of the input element. Available values: <ul><li><code>select</code></li> <li><code>checkbox</code></li> <li><a href="/guides/v2.1/mtf/mtf_entities/mtf_typified-element.html">&lt;typified element&gt;</a></li> <li><code>simple</code></li></ul> <code>simple</code> is for simple input element. Default: <code>simple</code>. Do not use <code>class</code> node, if you use <code>input</code> in the field. </td><td><code>simple</code> as a default value.</td></tr>
+<tr><td><code>class</code> </td><td>Class of the element. Applicable if non of the <code>input</code> options fits. Do not use <code>input</code>, if you use <code>class</code> in the field. </td><td>This node has not been used in the example.</td></tr>
+</tbody></table>
+
+<p>All nodes are optional. Default value is assigned automatically if a node (<code>selector</code>, <code>strategy</code>, <code>input</code>) is absent in the <code>field</code>.</p>
+
+<p>The general structure of the form mapping file:</p>
+
+<p><img src="/common/images/mtf_block_map_form_xml.png" /></p>
+
+<h3 id="mtf_block_map_form_tab">Form tab mapping</h3>
+
+<p>You can use mapping for the forms on tabs (a form tab) that enables you to automate switching between tabs and entering the data.
+To get the block class with form tab mapping, extend your class from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php"><code>Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.</p>
+
+<p>For example, let’s see tabs for the Magento Widget: <strong>Settings</strong>, <strong>Storefront properties</strong>, <strong>Frontend App Options</strong>, <strong>Layout Updates</strong> .</p>
+
+<p><img src="/common/images/mtf_block_tabs_ui.png" /></p>
+
+<p>Four tabs are mapped in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml</code> file, which is stored along with the block class. </p>
+
+<p><img src="/common/images/mtf_block_tab_struc.png" /></p>
+
+<p>The file contains the following mapping:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;tabs&gt;</span>
+    <span class="nt">&lt;settings&gt;</span>
+        <span class="nt">&lt;class&gt;</span>\Magento\Widget\Test\Block\Adminhtml\Widget\Instance\Edit\Tab\Settings<span class="nt">&lt;/class&gt;</span>
+        <span class="nt">&lt;selector&gt;</span>#widget_instace_tabs_settings_section<span class="nt">&lt;/selector&gt;</span>
+        <span class="nt">&lt;strategy&gt;</span>css selector<span class="nt">&lt;/strategy&gt;</span>
+        <span class="nt">&lt;fields&gt;</span>
+            <span class="nt">&lt;code&gt;</span>
+                <span class="nt">&lt;input&gt;</span>select<span class="nt">&lt;/input&gt;</span>
+            <span class="nt">&lt;/code&gt;</span>
+            <span class="nt">&lt;theme_id&gt;</span>
+                <span class="nt">&lt;input&gt;</span>select<span class="nt">&lt;/input&gt;</span>
+            <span class="nt">&lt;/theme_id&gt;</span>
+        <span class="nt">&lt;/fields&gt;</span>
+    <span class="nt">&lt;/settings&gt;</span>
+    <span class="nt">&lt;frontend_properties&gt;</span>
+        <span class="nt">&lt;class&gt;</span>\Magento\Backend\Test\Block\Widget\Tab<span class="nt">&lt;/class&gt;</span>
+        <span class="nt">&lt;selector&gt;</span>#widget_instace_tabs_main_section<span class="nt">&lt;/selector&gt;</span>
+        <span class="nt">&lt;strategy&gt;</span>css selector<span class="nt">&lt;/strategy&gt;</span>
+        <span class="nt">&lt;fields&gt;</span>
+            <span class="nt">&lt;title</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;store_ids&gt;</span>
+                <span class="nt">&lt;input&gt;</span>multiselectgrouplist<span class="nt">&lt;/input&gt;</span>
+                <span class="nt">&lt;selector&gt;</span>[id=&quot;store_ids&quot;]<span class="nt">&lt;/selector&gt;</span>
+            <span class="nt">&lt;/store_ids&gt;</span>
+        <span class="nt">&lt;/fields&gt;</span>
+    <span class="nt">&lt;/frontend_properties&gt;</span>
+    <span class="nt">&lt;widget_options&gt;</span>
+        <span class="nt">&lt;class&gt;</span>\Magento\Widget\Test\Block\Adminhtml\Widget\Instance\Edit\Tab\Parameters<span class="nt">&lt;/class&gt;</span>
+        <span class="nt">&lt;selector&gt;</span>#widget_instace_tabs_properties_section<span class="nt">&lt;/selector&gt;</span>
+        <span class="nt">&lt;strategy&gt;</span>css selector<span class="nt">&lt;/strategy&gt;</span>
+    <span class="nt">&lt;/widget_options&gt;</span>
+    <span class="nt">&lt;widget_instance&gt;</span>
+        <span class="nt">&lt;class&gt;</span>\Magento\Widget\Test\Block\Adminhtml\Widget\Instance\Edit\Tab\WidgetInstance<span class="nt">&lt;/class&gt;</span>
+        <span class="nt">&lt;selector&gt;</span>#widget_instace_tabs_main_section<span class="nt">&lt;/selector&gt;</span>
+        <span class="nt">&lt;strategy&gt;</span>css selector<span class="nt">&lt;/strategy&gt;</span>
+    <span class="nt">&lt;/widget_instance&gt;</span>
+<span class="nt">&lt;/tabs&gt;</span></code></pre></div>
+
+<p>See the following table to understand the node’s purpose.</p>
+
+<table>
+<col width="1*" />
+<col width="3*" />
+<tbody>
+<tr><th><code>tabs</code> nodes </th><th>Description</th></tr>
+<tr><td><code>wrapper</code> </td><td>Automatically adds <code>group_name</code> to the <code>selector</code> of the field, when <code>selector</code> has not been specified.</td></tr>
+<tr><td><code>class</code> </td><td>Reference to the class that handles tab’s behavior.</td></tr>
+<tr><td><code>selector</code> </td><td>Identifier for the selector of the tab in the HTML code, used to open the tab.</td></tr>
+<tr><td><code>strategy</code> </td><td>Strategy of the selector. Can be <code>css selector</code> or <code>xpath</code>.</td></tr>
+<tr><td><code>fields</code> </td><td>List of fields with parameters, that are the same as in the <a href="#mtf_block_form_xml_nodes">form mapping</a>. Also field in tab can include more then one field, in this case add <code>field</code> attribute <code>composite="1"</code>.</td></tr>
+</tbody>
+</table>
+
+<p>Example of <code>composite</code> field from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml">ProductForm.xml</a>:</p>
+
+<p>In the mapping file: </p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;quantity_and_stock_status</span> <span class="na">composite=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;qty&gt;</span>
+        <span class="nt">&lt;selector&gt;</span>[name=&quot;product[quantity_and_stock_status][qty]&quot;]<span class="nt">&lt;/selector&gt;</span>
+    <span class="nt">&lt;/qty&gt;</span>
+    <span class="nt">&lt;is_in_stock&gt;</span>
+        <span class="nt">&lt;selector&gt;</span>[name=&quot;product[quantity_and_stock_status][is_in_stock]&quot;]<span class="nt">&lt;/selector&gt;</span>
+        <span class="nt">&lt;input&gt;</span>select<span class="nt">&lt;/input&gt;</span>
+    <span class="nt">&lt;/is_in_stock&gt;</span>
+<span class="nt">&lt;/quantity_and_stock_status&gt;</span></code></pre></div>
+
+<p>On the UI:</p>
+
+<p><img src="/common/images/mtf_block_tab_composite_ui.png" alt="Example of `composite` field" /></p>
+
+<p>The general structure of the form tab mapping file:</p>
+
+<p><img src="/common/images/mtf_block_map_form_tab_xml.png" /></p>
+
+<h3 id="mtf_block_map_form_tab_merge">Merging form tab mapping files</h3>
+
+<p>When you test a module that extends the functionality of the other module by adding a tab to the testing module entity, you can merge their form tab mapping files.</p>
+
+<p>The form tab mapping files that have the same name and path inside different modules are merged automatically.</p>
+
+<p>Form tab mapping files in the following example will be merged automatically:</p>
+
+<p><img src="/common/images/mtf_block_formtab_merge.png" /></p>
+
+<h2 id="mtf_block_render">Renders</h2>
+
+<p>Renders help to unify a polymorphic behavior of the block. If you want to test the functionality of the object, which behavior differs depending on the type of the object, you can create a separate class for each type and call the corresponding class using render.</p>
+
+<h3 id="mtf_block_render_handl">How to use renders</h3>
+
+<p><strong>Use case</strong>: We want to test the “Add to cart” functionality. To add different types of products, we need to configure each type in a different way. For the configuration, we need options of the type we want to configure. We can use render to get product options. Render specifies which class to use for the specific type of product.</p>
+
+<p>Let’s see the <code>Catalog/Test/Page/Product/CatalogProductView.xml</code> page. For the better readability we reduced a list of blocks to one block.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogProductView&quot;</span> <span class="na">area=</span><span class="s">&quot;Product&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/product/view&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;viewBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Product\View&quot;</span> <span class="na">locator=</span><span class="s">&quot;#maincontent&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">/&gt;</span>        
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>This page relates to the Magento_Catalog module and contains <code>ViewBlock</code>. This block has reference to the <code>Magento\Catalog\Test\Block\Product\View.php</code> class, that is responsible to enter data in Product form fields. But different types of products, such as bundle, each have their own <code>ViewBlock</code> in a corresponding module. And that is where you can use render!</p>
+
+<h4 id="mtf_block_render_create">Create a render</h4>
+<p>Let’s create render for the bundle product.</p>
+
+<p><strong>Step 1</strong>. Create <code>Bundle/Test/Page/Product/CatalogProductView.xml</code> page to merge with the basic page <code>Catalog/Test/Page/Product/CatalogProductView.xml</code>. <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html#mtf_page_merge">Learn more about page merging</a>.</p>
+
+<p><strong>Step 2</strong>. In the <code>Bundle/Test/Page/Product/CatalogProductView.xml</code>, copy <code>page</code> node from the <code>Catalog/Test/Page/Product/CatalogProductView.xml</code> without <code>module</code> attribute</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogProductView&quot;</span> <span class="na">area=</span><span class="s">&quot;Product&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/product/view&quot;</span><span class="nt">&gt;</span>
+                
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p><strong>Step 3</strong>. Insert <code>block</code> with the same name of block and add a render that indicates the type of product and the class that processes this block</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogProductView&quot;</span> <span class="na">area=</span><span class="s">&quot;Product&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/product/view&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;viewBlock&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;render</span> <span class="na">name=</span><span class="s">&quot;bundle&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Bundle\Test\Block\Catalog\Product\View&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/block&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>Details:</p>
+
+<ul>
+  <li>The PHP class for the page will be generated in the Magento_Catalog module, because we did not mention module attribute in the <code>page</code> node</li>
+  <li>In the <code>block</code>, we indicate <code>name</code> attribute only</li>
+</ul>
+
+<p><strong>Step 4</strong>. Run the page generator</p>
+
+<p>To apply all changes you've made to the page (XML file), run the class generator.</p>
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php</code></pre>
+<p>The page will be updated in the <code>&lt;magento2&gt;/dev/tests/functional/generated</code> directory.</p>
+
+<h4 id="mtf_block_render_use">Use a render</h4>
+
+<p>In the following example we have used the render to call the <code>getOptions()</code> method from <code>Magento\Bundle\Test\Block\Catalog\Product\View.php</code>.</p>
+
+<p>Let’s take a look at the basic class <code>Magento\Catalog\Test\Block\Product\View.php</code>.</p>
+
+<div class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="cp">&lt;?php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">getOptions</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$product</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="sd">/** @var CatalogProductSimple $product */</span>
+    <span class="nv">$dataConfig</span> <span class="o">=</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getDataConfig</span><span class="p">();</span>
+    <span class="nv">$typeId</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$dataConfig</span><span class="p">[</span><span class="s1">&#39;type_id&#39;</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$dataConfig</span><span class="p">[</span><span class="s1">&#39;type_id&#39;</span><span class="p">]</span> <span class="o">:</span> <span class="k">null</span><span class="p">;</span>
+    
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hasRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">)</span>
+        <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">,</span> <span class="s1">&#39;getOptions&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;product&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">])</span>
+        <span class="o">:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomOptionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<p>It contains the <code>getOptions()</code> method that:</p>
+
+<ul>
+  <li>
+    <p>Gets from the <code>Bundle/Test/Fixture/BundleProduct.php</code> fixture the <code>type_id</code> field value - <code>$dataConfig['type_id']</code>. In our case, <code>type_id='bundle'</code>.</p>
+  </li>
+  <li>
+    <p>Calls the <code>hasRender()</code> method to check if there is a render with the name <code>bundle</code></p>
+  </li>
+  <li>
+    <p>Calls the render if there is a render with the name <code>bundle</code></p>
+  </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">,</span> <span class="s1">&#39;getOptions&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;product&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">])</span></code></pre></div>
+
+<ul>
+  <li>Calls a default method if the render is absent</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomOptionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span></code></pre></div>
+
+<!-- LINK DEFINITIONS -->
+
+<!-- ABBREVIATIONS -->
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

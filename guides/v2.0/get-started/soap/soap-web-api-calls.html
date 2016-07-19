@@ -39,11 +39,29 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/guides/v2.0/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/guides/v2.0/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
 		</div><!-- #global-nav -->
 	</nav>
 
@@ -60,8 +78,9 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
             </ul>
          </li>
          <li class="first">
@@ -77,18 +96,15 @@
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a>
-   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-<li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
-               <div class="divider"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
                <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
@@ -149,12 +165,13 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Consuming Services via SOAP</h1>
-			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/get-started/soap/soap-web-api-calls.md" target="_blank">Edit this page on GitHub</a>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/get-started/soap/soap-web-api-calls.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
 </section>
+
 
 <div class="container">
 
@@ -283,10 +300,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -342,10 +359,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -393,10 +410,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -428,10 +445,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -530,8 +547,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-
-      <p align="right"><i>Updated: 27 April 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2 id="wsdl">WSDL File</h2>
 
 <p>A WSDL file is generated only for services that you request. This means that different clients may use different services and therefore use different WSDLs.</p>
@@ -626,12 +642,9 @@
         <span class="p">);</span>
 <span class="nv">$wsdlUrl</span> <span class="o">=</span> <span class="s1">&#39;http://magento.ll/soap/default?wsdl=1&amp;services=testModule1AllSoapAndRestV1&#39;</span><span class="p">;</span>
 <span class="nv">$serviceArgs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">);</span>
- 
-<span class="nv">$soapClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Zend\Soap\Client</span><span class="p">(</span><span class="nv">$wsdlUrl</span><span class="p">);</span>
-<span class="nv">$soapClient</span><span class="o">-&gt;</span><span class="na">setSoapVersion</span><span class="p">(</span><span class="nx">SOAP_1_2</span><span class="p">);</span>
- 
+
 <span class="nv">$context</span> <span class="o">=</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$opts</span><span class="p">);</span>
-<span class="nv">$soapClient</span><span class="o">-&gt;</span><span class="na">setStreamContext</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
+<span class="nv">$soapClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SoapClient</span><span class="p">(</span><span class="nv">$wsdlUrl</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;version&#39;</span> <span class="o">=&gt;</span> <span class="nx">SOAP_1_2</span><span class="p">,</span> <span class="s1">&#39;context&#39;</span> <span class="o">=&gt;</span> <span class="nv">$context</span><span class="p">]);</span>
  
 <span class="nv">$soapResponse</span> <span class="o">=</span> <span class="nv">$soapClient</span><span class="o">-&gt;</span><span class="na">testModule1AllSoapAndRestV1Item</span><span class="p">(</span><span class="nv">$serviceArgs</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
@@ -665,7 +678,9 @@
         <div id="magento-com">
             <div class="container">
                 <div id="f-col-1">
-                    <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento Commerce" /></a>
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
                     <ul class="nav">
                         <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
                         <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
@@ -770,7 +785,7 @@
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/js/app.js"></script>
 
 
 <!--Google Custom Search-->

@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Construct a request</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/get-started/gs-web-api-request.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Construct a request</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/get-started/gs-web-api-request.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Getting Started with Web APIs</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/get-started/bk-get-started-api.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API functional testing</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/get-started/authentication/gs-authentication.html">Authentication</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/get-started/authentication/gs-authentication-token.html">Token-based authentication</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/get-started/authentication/oauth-errors.html">OAuth error codes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/get-started/authentication/gs-authentication-session.html">Session-based authentication</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/get-started/rest_front.html">REST Overview</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/get-started/gs-web-api-request.html">Construct a request</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/get-started/gs-curl.html">Use cURL to run the request</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/get-started/gs-web-api-response.html">Review the response</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/get-started/soap/soap-front.html">SOAP Overview</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/get-started/soap/soap-web-api-calls.html">Consuming Services</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<p>To configure a web API, developers define some of the elements of each API call in the <code>&lt;module root dir&gt;/vendor/&lt;vendor-name&gt;/&lt;module-name&gt;/etc/webapi.xml</code> file, where <code>&lt;vendor-name&gt;</code> is your vendor name (for example, <code>magento</code>) and <code>&lt;module-name&gt;</code> is your module name (which exactly matches its definition in <code>composer.json</code>). For example, the web API for the Customer service is defined in the <code>&lt;your Magento install dir&gt;/vendor/magento/module-customer/etc/webapi.xml</code> configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.</p>
+
+<p>To construct a web API request, read these topics:</p>
+<ul>
+<li><a href="#request-overview">Overview</a></li>
+<li><a href="#construct-request">Construct a request</a></li>
+<li><a href="#customers-search-api-request-example">Customers Search API Request Example</a></li>
+</ul>
+
+<h2 id="request-overview">Overview</h2>
+
+<p>Each Magento web API call contains of a combination of these elements:</p>
+<ul>
+   <li><a href="#verbs">HTTP verb</a></li>
+   <li><a href="#endpoints">Endpoint</a></li>
+   <li><a href="#http-headers">HTTP headers</a></li>
+   <li><a href="#payload">Call payload</a></li>
+</ul>
+<p>The following table and the sections that follow the table describe these API call elements:</p>
+<table style="width:75%">
+   <tr bgcolor="lightgray">
+      <th>Element</th>
+      <th>Specifies</th>
+   </tr>
+   <tr>
+      <td>
+         <p><a href="#verbs">HTTP&nbsp;verb</a></p>
+      </td>
+      <td>
+         <p>The action to perform against the endpoint.</p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><a href="#endpoints">Endpoint</a></p>
+      </td>
+      <td>
+         <p>A combination of the <i>server</i> that fulfills a request, the web service, and the <i>resource</i> against which the request is being made.</p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><a href="#http-headers">HTTP&nbsp;headers</a></p>
+      </td>
+      <td>
+         <p>The authentication token, the call request and response formats,
+            and other information.
+         </p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><a href="#payload">Call&nbsp;payload</a></p>
+      </td>
+      <td>
+         <p>A set of input parameters and attributes that you supply with the request.
+            API operations have both
+            <em>required</em> and
+            <em>optional</em> inputs. You specify input parameters in the URI and input attributes in a request body. You can specify a JSON- or XML-formatted request body.
+         </p>
+      </td>
+   </tr>
+</table>
+<p><a name="verbs"></a></p>
+<h3>HTTP verb</h3>
+<p>Specify one of these HTTP verbs in the request:</p>
+<ul>
+   <li><code>GET</code>.
+   Requests transfer of a current representation of the
+      target resource. If you omit the verb, <code>GET</code> is the default.
+   </li>
+   <li><code>PUT</code>.
+   Requests that the state of the target resource be
+      created or replaced with the state defined by the representation
+      enclosed in the request message payload.
+   </li>
+   <li><code>POST</code>.
+   Requests that the origin server accept the
+      representation enclosed in the request as data to be processed by the
+      target resource.
+   </li>
+   <li><code>DELETE</code>.
+   Requests that the origin server delete the target
+      resource.
+   </li>
+</ul>
+<p><a name="endpoints"></a></p>
+<h3>Endpoint</h3>
+<p>An endpoint is a combination of the <i>server</i> that fulfills a request, the web service, the <i>resource</i> against which the request is being made, and any template parameters.</p>
+
+<p>For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is <code>magento.ll/index.php/</code>, the web service is <code>rest</code>, the resource is <code>/V1/customerGroups</code>, and the template parameter is <code>id</code>.</p>
+
+<p><a name="http-headers"></a></p>
+<h3>HTTP headers</h3>
+<div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
+<p>Specify one or more of the following HTTP headers
+   in your web API calls:</p>
+<table style="width:100%">
+   <tr bgcolor="lightgray">
+      <th>HTTP header</th>
+      <th>Description</th>
+      <th>Syntax</th>
+   </tr>
+   <tr>
+      <td>
+         <pre>Authorization</pre>
+      </td>
+      <td><p>Required. Specifies the authentication token that proves you as the owner of a Magento
+         account. You specify the token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP authorization scheme.
+         </p>
+      </td>
+      <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
+      <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
+See <a href="/guides/v2.1/get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
+   </tr>
+   <tr>
+      <td><pre>Accept</pre>
+      </td>
+      <td><p>Optional. Specifies the format of the response body. Default is <code>JSON</code>.</p></td>
+      <td>
+      <pre>Accept: application/&lt;FORMAT&gt;</pre>
+      <p>Where
+         <code>&lt;FORMAT&gt;</code> is either
+         <code>JSON</code>or
+         <code>XML</code>.</p>
+         <p>If you omit this header, the response is returned in JSON format.</p></td>
+   </tr>
+   <tr>
+      <td>
+         <p>
+            <code>Content-Type</code>
+         </p>
+      </td>
+      <td><p>Required for operations with a request body. Specifies the format of the request body.</p></td>
+      <td>
+     <pre>Content-Type:application/&lt;FORMAT&gt;</pre>
+     <p>Where
+         <code>&lt;FORMAT&gt;</code>is either
+         <code>JSON</code>or
+         <code>XML</code>.
+      </p></td>
+   </tr>
+</table>
+
+<p><a name="payload"></a></p>
+<h3>Call payload</h3>
+<p>The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request.
+            API operations have both
+            <em>required</em> and
+            <em>optional</em> inputs.</p>
+<p>You specify input parameters in the URI. For example, in the <code>GET&nbsp;/V1/customers/:customerId</code> URI, you must specify the <code>customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
+<p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code>POST&nbsp;/V1/customers</code> call, you must specify a request body like this:</p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;customers&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;customer&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;defaultShipping&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&quot;defaultBilling&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;regionCode&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;regionId&quot;</span><span class="p">:</span> <span class="mi">12</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;90001&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Zoe Ave&quot;</span><span class="p">],</span>
+                <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;555-000-00-00&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;countryId&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>This JSON-formatted request body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
+
+<h2 id="construct-request">Construct a request</h2>
+<p>This example shows you how to construct a REST web API call to create an account.</p>
+
+<ol><li>Open the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file.</li>
+<li><p>Find the route element that defines the <code>createAccount</code> call:</p>
+<pre>
+&lt;route url="/V1/customers" method="POST"&gt;
+    &lt;service class="Magento\Customer\Api\AccountManagementInterface" method="createAccount"/&gt;
+    &lt;resources&gt;
+        &lt;resource ref="anonymous"/&gt;
+    &lt;/resources&gt;
+&lt;/route&gt;
+</pre>
+</li>
+<li><p>Use the <code>method</code> and <code>url</code> values on the <code>route</code> element to construct the URI.</p><p>In this example, the URI is:</p>
+<pre>POST /V1/customers</pre></li>
+<li><p>Use the <code>class</code> attribute on the <code>service</code> element to identify the service interface.</p>
+<p>In this example, the service interface is the <code>AccountManagementInterface</code> PHP file.</p>
+<p>Open the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Api/AccountManagementInterface.php" target="_blank">AccountManagementInterface.php</a> file and find the <code>createAccount</code> method, as follows:</p>
+<pre>public function createAccount(
+        \Magento\Customer\Api\Data\CustomerInterface $customer,
+        $password = null,
+        $redirectUrl = ''
+    );</pre>
+<p>The <code>createAccount</code> call requires a <code>customer</code> data object. The <code>password</code> and <code>redirectUrl</code> values are optional. The default <code>password</code> value is <code>null</code> and the default <code>redirectUrl</code> value is blank.</p>
+</li>
+<li><p>To pass the <code>customer</code> data object in the POST call payload, specify a <a href="http://www.json.com/" target="_blank">JSON</a> or XML request body on the call.</p></li>
+</ol>
+
+<h3 id="customers-search-api-request-example">Customers Search API Request Example</h3>
+<p>The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.</p>
+<ol>
+<li><p>Prepare <code>Authorization</code>, <code>Accept</code> and <code>Content-Type</code> headers to be passed to a request object. Use the Authorization token returned by the Magento token service.</p></li>
+<pre>
+$token = 'token';
+$httpHeaders = new \Zend\Http\Headers();
+$httpHeaders-&gt;addHeaders([
+   'Authorization' =&gt; 'Bearer ' . $token,
+   'Accept' =&gt; 'application/json',
+   'Content-Type' =&gt; 'application/json'
+]);
+</pre>
+<li><p>Open the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
+<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="http://devdocs.magento.com/guides/v2.0/get-started/usage.html" target="_blank">searchCriteria usage</a>.</p></li>
+<pre>
+$request = new \Zend\Http\Request();
+$request-&gt;setHeaders($httpHeaders);
+$request-&gt;setUri('http://magento.ll/rest/V1/customers/search');
+$request-&gt;setMethod(\Zend\Http\Request::METHOD_GET);
+
+$params = new \Zend\Stdlib\Parameters([
+   'searchCriteria' =&gt; '*'
+]);
+$request-&gt;setQuery($params);
+</pre>
+<li><p>Prepare a HTTP Curl client object and pass the request object to <code>Client::send()</code> method.</p></li>
+<pre>
+$client = new \Zend\Http\Client();
+$options = [
+   'adapter'   =&gt; 'Zend\Http\Client\Adapter\Curl',
+   'curloptions' =&gt; [CURLOPT_FOLLOWLOCATION =&gt; true],
+   'maxredirects' =&gt; 0,
+   'timeout' =&gt; 30
+];
+$client-&gt;setOptions($options);
+
+$response = $client-&gt;send($request);
+</pre>
+<li><p>This request returns a list of all customers in JSON format. You can also specify XML format by changing <code>Accept</code> header of the request.</p></li>
+</ol>
+
+<h2>Next step</h2>
+<p>Run the web API call through a <a href="/guides/v2.1/get-started/gs-curl.html">cURL command</a> or a REST client.</p>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Create a test in the Functional Testing Framework</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/mtf/create_test/create_new_test.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Create a test in the Functional Testing Framework</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/create_test/new_test.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Testing Framework Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_introduction.html">INTRODUCTION</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_installation.html">INSTALLATION</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_quickstart.html">QUICK START</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_magento.html">Prepare Magento application</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environment.html">Prepare environment for test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/create_test.html">CREATE A TEST</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/out-of-the-box.html">Out-of-the-box test</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/new_test.html">New functional test. Theory</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/mtf/create_test/create_new_test.html">New functional test. Practice</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_entities.html">ENTITIES</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">Fixture</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html">Fixture Repository</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_handler.html">Handler</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html">Block</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_typified-element.html">Typified element</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">Page</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">Constraint</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">Data set</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_update.html">UPDATE</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/troubleshooting.html">TROUBLESHOOTING</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_changelog.html">CHANGELOG</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_overview.html">Functional testing overview</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2>New functional test: Practice</h2>
+
+<p>To demonstrate the usage of test components from previous sections in the test creation process, we will create a new functional <a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">injectable test</a> step-by-step. Before creating automated test, try to pass it manually.</p>
+
+<p>To make the documentation more consistent, we created a completely new test specially for this tutorial. We used the <a href="https://github.com/magento/magento2/tree/a9797cd9c7bc7ac8460dba3fea8548741be1cccd">concrete Magento commit</a> functionality for this test. You can <a href="/guides/v2.1/install-gde/prereq/dev_install.html">install one</a> and try to follow this guide.</p>
+
+<h3>Contents</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#example-test-description">Test description</a></li>
+  <li><a href="#manual-test">Manual testing scenario</a></li>
+  <li><a href="#auto-test">Automated testing scenario</a></li>
+  <li><a href="#test-creation">Test creation</a>    <ul>
+      <li><a href="#check-mtf">Step 1. Check the <abbr title="Functional Testing Framework">FTF</abbr> configuration and environment</a></li>
+      <li><a href="#create-test-object">Step 2. Create the testing object - a fixture</a></li>
+      <li><a href="#create-init-test-case">Step 3. Create the initial test case</a></li>
+      <li><a href="#create-data-set">Step 4. Create the data set</a></li>
+      <li><a href="#create-pages">Step 5. Create the pages</a></li>
+      <li><a href="#create-blocks">Step 6. Create the blocks</a></li>
+      <li><a href="#add-blocks-to-pages">Step 7. Add the blocks to pages</a></li>
+      <li><a href="#define-test-method">Step 8. Define the <code>test()</code> method</a></li>
+      <li><a href="#step-9-check-the-test-run">Step 9. Check the test run</a></li>
+      <li><a href="#create-assertion">Step 10. Create the assertion</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="example-test-description">Test description</h3>
+
+<p>Create a synonym group (synonyms are a way to expand the scope of eligible matching products) with:</p>
+
+<ul>
+  <li>Scope:
+    <ul>
+      <li>All Websites</li>
+      <li>All Store Views</li>
+      <li>Default Store View</li>
+    </ul>
+  </li>
+  <li>Synonyms: shoes, foot wear, men shoes, women shoes.</li>
+</ul>
+
+<h3 id="manual-test">Manual testing scenario</h3>
+
+<p><strong>Variation 1:</strong></p>
+
+<ol>
+  <li>Log in to Admin.</li>
+  <li>Browse to “Marketing” &gt; “SEO &amp; Search” &gt; “Search Synonyms”.</li>
+  <li>Click the “New Synonyms Group” button.</li>
+  <li>Enter data in the “Synonyms” field.</li>
+  <li>Click the “Save Synonym Group” button.</li>
+  <li>Verify the synonym group saved successfully</li>
+</ol>
+
+<p><strong>Variation 2:</strong></p>
+
+<ol>
+  <li>Log in to Admin.</li>
+  <li>Browse to “Marketing” &gt; “SEO &amp; Search” &gt; “Search Synonyms”.</li>
+  <li>Click the “New Synonyms Group” button.</li>
+  <li>Select “All Store Views” in a “Scope” field.</li>
+  <li>Enter data in the “Synonyms” field.</li>
+  <li>Click the “Save Synonym Group” button.</li>
+  <li>Verify the synonym group saved successfully</li>
+</ol>
+
+<p><strong>Variation 3:</strong></p>
+
+<ol>
+  <li>Log in to Admin.</li>
+  <li>Browse to “Marketing” &gt; “SEO &amp; Search” &gt; “Search Synonyms”.</li>
+  <li>Click the “New Synonyms Group” button.</li>
+  <li>Select “Default Store View” in a “Scope” field.</li>
+  <li>Enter data in the “Synonyms” field.</li>
+  <li>Click the “Save Synonym Group” button.</li>
+  <li>Verify the synonym group saved successfully</li>
+</ol>
+
+<h3 id="auto-test">Automated testing scenario</h3>
+
+<ol>
+  <li>Log in to Admin.</li>
+  <li>Open the Search Synonym page.</li>
+  <li>Click the “New Synonym Group” button.</li>
+  <li>Enter data according to a data set. For each variation, the synonyms must have unique identifiers.</li>
+  <li>Click the “Save Synonym Group” button.</li>
+  <li>Verify the synonym group saved successfully</li>
+</ol>
+
+<h3 id="test-creation">Test creation</h3>
+
+<h4 id="check-mtf">Step 1. Check the <abbr title="Functional Testing Framework">FTF</abbr> configuration and environment</h4>
+
+<ul>
+  <li>
+    <p>Adjust configuration. Learn how to <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html">adjust a configuration</a>.</p>
+  </li>
+  <li>
+    <p>Prepare Magento application. Learn how to <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_magento.html">prepare Magento application</a>.</p>
+  </li>
+  <li>
+    <p>Prepare environment for test run. Learn how to <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environmemt.html">prepare environment for test run</a>.</p>
+  </li>
+</ul>
+
+<h4 id="create-test-object">Step 2. Create the testing object - a fixture</h4>
+
+<p>This step is applicable if a fixture doesn’t exist in a module.</p>
+
+<p>Use a <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create"><code>generateFixtureXml.php</code></a> to create a new <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>.</p>
+
+<p>Enter in your terminal:</p>
+
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --collection Magento\\Search\\Model\\ResourceModel\\Query\\Collection
+</code></pre>
+
+<p>See the following explanations.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--name</code></td>
+      <td><code>synonym</code></td>
+      <td>A name of the fixture. It can have any name. <code>synonym</code> seems to be logical.</td>
+    </tr>
+    <tr>
+      <td><code>--entity_type</code></td>
+      <td><code>search_synonyms</code></td>
+      <td>Database table name where entity data is stored. You can track database input when you perform a <a href="#manual-test">manual testing</a>. A new record will be created in a table that you need.</td>
+    </tr>
+    <tr>
+      <td><code>--collection</code></td>
+      <td><code>Magento\\Search\\Model\\ResourceModel\\Query\\Collection</code></td>
+      <td>Collection to generate data sets. Synonyms are the entities of a Magento_Search module. Collection can always be find in model resources. All slashes must be escaped <code>\\</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As a result of previous commands, a brand new fixture can be found in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Fixture</code> directory.</p>
+
+<p><img src="/common/images/mtf_tut_fixt.png" alt="A new Synonym fixture" /></p>
+
+<p>The following is a code of the new Synonym fixture.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/fixture.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fixture</span> <span class="na">name=</span><span class="s">&quot;synonym&quot;</span>
+             <span class="na">module=</span><span class="s">&quot;Magento_Search&quot;</span>
+             <span class="na">entity_type=</span><span class="s">&quot;search_synonyms&quot;</span>
+             <span class="na">type=</span><span class="s">&quot;flat&quot;</span>
+             <span class="na">collection=</span><span class="s">&quot;Magento\Search\Model\ResourceModel\Query\Collection&quot;</span>
+             <span class="na">repository_class=</span><span class="s">&quot;Magento\Search\Test\Repository\Synonym&quot;</span>
+             <span class="na">handler_interface=</span><span class="s">&quot;Magento\Search\Test\Handler\Synonym\SynonymInterface&quot;</span>
+             <span class="na">class=</span><span class="s">&quot;Magento\Search\Test\Fixture\Synonym&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;group_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;1 &quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;synonyms&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;store_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;website_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fixture&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>If we open a New Synonym Group page in a browser</p>
+
+<p><img src="/common/images/mtf_tutorial_new_syn_ui.png" alt="New Synonym Group page" /></p>
+
+<p>we see that <code>store_id</code> and <code>website_id</code> are combined in the “Scope” fields. To set <code>store_id</code> and <code>website_id</code>, we have to perform some more logic than just entering the data. That’s why we should use a <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a>.</p>
+
+<p>The same field is present in Magento_Widget module. It means that data source has been already written and we can reuse it.</p>
+
+<p>Let’s check the functional tests for the Magento_Widget module.</p>
+
+<p><img src="/common/images/mtf_tutorial_storeIds-widget.png" alt="ScopeID data source alternative from Magento_Widget" /></p>
+
+<p>It contains a <code>StoreIds.php</code> data source, that is similar to what we need. It has the following code:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="sd"> * See COPYING.txt for license details.</span>
+<span class="sd"> */</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Fixture\Widget</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Store\Test\Fixture\Store</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Mtf\Fixture\FixtureFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Mtf\Fixture\DataSource</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Prepare Store.</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">StoreIds</span> <span class="k">extends</span> <span class="nx">DataSource</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Return stores.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @var Store</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="nv">$stores</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @constructor</span>
+<span class="sd">     * @param FixtureFactory $fixtureFactory</span>
+<span class="sd">     * @param array $params</span>
+<span class="sd">     * @param array $data</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">FixtureFactory</span> <span class="nv">$fixtureFactory</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$params</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$data</span> <span class="o">=</span> <span class="p">[])</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">params</span> <span class="o">=</span> <span class="nv">$params</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="nv">$dataset</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">]);</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$dataset</span> <span class="k">as</span> <span class="nv">$store</span><span class="p">)</span> <span class="p">{</span>
+                <span class="sd">/** @var Store $store */</span>
+                <span class="nv">$store</span> <span class="o">=</span> <span class="nv">$fixtureFactory</span><span class="o">-&gt;</span><span class="na">createByCode</span><span class="p">(</span><span class="s1">&#39;store&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;dataset&#39;</span> <span class="o">=&gt;</span> <span class="nv">$store</span><span class="p">]);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$store</span><span class="o">-&gt;</span><span class="na">hasData</span><span class="p">(</span><span class="s1">&#39;store_id&#39;</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="nv">$store</span><span class="o">-&gt;</span><span class="na">persist</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stores</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$store</span><span class="p">;</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$store</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[]</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Return stores.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return Store</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getStores</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stores</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The difference is that it is designed for multiple stores, but we don’t need that. Adding some changes we can get our data source.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Search\Test\Fixture\Synonym</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Store\Test\Fixture\Store</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Mtf\Fixture\FixtureFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Mtf\Fixture\DataSource</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Prepare Store.</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">ScopeId</span> <span class="k">extends</span> <span class="nx">DataSource</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Return store.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @var Store</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="nv">$store</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @constructor</span>
+<span class="sd">     * @param FixtureFactory $fixtureFactory</span>
+<span class="sd">     * @param array $params</span>
+<span class="sd">     * @param array $data</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">FixtureFactory</span> <span class="nv">$fixtureFactory</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$params</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$data</span> <span class="o">=</span> <span class="p">[])</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">params</span> <span class="o">=</span> <span class="nv">$params</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="nv">$store</span> <span class="o">=</span> <span class="nv">$fixtureFactory</span><span class="o">-&gt;</span><span class="na">createByCode</span><span class="p">(</span><span class="s1">&#39;store&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;dataset&#39;</span> <span class="o">=&gt;</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">]]);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$store</span><span class="o">-&gt;</span><span class="na">hasData</span><span class="p">(</span><span class="s1">&#39;store_id&#39;</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nv">$store</span><span class="o">-&gt;</span><span class="na">persist</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">store</span> <span class="o">=</span> <span class="nv">$store</span><span class="p">;</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$store</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Return store.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return Store</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getStore</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">store</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>This data source:</p>
+
+<ol>
+  <li>Checks if a field has a <code>dataset</code> key in a value that comes from a variation. If it doesn’t, then field is assigned a value from the variation.</li>
+  <li>If it does, then a new Store fixture is created with a <code>dataset</code> from a Store repository (<code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml</code>).</li>
+  <li>Checks if the <code>store_id</code> field exists in the Store fixture. If it doesn’t, a new Store in Magento is created.</li>
+  <li>Returns a Store <code>name</code> value.</li>
+</ol>
+
+<p>We should save it as <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php</code>.</p>
+
+<p><img src="/common/images/mtf_tutorial_datasource.png" alt="Synonym ScopeID data source location" /></p>
+
+<p>Now we should change the fixture. Instead of <code>store_id</code> and <code>website_id</code>, we must use <code>scope_id</code> with the <code>Magento\Search\Test\Fixture\Synonym\ScopeId</code> data source class.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">... ... ...
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;group_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;synonyms&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;scope_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">source=</span><span class="s">&quot;Magento\Search\Test\Fixture\Synonym\ScopeId&quot;</span> <span class="nt">/&gt;</span>
+... ... ...</code></pre></div>
+
+<p>Then, we must regenerate the fixture to apply changes:</p>
+
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+</code></pre>
+
+<p>A new PHP class <code>Synonym.php</code> is generated in <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Search/Test/Fixture</code>.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="sd"> * See COPYING.txt for license details.</span>
+<span class="sd"> */</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Search\Test\Fixture</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Class Synonym</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">Synonym</span> <span class="k">extends</span> <span class="nx">\Magento\Mtf\Fixture\InjectableFixture</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @var string</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="nv">$repositoryClass</span> <span class="o">=</span> <span class="s1">&#39;Magento\Search\Test\Repository\Synonym&#39;</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var string</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="nv">$handlerInterface</span> <span class="o">=</span> <span class="s1">&#39;Magento\Search\Test\Handler\Synonym\SynonymInterface&#39;</span><span class="p">;</span>
+
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var array</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="nv">$group_id</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;is_required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span>
+    <span class="p">];</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var array</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="nv">$synonyms</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;is_required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span>
+    <span class="p">];</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var array</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="nv">$scope_id</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;is_required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;source&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento\Search\Test\Fixture\Synonym\ScopeId&#39;</span><span class="p">,</span>
+    <span class="p">];</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @return mixed</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getGroupId</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">&#39;group_id&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @return mixed</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getSynonyms</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">&#39;synonyms&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @return mixed</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getScopeId</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">&#39;scope_id&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h4 id="create-init-test-case">Step 3. Create the initial test case</h4>
+
+<p>Now we can create a <a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">test case</a>.</p>
+
+<p>From the <a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">test case topic</a> we know about the structure, location and name of the test case.
+In this example it is named <code>CreateSynonymEntityTest.php</code> and stored in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase</code>.</p>
+
+<p><img src="/common/images/mtf_tutorial_testcase_location.png" alt="A test case location" /></p>
+
+<p>As a result of <a href="#manual-test">manual testing</a> we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. We can code the initialization of these pages in the test using an <code>__inject()</code> method of the <code>Magento\Mtf\TestCase\Injectable</code> class. The pages will be created in <a href="#create-pages">Step 5</a>. Also, we will use the fixture from the <a href="#create-test-object">Step 2</a>.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Search\Test\TestCase</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Mtf\TestCase\Injectable</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Search\Test\Fixture\Synonym</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Steps:</span>
+<span class="sd"> * 1. Log in to Admin.</span>
+<span class="sd"> * 2. Open the Search Synonym page.</span>
+<span class="sd"> * 3. Click the &quot;New Synonym Group&quot; button.</span>
+<span class="sd"> * 4. Enter data according to a data set. For each variation, the synonyms must have unique identifiers.</span>
+<span class="sd"> * 5. Click the &quot;Save Synonym Group&quot; button.</span>
+<span class="sd"> * 6. Verify the synonym group saved successfully.</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">CreateSynonymEntityTest</span> <span class="k">extends</span> <span class="nx">Injectable</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Search Synonyms Index page.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @var SynonymsIndex</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$synonymsIndex</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * New Synonym Group page.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @var SynonymsNew</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$synonymsNew</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Inject synonym pages.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param SynonymsIndex $synonymsIndex</span>
+<span class="sd">     * @param SynonymsNew $synonymsNew</span>
+<span class="sd">     * @return void</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__inject</span><span class="p">(</span>
+        <span class="nx">SynonymsIndex</span> <span class="nv">$synonymsIndex</span><span class="p">,</span>
+        <span class="nx">SynonymsNew</span> <span class="nv">$synonymsNew</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span> <span class="o">=</span> <span class="nv">$synonymsIndex</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span> <span class="o">=</span> <span class="nv">$synonymsNew</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Create Synonym group test.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param Synonym $synonym</span>
+<span class="sd">     * @return void</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="nx">Synonym</span> <span class="nv">$synonym</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Steps</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h4 id="create-data-set">Step 4. Create the data set</h4>
+
+<p>Now we can add a <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">data set</a> with variations that cover cases in the <a href="#auto-test">test description</a>: <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml</code></p>
+
+<p><img src="/common/images/mtf_tutor_dataset.png" alt="Created data set" /></p>
+
+<p>The following code contains a data set, but doesn’t have data yet:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Search\Test\TestCase\CreateSynonymEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create Synonyms&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-123&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation1_all_websites_all_store_views&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonym for all websites and all store views&quot;</span><span class="nt">&gt;</span>
+        enter data and constraints for vaiation 1
+        <span class="nt">&lt;/variation&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation2_main_website_all_store_views&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonyms for main website and all store views&quot;</span><span class="nt">&gt;</span>
+        enter data and constraints for vaiation 2
+        <span class="nt">&lt;/variation&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation3_main_website_default_store_view&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonyms for main website and default store views&quot;</span><span class="nt">&gt;</span>
+        enter data and constraints for variation 3
+        <span class="nt">&lt;/variation&gt;</span>
+    <span class="nt">&lt;/testCase&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>According to a New Synonym Group form we need to enter data in the <code>synonyms</code> and <code>scope_id</code> fields.</p>
+
+<ul>
+  <li><code>synonyms</code> field. We need to <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html#fixture_field">set data to a fixture field</a>. The name of the field should be <code>&lt;name of a fixture&gt;/data/&lt;name of the field&gt;</code>. It is <code>name = "synonym/data/synonyms"</code>. To make data unique in each variation, we can use the <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation"><code>%isolation%</code> placeholder</a>.</li>
+  <li><code>scope_id</code> field. We need to <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html#fixture_field_repository">set data to a fixture field from a repository</a>. The name of the field should be <code>&lt;name of a fixture&gt;/data/&lt;name of the field&gt;/dataset</code>. It is <code>name="synonym/data/scope_id/dataset"</code>. As you remember from <a href="#create-test-object">Step 2</a>, we use the <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> to process this field. The data source loads the Store fixture with the Store repository, and returns the name of the field we need. In a <code>dataset</code> value, we should specify a name of the Store repository <code>dataset name</code> from <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml</code>.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variation #</th>
+      <th><code>synonyms</code></th>
+      <th><code>scope_id</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>variation 1</td>
+      <td><code>shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%</code></td>
+      <td>In this variation we won’t use this field to cover <code>All Website</code> case, because it is selected automatically when the New Synonym Group page is opened</td>
+    </tr>
+    <tr>
+      <td>variation 2</td>
+      <td><code>shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%</code></td>
+      <td><code>all_store_views</code></td>
+    </tr>
+    <tr>
+      <td>variation 3</td>
+      <td><code>shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%</code></td>
+      <td><code>default_store_view</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Let’s see the data set with data.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Search\Test\TestCase\CreateSynonymEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create Synonyms&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-23022016&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation1_all_websites_all_store_views&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonym for all websites and all store views&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;synonym/data/synonyms&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation2_main_website_all_store_views&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonyms for main website and all store views&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;synonym/data/synonyms&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;synonym/data/scope_id/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>all_store_views<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation3_main_website_default_store_view&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonyms for main website and default store views&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;synonym/data/synonyms&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;synonym/data/scope_id/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>default_store_view<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+    <span class="nt">&lt;/testCase&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>A bit later we will add assertions to complete our data set.</p>
+
+<h4 id="create-pages">Step 5. Create the pages</h4>
+
+<p>In <a href="#create-init-test-case">Step 3</a>, we added two <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">pages</a> to the test case class. Because both pages are in the Admin area, we should create them in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml</code> directory.</p>
+
+<p><strong>SynonymsIndex.xml</strong></p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;SynonymsIndex&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;search/synonyms/index&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Search&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="err">...</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p><strong>SynonymsNew.xml</strong></p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;SynonymsNew&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;search/synonyms/new&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Search&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="err">...</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p><img src="/common/images/mtf_tutorial_pages.png" alt="Created pages" /></p>
+
+<p>To generate PHP classes for these <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">pages</a> enter and run in your terminal</p>
+
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+</code></pre>
+
+<p><img src="/common/images/mtf_tutorial_pages_php.png" alt="PHP classes of pages" /></p>
+
+<p>In the next step we will create <a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html">blocks</a> that implements logic in these pages.</p>
+
+<h4 id="create-blocks">Step 6. Create the blocks</h4>
+
+<p>Let’s see in the <a href="#auto-test">test description</a> what actions must be performed:</p>
+
+<ol>
+  <li>Click the “New Synonym Group” button.</li>
+  <li>Enter data according to a data set.</li>
+  <li>Click the “Save Synonym Group” button.</li>
+</ol>
+
+<p><strong>How to code ‘Click the “New Synonym Group” button’</strong></p>
+
+<p>Fortunately, you already have a <a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html">block</a> that contains a method to add a new entity in a grid: <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php"><code>\Magento\Backend\Test\Block\GridPageActions</code></a>.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Click the &quot;Add New&quot; button</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return void</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">addNew</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addNewButton</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
+<span class="p">}</span></code></pre></div>
+
+<p>In HTML page, to locate the UI block that contains a button, we will use a <code>.page-main-actions</code> locator.</p>
+
+<p>The SynonymsIndex.xml page must contain the following block to be able to run the method in a test case.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;SynonymsIndex&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;search/synonyms/index&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Search&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;pageActionsBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\GridPageActions&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-main-actions&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>Now you can run <code>generate.php</code> as we did before to re-generate page classes.</p>
+
+<p><strong>How to code ‘Enter data according to a data set’</strong></p>
+
+<p>We need to enter data from a data set into the form fields.</p>
+
+<p><img src="/common/images/mtf_tutorial_page_new_synonym.png" alt="New Synonym Group page" /></p>
+
+<p>The <code>Block</code> directory in the Magento_Search module (in the Magento code) contains the <code>Adminhtml/Synonyms/Edit</code> directories, as shown below:</p>
+
+<p><img src="/common/images/mtf_tutorial_block_struct.png" alt="Block structure in a code base" /> </p>
+
+<p>The <code>Search/Test</code> directory in functional tests should be constructed in a similar manner:</p>
+
+<p><img src="/common/images/mtf_tutorial_block_struct_test.png" alt="Block structure in a functional test" /> </p>
+
+<p>We need a <code>fill()</code> method from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php"><code>\Magento\Mtf\Block\Form</code></a> class and a mapping file.</p>
+
+<p><strong>Form mapping</strong></p>
+
+<p><a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html#mtf_block_mapping">Learn about form mapping</a>.</p>
+
+<p>We don’t need to define mapping parameters for the <code>synonyms</code> field, because they are the same as the default values. (See the <a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes">nodes description table</a>.) The same is applicable to the <code>scope_id</code> field except a type of input element, which is a <a href="/guides/v2.1/mtf/mtf_entities/mtf_typified-element.html#magento_class">custom typified element</a> <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php"><code>\Magento\Mtf\Client\Element\SelectstoreElement</code></a> in our case. Let’s create the mapping file <code>SynonymsForm.xml</code>, which has the following code:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;mapping</span> <span class="na">strict=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fields&gt;</span>
+      <span class="nt">&lt;synonyms</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;scope_id&gt;</span>
+          <span class="nt">&lt;input&gt;</span>selectstore<span class="nt">&lt;/input&gt;</span>
+      <span class="nt">&lt;/scope_id&gt;</span>
+  <span class="nt">&lt;/fields&gt;</span>
+<span class="nt">&lt;/mapping&gt;</span></code></pre></div>
+
+<p>A block class must simply extend <code>\Magento\Mtf\Block\Form</code> class. Its name duplicates the name of the mapping file that is a concatenation of the fixture name and a <code>Form</code> ending (<code>Synonyms</code>+<code>Form</code>). Let’s create a <code>\Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm</code> empty class:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Search\Test\Block\Adminhtml\Synonyms\Edit</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Mtf\Block\Form</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Synonyms edit form in admin.</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">SynonymsForm</span> <span class="k">extends</span> <span class="nx">Form</span>
+<span class="p">{</span>
+    <span class="c1">//</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Now we have the following structure:</p>
+
+<p><img src="/common/images/mtf_tutorial_block_mapping.png" alt="Form mapping block" /></p>
+
+<p>Then we should add the block class to the <code>SynonymsNew.xml</code> page object. To identify a form block on the HTML page, use an <code>id='page:main-container'</code> css selector.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;synonymForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;[id=&#39;page:main-container&#39;]&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+<p><strong>How to code ‘Click the “Save Synonym Group” button’</strong></p>
+
+<p>The <code>save()</code> method from the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php"><code>\Magento\Backend\Test\Block\FormPageActions</code></a> block class allows you to click the “Save Synonym Group” button.</p>
+
+<p>The <code>SynonymsNew.xml</code> page must contain this class. The <code>.page-main-actions</code> css selector will help to identify a UI block with the button on the HTML page.  </p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;formPageActions&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\FormPageActions&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-main-actions&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+<h4 id="add-blocks-to-pages">Step 7. Add the blocks to pages</h4>
+
+<p>In previous step, we created blocks with methods that enable us to perform the required test flow.</p>
+
+<p>To associate methods with <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">pages</a>, blocks must be added to pages.</p>
+
+<p><strong>Search Synonym page</strong></p>
+
+<p>A corresponding page object in a functional test is <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml</code></p>
+
+<p>The page with a block:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;SynonymsIndex&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;search/synonyms/index&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Search&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;pageActionsBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\GridPageActions&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-main-actions&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p><strong>New Synonym Group page</strong></p>
+
+<p>A corresponding page object in a functional test is <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml</code></p>
+
+<p>The page with blocks:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;SynonymsNew&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;search/synonyms/new&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Search&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;synonymForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;[id=&#39;page:main-container&#39;]&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;formPageActions&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\FormPageActions&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-main-actions&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>To generate PHP classes for these pages, enter the following command from your terminal.</p>
+
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+</code></pre>
+
+<p>Now we can define the test flow in a <code>test()</code> method of the test case (<a href="#create-init-test-case">Step 3</a>).</p>
+
+<h4 id="define-test-method">Step 8. Define the <code>test()</code> method</h4>
+
+<p>Here we should recall <a href="#create-init-test-case">Step 3</a>, where the initial test case was created.</p>
+
+<p>An argument for the <code>test()</code> method is a <a href="#test-object">test object</a> (a <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>).</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Create Synonym group test.</span>
+<span class="sd"> * </span>
+<span class="sd"> * @param Synonym $synonym</span>
+<span class="sd"> * @return void</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="nx">Synonym</span> <span class="nv">$synonym</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Steps</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Now we can add page classes made in <a href="#create-pages">Step 5</a>:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsIndex</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsNew</span><span class="p">;</span></code></pre></div>
+
+<p>All methods are defined in blocks (<a href="#create-blocks">Step 6</a>) that are grouped in pages (<a href="#create-pages">Step 5</a>, <a href="#add-blocks-to-pages">Step 7</a>).</p>
+
+<p>Remember our test flow:</p>
+
+<ol>
+  <li>Log in to Admin</li>
+  <li>Open the Search Synonym page</li>
+  <li>Click the “New Synonym Group” button</li>
+  <li>Enter data according to a data set</li>
+  <li>Click the “Save Synonym Group” button</li>
+</ol>
+
+<p>Let’s code it!</p>
+
+<p><strong>Log in to Admin and open the Search Synonym page</strong></p>
+
+<p>In the <abbr title="Functional Testing Framework">FTF</abbr>, the process of logging in doesn’t require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an <code>open()</code> method of the <code>Magento/Mtf/Page/BackendPage</code> class. There is no need to add this class in <code>use</code>, because it is inherited from the <code>Magento/Search/Test/Page/Adminhtml/SynonymsIndex</code> class.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span></code></pre></div>
+
+<p><strong>Click the “New Synonym Group” button</strong></p>
+
+<p>To Click the “New Synonym Group” button, we will use the <code>addNew()</code> method from the <code>pageActionsBlock</code> block. A <code>getPageActionsBlock()</code> of the generated <code>Magento/Search/Test/Page/Adminhtml/SynonymsIndex</code> class receives parameters defined in the <code>pageActionsBlock</code> block (<code>class</code>, <code>locator</code>, <code>strategy</code>).</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">getPageActionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addNew</span><span class="p">();</span></code></pre></div>
+
+<p>This action opens the New Synonym Group page.</p>
+
+<p><strong>Enter data according to a data set</strong></p>
+
+<p>To enter data in the form, we use the <code>fill()</code> method from the <code>synonymForm</code> block of the <code>synonymsNew</code> page. An argument for this method is a fixture <code>Synonym</code>. A <code>getSynonymForm()</code> method of the generated <code>Magento/Search/Test/Page/Adminhtml/SynonymsNew</code> class receives parameters defined in the <code>synonymForm</code> block.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span></code></pre></div>
+
+<p><strong>Click the “Save Synonym Group” button</strong></p>
+
+<p>A <code>save()</code> method with parameters defined in a <code>formPageActions</code> block. Parameters are injected using a <code>getFormPageActions()</code> method from the <code>synonymsNew</code> page (generated <code>Magento/Search/Test/Page/Adminhtml/SynonymsNew</code> page class).</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span></code></pre></div>
+
+<p><strong>Full <code>test()</code> definition</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Create Synonym group test.</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param Synonym $synonym</span>
+<span class="sd"> * @return void</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="nx">Synonym</span> <span class="nv">$synonym</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Steps</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span> <span class="c1">// logs in to Admin, opens Search Synonyms page</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">getPageActionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addNew</span><span class="p">();</span> <span class="c1">// receiving of the page action block with &#39;_rootElement&#39; containing locator which is indicated in the page class for PageActionBlock from the page, makes &#39;click&#39; action on it</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span> <span class="c1">// enters data from variation in the New Synonym Group fields </span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span> <span class="c1">// `click` on the Save Synonym Group button</span>
+<span class="p">}</span></code></pre></div>
+
+<h4 id="step-9-check-the-test-run">Step 9. Check the test run</h4>
+
+<p>The test is now ready to run. It is complete, except for an assertion that we will create in the next step.</p>
+
+<p>The full test case code:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Search\Test\TestCase</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Mtf\TestCase\Injectable</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Search\Test\Fixture\Synonym</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsIndex</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsNew</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Steps:</span>
+<span class="sd"> * 1. Log in to Admin.</span>
+<span class="sd"> * 2. Open the Search Synonym page.</span>
+<span class="sd"> * 3. Click the &quot;New Synonym Group&quot; button.</span>
+<span class="sd"> * 4. Enter data according to a data set. For each variation, the synonyms must have unique identifiers.</span>
+<span class="sd"> * 5. Click the &quot;Save Synonym Group&quot; button.</span>
+<span class="sd"> * 6. Verify the synonym group saved successfully</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">CreateSynonymEntityTest</span> <span class="k">extends</span> <span class="nx">Injectable</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Search Synonyms Index page.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @var SynonymsIndex</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$synonymsIndex</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * New Synonym Group page.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @var SynonymsNew</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$synonymsNew</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Inject pages.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param SynonymsIndex $synonymsIndex</span>
+<span class="sd">     * @param SynonymsNew $synonymsNew</span>
+<span class="sd">     * @return void</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__inject</span><span class="p">(</span>
+        <span class="nx">SynonymsIndex</span> <span class="nv">$synonymsIndex</span><span class="p">,</span>
+        <span class="nx">SynonymsNew</span> <span class="nv">$synonymsNew</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span> <span class="o">=</span> <span class="nv">$synonymsIndex</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span> <span class="o">=</span> <span class="nv">$synonymsNew</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Create Synonym group test.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param Synonym $synonym</span>
+<span class="sd">     * @return void</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="nx">Synonym</span> <span class="nv">$synonym</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Steps</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">getPageActionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addNew</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>You can run the test using your <abbr title="Integrated Development Environment">IDE</abbr> or the <abbr title="Command Line Interface">CLI</abbr>. The Selenium Server must be <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium">up and running</a>. To run the test using the <abbr title="Command Line Interface">CLI</abbr>, enter in your terminal:</p>
+
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional
+vendor/bin/phpunit --filter CreateSynonymEntityTest
+</code></pre>
+
+<p>The test will be performed in a browser. Three synonyms groups are created one by-one that corresponds to three variations in a data set.</p>
+
+<h4 id="create-assertion">Step 10. Create the assertion</h4>
+
+<p>The last item in the test description says that the test must check that a success message is displayed after the test flow completes.</p>
+
+<p><img src="/common/images/mtf_tutorial_success_message.png" alt="Message about the successful save" /></p>
+
+<p>To cover this, we should create the test assertion (<a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">constraint</a>) and add the full class name to a variation of the data set. </p>
+
+<p>Fortunately, this type of assertion  is commonly used in functional tests. If we search on the phrase “SuccessSaveMessage” in <code>&lt;magento2&gt;/dev/tests/functional</code>, there will be several matches. Let’s select from the list of results a <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php"><code>\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage</code></a> class. It has the following code:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="sd"> * See COPYING.txt for license details.</span>
+<span class="sd"> */</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Customer\Test\Constraint</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Customer\Test\Page\Adminhtml\CustomerIndex</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Mtf\Constraint\AbstractConstraint</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Assertion to check Customer success save message.</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">AssertCustomerSuccessSaveMessage</span> <span class="k">extends</span> <span class="nx">AbstractConstraint</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="no">SUCCESS_MESSAGE</span> <span class="o">=</span> <span class="s1">&#39;You saved the customer.&#39;</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Assert that success message is displayed after customer save.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param CustomerIndex $pageCustomerIndex</span>
+<span class="sd">     * @return void</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">processAssert</span><span class="p">(</span><span class="nx">CustomerIndex</span> <span class="nv">$pageCustomerIndex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$actualMessage</span> <span class="o">=</span> <span class="nv">$pageCustomerIndex</span><span class="o">-&gt;</span><span class="na">getMessagesBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getSuccessMessage</span><span class="p">();</span>
+        <span class="nx">\PHPUnit_Framework_Assert</span><span class="o">::</span><span class="na">assertEquals</span><span class="p">(</span>
+            <span class="nx">self</span><span class="o">::</span><span class="na">SUCCESS_MESSAGE</span><span class="p">,</span>
+            <span class="nv">$actualMessage</span><span class="p">,</span>
+            <span class="s1">&#39;Wrong success message is displayed.&#39;</span>
+            <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Expected: &quot;</span> <span class="o">.</span> <span class="nx">self</span><span class="o">::</span><span class="na">SUCCESS_MESSAGE</span>
+            <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Actual: &quot;</span> <span class="o">.</span> <span class="nv">$actualMessage</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Text success save message is displayed.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return string</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;Assert that success message is displayed.&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>By making a simple change, we can create a constraint class that is needed <code>\Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage</code></p>
+
+<p><img src="/common/images/mtf_tutorial_constraint_dir.png" alt="A constraint location" /></p>
+
+<p>with the following code:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Search\Test\Constraint</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsIndex</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Mtf\Constraint\AbstractConstraint</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Assertion to check Success Save Message for Synonyms.</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">AssertSynonymSuccessSaveMessage</span> <span class="k">extends</span> <span class="nx">AbstractConstraint</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="no">SUCCESS_MESSAGE</span> <span class="o">=</span> <span class="s1">&#39;You saved the synonym group.&#39;</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Check Success Save Message for Synonyms.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param SynonymsIndex $synonymsIndex</span>
+<span class="sd">     * @return void</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">processAssert</span><span class="p">(</span><span class="nx">SynonymsIndex</span> <span class="nv">$synonymsIndex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$actualMessage</span> <span class="o">=</span> <span class="nv">$synonymsIndex</span><span class="o">-&gt;</span><span class="na">getMessagesBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getSuccessMessage</span><span class="p">();</span>
+        <span class="nx">\PHPUnit_Framework_Assert</span><span class="o">::</span><span class="na">assertEquals</span><span class="p">(</span>
+            <span class="nx">self</span><span class="o">::</span><span class="na">SUCCESS_MESSAGE</span><span class="p">,</span>
+            <span class="nv">$actualMessage</span><span class="p">,</span>
+            <span class="s1">&#39;Wrong success message is displayed.&#39;</span>
+            <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Expected: &quot;</span> <span class="o">.</span> <span class="nx">self</span><span class="o">::</span><span class="na">SUCCESS_MESSAGE</span>
+            <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Actual: &quot;</span> <span class="o">.</span> <span class="nv">$actualMessage</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Text success save message is displayed</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return string</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;Assert that success message is displayed.&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>To handle the messages we use the <code>\Magento\Backend\Test\Block\Messages</code> class, by adding the <code>messagesBlock</code> block to the <code>SynonymsIndex</code> page. In <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Page/Adminhtml/CustomerGroupIndex.xml</code>, we can see that the following block is used:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;#messages .messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+
+<p>This block must be added to <code>SynonymsIndex</code> class. To do this:</p>
+
+<p>1) Open <code>&lt;magento2&gt;dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml</code>.</p>
+
+<p>2) Add the block node:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;#messages .messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+
+<p>3) Launch the generating tool to update the page class:</p>
+
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+</code></pre>
+
+<p>And now we can add <code>&lt;constraint&gt;</code> to each variation of a data set <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml</code>:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Search\Test\TestCase\CreateSynonymEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create Synonyms&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-23022016&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation1_all_websites_all_store_views&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonym for all websites and all store views&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;synonym/data/synonyms&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation2_main_website_all_store_views&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonyms for main website and all store views&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;synonym/data/synonyms&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;synonym/data/scope_id/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>all_store_views<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation3_main_website_default_store_view&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonyms for main website and default store views&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;synonym/data/synonyms&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;synonym/data/scope_id/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>default_store_view<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+    <span class="nt">&lt;/testCase&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>The test is ready to run.</p>
+
+<p>You can run the test using your <abbr title="Integrated Development Environment">IDE</abbr> or the <abbr title="Command Line Interface">CLI</abbr>. The Selenium Server must be <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium">up and running</a>. To run the test using the <abbr title="Command Line Interface">CLI</abbr>, enter in your terminal:</p>
+
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional
+vendor/bin/phpunit --filter CreateSynonymEntityTest
+</code></pre>
+
+<p>The test now checks after each variation whether a success message is displayed.</p>
+
+<p>That’s it!</p>
+
+<!-- LINK DEFINITIONS -->
+
+<!-- ABBREVIATIONS -->
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -39,11 +39,29 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/guides/v2.0/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/guides/v2.0/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
 		</div><!-- #global-nav -->
 	</nav>
 
@@ -60,8 +78,9 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
             </ul>
          </li>
          <li class="first">
@@ -77,18 +96,15 @@
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a>
-   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-<li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
-               <div class="divider"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
                <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
@@ -149,12 +165,13 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Installation quick reference (tutorial)</h1>
-			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/install-gde/install-quick-ref.md" target="_blank">Edit this page on GitHub</a>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/install-quick-ref.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
 </section>
+
 
 <div class="container">
 
@@ -256,15 +273,36 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/system-requirements_tls1-2.html">TLS 1.2 requirement for PayPal</a></li>
+										<li class="level3Parent " id="tls"><a href="#">Transport Layer Security (TLS) requirements</a>
+
 
 									
 
 								
+
+									
+
+
+											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.0/install-gde/system-requirements_tls1-2.html">TLS 1.2 requirement for PayPal</a>
+
+
+									
+
 								
+
+									
+
+
+											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.0/install-gde/system-requirements_repo-tls1-2.html">TLS requirement for repo.magento.com</a>
+
+
+									
+
 								
-							
-							
+
+
+
+
 						
 
 					
@@ -299,30 +337,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
 
 									
@@ -331,7 +345,65 @@
 
 									
 
+										<li class="level3Parent " id="php"><a href="#">PHP</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="umask"><a href="#">Magento file system ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a>
+
 
 									
 
@@ -377,17 +449,9 @@
 
 								
 
-									
 
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a></li>
 
-									
 
-								
-								
-								
-							
-							
 						
 
 					
@@ -411,10 +475,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -438,10 +502,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -465,10 +529,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -500,10 +564,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -527,10 +591,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -554,10 +618,10 @@
 
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -692,8 +756,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-
-      <p align="right"><i>Updated: 21 December 2015 (PST)</i></p>
+			<p align="right"><i>Updated: 18 July 2016 (PDT)</i></p>
 		<p>We know it’s challenging to install the Magento software. We’d like to help you by simplifying the process as much as possible.</p>
 
 <p>This topic assumes:</p>
@@ -724,7 +787,14 @@
 
 <h2 id="installation-part-1-getting-started">Installation part 1: Getting started</h2>
 <ol>
-  <li>See the <a href="/guides/v2.0/install-gde/system-requirements.html">system requirements</a>.</li>
+  <li>
+    <p>See the System Requirements:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/system-requirements.html">Version 2.0.x</a></li>
+      <li><a href="/guides/v2.1/install-gde/system-requirements-tech.html">Version 2.1.x</a></li>
+    </ul>
+  </li>
   <li>
     <p>If your system lacks any requirements, see the prerequisites documentation:</p>
 
@@ -735,7 +805,7 @@
       <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
     </ul>
   </li>
-  <li>Just as importantly, set up the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a> on the server.</li>
+  <li>Just as importantly, set up the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> on the server.</li>
   <li>Switch to the Magento file system owner.</li>
 </ol>
 
@@ -743,7 +813,7 @@
 <p>When all prerequisites have been met, get the Magento software using Composer as follows:</p>
 
 <pre><code>cd &lt;web server docroot directory&gt;
-composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition magento2
 </code></pre>
 
 <p>You’re required to authenticate; see <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Get your authentication keys</a> for details. This downloads Magento code only; it doesn’t install the software for you.</p>
@@ -752,102 +822,359 @@ composer create-project --repository-url=https://repo.magento.com/ magento/proje
 	<p>Alternatively, you can also download a <a href="/guides/v2.0/install-gde/install/get-software.html">Magento software archive</a>.</p>
 </div>
 
-<h3 id="set-file-system-ownership-and-permissions">Set file system ownership and permissions</h3>
+<div>
+
+  <h2 id="perms-over">Set pre-installation file system ownership and permissions</h2>
+  <p>This topic discusses how to set read-write permissions for the web server group before you install the Magento software. This is necessary so the Setup Wizard or command line can write files to the Magento file system.</p>
+
+  <p>The procedure you use is different, depending on whether you use <a href="#perms-shared">shared hosting</a> and have one user or if you use a <a href="#perms-private">private server</a> and have two users.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+  <p>If you're using a Magento version <em>earlier than</em> 2.0.6, see <a href="/guides/v2.0/install-gde/install/legacy-file-system-perms.html">Appendix&mdash;Magento file system ownership and appendix (legacy)</a> instead.</p>
+</div>
+
+  <h2 id="perms-shared">Set permissions for shared hosting (one user)</h2>
+  <p>This section discusses how to set pre-installation permissions if you log in to the Magento server as the same user that also runs the web server. This type of setup is common in shared hosting environments.</p>
+
+  <div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>To set permissions before you install the Magento software:</p>
+
+<ol>
+  <li>Log in to your Magento server.</li>
+  <li>
+    <p>Use a file manager application provided by your shared hosting provider to verify write permissions are set on the following directories:</p>
+
+    <ul>
+      <li><code>vendor</code> (Composer or compressed archive installation)</li>
+      <li><code>app/etc</code></li>
+      <li><code>pub/static</code></li>
+      <li><code>var</code></li>
+      <li>Any other static resources</li>
+    </ul>
+  </li>
+  <li>
+    <p>If you have command-line access, enter the following commands in the order shown:</p>
+
+    <pre><code>cd &lt;your Magento install dir&gt;
+find var vendor pub/static pub/media app/etc var -type f -exec chmod u+w {} \;
+find var vendor pub/static pub/media app/etc var -type d -exec chmod u+w {} \;
+chmod u+x bin/magento
+</code></pre>
+
+    <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code>/var/www/html/magento2</code>:</p>
+
+    <pre><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} \; &amp;&amp; chmod u+x bin/magento
+</code></pre>
+  </li>
+  <li>
+    <p>If you haven’t done so already, get the Magento software in one of the following ways:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/prereq/zip_install.html">Compressed archive</a></li>
+      <li><a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer metapackage</a></li>
+      <li><a href="/guides/v2.0/install-gde/prereq/dev_install.html">Clone the repository (contributing developers only)</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>After you have set file system ownership and permissions, continue with any of the following:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command-line installation</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard installation</a></li>
+    </ul>
+  </li>
+</ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>To further restrict permissions after installing the Magento software, you <a href="/guides/v2.0/install-gde/install/post-install-umask.html">configure a Magento umask</a>.</p>
+</div>
+
+</div></div>
+
+  <h2 id="perms-private">Set ownership and permissions for two users</h2>
+  <p>This section discusses how to set ownership and permissions for your own server or a private hosting setup. In this type of setup, you typically <em>cannot</em> log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user.</p>
+
+  <div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>Complete the following tasks in the order shown:</p>
+
+<ul>
+  <li><a href="#mage-owner-about-group">About the shared group</a></li>
+  <li><a href="#mage-owner-create-user">Step 1: Create the Magento file system owner and give the user a strong password</a></li>
+  <li><a href="#install-update-depend-user-findgroup">Step 2: Find the web server group</a></li>
+  <li><a href="#install-update-depend-user-add2group">Step 3: Put the Magento file system owner in the web server’s group</a></li>
+  <li><a href="#perms-get-software">Step 4: Get the Magento software</a></li>
+  <li><a href="#perms-set-two-users">Step 5: Set ownership and permissions for the shared group</a></li>
+</ul>
+
+<h3 id="mage-owner-about-group">About the shared group</h3>
+<p>To enable the web server to write files and directories in the Magento file system but to also maintain <em>ownership</em> by the Magento file system owner. This is necessary so both users can share access to Magento files. (This includes files created using the Magento Admin or other web-based utilities.)</p>
+
+<p>This section discusses how to create a new Magento file system owner and put that user in the web server’s group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.</p>
+
+<h3 id="mage-owner-create-user">Step 1: Create the Magento file system owner and give the user a strong password</h3>
+<p>This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the <em>command-line user</em>.)</p>
+
+<p>To create a user on CentOS or Ubuntu, enter the following command as a user with <code>root</code> privileges:</p>
+
+<pre><code>adduser &lt;username&gt;
+</code></pre>
+
+<p>To give the user a password, enter the following command as a user with <code>root</code> privileges:</p>
+
+<pre><code>passwd &lt;username&gt;
+</code></pre>
+
+<p>Follow the prompts on your screen to create a password for the user.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-group">Put the Magento file system owner in the web server group</a>.</p>
+</div>
+
+<p>For example, to create a user named <code>magento_user</code> and give the user a password, enter:</p>
+
+<pre><code>sudo adduser magento_user
+sudo passwd magento_user
+</code></pre>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
+</div>
+
+<h3 id="install-update-depend-user-findgroup">Step 2: Find the web server user’s group</h3>
+<p>To find the web server user’s group:</p>
+
+<ul>
+  <li>
+    <p>CentOS: <code>egrep -i '^user|^group' /etc/httpd/conf/httpd.conf</code></p>
+
+    <p>Typically, the user and group name are both <code>apache</code></p>
+  </li>
+  <li>
+    <p>Ubuntu: <code>ps aux | grep apache</code> to find the apache user, then <code>groups &lt;apache user&gt;</code> to find the group</p>
+
+    <p>Typically, the user name and the group name are both <code>www-data</code></p>
+  </li>
+</ul>
+
+<h3 id="install-update-depend-user-add2group">Step 3: Put the Magento file system owner in the web server’s group</h3>
+<p>To put the Magento file system owner in the web server’s primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code>root</code> privileges:</p>
+
+<ul>
+  <li>CentOS: <code>usermod -g apache &lt;username&gt;</code></li>
+  <li>Ubuntu: <code>usermod -g www-data &lt;username&gt;</code></li>
+</ul>
+
+<p>For example, to add the user <code>magento_user</code> to the <code>apache</code> primary group on CentOS:</p>
+
+<pre><code>usermod -g apache magento_user
+</code></pre>
+
+<p>To confirm your Magento user is a member of the web server group, enter the following command:</p>
+
+<pre><code>groups &lt;user name&gt;
+</code></pre>
+
+<p>A sample result follows:</p>
+
+<pre><code>magento_user : apache
+</code></pre>
+
+<p>To complete the task, restart the web server:</p>
+
+<ul>
+  <li>Ubuntu: <code>service apache2 restart</code></li>
+  <li>CentOS: <code>service httpd restart</code></li>
+</ul>
+
+<h3 id="perms-get-software">Step 4: Get the Magento software</h3>
+<p>If you haven’t done so already, get the Magento software in one of the following ways:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/install-gde/prereq/zip_install.html">Compressed archive</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer metapackage</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/dev_install.html">Clone the repository (contributing developers only)</a></li>
+</ul>
+
+<h3 id="perms-set-two-users">Step 5: Set ownership and permissions for the shared group</h3>
+<p>To set ownership and permissions before you install the Magento software:</p>
+
+<ol>
+  <li>Log in to your Magento server as, or switch to, the Magento file system owner.</li>
+  <li>
+    <p>Enter the following commands in the order shown:</p>
+
+    <pre><code>cd &lt;your Magento install dir&gt;
+find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+chown -R :&lt;web server group&gt; .
+chmod u+x bin/magento
+</code></pre>
+  </li>
+</ol>
 
 <div>
 
-  <p>Use the following steps:</p>
+  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code>/var/www/html/magento2</code> and the web server group name is <code>apache</code>:</p>
 
-  <ol>
-    <li>If you haven’t already done so, log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
-    <li>
-      <p>Change to the Magento installation directory:</p>
-
-      <pre><code>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;
+  <pre><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
 </code></pre>
 
-      <p>The base directory is typically a subdirectory named <code>magento2</code> under your web server’s docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br /></p>
+  <p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code>root</code> privileges:</p>
 
-      <p>Examples:</p>
-
-      <ul>
-        <li>Ubuntu: <code>/var/www/magento2</code></li>
-        <li>CentOS: <code>/var/www/html/magento2</code></li>
-      </ul>
-    </li>
-    <li>
-      <p>Set ownership:</p>
-
-      <pre><code>chown -R :&lt;your web server group name&gt; .
+  <pre><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
 </code></pre>
 
-      <p>Typical examples:</p>
+  <h3 id="next-step">Next step</h3>
+  <p>After you have set file system ownership and permissions, continue with any of the following:</p>
 
-      <ul>
-        <li>CentOS: <code>chown -R :apache .</code></li>
-        <li>Ubuntu: <code>chown -R :www-data .</code></li>
-      </ul>
-    </li>
-    <li>
-      <p>Set permissions:</p>
+  <ul>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command-line installation</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard installation</a></li>
+  </ul>
+</div>
+</div></div>
 
-      <pre><code>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod u+x bin/magento
+  <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
+  <p>After you’ve performed the other tasks in this topic, enter one of the following commands to switch to that user:</p>
+
+  <ul>
+    <li>Ubuntu: <code>su &lt;username&gt;</code></li>
+    <li>CentOS: <code>su - &lt;username&gt;</code></li>
+  </ul>
+
+  <p>For example,</p>
+
+  <pre><code>su magento_user
 </code></pre>
-
-      <p>If you must enter the commands as <code>sudo</code>, use:</p>
-
-      <pre><code>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod u+x bin/magento
-</code></pre>
-    </li>
-  </ol>
 
   <h2 id="installation-part-2-installing-the-magento-software">Installation part 2: Installing the Magento software</h2>
   <p>You can choose to install the Magento software using either a <a href="/guides/v2.0/install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="/guides/v2.0/install-gde/install/cli/install-cli.html">command line</a>.</p>
 
-  <p>The following example shows how to install using the command line with the following options:</p>
+  <h4 id="command-line-installation">Command line installation</h4>
 
-  <ul>
-    <li>
-      <p>The Magento software is installed in the <code>/var/www/html/magento2</code> directory and the path to the Magento Admin is <code>admin</code>; therefore:</p>
+  <div class="collapsible"><h4 class="collapsible-title">Click to view the command-line installation </h4><div class="collapsible-content"><p>The following example shows how to install using the command line with the following options:</p>
 
-      <p>Your storefront URL is <code>http://192.0.2.5</code></p>
-    </li>
-    <li>
-      <p>The database server is on the same host as the web server.</p>
+<ul>
+  <li>
+    <p>The Magento software is installed in the <code>/var/www/html/magento2</code> directory, which means your storefront URL is <code>http://192.0.2.5/magento2/</code></p>
+  </li>
+  <li>
+    <p>The database server is on the same host as the web server.</p>
 
-      <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
-    </li>
-    <li>
-      <p>Uses server rewrites</p>
-    </li>
-    <li>
-      <p>The Magento administrator has the following properties:</p>
+    <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
+  </li>
+  <li>
+    <p>Uses server rewrites</p>
+  </li>
+  <li>
+    <p>The Magento administrator has the following properties:</p>
 
-      <ul>
-        <li>First and last name are <code>Magento User</code></li>
-        <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
-        <li>E-mail address is <code>user@example.com</code></li>
-      </ul>
-    </li>
-    <li>Default language is <code>en_US</code> (U.S. English)</li>
-    <li>Default currency is U.S. dollars</li>
-    <li>
-      <p>Default time zone is U.S. Central (America/Chicago)</p>
+    <ul>
+      <li>First and last name are <code>Magento User</code></li>
+      <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
+      <li>E-mail address is <code>user@example.com</code></li>
+    </ul>
+  </li>
+  <li>Default language is <code>en_US</code> (U.S. English)</li>
+  <li>Default currency is U.S. dollars</li>
+  <li>
+    <p>Default time zone is U.S. Central (America/Chicago)</p>
 
-      <pre><code>php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
+    <pre><code>php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --use-rewrites=1
 </code></pre>
-    </li>
-  </ul>
+  </li>
+</ul>
 
-  <p>Optionally switch to <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">developer mode</a>.</p>
+<p>Optionally switch to <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">developer mode</a>.</p>
 
-  <pre><code>cd &lt;your Magento install dir&gt;/bin
+<pre><code>cd &lt;your Magento install dir&gt;/bin
 php magento deploy:mode:set developer
 </code></pre>
+</div></div>
+
+  <h4 id="web-setup-wizard">Web Setup Wizard</h4>
+
+  <div class="collapsible"><h4 class="collapsible-title">Click to view the Web Setup Wizard installation </h4><div class="collapsible-content"><p>The following example shows how to install using the Web Setup Wizard with the following options:</p>
+
+<ul>
+  <li>
+    <p>The Magento software is installed in the <code>magento2</code> directory relative to the web server docroot, which means your storefront URL is <code>http://192.0.2.5/magento2/</code></p>
+  </li>
+  <li>
+    <p>The database server is on the same host as the web server.</p>
+
+    <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
+  </li>
+  <li>
+    <p>The Magento administrator has the following properties:</p>
+
+    <ul>
+      <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
+      <li>E-mail address is <code>user@example.com</code></li>
+    </ul>
+  </li>
+  <li>Default language is <code>en_US</code> (U.S. English)</li>
+  <li>Default currency is U.S. dollars</li>
+  <li>Default time zone is U.S. Central (America/Chicago)</li>
+</ul>
+
+<p>To run the Web Setup Wizard:</p>
+
+<ol>
+  <li>
+    <p>Enter the following URL in your browser’s address or location field:</p>
+
+    <pre><code>http://192.0.2.5/magento2
+</code></pre>
+  </li>
+  <li>
+    <p>At the welcome page, click <strong>Agree and Setup Magento</strong>.</p>
+
+    <p><img src="/common/images/install_qr_wizard-welcome.png" alt="You must accept the license agreement to install the Magento software" width="200px" /></p>
+  </li>
+  <li>
+    <p>Step 1: Readiness Check verifies your system is ready to install the Magento software.</p>
+
+    <p>Click <strong>Start Readiness Check</strong></p>
+
+    <p><img src="/common/images/install_qr_readiness.png" alt="The Readiness Check makes sure your system is ready for the Magento software" width="400px" /></p>
+
+    <ul>
+      <li>If the readiness check passes, click <strong>Next</strong> and continue with the next step.</li>
+      <li>If the readiness check fails, see <a href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_main.html">Readiness check issues</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Step 2: Add a Database enables you to set up your Magento database.</p>
+
+    <p><img src="/common/images/install_qr_database.png" alt="Set up your Magento database" width="400px" /></p>
+  </li>
+  <li>
+    <p>Step 3: Web Configuration enables you to enter the storefront and Magento Admin URLs.</p>
+
+    <p><img src="/common/images/install_qr_web.png" alt="Enter your storefront and Magento Admin URLs" width="400px" /></p>
+  </li>
+  <li>
+    <p>Step 4: Customize Your Store enables you to enter a default store currency, time zone, and language.</p>
+
+    <p><img src="/common/images/install_qr_store.png" alt="Customize the store's language, time zone, currency" width="400px" /></p>
+  </li>
+  <li>
+    <p>Step 5: Create Admin Account enables you to set up a Magento administrator. This user can perform all actions in the Magento Admin.</p>
+
+    <p><img src="/common/images/install_qr_admin.png" alt="Create a Magento administrator account" width="400px" /></p>
+  </li>
+  <li>
+    <p>Step 6: Install starts the installation when you click <strong>Install Now</strong>.</p>
+
+    <p>You can optionally expand <strong>Console Log</strong> to see installation messages while the installation is in progress.</p>
+
+    <p>If errors display, see <a href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a>.</p>
+  </li>
+</ol>
+</div></div>
 
   <h2 id="installation-part-3-post-installation">Installation part 3: Post-installation</h2>
   <ul>
@@ -879,7 +1206,9 @@ php magento deploy:mode:set developer
         <div id="magento-com">
             <div class="container">
                 <div id="f-col-1">
-                    <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento Commerce" /></a>
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
                     <ul class="nav">
                         <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
                         <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
@@ -984,7 +1313,7 @@ php magento deploy:mode:set developer
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/js/app.js"></script>
 
 
 <!--Google Custom Search-->

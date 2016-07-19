@@ -39,11 +39,29 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/guides/v2.0/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/guides/v2.0/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
 		</div><!-- #global-nav -->
 	</nav>
 
@@ -60,8 +78,9 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
             </ul>
          </li>
          <li class="first">
@@ -77,18 +96,15 @@
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a>
-   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-<li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
-               <div class="divider"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
                <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
@@ -149,12 +165,13 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Set up a Magento workspace</h1>
-			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/cloud/before/before-workspace.md" target="_blank">Edit this page on GitHub</a>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/before/before-workspace.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
 </section>
+
 
 <div class="container">
 
@@ -278,10 +295,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -321,10 +338,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -388,10 +405,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -419,6 +436,45 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="project"><a href="#">Use the project Web Interface</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage environments (branches)</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Project backup and restore (snapshot)</a>
+
 
 									
 
@@ -586,10 +642,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -661,38 +717,110 @@
 
 								
 
-									
-
-										<li class="level3Parent " id="env-tut"><a href="#">Tutorials&mdash;Environment</a>
 
 
-									
 
-								
+						
 
-									
+					
 
+						
 
-											<li class="level3Child env-tut " data-menunode="env-tut"><a href="/guides/v2.0/cloud/env/environment-tutorial-set-mage-vars.html">Tutorial&mdash;Set Magento environment variables</a>
+						
 
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child env-tut " data-menunode="env-tut"><a href="/guides/v2.0/cloud/env/environment-tutorial-env-merge.html">Tutorial&mdash;Merge an environment</a>
-
-
-									
-
-								
-								
-								
 							
-							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/howtos/how-to.html">Tutorials</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="upgrade-update"><a href="#">Upgrade and update tutorials</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child upgrade-update " data-menunode="upgrade-update"><a href="/guides/v2.0/cloud/howtos/install-components.html">Install components</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child upgrade-update " data-menunode="upgrade-update"><a href="/guides/v2.0/cloud/howtos/update-components.html">Update components</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="env-tut"><a href="#">Environment tutorials</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child env-tut " data-menunode="env-tut"><a href="/guides/v2.0/cloud/howtos/environment-tutorial-set-mage-vars.html">Set Magento environment variables</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child env-tut " data-menunode="env-tut"><a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/howtos/sample-data.html">Install optional sample data</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/howtos/debug.html">Run a PHP debugger</a></li>
+
+									
+
+								
+
+
+
+
 						
 
 					
@@ -732,10 +860,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -767,10 +895,61 @@
 									
 
 								
-								
-								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
 							
-							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/trouble/trouble.html">Troubleshooting</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_ce-creds.html">Incorrect credentials</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_comp-deploy-fail.html">Component deployment failure</a></li>
+
+									
+
+								
+
+
+
+
 						
 
 					
@@ -913,12 +1092,12 @@
 
 	<section class="content">
 		<div class="content-wrap">
-
-      <p align="right"><i>Updated: 7 May 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#cloud-first-workspace">Set up a Magento workspace</a></li>
   <li><a href="#cloud-ssh-cli-cli-install">Install the CLI</a></li>
+  <li><a href="#cloud-first-php">Set up PHP</a></li>
   <li><a href="#cloud-ssh-cli-ssh">Enable Secure Shell (SSH)</a></li>
 </ul>
 
@@ -936,10 +1115,10 @@
 
 <p>This guide assumes you’re working on a UNIX system or in a UNIX shell environment. On Windows, you can use a UNIX environment like Cygwin or you can use Putty. The tool you use is up to you.</p>
 
-<h2 id="cloud-ssh-cli-cli-install">Install the CLI (Command Line Interface)</h2>
+<h2 id="cloud-ssh-cli-cli-install">Install the CLI (command-line interface)</h2>
 <p>The CLI is equivalent to the Web Interface. It will help you manage your projects on Magento Enterprise Cloud Edition.</p>
 
-<p>To install the Magento Enterprise Cloud Edition CLI:</p>
+<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>To install the Magento Enterprise Cloud Edition CLI:</p>
 
 <ol>
   <li>
@@ -957,6 +1136,8 @@
 </code></pre>
 
     <p>If the <code>source .bashrc</code> command fails, prepend the absolute file system path to your user home directory to <code>.bashrc</code></p>
+
+    <p>For more information about the user shell profile, see <a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html" target="_blank">.bash_profile vs .bashrc</a></p>
   </li>
   <li>Enter the operating system-specific command to add the CLI to your system <code>$PATH</code>.</li>
   <li>
@@ -966,16 +1147,47 @@
 </code></pre>
   </li>
 </ol>
+</div></div>
+
+<h2 id="cloud-first-php">Set up PHP</h2>
+<p>When you’re working with the Magento Cloud CLI, local environment settings come from the machine on which you’re working, not from Magento Enterprise Cloud Edition. For example, certain things (like debugging) require a larger PHP <code>memory_limit</code> than most PHP distributions provide by default.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>Before working with your Cloud project, make sure you set the PHP <code>memory_limit</code> to at least <code>1G</code> for normal use or at least <code>2G</code> for debugging.</p>
+
+<p>To set <code>memory_limit</code>:</p>
+
+<ol>
+  <li>
+    <p>Find your <code>php.ini</code> file using the following command:</p>
+
+    <pre><code>php --ini
+</code></pre>
+
+    <p>Use the value of <code>Loaded Configuration File</code>.</p>
+  </li>
+  <li>Open <code>php.ini</code> in a text editor.</li>
+  <li>Change the value of <code>memory_limit</code> to at least <code>1G</code> for normal use or at least <code>2G</code> for debugging.</li>
+  <li>Save your changes to <code>php.ini</code> and exit the text editor.</li>
+  <li>
+    <p>Restart your web server:</p>
+
+    <ul>
+      <li>CentOS: <code>service httpd restart</code></li>
+      <li>Ubuntu: <code>service apache2 restart</code></li>
+    </ul>
+  </li>
+</ol>
+</div></div>
 
 <h2 id="cloud-ssh-cli-ssh">Enable Secure Shell (SSH)</h2>
 <p>The <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">SSH protocol </a> is designed to maintain a secure connection between two systems—in this case, your local working environment and your Magento Enterprise Cloud Edition Git project.</p>
 
-<p>You must create an SSH keypair on every machine with which you and your team expect to interact with Magento Enterprise Cloud Edition.</p>
+<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>You must create an SSH keypair on every machine with which you and your team expect to interact with Magento Enterprise Cloud Edition.</p>
 
 <h3 id="locate-an-existing-ssh-keypair">Locate an existing SSH keypair</h3>
-<p>An existing SSH keypair is typically located in the <code>.ssh</code> subdirectory of the user’s home directory. For example, if you log in as <code>magento_user</code>, your SSH keys are typically located in:</p>
+<p>An existing SSH keypair is typically located in the <code>.ssh</code> subdirectory of the user’s home directory. To see if you already have keys, enter the following command:</p>
 
-<pre><code>/home/magento_user/.ssh
+<pre><code>ls ~/.ssh
 </code></pre>
 
 <p>If you don’t have SSH keys, continue with the next section.</p>
@@ -1005,24 +1217,43 @@
 
 <p>Follow the prompts on your screen to complete the task.</p>
 
+<h3 id="add-a-public-ssh-key-to-your-account">Add a public SSH key to your account</h3>
 <p>You can add SSH keys to your account in any of the following ways:</p>
 
 <ul>
-  <li>Using the Magento Enterprise Cloud Edition CLI</li>
-  <li>Using the Magento Enterprise Cloud Edition Web Interface when you create a new project</li>
-  <li>Your account settings</li>
+  <li>Using the <a href="#add-key-cli">Magento Enterprise Cloud Edition CLI</a></li>
+  <li>Using the <a href="#add-key-web">Magento Enterprise Cloud Edition Web Interface</a></li>
 </ul>
 
-<h3 id="add-a-public-ssh-key-to-your-account">Add a public SSH key to your account</h3>
-<p>As the account owner, log in to your Magento Enterprise Cloud Edition account and add a public SSH key. You must add the SSH key for the machine on which you will do the initial <code>git push</code> to add code to the project.</p>
-
-<p>If you don’t already have SSH keys on that machine, see <a href="https://help.github.com/articles/generating-an-ssh-key" target="_blank">GitHub documentation</a> to create them.</p>
-
-<p>To add a public SSH key:</p>
+<h4 id="add-key-cli">Add a key using the CLI</h4>
+<p>To add an SSH key using the CLI:</p>
 
 <ol>
-  <li>Copy your SSH public key to the clipboard.</li>
-  <li>Using the link in your welcome e-mail, access your Magento Enterprise Cloud Edition account.</li>
+  <li>If you haven’t done so already, log in to the server on which your SSH keys are located.</li>
+  <li>
+    <p>Log in to your project:</p>
+
+    <pre><code>magento-cloud login
+</code></pre>
+  </li>
+  <li>
+    <p>Add the key:</p>
+
+    <pre><code>magento-cloud ssh-key:add &lt;key value&gt;
+</code></pre>
+  </li>
+</ol>
+
+<h4 id="add-key-web">Add a key using the Web Interface</h4>
+<p>To add an SSH key using the Web Interface:</p>
+
+<ol>
+  <li>
+    <p>Copy your SSH public key to the clipboard.</p>
+
+    <p>If you don’t already have SSH keys on that machine, see <a href="https://help.github.com/articles/generating-an-ssh-key" target="_blank">GitHub documentation</a> to create them.
+2.	Using the link in your welcome e-mail, access your Magento Enterprise Cloud Edition account.</p>
+  </li>
   <li>
     <p>Log in to your project using Bitbucket, GitHub, Google, or a user name and password.</p>
 
@@ -1035,12 +1266,13 @@
   </li>
   <li>Expand <strong>SSH Keys</strong>.</li>
   <li>
-    <p>On the next page, click <strong>Add Public SSH Key</strong> as the following figure shows.</p>
+    <p>On the next page, click <strong>Add a public key</strong> as the following figure shows.</p>
 
-    <p><img src="/common/images/cloud_add-public-key.png" alt="Add SSH public key to your account" width="650px" /></p>
+    <p><img src="/common/images/cloud_add-public-key.png" alt="Add an SSH public key to your account" width="650px" /></p>
   </li>
   <li>Follow the prompts on your screen to complete the task.</li>
 </ol>
+</div></div>
 
 <h4 id="next-steps">Next steps</h4>
 <ul>
@@ -1071,7 +1303,9 @@
         <div id="magento-com">
             <div class="container">
                 <div id="f-col-1">
-                    <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento Commerce" /></a>
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
                     <ul class="nav">
                         <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
                         <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
@@ -1176,7 +1410,7 @@
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/js/app.js"></script>
 
 
 <!--Google Custom Search-->

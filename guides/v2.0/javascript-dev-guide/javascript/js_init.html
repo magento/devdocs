@@ -39,11 +39,29 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/guides/v2.0/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/guides/v2.0/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
 		</div><!-- #global-nav -->
 	</nav>
 
@@ -60,8 +78,9 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
             </ul>
          </li>
          <li class="first">
@@ -77,18 +96,15 @@
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a>
-   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-<li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
-               <div class="divider"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
                <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
@@ -149,12 +165,13 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">JavaScript initialization</h1>
-			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/javascript-dev-guide/javascript/js_init.md" target="_blank">Edit this page on GitHub</a>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/javascript/js_init.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
 </section>
+
 
 <div class="container">
 
@@ -341,10 +358,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -496,10 +513,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -590,19 +607,47 @@
 
 	<section class="content">
 		<div class="content-wrap">
-
-      <p align="right"><i>Updated: 18 March 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 13 July 2016 (PDT)</i></p>
 		<h2 id="js_init_overview">Overview</h2>
 
-<p>This topic talks about how to initialize a JavaScript component in the Magento 2 application. 
-It covers initializing JavaScript components in a <code>.phtml</code> template and jQuery widget initialization in a JS script. We strongly recommend that you use the described approaches and do not add inline JavaScript.</p>
+<p>This topic talks about how to initialize a <a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html#js_terms">JavaScript component</a> in the Magento 2 application. 
+It covers initializing JavaScript components (including jQuery widgets) in <code>.phtml</code> templates and JS scripts. We strongly recommend that you use the described approaches and do not add inline JavaScript.</p>
 
-<p>Do not add JavaScript inline. Instead use the approaches described further.</p>
+<p><strong>Contents</strong></p>
+
+<ul id="markdown-toc">
+  <li><a href="#init_phtml">Initialize a JS component in a PHTML template</a>    <ul>
+      <li><a href="#declarative-initialization">Declarative initialization</a>        <ul>
+          <li><a href="#data_mage_init">Declarative initialization using the <code>data-mage-init</code> attribute</a>            <ul>
+              <li><a href="#init_process">How the JS initialization using <code>data-mage-init</code> is processed</a></li>
+            </ul>
+          </li>
+          <li><a href="#declarative-initialization-using-the-script-typetextx-magento-init--tag-decltag">Declarative initialization using the <code>&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</a></li>
+        </ul>
+      </li>
+      <li><a href="#init_script">Imperative initialization</a></li>
+    </ul>
+  </li>
+  <li><a href="#js_widget_init">JS components initialization in JS</a></li>
+</ul>
 
 <h2 id="init_phtml">Initialize a JS component in a PHTML template</h2>
-<p>In Magento 2, there are two ways to initialize a JS component in a <code>.phtml</code> template: using the <code>data-mage-init</code> attribute and using the <code>&lt;script&gt;</code> tag. Both ways are described in the following sections.</p>
+<p>Depending on your task, you might want to use declarative or imperative initialization. Both ways are described in the following sections.</p>
 
-<h3 id="data_mage_init">Initialization using <code>data-mage-init</code></h3>
+<h3 id="declarative-initialization">Declarative initialization</h3>
+
+<p>Declarative JS component initialization allows preparing all the configuration on the backend side and outputting it to the page source using standard tools. </p>
+
+<p>In Magneto 2 there are two ways of declarative initialization:</p>
+
+<ul>
+  <li>using the <code>data-mage-init</code> attribute</li>
+  <li>using the <code>&lt;scrtipt type="text/x-magento-init" /&gt;</code> tag</li>
+</ul>
+
+<p>Both ways are described further</p>
+
+<h4 id="data_mage_init">Declarative initialization using the <code>data-mage-init</code> attribute</h4>
 
 <p>Use the <code>data-mage-init</code> attribute to initialize a JS component on a certain HTML element. The following code sample is an illustration. Here a JS component is initialized on the <code>&lt;nav/&gt;</code> element:</p>
 <pre>
@@ -611,7 +656,7 @@ It covers initializing JavaScript components in a <code>.phtml</code> template a
 
 <p>When initialized on a certain element, the script is called only for this particular element. It is not automatically initialized for other elements of this type on the page. </p>
 
-<h4 id="init_process">How the JS initialization using <code>data-mage-init</code> is processed</h4>
+<h5 id="init_process">How the JS initialization using <code>data-mage-init</code> is processed</h5>
 
 <p>On DOM ready, the <code>data-mage-init</code> attribute is parsed to extract components’ names and configuration to be applied to the element. 
 Depending on the type of the JS component initialized, processing is performed as follows:</p>
@@ -648,62 +693,108 @@ return;
 Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
-<h3 id="init_script">Initialization using <code>&lt;script&gt;</code></h3>
-<p>To initialize a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> tag. An illustration follows:</p>
+<h4 id="declarative-initialization-using-the-script-typetextx-magento-init--tag-decltag">Declarative initialization using the <code>&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</h4>
 
-<pre>
-&lt;script type=&quot;text/x-magento-init&quot;&gt;
-    // components initialized on the element defined by selector
-	&quot;&lt;element_selector&gt;&quot;: {
-		&quot;&lt;js_component1&gt;&quot;: ...,
-		&quot;&lt;js_component2&gt;&quot;: ...
-    },
-    // components initialized without binding to an element
-    &quot;*&quot;: {
-        &quot;&lt;js_component3&gt;&quot;: ...
-    }
-&lt;/script&gt;
-</pre>
+<p>To initialize a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the <code>&lt;script&gt;</code> tag. </p>
+
+<p>Use the following syntax:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-magento-init&quot;</span><span class="nt">&gt;</span>
+<span class="p">{</span>
+    <span class="c1">// components initialized on the element defined by selector</span>
+	<span class="s2">&quot;&lt;element_selector&gt;&quot;</span><span class="o">:</span> <span class="p">{</span>
+		<span class="s2">&quot;&lt;js_component1&gt;&quot;</span><span class="o">:</span> <span class="p">...,</span>
+		<span class="s2">&quot;&lt;js_component2&gt;&quot;</span><span class="o">:</span> <span class="p">...</span>
+    <span class="p">},</span>
+    <span class="c1">// components initialized without binding to an element</span>
+    <span class="s2">&quot;*&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;&lt;js_component3&gt;&quot;</span><span class="o">:</span> <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
 <p>Where:</p>
 <ul>
-<li><code>&lt;element_selector&gt;</code> is a selector for the element on which the following JS components are initialized.</li>
+<li><code>&lt;element_selector&gt;</code> is a <a href="https://api.jquery.com/category/selectors/">selector</a> (in terms of querySelectorAll) for the element on which the following JS components are initialized.</li>
 <li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
 <li><code>&lt;js_component3&gt;</code> is the JS component initialized with no binding to an element.</li> 
 </ul>
 
-<p>The following is an illustration of widget initialization using <code>&lt;script&gt;</code>. Here the accordion and navigation widgets are initialized on the element with the <code>#main-container</code> selector, and the <code>pageCache</code> script is initialized with no binding to any element.</p>
+<p>The following is a working code sample of widget initialization using <code>&lt;script&gt;</code>. Here the accordion and navigation widgets are initialized on the element with the <code>#main-container</code> selector, and the <code>pageCache</code> script is initialized with no binding to any element.</p>
 
-<pre>
-&lt;script type=&quot;text/x-magento-init&quot;&gt;
-    &quot;#main-container&quot;: {
-        &quot;navigation&quot;: &lt;?php echo $block-&gt;getNavigationConfig(); ?&gt;,
-        &quot;accordion&quot;: &lt;?php echo $block-&gt;getNavigationAccordionConfig(); ?&gt;
-    },
-    &quot;*&quot;: {
-        &quot;pageCache&quot;: &lt;?php echo $block-&gt;getPageCacheConfig(); ?&gt;
-    }
-&lt;/script&gt;
-</pre>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-magento-init&quot;</span><span class="nt">&gt;</span>
+<span class="p">{</span>
+    <span class="s2">&quot;#main-container&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;navigation&quot;</span><span class="o">:</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getNavigationConfig</span><span class="p">();</span> <span class="o">?&gt;</span><span class="p">,</span>
+        <span class="s2">&quot;accordion&quot;</span><span class="o">:</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getNavigationAccordionConfig</span><span class="p">();</span> <span class="o">?&gt;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;*&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;pageCache&quot;</span><span class="o">:</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getPageCacheConfig</span><span class="p">();</span> <span class="o">?&gt;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
-<h2 id="widget_init">Widget initialization in JS</h2>
+<h3 id="init_script">Imperative initialization</h3>
 
-<p>To initialize a widget in JS code, use a notation similar to the following (the <a href="/guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the <code>#main-container</code> element as illustration):</p>
+<p>Imperative initialization allows using raw JavaScript code on the pages and executing particular business logic. Imperative initialization is performed using the <code>&lt;script&gt;</code> tag with the following syntax:</p>
 
-<pre>
-$("#main-container").accordion();
-</pre>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+<span class="nx">require</span><span class="p">([</span>
+    <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;accordion&#39;</span>  <span class="c1">// an alias for &quot;mage/accordion&quot;</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">)</span>  <span class="c1">// we expect that page contains markup &lt;tag data-role=&quot;example&quot;&gt;..&lt;/tag&gt;</span>
+            <span class="p">.</span><span class="nx">accordion</span><span class="p">({</span> <span class="c1">// now we can use &quot;accordion&quot; as jQuery plugin</span>
+                <span class="nx">header</span><span class="o">:</span>  <span class="s1">&#39;[data-role=header]&#39;</span><span class="p">,</span>
+                <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;[data-role=content]&#39;</span><span class="p">,</span>
+                <span class="nx">trigger</span><span class="o">:</span> <span class="s1">&#39;[data-role=trigger]&#39;</span><span class="p">,</span>
+                <span class="nx">ajaxUrlElement</span><span class="o">:</span> <span class="s2">&quot;a&quot;</span>
+            <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+
+<h2 id="js_widget_init">JS components initialization in JS</h2>
+
+<p>To initialize a widget in JS code, use a notation similar to the following <a href="/guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html">accordion</a> widget is initialized on the <code>[data-role=example]</code> element as illustration):</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span></code></pre></div>
 
 <p>To initialize a widget with options, use notation similar to the following:</p>
 
-<pre>
-$("#main-container").accordion({
-    header : "#title-1",
-    content : "#content-1",
-    trigger : "#trigger-1,
-    ajaxUrlElement: "a"
- });
-</pre>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">)</span>  <span class="c1">// we expect that page contains markup &lt;tag data-role=&quot;example&quot;&gt;..&lt;/tag&gt;</span>
+        <span class="p">.</span><span class="nx">accordion</span><span class="p">({</span> <span class="c1">// now we can use &quot;accordion&quot; as jQuery plugin</span>
+            <span class="nx">header</span><span class="o">:</span>  <span class="s1">&#39;[data-role=header]&#39;</span><span class="p">,</span>
+	    <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;[data-role=content]&#39;</span><span class="p">,</span>
+	    <span class="nx">trigger</span><span class="o">:</span> <span class="s1">&#39;[data-role=trigger]&#39;</span><span class="p">,</span>
+            <span class="nx">ajaxUrlElement</span><span class="o">:</span> <span class="s1">&#39;a&#39;</span>
+        <span class="p">});</span>
+<span class="p">});</span></code></pre></div>
+
+<p>In a similar way, you can initialize any  JS component that a returns callback function accepting a <code>config</code> object and <code>element</code> (a DOM node).</p>
+
+<p>For example:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span> <span class="p">([</span>
+    <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mage/gallery/gallery&#39;</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">Gallery</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">)</span>  <span class="c1">// we expect that page contains markup &lt;tag data-role=&quot;example&quot;&gt;..&lt;/tag&gt;</span>
+            <span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">Gallery</span><span class="p">({</span>
+                    <span class="nx">options</span><span class="o">:</span>  <span class="p">{},</span>
+                    <span class="nx">data</span><span class="o">:</span> <span class="p">[{</span>
+                        <span class="nx">img</span><span class="o">:</span> <span class="s1">&#39;https://c2.staticflickr.com/8/7077/27935031965_facd03b4cb_b_d.jpg&#39;</span>
+                    <span class="p">}],</span>
+                    <span class="nx">fullscreen</span><span class="o">:</span> <span class="p">{}</span>
+                <span class="p">},</span> <span class="nx">element</span><span class="p">);</span>  <span class="c1">// &#39;element&#39; is simgle DOM node. </span>
+            <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">});</span></code></pre></div>
 
 
 
@@ -728,7 +819,9 @@ $("#main-container").accordion({
         <div id="magento-com">
             <div class="container">
                 <div id="f-col-1">
-                    <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento Commerce" /></a>
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
                     <ul class="nav">
                         <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
                         <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
@@ -833,7 +926,7 @@ $("#main-container").accordion({
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/js/app.js"></script>
 
 
 <!--Google Custom Search-->

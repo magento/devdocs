@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Gallery widget</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/javascript-dev-guide/widgets/widget_gallery.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Gallery widget</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/widgets/widget_gallery.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>JavaScript Developer Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q "><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">Introduction</a></li>
+
+							
+
+								<li class="q "><a href="/guides/v2.1/javascript-dev-guide/conventions_js.html">Conventional notations used in this Guide</a></li>
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/javascript-dev-guide/javascript/js_overview.html">JavaScript</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/javascript/js-resources.html">Configure JavaScript resources</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/javascript/js_init.html">JavaScript initialization</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/javascript/custom_js.html">Use custom JavaScript</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/javascript/js_debug.html">Locate JavaScript components</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/javascript/js_practice.html">Customizing JavaScript illustration</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/javascript-dev-guide/widgets/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_accordion.html">Accordion widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_alert.html">Alert widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_calendar.html">Calendar widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_collapsible.html">Collapsible widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_confirm.html">Confirmation widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_dialog.html">DropdownDialog widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_gallery.html">Gallery widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_list.html">List widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_gallery_mg.html">Magnifier widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_loader.html">Loader widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_menu.html">Menu widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_modal.html">Modal widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_navigation.html">Navigation widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_prompt.html">Prompt widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_quickSearch.html">QuickSearch widget</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_tabs.html">Tabs widget</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2>Overview</h2>
+
+<p>The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks. </p>
+
+<p>The following picture is an illustration of image displaying on the product page using the gallery widget:</p>
+
+<p><img src="/common/images/gallery_scr.png" width="650px" alt="A product page with preview and thumbnails" /></p>
+
+<p>In addition, the <a href="/guides/v2.1/javascript-dev-guide/widgets/widget_gallery_mg.html">magnifier widget</a> can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.</p>
+
+<p>Gallery is displayed consistently across all supported browsers and is responsive — it sizes correctly on mobile devices and desktops.</p>
+
+<p>The gallery widget uses the <a href="http://fotorama.io/">Fotorama widget</a>.</p>
+
+<p>The important feature of the gallery widget implementation is the possibility to configure the widget options in the <code>view.xml</code> configuration file of a theme. </p>
+
+<p>The gallery widget source code is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a></p>
+
+<p>The gallery magnifier source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/magnifier/magnify.js"> lib/web/magnifier/magnify.js</a>.</p>
+
+<h3>Contents</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#gallery_init">Initialize the gallery widget</a></li>
+  <li><a href="#gallery_options">Options</a>    <ul>
+      <li><a href="#data"><code>data</code></a>        <ul>
+          <li><a href="#data_caption"><code>data/caption</code></a></li>
+        </ul>
+      </li>
+      <li><a href="#options"><code>options</code></a>        <ul>
+          <li><a href="#gallery_allowfullscreen"><code>options/allowfullscreen</code></a></li>
+          <li><a href="#gallery_arrows"><code>options/arrows</code></a></li>
+          <li><a href="#gallery_height"><code>options/height</code></a></li>
+          <li><a href="#gallery_keyboard"><code>options/keyboard</code></a></li>
+          <li><a href="#gallery_loop"><code>options/loop</code></a></li>
+          <li><a href="#gallery_maxheight"><code>options/maxheight</code></a></li>
+          <li><a href="#gallery_maxwidth"><code>options/maxwidth</code></a></li>
+          <li><a href="#gallery_minheight"><code>options/minheight</code></a></li>
+          <li><a href="#gallery_minwidth"><code>options/minwidth</code></a></li>
+          <li><a href="#gallery_nav"><code>options/nav</code></a></li>
+          <li><a href="#gallery_navdir"><code>options/navdir</code></a></li>
+          <li><a href="#gallery_navarrows"><code>options/navarrows</code></a></li>
+          <li><a href="#gallery_navtype"><code>options/navtype</code></a></li>
+          <li><a href="#gallery_ratio"><code>options/ratio</code></a></li>
+          <li><a href="#gallery_showcaption"><code>options/showCaption</code></a></li>
+          <li><a href="#gallery_startindex"><code>options/startindex</code></a></li>
+          <li><a href="#gallery_swipe"><code>options/swipe</code></a></li>
+          <li><a href="#gallery_thumbwidth"><code>options/thumbwidth</code></a></li>
+          <li><a href="#gallery_thumbwidth"><code>options/thumbheight</code></a></li>
+          <li><a href="#gallery_transitioneffect"><code>options/transition</code></a></li>
+          <li><a href="#gallery_transitionduration"><code>options/transitionduration</code></a></li>
+          <li><a href="#gallery_width"><code>options/width</code></a></li>
+        </ul>
+      </li>
+      <li><a href="#fullscreen"><code>fullscreen</code></a>        <ul>
+          <li><a href="#full_arrows"><code>fullscreen/arrows</code></a></li>
+          <li><a href="#full_caption"><code>fullscreen/caption</code></a></li>
+          <li><a href="#fullscreen_keyboard"><code>fullscreen/keyboard</code></a></li>
+          <li><a href="#full_loop"><code>fullscreen/loop</code></a></li>
+          <li><a href="#full_nav"><code>fullscreen/nav</code></a></li>
+          <li><a href="#full_navdir"><code>fullscreen/navdir</code></a></li>
+          <li><a href="#full_carousel"><code>fullscreen/navigation_carousel</code></a></li>
+          <li><a href="#full_showcaption"><code>fullscreen/showCaption</code></a></li>
+          <li><a href="#full_thumbwidth"><code>fullscreen/thumbwidth</code></a></li>
+          <li><a href="#full_thumbheight"><code>fullscreen/thumbheight</code></a></li>
+          <li><a href="#fullscreen_transitioneffect"><code>fullscreen/transition</code></a></li>
+          <li><a href="#fullscreen_transitionduration"><code>fullscreen/transitionduration</code></a></li>
+        </ul>
+      </li>
+      <li><a href="#breakpoints"><code>breakpoints</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#configure-gallery-options-in-viewxml">Configure gallery options in <code>view.xml</code></a></li>
+  <li><a href="#gallery_api">Gallery API</a>    <ul>
+      <li><a href="#gallery_methods">Methods</a>        <ul>
+          <li><a href="#gallery_first"><code>first()</code></a></li>
+          <li><a href="#gallery_last"><code>last()</code></a></li>
+          <li><a href="#gallery_next"><code>next()</code></a></li>
+          <li><a href="#gallery_prev"><code>prev()</code></a></li>
+          <li><a href="#gallery_seek"><code>seek()</code></a></li>
+          <li><a href="#gallery_updateData"><code>updateData()</code></a></li>
+          <li><a href="#gallery_updateOptions"><code>updateOptions()</code></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="gallery_init">Initialize the gallery widget</h2>
+
+<p>The gallery widget is initialized as described in <a href="/guides/v2.1/javascript-dev-guide/javascript/js_init.html#init_phtml">JavaScript initialization</a>.</p>
+
+<p>Example of declarative initialization:</p>
+
+<p><code>&lt;Magento_Catalog_module_dir&gt;/view/frontend/templates/product/view/gallery.phtml</code> </p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/x-magento-init&quot;</span><span class="o">&gt;</span>
+    <span class="p">{</span>
+         <span class="p">{</span>
+        <span class="s2">&quot;&lt;element_selector&gt;&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;mage/gallery/gallery&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">[{</span>
+                    <span class="s2">&quot;thumb&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;img&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;full&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;caption&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;message&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;number&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;isMain&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;true/false&gt;&quot;</span>
+                <span class="p">}],</span>
+                <span class="s2">&quot;options&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;nav&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;false/thumbs/dots&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;loop&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;keyboard&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;arrows&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;allowfullscreen&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;showCaption&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;width&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;thumbwidth&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;thumbheight&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;height&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;transitionduration&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;transition&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;slide/crossfade/dissolve&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;navarrows&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;navtype&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;slides/thumbs&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;navdir&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;horizontal/vertical&gt;&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;fullscreen&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;nav&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;false/thumbs/dots&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;loop&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;navdir&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;horizontal/vertical&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;arrows&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;showCaption&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;transitionduration&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">&quot;transition&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;slide/crossfade/dissolve&gt;&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;breakpoints&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;&lt;breakpoint_name&gt;&quot;</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;conditions&quot;</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="s2">&quot;max-width&quot;</span><span class="o">:</span> <span class="s2">&quot;767px&quot;</span>
+                        <span class="p">}</span>
+                        <span class="s2">&quot;options&quot;</span><span class="o">:</span> <span class="p">{}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span></code></pre></div>
+
+<h2 id="gallery_options">Options</h2>
+
+<p>The following option groups are available for the gallery widget:</p>
+
+<ul>
+  <li><a href="#data"><code>data</code></a></li>
+  <li><a href="#options"><code>options</code></a></li>
+  <li><a href="#fullscreen"><code>fullscreen</code></a></li>
+  <li><a href="#breakpoints"><code>breakpoints</code></a></li>
+</ul>
+
+<p>All options for each group are described further.</p>
+
+<h3 id="data"><code>data</code></h3>
+
+<p>Array of images to display.</p>
+
+<p>Where <code>image</code> is an object with keys:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+    <span class="s2">&quot;thumb&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;img&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;full&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;caption&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;message&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;isMain&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;true/false&gt;&quot;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The <code>thumb</code>, <code>img</code>, and <code>full</code> are full paths to proper image files.</p>
+
+<h4 id="data_caption"><code>data/caption</code></h4>
+
+<p>Set the caption for a specific image in the <code>data</code> field.
+Example of the runtime initialization with the <code>caption</code> option specified:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">galleryInstance</span><span class="p">({</span> 
+    <span class="nx">data</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">img</span><span class="o">:</span> <span class="s1">&#39;preview_number_one.jpg&#39;</span><span class="p">,</span>
+            <span class="nx">thumb</span><span class="o">:</span> <span class="s1">&#39;preview_number_one.jpg&#39;</span><span class="p">,</span>
+            <span class="nx">caption</span><span class="o">:</span> <span class="s1">&#39;T-Shirt Women side&#39;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span></code></pre></div>
+
+<h3 id="options"><code>options</code></h3>
+<p>Set of options available for the Preview region.</p>
+
+<h4 id="gallery_allowfullscreen"><code>options/allowfullscreen</code></h4>
+<p>Show the button that toggles full screen view of the gallery.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="gallery_arrows"><code>options/arrows</code></h4>
+
+<p>Display navigation arrows on the thumbnails sides.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="gallery_height"><code>options/height</code></h4>
+
+<p>Height of the preview block in pixels or percent.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: null</p>
+
+<h4 id="gallery_keyboard"><code>options/keyboard</code></h4>
+
+<p>Switch on/off the keyboard navigation.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code>false</code></p>
+
+<h4 id="gallery_loop"><code>options/loop</code></h4>
+
+<p>Define whether images are displayed in a loop.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code>false</code></p>
+
+<h4 id="gallery_maxheight"><code>options/maxheight</code></h4>
+
+<p>Maximum height of the preview block in pixels or percent.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: <code>null</code></p>
+
+<h4 id="gallery_maxwidth"><code>options/maxwidth</code></h4>
+
+<p>Maximum width of the preview block in pixels or percent.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: 100%</p>
+
+<h4 id="gallery_minheight"><code>options/minheight</code></h4>
+
+<p>Minimal height of the preview block in pixels or percent.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: <code>null</code></p>
+
+<h4 id="gallery_minwidth"><code>options/minwidth</code></h4>
+
+<p>Minimal width of the preview block in pixels or percent.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: <code>null</code></p>
+
+<h4 id="gallery_nav"><code>options/nav</code></h4>
+
+<p>Variation of thumbnails in navigation.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code>dots</code>: iPhone-style dots</li>
+  <li><code>thumbs</code>: thumbnails</li>
+  <li><code>false</code>: nothing</li>
+</ul>
+
+<p><strong>Default</strong>: <code>dots</code></p>
+
+<h4 id="gallery_navdir"><code>options/navdir</code></h4>
+
+<p>Sliding direction of thumbnails.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code>vertical</code></li>
+  <li><code>horizontal</code></li>
+</ul>
+
+<h4 id="gallery_navarrows"><code>options/navarrows</code></h4>
+
+<p>Display navigation arrows for thumbnails.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="gallery_navtype"><code>options/navtype</code></h4>
+
+<p>Sliding type of thumbnails. </p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code>slides</code>: on the arrow button click the thumbs ribbon shifts over several thumbs</li>
+  <li><code>thumb</code>: on the arrow button click the thumbs ribbon shifts over one thumb</li>
+</ul>
+
+<h4 id="gallery_ratio"><code>options/ratio</code></h4>
+
+<p>Width divided by height. Recommended if you set width in percents.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: calculated from <code>width</code> and <code>height</code>.</p>
+
+<h4 id="gallery_showcaption"><code>options/showCaption</code></h4>
+
+<p>Enable view of caption in preview. Can be for initialized for specific image. Can work globally.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="gallery_startindex"><code>options/startindex</code></h4>
+
+<p>The index number of the image that is displayed once the gallery is initialized.</p>
+
+<p><strong>Type</strong>: Number</p>
+
+<p><strong>Default value</strong>: <code>0</code></p>
+
+<h4 id="gallery_swipe"><code>options/swipe</code></h4>
+
+<p>Moving between preview images by swiping in left and right.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code>true</code></p>
+
+<h4 id="gallery_thumbwidth"><code>options/thumbwidth</code></h4>
+
+<p>Width of thumbnails.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<h4 id="gallery_thumbwidth"><code>options/thumbheight</code></h4>
+
+<p>Height of thumbnails.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<h4 id="gallery_transitioneffect"><code>options/transition</code></h4>
+
+<p>Sets the transition effect for slides changing.</p>
+
+<p><strong>Possible values</strong>: </p>
+
+<ul>
+  <li><code>slide</code></li>
+  <li><code>crossfade</code></li>
+  <li><code>dissolve</code></li>
+</ul>
+
+<h4 id="gallery_transitionduration"><code>options/transitionduration</code></h4>
+<p>Sets transition duration in milliseconds.</p>
+
+<p><strong>Type</strong>: Number</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="gallery_width"><code>options/width</code></h4>
+
+<p>Width of the preview in gallery in pixels or percents.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: <code>null</code></p>
+
+<h3 id="fullscreen"><code>fullscreen</code></h3>
+
+<p>Set of options available for the fullscreen view.</p>
+
+<h4 id="full_arrows"><code>fullscreen/arrows</code></h4>
+
+<p>Display navigation arrows on the sides of previews in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="full_caption"><code>fullscreen/caption</code></h4>
+<p>Display alt text as image title in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="fullscreen_keyboard"><code>fullscreen/keyboard</code></h4>
+
+<p>Switch on/off the keyboard navigation in the fullscreen mode.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="full_loop"><code>fullscreen/loop</code></h4>
+
+<p>Define whether images are displayed in a loop.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code>false</code></p>
+
+<h4 id="full_nav"><code>fullscreen/nav</code></h4>
+
+<p>Variation of thumbnails in navigation in the fullscreen view.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code>dots</code>: iPhone-style dots</li>
+  <li><code>thumbs</code>: thumbnails</li>
+  <li><code>false</code>: nothing</li>
+</ul>
+
+<h4 id="full_navdir"><code>fullscreen/navdir</code></h4>
+
+<p>Sliding direction of thumbnails in the fullscreen view.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code>vertical</code></li>
+  <li><code>horizontal</code></li>
+</ul>
+
+<h4 id="full_carousel"><code>fullscreen/navigation_carousel</code></h4>
+
+<p>Display navigation thumbnails as carousel in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="full_showcaption"><code>fullscreen/showCaption</code></h4>
+
+<p>Enable view of caption in the fullscreen mode. Can be for initialized for specific image. Can work globally.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="full_thumbwidth"><code>fullscreen/thumbwidth</code></h4>
+
+<p>Width of thumbnails in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<h4 id="full_thumbheight"><code>fullscreen/thumbheight</code></h4>
+
+<p>Height of thumbnails in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<h4 id="fullscreen_transitioneffect"><code>fullscreen/transition</code></h4>
+
+<p>Sets the transition effect for slides changing in the fullscreen view.</p>
+
+<p><strong>Possible values</strong>: </p>
+
+<ul>
+  <li><code>slide</code></li>
+  <li><code>crossfade</code></li>
+  <li><code>dissolve</code></li>
+</ul>
+
+<h4 id="fullscreen_transitionduration"><code>fullscreen/transitionduration</code></h4>
+<p>Sets transition duration in milliseconds in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Number</p>
+
+<h3 id="breakpoints"><code>breakpoints</code></h3>
+<p>Set of options that could be dynamically set while page is resizing.</p>
+
+<p>Set as follows:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">&quot;breakpoints&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;%breakpoint_name%&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;conditions&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="p">...</span>
+        <span class="p">}</span>
+        <span class="s2">&quot;options&quot;</span><span class="o">:</span> <span class="p">{...}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Where the options are as follows:</p>
+
+<ul>
+  <li><code>conditions</code>: compiled in <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media query</a> through and operand. For example: <code>"max-width": "767px"</code></li>
+  <li><code>options</code> - object of options that are applied</li>
+</ul>
+
+<h2 id="configure-gallery-options-in-viewxml">Configure gallery options in <code>view.xml</code></h2>
+
+<p>Gallery and magnifier options can be set in the <code>view.xml</code> configuration file of a theme. The file is conventionally located in <code>&lt;theme_dir&gt;/etc</code>. </p>
+
+<p>The general gallery options are set as follows:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;gallery&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%option1%&quot;</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%option2%&quot;</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
+...
+<span class="nt">&lt;/var&gt;</span></code></pre></div>
+
+<p>The fullscreen and breakpoints options are set in a similar way:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;fullscreen&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%fullscreen_option1%&quot;</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%fullscreen_option2%&quot;</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
+...
+<span class="nt">&lt;/var&gt;</span>
+<span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;breakpoints&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%breakpoints_option1%&quot;</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%breakpoints_option2%&quot;</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
+...
+<span class="nt">&lt;/var&gt;</span></code></pre></div>
+
+<p>For illustration of setting gallery option in <code>view.xml</code>, you can reference to the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/etc/view.xml#L184">view.xml of the Blank theme</a>. </p>
+
+<h2 id="gallery_api">Gallery API</h2>
+
+<p>Gallery methods are placed in data storage of the <code>gallery</code> object. To initialize the API, on the gallery object, call the <code>data</code> method with <code>gallery</code> as argument. The illustration follows:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">var api = $(element).data(&#39;gallery&#39;);</span>
+<span class="x"> </span>
+<span class="x">//or</span>
+<span class="x"> </span>
+<span class="x">var api = $(&#39;[data-gallery-role=&quot;gallery&quot;]&#39;).data(&#39;gallery&#39;);</span></code></pre></div>
+
+<p>This method returns JS object that contains API functions.</p>
+
+<p>To ensure that the gallery is fully formed, wrap your code with event handler function and add it to the <code>gallery:loaded</code> event:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$(element).on(&#39;gallery:loaded&#39;, function () {</span>
+<span class="x">        var api = $(element).data(&#39;gallery&#39;);</span>
+<span class="x">        /* api methods calls */</span>
+<span class="x">    });</span></code></pre></div>
+
+<p>Then to call a method, use the following notation:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">api.%method_name%();</span></code></pre></div>
+
+<p>All available methods are listed in the following paragraph.</p>
+
+<h3 id="gallery_methods">Methods</h3>
+
+<ul>
+  <li><a href="#gallery_first">first</a> </li>
+  <li><a href="#gallery_last">last</a></li>
+  <li><a href="#gallery_next">next</a></li>
+  <li><a href="#gallery_prev">prev</a></li>
+  <li><a href="#gallery_seek">seek</a></li>
+  <li><a href="#gallery_updateData">updateData</a></li>
+  <li><a href="#gallery_updateData">updateOptions</a></li>
+</ul>
+
+<h4 id="gallery_first"><code>first()</code></h4>
+
+<p>Displays the first preview image.</p>
+
+<h4 id="gallery_last"><code>last()</code></h4>
+
+<p>Displays the last preview image.</p>
+
+<h4 id="gallery_next"><code>next()</code></h4>
+
+<p>Image ID is passed as an argument. Displays the next preview image. </p>
+
+<p>If the last image ID is passed, the behavior depends on whether <a href="#gallery_loop">loop</a> is enabled:</p>
+
+<ul>
+  <li>if loop is enabled, the first image is displayed.</li>
+  <li>if loop is disabled, does not change the displayed image.</li>
+</ul>
+
+<h4 id="gallery_prev"><code>prev()</code></h4>
+
+<p>Displays the previous preview image. </p>
+
+<p>If the first image ID is passed, the behavior depends on whether <a href="##gallery_loop">loop</a> is enabled:</p>
+
+<ul>
+  <li>if loop is enbled, the last image is displayed.</li>
+  <li>if loop is disabled, does not change the displayed image.</li>
+</ul>
+
+<h4 id="gallery_seek"><code>seek()</code></h4>
+
+<p>Displays the image with the specified <code>index</code>. </p>
+
+<p>Doesn’t update preview if the argument is not valid. </p>
+
+<p>Behavior:</p>
+
+<ul>
+  <li><code>seek(0)</code> does not display any preview </li>
+  <li><code>seek(1)</code> displays the first image. </li>
+  <li><code>seek(-1)</code> displays the last image. </li>
+  <li>If the argument is a number bigger than the number of items, or less than “-(number of items)” the gallery shows the modulus of the following division: total images number divided by the argument number.  </li>
+</ul>
+
+<h4 id="gallery_updateData"><code>updateData()</code></h4>
+
+<p>Add new items to the gallery. </p>
+
+<p>Example:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">api.updateData([{</span>
+<span class="x">    img: &#39;image1.jpg&#39;,</span>
+<span class="x">    thumb: &#39;thumb1.jpg&#39;,</span>
+<span class="x">    caption: &#39;caption&#39;</span>
+<span class="x">}]);</span></code></pre></div>
+
+<h4 id="gallery_updateOptions"><code>updateOptions()</code></h4>
+<p>Updates options of active breakpoint or default gallery options, if there is no active breakpoint.</p>
+
+<p>Example:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">api.updateOptions([{</span>
+<span class="x">    nav: &#39;dots&#39;</span>
+<span class="x">}]);</span></code></pre></div>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

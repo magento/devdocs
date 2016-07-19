@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/install-gde/prereq/php-ubuntu.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/install-gde/prereq/php-ubuntu.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Installation Guide<br>Part 1: Getting started</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a></li>
+									
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a></li>
+									
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/system-requirements.html">Magento system requirements</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/system-requirements-tech.html">Magento technology stack requirements</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/system-requirements_browsers.html">Supported browsers</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="tls"><a href="#">Transport Layer Security (TLS) requirements</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.1/install-gde/system-requirements_tls1-2.html">TLS 1.2 requirement for PayPal</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.1/install-gde/system-requirements_repo-tls1-2.html">TLS requirement for repo.magento.com</a>
+
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/apache.html">Apache</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="php"><a href="#">PHP</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.1/install-gde/prereq/php-centos.html">PHP 5.6 or 7.0&mdash;CentOS</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php  active " data-menunode="php"><a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="umask"><a href="#">Magento file system ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.1/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/install-rabbitmq.html">RabbitMQ (Enterprise Edition)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/security.html">SELinux and iptables</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/optional.html">Optional software</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/prereq_updater.html">Set up the updater (obsolete)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install/get-software.html">Get the Magento software</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/prereq/integrator_install.html">(Integrator) Get the Composer metapackage</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install/get-help.html">Get help with your installation</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/continue-to-install.html">Next&mdash;Installation part 2, installing</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 18 July 2016 (PDT)</i></p>
+		<h4 id="contents">Contents</h4>
+
+<ul>
+  <li><a href="#php-support">PHP versions supported</a></li>
+  <li><a href="#php-ubuntu-help-beginner">Help if you’re just starting out</a></li>
+  <li><a href="#ubuntu-verify-php">Verify PHP is installed</a></li>
+  <li><a href="#instgde-prereq-php70-ubuntu">PHP 7.0 on Ubuntu 14 or 16</a></li>
+  <li><a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</a></li>
+  <li><a href="#instgde-prereq-timezone">Set PHP configuration options</a></li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If you must install both Apache and PHP, <a href="/guides/v2.1/install-gde/prereq/apache.html">install Apache</a> first.</p></span>
+</div>
+
+<h2 id="php-support">PHP versions supported</h2>
+<p>Magento requires:</p>
+
+<ul>
+  <li>7.0.2, 7.0.6 up to 7.1.0</li>
+  <li>PHP 5.6.x</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Magento 2.1.x does not support PHP 5.5.</p></span>
+</div>
+
+<h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
+<p>If you’re new to all this and need some help getting started, we suggest the following:</p>
+
+<ul>
+  <li><a href="/guides/v2.1/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
+  <li><a href="/guides/v2.1/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
+  <li><a href="/guides/v2.1/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
+  <li><a href="/guides/v2.1/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
+</ul>
+
+<h2 id="ubuntu-verify-php">Verify PHP is installed</h2>
+<p>To verify if PHP is installed already, enter <code>php -v</code>. If PHP is installed, messages similar to the following display:</p>
+
+<pre><code>PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
+Copyright (c) 1997-2014 The PHP Group
+Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
+with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+</code></pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+</div>
+
+<p>If PHP is installed, continue with the next prerequisite, <a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a>.</p>
+
+<p>If PHP is <em>not</em> installed, see one of the following sections:</p>
+
+<ul>
+  <li><a href="#instgde-prereq-php70-ubuntu">PHP 7.0 on Ubuntu 14</a></li>
+  <li><a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a></li>
+  <li><a href="#instgde-prereq-php5.66-install-ubuntu12">PHP 5.6 on Ubuntu 12</a></li>
+</ul>
+
+<h2 id="instgde-prereq-php70-ubuntu">PHP 7.0 on Ubuntu 14 or 16</h2>
+
+<div class="collapsible"><h4 class="collapsible-title">To install PHP 7 on Ubuntu 14: </h4><div class="collapsible-content"><ol>
+  <li>
+    <p>Enter the following commands in the order shown:</p>
+
+    <pre><code>sudo apt-get -y update
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get -y update
+sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+</div>
+  </li>
+  <li>
+    <p>Enter the following command to verify PHP 7 installed properly:</p>
+
+    <pre><code>php -v
+</code></pre>
+
+    <p>Following is a sample response that indicates PHP 7.0.8 is installed:</p>
+
+    <pre><code>PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
+Copyright (c) 1997-2016 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
+  with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+</div>
+  </li>
+  <li>
+    <p><a href="#instgde-prereq-timezone">Set PHP configuration options</a>.</p>
+  </li>
+</ol>
+</div></div>
+
+<h2 id="instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</h2>
+
+<div class="collapsible"><h4 class="collapsible-title">To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14: </h4><div class="collapsible-content"><ol>
+  <li>
+    <p>Enter the following commands in the order shown:</p>
+
+    <pre><code>apt-get -y update
+add-apt-repository ppa:ondrej/php
+apt-get -y update
+apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl
+</code></pre>
+  </li>
+  <li>
+    <p>Enter the following command to verify PHP 5.6 installed properly:</p>
+
+    <pre><code>php -v
+</code></pre>
+
+    <p>Following is a sample response that indicates PHP 5.6 is installed:</p>
+
+    <pre><code>PHP 5.6.22-4+deb.sury.org~trusty+1 (cli)
+Copyright (c) 1997-2016 The PHP Group
+Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
+with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+</div>
+  </li>
+  <li>
+    <p><a href="#instgde-prereq-timezone">Set PHP configuration options</a>.</p>
+  </li>
+</ol>
+</div></div>
+
+<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
+<div>
+
+  <p>This section discusses how to:</p>
+
+  <ul>
+    <li>
+      <p>Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:</p>
+
+      <pre><code>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+</code></pre>
+    </li>
+    <li>
+      <p>Set <a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank"><code>always_populate_raw_post_data = -1</code></a></p>
+
+      <p><code>always_populate_raw_post_data</code> is deprecated in PHP 5.6 and is dropped in PHP 7.0.x. This setting causes PHP to always populate <code>$HTTP_RAW_POST_DAT</code> with raw POST data. Failure to set this properly in PHP 5.5 or 5.6 results in errors when connecting to the database.</p>
+    </li>
+    <li>
+      <p>Set the PHP memory limit.</p>
+
+      <p>Our detailed recommendations are:</p>
+
+      <ul>
+        <li>Compiling code, <code>768M</code></li>
+        <li>Deploying static asses, <code>768M</code></li>
+        <li>Installing and updating Magento components from Magento Marketplace, <code>1G</code></li>
+        <li>Testing, <code>2G</code></li>
+      </ul>
+    </li>
+    <li>
+      <p>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank"><code>asp_tags</code></a></p>
+
+      <p>If <code>asp_tags are</code> enabled, errors display when accessing PHTML templates.</p>
+
+      <p><code>asp_tags</code> will be removed in PHP 7.</p>
+    </li>
+  </ul>
+
+  <div class="bs-callout bs-callout-warning">
+    <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.</p>
+</div>
+
+  <h3 id="find-php-configuration-files">Find PHP configuration files</h3>
+  <p>To find the web server configuration, run a <a href="/guides/v2.1/install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code> file</a> in your web browser and look for the Loaded Configuration File as follows:</p>
+
+  <p><img src="/common/images/config_phpini-webserver.png" width="700px" /></p>
+
+  <p>To locate the PHP command-line configuration, enter</p>
+
+  <pre><code>php --ini
+</code></pre>
+
+  <p>Use the value of Loaded Configuration file.</p>
+
+  <h3 id="set-php-options">Set PHP options</h3>
+
+  <p>To set PHP options:</p>
+
+  <ol>
+    <li>
+      <p>Locate <code>php.ini</code> for both the web server and the PHP command line as discussed in the preceding section.</p>
+
+      <p>Make the following changes to <em>both</em> configurations.</p>
+    </li>
+    <li>Open a <code>php.ini</code> in a text editor.</li>
+    <li>Locate your server’s time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a></li>
+    <li>
+      <p>Locate the following setting and uncomment it if necessary:</p>
+
+      <pre><code>date.timezone =
+</code></pre>
+    </li>
+    <li>Add the time zone setting you found in the preceding step.</li>
+    <li>
+      <p>Change the value of <code>memory_limit</code> to one of the values at the beginning of this section.</p>
+
+      <p>For example,</p>
+
+      <pre><code>memory_limit=768M
+</code></pre>
+    </li>
+    <li>
+      <p><em>Required for PHP 5.6, recommended for PHP 5.5</em>. Locate <code>always_populate_raw_post_data</code>, uncomment it if necessary, and set it as follows:</p>
+
+      <pre><code>always_populate_raw_post_data = -1
+</code></pre>
+    </li>
+    <li>
+      <p>Locate the following setting:</p>
+
+      <pre><code>asp_tags =
+</code></pre>
+    </li>
+    <li>Make sure its value is set to <code>Off</code>.</li>
+    <li>Save your changes and exit the text editor.</li>
+    <li>Open the other <code>php.ini</code> (if they are different) and make the same changes in it.</li>
+    <li>
+      <p>Restart your web server:</p>
+
+      <ul>
+        <li>Apache, Ubuntu: <code>service apache2 restart</code></li>
+        <li>Apache, CentOS: <code>service httpd restart</code></li>
+        <li>nginx, Ubuntu and CentOS: <code>service nginx restart</code></li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4 id="related-topics">Related topics</h4>
+
+  <ul>
+    <li><a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a></li>
+    <li><a href="/guides/v2.1/install-gde/prereq/apache.html">Apache</a></li>
+    <li><a href="/guides/v2.1/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6—CentOS</a></li>
+    <li><a href="/guides/v2.1/install-gde/prereq/security.html">Configuring security options</a></li>
+    <li><a href="/guides/v2.1/install-gde/prereq/optional.html">Installing optional software</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/pre-install.html">Ways to install the Magento software</a></li>
+  </ul>
+
+</div>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

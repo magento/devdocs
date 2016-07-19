@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>DocBlock standard</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/coding-standards/docblock-standard-general.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">DocBlock standard</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/coding-standards/docblock-standard-general.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Coding Standards</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/coding-standards/bk-coding-standards.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Coding standards</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-demarcation.html">Code demarcation standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-php.html">PHP coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/coding-standards/docblock-standard-general.html">DocBlock standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-javascript.html">JavaScript coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/docblock-standard-javascript.html">JavaScript DocBlock standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-less.html">LESS coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-html.html">HTML style guide</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2 id="m2devgde-code-DocBlock-intro">Overview</h2>
+
+<p>This standard defines Magento requirements and conventions for adding code inline documentation, known as <i>DocBlock</i>s.</p>
+<p>Some parts of Magento code might not comply with this standard, but we are working to gradually improve this.</p>
+<p>Following these standard is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.</p>
+<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."</p>
+
+<h2 id="scope">Scope of the standard</h2>
+
+<p>The goal of this standard is to unify usage of code DocBlocks for all files, not specific to a particular language. The following is assumed by default:</p>
+
+<ul>
+  <li>Formatting according phpDocumentor standard</li>
+  <li>Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.</li>
+</ul>
+
+<h2 id="files">Files</h2>
+
+<p>Each Magento source code file must have a DocBlock header with short description of the file. After the short description, there can be a long description.</p>
+
+<p>Both short and long descriptions (for file headers and herein) must be separated from other elements using one empty line (implied empty line in terms of DocBlock syntax, where any line within DocBlock starts from <code>*</code>.</p>
+
+<p>If description or short description happens to be the first one after DocBlock opening tag (<code>/**</code>) or last one before closing tag (<code>*/</code>), it should not be separated with an empty line.</p>
+
+<p><strong>DocBlock Header in a PHP-file</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Short description...</span>
+<span class="sd"> *</span>
+<span class="sd"> * Long description</span>
+<span class="sd"> * Broken down into several lines</span>
+<span class="sd"> *</span>
+<span class="sd"> * License notice...</span>
+<span class="sd"> */</span></code></pre></div>
+
+<p><strong>DocBlock Header in an XML-file</strong></p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">/**
+ * Short description...
+ *
+ * Long description
+ * Broken down into several lines
+ *
+ * License notice...
+ */
+--&gt;</code></pre></div>
+
+<h2 id="code-elements">Code structural elements</h2>
+
+<p>A structural element is defined in <a href="http://phpdoc.org/">phpDocumentor</a> as part of imperative source code, such as PHP or JavaScript, or procedural SQL. For example: namespace, class, interface, function, property, method, and so on.</p>
+
+<p>If the source code file has one and only one standalone structural element (class, interface, function, and so on), as it may be required by language-specific coding standard, the file DocBlock is to be reused for this element.</p>
+
+<p>So in general case, classes that are declared in dedicated files, must have one DocBlock, which refers to the class and file at the same time.</p>
+
+<p><strong>DocBlock for a Class</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Autoloader with class map capability</span>
+<span class="sd"> *</span>
+<span class="sd"> * ...</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">Autoload</span>
+<span class="p">{</span></code></pre></div>
+
+<p>But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element. So there are two solutions possible:</p>
+
+<ul>
+  <li>Have file header DocBlock separately, then inclusion construct, then a DocBlock for the element with duplicated short description.</li>
+  <li>Or include after declaring the element (it is possible in PHP and won’t cause issues before execution).</li>
+</ul>
+
+<p><strong>DocBlock with Included Script File</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Magento integration Magento test framework (MTF) bootstrap</span>
+<span class="sd"> *</span>
+<span class="sd"> * ...</span>
+<span class="sd"> */</span>
+
+<span class="k">require</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/../bootstrap.php&#39;</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Test</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Magento integration Magento test framework (MTF) bootstrap</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">Bootstrap</span>
+<span class="p">{</span></code></pre></div>
+
+<p><strong>DocBlock with Included Class File</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Framework\Profiler\Adapter</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Profiler CSV adapter</span>
+<span class="sd"> *</span>
+<span class="sd"> * ...</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">Csv</span> <span class="k">extends</span> <span class="nx">\Magento\Framework\Profiler\AdapterAbstract</span>
+<span class="p">{</span>
+<span class="c1">// ...</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setFile</span><span class="p">(</span><span class="nv">$file</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isValidFile</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\ArgumentException</span><span class="p">(</span><span class="s1">&#39;A valid file name is expected.&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">require_once</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/../../functions.php&#39;</span><span class="p">;</span></code></pre></div>
+
+<h3 id="classes-interfaces">Classes and interfaces</h3>
+
+<p>Classes and interfaces must have a short description.</p>
+
+<h3 id="short-name-form">Short name form</h3>
+
+<p>It is encouraged to use the short form of the name to encourage readability and consistency with the type hint. The only exception is in the <code>Service/DTO</code> classes due to tooling requirements.</p>
+
+<p><strong>Example of a Method DocBlock</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Logger</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Math\Random</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Stdlib\DateTime</span> <span class="k">as</span> <span class="nx">StdlibDateTime</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * @var Logger</span>
+<span class="sd"> */</span>
+<span class="k">protected</span> <span class="nv">$_logger</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Description of method here.</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param Random         $mathRandom</span>
+<span class="sd"> * @param StdlibDateTime $dateTime</span>
+<span class="sd"> * @param int            $number</span>
+<span class="sd"> */</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Random</span> <span class="nv">$mathRandom</span><span class="p">,</span> <span class="nx">StdlibDateTime</span> <span class="nv">$dateTime</span><span class="p">,</span> <span class="nv">$number</span><span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span></code></pre></div>
+
+<h3 id="class-attributes">Class attributes</h3>
+
+<p>Class attributes must have type declaration using <code>@var</code> tag.</p>
+
+<p><strong>Example of Class Attribute</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// ...</span>
+<span class="k">namespace</span> <span class="nx">Magento</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Profiler</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @var Profiler</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">static</span> <span class="nv">$instance</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span></code></pre></div>
+
+<h3 id="functions-methods">Functions and methods</h3>
+
+<p>Functions and methods must have:</p>
+
+<ul>
+  <li>Short description</li>
+  <li>Declaration of all arguments (if any) using <code>@param</code> tag. Appropriate argument type must be specified.</li>
+  <li>Declaration of return type using <code>@return</code> tag. If there is no such operator, the <code>@return</code> tag must have <code>void</code> as the return value.</li>
+  <li>Declaration of possibly thrown exception using <code>@throws</code> tag, if the actual body of function triggers throwing an exception. All occurrences of <code>@throws</code> in a DocBlock must be after <code>@param</code> and <code>@return</code> (if any).</li>
+</ul>
+
+<p>It is encouraged to supply <code>@param</code> and <code>@throws</code> tags with additional description, which comes after the formal declaration of the tag.</p>
+
+<p><strong>Example of a Method DocBlock</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Merge the config XML files</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param  array $configFiles</span>
+<span class="sd"> * @return void</span>
+<span class="sd"> * @throws \Magento\Exception if a non-existing or invalid XML file passed</span>
+<span class="sd"> */</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">merge</span><span class="p">(</span><span class="nv">$configFiles</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$domConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Magento\Config\Dom</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_getInitialXml</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_getIdAttributes</span><span class="p">());</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$configFiles</span> <span class="k">as</span> <span class="nv">$file</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Exception</span><span class="p">(</span><span class="s2">&quot;File does not exist: </span><span class="si">{</span><span class="nv">$file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">merge</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$file</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getSchemaFile</span><span class="p">(),</span> <span class="nv">$errors</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$message</span> <span class="o">=</span> <span class="s2">&quot;Invalid XML file: </span><span class="si">{</span><span class="nv">$file</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+            <span class="sd">/** @var libXMLError $error */</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$message</span> <span class="o">.=</span> <span class="s2">&quot;</span><span class="si">{</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="na">message</span><span class="si">}</span><span class="s2"> Line: </span><span class="si">{</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="na">line</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Exception</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_dom</span> <span class="o">=</span> <span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">getDom</span><span class="p">();</span>
+<span class="p">}</span></code></pre></div>
+
+<h4 id="throws">Divergence in @throws tag</h4>
+
+<p>A general case when <code>@throws</code> tag must be used is if <em>throw</em> language construct is used – for example:</p>
+
+<p><strong>Example of Throwing Exception Explicitly</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Set an arbitrary value to specified element</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param  string $elementId</span>
+<span class="sd"> * @param  string $attribute</span>
+<span class="sd"> * @param  mixed  $value</span>
+<span class="sd"> * @return self</span>
+<span class="sd"> * @throws \InvalidArgumentException</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setAttribute</span><span class="p">(</span><span class="nv">$elementId</span><span class="p">,</span> <span class="nv">$attribute</span><span class="p">,</span> <span class="nv">$value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_assertElementExists</span><span class="p">(</span><span class="nv">$elementId</span><span class="p">);</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nv">$attribute</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="nx">self</span><span class="o">::</span><span class="na">PARENT</span><span class="o">:</span> <span class="c1">// break is intentionally omitted</span>
+        <span class="k">case</span> <span class="nx">self</span><span class="o">::</span><span class="na">CHILDREN</span><span class="o">:</span>
+        <span class="k">case</span> <span class="nx">self</span><span class="o">::</span><span class="na">GROUPS</span><span class="o">:</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\InvalidArgumentException</span><span class="p">(</span><span class="s2">&quot;Attribute &#39;</span><span class="si">{</span><span class="nv">$attribute</span><span class="si">}</span><span class="s2">&#39; is reserved and cannot be set.&quot;</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_elements</span><span class="p">[</span><span class="nv">$elementId</span><span class="p">][</span><span class="nv">$attribute</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>In this general case, if an exception is thrown in a sub-routine, then <code>@throws</code> must not be used in the parent method.</p>
+
+<p>However, if the only purpose of the referred sub-routine is to throw a specific exception – then <code>@throws</code> must be used in the parent method. For example:</p>
+
+<p><strong>Throwing Exception Implicitly</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Recursively delete directory from storage</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param  string $path Target dir</span>
+<span class="sd"> * @return void</span>
+<span class="sd"> * @throws Mage_Core_Exception when directories cannot be deleted</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">deleteDirectory</span><span class="p">(</span><span class="nv">$path</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// prevent accidental root directory deleting</span>
+    <span class="nv">$rootCmp</span> <span class="o">=</span> <span class="nb">rtrim</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getHelper</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getStorageRoot</span><span class="p">(),</span> <span class="nx">DS</span><span class="p">);</span>
+    <span class="nv">$pathCmp</span> <span class="o">=</span> <span class="nb">rtrim</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nx">DS</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$rootCmp</span> <span class="o">==</span> <span class="nv">$pathCmp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">Mage</span><span class="o">::</span><span class="na">throwException</span><span class="p">(</span><span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;Mage_Cms_Helper_Data&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">&#39;Cannot delete root directory %s.&#39;</span><span class="p">,</span> <span class="nv">$path</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="nv">$io</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Varien_Io_File</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;Mage_Core_Helper_File_Storage_Database&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">checkDbUsage</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nx">Mage</span><span class="o">::</span><span class="na">getModel</span><span class="p">(</span><span class="s1">&#39;Mage_Core_Model_File_Storage_Directory_Database&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">deleteDirectory</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$io</span><span class="o">-&gt;</span><span class="na">rmdir</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="k">true</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">Mage</span><span class="o">::</span><span class="na">throwException</span><span class="p">(</span><span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;Mage_Cms_Helper_Data&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">&#39;Cannot delete directory %s.&#39;</span><span class="p">,</span> <span class="nv">$path</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$pathCmp</span><span class="p">,</span> <span class="nv">$rootCmp</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$io</span><span class="o">-&gt;</span><span class="na">rmdir</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getThumbnailRoot</span><span class="p">()</span> <span class="o">.</span> <span class="nx">DS</span> <span class="o">.</span> <span class="nb">ltrim</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$pathCmp</span><span class="p">,</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$rootCmp</span><span class="p">)),</span> <span class="s1">&#39;\\/&#39;</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h4 id="return">@return tag</h4>
+
+<p>If there is no explicit return statement in a method or function, a <code>@return void</code> should be used in the documentation.</p>
+
+<p>If the method returns itself, <code>return $this</code> should be used.</p>
+
+<h3 id="constants">Constants</h3>
+
+<p>Constants must have short description.</p>
+
+<p>For example, a global constant:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Directory separator shorthand</span>
+<span class="sd"> */</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DS&#39;</span><span class="p">,</span> <span class="nx">DIRECTORY_SEPARATOR</span><span class="p">);</span>
+
+<span class="k">Or</span> <span class="nx">constants</span> <span class="nx">in</span> <span class="nx">a</span> <span class="nx">class</span><span class="o">:</span>
+<span class="k">class</span> <span class="nc">Profiler</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Separator literal to assemble timer identifier from timer names</span>
+<span class="sd">     */</span>
+    <span class="k">const</span> <span class="no">NESTING_SEPARATOR</span> <span class="o">=</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">;</span></code></pre></div>
+
+<h3 id="DocBlock-templates">DocBlock templates</h3>
+
+<p>If there is declaration of multiple consecutive elements of same type, the same contents of DocBlock may be relevant to all of them. In this case individual DocBlocks for those elements they may be replaced by a DocBlock template.</p>
+
+<p>DocBlock template consists of two DocBlock comments:</p>
+
+<ul>
+  <li>Starting comment is before first element of the group, distinguished using <code>#@+</code> and formatted as follows:</li>
+</ul>
+
+<pre>
+/**#@+
+ *
+ */
+</pre>
+
+<ul>
+  <li>Ending comment is after the last element of the group, distinguished using <code>#@-</code> and formatted as follows:<code>/**#@-*/</code></li>
+</ul>
+
+<p>For example, declaration of multiple class constants or attributes:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Mage_Core_Model_Layout</span> <span class="k">extends</span> <span class="nx">Varien_Simplexml_Config</span>
+<span class="p">{</span>
+    <span class="sd">/**#@+</span>
+<span class="sd">     * Supported layout directives</span>
+<span class="sd">     * @var string</span>
+<span class="sd">     */</span>
+    <span class="k">const</span> <span class="no">TYPE_BLOCK</span> <span class="o">=</span> <span class="s1">&#39;block&#39;</span><span class="p">;</span>
+    <span class="k">const</span> <span class="no">TYPE_CONTAINER</span> <span class="o">=</span> <span class="s1">&#39;container&#39;</span><span class="p">;</span>
+    <span class="sd">/**#@-*/</span>
+
+    <span class="sd">/**#@+</span>
+<span class="sd">     * Scheduled structure elements operations</span>
+<span class="sd">     *</span>
+<span class="sd">     * @var array</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="nv">$scheduledMoves</span>   <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+    <span class="k">protected</span> <span class="nv">$scheduledRemoves</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+    <span class="sd">/**#@-*/</span></code></pre></div>
+
+<h2 id="documentation-space">Structure of documentation space</h2>
+
+<p><code>@category</code>, <code>@package</code>, and <code>@subpackage</code> MUST NOT be used. Documentation is organized with the use of namespaces.</p>
+
+<h2 id="other-DocBlock-tags">Other DocBlock tags</h2>
+<h3 id="api">@api tag</h3>
+<p>The <code>@api</code> tag indicates the code is part of the public API and is subject to the <a href="../extension-dev-guide/backward-compatibility.html">Magento Backward Compatibility Policy</a>.</p>
+
+<p>The <code>@api</code> tag can be applied to a constant, a method, or to the entire class/interface.  If the <code>@api</code> tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.</p>
+
+<p>See <a href="http://semver.org/">Semantic Versioning 2.0.0</a> for information about changing and updating code while maintaining backward compatibility.</p>
+
+<h3 id="deprecated">@deprecated tag</h3>
+
+<p>A deprecated class or method is one that has been superseded and may cease to exist in the future.  It will be retained to provide backward compatibility until next major component release.</p>
+
+<p>Use the <code>@deprecated</code> tag to indicate an element is to be deprecated. The text of the <code>@deprecated</code> tag should indicate the version the element was deprecated as well as the version it will be removed. If applicable, also specify what has replaced the deprecated element.</p>
+
+<p>To maintain backward compatibility, an element should be removed only on major revisions.  </p>
+
+<h3 id="var">@var inline tag</h3>
+
+<p>For purpose of automatic type hinting in an IDE, an inline notation of <code>@var</code> tag can be used wherever the IDE is unable to resolve variable type. This tag declares variables that will emerge in next lines of code as follows:</p>
+
+<p><strong>Inline Type Hinting</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var libXMLError $error */</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span></code></pre></div>
+
+<p>Some IDEs understand a different notation, where type is specified after variable name. This notation is also valid:</p>
+
+<p><strong>Inline Type Hinting Variation</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var $error libXMLError */</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span></code></pre></div>
+
+<h3 id="see">@see tag</h3>
+
+<p>Besides the normal way of using <code>@see</code> tag as <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/see.html">recommended by phpDocumentor</a>, it may be used as an addition to <code>@var</code>, when the <code>@var</code> is already used in this comment.</p>
+
+<p>Specifically, this is possible when a PHP-file composed from multiple file includes, as result variables may contain objects of different types depending on context:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * @var $this ClassOne</span>
+<span class="sd"> * @see ClassTwo</span>
+<span class="sd"> * @see FooInterface</span>
+<span class="sd"> */</span></code></pre></div>
+
+<h3 id="other-tags">Other tags</h3>
+
+<p>Any other valid DocBlock tags may be specified, if author deems necessary, but only if they bring any valuable not obvious information.</p>
+
+<h2 id="format-conventions">Formatting conventions</h2>
+
+<h3 id="padding-tags">Padding tags</h3>
+
+<p>If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * ...</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param  string $argument</span>
+<span class="sd"> * @return bool</span>
+<span class="sd"> * @link   http://example.com</span>
+<span class="sd"> */</span></code></pre></div>
+
+<h3 id="format-consistency">Formatting consistency</h3>
+
+<p>In a given DocBlock, style of formatting must be consistent.</p>
+
+<p>For example, padding for visual alignment can be done in two ways consistently:</p>
+
+<p><strong>Correct – align everything:</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * ...</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param  string   $parentId</span>
+<span class="sd"> * @param  string   $childId</span>
+<span class="sd"> * @param  int|null $position</span>
+<span class="sd"> * @return int</span>
+<span class="sd"> * @see    _insertChild() for position explanation</span>
+<span class="sd"> */</span></code></pre></div>
+
+<p><strong>Also correct – don’t align anything:</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * ...</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param string   $parentId</span>
+<span class="sd"> * @param string   $childId</span>
+<span class="sd"> * @param int|null $position</span>
+<span class="sd"> * @return int</span>
+<span class="sd"> * @see _insertChild() for position explanation</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">reorderChild</span><span class="p">(</span><span class="nv">$parentId</span><span class="p">,</span> <span class="nv">$childId</span><span class="p">,</span> <span class="nv">$position</span><span class="p">)</span></code></pre></div>
+
+<p><strong>Incorrect – align only partially:</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * ...</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param  string   $parentId</span>
+<span class="sd"> * @param  string   $childId</span>
+<span class="sd"> * @param  int|null $position</span>
+<span class="sd"> * @return int</span>
+<span class="sd"> * @see _insertChild() for position explanation</span>
+<span class="sd"> */</span></code></pre></div>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

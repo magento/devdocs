@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Data Migration Tool Internal Specification</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/migration/migration-tool-internal-spec.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Data Migration Tool Internal Specification</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/migration/migration-tool-internal-spec.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Migration Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/bk-migration-guide.html">Overview</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-overview-practices.html">Best practices</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-overview-supported.html">Versions supported</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-overview-how.html">How migration works</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-plan.html">Creating a migration plan</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-tool.html">Data migration tool</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-tool-preconditions.html">Preconditions</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-tool-install.html">Install the Data Migration Tool</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-tool-upgrade.html">Upgrade the Data Migration Tool</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-tool-configure.html">Configure migration</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-migrate.html">Migrate using data migration tool</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-migrate-settings.html">Migrate settings</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-migrate-data.html">Migrate data</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-migrate-delta.html">Migrate changes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-migrate-additional.html">Additional info</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-manually.html">Data that needs to be migrated manually</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-migrate-after.html">After Migration</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/migration/migration-tool-internal-spec.html">Data Migration Tool Internal Specification</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h4>Contents</h4>
+
+<p>See one of the following sections:</p>
+
+<ul>
+  <li><a href="#migrate-overview">Overview</a>
+    <ul>
+      <li><a href="#repositories">Repositories</a></li>
+      <li><a href="#system-requirements">System requirements</a></li>
+    </ul>
+  </li>
+  <li><a href="#migrate-is">Internal structure</a>
+    <ul>
+      <li><a href="#directory-structure">Directory Structure</a></li>
+      <li><a href="#entry-point">Entry Point</a></li>
+      <li><a href="#configuration">Configuration</a></li>
+      <li><a href="#step-internals">Step Internals</a></li>
+      <li><a href="#running-modes">Running Modes</a></li>
+      <li><a href="#data-sources">Data Sources</a></li>
+      <li><a href="#logging">Logging</a></li>
+      <li><a href="#extension-points">Extension Points</a></li>
+    </ul>
+  </li>
+  <li><a href="#automatic-tests">Automatic tests</a></li>
+</ul>
+
+<h2 id="migrate-overview">Overview</h2>
+
+<p>This section describes an implementation details of Data Migration Tool and how to extend its functionality.</p>
+
+<h3 id="repositories">Repositories</h3>
+
+<p>Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="_blank">migration-tool</a></p>
+
+<h3 id="system-requirements">System requirements</h3>
+
+<p>Same as for <a href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html" target="_blank">Magento 2</a></p>
+
+<h2 id="migrate-is">Internal structure</h2>
+
+<h3 id="directory-structure">Directory structure</h3>
+
+<p>The following diagram represents directory structure of Data Migration Tool:</p>
+
+<pre>
+
+.
+├── CHANGELOG.md
+├── composer.json
+├── COPYING.txt
+├── etc
+│   ├── ce-to-ce
+│   │   ├── 1.6.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── deltalog.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.6.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.6.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.8.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.8.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.1.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.3
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── class-map.xml.dist
+│   │   ├── customer-attribute-groups.xml.dist
+│   │   ├── customer-document-groups.xml.dist
+│   │   ├── deltalog.xml.dist
+│   │   ├── eav-attribute-groups.xml.dist
+│   │   ├── eav-document-groups.xml.dist
+│   │   ├── log-document-groups.xml.dist
+│   │   ├── map-customer.xml.dist
+│   │   ├── map-document-groups.xml.dist
+│   │   ├── map-eav.xml.dist
+│   │   ├── map-log.xml.dist
+│   │   ├── order-grids-document-groups.xml.dist
+│   │   └── settings.xml.dist
+│   ├── ce-to-ee
+│   │   ├── 1.6.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── deltalog.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.6.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.6.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.8.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.8.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.1.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.3
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── class-map.xml.dist
+│   │   ├── customer-attribute-groups.xml.dist
+│   │   ├── customer-document-groups.xml.dist
+│   │   ├── deltalog.xml.dist
+│   │   ├── eav-attribute-groups.xml.dist
+│   │   ├── eav-document-groups.xml.dist
+│   │   ├── log-document-groups.xml.dist
+│   │   ├── map-customer.xml.dist
+│   │   ├── map-document-groups.xml.dist
+│   │   ├── map-eav.xml.dist
+│   │   ├── map-log.xml.dist
+│   │   ├── order-grids-document-groups.xml.dist
+│   │   └── settings.xml.dist
+│   ├── class-map.xsd
+│   ├── config.xsd
+│   ├── ee-to-ee
+│   │   ├── 1.11.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.11.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.11.0.2
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.11.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.11.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.12.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.12.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.12.0.2
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.13.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.13.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.13.0.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.13.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.2.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.2.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.2.3
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── class-map.xml.dist
+│   │   ├── customer-attr-document-groups.xml.dist
+│   │   ├── customer-attribute-groups.xml.dist
+│   │   ├── customer-attr-map.xml.dist
+│   │   ├── customer-document-groups.xml.dist
+│   │   ├── deltalog.xml.dist
+│   │   ├── eav-attribute-groups.xml.dist
+│   │   ├── eav-document-groups.xml.dist
+│   │   ├── log-document-groups.xml.dist
+│   │   ├── map-customer.xml.dist
+│   │   ├── map-document-groups.xml.dist
+│   │   ├── map-eav.xml.dist
+│   │   ├── map-log.xml.dist
+│   │   ├── map-sales.xml.dist
+│   │   ├── order-grids-document-groups.xml.dist
+│   │   ├── settings.xml.dist
+│   │   ├── visual_merchandiser_attribute_groups.xml.dist
+│   │   ├── visual_merchandiser_document_groups.xml.dist
+│   │   └── visual_merchandiser_map.xml.dist
+│   ├── groups.xsd
+│   ├── magento_path.php
+│   ├── map.xsd
+│   └── settings.xsd
+├── LICENSE_MEE.txt
+├── LICENSE.txt
+├── README.md
+├── src
+│   └── Migration
+│       ├── App
+│       │   ├── Mode
+│       │   │   ├── ModeInterface.php
+│       │   │   └── StepList.php
+│       │   ├── Progress
+│       │   │   └── File.php
+│       │   ├── ProgressBar
+│       │   │   └── LogLevelProcessor.php
+│       │   ├── ProgressBarFactory.php
+│       │   ├── Progress.php
+│       │   ├── SetupDeltaLog.php
+│       │   └── Step
+│       │       ├── AbstractDelta.php
+│       │       ├── AbstractIntegrity.php
+│       │       ├── AbstractVolume.php
+│       │       ├── RollbackInterface.php
+│       │       ├── StageFactory.php
+│       │       └── StageInterface.php
+│       ├── cli_commands.php
+│       ├── Config.php
+│       ├── Console
+│       │   ├── AbstractMigrateCommand.php
+│       │   ├── CommandList.php
+│       │   ├── MigrateDataCommand.php
+│       │   ├── MigrateDeltaCommand.php
+│       │   └── MigrateSettingsCommand.php
+│       ├── Exception.php
+│       ├── Handler
+│       │   ├── AbstractHandler.php
+│       │   ├── AddPrefix.php
+│       │   ├── ClassMap.php
+│       │   ├── ConvertDateFormat.php
+│       │   ├── ConvertEavValue.php
+│       │   ├── ConvertIp.php
+│       │   ├── Convert.php
+│       │   ├── EavAttribute
+│       │   │   ├── ConvertConfigurableAttribute.php
+│       │   │   └── ConvertModel.php
+│       │   ├── EavAttributeGroup
+│       │   │   └── SetGroupCode.php
+│       │   ├── Gallery
+│       │   │   ├── InsertValueToEntity.php
+│       │   │   └── SetEntityId.php
+│       │   ├── GetDestinationValue.php
+│       │   ├── HandlerInterface.php
+│       │   ├── Manager.php
+│       │   ├── Placeholder.php
+│       │   ├── Rule
+│       │   │   ├── ConditionSql.php
+│       │   │   ├── CustomerSegmentConditionSql.php
+│       │   │   ├── NormalizationIds.php
+│       │   │   └── SerializedData.php
+│       │   ├── SalesOrderStatusState
+│       │   │   └── SetVisibleOnFront.php
+│       │   ├── SerializeToJson.php
+│       │   ├── SetDefaultWebsiteId.php
+│       │   ├── SetHash.php
+│       │   ├── Settings
+│       │   │   ├── CategoryRootId.php
+│       │   │   ├── Encrypt.php
+│       │   │   ├── Template.php
+│       │   │   └── UrlSuffix.php
+│       │   ├── SetValue.php
+│       │   ├── Timezone.php
+│       │   └── VisualMerchandiser
+│       │       ├── Attribute.php
+│       │       ├── InsertMode.php
+│       │       └── SmartAttribute.php
+│       ├── Logger
+│       │   ├── ConsoleHandler.php
+│       │   ├── FileHandler.php
+│       │   ├── Logger.php
+│       │   ├── Manager.php
+│       │   ├── MessageFormatter.php
+│       │   └── MessageProcessor.php
+│       ├── Mode
+│       │   ├── AbstractMode.php
+│       │   ├── Data.php
+│       │   ├── Delta.php
+│       │   └── Settings.php
+│       ├── Reader
+│       │   ├── ClassMap.php
+│       │   ├── GroupsFactory.php
+│       │   ├── Groups.php
+│       │   ├── MapFactory.php
+│       │   ├── MapInterface.php
+│       │   ├── Map.php
+│       │   └── Settings.php
+│       ├── RecordTransformer.php
+│       ├── ResourceModel
+│       │   ├── AbstractCollection.php
+│       │   ├── AbstractResource.php
+│       │   ├── Adapter
+│       │   │   └── Mysql.php
+│       │   ├── AdapterFactory.php
+│       │   ├── AdapterInterface.php
+│       │   ├── Destination.php
+│       │   ├── Document
+│       │   │   └── Collection.php
+│       │   ├── Document.php
+│       │   ├── Record
+│       │   │   └── Collection.php
+│       │   ├── Record.php
+│       │   ├── Source.php
+│       │   ├── Structure
+│       │   │   └── Collection.php
+│       │   └── Structure.php
+│       └── Step
+│           ├── ConfigurablePrices
+│           │   ├── Data.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── CustomCustomerAttributes
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── Customer
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── DatabaseStage.php
+│           ├── Eav
+│           │   ├── Data.php
+│           │   ├── Helper.php
+│           │   ├── InitialData.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── Log
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── Map
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── OrderGrids
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── OrderGridsEE
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── Ratings
+│           │   ├── Data.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── SalesIncrement
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── SalesOrder
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── InitialData.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── Settings
+│           │   ├── Data.php
+│           │   └── Integrity.php
+│           ├── Stores
+│           │   ├── Data.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── TierPrice
+│           │   ├── Data.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── UrlRewrite
+│           │   ├── Version11300to2000.php
+│           │   ├── Version11410to2000.php
+│           │   └── Version191to2000.php
+│           └── VisualMerchandiser
+│               ├── Data.php
+│               ├── Helper.php
+│               ├── Integrity.php
+│               └── Volume.php
+└── tests
+    ├── integration
+    │   ├── etc
+    │   │   └── mysql.php.dist
+    │   ├── framework
+    │   │   ├── autoload.php
+    │   │   ├── bootstrap.php
+    │   │   ├── Helper.php
+    │   │   ├── Listener.php
+    │   │   ├── ProgressBar.php
+    │   │   └── QuietLogHandler.php
+    │   ├── phpunit.ee.xml.dist
+    │   ├── phpunit.xml.dist
+    │   ├── resource
+    │   │   ├── default
+    │   │   │   ├── dest.sql
+    │   │   │   └── source.sql
+    │   │   ├── eav
+    │   │   │   ├── dest.sql
+    │   │   │   └── source.sql
+    │   │   ├── ee.eav
+    │   │   │   ├── dest.sql
+    │   │   │   └── source.sql
+    │   │   ├── sales_order
+    │   │   │   ├── dest.sql
+    │   │   │   └── source.sql
+    │   │   ├── stores
+    │   │   │   ├── dest.sql
+    │   │   │   └── source.sql
+    │   │   └── url_rewrite
+    │   │       ├── dest.sql
+    │   │       └── source.sql
+    │   └── testsuite
+    │       └── Migration
+    │           ├── App
+    │           │   └── SetupDeltaLogTest.php
+    │           ├── _files
+    │           │   ├── class-map.xml
+    │           │   ├── config-with-empty-map.xml
+    │           │   ├── config.xml
+    │           │   ├── deltalog-empty.xml
+    │           │   ├── deltalog.xml
+    │           │   ├── eav-attribute-groups.xml
+    │           │   ├── eav-document-groups.xml
+    │           │   ├── ee.config.xml
+    │           │   ├── ee.eav-document-groups.xml
+    │           │   ├── ee.map-eav.xml
+    │           │   ├── empty-map.xml
+    │           │   ├── list-log.xml.dist
+    │           │   ├── map-eav.xml
+    │           │   ├── map-sales.xml
+    │           │   ├── map.xml
+    │           │   └── settings.xml
+    │           ├── ResourceModel
+    │           │   └── SourceDestinationTest.php
+    │           └── Step
+    │               ├── EAV
+    │               │   ├── DataTest.php
+    │               │   ├── IntegrityTest.php
+    │               │   └── VolumeTest.php
+    │               ├── Map
+    │               │   ├── DataTest.php
+    │               │   ├── IntegrityTest.php
+    │               │   └── VolumeTest.php
+    │               ├── SalesOrder
+    │               │   ├── DataTest.php
+    │               │   ├── IntegrityTest.php
+    │               │   └── VolumeTest.php
+    │               ├── Settings
+    │               │   └── DataTest.php
+    │               ├── Stores
+    │               │   ├── DataTest.php
+    │               │   └── IntegrityTest.php
+    │               └── UrlRewrite
+    │                   └── Version11410to2000Test.php
+    ├── static
+    │   ├── framework
+    │   │   ├── autoload.php
+    │   │   └── bootstrap.php
+    │   ├── phpunit.xml.dist
+    │   └── testsuite
+    │       └── Migration
+    │           └── Php
+    │               ├── _files
+    │               │   ├── annotation
+    │               │   │   ├── blacklist
+    │               │   │   │   └── common.txt
+    │               │   │   └── whitelist
+    │               │   │       └── common.txt
+    │               │   ├── blacklist
+    │               │   │   └── common.txt
+    │               │   ├── phpcs
+    │               │   │   ├── blacklist
+    │               │   │   │   └── common.txt
+    │               │   │   ├── ruleset.xml
+    │               │   │   └── whitelist
+    │               │   │       └── common.txt
+    │               │   ├── phpmd
+    │               │   │   └── ruleset.xml
+    │               │   └── whitelist
+    │               │       └── common.txt
+    │               └── LiveCodeTest.php
+    └── unit
+        ├── framework
+        │   ├── autoload.php
+        │   ├── bootstrap.php
+        │   └── PdoTest.php
+        ├── phpunit.xml.dist
+        └── testsuite
+            └── Migration
+                ├── App
+                │   ├── Mode
+                │   │   └── StepListTest.php
+                │   ├── Progress
+                │   │   └── FileTest.php
+                │   ├── ProgressTest.php
+                │   ├── SetupDeltaLogTest.php
+                │   └── Step
+                │       └── FactoryTest.php
+                ├── ConfigTest.php
+                ├── _files
+                │   ├── class-map.xml
+                │   ├── invalid-config.xml
+                │   ├── map-invalid.xml
+                │   ├── map.xml
+                │   ├── settings-invalid.xml
+                │   ├── settings.xml
+                │   └── test-config.xml
+                ├── Handler
+                │   ├── AddPrefixTest.php
+                │   ├── ClassMapTest.php
+                │   ├── ConvertDateFormatTest.php
+                │   ├── ConvertIpTest.php
+                │   ├── ConvertTest.php
+                │   ├── EavAttribute
+                │   │   ├── ConvertConfigurableAttributeTest.php
+                │   │   └── ConvertModelTest.php
+                │   ├── EavAttributeGroup
+                │   │   └── SetGroupCodeTest.php
+                │   ├── GetDestinationValueTest.php
+                │   ├── ManagerTest.php
+                │   ├── PlaceholderTest.php
+                │   ├── Rule
+                │   │   ├── ConditionSqlTest.php
+                │   │   ├── CustomerSegmentConditionSqlTest.php
+                │   │   ├── NormalizationIdsTest.php
+                │   │   └── SerializedDataTest.php
+                │   ├── SalesOrderStatusState
+                │   │   └── SetVisibleOnFrontTest.php
+                │   ├── SerializeToJsonTest.php
+                │   ├── SetDefaultWebsiteIdTest.php
+                │   ├── SetHashTest.php
+                │   ├── Settings
+                │   │   ├── CategoryRootIdTest.php
+                │   │   ├── EncryptTest.php
+                │   │   ├── TemplateTest.php
+                │   │   └── UrlSuffixTest.php
+                │   ├── SetValueTest.php
+                │   └── TimezonesTest.php
+                ├── Logger
+                │   ├── ConsoleHandlerTest.php
+                │   ├── FileHandlerTest.php
+                │   ├── LoggerTest.php
+                │   └── ManagerTest.php
+                ├── Mode
+                │   ├── DataTest.php
+                │   └── SettingsTest.php
+                ├── Reader
+                │   ├── ClassMapTest.php
+                │   ├── MapTest.php
+                │   └── SettingsTest.php
+                ├── RecordTransformerTest.php
+                ├── ResourceModel
+                │   ├── AbstractCollectionTest.php
+                │   ├── AbstractResourceTest.php
+                │   ├── Adapter
+                │   │   └── MysqlTest.php
+                │   ├── AdapterFactoryTest.php
+                │   ├── DestinationTest.php
+                │   ├── Document
+                │   │   └── CollectionTest.php
+                │   ├── DocumentTest.php
+                │   ├── Record
+                │   │   └── CollectionTest.php
+                │   ├── RecordTest.php
+                │   ├── SourceTest.php
+                │   ├── Structure
+                │   │   └── CollectionTest.php
+                │   └── StructureTest.php
+                └── Step
+                    ├── CustomCustomerAttributes
+                    │   ├── DataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── CustomCustomerAttributesTest.php
+                    ├── Customer
+                    │   └── HelperTest.php
+                    ├── Eav
+                    │   ├── HelperTest.php
+                    │   ├── InitialDataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── Log
+                    │   ├── DataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── Map
+                    │   ├── DataTest.php
+                    │   ├── DeltaTest.php
+                    │   ├── HelperTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── Ratings
+                    │   ├── DataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── SalesOrder
+                    │   ├── DataTest.php
+                    │   ├── HelperTest.php
+                    │   ├── InitialDataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── Settings
+                    │   ├── DataTest.php
+                    │   └── IntegrityTest.php
+                    ├── Stores
+                    │   ├── DataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    └── UrlRewrite
+                        ├── Version11410to2000Test.php
+                        └── Version191to2000Test.php
+
+</pre>
+
+<h3 id="entry-point">Entry Point</h3>
+
+<p>Script that runs migration process is located at magento-root/bin/magento</p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>The Schema for configuration file <code>config.xsd</code> is placed under <code>etc/directory</code>. Default configuration file <code>config.xml.dist</code> is created for each version of Magento 1.x. It is placed in separate directories under <code>etc/</code>.</p>
+
+<p>Default configuration file can be replaced by custom one using CLI (see <a href="/guides/v2.1/migration/migration-migrate.html">–config <code>&lt;value&gt;</code> parameter</a>).</p>
+
+<p>Configuration file has the following structure:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xs:noNamespaceSchemaLocation=</span><span class="s">&quot;config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;steps</span> <span class="na">mode=</span><span class="s">&quot;settings&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">title=</span><span class="s">&quot;Settings step&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;integrity&gt;</span>Migration\Step\Settings<span class="nt">&lt;/integrity&gt;</span>
+            <span class="nt">&lt;data&gt;</span>Migration\Step\Settings<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;/step&gt;</span>
+    <span class="nt">&lt;/steps&gt;</span>
+    <span class="nt">&lt;steps</span> <span class="na">mode=</span><span class="s">&quot;data&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">title=</span><span class="s">&quot;Map step&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;integrity&gt;</span>Migration\Step\Map\Integrity<span class="nt">&lt;/integrity&gt;</span>
+            <span class="nt">&lt;data&gt;</span>Migration\Step\Map\Data<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;volume&gt;</span>Migration\Step\Map\Volume<span class="nt">&lt;/volume&gt;</span>
+        <span class="nt">&lt;/step&gt;</span>
+        ...
+    <span class="nt">&lt;/steps&gt;</span>
+    <span class="nt">&lt;steps</span> <span class="na">mode=</span><span class="s">&quot;delta&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">title=</span><span class="s">&quot;Map step&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;delta&gt;</span>Migration\Step\Map\Delta<span class="nt">&lt;/delta&gt;</span>
+            <span class="nt">&lt;volume&gt;</span>Migration\Step\Map\Volume<span class="nt">&lt;/volume&gt;</span>
+        <span class="nt">&lt;/step&gt;</span>
+        ...
+    <span class="nt">&lt;/steps&gt;</span>
+    <span class="nt">&lt;source&gt;</span>
+        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/source&gt;</span>
+    <span class="nt">&lt;destination&gt;</span>
+        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/destination&gt;</span>
+    <span class="nt">&lt;options&gt;</span>
+        <span class="nt">&lt;map_file&gt;</span>map-file.xml<span class="nt">&lt;/map_file&gt;</span>
+        <span class="nt">&lt;settings_map_file&gt;</span>settings-map-file.xml<span class="nt">&lt;/settings_map_file&gt;</span>
+        <span class="nt">&lt;bulk_size&gt;</span>100<span class="nt">&lt;/bulk_size&gt;</span>
+        <span class="nt">&lt;custom_option&gt;</span>custom_option_value<span class="nt">&lt;/custom_option&gt;</span>
+        <span class="nt">&lt;source_prefix</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;dest_prefix</span> <span class="nt">/&gt;</span>
+        ...
+    <span class="nt">&lt;/options&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<ul>
+  <li>
+    <p>steps - describes all steps that are processed during migration</p>
+  </li>
+  <li>
+    <p>source - configuration for data source. Available source types: database</p>
+  </li>
+  <li>
+    <p>destination - configuration for data destination. Available destination types: database</p>
+  </li>
+  <li>
+    <p>options - list of parameters. Contains both mandatory (map_file, settings_map_file, bulk_size) and optional (custom_option, resource_adapter_class_name, prefix_source, prefix_dest, log_file) parameters</p>
+  </li>
+</ul>
+
+<p>Change prefix option in case Magento was installed with prefix in database tables. It can be set for Magento 1 and Magento 2 databases. Use the “source_prefix” and “dest_prefix” configuration options accordingly.</p>
+
+<p>Configuration data is accessible via \Migration\Config class.</p>
+
+<h2 id="step-internals">Step internals</h2>
+<p>The migration process consists of steps.
+Step is a unit that provides functionality required for migration some separated data. Step can consist of one or more stages e.g. integrity check, data, volume check, delta.</p>
+
+<p>By default there are several steps (Map, EAV, URL Rewrites, and so on). You can optionally add your own steps as well.
+Steps related classes are located in the src/Migration/Step directory.
+To execute a Step class, the class must be defined in config.xml file.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xs:noNamespaceSchemaLocation=</span><span class="s">&quot;config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;steps</span> <span class="na">mode=</span><span class="s">&quot;mode_name&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">title=</span><span class="s">&quot;Step Name&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;integrity&gt;</span>Migration\Step\StepName\Inegrity<span class="nt">&lt;/integrity&gt;</span>  <span class="c">&lt;!-- integrity check stage of the step --&gt;</span>
+            <span class="nt">&lt;data&gt;</span>Migration\Step\StepName\Data<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;volume&gt;</span>Migration\Step\StepName\Volume<span class="nt">&lt;/volume&gt;</span>
+        <span class="nt">&lt;/step&gt;</span>
+        ...
+    <span class="nt">&lt;/steps&gt;</span>
+    ...
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>Every stage class must implement StageInterface.</p>
+
+<pre>
+class&nbsp;StageClass&nbsp;implements&nbsp;StageInterface
+{
+&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;*&nbsp;Perform&nbsp;the&nbsp;stage
+&nbsp;&nbsp;&nbsp;*
+&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;bool
+&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;public&nbsp;function&nbsp;perform()
+&nbsp;&nbsp;{
+&nbsp;&nbsp;}
+}
+</pre>
+
+<p>If the data stage supports rollback, it should implement the RollbackInterface interface.</p>
+
+<p>Visualization of the running step is provided by Symfony’s ProgressBar component (see http://symfony.com/doc/current/components/console/helpers/progressbar.html). Access this component in a step as LogLevelProcessor.</p>
+
+<p>Main methods for use are:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">$this-&gt;progress-&gt;start();
+$this-&gt;progress-&gt;advance();
+$this-&gt;progress-&gt;finish();</code></pre></div>
+
+<h2 id="stages">Stages</h2>
+
+<h3 id="integrity-check">Integrity check</h3>
+
+<p>Each step has to check that the structure of data source (Magento 1 by default) and the structure of data destination (Magento 2) are compatible. If not - an error will be shown with entities that are not compatible. In case when fields have different datatypes (e.g. the same field has decimal datatype in Magento 1 and integer in Magento 2), a warning message will be shown (except when it was covered in Map file).</p>
+
+<h3 id="data-transfer">Data Transfer</h3>
+
+<p>In case integrity check passed, transferring data is running. If some error appears then rollback will run to revert to previous state of Magento 2. If a step class implements RollbackInterface then “rollback” method will be executed in case of error.</p>
+
+<h3 id="volume-check">Volume check</h3>
+
+<p>After data has been migrated Volume Check provides additional check that all data was transferred correctly.</p>
+
+<h3 id="delta-delivery">Delta delivery</h3>
+
+<p>Delta functionality is responsible for delivering the rest of data that was added after main migration.</p>
+
+<h2 id="running-modes">Running modes</h2>
+
+<p>The tool should be run in three different modes in particular order:</p>
+
+<ol>
+  <li>settings - migration of system settings</li>
+  <li>data - main migration of data</li>
+  <li>delta - migration of the rest of data that was added after main migration</li>
+</ol>
+
+<p>Each mode has its own list of steps to be executed. See config.xml</p>
+
+<h3 id="settings-migration-mode">Settings migration mode</h3>
+
+<p>Settings migration mode of this tool is used to transfer following entities:</p>
+
+<ol>
+  <li>Websites, stores, store views.</li>
+  <li>Store configuration (mainly Stores-&gt;Configuration in M2 or System-&gt;Configuration in M1)</li>
+</ol>
+
+<p>All store configuration keeps its data in core_config_data table in database. settings.xml file contains rules for this table that are applied during migration process. This file describes settings that should be ignored, renamed or should change their values. settings.xml file has the following structure:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;settings</span> <span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xs:noNamespaceSchemaLocation=</span><span class="s">&quot;settings.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;key&gt;</span>
+        <span class="nt">&lt;ignore&gt;</span>
+            <span class="nt">&lt;path&gt;</span>path/to/ignore*<span class="nt">&lt;/path&gt;</span>
+        <span class="nt">&lt;/ignore&gt;</span>
+        <span class="nt">&lt;rename&gt;</span>
+            <span class="nt">&lt;path&gt;</span>path/to/rename<span class="nt">&lt;/path&gt;</span>
+            <span class="nt">&lt;to&gt;</span>new/path/renamed<span class="nt">&lt;/to&gt;</span>
+        <span class="nt">&lt;/rename&gt;</span>
+    <span class="nt">&lt;key&gt;</span>
+    <span class="nt">&lt;value&gt;</span>
+        <span class="nt">&lt;transform&gt;</span>
+            <span class="nt">&lt;path&gt;</span>some/key/to/change<span class="nt">&lt;/path&gt;</span>
+            <span class="nt">&lt;handler</span> <span class="na">class=</span><span class="s">&quot;Some\Handler\Class&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/transform&gt;</span>
+    <span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/settings&gt;</span></code></pre></div>
+
+<p>Under node <code>&lt;key&gt;</code> there are rules that work with ‘path’ column of core_config_data table. <code>&lt;ignore&gt;</code> rules make the tool not to transfer some setting. Wildcards can be used in this node. All other settings not listed in <code>&lt;ignore&gt;</code> node, will be migrated. If path of some setting is changed in Magento 2, it should be added to //key/rename node, where old path indicates in //key/rename/path node and new path indicates in //key/rename/to node.</p>
+
+<p>Under node <code>&lt;value&gt;</code> there are rules that work with ‘value’ column of core_config_data table. These rules aim to transform value of settings by handlers (classes that implement Migration\Handler\HandlerInterface) and adapt it for Magento 2</p>
+
+<h3 id="data-migration-mode">Data migration mode</h3>
+
+<p>In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If integrity check passed the Data Migration Tool installs deltalog tables (with prefix m2_cl_*) and corresponding triggers to Magento 1 database. And runs data migration stage of steps. When migration is completed without errors the volume check checks data consistency. It can show a warning message if you migrate live store. Do not worry, delta migration will take care of this incremental data. Next the most valuable migration steps are described. It is Map Step, URL Rewrite Step, EAV Step.</p>
+
+<h4 id="map-step">Map Step</h4>
+
+<p>Map step is responsible for transferring most of data from Magento 1 to Magento 2. This step reads instructions from map.xml file (located in etc dir). The file describes differences between data structures of source (Magento 1) and destination (Magento 2). In case Magento 1 contains tables or fields that belong to some extension that does not exist in Magento 2, then these entities can be placed here to ignore them by Map Step. Otherwise it will show an error message. </p>
+
+<p>Map file has the next format:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;map</span> <span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xs:noNamespaceSchemaLocation=</span><span class="s">&quot;map.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source&gt;</span>
+        <span class="nt">&lt;document_rules&gt;</span>
+            <span class="nt">&lt;ignore&gt;</span>
+                <span class="nt">&lt;document&gt;</span>some_document2<span class="nt">&lt;/document&gt;</span>
+            <span class="nt">&lt;/ignore&gt;</span>
+            <span class="nt">&lt;rename&gt;</span>
+                <span class="nt">&lt;document&gt;</span>some_document<span class="nt">&lt;/document&gt;</span>
+                <span class="nt">&lt;to&gt;</span>some_dest_document<span class="nt">&lt;/to&gt;</span>
+            <span class="nt">&lt;/rename&gt;</span>
+            <span class="nt">&lt;log_changes&gt;</span>
+                <span class="nt">&lt;document</span> <span class="na">key=</span><span class="s">&quot;primary_key&quot;</span><span class="nt">&gt;</span>some_dest_document<span class="nt">&lt;/document&gt;</span>
+            <span class="nt">&lt;/log_changes&gt;</span>
+        <span class="nt">&lt;/document_rules&gt;</span>
+ 
+        <span class="nt">&lt;field_rules&gt;</span>
+            <span class="nt">&lt;move&gt;</span>
+                <span class="nt">&lt;field&gt;</span>some_document1.field1<span class="nt">&lt;/field&gt;</span>
+                <span class="nt">&lt;to&gt;</span>some_document1.field2<span class="nt">&lt;/to&gt;</span>
+            <span class="nt">&lt;/move&gt;</span>
+            <span class="nt">&lt;ignore&gt;</span>
+                <span class="nt">&lt;field&gt;</span>some_document3.field8<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;/ignore&gt;</span>
+            <span class="nt">&lt;transform&gt;</span>
+                <span class="nt">&lt;field&gt;</span>some_document1.field1<span class="nt">&lt;/field&gt;</span>
+                <span class="nt">&lt;handler</span> <span class="na">class=</span><span class="s">&quot;\Migration\Handler\Convert&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;map&quot;</span> <span class="na">value=</span><span class="s">&quot;[value1:value2;value3:value4;value5:value6;]&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/handler&gt;</span>
+            <span class="nt">&lt;/transform&gt;</span>
+        <span class="nt">&lt;/field_rules&gt;</span>
+    <span class="nt">&lt;/source&gt;</span>
+    <span class="nt">&lt;destination&gt;</span>
+        <span class="nt">&lt;document_rules&gt;</span>
+            <span class="nt">&lt;ignore&gt;</span>
+                <span class="nt">&lt;document&gt;</span>some_document8<span class="nt">&lt;/document&gt;</span>
+            <span class="nt">&lt;/ignore&gt;</span>
+        <span class="nt">&lt;/document_rules&gt;</span>
+ 
+        <span class="nt">&lt;field_rules&gt;</span>
+            <span class="nt">&lt;transform&gt;</span>
+                <span class="nt">&lt;field&gt;</span>some_document5.field3<span class="nt">&lt;/field&gt;</span>
+                <span class="nt">&lt;handler</span> <span class="na">class=</span><span class="s">&quot;\Migration\Handler\SetValue&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;value&quot;</span> <span class="na">value=</span><span class="s">&quot;10&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/handler&gt;</span>
+            <span class="nt">&lt;/transform&gt;</span>
+        <span class="nt">&lt;/field_rules&gt;</span>
+    <span class="nt">&lt;/destination&gt;</span>
+<span class="nt">&lt;/map&gt;</span></code></pre></div>
+
+<p>Areas:</p>
+
+<ul>
+  <li>
+    <p><em>source</em> - contains rules of source database</p>
+  </li>
+  <li>
+    <p><em>destination</em> - contains rules of destination database</p>
+  </li>
+</ul>
+
+<p>Options:</p>
+
+<ul>
+  <li>
+    <p><em>ignore</em> - document, field or datatype marked with this option will be ignored</p>
+  </li>
+  <li>
+    <p><em>rename</em> - describes name relations between documents with the different name. In a case when destination document name is not the same with the source document - you can use rename option to set source document name similar to destination table name</p>
+  </li>
+  <li>
+    <p><em>move</em> - sets rule to move specified field from source document to destination document. NOTE: destination document name should be the same with the source document name. If source and destination document names are different - you need to use rename option for document that contains moved field</p>
+  </li>
+  <li>
+    <p><em>transform</em> - is a option that allows user to migrate fields according to behavior described in handlers</p>
+  </li>
+  <li>
+    <p><em>handler</em> - describes transformation behavior for fields. To call the handler you need to specify a handler class name in a <handler> tag. Use <param /> tag with the parameter name and value data to pass it to handler</handler></p>
+  </li>
+</ul>
+
+<p><strong>Source</strong> available operations:</p>
+<table>
+<tbody>
+	<tr>
+		<th>Document</th>
+		<th>Field</th>
+	</tr>
+<tr>
+	<td>ignore 
+    	rename</td>
+	<td>ignore
+		move 
+		transform</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Destination</strong> available operations:</p>
+<table>
+<tbody>
+	<tr>
+		<th>Document</th>
+		<th>Field</th>
+	</tr>
+<tr>
+	<td>ignore</td>
+	<td>ignore
+		transform</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="wildcards">Wildcards</h4>
+<p>To ignore documents with similar parts (e.g. document_name_1, document_name_2 e.t.c), you can use wildcard functionality. Just put * symbol instead of repeating part (e.g. document_name_*) and this mask will cover all source or destination documents that meet this mask.</p>
+
+<h4 id="url-rewrite-step">URL Rewrite Step</h4>
+
+<p>This step is quite complex because there are many different algorithms developed in Magento 1 which are not compatible with Magento 2. For different versions of Magento 1 there can be different algorithms. Thus under Step/UrlRewrite folder there are classes that were developed for some of particular versions of Magento and Migration\Step\UrlRewrite\Version191to2000 is one of them. It can transfer URL Rewrites data from Magento 1.9.1 to Magento 2.</p>
+
+<h4 id="eav-step">EAV Step</h4>
+
+<p>This step transfers all attributes (e.g. product, customer, RMA) from Magento 1 to Magento 2. It uses map-eav.xml file that contains rules similar to the ones in map.xml file for specific cases of processing data.</p>
+
+<p>Some of the tables that are processed in the step:</p>
+
+<ul>
+  <li>eav_attribute</li>
+  <li>eav_attribute_group</li>
+  <li>eav_attribute_set</li>
+  <li>eav_entity_attribute</li>
+  <li>catalog_eav_attribute</li>
+  <li>customer_eav_attribute</li>
+  <li>eav_entity_type</li>
+  <li>…</li>
+</ul>
+
+<h3 id="delta-migration-mode">Delta migration mode</h3>
+
+<p>After main migration some data could have been added to DB of Magento 1 e.g. by customers on store-front. To track this data, database triggers are setup for tables in the beginning of main migration. If some extension has its own tables that need to be tracked for changing its data - then a developer should:</p>
+
+<ol>
+  <li>add these tables into deltalog.xml file</li>
+  <li>create its own delta class which extends Migration\App\Step\AbstractDelta</li>
+  <li>add name of this class to config.xml into delta mode section</li>
+</ol>
+
+<h2 id="data-sources">Data Sources</h2>
+
+<p>To reach to the data sources of Magento 1 and Magento 2 and operate with its data (select, update, insert, delete) there are many classes in Resource folder. Migration\Resource\Source and Migration\Resource\Destination are main classes. All migration steps use it to operate with data. This data is contained in classes like Migration\Resource\Document, Migration\Resource\Record, Migration\Resource\Structure etc. </p>
+
+<p>Here is a class diagram of these classes:</p>
+
+<p><img src="/common/images/Migration Tool Data Structure.png" alt="Migration Tool Data Structure" /></p>
+
+<h2 id="logging">Logging</h2>
+
+<p>In order to implement output of migration process and control all possible levels PSR logger, which is used in Magento, is applied. \Migration\Logger\Logger class was implemented to provide logging functionality. To use the logger you should inject it via constructor dependency injection.</p>
+
+<pre><code>class SomeClass
+{
+    ...
+    protected $logger;
+ 
+    public function __construct(\Migration\Logger\Logger $logger)
+    {
+        $this-&gt;logger = $logger;
+    }
+    ...
+}
+</code></pre>
+
+<p>After that you can use this class for logging of some events:</p>
+
+<pre><code>$this-&gt;logger-&gt;info("Some information message");
+$this-&gt;logger-&gt;debug("Some debug message");
+$this-&gt;logger-&gt;error("Message about error operation");
+$this-&gt;logger-&gt;warning("Some warning message");
+</code></pre>
+
+<p>There is a possibility to customize where log information should be written. You can do that by adding handler to logger using pushHandler() method of the logger. Each handler should implement \Monolog\Handler\HandlerInterface interface. As for now there are two handlers:</p>
+
+<ul>
+  <li>ConsoleHandler: writes messages to console</li>
+  <li>FileHandler: writes messages to log file that has been set in “log_file” config option</li>
+</ul>
+
+<p>Also it is possible to implement any additional handler. There is a set of handlers in Magento framework. Example of adding handlers to logger:</p>
+
+<pre><code>// $this-&gt;consoleHandler is the object of Migration\Logger\ConsoleHandler class
+// $this-&gt;logger is the object of Migration\Logger\Logger class
+$this-&gt;logger-&gt;pushHandler($this-&gt;consoleHandler);
+</code></pre>
+
+<p>To set additional data for logger (e.g. current mode, table name e.t.c) you can use logger processors. There is one existing processor (MessageProcessor). It’s created to add “extra” data for logging messages and will be called each time when log method is executed. MessageProcessor has protected $extra var, which contain empty values for ‘mode’, ‘stage’, ‘step’ and ‘table’. Extra data can be passed to processor as a second parameter (context) for log method. Currently additional data sets to processor in AbstractStep-&gt;runStage (pass current mode, stage and step to processor) method and data classes where used logger-&gt;debug method (pass migrating table name). Example of adding processors to logger:</p>
+
+<pre><code>// $this-&gt;processoris the object of Migration\Logger\messageProcessor class
+// $this-&gt;logger is the object of Migration\Logger\Logger class
+$this-&gt;logger-&gt;pushProcessor([$this-&gt;processor, 'setExtra']);
+// As a second array value you need to pass method that should be executed when processor called
+</code></pre>
+
+<p>There is a possibility to set the level of verbosity. As for now there are 3 levels: ERROR(writes only errors to the log), INFO(only important information is written to the log, default value), DEBUG(everything is written). Verbosity log level can be set for each handler separately by calling setLevel() method. If you want to set verbosity level via command line parameter, you should change ‘verbose’ option at application launch. </p>
+
+<p>There is a possibility to format log messages via monolog formatter. To make formatter functionality work it needs to be set to specified log handler using setFormatter() method. Currently we have one formatter class (MessageFormatter) that sets certain format (depends on verbosity level) during message handling (via format() method executed from handler).</p>
+
+<p>As for now manipulation with logger, adding handler(s), processor(s) to it and processing verbose mode is performed in process() method of Migration\Logger\Manager class. Mentioned method is called during application start.</p>
+
+<h2 id="extension-points">Extension Points</h2>
+
+<h4 id="custom-resource-type-of-source">Custom Resource Type of Source</h4>
+
+<p>By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to CSV as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.</p>
+
+<h4 id="map-step-configuration">Map Step configuration</h4>
+
+<p>In most cases modification of map will be enough.</p>
+
+<h4 id="custom-handler">Custom Handler</h4>
+
+<p>Custom handlers can be used for cases where data in a field should be transformed with more complex algorithm. There are a lot of custom handlers out of the box in src/Migration/Handler/ folder. Custom handlers are used in Settings step and Map step.</p>
+
+<h4 id="custom-steps">Custom Steps</h4>
+
+<p>Data Migration Tool provides possibility to add custom steps to migration procedure (see Step internals).</p>
+
+<h2 id="automatic-tests">Automatic Tests</h2>
+
+<p>There are 3 types of tests in Data Migration Tool: static, unit and integration tests. They all are located in tests/ directory of the tool and they are located in folders, which are the same as the type of the test (e.g. unit tests are located in tests/unit folder). To launch the test you should have phpunit installed. In such case you should change current folder to the folder of test and launch phpunit. See the example below.</p>
+
+<pre><code>[10:32 AM]-[vagrant@debian-70rc1-x64-vbox4210]-[/var/www/magento2/vendor/magento/migration-tool]-[git master]
+$ cd tests/unit
+ 
+[10:33 AM]-[vagrant@debian-70rc1-x64-vbox4210]-[/var/www/magento2/vendor/magento/migration-tool/tests/unit]-[git master]
+$ phpunit
+PHPUnit 4.1.0 by Sebastian Bergmann.
+....
+</code></pre>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

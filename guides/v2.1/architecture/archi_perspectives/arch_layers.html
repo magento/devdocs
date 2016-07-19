@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Architecture layers</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/architecture/archi_perspectives/arch_layers.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Architecture layers</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/archi_perspectives/arch_layers.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2>Magento Framework</h2>
+<p>The Magento Framework controls how application components interact, including request flow, routing, indexing, caching, and exception handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies. </p>
+
+<p>This primarily PHP software component is organized into logical groups called <i>libraries</i>, which all modules can call.  Most of the framework code sits under the domain layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
+(Although the Magento Framework does not contain resource models, it does contain a library of code to help implement a resource model.) </p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Note: Don’t confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
+</div>
+
+<p>You should never modify Framework files, although if you are extending Magento, you must know how to call Framework libraries. Modules you create will typically inherit from classes and interfaces defined in the Framework directories.  </p>
+
+<h3>Magento Framework responsibilities</h3>
+<p>The Magento framework provides libraries that help reduce the effort of creating modules that contain business logic.</p>
+
+<p>The framework is responsible for operations that are useful for potentially all modules, including: </p>
+
+<ul>
+  <li>handling HTTP protocols</li>
+  <li>interacting with the database and filesystem</li>
+  <li>rendering content</li>
+</ul>
+
+<h3>Magento Framework organization</h3>
+<p>Here is the Magento framework folder structure:</p>
+
+<p><code>
+Lib/
+ ../Internal
+    ../Magento
+      ../Framework
+</code></p>
+
+<ul>
+  <li>
+    <p><code>/lib/internal</code> contains some non-PHP as well as PHP components. Non-PHP framework libraries includes JavaScript and LESS/CSS. </p>
+  </li>
+  <li>
+    <p><code>/lib/internal/Magento/Framework</code>  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the framework libraries). For example,  libraries in the framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support CSS rendering.</p>
+  </li>
+  <li>
+    <p><code>/lib/web</code> contains JavaScript and CSS/LESS files. These files reside  under <code>web</code> and not <code>internal</code> because they are accessible from a web browser, while the PHP code under <code>internal</code> is not. (Any code that a web browser must access should be under <code>web</code>, while everything else under <code>internal</code>.)</p>
+  </li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Note: The <code>lib/internal/Magento/Framework</code> directory maps to the <code>Magento\Framework</code> namespace.</p>
+</div>
+
+<h3>Highlights of the Magento Framework</h3>
+<p>The Magento Framework (<code>lib/internal/Magento/Framework/</code>) provides a robust range of functionality. If you are an extension developer, you may be interested in this subset of Framework namespaces.</p>
+
+<table>
+   <tbody>
+      <tr style="background-color: lightgray">
+         <th>Namespace</th>
+         <th>Purpose</th>
+         
+      </tr>
+      <tr>
+         <td><code>Magento\Framework\Object</code>
+         </td>
+         <td>Provides standard functionality for storing and retrieving data through magic methods. This is the base class for many Magento classes.</td>
+      </tr><tr>
+         <td><code>Magento\Framework\Object\Model</code>
+         </td>
+         <td>Contains base Model classes that almost all Magento Model classes extend from.</td>
+      </tr><tr>
+         <td><code>Magento\Framework\Object\AbstractModel</code>
+         </td>
+         <td></td>
+      </tr>
+      <tr>
+         <td><code>Magento\Framework\Object\AbstractResource</code></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td><code>Magento\Framework\Object\Controller</code></td>
+         <td>Contains classes to help return different types of results (for example, JSON and redirects).</td>
+      </tr>
+      <tr>
+         <td><code>Magento\Framework\Object\View</code></td>
+         <td>Contains code to render pages and layouts.</td>
+      </tr><tr>
+         <td><code>Magento\Framework\Object\Data</code></td>
+         <td>Contains additional classes that handle forms.</td>
+      </tr><tr>
+         <td><code>Magento\Framework\Object\URL</code></td>
+         <td>Contains code to look up other pages in Magento.</td>
+      </tr>
+   </tbody>
+</table>
+
+<p>Other namespaces under <code>Magento\Framework</code> that will interest extension developers:</p>
+
+<table>
+   <tbody>
+      <tr style="background-color: lightgray">
+         <th>Namespace</th>
+         <th>Purpose</th>
+         
+      </tr>
+      <tr>
+         <td><code>Magento\Framework\ObjectManager</code>
+         </td>
+         <td>Used to provide <i>dependency injection</i>. </td>
+      </tr><tr>
+         <td><code>Magento\Framework\App</code>
+         </td>
+         <td>Contains framework code that has knowledge about the Magento application. This code bootstraps the application and reads in the initial configuration. It also contains the entry point to the command line tools, the web application, and the cron job. And finally, it routes requests while providing the deployment context (such as reading in the configuration for the database configuration, languages, caching systems).
+
+</td>
+      </tr><tr>
+         <td><code>Magento\Framework\Api</code>
+         </td>
+         <td>Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data through Magento Marketplace extensions).</td>
+      </tr><tr>
+         <td><code>Magento\Framework\Config</code>
+         </td>
+         <td>Contains the generic configuration reader. Each config file has its own specialized reader extending these classes.</td>
+      </tr><tr>
+         <td><code>Magento\Framework\Filesystem</code>
+         </td>
+         <td>Contains classes that handle reading from and writing to the file system.</td>
+      </tr><tr>
+      <tr>
+         <td><code>Magento\Framework\HTTP\PhpEnvironment</code>
+         </td>
+         <td></td>
+      </tr><tr>
+         <td><code>Magento\Framework\Session</code>
+         </td>
+         <td></td>
+      </tr><tr>
+         <td><code>Magento\Framework\Stdlib\Cookie</code>
+         </td>
+         <td>Code to handle the HTTP request/responses as well as session/cookies is found here.</td>
+      </tr><tr>
+         <td><code>Magento\Framework\Exception</code>
+         </td>
+         <td>Contains the basic exceptions that are thrown throughout the Magento codebase.</td>
+      </tr>
+      <tr>
+         <td><code>Magento\Framework\Event</code>
+         </td>
+         <td>Contains the code that publishes synchronous events and that handles observers for any Magento event is handled here.
+</td>
+      &lt;/t
+
+         <td>
+         </td>
+         <tr>
+         <td><code>Magento\Framework\Validator</code>
+         </td>
+         <td>Contains the code that validates data (currencies, not empty) and that handles observers for any Magento event.
+</td>
+      &lt;/t
+
+
+         <td></td>
+
+
+
+
+
+
+
+
+
+
+<h2> Presentation layer</h2>
+
+
+<h3>How Presentation code calls other layers</h3>
+Presentation code typically calls service contracts, particularly for a store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the business logic layer. For example, the Admin UI screens are often tightly linked a specific implementation and are not generic across implementations.
+
+<h2>Service layer</h2>
+The service layer provides a bridge between the presentation layer and the model layer of domain logic and resource-specific data. This is implemented using *service contracts*, which are defined using PHP interfaces.
+
+In general, the service layer 
+
+* Resides below the presentation layer and above the domain layer.
+
+* Contains service contracts, which define how the implementation will behave.  
+
+* Provides an easy way to access the REST/SOAP API framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files -- no coding required.
+
+
+* Provides a stable API for other modules to call into.
+
+
+
+
+
+<h3>Who accesses the service layer?</h3>
+
+All calls from web service interfaces, or users working with your storefront (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic. 
+
+External applications can make requests for business logic with simple SOAP and REST calls. With some simple XML or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.
+
+Service contract clients include:
+
+* Controllers (initiated by actions of users of the storefront)
+* Web services (SOAP and REST API calls)
+* Other Magento modules through service contracts
+
+<h3>Service contract anatomy</h3>
+
+The service contract of a module is defined by the set of interfaces in the module's `/Api`. It typically consists of: 
+
+* service interfaces in the `/Api` namespace of the module
+
+
+
+* data (or *entity*) interfaces in the `Api/Data` directory. *Data entities* are data structures passed to and returned from service interfaces.
+
+
+Typically, service contracts provide three distinct types of interfaces: 
+
+* Repository interfaces
+* Management interfaces
+* Metadata interfaces
+
+However, there is no requirement that service contracts conform to all three patterns. 
+
+<h3>Advantages of service contracts</h3>
+Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the &lt;preference&gt; element of a dependency injection config file (`di.xml`) file. The `di.xml` file specifies which PHP class to use for the interface `Magento\Customer\Api\CustomerRepositoryInterface`. 
+
+Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.
+
+<h3>Related topics </h3>
+Service contracts
+
+
+<h2>Domain layer</h2>
+The domain layer holds the business logic layer of a Magento module. It typically does not contain resource-specific or database-specific information. Its primary functions include:
+
+* Defines the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. These models contain generic information only. Applications can also use SOAP or RESTful endpoints to request data from models. 
+
+* (Optionally) Includes the implementation of service contracts, although not their definition.
+
+Best practice: Use service contracts to communicate to the domain layer by passing data types through strongly typed objects. This practice can help you avoid the need to replace presentation layer code when replacing business layer logic. 
+
+
+
+<h3>Models</h3>
+
+Each domain-layer model contains a reference to a resource model, which it uses to retrieve data from the database with MySql calls.  This resource model contains logic for connecting to the underlying database, typically MySQL. A model requires a resource model only if the model data must persist. 
+
+<h3>Who accesses the domain layer?</h3>
+There are three primary ways of accessing a module's domain-layer code:
+
+* Service contracts are the recommended way for one module to access another module's domain-level code. This loosely coupled solution is the optimal way for most modules to access another module. 
+
+* A module can directly call into another module. This tightly coupled solution is not recommended for most situations, but is sometimes unavoidable.
+
+* Domain layer code in one module can also plug itself into another module by: 
+
+    * event hooks
+    * plugins
+    * `di.xml` files (with an SPI contract) 
+    
+Your strategy for calling another module's domain-layer code is highly dependent upon the unique configuration and needs of your system. 
+  
+
+
+<h2 id="persistence">Persistence layer</h2>
+
+
+Magento uses an active record pattern strategy for persistence. In this system, the model object contains a *resource model* that maps an object to one or more database rows. A resource model is responsible for performing functions such as:
+
+* Executing all CRUD (create, read, update, delete) requests. The resource model contains the SQL code for completing these requests.
+
+* Performing additional business logic. For example, a resource model could perform data validation, start processes before or after data is saved, or perform other database operations.
+
+
+If you expect to return multiple items from a database query, then you would implement a special type of resource model known as a *collection*. A collection is a class that loads multiple models into an array-like structure based on a set of rules. This is similar to a SQL `WHERE` clause.
+
+A simple resource model defines and interacts with a single table. However, some objects have a vast number of attributes, or they could have a set related objects that have varying numbers of attributes. In these cases, the objects are constructed using Entity-Attribute-Value (EAV) models. As a result, any model that uses an EAV resource has its attributes spread out over a number of MySQL tables. The `Customer` and `Catalog` resource models use EAV attributes.  
+
+<h2 id="related">Related topics</h2>
+<a href="/guides/v2.1/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+
+
+ 
+</tr></tr></tr></tbody></table>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

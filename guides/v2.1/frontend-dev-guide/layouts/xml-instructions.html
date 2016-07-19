@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Layout instructions</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<!--Search Results Overlay -->
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<gcse:search></gcse:search>
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+		<a class="search-trigger search-icon" href="#"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Layout instructions</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Frontend Developer Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q "><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+
+							
+
+								<li class="q "><a href="/guides/v2.1/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a></li>
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-images.html">Configure images properties for a theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/favicon.html">Adding custom favicons</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/frontend-dev-guide/templates/template-overview.html">Templates</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/templates/template-email.html">Customize email templates</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/templates/template-security.html">Templates XSS security</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-topics/css-themes.html">Include CSS</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html">Styles debugging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-topics/css-jquery.html">Using jQuery UI styles</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-topics/custom_preprocess.html">Add custom CSS preprocessor (like Sass)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/frontend-dev-guide/css-guide/css_quick_guide_overview.html">Quick start guide to styles</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to Make Your Theme Responsive and Mobile</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in responsive design</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in Magento responsive design</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_mobile.html">Create a responsive mobile theme based on a default theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Add a custom breakpoint</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/frontend-dev-guide/translations/xlate.html">Translations</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/translations/theme_dictionary.html">Use translation dictionary to customize strings</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/translations/translate_theory.html">Translate theme strings</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme, illustration</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+		<h2 id="fedg_layout_xml-instruc_overview">What's in this topic</h2>
+
+<p>Changing layout files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
+To change the page wireframe, modify the <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> files; all other customizations are performed in the <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> files. </p>
+
+<p>Use layout instructions to:</p>
+
+<ul>
+  <li>move a page element to another parent element</li>
+  <li>add content</li>
+  <li>remove a page element</li>
+</ul>
+<p></p>
+
+<p>The basic set of instructions is the same for all types of layout files. This article describes these basic instructions; for details about how they are used in particular layout file type, please refer to the <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> article.</p>
+
+<h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
+
+<p>Use the following layout instructions to customize your layout:</p>
+
+<ul>
+  <li><a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container&gt;</code></a></li>
+  <li><a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_rmv"><code>&lt;remove&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a></li>
+  <li><a href="#argument"><code>&lt;argument&gt;</code></a></li>
+</ul>
+
+<h3 id="fedg_layout_xml-instruc_ex_block">&lt;block&gt;</h3>
+
+<p>Defines a block.</p>
+
+<p><b>Details:</b> A block is a unit of page output that renders some distinctive content – a piece of information, a user interface element – anything visually tangible for the end-user.
+Blocks employ templates to generate HTML. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
+
+<table>
+   <tbody>
+      <tr>
+         <th>Attribute</th>
+         <th>Description</th>
+         <th>Values</th>
+         <th>Required?</th>
+      </tr>
+      <tr class="even">
+         <td>class</td>
+         <td>Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output.</td>
+         <td>class name</td>
+         <td>yes</td>
+      </tr>
+      <tr class="odd">
+         <td>name</td>
+         <td>Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code></td>
+         <td>0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive.</td>
+         <td>no</td>
+      </tr>
+      <tr class="even">
+         <td>before</td>
+         <td><p>Used to position the block</p> before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Possible values: element name or dash (-)</td>
+         <td>no</td>
+      </tr>
+      <tr class="odd">
+         <td>after</td>
+         <td>Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Possible values: element name or dash (-)</td>
+         <td>no</td>
+      </tr>
+      <tr class="even">
+         <td>template</td>
+         <td>A template that represents the functionality of the block to which this attribute is assigned.</td>
+         <td>template file name</td>
+         <td>no</td>
+      </tr>
+      <tr class="odd">
+         <td>as</td>
+         <td>An alias name that serves as identifier in the scope of the parent element.</td>
+         <td>0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
+         <td>no</td>
+      </tr>
+      <tr class="odd">
+         <td>cacheable</td>
+         <td>Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. </td>
+         <td><code>true</code> or <code>false</code></td>
+         <td>no</td>
+      </tr>
+   </tbody>
+</table>
+
+<p>To pass parameters use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction. </p>
+
+<h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container&gt;</h3>
+<p>A structure without content that holds other layout elements such as blocks and containers.</p>
+<p><b>Details:</b> A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code>&lt;container&gt;</code> and <code>&lt;block&gt;</code> elements.
+<table>
+   <tbody>
+      <tr>
+         <th>Attribute</th>
+         <th>Description</th>
+         <th>Values</th>
+         <th>Required?</th>
+      </tr>
+      <tr class="even">
+         <td>name</td>
+         <td>A name that can be used to address the container in which this attribute is assigned. The name must be unique per generated page.</td>
+         <td>A-Z, a-z, 0-9, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive.</td>
+         <td>yes</td>
+      </tr>
+      <tr class="odd">
+         <td>label</td>
+         <td>An arbitrary name to display in the web browser.</td>
+         <td>any</td>
+         <td>no</td>
+      </tr>
+      <tr class="even">
+         <td>before</td>
+         <td>Used to position the container before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Possible values: element name or dash (-).</td>
+         <td>no</td>
+      </tr>
+      <tr class="odd">
+         <td>after</td>
+         <td>Used to position the container after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Possible values: element name or dash (-).</td>
+         <td>no</td>
+      </tr>
+      <tr class="even">
+         <td>as</td>
+         <td>An alias name that serves as identifier in the scope of the parent element.</td>
+         <td>0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
+         <td>no</td>
+      </tr>
+      <tr class="odd">
+         <td>output</td>
+         <td>Defines whether to output the root element. If specified, the element will be added to output list. (If not specified, the parent element is responsible for rendering its children.)</td>
+         <td>Any value except the obsolete <code>toHtml</code>. Recommended value is <code>1</code>.</td>
+         <td>no</td>
+      </tr>
+      <tr class="even">
+         <td>htmlTag</td>
+         <td>Output parameter. If specified, the output is wrapped into specified HTML tag.</td>
+         <td>Any valid HTML 5 tag.</td>
+         <td>no</td>
+      </tr>
+      <tr class="odd">
+         <td>htmlId</td>
+         <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
+         <td>Any valid HTML 5 <code>&lt;id&gt;</code> value.</td>
+         <td>no</td>
+      </tr>
+      <tr class="even">
+         <td>htmlClass</td>
+         <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
+         <td>Any valid HTML 5  <code>&lt;class&gt;</code> value.</td>
+         <td>no</td>
+      </tr>
+   </tbody>
+</table>
+
+Sample of usage in layout:
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;div.sidebar.additional&quot;</span> <span class="na">htmlTag=</span><span class="s">&quot;div&quot;</span> <span class="na">htmlClass=</span><span class="s">&quot;sidebar sidebar-additional&quot;</span> <span class="na">after=</span><span class="s">&quot;div.sidebar.main&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;sidebar.additional&quot;</span> <span class="na">as=</span><span class="s">&quot;sidebar_additional&quot;</span> <span class="na">label=</span><span class="s">&quot;Sidebar Additional&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/container&gt;</span>
+...</code></pre></div>
+
+
+This would add a new column to the page layout.
+
+
+<h3 id="fedg_xml-instrux_before-after">before and after attributes</h3>
+<p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
+<p>These optional attributes can be used in layout XML files to control the order of elements in their common parent.
+
+The following tables give a detailed description of the results you can get using the <code>before</code> and <code>after</code> attributes. The first table uses a block a as positioned element.
+
+<table>
+   <tbody>
+      <tr>
+         <th>Attribute</th>
+         <th>Value</th>
+         <th>Description</th>
+      </tr>
+      <tr class="even">
+         <td>before</td>
+         <td>Dash (-)</td>
+         <td>The block displays before all other elements in its parent node.</td>
+      </tr>
+      <tr class="odd">
+         <td>before</td>
+         <td>[element name]</td>
+         <td>The block displays before the named element.</td>
+      </tr>
+      <tr class="even">
+         <td>before</td>
+         <td>empty value or [element name] is absent</td>
+         <td>Use the value of <code>after</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
+      </tr>
+      <tr class="even">
+         <td>after</td>
+         <td>Dash (-)</td>
+         <td>The block displays after all other elements in its parent node.</td>
+      </tr>
+      <tr class="odd">
+         <td>after</td>
+         <td>[element name]</td>
+         <td>The block displays after the named element.</td>
+      </tr>
+      <tr class="even">
+         <td>after</td>
+         <td>empty value or [element name] is absent</td>
+         <td>Use the value of <code>before</code>. If that value is empty or absent as well, the block is considered as non-positioned.</td>
+      </tr>
+   </tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<table>
+   <tbody>
+      <tr>
+         <th>Situation</th>
+         <th>Result</th>
+      </tr>
+      <tr class="even">
+         <td>Both <code>before</code> and <code>after</code> attributes are present</td>
+         <td><code>after</code> takes precedence.</td>
+      </tr>
+      <tr class="odd">
+         <td>Both <code>before</code> and <code>after</code> attributes are absent or empty</td>
+         <td>The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements.</td>
+      </tr>
+      <tr class="even">
+         <td>Several elements have <code>before</code> or <code>after</code> set to dash (-)</td>
+         <td>All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined.</td>
+      </tr>
+      <tr class="odd">
+         <td>The <code>before</code> or <code>after</code> attribute's value refers to an element that is not located in the parent node of the element being defined.</td>
+         <td>The element displays at a random location that doesn't violate requirements for the correctly positioned elements.</td>
+      </tr>
+   </tbody>
+</table>
+
+<h3 id="fedg_layout_xml-instruc_ex_act">&lt;action&gt;</h3>
+
+<div class="bs-callout bs-callout-warning" id="info">
+<span class="glyphicon-class">
+ <p>The <code>&lt;action&gt;</code> instruction is deprecated. If the method implementation allows, use the <a href="#argument"><code>&lt;argument&gt;</code></a> for <a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a> or <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code></a> to access block public API.</p></span>
+</div>
+
+Calls public methods on the block API.
+<p><b>Details:</b> Used to set up the execution of a certain method of the block during block generation; the <code>&lt;action&gt;</code> node must be located in the scope of the <code>&lt;block&gt;</code> node.</p>
+
+
+Example:
+
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Module\Block\Class&quot;</span> <span class="na">name=</span><span class="s">&quot;block&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">&quot;setText&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;text&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Text<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/action&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">&quot;setEnabled&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;enabled&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/block&gt;</span></code></pre></div>
+
+
+
+<p><code>&lt;action&gt;</code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code>&lt;action&gt;</code>, they are passed as one array.</p>
+
+<table>
+   <tbody>
+      <tr>
+         <th>Attribute</th>
+         <th>Description</th>
+         <th>Values</th>
+         <th>Required?</th>
+      </tr>
+      <tr class="even">
+         <td>method</td>
+         <td>Name of the public method of the block class this tag is located in that is called during block generation.</td>
+         <td>block method name</td>
+         <td>yes</td>
+      </tr>
+   </tbody>
+</table>
+
+To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
+
+<h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock&gt; and &lt;referenceContainer&gt;</h3>
+<p>Updates in <code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code> are applied to the corresponding <code>&lt;block&gt;</code> or <code>&lt;container&gt;</code>.</p>
+<p>For example, if you make a reference by <code>&lt;referenceBlock name="right"&gt;</code>, you're targeting the block <code>&lt;block name="right"&gt;</code>.</p>
+
+To pass parameters to a block use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
+
+<table>
+   <tbody>
+      <tr>
+         <th>Attribute</th>
+         <th>Description</th>
+         <th>Values</th>
+         <th>Required?</th>
+      </tr>
+      <tr class="even">
+         <td>remove</td>
+         <td>Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well.</td>
+         <td>true/false</td>
+         <td>no</td>
+      </tr>
+      <tr class="even">
+         <td>display</td>
+         <td>Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation.</td>
+         <td>true/false</td>
+         <td>no</td>
+      </tr>
+   </tbody>
+</table>
+
+<ul>
+<li>The <code>remove</code> attribute is optional and its default value is false.</li>
+
+    This implementation allows you to cancel removal of a block or container in your layout by setting remove attribute value to false.
+    
+    Example: 
+    
+    <pre>&lt;referenceBlock name="block.name" remove="true" /&gt;</pre>
+
+<li>The <code>display</code> attribute is optional and its default value is true.</li>
+
+    You are always able to overwrite this value in your layout.
+    In situation when remove value is true, the display attribute is ignored.
+    
+    Example: 
+    
+    <pre>&lt;referenceContainer name="container.name" display="false" /&gt;</pre>
+</ul>  
+
+<h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move&gt;</h3>
+Sets the declared block or container element as a child of another element in the specified order.
+<p><b>Example:</b></p>
+
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">&quot;name.of.an.element&quot;</span> <span class="na">destination=</span><span class="s">&quot;name.of.destination.element&quot;</span> <span class="na">as=</span><span class="s">&quot;new_alias&quot;</span> <span class="na">after=</span><span class="s">&quot;name.of.element.after&quot;</span> <span class="na">before=</span><span class="s">&quot;name.of.element.before&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+
+
+
+<ul>
+   <li><code>&lt;move&gt;</code> is skipped if the element to be moved is not defined.</li>
+   <li>If the <code>as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code>name</code> attribute is used instead.</li>
+  <li>During layout generation, the <code>&lt;move&gt;</code>
+  instruction is processed before the removal (set using the <code>
+    remove</code> attribute). This means if any elements are moved
+    to the element scheduled for removal, they will be removed as
+    well.
+  </li>
+</ul>
+<table>
+   <tbody>
+      <tr>
+         <th>Attribute</th>
+         <th>Description</th>
+         <th>Values</th>
+         <th>Required?</th>
+      </tr>
+      <tr class="even">
+         <td>element</td>
+         <td>Name of the element to move.</td>
+         <td>element name</td>
+         <td>yes</td>
+      </tr>
+      <tr class="odd">
+         <td>destination</td>
+         <td>Name of the target parent element.</td>
+         <td>element name</td>
+         <td>yes</td>
+      </tr>
+      <tr class="even">
+         <td>as</td>
+         <td>Alias name for the element in the new location.</td>
+         <td>0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
+         <td>no</td>
+      </tr>
+      <tr class="odd">
+         <td>after | before</td>
+         <td>Specifies the element's position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings.</td>
+         <td>element name</td>
+         <td>no</td>
+      </tr>
+   </tbody>
+</table>
+
+<h3 id="fedg_layout_xml-instruc_ex_rmv">&lt;remove&gt;</h3>
+
+Is used only to remove the static resources linked in a page <code>&lt;head&gt;</code> section.
+For removing blocks or containers, use the <code>&lt;remove&gt;</code> attribute for <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>.
+
+Example of usage:
+
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+        <span class="c">&lt;!-- Remove local resources --&gt;</span>
+        <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;css/styles-m.css&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;my-js.js&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;Magento_Catalog::js/compare.js&quot;</span> <span class="nt">/&gt;</span>
+								
+	<span class="c">&lt;!-- Remove external resources --&gt;</span>
+        <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Montserrat&quot;</span> <span class="nt">/&gt;</span> 
+   <span class="nt">&lt;/head&gt;</span></code></pre></div>
+
+
+<h3 id="fedg_layout_xml-instruc_ex_upd">&lt;update&gt;</h3>
+
+Includes a certain layout file.
+
+Used as follows:
+
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">&quot;{name_of_handle_to_include}&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+
+
+The specified <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
+
+<h3 id="argument">&lt;argument&gt;</h3>
+Used to pass an argument.
+
+<table>
+   <tbody>
+      <tr>
+         <th>Attribute</th>
+         <th>Description</th>
+         <th>Values</th>
+         <th>Required?</th>
+      </tr>
+      <tr class="even">
+         <td>name</td>
+         <td>Argument name.</td>
+         <td>unique</td>
+         <td>yes</td>
+      </tr>
+      <tr class="odd">
+         <td>xsi:type</td>
+         <td>Argument type.</td>
+         <td>string|boolean|object|number|null|array</td>
+         <td>yes</td>
+      </tr>
+      <tr class="even">
+         <td>translate</td>
+         <td></td>
+         <td>true|false</td>
+         <td>no</td>
+      </tr>
+
+   </tbody>
+</table>
+
+To pass multiple arguments use the following construction:
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;arguments&gt;</span>
+   <span class="nt">&lt;argument&gt;&lt;/argument&gt;</span>
+   <span class="nt">&lt;argument&gt;&lt;/argument&gt;</span>
+   ...
+<span class="nt">&lt;/arguments&gt;</span></code></pre></div>
+
+
+To pass an argument that is an array use the following construction:
+
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument&gt;</span>
+   <span class="nt">&lt;item&gt;&lt;/item&gt;</span>
+   <span class="nt">&lt;item&gt;&lt;/item&gt;</span>
+   ...
+<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+
+
+<p id="getter">Arguments values set in a layout file can be accessed in <a href="/guides/v2.1/frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
+<code>{ArgumentName}</code> is obtained from the <code>name</code> attribute the following way: for getting the value of <code>&lt;argument name="some_string"&gt;</code> the method name is <code>getSomeString()</code>.
+
+Example:
+Setting a value of <code>css_class</code> in the <code><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
+
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<span class="nt">&lt;arguments&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;css_class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/arguments&gt;</span>
+...</code></pre></div>
+
+
+
+Using the value of <code>css_class</code> in <code><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
+
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">...</span>
+<span class="x">$cssClass = $this-&gt;getCssClass() ? &#39; &#39; . $this-&gt;getCssClass() : &#39;&#39;;</span>
+<span class="x">...</span></code></pre></div>
+
+
+
+
+</p></p></p>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

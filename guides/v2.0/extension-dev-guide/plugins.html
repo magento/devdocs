@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento plug-ins</title>
+	<title>Plugins (Interceptors)</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -39,11 +39,29 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/guides/v2.0/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/guides/v2.0/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
 		</div><!-- #global-nav -->
 	</nav>
 
@@ -60,8 +78,9 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
             </ul>
          </li>
          <li class="first">
@@ -77,18 +96,15 @@
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a>
-   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-<li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <div class="divider"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
-               <div class="divider"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
                <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
@@ -148,13 +164,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento plug-ins</h1>
-			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/extension-dev-guide/plugins.md" target="_blank">Edit this page on GitHub</a>
+		<h1 class="page-heading">Plugins (Interceptors)</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/plugins.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
 </section>
+
 
 <div class="container">
 
@@ -243,10 +260,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -302,10 +319,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -393,10 +410,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -436,10 +453,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -471,10 +488,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -514,10 +531,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -576,6 +593,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/events-and-observers.html">Events and observers</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/factories.html">Instantiating objects with factories</a></li>
 
 									
@@ -608,7 +633,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Plugins (Interceptors)</a></li>
 
 									
 
@@ -661,10 +686,10 @@
 									
 
 								
-								
-								
-							
-							
+
+
+
+
 						
 
 					
@@ -819,116 +844,80 @@
 
 	<section class="content">
 		<div class="content-wrap">
+			<p align="right"><i>Updated: 1 July 2016 (PDT)</i></p>
+		<h2 class="no_toc" id="plugins-interceptors">Plugins (Interceptors)</h2>
 
-      <p align="right"><i>Updated: 7 April 2016 (PDT)</i></p>
-		<h2 id="magento-plug-ins">Magento plug-ins</h2>
-
-<ul>
-  <li><a href="#plugin-intro">Introduction to Magento plug-ins</a></li>
-  <li><a href="#plugin-limit">Limitations</a></li>
-  <li><a href="#plugin-declare">Declare a plug-in</a></li>
-  <li><a href="#plugin-priority">Prioritize plug-ins</a></li>
-  <li><a href="#plugin-example">Example plug-ins</a></li>
-  <li><a href="#config-inheritance">Configuration inheritance</a></li>
+<ul id="markdown-toc">
+  <li><a href="#overview">Overview</a>    <ul>
+      <li><a href="#limitations">Limitations</a></li>
+    </ul>
+  </li>
+  <li><a href="#declaring-a-plugin">Declaring a plugin</a></li>
+  <li><a href="#defining-a-plugin">Defining a plugin</a>    <ul>
+      <li><a href="#before-methods">Before methods</a></li>
+      <li><a href="#after-methods">After methods</a></li>
+      <li><a href="#around-methods">Around methods</a></li>
+    </ul>
+  </li>
+  <li><a href="#prioritizing-plugins">Prioritizing plugins</a></li>
+  <li><a href="#configuration-inheritance">Configuration inheritance</a></li>
+  <li><a href="#related-topics">Related topics</a></li>
+  <li><a href="#related-information">Related information</a></li>
 </ul>
 
-<h2 id="plugin-intro">Introduction to Magento plug-ins</h2>
-<p>Magento enables you to change, or <em>extend</em>, the behavior of any original, public method in any Magento class. You can change the behavior of an <em>original method</em> by creating an extension. These extensions use the <code>Plugin</code> class and are therefore referred to as plug-ins.</p>
+<h3 id="overview">Overview</h3>
+<p>A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to <em>substitute</em> or <em>extend</em> the behavior of original, public methods for any class or <em>interface</em>.</p>
 
-<p>To ensure that plug-ins work correctly, you must follow declaration and naming rules.</p>
+<p>Extensions that wish to intercept and change the behavior of a <em>public method</em> can create a <code>Plugin</code> class which are referred to as plugins.</p>
 
-<p>You use <em>interception</em> to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the <code>Plugin</code> class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict.</p>
+<p>This interception approach reduces conflicts among extensions that change the behavior of the same class or method. Your <code>Plugin</code> class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.</p>
 
-<p>Interception ensures that conflicting extensions run without intervention.</p>
+<h4 id="limitations">Limitations</h4>
 
-<h2 id="plugin-limit">Limitations</h2>
+<p>Plugins cannot be used with any of the following:</p>
 
-<p>You cannot use plug-ins for:</p>
-
-<!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
 <ul>
-  <li>Final methods / classes</li>
+  <li>Final methods</li>
+  <li>Final classes</li>
+  <li>Any class that contains at least one final public method</li>
   <li>Non-public methods</li>
   <li>Class methods (such as static methods)</li>
   <li><code>__construct</code></li>
   <li>Virtual types</li>
 </ul>
 
-<h2 id="plugin-declare">Declare a plug-in</h2>
+<h3 id="declaring-a-plugin">Declaring a plugin</h3>
 
-<p>You declare a plugin for an object in the <code>di.xml</code> file for a module:</p>
+<p>A plugin for a class object can be declared in the <code>di.xml</code> file in your module:</p>
 
 <script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
 
 <p>You must specify these elements:</p>
 
 <ul>
-  <li><code>type name</code>. A class, interface, or virtual type, which the plug-in observes.</li>
-  <li><code>plugin name</code>. An arbitrary plug-in name that identifies a plug-in. Also used to merge the configurations for the plug-in.</li>
-  <li><code>plugin type</code>. The name of a plug-in’s class or its virtual type. Use the following schema when you specify this element: <code>\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
-  <li><code>plugin sortOrder</code>. The order in which plug-ins that call the same method are run.</li>
-  <li><code>plugin disabled</code>. To disable a plug-in, set this element to <code>true</code>.</li>
+  <li><code>type name</code>. A class or interface which the plugin observes.</li>
+  <li><code>plugin name</code>. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
+  <li><code>plugin type</code>. The name of a plugin’s class or its virtual type. Use the following naming convention when you specify this element: <code>\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
 </ul>
 
-<h2 id="plugin-priority">Prioritize plug-ins</h2>
-<p>Several conditions influence how plug-ins apply to the same class or interface:</p>
+<p>The following elements are optional:</p>
 
 <ul>
-  <li>
-    <p>Whether a listener method in a plug-in should apply before, after, or around an original method.</p>
-
-    <p>Use one or more of the following methods to extend or modify an original method’s behavior with the interception functionality:</p>
-
-    <ul>
-      <li>
-        <p>Change the arguments of an original method using the before-listener.</p>
-
-        <p>The before-listener also:</p>
-
-        <ul>
-          <li>Does not require you to declare unused arguments from the original method. See <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Interception/Interceptor.php#L118-L126" target="_blank">Magento\Framework\Interception\Interceptor.php</a> for details.</li>
-          <li>Returns nothing if it modifies no arguments.</li>
-        </ul>
-      </li>
-      <li>Change the values returned by an original method using the after-listener.</li>
-      <li>
-        <p>Change both the arguments and returned values of an original method using the around-listener.</p>
-
-        <p>Unlike <code>before</code> or <code>after</code>, the <code>around</code> listener prevents the execution of the original method.</p>
-      </li>
-      <li>
-        <p>Override an original method (which is referred to as a <em>conflicting change</em>).</p>
-
-        <div class="bs-callout bs-callout-info" id="info">
-    <p>Overriding a class is a <em>conflicting</em> change. Extending a class's behavior is a <em>non-conflicting</em> change.
-
-
-</p></div>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>The sort order of a plug-in.</p>
-
-    <p>This parameter defines the order in which the plug-ins that use the same type of listener and call the same method are run.</p>
-
-    <p>If several plug-ins apply to the same original method, the following sequence is observed:</p>
-
-    <ul>
-      <li>The before listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-      <li>The around listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-      <li>Other before listeners in plug-ins according to sort order specified for them (that is, from the smallest to the greatest value).</li>
-      <li>Other around listeners in plug-ins according to the sort order specified for them (that is, from the smallest to the greatest value).</li>
-      <li>The after listener in a plug-in with the lowest priority (that is, with the greatest value of <code>sortOrder</code> argument).</li>
-      <li>Other after listeners in plug-ins, in the reverse sort order specified for them (that is, from the greatest to the smallest value).</li>
-    </ul>
-  </li>
+  <li><code>plugin sortOrder</code>. The order in which plugins that call the same method are run.</li>
+  <li><code>plugin disabled</code>. To disable a plugin, set this element to <code>true</code>. The default value is <code>false</code>.</li>
 </ul>
 
-<h2 id="plugin-example">Example plug-ins</h2>
-<p>To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method. The method should return the changed argument, or an array of arguments, if the original method had multiple arguments. If the method returns <code>null</code>, no arguments are changed.</p>
+<h3 id="defining-a-plugin">Defining a plugin</h3>
+<p>A plugin is used to extend or modify a public method’s behavior by applying code before, after, or around that observed method.</p>
 
-<p>Prefix the name of the original method with <code>before</code> as the following sample shows:</p>
+<p>The first argument for the before, after, and around methods is an object that provides access to all public methods of the observed method’s class.</p>
+
+<h4 id="before-methods">Before methods</h4>
+<p>Before methods run prior to an observed method. These methods must have the same name as the observed method with ‘before’ as the prefix.</p>
+
+<p>You can use before methods to change the arguments of an observed method by returning a modified argument. If there are multiple arguments, the method should return an array of those arguments. Returning <code>null</code> will indicate that the arguments for the observed method should not be modified.</p>
+
+<p>Below is an example of a before method modifying the <code>$name</code> argument before passing it on to the observed <code>setName</code> method.</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -943,9 +932,12 @@
 <span class="p">}</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.</p>
+<h4 id="after-methods">After methods</h4>
+<p>After methods run following the completion of the observed method. These methods must have the same name as the observed method with ‘after’ as the prefix.</p>
 
-<p>Prefix the name of the original method with <code>after</code> as the following sample shows:</p>
+<p>These methods can be used to modify the results of an observed method and are required to have a return value.</p>
+
+<p>Below is an example of an after method modifying the return value <code>$result</code> of an observed methods call.</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -960,9 +952,16 @@
 <span class="p">}</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.</p>
+<h4 id="around-methods">Around methods</h4>
+<p>Around methods are defined such that their code is run both before and after the observed method. This allows you to completely override a method. Around methods must have the same name as the observed method with ‘around’ as the prefix.</p>
 
-<p>Prefix the name of the original listener with <code>around</code> as the following sample shows:</p>
+<p>Before the list of the original method’s arguments, around methods receive a <code>callable</code> that will allow a call to the next method in the chain. When the <code>callable</code> is called, the next plugin or the observed function is called.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>If the around method does not call the <code>callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
+</div>
+
+<p>Below is an example of an around method adding behavior before and after an observed method:</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -970,7 +969,7 @@
 
 <span class="k">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\Closure</span> <span class="nv">$proceed</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\callable</span> <span class="nv">$proceed</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSmthBeforeProductIsSaved</span><span class="p">();</span>
         <span class="nv">$returnValue</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">();</span>
@@ -982,31 +981,118 @@
 <span class="p">}</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>The around-listener method receives two parameters (<code>$subject</code> and <code>$proceed</code>), followed by the arguments belonging to an original method.</p>
+<h3 id="prioritizing-plugins">Prioritizing plugins</h3>
 
-<p>The <code>$subject</code> parameter provides access to all public methods of the original class.</p>
+<p>The <code>sortOrder</code> property for plugins determine when their before, after, or around methods get called when several plugins are observing the same method.</p>
 
-<p>The <code>$proceed</code> parameter calls the next plug-in or method.</p>
-
-<h2 id="config-inheritance">Configuration inheritance</h2>
-
-<p>The configuration inheritance implies that a plug-in applied to a class or interface is derived by the classes or interfaces, which implement or inherit an original class or interface.</p>
-
-<p>You can use the configuration inheritance to implement AOP-like functionality with plug-ins, for instance, to observe the same methods of all models.</p>
-
-<p>You can override the plug-ins defined in the global scope by changing <code>di.xml</code> file of an area.</p>
-
-<h4 id="related-topics">Related topics</h4>
+<p>The prioritization rules for ordering plugins:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-compile">Definition compiler tool</a></li>
-  <li><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+  <li>
+    <p>Prior to execution of the observed method, plugins will be executed from lowest to greatest <code>sortOrder</code>.</p>
+
+    <ul>
+      <li>During each plugin execution, the current plugin’s before method is executed first.</li>
+      <li>After the before plugin is executed, the current plugin’s around method will wrap and execute the next plugin or observed method.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Following the execution of the observed method, plugins will be executed from greatest to lowest <code>sortOrder</code>.</p>
+
+    <ul>
+      <li>During each plugin execution, the current plugin will first finish executing its around method.</li>
+      <li>When the around method is complete, the plugin executes its after method before moving on to the next plugin.</li>
+    </ul>
+  </li>
 </ul>
 
-<h4 id="related-information">Related information</h4>
+<p><strong>Example</strong></p>
+
+<p>Given the following plugins observing the same method with the following properties:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">PluginA</th>
+      <th style="text-align: center">PluginB</th>
+      <th style="text-align: center">PluginC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>sortOrder</strong></td>
+      <td style="text-align: center">10</td>
+      <td style="text-align: center">20</td>
+      <td style="text-align: center">30</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>before</strong></td>
+      <td style="text-align: center">beforeDispatch()</td>
+      <td style="text-align: center">beforeDispatch()</td>
+      <td style="text-align: center">beforeDispatch()</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>around</strong></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">aroundDispatch()</td>
+      <td style="text-align: center">aroundDispatch()</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>after</strong></td>
+      <td style="text-align: center">afterDispatch()</td>
+      <td style="text-align: center">afterDispatch()</td>
+      <td style="text-align: center">afterDispatch()</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The execution flow will be as follows:</p>
+
 <ul>
-  <li><a href="http://vinaikopp.com/2016/03/07/04_the_plugin_integration_test_kata" target="_blank">The Plugin Integration Test Kata</a> by Magento contributor <a href="http://vinaikopp.com/blog/list">Vinai Kopp</a></li>
-  <li><a href="http://vinaikopp.com/2016/02/22/03_the_around_interceptor_kata" target="_blank">The Around Interceptor Kata</a> by Magento contributor <a href="http://vinaikopp.com/blog/list">Vinai Kopp</a></li>
+  <li><code>PluginA::beforeDispatch()</code></li>
+  <li><code>PluginB::beforeDispatch()</code></li>
+  <li>
+    <p><code>PluginB::aroundDispatch()</code> (Only the first half until <code>callable</code> is called)</p>
+
+    <ul>
+      <li><code>PluginC::beforeDispatch()</code></li>
+      <li>
+        <p><code>PluginC::aroundDispatch()</code> (Only the first half until <code>callable</code> is called)</p>
+
+        <ul>
+          <li><code>Action::dispatch()</code></li>
+        </ul>
+      </li>
+      <li><code>PluginC::aroundDispatch()</code> (Only the second half after <code>callable</code> is called)</li>
+      <li><code>PluginC::afterDispatch()</code></li>
+    </ul>
+  </li>
+  <li><code>PluginB::aroundDispatch()</code> (Only the second half after <code>callable</code> is called)</li>
+  <li><code>PluginB::afterDispatch()</code></li>
+  <li><code>PluginA::afterDispatch()</code></li>
+</ul>
+
+<h3 id="configuration-inheritance">Configuration inheritance</h3>
+
+<p>All plugins added for interfaces and inherited classes will be added to classes that implement or inherit those classes and interfaces.</p>
+
+<p>Plugins defined in the global scope will be applied when the system is in a specific area (i.e. frontend, backend, etc). These global plugin configuration can also be extended or overridden via an area’s <code>di.xml</code>.</p>
+
+<p>For example, the developer can disable a global plugin in the backend area by disabling it in the specific <code>di.xml</code> file for the backend area.</p>
+
+<h3 id="related-topics">Related topics</h3>
+
+<ul>
+  <li><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+  <li><a href="/guides/v2.0/extension-dev-guide/events-and-observers.html">Events and observers</a></li>
+</ul>
+
+<h3 id="related-information">Related information</h3>
+
+<ul>
+  <li><a href="http://vinaikopp.com/2016/03/07/04_the_plugin_integration_test_kata" target="_blank">The Plugin Integration Test Kata</a> by Magento contributor <a href="http://vinaikopp.com/blog/list" target="_blank">Vinai Kopp</a></li>
+  <li><a href="http://vinaikopp.com/2016/02/22/03_the_around_interceptor_kata" target="_blank">The Around Interceptor Kata</a> by Magento contributor <a href="http://vinaikopp.com/blog/list" target="_blank">Vinai Kopp</a></li>
 </ul>
 
 
@@ -1031,7 +1117,9 @@
         <div id="magento-com">
             <div class="container">
                 <div id="f-col-1">
-                    <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento Commerce" /></a>
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
                     <ul class="nav">
                         <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
                         <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
@@ -1136,7 +1224,7 @@
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/js/app.js"></script>
 
 
 <!--Google Custom Search-->
