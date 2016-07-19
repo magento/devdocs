@@ -25,7 +25,7 @@ For example, to install 2.1.0 in the `magento2` directory:
 ### Get Magento EE using a compressed archive {#get-zip}
 {:.no_toc}
 
-{% include install/get-software_zip.md %}
+{% include install/releasenotes/get-ee-software_zip.md %}
 
 ### Complete the installation
 {:.no_toc}

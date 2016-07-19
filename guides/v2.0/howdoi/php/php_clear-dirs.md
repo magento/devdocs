@@ -115,7 +115,7 @@ You can also use the following command-line tools clear some directories for you
 			<th>What it clears</th>
 		</tr>
 	<tr>
-		<td><a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">magento setup:upgrade</a></td>
+		<td><a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-db-upgr.html">magento setup:upgrade</a></td>
 		<td>Updates the Magento database schema and data.</td>
 		<td>var/di, var/generation</td>
 	</tr>

@@ -25,18 +25,6 @@ A Selenium web-driver cannot enter data to fields with WYSIWYG. This option disa
 
 ![Change content settings]({{site.baseurl}}common/images/mtf_qstart_mag_wysiwyg.png){:width="650px"}
 
-### Refresh page cache
-
-* Go to **Cache Management**.
-
-![Cache Management message]({{site.baseurl}}common/images/mtf_cache_mngt.png){:width="650px"}
-
-* Select the check box next to **Page Cache**.
-* From the **Actions** list in the upper left, click **Refresh**.
-* Click **Submit**.
-
-![Refresh Page Cache]({{site.baseurl}}common/images/mtf_cache_refresh.png)
-
 ## Change security settings
 
 Disable the Secret Key in URL setting to open pages using direct URLs.
@@ -45,6 +33,16 @@ Disable the Secret Key in URL setting to open pages using direct URLs.
 2. Set **Add Secret Key to URLs** to **No**.
 
 ![Change security settings]({{site.baseurl}}common/images/mtf_qstart_mag_secur_20.png){:width="650px"}
+
+## Refresh page cache
+
+* Go to **Cache Management**.
+
+![Cache Management message]({{site.baseurl}}common/images/mtf_cache_mngt.png){:width="650px"}
+
+* Select the check box next to **Configuration** and **Page Cache**.
+* From the **Actions** list in the upper left, click **Refresh**.
+* Click **Submit**.
 
 <h2 id="mtf_install_pre">Next Steps</h2>
 
