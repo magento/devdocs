@@ -50,7 +50,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 ###System requirements
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports:
 
-* PHP 5.5,x, where x is 22 or greater
+* PHP 5.5.x, where x is 22 or greater
 
 * PHP 5.6.x
 
