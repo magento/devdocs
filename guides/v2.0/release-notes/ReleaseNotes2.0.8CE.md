@@ -26,15 +26,15 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running PHP 7.0.5. 
 
 
-####Miscellaneous
-<!--- 50507 -->* You can now successfully reset the Product Attributes mass update Admin form.
+####Product creation
+<!--- 53342 -->* Magento  no longer duplicates URL keys during the creation of a configurable product.
 
 <!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a> 
 
 
 
-<!--- 53342 -->* Magento  no longer duplicates URL keys during the creation of a configurable product.
-
+####Miscellaneous
+<!--- 50507 -->* You can now successfully reset the Product Attributes mass update Admin form.
 
 <!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018" target="_blank">(GITHUB-3018)</a> 
 

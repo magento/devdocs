@@ -29,20 +29,22 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running PHP 7.0.5. 
 
 
-####Cloud
-
-<!--- 52448 -->* Magento now correctly displays the customer address on the storefront. Previously,  when you selected a default billing address when creating a new customer account, Magento would not display the  address.
-
-####Miscellaneous
-<!--- 50507 -->* You can now successfully reset the Product Attributes mass update Admin form.
+####Product creation
+<!--- 53342 -->* Magento  no longer duplicates URL keys during the creation of a configurable product.
 
 <!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a> 
 
+
+
+
+####Miscellaneous
+
+<!--- 52448 -->* Magento now correctly displays the customer address on the storefront. Previously,  when you selected a default billing address when creating a new customer account, Magento would not display the  address.
+
+<!--- 50507 -->* You can now successfully reset the Product Attributes mass update Admin form.
+
+
 <!--- 50716 -->* The Admin Action Log archive is now formatted as expected.
-
-
-
-<!--- 53342 -->* Magento  no longer duplicates URL keys during the creation of a configurable product.
 
 
 <!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018" target="_blank">(GITHUB-3018)</a> 
