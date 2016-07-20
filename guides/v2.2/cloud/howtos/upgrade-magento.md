@@ -1,1 +1,0 @@
-../../../v2.1/cloud/howtos/upgrade-magento.md
