@@ -48,7 +48,7 @@ class Product implements IdentityInterface
 }
 {% endhighlight %}
 
-Second, the view object must also implement `Magento/Framework/DataObject/IdentityInterface` as follows:
+Second, the block object must also implement `Magento/Framework/DataObject/IdentityInterface` as follows:
 
 {% highlight php startinline=true %}
 class View extends AbstractProduct implements \Magento\Framework\DataObject\IdentityInterface
@@ -64,6 +64,12 @@ class View extends AbstractProduct implements \Magento\Framework\DataObject\Iden
     }
 }
 {% endhighlight %}
+
+
+After blocks are rendered on the page, identities from the blocks that implement `IdentityInterface` are collected by [`\Magento\PageCache\Model\Layout\LayoutPlugin`]({{ site.mage2000url }}app/code/Magento/PageCache/Model/Layout/LayoutPlugin.php){:target="_blank"} and added to the response header `X-Magento-Tags`. Blocks, in turn, collect identities from the entities they render.
+
+When you save entity, Magento gets it's identities and use them to clear cache.
+
 
 ## Private content versioning {#config-priv-vers}
 Private content, which is stored on the browser, uses the `private_content_version` cookie to store version information. Users who are not logged in or for whom no private content exists don't have a `private_content_version` cookie, so no private content is tracked.

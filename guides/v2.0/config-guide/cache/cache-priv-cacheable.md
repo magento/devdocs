@@ -12,10 +12,12 @@ version: 2.0
 github_link: config-guide/cache/cache-priv-cacheable.md
 ---
 
-Hi mom
-
 ## Cacheable pages {#config-page-cache}
 Unless you specify otherwise, all pages are cacheable. To specify the length of time, in seconds, to cache the page, use `setPublicHeaders` from [Magento\Framework\App\Response\Http]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Response/Http.php){:target="_blank"}.
+
+<div class="bs-callout bs-callout-warning">
+    <p>Do not confiure content pages (that is, catalog, product and CMS pages) to be uncacheable. Doing so has an adverse affect on performance.</p>
+</div>
 
 Example:
 
@@ -50,7 +52,7 @@ The preceding example keeps the page in cache for 10 seconds.
 ## Uncacheable pages {#config-page-notcache}
 To create an uncacheable page, mark any block on that page as uncacheable in the layout (use `cacheable="false"`). Any page that has at least one uncacheable block is itself uncacheable (that is, the entire page).
 
-Examples of uncacheable pages include the return page of payment method, AJAX data source, debug pages, and so on. 
+Examples of uncacheable pages include the compare products, cart, checkout pages, and so on. 
 
 To specify uncacheable pages, you can:
 

@@ -25,7 +25,7 @@ Many Magento pages contain personal or sensitive information that should be deli
 	Public content is stored in your cache storage (file system, database, or Varnish). Examples of public content includes header, footer, and category listing.
 *	*Private*, which is not stored in the server cache; instead, it's stored on the client only. 
 
-	Examples of private content include the wishlist, shopping cart, customer name, and addresses. Private content should be limited to about 5% of the total content on a page.
+	Examples of private content include the wishlist, shopping cart, customer name, and addresses. Private content should be limited to a small portion of the total content on a page.
 
 ## Specify private content {#config-cache-priv-how}
 To specify a block as private, use `$isScopePrivate` as follows:

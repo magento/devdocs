@@ -24,7 +24,7 @@ github_link: config-guide/cache/cache-priv-over.md
 ## Page caching overview {#config-cache-over}
 Caching one of the most effective way of improving performance of web applications of all kinds. Generally speaking, there are two ways to cache: client-side (browser) and server-side. In addition, there are two types of content: public (available to multiple customers) and private (specific to one customer).
 
-Magento page caching is synonymous with *full-page caching*. You can choose to store the cached files on the file system (default), [Varnish]({{ page.baseurl }}config-guide/varnish/config-varnish.html) (recommended), or in the [database]({{ page.baseurl }}config-guide/cache/caching-database.html).
+Magento page caching is synonymous with *full-page caching*. You can choose to cache on the file system (default), [Varnish]({{ page.baseurl }}config-guide/varnish/config-varnish.html) (recommended), or in the [database]({{ page.baseurl }}config-guide/cache/caching-database.html).
 
 ### Client-side caching {#config-cache-over-client}
 An HTTP GET request to fetch an asset has headers that specify how long a returned asset can be trusted as being up-to-date. This allows a web browser to save a copy of the asset so if the user comes back later, the asset does not have to be downloaded again. 
@@ -49,7 +49,7 @@ Server-side caching is particularly beneficial when the same request comes from 
 
 It's important to understand that Magento 2 does *not* use [Edge Side Includes (ESI)](https://en.wikipedia.org/wiki/Edge_Side_Includes){:target="_blank"} to render private content. ESI means the web server returns an HTML page that can be cached, but parts of the page are replaced with an "include" reference URL that returns only the private content.
 
-Instead, we fetch public content (typically around 95% of the total content of the page), then rely on JavaScript and AJAX to inject the private content, which is cached on the browser only. This is discussed in more detail in [Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html).
+Instead, we fetch public content (typically the bulk of the total content of the page), then rely on JavaScript and AJAX to inject the private content, which is cached on the browser only. This is discussed in more detail in [Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html).
 
 To be able to render different content for different users with the same URL, we use [*HTTP context variables*]({{ page.baseurl }}config-guide/cache/cache-priv-context.html).
 
