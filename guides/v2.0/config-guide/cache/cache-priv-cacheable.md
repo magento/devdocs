@@ -12,6 +12,8 @@ version: 2.0
 github_link: config-guide/cache/cache-priv-cacheable.md
 ---
 
+Hi mom
+
 ## Cacheable pages {#config-page-cache}
 Unless you specify otherwise, all pages are cacheable. To specify the length of time, in seconds, to cache the page, use `setPublicHeaders` from [Magento\Framework\App\Response\Http]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Response/Http.php){:target="_blank"}.
 
