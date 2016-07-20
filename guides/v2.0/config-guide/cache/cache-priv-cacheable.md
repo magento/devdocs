@@ -58,7 +58,5 @@ To specify uncacheable pages, add `cacheable="false"` to the block definition in
 
 [Example]({{ site.mage2000url }}app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml){:target="_blank"}
 
-{% endhighlight %}
-
 #### Next
 [Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html)

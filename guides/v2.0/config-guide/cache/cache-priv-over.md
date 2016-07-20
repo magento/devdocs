@@ -59,8 +59,7 @@ For content to be cacheable, it must meet the following criteria:
 *	Must use only the HTTP [GET or HEAD]({{ page.baseurl }}config-guide/cache/cache-priv-cacheable.html#config-page-cache) request method
 *	Must render only cacheable blocks (which is the default behavior)
 *	Contains no sensitive or private data (in other words, session and customer [Data Transfer Objects (DTO)](https://en.wikipedia.org/wiki/Data_transfer_object){:target="_blank"} objects are empty)
-*	Current session (customer) and pages should be written using JavaScript. For example, a related product listing should exclude items that are already in the shopping cart.
-*	All private content blocks must be marked as private using the [`_isScopePrivate` attribute]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html#config-cache-priv-how)
+*	Implement all customer-specific information using private blocks
 *	Models and blocks should identify themselves for [invalidation support]({{ page.baseurl }}config-guide/cache/cache-priv-inval.html)
 *	To show different public content on the same URL based on custom parameters, you should declare a custom [HTTP context variable]({{ page.baseurl }}config-guide/cache/cache-priv-context.html) if you plan to show different public content on the same URL
 

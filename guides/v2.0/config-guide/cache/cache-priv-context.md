@@ -19,7 +19,7 @@ Context variables are used by the Magento application to render different conten
 
 Context variables must not be specific to exactly one user, because variables are used in cache keys for public content. In other words, a context variable per user results in a separate copy of content for each user cached on the server.
 
-Magento combines context variables in a string, generates the cache from that string, and sets it as the value of the `X-Magento-Vary` cookie. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2000url }}app/code/Magento/PageCache/etc/varnish4.vcl){:target="_blank"} uses the following: 
+Magento combines context variables in a string, generates the cache from that string, and sets it as the value of the `X-Magento-Vary` cookie. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2000url }}app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68){:target="_blank"} uses the following: 
 
 {% highlight xml %}
 sub vcl_hash {
