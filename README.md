@@ -1,7 +1,5 @@
 # Magento Developer Documentation
 
-Hello
-
 Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases.
 
 To contribute, please fork the `develop` branch. 
