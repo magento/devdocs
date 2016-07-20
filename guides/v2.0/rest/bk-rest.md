@@ -15,8 +15,7 @@ The [REST API documentation](http://devdocs.magento.com/swagger/index.html) publ
 
 This documentation is generated from the code base using [Swagger](http://swagger.io) and represents the state of the code at the time the documentation was generated. Swagger displays a list of service names. Click on a service name to display the list of APIs defined within that service. Click on an API to display details.
 
-You can also create a dynamic REST API documentation set on your server with live data. On your server, Swagger displays Enterprise Edition APIs and allows you to try out the APIs. For more information, see [Generate local REST API reference
-](generate-local.html).
+You can also create a dynamic REST API documentation set on your server with live data. On your server, Swagger displays Enterprise Edition APIs and allows you to try out the APIs. For more information, see [Generate local REST API reference](generate-local.html).
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>The REST API documentation on the Magento Developers website (devdocs.magento.com) static. It is not running an instance of Magento.</p>
