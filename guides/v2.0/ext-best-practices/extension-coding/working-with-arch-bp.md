@@ -10,7 +10,7 @@ github_link: ext-best-practices/extension-coding/working-with-arch-bp.md
 
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 {:.no_toc}
 
 In addition to understanding fundamental programming designs/concepts, you are encouraged to learn how the MVC architecture works in our code and how to work with Magento's generated code and factories.

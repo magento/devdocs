@@ -10,7 +10,7 @@ github_link: migration/migration-tool-preconditions.md
 redirect_from: /guides/v1.0/migration/migration-tool-preconditions.html
 ---
 
-##Preconditions
+## Preconditions
 
 Before you start your migration, you must do all of the following:
 
@@ -34,6 +34,6 @@ Before you start your migration, you must do all of the following:
 
 	Reach out to your extension providers to see if they have been ported yet. For assistance, you can also use the <a href="https://github.com/magento/code-migration/blob/develop/README.md" target="_blank">Magento code migration tool</a>.
 
-###Related topics
+### Related topics
 
 * <a href="{{page.baseurl}}migration/migration-tool-install.html">Install the Data Migration Tool</a>

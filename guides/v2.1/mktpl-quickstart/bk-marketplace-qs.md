@@ -10,7 +10,7 @@ version: 2.1
 github_link: mktpl-quickstart/bk-marketplace-qs.md
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 This quick start helps you understand how to develop, package, and upload your component to the Magento Marketplace. 
 

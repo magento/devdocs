@@ -83,7 +83,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 <h4>New installations</h4>
 New users can now complete a full installation of Magento Enterprise Edition 2.0.6 from an archive file.
 
-#####<b>Download a new installation</b>#####
+##### <b>Download a new installation</b>#####
 1. Go to the <a href="https://www.magento.com/" target="_blank">Magento</a> website, and click **My Account**. Then, log in to your account. 
 2. In the panel on the left, choose **Downloads**. Choose **Magento Enterprise Edition 2.x**, and do the following:
 
@@ -100,7 +100,7 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="{{page.baseurl}}release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 
-#####<b>Upgrade an existing installation from the Setup Wizard</b>#####
+##### <b>Upgrade an existing installation from the Setup Wizard</b>#####
 
 1. Log in to the Admin panel with Administrator privileges.
 
@@ -110,7 +110,7 @@ If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perf
 
 For more information, see <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
 
-#####<b>Magento Partners</b>#####
+##### <b>Magento Partners</b>#####
 Magento partners can download the release and the release notes in PDF format from the Partner Portal.
 
 1.	Log in to the <a href="https://magento.com/partners/become-a-partner" target="_blank">Partner Portal</a>.

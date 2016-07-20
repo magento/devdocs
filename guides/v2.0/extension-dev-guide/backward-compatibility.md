@@ -11,7 +11,7 @@ redirect_from:
   - /guides/v1.0/architecture/index-cache/backward-compatibility.html
   - /guides/v2.0/architecture/index-cache/backward-compatibility.html
 ---
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 
 

@@ -117,7 +117,7 @@ All buttons should be right aligned. The button bar is spread across 12 columns 
 
 <h3 id="behavior">Behavior</h3>
 
-####Sticky button bar
+#### Sticky button bar
 
 To ensure page level actions are always visible, The button bar should stick to the top of a browser as the user scrolls and the top of button bar hits the top of browser.
 

@@ -837,21 +837,21 @@ $this->progress->advance();
 $this->progress->finish();
 {% endhighlight %}
 
-##Stages
+## Stages
 
-###Integrity check
+### Integrity check
 
 Each step has to check that the structure of data source (Magento 1 by default) and the structure of data destination (Magento 2) are compatible. If not - an error will be shown with entities that are not compatible. In case when fields have different datatypes (e.g. the same field has decimal datatype in Magento 1 and integer in Magento 2), a warning message will be shown (except when it was covered in Map file).
 
-###Data Transfer
+### Data Transfer
 
 In case integrity check passed, transferring data is running. If some error appears then rollback will run to revert to previous state of Magento 2. If a step class implements RollbackInterface then "rollback" method will be executed in case of error.
 
-###Volume check
+### Volume check
 
 After data has been migrated Volume Check provides additional check that all data was transferred correctly.
 
-###Delta delivery
+### Delta delivery
 
 Delta functionality is responsible for delivering the rest of data that was added after main migration.
 
@@ -865,7 +865,7 @@ The tool should be run in three different modes in particular order:
 
 Each mode has its own list of steps to be executed. See config.xml
 
-###Settings migration mode
+### Settings migration mode
 
 Settings migration mode of this tool is used to transfer following entities:
 
@@ -899,11 +899,11 @@ Under node <code>&lt;key&gt;</code> there are rules that work with 'path' column
 
 Under node <code>&lt;value&gt;</code> there are rules that work with 'value' column of core_config_data table. These rules aim to transform value of settings by handlers (classes that implement Migration\Handler\HandlerInterface) and adapt it for Magento 2
 
-###Data migration mode
+### Data migration mode
 
 In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If integrity check passed the Data Migration Tool installs deltalog tables (with prefix m2_cl_*) and corresponding triggers to Magento 1 database. And runs data migration stage of steps. When migration is completed without errors the volume check checks data consistency. It can show a warning message if you migrate live store. Do not worry, delta migration will take care of this incremental data. Next the most valuable migration steps are described. It is Map Step, URL Rewrite Step, EAV Step.
 
-####Map Step
+#### Map Step
 
 Map step is responsible for transferring most of data from Magento 1 to Magento 2. This step reads instructions from map.xml file (located in etc dir). The file describes differences between data structures of source (Magento 1) and destination (Magento 2). In case Magento 1 contains tables or fields that belong to some extension that does not exist in Magento 2, then these entities can be placed here to ignore them by Map Step. Otherwise it will show an error message. 
 
@@ -1011,14 +1011,14 @@ Options:
 </tbody>
 </table>
 
-####Wildcards
+#### Wildcards
 To ignore documents with similar parts (e.g. document_name_1, document_name_2 e.t.c), you can use wildcard functionality. Just put * symbol instead of repeating part (e.g. document_name_*) and this mask will cover all source or destination documents that meet this mask.
 
-####URL Rewrite Step
+#### URL Rewrite Step
 
 This step is quite complex because there are many different algorithms developed in Magento 1 which are not compatible with Magento 2. For different versions of Magento 1 there can be different algorithms. Thus under Step/UrlRewrite folder there are classes that were developed for some of particular versions of Magento and Migration\Step\UrlRewrite\Version191to2000 is one of them. It can transfer URL Rewrites data from Magento 1.9.1 to Magento 2.
 
-####EAV Step
+#### EAV Step
 
 This step transfers all attributes (e.g. product, customer, RMA) from Magento 1 to Magento 2. It uses map-eav.xml file that contains rules similar to the ones in map.xml file for specific cases of processing data.
 
@@ -1033,7 +1033,7 @@ Some of the tables that are processed in the step:
 * eav_entity_type
 * ...
 
-###Delta migration mode
+### Delta migration mode
 
 After main migration some data could have been added to DB of Magento 1 e.g. by customers on store-front. To track this data, database triggers are setup for tables in the beginning of main migration. If some extension has its own tables that need to be tracked for changing its data - then a developer should:
 
@@ -1102,19 +1102,19 @@ As for now manipulation with logger, adding handler(s), processor(s) to it and p
 
 <h2 id="extension-points">Extension Points</h2>
 
-####Custom Resource Type of Source
+#### Custom Resource Type of Source
 
 By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to CSV as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.
 
-####Map Step configuration
+#### Map Step configuration
 
 In most cases modification of map will be enough.
 
-####Custom Handler
+#### Custom Handler
 
 Custom handlers can be used for cases where data in a field should be transformed with more complex algorithm. There are a lot of custom handlers out of the box in src/Migration/Handler/ folder. Custom handlers are used in Settings step and Map step.
 
-####Custom Steps
+#### Custom Steps
 
 Data Migration Tool provides possibility to add custom steps to migration procedure (see Step internals).
 

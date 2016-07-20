@@ -42,7 +42,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 [Contact us](https://magento.com/company/contact-us){:target="_blank"} for more information.
 
-###Known issue
+### Known issue
 
 <i>Known issue <a href="https://github.com/magento/magento2/issues/5025" target="_blank"> (GITHUB-5025)</a>  removed.</i>
 

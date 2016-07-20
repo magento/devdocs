@@ -143,7 +143,7 @@ The following list will help you make a distinction between the actual meaning o
 <p><b>Warning:</b> Following the procedure described below may irreparably damage your equipment.</p>
 {%endhighlight%}
 
-##Code demarcation 
+## Code demarcation 
 
 ### Visual representation must rely only on HTML `class` attributes, CSS pseudo-classes and pseudo-elements, HTML tags, and form element's type attribute and form elements state attributes (example: `disabled`, `checked`).
 

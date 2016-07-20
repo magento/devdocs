@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/package_module.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 #### Contents
 *   <a href="#package-over">Overview of packaging</a>
@@ -67,7 +67,7 @@ Metapackages allow you to group an extension that consists of multiple packages 
 </div>
 
 
-####Metapackage example 
+#### Metapackage example 
 The following example is a `composer.json` for a metapackage:
 
 

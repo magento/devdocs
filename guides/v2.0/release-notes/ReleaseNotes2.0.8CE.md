@@ -11,7 +11,7 @@ github_link: release-notes/ReleaseNotes2.0.8CE.md
 {:toc}
 
 
-##Magento Community Edition 2.0.8
+## Magento Community Edition 2.0.8
 We are pleased to present Magento Community Edition 2.0.8. This release includes  several functional fixes.
 
 
@@ -19,21 +19,21 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 
-###Fixed issues
+### Fixed issues
 
-####Installation and upgrade
+#### Installation and upgrade
 
 <!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running PHP 7.0.5. 
 
 
-####Product creation
+#### Product creation
 <!--- 53342 -->* Magento  no longer duplicates URL keys during the creation of a configurable product.
 
 <!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a> 
 
 
 
-####Miscellaneous
+#### Miscellaneous
 <!--- 50507 -->* You can now successfully reset the Product Attributes mass update Admin form.
 
 <!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018" target="_blank">(GITHUB-3018)</a> 
@@ -47,7 +47,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 
-###System requirements
+### System requirements
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports:
 
 * PHP 5.5.x, where x is 22 or greater
@@ -64,7 +64,7 @@ For more information, see
 {% include install/releasenotes/ce_install_20.md %}
 
 
-##Migration toolkits
+## Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

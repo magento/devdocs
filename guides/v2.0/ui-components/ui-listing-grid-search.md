@@ -17,7 +17,7 @@ You should index data for the performance reasons. Indexing is a process of "mat
 
 Index data can be always re-created from the original data using certain algorithm.
 
-####Declarative markup
+#### Declarative markup
 
 You can extend the current indexer declaration with an optional <fieldset> element.
 

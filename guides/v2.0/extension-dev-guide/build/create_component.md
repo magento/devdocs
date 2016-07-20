@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_component.html
 ---
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 #### Contents
 *   [Overview of naming a component](#overview-naming)
@@ -46,7 +46,7 @@ The smallest working module.xml file would look something like this:
 
 Do not use "Ui" for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.
 
-##Add the components `composer.json` file {#add-composer-json}
+## Add the components `composer.json` file {#add-composer-json}
 `composer.json` provides a component name and also specifies component dependencies.
 
 In addition, the [Component Manager]({{page.baseurl}}comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies.
@@ -113,6 +113,6 @@ where:
 
 
 
-####Next
+#### Next
 
 [Component load order]({{page.baseurl}}extension-dev-guide/build/module-load-order.html)
