@@ -17,7 +17,7 @@ github_link: config-guide/cache/cache-priv-inval.md
 *   [Private content versioning](#config-priv-vers)
 
 ## Cache invalidation {#config-cache-inval}
-In addition to time-to-live, the Magento application enables you to expire cached content immediately after a change is made. We use an identity interface (that is, a *cache tag*) to link system entities with cached content.
+In addition to time-to-live, the Magento application enables you to expire cached content immediately after a change is made. We use an identity interface to link system entities with cached content.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Cache storage performance is directly related to the number of tags per cache record. You should minimize the count of tags and use them only in production mode. In other words, do <em>not</em> use cache invalidation for actions related to store setup.</p>

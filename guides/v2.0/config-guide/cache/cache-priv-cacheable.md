@@ -54,32 +54,10 @@ To create an uncacheable page, mark any block on that page as uncacheable in the
 
 Examples of uncacheable pages include the compare products, cart, checkout pages, and so on. 
 
-To specify uncacheable pages, you can:
+To specify uncacheable pages, add `cacheable="false"` to the block definition in the layout.
 
-*	Add `cacheable="false"` to the block definition in the layout.
+[Example]({{ site.mage2000url }}app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml){:target="_blank"}
 
-	[Example]({{ site.mage2000url }}app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml){:target="_blank"}
-
-*	In your controller, implement a method like `setNoCacheHeaders` from [Magento\Framework\App\Response\Http]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Response/Http.php){:target="_blank"}
-
-	Example:
-
-{% highlight php startinline=true %}
-class DynamicController
-{
-   	protected $response;
-
-   	public function __construct(Magento\Framework\App\Response\Http $response)
-   	{
-       	$this->response = $response;
-   	}
-
-   	public function randomAction()
-   	{
-       	$this->response->setBody(mt_rand(1,100));
-       	$this->response->setNoCacheHeaders();
-   	}
-}
 {% endhighlight %}
 
 #### Next

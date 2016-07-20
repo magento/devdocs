@@ -60,6 +60,8 @@ class CustomerAgeContextPlugin
 }
 {% endhighlight %}
 
+In the preceding example, the third argument of `\Magento\Framework\App\Http\Context::setValue` specifies the context variable value if there is no existing session value. Typically, this happens when a customer accesses a page for the first time.
+
 For an example of a context class, see [Magento/Framework/App/Http/Context]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Http/Context.php){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info">

@@ -88,30 +88,7 @@ Following is an example of JavaScript that displays the customer's full name or 
 </div>
 
 ## Considerations for public content {#config-cache-public}
-By default, unless you specify otherwise, all content on a page is public. You should consider the following when setting up your site's caching strategy:
-
-*   Generally speaking, you should cache images for a long time.
-
-    If you want to change a product image, consider giving it a different URL.
-*   Product details can generally be cached because they don't change very often.
-
-    When product details do change, be sure to [clean the cache]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html). 
-*   Avoid updating a page unnecessarily. 
-
-    For example, suppose a page has two blocks that take a long time to render (for example, a category page with a merchandising block that uses a complex algorithm). To avoid updating out-of-stock products, set up the category page to hide them. This avoids updating a part of the page that isn't changing anyway.
-
-Magento 2 caching enables you to use different approaches to implement the preceding:
-
-*   Public cacheable content can be returned with tags for use by the cache server (such as Varnish). 
-
-    *Tags* hold identity information, such as the product number of the products shown on the page. If you update a product, the Magento application can then send Varnish a PURGE request based on the tag to instruct Varnish to "flush all pages containing pages with this tag from your cache". 
-
-    This allows selective cache invalidation, instead of flushing the entire cache (which would trigger a large spike on the server).
-*   Different content can be returned with a different Time To Live (TTL) values. This can be used in combination with ESI requests so that different parts of a page can be cached with different lifetimes.
-
-    The Magento application uses ESI *only* to cache public content, not *private* content for a specific customer. ESI shouldn't be used to embed private (uncacheable) content on a cacheable page, but instead to allow different parts of a page to be cached for different lengths of time. 
-
-    This is of benefit only if there are different parts of a page worth caching separately. Otherwise, it is simpler to cache the entire page and to regenerate the page when required.
+@@@
 
 #### Next
 [HTTP context]({{ page.baseurl }}config-guide/cache/cache-priv-context.html)

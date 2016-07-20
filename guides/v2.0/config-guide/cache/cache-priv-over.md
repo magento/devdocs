@@ -56,20 +56,18 @@ To be able to render different content for different users with the same URL, we
 ## Guidelines for public content {#config-cache-guide-cache}
 For content to be cacheable, it must meet the following criteria:
 
-*	Must use only the [HTTP GET request method]({{ page.baseurl }}config-guide/cache/cache-priv-cacheable.html#config-page-cache)
+*	Must use only the HTTP [GET or HEAD]({{ page.baseurl }}config-guide/cache/cache-priv-cacheable.html#config-page-cache) request method
 *	Must render only cacheable blocks (which is the default behavior)
 *	Contains no sensitive or private data (in other words, session and customer [Data Transfer Objects (DTO)](https://en.wikipedia.org/wiki/Data_transfer_object){:target="_blank"} objects are empty)
 *	Current session (customer) and pages should be written using JavaScript. For example, a related product listing should exclude items that are already in the shopping cart.
 *	All private content blocks must be marked as private using the [`_isScopePrivate` attribute]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html#config-cache-priv-how)
-*	A cacheable block should render unpersonalized content by default
 *	Models and blocks should identify themselves for [invalidation support]({{ page.baseurl }}config-guide/cache/cache-priv-inval.html)
-*	You should declare a custom [HTTP context variable]({{ page.baseurl }}config-guide/cache/cache-priv-context.html) if you plan to show different public content on the same URL
+*	To show different public content on the same URL based on custom parameters, you should declare a custom [HTTP context variable]({{ page.baseurl }}config-guide/cache/cache-priv-context.html) if you plan to show different public content on the same URL
 
 ## Guidelines for private content {#config-cache-guide-uncache}
 For uncacheable content, keep the following in mind:
 
 *	Must use the [HTTP POST request method]({{ page.baseurl}}config-guide/cache/cache-priv-priv.html#config-cache-priv-how) to change state (for example, add items to a shopping cart)
-*	Specify an [uncacheable block]({{ page.baseurl}}config-guide/cache/cache-priv-priv.html#config-cache-priv-how) in the layout
 *	JavaScript in private content should not rely on [Document Object Model (DOM)](https://en.wikipedia.org/wiki/DOM_events){:target="_blank"} load events because this kind of content can be loaded after the main page load event using a separate request
 
 #### Next
