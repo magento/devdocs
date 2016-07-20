@@ -10,7 +10,7 @@ version: 2.0
 github_link: install-gde/continue.md
 redirect_from: 
   - /guides/v1.0/install-gde/continue.html
-  - /guides/v2.0/install-gde/install/pre-install.html
+  - /guides/v2.0/install-gde/install/continue.html
 ---
 
 ## Let's get started!

@@ -11,8 +11,7 @@ Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 
 To get the Magento EE archive:
 
-1.	Go to [http://magento.com](http://magento.com){:target="_blank"}.
-2.	In the top horizontal navigation bar, click **My Account**.
+1.	Go to [your account on magento.com](https://www.magentocommerce.com/products/customer/account/login/){:target="_blank"}.
 3.	Log in with your Magento user name and password.
 4.	In the left navigation bar, click **Downloads**.
 5.	In the right pane, click **Magento Enterprise Edition 2.X** > **Full Release** or **Magento Enterprise Edition 2.X** > **Full Release + Sample Data** for the software.

@@ -32,7 +32,7 @@ MySQL 5.6 (Oracle or Percona)
 
 *	5.6.x
 *	5.5.x, where x is 22 or greater
-*	7.0.6 up to 7.1.0
+*	7.0.2 up to 7.1.0, except for 7.0.5
 
 	There is a [known PHP 7.0.5 issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html); to avoid the issue, do not use PHP 7.0.5. 
 
