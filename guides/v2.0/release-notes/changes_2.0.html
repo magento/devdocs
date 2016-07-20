@@ -718,17 +718,17 @@
 <h2>Contents</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#framework-changes">Framework changes</a></li>
-  <li><a href="#magentocatalogrule-module-changes">Magento_CatalogRule module changes</a>    <ul>
-      <li><a href="#db-schema-changes">DB schema changes</a></li>
-      <li><a href="#ui-changes">UI changes</a></li>
-      <li><a href="#flow-changes">Flow changes</a></li>
+  <li><a href="#framework-changes" id="markdown-toc-framework-changes">Framework changes</a></li>
+  <li><a href="#magentocatalogrule-module-changes" id="markdown-toc-magentocatalogrule-module-changes">Magento_CatalogRule module changes</a>    <ul>
+      <li><a href="#db-schema-changes" id="markdown-toc-db-schema-changes">DB schema changes</a></li>
+      <li><a href="#ui-changes" id="markdown-toc-ui-changes">UI changes</a></li>
+      <li><a href="#flow-changes" id="markdown-toc-flow-changes">Flow changes</a></li>
     </ul>
   </li>
-  <li><a href="#magentocatalog-module-changes">Magento_Catalog module changes</a>    <ul>
-      <li><a href="#code-changes">Code changes</a></li>
-      <li><a href="#form-initialization-changes">Form initialization changes</a></li>
-      <li><a href="#flow-changes-1">Flow changes</a></li>
+  <li><a href="#magentocatalog-module-changes" id="markdown-toc-magentocatalog-module-changes">Magento_Catalog module changes</a>    <ul>
+      <li><a href="#code-changes" id="markdown-toc-code-changes">Code changes</a></li>
+      <li><a href="#form-initialization-changes" id="markdown-toc-form-initialization-changes">Form initialization changes</a></li>
+      <li><a href="#flow-changes-1" id="markdown-toc-flow-changes-1">Flow changes</a></li>
     </ul>
   </li>
 </ul>
@@ -802,7 +802,7 @@
   <tr>
     <td>
     
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="p">[</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="p">[</span>
         <span class="s1">&#39;general&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
             <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Category&#39;</span><span class="p">,</span>
             <span class="s1">&#39;is_enabled&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
@@ -810,12 +810,13 @@
             <span class="s1">&#39;enabled&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span>
         <span class="p">],</span>
         <span class="o">...</span>
-    <span class="p">]</span></code></pre></div>
+    <span class="p">]</span>
+    </code></pre></figure>
 
     </td>
     <td>
     
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="p">[</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="p">[</span>
         <span class="s1">&#39;general&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
             <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Category&#39;</span><span class="p">,</span>
             <span class="s1">&#39;is_enabled&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
@@ -826,7 +827,8 @@
             <span class="s1">&#39;enabled&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span>
         <span class="p">],</span>
         <span class="o">...</span>
-    <span class="p">]</span></code></pre></div>
+    <span class="p">]</span>
+    </code></pre></figure>
 
     </td>
   </tr>
@@ -836,7 +838,7 @@
 
 <ul>
   <li>The Google Optimizer POST data moved to a specific array.</li>
-  <li><code>On/Off</code> fields 
+  <li><code>On/Off</code> fields
     <ul>
       <li>The input type has been changed from <code>select</code> to <code>switcher</code>.</li>
       <li>A web page sends POST message with attribute <code>value = "true"</code> if the field is checked or <code>value = "false"</code> if it is not.</li>
@@ -871,13 +873,13 @@
   <li>To join <abbr title="Entity Attribute Value">EAV</abbr> attributes use <code>linkField</code>.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getLinkField</span><span class="p">()</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getLinkField</span><span class="p">()</span></code></pre></figure>
 
 <ul>
   <li>To set a relation with another entities such as <code>category_product_entity</code> use <code>identifierField</code>.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getIdentifierField</span><span class="p">()</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getIdentifierField</span><span class="p">()</span></code></pre></figure>
 
 <h3 id="form-initialization-changes">Form initialization changes</h3>
 

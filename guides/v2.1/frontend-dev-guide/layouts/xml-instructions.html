@@ -870,7 +870,7 @@
 		<h2 id="fedg_layout_xml-instruc_overview">What's in this topic</h2>
 
 <p>Changing layout files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
-To change the page wireframe, modify the <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> files; all other customizations are performed in the <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> files. </p>
+To change the page wireframe, modify the <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> files; all other customizations are performed in the <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> files.</p>
 
 <p>Use layout instructions to:</p>
 
@@ -959,7 +959,7 @@ Blocks employ templates to generate HTML. Examples of blocks include a category 
    </tbody>
 </table>
 
-<p>To pass parameters use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction. </p>
+<p>To pass parameters use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
 
 <h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container&gt;</h3>
 <p>A structure without content that holds other layout elements such as blocks and containers.</p>
@@ -1031,11 +1031,11 @@ Blocks employ templates to generate HTML. Examples of blocks include a category 
 
 Sample of usage in layout:
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;div.sidebar.additional&quot;</span> <span class="na">htmlTag=</span><span class="s">&quot;div&quot;</span> <span class="na">htmlClass=</span><span class="s">&quot;sidebar sidebar-additional&quot;</span> <span class="na">after=</span><span class="s">&quot;div.sidebar.main&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;sidebar.additional&quot;</span> <span class="na">as=</span><span class="s">&quot;sidebar_additional&quot;</span> <span class="na">label=</span><span class="s">&quot;Sidebar Additional&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/container&gt;</span>
-...</code></pre></div>
+...</code></pre></figure>
 
 
 This would add a new column to the page layout.
@@ -1126,14 +1126,14 @@ Calls public methods on the block API.
 Example:
 
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Module\Block\Class&quot;</span> <span class="na">name=</span><span class="s">&quot;block&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Module\Block\Class&quot;</span> <span class="na">name=</span><span class="s">&quot;block&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">&quot;setText&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;text&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Text<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
     <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">&quot;setEnabled&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;enabled&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
-<span class="nt">&lt;/block&gt;</span></code></pre></div>
+<span class="nt">&lt;/block&gt;</span></code></pre></figure>
 
 
 
@@ -1211,7 +1211,7 @@ Sets the declared block or container element as a child of another element in th
 <p><b>Example:</b></p>
 
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">&quot;name.of.an.element&quot;</span> <span class="na">destination=</span><span class="s">&quot;name.of.destination.element&quot;</span> <span class="na">as=</span><span class="s">&quot;new_alias&quot;</span> <span class="na">after=</span><span class="s">&quot;name.of.element.after&quot;</span> <span class="na">before=</span><span class="s">&quot;name.of.element.before&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">&quot;name.of.an.element&quot;</span> <span class="na">destination=</span><span class="s">&quot;name.of.destination.element&quot;</span> <span class="na">as=</span><span class="s">&quot;new_alias&quot;</span> <span class="na">after=</span><span class="s">&quot;name.of.element.after&quot;</span> <span class="na">before=</span><span class="s">&quot;name.of.element.before&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
 
 
 
@@ -1268,7 +1268,7 @@ For removing blocks or containers, use the <code>&lt;remove&gt;</code> attribute
 Example of usage:
 
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
    <span class="nt">&lt;head&gt;</span>
         <span class="c">&lt;!-- Remove local resources --&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;css/styles-m.css&quot;</span> <span class="nt">/&gt;</span>
@@ -1279,7 +1279,7 @@ Example of usage:
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Montserrat&quot;</span> <span class="nt">/&gt;</span> 
-   <span class="nt">&lt;/head&gt;</span></code></pre></div>
+   <span class="nt">&lt;/head&gt;</span></code></pre></figure>
 
 
 <h3 id="fedg_layout_xml-instruc_ex_upd">&lt;update&gt;</h3>
@@ -1289,7 +1289,7 @@ Includes a certain layout file.
 Used as follows:
 
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">&quot;{name_of_handle_to_include}&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">&quot;{name_of_handle_to_include}&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
 
 
 The specified <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
@@ -1329,21 +1329,21 @@ Used to pass an argument.
 
 To pass multiple arguments use the following construction:
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;arguments&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;arguments&gt;</span>
    <span class="nt">&lt;argument&gt;&lt;/argument&gt;</span>
    <span class="nt">&lt;argument&gt;&lt;/argument&gt;</span>
    ...
-<span class="nt">&lt;/arguments&gt;</span></code></pre></div>
+<span class="nt">&lt;/arguments&gt;</span></code></pre></figure>
 
 
 To pass an argument that is an array use the following construction:
 
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument&gt;</span>
    <span class="nt">&lt;item&gt;&lt;/item&gt;</span>
    <span class="nt">&lt;item&gt;&lt;/item&gt;</span>
    ...
-<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
 
 <p id="getter">Arguments values set in a layout file can be accessed in <a href="/guides/v2.1/frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
@@ -1353,20 +1353,20 @@ Example:
 Setting a value of <code>css_class</code> in the <code><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
 
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="nt">&lt;arguments&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;css_class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/arguments&gt;</span>
-...</code></pre></div>
+...</code></pre></figure>
 
 
 
 Using the value of <code>css_class</code> in <code><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
 
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">...</span>
 <span class="x">$cssClass = $this-&gt;getCssClass() ? &#39; &#39; . $this-&gt;getCssClass() : &#39;&#39;;</span>
-<span class="x">...</span></code></pre></div>
+<span class="x">...</span></code></pre></figure>
 
 
 

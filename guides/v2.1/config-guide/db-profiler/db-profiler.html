@@ -1322,14 +1322,14 @@
 <h2 id="step-1-modify-the-deployment-configuration">Step 1: Modify the deployment configuration</h2>
 <p>Modify <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> to add the following reference to the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DB/Profiler.php" target="_blank">database profiler class</a>:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;profiler&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="s1">&#39;profiler&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
             <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\Magento\Framework\DB\Profiler&#39;</span><span class="p">,</span>
             <span class="s1">&#39;enabled&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-        <span class="p">],</span></code></pre></div>
+        <span class="p">],</span></code></pre></figure>
 
 <p>An example follows:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;db&#39;</span> <span class="o">=&gt;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="s1">&#39;db&#39;</span> <span class="o">=&gt;</span>
   <span class="k">array</span> <span class="p">(</span>
     <span class="s1">&#39;table_prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;connection&#39;</span> <span class="o">=&gt;</span>
@@ -1350,7 +1350,8 @@
         <span class="p">],</span>
       <span class="p">),</span>
     <span class="p">),</span>
-  <span class="p">),</span></code></pre></div>
+  <span class="p">),</span>
+  </code></pre></figure>
 
 <h2 id="step-2-configure-the-output">Step 2: Configure the output</h2>
 <p>Configure the output in your Magento application boostrap file; this might be <code>&lt;your Magento install dir&gt;/index.php</code> or it could be located in a web server virtual host configuration.</p>
@@ -1365,7 +1366,7 @@
 
 <p>To configure the output, add the following after the <code>$bootstrap-&gt;run($app);</code> line in your bootstrap file:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var \Magento\Framework\App\ResourceConnection $res */</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var \Magento\Framework\App\ResourceConnection $res */</span>
 <span class="nv">$res</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\ObjectManager</span><span class="o">::</span><span class="na">getInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\ResourceConnection&#39;</span><span class="p">);</span>
 <span class="sd">/** @var Magento\Framework\DB\Profiler $profiler */</span>
 <span class="nv">$profiler</span> <span class="o">=</span> <span class="nv">$res</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">&#39;read&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getProfiler</span><span class="p">();</span>
@@ -1383,7 +1384,7 @@
     <span class="k">echo</span> <span class="s1">&#39;&lt;td&gt;&#39;</span><span class="p">,</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getQueryParams</span><span class="p">()),</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">;</span>
     <span class="k">echo</span> <span class="s1">&#39;&lt;/tr&gt;&#39;</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="k">echo</span> <span class="s2">&quot;&lt;/table&gt;&quot;</span><span class="p">;</span></code></pre></div>
+<span class="k">echo</span> <span class="s2">&quot;&lt;/table&gt;&quot;</span><span class="p">;</span></code></pre></figure>
 
 <h2 id="step-3-view-the-results">Step 3: View the results</h2>
 <p>Go to any page in your storefront or Magento Admin to view the results. A sample follows:</p>

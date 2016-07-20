@@ -834,7 +834,7 @@
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2>Magento themes</h2>
 
-<p>A <i>theme</i> is a core Magento component whose primary purpose is to control the appearance of your storefront.  Themes use a combination of application elements, such as templates, layouts, styles, and images, and are highly extensible. </p>
+<p>A <i>theme</i> is a core Magento component whose primary purpose is to control the appearance of your storefront.  Themes use a combination of application elements, such as templates, layouts, styles, and images, and are highly extensible.</p>
 
 <p><b>Custom theme development is one of two main methods of modifying Magento behavior and storefront appearance</b>. (Extending modules is the other primary way, and the main way to tailor Magento behavior.) Themes are the primary way to customize your Magento storefront appearance. Unlike modules, themes do not provide new business features (other than branding and web user experience).</p>
 
@@ -845,16 +845,16 @@
 <p>For detailed information about working with themes, refer to  <a href="/guides/v2.1/frontend-dev-guide/themes/theme-general.html">Themes</a> in the Frontend Developers Guide.</p>
 
 <h3>Theme location</h3>
-<p>The location of a theme in your Magento installation depends upon how you installed your theme. Magento knows to look in both <code>vendor</code> and  <code>app/design</code> for themes. In Magento 2.0, each module and theme contain a <code>registration.php</code> file, which defines location information. </p>
+<p>The location of a theme in your Magento installation depends upon how you installed your theme. Magento knows to look in both <code>vendor</code> and  <code>app/design</code> for themes. In Magento 2.0, each module and theme contain a <code>registration.php</code> file, which defines location information.</p>
 
-<p><i>Areas</i> also determine a theme’s location. Themes that affect the storefront are placed in the <code>frontend</code> area, while themes that affect the Admin panel are placed in <code>adminhtml</code> directory. </p>
+<p><i>Areas</i> also determine a theme’s location. Themes that affect the storefront are placed in the <code>frontend</code> area, while themes that affect the Admin panel are placed in <code>adminhtml</code> directory.</p>
 
 <h4>Location of themes in GitHub repository</h4>
-<p>In the Magento repository on GitHub, themes exist under <code>app/design/frontend</code>. For example, you can find the Magento Blank theme at https://github.com/magento/magento2/tree/develop/app/design/frontend/Magento/blank. </p>
+<p>In the Magento repository on GitHub, themes exist under <code>app/design/frontend</code>. For example, you can find the Magento Blank theme at https://github.com/magento/magento2/tree/develop/app/design/frontend/Magento/blank.</p>
 
 <h4>Location of themes when installing with Composer</h4>
 
-<p>We recommend using Composer to install your Magento application and components such as modules or themes. Composer places the theme you are installing under  <code>/vendor</code>. For example, <code>vendor/Magento/theme-frontend-blank</code> is the root directory of the Composer package holding the Blank theme. </p>
+<p>We recommend using Composer to install your Magento application and components such as modules or themes. Composer places the theme you are installing under  <code>/vendor</code>. For example, <code>vendor/Magento/theme-frontend-blank</code> is the root directory of the Composer package holding the Blank theme.</p>
 
 <h4>Location of custom themes</h4>
 <p>While developing a theme, place it under <code>app/design</code>.  If you’ve defined the theme for a local project (that is, you intend to install it in one project only),  place it under <code>app/design</code>. However, if you decide to sell the theme on Magento Marketplace, follow the instructions given there for uploading. When users download your theme from Magento Marketplace, they will use Composer to install the theme package, and Composer will automatically place it in <code>vendor</code>. (Essentially, <code>/vendor</code> holds all code that you have not written.)</p>
@@ -865,7 +865,7 @@
 
 <ul>
   <li>
-    <p><b>Luma theme</b> is for demonstration purposes only. Do not use it as a parent theme in your installation.  Explore it to better understand Magento themes, but do not base customizations on it. </p>
+    <p><b>Luma theme</b> is for demonstration purposes only. Do not use it as a parent theme in your installation.  Explore it to better understand Magento themes, but do not base customizations on it.</p>
   </li>
   <li>
     <p><b>Blank theme</b> is provided as a tool to aid your theme development. Use the Magento Blank theme as a basis for custom theme creation. Because Blank theme is built on principles of responsive web design, it makes an excellent starting point for developing responsive Magento themes.</p>

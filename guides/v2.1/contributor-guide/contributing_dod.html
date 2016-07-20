@@ -429,11 +429,11 @@
 
 <p>At a high level, the criteria defined in our “definition of done” revolve around the principle of writing clean code that is reviewed and includes unit tests and solid documentation along with the code.</p>
 
-<p>The following sections provide additional details about each of these criteria: </p>
+<p>The following sections provide additional details about each of these criteria:</p>
 
 <h3>Functional Backward Compatibility</h3>
 
-<p>Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the “business value”. </p>
+<p>Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the “business value”.</p>
 
 <p>For more information, see <a href="/guides/v2.1/architecture/backward-compatibility.html">Magento’s backward compatibility policy</a>.</p>
 
@@ -443,7 +443,7 @@
 
 <p>Ideally, the information about the submitted code should be added to the official Magento DevDocs library. Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>.</p>
 
-<p>When submitting either code or documentation, a brief summary of the work should be included in the commit message. </p>
+<p>When submitting either code or documentation, a brief summary of the work should be included in the commit message.</p>
 
 <p>Additionally, the code itself should contain high-quality comments/descriptions for all classes and methods.</p>
 
@@ -508,7 +508,7 @@ Added/updated functionality should be covered by a functional autotest(s) relate
 
 <h5>Integrity Tests</h5>
 
-<p>Code to cover: </p>
+<p>Code to cover:</p>
 
 <ul>
   <li>Must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.</li>
@@ -523,7 +523,7 @@ Scan for declarations of templates and invoke “fallback” mechanism to ensure
 
 <p><strong>Static Code Analysis</strong></p>
 
-<p>Code to cover: </p>
+<p>Code to cover:</p>
 
 <ul>
   <li>must cover all new code files (or whatever qualifies as “new”).</li>
@@ -533,7 +533,7 @@ Scan for declarations of templates and invoke “fallback” mechanism to ensure
 
 <p><strong>Legacy Tests</strong></p>
 
-<p>Code to cover: </p>
+<p>Code to cover:</p>
 
 <ul>
   <li>Must cover any formal backwards-incompatible changes on code level. For more information, see 
@@ -559,8 +559,8 @@ Added/updated functionality should be covered by a functional Zephyr test(s) rel
 <p>A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review. The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:</p>
 
 <ul>
-  <li>There are no unauthorized backward-incompatible functional changes </li>
-  <li>All changes are documented properly </li>
+  <li>There are no unauthorized backward-incompatible functional changes</li>
+  <li>All changes are documented properly</li>
   <li>All changes are covered with automated tests</li>
   <li>Determine if code changes caused any failure in continuous integration builds.</li>
 </ul>

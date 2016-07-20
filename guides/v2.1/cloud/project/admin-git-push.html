@@ -366,7 +366,7 @@
 of the <code>git push</code> command might look like with Magento Enterprise Cloud Edition.</p>
 
 <p>Magento Enterprise Cloud Edition is extremely versatile; for each project and  depending
-on the state of the project, the output can vary wildly. </p>
+on the state of the project, the output can vary wildly.</p>
 
 <p>This topic discusses a sample PHP project with a lot of data backends; and that uses MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a <code>composer.json</code> file and it uses the Ruby library <code>sass</code> to compile the SCSS
 during its build process.</p>
@@ -377,19 +377,17 @@ branch.</p>
 
 <p>After modifying some files, the developer pushed the changes using:</p>
 
-<p><code>
-$ git push
-</code></p>
+<pre><code>$ git push
+</code></pre>
 
 <p>This is what the output looks like:</p>
 
-<p><code>
-Counting objects: 4, done.
+<pre><code>Counting objects: 4, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (4/4), done.
 Writing objects: 100% (4/4), 428 bytes | 0 bytes/s, done.
 Total 4 (delta 3), reused 0 (delta 0)
-</code></p>
+</code></pre>
 
 <p>This was the normal output you would expect from a git server. If there were a 
 conflict it would have errored out and asked you to resolve it.</p>

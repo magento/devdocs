@@ -831,7 +831,7 @@
 		<h2 id="arch-modules-overview">Module overview</h2>
 <p>A <i>module</i> is a logical group – that is, a directory containing blocks, controllers, helpers, models – that are related to a specific business feature. In keeping with Magento’s commitment to optimal modularity, a module encapsulates one feature and has minimal dependencies on other modules.</p>
 
-<p>Modules and themes are the units of customization in Magento. Modules provide business features, with supporting logic,  while themes strongly influence user experience and storefront appearance. Both components have a life cycle that allows them to be installed, deleted, and disabled. From the perspective of both merchants and extension developers, modules are the central unit of Magento organization. </p>
+<p>Modules and themes are the units of customization in Magento. Modules provide business features, with supporting logic,  while themes strongly influence user experience and storefront appearance. Both components have a life cycle that allows them to be installed, deleted, and disabled. From the perspective of both merchants and extension developers, modules are the central unit of Magento organization.</p>
 
 <p>The Magento Framework provides a set of core logic: PHP code, libraries, and the basic functions that are inherited by the modules and other components.</p>
 
@@ -841,13 +841,13 @@
 
 <h3>Module components</h3>
 
-<p>A module is a directory that contains the PHP and XML files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: <a href="/guides/v2.0/architecture/archi_perspectives/components/arch_themes.html">themes</a>, <a href="/guides/v2.0/architecture/archi_perspectives/components/arch_libraries.html">libraries</a>, and <a href="/guides/v2.0/architecture/archi_perspectives/components/arch_translations.html">language packages</a>. </p>
+<p>A module is a directory that contains the PHP and XML files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: <a href="/guides/v2.0/architecture/archi_perspectives/components/arch_themes.html">themes</a>, <a href="/guides/v2.0/architecture/archi_perspectives/components/arch_libraries.html">libraries</a>, and <a href="/guides/v2.0/architecture/archi_perspectives/components/arch_translations.html">language packages</a>.</p>
 
-<p>See <a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_anatomy.html">Module anatomy</a> for an overview of module structure. </p>
+<p>See <a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_anatomy.html">Module anatomy</a> for an overview of module structure.</p>
 
 <h3>Where do modules live?</h3>
 
-<p>Modules typically live in the <code>app/code</code> directory of a Magento installation, in a directory with the following PSR-0 compliant format: <code>app/code/&lt;Vendor&gt;/&lt;ModuleName&gt;</code>. For example, the Customer module of Magento can be found at <code>app/code/Magento/Customer</code>. </p>
+<p>Modules typically live in the <code>app/code</code> directory of a Magento installation, in a directory with the following PSR-0 compliant format: <code>app/code/&lt;Vendor&gt;/&lt;ModuleName&gt;</code>. For example, the Customer module of Magento can be found at <code>app/code/Magento/Customer</code>.</p>
 
 <p>Inside this folder, you will find all the code related to this module, including the <code>etc/module.xml</code> file, which contains the name and version of the module, as well as any dependencies.</p>
 

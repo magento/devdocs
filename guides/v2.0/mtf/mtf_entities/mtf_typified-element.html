@@ -758,19 +758,19 @@
 		<h2>Typified element</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#mtf_typified-element_overview">Overview</a></li>
-  <li><a href="#structure">Structure</a>    <ul>
-      <li><a href="#general">General</a></li>
-      <li><a href="#classes">Classes and relations with UI</a>        <ul>
-          <li><a href="#basic_class">Default typified elements</a></li>
-          <li><a href="#magento_class">Magento custom typified elements</a></li>
+  <li><a href="#mtf_typified-element_overview" id="markdown-toc-mtf_typified-element_overview">Overview</a></li>
+  <li><a href="#structure" id="markdown-toc-structure">Structure</a>    <ul>
+      <li><a href="#general" id="markdown-toc-general">General</a></li>
+      <li><a href="#classes" id="markdown-toc-classes">Classes and relations with UI</a>        <ul>
+          <li><a href="#basic_class" id="markdown-toc-basic_class">Default typified elements</a></li>
+          <li><a href="#magento_class" id="markdown-toc-magento_class">Magento custom typified elements</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#create">How to create a class for the typified element</a></li>
-  <li><a href="#use">How to use</a>    <ul>
-      <li><a href="#mapping">Mapping</a></li>
+  <li><a href="#create" id="markdown-toc-create">How to create a class for the typified element</a></li>
+  <li><a href="#use" id="markdown-toc-use">How to use</a>    <ul>
+      <li><a href="#mapping" id="markdown-toc-mapping">Mapping</a></li>
     </ul>
   </li>
 </ul>
@@ -955,7 +955,8 @@
 
 <p>It must be named according to the following naming convention. Two capital letters in the name: the first letter and a capital <code>E</code> in the <code>Element.php</code>. For example: <code>OptgroupselectElement.php</code>.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x"> </span>
+<span class="x"> </span><span class="cp">&lt;?php</span>
 
  <span class="k">namespace</span> <span class="nx">Magento\Mtf\Client\Element</span><span class="p">;</span>
  <span class="sd">/**</span>
@@ -964,15 +965,17 @@
  <span class="k">class</span> <span class="nc">OptgroupselectElement</span>
  <span class="p">{</span>
     <span class="c1">//</span>
- <span class="p">}</span></code></pre></div>
+ <span class="p">}</span>
+  </code></pre></figure>
 
 <p><strong>Step 2.</strong> Extend your class from the <a href="#basic_class">default element</a> or the <a href="#magento_class">Magento custom element</a> class</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">OptgroupselectElement</span> <span class="k">extends</span> <span class="nx">SelectElement</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"> 
+<span class="k">class</span> <span class="nc">OptgroupselectElement</span> <span class="k">extends</span> <span class="nx">SelectElement</span></code></pre></figure>
 
 <p><strong>Step 3.</strong> Redefine methods of the extended class according to your goals</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Option group locator</span>
 <span class="sd"> *</span>
 <span class="sd"> * @var string</span>
@@ -992,14 +995,14 @@
     <span class="nv">$xpath</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">optionGroupValue</span><span class="p">,</span> <span class="nv">$group</span><span class="p">,</span> <span class="nv">$option</span><span class="p">);</span>
     <span class="nv">$option</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$xpath</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_XPATH</span><span class="p">);</span>
     <span class="nv">$option</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h2 id="use">How to use</h2>
 
 <p>Typified elements are used in the <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html"><abbr title="Functional Testing Framework">FTF</abbr> blocks</a>.
 Use a <code>find()</code> method to find an element. This method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a> class:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Find element using locator in context of current element</span>
 <span class="sd"> *</span>
 <span class="sd"> * @param string $selector</span>
@@ -1010,11 +1013,11 @@ Use a <code>find()</code> method to find an element. This method is declared in 
 <span class="k">public</span> <span class="k">function</span> <span class="nf">find</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span> <span class="o">=</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_CSS</span><span class="p">,</span> <span class="nv">$type</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">driver</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span><span class="p">,</span> <span class="nv">$type</span><span class="p">,</span> <span class="nv">$this</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>The following code is an example of the <code>find()</code> method usage from the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Category/Tree.php">\Magento\Catalog\Test\Block\Adminhtml\Category\Tree</a> block:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Check category in category tree</span>
 <span class="sd"> *</span>
 <span class="sd"> * @param Category $category</span>
@@ -1026,7 +1029,7 @@ Use a <code>find()</code> method to find an element. This method is declared in 
     <span class="nv">$categoryPath</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nv">$categoryPath</span><span class="p">);</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">treeElement</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_CSS</span><span class="p">,</span> <span class="s1">&#39;tree&#39;</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">isElementVisible</span><span class="p">(</span><span class="nv">$categoryPath</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="mapping">Mapping</h3>
 
@@ -1036,7 +1039,7 @@ Use a <code>find()</code> method to find an element. This method is declared in 
 
 <p>The following code is a corresponding mapping with the typified element <code>optgroupselect</code> from the previous image:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;mapping</span> <span class="na">strict=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;mapping</span> <span class="na">strict=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;wrapper&gt;</span>store<span class="nt">&lt;/wrapper&gt;</span>
     <span class="nt">&lt;fields&gt;</span>
         <span class="nt">&lt;group_id&gt;</span>
@@ -1048,7 +1051,7 @@ Use a <code>find()</code> method to find an element. This method is declared in 
             <span class="nt">&lt;input&gt;</span>select<span class="nt">&lt;/input&gt;</span>
         <span class="nt">&lt;/is_active&gt;</span>
     <span class="nt">&lt;/fields&gt;</span>
-<span class="nt">&lt;/mapping&gt;</span></code></pre></div>
+<span class="nt">&lt;/mapping&gt;</span></code></pre></figure>
 
 <!-- PICTURE DEFINITIONS -->
 

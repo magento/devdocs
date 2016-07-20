@@ -1108,7 +1108,7 @@
 <p>Managing redirection rules is a common requirement for web applications,
 especially in cases where you do not want to lose incoming links that have
 changed or been removed over time. This topic discusses how you can manage redirection rules on your
-Magento Enterprise Cloud Edition projects. </p>
+Magento Enterprise Cloud Edition projects.</p>
 
 <p>If the redirection methods discussed in this topic don’t work for you, you can use caching headers to do the same thing.</p>
 
@@ -1146,10 +1146,10 @@ to existing routes:</p>
 
 <ul>
   <li>A key that describes the expression to match against the
-request path </li>
+request path</li>
   <li>
     <p>A value object describing both the destination to redirect to with
-detail on how to handle the redirection. </p>
+detail on how to handle the redirection.</p>
 
     <p>The value object is defined with the following
 keys:</p>
@@ -1166,31 +1166,31 @@ keys:</p>
 
 <h3 id="cloud-route-partial-regexp"><code>regexp</code></h3>
 <p>Optional, defaults to <code>false</code>. Specifies whether the path key should be interpreted as
-   a PCRE regular expression. </p>
+   a PCRE regular expression.</p>
 
 <div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>In the following example, a request to <code>http://example.com/regexp/a/b/c/match</code> redirects to <code>http://example.com/a/b/c</code>:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span> 
     <span class="l-Scalar-Plain">redirects</span><span class="p-Indicator">:</span>
        <span class="l-Scalar-Plain">paths</span><span class="p-Indicator">:</span>
           <span class="s">&quot;/regexp/(.*)/match&quot;</span><span class="p-Indicator">:</span>  
           <span class="l-Scalar-Plain">to</span><span class="p-Indicator">:</span> <span class="s">&quot;http://example.com/$1&quot;</span>
-          <span class="l-Scalar-Plain">regexp</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span></code></pre></div>
+          <span class="l-Scalar-Plain">regexp</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span></code></pre></figure>
 </div></div>
 
 <h3 id="cloud-route-partial-prefix"><code>prefix</code></h3>
-<p>Specifies whether or not to redirect both the path and all its children or just the path itself. Defaults to <code>true</code>, but is not supported if <code>regexp</code> is <code>true</code>. </p>
+<p>Specifies whether or not to redirect both the path and all its children or just the path itself. Defaults to <code>true</code>, but is not supported if <code>regexp</code> is <code>true</code>.</p>
 
 <div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>For example,</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>
        <span class="l-Scalar-Plain">redirects</span><span class="p-Indicator">:</span>
        <span class="l-Scalar-Plain">paths</span><span class="p-Indicator">:</span>
           <span class="s">&quot;/from&quot;</span><span class="p-Indicator">:</span>
           <span class="l-Scalar-Plain">to</span><span class="p-Indicator">:</span> <span class="s">&quot;http://{default}/to&quot;</span>
-          <span class="l-Scalar-Plain">partial</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span></code></pre></div>
+          <span class="l-Scalar-Plain">partial</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span></code></pre></figure>
 
 <p>In the preceding example, if <code>partial</code> is set to <code>true</code>, <code>/from</code> redirects to <code>/to</code> and <code>/from/another/path</code> will redirect to <code>/to/another/path</code></p>
 
@@ -1202,15 +1202,15 @@ keys:</p>
 
 <div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>For example,</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>
     <span class="l-Scalar-Plain">redirects</span><span class="p-Indicator">:</span>
        <span class="l-Scalar-Plain">paths</span><span class="p-Indicator">:</span>
           <span class="s">&quot;/from&quot;</span><span class="p-Indicator">:</span>
           <span class="l-Scalar-Plain">to</span><span class="p-Indicator">:</span> <span class="s">&quot;http://{default}/to&quot;</span>
-          <span class="l-Scalar-Plain">append_suffix</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span></code></pre></div>
+          <span class="l-Scalar-Plain">append_suffix</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span></code></pre></figure>
 
-<p>The preceding example results in <code>/from/path/suffix</code> redirecting to just <code>/to</code>. </p>
+<p>The preceding example results in <code>/from/path/suffix</code> redirecting to just <code>/to</code>.</p>
 
 <p>If <code>append_suffix</code> is set to its default value of <code>true</code>, <code>/from/path/suffix</code> redirects to <code>/to/path/suffix</code>.</p>
 </div></div>
@@ -1221,13 +1221,13 @@ keys:</p>
 <h3 id="cloud-route-partial-expires"><code>expires</code></h3>
 <p>Optional, the duration the redirect will be cached. Defaults to the <code>expires</code> value defined directly under the <code>redirects</code> key, but at this level we can fine-tune the expiration of individual partial redirects:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>
     <span class="l-Scalar-Plain">redirects</span><span class="p-Indicator">:</span>
        <span class="l-Scalar-Plain">expires</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1d</span>
        <span class="l-Scalar-Plain">paths</span><span class="p-Indicator">:</span>
           <span class="s">&quot;/from&quot;</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="s">&quot;to&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;http://example.com/&quot;</span> <span class="p-Indicator">}</span>
-          <span class="s">&quot;/here&quot;</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="s">&quot;to&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;http://example.com/there&quot;</span><span class="p-Indicator">,</span> <span class="s">&quot;expires&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;2w&quot;</span> <span class="p-Indicator">}</span></code></pre></div>
+          <span class="s">&quot;/here&quot;</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="s">&quot;to&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;http://example.com/there&quot;</span><span class="p-Indicator">,</span> <span class="s">&quot;expires&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;2w&quot;</span> <span class="p-Indicator">}</span></code></pre></figure>
 
 <p>In the preceding example, redirects from <code>/from</code> expire in one day, but redirects from <code>/here</code> expire in two weeks.</p>
 

@@ -896,7 +896,7 @@
 
 <p>OrangeCo <a href="/guides/v2.1/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="/guides/v2.1/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in <code>&lt;Magento_Customer_module_dir&gt;/view/frontend/layout/default.xml</code>:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;top.links&quot;</span><span class="nt">&gt;</span>
@@ -913,7 +913,7 @@
             <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Block\Account\AuthorizationLink&quot;</span> <span class="na">name=</span><span class="s">&quot;authorization-link&quot;</span> <span class="na">template=</span><span class="s">&quot;account/link/authorization.phtml&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p><u>Step 2: Define the templates</u></p>
 
@@ -922,7 +922,7 @@ defines the template which is used for rearranging the links:</p>
 
 <p><code>&lt;Magento_Customer_module_dir&gt;/view/frontend/templates/account/customer.phtml</code></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">customerLoggedIn</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">customerLoggedIn</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">    &lt;li class=&quot;customer-welcome&quot;&gt;</span>
 <span class="x">        &lt;span class=&quot;customer-name&quot;</span>
 <span class="x">              role=&quot;link&quot;</span>
@@ -958,7 +958,7 @@ defines the template which is used for rearranging the links:</p>
 <span class="x">        &lt;/div&gt;</span>
 <span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">    &lt;/li&gt;</span>
-<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <p><br />
 <u>Step 3: Extend the base layout to add a block</u></p>
@@ -970,7 +970,7 @@ defines the template which is used for rearranging the links:</p>
 <pre><code>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
 </code></pre>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;header.panel&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Framework\View\Element\Html\Links&quot;</span> <span class="na">name=</span><span class="s">&quot;header.links&quot;</span><span class="nt">&gt;</span>
@@ -980,7 +980,7 @@ defines the template which is used for rearranging the links:</p>
             <span class="nt">&lt;/block&gt;</span>
         <span class="nt">&lt;/referenceContainer&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p><br /></p>
 
@@ -990,7 +990,7 @@ defines the template which is used for rearranging the links:</p>
 
 <p><code>app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml</code></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;body&gt;</span>
             <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;header.links&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Block\Account\Customer&quot;</span> <span class="na">name=</span><span class="s">&quot;customer&quot;</span> <span class="na">template=</span><span class="s">&quot;account/customer.phtml&quot;</span> <span class="na">before=</span><span class="s">&quot;-&quot;</span><span class="nt">/&gt;</span>
@@ -1000,7 +1000,7 @@ defines the template which is used for rearranging the links:</p>
             <span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">&quot;top.links&quot;</span> <span class="na">destination=</span><span class="s">&quot;customer&quot;</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">&quot;authorization-link&quot;</span> <span class="na">destination=</span><span class="s">&quot;top.links&quot;</span> <span class="na">after=</span><span class="s">&quot;-&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/body&gt;</span>
-    <span class="nt">&lt;/page&gt;</span></code></pre></div>
+    <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>Now the customer links look like following:</p>
 

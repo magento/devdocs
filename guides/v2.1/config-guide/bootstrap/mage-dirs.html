@@ -1321,7 +1321,7 @@
 </ul>
 
 <h2 id="dirs-introduction">Introduction to Magento base directory paths</h2>
-<p>The <code>MAGE_DIRS</code> environment variable enables you to specify custom base directory paths and fragments of base URLs that are used by the Magento application to build absolute paths to various files or for generating URLs. </p>
+<p>The <code>MAGE_DIRS</code> environment variable enables you to specify custom base directory paths and fragments of base URLs that are used by the Magento application to build absolute paths to various files or for generating URLs.</p>
 
 <h2 id="dirs-set">Set MAGE_DIRS</h2>
 <p>Specify an associative array where keys are constants from <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Filesystem/DirectoryList.php" target="_blank">\Magento\App\Filesystem\DirectoryList</a> and values are absolute paths of directories or their URL paths, respectively.</p>
@@ -1333,7 +1333,7 @@
   <li>Use a custom entry point script such as the following:</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">	</span><span class="cp">&lt;?php</span>
 	<span class="k">use</span> <span class="nx">Magento\Framework\App\Filesystem\DirectoryList</span><span class="p">;</span>
 	<span class="k">use</span> <span class="nx">Magento\Framework\App\Bootstrap</span><span class="p">;</span>
  
@@ -1354,7 +1354,8 @@
 	<span class="sd">/** @var \Magento\Framework\App\Http $app */</span>
 	<span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\Http&#39;</span><span class="p">);</span>
 	<span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
-	<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+	<span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">	</span></code></pre></figure>
 
 <p>The preceding example sets paths for <code>[cache]</code> and <code>[media]</code> directories to <code>/mnt/nfs/cache</code> and <code>/mnt/nfs/media</code>, respectively.</p>
 

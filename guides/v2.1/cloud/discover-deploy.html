@@ -1130,7 +1130,7 @@ example, that Magento uses MySQL, some PHP extensions, and Elasticsearch. (These
   <li><a href="#cloud-deploy-over-phases-conf">Phase 1: Configuration validation and code retrieval</a></li>
   <li><a href="#cloud-deploy-over-phases-build">Phase 2: Build</a></li>
   <li><a href="#cloud-deploy-over-phases-slug">Phase 3: Prepare slug</a></li>
-  <li><a href="#cloud-deploy-over-phases-slugclus">Phase 4: Deploy slugs and cluster</a> </li>
+  <li><a href="#cloud-deploy-over-phases-slugclus">Phase 4: Deploy slugs and cluster</a></li>
   <li><a href="#cloud-deploy-over-phases-hook">Phase 5: Deployment hooks</a></li>
   <li><a href="#cloud-deploy-over-phases-route">Post-deployment: configure routing</a></li>
 </ol>
@@ -1140,7 +1140,7 @@ example, that Magento uses MySQL, some PHP extensions, and Elasticsearch. (These
 
 <ul>
   <li>
-    <p>Inspects what you sent it. </p>
+    <p>Inspects what you sent it.</p>
 
     <p>If, for example, you have a syntax error in a configuration file, our Git server refuses the push.</p>
   </li>
@@ -1148,7 +1148,7 @@ example, that Magento uses MySQL, some PHP extensions, and Elasticsearch. (These
     <p>Looks for critical vulnerabilities.</p>
 
     <p>Refusing to push because the built-in Git server detects a vulnerability is a good thing because it means you 
-can’t break your production system that easily. </p>
+can’t break your production system that easily.</p>
   </li>
 </ul>
 
@@ -1161,7 +1161,7 @@ infrastructure (by looking at changes to the <code>.yaml</code> configuration fi
 
 <h3 id="cloud-deploy-over-phases-build">Phase 2: Build</h3>
 <p>We build only what has changed since the last build. This is one of the things that
-make Magento Enterprise Cloud Edition so fast in deployment. </p>
+make Magento Enterprise Cloud Edition so fast in deployment.</p>
 
 <p>Magento Enterprise Cloud Edition builds containers, in parallel, each server where something changed. If for example you pushed a
 PHP <code>composer.json</code> file, it will know it needs to go search for the
@@ -1175,7 +1175,7 @@ anything was daemonized.</p>
 
 <p>But also know that once the application has been built it is going to be
 mounted on a read-only file system (you will be able to configure specific
-mount points that are going to be read/write). </p>
+mount points that are going to be read/write).</p>
 
 <p>This means you cannot FTP to the server and add modules. Instead, you must add code to your environment and push the environment, which builds and deploys it.</p>
 
@@ -1191,7 +1191,7 @@ mount points that are going to be read/write). </p>
 you push code, if a service did not change, you can use a slug from the archive.</p>
 
 <p>It also means that reverting a deployment is basically
-instantaneous. </p>
+instantaneous.</p>
 
 <h3 id="cloud-deploy-over-phases-slugclus">Phase 4: Deploy slugs and cluster</h3>
 <p>Now we provision your applications and all the backend services you
@@ -1222,7 +1222,7 @@ is what guarantees we can do deterministic deployments. The read-only file syste
   <li>
     <p>If Magento is installed, performs any necessary upgrades.</p>
 
-    <p>The deployment script runs <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-db-upgr.html"><code>bin/magento setup:upgrade</code></a> to update the database schema and data (which is necessary after extension or core code updates), and also updates the <a href="/guides/v2.1/config-guide/config/config-php.html">deployment configuration</a>, <code>app/etc/env.php</code>, and the database for your environment. </p>
+    <p>The deployment script runs <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-db-upgr.html"><code>bin/magento setup:upgrade</code></a> to update the database schema and data (which is necessary after extension or core code updates), and also updates the <a href="/guides/v2.1/config-guide/config/config-php.html">deployment configuration</a>, <code>app/etc/env.php</code>, and the database for your environment.</p>
 
     <p>Finally, the deployment script and clears the Magento cache.</p>
   </li>
@@ -1241,7 +1241,7 @@ so no transactions are lost.</p>
 <p>If everything went fine, we are now ready to configure routing so your
 web traffic will arrive at your newly created cluster. If something
 failed, well then nothing would have happened; the “old cluster” is
-still there, so from your users’ perspective, nothing changed. </p>
+still there, so from your users’ perspective, nothing changed.</p>
 
 <p>Neither
 failed nor successful deployments result in application downtime.

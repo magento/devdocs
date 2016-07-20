@@ -700,9 +700,9 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<h2>Magento Community Edition 2.0.4</h2>
-<p>We are pleased to present Magento Community Edition 2.0.4. This release includes all of the security enhancements and performance improvements of Magento 2.0.3, in improved packaging. <strong>You must download and install 2.0.4 to ensure that you receive all the security enhancements of 2.0.3</strong>. </p>
+<p>We are pleased to present Magento Community Edition 2.0.4. This release includes all of the security enhancements and performance improvements of Magento 2.0.3, in improved packaging. <strong>You must download and install 2.0.4 to ensure that you receive all the security enhancements of 2.0.3</strong>.</p>
 
 <p>Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.</p>
 
@@ -711,51 +711,51 @@
 <h4> Upgrade and Installation</h4>
 <!-- 50224 -->
 <ul>
-  <li>Magento no longer creates store data inconsistently during installation. </li>
+  <li>Magento no longer creates store data inconsistently during installation.</li>
 </ul>
 
 <!-- 47531 -->
 <ul>
-  <li>During upgrade, the <code>setup:config:set</code> script no longer deletes values in the <code>env.php</code> file. </li>
+  <li>During upgrade, the <code>setup:config:set</code> script no longer deletes values in the <code>env.php</code> file.</li>
 </ul>
 
 <h4>Import</h4>
 <!-- 50255 -->
 <ul>
-  <li>Magento now successfully imports existing products as well as products that use custom URLs. </li>
+  <li>Magento now successfully imports existing products as well as products that use custom URLs.</li>
 </ul>
 
 <h4>APIs</h4>
 <!-- 46720 -->
 <ul>
-  <li>The Orders API now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems. </li>
+  <li>The Orders API now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems.</li>
 </ul>
 
 <!-- 49558 -->
 <ul>
-  <li>The SOAP API now returns attributes of type “text swatch” and “visual swatch” when you use the API to add attribute options. Previously, this feature did not work for these attribute types.  </li>
+  <li>The SOAP API now returns attributes of type “text swatch” and “visual swatch” when you use the API to add attribute options. Previously, this feature did not work for these attribute types.</li>
 </ul>
 
 <h4>PHP</h4>
 <!-- 50500 -->
 <ul>
-  <li>Magento now allows you to use arguments of <code>url</code> type in nested arrays. Previously, you could pass route parameters only if the <code>url</code> argument was declared at the top level.  </li>
+  <li>Magento now allows you to use arguments of <code>url</code> type in nested arrays. Previously, you could pass route parameters only if the <code>url</code> argument was declared at the top level.</li>
 </ul>
 
 <h4>Miscellaneous</h4>
 <!-- 47704 -->
 <ul>
-  <li>Magento no longer displays HTML tags in messages. </li>
+  <li>Magento no longer displays HTML tags in messages.</li>
 </ul>
 
 <!-- 48781 -->
 <ul>
-  <li>Product performance has been enhanced when loading catalog products with multiple color swatches. </li>
+  <li>Product performance has been enhanced when loading catalog products with multiple color swatches.</li>
 </ul>
 
 <!-- 47844 -->
 <ul>
-  <li>Magento now successfully saves and displays new customer attributes. </li>
+  <li>Magento now successfully saves and displays new customer attributes.</li>
 </ul>
 
 <!-- 49449-->
@@ -766,36 +766,36 @@
 <h4>Security enhancements</h4>
 <p>This release includes several enhancements to improve the security of your Magento 2.0 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.</p>
 
-<p>The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. </p>
+<p>The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>.</p>
 
 <!-- 45887 -->
 <ul>
-  <li>Issue with persistent cross-site scripting through a user account has been resolved. </li>
+  <li>Issue with persistent cross-site scripting through a user account has been resolved.</li>
 </ul>
 
 <!-- 50608 -->
 <ul>
-  <li>Magento now supports setting limits on password attempts. Previously, Admin and Customer Token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. </li>
+  <li>Magento now supports setting limits on password attempts. Previously, Admin and Customer Token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords.</li>
 </ul>
 
 <!-- 50611 -->
 <ul>
-  <li>APIs that previously granted access to anonymous users are now configured to require a higher permission level.  Default product behavior does not permit anonymous access to Catalog, Store and CMS APIs. However, if you would like to allow anonymous access, you can change this setting. </li>
+  <li>APIs that previously granted access to anonymous users are now configured to require a higher permission level.  Default product behavior does not permit anonymous access to Catalog, Store and CMS APIs. However, if you would like to allow anonymous access, you can change this setting.</li>
 </ul>
 
 <!-- 48819 -->
 <ul>
-  <li>Magento now prevents the arbitrary execution of PHP code through the language package CSV file. </li>
+  <li>Magento now prevents the arbitrary execution of PHP code through the language package CSV file.</li>
 </ul>
 
 <!-- 47050 -->
 <ul>
-  <li>The encryption keys that are generated in <strong>System &gt; Manage Encryption Key</strong> have been strengthened. </li>
+  <li>The encryption keys that are generated in <strong>System &gt; Manage Encryption Key</strong> have been strengthened.</li>
 </ul>
 
 <!-- 50755 -->
 <ul>
-  <li>Reflected XSS can no longer occur through the Authorizenet module’s redirect data. </li>
+  <li>Reflected XSS can no longer occur through the Authorizenet module’s redirect data.</li>
 </ul>
 
 <p>We recommend that you review Magento’s <a href="http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.</p>

@@ -869,9 +869,9 @@
 
 <p>For search APIs that invoke a <code>*Repository::getList(SearchCriteriaInterface *)</code> call, the searchCriteria must be specified in the URL of the GET request. The basic pattern for specifying the criteria is</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html">searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][field=<span class="nt">&lt;field_name&gt;</span>]
+<figure class="highlight"><pre><code class="language-html" data-lang="html">searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][field=<span class="nt">&lt;field_name&gt;</span>]
 searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][value=<span class="nt">&lt;search_value&gt;</span>]
-searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][condition_type=<span class="nt">&lt;operator&gt;</span>]</code></pre></div>
+searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][condition_type=<span class="nt">&lt;operator&gt;</span>]</code></pre></figure>
 
 <p>where <code>condition_type</code> is one of the following values:</p>
 
@@ -950,10 +950,10 @@ searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<s
 
 <p>For example, the following query finds all users whose first name starts with “Jo”.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/customers/search?
+<figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/customers/search?
 searchCriteria[filter_groups][0][filters][0][field]=firstname<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][value]=Jo%25<span class="err">&amp;</span>
-searchCriteria[filter_groups][0][filters][0][condition_type]=like</code></pre></div>
+searchCriteria[filter_groups][0][filters][0][condition_type]=like</code></pre></figure>
 
 <p>The system creates an array, as shown in the following pseudo-code.</p>
 
@@ -974,13 +974,13 @@ searchCriteria =&gt; [
 
 <p>The following example searches for products whose attributes are <code>size=Large</code> and <code>color=Red</code>. The generated array follows.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/products?`
+<figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/products?`
 searchCriteria[filter_groups][0][filters][0][field]=size<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][value]=Large<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][condition_type]=eq<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][1][field]=color<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][1][value]=Red<span class="err">&amp;</span>
-searchCriteria[filter_groups][0][filters][1][condition_type]=eq</code></pre></div>
+searchCriteria[filter_groups][0][filters][1][condition_type]=eq</code></pre></figure>
 
 <pre>
 searchCriteria =&gt; [

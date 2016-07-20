@@ -1098,7 +1098,7 @@
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2 id="go-live">Go live</h2>
-<p>This section outlines the tasks you must perform before you can launch your live Magento store. </p>
+<p>This section outlines the tasks you must perform before you can launch your live Magento store.</p>
 
 <p>To go live:</p>
 
@@ -1121,7 +1121,7 @@
 
     <p>After you’ve checked with your registrar about where to change your DNS settings, add a CNAME record that references the Master environment’s host name: <code>&lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code></p>
 
-    <p>If you use multiple host names for your site, you must add a CNAME record for each of them. </p>
+    <p>If you use multiple host names for your site, you must add a CNAME record for each of them.</p>
 
     <div class="bs-callout bs-callout-info" id="info">
   		<p>This will not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). In that case, you must use a DNS provider that supports forwarding DNS queries.</p>
@@ -1130,7 +1130,7 @@
     <p>Some DNS providers you can consider follow:</p>
 
     <ul>
-      <li>CNAME with ALIAS record from <a href="http://dyn.com" target="_blank">Dyn</a> </li>
+      <li>CNAME with ALIAS record from <a href="http://dyn.com" target="_blank">Dyn</a></li>
       <li>ANAME record on <a href="http://www.dnsmadeeasy.com" target="_blank">DNS Made Easy</a></li>
       <li>ANAME at <a href="https://www.easydns.com" target="_blank">easyDNS</a></li>
       <li>ACNAME at <a href="https://www.cloudflare.com" target="_blank">CloudFlare</a></li>
@@ -1141,7 +1141,7 @@
 
     <p>Many other providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the <code>www</code> host on the domain and then use the DNS provider’s redirection service to redirect the apex over to the <code>www</code> version of the domain. Consult your DNS provider to see how they support this.</p>
 
-    <p>We support <code>www.domain.tld CNAME &lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code> </p>
+    <p>We support <code>www.domain.tld CNAME &lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code></p>
 
     <p>We don’t support <code>domain.tld CNAME &lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code></p>
   </li>

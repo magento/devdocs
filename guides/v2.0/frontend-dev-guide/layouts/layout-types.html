@@ -869,7 +869,7 @@
 	</style>
 </head>
 <h2>What's in this topic</h2>
-<p>For a particular page, its layout is defined by two major layout components: <em>page layout</em> file and <em>page configuration</em> file. </p>
+<p>For a particular page, its layout is defined by two major layout components: <em>page layout</em> file and <em>page configuration</em> file.</p>
 
 <p>A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. Page layouts feature only <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
 All page layouts used for page rendering should be declared in the page layout declaration file.</p>
@@ -881,7 +881,7 @@ All page layouts used for page rendering should be declared in the page layout d
 <p>This article gives a comprehensive description of each layout file type.</p>
 
 <h2 id="layout-types-page">Page layout</h2>
-<p>Page layout declares the wireframe of a page inside the <code>&lt;body&gt;</code> section, for example one-column layout or two-column layout. </p>
+<p>Page layout declares the wireframe of a page inside the <code>&lt;body&gt;</code> section, for example one-column layout or two-column layout.</p>
 
 <p>Allowed layout instructions:</p>
 
@@ -889,14 +889,14 @@ All page layouts used for page rendering should be declared in the page layout d
   <li><a href="/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont" target="_blank"> &lt;container&gt;</a></li>
   <li><a href="/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank"> &lt;referenceContainer&gt;</a></li>
   <li><a href="/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank"> &lt;move&gt;</a></li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd" target="_blank"> &lt;update&gt;</a> </li>
+  <li><a href="/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd" target="_blank"> &lt;update&gt;</a></li>
 </ul>
 
 <p>Sample page layout:</p>
 
 <p><code>&lt;Magento_Theme_module_dir&gt;/view/frontend/page_layout/2columns-left.xml</code></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;layout</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_layout.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;layout</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_layout.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">&quot;1column&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;columns&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;div.sidebar.main&quot;</span> <span class="na">htmlTag=</span><span class="s">&quot;div&quot;</span> <span class="na">htmlClass=</span><span class="s">&quot;sidebar sidebar-main&quot;</span> <span class="na">after=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
@@ -906,7 +906,7 @@ All page layouts used for page rendering should be declared in the page layout d
             <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;sidebar.additional&quot;</span> <span class="na">as=</span><span class="s">&quot;sidebar_additional&quot;</span> <span class="na">label=</span><span class="s">&quot;Sidebar Additional&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/container&gt;</span>
     <span class="nt">&lt;/referenceContainer&gt;</span>
-<span class="nt">&lt;/layout&gt;</span></code></pre></div>
+<span class="nt">&lt;/layout&gt;</span></code></pre></figure>
 
 <h3 id="layout-types-page-conv">Page layout files conventional location</h3>
 
@@ -921,7 +921,7 @@ All page layouts used for page rendering should be declared in the page layout d
 
 <p>To be able to use a layout for actual page rendering, you need to declare it in <code>layouts.xml</code>.</p>
 
-<p>Conventionally layout declaration file can be located in one of the following locations: </p>
+<p>Conventionally layout declaration file can be located in one of the following locations:</p>
 
 <ul>
 <li>Module layout declarations: <code>&lt;module_dir&gt;/view/frontend/layouts.xml</code></li>
@@ -943,7 +943,7 @@ All page layouts used for page rendering should be declared in the page layout d
 <pre><code>&lt;Magento_Theme_module_dir&gt;/view/frontend/layouts.xml
 </code></pre>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page_layouts</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/PageLayout/etc/layouts.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page_layouts</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/PageLayout/etc/layouts.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;layout</span> <span class="na">id=</span><span class="s">&quot;1column&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>1 column<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;/layout&gt;</span>
@@ -956,7 +956,7 @@ All page layouts used for page rendering should be declared in the page layout d
     <span class="nt">&lt;layout</span> <span class="na">id=</span><span class="s">&quot;3columns&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>3 columns<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;/layout&gt;</span>
-<span class="nt">&lt;/page_layouts&gt;</span></code></pre></div>
+<span class="nt">&lt;/page_layouts&gt;</span></code></pre></figure>
 
 <h2 id="layout-types-conf">Page configuration</h2>
 
@@ -1231,7 +1231,7 @@ All page layouts used for page rendering should be declared in the page layout d
 
 <h2 id="layout-types-gen">Generic layout</h2>
 
-<p>Generic layouts define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. </p>
+<p>Generic layouts define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of the HTML page markup.</p>
 
 <h3 id="layout-type-gen-loc">Generic layout file conventional location</h3>
 
@@ -1318,13 +1318,13 @@ none
 
 <p>Sample generic layout:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;layout</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/layout_generic.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;layout</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/layout_generic.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">&quot;formkey&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">&quot;adminhtml_googleshopping_types_block&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;root&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Block\Widget\Grid\Container&quot;</span> <span class="na">name=</span><span class="s">&quot;googleshopping.types.container&quot;</span> <span class="na">template=</span><span class="s">&quot;Magento_Backend::widget/grid/container/empty.phtml&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/container&gt;</span>
-<span class="nt">&lt;/layout&gt;</span></code></pre></div>
+<span class="nt">&lt;/layout&gt;</span></code></pre></figure>
 
 
 

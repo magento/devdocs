@@ -1146,7 +1146,7 @@
 <h3 id="purpose-of-factories">Purpose of factories</h3>
 <p>Factories are special objects that have only one purpose: to create an instance of one non-injectable class or interface. Unlike other objects, factories are allowed to depend on the object manager. Factories are used to isolate the object manager from business code as the following example shows:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Magento\Core\Model\Config\BaseFactory</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Magento\Core\Model\Config\BaseFactory</span>
 <span class="p">{</span>
     <span class="k">protected</span> <span class="nv">$_objectManager</span><span class="p">;</span>
 
@@ -1159,27 +1159,27 @@
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;Magento\Core\Model\Config\Base&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;sourceData&#39;</span> <span class="o">=&gt;</span> <span class="nv">$sourceData</span><span class="p">]);</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="factories-are-generated-classes">Factories are generated classes</h3>
 <p>Factories are always named identically to the classes they instantiate, suffixed with <code>Factory</code>.  (For example, <code>Magento\Cms\Model\BlockFactory</code> is responsible for objects of the class <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Cms/Model/Block.php" target="_blank">Magento\Cms\Model\Block</a>.)</p>
 
-<p>An important thing to understand about factories is that they are an automatically generated class type.  Factory classes do not need to be explicitly defined.  Simply reference a class name with <code>Factory</code> appended in a constructor, and Magento automatically generates the factory class if it does not already exist.  (See <a href="/guides/v2.1/extension-dev-guide/code-generation.html">Code generation</a> for more information.)  </p>
+<p>An important thing to understand about factories is that they are an automatically generated class type.  Factory classes do not need to be explicitly defined.  Simply reference a class name with <code>Factory</code> appended in a constructor, and Magento automatically generates the factory class if it does not already exist.  (See <a href="/guides/v2.1/extension-dev-guide/code-generation.html">Code generation</a> for more information.)</p>
 
 <p>Factory classes can be explicitly defined, however, if customization of the typical factory behavior is desired for a specific class. The code in factories provides <code>typeSafety</code> (<code>@return</code> annotation) so IDEs understand the type of returned object for the type.</p>
 
 <h3 id="factories-are-injectable">Factories are injectable</h3>
 <p>Factories themselves are injectables, and therefore constructor injection is still key to the process of instantiating objects.  Receive a factory class via a constructor:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">__construct</span> <span class="p">(</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">__construct</span> <span class="p">(</span>
     <span class="nx">\Magento\Cms\Model\BlockFactory</span> <span class="nv">$blockFactory</span>
 <span class="p">)</span> <span class="p">{</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span> <span class="o">=</span> <span class="nv">$blockFactory</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>When an instance of the class is needed, use the factory to instantiate it:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$block</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$block</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span></code></pre></figure>
 
 <p>The <code>_create_</code> method of factories accepts an array, which is passed as the <code>$data</code> array to the instantiated object.</p>
 

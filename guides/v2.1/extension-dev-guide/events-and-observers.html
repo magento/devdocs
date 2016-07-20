@@ -1138,19 +1138,19 @@
 		<h2 class="no_toc" id="events-and-observers">Events and observers</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#events">Events</a>    <ul>
-      <li><a href="#dispatching-events">Dispatching events</a></li>
-      <li><a href="#creating-new-events">Creating new events</a></li>
-      <li><a href="#event-areas">Event areas</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#events" id="markdown-toc-events">Events</a>    <ul>
+      <li><a href="#dispatching-events" id="markdown-toc-dispatching-events">Dispatching events</a></li>
+      <li><a href="#creating-new-events" id="markdown-toc-creating-new-events">Creating new events</a></li>
+      <li><a href="#event-areas" id="markdown-toc-event-areas">Event areas</a></li>
     </ul>
   </li>
-  <li><a href="#observers">Observers</a>    <ul>
-      <li><a href="#creating-an-observer">Creating an observer</a></li>
-      <li><a href="#subscribing-to-events">Subscribing to events</a></li>
+  <li><a href="#observers" id="markdown-toc-observers">Observers</a>    <ul>
+      <li><a href="#creating-an-observer" id="markdown-toc-creating-an-observer">Creating an observer</a></li>
+      <li><a href="#subscribing-to-events" id="markdown-toc-subscribing-to-events">Subscribing to events</a></li>
     </ul>
   </li>
-  <li><a href="#recommended-reading">Recommended Reading</a></li>
+  <li><a href="#recommended-reading" id="markdown-toc-recommended-reading">Recommended Reading</a></li>
 </ul>
 
 <h3 id="overview">Overview</h3>
@@ -1169,7 +1169,7 @@
 
 <p>The following example shows you how to dispatch an event with and without an array of data.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">MyClass</span><span class="p">{</span>
   <span class="sd">/**</span>
@@ -1188,7 +1188,7 @@
     <span class="c1">// More code that sets $eventData...</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">&#39;my_module_event_after&#39;</span><span class="p">,[</span><span class="s1">&#39;myEventData&#39;</span><span class="o">=&gt;</span><span class="nv">$eventData</span><span class="p">]);</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="creating-new-events">Creating new events</h4>
 
@@ -1208,7 +1208,7 @@
 
 <p>Below is an example of the basic observer class structure:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Observer</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Observer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">MyObserver</span> <span class="k">implements</span> <span class="nx">ObserverInterface</span>
 <span class="p">{</span>
@@ -1222,11 +1222,11 @@
   <span class="p">{</span>
     <span class="c1">//Observer execution code...</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>One of the more powerful feature of observers is that they are able to use parameters passed into the event when it was dispatched. Below is an example of an observer obtaining data passed in when the event was dispatched.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Observer</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Observer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">AnotherObserver</span> <span class="k">implements</span> <span class="nx">ObserverInterface</span>
 <span class="p">{</span>
@@ -1241,7 +1241,7 @@
     <span class="nv">$myEventData</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">&#39;myEventData&#39;</span><span class="p">);</span>
     <span class="c1">//Additional observer execution code...</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="subscribing-to-events">Subscribing to events</h4>
 
@@ -1258,7 +1258,7 @@
 
 <p>Below is an example of how to assign observers to watch certain events:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Event/etc/events.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">&quot;my_module_event_before&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;observer</span> <span class="na">name=</span><span class="s">&quot;myObserverName&quot;</span> <span class="na">instance=</span><span class="s">&quot;MyCompany\MyModule\Observer\MyObserver&quot;</span> <span class="nt">/&gt;</span>
@@ -1266,7 +1266,7 @@
     <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">&quot;my_module_event_after&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;observer</span> <span class="na">name=</span><span class="s">&quot;myObserverName&quot;</span> <span class="na">instance=</span><span class="s">&quot;MyCompany\MyModule\Observer\AnotherObserver&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/event&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>In the preceding example, we assign the observer <code>MyObserver</code> to the custom event <code>my_module_event_before</code> and <code>AnotherObserver</code> to <code>my_module_event_after</code>.</p>
 

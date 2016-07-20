@@ -1109,7 +1109,7 @@
 <h2 id="relationship">Relationship</h2>
 <p>The format exposed in the <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code>$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
     <span class="s2">&quot;redis&quot;</span>: <span class="o">[</span>
         <span class="o">{</span>
             <span class="s2">&quot;host&quot;</span>: <span class="s2">&quot;192.0.2.55&quot;</span>,
@@ -1117,42 +1117,42 @@
             <span class="s2">&quot;port&quot;</span>: 6379
         <span class="o">}</span>
     <span class="o">]</span>
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span></code></pre></figure>
 
 <h2 id="usage-example">Usage example</h2>
 <p>In your <code>.magento/services.yaml</code>:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">myredis</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">redis:3.0</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">myredis</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">redis:3.0</span></code></pre></figure>
 
 <p>You can also use the following:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">cache</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">redis:3.0</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">cache</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">redis:3.0</span></code></pre></figure>
 
 <p>In your <code>.magento.app.yaml</code>, configure the relationship and enable the <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-php">PHP redis extension</a> if you are using PHP:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">runtime</span><span class="p-Indicator">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">runtime</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span>
         <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">redis</span>
 
 <span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">redis</span><span class="p-Indicator">:</span> <span class="s">&quot;myredis:redis&quot;</span></code></pre></div>
+    <span class="l-Scalar-Plain">redis</span><span class="p-Indicator">:</span> <span class="s">&quot;myredis:redis&quot;</span></code></pre></figure>
 
 <p>You can then use the service in a configuration file of your application as follows:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">if</span> <span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;MAGENTO_CLOUD_RELATIONSHIPS&#39;</span><span class="p">))</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">if</span> <span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;MAGENTO_CLOUD_RELATIONSHIPS&#39;</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;MAGENTO_CLOUD_RELATIONSHIPS&#39;</span><span class="p">)),</span> <span class="k">true</span><span class="p">);</span>
 
     <span class="k">foreach</span> <span class="p">(</span><span class="nv">$relationships</span><span class="p">[</span><span class="s1">&#39;redis&#39;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$endpoint</span><span class="p">)</span> <span class="p">{</span>
         <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;redis_host&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">]);</span>
         <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;redis_port&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">]);</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h2 id="using-redis-cli-to-access-your-redis-service">Using <code>redis-cli</code> to access your Redis service</h2>
 
-<p>Assuming your Redis relationship is named <code>redis</code>, you can access it by opening an <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-tunn">SSH tunnel</a> to a host named <code>redis.internal</code> using the redis-cli tool. </p>
+<p>Assuming your Redis relationship is named <code>redis</code>, you can access it by opening an <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-tunn">SSH tunnel</a> to a host named <code>redis.internal</code> using the redis-cli tool.</p>
 
 <pre><code>redis-cli -h redis.internal
 </code></pre>

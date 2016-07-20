@@ -901,9 +901,9 @@ Change the layout of Advanced Search page from default “1-column” to “2-co
 
 <p><b><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_CatalogSearch/layout/catalogsearch_advanced_index.xml</code></b></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">layout=</span><span class="s">&quot;2columns-left&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">layout=</span><span class="s">&quot;2columns-left&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
 ...
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <h2 id="layout_markup_css">Include static resources (JavaScript, CSS, fonts)</h2>
 
@@ -912,7 +912,7 @@ The following file is a sample of a file you must add:</p>
 
 <p><code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;head&gt;</span>
         <span class="c">&lt;!-- Add local resources --&gt;</span>
     	<span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">&quot;css/my-styles.css&quot;</span><span class="nt">/&gt;</span>
@@ -926,7 +926,7 @@ The following file is a sample of a file you must add:</p>
         <span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot;</span> <span class="na">src_type=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;link</span> <span class="na">src=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Montserrat&quot;</span> <span class="na">src_type=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span> 
     <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>When adding external resources, specifying the <code>src_type="url"</code> argument value is a must.</p>
 
@@ -944,16 +944,16 @@ The following file is a sample of a file you must add:</p>
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;head&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;head&gt;</span>
         <span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">&quot;css/ie-9.css&quot;</span> <span class="na">ie_condition=</span><span class="s">&quot;IE 9&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>This adds an IE conditional comment in the generated HTML, like in the following example:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--[if IE 9]&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--[if IE 9]&gt;</span>
 <span class="c">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; href=&quot;&lt;your_store_web_address&gt;/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css&quot; /&gt;</span>
-<span class="c">&lt;![endif]--&gt;</span></code></pre></div>
+<span class="c">&lt;![endif]--&gt;</span></code></pre></figure>
 
 <p>In this example, <code>orange</code> is a custom theme created by the OrangeCo vendor.</p>
 
@@ -963,7 +963,7 @@ A sample follows:</p>
 
 <p><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
    <span class="nt">&lt;head&gt;</span>
         <span class="c">&lt;!-- Remove local resources --&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;css/styles-m.css&quot;</span> <span class="nt">/&gt;</span>
@@ -974,7 +974,7 @@ A sample follows:</p>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Montserrat&quot;</span> <span class="nt">/&gt;</span> 
-   <span class="nt">&lt;/head&gt;</span></code></pre></div>
+   <span class="nt">&lt;/head&gt;</span></code></pre></figure>
 
 <p>Note, that if a static asset is added with a module path (for example <code>Magento_Catalog::js/sample.js</code>) in the initial layout, you need to specify the module path as well when removing the asset.</p>
 
@@ -982,7 +982,7 @@ A sample follows:</p>
 
 <p>Use the following sample to create (declare) a container:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;some.container&quot;</span> <span class="na">as=</span><span class="s">&quot;someContainer&quot;</span> <span class="na">label=</span><span class="s">&quot;Some Container&quot;</span> <span class="na">htmlTag=</span><span class="s">&quot;div&quot;</span> <span class="na">htmlClass=</span><span class="s">&quot;some-container&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;some.container&quot;</span> <span class="na">as=</span><span class="s">&quot;someContainer&quot;</span> <span class="na">label=</span><span class="s">&quot;Some Container&quot;</span> <span class="na">htmlTag=</span><span class="s">&quot;div&quot;</span> <span class="na">htmlClass=</span><span class="s">&quot;some-container&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <h2 id="ref_container">Reference a container</h2>
 
@@ -990,13 +990,13 @@ A sample follows:</p>
 
 <p>Example: add links to the page header panel.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;header.panel&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;header.panel&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Framework\View\Element\Html\Links&quot;</span> <span class="na">name=</span><span class="s">&quot;header.links&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
                 <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;css_class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/block&gt;</span>
-<span class="nt">&lt;/referenceContainer&gt;</span></code></pre></div>
+<span class="nt">&lt;/referenceContainer&gt;</span></code></pre></figure>
 
 <h2 id="xml-manage-block">Create a block</h2>
 
@@ -1004,13 +1004,13 @@ A sample follows:</p>
 
 <p>Example: add a block with a product SKU information.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Block\Product\View\Description&quot;</span> <span class="na">name=</span><span class="s">&quot;product.info.sku&quot;</span> <span class="na">template=</span><span class="s">&quot;product/view/attribute.phtml&quot;</span> <span class="na">after=</span><span class="s">&quot;product.info.type&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Block\Product\View\Description&quot;</span> <span class="na">name=</span><span class="s">&quot;product.info.sku&quot;</span> <span class="na">template=</span><span class="s">&quot;product/view/attribute.phtml&quot;</span> <span class="na">after=</span><span class="s">&quot;product.info.type&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;at_call&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>getSku<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;at_code&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sku<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;css_class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sku<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/block&gt;</span></code></pre></div>
+<span class="nt">&lt;/block&gt;</span></code></pre></figure>
 
 <h2 id="xml-manage-ref-block">Reference a block</h2>
 
@@ -1018,11 +1018,11 @@ A sample follows:</p>
 
 <p>Example: pass the image to the <code>logo</code> block.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;logo&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;logo&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;logo_file&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>images/logo.png<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/referenceBlock&gt;</span></code></pre></div>
+<span class="nt">&lt;/referenceBlock&gt;</span></code></pre></figure>
 
 <h2 id="set_template">Set the template used by a block</h2>
 
@@ -1037,15 +1037,15 @@ A sample follows:</p>
 
 <p><strong>Example 1:</strong></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span> <span class="na">template=</span><span class="s">&quot;%Namespace_Module::new_template.phtml%&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span> <span class="na">template=</span><span class="s">&quot;%Namespace_Module::new_template.phtml%&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
 
-<p><strong>Example 2:</strong> </p>
+<p><strong>Example 2:</strong></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%Namespace_Module::new_template.phtml%<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
- <span class="nt">&lt;/referenceBlock&gt;</span></code></pre></div>
+ <span class="nt">&lt;/referenceBlock&gt;</span></code></pre></figure>
 
 <p>In both example, the template is specified according to the following:</p>
 
@@ -1066,17 +1066,17 @@ A sample follows:</p>
 
 <p>Initial block declaration:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Namespace_Module_Block_Type&quot;</span> <span class="na">name=</span><span class="s">&quot;block.example&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Block Label<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/block&gt;</span>
-...</code></pre></div>
+...</code></pre></figure>
 
 <p>Extending layout:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;block.example&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="c">&lt;!-- Modified block argument --&gt;</span>
@@ -1085,7 +1085,7 @@ A sample follows:</p>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;custom_label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Custom Block Label<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/referenceBlock&gt;</span> 
-...</code></pre></div>
+...</code></pre></figure>
 
 <h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
 
@@ -1093,36 +1093,36 @@ A sample follows:</p>
 
 <ul>
   <li>using the <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html#argument"><code>&lt;argument&gt;</code></a> instruction for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code></li>
-  <li>using the <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through <code>&lt;argument&gt;</code>. </li>
+  <li>using the <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through <code>&lt;argument&gt;</code>.</li>
 </ul>
 
 <p>Example 1: Set a CSS class and add an attribute for the product page using <code>&lt;argument&gt;</code>.</p>
 
 <p>Extending layout:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">	<span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span><span class="nt">&gt;</span>
 		<span class="nt">&lt;arguments&gt;</span>
 		    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;css_class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product<span class="nt">&lt;/argument&gt;</span>
 		    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;add_base_attribute&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>itemprop=&quot;name&quot;<span class="nt">&lt;/argument&gt;</span>
 		<span class="nt">&lt;/arguments&gt;</span>
-	<span class="nt">&lt;/referenceBlock&gt;</span></code></pre></div>
+	<span class="nt">&lt;/referenceBlock&gt;</span></code></pre></figure>
 
-<p>Example 2: Set a page title using <code>&lt;action&gt;</code>. </p>
+<p>Example 2: Set a page title using <code>&lt;action&gt;</code>.</p>
 
 <div class="bs-callout bs-callout-warning" id="info">
 <span class="glyphicon-class">
- <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
+ <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code>&lt;/a&gt; for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
 </div>
 
 <p>Extending layout:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">	...
 	<span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span><span class="nt">&gt;</span>
 	    <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">&quot;setPageTitle&quot;</span><span class="nt">&gt;</span>
 	        <span class="nt">&lt;argument</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Catalog Advanced Search<span class="nt">&lt;/argument&gt;</span>
 	    <span class="nt">&lt;/action&gt;</span>
 	<span class="nt">&lt;/referenceBlock&gt;</span>
-	...</code></pre></div>
+	...</code></pre></figure>
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
@@ -1144,12 +1144,12 @@ put the stock availability and SKU blocks next to the product price on a product
 <p>Let’s place the stock availability and SKU blocks after product price block on a product page, and move the review block out of the product-info-price container.
 To do this, add the extending <code>catalog_product_view.xml</code> in the <code>app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/</code> directory:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">&quot;product.info.stock.sku&quot;</span> <span class="na">destination=</span><span class="s">&quot;product.info.price&quot;</span> <span class="na">after=</span><span class="s">&quot;product.price.final&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">&quot;product.info.review&quot;</span> <span class="na">destination=</span><span class="s">&quot;product.info.main&quot;</span> <span class="na">before=</span><span class="s">&quot;product.info.price&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>This would make the product page look like following:</p>
 
@@ -1162,13 +1162,13 @@ To do this, add the extending <code>catalog_product_view.xml</code> in the <code
 
 <h2 id="layout_markup_remove_elements">Remove elements</h2>
 
-<p>Elements are removed using the <code>remove</code> attribute for the <code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code>. </p>
+<p>Elements are removed using the <code>remove</code> attribute for the <code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code>.</p>
 
-<p><strong>Example</strong>: remove the Compare Products sidebar block from all store pages. </p>
+<p><strong>Example</strong>: remove the Compare Products sidebar block from all store pages.</p>
 
 <p>This block is declared in <code>app/code/Magento/Catalog/view/frontend/layout/default.xml</code>:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
 ...
         <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;sidebar.additional&quot;</span><span class="nt">&gt;</span>
@@ -1176,20 +1176,20 @@ To do this, add the extending <code>catalog_product_view.xml</code> in the <code
         <span class="nt">&lt;/referenceContainer&gt;</span>
 ...
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>To remove the block, add the extending <code>default.xml</code> in your theme:
 <code>&lt;theme_dir&gt;/Magento_Catalog/layout/default.xml</code></p>
 
 <p>In this file, reference the element having added the <code>remove</code> attribute:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
 ...
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;catalog.compare.sidebar&quot;</span> <span class="na">remove=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
 ...
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <h2 id="layout_markup_replace_elements">Replace elements</h2>
 

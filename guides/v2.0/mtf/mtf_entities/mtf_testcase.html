@@ -758,17 +758,17 @@
 		<h2>Test case</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#mtf_testcase_overview">Test case overview</a></li>
-  <li><a href="#structure">Test case structure</a>    <ul>
-      <li><a href="#docblock">Docblock</a></li>
-      <li><a href="#prepare-method"><code>__prepare()</code> (optional)</a></li>
-      <li><a href="#inject-method"><code>__inject()</code> (optional)</a></li>
-      <li><a href="#test-method"><code>test()</code> (required)</a></li>
-      <li><a href="#teardown-method"><code>tearDown()</code> (optional)</a></li>
+  <li><a href="#mtf_testcase_overview" id="markdown-toc-mtf_testcase_overview">Test case overview</a></li>
+  <li><a href="#structure" id="markdown-toc-structure">Test case structure</a>    <ul>
+      <li><a href="#docblock" id="markdown-toc-docblock">Docblock</a></li>
+      <li><a href="#prepare-method" id="markdown-toc-prepare-method"><code>__prepare()</code> (optional)</a></li>
+      <li><a href="#inject-method" id="markdown-toc-inject-method"><code>__inject()</code> (optional)</a></li>
+      <li><a href="#test-method" id="markdown-toc-test-method"><code>test()</code> (required)</a></li>
+      <li><a href="#teardown-method" id="markdown-toc-teardown-method"><code>tearDown()</code> (optional)</a></li>
     </ul>
   </li>
-  <li><a href="#flow">Test case flow</a></li>
-  <li><a href="#how-to-create">How to create a test case</a></li>
+  <li><a href="#flow" id="markdown-toc-flow">Test case flow</a></li>
+  <li><a href="#how-to-create" id="markdown-toc-how-to-create">How to create a test case</a></li>
 </ul>
 
 <h2 id="mtf_testcase_overview">Test case overview</h2>
@@ -780,7 +780,7 @@
   <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a>: supports a Magento modularity and enables you to inject one step into another test</li>
 </ul>
 
-<p>This topic discusses the injectable test only. </p>
+<p>This topic discusses the injectable test only.</p>
 
 <h2 id="structure">Test case structure</h2>
 
@@ -795,13 +795,13 @@ Usage of docblock is a good practice for your new tests. See <a href="https://gi
 
 <p>The <code>__prepare()</code> method can be useful to prepare the unchangeable data that is repeatedly used for different test variations. The most popular use case is to create a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a> or a configuration setup that is used in the test.</p>
 
-<p>This method is called one time only during the test launch and is optional to use. <code>__prepare</code> can return an array of arguments which can be used as arguments in the <code>test()</code> method of a test case and the <code>processAssert()</code> method in <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a>. The following example creates and returns the <code>$customer</code> fixture. </p>
+<p>This method is called one time only during the test launch and is optional to use. <code>__prepare</code> can return an array of arguments which can be used as arguments in the <code>test()</code> method of a test case and the <code>processAssert()</code> method in <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a>. The following example creates and returns the <code>$customer</code> fixture.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">__prepare</span><span class="p">(</span><span class="nx">Customer</span> <span class="nv">$customer</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">__prepare</span><span class="p">(</span><span class="nx">Customer</span> <span class="nv">$customer</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nv">$customer</span><span class="o">-&gt;</span><span class="na">persist</span><span class="p">();</span>
     <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;customer&#39;</span> <span class="o">=&gt;</span> <span class="nv">$customer</span><span class="p">];</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>A returned argument <code>$customer</code> is available in the test and in <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a>.</p>
 
@@ -809,13 +809,13 @@ Usage of docblock is a good practice for your new tests. See <a href="https://gi
 
 <p>The <code>__inject()</code> method is used to inject data in a test (usually to initialize a page). For an example:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">__inject</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">__inject</span><span class="p">(</span>
     <span class="nx">CatalogProductIndex</span> <span class="nv">$productGrid</span><span class="p">,</span>
     <span class="nx">CatalogProductEdit</span> <span class="nv">$editProductPage</span>
 <span class="p">)</span> <span class="p">{</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">productGrid</span> <span class="o">=</span> <span class="nv">$productGrid</span><span class="p">;</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">editProductPage</span> <span class="o">=</span> <span class="nv">$editProductPage</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>This method is run before each <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">variation</a> test started. Returned arguments from this method are available in <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a> and in the test as well.</p>
 
@@ -832,7 +832,7 @@ Usage of docblock is a good practice for your new tests. See <a href="https://gi
   <li>saving of the edited product</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Run update product simple entity test.</span>
 <span class="sd"> *</span>
@@ -863,7 +863,7 @@ Usage of docblock is a good practice for your new tests. See <a href="https://gi
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">editProductPage</span><span class="o">-&gt;</span><span class="na">getProductForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">editProductPage</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
     <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;category&#39;</span> <span class="o">=&gt;</span> <span class="nv">$category</span><span class="p">];</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>A returned array is available in constraints within current variation.</p>
 
@@ -873,13 +873,13 @@ Usage of docblock is a good practice for your new tests. See <a href="https://gi
 
 <p>For example, the following code deletes a sales rule after each variation:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">tearDown</span><span class="p">()</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">tearDown</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteIndex</span><span class="o">-&gt;</span><span class="na">getPromoQuoteGrid</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">searchAndOpen</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">salesRuleName</span><span class="p">]);</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteEdit</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteEdit</span><span class="o">-&gt;</span><span class="na">getModalBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">acceptAlert</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h2 id="flow">Test case flow</h2>
 

@@ -589,7 +589,7 @@
    </tbody>
 </table>
 
-<p>The WSDL URL follows the following pattern: </p>
+<p>The WSDL URL follows the following pattern:</p>
 
 <p><code>http://&lt;magento.host&gt;/soap/&lt;optional_store_code&gt;?wsdl&amp;services=&lt;service_name_1&gt;,&lt;service_name_2&gt;</code></p>
 
@@ -638,7 +638,7 @@
 
 <p>The following PHP script illustrates how to get an access token:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="nv">$opts</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
             <span class="s1">&#39;http&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;header&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Authorization: Bearer 36849300bca4fbff758d93a3379f1b8e&#39;</span>
@@ -650,7 +650,7 @@
 <span class="nv">$context</span> <span class="o">=</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$opts</span><span class="p">);</span>
 <span class="nv">$soapClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SoapClient</span><span class="p">(</span><span class="nv">$wsdlUrl</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;version&#39;</span> <span class="o">=&gt;</span> <span class="nx">SOAP_1_2</span><span class="p">,</span> <span class="s1">&#39;context&#39;</span> <span class="o">=&gt;</span> <span class="nv">$context</span><span class="p">]);</span>
  
-<span class="nv">$soapResponse</span> <span class="o">=</span> <span class="nv">$soapClient</span><span class="o">-&gt;</span><span class="na">testModule1AllSoapAndRestV1Item</span><span class="p">(</span><span class="nv">$serviceArgs</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="nv">$soapResponse</span> <span class="o">=</span> <span class="nv">$soapClient</span><span class="o">-&gt;</span><span class="na">testModule1AllSoapAndRestV1Item</span><span class="p">(</span><span class="nv">$serviceArgs</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <h2 id="related">Related topics</h2>
 <ul>

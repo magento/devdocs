@@ -871,12 +871,12 @@ Also, it gives information how to add a theme independent logo for your store.</
 <p><strong>Contents</strong>:</p>
 
 <ul id="markdown-toc">
-  <li><a href="#prerequisites">Prerequisites</a></li>
-  <li><a href="#theme-apply-apply">Apply a theme</a></li>
-  <li><a href="#theme-apply-except">Add a design exception</a></li>
-  <li><a href="#theme-apply-logo">Add a theme-independent logo</a></li>
-  <li><a href="#theme-apply-clear">Clear the cache</a></li>
-  <li><a href="#troubleshooting-if-the-changes-do-not-get-applied">Troubleshooting (if the changes do not get applied)</a></li>
+  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
+  <li><a href="#theme-apply-apply" id="markdown-toc-theme-apply-apply">Apply a theme</a></li>
+  <li><a href="#theme-apply-except" id="markdown-toc-theme-apply-except">Add a design exception</a></li>
+  <li><a href="#theme-apply-logo" id="markdown-toc-theme-apply-logo">Add a theme-independent logo</a></li>
+  <li><a href="#theme-apply-clear" id="markdown-toc-theme-apply-clear">Clear the cache</a></li>
+  <li><a href="#troubleshooting-if-the-changes-do-not-get-applied" id="markdown-toc-troubleshooting-if-the-changes-do-not-get-applied">Troubleshooting (if the changes do not get applied)</a></li>
 </ul>
 
 <h2 id="prerequisites">Prerequisites</h2>
@@ -893,7 +893,7 @@ Also, it gives information how to add a theme independent logo for your store.</
   <li>In the <strong>Store View</strong> drop-down field, select the store view where you want to apply the theme.</li>
   <li>On the <strong>Design Theme</strong> tab, select your newly created theme in the <strong>Design Theme</strong> drop-down.</li>
   <li>Click <strong>Save Config</strong>.</li>
-  <li>If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. </li>
+  <li>If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.</li>
   <li>To see your changes applied, reload the store front pages.</li>
 </ol>
 
@@ -907,7 +907,7 @@ To add a design exception:</p>
   <li>On the <strong>Design Theme</strong> tab next to <strong>User-Agent Exceptions</strong> click <strong>Add</strong>.</li>
   <li>In the <strong>Search String</strong> box specify the user-agent using either normal strings or regular exceptions (PCRE). In the <strong>Design Theme</strong> drop-down list select the theme to be used for matching agent.</li>
   <li>Click <strong>Save Config</strong>.</li>
-  <li>If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. </li>
+  <li>If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.</li>
   <li>To see your changes applied, reload the store front pages.</li>
 </ol>
 
@@ -922,7 +922,7 @@ To add a permanent theme-independent logo:</p>
   <li>In the <strong>Logo Image</strong> field browse to the logo file saved in your file system.</li>
   <li>Upload the file.</li>
   <li>Click <strong>Save Config</strong>.</li>
-  <li>If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. </li>
+  <li>If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.</li>
   <li>To see your changes applied, reload the store front pages.</li>
 </ol>
 
@@ -951,7 +951,7 @@ To add a permanent theme-independent logo:</p>
     <p>Delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessed</code> directories, then reload the pages. You can delete the files manually or run the <code>grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
   </li>
   <li>
-    <p>In your Magento database, in the <code>theme</code> table, check if the <code>type</code> value for your custom theme is “0”. If it is “1” or “2”, change it to “0”. You can use a database tool such as <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> or do it manually from the command line. </p>
+    <p>In your Magento database, in the <code>theme</code> table, check if the <code>type</code> value for your custom theme is “0”. If it is “1” or “2”, change it to “0”. You can use a database tool such as <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> or do it manually from the command line.</p>
   </li>
 </ul>
 

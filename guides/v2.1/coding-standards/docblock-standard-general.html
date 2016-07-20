@@ -517,18 +517,18 @@
 
 <p><strong>DocBlock Header in a PHP-file</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Short description...</span>
 <span class="sd"> *</span>
 <span class="sd"> * Long description</span>
 <span class="sd"> * Broken down into several lines</span>
 <span class="sd"> *</span>
 <span class="sd"> * License notice...</span>
-<span class="sd"> */</span></code></pre></div>
+<span class="sd"> */</span></code></pre></figure>
 
 <p><strong>DocBlock Header in an XML-file</strong></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">/**
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">/**
  * Short description...
  *
  * Long description
@@ -536,7 +536,7 @@
  *
  * License notice...
  */
---&gt;</code></pre></div>
+--&gt;</code></pre></figure>
 
 <h2 id="code-elements">Code structural elements</h2>
 
@@ -548,13 +548,13 @@
 
 <p><strong>DocBlock for a Class</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Autoloader with class map capability</span>
 <span class="sd"> *</span>
 <span class="sd"> * ...</span>
 <span class="sd"> */</span>
 <span class="k">class</span> <span class="nc">Autoload</span>
-<span class="p">{</span></code></pre></div>
+<span class="p">{</span></code></pre></figure>
 
 <p>But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element. So there are two solutions possible:</p>
 
@@ -565,7 +565,7 @@
 
 <p><strong>DocBlock with Included Script File</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Magento integration Magento test framework (MTF) bootstrap</span>
 <span class="sd"> *</span>
 <span class="sd"> * ...</span>
@@ -579,11 +579,11 @@
 <span class="sd"> * Magento integration Magento test framework (MTF) bootstrap</span>
 <span class="sd"> */</span>
 <span class="k">class</span> <span class="nc">Bootstrap</span>
-<span class="p">{</span></code></pre></div>
+<span class="p">{</span></code></pre></figure>
 
 <p><strong>DocBlock with Included Class File</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Framework\Profiler\Adapter</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Framework\Profiler\Adapter</span><span class="p">;</span>
 
 <span class="sd">/**</span>
 <span class="sd"> * Profiler CSV adapter</span>
@@ -602,7 +602,7 @@
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">require_once</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/../../functions.php&#39;</span><span class="p">;</span></code></pre></div>
+<span class="k">require_once</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/../../functions.php&#39;</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="classes-interfaces">Classes and interfaces</h3>
 
@@ -614,7 +614,7 @@
 
 <p><strong>Example of a Method DocBlock</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Logger</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Logger</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Math\Random</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Stdlib\DateTime</span> <span class="k">as</span> <span class="nx">StdlibDateTime</span><span class="p">;</span>
 
@@ -633,7 +633,7 @@
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Random</span> <span class="nv">$mathRandom</span><span class="p">,</span> <span class="nx">StdlibDateTime</span> <span class="nv">$dateTime</span><span class="p">,</span> <span class="nv">$number</span><span class="p">)</span>
 <span class="p">{</span>
 
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="class-attributes">Class attributes</h3>
 
@@ -641,7 +641,7 @@
 
 <p><strong>Example of Class Attribute</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// ...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// ...</span>
 <span class="k">namespace</span> <span class="nx">Magento</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">Profiler</span>
@@ -649,7 +649,7 @@
     <span class="sd">/**</span>
 <span class="sd">     * @var Profiler</span>
 <span class="sd">     */</span>
-    <span class="k">protected</span> <span class="k">static</span> <span class="nv">$instance</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span></code></pre></div>
+    <span class="k">protected</span> <span class="k">static</span> <span class="nv">$instance</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="functions-methods">Functions and methods</h3>
 
@@ -666,7 +666,7 @@
 
 <p><strong>Example of a Method DocBlock</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Merge the config XML files</span>
 <span class="sd"> *</span>
 <span class="sd"> * @param  array $configFiles</span>
@@ -691,7 +691,7 @@
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_dom</span> <span class="o">=</span> <span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">getDom</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="throws">Divergence in @throws tag</h4>
 
@@ -699,7 +699,7 @@
 
 <p><strong>Example of Throwing Exception Explicitly</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Set an arbitrary value to specified element</span>
 <span class="sd"> *</span>
 <span class="sd"> * @param  string $elementId</span>
@@ -722,7 +722,7 @@
             <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>In this general case, if an exception is thrown in a sub-routine, then <code>@throws</code> must not be used in the parent method.</p>
 
@@ -730,7 +730,7 @@
 
 <p><strong>Throwing Exception Implicitly</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Recursively delete directory from storage</span>
 <span class="sd"> *</span>
 <span class="sd"> * @param  string $path Target dir</span>
@@ -759,7 +759,7 @@
     <span class="k">if</span> <span class="p">(</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$pathCmp</span><span class="p">,</span> <span class="nv">$rootCmp</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
         <span class="nv">$io</span><span class="o">-&gt;</span><span class="na">rmdir</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getThumbnailRoot</span><span class="p">()</span> <span class="o">.</span> <span class="nx">DS</span> <span class="o">.</span> <span class="nb">ltrim</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$pathCmp</span><span class="p">,</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$rootCmp</span><span class="p">)),</span> <span class="s1">&#39;\\/&#39;</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="return">@return tag</h4>
 
@@ -773,7 +773,7 @@
 
 <p>For example, a global constant:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Directory separator shorthand</span>
 <span class="sd"> */</span>
 <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DS&#39;</span><span class="p">,</span> <span class="nx">DIRECTORY_SEPARATOR</span><span class="p">);</span>
@@ -784,7 +784,7 @@
     <span class="sd">/**</span>
 <span class="sd">     * Separator literal to assemble timer identifier from timer names</span>
 <span class="sd">     */</span>
-    <span class="k">const</span> <span class="no">NESTING_SEPARATOR</span> <span class="o">=</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">;</span></code></pre></div>
+    <span class="k">const</span> <span class="no">NESTING_SEPARATOR</span> <span class="o">=</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="DocBlock-templates">DocBlock templates</h3>
 
@@ -808,7 +808,7 @@
 
 <p>For example, declaration of multiple class constants or attributes:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Mage_Core_Model_Layout</span> <span class="k">extends</span> <span class="nx">Varien_Simplexml_Config</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Mage_Core_Model_Layout</span> <span class="k">extends</span> <span class="nx">Varien_Simplexml_Config</span>
 <span class="p">{</span>
     <span class="sd">/**#@+</span>
 <span class="sd">     * Supported layout directives</span>
@@ -825,7 +825,7 @@
 <span class="sd">     */</span>
     <span class="k">protected</span> <span class="nv">$scheduledMoves</span>   <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
     <span class="k">protected</span> <span class="nv">$scheduledRemoves</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-    <span class="sd">/**#@-*/</span></code></pre></div>
+    <span class="sd">/**#@-*/</span></code></pre></figure>
 
 <h2 id="documentation-space">Structure of documentation space</h2>
 
@@ -845,7 +845,7 @@
 
 <p>Use the <code>@deprecated</code> tag to indicate an element is to be deprecated. The text of the <code>@deprecated</code> tag should indicate the version the element was deprecated as well as the version it will be removed. If applicable, also specify what has replaced the deprecated element.</p>
 
-<p>To maintain backward compatibility, an element should be removed only on major revisions.  </p>
+<p>To maintain backward compatibility, an element should be removed only on major revisions.</p>
 
 <h3 id="var">@var inline tag</h3>
 
@@ -853,15 +853,15 @@
 
 <p><strong>Inline Type Hinting</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var libXMLError $error */</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var libXMLError $error */</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span></code></pre></figure>
 
 <p>Some IDEs understand a different notation, where type is specified after variable name. This notation is also valid:</p>
 
 <p><strong>Inline Type Hinting Variation</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var $error libXMLError */</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var $error libXMLError */</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span></code></pre></figure>
 
 <h3 id="see">@see tag</h3>
 
@@ -869,11 +869,11 @@
 
 <p>Specifically, this is possible when a PHP-file composed from multiple file includes, as result variables may contain objects of different types depending on context:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * @var $this ClassOne</span>
 <span class="sd"> * @see ClassTwo</span>
 <span class="sd"> * @see FooInterface</span>
-<span class="sd"> */</span></code></pre></div>
+<span class="sd"> */</span></code></pre></figure>
 
 <h3 id="other-tags">Other tags</h3>
 
@@ -885,13 +885,13 @@
 
 <p>If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * ...</span>
 <span class="sd"> *</span>
 <span class="sd"> * @param  string $argument</span>
 <span class="sd"> * @return bool</span>
 <span class="sd"> * @link   http://example.com</span>
-<span class="sd"> */</span></code></pre></div>
+<span class="sd"> */</span></code></pre></figure>
 
 <h3 id="format-consistency">Formatting consistency</h3>
 
@@ -901,7 +901,7 @@
 
 <p><strong>Correct – align everything:</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * ...</span>
 <span class="sd"> *</span>
 <span class="sd"> * @param  string   $parentId</span>
@@ -909,11 +909,11 @@
 <span class="sd"> * @param  int|null $position</span>
 <span class="sd"> * @return int</span>
 <span class="sd"> * @see    _insertChild() for position explanation</span>
-<span class="sd"> */</span></code></pre></div>
+<span class="sd"> */</span></code></pre></figure>
 
 <p><strong>Also correct – don’t align anything:</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * ...</span>
 <span class="sd"> *</span>
 <span class="sd"> * @param string   $parentId</span>
@@ -922,11 +922,11 @@
 <span class="sd"> * @return int</span>
 <span class="sd"> * @see _insertChild() for position explanation</span>
 <span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">reorderChild</span><span class="p">(</span><span class="nv">$parentId</span><span class="p">,</span> <span class="nv">$childId</span><span class="p">,</span> <span class="nv">$position</span><span class="p">)</span></code></pre></div>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">reorderChild</span><span class="p">(</span><span class="nv">$parentId</span><span class="p">,</span> <span class="nv">$childId</span><span class="p">,</span> <span class="nv">$position</span><span class="p">)</span></code></pre></figure>
 
 <p><strong>Incorrect – align only partially:</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * ...</span>
 <span class="sd"> *</span>
 <span class="sd"> * @param  string   $parentId</span>
@@ -934,7 +934,7 @@
 <span class="sd"> * @param  int|null $position</span>
 <span class="sd"> * @return int</span>
 <span class="sd"> * @see _insertChild() for position explanation</span>
-<span class="sd"> */</span></code></pre></div>
+<span class="sd"> */</span></code></pre></figure>
 
 
 

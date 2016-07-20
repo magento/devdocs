@@ -897,9 +897,9 @@
 </ul>
 
 <h2 id="customize-email-templates">Customize email templates</h2>
-<p>Email templates are stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [<magento_sales_module_dir>/view/frontend/email/order_new.html](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/view/frontend/email/order_new.html). </magento_sales_module_dir></p>
+<p>Email templates are stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [<Magento_Sales_module_dir>/view/frontend/email/order_new.html](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/view/frontend/email/order_new.html).</Magento_Sales_module_dir></p>
 
-<p>We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. </p>
+<p>We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates.</p>
 
 <p>You can add custom templates as physical files in your custom theme or create them using the Magento Admin. Both approaches are described in the following sections.</p>
 
@@ -921,7 +921,7 @@ Make note of this path because you will need it later when you configure this ne
  <br /><img src="/common/images/email_create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%" /></p>
   </li>
   <li>In <strong>Template Name</strong>, enter a name to identify the template in the Magento Admin.</li>
-  <li>In <strong>Template Subject</strong>, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.  </li>
+  <li>In <strong>Template Subject</strong>, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.</li>
   <li>Customize template content. For details, see <a href="#customize-content">the section on customizing content</a>.</li>
   <li>In <strong>Template Styles</strong>, optionally add CSS styles for the template. These styles are added inside of a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> of the email. Typically, you’ll use the <a href="#email-styles">LESS files</a> to make style changes to emails because some email clients don’t support styles in <code>&lt;style&gt;</code> tags.</li>
   <li>Click <strong>Save Template</strong>.</li>
@@ -944,8 +944,8 @@ Make note of this path because you will need it later when you configure this ne
 <p>Every frontend email template includes a header and footer template using these two directives: <code>{{template config_path="design/email/header_template"}}</code> and <code>{{template config_path="design/email/footer_template"}}</code>. By default, those two directives load contents from these files:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/header.html" target="_blank"><magento_email_module_dir>/view/frontend/email/header.html&lt;/a&gt;</magento_email_module_dir></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/footer.html" target="_blank"><magento_email_module_dir>/view/frontend/email/footer.html&lt;/a&gt;</magento_email_module_dir></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/header.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/header.html&lt;/a&gt;</Magento_Email_module_dir></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/footer.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/footer.html&lt;/a&gt;</Magento_Email_module_dir></a></li>
 </ul>
 
 <p>You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.</p>
@@ -988,7 +988,7 @@ Make note of this path because you will need it later when you configure this ne
 <pre><code>{{inlinecss file="css/email-inline.css"}}
 </code></pre>
 
-<p>The <code>inlinecss</code> directive tells Magento which files to apply as inline styles on the email template. </p>
+<p>The <code>inlinecss</code> directive tells Magento which files to apply as inline styles on the email template.</p>
 
 <p>For example, let’s say an email is being sent from a store configured with the Magento Luma theme. The <code>inlinecss</code> directive first looks for a <code>email-inline.less</code> file in <code>&lt;Magento_Luma_theme_dir&gt;/web/css/email-inline.less</code>. However because that file doesn’t exist, it will fall back to the <code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-inline.less</code> file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.</p>
 
@@ -996,7 +996,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <h3 id="non-inline-styles">Non-inline styles</h3>
 
-<p>Non-inline styles for emails come from global and template-specific styles, as described in the following sections. </p>
+<p>Non-inline styles for emails come from global and template-specific styles, as described in the following sections.</p>
 
 <h4 id="global-non-inline-styles">Global non-inline styles</h4>
 
@@ -1011,14 +1011,14 @@ Make note of this path because you will need it later when you configure this ne
 &lt;/style&gt;
 </code></pre>
 
-<p>The <code>css</code> directive compiles the contents of the provided file and outputs it. </p>
+<p>The <code>css</code> directive compiles the contents of the provided file and outputs it.</p>
 
 <p>For example, let’s say an email is being sent from a store configured with the Magento Luma theme. The <code>css</code> directive first looks for an <code>email.less</code> file in <code>&lt;Magento_Luma_theme_dir&gt;/web/css</code>. However, because the file doesn’t exist there, it falls back to <code>&lt;Magento_Blank_theme_dir&gt;/web/css/email.less</code>. The contents of that file are compiled and its contents output in the <code>&lt;style&gt;</code> tag.</p>
 
 <h4 id="template-specific-non-inline-styles">Template-specific non-inline styles</h4>
-<p>As mentioned in the preceding section, the <code>header.html</code> file outputs the <code>{{var template_styles|raw}}</code> variable. </p>
+<p>As mentioned in the preceding section, the <code>header.html</code> file outputs the <code>{{var template_styles|raw}}</code> variable.</p>
 
-<p>The value of that variable comes from any of the following: </p>
+<p>The value of that variable comes from any of the following:</p>
 
 <ul>
   <li>
@@ -1150,7 +1150,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <h2 id="email-logo">Email logo</h2>
 
-<p>You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin. </p>
+<p>You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin.</p>
 
 <p>Because email clients don’t support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare a Portable Network Graphics (PNG) logo. Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3× the size that you actually want it to display. For example, let’s say your email has a 200px × 100px area for the logo. The logo image should be 600px × 300px.</p>
 
@@ -1166,7 +1166,7 @@ Make note of this path because you will need it later when you configure this ne
     <p>For example, if the OrangeCo vendor wants to add a logo for their custom Orange, they must add a file in the <code>app/design/frontend/OrangeCo/orange/Magento_Email/web</code> directory.</p>
   </li>
   <li>
-    <p>Copy the <code>&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code> file into a <code>Magento_Email/email</code> directory in your theme. </p>
+    <p>Copy the <code>&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code> file into a <code>Magento_Email/email</code> directory in your theme.</p>
 
     <p>For example, the OrangeCo vendor would copy the file to this location: <code>app/design/frontend/OrangeCo/orange/Magento_Email/email/header.html</code></p>
 
@@ -1195,7 +1195,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <ol>
   <li>In the Magento Admin, navigate to <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Design</strong> &gt; <strong>Emails</strong></li>
-  <li>In the <strong>Scope</strong> drop-down list, select the scope for which you want to set a logo (a certain store view, the whole website, or default config). </li>
+  <li>In the <strong>Scope</strong> drop-down list, select the scope for which you want to set a logo (a certain store view, the whole website, or default config).</li>
   <li>
     <p>Upload your logo and specify the alternative text for it.
 <img src="/common/images/email_configuration.png" alt="System configuration" /></p>
@@ -1206,7 +1206,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <h2 id="contact-information-emails">Use contact information in emails</h2>
 
-<p>Emails can output your store name, store email address, store phone number, and store hours of operation if those values are configured in the Admin. </p>
+<p>Emails can output your store name, store email address, store phone number, and store hours of operation if those values are configured in the Admin.</p>
 
 <p>To set those values:</p>
 
@@ -1238,7 +1238,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <h2 id="localization">Localization</h2>
 
-<p>In order to support the translation of content, all strings in emails are output using the <code>trans</code> directive. Example: </p>
+<p>In order to support the translation of content, all strings in emails are output using the <code>trans</code> directive. Example:</p>
 
 <pre><code>{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
 {{trans "Once your package ships we will send you a tracking number."}}
@@ -1246,7 +1246,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <p>The <code>trans</code> directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the <code>fr_FR</code> locale, the emails are translated to French.</p>
 
-<p>Please note, that variable assignment must not contain spaces. </p>
+<p>Please note, that variable assignment must not contain spaces.</p>
 
 <p>Correct:</p>
 

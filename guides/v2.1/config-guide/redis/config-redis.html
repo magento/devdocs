@@ -1330,7 +1330,7 @@
 
 <ul>
   <li>
-    <p>The <code>core_cache_tag</code> table constantly grows. If a Magento instance has multiple web sites and web stores with large catalogs, the table can grow to 15 million records in less than a day. Insertion into <code>core_cache_tag</code> leads to issues with MySQL server, including performance degradation. </p>
+    <p>The <code>core_cache_tag</code> table constantly grows. If a Magento instance has multiple web sites and web stores with large catalogs, the table can grow to 15 million records in less than a day. Insertion into <code>core_cache_tag</code> leads to issues with MySQL server, including performance degradation.</p>
 
     <p>(A <em>tag</em> is an identifier that classifies different types of Magento cache objects.)</p>
   </li>
@@ -1351,16 +1351,16 @@ Further, memcached itself has limitations such as a maximum object size and fixe
     <p>Redis can also be used for PHP session storage, making it possible to completely replace <code>memcached</code> with Redis.</p>
   </li>
   <li>
-    <p>The Redis backend works by indexing tags in files so that tag operations do not require a full scan of every cache file. </p>
+    <p>The Redis backend works by indexing tags in files so that tag operations do not require a full scan of every cache file.</p>
   </li>
   <li>
     <p>The metadata and the cache record are stored in the same file rather than separate files resulting in fewer inodes and fewer file stat, read, write, lock, and unlink operations. Also, the original hashed directory structure had very poor distribution due to the <code>adler32</code> hashing algorithm and prefixes. The multi-level nested directories have been dropped in favor of single-level nesting made from multiple characters.</p>
   </li>
   <li>
-    <p>The backend supports tag-based cache cleanup without <code>foreach</code> loops. </p>
+    <p>The backend supports tag-based cache cleanup without <code>foreach</code> loops.</p>
   </li>
   <li>
-    <p>Redis supports on-disk save and master/slave replication. </p>
+    <p>Redis supports on-disk save and master/slave replication.</p>
 
     <p>This is a highly requested feature that is not supported by <code>memcached</code>. Replication avoids a single point of failure and provides high  availability.</p>
   </li>

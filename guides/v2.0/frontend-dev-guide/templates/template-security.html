@@ -890,7 +890,7 @@
 
 <p>The following code sample illustrates the XSS-safe output in templates:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getTitleHtml</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"></span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getTitleHtml</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getHtmlTitle</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">escapeHtml</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">())</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">&lt;h1&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x">&lt;/h1&gt;</span>
@@ -898,7 +898,7 @@
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s1">&#39;some text&#39;</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s2">&quot;some text&quot;</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">&lt;a href=&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">escapeXssInUrl</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getUrl</span><span class="p">())</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getAnchorTextHtml</span><span class="p">()</span> <span class="o">?</span>
-<span class="o">&gt;&lt;/</span><span class="nx">a</span><span class="o">&gt;</span></code></pre></div>
+<span class="o">&gt;&lt;/</span><span class="nx">a</span><span class="o">&gt;</span></code></pre></figure>
 
 <h4>Static Test</h4>
 

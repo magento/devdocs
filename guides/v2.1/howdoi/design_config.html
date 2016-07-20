@@ -928,14 +928,14 @@
 <p><strong>Contents:</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#customize_grid">Customize the grid</a></li>
-  <li><a href="#customize_options">Customize the design options</a>    <ul>
-      <li><a href="#customize-the-form-configuration">Customize the form configuration</a></li>
-      <li><a href="#meta_data">Add fields’ metadata</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#customize_grid" id="markdown-toc-customize_grid">Customize the grid</a></li>
+  <li><a href="#customize_options" id="markdown-toc-customize_options">Customize the design options</a>    <ul>
+      <li><a href="#customize-the-form-configuration" id="markdown-toc-customize-the-form-configuration">Customize the form configuration</a></li>
+      <li><a href="#meta_data" id="markdown-toc-meta_data">Add fields’ metadata</a></li>
     </ul>
   </li>
-  <li><a href="#access_options">Accessing the options values in backend models</a></li>
+  <li><a href="#access_options" id="markdown-toc-access_options">Accessing the options values in backend models</a></li>
 </ul>
 
 <h2 id="overview">Overview</h2>
@@ -959,7 +959,7 @@ For example, the default set of design options for the store view level is the f
 
 <h2 id="customize_grid">Customize the grid</h2>
 
-<p>The grid containing the configuration scopes is implemented using the <a href="/guides/v2.1/ui-components/ui-listing-grid.html">grid UI component</a>. </p>
+<p>The grid containing the configuration scopes is implemented using the <a href="/guides/v2.1/ui-components/ui-listing-grid.html">grid UI component</a>.</p>
 
 <p>To customize the grid view, take the following steps:</p>
 
@@ -972,7 +972,7 @@ For example, the default set of design options for the store view level is the f
   </li>
 </ol>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 
 <span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;design_config_columns&quot;</span><span class="nt">&gt;</span>
@@ -984,7 +984,7 @@ For example, the default set of design options for the store view level is the f
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/column&gt;</span>
     <span class="nt">&lt;/columns&gt;</span>
-<span class="nt">&lt;/listing&gt;</span></code></pre></div>
+<span class="nt">&lt;/listing&gt;</span></code></pre></figure>
 
 <p>Your <code>design_config_listing.xml</code> is merged with the same files from the other modules. So there is no need to copy their content, you only need to define changes. Even if you want to customize the existing entities, you only have to mention those options, the values of which are customized.</p>
 
@@ -1000,9 +1000,9 @@ For example, the default set of design options for the store view level is the f
 <h2 id="customize_options">Customize the design options</h2>
 
 <h3 id="customize-the-form-configuration">Customize the form configuration</h3>
-<p>Design configuration form is implemented using the <a href="/guides/v2.1/ui-components/ui-form.html">form UI component</a>. </p>
+<p>Design configuration form is implemented using the <a href="/guides/v2.1/ui-components/ui-form.html">form UI component</a>.</p>
 
-<p>To customize the form view, take the following steps: </p>
+<p>To customize the form view, take the following steps:</p>
 
 <ol>
   <li>
@@ -1013,7 +1013,7 @@ For example, the default set of design options for the store view level is the f
   </li>
 </ol>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
 
 
     <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;%fieldset_name%&quot;</span><span class="nt">&gt;</span>
@@ -1044,15 +1044,15 @@ For example, the default set of design options for the store view level is the f
             <span class="nt">&lt;/field&gt;</span>
         <span class="nt">&lt;/fieldset&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
 <p>Your custom fields and field sets will be available for all configuration scopes (website, store, and store view).</p>
 
-<p>Your <code>design_config_form.xml</code> is merged with the same files from the other modules. So there is no need to copy their content, you only need to add your customizations. </p>
+<p>Your <code>design_config_form.xml</code> is merged with the same files from the other modules. So there is no need to copy their content, you only need to add your customizations.</p>
 
 <p>To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration. For example, if you only want to rename the <strong>Other Settings</strong> field set, your form configuration must contain the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 
 <span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
 
@@ -1064,17 +1064,17 @@ For example, the default set of design options for the store view level is the f
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
 <p>To delete an existing field, or field set, in your <code>design_config_form.xml</code> use the following syntax:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
     <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;%fieldset_name%&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;disabled&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span> 
-...</code></pre></div>
+...</code></pre></figure>
 
 <p>For reference, view the form configuration files of Magento modules:</p>
 
@@ -1092,7 +1092,7 @@ For example, the default set of design options for the store view level is the f
 
 <p>The field declaration in a <code>di.xml</code> looks like following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Theme\Model\Design\Config\MetadataProvider&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;metadata&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -1115,11 +1115,11 @@ For example, the default set of design options for the store view level is the f
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span>
-...</code></pre></div>
+...</code></pre></figure>
 
 <p>Example of field declaration:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Theme\Model\Design\Config\MetadataProvider&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Theme\Model\Design\Config\MetadataProvider&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;metadata&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;head_shortcut_icon&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -1134,7 +1134,7 @@ For example, the default set of design options for the store view level is the f
                 <span class="nt">&lt;/item&gt;</span>      
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/type&gt;</span></code></pre></div>
+<span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
 <p>For more examples and reference, view the <code>di.xml</code> files of the Magento modules:</p>
 

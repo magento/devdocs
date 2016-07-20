@@ -635,7 +635,7 @@
 
 <p>JavaScript resources generated in Magento have IDs of two types:  a RequireJS ID and a Magento modular ID. For example JavaScript resources for configurable product will have the following IDs:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Regular ID</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Regular ID</span>
 <span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jquery&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
     <span class="c1">// ...</span>
 <span class="p">});</span>
@@ -643,7 +643,7 @@
 <span class="c1">// Modular ID (Magento module: Magento_ConfigurableProduct/js/configurable)</span>
 <span class="nx">require</span><span class="p">([</span><span class="s2">&quot;Magento_ConfigurableProduct/js/configurable&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Configurable</span><span class="p">){</span>
     <span class="c1">// ...</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <h3 id="m2devgde-js-resources-dependencies">Specify dependencies between JavaScript resources</h3>
 <p>Specifying all dependencies between JavaScript resources might be time consuming. To facilitate this task we implemented ability to build the dependencies via plugin: thus, you will need to specify only dependency of your resource on a plugin, and the latter will pick up all necessary dependencies on other resources automatically.</p>

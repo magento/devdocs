@@ -618,7 +618,7 @@
 
 <p>The confirmation widget source is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/modal/confirm.js">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/confirm.js</a></p>
 
-<p>The widget can be used for implementing confirmation windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="/guides/v2.1/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> </p>
+<p>The widget can be used for implementing confirmation windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="/guides/v2.1/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a></p>
 
 <h3>Contents</h3>
 
@@ -635,18 +635,18 @@
 
 <p><strong>Example1</strong>: initialization on an element</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#confirm_init&#39;</span><span class="p">).</span><span class="nx">confirm</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#confirm_init&#39;</span><span class="p">).</span><span class="nx">confirm</span><span class="p">({</span>
     <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Confirmation title&#39;</span><span class="p">,</span>
     <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">confirm</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span> <span class="c1">//callback on &#39;Ok&#39; button click</span>
         <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span> <span class="c1">//callback on &#39;Cancel&#39; button click</span>
         <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p><strong>Example2</strong>: standalone initialization</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span>
     <span class="s1">&#39;Magento_Ui/js/modal/confirm&#39;</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">confirmation</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Variable that represents the `confirm` widget</span>
   
@@ -660,7 +660,7 @@
         <span class="p">}</span>
     <span class="p">});</span>
   
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p>For details about how to initialize a widget in a<code>.phtml</code> template, refer to the <a href="/guides/v2.1/frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
 
@@ -680,25 +680,25 @@
 
 <p><strong>Type</strong>: Object</p>
 
-<p><strong>Default value</strong>: </p>
+<p><strong>Default value</strong>:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">confirm</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
     <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
     <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="confirm_autoopen">autoOpen</h3>
 <p>Automatically open the confirmation window when the widget is initialized.</p>
 
-<p><strong>Type</strong>: Boolean </p>
+<p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code>false</code></p>
 
 <h3 id="confirm_clickableOverlay">clickableOverlay</h3>
 <p>Close the confirmation window when a user clicks on the overlay.</p>
 
-<p><strong>Type</strong>: Boolean </p>
+<p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code>true</code></p>
 

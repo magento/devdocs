@@ -1145,7 +1145,7 @@
 
 <p>As an example, consider the following two classes:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">SlowLoading</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">SlowLoading</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
     <span class="p">{</span>
@@ -1177,7 +1177,7 @@
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">slowLoading</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">();</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Assume that class <code>SlowLoading</code> has a non-trivial performance impact when instantiated (perhaps due to a complex database query or a call to a third-party web API). Because of the dependency injection in the constructor of <code>FastLoading</code>, this impact is incurred if <code>FastLoading</code> is instantiated.  Note, however, that the <code>SlowLoading</code> instance is used only in the method <code>getSlowValue</code>, meaning that the resource cost is unnecessary if this method is never called on the <code>FastLoading</code> object.</p>
 
@@ -1188,11 +1188,11 @@
 
 <p>Using the preceding example, a proxy can be passed into the constructor arguments instead of the original class, using DI configuration as follows:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;FastLoading&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;FastLoading&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;slowLoading&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>SlowLoading\Proxy<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/type&gt;</span></code></pre></div>
+<span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
 <p>With the proxy used in place of <code>SlowLoading</code>, the <code>SlowLoading</code> class will not be instantiated—and therefore, the resource intensive constructor operations not performed—until the <code>SlowLoading</code> object is used (that is, if the <code>getSlowValue</code> method is called).</p>
 

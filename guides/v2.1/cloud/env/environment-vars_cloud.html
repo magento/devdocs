@@ -1133,7 +1133,7 @@ the variable at runtime and use it to configure your application.</p>
 
 <p>For example, we use the <strong>MAGENTO_CLOUD_RELATIONSHIPS</strong> variable to retrieve environment-related relationships as follows:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">/**
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> /**
      * Get relationships information from MagentoCloud environment variable.
      *
      * @return mixed
@@ -1141,7 +1141,7 @@ the variable at runtime and use it to configure your application.</p>
     protected function getRelationships()
     {
         return json_decode(base64_decode($_ENV[&quot;MAGENTO_CLOUD_RELATIONSHIPS&quot;]), true);
-    }</code></pre></div>
+    }</code></pre></figure>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>

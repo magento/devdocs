@@ -1100,7 +1100,7 @@ engine (equivalent to MySQL with InnoDB).</p>
 <p>We support MySQL version 10.0.</p>
 
 <p>To access the MariaDB database directly, <a href="/guides/v2.0/cloud/env/environments-start.html#env-start-tunn">open an SSH tunnel</a> and use the
-following command: </p>
+following command:</p>
 
 <pre><code>mysql -h database.internal -u user
 </code></pre>
@@ -1108,7 +1108,7 @@ following command: </p>
 <h2 id="relationship">Relationship</h2>
 <p>The format exposed in the <a href="/guides/v2.0/cloud/env/environment-vars_cloud.html"><code>$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
   <span class="s2">&quot;database&quot;</span>: <span class="o">[</span>
     <span class="o">{</span>
       <span class="s2">&quot;host&quot;</span>: <span class="s2">&quot;database.internal&quot;</span>,
@@ -1123,23 +1123,23 @@ following command: </p>
       <span class="s2">&quot;username&quot;</span>: <span class="s2">&quot;user&quot;</span>
     <span class="o">}</span>
   <span class="o">]</span>
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span></code></pre></figure>
 
 <h2 id="usage-example">Usage example</h2>
 <p>In your <code>.magento/services.yaml</code>:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mydatabase</span><span class="p-Indicator">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mydatabase</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mysql:5.5</span>
-    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span></code></pre></div>
+    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span></code></pre></figure>
 
 <p>In your <code>.magento.app.yaml</code>:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">database</span><span class="p-Indicator">:</span> <span class="s">&quot;mydatabase:mysql&quot;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">database</span><span class="p-Indicator">:</span> <span class="s">&quot;mydatabase:mysql&quot;</span></code></pre></figure>
 
 <p>You can use the preceding service in a configuration file of your application as follows:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">getenv</span><span class="p">(</span><span class="s2">&quot;MAGENTO_CLOUD_RELATIONSHIPS&quot;</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">getenv</span><span class="p">(</span><span class="s2">&quot;MAGENTO_CLOUD_RELATIONSHIPS&quot;</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$relationships</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1157,7 +1157,7 @@ following command: </p>
   <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;database_user&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]);</span>
   <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;database_password&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]);</span>
   <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;database_path&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="notes">Notes</h4>
 <ul>

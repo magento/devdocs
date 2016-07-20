@@ -709,7 +709,7 @@
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2 id="whats-in-this-topic">What’s in this topic</h2>
-<p>This topic is aimed for developers, who need to reuse the <a href="/guides/v2.1/ui-library/ui-library-component.html">Magento UI Components</a>. </p>
+<p>This topic is aimed for developers, who need to reuse the <a href="/guides/v2.1/ui-library/ui-library-component.html">Magento UI Components</a>.</p>
 
 <p>The topic covers the following:</p>
 
@@ -744,13 +744,13 @@
 </ul>
 
 <p>Example:
-The <code>.js</code> file of the bookmark component is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js">Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js</a> </p>
+The <code>.js</code> file of the bookmark component is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js">Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js</a></p>
 
 <p>So the <code>component</code> property is set in the <code>.xml</code> configuration file like following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/controls/bookmarks/bookmarks<span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
 <ul>
   <li><code>template</code>: path to the component’s <code>.html</code> template.</li>
@@ -758,11 +758,11 @@ The <code>.js</code> file of the bookmark component is <a href="https://github.c
 
 <p>Example:</p>
 
-<p>The <code>.html</code> template of the bookmarks component is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html">Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html</a>. </p>
+<p>The <code>.html</code> template of the bookmarks component is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html">Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html</a>.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/controls/bookmarks/bookmarks<span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
 <ul>
   <li>
@@ -774,15 +774,16 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
   </li>
 </ul>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;component</span> <span class="na">name=</span><span class="s">&quot;columns_controls&quot;</span><span class="nt">&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> 
+<span class="nt">&lt;component</span> <span class="na">name=</span><span class="s">&quot;columns_controls&quot;</span><span class="nt">&gt;</span></code></pre></figure>
 
-<p>In the run-time <code>columns_controls</code> is transformed to the following string: <code>cms_block_listing.cms_block_listing.listing_top.columns_controls</code>. </p>
+<p>In the run-time <code>columns_controls</code> is transformed to the following string: <code>cms_block_listing.cms_block_listing.listing_top.columns_controls</code>.</p>
 
 <p>This string is constructed from the following values:</p>
 
 <ul>
   <li><code>cms_block_listing.cms_block_listing</code>: the full name of the root component.</li>
-  <li><code>listing_top</code>: the value of the <code>name</code> attribute of the parent <code>&lt;container name="listing_top"&gt;</code> component. </li>
+  <li><code>listing_top</code>: the value of the <code>name</code> attribute of the parent <code>&lt;container name="listing_top"&gt;</code> component.</li>
   <li><code>columns_controls</code>: the value of the <code>name</code> attribute of the component itself.</li>
 </ul>
 
@@ -803,23 +804,23 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 
 <p>Example of setting <code>exports</code> in a component’s <code>.js</code> file:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s1">&#39;exports&#39;</span><span class="o">:</span> <span class="p">{</span>
    <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }.visibility&#39;</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Here <code>visible</code> is the <code>key</code>, <code>${ $.provider }.visibility</code> is the <code>value</code>.</p>
 
 <p>Example of setting <code>exports</code> in a component’s configuration <code>.xml</code> file:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;exports&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider.visibility<span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
        <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
 <p>In this example, <code>visible</code> is the <code>key</code>, <code>sample_config.sample_provider.visibility</code> is the <code>value</code>.</p>
 
@@ -828,7 +829,7 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
     <p><code>imports</code>: used for tracking changes of an external entity property. <code>imports</code>’s value is an object, composed of the following:</p>
 
     <ul>
-      <li><code>key</code>: name of the internal property or method which receives the notifications. </li>
+      <li><code>key</code>: name of the internal property or method which receives the notifications.</li>
       <li><code>value</code>: name of the property or method which is tracked for changes. Can use string templates.</li>
     </ul>
   </li>
@@ -836,28 +837,28 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 
 <p>Example of using <code>imports</code> in a component’s <code>.js</code> file:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s1">&#39;imports&#39;</span><span class="o">:</span> <span class="p">{</span>
    <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }.visibility&#39;</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Example of using <code>imports</code> in a component’s configuration <code>.xml</code> file:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;imports&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider.visibility<span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
        <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
 <ul>
   <li>
     <p><code>links</code>: used for mutual tracking property changes. <code>links</code>’s value is an object, composed of the following:</p>
 
     <ul>
-      <li><code>key</code>: name of the internal property or method which sends and receives the notifications. </li>
+      <li><code>key</code>: name of the internal property or method which sends and receives the notifications.</li>
       <li><code>value</code> - name of the property or method which sends and receives the notifications. Can use string templates.</li>
     </ul>
   </li>
@@ -865,21 +866,21 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 
 <p>Example of using <code>links</code> in a component’s <code>.js</code> file:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s1">&#39;links&#39;</span><span class="o">:</span> <span class="p">{</span>
    <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }.visibility&#39;</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Example of using <code>links</code> in a component’s configuration <code>.xml</code> file:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;links&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider.visibility<span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
        <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
 <ul>
   <li><code>listens</code>: used to track the changes of a component’s proporty.
@@ -892,21 +893,21 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 
 <p>Example of using <code>listens</code> in a component’s <code>.js</code> file :</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s1">&#39;listens&#39;</span><span class="o">:</span> <span class="p">{</span>
    <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }.visibility&#39;</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Example of using <code>listens</code> in a component’s configuration <code>.xml</code> file:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;listens&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider.visibility<span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
        <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
 <h2 id="comp_additional">Frequently used additional components</h2>
 <p>This section is a brief description of the most frequently used additional UI components.</p>
@@ -936,25 +937,25 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 <h3 id="uiregistry"><code>uiRegistry</code></h3>
 <p>In-memory storage. Plain storage of entities by keys. Implements the <code>get()</code>, <code>set()</code>, and <code>has()</code> methods.</p>
 
-<p>All the components described in this section are aliases in terms of RequireJS. So they can be directly requested in the component’s <code>.js</code> file or used in a component’s configuration <code>.xml</code> file (except <code>uiRegistry</code>, which by its nature is not expected to be used in a configuration file). </p>
+<p>All the components described in this section are aliases in terms of RequireJS. So they can be directly requested in the component’s <code>.js</code> file or used in a component’s configuration <code>.xml</code> file (except <code>uiRegistry</code>, which by its nature is not expected to be used in a configuration file).</p>
 
 <p>Example for the <code>uiClass</code> property request:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span> <span class="p">[</span><span class="s1">&#39;uiClass&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">abstractClass</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span> <span class="p">[</span><span class="s1">&#39;uiClass&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">abstractClass</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">abstractClass</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span> 
       <span class="p">...</span> <span class="c1">// needed methods here</span>
    <span class="p">};</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p>Example of using the <code>uiClass</code> property in a configuration file:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">container</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;some_custom_component&quot;</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="o">&lt;</span><span class="nx">container</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;some_custom_component&quot;</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
                 <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;component&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">uiClass</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
             <span class="o">&lt;</span><span class="err">/item&gt;</span>
         <span class="o">&lt;</span><span class="err">/argument&gt;</span>
-    <span class="o">&lt;</span><span class="err">/container&gt;</span></code></pre></div>
+    <span class="o">&lt;</span><span class="err">/container&gt;</span></code></pre></figure>
 
 <h2 id="comp_debug">JS UI components debugging</h2>
 <p>This section describes how to define what UI components are used on a particular page and what data they use.</p>

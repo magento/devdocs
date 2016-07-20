@@ -1094,7 +1094,7 @@
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2 id="server-side-includes">Server side includes</h2>
-<p><a href="http://httpd.apache.org/docs/current/howto/ssi.html" target="_site">Server side includes</a> (SSI) are directives in HTML pages that get evaluated on the server while the pages are being rendered. Use of server side includes enables you to add dynamically generated content to an existing HTML page without having to serve the entire page. </p>
+<p><a href="http://httpd.apache.org/docs/current/howto/ssi.html" target="_site">Server side includes</a> (SSI) are directives in HTML pages that get evaluated on the server while the pages are being rendered. Use of server side includes enables you to add dynamically generated content to an existing HTML page without having to serve the entire page.</p>
 
 <p>More information about <a href="http://nginx.org/en/docs/http/ngx_http_ssi_module.html" target="_blank">nginx SSI</a>.</p>
 
@@ -1122,13 +1122,13 @@ server fill in parts of the HTML, respecting the your <a href="/guides/v2.0/clou
 
 <p>Add the following to any page, such as <code>/index.php</code>:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span>
-<span class="o">&lt;!--</span><span class="c1">#include virtual=&quot;time.php&quot; --&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span>
+<span class="o">&lt;!--</span><span class="c1">#include virtual=&quot;time.php&quot; --&gt;</span></code></pre></figure>
 
 <p>Add the following to <code>time.php</code>:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Cache-Control: max-age=600&quot;</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Cache-Control: max-age=600&quot;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span></code></pre></figure>
 
 <p>Browse to the page on which you added the control. Refresh the page several times and notice that the time at the top of the page changes but the time on the bottom changes only every 600 seconds.</p>
 

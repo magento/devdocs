@@ -758,13 +758,13 @@
 		<h2>Fixture</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#mtf_fixture_overview">Fixture overview</a></li>
-  <li><a href="#mtf_fixture_create">Create new fixture</a></li>
-  <li><a href="#mtf_fixture_read">Read and update your new fixture</a></li>
-  <li><a href="#mtf_fixture_repositoy">Add a repository to the fixture field</a></li>
-  <li><a href="#mtf_fixture_source">Add the data source to the fixture field</a></li>
-  <li><a href="#mtf_fixture_merge">Merge fixtures</a></li>
-  <li><a href="#mtf_fixture_extend">Extend fixture</a></li>
+  <li><a href="#mtf_fixture_overview" id="markdown-toc-mtf_fixture_overview">Fixture overview</a></li>
+  <li><a href="#mtf_fixture_create" id="markdown-toc-mtf_fixture_create">Create new fixture</a></li>
+  <li><a href="#mtf_fixture_read" id="markdown-toc-mtf_fixture_read">Read and update your new fixture</a></li>
+  <li><a href="#mtf_fixture_repositoy" id="markdown-toc-mtf_fixture_repositoy">Add a repository to the fixture field</a></li>
+  <li><a href="#mtf_fixture_source" id="markdown-toc-mtf_fixture_source">Add the data source to the fixture field</a></li>
+  <li><a href="#mtf_fixture_merge" id="markdown-toc-mtf_fixture_merge">Merge fixtures</a></li>
+  <li><a href="#mtf_fixture_extend" id="markdown-toc-mtf_fixture_extend">Extend fixture</a></li>
 </ul>
 
 <h2 id="mtf_fixture_overview">Fixture overview</h2>
@@ -863,7 +863,7 @@ php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --c
 
 <p>Following is the generated Widget fixture located in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code>.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -888,7 +888,7 @@ php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --c
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;sort_order&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;widget_parameters&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/fixture&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>To generate PHP classes, enter the following commands in the order shown:</p>
 
@@ -1069,7 +1069,7 @@ php generate.php
 
 <p>Let’s manually add a new field and <code>group</code> attribute to the <code>Widget.xml</code>. See what we have now.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1095,7 +1095,7 @@ php generate.php
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;widget_parameters&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">group=</span><span class="s">&quot;frontend_options&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;layout_updates&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/fixture&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>To apply the changes, enter the following commands:</p>
 
@@ -1109,7 +1109,7 @@ php generate.php
 
 <p>For this goal, link to the repository where all test data has already been defined.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;layout_updates&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\Widget\Test\Repository\Widget\LayoutUpdates&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;layout_updates&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\Widget\Test\Repository\Widget\LayoutUpdates&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <p>The repository is located in the <code>Repository</code> directory of the corresponding module. The <code>Repository</code> directory contains a subdirectory with the name of fixture, and repository XML file in it with the name of fixture field.</p>
 
@@ -1117,7 +1117,7 @@ php generate.php
 
 <p>Following is the code of <code>LayoutUpdates.xml</code>. It specifies two data sets that you can choose to define in your test.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1143,7 +1143,7 @@ php generate.php
             <span class="nt">&lt;/field&gt;</span>
         <span class="nt">&lt;/dataset&gt;</span>
     <span class="nt">&lt;/repository&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>To apply the changes, enter the following commands:</p>
 
@@ -1163,15 +1163,15 @@ php generate.php
 
 <p>It is located in <code>Fixture</code> directory of corresponding module. That contains subdirectory with the name of fixture, and source class in it with the name of fixture field. See the following example.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;layout_updates&quot;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;layout_updates&quot;</span>
        <span class="na">is_required=</span><span class="s">&quot;0&quot;</span>
        <span class="na">repository=</span><span class="s">&quot;Magento\Widget\Test\Repository\Widget\LayoutUpdates&quot;</span>
        <span class="na">source=</span><span class="s">&quot;Magento\Widget\Test\Fixture\Widget\LayoutUpdates&quot;</span>
-       <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+       <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <p>Let’s see our data source file <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php</code></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -1216,7 +1216,7 @@ php generate.php
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>To apply the changes, enter the following commands:</p>
 
@@ -1237,7 +1237,7 @@ Example from <code>LayoutUpdates.php</code><br />
 
 <p>We can create file that adds field <code>new_field</code> to our widget fixture.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1249,7 +1249,7 @@ Example from <code>LayoutUpdates.php</code><br />
     <span class="nt">&lt;fixture</span> <span class="na">name=</span><span class="s">&quot;widget&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;new_field&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/fixture&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>To apply the changes, enter the following commands:</p>
 
@@ -1265,7 +1265,7 @@ php generate.php
 
 <p>To do that you should supplement your <code>Widget.xml</code> code with <code>extends</code> attribute in <code>&lt;fixture&gt;</code> node. As you already know <code>extends</code> value stores a link to the class from which you want to extend your fixture.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1281,7 +1281,7 @@ php generate.php
              <span class="na">extends=</span><span class="s">&quot;\Magento\Widget\Test\Fixture\Widget&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;custom_field&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\AdWidget\Test\Repository\AdWidget\CustomField&quot;</span> <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/fixture&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>In this example you will create a new fixture PHP class AdWidget that extends Widget fixture. It creates a fixture with the same name, and a field named <code>custom_field</code>.</p>
 

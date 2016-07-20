@@ -1116,7 +1116,7 @@
 <h2 id="relationship">Relationship</h2>
 <p>The format exposed in the <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code>$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
     <span class="s2">&quot;elasticsearch&quot;</span>: <span class="o">[</span>
         <span class="o">{</span>
             <span class="s2">&quot;host&quot;</span>: <span class="s2">&quot;248.0.65.198&quot;</span>,
@@ -1124,30 +1124,30 @@
             <span class="s2">&quot;port&quot;</span>: <span class="s2">&quot;9200&quot;</span>
         <span class="o">}</span>
     <span class="o">]</span>
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span></code></pre></figure>
 
 <h2 id="usage-example">Usage example</h2>
 <p>In your <code>.magento/services.yaml</code>:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mysearch</span><span class="p-Indicator">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mysearch</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">elasticsearch:1.4</span>
-    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span></code></pre></div>
+    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span></code></pre></figure>
 
 <p>In your <code>.magento.app.yaml</code>:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">elasticsearch</span><span class="p-Indicator">:</span> <span class="s">&quot;mysearch:elasticsearch&quot;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">elasticsearch</span><span class="p-Indicator">:</span> <span class="s">&quot;mysearch:elasticsearch&quot;</span></code></pre></figure>
 
 <p>You can use the preceding service in a configuration file of your application as follows:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_ENV</span><span class="p">[</span><span class="s1">&#39;MAGENTO_CLOUD_RELATIONSHIPS&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_ENV</span><span class="p">[</span><span class="s1">&#39;MAGENTO_CLOUD_RELATIONSHIPS&#39;</span><span class="p">]))</span> <span class="p">{</span>
   <span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$_ENV</span><span class="p">[</span><span class="s1">&#39;MAGENTO_CLOUD_RELATIONSHIPS&#39;</span><span class="p">]),</span> <span class="k">TRUE</span><span class="p">);</span>
 
   <span class="k">foreach</span> <span class="p">(</span><span class="nv">$relationships</span><span class="p">[</span><span class="s1">&#39;elasticsearch&#39;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$endpoint</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;elasticsearch_host&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">]);</span>
     <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;elasticsearch_port&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">]);</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 
 

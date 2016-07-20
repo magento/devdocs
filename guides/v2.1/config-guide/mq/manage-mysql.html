@@ -1324,11 +1324,11 @@
 
 <p>The following shows a <code>crontab</code> group entry:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;consumerCustomerCreatedListener&quot;</span> <span class="na">instance=</span><span class="s">&quot;Magento\Amqp\Model\ConsumerRunner&quot;</span> <span class="na">method=</span><span class="s">&quot;customerCreatedListener&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;schedule&gt;</span>0 0 * * *<span class="nt">&lt;/schedule&gt;</span>
     <span class="nt">&lt;/job&gt;</span>
-<span class="nt">&lt;/group&gt;</span></code></pre></div>
+<span class="nt">&lt;/group&gt;</span></code></pre></figure>
 
 <p>See <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using cron with Magento.</p>
 
@@ -1348,7 +1348,7 @@
 
 <p><code>--max-messages=&lt;value&gt;</code> defines the maximum number of messages to consume per invocation. If number of messages are less then defined maximum number of messages, then the consumer will receive all the available messages in a queue.</p>
 
-<p>If <code>--max-messages</code> is not defined, the consumer continues to receive endless number of new messages  </p>
+<p>If <code>--max-messages</code> is not defined, the consumer continues to receive endless number of new messages</p>
 
 <p>After getting all available messages, the CLI command terminates. The command can be launched again with cron within a configured period of time, or manually.</p>
 

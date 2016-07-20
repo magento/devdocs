@@ -934,7 +934,7 @@
   <li>Use the migration tool to <a href="/guides/v2.1/migration/migration-migrate-settings.html">migrate settings</a> and websites.</li>
   <li>Copy your Magento 1.x media files to Magento 2.0. (You must copy these manually from <code>&lt;magento1-root&gt;/media</code> to <code>&lt;magento2-root&gt;/pub/media</code>)</li> 
   <li>Use Data Migration Tool to <a href="/guides/v2.1/migration/migration-migrate-data.html">migrate your data</a> from Magento 1 database to Magento 2 database. If some of your extensions have data you want to migrate, you might need to install these extensions adapted for Magento 2. In case the extensions have a different structure in Magento 2 database, use the mapping files provided with the Data Migration Tool.</li>
-  <li>Use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">magento indexer:reindex</a> command to reindex all indexers.</li>
+  <li>Use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">magento indexer:reindex&lt;/code&gt;</a> command to reindex all indexers.</li>
   <li>Thoroughly test your Magento 2.0 site.</li>
 </ol>
 
@@ -960,7 +960,7 @@ In case you find any issues, press Control+C to stop incremental migration and s
   <li>In your Magento 2 system, reindex the stock indexer using the command <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex"><code>magento indexer:reindex cataloginventory_stock</code></a>.</li>
   <li>Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers using your storefront.</li>
   <li>Perform any final verification of your Magento 2 site.</li>
-  <li>Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS) </li>
+  <li>Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS)</li>
   <li>Magento 2 store is ready to use. You and Your customers can resume all activities.</li>
 </ol>
 

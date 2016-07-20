@@ -610,7 +610,7 @@
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2>Overview</h2>
 
-<p>The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks. </p>
+<p>The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks.</p>
 
 <p>The following picture is an illustration of image displaying on the product page using the gallery widget:</p>
 
@@ -622,7 +622,7 @@
 
 <p>The gallery widget uses the <a href="http://fotorama.io/">Fotorama widget</a>.</p>
 
-<p>The important feature of the gallery widget implementation is the possibility to configure the widget options in the <code>view.xml</code> configuration file of a theme. </p>
+<p>The important feature of the gallery widget implementation is the possibility to configure the widget options in the <code>view.xml</code> configuration file of a theme.</p>
 
 <p>The gallery widget source code is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a></p>
 
@@ -631,65 +631,65 @@
 <h3>Contents</h3>
 
 <ul id="markdown-toc">
-  <li><a href="#gallery_init">Initialize the gallery widget</a></li>
-  <li><a href="#gallery_options">Options</a>    <ul>
-      <li><a href="#data"><code>data</code></a>        <ul>
-          <li><a href="#data_caption"><code>data/caption</code></a></li>
+  <li><a href="#gallery_init" id="markdown-toc-gallery_init">Initialize the gallery widget</a></li>
+  <li><a href="#gallery_options" id="markdown-toc-gallery_options">Options</a>    <ul>
+      <li><a href="#data" id="markdown-toc-data"><code>data</code></a>        <ul>
+          <li><a href="#data_caption" id="markdown-toc-data_caption"><code>data/caption</code></a></li>
         </ul>
       </li>
-      <li><a href="#options"><code>options</code></a>        <ul>
-          <li><a href="#gallery_allowfullscreen"><code>options/allowfullscreen</code></a></li>
-          <li><a href="#gallery_arrows"><code>options/arrows</code></a></li>
-          <li><a href="#gallery_height"><code>options/height</code></a></li>
-          <li><a href="#gallery_keyboard"><code>options/keyboard</code></a></li>
-          <li><a href="#gallery_loop"><code>options/loop</code></a></li>
-          <li><a href="#gallery_maxheight"><code>options/maxheight</code></a></li>
-          <li><a href="#gallery_maxwidth"><code>options/maxwidth</code></a></li>
-          <li><a href="#gallery_minheight"><code>options/minheight</code></a></li>
-          <li><a href="#gallery_minwidth"><code>options/minwidth</code></a></li>
-          <li><a href="#gallery_nav"><code>options/nav</code></a></li>
-          <li><a href="#gallery_navdir"><code>options/navdir</code></a></li>
-          <li><a href="#gallery_navarrows"><code>options/navarrows</code></a></li>
-          <li><a href="#gallery_navtype"><code>options/navtype</code></a></li>
-          <li><a href="#gallery_ratio"><code>options/ratio</code></a></li>
-          <li><a href="#gallery_showcaption"><code>options/showCaption</code></a></li>
-          <li><a href="#gallery_startindex"><code>options/startindex</code></a></li>
-          <li><a href="#gallery_swipe"><code>options/swipe</code></a></li>
-          <li><a href="#gallery_thumbwidth"><code>options/thumbwidth</code></a></li>
-          <li><a href="#gallery_thumbwidth"><code>options/thumbheight</code></a></li>
-          <li><a href="#gallery_transitioneffect"><code>options/transition</code></a></li>
-          <li><a href="#gallery_transitionduration"><code>options/transitionduration</code></a></li>
-          <li><a href="#gallery_width"><code>options/width</code></a></li>
+      <li><a href="#options" id="markdown-toc-options"><code>options</code></a>        <ul>
+          <li><a href="#gallery_allowfullscreen" id="markdown-toc-gallery_allowfullscreen"><code>options/allowfullscreen</code></a></li>
+          <li><a href="#gallery_arrows" id="markdown-toc-gallery_arrows"><code>options/arrows</code></a></li>
+          <li><a href="#gallery_height" id="markdown-toc-gallery_height"><code>options/height</code></a></li>
+          <li><a href="#gallery_keyboard" id="markdown-toc-gallery_keyboard"><code>options/keyboard</code></a></li>
+          <li><a href="#gallery_loop" id="markdown-toc-gallery_loop"><code>options/loop</code></a></li>
+          <li><a href="#gallery_maxheight" id="markdown-toc-gallery_maxheight"><code>options/maxheight</code></a></li>
+          <li><a href="#gallery_maxwidth" id="markdown-toc-gallery_maxwidth"><code>options/maxwidth</code></a></li>
+          <li><a href="#gallery_minheight" id="markdown-toc-gallery_minheight"><code>options/minheight</code></a></li>
+          <li><a href="#gallery_minwidth" id="markdown-toc-gallery_minwidth"><code>options/minwidth</code></a></li>
+          <li><a href="#gallery_nav" id="markdown-toc-gallery_nav"><code>options/nav</code></a></li>
+          <li><a href="#gallery_navdir" id="markdown-toc-gallery_navdir"><code>options/navdir</code></a></li>
+          <li><a href="#gallery_navarrows" id="markdown-toc-gallery_navarrows"><code>options/navarrows</code></a></li>
+          <li><a href="#gallery_navtype" id="markdown-toc-gallery_navtype"><code>options/navtype</code></a></li>
+          <li><a href="#gallery_ratio" id="markdown-toc-gallery_ratio"><code>options/ratio</code></a></li>
+          <li><a href="#gallery_showcaption" id="markdown-toc-gallery_showcaption"><code>options/showCaption</code></a></li>
+          <li><a href="#gallery_startindex" id="markdown-toc-gallery_startindex"><code>options/startindex</code></a></li>
+          <li><a href="#gallery_swipe" id="markdown-toc-gallery_swipe"><code>options/swipe</code></a></li>
+          <li><a href="#gallery_thumbwidth" id="markdown-toc-gallery_thumbwidth"><code>options/thumbwidth</code></a></li>
+          <li><a href="#gallery_thumbwidth" id="markdown-toc-gallery_thumbwidth"><code>options/thumbheight</code></a></li>
+          <li><a href="#gallery_transitioneffect" id="markdown-toc-gallery_transitioneffect"><code>options/transition</code></a></li>
+          <li><a href="#gallery_transitionduration" id="markdown-toc-gallery_transitionduration"><code>options/transitionduration</code></a></li>
+          <li><a href="#gallery_width" id="markdown-toc-gallery_width"><code>options/width</code></a></li>
         </ul>
       </li>
-      <li><a href="#fullscreen"><code>fullscreen</code></a>        <ul>
-          <li><a href="#full_arrows"><code>fullscreen/arrows</code></a></li>
-          <li><a href="#full_caption"><code>fullscreen/caption</code></a></li>
-          <li><a href="#fullscreen_keyboard"><code>fullscreen/keyboard</code></a></li>
-          <li><a href="#full_loop"><code>fullscreen/loop</code></a></li>
-          <li><a href="#full_nav"><code>fullscreen/nav</code></a></li>
-          <li><a href="#full_navdir"><code>fullscreen/navdir</code></a></li>
-          <li><a href="#full_carousel"><code>fullscreen/navigation_carousel</code></a></li>
-          <li><a href="#full_showcaption"><code>fullscreen/showCaption</code></a></li>
-          <li><a href="#full_thumbwidth"><code>fullscreen/thumbwidth</code></a></li>
-          <li><a href="#full_thumbheight"><code>fullscreen/thumbheight</code></a></li>
-          <li><a href="#fullscreen_transitioneffect"><code>fullscreen/transition</code></a></li>
-          <li><a href="#fullscreen_transitionduration"><code>fullscreen/transitionduration</code></a></li>
+      <li><a href="#fullscreen" id="markdown-toc-fullscreen"><code>fullscreen</code></a>        <ul>
+          <li><a href="#full_arrows" id="markdown-toc-full_arrows"><code>fullscreen/arrows</code></a></li>
+          <li><a href="#full_caption" id="markdown-toc-full_caption"><code>fullscreen/caption</code></a></li>
+          <li><a href="#fullscreen_keyboard" id="markdown-toc-fullscreen_keyboard"><code>fullscreen/keyboard</code></a></li>
+          <li><a href="#full_loop" id="markdown-toc-full_loop"><code>fullscreen/loop</code></a></li>
+          <li><a href="#full_nav" id="markdown-toc-full_nav"><code>fullscreen/nav</code></a></li>
+          <li><a href="#full_navdir" id="markdown-toc-full_navdir"><code>fullscreen/navdir</code></a></li>
+          <li><a href="#full_carousel" id="markdown-toc-full_carousel"><code>fullscreen/navigation_carousel</code></a></li>
+          <li><a href="#full_showcaption" id="markdown-toc-full_showcaption"><code>fullscreen/showCaption</code></a></li>
+          <li><a href="#full_thumbwidth" id="markdown-toc-full_thumbwidth"><code>fullscreen/thumbwidth</code></a></li>
+          <li><a href="#full_thumbheight" id="markdown-toc-full_thumbheight"><code>fullscreen/thumbheight</code></a></li>
+          <li><a href="#fullscreen_transitioneffect" id="markdown-toc-fullscreen_transitioneffect"><code>fullscreen/transition</code></a></li>
+          <li><a href="#fullscreen_transitionduration" id="markdown-toc-fullscreen_transitionduration"><code>fullscreen/transitionduration</code></a></li>
         </ul>
       </li>
-      <li><a href="#breakpoints"><code>breakpoints</code></a></li>
+      <li><a href="#breakpoints" id="markdown-toc-breakpoints"><code>breakpoints</code></a></li>
     </ul>
   </li>
-  <li><a href="#configure-gallery-options-in-viewxml">Configure gallery options in <code>view.xml</code></a></li>
-  <li><a href="#gallery_api">Gallery API</a>    <ul>
-      <li><a href="#gallery_methods">Methods</a>        <ul>
-          <li><a href="#gallery_first"><code>first()</code></a></li>
-          <li><a href="#gallery_last"><code>last()</code></a></li>
-          <li><a href="#gallery_next"><code>next()</code></a></li>
-          <li><a href="#gallery_prev"><code>prev()</code></a></li>
-          <li><a href="#gallery_seek"><code>seek()</code></a></li>
-          <li><a href="#gallery_updateData"><code>updateData()</code></a></li>
-          <li><a href="#gallery_updateOptions"><code>updateOptions()</code></a></li>
+  <li><a href="#configure-gallery-options-in-viewxml" id="markdown-toc-configure-gallery-options-in-viewxml">Configure gallery options in <code>view.xml</code></a></li>
+  <li><a href="#gallery_api" id="markdown-toc-gallery_api">Gallery API</a>    <ul>
+      <li><a href="#gallery_methods" id="markdown-toc-gallery_methods">Methods</a>        <ul>
+          <li><a href="#gallery_first" id="markdown-toc-gallery_first"><code>first()</code></a></li>
+          <li><a href="#gallery_last" id="markdown-toc-gallery_last"><code>last()</code></a></li>
+          <li><a href="#gallery_next" id="markdown-toc-gallery_next"><code>next()</code></a></li>
+          <li><a href="#gallery_prev" id="markdown-toc-gallery_prev"><code>prev()</code></a></li>
+          <li><a href="#gallery_seek" id="markdown-toc-gallery_seek"><code>seek()</code></a></li>
+          <li><a href="#gallery_updateData" id="markdown-toc-gallery_updateData"><code>updateData()</code></a></li>
+          <li><a href="#gallery_updateOptions" id="markdown-toc-gallery_updateOptions"><code>updateOptions()</code></a></li>
         </ul>
       </li>
     </ul>
@@ -702,9 +702,9 @@
 
 <p>Example of declarative initialization:</p>
 
-<p><code>&lt;Magento_Catalog_module_dir&gt;/view/frontend/templates/product/view/gallery.phtml</code> </p>
+<p><code>&lt;Magento_Catalog_module_dir&gt;/view/frontend/templates/product/view/gallery.phtml</code></p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/x-magento-init&quot;</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/x-magento-init&quot;</span><span class="o">&gt;</span>
     <span class="p">{</span>
          <span class="p">{</span>
         <span class="s2">&quot;&lt;element_selector&gt;&quot;</span><span class="o">:</span> <span class="p">{</span>
@@ -754,7 +754,7 @@
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span></code></pre></div>
+<span class="o">&lt;</span><span class="err">/script&gt;</span></code></pre></figure>
 
 <h2 id="gallery_options">Options</h2>
 
@@ -775,13 +775,13 @@
 
 <p>Where <code>image</code> is an object with keys:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
     <span class="s2">&quot;thumb&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;img&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;full&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;caption&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;message&gt;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;isMain&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;true/false&gt;&quot;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>The <code>thumb</code>, <code>img</code>, and <code>full</code> are full paths to proper image files.</p>
 
@@ -790,7 +790,7 @@
 <p>Set the caption for a specific image in the <code>data</code> field.
 Example of the runtime initialization with the <code>caption</code> option specified:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">galleryInstance</span><span class="p">({</span> 
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">galleryInstance</span><span class="p">({</span> 
     <span class="nx">data</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="nx">img</span><span class="o">:</span> <span class="s1">&#39;preview_number_one.jpg&#39;</span><span class="p">,</span>
@@ -798,7 +798,7 @@ Example of the runtime initialization with the <code>caption</code> option speci
             <span class="nx">caption</span><span class="o">:</span> <span class="s1">&#39;T-Shirt Women side&#39;</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <h3 id="options"><code>options</code></h3>
 <p>Set of options available for the Preview region.</p>
@@ -903,7 +903,7 @@ Example of the runtime initialization with the <code>caption</code> option speci
 
 <h4 id="gallery_navtype"><code>options/navtype</code></h4>
 
-<p>Sliding type of thumbnails. </p>
+<p>Sliding type of thumbnails.</p>
 
 <p><strong>Possible values</strong>:</p>
 
@@ -958,7 +958,7 @@ Example of the runtime initialization with the <code>caption</code> option speci
 
 <p>Sets the transition effect for slides changing.</p>
 
-<p><strong>Possible values</strong>: </p>
+<p><strong>Possible values</strong>:</p>
 
 <ul>
   <li><code>slide</code></li>
@@ -1061,7 +1061,7 @@ Example of the runtime initialization with the <code>caption</code> option speci
 
 <p>Sets the transition effect for slides changing in the fullscreen view.</p>
 
-<p><strong>Possible values</strong>: </p>
+<p><strong>Possible values</strong>:</p>
 
 <ul>
   <li><code>slide</code></li>
@@ -1079,14 +1079,14 @@ Example of the runtime initialization with the <code>caption</code> option speci
 
 <p>Set as follows:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">&quot;breakpoints&quot;</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">&quot;breakpoints&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;%breakpoint_name%&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;conditions&quot;</span><span class="o">:</span> <span class="p">{</span>
             <span class="p">...</span>
         <span class="p">}</span>
         <span class="s2">&quot;options&quot;</span><span class="o">:</span> <span class="p">{...}</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Where the options are as follows:</p>
 
@@ -1097,19 +1097,19 @@ Example of the runtime initialization with the <code>caption</code> option speci
 
 <h2 id="configure-gallery-options-in-viewxml">Configure gallery options in <code>view.xml</code></h2>
 
-<p>Gallery and magnifier options can be set in the <code>view.xml</code> configuration file of a theme. The file is conventionally located in <code>&lt;theme_dir&gt;/etc</code>. </p>
+<p>Gallery and magnifier options can be set in the <code>view.xml</code> configuration file of a theme. The file is conventionally located in <code>&lt;theme_dir&gt;/etc</code>.</p>
 
 <p>The general gallery options are set as follows:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;gallery&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;gallery&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%option1%&quot;</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%option2%&quot;</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
 ...
-<span class="nt">&lt;/var&gt;</span></code></pre></div>
+<span class="nt">&lt;/var&gt;</span></code></pre></figure>
 
 <p>The fullscreen and breakpoints options are set in a similar way:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;fullscreen&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;fullscreen&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%fullscreen_option1%&quot;</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%fullscreen_option2%&quot;</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
 ...
@@ -1118,39 +1118,39 @@ Example of the runtime initialization with the <code>caption</code> option speci
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%breakpoints_option1%&quot;</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%breakpoints_option2%&quot;</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
 ...
-<span class="nt">&lt;/var&gt;</span></code></pre></div>
+<span class="nt">&lt;/var&gt;</span></code></pre></figure>
 
-<p>For illustration of setting gallery option in <code>view.xml</code>, you can reference to the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/etc/view.xml#L184">view.xml of the Blank theme</a>. </p>
+<p>For illustration of setting gallery option in <code>view.xml</code>, you can reference to the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/etc/view.xml#L184">view.xml of the Blank theme</a>.</p>
 
 <h2 id="gallery_api">Gallery API</h2>
 
 <p>Gallery methods are placed in data storage of the <code>gallery</code> object. To initialize the API, on the gallery object, call the <code>data</code> method with <code>gallery</code> as argument. The illustration follows:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">var api = $(element).data(&#39;gallery&#39;);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">var api = $(element).data(&#39;gallery&#39;);</span>
 <span class="x"> </span>
 <span class="x">//or</span>
 <span class="x"> </span>
-<span class="x">var api = $(&#39;[data-gallery-role=&quot;gallery&quot;]&#39;).data(&#39;gallery&#39;);</span></code></pre></div>
+<span class="x">var api = $(&#39;[data-gallery-role=&quot;gallery&quot;]&#39;).data(&#39;gallery&#39;);</span></code></pre></figure>
 
 <p>This method returns JS object that contains API functions.</p>
 
 <p>To ensure that the gallery is fully formed, wrap your code with event handler function and add it to the <code>gallery:loaded</code> event:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$(element).on(&#39;gallery:loaded&#39;, function () {</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">    $(element).on(&#39;gallery:loaded&#39;, function () {</span>
 <span class="x">        var api = $(element).data(&#39;gallery&#39;);</span>
 <span class="x">        /* api methods calls */</span>
-<span class="x">    });</span></code></pre></div>
+<span class="x">    });</span></code></pre></figure>
 
 <p>Then to call a method, use the following notation:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">api.%method_name%();</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">    api.%method_name%();</span></code></pre></figure>
 
 <p>All available methods are listed in the following paragraph.</p>
 
 <h3 id="gallery_methods">Methods</h3>
 
 <ul>
-  <li><a href="#gallery_first">first</a> </li>
+  <li><a href="#gallery_first">first</a></li>
   <li><a href="#gallery_last">last</a></li>
   <li><a href="#gallery_next">next</a></li>
   <li><a href="#gallery_prev">prev</a></li>
@@ -1169,7 +1169,7 @@ Example of the runtime initialization with the <code>caption</code> option speci
 
 <h4 id="gallery_next"><code>next()</code></h4>
 
-<p>Image ID is passed as an argument. Displays the next preview image. </p>
+<p>Image ID is passed as an argument. Displays the next preview image.</p>
 
 <p>If the last image ID is passed, the behavior depends on whether <a href="#gallery_loop">loop</a> is enabled:</p>
 
@@ -1180,7 +1180,7 @@ Example of the runtime initialization with the <code>caption</code> option speci
 
 <h4 id="gallery_prev"><code>prev()</code></h4>
 
-<p>Displays the previous preview image. </p>
+<p>Displays the previous preview image.</p>
 
 <p>If the first image ID is passed, the behavior depends on whether <a href="##gallery_loop">loop</a> is enabled:</p>
 
@@ -1191,39 +1191,39 @@ Example of the runtime initialization with the <code>caption</code> option speci
 
 <h4 id="gallery_seek"><code>seek()</code></h4>
 
-<p>Displays the image with the specified <code>index</code>. </p>
+<p>Displays the image with the specified <code>index</code>.</p>
 
-<p>Doesn’t update preview if the argument is not valid. </p>
+<p>Doesn’t update preview if the argument is not valid.</p>
 
 <p>Behavior:</p>
 
 <ul>
-  <li><code>seek(0)</code> does not display any preview </li>
-  <li><code>seek(1)</code> displays the first image. </li>
-  <li><code>seek(-1)</code> displays the last image. </li>
-  <li>If the argument is a number bigger than the number of items, or less than “-(number of items)” the gallery shows the modulus of the following division: total images number divided by the argument number.  </li>
+  <li><code>seek(0)</code> does not display any preview</li>
+  <li><code>seek(1)</code> displays the first image.</li>
+  <li><code>seek(-1)</code> displays the last image.</li>
+  <li>If the argument is a number bigger than the number of items, or less than “-(number of items)” the gallery shows the modulus of the following division: total images number divided by the argument number.</li>
 </ul>
 
 <h4 id="gallery_updateData"><code>updateData()</code></h4>
 
-<p>Add new items to the gallery. </p>
+<p>Add new items to the gallery.</p>
 
 <p>Example:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">api.updateData([{</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">api.updateData([{</span>
 <span class="x">    img: &#39;image1.jpg&#39;,</span>
 <span class="x">    thumb: &#39;thumb1.jpg&#39;,</span>
 <span class="x">    caption: &#39;caption&#39;</span>
-<span class="x">}]);</span></code></pre></div>
+<span class="x">}]);</span></code></pre></figure>
 
 <h4 id="gallery_updateOptions"><code>updateOptions()</code></h4>
 <p>Updates options of active breakpoint or default gallery options, if there is no active breakpoint.</p>
 
 <p>Example:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">api.updateOptions([{</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">api.updateOptions([{</span>
 <span class="x">    nav: &#39;dots&#39;</span>
-<span class="x">}]);</span></code></pre></div>
+<span class="x">}]);</span></code></pre></figure>
 
 
 

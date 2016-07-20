@@ -1349,7 +1349,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
   <p>Cron is critical for Magento operation; among other things, it's the only way to reindex on an ongoing basis, it generates automated e-mails, newsletters, the sitemap, and so on.</p></span>
 </div>
 
-  <p>Run Magento cron jobs as the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>. </p>
+  <p>Run Magento cron jobs as the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
 
   <div>
 
@@ -1360,10 +1360,10 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
       <li>
         <p>PHP command-line configuration: The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.</p>
 
-        <p>You can find the command-line configuration using the command <code>php --ini</code>. </p>
+        <p>You can find the command-line configuration using the command <code>php --ini</code>.</p>
       </li>
       <li>
-        <p>Web server PHP plug-in configuration: Two other cron jobs are used by the <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>. </p>
+        <p>Web server PHP plug-in configuration: Two other cron jobs are used by the <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>.</p>
 
         <p>You can find the web server plug-in configuration using <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code>.</a></p>
       </li>
@@ -1405,7 +1405,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 * * * * * &lt;path to php binary&gt; &lt;magento install dir&gt;/bin/magento setup:cron:run &gt;&gt; &lt;magento_dir&gt;/var/log/setup.cron.log
 </code></pre>
 
-    <p>where </p>
+    <p>where</p>
 
     <ul>
       <li><code>&lt;path to php binary&gt;</code> is the absolute file system path to your PHP binary</li>

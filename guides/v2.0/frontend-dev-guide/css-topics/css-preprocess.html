@@ -865,7 +865,7 @@
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2 id="preproc_over">What's in this topic</h2>
 
-<p>The topic describes how stylesheets are preprocessed and compiled to CSS in the Magento application. It provides the theoretical background a frontend developer needs to debug stylesheets effectively. </p>
+<p>The topic describes how stylesheets are preprocessed and compiled to CSS in the Magento application. It provides the theoretical background a frontend developer needs to debug stylesheets effectively.</p>
 
 <h2 id="css_preprocess_terms">Terms used</h2>
 <table>
@@ -934,12 +934,12 @@ When your application is not in the production mode, you can set Magento to comp
 <h3 id="server-side">Server-side LESS compilation</h3>
 
 <p>The following paragraph describes how the LESS preprocessor works in server-side compilation mode.
-For each CSS file included in the layouts, LESS preprocessor does the following: </p>
+For each CSS file included in the layouts, LESS preprocessor does the following:</p>
 
 <ol>
 <li>Checks if the requested <code>.css</code> file is found. If it is found, the preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
 <li>Changes the extension of the requested file to <code>.less</code> and tries to find the file using the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static" target="_blank">Magento fallback mechanism</a>. If the <code>.less</code> file is not found, LESS preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
-<li>Reads <code>.less</code> file contents and resolves <a href="#fedg_css-magento-import"><code>@magento_import</code></a> and default LESS <code>@import</code> directives.</li>
+<li>Reads <code>.less</code> file contents and resolves <a href="#fedg_css-magento-import"><code>@magento_import</code></a> and default LESS <code>@import</code> directives.&lt;/code&gt;</li>
 
 <li>Resolves all paths in <code>.less</code> files to relative paths in the system using the Magento fallback mechanism. All files resolved by the LESS preprocessor are copied to <code>var/view_preprocessed/less</code>. Imported files are processed recursively.</li>
 
@@ -961,7 +961,7 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 <p><code>@magento_import</code> is a Magento-specific LESS directive that allows including multiple files by a name pattern. It is used to include files with the same name from the different locations, for example, different modules.
 The standard <code>@import</code> directive includes a single file, which is found according to the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">static files fallback</a>.</p>
 
-<p><code>@magento_import</code> can be used in the root source files of a theme only. </p>
+<p><code>@magento_import</code> can be used in the root source files of a theme only.</p>
 
 <h3 id="magento-import-usage">@magento_import rules of usage</h3>
 

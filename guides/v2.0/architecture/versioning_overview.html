@@ -830,22 +830,22 @@
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2 id="verpol">Versioning policy overview</h2>
 
-<p>Magento  uses <i>software versioning</i> to identify the compatibility of changes in the public code. By comparing two versions of the same component, you can tell whether it has any <a href="/guides/v2.0/architecture/back-compatibility.html">backward-incompatible</a> changes in the public API or other significant code changes. </p>
+<p>Magento  uses <i>software versioning</i> to identify the compatibility of changes in the public code. By comparing two versions of the same component, you can tell whether it has any <a href="/guides/v2.0/architecture/back-compatibility.html">backward-incompatible</a> changes in the public API or other significant code changes.</p>
 
 <p>Versioning also helps:</p>
 
 <ul>
   <li>
-    <p><b>track  software dependencies</b>. Managing dependencies can be a challenging task in a large, generously populated software environment like Magento, which ships with more than 100 core modules. </p>
+    <p><b>track  software dependencies</b>. Managing dependencies can be a challenging task in a large, generously populated software environment like Magento, which ships with more than 100 core modules.</p>
   </li>
   <li>
-    <p><b>support compatibility verification and ease troubleshooting</b>. Well known and tested combinations of Magento 2.x platform modules can reduce the number of combinations that require testing in your installation. </p>
+    <p><b>support compatibility verification and ease troubleshooting</b>. Well known and tested combinations of Magento 2.x platform modules can reduce the number of combinations that require testing in your installation.</p>
   </li>
 </ul>
 
 <h3>What is a public API?</h3>
 
-<p><i>Source code is considered part of the public API only if it is explicitly marked by the <code>@api</code> docblock tag.</i> This designation indicates that the code can be used or customized by other components, such as formal interfaces and dependency injection points. </p>
+<p><i>Source code is considered part of the public API only if it is explicitly marked by the <code>@api</code> docblock tag.</i> This designation indicates that the code can be used or customized by other components, such as formal interfaces and dependency injection points.</p>
 
 <div class="bs-callout bs-callout-warning">
     <p>Do not mark private code with <code>@api</code> or changes to this private interface  will trigger a version change.</p>

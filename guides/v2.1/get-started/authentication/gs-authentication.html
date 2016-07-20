@@ -607,7 +607,7 @@ Permissions required to access particular resource are configured in the <code>w
 
 <h4 id="acl-webapi-relation">Sample (truncated) customer webapi.xml</h4>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;routes</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;routes</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Webapi:etc/webapi.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="c">&lt;!-- Customer Group --&gt;</span>
     <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/customerGroups/:id&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span><span class="nt">&gt;</span>
@@ -649,7 +649,7 @@ Permissions required to access particular resource are configured in the <code>w
     <span class="nt">&lt;/route&gt;</span>
 ..........
 .....
-...</code></pre></div>
+...</code></pre></figure>
 
 <p>For example, in the preceding <code>webapi.xml</code> for the customerGroups resource, only a user with <code>Magento_Customer::group</code> authorization can <code>GET /V1/customerGroups/:id</code>. On the other hand, you can create a customer using <code>POST /V1/customers</code> anonymously (or by a guest).</p>
 

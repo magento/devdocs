@@ -1138,9 +1138,9 @@
 		<h2 id="message-queues">Message Queues</h2>
 <p><img src="/common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only" /></p>
 
-<p>Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them. </p>
+<p>Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.</p>
 
-<p>On Magento 2.0 Enterprise Edition, the Message Queue Framework (MQF) is a fully-functional system that allows a module to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF primarily uses <a href="http://www.rabbitmq.com">RabbitMQ</a> as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification. </p>
+<p>On Magento 2.0 Enterprise Edition, the Message Queue Framework (MQF) is a fully-functional system that allows a module to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF primarily uses <a href="http://www.rabbitmq.com">RabbitMQ</a> as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.</p>
 
 <p>A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL adapter stores messages in the database. Three database tables (<code>queue</code>, <code>queue_message</code>, and <code>queue_message_status</code>) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.</p>
 
@@ -1148,11 +1148,11 @@
 
 <h2>Send a message from the publisher to a queue</h2>
 
-<p>The following code sends a message to the queue. The <code>publish</code> method is defined in <code>PublisherInterface</code> </p>
+<p>The following code sends a message to the queue. The <code>publish</code> method is defined in <code>PublisherInterface</code></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">publish</span><span class="p">(</span><span class="nv">$topic</span><span class="p">,</span> <span class="nv">$message</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">publish</span><span class="p">(</span><span class="nv">$topic</span><span class="p">,</span> <span class="nv">$message</span><span class="p">)</span></code></pre></figure>
 
-<p>In an MySQL adapter environment, when a message is published to multiple queues, create a single record in <code>queue_message</code> and multiple records in <code>queue_message_status</code>: one for each queue. (A join on the <code>queue</code>, <code>queue_message</code>, and <code>queue_message_status</code> tables is required). </p>
+<p>In an MySQL adapter environment, when a message is published to multiple queues, create a single record in <code>queue_message</code> and multiple records in <code>queue_message_status</code>: one for each queue. (A join on the <code>queue</code>, <code>queue_message</code>, and <code>queue_message_status</code> tables is required).</p>
 
 <h2>Instantiate a consumer</h2>
 
@@ -1161,18 +1161,18 @@
 <h3>RabbitMQ</h3>
 <p>This instantiates a consumer that is defined in a <code>queue.xml</code> file. The consumer (<code>customer_created_listener</code>)listens to the queue and receives all new messages. For every message, it invokes <code>Magento\Some\Class::processMessage($message)</code></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">consumerFactory</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;customer_created_listener&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">process</span><span class="p">();</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">consumerFactory</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;customer_created_listener&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">process</span><span class="p">();</span></code></pre></figure>
 
 <h3>MySQL adapter</h3>
 
-<p>Implement <code>\Magento\Framework\Amqp\ConsumerInterface::process($maxNumberOfMessages)</code> to instantiate a consumer. </p>
+<p>Implement <code>\Magento\Framework\Amqp\ConsumerInterface::process($maxNumberOfMessages)</code> to instantiate a consumer.</p>
 
 <p>Perform the following actions:</p>
 
 <ol>
   <li>Define the queue name associated with current consumer using <code>\Magento\Framework\Amqp\ConsumerConfigurationInterface::getQueueName</code>.</li>
-  <li>Select <code>$maxNumberOfMessages</code> message records, filtering on the  <code>queue_name</code> field. You must join on all 3 tables. To accomplish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers. </li>
+  <li>Select <code>$maxNumberOfMessages</code> message records, filtering on the  <code>queue_name</code> field. You must join on all 3 tables. To accomplish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers.</li>
   <li>Decode the message using topic name taken from the <code>\Magento\Framework\Amqp\ConsumerConfigurationInterface</code>.</li>
   <li>Invoke callback  <code>Magento\Framework\Amqp\ConsumerConfigurationInterface::getCallback</code> and pass the decoded data as an argument.</li>
 </ol>
@@ -1180,13 +1180,13 @@
 <h2>Override topic configuration</h2>
 <p>The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;queue&#39;</span> <span class="o">=&gt;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;queue&#39;</span> <span class="o">=&gt;</span>
     <span class="k">array</span><span class="p">(</span>
      <span class="s1">&#39;topics&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;customer.created&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">publisher</span><span class="o">=</span><span class="s2">&quot;default-rabitmq&quot;</span><span class="p">],</span>
         <span class="s1">&#39;order.created&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">publisher</span><span class="o">=</span><span class="s2">&quot;default-rabitmq&quot;</span><span class="p">],</span>
     <span class="p">),</span>
-<span class="p">),</span></code></pre></div>
+<span class="p">),</span></code></pre></figure>
 
 <h4 id="related-topics">Related Topics</h4>
 

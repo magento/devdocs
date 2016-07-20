@@ -844,7 +844,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<h2 id="eav-and-extension-attributes">EAV and extension attributes</h2>
 
 <p>Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:</p>
@@ -893,13 +893,13 @@
 
 <p><code>public function getExtensionAttributes();</code></p>
 
-<p>Most likely, you’ll want to extend interfaces defined in the <code>Api/Data</code> directory of a Magento module. </p>
+<p>Most likely, you’ll want to extend interfaces defined in the <code>Api/Data</code> directory of a Magento module.</p>
 
 <h3 id="declare">Declare extension attributes</h3>
 
 <p>You must create an <code>&lt;Module&gt;/etc/extension_attributes.xml</code> file to define the extension attributes for a module:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Path\To\Interface&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;name_of_attribute&quot;</span> <span class="na">type=</span><span class="s">&quot;datatype&quot;</span><span class="nt">&gt;</span>
            <span class="nt">&lt;resources&gt;</span>
@@ -910,7 +910,7 @@
            <span class="nt">&lt;/join&gt;</span>            
         <span class="nt">&lt;/attribute&gt;</span>
     <span class="nt">&lt;/extension_attributes&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>where:</p>
 
@@ -971,19 +971,19 @@
 
 <h3 id="search">Searching extension attributes</h3>
 
-<p>The system uses a join directive to add external attributes to a collection and to make the collection filterable. The <code>join</code> element in the <code>extension_attributes.xml</code> file defines which object fields and the database table/column to use as the source of a search. </p>
+<p>The system uses a join directive to add external attributes to a collection and to make the collection filterable. The <code>join</code> element in the <code>extension_attributes.xml</code> file defines which object fields and the database table/column to use as the source of a search.</p>
 
-<p>In the following example, an attribute named <code>stock_item</code> of type <code>Magento\CatalogInventory\Api\Data\StockItemInterface</code> added to the <code>Magento\Catalog\Api\Data\ProductInterface</code>. </p>
+<p>In the following example, an attribute named <code>stock_item</code> of type <code>Magento\CatalogInventory\Api\Data\StockItemInterface</code> added to the <code>Magento\Catalog\Api\Data\ProductInterface</code>.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;stock_item&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\CatalogInventory\Api\Data\StockItemInterface&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;join</span> <span class="na">reference_table=</span><span class="s">&quot;cataloginventory_stock_item&quot;</span> <span class="na">reference_field=</span><span class="s">&quot;product_id&quot;</span> <span class="na">join_on_field=</span><span class="s">&quot;entity_id&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;field&gt;</span>qty<span class="nt">&lt;/field&gt;</span>
         <span class="nt">&lt;/join&gt;</span>
     <span class="nt">&lt;/attribute&gt;</span>
-<span class="nt">&lt;/extension_attributes&gt;</span></code></pre></div>
+<span class="nt">&lt;/extension_attributes&gt;</span></code></pre></figure>
 
-<p>When <code>getList()</code> is called, it returns a list of <code>ProductInterface</code>s. When it does this, the code populates the <code>stock_item</code> with a joined operation in which the <code>StockItemInterface</code>’s <code>qty</code> property come from the <code>cataloginventory_stock_item</code> table where the <code>Product</code>’s <code>entity_Id</code> is joined with the <code>cataloginventory_stock_item.product_id</code> column. </p>
+<p>When <code>getList()</code> is called, it returns a list of <code>ProductInterface</code>s. When it does this, the code populates the <code>stock_item</code> with a joined operation in which the <code>StockItemInterface</code>’s <code>qty</code> property come from the <code>cataloginventory_stock_item</code> table where the <code>Product</code>’s <code>entity_Id</code> is joined with the <code>cataloginventory_stock_item.product_id</code> column.</p>
 
 <h3 id="ext-auth">Extension attribute authentication</h3>
 
@@ -991,7 +991,7 @@
 
 <p>The following <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory/etc/extension_attributes.xml">code sample</a> defines <code>stock_item</code> as an extension attribute of the <code>CatalogInventory</code> module. <code>CatalogInventory</code> is treated as a “third-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../lib/internal/Magento/Framework/Api/etc/extension_attributes.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../lib/internal/Magento/Framework/Api/etc/extension_attributes.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;stock_item&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\CatalogInventory\Api\Data\StockItemInterface&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;resources&gt;</span>
@@ -999,7 +999,7 @@
             <span class="nt">&lt;/resources&gt;</span>
         <span class="nt">&lt;/attribute&gt;</span>
     <span class="nt">&lt;/extension_attributes&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>In this example, the <code>stock_item</code> attribute is restricted to only the users who have the <code>Magento_CatalogInventory::cataloginventory</code> permission. As a result, an anonymous or unauthenticated user issuing a <code>GET http://&lt;magento_base_url&gt;/rest/V1/products/&lt;sku&gt;</code> request will receive product information similar to the following:</p>
 
@@ -1047,9 +1047,9 @@
 
 <p>However, if an extension similar to the following has been defined, the interface will not be empty.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">“Magento\Customer\Api\Data\CustomerInterface&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">“Magento\Customer\Api\Data\CustomerInterface&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">“attributeName&quot;</span> <span class="na">type=</span><span class="s">“Magento\Some\Type[]&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/extension_attributes&gt;</span></code></pre></div>
+<span class="nt">&lt;/extension_attributes&gt;</span></code></pre></figure>
 
 <h2 id="related">Related topics</h2>
 <p><a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Web API authentication overview</a></p>

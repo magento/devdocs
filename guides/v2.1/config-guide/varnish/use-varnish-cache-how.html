@@ -1334,7 +1334,7 @@
 	<p>This topic covers only the default options in the preceding list. There are many other ways to configure caching in complex scenarios (for example, using a Content Delivery Network); those methods are beyond the scope of this guide.</p>
 </div>
 
-<p>On the first browser request, cacheable assets are delivered to the client browser from Varnish and cached on the browser.  </p>
+<p>On the first browser request, cacheable assets are delivered to the client browser from Varnish and cached on the browser.</p>
 
 <p>In addition, Varnish uses an Entity Tag (<a href="https://en.wikipedia.org/wiki/HTTP_ETag" target="_blank">ETag</a>) for static assets. The ETag provides a way to determine when static files change on the server. As a result, static assets are sent to the client when they change on the server—either on a new request from a browser or when the client refreshes the browser cache, typically by pressing F5 or Control+F5.</p>
 
@@ -1364,7 +1364,7 @@
 <p>Note the difference in response time between the first and second request. Again, static assets have a 200 (OK) response code because they’re delivered from local cache for the first time.</p>
 
 <h2 id="config-varnish-cache-etag">How Magento uses Etag</h2>
-<p>The following example shows response headers for a particular static asset. </p>
+<p>The following example shows response headers for a particular static asset.</p>
 
 <p><img src="/common/images/varnish_etag.png" alt="The ETag makes it easier to determine whether a static asset has changed or not" /></p>
 <p><code>calendar.css</code> has an ETag response header which means the CSS file on the client browser can be compared to the one on the server.</p>
@@ -1373,7 +1373,7 @@
 
 <p><img src="/common/images/varnish_304.png" alt="The HTTP 304 (Not Modified) response code indicates the static asset in the local cache is the same as on the server" /></p>
 
-<p>The 304 status code occurs because the user invalidated their local cache and the content on the server did not change. Because of the 304 status code, the static asset <em>content</em> is not transferred; only HTTP headers are downloaded to the browser. </p>
+<p>The 304 status code occurs because the user invalidated their local cache and the content on the server did not change. Because of the 304 status code, the static asset <em>content</em> is not transferred; only HTTP headers are downloaded to the browser.</p>
 
 <p>If the content changes on the server, the client downloads the static asset with an HTTP 200 (OK) status code and a new ETag.</p>
 

@@ -870,15 +870,15 @@
 
 <p>It can be declared as the version of the component:</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;name&quot;</span><span class="err">:</span> <span class="s2">&quot;acme/foo&quot;</span><span class="err">,</span>
-<span class="s2">&quot;version&quot;</span><span class="err">:</span> <span class="mf">1.2</span><span class="err">.</span><span class="mi">0</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;name&quot;</span><span class="err">:</span> <span class="s2">&quot;acme/foo&quot;</span><span class="err">,</span>
+<span class="s2">&quot;version&quot;</span><span class="err">:</span> <span class="mf">1.2</span><span class="err">.</span><span class="mi">0</span></code></pre></figure>
 
 <p>Or it can be used to declare a dependency on a particular version of a component:</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
     <span class="nt">&quot;acme/foo&quot;</span><span class="p">:</span> <span class="s2">&quot;1.2.*&quot;</span><span class="p">,</span>
     <span class="nt">&quot;acme/bar&quot;</span><span class="p">:</span> <span class="s2">&quot;2.2.0&quot;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h3>Release types</h3>
 <p>This section describes how exactly and when the software version numbers will be changed with releases.</p>
@@ -963,7 +963,7 @@
    This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
    
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
@@ -971,7 +971,7 @@
   <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 </li>
 
@@ -981,7 +981,7 @@
 <li>Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
 
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
@@ -990,7 +990,7 @@
     <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span><span class="p">,</span>
     <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 </li>
 
@@ -999,7 +999,7 @@
 <li>When Magento releases 2.0 GA, the SI updates the site <code>composer.json</code> to the release version.
 
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
@@ -1008,7 +1008,7 @@
     <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
     <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 </li>
 
@@ -1020,7 +1020,7 @@
 <li>Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
 
    
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
@@ -1029,7 +1029,7 @@
     <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
     <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 </li>
 
@@ -1038,7 +1038,7 @@
 <li>Based upon previous communication, the developer has updated the extension so the SI updates to the new extension version.
 
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
@@ -1047,7 +1047,7 @@
     <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
     <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0&quot;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 </li>
 

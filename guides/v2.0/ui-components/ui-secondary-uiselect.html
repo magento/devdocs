@@ -641,7 +641,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<h3 id="uiselect">UI-select component</h3>
 
 <p>The UI-select component is used to provide check box interface for a specific listing or a specific data set. The component allows selecting a collection of items.</p>
@@ -652,7 +652,7 @@
 
 <p><code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;filterSelect</span> <span class="na">name=</span><span class="s">&quot;uiSelect&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;optionsProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;configurableObject&quot;</span><span class="nt">&gt;</span>
                     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Cms\Model\Page\Source\PageLayout<span class="nt">&lt;/argument&gt;</span>
@@ -666,7 +666,7 @@
                     <span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/argument&gt;</span>
             <span class="nt">&lt;/filterSelect&gt;</span>
-<span class="nt">&lt;/listing&gt;</span></code></pre></div>
+<span class="nt">&lt;/listing&gt;</span></code></pre></figure>
 
 <h4 id="configuration">Configuration</h4>
 
@@ -720,9 +720,10 @@
   </li>
 </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">imports</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">imports</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">options</span><span class="o">:</span> <span class="s1">&#39;${ $.optionsConfig.name }:options&#39;</span>
-    <span class="p">}</span></code></pre></div>
+    <span class="p">}</span>
+    </code></pre></figure>
 
 <ul>
   <li>
@@ -734,7 +735,7 @@
   </li>
 </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">actions</span><span class="o">:</span> <span class="p">[{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">actions</span><span class="o">:</span> <span class="p">[{</span>
                     <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;selectAll&#39;</span><span class="p">,</span>
                     <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Select all&#39;</span><span class="p">)</span>
                 <span class="p">},</span> <span class="p">{</span>
@@ -746,7 +747,8 @@
                 <span class="p">},</span> <span class="p">{</span>
                     <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;deselectPage&#39;</span><span class="p">,</span>
                     <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Deselect all on this page&#39;</span><span class="p">)</span>
-                <span class="p">}],</span></code></pre></div>
+                <span class="p">}],</span>
+    </code></pre></figure>
 
 <h2 id="structure">Component options</h2>
 

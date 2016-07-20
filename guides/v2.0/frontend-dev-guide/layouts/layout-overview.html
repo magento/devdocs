@@ -874,16 +874,16 @@
 <p><strong>Contents</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#layout-over-terms">Terms used</a></li>
-  <li><a href="#layout_overview_blocks">Basic layout elements</a></li>
-  <li><a href="#basic-layouts">Basic layouts</a></li>
-  <li><a href="#layout-files-types-and-conventions">Layout files types and conventions</a>    <ul>
-      <li><a href="#layout-file-types-by-role">Layout file types: by role</a></li>
+  <li><a href="#layout-over-terms" id="markdown-toc-layout-over-terms">Terms used</a></li>
+  <li><a href="#layout_overview_blocks" id="markdown-toc-layout_overview_blocks">Basic layout elements</a></li>
+  <li><a href="#basic-layouts" id="markdown-toc-basic-layouts">Basic layouts</a></li>
+  <li><a href="#layout-files-types-and-conventions" id="markdown-toc-layout-files-types-and-conventions">Layout files types and conventions</a>    <ul>
+      <li><a href="#layout-file-types-by-role" id="markdown-toc-layout-file-types-by-role">Layout file types: by role</a></li>
     </ul>
   </li>
-  <li><a href="#layout-custom">Customize layout</a></li>
-  <li><a href="#layout_processing">Layout files processing</a></li>
-  <li><a href="#related-topics">Related topics</a></li>
+  <li><a href="#layout-custom" id="markdown-toc-layout-custom">Customize layout</a></li>
+  <li><a href="#layout_processing" id="markdown-toc-layout_processing">Layout files processing</a></li>
+  <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
 </ul>
 
 <h2 id="layout-over-terms">Terms used</h2>
@@ -902,7 +902,7 @@
 
 <h2 id="layout_overview_blocks">Basic layout elements</h2>
 
-<p>The basic components of Magento page design are blocks and containers. </p>
+<p>The basic components of Magento page design are blocks and containers.</p>
 
 <p>A <em>container</em> exists for the sole purpose of assigning content structure to a page. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.</p>
 
@@ -918,16 +918,16 @@
 
 <h2 id="basic-layouts">Basic layouts</h2>
 
-<p>The basic view of all Magento storefront pages in defined in two page configuration layout files located in the Magento_Theme module: </p>
+<p>The basic view of all Magento storefront pages in defined in two page configuration layout files located in the Magento_Theme module:</p>
 
 <ul>
-  <li><code>&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>: defines the page layout. </li>
-  <li><code>&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default_head_blocks.xml</code>: defines the scripts, images, and meta data included in pages’ <code>&lt;head&gt;</code> section. </li>
+  <li><code>&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>: defines the page layout.</li>
+  <li><code>&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default_head_blocks.xml</code>: defines the scripts, images, and meta data included in pages’ <code>&lt;head&gt;</code> section.</li>
 </ul>
 
 <p>These basic page configuration layouts are extended in other Magento modules and in Magento themes.</p>
 
-<p>You can also <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html">extend</a> or <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-override.html">override</a> these files in your custom theme. </p>
+<p>You can also <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html">extend</a> or <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-override.html">override</a> these files in your custom theme.</p>
 
 <h2 id="layout-files-types-and-conventions">Layout files types and conventions</h2>
 
@@ -938,7 +938,7 @@
 <p>Following are the definitions of each layout file type:</p>
 
 <ul>
-  <li><em>Page layout</em>: an XML file declaring a page wireframe inside the <code>&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout. </li>
+  <li><em>Page layout</em>: an XML file declaring a page wireframe inside the <code>&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout.</li>
   <li><em>Page configuration</em>: an XML file declaring detailed structure, contents and meta-information of a page (includes the <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> sections of the HTML page markup).</li>
   <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code>body</code> section of the HTML page markup. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
 </ul>
@@ -952,7 +952,7 @@
 <p>The following terms are used to distinguish layouts provided by different application components:</p>
 
 <ul>
-  <li><em>Base layouts</em>: Layout files provided by modules. Conventional location: 
+  <li><em>Base layouts</em>: Layout files provided by modules. Conventional location:
     <ul>
       <li>Page configuration and generic layout files: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
       <li>Page layout files: <code>&lt;module_dir&gt;/view/frontend/page_layout</code></li>
@@ -970,7 +970,7 @@
 
 <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts.</p>
 
-<p>To make the necessary changes, create <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme. </p>
+<p>To make the necessary changes, create <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme.</p>
 
 <h2 id="layout_processing">Layout files processing</h2>
 

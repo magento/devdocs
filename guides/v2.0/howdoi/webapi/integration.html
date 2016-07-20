@@ -863,7 +863,7 @@
 	<section class="content">
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<p>An <strong>integration</strong> enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.  </p>
+		<p>An <strong>integration</strong> enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.</p>
 
 <p>Implementing a simple integration requires little knowledge of PHP or Magento internal processes. However, you will need a working knowledge of</p>
 
@@ -1062,7 +1062,7 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
 
 <p>In the following example, the test integration requires access to the following resources in the Sales module:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
     <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;testIntegration&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;resources&gt;</span>
             <span class="c">&lt;!-- To grant permission to Magento_Log::online, its parent Magento_Customer::customer needs to be declared as well--&gt;</span>
@@ -1076,7 +1076,7 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
             <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::reorder&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/resources&gt;</span>
     <span class="nt">&lt;/integration&gt;</span>
-<span class="nt">&lt;/integrations&gt;</span></code></pre></div>
+<span class="nt">&lt;/integrations&gt;</span></code></pre></figure>
 
 <h3 id="preconfig">Pre-configure the integration</h3>
 
@@ -1088,13 +1088,13 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
 
 <p>The  file defines which API resources the integration has access to.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
    <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;TestIntegration&quot;</span><span class="nt">&gt;</span>
        <span class="nt">&lt;email&gt;&lt;/email&gt;</span>
        <span class="nt">&lt;endpoint_url&gt;&lt;/endpoint_url&gt;</span>
        <span class="nt">&lt;identity_link_url&gt;&lt;/identity_link_url&gt;</span>
    <span class="nt">&lt;/integration&gt;</span>
-<span class="nt">&lt;/integrations&gt;</span></code></pre></div>
+<span class="nt">&lt;/integrations&gt;</span></code></pre></figure>
 
 <table>
 <tr>
@@ -1151,7 +1151,7 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
     <p>The location specified in the <code>identity_link_url</code> parameter must point to a page that can handle login requests.</p>
   </li>
   <li>
-    <p>The location specified in the <code>endpoint_url</code> parameter (<strong>Callback URL</strong> in Admin) must be able to process OAuth token exchanges. </p>
+    <p>The location specified in the <code>endpoint_url</code> parameter (<strong>Callback URL</strong> in Admin) must be able to process OAuth token exchanges.</p>
   </li>
 </ul>
 

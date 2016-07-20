@@ -758,26 +758,26 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 4 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<h2>Data set</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#overview">Data set overview</a></li>
-  <li><a href="#structure">Data set structure</a>    <ul>
-      <li><a href="#example">Example data set</a></li>
-      <li><a href="#data_node">How to define <code>name</code> in the <code>&lt;data&gt;</code> node</a>        <ul>
-          <li><a href="#simple_var">Set a simple variable</a></li>
-          <li><a href="#fixture_field">Set data to a fixture field</a></li>
-          <li><a href="#fixture_repository">Set data to a fixture from a repository</a></li>
-          <li><a href="#fixture_field_repository">Set data to a fixture field from a repository</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Data set overview</a></li>
+  <li><a href="#structure" id="markdown-toc-structure">Data set structure</a>    <ul>
+      <li><a href="#example" id="markdown-toc-example">Example data set</a></li>
+      <li><a href="#data_node" id="markdown-toc-data_node">How to define <code>name</code> in the <code>&lt;data&gt;</code> node</a>        <ul>
+          <li><a href="#simple_var" id="markdown-toc-simple_var">Set a simple variable</a></li>
+          <li><a href="#fixture_field" id="markdown-toc-fixture_field">Set data to a fixture field</a></li>
+          <li><a href="#fixture_repository" id="markdown-toc-fixture_repository">Set data to a fixture from a repository</a></li>
+          <li><a href="#fixture_field_repository" id="markdown-toc-fixture_field_repository">Set data to a fixture field from a repository</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#merge">Merge data sets</a>    <ul>
-      <li><a href="#add_variation">Add a new variation</a></li>
-      <li><a href="#extend_variation">Extend a variation with data</a></li>
-      <li><a href="#replace_variation">Replace a variation</a></li>
+  <li><a href="#merge" id="markdown-toc-merge">Merge data sets</a>    <ul>
+      <li><a href="#add_variation" id="markdown-toc-add_variation">Add a new variation</a></li>
+      <li><a href="#extend_variation" id="markdown-toc-extend_variation">Extend a variation with data</a></li>
+      <li><a href="#replace_variation" id="markdown-toc-replace_variation">Replace a variation</a></li>
     </ul>
   </li>
 </ul>
@@ -875,7 +875,7 @@ The following data types are available:
 
 <p>The <code>CreateSimpleProductEntityTest.xml</code> data set contains:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create Simple Product&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-23414&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateSimpleProductEntityTestVariation1&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create product with custom options(fixed price)&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/url_key&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>simple-product-%isolation%<span class="nt">&lt;/data&gt;</span>
@@ -897,17 +897,17 @@ The following data types are available:
             <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductInCart&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/variation&gt;</span>
     <span class="nt">&lt;/testCase&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>This is a data set that:</p>
 
 <ul>
   <li>corresponds to the XSD schema <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/etc/variations.xsd</code></li>
-  <li>relates to the <code>Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest</code> test case (performs creation of the simple product). </li>
+  <li>relates to the <code>Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest</code> test case (performs creation of the simple product).</li>
   <li>relates to the ticket <code>MAGETWO-23414</code> in Jira</li>
-  <li>contains variation <code>CreateSimpleProductEntityTestVariation1</code> that 
+  <li>contains variation <code>CreateSimpleProductEntityTestVariation1</code> that
     <ul>
-      <li>contains data to create product with fixed price (see descriptions in the following table) </li>
+      <li>contains data to create product with fixed price (see descriptions in the following table)</li>
       <li>defines tag that can be used to customize the test suite run</li>
       <li>defines <a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">constraints</a> that will be performed after the test flow in the order they are presented in the data set</li>
     </ul>
@@ -982,12 +982,12 @@ The following data types are available:
 
 <p>If a variable is assigned more than one value:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price/shopping_cart/total&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span>
-<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price/product_page/special_price/excluding_tax&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/data&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price/shopping_cart/total&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price/product_page/special_price/excluding_tax&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/data&gt;</span></code></pre></figure>
 
 <p>the value is processed as an array:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$price</span> <span class="o">=</span> <span class="p">[</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$price</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;shopping_cart&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
             <span class="s1">&#39;total&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;50&#39;</span>
@@ -998,11 +998,11 @@ The following data types are available:
             <span class="p">]</span>   
         <span class="p">]</span>
     <span class="p">]</span>
-<span class="p">]</span></code></pre></div>
+<span class="p">]</span></code></pre></figure>
 
 <p>Also, in similar cases you can use array type in a data set, like:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shopping_cart&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;total&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;product_type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -1010,43 +1010,43 @@ The following data types are available:
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;excluding_tax&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/data&gt;</span></code></pre></div>
+<span class="nt">&lt;/data&gt;</span></code></pre></figure>
 
 <h4 id="simple_var">Set a simple variable</h4>
 
 <p>For example, if a <a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">test case</a> or constraint has an argument <code>$price</code>, then the test case takes from the data set all the <code>&lt;data&gt;</code> nodes with a name <code>price</code>. Assume a method with the <code>$price</code> argument.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">//</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <p>To assign it with <code>10</code> in one of the variations, add the following field to a variation of the corresponding data set:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/data&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/data&gt;</span></code></pre></figure>
 
 <h4 id="fixture_field">Set data to a fixture field</h4>
 
 <p>In your test you often need to use injectable <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a> instances. For example:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nx">\Magento\Catalog\Test\Fixture\CatalogProductSimple</span> <span class="nv">$product</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">//</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <p>In this case, the ObjectManager sends data to the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> constructor. It declares that your data can be passed to the fixture in <code>$data</code> variable as an array. For example, to assign the existing fixture field <code>weight</code> with <code>50</code> you can use the following notation:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/weight&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/weight&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span></code></pre></figure>
 
 <h4 id="fixture_repository">Set data to a fixture from a repository</h4>
 
 <p>The <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class enables you to use a fixture <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html">repository</a>. It can be injected in a <code>$dataset</code> variable. For example, to use <code>dataset = product_with_special_symbols_in_name</code> from the repository assigned in the <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>, you can use:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_with_special_symbols_in_name<span class="nt">&lt;/data&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_with_special_symbols_in_name<span class="nt">&lt;/data&gt;</span></code></pre></figure>
 
 <h4 id="fixture_field_repository">Set data to a fixture field from a repository</h4>
 
@@ -1054,13 +1054,13 @@ The following data types are available:
 
 <p>Let’s see an example:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/price/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
-<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/checkout_data/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>simple_drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/price/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/checkout_data/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>simple_drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span></code></pre></figure>
 
 <p>A <code>CatalogProductSimple.xml</code> fixture contains the following declarations:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">is_required=</span><span class="s">&quot;1&quot;</span> <span class="na">group=</span><span class="s">&quot;product-details&quot;</span> <span class="na">source=</span><span class="s">&quot;Magento\Catalog\Test\Fixture\Product\Price&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\Catalog\Test\Repository\CatalogProductSimple\Price&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;checkout_data&quot;</span> <span class="na">group=</span><span class="s">&quot;null&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">is_required=</span><span class="s">&quot;1&quot;</span> <span class="na">group=</span><span class="s">&quot;product-details&quot;</span> <span class="na">source=</span><span class="s">&quot;Magento\Catalog\Test\Fixture\Product\Price&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\Catalog\Test\Repository\CatalogProductSimple\Price&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;checkout_data&quot;</span> <span class="na">group=</span><span class="s">&quot;null&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <p>The <code>price</code> fixture field contains the <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> that assigns values from a repository. After the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class has passed data to the CatalogProductSimple fixture, <code>Magento\Catalog\Test\Fixture\Product\Price</code> data source receives <code>['dataset' =&gt; 'drop_down_with_one_option_fixed_price']</code> and assigns values from the <code>['dataset' =&gt; 'drop_down_with_one_option_fixed_price']</code> of the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository.</p>
 
@@ -1085,7 +1085,7 @@ The following data types are available:
   <li>Create <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/ProductVideo/Test/TestCase/Product/UpdateSimpleProductEntityTest.xml</code> with the following code:</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1113,7 +1113,7 @@ The following data types are available:
             <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\ProductVideo\Test\Constraint\AssertNoVideoProductView&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/variation&gt;</span>
     <span class="nt">&lt;/testCase&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>Variations <code>DeleteVideoFromPCFTestVariation1</code> and <code>DeleteVideoFromPCFTestVariation2</code> will be used by the <code>Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest</code> class during the test run.</p>
 
@@ -1123,7 +1123,7 @@ The following data types are available:
 
 <p>For example, see how in <code>Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml</code></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2016 Magento. All rights reserved.</span>
@@ -1138,11 +1138,13 @@ The following data types are available:
             <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductTypeOrderOnCreate&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/variation&gt;</span>
     <span class="nt">&lt;/testCase&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span>
+
+ </code></pre></figure>
 
 <p>the variation <code>ValidateOrderOfProductTypeTestVariation1</code> is extended by the Magento_Bundle module:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2016 Magento. All rights reserved.</span>
@@ -1155,13 +1157,15 @@ The following data types are available:
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;menu/4&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Bundle Product<span class="nt">&lt;/data&gt;</span>
         <span class="nt">&lt;/variation&gt;</span>
     <span class="nt">&lt;/testCase&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span>
+
+  </code></pre></figure>
 
 <h3 id="replace_variation">Replace a variation</h3>
 
-<p>You can replace one variation with another by using a <code>replace</code> attribute of the <code>variation</code> node. A <code>replace</code> attribute contains variation that must be replaced by a variation from a <code>name</code> attribute. </p>
+<p>You can replace one variation with another by using a <code>replace</code> attribute of the <code>variation</code> node. A <code>replace</code> attribute contains variation that must be replaced by a variation from a <code>name</code> attribute.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateSuperNewCustomerBackendEntityTestVariation1&quot;</span> <span class="na">replace=</span><span class="s">&quot;CreateCustomerBackendEntityTestVariation1&quot;</span> <span class="na">summary=</span><span class="s">&quot;Variation that replaces default CreateCustomerBackendEntityTestVariation1&quot;</span><span class="nt">&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateSuperNewCustomerBackendEntityTestVariation1&quot;</span> <span class="na">replace=</span><span class="s">&quot;CreateCustomerBackendEntityTestVariation1&quot;</span> <span class="na">summary=</span><span class="s">&quot;Variation that replaces default CreateCustomerBackendEntityTestVariation1&quot;</span><span class="nt">&gt;</span></code></pre></figure>
 
 <p>After a merge of a data set with the variation that is mentioned, a test will use <code>CreateSuperNewCustomerBackendEntityTestVariation1</code> instead of <code>CreateCustomerBackendEntityTestVariation1</code>.</p>
 

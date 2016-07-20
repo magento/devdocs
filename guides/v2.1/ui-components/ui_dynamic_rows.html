@@ -710,7 +710,7 @@
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2 id="overview">Overview</h2>
 
-<p>The dynamic-rows component is used to create a table where rows of configurable fields can be dynamically added and removed. For example, it can be used for displaying data from a certain <a href="/guides/v2.1/ui-components/ui-listing-grid.html">grid</a>, where the number of records (rows) is not hardcoded. </p>
+<p>The dynamic-rows component is used to create a table where rows of configurable fields can be dynamically added and removed. For example, it can be used for displaying data from a certain <a href="/guides/v2.1/ui-components/ui-listing-grid.html">grid</a>, where the number of records (rows) is not hardcoded.</p>
 
 <p>Following is an illustration of what such a table looks like:</p>
 
@@ -719,21 +719,21 @@
 <p><strong>Contents:</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#dynamic-rows-component-structure">Dynamic-rows component structure</a>    <ul>
-      <li><a href="#components-js-classes">Components’ JS classes</a></li>
-      <li><a href="#html-templates-for-the-dynamic-table">HTML templates for the dynamic table</a></li>
-      <li><a href="#html-templates-for-fields">HTML templates for fields</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#dynamic-rows-component-structure" id="markdown-toc-dynamic-rows-component-structure">Dynamic-rows component structure</a>    <ul>
+      <li><a href="#components-js-classes" id="markdown-toc-components-js-classes">Components’ JS classes</a></li>
+      <li><a href="#html-templates-for-the-dynamic-table" id="markdown-toc-html-templates-for-the-dynamic-table">HTML templates for the dynamic table</a></li>
+      <li><a href="#html-templates-for-fields" id="markdown-toc-html-templates-for-fields">HTML templates for fields</a></li>
     </ul>
   </li>
-  <li><a href="#configuration-settings">Configuration settings</a>    <ul>
-      <li><a href="#configure-the-table-and-columns-properties">Configure the table and columns properties</a></li>
-      <li><a href="#configure-records-rows">Configure records (rows)</a></li>
-      <li><a href="#set-the-data-provider-for-the-dynamic-table">Set the data provider for the dynamic table</a></li>
-      <li><a href="#define-columns-properties">Define columns’ properties</a></li>
+  <li><a href="#configuration-settings" id="markdown-toc-configuration-settings">Configuration settings</a>    <ul>
+      <li><a href="#configure-the-table-and-columns-properties" id="markdown-toc-configure-the-table-and-columns-properties">Configure the table and columns properties</a></li>
+      <li><a href="#configure-records-rows" id="markdown-toc-configure-records-rows">Configure records (rows)</a></li>
+      <li><a href="#set-the-data-provider-for-the-dynamic-table" id="markdown-toc-set-the-data-provider-for-the-dynamic-table">Set the data provider for the dynamic table</a></li>
+      <li><a href="#define-columns-properties" id="markdown-toc-define-columns-properties">Define columns’ properties</a></li>
     </ul>
   </li>
-  <li><a href="#public-api-javascript">Public API (JavaScript)</a></li>
+  <li><a href="#public-api-javascript" id="markdown-toc-public-api-javascript">Public API (JavaScript)</a></li>
 </ul>
 
 <h2 id="dynamic-rows-component-structure">Dynamic-rows component structure</h2>
@@ -792,7 +792,7 @@
 
 <p>A sample configuration follows:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="nt">&lt;dynamicRows</span> <span class="na">name=</span><span class="s">&quot;Integration&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -832,7 +832,7 @@
          <span class="nt">&lt;/field&gt;</span>
     <span class="nt">&lt;/container&gt;</span>
 <span class="nt">&lt;/dynamicRows&gt;</span>
-...</code></pre></div>
+...</code></pre></figure>
 
 <p>The result of this configuration is:</p>
 
@@ -844,7 +844,7 @@
 
 <p>The general properties of the whole table and column-specific options are configured like the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="nt">&lt;dynamicRows</span> <span class="na">name=</span><span class="s">&quot;Integration&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -857,7 +857,7 @@
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/dynamicRows&gt;</span>
-...</code></pre></div>
+...</code></pre></figure>
 
 <p>The following table contains the options you can configure for the whole grid and columns.</p>
 
@@ -1060,7 +1060,7 @@
 
 <p>In the configuration file, they are configured in the scope of the container which name is defined by the <code>itemTemplate</code> general option. By default it is <code>&lt;container name="record"&gt;</code>. The record configuration block looks like the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                 <span class="c">&lt;!-- Set the properties of the records (rows) here--&gt;</span>
                 ...
@@ -1069,7 +1069,7 @@
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;is_collection&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/lib/core/collection<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/argument&gt;</span></code></pre></div>
+        <span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
 <p>The following options are available for rows:</p>
 
@@ -1178,7 +1178,7 @@ Relative path to the column which defines the sorting order.
 
 <p>Field types are specified in the scope of the record container (by default it is <code>&lt;container name="record"&gt;</code>) similar to the following example:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
     <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;record&quot;</span><span class="nt">&gt;</span>
 ...
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;%field_internal_name%&quot;</span><span class="nt">&gt;</span>
@@ -1191,7 +1191,7 @@ Relative path to the column which defines the sorting order.
             <span class="nt">&lt;/argument&gt;</span>
          <span class="nt">&lt;/field&gt;</span>
     <span class="nt">&lt;/container&gt;</span>
-...</code></pre></div>
+...</code></pre></figure>
 
 <p>You can configure the following:</p>
 
@@ -1305,7 +1305,7 @@ The path to data storage.
 
 <p>You can configure the grid to render text instead of the certain field. To do this, add the following in the field configuration:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;%field_internal_name%&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -1314,7 +1314,7 @@ The path to data storage.
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
          <span class="nt">&lt;/field&gt;</span>
-...</code></pre></div>
+...</code></pre></figure>
 
 <h2 id="public-api-javascript">Public API (JavaScript)</h2>
 

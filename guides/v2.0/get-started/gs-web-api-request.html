@@ -701,7 +701,7 @@ See <a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Aut
 <p>You specify input parameters in the URI. For example, in the <code>GET&nbsp;/V1/customers/:customerId</code> URI, you must specify the <code>customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
 <p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code>POST&nbsp;/V1/customers</code> call, you must specify a request body like this:</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;customers&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;customer&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">,</span>
@@ -727,7 +727,7 @@ See <a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Aut
             <span class="p">}</span>
         <span class="p">]</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>This JSON-formatted request body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
 

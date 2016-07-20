@@ -366,7 +366,7 @@
 <ul>
   <li>Module: The PHP code that defines your application’s business logic. The module code must be in subdirectories of <code>&lt;your Magento install dir&gt;/app/code/&lt;ModuleName&gt;</code>.</li>
   <li>Integration: Code that enables a third-party application to get authorized access to Magento resources using either SOAP or REST calls. The merchant who activates the integration (which might be a module or extension) must agree to allow the integration to access those resources.</li>
-  <li>Extension: A tested module that is marketed to other merchants on Magento Marketplace. </li>
+  <li>Extension: A tested module that is marketed to other merchants on Magento Marketplace.</li>
 </ul>
 
 <p>One extension can contain multiple modules.</p>
@@ -411,14 +411,13 @@
 
     <p>Sample:</p>
 
-    <p><code>php
-&lt;route url="/V1/customerAccounts/isEmailAvailable" method="PUT"&gt;
+    <pre><code class="language-php">&lt;route url="/V1/customerAccounts/isEmailAvailable" method="PUT"&gt;
     &lt;service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="isEmailAvailable"/&gt;
     &lt;resources&gt;
         &lt;resource ref="Magento_Customer::manage"/&gt;
     &lt;/resources&gt;
 &lt;/route&gt;
-</code></p>
+</code></pre>
 
     <p>(<a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Source</a>)</p>
   </li>

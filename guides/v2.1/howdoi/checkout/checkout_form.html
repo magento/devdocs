@@ -941,7 +941,7 @@
 
 <p><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set Magento to developer mode</a> while you perform all customizations and debugging.</p>
 
-<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">depend</a> on the <code>Magento_Checkout</code> module. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues. </p>
+<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">depend</a> on the <code>Magento_Checkout</code> module. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
 <h2 id="component">Create the JS implementation of the form UI component</h2>
 
@@ -949,7 +949,7 @@
 
 <p>Example of extending the default form component:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/*global define*/</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/*global define*/</span>
 <span class="nx">define</span><span class="p">([</span>
     <span class="s1">&#39;Magento_Ui/js/form/form&#39;</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Component</span><span class="p">)</span> <span class="p">{</span>
@@ -980,14 +980,14 @@
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <h2 id="template">Create the HTML template</h2>
 <p>Add the <code>knockout.js</code> HTML template for the form component under the <code>&lt;your_module_dir&gt;/view/frontend/web/template</code> directory.</p>
 
 <p>Example:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div&gt;</span>
     <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;custom-checkout-form&quot;</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;attr: {&#39;data-hasrequired&#39;: $t(&#39;* Required Fields&#39;)}&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">&quot;fieldset&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;legend</span> <span class="na">data-bind=</span><span class="s">&quot;i18n: &#39;Custom Checkout Form&#39;&quot;</span><span class="nt">&gt;&lt;/legend&gt;</span>
@@ -1002,7 +1002,7 @@
             <span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;i18n: &#39;Submit&#39;&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
         <span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/form&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
 <h3 id="modifying-the-custom-template-after-it-was-applied">Modifying the custom template after it was applied</h3>
 
@@ -1015,14 +1015,14 @@
 
 <h2 id="layout">Declare the form in the checkout page layout</h2>
 
-<p>Certain default checkout templates declare regions where additional content can be inserted. You can add your custom form in any of these regions. These regions are provided with corresponding comments in the default Checkout page layout file <code>&lt;Checkout_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code>. </p>
+<p>Certain default checkout templates declare regions where additional content can be inserted. You can add your custom form in any of these regions. These regions are provided with corresponding comments in the default Checkout page layout file <code>&lt;Checkout_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code>.</p>
 
 <p>Also you locate the regions in the <code>.html</code> templates of the blocks used in this layout file. 
 For example, the shipping JS component (see <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/web/template/shipping.html</code>) provides the <code>before-form</code> region and corresponding UI container.</p>
 
 <p>Any content added here is rendered before the Shipping Address form on the Shipping Information step. To add content to this region, create a <code>checkout_index_index.xml</code> layout update in the <code>&lt;your_module_dir&gt;/view/frontend/layout/</code>. It should be similar to the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
@@ -1055,7 +1055,7 @@ For example, the shipping JS component (see <code>&lt;Magento_Checkout_module_di
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <h3 id="static-forms">Static forms</h3>
 
@@ -1063,7 +1063,7 @@ For example, the shipping JS component (see <code>&lt;Magento_Checkout_module_di
 
 <p>The following code sample shows configuration of the form that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (<code>checkoutProvider</code>) that is introduced in the <code>Magento_Checkout</code> module:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;custom-checkout-form-container&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;custom-checkout-form-container&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%your_module_dir%/js/view/custom-checkout-form<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;provider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>checkoutProvider<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -1152,7 +1152,7 @@ For example, the shipping JS component (see <code>&lt;Magento_Checkout_module_di
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/item&gt;</span></code></pre></div>
+<span class="nt">&lt;/item&gt;</span></code></pre></figure>
 
 <h3 id="dynamically-defined-forms">Dynamically defined forms</h3>
 
@@ -1161,7 +1161,7 @@ A plugin can add custom fields definitions to layout at run-time. The format of 
 
 <p>For example:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$textField</span> <span class="o">=</span> <span class="p">[</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$textField</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;component&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento_Ui/js/form/element/abstract&#39;</span><span class="p">,</span>
     <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;customScope&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;customCheckoutForm&#39;</span><span class="p">,</span>
@@ -1175,7 +1175,7 @@ A plugin can add custom fields definitions to layout at run-time. The format of 
     <span class="s1">&#39;validation&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;required-entry&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
     <span class="p">],</span>
-<span class="p">];</span></code></pre></div>
+<span class="p">];</span></code></pre></figure>
 
 <h2 id="illustration">Illustration</h2>
 <p>If you use the code samples provided as examples in this topic, this would result in adding the following form to the Shipping Information step:</p>

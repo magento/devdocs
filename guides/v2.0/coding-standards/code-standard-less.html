@@ -489,75 +489,75 @@
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<p>This standard defines Magento internal requirements for code formatting and style for teams that develop LESS and CSS code.</p>
 
-<p>Some parts of Magento code might not comply with this coding standard yet, but we are working to gradually improve this. </p>
+<p>Some parts of Magento code might not comply with this coding standard yet, but we are working to gradually improve this.</p>
 
 <p>This coding standard is optional for third-party Magento developers.</p>
 
 <ul id="markdown-toc">
-  <li><a href="#general-rules">General rules</a>    <ul>
-      <li><a href="#indentation">Indentation</a></li>
-      <li><a href="#formatting">Formatting</a>        <ul>
-          <li><a href="#braces">Braces</a></li>
-          <li><a href="#selector-delimiters">Selector delimiters</a></li>
-          <li><a href="#quotes">Quotes</a></li>
-          <li><a href="#combinator-indents">Combinator indents</a></li>
-          <li><a href="#properties-line-break">Properties line break</a></li>
-          <li><a href="#properties-colon-indents">Properties colon indents</a></li>
-          <li><a href="#end-of-file">End of file</a></li>
-          <li><a href="#end-of-selector">End of selector</a></li>
-          <li><a href="#end-of-the-property-line">End of the property line</a></li>
-          <li><a href="#important-property">!important property</a></li>
+  <li><a href="#general-rules" id="markdown-toc-general-rules">General rules</a>    <ul>
+      <li><a href="#indentation" id="markdown-toc-indentation">Indentation</a></li>
+      <li><a href="#formatting" id="markdown-toc-formatting">Formatting</a>        <ul>
+          <li><a href="#braces" id="markdown-toc-braces">Braces</a></li>
+          <li><a href="#selector-delimiters" id="markdown-toc-selector-delimiters">Selector delimiters</a></li>
+          <li><a href="#quotes" id="markdown-toc-quotes">Quotes</a></li>
+          <li><a href="#combinator-indents" id="markdown-toc-combinator-indents">Combinator indents</a></li>
+          <li><a href="#properties-line-break" id="markdown-toc-properties-line-break">Properties line break</a></li>
+          <li><a href="#properties-colon-indents" id="markdown-toc-properties-colon-indents">Properties colon indents</a></li>
+          <li><a href="#end-of-file" id="markdown-toc-end-of-file">End of file</a></li>
+          <li><a href="#end-of-selector" id="markdown-toc-end-of-selector">End of selector</a></li>
+          <li><a href="#end-of-the-property-line" id="markdown-toc-end-of-the-property-line">End of the property line</a></li>
+          <li><a href="#important-property" id="markdown-toc-important-property">!important property</a></li>
         </ul>
       </li>
-      <li><a href="#comments">Comments</a></li>
-      <li><a href="#selectors">Selectors</a>        <ul>
-          <li><a href="#types">Types</a></li>
+      <li><a href="#comments" id="markdown-toc-comments">Comments</a></li>
+      <li><a href="#selectors" id="markdown-toc-selectors">Selectors</a>        <ul>
+          <li><a href="#types" id="markdown-toc-types">Types</a></li>
         </ul>
       </li>
-      <li><a href="#classes-naming">Classes Naming</a>        <ul>
-          <li><a href="#standard-classes">Standard classes</a></li>
-          <li><a href="#helper-classes">Helper classes</a></li>
-          <li><a href="#size">Size</a></li>
-          <li><a href="#meaning">Meaning</a></li>
+      <li><a href="#classes-naming" id="markdown-toc-classes-naming">Classes Naming</a>        <ul>
+          <li><a href="#standard-classes" id="markdown-toc-standard-classes">Standard classes</a></li>
+          <li><a href="#helper-classes" id="markdown-toc-helper-classes">Helper classes</a></li>
+          <li><a href="#size" id="markdown-toc-size">Size</a></li>
+          <li><a href="#meaning" id="markdown-toc-meaning">Meaning</a></li>
         </ul>
       </li>
-      <li><a href="#selectors-naming">Selectors naming</a>        <ul>
-          <li><a href="#type-selectors">Type selectors</a></li>
-          <li><a href="#formatting-1">Formatting</a></li>
-          <li><a href="#nesting">Nesting</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#properties">Properties</a>    <ul>
-      <li><a href="#sorting">Sorting</a></li>
-      <li><a href="#shorthand">Shorthand</a></li>
-      <li><a href="#and-units">0 and units</a></li>
-      <li><a href="#floating-values">Floating values</a></li>
-      <li><a href="#hexadecimal-notation">Hexadecimal notation</a></li>
-    </ul>
-  </li>
-  <li><a href="#variables">Variables</a>    <ul>
-      <li><a href="#location">Location</a>        <ul>
-          <li><a href="#local-variables">Local variables</a></li>
-          <li><a href="#theme-variables">Theme variables</a></li>
-        </ul>
-      </li>
-      <li><a href="#naming">Naming</a>        <ul>
-          <li><a href="#value-variables">Value variables</a></li>
-          <li><a href="#parameter-variables">Parameter variables</a></li>
+      <li><a href="#selectors-naming" id="markdown-toc-selectors-naming">Selectors naming</a>        <ul>
+          <li><a href="#type-selectors" id="markdown-toc-type-selectors">Type selectors</a></li>
+          <li><a href="#formatting-1" id="markdown-toc-formatting-1">Formatting</a></li>
+          <li><a href="#nesting" id="markdown-toc-nesting">Nesting</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#mixins">Mixins</a>    <ul>
-      <li><a href="#location-1">Location</a></li>
-      <li><a href="#naming-1">Naming</a></li>
+  <li><a href="#properties" id="markdown-toc-properties">Properties</a>    <ul>
+      <li><a href="#sorting" id="markdown-toc-sorting">Sorting</a></li>
+      <li><a href="#shorthand" id="markdown-toc-shorthand">Shorthand</a></li>
+      <li><a href="#and-units" id="markdown-toc-and-units">0 and units</a></li>
+      <li><a href="#floating-values" id="markdown-toc-floating-values">Floating values</a></li>
+      <li><a href="#hexadecimal-notation" id="markdown-toc-hexadecimal-notation">Hexadecimal notation</a></li>
     </ul>
   </li>
-  <li><a href="#extends">Extends</a>    <ul>
-      <li><a href="#location-2">Location</a></li>
-      <li><a href="#naming-2">Naming</a></li>
+  <li><a href="#variables" id="markdown-toc-variables">Variables</a>    <ul>
+      <li><a href="#location" id="markdown-toc-location">Location</a>        <ul>
+          <li><a href="#local-variables" id="markdown-toc-local-variables">Local variables</a></li>
+          <li><a href="#theme-variables" id="markdown-toc-theme-variables">Theme variables</a></li>
+        </ul>
+      </li>
+      <li><a href="#naming" id="markdown-toc-naming">Naming</a>        <ul>
+          <li><a href="#value-variables" id="markdown-toc-value-variables">Value variables</a></li>
+          <li><a href="#parameter-variables" id="markdown-toc-parameter-variables">Parameter variables</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#mixins" id="markdown-toc-mixins">Mixins</a>    <ul>
+      <li><a href="#location-1" id="markdown-toc-location-1">Location</a></li>
+      <li><a href="#naming-1" id="markdown-toc-naming-1">Naming</a></li>
+    </ul>
+  </li>
+  <li><a href="#extends" id="markdown-toc-extends">Extends</a>    <ul>
+      <li><a href="#location-2" id="markdown-toc-location-2">Location</a></li>
+      <li><a href="#naming-2" id="markdown-toc-naming-2">Naming</a></li>
     </ul>
   </li>
 </ul>
@@ -771,11 +771,10 @@
 
 <p><strong>Incorrect</strong>:</p>
 
-<p><code>
-    .jquery-ui-calendar-item {
+<pre><code>    .jquery-ui-calendar-item {
         background-color: @nav__background-color!important;
     }
-</code></p>
+</code></pre>
 
 <h3 id="comments">Comments</h3>
 
@@ -812,7 +811,7 @@ First, second and third level comments should have two spaces after “//”. In
 
 <h4 id="types">Types</h4>
 
-<p>Magento supports the two most recent versions of all major browsers. Internet Explorer is supported from version 9 and later. </p>
+<p>Magento supports the two most recent versions of all major browsers. Internet Explorer is supported from version 9 and later.</p>
 
 <p>You can use almost all CSS3 selectors: descendants, attributes, pseudo classes, structural, pseudo elements, and so on.</p>
 
@@ -871,7 +870,7 @@ First, second and third level comments should have two spaces after “//”. In
 
 <p>Helper class names should be lowercase and start with underscore (“_”).</p>
 
-<p>Some parts of Magento code might not comply with this standard yet. You might still find helper names with no underscores. We are working to gradually remove the inconsistency.  </p>
+<p>Some parts of Magento code might not comply with this standard yet. You might still find helper names with no underscores. We are working to gradually remove the inconsistency.</p>
 
 <p><strong>Example</strong>:</p>
 
@@ -908,7 +907,7 @@ Try to convey what class is about while being as brief as possible.</p>
 
 <h4 id="meaning">Meaning</h4>
 
-<p>Use meaningful, specific class names that reflect the purpose of the element. Class names should not be presentational or cryptic. </p>
+<p>Use meaningful, specific class names that reflect the purpose of the element. Class names should not be presentational or cryptic.</p>
 
 <p><strong>Correct</strong>: specific</p>
 
@@ -1223,7 +1222,7 @@ color: @nav-item__color;
 
 <h3 id="naming-1">Naming</h3>
 
-<p>For mixin naming apply the class naming rules. </p>
+<p>For mixin naming apply the class naming rules.</p>
 
 <p>For mixins grouping use the double underscore “__” prefix.</p>
 

@@ -881,12 +881,12 @@
 subsequent chapters in this guide.</p>
 
 <ul id="markdown-toc">
-  <li><a href="#set-a-parent-theme">Set a parent theme</a></li>
-  <li><a href="#override-viewxml-file">Override view.xml file</a></li>
-  <li><a href="#theme-inherit-static">Override static assets</a></li>
-  <li><a href="#theme-inherit-templates">Override templates</a></li>
-  <li><a href="#theme-inherit-layout">Extend layouts</a></li>
-  <li><a href="#theme-inherit-layout-over">Override layouts</a></li>
+  <li><a href="#set-a-parent-theme" id="markdown-toc-set-a-parent-theme">Set a parent theme</a></li>
+  <li><a href="#override-viewxml-file" id="markdown-toc-override-viewxml-file">Override view.xml file</a></li>
+  <li><a href="#theme-inherit-static" id="markdown-toc-theme-inherit-static">Override static assets</a></li>
+  <li><a href="#theme-inherit-templates" id="markdown-toc-theme-inherit-templates">Override templates</a></li>
+  <li><a href="#theme-inherit-layout" id="markdown-toc-theme-inherit-layout">Extend layouts</a></li>
+  <li><a href="#theme-inherit-layout-over" id="markdown-toc-theme-inherit-layout-over">Override layouts</a></li>
 </ul>
 
 <h2 id="set-a-parent-theme">Set a parent theme</h2>
@@ -896,13 +896,13 @@ subsequent chapters in this guide.</p>
 <p>Example: 
 the Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in <code>app/design/frontend/OrangeCo/orange/theme.xml</code> as follows:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Config/etc/theme.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Config/etc/theme.xsd&quot;</span><span class="nt">&gt;</span>
      <span class="nt">&lt;title&gt;</span>Orange<span class="nt">&lt;/title&gt;</span>
      <span class="nt">&lt;parent&gt;</span>Magento/blank<span class="nt">&lt;/parent&gt;</span> 
      <span class="nt">&lt;media&gt;</span>
          <span class="nt">&lt;preview_image&gt;</span>media/preview.jpg<span class="nt">&lt;/preview_image&gt;</span> 
      <span class="nt">&lt;/media&gt;</span>
- <span class="nt">&lt;/theme&gt;</span></code></pre></div>
+ <span class="nt">&lt;/theme&gt;</span></code></pre></figure>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.</p>
@@ -991,7 +991,7 @@ To do this, they need to add an overriding template for the corresponding module
 Note, that the path to the template inside the <code>templates</code> directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:</p>
 <p><img src="/common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button " /></p>
-<p>You can find out what exactly code changes are required to perform this and other tasks in the <a href="/guides/v2.1/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>. </p>
+<p>You can find out what exactly code changes are required to perform this and other tasks in the <a href="/guides/v2.1/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.</p>
 
 <h2 id="theme-inherit-layout">Extend layouts</h2>
 
@@ -1017,11 +1017,11 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
 <p>OrangeCo decided they should remove the “Report bugs” link from the footer, defined in <code>&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>
 To do this, they added an extending layout in <code>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml</code> :</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&#39;report.bugs&#39;</span> <span class="na">remove=</span><span class="s">&#39;true&#39;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>For more information about extending layout refer to the <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.</p>
 

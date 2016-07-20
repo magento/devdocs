@@ -641,10 +641,10 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<h3 id="inlineedit">Inline Edit component</h3>
 
-<p>The Inline Edit component is used to provide the ability of inline editing. </p>
+<p>The Inline Edit component is used to provide the ability of inline editing.</p>
 
 <h4 id="related-ui-components">Related UI Components</h4>
 
@@ -657,7 +657,7 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
 
 <p>To enable Inline Edit component for the grid, it is declared as a plugin for Listing component:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editorConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -669,7 +669,7 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
 ..
-<span class="nt">&lt;/columns&gt;</span></code></pre></div>
+<span class="nt">&lt;/columns&gt;</span></code></pre></figure>
 
 <p>The configuration of the component can include:</p>
 
@@ -706,11 +706,12 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
   </li>
 </ul>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;clientConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;clientConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;saveUrl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;url&quot;</span> <span class="na">path=</span><span class="s">&quot;cms/page/inlineEdit&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;validateUrl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>/path/to<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;validateBeforeSave&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/item&gt;</span></code></pre></div>
+    <span class="nt">&lt;/item&gt;</span>
+    </code></pre></figure>
 
 <ul>
   <li>
@@ -723,7 +724,7 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
 
 <p>With configuration above, the Inline Edit will be enabled. But it also must start editing in response to some user action, for example when clicking somewhere on the row.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;childDefaults&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -740,13 +741,13 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/column&gt;</span></code></pre></div>
+<span class="nt">&lt;/column&gt;</span></code></pre></figure>
 
 <p>Note that this is not the configuration of the Inline Edit itself, but the configuration of the Column component, to interact with the Inline Edit.</p>
 
 <p>With the above configuration, the Inline Edit will be enabled, but all row cells will be read-only during the Inline edit. To make specific column editable, next configuration can be used:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editor&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -759,11 +760,11 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
         <span class="nt">&lt;/item&gt;</span>
     ..
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/column&gt;</span></code></pre></div>
+<span class="nt">&lt;/column&gt;</span></code></pre></figure>
 
 <p>Or as a short alternative:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editor&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
@@ -771,7 +772,7 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
         <span class="nt">&lt;/item&gt;</span>
         ..
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/column&gt;</span></code></pre></div>
+<span class="nt">&lt;/column&gt;</span></code></pre></figure>
 
 <p>The configuration for the specific column editor can include:</p>
 
@@ -791,7 +792,7 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
 <p>Additional examples:
  * - Example of the templates configuration (fieldTmpl for the edited cell, and rowTmpl for the whole edited row)</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editorConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -807,14 +808,14 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
 ..
-<span class="nt">&lt;/columns&gt;</span></code></pre></div>
+<span class="nt">&lt;/columns&gt;</span></code></pre></figure>
 
 <p>** - Example of the editor type configuraion - let’s add a colorpicker type, for example, as addition to the existed types (which extend form/element/abstract)</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editor&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editor&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/colorpicker<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/colorpicker<span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/item&gt;</span></code></pre></div>
+<span class="nt">&lt;/item&gt;</span></code></pre></figure>
 
 <h4 id="inline-edit-js-component-structure">Inline Edit JS Component Structure</h4>
 

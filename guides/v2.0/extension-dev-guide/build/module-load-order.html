@@ -844,7 +844,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<h2 id="component-load-order">Component load order</h2>
 
 <p>You may need to specify your component’s dependency on other components or files from other components using your component’s <a href="/guides/v2.0/extension-dev-guide/build/create_component.html#add-component-xml">composer.json</a>. Further, you can specify a load order in your component’s <code>module.xml</code> file using the <code>&lt;sequence&gt;</code> tag to ensure that needed files from other components are already loaded when your component loads.</p>
@@ -852,7 +852,7 @@
 <p><code>&lt;sequence&gt;</code> declares the list of components that must be loaded before the current component is loaded. It’s used for loading different kind of files: configuration files, view files (including CSS, LESS, and template files), or setup classes. Note that <code>&lt;sequence&gt;</code> does not affect the loading of regular classes (non-setup classes). 
 <em>Setup</em> classes are classes in the component that create or update database schema or data.</p>
 
-<p>If you know that your component’s logic depends on something in another component then you should add it to <code>require</code> in <code>composer.json</code> and <code>&lt;sequence&gt;</code> in <code>module.xml</code>. </p>
+<p>If you know that your component’s logic depends on something in another component then you should add it to <code>require</code> in <code>composer.json</code> and <code>&lt;sequence&gt;</code> in <code>module.xml</code>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -866,20 +866,20 @@
 
 <p><strong>Component A</strong> introduces <code>gadgetlayout.xml</code>, which updates block <code>gadgetBlock</code> from <strong>component B</strong>. In this case, layout files from <strong>component A</strong> should be loaded before <strong>component B</strong>, so you should specify that in <strong>component B’s</strong> <code>&lt;sequence&gt;</code> entry in module.xml.</p>
 
-<p>For each particular scenario, files of the same type are loaded from different components taking into account the sequence information provided in each component’s <code>module.xml</code> file. </p>
+<p>For each particular scenario, files of the same type are loaded from different components taking into account the sequence information provided in each component’s <code>module.xml</code> file.</p>
 
 <p>In another scenario, let’s say you want to load all of the layout files with the name <code>default.xml</code>. <strong>Component A</strong> specifies <strong>component B</strong> in <code>&lt;sequence&gt;</code>. The files load in the following order:</p>
 
 <ol>
   <li><code>component X/view/frontend/layout/default.xml</code>—Either we don’t care about when component X loads or perhaps component B requires it to be loaded before it.</li>
-  <li><code>component B/view/frontend/layout/default.xml</code> </li>
+  <li><code>component B/view/frontend/layout/default.xml</code></li>
   <li><code>component A/view/frontend/layout/default.xml</code>—Loads after <strong>component B</strong> because <strong>component B</strong> is listed in <strong>component A’s</strong> <code>&lt;sequence&gt;</code> tag.</li>
   <li><code>component Z/view/frontend/layout/default.xml</code>—Either we don’t care about the sequence for component Z or perhaps component Z requires component A files to be loaded before it.</li>
 </ol>
 
 <p>There are no limitations—you can specify any valid component in <code>&lt;sequence&gt;</code>.</p>
 
-<p>If you do specify a component in <code>&lt;sequence&gt;</code>, make sure that you have also added it to the <code>require</code> section in that component’s <code>composer.json</code> file. </p>
+<p>If you do specify a component in <code>&lt;sequence&gt;</code>, make sure that you have also added it to the <code>require</code> section in that component’s <code>composer.json</code> file.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

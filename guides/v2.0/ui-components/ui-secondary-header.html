@@ -656,7 +656,7 @@
 
 <p>To enable the sticky header functionality for a certain grid, declare it as a child element in the grid configuration file using the following notation:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;sticky&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;sticky&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/sticky/sticky<span class="nt">&lt;/item&gt;</span>
@@ -664,7 +664,7 @@
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;listingProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/container&gt;</span></code></pre></div>
+    <span class="nt">&lt;/container&gt;</span></code></pre></figure>
 
 <p>Where the following should be specified:</p>
 
@@ -677,7 +677,7 @@
 
 <p>Enabling a sticky header for the CMS pages grid, configured in <code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code>:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;listing_top&quot;</span><span class="nt">&gt;</span>
          ..
         <span class="nt">&lt;/container&gt;</span>
@@ -690,7 +690,7 @@
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/container&gt;</span>
-    <span class="nt">&lt;/listing&gt;</span></code></pre></div>
+    <span class="nt">&lt;/listing&gt;</span></code></pre></figure>
 
 <h2 id="sticky_config">Sticky header configuration</h2>
 
@@ -700,7 +700,7 @@
 The toolbar component should use the <code>ui/grid/sticky/toolbar</code> template for the sticky header.
 <code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code>:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;listing_top&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -710,7 +710,7 @@ The toolbar component should use the <code>ui/grid/sticky/toolbar</code> templat
             <span class="nt">&lt;/argument&gt;</span>
             ..
         <span class="err">&lt;</span>/container name=&quot;listing_top&quot;&gt;
-    <span class="nt">&lt;/listing&gt;</span></code></pre></div>
+    <span class="nt">&lt;/listing&gt;</span></code></pre></figure>
 
 <h2 id="sticky_elements">Component elements</h2>
 <p>The sticky header component consists of the following elements:</p>

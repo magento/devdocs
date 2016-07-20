@@ -1345,11 +1345,11 @@
 <h2 id="config-php-contents">Details about the deployment configuration</h2>
 <p><code>config.php</code> and <code>env.php</code> are PHP files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.</p>
 
-<p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework. </p>
+<p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework.</p>
 
 <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
 
-<p>On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules’ configuration files, with the exception of disabled modules. </p>
+<p>On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules’ configuration files, with the exception of disabled modules.</p>
 
 <p>The following sections discusses the structure and contents of the deployment configuration—<code>config.php</code> and <code>env.php</code>.</p>
 
@@ -1364,7 +1364,7 @@
 <p>Examples:</p>
 
 <ul>
-  <li>Uninstall components: <a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a> </li>
+  <li>Uninstall components: <a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a></li>
   <li>Enable or disable components: <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.</li>
   <li>Component Manager: coming soon</li>
   <li>System Upgrade: coming soon</li>
@@ -1372,7 +1372,7 @@
 
 <p><code>config.php</code> snippet:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
   <span class="s1">&#39;modules&#39;</span> <span class="o">=&gt;</span>
   <span class="k">array</span> <span class="p">(</span>
@@ -1387,11 +1387,11 @@
     <span class="s1">&#39;Magento_Customer&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
 <span class="o">...</span>
   <span class="p">),</span>
-<span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
-<p>The value <code>1</code> or <code>0</code> indicates whether a module is enabled or disabled. </p>
+<p>The value <code>1</code> or <code>0</code> indicates whether a module is enabled or disabled.</p>
 
-<p>Disabled modules are not recognized by the Magento application; in other words, they don’t participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the storefront or Admin and don’t affect routing. </p>
+<p>Disabled modules are not recognized by the Magento application; in other words, they don’t participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the storefront or Admin and don’t affect routing.</p>
 
 <p>The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.</p>
 

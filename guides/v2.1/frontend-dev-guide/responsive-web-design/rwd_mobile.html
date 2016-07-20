@@ -868,11 +868,11 @@
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2>What's in this topic</h2>
-<p>The topic describes how to create a responsive mobile-specific theme using the default Magento approaches. </p>
+<p>The topic describes how to create a responsive mobile-specific theme using the default Magento approaches.</p>
 
 <h2>Creating a mobile-specific theme</h2>
 
-<p>To use all the responsive approaches implemented in the Magento out-of-the-box Blank and Luma themes, your theme should declare one of them as a <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a>. </p>
+<p>To use all the responsive approaches implemented in the Magento out-of-the-box Blank and Luma themes, your theme should declare one of them as a <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a>.</p>
 
 <p>To create a mobile-specific theme:</p>
 
@@ -881,11 +881,11 @@
   <li>Add a <code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code> layout file with the following content:</li>
 </ol>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;head&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;css/styles-l.css&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>This will remove the desktop-specific files from your theme.</p>
 

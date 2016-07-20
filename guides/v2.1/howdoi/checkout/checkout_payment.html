@@ -945,7 +945,7 @@
 
 <h2 id="create">Create the .js component file</h2>
 
-<p>Your payment method renderer must be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the <code>Magento_Checkout</code> module. Module dependencies are specified in the <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">module’s <code>composer.json</code></a>. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues. </p>
+<p>Your payment method renderer must be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the <code>Magento_Checkout</code> module. Module dependencies are specified in the <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">module’s <code>composer.json</code></a>. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
 <p>In you custom module directory create the component’s <code>.js</code> file (payment method renderer). It must be located under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory. For example in the Magento modules, the payment methods renderers are stored in the <code>&lt;your_module_dir&gt;/view/frontend/web/js/view/payment/method-renderer/</code> directory.</p>
 
@@ -1003,7 +1003,7 @@
 
 <p>The general view of the payment method renderer is the following:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s1">&#39;Magento_Checkout/js/view/payment/default&#39;</span>
     <span class="p">],</span>
@@ -1016,7 +1016,7 @@
             <span class="c1">// add required logic here</span>
         <span class="p">});</span>
     <span class="p">}</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span></code></pre></figure>
 
 <p>If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js"><code>&lt;Magento_Payment_module_dir&gt;/view/frontend/web/js/view/payment/cc-form.js</code></a>. It also extends the default payment renderer, but has the following own methods:</p>
 
@@ -1075,7 +1075,7 @@ This configuration is stored in the <code>window.checkoutConfig</code> variable 
 
 <p>A sample <code>.php</code> class implementing <code>\Magento\Checkout\Model\ConfigProviderInterface</code>:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">MyCustomPaymentConfigProvider</span> <span class="k">implements</span> <span class="nx">\Magento\Checkout\Model\ConfigProviderInterface</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">MyCustomPaymentConfigProvider</span> <span class="k">implements</span> <span class="nx">\Magento\Checkout\Model\ConfigProviderInterface</span>
 <span class="p">{</span>
 <span class="o">...</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getConfig</span><span class="p">()</span>
@@ -1085,11 +1085,11 @@ This configuration is stored in the <code>window.checkoutConfig</code> variable 
         <span class="p">];</span>
     <span class="p">}</span>
 <span class="o">...</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>A sample DI configuration file of a custom module <code>&lt;your_module_dir&gt;/etc/di.xml</code>:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Checkout\Modерel\CompositeConfigProvider&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;configProviders&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -1099,7 +1099,7 @@ This configuration is stored in the <code>window.checkoutConfig</code> variable 
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 ...
-<span class="nt">&lt;/type&gt;</span></code></pre></div>
+<span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
 <h3 id="add-other-payment-related-features">Add other payment-related features</h3>
 <p>You can also add payment-related features (like reward points, gift registry, an so on) to the Review and Payment Information checkout step. They must be implemented as UI components as well, and can be displayed before or after the list of payment methods. This is configured in the <a href="#layout">checkout page layout file correspondingly</a>.</p>
@@ -1109,7 +1109,7 @@ This configuration is stored in the <code>window.checkoutConfig</code> variable 
 
 <p>The file content must be similar to the following:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s1">&#39;uiComponent&#39;</span><span class="p">,</span>
         <span class="s1">&#39;Magento_Checkout/js/model/payment/renderer-list&#39;</span>
@@ -1129,7 +1129,7 @@ This configuration is stored in the <code>window.checkoutConfig</code> variable 
         <span class="err">/** Add view logic here if needed </span>
         <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({});</span>
     <span class="p">}</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span></code></pre></figure>
 
 <p>If your module adds several payment methods, you can register all payment methods renderers in one file.</p>
 
@@ -1140,7 +1140,7 @@ This configuration is stored in the <code>window.checkoutConfig</code> variable 
 
 <p>In your custom module directory, create a new <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file. In this file, add the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
@@ -1206,7 +1206,7 @@ This configuration is stored in the <code>window.checkoutConfig</code> variable 
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>For an illustration of <code>checkout_index_index.xml</code> where a new payment method is declared, view <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml">app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml</a></p>
 

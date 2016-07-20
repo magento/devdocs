@@ -871,7 +871,7 @@
 <p>A <a href="/guides/v2.1/frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento theme.</p>
 
 <h2 id="theme-structure-loc">Magento theme location</h2>
-<p>Storefront themes are conventionally located under <code>app/design/frontend/&lt;Vendor&gt;/</code>. Though technically they can reside in other directories. For example Magento built-in themes can be located under <code>vendor/magento/theme-frontend-&lt;theme_code&gt;</code> when a Magento instance is deployed from the Composer repository.  </p>
+<p>Storefront themes are conventionally located under <code>app/design/frontend/&lt;Vendor&gt;/</code>. Though technically they can reside in other directories. For example Magento built-in themes can be located under <code>vendor/magento/theme-frontend-&lt;theme_code&gt;</code> when a Magento instance is deployed from the Composer repository.</p>
 
 <p>Each theme must be stored in a separate directory:</p>
 <pre>
@@ -939,7 +939,7 @@ app/design/frontend/&lt;Vendor&gt;/
         optional
       </td>
       <td colspan="1">
-          Module-specific styles (<code>.css</code> and/or <code>.less</code> file). General styles for the module are in the <code>module.less</code> file, and styles for widgets are in <code>widgets.less</code>.
+          Module-&lt;/span&gt;specific styles (<code>.css</code> and/or <code>.less</code> file). General styles for the module are in the <code>module.less</code> file, and styles for widgets are in <code>widgets.less</code>.
       </td>
     </tr>
     <tr>
@@ -1124,7 +1124,7 @@ app/design/frontend/&lt;Vendor&gt;/
 </ul>
 
 <h3 id="theme-structure-pub">Static view files</h3>
-<p>A set of theme files that are returned by the server to a browser as is, without any processing, are called the <em>static files</em> of a theme. </p>
+<p>A set of theme files that are returned by the server to a browser as is, without any processing, are called the <em>static files</em> of a theme.</p>
 
 <p>Static files can be located in a theme directory as follows:</p>
 <pre>

@@ -829,14 +829,14 @@
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2> Presentation layer</h2>
-<p>When you interact with the Magento web interface, you are directly working with <i>presentation layer</i> code. The presentation layer contains both view elements (layouts, blocks, templates) and controllers, which process commands to and from the user interface). Presentation code controls web user interaction with the product and its appearance. You can extensively customize the user interface by using HTML, CSS, and PHTML files to modify elements of the presentation layer. </p>
+<p>When you interact with the Magento web interface, you are directly working with <i>presentation layer</i> code. The presentation layer contains both view elements (layouts, blocks, templates) and controllers, which process commands to and from the user interface). Presentation code controls web user interaction with the product and its appearance. You can extensively customize the user interface by using HTML, CSS, and PHTML files to modify elements of the presentation layer.</p>
 
 <h3>Who uses the Presentation layer?</h3>
-<p>Three types of Magento users interact with Presentation layer code. Magento uses <em>areas</em> to efficiently make web service calls, loading only the dependent code that is required for the particular type of user. Types of users and their associated areas include: </p>
+<p>Three types of Magento users interact with Presentation layer code. Magento uses <em>areas</em> to efficiently make web service calls, loading only the dependent code that is required for the particular type of user. Types of users and their associated areas include:</p>
 
 <ul>
   <li>
-    <p><b>Web users</b> interact with the store front, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the (<code>frontend</code>) area. </p>
+    <p><b>Web users</b> interact with the store front, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the (<code>frontend</code>) area.</p>
   </li>
   <li>
     <p><b>System administrators</b> customizing a storefront can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the front end.</p>
@@ -848,15 +848,15 @@
 
 <h3>Presentation layer components</h3>
 
-<p>One helpful way of understanding the Magento presentation layer components is by examining Magento <i>themes</i>. Magento themes organize both the visual aspect of your storefront and certain aspects of product behavior. </p>
+<p>One helpful way of understanding the Magento presentation layer components is by examining Magento <i>themes</i>. Magento themes organize both the visual aspect of your storefront and certain aspects of product behavior.</p>
 
-<p>Each theme resides in a unique directory and contains custom page layouts, templates, skins, and language files that work together to create a distinct user experience. </p>
+<p>Each theme resides in a unique directory and contains custom page layouts, templates, skins, and language files that work together to create a distinct user experience.</p>
 
 <p>For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the <a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>.</p>
 
 <h3>View model</h3>
 
-<p>Magento generates the HTML for a page to display to a user from a tree of view elements. </p>
+<p>Magento generates the HTML for a page to display to a user from a tree of view elements.</p>
 
 <p>View elements fall into two main categories: Blocks and containers.</p>
 
@@ -874,7 +874,7 @@
 <h3>How Presentation code calls other layers</h3>
 <p>Presentation code typically calls service contracts, particularly for a store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the <i>business logic</i> layer. For example, the Admin UI screens are often tightly linked to a specific implementation and are not generic across implementations.</p>
 
-<p>The View layer calls code from the Model to get information about the state of the application (for example, the price of a product). Typically, the way it accesses the Model is through service contracts. </p>
+<p>The View layer calls code from the Model to get information about the state of the application (for example, the price of a product). Typically, the way it accesses the Model is through service contracts.</p>
 
 <h3>Presentation layer flow</h3>
 <p>Web users interact with components of the presentation layer to select actions that initiate calls to the underlying product layers. Presentation layer components make calls to the Service layer, which in turn sends requests to the Domain (or business logic) layer.</p>

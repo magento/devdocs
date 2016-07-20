@@ -641,7 +641,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<h4 id="ui-multiselect-component">UI Multiselect Component</h4>
 
 <p>The Multiselect component is used to provide check box interface for a specific listing or a specific data set. The component is an extension for Column component and allows selecting either a collection of items or all items from the given set.</p>
@@ -711,7 +711,7 @@
 
 <p>Current implementation:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
                 <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;js_config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
                     <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;component&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">Magento_Ui</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
@@ -721,7 +721,7 @@
                     <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;appendTo&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;&lt;</span><span class="err">/item&gt;</span>
                 <span class="o">&lt;</span><span class="err">/item&gt;</span>
             <span class="o">&lt;</span><span class="err">/argument&gt;</span>
-        <span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></div>
+        <span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
 
 <p>Example of configuration modifications:</p>
 
@@ -729,33 +729,33 @@
   <li>Redefining the link to the template</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
         <span class="p">...</span>
         <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;headerTmpl&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">product</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
         <span class="o">&lt;</span><span class="err">/item&gt;</span>
     <span class="o">&lt;</span><span class="err">/argument&gt;</span>
-<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></div>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
 
 <ul>
   <li>Redefining the name of the property which represents record identifier</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
         <span class="p">...</span>
         <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;indexField&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">product_id</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
         <span class="o">&lt;</span><span class="err">/item&gt;</span>
     <span class="o">&lt;</span><span class="err">/argument&gt;</span>
-<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></div>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
 
 <ul>
   <li>Redefining a property data source</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
         <span class="p">...</span>
         <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
@@ -764,7 +764,7 @@
             <span class="o">&lt;</span><span class="err">/item&gt;</span>
         <span class="o">&lt;</span><span class="err">/item&gt;</span>
     <span class="o">&lt;</span><span class="err">/argument&gt;</span>
-<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></div>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
 
 <h4 id="how-to-add-a-new-component">How to add a new component</h4>
 
@@ -774,13 +774,13 @@
   <li>Redefine the link to constructor:</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;js_config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;component&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">Magento_Products</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
         <span class="o">&lt;</span><span class="err">/item&gt;</span>
     <span class="o">&lt;</span><span class="err">/argument&gt;</span>
-<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></div>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
 
 
 

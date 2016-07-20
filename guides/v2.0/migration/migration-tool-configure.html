@@ -668,7 +668,7 @@
 
     <ul>
       <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ce-to-ee</code>: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE</li>
-      <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ee-to-ee</code>: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE </li>
+      <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ee-to-ee</code>: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE</li>
     </ul>
   </li>
 </ul>
@@ -698,7 +698,7 @@
   <li>Specify the following at minimum:</li>
 </ol>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
     <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/source&gt;</span>
 <span class="nt">&lt;destination&gt;</span>
@@ -706,7 +706,7 @@
 <span class="nt">&lt;/destination&gt;</span>
 <span class="nt">&lt;options&gt;</span>
     <span class="nt">&lt;crypt_key</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/options&gt;</span></code></pre></div>
+<span class="nt">&lt;/options&gt;</span></code></pre></figure>
 
 <p>The <code>&lt;crypt_key&gt;</code> tag is mandatory to fill. It can be found in <code>local.xml</code> file which is located in the directory of Magento 1 instance at <code>app/etc/local.xml</code> in <code>&lt;key&gt;</code> tag</p>
 
@@ -719,7 +719,7 @@
 
 <p>For example, if your database owner’s user name is <code>root</code> with password <code>pass</code> and you use the prefix <code>magento1</code> in your Magento 1 database, use the following in <code>config.xml</code>:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
     <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/source&gt;</span>
 <span class="nt">&lt;destination&gt;</span>
@@ -728,7 +728,7 @@
 <span class="nt">&lt;options&gt;</span>
     <span class="nt">&lt;source_prefix&gt;</span>magento1<span class="nt">&lt;/source_prefix&gt;</span>
     <span class="nt">&lt;crypt_key&gt;</span>f3e25abe619dae2387df9fs594f01985<span class="nt">&lt;/crypt_key&gt;</span>
-<span class="nt">&lt;/options&gt;</span></code></pre></div>
+<span class="nt">&lt;/options&gt;</span></code></pre></figure>
 
 <p>When you’re finished, save your changes to <code>config.xml</code> and exit the text editor.</p>
 

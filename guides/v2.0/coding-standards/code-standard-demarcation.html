@@ -486,7 +486,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<p>Magento core developers must follow the Magento code demarcation standard.</p>
 <p>This standard is recommended for third-party extension developers.</p>
 <p>Some parts of Magento code might not comply with the standard, but we are working to gradually improve this.</p>
@@ -502,31 +502,31 @@
 <h2>Contents</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#semantics">Semantics</a>    <ul>
-      <li><a href="#for-attribute-names-and-values-you-must-use-meaningful-unabbreviated-lowercase-words-comprised-of-latin-characters-concatenated-with-a-hyphen--">For attribute names and values you must use meaningful unabbreviated lowercase words comprised of Latin characters concatenated with a hyphen (<code>-</code>)</a></li>
-      <li><a href="#semantic-representation-may-rely-on-id-attribute">Semantic representation may rely on ID attribute</a></li>
-      <li><a href="#you-must-follow-the-separation-of-presentation-and-content-methodology">You must follow the separation of presentation and content methodology.</a></li>
-      <li><a href="#you-must-use-semantic-html-markup-only-and-must-not-use-presentation-markup">You must use semantic HTML markup only, and must not use presentation markup.</a></li>
+  <li><a href="#semantics" id="markdown-toc-semantics">Semantics</a>    <ul>
+      <li><a href="#for-attribute-names-and-values-you-must-use-meaningful-unabbreviated-lowercase-words-comprised-of-latin-characters-concatenated-with-a-hyphen--" id="markdown-toc-for-attribute-names-and-values-you-must-use-meaningful-unabbreviated-lowercase-words-comprised-of-latin-characters-concatenated-with-a-hyphen--">For attribute names and values you must use meaningful unabbreviated lowercase words comprised of Latin characters concatenated with a hyphen (<code>-</code>)</a></li>
+      <li><a href="#semantic-representation-may-rely-on-id-attribute" id="markdown-toc-semantic-representation-may-rely-on-id-attribute">Semantic representation may rely on ID attribute</a></li>
+      <li><a href="#you-must-follow-the-separation-of-presentation-and-content-methodology" id="markdown-toc-you-must-follow-the-separation-of-presentation-and-content-methodology">You must follow the separation of presentation and content methodology.</a></li>
+      <li><a href="#you-must-use-semantic-html-markup-only-and-must-not-use-presentation-markup" id="markdown-toc-you-must-use-semantic-html-markup-only-and-must-not-use-presentation-markup">You must use semantic HTML markup only, and must not use presentation markup.</a></li>
     </ul>
   </li>
-  <li><a href="#code-demarcation">Code demarcation</a>    <ul>
-      <li><a href="#visual-representation-must-rely-only-on-html-class-attributes-css-pseudo-classes-and-pseudo-elements-html-tags-and-form-elements-type-attribute-and-form-elements-state-attributes-example-disabled-checked">Visual representation must rely only on HTML <code>class</code> attributes, CSS pseudo-classes and pseudo-elements, HTML tags, and form element’s type attribute and form elements state attributes (example: <code>disabled</code>, <code>checked</code>).</a></li>
-      <li><a href="#you-must-not-hard-code-css-styles-in-javascript-files">You must not hard-code CSS styles in JavaScript files</a></li>
-      <li><a href="#you-must-not-use-inline-css-styles-inside-html-tags">You must not use inline CSS styles inside HTML tags</a></li>
+  <li><a href="#code-demarcation" id="markdown-toc-code-demarcation">Code demarcation</a>    <ul>
+      <li><a href="#visual-representation-must-rely-only-on-html-class-attributes-css-pseudo-classes-and-pseudo-elements-html-tags-and-form-elements-type-attribute-and-form-elements-state-attributes-example-disabled-checked" id="markdown-toc-visual-representation-must-rely-only-on-html-class-attributes-css-pseudo-classes-and-pseudo-elements-html-tags-and-form-elements-type-attribute-and-form-elements-state-attributes-example-disabled-checked">Visual representation must rely only on HTML <code>class</code> attributes, CSS pseudo-classes and pseudo-elements, HTML tags, and form element’s type attribute and form elements state attributes (example: <code>disabled</code>, <code>checked</code>).</a></li>
+      <li><a href="#you-must-not-hard-code-css-styles-in-javascript-files" id="markdown-toc-you-must-not-hard-code-css-styles-in-javascript-files">You must not hard-code CSS styles in JavaScript files</a></li>
+      <li><a href="#you-must-not-use-inline-css-styles-inside-html-tags" id="markdown-toc-you-must-not-use-inline-css-styles-inside-html-tags">You must not use inline CSS styles inside HTML tags</a></li>
     </ul>
   </li>
-  <li><a href="#business-logic-and-javascript">Business logic and JavaScript</a>    <ul>
-      <li><a href="#business-logic-must-rely-on-only-the-form-form-element-name-attributes-or-data-attributes">Business logic must rely on only the form, form element name attributes, or data attributes</a></li>
-      <li><a href="#you-must-assign-html-helper-classes-in-javascript-to-modify-presentation-layer">You must assign HTML helper classes in JavaScript to modify presentation layer.</a></li>
-      <li><a href="#you-must-not-select-dom-elements-based-on-html-structure">You must not select DOM elements based on HTML structure</a></li>
-      <li><a href="#you-must-use-jquery-templates-to-insert-recurring-markup-into-dom-structure">You must use jQuery templates to insert recurring markup into DOM structure</a></li>
-      <li><a href="#you-must-not-hard-code-inline-javascript-in-php-classes">You must not hard-code inline JavaScript in PHP classes</a></li>
+  <li><a href="#business-logic-and-javascript" id="markdown-toc-business-logic-and-javascript">Business logic and JavaScript</a>    <ul>
+      <li><a href="#business-logic-must-rely-on-only-the-form-form-element-name-attributes-or-data-attributes" id="markdown-toc-business-logic-must-rely-on-only-the-form-form-element-name-attributes-or-data-attributes">Business logic must rely on only the form, form element name attributes, or data attributes</a></li>
+      <li><a href="#you-must-assign-html-helper-classes-in-javascript-to-modify-presentation-layer" id="markdown-toc-you-must-assign-html-helper-classes-in-javascript-to-modify-presentation-layer">You must assign HTML helper classes in JavaScript to modify presentation layer.</a></li>
+      <li><a href="#you-must-not-select-dom-elements-based-on-html-structure" id="markdown-toc-you-must-not-select-dom-elements-based-on-html-structure">You must not select DOM elements based on HTML structure</a></li>
+      <li><a href="#you-must-use-jquery-templates-to-insert-recurring-markup-into-dom-structure" id="markdown-toc-you-must-use-jquery-templates-to-insert-recurring-markup-into-dom-structure">You must use jQuery templates to insert recurring markup into DOM structure</a></li>
+      <li><a href="#you-must-not-hard-code-inline-javascript-in-php-classes" id="markdown-toc-you-must-not-hard-code-inline-javascript-in-php-classes">You must not hard-code inline JavaScript in PHP classes</a></li>
     </ul>
   </li>
-  <li><a href="#phtml-templates-and-php-files">PHTML templates and PHP files</a>    <ul>
-      <li><a href="#you-must-not-hard-code-inline-css-styles-in-php-classes">You must not hard-code inline CSS styles in PHP classes</a></li>
-      <li><a href="#you-must-not-hard-code-inline-javascript-in-php-classes-1">You must not hard-code inline JavaScript in PHP classes</a></li>
-      <li><a href="#you-must-not-hard-code-html-markup-used-in-the-body-tag-in-php-classes">You must not hard-code HTML markup (used in the <code>&lt;body&gt;</code> tag) in PHP classes</a></li>
+  <li><a href="#phtml-templates-and-php-files" id="markdown-toc-phtml-templates-and-php-files">PHTML templates and PHP files</a>    <ul>
+      <li><a href="#you-must-not-hard-code-inline-css-styles-in-php-classes" id="markdown-toc-you-must-not-hard-code-inline-css-styles-in-php-classes">You must not hard-code inline CSS styles in PHP classes</a></li>
+      <li><a href="#you-must-not-hard-code-inline-javascript-in-php-classes-1" id="markdown-toc-you-must-not-hard-code-inline-javascript-in-php-classes-1">You must not hard-code inline JavaScript in PHP classes</a></li>
+      <li><a href="#you-must-not-hard-code-html-markup-used-in-the-body-tag-in-php-classes" id="markdown-toc-you-must-not-hard-code-html-markup-used-in-the-body-tag-in-php-classes">You must not hard-code HTML markup (used in the <code>&lt;body&gt;</code> tag) in PHP classes</a></li>
     </ul>
   </li>
 </ul>
@@ -540,15 +540,15 @@
 
 <p><strong>Acceptable</strong></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;information-dialog-tree&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;information-dialog-tree&quot;</span><span class="nt">&gt;</span>
    <span class="nt">&lt;p&gt;</span> ... <span class="nt">&lt;/p&gt;</span>
    <span class="nt">&lt;p&gt;</span> ... <span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#information-dialog-tree&quot;</span><span class="nt">&gt;</span>Scroll to text<span class="nt">&lt;/a&gt;&lt;/a&gt;</span></code></pre></div>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#information-dialog-tree&quot;</span><span class="nt">&gt;</span>Scroll to text<span class="nt">&lt;/a&gt;&lt;/a&gt;</span></code></pre></figure>
 
 <p><strong>Unacceptable</strong></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;заголовок&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;заголовок&quot;</span><span class="nt">&gt;</span>
    <span class="nt">&lt;p&gt;</span> ... <span class="nt">&lt;/p&gt;</span>
    <span class="nt">&lt;p&gt;</span> ... <span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
@@ -556,7 +556,7 @@
    <span class="nt">&lt;p&gt;</span> ... <span class="nt">&lt;/p&gt;</span>
    <span class="nt">&lt;p&gt;</span> ... <span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#some_id&quot;</span><span class="nt">&gt;</span>Scroll to text<span class="nt">&lt;/a&gt;</span></code></pre></div>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#some_id&quot;</span><span class="nt">&gt;</span>Scroll to text<span class="nt">&lt;/a&gt;</span></code></pre></figure>
 
 <h3 id="semantic-representation-may-rely-on-id-attribute">Semantic representation may rely on ID attribute</h3>
 <ul>
@@ -568,7 +568,7 @@
 
 <p>The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;first&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">aria-pressed=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-controls=</span><span class="s">&quot;some-id&quot;</span><span class="nt">&gt;</span>button 1<span class="nt">&lt;/li&gt;</span>
    <span class="nt">&lt;li</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">aria-pressed=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-controls=</span><span class="s">&quot;some-id&quot;</span><span class="nt">&gt;</span>button 2<span class="nt">&lt;/li&gt;</span>
    <span class="nt">&lt;li</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">aria-pressed=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-controls=</span><span class="s">&quot;some-id&quot;</span><span class="nt">&gt;</span>button 3<span class="nt">&lt;/li&gt;</span>
@@ -577,27 +577,27 @@
    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;some-id&quot;</span><span class="nt">&gt;</span>Enter text<span class="nt">&lt;/label&gt;</span>
    <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;some-id&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#some-id&quot;</span><span class="nt">&gt;</span>Scroll to text<span class="nt">&lt;/a&gt;</span></code></pre></div>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#some-id&quot;</span><span class="nt">&gt;</span>Scroll to text<span class="nt">&lt;/a&gt;</span></code></pre></figure>
 
 <p><strong>Unacceptable combination of PHTML, JavaScript, and CSS files</strong></p>
 
 <p>The following unacceptable example replaces a single PHTML file with a combination of a PHTML, JavaScript, and CSS files.</p>
 <p><b>PHTML file</b></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;my-special-menu&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;my-special-menu&quot;</span><span class="nt">&gt;</span>
    <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;buttonId1&quot;</span> <span class="na">class=</span><span class="s">&quot;first&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>button 1<span class="nt">&lt;/li&gt;</span>
    <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;buttonId2&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>button 2<span class="nt">&lt;/li&gt;</span>
    <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;buttonId3&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>button 3<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></code></pre></div>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
 
 <p><strong>JavaScript file</strong></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my-special-menu&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;li[id^=&quot;button&quot;]&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">})</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my-special-menu&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;li[id^=&quot;button&quot;]&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">})</span></code></pre></figure>
 
 <p><strong>CSS file</strong></p>
 
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#my-special-menu</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-<span class="nf">#my-special-menu</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#my-special-menu</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nf">#my-special-menu</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></figure>
 
 <h3 id="you-must-follow-the-separation-of-presentation-and-content-methodology">You must follow the separation of presentation and content methodology.</h3>
 
@@ -629,13 +629,13 @@
 
 <p><strong>Acceptable</strong>:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>HTML has been created to <span class="nt">&lt;b&gt;</span>semantically<span class="nt">&lt;/b&gt;</span> represent documents.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Warning:<span class="nt">&lt;/strong&gt;</span> Following the procedure described below may irreparably damage your equipment.<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>HTML has been created to <span class="nt">&lt;b&gt;</span>semantically<span class="nt">&lt;/b&gt;</span> represent documents.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Warning:<span class="nt">&lt;/strong&gt;</span> Following the procedure described below may irreparably damage your equipment.<span class="nt">&lt;/p&gt;</span></code></pre></figure>
 
 <p><strong>Unacceptable</strong>:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>HTML has been created to <span class="nt">&lt;strong&gt;</span>semantically<span class="nt">&lt;/strong&gt;</span> represent documents.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p&gt;&lt;b&gt;</span>Warning:<span class="nt">&lt;/b&gt;</span> Following the procedure described below may irreparably damage your equipment.<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>HTML has been created to <span class="nt">&lt;strong&gt;</span>semantically<span class="nt">&lt;/strong&gt;</span> represent documents.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;&lt;b&gt;</span>Warning:<span class="nt">&lt;/b&gt;</span> Following the procedure described below may irreparably damage your equipment.<span class="nt">&lt;/p&gt;</span></code></pre></figure>
 
 <h2 id="code-demarcation">Code demarcation</h2>
 
@@ -652,7 +652,7 @@
 
 <p><strong>Acceptable CSS selectors</strong></p>
 
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.notices-wrapper</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.notices-wrapper</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 <span class="nc">.page-header</span><span class="nd">:after</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 <span class="nc">.payment-list</span><span class="nd">:first-child</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 <span class="nc">.caution</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
@@ -660,16 +660,16 @@
 <span class="nt">form</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="o">]</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 <span class="nc">.control-text</span><span class="nd">:focus</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-<span class="nt">nav</span> <span class="nt">li</span><span class="nc">._active</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></div>
+<span class="nt">nav</span> <span class="nt">li</span><span class="nc">._active</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></figure>
 
 <p><strong>Unacceptable CSS selectors</strong></p>
 
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#header</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#header</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 <span class="o">[</span><span class="nt">data-action</span><span class="o">=</span><span class="s2">&quot;delete&quot;</span><span class="o">]</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 <span class="nt">form</span> <span class="nt">input</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="o">]</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 <span class="nt">section</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">&quot;main&quot;</span><span class="o">]</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">&quot;menu] [role=&quot;</span><span class="nt">menuitem</span><span class="s2">&quot;] { ... }</span>
-<span class="s2">[role=&quot;</span><span class="nt">menu</span><span class="o">]</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">&quot;menuitem&quot;</span><span class="o">]</span><span class="nc">.active</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></div>
+<span class="s2">[role=&quot;</span><span class="nt">menu</span><span class="o">]</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">&quot;menuitem&quot;</span><span class="o">]</span><span class="nc">.active</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></figure>
 
 <h3 id="you-must-not-hard-code-css-styles-in-javascript-files">You must not hard-code CSS styles in JavaScript files</h3>
 <div class="bs-callout bs-callout-info" id="info">
@@ -683,7 +683,7 @@
 
 <p><strong>Acceptable JavaScript widget file</strong></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">...</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">...</span>
    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">hOffset</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="nx">myCustomElement</span><span class="o">:</span> <span class="s1">&#39;[data-container=&quot;my-custom-element&quot;]&#39;</span><span class="p">,</span>
@@ -694,17 +694,17 @@
 <span class="p">...</span>
    <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">hOffset</span> <span class="o">=</span> <span class="cm">/* calculation based on dimensions of some DOM elements within a widget */</span>
    <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">myCustomElement</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span><span class="s1">&#39;margin-top&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">hOffset</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">})</span>
-<span class="p">...</span></code></pre></div>
+<span class="p">...</span></code></pre></figure>
 
 <p><strong>Unacceptable JavaScript file</strong></p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s1">&#39;:visible&#39;</span><span class="p">))</span> <span class="p">{</span>
       <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span> <span class="nx">visibility</span><span class="o">:</span> <span class="s1">&#39;hidden&#39;</span> <span class="p">});</span>
    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span> <span class="nx">visibility</span><span class="o">:</span> <span class="s1">&#39;visible&#39;</span> <span class="p">});</span>
    <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <h3 id="you-must-not-use-inline-css-styles-inside-html-tags">You must not use inline CSS styles inside HTML tags</h3>
 <ul>
@@ -714,11 +714,11 @@
 
 <p><strong>Acceptable PHTML template</strong></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;no-display&quot;</span><span class="nt">&gt;</span> ... <span class="nt">&lt;/div&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;no-display&quot;</span><span class="nt">&gt;</span> ... <span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
 <p><strong>Unacceptable PHTML template</strong></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display: none;&quot;</span><span class="nt">&gt;</span> ... <span class="nt">&lt;/div&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display: none;&quot;</span><span class="nt">&gt;</span> ... <span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
 <h2 id="business-logic-and-javascript">Business logic and JavaScript</h2>
 
@@ -731,12 +731,12 @@
 
 <p><strong>Acceptable PHTML template</strong></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">data-action=</span><span class="s">&quot;delete&quot;</span> <span class="na">data-mage-init=</span><span class="s">&quot;{myWidget: [option1: &#39;string&#39;]}&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;tooltip&quot;</span><span class="nt">&gt;</span>More details<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">data-action=</span><span class="s">&quot;delete&quot;</span> <span class="na">data-mage-init=</span><span class="s">&quot;{myWidget: [option1: &#39;string&#39;]}&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;tooltip&quot;</span><span class="nt">&gt;</span>More details<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
 <p><strong>Acceptable JavaScript file</strong></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">options</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">options</span> <span class="p">{</span>
  <span class="nx">deleteAction</span><span class="o">:</span>  <span class="s1">&#39;[data-action=&quot;delete&quot;]&#39;</span><span class="p">,</span>
  <span class="nx">tooltip</span><span class="o">:</span> <span class="s1">&#39;[data-role=&quot;tooltip]&#39;</span>  
 <span class="p">}</span>
@@ -746,18 +746,18 @@
 <span class="p">...</span>
 <span class="c1">// Globally initialized widgets</span>
 <span class="nx">$</span><span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">tooltip</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">();</span>  <span class="c1">// Globally for ALL tooltip elements</span>
-<span class="p">...</span></code></pre></div>
+<span class="p">...</span></code></pre></figure>
 
 <p><strong>Unacceptable PHTML file</strong></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;my-widget&quot;</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;my-widget&quot;</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></figure>
 
 <p><strong>Unacceptable JavaScript file</strong></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my-widget&#39;</span><span class="p">).</span><span class="nx">doSomething</span><span class="p">();</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my-widget&#39;</span><span class="p">).</span><span class="nx">doSomething</span><span class="p">();</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.parent&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="s1">&#39;.button&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">).</span><span class="nx">validate</span><span class="p">();</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[role=&quot;menu&quot;]&#39;</span><span class="p">).</span><span class="nx">navigation</span><span class="p">();</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[role=&quot;menu&quot;]&#39;</span><span class="p">).</span><span class="nx">navigation</span><span class="p">();</span></code></pre></figure>
 
 <h3 id="you-must-assign-html-helper-classes-in-javascript-to-modify-presentation-layer">You must assign HTML helper classes in JavaScript to modify presentation layer.</h3>
 
@@ -765,17 +765,17 @@
 
 <p><strong>Acceptable</strong></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-element _active&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-element _active&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sales-transactions _open&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;billing-agreement _expanded&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sales-report _hidden&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sales-report _hidden&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
 <p><strong>Unacceptable</strong></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-element active&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-element active&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sales-transactions open&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;billing-agreement expanded&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sales-report hidden&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sales-report hidden&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
 <h3 id="you-must-not-select-dom-elements-based-on-html-structure">You must not select DOM elements based on HTML structure</h3>
 <ul>
@@ -783,13 +783,13 @@
 
 <p><strong>Acceptable JavaScript file</strong></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[data-action=&quot;edit&quot;]&#39;</span><span class="p">);</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;[data-container]&#39;</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[data-action=&quot;edit&quot;]&#39;</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;[data-container]&#39;</span><span class="p">);</span></code></pre></figure>
 
 <p><strong>Unacceptable JavaScript file</strong></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">children</span><span class="p">().</span><span class="nx">children</span><span class="p">().</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">);</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">parent</span><span class="p">().</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[data-action=&quot;edit&quot;]&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;entity_id&#39;</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">children</span><span class="p">().</span><span class="nx">children</span><span class="p">().</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">parent</span><span class="p">().</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[data-action=&quot;edit&quot;]&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;entity_id&#39;</span><span class="p">);</span></code></pre></figure>
 
 <h3 id="you-must-use-jquery-templates-to-insert-recurring-markup-into-dom-structure">You must use jQuery templates to insert recurring markup into DOM structure</h3>
 <ul>
@@ -804,24 +804,24 @@
 
 <p><strong>Acceptable PHP file</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">getSelectorOptions</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$selectorOptions</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="o">...</span></code></pre></div>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Acceptable PHTML template</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
 <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">mage</span><span class="o">-</span><span class="nx">init</span><span class="o">=</span><span class="s2">&quot;{treeSuggest: [&lt;?php echo </span><span class="si">$this-&gt;getSelectorOptions</span><span class="s2">(); ?&gt;]}&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="o">...</span></code></pre></div>
+<span class="o">...</span></code></pre></figure>
 
-<p>or </p>
+<p>or</p>
 
 <p><strong>Acceptable PHTML template</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
 <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">role</span><span class="o">=</span><span class="s2">&quot;treeSuggest&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/x-magento-init&quot;</span><span class="o">&gt;</span>
 <span class="p">{</span>
@@ -830,22 +830,22 @@
 <span class="x">    }</span>
 <span class="x">}</span>
 <span class="x">&lt;/script&gt;</span>
-<span class="x">...</span></code></pre></div>
+<span class="x">...</span></code></pre></figure>
 
 <p><strong>Unacceptable PHP file</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">getAfterElementHtml</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="o">&lt;&lt;&lt;</span><span class="nx">HTML</span>
 <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
 <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;#{$htmlId}-suggest&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">treeSuggest</span><span class="p">({</span><span class="nv">$selectorOptions</span><span class="p">});</span>
 <span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
-<span class="o">...</span></code></pre></div>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Unacceptable PHTML template</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAfterElementHtml</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAfterElementHtml</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <h2 id="phtml-templates-and-php-files">PHTML templates and PHP files</h2>
 
@@ -857,25 +857,25 @@
 
 <p><strong>Acceptable PHP file</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
 <span class="nv">$fieldset</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="s1">&#39;new_category_parent&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;label&#39;</span>    <span class="o">=&gt;</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;Mage_Catalog_Helper_Data&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">&#39;Parent Category&#39;</span><span class="p">),</span>
     <span class="s1">&#39;title&#39;</span>    <span class="o">=&gt;</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;Mage_Catalog_Helper_Data&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">&#39;Parent Category&#39;</span><span class="p">),</span>
     <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
     <span class="s1">&#39;class&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;parent category&#39;</span><span class="p">,</span>
 <span class="p">));</span>
-<span class="o">...</span></code></pre></div>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Unacceptable PHP file</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
 <span class="nv">$fieldset</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="s1">&#39;new_category_parent&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;label&#39;</span>    <span class="o">=&gt;</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;Mage_Catalog_Helper_Data&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">&#39;Parent Category&#39;</span><span class="p">),</span>
     <span class="s1">&#39;title&#39;</span>    <span class="o">=&gt;</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;Mage_Catalog_Helper_Data&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">&#39;Parent Category&#39;</span><span class="p">),</span>
     <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
     <span class="s1">&#39;style&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;border: 1px solid #ccc;&#39;</span><span class="p">,</span>
 <span class="p">));</span>
-<span class="o">...</span></code></pre></div>
+<span class="o">...</span></code></pre></figure>
 
 <h3 id="you-must-not-hard-code-inline-javascript-in-php-classes-1">You must not hard-code inline JavaScript in PHP classes</h3>
 <ul>
@@ -884,33 +884,33 @@
 
 <p><strong>Acceptable PHP file</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">getSelectorOptions</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$selectorOptions</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="o">...</span></code></pre></div>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Acceptable PHTML template</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
 <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">mage</span><span class="o">-</span><span class="nx">init</span><span class="o">=</span><span class="s2">&quot;{treeSuggest: [&lt;?php echo </span><span class="si">$this-&gt;getSelectorOptions</span><span class="s2">(); ?&gt;]}&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="o">...</span></code></pre></div>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Unacceptable PHP file</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">getAfterElementHtml</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="o">&lt;&lt;&lt;</span><span class="nx">HTML</span>
 <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
 <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;#{$htmlId}-suggest&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">treeSuggest</span><span class="p">({</span><span class="nv">$selectorOptions</span><span class="p">});</span>
 <span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
-<span class="o">...</span></code></pre></div>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Unacceptable PHTML template</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAfterElementHtml</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAfterElementHtml</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <h3 id="you-must-not-hard-code-html-markup-used-in-the-body-tag-in-php-classes">You must not hard-code HTML markup (used in the <code>&lt;body&gt;</code> tag) in PHP classes</h3>
 <ul>
@@ -932,7 +932,7 @@ public function getAttributeId($element)
 
 <p><strong>Acceptable PHTML template</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">span</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;attribute-change-checkbox”&gt;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">span</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;attribute-change-checkbox”&gt;</span>
 <span class="s2">&lt;label&gt;</span>
 <span class="s2">   &lt;input type=&quot;</span><span class="nx">checkbox”</span> 
       <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAttributeName</span><span class="p">(</span><span class="nv">$element</span><span class="p">))</span> <span class="o">?</span> <span class="s1">&#39; name=&quot;&#39;</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAttributeName</span><span class="p">(</span><span class="nv">$element</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&quot;&#39;</span> <span class="o">:</span> <span class="k">NULL</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
@@ -940,27 +940,27 @@ public function getAttributeId($element)
 <span class="x">   </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;Mage_Catalog_Helper_Data&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">&#39;Change&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">&lt;/label&gt;</span>
 <span class="x">&lt;/span&gt;</span>
-<span class="x">&lt;!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not &#39;weight_and_type_switcher&#39; should be visible. Based on this condition CSS can be applied to hide/show those elements. --&gt;</span></code></pre></div>
+<span class="x">&lt;!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not &#39;weight_and_type_switcher&#39; should be visible. Based on this condition CSS can be applied to hide/show those elements. --&gt;</span></code></pre></figure>
 
 <p><strong>Unacceptable PHP file</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">...</span>
 <span class="x"> public function getCheckbox($elementName){</span>
 <span class="x">    $elementNameTag = $this-&gt;getAttributeName($elementName) ? &#39;name=&quot;&#39; . $this-&gt;getAttributeName($elementName) . &#39;&quot;&#39; : NULL;</span>
 <span class="x">    $tpl = &quot;&lt;input type=\&quot;checkbox\&quot; {$elementNameTag} data-mage-init=\&quot;{customToggleWidget: [elementSelector: \&quot;input[name=&#39;someCustomName&#39;]\&quot;]}\&quot; /&gt;&quot;;</span>
 <span class="x">    return $tpl;</span>
 <span class="x">}</span>
-<span class="x">...</span></code></pre></div>
+<span class="x">...</span></code></pre></figure>
 
 <p><strong>Unacceptable PHTML template</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">&lt;span class=&quot;attribute-change-checkbox”&gt;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">&lt;span class=&quot;attribute-change-checkbox”&gt;</span>
 <span class="x">	&lt;label&gt;</span>
 <span class="x">		</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCheckbox</span><span class="p">(</span><span class="nv">$element</span><span class="p">)</span><span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">		</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;Mage_Catalog_Helper_Data&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">&#39;Change&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">	&lt;/label&gt;</span>
 <span class="x">&lt;/span&gt;</span>
-<span class="x">&lt;!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not &#39;weight_and_type_switcher&#39; should be visible. Based on this condition CSS can be applied to hide/show those elements. --&gt;</span></code></pre></div>
+<span class="x">&lt;!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not &#39;weight_and_type_switcher&#39; should be visible. Based on this condition CSS can be applied to hide/show those elements. --&gt;</span></code></pre></figure>
 
 
 

@@ -758,18 +758,18 @@
 		<h2 id="mtf_quickstart_config">Adjust configuration</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#mtf_quickstart_config_phpunitxml">Edit <code>phpunit.xml</code> to configure PHPUnit</a>    <ul>
-      <li><a href="#mtf_quickstart_config_phpunitxml_frontend">Set URL for Magento storefront under test</a></li>
-      <li><a href="#mtf_quickstart_config_phpunitxml_backend">Set URL for Magento Admin URL under test</a></li>
+  <li><a href="#mtf_quickstart_config_phpunitxml" id="markdown-toc-mtf_quickstart_config_phpunitxml">Edit <code>phpunit.xml</code> to configure PHPUnit</a>    <ul>
+      <li><a href="#mtf_quickstart_config_phpunitxml_frontend" id="markdown-toc-mtf_quickstart_config_phpunitxml_frontend">Set URL for Magento storefront under test</a></li>
+      <li><a href="#mtf_quickstart_config_phpunitxml_backend" id="markdown-toc-mtf_quickstart_config_phpunitxml_backend">Set URL for Magento Admin URL under test</a></li>
     </ul>
   </li>
-  <li><a href="#mtf_quickstart_config_configxml">Edit <code>config.xml</code> to configure Functional Testing Framework</a>    <ul>
-      <li><a href="#mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</a></li>
-      <li><a href="#mtf_quickstart_config_configxml_browser">Set browser that the FTF will use for tests</a></li>
+  <li><a href="#mtf_quickstart_config_configxml" id="markdown-toc-mtf_quickstart_config_configxml">Edit <code>config.xml</code> to configure Functional Testing Framework</a>    <ul>
+      <li><a href="#mtf_quickstart_config_configxml_credent-backend" id="markdown-toc-mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</a></li>
+      <li><a href="#mtf_quickstart_config_configxml_browser" id="markdown-toc-mtf_quickstart_config_configxml_browser">Set browser that the FTF will use for tests</a></li>
     </ul>
   </li>
-  <li><a href="#mtf_quickstart_config_credentialsxml">Edit <code>credentials.xml</code> to work with Magento modules that requires credentials</a>    <ul>
-      <li><a href="#mtf_quickstart_config_credentialsxml-set">Set credentials for Magento modules under test</a></li>
+  <li><a href="#mtf_quickstart_config_credentialsxml" id="markdown-toc-mtf_quickstart_config_credentialsxml">Edit <code>credentials.xml</code> to work with Magento modules that requires credentials</a>    <ul>
+      <li><a href="#mtf_quickstart_config_credentialsxml-set" id="markdown-toc-mtf_quickstart_config_credentialsxml-set">Set credentials for Magento modules under test</a></li>
     </ul>
   </li>
 </ul>
@@ -819,7 +819,7 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
 
 <p>Example for Google Chrome:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;server&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;server&gt;</span>
 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selenium&quot;</span>
       <span class="na">type=</span><span class="s">&quot;default&quot;</span>
       <span class="na">browser=</span><span class="s">&quot;Google Chrome&quot;</span>
@@ -832,7 +832,7 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
         <span class="nt">&lt;platform&gt;</span>ANY<span class="nt">&lt;/platform&gt;</span>
     <span class="nt">&lt;/desiredCapabilities&gt;</span>
 <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/server&gt;</span></code></pre></div>
+<span class="nt">&lt;/server&gt;</span></code></pre></figure>
 
 <h3 id="mtf_quickstart_config_credentialsxml">Edit <code>credentials.xml</code> to work with Magento modules that requires credentials</h3>
 

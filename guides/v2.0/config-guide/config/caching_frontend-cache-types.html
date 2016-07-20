@@ -1320,11 +1320,11 @@
   <p>To use the <code>default</code> cache type, you don't need to modify <code>env.php</code> at all; you modify Magento's global <code>di.xml</code>. See the topics referenced in <a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a>. </p>
 </div>
 
-<p>You must specify a custom cache frontend either <code>app/etc/env.php</code> or Magento’s global <code>app/etc/di.xml</code>. </p>
+<p>You must specify a custom cache frontend either <code>app/etc/env.php</code> or Magento’s global <code>app/etc/di.xml</code>.</p>
 
 <p>The following example shows how to define it in <code>env.php</code> (which overrides <code>di.xml</code>):</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
 <span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
     <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;&lt;unique frontend id&gt;&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
@@ -1342,7 +1342,7 @@
         <span class="p">],</span>
     <span class="p">],</span>
 <span class="p">],</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <p>where <code>&lt;unique frontend id&gt;</code> is a unique name to identify your frontend and <code>&lt;cache options&gt;</code> are options discussed in the topics specific to each type of caching (database, Redis, and so on).</p>
 
@@ -1351,7 +1351,7 @@
 
 <p><code>env.php</code> example:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
 <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">frontend_type</span><span class="o">&gt;</span><span class="p">,</span>
 <span class="s1">&#39;frontend_options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
     <span class="o">&lt;</span><span class="nx">frontend_option</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">frontend_option_value</span><span class="o">&gt;</span><span class="p">,</span>
@@ -1362,17 +1362,17 @@
     <span class="o">&lt;</span><span class="nx">backend_option</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">backend_option_value</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="o">...</span>
 <span class="p">],</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <p>where</p>
 
 <ul>
   <li>
-    <p><code>&lt;frontend_type&gt;</code> is the low-level frontend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html" target="_blank">Zend_Cache_Core</a>. </p>
+    <p><code>&lt;frontend_type&gt;</code> is the low-level frontend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html" target="_blank">Zend_Cache_Core</a>.</p>
 
     <p>If you omit <code>&lt;frontend_type&gt;</code>, <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> is used.</p>
   </li>
-  <li><code>&lt;frontend_option&gt;</code>, <code>&lt;frontend_option_value&gt;</code> are the name and value of options the Magento framework passes as an associative array to the frontend cache upon its creation. </li>
+  <li><code>&lt;frontend_option&gt;</code>, <code>&lt;frontend_option_value&gt;</code> are the name and value of options the Magento framework passes as an associative array to the frontend cache upon its creation.</li>
   <li><code>&lt;backend_type&gt;</code> is the low-level backend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend.html" target="_blank">Zend_Cache_Backend</a> and that implements <a href="http://framework.zend.com/apidoc/1.6/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend_Interface.html" target="_blank">Zend_Cache_Backend_Interface</a>.</li>
   <li><code>&lt;backend_option&gt;</code>, <code>&lt;backend_option_value&gt;</code> are the name and value of options the Magento framework passes as an associative array to backend cache upon its creation.</li>
 </ul>

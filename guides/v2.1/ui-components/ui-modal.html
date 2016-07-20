@@ -715,13 +715,13 @@
 <p><strong>Contents:</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#modal-component-overview">Modal component: overview</a></li>
-  <li><a href="#structure">Structure</a></li>
-  <li><a href="#options">Options</a>    <ul>
-      <li><a href="#example-of-the-modal-component-configuration">Example of the modal component configuration</a></li>
+  <li><a href="#modal-component-overview" id="markdown-toc-modal-component-overview">Modal component: overview</a></li>
+  <li><a href="#structure" id="markdown-toc-structure">Structure</a></li>
+  <li><a href="#options" id="markdown-toc-options">Options</a>    <ul>
+      <li><a href="#example-of-the-modal-component-configuration" id="markdown-toc-example-of-the-modal-component-configuration">Example of the modal component configuration</a></li>
     </ul>
   </li>
-  <li><a href="#public-api-js">Public API (JS)</a></li>
+  <li><a href="#public-api-js" id="markdown-toc-public-api-js">Public API (JS)</a></li>
 </ul>
 
 <h2 id="modal-component-overview">Modal component: overview</h2>
@@ -747,7 +747,7 @@
 
 <p>Component’s options are set in the configuration <code>.xml</code> file as follows:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;modal</span> <span class="na">name=</span><span class="s">&quot;test_modal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;modal</span> <span class="na">name=</span><span class="s">&quot;test_modal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="c">&lt;!-- Configurable options are specified here --&gt;</span>
@@ -756,7 +756,7 @@
             ...
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/modal&gt;</span></code></pre></div>
+<span class="nt">&lt;/modal&gt;</span></code></pre></figure>
 
 <p>
 </p>
@@ -999,7 +999,7 @@
 
 <p>The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (<strong>Cancel</strong>, <strong>Clear</strong>, <strong>Done</strong>):</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;modal</span> <span class="na">name=</span><span class="s">&quot;test_modal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;modal</span> <span class="na">name=</span><span class="s">&quot;test_modal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;onCancel&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>actionCancel<span class="nt">&lt;/item&gt;</span>
@@ -1056,7 +1056,7 @@
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/button&gt;</span></code></pre></div>
+<span class="nt">&lt;/button&gt;</span></code></pre></figure>
 
 <h2 id="public-api-js">Public API (JS)</h2>
 

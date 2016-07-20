@@ -923,7 +923,7 @@
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2>What's in this topic</h2>
 
-<p>This topic describes how developers can customize the product creation form used on the product creation and product edit pages in Admin. </p>
+<p>This topic describes how developers can customize the product creation form used on the product creation and product edit pages in Admin.</p>
 
 <p>The following image is an illustration of the default view of the form on the <strong>New Product</strong> page:</p>
 
@@ -932,25 +932,25 @@
 <p><strong>Contents</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#prerequisites">Prerequisites</a></li>
-  <li><a href="#customize-the-form-configuration">Customize the form configuration</a>    <ul>
-      <li><a href="#adding-new-elements">Adding new elements</a></li>
-      <li><a href="#customizing-existing-fields-and-field-sets">Customizing existing fields and field sets</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
+  <li><a href="#customize-the-form-configuration" id="markdown-toc-customize-the-form-configuration">Customize the form configuration</a>    <ul>
+      <li><a href="#adding-new-elements" id="markdown-toc-adding-new-elements">Adding new elements</a></li>
+      <li><a href="#customizing-existing-fields-and-field-sets" id="markdown-toc-customizing-existing-fields-and-field-sets">Customizing existing fields and field sets</a></li>
     </ul>
   </li>
-  <li><a href="#modifier">Customize using a modifier class</a>    <ul>
-      <li><a href="#general-implementation-overview">General implementation overview</a></li>
-      <li><a href="#modifier">Add your modifier</a></li>
-      <li><a href="#pool">Add modifier to the pool</a></li>
+  <li><a href="#modifier" id="markdown-toc-modifier">Customize using a modifier class</a>    <ul>
+      <li><a href="#general-implementation-overview" id="markdown-toc-general-implementation-overview">General implementation overview</a></li>
+      <li><a href="#modifier" id="markdown-toc-modifier">Add your modifier</a></li>
+      <li><a href="#pool" id="markdown-toc-pool">Add modifier to the pool</a></li>
     </ul>
   </li>
-  <li><a href="#recommended-reading">Recommended reading:</a></li>
+  <li><a href="#recommended-reading" id="markdown-toc-recommended-reading">Recommended reading:</a></li>
 </ul>
 
 <h2 id="overview">Overview</h2>
 
-<p>In Magento version 2.1, the product creation form was completely refactored, and implemented using the <a href="/guides/v2.1/ui-components/ui-form.html">form UI component</a>. </p>
+<p>In Magento version 2.1, the product creation form was completely refactored, and implemented using the <a href="/guides/v2.1/ui-components/ui-form.html">form UI component</a>.</p>
 
 <p>Product attributes and attribute sets available in the form, can be customized and added under <strong>STORES</strong> &gt; <strong>Attributes</strong> in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your module.</p>
 
@@ -958,13 +958,13 @@
 
 <p><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set Magento to developer mode</a> while you perform all customizations and debugging.</p>
 
-<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. </p>
+<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module.</p>
 
 <h2 id="customize-the-form-configuration">Customize the form configuration</h2>
 
 <p>Customizing the form config file (that is, declarative customization) is preferable for changes like introducing new fields, field sets and modals.</p>
 
-<p>To customize the product creation form, take the following steps: </p>
+<p>To customize the product creation form, take the following steps:</p>
 
 <ol>
   <li>
@@ -975,7 +975,8 @@
   </li>
 </ol>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> 
+<span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
 
 ...
 
@@ -1006,28 +1007,28 @@
         <span class="nt">&lt;/fieldset&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
 ...
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
 <h3 id="adding-new-elements">Adding new elements</h3>
 
-<p>By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created; that is, for all product types. </p>
+<p>By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created; that is, for all product types.</p>
 
 <p>In the <a href="#modifier">modifier class described further</a>, you can set the conditions for displaying certain elements for certain product types.</p>
 
 <h3 id="customizing-existing-fields-and-field-sets">Customizing existing fields and field sets</h3>
 <p>Your <code>product_form.xml</code> is merged with the same files from the other modules. So there is no need to copy their content, you only need to define changes. Even if you want to customize the existing entities, you only have to mention those options, the values of which are customized.</p>
 
-<p>To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration. </p>
+<p>To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration.</p>
 
 <p>To delete an existing field, or field set, in your <code>product_form.xml</code> use the following construction:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
     <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;%fieldset_name%&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;disabled&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span> 
-...</code></pre></div>
+...</code></pre></figure>
 
 <p>For reference, view the product form configuration files of the Magento modules:</p>
 
@@ -1062,7 +1063,7 @@
 
 <p>For example:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier</span><span class="p">;</span>
 
@@ -1112,7 +1113,7 @@
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>You can create nested structures of elements by adding them to the <code>children</code> key of any element.</p>
 
@@ -1123,7 +1124,7 @@
 
 <p><code>app/code/Magento/CatalogInventory/etc/adminhtml/di.xml</code>:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">     <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;modifiers&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;advancedInventory&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -1132,9 +1133,9 @@
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
-    <span class="nt">&lt;/virtualType&gt;</span></code></pre></div>
+    <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>The <code>sortOrder</code> parameter defines the order of invocation for your <code>modifyData()</code> and <code>modifyMeta()</code> methods among other these methods of other modifiers in the pool. If a modifier is first in a pool, its <code>modifyData()</code> and <code>modifyMeta()</code> are invoked with empty arguments. </p>
+<p>The <code>sortOrder</code> parameter defines the order of invocation for your <code>modifyData()</code> and <code>modifyMeta()</code> methods among other these methods of other modifiers in the pool. If a modifier is first in a pool, its <code>modifyData()</code> and <code>modifyMeta()</code> are invoked with empty arguments.</p>
 
 <p>To access product model within your modifier, it’s recommended to use an instance of <code>Magento\Catalog\Model\Locator\LocatorInterface</code>.</p>
 

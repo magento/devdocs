@@ -758,34 +758,34 @@
 		<h2>Block</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#mtf_block_overview">Block overview</a></li>
-  <li><a href="#mtf_block_types">Create block</a>    <ul>
-      <li><a href="#mtf_block_path">How to determine a block name and a path</a>        <ul>
-          <li><a href="#mtf_block_path_ui">Get the name and the path of blocks in UI</a></li>
-          <li><a href="#mtf_block_path_code">Get the name and the path of blocks in the code</a></li>
+  <li><a href="#mtf_block_overview" id="markdown-toc-mtf_block_overview">Block overview</a></li>
+  <li><a href="#mtf_block_types" id="markdown-toc-mtf_block_types">Create block</a>    <ul>
+      <li><a href="#mtf_block_path" id="markdown-toc-mtf_block_path">How to determine a block name and a path</a>        <ul>
+          <li><a href="#mtf_block_path_ui" id="markdown-toc-mtf_block_path_ui">Get the name and the path of blocks in UI</a></li>
+          <li><a href="#mtf_block_path_code" id="markdown-toc-mtf_block_path_code">Get the name and the path of blocks in the code</a></li>
         </ul>
       </li>
-      <li><a href="#mtf_block_class">Block class</a>        <ul>
-          <li><a href="#mtf_block_identifier">Block identifier</a></li>
-          <li><a href="#mtf_block_in_block">Use blocks inside blocks</a></li>
-          <li><a href="#mtf_block_basic">Basic blocks</a></li>
+      <li><a href="#mtf_block_class" id="markdown-toc-mtf_block_class">Block class</a>        <ul>
+          <li><a href="#mtf_block_identifier" id="markdown-toc-mtf_block_identifier">Block identifier</a></li>
+          <li><a href="#mtf_block_in_block" id="markdown-toc-mtf_block_in_block">Use blocks inside blocks</a></li>
+          <li><a href="#mtf_block_basic" id="markdown-toc-mtf_block_basic">Basic blocks</a></li>
         </ul>
       </li>
-      <li><a href="#mtf_block_to-page">Add a block to the page</a>        <ul>
-          <li><a href="#mtf_run_page_gen">Run the page generator</a></li>
+      <li><a href="#mtf_block_to-page" id="markdown-toc-mtf_block_to-page">Add a block to the page</a>        <ul>
+          <li><a href="#mtf_run_page_gen" id="markdown-toc-mtf_run_page_gen">Run the page generator</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#mtf_block_mapping">Form mapping</a>    <ul>
-      <li><a href="#mtf_block_map_form_tab">Form tab mapping</a></li>
-      <li><a href="#mtf_block_map_form_tab_merge">Merging form tab mapping files</a></li>
+  <li><a href="#mtf_block_mapping" id="markdown-toc-mtf_block_mapping">Form mapping</a>    <ul>
+      <li><a href="#mtf_block_map_form_tab" id="markdown-toc-mtf_block_map_form_tab">Form tab mapping</a></li>
+      <li><a href="#mtf_block_map_form_tab_merge" id="markdown-toc-mtf_block_map_form_tab_merge">Merging form tab mapping files</a></li>
     </ul>
   </li>
-  <li><a href="#mtf_block_render">Renders</a>    <ul>
-      <li><a href="#mtf_block_render_handl">How to use renders</a>        <ul>
-          <li><a href="#mtf_block_render_create">Create a render</a></li>
-          <li><a href="#mtf_block_render_use">Use a render</a></li>
+  <li><a href="#mtf_block_render" id="markdown-toc-mtf_block_render">Renders</a>    <ul>
+      <li><a href="#mtf_block_render_handl" id="markdown-toc-mtf_block_render_handl">How to use renders</a>        <ul>
+          <li><a href="#mtf_block_render_create" id="markdown-toc-mtf_block_render_create">Create a render</a></li>
+          <li><a href="#mtf_block_render_use" id="markdown-toc-mtf_block_render_use">Use a render</a></li>
         </ul>
       </li>
     </ul>
@@ -865,7 +865,7 @@ For example, you develop a functional test for the bundle product creation, that
   </li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="cp">&lt;?php</span>
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">_toHtml</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplate</span><span class="p">())</span> <span class="p">{</span>
@@ -873,13 +873,13 @@ For example, you develop a functional test for the bundle product creation, that
     <span class="p">}</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fetchView</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplateFile</span><span class="p">());</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <ul>
   <li>Change the code to the following</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">_toHtml</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplate</span><span class="p">())</span> <span class="p">{</span>
@@ -892,7 +892,7 @@ For example, you develop a functional test for the bundle product creation, that
         <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fetchView</span><span class="p">(</span><span class="nv">$template</span><span class="p">)</span>
         <span class="o">.</span> <span class="s2">&quot;&lt;!-- END </span><span class="si">$name</span><span class="s2"> using </span><span class="si">$template</span><span class="s2"> --&gt;&quot;</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <ul>
   <li>Save the file</li>
@@ -914,12 +914,12 @@ For example, you develop a functional test for the bundle product creation, that
 
 <p>Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code>WidgetInstance.php</code></a> block:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">addLayoutUpdates</span><span class="p">()</span>
 <span class="p">{</span>
    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addLayoutUpdates</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <p>This code uses <code>_rootElement</code> to search the button element by the <code>$this-&gt;addLayoutUpdates</code> selector. The advantage of the <code>_rootElement</code> is that it enables search in the context of the block to which the element belongs.</p>
 
@@ -929,7 +929,7 @@ For example, you develop a functional test for the bundle product creation, that
 
 <p>See the following example:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">getTemplateBlock</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
@@ -937,7 +937,7 @@ For example, you develop a functional test for the bundle product creation, that
         <span class="p">[</span><span class="s1">&#39;element&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">templateBlock</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_XPATH</span><span class="p">)]</span>
     <span class="p">);</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <p>In this code we are creating the <code>Magento\Backend\Test\Block\Template</code> block with the selector <code>$this-&gt;templateBlock</code>.</p>
 
@@ -966,13 +966,13 @@ For example, you develop a functional test for the bundle product creation, that
 
 <p><code>block</code> is the node that adds the block to the page:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;WidgetInstanceIndex&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;admin/widget_instance/index&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Widget&quot;</span><span class="nt">&gt;</span>
         ...
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;widgetGrid&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid&quot;</span> <span class="na">locator=</span><span class="s">&quot;#widgetInstanceGrid&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
         ...
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <div>
 
@@ -1044,7 +1044,7 @@ For example, you develop a functional test for the bundle product creation, that
 
 <p>The mapping file defines the fields from the form.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1059,7 +1059,7 @@ For example, you develop a functional test for the bundle product creation, that
         <span class="nt">&lt;/email&gt;</span>
         <span class="nt">&lt;password</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/fields&gt;</span>
-<span class="nt">&lt;/mapping&gt;</span></code></pre></div>
+<span class="nt">&lt;/mapping&gt;</span></code></pre></figure>
 
 <p id="mtf_block_form_xml_nodes">See a description of the nodes in the following table.</p>
 
@@ -1089,13 +1089,13 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <p><img src="/common/images/mtf_block_tabs_ui.png" /></p>
 
-<p>Four tabs are mapped in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml</code> file, which is stored along with the block class. </p>
+<p>Four tabs are mapped in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml</code> file, which is stored along with the block class.</p>
 
 <p><img src="/common/images/mtf_block_tab_struc.png" /></p>
 
 <p>The file contains the following mapping:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1138,7 +1138,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
         <span class="nt">&lt;selector&gt;</span>#widget_instace_tabs_main_section<span class="nt">&lt;/selector&gt;</span>
         <span class="nt">&lt;strategy&gt;</span>css selector<span class="nt">&lt;/strategy&gt;</span>
     <span class="nt">&lt;/widget_instance&gt;</span>
-<span class="nt">&lt;/tabs&gt;</span></code></pre></div>
+<span class="nt">&lt;/tabs&gt;</span></code></pre></figure>
 
 <p>See the following table to understand the node’s purpose.</p>
 
@@ -1157,9 +1157,9 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <p>Example of <code>composite</code> field from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml">ProductForm.xml</a>:</p>
 
-<p>In the mapping file: </p>
+<p>In the mapping file:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;quantity_and_stock_status</span> <span class="na">composite=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;quantity_and_stock_status</span> <span class="na">composite=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;qty&gt;</span>
         <span class="nt">&lt;selector&gt;</span>[name=&quot;product[quantity_and_stock_status][qty]&quot;]<span class="nt">&lt;/selector&gt;</span>
     <span class="nt">&lt;/qty&gt;</span>
@@ -1167,7 +1167,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
         <span class="nt">&lt;selector&gt;</span>[name=&quot;product[quantity_and_stock_status][is_in_stock]&quot;]<span class="nt">&lt;/selector&gt;</span>
         <span class="nt">&lt;input&gt;</span>select<span class="nt">&lt;/input&gt;</span>
     <span class="nt">&lt;/is_in_stock&gt;</span>
-<span class="nt">&lt;/quantity_and_stock_status&gt;</span></code></pre></div>
+<span class="nt">&lt;/quantity_and_stock_status&gt;</span></code></pre></figure>
 
 <p>On the UI:</p>
 
@@ -1197,7 +1197,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <p>Let’s see the <code>Catalog/Test/Page/Product/CatalogProductView.xml</code> page. For the better readability we reduced a list of blocks to one block.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1208,7 +1208,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogProductView&quot;</span> <span class="na">area=</span><span class="s">&quot;Product&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/product/view&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;viewBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Product\View&quot;</span> <span class="na">locator=</span><span class="s">&quot;#maincontent&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">/&gt;</span>        
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>This page relates to the Magento_Catalog module and contains <code>ViewBlock</code>. This block has reference to the <code>Magento\Catalog\Test\Block\Product\View.php</code> class, that is responsible to enter data in Product form fields. But different types of products, such as bundle, each have their own <code>ViewBlock</code> in a corresponding module. And that is where you can use render!</p>
 
@@ -1219,7 +1219,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <p><strong>Step 2</strong>. In the <code>Bundle/Test/Page/Product/CatalogProductView.xml</code>, copy <code>page</code> node from the <code>Catalog/Test/Page/Product/CatalogProductView.xml</code> without <code>module</code> attribute</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1230,11 +1230,11 @@ To get the block class with form tab mapping, extend your class from <a href="ht
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogProductView&quot;</span> <span class="na">area=</span><span class="s">&quot;Product&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/product/view&quot;</span><span class="nt">&gt;</span>
                 
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p><strong>Step 3</strong>. Insert <code>block</code> with the same name of block and add a render that indicates the type of product and the class that processes this block</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1247,7 +1247,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
             <span class="nt">&lt;render</span> <span class="na">name=</span><span class="s">&quot;bundle&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Bundle\Test\Block\Catalog\Product\View&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/block&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>Details:</p>
 
@@ -1268,7 +1268,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <p>Let’s take a look at the basic class <code>Magento\Catalog\Test\Block\Product\View.php</code>.</p>
 
-<div class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="cp">&lt;?php</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">getOptions</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$product</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="sd">/** @var CatalogProductSimple $product */</span>
@@ -1279,7 +1279,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
         <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">,</span> <span class="s1">&#39;getOptions&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;product&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">])</span>
         <span class="o">:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomOptionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <p>It contains the <code>getOptions()</code> method that:</p>
 
@@ -1295,13 +1295,15 @@ To get the block class with form tab mapping, extend your class from <a href="ht
   </li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">,</span> <span class="s1">&#39;getOptions&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;product&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">])</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php5" data-lang="php5"> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">,</span> <span class="s1">&#39;getOptions&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;product&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">])</span>
+ </code></pre></figure>
 
 <ul>
   <li>Calls a default method if the render is absent</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomOptionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php5" data-lang="php5"> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomOptionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
+ </code></pre></figure>
 
 <!-- LINK DEFINITIONS -->
 

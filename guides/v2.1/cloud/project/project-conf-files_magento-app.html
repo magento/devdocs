@@ -1105,12 +1105,12 @@
   <li><a href="#cloud-yaml-platform-type"><code>type</code> and <code>build</code></a></li>
   <li><a href="#cloud-yaml-platform-access"><code>access</code></a></li>
   <li><a href="#cloud-yaml-platform-rel"><code>relationships</code></a></li>
-  <li><a href="#cloud-yaml-platform-web"><code>web</code></a> </li>
+  <li><a href="#cloud-yaml-platform-web"><code>web</code></a></li>
   <li><a href="#cloud-yaml-platform-disk"><code>disk</code></a></li>
   <li><a href="#cloud-yaml-platform-mounts"><code>mounts</code></a></li>
-  <li><a href="#cloud-yaml-platform-dep"><code>dependencies</code></a> </li>
+  <li><a href="#cloud-yaml-platform-dep"><code>dependencies</code></a></li>
   <li><a href="#cloud-yaml-platform-hooks"><code>hooks</code></a></li>
-  <li><a href="#cloud-yaml-platform-cron"><code>crons</code></a> </li>
+  <li><a href="#cloud-yaml-platform-cron"><code>crons</code></a></li>
   <li><a href="#cloud-yaml-platform-php">Configure PHP options</a></li>
 </ul>
 
@@ -1129,11 +1129,11 @@
 <h2 id="name"><code>name</code> property</h2>
 <p><code>name</code> identifies the application in the project. Magento Enterprise Cloud Edition
 supports multiple applications in a project, so each application
-must have a <em>unique name</em> in a project. </p>
+must have a <em>unique name</em> in a project.</p>
 
 <div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p><code>name</code> can consist only of lower case alphanumeric characters; that is, <code>a</code>–<code>z</code> and <code>0</code>–<code>9</code>. <code>name</code>
 is used in the <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a> to define the HTTP upstream
-(by default, <code>php:php</code>). </p>
+(by default, <code>php:php</code>).</p>
 
 <p>For example, if the value of <code>name</code> is <code>app</code>, you must use <code>app:php</code> in the upstream field. You can also use this name in multi-application relationships.</p>
 
@@ -1207,7 +1207,7 @@ that is exposed on the web. Typical values include <code>/public</code> and <cod
   <li><code>passthru</code>: The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often <code>/index.php</code> or <code>/app.php</code>.</li>
   <li>
     <p><code>index_files</code>: To use a static file (for example, <code>index.html</code>) to serve
-your application. This key expects a collection. </p>
+your application. This key expects a collection.</p>
 
     <p>For this to
 work, the static file(s) should be included in your whitelist. For example,
@@ -1304,13 +1304,13 @@ deployed and started. You can access other services at this point.</li>
 <p>To add additional hooks (such as CLI commands that are offered by a custom extension), add them under the <code>build</code> or
 <code>deploy</code> sections as follows:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">hooks</span><span class="p-Indicator">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">hooks</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">build</span><span class="p-Indicator">:</span> <span class="p-Indicator">|</span>
         <span class="no">php ./bin/magento magento-cloud:build</span>
         <span class="no">php ./bin/magento additional:build:hook</span>
     <span class="l-Scalar-Plain">deploy</span><span class="p-Indicator">:</span> <span class="p-Indicator">|</span>
         <span class="no">php ./bin/magento magento-cloud:deploy</span>
-        <span class="no">php ./bin/magento additional:deploy:hook</span></code></pre></div>
+        <span class="no">php ./bin/magento additional:deploy:hook</span></code></pre></figure>
 
 <p>The home directory, where your application is mounted, is <code>/app</code>, and that is the directory from which hooks will be
 run unless you <code>cd</code> somewhere else.</p>
@@ -1321,7 +1321,7 @@ of the hook.</p>
 
 <p>After a Git push, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream
 of <code>git push</code>, so you can observe them in the terminal or capture them (along with error messages) with
-<code>git push &gt; build.log 2&gt;&amp;1</code>. </p>
+<code>git push &gt; build.log 2&gt;&amp;1</code>.</p>
 
 <p>Logs from the deployment hook are written to the <code>/tmp/log/deploy.log</code> file if you access the environment using <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-ssh">SSH</a>. Logs for all deployments that have happened on this environment are appended to
 this file, so check the timestamps on log entries to verify that you’re seeing the logs that correspond to the deployment that
@@ -1329,7 +1329,7 @@ you are interested in.</p>
 
 <p>For example:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">[2016-04-05 17:54:38.585827] Launching hook &#39;php ./vendor/magento/magento-cloud-configuration/magento-deploy.php
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">[2016-04-05 17:54:38.585827] Launching hook &#39;php ./vendor/magento/magento-cloud-configuration/magento-deploy.php
 &#39;.
 
 [2016-04-05 17:54:38] Start deploy.
@@ -1396,12 +1396,12 @@ you are interested in.</p>
 [2016-04-05 17:59:36] Removing existing static content.
 [2016-04-05 17:59:36] Removing existing compilation files.
 [2016-04-05 17:59:36] Changing application mode.
-[2016-04-05 18:05:33] Disabling Google Analytics</code></pre></div>
+[2016-04-05 18:05:33] Disabling Google Analytics</code></pre></figure>
 
 <h4 id="example-compile-sass-files-using-grunt">[Example] Compile SASS files using grunt</h4>
 <p>For example, to compile SASS files using grunt:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">dependencies:
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">dependencies:
   ruby:
     sass: &quot;3.4.7&quot;
   nodejs:
@@ -1411,18 +1411,18 @@ hooks:
   build: |
     cd public/profiles/project_name/themes/custom/theme_name
     npm install
-    grunt</code></pre></div>
+    grunt</code></pre></figure>
 
 <h4 id="example-deployment-hook">[Example] Deployment hook</h4>
 <p>Following is a sample deployment hook:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">hooks:
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">hooks:
     # We run build hooks before your application has been packaged.
     build: |
         php ./vendor/magento/magento-cloud-configuration/magento-build.php
     # We run deploy hook after your application has been deployed and started.
     deploy: |
-        php ./vendor/magento/magento-cloud/magento-cloud-configuration/magento-deploy.php</code></pre></div>
+        php ./vendor/magento/magento-cloud/magento-cloud-configuration/magento-deploy.php</code></pre></figure>
 </div></div>
 
 <h2 id="cloud-yaml-platform-cron"><code>crons</code></h2>
@@ -1448,8 +1448,8 @@ cronrun:
 <h2 id="cloud-yaml-platform-php">Configure PHP options</h2>
 <p>You can choose which version of PHP you want to run in your <code>.magento.app.yaml</code> file:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">myphpapp</span>
-<span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php:5.6</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">myphpapp</span>
+<span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php:5.6</span></code></pre></figure>
 
 <p>We support PHP versions 5.5, 5.6, and 7.0.</p>
 
@@ -1463,28 +1463,28 @@ cronrun:
 <h3 id="cloud-yaml-platform-php-ext">PHP extensions</h3>
 <p>You can define the PHP extensions you want to enable or disable:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># .magento.app.yaml</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># .magento.app.yaml</span>
 <span class="l-Scalar-Plain">runtime</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span>
         <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">http</span>
         <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">redis</span>
         <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ssh2</span>
     <span class="l-Scalar-Plain">disabled_extensions</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">sqlite3</span></code></pre></div>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">sqlite3</span></code></pre></figure>
 
 <p>To view the current list of PHP extensions, create an <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-tunn">SSH tunnel</a> to your environment and enter the following command:</p>
 
 <pre><code>ls /etc/php5/mods-available
 </code></pre>
 
-<p>Magento requires the following PHP extensions that are enabled by default: </p>
+<p>Magento requires the following PHP extensions that are enabled by default:</p>
 
 <ul>
   <li><a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a></li>
   <li><a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both</li>
   <li><a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a></li>
   <li>
-    <p>PHP 7 only: </p>
+    <p>PHP 7 only:</p>
 
     <ul>
       <li><a href="http://php.net/manual/en/book.json.php" target="_blank">json</a></li>
@@ -1493,7 +1493,7 @@ cronrun:
   </li>
   <li><a href="http://php.net/manual/en/book.mcrypt.php" target="_blank">mcrypt</a></li>
   <li><a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PDO/MySQL</a></li>
-  <li><a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a> </li>
+  <li><a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a></li>
   <li><a href="http://php.net/manual/en/book.mbstring.php" target="_blank">mbstring</a></li>
   <li><a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a></li>
   <li><a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a></li>
@@ -1510,7 +1510,7 @@ cronrun:
   <li><a href="https://pecl.php.net/package/redis" target="_blank">redis</a></li>
 </ul>
 
-<p>In addition, we strongly recommend you enable <code>opcache</code>. </p>
+<p>In addition, we strongly recommend you enable <code>opcache</code>.</p>
 
 <p>Other PHP extensions you can optionally install:</p>
 

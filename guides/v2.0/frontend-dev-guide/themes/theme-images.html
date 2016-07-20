@@ -880,17 +880,17 @@
 
 <p>In <code>view.xml</code>, image properties are configured in the scope of <code>&lt;images module="Magento_Catalog"&gt;</code> element:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
 ...
-<span class="nt">&lt;images/&gt;</span></code></pre></div>
+<span class="nt">&lt;images/&gt;</span></code></pre></figure>
 
 <p>Image properties are configured for each image type defined by the <code>id</code> and <code>type</code> attributes of the <code>&lt;image&gt;</code> element:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">&quot;unique_image_id&quot;</span> <span class="na">type=</span><span class="s">&quot;image_type&quot;</span><span class="nt">&gt;</span>
 	...
 	<span class="nt">&lt;/image&gt;</span>
-<span class="nt">&lt;images/&gt;</span></code></pre></div>
+<span class="nt">&lt;images/&gt;</span></code></pre></figure>
 
 <p><br />
 The following table describes the attributes in detail:</p>
@@ -944,12 +944,12 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 
 <p>Image properties are defined by the corresponding elements, for example:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">&quot;unique_image_id&quot;</span> <span class="na">type=</span><span class="s">&quot;image&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;width&gt;</span>100<span class="nt">&lt;/width&gt;</span> <span class="c">&lt;!-- Image width in px --&gt;</span> 
         <span class="nt">&lt;height&gt;</span>100<span class="nt">&lt;/height&gt;</span> <span class="c">&lt;!-- Image height in px --&gt;</span>
     <span class="nt">&lt;/image&gt;</span>
-<span class="nt">&lt;/images&gt;</span></code></pre></div>
+<span class="nt">&lt;/images&gt;</span></code></pre></figure>
 
 <p><br /></p>
 
@@ -1089,7 +1089,7 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 
 <ul>
   <li>After you import products, which might have variable sized images</li>
-  <li>If images were resized or deleted manually from cache </li>
+  <li>If images were resized or deleted manually from cache</li>
 </ul>
 
 <p>Each image assigned to a product must be resized in accordance with image metadata defined in a module’s <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images"><code>view.xml</code></a> configuration file. After resizing an image, its resized copy is stored in the cache (<code>/pub/media/catalog/product/cache</code> directory). Magento serves storefront images from cache.</p>

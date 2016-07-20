@@ -868,9 +868,9 @@
 <p>This topic contains the basic information about how to customize the view of an existing checkout step. In the Magento application, checkout is implemented using UI components, so you can customize each step in the process by changing the JavaScript implementation or template for a component, adding a component or disabling a component.</p>
 
 <ul id="markdown-toc">
-  <li><a href="#change-the-components-js-implementation-and-template">Change the component’s .js implementation and template</a></li>
-  <li><a href="#add-the-new-component-to-the-checkout-page-layout">Add the new component to the checkout page layout</a></li>
-  <li><a href="#disable-a-component">Disable a component</a></li>
+  <li><a href="#change-the-components-js-implementation-and-template" id="markdown-toc-change-the-components-js-implementation-and-template">Change the component’s .js implementation and template</a></li>
+  <li><a href="#add-the-new-component-to-the-checkout-page-layout" id="markdown-toc-add-the-new-component-to-the-checkout-page-layout">Add the new component to the checkout page layout</a></li>
+  <li><a href="#disable-a-component" id="markdown-toc-disable-a-component">Disable a component</a></li>
 </ul>
 
 <h2 id="change-the-components-js-implementation-and-template">Change the component’s .js implementation and template</h2>
@@ -882,7 +882,7 @@
   <li>In this file, add the following:</li>
 </ol>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;arguments&gt;</span>
@@ -893,11 +893,11 @@
                 <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <ol>
   <li>
-    <p>In the <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to <code>&lt;argument&gt;</code>. There is no need to leave all the attributes and values of parente nodes, as you are not going to change them. </p>
+    <p>In the <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to <code>&lt;argument&gt;</code>. There is no need to leave all the attributes and values of parente nodes, as you are not going to change them.</p>
   </li>
   <li>
     <p>Change the path to the component’s <code>.js</code> file, template or any other property.</p>
@@ -910,7 +910,7 @@
 
 <p><code>&lt;Magento_Shipping_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> looks like following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
@@ -944,22 +944,22 @@
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <h2 id="add-the-new-component-to-the-checkout-page-layout">Add the new component to the checkout page layout</h2>
 
-<p>Any UI component is added in the <code>checkout_index_index.xml</code> similar to the way a <a href="/guides/v2.0/howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout">checkout step component is added</a>. </p>
+<p>Any UI component is added in the <code>checkout_index_index.xml</code> similar to the way a <a href="/guides/v2.0/howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout">checkout step component is added</a>.</p>
 
 <p>Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the <code>uiComponent</code> alias), its child components are rendered without any conditions. But if a parent component is a an extenstion of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain <code>displayArea</code>.</p>
 
 <h2 id="disable-a-component">Disable a component</h2>
 <p>To disable the component in your <code>checkout_index_index.xml</code> use the following instructions:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%the_component_to_be_disabled%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%the_component_to_be_disabled%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;componentDisabled&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/item&gt;</span></code></pre></div>
+<span class="nt">&lt;/item&gt;</span></code></pre></figure>
 
 
 

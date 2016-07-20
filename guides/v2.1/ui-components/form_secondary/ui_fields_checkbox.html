@@ -715,26 +715,26 @@
 <p><strong>Contents</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#structure">Structure</a></li>
-  <li><a href="#configuration-settings">Configuration settings</a>    <ul>
-      <li><a href="#chekbox-specific-options">Chekbox-specific options</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#structure" id="markdown-toc-structure">Structure</a></li>
+  <li><a href="#configuration-settings" id="markdown-toc-configuration-settings">Configuration settings</a>    <ul>
+      <li><a href="#chekbox-specific-options" id="markdown-toc-chekbox-specific-options">Chekbox-specific options</a></li>
     </ul>
   </li>
-  <li><a href="#public-api-js">Public API (JS)</a>    <ul>
-      <li><a href="#getreversevaluemap"><code>getReverseValueMap()</code></a></li>
-      <li><a href="#value"><code>value()</code></a></li>
-      <li><a href="#valueparam"><code>value(param)</code></a></li>
-      <li><a href="#checked"><code>checked()</code></a></li>
-      <li><a href="#checkedparam"><code>checked(param)</code></a></li>
+  <li><a href="#public-api-js" id="markdown-toc-public-api-js">Public API (JS)</a>    <ul>
+      <li><a href="#getreversevaluemap" id="markdown-toc-getreversevaluemap"><code>getReverseValueMap()</code></a></li>
+      <li><a href="#value" id="markdown-toc-value"><code>value()</code></a></li>
+      <li><a href="#valueparam" id="markdown-toc-valueparam"><code>value(param)</code></a></li>
+      <li><a href="#checked" id="markdown-toc-checked"><code>checked()</code></a></li>
+      <li><a href="#checkedparam" id="markdown-toc-checkedparam"><code>checked(param)</code></a></li>
     </ul>
   </li>
-  <li><a href="#examples-of-use">Examples of use</a>    <ul>
-      <li><a href="#example-1-checkbox-ui-component-as-a-boolean-state-checker">Example 1: Checkbox UI component as a Boolean state checker</a></li>
-      <li><a href="#example-2-checkbox-ui-component-as-a-boolean-state-checker-with-toggle-button-look">Example 2: Checkbox UI component as a Boolean state checker with toggle button look</a></li>
-      <li><a href="#example-3-checkbox-ui-component-as-onoff-switcher-with-some-value">Example 3: Checkbox UI component as on/off switcher with some value</a></li>
-      <li><a href="#checkbox_set">Example 4: Checkbox UI component as a part of a radio button set</a></li>
-      <li><a href="#radio_set">Example 5: Checkbox UI component as a part of a radio button set</a></li>
+  <li><a href="#examples-of-use" id="markdown-toc-examples-of-use">Examples of use</a>    <ul>
+      <li><a href="#example-1-checkbox-ui-component-as-a-boolean-state-checker" id="markdown-toc-example-1-checkbox-ui-component-as-a-boolean-state-checker">Example 1: Checkbox UI component as a Boolean state checker</a></li>
+      <li><a href="#example-2-checkbox-ui-component-as-a-boolean-state-checker-with-toggle-button-look" id="markdown-toc-example-2-checkbox-ui-component-as-a-boolean-state-checker-with-toggle-button-look">Example 2: Checkbox UI component as a Boolean state checker with toggle button look</a></li>
+      <li><a href="#example-3-checkbox-ui-component-as-onoff-switcher-with-some-value" id="markdown-toc-example-3-checkbox-ui-component-as-onoff-switcher-with-some-value">Example 3: Checkbox UI component as on/off switcher with some value</a></li>
+      <li><a href="#checkbox_set" id="markdown-toc-checkbox_set">Example 4: Checkbox UI component as a part of a radio button set</a></li>
+      <li><a href="#radio_set" id="markdown-toc-radio_set">Example 5: Checkbox UI component as a part of a radio button set</a></li>
     </ul>
   </li>
 </ul>
@@ -790,7 +790,7 @@
 <pre><code>&lt;Module_dir&gt;/view/adminhtml/ui_component/%component_name%.xml
 </code></pre>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;%Component_Name%&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;%Component_Name%&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="c">&lt;!-- Mandatory options. Required by the Field UI component --&gt;</span>
@@ -803,11 +803,11 @@
             ...
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/field&gt;</span></code></pre></div>
+<span class="nt">&lt;/field&gt;</span></code></pre></figure>
 
 <p>Example of the Checkbox UI configuration in the scope of the <a href="/guides/v2.1/ui-components/ui-form.html">Form UI</a> configuration:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="c">&lt;!-- Checkbox component configuration. START --&gt;</span>
     <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;Sample_Checkbox&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -848,7 +848,7 @@
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/dataSource&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
 <h3 id="chekbox-specific-options">Chekbox-specific options</h3>
 
@@ -1129,7 +1129,7 @@ Consider that data from the component is always sent using the POST method and a
 
 <p>If you decide that value pair to be of Boolean type, the component’s configuration might look like following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;Sample_Checkbox&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;Sample_Checkbox&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;formElement&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>checkbox<span class="nt">&lt;/item&gt;</span>
@@ -1141,7 +1141,7 @@ Consider that data from the component is always sent using the POST method and a
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/field&gt;</span></code></pre></div>
+<span class="nt">&lt;/field&gt;</span></code></pre></figure>
 
 <p>The component calculates the initial state from data in DataProvider according to the following pattern:</p>
 
@@ -1167,7 +1167,7 @@ $provider[ .. ]['%Component_Name%'] = null; // Will fallback to "default" state,
 
 <p>So the component’s configuration in this case might look like following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;Sample_Checkbox&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;Sample_Checkbox&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;formElement&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>checkbox<span class="nt">&lt;/item&gt;</span>
@@ -1180,13 +1180,13 @@ $provider[ .. ]['%Component_Name%'] = null; // Will fallback to "default" state,
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/field&gt;</span></code></pre></div>
+<span class="nt">&lt;/field&gt;</span></code></pre></figure>
 
 <h3 id="example-3-checkbox-ui-component-as-onoff-switcher-with-some-value">Example 3: Checkbox UI component as on/off switcher with some value</h3>
 
 <p>When the <code>value</code> option is set, and <code>vallueMap</code> is not set, the component toggles between <code>initialValue</code> (obtained from <code>value</code>) and empty string. So if the component is configured as follows, DataProvider will recieve <code>42</code> or <code>''</code> (empty string).</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;Sample_Checkbox&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;Sample_Checkbox&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;formElement&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>checkbox<span class="nt">&lt;/item&gt;</span>
@@ -1196,7 +1196,7 @@ $provider[ .. ]['%Component_Name%'] = null; // Will fallback to "default" state,
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;value&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>42<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/field&gt;</span></code></pre></div>
+<span class="nt">&lt;/field&gt;</span></code></pre></figure>
 
 <h3 id="checkbox_set">Example 4: Checkbox UI component as a part of a radio button set</h3>
 
@@ -1210,7 +1210,7 @@ $provider[ .. ]['%Component_Name%'] = null; // Will fallback to "default" state,
 
 <p>Example:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;Sample_Checkbox_1&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;Sample_Checkbox_1&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;formElement&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>checkbox<span class="nt">&lt;/item&gt;</span>
@@ -1233,7 +1233,7 @@ $provider[ .. ]['%Component_Name%'] = null; // Will fallback to "default" state,
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;value&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>24<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/field&gt;</span></code></pre></div>
+<span class="nt">&lt;/field&gt;</span></code></pre></figure>
 
 <p>The POST object will contain either <code>42</code> or <code>24</code>, stored under the <code>$_POST[...][%Component_Name%]</code> key.</p>
 
@@ -1249,7 +1249,7 @@ $provider[ .. ]['%Component_Name%'] = null; // Will fallback to "default" state,
 
 <p>Checked values appear in the <code>dataScope</code> collection. Clearing the checkbox removes it from the <code>dataScope</code> collection.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;Sample_Checkbox_1&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;Sample_Checkbox_1&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;formElement&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>checkbox<span class="nt">&lt;/item&gt;</span>
@@ -1272,7 +1272,7 @@ $provider[ .. ]['%Component_Name%'] = null; // Will fallback to "default" state,
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;value&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>24<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/field&gt;</span></code></pre></div>
+<span class="nt">&lt;/field&gt;</span></code></pre></figure>
 
 <p>The POST object can contain either <code>[]</code>,<code>[42]</code>,<code>[24]</code> or <code>[42,24]</code> under the <code>$_POST[...][%Component_Name%]</code> key. So each checkbox just toggles the availablility of its value under the <code>dataScope</code> key.</p>
 

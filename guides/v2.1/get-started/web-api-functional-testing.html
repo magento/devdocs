@@ -575,7 +575,7 @@
 
 <p>All Web API functional tests should inherit from the generic test case <code>Magento\TestFramework\TestCase\WebapiAbstract</code>. It defines the <code>_webApiCall()</code> method, which should be used to perform Web API calls from tests. Clients of <code>_webApiCall()</code> are unaware of which adapter will be used to perform remote call.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">namespace</span> <span class="nx">Magento\Webapi\Routing</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">CoreRoutingTest</span> <span class="k">extends</span> <span class="nx">\Magento\TestFramework\TestCase\WebapiAbstract</span>
@@ -597,11 +597,11 @@
         <span class="nv">$item</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_webApiCall</span><span class="p">(</span><span class="nv">$serviceInfo</span><span class="p">,</span> <span class="nv">$requestData</span><span class="p">);</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span><span class="s1">&#39;testProduct1&#39;</span><span class="p">,</span> <span class="nv">$item</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="s2">&quot;Item was retrieved unsuccessfully&quot;</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="p">}</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <p>The test above should is able to test SOAP and REST depending on what adapter is currently used by testing framework. $serviceInfo format is defined by Web API client adapter interface:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\TestFramework\TestCase\Webapi</span><span class="p">;</span>
 
@@ -632,7 +632,7 @@
 <span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">call</span><span class="p">(</span><span class="nv">$serviceInfo</span><span class="p">,</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">$storeCode</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$integration</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
 <span class="p">}</span>
- <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+ <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 <h2 id="howto">How to Run the Tests</h2>
 <h3 id="prereq">Prerequisites</h3>

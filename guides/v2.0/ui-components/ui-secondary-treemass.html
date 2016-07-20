@@ -641,10 +641,10 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<h3 id="treemass">UI TreeMassAction Component</h3>
 
-<p>TreeMassAction Component is extension to MassAction component that provides nested sub-menu. </p>
+<p>TreeMassAction Component is extension to MassAction component that provides nested sub-menu.</p>
 
 <p>The TreeMassAction JS component is used by the TwoStepMassAction component.</p>
 
@@ -655,7 +655,7 @@
 <p>Example:
 <code>&lt;your module root dir&gt;/Magento/Catalog/view/adminhtml/ui_component/product_listing.xml</code></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_listing.product_listing.product_columns.ids<span class="nt">&lt;/item&gt;</span>
@@ -710,7 +710,7 @@
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
-<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></figure>
 
 <h4 id="configuration">Configuration</h4>
 <p>Component can be configured in two ways:</p>
@@ -770,20 +770,20 @@
   <li>Redefining the link to the template</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         ...
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product/grid/columns/massactions<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></figure>
 
 <ul>
   <li>Specifying action with confirmation</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         ...
     <span class="nt">&lt;/argument&gt;</span>
@@ -799,7 +799,7 @@
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
-<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></figure>
 
 <ul>
   <li>Action with a custom callback</li>
@@ -807,7 +807,7 @@
 
 <p>Callback is provided by another component.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         ...
     <span class="nt">&lt;/argument&gt;</span>
@@ -823,19 +823,19 @@
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
-<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></figure>
 
 <h4 id="instance-replacement-one-instance-of-a-component">Instance Replacement: One Instance of a Component</h4>
 
 <p>Redefine link to constructor:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Products/js/grid/tree-massactions<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></figure>
 
 
 

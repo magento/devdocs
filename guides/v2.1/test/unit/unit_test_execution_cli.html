@@ -482,16 +482,16 @@
 		<h2 id="running-unit-tests-on-the-cli">Running unit tests on the CLI</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#running-unit-tests-on-the-cli">Running unit tests on the CLI</a>    <ul>
-      <li><a href="#running-all-unit-tests">Running all unit tests</a></li>
-      <li><a href="#running-only-a-subset-of-the-unit-tests">Running only a subset of the unit tests</a>        <ul>
-          <li><a href="#explanation">Explanation</a></li>
+  <li><a href="#running-unit-tests-on-the-cli" id="markdown-toc-running-unit-tests-on-the-cli">Running unit tests on the CLI</a>    <ul>
+      <li><a href="#running-all-unit-tests" id="markdown-toc-running-all-unit-tests">Running all unit tests</a></li>
+      <li><a href="#running-only-a-subset-of-the-unit-tests" id="markdown-toc-running-only-a-subset-of-the-unit-tests">Running only a subset of the unit tests</a>        <ul>
+          <li><a href="#explanation" id="markdown-toc-explanation">Explanation</a></li>
         </ul>
       </li>
-      <li><a href="#solutions-to-common-problems">Solutions to common problems</a>        <ul>
-          <li><a href="#permission-denied">Permission Denied</a></li>
-          <li><a href="#use-the-correct-php-interpreter">Use the correct PHP interpreter</a></li>
-          <li><a href="#memory-limit">Memory Limit</a></li>
+      <li><a href="#solutions-to-common-problems" id="markdown-toc-solutions-to-common-problems">Solutions to common problems</a>        <ul>
+          <li><a href="#permission-denied" id="markdown-toc-permission-denied">Permission Denied</a></li>
+          <li><a href="#use-the-correct-php-interpreter" id="markdown-toc-use-the-correct-php-interpreter">Use the correct PHP interpreter</a></li>
+          <li><a href="#memory-limit" id="markdown-toc-memory-limit">Memory Limit</a></li>
         </ul>
       </li>
     </ul>
@@ -502,7 +502,7 @@
 
 <p>To run all tests, navigate to the Magento base directory and execute the following command:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist</code></pre></figure>
 
 <h3 id="running-only-a-subset-of-the-unit-tests">Running only a subset of the unit tests</h3>
 
@@ -510,15 +510,15 @@
 
 <p>The following example tells PHPUnit to look for any file ending with <code>Test.php</code> within the directory branch <code>app/code/Example/Module/Test/Unit</code> and try to execute it.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/Example/Module/Test/Unit</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/Example/Module/Test/Unit</code></pre></figure>
 
 <h4 id="explanation">Explanation</h4>
 
-<p>The <code>phpunit</code> executable is installed by <code>composer</code> and linked into the directory <code>vendor/bin</code>.  </p>
+<p>The <code>phpunit</code> executable is installed by <code>composer</code> and linked into the directory <code>vendor/bin</code>.</p>
 
-<p>The option <code>-c dev/tests/unit/phpunit.xml.dist</code> specifies the configuration file for PHPUnit.  </p>
+<p>The option <code>-c dev/tests/unit/phpunit.xml.dist</code> specifies the configuration file for PHPUnit.</p>
 
-<p>If custom configuration settings are required (more on that later), the file <code>dev/tests/unit/phpunit.xml.dist</code> can be copied to <code>dev/tests/unit/phpunit.xml</code> and adjusted as needed. In that case modify the <code>-c</code> flag accordingly.  </p>
+<p>If custom configuration settings are required (more on that later), the file <code>dev/tests/unit/phpunit.xml.dist</code> can be copied to <code>dev/tests/unit/phpunit.xml</code> and adjusted as needed. In that case modify the <code>-c</code> flag accordingly.</p>
 
 <p>PHPUnit has many additional command line options. Please refer to the <a href="https://phpunit.de/manual/4.1/en/textui.html#textui.clioptions">PHPUnit documentation</a> for more information (currently Magento 2 uses PHPUnit version 4.1.0).</p>
 
@@ -527,9 +527,9 @@
 <h4 id="permission-denied">Permission Denied</h4>
 <p>One possible reason for this to happen might be if you are trying to execute PHPUnit inside a Virtual Box VM with shared folders that don’t allow modifying permissions.</p>
 
-<p>Whatever the reason, if you encounter the <code>permission denied: vendor/bin/phpunit</code> error, you can prefix the command with the PHP interpreter, so your system knows what binary to use to run the tests.  </p>
+<p>Whatever the reason, if you encounter the <code>permission denied: vendor/bin/phpunit</code> error, you can prefix the command with the PHP interpreter, so your system knows what binary to use to run the tests.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist</code></pre></figure>
 
 <h4 id="use-the-correct-php-interpreter">Use the correct PHP interpreter</h4>
 <p>On many development systems, you might have more one PHP version installed. You must know the correct PHP interpreter to use for testing; that is, Buse the same version of PHP to run the unit tests you use to run Magento.</p>
@@ -552,7 +552,7 @@
 
 <p>You can either fix your <code>$PATH</code> (please refer to your system documentation on how to do that), or specify the full path to the PHP interpreter. For example:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>/usr/local/Cellar/php56/5.6.19/bin/php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>/usr/local/Cellar/php56/5.6.19/bin/php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist</code></pre></figure>
 
 <h4 id="memory-limit">Memory Limit</h4>
 <p>If you encounter an error similar to <code>Fatal error: Allowed memory size of 67108864 bytes exhausted</code>, follow these steps to resolve it.</p>
@@ -561,14 +561,14 @@
 
 <p>Find the following section:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
     <span class="nt">&lt;ini</span> <span class="na">name=</span><span class="s">&quot;date.timezone&quot;</span> <span class="na">value=</span><span class="s">&quot;America/Los_Angeles&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;ini</span> <span class="na">name=</span><span class="s">&quot;xdebug.max_nesting_level&quot;</span> <span class="na">value=</span><span class="s">&quot;200&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/php&gt;</span></code></pre></div>
+<span class="nt">&lt;/php&gt;</span></code></pre></figure>
 
 <p>Add the following line in the <code>&lt;php&gt;</code> block to disable the PHP memory limit during test execution.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ini</span> <span class="na">name=</span><span class="s">&quot;memory_limit&quot;</span> <span class="na">value=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ini</span> <span class="na">name=</span><span class="s">&quot;memory_limit&quot;</span> <span class="na">value=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
 
 
 

@@ -764,20 +764,20 @@
 <h3>Contents</h3>
 
 <ul id="markdown-toc">
-  <li><a href="#example-test-description">Test description</a></li>
-  <li><a href="#manual-test">Manual testing scenario</a></li>
-  <li><a href="#auto-test">Automated testing scenario</a></li>
-  <li><a href="#test-creation">Test creation</a>    <ul>
-      <li><a href="#check-mtf">Step 1. Check the <abbr title="Functional Testing Framework">FTF</abbr> configuration and environment</a></li>
-      <li><a href="#create-test-object">Step 2. Create the testing object - a fixture</a></li>
-      <li><a href="#create-init-test-case">Step 3. Create the initial test case</a></li>
-      <li><a href="#create-data-set">Step 4. Create the data set</a></li>
-      <li><a href="#create-pages">Step 5. Create the pages</a></li>
-      <li><a href="#create-blocks">Step 6. Create the blocks</a></li>
-      <li><a href="#add-blocks-to-pages">Step 7. Add the blocks to pages</a></li>
-      <li><a href="#define-test-method">Step 8. Define the <code>test()</code> method</a></li>
-      <li><a href="#step-9-check-the-test-run">Step 9. Check the test run</a></li>
-      <li><a href="#create-assertion">Step 10. Create the assertion</a></li>
+  <li><a href="#example-test-description" id="markdown-toc-example-test-description">Test description</a></li>
+  <li><a href="#manual-test" id="markdown-toc-manual-test">Manual testing scenario</a></li>
+  <li><a href="#auto-test" id="markdown-toc-auto-test">Automated testing scenario</a></li>
+  <li><a href="#test-creation" id="markdown-toc-test-creation">Test creation</a>    <ul>
+      <li><a href="#check-mtf" id="markdown-toc-check-mtf">Step 1. Check the <abbr title="Functional Testing Framework">FTF</abbr> configuration and environment</a></li>
+      <li><a href="#create-test-object" id="markdown-toc-create-test-object">Step 2. Create the testing object - a fixture</a></li>
+      <li><a href="#create-init-test-case" id="markdown-toc-create-init-test-case">Step 3. Create the initial test case</a></li>
+      <li><a href="#create-data-set" id="markdown-toc-create-data-set">Step 4. Create the data set</a></li>
+      <li><a href="#create-pages" id="markdown-toc-create-pages">Step 5. Create the pages</a></li>
+      <li><a href="#create-blocks" id="markdown-toc-create-blocks">Step 6. Create the blocks</a></li>
+      <li><a href="#add-blocks-to-pages" id="markdown-toc-add-blocks-to-pages">Step 7. Add the blocks to pages</a></li>
+      <li><a href="#define-test-method" id="markdown-toc-define-test-method">Step 8. Define the <code>test()</code> method</a></li>
+      <li><a href="#step-9-check-the-test-run" id="markdown-toc-step-9-check-the-test-run">Step 9. Check the test run</a></li>
+      <li><a href="#create-assertion" id="markdown-toc-create-assertion">Step 10. Create the assertion</a></li>
     </ul>
   </li>
 </ul>
@@ -908,7 +908,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <p>The following is a code of the new Synonym fixture.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/fixture.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;fixture</span> <span class="na">name=</span><span class="s">&quot;synonym&quot;</span>
@@ -924,7 +924,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;store_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;website_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/fixture&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>If we open a New Synonym Group page in a browser</p>
 
@@ -940,7 +940,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <p>It contains a <code>StoreIds.php</code> data source, that is similar to what we need. It has the following code:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -998,11 +998,11 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stores</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>The difference is that it is designed for multiple stores, but we don’t need that. Adding some changes we can get our data source.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Search\Test\Fixture\Synonym</span><span class="p">;</span>
 
@@ -1052,7 +1052,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">store</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>This data source:</p>
 
@@ -1069,11 +1069,11 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <p>Now we should change the fixture. Instead of <code>store_id</code> and <code>website_id</code>, we must use <code>scope_id</code> with the <code>Magento\Search\Test\Fixture\Synonym\ScopeId</code> data source class.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">... ... ...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">... ... ...
 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;group_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;synonyms&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;scope_id&quot;</span> <span class="na">is_required=</span><span class="s">&quot;0&quot;</span> <span class="na">source=</span><span class="s">&quot;Magento\Search\Test\Fixture\Synonym\ScopeId&quot;</span> <span class="nt">/&gt;</span>
-... ... ...</code></pre></div>
+... ... ...</code></pre></figure>
 
 <p>Then, we must regenerate the fixture to apply changes:</p>
 
@@ -1082,7 +1082,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <p>A new PHP class <code>Synonym.php</code> is generated in <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Search/Test/Fixture</code>.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -1151,7 +1151,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">&#39;scope_id&#39;</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="create-init-test-case">Step 3. Create the initial test case</h4>
 
@@ -1164,7 +1164,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>As a result of <a href="#manual-test">manual testing</a> we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. We can code the initialization of these pages in the test using an <code>__inject()</code> method of the <code>Magento\Mtf\TestCase\Injectable</code> class. The pages will be created in <a href="#create-pages">Step 5</a>. Also, we will use the fixture from the <a href="#create-test-object">Step 2</a>.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Search\Test\TestCase</span><span class="p">;</span>
 
@@ -1221,7 +1221,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
     <span class="p">{</span>
         <span class="c1">// Steps</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="create-data-set">Step 4. Create the data set</h4>
 
@@ -1231,7 +1231,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>The following code contains a data set, but doesn’t have data yet:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Search\Test\TestCase\CreateSynonymEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create Synonyms&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-123&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation1_all_websites_all_store_views&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonym for all websites and all store views&quot;</span><span class="nt">&gt;</span>
@@ -1244,7 +1244,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
         enter data and constraints for variation 3
         <span class="nt">&lt;/variation&gt;</span>
     <span class="nt">&lt;/testCase&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>According to a New Synonym Group form we need to enter data in the <code>synonyms</code> and <code>scope_id</code> fields.</p>
 
@@ -1282,7 +1282,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>Let’s see the data set with data.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Search\Test\TestCase\CreateSynonymEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create Synonyms&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-23022016&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation1_all_websites_all_store_views&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonym for all websites and all store views&quot;</span><span class="nt">&gt;</span>
@@ -1297,7 +1297,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;synonym/data/scope_id/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>default_store_view<span class="nt">&lt;/data&gt;</span>
         <span class="nt">&lt;/variation&gt;</span>
     <span class="nt">&lt;/testCase&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>A bit later we will add assertions to complete our data set.</p>
 
@@ -1307,22 +1307,22 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p><strong>SynonymsIndex.xml</strong></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;SynonymsIndex&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;search/synonyms/index&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Search&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="err">...</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p><strong>SynonymsNew.xml</strong></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;SynonymsNew&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;search/synonyms/new&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Search&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="err">...</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p><img src="/common/images/mtf_tutorial_pages.png" alt="Created pages" /></p>
 
@@ -1349,7 +1349,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>Fortunately, you already have a <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html">block</a> that contains a method to add a new entity in a grid: <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php"><code>\Magento\Backend\Test\Block\GridPageActions</code></a>.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Click the &quot;Add New&quot; button</span>
 <span class="sd"> *</span>
 <span class="sd"> * @return void</span>
@@ -1357,18 +1357,18 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 <span class="k">public</span> <span class="k">function</span> <span class="nf">addNew</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addNewButton</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>In HTML page, to locate the UI block that contains a button, we will use a <code>.page-main-actions</code> locator.</p>
 
 <p>The SynonymsIndex.xml page must contain the following block to be able to run the method in a test case.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;SynonymsIndex&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;search/synonyms/index&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Search&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;pageActionsBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\GridPageActions&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-main-actions&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>Now you can run <code>generate.php</code> as we did before to re-generate page classes.</p>
 
@@ -1380,11 +1380,11 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>The <code>Block</code> directory in the Magento_Search module (in the Magento code) contains the <code>Adminhtml/Synonyms/Edit</code> directories, as shown below:</p>
 
-<p><img src="/common/images/mtf_tutorial_block_struct.png" alt="Block structure in a code base" /> </p>
+<p><img src="/common/images/mtf_tutorial_block_struct.png" alt="Block structure in a code base" /></p>
 
 <p>The <code>Search/Test</code> directory in functional tests should be constructed in a similar manner:</p>
 
-<p><img src="/common/images/mtf_tutorial_block_struct_test.png" alt="Block structure in a functional test" /> </p>
+<p><img src="/common/images/mtf_tutorial_block_struct_test.png" alt="Block structure in a functional test" /></p>
 
 <p>We need a <code>fill()</code> method from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php"><code>\Magento\Mtf\Block\Form</code></a> class and a mapping file.</p>
 
@@ -1394,18 +1394,18 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>We don’t need to define mapping parameters for the <code>synonyms</code> field, because they are the same as the default values. (See the <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes">nodes description table</a>.) The same is applicable to the <code>scope_id</code> field except a type of input element, which is a <a href="/guides/v2.0/mtf/mtf_entities/mtf_typified-element.html#magento_class">custom typified element</a> <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php"><code>\Magento\Mtf\Client\Element\SelectstoreElement</code></a> in our case. Let’s create the mapping file <code>SynonymsForm.xml</code>, which has the following code:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;mapping</span> <span class="na">strict=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;mapping</span> <span class="na">strict=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;fields&gt;</span>
       <span class="nt">&lt;synonyms</span> <span class="nt">/&gt;</span>
       <span class="nt">&lt;scope_id&gt;</span>
           <span class="nt">&lt;input&gt;</span>selectstore<span class="nt">&lt;/input&gt;</span>
       <span class="nt">&lt;/scope_id&gt;</span>
   <span class="nt">&lt;/fields&gt;</span>
-<span class="nt">&lt;/mapping&gt;</span></code></pre></div>
+<span class="nt">&lt;/mapping&gt;</span></code></pre></figure>
 
 <p>A block class must simply extend <code>\Magento\Mtf\Block\Form</code> class. Its name duplicates the name of the mapping file that is a concatenation of the fixture name and a <code>Form</code> ending (<code>Synonyms</code>+<code>Form</code>). Let’s create a <code>\Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm</code> empty class:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Search\Test\Block\Adminhtml\Synonyms\Edit</span><span class="p">;</span>
 
@@ -1417,7 +1417,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 <span class="k">class</span> <span class="nc">SynonymsForm</span> <span class="k">extends</span> <span class="nx">Form</span>
 <span class="p">{</span>
     <span class="c1">//</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Now we have the following structure:</p>
 
@@ -1425,15 +1425,15 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>Then we should add the block class to the <code>SynonymsNew.xml</code> page object. To identify a form block on the HTML page, use an <code>id='page:main-container'</code> css selector.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;synonymForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;[id=&#39;page:main-container&#39;]&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;synonymForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;[id=&#39;page:main-container&#39;]&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <p><strong>How to code ‘Click the “Save Synonym Group” button’</strong></p>
 
 <p>The <code>save()</code> method from the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php"><code>\Magento\Backend\Test\Block\FormPageActions</code></a> block class allows you to click the “Save Synonym Group” button.</p>
 
-<p>The <code>SynonymsNew.xml</code> page must contain this class. The <code>.page-main-actions</code> css selector will help to identify a UI block with the button on the HTML page.  </p>
+<p>The <code>SynonymsNew.xml</code> page must contain this class. The <code>.page-main-actions</code> css selector will help to identify a UI block with the button on the HTML page.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;formPageActions&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\FormPageActions&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-main-actions&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;formPageActions&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\FormPageActions&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-main-actions&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <h4 id="add-blocks-to-pages">Step 7. Add the blocks to pages</h4>
 
@@ -1447,12 +1447,12 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>The page with a block:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;SynonymsIndex&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;search/synonyms/index&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Search&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;pageActionsBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\GridPageActions&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-main-actions&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p><strong>New Synonym Group page</strong></p>
 
@@ -1460,13 +1460,13 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>The page with blocks:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;SynonymsNew&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;search/synonyms/new&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Search&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;synonymForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;[id=&#39;page:main-container&#39;]&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;formPageActions&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\FormPageActions&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-main-actions&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>To generate PHP classes for these pages, enter the following command from your terminal.</p>
 
@@ -1481,7 +1481,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>An argument for the <code>test()</code> method is a <a href="#test-object">test object</a> (a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a>).</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Create Synonym group test.</span>
 <span class="sd"> * </span>
 <span class="sd"> * @param Synonym $synonym</span>
@@ -1490,12 +1490,12 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 <span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="nx">Synonym</span> <span class="nv">$synonym</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// Steps</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Now we can add page classes made in <a href="#create-pages">Step 5</a>:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsIndex</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsNew</span><span class="p">;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsIndex</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsNew</span><span class="p">;</span></code></pre></figure>
 
 <p>All methods are defined in blocks (<a href="#create-blocks">Step 6</a>) that are grouped in pages (<a href="#create-pages">Step 5</a>, <a href="#add-blocks-to-pages">Step 7</a>).</p>
 
@@ -1515,13 +1515,13 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>In the <abbr title="Functional Testing Framework">FTF</abbr>, the process of logging in doesn’t require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an <code>open()</code> method of the <code>Magento/Mtf/Page/BackendPage</code> class. There is no need to add this class in <code>use</code>, because it is inherited from the <code>Magento/Search/Test/Page/Adminhtml/SynonymsIndex</code> class.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span></code></pre></figure>
 
 <p><strong>Click the “New Synonym Group” button</strong></p>
 
 <p>To Click the “New Synonym Group” button, we will use the <code>addNew()</code> method from the <code>pageActionsBlock</code> block. A <code>getPageActionsBlock()</code> of the generated <code>Magento/Search/Test/Page/Adminhtml/SynonymsIndex</code> class receives parameters defined in the <code>pageActionsBlock</code> block (<code>class</code>, <code>locator</code>, <code>strategy</code>).</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">getPageActionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addNew</span><span class="p">();</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">getPageActionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addNew</span><span class="p">();</span></code></pre></figure>
 
 <p>This action opens the New Synonym Group page.</p>
 
@@ -1529,17 +1529,17 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>To enter data in the form, we use the <code>fill()</code> method from the <code>synonymForm</code> block of the <code>synonymsNew</code> page. An argument for this method is a fixture <code>Synonym</code>. A <code>getSynonymForm()</code> method of the generated <code>Magento/Search/Test/Page/Adminhtml/SynonymsNew</code> class receives parameters defined in the <code>synonymForm</code> block.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span></code></pre></figure>
 
 <p><strong>Click the “Save Synonym Group” button</strong></p>
 
 <p>A <code>save()</code> method with parameters defined in a <code>formPageActions</code> block. Parameters are injected using a <code>getFormPageActions()</code> method from the <code>synonymsNew</code> page (generated <code>Magento/Search/Test/Page/Adminhtml/SynonymsNew</code> page class).</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span></code></pre></figure>
 
 <p><strong>Full <code>test()</code> definition</strong></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Create Synonym group test.</span>
 <span class="sd"> *</span>
 <span class="sd"> * @param Synonym $synonym</span>
@@ -1552,7 +1552,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">getPageActionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addNew</span><span class="p">();</span> <span class="c1">// receiving of the page action block with &#39;_rootElement&#39; containing locator which is indicated in the page class for PageActionBlock from the page, makes &#39;click&#39; action on it</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span> <span class="c1">// enters data from variation in the New Synonym Group fields </span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span> <span class="c1">// `click` on the Save Synonym Group button</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="step-9-check-the-test-run">Step 9. Check the test run</h4>
 
@@ -1560,7 +1560,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>The full test case code:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Search\Test\TestCase</span><span class="p">;</span>
 
@@ -1623,7 +1623,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>You can run the test using your <abbr title="Integrated Development Environment">IDE</abbr> or the <abbr title="Command Line Interface">CLI</abbr>. The Selenium Server must be <a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium">up and running</a>. To run the test using the <abbr title="Command Line Interface">CLI</abbr>, enter in your terminal:</p>
 
@@ -1639,11 +1639,11 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 <p><img src="/common/images/mtf_tutorial_success_message.png" alt="Message about the successful save" /></p>
 
-<p>To cover this, we should create the test assertion (<a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraint</a>) and add the full class name to a variation of the data set. </p>
+<p>To cover this, we should create the test assertion (<a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraint</a>) and add the full class name to a variation of the data set.</p>
 
 <p>Fortunately, this type of assertion  is commonly used in functional tests. If we search on the phrase “SuccessSaveMessage” in <code>&lt;magento2&gt;/dev/tests/functional</code>, there will be several matches. Let’s select from the list of results a <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php"><code>\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage</code></a> class. It has the following code:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -1688,7 +1688,7 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
     <span class="p">{</span>
         <span class="k">return</span> <span class="s1">&#39;Assert that success message is displayed.&#39;</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>By making a simple change, we can create a constraint class that is needed <code>\Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage</code></p>
 
@@ -1696,7 +1696,7 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 <p>with the following code:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Search\Test\Constraint</span><span class="p">;</span>
 
@@ -1737,11 +1737,11 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
     <span class="p">{</span>
         <span class="k">return</span> <span class="s1">&#39;Assert that success message is displayed.&#39;</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>To handle the messages we use the <code>\Magento\Backend\Test\Block\Messages</code> class, by adding the <code>messagesBlock</code> block to the <code>SynonymsIndex</code> page. In <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Page/Adminhtml/CustomerGroupIndex.xml</code>, we can see that the following block is used:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;#messages .messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;#messages .messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
 
 <p>This block must be added to <code>SynonymsIndex</code> class. To do this:</p>
 
@@ -1749,7 +1749,7 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 <p>2) Add the block node:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;#messages .messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;#messages .messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
 
 <p>3) Launch the generating tool to update the page class:</p>
 
@@ -1758,7 +1758,7 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 <p>And now we can add <code>&lt;constraint&gt;</code> to each variation of a data set <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml</code>:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Search\Test\TestCase\CreateSynonymEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create Synonyms&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-23022016&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateCategoryEntityTestVariation1_all_websites_all_store_views&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create synonym for all websites and all store views&quot;</span><span class="nt">&gt;</span>
@@ -1776,7 +1776,7 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
             <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/variation&gt;</span>
     <span class="nt">&lt;/testCase&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>The test is ready to run.</p>
 

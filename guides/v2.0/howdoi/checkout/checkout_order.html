@@ -878,13 +878,13 @@
 
 <h2 id="validator">Create the validator</h2>
 
-<p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">depend</a> on the <code>Magento_Checkout</code> module. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues. </p>
+<p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">depend</a> on the <code>Magento_Checkout</code> module. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
 <p>In your custom module directory, create a <code>.js</code> file implementing the validator. It should be located under <code>&lt;your_module_dir&gt;/view/frontend/web/js/model</code> directory.</p>
 
 <p>Following is a sample of the validator <code>.js</code> file. It must necessarily implement the <code>validate()</code> method:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[],</span>
     <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
@@ -900,13 +900,13 @@
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span></code></pre></figure>
 
 <h2 id="pool">Add validator to the validators pool</h2>
 
 <p>Your custom validator must be added to the pool of “additional validators”. To do this, in the <code>&lt;your_module_dir&gt;/view/frontend/web/js</code> directory create a new <code>&lt;your-validation&gt;.js</code> file with the following content:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s1">&#39;uiComponent&#39;</span><span class="p">,</span>
         <span class="s1">&#39;Magento_Checkout/js/model/payment/additional-validators&#39;</span><span class="p">,</span>
@@ -917,14 +917,14 @@
         <span class="nx">additionalValidators</span><span class="p">.</span><span class="nx">registerValidator</span><span class="p">(</span><span class="nx">yourValidator</span><span class="p">);</span>
         <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({});</span>
     <span class="p">}</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span></code></pre></figure>
 
 <h2 id="layout">Declare the validation in the checkout layout</h2>
 
 <p>In your custom module directory, create a new <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file. 
 In this file, add the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
 <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -960,7 +960,7 @@ In this file, add the following:</p>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 
 

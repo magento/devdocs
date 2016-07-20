@@ -758,17 +758,17 @@
 		<h2>Page</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#mtf_page_overview">Page overview</a></li>
-  <li><a href="#mtf_page_create">Create page</a></li>
-  <li><a href="#mtf_page_types">Page types</a>    <ul>
-      <li><a href="#mtf_page_admin">Admin page</a></li>
-      <li><a href="#mtf_page_storefront">Storefront page</a></li>
-      <li><a href="#mtf_page_extern">External page</a></li>
+  <li><a href="#mtf_page_overview" id="markdown-toc-mtf_page_overview">Page overview</a></li>
+  <li><a href="#mtf_page_create" id="markdown-toc-mtf_page_create">Create page</a></li>
+  <li><a href="#mtf_page_types" id="markdown-toc-mtf_page_types">Page types</a>    <ul>
+      <li><a href="#mtf_page_admin" id="markdown-toc-mtf_page_admin">Admin page</a></li>
+      <li><a href="#mtf_page_storefront" id="markdown-toc-mtf_page_storefront">Storefront page</a></li>
+      <li><a href="#mtf_page_extern" id="markdown-toc-mtf_page_extern">External page</a></li>
     </ul>
   </li>
-  <li><a href="#mtf_page_merge">Merge pages</a>    <ul>
-      <li><a href="#add-block-another-module">Add blocks from different modules</a></li>
-      <li><a href="#override-blocks">Block overriding</a></li>
+  <li><a href="#mtf_page_merge" id="markdown-toc-mtf_page_merge">Merge pages</a>    <ul>
+      <li><a href="#add-block-another-module" id="markdown-toc-add-block-another-module">Add blocks from different modules</a></li>
+      <li><a href="#override-blocks" id="markdown-toc-override-blocks">Block overriding</a></li>
     </ul>
   </li>
 </ul>
@@ -813,7 +813,7 @@ Only the code in the corresponding block must be changed.</p>
 
 <p>where four blocks have been added:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -827,7 +827,7 @@ Only the code in the corresponding block must be changed.</p>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;#messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;systemMessageDialog&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\AdminNotification\Test\Block\System\Messages&quot;</span> <span class="na">locator=</span><span class="s">&#39;[role=&quot;dialog&quot;].ui-popup-message&#39;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p id="mtf_page_attributes">The following table explains <code>&lt;page&gt;</code> attributes.</p>
 
@@ -975,7 +975,7 @@ Only the code in the corresponding block must be changed.</p>
 
 <p><code>dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml</code> contains:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -990,11 +990,11 @@ Only the code in the corresponding block must be changed.</p>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page.messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;titleBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Theme\Test\Block\Html\Title&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-title-wrapper h1.page-title .base&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>        
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>We should create <code>dev/tests/functional/tests/app/Magento/Review/Test/Page/Product/CatalogProductView.xml</code> page with blocks we want to add:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1007,7 +1007,7 @@ Only the code in the corresponding block must be changed.</p>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;customerReviewBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Review\Test\Block\Product\View&quot;</span> <span class="na">locator=</span><span class="s">&quot;#customer-reviews&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;reviewFormBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Review\Test\Block\ReviewForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;#review-form&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>And generate the updated page:</p>
 
@@ -1016,7 +1016,7 @@ Only the code in the corresponding block must be changed.</p>
 
 <p>The result is in the <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php</code> with the following code:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -1132,7 +1132,7 @@ Only the code in the corresponding block must be changed.</p>
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">&#39;reviewFormBlock&#39;</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="override-blocks">Block overriding</h3>
 
@@ -1163,7 +1163,7 @@ Only the code in the corresponding block must be changed.</p>
 
 <p>Let’s see the <code>\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code> page:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1177,11 +1177,11 @@ Only the code in the corresponding block must be changed.</p>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;editForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;#container&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;modalBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Test\Block\Adminhtml\Modal&quot;</span> <span class="na">locator=</span><span class="s">&quot;._show[data-role=modal]&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>The block that we want to change is:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;editForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;#container&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;editForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;#container&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
 
 <p>We shouldn’t change the <code>editForm</code> block in the Magento_Catalog module, because in case of disabling of a Magento_NewModule module the test will be failed. The best way in this case is to create a new block in a Magento_NewModule module that covers new functionality.</p>
 
@@ -1199,20 +1199,20 @@ Only the code in the corresponding block must be changed.</p>
   <li>without <code>module</code> and <code>area</code> attributes</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogCategoryEdit&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/category/edit&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p><strong>Step 3.</strong> Add blocks that you want to redirect.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogCategoryEdit&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/category/edit&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;editForm&quot;</span> <span class="na">class=</span><span class="s">&quot;\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;//div[contains(@data-bind, &#39;category_form&#39;)]&quot;</span> <span class="na">strategy=</span><span class="s">&quot;xpath&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p><strong>Step 4.</strong> Run the page generator.</p>
 

@@ -843,28 +843,28 @@
 </ul>
 
 <h3>Modularity</h3>
-<p>The concept of the <i>module</i> is the heart of Magento extension development, and modular design of software components (in particular, modules, themes, and language packages) is a core architectural principle of the product. Self-contained modules of discrete code are organized by feature, thereby reducing each module’s external dependencies.  </p>
+<p>The concept of the <i>module</i> is the heart of Magento extension development, and modular design of software components (in particular, modules, themes, and language packages) is a core architectural principle of the product. Self-contained modules of discrete code are organized by feature, thereby reducing each module’s external dependencies.</p>
 
-<p>If a module is self-contained, then you can modify or replace it without affecting other areas of the code. This <i>loose coupling</i> of software components reduces the ripple effects throughout your code base of changing code. </p>
+<p>If a module is self-contained, then you can modify or replace it without affecting other areas of the code. This <i>loose coupling</i> of software components reduces the ripple effects throughout your code base of changing code.</p>
 
-<p>See the <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules. </p>
+<p>See the <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules.</p>
 
 <h3>Reliance on popular design patterns</h3>
-<p>Reliance on known architectural and programming structures helps PHP developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers. </p>
+<p>Reliance on known architectural and programming structures helps PHP developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers.</p>
 
-<p>Design patterns are time-tested, widely recognized software architecture constructs. Magento product architecture incorporates many well known patterns, but  Model-View-Controller (MVC)  holds particular interest for extension developers. </p>
+<p>Design patterns are time-tested, widely recognized software architecture constructs. Magento product architecture incorporates many well known patterns, but  Model-View-Controller (MVC)  holds particular interest for extension developers.</p>
 
 <h3>Coding standards</h3>
 
-<p>Magento developers should familiarize themselves with our coding standards, best practices, and conventions, especially standards for PHP file formatting, coding style, and file naming conventions. Magento standards are based on Zend Framework Coding Standards. </p>
+<p>Magento developers should familiarize themselves with our coding standards, best practices, and conventions, especially standards for PHP file formatting, coding style, and file naming conventions. Magento standards are based on Zend Framework Coding Standards.</p>
 
-<p>See <a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a> for guidelines and requirements. </p>
+<p>See <a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a> for guidelines and requirements.</p>
 
 <h3>Rich product ecosystem</h3>
-<p>The wider Magento ecosystem provides an extensive community and rich third-party marketplace for extensions. Visit Magento Marketplace for an overview of the many modules and themes available for download and to buy modules and theme packages, which offer more possibilities  for extending your storefront.  </p>
+<p>The wider Magento ecosystem provides an extensive community and rich third-party marketplace for extensions. Visit Magento Marketplace for an overview of the many modules and themes available for download and to buy modules and theme packages, which offer more possibilities  for extending your storefront.</p>
 
 <h3>Flexible attribute types</h3>
-<p>You can enhance your storefront by adding unique attributes to the default product attributes. For example, you might need to add a new attribute to describe a product, such as texture or an industry-specific rating. You can add these attributes from the Magento Admin, and the storefront  displays them. </p>
+<p>You can enhance your storefront by adding unique attributes to the default product attributes. For example, you might need to add a new attribute to describe a product, such as texture or an industry-specific rating. You can add these attributes from the Magento Admin, and the storefront  displays them.</p>
 
 <table>
    <tbody>
@@ -898,10 +898,10 @@
 
 <ul>
   <li>
-    <p><b>EAV (Entity-Attribute-Value) attributes</b> are site-specific attributes that you can define for a local site using the Magento Admin. </p>
+    <p><b>EAV (Entity-Attribute-Value) attributes</b> are site-specific attributes that you can define for a local site using the Magento Admin.</p>
   </li>
   <li>
-    <p><b>Custom attributes</b> are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and Catalog modules use EAV attributes. </p>
+    <p><b>Custom attributes</b> are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and Catalog modules use EAV attributes.</p>
   </li>
   <li>
     <p><b>Extension attributes</b>  often use more complex data types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.</p>
@@ -911,24 +911,24 @@
 <p>See <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information about using attributes.</p>
 
 <h3>Web APIs</h3>
-<p>Magento or third-party services can be configured as a web API (REST or SOAP) with some simple XML. You can use these services to integrate your Magento installation into third-party applications, such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) back office systems, and CMS (Content Management Systems). </p>
+<p>Magento or third-party services can be configured as a web API (REST or SOAP) with some simple XML. You can use these services to integrate your Magento installation into third-party applications, such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) back office systems, and CMS (Content Management Systems).</p>
 
-<p>See <a href="/guides/v2.0/get-started/bk-get-started-api.html">Getting Started with Magento Web APIs</a> for more information. </p>
+<p>See <a href="/guides/v2.0/get-started/bk-get-started-api.html">Getting Started with Magento Web APIs</a> for more information.</p>
 
 <h3>Service contracts, dependency injection, and dependency inversion</h3>
-<p><i>Service contracts</i> provide a new way to access public API endpoints. These PHP interfaces offer robust, stable extension points to which clients can connect.  Service contracts define the endpoints that function as a module’s public API. Defining these endpoints is an essential part of adding a module. </p>
+<p><i>Service contracts</i> provide a new way to access public API endpoints. These PHP interfaces offer robust, stable extension points to which clients can connect.  Service contracts define the endpoints that function as a module’s public API. Defining these endpoints is an essential part of adding a module.</p>
 
-<p>Service contracts are discussed throughout the Magento documentation set. See <a href="/guides/v2.0/architecture/archi_perspectives/service_layer.html">Service layer</a> for a high-level introduction. See <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for a more detailed discussion of service contracts and dependency injection. </p>
+<p>Service contracts are discussed throughout the Magento documentation set. See <a href="/guides/v2.0/architecture/archi_perspectives/service_layer.html">Service layer</a> for a high-level introduction. See <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for a more detailed discussion of service contracts and dependency injection.</p>
 
-<p>Magento implements <i>dependency injection</i> along with service contracts. Dependency injection provides a mechanism for changing a module’s behavior without altering the client or understanding nitty-gritty details of implementation. Both dependency injection and its related concept dependency inversion support Magento’s fundamental architectural principles of modularity and ease-of-extensibility. They strongly encourage basic coding practices that support the loose coupling of software modules. </p>
+<p>Magento implements <i>dependency injection</i> along with service contracts. Dependency injection provides a mechanism for changing a module’s behavior without altering the client or understanding nitty-gritty details of implementation. Both dependency injection and its related concept dependency inversion support Magento’s fundamental architectural principles of modularity and ease-of-extensibility. They strongly encourage basic coding practices that support the loose coupling of software modules.</p>
 
-<p>See <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on both dependency injection and service contracts. </p>
+<p>See <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on both dependency injection and service contracts.</p>
 
 <h3>Plug-ins</h3>
 
-<p>Plug-ins, like modules, are a mechanism for adding features to the core Magento product. <i>Plug-ins</i> enable you to make changes to the behavior of any public method in a Magento class. You can consider it a form of extension that uses the <code>Plugin</code> class. </p>
+<p>Plug-ins, like modules, are a mechanism for adding features to the core Magento product. <i>Plug-ins</i> enable you to make changes to the behavior of any public method in a Magento class. You can consider it a form of extension that uses the <code>Plugin</code> class.</p>
 
-<p>Plug-ins are also called <i>interceptors</i>.  Applications use the plug-in pattern to change method behavior without modifying the actual class. Plug-ins can typically intercept method processing before or after the method runs, or only when the method throws an exception. </p>
+<p>Plug-ins are also called <i>interceptors</i>.  Applications use the plug-in pattern to change method behavior without modifying the actual class. Plug-ins can typically intercept method processing before or after the method runs, or only when the method throws an exception.</p>
 
 <p>See Plug-ins in  <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on declaring and prioritizing plug-ins.</p>
 

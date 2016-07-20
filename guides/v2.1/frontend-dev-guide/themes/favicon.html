@@ -874,9 +874,9 @@
 <p><strong>Contents</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#general-overview">General overview</a></li>
-  <li><a href="#adding-a-custom-favicon-in-admin">Adding a custom favicon in Admin</a></li>
-  <li><a href="#add-custom-favicons-manually">Add custom favicons manually</a></li>
+  <li><a href="#general-overview" id="markdown-toc-general-overview">General overview</a></li>
+  <li><a href="#adding-a-custom-favicon-in-admin" id="markdown-toc-adding-a-custom-favicon-in-admin">Adding a custom favicon in Admin</a></li>
+  <li><a href="#add-custom-favicons-manually" id="markdown-toc-add-custom-favicons-manually">Add custom favicons manually</a></li>
 </ul>
 
 <h2 id="general-overview">General overview</h2>
@@ -884,9 +884,9 @@
 <p>Magento provides a default 16px x 16px favicon that you can override by uploading a custom icon in the Magento Admin, or by adding it manually in a specific location in a theme directory.
 If both favicons exist, the one you uploaded in the Admin takes precedence.</p>
 
-<p>If you want to have favicons of different sizes, you need to add them manually in the file system and define in layout. </p>
+<p>If you want to have favicons of different sizes, you need to add them manually in the file system and define in layout.</p>
 
-<p>Magento supports the following file types for favicon: <code>.ico</code>, <code>.png</code>, <code>.gif</code>, <code>.jpg</code>, <code>.jpeg</code>, <code>.apng</code>, <code>.svg</code>. Not all browsers support all these formats. The most widely supported file format to use for a favicon is <code>.ico</code>. </p>
+<p>Magento supports the following file types for favicon: <code>.ico</code>, <code>.png</code>, <code>.gif</code>, <code>.jpg</code>, <code>.jpeg</code>, <code>.apng</code>, <code>.svg</code>. Not all browsers support all these formats. The most widely supported file format to use for a favicon is <code>.ico</code>.</p>
 
 <p>See the following sections for details about adding favicons.</p>
 
@@ -895,7 +895,7 @@ If both favicons exist, the one you uploaded in the Admin takes precedence.</p>
 <p>To add a custom favicon in the Magento Admin, do the following:</p>
 
 <ol>
-  <li>Navigate to <strong>CONTENT</strong> &gt; (<strong>Design</strong>) <strong>Configuration</strong>. </li>
+  <li>Navigate to <strong>CONTENT</strong> &gt; (<strong>Design</strong>) <strong>Configuration</strong>.</li>
   <li>
     <p>In the scope grid, decide on which level you will configure the favicon and click <strong>Edit</strong>     in the corresponding row.</p>
 
@@ -914,24 +914,24 @@ If both favicons exist, the one you uploaded in the Admin takes precedence.</p>
 
 <h2 id="add-custom-favicons-manually">Add custom favicons manually</h2>
 
-<p>To override the default 16px x 16px favicon manually, add your custom <code>favicon.ico</code> in the <code>&lt;your_theme_dir&gt;/Magento_Theme/web/</code>directory. </p>
+<p>To override the default 16px x 16px favicon manually, add your custom <code>favicon.ico</code> in the <code>&lt;your_theme_dir&gt;/Magento_Theme/web/</code>directory.</p>
 
 <p>To add favicon icons of other sizes, take the following steps:</p>
 
 <ol>
   <li>Add your icons in the <code>&lt;your_theme_dir&gt;/Magento_Theme/web/</code> directory.</li>
-  <li>In the <code>&lt;your_theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code> layout file specify the paths to the icons and their sizes. </li>
+  <li>In the <code>&lt;your_theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code> layout file specify the paths to the icons and their sizes.</li>
 </ol>
 
 <p>For example, if you added a <code>favicon-32x32.png</code> icon and want it to be used as a 32px x 32px favicon, your <code>default_head_blocks.xml</code> would be like following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;head&gt;</span>
         <span class="nt">&lt;link</span> <span class="na">src=</span><span class="s">&quot;Magento_Theme::favicon-32x32.png&quot;</span> <span class="na">rel=</span><span class="s">&quot;icon&quot;</span> <span class="na">sizes=</span><span class="s">&quot;32x32&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
-<p>For your changes to be applied, clear the browser cache, and the following directories on the server (do not delete the <code>.htaccess</code> file!): </p>
+<p>For your changes to be applied, clear the browser cache, and the following directories on the server (do not delete the <code>.htaccess</code> file!):</p>
 
 <ul>
   <li><code>pub/static</code></li>

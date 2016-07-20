@@ -762,28 +762,28 @@
 		<h2>Handler</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#mtf_handler_overview">Handler overview</a></li>
-  <li><a href="#mtf_handler_types">Types of handlers</a></li>
-  <li><a href="#mtf_handler_config">Configuration</a>    <ul>
-      <li><a href="#mtf_handler_configxml"><code>config.xml</code></a></li>
+  <li><a href="#mtf_handler_overview" id="markdown-toc-mtf_handler_overview">Handler overview</a></li>
+  <li><a href="#mtf_handler_types" id="markdown-toc-mtf_handler_types">Types of handlers</a></li>
+  <li><a href="#mtf_handler_config" id="markdown-toc-mtf_handler_config">Configuration</a>    <ul>
+      <li><a href="#mtf_handler_configxml" id="markdown-toc-mtf_handler_configxml"><code>config.xml</code></a></li>
     </ul>
   </li>
-  <li><a href="#mtf_handler-components">Handler components</a>    <ul>
-      <li><a href="#mtf_handler_interface">Handler interface</a></li>
-      <li><a href="#mtf_handler_conf_hand">Handler class</a></li>
-      <li><a href="#mtf_handler_di"><code>di.xml</code></a></li>
+  <li><a href="#mtf_handler-components" id="markdown-toc-mtf_handler-components">Handler components</a>    <ul>
+      <li><a href="#mtf_handler_interface" id="markdown-toc-mtf_handler_interface">Handler interface</a></li>
+      <li><a href="#mtf_handler_conf_hand" id="markdown-toc-mtf_handler_conf_hand">Handler class</a></li>
+      <li><a href="#mtf_handler_di" id="markdown-toc-mtf_handler_di"><code>di.xml</code></a></li>
     </ul>
   </li>
-  <li><a href="#mtf_handler_howto-create-curl">How to create a cURL handler</a>    <ul>
-      <li><a href="#mtf_handler_decor">cURL authentication classes</a>        <ul>
-          <li><a href="#mtf_handler_curl_backdecor">BackendDecorator class</a></li>
-          <li><a href="#mtf_handler_cirl_frontdecor">FrontendDecorator class</a></li>
+  <li><a href="#mtf_handler_howto-create-curl" id="markdown-toc-mtf_handler_howto-create-curl">How to create a cURL handler</a>    <ul>
+      <li><a href="#mtf_handler_decor" id="markdown-toc-mtf_handler_decor">cURL authentication classes</a>        <ul>
+          <li><a href="#mtf_handler_curl_backdecor" id="markdown-toc-mtf_handler_curl_backdecor">BackendDecorator class</a></li>
+          <li><a href="#mtf_handler_cirl_frontdecor" id="markdown-toc-mtf_handler_cirl_frontdecor">FrontendDecorator class</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#mtf_handler_howto-create-ui">How to create a UI handler</a></li>
-  <li><a href="#mtf_handler_howto-create-webapi">How to create a WebAPI handler</a></li>
+  <li><a href="#mtf_handler_howto-create-ui" id="markdown-toc-mtf_handler_howto-create-ui">How to create a UI handler</a></li>
+  <li><a href="#mtf_handler_howto-create-webapi" id="markdown-toc-mtf_handler_howto-create-webapi">How to create a WebAPI handler</a></li>
 </ul>
 
 <h2 id="mtf_handler_overview">Handler overview</h2>
@@ -872,7 +872,7 @@
 
 <p>Example of <code>WidgetInterface.php</code> (should be placed in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>):</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -888,7 +888,7 @@
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
     <span class="c1">//</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="mtf_handler_conf_hand">Handler class</h3>
 
@@ -896,7 +896,7 @@
 
 <p>The <code>persist()</code> method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Persists Fixture Data into application.</span>
 <span class="sd"> *</span>
@@ -914,7 +914,7 @@
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">&#39;persist_after&#39;</span><span class="p">],</span> <span class="p">[</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$this</span><span class="p">)]);</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Create the handler in the same directory where the interface is stored: <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php</code></p>
 
@@ -924,7 +924,7 @@
 
 <p>See an example for the Widget cURL handler (<code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml</code>):</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2016 Magento. All rights reserved.</span>
@@ -933,7 +933,7 @@
 <span class="c">--&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;\Magento\Widget\Test\Handler\Widget\Curl&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>In this example, the <code>di.xml</code> file causes the <code>Curl</code> class to replace the <code>WidgetInterface</code>.</p>
 
@@ -950,7 +950,7 @@
   <li>In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call the file <code>WidgetInterface.php</code>. Our new interface extends <code>HandlerInterface</code> class.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -966,7 +966,7 @@
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
     <span class="c1">//</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <ul>
   <li>Create <code>Curl.php</code> in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.</li>
@@ -974,7 +974,7 @@
 
 <p id="mtf_curl_script">The following code includes detailed comments for better understanding.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -1057,13 +1057,13 @@
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="c1">// Additional methods.</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <ul>
   <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code>etc/curl</code> directory of the Magento_Widget module.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2016 Magento. All rights reserved.</span>
@@ -1072,11 +1072,11 @@
 <span class="c">--&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;\Magento\Widget\Test\Handler\Widget\Curl&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h3 id="mtf_handler_decor">cURL authentication classes</h3>
 
-<p>In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the <code>BackendDecorator</code> class. </p>
+<p>In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the <code>BackendDecorator</code> class.</p>
 
 <p>The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the storefront.</p>
 
@@ -1084,11 +1084,11 @@
 
 <p><code>BackendDecorator</code> manages authentication in Admin and saves the Admin’s session.</p>
 
-<p>Full class name is <code>Mtf\Util\Protocol\CurlTransport\BackendDecorator</code>. </p>
+<p>Full class name is <code>Mtf\Util\Protocol\CurlTransport\BackendDecorator</code>.</p>
 
 <p>Add to the <code>Curl.php</code> the following code:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$curl = new BackendDecorator(new CurlTransport(), new Config());</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$curl = new BackendDecorator(new CurlTransport(), new Config());</span></code></pre></figure>
 
 <p><code>Config()</code> takes Admin’s configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.</p>
 
@@ -1100,7 +1100,7 @@
 
 <p>Use the following code in the <code>Curl.php</code> file:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$curl = new FrontendDecorator(new CurlTransport(), $this-&gt;customer);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$curl = new FrontendDecorator(new CurlTransport(), $this-&gt;customer);</span></code></pre></figure>
 
 <h2 id="mtf_handler_howto-create-ui">How to create a UI handler</h2>
 
@@ -1111,7 +1111,7 @@
   <li>In the same directory, create <a href="#mtf_handler_interface">interface</a> for the UI handler, and call the file <code>WidgetInterface.php</code>. Our new interface extends <code>HandlerInterface</code> class.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -1127,7 +1127,7 @@
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
     <span class="c1">//</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <ul>
   <li>Create <code>Ui.php</code> in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.</li>
@@ -1135,7 +1135,7 @@
 
 <p>The code has detailed comments for better understanding.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -1218,13 +1218,13 @@
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="c1">// Additional methods.</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <ul>
   <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code>etc/ui</code> directory of the Magento_Widget module.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1235,7 +1235,7 @@
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span>
                 <span class="na">type=</span><span class="s">&quot;\Magento\Widget\Test\Handler\Widget\Ui&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h2 id="mtf_handler_howto-create-webapi">How to create a WebAPI handler</h2>
 
@@ -1246,7 +1246,7 @@
   <li>In the same directory, create <a href="#mtf_handler_interface">interface</a> for the WebAPI handler, and call the file <code>TaxRuleInterface.php</code>. Our new interface extends <code>HandlerInterface</code> class.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -1262,13 +1262,13 @@
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
     <span class="c1">//</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <ul>
-  <li>Create <code>Webapi.php</code> in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>. In the following example WebAPI handler uses some cURL handler methods to prepare data. </li>
+  <li>Create <code>Webapi.php</code> in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>. In the following example WebAPI handler uses some cURL handler methods to prepare data.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -1351,13 +1351,13 @@
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="c1">// Additional methods.</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <ul>
   <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code>etc/webapi</code> directory of the Magento_Tax module.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
 <span class="c">&lt;!--</span>
 <span class="c">/**</span>
 <span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
@@ -1368,7 +1368,7 @@
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Tax\Test\Handler\TaxRule\TaxRuleInterface&quot;</span>
                 <span class="na">type=</span><span class="s">&quot;\Magento\Tax\Test\Handler\TaxRule\Webapi&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 
 

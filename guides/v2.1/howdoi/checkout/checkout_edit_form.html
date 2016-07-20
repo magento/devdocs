@@ -926,7 +926,7 @@
 
 <h2> Overview </h2>
 
-<p>The forms used on the Checkout page are implemented using Knockout JS. </p>
+<p>The forms used on the Checkout page are implemented using Knockout JS.</p>
 
 <p>To change the template of the form field, do the following:</p>
 
@@ -940,19 +940,19 @@
 <p><strong>Contents</strong>:</p>
 
 <ul id="markdown-toc">
-  <li><a href="#prerequisites">Prerequisites</a></li>
-  <li><a href="#template">Implement the HTML template for the field</a></li>
-  <li><a href="#layout">Specify the new template in layout</a></li>
-  <li><a href="#modify">Modifying the custom template after it was applied</a></li>
+  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
+  <li><a href="#template" id="markdown-toc-template">Implement the HTML template for the field</a></li>
+  <li><a href="#layout" id="markdown-toc-layout">Specify the new template in layout</a></li>
+  <li><a href="#modify" id="markdown-toc-modify">Modifying the custom template after it was applied</a></li>
 </ul>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
-<p><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set Magento to the developer mode</a> while you perform all customizations and debugging. </p>
+<p><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set Magento to the developer mode</a> while you perform all customizations and debugging.</p>
 
 <p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">depend</a> on the Magento_Checkout module.</p>
 
-<p>Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues. </p>
+<p>Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
 <h2 id="template">Implement the HTML template for the field</h2>
 
@@ -960,7 +960,7 @@
 
 <p>Example of a field template:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- input field element and corresponding bindings --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- input field element and corresponding bindings --&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;input-text&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;</span>
 <span class="s">    value: value,</span>
 <span class="s">    valueUpdate: &#39;keyup&#39;,</span>
@@ -973,7 +973,7 @@
 <span class="s">        disabled: disabled</span>
 <span class="s">    }&quot;</span> <span class="nt">/&gt;</span>
 <span class="c">&lt;!-- additional content --&gt;</span>
-<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;%path_to_image%&quot;</span> <span class="na">alt=</span><span class="s">&quot;image_de&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;%path_to_image%&quot;</span> <span class="na">alt=</span><span class="s">&quot;image_de&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>The original templates of all form field types are located in the <code>app/code/Magento/Ui/view/base/web/templates/form/element</code> directory.</p>
@@ -984,7 +984,7 @@
 <p>In your custom module directory, create a new <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file. 
 In this file, add content similar to the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
@@ -1024,14 +1024,14 @@ In this file, add content similar to the following:</p>
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <h2 id="modify">Modifying the custom template after it was applied</h2>
 
-<p>If you modify your custom <code>.html</code> template after it was applied on the store pages, the changes will not apply until you do the following: </p>
+<p>If you modify your custom <code>.html</code> template after it was applied on the store pages, the changes will not apply until you do the following:</p>
 
 <ol>
-  <li>Delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessing</code> directories.</li>
+  <li>Delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessed</code> directories.</li>
   <li>Reload the pages.</li>
 </ol>
 

@@ -777,8 +777,8 @@
   <p>More information:</p>
 
   <ul>
-    <li><a href="https://www.paypal.com/uk/webapps/mpp/ssl-security-update" target="_blank">Details (PayPal security bulletin)</a> </li>
-    <li><a href="https://devblog.paypal.com/upcoming-security-changes-notice/#tls" target="_blank">PayPal live payments switching in June 2016 (PayPal technical blog)</a> </li>
+    <li><a href="https://www.paypal.com/uk/webapps/mpp/ssl-security-update" target="_blank">Details (PayPal security bulletin)</a></li>
+    <li><a href="https://devblog.paypal.com/upcoming-security-changes-notice/#tls" target="_blank">PayPal live payments switching in June 2016 (PayPal technical blog)</a></li>
   </ul>
 
   <h3 id="symptom">Symptom</h3>
@@ -804,7 +804,7 @@ Protocol: SSLv3*
 </code></pre>
 
   <h3 id="description">Description</h3>
-  <p>The source of the issue is your version of <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code>libcurl</code></a>. <code>libcurl</code> versions earlier than 7.34 use TLS 1.1 or earlier by default. </p>
+  <p>The source of the issue is your version of <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code>libcurl</code></a>. <code>libcurl</code> versions earlier than 7.34 use TLS 1.1 or earlier by default.</p>
 
   <p>To determine the version of <code>libcurl</code> you’re running, enter the following command on the server that processes PayPal transactions:</p>
 
@@ -814,7 +814,7 @@ Protocol: SSLv3*
   <p>If the version is earlier than 7.34, continue with the next section. If you’re already running version 7.34 or later, no action is necessary.</p>
 
   <h3 id="solution">Solution</h3>
-  <p>The source of the issue is that the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code>libcurl</code></a> library packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default. </p>
+  <p>The source of the issue is that the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code>libcurl</code></a> library packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default.</p>
 
   <p>To determine the version of CentOS your server runs, enter the following command:</p>
 
@@ -829,11 +829,11 @@ Protocol: SSLv3*
 
   <ul>
     <li>
-      <p>(Recommended). Upgrade your Magento server to CentOS 6.8 or later. </p>
+      <p>(Recommended). Upgrade your Magento server to CentOS 6.8 or later.</p>
 
       <p>Its recommended repositories support current versions of TLS with <code>libcurl</code>. Using CentOS 6.8 or later is the most secure way to continue operating your store and accepting PayPal.</p>
 
-      <p>CentOS 6.8 has a <code>libcurl</code> version that defaults to TLS 1.2. </p>
+      <p>CentOS 6.8 has a <code>libcurl</code> version that defaults to TLS 1.2.</p>
     </li>
     <li>
       <p>(Less secure, <em>not recommended</em>). Upgrade to <code>libcurl</code> 7.34 or later on CentOS 6 using a non-recommended third-party repository.</p>

@@ -482,17 +482,17 @@
 		<h2 id="running-unit-tests-in-phpstorm">Running unit tests in PHPStorm</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#running-unit-tests-in-phpstorm">Running unit tests in PHPStorm</a>    <ul>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#configuring-the-php-interpreter">Configuring the PHP interpreter</a></li>
-      <li><a href="#configuring-phpunit">Configuring PHPUnit</a></li>
-      <li><a href="#creating-a-run-configuration">Creating a run configuration</a>        <ul>
-          <li><a href="#running-all-tests">Running all tests</a></li>
-          <li><a href="#running-the-tests-of-one-module">Running the tests of one module</a></li>
-          <li><a href="#running-the-tests-in-a-class">Running the tests in a class</a></li>
+  <li><a href="#running-unit-tests-in-phpstorm" id="markdown-toc-running-unit-tests-in-phpstorm">Running unit tests in PHPStorm</a>    <ul>
+      <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+      <li><a href="#configuring-the-php-interpreter" id="markdown-toc-configuring-the-php-interpreter">Configuring the PHP interpreter</a></li>
+      <li><a href="#configuring-phpunit" id="markdown-toc-configuring-phpunit">Configuring PHPUnit</a></li>
+      <li><a href="#creating-a-run-configuration" id="markdown-toc-creating-a-run-configuration">Creating a run configuration</a>        <ul>
+          <li><a href="#running-all-tests" id="markdown-toc-running-all-tests">Running all tests</a></li>
+          <li><a href="#running-the-tests-of-one-module" id="markdown-toc-running-the-tests-of-one-module">Running the tests of one module</a></li>
+          <li><a href="#running-the-tests-in-a-class" id="markdown-toc-running-the-tests-in-a-class">Running the tests in a class</a></li>
         </ul>
       </li>
-      <li><a href="#executing-the-run-configuration">Executing the run configuration</a></li>
+      <li><a href="#executing-the-run-configuration" id="markdown-toc-executing-the-run-configuration">Executing the run configuration</a></li>
     </ul>
   </li>
 </ul>
@@ -509,11 +509,11 @@
 
 <h3 id="configuring-the-php-interpreter">Configuring the PHP interpreter</h3>
 
-<p>In the PHPStorm preferences, select the PHP interpreter PHPStorm should use to run tests with.  </p>
+<p>In the PHPStorm preferences, select the PHP interpreter PHPStorm should use to run tests with.</p>
 
 <p><img src="/common/images/phpstorm_php_language_preferences.png" alt="PHPStorm PHP preference panel" width="600px" /></p>
 
-<p>If you can not select a PHP interpreter because the dropdown is empty, you can add a one by clicking on the button with the three dots beside the dropdown.  </p>
+<p>If you can not select a PHP interpreter because the dropdown is empty, you can add a one by clicking on the button with the three dots beside the dropdown.</p>
 
 <p>Then, click the <strong>+</strong> (add) button in the top right to select the desired PHP binary on your file system.</p>
 
@@ -541,7 +541,7 @@
 
 <h3 id="creating-a-run-configuration">Creating a run configuration</h3>
 
-<p>The final step is to create a <em>run configuration</em> to execute the desired tests. </p>
+<p>The final step is to create a <em>run configuration</em> to execute the desired tests.</p>
 
 <p>There are many ways to create run configurations in PHPStorm. Here we just show one of the option.</p>
 
@@ -552,7 +552,7 @@
   <li>Click the <strong>+</strong> symbol on the top right and select <strong>PHPUnit</strong>.</li>
 </ol>
 
-<p>Depending on what tests should be included in the run configuration, the next steps differ.  </p>
+<p>Depending on what tests should be included in the run configuration, the next steps differ.</p>
 
 <h4 id="running-all-tests">Running all tests</h4>
 
@@ -589,13 +589,13 @@
 
 <p><img src="/common/images/phpstorm_run_config_class_unit_tests.png" alt="Test Class run configuration" width="600px" /></p>
 
-<p>A more convenient way to create a run configuration for a test class is to open the class in PHPStorm, and then right-clicking into the class and selecting <strong>Create ‘TestClassName’</strong> or <strong>Run ‘TestClassName’</strong>.  </p>
+<p>A more convenient way to create a run configuration for a test class is to open the class in PHPStorm, and then right-clicking into the class and selecting <strong>Create ‘TestClassName’</strong> or <strong>Run ‘TestClassName’</strong>.</p>
 
 <p>Note that the test class has to inherit from <code>\PHPUnit_Framework_TestCase</code> for PHPStorm to display that option.</p>
 
 <h3 id="executing-the-run-configuration">Executing the run configuration</h3>
 
-<p>First select the run configuration to execute in the run configuration drop-down menu above the main editor window, then click the <strong>Play</strong> icon beside it.  </p>
+<p>First select the run configuration to execute in the run configuration drop-down menu above the main editor window, then click the <strong>Play</strong> icon beside it.</p>
 
 <p>By clicking the <strong>Debug</strong> icon (of a bug) next to the <strong>Play</strong> icon, it is possible to step-debug code during test execution, if the xdebug PHP extension is installed.</p>
 

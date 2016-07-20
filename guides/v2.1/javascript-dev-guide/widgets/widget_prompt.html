@@ -614,13 +614,13 @@
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2>Overview </h2>
 
-<p>The Magento prompt widget implements a modal pop-up window with an input field, and a cancel and a confirmation button. </p>
+<p>The Magento prompt widget implements a modal pop-up window with an input field, and a cancel and a confirmation button.</p>
 
 <p>It extends the <a href="/guides/v2.1/javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.</p>
 
 <p>The prompt widget source is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/modal/prompt.js">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/prompt.js</a></p>
 
-<p>The widget can be used for implementing prompt windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="/guides/v2.1/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> </p>
+<p>The widget can be used for implementing prompt windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="/guides/v2.1/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a></p>
 
 <h3>Contents</h3>
 
@@ -637,18 +637,18 @@
 
 <p><strong>Example1</strong>: initialization on an element</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#prompt_init&#39;</span><span class="p">).</span><span class="nx">prompt</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#prompt_init&#39;</span><span class="p">).</span><span class="nx">prompt</span><span class="p">({</span>
     <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Prompt title&#39;</span><span class="p">,</span>
     <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">confirm</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span> <span class="c1">//callback on &#39;Ok&#39; button click</span>
         <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span> <span class="c1">//callback on &#39;Cancel&#39; button click</span>
         <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p><strong>Example2</strong>: standalone initialization</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span>
     <span class="s1">&#39;Magento_Ui/js/modal/prompt&#39;</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">prompt</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Variable that represents the `prompt` function</span>
  
@@ -662,7 +662,7 @@
         <span class="p">}</span>
     <span class="p">});</span>
  
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span> </code></pre></figure>
 
 <p>For details about how to initialize a widget in a <code>.phtml</code> template, refer to the <a href="/guides/v2.1/frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
 
@@ -682,25 +682,25 @@
 
 <p><strong>Type</strong>: Object.</p>
 
-<p><strong>Default value</strong>: </p>
+<p><strong>Default value</strong>:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">confirm</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
     <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
     <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="prompt_autoopen">autoOpen</h3>
 <p>Automatically open the prompt window when the widget is initialized.</p>
 
-<p><strong>Type</strong>: Boolean </p>
+<p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code>false</code></p>
 
 <h3 id="prompt_clickableOverlay">clickableOverlay</h3>
 <p>Close the prompt window when a user clicks on the overlay.</p>
 
-<p><strong>Type</strong>: Boolean </p>
+<p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code>true</code></p>
 

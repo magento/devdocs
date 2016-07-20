@@ -700,7 +700,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<h2>Magento Enterprise Edition 2.0.6</h2>
 <p>We are pleased to present Magento Enterprise Edition 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements.</p>
 
@@ -714,44 +714,44 @@
 
 <!--- 51847 -->
 <ul>
-  <li>Varnish no longer returns a 400 bad request error message when clearing its cache. Previously, this issue occurred with Magento instances running on GoDaddy. </li>
+  <li>Varnish no longer returns a 400 bad request error message when clearing its cache. Previously, this issue occurred with Magento instances running on GoDaddy.</li>
 </ul>
 
 <h3>Functional enhancements</h3>
 
 <!-- 52322 -->
 <ul>
-  <li>Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, you only need to make sure files and directories are writable for installation. We provide different suggestions for doing this, depending on whether you access your Magento server with one user account (typical of shared hosting) or two user accounts (typical of private hosting or having your own server). After installation, to further restrict access to files and directories, you can optionally create a file named <code>magento_umask</code> in your Magento root directory. By default, the <code>umask</code> is 002, which means that directories have 775 permissions and files have 664 permissions. For more details, see  <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system ownership and permissions</a>. </li>
+  <li>Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, you only need to make sure files and directories are writable for installation. We provide different suggestions for doing this, depending on whether you access your Magento server with one user account (typical of shared hosting) or two user accounts (typical of private hosting or having your own server). After installation, to further restrict access to files and directories, you can optionally create a file named <code>magento_umask</code> in your Magento root directory. By default, the <code>umask</code> is 002, which means that directories have 775 permissions and files have 664 permissions. For more details, see  <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system ownership and permissions</a>.</li>
 </ul>
 
 <!-- 51809 -->
 <ul>
-  <li>You can now use the Redis adapter to provide session storage in Magento 2.0.6. For more information, see <a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a>. </li>
+  <li>You can now use the Redis adapter to provide session storage in Magento 2.0.6. For more information, see <a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a>.</li>
 </ul>
 
 <h4>Security enhancements</h4>
 <p>This release includes  enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento installation to the latest version as soon as possible.</p>
 
-<p>The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. </p>
+<p>The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>.</p>
 
 <!-- 51806 -->
 <ul>
-  <li>Magento no longer permits an unauthenticated user to remotely execute code on the server through APIs. </li>
+  <li>Magento no longer permits an unauthenticated user to remotely execute code on the server through APIs.</li>
 </ul>
 
 <!-- 51808 -->
 <ul>
-  <li>Magento no longer allows authenticated customers to change other customers’ account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. </li>
+  <li>Magento no longer allows authenticated customers to change other customers’ account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use.</li>
 </ul>
 
 <!-- 51390 -->
 <ul>
-  <li>Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. </li>
+  <li>Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value.</li>
 </ul>
 
 <!-- 51461 -->
 <ul>
-  <li>Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks. </li>
+  <li>Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks.</li>
 </ul>
 
 <!-- 52187 -->
@@ -761,7 +761,7 @@
 
 <!-- 51807 -->
 <ul>
-  <li>The Magento installation code is no longer accessible once the installation process has completed.  </li>
+  <li>The Magento installation code is no longer accessible once the installation process has completed.</li>
 </ul>
 
 <!-- 51292 -->
@@ -771,22 +771,22 @@
 
 <!-- 51392 -->
 <ul>
-  <li>Only a registered customer can assign a guest cart to himself. Previously, an anonymous user could modify the state  (that is, set an active quote) of a registered customer. </li>
+  <li>Only a registered customer can assign a guest cart to himself. Previously, an anonymous user could modify the state  (that is, set an active quote) of a registered customer.</li>
 </ul>
 
 <!-- 51370 -->
 <ul>
-  <li>Magento no longer discloses information about its internal path during installation. </li>
+  <li>Magento no longer discloses information about its internal path during installation.</li>
 </ul>
 
 <!-- 51376 -->
 <ul>
-  <li>Magento no longer discloses the administrator URL to an unauthenticated user during setup. </li>
+  <li>Magento no longer discloses the administrator URL to an unauthenticated user during setup.</li>
 </ul>
 
 <!-- 50955 -->
 <ul>
-  <li>Application error messages no longer include the path to the file where the error occurred.  </li>
+  <li>Application error messages no longer include the path to the file where the error occurred.</li>
 </ul>
 
 <h3>System requirements</h3>
@@ -800,7 +800,7 @@
 
 <h5 id="bdownload-a-new-installationb"><b>Download a new installation</b></h5>
 <ol>
-  <li>Go to the <a href="https://www.magento.com/" target="_blank">Magento</a> website, and click <strong>My Account</strong>. Then, log in to your account. </li>
+  <li>Go to the <a href="https://www.magento.com/" target="_blank">Magento</a> website, and click <strong>My Account</strong>. Then, log in to your account.</li>
   <li>
     <p>In the panel on the left, choose <strong>Downloads</strong>. Choose <strong>Magento Enterprise Edition 2.x</strong>, and do the following:</p>
 

@@ -1294,20 +1294,20 @@
     <p>Varnish is purged automatically when you perform any of these tasks.</p>
   </li>
   <li>
-    <p>Maintaining source code. </p>
+    <p>Maintaining source code.</p>
 
     <p>You should refresh the cache and also periodically delete everything in the <code>var/generation</code> and <code>var/di</code> directories. For information on refreshing the cache, see the next section.</p>
   </li>
 </ul>
 
 <h2 id="use-varnish-magento-purge">Configure Magento to purge Varnish</h2>
-<p>Magento purges Varnish hosts after you configure Varnish hosts using the <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html"><code>magento setup:config:set</code></a> command. </p>
+<p>Magento purges Varnish hosts after you configure Varnish hosts using the <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html"><code>magento setup:config:set</code></a> command.</p>
 
 <p>You can use the optional parameter <code>--http-cache-hosts</code> parameter to specify a comma-separated list of Varnish hosts and listen ports. Configure all Varnish hosts, whether you have one or many. (Do not separate hosts with a space character.)</p>
 
-<p>The parameter format must be <code>&lt;hostname or ip&gt;:&lt;listen port&gt;</code>, where you can omit <code>&lt;listen port&gt;</code> if it’s port 80. </p>
+<p>The parameter format must be <code>&lt;hostname or ip&gt;:&lt;listen port&gt;</code>, where you can omit <code>&lt;listen port&gt;</code> if it’s port 80.</p>
 
-<p>For example, </p>
+<p>For example,</p>
 
 <pre><code>magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
 </code></pre>

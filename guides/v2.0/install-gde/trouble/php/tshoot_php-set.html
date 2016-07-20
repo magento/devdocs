@@ -850,7 +850,7 @@
   <li>Wait for all steps in the readiness check to finish.</li>
   <li>Resolve any other issues displayed by the readiness check.</li>
   <li>
-    <p>As a user with <code>root</code> privileges, restart your web server. </p>
+    <p>As a user with <code>root</code> privileges, restart your web server.</p>
 
     <p>Examples follow:</p>
 
@@ -906,15 +906,16 @@
 <h4 id="solution-set-codeasptags--offcode-in-codephpinicode">Solution: Set <code>asp_tags = off</code> in <code>php.ini</code></h4>
 <p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in <code>&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x"> </span>
+<span class="cp">&lt;?php</span>
 <span class="o">&lt;</span><span class="nx">img</span>
     <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;product-image&quot;</span>
     <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.url %&gt;&quot;</span>
     <span class="nx">data</span><span class="o">-</span><span class="nx">position</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.position %&gt;&quot;</span>
     <span class="nx">alt</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.label %&gt;&quot;</span> <span class="o">/&gt;</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
-<p>More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. </p>
+<p>More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>.</p>
 
 <p>Edit <code>php.ini</code> and set <code>asp_tags = off</code>. For more information, see <a href="/guides/v2.0/install-gde/prereq/php-centos.html#instgde-prereq-timezone">Set PHP configuration options</a>.</p>
 

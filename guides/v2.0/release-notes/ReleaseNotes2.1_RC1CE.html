@@ -703,7 +703,7 @@
 			<p align="right"><i>Updated: 1 July 2016 (PDT)</i></p>
 		<h2>Magento Community Edition 2.1 Release Candidate 1 (RC1)</h2>
 
-<p>We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: </p>
+<p>We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to:</p>
 
 <ul>
   <li>
@@ -713,7 +713,7 @@
     <p>contribute to the Magento 2.1 code base by identifying unresolved issues</p>
   </li>
   <li>
-    <p>test your 2.0 extensions against  2.1 </p>
+    <p>test your 2.0 extensions against  2.1</p>
   </li>
 </ul>
 
@@ -740,7 +740,7 @@
 
 <p><b>Issue:</b> Enabling Varnish causes the category menu to switch from http to https<a href="https://github.com/magento/magento2/issues/4540" target="_blank"> (GITHUB-4540)</a></p>
 
-<p><b>Work-around:</b> To use Varnish caching with an HTTP site, add rewrite rules such as the following in Magento’s root <code>.htaccess</code>: </p>
+<p><b>Work-around:</b> To use Varnish caching with an HTTP site, add rewrite rules such as the following in Magento’s root <code>.htaccess</code>:</p>
 
 <pre>RewriteCond %{HTTPS} on
 RewriteCond %{REQUEST_URI} /yellow-fruit.html
@@ -756,7 +756,7 @@ RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
 
 <!--- 52414 -->
 <ul>
-  <li>Integration test syntax error has been fixed. <a href="https://github.com/magento/magento2/issues/4343" target="_blank">(GITHUB-4343)</a> </li>
+  <li>Integration test syntax error has been fixed. <a href="https://github.com/magento/magento2/issues/4343" target="_blank">(GITHUB-4343)</a></li>
 </ul>
 
 <!--- 50611-->
@@ -766,7 +766,7 @@ RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
 
 <!--- 51292 -->
 <ul>
-  <li>The OAuth Token exchange expiration period is now calculated correctly. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a> </li>
+  <li>The OAuth Token exchange expiration period is now calculated correctly. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a></li>
 </ul>
 
 <!--- 46720 -->
@@ -776,37 +776,37 @@ RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
 
 <!--- 52613 -->
 <ul>
-  <li>A Credit Memo REST API issue with updating attributes has been fixed. Previously, certain attributes (such as Order Status) were not updated when the user took action through the API. However, Magento updates these attributes when the same action is completed in the Admin interface. <a href="https://github.com/magento/magento2/issues/4329" target="_blank">(GITHUB-4329)</a>  </li>
+  <li>A Credit Memo REST API issue with updating attributes has been fixed. Previously, certain attributes (such as Order Status) were not updated when the user took action through the API. However, Magento updates these attributes when the same action is completed in the Admin interface. <a href="https://github.com/magento/magento2/issues/4329" target="_blank">(GITHUB-4329)</a></li>
 </ul>
 
 <!--- 52607 -->
 <ul>
-  <li>Varnish caching performance has been enhanced. <a href="https://github.com/magento/magento2/issues/3926" target="_blank">(GITHUB-3926)</a> </li>
+  <li>Varnish caching performance has been enhanced. <a href="https://github.com/magento/magento2/issues/3926" target="_blank">(GITHUB-3926)</a></li>
 </ul>
 
 <!--- 52316 -->
 <ul>
-  <li>Product update operations by either customers or store administrators no longer result in locking queries on catalog category product index. <a href="https://github.com/magento/magento2/issues/4342" target="_blank">(GITHUB-4342)</a> </li>
+  <li>Product update operations by either customers or store administrators no longer result in locking queries on catalog category product index. <a href="https://github.com/magento/magento2/issues/4342" target="_blank">(GITHUB-4342)</a></li>
 </ul>
 
 <!--- 52079 -->
 <ul>
-  <li>The Order Repository getList method no longer returns the same shipping address for all orders. <a href="https://github.com/magento/magento2/issues/4019" target="_blank">(GITHUB-4019)</a> </li>
+  <li>The Order Repository getList method no longer returns the same shipping address for all orders. <a href="https://github.com/magento/magento2/issues/4019" target="_blank">(GITHUB-4019)</a></li>
 </ul>
 
 <!--- 51181 -->
 <ul>
-  <li>A configurable product’s last attribute with price of zero (0) no longer results in an error. The user can configure the product, and the correct price results. <a href="https://github.com/magento/magento2/issues/3912" target="_blank">(GITHUB-3912)</a> </li>
+  <li>A configurable product’s last attribute with price of zero (0) no longer results in an error. The user can configure the product, and the correct price results. <a href="https://github.com/magento/magento2/issues/3912" target="_blank">(GITHUB-3912)</a></li>
 </ul>
 
 <!--- 48175 -->
 <ul>
-  <li>An error message that users typically received during upgrade has been improved. The message now clearly states when a user must login first to <code>magento.com</code> before continuing the upgrade process. <a href="https://github.com/magento/magento2/issues/3059" target="_blank">(GITHUB-3059)</a> </li>
+  <li>An error message that users typically received during upgrade has been improved. The message now clearly states when a user must login first to <code>magento.com</code> before continuing the upgrade process. <a href="https://github.com/magento/magento2/issues/3059" target="_blank">(GITHUB-3059)</a></li>
 </ul>
 
 <!--- 47440 -->
 <ul>
-  <li>Magento now displays the correct product prices on the Configurable product page when catalog prices include tax. <a href="https://github.com/magento/magento2/issues/2471" target="_blank">(GITHUB-2471)</a> </li>
+  <li>Magento now displays the correct product prices on the Configurable product page when catalog prices include tax. <a href="https://github.com/magento/magento2/issues/2471" target="_blank">(GITHUB-2471)</a></li>
 </ul>
 
 <!--- 47439 -->
@@ -816,12 +816,12 @@ RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
 
 <!--- 47009 -->
 <ul>
-  <li>Plugins/interceptors now work with early stage single instance objects in Developer mode. <a href="https://github.com/magento/magento2/issues/2674" target="_blank">(GITHUB-2674)</a> </li>
+  <li>Plugins/interceptors now work with early stage single instance objects in Developer mode. <a href="https://github.com/magento/magento2/issues/2674" target="_blank">(GITHUB-2674)</a></li>
 </ul>
 
 <!--- 46808 -->
 <ul>
-  <li>Admin order creation no longer fails when the “Include Tax In Order Total” option is set to yes. <a href="https://github.com/magento/magento2/issues/2675" target="_blank">(GITHUB-2675)</a> </li>
+  <li>Admin order creation no longer fails when the “Include Tax In Order Total” option is set to yes. <a href="https://github.com/magento/magento2/issues/2675" target="_blank">(GITHUB-2675)</a></li>
 </ul>
 
 <!--- 47639 -->
@@ -831,7 +831,7 @@ RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
 
 <!--- 46044 -->
 <ul>
-  <li>Synonyms now work as expected with Magento 2.x.  <a href="https://github.com/magento/magento2/issues/2519" target="_blank">(GITHUB-2519)</a> </li>
+  <li>Synonyms now work as expected with Magento 2.x.  <a href="https://github.com/magento/magento2/issues/2519" target="_blank">(GITHUB-2519)</a></li>
 </ul>
 
 <!--- 40320 -->
@@ -871,7 +871,7 @@ This Release Candidate is for test purposes only. Do not install it in a product
 <p><code>git checkout tags/2.1.0-rc1 [-b 2.1.0-rc1]</code></p>
 
 <h3 id="install-using-composer">Install using Composer</h3>
-<p>This Release Candidate is available from <code>repo.magento.com</code>. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run </p>
+<p>This Release Candidate is available from <code>repo.magento.com</code>. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
 
 <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0-rc1 &lt;installation directory name&gt;
 </code></pre>

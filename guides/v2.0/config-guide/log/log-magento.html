@@ -1258,7 +1258,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 14 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<h4 id="contents">Contents</h4>
 
 <ul>
@@ -1281,7 +1281,7 @@
   <li>Log to the database</li>
 </ul>
 
-<p>Each handler can either process the input message and stop propagation or pass the control to the next handler in a chain. </p>
+<p>Each handler can either process the input message and stop propagation or pass the control to the next handler in a chain.</p>
 
 <p>Log messages can be processed in many different ways. For example, you can store all debug information into a file on disk, put the messages with higher log levels into a database, and finally send messages with log level “critical” by e-mail.</p>
 
@@ -1292,7 +1292,7 @@
 
 <p>Another way follows:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">SomeModel</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">SomeModel</span>
  <span class="p">{</span>
      <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
 
@@ -1309,7 +1309,7 @@
              <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="s1">&#39;Error message&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;exception&#39;</span> <span class="o">=&gt;</span> <span class="nv">$e</span><span class="p">]);</span>
          <span class="p">}</span>
      <span class="p">}</span>
- <span class="p">}</span></code></pre></div>
+ <span class="p">}</span></code></pre></figure>
 
 <p>The preceding example shows that <code>SomeModel</code> receives a <code>\Psr\Logger\LoggerInterface</code> object using constructor injection. In a method <code>doSomething</code>, if some error occurred, it’s logged to a method <code>critical</code> (<code>$this-&gt;logger-&gt;critical($e);</code>).</p>
 

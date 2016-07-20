@@ -869,16 +869,16 @@
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2>What's in this topic</h2>
 
-<p>Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of <a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break">default breakpoints</a>. This topic describes how to add a custom breakpoint in your theme. </p>
+<p>Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of <a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break">default breakpoints</a>. This topic describes how to add a custom breakpoint in your theme.</p>
 
 <p><strong>Contents</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#add-a-new-breakpoint-variable">Add a new breakpoint variable</a></li>
-  <li><a href="#override-responsiveless-from-the-library">Override <code>_responsive.less</code> from the library</a></li>
-  <li><a href="#add-media-width-calls-for-the-new-breakpoint">Add <code>.media-width()</code> calls for the new breakpoint</a></li>
-  <li><a href="#related-reading">Related reading</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#add-a-new-breakpoint-variable" id="markdown-toc-add-a-new-breakpoint-variable">Add a new breakpoint variable</a></li>
+  <li><a href="#override-responsiveless-from-the-library" id="markdown-toc-override-responsiveless-from-the-library">Override <code>_responsive.less</code> from the library</a></li>
+  <li><a href="#add-media-width-calls-for-the-new-breakpoint" id="markdown-toc-add-media-width-calls-for-the-new-breakpoint">Add <code>.media-width()</code> calls for the new breakpoint</a></li>
+  <li><a href="#related-reading" id="markdown-toc-related-reading">Related reading</a></li>
 </ul>
 
 <h2 id="overview">Overview</h2>
@@ -886,7 +886,7 @@
 
 <ol>
   <li>Define a variable for the new breakpoint.</li>
-  <li>Override the library <code>_responsive.less</code> file, and add the new rule for the new breakpoint. </li>
+  <li>Override the library <code>_responsive.less</code> file, and add the new rule for the new breakpoint.</li>
   <li>Implement the screen changes for the new breakpoint.</li>
 </ol>
 
@@ -910,16 +910,16 @@
 
 <h2 id="override-responsiveless-from-the-library">Override <code>_responsive.less</code> from the library</h2>
 
-<p>According to the approach, implemented in the Magento UI library, the <code>.media-width()</code> mixin calls are defined in many places, but invoked in one place, in <code>lib/web/css/source/lib/_responsive.less</code>. </p>
+<p>According to the approach, implemented in the Magento UI library, the <code>.media-width()</code> mixin calls are defined in many places, but invoked in one place, in <code>lib/web/css/source/lib/_responsive.less</code>.</p>
 
-<p>To implement a new breakpoint, you need to edit the <code>.media-width()</code> mixin by adding the appropriate rule there. So you need to override the library <code>_responsive.less</code> in your theme, and add the customizations there. </p>
+<p>To implement a new breakpoint, you need to edit the <code>.media-width()</code> mixin by adding the appropriate rule there. So you need to override the library <code>_responsive.less</code> in your theme, and add the customizations there.</p>
 
 <p>To do this, take the following steps:</p>
 
 <ol>
   <li>Copy the <code>_responsive.less</code> file to your <code>&lt;your_theme_dir&gt;/web/css/source/lib/</code> directory from one of the following locations:
     <ul>
-      <li><code>&lt;your_parent_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: overriding <code>_responsive.less</code> in the parent theme. If there’s no such file or no parent theme, use the other option. </li>
+      <li><code>&lt;your_parent_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: overriding <code>_responsive.less</code> in the parent theme. If there’s no such file or no parent theme, use the other option.</li>
       <li><code>&lt;your_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: the library file.</li>
     </ul>
   </li>

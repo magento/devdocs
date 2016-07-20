@@ -714,17 +714,17 @@
 
 <p>To enable ExportButton Component add exportButton element with specified selectProvider item to listing configuration file.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;exportButton</span> <span class="na">name=</span><span class="s">&quot;export_button&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;exportButton</span> <span class="na">name=</span><span class="s">&quot;export_button&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>{select_provider_path}<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/exportButton&gt;</span></code></pre></div>
+<span class="nt">&lt;/exportButton&gt;</span></code></pre></figure>
 
 <p>Example: <code>Magento/Sales/view/adminhtml/ui_component/sales_order_grid.xml</code></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;listing_top&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;exportButton</span> <span class="na">name=</span><span class="s">&quot;export_button&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -734,7 +734,7 @@
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/exportButton&gt;</span>
     <span class="nt">&lt;/container&gt;</span>
-<span class="nt">&lt;/listing&gt;</span></code></pre></div>
+<span class="nt">&lt;/listing&gt;</span></code></pre></figure>
 
 <p>By default Magento allows CSV and Excel XML export data formats.</p>
 

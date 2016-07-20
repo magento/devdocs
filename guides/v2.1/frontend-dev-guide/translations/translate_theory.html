@@ -890,11 +890,11 @@ Then when a new language package is created and used to translate a store view, 
 
 <p>For example:</p>
 
-<div class="highlight"><pre><code class="language-html-php" data-lang="html+php"><span class="nt">&lt;h3&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Create Backup&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h3&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html-php" data-lang="html+php">	<span class="nt">&lt;h3&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Create Backup&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h3&gt;</span></code></pre></figure>
 
 <p>If your string contains a variable, to add a placeholder for this variable in the dictionary, use syntax similar to the following:</p>
 
-<div class="highlight"><pre><code class="language-html-php" data-lang="html+php"><span class="nt">&lt;h3&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nb">sprintf</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Hello %s&#39;</span><span class="p">),</span> <span class="nv">$yourVariable</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h3&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html-php" data-lang="html+php">    <span class="nt">&lt;h3&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nb">sprintf</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Hello %s&#39;</span><span class="p">),</span> <span class="nv">$yourVariable</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h3&gt;</span></code></pre></figure>
 
 <p>In this example, the <i>‘Hello %s’</i> string is added to the dictionary when the i18n tool is run.</p>
 
@@ -913,26 +913,26 @@ To make sure the strings of an email template are added to the dictionary, use t
   <li>when a string is added in the scope of an HTML element:</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;i18n: &#39;Sign In&#39;&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;i18n: &#39;Sign In&#39;&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></figure>
 
 <ul>
   <li>when a string is added with no binding to an HTML element:</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- ko i18n: &#39;You have no items in your shopping cart.&#39; --&gt;&lt;!-- /ko --&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="c">&lt;!-- ko i18n: &#39;You have no items in your shopping cart.&#39; --&gt;&lt;!-- /ko --&gt;</span></code></pre></figure>
 
 <h2 id="add_strings_ui_xml">Strings added in UI components configuration files</h2>
 
 <p>To ensure that the text you add in UI components configuration <code>.xml</code> files is added to the dictionary, use the <code>translate</code> attribute: set <code>translate=true</code> for the corresponding element. The following code sample is an illustration:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/item&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/item&gt;</span></code></pre></figure>
 
 <p>In this example, the <em>Delete</em> string is added to the dictionary when the i18n tool is run.</p>
 
 <p>Translated strings that originate from <code>.xml</code> files will not render unless they are called with a <code>__(&lt;variable&gt;)</code> method.
 In this example, you would use a call similar to the following to display the translated <em>Delete</em> string.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">__</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">))</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">__</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">))</span></code></pre></figure>
 
 <h2 id="add_strings_js">Strings added in .js files</h2>
 <p>To ensure that the text you add in a <code>.js</code> file is collected by the i18n tool and added to the dictionary, take the following steps:</p>
@@ -940,19 +940,19 @@ In this example, you would use a call similar to the following to display the tr
 <li>Link the <code>mage/translate</code> library:
 
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span> <span class="p">([</span><span class="s1">&#39;jquery&#39;</span><span class="p">,</span> <span class="s1">&#39;mage/translate&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{...});</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">define</span> <span class="p">([</span><span class="s1">&#39;jquery&#39;</span><span class="p">,</span> <span class="s1">&#39;mage/translate&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{...});</span></code></pre></figure>
 
 </li>
 <li>Use the <code>$.mage.__('')</code> function when adding a string:
 
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="s1">&#39;&lt;string&gt;&#39;</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="s1">&#39;&lt;string&gt;&#39;</span><span class="p">);</span></code></pre></figure>
 
 
 If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use the syntax similar to the following:
 
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Hello %1&#39;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;%1&#39;</span><span class="p">,</span> <span class="nx">yourVariable</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">    <span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Hello %1&#39;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;%1&#39;</span><span class="p">,</span> <span class="nx">yourVariable</span><span class="p">);</span></code></pre></figure>
 
 
 In this example, the <i>'Hello %1'</i> string is added to the dictionary when the i18n tool is run.

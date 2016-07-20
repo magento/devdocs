@@ -1313,7 +1313,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 28 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<p><img src="/common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only" /></p>
 
 <h4 id="contents">Contents</h4>
@@ -1369,7 +1369,7 @@
   </li>
   <li>Save your changes and exit the text editor.</li>
   <li>
-    <p>Clean the Magento configuration cache. </p>
+    <p>Clean the Magento configuration cache.</p>
 
     <ul>
       <li>
@@ -1412,7 +1412,7 @@
   </li>
   <li>Save the changes to <code>esconfig.xml</code> and exit the text editor.</li>
   <li>
-    <p>Clean the Magento configuration cache. </p>
+    <p>Clean the Magento configuration cache.</p>
 
     <ul>
       <li>
@@ -1433,7 +1433,7 @@
 <p>This section discusses how to optionally change the default stopword directory from one of the following:</p>
 
 <ul>
-  <li><code>&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> </li>
+  <li><code>&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code></li>
   <li><code>&lt;your Magento install dir&gt;/app/code/Magento/Elasticsearch/etc/stopwords/</code></li>
 </ul>
 
@@ -1454,11 +1454,11 @@
   </li>
 </ol>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;fileDir&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>app/code/Magento/Elasticsearch/etc/stopwords<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/type&gt;</span></code></pre></div>
+<span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
 <p>Save your changes to <code>di.xml</code> and exit the text editor.</p>
 

@@ -683,7 +683,7 @@
 	<section class="content">
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<p>A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> updates components by specifying components and their versions in Magento’s <code>composer.json</code>. </p>
+		<p>A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> updates components by specifying components and their versions in Magento’s <code>composer.json</code>.</p>
 
 <p>To update components if you’re <em>not</em> a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, see <a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.</p>
 
@@ -719,12 +719,11 @@
 
 <p>Add a <code>require</code> section like the following:</p>
 
-<p><code>JSON
-	"require": {
+<pre><code class="language-JSON">	"require": {
 		"&lt;vendor&gt;/&lt;name&gt;": "&lt;version&gt;",
 		"&lt;vendor&gt;/&lt;name&gt;": "&lt;version&gt;"
 	}
-</code></p>
+</code></pre>
 
 <p>Save your changes to <code>composer.json</code>, exit the text editor, and enter <code>composer update</code></p>
 

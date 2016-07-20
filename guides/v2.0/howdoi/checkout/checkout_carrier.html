@@ -880,22 +880,22 @@
 <p>More details about each step follow.</p>
 
 <h2 id="rules">Create validation rules</h2>
-<p>Shipping carrier validation rules declare which fields of the shipping address are required for the corresponding shipping method to be available. The validation itself is performed by the <a href="#validator">validator</a>. </p>
+<p>Shipping carrier validation rules declare which fields of the shipping address are required for the corresponding shipping method to be available. The validation itself is performed by the <a href="#validator">validator</a>.</p>
 
 <p>During checkout, if the shipping address fields declared in the rules are filled, the further validation of fields’ values (for example, whether a carrier is available for the specified country) is carried on the server side.</p>
 
-<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">depend</a> on the <code>Magento_Checkout</code> module. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues. </p>
+<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">depend</a> on the <code>Magento_Checkout</code> module. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
-<p>In your <code>&lt;your_module_dir&gt;/view/frontend/web/js/model</code> directory, create a <code>.js</code> file implementing the validation rules. </p>
+<p>In your <code>&lt;your_module_dir&gt;/view/frontend/web/js/model</code> directory, create a <code>.js</code> file implementing the validation rules.</p>
 
 <p>The script must implement the <code>getRules()</code> method.</p>
 
-<p>For example, the FedEx shipping method requires only two fields of the shipping address to be filled: <strong>Country</strong> and <strong>Zip Code</strong>. This is how the validation rules for FedEx look: </p>
+<p>For example, the FedEx shipping method requires only two fields of the shipping address to be filled: <strong>Country</strong> and <strong>Zip Code</strong>. This is how the validation rules for FedEx look:</p>
 
 <pre><code>&lt;Magento_Fedex_dir&gt;/view/frontend/web/js/model/shipping-rates-validation-rules.js
 </code></pre>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[],</span>
     <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
@@ -912,15 +912,15 @@
             <span class="p">}</span>
         <span class="p">};</span>
     <span class="p">}</span>
-<span class="p">)</span></code></pre></div>
+<span class="p">)</span></code></pre></figure>
 
 <h2 id="validator">Create validator</h2>
 
-<p>Create the validator <code>.js</code> script that checks if the fields defined by the validation rules are filled. The script must be located in the <code>&lt;your_module_dir&gt;/view/frontend/web/js/model</code> directory. </p>
+<p>Create the validator <code>.js</code> script that checks if the fields defined by the validation rules are filled. The script must be located in the <code>&lt;your_module_dir&gt;/view/frontend/web/js/model</code> directory.</p>
 
 <p>A sample validator script follows:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
         <span class="s1">&#39;mageUtils&#39;</span><span class="p">,</span>
@@ -945,7 +945,7 @@
             <span class="p">}</span>
         <span class="p">};</span>
     <span class="p">}</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span></code></pre></figure>
 
 <p>You can use this sample for your validator, but you need to specify your validation rules script instead of <code>./shipping-rates-validation-rules</code> in the list of used modules.</p>
 
@@ -953,7 +953,7 @@
 
 <p>Your custom validator must be added to the pool of validators. To do this, in the <code>&lt;your_module_dir&gt;/view/frontend/web/js/view</code> directory create a new <code>&lt;your-validation&gt;.js</code> file with the following content:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s1">&#39;uiComponent&#39;</span><span class="p">,</span>
         <span class="s1">&#39;Magento_Checkout/js/model/shipping-rates-validator&#39;</span><span class="p">,</span>
@@ -973,16 +973,16 @@
         <span class="nx">defaultShippingRatesValidationRules</span><span class="p">.</span><span class="nx">registerRules</span><span class="p">(</span><span class="s1">&#39;carrierName&#39;</span><span class="p">,</span> <span class="nx">shippingRatesValidationRules</span><span class="p">);</span>
         <span class="k">return</span> <span class="nx">Component</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span></code></pre></figure>
 
 <h2 id="layout">Add the validation to the checkout layout</h2>
 
-<p>The last step is specifying the script you created on the previous step in the checkout page layout. </p>
+<p>The last step is specifying the script you created on the previous step in the checkout page layout.</p>
 
 <p>In your custom module directory, create a new <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file. 
 In this file, add the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
@@ -1016,7 +1016,7 @@ In this file, add the following:</p>
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 
 

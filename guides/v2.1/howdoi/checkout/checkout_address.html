@@ -952,13 +952,13 @@
 
 <p>Your shipping address renderer must be implemented as a JavaScript UI component. That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.</p>
 
-<p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module must depend on the <code>Magento_Checkout</code> module. Module dependencies are specified in the <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">module’s <code>composer.json</code></a>. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues. </p>
+<p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module must depend on the <code>Magento_Checkout</code> module. Module dependencies are specified in the <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">module’s <code>composer.json</code></a>. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
 <p>In your custom module directory, create the component’s <code>.js</code> file (shipping address renderer). It must be located under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory.</p>
 
 <p>The general view of the shipping address renderer is the following:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">([</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">([</span>
     <span class="s1">&#39;ko&#39;</span><span class="p">,</span>
     <span class="s1">&#39;uiComponent&#39;</span><span class="p">,</span>
     <span class="s1">&#39;Magento_Checkout/js/action/select-shipping-address&#39;</span><span class="p">,</span>
@@ -992,11 +992,11 @@
         <span class="cm">/** additional logic required for this renderer  **/</span>
  
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <h2 id="template">Create a template for the shipping address renderer</h2>
 
-<p>In your custom module directory, create a new <code>&lt;your_module_dir&gt;/view/frontend/web/template/&lt;your_template&gt;.html</code> file. The template can use <a href="http://knockoutjs.com/">Knockout JS</a> syntax. </p>
+<p>In your custom module directory, create a new <code>&lt;your_module_dir&gt;/view/frontend/web/template/&lt;your_template&gt;.html</code> file. The template can use <a href="http://knockoutjs.com/">Knockout JS</a> syntax.</p>
 
 <p>The template should contain a button for setting the address to be used for shipping.</p>
 
@@ -1006,13 +1006,13 @@
 
 <p>A shipping rate processor is responsible for retrieving the shipping rates available for the given shipping address.</p>
 
-<p>In your custom module directory, create the component’s <code>.js</code> file for the processor. It must be located under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/model/</code> directory. </p>
+<p>In your custom module directory, create the component’s <code>.js</code> file for the processor. It must be located under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/model/</code> directory.</p>
 
 <p>Here you need to specify the URL used for calculating the shipping rates for your custom address type.</p>
 
 <p>The following is a sample of the shipping rate processor code:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s1">&#39;Magento_Checkout/js/model/quote&#39;</span><span class="p">,</span>
         <span class="s1">&#39;Magento_Checkout/js/model/shipping-service&#39;</span><span class="p">,</span>
@@ -1055,17 +1055,17 @@
             <span class="p">}</span>
         <span class="p">};</span>
     <span class="p">}</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span></code></pre></figure>
 
 <h2 id="save">Create the JS model for the shipping address saving processor</h2>
 
-<p>This processor is responsible for sending the shipping address and the selected rate to the server. </p>
+<p>This processor is responsible for sending the shipping address and the selected rate to the server.</p>
 
-<p>In your custom module directory, create the component’s <code>.js</code> file for the processor. It must be located under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/model/</code> directory. </p>
+<p>In your custom module directory, create the component’s <code>.js</code> file for the processor. It must be located under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/model/</code> directory.</p>
 
 <p>Following is a sample of the shipping rate processor code:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s1">&#39;Magento_Checkout/js/model/quote&#39;</span><span class="p">,</span>
         <span class="s1">&#39;Magento_Checkout/js/model/resource-url-manager&#39;</span><span class="p">,</span>
@@ -1109,7 +1109,7 @@
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span></code></pre></figure>
 
 <h2 id="register">Create the JS component registering the processors</h2>
 
@@ -1117,7 +1117,7 @@
 
 <p>The file content must be similar to the following:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s1">&#39;uiComponent&#39;</span><span class="p">,</span>
         <span class="s1">&#39;Magento_Checkout/js/model/shipping-rate-service&#39;</span><span class="p">,</span>
@@ -1143,13 +1143,13 @@
         <span class="cm">/** Add view logic here if needed */</span>
         <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({});</span>
     <span class="p">}</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span></code></pre></figure>
 
 <h2 id="layout">Declare the new components in the checkout page layout</h2>
 
 <p>In your custom module directory, create a new <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file. In this file, add the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
@@ -1186,7 +1186,7 @@
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>The <code>address_type</code> you need to specify in the layout, is the value you set in the JS model of your custom address type.</p>
 
@@ -1198,7 +1198,7 @@
 
 <h3 id="add-template-for-displaying-the-address-in-the-ship-to-section">Add template for displaying the address in the Ship-To section</h3>
 
-<p>In your custom module directory create a new <code>&lt;your_module_dir&gt;/view/frontend/web/template/&lt;your_template&gt;.html</code> file. The template can use <a href="http://knockoutjs.com/">Knockout JS</a> syntax. </p>
+<p>In your custom module directory create a new <code>&lt;your_module_dir&gt;/view/frontend/web/template/&lt;your_template&gt;.html</code> file. The template can use <a href="http://knockoutjs.com/">Knockout JS</a> syntax.</p>
 
 <p>You can use the code from the default template: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html">app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html</a>.</p>
 
@@ -1206,7 +1206,7 @@
 
 <p>In your <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file add the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Checkout\Block\Onepage&quot;</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span> <span class="na">template=</span><span class="s">&quot;onepage.phtml&quot;</span> <span class="na">cacheable=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
@@ -1238,7 +1238,7 @@
             <span class="nt">&lt;/block&gt;</span>
         <span class="nt">&lt;/referenceContainer&gt;</span> 
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 
 

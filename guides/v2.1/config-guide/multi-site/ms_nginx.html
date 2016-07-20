@@ -1315,20 +1315,20 @@
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2 id="ms-nginx-over">Set up multiple websites with nginx</h2>
-<p>The example in this topic assumes you have set up your nginx configuration as recommended in the <code>&lt;Magento root&gt;/nginx.conf.sample</code> provided with the Magento software. </p>
+<p>The example in this topic assumes you have set up your nginx configuration as recommended in the <code>&lt;Magento root&gt;/nginx.conf.sample</code> provided with the Magento software.</p>
 
 <p>That is, you should have a small, main configuration file that includes your Magento-specific configuration in the server block. This file is referred to in this topic as <code>main.conf</code>; the configuration file based on the Magento-provided sample is referred to in this topic as <code>nginx.magento.conf</code>.</p>
 
-<p>This section discusses how to have two websites at <code>site1.store.com</code> and <code>site2.store.com</code> that use the codes <code>site1</code> and <code>site2</code>. Multiple hosts require only one entry point. </p>
+<p>This section discusses how to have two websites at <code>site1.store.com</code> and <code>site2.store.com</code> that use the codes <code>site1</code> and <code>site2</code>. Multiple hosts require only one entry point.</p>
 
 <p>You can use the same method to run multiple stores using the value <code>store</code> instead of <code>website</code> for the <code>$MAGE_RUN_TYPE</code> variable.</p>
 
 <p>Step 1. Write a map directive to set the <code>$MAGE_RUN_CODE</code> variable.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">map</span> <span class="nv">$http_host</span> <span class="nv">$MAGE_RUN_CODE</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">map</span> <span class="nv">$http_host</span> <span class="nv">$MAGE_RUN_CODE</span> <span class="p">{</span>
     <span class="nx">site1</span><span class="o">.</span><span class="nx">store</span><span class="o">.</span><span class="nx">com</span> <span class="nx">site1</span><span class="p">;</span>
     <span class="nx">site2</span><span class="o">.</span><span class="nx">store</span><span class="o">.</span><span class="nx">com</span> <span class="nx">site2</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>The preceding sets the <code>$MAGE_RUN_CODE</code> variable based on the host. For example, if the host to which the request is made is <code>site1.store.com</code>, <code>$MAGE_RUN_CODE</code> is set to <code>site1</code>. See <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map" target="_blank">nginx documentation on the map directive</a> for more details.</p>
 

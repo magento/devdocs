@@ -1097,17 +1097,17 @@
 <ul>
   <li><a href="#cloud-yaml-routes-over"><code>routes.yaml</code> overview</a></li>
   <li><a href="#cloud-yaml-routes-default">Defaults</a></li>
-  <li><a href="#cloud-yaml-routes-temp">Route templates</a> </li>
+  <li><a href="#cloud-yaml-routes-temp">Route templates</a></li>
   <li><a href="#cloud-yaml-routes-opts">Route options</a></li>
-  <li><a href="#cloud-yaml-routes-sample-simple">Simple routes</a> </li>
-  <li><a href="#cloud-yaml-routes-sample-wild">Wildcard routes</a> </li>
-  <li><a href="#cloud-yaml-routes-sample-redirects">Redirects</a> </li>
-  <li><a href="#cloud-yaml-routes-setup">List routes</a> </li>
+  <li><a href="#cloud-yaml-routes-sample-simple">Simple routes</a></li>
+  <li><a href="#cloud-yaml-routes-sample-wild">Wildcard routes</a></li>
+  <li><a href="#cloud-yaml-routes-sample-redirects">Redirects</a></li>
+  <li><a href="#cloud-yaml-routes-setup">List routes</a></li>
 </ul>
 
 <h2 id="cloud-yaml-routes-over"><code>routes.yaml</code> overview</h2>
 <p>A <em>route</em> describes how an incoming URL is processed by
-Magento Enterprise Cloud Edition. </p>
+Magento Enterprise Cloud Edition.</p>
 
 <p><code>routes.yaml</code> defines routes for development, testing, staging, and production
 systems. This one configuration file handles routes for all systems.</p>
@@ -1136,18 +1136,18 @@ systems. This one configuration file handles routes for all systems.</p>
 <p><code>routes.yaml</code> is a list of templated routes and their 
 configurations. A route  template can look like this: <code>http://www.{default}/</code> or 
 <code>https://{default}/blog</code>, where <code>{default}</code> is the fully qualified domain 
-name configured for the project. </p>
+name configured for the project.</p>
 
 <div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>If the domain is <code>example.com</code>, these 
 routes resolve: <code>http://www.example.com/</code> and 
-<code>https://example.com/blog</code> for the live environment (that is, the Master). </p>
+<code>https://example.com/blog</code> for the live environment (that is, the Master).</p>
 
 <p>Magento Enterprise Cloud Edition also generates URLs for every active environment that enable you 
 to test that system. In a test system, <code>{default}</code> is replaced with 
 <code>[branch]-[project-id].[region].magentosite.cloud</code>.</p>
 
 <p>For example, if the project ID is <code>mswy7hzcuhcjw</code> on a branch called <code>refactorcss</code> hosted in the <code>na</code> cluster, the domains are: <code>http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/</code> and 
-<code>https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog</code> </p>
+<code>https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog</code></p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The <code>na</code> region is shown as an example; it's not currently available. Magento plans support for <code>na</code> first, then <code>au</code> and <code>eu</code> at a later date.</p>
@@ -1178,7 +1178,7 @@ another route that will be identified by its template (see the following example
     </ul>
   </li>
   <li><code>cache</code> controls <a href="/guides/v2.0/cloud/project/project-routes-more-cache.html">caching for the route</a>.</li>
-  <li><code>ssi</code> controls whether <a href="http://httpd.apache.org/docs/current/howto/ssi.html" target="_blank">Server Side Includes</a> are enabled. </li>
+  <li><code>ssi</code> controls whether <a href="http://httpd.apache.org/docs/current/howto/ssi.html" target="_blank">Server Side Includes</a> are enabled.</li>
   <li><code>redirects</code> controls <a href="/guides/v2.0/cloud/project/project-routes-more-redir.html">redirect rules</a> associated with the route.</li>
 </ul>
 
@@ -1226,14 +1226,14 @@ same application.</p>
 
 <h3 id="routing-a-non-mapped-domain">Routing a non-mapped domain</h3>
 <p>You can also route to a system that is not mapped to a domain (basically anything other than
-a live master). </p>
+a live master).</p>
 
 <p>Suppose your project on the EU cluster has an ID <code>vmwklxcpbi6zq</code> and
 a branch named <code>add-theme</code>. Magento Enterprise Cloud Edition automatically 
 routes the URL <code>http://add-theme-vmwklxcpbi6zq.na.magento.com/</code> to this
 environment. If, for example, you also defined a <code>http://www.{default}/</code> route,
 you could visit <code>http://www---add-theme-vmwklxcpbi6zq.na.magento.com/</code> to see
- the same environment. </p>
+ the same environment.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The triple dash (<code>---</code>) is used as a separator for the subdomain.

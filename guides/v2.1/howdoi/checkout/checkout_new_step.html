@@ -929,20 +929,20 @@
   <li>Review and Paymetns Information</li>
 </ul>
 
-<p>You can add a custom checkout step, it should be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. </p>
+<p>You can add a custom checkout step, it should be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module.</p>
 
 <p>This topic describes how to create the frontend part of the component, implementing a checkout step, and how to add it to the checkout flow.</p>
 
 <p><strong>Contents</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#whats-in-this-topic">What’s in this topic</a></li>
-  <li><a href="#create-the-view-part-of-the-checkout-step-component">Create the view part of the checkout step component</a>    <ul>
-      <li><a href="#component">Add the JavaScript file implementing the new step</a></li>
-      <li><a href="#add-the-html-template">Add the .html template</a></li>
+  <li><a href="#whats-in-this-topic" id="markdown-toc-whats-in-this-topic">What’s in this topic</a></li>
+  <li><a href="#create-the-view-part-of-the-checkout-step-component" id="markdown-toc-create-the-view-part-of-the-checkout-step-component">Create the view part of the checkout step component</a>    <ul>
+      <li><a href="#component" id="markdown-toc-component">Add the JavaScript file implementing the new step</a></li>
+      <li><a href="#add-the-html-template" id="markdown-toc-add-the-html-template">Add the .html template</a></li>
     </ul>
   </li>
-  <li><a href="#add-your-step-to-the-checkout-page-layout">Add your step to the Checkout page layout</a></li>
+  <li><a href="#add-your-step-to-the-checkout-page-layout" id="markdown-toc-add-your-step-to-the-checkout-page-layout">Add your step to the Checkout page layout</a></li>
 </ul>
 
 <h2 id="create-the-view-part-of-the-checkout-step-component">Create the view part of the checkout step component</h2>
@@ -950,22 +950,22 @@
 <p>To create the view part of the new checkout step:</p>
 
 <ol>
-  <li>Add a module directory (not covered in this topic). See <a href="/guides/v2.1/extension-dev-guide/build.html">Build your module</a> for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the <code>Magento_Checkout</code> module. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues. </li>
+  <li>Add a module directory (not covered in this topic). See <a href="/guides/v2.1/extension-dev-guide/build.html">Build your module</a> for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the <code>Magento_Checkout</code> module. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</li>
   <li>Create the <code>.js</code> file implementing the view model.</li>
   <li>Create an <code>.html</code> template for the component.</li>
 </ol>
 
-<p>Each step is described in details in the folowing paragraphs. </p>
+<p>Each step is described in details in the folowing paragraphs.</p>
 
 <h3 id="component">Add the JavaScript file implementing the new step</h3>
 
-<p>A new checkout step must be implemented as UI component. That is, its JavaScript implementation must be a JavaScript module. </p>
+<p>A new checkout step must be implemented as UI component. That is, its JavaScript implementation must be a JavaScript module.</p>
 
 <p>The file must be stored under the <code>&lt;your_module_dir&gt;/view</code> directory.</p>
 
 <p>A sample <code>view/my-step-view.js</code> with comments follows:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s1">&#39;ko&#39;</span><span class="p">,</span>
         <span class="s1">&#39;uiComponent&#39;</span><span class="p">,</span>
@@ -1041,7 +1041,7 @@
             <span class="p">}</span>
         <span class="p">});</span>
     <span class="p">}</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span></code></pre></figure>
 
 <h3 id="add-the-html-template">Add the .html template</h3>
 
@@ -1049,7 +1049,7 @@
 
 <p>A sample <code>mystep.html</code> follows:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--The &#39;step_code&#39; value from the .js file should be used--&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--The &#39;step_code&#39; value from the .js file should be used--&gt;</span>
 <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;step_code&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;fadeVisible: isVisible&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;step-title&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;i18n: &#39;Step Title&#39;&quot;</span> <span class="na">data-role=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;checkout-step-title&quot;</span>
@@ -1066,17 +1066,17 @@
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/form&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/li&gt;</span></code></pre></div>
+<span class="nt">&lt;/li&gt;</span></code></pre></figure>
 
 <h2 id="add-your-step-to-the-checkout-page-layout">Add your step to the Checkout page layout</h2>
 
-<p>For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in <code>checkout_index_index.xml</code>. </p>
+<p>For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in <code>checkout_index_index.xml</code>.</p>
 
 <p>So you need to add an <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-extend.html">extending</a> <code>checkout_index_index.xml</code> layout file in the following location: <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code></p>
 
 <p>A sample <code>checkout_index_index.xml</code> follows:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;arguments&gt;</span>
@@ -1106,7 +1106,7 @@
                 <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 
 

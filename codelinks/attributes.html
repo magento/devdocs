@@ -360,50 +360,50 @@
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 9 June 2016 (PDT)</i></p>
 		<p>Swagger and other types of code-generated documentation erroneously indicate several APIs that
-search across multiple objects return detailed information about individual objects. Detailed information, such as <code>extensionAttributes</code>,  <code>customAttributes</code>, and possibly other fields, are generally available only when requesting information on a single object.  </p>
+search across multiple objects return detailed information about individual objects. Detailed information, such as <code>extensionAttributes</code>,  <code>customAttributes</code>, and possibly other fields, are generally available only when requesting information on a single object.</p>
 
 <p>This document lists the PHP, REST, and SOAP calls that indicate they return detailed information, but might not. It also provides the call that returns the detailed data.</p>
 
 <h2 id="contents">Contents</h2>
 <ul id="markdown-toc">
-  <li><a href="#contents">Contents</a></li>
-  <li><a href="#Customer">Customer module</a>    <ul>
-      <li><a href="#CustomerRepositoryInterface">Magento\Customer\Api\CustomerRepositoryInterface</a></li>
-      <li><a href="#GroupRepositoryInterface">Magento\Customer\Api\GroupRepositoryInterface</a></li>
+  <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+  <li><a href="#Customer" id="markdown-toc-Customer">Customer module</a>    <ul>
+      <li><a href="#CustomerRepositoryInterface" id="markdown-toc-CustomerRepositoryInterface">Magento\Customer\Api\CustomerRepositoryInterface</a></li>
+      <li><a href="#GroupRepositoryInterface" id="markdown-toc-GroupRepositoryInterface">Magento\Customer\Api\GroupRepositoryInterface</a></li>
     </ul>
   </li>
-  <li><a href="#EAV">EAV module</a>    <ul>
-      <li><a href="#AttributeSetRepositoryInterface">Magento\Eav\Api\AttributeSetRepositoryInterface</a></li>
+  <li><a href="#EAV" id="markdown-toc-EAV">EAV module</a>    <ul>
+      <li><a href="#AttributeSetRepositoryInterface" id="markdown-toc-AttributeSetRepositoryInterface">Magento\Eav\Api\AttributeSetRepositoryInterface</a></li>
     </ul>
   </li>
-  <li><a href="#GiftWrapping">GiftWrapping module (Enterprise Edition)</a>    <ul>
-      <li><a href="#WrappingRepositoryInterface">Magento\GiftWrapping\Api\WrappingRepositoryInterface</a></li>
+  <li><a href="#GiftWrapping" id="markdown-toc-GiftWrapping">GiftWrapping module (Enterprise Edition)</a>    <ul>
+      <li><a href="#WrappingRepositoryInterface" id="markdown-toc-WrappingRepositoryInterface">Magento\GiftWrapping\Api\WrappingRepositoryInterface</a></li>
     </ul>
   </li>
-  <li><a href="#Quote">Quote module</a>    <ul>
-      <li><a href="#CartRepositoryInterface">Magento\Quote\Api\CartRepositoryInterface</a></li>
-      <li><a href="#GuestPaymentMethodManagementInterface">Magento\Quote\Api\GuestPaymentMethodManagementInterface</a></li>
-      <li><a href="#PaymentMethodManagementInterface">Magento\Quote\Api\PaymentMethodManagementInterface</a></li>
+  <li><a href="#Quote" id="markdown-toc-Quote">Quote module</a>    <ul>
+      <li><a href="#CartRepositoryInterface" id="markdown-toc-CartRepositoryInterface">Magento\Quote\Api\CartRepositoryInterface</a></li>
+      <li><a href="#GuestPaymentMethodManagementInterface" id="markdown-toc-GuestPaymentMethodManagementInterface">Magento\Quote\Api\GuestPaymentMethodManagementInterface</a></li>
+      <li><a href="#PaymentMethodManagementInterface" id="markdown-toc-PaymentMethodManagementInterface">Magento\Quote\Api\PaymentMethodManagementInterface</a></li>
     </ul>
   </li>
-  <li><a href="#Sales">Sales module</a>    <ul>
-      <li><a href="#CreditmemoRepositoryInterface">Magento\Sales\Api\CreditmemoRepositoryInterface</a></li>
-      <li><a href="#InvoiceRepositoryInterface">Magento\Sales\Api\InvoiceRepositoryInterface</a></li>
-      <li><a href="#OrderItemRepositoryInterface">Magento\Sales\Api\OrderItemRepositoryInterface</a></li>
-      <li><a href="#OrderRepositoryInterface">Magento\Sales\Api\OrderRepositoryInterface</a></li>
-      <li><a href="#ShipmentRepositoryInterface">Magento\Sales\Api\ShipmentRepositoryInterface</a></li>
-      <li><a href="#TransactionRepositoryInterface">Magento\SalesRule\Api\TransactionRepositoryInterface</a></li>
+  <li><a href="#Sales" id="markdown-toc-Sales">Sales module</a>    <ul>
+      <li><a href="#CreditmemoRepositoryInterface" id="markdown-toc-CreditmemoRepositoryInterface">Magento\Sales\Api\CreditmemoRepositoryInterface</a></li>
+      <li><a href="#InvoiceRepositoryInterface" id="markdown-toc-InvoiceRepositoryInterface">Magento\Sales\Api\InvoiceRepositoryInterface</a></li>
+      <li><a href="#OrderItemRepositoryInterface" id="markdown-toc-OrderItemRepositoryInterface">Magento\Sales\Api\OrderItemRepositoryInterface</a></li>
+      <li><a href="#OrderRepositoryInterface" id="markdown-toc-OrderRepositoryInterface">Magento\Sales\Api\OrderRepositoryInterface</a></li>
+      <li><a href="#ShipmentRepositoryInterface" id="markdown-toc-ShipmentRepositoryInterface">Magento\Sales\Api\ShipmentRepositoryInterface</a></li>
+      <li><a href="#TransactionRepositoryInterface" id="markdown-toc-TransactionRepositoryInterface">Magento\SalesRule\Api\TransactionRepositoryInterface</a></li>
     </ul>
   </li>
-  <li><a href="#SalesRule">SalesRule module</a>    <ul>
-      <li><a href="#CouponRepositoryInterface">Magento\SalesRule\Api\CouponRepositoryInterface</a></li>
-      <li><a href="#RuleRepositoryInterface">Magento\SalesRule\Api\RuleRepositoryInterface</a></li>
+  <li><a href="#SalesRule" id="markdown-toc-SalesRule">SalesRule module</a>    <ul>
+      <li><a href="#CouponRepositoryInterface" id="markdown-toc-CouponRepositoryInterface">Magento\SalesRule\Api\CouponRepositoryInterface</a></li>
+      <li><a href="#RuleRepositoryInterface" id="markdown-toc-RuleRepositoryInterface">Magento\SalesRule\Api\RuleRepositoryInterface</a></li>
     </ul>
   </li>
-  <li><a href="#Tax">Tax module</a>    <ul>
-      <li><a href="#TaxClassRepositoryInterface">Magento\Tax\Api\TaxClassRepositoryInterface</a></li>
-      <li><a href="#TaxRateRepositoryInterface">Magento\Tax\Api\TaxRateRepositoryInterface</a></li>
-      <li><a href="#TaxRuleRepositoryInterface">Magento\Tax\Api\TaxRuleRepositoryInterface</a></li>
+  <li><a href="#Tax" id="markdown-toc-Tax">Tax module</a>    <ul>
+      <li><a href="#TaxClassRepositoryInterface" id="markdown-toc-TaxClassRepositoryInterface">Magento\Tax\Api\TaxClassRepositoryInterface</a></li>
+      <li><a href="#TaxRateRepositoryInterface" id="markdown-toc-TaxRateRepositoryInterface">Magento\Tax\Api\TaxRateRepositoryInterface</a></li>
+      <li><a href="#TaxRuleRepositoryInterface" id="markdown-toc-TaxRuleRepositoryInterface">Magento\Tax\Api\TaxRuleRepositoryInterface</a></li>
     </ul>
   </li>
 </ul>

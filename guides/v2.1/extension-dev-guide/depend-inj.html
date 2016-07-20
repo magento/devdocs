@@ -1138,28 +1138,28 @@
 		<h2 class="no_toc" id="dependency-injection">Dependency injection</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#dependency-injection-overview">Dependency injection overview</a>    <ul>
-      <li><a href="#dependency-inversion-principle">Dependency inversion principle</a></li>
+  <li><a href="#dependency-injection-overview" id="markdown-toc-dependency-injection-overview">Dependency injection overview</a>    <ul>
+      <li><a href="#dependency-inversion-principle" id="markdown-toc-dependency-inversion-principle">Dependency inversion principle</a></li>
     </ul>
   </li>
-  <li><a href="#object-manager-overview">Object manager overview</a></li>
-  <li><a href="#object-manager-configuration">Object Manager configuration</a>    <ul>
-      <li><a href="#class-metadata">Class metadata</a></li>
-      <li><a href="#compiling-dependencies">Compiling dependencies</a></li>
-      <li><a href="#type-configurations">Type configurations</a></li>
-      <li><a href="#abstraction-implementation-mappings">Abstraction-Implementation mappings</a></li>
-      <li><a href="#parameter-configuration-inheritance">Parameter configuration inheritance</a></li>
-      <li><a href="#object-lifestyle-management">Object Lifestyle management</a></li>
+  <li><a href="#object-manager-overview" id="markdown-toc-object-manager-overview">Object manager overview</a></li>
+  <li><a href="#object-manager-configuration" id="markdown-toc-object-manager-configuration">Object Manager configuration</a>    <ul>
+      <li><a href="#class-metadata" id="markdown-toc-class-metadata">Class metadata</a></li>
+      <li><a href="#compiling-dependencies" id="markdown-toc-compiling-dependencies">Compiling dependencies</a></li>
+      <li><a href="#type-configurations" id="markdown-toc-type-configurations">Type configurations</a></li>
+      <li><a href="#abstraction-implementation-mappings" id="markdown-toc-abstraction-implementation-mappings">Abstraction-Implementation mappings</a></li>
+      <li><a href="#parameter-configuration-inheritance" id="markdown-toc-parameter-configuration-inheritance">Parameter configuration inheritance</a></li>
+      <li><a href="#object-lifestyle-management" id="markdown-toc-object-lifestyle-management">Object Lifestyle management</a></li>
     </ul>
   </li>
-  <li><a href="#injection-types-used-in-magento">Injection types used in Magento</a>    <ul>
-      <li><a href="#construction-injection">Construction Injection</a></li>
-      <li><a href="#method-injection">Method Injection</a></li>
+  <li><a href="#injection-types-used-in-magento" id="markdown-toc-injection-types-used-in-magento">Injection types used in Magento</a>    <ul>
+      <li><a href="#construction-injection" id="markdown-toc-construction-injection">Construction Injection</a></li>
+      <li><a href="#method-injection" id="markdown-toc-method-injection">Method Injection</a></li>
     </ul>
   </li>
-  <li><a href="#injectable-and-newable-objects">Injectable and Newable Objects</a></li>
-  <li><a href="#rules-for-using-dependency-injection">Rules for using dependency injection</a>    <ul>
-      <li><a href="#related-topics">Related topics</a></li>
+  <li><a href="#injectable-and-newable-objects" id="markdown-toc-injectable-and-newable-objects">Injectable and Newable Objects</a></li>
+  <li><a href="#rules-for-using-dependency-injection" id="markdown-toc-rules-for-using-dependency-injection">Rules for using dependency injection</a>    <ul>
+      <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
     </ul>
   </li>
 </ul>
@@ -1213,9 +1213,9 @@
 
 <p>All object manager configuration is located under the config node in the xml files:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
     <span class="c">&lt;!-- Object Manager configuration --&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>These configurations are validated by the XML Schema file called <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank"><code>config.xsd</code></a>.</p>
 
@@ -1251,7 +1251,7 @@
 
 <p>Type can be configured in your <code>di.xml</code> configuration node in the following ways:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Core\Model\Session&quot;</span> <span class="nt">/&gt;</span> // Default instance of Magento\Core\Model\Session type. Exists by default, can be omited.
     <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;moduleConfig&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Core\Model\Config&quot;</span><span class="nt">&gt;</span> // Instance with global name &quot;moduleConfig&quot; of Magento\Core\Model\Config type
         <span class="nt">&lt;arguments&gt;</span>
@@ -1263,7 +1263,7 @@
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>moduleConfig<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>The preceding example declares the following types:</p>
 
@@ -1284,13 +1284,13 @@
 
 <p>The following example creates instances of <code>Magento\Core\Model\Session</code> with the class constructor argument <code>$sessionName</code> set to a value of <code>adminhtml</code>:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Core\Model\Session&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;sessionName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>adminhtml<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p><strong>Argument Types:</strong></p>
 
@@ -1463,7 +1463,7 @@
 
 <p><strong>Argument Examples:</strong></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Example\Type&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="c">&lt;!-- Pass simple string --&gt;</span>
@@ -1496,7 +1496,7 @@
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <div class="bs-callout bs-callout-info" id="merging-info">
   <b>Merging and Arguments</b><br />
@@ -1509,17 +1509,17 @@
 
 <p>The default implementation is specified using the <code>preference</code> node:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!--  File: app/etc/di.xml --&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!--  File: app/etc/di.xml --&gt;</span>
 <span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Core\Model\UrlInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Core\Model\Url&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>Since this mapping is in <code>app/etc/di/config.xml</code>, wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the global scope, the <code>Magento\Core\Model\Url</code> implementation class will be used.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- File: app/code/core/Magento/Backend/etc/adminhtml/di.xml --&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- File: app/code/core/Magento/Backend/etc/adminhtml/di.xml --&gt;</span>
 <span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Core\Model\UrlInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Backend\Model\Url&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>Since this mapping is in <code>app/code/core/Magento/Backend/etc/adminhtml/di.xml</code>, wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the admin area, the <code>Magento\Backend\Model\Url</code> implementation class will be used.</p>
 
@@ -1527,7 +1527,7 @@
 
 <p>Parameters configured for a class type are automatically configured for all of its descendant classes. Any descendant can override the parameters configured for its supertype; that is, the parent class or interface:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\View\Element\Context&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;urlBuilder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Core\Model\Url<span class="nt">&lt;/argument&gt;</span>
@@ -1538,7 +1538,7 @@
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;urlBuilder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Backend\Model\Url<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>In the preceding example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/Block/Context.php" target="_blank"><code>Magento\Backend\Block\Context</code></a> is a descendant of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Context.php" target="_blank"><code>Magento\Framework\View\Element\Context</code></a>.</p>
 
@@ -1559,13 +1559,13 @@
 
 <p>The <code>shared</code> property determines the lifestyle of both <code>argument</code> and <code>type</code> configurations.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Filesystem&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;adapter&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>Magento\Filesystem\Adapter\Local<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>In this example <code>Magento\Filesystem</code> is configured as non-shared, so all clients will retrieve separate instances of <code>Magento\Filesystem</code>. Also, every instance of <code>Magento\Filesystem</code> will get separate instance of <code>$adapter</code>, because it too is non-shared.</p>
 
@@ -1573,7 +1573,7 @@
 
 <p>This section explains the two dependency injection types used in Magento using the following example:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Backend\Model\Menu</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Backend\Model\Menu</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">Builder</span>
 <span class="p">{</span>
     <span class="sd">/**</span>
@@ -1592,7 +1592,7 @@
     <span class="p">{</span>
         <span class="c1">// processCommand Code</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="construction-injection">Construction Injection</h4>
 

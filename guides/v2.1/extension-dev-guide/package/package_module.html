@@ -1153,7 +1153,7 @@
   <li>Create a Magento Composer file (<code>composer.json</code>).</li>
   <li>Register the component using <code>registration.php</code></li>
   <li>
-    <p>Package and publish your component. </p>
+    <p>Package and publish your component.</p>
 
     <p>Use our <a href="https://github.com/magento/marketplace-tools" target="_blank">validation tool</a> to check your package before you distribute it.</p>
   </li>
@@ -1181,7 +1181,7 @@
 <td><code>autoload </code></td>
 <td>Specify necessary information to be loaded, such as [registration.php](/guides/v2.1/extension-dev-guide/build/component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
 
-
+&lt;/tr&gt;
 </tbody>
 </table>
 
@@ -1230,7 +1230,7 @@
   <h4 id="metapackage-example">Metapackage example</h4>
   <p>The following example is a <code>composer.json</code> for a metapackage:</p>
 
-  <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;magento/product-community-edition&quot;</span><span class="p">,</span>
     <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample metapackage&quot;</span><span class="p">,</span>
     <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
@@ -1267,12 +1267,12 @@
         <span class="s2">&quot;OSL-3.0&quot;</span><span class="p">,</span>
         <span class="s2">&quot;AFL-3.0&quot;</span>
     <span class="p">]</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
   <h3 id="sample-composerjson-file">Sample composer.json file</h3>
   <p>The following example is a <code>composer.json</code> file for a module:</p>
 
-  <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;magento/sample-module-newpage&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A Magento 2 module that creates a new page&quot;</span><span class="p">,</span>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="p">,</span>
@@ -1291,7 +1291,7 @@
       <span class="nt">&quot;Magento\\SampleNewPage\\&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
   <h2 id="packaging">Package and publish your extension</h2>
   <p>Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:</p>
@@ -1301,7 +1301,7 @@
 
   <p>Use alphanumeric characters for the package filename with dashes to separate words. Do not use whitespaces.</p>
 
-  <p>Magento can retrieve your extension package from any valid GitHub URL. </p>
+  <p>Magento can retrieve your extension package from any valid GitHub URL.</p>
 
   <!-- After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository. -->
 
@@ -1314,10 +1314,10 @@
   <p>Prerequisite: git must be set up on your machine.</p>
 
   <ol>
-    <li>Navigate to your component directory, with the <code>composer.json</code> file in the root, and make it a new git repository. See the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub documentation</a> for details. </li>
+    <li>Navigate to your component directory, with the <code>composer.json</code> file in the root, and make it a new git repository. See the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub documentation</a> for details.</li>
     <li>When you have committed and pushed your component to your GitHub repository, you can either:
       <ul>
-        <li>Use <a href="https://getcomposer.org/doc/05-repositories.md#vcs">Composer to refer to it directly</a>, or </li>
+        <li>Use <a href="https://getcomposer.org/doc/05-repositories.md#vcs">Composer to refer to it directly</a>, or</li>
         <li>Use the following steps to refer to the package through Packagist.
           <ol>
             <li>Register an account at <a href="https://packagist.org/">packagist.org</a>.</li>
@@ -1343,14 +1343,14 @@ A private repository can be used for development or private code but installatio
     <li>To use the private packaging repository in a project, add the following to your <code>composer.json</code>file:</li>
   </ol>
 
-  <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;repositories&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;composer&quot;</span><span class="p">,</span>
             <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="p">[</span><span class="err">repository</span> <span class="err">url</span> <span class="err">here</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
   <p>All packages on the private repository can now be referenced within the <code>require</code> field.</p>
 

@@ -870,13 +870,13 @@
 <p><strong>Contents</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#sample-sass-module">Sample Sass module</a></li>
-  <li><a href="#adding-a-custom-preprocessor">Adding a custom preprocessor</a>    <ul>
-      <li><a href="#prerequisites">Prerequisites</a></li>
-      <li><a href="#step-by-step-instruction">Step by step instruction</a></li>
+  <li><a href="#sample-sass-module" id="markdown-toc-sample-sass-module">Sample Sass module</a></li>
+  <li><a href="#adding-a-custom-preprocessor" id="markdown-toc-adding-a-custom-preprocessor">Adding a custom preprocessor</a>    <ul>
+      <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
+      <li><a href="#step-by-step-instruction" id="markdown-toc-step-by-step-instruction">Step by step instruction</a></li>
     </ul>
   </li>
-  <li><a href="#related-reading">Related reading</a></li>
+  <li><a href="#related-reading" id="markdown-toc-related-reading">Related reading</a></li>
 </ul>
 
 <h2 id="sample-sass-module">Sample Sass module</h2>
@@ -908,12 +908,12 @@ You can use the default Magento renderer for reference: <a href="https://github.
   </li>
   <li>
     <p>If in your custom preprocessor, the syntax of the importing directives is different from <code>@import</code> and <code>@magento_import</code>, you must implement custom processor classes. 
-You can view the default Magento processors for reference: <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Css/PreProcessor/Instruction">lib/internal/Magento/Framework/Css/PreProcessor/Instruction</a>. </p>
+You can view the default Magento processors for reference: <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Css/PreProcessor/Instruction">lib/internal/Magento/Framework/Css/PreProcessor/Instruction</a>.</p>
   </li>
   <li>
     <p>In <code>&lt;your_module_dir&gt;/etc/di.xml</code>, declare the following:</p>
     <ul>
-      <li>your custom adapter </li>
+      <li>your custom adapter</li>
       <li>your processor (if relevant)</li>
       <li>the renderer for the client-side compilation (if relevant)</li>
     </ul>
@@ -924,7 +924,7 @@ You can view the default Magento processors for reference: <a href="https://gith
 
 <p><strong><code>&lt;your_module_dir&gt;/etc/di.xml</code></strong></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;AlternativeSourceProcessors&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
@@ -963,7 +963,7 @@ You can view the default Magento processors for reference: <a href="https://gith
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h2 id="related-reading">Related reading</h2>
 

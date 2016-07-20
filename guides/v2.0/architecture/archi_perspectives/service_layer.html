@@ -831,14 +831,14 @@
 		<h2>Service layer</h2>
 <p>The service layer provides a bridge between the presentation layer and the model layer of domain logic and resource-specific data. This is implemented using <em>service contracts</em>, which are defined using PHP interfaces.</p>
 
-<p>In general, the service layer </p>
+<p>In general, the service layer</p>
 
 <ul>
   <li>
     <p>Resides below the presentation layer and above the domain layer.</p>
   </li>
   <li>
-    <p>Contains service contracts, which define how the implementation will behave.  </p>
+    <p>Contains service contracts, which define how the implementation will behave.</p>
   </li>
   <li>
     <p>Provides an easy way to access the REST/SOAP API framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files – no coding required.</p>
@@ -850,7 +850,7 @@
 
 <h3>Who accesses the service layer?</h3>
 
-<p>All calls from web service interfaces, or users working with your storefront (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic. </p>
+<p>All calls from web service interfaces, or users working with your storefront (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic.</p>
 
 <p>External applications can make requests for business logic with simple SOAP and REST calls. With some simple XML or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.</p>
 
@@ -864,7 +864,7 @@
 
 <h3>Service contract anatomy</h3>
 
-<p>The service contract of a module is defined by the set of interfaces in the module’s <code>/Api</code>. It typically consists of: </p>
+<p>The service contract of a module is defined by the set of interfaces in the module’s <code>/Api</code>. It typically consists of:</p>
 
 <ul>
   <li>
@@ -875,7 +875,7 @@
   </li>
 </ul>
 
-<p>Typically, service contracts provide three distinct types of interfaces: </p>
+<p>Typically, service contracts provide three distinct types of interfaces:</p>
 
 <ul>
   <li>Repository interfaces</li>
@@ -883,10 +883,10 @@
   <li>Metadata interfaces</li>
 </ul>
 
-<p>However, there is no requirement that service contracts conform to all three patterns. </p>
+<p>However, there is no requirement that service contracts conform to all three patterns.</p>
 
 <h3>Advantages of service contracts</h3>
-<p>Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the &lt;preference&gt; element of a dependency injection config file (<code>di.xml</code>) file. The <code>di.xml</code> file specifies which PHP class to use for the interface <code>Magento\Customer\Api\CustomerRepositoryInterface</code>. </p>
+<p>Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the &lt;preference&gt; element of a dependency injection config file (<code>di.xml</code>) file. The <code>di.xml</code> file specifies which PHP class to use for the interface <code>Magento\Customer\Api\CustomerRepositoryInterface</code>.</p>
 
 <p>Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.</p>
 

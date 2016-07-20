@@ -1138,12 +1138,12 @@
 		<h2 id="test-your-component">Test your component</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#test-your-component">Test your component</a></li>
-  <li><a href="#test-unit">Unit and Integration Tests</a></li>
-  <li><a href="#test-functional">Functional testing</a></li>
-  <li><a href="#test-comm">Test using Community Edition</a></li>
-  <li><a href="#test-install">Test installing your component</a></li>
-  <li><a href="#more-information">More information</a></li>
+  <li><a href="#test-your-component" id="markdown-toc-test-your-component">Test your component</a></li>
+  <li><a href="#test-unit" id="markdown-toc-test-unit">Unit and Integration Tests</a></li>
+  <li><a href="#test-functional" id="markdown-toc-test-functional">Functional testing</a></li>
+  <li><a href="#test-comm" id="markdown-toc-test-comm">Test using Community Edition</a></li>
+  <li><a href="#test-install" id="markdown-toc-test-install">Test installing your component</a></li>
+  <li><a href="#more-information" id="markdown-toc-more-information">More information</a></li>
 </ul>
 
 <h2 id="test-unit">Unit and Integration Tests</h2>
@@ -1156,13 +1156,13 @@ For more information see the <a href="/guides/v2.1/test/testing.html">Magento Te
 <a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing Framework</a>.</p>
 
 <h2 id="test-comm">Test using Community Edition</h2>
-<p>Test your component by deploying Magento Community Edition and adding the component to the project’s <code>composer.json</code>. </p>
+<p>Test your component by deploying Magento Community Edition and adding the component to the project’s <code>composer.json</code>.</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
     <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
     <span class="nt">&quot;magento/product-community-edition&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
     <span class="nt">&quot;yourvendorname/module-one&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span>
-<span class="p">}</span><span class="err">,</span></code></pre></div>
+<span class="p">}</span><span class="err">,</span></code></pre></figure>
 
 <p>Remember to <a href="/guides/v2.1/extension-dev-guide/build/component-registration.html">register</a> your component as well, adding the location of your component. Confirm that your component works as expected and Magento functionality is not compromised.</p>
 

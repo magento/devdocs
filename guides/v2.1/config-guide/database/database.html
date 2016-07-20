@@ -1517,7 +1517,7 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
 <h3 id="mage-cache-db-config-default">Sample <code>di.xml</code> for the default cache frontend</h3>
 <p><code>di.xml</code> snippet:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\App\Cache\Frontend\Pool&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\App\Cache\Frontend\Pool&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;frontendSettings&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;page_cache&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -1535,12 +1535,12 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;backend&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
- <span class="nt">&lt;/type&gt;</span></code></pre></div>
+ <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
 <h3 id="mage-cache-db-config-custom">Sample <code>env.php</code> for a custom cache frontend</h3>
 <p><code>env.php</code> snippet that enables all cache types with a custom frontend named <code>magento_cache</code>:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
  <span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
      <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;magento_cache&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
@@ -1589,7 +1589,7 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
           <span class="p">],</span>
       <span class="p">],</span>
   <span class="p">],</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
 
 
 

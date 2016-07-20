@@ -865,21 +865,21 @@
 			<p align="right"><i>Updated: 5 July 2016 (PDT)</i></p>
 		<h2 id="layout_theme_how-to_overview">What's in this topic</h2>
 
-<p>This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images. </p>
+<p>This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.</p>
 
 <ul id="markdown-toc">
-  <li><a href="#prerequisites">Prerequisites</a></li>
-  <li><a href="#layout_theme_how-to_dirs">Create a theme directory</a></li>
-  <li><a href="#fedg_create_theme_how-to_declare">Declare your theme</a></li>
-  <li><a href="#fedg_create_theme_composer">Make your theme a Composer package (optional)</a></li>
-  <li><a href="#fedg_create_theme_reg">Add registration.php</a></li>
-  <li><a href="#fedg_create_theme_how-to-images">Configure images</a></li>
-  <li><a href="#fedg_theme_how-to_static">Create directories for static files</a></li>
-  <li><a href="#fedg_theme_how-to_structure">Your theme directory structure now</a></li>
-  <li><a href="#theme_logo">Theme logo</a></li>
-  <li><a href="#logo_declare">Declaring theme logo</a></li>
-  <li><a href="#next">What’s next</a></li>
-  <li><a href="#uninstall-a-theme">Uninstall a theme</a></li>
+  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
+  <li><a href="#layout_theme_how-to_dirs" id="markdown-toc-layout_theme_how-to_dirs">Create a theme directory</a></li>
+  <li><a href="#fedg_create_theme_how-to_declare" id="markdown-toc-fedg_create_theme_how-to_declare">Declare your theme</a></li>
+  <li><a href="#fedg_create_theme_composer" id="markdown-toc-fedg_create_theme_composer">Make your theme a Composer package (optional)</a></li>
+  <li><a href="#fedg_create_theme_reg" id="markdown-toc-fedg_create_theme_reg">Add registration.php</a></li>
+  <li><a href="#fedg_create_theme_how-to-images" id="markdown-toc-fedg_create_theme_how-to-images">Configure images</a></li>
+  <li><a href="#fedg_theme_how-to_static" id="markdown-toc-fedg_theme_how-to_static">Create directories for static files</a></li>
+  <li><a href="#fedg_theme_how-to_structure" id="markdown-toc-fedg_theme_how-to_structure">Your theme directory structure now</a></li>
+  <li><a href="#theme_logo" id="markdown-toc-theme_logo">Theme logo</a></li>
+  <li><a href="#logo_declare" id="markdown-toc-logo_declare">Declaring theme logo</a></li>
+  <li><a href="#next" id="markdown-toc-next">What’s next</a></li>
+  <li><a href="#uninstall-a-theme" id="markdown-toc-uninstall-a-theme">Uninstall a theme</a></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -902,7 +902,7 @@
     <p>Go to <code>&lt;your Magento install dir&gt;/app/design/frontend</code>.</p>
   </li>
   <li>
-    <p>Create a new directory named according to your vendor name: <code>/app/design/frontend/&lt;Vendor&gt;</code>. </p>
+    <p>Create a new directory named according to your vendor name: <code>/app/design/frontend/&lt;Vendor&gt;</code>.</p>
   </li>
   <li>
     <p>Under the vendor directory, create a directory named according to your theme.</p>
@@ -932,13 +932,13 @@ app/design/frontend/
   </li>
 </ol>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Config/etc/theme.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Config/etc/theme.xsd&quot;</span><span class="nt">&gt;</span>
      <span class="nt">&lt;title&gt;</span>New theme<span class="nt">&lt;/title&gt;</span> <span class="c">&lt;!-- your theme&#39;s name --&gt;</span>
      <span class="nt">&lt;parent&gt;</span>Magento/blank<span class="nt">&lt;/parent&gt;</span> <span class="c">&lt;!-- the parent theme, in case your theme inherits from an existing theme --&gt;</span>
      <span class="nt">&lt;media&gt;</span>
          <span class="nt">&lt;preview_image&gt;</span>media/preview.jpg<span class="nt">&lt;/preview_image&gt;</span> <span class="c">&lt;!-- the path to your theme&#39;s preview image --&gt;</span>
      <span class="nt">&lt;/media&gt;</span>
- <span class="nt">&lt;/theme&gt;</span></code></pre></div>
+ <span class="nt">&lt;/theme&gt;</span></code></pre></figure>
 
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package (optional)</h2>
 
@@ -950,7 +950,7 @@ app/design/frontend/
 
 <p>Example of a theme <code>composer.json</code>:</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;magento/theme-frontend-luma&quot;</span><span class="p">,</span>
     <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span>
     <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -969,7 +969,7 @@ app/design/frontend/
             <span class="s2">&quot;registration.php&quot;</span>
         <span class="p">]</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>You can find details about the Composer integration in the Magento system in <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</p>
 
@@ -977,7 +977,7 @@ app/design/frontend/
 
 <p>To register your theme in the system, in your theme directory add a <code>registration.php</code> file with the following content:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
 <span class="sd"> * See COPYING.txt for license details.</span>
@@ -986,7 +986,7 @@ app/design/frontend/
     <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">THEME</span><span class="p">,</span>
     <span class="s1">&#39;frontend/&lt;Vendor&gt;/&lt;theme&gt;&#39;</span><span class="p">,</span>
     <span class="nx">__DIR__</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span></code></pre></figure>
 
 <p>Where <code>&lt;Vendor&gt;</code> is your vendor name, <code>&lt;theme&gt;</code> is the theme code.</p>
 
@@ -1014,12 +1014,12 @@ For example, you can make the category grid view product images square by specif
   </li>
 </ol>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
     <span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">&quot;category_page_grid&quot;</span> <span class="na">type=</span><span class="s">&quot;small_image&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;width&gt;</span>250<span class="nt">&lt;/width&gt;</span>
         <span class="nt">&lt;height&gt;</span>250<span class="nt">&lt;/height&gt;</span>
     <span class="nt">&lt;/image&gt;</span>
-...</code></pre></div>
+...</code></pre></figure>
 
 <p>For details about images configuration in <code>view.xml</code>, see the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-images.html" target="_blank">Configure images properties for a theme</a> topic.</p>
 
@@ -1070,7 +1070,7 @@ app/design/frontend/&lt;Vendor&gt;/
 
 <p>In the Magento application, the default format and name of a logo image is <code>logo.svg</code>. When you put a <code>logo.svg</code> image in the conventional location, which is <code>&lt;theme_dir&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.</p>
 
-<p>In your custom theme, you can use a logo file with a different name and format, but you might need to declare it. </p>
+<p>In your custom theme, you can use a logo file with a different name and format, but you might need to declare it.</p>
 
 <p>The necessity of declaration depends on whether your theme has a <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a> theme and its logo image. The following cases are possible:</p>
 <ul>
@@ -1091,11 +1091,11 @@ Your theme does not have a parent theme:
 
 <h2 id="logo_declare">Declaring theme logo</h2>
 
-<p>To declare a theme logo, add an <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>&lt;theme_dir&gt;/Magento_Theme/layout/default.xml</code> layout. </p>
+<p>To declare a theme logo, add an <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>&lt;theme_dir&gt;/Magento_Theme/layout/default.xml</code> layout.</p>
 
-<p>For example, if your logo file is <code>my_logo.png</code> sized 300x300px, you need to declare it as follows:  </p>
+<p>For example, if your logo file is <code>my_logo.png</code> sized 300x300px, you need to declare it as follows:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;logo&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
@@ -1105,7 +1105,7 @@ Your theme does not have a parent theme:
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<span class="nt">&lt;/page&gt;</span>		</code></pre></figure>
 
 <p>Declaring the logo size is optional.</p>
 

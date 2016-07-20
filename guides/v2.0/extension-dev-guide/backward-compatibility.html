@@ -844,7 +844,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
 		<h2 id="backward-compatibility">Backward compatibility</h2>
 
 <p>Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible. 
@@ -854,7 +854,7 @@ To help mitigate these concerns, this release introduces a backward compatibilit
   <li>MAJOR indicates incompatible API changes</li>
   <li>MINOR indicates backward-compatible functionality has been added</li>
   <li>PATCH indicates backward-compatible bug fixes
-The backward compatibility policy applies to PHP code annotated with <code>@api</code> </li>
+The backward compatibility policy applies to PHP code annotated with <code>@api</code></li>
 </ul>
 
 <blockquote>
@@ -879,7 +879,7 @@ The backward compatibility policy applies to PHP code annotated with <code>@api<
 
 <ul>
   <li><strong>As an API</strong>. An interface is called by PHP code.</li>
-  <li><strong>As a Service Provider Interface (SPI)</strong>. An interface can be implemented, allowing code to provide functionality to the platform. </li>
+  <li><strong>As a Service Provider Interface (SPI)</strong>. An interface can be implemented, allowing code to provide functionality to the platform.</li>
   <li><strong>As both</strong>. For example, in a service contract, we expect all calls to a module to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI).
 APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.</li>
 </ul>
@@ -894,30 +894,30 @@ APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them 
   </li>
 </ul>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="err">...</span>
     <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;magento/customer&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="err">...</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <ul>
   <li>If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.
  <strong>SPI dependency example</strong></li>
 </ul>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="err">...</span>
     <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;magento/customer&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0.0&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="err">...</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h3>Versions</h3>
 
-<p>To reduce complexities, for Magento 2.0 GA, all components share the same version. This does limit the value of our policy since a change in one module’s public API affects the version of the entire set. Additionally, we expect to extract the <code>@api</code> PHP interfaces into a separate package, allowing more stability to third parties. Magento expects to be able to further reduce coupling of components after the 2.0 release.  </p>
+<p>To reduce complexities, for Magento 2.0 GA, all components share the same version. This does limit the value of our policy since a change in one module’s public API affects the version of the entire set. Additionally, we expect to extract the <code>@api</code> PHP interfaces into a separate package, allowing more stability to third parties. Magento expects to be able to further reduce coupling of components after the 2.0 release.</p>
 
 <h3>What other code changes can cause backward incompatibility?</h3>
 
@@ -925,7 +925,7 @@ APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them 
 
 <ul>
   <li>Database tables or columns will not be removed.</li>
-  <li>The format of data in a column will not be restructured. </li>
+  <li>The format of data in a column will not be restructured.</li>
 </ul>
 
 <p>This may require redundancy in table structure and data until a clean occurs with next MAJOR release. Unlike the PHP code, this code does not have automated identification of breaking changes.</p>

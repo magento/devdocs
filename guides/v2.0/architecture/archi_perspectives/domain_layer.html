@@ -833,41 +833,41 @@
 
 <ul>
   <li>
-    <p>Defines the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. These models contain generic information only. Applications can also use SOAP or RESTful endpoints to request data from models. </p>
+    <p>Defines the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. These models contain generic information only. Applications can also use SOAP or RESTful endpoints to request data from models.</p>
   </li>
   <li>
     <p>(Optionally) Includes the implementation of service contracts, although not their definition.</p>
   </li>
 </ul>
 
-<p>Best practice: Use service contracts to communicate to the domain layer by passing data types through strongly typed objects. This practice can help you avoid the need to replace presentation layer code when replacing business layer logic. </p>
+<p>Best practice: Use service contracts to communicate to the domain layer by passing data types through strongly typed objects. This practice can help you avoid the need to replace presentation layer code when replacing business layer logic.</p>
 
 <h3>Models</h3>
 
-<p>Each domain-layer model contains a reference to a resource model, which it uses to retrieve data from the database with MySql calls.  This resource model contains logic for connecting to the underlying database, typically MySQL. A model requires a resource model only if the model data must persist. </p>
+<p>Each domain-layer model contains a reference to a resource model, which it uses to retrieve data from the database with MySql calls.  This resource model contains logic for connecting to the underlying database, typically MySQL. A model requires a resource model only if the model data must persist.</p>
 
 <h3>Who accesses the domain layer?</h3>
 <p>There are three primary ways of accessing a module’s domain-layer code:</p>
 
 <ul>
   <li>
-    <p>Service contracts are the recommended way for one module to access another module’s domain-level code. This loosely coupled solution is the optimal way for most modules to access another module. </p>
+    <p>Service contracts are the recommended way for one module to access another module’s domain-level code. This loosely coupled solution is the optimal way for most modules to access another module.</p>
   </li>
   <li>
     <p>A module can directly call into another module. This tightly coupled solution is not recommended for most situations, but is sometimes unavoidable.</p>
   </li>
   <li>
-    <p>Domain layer code in one module can also plug itself into another module by: </p>
+    <p>Domain layer code in one module can also plug itself into another module by:</p>
 
     <ul>
       <li>event hooks</li>
       <li>plugins</li>
-      <li><code>di.xml</code> files (with an SPI contract) </li>
+      <li><code>di.xml</code> files (with an SPI contract)</li>
     </ul>
   </li>
 </ul>
 
-<p>Your strategy for calling another module’s domain-layer code is highly dependent upon the unique configuration and needs of your system. </p>
+<p>Your strategy for calling another module’s domain-layer code is highly dependent upon the unique configuration and needs of your system.</p>
 
 <h2 id="related">Related topics</h2>
 <p><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>

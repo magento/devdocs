@@ -630,13 +630,13 @@
 <li>Create a RequireJS configuration file <code>requirejs-config.js</code>, having specified the following:
 
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">&quot;map&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;*&quot;</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">&quot;&lt;default_component&gt;&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;custom_component&gt;&quot;</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">};</span></code></pre></div>
+<span class="p">};</span></code></pre></figure>
 
 
 Where the following notation is used:
@@ -647,24 +647,24 @@ Where the following notation is used:
 
 For example, if you want to use custom <code>navigation-menu.js</code> script instead of the default menu widgets, your <code>requirejs-config.js</code> should contain the following:
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">&quot;map&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;*&quot;</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">&quot;menu&quot;</span><span class="o">:</span> <span class="s2">&quot;js/navigation-menu&quot;</span><span class="p">,</span>
       <span class="s2">&quot;mage/backend/menu&quot;</span><span class="o">:</span> <span class="s2">&quot;js/navigation-menu&quot;</span><span class="p">,</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">};</span></code></pre></div>
+<span class="p">};</span></code></pre></figure>
 
 
 
 
 </li>
-
+&lt;/ul&gt;
 <li>Place your <code>requirejs-config.js</code> file in one of the following directories (according to the location of your custom script, see step 1 of this procedure):
 <ul>
 <li>Your theme files: <code>&lt;theme_dir&gt;</code></li>
-<li>Your module view files: &lt;module_dir&gt;/view/frontend</li>
+<li>Your module view files: &lt;module_dir&gt;/view/frontend&lt;/code&gt;</li>
 </ul>
 </li>
 </ol>
@@ -678,7 +678,7 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
 
 <p>To extend a default Magento jQuery widget, create <code>&lt;your_widget_name&gt;.js</code> with the following contents:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
   <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
   <span class="s1">&#39;jquery/ui&#39;</span><span class="p">,</span>
   <span class="s1">&#39;mage/&lt;widget.name&gt;&#39;</span> <span class="c1">// usually widget can be found in /lib/web/mage dir</span>
@@ -687,7 +687,7 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
   <span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">&#39;&lt;your_namespace&gt;.&lt;your_widget_name&gt;&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">widget</span><span class="p">.</span><span class="nx">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
  
   <span class="k">return</span> <span class="nx">$</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">your_namespace</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">your_widget_name</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p>Where the following notation is used:</p>
 <ul>
@@ -702,7 +702,7 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
 
 <p>To extend a default JS Ui component, your custom script must contain the following:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
   <span class="s1">&#39;&lt;component_path&gt;&#39;</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">component_alias</span><span class="o">&gt;</span><span class="p">){</span>
  
@@ -711,7 +711,7 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
     <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span> <span class="c1">// properties with default values</span>
     <span class="p">...</span> <span class="c1">// methods of your component</span>
   <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p>Where the following notation is used:</p>
 
@@ -722,7 +722,7 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
 
 <p>For example, <code>Filters.js</code> script extends the default <code>filters.js</code>:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
   <span class="s1">&#39;Magento_Ui/js/grid/filters/filters&#39;</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Filters</span><span class="p">){</span>
  
@@ -731,7 +731,7 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
     <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span> <span class="c1">// properties with default values</span>
     <span class="p">...</span> <span class="c1">// methods of your component</span>
   <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p>For information about how to initialize your custom JS component in a <code>.phtml</code> template, see the <a href="/guides/v2.1/frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.</p>
 
@@ -741,10 +741,10 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
 <ol>
 <li>Create a <code>requirejs-config.js</code> file with the following content:
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">deps</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">]</span>
-<span class="p">};</span></code></pre></div>
+<span class="p">};</span></code></pre></figure>
 
 </li>
 <li>Put the <code>requirejs-config.js</code> file in one of the following locations:
@@ -756,7 +756,7 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
 </ol>
 <p>If you need to enable the loading of default Magento JS components and widget initialization on a certain stage, add the following code in your JS script:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">mage</span><span class="p">.</span><span class="nx">apply</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">mage</span><span class="p">.</span><span class="nx">apply</span><span class="p">);</span></code></pre></figure>
 
 <h2>Related topics</h2>
 <p><a href="/guides/v2.1/config-guide/config/js-resources.html" target="_blank">JavaScript resources configuration</a></p>

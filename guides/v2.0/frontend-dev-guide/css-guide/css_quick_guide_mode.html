@@ -870,7 +870,7 @@ This topic demonstrates on a practical example how the choice of the mode influe
 
 <p>The first step, creating and applying a theme is done before the compilation mode is chosen, so it is described only once, but is required whatever compilation mode you will further use.</p>
 
-<p>In the examples in this topic the <a href="/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend">simplest approach for customizing theme styles</a> is used: changes are done in the <code>_extend.less</code> of the new theme. </p>
+<p>In the examples in this topic the <a href="/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend">simplest approach for customizing theme styles</a> is used: changes are done in the <code>_extend.less</code> of the new theme.</p>
 
 <p>In our examples we will change the color and font of the primary buttons. The default view of the primary buttons can be illustrated by the <strong>Create an Account</strong> button view on the Customer login page:</p>
 
@@ -891,7 +891,7 @@ This topic demonstrates on a practical example how the choice of the mode influe
   <li><a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html#theme-apply-apply">Apply your theme</a> in the Magento Admin.</li>
 </ol>
 
-<p>Server-side is the default mode for LESS compilation, so if you do not change this, your Magento instance is using server-side compilation mode. </p>
+<p>Server-side is the default mode for LESS compilation, so if you do not change this, your Magento instance is using server-side compilation mode.</p>
 
 <h2 id="server-side">Making simple style changes in server-side compilation mode</h2>
 
@@ -926,7 +926,7 @@ This topic demonstrates on a practical example how the choice of the mode influe
 
 <img src="/common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed" />
 </li>
-
+&lt;/ol&gt;
 If your Magento instance uses the server-side compilation mode, you need to manually clean sub-directories in <code>pub/static</code> and <code>var/view_preprocessed/less</code> to make your changes apply. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
 
 <h2 id="server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>

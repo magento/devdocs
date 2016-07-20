@@ -1285,7 +1285,7 @@
 
     <ul>
       <li>
-        <p>The web server user, which runs the Magento Admin (including Setup Wizard) and storefront. </p>
+        <p>The web server user, which runs the Magento Admin (including Setup Wizard) and storefront.</p>
       </li>
       <li>
         <p>A <em>command-line user</em>, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.</p>
@@ -1419,7 +1419,7 @@ chmod u+x bin/magento
   <li><code>app/etc</code></li>
 </ul>
 
-<p>Set the <a href="http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/" target="_blank"><code>setgid</code></a> bit on directories so permissions always inherit from the parent directory. </p>
+<p>Set the <a href="http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/" target="_blank"><code>setgid</code></a> bit on directories so permissions always inherit from the parent directory.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
  	<p><code>setgid</code> applies to directories only, <em>not</em> to files.</p>
@@ -1519,7 +1519,7 @@ chmod o+rwx app/etc/env.php
   <h2 id="mage-owner-umask">Optionally set <code>magento_umask</code></h2>
   <p>The web server group must have write permissions to certain directories in the Magento file system; however, you might want tighter security, especially in production. We provide the flexibility for you to further restrict those permissions using a <a href="http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html" target="_blank">umask</a>.</p>
 
-  <p>Our solution is to enable you to optionally create a file named <code>magento_umask</code> in your Magento root directory that restricts permissions for the web server group and everyone else. </p>
+  <p>Our solution is to enable you to optionally create a file named <code>magento_umask</code> in your Magento root directory that restricts permissions for the web server group and everyone else.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
   <p>We recommend changing the umask on a one-user or shared hosting system only. If you have a private Magento server, the group must have write access to the Magento file system; the umask removes write access from the group.</p>

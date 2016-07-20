@@ -877,7 +877,7 @@
 
 <ol>
   <li>Module translations: <code>&lt;module_dir&gt;/i18n/</code></li>
-  <li>Theme translations: 
+  <li>Theme translations:
     <ol>
       <li><code>&lt;parent_theme_dir&gt;/i18n/</code> (iterated through all ancestor themes)</li>
       <li><code>&lt;current_theme_dir&gt;/i18n/</code></li>
@@ -904,19 +904,19 @@
 ...
 </code></pre>
 
-<p>It is important to remember that if you generate a dictionary for your theme using the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n tool</a> with the conventional names and locations for the dictionary, the existing dictionary gets overwritten. </p>
+<p>It is important to remember that if you generate a dictionary for your theme using the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n tool</a> with the conventional names and locations for the dictionary, the existing dictionary gets overwritten.</p>
 
 <p>That is why the recommended flow for adding custom strings is the following:</p>
 
 <ol>
   <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate the dictionary</a> for your theme.</li>
-  <li>Change the necessary values in the right column, or add rows if the strings you want to replace are not in the dictionary. The i18n tool does not create a dictionary, if the theme files do not contain any strings for translation. In this case, add the file manually. </li>
+  <li>Change the necessary values in the right column, or add rows if the strings you want to replace are not in the dictionary. The i18n tool does not create a dictionary, if the theme files do not contain any strings for translation. In this case, add the file manually.</li>
 </ol>
 
 <p>See the <a href="/guides/v2.1/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic for the practical illustration of the  procedure.</p>
 
 <h3>Custom strings and dictionaries for not default locales</h3>
-<p>Even if your theme uses <code>en_US.csv</code> to override certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones. </p>
+<p>Even if your theme uses <code>en_US.csv</code> to override certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones.</p>
 
 <p>Continuing the <a href="#luma_example">previous example</a> with the Luma theme, if the <code>de_DE.csv</code> dictionary will be added for the Luma theme, it will look like following:</p>
 
