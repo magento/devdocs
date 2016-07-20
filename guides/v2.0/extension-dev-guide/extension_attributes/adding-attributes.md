@@ -12,9 +12,8 @@ redirect_from: /guides/v2.0/extension-dev-guide/extension_attributes/adding-attr
 
 ##{{page.menu_title}}
 
-Sometimes we faced with situations when we need to add additional data to entities like product.
-Off course, we can use custom attributes for this purposes, however this can be impossible in some situations, for instance, if you have this attributes stored in Mongo Db. 
-In this case the only way to solve such problem is to add extension attributes to entity. 
+Third party developers cannot change API Data interface in the Magento Core, so the one way to affect interfaces 
+using configuration is to add extension attributes. 
 
 <div class="bs-callout bs-callout-info" id="other-component-types">
   <p>We will demonstrate this on Product entity, Product Repository and Web Api example. </p>
