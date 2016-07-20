@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/component-registration.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 #### Contents
 
@@ -37,11 +37,11 @@ where &lt;VendorName> is the name of the company providing the module and &lt;Mo
 
 Do not use "Ui" for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.
 
-###Example
+### Example
     use \Magento\Framework\Component\ComponentRegistrar;
     ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
 
-##Register themes {#register-themes}
+## Register themes {#register-themes}
 Register themes with:
 
      ComponentRegistrar::register(ComponentRegistrar::THEME, '<area>/<vendor>/<theme name>', __DIR__);
@@ -49,25 +49,25 @@ Register themes with:
 where &lt;area> is the functional area of the module (frontend, controller, and so on.), &lt;vendor> is the name of the company providing the theme, and &lt;theme name> is the name of the theme.
 
 
-###Example
+### Example
      ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
 
 <p>&nbsp;</p>
 
 
-##Register language packages {#register-lagpacks}
+## Register language packages {#register-lagpacks}
 Register language packages with:
 
      ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, '<VendorName>_<packageName>', __DIR__);
 
 where &lt;VendorName> is the name of the company providing the package and &lt;packageName> is the name of the package.
 
-###Example
+### Example
      ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_de_de', __DIR__);
 
 <p>&nbsp;</p>
 
-##Invoke `registration.php` in `composer.json` with autoload {#register-autoload}
+## Invoke `registration.php` in `composer.json` with autoload {#register-autoload}
 After you create your `registration.php` file and you are creating [your component's composer.json file]({{page.baseurl}}extension-dev-guide/build/composer-integration.html), invoke your `registration.php` file in the `autoload` section of `composer.json`:
 
      {
@@ -80,7 +80,7 @@ After you create your `registration.php` file and you are creating [your compone
 
 <p>&nbsp;</p>
 
-##Sample `registration.php` file {#register-sample}
+## Sample `registration.php` file {#register-sample}
 
 {% highlight php startinline=true %}
 <?php
@@ -91,5 +91,5 @@ ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotificat
 ?>
 {%endhighlight %}
 
-####Next
+#### Next
 [URN schema validation]({{page.baseurl}}extension-dev-guide/build/XSD-XML-validation.html)

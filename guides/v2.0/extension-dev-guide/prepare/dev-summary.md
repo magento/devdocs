@@ -14,7 +14,7 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/dev-summary.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 To develop your component, use the following steps:
 
 1.	Learn about <a href="{{page.baseurl}}extension-dev-guide/build/composer-integration.html">using Composer with your component</a>.

@@ -10,7 +10,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>DRAFT/PROPOSAL: This Best Practices Guide is a first draft! The guide combines Best Practices that we have heard the community ask for, along with guidelines that our Magento UX, Engineering, and Product teams are working on.
@@ -32,7 +32,7 @@ The table below is data from a recent poll that shows the distribution of the am
 
 This guide provides best practices, guidelines, and tips for creating Magento extensions.  We encourage you to follow our best practices when developing code for your Magento components.
 
-###Sections
+### Sections
 
 {% assign subgroup = site.pages | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "menu_node","parent" | sort: "menu_order" %}
 

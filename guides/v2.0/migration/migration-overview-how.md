@@ -41,6 +41,6 @@ When differences are not declared in map files, then the Data Migration Tool dis
 
 Mapping files are discussed in more detail in <a href="{{page.baseurl}}migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification.</a>
 
-####The following diagram illustrates the migration flow in general:
+#### The following diagram illustrates the migration flow in general:
 
 <p><img src="{{ site.baseurl }}common/images/migration_flow.png" alt="Migration Flow"></p> 

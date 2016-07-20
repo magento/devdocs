@@ -14,20 +14,20 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-massaction.html
 
 <h3 id="massaction">UI MassAction Component</h3>
 
-###MassAction JS component structure
+### MassAction JS component structure
 
 MassActions component adds ability to be selectable (by attaching it's template to each item in Listing) to items in Listing and creates actions to perform with selected items (for example: 'Delete', 'Update attributes' and so on).
 
 "Select all" functionality is improved in Magento 2. Instead of creating a list of all selected items they are now flagged and list is created only for excluded elements.
 
-####Component Elements (classes, files)
+#### Component Elements (classes, files)
 
 The following are the component elements:
 
 * Constructor `app\code\Magento\Ui\view\base\web\js\grid\massactions.js`
 * Template: `app\code\Magento\Ui\view\base\web\templates\grid\actions.html`
 
-####Dependencies on Other Components
+#### Dependencies on Other Components
 
 Dependency on the following components:
 
@@ -35,7 +35,7 @@ Dependency on the following components:
 * Modal window with confirmation: `app\code\Magento\Ui\view\base\web\js\modal\confirm.js`
 * Modal window with alert: `app\code\Magento\Ui\view\base\web\js\modal\alert.js`
 
-####Component Options
+#### Component Options
 
 The following options are available:
 
@@ -52,7 +52,7 @@ The following API methods are available:
 * applyAction - applies specified as identifier action
 * getSelections - returns object with current selections
 
-####Example of configuration modifications:
+#### Example of configuration modifications:
 
 * Redefining the link to the template
 

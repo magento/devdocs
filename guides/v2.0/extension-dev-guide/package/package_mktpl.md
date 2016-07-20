@@ -13,6 +13,6 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/package_mktpl.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 When component development is complete, upload your components to the Magento Marketplace using the instructions in the <a href="http://docs.magento.com/marketplace/user_guide/getting-started.html" target="_blank">Magento Marketplace User Guide</a>.

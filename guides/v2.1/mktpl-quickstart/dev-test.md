@@ -10,7 +10,7 @@ version: 2.1
 github_link: mktpl-quickstart/dev-test.md
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 During development, you should <a href="{{page.baseurl}}extension-dev-guide/test-module.html">test your component</a> thoroughly to make sure it works as expected.
 

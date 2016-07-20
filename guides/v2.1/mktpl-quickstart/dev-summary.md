@@ -10,7 +10,7 @@ version: 2.1
 github_link: mktpl-quickstart/dev-summary.md
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 To develop your component, use the following steps:
 

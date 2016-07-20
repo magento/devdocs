@@ -10,7 +10,7 @@ github_link: extension-dev-guide/build/enable-module.md
 redirect_from: /guides/v2.0/extension-dev-guide/enable-module.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 After you have built the component and are ready to enable it in your Magento environment, do the following: 
  
@@ -43,7 +43,7 @@ where <code>Component_Name</code> is the name of the component you are enabling.
 
 
 
-##Disable a component
+## Disable a component
 
 To disable a component, enter the following at the command line:
 

@@ -18,7 +18,7 @@ TreeMassAction Component is extension to MassAction component that provides nest
 
 The TreeMassAction JS component is used by the TwoStepMassAction component.
 
-####PHP Implementation of TreeMassAction
+#### PHP Implementation of TreeMassAction
 
 To enable Massaction Component for your Listing instance it should be declared as a child.
 
@@ -84,15 +84,15 @@ Example:
 </massaction>
 {% endhighlight%}
 
-####Configuration
+#### Configuration
 Component can be configured in two ways:
 
 * Globally: using any module's <a href="{{page.baseurl}}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances
 * Locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Catalog/view/adminhtml/ui_component/product_listing.xml`
 
-####TreeMassAction JS Component Structure
+#### TreeMassAction JS Component Structure
 
-####Component Elements (classes, files, etc)
+#### Component Elements (classes, files, etc)
 
 The following are the component elements:
 
@@ -100,13 +100,13 @@ The following are the component elements:
 * Template: `app\code\Magento\Ui\view\base\web\templates\grid\tree-massactions.html`
 * Template: `app\code\Magento\Ui\view\base\web\templates\grid\submenu.html`
 
-####Dependencies on Other Components
+#### Dependencies on Other Components
 
 Dependency on the following component:
 
 * Collapsible: `app\code\Magento\Ui\view\base\web\js\grid\massactions.js`
 
-####Component Options
+#### Component Options
 
 The following options are available:
 
@@ -114,7 +114,7 @@ The following options are available:
 * selectProvider - option which defines the component with selections data
 * actions - array which contains initially available actions
 
-####Methods and Events
+#### Methods and Events
 
 The following api methods are available:
 
@@ -122,7 +122,7 @@ The following api methods are available:
 * applyAction - applies specified as identifier action
 * hideSubmenus - hide specified actions and nested submenu
 
-####How to Configure Already Used in Code TreeMassAction Component
+#### How to Configure Already Used in Code TreeMassAction Component
 
 `app\code\Magento\Catalog\view\adminhtml\ui_component\product_listing.xml`
 
@@ -187,7 +187,7 @@ Callback is provided by another component.
 </massaction>
 {% endhighlight %}
 
-####Instance Replacement: One Instance of a Component
+#### Instance Replacement: One Instance of a Component
 
 Redefine link to constructor:
 

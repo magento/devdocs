@@ -45,6 +45,6 @@ where
   <p>To force the Data Migration Tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
 </div>
 
-###Related topics
+### Related topics
 
 * <a href="{{page.baseurl}}migration/migration-migrate-delta.html">Migrate changes</a>

@@ -10,7 +10,7 @@ version: 2.0
 github_link: ext-best-practices/admin/admin-best-practices.md
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 This section of the Best Practices Guide discusses the Admin, the UI panel used by Magento administrators. It is where Magento system and storefront parameters can be modified and configured. Third-party extensions installed by the system admin or merchant are also found in this area, along with any of their configuration settings.
 
@@ -22,7 +22,7 @@ This is an important section to read, because what extension developers choose t
 
 For additional information on design topics for the Admin, read the [Admin Pattern Library]({{page.baseurl}}pattern-library/bk-pattern.html) and the [Admin Style Guide]({{page.baseurl}}design-styleguide/bk-styleguide.html).
 
-###Articles
+### Articles
 
 {% assign subgroup = site.pages | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "subgroup","01_Admin" | where: "menu_node",null | sort: "menu_order" %}
 

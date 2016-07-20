@@ -16,12 +16,12 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-inline.html
 
 The Inline Edit component is used to provide the ability of inline editing. 
 
-####Related UI Components
+#### Related UI Components
 
 The Bulk Edit component uses the Inline Edit component.
 The Listing component can use the Inline Edit if it is configured and enabled.
 
-####Implementation of Inline Edit
+#### Implementation of Inline Edit
 
 Currently Inline Edit is not presented in definition.xml. It is used as a plugin for the Listing component. It can be configured in <a href="{{page.baseurl}}ui-library/ui-definition.html">definitions.xml</a> if necessary.
 
@@ -171,7 +171,7 @@ Additional examples:
 </item>
 {% endhighlight %}
  
-####Inline Edit JS Component Structure
+#### Inline Edit JS Component Structure
 
 Component elements:
 

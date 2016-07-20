@@ -14,7 +14,7 @@ redirect_from: /guides/v2.0/ui-library/ui-form.html
 * TOC
 {:toc}
 
-##Overview
+## Overview
 Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. 
 
 The following are the components element, the constructor: `app\code\Magento\Ui\view\base\web\js\form\form.js`
@@ -29,7 +29,7 @@ The following components are used to extend the Form component:
 * Layout
 * Container
 
-##Component options
+## Component options
 
 * js_config -> deps - sets the dependency on component initialization
  
@@ -38,7 +38,7 @@ The following components are used to extend the Form component:
 * layout - configuration class meets the visualization component
     (See examples in 'Configuring' section)
 
-##Create an instance of the Form component
+## Create an instance of the Form component
 
 * Create configuration file for the instance (for example: customer_form.xml)
 
@@ -59,7 +59,7 @@ Example:
 </page>
 {% endhighlight %}
  
-##Configure the Form component
+## Configure the Form component
 
 Component could be configured in two ways:
 
