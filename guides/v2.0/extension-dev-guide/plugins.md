@@ -168,7 +168,7 @@ class MyUtilityPlugin
 
 Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> PHP would throw a fatal error as your plugin does not accept <code>null</code>.
 
-It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using the using/modifying the agurments, you could use variadics and argument unpacking to achieve this simply:
+It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the agurments, you could use variadics and argument unpacking to achieve this simply:
 
 {% highlight PHP %}
 <?php
