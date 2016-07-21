@@ -12,4 +12,3 @@ version: 2.0
 github_link: config-guide/cache/cache-priv-parent.md
 ---
 
-Hi
