@@ -22,7 +22,6 @@ _**Note to reviewer: Is the following note still true?**_
 </div>
 
 ### Overview
-
 Configuring the message queue topology involves creating and modifying 3 configuration files in the `<module>/etc` directory:
 
 * [`queue_consumer.xml`](#queueconsumerxml) - Defines the relationship between an existing queue and its consumer.
@@ -38,7 +37,6 @@ Depending on your needs, you may only need to create and configure one or two of
 * When you want to configure the local queue and consume messages published by 3rd party system, you will need the `queue_topology` and `queue_consumer` files.
 
 ### `queue_consumer.xml`
-
 The `queue_consumer.xml` file contains the following elements with the following attributes:
 
 #### `consumer` element
@@ -67,12 +65,10 @@ The `queue_consumer.xml` file contains the following elements with the following
 {% endhighlight %}
 
 ### `queue_topology.xml`
-
 The `queue_topology.xml` file contains the following elements with the following attributes:
 
 #### `binding` element
 {:.no_toc}
-
 | Attribute      | Description |
 | -------------- | ----------- |
 | id (required)  | A unique id for this binding. |
@@ -85,7 +81,6 @@ The `queue_topology.xml` file contains the following elements with the following
 
 #### `queue` element
 {:.no_toc}
-
 | Attribute       | Description |
 | --------------- | ----------- |
 | name (required) | The name of a queue defined in the `queue_consumer.xml` file. |

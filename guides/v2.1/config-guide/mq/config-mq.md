@@ -8,12 +8,12 @@ menu_order: 2
 version: 2.0
 github_link: config-guide/mq/config-mq.md
 ---
-Any module that needs to send and receive messages to the message queue must be configured to do so. To do this, you must create the following files in the `<module>/etc` directory:
+Any module can be configured to send and receive messages to the message queue. To do this, you must create the following files in the `<module>/etc` directory:
 
 * `communication.xml`
 * `queue.xml`
 
-## Edit the `communication.xml` file##
+## Create the `communication.xml` file##
 
 The `<module>/etc/communication.xml` file defines aspects of the message queue system that all communication types have in common. Magento 2.1 supports AMQP and database connections.
 
@@ -55,14 +55,12 @@ The following sample defines two synchronous topics. The first topic is for RPC 
 </config>
 {% endhighlight %}
 
-## Edit the `queue.xml` file ##
-
+## Create the `queue.xml` file ##
 The `queue.xml` file defines the broker that processes topics and the name of each consumer. It also specifies the queue each topic will be sent to.
 
 A single topic can be sent to one or multiple queues. Each recipient is defined in `consumer` elements. , and queues
 
 ### broker elements
-
 Parameter | Description | Example
 === | === | ===
 topic | A topic defined in the `communication.xml` file. | `mysystem.ordercreate`, `mysystem.ordercreate.success`
@@ -70,14 +68,12 @@ type | The type of message broker. For this release, the value must be `amqp`. |
 exchange | The name of the exchange to publish to. The default system exchange name is `magento`. | `magento`
 
 ### consumer element###
-
 Parameter | Description | Example
 === | === | ===
 name | The name of the consumer.  | sync.consumer, async.consumer
 queue | Defines the queue name to send the message to.| magento_omsspec_api_ordermanagement_ordercreated
 
 ## Sample `queue.xml` file ##
-
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
     <broker topic="synchronous.rpc.test" type="amqp" exchange="magento">
