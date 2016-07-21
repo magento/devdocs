@@ -50,6 +50,8 @@ The preceding example keeps the page in cache for 10 seconds.
 </div>
 
 ## Uncacheable pages {#config-page-notcache}
+By default, all pages will be cached if you perform an HTTP GET or HEAD request.
+
 To create an uncacheable page, mark any block on that page as uncacheable in the layout (use `cacheable="false"`). Any page that has at least one uncacheable block is itself uncacheable (that is, the entire page).
 
 Examples of uncacheable pages include the compare products, cart, checkout pages, and so on. 

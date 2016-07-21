@@ -24,7 +24,16 @@ github_link: config-guide/cache/cache-priv-over.md
 ## Page caching overview {#config-cache-over}
 Caching one of the most effective way of improving performance of web applications of all kinds. Generally speaking, there are two ways to cache: client-side (browser) and server-side. In addition, there are two types of content: public (available to multiple customers) and private (specific to one customer).
 
-Magento page caching is synonymous with *full-page caching*. You can choose to cache on the file system (default), [Varnish]({{ page.baseurl }}config-guide/varnish/config-varnish.html) (recommended), or in the [database]({{ page.baseurl }}config-guide/cache/caching-database.html).
+Magento page caching is synonymous with *full-page caching*. The Magento application gives you the following options:
+
+*	Default caching mechanism which stores cache files in any of the following:
+
+	*	On the Magento file system. 
+
+		You don't need to do anything to use file-based caching.
+	*	[Database]({{ page.baseurl }}config-guide/cache/caching-database.html)
+	*	[Redis]({{ page.baseurl }}config-guide/redis/redis-pg-cache.html)
+*	[Varnish]({{ page.baseurl }}config-guide/varnish/config-varnish.html) (recommended)
 
 ### Client-side caching {#config-cache-over-client}
 An HTTP GET request to fetch an asset has headers that specify how long a returned asset can be trusted as being up-to-date. This allows a web browser to save a copy of the asset so if the user comes back later, the asset does not have to be downloaded again. 
@@ -36,7 +45,7 @@ In this context, an *asset* can be any of the following:
 *	JavaScript
 *	CSS
 
-Each of the preceding (including each individual image) can result in a separate HTTP request and as a result, browser caching can save a large number of requests.
+Each of the preceding (including each individual image) can result in a separate HTTP request and as a result, browser caching can save a large number of requests. Response headers specify whether or not a retrieved asset should be cached and, if cached, for how long.
 
 ### Server-side caching {#config-cache-over-server}
 Server-side caching is particularly beneficial when the same request comes from different users. You can serve more requests per second for dynamic content (for example, content retrieved from a database). There are various methods of updating the server cache; we'll get into that in more detail later.

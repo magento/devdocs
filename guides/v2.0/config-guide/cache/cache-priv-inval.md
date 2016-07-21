@@ -17,11 +17,7 @@ github_link: config-guide/cache/cache-priv-inval.md
 *   [Private content versioning](#config-priv-vers)
 
 ## Cache invalidation {#config-cache-inval}
-In addition to time-to-live, the Magento application enables you to expire cached content immediately after a change is made. We use an identity interface to link system entities with cached content.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Cache storage performance is directly related to the number of tags per cache record. You should minimize the count of tags and use them only in production mode. In other words, do <em>not</em> use cache invalidation for actions related to store setup.</p>
-</div>
+The Magento application enables you to expire cached content immediately after a change is made. We use an identity interface to link system entities with cached content.
 
 First, a class must use [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
 
@@ -43,7 +39,7 @@ class Product implements IdentityInterface
      */
     public function getIdentities()
     {
-         return array(self::CACHE_TAG . '_' . $this->getId());
+         return array[self::CACHE_TAG . '_' . $this->getId()];
     }
 }
 {% endhighlight %}
@@ -66,7 +62,7 @@ class View extends AbstractProduct implements \Magento\Framework\DataObject\Iden
 {% endhighlight %}
 
 
-After blocks are rendered on the page, identities from the blocks that implement `IdentityInterface` are collected by [`\Magento\PageCache\Model\Layout\LayoutPlugin`]({{ site.mage2000url }}app/code/Magento/PageCache/Model/Layout/LayoutPlugin.php){:target="_blank"} and added to the response header `X-Magento-Tags`. Blocks, in turn, collect identities from the entities they render.
+Blocks collect identities from the entities they render. After blocks are rendered on the page, identities from the blocks that implement `IdentityInterface` are collected by [`\Magento\PageCache\Model\Layout\LayoutPlugin`]({{ site.mage2000url }}app/code/Magento/PageCache/Model/Layout/LayoutPlugin.php){:target="_blank"} and added to the response header `X-Magento-Tags`. 
 
 When you save entity, Magento gets it's identities and use them to clear cache.
 
