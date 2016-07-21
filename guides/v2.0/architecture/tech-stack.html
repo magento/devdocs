@@ -827,94 +827,78 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
-		<h2>Magento technology stack</h2>
+			<p align="right"><i>Updated: 21 July 2016 (PDT)</i></p>
+		<h2 id="magento-technology-stack">Magento technology stack</h2>
+<p>This page summarizes the technologies we use. For more detailed information, see the System Requirements:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/install-gde/system-requirements.html">Version 2.0.x</a></li>
+  <li><a href="/guides/v2.1/install-gde/system-requirements-tech.html">Version 2.1.x</a></li>
+</ul>
 
 <p>Magento’s highly modular structure includes the following open-source technologies:</p>
 
-<p><b>Web servers</b></p>
+<h3 id="web-servers">Web servers</h3>
 
 <ul>
-  <li>
-    <p>Apache 2.x</p>
-  </li>
-  <li>
-    <p>Nginx 1.7+</p>
-  </li>
+  <li>Apache</li>
+  <li>nginx</li>
 </ul>
 
-<p><b>PHP</b></p>
-
+<h3 id="php">PHP</h3>
 <ul>
-  <li>5.5x (only in Community and Enterprise Edition &lt; 2.1),</li>
-  <li>5.6x, 7.0</li>
-</ul>
-
-<p><b>Database</b></p>
-
-<ul>
-  <li>MySQL 5.6.x</li>
-  <li>MySQL Percona 5.6.x</li>
-</ul>
-
-<p><b>Reverse Proxy/Web Accelerator</b></p>
-
-<ul>
-  <li>
-    <p>Varnish 3.x</p>
-  </li>
-  <li>
-    <p>Varnish 4.x</p>
-  </li>
-</ul>
-
-<p><b>Cache Storage</b></p>
-
-<ul>
-  <li>Redis 2.x</li>
-  <li>Redis 3.x</li>
-  <li>Memcache 1.4.x</li>
-</ul>
-
-<p><b>Search</b></p>
-
-<ul>
-  <li>Solr 4.x</li>
-  <li>Easticsearch 1.7, 2.0 and 2.1 (Magento Enterprise Edition version 2.1.x)</li>
-</ul>
-
-<p><b>Additional technologies</b></p>
-
-<ul>
-  <li>
-    <p>HTML5</p>
-  </li>
-  <li>
-    <p>CSS3 (LESS CSS pre-processor)</p>
-  </li>
-  <li>
-    <p>jQuery (primary JavaScript library)</p>
-  </li>
-  <li>RequireJS (library that helps load JavaScript resources on demand)</li>
-  <li>Knockout.js (simplifies JavaScript UIs with the Model-View-View Model pattern)</li>
-  <li>
-    <p>Third-party libraries (Zend Framework 1, Zend Framework 2, Symfony)</p>
-  </li>
-  <li>
-    <p>Coding standards PSR-0 (autoloading standard), PSR-1 (basic coding standards), and PSR-2 (coding style guide), PSR-3, PSR-4</p>
-  </li>
   <li>Composer (dependency management package for PHP)</li>
 </ul>
 
-<p><b>Optional stack components</b> include:</p>
+<h3 id="database">Database</h3>
+
+<ul>
+  <li>MySQL</li>
+  <li>MySQL Percona</li>
+</ul>
+
+<h3 id="http-accelerator">HTTP accelerator</h3>
+
+<ul>
+  <li>Varnish</li>
+</ul>
+
+<h3 id="cache-storage">Cache Storage</h3>
+
+<ul>
+  <li>Redis</li>
+  <li>Memcache</li>
+</ul>
+
+<h3 id="search">Search</h3>
+
+<ul>
+  <li>Solr 4.x (Magento Enterprise Edition only)</li>
+  <li>Elasticsearch 1.7, 2.0 and 2.1 (Magento Enterprise Edition version 2.1.x only)</li>
+</ul>
+
+<h3 id="additional-technologies">Additional technologies</h3>
+
+<ul>
+  <li>HTML5</li>
+  <li>CSS3 (LESS CSS pre-processor)</li>
+  <li>jQuery (primary JavaScript library)</li>
+  <li>RequireJS (library that helps load JavaScript resources on demand)</li>
+  <li>Knockout.js (simplifies JavaScript UIs with the Model-View-View Model pattern)</li>
+  <li>Third-party libraries (Zend Framework 1, Zend Framework 2, Symfony)</li>
+  <li>Coding standards PSR-0 (autoloading standard), PSR-1 (basic coding standards), and PSR-2 (coding style guide), PSR-3, PSR-4</li>
+</ul>
+
+<h3 id="optional-stack-components">Optional stack components</h3>
 
 <ul>
   <li>Varnish (caching)</li>
   <li>Redis (used for page caching)</li>
   <li>Solr (search engine)</li>
+  <li>Elasticserach (search engine)</li>
 </ul>
 
-<p>Magento is <b>compatible with but not supported</b> for:</p>
+<p>Magento is <em>compatible with but not supported</em> for:</p>
 
 <ul>
   <li>HHVM 3.9 PHP interpreter</li>
@@ -922,10 +906,9 @@
 
 <p>Magento also provides a automated testing suites that include unit, integration, functional and performance test scripts, as well as JavaScript tests and tools for static code analysis. Components include PHPUnit for the unit test framework and Selenium for the functional test framework.</p>
 
-<p>This framework is located in <code>dev/tests</code>. The functional testing framework <code>mtf</code> can be found in a <a href="https://github.com/magento/mtf">separate repository</a>. For more information, see the <a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing Framework</a> guide.</p>
+<p>This framework is located in the <code>dev/tests</code> directory. The functional testing framework <code>mtf</code> can be found in a <a href="https://github.com/magento/mtf">separate repository</a>. For more information, see the <a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing Framework</a> guide.</p>
 
-<h2>Related topics</h2>
-
+<h4 id="related-topics">Related topics</h4>
 <p><a href="/guides/v2.0/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></p>
 
 
