@@ -18,7 +18,7 @@ Magento UI components are implemented as a standard module and can be found unde
 Components are responsible for rendering result page fragments and providing/supporting further interactions of JavaScript components and server.
 
 
-###General structure
+### General structure
 In Magento 2 there are basic and secondary UI components. 
 
 Basic components are: 
@@ -51,7 +51,7 @@ And concrete instances of the components each in separate XML configuration file
 
 `<your module root dir>/<vendor>/<module>/view/<area>/ui_component/<component_instance_name>.xml`
 
-###Configuration
+### Configuration
 
 Extension developers cannot introduce new components but can customize existing ones locally. 
 

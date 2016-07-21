@@ -57,6 +57,6 @@ However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder
   <p>The Data Migration Tool has special handler \Migration\Handler\Timezone for transforming time to different time zone. Using it you can change time for some fields of database. These fields can be specified in your map.xml file with offset parameter.</p>
 </div>
 
-###Related topics
+### Related topics
 
 * <a href="{{page.baseurl}}migration/migration-migrate-after.html">After migration</a>

@@ -30,7 +30,7 @@ Use this pattern when user needs to sign into the system.
 
 <h3 id="interaction">Interaction and Behavior</h3>
 
-####General:
+#### General:
 
 The user may “tab” to navigate the form in the following order:
 
@@ -40,7 +40,7 @@ Third tab = focus on “Sign in” button.
 Fourth tab = focus on hyperlink (“Forgot your password?”)
 Fifth tab = return to top of the order.
 
-####Initial state:
+#### Initial state:
 
 In its initial state the sign-in module consists of 
 
@@ -51,7 +51,7 @@ In its initial state the sign-in module consists of
 
 <img src="img/Sign-in_initial.png">
 
-####Error state:
+#### Error state:
 
 In the event that invalid credentials are submitted the sign-in module consists of 
 
@@ -64,7 +64,7 @@ typed by the user and be the active field and the password field will be blank
 <img src="img/Sign-in_error.png">
 
 
-####Password retrieval:
+#### Password retrieval:
 
 If the user opts to retrieve their password via the hyperlink (“Forgot your password?”) the sign-in module will display 
 
@@ -76,7 +76,7 @@ If the user opts to retrieve their password via the hyperlink (“Forgot your pa
 <img src="img/Sign-in_password-retrieval.png">
 
 
-####Confirmation of password retrieval:
+#### Confirmation of password retrieval:
 
 Once a user submits their email address to retreive their password, the module will provide a confirmation on the action via text in the module. 
 * the title **Password Help** in the style of the Welcome message from the initial state 
@@ -85,7 +85,7 @@ Once a user submits their email address to retreive their password, the module w
 
 <img src="img/Sign-in_password-retrieval_confirmation.png">
 
-####Error of password retrieval:
+#### Error of password retrieval:
 
 In the event that the user enters an invalid email address, either by mistyping or by entering an unregistered email address, the module will display an alert message.
 * the title Password Help in the style of the Welcome message from the initial state 
@@ -95,7 +95,7 @@ In the event that the user enters an invalid email address, either by mistyping 
 
 <img src="img/Sign-in_password-retrieval_error.png">
 
-####Successful sign-out:
+#### Successful sign-out:
 
 When the user signs out of the system they are presented with the sign-in module as follows
 
@@ -112,27 +112,27 @@ Suggested specifications.
 
 The module container should be centered in the browser and should be some percentage of the width viewport (about one-half) but no less that 450px on desktop and tablet form factors.
 
-####Initial state:
+#### Initial state:
 
 <img src="img/specs/Sign-in_initial-SPECS.png">
 
-####Error state:
+#### Error state:
 
 <img src="img/specs/Sign-in_error-SPECS.png">
 
-####Password Retrieval:
+#### Password Retrieval:
 
 <img src="img/specs/Sign-in_password-retrieval_SPECS.png">
 
-####Confirmation of password retrieval:
+#### Confirmation of password retrieval:
 
 <img src="img/specs/Sign-in_password-retrieval_confirmation-SPECS.png">
 
-####Error of password retrieval:
+#### Error of password retrieval:
 
 <img src="img/specs/Sign-in_password-retrieval_error-SPECS.png">
 
-####Successful sign-out:
+#### Successful sign-out:
 
 <img src="img/specs/Sign-in_successful-signout-SPECS.png">
 

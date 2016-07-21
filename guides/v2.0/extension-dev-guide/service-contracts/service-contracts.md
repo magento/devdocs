@@ -9,7 +9,7 @@ version: 2.0
 github_link: extension-dev-guide/service-contracts/service-contracts.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html
 ---
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 
 <p>Magento is a modular system that enables third-party developers to customize and overwrite core parts of its framework. This flexibility, however, comes at a price.</p>
@@ -36,7 +36,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-contra
    Eventually, you will be able to use different storage technologies for different data collections. For example, you could use a NoSQL database to replace product tables.
 </p>
 
-##Using the @api tag
+## Using the @api tag
 
 Backward compatibility can be indicated by the use of `@api`. For more information, see <a href="{{page.baseurl}}extension-dev-guide/backward-compatibility.html">Backward compatibility</a>.
 

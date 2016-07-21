@@ -25,27 +25,27 @@ Patterns libraries are designed to evolve over time, never going out of date. Ch
 <br> <br>
 Find more details about the Admin Design Pattern Library in the following topic:
 
-####Container
+#### Container
 <a href="containers/staticContentContainer/contentContainer.html">Static Content Container</a><br>
 <a href="containers/slideouts-modals-overlays/slideouts-modals-overalys.html">Slide-out Panels, Modal Windows, and Overlays</a><br>
 <a href="containers/tabs/tabs.html">Tabs</a><br>
 
-####Controls
+#### Controls
 <a href="controls/buttons/buttons.html">Buttons</a><br>
 <a href="controls/button-bar/button-bar.html">Button Bar</a>
 
-####Displaying and Dealing with Data
+#### Displaying and Dealing with Data
 <a href="displaying-data/tile/tile.html">Tile</a><br>
 <a href="filters/data-table-filters/filtering.html">Filters</a><br>
 <a href="displaying-data/datatable/datatable.html">Data Table</a><br>
 <a href="displaying-data/tree/tree.html">Tree</a><br>
 
 
-####Feedback to User
+#### Feedback to User
 <a href="feedbackToUser/progressIndicator/progressIndicator.html">Progress Indicator</a>
 
 
-####Getting User Input
+#### Getting User Input
 <a href="getting-user-input/form_elements/form_elements.html">Form Elements</a><br>
 <a href="getting-user-input/image_uploader/image_uploader.html">Image Uploader</a><br>
 <a href="getting-user-input/date_time_selector/date_time_selector.html">Date and Time Selector</a>
@@ -53,17 +53,17 @@ Find more details about the Admin Design Pattern Library in the following topic:
 <a href="getting-user-input/select_from_list/select_from_list.html">Select From List</a>
 
 
-####Navigation
+#### Navigation
 <a href="navigation/links/links.html">Links</a><br>
 <a href="navigation/wizard/wizard.html">Wizard</a><br>
 
 
-####Templates
+#### Templates
 <a href="templates/address-form/address-form.html">Address Form</a><br>
 <a href="templates/sign-in-form/sign-in-form.html">Sign In Form</a><br>
 
 
-####General
+#### General
 <a href="general/accessibilityguideline/accessibilityGuideline.html">Accessibility Guidelines</a><br>
 
 

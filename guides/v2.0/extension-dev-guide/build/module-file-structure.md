@@ -10,7 +10,7 @@ github_link: extension-dev-guide/build/module-file-structure.md
 redirect_from: /guides/v2.0/extension-dev-guide/module-file-structure.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 {:.no_toc}
 
 In this section, we go over the different file structures for the component types. The Magento application looks for the files that make up a component *including configuration files* in particular places inside the component file structure. Follow the predefined file structures for the component type you are developing to ensure that it works as expected.

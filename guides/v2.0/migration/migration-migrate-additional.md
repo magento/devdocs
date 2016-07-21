@@ -10,7 +10,7 @@ github_link: migration/migration-migrate-additional.md
 
 ---
 
-##Additional Info
+## Additional Info
 
 Some existing behaviour and logic from Magento 1 was implemented in a different way in Magento 2. The Data Migration Tool takes care of it.
 

@@ -10,7 +10,7 @@ github_link: ext-best-practices/extension-coding/observers-bp.md
 
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 {:.no_toc}
 
 * TOC

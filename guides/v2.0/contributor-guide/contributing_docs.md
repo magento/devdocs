@@ -136,7 +136,7 @@ The .md (Markdown) file's metadata is a set of key-value pairs (where the key is
 github_link: install-gde/continue.md
     ---	
 
-###Definitions
+### Definitions
 Refer to the following table for a description of each key value pair in the metadata section of the .md file.
 
 <table style="width:100%">

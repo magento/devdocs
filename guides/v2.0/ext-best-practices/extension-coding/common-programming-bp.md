@@ -10,7 +10,7 @@ github_link: ext-best-practices/extension-coding/common-programming-bp.md
 
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 {:.no_toc}
 
 You should do your best to adhere to common programming best practices to reduce the amount of bugs and improve the quality and maintainability of your extensions. The following list of best practices addresses commonly reported issues found in third party extensions.

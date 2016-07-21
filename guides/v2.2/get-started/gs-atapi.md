@@ -1,0 +1,1 @@
+../../v2.1/get-started/gs-atapi.md

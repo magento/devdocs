@@ -12,7 +12,7 @@ github_link: ui-components/ui-form.md
 * TOC
 {:toc}
 
-##Overview
+## Overview
 Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. 
 
 The following are the components element, the constructor: `app\code\Magento\Ui\view\base\web\js\form\form.js`
@@ -27,7 +27,7 @@ The following components are used to extend the Form component:
 * Layout
 * Container
 
-##Component options
+## Component options
 
 * js_config -> deps - sets the dependency on component initialization
  
@@ -36,7 +36,7 @@ The following components are used to extend the Form component:
 * layout - configuration class meets the visualization component
     (See examples in 'Configuring' section)
 
-##Create an instance of the Form component
+## Create an instance of the Form component
 
 * Create configuration file for the instance (for example: customer_form.xml)
 
@@ -57,7 +57,7 @@ Example:
 </page>
 {% endhighlight %}
  
-##Configure the Form component
+## Configure the Form component
 
 Component could be configured in two ways:
 
@@ -139,7 +139,7 @@ To group components you can use the component container as in example below:
 </container>
 {% endhighlight %}
 
-##Creating Data Source 
+## Creating Data Source 
 
 You need to configure Component DataSource in order to provide data and meta information for Form Component.
 
@@ -199,13 +199,13 @@ Data provided by data source is shared and available for all components in the A
 
 Data Source is another UI Component that provides data in specific format which is shared among all UI Components.
 
-##Replacing
+## Replacing
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Replacing principles are the same for all UI Components.</p>
 </div>
 
-####Global replacement
+#### Global replacement
 
 To replace all instances of a UI Form with a custom implementation redefine link to a constructor in `definition.xml`.
 
@@ -221,7 +221,7 @@ To replace all instances of a UI Form with a custom implementation redefine link
 </form>
 {% endhighlight %}
 
-##Instance Replacement
+## Instance Replacement
 
 To replace one instance of a UI Form Component redefine link to a constructor in your module's form configuration file:
 
