@@ -32,7 +32,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support 
 <h4>New installations</h4>
 New users can now complete a full installation of Magento Community Edition 2.0.7 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
 
-#####<b>Download a new installation</b>#####
+##### <b>Download a new installation</b>#####
 
 1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
 
@@ -40,7 +40,7 @@ New users can now complete a full installation of Magento Community Edition 2.0.
 
 3.	Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ce" target="_blank">installation instructions</a>.
 
-#####<b>Install a new installation with Composer</b>#####
+##### <b>Install a new installation with Composer</b>#####
 
 1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
 
@@ -54,10 +54,10 @@ New users can now complete a full installation of Magento Community Edition 2.0.
 This section discusses how to upgrade to 2.0.7.
 
 
-#####<b>Upgrade using the Setup Wizard</b>#####
+##### <b>Upgrade using the Setup Wizard</b>#####
 Use the instructions in [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose 2.0.7.
 
-#####<b>Upgrade an existing installation from the GitHub repository</b>#####
+##### <b>Upgrade an existing installation from the GitHub repository</b>#####
 Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
 
 1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
@@ -65,7 +65,7 @@ Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-m
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
 
-#####<b>Upgrade using the command line</b>#####
+##### <b>Upgrade using the command line</b>#####
 To upgrade to 2.0.7 using the command line:
 
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.

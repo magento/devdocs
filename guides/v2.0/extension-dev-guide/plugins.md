@@ -11,7 +11,7 @@ redirect_from:
   - /guides/v1.0/extension-dev-guide/plugins.html
   - /guides/v1.0/config-guide/config/plugins.html
 ---
-##{{page.menu_title}}
+## {{page.menu_title}}
 {:.no_toc}
 
 * TOC

@@ -10,7 +10,7 @@ github_link: extension-dev-guide/build/module-load-order.md
 redirect_from: /guides/v2.0/extension-dev-guide/module-load-order.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 
 You may need to specify your component's dependency on other components or files from other components using your component's <a href="{{page.baseurl}}extension-dev-guide/build/create_component.html#add-component-xml">composer.json</a>. Further, you can specify a load order in your component's `module.xml` file using the `<sequence>` tag to ensure that needed files from other components are already loaded when your component loads.
@@ -27,7 +27,7 @@ If you know that your component's logic depends on something in another componen
 </div>
 
 
-###Examples
+### Examples
 
 Assume you have a component that needs a configuration file from another component:
 
@@ -53,7 +53,7 @@ If you do specify a component in `<sequence>`, make sure that you have also adde
   <p>Take care when using <code>&lt;sequence></code> in multiple components because it's possible to define circular dependencies. If you do, Magento aborts the installation when it detects the circular dependency.</p></span>
 </div>
 
-##Next
+## Next
 
 [Enable or disable your component]({{page.baseurl}}extension-dev-guide/build/enable-module.html)
 

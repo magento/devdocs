@@ -198,7 +198,7 @@ Use these messages to highlight or bring attention to a piece of information.
   <p>This is a tip callout. These can be used to provide useful tips or interesting fact on a topic.</p>
 </div>
 
-####Collapsible content
+#### Collapsible content
 You can use the collapsible content tag to shorten your documentation.
 
 <div class="bs-callout bs-callout-info">

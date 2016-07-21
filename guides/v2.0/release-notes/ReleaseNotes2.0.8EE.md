@@ -11,7 +11,7 @@ github_link: release-notes/ReleaseNotes2.0.8EE.md
 {:toc}
 
 
-##Magento Enterprise Edition 2.0.8
+## Magento Enterprise Edition 2.0.8
 We are pleased to present Magento Enterprise Edition 2.0.8. This release includes several functional fixes.
 
 
@@ -19,17 +19,17 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 
-###Fixed issues
+### Fixed issues
 
 
-####Installation and upgrade
+#### Installation and upgrade
 
 <!--- 45608 -->* You can now successfully uninstall Magento_CustomerBalanceSampleData.
 
 <!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running PHP 7.0.5. 
 
 
-####Product creation
+#### Product creation
 <!--- 53342 -->* Magento  no longer duplicates URL keys during the creation of a configurable product.
 
 <!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a> 
@@ -37,7 +37,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 
-####Miscellaneous
+#### Miscellaneous
 
 <!--- 52448 -->* Magento now correctly displays the customer address on the storefront. Previously,  when you selected a default billing address when creating a new customer account, Magento would not display the  address.
 
@@ -56,7 +56,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 55087 -->* Solr search now returns search results as expected from both English and Spanish stores. Previously, Solr returned results for the English site but not for the Spanish site. 
 
 
-###System requirements
+### System requirements
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports:
 
 * PHP 5.5.x, where x is 22 or greater
@@ -75,7 +75,7 @@ For more information, see
 
 
 
-##Migration toolkits
+## Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

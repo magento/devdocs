@@ -10,7 +10,7 @@ github_link: extension-dev-guide/build/XSD-XML-validation.md
 redirect_from: /guides/v2.0/extension-dev-guide/XSD-XML-validation.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 
 Each Magento module can contain XSD files for XML validation.
@@ -27,7 +27,7 @@ Magento supported URNs begin with `urn:magento`. Magento supports two XSD refere
   <p>You cannot change the XSD for any XML files provided with the Magento application.</p></span>
 </div>
 
-###Module XSD 
+### Module XSD 
 The syntax for the module XSD is a colon separated declaration. An example follows:
 
 `urn:magento:module:Magento_Flow:flows/content.xsd`
@@ -41,7 +41,7 @@ where
 
 
 
-###Framework XSD
+### Framework XSD
 The syntax for the framework XSD is a colon separated declaration. An example follows:
 
 `urn:magento:framework:Api/etc/extension_attributes.xsd
@@ -52,7 +52,7 @@ where
 * `Api/etc/extension_attributes.xsd` is the relative path to the framework&#8217;s directory.
 
 
-###Referencing a XSD from another XSD
+### Referencing a XSD from another XSD
 Use URN notation to reference schema from inside a XSD document:
 
 {% highlight XML %}
@@ -76,5 +76,5 @@ libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', '
 
 
 
-####Next
+#### Next
 [Name your component]({{page.baseurl}}extension-dev-guide/build/create_component.html)

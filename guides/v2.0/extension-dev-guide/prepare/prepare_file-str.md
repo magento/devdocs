@@ -13,7 +13,7 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/prepare_file-str.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 One of the first things you can do to get started with component development is to understand and set up the file system. Each type of component has a *different file structure*, although all components require certain files.
 

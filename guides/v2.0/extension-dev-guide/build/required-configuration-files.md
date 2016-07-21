@@ -13,7 +13,7 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/required-configuration-files.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 Each Magento 2 module has its own set of configuration files, gathered into the module's `etc` directory.  
 
@@ -26,7 +26,7 @@ Each Magento 2 module has its own set of configuration files, gathered into the 
 {% include php-dev/component-root.md %}
 
 
-##Use /etc for your configuration files  
+## Use /etc for your configuration files  
 
 Magento 2 looks for configuration information for each module in that module's `etc` directory. Depending on the needs of your module, you might have the following configuration files at the top level of your module's `etc` directory:
 
@@ -51,13 +51,13 @@ In addition to those files, a Magento 2 module also has nested configuration dir
 *	`<your module root dir>/etc/webapi_rest/`
 *	`<your module root dir>/etc/webapi_soap/`
 
-###Configuration files
+### Configuration files
 *	Configuration files that are in the top level of that module's `etc` directory are global to that component.
 *	Configuration files placed in subdirectories (`adminhtml`, `frontend`, `webapi_rest`, `webapi_soap`) apply only to those respective functional areas.
 
 
 
-###Tailor your configuration files for what your module does
+### Tailor your configuration files for what your module does
 
 
 The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to `etc/adminhtml/`, like:
@@ -78,6 +78,6 @@ If the module is a service that may call an API, or does some other work that is
 Keep in mind that you might be able to handle your module's configuration solely with configuration files at the top level of your module's `etc` directory, but the nested directory is a useful way to keep the configuration neatly compartmentalized.
 
 
-####Next
+#### Next
 
 [Create your component file structure]({{page.baseurl}}extension-dev-guide/build/module-file-structure.html)

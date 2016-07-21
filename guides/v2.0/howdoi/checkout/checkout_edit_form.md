@@ -116,7 +116,7 @@ In this file, add content similar to the following:
 
 If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following: 
 
-1. Delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories.
+1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
 2. Reload the pages.
 
 

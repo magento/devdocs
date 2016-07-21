@@ -14,11 +14,11 @@ redirect_from:
   - /guides/v2.0/mktpl-quickstart/intro-moreinfo.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 The PHP Developer Guide contains information for developers who want to know more about developing or modifying Magento components. With this knowledge you can extend or customize any of the existing components in the Magento application. You can also create components that introduce new functionality and distribute them to merchants.
 
-##Magento components
+## Magento components
 
 The Magento application is made up of *Modules*, *Themes*, and *Language Packages*:
 

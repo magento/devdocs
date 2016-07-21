@@ -14,13 +14,13 @@ github_link: mtf/mtf_entities/mtf_dataset.md
 * TOC
 {:toc}
 
-##Data set overview {#overview}
+## Data set overview {#overview}
 
 A data set contains data used by a [test case] and [constraints].
 A data set can have several variations.
 Each variation has constraints that are called at the end of the test flow.
 
-##Data set structure {#structure}
+## Data set structure {#structure}
 
 A data set is an XML file that contains test variations for a test case.
 
