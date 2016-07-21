@@ -9,7 +9,7 @@ version: 2.0
 github_link: extension-dev-guide/prepare/lifecycle.md
 ---
 
-##{{page.title}}
+## {{page.title}}
 {:.no_toc}
 
 * TOC

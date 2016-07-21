@@ -40,7 +40,7 @@ Example integration:
 </listing>
 {% endhighlight %}
 
-####Configuration
+#### Configuration
 
 The following configuration can be passed in arguments:
 
@@ -50,7 +50,7 @@ The following configuration can be passed in arguments:
 * Default caption
 * Caption if selected more then one elements
 
-####Navigation
+#### Navigation
 
 The UI-select component supports keyboard navigation.
 
@@ -62,7 +62,7 @@ Navigation keys:
 * PageUp key: sets focus to previous option
 * PageDown key: sets focus to next option
 
-####UI-select JS component structure
+#### UI-select JS component structure
 
 * Component elements
     
@@ -215,7 +215,7 @@ Navigation keys:
 </tbody>
 </table>
 
-####Integration
+#### Integration
 
 Here is an example of configuration of select component. It is used as column filter and has 3 levels of options, with not selectable label for every level, without checkboxes:
 

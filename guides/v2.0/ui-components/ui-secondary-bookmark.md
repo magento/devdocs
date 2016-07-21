@@ -77,7 +77,7 @@ PK - increment Id
 
 UX1 - unique key
 
-####Bookmarks JS Component Structure
+#### Bookmarks JS Component Structure
 
 Bookmark component consists of
 

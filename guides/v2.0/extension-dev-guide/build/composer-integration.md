@@ -12,13 +12,13 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/composer-integration.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 {:.no_toc}
 
 * This line is a placeholder to generate the table of contents
 {:toc}
 
-##Overview
+## Overview
 [Composer](https://getcomposer.org/){:target="_blank"} is a dependency manager for PHP. Magento 2 uses Composer to package components and product editions.
 
 Some third-party components that the Magento system uses might not be present in the code base. Instead, they are listed as dependencies in the root `composer.json` file. In addition, the [Component Manager]({{page.baseurl}}comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies.

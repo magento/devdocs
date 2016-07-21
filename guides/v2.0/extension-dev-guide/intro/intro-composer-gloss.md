@@ -13,7 +13,7 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/intro-composer-gloss.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 #### List of terms
 

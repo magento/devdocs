@@ -12,12 +12,12 @@ redirect_from:
   - /guides/v2.0/mktpl-quickstart/dev-test.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 * TOC
 {:toc}
 
-##Unit and Integration Tests {#test-unit}
+## Unit and Integration Tests {#test-unit}
 
 Run the PHPUnit based Magento unit and integration tests.
 For more information see the <a href="{{page.baseurl}}test/testing.html">Magento Testing Overview</a>
@@ -60,7 +60,7 @@ One way to do this follows:
 
 
 
-##More information
+## More information
 For more information on testing in PHP and validating Magento components, see the following:
 
 * [Validating Magento Extensions](http://www.gorillagroup.com/trending/insight/validating-magento-extensions-phpunit/){:target="_blank"}

@@ -46,7 +46,7 @@ Example: `Magento/Sales/view/adminhtml/ui_component/sales_order_grid.xml`
 
 By default Magento allows CSV and Excel XML export data formats.
 
-####How to add new export format
+#### How to add new export format
 
 To add new export format:
 

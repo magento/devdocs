@@ -1,0 +1,1 @@
+../../../v2.1/howdoi/troubleshoot/reset_theme.md

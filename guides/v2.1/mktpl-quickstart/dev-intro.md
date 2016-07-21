@@ -10,7 +10,7 @@ version: 2.1
 github_link: mktpl-quickstart/dev-intro.md
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 The following topics help you get started developing your Magento component:
 

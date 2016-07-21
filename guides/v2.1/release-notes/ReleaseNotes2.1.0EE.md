@@ -12,7 +12,7 @@ github_link: release-notes/ReleaseNotes2.1.0EE.md
 *	TOC
 {:toc}
 
-##Magento Enterprise Edition 2.1.0
+## Magento Enterprise Edition 2.1.0
 
   
 We are pleased to present Magento Enterprise Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
@@ -24,7 +24,7 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
   <p>This version of the Magento Enterprise Edition 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
 </div>
 
-###Highlights
+### Highlights
 Magento Enterprise Edition 2.1.0 includes several new and exciting features:
 
 * **Content Staging and Preview**  improves sales and productivity by enabling merchants to bring fresh and exciting shopping experiences to market faster than ever before. Marketers and merchandisers can easily create, preview, and schedule a wide range of content updates without involving IT. They can make updates to products, categories, CMS content, promotions, and pricing, and can preview these changes by date or store view to ensure a flawless shopper experience. User-friendly dashboards provide visibility into all scheduled site changes so merchants can easily coordinate campaigns to maximize their sales impact. Updates are automatically published and removed at scheduled times for greater efficiency.
@@ -38,12 +38,12 @@ Magento Enterprise Edition 2.1.0 includes several new and exciting features:
 
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
 
-###Security enhancements
+### Security enhancements
 This release includes enhancements to improve the security of your Magento application. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 [Contact us](https://magento.com/company/contact-us){:target="_blank"} for more information.
 
-###Known issues
+### Known issues
 Magento 2.1.0 GA includes the following known issues:
 
 <!--- 54447-->* A developer who attempts to upgrade the Magento EE software using the commands `git pull` followed by `composer update` sees the error `Fatal error: Cannot use Composer\Installer as Installer because the name is already in use`.
@@ -59,7 +59,7 @@ To work around this issue, run the following commands in the order shown:
 * <i>Known issue <a href="https://github.com/magento/magento2/issues/5025" target="_blank"> (GITHUB-5025)</a>  removed.</i>
 
 
-###Fixed issues
+### Fixed issues
 
 
 
@@ -1268,7 +1268,7 @@ hub.com/magento/magento2/issues/3605" target="_blank"> (GITHUB-3605)</a>  remove
 
 
 
-###System requirements
+### System requirements
 Our technology stack is built on PHP and MySQL. Magento 2.1.0 supports:
 
 * PHP 5.6

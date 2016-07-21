@@ -54,6 +54,6 @@ where
   <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
 </div>
 
-###Related topics
+### Related topics
 
 * <a href="{{page.baseurl}}migration/migration-migrate-data.html">Migrate data</a>

@@ -11,7 +11,7 @@ github_link: extension-dev-guide/build/build.md
 redirect_from: /guides/v2.0/extension-dev-guide/build.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 Building your component involves laying out the file structure, creating the necessary configuration files, building out any needed API interfaces and services, and adding any frontend parts needed for your component.
 

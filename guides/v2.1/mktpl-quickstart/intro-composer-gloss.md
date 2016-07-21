@@ -10,7 +10,7 @@ version: 2.1
 github_link: mktpl-quickstart/intro-composer-gloss.md
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 ### Component
 We refer to what you're coding as *components*. (Composer refers to them as <a href="https://getcomposer.org/doc/05-repositories.md#packages" target="_blank">*packages*</a>; the terms component and package are equivalent.) A Magento component can be classified into the following *types*:

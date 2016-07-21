@@ -88,10 +88,10 @@ This is an alternative view to the timeline in data table format. The functional
 
 <h3 id="styling">Styling</h3>
 
-####Updates schedule:
+#### Updates schedule:
 <img src="img/styles/style_staging_dashboard.jpg">
 
-####Update Summary, in Overlay Window:
+#### Update Summary, in Overlay Window:
 <img src="img/styles/style-summary.jpg">
 
 

@@ -10,7 +10,7 @@ version: 2.1
 github_link: mktpl-quickstart/dev-filesys.md
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 One of the first things you can do to get started with component development is to understand and set up the file system. Each type of component has a *different file structure*, although all components require certain files.
 
