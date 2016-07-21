@@ -45,6 +45,11 @@ Designing and writing your code to be replaceable is just as important as making
 
 It is common practice to replace parts of your codebase with newer and better pieces as bugs are found or newer strategies become available. Writing replaceable code in your codebase makes this practice easier and more efficient.
 
+### Avoid creating helper classes
+Helper or utility classes are classes filled with static methods that do not quite fit anywhere else. These classes are considered an antipattern and go against the principles of object oriented programming. If you have `ClassA` and a `ClassAHelper` with static functions that work on `ClassA`, you should consider refactoring those functions into `ClassA`.
+
+A helper class that functions as a catch-all for random methods breaks the single responsibility principle because it is an attempt to solve multiple problems in a single class. You should refactor your code and move those functions into the appropriate classes they work on.
+
 ### Be consistent with case and naming conventions
 You should be consistent in your naming conventions for files, folder names, Classes, and Methods. Following standard conventions will make your code look professional and easy to read.
 
