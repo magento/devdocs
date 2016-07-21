@@ -11,7 +11,7 @@ github_link: config-guide/mq/config-mq22.md
 ## {{page.menu_title}}
 {:.no_toc}
 
-**Note to reviewer: Is the following note still true?**
+_**Note to reviewer: Is the following note still true?**_
 
 <div class="bs-callout bs-callout-warning">
   <p>The message queue topology can only be configured after Magento Community Edition has been installed and before Magento Enterprise Editions has been installed. </p>
@@ -48,11 +48,11 @@ The `queue_consumer.xml` file contains the following elements with the following
 | ---------------- | ----------- |
 | name (required)  | The name of the consumer. The value should be the same as the magic method used as a callback. |
 | queue (required) | Defines the queue name to send the message to. This value is used in the `queue_topology.xml` file. |
-| handler          | The method within a specified class that processes the message. |
+| handler          | The method within a specified class that processes the message. The value must be specified in the format `<Vendor>\Module\<ServiceName>::<methodName>`.|
 | consumerInstance | The path to a Magento class that consumes the message. |
 | connection       | Must be `rabbitmq` or other value specified in the `connection` parameter of a publisher in the `queue_publisher.xml` file. |
 | max_messages     | Specifies the maximum number of messages to consume.|
-| disabled         | Determines whether this queue is disabled. The default value is `false`. |
+
 
 #### Example
 {:.no_toc}
