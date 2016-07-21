@@ -35,25 +35,25 @@ Each step is described further.
 ### Create a theme directory {#create_dir}
 In the `app/design/adminhtml` directory create a new `<Vendor>/<admin_theme>` directory.
 
-### Declare your theme {#declare_theme}
+### Add a declaration `theme.xml` {#declare_theme}
 
 In the theme directory, add `theme.xml` containing at least the theme name and the parent theme name (if the theme [inherits]({{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html) from one). We recommend you to inherit from the default Magento Admin theme: `Magento/backend`.
 
 Add or copy from an existing `theme.xml` to your theme directory `app/design/adminhtml/<Vendor>/<admin_theme>`.
 
-Configure it using the following example:
+Configure it using the following example (replace placeholders with your theme information):
 
 {%highlight xml%}
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
-     <title>New theme</title> <!-- your theme's name -->
-     <parent>Magento/backend</parent> <!-- the parent theme -->
+     <title>%Theme title%</title> <!-- your theme's name -->
+     <parent>%vendor_dir%/%parent_theme_dir%</parent> <!-- the parent theme. Example: Magento/backend -->
  </theme>
 
 {%endhighlight%}
 
 ### Add `registration.php` {#add_registry}
 In your theme directory, create a `registration.php` file.
-Use the registration.php in the Magento/backend theme as example:
+In this file, add the following code, having replaced placeholders with your theme information:
 
 {%highlight php%}
 <?php
@@ -63,19 +63,19 @@ Use the registration.php in the Magento/backend theme as example:
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::THEME,
-    'adminhtml/Magento/backend',
+    'adminhtml/%vendor_dir/your_theme_dir%', // Example: 'adminhtml/Magento/backend'
     __DIR__
-);
+);  
 {%endhighlight%}
 
-### Make your theme a Composer package (optional) {#make_composer}
+### Optionally add `composer.json` {#make_composer}
 See the [Make your theme a Composer package (optional)]({{site.gdeurl}}frontend-dev-guide/themes/theme-create.html#fedg_create_theme_composer)
 
 
 ### Admin theme logo (optional) {#logo}
 
-In the default `Magento/backend` theme the `lib/web/images/magento-logo.svg` is used as theme logo. 
-To override this logo in your theme, in your theme directory, create a `web/images` sub-directory, and add your custom file named `magento-logo.svg`. 
+In the default `Magento/backend` theme `lib/web/images/magento-logo.svg` is used as theme logo. 
+To override it, in your theme directory, create a `web/images` sub-directory, and add your custom file named `magento-logo.svg`. 
 If you want to use the file with other name and/or format, you need to additionally declare it as described in [Declaring theme logo]({{site.gdeurl}}frontend-dev-guide/themes/theme-create.html#logo_declare).
 
 ## Apply the Admin theme
