@@ -22,7 +22,8 @@ Magento’s highly modular structure includes the following open-source technolo
 
 <b>PHP</b>
 
-*  5.5, 5.6x, 7.0
+*  5.5x (only in Community and Enterprise Edition < 2.1), 
+*  5.6x, 7.0
 
 <b>Database</b>
 
@@ -48,6 +49,7 @@ Magento’s highly modular structure includes the following open-source technolo
 <b>Search</b>
 
 * Solr 4.x
+* Easticsearch 1.7, 2.0 and 2.1 (Magento Enterprise Edition version 2.1.x)
 
 
 <b>Additional technologies</b>
@@ -56,7 +58,7 @@ Magento’s highly modular structure includes the following open-source technolo
 
 * CSS3 (LESS CSS pre-processor)
 
-* JQuery (primary JavaScript library)
+* jQuery (primary JavaScript library)
 
 * RequireJS (library that helps load JavaScript resources on demand)
 * Knockout.js (simplifies JavaScript UIs with the Model-View-View Model pattern)
