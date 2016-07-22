@@ -716,14 +716,14 @@
 
 <ul>
   <li>Globally: using any module’s <a href="/guides/v2.1/ui-library/ui-definition.html"><code>view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file are applied to all component’s instances.</li>
-  <li>Locally: using concrete component instance configuration, such as <code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></li>
+  <li>Locally: using concrete component instance configuration, such as <code>&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></li>
 </ul>
 
 <p>To enable pagination for the listing component, the pagination component is declared as a child of the listing component in component instance configuration.</p>
 
 <p>Example:</p>
 
-<p><code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
+<p><code>&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;page_listing_top&quot;</span><span class="nt">&gt;</span>

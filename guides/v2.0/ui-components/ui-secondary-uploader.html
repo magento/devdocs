@@ -641,7 +641,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 22 July 2016 (PDT)</i></p>
 		<h2 id="filter">Overview</h2>
 
 <p>UI File Uploader component is an adapter for <a href="https://github.com/blueimp/jQuery-File-Upload/wiki">jQuery-File-Upload</a> plugin used in Magento. Component is used to integrate file upload functionality with UI components.</p>
@@ -649,10 +649,10 @@
 <h2 id="elements">Component elements</h2>
 
 <ul>
-  <li>Constructor: <code>app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js</code></li>
+  <li>Constructor: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/form/element/file-uploader.js</code></li>
   <li>JQuery file upload plugin: <code>jquery/fileUploader/jquery.fileupload-fp</code></li>
-  <li>Default template: <code>app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html</code></li>
-  <li>Preview template: <code>app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html</code></li>
+  <li>Default template: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/form/element/uploader/uploader.html</code></li>
+  <li>Preview template: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/form/element/uploader/preview.html</code></li>
 </ul>
 
 <h2 id="structure">Component options</h2>
@@ -671,9 +671,9 @@
     <td>Path to the files' preview template</td>
     <td>No</td>
     <td>String</td>
-    <td>app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html
-</td>
-</tr>
+    <td><Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html
+&lt;/td&gt;
+&lt;/tr&gt;
 <tr>
     <td>maxFileSize</td>
     <td>Defines maximum size of a file (in bytes</td>
@@ -716,12 +716,13 @@
     <td>String</td>
     <td>null</td>
 </tr>
-</tbody>
-</table>
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 <h2 id="example">Integration</h2>
 
-<p>Here is an example of how File Uploader component integrates with <a href="/guides/v2.0/ui-components/ui-form.html">Form</a> component:</p>
+Here is an example of how File Uploader component integrates with <a href="/guides/v2.0/ui-components/ui-form.html">Form</a> component:
+
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
     ...
@@ -742,6 +743,7 @@
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
+</Magento_Ui_module_dir></td></tr></tbody></table>
 
 
 		</div>

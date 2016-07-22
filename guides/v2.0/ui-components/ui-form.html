@@ -641,7 +641,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 22 July 2016 (PDT)</i></p>
 		<ul id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
   <li><a href="#component-options" id="markdown-toc-component-options">Component options</a></li>
@@ -652,7 +652,7 @@
 <h2 id="overview">Overview</h2>
 <p>Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity.</p>
 
-<p>The following are the components element, the constructor: <code>app\code\Magento\Ui\view\base\web\js\form\form.js</code></p>
+<p>The following are the components element, the constructor: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/form/form.js</code></p>
 
 <h4>Related UI components</h4>
 
@@ -711,11 +711,11 @@
 <p>Component could be configured in two ways:</p>
 
 <ul>
-  <li>globally: using any module’s <code>view//ui_component/etc/definition.xml</code> file. All settings declared in     this file will be applied to all component’s instances</li>
-  <li>locally: using concrete component instance configuration, such as <code>&lt;your module root dir&gt;/Magento/Customer/view/base/ui_component/customer_form</code></li>
+  <li>globally: using any module’s <code>view/ui_component/etc/definition.xml</code> file. All settings declared in this file will be applied to all component’s instances</li>
+  <li>locally: using concrete component instance configuration, such as <code>&lt;Magento_Customer_module_dir&gt;/view/base/ui_component/customer_form</code></li>
 </ul>
 
-<p>Create configuration file: <code>&lt;your module root dir&gt;/Magento/Customer/view/base/ui_component/customer_form.xml</code></p>
+<p>Create configuration file: <code>&lt;Magento_Customer_module_dir&gt;/view/base/ui_component/customer_form.xml</code></p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
