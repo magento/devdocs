@@ -17,7 +17,7 @@ redirect_from: /guides/v2.0/ui-library/ui-form.html
 ## Overview
 Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. 
 
-The following are the components element, the constructor: `<Magento_Ui_module_dir>/viewbase/web/js/form/form.js`
+The following are the components element, the constructor: `<Magento_Ui_module_dir>/view/base/web/js/form/form.js`
 
 <h4>Related UI components</h4>
 
