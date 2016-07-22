@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Entities of the Functional Testing Framework</title>
+	<title>Functional Testing Framework Features</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/mtf/mtf_entities/mtf_testcase.html">
+	<link rel="canonical" href="//guides/v2.0/mtf/features.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -165,9 +165,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Entities of the Functional Testing Framework</h1>
+		<h1 class="page-heading">Functional Testing Framework Features</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/mtf_entities/mtf_testcase.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/features.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -501,7 +501,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/features.html">FEATURES</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/mtf/features.html">FEATURES</a></li>
 									
 								
 
@@ -603,7 +603,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
 
 									
 
@@ -782,168 +782,20 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 11 July 2016 (PDT)</i></p>
-		<h2>Test case</h2>
+			<p align="right"><i>Updated: 22 July 2016 (PDT)</i></p>
+		<h2 id="about-features">About features</h2>
 
-<ul id="markdown-toc">
-  <li><a href="#mtf_testcase_overview" id="markdown-toc-mtf_testcase_overview">Test case overview</a></li>
-  <li><a href="#structure" id="markdown-toc-structure">Test case structure</a>    <ul>
-      <li><a href="#docblock" id="markdown-toc-docblock">Docblock</a></li>
-      <li><a href="#prepare-method" id="markdown-toc-prepare-method"><code>__prepare()</code> (optional)</a></li>
-      <li><a href="#inject-method" id="markdown-toc-inject-method"><code>__inject()</code> (optional)</a></li>
-      <li><a href="#test-method" id="markdown-toc-test-method"><code>test()</code> (required)</a></li>
-      <li><a href="#teardown-method" id="markdown-toc-teardown-method"><code>tearDown()</code> (optional)</a></li>
-    </ul>
-  </li>
-  <li><a href="#flow" id="markdown-toc-flow">Test case flow</a></li>
-  <li><a href="#how-to-create" id="markdown-toc-how-to-create">How to create a test case</a></li>
-</ul>
-
-<h2 id="mtf_testcase_overview">Test case overview</h2>
-
-<p>The Magento Functional Testing Framework supports two types of functional tests:</p>
+<p>The Functional Testing Framework is:</p>
 
 <ul>
-  <li>Injectable test: the main type of the <abbr title="Functional Testing Framework">FTF</abbr> test that uses XML <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a> files as inputs</li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a>: supports a Magento modularity and enables you to inject one step into another test</li>
+  <li>Flexible, because of modularity support.</li>
+  <li>Fast, because of parallel execution flow.</li>
+  <li>Informative, because of reporting tool.</li>
+  <li>Suitable, because of test suits.</li>
+  <li>Compatible, because of web-driver selection.</li>
 </ul>
 
-<p>This topic discusses the injectable test only.</p>
-
-<h2 id="structure">Test case structure</h2>
-
-<p>A test case class extends the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/TestCase/Injectable.php">Mtf\TestCase\Injectable</a> class. It contains one <code>test()</code> method and can optionally include <code>__prepare()</code>, <code>__inject()</code>, and <code>tearDown()</code> methods.</p>
-
-<h3 id="docblock">Docblock</h3>
-
-<p>All out-of-the-box test cases contain description of a test flow at the beginning of a code. The description consists of the test steps and preconditions. Preconditions are the conditions to be performed before steps execution.
-Usage of docblock is a good practice for your new tests. See <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php">Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest</a> class as an example.</p>
-
-<h3 id="prepare-method"><code>__prepare()</code> (optional)</h3>
-
-<p>The <code>__prepare()</code> method can be useful to prepare the unchangeable data that is repeatedly used for different test variations. The most popular use case is to create a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a> or a configuration setup that is used in the test.</p>
-
-<p>This method is called one time only during the test launch and is optional to use. <code>__prepare</code> can return an array of arguments which can be used as arguments in the <code>test()</code> method of a test case and the <code>processAssert()</code> method in <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a>. The following example creates and returns the <code>$customer</code> fixture.</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">__prepare</span><span class="p">(</span><span class="nx">Customer</span> <span class="nv">$customer</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nv">$customer</span><span class="o">-&gt;</span><span class="na">persist</span><span class="p">();</span>
-    <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;customer&#39;</span> <span class="o">=&gt;</span> <span class="nv">$customer</span><span class="p">];</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>A returned argument <code>$customer</code> is available in the test and in <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a>.</p>
-
-<h3 id="inject-method"><code>__inject()</code> (optional)</h3>
-
-<p>The <code>__inject()</code> method is used to inject data in a test (usually to initialize a page). For an example:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">__inject</span><span class="p">(</span>
-    <span class="nx">CatalogProductIndex</span> <span class="nv">$productGrid</span><span class="p">,</span>
-    <span class="nx">CatalogProductEdit</span> <span class="nv">$editProductPage</span>
-<span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">productGrid</span> <span class="o">=</span> <span class="nv">$productGrid</span><span class="p">;</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">editProductPage</span> <span class="o">=</span> <span class="nv">$editProductPage</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>This method is run before each <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">variation</a> test started. Returned arguments from this method are available in <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a> and in the test as well.</p>
-
-<h3 id="test-method"><code>test()</code> (required)</h3>
-
-<p>The <code>test()</code> method must contain the test steps described in a <a href="#docblock">docblock</a>. The returned arguments from this method are available in <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a>. This method is run for each variation in a <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a>. The <code>test()</code> method is required.</p>
-
-<p>In the following example, the test includes preconditions and test steps. Preconditions contain a logic of different scenarios about creating a product (depending on the category state). Test steps are the following:</p>
-
-<ul>
-  <li>opening of the product creation grid page</li>
-  <li>searching by the <code>sku</code> parameter and opening of the product</li>
-  <li>editing of the found product</li>
-  <li>saving of the edited product</li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Run update product simple entity test.</span>
-<span class="sd"> *</span>
-<span class="sd"> * @param CatalogProductSimple $initialProduct</span>
-<span class="sd"> * @param CatalogProductSimple $product</span>
-<span class="sd"> * @param string $configData</span>
-<span class="sd"> * @return array</span>
-<span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="nx">CatalogProductSimple</span> <span class="nv">$initialProduct</span><span class="p">,</span> <span class="nx">CatalogProductSimple</span> <span class="nv">$product</span><span class="p">,</span> <span class="nv">$configData</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">configData</span> <span class="o">=</span> <span class="nv">$configData</span><span class="p">;</span>
-    <span class="c1">// Preconditions</span>
-    <span class="nv">$initialProduct</span><span class="o">-&gt;</span><span class="na">persist</span><span class="p">();</span>
-    <span class="nv">$initialCategory</span> <span class="o">=</span> <span class="nv">$initialProduct</span><span class="o">-&gt;</span><span class="na">hasData</span><span class="p">(</span><span class="s1">&#39;category_ids&#39;</span><span class="p">)</span>
-        <span class="o">?</span> <span class="nv">$initialProduct</span><span class="o">-&gt;</span><span class="na">getDataFieldConfig</span><span class="p">(</span><span class="s1">&#39;category_ids&#39;</span><span class="p">)[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getCategories</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="o">:</span> <span class="k">null</span><span class="p">;</span>
-    <span class="nv">$category</span> <span class="o">=</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">hasData</span><span class="p">(</span><span class="s1">&#39;category_ids&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getCategoryIds</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="o">?</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getDataFieldConfig</span><span class="p">(</span><span class="s1">&#39;category_ids&#39;</span><span class="p">)[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getCategories</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="o">:</span> <span class="nv">$initialCategory</span><span class="p">;</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectManager</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
-        <span class="s1">&#39;Magento\Config\Test\TestStep\SetupConfigurationStep&#39;</span><span class="p">,</span>
-        <span class="p">[</span><span class="s1">&#39;configData&#39;</span> <span class="o">=&gt;</span> <span class="nv">$configData</span><span class="p">]</span>
-    <span class="p">)</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
-    <span class="c1">// Steps</span>
-    <span class="nv">$filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sku&#39;</span> <span class="o">=&gt;</span> <span class="nv">$initialProduct</span><span class="o">-&gt;</span><span class="na">getSku</span><span class="p">()];</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">productGrid</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">productGrid</span><span class="o">-&gt;</span><span class="na">getProductGrid</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">searchAndOpen</span><span class="p">(</span><span class="nv">$filter</span><span class="p">);</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">editProductPage</span><span class="o">-&gt;</span><span class="na">getProductForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">editProductPage</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
-    <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;category&#39;</span> <span class="o">=&gt;</span> <span class="nv">$category</span><span class="p">];</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>A returned array is available in constraints within current variation.</p>
-
-<h3 id="teardown-method"><code>tearDown()</code> (optional)</h3>
-
-<p>When <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a> of the variation have been performed, you can use the <code>tearDown()</code> method to get back the testing application to the initial state to be ready for the next variation execution (for example, logging out, clearing data, clearing cache).</p>
-
-<p>For example, the following code deletes a sales rule after each variation:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">tearDown</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteIndex</span><span class="o">-&gt;</span><span class="na">getPromoQuoteGrid</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">searchAndOpen</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">salesRuleName</span><span class="p">]);</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteEdit</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteEdit</span><span class="o">-&gt;</span><span class="na">getModalBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">acceptAlert</span><span class="p">();</span>
-<span class="p">}</span></code></pre></figure>
-
-<h2 id="flow">Test case flow</h2>
-
-<p>All data required for the test are stored in variations of a data set. A <code>__prepare()</code> method is run first to prepare entities needed for a whole test. Arguments returned by a <code>__prepare()</code> method are available during all test including constraints. Further, the <code>__inject()</code> method injects data in the test. The <code>test()</code> method performs all the test steps using the data from the <code>variation 1</code>. Then, constraints listed in the <code>variation 1</code> are run in the order they are listed. After that, the <code>tearDown()</code> method “cleans up” to be ready for the next test or variation. When a variation fails, the test launches for the next variation in a queue.</p>
-
-<p><img src="/common/images/mtf_test_case_flow.png" alt="Test case flow diagram" /></p>
-
-<h2 id="how-to-create">How to create a test case</h2>
-
-<p><strong>Step 1.</strong> Create a <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a></p>
-
-<p><strong>Step 2.</strong> Create a PHP class in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/&lt;module&gt;/TestCase</code> directory</p>
-
-<p><strong>Step 3.</strong> Give it a name using the following format:</p>
-
-<p><b><span style="color:blue">{action}</span><span style="color:red">{entityName}</span>Entity<span style="color:green">{additional_description_if_needed}</span>Test</b></p>
-
-<p>For example:</p>
-
-<ul>
-  <li><span style="color:blue">Create</span><span style="color:red">ConfigurableProduct</span>EntityTest</li>
-  <li><span style="color:blue">Create</span><span style="color:red">CatalogEvent</span>Entity<span style="color:green">FromCategoryPage</span>Test</li>
-</ul>
-
-<p><strong>Step 4.</strong> If you have preconditions, prepare the data using a <a href="#prepare-method">__prepare()</a> method</p>
-
-<p><strong>Step 5.</strong> Inject the initial data for a test using a <a href="#inject-method">__inject()</a> method</p>
-
-<p><strong>Step 6.</strong> Declare all the test steps in the <a href="#test-method">test()</a> method</p>
-
-<p><strong>Step 7.</strong> If you want to perform any actions after constraints, use a <a href="#teardown-method">tearDown()</a> method</p>
-
-<!-- LINK DEFINITIONS -->
-
-<!-- ABBREVIATIONS -->
-
+<p>Each feature will be described in a separate topic.</p>
 
 
 		</div>
