@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Templates XSS security</title>
+	<title>Apply a custom Admin theme</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/templates/template-security.html">
+	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/themes/admin_theme_apply.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -165,9 +165,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Templates XSS security</h1>
+		<h1 class="page-heading">Apply a custom Admin theme</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/templates/template-overview.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/frontend-dev-guide/themes/admin_theme_apply.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -338,7 +338,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_apply.html">Apply a custom Admin theme</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_apply.html">Apply a custom Admin theme</a></li>
 
 									
 
@@ -480,7 +480,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/templates/template-security.html">Templates XSS security</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/templates/template-security.html">Templates XSS security</a></li>
 
 									
 
@@ -879,78 +879,91 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2>Security measures against XSS attacks</h2>
+			<p align="right"><i>Updated: 21 July 2016 (PDT)</i></p>
+		<h2 id="favicon-intro">What's in this topic</h2>
 
-<p>To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules of escaping HTML content in templates:</p>
+<p>This topic describes how to apply your custom theme for Magento Admin.</p>
 
-<ul>
-  <li>
-    <p>If a method indicates that the contents are escaped, do not escape: <code>getTitleHtml()</code>, <code>getHtmlTitle()</code> (the title is ready for the HTML output)</p>
-  </li>
-  <li>
-    <p>Escape data using the <code>$block-&gt;escapeHtml()</code>,  <code>$block-&gt;escapeQuote()</code>,  <code>$block-&gt;escapeUrl()</code>, <code>$block-&gt;escapeXssInUrl()</code> methods</p>
-  </li>
-  <li>
-    <p>Type casting and php function <code>count()</code> don’t need escaping  (for example <code>echo (int)$var</code>, <code>echo (bool)$var</code>, <code>echo count($var)</code>)</p>
-  </li>
-  <li>
-    <p>Output in single quotes doesn’t need escaping (for example <code>echo 'some text'</code>)</p>
-  </li>
-  <li>
-    <p>Output in double quotes without variables doesn’t need escaping (for example <code>echo "some text"</code>)</p>
-  </li>
-  <li>
-    <p>Otherwise, escape the data using the <code>$block-&gt;escapeHtml()</code> method</p>
-  </li>
+<p><strong>Contents</strong></p>
+
+<ul id="markdown-toc">
+  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
+  <li><a href="#apply-a-custom-theme-in-admin-overview" id="markdown-toc-apply-a-custom-theme-in-admin-overview">Apply a custom theme in Admin: Overview</a></li>
+  <li><a href="#specify_di" id="markdown-toc-specify_di">Specify the custom Admin theme in <code>di.xml</code></a></li>
+  <li><a href="#update-components-to-actually-apply-the-admin-theme" id="markdown-toc-update-components-to-actually-apply-the-admin-theme">Update components to actually apply the Admin theme</a></li>
+  <li><a href="#open-admin-in-browser" id="markdown-toc-open-admin-in-browser">Open Admin in browser</a></li>
+  <li><a href="#see-also" id="markdown-toc-see-also">See also</a></li>
 </ul>
 
-<p>The following code sample illustrates the XSS-safe output in templates:</p>
+<h2 id="prerequisites">Prerequisites</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getTitleHtml</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getHtmlTitle</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">escapeHtml</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">())</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="x">&lt;h1&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x">&lt;/h1&gt;</span>
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$var</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s1">&#39;some text&#39;</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s2">&quot;some text&quot;</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="x">&lt;a href=&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">escapeXssInUrl</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getUrl</span><span class="p">())</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getAnchorTextHtml</span><span class="p">()</span> <span class="o">?</span>
-<span class="o">&gt;&lt;/</span><span class="nx">a</span><span class="o">&gt;</span></code></pre></figure>
+<ol>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set</a> your Magento application to the developer <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">mode</a>. The application mode influences the way static files are cached by Magento.</li>
+  <li><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_create.html">Create a custom theme for the Admin panel</a>.</li>
+  <li><a href="/guides/v2.0/extension-dev-guide/build/build.html">Add a new custom module</a> or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in <code>&lt;your_custom_module_dir&gt;/etc/module.xml</code> (replace placeholders with your module information):</li>
+</ol>
 
-<h4>Static Test</h4>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;%YourVendor_YourModule%&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;2.0.1&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- Example: &quot;Magento_Backend --&gt;</span>&quot;
+        <span class="nt">&lt;sequence&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Magento_Theme&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/sequence&gt;</span>
+    <span class="nt">&lt;/module&gt;</span></code></pre></figure>
 
-<p>To improve security against XSS injections, a static test <code>XssPhtmlTemplateTest.php</code> is added to <code>dev\tests\static\testsuite\Magento\Test\Php\</code>.</p>
+<div class="bs-callout bs-callout-info" id="info">
+ <p>If you choose to create a separate dedicated module, you can use the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal">Magento_SampleMinimal module from the Magento 2 sample modules repository</a> as example of a minimal module you need. If you will copy and use Magento_SampleMinimal, do not forget to enter your vendor and module naming, instead the ones used in the sample, in the <code>&lt;your_module_dir&gt;/etc/module.xml</code>, <code>&lt;your_module_dir&gt;/registration.php</code>, and <code>&lt;your_module_dir&gt;/composer.json</code> files .</p>
+<p>If you decide to use the existing module, keep in mind, that theme declaring might be affected when the module is changed.</p>
+</div>
 
-<p>This static test finds all echo calls in PHTML-templates and determines if it is properly escaped or not.</p>
+<h2 id="apply-a-custom-theme-in-admin-overview">Apply a custom theme in Admin: Overview</h2>
 
-<p>It covers the following cases:</p>
+<p>To apply the Admin theme, take the following steps:</p>
+
+<ol>
+  <li><a href="#specify_di">Specify the new Admin theme in your module’s <code>di.xml</code></a></li>
+  <li>Update the components by running the <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-keep"><code>bin/magento setup:upgrade</code></a> command.</li>
+  <li>Open the Admin in browser and view the new theme applied.</li>
+</ol>
+
+<p>Each step is described further with more details.</p>
+
+<h2 id="specify_di">Specify the custom Admin theme in <code>di.xml</code></h2>
+
+<p>You need to specify the admin theme to be used in the <code>&lt;your_module_dir&gt;/etc/di.xml</code> file. Add it, if the file does not yet exist in your module.</p>
+
+<p>In <code>&lt;your_module_dir&gt;/etc/di.xml</code> add the following (replace the placeholders with the vendor name and theme code of your Admin theme):</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- Admin theme. Start --&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Theme\Model\View\Design&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;themes&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;adminhtml&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%Your_vendor_dir%/%your_theme_code%<span class="nt">&lt;/item&gt;</span> <span class="c">&lt;!-- Example: &quot;Magento/backend&quot; --&gt;</span>
+             <span class="nt">&lt;/argument&gt;</span>
+         <span class="nt">&lt;/arguments&gt;</span> 
+    <span class="nt">&lt;/type&gt;</span>
+    <span class="c">&lt;!-- Admin theme. End --&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<h2 id="update-components-to-actually-apply-the-admin-theme">Update components to actually apply the Admin theme</h2>
+
+<p>For your changes to take effect, you need to update Magento components. For this, 
+run the <code>bin/magento setup:upgrade</code> command in your command line. If prompted, also run <code>bin/magento setup:di:compile</code>.</p>
+
+<p>For details about performing command line tasks, view the following topics:
+- <a href="/guides/v2.0/config-guide/cli/config-cli.html">Command line configuration</a>
+- <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db-upgr.html">Uninstall or reinstall Magento: Optionally keeping generated files</a></p>
+
+<h2 id="open-admin-in-browser">Open Admin in browser</h2>
+
+<p>The last step is to open the Admin in browser and view the new theme applied.</p>
+
+<h2 id="see-also">See also</h2>
 
 <ul>
-  <li>
-    <p><code>/* @noEscape */</code> before output. Output doesn’t require escaping. Test is green.</p>
-  </li>
-  <li>
-    <p><code>/* @escapeNotVerified */</code> before output. Output escaping is not checked and should be verified. Test is green.</p>
-  </li>
-  <li>
-    <p>Methods which contain <code>"html"</code> in their names (for example <code>echo $object-&gt;{suffix}Html{postfix}()</code>). Data is ready for the HTML output. Test is green.</p>
-  </li>
-  <li>
-    <p>AbstractBlock methods <code>escapeHtml</code>, <code>escapeUrl</code>, <code>escapeQuote</code>, <code>escapeXssInUrl</code> are allowed. Test is green.</p>
-  </li>
-  <li>
-    <p>Type casting and php function <code>count()</code> are allowed (for example <code>echo (int)$var</code>, <code>(bool)$var</code>, <code>count($var)</code>). Test is green.</p>
-  </li>
-  <li>
-    <p>Output in single quotes (for example <code>echo 'some text'</code>). Test is green.</p>
-  </li>
-  <li>
-    <p>Output in double quotes without variables (for example <code>echo "some text"</code>). Test is green.</p>
-  </li>
-  <li>
-    <p>Other of previously mentioned. Output is not escaped. Test is red.</p>
-  </li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall a theme</a></li>
 </ul>
+
 
 
 		</div>

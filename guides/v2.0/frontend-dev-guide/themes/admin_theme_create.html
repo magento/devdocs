@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Templates XSS security</title>
+	<title>Create a custom Admin theme</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/templates/template-security.html">
+	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/themes/admin_theme_create.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -165,9 +165,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Templates XSS security</h1>
+		<h1 class="page-heading">Create a custom Admin theme</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/templates/template-overview.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/frontend-dev-guide/themes/admin_theme_create.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -330,7 +330,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_create.html">Create a custom Admin theme</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_create.html">Create a custom Admin theme</a></li>
 
 									
 
@@ -480,7 +480,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/templates/template-security.html">Templates XSS security</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/templates/template-security.html">Templates XSS security</a></li>
 
 									
 
@@ -879,78 +879,88 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2>Security measures against XSS attacks</h2>
+			<p align="right"><i>Updated: 21 July 2016 (PDT)</i></p>
+		<h2 id="favicon-intro">What's in this topic</h2>
 
-<p>To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules of escaping HTML content in templates:</p>
+<p>This topic describes how to create your custom theme for Magento Admin, referencing the similar <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html">flow for creating a custom storefront theme</a>.</p>
 
-<ul>
-  <li>
-    <p>If a method indicates that the contents are escaped, do not escape: <code>getTitleHtml()</code>, <code>getHtmlTitle()</code> (the title is ready for the HTML output)</p>
+<p><strong>Contents</strong></p>
+
+<ul id="markdown-toc">
+  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
+  <li><a href="#create-an-admin-theme" id="markdown-toc-create-an-admin-theme">Create an Admin theme</a>    <ul>
+      <li><a href="#create_dir" id="markdown-toc-create_dir">Create a theme directory</a></li>
+      <li><a href="#declare_theme" id="markdown-toc-declare_theme">Add a declaration <code>theme.xml</code></a></li>
+      <li><a href="#add_registry" id="markdown-toc-add_registry">Add <code>registration.php</code></a></li>
+      <li><a href="#make_composer" id="markdown-toc-make_composer">Optionally add <code>composer.json</code></a></li>
+      <li><a href="#logo" id="markdown-toc-logo">Admin theme logo (optional)</a></li>
+    </ul>
   </li>
-  <li>
-    <p>Escape data using the <code>$block-&gt;escapeHtml()</code>,  <code>$block-&gt;escapeQuote()</code>,  <code>$block-&gt;escapeUrl()</code>, <code>$block-&gt;escapeXssInUrl()</code> methods</p>
-  </li>
-  <li>
-    <p>Type casting and php function <code>count()</code> don’t need escaping  (for example <code>echo (int)$var</code>, <code>echo (bool)$var</code>, <code>echo count($var)</code>)</p>
-  </li>
-  <li>
-    <p>Output in single quotes doesn’t need escaping (for example <code>echo 'some text'</code>)</p>
-  </li>
-  <li>
-    <p>Output in double quotes without variables doesn’t need escaping (for example <code>echo "some text"</code>)</p>
-  </li>
-  <li>
-    <p>Otherwise, escape the data using the <code>$block-&gt;escapeHtml()</code> method</p>
-  </li>
+  <li><a href="#apply-the-admin-theme" id="markdown-toc-apply-the-admin-theme">Apply the Admin theme</a></li>
 </ul>
 
-<p>The following code sample illustrates the XSS-safe output in templates:</p>
+<h2 id="prerequisites">Prerequisites</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getTitleHtml</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getHtmlTitle</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">escapeHtml</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">())</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="x">&lt;h1&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x">&lt;/h1&gt;</span>
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$var</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s1">&#39;some text&#39;</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s2">&quot;some text&quot;</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="x">&lt;a href=&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">escapeXssInUrl</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getUrl</span><span class="p">())</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getAnchorTextHtml</span><span class="p">()</span> <span class="o">?</span>
-<span class="o">&gt;&lt;/</span><span class="nx">a</span><span class="o">&gt;</span></code></pre></figure>
+<p><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set</a> your Magento application to the developer <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">mode</a>. The application mode influences the way static files are cached by Magento.</p>
 
-<h4>Static Test</h4>
+<h2 id="create-an-admin-theme">Create an Admin theme</h2>
 
-<p>To improve security against XSS injections, a static test <code>XssPhtmlTemplateTest.php</code> is added to <code>dev\tests\static\testsuite\Magento\Test\Php\</code>.</p>
+<p>To create a custom Admin theme, take the following steps:</p>
 
-<p>This static test finds all echo calls in PHTML-templates and determines if it is properly escaped or not.</p>
+<ol>
+  <li><a href="#create_dir">Create a theme directory.</a></li>
+  <li><a href="#declare_theme">Add a declaration <code>theme.xml</code>.</a></li>
+  <li><a href="#add_registry">Add <code>registration.php</code>.</a></li>
+  <li><a href="#make_composer">Optionally add <code>composer.json</code>.</a></li>
+  <li><a href="#logo">Optionally change theme logo.</a></li>
+</ol>
 
-<p>It covers the following cases:</p>
+<p>Each step is described further.</p>
 
-<ul>
-  <li>
-    <p><code>/* @noEscape */</code> before output. Output doesn’t require escaping. Test is green.</p>
-  </li>
-  <li>
-    <p><code>/* @escapeNotVerified */</code> before output. Output escaping is not checked and should be verified. Test is green.</p>
-  </li>
-  <li>
-    <p>Methods which contain <code>"html"</code> in their names (for example <code>echo $object-&gt;{suffix}Html{postfix}()</code>). Data is ready for the HTML output. Test is green.</p>
-  </li>
-  <li>
-    <p>AbstractBlock methods <code>escapeHtml</code>, <code>escapeUrl</code>, <code>escapeQuote</code>, <code>escapeXssInUrl</code> are allowed. Test is green.</p>
-  </li>
-  <li>
-    <p>Type casting and php function <code>count()</code> are allowed (for example <code>echo (int)$var</code>, <code>(bool)$var</code>, <code>count($var)</code>). Test is green.</p>
-  </li>
-  <li>
-    <p>Output in single quotes (for example <code>echo 'some text'</code>). Test is green.</p>
-  </li>
-  <li>
-    <p>Output in double quotes without variables (for example <code>echo "some text"</code>). Test is green.</p>
-  </li>
-  <li>
-    <p>Other of previously mentioned. Output is not escaped. Test is red.</p>
-  </li>
-</ul>
+<h3 id="create_dir">Create a theme directory</h3>
+<p>In the <code>app/design/adminhtml</code> directory create a new <code>&lt;Vendor&gt;/&lt;admin_theme&gt;</code> directory.</p>
+
+<h3 id="declare_theme">Add a declaration <code>theme.xml</code></h3>
+
+<p>In the theme directory, add <code>theme.xml</code> containing at least the theme name and the parent theme name (if the theme <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from one). We recommend you to inherit from the default Magento Admin theme: <code>Magento/backend</code>.</p>
+
+<p>Add or copy from an existing <code>theme.xml</code> to your theme directory <code>app/design/adminhtml/&lt;Vendor&gt;/&lt;admin_theme&gt;</code>.</p>
+
+<p>Configure it using the following example (replace placeholders with your theme information):</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Config/etc/theme.xsd&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;title&gt;</span>%Theme title%<span class="nt">&lt;/title&gt;</span> <span class="c">&lt;!-- your theme&#39;s name --&gt;</span>
+     <span class="nt">&lt;parent&gt;</span>%vendor_dir%/%parent_theme_dir%<span class="nt">&lt;/parent&gt;</span> <span class="c">&lt;!-- the parent theme. Example: Magento/backend --&gt;</span>
+ <span class="nt">&lt;/theme&gt;</span></code></pre></figure>
+
+<h3 id="add_registry">Add <code>registration.php</code></h3>
+<p>In your theme directory, create a <code>registration.php</code> file.
+In this file, add the following code, having replaced placeholders with your theme information:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Copyright © 2016 Magento. All rights reserved.</span>
+<span class="sd"> * See COPYING.txt for license details.</span>
+<span class="sd"> */</span>
+<span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
+    <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">THEME</span><span class="p">,</span>
+    <span class="s1">&#39;adminhtml/%vendor_dir/your_theme_dir%&#39;</span><span class="p">,</span> <span class="c1">// Example: &#39;adminhtml/Magento/backend&#39;</span>
+    <span class="nx">__DIR__</span>
+<span class="p">);</span>  </code></pre></figure>
+
+<h3 id="make_composer">Optionally add <code>composer.json</code></h3>
+<p>See the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_composer">Make your theme a Composer package (optional)</a></p>
+
+<h3 id="logo">Admin theme logo (optional)</h3>
+
+<p>In the default <code>Magento/backend</code> theme <code>lib/web/images/magento-logo.svg</code> is used as theme logo. 
+To override it, in your theme directory, create a <code>web/images</code> sub-directory, and add your custom file named <code>magento-logo.svg</code>. 
+If you want to use the file with other name and/or format, you need to additionally declare it as described in <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html#logo_declare">Declaring theme logo</a>.</p>
+
+<h2 id="apply-the-admin-theme">Apply the Admin theme</h2>
+
+<p>See the <a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme.html">Apply a custom Admin theme topic</a>.</p>
+
 
 
 		</div>
