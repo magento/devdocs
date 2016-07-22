@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Styles debugging</title>
+	<title>Compile LESS with Grunt</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -167,9 +167,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Styles debugging</h1>
+		<h1 class="page-heading">Compile LESS with Grunt</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/css-topics/css_debug.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/frontend-dev-guide/css-topics/css_debug.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -553,7 +553,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html">Styles debugging</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html">Compile LESS with Grunt</a></li>
 
 									
 
@@ -873,14 +873,12 @@
 		<h2>What's in this topic</h2>
 
 <p>
-The topic describes how the changes you make in stylesheets are applied in the client-side and server-side LESS <a href="/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
+The topic describes how to install, configure and use <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a> for compiling <code>.less</code> files in Magento 2. </p>
 
 <p><strong>Contents</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
-  <li><a href="#css_debug_client" id="markdown-toc-css_debug_client">Styles debugging in client-side compilation mode</a></li>
-  <li><a href="#css_debug_server" id="markdown-toc-css_debug_server">Styles debugging in server-side compilation mode</a>    <ul>
+  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a>    <ul>
       <li><a href="#grunt_prereq" id="markdown-toc-grunt_prereq">Installing and configuring Grunt</a></li>
       <li><a href="#grunt_commands" id="markdown-toc-grunt_commands">Grunt commands</a></li>
       <li><a href="#use_cases" id="markdown-toc-use_cases">Use cases of tracking changes using Grunt</a></li>
@@ -890,37 +888,6 @@ The topic describes how the changes you make in stylesheets are applied in the c
 
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Make sure that you <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">set</a> your Magento application to the developer or default <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">mode</a>.</p>
-
-<h2 id="css_debug_client">Styles debugging in client-side compilation mode</h2>
-
-<p>Client-side LESS compilation is implemented using the native <code>less.js</code> library. The default configuration is set in <code>lib/web/less/config.less.js</code>; you can change it as needed.</p>
-
-<p>You can find the detailed information about the configuration and other options of the <code>less.js</code> used in a browser at <a href="http://lesscss.org/usage/#using-less-in-the-browser" target="_blank">http://lesscss.org/usage/#using-less-in-the-browser</a>.</p>
-
-<p>In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.</p>
-
-<p><span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="/guides/v2.1/architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.</p>
-
-<p>This is required in the following cases:</p>
-<ul>
-<li>If you change the <a href="/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files</a> that contain the <code>@magento_import</code> directive, or the <code>@import</code> directive where the imported file is specified without extension.</li>
-<li>If you rename, remove, or add a <code>.less</code> file imported with a <code>@magento_import</code> or <code>@import</code> directive but you did not correct the directives accordingly.</li>
-
-</ul>
-
-<p>To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.</p>
-
-<h2 id="css_debug_server">Styles debugging in server-side compilation mode</h2>
-
-<p>In server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories.</p>
-</div>
-
-<p>Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.</p>
-
-<p>The following section describes in details how to install, configure and use Grunt for styles debugging.</p>
 
 <h3 id="grunt_prereq">Installing and configuring Grunt</h3>
 
