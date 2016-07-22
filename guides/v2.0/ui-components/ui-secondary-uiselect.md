@@ -20,7 +20,7 @@ The UI-select component has extended from the Abstract component.
 
 Example integration:
 
-`<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
+`<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`
 
 {% highlight xml %}
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
