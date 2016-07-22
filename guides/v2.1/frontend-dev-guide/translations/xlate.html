@@ -866,7 +866,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 12 July 2016 (PDT)</i></p>
 		<h4 id="contents">Contents</h4>
 
 <ul>
@@ -979,7 +979,7 @@
 <p>The Magento application automatically assembles translation dictionaries located in modules’ <code>i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code>pt_BR</code>) translation dictionaries might be located in module and theme directories similar to the following:</p>
 
 <pre><code>app/code/Magento/Checkout/i18n/pt_BR.csv
-app/design/frontend/Magento/demo/i18n/pt_BR.csv
+app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/i18n/pt_BR.csv
 </code></pre>
 
 <p>Assembling the preceding <code>pt_BR.csv</code> files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).</p>
@@ -1008,8 +1008,8 @@ app/design/frontend/Magento/demo/i18n/pt_BR.csv
  |       |-- pt_BR.csv
  |__/design
    |__/frontend
-     |__/Magento
-       |__/demo
+     |__/&lt;Vendor&gt;
+       |__/&lt;theme&gt;
          |__/i18n
            |-- pt_BR.csv
 </code></pre>
