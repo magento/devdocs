@@ -18,9 +18,11 @@ This section discusses how to can start your Magento Enterprise Cloud Edition pr
 
 To access your project for the first time:
 
-1.  If you followed the link from your [welcome e-mail]({{page.baseurl}}cloud/access-acct/first-time-setup.html#cloud-first-email), you might have to log in to your Magento Enterprise Cloud Edition project first.
+1.  Log in to [your Magento Enterprise Cloud Edition account](https://accounts.magento.cloud){:target="_blank"} Magento Enterprise Cloud Edition project first.
+2.  Click the **Projects** tab as the following figure shows.
 
-    If necessary, click the **Projects** tab.
+  ![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}
+3.  Click the name of your project.
 2.	When prompted, enter a name for your project and click **Next**.
 3.	Click **Import your existing code** as the following figure shows.
 
