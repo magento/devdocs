@@ -2,9 +2,9 @@
 layout: default
 group: fedg
 subgroup: D_CSS
-title: Using Grunt for compiling .less files
+title: Compile LESS with Grunt
 menu_order: 4
-menu_title: Using Grunt for compiling .less files
+menu_title: Compile LESS with Grunt
 version: 2.0
 github_link: frontend-dev-guide/css-topics/css_debug.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css_debug.html

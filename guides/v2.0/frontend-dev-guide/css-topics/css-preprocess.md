@@ -107,7 +107,7 @@ In server-side LESS compilation mode, to have your changes applied, clear <code>
 
 Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
 
-See the [Using Grunt for compiliing .less files]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md) topic for details how to install, configure and use Grunt.
+See the [Compile LESS with Grunt]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md) topic for details how to install, configure and use Grunt.
 
 <h3 id="client-side">Client-side LESS compilation</h3>
 The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:
