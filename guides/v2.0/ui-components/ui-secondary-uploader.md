@@ -17,10 +17,10 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
 
 <h2 id="elements">Component elements</h2>
 
-* Constructor: `app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js`
+* Constructor: `<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`
 * JQuery file upload plugin: `jquery/fileUploader/jquery.fileupload-fp`
-* Default template: `app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html`
-* Preview template: `app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html`
+* Default template: `<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`
+* Preview template: `<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html`
 
 <h2 id="structure">Component options</h2>
 
@@ -38,7 +38,7 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
     <td>Path to the files' preview template</td>
     <td>No</td>
     <td>String</td>
-    <td>app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html
+    <td><Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html
 </td>
 </tr>
 <tr>
