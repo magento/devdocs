@@ -2,9 +2,9 @@
 layout: default
 group: fedg
 subgroup: D_CSS
-title: Styles debugging
+title: Compile LESS with Grunt
 menu_order: 4
-menu_title: Styles debugging
+menu_title: Compile LESS with Grunt
 version: 2.0
 github_link: frontend-dev-guide/css-topics/css_debug.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css_debug.html
@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css_debug.html
 <h2>What's in this topic</h2>
 
 <p>
-The topic describes how the changes you make in stylesheets are applied in the client-side and server-side LESS <a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
+The topic describes how to install, configure and use <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a> for compiling <code>.less</code> files in Magento 2. </p>
 
 **Contents**
 
@@ -23,36 +23,6 @@ The topic describes how the changes you make in stylesheets are applied in the c
 ## Prerequisites 
 Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
 
-## Styles debugging in client-side compilation mode {#css_debug_client}
-
-Client-side LESS compilation is implemented using the native `less.js` library. The default configuration is set in <code>lib/web/less/config.less.js</code>; you can change it as needed. 
-
-You can find the detailed information about the configuration and other options of the <code>less.js</code> used in a browser at <a href="http://lesscss.org/usage/#using-less-in-the-browser" target="_blank">http://lesscss.org/usage/#using-less-in-the-browser</a>.
-
-In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser. 
-
-<span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="{{page.baseurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.
-
-This is required in the following cases:
-<ul>
-<li>If you change the <a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files</a> that contain the <code>@magento_import</code> directive, or the <code>@import</code> directive where the imported file is specified without extension.</li>
-<li>If you rename, remove, or add a <code>.less</code> file imported with a <code>@magento_import</code> or <code>@import</code> directive but you did not correct the directives accordingly.</li>
-
-</ul>
-
-To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
-
-## Styles debugging in server-side compilation mode {#css_debug_server}
-
-In server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication. 
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories.</p>
-</div>
-
-Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
-
-The following section describes in details how to install, configure and use Grunt for styles debugging.
 
 ### Installing and configuring Grunt {#grunt_prereq}
 
