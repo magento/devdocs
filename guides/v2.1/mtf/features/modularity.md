@@ -5,7 +5,7 @@ subgroup: 45_Features
 title: Modularity in the Functional Testing Framework
 menu_title: Modularity
 version: 2.1
-github_link: mtf/mtf_features/modularity.md
+github_link: mtf/features/modularity.md
 ---
 
 ## About modularity
