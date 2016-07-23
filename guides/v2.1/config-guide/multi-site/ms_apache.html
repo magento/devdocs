@@ -1326,26 +1326,22 @@
 <h2 id="ms-entry-script">Set values in an entry point script</h2>
 <p>If necessary, copy the existing <code>index.php</code> entry point script for your website or store view and add to it the following:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
- <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
  <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_CODE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;code&gt;&#39;</span><span class="p">;</span>
  <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_TYPE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;{store|website}&#39;</span><span class="p">;</span>
  <span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
  <span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\Http&#39;</span><span class="p">);</span>
  <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
- <span class="cp">?&gt;</span><span class="x"></span>
-<span class="x"> </span></code></pre></figure>
+ </code></pre></figure>
 
 <p>Sample <code>index.php</code> snippet that starts Magento with a website with the code <code>frenchsite.example.com</code>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
- <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
  <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_CODE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;frenchsite.example.com&#39;</span><span class="p">;</span>
  <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_TYPE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;website&#39;</span><span class="p">;</span>
  <span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
  <span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\Http&#39;</span><span class="p">);</span>
- <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
- <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+ <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span></code></pre></figure>
 
 <h2 id="ms-htaccess">Set values in .htaccess</h2>
 <p>This section discusses how to set values for <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> using Apache server variables <code>SetEnvIf</code> or <code>RewriteCond</code>. If you’re not sure what environment variable to use, consult a network administrator.</p>

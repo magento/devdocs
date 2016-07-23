@@ -823,9 +823,19 @@
 	<section class="content">
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="install-trouble-sample">Errors installing optional sample data</h2>
+		<h2 id="errors-installing-optional-sample-data">Errors installing optional sample data</h2>
+<p>This topic discusses solutions to errors you might encounter installing optional sample data.</p>
 
-<h3 id="symptom">Symptom</h3>
+<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#trouble-samp-perms">Symptom (file system permissions)</a></li>
+  <li><a href="#trouble-samp-prod">Symptom (production mode)</a></li>
+  <li><a href="#trouble-samp-secy">Symptom (security)</a></li>
+  <li><a href="#trouble-samp-dev">Symptom (develop branch)</a></li>
+  <li><a href="#trouble-samp-max">Symptom (max_execution_time)</a></li>
+</ul>
+
+<h3 id="trouble-samp-perms">Symptom (file system permissions)</h3>
 <p>Error in the console log during sample data installation using the Setup Wizard:</p>
 
 <pre><code>Module 'Magento_CatalogRuleSampleData':
@@ -843,14 +853,31 @@ Next exception 'ReflectionException' with message 'Class Magento\CatalogRule\Mod
 <h4 id="solution">Solution</h4>
 <p><a href="/guides/v2.1/install-gde/install/web/install-web-sample-data.html#instgde-prereq-compose-clone-perms">Set file system ownership and permissions again</a> as a user with <code>root</code> privileges.</p>
 
-<h3 id="symptom-1">Symptom</h3>
+<h3 id="trouble-samp-prod">Symptom (production mode)</h3>
+<p>If you’re currently set for <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, sample data installation fails if you use the <a href="/guides/v2.1/install-gde/install/cli/install-cli-sample-data-composer.html"><code>magento sampledata:deploy</code></a> command:</p>
+
+<pre><code>PHP Fatal error: Uncaught TypeError: Argument 1 passed to Symfony\Component\Console\Input\ArrayInput::__construct() must be of the type array, object given, called in /&lt;path&gt;/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 97 and defined in /&lt;path&gt;/vendor/symfony/console/Symfony/Component/Console/Input/ArrayInput.php:37
+</code></pre>
+
+<h4 id="solution-1">Solution</h4>
+<p>Don’t install sample data in production mode. Switch to developer mode and clear some <code>var</code> directories and try again.</p>
+
+<p>Enter the following commands in the order shown as the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>:</p>
+
+<pre><code>cd &lt;your Magento install dir&gt;
+php bin/magento deploy:mode:set developer
+rm -rf var/generation/* var/di/*
+php bin/magento sampledata:deploy
+</code></pre>
+
+<h3 id="trouble-samp-secy">Symptom (security)</h3>
 
 <p>During installation of optional sample data, a  message similar to the following displays:</p>
 
 <pre><code>PHP Fatal error: Call to undefined method Magento\Catalog\Model\Resource\Product\Interceptor::getWriteConnection() in /var/www/magento2/app/code/Magento/SampleData/Module/Catalog/Setup/Product/Gallery.php on line 144
 </code></pre>
 
-<h4 id="solution-1">Solution</h4>
+<h4 id="solution-2">Solution</h4>
 
 <p>During sample data installation, disable SELinux using a resource such as:</p>
 
@@ -859,13 +886,13 @@ Next exception 'ReflectionException' with message 'Class Magento\CatalogRule\Mod
   <li><a href="https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html" target="_blank">CentOS documentation</a></li>
 </ul>
 
-<h3 id="symptom-2">Symptom</h3>
+<h3 id="trouble-samp-dev">Symptom (develop branch)</h3>
 <p>Other errors display, such as:</p>
 
 <pre><code>[Magento\Setup\SampleDataException] Error during sample data installation: Class Magento\Sales\Model\Service\OrderFactory does not exist
 </code></pre>
 
-<h4 id="solution-2">Solution</h4>
+<h4 id="solution-3">Solution</h4>
 
 <p>There are known issues with using sample data with the Magento 2 develop branch. Use the master branch instead. You can switch to the master branch as follows:</p>
 
@@ -874,7 +901,7 @@ git checkout master
 git pull origin master
 </code></pre>
 
-<h3 id="symptom-3">Symptom</h3>
+<h3 id="trouble-samp-max">Symptom (max_execution_time)</h3>
 
 <p>The installation stops before the sample data installation finishes. An example follows:</p>
 
@@ -888,7 +915,7 @@ Installing data...
 
 <p>This error occurs when the maximum configured execution time of your PHP scripts is exceeded. Because sample data can take a long time to load, you can increase the value during your installation.</p>
 
-<h4 id="solution-3">Solution</h4>
+<h4 id="solution-4">Solution</h4>
 
 <p>As a user with <code>root</code> privileges, modify <code>php.ini</code> to increase the value of <code>max_execution_time</code> to 600 or more. (600 seconds is 10 minutes. You can increase the value to whatever you want.) You should change <code>max_execution_time</code> back to its previous value after the installation is successful.</p>
 

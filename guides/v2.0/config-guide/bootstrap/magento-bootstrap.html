@@ -1259,7 +1259,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 23 July 2016 (PDT)</i></p>
 		<h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#config-boot-overview">Overview of bootstrapping</a></li>
@@ -1307,8 +1307,7 @@
 
 <p>Sample entry point script that modifies the bootstrap object:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\App\Bootstrap</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Framework\App\Bootstrap</span><span class="p">;</span>
 <span class="k">require</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/app/bootstrap.php&#39;</span><span class="p">;</span>
 <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
 <span class="nv">$params</span><span class="p">[</span><span class="nx">Bootstrap</span><span class="o">::</span><span class="na">PARAM_REQUIRE_MAINTENANCE</span><span class="p">]</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span> <span class="c1">// default false</span>
@@ -1316,8 +1315,7 @@
 <span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
 <span class="sd">/** @var \Magento\Framework\App\Http $app */</span>
 <span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\Http&#39;</span><span class="p">);</span>
-<span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span></code></pre></figure>
 
 <h2 id="config-boot-exception">Default exception handling</h2>
 <p>The bootstrap object specifies how the Magento application handles uncaught exceptions as follows:</p>

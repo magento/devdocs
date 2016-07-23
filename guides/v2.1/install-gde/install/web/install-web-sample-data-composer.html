@@ -561,6 +561,10 @@
 
   <p>If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, see one of the other topics on the left side of this page.</p>
 
+  <div class="bs-callout bs-callout-warning">
+    <p>Do not install sample data if your Magento application is set for <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. Switch to <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> first. Installing sample data in production mode <a href="/guides/v2.1/install-gde/trouble/tshoot_sample-data.html#trouble-samp-prod">fails</a>.</p>
+</div>
+
   <p>To install sample data using the command line, enter the following command as the Magento file system owner:</p>
 
   <pre><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy

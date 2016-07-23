@@ -1382,8 +1382,7 @@
 
 <p>The following example shows how to define it in <code>env.php</code> (which overrides <code>di.xml</code>):</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
-<span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
     <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;&lt;unique frontend id&gt;&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
              <span class="o">&lt;</span><span class="nx">cache</span> <span class="nx">options</span><span class="o">&gt;</span>
@@ -1399,8 +1398,7 @@
              <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;unique frontend id&gt;&#39;</span>
         <span class="p">],</span>
     <span class="p">],</span>
-<span class="p">],</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="p">],</span></code></pre></figure>
 
 <p>where <code>&lt;unique frontend id&gt;</code> is a unique name to identify your frontend and <code>&lt;cache options&gt;</code> are options discussed in the topics specific to each type of caching (database, Redis, and so on).</p>
 
@@ -1409,8 +1407,7 @@
 
 <p><code>env.php</code> example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
-<span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">frontend_type</span><span class="o">&gt;</span><span class="p">,</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">frontend_type</span><span class="o">&gt;</span><span class="p">,</span>
 <span class="s1">&#39;frontend_options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
     <span class="o">&lt;</span><span class="nx">frontend_option</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">frontend_option_value</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="o">...</span>
@@ -1419,8 +1416,7 @@
 <span class="s1">&#39;backend_options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
     <span class="o">&lt;</span><span class="nx">backend_option</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">backend_option_value</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="o">...</span>
-<span class="p">],</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="p">],</span></code></pre></figure>
 
 <p>where</p>
 

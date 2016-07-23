@@ -1465,8 +1465,7 @@ exit
 
   <p>Create <code>cache-test.php</code> in your web server’s docroot:</p>
 
-  <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">if</span> <span class="p">(</span><span class="nb">class_exists</span><span class="p">(</span><span class="s1">&#39;Memcache&#39;</span><span class="p">))</span> <span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">if</span> <span class="p">(</span><span class="nb">class_exists</span><span class="p">(</span><span class="s1">&#39;Memcache&#39;</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$meminstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcache</span><span class="p">();</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nv">$meminstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcached</span><span class="p">();</span>
@@ -1492,8 +1491,7 @@ exit
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="k">print</span> <span class="s2">&quot;got result from memcached</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="k">return</span> <span class="mi">0</span><span class="p">;</span></code></pre></figure>
 
   <p>where <code>&lt;memcache host name or ip&gt;</code> is either <code>localhost</code>, <code>127.0.0.1</code>, or the memcache host name or IP address. <code>&lt;memcache port&gt;</code> is its listen port; by default, <code>11211</code>.</p>
 
