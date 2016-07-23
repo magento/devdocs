@@ -209,8 +209,7 @@ This section contains code sample snippets to refer to when configuring database
 <h3 id="mage-cache-db-config-custom">Sample <code>env.php</code> for a custom cache frontend</h3>
 `env.php` snippet that enables all cache types with a custom frontend named `magento_cache`:
 
-{% highlight PHP %}
-<?php
+{% highlight php startinline=true %}
  'cache' => [
      'frontend' => [
         'magento_cache' => [
@@ -259,6 +258,5 @@ This section contains code sample snippets to refer to when configuring database
           ],
       ],
   ],
-?>
 {% endhighlight %}
 

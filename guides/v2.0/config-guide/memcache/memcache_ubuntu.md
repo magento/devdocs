@@ -83,8 +83,7 @@ For more information about this test, see <a href="https://www.digitalocean.com/
 
 Create `cache-test.php` in the web server's docroot with the following contents:
 
-{% highlight php %}
-<?php
+{% highlight php startinline=true %}
 if (class_exists('Memcache')) {
     $meminstance = new Memcache();
 } else {
@@ -101,7 +100,6 @@ if ($result) {
     echo "No matching key found.  Refresh the browser to add it!";
     $mem->set("test", "Successfully retrieved the data!") or die("Couldn't save anything to memcached...");
 }
-?>
 {% endhighlight %}
 
 where `<memcache host name or ip>` is either `localhost`, `127.0.0.1`, or the memcache host name or IP address. `<memcache port>` is its listen port; by default, `11211`.
