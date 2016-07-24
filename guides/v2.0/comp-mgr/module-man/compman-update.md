@@ -14,7 +14,7 @@ redirect_from: /guides/v2.0/ comp-mgr/compman-update.html
 ---
 
 ## Step 3. Component Update
-After backing up, your components are updated. The following figure shows an example.
+This step displays if you're updating components. The following figure shows an example.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_update-step.png" width="350px" alt="Click update to complete the task">
 
@@ -44,8 +44,9 @@ Messages similar to the following display in the Console Log:
 	[2015-07-31 19:42:05 CDT] Job "update {"require":[{"name":"magento/sample-module-updater-wizard","version":"3.0.0.0"}]}" has successfully completed
 
 ### Failure
-If the update fails, click **Rollback** to restore an earlier backup. Messages display in the Console Log as shown in the following figure.<br>
+If the update fails, click **Rollback** to restore an earlier backup. Messages display in the Console Log as shown in the following figure.
 
-<img src="{{ site.baseurl }}common/images/cman_update-fail.png" alt="If the component update fails, you can roll back">
+![If the component update fails, you can roll back]({{ site.baseurl }}common/images/cman_update-fail.png)
+
 
 

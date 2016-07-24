@@ -1,9 +1,6 @@
 <div markdown="1">
 
-## Start the readiness check {#compman-readiness-start}
-To start, click either **Start Readiness Check** or **Next**. A sample follows.
 
-![The readiness check enables you to find out if your server and environment are ready to proceed]({{ site.baseurl }}common/images/cman_update_readiness.png){:width="650px"}
 
 See one of the following:
 
@@ -13,7 +10,7 @@ See one of the following:
 ### Readiness check success {#compman-readiness-success}
 The following figure shows an example of a successful readiness check. If all tests passed, click **Next** and continue with the next step.
 
-![If all readiness checks pass, click Next and continue with the next step]({{ site.baseurl }}common/images/cman_readiness-success.png){:width="700px"}
+![If all readiness checks pass, click Next and continue with the next step]({{ site.baseurl }}common/images/cman_readiness-success.png){:width="300px"}
 
 ### Readiness check failure {#compman-readiness-fail}
 Messages similar to the following display if any readiness check fails. 

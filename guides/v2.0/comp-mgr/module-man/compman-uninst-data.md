@@ -14,6 +14,8 @@ redirect_from: /guides/v2.0/comp-mgr/compman-uninst-data.html
 ---
 
 ## Step 3. Data Option
+This step displays if you're uninstalling a component.
+
 After backing up, you have the choice of removing component data from the Magento 2 database.
 
 If the component has no data to remove, the following message displays. (If a component has data but no uninstall script, the same prompt displays. In that case, you must remove database data manually.)
@@ -31,4 +33,5 @@ Click one of the following:
 
 	You can click **Back** to back up the database first if you did not do so already.
 
-Continue with <a href="{{page.baseurl}}comp-mgr/compman-uninst-final.html">Step 4. Uninstall</a>
+Continue with [Step 4. Uninstall]({{page.baseurl}}comp-mgr/compman-uninst-final.html)
+
