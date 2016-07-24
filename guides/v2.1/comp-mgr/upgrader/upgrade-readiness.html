@@ -388,7 +388,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/compman-checklist.html">Run the Component Manager</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/module-man/compman-checklist.html">Run the Component Manager</a></li>
 									
 								
 
@@ -399,7 +399,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/compman-start.html">Start the Component Manager</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/module-man/compman-start.html">Start the Component Manager</a></li>
 
 									
 
@@ -407,7 +407,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/compman-main-pg.html">Manage your components</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/module-man/compman-main-pg.html">Manage your components</a></li>
 
 									
 
@@ -415,7 +415,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/compman-readiness.html">Step 1. Readiness check</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/module-man/compman-readiness.html">Step 1. Readiness check</a></li>
 
 									
 
@@ -423,90 +423,66 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/compman-backup.html">Step 2. Back up the file system and database</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/module-man/compman-backup.html">Step 2. Back up the file system and database</a></li>
 
 									
 
 								
 
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/compman-enable-disable.html">Enable/Disable (Component Manager)</a></li>
 									
+
+										<li class="level3Parent " id="step3"><a href="#">Step 3</a>
+
+
+									
+
 								
 
 									
 
 
-								
+											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.1/comp-mgr/module-man/compman-new-purchase.html">Component Install</a>
 
 
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/compman-new-purchase.html">Component Install (Component Manager)</a></li>
 									
+
 								
 
 									
 
 
-								
+											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.1/comp-mgr/module-man/compman-update.html">Component Update</a>
 
 
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/compman-update.html">Component Update</a></li>
 									
+
 								
 
 									
 
+
+											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.1/comp-mgr/module-man/compman-enable-disable.html">Enable/Disable</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.1/comp-mgr/module-man/compman-uninst-data.html">Data Option</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/module-man/compman-uninst-final.html">Step 4. Uninstall</a></li>
+
+									
 
 								
 
@@ -634,49 +610,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/compman-uninst.html">Uninstall</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/compman-uninst-data.html">Step 3. Data Option</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/compman-uninst-final.html">Step 4. Uninstall</a></li>
 
 									
 
@@ -966,7 +899,7 @@
 	<section class="content">
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="upgrade-readiness-over">Readiness check overview</h2>
+		<h2 id="step-2-readiness-check">Step 2. Readiness check</h2>
 <p>The readiness check makes sure your server and environment are set up correctly for upgrading components. In the event of errors, you can consult troubleshooting suggestions in this guide.</p>
 
 <h2 id="compman-readiness-start">Start the readiness check</h2>
@@ -974,33 +907,38 @@
 
 <p><img src="/common/images/upgr_readiness.png" width="650px" alt="The readiness check enables you to find out if your server and environment are ready to proceed" /></p>
 
-<p>See one of the following:</p>
+<div>
 
-<ul>
-  <li><a href="#compman-readiness-success">Success</a></li>
-  <li><a href="#compman-readiness-fail">Failure</a></li>
-</ul>
+  <p>See one of the following:</p>
 
-<h3 id="compman-readiness-success">Success</h3>
-<p>The following figure shows an example of a successful readiness check. If all tests passed, click <strong>Next</strong> and continue with <a href="/guides/v2.1/comp-mgr/upgrader/upgrade-backup.html">Step 3. Backup</a>.</p>
+  <ul>
+    <li><a href="#compman-readiness-success">Readiness check success</a></li>
+    <li><a href="#compman-readiness-fail">Readiness check failure</a></li>
+  </ul>
 
-<p><img src="/common/images/upgr_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
+  <h3 id="compman-readiness-success">Readiness check success</h3>
+  <p>The following figure shows an example of a successful readiness check. If all tests passed, click <strong>Next</strong> and continue with the next step.</p>
 
-<h3 id="compman-readiness-fail">Failure</h3>
-<p>Messages similar to the following display if any readiness check fails.</p>
+  <p><img src="/common/images/cman_readiness-success.png" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
 
-<p><img src="/common/images/upgr_readiness-fail.png" alt="You must resolve all readiness check failures before you continue" /></p>
+  <h3 id="compman-readiness-fail">Readiness check failure</h3>
+  <p>Messages similar to the following display if any readiness check fails.</p>
 
-<p>In the event of failure, see one of the following sections:</p>
+  <p><img src="/common/images/cman_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue" /></p>
 
-<ul>
-  <li><a href="/guides/v2.1/comp-mgr/trouble/cman/updater.html">Updater check failure</a></li>
-  <li><a href="/guides/v2.1/comp-mgr/trouble/cman/cron.html">Cron script check failure</a></li>
-  <li><a href="/guides/v2.1/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a></li>
-  <li><a href="/guides/v2.1/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a></li>
-  <li><a href="/guides/v2.1/install-gde/trouble/php/tshoot_php-set.html">PHP settings check failure</a></li>
-  <li><a href="/guides/v2.1/install-gde/system-requirements.html">PHP extensions check failure</a></li>
-</ul>
+  <p>In the event of failure, see one of the following sections:</p>
+
+  <ul>
+    <li><a href="/guides/v2.1/comp-mgr/trouble/cman/updater.html">Updater check failure</a></li>
+    <li><a href="/guides/v2.1/comp-mgr/trouble/cman/cron.html">Cron script check failure</a></li>
+    <li><a href="/guides/v2.1/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a></li>
+    <li><a href="/guides/v2.1/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a></li>
+    <li><a href="/guides/v2.1/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
+    <li><a href="/guides/v2.1/install-gde/system-requirements.html">PHP extensions check failure</a></li>
+    <li><a href="/guides/v2.1/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a></li>
+  </ul>
+
+</div>
 
 
 		</div>
