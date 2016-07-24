@@ -5,13 +5,15 @@ subgroup: 30_uninst
 title: Step 3. Data Option
 menu_title: Step 3. Data Option
 menu_node: 
-menu_order: 2
+menu_order: 10
+level3_menu_node: level3child
+level3_subgroup: step3
 version: 2.0
 github_link: comp-mgr/module-man/compman-uninst-data.md
 redirect_from: /guides/v2.0/comp-mgr/compman-uninst-data.html
 ---
 
-## Data option
+## Step 3. Data Option
 After backing up, you have the choice of removing component data from the Magento 2 database.
 
 If the component has no data to remove, the following message displays. (If a component has data but no uninstall script, the same prompt displays. In that case, you must remove database data manually.)

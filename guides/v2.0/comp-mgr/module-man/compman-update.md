@@ -4,14 +4,16 @@ group: compman
 subgroup: 08_Update
 title: Step 3. Component Update
 menu_title: Component Update
-menu_node: parent
-menu_order: 1
+menu_node: 
+menu_order: 8
+level3_menu_node: level3child
+level3_subgroup: step3
 version: 2.0
 github_link: comp-mgr/module-man/compman-update.md
 redirect_from: /guides/v2.0/ comp-mgr/compman-update.html
 ---
 
-## Update your components
+## Step 3. Component Update
 After backing up, your components are updated. The following figure shows an example.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_update-step.png" width="350px" alt="Click update to complete the task">
