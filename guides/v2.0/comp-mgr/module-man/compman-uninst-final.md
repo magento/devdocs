@@ -1,11 +1,11 @@
 ---
 layout: default 
 group: compman
-subgroup: 30_uninst
+subgroup: 05_UseCompMan
 title: Step 4. Uninstall
 menu_title: Step 4. Uninstall
 menu_node: 
-menu_order: 10
+menu_order: 50
 version: 2.0
 github_link: comp-mgr/module-man/compman-uninst-final.md
 redirect_from: /guides/v2.0/comp-mgr/compman-uninst-final.html

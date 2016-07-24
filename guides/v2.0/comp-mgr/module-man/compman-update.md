@@ -1,11 +1,11 @@
 ---
 layout: default 
 group: compman
-subgroup: 08_Update
+subgroup: 05_UseCompMan
 title: Step 3. Component Update
 menu_title: Component Update
 menu_node: 
-menu_order: 8
+menu_order: 10
 level3_menu_node: level3child
 level3_subgroup: step3
 version: 2.0

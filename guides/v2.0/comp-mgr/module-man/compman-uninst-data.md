@@ -5,7 +5,7 @@ subgroup: 05_UseCompMan
 title: Step 3. Data Option
 menu_title: Data Option
 menu_node: 
-menu_order: 11
+menu_order: 12
 level3_menu_node: level3child
 level3_subgroup: step3
 version: 2.0
