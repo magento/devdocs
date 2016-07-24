@@ -29,4 +29,4 @@ Before continuing, complete all tasks discussed in <a href="{{page.baseurl}}comp
 {% include install/update/checklist.md %}
 
 #### Next step
-[Run the Component Manager]({{page.baseurl}}comp-mgr/compman-start.html)
+[Run the Component Manager]({{page.baseurl}}comp-mgr/module-man/compman-start.html)

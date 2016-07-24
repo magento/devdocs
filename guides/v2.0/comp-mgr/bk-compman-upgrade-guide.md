@@ -45,7 +45,7 @@ The way you upgrade (that is, patch) the Magento application depends on how you 
 </div>
 
 <h2>Update components</h2>
-To update Magento components, use the <a href="{{page.baseurl}}comp-mgr/compman-start.html">Component Manager</a>.
+To update Magento components, use the <a href="{{page.baseurl}}comp-mgr/module-man/compman-start.html">Component Manager</a>.
 
 ### Next step
 Complete the tasks discussed in <a href="{{page.baseurl}}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.

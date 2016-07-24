@@ -31,6 +31,6 @@ To run the Component Manager:
     	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
 	</div>
 5.	Click **Save Config**.
-3.	Click **Component Manager** and continue with <a href="{{page.baseurl}}comp-mgr/compman-main-pg.html">Manage your components</a>.
+3.	Click **Component Manager** and continue with <a href="{{page.baseurl}}comp-mgr/module-man/compman-main-pg.html">Manage your components</a>.
 
 	To upgrade Magento system software instead, see <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.

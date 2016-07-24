@@ -16,13 +16,13 @@ redirect_from: /guides/v2.0/comp-mgr/compman-main-pg.html
 
 *	<a href="#compman-access">Component Management options</a>
 *	<a href="#compman-access-sync">Update a component</a>
-*	<a href="#compman-access-enable">Enable or disable a component</a>
+*	<a href="#compman-endis">Enable or disable a component</a>
 *	<a href="#compman-access-types">Supported actions for each component type</a>
 
 <h2 id="compman-access">Component Management options</h2>
 To choose whether to upgrade or uninstall components:
 
-1.	After you <a href="{{page.baseurl}}comp-mgr/compman-start.html">run the Component Manager</a>, a page similar to the following displays:<br><br>
+1.	After you <a href="{{page.baseurl}}comp-mgr/module-man/compman-start.html">run the Component Manager</a>, a page similar to the following displays:<br><br>
 	<img src="{{ site.baseurl }}common/images/cman_initial-page.png" width="750px" alt="The Component Manager page enables you to synchronize with Magento Marketplace to see if updates are available">
 2.	You have the following options:
 	<table>
@@ -57,8 +57,7 @@ To choose whether to upgrade or uninstall components:
 		<td><p>Displays a list of actions available for that component type. <a href="#compman-access-types">Details about available actions</a>.</p>
 			<p>The following figure shows an example.</p>
 			<img src="{{ site.baseurl }}common/images/cman_actions.png" alt="You can enable, disable, or update components">
-			</li>
-			</ul>
+			
 	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>
@@ -94,7 +93,7 @@ To install a new purchase:
 
 	<img src="{{ site.baseurl }}common/images/compman_new-purchases2.png" width="700px">
 3.	Click **Install**.
-4.	Continue with <a href="{{page.baseurl}}comp-mgr/compman-readiness.html">Readiness check</a>.
+4.	Continue with <a href="{{page.baseurl}}comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 
 
 
@@ -111,23 +110,23 @@ To update the component, click **Update** from the **Actions** list. A sample fo
 
 <img src="{{ site.baseurl }}common/images/cman_actions_update.png" alt="Click Update from the Actions menu">
 
-Continue with <a href="{{page.baseurl}}comp-mgr/compman-readiness.html">Readiness check</a>.
+Continue with <a href="{{page.baseurl}}comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 
-<h2 id="compman-endis">Enable or disable a component</h2>
+## Enable or disable a component {#compman-endis}
 To enable or disable a component, click the appropriate choice from the **Actions** list.
 
 The following figure shows an example of disabling a component.
 
 <img src="{{ site.baseurl }}common/images/cman_actions-disable.png" alt="Click Disable from the Actions menu">
 
-Continue with <a href="{{page.baseurl}}comp-mgr/compman-readiness.html">Readiness check</a>.
+Continue with <a href="{{page.baseurl}}comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 
 <h2 id="compman-uninst">Uninstall a component</h2>
 To uninstall a component, click **Uninstall** from the **Actions** list as the following figure shows.
 
 <img src="{{ site.baseurl }}common/images/cman_uninstall1.png" alt="Uninstall a component">
 
-Continue with <a href="{{page.baseurl}}comp-mgr/compman-readiness.html">Readiness check</a>.
+Continue with <a href="{{page.baseurl}}comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 
 
 
@@ -256,3 +255,6 @@ The following table shows which actions are supported for each non-metapackage c
 		</tr>
 		</tbody>
 	</table>
+
+#### Next
+[Step 2: Readiness check]({{ page.baseurl }}comp-mgr/module-man/compman-readiness.html)

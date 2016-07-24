@@ -3,7 +3,7 @@ layout: default
 group: compman
 subgroup: 32_UseUpgrade
 title: Step 2. Readiness check
-menu_title: Readiness check
+menu_title: Step 2. Readiness check
 menu_node: 
 menu_order: 10
 version: 2.0

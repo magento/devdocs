@@ -33,5 +33,5 @@ Click one of the following:
 
 	You can click **Back** to back up the database first if you did not do so already.
 
-Continue with [Step 4. Uninstall]({{page.baseurl}}comp-mgr/compman-uninst-final.html)
+Continue with [Step 4. Uninstall]({{page.baseurl}}comp-mgr/module-man/compman-uninst-final.html)
 
