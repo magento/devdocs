@@ -257,4 +257,4 @@ The following table shows which actions are supported for each non-metapackage c
 	</table>
 
 #### Next
-[Step 2: Readiness check]({{ page.baseurl }}comp-mgr/module-man/compman-readiness.html)
+[Step 1: Readiness check]({{ page.baseurl }}comp-mgr/module-man/compman-readiness.html)
