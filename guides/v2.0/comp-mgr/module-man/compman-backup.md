@@ -13,7 +13,7 @@ redirect_from: /guides/v2.0/comp-mgr/compman-backup.html
 
 ## Step 2. Back up the file system and database
 
-{% include comp-man/backup.md %
+{% include comp-man/backup.md %}
 
 #### Next step
 After your backup is complete, continue with any of the following: 
