@@ -2,8 +2,8 @@
 layout: default
 group: compman
 subgroup: 05_UseCompMan
-title: Environment tutorials
-menu_title: Environment tutorials
+title: Step 3
+menu_title: Step 3
 menu_order: 8
 menu_node: 
 level3_menu_node: level3parent

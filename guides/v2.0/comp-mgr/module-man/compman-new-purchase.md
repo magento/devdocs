@@ -1,11 +1,11 @@
 ---
 layout: default 
 group: compman
-subgroup: 07_new
+subgroup: 05_UseCompMan
 title: Step 3. Component Install
 menu_title: Component Install
 menu_node: 
-menu_order: 8
+menu_order: 9
 level3_menu_node: level3child
 level3_subgroup: step3
 version: 2.0
