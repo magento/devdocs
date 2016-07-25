@@ -60,20 +60,23 @@ The `queue.xml` file defines the broker that processes topics and the name of ea
 
 A single topic can be sent to one or multiple queues. Each recipient is defined in `consumer` elements. , and queues
 
-### broker elements
+### broker element ###
+
 Parameter | Description | Example
 === | === | ===
 topic | A topic defined in the `communication.xml` file. | `mysystem.ordercreate`, `mysystem.ordercreate.success`
 type | The type of message broker. For this release, the value must be `amqp`. | `amqp`
 exchange | The name of the exchange to publish to. The default system exchange name is `magento`. | `magento`
 
-### consumer element###
+### consumer element ###
+
 Parameter | Description | Example
 === | === | ===
 name | The name of the consumer.  | sync.consumer, async.consumer
 queue | Defines the queue name to send the message to.| magento_omsspec_api_ordermanagement_ordercreated
 
 ## Sample `queue.xml` file ##
+
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
     <broker topic="synchronous.rpc.test" type="amqp" exchange="magento">
