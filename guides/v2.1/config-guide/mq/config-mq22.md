@@ -102,7 +102,7 @@ Each `argument` definition must have the following parameters:
 | --------------- | ----------- |
 | name | The parameter name |
 | type | The data type of the value |
-| <value> | The value being passed |
+| \<value> | The value being passed |
 
 The following illustrates an `arguments` block:
 
