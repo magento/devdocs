@@ -37,7 +37,7 @@ Depending on your needs, you may only need to create and configure one or two of
 * When you want to configure the local queue and consume messages published by 3rd party system, you will need the `queue_topology` and `queue_consumer` files.
 
 ### `queue_consumer.xml` ###
-The `queue_consumer.xml` file contains the following elements with the following attributes:
+The `queue_consumer.xml` file contains one or more `consumer` elements:
 
 #### `consumer` element ####
 {:.no_toc}
@@ -48,7 +48,7 @@ The `queue_consumer.xml` file contains the following elements with the following
 | queue (required) | Defines the queue name to send the message to. This value is used in the `queue_topology.xml` file. |
 | handler          | The method within a specified class that processes the message. The value must be specified in the format `<Vendor>\Module\<ServiceName>::<methodName>`.|
 | consumerInstance | The path to a Magento class that consumes the message. |
-| connection       | Must be `rabbitmq` or other value specified in the `connection` parameter of a publisher in the `queue_publisher.xml` file. |
+| connection       | Must be `amqp` if using an external message broker or `db` if writing to the MySQL database.  |
 | max_messages     | Specifies the maximum number of messages to consume.|
 
 #### Example ####
@@ -59,7 +59,7 @@ The `queue_consumer.xml` file contains the following elements with the following
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue_consumer.xsd">
     <consumer name="basic.consumer" queue="basic.consumer.queue" handler="LoggerClass::log"/>
     <consumer name="synchronous.rpc.test" queue="synchronous.rpc.test.queue" handler="LoggerClass::log"/>
-    <consumer name="rpc.test" queue="queue.for.rpc.test.unused.queue" consumerInstance="Magento\Framework\MessageQueue\BatchConsumer" connection="oms"/>
+    <consumer name="rpc.test" queue="queue.for.rpc.test.unused.queue" consumerInstance="Magento\Framework\MessageQueue\BatchConsumer" connection="amqp"/>
 </config>
 {% endhighlight %}
 
@@ -77,8 +77,8 @@ The `queue_topology.xml` file contains the following elements:
 | Attribute      | Description |
 | -------------- | ----------- |
  name (required) | A unique ID for the exchange.
- type | Specifies the type of exchange. Must be
- connection |
+ type | Specifies the type of exchange. Must be `topic`.
+ connection | Specifies the type of connection. Must be `amqp` or `db`.
  durable | Boolean value indicating whether the exchange is persistent. Non-durable exchanges are purged when the server restarts.
  autoDelete | Boolean value indicating whether the exchange is deleted when all queues have finished using it.
  internal | Boolean value. If set to true, the exchange may not be used directly by publishers, but only when bound to other exchanges.
@@ -90,8 +90,8 @@ The `queue_topology.xml` file contains the following elements:
 | -------------- | ----------- |
 | id (required)  | A unique ID for this binding. |
 | topic          | The name of a topic. You can specify an asterisk (*) or pound sign (#) as wildcards.|
-| destinationType | Specifies whether the destination is an `exchange` or `queue`. |
-| destination | Identifies the name of an exchange or queue . |
+| destinationType | Must be `queue`. |
+| destination | Identifies the name of an exchange or queue. |
 | disabled       | Determines whether this binding is disabled. The default value is `false`. |
 
 
@@ -101,6 +101,7 @@ The `queue_topology.xml` file contains the following elements:
 The `arguments` element is an optional element that contains one or more `argument` elements. These arguments define key/value pairs that are passed to the broker for processing.
 
 Each `argument` definition must have the following parameters:
+
 | Attribute       | Description |
 | --------------- | ----------- |
 | name | The parameter name |
@@ -124,7 +125,7 @@ See the `types.xsd` file to determine all the supported data types.
 {% highlight xml %}
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue_topology.xsd">
-<exchange name="magento-topic-based-exchange1" type="topic" connection="customConnection">
+<exchange name="magento-topic-based-exchange1" type="topic" connection="db">
     <binding id="topicBasedRouting2" topic="anotherTopic" destinationType="queue" destination="topic-queue1">
         <arguments>
             <!--Not part of our use case, but will be processed if someone specifies them-->
@@ -136,7 +137,7 @@ See the `types.xsd` file to determine all the supported data types.
     </arguments>
 </exchange>
 
-<exchange name="magento-topic-based-exchange2" type="topic" connection="customConnection">
+<exchange name="magento-topic-based-exchange2" type="topic" connection="db">
     <binding id="topicBasedRouting1" topic="#" destinationType="queue" destination="topic-queue2"/>
     <arguments>
         <argument name="alternate-exchange" xsi:type="string">magento-log-exchange</argument>
@@ -162,7 +163,8 @@ The `queue_publisher.xml` file contains the following elements with the followin
 
 | Attribute            | Description |
 | -------------------- | ----------- |
-| name (required)      | The name of the connection. |
+| name (required)      | The type of connection. Must be `amqp` or `db`.|
+|
 | exchange             | The name of the exchange to publish to. The value is referenced in both the `queue_topology.xml` and `queue_consumer.xml` files. The default system exchange name is `magento`. |
 | disabled             | Determines whether this queue is disabled. The default value is `false`. |
 
@@ -174,21 +176,15 @@ The `queue_publisher.xml` file contains the following elements with the followin
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue_publisher.xsd">
     <publisher topic="magento.testModuleSynchronousAmqp.api.serviceInterface.execute" disabled="true" />
     <publisher topic="asynchronous.test">
-        <connection name="oms" exchange="custom-header-based" disabled="true"/>
-        <connection name="oms3" disabled="true"/>
-        <connection name="oms3" exchange="custom-topic-based"/>
+        <connection name="amqp" exchange="magento" disabled="false"/>
+        <connection name="db" exchange="exch1" disabled="true"/>
     </publisher>
 </config>
 {% endhighlight %}
 
 ### Updating 'queue.xml'
 
-In Magento 2.0, message queue topology was configured using the `<model>/etc/queue.xml` file. To split your existing `queue.xml` file into the appropriate files, map these elements to their corresponding files.
-
-* `publisher` - This element will go into the `queue_publisher.xml` file.
-* `topic` - The data in this element will go into the `queue_publisher.xml` and `queue_topology.xml` files.
-* `consumer` - This element will go into the `queue_consumer.xml` file.
-* `bind` - The data in this element will mainly go in the `queue_topology.xml` files.
+TBD
 
 ### Related Topics
 *	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
