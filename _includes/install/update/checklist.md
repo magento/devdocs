@@ -43,7 +43,7 @@ For details, see [Set up cron]({{page.baseurl}}install-gde/install/post-install-
 ### File system permissions {#perms}
 For security reasons, Magento requires certain permissions on the file system. Permissions are different from [*ownership*](#magento-owner-group). Ownership determines *who* can perform actions on the file system; permissions determine *what* the user can do.
 
-Directories in the Magento file system must be writable by the [Magento file system owner's]({{page.baseurl}} install-gde/prereq/file-system-perms.html) group.
+Directories in the Magento file system must be writable by the [Magento file system owner's]({{page.baseurl}}install-gde/prereq/file-system-perms.html) group.
 
 To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider's file manager application.
 

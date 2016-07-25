@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: 20_update-updater
+subgroup: 40_update-updater
 title: Updater application
 menu_title: Updater application
 menu_node: 

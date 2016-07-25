@@ -2,8 +2,8 @@
 layout: default  
 group: fedg
 subgroup: A_Themes
-title: Create a theme
-menu_title: Create a theme
+title: Create a storefront theme
+menu_title: Create a storefront theme
 menu_order: 2
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-create.md
@@ -249,12 +249,6 @@ To learn more about theme layouts, refer to the <a href="{{page.baseurl}}fronten
 ## What's next {#next}
 See the [Apply and configure a theme in Admin]({{page.baseurl}}frontend-dev-guide/themes/theme-apply.html) topic.
 
-## Uninstall a theme
+## See also
 
-If your theme is a composer package, you can uninstall it using the [theme uninstall CLI command]({{page.baseurl}}install-gde/install/cli/install-cli-theme-uninstall.html).
-
-If your theme is not a Composer package, you must uninstall it manually by doing the following:
-
-* Update the parent node information in child's `theme.xml` to remove references to the theme.
-
-* Remove theme code from the file system.
+ * [Uninstall a theme]({{site.gdeurl}}install-gde/install/cli/install-cli-theme-uninstall.html)

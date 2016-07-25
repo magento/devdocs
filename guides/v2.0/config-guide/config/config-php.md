@@ -45,8 +45,7 @@ Examples:
 
 `config.php` snippet:
 
-{% highlight PHP %}
-<?php
+{% highlight php startinline=true %}
 return array (
   'modules' =>
   array (
@@ -61,7 +60,7 @@ return array (
     'Magento_Customer' => 1,
 ...
   ),
-); ?>
+);
 {% endhighlight %}
 
 The value `1` or `0` indicates whether a module is enabled or disabled. 

@@ -66,7 +66,7 @@ Changes made:
 ### More information
 See one of the following sections for more information:
 
-* <a href="#m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</a>
+*	<a href="#m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</a>
 *	<a href="#m2devgde-xlate-translating">Manually translate words and phrases</a>
 *	<a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a>
 *	<a href="#m2devgde-xlate-languagepack">Language packages</a>
@@ -102,7 +102,7 @@ Magento translates words and phrases when all of the following conditions are me
 The Magento application automatically assembles translation dictionaries located in modules' `i18n` directory into a dictionary per language. For example, Brazilian Portuguese (`pt_BR`) translation dictionaries might be located in module and theme directories similar to the following:
 
 	app/code/Magento/Checkout/i18n/pt_BR.csv
-	app/design/frontend/Magento/demo/i18n/pt_BR.csv
+	app/design/frontend/<Vendor>/<theme>/i18n/pt_BR.csv
 
 Assembling the preceding `pt_BR.csv` files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).
 
@@ -128,8 +128,8 @@ Magento enables you to create the following types of language packages:
 		 |       |-- pt_BR.csv
 		 |__/design
 		   |__/frontend
-		     |__/Magento
-		       |__/demo
+		     |__/<Vendor>
+		       |__/<theme>
 		         |__/i18n
 		           |-- pt_BR.csv
 
