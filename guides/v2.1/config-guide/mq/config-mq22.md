@@ -17,10 +17,6 @@ _**Note to reviewer: Is the following note still true?**_
   <p>The message queue topology can only be configured after Magento Community Edition has been installed and before Magento Enterprise Editions has been installed. </p>
 </div>
 
-<div class="bs-callout bs-callout-info" markdown="1">
-  For instructions on upgrading your `queue.xml` from 2.1 or 2.0, please see [updating to 2.2](#updating-queuexml).
-</div>
-
 ### Overview ###
 Configuring the message queue topology involves creating and modifying 3 configuration files in the `<module>/etc` directory:
 
@@ -65,11 +61,11 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 
 ### `queue_topology.xml` ###
 
-The `queue_topology.xml` file contains the following elements:
+The `queue_topology.xml` file defines the relationship between a queue and its assigned topic. It contains the following elements:
 
 * `exchange`
 * `binding`
-* `arguments`
+* `arguments` (optional)
 
 #### `exchange` element ####
 
@@ -148,7 +144,7 @@ See the `types.xsd` file to determine all the supported data types.
 
 ### `queue_publisher.xml`
 
-The `queue_publisher.xml` file contains the following elements with the following attributes:
+The `queue_publisher.xml` file defines the relationship between a topic and its publisher. It contains the following elements with the following attributes:
 
 #### `publisher` element
 {:.no_toc}
@@ -164,7 +160,6 @@ The `queue_publisher.xml` file contains the following elements with the followin
 | Attribute            | Description |
 | -------------------- | ----------- |
 | name (required)      | The type of connection. Must be `amqp` or `db`.|
-|
 | exchange             | The name of the exchange to publish to. The value is referenced in both the `queue_topology.xml` and `queue_consumer.xml` files. The default system exchange name is `magento`. |
 | disabled             | Determines whether this queue is disabled. The default value is `false`. |
 
@@ -182,7 +177,7 @@ The `queue_publisher.xml` file contains the following elements with the followin
 </config>
 {% endhighlight %}
 
-### Updating 'queue.xml'
+### Updating `queue.xml`
 
 TBD
 
