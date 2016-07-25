@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Functional Testing Framework Features</title>
+	<title>Modularity in the Functional Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/mtf/features.html">
+	<link rel="canonical" href="//guides/v2.1/mtf/features/modularity.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -167,9 +167,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Functional Testing Framework Features</h1>
+		<h1 class="page-heading">Modularity in the Functional Testing Framework</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/features.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/mtf/features/modularity.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -507,7 +507,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/mtf/features.html">FEATURES</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/features.html">FEATURES</a></li>
 									
 								
 
@@ -518,7 +518,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/mtf/features/modularity.html">Modularity</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/mtf/features/modularity.html">Modularity</a></li>
 
 									
 
@@ -797,19 +797,26 @@
 	<section class="content">
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 July 2016 (PDT)</i></p>
-		<h2 id="about-features">About features</h2>
+		<h2 id="about-modularity">About modularity</h2>
 
-<p>The Functional Testing Framework is:</p>
+<p>The Functional Testing Framework (FTF) enables you to follow the principle of modularity as Magento does. Functional tests for each module are collected in separate directory with the name of corresponding module.</p>
+
+<p><img src="/common/images/mtf_modularity_dirs.png" alt="Functional tests modules image" /></p>
+
+<p>Modularity gives the following advantages:</p>
 
 <ul>
-  <li>Flexible, because of <a href="/guides/v2.1/mtf/features/modularity.html">modularity</a> support.</li>
-  <li>Fast, because of parallel execution flow.</li>
-  <li>Informative, because of reporting tool.</li>
-  <li>Suitable, because of test suits.</li>
-  <li>Compatible, because of web-driver selection.</li>
+  <li>You can add and remove Magento modules with no affect to functional tests. For this purpose the FTF has a special structure of functional test, which is split into different <a href="/guides/v2.1/mtf/mtf_entities.html">entities</a>.</li>
+  <li>You can use scenarios in functional testing. Test flow in <a href="/guides/v2.1/mtf/mtf_entities/mtf_scenariotest.html">scenario tests</a> can be modified.</li>
 </ul>
 
-<p>Each feature will be described in a separate topic.</p>
+<p>It is achieved due to the FTF capabilities like:</p>
+
+<ul>
+  <li>merging for a <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>, a <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">data set</a>, a <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">page</a>, a <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html">fixture repository</a></li>
+  <li><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_extend">extending a fixture</a></li>
+  <li>replacement in a <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">data set</a> and a <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html">fixture repository</a>.</li>
+</ul>
 
 <!-- LINK DEFINITIONS -->
 
