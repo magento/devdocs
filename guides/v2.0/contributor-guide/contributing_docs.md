@@ -32,7 +32,7 @@ The following topics are included in the Guide:
 
 What's your area of expertise? Please share your knowledge with us! Contributions can take the form of completely new topics, changes and edits to existing documentation, or just good suggestions.
 
-We have a <a href="{{page.baseurl}}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/2.0/guides/v2.0/contributor-guide/basic_template.md">.md file  on Github</a>.
+We have a <a href="{{page.baseurl}}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/develop/guides/v2.0/contributor-guide/basic_template.md">.md file  on Github</a>.
 
 The language we use in our documentation is [Markdown](http://daringfireball.net/projects/markdown/){:target="_blank"}, which is a simple markup language that gets converted to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html){:target="_blank"}. 
 
