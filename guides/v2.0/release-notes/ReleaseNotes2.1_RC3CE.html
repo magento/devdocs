@@ -978,20 +978,32 @@ This Release Candidate is for test purposes only. Do not install it in a product
   <h2 id="installation-and-upgrade-instructions-1">Installation and upgrade instructions</h2>
   <p>You can get Magento Community Edition 2.1 (including a Release Candidate) from Github, Composer, or using a compressed archive.</p>
 
+  <p>A Release Candidate is for testing purposes only. Do not install it in a production environment.</p>
+
   <p>See one of the following sections for more information:</p>
 
   <ul>
-    <li><a href="#install-rc-gh">Get the Magento CE software from GitHub</a></li>
     <li><a href="#install-rc-composer">Get the Magento CE software using Composer</a></li>
+    <li><a href="#install-rc-gh">Get the Magento CE software from GitHub</a></li>
     <li><a href="#install-archive">Get a compressed archive</a></li>
     <li><a href="#install-finish">Complete the installation</a></li>
     <li><a href="#upgrade-github">Upgrade an existing installation from the GitHub repository</a></li>
     <li><a href="#upgrade-other">Other upgrades</a></li>
   </ul>
 
-  <div class="bs-callout bs-callout-warning">
-    <p><em>Do not</em> install or upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.</p>
-</div>
+  <h3 id="install-rc-composer" class="no_toc">Get the Magento CE software using Composer</h3>
+
+  <p>The CE software is available from <code>repo.magento.com</code>. Before getting the CE software, familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+</code></pre>
+
+  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code> (GA release), or a Release Candidate; for example, <code>2.1.0-rc3</code></p>
+
+  <p>For example, to install Magento CE 2.1.0 GA in the <code>magento2</code> directory:</p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0 magento2
+</code></pre>
 
   <h3 id="install-rc-gh" class="no_toc">Get the Magento CE software from GitHub</h3>
 
@@ -1007,20 +1019,6 @@ git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
   <p><code>&lt;version&gt;</code> is <code>2.1.0</code> (GA release), <code>2.1.0-rc3</code></p>
 
   <p><code>[-b &lt;version&gt;]</code> optionally checks out a new branch.</p>
-
-  <h3 id="install-rc-composer" class="no_toc">Get the Magento CE software using Composer</h3>
-
-  <p>The CE software is available from <code>repo.magento.com</code>. Before getting the CE software, familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
-
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
-</code></pre>
-
-  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code> (GA release), or a Release Candidate; for example, <code>2.1.0-rc3</code></p>
-
-  <p>For example, to install Magento CE 2.1.0 GA in the <code>magento2</code> directory:</p>
-
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0 magento2
-</code></pre>
 
   <h3 id="install-archive" class="no_toc">Get a compressed archive</h3>
 

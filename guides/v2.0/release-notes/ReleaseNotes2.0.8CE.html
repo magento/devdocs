@@ -714,7 +714,6 @@
     </ul>
   </li>
   <li><a href="#installation-and-upgrade-instructions" id="markdown-toc-installation-and-upgrade-instructions">Installation and upgrade instructions</a>    <ul>
-      <li><a href="#install-ce-composer" id="markdown-toc-install-ce-composer">Get the Magento CE software using Composer</a></li>
       <li><a href="#upgrade" id="markdown-toc-upgrade">Upgrade from an earlier version</a></li>
     </ul>
   </li>
@@ -800,9 +799,24 @@
 
   <ul>
     <li><a href="#install-ce-composer">Get Magento CE using Composer</a></li>
+    <li><a href="#install-rc-gh">Get the Magento CE software from GitHub</a></li>
     <li><a href="#get-zip">Get Magento CE using a compressed archive</a></li>
     <li><a href="#upgrade">Upgrade from an earlier version</a></li>
   </ul>
+
+  <h3 id="install-ce-composer" class="no_toc">Get the Magento CE software using Composer</h3>
+
+  <p>This software is available from <code>repo.magento.com</code>. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+</code></pre>
+
+  <p>where <code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.8</code>)</p>
+
+  <p>For example, to install Magento CE 2.0.8 in the <code>magento2</code> directory:</p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.8 magento2
+</code></pre>
 
   <h3 id="install-rc-gh" class="no_toc">Get the Magento CE software from GitHub</h3>
 
@@ -818,19 +832,6 @@ git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
   <p><code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.8</code>)</p>
 
   <p><code>[-b &lt;version&gt;]</code> optionally checks out a new branch.</p>
-
-  <h3 id="install-ce-composer">Get the Magento CE software using Composer</h3>
-  <p>This software is available from <code>repo.magento.com</code>. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
-
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
-</code></pre>
-
-  <p>where <code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.8</code>)</p>
-
-  <p>For example, to install Magento CE 2.0.8 in the <code>magento2</code> directory:</p>
-
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.8 magento2
-</code></pre>
 
   <h3 id="get-zip" class="no_toc">Get Magento CE using a compressed archive</h3>
 
