@@ -1,1 +1,0 @@
-../../../v2.1/comp-mgr/module-man/compman-uninst-data.md
