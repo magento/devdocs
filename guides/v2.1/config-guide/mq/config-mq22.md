@@ -64,9 +64,15 @@ The `queue_consumer.xml` file contains the following elements with the following
 {% endhighlight %}
 
 ### `queue_topology.xml` ###
-The `queue_topology.xml` file contains the following elements with the following attributes:
+
+The `queue_topology.xml` file contains the following elements:
+
+* `exchange`
+* `binding`
+* `arguments`
 
 #### `exchange` element ####
+
 {:.no_toc}
 | Attribute      | Description |
 | -------------- | ----------- |
@@ -88,10 +94,6 @@ The `queue_topology.xml` file contains the following elements with the following
 | destination | Identifies the name of an exchange or queue . |
 | disabled       | Determines whether this binding is disabled. The default value is `false`. |
 
-
-| connection     | Must be `rabbitmq` or other value specified in the `connection` parameter of a publisher in the `queue_publisher.xml` file.|
-| exchange       | The name of an exchange defined in the `queue_publisher.xml` file.|
-| routing-header | Unique value used to match against a message header. |
 
 #### `arguments` element ####
 
