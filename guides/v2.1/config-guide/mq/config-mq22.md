@@ -118,29 +118,30 @@ The following illustrates an `arguments` block:
 
 See the `types.xsd` file to determine all the supported data types.
 
-
-
 #### Example
 {:.no_toc}
 
 {% highlight xml %}
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue_topology.xsd">
-    <binding id="synchronous.rpc.test.binding" topic="synchronous.rpc.test" disabled="true">
-        <queue name="queue.synchronous.rpc.test" disabled="true" />
+<exchange name="magento-topic-based-exchange1" type="topic" connection="customConnection">
+    <binding id="topicBasedRouting2" topic="anotherTopic" destinationType="queue" destination="topic-queue1">
+        <arguments>
+            <!--Not part of our use case, but will be processed if someone specifies them-->
+            <argument name="argument1" xsi:type="string">value</argument>
+        </arguments>
     </binding>
-    <binding id="serviceInterface.execute.binding" topic="magento.testModuleSynchronousAmqp.api.serviceInterface.execute" connection="mysql" exchange="custom_exchange">
-        <queue name="queue.magento.testModuleSynchronousAmqp.api.serviceInterface.execute" />
-    </binding>
-    <binding id="warehouse1.binding" routing-header="warehouse1" >
-        <queue name="queue.synchronous.rpc.testW1" disabled="true" />
-    </binding>
-    <binding id="warehouse2.binding" routing-header="warehouse2" connection="custom" exchange="custom_exchange">
-        <queue name="queue.synchronous.rpc.testW2" disabled="true" />
-    </binding>
-    <binding id="mysql.binding" topic="magento.testModuleSynchronousAmqp.api.serviceInterface.execute" connection="mysql">
-        <queue name="queue.magento.testModuleSynchronousAmqp.api.serviceInterface.execute" />
-    </binding>
+    <arguments>
+        <argument name="alternate-exchange" xsi:type="string">magento-log-exchange</argument>
+    </arguments>
+</exchange>
+
+<exchange name="magento-topic-based-exchange2" type="topic" connection="customConnection">
+    <binding id="topicBasedRouting1" topic="#" destinationType="queue" destination="topic-queue2"/>
+    <arguments>
+        <argument name="alternate-exchange" xsi:type="string">magento-log-exchange</argument>
+    </arguments>
+</exchange>
 </config>
 {% endhighlight %}
 
