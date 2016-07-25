@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: 05_UseCompMan
+subgroup: 06_UseExtMan
 title: Step 3. Component Install
 menu_title: Component Install
 menu_node: 
@@ -9,7 +9,7 @@ menu_order: 9
 level3_menu_node: level3child
 level3_subgroup: step3
 version: 2.2
-github_link: comp-mgr/module-man/compman-new-purchase.md
+github_link: comp-mgr/extens-man/extensman-new-purchase.md
 ---
 
 ## Step 3. Component Install

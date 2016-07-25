@@ -38,7 +38,7 @@ To upgrade Magento system software instead, see <a href="{{page.baseurl}}comp-mg
 </div>
 
 ### Choose an existing login {#extens-login-exist}
-TBD
+TBD Not implemented?
 
 ### Log in for the first time {#extens-login-first}
 To log in to the Extension Manager if you haven't logged in before:
@@ -49,8 +49,40 @@ To log in to the Extension Manager if you haven't logged in before:
 2.	Click **Submit**.
 3.	Continue with TBD.
 
-	
-5.	Click **Save Config**.
-3.	Click **Extension Manager** and continue with <a href="{{page.baseurl}}comp-mgr/module-man/compman-main-pg.html">Manage your components</a>.
+## Choose components to install or uninstall
+After you log in to the Extension Manager, a list of components available to install or update displays as follows:
+
+![Choose components to install, update, or uninstall]({{ site.baseurl }}common/images/extens_mgr_updates.png){:width="400px"}
+
+*	Updates Available displays the number of components you can update.
+*	Ready to Install displays the number of components you can install.
+*	Refresh displays the last time you refreshed the list of components on Magento Marketplace. 
+
+	Click **Refresh** to update the information, such as after you purchase new components.
+
+Click the Review button corresponding to which action you'd like to take and continue with one of the following sections.
+
+## Install or uninstall components
+
+{% collapsible To install or uninstall components: %}
+
+1.	Select the check box next to each component, or click **Select All** from the list.
+2.	After you select components, click the **Install** or **Uninstall** link next to a component.
+3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
+
+
+{% endcollapsible %}
+
+## Update components
+
+{% collapsible To update components: %}
+
+TBD
+
+{% endcollapsible %}
+
+
+
+
 
 
