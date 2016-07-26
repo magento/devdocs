@@ -23,11 +23,10 @@ To run the Extension Manager:
 	The following page displays.
 
 	![Install or upgrade extensions]({{ site.baseurl }}common/images/extens_mgr_initial.png){:width="500px"}
-5.	Continue with one of the following sections:
+5.	If prompted, log in to the Extension Manager.
 
-	*	[Choose an existing login](#extens-login-exist)
-	*	[Log in for the first time](#extens-login-first)
-	*	[]()
+	Enter your authentication keys in the provided fields.
+2.	Click **Submit**.
 
 To upgrade Magento system software instead, see <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.
 
@@ -37,19 +36,7 @@ To upgrade Magento system software instead, see <a href="{{page.baseurl}}comp-mg
    	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
 </div>
 
-### Choose an existing login {#extens-login-exist}
-TBD Not implemented?
-
-### Log in for the first time {#extens-login-first}
-To log in to the Extension Manager if you haven't logged in before:
-
-1.	Enter your authentication keys in the provided fields.
-
-	TBD
-2.	Click **Submit**.
-3.	Continue with TBD.
-
-## Choose components to install or uninstall
+## Choose components to install or uninstall {#extens-install}
 After you log in to the Extension Manager, a list of components available to install or update displays as follows:
 
 ![Choose components to install, update, or uninstall]({{ site.baseurl }}common/images/extens_mgr_updates.png){:width="400px"}
@@ -69,7 +56,6 @@ Click the Review button corresponding to which action you'd like to take and con
 1.	Select the check box next to each component, or click **Select All** from the list.
 2.	After you select components, click the **Install** or **Uninstall** link next to a component.
 3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
-
 
 {% endcollapsible %}
 
