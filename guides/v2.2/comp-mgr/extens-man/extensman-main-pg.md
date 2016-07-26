@@ -57,7 +57,9 @@ Click the Review button corresponding to which action you'd like to take and con
 
 	![Review and install components]({{ site.baseurl }}common/images/extensman_review-purchases.png){:width="450px"}
 2.	Select the check box next to each component, or click **Select All** from the list.
-2.	After you select components, click the **Install** link.
+2.	After you select components, click **Install** at the top of the page as the following figure shows.
+
+	![Install your purchases]({{ site.baseurl }}extensman_ready-to-install.png)
 3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
@@ -77,7 +79,10 @@ Click the Review button corresponding to which action you'd like to take and con
 
 {% collapsible To update components: %}
 
-TBD
+1.	In the Installed Products section, click **Update** from the **Actions** list as the following figure shows.
+
+	![Update components]({{ site.baseurl }}common/images/extensman_update.png){:width="450px"}
+3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
 

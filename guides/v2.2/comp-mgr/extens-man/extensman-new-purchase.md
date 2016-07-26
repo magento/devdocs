@@ -61,6 +61,6 @@ Generating autoload files
 
 When the installation is complete, a page similar to the following displays:
 
-<img src="{{ site.baseurl }}common/images/extensman_new-purchases_finish.png" width="300px">
+<img src="{{ site.baseurl }}common/images/extensman_new-purchases_finish.png" width="200px">
 
 Click **Back to Setup Tool**.
