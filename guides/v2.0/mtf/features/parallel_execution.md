@@ -5,7 +5,7 @@ subgroup: 45_Features
 title: Parallel execution flow with the Functional Testing Framework
 menu_title: Parallel execution flow
 version: 2.0
-github_link: mtf/mtf_features/parallel_execution.md
+github_link: mtf/features/parallel_execution.md
 ---
 
 <h4>Contents</h4>
