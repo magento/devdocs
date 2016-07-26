@@ -1,21 +1,21 @@
 ---
 layout: default 
 group: compman
-subgroup: 05_UseCompMan
+subgroup: 06_UseExtMan
 title: Step 3. Component Update
 menu_title: Component Update
 menu_node: 
 menu_order: 10
 level3_menu_node: level3child
-level3_subgroup: step3
+level3_subgroup: step3-ext
 version: 2.2
-github_link: comp-mgr/module-man/compman-update.md
+github_link: comp-mgr/extens-man/extensman-update.md
 ---
 
 ## Step 3. Component Update
 This step displays if you're updating components. The following figure shows an example.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_update-step.png" width="350px" alt="Click update to complete the task">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/extensman_update-step.png" width="350px" alt="Click update to complete the task">
 
 To complete the update, click **Update**. 
 
