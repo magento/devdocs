@@ -863,8 +863,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 11 July 2016 (PDT)</i></p>
-		<p>##Specifying searchCriteria##</p>
+			<p align="right"><i>Updated: 26 July 2016 (PDT)</i></p>
+		<h2 id="specifying-searchcriteria">Specifying searchCriteria</h2>
 
 <p>POST, PUT, and DELETE requests to the REST Web API require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or XML structure) in the body of the message.</p>
 
@@ -969,8 +969,8 @@ searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<s
 
 <p>The following sections provide examples of each type of search. These examples use the Magento CE sample data.</p>
 
-<p>###Simple search ###
-The Magento CE sample data uses the <code>category_gear</code> field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.</p>
+<h3 id="simple-search">Simple search</h3>
+<p>The Magento CE sample data uses the <code>category_gear</code> field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/products/?
 searchCriteria[filter_groups][0][filters][0][field]=category_gear<span class="err">&amp;</span>
@@ -996,16 +996,16 @@ searchCriteria =&gt; [
 
 <p>The query returns 9 items.</p>
 
-<p>###Simple search using a timestamp###
-The following search finds all invoices created after the specified time (midnight, July 1 2016). You can set up a similar search to run periodically to poll for changes.</p>
+<h3 id="simple-search-using-a-timestamp">Simple search using a timestamp</h3>
+<p>The following search finds all invoices created after the specified time (midnight, July 1 2016). You can set up a similar search to run periodically to poll for changes.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/invoices?
 searchCriteria[filter_groups][0][filters][0][field]=created_at<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][condition_type]=gt</code></pre></figure>
 
-<p>####Logical OR search####
-The following example searches for all products whose names contain the string <code>Leggings</code> or <code>Parachute</code>. The instances of <code>%25</code> in the example are converted into the SQL wildcard character <code>%</code>.</p>
+<h4 id="logical-or-search">Logical OR search</h4>
+<p>The following example searches for all products whose names contain the string <code>Leggings</code> or <code>Parachute</code>. The instances of <code>%25</code> in the example are converted into the SQL wildcard character <code>%</code>.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento_host&gt;</span>/index.php/rest/V1/products?
 searchCriteria[filter_groups][0][filters][0][field]=name<span class="err">&amp;</span>
@@ -1037,8 +1037,8 @@ searchCriteria =&gt; [
 
 <p>The search returns 14 products that contain the string <code>Leggings</code> in the <code>name</code> field and 14 products that contain the string <code>Parachute</code>.</p>
 
-<p>####Logical AND search####
-This sample searches for women’s shorts that are size 31 and costs less than $30. In the CE sample data, women’s shorts have a <code>sku</code> value that begins with <code>WSH</code>. The <code>sku</code> also contains the size and color, such as <code>WSH02-31-Yellow</code>.</p>
+<h4 id="logical-and-search">Logical AND search</h4>
+<p>This sample searches for women’s shorts that are size 31 and costs less than $30. In the CE sample data, women’s shorts have a <code>sku</code> value that begins with <code>WSH</code>. The <code>sku</code> also contains the size and color, such as <code>WSH02-31-Yellow</code>.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/products?
 searchCriteria[filter_groups][0][filters][0][field]=sku<span class="err">&amp;</span>
@@ -1071,7 +1071,7 @@ searchCriteria =&gt; [
 </pre>
 <p>The query returns 9 items.</p>
 
-<p>####Logical AND and OR search####</p>
+<h4 id="logical-and-and-or-search">Logical AND and OR search</h4>
 
 <p>This sample is similar the Logical AND sample. It searches the <code>sku</code>s for women’s shorts (WSH%) or pants (WP%)in size 29. The system performs two logical ANDs to restrict the results to those that cost from $40 to $49.99</p>
 
@@ -1091,8 +1091,8 @@ searchCriteria[filter_groups][2][filters][0][condition_type]=to</code></pre></fi
 
 <p>The query returns 37 items.</p>
 
-<p>###Other search criteria###
-The following searchCriteria can be used to determine the sort order and the number of items to return.</p>
+<h3 id="other-search-criteria">Other search criteria</h3>
+<p>The following searchCriteria can be used to determine the sort order and the number of items to return.</p>
 
 <ul>
   <li>
