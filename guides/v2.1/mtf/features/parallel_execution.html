@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Quick start with the Functional Testing Framework</title>
+	<title>Parallel execution flow with the Functional Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/mtf/mtf_quickstart.html">
+	<link rel="canonical" href="//guides/v2.1/mtf/features/parallel_execution.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -167,9 +167,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Quick start with the Functional Testing Framework</h1>
+		<h1 class="page-heading">Parallel execution flow with the Functional Testing Framework</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/mtf_quickstart.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/mtf_features/parallel_execution.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -389,7 +389,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/mtf/mtf_quickstart.html">QUICK START</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_quickstart.html">QUICK START</a></li>
 									
 								
 
@@ -526,7 +526,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/mtf/features/parallel_execution.html">Parallel execution flow</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/mtf/features/parallel_execution.html">Parallel execution flow</a></li>
 
 									
 
@@ -804,32 +804,112 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2>Preface</h2>
-<p>In this chapter you will learn how to:</p>
+			<p align="right"><i>Updated: 25 July 2016 (PDT)</i></p>
+		<h4>Contents</h4>
 
-<ul>
-  <li><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration to set PHPUnit, the FTF, and credentials for Magento modules if required</a></li>
-  <li><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Prepare environment for the test</a>
-    <ul>
-      <li>Run the Selenium Server</li>
-      <li>Run tests on non default browser</li>
-      <li>Run generator</li>
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#setup-parallel-execution" id="markdown-toc-setup-parallel-execution">Setup parallel execution</a>    <ul>
+      <li><a href="#parallel-execution-flow-with-one-magento-instance" id="markdown-toc-parallel-execution-flow-with-one-magento-instance">Parallel execution flow with one Magento instance</a></li>
+      <li><a href="#parallel-execution-flow-with-multiple-magento-instances" id="markdown-toc-parallel-execution-flow-with-multiple-magento-instances">Parallel execution flow with multiple Magento instances</a></li>
     </ul>
   </li>
-  <li><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Run functional tests</a>
-    <ul>
-      <li>Run all tests</li>
-      <li>Run particular test</li>
-    </ul>
-  </li>
-  <li><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_logs.html">Check logs for failed tests</a>
-    <ul>
-      <li>Check FTF logs</li>
-      <li>Check Magento logs</li>
-    </ul>
-  </li>
+  <li><a href="#run-parallel-execution-flow" id="markdown-toc-run-parallel-execution-flow">Run parallel execution flow</a></li>
 </ul>
+
+<h2 id="overview">Overview</h2>
+
+<p>Parallel execution is applicable for test suites only. It decreases the time of testing due to distribution of test cases into multiple threads. A test case cannot be split between different threads. Parallel execution can use one or more copies of the Magento application under test (Magento instances).</p>
+
+<p>A general mechanism is:</p>
+
+<ol>
+  <li>The FTF creates the list of all test cases in a test suite.</li>
+  <li>The FTF creates the required quantity of sessions corresponding to the quantity of threads defined in <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code>.</li>
+  <li>The FTF distributes test cases between sessions. When a sessions is free, a new test case from the queue runs.</li>
+</ol>
+
+<p>Comparatively to the common testing flow</p>
+
+<p><img src="/common/images/mtf_features_common_dia.png" alt="Common flow image" width="150px" /></p>
+
+<p>you can run a test suite using parallel execution flow with one Magento instance</p>
+
+<p><img src="/common/images/mtf_features_parallel_one_dia.png" alt="Parallel execution flow with one instance image" width="400px" /></p>
+
+<p>or run a test suite using parallel execution flow with multiple Magento instances.</p>
+
+<p><img src="/common/images/mtf_features_parallel_multi_dia.png" alt="Common flow and Parallel execution flow image" width="400px" /></p>
+
+<h2 id="setup-parallel-execution">Setup parallel execution</h2>
+
+<p>To setup a parallel execution flow, add Magento instances to <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> in the following format:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
+    ...
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_instances&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;quantity of the Magento instances&gt;&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_&lt;index number of the Magento instance&gt;&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;frontend URL of the Magento instance&gt;&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_&lt;index number of Magento instance&gt;&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;backend URL of the Magento instance&gt;&quot;</span> <span class="nt">/&gt;</span>
+    ...
+<span class="nt">&lt;/php&gt;</span></code></pre></figure>
+
+<div class="bs-callout bs-callout-warning">
+    <p>The default elements <code>"app_frontend_url"</code> and <code>"app_backend_url"</code> must be added obligatory. Otherwise FTF returns an error. The default instances are ignored if <code>"app_instances"</code> element is present.</p>
+</div>
+
+<h3 id="parallel-execution-flow-with-one-magento-instance">Parallel execution flow with one Magento instance</h3>
+
+<p>Parallel execution flow with one Magento instance should be used with a caution. In this mode, test cases are executed simultaneously and can conflict with each other (for example, when different tests set the same parameter in different states).</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Parallel execution flow with one Magento instance can cause conflict between tests running at the same time.</p>
+</div>
+
+<p>The following example shows a setup configuration of the flow with one Magento instance.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
+    ...
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>            // The default frontend instance. Ignored by the FTF.
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>     // The default backend instance. Ignored by the FTF.
+
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_instances&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_0&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_1&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_2&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_0&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_1&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_2&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
+    ...
+<span class="nt">&lt;/php&gt;</span></code></pre></figure>
+
+<h3 id="parallel-execution-flow-with-multiple-magento-instances">Parallel execution flow with multiple Magento instances</h3>
+
+<p>The following example shows the setup configuration of the flow with three Magento instances.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
+    ...
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>            // The default frontend instance. Ignored by the FTF.
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>     // The default backend instance. Ignored by the FTF.
+
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_instances&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_0&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_1.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_1&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_2.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_2&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_3.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_0&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_1.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_1&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_2.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_2&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_3.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
+    ...
+<span class="nt">&lt;/php&gt;</span></code></pre></figure>
+
+<h2 id="run-parallel-execution-flow">Run parallel execution flow</h2>
+
+<p>To run parallel execution flow, you must configure and run a test suite and corresponding Magento instances.</p>
+
+<p>Run a test suite:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>phpunit &lt;magento2&gt;/dev/tests/functional
+vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></pre></figure>
+
 
 
 		</div>
