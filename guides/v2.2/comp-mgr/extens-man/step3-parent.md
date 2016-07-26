@@ -9,5 +9,5 @@ menu_node:
 level3_menu_node: level3parent
 level3_subgroup: step3-ext
 version: 2.2
-github_link: comp-mgr/module-man/step3-parent.md
+github_link: comp-mgr/extens-man/step3-parent.md
 ---
