@@ -59,7 +59,7 @@ Click the Review button corresponding to which action you'd like to take and con
 2.	Select the check box next to each component, or click **Select All** from the list.
 2.	After you select components, click **Install** at the top of the page as the following figure shows.
 
-	![Install your purchases]({{ site.baseurl }}extensman_ready-to-install.png)
+	![Install your purchases]({{ site.baseurl }}common/images/extensman_ready-to-install.png)
 3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
