@@ -26,6 +26,6 @@ To back up:
 
 The following page displays to confirm a successful backup. 
 
-![A page displays to confirm your backup was a success]({{ site.baseurl }}common/images/cman_backup-success.png){:width="650px"}
+![A page displays to confirm your backup was a success]({{ site.baseurl }}common/images/extensman_backup-success.png){:width="650px"}
 
 If errors display, see [Troubleshoot backups]({{page.baseurl}}comp-mgr/trouble/cman/tshoot_backup.html)
