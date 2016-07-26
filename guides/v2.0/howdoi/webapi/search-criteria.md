@@ -11,7 +11,7 @@ github_link: howdoi/webapi/search-criteria.md
 redirect_from: /guides/v2.0/get-started/usage.html
 ---
 
-##Specifying searchCriteria##
+## Specifying searchCriteria ##
 
 POST, PUT, and DELETE requests to the REST Web API require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or XML structure) in the body of the message.
 
@@ -61,7 +61,7 @@ When constructing a search, keep the following in mind:
 
 The following sections provide examples of each type of search. These examples use the Magento CE sample data.
 
-###Simple search ###
+### Simple search ###
 The Magento CE sample data uses the `category_gear` field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.
 
 {% highlight html %}
@@ -90,7 +90,7 @@ searchCriteria => [
 
 The query returns 9 items.
 
-###Simple search using a timestamp###
+### Simple search using a timestamp###
 The following search finds all invoices created after the specified time (midnight, July 1 2016). You can set up a similar search to run periodically to poll for changes.
 
 {% highlight html %}
@@ -100,7 +100,7 @@ searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00&
 searchCriteria[filter_groups][0][filters][0][condition_type]=gt
 {% endhighlight %}
 
-####Logical OR search####
+#### Logical OR search####
 The following example searches for all products whose names contain the string `Leggings` or `Parachute`. The instances of `%25` in the example are converted into the SQL wildcard character `%`.
 
 {% highlight html %}
@@ -135,7 +135,7 @@ searchCriteria => [
 
 The search returns 14 products that contain the string `Leggings` in the `name` field and 14 products that contain the string `Parachute`.
 
-####Logical AND search####
+#### Logical AND search####
 This sample searches for women's shorts that are size 31 and costs less than $30. In the CE sample data, women's shorts have a `sku` value that begins with `WSH`. The `sku` also contains the size and color, such as `WSH02-31-Yellow`.
 
 {% highlight html %}
@@ -171,7 +171,7 @@ searchCriteria => [
 </pre>
 The query returns 9 items.
 
-####Logical AND and OR search####
+#### Logical AND and OR search####
 
 This sample is similar the Logical AND sample. It searches the `sku`s for women's shorts (WSH%) or pants (WP%)in size 29. The system performs two logical ANDs to restrict the results to those that cost from $40 to $49.99
 
@@ -193,7 +193,7 @@ searchCriteria[filter_groups][2][filters][0][condition_type]=to
 
 The query returns 37 items.
 
-###Other search criteria###
+### Other search criteria###
 The following searchCriteria can be used to determine the sort order and the number of items to return.
 
 * `searchCriteria[sortOrders][<index>][field]=<field-name>` - Specifies the field to sort on. By default, search results are returned in descending order. You can sort on multiple fields. For example, to sort on `price` first and then by `name`, call `searchCriteria[sortOrders][0][field]=price&searchCriteria[sortOrders][1][field]=name`.
