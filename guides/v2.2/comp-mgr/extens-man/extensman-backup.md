@@ -7,7 +7,7 @@ menu_title: Step 2. Back up the file system and database
 menu_node: 
 menu_order: 7
 version: 2.2
-github_link: comp-mgr/extens-man/extensmanman-backup.md
+github_link: comp-mgr/extens-man/extensman-backup.md
 ---
 
 ## Step 2. Back up the file system and database
@@ -17,7 +17,7 @@ github_link: comp-mgr/extens-man/extensmanman-backup.md
 #### Next step
 After your backup is complete, continue with any of the following: 
 
-*	Installing new purchases or updates: [Step 3. Component Install]({{page.baseurl}}comp-mgr/module-man/compman-new-purchase.html)
+*	Installing new purchases: [Step 3. Component Install]({{page.baseurl}}comp-mgr/module-man/compman-new-purchase.html)
 *	Updating components: [Step 3. Component Update]({{page.baseurl}}comp-mgr/module-man/compman-update.html)
 *	Uninstalling components: [Step 3. Data Option]({{page.baseurl}}comp-mgr/module-man/compman-uninst-data.html)
 
