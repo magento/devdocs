@@ -8,7 +8,7 @@ To get your authentication keys:
 	If you don't have a free account, click **Create an Account**.
 2.	After you log in, click **My Access Keys** as the following figure shows.
 
-	![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}common/images/install_mkpl_access-keys.png)
+	![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}common/images/install_mkpl_access-keys.png){:width="500px"}
 3.	If you already have keys, use the **Public key** as your user name and the **Private key** as your password.
 3.	To create a new key pair, click **Create a New Access Key**.
 4.	When prompted, enter a descritive name to identify the key pair.
