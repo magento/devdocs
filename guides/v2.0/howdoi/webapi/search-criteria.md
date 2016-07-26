@@ -124,7 +124,7 @@ searchCriteria => [
            'condition_type' => 'like'
          ]
          1 => [
-           'color' => 'name',
+           'field' => 'name',
            'value' => '%25Parachute%25',
            'condition_type' => 'like'
          ]
@@ -161,7 +161,7 @@ searchCriteria => [
     1 => [
       'filters' => [
          0 => [
-           'color' => 'price',
+           'field' => 'price',
            'value' => '30',
            'condition_type' => 'lt'
          ]
