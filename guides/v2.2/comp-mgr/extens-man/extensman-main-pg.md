@@ -49,12 +49,26 @@ After you log in to the Extension Manager, a list of components available to ins
 
 Click the Review button corresponding to which action you'd like to take and continue with one of the following sections.
 
-## Install or uninstall components
+## Install components
 
-{% collapsible To install or uninstall components: %}
+{% collapsible To install components: %}
 
-1.	Select the check box next to each component, or click **Select All** from the list.
-2.	After you select components, click the **Install** or **Uninstall** link next to a component.
+1.	Click **Review and Install** as the following figure shows.
+
+	![Review and install components]({{ site.baseurl }}common/images/extensman_review-purchases.png){:width="450px"}
+2.	Select the check box next to each component, or click **Select All** from the list.
+2.	After you select components, click the **Install** link.
+3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
+
+{% endcollapsible %}
+
+## Uninstall components
+
+{% collapsible To uninstall components: %}
+
+1.	In the Installed Products section, click **Uninstall** from the **Actions** list as the following figure shows.
+
+	![Review and install components]({{ site.baseurl }}common/images/extensman_uninstall.png){:width="450px"}
 3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
