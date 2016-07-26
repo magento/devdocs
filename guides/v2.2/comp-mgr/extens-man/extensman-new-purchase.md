@@ -7,7 +7,7 @@ menu_title: Component Install
 menu_node: 
 menu_order: 9
 level3_menu_node: level3child
-level3_subgroup: step3
+level3_subgroup: step3-ext
 version: 2.2
 github_link: comp-mgr/extens-man/extensman-new-purchase.md
 ---
