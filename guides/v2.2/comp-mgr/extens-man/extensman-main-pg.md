@@ -20,12 +20,13 @@ To run the Extension Manager:
 
 	![Click the Extension Manager]({{ site.baseurl }}common/images/extens_mgr_select.png){:width="500px"}
 
-	The following page displays.
-
-	![Install or upgrade extensions]({{ site.baseurl }}common/images/extens_mgr_initial.png){:width="500px"}
 5.	If prompted, log in to the Extension Manager.
 
-	Enter your authentication keys in the provided fields.
+	The following page displays if a login is required.
+
+	![Install or upgrade extensions]({{ site.baseurl }}common/images/extens_mgr_initial.png){:width="500px"}
+
+6.	Enter your authentication keys in the provided fields.
 2.	Click **Submit**.
 
 To upgrade Magento system software instead, see <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.
