@@ -97,6 +97,17 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 
 </ol>
 
+#### Styles debugging in server-side compilation mode {#css_debug_server}
+
+In server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication. 
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories.</p>
+</div>
+
+Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
+
+See the [Compile LESS with Grunt]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md) topic for details how to install, configure and use Grunt.
 
 <h3 id="client-side">Client-side LESS compilation</h3>
 The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:
@@ -106,6 +117,25 @@ The client-side compilation flow is similar to server-side. The difference is in
 <li> <a href="http://en.wikipedia.org/wiki/Symbolic_link" target="_blank">symlinks</a> to the root source file that do not contain <code>@magento_import</code></li>
 <li>symlinks to the <code>.less</code> files included to the root source files using the imported by <code>@magento_import</code> and <code>@import</code> directives</li>
 </ul>
+
+#### Styles debugging in client-side compilation mode {#css_debug_client}
+
+Client-side LESS compilation is implemented using the native `less.js` library. The default configuration is set in <code>lib/web/less/config.less.js</code>; you can change it as needed. 
+
+You can find the detailed information about the configuration and other options of the <code>less.js</code> used in a browser at <a href="http://lesscss.org/usage/#using-less-in-the-browser" target="_blank">http://lesscss.org/usage/#using-less-in-the-browser</a>.
+
+In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser. 
+
+<span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="{{page.baseurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.
+
+This is required in the following cases:
+<ul>
+<li>If you change the <a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files</a> that contain the <code>@magento_import</code> directive, or the <code>@import</code> directive where the imported file is specified without extension.</li>
+<li>If you rename, remove, or add a <code>.less</code> file imported with a <code>@magento_import</code> or <code>@import</code> directive but you did not correct the directives accordingly.</li>
+
+</ul>
+
+To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
 
 <h2 id="fedg_css-magento-import">The @magento_import directive</h2>
 

@@ -17,29 +17,24 @@ github_link: config-guide/multi-site/ms_apache.md
 ## Set values in an entry point script {#ms-entry-script}
 If necessary, copy the existing `index.php` entry point script for your website or store view and add to it the following:
 
-{% highlight php %}
-<?php
+{% highlight php startinline=true %}
  $params = $_SERVER;
  $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = '<code>';
  $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = '{store|website}';
  $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
  $app = $bootstrap->createApplication('Magento\Framework\App\Http');
  $bootstrap->run($app);
- ?>
  {% endhighlight %}
 
 Sample `index.php` snippet that starts Magento with a website with the code `frenchsite.example.com`:
 
-{% highlight php %}
-<?php
+{% highlight php startinline=true %}
  $params = $_SERVER;
  $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'frenchsite.example.com';
  $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
  $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
  $app = $bootstrap->createApplication('Magento\Framework\App\Http');
  $bootstrap->run($app);
- ?>
-
 {% endhighlight %}
 
 ## Set values in .htaccess {#ms-htaccess}

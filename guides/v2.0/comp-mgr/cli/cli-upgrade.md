@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: 13_cli-upgr
+subgroup: 28_cli-upgr
 title: Command-line upgrade
 menu_title: Command-line upgrade
 menu_node: parent

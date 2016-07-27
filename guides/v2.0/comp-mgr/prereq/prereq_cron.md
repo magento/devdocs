@@ -22,5 +22,5 @@ Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_bla
 
 #### Next step
 
-*	<a href="{{page.baseurl}}comp-mgr/compman-start.html">Run the Component Manager</a>
+*	<a href="{{page.baseurl}}comp-mgr/module-man/compman-start.html">Run the Component Manager</a>
 *	<a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>

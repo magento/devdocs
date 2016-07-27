@@ -19,13 +19,13 @@ The UI pagination component is a plugin for the listing component. Responsible f
 You can configure pagination in several ways:
 
 * Globally: using any module's <a href="{{page.baseurl}}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances.
-* Locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
+* Locally: using concrete component instance configuration, such as `<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`
 
 To enable pagination for the listing component, the pagination component is declared as a child of the listing component in component instance configuration.
 
 Example:
 
-`<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
+`<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`
 
 {% highlight xml %}
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">

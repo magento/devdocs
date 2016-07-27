@@ -37,7 +37,7 @@ resizeEnabled - value can be set `true`, meaning the resize is switched on, or `
 
 #### Configuration
 
-The Resize component is currently configured as a plugin for the Listing component in `<your module root dir>/Magento/Ui/view/base/web/js/grid/listing.js`. It has the following options:
+The Resize component is currently configured as a plugin for the Listing component in `<Magento_Ui_module_dir>/view/base/web/js/grid/listing.js`. It has the following options:
 
 * resizeConfig
 
@@ -50,7 +50,7 @@ The Resize component is currently configured as a plugin for the Listing compone
 
 #### Component elements
 
-The following is the component's element: `<your module root dir>/Magento/Ui/view/base/web/js/grid/resize.js`
+The following is the component's element: `<Magento_Ui_module_dir>/view/base/web/js/grid/resize.js`
 
 #### Dependencies on other components
 

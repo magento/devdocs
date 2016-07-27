@@ -63,8 +63,7 @@ You must specify a custom cache frontend either `app/etc/env.php` or Magento's g
 
 The following example shows how to define it in `env.php` (which overrides `di.xml`):
 
-{% highlight PHP %}
-<? php
+{% highlight php startinline=true %}
 'cache' => [
     'frontend' => [
         '<unique frontend id>' => [
@@ -82,7 +81,6 @@ The following example shows how to define it in `env.php` (which overrides `di.x
         ],
     ],
 ],
-?>
 {% endhighlight %}
 
 where `<unique frontend id>` is a unique name to identify your frontend and `<cache options>` are options discussed in the topics specific to each type of caching (database, Redis, and so on).
@@ -92,8 +90,7 @@ You can specify frontend and backend cache configuration options in `env.php` or
 
 `env.php` example:
 
-{% highlight PHP %}
-<? php
+{% highlight php startinline=true %}
 'frontend' => <frontend_type>,
 'frontend_options' => [
     <frontend_option> => <frontend_option_value>,
@@ -104,7 +101,6 @@ You can specify frontend and backend cache configuration options in `env.php` or
     <backend_option> => <backend_option_value>,
     ...
 ],
-?>
 {% endhighlight %}
 
 where
