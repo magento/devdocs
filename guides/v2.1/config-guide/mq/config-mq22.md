@@ -47,7 +47,7 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 | ---------------- | ----------- |
 | name (required)  | The name of the consumer.  |
 | queue (required) | Defines the queue name to send the message to.  |
-| handler          | The method within a specified class that processes the message. The value must be specified in the format `<Vendor>\Module\<ServiceName>::<methodName>`.|
+| handler          | Specifies the class and method that processes the message. The value must be specified in the format `<Vendor>\Module\<ServiceName>::<methodName>`.|
 | consumerInstance | The path to a Magento class that consumes the message. |
 | connection       | Must be `amqp` if using an external message broker or `db` if writing to the MySQL database.  |
 | maxMessages     | Specifies the maximum number of messages to consume.|
