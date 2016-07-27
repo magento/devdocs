@@ -28,10 +28,6 @@ You can install optional sample data in any of the following ways:
 	</tbody>
 </table>
 
-For more detail about these options, see: 
-
-*	[Install using Composer]({{ page.baseurl }}install-cli-sample-data-composer.html)
-*	[Install by cloning repositories]({{ page.baseurl }}install-cli-sample-data-clone.html)
 
 <!-- ABBREVIATIONS -->
 
