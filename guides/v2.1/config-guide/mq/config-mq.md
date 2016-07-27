@@ -65,7 +65,7 @@ A single topic can be sent to one or multiple queues. Each recipient is defined 
 Parameter | Description | Example
 === | === | ===
 topic | A topic defined in the `communication.xml` file. | `mysystem.ordercreate`, `mysystem.ordercreate.success`
-type | The type of message broker. For this release, the value must be `amqp`. | `amqp`
+type | The type of message broker. For this release, the value must be `amqp` or `db`. | `amqp`
 exchange | The name of the exchange to publish to. The default system exchange name is `magento`. | `magento`
 
 ### consumer element ###

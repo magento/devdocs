@@ -18,19 +18,24 @@ _**Note to reviewer: Is the following note still true?**_
 </div>
 
 ### Overview ###
-Configuring the message queue topology involves creating and modifying 3 configuration files in the `<module>/etc` directory:
+Configuring the message queue topology involves creating and modifying the following configuration files in the `<module>/etc` directory:
 
+* `communication.xml` - Defines  aspects of the message queue system that all communication types have in common.
 * [`queue_consumer.xml`](#queueconsumerxml) - Defines the relationship between an existing queue and its consumer.
 * [`queue_topology.xml`](#queuetopologyxml) - Defines the relationship between a queue and its assigned topic.
 * [`queue_publisher.xml`](#queuepublisherxml) - Defines the relationship between a topic and its publisher.
 
-#### Use Cases ####
+### Use Cases ###
 Depending on your needs, you may only need to create and configure one or two of these files.
 
 * If you only want to publish to an existing queue created by a 3rd party system, you will only need the `queue_publisher.xml` file.
 * If you only want to consume from an existing queue,  you will only need the `queue_consumer.xml` config file.
 * In cases where you want to configure the local queue and publish to it for 3rd party systems to consume, you will need the `queue_publisher.xml` and `queue_topology` files.
 * When you want to configure the local queue and consume messages published by 3rd party system, you will need the `queue_topology` and `queue_consumer` files.
+
+### `communication.xml`
+
+(This section will be copied over from the V2 article. I don't want to make any changes in two places.)
 
 ### `queue_consumer.xml` ###
 The `queue_consumer.xml` file contains one or more `consumer` elements:
