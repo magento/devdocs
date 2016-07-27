@@ -8,23 +8,23 @@ version: 2.0
 github_link: mtf/features/test_suite.md
 ---
 
-<h2>Contents</h2>
+<h4>Contents</h4>
 
 * TOC
 {:toc}
 
 ## Overview {#overview}
 
-In the Functional Testing Framework (FTF), you can run a group of tests, which is called **test suite**. Test suite is a collection of tests grouped by a specified rule that is intended to be used to test a custom scope of functionality.
+In the Functional Testing Framework (FTF), you can run a group of tests, which is called **test suite**. A test suite is a collection of tests, grouped by a specified rule, that is used to test a custom scope of functionality.
 
 You can group the [test cases][test case], [variations][variation] or [constraints][constraint] in any combination during the test run.
 
 There are two rule types available:
 
-- **allow**, specifying what must be run
-- **deny**, specifying what must be excluded in test run
+- **allow**, specifying what must be included during the test run
+- **deny**, specifying what must be excluded during the test run
 
-The rules for a test case are defined in a separate `.xml` file. One file contains rules for one test suite. All files are stored in the `<magento2>/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests` directory by default. Only one test suite can be run at a time.
+The rules for a test case are defined in a separate `.xml` file. (Recommended naming: use lowercase letters and underscore as a separator). One file contains rules for one test suite. All files are stored in the `<magento2>/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests` directory by default. Only one test suite can be run at a time.
 
 The example of the default test suite:
 
@@ -71,9 +71,9 @@ This set of rules selects functional tests that accepts the following criteria:
 
 Learn more details in next topics.
 
-## Configuration {#configuration}
+## Configure `phpunit.xml` {#configure}
 
-The test suite to be run is set in the `<magento2>dev/tests/functional/phpunit.xml`:
+Define the test suite to be run in the `<magento2>dev/tests/functional/phpunit.xml`:
 
 {% highlight xml %}
 <env name = "testsuite_rule" value = <test_suite_name> />
@@ -89,9 +89,9 @@ In `phpunit.xml`:
 <env name="testsuite_rule_path" value="Magento/Mtf/TestSuite/InjectableTests" />
 {% endhighlight %}
 
-## Test suite run
+## Run your test suite  {#run}
 
-To run a test suite run the following commands from your terminal:
+To run a test suite enter the following commands from your terminal:
 
 {% highlight bash %}
 cd phpunit <magento2>/dev/tests/functional
@@ -102,10 +102,10 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
 
 Each test suite can be defined by the rules that **allow** or **deny** running of a [test case][], a [variation][], or a [constraint][].
 
-The only attribute of a rule node is the `scope`, that enables you to use the following options:
+The only attribute of a rule node is the `scope`, which enables you to use the following options:
 
  - [`scope = "testsuite"`][]. Enables you to filter the test cases by a namespace, a module, a class.
- - [`scope = "testscase"`][]. Enables you to select the test cases with a specified tag.
+ - [`scope = "testcase"`][]. Enables you to select the test cases with a specified tag.
  - [`scope = "variation"`][]. Enables you to use in a test run only variations with a specified tag.
  - [`scope = "constraint"`][]. Enables you to run only assertions with a specified tag.
 
@@ -130,7 +130,7 @@ The namespace filter example:
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../vendor/magento/mtf/Mtf/TestRunner/etc/testRunner.xsd">
+        xsi:noNamespaceSchemaLocation="../../../../../vendor/magento/mtf/Magento/Mtf/TestRunner/etc/testRunner.xsd">
     <rule scope="testsuite">
         <allow>
             <namespace value="Magento\Catalog\Test\TestCase\Product" />
@@ -150,7 +150,7 @@ The module filter example:
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../vendor/magento/mtf/Mtf/TestRunner/etc/testRunner.xsd">
+        xsi:noNamespaceSchemaLocation="../../../../../vendor/magento/mtf/Magento/Mtf/TestRunner/etc/testRunner.xsd">
     <rule scope="testsuite">
         <allow>
             <module value="Magento_Catalog" />
@@ -172,7 +172,7 @@ The class filter example:
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../vendor/magento/mtf/Mtf/TestRunner/etc/testRunner.xsd">
+        xsi:noNamespaceSchemaLocation="../../../../../vendor/magento/mtf/Magento/Mtf/TestRunner/etc/testRunner.xsd">
     <rule scope="testsuite">
         <allow>
             <class value="Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest" />
@@ -184,13 +184,13 @@ The class filter example:
 {% endhighlight %}
 
 
-### `scope = "testscase"` {#scope-testscase}
+### `scope = "testcase"` {#scope-testcase}
 
 In this scope, you can group test cases using tags.
 
-A tag has two parameters: `group` and `value`. In a test case, they are provided as a constant name and its value respectively. See the following example:
+You can use `group` and `value` parameters in the test case scope. In a test case, they are provided as a constant name and its value respectively. See the following example:
 
-- The tag in the test case, it should be added to the beginning of a class definition:
+- Any tags that are used in the test case should be added to the beginning of a class definition:
 
 {% highlight php startinline=1 %}
 
@@ -212,7 +212,7 @@ const TEST_TYPE = '3rd_party_test_deprecated';
 
 {% endhighlight %}
 
-A test case can contain multiple tag groups, and a group can have multiple values. For an example:
+A test case can contain multiple tag groups, and a group can have multiple values. For example:
 
 {% highlight php startinline=1 %}
 
@@ -228,7 +228,7 @@ const TEST_TYPE = 'extended_acceptance_test, 3rd_party_test_deprecated';
 
 You can assign a `tag` node to a [data set][] variation. This enables you to use customized sets of variations during the test run. You can **allow** to use in the test run only that variations which are specified with tag, or **deny** to use them.  
 
-A tag has two parameters: `group` and `value`. In a variation, they are provided in a following format:
+You can use `group` and `value` parameters in the variation scope. In a variation, they are provided in the following format:
 
 {% highlight xml %}
 
@@ -251,7 +251,7 @@ For example, you have a data set with the following variation:
 </variation>
 {% endhighlight %}
 
-You can create a rule to use only the `CreateSimpleProductEntityTestVariation3` variation:
+By using the `<allow>` element, you can create a rule to use only the `CreateSimpleProductEntityTestVariation3` variation:
 
 {% highlight xml %}
 <rule scope="variation">
@@ -277,7 +277,7 @@ You can select constraints from the variation that will be run after a test flow
 
 A tag has two parameters: `group` and `value`. In a constraint, they are provided as a constant name and its value respectively. See the following example:
 
-- The tag in the constraint, it should be added to the beginning of a class definition:
+- Any tags that are used in the constraint should be added to the beginning of a class definition:
 
 {% highlight php startinline=1 %}
 
@@ -320,6 +320,6 @@ class AssertProductView extends AbstractConstraint
 [data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
 
 [`scope = "testsuite"`]: #scope-testsuite
-[`scope = "testscase"`]: #scope-testscase
+[`scope = "testcase"`]: #scope-testcase
 [`scope = "variation"`]: #scope-variation
 [`scope = "constraint"`]: #scope-constraint
