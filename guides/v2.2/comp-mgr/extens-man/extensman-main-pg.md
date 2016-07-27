@@ -42,9 +42,9 @@ After you log in to the Extension Manager, a list of components available to ins
 
 ![Choose components to install, update, or uninstall]({{ site.baseurl }}common/images/extens_mgr_updates.png){:width="400px"}
 
-*	Updates Available displays the number of components you can update.
-*	Ready to Install displays the number of components you can install.
-*	Refresh displays the last time you refreshed the list of components on Magento Marketplace. 
+*	**Updates Available** displays the number of components you can update.
+*	**Ready to Install** displays the number of components you can install.
+*	**Last Refresh** displays the last time you refreshed the list of components on Magento Marketplace. 
 
 	Click **Refresh** to update the information, such as after you purchase new components.
 
