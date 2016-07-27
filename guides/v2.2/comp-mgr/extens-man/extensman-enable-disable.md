@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: 05_UseCompMan
+subgroup: 06_UseExtMan
 title: Step 3. Enable/Disable
 menu_title: Enable/Disable
 menu_node: 
@@ -9,7 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: step3-ext
 menu_order: 11
 version: 2.2
-github_link: comp-mgr/module-man/modman-enable-disable.md
+github_link: comp-mgr/extens-man/extensman-enable-disable.md
 ---
 
 ## Step 3. Enable/Disable
