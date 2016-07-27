@@ -22,13 +22,16 @@ You can install optional sample data in any of the following ways:
 	</tr>
 	<tr>
 		<td><p>Cloning repositories</p></td>
-		<td><p>Clone the Magento 2 repository and the sample data repository, create symbolic links.</p></td>
+		<td><p>Clone the Magento 2 repository and the sample data repository, then link them together.</p></td>
 		<td><p>For contributing developers only. Everyone else should use one of the preceding methods.</p></td>
 	</tr>
 	</tbody>
 </table>
 
-For more detail about these options, click one of the options in the table of contents in the left pane.
+For more detail about these options, see: 
+
+*	[Install using Composer]({{ page.baseurl }}install-cli-sample-data-composer.html)
+*	[Install by cloning repositories]({{ page.baseurl }}install-cli-sample-data-clone.html)
 
 <!-- ABBREVIATIONS -->
 
