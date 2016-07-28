@@ -18,18 +18,18 @@ The following table lists the elements and parameters in the `queue_consumer.xml
 
 | 2.2 Attribute  | 2.1 queue.xml Source |
 | ---------------- | ----------- |
-/<consumer>/name   | /<broker>//<queue>/consumer
-/<consumer>/queue  | /<broker>//<queue>/name
-/<consumer>/handler          | /<broker>//<queue>/handler
-/<consumer>/consumerInstance | /<broker>//<queue>/consumerInstance
-/<consumer>/connection       | /<broker>/type
-/<consumer>/maxMessages     | /<broker>//<queue>/maxMessages
+<consumer>/name   | /<broker>//<queue>/consumer
+<consumer>/queue  | /<broker>//<queue>/name
+<consumer>/handler          | /<broker>//<queue>/handler
+<consumer>/consumerInstance | /<broker>//<queue>/consumerInstance
+<consumer>/connection       | /<broker>/type
+<consumer>/maxMessages     | /<broker>//<queue>/maxMessages
 
 
 #### Create the `queue_topology.xml` file ####
 
-2.2 Attribute  | 2.1 queue.xml Source
----------------- | -----------
+| 2.2 Attribute  | 2.1 queue.xml Source |
+| ---------------- | -----------m|
 /<exchange>/name | /<broker>/exchange
 /<exchange>/type | Not present in 2.1. Set this value to `topic`.
 /<exchange>/connection | /<broker>/type
@@ -45,8 +45,8 @@ The following table lists the elements and parameters in the `queue_consumer.xml
 
 #### Create the `queue_publisher.xml` file ####
 
-2.2 Attribute  | 2.1 `queue.xml` Source
----------------- | -----------
+| 2.2 Attribute  | 2.1 `queue.xml` Source |
+| ---------------- | ----------- |
 /<publisher>/topic | /<broker>/topic
 /<publisher>/disabled | Not present in 2.1. Omit this parameter to allow the default value.
 /<connection>/exchange | /<broker>exchange
