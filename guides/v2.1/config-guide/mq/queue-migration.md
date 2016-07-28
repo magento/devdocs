@@ -47,27 +47,27 @@ The first column in the following table lists the all the parameters in the `que
 `<exchange>/name` | `<broker>/exchange`
 `<exchange>/type` | Not present in 2.1. Set this value to `topic`.
 `<exchange>/connection` | `<broker>/type`
-`<exchange>/durable` | Not present in 2.1. Omit this parameter to allow the default value.
-`<exchange>/autoDelete` | Not present in 2.1. Omit this parameter to allow the default value.
-`<exchange>/internal` | Not present in 2.1. Omit this parameter to allow the default value.
+`<exchange>/durable` | Not present in 2.1. Omit this parameter to accept the default value.
+`<exchange>/autoDelete` | Not present in 2.1. Omit this parameter to accept the default value.
+`<exchange>/internal` | Not present in 2.1. Omit this parameter to accept the default value.
 `<binding>/id` | Not present in 2.1. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the `id` parameter.
 `<binding>/topic` | `<broker>/topic`
 `<binding>/destinationType` | Not present in 2.1. This value must be set to `queue`.
 `<binding>/destination` | `<broker>/<queue>/name`
-`<binding>/disabled` | Not present in 2.1. Omit this parameter to allow the default value.
+`<binding>/disabled` | Not present in 2.1. Omit this parameter to accept the default value.
 `<arguments>` | Not present in 2.1. Omit this element.
 
 #### Create the `queue_publisher.xml` file ####
 The first column in the following table lists the all the parameters in the `queue_publisher.xml` file. The second column lists where in the Magento 2.1 `queue.xml` file the equivalent parameters are located.
 
 
-| 2.2 Attribute  | 2.1 `queue.xml` source |
+| 2.2 Attribute  | 2.1 queue.xml source |
 | ---------------- | ----------- |
 `<publisher>/topic` | `<broker>/topic`
-`<publisher>/disabled` | Not present in 2.1. Omit this parameter to allow the default value.
+`<publisher>/disabled` | Not present in 2.1. Omit this parameter to accept the default value.
 `<connection>/name` | `<broker>/type`
 `<connection>/exchange` | `<broker>exchange`
-`<connection>/disabled` | Not present in 2.1. Omit this parameter to allow the default value.
+`<connection>/disabled` | Not present in 2.1. Omit this parameter to accept the default value.
 
 ### Migrate from Magento 2.0 to 2.2 ###
 To upgrade from Magento 2.0, you must create the following files in the `<module>/etc` directory for each module that will use the message queue framework.
@@ -84,7 +84,7 @@ For complete details about these files, see [Configure messque queue topology]({
 #### Create the `queue_consumer.xml` file ####
 The first column in the following table lists the all the parameters in the `queue_consumer.xml` file. The second column lists where in the Magento 2.0 `queue.xml` file the equivalent parameters are located.
 
-2.2 Attribute        | 2.0 `queue.xml` Source
+2.2 Attribute        | 2.0 queue.xml Source
 ---------------- | -----------
 `<consumer>/name`   | `<consumer>/name`
 `<consumer>/queue`  | `<consumer>/queue`
@@ -101,26 +101,26 @@ The first column in the following table lists the all the parameters in the `que
 `<exchange>/name` | `<publisher>/exchange`
 `<exchange>/type` | Not present in 2.0. Set this value to `topic`.
 `<exchange>/connection` | `<publisher>/connection`
-`<exchange>/durable` | Not present in 2.0. Omit this parameter to allow the default value.
-`<exchange>/autoDelete` | Not present in 2.0. Omit this parameter to allow the default value.
-`<exchange>/internal` | Not present in 2.0. Omit this parameter to allow the default value.
+`<exchange>/durable` | Not present in 2.0. Omit this parameter to accept the default value.
+`<exchange>/autoDelete` | Not present in 2.0. Omit this parameter to accept the default value.
+`<exchange>/internal` | Not present in 2.0. Omit this parameter to accept the default value.
 `<binding>/id` | Not present in 2.0. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the `id` parameter.
 `<binding>/topic` | `<bind>/topic`
 `<binding>/destinationType` | Not present in 2.0. This value must be set to `queue`.
 `<binding>/destination` | `<bind>/queue`
-`<binding>/disabled` | Not present in 2.0. Omit this parameter to allow the default value.
+`<binding>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
 `<arguments>` | Not present in 2.0. Omit this element.
 
 #### Create the `queue_publisher.xml` file ####
 The first column in the following table lists the all the parameters in the `queue_publisher.xml` file. The second column lists where in the Magento 2.0 `queue.xml` file the equivalent parameters are located.
 
-| 2.2 Attribute  | 2.0 `queue.xml` Source |
+| 2.2 Attribute  | 2.0 queue.xml Source |
 | ---------------- | ----------- |
 `<publisher>/topic` | `<topic>/publisher`
-`<publisher>/disabled` | Not present in 2.0. Omit this parameter to allow the default value.
+`<publisher>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
 `<connection>/name` | `<publisher>/connection`
 `<connection>/exchange` | `<publisher>/exchange`
-`<connection>/disabled` | Not present in 2.0. Omit this parameter to allow the default value.
+`<connection>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
 
 ### Migrate from Magento 2.0 to 2.1 ###
 
@@ -128,7 +128,7 @@ The first column in the following table lists the all the parameters in the `que
 
 Magento 2.1 introduces the `communication.xml` file, which configures message queue communication attributes for the module. See 	<a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queue topology</a> for information about creating this file.
 
-#### Replace the `queue.xml` file
+#### Replace the `queue.xml` file ####
 
 The structure of the `queue.xml` file is substantially different in Magento. 2.1. Make a copy of your 2.0 `queue.xml` file and create a new one with the structure listed below.
 

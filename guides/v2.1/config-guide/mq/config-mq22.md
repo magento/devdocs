@@ -74,7 +74,7 @@ The following sample defines two synchronous topics. The first topic is for RPC 
 </config>
 {% endhighlight %}
 
-### `queue_consumer.xml` {#queueconsumerxml} ###
+### `queue_consumer.xml` {#queueconsumerxml}
 The `queue_consumer.xml` file contains one or more `consumer` elements:
 
 #### `consumer` element ####
@@ -89,7 +89,7 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 | connection       | Must be `amqp` if using an external message broker or `db` if writing to the MySQL database.  |
 | maxMessages     | Specifies the maximum number of messages to consume.|
 
-#### Example `queue_consumer` file####
+#### Example `queue_consumer` file ####
 {:.no_toc}
 
 {% highlight xml %}
@@ -101,7 +101,7 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 </config>
 {% endhighlight %}
 
-### `queue_topology.xml` {#queuetopologyxml}  ###
+### `queue_topology.xml` {#queuetopologyxml}
 
 The `queue_topology.xml` file defines the message routing rules. It contains the following elements:
 
@@ -192,7 +192,7 @@ The following illustrates an `arguments` block:
 </config>
 {% endhighlight %}
 
-### `queue_publisher.xml` {#queuepublisherxml}  ###
+### `queue_publisher.xml` {#queuepublisherxml}
 
 The `queue_publisher.xml` file defines the relationship between a topic and its publisher. It contains the following elements with the following attributes:
 
@@ -227,7 +227,7 @@ The `queue_publisher.xml` file defines the relationship between a topic and its 
 </config>
 {% endhighlight %}
 
-### Updating `queue.xml`
+### Updating `queue.xml` {#updatequeuexml}
 
 See [Migrate message queue configuration]({{page.baseurl}}config-guide/mq/queue-migration.html) for information about upgrading from Magento 2.0 or 2.1.
 
