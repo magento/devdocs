@@ -43,7 +43,7 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 #### `consumer` element ####
 {:.no_toc}
 
-| Atrribute        | Description |
+| Attribute        | Description |
 | ---------------- | ----------- |
 | name (required)  | The name of the consumer.  |
 | queue (required) | Defines the queue name to send the message to.  |

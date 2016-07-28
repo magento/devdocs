@@ -26,7 +26,7 @@ github_link: config-guide/mq/queue-migration.md
 
 #### Create the `queue_topology.xml` file ####
 
-2.2 Attribute  | 2.1 `queue.xml` Source
+2.2 Attribute  | 2.1 queue.xml Source
 ---------------- | -----------
 /<exchange>/name | /<broker>/exchange
 /<exchange>/type | Not present in 2.1. Set this value to `topic`.
