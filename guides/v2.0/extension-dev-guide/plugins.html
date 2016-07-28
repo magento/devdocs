@@ -853,7 +853,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 28 July 2016 (PDT)</i></p>
 		<h2 class="no_toc" id="plugins-interceptors">Plugins (Interceptors)</h2>
 
 <ul id="markdown-toc">
@@ -989,6 +989,51 @@
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+
+<p>When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them on when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method with regards to default parameters and type hints. For example, the following code defines a parameter of type <code>SomeType&gt;/code&gt; which is nullable:</code></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">My\Module\Model</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyUtility</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">SomeType</span> <span class="nv">$obj</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//do something</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>If you wrapped this method with a plugin like below:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyUtilityPlugin</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="nx">SomeType</span> <span class="nv">$obj</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="c1">//do something</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> PHP would throw a fatal error as your plugin does not accept <code>null</code>.</p>
+
+<p>It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the agurments, you could use variadics and argument unpacking to achieve this simply:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyUtilityPlugin</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="o">...</span><span class="nv">$args</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="c1">//do something</span>
+      <span class="nv">$proceed</span><span class="p">(</span><span class="o">...</span><span class="nv">$args</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="prioritizing-plugins">Prioritizing plugins</h3>
 
