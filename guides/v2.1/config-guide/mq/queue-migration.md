@@ -18,8 +18,15 @@ The following table lists the elements and parameters in the `queue_consumer.xml
 
 | 2.2 Attribute  | 2.1 queue.xml Source |
 | ---------------- | ----------- |
-\<consumer>/name   | \<broker>/\<queue>/consumer
-\<consumer>/queue  | \<broker>/\<queue>/name
+`<consumer>/name`   | `<broker>/<queue>/consumer`
+`<consumer>/queue`  | `<broker>/<queue>/name`
+
+xx
+
+| 2.2 Attribute  | 2.1 queue.xml Source |
+| ---------------- | ----------- |
+`<consumer>/name`   | `<broker>/<queue>/consumer`
+`<consumer>/queue`  | `<broker>/<queue>/name`
 \<consumer>/handler          | \<broker>/\<queue>/handler
 \<consumer>/consumerInstance | \<broker>/\<queue>/consumerInstance
 \<consumer>/connection       | \<broker>/type
