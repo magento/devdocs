@@ -14,6 +14,7 @@ github_link: config-guide/mq/queue-migration.md
 
 #### Create the `queue_consumer.xml` file ####
 
+.
 2.2 Attribute  | 2.1 `queue.xml` Source
 ---------------- | -----------
 /<consumer>/name   | /<broker>//<queue>/consumer
@@ -26,6 +27,7 @@ github_link: config-guide/mq/queue-migration.md
 
 #### Create the `queue_topology.xml` file ####
 
+.
 2.2 Attribute  | 2.1 queue.xml Source
 ---------------- | -----------
 /<exchange>/name | /<broker>/exchange
