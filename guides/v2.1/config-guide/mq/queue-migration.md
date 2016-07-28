@@ -50,11 +50,11 @@ The first column in the following table lists the all the parameters in the `que
 `<exchange>/durable` | Not present in 2.1. Omit this parameter to accept the default value.
 `<exchange>/autoDelete` | Not present in 2.1. Omit this parameter to accept the default value.
 `<exchange>/internal` | Not present in 2.1. Omit this parameter to accept the default value.
-`<binding>/id` | Not present in 2.1. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the `id` parameter.
-`<binding>/topic` | `<broker>/topic`
-`<binding>/destinationType` | Not present in 2.1. This value must be set to `queue`.
-`<binding>/destination` | `<broker>/<queue>/name`
-`<binding>/disabled` | Not present in 2.1. Omit this parameter to accept the default value.
+`<exchange>/<binding>/id` | Not present in 2.1. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the `id` parameter.
+`<exchange>/<binding>/topic` | `<broker>/topic`
+`<exchange>/<binding>/destinationType` | Not present in 2.1. This value must be set to `queue`.
+`<exchange>/<binding>/destination` | `<broker>/<queue>/name`
+`<exchange>/<binding>/disabled` | Not present in 2.1. Omit this parameter to accept the default value.
 `<arguments>` | Not present in 2.1. Omit this element.
 
 #### Create the `queue_publisher.xml` file ####
@@ -65,9 +65,9 @@ The first column in the following table lists the all the parameters in the `que
 | ---------------- | ----------- |
 `<publisher>/topic` | `<broker>/topic`
 `<publisher>/disabled` | Not present in 2.1. Omit this parameter to accept the default value.
-`<connection>/name` | `<broker>/type`
-`<connection>/exchange` | `<broker>exchange`
-`<connection>/disabled` | Not present in 2.1. Omit this parameter to accept the default value.
+`<publisher>/<connection>/name` | `<broker>/type`
+`<publisher>/<connection>/exchange` | `<broker>exchange`
+`<publisher>/<connection>/disabled` | Not present in 2.1. Omit this parameter to accept the default value.
 
 ### Migrate from Magento 2.0 to 2.2 ###
 To upgrade from Magento 2.0, you must create the following files in the `<module>/etc` directory for each module that will use the message queue framework.
@@ -104,11 +104,11 @@ The first column in the following table lists the all the parameters in the `que
 `<exchange>/durable` | Not present in 2.0. Omit this parameter to accept the default value.
 `<exchange>/autoDelete` | Not present in 2.0. Omit this parameter to accept the default value.
 `<exchange>/internal` | Not present in 2.0. Omit this parameter to accept the default value.
-`<binding>/id` | Not present in 2.0. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the `id` parameter.
-`<binding>/topic` | `<bind>/topic`
-`<binding>/destinationType` | Not present in 2.0. This value must be set to `queue`.
-`<binding>/destination` | `<bind>/queue`
-`<binding>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
+`<<exchange>/binding>/id` | Not present in 2.0. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the `id` parameter.
+`<exchange>/<binding>/topic` | `<bind>/topic`
+`<exchange>/<binding>/destinationType` | Not present in 2.0. This value must be set to `queue`.
+`<exchange>/<binding>/destination` | `<bind>/queue`
+`<exchange>/<binding>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
 `<arguments>` | Not present in 2.0. Omit this element.
 
 #### Create the `queue_publisher.xml` file ####
@@ -118,9 +118,9 @@ The first column in the following table lists the all the parameters in the `que
 | ---------------- | ----------- |
 `<publisher>/topic` | `<topic>/publisher`
 `<publisher>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
-`<connection>/name` | `<publisher>/connection`
-`<connection>/exchange` | `<publisher>/exchange`
-`<connection>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
+`<publisher>/<connection>/name` | `<publisher>/connection`
+`<publisher>/<connection>/exchange` | `<publisher>/exchange`
+`<publisher>/<connection>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
 
 ### Migrate from Magento 2.0 to 2.1 ###
 

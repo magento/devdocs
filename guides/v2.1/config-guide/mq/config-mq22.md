@@ -29,7 +29,7 @@ Depending on your needs, you may only need to create and configure one or two of
 * In cases where you want to configure the local queue and publish to it for 3rd party systems to consume, you will need the `queue_publisher.xml` and `queue_topology` files.
 * When you want to configure the local queue and consume messages published by 3rd party system, you will need the `queue_topology` and `queue_consumer` files.
 
-### `communication.xml` {#communicationxml} ###
+### `communication.xml` {#communicationxml}
 
 The `<module>/etc/communication.xml` file defines aspects of the message queue system that all communication types have in common. This release supports AMQP and database connections.
 
@@ -107,7 +107,7 @@ The `queue_topology.xml` file defines the message routing rules. It contains the
 
 * `exchange`
 * `exchange/binding`
-* `exchange/arguments` (optional)
+* `arguments` (optional)
 
 #### `exchange` element ####
 {:.no_toc}
@@ -194,7 +194,11 @@ The following illustrates an `arguments` block:
 
 ### `queue_publisher.xml` {#queuepublisherxml}
 
-The `queue_publisher.xml` file defines the relationship between a topic and its publisher. It contains the following elements with the following attributes:
+The `queue_publisher.xml` file defines the relationship between a topic and its publisher. It contains the following elements:
+
+* publisher
+* publisher/connection
+
 
 #### `publisher` element
 {:.no_toc}
@@ -206,6 +210,8 @@ The `queue_publisher.xml` file defines the relationship between a topic and its 
 
 #### `connection` element
 {:.no_toc}
+
+The `connection` element is a subnode of the `publisher` element.
 
 | Attribute            | Description |
 | -------------------- | ----------- |
