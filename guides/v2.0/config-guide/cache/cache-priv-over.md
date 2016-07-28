@@ -14,7 +14,6 @@ github_link: config-guide/cache/cache-priv-over.md
 
 #### Contents
 *	[Page caching overview](#config-cache-over)
-*	[Cacheable and uncacheable pages]({{ page.baseurl }}config-guide/cache/cache-priv-cacheable.html)
 *	[Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html)
 *	[HTTP context]({{ page.baseurl }}config-guide/cache/cache-priv-context.html)
 *	[Cache invalidation and private content versioning]({{ page.baseurl }}config-guide/cache/cache-priv-inval.html)
@@ -22,9 +21,9 @@ github_link: config-guide/cache/cache-priv-over.md
 ## Page caching overview {#config-cache-over}
 Caching one of the most effective way of improving performance of web applications of all kinds. Generally speaking, there are two ways to cache: client-side (browser) and server-side. In addition, there are two types of content: public (available to multiple customers) and private (specific to one customer).
 
-Magento page caching is synonymous with *full-page caching*. The Magento application gives you the following options:
+Magento page caching is synonymous with *full-page caching*; in other words, we cache the entire page. The Magento application gives you the following options:
 
-*	Default caching mechanism which stores cache files in any of the following:
+*	The default caching mechanism which stores cache files in any of the following:
 
 	*	On the file system. 
 
@@ -36,14 +35,25 @@ Magento page caching is synonymous with *full-page caching*. The Magento applica
 ### Cacheable and uncacheable pages {#config-cache-over-cacheable}
 *Cacheable* and *uncacheable* are terms used to specify whether or not a page should be cached at all. (By default, all pages are cacheable.) If any block in a layout is designated as uncacheable, the entire page is uncacheable.
 
+Unless you specify otherwise, all pages are cacheable. 
+
+To create an uncacheable page, mark any block on that page as uncacheable in the layout (use `cacheable="false"`). Any page that has at least one uncacheable block is itself uncacheable (that is, the entire page).
+
+Examples of uncacheable pages include the compare products, cart, checkout pages, and so on. 
+
+[Example]({{ site.mage2000url }}app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml){:target="_blank"}
+
+<div class="bs-callout bs-callout-warning">
+    <ul><li>Do not confiure content pages (that is, catalog, product and CMS pages) to be uncacheable. Doing so has an adverse affect on performance.</li>
+        <li>Caching a page for even a few seconds is helpful because HTTP requests occur on the scale of milliseconds.</li></ul>
+</div>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Only HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank">GET</a> and <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.4" target="_blank">HEAD</a> requests are cacheable. For more information about caching, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html" target="_blank">RFC-2616 section 13</a>.</p>
+</div>
+
 ### Public and private content {#config-cache-over-pubpriv}
 *Private* content on a page is intended for one user only; for example, a customer name or personalized recommendations for a logged-in customer. Rendering private content in a cached page is sometimes referred to as *hole punching* and we'll discuss it in more detail in [Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html).
 
-It's important to understand that Magento 2 does *not* use [Edge Side Includes (ESI)](https://en.wikipedia.org/wiki/Edge_Side_Includes){:target="_blank"} to render private content. ESI means the web server returns an HTML page that can be cached, but parts of the page are replaced with an "include" reference URL that returns only the private content.
-
-Instead, we fetch public content (typically the bulk of the total content of the page), then rely on JavaScript and AJAX to inject the private content, which is cached on the browser only. This is discussed in more detail in [Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html).
-
-To be able to render different content for different users with the same URL, we use [*HTTP context variables*]({{ page.baseurl }}config-guide/cache/cache-priv-context.html).
-
 #### Next
-[Cacheable and uncacheable pages]({{ page.baseurl }}config-guide/cache/cache-priv-cacheable.html)
+[Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html)
