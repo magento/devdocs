@@ -12,23 +12,18 @@ version: 2.0
 github_link: config-guide/cache/cache-priv-priv.md
 ---
 
-#### Contents
-*	[Public and private content](#config-cache-priv-over)
-*	[Specify private content](#config-cache-priv-how)
-*	[Considerations for public content](#config-cache-public)  
-
 ## Public and private content {#config-cache-priv-over}
 The Magento page cache stores *entire* cacheable pages; where pages are stored depends on whether the content is private or public. These terms are defined as follows:
 
 *	*Public*, which can display to many customers. 
 
 	Public content is stored in your cache storage (file system, database, or Redis), or by Varnish. Examples of public content includes header, footer, and category listing.
-*	*Private*, which is not stored in the server cache; instead, it's stored on the client only. 
+*	*Private*, which is not stored in the Magento server cache; instead, it's stored on the client only. 
 
 	Examples of private content include the wishlist, shopping cart, customer name, and addresses. Private content should be limited to a small portion of the total content on a page.
 
 ## Specify private content {#config-cache-priv-how}
-To specify a block as private and have the Magento application render it in browser, do the following:
+To specify a block as private and have the Magento application render it in the browser, do the following:
 
 *   [Step 1: Create a section source](#config-cache-priv-how-source)
 *   [Step 2: Create a block and template](#config-cache-priv-how-block)
@@ -55,13 +50,13 @@ Add the following to your component's dependency injection configuration (`di.xm
 {% endhighlight %}
 
 ### Step 2: Create a block and template {#config-cache-priv-how-block}
-To render private content, create a block and a template to display user-agnostic information. The user-agnostic data will be replaced with user specific data by the UI component.
+To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the UI component.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Do <em>not</em> use the <code>$_isScopePrivate</code> property in your blocks. This property is obsolete and won't work properly.</p>
 </div>
 
-Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example)in your layout.
+Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example) in your layout.
 
 Initialize the component as follows:
 
@@ -71,7 +66,7 @@ Initialize the component as follows:
 </script>
 {% endhighlight %}
 
-[Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml){:target="_blank"}
+[Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48){:target="_blank"}
 
 ### Step 3: Configure a UI component {#config-cache-priv-how-ui}
 The UI component renders block data on the Magento storefront. To initialize the UI component, you must call the initialization method `_super()`. [Example]({{ site.mage2000url }}app/code/Magento_Catalog/view/frontend/web/js/view/compare-products.js){:target="_blank"}
