@@ -14,7 +14,7 @@ github_link: config-guide/mq/queue-migration.md
 
 #### Create the `queue_consumer.xml` file ####
 
-2.2 Atrribute        | 2.1 `queue.xml` Source
+2.2 Attribute        | 2.1 `queue.xml` Source
 ---------------- | -----------
 /<consumer>/name   | /<broker>//<queue>/consumer
 /<consumer>/queue  | /<broker>//<queue>/name
@@ -26,7 +26,7 @@ github_link: config-guide/mq/queue-migration.md
 
 #### Create the `queue_topology.xml` file ####
 
-2.2 Atrribute        | 2.1 `queue.xml` Source
+2.2 Attribute        | 2.1 `queue.xml` Source
 ---------------- | -----------
 /<exchange>/name | /<broker>/exchange
 /<exchange>/type | Not present in 2.1. Set this value to `topic`.
@@ -43,6 +43,8 @@ github_link: config-guide/mq/queue-migration.md
 
 #### Create the `queue_publisher.xml` file ####
 
+2.2 Attribute        | 2.1 `queue.xml` Source
+---------------- | -----------
 /<publisher>/topic | /<broker>/topic
 /<publisher>/disabled | Not present in 2.1. Omit this parameter to allow the default value.
 /<connection>/exchange | /<broker>exchange
@@ -52,7 +54,7 @@ github_link: config-guide/mq/queue-migration.md
 
 #### Create the `queue_consumer.xml` file ####
 
-2.2 Atrribute        | 2.0 `queue.xml` Source
+2.2 Attribute        | 2.0 `queue.xml` Source
 ---------------- | -----------
 /<consumer>/name   | /<consumer>/
 /<consumer>/queue  | /<consumer>/
