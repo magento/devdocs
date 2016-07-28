@@ -15,7 +15,7 @@ github_link: mtf/features/parallel_execution.md
 
 ## Overview
 
-Parallel execution is applicable for test suites only. It decreases the time of testing due to distribution of test cases into multiple threads. A test case cannot be split between different threads. Parallel execution can use one or more copies of the Magento application under test (Magento instances).
+Parallel execution is applicable for [test suites] only. It decreases the time of testing due to distribution of test cases into multiple threads. A test case cannot be split between different threads. Parallel execution can use one or more copies of the Magento application under test (Magento instances).
 
 A general mechanism is:
 
@@ -117,3 +117,7 @@ Run a test suite:
 cd phpunit <magento2>/dev/tests/functional
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
 {% endhighlight %}
+
+<!-- LINK DEFINITIONS -->
+
+[test suits]: {{page.baseurl}}mtf/features/test_suite.html
