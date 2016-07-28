@@ -138,8 +138,8 @@ Example topic names that include wildcards:
 
 | Pattern | Description | Example matching topics |
 | --- | --- | --- |
-`*.*.*` | Matches any topic that contains two periods. | `a.b.c`
-`#`| Matches any topic name.  | `mytopic`, `mytopic.success`, `this.is.a.long.topic.name`
+`*.*.*` | Matches any topic that contains two periods. | `mytopic.createOrder.success`, `mytopic.updatePrice.item1`
+`#`| Matches any topic name.  | `mytopic`, `mytopic.createOrder.success`, `this.is.a.long.topic.name`
 `mytopic#` | Matches any topic name that begins with `mytopic`. | `mytopic1`, `mytopic.success`, `mytopic.createOrder.error`
 `#.*Order#` | The `#` matches any string that precedes a period. The rest of the topic name must contain `Order`. | `mytopic.CreateOrder`, `My.Topic.deleteOrder.success`
 
