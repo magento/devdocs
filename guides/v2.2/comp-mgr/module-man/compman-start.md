@@ -41,6 +41,10 @@ Any module that depends on other modules displays as follows:
 
 ![Module that depends on other modules]({{ site.baseurl }}common/images/modman_depend.png)
 
+When you expand it, you see the modules it depends on; an example follows:
+
+![]({{ site.baseurl }}common/images/modman_dependencies.png)
+
 To disable such a module, you must also disable all dependent modules one at a time.
 
 ## Enable or disable a module
