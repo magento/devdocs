@@ -4,10 +4,13 @@ group: config-guide
 subgroup: 08_Caching
 title: Create a cache type
 menu_title: Create a cache type
-menu_order: 500
+menu_order: 10
 menu_node: 
+level3_menu_node: level3child
+level3_subgroup: cache-types
 version: 2.0
-github_link: config-guide/config/caching-cache-type.md
+github_link: config-guide/cache/caching-cache-type.md
+redirect_from: /guides/v2.0/config-guide/config/caching-cache-type.html
 ---
 
 #### Contents  
