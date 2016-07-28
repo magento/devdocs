@@ -5,7 +5,7 @@ subgroup: 15_RabbitMQ
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration
 menu_order: 5
-version: 2.0
+version: 2.1
 github_link: config-guide/mq/queue-migration.md
 ---
 
