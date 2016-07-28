@@ -69,7 +69,9 @@ Initialize the component as follows:
 [Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48){:target="_blank"}
 
 ### Step 3: Configure a UI component {#config-cache-priv-how-ui}
-The UI component renders block data on the Magento storefront. To initialize the UI component, you must call the initialization method `_super()`. [Example]({{ site.mage2000url }}app/code/Magento_Catalog/view/frontend/web/js/view/compare-products.js){:target="_blank"}
+The UI component renders block data on the Magento storefront. To initialize the UI component, you must call the initialization method `_super()`. 
+
+[Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js){:target="_blank"}
 
 All properties are available in the template. 
 
@@ -81,23 +83,35 @@ Specify actions that trigger cache invalidation for private content blocks in a 
 The following example adds comments to [app/code/Magento/Catalog/etc/frontend/sections.xml]({{ site.mage2000url }}app/code/Magento/Catalog/etc/frontend/sections.xml){:target="_blank"} to show you what happens.
 
 {% highlight xml %}
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Customer/etc/sections.xsd">
- 
-    <!-- will invalidate "compare-products" section, when user perform "catalog/product_compare/add" POST request -->
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
+    <!-- invalidates the "compare-products" section when a user 
+    adds a product to the comparison, resulting in a "catalog/product_compare/add" POST request -->
     <action name="catalog/product_compare/add">
         <section name="compare-products"/>
     </action>
-    
-    <!-- will invalidate all sections -->
-    <action name="customer/account/logout"/>
- 
-    <!-- will invalidate section for each POST request  -->
-    <action name="*">
-        <section name="message"/>
+    <!-- invalidates the section when a customer removes a product from the comparison -->
+    <action name="catalog/product_compare/remove">
+        <section name="compare-products"/>
     </action>
- 
+    <!-- invalidates the section when a customer clears all products from the comparison -->
+    <action name="catalog/product_compare/clear">
+        <section name="compare-products"/>
+    </action>
 </config>
 {% endhighlight %}
+
+Other examples:
+
+*   [Checkout]({{ site.mage2000url }}app/code/Magento/Checkout/etc/frontend/sections.xml){:target="_blank"}
+*   [Customer]({{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/sections.xml){:target="_blank"}
 
 <div class="bs-callout bs-callout-info" id="info">
   <ul><li>Use only HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank">POST</a> or <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.6" target="_blank">PUT</a> methods to change state (for example, adding to a shopping cart, adding to a wishlist, and so on.) </li>

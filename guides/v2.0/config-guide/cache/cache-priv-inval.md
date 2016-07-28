@@ -65,9 +65,7 @@ class View extends AbstractProduct implements \Magento\Framework\DataObject\Iden
 
 
 Blocks collect identities from the entities they render. After blocks are rendered on the page, identities from the blocks that implement `IdentityInterface` are collected by [`\Magento\PageCache\Model\Layout\LayoutPlugin`]({{ site.mage2000url }}app/code/Magento/PageCache/Model/Layout/LayoutPlugin.php){:target="_blank"} and added to the response header `X-Magento-Tags`. 
-
-When you save entity, Magento gets it's identities and use them to clear cache.
-
+When you save and entity, Magento gets its identities and use them to clear the cache.
 
 ## Private content versioning {#config-priv-vers}
 Private content, which is stored in the browser local storage, uses the `private_content_version` cookie to store the version.
@@ -76,8 +74,8 @@ Versioning works as follows:
 
 1.  The user performs some action, such as adding to a cart, that results in an POST or PUT request to the Magento application.
 2.  The server generates the `private_content_version` cookie for this user and returns the response to the browser.
-3.  JavaScript takes the `private_content_versio`n cookie and uses it to send an AJAX request to the Magento server to get private content.
+3.  JavaScript takes the `private_content_version` cookie and uses it to send an AJAX request to the Magento server to get private content.
 4.  The server's reply is cached in the browser's local storage. 
 
     All subsequent requests with the same data version are retrieved from local storage.
-5.  Any subsequent HTTP POST or PUT request changes the value of `private_content_version`.
+5.  Any subsequent HTTP POST or PUT request changes the value of `private_content_version` and results in the updated content being cached by the browser.
