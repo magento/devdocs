@@ -21,11 +21,11 @@ The `<module>/etc/communication.xml` file defines aspects of the message queue s
 
 Every topic must be configured with transport layer connection information, so that the publisher knows where to publish messages. Configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the `env.php` file.
 
-The `name` parameter is required. The topic definition must include either a `request` or a `schema`. Use `schema` if you want to implement a custom service interface.  Otherwise, specify `request`.
+The `name` parameter is required. The topic definition must include either a `request` or a `schema`. Use `schema` if you want to implement a custom service interface.  Otherwise, specify `request`. If `request` is specified, then also specify `response` if the message is asynchronous.
 
 Parameter | Description
 --- | ---
-name | A string that uniquely identifies the topic. The format should be `*object*.*action*` You can further distinguish topic names by appending `.*qualifier*` to the end of the name. You can specify an asterisk (\*) or pound sign (\#) as wildcards.
+name | A string that uniquely identifies the topic. The format should be `*object*.*action*` You can further distinguish topic names by appending `.*qualifier*` to the end of the name. Wildcards are not supported in the `communication.xml` file.
 request | Specifies the data type of the topic.
 response | Specifies the format of the response. This parameter is required if you are defining a synchronous topic. Omit this parameter if you are defining an asynchronous topic.
 schema | The interface that describes the structure of the message. The format must be  `<module>\Api\<ServiceName>::<methodName>`.
@@ -71,7 +71,7 @@ exchange | The name of the exchange to publish to. The default system exchange n
 The `queue` element defines the module's queues.
 
 Parameter | Description
---- | --- 
+--- | ---
 name (required) | Defines the queue name to send the message to.
 consumer (required) | The name of the consumer.  
 consumerInstance | The path to a Magento class that consumes the message.
