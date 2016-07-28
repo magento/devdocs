@@ -23,17 +23,17 @@ Every topic must be configured with transport layer connection information, so t
 
 The `name` parameter is required. The topic definition must include either a `request` or a `schema`. Use `schema` if you want to implement a custom service interface.  Otherwise, specify `request`.
 
-Parameter | Description | Example
+Parameter | Description
 --- | --- | ---
 name | A string that uniquely identifies the topic. The format should be `*object*.*action*` You can further distinguish topic names by appending `.*qualifier*` to the end of the name. You can specify an asterisk (\*) or pound sign (\#) as wildcards.
 request | Specifies the data type of the topic.
 response | Specifies the format of the response. This parameter is required if you are defining a synchronous topic. Omit this parameter if you are defining an asynchronous topic.
-schema | The interface that describes the structure of the message. The format must be  `<module>\Api\<ServiceName>::<methodName>`. 
+schema | The interface that describes the structure of the message. The format must be  `<module>\Api\<ServiceName>::<methodName>`.
 
 ### handler element ###
 The `handler` element specifies the class where the logic for handling messages exists and the method it executes.
 
-Parameter | Description | Example
+Parameter | Description
 --- | --- | ---
 name | A string that uniquely defines the handler. The name should be derived from the topic name.  
 type | The class that defines the handler.
@@ -61,7 +61,7 @@ The `queue.xml` file defines the broker that processes topics.  It also specifie
 ### broker element ###
 The `broker` element also contains `queue` elements.
 
-Parameter | Description | Example
+Parameter | Description
 --- | --- | ---
 topic | A topic defined in the `communication.xml` file.
 type | The type of message broker. For this release, the value must be `amqp` or `db`.
@@ -70,7 +70,7 @@ exchange | The name of the exchange to publish to. The default system exchange n
 ### queue element ###
 The `queue` element defines the module's queues.
 
-Parameter | Description | Example
+Parameter | Description 
 --- | --- | ---
 name (required) | Defines the queue name to send the message to.
 consumer (required) | The name of the consumer.  
