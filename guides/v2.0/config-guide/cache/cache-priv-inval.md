@@ -17,9 +17,11 @@ github_link: config-guide/cache/cache-priv-inval.md
 *   [Private content versioning](#config-priv-vers)
 
 ## Cache invalidation {#config-cache-inval}
-The Magento application enables you to expire cached content immediately after a change is made. We use an identity interface to link system entities with cached content.
+The Magento application enables you to clear cached content immediately after a entity changes. We use an `IdentityInterface` to link entities in the application with cached content and to know what cache to clear when an entity changes.
 
-First, a class must use [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
+This section discusses how you inform the Magento application what cache to clear when you change an entity.
+
+First, your entity module must implement [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
 
 {% highlight php startinline=true %}
 use Magento\Framework\Object\IdentityInterface;
@@ -68,16 +70,14 @@ When you save entity, Magento gets it's identities and use them to clear cache.
 
 
 ## Private content versioning {#config-priv-vers}
-Private content, which is stored on the browser, uses the `private_content_version` cookie to store version information. Users who are not logged in or for whom no private content exists don't have a `private_content_version` cookie, so no private content is tracked.
+Private content, which is stored in the browser local storage, uses the `private_content_version` cookie to store the version.
 
-You can version private content as follows:
+Versioning works as follows:
 
-1.  User performs some action, such as adding to a cart, that results in an HTTP POST request to the Magento server.
+1.  The user performs some action, such as adding to a cart, that results in an POST or PUT request to the Magento application.
 2.  The server generates the `private_content_version` cookie for this user and returns the response to the browser.
-3.  JavaScript takes the `private_content_version` cookie and requests private content using a URL like `http://example.com/page_cache/block/render?handles=default,product_view&blocks=cart,wishlist...&version=%private_content_version value%`.
-4.  The server's reply is cached in the browser. 
+3.  JavaScript takes the `private_content_versio`n cookie and uses it to send an AJAX request to the Magento server to get private content.
+4.  The server's reply is cached in the browser's local storage. 
 
-    All subsequent requests with the same data version will be retrieved from browser cache.
-5.  Any subsequent HTTP POST request changes the value of `private_content_version`.
-
-    As a result, a new AJAX request is made to the server (see the preceding step).
+    All subsequent requests with the same data version are retrieved from local storage.
+5.  Any subsequent HTTP POST or PUT request changes the value of `private_content_version`.

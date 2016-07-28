@@ -14,8 +14,6 @@ github_link: config-guide/cache/cache-priv-over.md
 
 #### Contents
 *	[Page caching overview](#config-cache-over)
-*	[Guidelines for public content](#config-cache-guide-cache)
-*	[Guidelines for private content](#config-cache-guide-uncache)
 *	[Cacheable and uncacheable pages]({{ page.baseurl }}config-guide/cache/cache-priv-cacheable.html)
 *	[Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html)
 *	[HTTP context]({{ page.baseurl }}config-guide/cache/cache-priv-context.html)
@@ -28,30 +26,15 @@ Magento page caching is synonymous with *full-page caching*. The Magento applica
 
 *	Default caching mechanism which stores cache files in any of the following:
 
-	*	On the Magento file system. 
+	*	On the file system. 
 
 		You don't need to do anything to use file-based caching.
 	*	[Database]({{ page.baseurl }}config-guide/cache/caching-database.html)
 	*	[Redis]({{ page.baseurl }}config-guide/redis/redis-pg-cache.html)
 *	[Varnish]({{ page.baseurl }}config-guide/varnish/config-varnish.html) (recommended)
 
-### Client-side caching {#config-cache-over-client}
-An HTTP GET request to fetch an asset has headers that specify how long a returned asset can be trusted as being up-to-date. This allows a web browser to save a copy of the asset so if the user comes back later, the asset does not have to be downloaded again. 
-
-In this context, an *asset* can be any of the following:
-
-*	Entire page or part of a page
-*	Image
-*	JavaScript
-*	CSS
-
-Each of the preceding (including each individual image) can result in a separate HTTP request and as a result, browser caching can save a large number of requests. Response headers specify whether or not a retrieved asset should be cached and, if cached, for how long.
-
-### Server-side caching {#config-cache-over-server}
-Server-side caching is particularly beneficial when the same request comes from different users. You can serve more requests per second for dynamic content (for example, content retrieved from a database). There are various methods of updating the server cache; we'll get into that in more detail later.
-
 ### Cacheable and uncacheable pages {#config-cache-over-cacheable}
-*Cacheable* and *uncacheable* are terms used to specify whether or not a page should be cached at all. (By default, all pages are cacheable.) If any block in a layout is designated as uncacheable (using `cacheable="false"`), the entire page is uncacheable.
+*Cacheable* and *uncacheable* are terms used to specify whether or not a page should be cached at all. (By default, all pages are cacheable.) If any block in a layout is designated as uncacheable, the entire page is uncacheable.
 
 ### Public and private content {#config-cache-over-pubpriv}
 *Private* content on a page is intended for one user only; for example, a customer name or personalized recommendations for a logged-in customer. Rendering private content in a cached page is sometimes referred to as *hole punching* and we'll discuss it in more detail in [Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html).
@@ -61,22 +44,6 @@ It's important to understand that Magento 2 does *not* use [Edge Side Includes (
 Instead, we fetch public content (typically the bulk of the total content of the page), then rely on JavaScript and AJAX to inject the private content, which is cached on the browser only. This is discussed in more detail in [Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html).
 
 To be able to render different content for different users with the same URL, we use [*HTTP context variables*]({{ page.baseurl }}config-guide/cache/cache-priv-context.html).
-
-## Guidelines for public content {#config-cache-guide-cache}
-For content to be cacheable, it must meet the following criteria:
-
-*	Must use only the HTTP [GET or HEAD]({{ page.baseurl }}config-guide/cache/cache-priv-cacheable.html#config-page-cache) request method
-*	Must render only cacheable blocks (which is the default behavior)
-*	Contains no sensitive or private data (in other words, session and customer [Data Transfer Objects (DTO)](https://en.wikipedia.org/wiki/Data_transfer_object){:target="_blank"} objects are empty)
-*	Implement all customer-specific information using private blocks
-*	Models and blocks should identify themselves for [invalidation support]({{ page.baseurl }}config-guide/cache/cache-priv-inval.html)
-*	To show different public content on the same URL based on custom parameters, you should declare a custom [HTTP context variable]({{ page.baseurl }}config-guide/cache/cache-priv-context.html) if you plan to show different public content on the same URL
-
-## Guidelines for private content {#config-cache-guide-uncache}
-For uncacheable content, keep the following in mind:
-
-*	Must use the [HTTP POST request method]({{ page.baseurl}}config-guide/cache/cache-priv-priv.html#config-cache-priv-how) to change state (for example, add items to a shopping cart)
-*	JavaScript in private content should not rely on [Document Object Model (DOM)](https://en.wikipedia.org/wiki/DOM_events){:target="_blank"} load events because this kind of content can be loaded after the main page load event using a separate request
 
 #### Next
 [Cacheable and uncacheable pages]({{ page.baseurl }}config-guide/cache/cache-priv-cacheable.html)

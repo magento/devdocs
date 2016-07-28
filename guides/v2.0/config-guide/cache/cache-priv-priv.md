@@ -18,11 +18,11 @@ github_link: config-guide/cache/cache-priv-priv.md
 *	[Considerations for public content](#config-cache-public)  
 
 ## Public and private content {#config-cache-priv-over}
-Many Magento pages contain personal or sensitive information that should be delivered to only one specific user. To enable you to deliver private content in a public page, we define two broad types of content:
+The Magento page cache stores *entire* cacheable pages; where pages are stored depends on whether the content is private or public. These terms are defined as follows:
 
 *	*Public*, which can display to many customers. 
 
-	Public content is stored in your cache storage (file system, database, or Varnish). Examples of public content includes header, footer, and category listing.
+	Public content is stored in your cache storage (file system, database, or Redis), or by Varnish. Examples of public content includes header, footer, and category listing.
 *	*Private*, which is not stored in the server cache; instead, it's stored on the client only. 
 
 	Examples of private content include the wishlist, shopping cart, customer name, and addresses. Private content should be limited to a small portion of the total content on a page.
@@ -36,9 +36,9 @@ To specify a block as private and have the Magento application render it in brow
 *   [Step 4: Invalidate private content](#config-cache-priv-how-inval)
 
 ### Step 1: Create a section source {#config-cache-priv-how-source}
-The section source class is responsible for retrieving data for the section. As a best practice, we recommend you implement your code using the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\Model\CustomerData\SectionSourceInterface`]({{ site.mage2000url }}app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target="_blank"} interface. 
+The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\Model\CustomerData\SectionSourceInterface`]({{ site.mage2000url }}app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target="_blank"} interface. 
 
-The public method `getSectionData` must return an associative array with data for private block. 
+The public method `getSectionData` must return an array with data for private block. 
 
 [Example]({{ site.mage2000url }}app/code/Magento/Catalog/CustomerData/CompareProducts.php#L36-L45){:target="_blank"}
 
@@ -55,15 +55,13 @@ Add the following to your component's dependency injection configuration (`di.xm
 {% endhighlight %}
 
 ### Step 2: Create a block and template {#config-cache-priv-how-block}
-To render private content, create a *template* to display user-agnostic information and *blocks* to contain private content.
-
-The user-agnostic data will be replaced with user specific data by the UI component.
+To render private content, create a block and a template to display user-agnostic information. The user-agnostic data will be replaced with user specific data by the UI component.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Do <em>not</em> use the <code>$_isScopePrivate</code> property in your blocks. This property is obsolete and won't work properly.</p>
 </div>
 
-Replace private data in blocks with placeholders (using [Knockout JavaScript](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example)in your layout.
+Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example)in your layout.
 
 Initialize the component as follows:
 
@@ -107,8 +105,7 @@ The following example adds comments to [app/code/Magento/Catalog/etc/frontend/se
 {% endhighlight %}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <ul><li>Use only HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank">POST</a> or <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.6" target="_blank">PUT</a> methods to change state (for example, adding to a shopping cart, adding to a wishlist, and so on.) POST and PUT requests are <em>not</em> cached.</li>
-    <li>Only HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank">GET</a> and <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.4" target="_blank">HEAD</a> requests are cacheable.</li>
+  <ul><li>Use only HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank">POST</a> or <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.6" target="_blank">PUT</a> methods to change state (for example, adding to a shopping cart, adding to a wishlist, and so on.) </li>
     <li>For more information about caching, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html" target="_blank">RFC-2616 section 13</a>.</li>
 
   </ul>
