@@ -30,7 +30,7 @@ request | Specifies the data type of the topic. | `string`, `string[]`
 response | Specifies the format of the response. This parameter is required if you are defining a synchronous topic. Omit this parameter if you are defining an asynchronous topic. | `string`
 schema | The interface that describes the structure of the message. The format must be  `<module>\Api\<ServiceName>::<methodName>`. | `mymodule\Api\ServiceInterface::execute`
 
-### handler element###
+### handler element ###
 The `handler` element specifies the class where the logic for handling messages exists and the method it executes.
 
 Parameter | Description | Example
@@ -56,11 +56,10 @@ The following sample defines two synchronous topics. The first topic is for RPC 
 {% endhighlight %}
 
 ## Create the `queue.xml` file ##
-The `queue.xml` file defines the broker that processes topics and the name of each consumer. It also specifies the queue each topic will be sent to.
-
-A single topic can be sent to one or multiple queues. Each recipient is defined in `consumer` elements. , and queues
+The `queue.xml` file defines the broker that processes topics.  It also specifies the queue each topic will be sent to.
 
 ### broker element ###
+The `broker` element also contains `queue` elements.
 
 Parameter | Description | Example
 === | === | ===
@@ -68,23 +67,27 @@ topic | A topic defined in the `communication.xml` file. | `mysystem.ordercreate
 type | The type of message broker. For this release, the value must be `amqp` or `db`. | `amqp`
 exchange | The name of the exchange to publish to. The default system exchange name is `magento`. | `magento`
 
-### consumer element ###
+### queue element ###
+The `queue` element defines the module's queues.
 
 Parameter | Description | Example
 === | === | ===
-name | The name of the consumer.  | sync.consumer, async.consumer
-queue | Defines the queue name to send the message to.| magento_omsspec_api_ordermanagement_ordercreated
+name (required) | Defines the queue name to send the message to.|
+consumer (required) | The name of the consumer.  | `mysystem.ordercreate.consumer`, `mysystem.ordercreate.success.consumer`
+consumerInstance | The path to a Magento class that consumes the message. | `Path/to/my/Consumer`
+handler | |Specifies the class and method that processes the message. The value must be specified in the format `<Vendor>\Module\<ServiceName>::<methodName>`. | 
+maxMessages | Specifies the maximum number of messages to consume. | 100
 
 ## Sample `queue.xml` file ##
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
-    <broker topic="synchronous.rpc.test" type="amqp" exchange="magento">
-        <queue consumer="synchronousRpcTestConsumer" name="synchronous.rpc.test" consumerInstance="Magento\Framework\MessageQueue\Rpc\Consumer"/>
-    </broker>
-    <broker topic="magento.testModuleSynchronousAmqp.api.serviceInterface.execute" type="amqp" exchange="magento">
-        <queue consumer="RemoteServiceTestConsumer" name="queue.magento.testModuleSynchronousAmqp.api.serviceInterface.execute" consumerInstance="Magento\Framework\MessageQueue\Rpc\Consumer"/>
-    </broker>
+<broker topic="synchronous.rpc.test" type="amqp" exchange="magento">
+    <queue consumer="synchronousRpcTestConsumer" name="synchronous.rpc.test" consumerInstance="Magento\Framework\MessageQueue\Rpc\Consumer"/>
+</broker>
+<broker topic="magento.testModuleSynchronousAmqp.api.serviceInterface.execute" type="amqp" exchange="magento">
+    <queue consumer="RemoteServiceTestConsumer" name="queue.magento.testModuleSynchronousAmqp.api.serviceInterface.execute" consumerInstance="Magento\Framework\MessageQueue\Rpc\Consumer"/>
+</broker>
 </config>
 {% endhighlight %}
 
