@@ -33,19 +33,17 @@ Magento page caching is synonymous with *full-page caching*; in other words, we 
 *	[Varnish]({{ page.baseurl }}config-guide/varnish/config-varnish.html) (recommended)
 
 ### Cacheable and uncacheable pages {#config-cache-over-cacheable}
-*Cacheable* and *uncacheable* are terms used to specify whether or not a page should be cached at all. (By default, all pages are cacheable.) If any block in a layout is designated as uncacheable, the entire page is uncacheable.
+*Cacheable* and *uncacheable* are terms we use to indicate whether or not a page should be cached at all. (By default, all pages are cacheable.) If any block in a layout is designated as uncacheable, the entire page is uncacheable.
 
-Unless you specify otherwise, all pages are cacheable. 
-
-To create an uncacheable page, mark any block on that page as uncacheable in the layout (use `cacheable="false"`). Any page that has at least one uncacheable block is itself uncacheable (that is, the entire page).
+To create an uncacheable page, mark any block on that page as uncacheable in the layout using `cacheable="false"`. 
 
 Examples of uncacheable pages include the compare products, cart, checkout pages, and so on. 
 
 [Example]({{ site.mage2000url }}app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml){:target="_blank"}
 
 <div class="bs-callout bs-callout-warning">
-    <ul><li>Do not configure content pages (that is, catalog, product and CMS pages) to be uncacheable. Doing so has an adverse affect on performance.</li>
-        <li>Caching a page for even a few seconds is helpful because HTTP requests occur on the scale of milliseconds.</li></ul>
+    <p>Do not configure content pages (that is, catalog, product and CMS pages) to be uncacheable. Doing so has an adverse affect on performance.</p>
+       
 </div>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -53,7 +51,7 @@ Examples of uncacheable pages include the compare products, cart, checkout pages
 </div>
 
 ### Public and private content {#config-cache-over-pubpriv}
-*Private* content on a page is intended for one user only; for example, a customer name or personalized recommendations for a logged-in customer. Rendering private content in a cached page is sometimes referred to as *hole punching* and we'll discuss it in more detail in [Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html).
+*Private* content on a page is intended for one user only; for example, a customer name or personalized recommendations for a logged-in customer. Rendering private content in a cached page is sometimes referred to as *hole punching* and we'll discuss it in more detail in the next topic.
 
 #### Next
 [Public and private content]({{ page.baseurl }}config-guide/cache/cache-priv-priv.html)
