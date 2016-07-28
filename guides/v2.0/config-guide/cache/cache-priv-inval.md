@@ -77,5 +77,5 @@ Versioning works as follows:
 3.  JavaScript takes the `private_content_version` cookie and uses it to send an AJAX request to the Magento server to get private content.
 4.  The server's reply is cached in the browser's local storage. 
 
-    All subsequent requests with the same data version are retrieved from local storage.
-5.  Any subsequent HTTP POST or PUT request changes the value of `private_content_version` and results in the updated content being cached by the browser.
+    Subsequent requests with the same data version are retrieved from local storage.
+5.  Any future HTTP POST or PUT request changes the value of `private_content_version` and results in the updated content being cached by the browser.

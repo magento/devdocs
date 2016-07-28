@@ -17,7 +17,7 @@ The Magento page cache stores *entire* cacheable pages; where pages are stored d
 
 *	*Public*, which can display to many customers. 
 
-	Public content is stored in your cache storage (file system, database, or Redis), or by Varnish. Examples of public content includes header, footer, and category listing.
+	Public content is stored in your cache storage (file system, database, or Redis), or by Varnish. Examples of public content includes the header, footer, and category listing.
 *	*Private*, which is not stored in the Magento server cache; instead, it's stored on the client only. 
 
 	Examples of private content include the wishlist, shopping cart, customer name, and addresses. Private content should be limited to a small portion of the total content on a page.
