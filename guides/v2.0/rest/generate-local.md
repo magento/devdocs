@@ -10,11 +10,9 @@ github_link: rest/generate-local.md
 
 ---
 
-The REST documentation is generated with [Swagger UI](http://swagger.io) using a schema derived from the latest build of Magento 2 Community Edition. However, the REST API documentation is static in that the Magento Developers website is not running an instance of Magento.
+The REST documentation on the Magento devdocs website is generated with [Swagger UI](http://swagger.io) using a schema derived from the latest build of Magento 2 Community Edition. However, the REST API documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento and there is no live data.
 
-The REST documentation on the Magento devdocs website is generated with Swagger UI using a schema derived from the latest build of Magento 2 Community Edition. However, the REST API documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento and there is no live data.
-
-The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include third-party modules and extension attributes that have been installed on your system. To view this documentation, go to:
+The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include Magento Enterprise Edition (EE) modules, third-party modules, and extension attributes that have been installed on your system. To view this documentation, go to:
 
 `http://<magento_host>/swagger`
 
