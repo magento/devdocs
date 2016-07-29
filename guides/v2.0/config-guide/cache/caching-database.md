@@ -4,10 +4,13 @@ group: config-guide
 subgroup: 08_Caching
 title: Database caching
 menu_title: Database caching
-menu_order: 10
+menu_order: 9
 menu_node: 
+level3_menu_node: level3child
+level3_subgroup: cache-types
 version: 2.0
-github_link: config-guide/database/database.md
+github_link: config-guide/cache/caching-database.md
+redirect_from: /guides/v2.0/config-guide/database/database.html
 ---
 
 #### Contents

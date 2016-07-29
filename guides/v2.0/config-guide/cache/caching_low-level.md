@@ -6,8 +6,11 @@ title: Low-level cache options
 menu_title: Low-level cache options
 menu_order: 5
 menu_node: 
+level3_menu_node: level3child
+level3_subgroup: cache-types
 version: 2.0
-github_link: config-guide/config/caching_low-level.md
+github_link: config-guide/cache/caching_low-level.md
+redirect_from: /guides/v2.0/config-guideconfig/caching_low-level.html
 ---
 
 The Magento application uses a low-level cache frontend and backend to provide access to the cache storage.
