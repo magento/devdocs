@@ -1,8 +1,6 @@
 <div markdown="1">
 
-
-
-See one of the following:
+After the readiness check completes, see one of the following:
 
 *	[Readiness check success](#compman-readiness-success)
 *	[Readiness check failure](#compman-readiness-fail)

@@ -45,7 +45,7 @@ When you expand it, you see the modules it depends on; an example follows:
 
 ![]({{ site.baseurl }}common/images/modman_dependencies.png)
 
-To disable such a module, you must also disable all dependent modules one at a time.
+To disable such a module, you must first disable all dependent modules one at a time.
 
 ## Enable or disable a module
 This example shows how to disable a currently enabled module. You can use the same basic procedure to enable a disabled module.
