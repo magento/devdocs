@@ -5,7 +5,7 @@ subgroup: 15_RabbitMQ
 title: Configure message queues
 menu_title: Configure message queues
 menu_order: 2
-version: 2.0
+version: 2.1
 github_link: config-guide/mq/config-mq.md
 ---
 Any module can be configured to send and receive messages to the message queue. To do this, you must create the following files in the `<module>/etc` directory:

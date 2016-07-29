@@ -4,7 +4,7 @@ group: config-guide
 subgroup: 15_RabbitMQ
 title: Configure 2.2 message queues
 menu_title: Configure 2.2 message queues
-menu_order: 3
+menu_order: 2
 version: 2.2
 github_link: config-guide/mq/config-mq22.md
 ---
