@@ -375,6 +375,11 @@ In this file, reference the element having added the `remove` attribute:
 
 To replace an element, <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
 
+<h3>Debugging</h3>
+In **developer** mode while collecting and merging layout update xml files there is hard crash if there is a mistake in your layout handle xml file.
+When **developer** mode is on Magento 2 validates merged xml layout according to its xsd schema while loading layout updates by handles. If validation fails hard failure with process halt occurs in **developer** mode.
+In **production** and **default** modes all layout xml or xsd validation errors are just logged to var/log directory without throwing exception. 
+When **production** and **default** modes are enabled there is no layout xml validation according to xsd schema in Magento 2 because it will impact its performance.
 
 #### Related topics:
 
