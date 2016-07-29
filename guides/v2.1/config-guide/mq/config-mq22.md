@@ -18,8 +18,8 @@ Configuring the message queue topology involves creating and modifying the follo
 
 * [`communication.xml`](#communicationxml) - Defines  aspects of the message queue system that all communication types have in common.
 * [`queue_consumer.xml`](#queueconsumerxml) - Defines the relationship between an existing queue and its consumer.
-* [`queue_topology.xml`](#queuetopologyxml) - Defines the message routing rules.
-* [`queue_publisher.xml`](#queuepublisherxml) - Defines the relationship between a topic and its publisher.
+* [`queue_topology.xml`](#queuetopologyxml) - Defines the message routing rules and declares queues and exchanges.
+* [`queue_publisher.xml`](#queuepublisherxml) - Defines the exchange where a topic is published.
 
 ### Use Cases ###
 Depending on your needs, you may only need to create and configure one or two of these files.
@@ -103,7 +103,7 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 
 ### `queue_topology.xml` {#queuetopologyxml}
 
-The `queue_topology.xml` file defines the message routing rules. It contains the following elements:
+The `queue_topology.xml` file defines the message routing rules and declares queues and exchanges. It contains the following elements:
 
 * `exchange`
 * `exchange/binding`
@@ -194,7 +194,7 @@ The following illustrates an `arguments` block:
 
 ### `queue_publisher.xml` {#queuepublisherxml}
 
-The `queue_publisher.xml` file defines the relationship between a topic and its publisher. It contains the following elements:
+The `queue_publisher.xml` file defines the exchange where a topic is published. It contains the following elements:
 
 * publisher
 * publisher/connection

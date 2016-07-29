@@ -14,15 +14,15 @@ github_link: config-guide/mq/queue-migration.md
 To upgrade from Magento 2.1, you must create the following files in the `<module>/etc` directory for each module that will use the message queue framework.
 
 * `queue_consumer.xml` - Defines the relationship between an existing queue and its consumer.
-* `queue_topology.xml`- Defines the message routing rules.
-* `queue_publisher.xml` - Defines the relationship between a topic and its publisher.
+* `queue_topology.xml`- Defines the message routing rules and declares queues and exchanges.
+* `queue_publisher.xml` -   Defines the exchange where a topic is published.
 
 The existing `queue.xml` file is deprecated.
 
 For complete details about these files, see [Configure messque queue topology]({{page.baseurl}}config-guide/mq/config-mq.html)
 
 <div class="bs-callout bs-callout-warning">
-    <p>The Magento 2.1 <code><communication.xml</code> file has not changed for Magento 2.2.</p>
+    <p>The Magento 2.1 <code>communication.xml</code> file has not changed for Magento 2.2.</p>
 </div>
 
 #### Create the `queue_consumer.xml` file ####
