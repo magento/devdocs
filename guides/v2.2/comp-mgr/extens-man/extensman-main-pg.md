@@ -75,7 +75,9 @@ Click the Review button corresponding to which action you'd like to take and con
 
 1.	In the Installed Products section, click **Uninstall** from the **Actions** list as the following figure shows.
 
-	![Review and install components]({{ site.baseurl }}common/images/extensman_uninstall.png){:width="600px"}
+	![Uninstall components]({{ site.baseurl }}common/images/extensman_uninstall.png){:width="600px"}
+
+	If no **Uninstall** option is available, the module's vendor did not provide an uninstallation script. Contact the vendor for uninstallation instructions.
 3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
@@ -84,9 +86,12 @@ Click the Review button corresponding to which action you'd like to take and con
 
 {% collapsible To update components: %}
 
-1.	In the Installed Products section, click **Update** from the **Actions** list as the following figure shows.
+![This component has an update available]({{ site.baseurl }}common/images/extensman_icon_update.png) Indicates the component has an update available.
+
+1.	In the Installed Products section, for a component with an available update, click **Update** from the **Actions** list as the following figure shows.
 
 	![Update components]({{ site.baseurl }}common/images/extensman_update.png){:width="600px"}
+
 3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}

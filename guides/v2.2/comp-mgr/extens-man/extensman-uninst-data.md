@@ -2,7 +2,7 @@
 layout: default 
 group: compman
 subgroup: 06_UseExtMan
-title: Step 3. Data Option
+title: Step 3. Remove or Keep Data
 menu_title: Data Option
 menu_node: 
 menu_order: 12
@@ -12,7 +12,7 @@ version: 2.2
 github_link: comp-mgr/extens-man/extensman-uninst-data.md
 ---
 
-## Step 3. Data Option
+## Step 3. Remove or Keep Data
 This step displays if you're uninstalling a component.
 
 After backing up, you have the choice of removing component data from the Magento 2 database.

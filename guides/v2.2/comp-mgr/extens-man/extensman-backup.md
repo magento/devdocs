@@ -19,5 +19,5 @@ After your backup is complete, continue with any of the following:
 
 *	Installing new purchases: [Step 3. Component Install]({{page.baseurl}}comp-mgr/extens-man/extensman-new-purchase.html)
 *	Updating components: [Step 3. Component Update]({{page.baseurl}}comp-mgr/extens-man/extensman-update.html)
-*	Uninstalling components: [Step 3. Data Option]({{page.baseurl}}comp-mgr/extens-man/extensman-uninst-data.html)
+*	Uninstalling components: [Step 3. Remove or Keep Data]({{page.baseurl}}comp-mgr/extens-man/extensman-uninst-data.html)
 
