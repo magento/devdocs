@@ -3,7 +3,7 @@ layout: default
 group: compman
 subgroup: 06_UseExtMan
 title: Step 3. Remove or Keep Data
-menu_title: Data Option
+menu_title: Remove or Keep Data
 menu_node: 
 menu_order: 12
 level3_menu_node: level3child
