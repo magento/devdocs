@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 15_RabbitMQ
-title: Configure message queue topology
-menu_title: Configure message queue topology
+title: Configure message queues
+menu_title: Configure message queues
 menu_order: 2
 version: 2.0
 github_link: config-guide/mq/config-mq.md

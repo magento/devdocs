@@ -19,7 +19,7 @@ To upgrade from Magento 2.1, you must create the following files in the `<module
 
 The existing `queue.xml` file is deprecated.
 
-For complete details about these files, see [Configure messque queue topology]({{page.baseurl}}config-guide/mq/config-mq.html)
+For complete details about these files, see [Configure messque queues]({{page.baseurl}}config-guide/mq/config-mq.html)
 
 <div class="bs-callout bs-callout-warning">
     <p>The Magento 2.1 <code>communication.xml</code> file has not changed for Magento 2.2.</p>
@@ -55,11 +55,10 @@ The first column in the following table lists the all the parameters in the `que
 `<exchange>/<binding>/destinationType` | Not present in 2.1. This value must be set to `queue`.
 `<exchange>/<binding>/destination` | `<broker>/<queue>/name`
 `<exchange>/<binding>/disabled` | Not present in 2.1. Omit this parameter to accept the default value.
-`<arguments>` | Not present in 2.1. Omit this element.
+`<exchange>/<arguments>` and `<exchange>/<binding>/<arguments>` | Not present in 2.1. Omit this element.
 
 #### Create the `queue_publisher.xml` file ####
 The first column in the following table lists the all the parameters in the `queue_publisher.xml` file. The second column lists where in the Magento 2.1 `queue.xml` file the equivalent parameters are located.
-
 
 | 2.2 Attribute  | 2.1 queue.xml source |
 | ---------------- | ----------- |
@@ -72,14 +71,13 @@ The first column in the following table lists the all the parameters in the `que
 ### Migrate from Magento 2.0 to 2.2 ###
 To upgrade from Magento 2.0, you must create the following files in the `<module>/etc` directory for each module that will use the message queue framework.
 
-* `communication.xml` - Configures message queue communication attributes for the module.
 * `queue_consumer.xml` - Defines the relationship between an existing queue and its consumer.
 * `queue_topology.xml`- Defines the message routing rules.
 * `queue_publisher.xml` - Defines the relationship between a topic and its publisher.
 
 The existing `queue.xml` file is deprecated.
 
-For complete details about these files, see [Configure messque queue topology]({{page.baseurl}}config-guide/mq/config-mq.html)
+For complete details about these files, see [Configure messque queues]({{page.baseurl}}config-guide/mq/config-mq.html)
 
 #### Create the `queue_consumer.xml` file ####
 The first column in the following table lists the all the parameters in the `queue_consumer.xml` file. The second column lists where in the Magento 2.0 `queue.xml` file the equivalent parameters are located.
@@ -104,7 +102,7 @@ The first column in the following table lists the all the parameters in the `que
 `<exchange>/durable` | Not present in 2.0. Omit this parameter to accept the default value.
 `<exchange>/autoDelete` | Not present in 2.0. Omit this parameter to accept the default value.
 `<exchange>/internal` | Not present in 2.0. Omit this parameter to accept the default value.
-`<<exchange>/binding>/id` | Not present in 2.0. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the `id` parameter.
+`<exchange>/<binding>/id` | Not present in 2.0. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the `id` parameter.
 `<exchange>/<binding>/topic` | `<bind>/topic`
 `<exchange>/<binding>/destinationType` | Not present in 2.0. This value must be set to `queue`.
 `<exchange>/<binding>/destination` | `<bind>/queue`
@@ -116,17 +114,14 @@ The first column in the following table lists the all the parameters in the `que
 
 | 2.2 Attribute  | 2.0 queue.xml Source |
 | ---------------- | ----------- |
-`<publisher>/topic` | `<topic>/publisher`
+`<publisher>/topic` | `<topic>/name`
 `<publisher>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
 `<publisher>/<connection>/name` | `<publisher>/connection`
 `<publisher>/<connection>/exchange` | `<publisher>/exchange`
 `<publisher>/<connection>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
 
 ### Migrate from Magento 2.0 to 2.1 ###
-
-#### Create the `communication.xml` file ####
-
-Magento 2.1 introduces the `communication.xml` file, which configures message queue communication attributes for the module. See 	<a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queue topology</a> for information about creating this file.
+The `communication.xml` file was not changed between Magento 2.0 and 2.1.
 
 #### Replace the `queue.xml` file ####
 
