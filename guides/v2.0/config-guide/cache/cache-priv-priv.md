@@ -31,7 +31,7 @@ To specify a block as private and have the Magento application render it in the 
 *   [Step 4: Invalidate private content](#config-cache-priv-how-inval)
 
 ### Step 1: Create a section source {#config-cache-priv-how-source}
-The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\Model\CustomerData\SectionSourceInterface`]({{ site.mage2000url }}app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target="_blank"} interface. 
+The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\CustomerData\SectionSourceInterface`]({{ site.mage2000url }}app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target="_blank"} interface. 
 
 The public method `getSectionData` must return an array with data for private block. 
 
