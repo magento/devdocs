@@ -1325,7 +1325,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 28 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 30 July 2016 (PDT)</i></p>
 		<h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#config-cache-inval">Cache invalidation</a></li>
@@ -1339,7 +1339,7 @@
 
 <p>First, your entity module must implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/IdentityInterface.php" target="_blank"><code>Magento/Framework/DataObject/IdentityInterface</code></a> as follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Framework\Object\IdentityInterface</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Framework\DataObject\IdentityInterface</span><span class="p">;</span>
  
 <span class="k">class</span> <span class="nc">Product</span> <span class="k">implements</span> <span class="nx">IdentityInterface</span>
 <span class="p">{</span>
@@ -1356,7 +1356,7 @@
 <span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getIdentities</span><span class="p">()</span>
     <span class="p">{</span>
-         <span class="k">return</span> <span class="k">array</span><span class="p">[</span><span class="nx">self</span><span class="o">::</span><span class="na">CACHE_TAG</span> <span class="o">.</span> <span class="s1">&#39;_&#39;</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">()];</span>
+         <span class="k">return</span> <span class="p">[</span><span class="nx">self</span><span class="o">::</span><span class="na">CACHE_TAG</span> <span class="o">.</span> <span class="s1">&#39;_&#39;</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">()];</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -1371,7 +1371,7 @@
 <span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getIdentities</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getProduct</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getIndetities</span><span class="p">();</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getProduct</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getIdentities</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -1386,7 +1386,7 @@ When you save and entity, Magento gets its identities and use them to clear the 
 <ol>
   <li>The user performs some action, such as adding to a cart, that results in an POST or PUT request to the Magento application.</li>
   <li>The server generates the <code>private_content_version</code> cookie for this user and returns the response to the browser.</li>
-  <li>JavaScript takes the <code>private_content_version</code> cookie and uses it to send an AJAX request to the Magento server to get private content.</li>
+  <li>JavaScript interprets the presence of the <code>private_content_version</code> cookie to mean that private content is present on the page, so it sends an AJAX request to the Magento server to get the current private content.</li>
   <li>
     <p>The server’s reply is cached in the browser’s local storage.</p>
 

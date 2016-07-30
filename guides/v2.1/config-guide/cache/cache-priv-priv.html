@@ -1410,7 +1410,7 @@
 </ul>
 
 <h3 id="config-cache-priv-how-source">Step 1: Create a section source</h3>
-<p>The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the <code>Vendor/ModuleName/CustomerData</code> namespace. Your classes must implement the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php" target="_blank"><code>Magento\Customer\Model\CustomerData\SectionSourceInterface</code></a> interface.</p>
+<p>The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the <code>Vendor/ModuleName/CustomerData</code> namespace. Your classes must implement the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php" target="_blank"><code>Magento\Customer\CustomerData\SectionSourceInterface</code></a> interface.</p>
 
 <p>The public method <code>getSectionData</code> must return an array with data for private block.</p>
 

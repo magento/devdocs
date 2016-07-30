@@ -1325,7 +1325,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 28 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 30 July 2016 (PDT)</i></p>
 		<h2 id="config-cache-priv-over">Public and private content</h2>
 <p>The Magento page cache stores <em>entire</em> cacheable pages; where pages are stored depends on whether the content is private or public. These terms are defined as follows:</p>
 
@@ -1353,7 +1353,7 @@
 </ul>
 
 <h3 id="config-cache-priv-how-source">Step 1: Create a section source</h3>
-<p>The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the <code>Vendor/ModuleName/CustomerData</code> namespace. Your classes must implement the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php" target="_blank"><code>Magento\Customer\Model\CustomerData\SectionSourceInterface</code></a> interface.</p>
+<p>The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the <code>Vendor/ModuleName/CustomerData</code> namespace. Your classes must implement the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php" target="_blank"><code>Magento\Customer\CustomerData\SectionSourceInterface</code></a> interface.</p>
 
 <p>The public method <code>getSectionData</code> must return an array with data for private block.</p>
 
