@@ -62,8 +62,8 @@ To change the Admin URI and administrator password:
             http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
             https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
 
-    In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_g8v10` and log in using the user name `admin` and password `admin_A456`
-8.  (Optional.) Create an environment and list the environment variables.
+    In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `meister_x2U8` and password `admin_A456`
+8.  (Optional.) Create an environment for your development work and list the environment variables.
 
         magento-cloud environment:branch <new branch name>
 
@@ -74,12 +74,12 @@ To change the Admin URI and administrator password:
     A sample result follows:
 
     	+----------------+---------------+-----------+------+
-		| ID             | Value         | Inherited | JSON |
-		+----------------+---------------+-----------+------+
-		| ADMIN_PASSWORD | admin_A456    | Yes       | No   |
+        | ID             | Value         | Inherited | JSON |
+        +----------------+---------------+-----------+------+
+        | ADMIN_PASSWORD | admin_A456    | Yes       | No   |
+        | ADMIN_URL      | magento_A8v10 | Yes       | No   |
         | ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
-		| ADMIN_URL      | magento_A8v10 | Yes       | No   |
-		+----------------+---------------+-----------+------+
+        +----------------+---------------+-----------+------+
 
 #### Related topic
 [Merge an environment]({{page.baseurl}}cloud/env/environment-tutorial-env-merge.html)

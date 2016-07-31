@@ -37,6 +37,8 @@ Before you get started, you must add at least one [public SSH key]({{page.baseur
 ## Your welcome e-mail {#cloud-first-email}
 After you register for an account, Magento sends you a welcome e-mail at the address at which you registered. The e-mail contains a link to your Magento Enterprise Cloud Edition project.
 
+You can also access your project by logging in to your Magento Enterprise Cloud Edition account.
+
 Click the link in your welcome e-mail and continue with any of the following topics:
 
 *	[Create a sample Magento project from a template]({{page.baseurl}}cloud/access-acct/first-time-setup_template.html)
