@@ -17,7 +17,7 @@ github_link: cloud/access-acct/fastly.md
 ### Get started
 Fastly recommends you do your development in its own branch because fine-tuning Fastly can be a lengthy process, depending on your needs and eCommerce shop size.
 
-In the procedure that follows, make sure you *branch* a new environment; don't use an existing one unless you know this is what you want to `.
+In the procedure that follows, make sure you *branch* a new environment; don't use an existing one unless you know this is what you want to do.
 
 {% collapsible To get started: %}
 
@@ -26,12 +26,27 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 {% endcollapsible %}
 
 ### Set up Fastly in your new environment
-Set up Fastly using [Fastly's README.md](https://github.com/fastly/fastly-magento2/blob/master/README.md){:target="_blank"}.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Fastly's instructions assume you're using <em>any</em> Magento software installation. Some instructions don't apply to Magento Enterprise Cloud Edition, such as switching to the <em>Magento file system owner</em>. You can safely ignore those instructions.</p>
-  <p>Before you enter the command-line commands discussed in their README, you must <a href="{{ page.baseurl }}cloud/env/environments-start.html#env-start-ssh">SSH to your environment</a>.</p>
-</div>
+{% collapsible To install Fastly: %}
+
+1.	In your local environment root directory, enter the following commands in the order shown:
+
+		composer config repositories.fastly-magento2 git "https://<your GitHub username]:[your GitHub password]@github.com/fastly/fastly-magento2.git"
+		composer require fastly/magento2
+
+2.	Wait for dependencies to be updated.
+3.	Enter the following commands in the order shown:
+
+		php bin/magento module:enable Fastly_Cdn
+		php bin/magento setup:upgrade
+		php bin/magento cache:clean
+
+8. Once this has completed log in to the Magento Admin panel. Go to Stores > Configuration. Then to System > Advanced. Expand the section 'Full Page Cache'. From the 'Caching Application' select 'Fastly CDN'. You can then add the credentials and choose the caching options.
+
+If any critical issue occurs you can't easily solve, call "bin/magento module:disable Fastly_Cdn"
+to disable the FastlyCDN module. If necessary clear Magento's cache again.
+
+{% endcollapsible %}
 
 When you're done with development, [merge your environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html) with the `master` environment so it can be pushed to production.
 
