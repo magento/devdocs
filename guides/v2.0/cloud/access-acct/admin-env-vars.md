@@ -89,5 +89,12 @@ You can use the same tasks to change any variable discussed in the preceding sec
 
 {% endcollapsible %}
 
-#### Related topic
-TBD
+#### Next steps
+*   [Manage your environments]({{ page.baseurl }}cloud/env/environments.html)
+*   [Use the Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html)
+*   Configure your project:
+
+    *   [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+    *   [`routes.yaml`]({{ page.baseurl}}cloud/project/project-conf-files_routes.html)
+    *   [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
+

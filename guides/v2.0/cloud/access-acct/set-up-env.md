@@ -70,12 +70,7 @@ To set global Git variables required to commit or push to an environment (that i
 
 For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time){:target="_blank"}
 
-#### Next steps
-*	Set up configuration files:
-
-	*	[`.magento.app.yml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-	*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-	*	[`service.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-*	[Configure environments]({{page.baseurl}}cloud/env/environments.html)
+#### Next step
+[Set Magento Admin environment variables]({{ page.baseurl }}cloud/access-acct/admin-env-vars.html)
 
 
