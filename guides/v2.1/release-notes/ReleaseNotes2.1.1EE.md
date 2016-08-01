@@ -29,7 +29,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 55598/54787 -->* You can now successfully place and pay for orders when the Enable and Configure Website Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not complete the purchase.  <a href="https://github.com/magento/magento2/issues/4785" target="_blank">(GITHUB-4785)</a> 
 
 
-<!--- 55466/50026 -->* Attributes of the SalesInvoiceRepository methods are now correctly type cast. (The datatype is now a float -- not nullable float.)  Previously, due to the use of an incorrect data type, Magento would produce an error when calling the salesInvoiceRepositoryV1GetList methods. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a> 
+<!--- 55466/50026 -->* Attributes of the `SalesInvoiceRepository` methods are now correctly type cast. (The datatype is now a float, rather than not nullable float.)  Previously, due to the use of an incorrect data type, Magento would produce an error when calling the `salesInvoiceRepositoryV1GetList` method. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a> 
 
 <!--- 55463/53793 -->* The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
 
