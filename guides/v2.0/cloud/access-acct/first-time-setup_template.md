@@ -45,23 +45,6 @@ To set up a Magento project using a template:
 	
 #### Next steps
 *	[Set up an environment]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
-*	[Set Magento Admin environment variables]()
-*	[]()
-*	[]()
-
-	*	Click **visit your site** to see your new Magento site.
-
-	*	Click **configure project** to start configuring the project.
-
-		<div class="bs-callout bs-callout-warning">
-    		<p>For security reasons, we strongly recommend you change your Magento Admin URI, administrator user name, and administrator password. For step-by-step details, see <a href="{{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html">Tutorial&mdash;Set Magento environment variables</a>.</p>
-		</div>
-	*	[Clone the project ]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access)
-	*	Set up configuration files:
-
-		*	[`.magento.app.yml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-		*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-		*	[`service.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-	*	[Configure environments]({{page.baseurl}}cloud/env/environments.html)
+*	[Set Magento Admin environment variables]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
 
 

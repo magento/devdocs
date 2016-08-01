@@ -11,37 +11,35 @@ github_link: cloud/access-acct/set-up-env.md
 ---
 
 ## Set up an environment
-This section discusses how to get started with a Magento cloud deployment by cloning an existing sample project. You can customize your project to your needs anytime, including before you deploy it.
+This topic discusses how to clone an environment locally, set up global Git environment variables, and to enable SSH if you haven't done so already.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Before you continue, make sure you completed the tasks discussed in <a href="{{page.baseurl}}cloud/before/before-workspace.html">Set up a Magento workspace</a>.</p>
-</div>
+### Get started
 
-To set up a Magento project using a template:
+{% collapsible To get started: %}
 
-1.	Log in to [your Magento Enterprise Cloud Edition account](https://accounts.magento.cloud){:target="_blank"}.
-2.	Click the **Projects** tab as the following figure shows.
+{% include cloud/cli-get-started.md %}
 
-	![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}
-3.	Click the name of your project.
-2.	When prompted, enter a name for your project and click **Next**.
+{% endcollapsible %}
 
-	![Enter a name for your project]({{ site.baseurl }}common/images/cloud_project_name.png){:width="550px"}
-3.	Click **Create a blank site from a template** as the following figure shows.
+### Set global Git varibles
+To set global Git variables required to commit or push to an environment (that is, Git branch), enter the following commands:
 
-	![Import a sample Magento project]({{ site.baseurl }}common/images/cloud_project_template.png){:width="650px"}
-4.	Click **Continue**.
-5.	When prompted, enter your Magento EE [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) in the provided fields and click **Finish**.
-6.	Wait a few minutes while the project deploys.
+	git config --global user.name "<your name>"
+	git config --global user.email <your e-mail address>
 
-	During this time, the Web Interface displays messages similar to the following:
+For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time){:target="_blank"}
 
-	![Your sample Magento project]({{ site.baseurl }}common/images/cloud_project_template2.png){:width="650px"}
-7.	After the project deploys, **Success** displays next to the name of your project.
+### Enable SSH to the environment
+This is a one-time setup that was covered previously in this guide; skip this section if you've already enabled SSH.
 
-	The following figure shows an example. 
+{% collapsible To enable SSH: %}
 
-	![You can now visit your site or configure your project]({{ site.baseurl }}common/images/cloud_project-options.png){:width="650px"}
+{% include cloud/enable-ssh.md %}
+
+{% endcollapsible %}
+
+
+#### Next steps
 	
 	You can now:
 
