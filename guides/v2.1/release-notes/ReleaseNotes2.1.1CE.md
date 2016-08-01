@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.1CE.md
 {:toc}
 
 
-##Magento Community Edition 2.1.1
+## Magento Community Edition 2.1.1
 We are pleased to present Magento Community Edition 2.1.1. This release includes several functional fixes.
 
 
@@ -21,7 +21,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 
-###Fixed issues
+### Fixed issues
 
 <!--- 55357 /53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode.  <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
 
@@ -41,7 +41,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 
-###System requirements
+### System requirements
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
@@ -50,7 +50,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 
 
 
-##Migration toolkits
+## Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
