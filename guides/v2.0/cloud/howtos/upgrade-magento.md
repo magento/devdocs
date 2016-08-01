@@ -33,7 +33,7 @@ This topic discusses how to update components you previously installed from Mage
 	*	Replace `"magento/product-enterprise-edition": "<current version>",` with `"magento/magento-cloud-metapackage": "<upgrade version>",`
 	*	Remove `"magento/magento-cloud-configuration": "1.0.*",`
 
-	Example after editing to upgrade to Magento Enterprise Cloud Edition 2.1.0:
+	Example to upgrade to Magento Enterprise Cloud Edition 2.1.0:
 
 		"require": {
 			"magento/magento-cloud-metapackage": "2.1.0",

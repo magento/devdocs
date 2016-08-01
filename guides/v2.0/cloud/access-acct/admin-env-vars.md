@@ -1,18 +1,18 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
-title: Set Magento environment variables
-menu_title: Set Magento environment variables
+subgroup: 04_setup
+title: Set Magento Admin environment variables
+menu_title: Set Magento Admin environment variables
 menu_order: 11
 menu_node: 
-level3_menu_node: level3child
-level3_subgroup: env-tut
 version: 2.0
-github_link: cloud/howtos/environment-tutorial-set-mage-vars.md
+github_link: cloud/access-acct/admin-env-vars.md
 redirect_from: 
-  - guides/v2.0/cloud/cloud/howtos/environment-tutorial-set-mage-vars.html
-  - guides/v2.1/cloud/env/environment-tutorial-set-mage-vars.html
+  - /guides/v2.0/cloud/howtos/environment-tutorial-set-mage-vars.html
+  - /guides/v2.1/cloud/howtos/environment-tutorial-set-mage-vars.html
+  - /guides/v2.0/cloud/cloud/howtos/environment-tutorial-set-mage-vars.html
+  - /guides/v2.1/cloud/env/environment-tutorial-set-mage-vars.html
 ---
 
 ## Tutorial: change the Magento Admin URI, user name, and password {#cloud-env-vars-magento-admin-tut}

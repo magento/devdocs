@@ -2,15 +2,15 @@
 layout: default
 group: cloud
 subgroup: 04_setup
-title: Create a sample Magento project from a template
-menu_title: Create a sample Magento project from a template
-menu_order: 3
+title: Set up an environment
+menu_title: Set up an environment
+menu_order: 10
 menu_node: 
 version: 2.0
-github_link: cloud/access-acct/first-time-setup_template.md
+github_link: cloud/access-acct/set-up-env.md
 ---
 
-## Create a sample Magento project from a template {#cloud-first-clone}
+## Set up an environment
 This section discusses how to get started with a Magento cloud deployment by cloning an existing sample project. You can customize your project to your needs anytime, including before you deploy it.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -43,11 +43,7 @@ To set up a Magento project using a template:
 
 	![You can now visit your site or configure your project]({{ site.baseurl }}common/images/cloud_project-options.png){:width="650px"}
 	
-#### Next steps
-*	[Set up an environment]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
-*	[Set Magento Admin environment variables]()
-*	[]()
-*	[]()
+	You can now:
 
 	*	Click **visit your site** to see your new Magento site.
 
