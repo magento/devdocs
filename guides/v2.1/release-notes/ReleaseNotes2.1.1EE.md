@@ -1,10 +1,11 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
+subgroup: 02_ReleaseNotes
 title: Magento EE 2.1.1 Release Notes
 menu_title: Magento EE 2.1.1 Release Notes
 menu_order: 
+version: 2.1
 github_link: release-notes/ReleaseNotes2.1.1EE.md
 ---
 *	TOC
