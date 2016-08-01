@@ -3,7 +3,7 @@ layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: Link Component
-menu_title: Export Button Component
+menu_title: Link Component
 menu_node:
 menu_order: 14
 version: 2.2
