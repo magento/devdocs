@@ -23,7 +23,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 #### Installation and upgrade
 
-<!--- 55358 /53777-->* Magento 2.1 RC1 - Error when running CLI upgrade command. <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a>
+<!--- 55358 /53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode.  <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
 
 
 
