@@ -20,8 +20,6 @@ For security reasons, we strongly recommend you change the Magento Admin URI, ad
 
 Environment variables are inherited from the parent environment to child environments. You should make these changes in the `master` environment so all other environments start with the same values.
 
-You can use the same tasks to change any variable discussed in the preceding section.
-
 ### Get started
 
 {% collapsible To get started:}
@@ -31,8 +29,7 @@ You can use the same tasks to change any variable discussed in the preceding sec
 {% endcollapsible %}
 
 ### Change the Admin URI, user name, and password
-
-{% collapsible To change the Admin URI, user name, and administrator password: %}
+To change the Admin URI, user name, and administrator password:
 
 1.  Set the variable values.
 
@@ -87,7 +84,6 @@ You can use the same tasks to change any variable discussed in the preceding sec
         | ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
         +----------------+---------------+-----------+------+
 
-{% endcollapsible %}
 
 #### Next steps
 *   [Manage your environments]({{ page.baseurl }}cloud/env/environments.html)
