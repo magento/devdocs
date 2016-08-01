@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_howto
 title: Upgrade the Magento software
 menu_title: Upgrade the Magento software
-menu_order: 10
+menu_order: 7
 level3_menu_node: level3child
 level3_subgroup: upgrade-update
 menu_node: 
@@ -30,7 +30,7 @@ This topic discusses how to update components you previously installed from Mage
 1.	Open `composer.json` in a text editor. (It is located in your Cloud project root directory.)
 2.	Change `require` section as follows:
 
-	*	Replace `"magento/product-enterprise-edition": "2.0.4",` with `"magento/magento-cloud-metapackage": "2.1.0",`
+	*	Replace `"magento/product-enterprise-edition": "<current version>",` with `"magento/magento-cloud-metapackage": "<upgrade version>",`
 	*	Remove `"magento/magento-cloud-configuration": "1.0.*",`
 
 	Example after editing to upgrade to Magento Enterprise Cloud Edition 2.1.0:
@@ -80,10 +80,10 @@ This topic discusses how to update components you previously installed from Mage
 		|_|  |_\__,_\__, \___|_||_\__\___/  \___|_\___/\_,_\__,_|
            			 |___/
 
- 		Welcome to Magento Cloud.
+		Welcome to Magento Cloud.
 
- 		This is environment upgrade
- 		of project ouh5gIssvgqwg.
+		This is environment upgrade
+		of project ouh5gIssvgqwg.
 
 8.	Enter the following command:
 
