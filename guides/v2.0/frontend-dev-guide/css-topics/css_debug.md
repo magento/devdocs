@@ -24,7 +24,7 @@ The topic describes how to install, configure and use <a href="http://gruntjs.co
 Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
 
 
-### Installing and configuring Grunt {#grunt_prereq}
+## Installing and configuring Grunt {#grunt_prereq}
 
 Magento has built-in Grunt tasks configured, but there are still several prerequisite steps you need to take to be able to use it:
 
@@ -87,7 +87,7 @@ Where the following notation is used:
 </ol>
 
 
-### Grunt commands {#grunt_commands}
+## Grunt commands {#grunt_commands}
 
 The following table describes the grunt commands you can use performing different customization tasks. Run all commands from your Magento installation directory.
 
@@ -155,7 +155,7 @@ Tracks the changes in the source files, recompiles <code>.css</code> files, and 
 </tr>
 </table>
 
-### Use cases of tracking changes using Grunt {#use_cases}
+## Use cases of tracking changes using Grunt {#use_cases}
 
 The following shows which Grunt tasks to use for debugging:
 

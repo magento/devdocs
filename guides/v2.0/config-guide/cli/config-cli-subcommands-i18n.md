@@ -241,7 +241,6 @@ Suppose a language package descends from two other packages, and that those pack
 If a language package descends from two packages, its `language.xml` might look like the following:
 
 {% highlight xml %}
-
 <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
     <code>en_GB</code>
     <vendor>magento</vendor>
@@ -343,8 +342,7 @@ Sample `composer.json`:
 
 Sample `registration.php`:
 
-{% highlight PHP %}
-<?php
+{% highlight php startinline=true %}
 /**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -354,7 +352,6 @@ Sample `registration.php`:
     'magento_xx_yy',
     __DIR__
 );
-?>
 {% endhighlight %}
 
 Sample `language.xml`:

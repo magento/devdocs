@@ -13,10 +13,16 @@ github_link: mtf/features.md
 
 The Functional Testing Framework is:
 
-- Flexible, because of modularity support.
-- Fast, because of parallel execution flow.
+- Flexible, because of [modularity] support.
+- Fast, because of [parallel execution] flow.
 - Informative, because of reporting tool.
-- Suitable, because of test suits.
+- Suitable, because of [test suits].
 - Compatible, because of web-driver selection.
 
 Each feature will be described in a separate topic.
+
+<!-- LINK DEFINITIONS -->
+
+[modularity]: {{page.baseurl}}mtf/features/modularity.html
+[parallel execution]: {{page.baseurl}}mtf/features/parallel_execution.html
+[test suits]: {{page.baseurl}}mtf/features/test_suite.html

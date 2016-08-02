@@ -4,8 +4,22 @@
 See one of the following sections:
 
 *	[Get Magento CE using Composer](#install-ce-composer)
+*	[Get the Magento CE software from GitHub](#install-rc-gh)
 *	[Get Magento CE using a compressed archive](#get-zip)
 *	[Upgrade from an earlier version](#upgrade)
+
+### Get the Magento CE software using Composer {#install-ce-composer}
+{:.no_toc}
+
+This software is available from `repo.magento.com`. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
+
+	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
+
+where `<version>` matches the version you want (for example, `2.0.8`)
+
+For example, to install Magento CE 2.0.8 in the `magento2` directory:
+
+	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.8 magento2
 
 ### Get the Magento CE software from GitHub {#install-rc-gh}
 {:.no_toc}
@@ -21,17 +35,6 @@ where
 `<version>` matches the version you want (for example, `2.0.8`)
 
 `[-b <version>]` optionally checks out a new branch.
-
-### Get the Magento CE software using Composer {#install-ce-composer}
-This software is available from `repo.magento.com`. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
-
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
-
-where `<version>` matches the version you want (for example, `2.0.8`)
-
-For example, to install Magento CE 2.0.8 in the `magento2` directory:
-
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.8 magento2
 
 ### Get Magento CE using a compressed archive {#get-zip}
 {:.no_toc}
