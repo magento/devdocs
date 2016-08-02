@@ -10,4 +10,4 @@ version: 2.0
 github_link: comp-mgr/trouble/cman/depend.md
 ---
 
-{% include comp-man/depend.md %}
+{% include comp-man/dependency.md %}
