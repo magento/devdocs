@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Dependency readiness check issues</title>
+	<title>Component dependency readiness check issues</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -165,7 +165,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Dependency readiness check issues</h1>
+		<h1 class="page-heading">Component dependency readiness check issues</h1>
 		
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/trouble/cman/depend.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -565,7 +565,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_depend.html">Dependency readiness issues</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_depend.html">Component dependency readiness issues</a></li>
 
 									
 
@@ -874,8 +874,6 @@ packagist.org/provider-doctrine$instantiator.json): failed to open stream: Permi
 </code></pre>
 
   <p>Make sure you set file system permissions as discussed in <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>.</p>
-
-  <p><a href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a> or contact your system administrator.</p>
 
   <h3 id="trouble-depend-state">The Component Dependency Check status never changes</h3>
   <p>In some cases, the status of the Component Dependency Check doesn’t change, even after you try to correct issues. In that case, you can either delete or rename files named <code>&lt;your Magento install dir&gt;/var/.update_cronjob_status</code> and <code>&lt;your Magento install dir&gt;/var/.setup_cronjob_status</code> and try running the Component Manager again.</p>
