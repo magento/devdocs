@@ -2,8 +2,8 @@
 layout: default
 group: install_trouble
 subgroup: 05_readiness
-title: Dependency readiness check issues
-menu_title: Dependency readiness issues
+title: Component dependency readiness check issues
+menu_title: Component dependency readiness issues
 menu_node: 
 menu_order: 3
 version: 2.0

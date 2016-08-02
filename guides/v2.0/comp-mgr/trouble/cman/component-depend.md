@@ -2,8 +2,8 @@
 layout: default
 group: compman
 subgroup: 50_trouble
-title: Resolve component dependencies
-menu_title: Resolve component dependencies
+title: Resolve component dependency readiness check issues
+menu_title: Resolve component dependency readiness check issues
 menu_node: 
 menu_order: 150
 version: 2.0

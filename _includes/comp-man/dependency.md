@@ -36,8 +36,6 @@ If the Magento file system owner doesn't have permissions to write to directorie
 
 Make sure you set file system permissions as discussed in [Overview of ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
 
-<a href="{{page.baseurl}}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a> or contact your system administrator.
-
 ### The Component Dependency Check status never changes {#trouble-depend-state}
 In some cases, the status of the Component Dependency Check doesn't change, even after you try to correct issues. In that case, you can either delete or rename files named `<your Magento install dir>/var/.update_cronjob_status` and `<your Magento install dir>/var/.setup_cronjob_status` and try running the Component Manager again.
 
