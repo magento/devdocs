@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP version readiness check issues</title>
+	<title>Dependency readiness check issues</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/install-gde/trouble/readiness/tshoot_rc_php.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/readiness/tshoot_rc_depend.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -41,13 +41,13 @@
 			<div class="main-site-name">
 				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.1)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 			
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
-		Version 2.1
+		Version 2.0
 	</button>
 
 
@@ -78,64 +78,62 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
 
             </ul>
          </li>
          <li class="first">
             <a href="#">System Administrator</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
             </ul>
          </li>
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-               
-                   <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
                
             </ul>
          </li>
          <li class="first">
             <a href="#">Designers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
             </ul>
          </li>
          <li class="first">
             <a href="#">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
             </ul>
          </li>
           <li class="first">
-              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <a href="/guides/v2.0/test/testing.html">Testing</a>
               <ul class="menu nav">
-                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
               </ul>
           </li>
          <li class="first">
-            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+            <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Do I...?</a>
          </li>
       </ul>
 
@@ -167,9 +165,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">PHP version readiness check issues</h1>
+		<h1 class="page-heading">Dependency readiness check issues</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_php.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/trouble/cman/depend.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -323,10 +321,6 @@
 
 				
 
-			
-
-				
-
 					
 					
 
@@ -343,95 +337,12 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
 									
 								
 
 									
 
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/trouble/php/tshoot_access-main.html">Access issues</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_exceptions.html">Exceptions during installation</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_var-gen-perms.html">Cannot write to the var/generation directory</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-
-									
 
 								
 
@@ -453,7 +364,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/trouble/php/tshoot_install-main.html">Errors during installation</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/php/tshoot_access-main.html">Access issues</a></li>
 									
 								
 
@@ -464,7 +375,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_70pct.html">Installation stops at about 70%</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
 
 									
 
@@ -472,7 +383,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_nginx-port.html">Cannot install using nginx</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
 
 									
 
@@ -480,7 +391,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
 
 									
 
@@ -488,7 +399,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_exceptions.html">Exceptions during installation</a></li>
 
 									
 
@@ -496,7 +407,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_session.html">During installation, exception SessionHandler::read()</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_var-gen-perms.html">Cannot write to the var/generation directory</a></li>
 
 									
 
@@ -504,7 +415,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_composer-fail.html">Download fails because of changes in Composer</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
 
 									
 
@@ -512,23 +423,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_sample-data.html">Errors installing optional sample data</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
 
 									
 
@@ -552,7 +447,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/trouble/readiness/tshoot_rc_main.html">Readiness check issues</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/php/tshoot_install-main.html">Errors during installation</a></li>
 									
 								
 
@@ -563,7 +458,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/readiness/tshoot_rc_depend.html">Dependency readiness issues</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_70pct.html">Installation stops at about 70%</a></li>
 
 									
 
@@ -571,7 +466,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/readiness/tshoot_rc_perms.html">File permissions readiness check issues</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_nginx-port.html">Cannot install using nginx</a></li>
 
 									
 
@@ -579,7 +474,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/readiness/tshoot_rc_cron.html">cron readiness check issues</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
 
 									
 
@@ -587,42 +482,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/install-gde/trouble/readiness/tshoot_rc_php.html">PHP version readiness check issues</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/trouble/git/tshoot_git-main.html">GitHub errors</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/git/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
 
 									
 
@@ -630,7 +490,39 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/git/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_session.html">During installation, exception SessionHandler::read()</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-fail.html">Download fails because of changes in Composer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_sample-data.html">Errors installing optional sample data</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
 
 									
 
@@ -654,7 +546,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/trouble/php/tshoot_php-main.html">PHP errors</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_main.html">Readiness check issues</a></li>
 									
 								
 
@@ -665,7 +557,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_ready.html">cron readiness check issues</a></li>
 
 									
 
@@ -673,7 +565,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_depend.html">Dependency readiness issues</a></li>
 
 									
 
@@ -681,42 +573,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/trouble/tshoot_other.html">Other issues</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_install-issues.html">Known issues that affect installation</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_perms.html">File permissions readiness check issues</a></li>
 
 									
 
@@ -724,7 +581,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_cron.html">cron readiness check issues</a></li>
 
 									
 
@@ -732,23 +589,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_phpini.html">SQLSTATE[HY000] [2002] No such file or directory</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_php.html">PHP version readiness check issues</a></li>
 
 									
 
@@ -772,7 +613,168 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install-roadmap_trouble.html">Installation roadmap (reference)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/git/tshoot_git-main.html">GitHub errors</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/php/tshoot_php-main.html">PHP errors</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot_other.html">Other issues</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-issues.html">Known issues that affect installation</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_phpini.html">SQLSTATE[HY000] [2002] No such file or directory</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-roadmap_trouble.html">Installation roadmap (reference)</a></li>
 									
 								
 
@@ -830,54 +832,55 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 16 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 1 August 2016 (PDT)</i></p>
 		<div>
 
-  <h2 id="php-version-readiness-check-issues">PHP version readiness check issues</h2>
-  <p>You might encounter the following issues with the PHP version readiness check:</p>
+  <h2 id="resolve-component-dependency-conflicts">Resolve component dependency conflicts</h2>
+  <p>We suggest you try the following solutions in the order shown:</p>
 
   <ul>
-    <li>
-      <p>The check fails because you’re using an unsupported PHP version.</p>
-
-      <p>To solve this issue, use one of the supported versions listed in our <a href="/guides/v2.1/install-gde/system-requirements.html">System Requirements</a>.</p>
-    </li>
-    <li>
-      <p>The check reports the incorrect PHP version.</p>
-
-      <p>Typically, this happens only to advanced users who have multiple PHP versions installed. In some cases, the readiness check fails; in other cases, it might pass.</p>
-    </li>
-    <li>
-      <p>The PHP readiness check doesn’t display the PHP version as the following figure shows.</p>
-
-      <p><img src="/common/images/upgr-tshoot-no-cron.png" /></p>
-
-      <p>This is a symptom of incorrect cron job setup. For more information, see <a href="/guides/v2.1/install-gde/install/post-install-config.html#post-install-cron&quot;">Set up cron jobs</a>.</p>
-    </li>
+    <li><a href="#trouble-depend-conflict">Conflicting dependencies</a></li>
+    <li><a href="#trouble-depend-permission">File system permissions issues</a></li>
+    <li><a href="#trouble-depend-state">The Component Dependency Check status never changes</a></li>
   </ul>
 
-  <h3 id="php-version-is-incorrect">PHP version is incorrect</h3>
-  <p>If the PHP version reported by the readiness check is incorrect, it’s the result of a mismatch of PHP versions between the PHP CLI and the web server plug-in. Magento requires you to use <em>one version</em> of PHP for both the CLI (which runs cron) and the web server (which runs the Magento Admin, Component Manager, and System Upgrade).</p>
+  <h3 id="trouble-depend-conflict">Conflicting dependencies</h3>
+  <p>The message <code>We found conflicting component dependencies</code> displays if Composer cannot determine which components to install or update. To resolve component dependency issues, you should be a technical person who thoroughly understands how Composer works.</p>
 
-  <p>We assume that if you have this issue, you’re an advanced user who has likely installed multiple versions of PHP on your system.</p>
+  <p>Following is a sample failure message:</p>
 
-  <p>To resolve the issue, try the following:</p>
+  <pre><code>We found conflicting component dependencies. 
 
-  <ul>
-    <li>Restart your web server or php-fm.</li>
-    <li>Check the <code>$PATH</code> environment variable for multiple paths to PHP</li>
-    <li>Use the <code>which php</code> command to locate the first PHP executable in your path; if it’s not correct, remove it or create a symlink to the correct PHP version</li>
-    <li>Use a <a href="/guides/v2.1/install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code></a> page to collect more information</li>
-    <li>
-      <p>Make sure you’re running a supported PHP version according to our System Requirements:</p>
+You are trying to update package(s) magento/module-sample-data to 1.0.0-beta
+We've detected conflicts with the following packages:
+- magento/sample-data version 0.74.0-beta15. Please try to update it to one of the following package versions: 0.74.0-beta16, 0.74.0-beta14, 0.74.0-beta13, 0.74.0-beta12, 0.74.0-beta11, 0.74.0-beta10, 0.74.0-beta9, 0.74.0-beta8, 0.74.0-beta7
+</code></pre>
 
-      <ul>
-        <li><a href="/guides/v2.1/install-gde/system-requirements.html">Version 2.0</a></li>
-        <li><a href="/guides/v2.1/install-gde/system-requirements.html">Version 2.1</a></li>
-      </ul>
-    </li>
-    <li>Set the same PHP settings for both the PHP command line and the PHP web server plug-in as discussed in <a href="/guides/v2.1/install-gde/prereq/php-centos.html#instgde-prereq-timezone">PHP configuration options</a></li>
-  </ul>
+  <div class="bs-callout bs-callout-info" id="info">
+  <p>The message you see will likely be different.</p>
+</div>
+
+  <p>Typically, component dependency conflicts result from someone manually editing the Magento 2 <code>composer.json</code> file. It can also be caused by third-party modules that depend on earlier Magento components than the ones you have installed.</p>
+
+  <p>In the preceding example, the installed package <code>magento/sample-data version 0.74.0-beta15</code> cannot be upgraded to <code>1.0.0-beta</code>. However, 0.74.0-beta15 <em>can</em> be upgraded to <code>0.74.0-beta16</code> (or others).</p>
+
+  <p>Edit <code>composer.json</code> to make any of these changes and try the readiness check again.</p>
+
+  <h3 id="trouble-depend-permission">File system permissions issues</h3>
+  <p>If the Magento file system owner doesn’t have permissions to write to directories on the Magento file system, a message similar to the following displays:</p>
+
+  <pre><code>file_put_contents(/var/www/html/magento2ce/var/composer_home/cache/repo/https---
+packagist.org/provider-doctrine$instantiator.json): failed to open stream: Permission denied
+</code></pre>
+
+  <p>Make sure you set file system permissions as discussed in <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>.</p>
+
+  <p><a href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a> or contact your system administrator.</p>
+
+  <h3 id="trouble-depend-state">The Component Dependency Check status never changes</h3>
+  <p>In some cases, the status of the Component Dependency Check doesn’t change, even after you try to correct issues. In that case, you can either delete or rename files named <code>&lt;your Magento install dir&gt;/var/.update_cronjob_status</code> and <code>&lt;your Magento install dir&gt;/var/.setup_cronjob_status</code> and try running the Component Manager again.</p>
+
+  <p>Renaming or removing these files forces the Component Manager to run the checks again.</p>
 </div>
 
 
