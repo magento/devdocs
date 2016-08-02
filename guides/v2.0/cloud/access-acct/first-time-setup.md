@@ -10,6 +10,8 @@ version: 2.0
 github_link: cloud/access-acct/first-time-setup.md
 ---
 
+Hi mom
+
 ![This guide applies to Enterprise Cloud Edition only]({{ site.baseurl }}common/images/ee-only_large.png) 
 
  
