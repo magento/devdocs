@@ -21,11 +21,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ### Fixed issues
 
-#### Installation and upgrade
-
-<!--- 55358 /53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode.  <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
-
-
 
 #### Shopping cart
 
@@ -34,14 +29,11 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 55464/53793 -->* The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
 
 
-#### Payment methods
+#### Miscellaneous
 
 <!--- 55362/45339 -->* Cart price rules are now applied as expected to Payment method conditions. Previously, discounts set in Cart Price rules were not applied during checkout. 
 
-<!--- 55355/54721-->* You can now use Braintree as a payment method when applying reward points or store credit to an order. Previously, you could not access or populate Braintree payment fields if your order included reward points or store credits.
 
-
-#### Miscellaneous
 
 
 <!--- 55526/53986 -->* You can now select Gift Wrapping when purchasing a Grouped product. Previously, Magento did not permit you to select Gift Wrapping for a Grouped product. <a href="https://github.com/magento/magento2/issues/4853" target="_blank">(GITHUB-4853)</a> 
@@ -50,7 +42,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 55513/51015 -->* You can now save a product for which you've entered no Swatch attribute value when this attribute is not required.  Previously, during product creation, Magento would not save the product unless you added a value to the swatch attribute even with a Values Required' set to No. 
  
 
-<!--- 55465/50026 -->* Attributes of the SalesInvoiceRepository methods are now correctly type cast. (The datatype is now a float -- not nullable float.)  Previously, due to the use of an incorrect data type, Magento would produce an error when calling the salesInvoiceRepositoryV1GetList methods. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a> 
+<!--- 55465/50026 -->* Attributes of the SalesInvoiceRepository methods are now correctly type cast. (The datatype is now a float -- not nullable float.)  Previously, due to the use of an incorrect data type cast, Magento would produce an error when calling the salesInvoiceRepositoryV1GetList methods. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a> 
 
 
 <!--- 55461/54224 -->* We've renamed the Tier Price option on the Advanced pricing tab to Customer Group Price option. 
@@ -58,6 +50,10 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 55441/55055 -->* Tier pricing now works correctly with Full Page Cache (FPC). <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a>
 
+
+ 
+
+<!--- Omitted (can't be reproduced or won't fix) 48425, 53777, 54721, 54804, 54718, 54647-->
 
 
 

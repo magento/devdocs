@@ -21,11 +21,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ### Fixed issues
 
-#### Installation and upgrade
-
-<!--- 55358 /53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode.  <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
-
-
 
 #### Shopping cart
 
@@ -34,14 +29,11 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 55464/53793 -->* The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
 
 
-#### Payment methods
+#### Miscellaneous
 
 <!--- 55362/45339 -->* Cart price rules are now applied as expected to Payment method conditions. Previously, discounts set in Cart Price rules were not applied during checkout. 
 
-<!--- 55355/54721-->* You can now use Braintree as a payment method when applying reward points or store credit to an order. Previously, you could not access or populate Braintree payment fields if your order included reward points or store credits.
 
-
-#### Miscellaneous
 
 
 <!--- 55526/53986 -->* You can now select Gift Wrapping when purchasing a Grouped product. Previously, Magento did not permit you to select Gift Wrapping for a Grouped product. <a href="https://github.com/magento/magento2/issues/4853" target="_blank">(GITHUB-4853)</a> 
@@ -61,7 +53,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
  
 
-
+<!--- Omitted (can't be reproduced or won't fix) 48425, 53777, 54721, 54804, 54718, 54647-->
 
 
 
