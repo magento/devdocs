@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Deployment steps</title>
+	<title>Migrate message queue configuration</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/config-guide/prod/prod_deploy.html">
+	<link rel="canonical" href="//guides/v2.1/config-guide/mq/queue-migration.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -167,9 +167,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Deployment steps</h1>
+		<h1 class="page-heading">Migrate message queue configuration</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/prod/prod_deploy.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/config-guide/mq/queue-migration.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -1099,7 +1099,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/mq/queue-migration.html">Migrate message queue configuration</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/config-guide/mq/queue-migration.html">Migrate message queue configuration</a></li>
 
 									
 
@@ -1271,7 +1271,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/config-guide/prod/prod_deploy.html">Deployment steps</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/prod/prod_deploy.html">Deployment steps</a></li>
 
 									
 
@@ -1390,131 +1390,62 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h4 id="contents">Contents</h4>
+			<p align="right"><i>Updated: 29 July 2016 (PDT)</i></p>
+		<h3 id="migrate-from-magento-20-to-21">Migrate from Magento 2.0 to 2.1</h3>
+
+<p>The <code>communication.xml</code> file was not changed between Magento 2.0 and 2.1. Replace the <code>queue.xml</code> file for each module that sends messages to the message queue.</p>
+
+<h4 id="replace-the-queuexml-file">Replace the <code>queue.xml</code> file</h4>
+
+<p>The structure of the <code>queue.xml</code> file is substantially different in Magento. 2.1. Make a copy of your 2.0 <code>queue.xml</code> file and create a new one with the structure listed below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>2.1 Attribute</th>
+      <th>2.0 Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>&lt;broker&gt;/topic</code></td>
+      <td><code>&lt;bind&gt;/topic</code></td>
+    </tr>
+    <tr>
+      <td><code>&lt;broker&gt;/type</code></td>
+      <td><code>&lt;consumer&gt;/connection</code></td>
+    </tr>
+    <tr>
+      <td><code>&lt;broker&gt;/exchange</code></td>
+      <td><code>&lt;bind&gt;/exchange</code></td>
+    </tr>
+    <tr>
+      <td><code>&lt;broker&gt;/&lt;queue&gt;/name</code></td>
+      <td><code>&lt;consumer&gt;/queue</code></td>
+    </tr>
+    <tr>
+      <td><code>&lt;broker&gt;/&lt;queue&gt;/consumer</code></td>
+      <td><code>&lt;consumer&gt;/name</code></td>
+    </tr>
+    <tr>
+      <td><code>&lt;broker&gt;/&lt;queue&gt;/consumerInstance</code></td>
+      <td><code>&lt;consumer&gt;/executor</code></td>
+    </tr>
+    <tr>
+      <td><code>&lt;broker&gt;/&lt;queue&gt;/handler</code></td>
+      <td>Use the values from <code>&lt;consumer&gt;/class</code> and <code>&lt;consumer&gt;/method</code> in the format <code>&lt;Vendor&gt;\Module\&lt;ServiceName&gt;::&lt;methodName&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;broker&gt;/&lt;queue&gt;/maxMessages</code></td>
+      <td><code>&lt;consumer&gt;/max_messages</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="related-topics">Related topics</h4>
 <ul>
-  <li><a href="#deploy-over">Overview of deployment</a></li>
-  <li><a href="#deploy-dev">Prepare your development system</a></li>
-  <li><a href="#deploy-prod">Guidelines for deployment to production</a></li>
-</ul>
-
-<h2 id="deploy-over">Overview of deployment</h2>
-<p>This topic provides guidelines and best practices for deploying a Magento site to production. We don’t recommend a <em>specific</em> set of instructions; these are intended as general guidelines. You should be working with an experienced system integrator who can help you make decisions for your particular deployment.</p>
-
-<p>Assumptions:</p>
-
-<ul>
-  <li>Your <em>development</em> environment is behind a firewall with the Magento application in <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>.</li>
-  <li>All custom code is in source control.</li>
-  <li>Your development environment is as similar as possible to production (same number of webnodes, same caching architecture, and so on)</li>
-  <li>Your <em>production</em> environment is a separate set of servers in a secure environment.</li>
-  <li>Your production environment runs the Magento application in <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a> with desired security options enabled.</li>
-  <li>Your production system has a working, live Magento installation.</li>
-</ul>
-
-<p>Deploying to production involves the following essential steps. Each set of steps is discussed in more detail in the sections that follow.</p>
-
-<h3 id="in-your-development-system">In your development system</h3>
-
-<ol>
-  <li>Test your system in your development environment.</li>
-  <li>Put all custom code in source control.</li>
-  <li>Compile code and generate static view files.</li>
-  <li>Archive file system assets and export the database.</li>
-  <li>Transfer file system and database assets to your production system.</li>
-</ol>
-
-<h3 id="in-your-production-system">In your production system</h3>
-
-<ol>
-  <li>Create the Magento deployment configuration.</li>
-  <li>Extract file system and database assets from your archives.</li>
-  <li>Set file system permissions.</li>
-  <li>Test everything.</li>
-  <li>When everything is working, “flip” your DNS server to point to your production system.</li>
-</ol>
-
-<h2 id="deploy-dev">Prepare your development system</h2>
-<p>Your <em>development system</em> is a dedicated developer or build system where you periodically:</p>
-
-<ol>
-  <li>Deploy Magento 2 code (including custom code).</li>
-  <li>
-    <p>Clean static files.</p>
-
-    <pre><code>rm -rf &lt;your Magento install dir&gt;/pub/static/*
-</code></pre>
-  </li>
-  <li>
-    <p>Remove the Magento database and reinstall it with database schema and data from your implementation.</p>
-
-    <p>One way to do this is to run the <a href="/guides/v2.1/install-gde/install/cli/install-cli-install.html">command-line installer</a> with the optional <code>--cleanup-database</code> command.</p>
-  </li>
-  <li>Use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html"><code>magento setup:static-content:deploy</code></a> command to deploy static view files.</li>
-  <li>
-    <p><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html">Compile code</a>.</p>
-  </li>
-  <li>
-    <p>Clean temporary files that shouldn’t be in production.</p>
-
-    <pre><code>cd &lt;your Magento install dir&gt;/var
-rm -rf cache/* composer_home/* log/* page_cache/* session/*
-</code></pre>
-  </li>
-  <li>Archive the file system to a suitable format (<code>.tar</code>, <code>.tar.gz</code>, <code>.zip</code>, and so on).</li>
-  <li>Export the database using a tool like <a href="https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html" target="_blank"><code>mysqldump</code></a></li>
-</ol>
-
-<p>Best practices in development:</p>
-
-<ul>
-  <li>Use the Magento file system owner to run <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron</a></li>
-  <li>Log in, or switch to, the <a href="/guides/v2.1/install-gde/prereq/apache-user.html">Magento file system owner</a> to run commands, install or uninstall Magento, and so on</li>
-  <li>Use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set</code></a> command to enable developer mode</li>
-  <li>Periodically <a href="/guides/v2.1/howdoi/php/php_clear-dirs.html">clean the cache and compiled code directories</a></li>
-  <li>Set up your <code>robots.txt</code> to <em>prevent</em> search engines from indexing your development site. (You don’t want search results to point to this site because it won’t be available to customers.)</li>
-</ul>
-
-<h2 id="checklist-prod">Production server checklist</h2>
-<p>Make sure you do as many as possible of the following before continuing:</p>
-
-<ul>
-  <li>Set up <a href="/guides/v2.1/config-guide/redis/config-redis.html">Redis caching</a></li>
-  <li>
-    <p>Set up <a href="/guides/v2.1/config-guide/varnish/config-varnish.html">Varnish web acceleration</a></p>
-
-    <p>We <em>strongly recommend</em> Varnish for HTTP acceleration, including page caching.</p>
-  </li>
-  <li>Set up a Content Delivery Network (CDN)</li>
-  <li>Set up multiple webnodes with load balancing</li>
-  <li>Configure Magento payment and shipping methods</li>
-  <li>Set your web server virtual host to point to the Magento <code>pub</code> directory because doing so prevents running the Setup Wizard, Component Manager, or System Upgrade in production</li>
-</ul>
-
-<h2 id="deploy-prod">Guidelines for deployment to production</h2>
-<p>This section provides guidelines for deploying a Magento installation to production. Depending on your requirements, additional tasks might be required. Consult a system administrator for advice.</p>
-
-<ol>
-  <li>Copy your development file system and database archives to the production system.</li>
-  <li>Extract the Magento 2 file system archive to an empty directory.</li>
-  <li>Set up persistent storage (for example, media, logs, cache, session, and so on).</li>
-  <li>Take your existing system offline by enabling maintenance mode using <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-maint.html#instgde-cli-maint">magento maintenance:enable</a>. <em>(DOWNTIME STARTS)</em></li>
-  <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-install.html">Install the Magento software</a> in a clean database (optionally using the <code>--cleanup-database</code> option).</li>
-  <li>Import database data from your development system.</li>
-  <li>Move your existing file system to an archive location.</li>
-  <li>Move the file system you copied from your production system to the Magento docroot.</li>
-  <li>Change to <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html#config-mode">production mode</a> and set file system permissions and ownership for <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html#config-mode-over-dirs-perm">production</a>.</li>
-  <li>Test everything thoroughly and carefully.</li>
-  <li>Switch DNS to the new server. <em>(DOWNTIME ENDS)</em></li>
-</ol>
-
-<p>Best practices in production:</p>
-
-<ul>
-  <li>Use <a href="/guides/v2.1/config-guide/varnish/config-varnish.html">Varnish</a> to accelerate HTTP traffic, including providing page caching</li>
-  <li>Use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set</code></a> command to enable production mode</li>
-  <li>Use the <code>pub</code> directory as the Magento docroot to prevent running the Setup Wizard, Component Manager, or System Upgrade in production. (Set up virtual hosts to point to <code>&lt;your Magento install dir&gt;/pub</code>.)</li>
-  <li>Set up your <code>robots.txt</code> to <em>allow</em> search engines to index your production site.</li>
+  <li><a href="/guides/v2.1/config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a></li>
+  <li><a href="/guides/v2.1/config-guide/mq/config-mq.html">Configure message queues</a></li>
 </ul>
 
 
