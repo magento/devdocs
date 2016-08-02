@@ -7,7 +7,7 @@ menu_title: Component dependency readiness issues
 menu_node: 
 menu_order: 3
 version: 2.0
-github_link: comp-mgr/trouble/cman/depend.md
+github_link: install-gde/trouble/readiness/depend.md
 ---
 
 {% include comp-man/dependency.md %}
