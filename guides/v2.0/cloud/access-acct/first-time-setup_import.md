@@ -16,9 +16,13 @@ This section discusses how to can start your Magento Enterprise Cloud Edition pr
 *	If you already have your Magento project in a Git repository, you'll add the Magento Enterprise Cloud Edition repository as a remote and continue working using your existing workflow.
 *	If your Magento project is *not* in a Git repository, you can create one and add Magento to it later.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Before you continue, make sure you completed the tasks discussed in <a href="{{page.baseurl}}cloud/before/before-workspace.html">Set up a Magento workspace</a>.</p>
+</div>
+
 To access your project for the first time:
 
-1.  Log in to [your Magento Enterprise Cloud Edition account](https://accounts.magento.cloud){:target="_blank"} Magento Enterprise Cloud Edition project first.
+1.  Log in to [your Magento Enterprise Cloud Edition account](https://accounts.magento.cloud){:target="_blank"}.
 2.  Click the **Projects** tab as the following figure shows.
 
   ![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}

@@ -128,7 +128,7 @@ To add an SSH key using the CLI:
 		magento-cloud login
 3.	Add the key:
 
-		magento-cloud ssh-key:add <key value>
+		magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
 
 #### Add a key using the Web Interface {#add-key-web}
 To add an SSH key using the Web Interface:
@@ -139,7 +139,7 @@ To add an SSH key using the Web Interface:
 	2.	Using the link in your welcome e-mail, access your Magento Enterprise Cloud Edition account.
 2.	Log in to your project using Bitbucket, GitHub, Google, or a user name and password.
 
-	![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="500px"}
+	![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="450px"}
 3.	In the upper right corner of the page, click the **Account Settings** tab as the following figure shows.
 
 	![Account settings]({{ site.baseurl }}common/images/cloud_acct-settings.png){:width="650px"}
