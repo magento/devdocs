@@ -302,6 +302,8 @@ class Consumer
     }
 }
 
+{% endhighlight %}
+
 #### Handling Recoverable Exceptions
 
 Magento provides new database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is `Magneto\Framework\DB\Adapter\<class_name>`. These exceptions extend generic `\Zend_Db_Adapter_Exception`.
@@ -314,6 +316,7 @@ LockWaitException | SQLSTATE[HY000]: General error: 1205 Lock wait timeout excee
 DeadlockException	SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock
 
 The following pseudocode illustrates how
+
 {% highlight php startinline=true %}
 <?php
 namespace example;
