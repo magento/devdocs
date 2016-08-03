@@ -2,8 +2,8 @@
 layout: default
 group: jsdg
 subgroup: 1_Javascript
-title: JavaScript initialization
-menu_title: JavaScript initialization
+title: Calling and initializing JavaScript
+menu_title: Calling and initializing JavaScript
 menu_order: 2
 version: 2.0
 github_link: javascript-dev-guide/javascript/js_init.md
@@ -14,9 +14,9 @@ redirect_from:
 
 <h2 id="js_init_overview">Overview</h2>
 
-This topic talks about how to insert a [JavaScript component]({{site.gdeurl}}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in the `.phtml` page templates and `.js` in Magento 2. 
+This topic talks about how to insert a [JavaScript component]({{site.gdeurl}}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates and `.js` files in Magento 2. 
 
-It covers declarative notation, used when initialization is requied, and imperative notation, used in other cases. 
+It covers declarative notation, used when initialization is required, and imperative notation, used in other cases. 
 
 We strongly recommend that you use the described approaches and do not add inline JavaScript. 
 
@@ -32,9 +32,9 @@ Depending on your task, you might want to use declarative or imperative notation
 
 ### Declarative notation
 
-Using the declarative notation to insert a JS component allows preparing all the configuration on the backend side and outputting it to the page source using standard tools. You should use declarative notation if your JavaScript component requries initialization.
+Using the declarative notation to insert a JS component allows preparing all the configuration on the backend side and outputting it to the page source using standard tools. You should use declarative notation if your JavaScript component requires initialization.
 
-In Magneto 2 there are two ways of declarative notation:
+In Magento 2 there are two ways of declarative notation:
 
  - using the `data-mage-init` attribute
  - using the `<scrtipt type="text/x-magento-init" />` tag
@@ -89,9 +89,7 @@ Such a component does not require either <code>config</code> or <code>element</c
 
 #### Declarative notation using the `<script type="text/x-magento-init" />` tag {decl_tag}
 
-To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the `<script>` tag. 
-
-Use the following syntax:
+To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the `<script type="text/x-magento-init">` tag and attribute. The syntax is following:
 
 {%highlight html%}
 <script type="text/x-magento-init">
@@ -111,12 +109,12 @@ Use the following syntax:
 
 Where:
 <ul>
-<li><code>&lt;element_selector&gt;</code> is a <a href="https://api.jquery.com/category/selectors/">selector</a> (in terms of querySelectorAll) for the element on which the following JS components are called.</li>
+<li><code>&lt;element_selector&gt;</code> is a <a https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">selector</a> (in terms of querySelectorAll) for the element on which the following JS components are called.</li>
 <li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
 <li><code>&lt;js_component3&gt;</code> is the JS component called with no binding to an element.</li> 
 </ul>
 
-The following is a working code sample of widget call using `<script>`. Here the accordion and navigation widgets are added to the element with the `#main-container` selector, and the `pageCache` script is inserted with no binding to any element.
+The following is a working code sample of a widget call using `<script>`. Here the `accordion` and `navigation` widgets are added to the element with the `#main-container` selector, and the `pageCache` script is inserted with no binding to any element.
 
 {%highlight html%}
 <script type="text/x-magento-init">
@@ -134,16 +132,16 @@ The following is a working code sample of widget call using `<script>`. Here the
 
 ### Imperative notation {#init_script}
 
-Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the `<script>` tag is the imperative notation. The syntax is following:
+Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the `<script>` tag, without the `type="text/x-magento-init` attribute, is the imperative notation. The syntax is following:
 
 {%highlight html%}
 <script>
 require([
     'jquery',
-    'accordion'  // an alias for "mage/accordion"
+    'accordion'  // the alias for "mage/accordion"
 ], function ($) {
     $(function () { // to ensure that code evaluates on page load
-        $('[data-role=example]')  // we expect that page contains markup <tag data-role="example">..</tag>
+        $('[data-role=example]')  // we expect that page contains the <tag data-role="example">..</tag> markup
             .accordion({ // now we can use "accordion" as jQuery plugin
                 header:  '[data-role=header]',
                 content: '[data-role=content]',
