@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>JavaScript initialization</title>
+	<title>Calling and initializing JavaScript</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -167,7 +167,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">JavaScript initialization</h1>
+		<h1 class="page-heading">Calling and initializing JavaScript</h1>
 		
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/javascript/js_init.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -332,7 +332,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/javascript-dev-guide/javascript/js_init.html">JavaScript initialization</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/javascript-dev-guide/javascript/js_init.html">Calling and initializing JavaScript</a></li>
 
 									
 
@@ -617,56 +617,59 @@
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<h2 id="js_init_overview">Overview</h2>
 
-<p>This topic talks about how to initialize a <a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html#js_terms">JavaScript component</a> in the Magento 2 application. 
-It covers initializing JavaScript components (including jQuery widgets) in <code>.phtml</code> templates and JS scripts. We strongly recommend that you use the described approaches and do not add inline JavaScript.</p>
+<p>This topic talks about how to insert a <a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html#js_terms">JavaScript component</a> in <code>.phtml</code> page templates and <code>.js</code> files in Magento 2.</p>
+
+<p>It covers declarative notation, used when initialization is required, and imperative notation, used in other cases.</p>
+
+<p>We strongly recommend that you use the described approaches and do not add inline JavaScript.</p>
 
 <p><strong>Contents</strong></p>
 
 <ul id="markdown-toc">
-  <li><a href="#init_phtml" id="markdown-toc-init_phtml">Initialize a JS component in a PHTML template</a>    <ul>
-      <li><a href="#declarative-initialization" id="markdown-toc-declarative-initialization">Declarative initialization</a>        <ul>
-          <li><a href="#data_mage_init" id="markdown-toc-data_mage_init">Declarative initialization using the <code>data-mage-init</code> attribute</a>            <ul>
-              <li><a href="#init_process" id="markdown-toc-init_process">How the JS initialization using <code>data-mage-init</code> is processed</a></li>
+  <li><a href="#init_phtml" id="markdown-toc-init_phtml">Insert a JS component in a PHTML template</a>    <ul>
+      <li><a href="#declarative-notation" id="markdown-toc-declarative-notation">Declarative notation</a>        <ul>
+          <li><a href="#data_mage_init" id="markdown-toc-data_mage_init">Declarative notation using the <code>data-mage-init</code> attribute</a>            <ul>
+              <li><a href="#init_process" id="markdown-toc-init_process">How <code>data-mage-init</code> is processed</a></li>
             </ul>
           </li>
-          <li><a href="#declarative-initialization-using-the-script-typetextx-magento-init--tag-decltag" id="markdown-toc-declarative-initialization-using-the-script-typetextx-magento-init--tag-decltag">Declarative initialization using the <code>&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</a></li>
+          <li><a href="#declarative-notation-using-the-script-typetextx-magento-init--tag-decltag" id="markdown-toc-declarative-notation-using-the-script-typetextx-magento-init--tag-decltag">Declarative notation using the <code>&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</a></li>
         </ul>
       </li>
-      <li><a href="#init_script" id="markdown-toc-init_script">Imperative initialization</a></li>
+      <li><a href="#init_script" id="markdown-toc-init_script">Imperative notation</a></li>
     </ul>
   </li>
-  <li><a href="#js_widget_init" id="markdown-toc-js_widget_init">JS components initialization in JS</a></li>
+  <li><a href="#js_widget_init" id="markdown-toc-js_widget_init">Calling JS components requiring initialization in JS files</a></li>
 </ul>
 
-<h2 id="init_phtml">Initialize a JS component in a PHTML template</h2>
-<p>Depending on your task, you might want to use declarative or imperative initialization. Both ways are described in the following sections.</p>
+<h2 id="init_phtml">Insert a JS component in a PHTML template</h2>
+<p>Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.</p>
 
-<h3 id="declarative-initialization">Declarative initialization</h3>
+<h3 id="declarative-notation">Declarative notation</h3>
 
-<p>Declarative JS component initialization allows preparing all the configuration on the backend side and outputting it to the page source using standard tools.</p>
+<p>Using the declarative notation to insert a JS component allows preparing all the configuration on the backend side and outputting it to the page source using standard tools. You should use declarative notation if your JavaScript component requires initialization.</p>
 
-<p>In Magneto 2 there are two ways of declarative initialization:</p>
+<p>In Magento 2 there are two ways of declarative notation:</p>
 
 <ul>
   <li>using the <code>data-mage-init</code> attribute</li>
   <li>using the <code>&lt;scrtipt type="text/x-magento-init" /&gt;</code> tag</li>
 </ul>
 
-<p>Both ways are described further</p>
+<p>Both ways are described further.</p>
 
-<h4 id="data_mage_init">Declarative initialization using the <code>data-mage-init</code> attribute</h4>
+<h4 id="data_mage_init">Declarative notation using the <code>data-mage-init</code> attribute</h4>
 
-<p>Use the <code>data-mage-init</code> attribute to initialize a JS component on a certain HTML element. The following code sample is an illustration. Here a JS component is initialized on the <code>&lt;nav/&gt;</code> element:</p>
+<p>Use the <code>data-mage-init</code> attribute to insert a JS component in a certain HTML element. The following code sample is an illustration. Here a JS component is inserted in the <code>&lt;nav/&gt;</code> element:</p>
 <pre>
 &lt;nav data-mage-init='{ &quot;&lt;component_name&gt;&quot;: {...} }'&gt;&lt;/nav&gt;
 </pre>
 
-<p>When initialized on a certain element, the script is called only for this particular element. It is not automatically initialized for other elements of this type on the page.</p>
+<p>When inserted in a certain element, the script is called only for this particular element. It is not automatically called for other elements of this type on the page.</p>
 
-<h5 id="init_process">How the JS initialization using <code>data-mage-init</code> is processed</h5>
+<h5 id="init_process">How <code>data-mage-init</code> is processed</h5>
 
 <p>On DOM ready, the <code>data-mage-init</code> attribute is parsed to extract components’ names and configuration to be applied to the element. 
-Depending on the type of the JS component initialized, processing is performed as follows:</p>
+Depending on the type of the inserted JS component, processing is performed as follows:</p>
 <ul>
 
 <li>If an object is returned, the initializer tries to find the <code>&lt;component_name&gt;</code> key. If the corresponding value is a function, the initializer passes the <code>config</code> and <code>element</code> values to this function.
@@ -700,11 +703,9 @@ return;
 Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
-<h4 id="declarative-initialization-using-the-script-typetextx-magento-init--tag-decltag">Declarative initialization using the <code>&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</h4>
+<h4 id="declarative-notation-using-the-script-typetextx-magento-init--tag-decltag">Declarative notation using the <code>&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</h4>
 
-<p>To initialize a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the <code>&lt;script&gt;</code> tag.</p>
-
-<p>Use the following syntax:</p>
+<p>To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the <code>&lt;script type="text/x-magento-init"&gt;</code> tag and attribute. The syntax is following:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-magento-init&quot;</span><span class="nt">&gt;</span>
 <span class="p">{</span>
@@ -722,12 +723,12 @@ Such a component does not require either <code>config</code> or <code>element</c
 
 <p>Where:</p>
 <ul>
-<li><code>&lt;element_selector&gt;</code> is a <a href="https://api.jquery.com/category/selectors/">selector</a> (in terms of querySelectorAll) for the element on which the following JS components are initialized.</li>
+<li><code>&lt;element_selector&gt;</code> is a &lt;a https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"&gt;selector&lt;/a&gt; (in terms of querySelectorAll) for the element on which the following JS components are called.</li>
 <li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
-<li><code>&lt;js_component3&gt;</code> is the JS component initialized with no binding to an element.</li> 
+<li><code>&lt;js_component3&gt;</code> is the JS component called with no binding to an element.</li> 
 </ul>
 
-<p>The following is a working code sample of widget initialization using <code>&lt;script&gt;</code>. Here the accordion and navigation widgets are initialized on the element with the <code>#main-container</code> selector, and the <code>pageCache</code> script is initialized with no binding to any element.</p>
+<p>The following is a working code sample of a widget call using <code>&lt;script&gt;</code>. Here the <code>accordion</code> and <code>navigation</code> widgets are added to the element with the <code>#main-container</code> selector, and the <code>pageCache</code> script is inserted with no binding to any element.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-magento-init&quot;</span><span class="nt">&gt;</span>
 <span class="p">{</span>
@@ -741,17 +742,17 @@ Such a component does not require either <code>config</code> or <code>element</c
 <span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
-<h3 id="init_script">Imperative initialization</h3>
+<h3 id="init_script">Imperative notation</h3>
 
-<p>Imperative initialization allows using raw JavaScript code on the pages and executing particular business logic. Imperative initialization is performed using the <code>&lt;script&gt;</code> tag with the following syntax:</p>
+<p>Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the <code>&lt;script&gt;</code> tag, without the <code>type="text/x-magento-init</code> attribute, is the imperative notation. The syntax is following:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
 <span class="nx">require</span><span class="p">([</span>
     <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;accordion&#39;</span>  <span class="c1">// an alias for &quot;mage/accordion&quot;</span>
+    <span class="s1">&#39;accordion&#39;</span>  <span class="c1">// the alias for &quot;mage/accordion&quot;</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">)</span>  <span class="c1">// we expect that page contains markup &lt;tag data-role=&quot;example&quot;&gt;..&lt;/tag&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">)</span>  <span class="c1">// we expect that page contains the &lt;tag data-role=&quot;example&quot;&gt;..&lt;/tag&gt; markup</span>
             <span class="p">.</span><span class="nx">accordion</span><span class="p">({</span> <span class="c1">// now we can use &quot;accordion&quot; as jQuery plugin</span>
                 <span class="nx">header</span><span class="o">:</span>  <span class="s1">&#39;[data-role=header]&#39;</span><span class="p">,</span>
                 <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;[data-role=content]&#39;</span><span class="p">,</span>
@@ -762,9 +763,9 @@ Such a component does not require either <code>config</code> or <code>element</c
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
-<h2 id="js_widget_init">JS components initialization in JS</h2>
+<h2 id="js_widget_init">Calling JS components requiring initialization in JS files</h2>
 
-<p>To initialize a widget in JS code, use a notation similar to the following <a href="/guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html">accordion</a> widget is initialized on the <code>[data-role=example]</code> element as illustration):</p>
+<p>To call a widget in JS code, use a notation similar to the following (<a href="/guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html">accordion</a> widget is intiialized on the <code>[data-role=example]</code> element as illustration):</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span></code></pre></figure>
 
@@ -780,7 +781,7 @@ Such a component does not require either <code>config</code> or <code>element</c
         <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>In a similar way, you can initialize any  JS component that a returns callback function accepting a <code>config</code> object and <code>element</code> (a DOM node).</p>
+<p>In a similar way, you can initialize any JS component that a returns callback function accepting a <code>config</code> object and <code>element</code> (a DOM node).</p>
 
 <p>For example:</p>
 
