@@ -9,7 +9,6 @@ version: 2.2
 github_link: extension-dev-guide/bulk-operations.md
 
 ---
-1
 
 ## {{page.title}}
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
@@ -35,12 +34,12 @@ Client which get status of the Bulk operation and show the list of failed operat
 <ul><li><p>topic_name - Must be defined in the `queue.xml` and `communication.xml` files.</p></li>
 <li><p>bulk_uuid -  A bulk identifier </p></li>
 <li><p>status -  The default operation status <code>OperationInterface::STATUS_TYPE_OPEN</code>
-<li><p>serialized_data - An array of serialized data with the following required keys:</p></li>
+<li><p>serialized_data - An array of serialized data with the following required keys:</p>
   <ul><li><p>entity_id - Your entity ID</p></li>
   <li><p>entity_link - Link to your entity</p></li>
   <li><p>meta_info - String that describes your entity. For example, "SKU: Simple_Product"</p></li></ul>
 <p>This data is required to display the results of operations couldn't be executed for any non-recoverable reason. These results are displayed in the failed operation grid.</p>
-<p>You also can add any data needed to execute operations. For example, if you are conducting a mass price update, you can add price data.</p>
+<p>You also can add any data needed to execute operations. For example, if you are conducting a mass price update, you can add price data.</p></li>
 </ul>
 </td></tr>
 <tr><td>$bulkDescription</td>
