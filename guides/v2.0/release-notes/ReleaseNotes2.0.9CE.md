@@ -53,18 +53,15 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ### Known issue
 
-<!--- 52805 -->The Sales API does not currently support all the update operations on objects that you can execute from the Admin panel. (<i>Objects</i>i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.) 
+<!--- 52805 -->The Sales API does not currently support all the update operations on objects that you can execute from the Admin panel. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.) 
 
- 
+
 The Sales API
 
- 
 * supports create, read, delete, and search operations on objects
- 
-* does not support updates to order status or payment status. (<i>Order</i> status includes change to processing, shipped, processed, hold, and <i>payment status</i> includes authorized, charged, reject, refund.)
- 
 
- 
+* does not support updates to order status or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, hold, and <i>payment status</i> includes authorized, charged, reject, refund.)
+
 You can run these operations from the Admin panel.
 
 
