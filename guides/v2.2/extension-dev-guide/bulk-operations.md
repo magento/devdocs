@@ -50,8 +50,7 @@ Client which get status of the Bulk operation and show the list of failed operat
 <td>The Admin user ID that executes this bulk operation.</td></tr>
 </table>
 
-#### Sample code
-
+{% collapsible Code sample: %}
 {% highlight php startinline=true %}
 
 <?php
@@ -179,6 +178,8 @@ class ScheduleBulk
     }
 }
 {% endhighlight %}
+{% endcollapsible %}
+
 
 ### Handle each operation
 
