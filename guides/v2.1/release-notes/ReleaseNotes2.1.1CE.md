@@ -61,7 +61,7 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 #### Known issue
 
 
-The Sales API does not currently support all the update operations on objects that you can execute from the Admin panel. (<i>Objects</i>i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
+The Sales API does not currently support all the update operations on objects that you can execute from the Admin panel. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
  
 The Sales API
 
