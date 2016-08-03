@@ -31,30 +31,38 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 #### Miscellaneous
 
-<!--- 55362/45339 -->* Cart price rules are now applied as expected to Payment method conditions. Previously, discounts set in Cart Price rules were not applied during checkout. 
+<!--- 55362/45339 -->* Cart Price Rules are now applied as expected to Payment method conditions. Previously, discounts set in Cart Price Rules were not applied during checkout. 
 
-
-
-
-<!--- 55526/53986 -->* You can now select Gift Wrapping when purchasing a Grouped product. Previously, Magento did not permit you to select Gift Wrapping for a Grouped product. <a href="https://github.com/magento/magento2/issues/4853" target="_blank">(GITHUB-4853)</a> 
 
 
 <!--- 55513/51015 -->* You can now save a product for which you've entered no Swatch attribute value when this attribute is not required.  Previously, during product creation, Magento would not save the product unless you added a value to the swatch attribute even with a Values Required' set to No. 
  
 
-<!--- 55465/50026 -->* Attributes of the SalesInvoiceRepository methods are now correctly type cast. (The datatype is now a float -- not nullable float.)  Previously, due to the use of an incorrect data type cast, Magento would produce an error when calling the salesInvoiceRepositoryV1GetList methods. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a> 
+<!--- 55465/50026 -->* Attributes of the `salesInvoiceRepository` methods are now correctly type cast. (The datatype is now a float -- not nullable float.)  Previously, due to the use of an incorrect data type cast, Magento would produce an error when calling the `salesInvoiceRepositoryV1GetList` methods. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a> 
 
 
-<!--- 55461/54224 -->* We've renamed the Tier Price option on the Advanced pricing tab to Customer Group Price option. 
+<!--- 55461/54224 -->* We've renamed the Tier Price option on the Advanced Pricing tab to Customer Group Price option. 
 
 
-<!--- 55441/55055 -->* Tier pricing now works correctly with Full Page Cache (FPC). <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a>
+<!--- 55441/55055 -->* Tier pricing now works correctly with full page cache. <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a>
 
 
  
 
 <!--- Omitted (can't be reproduced or won't fix) 48425, 53777, 54721, 54804, 54718, 54647-->
 
+### Known issue
+<!--- 52805 -->The Sales API does not currently support all the update operations on objects that you can execute from the Admin panel. (Objects in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
+ 
+The Sales API
+ 
+* supports create, read, delete, and search operations on objects
+ 
+* does not support updates to order status or payment status. (Order status includes change to processing, shipped, processed, hold, and payment status includes authorized, charged, reject, refund.)
+ 
+ 
+You can run these operations from the Admin panel.
+52805
 
 
 
