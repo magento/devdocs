@@ -34,7 +34,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 55362/45339 -->* Cart Price Rules are now applied as expected to Payment method conditions. Previously, discounts set in Cart Price Rules were not applied during checkout. 
 
 
-<!--- 55513/51015 -->* You can now save a product for which you've entered no Swatch attribute value when this attribute is not required.  Previously, during product creation, Magento would not save the product unless you added a value to the swatch attribute even with a Values Required' set to No. 
+<!--- 55513/51015 -->* You can now save a product for which you've entered no Swatch attribute value when this attribute is not required.  Previously, during product creation, Magento would not save the product unless you added a value to the swatch attribute even with "Values Required" set to No. 
  
 
 <!--- 55465/50026 -->* Attributes of the `salesInvoiceRepository` methods are now correctly type cast. (The datatype is now a float -- not nullable float.)  Previously, due to the use of an incorrect data type cast, Magento would produce an error when calling the `salesInvoiceRepositoryV1GetList` methods. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a> 
