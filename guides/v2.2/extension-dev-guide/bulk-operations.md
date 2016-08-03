@@ -52,8 +52,6 @@ Client which get status of the Bulk operation and show the list of failed operat
 
 #### Sample code
 
-{% collapsible Sample code: %}
-
 {% highlight php startinline=true %}
 
 \<?php
@@ -181,7 +179,6 @@ class ScheduleBulk
     }
 }
 {% endhighlight %}
-{% endcollapsible %}
 
 ### Handle each operation
 
@@ -304,9 +301,6 @@ class Consumer
         );
     }
 }
-
-{% endcollapsible %}
-
 
 #### Handling Recoverable Exceptions
 
