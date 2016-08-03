@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
-title: Bulk Operations
-menu_title: Bulk Operations (Enterprise Edition Only)
+title: Configure bulk operations
+menu_title: Confgire bulk operations (Enterprise Edition Only)
 menu_order: 21
 version: 2.2
 github_link: extension-dev-guide/config-bulk-operations.md
