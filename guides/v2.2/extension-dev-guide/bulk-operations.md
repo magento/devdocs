@@ -311,10 +311,9 @@ Magento provides new database exception classes to simplify the process of ident
 
 Exception class | Description of database error(s)
 --- | ---
-ConnectionException	|
-SQLSTATE[HY000]: General error: 2006 MySQL server has gone away SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
+ConnectionException	| SQLSTATE[HY000]: General error: 2006 MySQL server has gone away SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
 LockWaitException | SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded
-DeadlockException	SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock
+DeadlockException	| SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock
 
 The following pseudocode illustrates how
 
