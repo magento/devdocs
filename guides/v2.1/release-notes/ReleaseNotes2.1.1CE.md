@@ -24,11 +24,9 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 #### Installation and upgrade
 
-<!--- 55458/54647-->* You can now successfully update simple products after upgrading from CE 2.0.2 to EE 2.1.0-rc3. 
 
 <!--- 55357/53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode.  <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
 
-<!--- 55199/54089-->* You can now upgrade your Magento installation after changing the name of the default attribute set.
 
 
 
@@ -36,30 +34,20 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 <!--- 55463/53793 -->* The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
 
-<!--- 55361/45339-->* Cart price rules are now applied as expected to payment method conditions. Previously, discounts set in Cart Price rules were not applied during checkout.
 
 
 
 #### Miscellaneous
 
 
-<!--- 55604/55055-->* Tier pricing now works correctly with Full Page Cache. <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a> 
-
 <!--- 55598/54787 -->* You can now successfully place orders when the Enable and Configure Website Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not complete the purchase.  <a href="https://github.com/magento/magento2/issues/4785" target="_blank">(GITHUB-4785)</a> 
 
-<!--- 55517/53159-->* Magento now uses site configuration settings to determine which countries are displayed in a product profile's Country of Manufacture drop-down menu. <a href="https://github.com/magento/magento2/issues/4579" target="_blank">(GITHUB-4579)</a> 
-
-<!--- 55515/54320-->*  The Magento category page now retrieves current prices from the price index. 
 
 
-<!--- 55466/50026 -->* Attributes of the `SalesInvoiceRepository` methods are now more appropriately type cast. (The datatype is now a nullable float.)  Previously, due to the use of an incorrect datatype, Magento would produce an error when calling the `salesInvoiceRepositoryV1GetList` method. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a> 
+<!--- 55466/50026 -->* Attributes of the `salesInvoiceRepository` methods are now more appropriately type cast. (The datatype is now a nullable float.)  Previously, due to the use of an incorrect datatype, Magento would produce an error when calling the `salesInvoiceRepositoryV1GetList` method. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a> 
 
 
 <!--- 55462/52448-->* Magento now correctly displays the customer address. Previously, when you selected a default billing address during creation of a new customer account, Magento would not display the address. 
-
-
-
-<!--- 55360/48425-->* Magento now uses the configuration settings for the default storeview when displaying the list of all allowed countries for an associated customer address. <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
 
 
 
@@ -70,11 +58,24 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 <!--- DELETED: 54804 (won't fix) -->
 
 
+#### Known issue
 
+
+The Sales API does not currently support all the update operations on objects that you can execute from the Admin panel. (<i>Objects</i>i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
+ 
+The Sales API
+
+* supports create, read, delete, and search operations on objects
+
+* does not support updates to order status or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and 
+hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)
+
+
+You can run these operations from the Admin panel.
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see
+Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.6, 7.0.2, and MySQL 5.6. For more information, see
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
