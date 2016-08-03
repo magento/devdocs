@@ -55,6 +55,9 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 
 <!--- DELETED: 54804 (won't fix) -->
+
+
+
 #### Known issue
 
 
@@ -68,6 +71,7 @@ The Sales API
 
 
 You can run these operations from the Admin panel.
+
 
 
 ### System requirements
