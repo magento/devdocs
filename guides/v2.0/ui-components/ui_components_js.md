@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  UI Library
-subgroup: H_Using_UI
+subgroup: AM_Using_UI
 title: Using UI components' client-side
 menu_title: Using UI components' client-side
 menu_node: parent
