@@ -11,7 +11,7 @@ github_link: extension-dev-guide/implement-bulk.md
 ---
 
 ## {{page.title}}
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
+<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This article applies to Enterprise Edition only">
 
 This document describes how bulk operations can be implemented. There are three primary tasks to accomplish this:
 

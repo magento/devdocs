@@ -11,9 +11,20 @@ github_link: extension-dev-guide/bulk-operations.md
 ---
 
 ## {{page.title}}
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
+<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This article applies to Enterprise Edition only">
 
-A bulk operation The BulkOperations module sends
+Bulk operations are actions that performed on a large scale. Examples of bulk operations include tasks such as importing or exporting items, changing prices on a mass scale, and assigning products to a warehouse.
+
+For each indvidual task of a bulk operation, the system creates a message that is published in a [message queue]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html). A handler runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the Admin panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.
+
+The primary Bulk Operation interface is `OperationInterface`. It defines the getter and setter methods the bulk operation to create and process messages. The following interfaces are also used:
+
+Interface | Description
+--- | ---
+BulkManagementInterface | Schedules and deletes bulk operation requests.
+BulkStatusInferface | Returns the status of bulk operations.
+BulkSummaryInterface | Provides details about a bulk operation
+OperationManagementInterface | Changes the status of an operation.
 
 We have three possible clients for Bulk API:
 Business logic which publish Bulk operation
@@ -21,6 +32,8 @@ Handler/Consumer which handles each specific operation
 Client which get status of the Bulk operation and show the list of failed operations
 
 ### Publish bulk operations
+
+The `BulkManagementInterface::scheduleBulk` is responsible for publishing bulk operations. The following table describes its arguments.
 
 <table>
 <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
@@ -52,6 +65,7 @@ Client which get status of the Bulk operation and show the list of failed operat
 
 
 ### Define a consumer class
+
 
 
 #### Handling Recoverable Exceptions
