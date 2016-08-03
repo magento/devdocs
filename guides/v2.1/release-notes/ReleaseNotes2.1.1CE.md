@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_ReleaseNotes
 title: Magento CE 2.1.1 Release Notes
 menu_title: Magento CE 2.1.1 Release Notes
-menu_order: 
+menu_order: 4
 version: 2.1
 github_link: release-notes/ReleaseNotes2.1.1CE.md
 ---
@@ -67,8 +67,7 @@ The Sales API
 
 * supports create, read, delete, and search operations on objects
 
-* does not support updates to order status or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and 
-hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)
+* does not support updates to order status or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)
 
 
 You can run these operations from the Admin panel.
