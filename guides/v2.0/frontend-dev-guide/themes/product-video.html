@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add a custom breakpoint</title>
+	<title>Configure product video</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">
+	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/themes/product-video.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -165,9 +165,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Add a custom breakpoint</h1>
+		<h1 class="page-heading">Configure product video</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd-breakpoints.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/themes/product-video.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -338,7 +338,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/product-video.html">Configure product video</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/themes/product-video.html">Configure product video</a></li>
 
 									
 
@@ -689,7 +689,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Add a custom breakpoint</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Add a custom breakpoint</a></li>
 
 									
 
@@ -887,93 +887,85 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 1 July 2016 (PDT)</i></p>
-		<h2>What's in this topic</h2>
+			<p align="right"><i>Updated: 8 July 2016 (PDT)</i></p>
+		<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of <a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break">default breakpoints</a>. This topic describes how to add a custom breakpoint in your theme.</p>
+<p>In Magento 2 on product pages you can add video from external resources (currently, from <a href="youtube.com">YouTube</a> and <a href="https://vimeo.com/">Vimeo</a>). Video is <a href="http://docs.magento.com/m2/2.0/ee/user_guide/catalog/product-video.html?Highlight=product%20video">added in Admin</a> when creating or editing a product. 
+Certain product video options can be set in the <code>config.xml</code> configuration file. These settings are not theme-specific.</p>
 
-<p><strong>Contents</strong></p>
+<h2 id="configure-product-video-options">Configure product video options</h2>
 
-<ul id="markdown-toc">
-  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-  <li><a href="#add-a-new-breakpoint-variable" id="markdown-toc-add-a-new-breakpoint-variable">Add a new breakpoint variable</a></li>
-  <li><a href="#override-responsiveless-from-the-library" id="markdown-toc-override-responsiveless-from-the-library">Override <code>_responsive.less</code> from the library</a></li>
-  <li><a href="#add-media-width-calls-for-the-new-breakpoint" id="markdown-toc-add-media-width-calls-for-the-new-breakpoint">Add <code>.media-width()</code> calls for the new breakpoint</a></li>
-  <li><a href="#related-reading" id="markdown-toc-related-reading">Related reading</a></li>
-</ul>
+<p>You can set the following product video options:</p>
 
-<h2 id="overview">Overview</h2>
-<p>To add a custom breakpoint in your theme, you need to do the following:</p>
+<table>
+  <tbody>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+      <th colspan="1">Type</th>
+      <th>Default</th>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>play_if_base</code>
+      </td>
+      <td colspan="1">Play automatically on page load.</td>
+      <td colspan="1">
+        Boolean
+      </td>
+      <td colspan="1">
+        0 <br />
+(video is not played on page load)
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>show_related</code>
+      </td>
+      <td colspan="1">Display related videos.</td>
+      <td colspan="1">
+Boolean
+           
+      </td>
+<td>
+0 <br />
+(related videos are not displayed)
+</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>video_auto_restart</code>
+      </td>
+      <td colspan="1">Auto re-play video.</td>
+      <td colspan="1">
+Boolean
+           
+      </td>
+<td>
+0 <br />
+(video is not automatically replayed)
+</td>
+    </tr>
+  </tbody>
+</table>
 
-<ol>
-  <li>Define a variable for the new breakpoint.</li>
-  <li>Override the library <code>_responsive.less</code> file, and add the new rule for the new breakpoint.</li>
-  <li>Implement the screen changes for the new breakpoint.</li>
-</ol>
-
-<h2 id="add-a-new-breakpoint-variable">Add a new breakpoint variable</h2>
-
-<p>In your custom theme directory, add a <code>/web/css/source/variables.less</code> in one of the following ways:</p>
-
-<ul>
-  <li>if your theme <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from the other, then copy the parent’s <code>variables.less</code>.</li>
-  <li>if your theme is a standalone one, add a new empty file.</li>
-</ul>
-
-<p>In <code>variable.less</code>, add the variable for your new breakpoint.</p>
-
-<p>For example:</p>
-
-<pre><code>@your__breakpoint: 1280px;
-</code></pre>
-
-<p>For variables’ naming rules see <a href="http://devdocs.magento.com/guides/v2.0/coding-standards/code-standard-less.html#variables">Less coding standards</a>.</p>
-
-<h2 id="override-responsiveless-from-the-library">Override <code>_responsive.less</code> from the library</h2>
-
-<p>According to the approach, implemented in the Magento UI library, the <code>.media-width()</code> mixin calls are defined in many places, but invoked in one place, in <code>lib/web/css/source/lib/_responsive.less</code>.</p>
-
-<p>To implement a new breakpoint, you need to edit the <code>.media-width()</code> mixin by adding the appropriate rule there. So you need to override the library <code>_responsive.less</code> in your theme, and add the customizations there.</p>
-
-<p>To do this, take the following steps:</p>
-
-<ol>
-  <li>Copy the <code>_responsive.less</code> file to your <code>&lt;your_theme_dir&gt;/web/css/source/lib/</code> directory from one of the following locations:
-    <ul>
-      <li><code>&lt;your_parent_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: overriding <code>_responsive.less</code> in the parent theme. If there’s no such file or no parent theme, use the other option.</li>
-      <li><code>&lt;your_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: the library file.</li>
-    </ul>
-  </li>
-  <li>In your <code>_responsive.less</code>, add the <code>.media-width</code> mixin rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).</li>
-</ol>
-
-<p>Example:</p>
-
-<pre><code>&amp; when (@media-target = 'desktop'), (@media-target = 'all') {
-…
-    @media all and (min-width: @your__breakpoint) {
-        .media-width('min', @your__breakpoint);
-    }
-}
-</code></pre>
-
-<h2 id="add-media-width-calls-for-the-new-breakpoint">Add <code>.media-width()</code> calls for the new breakpoint</h2>
-
-<p>Now you can add a new <code>.media-width()</code> mixin call where necessary in your theme <code>.less </code> files.</p>
+<p>The options are set in the <code>config.xml</code> of you custom module.</p>
 
 <p>Example:</p>
 
-<pre><code>.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @your__breakpoint) {
-    //  Customization for @your__breakpoint breakpoint
-}
-</code></pre>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Store:etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;default&gt;</span>
+        <span class="nt">&lt;catalog&gt;</span>
+            <span class="nt">&lt;product_video&gt;</span>
+                <span class="nt">&lt;play_if_base&gt;</span>1<span class="nt">&lt;/play_if_base&gt;</span>
+                <span class="nt">&lt;show_related&gt;</span>1<span class="nt">&lt;/show_related&gt;</span>
+                <span class="nt">&lt;video_auto_restart&gt;</span>1<span class="nt">&lt;/video_auto_restart&gt;</span>
+            <span class="nt">&lt;/product_video&gt;</span>
+        <span class="nt">&lt;/catalog&gt;</span>
+    <span class="nt">&lt;/default&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<h2 id="related-reading">Related reading</h2>
-
-<ul>
-  <li>You can find information about the <code>_responsive.less</code> library file in the generated Magento UI library documentation. It is available in the following location in your Magento installation: <code>&lt;your_Magento_installation&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code>.</li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to make your theme responsive and mobile</a>.</li>
-</ul>
+<p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module.</p>
 
 
 		</div>
