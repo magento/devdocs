@@ -28,7 +28,7 @@ To enable ExportButton Component add exportButton element with specified selectP
 </exportButton>
 {% endhighlight %}
 
-Example: `Magento/Sales/view/adminhtml/ui_component/sales_order_grid.xml`
+Example: `<Magento_Sales_module_dir>/view/adminhtml/ui_component/sales_order_grid.xml`
 
 {% highlight XML %}
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

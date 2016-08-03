@@ -17,7 +17,7 @@ redirect_from: /guides/v2.0/ui-library/ui-form.html
 ## Overview
 Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. 
 
-The following are the components element, the constructor: `app\code\Magento\Ui\view\base\web\js\form\form.js`
+The following are the components element, the constructor: `<Magento_Ui_module_dir>/view/base/web/js/form/form.js`
 
 <h4>Related UI components</h4>
 
@@ -63,10 +63,10 @@ Example:
 
 Component could be configured in two ways:
 
-* globally: using any module's `view//ui_component/etc/definition.xml` file. All settings declared in     this file will be applied to all component's instances
-* locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form`
+* globally: using any module's `view/ui_component/etc/definition.xml` file. All settings declared in this file will be applied to all component's instances
+* locally: using concrete component instance configuration, such as `<Magento_Customer_module_dir>/view/base/ui_component/customer_form`
 
-Create configuration file: `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form.xml`
+Create configuration file: `<Magento_Customer_module_dir>/view/base/ui_component/customer_form.xml`
 
 {% highlight xml%}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">

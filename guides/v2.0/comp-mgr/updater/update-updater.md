@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: 20_update-updater
+subgroup: 40_update-updater
 title: Update the updater application
 menu_title: Update the updater application
 menu_node: parent

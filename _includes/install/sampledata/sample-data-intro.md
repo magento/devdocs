@@ -8,9 +8,6 @@ You can install sample data either before or after installing the Magento softwa
 You can install optional sample data in any of the following ways:
 
 <table>
-	<!-- <col width="25%">
-	<col width="65%">
-	<col width="10%"> -->
 	<tbody>
 		<tr>
 			<th>Installation method</th>
@@ -22,19 +19,15 @@ You can install optional sample data in any of the following ways:
 		<td><p>Using Composer</p></td>
 		<td><p>Modify Magento's root <code>composer.json</code> to enable sample data modules.</p></td>
 		<td><p>Requires Composer knowledge and access to the Magento file system.</p></td>
-	</td>
-
 	</tr>
 	<tr>
 		<td><p>Cloning repositories</p></td>
-		<td><p>Clone the Magento 2 repository and the sample data repository, create symbolic links.</p></td>
+		<td><p>Clone the Magento 2 repository and the sample data repository, then link them together.</p></td>
 		<td><p>For contributing developers only. Everyone else should use one of the preceding methods.</p></td>
-	</td>
 	</tr>
-	
-	
 	</tbody>
 </table>
+
 
 <!-- ABBREVIATIONS -->
 

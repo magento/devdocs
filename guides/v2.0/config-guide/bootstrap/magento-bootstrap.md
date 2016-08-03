@@ -49,8 +49,7 @@ To run the Magento application, the following actions are implemented in <a href
 
 Sample entry point script that modifies the bootstrap object:
 
-{% highlight php %}
-<? php
+{% highlight php startinline=true %}
 use Magento\Framework\App\Bootstrap;
 require __DIR__ . '/app/bootstrap.php';
 $params = $_SERVER;
@@ -60,7 +59,6 @@ $bootstrap = Bootstrap::create(BP, $params);
 /** @var \Magento\Framework\App\Http $app */
 $app = $bootstrap->createApplication('Magento\Framework\App\Http');
 $bootstrap->run($app);
-?>
 {% endhighlight %}
 
 <h2 id="config-boot-exception">Default exception handling</h2>
