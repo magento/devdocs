@@ -15,7 +15,7 @@ github_link: extension-dev-guide/config-bulk-operations.md
 
 ### Configure message queues
 
-The message queue topology must be configured to implement bulk operations. Edit the following files files, which are located in the `app/code/Magento/BulkOperations/etc` directory.
+The message queue topology must be configured to implement bulk operations. Create or edit the following files in the `app/code/Magento/BulkOperations/etc` directory.
 
 *_NOTE TO REVIEWER: I deleted references to queue.xml because it is deprecated for 2.2_*
 
@@ -27,7 +27,9 @@ The message queue topology must be configured to implement bulk operations. Edit
 
 For more information about the `di.xml` file, see [Dependency Injection]({{page.baseurl}}extension-dev-guide/depend-inj.html). For information the other files, see []({{page.baseurl}}/config-guide/mq/config-mq.html).
 
-#### Edit `communication.xml`
+#### Create `communication.xml`
+
+The `communication.xml` file defines aspects of the message queue system that apply to all topics for the module. Create this file with the following contents:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
@@ -39,6 +41,8 @@ For more information about the `di.xml` file, see [Dependency Injection]({{page.
 
 #### Edit `di.xml`
 
+Add the following type to the BulkOperations module's `di.xml` file.
+
 {% highlight xml %}
 <type name="Magento\Framework\MessageQueue\MergerFactory">
     <arguments>
@@ -49,7 +53,9 @@ For more information about the `di.xml` file, see [Dependency Injection]({{page.
 </type>
 {% endhighlight %}
 
-#### Edit `queue_consumer.xml`
+#### Create `queue_consumer.xml`
+
+The `queue_consumer.xml` file defines the relationship between a queue and its consumer. Create this file with the following contents:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
@@ -57,8 +63,9 @@ For more information about the `di.xml` file, see [Dependency Injection]({{page.
 </config>
 {% endhighlight %}
 
+#### Create `queue_publisher.xml`
 
-#### Edit `queue_publisher.xml`
+The `queue_publisher.xml` file defines the exchange where a topic is published. Create this file with the following contents:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
@@ -66,7 +73,8 @@ For more information about the `di.xml` file, see [Dependency Injection]({{page.
 </config>
 {% endhighlight %}
 
-#### Edit `queue_topology.xml`
+#### Create `queue_topology.xml`
+The `queuetopology.xml` file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
@@ -79,3 +87,4 @@ For more information about the `di.xml` file, see [Dependency Injection]({{page.
 #### Related Topics
 
 * [RabbitMQ Overview]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
+* [Bulk Operations]({{page.baseurl}}extension-dev-guide/bulk-operations.html)
