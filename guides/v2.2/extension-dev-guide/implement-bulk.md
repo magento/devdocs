@@ -15,11 +15,11 @@ github_link: extension-dev-guide/implement-bulk.md
 
 This document describes how bulk operations can be implemented. There are three primary tasks to accomplish this:
 
-* Create a publisher that sends messages to the message queue.
-* Create a consumer that receives and processes messages.
+* Create a publisher that sends messages to the message queue
+* Create a consumer that receives and processes messages
 * Configure the message queues
 
-### Create a publisher
+### Create a publisher {#createpublisher}
 
 A publisher's duties include scheduling a bulk operation. It must generate a `bulkUuid` for each operation, send each operation to the message queue, and report on the status of each operations.
 
@@ -155,7 +155,7 @@ class ScheduleBulk
 {% endhighlight %}
 {% endcollapsible %}
 
-### Create a consumer
+### Create a consumer {#createconsumer}
 
 A consumer class receives messages from the message queue and changes the status after it is processed. The following example defines a consumer that handles price update bulk operations.
 
@@ -280,7 +280,7 @@ class Consumer
 {% endhighlight %}
 {% endcollapsible %}
 
-### Configure message queues
+### Configure message queues {#configmq}
 
 The message queue topology must be configured to implement bulk operations. Create or edit the following files in the module's `app/code/<vendor>/<module_name>/etc` directory.
 

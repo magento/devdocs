@@ -63,10 +63,12 @@ The `BulkManagementInterface::scheduleBulk` is responsible for publishing bulk o
 <td>The Admin user ID that executes this bulk operation.</td></tr>
 </table>
 
+See [Create a publisher](( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createpublisher)) for a detailed example of a publisher.
 
 ### Define a consumer class
 
 
+See [Create a publisher](( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createconsumer)) for a detailed example of a consumer.
 
 #### Handling Recoverable Exceptions
 
