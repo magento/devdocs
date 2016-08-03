@@ -13,7 +13,7 @@ github_link: extension-dev-guide/bulk-operations.md
 ## {{page.title}}
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
 
-The BulkOperations module
+A bulk operation The BulkOperations module sends
 
 We have three possible clients for Bulk API:
 Business logic which publish Bulk operation
@@ -186,6 +186,127 @@ class ScheduleBulk
 ### Handle each operation
 
 The `OperationInterface`
+
+#### Sample Code
+{% highlight php startinline=true %}
+
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Magento\SharedCatalog\Model\ResourceModel\ProductItem\Price;
+
+use Magento\Framework\Bulk\BulkManagementInterface;
+use Magento\BulkOperations\Api\Data\OperationInterface;
+use Magento\BulkOperations\Api\Data\OperationInterfaceFactory;
+use Magento\Framework\DB\Adapter\ConnectionException;
+use Magento\Framework\DB\Adapter\DeadlockException;
+use Magento\Framework\DB\Adapter\LockWaitException;
+
+/**
+ * Class Consumer
+ */
+class Consumer
+{
+    /**
+     * @var \Psr\Log\LoggerInterface
+     */
+    private $logger;
+
+    /**
+     * @var \Magento\Framework\Json\Helper\Data
+     */
+    private $jsonHelper;
+
+    /**
+     * @var \Magento\BulkOperations\Model\OperationManagement
+     */
+    private $operationManagement;
+
+    /**
+     * Consumer constructor.
+     *
+     * @param \Psr\Log\LoggerInterface $logger
+     * @param \Magento\Framework\Json\Helper\Data $jsonHelper
+     */
+    public function __construct(
+        \Psr\Log\LoggerInterface $logger,
+        \Magento\Framework\Json\Helper\Data $jsonHelper,
+        \Magento\Framework\Bulk\OperationManagementInterface $operationManagement
+    ) {
+        $this->logger = $logger;
+        $this->jsonHelper = $jsonHelper;
+        $this->operationManagement = $operationManagement;
+    }
+
+    /**
+     * Processing operation for update price
+     *
+     * @param \Magento\BulkOperations\Api\Data\OperationInterface $operation
+     * @return void
+     */
+    public function processOperation(\Magento\BulkOperations\Api\Data\OperationInterface $operation)
+    {
+        $status = OperationInterface::STATUS_TYPE_COMPLETE;
+        $errorCode = null;
+        $message = null;
+        $serializedData = $operation->getSerializedData();
+        $unserializedData = $this->jsonHelper->jsonDecode($serializedData);
+        try {
+            //add here your own logic for async opertions
+        } catch (\Zend_Db_Adapter_Exception  $e) {
+            //here sample how to process exceptions if they occured
+            $this->logger->critical($e->getMessage());
+            //you can add here your own type of exception when operation can be retried
+            if (
+                $e instanceof LockWaitException
+                || $e instanceof DeadlockException
+                || $e instanceof ConnectionException
+            ) {
+                $status = OperationInterface::STATUS_TYPE_RETRIABLY_FAILED;
+                $errorCode = $e->getCode();
+                $message = __($e->getMessage());
+            } else {
+                $status = OperationInterface::STATUS_TYPE_NOT_RETRIABLY_FAILED;
+                $errorCode = $e->getCode();
+                $message = __('Sorry, something went wrong during product prices update. Please see log for details.');
+            }
+
+        } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
+            $this->logger->critical($e->getMessage());
+            $status = OperationInterface::STATUS_TYPE_NOT_RETRIABLY_FAILED;
+            $errorCode = $e->getCode();
+
+            $message = $e->getMessage();
+            unset($unserializedData['entity_link']);
+            $serializedData = $this->jsonHelper->jsonEncode($unserializedData);
+        } catch (\Magento\Framework\Exception\LocalizedException $e) {
+            $this->logger->critical($e->getMessage());
+            $status = OperationInterface::STATUS_TYPE_NOT_RETRIABLY_FAILED;
+            $errorCode = $e->getCode();
+            $message = $e->getMessage();
+        } catch (\Exception $e) {
+            $this->logger->critical($e->getMessage());
+            $status = OperationInterface::STATUS_TYPE_NOT_RETRIABLY_FAILED;
+            $errorCode = $e->getCode();
+            $message = __('Sorry, something went wrong during product prices update. Please see log for details.');
+        }
+
+        //update operation status based on result performing operation(it was successfully executed or exception occurs
+        $this->operationManagement->changeOperationStatus(
+            $operation->getId(),
+            $status,
+            $errorCode,
+            $message,
+            $serializedData
+        );
+    }
+}
+
+{% endcollapsible %}
+
 
 #### Handling Recoverable Exceptions
 
