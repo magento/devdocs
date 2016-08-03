@@ -186,6 +186,7 @@ The `OperationInterface`
 
 #### Example
 
+{% collapsible Code sample: %}
 {% highlight php startinline=true %}
 
 <?php
@@ -304,6 +305,7 @@ class Consumer
 }
 
 {% endhighlight %}
+{% endcollapsible %}
 
 #### Handling Recoverable Exceptions
 
