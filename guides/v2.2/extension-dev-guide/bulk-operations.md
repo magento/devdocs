@@ -65,22 +65,23 @@ The `BulkManagementInterface::scheduleBulk` is responsible for publishing bulk o
 
 See [Create a publisher](( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createpublisher)) for a detailed example of a publisher.
 
-### Define a consumer class
+### Consume messages
 
+When a consumer processes a message, it must notify the system of its status. The status can be OPEN, COMPLETE, RETRIABLY_FAILED, and NOT_RETRIABLY_FAILED.  
 
-See [Create a publisher](( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createconsumer)) for a detailed example of a consumer.
+To send this notification, use `OperationManagementInterface::changeOperationStatus($operationId, $status, $message = null, $data = null)`
 
 #### Handling Recoverable Exceptions
 
-Magento provides new database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is `Magneto\Framework\DB\Adapter\<class_name>`. These exceptions extend generic `\Zend_Db_Adapter_Exception`.
+Magento provides  database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is `Magneto\Framework\DB\Adapter\<class_name>`. These exceptions extend generic `\Zend_Db_Adapter_Exception`.
 
 Exception class | Description of database error(s)
 --- | ---
-ConnectionException	| SQLSTATE[HY000]: General error: 2006 MySQL server has gone away SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
+ConnectionException	| SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <BR>SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
 LockWaitException | SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded
 DeadlockException	| SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock
 
-The following pseudocode illustrates how
+The following pseudocode illustrates how to recover from database-related errors.
 
 {% highlight php startinline=true %}
 <?php
@@ -94,6 +95,9 @@ try {
     // try to recover from exception
 }
 {% endhighlight %}
+
+
+See [Create a publisher](( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createconsumer)) for a detailed example of a consumer.
 
 
 ### Get the status of operations
