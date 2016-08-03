@@ -187,7 +187,6 @@ The `OperationInterface`
 #### Example
 
 {% collapsible Sample code %}
-
 {% highlight php startinline=true %}
 
 <?php
@@ -306,13 +305,11 @@ class Consumer
 }
 
 {% endhighlight %}
-
 {% endcollapsible %}
 
 #### Handling Recoverable Exceptions
 
 Magento provides new database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is `Magneto\Framework\DB\Adapter\<class_name>`. These exceptions extend generic `\Zend_Db_Adapter_Exception`.
-
 
 Exception class | Description of database error(s)
 --- | ---
