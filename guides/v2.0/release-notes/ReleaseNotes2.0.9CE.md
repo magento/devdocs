@@ -60,7 +60,7 @@ The Sales API
 
 * supports create, read, delete, and search operations on objects
 
-* does not support updates to order status or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, hold, and <i>payment status</i> includes authorized, charged, reject, and refund.)
+* does not support updates to order status or payment status. (<i>Order status</i> includes change to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)
 
 You can run these operations from the Admin panel.
 

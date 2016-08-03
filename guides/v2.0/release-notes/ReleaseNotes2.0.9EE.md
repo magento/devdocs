@@ -34,11 +34,6 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 55362/45339 -->* Cart Price Rules are now applied as expected to Payment method conditions. Previously, discounts set in Cart Price Rules were not applied during checkout. 
 
 
-
-
-<!--- 55526/53986 -->* You can now select Gift Wrapping when purchasing a Grouped product. Previously, Magento did not permit you to select Gift Wrapping for a Grouped product. <a href="https://github.com/magento/magento2/issues/4853" target="_blank">(GITHUB-4853)</a> 
-
-
 <!--- 55513/51015 -->* You can now save a product for which you've entered no Swatch attribute value when this attribute is not required.  Previously, during product creation, Magento would not save the product unless you added a value to the swatch attribute even with a Values Required' set to No. 
  
 
@@ -64,7 +59,7 @@ The Sales API
 
 * supports create, read, delete, and search operations on objects
 
-* does not support updates to order status or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, hold, and <i>payment status</i> includes authorized, charged, reject, and refund.)
+* does not support updates to order status or payment status. (<i>Order status</i> includes change to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)
 
 You can run these operations from the Admin panel.
 
