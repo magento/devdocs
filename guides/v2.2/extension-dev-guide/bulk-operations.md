@@ -34,7 +34,7 @@ Client which get status of the Bulk operation and show the list of failed operat
 <ul><li><p>topic_name - Must be defined in the `queue.xml` and `communication.xml` files.</p></li>
 <li><p>bulk_uuid -  A bulk identifier </p></li>
 <li><p>status -  The default operation status <code>OperationInterface::STATUS_TYPE_OPEN</code>
-<li><p>serialized_data - An array of serialized data with the following required keys:</p>
+<li><p>serialized_data - An array of serialized data with the following required keys:</p></li>
   <ul><li><p>entity_id - Your entity ID</p></li>
 - <li><p>entity_link - Link to your entity</p></li>
 - <li><p>meta_info - String that describes your entity. For example, "SKU: Simple_Product"</p></li></ul>
