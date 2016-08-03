@@ -58,7 +58,7 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 <!--- DELETED: 54804 (won't fix) -->
 
 
-#### Known issue
+### Known issue
 
 
 The Sales API does not currently support all the update operations on objects that you can execute from the Admin panel. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
@@ -82,7 +82,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 
 
 
-## Migration toolkits
+### Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
