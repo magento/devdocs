@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 04_setup
-title: Set up Fasly
-menu_title: Set up Fasly
+title: Set up Fastly
+menu_title: Set up Fastly
 menu_order: 12
 menu_node: 
 version: 2.0
@@ -60,7 +60,7 @@ To enable Fastly:
 1.	Log in to the Magento Admin as an administrator. 
 2.	Click **Stores** > **Configuration** > **Advanced** > **System** as the following figure shows:
 
-	![Choose Fastly]({{ site.baseurl }}common/images/cloud_fastly_menu.png)
+	![Choose Fastly]({{ site.baseurl }}common/images/cloud_fastly_menu.png){:width="650px"}
 3.	In the right pane, expand **Full Page Cache**. 
 4.	From the **Caching Application** list, click **Fastly CDN** as the following figure shows.
 
@@ -73,7 +73,9 @@ To enable Fastly:
 For details about Fastly configuration, see the [Fastly documentation](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options){:target="_blank"}.
 
 ### Merge your Fastly branch {#cloud-fastly-merge}
-When you're done with development, [merge your environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html) with the `master` environment so it can be pushed to production.
+When you're done with development, [merge your environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html) with its parent environment.
+
+For Fastly to be used in production, you must merge with the `master` environment.
 
 #### Next steps
 *   [Manage your environments]({{ page.baseurl }}cloud/env/environments.html)
