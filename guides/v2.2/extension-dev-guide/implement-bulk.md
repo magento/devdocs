@@ -130,7 +130,7 @@ class ScheduleBulk
                 $data = [
                     'data' => [
                         'bulk_uuid' => $bulkUuid,
-                        //topic name must be equal to data specified in the queue.xml
+                        //topic name must be equal to data specified in the queue configuration files
                         'topic_name' => '%your_topic name%',
                         'serialized_data' => $this->jsonHelper->jsonEncode($serializedData),
                         'status' => OperationInterface::STATUS_TYPE_OPEN,
@@ -283,8 +283,6 @@ class Consumer
 ### Configure message queues {#configmq}
 
 The message queue topology must be configured to implement bulk operations. Create or edit the following files in the module's `app/code/<vendor>/<module_name>/etc` directory.
-
-*_NOTE TO REVIEWER: I deleted references to queue.xml because it is deprecated for 2.2_*
 
 * `communication.xml`
 * `di.xml`

@@ -45,7 +45,7 @@ The `BulkManagementInterface::scheduleBulk` is responsible for publishing bulk o
 <tr><td>$operations</td>
 <td>array</td>
 <td>
-<ul><li><p>topic_name - Must be defined in the <code>queue.xml</code> and <code>communication.xml</code> files.</p></li>
+<ul><li><p>topic_name - Must be defined in the <code>communication.xml</code> and queue configuration files.</p></li>
 <li><p>bulk_uuid -  A bulk identifier </p></li>
 <li><p>status -  The default operation status <code>OperationInterface::STATUS_TYPE_OPEN</code></p></li>
 <li><p>serialized_data - An array of serialized data with the following required keys:</p></li>
