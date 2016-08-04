@@ -1,6 +1,6 @@
 <div markdown="1">
  
-## Installation and upgrade instructions
+## Install the Magento software
 You can get Magento Community Edition 2.1 (including a Release Candidate) from Github, Composer, or using a compressed archive. 
 
 A Release Candidate is for testing purposes only. Do not install it in a production environment.
@@ -11,8 +11,6 @@ See one of the following sections for more information:
 *	[Get the Magento CE software from GitHub](#install-rc-gh)
 *	[Get a compressed archive](#install-archive)
 *	[Complete the installation](#install-finish)
-*	[Upgrade an existing installation from the GitHub repository](#upgrade-github)
-*	[Other upgrades](#upgrade-other)
 
 ### Get the Magento CE software using Composer {#install-rc-composer}
 {:.no_toc}
@@ -58,7 +56,12 @@ After you get the CE software:
 	*	[Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
 	*	[Command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
 
+## Upgrade from an earlier version
+See the following sections for more information.
+
 ### Upgrade an existing installation from the GitHub repository {#upgrade-github}
+{:.no_toc}
+
 Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
 
 1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
@@ -66,4 +69,6 @@ Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-m
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
 ### Other upgrades {#upgrade-other}
+{:.no_toc}
+
 Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)]({{page.baseurl}}release-notes/tech_bull_21-upgrade.html).

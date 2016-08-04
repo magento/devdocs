@@ -106,6 +106,10 @@ Messages similar to the following display:
 	Failure to clear static view files might cause display issues in the Admin and storefront.
 	Disabling maintenance mode
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>To uninstall a Magento Admin theme, you must also remove it from your component's dependency injection configuration, <code>&lt;component root directory>/etc/di.xml</code>.</p>
+</div>
+
 #### Related topics
 
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>
