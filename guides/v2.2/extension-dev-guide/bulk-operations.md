@@ -26,10 +26,11 @@ BulkStatusInferface | Returns the status of bulk operations.
 BulkSummaryInterface | Provides details about a bulk operation
 OperationManagementInterface | Changes the status of an operation.
 
-We have three possible clients for Bulk API:
-Business logic which publish Bulk operation
-Handler/Consumer which handles each specific operation
-Client which get status of the Bulk operation and show the list of failed operations
+Three clients call bulk operation APIs:
+
+* A publisher, which pushes messages to the message queue.
+* A consumer, which handles each specific operation
+* A client that gets the status of the bulk operation and shows the list of failed operations
 
 ### Publish bulk operations
 
@@ -63,17 +64,17 @@ The `BulkManagementInterface::scheduleBulk` is responsible for publishing bulk o
 <td>The Admin user ID that executes this bulk operation.</td></tr>
 </table>
 
-See [Create a publisher](( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createpublisher)) for a detailed example of a publisher.
+See [Create a publisher]( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createpublisher) for a detailed example of a publisher.
 
 ### Consume messages
 
 When a consumer processes a message, it must notify the system of its status. The status can be OPEN, COMPLETE, RETRIABLY_FAILED, and NOT_RETRIABLY_FAILED.  
 
-To send this notification, use `OperationManagementInterface::changeOperationStatus($operationId, $status, $message = null, $data = null)`
+To send this notification, use `OperationManagementInterface::changeOperationStatus($operationId, $status, $message = null, $data = null)`.
 
 #### Handling Recoverable Exceptions
 
-Magento provides  database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is `Magneto\Framework\DB\Adapter\<class_name>`. These exceptions extend generic `\Zend_Db_Adapter_Exception`.
+Magento provides database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is `Magneto\Framework\DB\Adapter\<class_name>`. These exceptions extend generic `\Zend_Db_Adapter_Exception`.
 
 Exception class | Description of database error(s)
 --- | ---
@@ -97,12 +98,13 @@ try {
 {% endhighlight %}
 
 
-See [Create a publisher](( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createconsumer)) for a detailed example of a consumer.
-
+See [Create a publisher]( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createconsumer) for a detailed example of a consumer.
 
 ### Get the status of operations
-.
 
-#### Related Topics
+Use `getBulkStatus(UuidInterface $bulkId)` to get the status of the overall bulk operation.  Possible values are NOT_STARTED, IN_PROGRESS_SUCCESS, IN_PROGRESS_FAILED, FINISHED_SUCCESFULLY, and FINISHED_WITH_FAILURE.
 
+#### Related Topic
+s
 * [RabbitMQ Overview]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
+* [Example bulk operations implementation]({{page.baseurl}}extension-dev-guide/implement-bulk.html)
