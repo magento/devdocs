@@ -18,6 +18,14 @@ To check your work before submitting a pull request, you can build this site loc
 ## Build using Vagrant
 For more information, see the [Vagrant README](vagrant/README.md).
 
+## Requirements
+Currently, building this site requires:
+
+*	Ruby 2.2
+*	Jekyll 3.1.6
+
+Use the Ruby bundler to get compatible versions of other dependencies.
+
 ## Build locally in Mac or Linux
 To build this site locally:
 
