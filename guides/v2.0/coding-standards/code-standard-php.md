@@ -14,9 +14,9 @@ The Magento core development team uses the [Basic Coding Standard](http://www.ph
 
 Where possible, use [`PHP_CodeSniffer`](https://github.com/squizlabs/PHP_CodeSniffer){:target="_blank"} to automatically enforce these standards. Otherwise, you must apply these standards and requirements through rigorous code review.
 
-### Additional Standards
+### Class name resolution standard
 
-* Use PHP 5.5's `::class` keyword instead of a string literal for every class name reference outside of that class.
+Use PHP 5.5's `::class` keyword instead of a string literal for every class name reference outside of that class. This includes references to the fully qualified class name, imported/non-imported class name, and namespace or import relative class name.
 
 Examples:
 
