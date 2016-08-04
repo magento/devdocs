@@ -93,9 +93,14 @@ Here is an example of how File Uploader component integrates with <a href="{{pag
 {% highlight xml %}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     ...
-    <fieldset name="foo" xsi:type="array">
+    <fieldset name="foo">
         ...
-        <field name="bar" xsi:type="array">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string"/>
+            </item>
+        </argument>
+        <field name="bar">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string">Sound Check</item>
