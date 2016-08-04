@@ -107,7 +107,7 @@ Messages similar to the following display:
 	Disabling maintenance mode
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>To uninstall a Magento Admin theme, you must also remove it from your module's dependency injection configuration, <code>&lt;VendorName>_&lt;ModuleName>/etc/di.xml</code>.</p>
+  <p>To uninstall a Magento Admin theme, you must also remove it from your component's dependency injection configuration, <code>&lt;component root directory>/etc/di.xml</code>.</p>
 </div>
 
 #### Related topics
