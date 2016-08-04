@@ -50,7 +50,7 @@ where
 The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you're a contributing developer (that is, you cloned the Magento 2 GitHub repository), you don't have an <code>update</code> directory so you should not use the second line in the preceding command. See the examples that follow for details.</p>
+  <p>If you're a contributing developer (that is, you <a href="{{ page.baseurl }}install-gde/prereq/dev_install.html">cloned the Magento 2 GitHub repository</a>), you don't have an <code>update</code> directory so you should not use the second line in the preceding command. See the examples that follow for details.</p>
 </div>
 
 **Example 1:** Everyone except contributing developers
@@ -63,7 +63,7 @@ Example:
 	* * * * * /usr/bin/php /var/www/magento2/update/cron.php >> /var/www/magento2/var/log/update.cron.log
 	* * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run >> /var/www/magento2/var/log/setup.cron.log
 
-**Example 2:** Contributing developers (you cloned the Magento 2 GitHub repository):
+**Example 2:** Contributing developers only (that is, you cloned the Magento 2 GitHub repository):
 
 	* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /var/www/magento2/var/log/magento.cron.log
 	* * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run >> /var/www/magento2/var/log/setup.cron.log
