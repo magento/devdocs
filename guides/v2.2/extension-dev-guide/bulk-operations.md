@@ -13,22 +13,22 @@ github_link: extension-dev-guide/bulk-operations.md
 ## {{page.title}}
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This article applies to Enterprise Edition only">
 
-Bulk operations are actions that performed on a large scale. Examples of bulk operations include tasks such as importing or exporting items, changing prices on a mass scale, and assigning products to a warehouse.
+Bulk operations are actions that are performed on a large scale. Example bulk operations tasks include importing or exporting items, changing prices on a mass scale, and assigning products to a warehouse.
 
-For each indvidual task of a bulk operation, the system creates a message that is published in a [message queue]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html). A handler runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the Admin panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.
+For each indvidual task of a bulk operation, the system creates a message that is published in a [message queue]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html). A consumer runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the Admin panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.
 
-The primary Bulk Operation interface is `OperationInterface`. It defines the getter and setter methods the bulk operation to create and process messages. The following interfaces are also used:
+The primary Bulk Operation interface is `OperationInterface`. It defines the getter and setter methods the bulk operation uses to create and process messages. The following interfaces are also used:
 
 Interface | Description
 --- | ---
-BulkManagementInterface | Schedules and deletes bulk operation requests.
-BulkStatusInferface | Returns the status of bulk operations.
+BulkManagementInterface | Schedules and deletes bulk operation requests
+BulkStatusInferface | Returns the status of bulk operations
 BulkSummaryInterface | Provides details about a bulk operation
-OperationManagementInterface | Changes the status of an operation.
+OperationManagementInterface | Changes the status of an operation
 
 Three clients call bulk operation APIs:
 
-* A publisher, which pushes messages to the message queue.
+* A publisher, which pushes messages to the message queue
 * A consumer, which handles each specific operation
 * A client that gets the status of the bulk operation and shows the list of failed operations
 
@@ -105,6 +105,6 @@ See [Create a publisher]( {{page.baseurl}}extension-dev-guide/implement-bulk.htm
 Use `getBulkStatus(UuidInterface $bulkId)` to get the status of the overall bulk operation.  Possible values are NOT_STARTED, IN_PROGRESS_SUCCESS, IN_PROGRESS_FAILED, FINISHED_SUCCESFULLY, and FINISHED_WITH_FAILURE.
 
 #### Related Topic
-s
+
 * [RabbitMQ Overview]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
 * [Example bulk operations implementation]({{page.baseurl}}extension-dev-guide/implement-bulk.html)

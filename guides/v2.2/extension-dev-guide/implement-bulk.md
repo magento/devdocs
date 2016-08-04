@@ -355,4 +355,4 @@ The `queuetopology.xml` file defines the message routing rules and declares queu
 
 * [RabbitMQ Overview]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
 * [Bulk Operations]({{page.baseurl}}extension-dev-guide/bulk-operations.html)
-* Configure message queues]({{page.baseurl}}/config-guide/mq/config-mq.html)
+* [Configure message queues]({{page.baseurl}}/config-guide/mq/config-mq.html)
