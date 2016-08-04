@@ -1,11 +1,11 @@
 <div markdown="1">
  
-## Installation and upgrade instructions
+## Install the Magento software
 See one of the following sections:
 
 *	[Get Magento EE using Composer](#install-rc-composer)
 *	[Get Magento EE using a compressed archive](#get-zip)
-*	[Upgrade from an earlier version](#upgrade)
+*	[Complete the installation](#install-complete) 
 
 ### Get Magento EE using Composer {#install-rc-composer}
 {:.no_toc}
@@ -36,7 +36,7 @@ After you get the EE software:
 	*	[Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
 	*	[Command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
 
-### Upgrade from an earlier version {#upgrade}
+## Upgrade from an earlier version {#upgrade}
 To upgrade to version 2.0.x from an earlier version:
 
 *	[Web Setup Wizard (System Upgrade)]({{ page.baseurl }}comp-mgr/upgrader/upgrade-start.html)

@@ -1,12 +1,12 @@
 <div markdown="1">
  
-## Installation and upgrade instructions
+## Install the Magento software
 See one of the following sections:
 
 *	[Get Magento CE using Composer](#install-ce-composer)
-*	[Get the Magento CE software from GitHub](#install-rc-gh)
 *	[Get Magento CE using a compressed archive](#get-zip)
-*	[Upgrade from an earlier version](#upgrade)
+*	[Get the Magento CE software from GitHub](#install-rc-gh)
+*	[Complete the installation](#install-complete)
 
 ### Get the Magento CE software using Composer {#install-ce-composer}
 {:.no_toc}
@@ -41,7 +41,7 @@ where
 
 {% include install/releasenotes/get-ce-software_zip.md %}
 
-### Complete the installation
+### Complete the installation {#install-complete}
 {:.no_toc}
 
 After you get the CE software:
@@ -52,7 +52,7 @@ After you get the CE software:
 	*	[Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
 	*	[Command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
 
-### Upgrade from an earlier version {#upgrade}
+## Upgrade from an earlier version {#upgrade}
 To upgrade to version 2.0.x from an earlier version:
 
 *	[Web Setup Wizard (System Upgrade)]({{ page.baseurl }}comp-mgr/upgrader/upgrade-start.html)
