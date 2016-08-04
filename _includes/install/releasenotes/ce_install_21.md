@@ -56,7 +56,7 @@ After you get the CE software:
 	*	[Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
 	*	[Command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
 
-## Upgrade the Magento software
+## Upgrade from an earlier version
 See the following sections for more information.
 
 ### Upgrade an existing installation from the GitHub repository {#upgrade-github}

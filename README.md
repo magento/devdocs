@@ -22,7 +22,7 @@ For more information, see the [Vagrant README](vagrant/README.md).
 Currently, building this site requires:
 
 *	Ruby 2.2
-*	Jekyll 3.1.6
+*	Jekyll 3.1
 
 Use the Ruby bundler to get compatible versions of other dependencies.
 
