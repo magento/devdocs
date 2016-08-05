@@ -102,7 +102,14 @@ See [Create a publisher]( {{page.baseurl}}extension-dev-guide/implement-bulk.htm
 
 ### Get the status of operations
 
-Use `getBulkStatus(UuidInterface $bulkId)` to get the status of the overall bulk operation.  Possible values are NOT_STARTED, IN_PROGRESS_SUCCESS, IN_PROGRESS_FAILED, FINISHED_SUCCESFULLY, and FINISHED_WITH_FAILURE.
+Use `getBulkStatus(UuidInterface $bulkId)` to get the status of the overall bulk operation.  Possible values are
+
+Value | Constant
+--- | ---
+0 | NOT_STARTED
+1 | IN_PROGRESS
+2 | FINISHED_SUCCESFULLY
+3 | FINISHED_WITH_FAILURE.
 
 #### Related Topic
 
