@@ -884,7 +884,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 23 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 5 August 2016 (PDT)</i></p>
 		<h2 id="upgrade-finish">Step 4. Upgrade</h2>
 <p>The components you’re upgrading display. The following figure shows an example.</p>
 
@@ -899,7 +899,13 @@
 <div class="collapsible"><h4 class="collapsible-title">Click to view the Console Log </h4><div class="collapsible-content"><p><img src="/common/images/upgrade-success-consolelog.png" width="650px" /></p>
 </div></div>
 
-<p>After the upgrade finishes, access your storefront.</p>
+<h2 id="after-upgrading">After upgrading</h2>
+<p>After the upgrade completes, restart Varnish if you use it for page caching.</p>
+
+<pre><code>service varnish restrat
+</code></pre>
+
+<p>Then access your storefront and verify everything is working properly.</p>
 
 <h2 id="errors-after-upgrade">Errors after upgrade</h2>
 <p>After you finish your upgrade, errors might display.</p>

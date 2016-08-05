@@ -884,7 +884,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 23 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 5 August 2016 (PDT)</i></p>
 		<h2 id="command-line-upgrade">Command-line upgrade</h2>
 <p>You can upgrade Magento from the command line if you installed the software using any of the following:</p>
 
@@ -976,6 +976,12 @@ composer update
     <p>Update the database schema and data:</p>
 
     <pre><code> php bin/magento setup:upgrade
+</code></pre>
+  </li>
+  <li>
+    <p>Restart Varnish if you use it for page caching.</p>
+
+    <pre><code>service varnish restart
 </code></pre>
   </li>
   <li>

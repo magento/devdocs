@@ -884,7 +884,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 23 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 5 August 2016 (PDT)</i></p>
 		<h2 id="compman-overview">Overview of Magento Community Edition (CE) to Magento Enterprise Edition (EE) upgrade</h2>
 <p>This section discusses how to upgrade Magento CE to Magento EE.</p>
 
@@ -927,6 +927,11 @@ The following page displays.<br /><br />
     <p>From the list, click the version to which to upgrade. Typically, you’ll choose the most recent version (indicated by <strong>(latest)</strong>.)</p>
   </li>
 </ol>
+
+<p>After the upgrade completes, restart Varnish if you use it for page caching.</p>
+
+<pre><code>service varnish restart
+</code></pre>
 
 <h4 id="errors">Errors</h4>
 <ul>
