@@ -176,6 +176,7 @@ use Magento\BulkOperations\Api\Data\OperationInterfaceFactory;
 use Magento\Framework\DB\Adapter\ConnectionException;
 use Magento\Framework\DB\Adapter\DeadlockException;
 use Magento\Framework\DB\Adapter\LockWaitException;
+use Magento\Framework\Exception\TemporaryStateExceptionInterface;
 
 /**
  * Class Consumer
@@ -248,7 +249,7 @@ class Consumer
 
         } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
             $this->logger->critical($e->getMessage());
-            $status = OperationInterface::STATUS_TYPE_NOT_RETRIABLY_FAILED;
+            $status = ($e instanceof TemporaryStateExceptionInterface) ? OperationInterface::STATUS_TYPE_NOT_RETRIABLY_FAILED : OperationInterface::STATUS_TYPE_NOT_RETRIABLY_FAILED;
             $errorCode = $e->getCode();
 
             $message = $e->getMessage();
@@ -324,7 +325,7 @@ The `queue_consumer.xml` file defines the relationship between a queue and its c
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
-    <consumer name="<consumer_name>" queue="<queue_name>" connection="amqp" consumerInstance="Magento\Framework\MessageQueue\BatchConsumer" handler="<Consumer_Class>::<Consumer_method>"/>
+    <consumer name="<consumer_name>" queue="<queue_name>" connection="amqp" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="<Consumer_Class>::<Consumer_method>"/>
 </config>
 {% endhighlight %}
 
@@ -334,7 +335,7 @@ The `queue_publisher.xml` file defines the exchange where a topic is published. 
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
-    <consumer name="<consumer_name>" queue="<queue_name>" connection="amqp" consumerInstance="Magento\Framework\MessageQueue\BatchConsumer" handler="Consumer_Class::Consumer_method"/>
+    <consumer name="<consumer_name>" queue="<queue_name>" connection="amqp" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="Consumer_Class::Consumer_method"/>
 </config>
 {% endhighlight %}
 
