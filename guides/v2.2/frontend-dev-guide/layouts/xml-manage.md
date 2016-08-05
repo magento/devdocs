@@ -379,6 +379,3 @@ To replace an element, <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-i
 
 *	<a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
 *	<a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
-
-
-
