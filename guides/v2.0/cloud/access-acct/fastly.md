@@ -70,8 +70,15 @@ To enable Fastly:
 {% endcollapsible %}
 
 ### Configure Fastly {#cloud-fastly-config}
-For details about Fastly configuration, see the [Fastly documentation](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options){:target="_blank"}.
+To configure Fastly:
 
+1.	Customize the [configuration](https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl){:target="_blank"} to meet your needs.
+
+	For details about Fastly configuration, see the [Fastly documentation](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options){:target="_blank"}.
+	2.	Log in to your [Magento Enterprise Cloud edition account](https://accounts.magento.cloud){:target="_blank"}.
+3.	Click **Support Tickets**.
+4.	Open a support ticket to upload your configuraion to your project.
+	
 ### Merge your Fastly branch {#cloud-fastly-merge}
 When you're done with development, [merge your environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html) with its parent environment.
 
