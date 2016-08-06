@@ -94,8 +94,6 @@ The following table shows which actions are supported for each non-metapackage.
 		<tbody>
 		<tr>
 			<th>Type</th>
-			<th>Enable</th>
-			<th>Disable</th>
 			<th>Update</th>
 			<th>Uninstall</th>
 		</tr>
@@ -103,20 +101,14 @@ The following table shows which actions are supported for each non-metapackage.
 			<td>module</td>
 			<td>Yes</td>
 			<td>Yes</td>
-			<td>Yes</td>
-			<td>Yes</td>
 		</tr>
 		<tr>
 			<td>language and theme</td>
-			<td>No</td>
-			<td>No</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
 		<tr>
 			<td>library</td>
-			<td>No</td>
-			<td>No</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
@@ -142,39 +134,29 @@ The following table shows which actions are available for a metapackage.
   	<col width="15%">
   	<col width="15%">
   	<col width="15%"> -->
-		<tbody>
+	<tbody>
 		<tr>
 			<th>Type</th>
-			<th>Enable</th>
-			<th>Disable</th>
 			<th>Update</th>
 			<th>Uninstall</th>
 		</tr>
 		<tr>
 			<td>module</td>
-			<td>Yes</td>
-			<td>Yes</td>
 			<td>No</td>
 			<td>No</td>
 		</tr>
 		<tr>
 			<td>language and theme</td>
-			<td>No</td>
-			<td>No</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
 		<tr>
 			<td>library</td>
-			<td>No</td>
-			<td>No</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
 		<tr>
 			<td>component</td>
-			<td>No</td>
-			<td>No</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
@@ -196,7 +178,7 @@ Click the Review button corresponding to which action you'd like to take and con
 
 	To install more than one package, select the check box next to each package, or click **Select All** from the list as the following figure shows.
 
-	![Choose packages to install]({{ site.baseurl }}common/images/extman_choose-to-install.png){:width="500px"}
+	![Choose packages to install]({{ site.baseurl }}common/images/extensman_choose-to-install.png){:width="500px"}
 2.	After you select what to install, click **Install** at the top of the page as the following figure shows.
 
 	![Install your purchases]({{ site.baseurl }}common/images/extensman_ready-to-install.png)
