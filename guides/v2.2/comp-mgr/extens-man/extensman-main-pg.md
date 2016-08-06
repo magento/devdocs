@@ -174,10 +174,10 @@ The following table shows which actions are available for a metapackage.
 
 	To install more than one package, select the check box next to each package, or click **Select All** from the list as the following figure shows.
 
-	![Choose packages to install]({{ site.baseurl }}common/images/extensman_choose-to-install.png){:width="350px"}
+	![Choose packages to install]({{ site.baseurl }}common/images/extensman_choose-to-install.png){:width="550px"}
 2.	After you select what to install, click **Install** at the top of the page as the following figure shows.
 
-	![Install your purchases]({{ site.baseurl }}common/images/extensman_ready-to-install.png)
+	![Install your purchases]({{ site.baseurl }}common/images/extensman_ready-to-install.png){:width="350px"}
 3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
