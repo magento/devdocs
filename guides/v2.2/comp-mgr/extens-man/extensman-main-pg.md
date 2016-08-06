@@ -57,7 +57,7 @@ After you log in to the Extension Manager, a list displays as follows:
 
 ### Supported actions for each type {#extens-choose-pertype}
 
-{% collapsible Supported actions for each type}
+{% collapsible Supported actions for each type %}
 
 We support different actions for each *type* of component. (*Component* is a general term that includes any type of code you can install in the Magento application. *Package* refers to something you can install, uninstall, or update.)
 
