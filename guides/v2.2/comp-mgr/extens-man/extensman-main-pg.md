@@ -86,11 +86,11 @@ Most extensions you get from Magento Marketplace or another source have only one
 The following table shows which actions are supported for each non-metapackage.
 
 <table>
-	<col width="40%">
+	<!-- <col width="40%">
   	<col width="15%">
   	<col width="15%">
   	<col width="15%">
-  	<col width="15%">
+  	<col width="15%"> -->
 		<tbody>
 		<tr>
 			<th>Type</th>
@@ -137,11 +137,11 @@ A metapackage is an installable package that includes more than one type. For ex
 The following table shows which actions are available for a metapackage.
 
 <table>
-	<col width="40%">
+	<!-- <col width="40%">
   	<col width="15%">
   	<col width="15%">
   	<col width="15%">
-  	<col width="15%">
+  	<col width="15%"> -->
 		<tbody>
 		<tr>
 			<th>Type</th>
@@ -179,7 +179,7 @@ The following table shows which actions are available for a metapackage.
 			<td>Yes</td>
 		</tr>
 		</tbody>
-	</table>
+</table>
 
 {% endcollapsible %}
 
