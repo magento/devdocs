@@ -63,7 +63,7 @@ We support different actions for each *type* of component. (*Component* is a gen
 
 The following figure shows how types display in the Extension Manager.
 
-![]({{ site.baseurl }}common/images/extensman_columns-only.png)
+![Extension Manager columns]({{ site.baseurl }}common/images/extensman_columns-only.png)
 
 Following is a definition of types:
 
@@ -134,10 +134,6 @@ The following table shows which actions are supported for each non-metapackage.
 #### Actions available for metapackages {#extensman-access-types-meta}
 A metapackage is an installable package that includes more than one type. For example, we require a package that contains a module and a theme to be packaged as a metapackage.
 
-<div class="bs-callout bs-callout-info" id="info">
-      <p>We currently do not support uninstalling a metapackage.</p>
-</div>
-
 The following table shows which actions are available for a metapackage.
 
 <table>
@@ -184,10 +180,6 @@ The following table shows which actions are available for a metapackage.
 		</tr>
 		</tbody>
 	</table>
-
-<div class="bs-callout bs-callout-info" id="info">
-      <p><strong>Update</strong> displays as an action only if an update is available for that metapackage.</p>
-</div>
 
 {% endcollapsible %}
 
@@ -238,9 +230,3 @@ Click the Review button corresponding to which action you'd like to take and con
 3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
-
-
-
-
-
-
