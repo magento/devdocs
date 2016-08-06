@@ -17,7 +17,7 @@ To run the Module Manager:
 2.	Click **System** > **Web Setup Wizard**.
 3.	Click **Module Manager** and continue with <a href="{{page.baseurl}}comp-mgr/module-man/compman-main-pg.html">Manage your modules</a>.
 
-	![]({{ site.baseurl }}common/images/modman_select.png)
+	![]({{ site.baseurl }}common/images/modman_select.png){:width="550px"}
 
 To upgrade Magento system software instead, see <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.
 
