@@ -73,7 +73,7 @@ Following is a definition of types:
 *	`library` for a library&mdash;such as a shared third-party library
 *	`component` for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)
 
-Actions are further divided between those available for *metapackages* (that is, an installable package that contains a group of differnt types or *non-metapackages* (that is, a single type).
+Actions are further divided between those available for *metapackages* (that is, an installable package that contains a group of differnt types) or *non-metapackages* (that is, a single type).
 
 The following sections provide details:
 
@@ -81,7 +81,7 @@ The following sections provide details:
 *	[Actions available for metapackages](#extensman-access-types-meta)
 
 #### Actions available for non-metapackages {#extensman-access-types-non-meta}
-Most extensions you get from Magento Marketplace or another source have only one type; for example, a module.
+Most packages you get from Magento Marketplace or another source have only one type; for example, a module.
 
 The following table shows which actions are supported for each non-metapackage.
 
@@ -103,7 +103,7 @@ The following table shows which actions are supported for each non-metapackage.
 			<td>Yes</td>
 		</tr>
 		<tr>
-			<td>language and theme</td>
+			<td>language package and theme</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
@@ -114,8 +114,6 @@ The following table shows which actions are supported for each non-metapackage.
 		</tr>
 		<tr>
 			<td>component</td>
-			<td>No</td>
-			<td>No</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
@@ -146,7 +144,7 @@ The following table shows which actions are available for a metapackage.
 			<td>No</td>
 		</tr>
 		<tr>
-			<td>language and theme</td>
+			<td>language package and theme</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
@@ -165,8 +163,6 @@ The following table shows which actions are available for a metapackage.
 
 {% endcollapsible %}
 
-Click the Review button corresponding to which action you'd like to take and continue with one of the following sections.
-
 ## Install packages {#extensman-install}
 
 {% collapsible To install packages: %}
@@ -178,7 +174,7 @@ Click the Review button corresponding to which action you'd like to take and con
 
 	To install more than one package, select the check box next to each package, or click **Select All** from the list as the following figure shows.
 
-	![Choose packages to install]({{ site.baseurl }}common/images/extensman_choose-to-install.png){:width="500px"}
+	![Choose packages to install]({{ site.baseurl }}common/images/extensman_choose-to-install.png){:width="350px"}
 2.	After you select what to install, click **Install** at the top of the page as the following figure shows.
 
 	![Install your purchases]({{ site.baseurl }}common/images/extensman_ready-to-install.png)
