@@ -1,6 +1,6 @@
 ---
 layout: default 
-group: compman
+group: compman2.2
 subgroup: 06_UseExtMan
 title: Run the Extension Manager
 menu_title: Run the Extension Manager

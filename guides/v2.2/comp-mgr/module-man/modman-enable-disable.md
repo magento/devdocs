@@ -1,6 +1,6 @@
 ---
 layout: default 
-group: compman
+group: compman2.2
 subgroup: 05_UseCompMan
 title: Step 3. Enable/Disable
 menu_title: Enable/Disable

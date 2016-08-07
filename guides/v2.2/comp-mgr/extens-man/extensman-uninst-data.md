@@ -1,6 +1,6 @@
 ---
 layout: default 
-group: compman
+group: compman2.2
 subgroup: 06_UseExtMan
 title: Step 3. Remove or Keep Data
 menu_title: Remove or Keep Data

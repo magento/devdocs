@@ -1,6 +1,6 @@
 ---
 layout: default
-group: compman
+group: compman2.2
 subgroup: 06_UseExtMan
 title: Step 3
 menu_title: Step 3
