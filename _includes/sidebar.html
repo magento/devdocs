@@ -3,14 +3,15 @@
 	<a href="#" class="toc-toggler">Table of Contents</a>
 	<div class="sidebar-wrapper">
 
+{% if page.guide_version == "2.2" %}
+<h4>Extension Update and System Upgrade Guide</h4>
+{% endif %}
+
 {% if page.group == "ext-best-practices" %}
 <h4>Extension Best Practices</h4>
 
 {% elsif page.group == "compman" %}
 <h4>Component Manager and System Upgrade Guide</h4>
-
-{% elsif page.group == "compman2.2" %}
-<h4>Extension Update and System Upgrade Guide</h4>
 
 {% elsif page.group == "coding-standards" %}
 <h4>Coding Standards</h4>

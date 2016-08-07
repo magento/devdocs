@@ -1,6 +1,6 @@
 ---
 layout: default 
-group: compman2.2
+group: compman
 subgroup: 05_UseCompMan
 title: Start the Module Manager
 menu_title: Start the Module Manager

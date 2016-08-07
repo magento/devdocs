@@ -1,6 +1,6 @@
 ---
 layout: default 
-group: compman2.2
+group: compman
 subgroup: 05_UseCompMan
 title: Step 1. Readiness check
 menu_title: Step 1. Readiness check

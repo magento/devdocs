@@ -1,6 +1,6 @@
 ---
 layout: default 
-group: compman2.2
+group: compman
 subgroup: 06_UseExtMan
 title: Start the Extension Manager
 menu_title: Start the Extension Manager

@@ -1,6 +1,6 @@
 ---
 layout: default 
-group: compman2.2
+group: compman
 subgroup: 06_UseExtMan
 title: Step 4. Uninstall
 menu_title: Step 4. Uninstall

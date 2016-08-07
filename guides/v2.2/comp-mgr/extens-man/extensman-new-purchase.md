@@ -1,6 +1,6 @@
 ---
 layout: default 
-group: compman2.2
+group: compman
 subgroup: 06_UseExtMan
 title: Step 3. Component Install
 menu_title: Component Install
