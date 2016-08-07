@@ -22,7 +22,7 @@ To complete the update, click **Update**.
 ### Success
 If the update is successful, a page similar to the following displays.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/extensman_update-success.png" width="200px" alt="Your component update was successful">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/extensman_update-success.png" width="200px" alt="Your update was successful">
 
 Messages similar to the following display in the Console Log:
 

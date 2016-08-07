@@ -59,7 +59,7 @@ After you log in to the Extension Manager, a list displays as follows:
 
 {% collapsible Supported actions for each type %}
 
-We support different actions for each *type* of component. (*Component* is a general term that includes any type of code you can install in the Magento application. *Package* refers to something you can install, uninstall, or update.)
+We support different actions for each *type* of component. (*Component* is a general term that includes any type of code you can install in the Magento application&mdash;module, language package, theme, or metapackage. *Package* refers to anything you can install, uninstall, or update.)
 
 The following figure shows how types display in the Extension Manager.
 
@@ -177,7 +177,7 @@ The following table shows which actions are available for a metapackage.
 	![Choose packages to install]({{ site.baseurl }}common/images/extensman_choose-to-install.png){:width="550px"}
 2.	After you select what to install, click **Install** at the top of the page as the following figure shows.
 
-	![Install your purchases]({{ site.baseurl }}common/images/extensman_ready-to-install.png){:width="350px"}
+	![Install your purchases]({{ site.baseurl }}common/images/extensman_ready-to-install.png){:width="550px"}
 3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}

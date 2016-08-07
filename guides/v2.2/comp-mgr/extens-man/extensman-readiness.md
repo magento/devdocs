@@ -11,7 +11,7 @@ github_link: comp-mgr/extens-man/extensman-readiness.md
 ---
 
 ## Step 1: Readiness check
-The readiness check makes sure your server and environment are set up correctly for installing, uninstalling, or updating components. In the event of errors, you can consult troubleshooting suggestions in this guide.
+The readiness check makes sure your server and environment are set up correctly for installing, uninstalling, or updating. In the event of errors, you can consult troubleshooting suggestions in this guide.
 
 To start, click either **Start Readiness Check** or **Next**. A sample follows.
 

@@ -11,12 +11,12 @@ github_link: comp-mgr/extens-man/extensman-uninst-final.md
 ---
 
 ## Step 4. Uninstall
-To uninstall your component, click **Uninstall** as the following figure shows.
+Click **Uninstall** as the following figure shows.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/extensman_uninst2.png" width="300px" alt="Click Uninstall">
 
 If successful, a page similar to the following displays.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/extensman_uninst-success.png" width="250px" alt="Your component was successfully uninstalled">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/extensman_uninst-success.png" width="250px" alt="The uninstall was successful">
 
 

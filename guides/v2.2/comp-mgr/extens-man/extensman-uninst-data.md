@@ -13,22 +13,22 @@ github_link: comp-mgr/extens-man/extensman-uninst-data.md
 ---
 
 ## Step 3. Remove or Keep Data
-This step displays if you're uninstalling a component.
+This step displays if you're uninstalling a package.
 
-After backing up, you have the choice of removing component data from the Magento 2 database.
+After backing up, you have the choice of removing data from the Magento 2 database.
 
-If the component has no data to remove, the following message displays. (If a component has data but no uninstall script, the same prompt displays. In that case, you must remove database data manually.)
+If the component has no data to remove, the following message displays. (If a package has data but no uninstall script, the same prompt displays. In that case, contact the vendor or remove database data manually.)
 
 	The selected component has no data to remove.
 
 If the component has data to remove, a page similar to the following displays.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_uninstall-data.png" width="600px" alt="You can optionally component component database data">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_uninstall-data.png" width="600px" alt="You can optionally remove database data">
 
 Click one of the following:
 
-*	**Keep data**: Click to keep the component's data in the database.
-*	**Remove data**: Click to remove component's data from the database. 
+*	**Keep data**: Click to keep the data in the database.
+*	**Remove data**: Click to remove data from the database. 
 
 	You can click **Back** to back up the database first if you did not do so already.
 
