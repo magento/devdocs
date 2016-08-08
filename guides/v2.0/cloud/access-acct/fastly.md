@@ -42,15 +42,13 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 1.	In your local environment root directory, enter the following commands in the order shown:
 
-		composer config repositories.fastly-magento2 git "https://<your GitHub username>:<your GitHub password>@github.com/fastly/fastly-magento2.git"
-		composer require fastly/magento2
+		composer config repositories.fastly-magento2 vcl "https://github.com/fastly/fastly-magento2.git"
+		composer require fastly/magento2:dev-master
 
 2.	Wait for dependencies to be updated.
 3.	Enter the following commands in the order shown:
 
-		php bin/magento module:enable Fastly_Cdn
-		php bin/magento setup:upgrade
-		php bin/magento cache:clean
+		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
 
 ### Enable Fastly using the Magento Admin {#cloud-fastly-admin}
 After downloading Fastly, you must enable Magento to use it using the Magento Admin.
@@ -62,10 +60,13 @@ To enable Fastly:
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud_fastly_menu.png){:width="650px"}
 3.	In the right pane, expand **Full Page Cache**. 
-4.	From the **Caching Application** list, click **Fastly CDN** as the following figure shows.
+4.	Next to the **Caching Application** list, clear the **Use sytem value** check box.
+5.	From the **Caching Application** list, click **Fastly CDN** as the following figure shows.
 
-	![Choose Fastly]({{ site.baseurl }}#)
-5.	You can then add the credentials and choose the caching options.
+	![Choose Fastly]({{ site.baseurl }}common/images/cloud-fastly_enable-admin.png){:width="650px"}
+6.	Expand **Fastly Configuration**.
+
+	You can then add your credentials and [choose caching options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module){:target="_blank"}.
 
 {% endcollapsible %}
 
