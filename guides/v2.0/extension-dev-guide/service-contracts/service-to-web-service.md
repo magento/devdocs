@@ -233,7 +233,8 @@ Following are some examples of various types and what they would look like in th
       </td>
       <td>
          <p>The XML schema file that is used to validate the XML.</p>
-         <p>The XML schema file is <code>../../../../../app/code/Magento/Webapi/etc/webapi.xsd</code>.</p>
+         <p>The XML schema file is <code>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd</code>.</p>
       </td>
    </tr>
    <tr>
