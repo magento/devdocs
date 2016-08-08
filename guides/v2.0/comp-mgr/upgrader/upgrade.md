@@ -28,7 +28,12 @@ Messages similar to the following display in the Console Log:
 
 {% endcollapsible %}
 
-After the upgrade finishes, access your storefront.
+## After upgrading
+After the upgrade completes, restart Varnish if you use it for page caching.
+
+	service varnish restrat
+
+Then access your storefront and verify everything is working properly.
 
 ## Errors after upgrade
 After you finish your upgrade, errors might display.
