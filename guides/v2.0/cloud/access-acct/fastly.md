@@ -55,8 +55,6 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 ### Enable Fastly using the Magento Admin {#cloud-fastly-admin}
 {% collapsible To enable Fastly using the Magento Admin: %}
 
-After downloading Fastly, you must enable Magento to use it using the Magento Admin.
-
 1.	Log in to the Magento Admin as an administrator. 
 2.	Click **Stores** > **Configuration** > **Advanced** > **System** as the following figure shows:
 
@@ -76,6 +74,7 @@ After downloading Fastly, you must enable Magento to use it using the Magento Ad
 Most Fastly configuration options are in the Magento Admin. Some additional advanced options are in the Fastly configuration file, `fastly.vcl`.
 
 To configure Fastly in the Admin:
+
 1.	Log in to the Magento Admin as an administrator.
 2.	Click **Stores** > **Configuration** > **Advanced** > **System**.
 3.	In the right pane, expand **Full Page Cache**. 
