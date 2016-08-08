@@ -50,10 +50,12 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
 
-### Enable Fastly using the Magento Admin {#cloud-fastly-admin}
-After downloading Fastly, you must enable Magento to use it using the Magento Admin.
+{% endcollapsible %}
 
-To enable Fastly:
+### Enable Fastly using the Magento Admin {#cloud-fastly-admin}
+{% collapsible To enable Fastly using the Magento Admin: %}
+
+After downloading Fastly, you must enable Magento to use it using the Magento Admin.
 
 1.	Log in to the Magento Admin as an administrator. 
 2.	Click **Stores** > **Configuration** > **Advanced** > **System** as the following figure shows:
@@ -68,6 +70,9 @@ To enable Fastly:
 {% endcollapsible %}
 
 ### Configure Fastly {#cloud-fastly-config}
+
+{% collapsible To configure Fastly: %}
+
 Most Fastly configuration options are in the Magento Admin. Some additional advanced options are in the Fastly configuration file, `fastly.vcl`.
 
 To configure Fastly in the Admin:
@@ -85,6 +90,8 @@ For details about Fastly configuration, see the [Fastly documentation](https://g
 For advanced configuration options, download and customize the [Fastly configuration](https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl){:target="_blank"}.
 
 If you changed the `.vcl` file, open a [support ticket]({{ page.baseurl }}cloud/get-help.html) to upload your configuration to your project.
+
+{% endcollapsible %}
 	
 ### Merge your Fastly branch {#cloud-fastly-merge}
 When you're done with development, [merge your environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html) with its parent environment.
