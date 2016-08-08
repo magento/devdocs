@@ -64,20 +64,27 @@ To enable Fastly:
 5.	From the **Caching Application** list, click **Fastly CDN** as the following figure shows.
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud-fastly_enable-admin.png){:width="650px"}
-6.	Expand **Fastly Configuration**.
-
-	You can then add your credentials and [choose caching options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module){:target="_blank"}.
 
 {% endcollapsible %}
 
 ### Configure Fastly {#cloud-fastly-config}
-To configure Fastly:
+Most Fastly configuration options are in the Magento Admin. Some additional advanced options are in the Fastly configuration file, `fastly.vcl`.
 
-1.	If necessary, download and customize the [Fastly configuration](https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl){:target="_blank"}.
-2.	Open a [support ticket]({{ page.baseurl }}cloud/get-help.html) to upload your configuration to your project.
-3.	Make other configuration changes in the Magento Admin as needed.
+To configure Fastly in the Admin:
+1.	Log in to the Magento Admin as an administrator.
+2.	Click **Stores** > **Configuration** > **Advanced** > **System**.
+3.	In the right pane, expand **Full Page Cache**. 
+4.	Expand **Fastly Configuration**.
 
-	For details about Fastly configuration, see the [Fastly documentation](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options){:target="_blank"}.
+	You can then add your credentials and [choose caching options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module){:target="_blank"}.
+5.	When you're done, click **Save Config** at the top of the page.
+
+For details about Fastly configuration, see the [Fastly documentation](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options){:target="_blank"}.
+
+#### Advanced configuration options
+For advanced configuration options, download and customize the [Fastly configuration](https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl){:target="_blank"}.
+
+If you changed the `.vcl` file, open a [support ticket]({{ page.baseurl }}cloud/get-help.html) to upload your configuration to your project.
 	
 ### Merge your Fastly branch {#cloud-fastly-merge}
 When you're done with development, [merge your environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html) with its parent environment.
