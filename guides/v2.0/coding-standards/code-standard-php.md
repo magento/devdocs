@@ -16,7 +16,7 @@ Where possible, use [`PHP_CodeSniffer`](https://github.com/squizlabs/PHP_CodeSni
 
 ### Class name resolution standard
 
-In PHP 5.5 and later, use the [`::class`](http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class){:target="_blank"} keyword instead of a string literal for every class name reference outside of that class. This includes references to:
+For class name resolution, use the [`::class`](http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class){:target="_blank"} keyword instead of a string literal for every class name reference outside of that class. This includes references to:
 
 * Fully qualified class name
 * Imported/non-imported class name
