@@ -1325,7 +1325,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 29 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 7 August 2016 (PDT)</i></p>
 		<div class="bs-callout bs-callout-warning">
   <p>The message queue topology can only be configured after Magento Community Edition has been installed and before Magento Enterprise Editions has been installed. </p>
 </div>
@@ -1454,7 +1454,7 @@
 
 <h2>Sample `queue.xml` file</h2>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../../../lib/internal/Magento/Framework/Amqp/etc/queue.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework-message-queue:etc/queue.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;publisher</span> <span class="na">name=</span><span class="s">&quot;test-publisher-1&quot;</span> <span class="na">connection=</span><span class="s">&quot;rabbitmq&quot;</span> <span class="na">exchange=</span><span class="s">&quot;magento&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;publisher</span> <span class="na">name=</span><span class="s">&quot;test-publisher-2&quot;</span> <span class="na">connection=</span><span class="s">&quot;db&quot;</span> <span class="na">exchange=</span><span class="s">&quot;magento&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;topic</span> <span class="na">name=</span><span class="s">&quot;customer.created&quot;</span> <span class="na">schema=</span><span class="s">&quot;Magento\Customer\Api\Data\CustomerInterface&quot;</span> <span class="na">publisher=</span><span class="s">&quot;test-publisher-1&quot;</span><span class="nt">/&gt;</span>

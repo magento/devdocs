@@ -955,10 +955,12 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
     <tr>
       <td><code>--collection</code></td>
       <td><code>Magento\\Search\\Model\\ResourceModel\\Query\\Collection</code></td>
-      <td>Collection to generate data sets. Synonyms are the entities of a Magento_Search module. Collection can always be find in model resources. All slashes must be escaped <code>\\</code>.</td>
+      <td>Collection to generate data sets. Synonyms are the entities of a Magento_Search module. A collection can always be found in model resources.</td>
     </tr>
   </tbody>
 </table>
+
+<p>All slashes must be escaped with <code>\\</code>.</p>
 
 <p>As a result of previous commands, a brand new fixture can be found in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Fixture</code> directory.</p>
 

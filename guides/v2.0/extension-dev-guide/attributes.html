@@ -853,7 +853,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 8 August 2016 (PDT)</i></p>
 		<h2 id="eav-and-extension-attributes">EAV and extension attributes</h2>
 
 <p>Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:</p>
@@ -1000,7 +1000,7 @@
 
 <p>The following <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory/etc/extension_attributes.xml">code sample</a> defines <code>stock_item</code> as an extension attribute of the <code>CatalogInventory</code> module. <code>CatalogInventory</code> is treated as a “third-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../lib/internal/Magento/Framework/Api/etc/extension_attributes.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Api/etc/extension_attributes.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;stock_item&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\CatalogInventory\Api\Data\StockItemInterface&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;resources&gt;</span>

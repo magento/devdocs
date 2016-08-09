@@ -1390,7 +1390,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 29 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 8 August 2016 (PDT)</i></p>
 		<p>Any module can be configured to send and receive messages to the message queue. To do this, you must create the following files in the <code>&lt;module&gt;/etc</code> directory:</p>
 
 <ul>
@@ -1404,7 +1404,7 @@
 
 <h3 id="topic-element">topic element</h3>
 
-<p>Every topic must be configured with transport layer connection information, so that the publisher knows where to publish messages. Configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the <code>env.php</code> file.</p>
+<p>Topic configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the <code>env.php</code> file.</p>
 
 <p>The <code>name</code> parameter is required. The topic definition must include either a <code>request</code> or a <code>schema</code>. Use <code>schema</code> if you want to implement a custom service interface.  Otherwise, specify <code>request</code>. If <code>request</code> is specified, then also specify <code>response</code> if the message is asynchronous.</p>
 
@@ -1418,7 +1418,7 @@
   <tbody>
     <tr>
       <td>name</td>
-      <td>A string that uniquely identifies the topic. The format should be <code>*object*.*action*</code> You can further distinguish topic names by appending <code>.*qualifier*</code> to the end of the name. Wildcards are not supported in the <code>communication.xml</code> file.</td>
+      <td>A string that uniquely identifies the topic. A topic name should be a series of strings that are separated by periods. The leftmost string should be the most general, and each string afterward should narrow the scope. For example, to describe actions for tending to pets, you might create names such as <code>cat.white.feed</code> and <code>dog.retriever.walk</code>. Wildcards are not supported in the <code>communication.xml</code> file.</td>
     </tr>
     <tr>
       <td>request</td>
@@ -1448,7 +1448,7 @@
   <tbody>
     <tr>
       <td>name</td>
-      <td>A string that uniquely defines the handler. The name should be derived from the topic name.</td>
+      <td>A string that uniquely defines the handler. The name can be derived from the topic name if the handler is specific to the topic. If the handler provides more generic capabilities, name the handler so that it describes those capabilities.</td>
     </tr>
     <tr>
       <td>type</td>

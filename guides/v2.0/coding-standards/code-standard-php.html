@@ -487,21 +487,28 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 28 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 4 August 2016 (PDT)</i></p>
 		<p>The Magento core development team uses the <a href="http://www.php-fig.org/psr/psr-1/" target="_blank">Basic Coding Standard</a> and <a href="http://www.php-fig.org/psr/psr-2/" target="_blank">Coding Style Guide</a>. Magento recommends that developers who create Magento extensions and customizations also use these standards.</p>
 
-<p>Where possible, use <a href="https://github.com/squizlabs/PHP_CodeSniffer" target="_blank"><code>PHP_CodeSniffer</code></a> to automatically enforce these standards. Otherwise, standards and requirements must be applied through rigorous code review.</p>
+<p>Where possible, use <a href="https://github.com/squizlabs/PHP_CodeSniffer" target="_blank"><code>PHP_CodeSniffer</code></a> to automatically enforce these standards. Otherwise, you must apply these standards and requirements through rigorous code review.</p>
 
-<h3 id="additional-standards">Additional Standards</h3>
+<h3 id="class-name-resolution-standard">Class name resolution standard</h3>
+
+<p>In PHP 5.5 and later, use the <a href="http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class" target="_blank"><code>::class</code></a> keyword instead of a string literal for every class name reference outside of that class. This includes references to:</p>
 
 <ul>
-  <li>
-    <p>Instead of a string literal, use PHP 5.5’s <code>::class</code> keyword when referring to the fully qualified class name outside of that class. For example:</p>
-
-    <pre><code>$this-&gt;get(\Magento\Path\To\Class::class);
-</code></pre>
-  </li>
+  <li>Fully qualified class name</li>
+  <li>Imported/non-imported class name</li>
+  <li>Namespace relative class name</li>
+  <li>Import relative class name</li>
 </ul>
+
+<p>Examples:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nx">ClassName</span><span class="o">::</span><span class="na">class</span><span class="p">);</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nx">\Magento\Path\To\Class</span><span class="o">::</span><span class="na">class</span><span class="p">);</span></code></pre></figure>
+
 
 
 		</div>

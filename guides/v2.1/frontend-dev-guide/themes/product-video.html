@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Compile LESS with Grunt</title>
+	<title>Configure product video</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/frontend-dev-guide/css-topics/css_debug.html">
+	<link rel="canonical" href="//guides/v2.1/frontend-dev-guide/themes/product-video.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -167,9 +167,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Compile LESS with Grunt</h1>
+		<h1 class="page-heading">Configure product video</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/frontend-dev-guide/css-topics/css_debug.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/themes/product-video.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -368,7 +368,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/product-video.html">Configure product video</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/frontend-dev-guide/themes/product-video.html">Configure product video</a></li>
 
 									
 
@@ -561,7 +561,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html">Compile LESS with Grunt</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html">Compile LESS with Grunt</a></li>
 
 									
 
@@ -877,183 +877,85 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 July 2016 (PDT)</i></p>
-		<h2>What's in this topic</h2>
+			<p align="right"><i>Updated: 8 August 2016 (PDT)</i></p>
+		<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>
-The topic describes how to install, configure and use <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a> for compiling <code>.less</code> files in Magento 2. </p>
+<p>In Magento 2 on product pages you can add video from external resources (currently, from <a href="youtube.com">YouTube</a> and <a href="https://vimeo.com/">Vimeo</a>). Video is <a href="http://docs.magento.com/m2/2.0/ee/user_guide/catalog/product-video.html?Highlight=product%20video">added in Admin</a> when creating or editing a product. 
+Certain product video options can be set in the <code>config.xml</code> configuration file. These settings are not theme-specific.</p>
 
-<p><strong>Contents</strong></p>
+<h2 id="configure-product-video-options">Configure product video options</h2>
 
-<ul id="markdown-toc">
-  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
-  <li><a href="#grunt_prereq" id="markdown-toc-grunt_prereq">Installing and configuring Grunt</a></li>
-  <li><a href="#grunt_commands" id="markdown-toc-grunt_commands">Grunt commands</a></li>
-  <li><a href="#use_cases" id="markdown-toc-use_cases">Use cases of tracking changes using Grunt</a></li>
-</ul>
-
-<h2 id="prerequisites">Prerequisites</h2>
-<p>Make sure that you <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">set</a> your Magento application to the developer or default <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">mode</a>.</p>
-
-<h2 id="grunt_prereq">Installing and configuring Grunt</h2>
-
-<p>Magento has built-in Grunt tasks configured, but there are still several prerequisite steps you need to take to be able to use it:</p>
-
-<ol>
-<li>
-Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)" target="_blank">node.js</a> to any location on your machine.
-</li>
-<li>Install Grunt CLI tool globally. To do this, run the following command in a command prompt:<br />
-<pre>
-npm install -g grunt-cli
-</pre>
-</li>
-<li>
-Rename the following files in your Magento root directory:
-<ul>
-<li><code>package.json.sample</code> to <code>package.json</code></li>
-<li><code>Gruntfile.js.sample</code> to <code>Gruntfile.js</code></li>
-</ul>
-</li>
-<li>
-Install (or refresh) the <code>node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:<br />
-
-<pre>
-cd &lt;your_Magento_instance_directory&gt;
-npm install
-npm update
-</pre>
-</li>
-
-<li>
-Add your theme to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/themes.js</code> file, add your theme to <code>module.exports</code> like following:
-<pre>
-module.exports = {
-    ...
-    &lt;theme&gt;: {
-        area: 'frontend',
-        name: '&lt;Vendor&gt;/&lt;theme&gt;',
-        locale: '&lt;language&gt;', 
-        files: [
-            '&lt;path_to_file1&gt;', //path to root source file
-            '&lt;path_to_file2&gt;'
-        ],
-        dsl: 'less'
-    ...
-    },
-</pre>
-
-Where the following notation is used:
-<ul>
-<li>
-<code>&lt;theme&gt;</code>: your theme code, conventionally should correspond to the theme directory name.
-</li>
-<li>
-<code>&lt;language&gt;</code>: specified in the 'code_subtag' format, for example <code>en_US</code>. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code>language</code>
-</li>
-<li>
-<code>&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme/&gt;web</code> directory. You need to specify all <a href="/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files of the theme</a>. If your theme <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
-
-</li> 
-
-</ul>
-</li>
-<li id="livereload">
-(Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the <a href="http://livereload.com/extensions/" target="_blank">LiveReload extension</a> in your browser. 
-
-</li>
-</ol>
-
-<h2 id="grunt_commands">Grunt commands</h2>
-
-<p>The following table describes the grunt commands you can use performing different customization tasks. Run all commands from your Magento installation directory.</p>
+<p>You can set the following product video options:</p>
 
 <table>
-<tr>
-<th>
-Grunt task
-</th>
-<th>
-Action
-</th>
-</tr>
-<tr>
-
+  <tbody>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+      <th colspan="1">Type</th>
+      <th>Default</th>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>play_if_base</code>
+      </td>
+      <td colspan="1">Play automatically on page load.</td>
+      <td colspan="1">
+        Boolean
+      </td>
+      <td colspan="1">
+        0 <br />
+(video is not played on page load)
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>show_related</code>
+      </td>
+      <td colspan="1">Display related videos.</td>
+      <td colspan="1">
+Boolean
+           
+      </td>
 <td>
-<pre>
-grunt clean:&lt;theme&gt;
-</pre>
-
-For example: 
-<pre>
-grunt clean:blank
-</pre>
+0 <br />
+(related videos are not displayed)
 </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>video_auto_restart</code>
+      </td>
+      <td colspan="1">Auto re-play video.</td>
+      <td colspan="1">
+Boolean
+           
+      </td>
 <td>
-Removes the theme related static files in the <code>pub/static</code> and <code>var</code> directories.
+0 <br />
+(video is not automatically replayed)
 </td>
-</tr>
-<tr>
-
-<td>
-<pre>
-grunt exec:&lt;theme&gt;
-</pre>
-
-</td>
-<td>
-Republishes symlinks to the source files to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory.
-
-</td>
-</tr>
-<tr>
-<td>
-
-<pre>
-grunt less:&lt;theme&gt;
-</pre>
-</td>
-<td>
-Compiles <code>.css</code> files using the symlinks published in the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory
-</td>
-</tr>
-
-<tr>
-
-<td>
-<pre>
-grunt watch
-</pre>
-</td>
-<td>
-Tracks the changes in the source files, recompiles <code>.css</code> files, and reloads the page in the browser pages
-(you need to have <a href="#livereload">LiveReload</a> installed for you browser)
-</td>
-</tr>
+    </tr>
+  </tbody>
 </table>
 
-<h2 id="use_cases">Use cases of tracking changes using Grunt</h2>
+<p>The options are set in the <code>config.xml</code> of you custom module.</p>
 
-<p>The following shows which Grunt tasks to use for debugging:</p>
+<p>Example:</p>
 
-<ul>
-<li>After you switch the compilation mode from client-side to server-side, run the <code>exec</code> command.</li>
-<li>
-After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page. </li>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Store:etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;default&gt;</span>
+        <span class="nt">&lt;catalog&gt;</span>
+            <span class="nt">&lt;product_video&gt;</span>
+                <span class="nt">&lt;play_if_base&gt;</span>1<span class="nt">&lt;/play_if_base&gt;</span>
+                <span class="nt">&lt;show_related&gt;</span>1<span class="nt">&lt;/show_related&gt;</span>
+                <span class="nt">&lt;video_auto_restart&gt;</span>1<span class="nt">&lt;/video_auto_restart&gt;</span>
+            <span class="nt">&lt;/product_video&gt;</span>
+        <span class="nt">&lt;/catalog&gt;</span>
+    <span class="nt">&lt;/default&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
-
-
-</ul>
-
-<p>If you have LiveReload installed, run the <code>grunt watch</code> command, and the flow is even simpler:</p>
-<ul>
-<li>
-After you customize the content of any <code>.less</code> file, changes are applied and the page reloads automatically. No additional changes are required.</li>
-
-<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, and the browser page reloads automatically.</li>
-
-</ul>
+<p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module.</p>
 
 
 		</div>

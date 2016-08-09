@@ -806,7 +806,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 8 August 2016 (PDT)</i></p>
 		<h2>New functional test: Practice</h2>
 
 <p>To demonstrate the usage of test components from previous sections in the test creation process, we will create a new functional <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">injectable test</a> step-by-step. Before creating automated test, try to pass it manually.</p>
@@ -949,10 +949,12 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
     <tr>
       <td><code>--collection</code></td>
       <td><code>Magento\\Search\\Model\\ResourceModel\\Query\\Collection</code></td>
-      <td>Collection to generate data sets. Synonyms are the entities of a Magento_Search module. Collection can always be find in model resources. All slashes must be escaped <code>\\</code>.</td>
+      <td>Collection to generate data sets. Synonyms are the entities of a Magento_Search module. A collection can always be found in model resources.</td>
     </tr>
   </tbody>
 </table>
+
+<p>All slashes must be escaped with <code>\\</code>.</p>
 
 <p>As a result of previous commands, a brand new fixture can be found in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Fixture</code> directory.</p>
 

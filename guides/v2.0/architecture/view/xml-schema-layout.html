@@ -357,7 +357,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 8 August 2016 (PDT)</i></p>
 		<h2 id="m2devgde-xml-layout-intro">Overview</h2>
 <p>In the Magento system, you define application page layouts in XML files, also known as <i>layouts</i>.</p>
 <p>The system uses the Magento XML schemas to validate these layouts.</p>
@@ -412,8 +412,8 @@
          </td>
          <td>
             <ul>
-               <li><code>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code></li>
-               <li><code>xsi:noNamespaceSchemaLocation="../../../../Core/etc/layout_single.xsd"</code></li>
+               <li><code>xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"</code></li>
+               <li><code>xs:include schemaLocation="urn:magento:framework:View/Layout/etc/elements.xsd</code></li>
             </ul>
          </td>
          <td>

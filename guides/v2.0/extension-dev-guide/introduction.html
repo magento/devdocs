@@ -357,7 +357,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 8 August 2016 (PDT)</i></p>
 		<h2 id="introduction">Introduction</h2>
 
 <p>This guide is for developers that are building a new <em>component</em> from scratch for custom extension of Magento functionality.</p>
@@ -387,10 +387,10 @@
 </div>
 
 <h2 id="magento-module-example">Magento module example</h2>
-<p>Modules are declared in the module.xml file. Here is a minimal example:</p>
+<p>Modules are declared in the <code>module.xml</code> file. Here is a minimal example:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-        <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Module/etc/module.xsd&quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Magento_SampleMinimal&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;2.0.0&quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;/module&gt;</span>
     <span class="nt">&lt;/config&gt;</span></code></pre></figure>
