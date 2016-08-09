@@ -5,8 +5,14 @@ subgroup: 45_Features
 title: Web-Driver Selection in the Functional Testing Framework
 menu_title: Web driver replacement
 version: 2.0
-github_link: mtf/mtf_features/webdriver.md
+github_link: mtf/features/webdriver.md
 ---
+
+<h3>Contents</h3>
+
+* TOC
+{:toc}
+
 
 ## Overview
 
@@ -30,11 +36,11 @@ To setup the Facebook web driver, follow:
         cd <magento2>/dev/tests/functional
         composer update
 
-Now, the FTF uses Facebook web driver. The test run procedure is not changed, you still need to [run the Selenium Server][].
+Now, the FTF uses Facebook web driver. The test run procedure is not changed, you still need to [run the Selenium Server].
 
 ## Implement another web driver
 
-The FTF contains [DriverInterface] which must be implemented in your PHP class.
+The FTF contains the [`DriverInterface.php`] interface which must be implemented in your PHP class.
 
 1. Create a directory in `<magento2>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Client/Driver` with a name which helps you to recognize a driver.
 2. In the directory create the `Driver.php` class which implements [`DriverInterface.php`].
