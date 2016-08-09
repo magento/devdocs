@@ -16,14 +16,16 @@ github_link: mtf/features/webdriver.md
 
 ## Overview
 
-The Functional Testing Framework (FTF) enables you to change easily a web driver library used for communication with Selenium Server, PhantomJS or other page automation tool.
+The Functional Testing Framework (FTF) enables you to change easily a web driver library used for communication with Selenium Server, PhantomJS or any other web page automating tool.
 
 Web drivers provided with the FTF:
 
 - [PHPUnit_Selenium library] (default)
 - [Facebook web diver library]
 
-Both implement the [`DriverInterface.php`] interface. You can use any other web driver implementing `DriverInterface.php` for it. Use existing web drivers as examples.
+Both implement the [`DriverInterface.php`] interface. The interface declares methods that are used in web page automation such as `click()`, `isVisible()`, `setValue()`, `dragAndDrop()` etc.
+
+To use a custom web driver, you must implement the `DriverInterface.php` interface. Use provided web drivers as examples.
 
 ## Setup the Facebook web driver {#ftf-facebook-driver-install}
 
@@ -38,12 +40,20 @@ To setup the Facebook web driver, follow:
 
 Now, the FTF uses Facebook web driver. The test run procedure is not changed, you still need to [run the Selenium Server].
 
-## Implement another web driver
+## Implement and setup a custom web driver
 
-The FTF contains the [`DriverInterface.php`] interface which must be implemented in your PHP class.
+To implement a custom web driver, you must implement the [`DriverInterface.php`] interface.
 
-1. Create a directory in `<magento2>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Client/Driver` with a name which helps you to recognize a driver.
-2. In the directory create the `Driver.php` class which implements [`DriverInterface.php`].
+1. Create the`<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Driver/<Your_driver>` directory.
+2. In the directory, create the `Driver.php` class which implements [`DriverInterface.php`].
+
+To setup the custom web driver, follow:
+
+1. In `<magento2>/dev/tests/functional/etc/di.xml`, add the `<preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\<Your_driver>\Driver" />` element.
+2. In `<magento2>/dev/tests/functional/composer.json`, add corresponding entry to the `"require"` list, if applicable. And run in your terminal:
+
+        cd <magento2>/dev/tests/functional
+        composer update
 
 
 

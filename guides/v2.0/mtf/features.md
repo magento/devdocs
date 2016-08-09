@@ -26,4 +26,4 @@ Each feature will be described in a separate topic.
 [modularity support]: {{page.baseurl}}mtf/features/modularity.html
 [parallel execution flow]: {{page.baseurl}}mtf/features/parallel_execution.html
 [test suits]: {{page.baseurl}}mtf/features/test_suite.html
-[web-driver selection]: {{page.baseurl}}mtf/features/webdriver.html
+[web driver selection]: {{page.baseurl}}mtf/features/webdriver.html
