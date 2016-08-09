@@ -33,3 +33,4 @@ ignore
 Rakefile
 Gemfile
 Gemfile.lock
+.jekyll-metadata
