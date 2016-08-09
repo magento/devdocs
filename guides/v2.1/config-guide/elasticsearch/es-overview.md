@@ -86,9 +86,9 @@ The tasks discussed in this section require the following:
 {% include config/install-java.md %}
 
 ### Install Elasticsearch {#es-install-es}
-Magento Enterprise Edition (EE) version 2.1.x supports Elasticsearch versions 1.7, 2.0, and 2.1.
+This section discusses how to install the latest 2.x version of Elasticsearch from their repository. 
 
-This section discusses how to install the latest version. To install older versions, see the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/index.html" target="_blank">Elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/2.0/setup.html" target="_blank">2.0 reference</a>).
+To install older versions, see the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/index.html" target="_blank">Elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/2.0/setup.html" target="_blank">2.0 reference</a>).
 
 To install Elasticsearch:
 
