@@ -49,6 +49,8 @@ Configure it using the following example (replace placeholders with your theme i
      <parent>%vendor_dir%/%parent_theme_dir%</parent> <!-- the parent theme. Example: Magento/backend -->
  </theme>
 
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any Magento Admin page for your changes to be saved in the database.
+
 {%endhighlight%}
 
 ### Add `registration.php` {#add_registry}
@@ -77,6 +79,11 @@ See the [Make your theme a Composer package (optional)]({{page.baseurl}}frontend
 In the default `Magento/backend` theme `lib/web/images/magento-logo.svg` is used as theme logo. 
 To override it, in your theme directory, create a `web/images` sub-directory, and add your custom file named `magento-logo.svg`. 
 If you want to use the file with other name and/or format, you need to additionally declare it as described in [Declaring theme logo]({{page.baseurl}}frontend-dev-guide/themes/theme-create.html#logo_declare).
+
+
+### Theme registration {#register_theme}
+
+Once you open the Magento Admin (or reload any  Magento Admin page) having added the theme files to the files system, your theme gets registered and added to the database.
 
 ## Apply the Admin theme
 
