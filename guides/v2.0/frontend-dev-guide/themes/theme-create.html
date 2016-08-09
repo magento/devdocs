@@ -290,7 +290,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a storefront theme</a></li>
 
 									
 
@@ -330,14 +330,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_create.html">Create a custom Admin theme</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/product-video.html">Configure product video</a></li>
 
 									
@@ -346,7 +338,15 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_apply.html">Apply a custom Admin theme</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_create.html">Create an Admin theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_apply.html">Apply an Admin theme</a></li>
 
 									
 
@@ -887,7 +887,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 9 August 2016 (PDT)</i></p>
 		<h2 id="layout_theme_how-to_overview">What's in this topic</h2>
 
 <p>This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.</p>
@@ -903,7 +903,11 @@
   <li><a href="#fedg_theme_how-to_structure" id="markdown-toc-fedg_theme_how-to_structure">Your theme directory structure now</a></li>
   <li><a href="#theme_logo" id="markdown-toc-theme_logo">Theme logo</a></li>
   <li><a href="#logo_declare" id="markdown-toc-logo_declare">Declaring theme logo</a></li>
-  <li><a href="#next" id="markdown-toc-next">What’s next</a></li>
+  <li><a href="#next" id="markdown-toc-next">What’s next</a>    <ul>
+      <li><a href="#register_theme" id="markdown-toc-register_theme">Theme registration</a></li>
+      <li><a href="#applying-a-theme" id="markdown-toc-applying-a-theme">Applying a theme</a></li>
+    </ul>
+  </li>
   <li><a href="#see-also" id="markdown-toc-see-also">See also</a></li>
 </ul>
 
@@ -964,6 +968,12 @@ app/design/frontend/
          <span class="nt">&lt;preview_image&gt;</span>media/preview.jpg<span class="nt">&lt;/preview_image&gt;</span> <span class="c">&lt;!-- the path to your theme&#39;s preview image --&gt;</span>
      <span class="nt">&lt;/media&gt;</span>
  <span class="nt">&lt;/theme&gt;</span></code></pre></figure>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>If you update theme.xml later</p>
+</div>
+
+<p>If you change the theme title or parent theme information in <code>theme.xml</code> after a theme was already <a href="#register_theme">registered</a>, you need to open or reload any Magento Admin page for your changes to be saved in the database.</p>
 
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package (optional)</h2>
 
@@ -1137,7 +1147,12 @@ Your theme does not have a parent theme:
 <p>To learn more about theme layouts, refer to the <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-overview.html" target="_blank">Layout section</a> of this guide.</p>
 
 <h2 id="next">What’s next</h2>
-<p>See the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
+
+<h3 id="register_theme">Theme registration</h3>
+<p>Once you open the Magento Admin (or reload any  Magento Admin page) having added the theme files to the files system, your theme gets registered and added to the database.</p>
+
+<h3 id="applying-a-theme">Applying a theme</h3>
+<p>For information on how to apply the theme for the storefront, see the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
 
 <h2 id="see-also">See also</h2>
 

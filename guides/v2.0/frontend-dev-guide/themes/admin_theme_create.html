@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create a custom Admin theme</title>
+	<title>Create an Admin theme</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -165,7 +165,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Create a custom Admin theme</h1>
+		<h1 class="page-heading">Create an Admin theme</h1>
 		
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/frontend-dev-guide/themes/admin_theme_create.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -290,7 +290,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a storefront theme</a></li>
 
 									
 
@@ -330,14 +330,6 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_create.html">Create a custom Admin theme</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/product-video.html">Configure product video</a></li>
 
 									
@@ -346,7 +338,15 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_apply.html">Apply a custom Admin theme</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_create.html">Create an Admin theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_apply.html">Apply an Admin theme</a></li>
 
 									
 
@@ -887,7 +887,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 21 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 9 August 2016 (PDT)</i></p>
 		<h2 id="favicon-intro">What's in this topic</h2>
 
 <p>This topic describes how to create your custom theme for Magento Admin, referencing the similar <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html">flow for creating a custom storefront theme</a>.</p>
@@ -896,14 +896,13 @@
 
 <ul id="markdown-toc">
   <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
-  <li><a href="#create-an-admin-theme" id="markdown-toc-create-an-admin-theme">Create an Admin theme</a>    <ul>
-      <li><a href="#create_dir" id="markdown-toc-create_dir">Create a theme directory</a></li>
-      <li><a href="#declare_theme" id="markdown-toc-declare_theme">Add a declaration <code>theme.xml</code></a></li>
-      <li><a href="#add_registry" id="markdown-toc-add_registry">Add <code>registration.php</code></a></li>
-      <li><a href="#make_composer" id="markdown-toc-make_composer">Optionally add <code>composer.json</code></a></li>
-      <li><a href="#logo" id="markdown-toc-logo">Admin theme logo (optional)</a></li>
-    </ul>
-  </li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#create_dir" id="markdown-toc-create_dir">Create a theme directory</a></li>
+  <li><a href="#declare_theme" id="markdown-toc-declare_theme">Add a declaration <code>theme.xml</code></a></li>
+  <li><a href="#add_registry" id="markdown-toc-add_registry">Add <code>registration.php</code></a></li>
+  <li><a href="#make_composer" id="markdown-toc-make_composer">Optionally add <code>composer.json</code></a></li>
+  <li><a href="#logo" id="markdown-toc-logo">Admin theme logo (optional)</a></li>
+  <li><a href="#register_theme" id="markdown-toc-register_theme">Theme registration</a></li>
   <li><a href="#apply-the-admin-theme" id="markdown-toc-apply-the-admin-theme">Apply the Admin theme</a></li>
 </ul>
 
@@ -911,7 +910,7 @@
 
 <p><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set</a> your Magento application to the developer <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">mode</a>. The application mode influences the way static files are cached by Magento.</p>
 
-<h2 id="create-an-admin-theme">Create an Admin theme</h2>
+<h2 id="overview">Overview</h2>
 
 <p>To create a custom Admin theme, take the following steps:</p>
 
@@ -925,10 +924,10 @@
 
 <p>Each step is described further.</p>
 
-<h3 id="create_dir">Create a theme directory</h3>
+<h2 id="create_dir">Create a theme directory</h2>
 <p>In the <code>app/design/adminhtml</code> directory create a new <code>&lt;Vendor&gt;/&lt;admin_theme&gt;</code> directory.</p>
 
-<h3 id="declare_theme">Add a declaration <code>theme.xml</code></h3>
+<h2 id="declare_theme">Add a declaration <code>theme.xml</code></h2>
 
 <p>In the theme directory, add <code>theme.xml</code> containing at least the theme name and the parent theme name (if the theme <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from one). We recommend you to inherit from the default Magento Admin theme: <code>Magento/backend</code>.</p>
 
@@ -939,9 +938,11 @@
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Config/etc/theme.xsd&quot;</span><span class="nt">&gt;</span>
      <span class="nt">&lt;title&gt;</span>%Theme title%<span class="nt">&lt;/title&gt;</span> <span class="c">&lt;!-- your theme&#39;s name --&gt;</span>
      <span class="nt">&lt;parent&gt;</span>%vendor_dir%/%parent_theme_dir%<span class="nt">&lt;/parent&gt;</span> <span class="c">&lt;!-- the parent theme. Example: Magento/backend --&gt;</span>
- <span class="nt">&lt;/theme&gt;</span></code></pre></figure>
+ <span class="nt">&lt;/theme&gt;</span>
 
-<h3 id="add_registry">Add <code>registration.php</code></h3>
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any Magento Admin page for your changes to be saved in the database.</code></pre></figure>
+
+<h2 id="add_registry">Add <code>registration.php</code></h2>
 <p>In your theme directory, create a <code>registration.php</code> file.
 In this file, add the following code, having replaced placeholders with your theme information:</p>
 
@@ -956,14 +957,18 @@ In this file, add the following code, having replaced placeholders with your the
     <span class="nx">__DIR__</span>
 <span class="p">);</span>  </code></pre></figure>
 
-<h3 id="make_composer">Optionally add <code>composer.json</code></h3>
+<h2 id="make_composer">Optionally add <code>composer.json</code></h2>
 <p>See the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_composer">Make your theme a Composer package (optional)</a></p>
 
-<h3 id="logo">Admin theme logo (optional)</h3>
+<h2 id="logo">Admin theme logo (optional)</h2>
 
 <p>In the default <code>Magento/backend</code> theme <code>lib/web/images/magento-logo.svg</code> is used as theme logo. 
 To override it, in your theme directory, create a <code>web/images</code> sub-directory, and add your custom file named <code>magento-logo.svg</code>. 
 If you want to use the file with other name and/or format, you need to additionally declare it as described in <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html#logo_declare">Declaring theme logo</a>.</p>
+
+<h2 id="register_theme">Theme registration</h2>
+
+<p>Once you open the Magento Admin (or reload any  Magento Admin page) having added the theme files to the files system, your theme gets registered and added to the database.</p>
 
 <h2 id="apply-the-admin-theme">Apply the Admin theme</h2>
 
