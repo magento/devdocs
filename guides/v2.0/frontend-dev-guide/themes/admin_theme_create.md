@@ -2,9 +2,9 @@
 layout: default  
 group: fedg 
 subgroup: A_Themes
-title: Create a custom Admin theme
-menu_title: Create a custom Admin theme
-menu_order: 8
+title: Create an Admin theme
+menu_title: Create an Admin theme
+menu_order: 9
 github_link: frontend-dev-guide/themes/admin_theme_create.md
 ---
 <h2 id="favicon-intro">What's in this topic</h2>
