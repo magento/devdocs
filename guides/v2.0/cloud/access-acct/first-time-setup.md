@@ -30,7 +30,7 @@ Before you get started, you must add at least one [public SSH key]({{page.baseur
 
 *	A Magento project you import from an existing installation.
 
-	Use this method if Magento is already installed and customized. It doesn't matter whether or not your Magento project is currently managed using a Git repo; you can create one if you don't have one. 
+	Use this method if Magento is already installed and customized. It doesn't matter whether or not your Magento project is currently managed using a Git repository; you can create one if you don't have one. 
 
 	For more information, see [Create a sample Magento project from a template]({{page.baseurl}}cloud/access-acct/first-time-setup_import.html). 
 
