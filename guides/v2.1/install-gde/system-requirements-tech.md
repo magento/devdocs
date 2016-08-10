@@ -94,6 +94,10 @@ Mail Transfer Agent (MTA) or an SMTP server
  
     	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Solr search</a> can be used as a search provider. Available for Magento Enterprise Edition (EE) only.
 
+    *	Elasticsearch versions 1.0 and later up to version 5.0
+
+    	For additional details, see [Elasticsearch supported versions]({{ page.baseurl }}config-guide/elasticsearch/es-overview.html#es-spt-versions)
+
 	*	RabbitMQ 3.5
 
 		<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for Magento EE only.

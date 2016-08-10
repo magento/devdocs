@@ -37,7 +37,7 @@ Using the declarative notation to insert a JS component allows preparing all the
 In Magento 2 there are two ways of declarative notation:
 
  - using the `data-mage-init` attribute
- - using the `<scrtipt type="text/x-magento-init" />` tag
+ - using the `<script type="text/x-magento-init" />` tag
 
 Both ways are described further.
 
