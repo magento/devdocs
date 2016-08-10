@@ -42,7 +42,7 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 1.	In your local environment root directory, enter the following commands in the order shown:
 
-		composer config repositories.fastly-magento2 vcl "https://github.com/fastly/fastly-magento2.git"
+		composer config repositories.fastly-magento2 vcs "https://github.com/fastly/fastly-magento2.git"
 		composer require fastly/magento2:dev-master
 
 2.	Wait for dependencies to be updated.
