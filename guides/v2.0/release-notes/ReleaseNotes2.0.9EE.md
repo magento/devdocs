@@ -29,6 +29,11 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 55464/53793 -->* The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
 
 
+#### Performance
+
+<!--- 54682 -->* We've improved storefront performance when you use many variations of a configurable product.
+
+
 #### Miscellaneous
 
 <!--- 55362/45339 -->* Cart Price Rules are now applied as expected to Payment method conditions. Previously, discounts set in Cart Price Rules were not applied during checkout. 
