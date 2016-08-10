@@ -20,7 +20,7 @@ We are pleased to present Magento Community Edition 2.1.1. This release includes
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
 
-## Fixed issues
+### Fixed issues
 
 #### Installation and upgrade
 
