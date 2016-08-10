@@ -19,13 +19,13 @@ The `<module>/etc/communication.xml` file defines aspects of the message queue s
 
 ### topic element###
 
-Every topic must be configured with transport layer connection information, so that the publisher knows where to publish messages. Configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the `env.php` file.
+Topic configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the `env.php` file.
 
 The `name` parameter is required. The topic definition must include either a `request` or a `schema`. Use `schema` if you want to implement a custom service interface.  Otherwise, specify `request`. If `request` is specified, then also specify `response` if the message is asynchronous.
 
 Parameter | Description
 --- | ---
-name | A string that uniquely identifies the topic. The format should be `*object*.*action*` You can further distinguish topic names by appending `.*qualifier*` to the end of the name. Wildcards are not supported in the `communication.xml` file.
+name | A string that uniquely identifies the topic. A topic name should be a series of strings that are separated by periods. The leftmost string should be the most general, and each string afterward should narrow the scope. For example, to describe actions for tending to pets, you might create names such as `cat.white.feed` and `dog.retriever.walk`. Wildcards are not supported in the `communication.xml` file.
 request | Specifies the data type of the topic.
 response | Specifies the format of the response. This parameter is required if you are defining a synchronous topic. Omit this parameter if you are defining an asynchronous topic.
 schema | The interface that describes the structure of the message. The format must be  `<module>\Api\<ServiceName>::<methodName>`.
@@ -35,7 +35,7 @@ The `handler` element specifies the class where the logic for handling messages 
 
 Parameter | Description
 --- | ---
-name | A string that uniquely defines the handler. The name should be derived from the topic name.  
+name | A string that uniquely defines the handler. The name can be derived from the topic name if the handler is specific to the topic. If the handler provides more generic capabilities, name the handler so that it describes those capabilities.
 type | The class that defines the handler.
 method | The method this handler executes.
 disabled | Determines whether this handler is disabled. The default value is `false`.
