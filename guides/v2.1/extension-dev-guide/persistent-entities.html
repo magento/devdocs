@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Instantiating objects with factories</title>
+	<title>Persistent entities</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/factories.html">
+	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/persistent-entities.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -167,12 +167,10 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Instantiating objects with factories</h1>
+		<h1 class="page-heading">Persistent entities</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/factories.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/extension-dev-guide/persistent-entities.md" target="_blank">Edit this page on GitHub</a>
 		
-		
-			<a class="contributor" href="http://www.classyllama.com/" target="_blank">Thanks to Classy Llama for contributing this topic</a>
 		
 	</div>
 </section>
@@ -880,7 +878,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/factories.html">Instantiating objects with factories</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/factories.html">Instantiating objects with factories</a></li>
 
 									
 
@@ -968,7 +966,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/persistent-entities.html">Persistent entities</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/persistent-entities.html">Persistent entities</a></li>
 
 									
 
@@ -1147,54 +1145,93 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="instantiating-objects-with-factories">Instantiating objects with factories</h2>
+			<p align="right"><i>Updated: 8 August 2016 (PDT)</i></p>
+		<h2 class="no_toc" id="persistent-entities">Persistent entities</h2>
 
-<p>The most common way to request and work with objects in Magento is using <a href="/guides/v2.1/extension-dev-guide/depend-inj.html##dep-inj-preview-cons">constructor injection</a>.  Objects obtained this way (that is, using injectable classes) follow a singleton pattern, whereby the same instance is always returned by the Object Manager whenever a class is requested.</p>
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#entity-representations" id="markdown-toc-entity-representations">Entity Representations</a>    <ul>
+      <li><a href="#data-interfaces" id="markdown-toc-data-interfaces">Data Interfaces</a></li>
+      <li><a href="#data-models" id="markdown-toc-data-models">Data Models</a></li>
+      <li><a href="#models" id="markdown-toc-models">Models</a></li>
+    </ul>
+  </li>
+  <li><a href="#repositories" id="markdown-toc-repositories">Repositories</a>    <ul>
+      <li><a href="#resource-models" id="markdown-toc-resource-models">Resource Models</a></li>
+      <li><a href="#persisting-with-resource-models" id="markdown-toc-persisting-with-resource-models">Persisting with resource models</a></li>
+    </ul>
+  </li>
+</ul>
 
-<p>Most development also requires working with objects that are individual instances of classes (for example, a model representing a database entity).  These are referred to as <a href="/guides/v2.1/extension-dev-guide/depend-inj.html#dep-inj-mod-type-inject"><em>non-injectables</em></a>. Non-injectiables are not obtained directly using constructor injection; instead, instantiate them using <em>factories</em>.</p>
+<h3 id="overview">Overview</h3>
 
-<h3 id="purpose-of-factories">Purpose of factories</h3>
-<p>Factories are special objects that have only one purpose: to create an instance of one non-injectable class or interface. Unlike other objects, factories are allowed to depend on the object manager. Factories are used to isolate the object manager from business code as the following example shows:</p>
+<p>In Magento, an <em>entity</em> is a unique object that contains different attributes or parameters. Magento modules use entities in their business logic to represent something that is either concrete or abstract. Examples of Magento entities include product, order, customer, sale, and so on. Models with class attributes represent these entities in memory, and the underlying database provide and store the data for them.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Magento\Core\Model\Config\BaseFactory</span>
-<span class="p">{</span>
-    <span class="k">protected</span> <span class="nv">$_objectManager</span><span class="p">;</span>
+<p>Starting in Magento 2.1, we no longer recommend using the deprecated save, load, and delete methods in the <a href="#models">model</a> classes. This document provides the recommended approach you should use to save, load, and delete entities.</p>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Magento\Framework\ObjectManager</span> <span class="nv">$objectManager</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span> <span class="o">=</span> <span class="nv">$objectManager</span><span class="p">;</span>
-    <span class="p">}</span>
+<h3 id="entity-representations">Entity Representations</h3>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="nv">$sourceData</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;Magento\Core\Model\Config\Base&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;sourceData&#39;</span> <span class="o">=&gt;</span> <span class="nv">$sourceData</span><span class="p">]);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<p>In Magento, data interfaces, data models, and models all represent entities.</p>
 
-<h3 id="factories-are-generated-classes">Factories are generated classes</h3>
-<p>Factories are always named identically to the classes they instantiate, suffixed with <code>Factory</code>.  (For example, <code>Magento\Cms\Model\BlockFactory</code> is responsible for objects of the class <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Cms/Model/Block.php" target="_blank">Magento\Cms\Model\Block</a>.)</p>
+<h4 id="data-interfaces">Data Interfaces</h4>
+<p>A data interface is the interface for an entity that reveals the data it contains to clients. For example, the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Api/Data/CustomerInterface.php" target="_blank"><code>\Magento\Customer\Api\Data\CustomerInterface</code></a> class contains get and set functions for customer entity-related data such as names and email.</p>
 
-<p>An important thing to understand about factories is that they are an automatically generated class type.  Factory classes do not need to be explicitly defined.  Simply reference a class name with <code>Factory</code> appended in a constructor, and Magento automatically generates the factory class if it does not already exist.  (See <a href="/guides/v2.1/extension-dev-guide/code-generation.html">Code generation</a> for more information.)</p>
+<p>To allow the addition of <a href="/guides/v2.1/extension-dev-guide/attributes.html">custom EAV attributes</a> on your entity, your data interface must extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/CustomAttributesDataInterface.php" target="_blank"><code>\Magento\Framework\Api\CustomAttributesDataInterface</code></a> class.</p>
 
-<p>Factory classes can be explicitly defined, however, if customization of the typical factory behavior is desired for a specific class. The code in factories provides <code>typeSafety</code> (<code>@return</code> annotation) so IDEs understand the type of returned object for the type.</p>
+<p>To allow the use of <a href="/guides/v2.1/extension-dev-guide/attributes.html">extension attributes</a> on your entity, your data interface must extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensibleDataInterface.php" target="_blank"><code>\Magento\Framework\Api\ExtensibleDataInterface</code></a> class. We recommend using this approach when you define the data interface for your entity.</p>
 
-<h3 id="factories-are-injectable">Factories are injectable</h3>
-<p>Factories themselves are injectables, and therefore constructor injection is still key to the process of instantiating objects.  Receive a factory class via a constructor:</p>
+<h4 id="data-models">Data Models</h4>
+<p>A data model is a class that implements a data interface and contains data that is accessible using setter and getter methods. <a href="#repositories">Repositories</a> use data models and resource models for entity persistence. We recommend you put data model classes in the <code>Model/Data</code> directory inside your module’s root directory.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">__construct</span> <span class="p">(</span>
-    <span class="nx">\Magento\Cms\Model\BlockFactory</span> <span class="nv">$blockFactory</span>
-<span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span> <span class="o">=</span> <span class="nv">$blockFactory</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<p>An example of a data model is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/Data/Customer.php" target="_blank"><code>\Magento\Customer\Model\Data\Customer</code></a> class.</p>
 
-<p>When an instance of the class is needed, use the factory to instantiate it:</p>
+<h4 id="models">Models</h4>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$block</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span></code></pre></figure>
+<p>Magento models extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Model/AbstractModel.php" target="_blank"><code>Magento\Framework\Mode\AbstractModel</code></a> class because it provides useful general functions. Models contain logic for validation, events, and caching. A model class might have a data interface implementation. To set or access data, they use <code>getData</code>, <code>setData</code> and magic methods. A model is not statically typed if it does not have a data interface implementation.</p>
 
-<p>The <code>_create_</code> method of factories accepts an array, which is passed as the <code>$data</code> array to the instantiated object.</p>
+<p>Model classes should posses logic that relates to those classes and should not contain logic that reveal anything about data storage in the underlying data layer.</p>
 
-<p>Just as interfaces can be specified in constructor injection to obtain the best object implementing that interface (as defined in dependency injection preferences), factories can be used for such interfaces as well.  For example, requesting an object of the class <code>Magento\Customer\Api\Data\CustomerInterfaceFactory</code> in a constructor results in a factory responsible for creating instances of the appropriate dependency injection preference implementing <code>Magento\Customer\Api\Data\CustomerInterface</code>.</p>
+<p>We recommend putting model classes in the <code>Model</code> directory inside your module’s root directory.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Do not use the inherited <code>load</code>,<code>save</code>, <code>delete</code> methods from <code>AbstractModel</code> because these deprecated methods will not be available in the future. Instead, Magento recommends using data interfaces and repositories for persisting entities.</p>
+</div>
+
+<p>An example of a model is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/Customer.php" target="_blank"><code>\Magento\Customer\Model\Customer</code></a> class.</p>
+
+<h3 id="repositories">Repositories</h3>
+
+<p>Modules interact with other modules through their public API. For working with persistent entities, Magento recommends and uses repositories. These classes adopt the <a href="http://martinfowler.com/eaaCatalog/repository.html" target="_blank">repository pattern</a> and act as a layer between your module’s business logic layer and the data mapping layer. We recommend placing the class files for repositories under the <code>Model</code> or <code>Model/ResourceModel</code> directory inside your module’s root directory.</p>
+
+<p>An example of a repository is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CatalogRule/Model/CatalogRuleRepository.php" target="_blank"><code>Magento\CatalogRule\Model\CatalogRuleRepository</code></a> class.</p>
+
+<p>Different parts of the application can use your repository to load entities. To prevent loading of the same data from the database more than once, use a registry inside the repository. For an example of this strategy, take a look at the  <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php" target="_blank"><code>Magento\Customer\Model\ResourceModelCustomerRepository</code></a> class.</p>
+
+<h4 id="resource-models">Resource Models</h4>
+
+<p>Resource models contain logic that allow entities to be persistent. They help decouple the model layer from the data layer by acting as an intermediate mapping layer between the two. These classes provide the interface to manipulate data to the model layer while implementing code that is specific to the data layer. We recommend you put resource models under the <code>Model/ResourceModel</code> directory inside your module’s root directory.</p>
+
+<h4 id="persisting-with-resource-models">Persisting with resource models</h4>
+
+<p>Repository functions should operate on data interfaces. In your repository functions, you can extract a <a href="#data-models">data model</a> from the interface using the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensibleDataObjectConverter.php" target="_blank"><code>\Magento\Framework\Api\ExtensibleDataObjectConverter</code></a> class to create and populate a resource model using a <a href="/guides/v2.1/extension-dev-guide/factories.html">factory</a>. This resource model can then save, load, or delete an entity.</p>
+
+<p>Example:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$customerModel</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span><span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="nv">$customerData</span><span class="p">]);</span>
+
+<span class="sd">/** @var $customerResource \Magento\Customer\Model\ResourceModel\Customer */</span>
+<span class="nv">$customerResource</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$customerModel</span><span class="p">);</span>
+
+<span class="nv">$customerResource</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$customerModel</span><span class="p">,</span> <span class="nv">$entityId</span><span class="p">);</span>
+
+<span class="nv">$customerResource</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="nv">$customerModel</span><span class="p">);</span></code></pre></figure>
+
+<h4 class="no_toc" id="related-topics">Related topics</h4>
+
+<ul>
+  <li><a href="/guides/v2.1/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
+  <li><a href="/guides/v2.1/extension-dev-guide/factories.html">Instantiating objects with factories</a></li>
+</ul>
 
 
 		</div>
