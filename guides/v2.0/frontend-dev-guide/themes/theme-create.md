@@ -65,6 +65,11 @@ After you create a directory for your theme, you must create `theme.xml` contain
  </theme>
 {% endhighlight %}
 
+<div class="bs-callout bs-callout-info" id="info">
+<p>If you update theme.xml later</p>
+</div>
+
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any Magento Admin page for your changes to be saved in the database.
 
 ## Make your theme a Composer package (optional) {#fedg_create_theme_composer}
 
@@ -247,7 +252,12 @@ To learn more about theme layouts, refer to the <a href="{{page.baseurl}}fronten
 
 
 ## What's next {#next}
-See the [Apply and configure a theme in Admin]({{page.baseurl}}frontend-dev-guide/themes/theme-apply.html) topic.
+
+### Theme registration {#register_theme}
+Once you open the Magento Admin (or reload any  Magento Admin page) having added the theme files to the files system, your theme gets registered and added to the database.
+
+### Applying a theme
+For information on how to apply the theme for the storefront, see the [Apply and configure a theme in Admin]({{page.baseurl}}frontend-dev-guide/themes/theme-apply.html) topic.
 
 ## See also
 

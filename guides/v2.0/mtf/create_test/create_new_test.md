@@ -97,7 +97,9 @@ See the following explanations.
 |-|-|-
 |`--name`|`synonym`|A name of the fixture. It can have any name. `synonym` seems to be logical.
 |`--entity_type`|`search_synonyms`|Database table name where entity data is stored. You can track database input when you perform a [manual testing][]. A new record will be created in a table that you need.
-|`--collection`|`Magento\\Search\\Model\\ResourceModel\\Query\\Collection`|Collection to generate data sets. Synonyms are the entities of a Magento_Search module. Collection can always be find in model resources. All slashes must be escaped `\\`.
+|`--collection`|`Magento\\Search\\Model\\ResourceModel\\Query\\Collection`|Collection to generate data sets. Synonyms are the entities of a Magento_Search module. A collection can always be found in model resources. 
+
+All slashes must be escaped with `\\`.
 
 As a result of previous commands, a brand new fixture can be found in the `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture` directory.
 

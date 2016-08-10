@@ -148,7 +148,7 @@ DataSource aggregates an object of class implements the interface `\Magento\Fram
 An example of the configuration of the DataSource object:
 
 {% highlight xml%}
-<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd">
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         ...
     </argument>
