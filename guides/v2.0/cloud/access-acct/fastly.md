@@ -23,7 +23,7 @@ See the following sections for more information:
 *	[Merge your Fastly branch](#cloud-fastly-merge})
 
 ### Get your Fastly credentials {#cloud-fastly-creds}
-TBD
+To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/get-help.html).
 
 ### Get started {#cloud-fastly-start}
 Fastly recommends you do your development in its own branch because fine-tuning Fastly can be a complex process, depending on your needs and eCommerce shop size.
