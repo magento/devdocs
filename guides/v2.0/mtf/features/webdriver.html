@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create a test in the Functional Testing Framework</title>
+	<title>Web Driver Replacement in the Functional Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/mtf/create_test/new_test.html">
+	<link rel="canonical" href="//guides/v2.0/mtf/features/webdriver.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -41,13 +41,13 @@
 			<div class="main-site-name">
 				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.1)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 			
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
-		Version 2.1
+		Version 2.0
 	</button>
 
 
@@ -78,64 +78,62 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
 
             </ul>
          </li>
          <li class="first">
             <a href="#">System Administrator</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
             </ul>
          </li>
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-               
-                   <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
                
             </ul>
          </li>
          <li class="first">
             <a href="#">Designers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
             </ul>
          </li>
          <li class="first">
             <a href="#">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
             </ul>
          </li>
           <li class="first">
-              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <a href="/guides/v2.0/test/testing.html">Testing</a>
               <ul class="menu nav">
-                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
               </ul>
           </li>
          <li class="first">
-            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+            <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Do I...?</a>
          </li>
       </ul>
 
@@ -167,9 +165,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Create a test in the Functional Testing Framework</h1>
+		<h1 class="page-heading">Web Driver Replacement in the Functional Testing Framework</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/create_test/new_test.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/features/webdriver.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -315,10 +313,6 @@
 
 				
 
-			
-
-				
-
 					
 					
 
@@ -335,34 +329,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_introduction.html">INTRODUCTION</a></li>
-									
-								
-
-									
-
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_installation.html">INSTALLATION</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_introduction.html">INTRODUCTION</a></li>
 									
 								
 
@@ -389,291 +356,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_quickstart.html">QUICK START</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_magento.html">Prepare Magento application</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environment.html">Prepare environment for test run</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Test run</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/create_test.html">CREATE A TEST</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/out-of-the-box.html">Out-of-the-box test</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2  active "><a href="/guides/v2.1/mtf/create_test/new_test.html">New functional test. Theory</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/create_new_test.html">New functional test. Practice</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/features.html">FEATURES</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/features/modularity.html">Modularity</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/features/parallel_execution.html">Parallel execution flow</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/features/test_suite.html">Test suite</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/features/webdriver.html">Web driver replacement</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_entities.html">ENTITIES</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">Fixture</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html">Fixture Repository</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_handler.html">Handler</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html">Block</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_typified-element.html">Typified element</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">Page</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">Constraint</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">Data set</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_update.html">UPDATE</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_installation.html">INSTALLATION</a></li>
 									
 								
 
@@ -700,7 +383,291 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/troubleshooting.html">TROUBLESHOOTING</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_quickstart.html">QUICK START</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_magento.html">Prepare Magento application</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Prepare environment for test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/create_test.html">CREATE A TEST</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/out-of-the-box.html">Out-of-the-box test</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/new_test.html">New functional test. Theory</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/create_new_test.html">New functional test. Practice</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/features.html">FEATURES</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/modularity.html">Modularity</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/parallel_execution.html">Parallel execution flow</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/test_suite.html">Test suite</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.0/mtf/features/webdriver.html">Web driver replacement</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_entities.html">ENTITIES</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">Fixture</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html">Fixture Repository</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_handler.html">Handler</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html">Block</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_typified-element.html">Typified element</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">Page</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">Constraint</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">Data set</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_update.html">UPDATE</a></li>
 									
 								
 
@@ -727,7 +694,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_changelog.html">CHANGELOG</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/troubleshooting.html">TROUBLESHOOTING</a></li>
 									
 								
 
@@ -754,7 +721,34 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_overview.html">Functional testing overview</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_changelog.html">CHANGELOG</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_overview.html">Functional testing overview</a></li>
 									
 								
 
@@ -820,83 +814,71 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2>New functional test: Theory</h2>
-
-<p>The FTF helps to create a new test, you can extend an out-of-the-box test, or create a completely new test.</p>
-
-<h3>Contents</h3>
+			<p align="right"><i>Updated: 10 August 2016 (PDT)</i></p>
+		<h3>Contents</h3>
 
 <ul id="markdown-toc">
-  <li><a href="#extending-oob-test" id="markdown-toc-extending-oob-test">Extend an out-of-the-box test</a>    <ul>
-      <li><a href="#ext-usage" id="markdown-toc-ext-usage">Usage</a></li>
-    </ul>
-  </li>
-  <li><a href="#create-test" id="markdown-toc-create-test">Create a functional test</a>    <ul>
-      <li><a href="#test-object" id="markdown-toc-test-object">Test object</a></li>
-      <li><a href="#test-data" id="markdown-toc-test-data">Test data</a></li>
-      <li><a href="#test-flow" id="markdown-toc-test-flow">Test flow</a></li>
-      <li><a href="#test-assertions" id="markdown-toc-test-assertions">Test assertions</a></li>
-    </ul>
-  </li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#ftf-facebook-driver-install" id="markdown-toc-ftf-facebook-driver-install">Setup the Facebook web driver</a></li>
+  <li><a href="#add-and-setup-a-custom-web-driver" id="markdown-toc-add-and-setup-a-custom-web-driver">Add and setup a custom web driver</a></li>
 </ul>
 
-<h3 id="extending-oob-test">Extend an out-of-the-box test</h3>
+<h2 id="overview">Overview</h2>
 
-<p>You can extend a test by adding or replacing a <a href="/guides/v2.1/mtf/mtf_entities.html">test entity</a>. Test entities for the module are stored in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/&lt;testing_module&gt;</code> directory.</p>
+<p>The Functional Testing Framework (FTF) enables you to change a web driver library used for communication with Selenium Server, PhantomJS or any other web page automating tool.</p>
 
-<h4 id="ext-usage">Usage</h4>
-
-<p>This approach is useful when the Magento functionality was extended. For example, the minor changes were made in the existing functionality of a module. Also you can extend an out-of-the-box test to extend the current test coverage if the target functionality is not completely covered by the out-of-the-box test.</p>
-
-<p>Example use cases:</p>
+<p>Web drivers provided with the FTF are the following:</p>
 
 <ul>
-  <li><a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html#add_variation">variation addition</a></li>
-  <li><a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html#extend_variation">variation extension</a></li>
-  <li><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_merge">fixture extension</a></li>
-  <li><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy">repository addition</a></li>
-  <li><a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html#override-blocks">block overriding</a></li>
+  <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Driver/Selenium/Driver.php">PHPUnit_Selenium library</a> (default)</li>
+  <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Driver/Facebook/Driver.php">Facebook web driver library</a></li>
 </ul>
 
-<h3 id="create-test">Create a functional test</h3>
+<p>Both implement the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/DriverInterface.php"><code>DriverInterface.php</code></a> interface. The interface declares methods that are used in web page automation such as <code>click()</code>, <code>isVisible()</code>, <code>setValue()</code>, <code>dragAndDrop()</code> etc.</p>
 
-<p>If new modules are added to Magento you would need to create a new test to check the functionality.</p>
+<p>To use a custom web driver, you must implement the <code>DriverInterface.php</code> interface. Use provided web drivers as examples.</p>
 
-<p>New test must be stored in the corresponding module <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/&lt;testing_module&gt;</code>.</p>
+<h2 id="ftf-facebook-driver-install">Setup the Facebook web driver</h2>
 
-<p>Each test consists of four main components: a test object, test data, a test flow, a test assertion.</p>
+<p>To setup the Facebook web driver, follow:</p>
 
-<h4 id="test-object">Test object</h4>
+<ol>
+  <li>In <code>&lt;magento2&gt;/dev/tests/functional/etc/di.xml</code>, add the <code>&lt;preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\Facebook\Driver" /&gt;</code> element.</li>
+  <li>In <code>&lt;magento2&gt;/dev/tests/functional/composer.json</code>, move the <code>"facebook/webdriver": "dev-master"</code> entry from the <code>"suggest"</code> list to the <code>"require"</code> list.</li>
+  <li>
+    <p>Run in your terminal:</p>
 
-<p>A test object is an object that you are going to test. Most of the test actions are performed under this object.
-The test object is represented by a <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>.  The fixture defines properties of an object.</p>
-
-<h4 id="test-data">Test data</h4>
-
-<p>There are two types of test data:</p>
-
-<ul>
-  <li>Data for the test, stored in a <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">data set</a>.</li>
-  <li>Preconditions:
-    <ul>
-      <li>Sample data that is stored in a <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html">fixture repository</a>. In a data set, it is stored as a name of the fixture repository.</li>
-      <li>A sample test entity that can be created by a <a href="/guides/v2.1/mtf/mtf_entities/mtf_handler.html">handler</a>.</li>
-    </ul>
+    <pre><code> cd &lt;magento2&gt;/dev/tests/functional
+ composer update
+</code></pre>
   </li>
-</ul>
+</ol>
 
-<h4 id="test-flow">Test flow</h4>
+<p>The test run procedure is not changed, you still need to <a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium">run the Selenium Server</a>.</p>
 
-<p>A test flow is a set of test steps that you want to perform under the test object to check required functionality. Test steps are defined in a <a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">test case</a>. Usually, a test step contains a set of actions. Each action is managed by a method defined in a <a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html">block</a>. A <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">page</a> is a container for blocks. It stores selectors to identify blocks on an HTML page.</p>
+<h2 id="add-and-setup-a-custom-web-driver">Add and setup a custom web driver</h2>
 
-<h4 id="test-assertions">Test assertions</h4>
+<p>To add a custom web driver, you must implement the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/DriverInterface.php"><code>DriverInterface.php</code></a> interface.</p>
 
-<p>A test assertion compares the test flow results with the expected ones. Test assertions are represented by <a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">constraints</a>.</p>
+<ol>
+  <li>Create the <code>&lt;magento2&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Driver/&lt;Your_driver&gt;</code> directory.</li>
+  <li>In the directory, create the <code>Driver.php</code> class which implements <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/DriverInterface.php"><code>DriverInterface.php</code></a>.</li>
+</ol>
 
-<p><a href="/guides/v2.1/mtf/create_test/create_new_test.html">Learn more in the “Create a new test” topic.</a></p>
+<p>To setup the custom web driver, follow:</p>
 
-<!-- LINK DEFINITIONS -->
+<ol>
+  <li>In <code>&lt;magento2&gt;/dev/tests/functional/etc/di.xml</code>, add the <code>&lt;preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\&lt;Your_driver&gt;\Driver" /&gt;</code> element.</li>
+  <li>
+    <p>In <code>&lt;magento2&gt;/dev/tests/functional/composer.json</code>, add corresponding entry to the <code>"require"</code> list, if applicable. And run in your terminal:</p>
+
+    <pre><code> cd &lt;magento2&gt;/dev/tests/functional
+ composer update
+</code></pre>
+  </li>
+</ol>
+
+<!-- LINKS DEFINITION -->
 
 
 
