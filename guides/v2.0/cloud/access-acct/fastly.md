@@ -71,7 +71,11 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 {% collapsible To configure Fastly: %}
 
-Most Fastly configuration options are in the Magento Admin. Some additional advanced options are in the Fastly configuration file, `fastly.vcl`.
+Configure Fastly using the following:
+
+*	Your Fastly service ID and API key are available in [your Fastly account](https://docs.fastly.com/guides/account-management-and-security/finding-and-managing-your-account-info){:target="_blank"}.
+*	Set most other Fastly configuration options in the Magento Admin.
+*	Additional advanced options are in the Fastly configuration file, `fastly.vcl`.
 
 To configure Fastly in the Admin:
 
@@ -80,7 +84,7 @@ To configure Fastly in the Admin:
 3.	In the right pane, expand **Full Page Cache**. 
 4.	Expand **Fastly Configuration**.
 
-	You can then add your credentials and [choose caching options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module){:target="_blank"}.
+	You can then [choose caching options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module){:target="_blank"}.
 5.	When you're done, click **Save Config** at the top of the page.
 
 For details about Fastly configuration, see the [Fastly documentation](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options){:target="_blank"}.
