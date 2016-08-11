@@ -112,11 +112,11 @@ To disable the component in your `checkout_index_index.xml` use the following in
 
 To remove a component from layout rendering, you need to create a [plugin]({{page.baseurl}}guides/v2.1/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. In your plugin, implement the around method removing the corresponding layout nodes at run-time. 
 
-Following is an example of the around method, removing a component:
+The following sample is an example of the around method removing a component:
 
 {%highlight php%}
 unset($jsLayout['components']['checkout']['children']['steps'][%path_to_target_node%]); //%path_to_target_node% is the path to the component's node in checkout_index_index.xml
 return $jsLayout;
 {%endhighlight%} 
 
-If you want to use this sample in your code, do not forget to replace the `%path_to_target_node%` placeholder with real value.
+(If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.)
