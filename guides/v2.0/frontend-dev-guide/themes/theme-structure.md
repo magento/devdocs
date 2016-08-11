@@ -286,7 +286,7 @@ Static view files that can be accessed by a direct link from the store front, ar
 </div>
 
 <h3>Dynamic view files</h3>
-View files that are processed or executed by the server in order to provide result to the client. These are: `.less` files, templates, layouts .
+View files that are processed or executed by the server in order to provide result to the client. These are: `.less` files, templates, and layouts.
 
 Dynamic view files are located in a theme directory as follows:
 <pre>

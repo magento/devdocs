@@ -1,32 +1,36 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
-title: Set Magento environment variables
-menu_title: Set Magento environment variables
+subgroup: 04_setup
+title: Set Magento Admin environment variables
+menu_title: Set Magento Admin environment variables
 menu_order: 11
 menu_node: 
-level3_menu_node: level3child
-level3_subgroup: env-tut
 version: 2.0
-github_link: cloud/howtos/environment-tutorial-set-mage-vars.md
+github_link: cloud/access-acct/admin-env-vars.md
 redirect_from: 
-  - guides/v2.0/cloud/cloud/howtos/environment-tutorial-set-mage-vars.html
-  - guides/v2.1/cloud/env/environment-tutorial-set-mage-vars.html
+  - /guides/v2.0/cloud/howtos/environment-tutorial-set-mage-vars.html
+  - /guides/v2.1/cloud/howtos/environment-tutorial-set-mage-vars.html
+  - /guides/v2.0/cloud/env/environment-tutorial-set-mage-vars.html
+  - /guides/v2.1/cloud/env/environment-tutorial-set-mage-vars.html
 ---
 
-## Tutorial: change the Magento Admin URI, user name, and password {#cloud-env-vars-magento-admin-tut}
-For security reasons, we strongly recommend you change the Magento Admin URI, administrator user name, and the administrator's password. This makes it harder for someone else to log in to the Magento Admin and change settings.
+
+## Set Magento Admin environment variables {#cloud-env-vars}
+We strongly recommend you change the Magento Admin URI, administrator user name, and the administrator's password. This makes it harder for someone else to log in to the Magento Admin and change settings.
 
 Environment variables are inherited from the parent environment to child environments. You should make these changes in the `master` environment so all other environments start with the same values.
 
-You can use the same tasks to change any variable discussed in the preceding section.
+### Get started
 
-To get started:
+{% collapsible To get started: %}
 
 {% include cloud/cli-get-started.md %}
 
-To change the Admin URI and administrator password:
+{% endcollapsible %}
+
+### Change the Admin URI, user name, and password
+To change the Admin URI, user name, and administrator password:
 
 1.  Set the variable values.
 
@@ -81,5 +85,7 @@ To change the Admin URI and administrator password:
         | ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
         +----------------+---------------+-----------+------+
 
-#### Related topic
-[Merge an environment]({{page.baseurl}}cloud/env/environment-tutorial-env-merge.html)
+
+#### Next step
+*   [Set up Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html)
+

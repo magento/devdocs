@@ -1,8 +1,6 @@
 <div markdown="1">
 
-
-
-See one of the following:
+After the readiness check completes, see one of the following:
 
 *	[Readiness check success](#compman-readiness-success)
 *	[Readiness check failure](#compman-readiness-fail)
@@ -10,7 +8,7 @@ See one of the following:
 ### Readiness check success {#compman-readiness-success}
 The following figure shows an example of a successful readiness check. If all tests passed, click **Next** and continue with the next step.
 
-![If all readiness checks pass, click Next and continue with the next step]({{ site.baseurl }}common/images/cman_readiness-success.png)
+![If all readiness checks pass, click Next and continue with the next step]({{ site.baseurl }}common/images/extensman_readiness-success.png)
 
 ### Readiness check failure {#compman-readiness-fail}
 Messages similar to the following display if any readiness check fails. 
