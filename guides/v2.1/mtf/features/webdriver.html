@@ -825,13 +825,13 @@
 
 <ul id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-  <li><a href="#ftf-facebook-driver-install" id="markdown-toc-ftf-facebook-driver-install">Setup the Facebook web driver</a></li>
+  <li><a href="#ftf-facebook-driver-install" id="markdown-toc-ftf-facebook-driver-install">Set up the Facebook web driver</a></li>
   <li><a href="#add-and-setup-a-custom-web-driver" id="markdown-toc-add-and-setup-a-custom-web-driver">Add and setup a custom web driver</a></li>
 </ul>
 
 <h2 id="overview">Overview</h2>
 
-<p>The Functional Testing Framework (FTF) enables you to change a web driver library used for communication with Selenium Server, PhantomJS or any other web page automating tool.</p>
+<p>The Functional Testing Framework (FTF) enables you to change a web driver library used for communication with Selenium Server, PhantomJS or any other web page automation tool.</p>
 
 <p>Web drivers provided with the FTF are the following:</p>
 
@@ -842,11 +842,13 @@
 
 <p>Both implement the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/DriverInterface.php"><code>DriverInterface.php</code></a> interface. The interface declares methods that are used in web page automation such as <code>click()</code>, <code>isVisible()</code>, <code>setValue()</code>, <code>dragAndDrop()</code> etc.</p>
 
-<p>To use a custom web driver, you must implement the <code>DriverInterface.php</code> interface. Use provided web drivers as examples.</p>
+<p>To use a custom web driver, you must implement the <code>DriverInterface.php</code> interface.</p>
 
-<h2 id="ftf-facebook-driver-install">Setup the Facebook web driver</h2>
+<p>Use provided in the FTF web drivers as examples.</p>
 
-<p>To setup the Facebook web driver, follow:</p>
+<h2 id="ftf-facebook-driver-install">Set up the Facebook web driver</h2>
+
+<p>To set up the Facebook web driver, use the following steps:</p>
 
 <ol>
   <li>In <code>&lt;magento2&gt;/dev/tests/functional/etc/di.xml</code>, add the <code>&lt;preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\Facebook\Driver" /&gt;</code> element.</li>
@@ -860,7 +862,9 @@
   </li>
 </ol>
 
-<p>The test run procedure is not changed, you still need to <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium">run the Selenium Server</a>.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You still need to [run the Selenium Server] in order to run the tests, because at this point the test run procedure is not yet changed.</p>
+</div>
 
 <h2 id="add-and-setup-a-custom-web-driver">Add and setup a custom web driver</h2>
 
@@ -876,7 +880,7 @@
 <ol>
   <li>In <code>&lt;magento2&gt;/dev/tests/functional/etc/di.xml</code>, add the <code>&lt;preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\&lt;Your_driver&gt;\Driver" /&gt;</code> element.</li>
   <li>
-    <p>In <code>&lt;magento2&gt;/dev/tests/functional/composer.json</code>, add corresponding entry to the <code>"require"</code> list, if applicable. And run in your terminal:</p>
+    <p>In <code>&lt;magento2&gt;/dev/tests/functional/composer.json</code>, add corresponding entry to the <code>"require"</code> list (if related module is available on <a href="https://packagist.org/">Packagist</a>). And run in your terminal:</p>
 
     <pre><code> cd &lt;magento2&gt;/dev/tests/functional
  composer update
