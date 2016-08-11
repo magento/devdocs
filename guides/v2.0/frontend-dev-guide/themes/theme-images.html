@@ -887,12 +887,12 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 9 August 2016 (PDT)</i></p>
 		<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
 <p>The properties of product images used on the storefront are stored in the <code>view.xml</code> configuration file. This topic provides all details about what properties are available and how to configure them.</p>
 
-<p>The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the theme <code>view.xml</code> as well. For detail view the <a href="/guides/v2.0/javascript-dev-guide/widgets/widget_gallery.html">Gallery widget</a> topic.</p>
+<p>The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the theme <code>view.xml</code> as well. For more details, view the <a href="/guides/v2.0/javascript-dev-guide/widgets/widget_gallery.html">Gallery widget</a> topic.</p>
 
 <h2 id="view_xml_structure">Configure image properties in view.xml</h2>
 
@@ -1110,16 +1110,14 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 </table>
 
 <h4 id="resize-catalog-images">Resize catalog images</h4>
-<p>The <code>magento catalog:images:resize</code> command enables you to resize images for display on your storefront; for example:</p>
+<p>Generally, product images are cached while saving the product. However, the <code>magento catalog:images:resize</code> command enables you to resize all images for display on your storefront. Situations where this could be necessary might be:</p>
 
 <ul>
-  <li>After you import products, which might have variable sized images</li>
+  <li>After you import products, which might have images of various sizes</li>
   <li>If images were resized or deleted manually from cache</li>
 </ul>
 
 <p>Each image assigned to a product must be resized in accordance with image metadata defined in a module’s <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images"><code>view.xml</code></a> configuration file. After resizing an image, its resized copy is stored in the cache (<code>/pub/media/catalog/product/cache</code> directory). Magento serves storefront images from cache.</p>
-
-<p>Generally, product images are cached while saving the product. However, sometimes you might need to re-create the product images cache using this command—for example, after you import products, if images were resized manually in the cache, or if the cache was manually cleared by mistake.</p>
 
 <p>Command usage:</p>
 
