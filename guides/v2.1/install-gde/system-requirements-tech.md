@@ -27,7 +27,7 @@ Composer is required for developers who wish to contribute to the Magento 2 code
 
 MySQL 5.6
 
-MariaDB and Percona are compatible with Magento because because we support MySQL 5.6 APIs.
+MariaDB and Percona are compatible with Magento because we support MySQL 5.6 APIs.
 	
 ### PHP 
 
