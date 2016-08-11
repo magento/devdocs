@@ -34,7 +34,9 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 <!--- 55463/53793 -->* The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
 
+#### Performance
 
+<!--- 54682 -->* We've improved storefront performance when you use many variations of a configurable product.
 
 #### Miscellaneous
 

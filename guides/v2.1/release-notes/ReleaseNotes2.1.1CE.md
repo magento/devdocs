@@ -36,6 +36,10 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 
 
+#### Performance
+
+<!--- 54682 -->* We've improved storefront performance when you use many variations of a configurable product.
+
 
 #### Miscellaneous
 
