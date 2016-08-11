@@ -41,7 +41,7 @@ To set up the Facebook web driver, use the following steps:
         composer update
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>You still need to [run the Selenium Server] in order to run the tests, because at this point the test run procedure is not yet changed.</p>
+  <p>You still need to <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">run the Selenium Server</a> in order to run the tests, because at this point the test run procedure is not yet changed.</p>
 </div>
 
 ## Add and setup a custom web driver
@@ -59,10 +59,13 @@ To setup the custom web driver, follow:
         cd <magento2>/dev/tests/functional
         composer update
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You still need to <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">run the Selenium Server</a> in order to run the tests, because at this point the test run procedure is not yet changed.</p>
+</div>
+
 <!-- LINKS DEFINITION -->
 
 [`DriverInterface.php`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/DriverInterface.php
 [Facebook web driver library]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Driver/Facebook/Driver.php
 [Packagist]: https://packagist.org/
 [PHPUnit_Selenium library]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Driver/Selenium/Driver.php
-[run the Selenium Server]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium
