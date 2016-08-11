@@ -20,7 +20,7 @@ This article describes the following typical layout customization tasks:
 *	<a href="#create_cont">Create a container</a>
 *	<a href="#ref_container">Reference a container</a>
 *	<a href="#xml-manage-block">Create a block</a>
-*	<a href="#set_template">Set the template used by a block</a>
+*	<a href="#set_template">Set a block's template</a>
 *	<a href="#layout_markup_modify-block">Modify block arguments</a>
 *	<a href="#xml-manage-ref-block">Reference a block</a>
 *	<a href="#layout_markup_block-properties">Use block object methods to set block properties</a>
@@ -187,7 +187,7 @@ Example: pass the image to the `logo` block.
 </referenceBlock>
 {%endhighlight xml%}
 
-## Set the template used by a block {#set_template}
+## Set a block template {#set_template}
 
 There are two ways to set the template for a block:
 

@@ -44,7 +44,7 @@ The following components are used to extend the Form component:
 
     * Add a set of fields (the Fieldset component with the component of the Field) for entity or to implement the upload of Meta info in the DataProvider. 
 * Create the DataProvider class for the entity that implements DataProviderInterface
-* Add a component in Magento layout as a node: `<uiComponent name="customer_form"/>`
+* Add a component in your Magento layout as a node: `<uiComponent name="customer_form"/>`
 
 Example:
 

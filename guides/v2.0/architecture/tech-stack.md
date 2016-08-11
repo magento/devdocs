@@ -60,13 +60,13 @@ Magento’s highly modular structure includes the following open-source technolo
 *	Varnish (caching)
 *	Redis (used for page caching)
 *	Solr (search engine)
-*	Elasticserach (search engine)
+*	Elasticsearch (search engine)
 
 Magento is *compatible with but not supported* for:
 
 *	HHVM 3.9 PHP interpreter 
 
-Magento also provides a automated testing suites that include unit, integration, functional and performance test scripts, as well as JavaScript tests and tools for static code analysis. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. 
+Magento also provides automated testing suites that include unit, integration, functional and performance test scripts, as well as JavaScript tests and tools for static code analysis. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. 
 
 This framework is located in the `dev/tests` directory. The functional testing framework `mtf` can be found in a [separate repository](https://github.com/magento/mtf). For more information, see the [Functional Testing Framework]({{page.baseurl}}mtf/mtf_introduction.html) guide.
 

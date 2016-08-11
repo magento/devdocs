@@ -70,9 +70,12 @@ We recommend you create these files before you push to your repository; otherwis
   https://docs.platform.sh/drupal_migrate/guides/type/php/drupal/migrate/import-database.html
   https://docs.platform.sh/drupal_migrate/guides/type/php/drupal/migrate/import-files.html -->
 
-More information:
+#### More information
 
 *	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
 *	[`.routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
 *	[`.services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
 
+#### Next steps
+* [Set up an environment]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
+* [Set Magento Admin environment variables]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
