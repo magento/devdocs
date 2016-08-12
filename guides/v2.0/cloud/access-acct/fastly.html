@@ -1119,7 +1119,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 11 August 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 12 August 2016 (PDT)</i></p>
 		<h2 id="set-up-fastly">Set up Fastly</h2>
 <p><a href="https://www.fastly.com/why-fastly" target="_blank">Fastly</a> is required for Magento Enterprise Cloud Edition. It works with Varnish to provide fast caching capabilities and a Content Delivery Network (CDN) for static assets.</p>
 
@@ -1135,7 +1135,12 @@
 </ul>
 
 <h3 id="cloud-fastly-creds">Get your Fastly credentials</h3>
-<p>To get Fastly credentials, open a <a href="/guides/v2.0/cloud/get-help.html">support ticket</a>.</p>
+<p>To get Fastly credentials, open a <a href="/guides/v2.0/cloud/get-help.html">support ticket</a>. We’ll provide you with the following information so you can enable Fastly:</p>
+
+<ul>
+  <li>Fastly API key</li>
+  <li>Fastly service ID</li>
+</ul>
 
 <h3 id="cloud-fastly-start">Get started</h3>
 <p>Fastly recommends you do your development in its own branch because fine-tuning Fastly can be a complex process, depending on your needs and eCommerce shop size.</p>
@@ -1252,7 +1257,7 @@ composer require fastly/magento2:dev-master
 <div class="collapsible"><h4 class="collapsible-title">To configure Fastly: </h4><div class="collapsible-content"><p>Configure Fastly using the following:</p>
 
 <ul>
-  <li>Your Fastly service ID and API key are available in <a href="https://docs.fastly.com/guides/account-management-and-security/finding-and-managing-your-account-info" target="_blank">your Fastly account</a>.</li>
+  <li>We provide your Fastly service ID and API key.</li>
   <li>Set most other Fastly configuration options in the Magento Admin.</li>
   <li>Additional advanced options are in the Fastly configuration file, <code>fastly.vcl</code>.</li>
 </ul>
