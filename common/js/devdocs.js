@@ -52,4 +52,4 @@ $(document).scroll(function(){
 		$("#subnav-wrap").addClass("sticky-nav-main");
 	else
 		$("#subnav-wrap").removeClass("sticky-nav-main");
-}) 
+});
