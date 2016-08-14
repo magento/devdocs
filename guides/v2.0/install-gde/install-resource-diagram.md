@@ -10,6 +10,6 @@ version: 2.0
 github_link: install-gde/install-resource-diagram.md
 ---
 
-## Installation diagram
+## Installation flow diagram
 
-![]({{ site.baseurl }}common/images/install-diagram.png){:width="1100px"}
+{% include install/flow-diagram.md %}
