@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_pre
-subgroup: Getting Started
+subgroup: 01_resource
 title: Installation roadmap (reference)
 menu_title: Installation roadmap (reference)
 level3_menu_node: level3child
