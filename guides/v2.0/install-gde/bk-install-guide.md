@@ -2,8 +2,8 @@
 layout: default
 group: install2
 subgroup: Getting Started
-title: Installation overview
-menu_title: Installation overview
+title: Installation Guide
+menu_title: Installation Guide
 menu_node: 
 menu_order: 1
 version: 2.0
@@ -13,7 +13,7 @@ redirect_from:
   - /guides/v2.0/install-gde/install/install-merchbeta.html
 ---
 
-<h2>Magento software installation</h2>
+## Magento software installation
 Hi, we're glad you're among the 240,000 merchants worldwide who put their trust in our eCommerce software. We've gathered some information to help you get started with Magento and with your Magento installation. 
 
 We have some resources here to help get you started using the eCommerce platform of the future&mdash;Magento 2.
