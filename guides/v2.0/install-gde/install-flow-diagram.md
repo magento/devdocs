@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install2
-subgroup: Getting started
+subgroup: Getting Started
 title: Installation flow diagram
 menu_title: Installation flow diagram
 menu_order: 2
