@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: 01_resource
-title: Installation roadmap (reference)
-menu_title: Installation roadmap (reference)
+title: Installation flow diagram
+menu_title: Installation flow diagram
 menu_node: 
 menu_order: 5
 version: 2.0
