@@ -21,7 +21,7 @@ We have some resources here to help get you started using the eCommerce platform
 
 It’s what we do.
 
-Consult the following table for how to get started.
+Consult the following table for how to get started installing Magento Community Edition (CE) or Magento Enterprise Edition (EE).
 
 <table>
 	<tbody>
@@ -34,42 +34,39 @@ Consult the following table for how to get started.
 	<tr>
 		<td><p>Easy installation, command line, have your own server</p></td>
 		<td><p>Some technical expertise, command line access to the Magento server.</p>
-			<p>Enables you to install and upgrade the Magento software and other components using either the <a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Web Setup Wizard</a> or the <a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">command line</a>.</p></td>
+			<p>Enables you to install the Magento software and extensions using either the <a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Web Setup Wizard</a> or the <a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">command line</a>.</p></td>
 		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
 			<li>Extracts it on the Magento server or asks a network administrator to do so.</li>
 			<li>Installs the Magento software using the Web Setup Wizard or command line.</li>
-			<li>Upgrade the Magento application and components using the Web Setup Wizard or command line.</li></ol>
+			<li>Upgrades the Magento application and extensions using the <a href="{{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html">Web Setup Wizard</a> or <a href="{{ page.baseurl }}comp-mgr/cli/cli-upgrade.html">command line</a>.</li></ol>
 		</td>
 		<td><p><a href="{{page.baseurl}}install-gde/prereq/zip_install.html">Easy installation (own server)</a></p></td>
 	</tr>
 	<tr>
 		<td><p>Integrator, packager</p></td>
-		<td><p>Wants full control over all components installed, has access to the Magento server, highly technical, might repackage Magento CE with other components.</p></td>
+		<td><p>Wants full control over all components installed, has access to the Magento server, highly technical, might repackage Magento CE with other components.</p>
+		<p>Enables you to install the Magento software and extensions using either the <a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Web Setup Wizard</a> or the <a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">command line</a>.</p></td>
 		<td><ol><li>Creates a Composer <em>project</em> that contains the list of components to use.</li>
 			<li>Uses Composer to update package dependencies; uses <code>composer create-project</code> to get the Magento metapackage.</li>
-			<li>Installs the Magento software using either a command line or the Setup Wizard.</li></ol>
+			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>
+		<li>Upgrades the Magento application and extensions using the <a href="{{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html">Web Setup Wizard</a> or <a href="{{ page.baseurl }}comp-mgr/cli/cli-upgrade.html">command line</a>.</li</ol>
 		<td><p><a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Get the metapackage</a></p></td>
 	</td>
 
 	</tr>
 	<tr>
 		<td><p>Contributing developer</p></td>
-		<td><p>Contributes to the Magento codebase, highly technical, has their own Magento development server, understands Composer and GitHub.</p></td>
+		<td><p>Contributes to the Magento codebase, highly technical, has their own Magento development server, understands Composer and GitHub.</p>
+			<p>Enables you to install the Magento software and extensions using either the <a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Web Setup Wizard</a> or the <a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">command line</a>.</p>
+			<p>Upgrades the Magento application and extensions using <a href="{{ page.baseurl }}install-gde/install/cli/dev_options.html">Composer and GitHub commands</a>. <em>Cannot</em> use the Web Setup Wizard for upgrades.</p></td>
 		<td><ol><li>Clones the Magento 2 GitHub repository.</li>
 			<li>Uses Composer to update package dependencies.</li>
-			<li>Installs the Magento software using either a command line or the Setup Wizard.</li></ol>
+			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>
+			<li>Upgrades the Magento software using Composer and GitHub commands.</li></ol>
 		<td><p><a href="{{page.baseurl}}install-gde/prereq/dev_install.html">Clone the Magento repository</a></p></td>
 	</td>
 	</tr>
-		<tr>
-		<td><p>Shared hosting, easy installation, no command line access</p></td>
-		<td><p>Uses a hosting provider, has very little technical expertise, limited if any access to the Magento server.</p></td>
-		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
-			<li>Extracts it on the Magento server.</li>
-			<li>Installs the Magento software using the Setup Wizard.</li></ol>
-		</td>
-		<td><p><a href="{{page.baseurl}}install-gde/install/hosted/hosted_start.html">Easy installation (shared hosting)</a></p></td>
-	</tr>
+		
 	
 	</tbody>
 </table>
