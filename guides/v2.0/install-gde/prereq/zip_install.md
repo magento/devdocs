@@ -25,6 +25,8 @@ The audience for this topic is anyone who downloaded a compressed Magento softwa
 
 {% include install/prereq.md %}
 
+## Get the Magento software
+
 {% include install/get-software_zip.md %}
 
 <h2 id="zip-transfer">Transfer the Magento archive to your server</h2>
