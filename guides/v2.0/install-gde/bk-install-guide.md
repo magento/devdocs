@@ -9,6 +9,7 @@ menu_order: 1
 version: 2.0
 github_link: install-gde/bk-install-guide.md
 redirect_from: 
+  - /guides/v2.0/install-gde/continue.html
   - /guides/v1.0/install-gde/bk-install-guide.html
   - /guides/v2.0/install-gde/install/install-merchbeta.html
 ---
@@ -20,62 +21,65 @@ We have some resources here to help get you started using the eCommerce platform
 
 It’s what we do.
 
-## Ready to go?
-If your Magento server is already set up and ready to go, check out our [Installation quick reference]({{ page.baseurl }}install-gde/install-quick-ref.html) and get started right away.
-
-<h2 id="install-how-install">Step 1: Find the installation that's right for you</h2>
-<a href="{{page.baseurl}}install-gde/continue.html">Choose how to get the Magento software</a>.
-
-<h2 id="install-verify-prereq">Step 2: Verify your prerequisites</h2>
-Use the following table to verify you have the correct prerequisites to install the Magento software. If you used a shared hosting provider, you can skip this step.
+Consult the following table for how to get started.
 
 <table>
 	<tbody>
 		<tr>
-			<th>Prerequisite</th>
-			<th>How to check</th>
-			<th>For more information</th>
+			<th>User needs</th>
+			<th>Description</th>
+			<th>High-level installation and upgrade steps</th>
+			<th>Get started link</th>
 		</tr>
 	<tr>
-		<td><p>Apache 2.2 or 2.4</p></td>
-		<td><p>Ubuntu: <code>apache2 -v</code></p>
-		<p>CentOS: <code>httpd -v</code></p></td>
-		<td><p><a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a></p>
-			<p>(Don't forget to <a href="{{page.baseurl}}install-gde/prereq/apache.html#apache-help-rewrite">enable rewrites and <code>.htaccess</code></a>!)</p></td>
+		<td><p>Easy installation, command line, have your own server</p></td>
+		<td><p>Some technical expertise, command line access to the Magento server.</p>
+			<p>Enables you to install and upgrade the Magento software and other components using either the <a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Web Setup Wizard</a> or the <a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">command line</a>.</td>
+		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
+			<li>Extracts it on the Magento server or asks a network administrator to do so.</li>
+			<li>Installs the Magento software using the Web Setup Wizard or command line.</li>
+			<li>Upgrade the Magento application and components using the Web Setup Wizard or command line.</li></ol>
+		</td>
+		<td><p><a href="{{page.baseurl}}install-gde/prereq/zip_install.html">Easy installation (own server)</a></p></td>
 	</tr>
 	<tr>
-		<td><p>PHP 7.0.2–7.0.6 except for 7.0.5, 5.6.x or 5.5.x (PHP 5.4 is not supported)</p>
-			<p>See <a href="{{page.baseurl}}install-gde/trouble/tshoot_install-issues.html#known-devrc-php">Known issue with certain PHP versions</a></p></td>
-		<td><p><code>php -v</code></p></td>
-		<td><a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a><br><a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP CentOS</a></td>
+		<td><p>Integrator, packager</p></td>
+		<td><p>Wants full control over all components installed, has access to the Magento server, highly technical, might repackage Magento CE with other components.</p></td>
+		<td><ol><li>Creates a Composer <em>project</em> that contains the list of components to use.</li>
+			<li>Uses Composer to update package dependencies; uses <code>composer create-project</code> to get the Magento metapackage.</li>
+			<li>Installs the Magento software using either a command line or the Setup Wizard.</li></ol>
+		<td><p><a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Get the metapackage</a></p></td>
+	</td>
+
 	</tr>
-	<tr><td><p>MySQL 5.6.x</p></td>
-	<td><p><code>mysql -u &lt;root user name> -p</code></p></td>
-	<td><a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a></td>
+	<tr>
+		<td><p>Contributing developer</p></td>
+		<td><p>Contributes to the Magento codebase, highly technical, has their own Magento development server, understands Composer and GitHub.</p></td>
+		<td><ol><li>Clones the Magento 2 GitHub repository.</li>
+			<li>Uses Composer to update package dependencies.</li>
+			<li>Installs the Magento software using either a command line or the Setup Wizard.</li></ol>
+		<td><p><a href="{{page.baseurl}}install-gde/prereq/dev_install.html">Clone the Magento repository</a></p></td>
+	</td>
 	</tr>
-</tbody>
+		<tr>
+		<td><p>Shared hosting, easy installation, no command line access</p></td>
+		<td><p>Uses a hosting provider, has very little technical expertise, limited if any access to the Magento server.</p></td>
+		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
+			<li>Extracts it on the Magento server.</li>
+			<li>Installs the Magento software using the Setup Wizard.</li></ol>
+		</td>
+		<td><p><a href="{{page.baseurl}}install-gde/install/hosted/hosted_start.html">Easy installation (shared hosting)</a></p></td>
+	</tr>
+	
+	</tbody>
 </table>
 
-<h2>Step 3: Install Magento</h2>
-*	Easy installation: <a href="{{page.baseurl}}install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
-
-	<a href="{{page.baseurl}}install-gde/install/web/install-web-sample-data.html">Install optional sample data (Setup Wizard)</a>
-*	Advanced installation with more control: <a href="{{page.baseurl}}install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>
-
-	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-sample-data.html">Install optional sample data (command line)</a>
-
-<h2>Post-installation</h2>
-*	<a href="{{page.baseurl}}install-gde/install/verify.html">Verify the installation</a>
-*	<a href="{{page.baseurl}}install-gde/trouble/tshoot.html">Troubleshooting</a>
-*	<a href="{{page.baseurl}}install-gde/install/sample-data-after-magento.html">Install optional sample data after Magento</a>
-*	<a href="{{page.baseurl}}install-gde/install/post-install-config.html">Configuring</a>
-
-<h2>Useful information</h2>
+## Useful information
 At any time during your installation, take advantage of our <a href="{{page.baseurl}}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{page.baseurl}}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>. They're really easy to use; the tutorial walks you through a sample installation. The roadmap provides links to common tasks throughout the guide.
 
 Use the links on the left side of the page to navigate topics in each part of the installation.
 
-<h2>Required server permissions</h2>
+## Required server permissions
 UNIX systems require `root` privileges to install and configure software like a web server, PHP, and so on. If you need to install this software, make sure you have `root` access.
 
 You should *not* install the Magento software in the web server docroot as the `root` user because the web server might not be able to interact with those files. 

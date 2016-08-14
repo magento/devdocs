@@ -1,7 +1,7 @@
 ---
 layout: default
-group: cloud
-subgroup: 08_env
+group: install2
+subgroup: Getting Started
 title: Just the basics
 menu_title: Just the basics
 menu_order: 100
