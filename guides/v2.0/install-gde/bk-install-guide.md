@@ -34,7 +34,7 @@ Consult the following table for how to get started.
 	<tr>
 		<td><p>Easy installation, command line, have your own server</p></td>
 		<td><p>Some technical expertise, command line access to the Magento server.</p>
-			<p>Enables you to install and upgrade the Magento software and other components using either the <a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Web Setup Wizard</a> or the <a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">command line</a>.</td>
+			<p>Enables you to install and upgrade the Magento software and other components using either the <a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Web Setup Wizard</a> or the <a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">command line</a>.</p></td>
 		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
 			<li>Extracts it on the Magento server or asks a network administrator to do so.</li>
 			<li>Installs the Magento software using the Web Setup Wizard or command line.</li>
