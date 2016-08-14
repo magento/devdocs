@@ -11,5 +11,8 @@ github_link: install-gde/install-resource-diagram.md
 ---
 
 ## Installation flow diagram
+The following diagram provides a high-level overview of installing the Magento software:
 
 {% include install/flow-diagram.md %}
+
+
