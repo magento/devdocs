@@ -4,8 +4,6 @@ group: install_pre
 subgroup: 01_resource
 title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)
-level3_menu_node: level3child
-level3_subgroup: resource
 menu_node: 
 menu_order: 2
 version: 2.0
