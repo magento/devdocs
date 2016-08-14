@@ -19,7 +19,7 @@ github_link: install-gde/prereq/zip_install.md
 *	[Set pre-installation file system ownership and permissions](#perms-over) 
 
 <h2 id="integrator-aud">Intended audience</h2>
-The audience for this topic is anyone who downloaded a compressed Magento software archive (`.zip` or `.tar`). If you'd rather use Composer, go back and <a href="{{page.baseurl}}install-gde/continue.html">choose another starting point</a>.
+The audience for this topic is anyone who downloaded a compressed Magento software archive (`.zip` or `.tar`). If you'd rather use Composer, go back and <a href="{{page.baseurl}}install-gde/bk-install-guide.html">choose another starting point</a>.
 
 <h2 id="zip-prereq">Prerequisites</h2>
 Before you continue, make sure you've done all of the following:
