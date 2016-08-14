@@ -49,7 +49,7 @@ Consult the following table for how to get started installing Magento Community 
 		<td><ol><li>Creates a Composer <em>project</em> that contains the list of components to use.</li>
 			<li>Uses Composer to update package dependencies; uses <code>composer create-project</code> to get the Magento metapackage.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>
-		<li>Upgrades the Magento application and extensions using the <a href="{{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html">Web Setup Wizard</a> or <a href="{{ page.baseurl }}comp-mgr/cli/cli-upgrade.html">command line</a>.</li</ol>
+		<li>Upgrades the Magento application and extensions using the <a href="{{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html">Web Setup Wizard</a> or <a href="{{ page.baseurl }}comp-mgr/cli/cli-upgrade.html">command line</a>.</li></ol>
 		<td><p><a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Get the metapackage</a></p></td>
 	</td>
 
@@ -64,7 +64,6 @@ Consult the following table for how to get started installing Magento Community 
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>
 			<li>Upgrades the Magento software using Composer and GitHub commands.</li></ol></td>
 		<td><p><a href="{{page.baseurl}}install-gde/prereq/dev_install.html">Clone the Magento repository</a></p></td>
-	</td>
 	</tr>
 		
 	
