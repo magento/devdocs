@@ -62,7 +62,7 @@ Consult the following table for how to get started installing Magento Community 
 		<td><ol><li>Clones the Magento 2 GitHub repository.</li>
 			<li>Uses Composer to update package dependencies.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>
-			<li>Upgrades the Magento software using Composer and GitHub commands.</li></ol>
+			<li>Upgrades the Magento software using Composer and GitHub commands.</li></ol></td>
 		<td><p><a href="{{page.baseurl}}install-gde/prereq/dev_install.html">Clone the Magento repository</a></p></td>
 	</td>
 	</tr>
