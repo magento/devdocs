@@ -865,15 +865,16 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 15 August 2016 (PDT)</i></p>
 		<h2> What's in this topic</h2>
 
-<p>This topic contains the basic information about how to customize the view of an existing checkout step. In the Magento application, checkout is implemented using UI components, so you can customize each step in the process by changing the JavaScript implementation or template for a component, adding a component or disabling a component.</p>
+<p>This topic contains the basic information about how to customize the view of an existing checkout step. In the Magento application, checkout is implemented using UI components. You can customize each step by changing the JavaScript implementation or template for a component, adding, removing or disabling a component.</p>
 
 <ul id="markdown-toc">
   <li><a href="#change-the-components-js-implementation-and-template" id="markdown-toc-change-the-components-js-implementation-and-template">Change the component’s .js implementation and template</a></li>
   <li><a href="#add-the-new-component-to-the-checkout-page-layout" id="markdown-toc-add-the-new-component-to-the-checkout-page-layout">Add the new component to the checkout page layout</a></li>
   <li><a href="#disable-a-component" id="markdown-toc-disable-a-component">Disable a component</a></li>
+  <li><a href="#remove-a-component" id="markdown-toc-remove-a-component">Remove a component</a></li>
 </ul>
 
 <h2 id="change-the-components-js-implementation-and-template">Change the component’s .js implementation and template</h2>
@@ -953,7 +954,7 @@
 
 <p>Any UI component is added in the <code>checkout_index_index.xml</code> similar to the way a <a href="/guides/v2.0/howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout">checkout step component is added</a>.</p>
 
-<p>Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the <code>uiComponent</code> alias), its child components are rendered without any conditions. But if a parent component is a an extenstion of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain <code>displayArea</code>.</p>
+<p>Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the <code>uiComponent</code> alias), its child components are rendered without any conditions. But if a parent component is a an extension of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain <code>displayArea</code>.</p>
 
 <h2 id="disable-a-component">Disable a component</h2>
 <p>To disable the component in your <code>checkout_index_index.xml</code> use the following instructions:</p>
@@ -964,6 +965,21 @@
     <span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/item&gt;</span></code></pre></figure>
 
+<h2 id="remove-a-component">Remove a component</h2>
+
+<p>To remove a component from layout rendering, you need to create a <a href="/guides/v2.0/guides/v2.1/extension-dev-guide/plugins.html">plugin</a> for the <code>\Magento\Checkout\Block\Checkout\LayoutProcessor::process</code> method. In your plugin, implement the around method removing the corresponding layout nodes at run-time.</p>
+
+<p>The following sample is an example of the around method removing a component:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">unset($jsLayout[&#39;components&#39;][&#39;checkout&#39;][&#39;children&#39;][&#39;steps&#39;][%path_to_target_node%]); //%path_to_target_node% is the path to the component&#39;s node in checkout_index_index.xml</span>
+<span class="x">return $jsLayout;</span></code></pre></figure>
+
+<p>(If you want to use this sample in your code, replace the <code>%path_to_target_node%</code> placeholder with real value.)</p>
+
+<div class="bs-callout bs-callout-info">
+  <p>Disable vs remove a component </p>
+<p>If you disable a component, it is loaded but not rendered. If you remove a component, it is not loaded.</p>
+</div>
 
 
 		</div>
