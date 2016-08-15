@@ -120,3 +120,8 @@ return $jsLayout;
 {%endhighlight%} 
 
 (If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.)
+
+<div class="bs-callout bs-callout-info">
+  <p>Disable vs remove a component </p>
+<p>If you disable a component, it is loaded but not rendered. If you remove a component, it is not loaded.</p>
+</div>
