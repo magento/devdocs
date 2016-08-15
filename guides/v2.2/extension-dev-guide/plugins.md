@@ -102,6 +102,40 @@ class ProductPlugin
 ?>
 {% endhighlight %}
 
+If observed method has arguments then "after" method of plugin accept all this arguments in the same order as in observed method. Arguments are declared and passed to "after" method directly after result. If observed method has arguments and doesn't return the result (@return void) - then null is provided to "after" method as a result. Below is an example of an after method that accepts null (void) result and all arguments from observed method:
+
+{% highlight PHP %}
+<?php
+
+namespace My\Module\Plugin;
+
+class AuthPlugin
+{
+    private $logger
+
+    public function __construct(\Psr\Log\LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    /**
+     * @param \Magento\Backend\Model\Auth $authModel
+     * @param null $result
+     * @param string $username
+     * @param string $password
+     * @return void
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function afterLogin(\Magento\Backend\Model\Auth $authModel, $result, $username, $password)
+    {
+        $this->logger->debug('User ' . $username . ' signed in.');
+    }
+}
+?>
+{% endhighlight %}
+
+Please, also take into account that if argument is optional in observed method - then it should be also declared as optional in after method.
+
 #### Around methods
 Around methods are defined such that their code is run both before and after the observed method. This allows you to completely override a method. Around methods must have the same name as the observed method with 'around' as the prefix.
 
