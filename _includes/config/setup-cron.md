@@ -67,4 +67,6 @@ Example:
 
 	* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /var/www/magento2/var/log/magento.cron.log
 
+The preceding works for contributing developers because if you cloned the GitHub repository you don't have an `update` directory and errors result if you run `magento setup:cron:run`. These cron jobs work in the Web Setup Wizard, which contributing developers cannot use for installing or updating the Magento application or components. 
+
 Save your changes to the crontab and exit the editor.
