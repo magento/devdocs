@@ -689,6 +689,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/out-of-memory.html">Out of memory errors</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/gitignore.html">Missing .gitignore files</a></li>
 
 									
@@ -729,7 +737,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/rc_perms.html">file permissions readiness check issues</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/rc_perms.html">File permissions readiness check issues</a></li>
 
 									
 
@@ -900,7 +908,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 28 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 15 August 2016 (PDT)</i></p>
 		<h2 id="troubleshoot-upgrade-issues">Troubleshoot upgrade issues</h2>
 <p>This section discusses upgrade issues to Magento version 2.0.4. Symptoms include any of the following errors during the upgrade process:</p>
 
@@ -961,25 +969,48 @@ PHP   3. Symfony\Component\Console\Application-&gt;__construct() /var/www/html/e
 <pre><code>ls /var/www/magento2/var/session
 </code></pre>
 
-<p>If there are files in that directory, you must set permissions; if there are no files in that directory, you can skip the remainder of this section and continue with <a href="/guides/v2.1/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a>.</p>
+<p>If there are files in that directory, you must set permissions; if there are no files in that directory, you can skip the remainder of this topic and continue with <a href="/guides/v2.1/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a>.</p>
 
 <p>To set file system permissions before upgrade:</p>
 
 <ol>
   <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
   <li>
-    <p>Enter the following command:</p>
+    <p>Enter one of the following commands:</p>
 
-    <pre><code>chmod -R 770 &lt;your Magento install dir&gt;/var/session
+    <ul>
+      <li>
+        <p>One Magento user (typical of shared hosting):</p>
+
+        <pre><code>cd &lt;your Magento install dir&gt;
+find var -type f -exec chmod u+w {} \;
+find var -type d -exec chmod u+w {} \;
 </code></pre>
 
-    <p>For example,</p>
+        <p>If you don’t have access to a command line, use a file manager tool provided by your hosting provider to set permissions.</p>
+      </li>
+      <li>
+        <p>Two Magento users:</p>
 
-    <pre><code>chmod -R 770 /var/www/magento2/var/session
+        <pre><code>cd &lt;your Magento install dir&gt;
+find var -type f -exec chmod g+w {} \;
+find var -type d -exec chmod g+ws {} \;
+chown -R :&lt;web server group&gt; .
 </code></pre>
+
+        <p>For example, on CentOS where the web server group is typically <code>apache</code>:</p>
+
+        <pre><code>cd /var/www/html/magento2
+find var -type f -exec chmod g+w {} \;
+find var -type d -exec chmod g+ws {} \;
+chown -R :apache .
+</code></pre>
+      </li>
+    </ul>
   </li>
-  <li>Continue with the next section.</li>
 </ol>
+
+<p>For additional details about file ownership and permissions, see <a href="/guides/v2.1/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a>.</p>
 
 
 		</div>

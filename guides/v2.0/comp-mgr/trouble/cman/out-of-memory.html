@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 2. Readiness check</title>
+	<title>Out of memory errors</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/trouble/cman/out-of-memory.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -167,9 +167,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Step 2. Readiness check</h1>
+		<h1 class="page-heading">Out of memory errors</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/trouble/cman/out-of-memory.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -597,7 +597,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a></li>
 
 									
 
@@ -691,7 +691,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/out-of-memory.html">Out of memory errors</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/trouble/cman/out-of-memory.html">Out of memory errors</a></li>
 
 									
 
@@ -894,47 +894,47 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 24 July 2016 (PDT)</i></p>
-		<h2 id="step-2-readiness-check">Step 2. Readiness check</h2>
-<p>The readiness check makes sure your server and environment are set up correctly for upgrading components. In the event of errors, you can consult troubleshooting suggestions in this guide.</p>
+			<p align="right"><i>Updated: 15 August 2016 (PDT)</i></p>
+		<h2 id="out-of-memory-errors">Out of memory errors</h2>
+<p>Sometimes when you attempt to install or update, you can encounter an error due to your system running out of physical memory. We recommend you create a swap file to avoid this error.</p>
 
-<h2 id="compman-readiness-start">Start the readiness check</h2>
-<p>To start, click either <strong>Start Readiness Check</strong> or <strong>Next</strong> on the System Upgrade page. A sample follows.</p>
+<h3 id="symptom">Symptom</h3>
+<p>When installing or updating the Magento application or components like extensions, themes, or language packages, an error similar to the following displays:</p>
 
-<p><img src="/common/images/upgr_readiness.png" width="650px" alt="The readiness check enables you to find out if your server and environment are ready to proceed" /></p>
+<pre><code>Could not complete update {"components":[
+{"name":"magento/module-bundle-sample-data","version":"100.1.0"}
+]} successfully: proc_open(): fork failed - Cannot allocate memory
+</code></pre>
 
-<div>
+<p>The error <code>proc_open(): fork failed - Cannot allocate memory</code> can also display on the command line.</p>
 
-  <p>After the readiness check completes, see one of the following:</p>
+<h3 id="description">Description</h3>
+<p>Because we recommend you allocate <a href="/guides/v2.0/install-gde/prereq/php-centos.html#instgde-prereq-timezone">2GB of memory to PHP</a>, this error can display on systems with less than 2GB of phyiscal memory. The error might mean you have exhausted the physical memory in your machine.</p>
 
-  <ul>
-    <li><a href="#compman-readiness-success">Readiness check success</a></li>
-    <li><a href="#compman-readiness-fail">Readiness check failure</a></li>
-  </ul>
+<h3 id="solution">Solution</h3>
+<p>First, make sure you allocated 2GB of memory for PHP; otherwise, your installation or upgrade might run out of memory even if your system has enough memory.</p>
 
-  <h3 id="compman-readiness-success">Readiness check success</h3>
-  <p>The following figure shows an example of a successful readiness check. If all tests passed, click <strong>Next</strong> and continue with the next step.</p>
+<p>If you’ve already done that, create a swap file on your machine. A Linux machine uses <em>swap space</em> if it needs more memory resources and the RAM is full. The swap space is used for inactive pages in memory.</p>
 
-  <p><img src="/common/images/extensman_readiness-success.png" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
+<p>The following are suggestions only; other options might be available. Consult a network administrator or another knowledgeable resource before you continue. You must run the commands to create a swap file as a user with <code>root</code> privileges.</p>
 
-  <h3 id="compman-readiness-fail">Readiness check failure</h3>
-  <p>Messages similar to the following display if any readiness check fails.</p>
+<h4 id="swap-file-on-ubuntu">Swap file on Ubuntu</h4>
+<p>Use the <code>fallocate</code> command as discussed in these references:</p>
 
-  <p><img src="/common/images/cman_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue" /></p>
+<ul>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04" target="_blank">How To Add Swap on Ubuntu 14.04 (Digitalocean)</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04" target="_blank">How To Add Swap Space on Ubuntu 16.04 (Digitalocean)</a></li>
+  <li><a href="https://help.ubuntu.com/community/SwapFaq" target="_blank">SwapFaq (help.ubuntu.com)</a></li>
+</ul>
 
-  <p>In the event of failure, see one of the following sections:</p>
+<h4 id="swap-file-on-centos">Swap file on CentOS</h4>
+<p>Use the <code>mkswap</code> command as discussed in these references:</p>
 
-  <ul>
-    <li><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Updater check failure</a></li>
-    <li><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Cron script check failure</a></li>
-    <li><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a></li>
-    <li><a href="/guides/v2.0/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a></li>
-    <li><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
-    <li><a href="/guides/v2.0/install-gde/system-requirements.html">PHP extensions check failure</a></li>
-    <li><a href="/guides/v2.0/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a></li>
-  </ul>
-
-</div>
+<ul>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-centos-6" target="_blank">How To Add Swap on CentOS 6 (Digitalocean)</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-centos-7" target="_blank">How To Add Swap on CentOS 7 (Digitalocean)</a></li>
+  <li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/ch-swapspace.html" target="_blank">Swap Space (RedHat customer portal)</a></li>
+</ul>
 
 
 		</div>

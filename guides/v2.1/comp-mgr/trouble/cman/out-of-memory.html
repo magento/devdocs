@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 2. Readiness check</title>
+	<title>Out of memory errors</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">
+	<link rel="canonical" href="//guides/v2.1/comp-mgr/trouble/cman/out-of-memory.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -41,13 +41,13 @@
 			<div class="main-site-name">
 				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
 			
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
-		Version 2.0
+		Version 2.1
 	</button>
 
 
@@ -78,64 +78,66 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
 
             </ul>
          </li>
          <li class="first">
             <a href="#">System Administrator</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
                
-               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
                
-               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
             </ul>
          </li>
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+               
+                   <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
                
             </ul>
          </li>
          <li class="first">
             <a href="#">Designers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-               <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
             </ul>
          </li>
          <li class="first">
             <a href="#">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
             </ul>
          </li>
           <li class="first">
-              <a href="/guides/v2.0/test/testing.html">Testing</a>
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
               <ul class="menu nav">
-                  <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
               </ul>
           </li>
          <li class="first">
-            <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Do I...?</a>
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
          </li>
       </ul>
 
@@ -167,9 +169,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Step 2. Readiness check</h1>
+		<h1 class="page-heading">Out of memory errors</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/trouble/cman/out-of-memory.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -259,10 +261,6 @@
 
 				
 
-			
-
-				
-
 					
 					
 
@@ -279,93 +277,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Upgrade the Magento application and components</a></li>
-									
-								
-
-									
-
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/prereq/prereq_compman.html">Prerequisites</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.html">Set ulimit for the web server user</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_cron.html">Set up cron for Component Manager and System Upgrade</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-checklist.html">Update and upgrade checklist</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/marketplace/marketplace.html">Magento Marketplace example</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Upgrade the Magento application and components</a></li>
 									
 								
 
@@ -392,7 +304,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/module-man/compman-checklist.html">Run the Component Manager</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/prereq/prereq_compman.html">Prerequisites</a></li>
 									
 								
 
@@ -403,7 +315,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/module-man/compman-start.html">Start the Component Manager</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a></li>
 
 									
 
@@ -411,7 +323,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/module-man/compman-main-pg.html">Manage your components</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/prereq/prereq_compman-ulimit.html">Set ulimit for the web server user</a></li>
 
 									
 
@@ -419,7 +331,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/module-man/compman-readiness.html">Step 1. Readiness check</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/prereq/prereq_cron.html">Set up cron for Component Manager and System Upgrade</a></li>
 
 									
 
@@ -427,7 +339,93 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/module-man/compman-backup.html">Step 2. Back up the file system and database</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/prereq/prereq_compman-checklist.html">Update and upgrade checklist</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/marketplace/marketplace.html">Magento Marketplace example</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/module-man/compman-checklist.html">Run the Component Manager</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/module-man/compman-start.html">Start the Component Manager</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/module-man/compman-main-pg.html">Manage your components</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/module-man/compman-readiness.html">Step 1. Readiness check</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/module-man/compman-backup.html">Step 2. Back up the file system and database</a></li>
 
 									
 
@@ -445,7 +443,7 @@
 									
 
 
-											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.0/comp-mgr/module-man/compman-new-purchase.html">Component Install</a>
+											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.1/comp-mgr/module-man/compman-new-purchase.html">Component Install</a>
 
 
 									
@@ -455,7 +453,7 @@
 									
 
 
-											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.0/comp-mgr/module-man/compman-update.html">Component Update</a>
+											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.1/comp-mgr/module-man/compman-update.html">Component Update</a>
 
 
 									
@@ -465,7 +463,7 @@
 									
 
 
-											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.0/comp-mgr/module-man/compman-enable-disable.html">Enable/Disable</a>
+											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.1/comp-mgr/module-man/compman-enable-disable.html">Enable/Disable</a>
 
 
 									
@@ -475,7 +473,7 @@
 									
 
 
-											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.0/comp-mgr/module-man/compman-uninst-data.html">Data Option</a>
+											<li class="level3Child step3 " data-menunode="step3"><a href="/guides/v2.1/comp-mgr/module-man/compman-uninst-data.html">Data Option</a>
 
 
 									
@@ -484,69 +482,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/module-man/compman-uninst-final.html">Step 4. Uninstall</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from CE to EE</a></li>
-									
-								
-
-									
-
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/cli/cli-upgrade.html">Command-line upgrade</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade to Magento 2.1 with sample data</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/module-man/compman-uninst-final.html">Step 4. Uninstall</a></li>
 
 									
 
@@ -570,7 +506,34 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/upgrader/upgrade-checklist.html">Run System Upgrade</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from CE to EE</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/cli/cli-upgrade.html">Command-line upgrade</a></li>
 									
 								
 
@@ -581,39 +544,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-backup.html">Step 3. Back up the file system and database</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade to Magento 2.1 with sample data</a></li>
 
 									
 
@@ -637,7 +568,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/updater/update-updater.html">Update the updater application</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/upgrader/upgrade-checklist.html">Run System Upgrade</a></li>
 									
 								
 
@@ -648,7 +579,39 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/updater/updater.html">Updater application</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/upgrader/upgrade-backup.html">Step 3. Back up the file system and database</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a></li>
 
 									
 
@@ -672,7 +635,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/updater/update-updater.html">Update the updater application</a></li>
 									
 								
 
@@ -683,103 +646,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/were-sorry.html">Sorry, we can't take that action right now</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/out-of-memory.html">Out of memory errors</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/gitignore.html">Missing .gitignore files</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Troubleshoot the updater application</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/rc_perms.html">File permissions readiness check issues</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/update-fail.html">Roll back after update failure</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Resolve component dependency readiness check issues</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/maint-mode.html">Maintenance mode options for upgrade</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/updater/updater.html">Updater application</a></li>
 
 									
 
@@ -792,6 +659,153 @@
 
 					
 
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/comp-mgr/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/were-sorry.html">Sorry, we can't take that action right now</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/comp-mgr/trouble/cman/out-of-memory.html">Out of memory errors</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/gitignore.html">Missing .gitignore files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/upgrade_51431.html">Troubleshoot upgrade issues</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/updater.html">Troubleshoot the updater application</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/rc_perms.html">File permissions readiness check issues</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/update-fail.html">Roll back after update failure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/component-depend.html">Resolve component dependency readiness check issues</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/maint-mode.html">Maintenance mode options for upgrade</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
 
 				
 
@@ -894,47 +908,47 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 24 July 2016 (PDT)</i></p>
-		<h2 id="step-2-readiness-check">Step 2. Readiness check</h2>
-<p>The readiness check makes sure your server and environment are set up correctly for upgrading components. In the event of errors, you can consult troubleshooting suggestions in this guide.</p>
+			<p align="right"><i>Updated: 15 August 2016 (PDT)</i></p>
+		<h2 id="out-of-memory-errors">Out of memory errors</h2>
+<p>Sometimes when you attempt to install or update, you can encounter an error due to your system running out of physical memory. We recommend you create a swap file to avoid this error.</p>
 
-<h2 id="compman-readiness-start">Start the readiness check</h2>
-<p>To start, click either <strong>Start Readiness Check</strong> or <strong>Next</strong> on the System Upgrade page. A sample follows.</p>
+<h3 id="symptom">Symptom</h3>
+<p>When installing or updating the Magento application or components like extensions, themes, or language packages, an error similar to the following displays:</p>
 
-<p><img src="/common/images/upgr_readiness.png" width="650px" alt="The readiness check enables you to find out if your server and environment are ready to proceed" /></p>
+<pre><code>Could not complete update {"components":[
+{"name":"magento/module-bundle-sample-data","version":"100.1.0"}
+]} successfully: proc_open(): fork failed - Cannot allocate memory
+</code></pre>
 
-<div>
+<p>The error <code>proc_open(): fork failed - Cannot allocate memory</code> can also display on the command line.</p>
 
-  <p>After the readiness check completes, see one of the following:</p>
+<h3 id="description">Description</h3>
+<p>Because we recommend you allocate <a href="/guides/v2.1/install-gde/prereq/php-centos.html#instgde-prereq-timezone">2GB of memory to PHP</a>, this error can display on systems with less than 2GB of phyiscal memory. The error might mean you have exhausted the physical memory in your machine.</p>
 
-  <ul>
-    <li><a href="#compman-readiness-success">Readiness check success</a></li>
-    <li><a href="#compman-readiness-fail">Readiness check failure</a></li>
-  </ul>
+<h3 id="solution">Solution</h3>
+<p>First, make sure you allocated 2GB of memory for PHP; otherwise, your installation or upgrade might run out of memory even if your system has enough memory.</p>
 
-  <h3 id="compman-readiness-success">Readiness check success</h3>
-  <p>The following figure shows an example of a successful readiness check. If all tests passed, click <strong>Next</strong> and continue with the next step.</p>
+<p>If you’ve already done that, create a swap file on your machine. A Linux machine uses <em>swap space</em> if it needs more memory resources and the RAM is full. The swap space is used for inactive pages in memory.</p>
 
-  <p><img src="/common/images/extensman_readiness-success.png" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
+<p>The following are suggestions only; other options might be available. Consult a network administrator or another knowledgeable resource before you continue. You must run the commands to create a swap file as a user with <code>root</code> privileges.</p>
 
-  <h3 id="compman-readiness-fail">Readiness check failure</h3>
-  <p>Messages similar to the following display if any readiness check fails.</p>
+<h4 id="swap-file-on-ubuntu">Swap file on Ubuntu</h4>
+<p>Use the <code>fallocate</code> command as discussed in these references:</p>
 
-  <p><img src="/common/images/cman_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue" /></p>
+<ul>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04" target="_blank">How To Add Swap on Ubuntu 14.04 (Digitalocean)</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04" target="_blank">How To Add Swap Space on Ubuntu 16.04 (Digitalocean)</a></li>
+  <li><a href="https://help.ubuntu.com/community/SwapFaq" target="_blank">SwapFaq (help.ubuntu.com)</a></li>
+</ul>
 
-  <p>In the event of failure, see one of the following sections:</p>
+<h4 id="swap-file-on-centos">Swap file on CentOS</h4>
+<p>Use the <code>mkswap</code> command as discussed in these references:</p>
 
-  <ul>
-    <li><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Updater check failure</a></li>
-    <li><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Cron script check failure</a></li>
-    <li><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a></li>
-    <li><a href="/guides/v2.0/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a></li>
-    <li><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
-    <li><a href="/guides/v2.0/install-gde/system-requirements.html">PHP extensions check failure</a></li>
-    <li><a href="/guides/v2.0/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a></li>
-  </ul>
-
-</div>
+<ul>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-centos-6" target="_blank">How To Add Swap on CentOS 6 (Digitalocean)</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-centos-7" target="_blank">How To Add Swap on CentOS 7 (Digitalocean)</a></li>
+  <li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/ch-swapspace.html" target="_blank">Swap Space (RedHat customer portal)</a></li>
+</ul>
 
 
 		</div>
