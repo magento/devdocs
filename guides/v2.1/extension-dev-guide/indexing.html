@@ -1353,7 +1353,7 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 
 <h3 id="m2devgde-indexing-customlogic">Custom indexer logic</h3>
 
-<p>Your custom indexer class should implement <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Indexer/" target="_blank">\Magento\Indexer\ </a>, and the indexer should be able to perform three types of operations:</p>
+<p>Your custom indexer class should implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Indexer/ActionInterface.php" target="_blank">\Magento\Framework\Indexer\ActionInterface</a>, and the indexer should be able to perform three types of operations:</p>
 
 <ul>
   <li>row reindex: processing a single entry from a dictionary; responsibility of <code>executeRow($id)</code></li>
