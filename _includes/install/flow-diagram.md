@@ -21,6 +21,7 @@ The diagram shows the following:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<p>To be able to use the Web Setup Wizard to install or upgrade the Magento software, or to manage extensions you get from Magento Marketplace, you must either get a compressed archive or a Composer metapackage.</p>
+		<p>If you clone the GitHub repository, you <em>cannot</em> use the Web Setup Wizard to install or upgrade either the Magento software or extensions.</p>
 	</div> 
 
 3.	Install the Magento software using either the Web Setup Wizard or command line. 
