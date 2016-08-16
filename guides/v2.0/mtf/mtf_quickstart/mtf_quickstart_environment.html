@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create a test in the Functional Testing Framework</title>
+	<title>Quick start with the Functional Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/mtf/create_test/new_test.html">
+	<link rel="canonical" href="//guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environment.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -167,9 +167,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Create a test in the Functional Testing Framework</h1>
+		<h1 class="page-heading">Quick start with the Functional Testing Framework</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/create_test/new_test.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environment.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -412,7 +412,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environment.html">Prepare environment for test run</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environment.html">Prepare environment for test run</a></li>
 
 									
 
@@ -471,7 +471,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/mtf/create_test/new_test.html">New functional test. Theory</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/new_test.html">New functional test. Theory</a></li>
 
 									
 
@@ -816,84 +816,71 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2>New functional test: Theory</h2>
-
-<p>The FTF helps to create a new test, you can extend an out-of-the-box test, or create a completely new test.</p>
-
-<h3>Contents</h3>
+			<p align="right"><i>Updated: 16 August 2016 (PDT)</i></p>
+		<h2 id="mtf_quickstart_config">Prepare environment for test run</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#extending-oob-test" id="markdown-toc-extending-oob-test">Extend an out-of-the-box test</a>    <ul>
-      <li><a href="#ext-usage" id="markdown-toc-ext-usage">Usage</a></li>
-    </ul>
-  </li>
-  <li><a href="#create-test" id="markdown-toc-create-test">Create a functional test</a>    <ul>
-      <li><a href="#test-object" id="markdown-toc-test-object">Test object</a></li>
-      <li><a href="#test-data" id="markdown-toc-test-data">Test data</a></li>
-      <li><a href="#test-flow" id="markdown-toc-test-flow">Test flow</a></li>
-      <li><a href="#test-assertions" id="markdown-toc-test-assertions">Test assertions</a></li>
-    </ul>
-  </li>
+  <li><a href="#mtf_quickstart_env_selenium" id="markdown-toc-mtf_quickstart_env_selenium">Run the Selenium Server</a></li>
+  <li><a href="#mtf_quickstart_env_selenium-non-def" id="markdown-toc-mtf_quickstart_env_selenium-non-def">Run tests on non-default browser</a></li>
+  <li><a href="#mtf_quickstart_env_generator" id="markdown-toc-mtf_quickstart_env_generator">Run generator</a></li>
 </ul>
 
-<h3 id="extending-oob-test">Extend an out-of-the-box test</h3>
+<h3 id="mtf_quickstart_env_selenium">Run the Selenium Server</h3>
+<p>The Selenium Server will drive a browser to execute your tests.
+You can download the Selenium Server from <a href="http://www.seleniumhq.org/download/">Selenium project website</a>.</p>
 
-<p>You can extend a test by adding or replacing a <a href="/guides/v2.0/mtf/mtf_entities.html">test entity</a>. Test entities for the module are stored in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/&lt;testing_module&gt;</code> directory.</p>
+<div class="bs-callout bs-callout-warning">
+    <p>Install <a href="https://help.ubuntu.com/community/Java">Java</a> to work with Selenium Server.</p>
+</div>
 
-<h4 id="ext-usage">Usage</h4>
+<p>Specific versions of the Selenium Server are compatible with specific versions of browsers. <a href="http://docs.seleniumhq.org/about/platforms.jsp">Read more about compatibility of browser version and Selenium server version.</a></p>
 
-<p>This approach is useful when the Magento functionality was extended. For example, the minor changes were made in the existing functionality of a module. Also you can extend an out-of-the-box test to extend the current test coverage if the target functionality is not completely covered by the out-of-the-box test.</p>
+<p>Enter in terminal:</p>
 
-<p>Example use cases:</p>
+<pre><code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar
+</code></pre>
 
-<ul>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html#add_variation">variation addition</a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html#extend_variation">variation extension</a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_merge">fixture extension</a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy">repository addition</a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html#override-blocks">block overriding</a></li>
-</ul>
+<h3 id="mtf_quickstart_env_selenium-non-def">Run tests on non-default browser</h3>
 
-<h3 id="create-test">Create a functional test</h3>
+<p>If the Selenium Server does not work directly with your browser, find the corresponding <a href="http://docs.seleniumhq.org/about/platforms.jsp">WebDriver</a>.</p>
 
-<p>If new modules are added to Magento you would need to create a new test to check the functionality.</p>
+<p>In <code>config.xml</code> <a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser"> define the browser that the <abbr title="Functional Testing Framework">FTF</abbr> will use for tests</a>.</p>
 
-<p>New test must be stored in the corresponding module <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/&lt;testing_module&gt;</code>.</p>
+<p>Run the Selenium Server with an additional argument.</p>
 
-<p>Each test consists of four main components: a test object, test data, a test flow, a test assertion.</p>
+<p>Example for Google Chrome:</p>
 
-<h4 id="test-object">Test object</h4>
+<pre><code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar -Dwebdriver.chrome.driver=&lt;path_to_chrome_driver&gt;/chromedriver.exe
+</code></pre>
 
-<p>A test object is an object that you are going to test. Most of the test actions are performed under this object.
-The test object is represented by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a>.  The fixture defines properties of an object.</p>
+<h3 id="mtf_quickstart_env_generator">Run generator</h3>
 
-<h4 id="test-data">Test data</h4>
+<p>Generator generates <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixtures</a>, <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html">repositories</a>, and <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">page objects</a>. Once the <abbr title="Functional Testing Framework">FTF</abbr> is initialized, all classes must be pre-generated to facilitate creating and running the tests. Modules in the <abbr title="Functional Testing Framework">FTF</abbr> are processed by generator in alphabetical order.</p>
 
-<p>There are two types of test data:</p>
+<p>Enter in terminal:</p>
 
-<ul>
-  <li>Data for the test, stored in a <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a>.</li>
-  <li>Preconditions:
-    <ul>
-      <li>Sample data that is stored in a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html">fixture repository</a>. In a data set, it is stored as a name of the fixture repository.</li>
-      <li>A sample test entity that can be created by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_handler.html">handler</a>.</li>
-    </ul>
-  </li>
-</ul>
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+php generate.php
+</code></pre>
 
-<h4 id="test-flow">Test flow</h4>
+<h2 id="mtf_install_pre">Next Steps</h2>
 
-<p>A test flow is a set of test steps that you want to perform under the test object to check required functionality. Test steps are defined in a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a>. Usually, a test step contains a set of actions. Each action is managed by a method defined in a <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html">block</a>. A <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">page</a> is a container for blocks. It stores selectors to identify blocks on an HTML page.</p>
-
-<h4 id="test-assertions">Test assertions</h4>
-
-<p>A test assertion compares the test flow results with the expected ones. Test assertions are represented by <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a>.</p>
-
-<p><a href="/guides/v2.0/mtf/create_test/create_new_test.html">Learn more in the “Create a new test” topic.</a></p>
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_magento.html">&lt;&lt; Prepare Magento application</a></td>
+      <td><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- LINK DEFINITIONS -->
 
+<!-- Devdocs -->
+
+<!-- Internet -->
+
+<!-- ABBREVIATIONS -->
 
 
 		</div>
