@@ -23,10 +23,10 @@ When installing or updating the Magento application or components like extension
 The error `proc_open(): fork failed - Cannot allocate memory` can also display on the command line.
 
 ### Description
-Because we recommend you allocate [2GB of memory to PHP]({{ page.baseurl }}install-gde/prereq/php-centos.html#instgde-prereq-timezone), this error can display on systems with less than 2GB of phyiscal memory. The error might mean you have exhausted the physical memory in your machine.
+We recommend you allocate 2GB of memory to PHP to make sure your installation or upgrade succeeds. The error might mean you have exhausted the physical memory in your machine and your system has no swap file available. At minimum, we recommend you have at least 2GB of RAM and an enabled swap file.
 
 ### Solution
-First, make sure you allocated 2GB of memory for PHP; otherwise, your installation or upgrade might run out of memory even if your system has enough memory.
+First, make sure you allocated [2GB of memory to PHP]({{ page.baseurl }}install-gde/prereq/php-centos.html#instgde-prereq-timezone); otherwise, your installation or upgrade might still run out of memory.
 
 If you've already done that, create a swap file on your machine. A Linux machine uses *swap space* if it needs more memory resources and the RAM is full. The swap space is used for inactive pages in memory.
 
