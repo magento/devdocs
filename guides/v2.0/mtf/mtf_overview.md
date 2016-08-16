@@ -23,7 +23,7 @@ github_link: mtf/mtf_overview.md
 
 Common tasks:
 
-* <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_generator">Run the FTF generator </a>
+* <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_generator">Run the FTF generator </a>
 * <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_runtest.html#mtf_quickstart_testrun_all">Run all functional tests </a>
 * <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_runtest.html#mtf_quickstart_testrun_one">Run one functional test </a>
 * <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_merge">Merge fixtures in the FTF </a>

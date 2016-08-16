@@ -59,16 +59,33 @@ For example, if Magento is installed in `/var/www/magento2`, enter:
 
 	ls /var/www/magento2/var/session
 
-If there are files in that directory, you must set permissions; if there are no files in that directory, you can skip the remainder of this section and continue with [Step 4. Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade.html).
+If there are files in that directory, you must set permissions; if there are no files in that directory, you can skip the remainder of this topic and continue with [Step 4. Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade.html).
 
 To set file system permissions before upgrade:
 
 1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/apache-user.html).
-2.	Enter the following command:
+2.	Enter one of the following commands:
 
-		chmod -R 770 <your Magento install dir>/var/session
+	*	One Magento user (typical of shared hosting):
 
-	For example,
+			cd <your Magento install dir>
+			find var -type f -exec chmod u+w {} \;
+			find var -type d -exec chmod u+w {} \;
 
-		chmod -R 770 /var/www/magento2/var/session
-3.	Continue with the next section.
+		If you don't have access to a command line, use a file manager tool provided by your hosting provider to set permissions.
+
+	*	Two Magento users:
+
+			cd <your Magento install dir>
+			find var -type f -exec chmod g+w {} \;
+			find var -type d -exec chmod g+ws {} \;
+			chown -R :<web server group> .
+
+		For example, on CentOS where the web server group is typically `apache`:
+
+			cd /var/www/html/magento2
+			find var -type f -exec chmod g+w {} \;
+			find var -type d -exec chmod g+ws {} \;
+			chown -R :apache .
+
+For additional details about file ownership and permissions, see [Set pre-installation ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-system-perms.html).

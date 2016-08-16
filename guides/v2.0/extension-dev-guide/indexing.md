@@ -203,7 +203,7 @@ There are more details about each of these in the following paragraphs.
 
 <h3 id="m2devgde-indexing-customlogic">Custom indexer logic</h3>
 
-Your custom indexer class should implement <a href="{{ site.mage2000url }}app/code/Magento/Indexer/" target="_blank">\Magento\Indexer\ </a>, and the indexer should be able to perform three types of operations:
+Your custom indexer class should implement <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Indexer/ActionInterface.php" target="_blank">\Magento\Framework\Indexer\ActionInterface</a>, and the indexer should be able to perform three types of operations:
 
 *	row reindex: processing a single entry from a dictionary; responsibility of `executeRow($id)`
 *	list reindex: processing a set of dictionary entries; responsibility of `executeList($ids)`, where `$ids` is an array of entity IDs

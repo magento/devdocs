@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/mtf/mtf_quickstart.html
 In this chapter you will learn how to:
 
 - <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration to set PHPUnit, the FTF, and credentials for Magento modules if required</a>
-- <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Prepare environment for the test</a>
+- <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html">Prepare environment for the test</a>
   - Run the Selenium Server
   - Run tests on non default browser
   - Run generator
