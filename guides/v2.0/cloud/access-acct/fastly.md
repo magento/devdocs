@@ -23,7 +23,10 @@ See the following sections for more information:
 *	[Merge your Fastly branch](#cloud-fastly-merge})
 
 ### Get your Fastly credentials {#cloud-fastly-creds}
-To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/get-help.html).
+To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/get-help.html). We'll provide you with the following information so you can enable Fastly:
+
+*	Fastly API key
+*	Fastly service ID
 
 ### Get started {#cloud-fastly-start}
 Fastly recommends you do your development in its own branch because fine-tuning Fastly can be a complex process, depending on your needs and eCommerce shop size.
@@ -73,7 +76,7 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 Configure Fastly using the following:
 
-*	Your Fastly service ID and API key are available in [your Fastly account](https://docs.fastly.com/guides/account-management-and-security/finding-and-managing-your-account-info){:target="_blank"}.
+*	We provide your Fastly service ID and API key.
 *	Set most other Fastly configuration options in the Magento Admin.
 *	Additional advanced options are in the Fastly configuration file, `fastly.vcl`.
 
