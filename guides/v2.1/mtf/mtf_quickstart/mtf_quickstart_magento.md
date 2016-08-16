@@ -35,10 +35,6 @@ Enable the **Admin Account Sharing** setting to avoid unpredictable logout durin
 
 ![Change security settings]({{site.baseurl}}common/images/mtf_qstart_mag_secur.png){:width="650px"}
 
-<h2 id="mtf_install_pre">Next Steps</h2>
-
-[&lt;&lt; Adjust configuration]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html)
-
 ## Refresh page cache
 
 * Go to **Cache Management**.
@@ -48,3 +44,7 @@ Enable the **Admin Account Sharing** setting to avoid unpredictable logout durin
 * Select the check boxes next to **Configuration** and **Page Cache**.
 * From the **Actions** list in the upper left, click **Refresh**.
 * Click **Submit**.
+
+<h2 id="mtf_install_pre">Next Steps</h2>
+
+[&lt;&lt; Adjust configuration]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html)
