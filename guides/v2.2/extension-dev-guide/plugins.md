@@ -102,7 +102,7 @@ class ProductPlugin
 ?>
 {% endhighlight %}
 
-If observed method has arguments then "after" method of plugin accept all this arguments in the same order as in observed method. Arguments are declared and passed to "after" method directly after result. If observed method has arguments and doesn't return the result (@return void) - then null is provided to "after" method as a result. Below is an example of an after method that accepts null (void) result and all arguments from observed method:
+If observed method has arguments then "after" method of plugin can accept all this arguments in the same order as in observed method. Arguments are declared and passed to "after" method directly after result. If observed method has arguments and doesn't return the result (@return void) - then null is provided to "after" method as a result. Below is an example of an after method that accepts null (void) result and all arguments from observed method:
 
 {% highlight PHP %}
 <?php
@@ -122,17 +122,40 @@ class AuthPlugin
      * @param \Magento\Backend\Model\Auth $authModel
      * @param null $result
      * @param string $username
-     * @param string $password
      * @return void
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function afterLogin(\Magento\Backend\Model\Auth $authModel, $result, $username, $password)
+    public function afterLogin(\Magento\Backend\Model\Auth $authModel, $result, $username)
     {
         $this->logger->debug('User ' . $username . ' signed in.');
     }
 }
 ?>
 {% endhighlight %}
+
+Not all arguments of observed method need to be declared in plugin. In your plugin you need to declare:
+- All arugments that are used in method.
+- All arguments that are come before last used declared argument in plugin.
+
+For example we observe method \Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type) with the following plugin:
+{% highlight PHP %}
+
+class MyPlugin
+{
+    private $logger
+
+    public function __construct(\Psr\Log\LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    public function afterUpdateWebsites(\Magento\Catalog\Model\Product\Action $subject, $result, $productIds, $websiteIds)
+    {
+        $this->logger->log('Updated websites: ' . implode(', ',  $websiteIds));
+    }
+}
+
+As you can see - we declared $websiteIds because we use this variable, $productIds - because it comes before last declared argument that is used in plugin. We don't declare $type argument from observed method because it's declared after last declared argument that is used in plugin.
 
 Please, also take into account that if argument is optional in observed method - then it should be also declared as optional in after method.
 
