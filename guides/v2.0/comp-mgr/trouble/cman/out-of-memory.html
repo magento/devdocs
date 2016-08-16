@@ -894,7 +894,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 15 August 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 16 August 2016 (PDT)</i></p>
 		<h2 id="out-of-memory-errors">Out of memory errors</h2>
 <p>Sometimes when you attempt to install or update, you can encounter an error due to your system running out of physical memory. We recommend you create a swap file to avoid this error.</p>
 
@@ -909,10 +909,10 @@
 <p>The error <code>proc_open(): fork failed - Cannot allocate memory</code> can also display on the command line.</p>
 
 <h3 id="description">Description</h3>
-<p>Because we recommend you allocate <a href="/guides/v2.0/install-gde/prereq/php-centos.html#instgde-prereq-timezone">2GB of memory to PHP</a>, this error can display on systems with less than 2GB of phyiscal memory. The error might mean you have exhausted the physical memory in your machine.</p>
+<p>We recommend you allocate 2GB of memory to PHP to make sure your installation or upgrade succeeds. The error might mean you have exhausted the physical memory in your machine and your system has no swap file available. At minimum, we recommend you have at least 2GB of RAM and an enabled swap file.</p>
 
 <h3 id="solution">Solution</h3>
-<p>First, make sure you allocated 2GB of memory for PHP; otherwise, your installation or upgrade might run out of memory even if your system has enough memory.</p>
+<p>First, make sure you allocated <a href="/guides/v2.0/install-gde/prereq/php-centos.html#instgde-prereq-timezone">2GB of memory to PHP</a>; otherwise, your installation or upgrade might still run out of memory.</p>
 
 <p>If you’ve already done that, create a swap file on your machine. A Linux machine uses <em>swap space</em> if it needs more memory resources and the RAM is full. The swap space is used for inactive pages in memory.</p>
 
