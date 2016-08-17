@@ -2,27 +2,51 @@
 layout: default
 group: UI_Components
 subgroup: concepts
-title: Debug UI components JavaScript
-menu_title: Debug UI components JavaScript
+title: About Configuration of UI Components in XML 
+menu_title: About Configuration of UI Components in XML 
 menu_order: 1
 version: 2.1
 github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot.md
 ---
 
+## About Configuration of UI Components in XML 
 
-.xml declaration
+## Overview
 
-In this screencast we are talking about .xml declaration of ui-component.
+This topic discusses .xml declaration of UI components.
 
-Every module that has view representation contains the folder named 'layout'. In this folder .xml declaraions of the pages are stored. These .xml declarations are in fact the pages markup.
+Every module that has view representation contains the folder named 'layout'. In this folder, the .xml declarations of the pages are stored. These .xml declarations are, in fact, the pages' markup.
 
-In the xml file we are seeing head node, title node with the name of the page and link to css file
+In a typical Magento layout xml file we see a `<head/>` node, `<title/>` node with the name of the page, and a link to css file. There are other nodes as well, the most important for us now is the `<referenceContainer/>` node. (The `name` attribute in this node is responsible for the position of the container on the page.)
 
-More important for us now is referenceContainer node. Attribute name in this node is responsible for position of container on the page.
+A UI component is declared in the <referenceContainer/> node, by using the <uiComponent/> node. The `name` attribute in the <uiComponent/> node references the xml configuration of the [top level UI component]({{page.baseurl}}...link to glossary). 
 
-In referenceContainer node ui-component is declared. Attribute name in this node references to the xml configuration of out main component which must be placed inside ui-conponents folder on the same level as layout folder.
+Example of a UI component declaration:
 
-Saying main component we mean form or listing component. In current example this is form component.
+{%higlight xml%}
+<referenceContainer name="page-container">
+	<uiComponent name="%instance_name%">
+</referenceContainer>
+{%endhiglight%}
+
+The configuration of the top-level UI component is a separate .xml file. It is stored in the <module_dir>/view/<area>/ui_component/ directory. For example <module_dir>/view/<area>/ui_component/<instance_name>.xml. 
+
+Every instance is declared in a separate file. The file name is the name of instance (<instance_name>). The namespace of the names is global; meaning that if the file names are the same, they will all be merged into a single configuration for the particular instance.
+
+## About the instance configuration file
+
+Following are the rules for the instance configuration files:
+
+* The top node must have the name of one of the top-level UI components.
+* The top node must contain a link to the xsd schema.
+
+Every nested node is regarded as a separate UI component, except the <argument/> node.
+The <argument/> node contains the configuration for the particular component. 
+
+
+## Example
+
+Saying top-level component we mean the `form` or `listing` component. In the current example this is form component.
 
 Lets look at component configuration, as the simplest example we use "field" component.
 
