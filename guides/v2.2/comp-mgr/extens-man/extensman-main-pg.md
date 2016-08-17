@@ -195,15 +195,23 @@ The following table shows which actions are available for a metapackage.
 
 {% endcollapsible %}
 
-## Update packages {#extensman-update}
+## Update extensions {#extensman-update}
 
-{% collapsible To update packages: %}
+{% collapsible To update extensions: %}
 
-![This package has an update available]({{ site.baseurl }}common/images/extensman_icon_update.png) Indicates the package has an update available.
+The New Updates page displays all extensions that can be updated.
 
-1.	In the Installed Products section, for a package with an available update, click **Update** from the **Actions** list as the following figure shows.
+![List of extensions that can be updated]({{ site.baseurl }}common/images/extensman_new-updates.png)
 
-	![Update packages]({{ site.baseurl }}common/images/extensman_update.png){:width="600px"}
+You have the following options:
+
+*	To update one extension, click **Update** at the end of its row.
+*	To update more than one extension, select its check box and click **Update**, as the following figure shows.
+
+	![Update selected extensions]({{ site.baseurl }}common/images/extensman_update-selected.png)
+*	To update all extensions, click **Select All** from the list and click **Update**, as the following figure shows.
+
+	![Update all extensions]({{ site.baseurl }}common/images/extensman_update-all.png)
 
 3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
 
