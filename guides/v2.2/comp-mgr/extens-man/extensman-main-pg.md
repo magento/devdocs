@@ -208,11 +208,11 @@ You have the following options:
 *	To update one extension, click **Update** at the end of its row.
 *	To update more than one extension, select its check box and click **Update**, as the following figure shows.
 
-	![Update selected extensions]({{ site.baseurl }}common/images/extensman_update-selected.png)
+	![Update selected extensions]({{ site.baseurl }}common/images/extensman_update-selected.png){:width="500px"}
 *	To update all extensions, click **Select All** from the list and click **Update**, as the following figure shows.
 
 	![Update all extensions]({{ site.baseurl }}common/images/extensman_update-all.png)
 
-3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
+Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}

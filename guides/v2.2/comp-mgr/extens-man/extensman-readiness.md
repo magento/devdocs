@@ -34,7 +34,7 @@ If you're updating multiple extensions, the readiness check displays success and
 ### Successful readiness check
 A successful readiness check displays as follows:
 
-![Readiness check with multiple extension updates]({{ site.baseurl }}common/images/extensman_read-upd-multi-success.png)
+![Readiness check with multiple extension updates]({{ site.baseurl }}common/images/extensman_read-upd-multi-success.png){:width="600px"}
 
 You have the following options:
 
