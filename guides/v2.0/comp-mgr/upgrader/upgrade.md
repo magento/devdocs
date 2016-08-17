@@ -31,7 +31,7 @@ Messages similar to the following display in the Console Log:
 ## After upgrading
 After the upgrade completes, restart Varnish if you use it for page caching.
 
-	service varnish restrat
+	service varnish restart
 
 Then access your storefront and verify everything is working properly.
 
