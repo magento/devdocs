@@ -1,3 +1,21 @@
+---
+layout: default
+group: UI Components
+subgroup: Concepts
+title: About AMD modules and RequireJS
+menu_title: About AMD modules and RequireJS
+menu_order: 1
+version: 2.1
+github_link: ui_comp_guide/concepts/ui_comp_requirejs_concept.md
+---
+
+## Title
+{:.no_toc}
+
+<!-- Table of Content -->
+* Table of Content placeholder; required but will not be rendered
+{:toc}
+
 ##  About AMD modules and RequireJS
 
 ## Overview
