@@ -118,8 +118,8 @@ All errors occurring during `.less` files compilation are handled by the [`oyejo
  
 Errors are caught as exceptions and written to the system log (by default it is `var/log/system.log`) and displayed on the screen. For each error, the following information is written:
 
-* The path to the processed file in the `var/view_preprocessed` directory, in case if import is not the same as source file.
-* The error description.
+* The path to the processed file in the `var/view_preprocessed` directory.
+* The error description, including the path to file where the actual error occurred. It might be either the processed file, or the imported file.
 * The error line and the column number.
 * The content of the `.less` code in the previous and following lines.
 
