@@ -2,8 +2,8 @@
 layout: default
 group: UI Components
 subgroup: Concepts
-title: About uiClass in UI Components
-menu_title: About uiClass in UI Components
+title: Application workflow description and diagram
+menu_title: Application workflow description and diagram
 menu_order: 1
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_app_workflow_concept.md
