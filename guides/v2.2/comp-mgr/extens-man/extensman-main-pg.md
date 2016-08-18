@@ -169,6 +169,10 @@ Click **Review and Install** as the following figure shows.
 
 ![Review and install extensions]({{ site.baseurl }}common/images/extensman_review-purchases.png){:width="450px"}
 
+The Ready to Install page displays as follows.
+
+![Display a list of extensions you can install]({{ site.baseurl }}common/images/extensman_ready-to-install-pg.png){:width="450px"}
+
 The following sections discuss your options.
 
 ### Get more information
@@ -194,7 +198,7 @@ To install more than one extension:
 
 {% collapsible To uninstall extensions: %}
 
-1.	In the Installed Products section, click **Uninstall** from the **Actions** list as the following figure shows.
+1.	In the Installed Extensions section, click **Uninstall** from the **Actions** list as the following figure shows.
 
 	![Uninstall extensions]({{ site.baseurl }}common/images/extensman_uninstall.png){:width="600px"}
 
