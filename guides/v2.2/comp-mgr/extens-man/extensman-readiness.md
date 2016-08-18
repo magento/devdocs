@@ -42,7 +42,7 @@ You have the following options:
 *	To update the extension to a different version, select the desired version from the list 
 *	To remove the extension from the list and *not* update it, click ![Remove extension from the list]({{ site.baseurl }}common/images/extensman_delete.png) (delete)
 
-If you make changes, click **Try Again** to validate your choices.
+If you make changes, click **Try Again**.
 
 ### Readiness check failure
 TBD
