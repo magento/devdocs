@@ -163,18 +163,28 @@ The following table shows which actions are available for a metapackage.
 
 {% endcollapsible %}
 
-## Install packages {#extensman-install}
+## Install extensions {#extensman-install}
 
-{% collapsible To install packages: %}
+{% collapsible To install extensions: %}
 
-1.	Click **Review and Install** as the following figure shows.
+Click **Review and Install** as the following figure shows.
 
-	![Review and install packages]({{ site.baseurl }}common/images/extensman_review-purchases.png){:width="450px"}
-2.	To install one package, click the **Install** link at the end of its row.
+![Review and install extensions]({{ site.baseurl }}common/images/extensman_review-purchases.png){:width="450px"}
 
-	To install more than one package, select the check box next to each package, or click **Select All** from the list as the following figure shows.
+You have the following options:
 
-	![Choose packages to install]({{ site.baseurl }}common/images/extensman_choose-to-install.png){:width="550px"}
+### Get more information
+To get more information about an extension, click ![Get information about an extension]({{ site.baseurl }}common/images/extensman_icon_question.png).
+
+### Install one extension
+To install one extension, click the **Install** link at the end of its row and continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
+
+### Install more than one extension
+To install more than one extension:
+
+1.	Select the check box next to each extension, or click **Select All** from the list as the following figure shows, then continue with 
+
+	![Choose extensions to install]({{ site.baseurl }}common/images/extensman_choose-to-install.png){:width="550px"}
 2.	After you select what to install, click **Install** at the top of the page as the following figure shows.
 
 	![Install your purchases]({{ site.baseurl }}common/images/extensman_ready-to-install.png){:width="550px"}
