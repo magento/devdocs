@@ -33,7 +33,7 @@ If you make changes, click **Try Again**.
 
 ### Readiness check failure (conflicting dependencies) {#extensman-readiness-multi-fail}
 
-{% collapsible Readiness check failure (conflicting dependencies):}
+{% collapsible Readiness check failure (conflicting dependencies): %}
 
 If the readiness check fails because of version conflicts, you must resolve the conflicts before you continue your update. The following figure shows an example:
 
