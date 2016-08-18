@@ -2,8 +2,8 @@
 layout: default
 group: ext-best-practices
 subgroup: 02_Extension-Coding
-title: Creating a page in admin
-menu_title: Creating a page in admin
+title: Creating a Magento admin page
+menu_title: Creating a Magento admin page
 menu_order: 1000
 version: 2.0
 github_link: ext-best-practices/extension-coding/example-module-adminpage.md
@@ -18,17 +18,22 @@ github_link: ext-best-practices/extension-coding/example-module-adminpage.md
 
 ### Overview
 
-This tutorial gives instructions for the creation of a module that displays a simple page in the admin area of Magento.
+This tutorial gives instructions for the creation of a module that displays a simple page in the Magento admin.
 
-For the purposes of this tutorial *MyCompany* is the name of the company associated with a module named *ExampleAdminNewPage*.
+For the purposes of this tutorial MyCompany is the name of the company associated with a module named ExampleAdminNewPage.
 
 ### Working directory
 
 Start by creating the working directory for all the module files.
 
-In your Magento development environment under the `app/code` directory, create the `MyCompany` company directory.
+In your Magento development environment under the `app/code` directory, run the following command: 
 
-Next, create the `ExampleAdminNewPage` directory under `MyCompany`. This will be the working directory for the module.
+~~~
+mkdir -p MyCompany/ExampleAdminNewPage
+~~~
+
+This command creates the `MyCompany` company directory and the `ExampleAdminNewPage` module directory. The latter will be the root directory for the module we will create.
+
 
 ### Initial boilerplate files
 
@@ -36,9 +41,10 @@ These initial boilerplate files are the bare essential files needed for any Mage
 
 #### `composer.json`
 {:.no_toc}
-In general, this file gives composer the ability to install this module and its dependencies. For more information about this file, please read the documentation on [`composer.json`]({{page.baseurl}}extension-dev-guide/build/composer-integration.html).
+In the module's root directory, create the file `composer.json`. This file gives composer the ability to install this module and its dependencies. 
+For more information see: [`composer.json`]({{page.baseurl}}extension-dev-guide/build/composer-integration.html).
 
-{% collapsible Show file content %}
+{% collapsible File content for composer.json %}
   {% highlight json %}
     {
       "name": "mycompany/sample-module-minimal",
@@ -50,7 +56,7 @@ In general, this file gives composer the ability to install this module and its 
         "AFL-3.0"
       ],
       "require": {
-        "php": "~5.5.0|~5.6.0|~7.0.0"
+        "php": "~5.6.0|7.0.2|7.0.4|~7.0.6",
       },
       "autoload": {
         "files": [ "registration.php" ],
@@ -64,9 +70,11 @@ In general, this file gives composer the ability to install this module and its 
 
 #### `registration.php`
 {:.no_toc}
-This file registers the module `MyCompany_ExampleAdminNewPage` with Magento. For more information about this file, please read the documentation on how to [register your component]({{page.baseurl}}extension-dev-guide/build/component-registration.html).
+In the module's root directory, create the file `registration.php`. This file registers the module `MyCompany_ExampleAdminNewPage` with Magento. 
 
-{% collapsible Show file content %}
+For more information see: [registering your component]({{page.baseurl}}extension-dev-guide/build/component-registration.html).
+
+{% collapsible File content for registration.php %}
   {% highlight php startinline=true %}
     <?php
     \Magento\Framework\Component\ComponentRegistrar::register(
@@ -79,9 +87,11 @@ This file registers the module `MyCompany_ExampleAdminNewPage` with Magento. For
 
 #### `etc/module.xml`
 {:.no_toc}
-This file specifies the name and version of this module. For more information about this file, please read the documentation on how to [name your component]({{page.baseurl}}extension-dev-guide/build/create_component.html).
+In the module's root directory, create a new directory called `etc`. Under that directory, create the file `module.xml`. This file specifies the name and version of this module. 
 
-{% collapsible Show file content %}
+For more information see: [naming your component]({{page.baseurl}}extension-dev-guide/build/create_component.html).
+
+{% collapsible File content for module.xml %}
   {% highlight xml %}
     <?xml version="1.0"?>
     <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
@@ -95,22 +105,24 @@ This file specifies the name and version of this module. For more information ab
 
 Before we can view the module's page, we need a way to navigate to it. These files create a link to the page in the left navigation and tells Magento how to resolve requests for that page.
 
-For more information on this topic, see the documentation on [routing]({{page.baseurl}}extension-dev-guide/routing.html).
+For more information on this topic, see: [routing]({{page.baseurl}}extension-dev-guide/routing.html).
 
 #### `etc/adminhtml/menu.xml`
 {:.no_toc}
-This xml file creates two items in the Content section of the left navigation:
+Under the created `etc` directory, create a new directory called `adminhtml`. Under that directory, create the file `menu.xml`. This XML file creates two items in the Content section of the left navigation:
 
-1. A new separate section with the title 'Greetings'.
-2. A link with the label 'Hello World' that leads to a page request for `exampleadminnewpage/helloworld/index`.
+1. A new separate section with the title **Greetings**.
+2. A link with the label **Hello World** that leads to a page request for `exampleadminnewpage/helloworld/index`.
 
-The following parts make up the generated page request link to the 'Hello World' page:
+![Hello World menu item]({{ site.baseurl }}common/images/ext-best-practices/hello-world-menu-item.png){:width="322px" height="400px"}
 
-* `exampleadminnewpage` - This is the frontName. Since its purpose is to help route requests to the correct module, we give it the same name as the module, but this is not required.
+The following parts make up the generated page request link to the **Hello World** page:
+
+* `exampleadminnewpage` - This is the `frontName`. Because its purpose is to help route requests to the correct module, we give it the same name as the module, but this is not required.
 * `helloworld` - This specifies the name of the controller to use.
-* `index` - In the xml file, since the action for the controller is not specified, Magento uses the default value `index`.
+* `index` - In the XML file, since the action for the controller is not specified, Magento uses the default value `index`.
 
-{% collapsible Show file content %}
+{% collapsible File content for menu.xml %}
   {% highlight xml %}
     <?xml version="1.0"?>
     <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
@@ -124,9 +136,9 @@ The following parts make up the generated page request link to the 'Hello World'
 
 #### `etc/adminhtml/routes.xml`
 {:.no_toc}
-This xml file tells Magento to route requests that use the frontName `exampleadminnewpage` to this module.
+Under `etc/adminhtml` create the file `routes.xml`. The contents of this  XML file tells Magento to route requests that use the `frontName` `exampleadminnewpage` to this module.
 
-{% collapsible Show file content %}
+{% collapsible File content for routes.xml %}
   {% highlight xml %}
   <?xml version="1.0"?>
   <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
@@ -141,40 +153,52 @@ This xml file tells Magento to route requests that use the frontName `exampleadm
 
 ### Page controller
 
-Now that we have a link to the 'Hello World' page, we need to create the file needed to handle that request.
+Now that we have a link to the **Hello World** page, we need to create the file needed to handle that request.
 
 #### `Controller/Adminhtml/HelloWorld/Index.php`
 {:.no_toc}
-This file is the class assigned to the default Index action for the `HelloWorld` controller. Since the admin area serves this page, the file belongs in the `Adminhtml` directory, and the class itself extends [`\Magento\Backend\App\Action`]({{site.mage2100url}}app/code/Magento/Backend/App/Action.php){:target="_blank"}.
-{% collapsible Show file content %}
+In the module's root directory, run the following command:
+
+~~~
+mkdir -p Controller/Adminhtml/HelloWorld
+~~~
+
+Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`. This file is the class assigned to the default Index action for the `HelloWorld` controller. Since the admin area serves this page, the file belongs in the `Adminhtml` directory, and the class itself extends [`\Magento\Backend\App\Action`]({{site.mage2100url}}app/code/Magento/Backend/App/Action.php){:target="_blank"}.
+{% collapsible File content for Index.php %}
   {% highlight php %}
     <?php
       namespace MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld;
-
+      
       class Index extends \Magento\Backend\App\Action
       {
         /**
-        * @var PageFactory
+        * @var \Magento\Framework\View\Result\PageFactory 
         */
         protected $resultPageFactory;
+        
+        /**
+         * Constructor
+         *
+         * @param \Magento\Backend\App\Action\Context $context
+         * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
+         */ 
+        public function __construct(
+            \Magento\Backend\App\Action\Context $context,
+            \Magento\Framework\View\Result\PageFactory $resultPageFactory
+        ) {
+             parent::__construct($context);
+             $this->resultPageFactory = $resultPageFactory;
+        }
 
-
-         public function __construct(
-             \Magento\Backend\App\Action\Context $context,
-             \Magento\Framework\View\Result\PageFactory $resultPageFactory
-         ) {
-              parent::__construct($context);
-              $this->resultPageFactory = $resultPageFactory;
-         }
-         /**
-          * Load the page defined in view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml
-          *
-          * @return \Magento\Framework\View\Result\Page
-          */
-         public function execute()
-         {
-              return  $resultPage = $this->resultPageFactory->create();
-         }
+        /**
+         * Load the page defined in view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml
+         *
+         * @return \Magento\Framework\View\Result\Page
+         */
+        public function execute()
+        {
+             return  $resultPage = $this->resultPageFactory->create();
+        }
       }
     ?>
   {% endhighlight %}
@@ -182,9 +206,16 @@ This file is the class assigned to the default Index action for the `HelloWorld`
 
 ### Page view
 
-Now that Magento knows how to handle requests for the 'Hello World' page, we need view files that define the look of the page.
+Now that Magento knows how to handle requests for the **Hello World** page, we need view files that define the look of the page.
 
-These files belong in the `view/adminhtml` directory because the page is in the admin area.
+Create the necessary directories for the files by running the following commands from the module's root directory:
+
+~~~
+mkdir -pm view/adminhtml/layout
+mkdir -pm view/adminhtml/templates
+~~~
+
+These files belong in the `view/adminhtml` directory because the Magento admin area use these files during page generation.
 
 #### `view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml`
 {:.no_toc}
@@ -193,7 +224,7 @@ This file defines the layout and structure of the index page for the HelloWorld 
 
 The name of this file uses the following pattern: *frontName*\_*controller*\_*action*.xml
 
-{% collapsible Show file content %}
+{% collapsible File content for exampleadminnewpage_helloworld_index.xml %}
   {% highlight xml %}
     <?xml version="1.0"?>
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -214,9 +245,9 @@ The name of this file uses the following pattern: *frontName*\_*controller*\_*ac
 #### `view/adminhtml/templates/helloworld.phtml`
 {:.no_toc}
 
-This template file contains the actual page content for the 'Hello World' page.
+This template file contains the actual page content for the **Hello World** page.
 
-{% collapsible Show file content %}
+{% collapsible File content for helloworld.phtml %}
   {% highlight html %}
     <p>Hello World!</p>
   {% endhighlight %}
@@ -249,6 +280,7 @@ The module is now complete. Your module's directory structure under `app/code` s
         `-- <a href="#registrationphp">registration.php</a>
   </pre>
   <script>
+    //Javascript to make the code blocks open on anchor click
     $(document).ready(function(){
       var anchor = window.location.hash.substring(1);
       if(anchor)
@@ -268,9 +300,12 @@ The module is now complete. Your module's directory structure under `app/code` s
 
 Now that the module is code-complete, run the following commands to install it:
 
-1. `bin/magento module:status` - This command shows a list of enabled/disabled module.
+1. `bin/magento module:status` - This command shows a list of enabled/disabled modules.
 2. `bin/magento module:enable MyCompany_ExampleAdminNewPage` - If necessary, run this to enable the disabled module.
 3. `bin/magento setup:upgrade` - This command will properly register the module with Magento.
 4. `bin/magento setup:di:compile` - This command compiles classes used in dependency injections.
 
-Once the module installation has completed, the link to the 'Hello World' page should appear in the 'Greetings' section under 'Content' in the left navigation in the admin area.
+Once the module installation has completed, the link to the **Hello World** page should appear in the **Greetings** section under **Content** in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.
+
+![Hello World Page]({{ site.baseurl }}common/images/ext-best-practices/hello-world-page.png)
+
