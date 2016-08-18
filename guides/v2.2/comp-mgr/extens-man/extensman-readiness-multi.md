@@ -16,7 +16,8 @@ github_link: comp-mgr/extens-man/extensman-readiness-multi.md
 If you're updating multiple extensions, the readiness check displays success and failure as discussed in this topic.
 
 ### Successful readiness check {#extensman-readiness-multi-success}
-A successful readiness check displays as follows:
+
+{% collapsible Successful readiness check:}
 
 ![Readiness check with multiple extension updates]({{ site.baseurl }}common/images/extensman_read-upd-multi-success.png){:width="600px"}
 
@@ -28,7 +29,12 @@ You have the following options:
 
 If you make changes, click **Try Again**.
 
-### Readiness check failure {#extensman-readiness-multi-fail}
+{% endcollapsible %}
+
+### Readiness check failure (conflicting dependencies) {#extensman-readiness-multi-fail}
+
+{% collapsible Readiness check failure (conflicting dependencies):}
+
 If the readiness check fails because of version conflicts, you must resolve the conflicts before you continue your update. The following figure shows an example:
 
 ![Readiness check failure with multiple updates]({{ site.baseurl }}common/images/extensman_read-upd-multi-fail.png)
@@ -41,7 +47,12 @@ You have the following options:
 
 After you make your changes, click **Try Again**. Repeat the process as necessary to resolve the conflicts.
 
-### Readiness check failure {#compman-readiness-fail}
+{% endcollapsible %}
+
+### Readiness check failure (other failures) {#compman-readiness-fail}
+
+{% collapsible Readiness check failure (other failures) %}
+
 Messages similar to the following display if any readiness check fails. 
 
 ![You must resolve all readiness check failures before you continue]({{ site.baseurl }}common/images/cman_readiness-fail-ex.png)
@@ -55,6 +66,7 @@ In the event of failure, see one of the following sections:
 *	<a href="{{page.baseurl}}install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a>
 *	<a href="{{page.baseurl}}install-gde/system-requirements.html">PHP extensions check failure</a>
 
+{% endcollapsible %}
 
 #### Next step
 [Step 2. Backup]({{ page.baseurl }}comp-mgr/extens-man/extensman-backup.html)
