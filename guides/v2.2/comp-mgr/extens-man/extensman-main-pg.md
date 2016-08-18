@@ -171,7 +171,7 @@ Click **Review and Install** as the following figure shows.
 
 ![Review and install extensions]({{ site.baseurl }}common/images/extensman_review-purchases.png){:width="450px"}
 
-You have the following options:
+The following sections discuss your options.
 
 ### Get more information
 To get more information about an extension, click ![Get information about an extension]({{ site.baseurl }}common/images/extensman_icon_question.png).
@@ -182,7 +182,7 @@ To install one extension, click the **Install** link at the end of its row and c
 ### Install more than one extension
 To install more than one extension:
 
-1.	Select the check box next to each extension, or click **Select All** from the list as the following figure shows, then continue with 
+1.	Select the check box next to each extension, or click **Select All** from the list as the following figure shows.
 
 	![Choose extensions to install]({{ site.baseurl }}common/images/extensman_choose-to-install.png){:width="550px"}
 2.	After you select what to install, click **Install** at the top of the page as the following figure shows.
