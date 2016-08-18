@@ -9,16 +9,13 @@ version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_requirejs_concept.md
 ---
 
-## Title
-{:.no_toc}
-
-<!-- Table of Content -->
+##  About AMD modules and RequireJS
 * Table of Content placeholder; required but will not be rendered
 {:toc}
 
-##  About AMD modules and RequireJS
-
 ## Overview
+{:.no_toc}
+
 This topic discusses modules and describes the role which RequireJS plays in Magento.
 
 Magento uses AMD (asynchronous module definition) approach for JavaScript modules loading. Namely, Magento uses [RequireJS]({{page.baseurl}}...) and its [standard syntax]({{page.baseurl}}...).

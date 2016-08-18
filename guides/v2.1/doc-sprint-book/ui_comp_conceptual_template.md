@@ -10,7 +10,7 @@ version: 2.1
 github_link: 
 ---
 
-## Title
+# Title
 {:.no_toc}
 
 <!-- Table of Content -->
@@ -62,27 +62,11 @@ Lists are useful for organizing and displaying related items. Below are examples
 
 **Bulleted List:**
 
-~~~
-* List Item 1
-* List Item 2
-* List Item 3
-~~~
-
-*Output:*
-
 * List Item 1
 *	List Item 2
 *	List Item 3
 
 **Ordered List:**
-
-~~~
-1. First Step
-2. Second Step
-3. Third Step
-~~~
-
-*Output:*
 
 1.	First Step
 2.	Second Step
@@ -92,17 +76,6 @@ Lists are useful for organizing and displaying related items. Below are examples
 Tables can be useful for displaying different kinds of data in an organized way.
 
 *Example:*
-
-~~~
-<!-- Basic Markdown Table Syntax -->
-| Column Heading | Column Heading | Column Heading |
-|----------------|----------------|----------------|
-| Data 1         | Data 2         | Data 3         |
-| Data 4         | Data 5         |                |
-| Data 6         |                |                |
-~~~
-
-*Output:*
 
 | Column Heading | Column Heading | Column Heading |
 |----------------|----------------|----------------|

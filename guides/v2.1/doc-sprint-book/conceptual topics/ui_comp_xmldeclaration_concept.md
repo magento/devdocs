@@ -6,14 +6,14 @@ title: About Configuration of UI Components in XML
 menu_title: About Configuration of UI Components in XML
 menu_order: 1
 version: 2.1
-github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot.md
+github_link: ui_comp_guide/concepts/ui_comp_troubleshoot.md
 ---
 
 ## About Configuration of UI Components in XML
 
 ## Overview
 
-This topic discusses the .xml declaration of UI components. 
+This topic discusses the .xml declaration of UI components.
 
 
 ## About the layout configuration file
@@ -95,12 +95,6 @@ Within the top node, there can also be nested nodes. For example, if you want yo
         </argument>
     </dataSource>
     <fieldset name="general">
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="label" xsi:type="string"/>
-                <item name="collapsible" xsi:type="boolean">false</item>
-            </item>
-        </argument>
         <field name="id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -113,10 +107,10 @@ Within the top node, there can also be nested nodes. For example, if you want yo
     </fieldset>
 </form>
 
-Lets look at component configuration, as the simplest example we use "field" component.
+In the above example, within the nested node called fieldset, we see  a Field UI component declared by the <field name="id"> node. ***The Field UI Component is like a type for a particular instance.***
 
-In the field node the name attribute contains its uniq name for this page. Look at the "Arguments" node which name attribute has value data. The child nodes of this node will be the arguments that will be passed in to the component.
+The `name` attribute must be a unique value amongst the other components on the same heirarchichal level of the same parent node. Look at the <argument>node which name attribute has value data. The child nodes of this node will be the arguments that will be passed in to the component.
 
-All futher child nodes will be declared as items. Item node with the name attribute sets to config contains the childs that will be the component configuration.Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example item with name attribute component in which we define which JS file will be used as component for current field. Reference to this file must be full path to this file or the alias which is defined in requirejs config.
+All fTther child nodes will be declared as items. Item node with the name attribute sets to config contains the childs that will be the component configuration.Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example item with name attribute component in which we define which JS file will be used as component for current field. Reference to this file must be full path to this file or the alias which is defined in requirejs config.
 
 In this example we can omit component node because we have already defined component node for the field. Moreover in this example we are showing only little part of the possible configuration. Every component has default configuration which is declared or inside component or inside definition.xml file. Here we are only redefining default configuration to make it custom.   
