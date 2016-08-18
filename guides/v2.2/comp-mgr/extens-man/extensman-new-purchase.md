@@ -5,7 +5,7 @@ subgroup: 06_UseExtMan
 title: Step 3. Component Install
 menu_title: Component Install
 menu_node: 
-menu_order: 9
+menu_order: 25
 level3_menu_node: level3child
 level3_subgroup: step3-ext
 version: 2.2
