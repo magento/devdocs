@@ -11,7 +11,7 @@ github_link: comp-mgr/extens-man/extensman-main-pg.md
 ---
 
 ## Start the Extension Manager from the Magento Admin
-To run the Extension Manager:
+To start the Extension Manager:
 
 1.	If you haven't done so already, create or get your [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html).
 2.	Log in to the Magento Admin as an administrator.
@@ -28,8 +28,6 @@ To run the Extension Manager:
 
 6.	Enter your authentication keys in the provided fields.
 2.	Click **Submit**.
-
-To upgrade Magento system software instead, see <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.
 
 <div class="bs-callout bs-callout-warning">
    	<p>You must use the same authentication keys you used to install the Magento software. For example, you <em>cannot</em> use Magento CE authentication keys to update or upgrade Magento EE or vice versa. You also <em>cannot</em> use:</p>
@@ -50,7 +48,7 @@ After you log in to the Extension Manager, a list displays as follows:
 ![Choose what to install, update, or uninstall]({{ site.baseurl }}common/images/extens_mgr_updates.png){:width="500px"}
 
 *	**Updates Available** displays the number of extensions you can update.
-*	**Ready to Install** displays the number of extensions you can install.
+*	**Extensions Ready to Install** displays the number of extensions you can install.
 *	**Last Refresh** displays the last time you refreshed the list of extensions on Magento Marketplace. 
 
 	Click **Refresh** to update the information, such as after you purchase new extensions.

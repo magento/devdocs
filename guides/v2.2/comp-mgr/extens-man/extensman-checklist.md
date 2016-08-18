@@ -11,7 +11,7 @@ github_link: comp-mgr/extens-man/extensman-start.md
 ---
 
 ## Run the Extension Manager from the Magento Admin
-The Extension Manager enables you to install, uninstall, and update extensions, including those you purchase from Magento Marketplace. The term *package* means:
+The Extension Manager enables you to install, uninstall, and update extensions, including those you purchase from Magento Marketplace. The term *extension* means:
 
 *	Modules (extend Magento capabilities)
 *	Themes (change the look and feel of your storefront and Admin)
@@ -25,7 +25,7 @@ The Extension Manager enables you to install, uninstall, and update extensions, 
 Before continuing, complete all tasks discussed in [Prerequisites]({{page.baseurl}}comp-mgr/prereq/prereq_compman.html).
 
 ## Extension Manager checklist
-{% include install/update/checklist.md %}
+{% include comp-man/checklist.md %}
 
 #### Next step
 [Start the Extension Manager]({{ page.baseurl }}comp-mgr/extens-man/extensman-main-pg.html)
