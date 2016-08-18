@@ -20,6 +20,18 @@ We are pleased to present Magento Enterprise Edition 2.1.1. This release include
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
 
+### In progress
+
+We will include these two issues in either the Fixed or Known issues section depending upon their status when we release.  
+
+
+<!--- 56974-->* You cannot upgrade 2.0.9 with sample data to 2.1.1. 
+
+
+<!--- 56892-->*  You can now save products using the multiselect attribute value. Previously, you could not save values if using the multiselect attribute. 
+
+
+
 ### Fixed issues
 
 We addressed the following functional issues in this release. 
@@ -30,12 +42,10 @@ We addressed the following functional issues in this release.
 <!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode.  <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
 
 
-<!--- 56974-->* You cannot upgrade 2.0.9 with sample data to 2.1.1. IN PROGRESS
 
-
-<!--- 56892-->*  You can now save products using the multiselect attribute value. Previously, you could not save values if using the multiselect attribute.  IN PROGRESS	
 
 <!--- 54089 -->* You can now successfully upgrade your installation after changing the name of the default product atttribute set. 
+
 
 
 
