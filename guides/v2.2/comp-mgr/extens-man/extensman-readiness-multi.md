@@ -17,7 +17,7 @@ If you're updating multiple extensions, the readiness check displays success and
 
 ### Successful readiness check {#extensman-readiness-multi-success}
 
-{% collapsible Successful readiness check:}
+{% collapsible Successful readiness check: %}
 
 ![Readiness check with multiple extension updates]({{ site.baseurl }}common/images/extensman_read-upd-multi-success.png){:width="600px"}
 
