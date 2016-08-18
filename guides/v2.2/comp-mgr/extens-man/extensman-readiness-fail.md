@@ -2,14 +2,14 @@
 layout: default 
 group: compman
 subgroup: 06_UseExtMan
-title: Step 1. Readiness check
-menu_title: Step 1. Readiness check
+title: Readiness check failure
+menu_title: Readiness check failure
 menu_node: 
-menu_order: 5
-level3_menu_node: level3parent
+menu_order: 7
+level3_menu_node: level3child
 level3_subgroup: readiness
 version: 2.2
-github_link: comp-mgr/extens-man/extensman-readiness.md
+github_link: comp-mgr/extens-man/extensman-readiness-fail.md
 ---
 
 ## Step 1: Readiness check
