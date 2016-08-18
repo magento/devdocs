@@ -19,86 +19,31 @@ github_link: ui_comp_guide/concepts/ui_comp_list_concept.md
 
 This topic provides a complete list of all UI components implemented in Magento. It also gives examples of usage for them.
 
-## The  list of the UI components
+| 1. UI Component                                                                           | Link to constructor                                                                                                                   | Node name in definition.xml | Is top-level | Top-level parent component     | 2. Description                                                                                                         | Has template |
+|-------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|--------------|----------------------|---------------------------------------------------------------------------------------------------------------------|--------------|
+| [Form|(http://devdocs.magento.com/guides/v2.1/ui-components/ui-form.html)]            | [fom.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/form/form.js]                               | <form>                      | Yes          |                      | Form component allows performing CRUD operations on an entity.                                                      |              |
+| [Listing|(http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html)] | [listing.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]                 | <listing>                   | Yes          |                      | Listing is a basic component responsible for rendering grids, lists, and tiles.                                      |              |
+| Fieldset                                                                            | [fieldset.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/form/components/fieldset.js]             | <fieldset>                  |              | Form                 | Container for visually grouped form elements (i.e. buttons, form fields.).                                                                        |              |
+| Field                                                                               | --                                                                                                                                          | <field>                     |              | Form                 | Form field's abstract component                                                                                     |              |
+| Group                                                                               | [group.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/form/components/group.js]                   | <multiline>                 |              | Form                 | Container for visually grouped fields close together with a single label                                                                    |              |
+| Nav                                                                                 | [tab_group.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/form/components/tab_group.js]           | <nav>       (reverse this and tab later)   | Form                 | Creates a navigation bar with individual tabs                                                                                                                   |              |
+| Tab                                                                                 | [tab.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/form/components/tab.js]                       | <tab>                       |              | Form                 | Area for the content accessed by clicking on the nav                                                                       |              |
+| Insert                                                                              | [insert.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/form/components/insert.js]                 | *<container>                |              |                      | Abstract component (that is extended by two other components: InsertForm and InsertListing.                             |              |
+| Insert Form                                                                         | [insert-form.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/form/components/insert-form.js]       | <insertForm>                |              | Form                 | Extends 'Insert', allows to dynamically visually insert a Form component                                     |              |
+| Insert Listing                                                                      | [insert-listing.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/form/components/insert-listing.js] | <insertListing>             |              | Form                 | Extends 'Insert', allows to dynamically visually insert a Listing component                                  |              |
+| Modal                                                                               | [modal-component.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js]         | <modal>                     |              | Form                 | Wraps modal widget functionality into the modal UI Component                                                                  |              |
+| Button                                                                              | [button.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/form/components/button.js]                 | <button>                    |              | ?? Ask later         | Allows to configure the target UI Components, their methods and parameters to pass, which will be executed on click |              |
+| Button adapter                                                                      | [button-adapter.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/form/button-adapter.js]            | *<container>                |              | Form                 | Wraps the buttons and adds to a form created by the UI Component. For example, this component can be used to create a button bar.                                                      |              |
+
+| Form provider                                                                       | [provider.js|https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/form/provider.js]                        | <dataSource>                |              | Form                 | Provides data for a form.                                                                                              | No           |
+|   Form provider's client                                                              | [client.js|]                                                                                                                                |                             |              |                      |                                                                                                                     |              |
 
 
-### UI component 1
-...
-#### Usage 
-....
-### UI component 2
-...
-#### Usage 
-....
 
 
 
-This topic describes in more detail WHAT this feature is, and provides the reader an understanding of what the feature does, and how it is implemented/works. Explain core concepts, and relevant information about system or application workflows.
-
-When writing a conceptual topic, pretend that you are describing this feature to a new developer who just joined your team, and who will be working with you to further develop it.
-
-<!-- форматирование -->
-
-### Formatting reference
 
 
-### Basic Markdown Syntax
-Below are some basic examples of what you can do with markdown.
+Notes: there is a <container> node in the definition.xml file. Any UI components that are not represented elsewhere in the definition.xml should use the <container> node.
+Notes: the column called Top-level nested... the UI component must be nested in the specific top-level UI component. Or use magic workaround from Olha.
 
-#### Text Effects
-
-*emphasis*    
- **bold**     
- `inline code`
-
-By indenting your content by at least 4 spaces, you can create a code block.
-
-    //This is a code block!
-    print "Hello World!";
-
-For more examples of basic markdown please follow this [link](https://daringfireball.net/projects/markdown/syntax){:target="_self"}.
-
-#### Lists
-Lists are useful for organizing and displaying related items. Below are examples of a bulleted list and an ordered list.
-
-**Bulleted List:**
-
-* List Item 1
-*	List Item 2
-*	List Item 3
-
-**Ordered List:**
-
-1.	First Step
-2.	Second Step
-3.	Third Step
-
-#### Tables
-Tables can be useful for displaying different kinds of data in an organized way.
-
-*Example:*
-
-| Column Heading | Column Heading | Column Heading |
-|----------------|----------------|----------------|
-| Data 1         | Data 2         | Data 3         |
-| Data 4         | Data 5         |                |
-| Data 6         |                |                |
-
-You can read more about table syntax [here](http://kramdown.gettalong.org/syntax.html#tables){:target="_blank"}.
-
-#### Code blocks
-
-Code blocks can also be defined by surrounding the block of code with `~~~` which can be seen in the [table](#tables) example.
-
-For highlighted code blocks use the `highlight` Liquid tag.
-
-*Example:*
-
-{% highlight html %}
-<div class="container">
-  <h4 class="title">Title</h4>
-  <div class="content">
-    <p>Paragraph content.</p>
-  </div>
-</div>
-{% endhighlight %}

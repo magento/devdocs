@@ -6,7 +6,7 @@ title: About Configuration of UI Components in XML
 menu_title: About Configuration of UI Components in XML
 menu_order: 1
 version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_troubleshoot.md
+github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot.md
 ---
 
 ## About Configuration of UI Components in XML
@@ -107,10 +107,17 @@ Within the top node, there can also be nested nodes. For example, if you want yo
     </fieldset>
 </form>
 
-In the above example, within the nested node called fieldset, we see  a Field UI component declared by the <field name="id"> node. ***The Field UI Component is like a type for a particular instance.***
+In the above example, within the nested node <fieldset> that declares the  Fieldset UI Component.
 
-The `name` attribute must be a unique value amongst the other components on the same heirarchichal level of the same parent node. Look at the <argument>node which name attribute has value data. The child nodes of this node will be the arguments that will be passed in to the component.
+The `name` attribute must be a unique value amongst the other components on the same heirarchichal level of the same parent node. Look at the <argument>node which name attribute has value data. The child nodes of this node are the arguments that will be passed in to the component.
 
-All fTther child nodes will be declared as items. Item node with the name attribute sets to config contains the childs that will be the component configuration.Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example item with name attribute component in which we define which JS file will be used as component for current field. Reference to this file must be full path to this file or the alias which is defined in requirejs config.
+All other child nodes will be declared as items. An <item> node with the `name` attribute value of `config` (i.e. <item name="config"> ...</item>) contains the children nodes that will describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use an <item> with `name` attribute with a value of `component` (i.e. <item name="component">...</item>) to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in require.js configuration.
 
-In this example we can omit component node because we have already defined component node for the field. Moreover in this example we are showing only little part of the possible configuration. Every component has default configuration which is declared or inside component or inside definition.xml file. Here we are only redefining default configuration to make it custom.   
+In this example, we can omit the <item name="component">...</item> node because this property is already defined in the definition.xml of the Fieldset UI component. Moreover in this example we are showing only a little part of the possible configuration. Every UI component has a default configuration that can be declared in one of the following ways:
+-- inside the UI component itself, in the .js file
+-- inside the definition.xml file {{\Ui\view\base\ui_component\etc\definition.xml}}
+-- in both places, in which case the configurations merge (the UI Component .js file has priority).
+
+For more information about the configuration flow, refer to {{,,,,}}.
+
+In the above example, the Fieldset UI component uses a merged  configuration from both the definition.xml file and from the UI componenet's .js file.
