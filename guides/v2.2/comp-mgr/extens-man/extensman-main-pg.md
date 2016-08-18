@@ -40,18 +40,18 @@ To upgrade Magento system software instead, see <a href="{{page.baseurl}}comp-mg
 See one of the following sections:
 
 *	[Choose what to install, uninstall, or update](#extens-choose)
-*	[Install packages](#extensman-install)
-*	[Uninstall packages](#extensman-uninstall)
-*	[Update packages](#extensman-update)
+*	[Install extensions](#extensman-install)
+*	[Uninstall extensions](#extensman-uninstall)
+*	[Update extensions](#extensman-update)
 
 ## Choose what to install, uninstall, or update {#extens-choose}
 After you log in to the Extension Manager, a list displays as follows:
 
 ![Choose what to install, update, or uninstall]({{ site.baseurl }}common/images/extens_mgr_updates.png){:width="500px"}
 
-*	**Updates Available** displays the number of packages you can update.
-*	**Ready to Install** displays the number of packages you can install.
-*	**Last Refresh** displays the last time you refreshed the list of packages on Magento Marketplace. 
+*	**Updates Available** displays the number of extensions you can update.
+*	**Ready to Install** displays the number of extensions you can install.
+*	**Last Refresh** displays the last time you refreshed the list of extensions on Magento Marketplace. 
 
 	Click **Refresh** to update the information, such as after you purchase new extensions.
 
@@ -59,7 +59,7 @@ After you log in to the Extension Manager, a list displays as follows:
 
 {% collapsible Supported actions for each type %}
 
-We support different actions for each *type* of component. (*Component* is a general term that includes any type of code you can install in the Magento application&mdash;module, language package, theme, or metapackage. *Package* refers to anything you can install, uninstall, or update.)
+We support different actions for each *type* of component. (*Component* is a general term that includes any type of code you can install in the Magento application&mdash;module, language package, theme, or metapackage. *Extension* refers to anything you can install, uninstall, or update.)
 
 The following figure shows how types display in the Extension Manager.
 
@@ -81,7 +81,7 @@ The following sections provide details:
 *	[Actions available for metapackages](#extensman-access-types-meta)
 
 #### Actions available for non-metapackages {#extensman-access-types-non-meta}
-Most packages you get from Magento Marketplace or another source have only one type; for example, a module.
+Most extensions you get from Magento Marketplace or another source have only one type; for example, a module.
 
 The following table shows which actions are supported for each non-metapackage.
 
@@ -192,13 +192,13 @@ To install more than one extension:
 
 {% endcollapsible %}
 
-## Uninstall packages {#extensman-uninstall}
+## Uninstall extensions {#extensman-uninstall}
 
-{% collapsible To uninstall packages: %}
+{% collapsible To uninstall extensions: %}
 
 1.	In the Installed Products section, click **Uninstall** from the **Actions** list as the following figure shows.
 
-	![Uninstall packages]({{ site.baseurl }}common/images/extensman_uninstall.png){:width="600px"}
+	![Uninstall extensions]({{ site.baseurl }}common/images/extensman_uninstall.png){:width="600px"}
 
 	If no **Uninstall** option is available, the vendor did not provide an uninstallation script. Contact the vendor for uninstallation instructions.
 3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).

@@ -13,11 +13,11 @@ github_link: comp-mgr/extens-man/extensman-uninst-data.md
 ---
 
 ## Step 3. Remove or Keep Data
-This step displays if you're uninstalling a package.
+This step displays if you're uninstalling a extension.
 
 After backing up, you have the choice of removing data from the Magento 2 database.
 
-If the component has no data to remove, the following message displays. (If a package has data but no uninstall script, the same prompt displays. In that case, contact the vendor or remove database data manually.)
+If the component has no data to remove, the following message displays. (If a extension has data but no uninstall script, the same prompt displays. In that case, contact the vendor or remove database data manually.)
 
 	The selected component has no data to remove.
 
