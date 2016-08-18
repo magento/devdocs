@@ -15,7 +15,7 @@ github_link: comp-mgr/extens-man/extensman-readiness-multi.md
 ## Readiness check with multiple extension updates {#extensman-readiness-multi}
 If you're updating multiple extensions, the readiness check displays success and failure as discussed in this topic.
 
-### Successful readiness check
+### Successful readiness check {#extensman-readiness-multi-success}
 A successful readiness check displays as follows:
 
 ![Readiness check with multiple extension updates]({{ site.baseurl }}common/images/extensman_read-upd-multi-success.png){:width="600px"}
