@@ -18,5 +18,5 @@ The following figure shows an example of a successful readiness check. If all te
 ![If all readiness checks pass, click Next and continue with the next step]({{ site.baseurl }}common/images/extensman_readiness-success.png)
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>If you're updating multiple extensions, see <a href="{{ page.baseurl }}comp-mgr/extens-man/extensman-readiness-multi.html#extensman-readiness-multi-success">Readiness check with multiple extension updates"</a> for additional options.</p>
+	<p>If you're updating multiple extensions, see <a href="{{ page.baseurl }}comp-mgr/extens-man/extensman-readiness-multi.html#extensman-readiness-multi-success">Readiness check with multiple extension updates</a> for additional options.</p>
 </div>

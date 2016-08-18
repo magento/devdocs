@@ -28,7 +28,7 @@ You have the following options:
 
 If you make changes, click **Try Again**.
 
-### Readiness check failure
+### Readiness check failure {#extensman-readiness-multi-fail}
 If the readiness check fails because of version conflicts, you must resolve the conflicts before you continue your update. The following figure shows an example:
 
 ![Readiness check failure with multiple updates]({{ site.baseurl }}common/images/extensman_read-upd-multi-fail.png)
