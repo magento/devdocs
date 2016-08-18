@@ -2,9 +2,9 @@
 layout: default
 group: fedg
 subgroup: D_CSS
-title: CSS preprocessing
+title: How CSS and LESS files are preprocessed and how to debug them
 menu_order: 3
-menu_title: CSS preprocessing
+menu_title: How CSS and LESS files are preprocessed and how to debug them
 version: 2.0
 github_link: frontend-dev-guide/css-topics/css-preprocess.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
@@ -99,15 +99,47 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 
 #### Styles debugging in server-side compilation mode {#css_debug_server}
 
-In server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication. 
+In server-side LESS compilation mode, to have your changes applied, you need to do the following:
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories.</p>
-</div>
+1. Clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system.
+2. Clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories by deleting the directory in the file system. (if they already existed there).
+2. Trigger static files compilation and publication. This can be done in one of the following ways:
 
-Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
+	-  Reloading the page where the modified styles are applied.
+	-  Running the [static files deployment tool]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html).
+
+Reloading the page only triggers compilation and publication of the styles used on this very page, and does not give you the information about the errors if any. So if you made changes in  `.less` files used on many pages, and want to debug them, using the deployment tool is the better option.
+
+##### Debugging using the static view files deployment tool
+
+Once you save your changes and run the `magento setup:static-content:deploy` cli command from the `<your_Magento_instance>/bin` directory, the tool pre-processes (including compilation) and publishes the static view files.
+
+All errors occurring during `.less` files compilation are handled by the [`oyejorge/less.php`](https://github.com/oyejorge/less.php) third party library.
+ 
+Errors are caught as exceptions and written to the system log (by default it is `var/log/system.log`) and displayed on the screen. For each error, the following information is written:
+
+* The path to the processed file in the `var/view_preprocessed` directory, in case if import is not the same as source file.
+* The error description.
+* The error line and the column number.
+* The content of the `.less` code in the previous and following lines.
+
+Example of an error message:
+
+    Compilation from source: /var/www/magento2/app/design/adminhtml/Magento/backend/web/css/styles.less
+    variable @variable-x is undefined in file /var/www/magento2/var/view_preprocessed/css/adminhtml/Magento/backend/en_US/css/styles.less in styles.less on line 56, column 17
+          margin-left: 0;
+          width: 100%;
+          height: @variable-x;
+     }
+
+     .menu-wrapper,
+
+##### Debugging using Grunt
+
+Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can 
 
 See the [Compile LESS with Grunt]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html) topic for details how to install, configure and use Grunt.
+
 
 <h3 id="client-side">Client-side LESS compilation</h3>
 The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:
@@ -216,29 +248,5 @@ Example of how <code>@magento_import</code> is used and processed in <code>&lt;M
 
 ### Developer experience when working with LESS {#debugging_less_files}
   
- The preferred way to check modified `.less` files is using the [deploy static files tool]({{{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict"}})
+server-side
 
-
- +<p>Any errors occured during less compilations are handled by 3rd party library - <a href="https://github.com/oyejorge/less.php" target="_blank">oyejorge/less.php</a>.</p>
- +<p>
- +Errors are catched as exceptions and loged using psr logger with:
- +<ul>
- +<li>Full path to the source file</li>
- +<li>Path to processed file with error (in var/view_preprocessed folder), in case of import not the same as source file</li>
- +<li>Error description</li>
- +<li>Line and column of the error occurance</li>
- +<li>lines of the less code prior and next to the error</li>
- +</ul>
- +</p>
- +Error message example:
- +<pre>
- +Compilation from source: /var/www/magento2/app/design/adminhtml/Magento/backend/web/css/styles.less
- +variable @variable-x is undefined in file /var/www/magento2/var/view_preprocessed/css/adminhtml/Magento/backend/en_US/css/styles.less in styles.less on line 56, column 17
- +54|         margin-left: 0;
- +55|         width: 100%;
- +56|         height: @variable-x;
- +57|     }
- +58|
- +59|     .menu-wrapper,
- +</pre>
- +During deploy errors are shown to the stdout in addition to the log. 
