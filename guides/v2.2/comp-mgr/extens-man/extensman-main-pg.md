@@ -213,7 +213,7 @@ To install more than one extension:
 
 The New Updates page displays all extensions that can be updated.
 
-![List of extensions that can be updated]({{ site.baseurl }}common/images/extensman_new-updates.png)
+![List of extensions that can be updated]({{ site.baseurl }}common/images/extensman_new-updates.png){:width="600px"}
 
 You have the following options:
 

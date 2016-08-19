@@ -20,3 +20,6 @@ The following figure shows an example of a successful readiness check. If all te
 <div class="bs-callout bs-callout-info" id="info">
 	<p>If you're updating multiple extensions, see <a href="{{ page.baseurl }}comp-mgr/extens-man/extensman-readiness-multi.html#extensman-readiness-multi-success">Readiness check with multiple extension updates</a> for additional options.</p>
 </div>
+
+#### Next step
+[Step 2. Backup]({{ page.baseurl }}comp-mgr/extens-man/extensman-backup.html)
