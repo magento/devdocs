@@ -1175,7 +1175,9 @@
       </ul>
     </li>
     <li>
-      <p><code>&lt;Magento install directory&gt;/vendor</code>: This location is found in the alternative setups where the <a href="/guides/v2.1/install-gde/prereq/integrator_install.html"><code>composer create-project</code></a> command was used to get a Magento 2 metapackage (which downloads the CE or EE code), or a <a href="/guides/v2.1/install-gde/prereq/zip_install.html">compressed Magento 2 archive</a> was extracted in order to install Magento. <em>We do not recommend developing components using this setup</em>.</p>
+      <p><code>&lt;Magento install directory&gt;/vendor</code>: This location is found in the alternative setups where the <a href="/guides/v2.1/install-gde/prereq/integrator_install.html"><code>composer create-project</code></a> command was used to get a Magento 2 metapackage (which downloads the CE or EE code), or a <a href="/guides/v2.1/install-gde/prereq/zip_install.html">compressed Magento 2 archive</a> was extracted in order to install Magento.</p>
+
+      <p>Any third party components (and the Magento application itself) are downloaded and stored under the <code>vendor</code> directory. If you are using Git to manage project, this directory is typically added to the <code>.gitignore</code> file. Therefore, we recommend you do your customization work in <code>app/code</code>, not <code>vendor</code>.</p>
     </li>
   </ul>
 

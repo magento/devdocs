@@ -255,11 +255,56 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-resources-parent.html">Helpful resources</a></li>
 									
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a></li>
+
 									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install-resource-diagram.html">Installation flow diagram</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
 								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/system-requirements.html">Magento system requirements</a></li>
 									
@@ -759,7 +804,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 14 August 2016 (PDT)</i></p>
 		<h4 id="contents">Contents</h4>
 
 <ul>
@@ -770,30 +815,41 @@
 </ul>
 
 <h2 id="integrator-aud">Intended audience</h2>
-<p>The audience for this topic is anyone who downloaded a compressed Magento software archive (<code>.zip</code> or <code>.tar</code>). If you’d rather use Composer, go back and <a href="/guides/v2.0/install-gde/continue.html">choose another starting point</a>.</p>
+<p>The audience for this topic is anyone who downloaded a compressed Magento software archive (<code>.zip</code> or <code>.tar</code>). If you’d rather use Composer, go back and <a href="/guides/v2.0/install-gde/bk-install-guide.html">choose another starting point</a>.</p>
 
-<h2 id="zip-prereq">Prerequisites</h2>
-<p>Before you continue, make sure you’ve done all of the following:</p>
-
-<ul>
-  <li>Set up a server that meets our <a href="/guides/v2.0/install-gde/system-requirements.html">system requirements</a></li>
-  <li>Created the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a></li>
-</ul>
+<h2 id="prerequisites">Prerequisites</h2>
 
 <div>
 
-  <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
+  <p>Before you continue, make sure you’ve done all of the following:</p>
 
   <ul>
-    <li>Magento CE or EE software only</li>
-    <li>Magento CE or EE software with sample data (designed to help you learn Magento faster)</li>
+    <li>
+      <p>Set up a server that meets our [system requirements]/guides/v2.0/install-gde/system-requirements.html}</p>
+
+      <p>For details, see <a href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></p>
+    </li>
+    <li>
+      <p>Created the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a></p>
+    </li>
   </ul>
 
-  <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
+  <h2 id="get-the-magento-software">Get the Magento software</h2>
 
-  <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+  <div>
 
-  <table>
+    <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
+
+    <ul>
+      <li>Magento CE or EE software only</li>
+      <li>Magento CE or EE software with sample data (designed to help you learn Magento faster)</li>
+    </ul>
+
+    <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
+
+    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+
+    <table>
 	<col width="30%" />
 	<col width="70%" />
 <tbody>
@@ -827,73 +883,73 @@
 </tbody>
 </table>
 
-  <h2 id="zip-transfer">Transfer the Magento archive to your server</h2>
-  <p>To transfer the Magento software archive to your server:</p>
+    <h2 id="zip-transfer">Transfer the Magento archive to your server</h2>
+    <p>To transfer the Magento software archive to your server:</p>
 
-  <ol>
-    <li>
-      <p>Install and configure a file transfer protocol (FTP) or secure copy protocol (SCP) client to transfer the Magento software from your computer to your server.</p>
+    <ol>
+      <li>
+        <p>Install and configure a file transfer protocol (FTP) or secure copy protocol (SCP) client to transfer the Magento software from your computer to your server.</p>
 
-      <p>There are many ways to configure FTP and SCP. Following are a few packages you can use. Magento does not recommend particular software.</p>
+        <p>There are many ways to configure FTP and SCP. Following are a few packages you can use. Magento does not recommend particular software.</p>
 
-      <ul>
-        <li>Windows: <a href="https://winscp.net/eng/download.php" target="_blank">WinSCP</a> or <a href="https://filezilla-project.org/download.php" target="_blank">Filezilla</a></li>
-        <li>Mac OS: <a href="https://cyberduck.io/?l=en" target="_blank">CyberDuck</a> or <a href="https://filezilla-project.org/download.php" target="_blank">Filezilla</a></li>
-      </ul>
-    </li>
-    <li>
-      <p>Create a connection to your Magento server.</p>
+        <ul>
+          <li>Windows: <a href="https://winscp.net/eng/download.php" target="_blank">WinSCP</a> or <a href="https://filezilla-project.org/download.php" target="_blank">Filezilla</a></li>
+          <li>Mac OS: <a href="https://cyberduck.io/?l=en" target="_blank">CyberDuck</a> or <a href="https://filezilla-project.org/download.php" target="_blank">Filezilla</a></li>
+        </ul>
+      </li>
+      <li>
+        <p>Create a connection to your Magento server.</p>
 
-      <p>Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.</p>
-    </li>
-    <li>
-      <p>After you log in to your server, browse to locate the Magento CE or EE archive on your local system.</p>
+        <p>Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.</p>
+      </li>
+      <li>
+        <p>After you log in to your server, browse to locate the Magento CE or EE archive on your local system.</p>
 
-      <p>On the remote system, browse to locate the web server docroot directory.</p>
+        <p>On the remote system, browse to locate the web server docroot directory.</p>
 
-      <p>The following figure shows an example.</p>
+        <p>The following figure shows an example.</p>
 
-      <p><img src="/common/images/install-merch_ftp-transfer.png" /></p>
-    </li>
-    <li>
-      <p>Transfer the archive from your local system to the web server docroot directory.</p>
+        <p><img src="/common/images/install-merch_ftp-transfer.png" /></p>
+      </li>
+      <li>
+        <p>Transfer the archive from your local system to the web server docroot directory.</p>
 
-      <p>On some FTP client software, you do this by dragging and dropping.</p>
-    </li>
-    <li>Wait while the transfer completes.</li>
-    <li>Log in to your Magento server, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-    <li>Change to the web server docroot or the virtual host directory.</li>
-    <li>
-      <p>Create a subdirectory for the Magento software.</p>
+        <p>On some FTP client software, you do this by dragging and dropping.</p>
+      </li>
+      <li>Wait while the transfer completes.</li>
+      <li>Log in to your Magento server, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+      <li>Change to the web server docroot or the virtual host directory.</li>
+      <li>
+        <p>Create a subdirectory for the Magento software.</p>
 
-      <p>If you set up a virtual host, the subdirectory name must match the name in your virtual host.</p>
+        <p>If you set up a virtual host, the subdirectory name must match the name in your virtual host.</p>
 
-      <p>For example,</p>
+        <p>For example,</p>
 
-      <pre><code>mkdir magento2ce
+        <pre><code>mkdir magento2ce
 mkdir magento2ee
 </code></pre>
 
-      <p>You can also use a generic directory name</p>
+        <p>You can also use a generic directory name</p>
 
-      <pre><code>mkdir magento2
+        <pre><code>mkdir magento2
 </code></pre>
-    </li>
-    <li>
-      <p>Copy the Magento archive to that directory.</p>
+      </li>
+      <li>
+        <p>Copy the Magento archive to that directory.</p>
 
-      <p>For example,</p>
+        <p>For example,</p>
 
-      <pre><code>cp /var/www/Magento-CE-2.0.0+Samples.tar.bz2 magento2
+        <pre><code>cp /var/www/Magento-CE-2.0.0+Samples.tar.bz2 magento2
 </code></pre>
-    </li>
-    <li>Continue with the next section.</li>
-  </ol>
+      </li>
+      <li>Continue with the next section.</li>
+    </ol>
 
-  <h2 id="zip-extract">Extract the software on your server</h2>
-  <p>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and extract the software package in the web server docroot using one of the following commands:</p>
+    <h2 id="zip-extract">Extract the software on your server</h2>
+    <p>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and extract the software package in the web server docroot using one of the following commands:</p>
 
-  <table>
+    <table>
 <tbody>
 <tr> 
 	<th>File format</th>
@@ -914,23 +970,23 @@ mkdir magento2ee
 </tbody>
 </table>
 
-  <p>The Magento software extracts to the directory you created. After the file has extracted, either delete the Magento archive or move it to another directory.</p>
+    <p>The Magento software extracts to the directory you created. After the file has extracted, either delete the Magento archive or move it to another directory.</p>
 
-  <div>
+    <div>
 
-    <h2 id="perms-over">Set pre-installation file system ownership and permissions</h2>
-    <p>This topic discusses how to set read-write permissions for the web server group before you install the Magento software. This is necessary so the Setup Wizard or command line can write files to the Magento file system.</p>
+      <h2 id="perms-over">Set pre-installation file system ownership and permissions</h2>
+      <p>This topic discusses how to set read-write permissions for the web server group before you install the Magento software. This is necessary so the Setup Wizard or command line can write files to the Magento file system.</p>
 
-    <p>The procedure you use is different, depending on whether you use <a href="#perms-shared">shared hosting</a> and have one user or if you use a <a href="#perms-private">private server</a> and have two users.</p>
+      <p>The procedure you use is different, depending on whether you use <a href="#perms-shared">shared hosting</a> and have one user or if you use a <a href="#perms-private">private server</a> and have two users.</p>
 
-    <div class="bs-callout bs-callout-info" id="info">
+      <div class="bs-callout bs-callout-info" id="info">
   <p>If you're using a Magento version <em>earlier than</em> 2.0.6, see <a href="/guides/v2.0/install-gde/install/legacy-file-system-perms.html">Appendix&mdash;Magento file system ownership and appendix (legacy)</a> instead.</p>
 </div>
 
-    <h2 id="perms-shared">Set permissions for shared hosting (one user)</h2>
-    <p>This section discusses how to set pre-installation permissions if you log in to the Magento server as the same user that also runs the web server. This type of setup is common in shared hosting environments.</p>
+      <h2 id="perms-shared">Set permissions for shared hosting (one user)</h2>
+      <p>This section discusses how to set pre-installation permissions if you log in to the Magento server as the same user that also runs the web server. This type of setup is common in shared hosting environments.</p>
 
-    <div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>To set permissions before you install the Magento software:</p>
+      <div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>To set permissions before you install the Magento software:</p>
 
 <ol>
   <li>Log in to your Magento server.</li>
@@ -984,10 +1040,10 @@ chmod u+x bin/magento
 
 </div></div>
 
-    <h2 id="perms-private">Set ownership and permissions for two users</h2>
-    <p>This section discusses how to set ownership and permissions for your own server or a private hosting setup. In this type of setup, you typically <em>cannot</em> log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user.</p>
+      <h2 id="perms-private">Set ownership and permissions for two users</h2>
+      <p>This section discusses how to set ownership and permissions for your own server or a private hosting setup. In this type of setup, you typically <em>cannot</em> log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user.</p>
 
-    <div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>Complete the following tasks in the order shown:</p>
+      <div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>Complete the following tasks in the order shown:</p>
 
 <ul>
   <li><a href="#mage-owner-about-group">About the shared group</a></li>
@@ -1126,26 +1182,27 @@ chmod u+x bin/magento
 </div>
 </div></div>
 
-    <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
-    <p>After you’ve performed the other tasks in this topic, enter one of the following commands to switch to that user:</p>
+      <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
+      <p>After you’ve performed the other tasks in this topic, enter one of the following commands to switch to that user:</p>
 
-    <ul>
-      <li>Ubuntu: <code>su &lt;username&gt;</code></li>
-      <li>CentOS: <code>su - &lt;username&gt;</code></li>
-    </ul>
+      <ul>
+        <li>Ubuntu: <code>su &lt;username&gt;</code></li>
+        <li>CentOS: <code>su - &lt;username&gt;</code></li>
+      </ul>
 
-    <p>For example,</p>
+      <p>For example,</p>
 
-    <pre><code>su magento_user
+      <pre><code>su magento_user
 </code></pre>
 
-    <h4 id="next-step">Next step</h4>
-    <p>Install the Magento software:</p>
+      <h4 id="next-step">Next step</h4>
+      <p>Install the Magento software:</p>
 
-    <ul>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a></li>
-    </ul>
+      <ul>
+        <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
+        <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 

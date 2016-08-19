@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento file system ownership and permissions</title>
+	<title>Just the basics</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/install-gde/prereq/file-sys-perms-parent.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/basics/basics-parent.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -41,13 +41,13 @@
 			<div class="main-site-name">
 				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.1)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 			
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
-		Version 2.1
+		Version 2.0
 	</button>
 
 
@@ -78,66 +78,64 @@
          <li class="first">
             <a href="#">Get Started</a>
             <ul class="menu nav">
-               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
 
             </ul>
          </li>
          <li class="first">
             <a href="#">System Administrator</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                
-               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
                
-               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
             </ul>
          </li>
          <li class="first">
             <a href="#">Developers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
-               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-               
-                   <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
                
             </ul>
          </li>
          <li class="first">
             <a href="#">Designers</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
             </ul>
          </li>
          <li class="first">
             <a href="#">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
             </ul>
          </li>
           <li class="first">
-              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <a href="/guides/v2.0/test/testing.html">Testing</a>
               <ul class="menu nav">
-                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
               </ul>
           </li>
          <li class="first">
-            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+            <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Do I...?</a>
          </li>
       </ul>
 
@@ -169,9 +167,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento file system ownership and permissions</h1>
+		<h1 class="page-heading">Just the basics</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/prereq/file-sys-perms-parent.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/basics/basics-parent.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -186,7 +184,7 @@
 	<div class="sidebar-wrapper">
 
 
-<h4>Installation Guide<br>Part 1: Getting started</h4>
+<h4>Installation Guide</h4>
 
 
 
@@ -237,456 +235,6 @@
 
 				
 
-					
-					
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install-resources-parent.html">Helpful resources</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/install-resource-diagram.html">Installation flow diagram</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/system-requirements.html">Magento system requirements</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/system-requirements-tech.html">Magento technology stack requirements</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/system-requirements_browsers.html">Supported browsers</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="tls"><a href="#">Transport Layer Security (TLS) requirements</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.1/install-gde/system-requirements_tls1-2.html">TLS 1.2 requirement for PayPal</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.1/install-gde/system-requirements_repo-tls1-2.html">TLS requirement for repo.magento.com</a>
-
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/apache.html">Apache</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="php"><a href="#">PHP</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.1/install-gde/prereq/php-centos.html">PHP 5.6 or 7.0&mdash;CentOS</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
-
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent  active " id="umask"><a href="#">Magento file system ownership and permissions</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.1/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a>
-
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/install-rabbitmq.html">RabbitMQ (Enterprise Edition)</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/security.html">SELinux and iptables</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/optional.html">Optional software</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/prereq_updater.html">Set up the updater (obsolete)</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install/get-software.html">Get the Magento software</a></li>
-									
-								
-
-									
-
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
-									
-								
-
-									
-
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/prereq/integrator_install.html">(Integrator) Get the Composer metapackage</a></li>
-									
-								
-
-									
-
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/install/get-help.html">Get help with your installation</a></li>
-									
-								
-
-									
-
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/continue-to-install.html">Next&mdash;Installation part 2, installing</a></li>
-									
-								
-
-									
-
-
-								
-
-
-
-
-						
-
-					
-
-
-				
-
 			
 
 				
@@ -707,7 +255,124 @@
 
 				
 
-			
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Getting Started</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/bk-install-guide.html">How to get the Magento software</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install-flow-diagram.html">Installation flow diagram</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent  active " id="basics"><a href="#">Just the basics</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child basics " data-menunode="basics"><a href="/guides/v2.0/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child basics " data-menunode="basics"><a href="/guides/v2.0/install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child basics " data-menunode="basics"><a href="/guides/v2.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child basics " data-menunode="basics"><a href="/guides/v2.0/install-gde/basics/basics_module.html">What's the difference between a module and a component?</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child basics " data-menunode="basics"><a href="/guides/v2.0/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child basics " data-menunode="basics"><a href="/guides/v2.0/install-gde/basics/basics_docroot.html">What is a docroot?</a>
+
+
+									
+
+								
+
+
+
+
+						
+
+					
+
 
 				
 
@@ -818,7 +483,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 14 August 2016 (PDT)</i></p>
 		
 
 

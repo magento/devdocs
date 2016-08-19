@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento file system ownership and permissions</title>
+	<title>Installation flow diagram</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/install-gde/prereq/file-sys-perms-parent.html">
+	<link rel="canonical" href="//guides/v2.1/install-gde/install-resource-diagram.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -169,9 +169,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento file system ownership and permissions</h1>
+		<h1 class="page-heading">Installation flow diagram</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/prereq/file-sys-perms-parent.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/install-resource-diagram.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -272,7 +272,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/install-resource-diagram.html">Installation flow diagram</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/install-gde/install-resource-diagram.html">Installation flow diagram</a></li>
 
 									
 
@@ -440,7 +440,7 @@
 
 									
 
-										<li class="level3Parent  active " id="umask"><a href="#">Magento file system ownership and permissions</a>
+										<li class="level3Parent " id="umask"><a href="#">Magento file system ownership and permissions</a>
 
 
 									
@@ -818,8 +818,64 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		
+			<p align="right"><i>Updated: 15 August 2016 (PDT)</i></p>
+		<h2 id="installation-flow-diagram">Installation flow diagram</h2>
+<p>The following diagram provides a high-level overview of installing the Magento software:</p>
+
+<div>
+
+  <p><img src="/common/images/install_diagram.png" alt="How Magento installation works" width="1100px" /></p>
+
+  <p>The diagram shows the following:</p>
+
+  <ol>
+    <li>
+      <p>Set up your server environment.</p>
+
+      <p>Install the prerequisite software, including PHP, Apache, and MySQL. Consult the system requirements for specific information:</p>
+
+      <ul>
+        <li><a href="/guides/v2.0/install-gde/system-requirements.html">2.0.x system requirements</a></li>
+        <li><a href="/guides/v2.1/install-gde/system-requirements-tech.html">2.1.x system requirements</a></li>
+      </ul>
+    </li>
+    <li>
+      <p>Get the Magento software.</p>
+
+      <ul>
+        <li>
+          <p>For simplicity, get a compressed Magento CE or Magento EE <a href="/guides/v2.1/install-gde/prereq/zip_install.html">archive</a>, extract it on your Magento server, and start your installation.</p>
+        </li>
+        <li>
+          <p>If you are more technical and you are familiar with Composer, get a Magento CE or Magento EE <a href="/guides/v2.1/install-gde/prereq/integrator_install.html">metapackage</a>.</p>
+        </li>
+        <li>
+          <p>If you want to contribute to the Magento CE codebase or customize the Magento application, <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clone</a> the Magento 2 GitHub repository. (This method requires familiarity with both GitHub and Composer.)</p>
+        </li>
+      </ul>
+
+      <div class="bs-callout bs-callout-info" id="info">
+    <p>To be able to use the Web Setup Wizard to install or upgrade the Magento software, or to manage extensions you get from Magento Marketplace, you must either get a compressed archive or a Composer metapackage.</p>
+    <p>If you clone the GitHub repository, you <em>cannot</em> use the Web Setup Wizard to install or upgrade either the Magento software or extensions.</p>
+</div>
+    </li>
+    <li>
+      <p>Install the Magento software using either the Web Setup Wizard or command line.</p>
+
+      <p>For simplicity, only the Web Setup Wizard is shown in the diagram.</p>
+
+      <p>At each step, the Web Setup Wizard validates the information you entered. As shown in the preceding diagram, if validation fails, you must manually fix the issues before you proceed.</p>
+
+      <p>If the step fails because prerequisite software isn’t set up correctly, review our <a href="/guides/v2.1/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</p>
+
+      <p>For other types of failures, see our <a href="/guides/v2.1/install-gde/trouble/tshoot.html">Troubleshooting</a>.</p>
+    </li>
+    <li>
+      <p>Verify the installation by viewing your storefront and the Magento Admin.</p>
+    </li>
+  </ol>
+
+</div>
 
 
 		</div>
