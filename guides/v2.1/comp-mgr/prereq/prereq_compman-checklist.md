@@ -1,0 +1,1 @@
+../../../v2.0/comp-mgr/prereq/prereq_compman-checklist.md
