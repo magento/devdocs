@@ -11,4 +11,4 @@ github_link: comp-mgr/prereq/prereq_compman-checklist.md
 ---
 
 ## Checklist
-{% include install/update/checklist.md %}
+{% include install/comp-man/checklist.md %}

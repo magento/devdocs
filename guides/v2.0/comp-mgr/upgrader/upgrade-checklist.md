@@ -32,7 +32,7 @@ You can upgrade in any of the following ways:
 </div>
 
 ## System Upgrade checklist
-{% include install/update/checklist.md %}
+{% include install/comp-man/checklist.md %}
 
 #### Next step
 [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html)
