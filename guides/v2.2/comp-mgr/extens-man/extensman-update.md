@@ -2,8 +2,8 @@
 layout: default 
 group: compman
 subgroup: 06_UseExtMan
-title: Step 3. Component Update
-menu_title: Component Update
+title: Step 3. Extension Update
+menu_title: Extension Update
 menu_node: 
 menu_order: 30
 level3_menu_node: level3child
@@ -12,8 +12,8 @@ version: 2.2
 github_link: comp-mgr/extens-man/extensman-update.md
 ---
 
-## Step 3. Component Update
-This step displays if you're updating components. The following figure shows an example.
+## Step 3. Extension Update
+This step displays if you're updating extensions. The following figure shows an example.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/extensman_update-step.png" width="350px" alt="Click update to complete the task">
 
