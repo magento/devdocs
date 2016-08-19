@@ -66,7 +66,7 @@ Consult the following table for how to get started installing Magento Community 
 			<li>Uses Composer to update package dependencies.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>
 			<li>Upgrades the Magento software using Composer and GitHub commands.</li>
-			<li>Customizes code under the <code>app/code</code> directory.</ol></td>
+			<li>Customizes code under the <code>app/code</code> directory.</li></ol></td>
 		<td><p><a href="{{page.baseurl}}install-gde/prereq/dev_install.html">Clone the Magento repository</a></p></td>
 	</tr>
 		
