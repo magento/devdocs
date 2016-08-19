@@ -53,7 +53,7 @@ After you make your changes, click **Try Again**. Repeat the process as necessar
 
 {% collapsible Readiness check failure (other failures) %}
 
-Messages similar to the following display if any readiness check fails. 
+Messages similar to the following display if a readiness check fails. 
 
 ![You must resolve all readiness check failures before you continue]({{ site.baseurl }}common/images/cman_readiness-fail-ex.png)
 
