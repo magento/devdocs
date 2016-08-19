@@ -31,7 +31,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 56851 -->* Fixed issue with unserialized data during payment.
 
 
-<!--- 56542 -->* Resolved issue with potential SQL injection through the use of the ordering or grouping parameters. (APPSEC-1480)
+<!--- 56542 -->* Resolved issue with potential SQL injection through the use of the ordering or grouping parameters. (APPSEC-1480) OPEN
 
 
 <!--- 56314 -->* Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context. APPSEC-1488
@@ -40,7 +40,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 <!--- 56108 -->* Fixed issue with certain payment methods potentially permitting the execution of malicious PHP code during check out.   APPSEC-1484
 
 
-<!--- 55478 -->* Resolved issue where a malicious user could trick Admin users into clicking on a phishing form. This form would then create a backup of the database,  which low-privileged Admin users could then access. APPSEC-1481
+<!--- 55478 -->* Resolved issue where a malicious user could trick Admin users into clicking on a phishing form. This form would then create a backup of the database,  which Admin users with limited privileges could then access. APPSEC-1481
 
 
 

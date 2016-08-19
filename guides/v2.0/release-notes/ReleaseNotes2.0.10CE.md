@@ -21,60 +21,48 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ### Fixed issues
 
-
-#### Security enhancements
-
-
-<!--- 56594 -->* An Administrator with minimal privileges can store a system file in a publicly accessible media folder, where even an unprivileged user can retrieve it. (APPSEC-1490)
+ 
+<!--- 56911 -->* You can now use an alternative Merchant Account ID when using Braintree as a payment method. <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a>
 
 
-<!--- 56542 -->* Bypass single query restriction and inject SQL (port to 2.0) (APPSEC-1480)
-
-<!--- 56314 -->* Your session cookie does not expire when you log out. This makes it possible for an unauthorized user to access your customer account using the unexpired cookie. This vulnerability is especially relevant when using a shared computer (such as one in a library) to access the site. (APPSEC-1478)
-
-<!--- 56108 -->* Certain payment methods potentially permit the execution of malicious PHP code during checkout. (APPSEC-1484)
-
-<!--- 55478 -->* Any user can create backup
-
-<!--- 55476 -->*  You could use the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context. (APPSEC-1488)
-
-<!--- 55432 -->* Lack of CSRF protection and privilege check allows any Admin user to create backup of the system. Admin user can be tricked into clicking on a phishing form that creates a backup or a low privileged admin user can access this functionality. Low risk since creating a backup does not cause harm to the installation. (APPSEC-1481)
-
-<!--- 52338 -->* It is possible to trick user to delete his store address book entries. (APPSEC-1433
-
-<!--- 51376-->*  You can use the Updater application to discover the Magento Admin URL. (APPSEC-1404)
-
-<!--- 51370-->*  You can use the Setup application to discover the Magento local installation path. (APPSEC-1402)
+<!--- 56908 -->* Magento now returns UPS shipping rates for Puerto Rico.
 
 
-<!--- 48816-->*  It is possible to affect full page cache and as a result store incorrect pages under regular page URL entries. (APPSEC-1338)
+<!--- 56851 -->* Fixed issue with unserialized data during payment.
 
 
-#### Miscellaneous functional fixes
+<!--- 56542 -->* Resolved issue with potential SQL injection through the use of the ordering or grouping parameters. (APPSEC-1480) OPEN
 
-<!--- 55612 -->* “No Payment method available” when customer tries to ship his items to billing restricted country. In Magento 2, “No Payment method available” validation is displayed when customer tries to ship his items to billing restricted country. Allow all countries for shipping, but only one country for Billing (Payment from specific country – for example India).
-In shipping address step, select country as “United States” and select an available shipping method and proceed to next step.
-In Payment method step, “No Payment method available” validation is displayed as shown in the below screenshot.
+
+<!--- 56314 -->* Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context. APPSEC-1488
+
+
+<!--- 56108 -->* Fixed issue with certain payment methods potentially permitting the execution of malicious PHP code during check out.   APPSEC-1484
+
+
+<!--- 55478 -->* Resolved issue where a malicious user could trick Admin users into clicking on a phishing form. This form would then create a backup of the database,  which Admin users with limited privileges could then access. APPSEC-1481
 
 
 
-<!--- 52437 -->* The "It's time to change your password" prompt now longer appears after you've successfully changed and saved your password. Previously, you would click this button, then successfully change your password, but Magento would still display this prompt. 
- <a href="https://github.com/magento/magento2/issues/4331" target="_blank">(GITHUB-4331)</a>
-
-LOOK IN PREVIOUS RELEASE NOTES
+<!--- 52437 -->* You no longer receive a prompt to change your password after changing your password and clicking Save Account. <a href="https://github.com/magento/magento2/issues/4331" target="_blank">(GITHUB-4331)</a> 
 
 
+<!--- 52338 -->* You can no longer trick a user into deleting his store address book entries. APPSEC-1433 
 
 
-<!--- 48562 -->* Upgrade does not put store in maintenance mode. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
-
-<!--- 47240 -->*  We've fixed the JavaScript error that occured on the Checkout Page after Changing Country in Estimate Shipping and Tax Block.  <a href="https://github.com/magento/magento2/issues/5089" target="_blank">(GITHUB-5089)</a>
+<!--- 51376 -->* Fixed issue with using the Updater application to discover the Magento Admin URL. APPSEC-1404
 
 
+<!--- 51370 -->* Fixed issue with using the Setup application to discover the Magento local installation path. APPSEC-1402
 
 
-<!--- Omitted (can't be reproduced or won't fix) 56780, 53971 per steve's suggestion -->
+<!--- 48816 -->* You can no longer store incorrect pages under regular page URL entries. APPSEC-1338
 
+<!--- 48562 -->* Magento no longer exposes internal files when a store is in maintenance mode. APPSEC-1329. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
+
+
+
+<!--- Omitted (can't be reproduced or won't fix) (CLONES: 57605, 56930, 56925, 56905) (CANNOT REPRO: 53971, 53431) (RELEASE NOTES: 56780)-->
 
 
 
