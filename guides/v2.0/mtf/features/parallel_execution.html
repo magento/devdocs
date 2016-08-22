@@ -55,7 +55,7 @@
 	
 		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
 	
   </ul>
 
@@ -816,12 +816,12 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 27 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 22 August 2016 (PDT)</i></p>
 		<h4>Contents</h4>
 
 <ul id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-  <li><a href="#setup-parallel-execution" id="markdown-toc-setup-parallel-execution">Setup parallel execution</a>    <ul>
+  <li><a href="#set-up-parallel-execution" id="markdown-toc-set-up-parallel-execution">Set up parallel execution</a>    <ul>
       <li><a href="#parallel-execution-flow-with-one-magento-instance" id="markdown-toc-parallel-execution-flow-with-one-magento-instance">Parallel execution flow with one Magento instance</a></li>
       <li><a href="#parallel-execution-flow-with-multiple-magento-instances" id="markdown-toc-parallel-execution-flow-with-multiple-magento-instances">Parallel execution flow with multiple Magento instances</a></li>
     </ul>
@@ -843,19 +843,19 @@
 
 <p>Comparatively to the common testing flow</p>
 
-<p><img src="/common/images/mtf_features_common_dia.png" alt="Common flow image" width="150px" /></p>
+<p><img src="/common/images/mtf_features_common_dia.png" alt="Common flow image" width="600px" /></p>
 
 <p>you can run a test suite using parallel execution flow with one Magento instance</p>
 
-<p><img src="/common/images/mtf_features_parallel_one_dia.png" alt="Parallel execution flow with one instance image" width="400px" /></p>
+<p><img src="/common/images/mtf_features_parallel_one_dia.png" alt="Parallel execution flow with one instance image" /></p>
 
 <p>or run a test suite using parallel execution flow with multiple Magento instances.</p>
 
-<p><img src="/common/images/mtf_features_parallel_multi_dia.png" alt="Common flow and Parallel execution flow image" width="400px" /></p>
+<p><img src="/common/images/mtf_features_parallel_multi_dia.png" alt="Common flow and Parallel execution flow image" /></p>
 
-<h2 id="setup-parallel-execution">Setup parallel execution</h2>
+<h2 id="set-up-parallel-execution">Set up parallel execution</h2>
 
-<p>To setup a parallel execution flow, add Magento instances to <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> in the following format:</p>
+<p>To set up a parallel execution flow, add Magento instances to <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> in the following format:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
     ...
@@ -896,7 +896,7 @@
 
 <h3 id="parallel-execution-flow-with-multiple-magento-instances">Parallel execution flow with multiple Magento instances</h3>
 
-<p>The following example shows the setup configuration of the flow with three Magento instances.</p>
+<p>The following example shows a setup configuration of the flow with three Magento instances.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
     ...
