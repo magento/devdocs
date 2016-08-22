@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento EE 2.0.10 Release Notes
 menu_title: Magento EE 2.0.10 Release Notes
-menu_order: 16
+menu_order: 20
 github_link: release-notes/ReleaseNotes2.0.10EE.md
 ---
 *	TOC

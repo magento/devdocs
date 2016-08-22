@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento EE 2.0.8 Release Notes
 menu_title: Magento EE 2.0.8 Release Notes
-menu_order: 14
+menu_order: 16
 github_link: release-notes/ReleaseNotes2.0.8EE.md
 ---
 *	TOC
