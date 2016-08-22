@@ -20,34 +20,20 @@ We are pleased to present Magento Enterprise Edition 2.1.1. This release include
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
 
-### In progress
-
-We will include these two issues in either the Fixed or Known issues section depending upon their status when we release.  
-
-
-<!--- 56974-->* You cannot upgrade 2.0.9 with sample data to 2.1.1. 
-
-
-<!--- 56892-->*  You can now save products using the multiselect attribute value. Previously, you could not save values if using the multiselect attribute. 
-
-
-
 ### Fixed issues
 
-We addressed the following functional issues in this release. 
+We address the following functional issues in this release. 
+
 
 
 #### Installation and upgrade
 
 <!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode.  <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
 
-
+<!--- 56974-->* You can now upgrade 2.0.9 with sample data to 2.1.1. 
 
 
 <!--- 54089 -->* You can now successfully upgrade your installation after changing the name of the default product atttribute set. 
-
-
-
 
 
 
@@ -84,14 +70,15 @@ We addressed the following functional issues in this release.
 
 <!--- 56582 -->* You can now save an image more than once. Previously, Magento would display an error message if you saved an image, then edited it and tried to save it again.  
 
-<!--- 56591 -->* Configurable products are now visible in the specified category on the front end after creation. Previously, a configurable product was not visible on the product page after you created it. 
+<!--- 56591 -->* Configurable products are now visible in the specified category on the application frontend after creation. Previously, a configurable product was not visible on the product page after you created it. 
 
+<!--- 56892-->*  You can now save products using the multiselect attribute value. Previously, you could not save values if using this attribute. 
 
 
 <!--- 56126 -->* You can now log in successfully after creating a custom attribute. Previously, Magento would display an error message, and you could not log in, after first creating a custom attribute, then logging out. 
 
 
-<!--- 54787 -->* You can now successfully place orders when the Enable and Configure Website Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not complete the purchase.  <a href="https://github.com/magento/magento2/issues/4785" target="_blank">(GITHUB-4785)</a> 
+<!--- 54787 -->* You can now successfully place orders when the Enable and Configure Website Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase.  <a href="https://github.com/magento/magento2/issues/4785" target="_blank">(GITHUB-4785)</a> 
 
 
 
