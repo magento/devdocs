@@ -33,7 +33,7 @@ Before you begin, make sure that:
 
 1.	Your system meets the requirements discussed in <a href="{{page.baseurl}}install-gde/system-requirements.html">Magento system requirements</a>.
 2.	You completed all prerequisite tasks discussed in <a href="{{page.baseurl}}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
-3.	You took your first installation steps as discussed in <a href="{{page.baseurl}}install-gde/continue.html">Your install or upgrade path</a>.
+3.	You took your first installation steps as discussed in <a href="{{page.baseurl}}install-gde/bk-install-guide.html">Your install or upgrade path</a>.
 4.	After you log in to the Magento server, <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
 5.	Review the information discussed in <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.
 

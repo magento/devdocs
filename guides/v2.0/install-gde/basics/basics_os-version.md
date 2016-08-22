@@ -5,7 +5,9 @@ subgroup: Getting Started
 title: What operating system is my server running?
 menu_title: What operating system is my server running?
 menu_node: 
-menu_order: 4
+menu_order: 103
+level3_menu_node: level3child
+level3_subgroup: basics
 version: 2.0
 github_link: install-gde/basics/basics_os-version.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_os-version.html
