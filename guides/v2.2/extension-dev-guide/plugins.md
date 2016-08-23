@@ -20,13 +20,13 @@ redirect_from:
 ### Overview
 A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any class or *interface*.
 
-Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class which are referred to as plugins.
+Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class.
 
-This interception approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.
+This interception approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Magento calls these interceptors sequentially according to a configured sort order, so they do not conflict with one another.
 
 #### Limitations
 
-Plugins cannot be used with any of the following:
+The following situations cannot use plugins:
 
 * Final methods
 * Final classes
@@ -38,7 +38,7 @@ Plugins cannot be used with any of the following:
 
 ### Declaring a plugin
 
-A plugin for a class object can be declared in the <code>di.xml</code> file in your module:
+The <code>di.xml</code> file in your module declares a plugin for a class object:
 
 <script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
 
@@ -50,18 +50,18 @@ You must specify these elements:
 
 The following elements are optional:
 
-* `plugin sortOrder`. The order in which plugins that call the same method are run.
+* `plugin sortOrder`. Plugins that call the same method run them using this order.
 * `plugin disabled`. To disable a plugin, set this element to `true`. The default value is `false`.
 
 ### Defining a plugin
-A plugin is used to extend or modify a public method's behavior by applying code before, after, or around that observed method.
+By applying code before, after, or around a public method, a plugin extends or modifies that method's behavior.
 
 The first argument for the before, after, and around methods is an object that provides access to all public methods of the observed method's class.
 
 #### Before methods
-Before methods run prior to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
+Magento runs all before methods ahead of the call to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
 
-You can use before methods to change the arguments of an observed method by returning a modified argument. If there are multiple arguments, the method should return an array of those arguments. Returning `null` will indicate that the arguments for the observed method should not be modified.
+You can use before methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return `null`.
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
@@ -81,9 +81,9 @@ class ProductPlugin
 {% endhighlight %}
 
 #### After methods
-After methods run following the completion of the observed method. These methods must have the same name as the observed method with 'after' as the prefix.
+Magento runs all after methods following the completion of the observed method. Magento requires these methods have a return value and they must have the same name as the observed method with 'after' as the prefix.
 
-These methods can be used to modify the results of an observed method and are required to have a return value.
+You can use these methods to change the result of an observed method by modifying the original result and returning it at the end of the method.
 
 Below is an example of an after method modifying the return value `$result` of an observed methods call.
 
@@ -102,7 +102,7 @@ class ProductPlugin
 ?>
 {% endhighlight %}
 
-If observed method has arguments then "after" method of plugin can accept all this arguments in the same order as in observed method. Arguments are declared and passed to "after" method directly after result. If observed method has arguments and doesn't return the result (@return void) - then null is provided to "after" method as a result. Below is an example of an after method that accepts null (void) result and all arguments from observed method:
+After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method. Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{site.mage2100url}}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
 {% highlight PHP %}
 <?php
@@ -133,11 +133,9 @@ class AuthPlugin
 ?>
 {% endhighlight %}
 
-Not all arguments of observed method need to be declared in plugin. In your plugin you need to declare:
-- All arugments that are used in method.
-- All arguments that are come before last used declared argument in plugin.
+After methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.
 
-For example we observe method \Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type) with the following plugin:
+The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{site.mage2100url}}}app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
 {% highlight PHP %}
 
 class MyPlugin
@@ -155,12 +153,15 @@ class MyPlugin
     }
 }
 
-As you can see - we declared $websiteIds because we use this variable, $productIds - because it comes before last declared argument that is used in plugin. We don't declare $type argument from observed method because it's declared after last declared argument that is used in plugin.
+In the example, the `afterUpdateWebsites` function uses the variable `$websiteIds`, so it declares that variable as an argument. It also declares `$productIds` because it comes before `$websiteIds` in the parameter signature of the observed method. The after method did not list `$type` because it did not use it inside the method nor does it come before `$websiteIds`.
 
-Please, also take into account that if argument is optional in observed method - then it should be also declared as optional in after method.
+<div class="bs-callout bs-callout-warning">
+  <p>If an argument is optional in the observed method, then the after method should also declare it as optional.</p>
+</div>
+
 
 #### Around methods
-Around methods are defined such that their code is run both before and after the observed method. This allows you to completely override a method. Around methods must have the same name as the observed method with 'around' as the prefix.
+Magento runs the code in around methods before and after their observed methods. This allows you to completely override a method. Around methods must have the same name as the observed method with 'around' as the prefix.
 
 Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When the `callable` is called, the next plugin or the observed function is called.
 
@@ -190,7 +191,7 @@ class ProductPlugin
 ?>
 {% endhighlight %}
 
-When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method with regards to default parameters and type hints. 
+When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method regarding default parameters and type hints. 
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
