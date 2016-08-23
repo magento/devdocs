@@ -114,7 +114,7 @@ You can run these operations from the Admin panel.
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.6, 7.0.2, and MySQL 5.6. For more information, see
+Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
