@@ -1392,7 +1392,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 8 August 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 23 August 2016 (PDT)</i></p>
 		<p>Any module can be configured to send and receive messages to the message queue. To do this, you must create the following files in the <code>&lt;module&gt;/etc</code> directory:</p>
 
 <ul>
@@ -1408,7 +1408,7 @@
 
 <p>Topic configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the <code>env.php</code> file.</p>
 
-<p>The <code>name</code> parameter is required. The topic definition must include either a <code>request</code> or a <code>schema</code>. Use <code>schema</code> if you want to implement a custom service interface.  Otherwise, specify <code>request</code>. If <code>request</code> is specified, then also specify <code>response</code> if the message is asynchronous.</p>
+<p>The <code>name</code> parameter is required. The topic definition must include either a <code>request</code> or a <code>schema</code>. Use <code>schema</code> if you want to implement a custom service interface.  Otherwise, specify <code>request</code>. If <code>request</code> is specified, then also specify <code>response</code> if the topic is synchronous.</p>
 
 <table>
   <thead>
