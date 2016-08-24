@@ -2,16 +2,16 @@
 layout: default
 group: cloud
 subgroup: 10_howto
-title: Install a custom theme
-menu_title: Install a custom theme
+title: Install a theme
+menu_title: Install a theme
 menu_order: 19
 menu_node: 
 version: 2.0
 github_link: cloud/howtos/custom-theme.md
 ---
 
-## Install a custom theme {#cloud-howto-theme}
-This section discusses how to install a custom theme, either by extracting code or using Composer. For example, you can install a theme you purchased from Magento Marketplace or another source.
+## Install a theme {#cloud-howto-theme}
+This topic discusses how to install a theme either by extracting its code to the Magento file system. 
 
 ### Get started
 To get started:
@@ -23,19 +23,18 @@ To install a theme manually, you must have the theme's code, either in a compres
 
 {% highlight xml %}
 <VendorName>
-├── composer.json
-    ├── etc
-    │   └── view.xml
-    ├── media
-    │   └── <file list>
-    ├── registration.php
-    ├── theme.xml
-    └── web
-        ├── css
-        │   └── source
-        ├── fonts
-        ├── images
-        └── js
+  ├── composer.json
+      ├── etc
+      │   └── view.xml
+      ├── media
+      ├── registration.php
+      ├── theme.xml
+      └── web
+          ├── css
+          │   └── source
+          ├── fonts
+          ├── images
+          └── js
 {% endhighlight %}
 
 To install a theme manually:
@@ -53,8 +52,8 @@ To install a theme manually:
 
 	The theme displays in the right pane.
 
-### Install a theme using Composer {#cloud-howto-theme-compose}
-TBD
+<!-- ### Install a theme using Composer {#cloud-howto-theme-compose}
+TBD -->
 
 
 
