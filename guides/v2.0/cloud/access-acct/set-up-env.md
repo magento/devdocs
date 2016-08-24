@@ -56,6 +56,9 @@ This is a one-time setup that was covered previously in this guide; skip this se
 8.	Pull updated code:
 
 		git pull origin <environment ID>
+9.	Update dependencies:
+
+		composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 7.  Create a [snapshot]({{page.baseurl}}cloud/admin/admin-snap.html) of the environment.
 
         magento-cloud snapshot:create -e <environment ID>
