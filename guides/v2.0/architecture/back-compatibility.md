@@ -7,6 +7,7 @@ menu_title: Backward compatibility
 menu_order: 3
 version: 2.0
 github_link: architecture/back-compatibility.md
+redirect_from: /guides/v2.0/architecture/backward-compatibility.html
 ---
 
 <h2>Backward compatibility</h2>
