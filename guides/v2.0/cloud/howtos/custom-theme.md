@@ -14,9 +14,12 @@ github_link: cloud/howtos/custom-theme.md
 This topic discusses how to install a theme either by extracting its code to the Magento file system. 
 
 ### Get started
-To get started:
+
+{% collapsible To get started: %}
 
 {% include cloud/cli-get-started.md %}
+
+{% endcollapsible %}
 
 ### Install a theme manually {#cloud-howto-theme-man}
 To install a theme manually, you must have the theme's code, either in a compressed archive or in a directory structure similar to the following:
@@ -37,7 +40,7 @@ To install a theme manually, you must have the theme's code, either in a compres
           └── js
 {% endhighlight %}
 
-To install a theme manually:
+{% collapsible To install a theme manually: %}
 
 1.	Copy the theme's code under `<Magento root dir>/app/design/frontend` for a storefront theme or `<Magento root dir>/app/design/adminhtml` for an Admin theme.
 
@@ -46,6 +49,13 @@ To install a theme manually:
     For example
 
         cp -r ExampleTheme <Magento root dir>/app/design/frontend
+3.  Confirm the theme copied to the correct place.
+
+        ls <Magento root dir>/app/design/frontend
+
+    A sample follows:
+
+        ExampleTheme Magento
 2.	Add and commit files:
 
 		git add -A && git commit -m "Add theme"
@@ -58,12 +68,12 @@ To install a theme manually:
 
 	The theme displays in the right pane.
 
-<!-- ### Install a theme using Composer {#cloud-howto-theme-compose}
-TBD -->
+{% endcollapsible %}
 
-
+### Install a theme using Composer {#cloud-howto-theme-compose}
+Installing a theme using Composer is the same as installing any other extension using Composer. See [Install extensions]({{ page.baseurl }}cloud/howtos/install-components.html) for details.
 
 #### Related topics
-*	[Install components]({{page.baseurl}}cloud/howtos/install-components.html)
+*	[Install extensionss]({{page.baseurl}}cloud/howtos/install-components.html)
 *	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
 *	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
