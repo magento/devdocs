@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/howtos/custom-theme.md
 ---
 
-## Install a theme {#cloud-howto-theme}
+## How to install a theme {#cloud-howto-theme}
 This topic discusses how to install a theme either by extracting its code to the Magento file system or using Composer. 
 
 ### Get started
@@ -51,7 +51,8 @@ To install a theme manually, you must have the theme's code, either in a compres
         cp -r ExampleTheme <Magento root dir>/app/design/frontend
 3.  Confirm the theme copied to the correct place.
 
-        ls <Magento root dir>/app/design/frontend
+    *   Storefront theme: `ls <Magento root dir>/app/design/frontend`
+    *   Admin theme: `ls <Magento root dir>/app/design/adminhtml`
 
     A sample follows:
 
@@ -85,6 +86,10 @@ Installing a theme using Composer is the same as installing any other extension 
 
         composer require zero1/theme-fashionista-theme:1.0.0
 4.  Wait for the project to deploy.
+5.  Log in to the Magento Admin.
+6.  Click **Content** > Design > **Themes**.
+
+    The theme displays in the right pane.
 
 #### Related topics
 *	[Install extensionss]({{page.baseurl}}cloud/howtos/install-components.html)
