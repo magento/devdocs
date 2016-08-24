@@ -785,7 +785,7 @@
 									
 
 
-											<li class="level3Child upgrade-update " data-menunode="upgrade-update"><a href="/guides/v2.1/cloud/howtos/install-components.html">Install components</a>
+											<li class="level3Child upgrade-update " data-menunode="upgrade-update"><a href="/guides/v2.1/cloud/howtos/install-components.html">Install extensions</a>
 
 
 									
@@ -826,6 +826,14 @@
 
 											<li class="level3Child env-tut " data-menunode="env-tut"><a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a>
 
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/howtos/custom-theme.html">Install a theme</a></li>
 
 									
 
@@ -1280,6 +1288,12 @@
     <p>Pull updated code:</p>
 
     <pre><code>git pull origin &lt;environment ID&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>Update dependencies:</p>
+
+    <pre><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 </code></pre>
   </li>
   <li>

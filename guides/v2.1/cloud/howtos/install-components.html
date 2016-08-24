@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install components</title>
+	<title>Install extensions</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -169,7 +169,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Install components</h1>
+		<h1 class="page-heading">Install extensions</h1>
 		
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/howtos/install-components.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -785,7 +785,7 @@
 									
 
 
-											<li class="level3Child upgrade-update  active " data-menunode="upgrade-update"><a href="/guides/v2.1/cloud/howtos/install-components.html">Install components</a>
+											<li class="level3Child upgrade-update  active " data-menunode="upgrade-update"><a href="/guides/v2.1/cloud/howtos/install-components.html">Install extensions</a>
 
 
 									
@@ -826,6 +826,14 @@
 
 											<li class="level3Child env-tut " data-menunode="env-tut"><a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a>
 
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/howtos/custom-theme.html">Install a theme</a></li>
 
 									
 
@@ -1126,8 +1134,8 @@
 	<section class="content">
 		<div class="content-wrap">
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="cloud-howto-comp">How install components</h2>
-<p>This topic discusses how to install <em>components</em>, which can be any of the following:</p>
+		<h2 id="cloud-howto-comp">How install extensions</h2>
+<p>This topic discusses how to install <em>extensions</em>, which can be any of the following:</p>
 
 <ul>
   <li>Modules (extend Magento capabilities)</li>
@@ -1136,17 +1144,17 @@
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This topic discusses how to install components you purchased from Magento Marketplace. You can use the same procedure to install <em>any</em> component; all you need is the component's Composer name. To find it, open the component's <code>composer.json</code> file and note the values for <code>"name"</code> and <code>"version"</code>.</p>
+  <p>This topic discusses how to install extensions you purchased from Magento Marketplace. You can use the same procedure to install <em>any</em> extension; all you need is the extension's Composer name. To find it, open the extension's <code>composer.json</code> file and note the values for <code>"name"</code> and <code>"version"</code>.</p>
 </div>
 
-<p>To install a component, you must:</p>
+<p>To install a extension, you must:</p>
 
 <ol>
-  <li>Obtain the component from <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> or elsewhere.</li>
-  <li><a href="#cloud-howto-comp-composer">Get the component’s Composer name</a> and version from the Magento Marketplace invoice.</li>
-  <li>In your local Magento Enterprise Cloud Edition project, <a href="#cloud-howto-comp-json">update the Magento <code>composer.json</code></a> file with the name and version of the component.</li>
+  <li>Obtain the extension from <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> or elsewhere.</li>
+  <li><a href="#cloud-howto-comp-composer">Get the extension’s Composer name</a> and version from the Magento Marketplace invoice.</li>
+  <li>In your local Magento Enterprise Cloud Edition project, <a href="#cloud-howto-comp-json">update the Magento <code>composer.json</code></a> file with the name and version of the extension.</li>
   <li><a href="#cloud-howto-comp-push">Push</a> the changes to your environment.</li>
-  <li><a href="#cloud-howto-comp-verify">Verify</a> the component installed properly.</li>
+  <li><a href="#cloud-howto-comp-verify">Verify</a> the extension installed properly.</li>
 </ol>
 
 <h3 id="get-started">Get started</h3>
@@ -1211,6 +1219,12 @@
 </code></pre>
     </li>
     <li>
+      <p>Update project dependencies.</p>
+
+      <pre><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
+</code></pre>
+    </li>
+    <li>
       <p>Create a <a href="/guides/v2.1/cloud/admin/admin-snap.html">snapshot</a> of the environment.</p>
 
       <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
@@ -1220,8 +1234,8 @@
 </div>
 </div></div>
 
-<h3 id="cloud-howto-comp-composer">Step 1: Get the component’s Composer name and version</h3>
-<p>If you already know the component’s Composer name and version, skip this step and continue with <a href="#cloud-howto-comp-json">Update Magento’s <code>composer.json</code></a>.</p>
+<h3 id="cloud-howto-comp-composer">Step 1: Get the extension’s Composer name and version</h3>
+<p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#cloud-howto-comp-json">Update Magento’s <code>composer.json</code></a>.</p>
 
 <div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><div>
 
@@ -1277,7 +1291,7 @@
   <li>
     <p>Enter the following command to update it:</p>
 
-    <pre><code>composer require &lt;component-name&gt;:&lt;version&gt;
+    <pre><code>composer require &lt;extension-name&gt;:&lt;version&gt;
 </code></pre>
 
     <p>For example,</p>
@@ -1290,9 +1304,9 @@
 </ol>
 </div></div>
 
-<h3 id="cloud-howto-comp-push">Step 3: Push the component to your environment</h3>
+<h3 id="cloud-howto-comp-push">Step 3: Push the extension to your environment</h3>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><p>To push the component:</p>
+<div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><p>To push the extension:</p>
 
 <p>Enter the following commands in the order shown:</p>
 
@@ -1301,15 +1315,15 @@ git commit -m "&lt;message&gt;"
 git push origin &lt;environment ID&gt;
 </code></pre>
 
-<p>If there are errors, see <a href="/guides/v2.1/cloud/trouble/trouble_comp-deploy-fail.html">Component deployment failure</a>.</p>
+<p>If there are errors, see <a href="/guides/v2.1/cloud/trouble/trouble_comp-deploy-fail.html">extension deployment failure</a>.</p>
 </div></div>
 
-<h3 id="cloud-howto-comp-verify">Step 4: Verify the component</h3>
+<h3 id="cloud-howto-comp-verify">Step 4: Verify the extension</h3>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><p>To verify the component installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
+<div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><p>To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
 
 <ol>
-  <li><a href="/guides/v2.1/cloud/env/environments-start.html#env-start-ssh">SSH to the environment</a> on which the component is installed.</li>
+  <li><a href="/guides/v2.1/cloud/env/environments-start.html#env-start-ssh">SSH to the environment</a> on which the extension is installed.</li>
   <li>
     <p>Enter the following command to display a list of enabled modules:</p>
 
@@ -1317,9 +1331,9 @@ git push origin &lt;environment ID&gt;
 </code></pre>
   </li>
   <li>
-    <p>Verify the component is listed.</p>
+    <p>Verify the extension is listed.</p>
 
-    <p>The component name is in the format <code>&lt;VendorName&gt;_&lt;ComponentName&gt;</code>; it is not the same format as the Composer name.</p>
+    <p>The extension name is in the format <code>&lt;VendorName&gt;_&lt;ComponentName&gt;</code>; it is not the same format as the Composer name.</p>
   </li>
 </ol>
 </div></div>

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure services</title>
+	<title>Install a theme</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/cloud/project/project-services-parent.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/howtos/custom-theme.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -169,9 +169,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Configure services</h1>
+		<h1 class="page-heading">Install a theme</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-services-parent.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/howtos/custom-theme.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -568,7 +568,7 @@
 
 									
 
-										<li class="level3Parent  active " id="services"><a href="#">Configure services</a>
+										<li class="level3Parent " id="services"><a href="#">Configure services</a>
 
 
 									
@@ -833,7 +833,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/howtos/custom-theme.html">Install a theme</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/howtos/custom-theme.html">Install a theme</a></li>
 
 									
 
@@ -1133,8 +1133,181 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		
+			<p align="right"><i>Updated: 24 August 2016 (PDT)</i></p>
+		<h2 id="cloud-howto-theme">How to install a theme</h2>
+<p>This topic discusses how to install a theme either by extracting its code to the Magento file system or using Composer.</p>
+
+<h3 id="get-started">Get started</h3>
+
+<div class="collapsible"><h4 class="collapsible-title">To get started: </h4><div class="collapsible-content"><div>
+
+  <ol>
+    <li>Log in to the server on which your SSH keys are located.</li>
+    <li>
+      <p>Log in to your project:</p>
+
+      <pre><code>magento-cloud login
+</code></pre>
+    </li>
+    <li>
+      <p>List your projects:</p>
+
+      <pre><code>magento-cloud project:list
+</code></pre>
+    </li>
+    <li>
+      <p>If necessary, clone a project.</p>
+
+      <pre><code>magento-cloud project:get &lt;project ID&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>Change to a project directory.</p>
+
+      <p>For example if your project is named Magento 2, <code>cd magento-2</code></p>
+    </li>
+    <li>
+      <p>List environments in the project:</p>
+
+      <pre><code>magento-cloud environment:list
+</code></pre>
+
+      <div class="bs-callout bs-callout-info" id="info">
+  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
+</div>
+    </li>
+    <li>
+      <p>Fetch origin branches:</p>
+
+      <pre><code>git fetch origin
+</code></pre>
+    </li>
+    <li>
+      <p>Check out an environment:</p>
+
+      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre>
+
+      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+    </li>
+    <li>
+      <p>Pull updated code:</p>
+
+      <pre><code>git pull origin &lt;environment ID&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>Update project dependencies.</p>
+
+      <pre><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
+</code></pre>
+    </li>
+    <li>
+      <p>Create a <a href="/guides/v2.1/cloud/admin/admin-snap.html">snapshot</a> of the environment.</p>
+
+      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre>
+    </li>
+  </ol>
+</div>
+</div></div>
+
+<h3 id="cloud-howto-theme-man">Install a theme manually</h3>
+<p>To install a theme manually, you must have the theme’s code, either in a compressed archive or in a directory structure similar to the following:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;VendorName&gt;</span>
+  ├── composer.json
+      ├── etc
+      │   └── view.xml
+      ├── media
+      ├── registration.php
+      ├── theme.xml
+      └── web
+          ├── css
+          │   └── source
+          ├── fonts
+          ├── images
+          └── js</code></pre></figure>
+
+<div class="collapsible"><h4 class="collapsible-title">To install a theme manually: </h4><div class="collapsible-content"><ol>
+  <li>
+    <p>Copy the theme’s code under <code>&lt;Magento root dir&gt;/app/design/frontend</code> for a storefront theme or <code>&lt;Magento root dir&gt;/app/design/adminhtml</code> for an Admin theme.</p>
+
+    <p>Make sure the top-level directory is <code>&lt;VendorName&gt;</code>; otherwise, the theme won’t install properly.</p>
+
+    <p>For example</p>
+
+    <pre><code>cp -r ExampleTheme &lt;Magento root dir&gt;/app/design/frontend
+</code></pre>
+  </li>
+  <li>
+    <p>Confirm the theme copied to the correct place.</p>
+
+    <ul>
+      <li>Storefront theme: <code>ls &lt;Magento root dir&gt;/app/design/frontend</code></li>
+      <li>Admin theme: <code>ls &lt;Magento root dir&gt;/app/design/adminhtml</code></li>
+    </ul>
+
+    <p>A sample follows:</p>
+
+    <pre><code>ExampleTheme Magento
+</code></pre>
+  </li>
+  <li>
+    <p>Add and commit files:</p>
+
+    <pre><code>git add -A &amp;&amp; git commit -m "Add theme"
+</code></pre>
+  </li>
+  <li>
+    <p>Push the files to your branch:</p>
+
+    <pre><code>git push origin &lt;branch name&gt;
+</code></pre>
+  </li>
+  <li>Wait for deployment to complete.</li>
+  <li>Log in to the Magento Admin.</li>
+  <li>
+    <p>Click <strong>Content</strong> &gt; Design &gt; <strong>Themes</strong>.</p>
+
+    <p>The theme displays in the right pane.</p>
+  </li>
+</ol>
+</div></div>
+
+<h3 id="cloud-howto-theme-compose">Install a theme using Composer</h3>
+<p>Installing a theme using Composer is the same as installing any other extension using Composer. See <a href="/guides/v2.1/cloud/howtos/install-components.html">Install extensions</a> for details.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">To summarize the procedure: </h4><div class="collapsible-content"><ol>
+  <li>Purchase the theme from Magento Marketplace.</li>
+  <li>Get the theme’s Composer name.</li>
+  <li>
+    <p>Change to your Magento root directory and enter the command:</p>
+
+    <pre><code>composer require &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;
+</code></pre>
+
+    <p>For example,</p>
+
+    <pre><code>composer require zero1/theme-fashionista-theme:1.0.0
+</code></pre>
+  </li>
+  <li>Wait for the project to deploy.</li>
+  <li>Log in to the Magento Admin.</li>
+  <li>
+    <p>Click <strong>Content</strong> &gt; Design &gt; <strong>Themes</strong>.</p>
+
+    <p>The theme displays in the right pane.</p>
+  </li>
+</ol>
+
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.1/cloud/howtos/install-components.html">Install extensionss</a></li>
+  <li><a href="/guides/v2.1/cloud/howtos/update-components.html">Update components</a></li>
+  <li><a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
+</ul>
+</div></div>
 
 
 		</div>
