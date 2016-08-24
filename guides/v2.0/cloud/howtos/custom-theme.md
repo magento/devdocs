@@ -73,7 +73,22 @@ To install a theme manually, you must have the theme's code, either in a compres
 ### Install a theme using Composer {#cloud-howto-theme-compose}
 Installing a theme using Composer is the same as installing any other extension using Composer. See [Install extensions]({{ page.baseurl }}cloud/howtos/install-components.html) for details.
 
+{% collapsible To summarize the procedure: %}
+
+1.  Purchase the theme from Magento Marketplace.
+2.  Get the theme's Composer name.
+3.  Change to your Magento root directory and enter the command:
+
+        composer require <vendor>/<name>:<version>
+
+    For example,
+
+        composer require zero1/theme-fashionista-theme:1.0.0
+4.  Wait for the project to deploy.
+
 #### Related topics
 *	[Install extensionss]({{page.baseurl}}cloud/howtos/install-components.html)
 *	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
 *	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
+
+{% endcollapsible %}
