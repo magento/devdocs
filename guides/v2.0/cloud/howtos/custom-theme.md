@@ -11,7 +11,7 @@ github_link: cloud/howtos/custom-theme.md
 ---
 
 ## Install a theme {#cloud-howto-theme}
-This topic discusses how to install a theme either by extracting its code to the Magento file system. 
+This topic discusses how to install a theme either by extracting its code to the Magento file system or using Composer. 
 
 ### Get started
 
