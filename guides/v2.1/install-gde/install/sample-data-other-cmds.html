@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Remove or update optional sample data modules</title>
+	<title>Remove sample data modules or update sample data</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -169,7 +169,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Remove or update optional sample data modules</h1>
+		<h1 class="page-heading">Remove sample data modules or update sample data</h1>
 		
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/install/sample-data-other-cmds.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -369,7 +369,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/install-gde/install/sample-data-other-cmds.html">Remove or update optional sample data modules</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/install-gde/install/sample-data-other-cmds.html">Remove sample data modules or update sample data</a></li>
 
 									
 
@@ -411,15 +411,23 @@
 			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
 		<div>
 
-  <h2 id="instgde-prereq-sample-intro">Remove or update sample data</h2>
+  <h2 id="instgde-prereq-sample-intro">Remove sample data modules or update sample data</h2>
+
   <p>This topic discusses how to:</p>
 
   <ul>
-    <li><a href="#inst-sample-remove">Remove sample data</a> from your Magento installation (this option does <em>not</em> affect other Magento data or database tables)</li>
-    <li><a href="#inst-sample-reset">Prepare to update sample data</a> (for example, before updating the Magento application)</li>
+    <li>
+      <p><a href="#inst-sample-remove">Remove sample data modules</a> from the Magento installation <code>composer.json</code></p>
+
+      <p>This option does <em>not</em> remove sample data from the database.</p>
+    </li>
+    <li>
+      <p><a href="#inst-sample-reset">Prepare to update sample data</a> (for example, before updating the Magento application).</p>
+    </li>
   </ul>
 
   <h2 id="sample-first">First steps</h2>
+
   <div>
 
     <ol>
@@ -453,7 +461,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-    <h2 id="inst-sample-remove">Remove sample data</h2>
+    <h2 id="inst-sample-remove">Remove sample data modules</h2>
     <p>Enter the following command:</p>
 
     <pre><code>magento sampledata:remove 
@@ -498,8 +506,6 @@ Magento EE only:
 *	magento/module-multiple-wishlist-sample-data
 *	magento/module-target-rule-sample-data
  -->
-
-    <p>Wait while sample data is removed.</p>
 
     <h2 id="inst-sample-reset">Prepare to update sample data</h2>
     <p>This command enables you to update sample data before you update the Magento application.</p>
