@@ -18,7 +18,7 @@ github_link: release-notes/ReleaseNotes2.1.0CE.md
 We are pleased to present Magento Community Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 
-Backward-incompatible changes are documented in <a href="{{page.baseurl}}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
 
 <div class="bs-callout bs-callout-info" id="info">
