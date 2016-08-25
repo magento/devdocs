@@ -31,7 +31,7 @@ mage2000url: "https://github.com/magento/magento2/blob/2.0/"
 
 # 1.x variables
 m1xgdeurl: "/guides/m1x/"
-m1xgithuburl: "https://github.com/magento/devdocs/tree/m1x/guides/m1x/"
+m1xgithuburl: "https://github.com/magento/devdocs/blob/develop/"
 
 # 2.1.0 variables
 gdeurl21: "/guides/v2.1/"
