@@ -5,9 +5,9 @@ subgroup: 99_Module Development
 title: Searching with Repositories
 menu_title: Searching with Repositories
 menu_order: 25
-version: 2.0
+version: 2.2
 github_link: extension-dev-guide/repositories.md
-redirect_from: /guides/v2.0/extension-dev-guide/repositories.html
+redirect_from: /guides/v2.2/extension-dev-guide/repositories.html
 ---
 
 #### Contents
