@@ -20,15 +20,6 @@
 </head>
 <body>
 
-<!--Search Results Overlay -->
-<div class="searchResultsBack"></div>
-<div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
-	<gcse:search></gcse:search>
-	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
-</div>
-<!--End Search Results Overlay -->
-
 <header class="site-header">
 
 	<nav role="navigation">
@@ -66,7 +57,7 @@
 	</nav>
 
 	<div class="search-btn">
-		<a class="search-trigger search-icon" href="#"></a>
+        <a class="search-trigger search-icon" href="/guides/v2.0/search.html"></a>
 	</div>
 
 </header>
@@ -141,9 +132,7 @@
 
       <div class ="search">
          <div class="search-icon"></div>
-         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
-            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
-            <input type="hidden" name="ie" value="UTF-8" />
+         <form id="searchbox" name="gs" method="GET" action="/search.html">
             <input type="text" name="q" id="searchtext" value="" placeholder="Search">
          </form>
       </div><!-- END searchbox-->
@@ -976,19 +965,6 @@
 </script>
 
 <script src="/js/app.js"></script>
-
-
-<!--Google Custom Search-->
-<script>
-  (function() {
-    var cx = '018116925022773002786:klu67apuihk';
-    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-
 
 <!--Google Analytics-->
 <script>
