@@ -1,3 +1,25 @@
+#search-results table {
+    border: none;
+}
+
+.search .content {
+    width: 90%;
+    padding: 0px 7px;
+    float: left;
+}
+
+.search table {
+    margin: 0px;
+}
+
+.gsc-tabsArea>div{
+    height: 20px;
+}
+
+.cse .gsc-tabHeader, .gsc-tabHeader {
+    font-size: 15px;
+}
+
 DIV.gsc-control-wrapper-cse tr:nth-child(odd) td { background: transparent;}
 
 
@@ -56,7 +78,7 @@ input.gsc-search-button {
 	margin: 0;
 }
 .gsc-results tr td {
-	padding: 0;
+	padding: 0px 10px;
 }
 .gsc-webResult.gsc-result:hover,
 .gsc-imageResult:hover {
@@ -260,6 +282,7 @@ td.gcsc-branding-text {
 
 .gsc-results div.gsc-cursor-page.gsc-cursor-current-page {
 	text-shadow: none;
+    color: #FFFFFF;
 }
 
 
@@ -377,4 +400,9 @@ body.search-active {
    width: 18%;
    max-width: 300px;
    margin-right: 10px;
+}
+
+.search .search-icon {
+    z-index: 50;
+    cursor: pointer;
 }

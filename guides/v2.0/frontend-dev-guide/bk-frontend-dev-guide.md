@@ -58,5 +58,5 @@ To use this guide, you must be familiar with:
 *	<a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS) </a>
 *	<a href="{{page.baseurl}}coding-standards/code-standard-javascript.html">JavaScript coding standard</a>
 *	<a href="{{page.baseurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
-*	<a href="{{page.baseurl}}architecture/behavior/xlate.html">Translation</a>
+*	[Translations]({{ page.baseurl }}frontend-dev-guide/translations/xlate.html)
 

@@ -97,7 +97,7 @@ To install Elasticsearch:
 
 	*	CentOS:
 
-			rpm --import https://packages.elastic.co/GPG-KEY-Elasticsearch
+			rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 			vim /etc/yum.repos.d/Elasticsearch.repo
 
 		Add the following:
@@ -116,9 +116,9 @@ To install Elasticsearch:
 
 	*	Ubuntu:
 
-			wget -qO - https://packages.elastic.co/GPG-KEY-Elasticsearch | sudo apt-key add -
-			echo "deb http://packages.elastic.co/Elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/Elasticsearch-2.x.list
-			sudo apt-get -y update && sudo apt-get -y install Elasticsearch
+			wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+			echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
+			sudo apt-get -y update && sudo apt-get -y install elasticsearch
 
 	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.
 3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.x/setup-service.html" target="_blank">Elasticsearch service</a>.
