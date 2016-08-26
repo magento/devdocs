@@ -104,7 +104,7 @@ We address the following functional issues in this release.
 ### Known issue
 
 
-The Sales API does not currently support all the update operations on objects that you can execute from the Admin panel. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
+The Sales API does not currently support all the update operations on objects that you can execute from the Admin. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
  
 The Sales API
 
@@ -113,7 +113,7 @@ The Sales API
 * does not support updates to order status or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)
 
 
-You can run these operations from the Admin panel.
+You can run these operations from the Admin.
 
 
 

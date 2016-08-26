@@ -64,7 +64,7 @@ We address the following functional issues in this release.
 
 <!--- 54682 -->* We've improved storefront performance when you use many variations of a configurable product.
 
-<!--- 57410-->* You can now successfully save multiple variations of a configurable product. Previously, Magento would throw an Invalid Form key error is thrown while you tried to save a configura<!--- 57410-->* You can now quickly generate or preview multiple variations of a configurable product. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento would throw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
+<!--- 57410-->* You can now quickly generate or preview multiple variations of a configurable product. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento would throw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 ble product with variations. 
 
 
@@ -107,7 +107,7 @@ ble product with variations.
 ### Known issue
 
 
-The Sales API does not currently support all the update operations on objects that you can execute from the Admin panel. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
+The Sales API does not currently support all the update operations on objects that you can execute from the Admin. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
  
 The Sales API
 
@@ -116,7 +116,7 @@ The Sales API
 * does not support updates to order status or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)
 
 
-You can run these operations from the Admin panel.
+You can run these operations from the Admin.
 
 
 ### System requirements
