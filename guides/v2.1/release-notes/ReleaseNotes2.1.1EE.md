@@ -50,7 +50,7 @@ We address the following functional issues in this release.
 
 #### Shopping cart
 
-<!--- 53793 -->* The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
+<!--- 53793 -->* Magento now implements the minicart maximum display recently added item setting to your shopping cart.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
 
 
 
@@ -88,9 +88,9 @@ We address the following functional issues in this release.
 
 
 
-<!--- 54721-->* You can now use Braintree as a payment method when applying reward points or store credit to an order. Previously, you could not access or populate Braintree payment fields if your order included reward points or store credits.
+<!--- 54721-->* You can now use Braintree as a payment method when applying reward points or store credit to an order. 
 
-<!--- 57420-->* The category page now shows the current price after Magento runs a scheduled update.  Previously, the Category page would not update the  price after running a scheduled update.	<a href="https://github.com/magento/magento2/issues/4945" target="_blank">(GITHUB-4945)</a> 
+<!--- 57420-->* The category page now shows the current price after Magento runs a scheduled update.  Previously, the category page would not update the  price after running a scheduled update.	<a href="https://github.com/magento/magento2/issues/4945" target="_blank">(GITHUB-4945)</a> 
 
 
 
