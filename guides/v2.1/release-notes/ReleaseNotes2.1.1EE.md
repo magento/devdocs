@@ -64,7 +64,7 @@ We address the following functional issues in this release.
 
 <!--- 55524/48429-->* You can now delete updates from a campaign's page entity grid. 
 
-<!--- 52660 --> We've improved the deployment of static assets. 
+<!--- 52660 -->* We've improved the deployment of static assets. 
 
 
 

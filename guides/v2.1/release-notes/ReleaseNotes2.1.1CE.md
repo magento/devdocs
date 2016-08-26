@@ -67,7 +67,7 @@ We address the following functional issues in this release.
 <!--- 57410-->* You can now successfully save multiple variations of a configurable product. Previously, Magento would throw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
 
-<!--- 52660 --> We've improved the deployment of static assets. 
+<!--- 52660 -->* We've improved the deployment of static assets. 
 
 
 
