@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.1EE.md
 
 
 ## Magento Enterprise Edition 2.1.1
-We are pleased to present Magento Enterprise Edition 2.1.1. This release includes several functional fixes.
+We are pleased to present Magento Enterprise Edition 2.1.1. This release includes several functional fixes as well as enhancements to the deployment of static assets. 
 
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
@@ -31,10 +31,6 @@ We address the following functional issues in this release.
 <!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode.  <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
 
 <!--- 56974-->* You can now upgrade 2.0.9 with sample data to 2.1.1. 
-
-
-<!--- 54089 -->* You can now successfully upgrade your installation after changing the name of the default product atttribute set. 
-
 
 
 
@@ -66,14 +62,14 @@ We address the following functional issues in this release.
 
 <!--- 57410-->* You can now successfully save multiple variations of a configurable product. Previously, Magento would throw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
+<!--- 55524/48429-->* You can now delete updates from a campaign's page entity grid. 
+
+<!--- 52660 --> We've improved the deployment of static assets. 
+
 
 
 
 #### Miscellaneous
-
-<!--- 56582 -->* You can now save an image more than once. Previously, Magento would display an error message if you saved an image, then edited it and tried to save it again.  
-
-<!--- 56591 -->* Configurable products are now visible in the specified category on the application frontend after creation. Previously, a configurable product was not visible on the product page after you created it. 
 
 <!--- 56892-->*  You can now save products using the multiselect attribute value. Previously, you could not save values if using this attribute. 
 
@@ -100,7 +96,8 @@ We address the following functional issues in this release.
 
 
 
-<!--- DELETED: 54839 (release notes), 56893 (clone), 54647 -->
+<!--- DELETED: 54839 (release notes), 56893 (clone), 54647, 55897, 56945, 54963 -->
+
 
 
 
