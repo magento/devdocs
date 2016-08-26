@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.1CE.md
 
 
 ## Magento Community Edition 2.1.1
-We are pleased to present Magento Community Edition 2.1.1. We are pleased to present Magento Enterprise Edition 2.1.1. This release includes several functional fixes and enhancements to the deployment of static assets. 
+We are pleased to present Magento Community Edition 2.1.1. This release includes several functional fixes and enhancements to the deployment of static assets. 
 
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
@@ -32,7 +32,7 @@ We address the following functional issues in this release.
 
 #### Installation and upgrade
 
-<!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode.  <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
+<!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento threw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
 
 <!--- 56974-->* You can now upgrade 2.0.9 with sample data to 2.1.1. 
 
@@ -40,7 +40,7 @@ We address the following functional issues in this release.
 
 
 #### Pricing
-<!--- 54320 -->* The Category page now displays current, rather than outdated,  product prices.
+<!--- 54320 -->* The category page now displays current, rather than outdated,  product prices.
 
 
 <!--- 55055 -->* Tier pricing now works correctly with full page cache. <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a> 
@@ -64,7 +64,8 @@ We address the following functional issues in this release.
 
 <!--- 54682 -->* We've improved storefront performance when you use many variations of a configurable product.
 
-<!--- 57410-->* You can now successfully save multiple variations of a configurable product. Previously, Magento would throw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
+<!--- 57410-->* You can now successfully save multiple variations of a configurable product. Previously, Magento would throw an Invalid Form key error is thrown while you tried to save a configura<!--- 57410-->* You can now quickly generate or preview multiple variations of a configurable product. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento would throw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
+ble product with variations. 
 
 
 <!--- 52660 -->* We've improved the deployment of static assets. 
@@ -74,7 +75,7 @@ We address the following functional issues in this release.
 
 #### Miscellaneous
 
-<!--- 56892-->*  You can now save products using the multiselect attribute value. Previously, you could not save values if using this attribute. 
+<!--- 56892-->*  You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute. 
 
 
 <!--- 56126 -->* You can now log in successfully after creating a custom attribute. Previously, Magento would display an error message, and you could not log in, after first creating a custom attribute, then logging out. 

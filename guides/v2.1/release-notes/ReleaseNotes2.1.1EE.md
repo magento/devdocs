@@ -28,8 +28,8 @@ We address the following functional issues in this release.
 
 #### Installation and upgrade
 
-<!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode.  <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
 
+<!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
 <!--- 56974-->* You can now upgrade 2.0.9 with sample data to 2.1.1. 
 
 
@@ -60,7 +60,7 @@ We address the following functional issues in this release.
 
 <!--- 54682 -->* We've improved storefront performance when you use many variations of a configurable product.
 
-<!--- 57410-->* You can now successfully save multiple variations of a configurable product. Previously, Magento would throw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
+<!--- 57410-->* You can now quickly generate or preview multiple variations of a configurable product. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
 <!--- 55524/48429-->* You can now delete updates from a campaign's page entity grid. 
 
@@ -71,7 +71,7 @@ We address the following functional issues in this release.
 
 #### Miscellaneous
 
-<!--- 56892-->*  You can now save products using the multiselect attribute value. Previously, you could not save values if using this attribute. 
+<!--- 56892-->*  You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute. 
 
 
 <!--- 56126 -->* You can now log in successfully after creating a custom attribute. Previously, Magento would display an error message, and you could not log in, after first creating a custom attribute, then logging out. 
@@ -90,7 +90,7 @@ We address the following functional issues in this release.
 
 <!--- 54721-->* You can now use Braintree as a payment method when applying reward points or store credit to an order. Previously, you could not access or populate Braintree payment fields if your order included reward points or store credits.
 
-<!--- 57420-->* The Category page now shows the current price after Magento runs a scheduled update.  Previously, the Category page would not update the  price after running a scheduled update.	<a href="https://github.com/magento/magento2/issues/4945" target="_blank">(GITHUB-4945)</a> 
+<!--- 57420-->* The category page now shows the current price after Magento runs a scheduled update.  Previously, the Category page would not update the  price after running a scheduled update.	<a href="https://github.com/magento/magento2/issues/4945" target="_blank">(GITHUB-4945)</a> 
 
 
 
