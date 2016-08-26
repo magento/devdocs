@@ -30,6 +30,8 @@ We address the following functional issues in this release.
 
 
 <!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
+
+
 <!--- 56974-->* You can now upgrade 2.0.9 with sample data to 2.1.1. 
 
 
