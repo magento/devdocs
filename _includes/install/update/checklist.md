@@ -11,7 +11,7 @@ Before you continue, to avoid errors during your installation or update, make su
 </div>
 
 ### Magento file system owner and group {#magento-owner-group}
-The [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">) group must have write access to Magento directories and files.
+The [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html") group must have write access to Magento directories and files.
 
 ### Cron jobs are running {#magento-cron}
 Magento requires three cron jobs, all running as the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
