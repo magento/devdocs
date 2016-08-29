@@ -2,12 +2,12 @@
 layout: default
 group: contributor
 subgroup: Contributor Guide
-
+title: Suggested topics for contribution
+menu_title: Suggested topics for contribution
+menu_order: 10
 version: 2.0
 github_link: contributor-guide/contributing_docs_suggested_topics.md
-
 ---
-
 
 <h2 id="suggested">Suggested topics for contribution</h2>
 
