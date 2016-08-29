@@ -163,7 +163,7 @@ The following table provides details about each `env.php` segment and its struct
   </tbody>
 </table>
 
-div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
 <p>The <code>queue/amqp</code> key is maintained for backward compatibility with Magento 2.1 message queues. Use <code>queue/connections</code> to define new queues. </p>
 </div>
 
