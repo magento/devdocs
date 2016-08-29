@@ -1,7 +1,7 @@
 ---
 layout: default
 group: contributor
-subgroup: Contributor Guide
+subgroup: contributor
 title: Code Contributions
 menu_title: Code Contributions
 menu_order: 1
