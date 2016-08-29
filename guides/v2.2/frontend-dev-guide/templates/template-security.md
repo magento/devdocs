@@ -43,6 +43,28 @@ The following code sample illustrates the XSS-safe output in templates:
 
 For the following output cases, use the specified function to generate XSS-safe output.
 
+**Case:** Translations using `__()`\\
+**Function:** Use `escapeHtml` with `\Magento\Framework\Escaper::ALLOWED_TAGS`
+
+
+{% highlight html %}
+<span class="label"><?php echo $block->escapeHtml(__('Some string'), \Magento\Framework\Escaper::ALLOWED_TAGS) ?></span> 
+
+<script>
+    // In this case we need to use escapeHtml because we are inserting into the DOM
+    var string = '<?php echo $block->escapeJs($block->escapeHtml(__('Some string'), \Magento\Framework\Escaper::ALLOWED_TAGS)) ?>'
+    jQuery('my-element').append(string);
+ 
+    // Here we are  not inserting the string into the DOM, so it is ok if the string contains non-allowed tags or JavaScript because it will be handled as
+    // a string. If we use escapeHtml here, quotes and other symbols will be displayed as HTML entities (&#039;, &quot;, &amp;, etc)
+    alert('<?php echo $block->escapeJs(__('Some string')) ?>');
+</script> 
+
+<!--  No need to clear translation output from unwanted tags and attributes in attribute values -->
+<img src="image.jpg" alt="<?php echo $block->escapeHtmlAttr(__('Some string')) ?>" />
+{% endhighlight %}
+
+
 **Case:** JSON output\\
 **Function:** No function needed for JSON output.
 
