@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.1EE.md
 
 
 ## Magento Enterprise Edition 2.1.1
-We are pleased to present Magento Enterprise Edition 2.1.1. This release includes several functional fixes as well as enhancements to the deployment of static assets. 
+We are pleased to present Magento Enterprise Edition 2.1.1. This release includes several functional fixes as well as enhancements to the deployment of static assets. It also provides enhancements to the Wishlist module's extensibility and modularity.
 
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
