@@ -160,7 +160,7 @@
 	<div class="container">
 		<h1 class="page-heading">Magento's deployment configuration</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/config/config-php.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/config-guide/config/config-php.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -1381,7 +1381,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 29 August 2016 (PDT)</i></p>
 		<h4 id="contents">Contents</h4>
 
 <ul>
@@ -1531,7 +1531,20 @@
       <td><code>cache_types</code></td>
       <td><pre>__/cache_types
  |-- &lt;enumerated cache types&gt;</pre></td>
-    </tr>
+    </tr>     
+    <tr>
+            <td>Message queues</td>
+            <td><code>queue</code></td>
+            <td><pre>__/queue
+        |__/amqp
+        |-- host
+        |-- port
+        |-- user
+        |-- password
+        |-- virtualhost
+        |-- ssl
+        </pre></td>
+          </tr>    
   </tbody>
 </table>
 
