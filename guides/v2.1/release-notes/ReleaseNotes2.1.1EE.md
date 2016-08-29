@@ -63,7 +63,6 @@ We address the following functional issues in this release.
 
 <!--- 57410-->* You can now quickly generate or preview multiple variations of a configurable product. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
-<!--- 55524/48429-->* You can now delete updates from a campaign's page entity grid. 
 
 <!--- 52660 -->* We've improved the deployment of static assets. 
 
@@ -74,6 +73,9 @@ We address the following functional issues in this release.
 #### Miscellaneous
 
 <!--- 56892-->*  You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute. 
+
+<!--- 55524/48429-->* You can now delete updates from a campaign's page entity grid. 
+
 
 
 <!--- 56951-->* Magento now displays configurable products as expected after creation. 
