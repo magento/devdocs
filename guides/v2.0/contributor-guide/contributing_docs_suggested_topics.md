@@ -13,7 +13,7 @@ github_link: contributor-guide/contributing_docs_suggested_topics.md
 
 Below is a list of suggested topics; we would welcome contributions around these! (Or anywhere!) Most of the topics below are things we know we need in the DevDocs (but haven't had a chance to write), some are suggestions form our internal developers or suppport teams, and some are suggestions from you, our community.
 
-We have a <a href="{{page.baseurl}}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/2.0/guides/v2.0/contributor-guide/basic_template.md" target="_blank">.md file  on Github</a>. It's in Markdown, which is a simple markup language.
+We have a <a href="{{page.baseurl}}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="{{ site.githuburl }}guides/v2.0/contributor-guide/basic_template.md" target="_blank">.md file  on Github</a>. It's in Markdown, which is a simple markup language.
 
 If you write and contribute a full topic, we'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{page.baseurl}}howdoi/howdoi_bios.html"  target="_blank">ring of honor</a> as one of our featured contributors.
 
