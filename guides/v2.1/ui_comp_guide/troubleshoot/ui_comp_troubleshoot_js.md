@@ -14,17 +14,17 @@ Review the following methods for debugging the JavaScript within UI components.
 
 ### Debugging using Knockout.js  plugin
 
-Installation knockout debugging plugin for GoogleChrome:
+Installation knockout debugging plugin for Google Chrome:
 
-	1) Open your GoogleChrome browser.
-	2) Expand GoogleChrome options dropdown
-	3) Select "Setting" item
-	4) Go to "Extensions" tab
-	5) Scroll to end page and press "Go more extensions link"
-	6) In search field write "Knockoutjs context debugger" and press "Enter" key
-	7) Press "Add to chrome" button
+	1) Open your Google Chrome browser
+	2) Expand Google Chrome options dropdown (hamburger in upper right)
+	3) Select "Settings"
+	4) In left pane, select "Extensions"
+	5) Scroll to end of the page and click "Get more extensions" link
+	6) In the Search field write "Knockoutjs context debugger" and press "Enter" key
+	7) Select "Add to Chrome"
 
-After we added _Knockoutjs context debugger_ plugin to Google Chrome, now we can open "developer tools" panel and see "Knockout context" tab.
+After we added _Knockoutjs context debugger_ plugin to Google Chrome, now we can open "developer tools" panel and see the "Knockout context" tab.
 
 To get some component context need find html node from component template and go to "Knockout context". In this tab we will see component context with all properties and methods list.
 
@@ -38,26 +38,26 @@ We see full "Product name" field context, where we can find js component file, c
 
 The uiRegistry is a component that stores all components hierarchy. For more information about uiRegistry we can look at [uiRegistry page]({{page.baseurl}}....).
 
-To debug the UI component JS, we first need to get a `uiRegistry` instance from the browser console. To do so, use the [RequireJs ID]({{page.baseurl}}....require.js topic) (alias or full path to the `.js` file that stores the `uiRegistry` class). 
+To debug the UI component JS, we first need to get a `uiRegistry` instance from the browser console. To do so, use the [RequireJs ID]({{page.baseurl}}....require.js topic) (alias or full path to the `.js` file that stores the `uiRegistry` class).
 
 To get the `uiRegistry` instance, in the browser console enter the following:
 
 {%highlight js%}
 var registry = require('uiRegistry');
-{%endhighight%}
+{%endhighlight%}
 
-Now we have uiRegistry instance in the `registry` variable. We can use it to get an instance of any component. 
+Now we have uiRegistry instance in the `registry` variable. We can use it to get an instance of any component.
 
 {%highlight js%}
-var component = registry.get('%componentName%'); 
-{%endhighight%}
+var component = registry.get('%componentName%');
+{%endhighlight%}
 
 For example:
 
 {%highlight js%}
 // Admin area > Catalog > Products > Create new Product
-var fieldName = registry.get('product_form.product_form.product-details.container_name.name'); 
-{%endhighight%}
+var fieldName = registry.get('product_form.product_form.product-details.container_name.name');
+{%endhighlight%}
 
 For more information about using more complex queries, refer to [uiRegistry topic]({{page.baseurl}}.....).
 
@@ -72,6 +72,4 @@ fieldName.visible(false); // will hide field from page
 fieldName.visible(true);  // will show field again
 fieldName.value(); // will show current field value
 fieldName.value('New string value'); // will change field value to string 'New string value'
-{%endhighight%}
-
-Do we need to add more context, considering that we have a troubleshooting check list??????
+{%endhighlight%}

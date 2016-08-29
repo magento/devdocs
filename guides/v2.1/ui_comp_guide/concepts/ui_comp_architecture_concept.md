@@ -22,10 +22,10 @@ The usual UI Component is seen by the user as an distinct and highly interactive
 
  UI Components are configured using primarily the following:
 
- 1) declaration.xml file: the structure, with nodes, nested nodes, argument etc (link to separate topic on this)
- 2) UI component xml declaration (the instance) (link to separate topic on this)
- 3) Backend/PHP modifiers (link to separate topic on this)
- 4) Configuration inside the JS class (link to separate topic on this)
+ 1) declaration.xml file: the structure, with nodes, nested nodes, argument etc 
+ 2) UI component xml declaration (the instance)
+ 3) Backend/PHP modifiers
+ 4) Configuration inside the JS class
 
- For information about the configuration and instantiation flow, refer to {{Configuration Flow of UI Components}}.
- For information about the application flow (data, etc), refer to {{â€¦.}}
+ For information about the configuration and instantiation flow, refer to [UI Components configuraiton flow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html).
+ For information about the application flow (data, etc), refer to TBD.

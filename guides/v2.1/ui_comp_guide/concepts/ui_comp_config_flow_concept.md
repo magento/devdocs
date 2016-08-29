@@ -10,23 +10,15 @@ github_link: ui_comp_guide/concept/ui_comp_config_flow_concept.md
 ---
 
 
-
 ## Configuration Flow of UI Components
 
-(Correct place for this paragraph??) The following section covers the configuration flow of UI Components within the Magento system. The final display of a UI Component on a web page involves a series of configuration flows, such as the initial reading of the top-level component instance’s xml declaration, all the way to the merging of module-specific options.
+The following section covers the configuration flow of UI Components within the Magento system. The final display of a UI Component on a web page involves a series of configuration flows, such as the initial reading of the top-level component instance’s xml declaration, all the way to the merging of module-specific options.
 
-When the server generates a page response, the configuration of these components in the .xml declaration (which are module-agnostic) **add link to xml declaration topic) is then modified by the .php modifiers (which are module-specific), and then finally this combined configuration of module-agnostic and module-specific options is packed into JSON format and added into the HTTP response body. **Work with Max*
-
+When the server generates a page response, the configuration of these components in [the .xml declaration file]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) (which are module-agnostic) is then modified by the .php modifiers (which are module-specific), and then finally this combined configuration of module-agnostic and module-specific options is packed into JSON format and added into the HTTP response body.
 
 On the client-side, this JSON is processed by `Magento_Ui/js/core/app` where Magento_Ui/js/core/app is an alias for the app.js file. The JSON is seen in the page source. The `Magento_Ui/js/core/app` creates the UI Components instances according to the configuration of the JSON.
 
 The `Magento_Ui/js/core/app` also bounds these objects to the corresponding .html templates, if there are any .html templates declared in JSON for that particular component.
-
-## Common Usage (if relevant)
-
-UI Components are commonly used …
-
-Diagram must be here (see photo from whiteboard from Ladybug)
 
 ### Implementation Details
 
@@ -37,17 +29,17 @@ This section provides more detailed steps about the configuration flow.
 Lets imagine we have the following file structure in our module <My_Module>:
     1) Layout .xml file of the Module’s page: my_page.xml
     2) Top-level UI Component (form or listing) configuration: my_form.xml
-    3) .php modifiers that are specific to the module: _____ **MAX??***
+    3) .php modifiers that are specific to the module: ___
 
 Keep in mind that the `UI module’ contains these important files:
     1) A general, module-agnostic form definition in the <form> node of the .xml definition file: Ui\view\base\ui_component\etc\definition.xml
     2) Default form .xhtml template, which is referenced in definition.xml: Ui\view\base\ui_component\templates\form\default.xhtml
     3) The Form component, which is referenced in definition.xml: Ui\view\base\web\js\form\form.js
 
-When the request for my_page comes, the server (**MAX????***) does the following steps:
+When the request for my_page comes, the server does the following steps:
 1) Determines which UI Components are used in this particular layout. In the example, the UI Components that are used are defined in the my_form component’s declaration file.
-2) Searchs the .xml files with name ‘my_form’ among ALL modules. The server (**which exact file or part of the framework??**) and then merges the my_form .xml file(s) into a single configuration object, thus overriding
-the common properties, so the latest my_form .xml file always has the highest priority.
+2) Searchs the .xml files with name ‘my_form’ among ALL modules. The server and then merges the my_form .xml file(s) into a single configuration object, thus overriding
+the common properties, so that the latest my_form .xml file always has the highest priority.
 3) Merges the resulting configuration (from Step 2 above) with the configuration from the UI module definition.xml. The UI module definition.xml configuration file has the lowest priority, and is overwritten by the merged configuration of all my_form.xml files.
 4) Translates the resulting configuration into JSON format and adds it to response body the following way:
 
