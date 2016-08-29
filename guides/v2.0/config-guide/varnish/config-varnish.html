@@ -1316,7 +1316,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 28 August 2016 (PDT)</i></p>
 		<h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#config-varnish-over">Overview of the Varnish solution</a></li>
@@ -1363,7 +1363,7 @@
 
 <p><img src="/common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram" /></p>
 
-<p>In the preceding figure, users’ web page requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as <em>assets</em>). Varnish sits in front of the web server and proxies these requests to the web server.</p>
+<p>In the preceding figure, users’ HTTP requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as <em>assets</em>). Varnish sits in front of the web server and proxies these requests to the web server.</p>
 
 <p>As the web server returns assets, cacheable assets are stored in Varnish. Any subsequent requests for those assets are fulfilled by Varnish (meaning, the requests don’t reach the web server). Varnish returns cached content extremely quickly. The results are faster response times to return the content to users and a reduced number of requests that must be fulfilled by Magento.</p>
 
