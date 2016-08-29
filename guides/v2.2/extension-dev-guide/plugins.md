@@ -153,6 +153,8 @@ class MyPlugin
     }
 }
 
+{% endhighlight %}
+
 In the example, the `afterUpdateWebsites` function uses the variable `$websiteIds`, so it declares that variable as an argument. It also declares `$productIds` because it comes before `$websiteIds` in the parameter signature of the observed method. The after method did not list `$type` because it did not use it inside the method nor does it come before `$websiteIds`.
 
 <div class="bs-callout bs-callout-warning">
