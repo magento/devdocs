@@ -8,10 +8,9 @@ menu_order: 10
 version: 2.0
 github_link: contributor-guide/contributing_docs_suggested_topics.md
 ---
-
+ 
 <h2 id="suggested">Suggested topics for contribution</h2>
-
-Below is a list of suggested topics; we would welcome contributions around these! (Or anywhere!) Most of the topics below are things we know we need in the DevDocs (but haven't had a chance to write), some are suggestions form our internal developers or suppport teams, and some are suggestions from you, our community.
+Following is a list of suggested topics; we would welcome contributions around these! (Or anywhere!) Most of the topics below are things we know we need in the DevDocs (but haven't had a chance to write), some are suggestions form our internal developers or suppport teams, and some are suggestions from you, our community.
 
 We have a <a href="{{page.baseurl}}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="{{ site.githuburl }}guides/v2.0/contributor-guide/basic_template.md" target="_blank">.md file  on Github</a>. It's in Markdown, which is a simple markup language.
 
