@@ -29,7 +29,7 @@ We address the following functional issues in this release.
 #### Installation and upgrade
 
 
-<!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
+<!--- 55357/53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
 
 
 <!--- 56974-->* You can now upgrade 2.0.9 with sample data to 2.1.1. 
@@ -60,7 +60,6 @@ We address the following functional issues in this release.
 
 #### Performance
 
-<!--- 54682 -->* We've improved storefront performance when you use many variations of a configurable product.
 
 <!--- 57410-->* You can now quickly generate or preview multiple variations of a configurable product. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
@@ -68,6 +67,7 @@ We address the following functional issues in this release.
 
 <!--- 52660 -->* We've improved the deployment of static assets. 
 
+<!--- 55300, 55620, 54682-->* We've improved storefront performance when creating 2500 or more product variants. 
 
 
 
@@ -76,23 +76,28 @@ We address the following functional issues in this release.
 <!--- 56892-->*  You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute. 
 
 
+<!--- 56951-->* Magento now displays configurable products as expected after creation. 
+
+<!--- 56582-->* You can now save a product with images multiple times. 
+
+
 <!--- 56126 -->* You can now log in successfully after creating a custom attribute. Previously, Magento would display an error message, and you could not log in, after first creating a custom attribute, then logging out. 
 
 
-<!--- 54787 -->* You can now successfully place orders when the Enable and Configure Website Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase.  <a href="https://github.com/magento/magento2/issues/4785" target="_blank">(GITHUB-4785)</a> 
+<!--- 55598/54787 -->* You can now successfully place orders when the Enable and Configure Website Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase.  <a href="https://github.com/magento/magento2/issues/4785" target="_blank">(GITHUB-4785)</a> 
 
 
 
 <!--- 50026 -->* Attributes of the `salesInvoiceRepository` methods are now more appropriately type cast. (The datatype is now a nullable float.)  Previously, due to the use of an incorrect datatype, Magento would produce an error when calling the `salesInvoiceRepositoryV1GetList` method. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a> 
 
 
-<!--- 52448-->* Magento now correctly displays customer address during account creation. Previously, when you selected a default billing address during creation of a new customer account, Magento would not display the address. 
+<!--- 55462/52448-->* Magento now correctly displays customer address during account creation. Previously, when you selected a default billing address during creation of a new customer account, Magento would not display the address. 
 
 
 
 <!--- 54721-->* You can now use Braintree as a payment method when applying reward points or store credit to an order. 
 
-<!--- 57420-->* The category page now shows the current price after Magento runs a scheduled update.  Previously, the category page would not update the  price after running a scheduled update.	<a href="https://github.com/magento/magento2/issues/4945" target="_blank">(GITHUB-4945)</a> 
+<!--- 57420/54320-->* The category page now shows the current price after Magento runs a scheduled update.  Previously, the category page would not update the  price after running a scheduled update.	<a href="https://github.com/magento/magento2/issues/4945" target="_blank">(GITHUB-4945)</a> 
 
 
 
