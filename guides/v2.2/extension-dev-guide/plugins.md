@@ -161,9 +161,9 @@ In the example, the `afterUpdateWebsites` function uses the variable `$websiteId
 
 
 #### Around methods
-Magento runs the code in around methods before and after their observed methods. This allows you to completely override a method. Around methods must have the same name as the observed method with 'around' as the prefix.
+Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with 'around' as the prefix.
 
-Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When the `callable` is called, the next plugin or the observed function is called.
+Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When your code executes the `callable`, Magento calls the next plugin or the observed function. 
 
 <div class="bs-callout bs-callout-warning">
   <p>If the around method does not call the <code>callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
@@ -191,7 +191,7 @@ class ProductPlugin
 ?>
 {% endhighlight %}
 
-When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method regarding default parameters and type hints. 
+When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method. 
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
@@ -225,9 +225,9 @@ class MyUtilityPlugin
 }
 {% endhighlight %}
 
-Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> PHP would throw a fatal error as your plugin does not accept <code>null</code>.
+Note the missing <code>= null</code>. Now, if Magento calls the original method with <code>null</code>, PHP would throw a fatal error as your plugin does not accept <code>null</code>.
 
-It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this simply:
+You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 
 {% highlight PHP %}
 <?php
@@ -246,19 +246,19 @@ class MyUtilityPlugin
 
 ### Prioritizing plugins
 
-The `sortOrder` property for plugins determine when their before, after, or around methods get called when several plugins are observing the same method.
+The `sortOrder` property for plugins determine when their before, after, or around methods get called when more than one plugins are observing the same method.
 
 The prioritization rules for ordering plugins:
 
-* Prior to execution of the observed method, plugins will be executed from lowest to greatest `sortOrder`.
+* Before the execution of the observed method, Magento will execute plugins from lowest to greatest `sortOrder`.
 
-  * During each plugin execution, the current plugin's before method is executed first.
-  * After the before plugin is executed, the current plugin's around method will wrap and execute the next plugin or observed method.
+  * During each plugin execution, Magento executes the current plugin's before method. 
+  * After the before plugin completes execution, the current plugin's around method will wrap and execute the next plugin or observed method.
 
-* Following the execution of the observed method, plugins will be executed from greatest to lowest `sortOrder`.
+* Following the execution of the observed method, Magento will execute plugins from greatest to lowest `sortOrder`.
 
   * During each plugin execution, the current plugin will first finish executing its around method.
-  * When the around method is complete, the plugin executes its after method before moving on to the next plugin.
+  * When the around method completes, the plugin executes its after method before moving on to the next plugin.
 
 **Example**
 
@@ -275,26 +275,26 @@ The execution flow will be as follows:
 
   * `PluginA::beforeDispatch()`
   * `PluginB::beforeDispatch()`
-  * `PluginB::aroundDispatch()` (Only the first half until `callable` is called)
+  * `PluginB::aroundDispatch()` (Magento calls the first half until `callable`)
 
     * `PluginC::beforeDispatch()`
-    * `PluginC::aroundDispatch()` (Only the first half until `callable` is called)
+    * `PluginC::aroundDispatch()` (Magento calls the first half until `callable`)
 
       * `Action::dispatch()`
 
-    * `PluginC::aroundDispatch()` (Only the second half after `callable` is called)
+    * `PluginC::aroundDispatch()` (Magento calls the second half after `callable`)
     * `PluginC::afterDispatch()`
 
-  * `PluginB::aroundDispatch()` (Only the second half after `callable` is called)
+  * `PluginB::aroundDispatch()` (Magento calls the second half after `callable`)
   * `PluginB::afterDispatch()`
   * `PluginA::afterDispatch()`
 
 
 ### Configuration inheritance
 
-All plugins added for interfaces and inherited classes will be added to classes that implement or inherit those classes and interfaces.
+Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class. 
 
-Plugins defined in the global scope will be applied when the system is in a specific area (i.e. frontend, backend, etc). These global plugin configuration can also be extended or overridden via an area's `di.xml`.
+Magento uses plugins defined in the global scope when the system is in a specific area (i.e. frontend, backend, etc). You can also extend or override these global plugin configuration via an area's `di.xml`.
 
 For example, the developer can disable a global plugin in the backend area by disabling it in the specific `di.xml` file for the backend area.
 
