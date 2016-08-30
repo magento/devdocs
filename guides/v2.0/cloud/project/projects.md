@@ -42,7 +42,7 @@ This displays the following page, which enables you to configure settings, [vari
 ![configure environments]({{ site.baseurl }}common/images/cloud_project-conf-env.png){:width="450px"}
 
 ### Configure the project
-Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{page.baseurl}}cloud/admin/admin-user-admin.html), [domains]({{page.baseurl}}cloud/admin/admin-project-settings.html), and [deploy keys]({{page.baseurl}}cloud/project/project-priv-repos.html) associated with the project.
+Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{page.baseurl}}cloud/admin/admin-user-admin.html), and [deploy keys]({{page.baseurl}}cloud/project/project-priv-repos.html) associated with the project.
 
 ![configure project]({{ site.baseurl }}common/images/cloud_project-config.png){:width="450px"}
 

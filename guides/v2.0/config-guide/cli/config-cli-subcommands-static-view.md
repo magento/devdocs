@@ -131,8 +131,8 @@ Use the following steps:
 
 1.	Install the Magento software in any of the following ways:
 
-	*	<a href="{{page.baseurl}}install-gde/install/install-cli.html">Command line</a>
-	*	<a href="{{page.baseurl}}install-gde/install/install-web.html">Setup wizard</a>
+	*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli.html">Command line</a>
+	*	<a href="{{page.baseurl}}install-gde/install/cli/install-web.html">Setup wizard</a>
 
 1.	Log in to the Magento server as, or <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.
 2.	Delete the contents of `<your Magento install dir>/pub/static` directory.
