@@ -9,8 +9,6 @@ version: 2.1
 github_link: ui_comp_guide/concept/ui_comp_xmldeclaration_concept.md
 ---
 
-## About Configuration of UI Components in XML
-
 ## Overview
 
 This topic discusses the .xml declaration of UI components.
@@ -25,7 +23,7 @@ A UI component is declared in the <referenceContainer/> node, by using the <uiCo
 
 Example of a UI component declaration:
 
-{%higlight xml%}
+{%highlight xml%}
 <referenceContainer name="page-container">
 	<uiComponent name="%instance_name%">
 </referenceContainer>

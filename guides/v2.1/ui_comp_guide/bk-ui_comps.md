@@ -9,7 +9,7 @@ version: 2.1
 github_link: ui_comp_guide/bk_ui_comps.md
 ---
 
-##Welcome to the new UI Components Guide.
+## Welcome to the new UI Components Guide.
 
 This document started as a [week-long doc sprint in Kyiv](http://bhmarks.com/blog/ui-components-doc-sprint-hello-kyiv/){:target="_blank"} with core Magento developers writing documentation about the UI Components. We will add additional topics to this books as we continue our work.
 
@@ -23,6 +23,7 @@ Magento UI components are implemented as a standard module and can be found unde
 Components are responsible for rendering result page fragments and providing/supporting further interactions of JavaScript components and server.
 
 [your component's composer.json file]({{page.baseurl}}extension-dev-guide/build/composer-integration.html)
+
 ### General structure
 In Magento 2 there are basic and secondary UI components.
 
