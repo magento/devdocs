@@ -29,7 +29,7 @@ Example of a UI component declaration:
 <referenceContainer name="page-container">
 	<uiComponent name="%instance_name%">
 </referenceContainer>
-{%endhiglight%}
+{%endhighlight%}
 
 The configuration of the top-level UI component is a separate .xml file. It is stored in the <module_dir>/view/<area>/ui_component/ directory. For example <module_dir>/view/<area>/ui_component/<instance_name>.xml.
 
