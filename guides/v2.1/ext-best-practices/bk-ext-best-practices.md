@@ -1,1 +1,0 @@
-../../v2.0/ext-best-practices/bk-ext-best-practices.md
