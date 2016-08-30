@@ -11,7 +11,7 @@ github_link: ui_comp_guide/bk_ui_comps.md
 
 ##Welcome to the new UI Components Guide.
 
-This document started as a week-long Doc Sprint, with core Magento developers writing documentation about hte UI Components. We will add additional topics to this books as we continue our work.
+This document started as a [week-long doc sprint in Kyiv](http://bhmarks.com/blog/ui-components-doc-sprint-hello-kyiv/){:target="_blank"} with core Magento developers writing documentation about the UI Components. We will add additional topics to this books as we continue our work.
 
 In the meantime, until we have completed this new book, you can also still [access the former UI Components docs]({{page.baseurl}}ui-components/ui-component.html).
 
@@ -31,7 +31,7 @@ Basic components are:
 * Listing component
 * Form component
 
-Secondary components are extensions of basic components.  
+Secondary components are extensions of basic components.
 
 All components can be configured both for Admin and storefront.
 
