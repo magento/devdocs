@@ -76,7 +76,7 @@ To fork a repository on Github, do the following:
 
 4. Clone the repo into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on mulitple changes.
 
-5. You can build this site using Jekyll by following the <a href="{{ site.githuburl }}README.md" target="_blank">instructions in our README</a>.
+5. You can build this site using Jekyll by following the <a href="https://github.com/magento/devdocs/blob/develop/README.md" target="_blank">instructions in our README</a>.
 
 ### Update the fork with the latest changes {#sync}
 As community and Magento writers' changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message `This branch is <number> commits behind magento:2.0.` displays, it means your fork must be updated.
