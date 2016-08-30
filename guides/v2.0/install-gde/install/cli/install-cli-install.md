@@ -151,7 +151,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--backend-frontname</p></td>
 		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.</p>
 			<p>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.</p>
-			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="{{page.baseurl}}install-gde/install/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
+			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
 			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only. It can be up to 255 characters in length.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -313,7 +313,7 @@ The following table discusses the meanings of installation option names and valu
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To enable or disable modules after installing Magento, see <a href="{{page.baseurl}}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+  <p>To enable or disable modules after installing Magento, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
   	</span>
 </div>
 
