@@ -9,34 +9,46 @@ version: 2.1
 github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot.md
 ---
 
-## Debug UI Components JavaScript
-Review the following methods for debugging the JavaScript within UI components.
+{{page_menu_title}}
 
-### Debugging using Knockout.js  plugin
+{:.no_toc}
 
-Installation knockout debugging plugin for Google Chrome:
+TOC Placeholder {:toc}
 
-	1) Open your Google Chrome browser
-	2) Expand Google Chrome options dropdown (hamburger in upper right)
-	3) Select "Settings"
-	4) In left pane, select "Extensions"
-	5) Scroll to end of the page and click "Get more extensions" link
-	6) In the Search field write "Knockoutjs context debugger" and press "Enter" key
-	7) Select "Add to Chrome"
+## Overview
 
-After we added _Knockoutjs context debugger_ plugin to Google Chrome, now we can open "developer tools" panel and see the "Knockout context" tab.
+This article describes how to define the what UI components are used on a particular page, their JavaScript components and what data they use.
 
-To get some component context need find html node from component template and go to "Knockout context". In this tab we will see component context with all properties and methods list.
+To define the UI components used on a page, you can use browser built-in developer tools, or install additionally a plugin, for example Knockout JS context debugger for Google Chrome.
 
-We expect that UI component has been added via layouts and tag `<uiComponent name=""/>`. You should go to the page where you expect an UI component.
+## Debugging using Knockout.js plugin
 
-Consider simple example:
-Launch magento backend, go to catalog tab and press "Create new product" button and then inspect "Product Name" field. Go to "Knockout context" tab.
-We see full "Product name" field context, where we can find js component file, component name, etc.
+To install the knockout debugging plugin for Google Chrome, take the following steps:
 
-### Debugging using the uiRegistry
+1. Open your Google Chrome browser.
+2. Expand Google Chrome options drop-down (hamburger in upper right).
+3. Select **Settings**.
+4. In left pane, select **Extensions**.
+5. Scroll to end of the page and click **Get more extensions** link.
+6. In the **Search** field write **Knockoutjs context debugger** and press the **Enter** key.
+7. In the result, find the extension named **Knockoutjs context debugger** (usually the first result), and click **Add to Chrome**.
 
-The uiRegistry is a component that stores all components hierarchy. For more information about uiRegistry we can look at [uiRegistry page]({{page.baseurl}}....).
+To define the UI component using the plugin:
+
+1. Open the required page in Chrome.
+2. Point to the required element on the page, right-click and select **Inspect**. The developer tools panel opens.
+3. In the right column of the panel, click the **Knockout context** tab. The tab displays the name and the configuration of the UI component instance.
+
+A simple example:
+
+1. Launch Magento Admin. 
+2. Navigate to **Products** > **Catalog** and click **Add Product**. The product creation page opens.
+3. Right-click on the **Product Name**" field and click **Inspect**. Go to the **Knockout context** tab. Here you can see the full context of the field, where you can find JS component file, component name, etc.
+![Image Example]({{site.baseurl}}common/images/ui_comp_troubleshoot_chrome.png)
+
+## Debugging using the uiRegistry
+
+`uiRegistry` is a in-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.
 
 To debug the UI component JS, we first need to get a `uiRegistry` instance from the browser console. To do so, use the [RequireJs ID]({{page.baseurl}}....require.js topic) (alias or full path to the `.js` file that stores the `uiRegistry` class).
 
@@ -46,7 +58,7 @@ To get the `uiRegistry` instance, in the browser console enter the following:
 var registry = require('uiRegistry');
 {%endhighlight%}
 
-Now we have uiRegistry instance in the `registry` variable. We can use it to get an instance of any component.
+Now we have `uiRegistry` instance in the `registry` variable. We can use it to get an instance of any component.
 
 {%highlight js%}
 var component = registry.get('%componentName%');
@@ -55,13 +67,13 @@ var component = registry.get('%componentName%');
 For example:
 
 {%highlight js%}
-// Admin area > Catalog > Products > Create new Product
+// Admin > Products > Catalog > Add Product
 var fieldName = registry.get('product_form.product_form.product-details.container_name.name');
 {%endhighlight%}
 
-For more information about using more complex queries, refer to [uiRegistry topic]({{page.baseurl}}.....).
+For information about using more complex queries, refer to the [uiRegistry topic]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiregistry_concept.md).
 
-Lets look what we have in component variable. It keeps component context with all properties, we can see component file, component name, etc.
+Lets look what we have in component variable. It keeps component context with all properties, we can see component file, component name and so on.
 
 {%highlight js%}
 console.log(fieldName.name); // product_listing.product_listing_source

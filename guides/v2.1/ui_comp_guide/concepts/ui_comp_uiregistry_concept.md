@@ -2,8 +2,8 @@
 layout: default
 group: UI Components
 subgroup: Concepts
-title: About uiRegistry in UI Components
-menu_title: About uiRegistry in UI Components
+title: About the uiRegistry component
+menu_title: About the uiRegistry component
 menu_order: 1
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uiregistry_concept.md
