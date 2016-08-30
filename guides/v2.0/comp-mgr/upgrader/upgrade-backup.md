@@ -13,5 +13,5 @@ github_link: comp-mgr/upgrader/upgrade-backup.md
 {% include comp-man/backup.md %}
 
 #### Next step
-After your backup is complete, continue with [Step 4. Upgrade]({{ site.baseurl }}comp-mgr/upgrader/upgrade.html).
+After your backup is complete, continue with [Step 4. Upgrade]({{ page.baseurl }}comp-mgr/upgrader/upgrade.html).
 

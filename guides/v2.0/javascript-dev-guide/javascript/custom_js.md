@@ -170,5 +170,6 @@ $(mage.apply);
 {% endhighlight %}
 
 
-<h2>Related topics</h2>
-<a href="{{page.baseurl}}config-guide/config/js-resources.html" target="_blank">JavaScript resources configuration</a>
+#### Related topic
+[Configure JavaScript resources]({{ page.baseurl }}javascript-dev-guide/javascript/js-resources.html)
+

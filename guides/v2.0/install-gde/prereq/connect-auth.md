@@ -31,7 +31,7 @@ github_link: install-gde/prereq/connect-auth.md
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{page.baseurl}}install-gde/install/continue.html">Determine your installation or upgrade path</a>
+*	<a href="{{ page.baseurl }}install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

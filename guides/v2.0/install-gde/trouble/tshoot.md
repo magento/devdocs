@@ -18,7 +18,7 @@ redirect_from: /guides/v1.0/install-gde/trouble/tshoot.html
 The following topics discuss the installation errors and suggested solutions:
 
 *	<a href="{{page.baseurl}}install-gde/trouble/tshoot_access-browser.html">You cannot access the Magento software in a web browser</a>
-*	<a href="{{page.baseurl}}install-gde/trouble/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a>
+*	<a href="{{page.baseurl}}install-gde/trouble/php/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a>
 *	<a href="{{page.baseurl}}install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics.</a>
 *	<a href="{{page.baseurl}}install-gde/trouble/tshoot_sample-data.html">Errors installing sample data</a>
 *	<a href="{{page.baseurl}}install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a>
@@ -26,8 +26,8 @@ The following topics discuss the installation errors and suggested solutions:
 *	<a href="{{page.baseurl}}install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a>
 *	<a href="{{page.baseurl}}install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a>
 *	<a href="{{page.baseurl}}install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a>
-*	<a href="{{page.baseurl}}install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>
-*	<a href="{{page.baseurl}}install-gde/trouble/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a>
+*	<a href="{{page.baseurl}}install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>
+*	<a href="{{page.baseurl}}install-gde/trouble/git/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a>
 *	<a href="{{page.baseurl}}install-gde/trouble/git/tshoot_clone.html">Cannot clone the Magento GitHub repository</a>
 *	<a href="{{page.baseurl}}install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a>
 *	<a href="{{page.baseurl}}install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a>

@@ -44,7 +44,7 @@ For more details about PHP verification, installation and configuration (<a href
 The Functional Testing Framework requires Composer, which downloads libraries defined in `<magento2>/dev/tests/functional/composer.json`.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you're not sure that Composer is installed, see <a href="{{page.baseurl}}install-gde/install/composer-clone.html#instgde-prereq-compose-install">Install Composer</a>.</p>
+  <p>If you're not sure that Composer is installed, see <a href="{{page.baseurl}}install-gde/prereq/dev_install.html#instgde-prereq-compose-install">Install Composer</a>.</p>
 </div>
 
 1.    <a href="{{page.baseurl}}install-gde/basics/basics_login.html">Open a command prompt</a>.
