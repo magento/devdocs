@@ -2,12 +2,12 @@
 layout: default
 group: UI Components
 subgroup: Concepts
-title: %your page title%
+title: your page title
 menu_title:
 menu_node:
 menu_order: 1
 version: 2.1
-github_link: 
+github_link:
 ---
 
 # Title
@@ -34,7 +34,7 @@ When writing a conceptual topic, pretend that you are describing this feature to
 
 ## Workflow Diagrams (if relevant)
 Add any diagrams or text that explains core workflows.
- 
+
 
 <!-- форматирование -->
 
@@ -46,8 +46,8 @@ Below are some basic examples of what you can do with markdown.
 
 #### Text Effects
 
-*emphasis*    
- **bold**     
+*emphasis*
+ **bold**
  `inline code`
 
 By indenting your content by at least 4 spaces, you can create a code block.
