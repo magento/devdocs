@@ -2,8 +2,8 @@
 layout: default
 group: UI_Components_guide
 subgroup: concepts
-title: About Configuration of UI Components in XML
-menu_title: About Configuration of UI Components in XML
+title: About XML Configuration of UI Components
+menu_title: About XML Configuration of UI Components
 menu_order: 1
 version: 2.1
 github_link: ui_comp_guide/concept/ui_comp_xmldeclaration_concept.md
