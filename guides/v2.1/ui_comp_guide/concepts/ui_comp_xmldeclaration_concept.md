@@ -19,7 +19,7 @@ Every module that has view representation contains the folder named 'layout'. In
 
 In a typical Magento layout xml file we see a `<head/>` node, `<title/>` node with the name of the page, and a link to css file. There are other nodes as well, the most important for us now is the `<referenceContainer/>` node. (The `name` attribute in this node is responsible for the position of the container on the page.)
 
-A UI component is declared in the <referenceContainer/> node, by using the <uiComponent/> node. The `name` attribute in the <uiComponent/> node references the xml configuration of the [top level UI component]({{page.baseurl}}...link to glossary).
+A UI component is declared in the <referenceContainer/> node, by using the <uiComponent/> node. The `name` attribute in the <uiComponent/> node references the xml configuration of the top level UI component..
 
 Example of a UI component declaration:
 
