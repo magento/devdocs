@@ -1,92 +1,46 @@
 ---
 layout: default
-group: UI Components
-subgroup: Concepts
-title: About uiElement in UI Components
-menu_title: About uiElement in UI Components
+group: UI_Components_guide
+subgroup: concepts
+title: uiElement class
+menu_title: uiElement class
+menu_node:
 menu_order: 1
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uielement_concept.md
 ---
 
+## About the uiElement class
 
-##  About uiElement in UI Components
-* TOC
-{:toc}
+The uiElement class is a direct successor of the uiClass [link uiClass document] library.  The path is `UI_Module_dir>/view/base/web/js/lib/core/element/element.js`. The uiElement class should be used as direct parent component in cases when we know that the current component will be the last link in component hierarchy chain.
 
-## Overview
-{:.no_toc}
+### uiElement methods
 
-This topic discusses the uiElement....
+1. `initLinks` - this method implements component communication by using the `links.js` file in (link to this file in GitHub) (<UI_Module_dir>/view/base/web/js/lib/core/element/links.js). The `initLinks` method creates interface to set it. (Link to UI component communication topic).
 
-## Implementation Details
+2. `initObservable` - this method allows you to declare observable variables within the same instance. There are many ways to declare an observable variable; for details refer to  "How to work with observable variable." (Add link)
 
-This topic describes in more detail WHAT this feature is, and provides the reader an understanding of what the feature does, and how it is implemented/works. Explain core concepts, and relevant information about system or application workflows.
+As an example:
 
-When writing a conceptual topic, pretend that you are describing this feature to a new developer who just joined your team, and who will be working with you to further develop it.
+ initObservable: function () {
+    this.track('childTemplate')
+    this.observe([
+        '%myVariable1%',
+        '%myVariable2%'
+    ]);
+return this;
+}
 
-<!-- форматирование -->
+  3. `initModules` - this method initializes external UI Components instances and links them to local variables. This method works with the `modules` section of the configuration, where we define the name of the external instance and the local variable. The `module` section is an object where each key is the variable's name and each values is the instance's name. A develeloper does not need to be concerned with the instantiation of the module, because the `initModules` method will resolve the variables when the instance are instantiated.
 
-### Formatting reference
+As an example:
+// Config where the `modules` property is declared
+defaults: {
+modules: {
+        '%myProperty%': '%linkToTheComponent%'
+    }
+}
 
+4. getTemplate - The`getTemplate` method returns a file path to UI component's template.
 
-### Basic Markdown Syntax
-Below are some basic examples of what you can do with markdown.
-
-#### Text Effects
-
-*emphasis*    
- **bold**     
- `inline code`
-
-By indenting your content by at least 4 spaces, you can create a code block.
-
-    //This is a code block!
-    print "Hello World!";
-
-For more examples of basic markdown please follow this [link](https://daringfireball.net/projects/markdown/syntax){:target="_self"}.
-
-#### Lists
-Lists are useful for organizing and displaying related items. Below are examples of a bulleted list and an ordered list.
-
-**Bulleted List:**
-
-* List Item 1
-*	List Item 2
-*	List Item 3
-
-**Ordered List:**
-
-1.	First Step
-2.	Second Step
-3.	Third Step
-
-#### Tables
-Tables can be useful for displaying different kinds of data in an organized way.
-
-*Example:*
-
-| Column Heading | Column Heading | Column Heading |
-|----------------|----------------|----------------|
-| Data 1         | Data 2         | Data 3         |
-| Data 4         | Data 5         |                |
-| Data 6         |                |                |
-
-You can read more about table syntax [here](http://kramdown.gettalong.org/syntax.html#tables){:target="_blank"}.
-
-#### Code blocks
-
-Code blocks can also be defined by surrounding the block of code with `~~~` which can be seen in the [table](#tables) example.
-
-For highlighted code blocks use the `highlight` Liquid tag.
-
-*Example:*
-
-{% highlight html %}
-<div class="container">
-  <h4 class="title">Title</h4>
-  <div class="content">
-    <p>Paragraph content.</p>
-  </div>
-</div>
-{% endhighlight %}
+5. hasTemplate -  The `hasTemplate` method verifies that a `template` property was specified in the instance configuraiton.
