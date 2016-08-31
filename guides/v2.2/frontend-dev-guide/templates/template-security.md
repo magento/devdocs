@@ -44,19 +44,19 @@ The following code sample illustrates the XSS-safe output in templates:
 For the following output cases, use the specified function to generate XSS-safe output.
 
 **Case:** Translations using `__()`\\
-**Function:** Use `escapeHtml` with `\Magento\Framework\Escaper::ALLOWED_TAGS`
+**Function:** Use `escapeHtml` and pass in an array of allowed tags. The supported attributes for allowed tags include: id, class, href, target, and title. `script` and `img` tags will not be allowed regardless of the content of this array because they can lead to JavaScript execution.
 
 
 {% highlight html %}
-<span class="label"><?php echo $block->escapeHtml(__('Some string'), \Magento\Framework\Escaper::ALLOWED_TAGS) ?></span> 
+<span class="label"><?php echo $block->escapeHtml(__('Some string'), ['strong']) ?></span> 
 
 <script>
     // In this case we need to use escapeHtml because we are inserting into the DOM
-    var string = '<?php echo $block->escapeJs($block->escapeHtml(__('Some string'), \Magento\Framework\Escaper::ALLOWED_TAGS)) ?>'
-    jQuery('my-element').append(string);
+    var string = '<?php echo $block->escapeJs($block->escapeHtml(__('Some string'), ['strong','p','br']) ?>'
+    jQuery('#my-element').append(string);
  
-    // Here we are  not inserting the string into the DOM, so it is ok if the string contains non-allowed tags or JavaScript because it will be handled as
-    // a string. If we use escapeHtml here, quotes and other symbols will be displayed as HTML entities (&#039;, &quot;, &amp;, etc)
+    // Here we are not inserting the string into the DOM, so it is ok if the string contains non-allowed tags or JavaScript because it will be handled as
+    // a string. If we use escapeHtml here, the browser will display quotes and other symbols as HTML entities (&#039;, &quot;, &amp;, etc)
     alert('<?php echo $block->escapeJs(__('Some string')) ?>');
 </script> 
 
