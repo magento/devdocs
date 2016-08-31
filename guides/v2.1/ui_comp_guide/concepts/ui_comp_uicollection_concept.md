@@ -1,10 +1,10 @@
 ---
 layout: default
 group: UI_Components_guide
-subgroup: concept
+subgroup: concepts
 title: uiCollection class
 menu_title: uiCollection class
-menu_order: 1
+menu_order: 7
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uicollection_concept.md
 ---

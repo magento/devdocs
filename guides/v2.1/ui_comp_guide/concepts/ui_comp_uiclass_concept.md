@@ -1,10 +1,10 @@
 --
 layout: default
-group: UI_Components
+group: UI_Components_guide
 subgroup: concepts
 title: About the uiClass component
 menu_title: About the uiClass component
-menu_order: 1
+menu_order: 7
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uiclass_concept.md
 ---

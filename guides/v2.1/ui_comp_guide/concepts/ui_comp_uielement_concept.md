@@ -5,7 +5,7 @@ subgroup: concepts
 title: uiElement class
 menu_title: uiElement class
 menu_node:
-menu_order: 1
+menu_order: 7
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uielement_concept.md
 ---
