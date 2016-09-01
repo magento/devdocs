@@ -7,137 +7,141 @@ menu_title: Searching with Repositories
 menu_order: 25
 version: 2.2
 github_link: extension-dev-guide/repositories.md
-redirect_from: /guides/v2.2/extension-dev-guide/repositories.html
 ---
+* TOC
+{:toc}
 
-#### Contents
-*	<a href="#m2devgde-repository-intro">What is Repository?</a>
-*	<a href="#m2devgde-search-criteria">Search Criteria</a>
-*	<a href="#m2devgde-searchcriteria-unify-processing">Search Criteria Unify Processing</a>
+### What is a repository? {#m2devgde-repository-intro}
 
-<h2 id="m2devgde-repository-intro">What is Repository?</h2>
-
-Repository is one of the <a href="{{page.baseurl}}extension-dev-guide/service-contracts/design-patterns.html">service contracts</a>.
-It provide CRUD operations for service requestors. Its possible to delete, save (create or update) and read (entity or list of entities) with help of repository.
+Repositories give service requestors the ability to perform create, read, update, and delete (CRUD) operations on entities or a list of entities.
+A repository is an example of a [service contract]({{page.baseurl}}extension-dev-guide/service-contracts/design-patterns.html), and its implementation is part of the domain layer.
  
-Repository implementation is part of Domain Layer. 
+#### Repository state
 
-### Repository and state
+A repository should be stateless after instantiation.
+This means that every method call should not rely on previous calls nor should it affect later method calls.
+Any field contained in the repository class must also be stateless.
 
-Repository should be stateless. In order to keep state, its highly recommended to use Registry pattern.
+If your repository needs to provide functionality that requires state, such as for caching,  use the registry pattern.
+A good example that uses this pattern is the [`CustomerRepository`]({{site.mage2100url}}/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php){:target="_blank"} class.
  
-<h3 id="m2devgde-search-criteria">Search Criteria</h3>
-Search Criteria is represented by <code>Magento\Framework\Api\SearchCriteriaInterface</code>. 
-Search Criteria allows to build custom requests with different conditions. 
+### Search Criteria {#m2devgde-search-criteria}
+
+A Search Criteria is an implementation of the [`SearchCriteriaInterface`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteriaInterface.php){:target="_blank"} class that allows you to build custom requests with different conditions.
+
+Repositories use this class to retrieve entities based on a matching criteria.
 
 #### Filter
 
-Filter is atomic part of Search Criteria, represented by <code>Magento\Framework\Api\Filter</code>.
-It allows to add custom field, value and condition type to search criteria. 
-Here is an example of Filter: 
+The [`Filter`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/Filter.php){:target="_blank"} class is the smallest part of a Search Criteria.
+It allows you to add a custom field, value, and condition type to the criteria.
+
+Example of how to define a Filter:
 
 {% highlight php startinline=true %}
-<?php
 $filter
     ->setField("url")
     ->setValue("%magento.com")
     ->setConditionType("like");
 {% endhighlight %}
 
-This filter will find all urls with magento.com suffix. 
+This filter will find all urls with the suffix of "magento.com".
 
 #### Filter Group
 
-Filter Group is collection of filters, represented by <code>Magento\Framework\Api\Search\FilterGroup</code>.
-Filters in one filter group apply via <code>OR</code> statement. 
-Different filter groups applies by <code>AND</code> statement. 
+The [`FilterGroup`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/Search/FilterGroup.php){:target="_blank"} class acts like a collection of Filters that apply one or more criteria to a search.
+
+The boolean `OR` statement joins Filters inside a single **Filter Group**.
+
+The boolean `AND` statement joins Filter Groups inside a **Search Criteria**.
+
+For example:
 
 {% highlight php startinline=true %}
-<?php
 $filter1
     ->setField("url")
     ->setValue("%magento.com")
     ->setConditionType("like");
-    
+
 $filter2
     ->setField("store_id")
     ->setValue("1")
     ->setConditionType("eq");
-             
-$filterGroup1->setFilters([$filter1, $filter2]);  
-           
+
+$filterGroup1->setFilters([$filter1, $filter2]);
+
 $filter3
     ->setField("url_type")
     ->setValue(1)
     ->setConditionType("eq");
-            
-$filterGroup1->setFilters([$filter3]);   
+
+$filterGroup2->setFilters([$filter3]);
+
 $searchCriteria->setFilterGroups([$filterGroup1, $filterGroup2]);
 {% endhighlight %}
 
-The code above demonstrate filtering like: <code>(url OR store_id) AND (url_type)</code>
+The code above creates a Search Criteria with the Filters put together in the following way:\\
+`(url like %magento.com OR store_id eq 1) AND (url_type eq 1)`
 
-#### Sorting 
+#### Sorting
 
-In order to apply one or few sortings to Search Criteria, need to create Sort Order object, 
-represented by <code>Magento\Framework\Api\SortOrder</code>. 
+To apply sorting to the Search Criteria, use the [`SortOrder`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SortOrder.php){:target="_blank"} class.
 
-Sort Order has 2 params: field and direction. Direction can be <code>ASC</code> or <code>DESC</code>. 
+Field and direction make up the two parameters that define a Sort Order object.
+The field is the name of the field to sort.
+The direction is the method of sorting whose value can be `ASC` or `DESC`.
 
-Sorting by customer email is presented below: 
+The example below defines a Sort Order object that will sort the customer email in ascending order:
 {% highlight php startinline=true %}
-<?php
 $sortOrder
     ->setField("email")
     ->setDirection("ASC");
-    
+
 $searchCriteria->setSortOrders([$sortOrder]);
 {% endhighlight %}
 
 #### Pagination
 
-Its possible to set limit to Search Criteria by using: 
+The `setPageSize` function paginates the Search Criteria by limiting the amount of entities it retrieves:
 {% highlight php startinline=true %}
-<?php
 $searchCriteria->setPageSize(20); //retrieve 20 or less entities
-    
+
 {% endhighlight %}
 
-Also its possible to set limit offset to Search Criteria by using: 
+The `setCurrentPage` function sets the current page: 
 
 {% highlight php startinline=true %}
-<?php
 $searchCriteria
     ->setCurrentPage(20)
     ->setCurrentPage(15); //will show entities from 15-th to 20-th
-    
+
 {% endhighlight %}
 
 
 ### Search Result
 
-Repositories <code>getList(SearchCriteria $searchCriteria)</code> method should return 
-Search Result, represented by <code>Magento\Framework\Data\SearchResultInterface</code>. 
+The `getList(SearchCriteria $searchCriteria)` method defined in your repository should return a Search Result object.
+This object is an instance of a class that implements the interface [`SearchResultInterface`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchResultsInterface.php){:target="_blank"}.
 
-Search Result hold information about total count of found entities. Total count should ignore all limitations.
-Search Result also hold Search Criteria and items.
+Search Result objects hold the Search Criteria object and the retrieved entities along with information about the total count of found entities regardless of any limitations set in the criteria.
 
-<h3 id="m2devgde-searchcriteria-unify-processing">Search Criteria Unify Processing</h3>
+### Search Criteria Unify Processing {#m2devgde-searchcriteria-unify-processing}
 
-In order to unify appling of custom filters, sortings and pagination, was designed Collection Processor service, represented by 
-<code>Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface</code>. 
-It defines one method process which allows to apply $searchCriteria to abstract $collection. 
+A Collection Processor is an implementation of the [`CollectionProcessorInterface`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessorInterface.php){:target="_blank"} interface that unifies the application of custom filters, sorting, and paginating.
+It contains a one method process that applies a Search Criteria object to an abstract database collection.
 
-Collection Processor can hold different types of processors, represented below. It is configurated through DI. 
-For it configuration virtual types are used. 
+You can use [virtual typing]({{page.baseurl}}extension-detv-guide/depend-inj.html#configuring-a-type) in your `di.xml` file to specify the processors used in the Collection Processor.
 
 #### Filter Processor
 
-Filter processor apply Filter Groups and their filters to a collection.
-Implementation of <code>Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor</code>
+The [`FilterProcessor`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/FilterProcessor.php){:target="_blank"} class applies Filter Groups and their filters to a collection.
 
+Below is the code that applies filters to a collection.
+The method applies custom filters for some fields, otherwise it applies `$collection->addFieldToFilter($fields, $conditions)`.
+
+{% collapsible Show Code for addFilterGroupToCollection %}
 {% highlight php startinline=true %}
-/**
+    /**
      * Add FilterGroup to the collection
      *
      * @param FilterGroup $filterGroup
@@ -155,22 +159,23 @@ Implementation of <code>Magento\Framework\Api\SearchCriteria\CollectionProcessor
             if ($customFilter) {
                 $isApplied = $customFilter->apply($filter, $collection);
             }
-             
+
             if (!$isApplied) {
                 $condition = $filter->getConditionType() ? $filter->getConditionType() : 'eq';
                 $fields[] = $this->getFieldMapping($filter->getField());
                 $conditions[] = [$condition => $filter->getValue()];
             }
         }
-         
+
         if ($fields) {
             $collection->addFieldToFilter($fields, $conditions);
         }
     }
 {% endhighlight %}
+{% endcollapsible %}
 
-For some fields custom filters can be used, otherwise <code>$collection->addFieldToFilter($fields, $conditions)</code> is applied. 
-It can be configured to use custom field mapping and custom filter processing like.
+You can configure this class to use a specific custom field mapping and custom filter in the `di.xml` file.
+The example below uses dependency injection to create a virtual type from a Filter Processor that applies the module-specific [`ProductCategoryFilter`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Model/Api/SearchCriteria/CollectionProcessor/FilterProcessor/ProductCategoryFilter.php){:target="_blank"} on a particular field mapping.
 
 {% highlight XML %}
     <virtualType name="Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\GroupFilterProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor">
@@ -187,9 +192,8 @@ It can be configured to use custom field mapping and custom filter processing li
     </virtualType>
 {% endhighlight %}
 
-Example of ProductCategoryFilter:
+{% collapsible Show code for ProductCategoryFilter %}
 {% highlight php startinline=true %}
-<?php
 namespace Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor;
 
 use Magento\Catalog\Model\ResourceModel\Product\Collection;
@@ -204,14 +208,14 @@ class ProductCategoryFilter implements CustomFilterInterface
      *
      * @param Filter $filter
      * @param AbstractDb $collection
-     * @return bool Whether the filter is applied
-     */
+     * @return bool Whether to apply the filter
+     **/
     public function apply(Filter $filter, AbstractDb $collection)
     {
         $conditionType = $filter->getConditionType() ? $filter->getConditionType() : 'eq';
         $categoryFilter = [$conditionType => [$filter->getValue()]];
 
-        /** @var Collection $collection */
+        /** @var Collection $collection **/
         $collection->addCategoriesFilter($categoryFilter);
 
         return true;
@@ -219,17 +223,18 @@ class ProductCategoryFilter implements CustomFilterInterface
 }
 
 {% endhighlight %}
+{% endcollapsible %}
 
-Field mapping allows to map field names defined in search criteria into names in a collection.
-Custom filters allow to apply custom logic to a particular collection. Its interface is like 
-<code>Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor\CustomFilterInterface:</code>
+| Argument | Description |
+| --- | --- |
+| `customFilters` | An array of filters implementing the [`CustomFilterInterface`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/FilterProcessor/CustomFilterInterface.php){:target="_blank"}. These filters allow you to apply custom logic to a particular abstract database collection. |
+| `fieldMapping` | Maps field names defined in the search Criteria to the names in an abstract database collection |
 
 #### Sorting Processor
 
-Sorting processor applies sorting order of search criteria to a collection.
-Its implementation may be like in <code>Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</code>
+The [`SortingProcessor`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/SortingProcessor.php){:target="_blank"} class applies the sorting order of a search criteria to an abstract database collection.
 
-It can be configured to use custom field mapping and default sorting orders like
+Below is an example of how you can configure a Sorting Processor virtual type in the `di.xml` file to use a custom field mapping and default sorting orders.
 
 {% highlight XML %}
     <virtualType name="Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\GroupSortingProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor">
@@ -244,107 +249,99 @@ It can be configured to use custom field mapping and default sorting orders like
             </argument>
         </arguments>
     </virtualType>
-{% endhighlight %}  
+{% endhighlight %}
 
-Field mapping allows to map field names defined in search criteria into names in a collection.
-Default orders allow to apply some default sorting orders in case there are no ones in a search criteria.
+| Argument | Description |
+|--- | --- |
+| `fieldMapping` | Maps field names defined in the search Criteria to the names in an abstract database collection |
+| `defaultOrders`| The ordering applied when there are none defined in a search criteria. |
 
-#### Pagination Processor 
+#### Pagination Processor
 
-Pagination processor applies current page and page size of search criteria to a collection.
-Its implementation may be like in <code>Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</code>. 
+The [`PaginationProcessor`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/PaginationProcessor.php){:target="_blank"} class applies the current page and page size of the search criteria to an abstract database collection.
 
 #### Join Processor
 
-Join Processor is kind of processors, which allows to find fields from another tables, and join them to collection. 
-Join Processor implementation is represented below <code>(Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor)</code>
+The [`JoinProcessor`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor.php){:target="_blank"} class allows you to join fields from other tables into an abstract database collection.
 
-The way of configuring: 
+Below is an example of creating a Join Processor virtual type in the `di.xml` file named `Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor`:
 
 {% highlight XML %}
-    <virtualType name="Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\RuleJoinProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor">
-        <arguments>
-            <argument name="customJoins" xsi:type="array">
-                <item name="rate.tax_calculation_rate_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\Rate</item>
-                <item name="ctc.customer_tax_class_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CustomerTaxClass</item>
-                <item name="ptc.product_tax_class_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\ProductTaxClass</item>
-                <item name="cd.customer_tax_class_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CalculationData</item>
-                <item name="cd.product_tax_class_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CalculationData</item>
-            </argument>
-            <argument name="fieldMapping" xsi:type="array">
-                <item name="id" xsi:type="string">tax_calculation_rule_id</item>
-                <item name="tax_rate_ids" xsi:type="string">tax_calculation_rate_id</item>
-                <item name="customer_tax_class_ids" xsi:type="string">cd.customer_tax_class_id</item>
-                <item name="product_tax_class_ids" xsi:type="string">cd.product_tax_class_id</item>
-                <item name="tax_calculation_rate_id" xsi:type="string">rate.tax_calculation_rate_id</item>
-            </argument>
-        </arguments>
-    </virtualType>
-    <virtualType name="Magento\Tax\Model\Api\SearchCrtieria\TaxRuleCollectionProcessor type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
-        <arguments>
-            <argument name="processors" xsi:type="array">
-                <item name="joins" xsi:type="object">Magento\Tax\Model\Rule\Api\SearchCriteria\CollectionProcessor\JoinProcessor</item>
-                <item name="filters" xsi:type="object">Magento\Tax\Model\Rule\Api\SearchCriteria\CollectionProcessor\FilterProcessor</item>
-                <item name="sorting" xsi:type="object">Magento\Tax\Model\Rule\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
-                <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
-            </argument>
-        </arguments>
-    </virtualType>
-{% endhighlight %}  
+<virtualType name="Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor">
+  <arguments>
+    <argument name="customJoins" xsi:type="array">
+      <item name="rate.tax_calculation_rate_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\Rate</item>
+      <item name="ctc.customer_tax_class_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CustomerTaxClass</item>
+      <item name="ptc.product_tax_class_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\ProductTaxClass</item>
+      <item name="cd.customer_tax_class_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CalculationData</item>
+      <item name="cd.product_tax_class_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CalculationData</item>
+    </argument>
+    <argument name="fieldMapping" xsi:type="array">
+      <item name="id" xsi:type="string">tax_calculation_rule_id</item>
+      <item name="tax_rate_ids" xsi:type="string">tax_calculation_rate_id</item>
+      <item name="customer_tax_class_ids" xsi:type="string">cd.customer_tax_class_id</item>
+      <item name="product_tax_class_ids" xsi:type="string">cd.product_tax_class_id</item>
+      <item name="tax_calculation_rate_id" xsi:type="string">rate.tax_calculation_rate_id</item>
+    </argument>
+  </arguments>
+</virtualType>
+{% endhighlight %}
 
-JoinProcessor is aggregator for custom joins. Custom Join should implement <code>Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor\CustomJoinInterface</code>. 
-Example of Custom Join:
+The Join Processor aggregates Custom Joins objects implementing the interface [`CustomJoinInterface`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor/CustomJoinInterface.php){:target="_blank"}.
+
+{% collapsible Show Custom Join implementation example %}
 
 {% highlight php startinline=true %}
-    <?php 
     namespace Magento\Tax\Model\Api\SearchCriteria\JoinProcessor;
-     
+
     use Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor\CustomJoinInterface;
     use Magento\Framework\Data\Collection\AbstractDb;
-     
+
     /**
      * Class Rate
      * @package Magento\Tax\Model\Api\SearchCriteria\JoinProcessor
-     */
+     **/
     class Rate implements CustomJoinInterface
     {
         /**
          * @param \Magento\Tax\Model\ResourceModel\Calculation\Rule\Collection $collection
          * @return true
-         */
+         **/
         public function apply(AbstractDb $collection)
         {
             $collection->joinCalculationData('rate');
             return true;
         }
     }
-{% endhighlight %}  
+{% endhighlight %}
 
-#### Example of generic usage
+{% endcollapsible %}
 
-The generic usage of Collection Processor may be implemented like in 
+### Using Collection Processors in Repositories
+
+Below is an example of how the [`CustomerRepositoryInterface`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php){:target="_blank"} repository class uses a Collection Processor.
+
 {% highlight php startinline=true %}
-    <?php
-     
+
     namespace Magento\Customer\Model\ResourceModel;
-     
+
     ...
-     
+
     /**
      * Customer repository.
      * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
-     */
+     **/
     class CustomerRepository implements \Magento\Customer\Api\CustomerRepositoryInterface
     {
         ...
-     
+
         /**
          * @var \Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface
-         */
+         **/
         private $collectionProcessor;
-     
+
         ...
-     
+
         public function __construct(
             ...
             CollectionProcessorInterface $collectionProcessor = null
@@ -352,29 +349,29 @@ The generic usage of Collection Processor may be implemented like in
             ...
             $this->collectionProcessor = $collectionProcessor ?: $this->getCollectionProcessor();
         }
-     
+
         ...
-     
+
         /**
          * {@inheritdoc}
-         */
+         **/
         public function getList(SearchCriteriaInterface $searchCriteria)
         {
             ...
-     
+
             $this->getCollectionProcessor()->process($searchCriteria, $collection);
-     
+
             ...
         }
-     
+
         ...
-     
+
         /**
          * Retrieve collection processor
          *
          * @deprecated
          * @return \Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface
-         */
+         **/
         private function getCollectionProcessor()
         {
             if (!$this->collectionProcessor) {
@@ -385,9 +382,9 @@ The generic usage of Collection Processor may be implemented like in
             return $this->collectionProcessor;
         }
     }
-{% endhighlight %}  
+{% endhighlight %}
 
-Example of DI configuration may be like
+The `di.xml` configuration file excerpt below shows how you can create a virtual type for the Collection Processor by passing in a custom Filter Processor and a custom Sorting Processor. 
 
 {% highlight XML %}
     <virtualType name="Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\CustomerFilterProcessor" type="Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor">
@@ -428,4 +425,4 @@ Example of DI configuration may be like
             <argument name="collectionProcessor" xsi:type="object">Magento\Customer\Model\Api\SearchCriteria\CustomerCollectionProcessor</argument>
         </arguments>
     </type>
-{% endhighlight %}  
+{% endhighlight %}
