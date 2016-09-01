@@ -1,92 +1,39 @@
 ---
 layout: default
-group: UI Components
-subgroup: Concepts
-title: About uiCollection in UI Components
-menu_title: About uiCollection in UI Components
-menu_order: 1
+group: UI_Components_guide
+subgroup: concepts
+title: uiCollection class
+menu_title: uiCollection class
+menu_order: 7
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uicollection_concept.md
 ---
 
+## About the uiCollection class
 
-##  About uiCollection in UI Components
-* TOC
-{:toc}
+The uiCollection class inherits from the uiElement class. This class' file path is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`. The uiCollection library class should be used as a base class by any components that contain a collection of child UI components. The uiCollection class implements the following methods:
 
-## Overview
-{:.no_toc}
+1. initElement - this method allows you to add custom functionality to the current UI component, or to a child UI component when the child UI component initializes. The `initElement` method gets the child UI component instance as a parameter.
+As an example:
 
-This topic discusses the uiCollection....
+initElement: function (instance) {
+instance.%customPropery% = 21;
+}
 
-## Implementation Details
+2. elems - observable property that contains the child UI components collection.
+As an example:
 
-This topic describes in more detail WHAT this feature is, and provides the reader an understanding of what the feature does, and how it is implemented/works. Explain core concepts, and relevant information about system or application workflows.
+console.log(this.elems());
+// [
+%uiComponentInstance1%,
+%uiComponentInstance2%
+%uiComponentInstance3%
+%uiComponentInstance4%
+]
+3. destroy - this method is used to remove a child collection and all their dependency
+As an example:
+this.destroy();
 
-When writing a conceptual topic, pretend that you are describing this feature to a new developer who just joined your team, and who will be working with you to further develop it.
-
-<!-- форматирование -->
-
-### Formatting reference
-
-
-### Basic Markdown Syntax
-Below are some basic examples of what you can do with markdown.
-
-#### Text Effects
-
-*emphasis*    
- **bold**     
- `inline code`
-
-By indenting your content by at least 4 spaces, you can create a code block.
-
-    //This is a code block!
-    print "Hello World!";
-
-For more examples of basic markdown please follow this [link](https://daringfireball.net/projects/markdown/syntax){:target="_self"}.
-
-#### Lists
-Lists are useful for organizing and displaying related items. Below are examples of a bulleted list and an ordered list.
-
-**Bulleted List:**
-
-* List Item 1
-*	List Item 2
-*	List Item 3
-
-**Ordered List:**
-
-1.	First Step
-2.	Second Step
-3.	Third Step
-
-#### Tables
-Tables can be useful for displaying different kinds of data in an organized way.
-
-*Example:*
-
-| Column Heading | Column Heading | Column Heading |
-|----------------|----------------|----------------|
-| Data 1         | Data 2         | Data 3         |
-| Data 4         | Data 5         |                |
-| Data 6         |                |                |
-
-You can read more about table syntax [here](http://kramdown.gettalong.org/syntax.html#tables){:target="_blank"}.
-
-#### Code blocks
-
-Code blocks can also be defined by surrounding the block of code with `~~~` which can be seen in the [table](#tables) example.
-
-For highlighted code blocks use the `highlight` Liquid tag.
-
-*Example:*
-
-{% highlight html %}
-<div class="container">
-  <h4 class="title">Title</h4>
-  <div class="content">
-    <p>Paragraph content.</p>
-  </div>
-</div>
-{% endhighlight %}
+4. getChild - this method returns element from child collection
+As an example:
+this.getChild(index) - where index is child element index

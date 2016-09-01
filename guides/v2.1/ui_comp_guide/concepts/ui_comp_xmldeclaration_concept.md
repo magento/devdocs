@@ -2,14 +2,12 @@
 layout: default
 group: UI_Components_guide
 subgroup: concepts
-title: About Configuration of UI Components in XML
-menu_title: About Configuration of UI Components in XML
+title: About XML Configuration of UI Components
+menu_title: About XML Configuration of UI Components
 menu_order: 1
 version: 2.1
 github_link: ui_comp_guide/concept/ui_comp_xmldeclaration_concept.md
 ---
-
-## About Configuration of UI Components in XML
 
 ## Overview
 
@@ -21,15 +19,15 @@ Every module that has view representation contains the folder named 'layout'. In
 
 In a typical Magento layout xml file we see a `<head/>` node, `<title/>` node with the name of the page, and a link to css file. There are other nodes as well, the most important for us now is the `<referenceContainer/>` node. (The `name` attribute in this node is responsible for the position of the container on the page.)
 
-A UI component is declared in the <referenceContainer/> node, by using the <uiComponent/> node. The `name` attribute in the <uiComponent/> node references the xml configuration of the [top level UI component]({{page.baseurl}}...link to glossary).
+A UI component is declared in the <referenceContainer/> node, by using the <uiComponent/> node. The `name` attribute in the <uiComponent/> node references the xml configuration of the top level UI component..
 
 Example of a UI component declaration:
 
-{%higlight xml%}
+{%highlight xml%}
 <referenceContainer name="page-container">
 	<uiComponent name="%instance_name%">
 </referenceContainer>
-{%endhiglight%}
+{%endhighlight%}
 
 The configuration of the top-level UI component is a separate .xml file. It is stored in the <module_dir>/view/<area>/ui_component/ directory. For example <module_dir>/view/<area>/ui_component/<instance_name>.xml.
 

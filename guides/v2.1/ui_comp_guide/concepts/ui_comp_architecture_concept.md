@@ -9,7 +9,7 @@ version: 2.1
 github_link: ui_comp_guide/concept/ui_comp_architecture_concept.md
 ---
 
-{{page.menu_title}}
+## Overview
 
 A UI Component is, basically, a JavaScript object.
 
@@ -27,4 +27,3 @@ The usual UI Component is seen by the user as an distinct and highly interactive
 ## Related reading
 
 - For information about the configuration and instantiation flow, refer to [UI Components configuraiton flow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html).
-

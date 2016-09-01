@@ -1,12 +1,12 @@
 ---
 layout: default
-group: UI_Components
+group: UI_Components_guide
 subgroup: troubleshoot
 title: Debug UI components JavaScript
 menu_title: Debug UI components JavaScript
 menu_order: 1
 version: 2.1
-github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot.md
+github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.md
 ---
 
 {{page_menu_title}}
@@ -41,7 +41,7 @@ To define the UI component using the plugin:
 
 A simple example:
 
-1. Launch Magento Admin. 
+1. Launch Magento Admin.
 2. Navigate to **Products** > **Catalog** and click **Add Product**. The product creation page opens.
 3. Right-click on the **Product Name**" field and click **Inspect**. Go to the **Knockout context** tab. Here you can see the full context of the field, where you can find JS component file, component name, etc.
 ![Image Example]({{site.baseurl}}common/images/ui_comp_troubleshoot_chrome.png)
