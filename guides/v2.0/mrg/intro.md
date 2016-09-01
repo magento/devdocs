@@ -9,8 +9,7 @@ version: 2.0
 github_link: mrg/intro.md
 ---
 
-* TOC
-{:toc}
+## Introduction
 
 The Magento Reference Guide contains information about Magento modules of Community Edition and Enterprise Edition.
 
