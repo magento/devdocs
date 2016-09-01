@@ -8,7 +8,7 @@ menu_order: 2
 level3_menu_node: level3child
 level3_subgroup: ce_modules
 version: 2.0
-github_link: mrg/ce/sales.md
+github_link: mrg/ce/Sales.md
 ---
 
 <h3>Contents</h3>
@@ -33,7 +33,7 @@ github_link: mrg/ce/sales.md
 {% collapsible Click to show/hide included code %}
 
 {% highlight json%}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/app/code/Magento/Sales/composer.json %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/composer.json %}
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -41,8 +41,6 @@ github_link: mrg/ce/sales.md
 ## Services / APIs
 
 ### InvoiceOrder
-
-{% collapsible Click to show/hide content %}
 
 #### Description
 
@@ -122,11 +120,9 @@ public function execute(
 
 The service contains extension points marked with `@api` annotation. These APIs can be used by extension developers to extend service logic.
 
-|`\Magento\Sales\Api\OrderRepositoryInterface`| Order repository is responsible for Order entity persistence|
-|`\Magento\Sales\Model\Order\InvoiceRepository`| Invoice repository is responsible for Invocie creation|
+|`\Magento\Sales\Api\OrderRepositoryInterface`| Order repository is responsible for Order entity persistence.|
+|`\Magento\Sales\Model\Order\InvoiceRepository`| Invoice repository is responsible for Invocie creation.|
 |`\Magento\Sales\Model\Order\InvoiceDocumentFactory`|	Responsible for new invoice object creation, this factory uses arguments parameter to process extension attributes of new invoice document.|
-|`\Magento\Sales\Model\Order\OrderValidatorInterface`| Performs order document validation with selected rules|
+|`\Magento\Sales\Model\Order\OrderValidatorInterface`| Performs order document validation with selected rules.|
 |`\Magento\Sales\Model\Order\PaymentAdapterInterface`| Perform pay operation according to selected option online/offline, returns order with modified state (with payment specific information).|
 |`\Magento\Sales\Model\Order\OrderStateResolverInterface`| Provides correct order state, according with performed operation.|
-
-{% endcollapsible %}

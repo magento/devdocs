@@ -42,8 +42,6 @@ github_link: mrg/ce/sales.md
 
 ### InvoiceOrder
 
-{% collapsible Click to show/hide content %}
-
 #### Description
 
 The service introduces a capability to execute Magento native business flow of the Sales module using API.
@@ -122,11 +120,9 @@ public function execute(
 
 The service contains extension points marked with `@api` annotation. These APIs can be used by extension developers to extend service logic.
 
-|`\Magento\Sales\Api\OrderRepositoryInterface`| Order repository is responsible for Order entity persistence|
-|`\Magento\Sales\Model\Order\InvoiceRepository`| Invoice repository is responsible for Invocie creation|
+|`\Magento\Sales\Api\OrderRepositoryInterface`| Order repository is responsible for Order entity persistence.|
+|`\Magento\Sales\Model\Order\InvoiceRepository`| Invoice repository is responsible for Invocie creation.|
 |`\Magento\Sales\Model\Order\InvoiceDocumentFactory`|	Responsible for new invoice object creation, this factory uses arguments parameter to process extension attributes of new invoice document.|
-|`\Magento\Sales\Model\Order\OrderValidatorInterface`| Performs order document validation with selected rules|
+|`\Magento\Sales\Model\Order\OrderValidatorInterface`| Performs order document validation with selected rules.|
 |`\Magento\Sales\Model\Order\PaymentAdapterInterface`| Perform pay operation according to selected option online/offline, returns order with modified state (with payment specific information).|
 |`\Magento\Sales\Model\Order\OrderStateResolverInterface`| Provides correct order state, according with performed operation.|
-
-{% endcollapsible %}

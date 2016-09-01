@@ -12,11 +12,15 @@ github_link: mrg/intro.md
 * TOC
 {:toc}
 
-* What can I learn from MRG?
+The Magento Reference Guide contains information about Magento modules of Community Edition and Enterprise Edition.
 
-* How can I use topics?
+The information includes:
 
-* How can I see a full list of modules (CE/EE/all/version x.x)?
+- module description
+- `composer.json` code that contains dependencies with other Magento modules and other information
+- detailed information about services that module provides and corresponding APIs.
+
+Information is being published gradually, until we complete work on automation of the process.
 
 <h2>Related topics</h2>
 
