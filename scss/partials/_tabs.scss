@@ -1,0 +1,40 @@
+.tabs-container{
+    display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    .tab {
+        margin: 15px 1px 0px;
+        width: 150px;
+        text-align: center;
+        background-color: #c14800;
+        border-bottom: solid 2px #ef672f;
+
+        &:hover{
+            background-color: #333;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        display:block;
+        line-height: 38px;
+
+        &:hover {
+            color: #25acc3;
+        }
+    }
+
+    .current-tab {
+        background-color: #f7f3eb;
+        border-bottom: solid 2px #f7f3eb;
+        &:hover{
+            background-color: #f7f3eb;
+        }
+    }
+
+    .current-tab a{
+        color: #333;
+    }
+}
