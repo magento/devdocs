@@ -7,6 +7,9 @@ menu_title: Storefront
 menu_order: 1
 menu_node: parent
 version: 2.0
+tabgroup: best-practices
+tablabel: Storefront
+tabweight: 40
 github_link: ext-best-practices/storefront/storefront-best-practices.md
 ---
 ## {{page.menu_title}}
