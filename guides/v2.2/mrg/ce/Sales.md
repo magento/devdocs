@@ -5,10 +5,8 @@ subgroup: Community Edition
 title: Magento_Sales module
 menu_title: Sales
 menu_order: 2
-level3_menu_node: level3child
-level3_subgroup: ce_modules
 version: 2.2
-github_link: mrg/ce/sales.md
+github_link: mrg/ce/Sales.md
 ---
 
 <h3>Contents</h3>

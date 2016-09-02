@@ -6,8 +6,8 @@ title: Module Reference Guide
 menu_title: GoogleOptimizerStaging
 menu_order: 2
 version: 2.2
-level3_menu_node: level3child
-level3_subgroup: ee_modules
+
+
 github_link: mrg/ee/GoogleOptimizerStaging.md
 ---
 
@@ -38,7 +38,7 @@ You can find the list of modules that have dependencies on the Magento_GoogleOpt
 
 ## Extension points
 
-[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/mrg/depend-inj.html) enables you to override the functionality of the Magento_GoogleOptimizerStaging module.
+[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GoogleOptimizerStaging module.
 
 ## Additional information
 

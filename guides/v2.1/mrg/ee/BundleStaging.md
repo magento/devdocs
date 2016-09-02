@@ -6,8 +6,8 @@ title: Module Reference Guide
 menu_title: BundleStaging
 menu_order: 2
 version: 2.1
-level3_menu_node: level3child
-level3_subgroup: ee_modules
+
+
 github_link: mrg/ee/BundleStaging.md
 ---
 
@@ -38,9 +38,9 @@ You can find the list of modules that have dependencies on the Magento_BundleSta
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_BundleStaging module. You can interact with the Magento_BundleStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/mrg/plugins.html).
+Extension points enable extension developers to interact with the Magento_BundleStaging module. You can interact with the Magento_BundleStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
-[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/mrg/depend-inj.html) enables you to override the functionality of the Magento_BundleStaging module.
+[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_BundleStaging module.
 
 ### UI components
 

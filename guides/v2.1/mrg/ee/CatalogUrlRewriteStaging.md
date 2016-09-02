@@ -6,8 +6,8 @@ title: Module Reference Guide
 menu_title: CatalogUrlRewriteStaging
 menu_order: 2
 version: 2.1
-level3_menu_node: level3child
-level3_subgroup: ee_modules
+
+
 github_link: mrg/ee/CatalogUrlRewriteStaging.md
 ---
 

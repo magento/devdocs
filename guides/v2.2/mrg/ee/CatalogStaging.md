@@ -6,8 +6,8 @@ title: Module Reference Guide
 menu_title: CatalogStaging
 menu_order: 2
 version: 2.2
-level3_menu_node: level3child
-level3_subgroup: ee_modules
+
+
 github_link: mrg/ee/CatalogStaging.md
 ---
 
@@ -115,9 +115,9 @@ You can find the list of modules that have dependencies on the Magento_CatalogSt
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_CatalogStaging module. You can interact with the Magento_CatalogStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/mrg/plugins.html).
+Extension points enable extension developers to interact with the Magento_CatalogStaging module. You can interact with the Magento_CatalogStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html).
 
-[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/mrg/depend-inj.html) enables you to override the functionality of the Magento_CatalogStaging module.
+[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CatalogStaging module.
 
 ### UI components
 

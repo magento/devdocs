@@ -6,8 +6,8 @@ title: Module Reference Guide
 menu_title: Staging
 menu_order: 2
 version: 2.1
-level3_menu_node: level3child
-level3_subgroup: ee_modules
+
+
 github_link: mrg/ee/Staging.md
 ---
 
@@ -255,7 +255,7 @@ You can find the list of modules that have dependencies on the Magento_Staging m
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_Staging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/mrg/plugins.html).
+Extension points enable extension developers to interact with the Magento_Staging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
 ### Public APIs
 

@@ -6,8 +6,8 @@ title: Module Reference Guide
 menu_title: CatalogInventoryStaging
 menu_order: 2
 version: 2.2
-level3_menu_node: level3child
-level3_subgroup: ee_modules
+
+
 github_link: mrg/ee/CatalogInventoryStaging.md
 ---
 
@@ -34,9 +34,9 @@ You can find the list of modules that have dependencies on the Magento_CatalogIn
 
 ## Extension points
 
-You can interact with the Magento_CatalogInventoryStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/mrg/plugins.html).
+You can interact with the Magento_CatalogInventoryStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html).
 
-[The The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/mrg/depend-inj.html) enables you to override the functionality of the Magento_CatalogInventoryStaging module.
+[The The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CatalogInventoryStaging module.
 
 ## Additional information
 

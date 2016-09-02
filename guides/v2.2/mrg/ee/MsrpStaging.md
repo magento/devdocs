@@ -6,8 +6,8 @@ title: Module Reference Guide
 menu_title: MsrpStaging
 menu_order: 2
 version: 2.2
-level3_menu_node: level3child
-level3_subgroup: ee_modules
+
+
 github_link: mrg/ee/MsrpStaging.md
 ---
 
@@ -37,8 +37,8 @@ You can find the list of modules that have dependencies on the Magento_MsrpStagi
 
 ## Extension points
 
-[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/mrg/depend-inj.html) enables you to override the functionality of the Magento_MsrpStaging module.
+[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_MsrpStaging module.
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html).
+For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

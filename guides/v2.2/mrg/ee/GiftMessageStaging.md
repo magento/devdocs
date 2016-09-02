@@ -6,8 +6,8 @@ title: Module Reference Guide
 menu_title: GiftMessageStaging
 menu_order: 2
 version: 2.2
-level3_menu_node: level3child
-level3_subgroup: ee_modules
+
+
 github_link: mrg/ee/GiftMessageStaging.md
 ---
 
@@ -34,7 +34,7 @@ You can find the list of modules that have dependencies on the Magento_GiftMessa
 
 ## Extension points
 
-[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/mrg/depend-inj.html) enables you to override the functionality of the Magento_GiftMessageStaging module.
+[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GiftMessageStaging module.
 
 ## Additional information
 
