@@ -20,9 +20,6 @@ github_link: ui_comp_guide/concepts/ui_comp_uielement_concept.md
 
 The uiElement class is a direct successor of the [uiClass library]({{page.baseur}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html). The source file is stored in `UI_Module_dir>/view/base/web/js/lib/core/element/element.js`. The uiElement class should be used as direct parent component in cases when we know that the current component will be the last link in component hierarchy chain.
 
-<p class="q">why we call uiClass a component, but uiCollection - a class</p>
-
-
 ## Commonly used uiElement methods
 
 - The `initLinks()` method implements component communication by using the [`links.js`]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js). The `initLinks()` method creates an interface to set it. 

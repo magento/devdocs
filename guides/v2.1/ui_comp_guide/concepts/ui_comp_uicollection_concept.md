@@ -19,9 +19,6 @@ github_link: ui_comp_guide/concepts/ui_comp_uicollection_concept.md
 
 The uiCollection class inherits from the uiElement class. This class' file path is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`. The uiCollection library class should be used as a base class by any components that contain a collection of child UI components
 
-<p class="q">why we call uiClass a component, but uiCollection - a class</p>
-
-
 ## Commonly used uiCollection methods
 
 The uiCollection class implements the following methods:
@@ -70,4 +67,3 @@ console.log(this.elems());
 // ]
 {%endhighlight%}
 
-<p class="q">need to correct the code sample</p>
