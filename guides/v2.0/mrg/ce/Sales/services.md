@@ -3,55 +3,23 @@ layout: default
 group: mrg
 subgroup: Community Edition
 title: Magento_Sales module
-menu_title: Sales
+menu_title: Services
 menu_order:
 version: 2.0
-github_link: mrg/ce/Sales.md
+tabgroup: sales-module
+tablabel: Services
+tabweight: 30
+level3_menu_node: level3child
+level3_subgroup: Sales
+github_link: mrg/ce/Sales/services.md
 ---
-
-<h3>Contents</h3>
 
 * TOC
 {:toc}
 
-## Description
+## InvoiceOrder
 
-Magento_Sales module is responsible for order processing and appearance in system.
-
-Magento_Sales module manages next system entities and flows:
-
-* order management
-* invoice management
-* shipment management (including track management)
-* credit memos management
-
-Magento_Sales module is required for Magento_Checkout module to perform checkout operations.
-
-### System requirements
-
-The Magento_Sales module does not have any specific system requirements.
-
-Depending on how many orders are being placed, there might be consideration for the database size.
-
-### Installation
-
-The Magento_Sales module is installed automatically during Magento installation.
-
-## Dependencies (`composer.json`)
-
-{% collapsible Click to show/hide included code %}
-
-{% highlight json%}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/composer.json %}
-{% endhighlight %}
-
-{% endcollapsible %}
-
-## Services / APIs
-
-### InvoiceOrder
-
-#### Description
+### Description
 
 The service introduces a capability to execute Magento native business flow of the Sales module using API.
 
@@ -62,7 +30,7 @@ With this service you can:
 - notify a customer about document creation
 - change order status and state
 
-#### webapi.xml declaration
+### `webapi.xml` declaration
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/invoice" method="POST">
@@ -73,7 +41,7 @@ With this service you can:
 </route>
 {% endhighlight %}
 
-#### PHP declaration
+### PHP declaration
 
 {% highlight php %}
 
@@ -103,7 +71,7 @@ public function execute(
 
 {% endhighlight %}
 
-#### Service arguments
+### Service arguments
 
 |`orderId`|	An identifier of a target order for operation|	Integer |	Required
 |`capture`| Type of money capture. By default, FALSE - offline capture. If TRUE, service performs capture online.  | Boolean |	|	Optional. **IMPORTANT: If you want to capture money in Magento, set TRUE.**
@@ -113,7 +81,7 @@ public function execute(
 |`comment`|	comment, that will be added to invoice|	Format|	Optional
 |`arguments`|	operation arguments, this parameter reserved for extension modules.|	Format|	Optional
 
-#### Service implementation
+### Service implementation
 
 {% collapsible Click to show/hide included code %}
 
@@ -123,7 +91,7 @@ public function execute(
 
 {% endcollapsible %}
 
-#### Extension points
+### Extension points
 
 The service contains extension points marked with `@api` annotation. The APIs can be used by extension developers to extend service logic.
 
