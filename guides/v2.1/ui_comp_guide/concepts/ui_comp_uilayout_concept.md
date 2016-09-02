@@ -32,28 +32,32 @@ The most commonly used are the first two parameters:
 <p class="q">should {array} and {string} be after the options names?</p>
  
 In the `layout.js`, each item expected in the nodes array can have the following properties:
-* -{string} `name` - index of the new UI component
-* -{string} `parent` - the name of the component's parent element. If the parent component is not yet initialized, then `layout.js` waits for it to appear in UI Registry (`registry.js`). 
- 
-<p class="q">link to Vovaâ€™s topic about registry.js. Do we have this link already? </p>
+* `{string}` `name` - index of the new UI component
+* `{string}` `parent` - the name of the component's parent element. If the parent component is not yet initialized, then `layout.js` waits for it to appear in UI Registry (`registry.js`). 
 
 Note: The full name of the created UI Component is formed by concatenating the `parent.name + '.' + name`, and then set as the `name` property. If a UI component with the same full name already exists, `layout.js` will skip its initialization.
 
-* -{string} nodeTemplate - template of the new Component (path to .html template)
-* -{string} component - constructor of the new Component (path to .js file)
-* -{object} config - the object that contains the properties that you want to see in new UI Component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:
-** var config1 = {name: 'myComp1', config: {myProp: '123123'}}
+* `{string}` `nodeTemplate` - template of the new Component (path to `.html` template)
+* `{string}` `component` - constructor of the new Component (path to `.js` file)
+* `{object}` `config` - the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:
+
+    var config1 = {name: 'myComp1', config: {myProp: '123123'}}
+
 and
-** var config2 = {name: 'myComp1', myProp: '123123'}
-* -{array} children - configuration of child elements, if there are any
-* -{boolean} isTemplate - if the value is set to `true`, the component configuration will be stored in layout.jsâ€™s private `â€™templatesâ€™` property, and the UI Component will be not initializated. New components can be created dynamically based on this template (see the second example below).
-* -{string} provider - Name of the provider UI component. If absent, the parent's provider will be used. {{Link to topic about Data Providers.}}
 
-## Examples:
+    var config2 = {name: 'myComp1', myProp: '123123'}
 
-1) Letâ€™s consider a case when we want to create a UI Component dynamically from another UI component.
-    We can put the configuration of the desired UI component directly into layout.js. Below in an example of the componentâ€™s constructor,  which creates the child UI component on initialization:
+* `{array}``children` - configuration of child elements, if there are any
+* `{boolean}``isTemplate` - if the value is set to `true`, the component configuration will be stored in `layout.js` private `templates` property, and the UI component will be not initialized. New components can be created dynamically based on this template (see the second example below).
+* `{string}``provider`- the name of the provider UI component. If absent, the parent's provider will be used. 
 
+## Example 1:
+
+Let's consider a case when we want to create a UI Component dynamically from another UI component.
+    
+We can put the configuration of the desired UI component directly into `layout.js`. Below in an example of the component's constructor,  which creates the child UI component on initialization:
+
+{%highlight js%}
 define([
     'uiLayout',
     'uiCollection'
@@ -63,7 +67,7 @@ define([
     return uiCollection.extend({
         defaults: {
             my_newComponentConfig: {
-                name: â€˜my_newComponent',
+                name: 'my_newComponent',
                 component: 'Magento_Ui/js/my_newComponent',
                 nodeTemplate: 'ui/my_newComponent/mainTemplate',
                 parent: '${ $.name }'
@@ -78,13 +82,16 @@ define([
     });
 });
 
+{%endhighlight%}
 
-2) Anther option is to create  UI components from the Template component. For example, some component, lets call it â€˜my_rowTemplate', has already been configured with `isTemplate = true` property.
+## Example 2:
+Anther option is to create  UI components from the Template component. For example, some component, lets call it `my_rowTemplate`, has already been configured with `isTemplate = true` property.
 
-Lets suppose that `rowTemplate`â€™s full name is â€˜my_rowTemplateComponentNameâ€™.
+Lets suppose that `rowTemplate`'s full name is `my_rowTemplateComponentName`.
 
-Then, inside of our imaginary parent UI component â€˜my_listComponent' we can add row components using this template configuration:
+Then, inside of our imaginary parent UI component `my_listComponent` we can add row components using this template configuration:
 
+{%highlight js%}
 define([
     'uiLayout',
     'uiCollection'
@@ -106,3 +113,4 @@ define([
         }
     });
 });
+{%endhighlight%}

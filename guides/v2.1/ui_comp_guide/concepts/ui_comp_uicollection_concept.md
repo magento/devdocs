@@ -31,20 +31,24 @@ The uiCollection class implements the following methods:
 
   {%highlight js%}
   initElement: function (instance) {
-  instance.%customPropery% = 21;
+      instance.%customProperty% = 21;
   }
   {%endhighlight%}
 
 * The `destroy()` method is used to remove a child collection and all its dependencies.
 
   Example:
+
+{%highlight js%}
     this.destroy();
+{%endhighlight%}
 
 * The `getChild()` method returns an element from child collection. 
  
   Example:
+{%highlight js%}
     this.getChild(index)
-
+{%endhighlight%}
 
   where `index` is child element index.
 
@@ -57,13 +61,13 @@ As an example:
 
 {%highlight js%}
 console.log(this.elems());
-// [
-%uiComponentInstance1%,
-%uiComponentInstance2%
-%uiComponentInstance3%
-%uiComponentInstance4%
 
-]
+// [
+//   %uiComponentInstance 1 %,
+//   %uiComponentInstance 2 %,
+//   %uiComponentInstance 3 %,
+//   %uiComponentInstance 4 %
+// ]
 {%endhighlight%}
 
 <p class="q">need to correct the code sample</p>

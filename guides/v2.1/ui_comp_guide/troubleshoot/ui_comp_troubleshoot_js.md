@@ -9,7 +9,7 @@ version: 2.1
 github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.md
 ---
 
-{{page_menu_title}}
+## {{page_menu_title}}
 
 {:.no_toc}
 
@@ -50,7 +50,7 @@ A simple example:
 
 `uiRegistry` is a in-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.
 
-To debug the UI component JS, we first need to get a `uiRegistry` instance from the browser console. To do so, use the [RequireJs ID]({{page.baseurl}}....require.js topic) (alias or full path to the `.js` file that stores the `uiRegistry` class).
+To debug the UI component JS, we first need to get a `uiRegistry` instance from the browser console. To do so, use the [RequireJs ID]({{page.baseurl}} ui_comp_guide/concepts/ui_comp_requirejs_concept.html) (alias or full path to the `.js` file that stores the `uiRegistry` class).
 
 To get the `uiRegistry` instance, in the browser console enter the following:
 
@@ -70,8 +70,6 @@ For example:
 // Admin > Products > Catalog > Add Product
 var fieldName = registry.get('product_form.product_form.product-details.container_name.name');
 {%endhighlight%}
-
-For information about using more complex queries, refer to the [uiRegistry topic]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiregistry_concept.md).
 
 Lets look what we have in component variable. It keeps component context with all properties, we can see component file, component name and so on.
 
