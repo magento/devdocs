@@ -46,17 +46,22 @@ For the following output cases, use the specified function to generate XSS-safe 
 
 
 {% highlight html %}
+  <!-- In this example $postData is a JSON encoded string -->
   <button class="action" data-post='<?php /* @noEscape */ echo $postData ?>' />
 {% endhighlight %}
 
 
 **Case:** String output that should not contain HTML\\
-**Function:** Use `escapeHtml` and pass in an array of allowed tags. The supported attributes for allowed tags include: id, class, href, target, and title.
+**Function:** `escapeHtml` 
+
+You can pass in an optional array of allowed tags that will not be escaped.
+
+If a tag is allowed, the following attributes will not be escaped: id, class, href, target, and title.
+Any other attribute for that allowed tag will be escaped.
 
 `script` and `img` tags will not be allowed regardless of the content of this array because they can lead to JavaScript execution.
 
 If your text contains special characters, they must be encoded as HTML entities, such as `&lt;` for **&lt;** or `&gt;` for **&gt;**.
-
 
 {% highlight html %}
   <span class="label"><?php echo $block->escapeHtml($block->getLabel()) ?></span>
@@ -82,7 +87,7 @@ If your text contains special characters, they must be encoded as HTML entities,
 **Case:** Strings inside JavaScript\\
 **Function:** In a pure JavaScript context, use the `escapeJs` function.
 
-In cases where the JavaScript code outputs content onto the page, use the `escapeUrl`, `escapeHtml`, and `escapeHtmlAttr` functions where appropriate.
+In cases where the JavaScript code outputs content onto the page, use the `escapeUrl` and `escapeHtml` functions where appropriate.
 
 {% highlight javascript %}
     var a = '<?php echo $block->escapeJs($block->getString()) ?>';
@@ -110,7 +115,6 @@ In cases where the JavaScript code outputs content onto the page, use the `escap
   <input name="field" value="<?php echo $block->escapeHtmlAttr($block->getFieldValue()) ?>" />
 
   <!--  Escaping translation inside attributes -->
-  <!--  No need to clear translation output from unwanted tags and attributes in attribute values -->
   <img src="product-blue.jpg" alt="<?php echo $block->escapeHtmlAttr(__('A picture of the product in blue')) ?>" />
 {% endhighlight %}
 
