@@ -1,16 +1,17 @@
 ---
 layout: default
-group: UI Components
-subgroup: Concepts
+group: UI_Components_guide
+subgroup: concepts
 title: A list of the existing UI components and usage examples
-menu_title: 
+menu_title: A list of the existing UI components and usage examples
 menu_order: 1
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_list_concept.md
 ---
 
+## {{page.menu_title}}  
+{:.no_toc}
 
-#  A list of the existing UI components and usage examples
 * TOC
 {:toc}
 

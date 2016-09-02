@@ -6,10 +6,11 @@ title: Architecture Structure of UI Components
 menu_title: Architecture Structure of UI Components
 menu_order: 1
 version: 2.1
-github_link: ui_comp_guide/concept/ui_comp_architecture_concept.md
+github_link: ui_comp_guide/concepts/ui_comp_architecture_concept.md
 ---
 
-## Overview
+##  {{page.menu_title}}
+{:.no_toc}
 
 A UI Component is, basically, a JavaScript object.
 
@@ -17,7 +18,7 @@ A UI Component can be configured in `.xml` or `.phtml` or even in `.php`, or cre
 
 The usual UI Component is seen by the user as an distinct and highly interactive part of the UI: form, field, listing toolbar, button an so on.
 
- UI Components are configured using primarily the following:
+UI Components are configured using primarily the following:
 
 1. `declaration.xml` file: the structure, with nodes, nested nodes, argument and so on.
 2. UI component XML declaration (the instance).

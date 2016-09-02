@@ -4,9 +4,9 @@ group: UI_Components_guide
 subgroup: concepts
 title: Configuration Flow of UI Components
 menu_title: Configuration Flow of UI Components
-menu_order: 1
+menu_order: 2
 version: 2.1
-github_link: ui_comp_guide/concept/ui_comp_config_flow_concept.md
+github_link: ui_comp_guide/concepts/ui_comp_config_flow_concept.md
 ---
 
 

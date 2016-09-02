@@ -1,28 +1,29 @@
 ---
 layout: default
-group: UI Components
-subgroup: Concepts
+group: UI_Components_guide
+subgroup: concepts
 title: About AMD modules and RequireJS
 menu_title: About AMD modules and RequireJS
-menu_order: 1
+menu_order: 4
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_requirejs_concept.md
 ---
 
-##  About AMD modules and RequireJS
-* Table of Content placeholder; required but will not be rendered
+##  {{page.menu_title}}
+{:.no_toc}
+
+* TOC
 {:toc}
 
 ## Overview
-{:.no_toc}
 
-This topic discusses modules and describes the role which RequireJS plays in Magento.
+This topic discusses JavaScript modules and describes the role which RequireJS plays in Magento.
 
-Magento uses AMD (asynchronous module definition) approach for JavaScript modules loading. Namely, Magento uses [RequireJS]({{page.baseurl}}...) and its [standard syntax]({{page.baseurl}}...).
+Magento uses AMD (asynchronous module definition) approach for JavaScript modules loading. Namely, Magento uses [RequireJS](http://requirejs.org/) and its [standard syntax](...).
 
 ## RequireJS configuration location
 
-As Magento has a modular architecture we have an ability to define `requirejs-config` for each module, separately for each [area]({{page.baseurl}}area topic): `frontend` or `admin`. (Or `base` if it is same for both, `frontend` and `admin`).
+As Magento has a modular architecture we have an ability to define `requirejs-config` for each module, separately for each [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html): `frontend` or `admin`. (Or `base` if it is same for both, `frontend` and `admin`).
 
 Following is the conventional location of `requirejs-config.js` (RequireJS configuration file):
 
@@ -58,7 +59,7 @@ var config = {
 
 The `config` variable contains properties with the `map` and `deps` keys. These properties are equivalent to the native RequireJS properties. For example, in this case  the `map` property contains an object with the keys that are aliases to files and values that are real paths to files.
 
-For a particular area, all modules and themes `requirejs-config.js` files are merged into a single file. This file is written to the `pub/static` directory. This occurs during the first launch of Magento in [develop and default mode]({{page.baseurl}}...) or during static files generation using the [bin/magento setup:static-content:deploy]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html) console command.
+For a particular area, all modules and themes `requirejs-config.js` files are merged into a single file. This file is written to the `pub/static` directory. This occurs during the first launch of Magento in [develop and default mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html) or during static files generation using the [bin/magento setup:static-content:deploy]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html) console command.
 
 The merged configuration will be loaded on the page right after `require.js` and will be used by `require` and `define` functions.
 

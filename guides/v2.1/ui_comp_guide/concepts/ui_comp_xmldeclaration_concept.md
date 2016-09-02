@@ -4,22 +4,27 @@ group: UI_Components_guide
 subgroup: concepts
 title: About XML Configuration of UI Components
 menu_title: About XML Configuration of UI Components
-menu_order: 1
+menu_order: 3
 version: 2.1
-github_link: ui_comp_guide/concept/ui_comp_xmldeclaration_concept.md
+github_link: ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.md
 ---
+
+##  {{page.menu_title}}
+{:.no_toc}
+
+* TOC
+{:toc}
 
 ## Overview
 
 This topic discusses the .xml declaration of UI components.
 
+## About the layout configuration file and UI component declaration
+Every module that has view representation contains the directory named `layout`. In this directory, the `.xml` declarations of the pages are stored. These `.xml` declarations are, in fact, the pages' markup.
 
-## About the layout configuration file
-Every module that has view representation contains the folder named 'layout'. In this folder, the .xml declarations of the pages are stored. These .xml declarations are, in fact, the pages' markup.
+In a typical Magento `.xml` layout file we see a `<head/>` node, `<title/>` node with the name of the page, and a link to CSS file. There are other nodes as well, the most important for us now is the `<referenceContainer/>` node. (The `name` attribute in this node is responsible for the position of the container on the page.)
 
-In a typical Magento layout xml file we see a `<head/>` node, `<title/>` node with the name of the page, and a link to css file. There are other nodes as well, the most important for us now is the `<referenceContainer/>` node. (The `name` attribute in this node is responsible for the position of the container on the page.)
-
-A UI component is declared in the <referenceContainer/> node, by using the <uiComponent/> node. The `name` attribute in the <uiComponent/> node references the xml configuration of the top level UI component..
+A UI component is declared in the `<referenceContainer/>` node, by using the `<uiComponent/>` node. The `name` attribute in the `<uiComponent/>` node references the XML configuration of the top level UI component.
 
 Example of a UI component declaration:
 
@@ -29,24 +34,25 @@ Example of a UI component declaration:
 </referenceContainer>
 {%endhighlight%}
 
-The configuration of the top-level UI component is a separate .xml file. It is stored in the <module_dir>/view/<area>/ui_component/ directory. For example <module_dir>/view/<area>/ui_component/<instance_name>.xml.
+The configuration of the top-level UI component is a separate `.xml` file. It is stored in the `<module_dir>/view/<area>/ui_component/` directory. For example `<module_dir>/view/<area>/ui_component/%instance_name%.xml`.
 
-Every instance is declared in a separate file. The file name is the name of instance (<instance_name>). The namespace of the names is global; meaning that if the file names are the same, they will all be merged into a single configuration for the particular instance.
+Every instance is declared in a separate file. The file name is the name of instance (`%instance_name%`). The namespace of the names is global; meaning that if the file names are the same, they will all be merged into a single configuration for the particular instance.
 
 ## About the instance configuration file
 
 The instance of a top-level UI Component has a configuration file. Following are the rules for the instance configuration files:
 
-* The top node must have the name of one of the top-level UI components.
-* The top node must contain a link to the xsd schema.
+* The top node must have the name of one of the top-level UI components. <!-- need to mention or link what components -->
+* The top node must contain a link to the XSD schema.
 
-In the top node, there can be an <argument/> node. The <argument/> node contains the configuration for that top-level UI component. The <argument/> node name attribute has value data. ***The child nodes of the <argument> node will be the argument properties that will be passed in to the component.***
+In the top node, there can be an `<argument/>` node. The `<argument/>` node contains the configuration for that top-level UI component. The `<argument/>` node `name` attribute has value data. The child nodes of the `<argument>` node will be the argument properties that will be passed in to the component.
 
-Within the top node, there can also be nested nodes. For example, if you want your listing to have a toolbar, then the top node is for the listing and an nested node represents a toolbar. Every nested node that is contained within the top node is regarded as a separate UI component (i.e. the toolbar). Nested nodes can also contain an <argument> node.
+Within the top node, there can also be nested nodes. For example, if you want your listing to have a toolbar, then the top node is for the listing and a nested node represents a toolbar. Every nested node that is contained within the top node is regarded as a separate UI component (i.e. the toolbar). Nested nodes can also contain an `<argument>` node.
 
 
 ## Example of a top-level configuration file
 
+{%highlight xml%}
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
@@ -105,17 +111,20 @@ Within the top node, there can also be nested nodes. For example, if you want yo
     </fieldset>
 </form>
 
+{%endhighlight%}
+
 In the above example, within the nested node <fieldset> that declares the  Fieldset UI Component.
 
-The `name` attribute must be a unique value amongst the other components on the same heirarchichal level of the same parent node. Look at the <argument>node which name attribute has value data. The child nodes of this node are the arguments that will be passed in to the component.
+The `name` attribute must be a unique value amongst the other components on the same heirarchichal level of the same parent node. Look at the `<argument>` node which `name` attribute has value data. The child nodes of this node are the arguments that will be passed in to the component.
 
-All other child nodes will be declared as items. An <item> node with the `name` attribute value of `config` (i.e. <item name="config"> ...</item>) contains the children nodes that will describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use an <item> with `name` attribute with a value of `component` (i.e. <item name="component">...</item>) to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in require.js configuration.
+All other child nodes are declared as items. An `<item>` node with the `name` attribute value of `config` (i.e. `<item name="config"> ...</item>`) contains the children nodes that describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use an `<item>` with `name` attribute with a value of `component` (i.e. `<item name="component">...</item>`) to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in `require.js` configuration.
 
-In this example, we can omit the <item name="component">...</item> node because this property is already defined in the definition.xml of the Fieldset UI component. Moreover in this example we are showing only a little part of the possible configuration. Every UI component has a default configuration that can be declared in one of the following ways:
--- inside the UI component itself, in the .js file
--- inside the definition.xml file {{\Ui\view\base\ui_component\etc\definition.xml}}
--- in both places, in which case the configurations merge (the UI Component .js file has priority).
+In this example, we can omit the `<item name="component">...</item>` node because this property is already defined in the `definition.xml` of the Fieldset UI component. Moreover in this example we are showing only a little part of the possible configuration. Every UI component has a default configuration that can be declared in one of the following ways:
 
-For more information about the configuration flow, refer to {{,,,,}}.
+- inside the UI component itself, in the `.js` file
+- inside the [`definition.xml` file]({{site.mage2100url}}app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)
+- in both places, in which case the configurations merge (the UI component `.js` file has priority).
 
-In the above example, the Fieldset UI component uses a merged  configuration from both the definition.xml file and from the UI componenet's .js file.
+In the above example, the Fieldset UI component uses a merged  configuration from both the `definition.xml` file and from the UI componenet's `.js` file.
+
+For more information about the configuration flow, refer to  the [Configuration Flow of UI Components]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.md) topic.
