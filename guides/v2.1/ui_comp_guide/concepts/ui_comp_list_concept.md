@@ -4,7 +4,7 @@ group: UI_Components_guide
 subgroup: concepts
 title: A list of the existing UI components and usage examples
 menu_title: A list of the existing UI components and usage examples
-menu_order: 1
+menu_order: 5
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_list_concept.md
 ---

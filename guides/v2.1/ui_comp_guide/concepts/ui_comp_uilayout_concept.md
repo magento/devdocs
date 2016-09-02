@@ -1,39 +1,43 @@
 ---
 layout: default
-group: UI_Components
+group: UI_Components_guide
 subgroup: concepts
 title: About UI Component initialization by layout.js
 menu_title: About UI Component initialization by layout.js
-menu_order: 1
+menu_order: 6
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 ---
 
+## {{page.menu_title}}  
+{:.no_toc}
 
+* TOC
+{:toc}
 
-## About UI Component initialization by layout.js
+The `layout.js` file `<UI_Module_dir>\view\base\web\js\core\renderer\layout.js` is used to initialize UI сomponents.
 
-### Overview
+In a [typical UI сomponent's configuration flow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html), the `layout.js` is called by `app.js` (`<Ui_module_dir>\view\base\web\js\core\app.js`) and receives the component's configuration as a parameter.
 
-The  layout.js file `<UI_Module_dir>\view\base\web\js\core\renderer\layout.js` is used to initialize UI Components.
+In the same way, anyone who wants to create a component dynamically (from other components or `.phtml` template) can call `app.js` or `layout.js` and pass as a parameter the configuration of the desired component.
 
-In a typical UI Component's <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">configuration flow</a>, the layout.js is called by app.js (<UI_Module_dir>\view\base\web\js\core\app.js) and receives the componentâ€™s configuration as a parameter.
+## Implementation details
 
-In the same way, anyone who wants to create a component dynamically (from other components or .phtml template) can call app.js or layout.js and pass as a parameter the configuration of the desired component.
-
-## Details:
-
-In fact, the layout.js module returns `function run(nodes, parent, cached, merge) {..}`
+In fact, the `layout.js` module returns `function run(nodes, parent, cached, merge) {..}`
 
 The most commonly used are the first two parameters:
 * {array} `nodes` - configuration of the UI Components that we want to initialize. The array is an array of configurations.
 * {string} `parent` - parent component for that UI Components
 
-In the layout.js, each item expected in the 'nodes' array can have the following properties:
-* -{String} `name` - index of the new UI component
-* -{String} `parent` - the name of the component's parent element. If the parent component is not yet initialized, then the layout.js will wait for it to appear in UI Registry (registry.js). {{link to Vovaâ€™s topic about registry.js.}}
+<p class="q">should {array} and {string} be after the options names?</p>
+ 
+In the `layout.js`, each item expected in the nodes array can have the following properties:
+* -{string} `name` - index of the new UI component
+* -{string} `parent` - the name of the component's parent element. If the parent component is not yet initialized, then `layout.js` waits for it to appear in UI Registry (`registry.js`). 
+ 
+<p class="q">link to Vovaâ€™s topic about registry.js. Do we have this link already? </p>
 
-Note: The full name of the created UI Component is formed by concatenating the `parent.name + '.' + name`, and then set as the â€™name' property. If a UI component with the same full name already exists, layout.js will skip its initialization.
+Note: The full name of the created UI Component is formed by concatenating the `parent.name + '.' + name`, and then set as the `name` property. If a UI component with the same full name already exists, `layout.js` will skip its initialization.
 
 * -{string} nodeTemplate - template of the new Component (path to .html template)
 * -{string} component - constructor of the new Component (path to .js file)
