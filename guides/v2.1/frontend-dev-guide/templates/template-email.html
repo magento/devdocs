@@ -160,7 +160,7 @@
 	<div class="container">
 		<h1 class="page-heading">Customize email templates</h1>
 		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/templates/template-email.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/frontend-dev-guide/templates/template-email.md" target="_blank">Edit this page on GitHub</a>
 		
 		
         
@@ -870,7 +870,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 2 September 2016 (PDT)</i></p>
 		<h4 id="contents">Contents</h4>
 
 <p>This topic covers how to customize the content and design of email templates.</p>
@@ -905,7 +905,7 @@
 </ul>
 
 <h2 id="customize-email-templates">Customize email templates</h2>
-<p>Email templates are stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [<Magento_Sales_module_dir>/view/frontend/email/order_new.html](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/view/frontend/email/order_new.html).</Magento_Sales_module_dir></p>
+<p>Email templates are stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [<Magento_Sales_module_dir>/view/frontend/email/order_new.html](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/view/frontend/email/order_new.html).</Magento_Sales_module_dir></p>
 
 <p>We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates.</p>
 
@@ -952,8 +952,8 @@ Make note of this path because you will need it later when you configure this ne
 <p>Every frontend email template includes a header and footer template using these two directives: <code>{{template config_path="design/email/header_template"}}</code> and <code>{{template config_path="design/email/footer_template"}}</code>. By default, those two directives load contents from these files:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/header.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/header.html&lt;/a&gt;</Magento_Email_module_dir></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/footer.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/footer.html&lt;/a&gt;</Magento_Email_module_dir></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Email/view/frontend/email/header.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/header.html&lt;/a&gt;</Magento_Email_module_dir></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Email/view/frontend/email/footer.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/footer.html&lt;/a&gt;</Magento_Email_module_dir></a></li>
 </ul>
 
 <p>You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.</p>
@@ -982,7 +982,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
+ <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
 </div>
 
 <h2 id="email-styles">Styles for email templates</h2>
@@ -1136,15 +1136,15 @@ Make note of this path because you will need it later when you configure this ne
 
 <ul>
   <li>
-    <p><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/source/_email-extend.less" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code>@import</code> directive that requests the <code>email-fonts.css</code> file.</p>
+    <p><a href="https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/blank/web/css/source/_email-extend.less" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code>@import</code> directive that requests the <code>email-fonts.css</code> file.</p>
 
     <p>The reason the contents of <code>email-fonts.css</code> are loaded using <code>@import</code> rather than being output directly into a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> of an email is that if a user is reading their email offline, some email clients don’t render the text because the web fonts can’t be loaded.</p>
   </li>
   <li>
     <p>The <code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code> file imports <code>source/_variables.less</code> and <code>source/_typography.less</code> files:</p>
     <ul>
-      <li><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/source/_variables.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_variables.less</a> defines which font is used in the <code>@font-family-name__base</code> variable.</li>
-      <li><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/source/_typography.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_typography.less</a> generates the <code>@font-face</code> rules which import the custom fonts.</li>
+      <li><a href="https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/blank/web/css/source/_variables.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_variables.less</a> defines which font is used in the <code>@font-family-name__base</code> variable.</li>
+      <li><a href="https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/blank/web/css/source/_typography.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_typography.less</a> generates the <code>@font-face</code> rules which import the custom fonts.</li>
     </ul>
   </li>
 </ul>
@@ -1202,14 +1202,16 @@ Make note of this path because you will need it later when you configure this ne
 <h3 id="customize-logo-admin">Customize the email logo using the Admin</h3>
 
 <ol>
-  <li>In the Magento Admin, navigate to <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Design</strong> &gt; <strong>Emails</strong></li>
-  <li>In the <strong>Scope</strong> drop-down list, select the scope for which you want to set a logo (a certain store view, the whole website, or default config).</li>
+  <li>In the Magento Admin, navigate to <strong>CONTENT</strong> &gt; Design &gt; <strong>Configuration</strong>. A Design Configuration page opens. It contains a grid with the available configuration scopes.</li>
+  <li>In the configuration record corresponding to your store view, click <strong>Edit</strong>.</li>
   <li>
-    <p>Upload your logo and specify the alternative text for it.
-<img src="/common/images/email_configuration.png" alt="System configuration" /></p>
+    <p>Under <strong>Transactional Emails</strong> in the <strong>Logo Image</strong> field upload your logo and specify the alternative text for it.
+<img src="/common/images/email_templ_logo21.png" alt="System configuration" /></p>
   </li>
-  <li>Enter values for <strong>Logo Width</strong> and <strong>Logo Height</strong>. Based on the preceding example, you would enter <code>200</code> and <code>100</code>, respectively.</li>
-  <li>Click the <strong>Save Config</strong> button.</li>
+  <li>
+    <p>Enter values for <strong>Logo Width</strong> and <strong>Logo Height</strong>. Based on the preceding example, you would enter <code>200</code> and <code>100</code>, respectively.</p>
+  </li>
+  <li>Click the <strong>Save Configuration</strong> button.</li>
 </ol>
 
 <h2 id="contact-information-emails">Use contact information in emails</h2>
@@ -1221,7 +1223,7 @@ Make note of this path because you will need it later when you configure this ne
 <ol>
   <li>To set the store name, phone number, and hours of operation:
     <ol>
-      <li>In the Magento Admin, navigate to <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Emails</strong></li>
+      <li>In the Magento Admin, navigate to <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Store Information</strong></li>
       <li>Input values into the <strong>Store Name</strong>, <strong>Store Phone Number</strong>, and <strong>Store Hours of Operation</strong> fields.</li>
       <li>Note: The <strong>Store Phone Number</strong> and <strong>Store Hours of Operation</strong> fields are optional.</li>
       <li>Click the <strong>Save Config</strong> button.</li>
