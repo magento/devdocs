@@ -48,20 +48,20 @@ For the following output cases, use the specified function to generate XSS-safe 
 
 
 {% highlight html %}
-<span class="label"><?php echo $block->escapeHtml(__('Some string'), ['strong']) ?></span> 
+<?php echo $block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a']) ?>
 
 <script>
     // In this case we need to use escapeHtml because we are inserting into the DOM
-    var string = '<?php echo $block->escapeJs($block->escapeHtml(__('Some string'), ['strong','p','br']) ?>'
+    var string = '<?php echo $block->escapeJs($block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a']), ['a']) ?>'
     jQuery('#my-element').append(string);
  
     // Here we are not inserting the string into the DOM, so it is ok if the string contains non-allowed tags or JavaScript because it will be handled as
     // a string. If we use escapeHtml here, the browser will display quotes and other symbols as HTML entities (&#039;, &quot;, &amp;, etc)
-    alert('<?php echo $block->escapeJs(__('Some string')) ?>');
+    alert('<?php echo $block->escapeJs(__('You are not authorized to perform this action.')) ?>');
 </script> 
 
 <!--  No need to clear translation output from unwanted tags and attributes in attribute values -->
-<img src="image.jpg" alt="<?php echo $block->escapeHtmlAttr(__('Some string')) ?>" />
+<img src="product-blue.jpg" alt="<?php echo $block->escapeHtmlAttr(__('A picture of the product in blue')) ?>" />
 {% endhighlight %}
 
 
