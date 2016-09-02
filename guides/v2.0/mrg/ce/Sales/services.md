@@ -74,7 +74,7 @@ public function execute(
 ### Service arguments
 
 |`orderId`|	An identifier of a target order for operation|	Integer |	Required
-|`capture`| Type of money capture. By default, FALSE - offline capture. If TRUE, service performs capture online.  | Boolean |	|	Optional. **IMPORTANT: If you want to capture money in Magento, set TRUE.**
+|`capture`| Type of money capture. By default, FALSE - offline capture. If TRUE, service performs capture online.  | Boolean | Optional. **IMPORTANT: If you want to capture money in Magento, set TRUE.**
 |`items`|	Array of items that will be included to an invoice, this argument is required only for partial invoice creation. By default, invoice will be created for all order items.| array with an item format `target order_item_id => quantity`|	Optional
 |`notify`| if true customer will be notified with email. email includes invoice information| Boolean|	Optional
 |`appendComment`|	if true and comment was specified, comment will be included into email with invoice|	Boolean|	Optional
