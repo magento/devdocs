@@ -880,7 +880,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 5 September 2016 (PDT)</i></p>
 		<h4 id="contents">Contents</h4>
 
 <p>This topic covers how to customize the content and design of email templates.</p>
@@ -915,13 +915,15 @@
 </ul>
 
 <h2 id="customize-email-templates">Customize email templates</h2>
-<p>Email templates are stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [<Magento_Sales_module_dir>/view/frontend/email/order_new.html](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/view/frontend/email/order_new.html).</Magento_Sales_module_dir></p>
+
+<p>Email templates are stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/view/frontend/email/order_new.html"><code>&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html</code></a>.</p>
 
 <p>We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates.</p>
 
 <p>You can add custom templates as physical files in your custom theme or create them using the Magento Admin. Both approaches are described in the following sections.</p>
 
 <h3 id="customize-email-theme">Customize email templates using a theme</h3>
+
 <p>Override email templates by creating templates in a new directory in your custom theme, using this pattern: <code>&lt;theme_dir&gt;/&lt;ModuleVendorName&gt;_&lt;ModuleName&gt;/email</code>. For example, to override the New Order email template, create a template named <code>order_new.html</code> in the <code>&lt;theme_dir&gt;/Magento_Sales/email</code> directory.</p>
 
 <p><a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Template fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.</p>
@@ -962,8 +964,8 @@ Make note of this path because you will need it later when you configure this ne
 <p>Every frontend email template includes a header and footer template using these two directives: <code>{{template config_path="design/email/header_template"}}</code> and <code>{{template config_path="design/email/footer_template"}}</code>. By default, those two directives load contents from these files:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/header.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/header.html&lt;/a&gt;</Magento_Email_module_dir></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/footer.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/footer.html&lt;/a&gt;</Magento_Email_module_dir></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/header.html"><code>&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/footer.html"><code>&lt;Magento_Email_module_dir&gt;/view/frontend/email/footer.html</code></a></li>
 </ul>
 
 <p>You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.</p>
@@ -1137,7 +1139,7 @@ Make note of this path because you will need it later when you configure this ne
   </tbody>
 </table>
 
-<p>When implementing a custom theme, you should be able to fully customize email templates by copying the <code>&amp;lt;Magento_Blank_theme_dir&amp;gt;/web/css/source/_email-extend.less</code> and <code>&amp;lt;Magento_Blank_theme_dir&amp;gt;/web/css/source/_email-variables.less</code> files to your custom theme and editing those files.</p>
+<p>When implementing a custom theme, you should be able to fully customize email templates by copying the <code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code> and <code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code> files to your custom theme and editing those files.</p>
 
 <h3 id="custom-fonts">Custom fonts</h3>
 <p>Emails inherit the custom fonts that are defined by the frontend theme. The Magento Blank theme uses the <strong>Open Sans</strong> font. Because <strong>Open Sans</strong> is not a standard system font, <code>@font-face</code> rules are used to include web fonts.</p>
@@ -1146,7 +1148,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <ul>
   <li>
-    <p><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/source/_email-extend.less" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code>@import</code> directive that requests the <code>email-fonts.css</code> file.</p>
+    <p><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/source/_email-extend.less"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code>@import</code> directive that requests the <code>email-fonts.css</code> file.</p>
 
     <p>The reason the contents of <code>email-fonts.css</code> are loaded using <code>@import</code> rather than being output directly into a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> of an email is that if a user is reading their email offline, some email clients don’t render the text because the web fonts can’t be loaded.</p>
   </li>
