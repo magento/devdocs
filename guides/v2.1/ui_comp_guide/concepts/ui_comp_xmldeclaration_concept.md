@@ -17,7 +17,7 @@ github_link: ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.md
 
 ## Overview
 
-This topic discusses the .xml declaration of UI components.
+This topic discusses the XML declaration of UI components.
 
 ## About the layout configuration file and UI component declaration
 Every module that has view representation contains the directory named `layout`. In this directory, the `.xml` declarations of the pages are stored. These `.xml` declarations are, in fact, the pages' markup.

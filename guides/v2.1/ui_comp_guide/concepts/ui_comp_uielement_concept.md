@@ -2,8 +2,8 @@
 layout: default
 group: UI_Components_guide
 subgroup: concepts
-title: uiElement class
-menu_title: uiElement class
+title: About the uiElement class
+menu_title: About the uiElement class
 menu_node:
 menu_order: 7
 version: 2.1
@@ -24,8 +24,8 @@ The uiElement class is a direct successor of the [uiClass library]({{page.baseur
 
 - The `initLinks()` method implements component communication by using the [`links.js`]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js). The `initLinks()` method creates an interface to set it. 
 
-- The `initObservable` method allows you to declare observable variables within the same instance. There are many ways to declare an observable variable; for details refer to  "How to work with observable variable." (Add link)
-
+- The `initObservable()` method allows you to declare observable variables within the same instance. 
+- 
 As an example:
 
 {%highlight js%}

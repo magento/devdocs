@@ -15,9 +15,10 @@ github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 * TOC
 {:toc}
 
-The `layout.js` file `<UI_Module_dir>\view\base\web\js\core\renderer\layout.js` is used to initialize UI сomponents.
+## Overview
+The `layout.js` file `<UI_Module_dir>/view/base/web/js/core/renderer/layout.js` is used to initialize UI сomponents.
 
-In a [typical UI сomponent's configuration flow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html), the `layout.js` is called by `app.js` (`<Ui_module_dir>\view\base\web\js\core\app.js`) and receives the component's configuration as a parameter.
+In a [typical UI сomponent's configuration flow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html), the `layout.js` is called by `app.js` (`<Ui_module_dir>/view/base/web/js/core/app.js`) and receives the component's configuration as a parameter.
 
 In the same way, anyone who wants to create a component dynamically (from other components or `.phtml` template) can call `app.js` or `layout.js` and pass as a parameter the configuration of the desired component.
 

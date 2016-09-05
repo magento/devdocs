@@ -16,7 +16,7 @@ github_link: ui_comp_guide/concepts/ui_comp_config_flow_concept.md
 ## Overview
 The following section covers the configuration flow of UI components within the Magento system. Before a UI component is finally displayed on a web page, its configuration undergoes a series of modifications. Starting from the initial reading of the top-level component instance’s XML declaration, all the way to the merging of module-specific options.
 
-When the server generates a page response, the configuration of these components in [the `.xml` declaration file]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) (which are module-agnostic) is then modified by the `.php` modifiers (which are module-specific), and then finally this combined configuration of module-agnostic and module-specific options is packed into JSON format and added into the HTTP response body.
+When the server generates a page response, the configuration of these components in the [`.xml` declaration file]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) (which are module-agnostic) is then modified by the `.php` modifiers (which are module-specific), and then finally this combined configuration of module-agnostic and module-specific options is packed into JSON format and added into the HTTP response body.
 
 On the client-side, this JSON is processed by `Magento_Ui/js/core/app` where `Magento_Ui/js/core/app` is an alias for the [`app.js`]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/core/app.js) file. The JSON could be seen in the page source. The `Magento_Ui/js/core/app` creates the UI components instances according to the configuration of the JSON using `uiLayout`.
 
