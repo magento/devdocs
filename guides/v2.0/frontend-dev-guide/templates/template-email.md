@@ -35,7 +35,7 @@ This topic covers how to customize the content and design of email templates.
 
 ## Customize email templates {#customize-email-templates}
 
-Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="{{ site.mage2000url }}app/code/Magento/Sales/view/frontend/email/order_new.html"><code>&gt;Magento_Sales_module_dir&lt;/view/frontend/email/order_new.html</code></a>. 
+Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="{{ site.mage2000url }}app/code/Magento/Sales/view/frontend/email/order_new.html"><code>&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html</code></a>. 
 
 We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. 
 
@@ -75,8 +75,8 @@ Make note of this path because you will need it later when you configure this ne
 ### Customize header and footer templates {#customize-header-footer}
 Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
  
- * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/header.html"><code>&;gt;Magento_Email_module_dir&lt;/view/frontend/email/header.html</code></a>
- * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/footer.html"><code>&;gt;Magento_Email_module_dir&lt;/view/frontend/email/footer.html</code></a>
+ * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/header.html"><code>&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code></a>
+ * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/footer.html"><code>&lt;Magento_Email_module_dir&gt;/view/frontend/email/footer.html</code></a>
 
 You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.
 
