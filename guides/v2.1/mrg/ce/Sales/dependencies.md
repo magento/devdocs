@@ -14,6 +14,8 @@ level3_subgroup: Sales
 github_link: mrg/ce/Sales/dependencies.md
 ---
 
+The following is a code of module's `composer.json` showing dependencies with Magento modules and other metadata.
+
 {% highlight json%}
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/composer.json %}
 {% endhighlight %}
