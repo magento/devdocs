@@ -72,15 +72,15 @@ Make note of this path because you will need it later when you configure this ne
 <h3 id="customize-header-footer">Customize header and footer templates</h3>
 Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
  
- * <a href="{{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/header.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/header.html</a>
- * <a href="{{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/footer.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/footer.html</a>
+  * [<Magento_Email_module_dir>/view/frontend/email/header.html]({{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/header.html")
+ * [<Magento_Email_module_dir>/view/frontend/email/footer.html]({{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/footer.html)
 
 You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.
 
 <h3 id="customize-content">Customize email content</h3>
 To add the store and sales related information to a template, use system variables.
 
-System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the `{% raw %}{{var store_hours}}{% endraw %}` variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Emails** section.
+System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the `{% raw %}{{var store_hours}}{% endraw %}` variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information** section.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -236,14 +236,14 @@ The styles for emails are split into several different files.
   </tbody>
 </table>
 
-When implementing a custom theme, you should be able to fully customize email templates by copying the `&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less` and `&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less` files to your custom theme and editing those files.
+When implementing a custom theme, you should be able to fully customize email templates by copying the `<Magento_Blank_theme_dir>/web/css/source/_email-extend.less` and `<Magento_Blank_theme_dir>/web/css/source/_email-variables.less` files to your custom theme and editing those files.
 
 <h3 id="custom-fonts">Custom fonts</h3>
 Emails inherit the custom fonts that are defined by the frontend theme. The Magento Blank theme uses the **Open Sans** font. Because **Open Sans** is not a standard system font, `@font-face` rules are used to include web fonts.
 
 Here is an overview of how the font structure for emails works:
 
-* <a href="{{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_email-extend.less" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the `@import` directive that requests the `email-fonts.css` file.
+* [<Magento_Blank_theme_dir>/web/css/source/_email-extend.less]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_email-extend.less) contains the `@import` directive that requests the `email-fonts.css` file.
 
   The reason the contents of `email-fonts.css` are loaded using `@import` rather than being output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients don't render the text because the web fonts can't be loaded.
 * The `<Magento_Blank_theme_dir>/web/css/email-fonts.less` file imports `source/_variables.less` and `source/_typography.less` files:

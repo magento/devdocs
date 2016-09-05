@@ -73,8 +73,8 @@ Make note of this path because you will need it later when you configure this ne
 <h3 id="customize-header-footer">Customize header and footer templates</h3>
 Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
  
- * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/header.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/header.html</a>
- * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/footer.html" target="_blank"><Magento_Email_module_dir>/view/frontend/email/footer.html</a>
+ * [<Magento_Email_module_dir>/view/frontend/email/header.html]({{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/header.html")
+ * [<Magento_Email_module_dir>/view/frontend/email/footer.html]({{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/footer.html)
 
 You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.
 
@@ -244,7 +244,8 @@ Emails inherit the custom fonts that are defined by the frontend theme. The Mage
 
 Here is an overview of how the font structure for emails works:
 
-* <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/source/_email-extend.less" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the `@import` directive that requests the `email-fonts.css` file.
+
+* [<Magento_Blank_theme_dir>/web/css/source/_email-extend.less]({{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/source/_email-extend.less) contains the `@import` directive that requests the `email-fonts.css` file.
 
   The reason the contents of `email-fonts.css` are loaded using `@import` rather than being output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients don't render the text because the web fonts can't be loaded.
 * The `<Magento_Blank_theme_dir>/web/css/email-fonts.less` file imports `source/_variables.less` and `source/_typography.less` files:
