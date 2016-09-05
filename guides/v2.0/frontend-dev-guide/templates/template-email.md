@@ -33,19 +33,21 @@ This topic covers how to customize the content and design of email templates.
 * <a href="#supported-clients">Supported email clients and devices</a>
 * <a href="#newsletter-templates">Newsletter templates</a>
 
-<h2 id="customize-email-templates">Customize email templates</h2>
-Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [<Magento_Sales_module_dir>/view/frontend/email/order_new.html]({{ site.mage2000url }}app/code/Magento/Sales/view/frontend/email/order_new.html). 
+## Customize email templates {#customize-email-templates}
+
+Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="{{ site.mage2000url }}app/code/Magento/Sales/view/frontend/email/order_new.html"><code>&gt;Magento_Sales_module_dir&lt;/view/frontend/email/order_new.html</code></a>. 
 
 We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. 
 
 You can add custom templates as physical files in your custom theme or create them using the Magento Admin. Both approaches are described in the following sections.
  
-<h3 id="customize-email-theme">Customize email templates using a theme</h3>
+### Customize email templates using a theme {#customize-email-theme}
+
 Override email templates by creating templates in a new directory in your custom theme, using this pattern: `<theme_dir>/<ModuleVendorName>_<ModuleName>/email`. For example, to override the New Order email template, create a template named `order_new.html` in the `<theme_dir>/Magento_Sales/email` directory.
 
 <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Template fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.
  
-<h3 id="customize-email-admin">Customize email templates using the Magento Admin</h3>
+### Customize email templates using the Magento Admin {#customize-email-admin}
 
 Any templates configured in the Magento Admin take precedence over default or theme-based templates.
 
@@ -70,15 +72,15 @@ Make note of this path because you will need it later when you configure this ne
     3. Select your newly created template from the list.
     4. Click **Save Config**.
 
-<h3 id="customize-header-footer">Customize header and footer templates</h3>
+### Customize header and footer templates {#customize-header-footer}
 Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
  
- * [<Magento_Email_module_dir>/view/frontend/email/header.html]({{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/header.html")
- * [<Magento_Email_module_dir>/view/frontend/email/footer.html]({{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/footer.html)
+ * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/header.html"><code>&;gt;Magento_Email_module_dir&lt;/view/frontend/email/header.html</code></a>
+ * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/footer.html"><code>&;gt;Magento_Email_module_dir&lt;/view/frontend/email/footer.html</code></a>
 
 You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.
 
-<h3 id="customize-content">Customize email content</h3>
+### Customize email content {#customize-content}
 To add the store and sales related information to a template, use system variables.
 
 System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the `{% raw %}{{var store_hours}}{% endraw %}` variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Emails** section.
@@ -237,15 +239,14 @@ The styles for emails are split into several different files.
   </tbody>
 </table>
 
-When implementing a custom theme, you should be able to fully customize email templates by copying the `&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less` and `&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less` files to your custom theme and editing those files.
+When implementing a custom theme, you should be able to fully customize email templates by copying the `<Magento_Blank_theme_dir>/web/css/source/_email-extend.less` and `<Magento_Blank_theme_dir>/web/css/source/_email-variables.less` files to your custom theme and editing those files.
 
 <h3 id="custom-fonts">Custom fonts</h3>
 Emails inherit the custom fonts that are defined by the frontend theme. The Magento Blank theme uses the **Open Sans** font. Because **Open Sans** is not a standard system font, `@font-face` rules are used to include web fonts.
 
 Here is an overview of how the font structure for emails works:
 
-
-* [<Magento_Blank_theme_dir>/web/css/source/_email-extend.less]({{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/source/_email-extend.less) contains the `@import` directive that requests the `email-fonts.css` file.
+* <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/source/_email-extend.less"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the `@import` directive that requests the `email-fonts.css` file.
 
   The reason the contents of `email-fonts.css` are loaded using `@import` rather than being output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients don't render the text because the web fonts can't be loaded.
 * The `<Magento_Blank_theme_dir>/web/css/email-fonts.less` file imports `source/_variables.less` and `source/_typography.less` files:
