@@ -55,7 +55,7 @@ When the request for my_page comes, the server does the following:
 
 Now it is the client's turn to process this JSON and generate the UI component's instances. The flow is following:
 
-1. Require.js requires `Magento_Ui/js/core/app` and passes [JSON configuration]({{page.baseurl}}javascript-dev-guide/javascript/js_init.html#declarative-notation-using-the-script-typetextx-magento-init--tag-decltag) as an parameter. 
+1. RequireJS requires `Magento_Ui/js/core/app` and passes [JSON configuration]({{page.baseurl}}javascript-dev-guide/javascript/js_init.html#declarative-notation-using-the-script-typetextx-magento-init--tag-decltag) as an parameter. 
 2. The `Magento_Ui/js/core/app` calls `layout.js `and passes the UI component’s configuration into the layout: `<Magento_Ui_module_dir>/view/base/web/js/core/renderer/layout.js`.
 3. `layout.js` creates instances of UI Components. That means that each UI component’s configuration must have an explicitly declared `component` property in JSON. This property references the `.js` file. For example, our form has the component declared in JSON like this:	`"my_form":{"component":"Magento_Ui/js/form/form"}`
 So the instance of this class is created, and properties from the JSON overwrites the properties from the UI component’s `defaults` property. Then resulting properties become the first-level properties of the newly created UI component's instance, and the original `defaults` property is deleted.

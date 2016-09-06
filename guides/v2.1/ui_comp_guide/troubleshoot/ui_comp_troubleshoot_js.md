@@ -17,7 +17,7 @@ github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.md
 
 This article describes how to define what UI components are used on a particular page, their JavaScript components and what data they use.
 
-To define the UI components used on a page, you can use browser built-in developer tools, or install additionally a plugin, for example Knockout JS context debugger for Google Chrome.
+To define the UI components used on a page, you can use browser built-in developer tools, or install additionally a plugin, for example Knockoutjs context debugger for Google Chrome.
 
 ## Debugging using Knockout.js plugin
 
@@ -46,9 +46,9 @@ A simple example:
 
 ## Debugging using pure Knockout
 
-Instead of installing 3rd party tool we can use instance of Knockout for same purpose: retrieve context within markup.
+To retrieve the context within markup, you can also use the instance of Knockout: 
 
-At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJs ID]({{page.baseurl}} ui_comp_guide/concepts/ui_comp_requirejs_concept.html) `knockout`.
+At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJS ID]({{page.baseurl}} ui_comp_guide/concepts/ui_comp_requirejs_concept.html) `knockout`.
 
 {%highlight js%}
 var ko = require('knockout');

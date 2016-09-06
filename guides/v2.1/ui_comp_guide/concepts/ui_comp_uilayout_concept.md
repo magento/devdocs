@@ -28,8 +28,8 @@ In fact, the `layout.js` module returns `function run(nodes, parent, cached, mer
 
 The most commonly used are the first two parameters:
 
-* `{array} nodes` - configuration of the UI Components that we want to initialize. The array is an array of configurations.
-* `{string} parent` - parent component for that UI Components
+* `{array} nodes` - configuration of the UI components that we want to initialize. The array is an array of configurations.
+* `{string} parent` - parent component for that UI components
 
 
 In the `layout.js`, each item expected in the nodes array can have the following properties:
@@ -37,7 +37,7 @@ In the `layout.js`, each item expected in the nodes array can have the following
 * `{string} name` - index of the new UI component
 * `{string} parent` - the name of the component's parent element. If the parent component is not yet initialized, then `layout.js` waits for it to appear in UI Registry (`registry.js`). 
 
-Note: The full name of the created UI Component is formed by concatenating the `parent.name + '.' + name`, and then set as the `name` property. If a UI component with the same full name already exists, `layout.js` will skip its initialization.
+Note: The full name of the created UI component is formed by concatenating the `parent.name + '.' + name`, and then set as the `name` property. If a UI component with the same full name already exists, `layout.js` will skip its initialization.
 
 * `{string} nodeTemplate` - template of the new Component (path to `.html` template)
 * `{string} component` - constructor of the new Component (path to `.js` file)
@@ -55,7 +55,7 @@ and
 
 ## Example 1:
 
-Let's consider a case when we want to create a UI Component dynamically from another UI component.
+Let's consider a case when we want to create a UI component dynamically from another UI component.
     
 We can put the configuration of the desired UI component directly into `layout.js`. Below in an example of the component's constructor,  which creates the child UI component on initialization:
 
