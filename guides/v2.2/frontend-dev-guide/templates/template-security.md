@@ -11,9 +11,9 @@ github_link: frontend-dev-guide/templates/template-security.md
 
 <h2>Security measures against XSS attacks</h2>
 
-To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules for escaping PHP echo calls that produce HTML output in templates:
+To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules for escaping output in templates:
 
-* If a method indicates that the contents are escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the HTML output)
+* If a method indicates that the content is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the HTML output)
 
 * Type casting and php function `count()` don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
 
@@ -21,7 +21,7 @@ To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> 
 
 * Output in double quotes without variables doesn't need escaping (for example `echo "some text"`)
 
-* For all other cases, escape the data using [specific escape functions for templates](#escape-functions-for-templates).
+* For all other cases, escape the data using [specific escape functions](#escape-functions-for-templates).
 
 The following code sample illustrates the XSS-safe output in templates:
 
@@ -46,7 +46,7 @@ For the following output cases, use the specified function to generate XSS-safe 
 
 
 {% highlight html %}
-  <!-- In this example $postData is a JSON encoded string -->
+  <!-- In this example $postData is a JSON string -->
   <button class="action" data-post='<?php /* @noEscape */ echo $postData ?>' />
 {% endhighlight %}
 
@@ -56,17 +56,17 @@ For the following output cases, use the specified function to generate XSS-safe 
 
 You can pass in an optional array of allowed tags that will not be escaped.
 
-If a tag is allowed, the following attributes will not be escaped: id, class, href, target, and title.
+If a tag is allowed, the following attributes will not be escaped: `id`, `class`, `href`, `target`, `style` and `title`.
 Any other attribute for that allowed tag will be escaped.
 
-`script` and `img` tags will not be allowed regardless of the content of this array because they can lead to JavaScript execution.
+`embed`, `iframe`, `video`, `source`, `object`, `audion`, `script` and `img` tags will not be allowed regardless of the content of this array.
 
 If your text contains special characters, they must be encoded as HTML entities, such as `&lt;` for **&lt;** or `&gt;` for **&gt;**.
 
 {% highlight html %}
   <span class="label"><?php echo $block->escapeHtml($block->getLabel()) ?></span>
   
-  // Escaping translation for inline content
+  // Escaping translation
   <div id='my-element'><?php echo $block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a']) ?></div>
 
 {% endhighlight %}
@@ -79,29 +79,26 @@ If your text contains special characters, they must be encoded as HTML entities,
 {% highlight html %}
   <a href="<?php echo $block->escapeUrl($block->getCategoryUrl()) ?>">Some Link</a>
   <script>
-    var categoryUrl = '<?php echo $block->escapeUrl($block->getCategoryUrl()) ?>';
+    var categoryUrl = '<?php echo $block->escapeJs($block->escapeUrl($block->getCategoryUrl())) ?>';
   </script>
 {% endhighlight %}
 
 
 **Case:** Strings inside JavaScript\\
-**Function:** In a pure JavaScript context, use the `escapeJs` function.
+**Function:** In a JavaScript context, use the `escapeJs` function.
 
 In cases where the JavaScript code outputs content onto the page, use the `escapeUrl` and `escapeHtml` functions where appropriate.
 
 {% highlight javascript %}
-    var a = '<?php echo $block->escapeJs($block->getString()) ?>';
- 
-    var field<?php echo $block->escapeJs($block->getFieldNamePostfix()) ?> = window.document.getElementById('my-element');
+  var field<?php echo $block->escapeJs($block->getFieldNamePostfix()) ?> = window.document.getElementById('my-element');
 
-  // Escaping translation for inserted content
-  // In this case we need to use escapeHtml because we are inserting into the DOM
-  var string = '<?php echo $block->escapeJs($block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a']), ['a']) ?>'
+  // Escaping content that will be inserted into DOM
+  var string = <?php echo $block->escapeJs($block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a'])) ?>
   jQuery('#my-element').append(string);
  
   // Here we are not inserting the translated string into the DOM, so it is ok if the string contains non-allowed tags or 
-  //JavaScript because it will be handled as a string. If we use escapeHtml here, the browser will display quotes 
-  //and other symbols as HTML entities (&#039;, &quot;, &amp;, etc)
+  // JavaScript because it will be handled as a string. Do not use escapeHtml here, the browser will display quotes 
+  // and other symbols as HTML entities (&#039;, &quot;, &amp;, etc)
   alert('<?php echo $block->escapeJs(__('You are not authorized to perform this action.')) ?>');
 {% endhighlight %}
 
@@ -111,7 +108,7 @@ In cases where the JavaScript code outputs content onto the page, use the `escap
 
 
 {% highlight html %}
-  <span class="<?php echo $block->escapeHtmlAttr($block->getSpanClass()) ?>">Some Text</span>
+  <span class="<?php echo $block->escapeHtmlAttr($block->getSpanClass()) ?>">Product Description</span>
   <input name="field" value="<?php echo $block->escapeHtmlAttr($block->getFieldValue()) ?>" />
 
   <!--  Escaping translation inside attributes -->
@@ -122,7 +119,7 @@ In cases where the JavaScript code outputs content onto the page, use the `escap
 
 To check your template for XSS vulnerabilities, you can use the static test `XssPhtmlTemplateTest.php` in `dev\tests\static\testsuite\Magento\Test\Php\`.
 
-This static test finds all echo calls in PHTML-templates and determines if it is properly escaped or not.
+This static test finds all echo calls in PHTML-templates and determines if the output is properly escaped.
 
 It covers the following cases:
 
