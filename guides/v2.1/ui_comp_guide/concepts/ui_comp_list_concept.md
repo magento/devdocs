@@ -27,7 +27,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: Yes
 - **Top-level parent component**: - 
 - **Description**: Form component allows performing CRUD operations on an entity.
-- **Has template**: Yes
+- **Has server-side template**: [default.xhtml]({{site.mage2100url}}app/code/Magento/Ui/view/base/ui_component/templates/form/default.xhtml)
 
 ### Listing
 
@@ -37,7 +37,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: Yes
 - **Top-level parent component**: - 
 - **Description**: Listing is a basic component responsible for rendering grids, lists, and tiles.
-- **Has template**: Yes.
+- **Has server-side template**: [default.xhtml]({{site.mage2100url}}app/code/Magento/Ui/view/base/ui_component/templates/listing/default.xhtml)
 
 ### Fieldset
 - **UI Component**: Fieldset
@@ -46,16 +46,16 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: No
 - **Top-level parent component**: Form
 - **Description**: Container for visually grouped form elements (i.e. buttons, form fields.)
-- **Has template**: 
+- **Has server-side template**: No.
 
 ### Field
 - **UI Component**: Field
-- **Link to constructor**: 
+- **Link to constructor**: [abstract.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/element/abstract.js)
 - **Node name in `definition.xml`**: `<field>`
 - **Is top-level**: No
 - **Top-level parent component**: Form
 - **Description**: Form field's abstract component.
-- **Has template**: 
+- **Has server-side template**: No.
 
 ### Group
 
@@ -65,7 +65,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: No
 - **Top-level parent component**: Form
 - **Description**: Container for visually grouped fields close together with a single label.
-- **Has template**: 
+- **Has server-side template**: No.
 
 
 ### Tab
@@ -76,7 +76,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: No
 - **Top-level parent component**: Form
 - **Description**: Area for the content accessed by clicking on the Nav.
-- **Has template**: 
+- **Has server-side template**: No.
 
 ### Nav
 
@@ -86,7 +86,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: No
 - **Top-level parent component**: Form
 - **Description**: Creates a navigation bar with individual tabs.
-- **Has template**: 
+- **Has server-side template**: No.
 
 ### Insert
 
@@ -96,7 +96,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: No
 - **Top-level parent component**: Form
 - **Description**: Abstract component (that is extended by two other components: InsertForm and InsertListing).
-- **Has template**: 
+- **Has server-side template**: No.
 
 
 ### Insert Form
@@ -107,7 +107,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: No
 - **Top-level parent component**: Form
 - **Description**: Extends 'Insert', allows to dynamically visually insert a Form component.
-- **Has template**: 
+- **Has server-side template**: No.
 
 ### Insert Listing
 
@@ -117,7 +117,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: No
 - **Top-level parent component**: Form
 - **Description**: Extends the Insert component, allows to dynamically visually insert a Listing component.
-- **Has template**:
+- **Has server-side template**: No.
 
 ### Modal
 
@@ -127,7 +127,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: No
 - **Top-level parent component**: Form
 - **Description**: Wraps modal widget functionality into the modal UI component.
-- **Has template**:
+- **Has server-side template**: No.
 
 ### Button adapter
 
@@ -137,7 +137,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: No
 - **Top-level parent component**: Form
 - **Description**: Wraps the buttons and adds to a form created by the UI component. For example, this component can be used to create a button bar. 
-- **Has template**:
+- **Has server-side template**: No.
 
 ###  Form provider 
 
@@ -147,7 +147,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Is top-level**: No
 - **Top-level parent component**: Form
 - **Description**: Provides data for a form.
-- **Has template**:
+- **Has server-side template**: No.
 
 
 

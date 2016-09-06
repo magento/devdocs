@@ -41,16 +41,43 @@ A simple example:
 
 1. Launch Magento Admin.
 2. Navigate to **Products** > **Catalog** and click **Add Product**. The product creation page opens.
-3. Right-click on the **Product Name**" field and click **Inspect**. Go to the **Knockout context** tab. Here you can see the full context of the field, where you can find JS component file, component name, etc.
-![Image Example]({{site.baseurl}}common/images/ui_comp_troubleshoot_chrome.png)
+3. Right-click on the **Product Name** field and click **Inspect**. Go to the **Knockout context** tab. Here you can see the full context of the field, where you can find JS component file, component name, etc.
+![Image Example]({{site.baseurl}}common/images/ui_comp_troubleshoot_chrome1.png)
+
+## Debugging using pure Knockout
+
+Instead of installing 3rd party tool we can use instance of Knockout for same purpose: retrieve context within markup.
+
+At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJs ID]({{page.baseurl}} ui_comp_guide/concepts/ui_comp_requirejs_concept.html) `knockout`.
+
+{%highlight js%}
+var ko = require('knockout');
+{%endhighlight%}
+
+Now we have Knockout instance in the `ko` variable. We can use it to get a context of any DOM element.
+
+{%highlight js%}
+var context = ko.contextFor($0);
+{%endhighlight%}
+
+, where `$0` is a [special variable](https://developers.google.com/web/tools/chrome-devtools/debug/command-line/command-line-reference#section-1) in browser console. It contains a link to a DOM element that is last inspected.
+
+For example:
+{%highlight js%}
+// Admin > Products > Catalog > Add Product
+// Inspect "Product Name"
+var fieldName = ko.contextFor($0).$data;
+
+console.log(fieldName.name); // product_form.product_form.product-details.container_name.name
+{%endhighlight%}
 
 ## Debugging using the uiRegistry
 
 `uiRegistry` is a in-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.
 
-To debug the UI component JS, we first need to get a `uiRegistry` instance from the browser console. To do so, use the [RequireJs ID]({{page.baseurl}} ui_comp_guide/concepts/ui_comp_requirejs_concept.html) (alias or full path to the `.js` file that stores the `uiRegistry` class).
+To debug the UI component JS, we first need to get a `uiRegistry` instance from the browser console. To do so, use the [RequireJs ID]({{page.baseurl}} ui_comp_guide/concepts/ui_comp_requirejs_concept.html) `uiRegistry`.
 
-To get the `uiRegistry` instance, in the browser console enter the following:
+In the browser console enter the following:
 
 {%highlight js%}
 var registry = require('uiRegistry');
@@ -72,8 +99,7 @@ var fieldName = registry.get('product_form.product_form.product-details.containe
 Lets look what we have in component variable. It keeps component context with all properties, we can see component file, component name and so on.
 
 {%highlight js%}
-console.log(fieldName.name); // product_listing.product_listing_source
-console.log(fieldName.data); // Object { name: 'product_listing.product_listing_source', ... }
+console.log(fieldName.name); // product_form.product_form.product-details.container_name.name
 
 fieldName.trigger('validate'); // will invoke validation
 fieldName.visible(false); // will hide field from page
