@@ -73,13 +73,15 @@ public function execute(
 
 ### Service arguments
 
-|`orderId`|	An identifier of a target order for operation|	Integer |	Required
-|`capture`| Type of money capture. By default, FALSE - offline capture. If TRUE, service performs capture online.  | Boolean | Optional. **IMPORTANT: If you want to capture money in Magento, set TRUE.**
-|`items`|	Array of items that will be included to an invoice, this argument is required only for partial invoice creation. By default, invoice will be created for all order items.| Array of interfaces `\Magento\Sales\Api\Data\InvoiceItemCreationInterface`. Example: `[ {"order_item_id": 1, "qty": 2}, {"order_item_id": 2, "qty": 0.5} ]` |	Optional
-|`notify`| If TRUE, customer will be notified with email. e-mail includes invoice information. | Boolean|	Optional
-|`appendComment`|	If TRUE and `comment` is specified, the comment will be included into e-mail with invoice.|	Boolean|	Optional
-|`comment`|	Comment that must be added to invoice|	Format according to the `\Magento\Sales\Api\Data\InvoiceCommentCreationInterface` interface. Example: `"comment": {"comment": "test_invoice", "is_visible_on_front": true}`|	Optional
-|`arguments`|	Operational arguments. Reserved for extension modules.|	Format according to the `\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface` interface |	Optional
+|Name | Description | Format | Required/Optional
+|---|---|---|---
+|`orderId`|	An identifier of a target order for operation. |	Integer |	Required
+|`capture`| A type of money capture. By default, `false` - for offline capture. If `true`, service performs capture online.  | Boolean | Optional. **IMPORTANT: If you want to capture money in Magento, set `true`.**
+|`items`|	An array of order items included to an invoice. By default, the invoice will be created for all order items. | An array of interfaces `\Magento\Sales\Api\Data\InvoiceItemCreationInterface`. Example: `[ {"order_item_id": 1, "qty": 2}, {"order_item_id": 2, "qty": 0.5} ]` |	Optional. This argument is required, when invoice must contain particular order items, not all of them.
+|`notify`| E-mail notification about invoice details for a customer. If `true`, a customer will be notified. If `false` - no e-mail notification. | Boolean|	Optional
+|`appendComment`|	Include or not the `comment` argument to the e-mail notification. If `true` and `comment` is specified, it will be added to an e-mail notification.|	Boolean|	Optional
+|`comment`|	A comment to an invoice.|	A format according to the `\Magento\Sales\Api\Data\InvoiceCommentCreationInterface` interface. Example: `"comment": {"comment": "test_invoice", "is_visible_on_front": true}`.|	Optional
+|`arguments`|	Operational arguments. Reserved for extension modules.|	A format according to the `\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface` interface |	Optional
 
 ### Service implementation
 
@@ -93,11 +95,13 @@ public function execute(
 
 ### Extension points
 
-The service contains extension points marked with `@api` annotation. The APIs can be used by extension developers to extend service logic.
+The service contains extension points marked with `@api` annotation. APIs can be used by extension developers to extend service logic.
 
-|`\Magento\Sales\Api\OrderRepositoryInterface`| Order repository is responsible for Order entity persistence.|
-|`\Magento\Sales\Model\Order\InvoiceRepository`| Invoice repository is responsible for Invocie creation.|
-|`\Magento\Sales\Model\Order\InvoiceDocumentFactory`|	Responsible for new invoice object creation. The factory uses the `arguments` parameter to process extension attributes of a new invoice document.|
-|`\Magento\Sales\Model\Order\OrderValidatorInterface`| Performs order document validation with selected rules.|
-|`\Magento\Sales\Model\Order\PaymentAdapterInterface`| Performs pay operation according to a selected option (`online`/`offline`), returns an order with modified state (containing payment specific information).|
-|`\Magento\Sales\Model\Order\OrderStateResolverInterface`| Provides a correct order state according to performed operation.|
+|Extension point | Description |
+|---|---
+|`\Magento\Sales\Api\OrderRepositoryInterface`| An order repository responsible for an Order entity persistence.|
+|`\Magento\Sales\Model\Order\InvoiceRepository`| An invoice repository responsible for an Invoice creation.|
+|`\Magento\Sales\Model\Order\InvoiceDocumentFactory`|	A factory responsible for the new invoice object creation. The factory uses the `arguments` parameter to process extension attributes of a new invoice document.|
+|`\Magento\Sales\Model\Order\OrderValidatorInterface`| An interface responsible for the order document validation with selected rules.|
+|`\Magento\Sales\Model\Order\PaymentAdapterInterface`| An interface responsible for a payment according to a selected option (`online`/`offline`). It returns an order with modified state containing payment specific information.|
+|`\Magento\Sales\Model\Order\OrderStateResolverInterface`| An interface which provides a correct state of an order according to performed operation.|
