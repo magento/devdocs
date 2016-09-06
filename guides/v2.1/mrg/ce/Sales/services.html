@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento_Sales module services/APIs</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/mrg/ce/Sales/services.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+        <a class="search-trigger search-icon" href="/guides/v2.1/search.html"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui-components/ui-component.html">UI Components</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+               <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+               
+                   <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+               
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="/search.html">
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Magento_Sales module services/APIs</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/mrg/ce/Sales/services.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+        
+
+<div class="tabs-container">
+    
+    <div class="tab " id="">
+        <a href="/guides/v2.1/mrg/ce/Sales/description.html">Description</a>
+    </div>
+    
+    <div class="tab " id="">
+        <a href="/guides/v2.1/mrg/ce/Sales/dependencies.html">Dependencies</a>
+    </div>
+    
+    <div class="tab current-tab" id="">
+        <a href="/guides/v2.1/mrg/ce/Sales/services.html">Services/APIs</a>
+    </div>
+    
+</div>
+
+
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mrg/intro.html">INTRODUCTION</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Community Edition</span></li>
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="Sales"><a href="#">Sales</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child Sales " data-menunode="Sales"><a href="/guides/v2.1/mrg/ce/Sales/dependencies.html">Dependencies</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child Sales " data-menunode="Sales"><a href="/guides/v2.1/mrg/ce/Sales/description.html">Description</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child Sales  active " data-menunode="Sales"><a href="/guides/v2.1/mrg/ce/Sales/services.html">Services/APIs</a>
+
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Enterprise Edition</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/BundleStaging.html">BundleStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/CatalogImportExportStaging.html">CatalogImportExportStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/CatalogInventoryStaging.html">CatalogInventoryStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/CatalogRuleStaging.html">CatalogRuleStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/CatalogStaging.html">CatalogStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/CatalogUrlRewriteStaging.html">CatalogUrlRewriteStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/CheckoutStaging.html">CheckoutStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/CmsStaging.html">CmsStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/ConfigurableProductStaging.html">ConfigurableProductStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/DownloadableStaging.html">DownloadableStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/GiftCardStaging.html">GiftCardStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/GiftMessageStaging.html">GiftMessageStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/GiftWrappingStaging.html">GiftWrappingStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/GoogleOptimizerStaging.html">GoogleOptimizerStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/GroupedProductStaging.html">GroupedProductStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/LayeredNavigationStaging.html">LayeredNavigationStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/MsrpStaging.html">MsrpStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/PaymentStaging.html">PaymentStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/ProductVideoStaging.html">ProductVideoStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/ReviewStaging.html">ReviewStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/RmaStaging.html">RmaStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/SalesRuleStaging.html">SalesRuleStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/SearchStaging.html">SearchStaging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/Staging.html">Staging</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mrg/ee/WeeeStaging.html">WeeeStaging</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 6 September 2016 (PDT)</i></p>
+		<ul id="markdown-toc">
+  <li><a href="#invoiceorder" id="markdown-toc-invoiceorder">InvoiceOrder</a>    <ul>
+      <li><a href="#description" id="markdown-toc-description">Description</a></li>
+      <li><a href="#webapixml-declaration" id="markdown-toc-webapixml-declaration"><code>webapi.xml</code> declaration</a></li>
+      <li><a href="#php-declaration" id="markdown-toc-php-declaration">PHP declaration</a></li>
+      <li><a href="#service-arguments" id="markdown-toc-service-arguments">Service arguments</a></li>
+      <li><a href="#service-implementation" id="markdown-toc-service-implementation">Service implementation</a></li>
+      <li><a href="#extension-points" id="markdown-toc-extension-points">Extension points</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="invoiceorder">InvoiceOrder</h2>
+
+<h3 id="description">Description</h3>
+
+<p>The service introduces a capability to execute Magento native business flow of the Sales module using API.</p>
+
+<p>With this service you can:</p>
+
+<ul>
+  <li>create an invoice document (full or partial)</li>
+  <li>capture money placed with order payment</li>
+  <li>notify a customer about document creation</li>
+  <li>change order status and state</li>
+</ul>
+
+<h3 id="webapixml-declaration"><code>webapi.xml</code> declaration</h3>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/order/:orderId/invoice&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Sales\Api\InvoiceOrderInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;execute&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;resources&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_Sales::sales&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/resources&gt;</span>
+<span class="nt">&lt;/route&gt;</span></code></pre></figure>
+
+<h3 id="php-declaration">PHP declaration</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * @param int $orderId</span>
+<span class="sd"> * @param bool|false $capture</span>
+<span class="sd"> * @param \Magento\Sales\Api\Data\InvoiceItemCreationInterface[] $items</span>
+<span class="sd"> * @param bool|false $notify</span>
+<span class="sd"> * @param bool|false $appendComment</span>
+<span class="sd"> * @param Data\InvoiceCommentCreationInterface|null $comment</span>
+<span class="sd"> * @param Data\InvoiceCreationArgumentsInterface|null $arguments</span>
+<span class="sd"> * @return int</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
+    <span class="nv">$orderId</span><span class="p">,</span>
+    <span class="nv">$capture</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
+    <span class="k">array</span> <span class="nv">$items</span> <span class="o">=</span> <span class="p">[],</span>
+    <span class="nv">$notify</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
+    <span class="nv">$appendComment</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
+    <span class="nx">\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
+    <span class="nx">\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span>
+<span class="p">);</span>
+
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+
+<h3 id="service-arguments">Service arguments</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Required/Optional</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>orderId</code></td>
+      <td>An identifier of a target order for operation.</td>
+      <td>Integer</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td><code>capture</code></td>
+      <td>A type of money capture. By default, <code>false</code> - for offline capture. If <code>true</code>, service performs capture online.</td>
+      <td>Boolean</td>
+      <td>Optional. <strong>IMPORTANT: If you want to capture money in Magento, set <code>true</code>.</strong></td>
+    </tr>
+    <tr>
+      <td><code>items</code></td>
+      <td>An array of order items included to an invoice. By default, the invoice will be created for all order items.</td>
+      <td>An array of interfaces <code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code>. Example: <code>[ {"order_item_id": 1, "qty": 2}, {"order_item_id": 2, "qty": 0.5} ]</code></td>
+      <td>Optional. This argument is required, when invoice must contain particular order items, not all of them.</td>
+    </tr>
+    <tr>
+      <td><code>notify</code></td>
+      <td>E-mail notification about invoice details for a customer. If <code>true</code>, a customer will be notified. If <code>false</code> - no e-mail notification.</td>
+      <td>Boolean</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code>appendComment</code></td>
+      <td>Include or not the <code>comment</code> argument to the e-mail notification. If <code>true</code> and <code>comment</code> is specified, it will be added to an e-mail notification.</td>
+      <td>Boolean</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code>comment</code></td>
+      <td>A comment to an invoice.</td>
+      <td>A format according to the <code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code> interface. Example: <code>"comment": {"comment": "test_invoice", "is_visible_on_front": true}</code>.</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code>arguments</code></td>
+      <td>Operational arguments. Reserved for extension modules.</td>
+      <td>A format according to the <code>\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</code> interface</td>
+      <td>Optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="service-implementation">Service implementation</h3>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to show/hide included code </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Copyright © 2016 Magento. All rights reserved.</span>
+<span class="sd"> * See COPYING.txt for license details.</span>
+<span class="sd"> */</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Sales\Model</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Framework\App\ResourceConnection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Api\Data\InvoiceCommentCreationInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Api\InvoiceOrderInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Api\OrderRepositoryInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\Config</span> <span class="k">as</span> <span class="nx">OrderConfig</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\Invoice\InvoiceValidatorInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\Invoice\NotifierInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\InvoiceDocumentFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\InvoiceQuantityValidator</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\InvoiceRepository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\OrderStateResolverInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\OrderValidatorInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\PaymentAdapterInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\Validation\CanInvoice</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Psr\Log\LoggerInterface</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Class InvoiceOrder</span>
+<span class="sd"> * @SuppressWarnings(PHPMD.CouplingBetweenObjects)</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">InvoiceOrder</span> <span class="k">implements</span> <span class="nx">InvoiceOrderInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @var ResourceConnection</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$resourceConnection</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var OrderRepositoryInterface</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$orderRepository</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var InvoiceDocumentFactory</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$invoiceDocumentFactory</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var InvoiceValidatorInterface</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$invoiceValidator</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var PaymentAdapterInterface</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$paymentAdapter</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var OrderStateResolverInterface</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$orderStateResolver</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var OrderConfig</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$config</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var InvoiceRepository</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$invoiceRepository</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var NotifierInterface</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$notifierInterface</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var LoggerInterface</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var OrderValidatorInterface</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$orderValidator</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * OrderInvoice constructor.</span>
+<span class="sd">     * @param ResourceConnection $resourceConnection</span>
+<span class="sd">     * @param OrderRepositoryInterface $orderRepository</span>
+<span class="sd">     * @param InvoiceDocumentFactory $invoiceDocumentFactory</span>
+<span class="sd">     * @param InvoiceValidatorInterface $invoiceValidator</span>
+<span class="sd">     * @param OrderValidatorInterface $orderValidator</span>
+<span class="sd">     * @param PaymentAdapterInterface $paymentAdapter</span>
+<span class="sd">     * @param OrderStateResolverInterface $orderStateResolver</span>
+<span class="sd">     * @param OrderConfig $config</span>
+<span class="sd">     * @param InvoiceRepository $invoiceRepository</span>
+<span class="sd">     * @param NotifierInterface $notifierInterface</span>
+<span class="sd">     * @param LoggerInterface $logger</span>
+<span class="sd">     * @SuppressWarnings(PHPMD.ExcessiveParameterList)</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">ResourceConnection</span> <span class="nv">$resourceConnection</span><span class="p">,</span>
+        <span class="nx">OrderRepositoryInterface</span> <span class="nv">$orderRepository</span><span class="p">,</span>
+        <span class="nx">InvoiceDocumentFactory</span> <span class="nv">$invoiceDocumentFactory</span><span class="p">,</span>
+        <span class="nx">InvoiceValidatorInterface</span> <span class="nv">$invoiceValidator</span><span class="p">,</span>
+        <span class="nx">OrderValidatorInterface</span> <span class="nv">$orderValidator</span><span class="p">,</span>
+        <span class="nx">PaymentAdapterInterface</span> <span class="nv">$paymentAdapter</span><span class="p">,</span>
+        <span class="nx">OrderStateResolverInterface</span> <span class="nv">$orderStateResolver</span><span class="p">,</span>
+        <span class="nx">OrderConfig</span> <span class="nv">$config</span><span class="p">,</span>
+        <span class="nx">InvoiceRepository</span> <span class="nv">$invoiceRepository</span><span class="p">,</span>
+        <span class="nx">NotifierInterface</span> <span class="nv">$notifierInterface</span><span class="p">,</span>
+        <span class="nx">LoggerInterface</span> <span class="nv">$logger</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span> <span class="o">=</span> <span class="nv">$resourceConnection</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderRepository</span> <span class="o">=</span> <span class="nv">$orderRepository</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceDocumentFactory</span> <span class="o">=</span> <span class="nv">$invoiceDocumentFactory</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceValidator</span> <span class="o">=</span> <span class="nv">$invoiceValidator</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderValidator</span> <span class="o">=</span> <span class="nv">$orderValidator</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">paymentAdapter</span> <span class="o">=</span> <span class="nv">$paymentAdapter</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderStateResolver</span> <span class="o">=</span> <span class="nv">$orderStateResolver</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceRepository</span> <span class="o">=</span> <span class="nv">$invoiceRepository</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notifierInterface</span> <span class="o">=</span> <span class="nv">$notifierInterface</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @param int $orderId</span>
+<span class="sd">     * @param bool $capture</span>
+<span class="sd">     * @param array $items</span>
+<span class="sd">     * @param bool $notify</span>
+<span class="sd">     * @param bool $appendComment</span>
+<span class="sd">     * @param \Magento\Sales\Api\Data\InvoiceCommentCreationInterface|null $comment</span>
+<span class="sd">     * @param \Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface|null $arguments</span>
+<span class="sd">     * @return int</span>
+<span class="sd">     * @throws \Magento\Sales\Api\Exception\DocumentValidationExceptionInterface</span>
+<span class="sd">     * @throws \Magento\Sales\Api\Exception\CouldNotInvoiceExceptionInterface</span>
+<span class="sd">     * @throws \Magento\Framework\Exception\InputException</span>
+<span class="sd">     * @throws \Magento\Framework\Exception\NoSuchEntityException</span>
+<span class="sd">     * @throws \DomainException</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
+        <span class="nv">$orderId</span><span class="p">,</span>
+        <span class="nv">$capture</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
+        <span class="k">array</span> <span class="nv">$items</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="nv">$notify</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
+        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
+        <span class="nx">InvoiceCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
+        <span class="nx">InvoiceCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$connection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">&#39;sales&#39;</span><span class="p">);</span>
+        <span class="nv">$order</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$orderId</span><span class="p">);</span>
+        <span class="nv">$invoice</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceDocumentFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
+            <span class="nv">$order</span><span class="p">,</span>
+            <span class="nv">$items</span><span class="p">,</span>
+            <span class="nv">$comment</span><span class="p">,</span>
+            <span class="p">(</span><span class="nv">$appendComment</span> <span class="o">&amp;&amp;</span> <span class="nv">$notify</span><span class="p">),</span>
+            <span class="nv">$arguments</span>
+        <span class="p">);</span>
+        <span class="nv">$errorMessages</span> <span class="o">=</span> <span class="nb">array_merge</span><span class="p">(</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceValidator</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+                <span class="nv">$invoice</span><span class="p">,</span>
+                <span class="p">[</span><span class="nx">InvoiceQuantityValidator</span><span class="o">::</span><span class="na">class</span><span class="p">]</span>
+            <span class="p">),</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderValidator</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+                <span class="nv">$order</span><span class="p">,</span>
+                <span class="p">[</span><span class="nx">CanInvoice</span><span class="o">::</span><span class="na">class</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$errorMessages</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Sales\Exception\DocumentValidationException</span><span class="p">(</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s2">&quot;Invoice Document Validation Error(s):</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$errorMessages</span><span class="p">))</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">beginTransaction</span><span class="p">();</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="nv">$order</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">paymentAdapter</span><span class="o">-&gt;</span><span class="na">pay</span><span class="p">(</span><span class="nv">$order</span><span class="p">,</span> <span class="nv">$invoice</span><span class="p">,</span> <span class="nv">$capture</span><span class="p">);</span>
+            <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">setState</span><span class="p">(</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderStateResolver</span><span class="o">-&gt;</span><span class="na">getStateForOrder</span><span class="p">(</span><span class="nv">$order</span><span class="p">,</span> <span class="p">[</span><span class="nx">OrderStateResolverInterface</span><span class="o">::</span><span class="na">IN_PROGRESS</span><span class="p">])</span>
+            <span class="p">);</span>
+            <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">setStatus</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getStateDefaultStatus</span><span class="p">(</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">getState</span><span class="p">()));</span>
+            <span class="nv">$invoice</span><span class="o">-&gt;</span><span class="na">setState</span><span class="p">(</span><span class="nx">\Magento\Sales\Model\Order\Invoice</span><span class="o">::</span><span class="na">STATE_PAID</span><span class="p">);</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceRepository</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$invoice</span><span class="p">);</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderRepository</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$order</span><span class="p">);</span>
+            <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">commit</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="nv">$e</span><span class="p">);</span>
+            <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">rollBack</span><span class="p">();</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Sales\Exception\CouldNotInvoiceException</span><span class="p">(</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Could not save an invoice, see error log for details&#39;</span><span class="p">)</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$notify</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$appendComment</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notifierInterface</span><span class="o">-&gt;</span><span class="na">notify</span><span class="p">(</span><span class="nv">$order</span><span class="p">,</span> <span class="nv">$invoice</span><span class="p">,</span> <span class="nv">$comment</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$invoice</span><span class="o">-&gt;</span><span class="na">getEntityId</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h3 id="extension-points">Extension points</h3>
+
+<p>The service contains extension points marked with <code>@api</code> annotation. APIs can be used by extension developers to extend service logic.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Extension point</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>\Magento\Sales\Api\OrderRepositoryInterface</code></td>
+      <td>An order repository responsible for an Order entity persistence.</td>
+    </tr>
+    <tr>
+      <td><code>\Magento\Sales\Model\Order\InvoiceRepository</code></td>
+      <td>An invoice repository responsible for an Invoice creation.</td>
+    </tr>
+    <tr>
+      <td><code>\Magento\Sales\Model\Order\InvoiceDocumentFactory</code></td>
+      <td>A factory responsible for the new invoice object creation. The factory uses the <code>arguments</code> parameter to process extension attributes of a new invoice document.</td>
+    </tr>
+    <tr>
+      <td><code>\Magento\Sales\Model\Order\OrderValidatorInterface</code></td>
+      <td>An interface responsible for the order document validation with selected rules.</td>
+    </tr>
+    <tr>
+      <td><code>\Magento\Sales\Model\Order\PaymentAdapterInterface</code></td>
+      <td>An interface responsible for a payment according to a selected option (<code>online</code>/<code>offline</code>). It returns an order with modified state containing payment specific information.</td>
+    </tr>
+    <tr>
+      <td><code>\Magento\Sales\Model\Order\OrderStateResolverInterface</code></td>
+      <td>An interface which provides a correct state of an order according to performed operation.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
