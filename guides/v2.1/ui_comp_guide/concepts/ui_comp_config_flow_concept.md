@@ -2,8 +2,8 @@
 layout: default
 group: UI_Components_guide
 subgroup: concepts
-title: Configuration Flow of UI Components
-menu_title: Configuration Flow of UI Components
+title: Configuration flow of UI components
+menu_title: Configuration flow of UI components
 menu_order: 2
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_config_flow_concept.md

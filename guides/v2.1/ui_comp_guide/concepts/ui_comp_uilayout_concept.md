@@ -2,8 +2,8 @@
 layout: default
 group: UI_Components_guide
 subgroup: concepts
-title: About UI Component initialization by layout.js
-menu_title: About UI Component initialization by layout.js
+title: About UI сomponent initialization by layout.js
+menu_title: About UI сomponent initialization by layout.js
 menu_order: 6
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
