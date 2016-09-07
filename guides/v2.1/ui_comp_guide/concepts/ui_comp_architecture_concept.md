@@ -2,8 +2,8 @@
 layout: default
 group: UI_Components_guide
 subgroup: concepts
-title: Architecture Structure of UI Components
-menu_title: Architecture Structure of UI Components
+title: Architecture structure of UI components
+menu_title: Architecture structure of UI components
 menu_order: 1
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_architecture_concept.md
