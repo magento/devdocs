@@ -44,6 +44,55 @@ Deprecated method | Use instead | Subsequent calls
 `getResponseQueueName($topicName);` | Magento\Framework\MessageQueue\Rpc\ResponseQueueNameBuilder::getQueueName($topicName) | -
 
 
+## Changes in Repositories
+
+Logic of next repositories was changed. Before all fields, added to Search Criteria were merged to request by AND condition, regardless of in one or different filter groups they were. Now behaviour for all repositories is unified. See link for more information. Repositories are listed below:
+
+### CE Repositories
+
+The following repositories where changed in Magento Community Edition:
+
+- `\Magento\Catalog\Api\AttributeSetRepositoryInterface `
+- `\Magento\Catalog\Api\CategoryAttributeRepositoryInterface`
+- `\Magento\Catalog\Api\ProductAttributeGroupRepositoryInterface`
+- `\Magento\Catalog\Api\ProductAttributeRepositoryInterface`
+- `\Magento\Cms\Api\BlockRepositoryInterface`
+- `\Magento\Cms\Api\PageRepositoryInterface`
+- `\Magento\Eav\Api\AttributeGroupRepositoryInterface`
+- `\Magento\Eav\Api\AttributeRepositoryInterface`
+- `\Magento\Eav\Api\AttributeSetRepositoryInterface`
+- `\Magento\Sales\Api\CreditmemoCommentRepositoryInterface`
+- `\Magento\Sales\Api\CreditmemoItemRepositoryInterface`
+- `\Magento\Sales\Api\CreditmemoRepositoryInterface`
+- `\Magento\Sales\Api\InvoiceCommentRepositoryInterface`
+- `\Magento\Sales\Api\InvoiceItemRepositoryInterface`
+- `\Magento\Sales\Api\InvoiceRepositoryInterface`
+- `\Magento\Sales\Api\OrderAddressRepositoryInterface`
+- `\Magento\Sales\Api\OrderItemRepositoryInterface`
+- `\Magento\Sales\Api\OrderPaymentRepositoryInterface`
+- `\Magento\Sales\Api\OrderStatusHistoryRepositoryInterface`
+- `\Magento\Sales\Api\ShipmentCommentRepositoryInterface`
+- `\Magento\Sales\Api\ShipmentItemRepositoryInterface`
+- `\Magento\Sales\Api\ShipmentRepositoryInterface`
+- `\Magento\Sales\Api\ShipmentTrackRepositoryInterface`
+- `\Magento\Sales\Api\TransactionRepositoryInterface`
+- `\Magento\Ui\Api\BookmarkRepositoryInterface`
+- `\Magento\Vault\Api\PaymentTokenRepositoryInterface`
+
+### EE Repositories
+
+The following repositories where changed in Magento Enterprise Edition:
+
+- `\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface `
+- `\Magento\GiftWrapping\Api\WrappingRepositoryInterface` 
+- `\Magento\Rma\Api\CommentRepositoryInterface `
+- `\Magento\Rma\Model\RmaRepository` 
+- `\Magento\Rma\Model\Service\RmaManagement `
+- `\Magento\Rma\Model\Rma\Status\HistoryRepository` 
+- `\Magento\Rma\Api\RmaRepositoryInterface `
+- `\Magento\Staging\Api\UpdateRepositoryInterface `
+- `\Magento\VersionsCms\Api\HierarchyNodeRepositoryInterface`
+
 
 ### Changes in UI
 
