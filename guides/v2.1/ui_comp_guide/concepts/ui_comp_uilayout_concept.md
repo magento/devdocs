@@ -4,7 +4,7 @@ group: UI_Components_guide
 subgroup: concepts
 title: About UI сomponent initialization by layout.js
 menu_title: About UI сomponent initialization by layout.js
-menu_order: 6
+menu_order: 13
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 ---

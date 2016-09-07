@@ -4,7 +4,7 @@ group: UI_Components_guide
 subgroup: concepts
 title: Architecture structure of UI components
 menu_title: Architecture structure of UI components
-menu_order: 1
+menu_order: 2
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_architecture_concept.md
 ---
@@ -22,7 +22,7 @@ UI components are configured using primarily the following:
 
 1. `declaration.xml` file: the structure with nodes, nested nodes, options and so on.
 2. UI component XML declaration (the instance).
-3. Backend/PHP modifiers.
+3. [Backend/PHP modifiers]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.md).
 4. Configuration inside the JavaScript classes.
 
 ## Related reading

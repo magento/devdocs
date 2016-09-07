@@ -4,7 +4,7 @@ group: UI_Components_guide
 subgroup: concepts
 title: Configuration flow of UI components
 menu_title: Configuration flow of UI components
-menu_order: 2
+menu_order: 4
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_config_flow_concept.md
 ---
@@ -27,7 +27,7 @@ The Magento JavaScript application bounds these instances to the corresponding `
 
 This section provides more detailed steps about the configuration flow.
 
-Lets consider an example with the top-level UI Component, `form`.
+Lets consider an example with the top-level UI component, `form`.
 
 Lets imagine we have the following file structure in our module <My_Module>:
 
