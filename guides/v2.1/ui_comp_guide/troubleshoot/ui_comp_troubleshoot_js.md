@@ -1,0 +1,1 @@
+../../../v2.0/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.md
