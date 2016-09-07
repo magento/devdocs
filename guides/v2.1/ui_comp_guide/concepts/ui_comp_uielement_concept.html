@@ -355,14 +355,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">About XML сonfiguration of UI сomponents</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_list_concept.html">A list of the existing UI components</a></li>
 
 									
@@ -371,7 +363,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">About UI сomponent initialization by layout.js</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">About XML сonfiguration of UI сomponents</a></li>
 
 									
 
@@ -387,6 +379,14 @@
 
 									
 
+									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">About the uiCollection class</a></li>
 
 									
@@ -395,7 +395,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">About UI сomponent initialization by layout.js</a></li>
 
 									
 
@@ -534,7 +534,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 5 September 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 7 September 2016 (PDT)</i></p>
 		<h2 class="no_toc" id="about-the-uielement-class">About the uiElement class</h2>
 
 <ul id="markdown-toc">
@@ -548,10 +548,9 @@
 
 <h2 id="commonly-used-uielement-methods">Commonly used uiElement methods</h2>
 
+<p>The <code>initLinks()</code> method implements component communication by using the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code>links.js</code></a>. The <code>initLinks()</code> method creates an interface to set it.</p>
+
 <ul>
-  <li>
-    <p>The <code>initLinks()</code> method implements component communication by using the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code>links.js</code></a>. The <code>initLinks()</code> method creates an interface to set it.</p>
-  </li>
   <li>The <code>initObservable()</code> method allows you to declare observable variables within the same instance.</li>
   <li>As an example:</li>
 </ul>

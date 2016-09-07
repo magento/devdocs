@@ -355,14 +355,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">About XML сonfiguration of UI сomponents</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_list_concept.html">A list of the existing UI components</a></li>
 
 									
@@ -371,7 +363,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">About UI сomponent initialization by layout.js</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">About XML сonfiguration of UI сomponents</a></li>
 
 									
 
@@ -387,6 +379,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">About the uiCollection class</a></li>
 
 									
@@ -395,7 +395,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">About UI сomponent initialization by layout.js</a></li>
 
 									
 
@@ -534,38 +534,44 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 2 September 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 7 September 2016 (PDT)</i></p>
 		<h2 class="no_toc" id="about-the-uicollection-class">About the uiCollection class</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#what-is-the-uicollection" id="markdown-toc-what-is-the-uicollection">What is the uiCollection</a></li>
-  <li><a href="#commonly-used-uicollection-methods" id="markdown-toc-commonly-used-uicollection-methods">Commonly used uiCollection methods</a>    <ul>
-      <li><a href="#commonly-used-uicollection-properties" id="markdown-toc-commonly-used-uicollection-properties">Commonly used uiCollection properties</a></li>
-    </ul>
+  <li><a href="#what-is-uicollection" id="markdown-toc-what-is-uicollection">What is <code>uiCollection</code></a></li>
+  <li><a href="#commonly-used-uicollection-methods" id="markdown-toc-commonly-used-uicollection-methods">Commonly used <code>uiCollection</code> methods</a></li>
+  <li><a href="#commonly-used-uicollection-properties" id="markdown-toc-commonly-used-uicollection-properties">Commonly used <code>uiCollection</code> properties</a></li>
+</ul>
+
+<h2 id="what-is-uicollection">What is <code>uiCollection</code></h2>
+
+<p>The <code>uiCollection</code> library class should be used as a base class by any components that contains a collection of child UI components. The path in the Magneto code base is <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/collection.js</code>. <code>uiCollection</code> inherits from the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.md">uiElement class</a>.</p>
+
+<h2 id="commonly-used-uicollection-methods">Commonly used <code>uiCollection</code> methods</h2>
+
+<p>The <code>uiCollection</code> class implements the following methods:</p>
+
+<ul>
+  <li>
+    <p>The <code>initElement()</code> method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The <code>initElement()</code> method gets the child UI component instance as a parameter.</p>
+
+    <p>Example:</p>
   </li>
 </ul>
 
-<h2 id="what-is-the-uicollection">What is the uiCollection</h2>
-
-<p>The uiCollection class inherits from the uiElement class. This class’ file path is <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/collection.js</code>. The uiCollection library class should be used as a base class by any components that contain a collection of child UI components</p>
-
-<h2 id="commonly-used-uicollection-methods">Commonly used uiCollection methods</h2>
-
-<p>The uiCollection class implements the following methods:</p>
-
-<ul>
-  <li>The <code>initElement()</code> method allows you to add custom functionality to the current UI component, or to a child UI component when the child UI component initializes. The <code>initElement()</code> method gets the child UI component instance as a parameter.
-Example:</li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="nx">initElement</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">instance</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">instance</span><span class="p">.</span><span class="o">%</span><span class="nx">customProperty</span><span class="o">%</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="nx">initElement</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">childInstance</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">childInstance</span><span class="p">.</span><span class="o">%</span><span class="nx">customProperty</span><span class="o">%</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="o">%</span><span class="nx">currentComponentProperty</span><span class="o">%</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
   <span class="p">}</span>
   </code></pre></figure>
 
 <ul>
-  <li>
-    <p>The <code>destroy()</code> method is used to remove a child collection and all its dependencies.</p>
+  <li>The <code>destroy()</code> method removes the following for the child components and itself:
+    <ul>
+      <li>link to the component in <code>uiRegistry</code></li>
+      <li>link to the component in the parent component</li>
+      <li>event listeners</li>
+    </ul>
 
     <p>Example:</p>
   </li>
@@ -575,21 +581,25 @@ Example:</li>
 
 <ul>
   <li>
-    <p>The <code>getChild()</code> method returns an element from child collection.</p>
+    <p>The <code>getChild()</code> method returns an element from the collection of child UI components.</p>
 
     <p>Example:</p>
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">    <span class="k">this</span><span class="p">.</span><span class="nx">getChild</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">    <span class="k">this</span><span class="p">.</span><span class="nx">getChild</span><span class="p">(</span><span class="nx">childIndex</span><span class="p">)</span></code></pre></figure>
 
-<p>where <code>index</code> is child element index.</p>
+<p>where <code>childIndex</code> is the value of the child element’s <code>index</code> property.</p>
 
-<h3 id="commonly-used-uicollection-properties">Commonly used uiCollection properties</h3>
+<h2 id="commonly-used-uicollection-properties">Commonly used <code>uiCollection</code> properties</h2>
 
-<p><code>elems</code> is the observable property that contains the child UI components collection.</p>
+<ul>
+  <li>
+    <p><code>elems</code> is the observable property that contains the collection of child UI components.</p>
 
-<p>As an example:</p>
+    <p>Example:</p>
+  </li>
+</ul>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">elems</span><span class="p">());</span>
 
@@ -600,6 +610,9 @@ Example:</li>
 <span class="c1">//   %uiComponentInstance 4 %</span>
 <span class="c1">// ]</span></code></pre></figure>
 
+<ul>
+  <li><code>childDefaults</code> can be used to set the children defaults: properties from <code>childDefaults</code> are set into child elements’ <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties"><code>defaults</code> property</a>.</li>
+</ul>
 
 
 		</div>
