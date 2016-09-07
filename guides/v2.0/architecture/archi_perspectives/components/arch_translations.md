@@ -7,7 +7,7 @@ menu_title: Language packages
 menu_order: 9
 version: 2.0
 github_link: architecture/components/arch_translations.md
-redirect_from: /guides/v1.0/architecture/arch_translations.html
+redirect_from: /guides/v1.0/architecture/components/arch_translations.html
 ---
 
 <h2 id="m2arch-translations-overview">Language packages and translation</h2>

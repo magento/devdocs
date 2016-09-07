@@ -54,7 +54,7 @@ symfony/stopwatch || MIT|[Source](https://github.com/symfony/stopwatch)|[License
 symfony/yaml || MIT|[Source](https://github.com/symfony/yaml)|[License](https://github.com/symfony/yaml/blob/master/LICENSE)
 tedivm/jshrink || BSD-3-Clause|[Source](https://github.com/tedious/Jshrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
 tubalmartin/cssmin || BSD-3-Clause|[Source](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port)|
-Zend Framework||BSD-3-Clause|[Source](http://framework.zend.com/)|[License](http://framework.zend.com/license/new-bsd)
+Zend Framework||BSD-3-Clause|[Source](http://framework.zend.com/)|[License](https://framework.zend.com/license)
 Cm ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
 elasticsearch/elasticsearch || Apache-2.0|[Source](https://github.com/elastic/elasticsearch-php)|[License](https://github.com/elastic/elasticsearch-php/blob/master/LICENSE)
 guzzlehttp/ringphp || MIT|[Source](https://github.com/guzzle/RingPHP)|[License](https://github.com/guzzle/RingPHP/blob/master/LICENSE)

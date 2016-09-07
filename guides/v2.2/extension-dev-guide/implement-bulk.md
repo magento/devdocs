@@ -35,8 +35,8 @@ The following code sample shows how these duties can be completed.
  */
 
 use Magento\Framework\Bulk\BulkManagementInterface;
-use Magento\BulkOperations\Api\Data\OperationInterface;
-use Magento\BulkOperations\Api\Data\OperationInterfaceFactory;
+use Magento\AsynchronousOperations\Api\Data\OperationInterface;
+use Magento\AsynchronousOperations\Api\Data\OperationInterfaceFactory;
 use Magento\Framework\DataObject\IdentityGeneratorInterface;
 use Magento\Authorization\Model\UserContextInterface;
 use Magento\Framework\UrlInterface;
@@ -171,8 +171,8 @@ A consumer class receives messages from the message queue and changes the status
 namespace Magento\SharedCatalog\Model\ResourceModel\ProductItem\Price;
 
 use Magento\Framework\Bulk\BulkManagementInterface;
-use Magento\BulkOperations\Api\Data\OperationInterface;
-use Magento\BulkOperations\Api\Data\OperationInterfaceFactory;
+use Magento\AsynchronousOperations\Api\Data\OperationInterface;
+use Magento\AsynchronousOperations\Api\Data\OperationInterfaceFactory;
 use Magento\Framework\DB\Adapter\ConnectionException;
 use Magento\Framework\DB\Adapter\DeadlockException;
 use Magento\Framework\DB\Adapter\LockWaitException;
@@ -217,10 +217,10 @@ class Consumer
     /**
      * Processing operation for update price
      *
-     * @param \Magento\BulkOperations\Api\Data\OperationInterface $operation
+     * @param \Magento\AsynchronousOperations\Api\Data\OperationInterface $operation
      * @return void
      */
-    public function processOperation(\Magento\BulkOperations\Api\Data\OperationInterface $operation)
+    public function processOperation(\Magento\AsynchronousOperations\Api\Data\OperationInterface $operation)
     {
         $status = OperationInterface::STATUS_TYPE_COMPLETE;
         $errorCode = null;
@@ -299,7 +299,7 @@ The `communication.xml` file defines aspects of the message queue system that ap
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
-    <topic name="<your_topic_name>" request="Magento\BulkOperations\Api\Data\OperationInterface">
+    <topic name="<your_topic_name>" request="Magento\AsynchronousOperations\Api\Data\OperationInterface">
         <handler name="<your_handler_name>" type="<Consumer_Class>" method="<consumer_method>" />
     </topic>
 </config>
