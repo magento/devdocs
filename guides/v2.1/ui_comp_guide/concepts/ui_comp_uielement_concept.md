@@ -5,7 +5,7 @@ subgroup: concepts
 title: About the uiElement class
 menu_title: About the uiElement class
 menu_node:
-menu_order: 7
+menu_order: 11
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uielement_concept.md
 ---
@@ -22,7 +22,7 @@ The uiElement class is a direct successor of the [uiClass library]({{page.baseur
 
 ## Commonly used uiElement methods
 
-- The `initLinks()` method implements component communication by using the [`links.js`]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js). The `initLinks()` method creates an interface to set it. 
+The `initLinks()` method implements component communication by using the [`links.js`]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js). The `initLinks()` method creates an interface to set it. 
 
 - The `initObservable()` method allows you to declare observable variables within the same instance. 
 - 
