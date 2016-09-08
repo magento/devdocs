@@ -10,7 +10,11 @@ version: 2.0
 github_link: soap/bk-soap.md
 redirect_from: /guides/v1.0/soap/bk-soap.html
 ---
-Additional information about SOAP APIs will be published in a future sprint.
+
+### Contents
+
+* TOC
+{:toc}
 
 ## Soap WSDL Endpoint Format
 
@@ -27,9 +31,6 @@ Additional information about SOAP APIs will be published in a future sprint.
 </div>
 
 ## List of Service Names per Module
-
-* TOC
-{:toc}
 
 The entire list can be retrieved here: `http://<magento_host>/soap/default?wsdl_list=1`
 
