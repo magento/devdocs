@@ -25,6 +25,10 @@ Additional information about SOAP APIs will be published in a future sprint.
 </div>
 
 ## List of Service Names per Module
+
+* TOC
+{:toc}
+
 The entire list can be retrieved here: `http://<magento_host>/soap/default?wsdl_list=1`
 
 ### Backend
