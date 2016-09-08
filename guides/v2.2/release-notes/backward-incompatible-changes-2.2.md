@@ -44,13 +44,18 @@ Deprecated method | Use instead | Subsequent calls
 `getResponseQueueName($topicName);` | Magento\Framework\MessageQueue\Rpc\ResponseQueueNameBuilder::getQueueName($topicName) | -
 
 
-## Changes in Repositories
+### Changes in repositories
 
-Logic of next repositories was changed. Before all fields, added to Search Criteria were merged to request by AND condition, regardless of in one or different filter groups they were. Now behaviour for all repositories is unified. See link for more information. Repositories are listed below:
+In Magento 2.2 the behavior of repositories regarding the Filters added to Search Criteria  was unified:
 
-### CE Repositories
+- The boolean OR statement joins Filters inside a single Filter Group.
+- The boolean AND statement joins Filter Groups inside a Search Criteria.
 
-The following repositories where changed in Magento Community Edition:
+ In the scope of this work, the following repositories were affected.
+
+### Affected CE repositories
+
+The following repositories were changed in Magento Community Edition:
 
 - `\Magento\Catalog\Api\AttributeSetRepositoryInterface `
 - `\Magento\Catalog\Api\CategoryAttributeRepositoryInterface`
@@ -79,9 +84,9 @@ The following repositories where changed in Magento Community Edition:
 - `\Magento\Ui\Api\BookmarkRepositoryInterface`
 - `\Magento\Vault\Api\PaymentTokenRepositoryInterface`
 
-### EE Repositories
+### Affected EE repositories
 
-The following repositories where changed in Magento Enterprise Edition:
+The following repositories were changed in Magento Enterprise Edition:
 
 - `\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface `
 - `\Magento\GiftWrapping\Api\WrappingRepositoryInterface` 
@@ -93,6 +98,7 @@ The following repositories where changed in Magento Enterprise Edition:
 - `\Magento\Staging\Api\UpdateRepositoryInterface `
 - `\Magento\VersionsCms\Api\HierarchyNodeRepositoryInterface`
 
+For details about repositories see the [Searching with repositories]({{page.baseurl}}extension-dev-guide/searching-with-repositories.md) topic.
 
 ### Changes in UI
 
