@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Creating a Magento admin page</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/ext-best-practices/extension-coding/example-module-adminpage.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+        <a class="search-trigger search-icon" href="/guides/v2.1/search.html"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+               <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+               
+                   <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+               
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="/search.html">
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Creating a Magento admin page</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/extension-coding/example-module-adminpage.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+        
+
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Extension Best Practices</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q "><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Introduction</a></li>
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/ext-best-practices/admin/admin-best-practices.html">Admin</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ext-best-practices/admin/placement-and-design.html">Admin Panel Placement and Design</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ext-best-practices/admin/ext-best-practices_admin_FAQ.html">Admin FAQ</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/ext-best-practices/extension-coding/coding-best-practices.html">Extension Coding</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ext-best-practices/extension-coding/common-programming-bp.html">Programming best practices</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ext-best-practices/extension-coding/working-with-arch-bp.html">Working with the Architecture</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ext-best-practices/extension-coding/security-performance-data-bp.html">Security, performance, and data handling</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ext-best-practices/extension-coding/observers-bp.html">Observers best practices</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ext-best-practices/extension-coding/coding-faq.html">Coding FAQ</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/ext-best-practices/extension-coding/example-module-adminpage.html">Creating a Magento admin page</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/ext-best-practices/storefront/storefront-best-practices.html">Storefront</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 19 August 2016 (PDT)</i></p>
+		<h2 class="no_toc" id="creating-a-magento-admin-page">Creating a Magento admin page</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#working-directory" id="markdown-toc-working-directory">Working directory</a></li>
+  <li><a href="#initial-boilerplate-files" id="markdown-toc-initial-boilerplate-files">Initial boilerplate files</a></li>
+  <li><a href="#routing-and-navigation" id="markdown-toc-routing-and-navigation">Routing and navigation</a></li>
+  <li><a href="#page-controller" id="markdown-toc-page-controller">Page controller</a></li>
+  <li><a href="#page-view" id="markdown-toc-page-view">Page view</a></li>
+  <li><a href="#full-module-directory-structure" id="markdown-toc-full-module-directory-structure">Full module directory structure</a></li>
+  <li><a href="#installing-the-module" id="markdown-toc-installing-the-module">Installing the module</a></li>
+</ul>
+
+<h3 id="overview">Overview</h3>
+
+<p>This tutorial gives instructions for the creation of a module that displays a simple page in the Magento admin.</p>
+
+<p>For the purposes of this tutorial MyCompany is the name of the company associated with a module named ExampleAdminNewPage.</p>
+
+<h3 id="working-directory">Working directory</h3>
+
+<p>Start by creating the working directory for all the module files.</p>
+
+<p>In your Magento development environment under the <code>app/code</code> directory, run the following command:</p>
+
+<pre><code>mkdir -p MyCompany/ExampleAdminNewPage
+</code></pre>
+
+<p>This command creates the <code>MyCompany</code> company directory and the <code>ExampleAdminNewPage</code> module directory. The latter will be the root directory for the module we will create.</p>
+
+<h3 id="initial-boilerplate-files">Initial boilerplate files</h3>
+
+<p>These initial boilerplate files are the bare essential files needed for any Magento module.</p>
+
+<h4 class="no_toc" id="composerjson"><code>composer.json</code></h4>
+<p>In the module’s root directory, create the file <code>composer.json</code>. This file gives composer the ability to install this module and its dependencies. 
+For more information see: <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html"><code>composer.json</code></a>.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">File content for composer.json </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json">    <span class="p">{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;mycompany/sample-module-minimal&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A module that creates a page in the Magento admin area&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;OSL-3.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;AFL-3.0&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;~5.6.0|7.0.2|7.0.4|~7.0.6&quot;</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;autoload&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;registration.php&quot;</span> <span class="p">],</span>
+        <span class="nt">&quot;psr-4&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;MyCompany\\ExampleAdminNewPage\\&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  </code></pre></figure>
+</div></div>
+
+<h4 class="no_toc" id="registrationphp"><code>registration.php</code></h4>
+<p>In the module’s root directory, create the file <code>registration.php</code>. This file registers the module <code>MyCompany_ExampleAdminNewPage</code> with Magento.</p>
+
+<p>For more information see: <a href="/guides/v2.1/extension-dev-guide/build/component-registration.html">registering your component</a>.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">File content for registration.php </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="o">&lt;?</span><span class="nx">php</span>
+    <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
+        <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span>
+        <span class="s1">&#39;MyCompany_ExampleAdminNewPage&#39;</span><span class="p">,</span>
+        <span class="nx">__DIR__</span>
+    <span class="p">);</span>
+  </code></pre></figure>
+</div></div>
+
+<h4 class="no_toc" id="etcmodulexml"><code>etc/module.xml</code></h4>
+<p>In the module’s root directory, create a new directory called <code>etc</code>. Under that directory, create the file <code>module.xml</code>. This file specifies the name and setup version of this module.</p>
+
+<p>For more information see: <a href="/guides/v2.1/extension-dev-guide/build/create_component.html">naming your component</a>.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">File content for module.xml </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+    <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Module/etc/module.xsd&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;1.0.0&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/module&gt;</span>
+    <span class="nt">&lt;/config&gt;</span>
+  </code></pre></figure>
+</div></div>
+
+<h3 id="routing-and-navigation">Routing and navigation</h3>
+
+<p>Before we can view the module’s page, we need a way to navigate to it. These files create a link to the page in the left navigation and tells Magento how to resolve requests for that page.</p>
+
+<p>For more information on this topic, see: <a href="/guides/v2.1/extension-dev-guide/routing.html">routing</a>.</p>
+
+<h4 class="no_toc" id="etcadminhtmlmenuxml"><code>etc/adminhtml/menu.xml</code></h4>
+<p>Under the created <code>etc</code> directory, create a new directory called <code>adminhtml</code>. Under that directory, create the file <code>menu.xml</code>. This XML file adds new menu items to the Magento admin.</p>
+
+<p>The <code>menu.xml</code> file provided below adds two items in the Content section of the left navigation:</p>
+
+<ol>
+  <li>A new separate section with the title <strong>Greetings</strong> under Content.</li>
+  <li>A link with the label <strong>Hello World</strong> that leads to a page request for <code>exampleadminnewpage/helloworld/index</code> underneath that new section.</li>
+</ol>
+
+<p><img src="/common/images/ext-best-practices/hello-world-menu-item.png" alt="Hello World menu item" width="322px" height="400px" /></p>
+
+<p>The following parts make up the generated page request link to the <strong>Hello World</strong> page:</p>
+
+<ul>
+  <li><code>exampleadminnewpage</code> - This is the <code>frontName</code>. Because its purpose is to help route requests to the correct module, we give it the same name as the module, but this is not required.</li>
+  <li><code>helloworld</code> - This specifies the name of the controller to use.</li>
+  <li><code>index</code> - In the XML file, since the action for the controller is not specified, Magento uses the default value <code>index</code>.</li>
+</ul>
+
+<div class="collapsible"><h4 class="collapsible-title">File content for menu.xml </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+    <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Backend:etc/menu.xsd&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;menu&gt;</span>
+          <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage::greetings&quot;</span> <span class="na">title=</span><span class="s">&quot;Greetings&quot;</span> <span class="na">translate=</span><span class="s">&quot;title&quot;</span> <span class="na">module=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage&quot;</span> <span class="na">parent=</span><span class="s">&quot;Magento_Backend::content&quot;</span> <span class="na">sortOrder=</span><span class="s">&quot;50&quot;</span> <span class="na">dependsOnModule=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage&quot;</span> <span class="na">resource=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage::greetings&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage::greetings_helloworld&quot;</span> <span class="na">title=</span><span class="s">&quot;Hello World&quot;</span> <span class="na">translate=</span><span class="s">&quot;title&quot;</span> <span class="na">module=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage&quot;</span> <span class="na">parent=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage::greetings&quot;</span> <span class="na">sortOrder=</span><span class="s">&quot;10&quot;</span> <span class="na">dependsOnModule=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage&quot;</span> <span class="na">action=</span><span class="s">&quot;exampleadminnewpage/helloworld&quot;</span> <span class="na">resource=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage::greetings&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/menu&gt;</span>
+    <span class="nt">&lt;/config&gt;</span>
+  </code></pre></figure>
+</div></div>
+
+<h4 class="no_toc" id="etcadminhtmlroutesxml"><code>etc/adminhtml/routes.xml</code></h4>
+<p>Under <code>etc/adminhtml</code> create the file <code>routes.xml</code>. The contents of this  XML file tells Magento to route requests that use the <code>frontName</code> <code>exampleadminnewpage</code> to this module.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">File content for routes.xml </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">  <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+  <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:App/etc/routes.xsd&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;router</span> <span class="na">id=</span><span class="s">&quot;admin&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;route</span> <span class="na">id=</span><span class="s">&quot;exampleadminnewpage&quot;</span> <span class="na">frontName=</span><span class="s">&quot;exampleadminnewpage&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/route&gt;</span>
+      <span class="nt">&lt;/router&gt;</span>
+  <span class="nt">&lt;/config&gt;</span>
+  </code></pre></figure>
+</div></div>
+
+<h3 id="page-controller">Page controller</h3>
+
+<p>Now that we have a link to the <strong>Hello World</strong> page, we need to create the file needed to handle that request.</p>
+
+<h4 class="no_toc" id="controlleradminhtmlhelloworldindexphp"><code>Controller/Adminhtml/HelloWorld/Index.php</code></h4>
+<p>In the module’s root directory, run the following command:</p>
+
+<pre><code>mkdir -p Controller/Adminhtml/HelloWorld
+</code></pre>
+
+<p>Inside <code>Controller/Adminhtml/HelloWorld</code> directory, create the file <code>Index.php</code>. This file is the class assigned to the default Index action for the <code>HelloWorld</code> controller. Since the admin area serves this page, the file belongs in the <code>Adminhtml</code> directory, and the class itself extends <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Backend/App/Action.php" target="_blank"><code>\Magento\Backend\App\Action</code></a>.</p>
+<div class="collapsible"><h4 class="collapsible-title">File content for Index.php </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">    </span><span class="cp">&lt;?php</span>
+      <span class="k">namespace</span> <span class="nx">MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld</span><span class="p">;</span>
+      
+      <span class="k">class</span> <span class="nc">Index</span> <span class="k">extends</span> <span class="nx">\Magento\Backend\App\Action</span>
+      <span class="p">{</span>
+        <span class="sd">/**</span>
+<span class="sd">        * @var \Magento\Framework\View\Result\PageFactory </span>
+<span class="sd">        */</span>
+        <span class="k">protected</span> <span class="nv">$resultPageFactory</span><span class="p">;</span>
+        
+        <span class="sd">/**</span>
+<span class="sd">         * Constructor</span>
+<span class="sd">         *</span>
+<span class="sd">         * @param \Magento\Backend\App\Action\Context $context</span>
+<span class="sd">         * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory</span>
+<span class="sd">         */</span> 
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+            <span class="nx">\Magento\Backend\App\Action\Context</span> <span class="nv">$context</span><span class="p">,</span>
+            <span class="nx">\Magento\Framework\View\Result\PageFactory</span> <span class="nv">$resultPageFactory</span>
+        <span class="p">)</span> <span class="p">{</span>
+             <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
+             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resultPageFactory</span> <span class="o">=</span> <span class="nv">$resultPageFactory</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="sd">/**</span>
+<span class="sd">         * Load the page defined in view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml</span>
+<span class="sd">         *</span>
+<span class="sd">         * @return \Magento\Framework\View\Result\Page</span>
+<span class="sd">         */</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+        <span class="p">{</span>
+             <span class="k">return</span>  <span class="nv">$resultPage</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resultPageFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">  </span></code></pre></figure>
+</div></div>
+
+<h3 id="page-view">Page view</h3>
+
+<p>Now that Magento knows how to handle requests for the <strong>Hello World</strong> page, we need view files that define the look of the page.</p>
+
+<p>Create the necessary directories for the files by running the following commands from the module’s root directory:</p>
+
+<pre><code>mkdir -pm view/adminhtml/layout
+mkdir -pm view/adminhtml/templates
+</code></pre>
+
+<p>These files belong in the <code>view/adminhtml</code> directory because the Magento admin area use these files during page generation.</p>
+
+<h4 class="no_toc" id="viewadminhtmllayoutexampleadminnewpagehelloworldindexxml"><code>view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml</code></h4>
+
+<p>This file defines the layout and structure of the index page for the HelloWorld controller. It sets the title to “Greetings” and instructs Magento to use the <code>helloworld.phtml</code> template as the content in a <code>Magento\Backend\Block\Template</code> block class.</p>
+
+<p>The name of this file uses the following pattern: <em>frontName</em>_<em>controller</em>_<em>action</em>.xml</p>
+
+<div class="collapsible"><h4 class="collapsible-title">File content for exampleadminnewpage_helloworld_index.xml </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;head&gt;</span>
+            <span class="nt">&lt;title&gt;</span>
+                Greetings
+            <span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Block\Template&quot;</span> <span class="na">template=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage::helloworld.phtml&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/referenceContainer&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+  </code></pre></figure>
+</div></div>
+
+<h4 class="no_toc" id="viewadminhtmltemplateshelloworldphtml"><code>view/adminhtml/templates/helloworld.phtml</code></h4>
+
+<p>This template file contains the actual page content for the <strong>Hello World</strong> page.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">File content for helloworld.phtml </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;p&gt;</span>Hello World!<span class="nt">&lt;/p&gt;</span>
+  </code></pre></figure>
+</div></div>
+
+<h3 id="full-module-directory-structure">Full module directory structure</h3>
+
+<p>The module is now complete. Your module’s directory structure under <code>app/code</code> should look like the following:</p>
+
+<pre>
+    MyCompany
+    `-- ExampleAdminNewPage
+        |
+        |-- Controller
+        |   |-- Adminhtml
+        |       |-- HelloWorld
+        |           `-- <a href="#controlleradminhtmlhelloworldindexphp">Index.php</a>
+        |-- etc
+        |   |-- adminhtml
+        |   |   |-- <a href="#etcadminhtmlmenuxml">menu.xml</a>
+        |   |   `-- <a href="#etcadminhtmlroutesxml">routes.xml</a>
+        |   `-- <a href="#etcmodulexml">module.xml</a>
+        |-- view
+        |   |-- adminhtml
+        |       |-- layout
+        |       |    `-- <a href="#viewadminhtmllayoutexampleadminnewpagehelloworldindexxml">exampleadminnewpage_helloworld_index.xml</a>
+        |       `-- templates
+        |           `-- <a href="#viewadminhtmltemplateshelloworldphtml">helloworld.phtml</a>
+        |-- <a href="#composerjson">composer.json</a>
+        `-- <a href="#registrationphp">registration.php</a>
+  </pre>
+<script>
+    //Javascript to make the code blocks open on anchor click
+    $(document).ready(function(){
+      var anchor = window.location.hash.substring(1);
+      if(anchor)
+      {
+        console.log(anchor);
+        $("#"+anchor).nextUntil("h4",".collapsible").children(".collapsible-title").click();
+      }
+
+      $('a[href^="#"]').click(function(){
+          var target = $(this).attr('href');
+          $(target).nextUntil("h4",".collapsible").children(".collapsible-title").click();
+      });
+    });
+  </script>
+
+<h3 id="installing-the-module">Installing the module</h3>
+
+<p>Now that the module is code-complete, run the following commands to install it:</p>
+
+<ol>
+  <li><code>bin/magento module:status</code> - This command shows a list of enabled/disabled modules.</li>
+  <li><code>bin/magento module:enable MyCompany_ExampleAdminNewPage</code> - If necessary, run this to enable the disabled module.</li>
+  <li><code>bin/magento setup:upgrade</code> - This command will properly register the module with Magento.</li>
+  <li><code>bin/magento setup:di:compile</code> - This command compiles classes used in dependency injections.</li>
+</ol>
+
+<p>Once the module installation has completed, the link to the <strong>Hello World</strong> page should appear in the <strong>Greetings</strong> section under <strong>Content</strong> in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.</p>
+
+<p><img src="/common/images/ext-best-practices/hello-world-page.png" alt="Hello World Page" /></p>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
