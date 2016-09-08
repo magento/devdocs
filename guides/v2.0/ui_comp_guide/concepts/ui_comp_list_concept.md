@@ -20,7 +20,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 ## Magento UI components
 
-### Form
+{% collapsible Form %}
 - **UI Component**: [Form](http://devdocs.magento.com/guides/v2.1/ui-components/ui-form.html)  
 - **Link to constructor**: [form.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
 - **Node name in `definition.xml`**: `<form>`
@@ -29,8 +29,10 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Description**: Form component allows performing CRUD operations on an entity.
 - **Has server-side template**: [default.xhtml]({{site.mage2100url}}app/code/Magento/Ui/view/base/ui_component/templates/form/default.xhtml)
 
-### Listing
+{%endcollapsible%}
 
+
+{% collapsible Listing %}
 - **UI Component**: [Listing](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html) 
 - **Link to constructor**: [listing.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)
 - **Node name in `definition.xml`**: `<listing>`
@@ -38,8 +40,11 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Top-level parent component**: - 
 - **Description**: Listing is a basic component responsible for rendering grids, lists, and tiles.
 - **Has server-side template**: [default.xhtml]({{site.mage2100url}}app/code/Magento/Ui/view/base/ui_component/templates/listing/default.xhtml)
+{%endcollapsible%}
 
-### Fieldset
+
+{% collapsible Fieldset %}
+
 - **UI Component**: Fieldset
 - **Link to constructor**: [fieldset.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/components/fieldset.js)
 - **Node name in `definition.xml`**: `<fieldset>`
@@ -47,6 +52,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Top-level parent component**: Form
 - **Description**: Container for visually grouped form elements (i.e. buttons, form fields.)
 - **Has server-side template**: No.
+{%endcollapsible%}
 
 ### Field
 - **UI Component**: Field
@@ -149,6 +155,40 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Description**: Provides data for a form.
 - **Has server-side template**: No.
 
+Paging
+Filters
+FilterSearch
+FilterSelect
+FilterRange
+FilterInput
+FilterDate
+ContainerMassAction
+Actions
+Action ActionDelete
+Column
+Columns
+ActionsColumn
+SelectionsColumn
+Component
+Container
+Fieldset
+Field
+Bookmark
+InsertForm
+InsertListing
+ExportButton
+ColumnsControls
+ListingToolbar
+DynamicRows
+HtmlContent
+Button
+DataSource
+
+
+
+
+{% collapsible title %}
+{% endcollapsible %}
 
 
 <div class="bs-callout bs-callout-info" id="info">
