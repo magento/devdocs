@@ -9,7 +9,7 @@ version: 2.0
 github_link: howdoi/checkout/checkout_carrier.md
 ---
 <h2>What's in this topic</h2>
-This topic describes how to add shipping address validations for a custom shipping carrier to the Magento checkout. This is a part of the bigger task of adding a custom shipping method to your Magento store.
+This topic describes how to add shipping address validations for a custom shipping carrier to the Magento checkout. This is an essential part of the bigger task of adding a custom shipping method to your Magento store.
 
 
 ## Overview
@@ -23,12 +23,17 @@ To add new shipping carrier validations to the Magento checkout, do the followin
 
 More details about each step follow.
 
+<div class="bs-callout bs-callout-info" id="info">
+<p>During checkout, when a customer fills the shipping address form, shipping carrier validations trigger the shipping rates request. That is why adding shipping carrier validations for your custom shipping method is mandatory.</p>
+</div>
+
+
 ## Create validation rules {#rules}
 Shipping carrier validation rules declare which fields of the shipping address are required for the corresponding shipping method to be available. The validation itself is performed by the [validator](#validator). 
  
 During checkout, if the shipping address fields declared in the rules are filled, the further validation of fields' values (for example, whether a carrier is available for the specified country) is carried on the server side.
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{page.baseurl}}extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customization in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{page.baseurl}}extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
 
 In your `<your_module_dir>/view/frontend/web/js/model` directory, create a `.js` file implementing the validation rules. 
 
@@ -57,6 +62,8 @@ define(
     }
 )
 {% endhighlight%}
+
+Triggering the shipping rates request correlates directly with field you specify in the validation rules: the request is triggered once all these fields are populated and pass the validation.
 
 ## Create validator {#validator}
 
@@ -97,7 +104,7 @@ You can use this sample for your validator, but you need to specify your validat
 
 ## Register validator and rules in the validators pool {#register}
 
-Your custom validator must be added to the pool of validators. To do this, in the `<your_module_dir>/view/frontend/web/js/view` directory create a new `<your-validation>.js` file with the following content:
+Your custom validator must be added to the pool of validators. To do this, in the `<your_module_dir>/view/frontend/web/js/view` directory create a new `<your-validation>.js` file with the following content (having replaced the `<your_validator>` and `<your_validation_rules>` with your values):
 
 
 {%highlight js%}
@@ -123,6 +130,7 @@ define(
     }
 );
 {%endhighlight%}
+
 
 ## Add the validation to the checkout layout {#layout}
 
