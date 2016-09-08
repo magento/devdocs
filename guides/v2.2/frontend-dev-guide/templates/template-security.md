@@ -87,10 +87,14 @@ If your text contains special characters, they must be encoded as HTML entities,
 **Case:** Strings inside JavaScript\\
 **Function:** In a JavaScript context, use the `escapeJs` function.
 
-In cases where the JavaScript code outputs content onto the page, use the `escapeUrl` and `escapeHtml` functions where appropriate.
+In cases where the JavaScript code outputs content onto the page, use the `escapeUrl` or the `escapeHtml` function where appropriate.
+
+For example, when a URL output string is inside a JavaScript context, use both `escapeJs` and `escapeUrl`. If you insert the output string from inside a JavaScript context into the DOM, use both `escapeJs` and `escapeHtml`. 
 
 {% highlight javascript %}
   var field<?php echo $block->escapeJs($block->getFieldNamePostfix()) ?> = window.document.getElementById('my-element');
+
+  var categoryUrl = '<?php echo $block->escapeJs($block->escapeUrl($block->getCategoryUrl())) ?>';
 
   // Escaping content that will be inserted into DOM
   var string = <?php echo $block->escapeJs($block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a'])) ?>
