@@ -854,10 +854,9 @@
 <p>A page object is a class that serves to interact with the Magento page under test.
 A page serves as container for <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">blocks</a>.</p>
 
-<p>In the functional tests, the Page Object Design Pattern is used. Test uses the block methods of the page object class to interact with application under test. The benefit of this approach is that the tests don’t need to be changed after changes in the UI.
-Only the code in the corresponding block must be changed.</p>
+<p>In the functional tests, Page Object Design Pattern is used. Test uses block methods of page object class to interact with application under test.</p>
 
-<p>This approach provides the following advantages:</p>
+<p>Benefit of this approach is that tests don’t need to be changed after changes in the UI. Only code in corresponding block must be changed. This approach provides the following advantages:</p>
 
 <ul>
   <li>Clean separation between test code and page specific code like locator.</li>
@@ -912,7 +911,7 @@ Only the code in the corresponding block must be changed.</p>
     <tr>
       <th><code>&lt;page&gt;</code> attribute</th>
       <th>Description</th>
-      <th>Example with explanaintion</th>
+      <th>Example with explanation</th>
     </tr>
   </thead>
   <tbody>
@@ -995,29 +994,29 @@ Only the code in the corresponding block must be changed.</p>
 
 <h2 id="mtf_page_types">Page types</h2>
 
-<p>Depending on the <code>area</code> and <code>mca</code> attributes page can be of one of the following types:</p>
+<p>Depending on <code>area</code> and <code>mca</code> attributes, page can be of one of the following types:</p>
 
 <ul>
-  <li>Admin page is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class</li>
-  <li>Storefront page is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a> class</li>
-  <li>External page is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a> class</li>
+  <li>Admin page is extended from <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class</li>
+  <li>Storefront page is extended from <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a> class</li>
+  <li>External page is extended from <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a> class</li>
 </ul>
 
 <h3 id="mtf_page_admin">Admin page</h3>
 
-<p>Admin page has <code>area="Adminhtml"</code> in the <code>&lt;page&gt;</code> of the page XML file. Generated page extends the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class. You will log in automatically to the Admin.</p>
+<p>Admin page has attribute <code>area="Adminhtml"</code> in <code>&lt;page&gt;</code> node of the page XML file. Generated page extends  <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class. You will log in automatically to the Admin.</p>
 
 <p>The page will be opened as a concatenation of <code>app_backend_url</code> from <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
 
 <h3 id="mtf_page_storefront">Storefront page</h3>
 
-<p>Storefront page is recognizable by <code>area</code> assigned any value except <code>Adminhtml</code>, <em>and</em> <code>mca</code> doesn’t have <code>http</code>. This type of page extends the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a> class.</p>
+<p>Storefront page is recognizable by <code>area</code> assigned any value except <code>Adminhtml</code>, <em>and</em> <code>mca</code> doesn’t have <code>http</code>. This type of page extends class <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a>.</p>
 
-<p>The page will be opened as concatenation of <code>app_frontend_url</code> from <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
+<p>Page will be opened as concatenation of <code>app_frontend_url</code> from <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
 
 <h3 id="mtf_page_extern">External page</h3>
 
-<p>External page has <code>area</code> assigned any value except <code>Adminhtml</code>, <em>and</em> <code>mca</code> containing <code>http</code>. The generated page extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a> class.</p>
+<p>External page has <code>area</code> assigned any value except <code>Adminhtml</code>, <em>and</em> <code>mca</code> containing <code>http</code>. Generated page extends class <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a>.</p>
 
 <p>The page will be opened using <a href="#mca">mca</a> link.</p>
 
@@ -1027,11 +1026,11 @@ Only the code in the corresponding block must be changed.</p>
 
 <p>Pages are merged when they have the same <code>name</code> attribute value.</p>
 
-<p>Pages are merged module by module in the order that modules in Magento are loaded. All new modules are loaded after related Magento modules (according to the dependencies), so that the pages from new modules are merged the last.</p>
+<p>Pages are merged module by module in the order that modules are loaded in Magento. All new modules are loaded after related Magento modules (according to the dependencies) so that the pages from new modules are merged the last.</p>
 
 <h3 id="add-block-another-module">Add blocks from different modules</h3>
 
-<p>To add blocks from different modules to the page, you can merge pages. Just follow the steps:</p>
+<p>To add blocks from different modules to the page, you can merge pages by following steps:</p>
 
 <p><strong>Step 1.</strong> <a href="#mtf_page_create">Create an XML page</a> in the corresponding module</p>
 
@@ -1212,9 +1211,9 @@ Only the code in the corresponding block must be changed.</p>
 
 <h3 id="override-blocks">Block overriding</h3>
 
-<p>Your module can influence the functionality of another module, that is defined in a corresponding block of that module. In this case you can override existing block by a block from your module.</p>
+<p>Your module can influence functionality of another module that is defined in a corresponding block of that module. In this case, you can override existing block by a block from your module.</p>
 
-<p>To override blocks follow:</p>
+<p>To override blocks, follow:</p>
 
 <p><strong>Step 1.</strong> <a href="#mtf_page_create">Create an XML page</a> in your new module with the name of page you want to merge.</p>
 
@@ -1234,10 +1233,10 @@ Only the code in the corresponding block must be changed.</p>
 
 <ul>
   <li>A Magento_NewModule changes the category creation behaviour of a Magento_Catalog module.</li>
-  <li>The <code>editForm</code> block from the <code>\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code> page must be changed according to the new functionality.</li>
+  <li><code>editForm</code> block from page <code>\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code> must be changed according to new functionality.</li>
 </ul>
 
-<p>Let’s see the <code>\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code> page:</p>
+<p>Let us see page <code>\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
@@ -1259,11 +1258,11 @@ Only the code in the corresponding block must be changed.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;editForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;#container&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
 
-<p>We shouldn’t change the <code>editForm</code> block in the Magento_Catalog module, because in case of disabling of a Magento_NewModule module the test will be failed. The best way in this case is to create a new block in a Magento_NewModule module that covers new functionality.</p>
+<p>We shouldn’t change the <code>editForm</code> block in the Magento_Catalog module because in case of disabling of a Magento_NewModule module, the test will fail. Best way in this case is to create a new block in a Magento_NewModule module that covers new functionality.</p>
 
 <p>Assume that we already created the new block <code>\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code>.</p>
 
-<p>To use the <code>editForm</code> block from the Magento_NewModule we must follow:</p>
+<p>To use the <code>editForm</code> block from the Magento_NewModule, we must follow:</p>
 
 <p><strong>Step 1.</strong> Create a <code>CatalogCategoryEdit.xml</code> page in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml</code> directory.</p>
 
@@ -1297,7 +1296,7 @@ Only the code in the corresponding block must be changed.</p>
 <pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
 
-<p>Now when you call <code>editForm</code> block from the <code>CatalogCategoryEdit</code> page, the <code>\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code> class will be used.</p>
+<p>Now when you call <code>editForm</code> block from the <code>CatalogCategoryEdit</code> page, class <code>\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code> will be used.</p>
 
 <!-- LINK DEFINITIONS -->
 
