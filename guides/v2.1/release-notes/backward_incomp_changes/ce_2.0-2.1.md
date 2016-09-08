@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: no-timestamp
 group: release-notes
 subgroup: 05_BC
 title: Magento CE Backward Incompatible Changes between 2.0 and 2.1 branches
