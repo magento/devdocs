@@ -53,7 +53,7 @@ In Magento 2.2 the behavior of repositories regarding the Filters added to Searc
 
  In the scope of this work, the following repositories were affected.
 
-### Affected CE repositories
+#### Affected CE repositories
 
 The following repositories were changed in Magento Community Edition:
 
@@ -84,7 +84,7 @@ The following repositories were changed in Magento Community Edition:
 - `\Magento\Ui\Api\BookmarkRepositoryInterface`
 - `\Magento\Vault\Api\PaymentTokenRepositoryInterface`
 
-### Affected EE repositories
+#### Affected EE repositories
 
 The following repositories were changed in Magento Enterprise Edition:
 
