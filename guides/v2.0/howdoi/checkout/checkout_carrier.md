@@ -63,7 +63,7 @@ define(
 )
 {% endhighlight%}
 
-Triggering the shipping rates request correlates directly with field you specify in the validation rules: the request is triggered once all these fields are populated and pass the validation.
+Triggering the shipping rates request correlates directly with the fields you specify in the validation rules: the request is triggered once all these fields are populated and pass the validation.
 
 ## Create validator {#validator}
 
