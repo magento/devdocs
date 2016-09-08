@@ -55,8 +55,6 @@ In Magento 2.2 the behavior of repositories regarding the Filters added to Searc
 
 #### Affected CE repositories
 
-The following repositories were changed in Magento Community Edition:
-
 - `\Magento\Catalog\Api\AttributeSetRepositoryInterface `
 - `\Magento\Catalog\Api\CategoryAttributeRepositoryInterface`
 - `\Magento\Catalog\Api\ProductAttributeGroupRepositoryInterface`
@@ -86,8 +84,6 @@ The following repositories were changed in Magento Community Edition:
 
 #### Affected EE repositories
 
-The following repositories were changed in Magento Enterprise Edition:
-
 - `\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface `
 - `\Magento\GiftWrapping\Api\WrappingRepositoryInterface` 
 - `\Magento\Rma\Api\CommentRepositoryInterface `
@@ -98,7 +94,7 @@ The following repositories were changed in Magento Enterprise Edition:
 - `\Magento\Staging\Api\UpdateRepositoryInterface `
 - `\Magento\VersionsCms\Api\HierarchyNodeRepositoryInterface`
 
-For details about repositories see the [Searching with repositories]({{page.baseurl}}extension-dev-guide/searching-with-repositories.md) topic.
+For details about repositories see the [Searching with repositories]({{page.baseurl}}extension-dev-guide/searching-with-repositories.html) topic.
 
 ### Changes in UI
 
