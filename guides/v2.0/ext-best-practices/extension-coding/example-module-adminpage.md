@@ -87,7 +87,7 @@ For more information see: [registering your component]({{page.baseurl}}extension
 
 #### `etc/module.xml`
 {:.no_toc}
-In the module's root directory, create a new directory called `etc`. Under that directory, create the file `module.xml`. This file specifies the name and version of this module. 
+In the module's root directory, create a new directory called `etc`. Under that directory, create the file `module.xml`. This file specifies the name and setup version of this module. 
 
 For more information see: [naming your component]({{page.baseurl}}extension-dev-guide/build/create_component.html).
 
@@ -109,10 +109,12 @@ For more information on this topic, see: [routing]({{page.baseurl}}extension-dev
 
 #### `etc/adminhtml/menu.xml`
 {:.no_toc}
-Under the created `etc` directory, create a new directory called `adminhtml`. Under that directory, create the file `menu.xml`. This XML file creates two items in the Content section of the left navigation:
+Under the created `etc` directory, create a new directory called `adminhtml`. Under that directory, create the file `menu.xml`. This XML file adds new menu items to the Magento admin.
 
-1. A new separate section with the title **Greetings**.
-2. A link with the label **Hello World** that leads to a page request for `exampleadminnewpage/helloworld/index`.
+The `menu.xml` file provided below adds two items in the Content section of the left navigation:
+
+1. A new separate section with the title **Greetings** under Content.
+2. A link with the label **Hello World** that leads to a page request for `exampleadminnewpage/helloworld/index` underneath that new section.
 
 ![Hello World menu item]({{ site.baseurl }}common/images/ext-best-practices/hello-world-menu-item.png){:width="322px" height="400px"}
 
