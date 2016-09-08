@@ -12,6 +12,7 @@ redirect_from: /guides/v1.0/soap/bk-soap.html
 ---
 
 ### Contents
+{:.no_toc}
 
 * TOC
 {:toc}
