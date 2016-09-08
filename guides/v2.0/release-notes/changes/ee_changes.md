@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: no-timestamp
 group: release-notes
 subgroup: 05_BC
 title: Magento EE Backward Incompatible Changes
