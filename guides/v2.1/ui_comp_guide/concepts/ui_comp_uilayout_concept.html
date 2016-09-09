@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>About UI сomponent initialization by layout.js</title>
+	<title>About the uiLayout service module</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -90,7 +90,11 @@
             <a href="#">Developers</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               
                <li class="first leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+               
+			   
+			   
                <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
@@ -159,7 +163,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">About UI сomponent initialization by layout.js</h1>
+		<h1 class="page-heading">About the uiLayout service module</h1>
 		
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_uilayout_concept.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -312,6 +316,10 @@
 
 							
 
+								<li class="q "><a href="/guides/v2.1/ui_comp_guide/ui_comp_list_concept.html">A list of Magento UI components</a></li>
+
+							
+
 						
 
 					
@@ -355,14 +363,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_list_concept.html">A list of the existing UI components</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">About XML сonfiguration of UI сomponents</a></li>
 
 									
@@ -395,7 +395,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">About UI сomponent initialization by layout.js</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">About the uiLayout service module</a></li>
 
 									
 
@@ -534,8 +534,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 7 September 2016 (PDT)</i></p>
-		<h2 class="no_toc" id="about-ui-omponent-initialization-by-layoutjs">About UI сomponent initialization by layout.js</h2>
+			<p align="right"><i>Updated: 9 September 2016 (PDT)</i></p>
+		<h2 class="no_toc" id="about-the-uilayout-service-module">About the uiLayout service module</h2>
 
 <ul id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
@@ -545,37 +545,40 @@
 </ul>
 
 <h2 id="overview">Overview</h2>
-<p>The <code>layout.js</code> file <code>&lt;UI_Module_dir&gt;/view/base/web/js/core/renderer/layout.js</code> is used to initialize UI сomponents.</p>
+<p>The <code>uiLayout</code> service module is used to initialize UI components. The source file of the <code>uiLayout</code> module is <code>&lt;UI_Module_dir&gt;/view/base/web/js/core/renderer/layout.js</code>.</p>
 
-<p>In a <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">typical UI сomponent’s configuration flow</a>, the <code>layout.js</code> is called by <code>app.js</code> (<code>&lt;Ui_module_dir&gt;/view/base/web/js/core/app.js</code>) and receives the component’s configuration as a parameter.</p>
+<p>In a <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">typical UI component’s configuration flow</a>, the <code>uiLayout</code> module is called by <code>app.js</code> (<code>&lt;Ui_module_dir&gt;/view/base/web/js/core/app.js</code>) and receives the component’s configuration as a parameter.</p>
 
-<p>In the same way, anyone who wants to create a component dynamically (from other components or <code>.phtml</code> template) can call <code>app.js</code> or <code>layout.js</code> and pass as a parameter the configuration of the desired component.</p>
+<p>In the same way, anyone who wants to create a component dynamically (from other components or the <code>&lt;script/&gt;</code> tag) can call <code>app.js</code> or <code>layout.js</code> and pass as a parameter the configuration of the desired component.</p>
 
 <h2 id="implementation-details">Implementation details</h2>
 
-<p>In fact, the <code>layout.js</code> module returns <code>function run(nodes, parent, cached, merge) {..}</code></p>
+<p>The <code>uiLayout</code> module is a singleton. It returns <code>function run(nodes, parent, toCache, toMerge)</code>.</p>
 
-<p>The most commonly used are the first two parameters:</p>
+<p>Where arguments are the following:</p>
 
 <ul>
-  <li><code>{array} nodes</code> - configuration of the UI components that we want to initialize. The array is an array of configurations.</li>
-  <li><code>{string} parent</code> - parent component for that UI components</li>
+  <li><code>{array} nodes</code>: array of configurations of the UI components that we want to initialize</li>
+  <li><code>{string} parent</code>: parent component for that UI components</li>
+  <li><code>{boolean} toCache</code>: defines whether argument <code>nodes</code> will be cached. The key for cache will be constructed from <code>nodes</code> object keys</li>
+  <li><code>{boolean} toMerge</code>: defines whether the  argument <code>nodes</code> should be merged with the same one, that has been cached</li>
 </ul>
 
-<p>In the <code>layout.js</code>, each item expected in the nodes array can have the following properties:</p>
+<p>Arguments <code>toCache</code> and <code>toMerge</code> play together when a particular UI component instance need to be updated in runtime.</p>
+
+<p>Each item in <code>nodes</code> array is an object with the following properties:</p>
 
 <ul>
-  <li><code>{string} name</code> - index of the new UI component</li>
-  <li><code>{string} parent</code> - the name of the component’s parent element. If the parent component is not yet initialized, then <code>layout.js</code> waits for it to appear in UI Registry (<code>registry.js</code>).</li>
-</ul>
-
-<p>Note: The full name of the created UI component is formed by concatenating the <code>parent.name + '.' + name</code>, and then set as the <code>name</code> property. If a UI component with the same full name already exists, <code>layout.js</code> will skip its initialization.</p>
-
-<ul>
-  <li><code>{string} nodeTemplate</code> - template of the new Component (path to <code>.html</code> template)</li>
-  <li><code>{string} component</code> - constructor of the new Component (path to <code>.js</code> file)</li>
   <li>
-    <p><code>{object} config</code> - the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:</p>
+    <p><code>{string} name</code>:the component name (short name). Its value is set to the <code>index</code> property of the UI component instance</p>
+
+    <p>Note: The full name of the created UI component is formed by concatenating the <code>parent.name + '.' + name</code>, and then set as the <code>name</code> property. If an instance with the same full name already exists, <code>uiLayout</code> will skip its initialization.</p>
+  </li>
+  <li><code>{string} parent</code>: the <code>name</code> of the component’s parent element (full name). If the parent component is not yet initialized, then <code>uiLayout</code> waits for it to appear in the <code>uiRegistry</code>.</li>
+  <li><code>{string} template</code>: a path to <code>.html</code> template</li>
+  <li><code>{string} component</code>: path to the JavaScript class (function-constructor) of the new component</li>
+  <li>
+    <p><code>{object} config</code>: the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:</p>
 
     <p>var config1 = {name: ‘myComp1’, config: {myProp: ‘123123’}}</p>
   </li>
@@ -588,34 +591,45 @@
 
 <ul>
   <li><code>{array} children</code> - configuration of child elements, if there are any</li>
-  <li><code>{boolean} isTemplate</code> - if the value is set to <code>true</code>, the component configuration will be stored in <code>layout.js</code> private <code>templates</code> property, and the UI component will be not initialized. New components can be created dynamically based on this template (see the second example below).</li>
-  <li><code>{string} provider</code>- the name of the provider UI component. If absent, the parent’s provider will be used.</li>
+  <li><code>{boolean} isTemplate</code> - if the value is set to <code>true</code>, the component configuration will be stored by <code>uiLayout</code> in the private <code>templates</code> variable. Current UI component will be not initialized. New instances can be created dynamically based on this object</li>
+  <li><code>{string} nodeTemplate</code> - a full name of component from <code>templates</code> private object. Stored component will be used as template object for current one</li>
+  <li><code>{string} provider</code>- the full name of the DataSource UI component. If property is absent, then parent’s <code>provider</code> will be inherited</li>
 </ul>
 
 <h2 id="example-1">Example 1:</h2>
 
-<p>Let’s consider a case when we want to create a UI component dynamically from another UI component.</p>
+<p>Let’s consider a case when we want to create a UI component instance dynamically from another UI component.</p>
 
-<p>We can put the configuration of the desired UI component directly into <code>layout.js</code>. Below in an example of the component’s constructor,  which creates the child UI component on initialization:</p>
+<p>We can put the configuration of the desired UI component directly into <code>uiLayout</code>. Below in an example of the component’s constructor,  which creates the child UI component on initialization:</p>
+
+<p>Before example can be used special files should be created:</p>
+
+<ul>
+  <li><code>app/code/OrangeCo/Sample/view/&lt;area&gt;/web/js/my-new-component.js</code> - a JavaScript component</li>
+  <li><code>app/code/OrangeCo/Sample/view/&lt;area&gt;/web/templtes/my-new-component/main-template.html</code> - a component <code>.html</code> template, that will be used on client side</li>
+  <li><code>app/code/OrangeCo/Sample/view/&lt;area&gt;/web/js/sample.js</code></li>
+</ul>
+
+<p>The source of <code>app/code/OrangeCo/Sample/view/&lt;area&gt;/web/js/sample.js</code>:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">([</span>
     <span class="s1">&#39;uiLayout&#39;</span><span class="p">,</span>
     <span class="s1">&#39;uiCollection&#39;</span>
-<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">layout</span><span class="p">,</span> <span class="nx">uiCollection</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">layout</span><span class="p">,</span> <span class="nx">Collection</span><span class="p">)</span> <span class="p">{</span>
     <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
 
-    <span class="k">return</span> <span class="nx">uiCollection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="k">return</span> <span class="nx">Collection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
         <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">my_newComponentConfig</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;my_newComponent&#39;</span><span class="p">,</span>
-                <span class="nx">component</span><span class="o">:</span> <span class="s1">&#39;Magento_Ui/js/my_newComponent&#39;</span><span class="p">,</span>
-                <span class="nx">nodeTemplate</span><span class="o">:</span> <span class="s1">&#39;ui/my_newComponent/mainTemplate&#39;</span><span class="p">,</span>
+            <span class="nx">myNewComponentConfig</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;myNewComponent&#39;</span><span class="p">,</span>
+                <span class="nx">component</span><span class="o">:</span> <span class="s1">&#39;OrangeCo_Sample/js/my-new-component&#39;</span><span class="p">,</span>
+                <span class="nx">nodeTemplate</span><span class="o">:</span> <span class="s1">&#39;OrangeCo_Sample/my-new-component/main-template&#39;</span><span class="p">,</span>
                 <span class="nx">parent</span><span class="o">:</span> <span class="s1">&#39;${ $.name }&#39;</span>
             <span class="p">}</span>
         <span class="p">},</span>
         <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
-            <span class="nx">layout</span><span class="p">([</span><span class="k">this</span><span class="p">.</span><span class="nx">my_newComponentConfig</span><span class="p">]);</span>
+            <span class="nx">layout</span><span class="p">([</span><span class="k">this</span><span class="p">.</span><span class="nx">my_newComponentConfig</span><span class="p">]);</span> <span class="c1">// this call will create a child component myNewComponent</span>
 
             <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
         <span class="p">}</span>
@@ -623,33 +637,49 @@
 <span class="p">});</span></code></pre></figure>
 
 <h2 id="example-2">Example 2:</h2>
-<p>Anther option is to create  UI components from the Template component. For example, some component, lets call it <code>my_rowTemplate</code>, has already been configured with <code>isTemplate = true</code> property.</p>
 
-<p>Lets suppose that <code>rowTemplate</code>’s full name is <code>my_rowTemplateComponentName</code>.</p>
+<p>Anther option is to create  UI components from the “template” component. For example, lets call it <code>myRowTemplate</code>, has already been configured with <code>isTemplate: true</code> property.</p>
 
-<p>Then, inside of our imaginary parent UI component <code>my_listComponent</code> we can add row components using this template configuration:</p>
+<p>Lets have such configuration:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;my_table&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span><span class="nt">&gt;</span>OrangeCo_Sample/js/table<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/container&gt;</span></code></pre></figure>
+
+<p>And created files:
+* <code>app/code/OrangeCo/Sample/view/&lt;area&gt;/web/js/table.js</code></p>
+
+<p>Lets suppose that <code>myRowTemplate</code>’s full name is <code>myRowTemplateComponentName</code>.</p>
+
+<p>Then, inside of “my_table” UI component we can add rows using this template configuration. The source <code>OrangeCo_Sample/js/table.js</code>:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">([</span>
     <span class="s1">&#39;uiLayout&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;uiCollection&#39;</span>
-<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">layout</span><span class="p">,</span> <span class="nx">uiCollection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s1">&#39;uiCollection&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mageUtils&#39;</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">layout</span><span class="p">,</span> <span class="nx">Collection</span><span class="p">,</span> <span class="nx">utils</span><span class="p">)</span> <span class="p">{</span>
     <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
 
-    <span class="k">return</span> <span class="nx">uiCollection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="k">return</span> <span class="nx">Collection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
         <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">my_rowTemplateConfig</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">myRowTemplateConfig</span><span class="o">:</span> <span class="p">{</span>
                 <span class="nx">parent</span><span class="o">:</span> <span class="s1">&#39;${ $.name }&#39;</span><span class="p">,</span>
-                <span class="nx">nodeTemplate</span><span class="o">:</span> <span class="s1">&#39;my_rowTemplateComponentName&#39;</span>
+                <span class="nx">nodeTemplate</span><span class="o">:</span> <span class="s1">&#39;myRowTemplateComponentName&#39;</span>
             <span class="p">}</span>
         <span class="p">},</span>
 
         <span class="nx">addRow</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">rowIndex</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">my_rowTemplateConfig</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">my_rowTemplateConfig</span><span class="p">;</span>
-            <span class="nx">my_rowTemplateConfig</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">rowIndex</span><span class="p">;</span>
-            <span class="nx">layout</span><span class="p">([</span><span class="nx">utils</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span><span class="nx">my_rowTemplateConfig</span><span class="p">)]);</span>
+            <span class="kd">var</span> <span class="nx">objectFromTemplate</span><span class="p">,</span>
+                <span class="nx">myRowTemplateConfig</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">myRowTemplateConfig</span><span class="p">;</span>
+
+            <span class="nx">myRowTemplateConfig</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">rowIndex</span><span class="p">;</span>
+            <span class="nx">objectFromTemplate</span> <span class="o">=</span> <span class="nx">utils</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span><span class="nx">myRowTemplateConfig</span><span class="p">);</span>
+            <span class="nx">layout</span><span class="p">([</span><span class="nx">objectFromTemplate</span><span class="p">]);</span>
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
+
+<p>Now <code>addRow</code> method could be called from a <code>.html</code> template.</p>
 
 
 		</div>

@@ -90,7 +90,11 @@
             <a href="#">Developers</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               
                <li class="first leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+               
+			   
+			   
                <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
                <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
@@ -312,6 +316,10 @@
 
 							
 
+								<li class="q "><a href="/guides/v2.1/ui_comp_guide/ui_comp_list_concept.html">A list of Magento UI components</a></li>
+
+							
+
 						
 
 					
@@ -355,14 +363,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_list_concept.html">A list of the existing UI components</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">About XML сonfiguration of UI сomponents</a></li>
 
 									
@@ -395,7 +395,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">About UI сomponent initialization by layout.js</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">About the uiLayout service module</a></li>
 
 									
 
@@ -534,55 +534,65 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 7 September 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 9 September 2016 (PDT)</i></p>
 		<h2 class="no_toc" id="about-the-uielement-class">About the uiElement class</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#what-is-the-uielement-class" id="markdown-toc-what-is-the-uielement-class">What is the uiElement class</a></li>
-  <li><a href="#commonly-used-uielement-methods" id="markdown-toc-commonly-used-uielement-methods">Commonly used uiElement methods</a></li>
+  <li><a href="#what-is-the-uielement-class" id="markdown-toc-what-is-the-uielement-class">What is the <code>uiElement</code> class</a></li>
+  <li><a href="#commonly-used-uielement-methods" id="markdown-toc-commonly-used-uielement-methods">Commonly used <code>uiElement</code> methods</a></li>
 </ul>
 
-<h2 id="what-is-the-uielement-class">What is the uiElement class</h2>
+<h2 id="what-is-the-uielement-class">What is the <code>uiElement</code> class</h2>
 
-<p>The uiElement class is a direct successor of the <a href="ui_comp_guide/concepts/ui_comp_uiclass_concept.html">uiClass library</a>. The source file is stored in <code>UI_Module_dir&gt;/view/base/web/js/lib/core/element/element.js</code>. The uiElement class should be used as direct parent component in cases when we know that the current component will be the last link in component hierarchy chain.</p>
+<p>The <code>uiElement</code> class is a direct successor of the <a href="ui_comp_guide/concepts/ui_comp_uiclass_concept.html">uiClass library</a>. The source file is stored in <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/element/element.js</code>. 
+When creating a new component, use the <code>uiElement</code> class as a direct parent, if your component will be the last in the components hierarchy chain.</p>
 
-<h2 id="commonly-used-uielement-methods">Commonly used uiElement methods</h2>
-
-<p>The <code>initLinks()</code> method implements component communication by using the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code>links.js</code></a>. The <code>initLinks()</code> method creates an interface to set it.</p>
+<h2 id="commonly-used-uielement-methods">Commonly used <code>uiElement</code> methods</h2>
 
 <ul>
-  <li>The <code>initObservable()</code> method allows you to declare observable variables within the same instance.</li>
-  <li>As an example:</li>
+  <li>
+    <p>The <code>initLinks()</code> method implements component communication by using <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code>links.js</code></a>. The <code>initLinks()</code> method creates an interface to set it.</p>
+  </li>
+  <li>
+    <p>The <code>initObservable()</code> method allows you to declare observable variables within the same instance.</p>
+
+    <p>As an example:</p>
+  </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"> <span class="nx">initObservable</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">initObservable</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+
     <span class="k">this</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s1">&#39;childTemplate&#39;</span><span class="p">)</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">observe</span><span class="p">([</span>
         <span class="s1">&#39;%myVariable1%&#39;</span><span class="p">,</span>
         <span class="s1">&#39;%myVariable2%&#39;</span>
     <span class="p">]);</span>
-<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span> 
 <span class="p">}</span></code></pre></figure>
 
 <ul>
-  <li>The <code>initModules</code> method initializes external UI components instances and links them to local variables. This method works with the <code>modules</code> section of the configuration, where we define the name of the external instance and the local variable. The <code>module</code> section is an object where each key is the variable’s name and each values is the instance’s name. A developer does not need to be concerned with the instantiation of the module, because the <code>initModules()</code> method will resolve the variables when the instance are instantiated.</li>
+  <li>
+    <p>The <code>initModules()</code> method initializes external UI components’ instances and links them to local variables. This method works with the <code>modules</code> section of the configuration, where we define the name of the external instance and the local variable. The <code>module</code> section is an object where each key is the variable’s name and each value is the instance’s name. A developer does not need to be concerned with the instantiation of the module (external instance), because the <code>initModules()</code> method will resolve the variable when the instance is instantiated.</p>
+
+    <p>As an example:</p>
+  </li>
 </ul>
 
-<p>As an example:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Config where the `modules` property is declared</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Config, where the `modules` property is declared</span>
 <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
-<span class="nx">modules</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">modules</span><span class="o">:</span> <span class="p">{</span>
         <span class="s1">&#39;%myProperty%&#39;</span><span class="o">:</span> <span class="s1">&#39;%linkToTheComponent%&#39;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <ul>
   <li>
-    <p>the <code>getTemplate()</code>method returns a file path to UI component’s template.</p>
+    <p>The <code>getTemplate()</code> method returns a file path to UI component’s template.</p>
   </li>
   <li>
-    <p>The <code>hasTemplate()</code> method verifies that a <code>template</code> property was specified in the instance configuration.</p>
+    <p>The <code>hasTemplate()</code> method verifies that the <code>template</code> property was specified in the instance configuration.</p>
   </li>
 </ul>
 

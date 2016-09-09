@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>A list of Magento UI components</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/ui_comp_list_concept.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-right">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+        <a class="search-trigger search-icon" href="/guides/v2.1/search.html"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+               
+			   
+			   
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+               <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+               
+                   <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+               
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="/search.html">
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">A list of Magento UI components</h1>
+		
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_list_concept.md" target="_blank">Edit this page on GitHub</a>
+		
+		
+        
+
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>UI Components Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q "><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">Overview of UI components</a></li>
+
+							
+
+								<li class="q  active "><a href="/guides/v2.1/ui_comp_guide/ui_comp_list_concept.html">A list of Magento UI components</a></li>
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">concepts</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_architecture_concept.html">Architecture structure of UI components</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">Configuration flow of UI components</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">About XML сonfiguration of UI сomponents</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">About the uiClass library</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">About the uiCollection class</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">About the uiLayout service module</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_requirejs_concept.html">About AMD modules and RequireJS</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">troubleshoot</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html">Debug UI components JavaScript</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<p align="right"><i>Updated: 9 September 2016 (PDT)</i></p>
+		<h2 class="no_toc" id="a-list-of-magento-ui-components">A list of Magento UI components</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#whats-in-this-topic" id="markdown-toc-whats-in-this-topic">What’s in this topic</a></li>
+  <li><a href="#magento-ui-components" id="markdown-toc-magento-ui-components">Magento UI components</a></li>
+</ul>
+
+<h2 id="whats-in-this-topic">What’s in this topic</h2>
+<p>This page will contain a list of all Magento UI components. This topic is being updated.</p>
+
+<h2 id="magento-ui-components">Magento UI components</h2>
+
+<div class="collapsible"><h4 class="collapsible-title">Form </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: <a href="http://devdocs.magento.com/guides/v2.1/ui-components/ui-form.html">Form</a></li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/form.js">form.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;form&gt;</code></li>
+  <li><strong>Is top-level</strong>: Yes</li>
+  <li><strong>Top-level parent component</strong>: -</li>
+  <li><strong>Description</strong>: Form component allows performing CRUD operations on an entity.</li>
+  <li><strong>Has server-side template</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/ui_component/templates/form/default.xhtml">default.xhtml</a></li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Listing </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: <a href="http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html">Listing</a></li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js">listing.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;listing&gt;</code></li>
+  <li><strong>Is top-level</strong>: Yes</li>
+  <li><strong>Top-level parent component</strong>: -</li>
+  <li><strong>Description</strong>: Listing is a basic component responsible for rendering grids, lists, and tiles.</li>
+  <li><strong>Has server-side template</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/ui_component/templates/listing/default.xhtml">default.xhtml</a></li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Fieldset </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: Fieldset</li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/components/fieldset.js">fieldset.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;fieldset&gt;</code></li>
+  <li><strong>Is top-level</strong>: No</li>
+  <li><strong>Top-level parent component</strong>: Form</li>
+  <li><strong>Description</strong>: Container for visually grouped form elements (i.e. buttons, form fields.)</li>
+  <li><strong>Has server-side template</strong>: No.</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Field </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: Field</li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js">abstract.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;field&gt;</code></li>
+  <li><strong>Is top-level</strong>: No</li>
+  <li><strong>Top-level parent component</strong>: Form</li>
+  <li><strong>Description</strong>: Form field’s abstract component.</li>
+  <li><strong>Has server-side template</strong>: No.</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Group </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: Group</li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/components/group.js">group.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;multiline&gt;</code></li>
+  <li><strong>Is top-level</strong>: No</li>
+  <li><strong>Top-level parent component</strong>: Form</li>
+  <li><strong>Description</strong>: Container for visually grouped fields close together with a single label.</li>
+  <li><strong>Has server-side template</strong>: No.</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Tab</h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: Tab</li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/components/tab.js">tab.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;tab&gt;</code></li>
+  <li><strong>Is top-level</strong>: No</li>
+  <li><strong>Top-level parent component</strong>: Form</li>
+  <li><strong>Description</strong>: Area for the content accessed by clicking on the Nav.</li>
+  <li><strong>Has server-side template</strong>: No.</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Nav </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: Nav</li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/components/tab_group.js">tab_group.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;nav&gt;</code></li>
+  <li><strong>Is top-level</strong>: No</li>
+  <li><strong>Top-level parent component</strong>: Form</li>
+  <li><strong>Description</strong>: Creates a navigation bar with individual tabs.</li>
+  <li><strong>Has server-side template</strong>: No.</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Insert </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: Insert</li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/components/insert.js">insert.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;container&gt;</code></li>
+  <li><strong>Is top-level</strong>: No</li>
+  <li><strong>Top-level parent component</strong>: Form</li>
+  <li><strong>Description</strong>: Abstract component (that is extended by two other components: InsertForm and InsertListing).</li>
+  <li><strong>Has server-side template</strong>: No.</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Insert Form </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: Insert Form</li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/components/insert-form.js">insert-form.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;insertForm&gt;</code></li>
+  <li><strong>Is top-level</strong>: No</li>
+  <li><strong>Top-level parent component</strong>: Form</li>
+  <li><strong>Description</strong>: Extends ‘Insert’, allows to dynamically visually insert a Form component.</li>
+  <li><strong>Has server-side template</strong>: No.</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Insert Listing </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: Insert Listing</li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/components/insert-listing.js">insert-listing.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;insertListing&gt;</code></li>
+  <li><strong>Is top-level</strong>: No</li>
+  <li><strong>Top-level parent component</strong>: Form</li>
+  <li><strong>Description</strong>: Extends the Insert component, allows to dynamically visually insert a Listing component.</li>
+  <li><strong>Has server-side template</strong>: No.</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Modal </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: <a href="http://devdocs.magento.com/guides/v2.1/ui-components/ui-modal.html">Modal</a></li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js">modal-component.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;modal&gt;</code></li>
+  <li><strong>Is top-level</strong>: No</li>
+  <li><strong>Top-level parent component</strong>: Form</li>
+  <li><strong>Description</strong>: Wraps modal widget functionality into the modal UI component.</li>
+  <li><strong>Has server-side template</strong>: No.</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Button adapter </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: Button adapter</li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/button-adapter.js">button-adapter.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;container&gt;</code></li>
+  <li><strong>Is top-level</strong>: No</li>
+  <li><strong>Top-level parent component</strong>: Form</li>
+  <li><strong>Description</strong>: Wraps the buttons and adds to a form created by the UI component. For example, this component can be used to create a button bar.</li>
+  <li><strong>Has server-side template</strong>: No.</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Form provider </h4><div class="collapsible-content"><ul>
+  <li><strong>UI Component</strong>: Form provider</li>
+  <li><strong>Link to constructor</strong>: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/provider.js">provider.js</a></li>
+  <li><strong>Node name in <code>definition.xml</code></strong>: <code>&lt;dataSource&gt;</code></li>
+  <li><strong>Is top-level</strong>: No</li>
+  <li><strong>Top-level parent component</strong>: Form</li>
+  <li><strong>Description</strong>: Provides data for a form.</li>
+  <li><strong>Has server-side template</strong>: No.</li>
+</ul>
+</div></div>
+
+<ul>
+  <li>Paging</li>
+  <li>Filters</li>
+  <li>FilterSearch</li>
+  <li>FilterSelect</li>
+  <li>FilterRange</li>
+  <li>FilterInput</li>
+  <li>FilterDate</li>
+  <li>ContainerMassAction</li>
+  <li>Actions</li>
+  <li>Action</li>
+  <li>ActionDelete</li>
+  <li>Column</li>
+  <li>Columns</li>
+  <li>ActionsColumn</li>
+  <li>SelectionsColumn</li>
+  <li>Component</li>
+  <li>Container</li>
+  <li>Fieldset</li>
+  <li>Field</li>
+  <li>Bookmark</li>
+  <li>InsertForm</li>
+  <li>InsertListing</li>
+  <li>ExportButton</li>
+  <li>ColumnsControls</li>
+  <li>ListingToolbar</li>
+  <li>DynamicRows</li>
+  <li>HtmlContent</li>
+  <li>Button</li>
+  <li>DataSource</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>There is a <code>&lt;container&gt;</code> node in the <code>definition.xml</code> file. Any UI components that are not represented elsewhere in the <code>definition.xml</code> should use the <code>&lt;container&gt;</code> node.</p>
+</div>
+
+<!-- 
+Notes: the column called Top-level nested... the UI component must be nested in the specific top-level UI component. Or use magic workaround from Olha. -->
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div class="footer">
+        <div id="magento-com">
+            <div class="container">
+                <div id="f-col-1">
+                    <a href="http://www.magento.com/">
+                        <img src="/i/magento_logo_footer.svg" alt="Magento Commerce" style="width: 190px;" />
+                    </a>
+                    <ul class="nav">
+                        <li><a href="http://magento.com/company/about-us" title="Company">About Us</a></li>
+                        <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                        <li><a href="http://magento.com/company/press-room" title="Press Room">Press Room</a></li>
+                        <li><a href="http://magento.com/company/leadership" title="Leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div id="f-col-2">
+                    <div id="f-col-2-1">
+                        <div class="contact-us">
+                            <h4>Get in touch</h4>
+                            <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                            <a href="http://magento.com/company/contact-us" class="btn large copper">Contact Us</a>
+                        </div>
+                    </div>
+                    <div id="f-col-2-2">
+                        <div id="social-network">
+                            <h4>Stay Connected</h4>
+                            <ul>
+                                <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                                </li>
+                                <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                                <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                                <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                                <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                                    Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-col-3">
+                    <div id="newsletter">
+                        <h4>GET THE LATEST NEWS</h4>
+                        <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                        <div class="hold-form">
+                            <div id="nws-notsubscribed">
+                                <div id="sb-email" class="sb-email">
+                                    <form method="post" enctype="application/x-www-form-urlencoded"
+                                          action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                          name="mktForm_1182" onsubmit="return validateForm();">
+                                        <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                               placeholder="email address">
+                                        <input type="hidden" name="formid" value="1182" />
+                                        <button type="submit" class="sb-icon-submit btn outline">
+                                            Sign Up
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="email-invalid hide">
+                            <p>Please submit a valid email.</p>
+                        </div>
+                        <div class="email-ty hide">
+                            <p>Thank you for submitting your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
