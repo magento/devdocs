@@ -99,11 +99,11 @@ Where the following notation is used:
 
 To use a custom file for Grunt configuration:
 
+1. Add a custom Grunt configuration file.
+2. In this file, copy all the configuration from the default  
 1. Open the `grunt-config.json` file and set configurations object as follows
 	* key: alias to file
 	* value: path to your custom file
-
-<p class="q">Should the name of the file coincide with the default file name?</p>
 
 Example:
 
