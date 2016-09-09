@@ -36,6 +36,7 @@ Plugins cannot be used with any of the following:
 * Class methods (such as static methods)
 * `__construct`
 * Virtual types
+* Objects that are instantiated before Interception infrastructure is bootstrapped
 
 ### Declaring a plugin
 
