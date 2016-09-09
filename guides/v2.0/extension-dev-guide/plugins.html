@@ -896,6 +896,7 @@
 <p>Plugins cannot be used with any of the following:</p>
 
 <ul>
+  <li>Objects that are instantiated before <code>Magento\Framework\Interception</code> is bootstrapped</li>
   <li>Final methods</li>
   <li>Final classes</li>
   <li>Any class that contains at least one final public method</li>
@@ -903,7 +904,6 @@
   <li>Class methods (such as static methods)</li>
   <li><code>__construct</code></li>
   <li>Virtual types</li>
-  <li>Objects that are instantiated before Interception infrastructure is bootstrapped</li>
 </ul>
 
 <h3 id="declaring-a-plugin">Declaring a plugin</h3>
