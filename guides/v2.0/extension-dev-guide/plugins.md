@@ -29,6 +29,7 @@ This interception approach reduces conflicts among extensions that change the be
 
 Plugins cannot be used with any of the following:
 
+* Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
 * Final methods
 * Final classes
 * Any class that contains at least one final public method
@@ -36,7 +37,6 @@ Plugins cannot be used with any of the following:
 * Class methods (such as static methods)
 * `__construct`
 * Virtual types
-* Objects that are instantiated before Interception infrastructure is bootstrapped
 
 ### Declaring a plugin
 
