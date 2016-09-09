@@ -37,14 +37,14 @@ Arguments `toCache` and `toMerge` play together when a particular UI component i
 
 Each item in `nodes` array is an object with the following properties:
 
-* `{string} name` - the component name (short name). Its value is set to the `index` property of the UI component instance
+* `{string} name`:the component name (short name). Its value is set to the `index` property of the UI component instance
 
   Note: The full name of the created UI component is formed by concatenating the `parent.name + '.' + name`, and then set as the `name` property. If an instance with the same full name already exists, `uiLayout` will skip its initialization.
 
-* `{string} parent` - the `name` of the component's parent element (full name). If the parent component is not yet initialized, then `uiLayout` waits for it to appear in the `uiRegistry`. 
-* `{string} template` - a path to `.html` template
-* `{string} component` - path to the JavaScript class (function-constructor) of the new component
-* `{object} config` - the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:
+* `{string} parent`: the `name` of the component's parent element (full name). If the parent component is not yet initialized, then `uiLayout` waits for it to appear in the `uiRegistry`. 
+* `{string} template`: a path to `.html` template
+* `{string} component`: path to the JavaScript class (function-constructor) of the new component
+* `{object} config`: the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:
 
     var config1 = {name: 'myComp1', config: {myProp: '123123'}}
 
