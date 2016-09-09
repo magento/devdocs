@@ -9,7 +9,7 @@ version: 2.1
 github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.md
 ---
 
-## {{page_menu_title}}
+## {{page.menu_title}}
 
 {:.no_toc}
 
