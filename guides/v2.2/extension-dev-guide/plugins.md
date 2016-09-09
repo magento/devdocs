@@ -26,7 +26,7 @@ This interception approach reduces conflicts among extensions that change the be
 
 #### Limitations
 
-The following situations cannot use plugins:
+Plugins can not be used on following:
 
 * Final methods
 * Final classes
@@ -35,6 +35,7 @@ The following situations cannot use plugins:
 * Class methods (such as static methods)
 * `__construct`
 * Virtual types
+* Objects that are instantiated before Interception infrastructure is bootstrapped
 
 ### Declaring a plugin
 
