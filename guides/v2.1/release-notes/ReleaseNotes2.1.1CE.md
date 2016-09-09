@@ -68,7 +68,9 @@ We address the following functional issues in this release.
 <!--- 57410-->* You can now quickly generate or preview multiple variations of a configurable product. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
 
-<!--- 52660 -->* We've improved the deployment of static assets. 
+<!--- 52660 -->* We've improved the speed of static asset deployment. 
+
+<!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see <a href="https://github.com/magento/magento2/issues/4294" target="_blank">(GITHUB-4294)</a>. 
 
 <!--- 55300, 55620, 54682-->* We've improved storefront performance when creating 2500 or more product variants. 
 
