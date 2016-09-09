@@ -144,11 +144,11 @@ title: Customer Create
 // If somestuff requires api authentification,
 // then get a session token
 $session = $client-&gt;login('apiUser', 'apiKey');
-ult = $client-&gt;call($session, 'customer.create', array(array('email' =&gt; 'customer-mail@example.org', 'firstname' =&gt; 'Dough', 'lastname' =&gt; 'Deeks', 'password' =&gt; 'password', 'website_id' =&gt; 1, 'store_id' =&gt; 1, 'group_id' =&gt; 1)));
 $result = $client-&gt;call($session,'customer.create',array(array('email' =&gt; 'mail@example.org', 'firstname' =&gt; 'Dough', 'lastname' =&gt; 'Deeks', 'password' =&gt; 'password', 'website_id' =&gt; 1, 'store_id' =&gt; 1, 'group_id' =&gt; 1)));
 
 var_dump ($result);
-var_dump ($result); // If you don't need the session anymore
+
+// If you don't need the session anymore
 //$client-&gt;endSession($session);</pre>
 		</div>
 </div></div>
