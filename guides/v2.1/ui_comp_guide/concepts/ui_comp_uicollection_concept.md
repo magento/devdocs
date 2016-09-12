@@ -17,7 +17,7 @@ github_link: ui_comp_guide/concepts/ui_comp_uicollection_concept.md
 
 ## What is `uiCollection` 
 
-The `uiCollection` library class should be used as a base class by any components that contains a collection of child UI components. The path in the Magneto code base is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`. `uiCollection` inherits from the [uiElement class]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.md). 
+The `uiCollection` library class should be used as a base class by any components that contains a collection of child UI components. The path in the Magento code base is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`. `uiCollection` inherits from the [uiElement class]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.md). 
 
 ## Commonly used `uiCollection` methods
 
