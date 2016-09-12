@@ -4,6 +4,7 @@ group: fedg
 subgroup: A_Themes
 title: Create an Admin theme
 menu_title: Create an Admin theme
+version: 2.0
 menu_order: 9
 github_link: frontend-dev-guide/themes/admin_theme_create.md
 ---
@@ -87,5 +88,5 @@ Once you open the Magento Admin (or reload any  Magento Admin page) having added
 
 ## Apply the Admin theme
 
-See the [Apply a custom Admin theme topic]({{page.baseurl}}frontend-dev-guide/themes/admin_theme.html).
+See the [Apply a custom Admin theme topic]({{page.baseurl}}frontend-dev-guide/themes/admin_theme_apply.html).
 
