@@ -17,8 +17,9 @@ github_link: release-notes/bk-release-notes.md
 
 ### Magento Enterprise Edition (EE) 2.1 Release Notes
 
-<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.1EE.html" target="_blank">Version 2.1.1</a>
+<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.2EE.html" target="_blank">Version 2.1.2</a>
 
+<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.1EE.html" target="_blank">Version 2.1.1</a>
 
 <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.0EE.html" target="_blank">Version 2.1</a>
 
