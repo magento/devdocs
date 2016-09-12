@@ -2,8 +2,8 @@
 layout: default
 group: fedg
 subgroup: A_Themes
-title: Apply and configure a theme in Admin
-menu_title: Apply and configure a theme in Admin
+title: Apply and configure a storefront theme
+menu_title: Apply and configure a storefront theme
 version: 2.1
 menu_order: 4
 github_link: frontend-dev-guide/themes/theme-apply.md
