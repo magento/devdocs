@@ -9,7 +9,7 @@ version: 2.1
 github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.md
 ---
 
-## {{page_menu_title}}
+## {{page.menu_title}}
 
 {:.no_toc}
 
@@ -18,6 +18,11 @@ github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.md
 This article describes how to define what UI components are used on a particular page, their JavaScript components and what data they use.
 
 To define the UI components used on a page, you can use browser built-in developer tools, or install additionally a plugin, for example Knockoutjs context debugger for Google Chrome.
+
+**Contents**
+* TOC
+{:toc}
+
 
 ## Debugging using Knockout.js plugin
 

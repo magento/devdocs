@@ -6,7 +6,7 @@ title: Overview of UI components
 menu_title: Overview of UI components
 menu_order: 1
 version: 2.1
-github_link: ui_comp_guide/bk_ui_comps.md
+github_link: ui_comp_guide/bk-ui_comps.md
 ---
 
 ## Welcome to the new UI components Guide.

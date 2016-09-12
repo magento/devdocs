@@ -4,7 +4,7 @@ group: UI_Components_guide
 subgroup: concepts
 title: About AMD modules and RequireJS
 menu_title: About AMD modules and RequireJS
-menu_order: 9
+menu_order: 15
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_requirejs_concept.md
 ---

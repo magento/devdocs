@@ -142,11 +142,11 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 
 *	`composer.json` that contains any dependencies for the language package and a mapping to its defined locale
 
-	<a href="{{ site.mage2100url }}app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a>
+	<a href="{{ site.mage2100url }}app/i18n/Magento/de_DE/composer.json" target="_blank">Sample composer.json</a>
 
 *	`language.xml`, in which you declare a language package.
 
-	<a href="{{ site.mage2100url }}app/i18n/magento/de_de/language.xml" target="_blank">Sample language.xml</a>
+	<a href="{{ site.mage2100url }}app/i18n/Magento/de_DE/language.xml" target="_blank">Sample language.xml</a>
 
 #### Next step
 

@@ -4,7 +4,7 @@ group: UI_Components_guide
 subgroup: concepts
 title: About the uiClass library
 menu_title: About the uiClass library
-menu_order: 7
+menu_order: 10
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uiclass_concept.md
 ---
@@ -18,7 +18,7 @@ github_link: ui_comp_guide/concepts/ui_comp_uiclass_concept.md
 
 ## What is the uiClass class
 
-The uiClass is an abstract class from which all components are extended. The path in the Magneto code base is `<UI_Module_dir>/view/base/web/js/lib/core/class.js`. The uiClass is a low-level class and is rarely used as direct parent for UI components' classes.
+The uiClass is an abstract class from which all components are extended. The path in the Magento code base is `<UI_Module_dir>/view/base/web/js/lib/core/class.js`. The uiClass is a low-level class and is rarely used as direct parent for UI components' classes.
 
 ## Commonly used uiClass methods
 The uiClass class introduces the architecture of UI components through the following methods:
@@ -68,7 +68,7 @@ As an example:
 	}
 {%endhighlight%}
 
-### Commonly used uiClass properties
+### Commonly used uiClass properties {#uiclass_properties}
 
 The `defaults` property declares the list of properties of a UI component's instance. Also it declares communications between components if needed.
 

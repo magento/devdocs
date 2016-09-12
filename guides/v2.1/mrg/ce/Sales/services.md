@@ -1,16 +1,16 @@
 ---
 layout: default
-group: mrg
+group:
 subgroup: Community Edition
 title: Magento_Sales module services/APIs
 menu_title: Services/APIs
 menu_order:
 version: 2.1
-tabgroup: sales-module
+tabgroup:
 tablabel: Services/APIs
 tabweight: 30
 level3_menu_node: level3child
-level3_subgroup: Sales
+level3_subgroup: 
 github_link: mrg/ce/Sales/services.md
 ---
 
