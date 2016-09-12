@@ -25,15 +25,14 @@ This release includes enhancements to improve the security of your Magento insta
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the Magento Security Center.
 
-
-
 <!--- 57812/1539, 1543-->* You can no longer delete a currently logged-in user. 
+
+<!--- 55126-->* Linking a simple product to a configurable one now behaves as expected. When trying to link simple product to configurable one using REST API response with "Status Code: 200 OK" is returned however products are not linked.
+
 
 
 <!--- 57800/1541-->* Brute force attack on API to retrieve valid user email address. OPEN
 
-
-<!--- 57652-->* Investigate performance degradation introduced in 2.0.9 against 2.0.8 OPEN
 
 <!--- 57581/1433-->* Resolved a potential cross-site scripting (XSS) vulnerability in which customer addresses could be deleted. You can no longer trick a user into deleting his store address book entries.  
 
@@ -58,22 +57,19 @@ The following list provides an overview of the security issues fixed in this rel
 <!--- 56540/1480-->*  SQL injection in Zend framework. A bug in Zend Framework value escaping allows to inject SQL through ordering or grouping parameters. 
 
 
-<!--- 55612-->*  Customers can now ship items to a billing-restricted country. Previously, Magento displayed the “No Payment method available” message when  a customer tried to ship  items to a billing-restricted country. 
-
-
 <!--- 53971-->*  Fixed issue with running `cron` jobs less frequently than the application `cron` setting. 
 
 
 <!--- 46026/1270-->* The Guest order view protection code is no longer vulnerable to brute force attacks.
 
 
-<!--- 57965-->* Sessions are now invalidated after logout on both Admin and storefront. 
-
 <!--- 55476/1478-->*  Sessions now expire as expected after logout. 
 
+<!--- 55126-->* Cannot link simple product to configurable one. OPEN
 
 
-<!--- 58007/1544-->* We've reduced the risk of SQL injection in the ZF1 Sqli backend cache adapter by adding proper variable escaping. 
+
+<!--- 58007/1544-->* We've reduced the risk of SQL injection in the F1 Sqli backend cache adapter by adding proper variable escaping. 
 
 
 <!--- 57804/1539-->* Fixed issue with cross-site scripting reflected in loading section of request.
@@ -103,23 +99,29 @@ The following list provides an overview of the security issues fixed in this rel
 <!--- 54737, 55116-->* Magento 2.1.2 now supports PHP 7.0.4. 
 
 
+<!---55126-->* When trying to link simple product to configurable one using REST API response with "Status Code: 200 OK" is returned however products are not linked. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a>
 
 
 
-
-<!--- DELETED:  (won't fix) 57578, CLONE: 58111, 57049, 57032, OMIT: 57878 (releasenotes),57845, 55862, 57294 (internal) -->
-
+<!--- DELETED:  (won't fix) 57578, CLONE: 58123, 58111, 57049, 57032, OMIT: 57878 (releasenotes),57845, 55862, 57294, 58166, 58204, 57965 (internal) -->
 
 
-### Known issue
+
+### Known issues
 
 <!--- 58017-->* Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
 
 **Issue**: 
 
-**Workaround**: Document this for merchant to clear their browser cache after upgrading. – quick and faster solution
+**Workaround**: Clear your browser cache after upgrading. 
 
 
+
+<!--- 58034-->
+
+**Issue**: When you edit a configurable product and add options to a simple product, Magento does not save these options. 
+
+**Workaround**: 
 
 
 
