@@ -1,6 +1,6 @@
 ---
-layout: default  
-group: fedg 
+layout: default
+group: fedg
 subgroup: A_Themes
 title: Magento theme structure
 menu_title: Magento theme structure
@@ -14,7 +14,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-structure.html
 A <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento theme.
 
 <h2 id="theme-structure-loc">Magento theme location</h2>
-Storefront themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the Composer repository.  
+Storefront themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the Composer repository.
 
 Each theme must be stored in a separate directory:
 <pre>
@@ -82,7 +82,7 @@ Let's have a closer look at each particular sub-directory.
         optional
       </td>
       <td colspan="1">
-          Module-</span>specific styles (<code>.css</code> and/or <code>.less</code> file). General styles for the module are in the <code>module.less</code> file, and styles for widgets are in <code>widgets.less</code>.
+          Module-specific styles (<code>.css</code> and/or <code>.less</code> file). General styles for the module are in the <code>module.less</code> file, and styles for widgets are in <code>widgets.less</code>.
       </td>
     </tr>
     <tr>
@@ -139,7 +139,8 @@ Let's have a closer look at each particular sub-directory.
       </td>
     </tr>
     <tr>
-      <td colspan="1">/<code>i18n</code>
+      <td colspan="1">
+        <code>/i18n</code>
       </td>
       <td colspan="1">optional</td>
       <td colspan="1">.csv files with translations.</td>
@@ -147,7 +148,6 @@ Let's have a closer look at each particular sub-directory.
     <tr>
       <td colspan="1">
         <code>/media</code>
-
       </td>
       <td colspan="1">required</td>
       <td colspan="1">
@@ -166,7 +166,6 @@ Let's have a closer look at each particular sub-directory.
     <tr>
       <td colspan="1">
         <code>/web/css/source</code>
-
       </td>
       <td colspan="1">
         optional
@@ -187,7 +186,6 @@ Let's have a closer look at each particular sub-directory.
       </td>
       <td colspan="1">
         View files that override the UI library files stored in <code>lib/web/css/source/lib</code>
-
       </td>
     </tr>
     <tr>
@@ -220,7 +218,7 @@ Let's have a closer look at each particular sub-directory.
         optional
       </td>
       <td colspan="1">
-        Theme JavaScript files. 
+        Theme JavaScript files.
       </td>
     </tr>
     <tr>
@@ -241,7 +239,6 @@ Let's have a closer look at each particular sub-directory.
       <td colspan="1">required</td>
       <td colspan="1">
         Required to register your theme in the system.
-           
       </td>
     </tr>
     <tr>
@@ -251,7 +248,6 @@ Let's have a closer look at each particular sub-directory.
       <td colspan="1">required</td>
       <td colspan="1">
         The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, is the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
-           
       </td>
     </tr>
   </tbody>
@@ -265,7 +261,7 @@ Apart from the configuration file and theme metadata file, all theme files fall 
 * Dynamic view files
 
 <h3 id="theme-structure-pub">Static view files</h3>
-A set of theme files that are returned by the server to a browser as is, without any processing, are called the *static files* of a theme. 
+A set of theme files that are returned by the server to a browser as is, without any processing, are called the *static files* of a theme.
 
 Static files can be located in a theme directory as follows:
 <pre>
