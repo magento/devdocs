@@ -1,5 +1,11 @@
-#search-results table {
-    border: none;
+#search-results {
+    min-height: 400px;
+    &.loading {
+        background: url(../i/loading.gif) no-repeat center center;
+    }
+    table{
+        border: none;
+    }
 }
 
 .search .content {
@@ -406,3 +412,4 @@ body.search-active {
     z-index: 50;
     cursor: pointer;
 }
+
