@@ -19,6 +19,11 @@ This article describes how to define what UI components are used on a particular
 
 To define the UI components used on a page, you can use browser built-in developer tools, or install additionally a plugin, for example Knockoutjs context debugger for Google Chrome.
 
+**Contents**
+* TOC
+{:toc}
+
+
 ## Debugging using Knockout.js plugin
 
 To install the knockout debugging plugin for Google Chrome, take the following steps:

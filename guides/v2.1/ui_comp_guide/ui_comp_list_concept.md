@@ -6,7 +6,7 @@ title: A list of Magento UI components
 menu_title: A list of Magento UI components
 menu_order: 2
 version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_list_concept.md
+github_link: ui_comp_guide/ui_comp_list_concept.md
 ---
 
 ## {{page.menu_title}}  
