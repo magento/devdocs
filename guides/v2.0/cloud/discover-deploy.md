@@ -127,6 +127,10 @@ The default Magento deployment hook is a CLI command that does the following:
 	In `production` mode, the script generates static web content using the command
 	[`magento setup:static-content:deploy`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html).
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+</div>
+
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}
 While the deployment is running, we freeze the incoming traffic at the entry point
 so no transactions are lost.
