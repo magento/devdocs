@@ -889,10 +889,10 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 8 July 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 12 September 2016 (PDT)</i></p>
 		<h2> What's in this topic </h2>
 
-<p>After you <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html" target="_blank">create a theme</a>, before starting to change the styles, is deciding, which LESS compilation mode you will use. There are <a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode and client-side (recommended for theme development). 
+<p>After you <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html" target="_blank">create a theme</a>, before starting to change the styles, is deciding, which LESS compilation mode you will use. There are <a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode and client-side (recommended for theme development).
 This topic demonstrates on a practical example how the choice of the mode influences the styles development.</p>
 
 <p>The first step, creating and applying a theme is done before the compilation mode is chosen, so it is described only once, but is required whatever compilation mode you will further use.</p>
@@ -929,6 +929,7 @@ This topic demonstrates on a practical example how the choice of the mode influe
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
 
 <img src="/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons" />
+</li>
 <li>Delete all files in the following directories:
 <ul>
 <li><code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code></li>
@@ -949,12 +950,12 @@ This topic demonstrates on a practical example how the choice of the mode influe
 <li><code>var/view_preprocessed/less</code> </li>
 </ul>
 </li>
-<li>Refresh the page, and view the changes applied. 
+<li>Refresh the page, and view the changes applied.
 
 <img src="/common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed" />
 </li>
-&lt;/ol&gt;
-If your Magento instance uses the server-side compilation mode, you need to manually clean sub-directories in <code>pub/static</code> and <code>var/view_preprocessed/less</code> to make your changes apply. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
+</ol>
+<p>If your Magento instance uses the server-side compilation mode, you need to manually clean sub-directories in <code>pub/static</code> and <code>var/view_preprocessed/less</code> to make your changes apply. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.</p>
 
 <h2 id="server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
 
@@ -1014,14 +1015,13 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 </li>
 </ol>
 
-If your Magento instance uses the client-side compilation mode, simple changes are applied at once. In case of more sophisticated changes, you might need to manually clean the theme sub-directory in the <code>pub/static/frontend</code> directory. There are more details about these types of changes and about the client-side mode implementation in the <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#css_debug_client" target="_blank">Styles debugging</a> topic.
+<p>If your Magento instance uses the client-side compilation mode, simple changes are applied at once. In case of more sophisticated changes, you might need to manually clean the theme sub-directory in the <code>pub/static/frontend</code> directory. There are more details about these types of changes and about the client-side mode implementation in the <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#css_debug_client" target="_blank">Styles debugging</a> topic.</p>
 
 <h2>Recommended reading</h2>
 <ul>
 <li><a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Styles debugging</a></li>
 <li><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>
 </ul>
-</li></ol>
 
 
 		</div>
