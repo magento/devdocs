@@ -1,9 +1,10 @@
 .tabs-container{
     display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    float: left;
     .tab {
         margin: 15px 1px 0px;
         width: 150px;
