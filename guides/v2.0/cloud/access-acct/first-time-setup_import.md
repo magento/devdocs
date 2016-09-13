@@ -73,8 +73,8 @@ These files must be created before you push to your repository for Magento to be
 #### More information
 
 *	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[`.magento/routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
 
 #### Next steps
 * [Set up an environment]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
