@@ -36,7 +36,7 @@ $(function() {
 		if ( $w < 767 ) {
 			$('.version-switcher').appendTo($('#subnav-wrap'));
 		} else {
-			$('.version-switcher').appendTo($('#global-nav'));
+			//$('.version-switcher').insertBefore($('.updated'));
 		}
 	};
 	responsiveSite();
