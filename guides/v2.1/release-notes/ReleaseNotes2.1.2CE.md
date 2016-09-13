@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.2CE.md
 
 
 ## Magento Community Edition 2.1.2
-We are pleased to present Magento Community Edition 2.1.2. This release includes several functional fixes.
+We are pleased to present Magento Community Edition 2.1.2. This release includes security enhancements and several functional fixes.
 
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
@@ -25,13 +25,9 @@ This release includes enhancements to improve the security of your Magento insta
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the Magento Security Center.
 
+
+
 <!--- 57812/1539, 1543-->* You can no longer delete a currently logged-in user. 
-
-<!--- 55126-->* Linking a simple product to a configurable one now behaves as expected. When trying to link simple product to configurable one using REST API response with "Status Code: 200 OK" is returned however products are not linked.
-
-
-
-<!--- 57800/1541-->* Brute force attack on API to retrieve valid user email address. OPEN
 
 
 <!--- 57581/1433-->* Resolved a potential cross-site scripting (XSS) vulnerability in which customer addresses could be deleted. You can no longer trick a user into deleting his store address book entries.  
@@ -53,7 +49,6 @@ The following list provides an overview of the security issues fixed in this rel
 <!--- 56594/1490-->*  Magento no longer permits you to use Products > Images and Videos > Insert YouTube video to potentially upload malicious code.
 
 
-
 <!--- 56540/1480-->*  SQL injection in Zend framework. A bug in Zend Framework value escaping allows to inject SQL through ordering or grouping parameters. 
 
 
@@ -64,8 +59,6 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 <!--- 55476/1478-->*  Sessions now expire as expected after logout. 
-
-<!--- 55126-->* Cannot link simple product to configurable one. OPEN
 
 
 
@@ -79,27 +72,32 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 57463-->* Removed potential for exploitation of guest order view feature to harvest order information.  
 
+
+<!--- 56940-->* Kount and 3D Secure now work as expected for Braintree Vault. 
+
+
+
+### Functional fixes and enhancements
+
+<!--- 54737, 55116-->* Magento 2.1.2 now supports PHP 7.0.4. 
+
+
+<!--- 55126-->* We've fixed an issue with using the REST API to link simple products to configurable ones. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a>
+
+
+
 <!--- 57460-->* Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.  
 
-<!--- 57097-->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update if you changed the city field. 	
+<!--- 57097-->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city field. 	
 
 <!--- 57003-->* The Product page scope selector now displays all related websites associated with a restricted user. 
 
 <!--- 56952-->* We've resolved an issue with the get active payment methods (`getActiveMethods`). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a>
 
-<!--- 56940-->* Kount and 3D Secure now work as expected for Braintree Vault. 
-
-<!--- 56431-->* Magento now updates order status as expected after a shipment has been created through the API.
-
-<!--- 56426-->* Magento now updates order status as expected after an invoice has been created through the API.
+<!--- 56431, 56426-->* Magento now updates order status as expected after a shipment or invoice has been created through the API.
 
 
 <!--- 54964-->* Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. <a href="https://github.com/magento/magento2/issues/6121" target="_blank">(GITHUB-6121)</a> 
-
-<!--- 54737, 55116-->* Magento 2.1.2 now supports PHP 7.0.4. 
-
-
-<!---55126-->* When trying to link simple product to configurable one using REST API response with "Status Code: 200 OK" is returned however products are not linked. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a>
 
 
 
