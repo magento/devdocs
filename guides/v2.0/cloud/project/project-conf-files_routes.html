@@ -1135,7 +1135,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 13 September 2016 (PDT)</div>
             <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#cloud-yaml-routes-over"><code>routes.yaml</code> overview</a></li>
@@ -1156,6 +1156,10 @@ Magento Enterprise Cloud Edition.</p>
 systems. This one configuration file handles routes for all systems.</p>
 
 <p>This file is located at <code>.magento/routes.yaml</code> in your project.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+</div>
 
 <p><a href="https://github.com/magento/magento-cloud/blob/master/.magento/routes.yaml" target="_blank">Sample <code>routes.yaml</code></a></p>
 

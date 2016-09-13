@@ -1135,7 +1135,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 13 September 2016 (PDT)</div>
             <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#cloud-yaml-services-over"><code>services.yaml</code> overview</a></li>
@@ -1149,6 +1149,10 @@
 <p>Magento Enterprise Cloud Edition provides <a href="#cloud-yaml-services-type"><em>services</em></a> such as MySQL, PHP, Redis, Solr, and so on. You don’t need to subscribe to external service providers.</p>
 
 <p>This file is located at <code>.magento/services.yaml</code> in your project.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+</div>
 
 <p><a href="https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml" target="_blank">Sample <code>services.yaml</code> file</a></p>
 
