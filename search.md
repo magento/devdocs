@@ -5,7 +5,7 @@ subgroup:
 title: Search Results
 menu_title: Search
 ---
-<div id="search-results" class="loading">
+<div id="search-results">
     <!--Google Custom Search-->
     <script>
         (function() {
@@ -16,7 +16,6 @@ menu_title: Search
             gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(gcse, s);
-            $("#search-results").removeClass("loading");
             })();
     </script>
     <gcse:search></gcse:search>
