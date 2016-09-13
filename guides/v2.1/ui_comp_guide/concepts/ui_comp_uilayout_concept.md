@@ -54,12 +54,12 @@ and
 
 * `{array} children` - configuration of child elements, if there are any
 * `{boolean} isTemplate` - if the value is set to `true`, the component configuration will be stored by `uiLayout` in the private `templates` variable. Current UI component will be not initialized. New instances can be created dynamically based on this object
-* `{string} nodeTemplate` - a full name of component from `templates` private object. Stored component will be used as template object for current one
+* `{string} nodeTemplate` - a full name of component from `templates` private variable. This component's configuration will be used as a  configuration template for the current one
 * `{string} provider`- the full name of the DataSource UI component. If property is absent, then parent's `provider` will be inherited
 
 ## Example 1:
 
-Let's consider a case when we want to create a UI component instance dynamically from another UI component.
+Let's consider a case when we want to create a UI component instance dynamically as a child of another UI component.
     
 We can put the configuration of the desired UI component directly into `uiLayout`. Below in an example of the component's constructor,  which creates the child UI component on initialization:
 
@@ -89,7 +89,7 @@ define([
         },
         initialize: function () {
             this._super();
-            layout([this.my_newComponentConfig]); // this call will create a child component myNewComponent
+            layout([this.my_newComponentConfig]); // this call creates a new myNewComponent component, that is stored in uiRegistry, like any other component. myNewComponent is the child of the current uiCollection component. The rendering of the myNewComponent template is performed to the general rules of child components' templates rendering in uiCollection 
 
             return this;
         }
@@ -98,11 +98,20 @@ define([
 
 {%endhighlight%}
 
+, where `${ $.name }` is ES6 template literal.
+
+The `layout([this.my_newComponentConfig])` call creates a new `myNewComponent` component, that is stored in `uiRegistry`, like any other component. `myNewComponent` is the child of the current `uiCollection` component, which means that it is added to the `elems` property of the current `uiCollection`. The rendering of the `myNewComponent` template is performed to the general rules of [child components' templates rendering in `uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html#uicollection_template).
+
+
 ## Example 2:
 
-Anther option is to create  UI components from the "template" component. For example, lets call it `myRowTemplate`, has already been configured with `isTemplate: true` property.
+Another option is to create a UI component using other components configuration as configuration template. We can only use a component, that has already been configured with `isTemplate: true` property. 
 
-Lets have such configuration:
+In this example we want to add table rows.
+
+Let's suppose, the table is implemented by the `my_table` instance of the Table UI component. We will use the Row Template as a configuration template for the new Rows components.
+
+The configuration of the `my_table` component is the following (supposing that we have previously created the `app/code/OrangeCo/Sample/view/<area>/web/js/table.js`):
 
 {%highlight xml%}
     <container name="my_table">
@@ -110,18 +119,15 @@ Lets have such configuration:
     </container>
 {%endhighlight%}
 
-And created files:
-* `app/code/OrangeCo/Sample/view/<area>/web/js/table.js`
+Let's suppose that Row Template full name is `my_row_template_component_name`.
 
-Lets suppose that `myRowTemplate`'s full name is `myRowTemplateComponentName`.
-
-Then, inside of "my_table" UI component we can add rows using this template configuration. The source `OrangeCo_Sample/js/table.js`:
+Then in our `table.js` we need to add the following:
 
 {%highlight js%}
 define([
     'uiLayout',
     'uiCollection',
-    'mageUtils'
+    'mageUtils' 
 ], function (layout, Collection, utils) {
     'use strict';
 
@@ -129,7 +135,7 @@ define([
         defaults: {
             myRowTemplateConfig: {
                 parent: '${ $.name }',
-                nodeTemplate: 'myRowTemplateComponentName'
+                nodeTemplate: 'my_row_template_component_name'
             }
         },
 
@@ -145,4 +151,6 @@ define([
 });
 {%endhighlight%}
 
-Now `addRow` method could be called from a `.html` template. 
+Now the `addRow()` method could be called from the `.html` template of the current component. 
+
+In this example we use [`mageUtils`]({{site.mage2100url}}lib/web/mage/utils), the Magento internal JS library that provides a bunch of useful helpers without extending any built-in objects. Specifically, we use `utils.template(myRowTemplateConfig)` which creates a new  component based on `myRowTemplateConfig`.

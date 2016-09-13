@@ -74,3 +74,16 @@ console.log(this.elems());
 {%endhighlight%}
 
 * `childDefaults` can be used to set the children defaults: properties from `childDefaults` are set into child elements' [`defaults` property]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties).
+
+## uiCollection template {#uicollection_template}
+The uiCollection template is stored in `<UI_Module_dir>/view/base/web/templates/collection.html`.
+
+It looks like following:
+
+{%highlight html%}
+<each args="data: elems, as: 'element'">
+    <render if="hasTemplate()"/>
+</each>
+{%endhighlight%}
+
+This template only renders child templates, if they exist. `elems` is the collection of the child elements of `uiCollection`. As far as `elems` is the observable property, the templates of the components added to `elems` in the runtime, are also rendered.

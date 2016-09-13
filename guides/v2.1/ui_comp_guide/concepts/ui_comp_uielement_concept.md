@@ -74,7 +74,7 @@ this.trackable = 2; // setter
 this.trackable;     // getter
 {%endhighlight%}
 
-* The `initModules()` method initializes external UI components' instances and links them to local variables. This method works with the `modules` section of the configuration, where we define the name of the external instance and the local variable. The `module` section is an object where each key is the variable's name and each value is the instance's name. A developer does not need to be concerned with the instantiation of the module (external instance), because the `initModules()` method will resolve the variable when the instance is instantiated.
+* The `initModules()` method initializes external UI components' instances and links them to local variables. This method works with the `modules` section of the configuration, where we define the name of the external instance and the local variable. The `modules` section is an object where each key is the variable's name and each value is the instance's name. A developer does not need to be concerned with the instantiation of the module (external instance), because the `initModules()` method will resolve the variable when the instance is instantiated.
 
   As an example:
 
