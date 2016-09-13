@@ -40,7 +40,7 @@ A new checkout step must be implemented as UI component. That is, its JavaScript
 
 The file must be stored under the `<your_module_dir>/view` directory.
  
-A sample `view/my-step-view.js` with comments follows:
+A sample `frontend/web/js/view/my-step-view.js` with comments follows:
 
 {%highlight js%}
 
@@ -61,12 +61,12 @@ define(
         /**
         *
         * mystep - is the name of the component's .html template, 
-        * your_module_dir - is the name of the your module directory.
+        * <vendor>_<module-name> - is the name of the your module directory.
         * 
         */
         return Component.extend({
             defaults: {
-                template: 'your_module_dir/mystep'
+                template: '<vendor>_<module-name>/mystep'
             },
  
             //add here your logic to display step,
@@ -173,7 +173,7 @@ A sample `checkout_index_index.xml` follows:
                                         <item name="children" xsi:type="array">
                                             <!-- The new step you add -->
                                             <item name="my-new-step" xsi:type="array">
-                                                <item name="component" xsi:type="string">Magento_Your_Module_Name/js/view/my-step-view</item>
+                                                <item name="component" xsi:type="string"><vendor>_<module-name>/js/view/my-step-view</item>
                                                     <!--To display step content before shipping step "sortOrder" value should be < 1-->
                                                     <!--To display step content between shipping step and payment step  1 < "sortOrder" < 2 -->
                                                     <!--To display step content after payment step "sortOrder" > 2 -->
