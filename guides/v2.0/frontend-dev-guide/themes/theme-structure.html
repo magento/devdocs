@@ -889,7 +889,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 9 August 2016 (PDT)</i></p>
+			<p align="right"><i>Updated: 12 September 2016 (PDT)</i></p>
 		<h2 id="theme-structure-intro">What's in this topic</h2>
 <p>A <a href="/guides/v2.0/frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento theme.</p>
 
@@ -962,7 +962,7 @@ app/design/frontend/&lt;Vendor&gt;/
         optional
       </td>
       <td colspan="1">
-          Module-&lt;/span&gt;specific styles (<code>.css</code> and/or <code>.less</code> file). General styles for the module are in the <code>module.less</code> file, and styles for widgets are in <code>widgets.less</code>.
+          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code>.
       </td>
     </tr>
     <tr>
@@ -1019,7 +1019,8 @@ app/design/frontend/&lt;Vendor&gt;/
       </td>
     </tr>
     <tr>
-      <td colspan="1">/<code>i18n</code>
+      <td colspan="1">
+        <code>/i18n</code>
       </td>
       <td colspan="1">optional</td>
       <td colspan="1">.csv files with translations.</td>
@@ -1027,7 +1028,6 @@ app/design/frontend/&lt;Vendor&gt;/
     <tr>
       <td colspan="1">
         <code>/media</code>
-
       </td>
       <td colspan="1">required</td>
       <td colspan="1">
@@ -1046,7 +1046,6 @@ app/design/frontend/&lt;Vendor&gt;/
     <tr>
       <td colspan="1">
         <code>/web/css/source</code>
-
       </td>
       <td colspan="1">
         optional
@@ -1067,7 +1066,6 @@ app/design/frontend/&lt;Vendor&gt;/
       </td>
       <td colspan="1">
         View files that override the UI library files stored in <code>lib/web/css/source/lib</code>
-
       </td>
     </tr>
     <tr>
@@ -1100,7 +1098,7 @@ app/design/frontend/&lt;Vendor&gt;/
         optional
       </td>
       <td colspan="1">
-        Theme JavaScript files. 
+        Theme JavaScript files.
       </td>
     </tr>
     <tr>
@@ -1121,7 +1119,6 @@ app/design/frontend/&lt;Vendor&gt;/
       <td colspan="1">required</td>
       <td colspan="1">
         Required to register your theme in the system.
-           
       </td>
     </tr>
     <tr>
@@ -1131,7 +1128,6 @@ app/design/frontend/&lt;Vendor&gt;/
       <td colspan="1">required</td>
       <td colspan="1">
         The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, is the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
-           
       </td>
     </tr>
   </tbody>
