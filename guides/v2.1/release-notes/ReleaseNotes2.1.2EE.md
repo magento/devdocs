@@ -111,9 +111,10 @@ The following list provides an overview of the security issues fixed in this rel
 
 ### Known issues
 
-<!--- 58017-->* Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
+<!--- 58017-->
 
-**Issue**: 
+**Issue**: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
+
 
 **Workaround**: Clear your browser cache after upgrading. 
 
@@ -124,6 +125,7 @@ The following list provides an overview of the security issues fixed in this rel
 **Issue**: When you edit a configurable product and add options to a simple product, Magento does not save these options. 
 
 **Workaround**: 
+
 
 
 ### System requirements
