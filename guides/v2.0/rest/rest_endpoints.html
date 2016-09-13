@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/rest/rest_endpoints.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/rest/rest_endpoints.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">List of service names per module</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/rest_endpoints.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/rest_endpoints.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -446,8 +454,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 8 September 2016 (PDT)</i></p>
-		<h2 id="rest-schema-endpoint-format">REST Schema Endpoint Format</h2>
+            <div class="updated">Updated: 8 September 2016 (PDT)</div>
+            <h2 id="rest-schema-endpoint-format">REST Schema Endpoint Format</h2>
 <p>To specify one or more services:</p>
 
 <p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema&amp;services=&lt;serviceName1,serviceName2,..&gt;</code></p>
@@ -675,7 +683,6 @@
 <p>taxTaxRuleRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=taxTaxRuleRepositoryV1</code></p>
 
 <p>taxTaxClassRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=taxTaxClassRepositoryV1</code></p>
-
 
 		</div>
 	</section>

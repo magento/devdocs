@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Set up the rabbitmq service</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-conf-files_services-rabbit.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-conf-files_services-rabbit.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -1145,8 +1153,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="set-up-the-rabbitmq-service">Set up the rabbitmq service</h2>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h2 id="set-up-the-rabbitmq-service">Set up the rabbitmq service</h2>
 <p>The Message Queue Framework (MQF) is a system within Magento Enterprise Edition that allows a module to publish messages to queues. It also defines the consumers that will receive the messages asynchronously. The MQF uses <a href="http://www.rabbitmq.com" target="_blank">RabbitMQ</a> as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.</p>
 
 <p>We support RabbitMQ version 3.5.</p>
@@ -1244,7 +1252,6 @@ command available to manage your queues.</p>
 <h3 id="cloud-rabbitmq-conn-php">Connect from your PHP application</h3>
 <p>To connect to RabbitMQ using your PHP application, add a PHP library (like
 <a href="https://github.com/videlalvaro/php-amqplib" target="_blank">PHP AMQPlib</a>) to your source tree.</p>
-
 
 		</div>
 	</section>

@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/sessions.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/sessions.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">How to locate your session files</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/sessions.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/sessions.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -1404,8 +1412,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<div>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div>
 
   <h2 id="session-where">Locate your session storage</h2>
   <p>This topic discusses how to locate where your session files are stored. The Magento application uses the following logic to store session files:</p>
@@ -1440,7 +1448,6 @@
   <p>As a user with <code>root</code> privileges, open your <code>php.ini</code> file and search for the value of <code>session.save_path</code>. This identifies where sessions are stored.</p>
 
 </div>
-
 
 		</div>
 	</section>

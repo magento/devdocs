@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ext-best-practices/extension-coding/security-performance-data-bp.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ext-best-practices/extension-coding/security-performance-data-bp.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Security, Performance, and Data Handling</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/extension-coding/security-performance-data-bp.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/extension-coding/security-performance-data-bp.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -547,8 +555,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 class="no_toc" id="security-performance-and-data-handling">Security, performance, and data handling</h2>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h2 class="no_toc" id="security-performance-and-data-handling">Security, performance, and data handling</h2>
 
 <p>You should make sure that your extension handles data with care in order to prevent sensitive information from being exposed. Incorrect handling of data requests or class usage can negatively impact your extension and create security vulnerabilities. Consider applying the following best practices to your extension to improve performance and security.</p>
 
@@ -610,7 +618,6 @@
 
 <h3 id="always-encrypt-sensitive-data-or-configurations">Always encrypt sensitive data or configurations</h3>
 <p>Never store sensitive information in clear text within a resource that might be accessible to another control sphere. This type of information should be encrypted or otherwise protected.</p>
-
 
 		</div>
 	</section>

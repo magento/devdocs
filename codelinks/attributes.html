@@ -35,14 +35,14 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
 		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
 	
@@ -164,10 +164,18 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Retrieving detailed attributes</h1>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -375,8 +383,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 9 June 2016 (PDT)</i></p>
-		<p>Swagger and other types of code-generated documentation erroneously indicate several APIs that
+            <div class="updated">Updated: 9 June 2016 (PDT)</div>
+            <p>Swagger and other types of code-generated documentation erroneously indicate several APIs that
 search across multiple objects return detailed information about individual objects. Detailed information, such as <code>extensionAttributes</code>,  <code>customAttributes</code>, and possibly other fields, are generally available only when requesting information on a single object.</p>
 
 <p>This document lists the PHP, REST, and SOAP calls that indicate they return detailed information, but might not. It also provides the call that returns the detailed data.</p>
@@ -987,7 +995,6 @@ search across multiple objects return detailed information about individual obje
     </tr>
   </tbody>
 </table>
-
 
 		</div>
 	</section>

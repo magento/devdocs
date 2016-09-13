@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/rest/notes.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/rest/notes.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Notes</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/notes.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/notes.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -446,8 +454,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="parameters-in-urls">Parameters in URLs</h2>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h2 id="parameters-in-urls">Parameters in URLs</h2>
 
 <p>In a REST call, a user could potentially specify one ID in the URL and another in the request body. Whenever this type of conflict occurs, Magento uses the value specified in the URL.</p>
 
@@ -459,7 +467,6 @@
 
 <h2 id="related-topics">Related topics</h2>
 <p><a href="/guides/v2.0/howdoi/webapi/search-criteria.html">Search using REST APIs</a></p>
-
 
 		</div>
 	</section>

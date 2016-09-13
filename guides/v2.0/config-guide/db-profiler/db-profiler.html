@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/db-profiler/db-profiler.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/db-profiler/db-profiler.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,14 +162,22 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Configure the database profiler</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/db-profiler/db-profiler.md" target="_blank">Edit this page on GitHub</a>
-		
-		
-			<a class="contributor" href="http://atishgoswami.com" target="_blank">Thanks to Atish Goswam for contributing this topic</a>
-        
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/db-profiler/db-profiler.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+                <a class="contributor" href="http://atishgoswami.com" target="_blank">Thanks to Atish Goswam for contributing this topic</a>
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -1329,8 +1337,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
-		<h2 id="about-the-database-profiler">About the database profiler</h2>
+            <div class="updated">Updated: 20 July 2016 (PDT)</div>
+            <h2 id="about-the-database-profiler">About the database profiler</h2>
 <p>The Magento database profiler displays all queries executed on a page, including the time for each query and what parameters were executed.</p>
 
 <h2 id="step-1-modify-the-deployment-configuration">Step 1: Modify the deployment configuration</h2>
@@ -1404,7 +1412,6 @@
 <p>Go to any page in your storefront or Magento Admin to view the results. A sample follows:</p>
 
 <p><img src="/common/images/config_db-profiler-results.png" alt="Sample database profiler results" width="800px" /></p>
-
 
 		</div>
 	</section>

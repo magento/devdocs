@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/multi-site/ms_nginx.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Set up multiple websites with nginx</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/multi-site/ms_nginx.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/multi-site/ms_nginx.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -1327,8 +1335,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="ms-nginx-over">Set up multiple websites with nginx</h2>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h2 id="ms-nginx-over">Set up multiple websites with nginx</h2>
 <p>The example in this topic assumes you have set up your nginx configuration as recommended in the <code>&lt;Magento root&gt;/nginx.conf.sample</code> provided with the Magento software.</p>
 
 <p>That is, you should have a small, main configuration file that includes your Magento-specific configuration in the server block. This file is referred to in this topic as <code>main.conf</code>; the configuration file based on the Magento-provided sample is referred to in this topic as <code>nginx.magento.conf</code>.</p>
@@ -1364,7 +1372,6 @@ fastcgi_param  MAGE_RUN_CODE $MAGE_RUN_CODE;
 
 <pre><code>service nginx reload
 </code></pre>
-
 
 		</div>
 	</section>

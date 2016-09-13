@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/test/unit/unit_test_execution_cli.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/test/unit/unit_test_execution_cli.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,14 +162,22 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Running Unit Tests in the CLI</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/test/unit/unit_test_execution_cli.md" target="_blank">Edit this page on GitHub</a>
-		
-		
-			<a class="contributor" href="http://vinaikopp.com/" target="_blank">Thanks to Vinai Kopp for contributing this topic</a>
-        
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/test/unit/unit_test_execution_cli.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+                <a class="contributor" href="http://vinaikopp.com/" target="_blank">Thanks to Vinai Kopp for contributing this topic</a>
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -477,8 +485,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
-		<h2 id="running-unit-tests-on-the-cli">Running unit tests on the CLI</h2>
+            <div class="updated">Updated: 20 July 2016 (PDT)</div>
+            <h2 id="running-unit-tests-on-the-cli">Running unit tests on the CLI</h2>
 
 <ul id="markdown-toc">
   <li><a href="#running-unit-tests-on-the-cli" id="markdown-toc-running-unit-tests-on-the-cli">Running unit tests on the CLI</a>    <ul>
@@ -568,7 +576,6 @@
 <p>Add the following line in the <code>&lt;php&gt;</code> block to disable the PHP memory limit during test execution.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ini</span> <span class="na">name=</span><span class="s">&quot;memory_limit&quot;</span> <span class="na">value=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
-
 
 
 		</div>

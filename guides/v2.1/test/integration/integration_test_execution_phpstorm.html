@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/test/integration/integration_test_execution.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/test/integration/integration_test_execution.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,14 +164,22 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Running Integration Tests in PHPStorm</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/test/integration/integration_test_execution.md" target="_blank">Edit this page on GitHub</a>
-		
-		
-			<a class="contributor" href="http://vinaikopp.com/" target="_blank">Thanks to Vinai Kopp for contributing this topic</a>
-        
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/test/integration/integration_test_execution.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+                <a class="contributor" href="http://vinaikopp.com/" target="_blank">Thanks to Vinai Kopp for contributing this topic</a>
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -495,8 +503,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="running-integration-tests-in-phpstorm">Running integration tests in PHPStorm</h2>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h2 id="running-integration-tests-in-phpstorm">Running integration tests in PHPStorm</h2>
 
 <ul id="markdown-toc">
   <li><a href="#running-integration-tests-in-phpstorm" id="markdown-toc-running-integration-tests-in-phpstorm">Running integration tests in PHPStorm</a>    <ul>
@@ -524,7 +532,6 @@ Then configure the integration test configuration file to be used.</p>
 <p>The only difference in the run configuration is the integration test <code>phpunit.xml.dist</code> or <code>phpunit.xml</code> configuration file from the directory <code>dev/tests/integration</code> has to be selected.</p>
 
 <p><img src="/common/images/phpstorm_run_config_class_integration_tests.png" alt="Integration Test Class run configuration" width="600px" /></p>
-
 
 
 		</div>

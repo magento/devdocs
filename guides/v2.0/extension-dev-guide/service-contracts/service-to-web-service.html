@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/service-contracts/service-to-web-service.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,14 +162,22 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Configure services as web APIs</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.md" target="_blank">Edit this page on GitHub</a>
-		
-		
-			<a class="contributor" href="http://www.classyllama.com/" target="_blank">Thanks to Classy Llama for contributing this topic</a>
-        
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+                <a class="contributor" href="http://www.classyllama.com/" target="_blank">Thanks to Classy Llama for contributing this topic</a>
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -857,8 +865,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 8 August 2016 (PDT)</i></p>
-		<h2 id="overview-web-service">Overview</h2>
+            <div class="updated">Updated: 8 August 2016 (PDT)</div>
+            <h2 id="overview-web-service">Overview</h2>
 <p>You can configure a Magento or third-party service as a web API.</p>
 <p>To <a href="#configure-webapi">configure a web API</a>, you define XML elements and attributes in the <code>webapi.xml</code> XML configuration file for the module for the service.
    The <code>webapi.xml</code> file for your module specifies an XML schema file for validation.
@@ -1146,7 +1154,6 @@
 <h2 id="validate-webapi">webapi.xsd XML schema file</h2>
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>webapi.xsd</code> XML schema file can be found in the <code>app/code/Magento/Webapi/etc</code> directory.</p>
-
 
 		</div>
 	</section>

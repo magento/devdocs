@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/howdoi/checkout/checkout_zip.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/howdoi/checkout/checkout_zip.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Add custom input mask for ZIP code</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/checkout/checkout_zip.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/checkout/checkout_zip.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -865,8 +873,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="whats-in-this-topic">What’s in this topic</h2>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h2 id="whats-in-this-topic">What’s in this topic</h2>
 
 <p>When a shopper specifies the country and ZIP code in the shipping address during checkout or in the shopping cart, Magento checks if the format of the entered code is valid for the specified country. This validation is implemented using the input masks for the ZIP code field. In Magento, these input masks are regular expressions which define which format is allowed. 
 This topic describes how a developer can add custom input masks.</p>
@@ -930,7 +938,6 @@ The syntax of defined by the <a href="https://github.com/magento/magento2/blob/2
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>To remove a mask, in your <code>zip_codes.xml</code> add the corresponding node and set <code>active</code> attribute of <code>&lt;code/&gt;</code> to <code>false</code>.</p>
-
 
 		</div>
 	</section>

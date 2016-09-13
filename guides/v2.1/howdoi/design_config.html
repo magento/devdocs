@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/howdoi/design_config.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/howdoi/design_config.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Customize Design Configuration</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/howdoi/design_config.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/howdoi/design_config.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -937,8 +945,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2>What's in this topic</h2>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h2>What's in this topic</h2>
 
 <p>This topic describes how to customize (add, delete, change) the configuration options available in Magento Admin under <strong>CONTENT</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong>. These options define the various aspects of storefront design. In Magento 2.0.x and earlier these options were set under <strong>STORES</strong> &gt; <strong>Configuration</strong> &gt; <strong>Design</strong>. But starting from Magento 2.1.0 they were moved to the new location, and the configuration form was refactored.</p>
 
@@ -1166,7 +1174,6 @@ For example, the default set of design options for the store view level is the f
 <h2 id="access_options">Accessing the options values in backend models</h2>
 
 <p>The design configuration option values are stored in the <code>core_config_data</code> table in the database, similar to the values of System Configuration options, and can be accessed using the <code>\Magento\Framework\App\ConfigInterface</code> mechanism.</p>
-
 
 		</div>
 	</section>

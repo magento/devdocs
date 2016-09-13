@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/rest/generate-local.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/rest/generate-local.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Generate local REST API reference</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/generate-local.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/generate-local.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -464,8 +472,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<p>The REST documentation on the Magento devdocs website is generated with <a href="http://swagger.io">Swagger UI</a> using a schema derived from the latest build of Magento 2 Community Edition. However, the REST API documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento and there is no live data.</p>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <p>The REST documentation on the Magento devdocs website is generated with <a href="http://swagger.io">Swagger UI</a> using a schema derived from the latest build of Magento 2 Community Edition. However, the REST API documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento and there is no live data.</p>
 
 <p>The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include Magento Enterprise Edition (EE) modules, third-party modules, and extension attributes that have been installed on your system. To view this documentation, go to:</p>
 
@@ -480,7 +488,6 @@
 </div>
 
 <p>You can also use a REST client to generate the JSON schema. In the client, set the method to <code>GET</code> and the URL to <code>http://&lt;magento_host&gt;/rest/default/schema</code>. You must specify a bearer authorization token in the header.</p>
-
 
 		</div>
 	</section>

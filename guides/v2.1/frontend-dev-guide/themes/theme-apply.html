@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/frontend-dev-guide/themes/theme-apply.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Apply and configure a storefront theme</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/frontend-dev-guide/themes/theme-apply.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/frontend-dev-guide/themes/theme-apply.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -907,8 +915,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 12 September 2016 (PDT)</i></p>
-		<h2 id="theme-apply-overview">What's in this topic</h2>
+            <div class="updated">Updated: 12 September 2016 (PDT)</div>
+            <h2 id="theme-apply-overview">What's in this topic</h2>
 
 <p>The topic describes how to apply a theme for your store. This is a required step if you want a theme to be used on a storefront. 
 Also, it gives information how to add a theme independent logo for your store.</p>
@@ -991,7 +999,6 @@ To add a permanent theme-independent logo:</p>
 <h2 id="troubleshooting-if-the-changes-do-not-get-applied">Troubleshooting (if the changes do not get applied)</h2>
 
 <p>If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessing</code> directories, then reload the pages. You can delete the files manually or run the <code>grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
-
 
 
 		</div>

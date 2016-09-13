@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ext-best-practices/extension-coding/working-with-arch-bp.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ext-best-practices/extension-coding/working-with-arch-bp.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Working with the Architecture</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/extension-coding/working-with-arch-bp.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/extension-coding/working-with-arch-bp.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -529,8 +537,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
-		<h2 class="no_toc" id="working-with-the-architecture">Working with the Architecture</h2>
+            <div class="updated">Updated: 20 July 2016 (PDT)</div>
+            <h2 class="no_toc" id="working-with-the-architecture">Working with the Architecture</h2>
 
 <p>In addition to understanding fundamental programming designs/concepts, you are encouraged to learn how the MVC architecture works in our code and how to work with Magento’s generated code and factories.</p>
 
@@ -589,7 +597,6 @@
 <h3 id="use-the-phpcodesniffer-tool">Use the PHP_CodeSniffer tool</h3>
 
 <p><a href="https://github.com/squizlabs/PHP_CodeSniffer" target="_blank">PHP_CodeSniffer</a> is a set of PHP scripts that checks your code for violations of a particular coding standard. It can be used in conjunction with the <a href="https://github.com/magento-ecg/coding-standard" target="_blank">ECG Magento Code Sniffer Coding Standard</a> to check your code for some of the more common Magento and PHP problems. Using these two tools will ensure that your extension code meets many of <a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Magento’s coding standards</a>. It also has the added benefits of keeping your code clean and maintainable.</p>
-
 
 		</div>
 	</section>

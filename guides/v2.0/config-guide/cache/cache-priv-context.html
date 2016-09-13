@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/cache/cache-priv-context.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/cache/cache-priv-context.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">HTTP context</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/cache/cache-priv-context.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/cache/cache-priv-context.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -1327,8 +1335,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 28 July 2016 (PDT)</i></p>
-		<h2 id="http-context">HTTP context</h2>
+            <div class="updated">Updated: 28 July 2016 (PDT)</div>
+            <h2 id="http-context">HTTP context</h2>
 <p>Caching servers and proxies usually use a URL as the caching identifier; however, Magento URLs are not unique <em>enough</em> to allow caching by URL only. (We can cache the customer group, selected language, whether the customer logged in or not, and so on).</p>
 
 <p>To make each cached URL totally unique, we use <em>HTTP context variables</em>. Context variables enable the Magento application to serve different content on the same URL based on customer group, selected language, whether customer logged in or not, and so on.</p>
@@ -1348,7 +1356,6 @@ hash_data(regsub(req.http.cookie, &quot;^.?X-Magento-Vary=([^;]+);.*$&quot;, &qu
 
 <h4 id="next">Next</h4>
 <p><a href="/guides/v2.0/config-guide/cache/cache-priv-inval.html">Cache invalidation and private content versioning</a></p>
-
 
 		</div>
 	</section>

@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/build/module-load-order.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/build/module-load-order.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Component load order</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/build/module-load-order.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/build/module-load-order.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -855,8 +863,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
-		<h2 id="component-load-order">Component load order</h2>
+            <div class="updated">Updated: 20 July 2016 (PDT)</div>
+            <h2 id="component-load-order">Component load order</h2>
 
 <p>You may need to specify your component’s dependency on other components or files from other components using your component’s <a href="/guides/v2.0/extension-dev-guide/build/create_component.html#add-component-xml">composer.json</a>. Further, you can specify a load order in your component’s <code>module.xml</code> file using the <code>&lt;sequence&gt;</code> tag to ensure that needed files from other components are already loaded when your component loads.</p>
 
@@ -900,7 +908,6 @@
 <h2 id="next">Next</h2>
 
 <p><a href="/guides/v2.0/extension-dev-guide/build/enable-module.html">Enable or disable your component</a></p>
-
 
 
 		</div>

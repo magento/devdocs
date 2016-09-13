@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/frontend-dev-guide/themes/theme-apply.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Apply and configure a storefront theme</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/themes/theme-apply.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/themes/theme-apply.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -889,8 +897,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 9 August 2016 (PDT)</i></p>
-		<h2 id="theme-apply-overview">What's in this topic</h2>
+            <div class="updated">Updated: 9 August 2016 (PDT)</div>
+            <h2 id="theme-apply-overview">What's in this topic</h2>
 
 <p>The topic describes how to apply a theme for your store. This is a required step if you want a theme to be used on a storefront. 
 Also, it gives information how to add a theme independent logo for your store.</p>
@@ -981,7 +989,6 @@ To add a permanent theme-independent logo:</p>
     <p>In your Magento database, in the <code>theme</code> table, check if the <code>type</code> value for your custom theme is “0”. If it is “1” or “2”, change it to “0”. You can use a database tool such as <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> or do it manually from the command line.</p>
   </li>
 </ul>
-
 
 		</div>
 	</section>

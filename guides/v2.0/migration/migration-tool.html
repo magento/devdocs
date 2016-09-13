@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/migration/migration-tool.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/migration/migration-tool.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Data migration tool</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-tool.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-tool.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -647,8 +655,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 29 August 2016 (PDT)</i></p>
-		<h2>Data Migration Tool</h2>
+            <div class="updated">Updated: 29 August 2016 (PDT)</div>
+            <h2>Data Migration Tool</h2>
 
 <p>To assist you with your migration, Magento provides the Data Migration Tool, a command-line interface (CLI) that provides verification, progress tracking, logging, and testing functions. The migration tool operates in three modes to transfer and adapt data from Magento 1 to Magento 2:</p>
 
@@ -665,7 +673,6 @@
 </ul>
 
 <p>Each mode consists of several steps that perform tasks specific to the mode. (For example, URL rewrite step, EAV step, settings step.) Each step initially checks data integrity in the Magento 1 and Magento 2 databases and, after verification succeeds, performs the transfer, and verifies data again after it’s done.</p>
-
 
 		</div>
 	</section>

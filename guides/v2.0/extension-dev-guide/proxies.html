@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/proxies.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/proxies.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,14 +162,22 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Proxies</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/proxies.md" target="_blank">Edit this page on GitHub</a>
-		
-		
-			<a class="contributor" href="http://www.classyllama.com/" target="_blank">Thanks to Classy Llama for contributing this topic</a>
-        
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/proxies.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+                <a class="contributor" href="http://www.classyllama.com/" target="_blank">Thanks to Classy Llama for contributing this topic</a>
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -857,8 +865,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
-		<h2 id="proxies">Proxies</h2>
+            <div class="updated">Updated: 20 July 2016 (PDT)</div>
+            <h2 id="proxies">Proxies</h2>
 
 <p>Magento’s <a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor injection pattern</a> enables you to flexibly manage your class dependencies. However, constructor injection also means that a chain reaction of object instantiation is often the result when you create an object. (The original object has dependencies that have dependencies, and those objects have dependencies, and so on.)</p>
 
@@ -920,7 +928,6 @@
 <p>Because DI configuration is used to inject a proxy, proxies can be dropped in to replace their corresponding classes - or proxy replacements <em>removed</em> - without touching application code.</p>
 
 <p>As a practical example of a proxy, you can see the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated <code>StoreManager</code> proxy class.</p>
-
 
 		</div>
 	</section>

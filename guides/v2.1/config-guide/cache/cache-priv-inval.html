@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/cache/cache-priv-inval.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/cache/cache-priv-inval.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Cache invalidation and private content versioning</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/cache/cache-priv-inval.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/cache/cache-priv-inval.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -1404,8 +1412,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 8 July 2016 (PDT)</i></p>
-		<h4 id="contents">Contents</h4>
+            <div class="updated">Updated: 8 July 2016 (PDT)</div>
+            <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#config-cache-inval">Cache invalidation</a></li>
   <li><a href="#config-priv-vers">Private content versioning</a></li>
@@ -1473,7 +1481,6 @@ When you save and entity, Magento gets its identities and use them to clear the 
   </li>
   <li>Any future HTTP POST or PUT request changes the value of <code>private_content_version</code> and results in the updated content being cached by the browser.</li>
 </ol>
-
 
 		</div>
 	</section>

@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/soap/bk-soap.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/soap/bk-soap.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">SOAP Reference</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/soap/bk-soap.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/soap/bk-soap.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -412,8 +420,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 8 September 2016 (PDT)</i></p>
-		<h3 class="no_toc" id="contents">Contents</h3>
+            <div class="updated">Updated: 13 September 2016 (PDT)</div>
+            <h3 class="no_toc" id="contents">Contents</h3>
 
 <ul id="markdown-toc">
   <li><a href="#soap-wsdl-endpoint-format" id="markdown-toc-soap-wsdl-endpoint-format">Soap WSDL Endpoint Format</a></li>
@@ -444,7 +452,7 @@
   <ul>
   <li><code>default</code></li>
   <li>The assigned store code</li>
-  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>get</code>operations cannot be performed when you specify <code>all</code>.</li>
+  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores.</li>
   </ul>
 </div>
 
@@ -640,7 +648,6 @@
 <p>taxTaxRuleRepositoryV1: <code>http://&lt;magento_host&gt;/soap/default?wsdl&amp;services=taxTaxRuleRepositoryV1</code></p>
 
 <p>taxTaxClassRepositoryV1: <code>http://&lt;magento_host&gt;/soap/default?wsdl&amp;services=taxTaxClassRepositoryV1</code></p>
-
 
 		</div>
 	</section>

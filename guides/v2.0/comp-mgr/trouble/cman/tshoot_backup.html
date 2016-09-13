@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/comp-mgr/trouble/cman/tshoot_backup.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Troubleshoot backups</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -894,8 +902,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="trouble-backup">Troubleshoot backups</h2>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h2 id="trouble-backup">Troubleshoot backups</h2>
 <p>A backup can fail for any of the following reasons:</p>
 
 <ul>
@@ -926,7 +934,6 @@
 <p>If the backup fails or if all backup tests fail, it’s possible the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a> doesn’t have sufficient privileges and ownership of the Magento file system. For example, another user might own the files or the files might be read-only.</p>
 
 <p>Pay particular attention to file system permissions and ownership of the <code>&lt;your Magento install dir&gt;/var</code> directory and subdirectories. For more information, see <a href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system permissions and ownership</a>.</p>
-
 
 		</div>
 	</section>

@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-routes-more-ssi.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-routes-more-ssi.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Server side includes</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-routes-more-ssi.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-routes-more-ssi.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -1127,8 +1135,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="server-side-includes">Server side includes</h2>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h2 id="server-side-includes">Server side includes</h2>
 <p><a href="http://httpd.apache.org/docs/current/howto/ssi.html" target="_site">Server side includes</a> (SSI) are directives in HTML pages that get evaluated on the server while the pages are being rendered. Use of server side includes enables you to add dynamically generated content to an existing HTML page without having to serve the entire page.</p>
 
 <p>More information about <a href="http://nginx.org/en/docs/http/ngx_http_ssi_module.html" target="_blank">nginx SSI</a>.</p>
@@ -1166,7 +1174,6 @@ server fill in parts of the HTML, respecting the your <a href="/guides/v2.0/clou
 <span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span></code></pre></figure>
 
 <p>Browse to the page on which you added the control. Refresh the page several times and notice that the time at the top of the page changes but the time on the bottom changes only every 600 seconds.</p>
-
 
 		</div>
 	</section>

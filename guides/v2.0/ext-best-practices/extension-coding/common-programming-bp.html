@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ext-best-practices/extension-coding/common-programming-bp.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ext-best-practices/extension-coding/common-programming-bp.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Programming Best Practices</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/extension-coding/common-programming-bp.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/extension-coding/common-programming-bp.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -529,8 +537,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 21 July 2016 (PDT)</i></p>
-		<h2 class="no_toc" id="programming-best-practices">Programming best practices</h2>
+            <div class="updated">Updated: 21 July 2016 (PDT)</div>
+            <h2 class="no_toc" id="programming-best-practices">Programming best practices</h2>
 
 <p>You should do your best to adhere to common programming best practices to reduce the amount of bugs and improve the quality and maintainability of your extensions. The following list of best practices addresses commonly reported issues found in third party extensions.</p>
 
@@ -586,7 +594,6 @@
 <p><a href="https://en.wikipedia.org/wiki/Object_composition" target="_blank">Object composition</a> is the programming concept of combining class objects and data types to create a more complex class. The classes and data types are used together to produce a desired functionality.</p>
 
 <p>For Magento 2 extension development, we encourage the use of object composition over class inheritance. Using composition over inheritance makes your extension easier to maintain when class changes occur and update when new features need to be implemented.</p>
-
 
 		</div>
 	</section>

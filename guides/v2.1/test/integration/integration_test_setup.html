@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/test/integration/integration_test_setup.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/test/integration/integration_test_setup.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,14 +164,22 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Preparing Integration Test Execution</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/test/integration/integration_test_setup.md" target="_blank">Edit this page on GitHub</a>
-		
-		
-			<a class="contributor" href="http://vinaikopp.com/" target="_blank">Thanks to Vinai Kopp for contributing this topic</a>
-        
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/test/integration/integration_test_setup.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+                <a class="contributor" href="http://vinaikopp.com/" target="_blank">Thanks to Vinai Kopp for contributing this topic</a>
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -495,8 +503,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="preparing-integration-test-execution">Preparing Integration Test Execution</h2>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h2 id="preparing-integration-test-execution">Preparing Integration Test Execution</h2>
 
 <ul id="markdown-toc">
   <li><a href="#preparing-integration-test-execution" id="markdown-toc-preparing-integration-test-execution">Preparing Integration Test Execution</a>    <ul>
@@ -636,7 +644,6 @@ A testsuite configuration like the following can be added to the <code>&lt;tests
 <span class="nt">&lt;/testsuite&gt;</span></code></pre></figure>
 
 <p>Such a test suite configuration can then be executed using the <code>--testsuite</code> command option, for example <code>--testsuite "Third Party Integration Tests"</code>.</p>
-
 
 
 		</div>

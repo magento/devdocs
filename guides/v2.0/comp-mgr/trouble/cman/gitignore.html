@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/comp-mgr/trouble/cman/gitignore.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/comp-mgr/trouble/cman/gitignore.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Missing .gitignore files</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/trouble/cman/gitignore.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/trouble/cman/gitignore.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -894,8 +902,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h3 id="missing-ignore">Problem: missing <code>.gitignore</code> files</h3>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h3 id="missing-ignore">Problem: missing <code>.gitignore</code> files</h3>
 <p>If you downloaded a compressed archive, there might have been missing <code>.gitignore</code> files that prevent the upgrade from completing properly. To apply our update, patch <code>magento/magento-composer-installer</code> then run <code>composer update</code> from your Magento installation directory.</p>
 
 <p>The following figure shows an example of this issue when using the Setup Wizard.</p>
@@ -917,7 +925,6 @@ composer update
   </li>
   <li>Try your upgrade again.</li>
 </ol>
-
 
 		</div>
 	</section>

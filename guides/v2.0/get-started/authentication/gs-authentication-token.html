@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/get-started/authentication/gs-authentication-token.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/get-started/authentication/gs-authentication-token.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Token-based authentication</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/get-started/authentication/gs-authentication-token.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/get-started/authentication/gs-authentication-token.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -586,8 +594,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<p>To make a web API call from a client such as a mobile application, you must supply an <i>authentication token</i> on the call. The token acts like an electronic key that lets you access the API.</p>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <p>To make a web API call from a client such as a mobile application, you must supply an <i>authentication token</i> on the call. The token acts like an electronic key that lets you access the API.</p>
 <p>You request a token from the Magento token service at the REST endpoint that is defined for your user type. The token service returns
    a unique authentication token in exchange for a user name and password for a Magento account.
 </p>
@@ -691,7 +699,6 @@
 
    <li><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>
-
 
 		</div>
 	</section>

@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/rest/rest_endpoints.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/rest/rest_endpoints.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">List of service names per module</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/rest_endpoints.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/rest_endpoints.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -464,8 +472,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h2 id="rest-schema-endpoint-format">REST Schema Endpoint Format</h2>
+            <div class="updated">Updated: 13 September 2016 (PDT)</div>
+            <h2 id="rest-schema-endpoint-format">REST Schema Endpoint Format</h2>
 <p>To specify one or more services:</p>
 
 <p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema&amp;services=&lt;serviceName1,serviceName2,..&gt;</code></p>
@@ -479,31 +487,11 @@
   <ul>
   <li><code>default</code></li>
   <li>The assigned store code</li>
-  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>GET</code>operations cannot be performed when you specify <code>all</code>.</li>
+  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores.</li>
   </ul>
 </div>
 
 <h2 id="list-of-service-names-per-module">List of Service Names per Module</h2>
-
-<ul id="markdown-toc">
-  <li><a href="#rest-schema-endpoint-format" id="markdown-toc-rest-schema-endpoint-format">REST Schema Endpoint Format</a></li>
-  <li><a href="#list-of-service-names-per-module" id="markdown-toc-list-of-service-names-per-module">List of Service Names per Module</a>    <ul>
-      <li><a href="#backend" id="markdown-toc-backend">Backend</a></li>
-      <li><a href="#bundle" id="markdown-toc-bundle">Bundle</a></li>
-      <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
-      <li><a href="#checkout" id="markdown-toc-checkout">Checkout</a></li>
-      <li><a href="#configurable" id="markdown-toc-configurable">Configurable</a></li>
-      <li><a href="#customer" id="markdown-toc-customer">Customer</a></li>
-      <li><a href="#downloadable" id="markdown-toc-downloadable">Downloadable</a></li>
-      <li><a href="#eav" id="markdown-toc-eav">Eav</a></li>
-      <li><a href="#gift-message" id="markdown-toc-gift-message">Gift Message</a></li>
-      <li><a href="#integration" id="markdown-toc-integration">Integration</a></li>
-      <li><a href="#quote" id="markdown-toc-quote">Quote</a></li>
-      <li><a href="#sales" id="markdown-toc-sales">Sales</a></li>
-      <li><a href="#tax" id="markdown-toc-tax">Tax</a></li>
-    </ul>
-  </li>
-</ul>
 
 <h3 id="backend">Backend</h3>
 <p>backendModuleServiceV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=backendModuleServiceV1</code></p>
@@ -693,7 +681,6 @@
 <p>taxTaxRuleRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=taxTaxRuleRepositoryV1</code></p>
 
 <p>taxTaxClassRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=taxTaxClassRepositoryV1</code></p>
-
 
 		</div>
 	</section>

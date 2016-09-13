@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ext-best-practices/extension-coding/example-module-adminpage.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ext-best-practices/extension-coding/example-module-adminpage.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,12 +162,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Creating a Magento admin page</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/extension-coding/example-module-adminpage.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/extension-coding/example-module-adminpage.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -529,8 +537,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 8 September 2016 (PDT)</i></p>
-		<h2 class="no_toc" id="creating-a-magento-admin-page">Creating a Magento admin page</h2>
+            <div class="updated">Updated: 8 September 2016 (PDT)</div>
+            <h2 class="no_toc" id="creating-a-magento-admin-page">Creating a Magento admin page</h2>
 
 <ul id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
@@ -815,7 +823,6 @@ mkdir -pm view/adminhtml/templates
 <p>Once the module installation has completed, the link to the <strong>Hello World</strong> page should appear in the <strong>Greetings</strong> section under <strong>Content</strong> in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.</p>
 
 <p><img src="/common/images/ext-best-practices/hello-world-page.png" alt="Hello World Page" /></p>
-
 
 
 		</div>

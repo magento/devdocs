@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.0
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/factories.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/factories.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,14 +162,22 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Instantiating objects with factories</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/factories.md" target="_blank">Edit this page on GitHub</a>
-		
-		
-			<a class="contributor" href="http://www.classyllama.com/" target="_blank">Thanks to Classy Llama for contributing this topic</a>
-        
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/factories.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+                <a class="contributor" href="http://www.classyllama.com/" target="_blank">Thanks to Classy Llama for contributing this topic</a>
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -857,8 +865,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 20 July 2016 (PDT)</i></p>
-		<h2 id="instantiating-objects-with-factories">Instantiating objects with factories</h2>
+            <div class="updated">Updated: 20 July 2016 (PDT)</div>
+            <h2 id="instantiating-objects-with-factories">Instantiating objects with factories</h2>
 
 <p>The most common way to request and work with objects in Magento is using <a href="/guides/v2.0/extension-dev-guide/depend-inj.html##dep-inj-preview-cons">constructor injection</a>.  Objects obtained this way (that is, using injectable classes) follow a singleton pattern, whereby the same instance is always returned by the Object Manager whenever a class is requested.</p>
 
@@ -905,7 +913,6 @@
 <p>The <code>_create_</code> method of factories accepts an array, which is passed as the <code>$data</code> array to the instantiated object.</p>
 
 <p>Just as interfaces can be specified in constructor injection to obtain the best object implementing that interface (as defined in dependency injection preferences), factories can be used for such interfaces as well.  For example, requesting an object of the class <code>Magento\Customer\Api\Data\CustomerInterfaceFactory</code> in a constructor results in a factory responsible for creating instances of the appropriate dependency injection preference implementing <code>Magento\Customer\Api\Data\CustomerInterface</code>.</p>
-
 
 		</div>
 	</section>

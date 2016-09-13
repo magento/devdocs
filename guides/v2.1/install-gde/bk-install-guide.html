@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/bk-install-guide.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/bk-install-guide.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">How to get the Magento software</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/bk-install-guide.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/bk-install-guide.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -501,8 +509,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 15 August 2016 (PDT)</i></p>
-		<h2 id="magento-software-installation">Magento software installation</h2>
+            <div class="updated">Updated: 15 August 2016 (PDT)</div>
+            <h2 id="magento-software-installation">Magento software installation</h2>
 <p>Hi, we’re glad you’re among the 240,000 merchants worldwide who put their trust in our eCommerce software. We’ve gathered some information to help you get started with Magento and with your Magento installation.</p>
 
 <p>We have some resources here to help get you started using the eCommerce platform of the future—Magento 2.</p>
@@ -573,7 +581,6 @@
 <p>You should <em>not</em> install the Magento software in the web server docroot as the <code>root</code> user because the web server might not be able to interact with those files.</p>
 
 <p>You’ll also need <code>root</code> privileges to create the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and add that owner to the web server’s group. You’ll use the Magento file system owner to run any commands from the command line and to set up the Magento cron job, which schedules tasks for you.</p>
-
 
 		</div>
 	</section>

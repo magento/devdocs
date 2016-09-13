@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/varnish/use-varnish-cache-how.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">How Varnish caching works</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/varnish/use-varnish-cache-how.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/varnish/use-varnish-cache-how.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -1404,8 +1412,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 22 June 2016 (PDT)</i></p>
-		<h4 id="contents">Contents</h4>
+            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#config-varnish-cache-over">Overview of Varnish caching</a></li>
   <li><a href="#config-varnish-cache-browser">Caching by browser request</a></li>
@@ -1467,7 +1475,6 @@
 <p>The 304 status code occurs because the user invalidated their local cache and the content on the server did not change. Because of the 304 status code, the static asset <em>content</em> is not transferred; only HTTP headers are downloaded to the browser.</p>
 
 <p>If the content changes on the server, the client downloads the static asset with an HTTP 200 (OK) status code and a new ETag.</p>
-
 
 
 		</div>

@@ -35,18 +35,18 @@
 					<a href="/">Developer Documentation (2.1)</a>
 				</div>
 			</div>
-			
+            
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
 		Version 2.1
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/code-generation.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/code-generation.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -164,12 +164,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">Code generation</h1>
-		
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/extension-dev-guide/code-generation.md" target="_blank">Edit this page on GitHub</a>
-		
-		
+
         
 
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/extension-dev-guide/code-generation.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>
 
@@ -900,8 +908,8 @@
 
 	<section class="content">
 		<div class="content-wrap">
-			<p align="right"><i>Updated: 26 June 2016 (PDT)</i></p>
-		<h2 id="codegen-over">Overview of code generation</h2>
+            <div class="updated">Updated: 26 June 2016 (PDT)</div>
+            <h2 id="codegen-over">Overview of code generation</h2>
 <p>The Magento application generates code to create non-existent classes. As an example, look at the <a href="https://github.com/magento/magento2/blob/2.0//app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:</p>
 
 <pre><code>...
@@ -955,7 +963,6 @@
 <p>When code changes as discussed in the preceding section, the Object Manager compiles it.</p>
 
 <p>The code compiler compiler creates <code>var/di/global.ser</code>, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. <code>di.xml</code> is the dependency injection configuration. There is a global <code>app/etc/di.xml</code> and there can one defined for every module.</p>
-
 
 
 		</div>
