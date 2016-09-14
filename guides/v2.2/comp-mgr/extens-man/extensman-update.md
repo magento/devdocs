@@ -58,8 +58,6 @@ Updating dependencies (including require-dev)
 - Installing magento/module-bundle-sample-data (100.1.0)
 Downloading: Connecting... Downloading: 0%..... Downloading: 100%
 
-Package fabpot/php-cs-fixer is abandoned, you should avoid using it. Use friendsofphp/php-cs-fixer instead.
-Writing lock file
 Generating autoload files
 
 [2016-07-27 15:38:36 CDT] Composer update completed successfully
