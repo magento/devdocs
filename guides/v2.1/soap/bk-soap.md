@@ -25,7 +25,7 @@ github_link: soap/bk-soap.md
   <ul>
   <li><code>default</code></li>
   <li>The assigned store code</li>
-  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>get</code>operations cannot be performed when you specify <code>all</code>.</li>
+  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores.</li>
   </ul>
 </div>
 

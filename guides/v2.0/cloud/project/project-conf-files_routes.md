@@ -31,6 +31,10 @@ systems. This one configuration file handles routes for all systems.
 
 This file is located at `.magento/routes.yaml` in your project.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+</div>
+
 [Sample `routes.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento/routes.yaml){:target="_blank"}
 
 ## Defaults {#cloud-yaml-routes-default}
