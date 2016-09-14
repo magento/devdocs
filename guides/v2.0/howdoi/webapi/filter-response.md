@@ -10,22 +10,22 @@ github_link: howdoi/webapi/filter-response.md
 
 ---
 
-Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magneto provides a query parameter-based syntax for REST API requests that enareturn partial responses.
+Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magneto provides a query parameter-based syntax for REST API requests that return partial responses.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>This feature is not available for SOAP, because SOAP does not allow partial responses. </p>
 </div>
 
-You can append `?fields=<field_or_object1>,<field_or_object2>,...` to any REST GET, POST, or PUT operation to filter unimportant information from the response. `<field_or_object>` can be any of the following:
+You can append `?fields=<field_or_object1>,<field_or_object2>,...` to any GET, POST, or PUT operation to filter unimportant information from the response. `<field_or_object>` can be any of the following:
 
 * Simple top-level field
 * Top-level object that includes all fields
 * Top-level object with selected fields
 * Nested objects
 
-Separate each top-level field or object with a comma.
+Each field or object must be separated with a comma.
 
-On POST and PUT requests. Magento ignores the `fields` parameter as input, but the response includes only the fields and objects.
+On POST and PUT requests. Magento ignores the `fields` parameter as input, but the response includes only the requested fields and objects.
 
 ## Examples
 {:.no_toc}
@@ -51,7 +51,7 @@ The following example returns only the `sku`, `price`, and `name` for the specif
 
 ### Simple fields and top-level objects with all fields
 
-The following example returns only the customer first name, last name, and the entire `billing_address` object from a specified order. Since the entire billing_address objectis returned, do not put brackets `[]` after the object name.
+The following example returns only the customer first name, last name, and the entire `billing_address` object from a specified order. Do not include brackets `[]` after an object name when you want to return all of the object's contents.
 
 `GET http:/<host>/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname`
 
@@ -101,7 +101,7 @@ The following example returns only the `name`, `qty`, and `sku` fields defined i
 
 ### Nested objects
 
-The following example returns only the following:
+This example returns only the following:
 
 * The product's `sku` and `name`
 * The entire `category_links` object, which is defined in `extension_attributes`
