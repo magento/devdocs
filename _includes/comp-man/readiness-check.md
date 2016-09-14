@@ -23,4 +23,3 @@ In the event of failure, see one of the following sections:
 *	<a href="{{page.baseurl}}comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a>
 *	<a href="{{page.baseurl}}install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a>
 *	<a href="{{page.baseurl}}install-gde/system-requirements.html">PHP extensions check failure</a>
-*	<a href="{{page.baseurl}}comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a>
