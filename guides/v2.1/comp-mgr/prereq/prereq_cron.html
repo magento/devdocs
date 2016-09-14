@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up cron for Component Manager and System Upgrade</title>
+	<title>Set up cron for update and upgrade</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -163,7 +163,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Set up cron for Component Manager and System Upgrade</h1>
+		<h1 class="page-heading">Set up cron for update and upgrade</h1>
 
         
 
@@ -343,7 +343,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/comp-mgr/prereq/prereq_cron.html">Set up cron for Component Manager and System Upgrade</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/comp-mgr/prereq/prereq_cron.html">Set up cron for update and upgrade</a></li>
 
 									
 
@@ -929,12 +929,12 @@
 	<section class="content">
 		<div class="content-wrap">
             <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="compman-prereq-cron">Set up cron jobs</h2>
-<p>To enable the updater to work for both the Component Manager and System Upgrade, you must configure two cron jobs. Each cron job should run every minute.</p>
+            <h2 id="compman-prereq-cron">Set up cron for update and upgrade</h2>
+<p>To enable us to update or upgrade your system, you must configure two cron jobs. Each cron job should run every minute.</p>
 
 <p>The cron jobs schedule tasks for the Setup Wizard and for the updater application. These applications work together to install, update, and upgrade the Magento application and components.</p>
 
-<p>Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_blank">crontabs</a> for the <a href="/guides/v2.1/install-gde/prereq/apache-user.html">Magento file system owner</a> because that user runs the updater application for the Component Manager and System Upgrade.</p>
+<p>Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_blank">crontabs</a> for the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> because that user runs the updater application for the Web Setup Wizard.</p>
 
 <div>
 
@@ -1024,12 +1024,6 @@
 
   <p>Save your changes to the crontab and exit the editor.</p>
 
-  <h4 id="next-step">Next step</h4>
-
-  <ul>
-    <li><a href="/guides/v2.1/comp-mgr/module-man/compman-start.html">Run the Component Manager</a></li>
-    <li><a href="/guides/v2.1/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a></li>
-  </ul>
 </div>
 
 		</div>
