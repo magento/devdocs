@@ -346,6 +346,58 @@
 
 									
 
+										<li class="levela1"><span class="nav-header">components</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-form.html">Form component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Listing/Grid component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-modal.html">Modal component</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
 										<li class="levela1"><span class="nav-header">concepts</span></li>
 
 									
@@ -542,7 +594,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 9 September 2016 (PDT)</div>
+            <div class="updated">Updated: 14 September 2016 (PDT)</div>
             <h2 class="no_toc" id="about-the-uielement-class">About the uiElement class</h2>
 
 <ul id="markdown-toc">
@@ -552,50 +604,84 @@
 
 <h2 id="what-is-the-uielement-class">What is the <code>uiElement</code> class</h2>
 
-<p>The <code>uiElement</code> class is a direct successor of the <a href="ui_comp_guide/concepts/ui_comp_uiclass_concept.html">uiClass library</a>. The source file is stored in <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/element/element.js</code>. 
+<p>The <code>uiElement</code> class is a direct successor of the <a href="ui_comp_guide/concepts/ui_comp_uiclass_concept.html">uiClass library</a>. 
 When creating a new component, use the <code>uiElement</code> class as a direct parent, if your component will be the last in the components hierarchy chain.</p>
+
+<p><code>uiElement</code> source code is <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/element/element.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js">app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js</a>.</p>
 
 <h2 id="commonly-used-uielement-methods">Commonly used <code>uiElement</code> methods</h2>
 
 <ul>
   <li>
-    <p>The <code>initLinks()</code> method implements component communication by using <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code>links.js</code></a>. The <code>initLinks()</code> method creates an interface to set it.</p>
+    <p>The <code>initLinks()</code> method implements component communication by using <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code>links.js</code></a>.  <code>initLinks()</code> introduces processing of the <a href="/guides/v2.1/ui-components/ui_components_js.html#comp_link"><code>exports</code>, <code>imports</code>, <code>links</code> and <code>listens</code> properties</a>.</p>
   </li>
   <li>
     <p>The <code>initObservable()</code> method allows you to declare observable variables within the same instance.</p>
 
-    <p>As an example:</p>
+    <p>Example:</p>
+
+    <pre><code>initObservable: function () {
+    this._super();
+  
+    this.track('childTemplate')
+    this.observe([
+        '%myVariable1%',
+        '%myVariable2%'
+    ]);
+   
+    return this; 
+}
+</code></pre>
+
+    <p>, where:</p>
+
+    <ul>
+      <li>
+        <p>the <code>observe()</code> method is a wrapper for the <code>ko.observable()</code> and <code>ko.observableArray()</code> methods. It converts the properties of the current method into the observable properties.<br />
+<code>observe([{Boolean} isTracked,] {String|Array|Object} listOfProperties)</code>:</p>
+
+        <ul>
+          <li><code>isTracked</code> - <code>{Boolean}</code>, optional, - defines access usage: whether to use observable properties (<code>isTracked = false</code>) or property accessors (<code>isTracked = true</code>).</li>
+          <li><code>listOfProperties</code> - <code>{String}</code> is treated as space-separated list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
+          <li><code>listOfProperties</code> - <code>{Array}</code> a list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
+          <li><code>listOfProperties</code> - <code>{Object}</code> a list of properties’ names. Initial values will be used from this object.</li>
+        </ul>
+      </li>
+      <li>
+        <p>the <code>track(listOfProperties)</code> method is equal to <code>observe(true, listOfProperties)</code>.
+The main difference between <code>observe()</code> and <code>track()</code> is that <code>observe()</code> is mainly used without first boolean argument. So it really converts properties to observable functions. It changes how property can be accessed. Otherwise <code>track()</code> uses property accessors. So property access remains the same.</p>
+
+        <p>Example:</p>
+
+        <pre><code>this.observable = 1;
+this.observe('observable');
+
+this.observable(2); // setter
+this.observable();  // getter
+
+
+this.trackable = 1;
+this.track('trackable');
+
+this.trackable = 2; // setter
+this.trackable;     // getter
+</code></pre>
+      </li>
+    </ul>
   </li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">initObservable</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
-
-    <span class="k">this</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s1">&#39;childTemplate&#39;</span><span class="p">)</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">observe</span><span class="p">([</span>
-        <span class="s1">&#39;%myVariable1%&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;%myVariable2%&#39;</span>
-    <span class="p">]);</span>
-
-    <span class="k">return</span> <span class="k">this</span><span class="p">;</span> 
-<span class="p">}</span></code></pre></figure>
-
-<ul>
   <li>
-    <p>The <code>initModules()</code> method initializes external UI components’ instances and links them to local variables. This method works with the <code>modules</code> section of the configuration, where we define the name of the external instance and the local variable. The <code>module</code> section is an object where each key is the variable’s name and each value is the instance’s name. A developer does not need to be concerned with the instantiation of the module (external instance), because the <code>initModules()</code> method will resolve the variable when the instance is instantiated.</p>
+    <p>The <code>initModules()</code> method initializes external UI components’ instances and links them to local variables. This method works with the <code>modules</code> section of the configuration, where we define the name of the external instance and the local variable. The <code>modules</code> section is an object where each key is the variable’s name and each value is the instance’s name. A developer does not need to be concerned with the instantiation of the module (external instance), because the <code>initModules()</code> method will resolve the variable when the instance is instantiated.</p>
 
-    <p>As an example:</p>
+    <p>Example:</p>
+
+    <pre><code>// Config, where the `modules` property is declared
+defaults: {
+    modules: {
+        '%myProperty%': '%linkToTheComponent%'
+    }
+}
+</code></pre>
   </li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Config, where the `modules` property is declared</span>
-<span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">modules</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s1">&#39;%myProperty%&#39;</span><span class="o">:</span> <span class="s1">&#39;%linkToTheComponent%&#39;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<ul>
   <li>
     <p>The <code>getTemplate()</code> method returns a file path to UI component’s template.</p>
   </li>

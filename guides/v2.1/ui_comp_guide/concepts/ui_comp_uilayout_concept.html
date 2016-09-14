@@ -346,6 +346,58 @@
 
 									
 
+										<li class="levela1"><span class="nav-header">components</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-form.html">Form component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Listing/Grid component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-modal.html">Modal component</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
 										<li class="levela1"><span class="nav-header">concepts</span></li>
 
 									
@@ -542,18 +594,25 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 9 September 2016 (PDT)</div>
+            <div class="updated">Updated: 14 September 2016 (PDT)</div>
             <h2 class="no_toc" id="about-the-uilayout-service-module">About the uiLayout service module</h2>
 
 <ul id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-  <li><a href="#implementation-details" id="markdown-toc-implementation-details">Implementation details</a></li>
-  <li><a href="#example-1" id="markdown-toc-example-1">Example 1:</a></li>
-  <li><a href="#example-2" id="markdown-toc-example-2">Example 2:</a></li>
+  <li><a href="#implementation-details" id="markdown-toc-implementation-details">Implementation details</a>    <ul>
+      <li><a href="#the-nodes-argument" id="markdown-toc-the-nodes-argument">The <code>nodes</code> argument</a></li>
+    </ul>
+  </li>
+  <li><a href="#example-1" id="markdown-toc-example-1">Example 1</a></li>
+  <li><a href="#example-2" id="markdown-toc-example-2">Example 2</a></li>
 </ul>
 
 <h2 id="overview">Overview</h2>
-<p>The <code>uiLayout</code> service module is used to initialize UI components. The source file of the <code>uiLayout</code> module is <code>&lt;UI_Module_dir&gt;/view/base/web/js/core/renderer/layout.js</code>.</p>
+<p>The <code>uiLayout</code> service module is used to initialize UI components.</p>
+
+<p>The source file of the <code>uiLayout</code> module is <code>&lt;UI_Module_dir&gt;/view/base/web/js/core/renderer/layout.js</code>.</p>
+
+<p><code>uiLayout</code> source code is <code>&lt;UI_Module_dir&gt;/view/base/web/js/core/renderer/layout.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js">app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js</a>.</p>
 
 <p>In a <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">typical UI component’s configuration flow</a>, the <code>uiLayout</code> module is called by <code>app.js</code> (<code>&lt;Ui_module_dir&gt;/view/base/web/js/core/app.js</code>) and receives the component’s configuration as a parameter.</p>
 
@@ -561,9 +620,7 @@
 
 <h2 id="implementation-details">Implementation details</h2>
 
-<p>The <code>uiLayout</code> module is a singleton. It returns <code>function run(nodes, parent, toCache, toMerge)</code>.</p>
-
-<p>Where arguments are the following:</p>
+<p>The <code>uiLayout</code> module is a singleton. It returns <code>function run(nodes, parent, toCache, toMerge)</code>, where arguments are the following:</p>
 
 <ul>
   <li><code>{array} nodes</code>: array of configurations of the UI components that we want to initialize</li>
@@ -573,6 +630,8 @@
 </ul>
 
 <p>Arguments <code>toCache</code> and <code>toMerge</code> play together when a particular UI component instance need to be updated in runtime.</p>
+
+<h3 id="the-nodes-argument">The <code>nodes</code> argument</h3>
 
 <p>Each item in <code>nodes</code> array is an object with the following properties:</p>
 
@@ -588,29 +647,27 @@
   <li>
     <p><code>{object} config</code>: the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:</p>
 
-    <p>var config1 = {name: ‘myComp1’, config: {myProp: ‘123123’}}</p>
-  </li>
-</ul>
-
-<p>and</p>
-
-<pre><code>var config2 = {name: 'myComp1', myProp: '123123'}
+    <pre><code>var config1 = {name: 'myComp1', config: {myProp: '123123'}}
 </code></pre>
 
-<ul>
+    <p>and</p>
+
+    <pre><code>var config2 = {name: 'myComp1', myProp: '123123'}
+</code></pre>
+  </li>
   <li><code>{array} children</code> - configuration of child elements, if there are any</li>
   <li><code>{boolean} isTemplate</code> - if the value is set to <code>true</code>, the component configuration will be stored by <code>uiLayout</code> in the private <code>templates</code> variable. Current UI component will be not initialized. New instances can be created dynamically based on this object</li>
-  <li><code>{string} nodeTemplate</code> - a full name of component from <code>templates</code> private object. Stored component will be used as template object for current one</li>
+  <li><code>{string} nodeTemplate</code> - a full name of component from <code>templates</code> private variable. This component’s configuration will be used as a  configuration template for the current one</li>
   <li><code>{string} provider</code>- the full name of the DataSource UI component. If property is absent, then parent’s <code>provider</code> will be inherited</li>
 </ul>
 
-<h2 id="example-1">Example 1:</h2>
+<h2 id="example-1">Example 1</h2>
 
-<p>Let’s consider a case when we want to create a UI component instance dynamically from another UI component.</p>
+<p>Let’s consider a case when we want to create a UI component instance dynamically as a child of another UI component.</p>
 
-<p>We can put the configuration of the desired UI component directly into <code>uiLayout</code>. Below in an example of the component’s constructor,  which creates the child UI component on initialization:</p>
+<p>We can put the configuration of the desired UI component directly into <code>uiLayout</code>.</p>
 
-<p>Before example can be used special files should be created:</p>
+<p>We need to create the following files:</p>
 
 <ul>
   <li><code>app/code/OrangeCo/Sample/view/&lt;area&gt;/web/js/my-new-component.js</code> - a JavaScript component</li>
@@ -637,34 +694,39 @@
         <span class="p">},</span>
         <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
-            <span class="nx">layout</span><span class="p">([</span><span class="k">this</span><span class="p">.</span><span class="nx">my_newComponentConfig</span><span class="p">]);</span> <span class="c1">// this call will create a child component myNewComponent</span>
+            <span class="nx">layout</span><span class="p">([</span><span class="k">this</span><span class="p">.</span><span class="nx">my_newComponentConfig</span><span class="p">]);</span> <span class="c1">// this call creates a new myNewComponent component, that is stored in uiRegistry, like any other component. myNewComponent is the child of the current uiCollection component. The rendering of the myNewComponent template is performed to the general rules of child components&#39; templates rendering in uiCollection </span>
 
             <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
 
-<h2 id="example-2">Example 2:</h2>
+<p>, where <code>${ $.name }</code> is ES6 template literal.</p>
 
-<p>Anther option is to create  UI components from the “template” component. For example, lets call it <code>myRowTemplate</code>, has already been configured with <code>isTemplate: true</code> property.</p>
+<p>The <code>layout([this.my_newComponentConfig])</code> call creates a new <code>myNewComponent</code> component, that is stored in <code>uiRegistry</code>, like any other component. <code>myNewComponent</code> is the child of the current <code>uiCollection</code> component, which means that it is added to the <code>elems</code> property of the current <code>uiCollection</code>. The rendering of the <code>myNewComponent</code> template is performed to the general rules of <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html#uicollection_template">child components’ templates rendering in <code>uiCollection</code></a>.</p>
 
-<p>Lets have such configuration:</p>
+<h2 id="example-2">Example 2</h2>
+
+<p>Another option is to create a UI component using other components configuration as configuration template. We can only use a component, that has already been configured with <code>isTemplate: true</code> property.</p>
+
+<p>In this example we want to add table rows.</p>
+
+<p>Let’s suppose, the table is implemented by the <code>my_table</code> instance of the Table UI component. We will use the Row Template as a configuration template for the new Rows components.</p>
+
+<p>The configuration of the <code>my_table</code> component is the following (supposing that we have previously created the <code>app/code/OrangeCo/Sample/view/&lt;area&gt;/web/js/table.js</code>):</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;my_table&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span><span class="nt">&gt;</span>OrangeCo_Sample/js/table<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/container&gt;</span></code></pre></figure>
 
-<p>And created files:
-* <code>app/code/OrangeCo/Sample/view/&lt;area&gt;/web/js/table.js</code></p>
+<p>Let’s suppose that Row Template full name is <code>my_row_template_component_name</code>.</p>
 
-<p>Lets suppose that <code>myRowTemplate</code>’s full name is <code>myRowTemplateComponentName</code>.</p>
-
-<p>Then, inside of “my_table” UI component we can add rows using this template configuration. The source <code>OrangeCo_Sample/js/table.js</code>:</p>
+<p>Then in our <code>table.js</code> we need to add the following:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">([</span>
     <span class="s1">&#39;uiLayout&#39;</span><span class="p">,</span>
     <span class="s1">&#39;uiCollection&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;mageUtils&#39;</span>
+    <span class="s1">&#39;mageUtils&#39;</span> 
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">layout</span><span class="p">,</span> <span class="nx">Collection</span><span class="p">,</span> <span class="nx">utils</span><span class="p">)</span> <span class="p">{</span>
     <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
 
@@ -672,7 +734,7 @@
         <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">myRowTemplateConfig</span><span class="o">:</span> <span class="p">{</span>
                 <span class="nx">parent</span><span class="o">:</span> <span class="s1">&#39;${ $.name }&#39;</span><span class="p">,</span>
-                <span class="nx">nodeTemplate</span><span class="o">:</span> <span class="s1">&#39;myRowTemplateComponentName&#39;</span>
+                <span class="nx">nodeTemplate</span><span class="o">:</span> <span class="s1">&#39;my_row_template_component_name&#39;</span>
             <span class="p">}</span>
         <span class="p">},</span>
 
@@ -687,7 +749,9 @@
     <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>Now <code>addRow</code> method could be called from a <code>.html</code> template.</p>
+<p>Now the <code>addRow()</code> method could be called from the <code>.html</code> template of the current component.</p>
+
+<p>In this example we use <a href="https://github.com/magento/magento2/blob/2.1/lib/web/mage/utils"><code>mageUtils</code></a>, the Magento internal JS library that provides a bunch of useful helpers without extending any built-in objects. Specifically, we use <code>utils.template(myRowTemplateConfig)</code> which creates a new  component based on <code>myRowTemplateConfig</code>.</p>
 
 		</div>
 	</section>

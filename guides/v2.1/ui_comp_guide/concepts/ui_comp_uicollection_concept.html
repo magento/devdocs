@@ -346,6 +346,58 @@
 
 									
 
+										<li class="levela1"><span class="nav-header">components</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-form.html">Form component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Listing/Grid component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-modal.html">Modal component</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
 										<li class="levela1"><span class="nav-header">concepts</span></li>
 
 									
@@ -542,18 +594,21 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 11 September 2016 (PDT)</div>
+            <div class="updated">Updated: 14 September 2016 (PDT)</div>
             <h2 class="no_toc" id="about-the-uicollection-class">About the uiCollection class</h2>
 
 <ul id="markdown-toc">
   <li><a href="#what-is-uicollection" id="markdown-toc-what-is-uicollection">What is <code>uiCollection</code></a></li>
   <li><a href="#commonly-used-uicollection-methods" id="markdown-toc-commonly-used-uicollection-methods">Commonly used <code>uiCollection</code> methods</a></li>
   <li><a href="#commonly-used-uicollection-properties" id="markdown-toc-commonly-used-uicollection-properties">Commonly used <code>uiCollection</code> properties</a></li>
+  <li><a href="#uicollection_template" id="markdown-toc-uicollection_template">uiCollection template</a></li>
 </ul>
 
 <h2 id="what-is-uicollection">What is <code>uiCollection</code></h2>
 
-<p>The <code>uiCollection</code> library class should be used as a base class by any components that contains a collection of child UI components. The path in the Magento code base is <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/collection.js</code>. <code>uiCollection</code> inherits from the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.md">uiElement class</a>.</p>
+<p>The <code>uiCollection</code> library class should be used as a base class by any components that contain a collection of child UI components.  <code>uiCollection</code> inherits from the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.md">uiElement class</a>.</p>
+
+<p><code>uiCollection</code> source code is <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/collection.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js">app/code/Magento/Ui/view/base/web/js/lib/core/collection.js</a>.</p>
 
 <h2 id="commonly-used-uicollection-methods">Commonly used <code>uiCollection</code> methods</h2>
 
@@ -621,6 +676,20 @@
 <ul>
   <li><code>childDefaults</code> can be used to set the children defaults: properties from <code>childDefaults</code> are set into child elements’ <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties"><code>defaults</code> property</a>.</li>
 </ul>
+
+<h2 id="uicollection_template">uiCollection template</h2>
+
+<p>The <code>uiCollection</code> template is <code>&lt;UI_Module_dir&gt;/view/base/web/templates/collection.html</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/templates/collection.html"><code>app/code/Magento/Ui/view/base/web/templates/collection.html</code></a>.</p>
+
+<p>This template performs only one task: renders child templates if they exist.</p>
+
+<p>It looks like following:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;each</span> <span class="na">args=</span><span class="s">&quot;data: elems, as: &#39;element&#39;&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;render</span> <span class="na">if=</span><span class="s">&quot;hasTemplate()&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/each&gt;</span></code></pre></figure>
+
+<p>Here <code>elems</code> is the collection of the child elements of <code>uiCollection</code>. As far as <code>elems</code> is the observable property, the templates of the components added to <code>elems</code> in the runtime, are also rendered.</p>
 
 		</div>
 	</section>
