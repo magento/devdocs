@@ -6,7 +6,7 @@ title: Upgrade the Magento application and modules
 menu_title: Upgrade the Magento application and modules
 menu_node: parent
 menu_order: 1
-version: 2.0
+version: 2.2
 github_link: comp-mgr/bk-compman-upgrade-guide.md
 ---
 
@@ -16,9 +16,10 @@ This topic discusses the ways you can:
 *	Upgrade (that is, *patch*) the Magento software from version 2.0.0 to 2.0.1, for example
 *	Update any of the following:
 
-	*	Modules (extend Magento capabilities)
+	*	Modules (also referred to as *extensions*; extend Magento capabilities)
 	*	Themes (change the look and feel of your storefront and Admin)
 	*	Language packages (localize the storefront and Admin)
+*	Uninstall extensions
 
 ## Upgrade the Magento application
 The way you upgrade (that is, patch) the Magento application depends on how you installed it:
@@ -43,10 +44,7 @@ The way you upgrade (that is, patch) the Magento application depends on how you 
     	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
 </div>
 
-## Update modules
-To update Magento modules, use the [Module Manager]({{page.baseurl}}comp-mgr/module-man/compman-start.html).
-
-### Next step
+#### Next step
 Complete the tasks discussed in <a href="{{page.baseurl}}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 
