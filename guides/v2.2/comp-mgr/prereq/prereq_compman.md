@@ -14,7 +14,7 @@ github_link: comp-mgr/prereq/prereq_compman.md
 Before running the Module Manager, Extension Manager, or System Upgrade, complete the following tasks:
 
 *	[Set up cron]({{page.baseurl}}comp-mgr/prereq/prereq_cron.html)
-*	[Configure `ulimit` for the web server user]({{page.baseurl}}comp-mgr/prereq/prereq_compman-ulimit.html)
+*	[Set `ulimit` for the web server user]({{page.baseurl}}comp-mgr/prereq/prereq_compman-ulimit.html)
 *	[Checklist]({{page.baseurl}}comp-mgr/prereq/prereq_compman-checklist.html)
 
 After you've completed all prerequisites, continue with:
