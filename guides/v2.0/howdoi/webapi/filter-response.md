@@ -10,7 +10,7 @@ github_link: howdoi/webapi/filter-response.md
 
 ---
 
-Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magneto provides a query parameter-based syntax for REST API requests that return partial responses.
+Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magneto provides a query parameter-based syntax for REST API requests that enareturn partial responses.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>This feature is not available for SOAP, because SOAP does not allow partial responses. </p>
@@ -26,6 +26,12 @@ You can append `?fields=<field_or_object1>,<field_or_object2>,...` to any REST G
 Separate each top-level field or object with a comma.
 
 On POST and PUT requests. Magento ignores the `fields` parameter as input, but the response includes only the fields and objects.
+
+## Examples
+{:.no_toc}
+
+* TOC
+{:toc}
 
 ### Simple fields
 
