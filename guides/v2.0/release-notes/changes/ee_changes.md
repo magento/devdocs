@@ -3,7 +3,7 @@ layout: no-timestamp
 group: release-notes
 subgroup: 05_BC
 title: Magento EE Backward Incompatible Changes
-menu_title: Magento EE
+menu_title: Magento EE changes between 2.0.0 and develop
 version: 2.0
 github_link: release-notes/changes/ee_changes.md
 ---
