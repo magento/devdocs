@@ -32,17 +32,17 @@ When creating a new component, use the `uiElement` class as a direct parent, if 
  
   Example:
     
-        initObservable: function () {
-            this._super();
+      initObservable: function () {
+          this._super();
+  
+          this.track('childTemplate')
+          this.observe([
+              '%myVariable1%',
+              '%myVariable2%'
+          ]);
    
-            this.track('childTemplate')
-            this.observe([
-                '%myVariable1%',
-                '%myVariable2%'
-            ]);
-   
-            return this; 
-        }
+          return this; 
+      }
         
   , where:
 

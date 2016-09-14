@@ -28,9 +28,7 @@ In the same way, anyone who wants to create a component dynamically (from other 
 
 ## Implementation details
 
-The `uiLayout` module is a singleton. It returns `function run(nodes, parent, toCache, toMerge)`.
-
-Where arguments are the following:
+The `uiLayout` module is a singleton. It returns `function run(nodes, parent, toCache, toMerge)`, where arguments are the following:
 
 * `{array} nodes`: array of configurations of the UI components that we want to initialize 
 * `{string} parent`: parent component for that UI components
@@ -38,6 +36,8 @@ Where arguments are the following:
 * `{boolean} toMerge`: defines whether the  argument `nodes` should be merged with the same one, that has been cached
 
 Arguments `toCache` and `toMerge` play together when a particular UI component instance need to be updated in runtime.
+
+### The `nodes` argument
 
 Each item in `nodes` array is an object with the following properties:
 
@@ -50,24 +50,24 @@ Each item in `nodes` array is an object with the following properties:
 * `{string} component`: path to the JavaScript class (function-constructor) of the new component
 * `{object} config`: the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:
 
-    var config1 = {name: 'myComp1', config: {myProp: '123123'}}
+      var config1 = {name: 'myComp1', config: {myProp: '123123'}}
 
-and
+  and
 
-    var config2 = {name: 'myComp1', myProp: '123123'}
+      var config2 = {name: 'myComp1', myProp: '123123'}
 
 * `{array} children` - configuration of child elements, if there are any
 * `{boolean} isTemplate` - if the value is set to `true`, the component configuration will be stored by `uiLayout` in the private `templates` variable. Current UI component will be not initialized. New instances can be created dynamically based on this object
 * `{string} nodeTemplate` - a full name of component from `templates` private variable. This component's configuration will be used as a  configuration template for the current one
 * `{string} provider`- the full name of the DataSource UI component. If property is absent, then parent's `provider` will be inherited
 
-## Example 1:
+## Example 1
 
 Let's consider a case when we want to create a UI component instance dynamically as a child of another UI component.
     
-We can put the configuration of the desired UI component directly into `uiLayout`. Below in an example of the component's constructor,  which creates the child UI component on initialization:
+We can put the configuration of the desired UI component directly into `uiLayout`. 
 
-Before example can be used special files should be created:
+We need to create the following files:
 
 * `app/code/OrangeCo/Sample/view/<area>/web/js/my-new-component.js` - a JavaScript component
 * `app/code/OrangeCo/Sample/view/<area>/web/templtes/my-new-component/main-template.html` - a component `.html` template, that will be used on client side
@@ -107,7 +107,7 @@ define([
 The `layout([this.my_newComponentConfig])` call creates a new `myNewComponent` component, that is stored in `uiRegistry`, like any other component. `myNewComponent` is the child of the current `uiCollection` component, which means that it is added to the `elems` property of the current `uiCollection`. The rendering of the `myNewComponent` template is performed to the general rules of [child components' templates rendering in `uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html#uicollection_template).
 
 
-## Example 2:
+## Example 2
 
 Another option is to create a UI component using other components configuration as configuration template. We can only use a component, that has already been configured with `isTemplate: true` property. 
 
