@@ -17,4 +17,8 @@ Before running the Module Manager, Extension Manager, or System Upgrade, complet
 *	[Configure `ulimit` for the web server user]({{page.baseurl}}comp-mgr/prereq/prereq_compman-ulimit.html)
 *	[Checklist]({{page.baseurl}}comp-mgr/prereq/prereq_compman-checklist.html)
 
+After you've set up all prerequisites, continue with:
 
+*	[Module Manager]({{page.baseurl}}comp-mgr/module-man/compman-start.html)
+*	[Extension Manager]({{page.baseurl}}comp-mgr/extens-man/extensman-main-pg.html)
+*	[System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html)
