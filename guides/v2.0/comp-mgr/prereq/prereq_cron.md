@@ -20,8 +20,3 @@ Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_bla
 
 {% include config/setup-cron.md %}
 
-#### Next step
-
-*	[Component Manager]({{page.baseurl}}comp-mgr/module-man/compman-start.html)
-*	[System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html)
-
