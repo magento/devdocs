@@ -1,7 +1,7 @@
 ---
 layout: default
 group: UI_Components_guide
-subgroup: D_components
+subgroup: components
 title: Form component
 menu_title: Form component
 version: 2.1
