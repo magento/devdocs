@@ -1135,7 +1135,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 18 July 2016 (PDT)</div>
+            <div class="updated">Updated: 13 September 2016 (PDT)</div>
             <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#cloud-deploy-over">Deployment process</a></li>
@@ -1272,6 +1272,10 @@ is what guarantees we can do deterministic deployments. The read-only file syste
 <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html"><code>magento setup:static-content:deploy</code></a>.</p>
   </li>
 </ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+</div>
 
 <h3 id="cloud-deploy-over-phases-route">Post-deployment: configure routing</h3>
 <p>While the deployment is running, we freeze the incoming traffic at the entry point

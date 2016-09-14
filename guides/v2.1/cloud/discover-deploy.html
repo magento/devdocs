@@ -1291,6 +1291,10 @@ is what guarantees we can do deterministic deployments. The read-only file syste
   </li>
 </ul>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+</div>
+
 <h3 id="cloud-deploy-over-phases-route">Post-deployment: configure routing</h3>
 <p>While the deployment is running, we freeze the incoming traffic at the entry point
 so no transactions are lost.</p>
