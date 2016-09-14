@@ -60,7 +60,7 @@ Magento 2 has the following cache types:
       <td><p>Database schema. </p>
       	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
       	<p>Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)</p>
-      	<p>One way to update the database schema automatically is using the <a href="{{page.baseurl}}install-gde/install/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
+      	<p>One way to update the database schema automatically is using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
     </tr>
     <tr>
       <td><p>Entity attribute value (EAV)</p></td>

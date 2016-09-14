@@ -54,7 +54,7 @@ The following sample defines two synchronous topics. The first topic is for RPC 
 {:.no_toc}
 Topic configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the `env.php` file.
 
-The `name` parameter is required. The topic definition must include either a `request` or a `schema`. Use `schema` if you want to implement a custom service interface.  Otherwise, specify `request`. If `request` is specified, then also specify `response` if the message is synchronous.
+The `name` parameter is required. The topic definition must include either a `request` or a `schema`. Use `schema` if you want to implement a custom service interface.  Otherwise, specify `request`. If `request` is specified, then also specify `response` if the topic is synchronous.
 
 Parameter | Description
 --- | ---
@@ -98,7 +98,7 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 | queue (required) | Defines the queue name to send the message to.  |
 | handler          | Specifies the class and method that processes the message. The value must be specified in the format `<Vendor>\Module\<ServiceName>::<methodName>`.|
 | consumerInstance | The Magento class name that consumes the message |
-| connection       | Must be `amqp` if using an external message broker or `db` if writing to the MySQL database.  |
+| connection       | For AMQP connections, the connection name must match the `connection` attribute in the `queue_topology.xml` file. Otherwise, the connection name must be `db`.  |
 | maxMessages     | Specifies the maximum number of messages to consume.|
 
 ### `queue_topology.xml` {#queuetopologyxml}
@@ -143,7 +143,7 @@ The `queue_topology.xml` file defines the message routing rules and declares que
 | -------------- | ----------- |
  name (required) | A unique ID for the exchange.
  type (required) | Specifies the type of exchange. Must be `topic`.
- connection  (required) | Specifies the name of connection. Must be `amqp` or `db`.
+ connection  (required) | For AMQP connections, a string that identifies the connection.  For MySQL connections, the connection name must be `db`.
  durable | Boolean value indicating whether the exchange is persistent. Non-durable exchanges are purged when the server restarts. The default is `true`.
  autoDelete | Boolean value indicating whether the exchange is deleted when all queues have finished using it. The default is `false`.
  internal | Boolean value. If set to true, the exchange may not be used directly by publishers, but only when bound to other exchanges. The default is `false`.
@@ -228,7 +228,7 @@ The `connection` element is a subnode of the `publisher` element. There must not
 
 | Attribute            | Description |
 | -------------------- | ----------- |
-| name (required)      | The name of connection. Must be `amqp` or `db`.|
+| name (required)      | For AMQP connections, the connection name must match the `connection` attribute in the `queue_topology.xml` file. Otherwise, the connection name must be `db`. |
 | exchange             | The name of the exchange to publish to. The default system exchange name is `magento`. |
 | disabled             | Determines whether this queue is disabled. The default value is `false`. |
 

@@ -14,7 +14,7 @@ As explained in the <a href="{{page.baseurl}}architecture/arch_whatis.html">What
 
 For more information about the components, refer to the following topics:
 
-* <a href="{{page.baseurl}}architecture/modules/mod_intro.html">Modules</a>
+* <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
 
 * <a href="{{page.baseurl}}architecture/arch_libraries.html">Libraries</a>
 

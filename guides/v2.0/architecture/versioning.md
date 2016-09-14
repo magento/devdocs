@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/architecture/versioning.html
 
 <h2 id="verpol">Versioning policy overview</h2>
 
-The Magento system and its components use the software (or "platform") version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="{{page.baseurl}}architecture/backward-compatibility.html">backwards-incompatible</a> changes in the public API or other significant code changes.
+The Magento system and its components use the software (or "platform") version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="{{page.baseurl}}architecture/back-compatibility.html">backward-incompatible</a> changes in the public API or other significant code changes.
 
 Magento software versioning complies with the following specifications:
 

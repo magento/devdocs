@@ -6,7 +6,7 @@ title: Magento libraries
 menu_title: Magento libraries
 menu_order: 3
 version: 2.0
-github_link: architecture/components/arch_libraries.md
+github_link: architecture/archi_perspectives/components/arch_libraries.md
 redirect_from: /guides/v1.0/architecture/arch_libraries.html
 ---
 
@@ -33,7 +33,7 @@ For example:
 
 *	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is a special PHP library that is aware of Magento as an application. It represents a greater level of abstraction and provides the following:
 
-	* <a href="{{page.baseurl}}architecture/modules/mod_and_areas.html">Application areas</a>
+	* <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html">Application areas</a>
 	* <a href="{{page.baseurl}}extension-dev-guide/routing.html">Routing requests</a>
 	* Application state
 

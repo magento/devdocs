@@ -26,7 +26,7 @@ This topic discusses how to use the Web Interface to:
 ## Add or delete an environment {#project-branch-add}
 This section discusses adding or deleting an environment (that is, a Git branch). You'll do your development in a branch and, when complete, merge (`git push`) the branch with its parent. Choose a parent branch that is related to the work you're going to do; for example, at the start of a sprint for developing Feature X, you'll probably choose the FeatureX branch as the parent.
 
-Deleting a branch by default makes the branch *inactive*. An inactive branch doesn't count against your total of eight possible project branches. You can either activate the branch later or you can [delete it entirely]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html##tut-env-delete) using the CLI.
+Deleting a branch by default makes the branch *inactive*. An inactive branch doesn't count against your total of eight possible project branches. You can either activate the branch later or you can [delete it entirely]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html#tut-env-delete) using the CLI.
 
 {% collapsible Click to add an environment %}
 

@@ -30,7 +30,13 @@
             <a href="#">Developers</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               {% if page.guide_version == "2.1" %}
+               <li class="first leaf"><a href="{{page.baseurl}}ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+               {% elsif page.guide_version == "2.0" %}
                <li class="first leaf"><a href="{{page.baseurl}}ui-components/ui-component.html">UI Components</a></li>
+               {% endif %}
+			   
+			   
                <li class="first leaf"><a href="{{page.baseurl}}javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
                <li class="first leaf"><a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
                <li class="first leaf"><a href="{{page.baseurl}}ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
@@ -39,6 +45,7 @@
                <li class="leaf"><a href="{{page.baseurl}}rest/bk-rest.html">REST Reference</a></li>
                <li class="leaf"><a href="{{page.baseurl}}soap/bk-soap.html">SOAP Reference</a></li>
                <li class="leaf"><a href="{{page.baseurl}}coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+               <li class="leaf"><a href="{{page.baseurl}}mrg/intro.html">Module Reference Guide</a></li>
                {% if page.guide_version == "2.1" %}
                    <li class="leaf"><a href="{{page.baseurl}}extension-dev-guide/staging.html">Staging</a></li>
                {% endif %}
@@ -74,9 +81,7 @@
 
       <div class ="search">
          <div class="search-icon"></div>
-         <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
-            <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
-            <input type="hidden" name="ie" value="UTF-8" />
+         <form id="searchbox" name="gs" method="GET" action="{{site.baseurl}}search.html">
             <input type="text" name="q" id="searchtext" value="" placeholder="Search">
          </form>
       </div><!-- END searchbox-->

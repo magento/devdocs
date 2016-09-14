@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install_pre
-subgroup: Getting Started
+subgroup: 01_resource
 title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)
-menu_node: parent
-menu_order: 1
+menu_node: 
+menu_order: 2
 version: 2.0
 github_link: install-gde/install-quick-ref.md
 ---

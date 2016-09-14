@@ -5,9 +5,9 @@
 	</button>
 
 
-	<ul class="dropdown-menu dropdown-menu-right">
+	<ul class="dropdown-menu dropdown-menu-left">
 	{%for version in site.versions %}
-		<li><a class="dropdown-item" href="{{ site.baseurl }}{{ version.url }}">Version {{ version.name }}</a></li>
+		<li><a class="dropdown-item" href="{{ site.baseurl }}{{ version.url }}{{ page.github_link | replace: ".md",".html" }}">Version {{ version.name }}</a></li>
 	{% endfor %}
   </ul>
 

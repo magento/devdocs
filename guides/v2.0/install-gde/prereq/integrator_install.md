@@ -25,8 +25,11 @@ github_link: install-gde/prereq/integrator_install.md
 *	[Set pre-installation file system ownership and permissions](#perms-over) 
 
 <h2 id="int-aud">Intended audience</h2>
-The audience for this topic is anyone who downloads the Magento metapackage using `composer create-project`. If that isn't you, go back and <a href="{{page.baseurl}}install-gde/continue.html">choose another starting point</a>.
+The audience for this topic is anyone who downloads the Magento metapackage using `composer create-project`. If that isn't you, go back and <a href="{{page.baseurl}}install-gde/bk-install-guide.html">choose another starting point</a>.
 
+## Prerequisites
+
+{% include install/prereq.md %}
 
 <h2 id="integrator-first-over">First steps</h2>
 As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade.

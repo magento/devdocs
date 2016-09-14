@@ -28,6 +28,10 @@ Initially, your project has the following structure:
 └── README.md
 {% endhighlight %}
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+</div>
+
 For more information about the files and directories in your project, see:
 
 *	[auth.json]({{page.baseurl}}cloud/access-acct/first-time-setup_template.html)

@@ -25,19 +25,19 @@ A general mechanism is:
 
 Comparatively to the common testing flow
 
-![Common flow image]({{site.baseurl}}common/images/mtf_features_common_dia.png){:width="150px"}
+![Common flow image]({{site.baseurl}}common/images/mtf_features_common_dia.png){:width="600px"}
 
 you can run a test suite using parallel execution flow with one Magento instance
 
-![Parallel execution flow with one instance image]({{site.baseurl}}common/images/mtf_features_parallel_one_dia.png){:width="400px"}
+![Parallel execution flow with one instance image]({{site.baseurl}}common/images/mtf_features_parallel_one_dia.png)
 
 or run a test suite using parallel execution flow with multiple Magento instances.
 
-![Common flow and Parallel execution flow image]({{site.baseurl}}common/images/mtf_features_parallel_multi_dia.png){:width="400px"}
+![Common flow and Parallel execution flow image]({{site.baseurl}}common/images/mtf_features_parallel_multi_dia.png)
 
-## Setup parallel execution
+## Set up parallel execution
 
-To setup a parallel execution flow, add Magento instances to `<magento2>/dev/tests/functional/phpunit.xml` in the following format:
+To set up a parallel execution flow, add Magento instances to `<magento2>/dev/tests/functional/phpunit.xml` in the following format:
 
 {%highlight xml%}
 
@@ -86,7 +86,7 @@ The following example shows a setup configuration of the flow with one Magento i
 
 ### Parallel execution flow with multiple Magento instances
 
-The following example shows the setup configuration of the flow with three Magento instances.
+The following example shows a setup configuration of the flow with three Magento instances.
 
 {% highlight xml %}
 
