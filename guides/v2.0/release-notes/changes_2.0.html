@@ -256,7 +256,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/release-notes/changes/ce_changes.html">Magento CE</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/changes/ce_changes.html">Magento CE changes between 2.0.0 and develop</a></li>
 
 									
 
@@ -264,7 +264,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/release-notes/changes/ee_changes.html">Magento EE</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/changes/ee_changes.html">Magento EE changes between 2.0.0 and develop</a></li>
 
 									
 
@@ -727,9 +727,10 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2>Preface</h2>
-<p>This topic discusses the most important backward incompatible changes made after Magento 2.0.</p>
+            <div class="updated">Updated: 14 September 2016 (PDT)</div>
+            <h2 class="no_toc" id="preface">Preface</h2>
+
+<p>This topic discusses the most important backward incompatible changes made after Magento 2.0.0 release in scope of 2.0 version.</p>
 
 <p>Be aware that no @api code has been modified.</p>
 
@@ -742,7 +743,7 @@
 
 <p>For more information about backward compatibility, see <a href="http://devdocs.magento.com/guides/v2.0/architecture/backward-compatibility.html">Magento’s backward compatibility policy</a>.</p>
 
-<h2>Contents</h2>
+<h3 class="no_toc" id="contents">Contents</h3>
 
 <ul id="markdown-toc">
   <li><a href="#framework-changes" id="markdown-toc-framework-changes">Framework changes</a></li>
@@ -911,10 +912,10 @@
 <h3 id="form-initialization-changes">Form initialization changes</h3>
 
 <ul>
-  <li>A form is built with the UI components (<a href="/guides/v2.0/ui-components/ui-form.html">more info about a form component</a>).</li>
-  <li>The form is extended using the form configuration file <a href="https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml"><code>&lt;magento2&gt;/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml</code></a> (see <a href="/guides/v2.0/ui-components/ui-definition.html">Overview of UI components</a>).</li>
-  <li>The data provider <code>\Magento\Catalog\Model\Category\DataProvider</code> is used to set data and fields metadata for the form.</li>
-  <li>The default form data is now a part of metadata that is fetched from the <code>\Magento\Catalog\Model\Category\DataProvider</code>.</li>
+  <li>A form is built with UI components (<a href="/guides/v2.0/ui-components/ui-form.html">more info about a form component</a>).</li>
+  <li>The form is extended using a form configuration file <a href="https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml"><code>&lt;magento2&gt;/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml</code></a> (see <a href="/guides/v2.0/ui-components/ui-definition.html">Overview of UI components</a>).</li>
+  <li>A data provider <code>\Magento\Catalog\Model\Category\DataProvider</code> is used to set data and fields metadata for the form.</li>
+  <li>Default form data is now a part of metadata that is fetched from the <code>\Magento\Catalog\Model\Category\DataProvider</code>.</li>
 </ul>
 
 <h3 id="flow-changes-1">Flow changes</h3>
