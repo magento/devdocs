@@ -19,12 +19,11 @@ This topic discusses the ways you can:
 	*	Modules (extend Magento capabilities)
 	*	Themes (change the look and feel of your storefront and Admin)
 	*	Language packages (localize the storefront and Admin)
-	*	Libraries (common code)
 
 <h2>Upgrade the Magento application</h2>
 The way you upgrade (that is, patch) the Magento application depends on how you installed it:
 
-*	Magento CE or EE: If you used <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Composer</a> to install or if you downloaded an <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">archive</a>, use the <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">System Upgrade utility</a> or the [command line]({{page.baseurl}}comp-mgr/cli/cli-upgrade.html).
+*	Magento CE and EE: If you used [Composer]({{page.baseurl}}install-gde/prereq/integrator_install.html) to install the Magento application or if you downloaded an [archive]({{page.baseurl}}install-gde/prereq/zip_install.html), use the [System Upgrade utility]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html) or the [command line]({{page.baseurl}}comp-mgr/cli/cli-upgrade.html).
 *	Magento CE only: If you cloned the Magento 2 GitHub repository because you are contributing code to the Magento CE codebase, <a href="{{page.baseurl}}install-gde/install/cli/dev_options.html">upgrade the software manually</a>.
 *	If your Magento root directory is `<your Magento install directory/pub`, you can upgrade in any of the following ways:
 
