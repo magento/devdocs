@@ -1,7 +1,7 @@
 ---
 layout: default
-group: rest
-subgroup: A_rest
+group: howdoi
+subgroup: Web APIs
 title: Retrieve filtered responses for REST APIs
 menu_title: Retrieve filtered responses
 menu_order: 3
@@ -74,8 +74,7 @@ The following example returns only the customer first name, last name, and the e
   "region": "Michigan"
   "region_code": "MI"
   "region_id": 33
-  "street": [1]
-    0:  "6146 Honey Bluff Parkway"
+  "street": "6146 Honey Bluff Parkway"
   "telephone": "(555) 229-3326"
   }
 }
@@ -116,8 +115,7 @@ The following example returns only the following:
   "sku": "MT12"
   "name": "Cassius Sparring Tank"
   "extension_attributes": {
-    "category_links": [1]
-    {
+    "category_links": {
       "position": 1
       "category_id": "18"
     }
@@ -181,3 +179,7 @@ The following query returns only the `sku` and `name` parameters for product ite
 }
 {% endhighlight %}
 {% endcollapsible %}
+
+## Related topics
+{:.no_toc}
+* [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html)
