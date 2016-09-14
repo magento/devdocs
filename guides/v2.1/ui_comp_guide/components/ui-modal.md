@@ -1,7 +1,7 @@
 ---
 layout: default
 group: UI_Components_guide
-subgroup: components
+subgroup: D_components
 title: Modal сomponent
 menu_title: Modal component
 version: 2.1
