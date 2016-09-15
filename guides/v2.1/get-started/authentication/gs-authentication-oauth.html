@@ -585,6 +585,7 @@
   <li><a href="#oauth-handshake">2-legged Oauth handshake</a></li>
   <li><a href="#web-api-access">Access the web APIs</a></li>
   <li><a href="#oauth-signature">Generating Oauth signatures</a></li>
+  <li><a href="#oauth-example">OAuth token exchange example</a></li>
 </ul>
 
 <h2 id="overview">OAuth overview</h2>
@@ -796,6 +797,300 @@
 </ol>
 
 <p>To generate the signature, you must use the HMAC-SHA1 signature method. The signing key is the concatenated values of the consumer secret and token secret separated by the ampersand (<code>&amp;</code>) character (ASCII code 38), even if empty. You must use parameter encoding to encode each value.</p>
+
+<h2 id="oauth-example">OAuth token exchange example</h2>
+
+<ul>
+  <li>These scripts can be used to simulate the Magento 2 <a href="https://tools.ietf.org/html/rfc5849">OAuth 1.0a</a> token exchange flow in the admin to obtain credentials to make authenticated API requests.</li>
+  <li>For ease, scripts can be dropped under your application(that you integrate with Magento) document root folder so that they can be exposed as endpoints that your Magento application can interact with to mimic the token exchange.</li>
+  <li>The oauth client is extended from and attributed to <a href="https://github.com/Lusitanian/PHPoAuthLib">PHPoAuthLib</a> which is the same lib used in the <a href="https://github.com/magento/magento2/blob/develop/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php">Magento OAuth client</a>.</li>
+  <li>Make sure you update the baseUrl in <code>OauthClient.php</code>. Currently its <code>http://magento.host</code>.</li>
+  <li>Steps for Oauth 1.0a token exchange flow :
+    <ul>
+      <li>Login to your Magento Admin and navigate to <strong>System &gt; Extensions &gt; Integrations</strong></li>
+      <li>Click on “Add New Integration”</li>
+      <li>Complete all details in the Integration Info tab:
+        <ul>
+          <li><strong>Name</strong> : SomeUniqueIntegrationName</li>
+          <li><strong>Callback URL</strong> : http://your_app_host/endpoint.php</li>
+          <li><strong>Identity link URL</strong> : http://your_app_host/login.php</li>
+        </ul>
+      </li>
+      <li>Add necessary permissions from the <strong>API</strong> tab</li>
+      <li>Click on “Save and Activate” option from the drop down</li>
+      <li>You should see the popup confirming API permissions. Click Allow. (Make sure Pop-ups are allowed)</li>
+      <li>This will also post credentials to the endpoint : endpoint.php. You should also see another popup for the identity linking step that opens up the script from <code>login.php</code>.</li>
+      <li>Click login ( there is no login check since its dummy). The <code>checklogin.php</code> script is called which uses the posted credentials to complete the token exchange</li>
+      <li>When the token exchange completes successfully the user is redirected back to the Integrations Grid. The integration grid should show the newly created integration as “Active”.</li>
+    </ul>
+  </li>
+  <li>Click on the edit icon of the integration and check the Integration Details on the Integration Info Tab. It should show all the credentials that can be used to make an authenticated API request using Oauth 1.0</li>
+</ul>
+
+<p><code>checklogin.php</code></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">require</span> <span class="s1">&#39;./vendor/autoload.php&#39;</span><span class="p">;</span>
+
+<span class="nv">$consumerKey</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_key&#39;</span><span class="p">];</span>
+<span class="nv">$callback</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;callback_url&#39;</span><span class="p">];</span>
+
+<span class="nb">session_id</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="sd">/** Use $consumerKey to retrieve the following data in case it was stored in DB when received at &quot;endpoint.php&quot; */</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$consumerKey</span> <span class="o">!==</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_key&#39;</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">&quot;Consumer keys received on on different requests do not match.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nv">$consumerSecret</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_secret&#39;</span><span class="p">];</span>
+<span class="nv">$magentoBaseUrl</span> <span class="o">=</span> <span class="nb">rtrim</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;store_base_url&#39;</span><span class="p">],</span> <span class="s1">&#39;/&#39;</span><span class="p">);</span>
+<span class="nv">$oauthVerifier</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauth_verifier&#39;</span><span class="p">];</span>
+
+<span class="nb">define</span><span class="p">(</span><span class="s1">&#39;TESTS_BASE_URL&#39;</span><span class="p">,</span> <span class="nv">$magentoBaseUrl</span><span class="p">);</span>
+
+<span class="nv">$credentials</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\OAuth\Common\Consumer\Credentials</span><span class="p">(</span><span class="nv">$consumerKey</span><span class="p">,</span> <span class="nv">$consumerSecret</span><span class="p">,</span> <span class="nv">$magentoBaseUrl</span><span class="p">);</span>
+<span class="nv">$oAuthClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OauthClient</span><span class="p">(</span><span class="nv">$credentials</span><span class="p">);</span>
+<span class="nv">$requestToken</span> <span class="o">=</span> <span class="nv">$oAuthClient</span><span class="o">-&gt;</span><span class="na">requestRequestToken</span><span class="p">();</span>
+<span class="nv">$accessToken</span> <span class="o">=</span> <span class="nv">$oAuthClient</span><span class="o">-&gt;</span><span class="na">requestAccessToken</span><span class="p">(</span>
+    <span class="nv">$requestToken</span><span class="o">-&gt;</span><span class="na">getRequestToken</span><span class="p">(),</span>
+    <span class="nv">$oauthVerifier</span><span class="p">,</span>
+    <span class="nv">$requestToken</span><span class="o">-&gt;</span><span class="na">getRequestTokenSecret</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="nb">header</span><span class="p">(</span><span class="s2">&quot;location: </span><span class="si">$callback</span><span class="s2">&quot;</span><span class="p">);</span></code></pre></figure>
+
+<p><code>endpoint.php</code></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nb">session_id</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="c1">// In case of storage these data in DB, oauth_consumer_key can be used as ID to retrieve this data later in &quot;checklogin.php&quot;</span>
+<span class="c1">// For simplicity of this sample it is stored in session</span>
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_key&#39;</span><span class="p">];</span>
+
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_secret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_secret&#39;</span><span class="p">];</span>
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;store_base_url&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;store_base_url&#39;</span><span class="p">];</span>
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauth_verifier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;oauth_verifier&#39;</span><span class="p">];</span>
+
+<span class="nb">session_write_close</span><span class="p">();</span>
+
+<span class="nb">header</span><span class="p">(</span><span class="s2">&quot;HTTP/1.0 200 OK&quot;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;Response&quot;</span><span class="p">;</span></code></pre></figure>
+
+<p><code>login.php</code></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$consumerKey</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_key&#39;</span><span class="p">];</span>
+<span class="nv">$callbackUrl</span> <span class="o">=</span> <span class="nb">urlencode</span><span class="p">(</span><span class="nb">urldecode</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;success_call_back&#39;</span><span class="p">]));</span>
+
+<span class="k">echo</span> <span class="o">&lt;&lt;&lt;</span><span class="nx">HTML</span>
+<span class="o">&lt;</span><span class="nx">table</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&quot;300&quot;</span> <span class="nx">border</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span> <span class="nx">cellpadding</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">cellspacing</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="nx">bgcolor</span><span class="o">=</span><span class="s2">&quot;#CCCCCC&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;form1&quot;</span> <span class="nx">method</span><span class="o">=</span><span class="s2">&quot;post&quot;</span> <span class="nx">action</span><span class="o">=</span><span class="s2">&quot;checklogin.php?oauth_consumer_key=</span><span class="si">{</span><span class="nv">$consumerKey</span><span class="si">}</span><span class="s2">&amp;callback_url=</span><span class="si">{</span><span class="nv">$callbackUrl</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">table</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span> <span class="nx">border</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="nx">cellpadding</span><span class="o">=</span><span class="s2">&quot;3&quot;</span> <span class="nx">cellspacing</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="nx">bgcolor</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">td</span> <span class="nx">colspan</span><span class="o">=</span><span class="s2">&quot;3&quot;</span><span class="o">&gt;&lt;</span><span class="nx">strong</span><span class="o">&gt;</span><span class="nx">Integrations</span> <span class="nx">Login</span><span class="o">&lt;/</span><span class="nx">strong</span><span class="o">&gt;&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+                    <span class="o">&lt;/</span><span class="nx">tr</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">td</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&quot;78&quot;</span><span class="o">&gt;</span><span class="nx">Username</span><span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">td</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&quot;6&quot;</span><span class="o">&gt;:&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">td</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&quot;294&quot;</span><span class="o">&gt;&lt;</span><span class="nx">input</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;myusername&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;myusername&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+                    <span class="o">&lt;/</span><span class="nx">tr</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="nx">Password</span><span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;:&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;&lt;</span><span class="nx">input</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;mypassword&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;mypassword&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+                    <span class="o">&lt;/</span><span class="nx">tr</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;Submit&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;Login&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+                    <span class="o">&lt;/</span><span class="nx">tr</span><span class="o">&gt;</span>
+                <span class="o">&lt;/</span><span class="nx">table</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="nx">form</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nx">tr</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">table</span><span class="o">&gt;</span>
+<span class="nx">HTML</span><span class="p">;</span></code></pre></figure>
+
+<p><code>OauthClient.php</code></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">OAuth\Common\Consumer\Credentials</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">OAuth\Common\Http\Client\ClientInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">OAuth\Common\Http\Exception\TokenResponseException</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">OAuth\Common\Http\Uri\Uri</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">OAuth\Common\Http\Uri\UriInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">OAuth\Common\Storage\TokenStorageInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">OAuth\OAuth1\Service\AbstractService</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">OAuth\OAuth1\Signature\SignatureInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">OAuth\OAuth1\Token\StdOAuth1Token</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">OAuth\OAuth1\Token\TokenInterface</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">OauthClient</span> <span class="k">extends</span> <span class="nx">AbstractService</span>
+<span class="p">{</span>
+    <span class="sd">/** @var string|null */</span>
+    <span class="k">protected</span> <span class="nv">$_oauthVerifier</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">Credentials</span> <span class="nv">$credentials</span><span class="p">,</span>
+        <span class="nx">ClientInterface</span> <span class="nv">$httpClient</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
+        <span class="nx">TokenStorageInterface</span> <span class="nv">$storage</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
+        <span class="nx">SignatureInterface</span> <span class="nv">$signature</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
+        <span class="nx">UriInterface</span> <span class="nv">$baseApiUri</span> <span class="o">=</span> <span class="k">null</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$httpClient</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$httpClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\OAuth\Common\Http\Client\StreamClient</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$storage</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$storage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\OAuth\Common\Storage\Session</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$signature</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$signature</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\OAuth\OAuth1\Signature\Signature</span><span class="p">(</span><span class="nv">$credentials</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$credentials</span><span class="p">,</span> <span class="nv">$httpClient</span><span class="p">,</span> <span class="nv">$storage</span><span class="p">,</span> <span class="nv">$signature</span><span class="p">,</span> <span class="nv">$baseApiUri</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @return UriInterface</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getRequestTokenEndpoint</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Uri</span><span class="p">(</span><span class="s1">&#39;http://magento.host/oauth/token/request&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Returns the authorization API endpoint.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @throws \OAuth\Common\Exception\Exception</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getAuthorizationEndpoint</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">\OAuth\Common\Exception\Exception</span><span class="p">(</span>
+            <span class="s1">&#39;Magento REST API is 2-legged. Current operation is not available.&#39;</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Returns the access token API endpoint.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return UriInterface</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getAccessTokenEndpoint</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Uri</span><span class="p">(</span><span class="s1">&#39;http://magento.host/oauth/token/access&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Parses the access token response and returns a TokenInterface.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $responseBody</span>
+<span class="sd">     * @return TokenInterface</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">parseAccessTokenResponse</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_parseToken</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Parses the request token response and returns a TokenInterface.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $responseBody</span>
+<span class="sd">     * @return TokenInterface</span>
+<span class="sd">     * @throws TokenResponseException</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">parseRequestTokenResponse</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_parseResponseBody</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;oauth_verifier&#39;</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_oauthVerifier</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;oauth_verifier&#39;</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_parseToken</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Parse response body and create oAuth token object based on parameters provided.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $responseBody</span>
+<span class="sd">     * @return StdOAuth1Token</span>
+<span class="sd">     * @throws TokenResponseException</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">_parseToken</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_parseResponseBody</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">);</span>
+        <span class="nv">$token</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">StdOAuth1Token</span><span class="p">();</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setRequestToken</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;oauth_token&#39;</span><span class="p">]);</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setRequestTokenSecret</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;oauth_token_secret&#39;</span><span class="p">]);</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setAccessToken</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;oauth_token&#39;</span><span class="p">]);</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setAccessTokenSecret</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;oauth_token_secret&#39;</span><span class="p">]);</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setEndOfLife</span><span class="p">(</span><span class="nx">StdOAuth1Token</span><span class="o">::</span><span class="na">EOL_NEVER_EXPIRES</span><span class="p">);</span>
+        <span class="nb">unset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;oauth_token&#39;</span><span class="p">],</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;oauth_token_secret&#39;</span><span class="p">]);</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setExtraParams</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$token</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Parse response body and return data in array.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $responseBody</span>
+<span class="sd">     * @return array</span>
+<span class="sd">     * @throws \OAuth\Common\Http\Exception\TokenResponseException</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">_parseResponseBody</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_string</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">TokenResponseException</span><span class="p">(</span><span class="s2">&quot;Response body is expected to be a string.&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nb">parse_str</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">null</span> <span class="o">===</span> <span class="nv">$data</span> <span class="o">||</span> <span class="o">!</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$data</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">TokenResponseException</span><span class="p">(</span><span class="s1">&#39;Unable to parse response.&#39;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">TokenResponseException</span><span class="p">(</span><span class="s2">&quot;Error occurred: &#39;</span><span class="si">{</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @override to fix since parent implementation from lib not sending the oauth_verifier when requesting access token</span>
+<span class="sd">     * Builds the authorization header for an authenticated API request</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $method</span>
+<span class="sd">     * @param UriInterface $uri the uri the request is headed</span>
+<span class="sd">     * @param \OAuth\OAuth1\Token\TokenInterface $token</span>
+<span class="sd">     * @param $bodyParams array</span>
+<span class="sd">     * @return string</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">buildAuthorizationHeaderForAPIRequest</span><span class="p">(</span>
+        <span class="nv">$method</span><span class="p">,</span>
+        <span class="nx">UriInterface</span> <span class="nv">$uri</span><span class="p">,</span>
+        <span class="nx">TokenInterface</span> <span class="nv">$token</span><span class="p">,</span>
+        <span class="nv">$bodyParams</span> <span class="o">=</span> <span class="k">null</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">signature</span><span class="o">-&gt;</span><span class="na">setTokenSecret</span><span class="p">(</span><span class="nv">$token</span><span class="o">-&gt;</span><span class="na">getAccessTokenSecret</span><span class="p">());</span>
+        <span class="nv">$parameters</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBasicAuthorizationHeaderInfo</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">[</span><span class="s1">&#39;oauth_callback&#39;</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="nb">unset</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">[</span><span class="s1">&#39;oauth_callback&#39;</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="nv">$parameters</span> <span class="o">=</span> <span class="nb">array_merge</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;oauth_token&#39;</span> <span class="o">=&gt;</span> <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">getAccessToken</span><span class="p">()]);</span>
+        <span class="nv">$parameters</span> <span class="o">=</span> <span class="nb">array_merge</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">,</span> <span class="nv">$bodyParams</span><span class="p">);</span>
+        <span class="nv">$parameters</span><span class="p">[</span><span class="s1">&#39;oauth_signature&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">signature</span><span class="o">-&gt;</span><span class="na">getSignature</span><span class="p">(</span><span class="nv">$uri</span><span class="p">,</span> <span class="nv">$parameters</span><span class="p">,</span> <span class="nv">$method</span><span class="p">);</span>
+
+        <span class="nv">$authorizationHeader</span> <span class="o">=</span> <span class="s1">&#39;OAuth &#39;</span><span class="p">;</span>
+        <span class="nv">$delimiter</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$parameters</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$authorizationHeader</span> <span class="o">.=</span> <span class="nv">$delimiter</span> <span class="o">.</span> <span class="nb">rawurlencode</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;=&quot;&#39;</span> <span class="o">.</span> <span class="nb">rawurlencode</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">;</span>
+            <span class="nv">$delimiter</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$authorizationHeader</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <h2 id="related-topics">Related topics</h2>
 
