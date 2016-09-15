@@ -1,1 +1,0 @@
-../../v2.1/ui-components/ui-secondary-pagination.md
