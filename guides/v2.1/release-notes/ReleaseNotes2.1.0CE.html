@@ -2715,9 +2715,7 @@
 <div>
 
   <h2 id="install-the-magento-software">Install the Magento software</h2>
-  <p>You can get Magento Community Edition 2.1 (including a Release Candidate) from Github, Composer, or using a compressed archive.</p>
-
-  <p>A Release Candidate is for testing purposes only. Do not install it in a production environment.</p>
+  <p>You can get Magento Community Edition 2.1 from Github, Composer, or using a compressed archive.</p>
 
   <p>See one of the following sections for more information:</p>
 
@@ -2735,11 +2733,11 @@
   <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
 
-  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code> (GA release), or a Release Candidate; for example, <code>2.1.0-rc3</code></p>
+  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
 
-  <p>For example, to install Magento CE 2.1.0 GA in the <code>magento2</code> directory:</p>
+  <p>For example, to install Magento CE 2.1.1 in the <code>magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0 magento2
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
 </code></pre>
 
   <h3 id="install-rc-gh" class="no_toc">Get the Magento CE software from GitHub</h3>
@@ -2753,7 +2751,7 @@ git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
 
   <p>where</p>
 
-  <p><code>&lt;version&gt;</code> is <code>2.1.0</code> (GA release), <code>2.1.0-rc3</code></p>
+  <p><code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
 
   <p><code>[-b &lt;version&gt;]</code> optionally checks out a new branch.</p>
 
