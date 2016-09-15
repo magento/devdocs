@@ -26,7 +26,7 @@ You can append `?fields=<field_or_object1>,<field_or_object2>,...` to any GET, P
 * Top-level object with selected fields
 * Nested objects
 
-Each field or object must be separated with a comma.
+Separate each field or object with a comma.
 
 On POST and PUT requests, Magento ignores the `fields` parameter as input, but the response includes only the requested fields and objects.
 
