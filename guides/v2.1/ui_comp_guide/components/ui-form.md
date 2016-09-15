@@ -1,23 +1,22 @@
 ---
 layout: default
-group:  UI Library
-subgroup: D_UI Library Form Component
-title: Form Component
-menu_title: Form Component
-menu_node: parent
+group: UI_Components_guide
+subgroup: components
+title: Form component
+menu_title: Form component
 version: 2.1
-github_link: ui-components/ui-form.md
+github_link: ui_comp_guide/components/ui-form.md
 ---
 
 * TOC
 {:toc}
 
 ## Overview
-Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. 
+Form component allows performing [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on an entity. 
 
-The following are the components element, the constructor: `app\code\Magento\Ui\view\base\web\js\form\form.js`
+The following is the Form component constructor: `[form.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/form.js)`
 
-<h4>Related UI components</h4>
+### Related UI components
 
 The following components are used to extend the Form component:
 
@@ -38,10 +37,11 @@ The following components are used to extend the Form component:
 
 ## Create an instance of the Form component
 
-* Create configuration file for the instance (for example: customer_form.xml)
+To create an instance of the Form component, you need to do the following:
 
-    * Add a set of fields (the Fieldset component with the component of the Field) for entity or to implement the upload of Meta info in the DataProvider. 
-* Create the DataProvider class for the entity that implements DataProviderInterface
+1. In you custom module, add a configuration file for the instance, for example: `customer_form.xml`.
+2. Add a set of fields (the Fieldset component with the component of the Field) for entity or     to implement the upload of meta info in the DataProvider.
+3. Create the DataProvider class for the entity that implements DataProviderInterface
 * Add a component in Magento layout as a node: `<uiComponent name="customer_form"/>`
 
 Example:
@@ -139,9 +139,8 @@ To group components you can use the component container as in example below:
 </container>
 {% endhighlight %}
 
-## Creating Data Source 
-
-You need to configure Component DataSource in order to provide data and meta information for Form Component.
+## Creating DataSource 
+You need to configure component's DataSource in order to provide data and meta information for your Form component.
 
 DataSource aggregates an object of class implements the interface `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`
 

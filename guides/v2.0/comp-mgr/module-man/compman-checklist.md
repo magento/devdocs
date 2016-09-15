@@ -26,7 +26,7 @@ This section discusses how to start the Component Manager, which updates or unin
 Before continuing, complete all tasks discussed in <a href="{{page.baseurl}}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 ## Component Manager checklist
-{% include install/update/checklist.md %}
+{% include comp-man/checklist.md %}
 
 #### Next step
 [Run the Component Manager]({{page.baseurl}}comp-mgr/module-man/compman-start.html)

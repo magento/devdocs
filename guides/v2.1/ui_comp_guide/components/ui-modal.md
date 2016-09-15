@@ -1,14 +1,14 @@
 ---
 layout: default
-group:  UI Library
-subgroup: F_UI Library Modal Component
-title: Modal Component
-menu_title: Modal Component
-menu_node: parent
+group: UI_Components_guide
+subgroup: components
+title: Modal сomponent
+menu_title: Modal component
 version: 2.1
-github_link: ui-components/ui-modal.md
+github_link: ui_comp_guide/components/ui-modal.md
 ---
-<h2>What's in this topic</h2>
+## What's in this topic
+{:.no_toc}
 
 This topic describes the modal UI component.
 
@@ -19,11 +19,11 @@ This topic describes the modal UI component.
 
 ## Modal component: overview
 
-The modal UI component implements a secondary window that opens on top of the main window. It uses the [modal widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html).
+The Modal UI component implements a secondary window that opens on top of the main window. It uses the [modal widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html).
 
 Similar to the widget's configuration, the component's configuration allows you to set the window type and action buttons behavior (including linking action buttons to methods of the other UI components).
 
-The modal component can be used for both Admin panel and storefront.
+The Modal component can be used for both Admin panel and storefront.
 
 For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library](http://devdocs.magento.com/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
 
@@ -50,10 +50,7 @@ Component's options are set in the configuration `.xml` file as follows:
     </argument>
 </modal>
 {%endhighlight%}
-<p>
-</p>
-<p>
-</p>
+
 The modal component uses general configuration options, similar to other UI components. However, it uses the following specific options as well:
 <table>
   <tr>
@@ -287,7 +284,7 @@ The modal component uses general configuration options, similar to other UI comp
   </tr>
 </table>
 
-### Example of the modal component configuration
+## Example of the Modal component configuration
 
 The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Cancel**, **Clear**, **Done**):
 
