@@ -130,4 +130,4 @@ The default configuration of a UI component is declared in one of the following 
 
 In the above example, the Fieldset UI component uses a merged configuration from both the `definition.xml` file and from the UI componenet's `.js` file.
 
-For more information about the configuration flow, refer to  the [Configuration Flow of UI Components]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.md) topic.
+For more information about the configuration flow, refer to  the [Configuration Flow of UI Components]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html) topic.
