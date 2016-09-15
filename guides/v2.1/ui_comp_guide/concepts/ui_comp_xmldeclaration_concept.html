@@ -593,13 +593,13 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 9 September 2016 (PDT)</div>
+            <div class="updated">Updated: 15 September 2016 (PDT)</div>
             <h2 class="no_toc" id="about-xml-onfiguration-of-ui-omponents">About XML сonfiguration of UI сomponents</h2>
 
 <ul id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
   <li><a href="#about-the-layout-configuration-file-and-ui-component-declaration" id="markdown-toc-about-the-layout-configuration-file-and-ui-component-declaration">About the layout configuration file and UI component declaration</a></li>
-  <li><a href="#about-the-instance-configuration-file" id="markdown-toc-about-the-instance-configuration-file">About the instance configuration file</a></li>
+  <li><a href="#about-the-top-level-component-configuration-file" id="markdown-toc-about-the-top-level-component-configuration-file">About the top-level component configuration file</a></li>
   <li><a href="#example-of-a-top-level-configuration-file" id="markdown-toc-example-of-a-top-level-configuration-file">Example of a top-level configuration file</a></li>
 </ul>
 
@@ -610,32 +610,30 @@
 <h2 id="about-the-layout-configuration-file-and-ui-component-declaration">About the layout configuration file and UI component declaration</h2>
 <p>Every module that has view representation contains the directory named <code>layout</code>. In this directory, the <code>.xml</code> declarations of the pages are stored. These <code>.xml</code> declarations are, in fact, the pages’ markup.</p>
 
-<p>In a typical Magento <code>.xml</code> layout file we see a <code>&lt;head/&gt;</code> node, <code>&lt;title/&gt;</code> node with the name of the page, and a link to CSS file. There are other nodes as well, the most important for us now is the <code>&lt;referenceContainer/&gt;</code> node. (The <code>name</code> attribute in this node is responsible for the position of the container on the page.)</p>
+<p>In a typical Magento <code>.xml</code> layout file we see a <code>&lt;head/&gt;</code> node, <code>&lt;title/&gt;</code> node with the name of the page, and sometimes <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">links to CSS and JS files</a>. There are other nodes as well, the most important for us now is the <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceContainer/&gt;</code> node</a>. (The <code>name</code> attribute in this node is responsible for the position of the container on the page.). Top-level UI components are declared in this node. All nested components are declared in the top-level components’ instances configuration files (not in the page layouts).</p>
 
-<p>A UI component is declared in the <code>&lt;referenceContainer/&gt;</code> node, by using the <code>&lt;uiComponent/&gt;</code> node. The <code>name</code> attribute in the <code>&lt;uiComponent/&gt;</code> node references the XML configuration of the top level UI component.</p>
-
-<p>Example of a UI component declaration:</p>
+<p>Example of a top-level UI component declaration:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;page-container&quot;</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">&quot;%instance_name%&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">&quot;%instance_name%&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/referenceContainer&gt;</span></code></pre></figure>
 
-<p>The configuration of the top-level UI component is a separate <code>.xml</code> file. It is stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/</code> directory. For example <code>&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/%instance_name%.xml</code>.</p>
+<p>A UI component is declared using the <code>&lt;uiComponent/&gt;</code> node. The <code>name</code> attribute in the <code>&lt;uiComponent/&gt;</code> node references the XML configuration of the top-level UI component’s instance. This configuration is a separate <code>.xml</code> file. It is stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/</code> directory. For example <code>&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/%instance_name%.xml</code>.</p>
 
-<p>Every instance is declared in a separate file. The file name is the name of instance (<code>%instance_name%</code>). The namespace of the names is global; meaning that if the file names are the same, they will all be merged into a single configuration for the particular instance.</p>
+<h2 id="about-the-top-level-component-configuration-file">About the top-level component configuration file</h2>
 
-<h2 id="about-the-instance-configuration-file">About the instance configuration file</h2>
+<p>The instance configuration file name is the name of instance (<code>%instance_name%</code>). The namespace of the names is global; meaning that if the file names in different modules are the same, they are merged into a single configuration for the particular instance.</p>
 
-<p>The instance of a top-level UI Component has a configuration file. Following are the rules for the instance configuration files:</p>
+<p>Following are the rules for the instance configuration files:</p>
 
 <ul>
   <li>The top node must have the name of one of the top-level UI components. <!-- need to mention or link what components --></li>
   <li>The top node must contain a link to the XSD schema.</li>
 </ul>
 
-<p>In the top node, there can be an <code>&lt;argument/&gt;</code> node. The <code>&lt;argument/&gt;</code> node contains the configuration for that top-level UI component. The <code>&lt;argument/&gt;</code> node <code>name</code> attribute has value data. The child nodes of the <code>&lt;argument&gt;</code> node will be the argument properties that will be passed in to the component.</p>
+<p>In the top node, there can be an <code>&lt;argument/&gt;</code> node. The <code>&lt;argument/&gt;</code> node contains the configuration for that top-level UI component. The <code>&lt;argument/&gt;</code> node’s <code>name</code> attribute value must be <code>data</code>. The child nodes of the <code>&lt;argument&gt;</code> node will be the argument properties that will be passed in to the component.</p>
 
-<p>Within the top node, there can also be nested nodes. For example, if you want your listing to have a toolbar, then the top node is for the listing and a nested node represents a toolbar. Every nested node that is contained within the top node is regarded as a separate UI component (i.e. the toolbar). Nested nodes can also contain an <code>&lt;argument&gt;</code> node.</p>
+<p>The top node can have nested nodes. Every nested node is regarded as a separate UI component (i.e. the toolbar). For example, if you want your listing to have a toolbar, then the top node is for the listing and a nested node represents a toolbar. Nested nodes can also contain the <code>&lt;argument&gt;</code> node.</p>
 
 <h2 id="example-of-a-top-level-configuration-file">Example of a top-level configuration file</h2>
 
@@ -697,23 +695,27 @@
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<p>In the above example, within the nested node &lt;fieldset&gt; that declares the  Fieldset UI Component.</p>
+<p>In the above example, within the top-level <code>&lt;form&gt;</code> node the <code>&lt;fieldset&gt;</code> node is nested. It declares the Fieldset UI component.</p>
 
-<p>The <code>name</code> attribute must be a unique value among the other components on the same hierarchical level of the same parent node. Look at the <code>&lt;argument&gt;</code> node which <code>name</code> attribute has value data. The child nodes of this node are the arguments that will be passed in to the component.</p>
+<p>The <code>name</code> attribute value must be a unique among the other components on the same hierarchical level of the same parent node. Look at the <code>&lt;argument&gt;</code> node which <code>name</code> attribute has <code>data</code> value. The child nodes of this node are the arguments that will be passed in to the component.</p>
 
-<p>All other child nodes are declared as items. An <code>&lt;item&gt;</code> node with the <code>name</code> attribute value of <code>config</code> (i.e. <code>&lt;item name="config"&gt; ...&lt;/item&gt;</code>) contains the children nodes that describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use an <code>&lt;item&gt;</code> with <code>name</code> attribute with a value of <code>component</code> (i.e. <code>&lt;item name="component"&gt;...&lt;/item&gt;</code>) to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in <code>require.js</code> configuration.</p>
+<p>All other child nodes are declared as items. <code>&lt;item name="config"&gt; ...&lt;/item&gt;</code> contains the children nodes that describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use <code>&lt;item name="component"&gt;...&lt;/item&gt;</code> to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_requirejs_concept.html#config"><code>require.js</code> configuration</a>.</p>
 
-<p>In this example, we can omit the <code>&lt;item name="component"&gt;...&lt;/item&gt;</code> node because this property is already defined in the <code>definition.xml</code> of the Fieldset UI component. Moreover in this example we are showing only a little part of the possible configuration. Every UI component has a default configuration that can be declared in one of the following ways:</p>
+<p>In our example, the <code>&lt;item name="component"&gt;...&lt;/item&gt;</code> node within <code>&lt;fieldset&gt;</code> is omitted, because this property of the Fieldset UI component is already defined in <code>definition.xml</code>.</p>
+
+<p>In this example we showed only a small part of the possible configuration.</p>
+
+<p>The default configuration of a UI component is declared in one of the following ways:</p>
 
 <ul>
   <li>inside the UI component itself, in the <code>.js</code> file</li>
-  <li>inside the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml"><code>definition.xml</code> file</a></li>
+  <li>in the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml"><code>definition.xml</code> file</a></li>
   <li>in both places, in which case the configurations merge (the UI component <code>.js</code> file has priority).</li>
 </ul>
 
-<p>In the above example, the Fieldset UI component uses a merged  configuration from both the <code>definition.xml</code> file and from the UI componenet’s <code>.js</code> file.</p>
+<p>In the above example, the Fieldset UI component uses a merged configuration from both the <code>definition.xml</code> file and from the UI componenet’s <code>.js</code> file.</p>
 
-<p>For more information about the configuration flow, refer to  the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_config_flow_concept.md">Configuration Flow of UI Components</a> topic.</p>
+<p>For more information about the configuration flow, refer to  the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">Configuration Flow of UI Components</a> topic.</p>
 
 		</div>
 	</section>
