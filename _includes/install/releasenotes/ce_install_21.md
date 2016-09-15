@@ -1,9 +1,7 @@
 <div markdown="1">
  
 ## Install the Magento software
-You can get Magento Community Edition 2.1 (including a Release Candidate) from Github, Composer, or using a compressed archive. 
-
-A Release Candidate is for testing purposes only. Do not install it in a production environment.
+You can get Magento Community Edition 2.1 from Github, Composer, or using a compressed archive. 
 
 See one of the following sections for more information:
 
@@ -19,11 +17,11 @@ The CE software is available from `repo.magento.com`. Before getting the CE soft
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
 
-where `<version>` is `2.1.0` (GA release), or a Release Candidate; for example, `2.1.0-rc3`
+where `<version>` is `2.1.0`, `2.1.1`, and so on
 
-For example, to install Magento CE 2.1.0 GA in the `magento2` directory:
+For example, to install Magento CE 2.1.1 in the `magento2` directory:
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0 magento2
+	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
 
 ### Get the Magento CE software from GitHub {#install-rc-gh}
 {:.no_toc}
@@ -36,7 +34,7 @@ Before proceeding, please familiarize yourself with these prerequisites, then ru
 
 where 
 
-`<version>` is `2.1.0` (GA release), `2.1.0-rc3`
+`<version>` is `2.1.0`, `2.1.1`, and so on
 
 `[-b <version>]` optionally checks out a new branch.
 
