@@ -15,6 +15,9 @@ redirect_from: /guides/v1.0/install-gde/system-requirements.html
 
 Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on
 
+### Memory requirement
+Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file]({{ page.baseurl }}comp-mgr/trouble/cman/out-of-memory.html); otherwise, your upgrade might fail.
+
 ### Composer (latest stable version)
 Composer is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions
 
@@ -26,7 +29,9 @@ Composer is required for developers who wish to contribute to the Magento 2 code
 
 ### Database
 
-MySQL 5.6 (Oracle or Percona)
+MySQL 5.6
+
+MariaDB and Percona are compatible with Magento because we support MySQL 5.6 APIs.
 	
 ### PHP 
 

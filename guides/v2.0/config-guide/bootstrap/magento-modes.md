@@ -40,7 +40,7 @@ You can run Magento in any of the following *modes*:
 		<td><p>Intended for development only, this mode:</p>
 			<ul><li>Disables static view file caching</li>
 				<li>Provides verbose logging</li>
-				<li>Enables <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler-single.html##config-cli-subcommands-compile-overview">automatic code compilation</a></li>
+				<li>Enables <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html#config-cli-subcommands-compile-overview">automatic code compilation</a></li>
 				<li>Enables enhanced debugging</li>
 				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance (because of the preceding)</li></ul></td>
@@ -75,7 +75,7 @@ In default mode:
 
 *	Errors are logged to the file reports at server, and never shown to a user
 *	Static view files are cached
-*	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being cached rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
+*	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being dynamically generated rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 

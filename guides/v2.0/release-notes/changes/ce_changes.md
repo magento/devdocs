@@ -1,16 +1,16 @@
 ---
-layout: default
+layout: no-timestamp
 group: release-notes
 subgroup: 05_BC
 title: Magento CE Backward Incompatible Changes
-menu_title: Magento CE
+menu_title: Magento CE changes between 2.0.0 and develop
 version: 2.0
 github_link: release-notes/changes/ce_changes.md
 ---
 
-## Preface 
+## Preface
 
-This topic provides details about backward incompatible changes made in a [Magento CE mainline][] after the [Magento 2.0][] release. The content is auto-generated.
+This topic provides details about backward incompatible changes made in a [Magento CE mainline][] after the [Magento 2.0.0][] release. The content is auto-generated.
 
 Be aware that no @api code has been modified.
 
@@ -29,7 +29,7 @@ where each change is displayed in a separate row in the table, with the followin
 <!-- LINK DEFINITIONS -->
 
 [Magento CE mainline]: https://github.com/magento/magento2
-[Magento 2.0]: https://github.com/magento/magento2/tree/4cae5d058b7ad877b2ec7d2b6fa0a500f7c16860
+[Magento 2.0.0]: https://github.com/magento/magento2/tree/4cae5d058b7ad877b2ec7d2b6fa0a500f7c16860
 
 [Class]: #class
 [Interface]: #interface

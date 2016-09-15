@@ -7,7 +7,9 @@ menu_order: 1
 version: 2.0
 github_link: ext-best-practices/bk-ext-best-practices.md
 redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
-
+tabgroup: best-practices
+tablabel: Home
+tabweight: 0
 ---
 
 ## {{page.menu_title}}

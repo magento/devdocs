@@ -8,7 +8,9 @@ menu_node:
 menu_order: 5
 version: 2.0
 github_link: release-notes/tech_bull_201-upgrade.md
-redirect_from: /guides/v2.0/release-notes/tech_bull_jan_22_16.html
+redirect_from: 
+  - /guides/v2.0/release-notes/tech_bull_jan_22_16.html
+  - /guides/v2.1/release-notes/tech_bull_201-upgrade.html
 ---
 
 ## Magento upgrade issues (Jan. 28, 2016)

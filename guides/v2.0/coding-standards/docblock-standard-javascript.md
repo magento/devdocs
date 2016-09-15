@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>
 
 To add JavaScript code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
-This standard are a subset of <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
+This standard are a subset of <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
 

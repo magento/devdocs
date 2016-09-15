@@ -39,7 +39,7 @@ The Magento file system owner is any of the following:
 
 		For private hosting, we recommend you use the default `002` [umask](#restrict); otherwise, the group won't be able to write to the Magento file system.
 
-Before you install the Magento software, see [Set pre-installation ownership and permissions]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+Before you install the Magento software, see [Set pre-installation ownership and permissions]({{page.baseurl}}install-gde/prereq/file-system-perms.html).
 
 ### Restrict access with a umask {#restrict}
 To tighten security, particularly in production on a shared hosting system, we provide a flexible to restrict access using a umask. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.

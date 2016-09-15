@@ -88,7 +88,7 @@ The tasks discussed in this section require the following:
 ### Install Elasticsearch {#es-install-es}
 This section discusses how to install the latest 2.x version of Elasticsearch from their repository. 
 
-To install older versions, see the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/index.html" target="_blank">Elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/2.0/setup.html" target="_blank">2.0 reference</a>).
+To install older versions, see the [https://www.elastic.co/guide/en/elasticsearch/reference/index.html](Elasticsearch reference){:target="_blank"} (for example, the [2.0 reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html){:target="_blank"}).
 
 To install Elasticsearch:
 
@@ -97,7 +97,7 @@ To install Elasticsearch:
 
 	*	CentOS:
 
-			rpm --import https://packages.elastic.co/GPG-KEY-Elasticsearch
+			rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 			vim /etc/yum.repos.d/Elasticsearch.repo
 
 		Add the following:
@@ -116,12 +116,12 @@ To install Elasticsearch:
 
 	*	Ubuntu:
 
-			wget -qO - https://packages.elastic.co/GPG-KEY-Elasticsearch | sudo apt-key add -
-			echo "deb http://packages.elastic.co/Elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/Elasticsearch-2.x.list
-			sudo apt-get -y update && sudo apt-get -y install Elasticsearch
+			wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+			echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
+			sudo apt-get -y update && sudo apt-get -y install elasticsearch
 
 	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.
-3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.x/setup-service.html" target="_blank">Elasticsearch service</a>.
+3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html" target="_blank">Elasticsearch service</a>.
 4.	Start Elasticsearch:
 
 		service elasticsearch start

@@ -19,15 +19,6 @@
 </head>
 <body>
 
-<!--Search Results Overlay -->
-<div class="searchResultsBack"></div>
-<div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="{{ site.baseurl }}common/images/close.png" alt="Close"> --></div>
-	<gcse:search></gcse:search>
-	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
-</div>
-<!--End Search Results Overlay -->
-
 <header class="site-header">
 
 	<nav role="navigation">
@@ -43,12 +34,12 @@
 					<a href="{{ site.baseurl }}">Developer Documentation ({{page.guide_version}})</a>
 				</div>
 			</div>
-			{% include version-switcher.html %}
+            {% include version-switcher.html %}
 		</div><!-- #global-nav -->
 	</nav>
 
 	<div class="search-btn">
-		<a class="search-trigger search-icon" href="#"></a>
+        <a class="search-trigger search-icon" href="{{page.baseurl}}search.html"></a>
 	</div>
 
 </header>

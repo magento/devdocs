@@ -1098,7 +1098,7 @@ That's it!
 
 [adjust a configuration]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html
 [prepare Magento application]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_magento.html
-[prepare environment for test run]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html
+[prepare environment for test run]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html
 
 [`generateFixtureXml.php`]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create
 [set data to a fixture field]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html#fixture_field
@@ -1121,7 +1121,7 @@ That's it!
 [`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
 [`\Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
 [`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
-[up and running]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium
+[up and running]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium
 
 <!-- ABBREVIATIONS -->
 
