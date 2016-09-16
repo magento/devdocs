@@ -213,26 +213,29 @@ To generate the signature, you must use the HMAC-SHA1 signature method. The sign
 
 ## OAuth token exchange example {#oauth-example}
 
-* These scripts can be used to simulate the Magento 2 [OAuth 1.0a](https://tools.ietf.org/html/rfc5849) token exchange flow in the admin to obtain credentials to make authenticated API requests.
-* For ease, scripts can be dropped under your application(that you integrate with Magento) document root folder so that they can be exposed as endpoints that your Magento application can interact with to mimic the token exchange.
-* The oauth client is extended from and attributed to [PHPoAuthLib](https://github.com/Lusitanian/PHPoAuthLib) which is the same lib used in the [Magento OAuth client](https://github.com/magento/magento2/blob/develop/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php).
-* Make sure you update the baseUrl in <code>OauthClient.php</code>. Currently its <code>http://magento.host</code>.
-* Steps for Oauth 1.0a token exchange flow :
-  * Login to your Magento Admin and navigate to **System > Extensions > Integrations**
-  * Click on "Add New Integration"
-  * Complete all details in the Integration Info tab:
+The scripts provided in this document simulate the Magento 2 [OAuth 1.0a](https://tools.ietf.org/html/rfc5849) token exchange flow in Admin to obtain the credentials needed to make authenticated API requests. You can drop these scripts under the document root directory of your Magento application so that they can be exposed as endpoints that your Magento application can interact with to mimic the token exchange.
+
+The oauth client is extended from and attributed to [PHPoAuthLib](https://github.com/Lusitanian/PHPoAuthLib) which is the same lib used in the [Magento OAuth client](https://github.com/magento/magento2/blob/develop/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php).
+
+To simulate the Oauth 1.0a token exchange flow:
+
+1. Login to your Magento Admin and navigate to **System > Extensions > Integrations**
+2. Click on **Add New Integration**.
+3. Complete all details in the Integration Info tab:
     * **Name** : SomeUniqueIntegrationName
     * **Callback URL** : http://your_app_host/endpoint.php
     * **Identity link URL** : http://your_app_host/login.php
-  * Add necessary permissions from the **API** tab
-  * Click on "Save and Activate" option from the drop down
-  * You should see the popup confirming API permissions. Click Allow. (Make sure Pop-ups are allowed)
-  * This will also post credentials to the endpoint : endpoint.php. You should also see another popup for the identity linking step that opens up the script from <code>login.php</code>.
-  * Click login ( there is no login check since its dummy). The <code>checklogin.php</code> script is called which uses the posted credentials to complete the token exchange
-  * When the token exchange completes successfully the user is redirected back to the Integrations Grid. The integration grid should show the newly created integration as "Active".
-* Click on the edit icon of the integration and check the Integration Details on the Integration Info Tab. It should show all the credentials that can be used to make an authenticated API request using Oauth 1.0
+    * Add necessary permissions from the **API** tab
+4. Select the **Save and Activate** option from the drop down.
+5. A pop-up window displays, confirming API permissions. Click **Allow**. (Make sure your browser allows pop-ups windows.)
+The credentials are posted to `endpoint.php`. You should also see another pop-up for the identity linking step that opens up the script from `login.php`.
+6. Click **Login**. (There is no actual login check since this is a simulation.). The `checklogin.php` script is called. It uses the posted credentials to complete the token exchange.
+7. When the token exchange completes successfully, the user is redirected back to the Integrations grid. The newly-created integration should be in the Active state.
+8. Click on the edit icon of the integration and check the Integration Details on the Integration Info tab. It should show all the credentials that can be used to make an authenticated API request using Oauth 1.0. 
 
-<code>checklogin.php</code>
+## `checklogin.php`
+
+{% collapsible Sample output %}
 {% highlight php %}
 <?php
 require './vendor/autoload.php';
@@ -265,8 +268,10 @@ $accessToken = $oAuthClient->requestAccessToken(
 
 header("location: $callback");
 {% endhighlight %}
+{% endcollapsible %}
 
-<code>endpoint.php</code>
+## `endpoint.php`
+{% collapsible Sample output %}
 {% highlight php %}
 <?php
 session_id('test');
@@ -285,8 +290,10 @@ session_write_close();
 header("HTTP/1.0 200 OK");
 echo "Response";
 {% endhighlight %}
+{% endcollapsible %}
 
-<code>login.php</code>
+## `login.php`
+{% collapsible Sample output %}
 {% highlight php %}
 <?php
 $consumerKey = $_REQUEST['oauth_consumer_key'];
@@ -323,8 +330,13 @@ echo <<<HTML
 </table>
 HTML;
 {% endhighlight %}
+{% endcollapsible %}
 
-<code>OauthClient.php</code>
+## `OauthClient.php`
+
+Change the instances of `http://magento.host` in this example to a valid base URL.
+
+{% collapsible Sample output %}
 {% highlight php %}
 <?php
 
@@ -500,6 +512,7 @@ class OauthClient extends AbstractService
     }
 }
 {% endhighlight %}
+{% endcollapsible %}
 
 ## Related topics
 
