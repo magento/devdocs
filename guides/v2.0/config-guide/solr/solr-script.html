@@ -1334,7 +1334,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 15 September 2016 (PDT)</div>
             <p><img src="/common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only" /></p>
 
 <h2 id="solr-prod">Prepare Solr for production</h2>
@@ -1358,8 +1358,14 @@
 
     <p>SELinux settings are entirely up to you; Magento does not recommend either enabling it or disabling it. Because SELinux is very complex, make sure you have an experienced system administrator who can configure it.</p>
   </li>
-  <li>Script Solr startup and shutdown as discussed in the next section</li>
+  <li>Script Solr startup and shutdown as discussed in <a href="#solr-script">Script Solr startup and shutdown</a></li>
 </ul>
+
+<h3 id="cores">Multiple core configuration</h3>
+
+<p>If you have created multiple cores, make sure the value of the <code>maxBooleanClauses</code> parameter is the same on each. This parameter is defined in each core’s <code>solrconfig.xml</code> file. Solr uses the value defined for the core that initialized most recently as the value for all cores. The default value for the Magento installation is 10240.</p>
+
+<p>If one or more of the <code>maxBooleanClauses</code> parameters is set too low, the search results page could display no results.</p>
 
 <h3 id="solr-script">Script Solr startup and shutdown</h3>
 <p>In a production environment, you should start and stop Solr using a script.</p>
@@ -1371,16 +1377,16 @@
 <p>Create a script named <code>/etc/init.d/solr</code> with options similar to the following:</p>
 
 <pre><code>#!/bin/sh
- 
+
 #Starts, stops, and restarts Apache Solr.
 #chkconfig: 35 92 08
 #description: Starts and stops Apache Solr
- 
+
 SOLR_DIR="&lt;your Solr install dir&gt;"
 JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=&lt;jetty-stop-port&gt; -DSTOP.KEY=&lt;jetty-stop-key&gt; -jar  start.jar"
 LOG_FILE="&lt;path-to-solr-log-file&gt;"
 JAVA="&lt;java_home&gt;"
- 
+
 case $1 in
 start)
 echo -n "Starting Solr"
@@ -1426,7 +1432,7 @@ esac
   For <code>-DSTOP.PORT=</code>, specify any unused port.
 
   For <code>-DSTOP.KEY=</code>, specify a string. If you omit a value for <code>-DSTOP.KEY=</code>, Jetty generates a random key you must enter to stop Jetty.
- 
+
   For more information, see <a href="https://wiki.eclipse.org/Jetty/Howto/Configure_SSL" target="_blank">Securing Jetty</a>.
 </td>
 </tr>
@@ -1444,16 +1450,16 @@ esac
 <p>An example follows:</p>
 
 <pre><code>#!/bin/sh
- 
+
 #Starts, stops, and restarts Apache Solr.
 #chkconfig: 35 92 08
 #description: Starts and stops Apache Solr
- 
+
 SOLR_DIR="/opt/solr/apache-solr-4-10-4/example"
 JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=8079 -DSTOP.KEY=mykey -jar  start.jar"
 LOG_FILE="/var/log/solr.log"
 JAVA="/usr/bin/java"
- 
+
 case $1 in
 start)
 echo -n "Starting Solr"
