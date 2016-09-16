@@ -60,10 +60,10 @@ For the following output cases, use the specified function to generate XSS-safe 
 {% endhighlight %}
 
 **Case:** URL output\\
-**Function:** `escapeUrl` and `escapeXssInUrl`
+**Function:** `escapeXssInUrl`
 
 {% highlight html %}
-  <a href="<?php echo $block->escapeUrl($block->escapeXssInUrl($block->getCategoryUrl())) ?>">Some Link</a>
+  <a href="<?php echo $block->escapeXssInUrl($block->getCategoryUrl()) ?>">Some Link</a>
 {% endhighlight %}
 
 **Case:** HTML attributes\\
