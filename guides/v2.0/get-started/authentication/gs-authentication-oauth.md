@@ -10,12 +10,6 @@ github_link: get-started/authentication/gs-authentication-oauth.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.html
 ---
 
-Magento OAuth authentication is based on [OAuth 1.0a](https://tools.ietf.org/html/rfc5849), an open standard for secure API authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.
-
-In Magento, a third-party extension that uses OAuth for authentication is called an [_integration_]( {{page.baseurl}}/howdoi/webapi/integration.html ). An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.
-
-As the process of registering the integration proceeds, Magento creates the tokens that the extension needs for authentication. It first creates a request token. This token is short-lived and must be exchanged for access token. Access tokens are long-lived and will not expire unless the merchant revokes access to the extension.
-
 ## Contents
 * [OAuth overview](#overview)
 * [Activate an integration](#activate)
@@ -23,6 +17,12 @@ As the process of registering the integration proceeds, Magento creates the toke
 * [Access the web APIs](#web-api-access)
 * [Generating Oauth signatures](#oauth-signature)
 * [OAuth token exchange example](#oauth-example)
+
+Magento OAuth authentication is based on [OAuth 1.0a](https://tools.ietf.org/html/rfc5849), an open standard for secure API authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.
+
+In Magento, a third-party extension that uses OAuth for authentication is called an [_integration_]( {{page.baseurl}}/howdoi/webapi/integration.html ). An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.
+
+As the process of registering the integration proceeds, Magento creates the tokens that the extension needs for authentication. It first creates a request token. This token is short-lived and must be exchanged for access token. Access tokens are long-lived and will not expire unless the merchant revokes access to the extension.
 
 ## OAuth overview {#overview}
 The following diagram shows the OAuth authentication process. Each step is described further.
@@ -55,7 +55,6 @@ The integration must be configured from the Magento Admin (**System > Extensions
 A merchant can choose to select **Save and Activate** when the integration is created. Alternatively, the merchant can click on **Activate** against a previously saved integration from the Integration grid.
 
 When the integration is created, Magento generates a consumer key and a consumer secret.
-
 
 Activating the integration submits the credentials to the endpoint specified when creating the Integration. An HTTP POST from Magento to the Integration endpoint will contain these attributes:
 
@@ -213,9 +212,9 @@ To generate the signature, you must use the HMAC-SHA1 signature method. The sign
 
 ## OAuth token exchange example {#oauth-example}
 
-The scripts provided in this document simulate the Magento 2 [OAuth 1.0a](https://tools.ietf.org/html/rfc5849) token exchange flow in Admin to obtain the credentials needed to make authenticated API requests. You can drop these scripts under the document root directory of your Magento application so that they can be exposed as endpoints that your Magento application can interact with to mimic the token exchange.
+The scripts provided in this document simulate the Magento 2 [OAuth 1.0a](https://tools.ietf.org/html/rfc5849) token exchange flow. You can drop these scripts under the document root directory of your Magento application so that they can be exposed as endpoints that your Magento application can interact with to mimic the token exchange.
 
-The oauth client is extended from and attributed to [PHPoAuthLib](https://github.com/Lusitanian/PHPoAuthLib) which is the same lib used in the [Magento OAuth client](https://github.com/magento/magento2/blob/develop/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php).
+The OAuth client is extended from and attributed to [PHPoAuthLib](https://github.com/Lusitanian/PHPoAuthLib), which is the same lib used in the [Magento OAuth client](https://github.com/magento/magento2/blob/develop/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php).
 
 To simulate the Oauth 1.0a token exchange flow:
 
@@ -225,17 +224,17 @@ To simulate the Oauth 1.0a token exchange flow:
     * **Name** : SomeUniqueIntegrationName
     * **Callback URL** : http://your_app_host/endpoint.php
     * **Identity link URL** : http://your_app_host/login.php
-    * Add necessary permissions from the **API** tab
-4. Select the **Save and Activate** option from the drop down.
-5. A pop-up window displays, confirming API permissions. Click **Allow**. (Make sure your browser allows pop-ups windows.)
+    * Add permissions as desired on the **API** tab
+4. Select the **Save and Activate** option from the drop down menu.
+5. A pop-up window displays, confirming API permissions. Click **Allow**. (Make sure your browser allows pop-up windows.)
 The credentials are posted to `endpoint.php`. You should also see another pop-up for the identity linking step that opens up the script from `login.php`.
 6. Click **Login**. (There is no actual login check since this is a simulation.). The `checklogin.php` script is called. It uses the posted credentials to complete the token exchange.
 7. When the token exchange completes successfully, the user is redirected back to the Integrations grid. The newly-created integration should be in the Active state.
-8. Click on the edit icon of the integration and check the Integration Details on the Integration Info tab. It should show all the credentials that can be used to make an authenticated API request using Oauth 1.0. 
+8. Click on the edit icon of the integration and check the Integration Details on the Integration Info tab. It should show all the credentials that can be used to make an authenticated API request using Oauth 1.0.
 
-## `checklogin.php`
+### checklogin.php
 
-{% collapsible Sample output %}
+{% collapsible Click to expand %}
 {% highlight php %}
 <?php
 require './vendor/autoload.php';
@@ -270,8 +269,8 @@ header("location: $callback");
 {% endhighlight %}
 {% endcollapsible %}
 
-## `endpoint.php`
-{% collapsible Sample output %}
+### endpoint.php
+{% collapsible Click to expand %}
 {% highlight php %}
 <?php
 session_id('test');
@@ -292,8 +291,8 @@ echo "Response";
 {% endhighlight %}
 {% endcollapsible %}
 
-## `login.php`
-{% collapsible Sample output %}
+### login.php
+{% collapsible Click to expand %}
 {% highlight php %}
 <?php
 $consumerKey = $_REQUEST['oauth_consumer_key'];
@@ -332,11 +331,11 @@ HTML;
 {% endhighlight %}
 {% endcollapsible %}
 
-## `OauthClient.php`
+### OauthClient.php
 
 Change the instances of `http://magento.host` in this example to a valid base URL.
 
-{% collapsible Sample output %}
+{% collapsible Click to expand %}
 {% highlight php %}
 <?php
 
