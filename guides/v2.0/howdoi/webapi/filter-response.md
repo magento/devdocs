@@ -35,6 +35,8 @@ On POST and PUT requests, Magento ignores the `fields` parameter as input, but t
 * TOC
 {:toc}
 
+All examples use Magento CE sample data.
+
 ### Simple fields
 
 The following example returns only the `sku`, `price`, and `name` for the specified product:
@@ -134,7 +136,7 @@ This example returns only the following:
 
 The following POST operation and payload creates a catalog category named `New Category`. Magento returns only the `id`, `parent_id`, and `name` attributes
 
-`POST http://magento.vg/rest/V1/categories?fields=id,parent_id,name`
+`POST http://<host>/rest/V1/categories?fields=id,parent_id,name`
 
 {% highlight json %}
 {
