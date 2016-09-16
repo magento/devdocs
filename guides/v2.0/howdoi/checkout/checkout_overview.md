@@ -20,7 +20,7 @@ Out of the box, the checkout consists of two steps:
 You can customize the default checkout in many ways. Here the following customizations are described:
 
  - [Add a new checkout step]({{page.baseurl}}howdoi/checkout/checkout_new_step.html)
- - [Customize the view of an existing step]({{page.baseurl}}howdoi/checkout/checkout_new_step.html)
+ - [Customize the view of an existing step]({{page.baseurl}}howdoi/checkout/checkout_customize.html)
  - [Add a custom payment method to checkout]({{page.baseurl}}howdoi/checkout/checkout_payment.html)
  - [Add custom validations before order placement]({{page.baseurl}}howdoi/checkout/checkout_order.html)
  - [Add custom shipping carrier validations]({{page.baseurl}}howdoi/checkout/checkout_carrier.html)
