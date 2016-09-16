@@ -981,6 +981,8 @@
   <li><a href="#using-with-searchcriteria" id="markdown-toc-using-with-searchcriteria">Using with searchCriteria</a></li>
 </ul>
 
+<p>All examples use Magento CE sample data.</p>
+
 <h3 id="simple-fields">Simple fields</h3>
 
 <p>The following example returns only the <code>sku</code>, <code>price</code>, and <code>name</code> for the specified product:</p>
@@ -1071,7 +1073,7 @@
 
 <p>The following POST operation and payload creates a catalog category named <code>New Category</code>. Magento returns only the <code>id</code>, <code>parent_id</code>, and <code>name</code> attributes</p>
 
-<p><code>POST http://magento.vg/rest/V1/categories?fields=id,parent_id,name</code></p>
+<p><code>POST http://&lt;host&gt;/rest/V1/categories?fields=id,parent_id,name</code></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
