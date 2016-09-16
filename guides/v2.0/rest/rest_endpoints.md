@@ -30,6 +30,8 @@ To specify all services:
 
 ## List of Service Names per Module
 
+* TOC
+{:toc}
 
 ### Backend
 backendModuleServiceV1: `http://<magento_host>/rest/default/schema&services=backendModuleServiceV1`

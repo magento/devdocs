@@ -14,6 +14,9 @@ redirect_from: /guides/v1.0/rest/list.html
 
 Updated March 31, 2016. Additions since the last update are marked with asterisks (*).
 
+* TOC
+{:toc}
+
 <h3>Backend</h3>
 
     GET    /V1/modules

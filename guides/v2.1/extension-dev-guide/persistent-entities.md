@@ -1,7 +1,7 @@
 ---
 layout: default
-group: extension-dev-guide
-subgroup: 99_Module Development
+group: 
+subgroup: 
 title: Persistent entities
 menu_title: Persistent entities
 menu_order: 1000
