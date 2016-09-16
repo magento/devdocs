@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add custom validations before order placement</title>
+	<title>Retrieve filtered responses for REST APIs</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/howdoi/checkout/checkout_order.html">
+	<link rel="canonical" href="//guides/v2.1/howdoi/webapi/filter-response.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -44,9 +44,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/howdoi/checkout/checkout_order.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/howdoi/webapi/filter-response.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/howdoi/checkout/checkout_order.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/howdoi/webapi/filter-response.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,14 +162,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Add custom validations before order placement</h1>
+		<h1 class="page-heading">Retrieve filtered responses for REST APIs</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/checkout/checkout_order.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/webapi/filter-response.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -683,7 +683,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/howdoi/webapi/filter-response.html">Retrieve filtered responses</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/howdoi/webapi/filter-response.html">Retrieve filtered responses</a></li>
 
 									
 
@@ -742,7 +742,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/howdoi/checkout/checkout_order.html">Add custom validations before order placement</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/howdoi/checkout/checkout_order.html">Add custom validations before order placement</a></li>
 
 									
 
@@ -948,106 +948,198 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2>What's in this topic</h2>
+            <div class="updated">Updated: 16 September 2016 (PDT)</div>
+            <h2 class="no_toc" id="retrieving-filtered-responses">Retrieving filtered responses</h2>
 
-<p>This topic describes how to add custom validations to be performed before the order is placed during checkout. Namely, the validations which are performed after a shopper clicks the <strong>Place Order</strong> button. Writing the validation logic itself is not covered in this topic.</p>
+<p>Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magneto provides a query parameter-based syntax for REST API requests that return partial responses.</p>
 
-<h2 id="overview">Overview</h2>
-<p>To add custom validations before the order placement action, you must do the following:</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This feature is not available for SOAP, because SOAP does not allow partial responses. </p>
+</div>
 
-<ol>
-  <li><a href="#validator">Create the validator</a>.</li>
-  <li><a href="#pool">Add validator to the validators pool</a>.</li>
-  <li><a href="#layout">Declare the validation in the checkout layout</a>.</li>
-</ol>
+<p>You can append <code>?fields=&lt;field_or_object1&gt;,&lt;field_or_object2&gt;,...</code> to any GET, POST, or PUT operation to filter unimportant information from the response. <code>&lt;field_or_object&gt;</code> can be any of the following:</p>
 
-<h2 id="validator">Create the validator</h2>
+<ul>
+  <li>Simple top-level field</li>
+  <li>Top-level object that includes all fields</li>
+  <li>Top-level object with selected fields</li>
+  <li>Nested objects</li>
+</ul>
 
-<p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">depend</a> on the <code>Magento_Checkout</code> module. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
+<p>Separate each field or object with a comma.</p>
 
-<p>In your custom module directory, create a <code>.js</code> file implementing the validator. It should be located under <code>&lt;your_module_dir&gt;/view/frontend/web/js/model</code> directory.</p>
+<p>On POST and PUT requests, Magento ignores the <code>fields</code> parameter as input, but the response includes only the requested fields and objects.</p>
 
-<p>Following is a sample of the validator <code>.js</code> file. It must necessarily implement the <code>validate()</code> method:</p>
+<h2 class="no_toc" id="examples">Examples</h2>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
-    <span class="p">[],</span>
-    <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="cm">/**</span>
-<span class="cm">             * Validate something</span>
-<span class="cm">             *</span>
-<span class="cm">             * @returns {boolean}</span>
-<span class="cm">             */</span>
-            <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                <span class="c1">//Put your validation logic here</span>
-                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
+<ul id="markdown-toc">
+  <li><a href="#simple-fields" id="markdown-toc-simple-fields">Simple fields</a></li>
+  <li><a href="#simple-fields-and-top-level-objects-with-all-fields" id="markdown-toc-simple-fields-and-top-level-objects-with-all-fields">Simple fields and top-level objects with all fields</a></li>
+  <li><a href="#top-level-object-with-selected-fields" id="markdown-toc-top-level-object-with-selected-fields">Top-level object with selected fields</a></li>
+  <li><a href="#nested-objects" id="markdown-toc-nested-objects">Nested objects</a></li>
+  <li><a href="#post-operation" id="markdown-toc-post-operation">POST operation</a></li>
+  <li><a href="#using-with-searchcriteria" id="markdown-toc-using-with-searchcriteria">Using with searchCriteria</a></li>
+</ul>
+
+<h3 id="simple-fields">Simple fields</h3>
+
+<p>The following example returns only the <code>sku</code>, <code>price</code>, and <code>name</code> for the specified product:</p>
+
+<p><code>GET http://&lt;host&gt;/rest/default/V1/products/24-MB01?fields=sku,price,name</code></p>
+
+<div class="collapsible"><h4 class="collapsible-title">Sample output </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MB01&quot;</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Joust Duffle Bag&quot;</span>
+  <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">24.99</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h3 id="simple-fields-and-top-level-objects-with-all-fields">Simple fields and top-level objects with all fields</h3>
+
+<p>The following example returns only the customer first name, last name, and the entire <code>billing_address</code> object from a specified order. Do not include brackets <code>[]</code> after an object name when you want to return all of the object’s contents.</p>
+
+<p><code>GET http:/&lt;host&gt;/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname</code></p>
+
+<div class="collapsible"><h4 class="collapsible-title">Sample output </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<span class="nt">&quot;customer_firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Veronica&quot;</span>
+<span class="s2">&quot;customer_lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Costello&quot;</span>
+<span class="s2">&quot;billing_address&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nt">&quot;address_type&quot;</span><span class="p">:</span> <span class="s2">&quot;billing&quot;</span>
+  <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Calder&quot;</span>
+  <span class="s2">&quot;country_id&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span>
+  <span class="s2">&quot;customer_address_id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;roni_cost@example.com&quot;</span>
+  <span class="s2">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">4</span>
+  <span class="s2">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Veronica&quot;</span>
+  <span class="s2">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Costello&quot;</span>
+  <span class="s2">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">2</span>
+  <span class="s2">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;49628-7978&quot;</span>
+  <span class="s2">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;Michigan&quot;</span>
+  <span class="s2">&quot;region_code&quot;</span><span class="p">:</span> <span class="s2">&quot;MI&quot;</span>
+  <span class="s2">&quot;region_id&quot;</span><span class="p">:</span> <span class="mi">33</span>
+  <span class="s2">&quot;street&quot;</span><span class="p">:</span> <span class="s2">&quot;6146 Honey Bluff Parkway&quot;</span>
+  <span class="s2">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;(555) 229-3326&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h3 id="top-level-object-with-selected-fields">Top-level object with selected fields</h3>
+
+<p>The following example returns only the <code>name</code>, <code>qty</code>, and <code>sku</code> fields defined in an <code>items</code> object from a specified shipment:</p>
+
+<p><code>GET http://&lt;host&gt;/rest/default/V1/shipment/2?fields=items[name,qty,sku]</code></p>
+
+<div class="collapsible"><h4 class="collapsible-title">Sample output </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;items&quot;</span><span class="err">:</span> <span class="p">[</span>
+   <span class="p">{</span>
+     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Minerva LumaTech&amp;trade; V-Tee-XS-Blue&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;WS08-XS-Blue&quot;</span><span class="p">,</span>
+   <span class="p">}</span>
+ <span class="p">]</span>
+ </code></pre></figure>
+</div></div>
+
+<h3 id="nested-objects">Nested objects</h3>
+
+<p>This example returns only the following:</p>
+
+<ul>
+  <li>The product’s <code>sku</code> and <code>name</code></li>
+  <li>The entire <code>category_links</code> object, which is defined in <code>extension_attributes</code></li>
+  <li>The <code>item_id</code> and <code>qty</code> fields of the <code>stock_item</code> object, which is also defined in <code>extension_attributes</code></li>
+</ul>
+
+<p><code>GET http://&lt;host&gt;/rest/default/V1/products/MT12?fields=name,sku,extension_attributes[category_links,stock_item[item_id,qty]]</code></p>
+
+<div class="collapsible"><h4 class="collapsible-title">Sample output </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;MT12&quot;</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Cassius Sparring Tank&quot;</span>
+  <span class="s2">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;category_links&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="s2">&quot;category_id&quot;</span><span class="p">:</span> <span class="s2">&quot;18&quot;</span>
     <span class="p">}</span>
-<span class="p">);</span></code></pre></figure>
+    <span class="s2">&quot;stock_item&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">732</span>
+      <span class="s2">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">0</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
 
-<h2 id="pool">Add validator to the validators pool</h2>
+<h3 id="post-operation">POST operation</h3>
 
-<p>Your custom validator must be added to the pool of “additional validators”. To do this, in the <code>&lt;your_module_dir&gt;/view/frontend/web/js</code> directory create a new <code>&lt;your-validation&gt;.js</code> file with the following content:</p>
+<p>The following POST operation and payload creates a catalog category named <code>New Category</code>. Magento returns only the <code>id</code>, <code>parent_id</code>, and <code>name</code> attributes</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
-    <span class="p">[</span>
-        <span class="s1">&#39;uiComponent&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;Magento_Checkout/js/model/payment/additional-validators&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;&lt;your_module&gt;/js/model/your-validator&#39;</span>
-    <span class="p">],</span>
-    <span class="kd">function</span> <span class="p">(</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">additionalValidators</span><span class="p">,</span> <span class="nx">yourValidator</span><span class="p">)</span> <span class="p">{</span>
-        <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-        <span class="nx">additionalValidators</span><span class="p">.</span><span class="nx">registerValidator</span><span class="p">(</span><span class="nx">yourValidator</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({});</span>
-    <span class="p">}</span>
-<span class="p">);</span></code></pre></figure>
+<p><code>POST http://magento.vg/rest/V1/categories?fields=id,parent_id,name</code></p>
 
-<h2 id="layout">Declare the validation in the checkout layout</h2>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;New Category&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;is_active&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-<p>In your custom module directory, create a new <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file. 
-In this file, add the following:</p>
+<div class="collapsible"><h4 class="collapsible-title">Sample output </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">43</span>
+<span class="s2">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;New Category&quot;</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;body&gt;</span>
-<span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;jsLayout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;components&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;checkout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;steps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;billing-step&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;payment&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;additional-payment-validators&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                        <span class="c">&lt;!-- Declare your validation. START --&gt;</span>
-                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;your-validator&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%your_module_dir%/js/view/%your-validation%<span class="nt">&lt;/item&gt;</span>
-                                                        <span class="nt">&lt;/item&gt;</span>
-                                                        <span class="c">&lt;!-- Declare your validation. END --&gt;</span>
-                                                    <span class="nt">&lt;/item&gt;</span>
-                                                <span class="nt">&lt;/item&gt;</span>
-                                            <span class="nt">&lt;/item&gt;</span>
-                                        <span class="nt">&lt;/item&gt;</span>
-                                    <span class="nt">&lt;/item&gt;</span>
-                                <span class="nt">&lt;/item&gt;</span>
-                            <span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/referenceBlock&gt;</span>
-    <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></figure>
+<h3 id="using-with-searchcriteria">Using with searchCriteria</h3>
 
+<p>The <a href="/guides/v2.1/howdoi/webapi/search-criteria.html"><code>searchCriteria</code> query parameter</a> allows you to search across multiple objects in a collection. You can use the <code>fields</code> query parameter in conjunction with <code>searchCriteria</code> to limit the output. The question mark (?) that precedes <code>fields</code> in all the other examples in this document is replaced with an ampersand (&amp;).</p>
+
+<p>The following query returns only the <code>sku</code> and <code>name</code> parameters for product items whose <code>category_gear</code> attribute includes the value <code>86</code>.</p>
+
+<p><code>GET http://&lt;host&gt;/rest/V1/products/?searchCriteria[filter_groups][0][filters][0][field]=category_gear&amp;searchCriteria[filter_groups][0][filters][0][value]=86&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=finset&amp;fields=items[sku,name]</code></p>
+
+<div class="collapsible"><h4 class="collapsible-title">Sample output </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<span class="nt">&quot;items&quot;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MG04&quot;</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Aim Analog Watch&quot;</span>
+  <span class="p">}</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MG01&quot;</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Endurance Watch&quot;</span>
+  <span class="p">}</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MG03&quot;</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Summit Watch&quot;</span>
+  <span class="p">}</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MG05&quot;</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Cruise Dual Analog Watch&quot;</span>
+  <span class="p">}</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MG02&quot;</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dash Digital Watch&quot;</span>
+  <span class="p">}</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG09&quot;</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Luma Analog Watch&quot;</span>
+  <span class="p">}</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG01&quot;</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bolo Sport Watch&quot;</span>
+  <span class="p">}</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG03&quot;</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Clamber Watch&quot;</span>
+  <span class="p">}</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG02&quot;</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Didi Sport Watch&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 class="no_toc" id="related-topics">Related topics</h2>
+<ul>
+  <li><a href="/guides/v2.1/howdoi/webapi/search-criteria.html">Search using REST APIs</a></li>
+</ul>
 
 		</div>
 	</section>

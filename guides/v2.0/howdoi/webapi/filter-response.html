@@ -880,7 +880,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 15 September 2016 (PDT)</div>
+            <div class="updated">Updated: 16 September 2016 (PDT)</div>
             <h2 class="no_toc" id="retrieving-filtered-responses">Retrieving filtered responses</h2>
 
 <p>Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magneto provides a query parameter-based syntax for REST API requests that return partial responses.</p>
@@ -909,6 +909,7 @@
   <li><a href="#simple-fields-and-top-level-objects-with-all-fields" id="markdown-toc-simple-fields-and-top-level-objects-with-all-fields">Simple fields and top-level objects with all fields</a></li>
   <li><a href="#top-level-object-with-selected-fields" id="markdown-toc-top-level-object-with-selected-fields">Top-level object with selected fields</a></li>
   <li><a href="#nested-objects" id="markdown-toc-nested-objects">Nested objects</a></li>
+  <li><a href="#post-operation" id="markdown-toc-post-operation">POST operation</a></li>
   <li><a href="#using-with-searchcriteria" id="markdown-toc-using-with-searchcriteria">Using with searchCriteria</a></li>
 </ul>
 
@@ -998,9 +999,29 @@
 <span class="p">}</span></code></pre></figure>
 </div></div>
 
+<h3 id="post-operation">POST operation</h3>
+
+<p>The following POST operation and payload creates a catalog category named <code>New Category</code>. Magento returns only the <code>id</code>, <code>parent_id</code>, and <code>name</code> attributes</p>
+
+<p><code>POST http://magento.vg/rest/V1/categories?fields=id,parent_id,name</code></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;New Category&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;is_active&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<div class="collapsible"><h4 class="collapsible-title">Sample output </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">43</span>
+<span class="s2">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;New Category&quot;</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
 <h3 id="using-with-searchcriteria">Using with searchCriteria</h3>
 
-<p>To receive a filtered response when performing a search that involves <code>searchCriteria</code>, treat the <code>fields=&lt;field_or_object1&gt;</code> expression as another name/value pair in the query string.</p>
+<p>The <a href="/guides/v2.0/howdoi/webapi/search-criteria.html"><code>searchCriteria</code> query parameter</a> allows you to search across multiple objects in a collection. You can use the <code>fields</code> query parameter in conjunction with <code>searchCriteria</code> to limit the output. The question mark (?) that precedes <code>fields</code> in all the other examples in this document is replaced with an ampersand (&amp;).</p>
 
 <p>The following query returns only the <code>sku</code> and <code>name</code> parameters for product items whose <code>category_gear</code> attribute includes the value <code>86</code>.</p>
 
