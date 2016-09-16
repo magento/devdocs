@@ -24,6 +24,10 @@ Magento Enterprise Cloud Edition provides [*services*](#cloud-yaml-services-type
 
 This file is located at `.magento/services.yaml` in your project.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+</div>
+
 [Sample `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"}
 
 The following sections discuss properties in `services.yaml`.

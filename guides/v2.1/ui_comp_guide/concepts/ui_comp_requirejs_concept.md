@@ -21,7 +21,7 @@ This topic discusses JavaScript modules and describes the role which RequireJS p
 
 Magento uses AMD (asynchronous module definition) approach for JavaScript modules loading. Namely, Magento uses RequireJS and its [standard syntax](http://requirejs.org/docs/api.html#config).
 
-## RequireJS configuration location
+## RequireJS configuration location {#config}
 
 As Magento has a modular architecture we have an ability to define `requirejs-config.js` for each module, separately for each [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html): `frontend` or `admin`. (Or `base` if it is same for both, `frontend` and `admin`).
 

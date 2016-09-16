@@ -17,7 +17,9 @@ github_link: ui_comp_guide/concepts/ui_comp_uicollection_concept.md
 
 ## What is `uiCollection` 
 
-The `uiCollection` library class should be used as a base class by any components that contains a collection of child UI components. The path in the Magneto code base is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`. `uiCollection` inherits from the [uiElement class]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.md). 
+The `uiCollection` library class should be used as a base class by any components that contain a collection of child UI components.  `uiCollection` inherits from the [uiElement class]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.md).
+
+`uiCollection` source code is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`, in the Magento CE github repository: [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js).
 
 ## Commonly used `uiCollection` methods
 
@@ -74,3 +76,19 @@ console.log(this.elems());
 {%endhighlight%}
 
 * `childDefaults` can be used to set the children defaults: properties from `childDefaults` are set into child elements' [`defaults` property]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties).
+
+## uiCollection template {#uicollection_template}
+
+The `uiCollection` template is `<UI_Module_dir>/view/base/web/templates/collection.html`, in the Magento CE github repository: [`app/code/Magento/Ui/view/base/web/templates/collection.html`]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/templates/collection.html).
+
+This template performs only one task: renders child templates if they exist.
+
+It looks like following:
+
+{%highlight html%}
+<each args="data: elems, as: 'element'">
+    <render if="hasTemplate()"/>
+</each>
+{%endhighlight%}
+
+ Here `elems` is the collection of the child elements of `uiCollection`. As far as `elems` is the observable property, the templates of the components added to `elems` in the runtime, are also rendered.

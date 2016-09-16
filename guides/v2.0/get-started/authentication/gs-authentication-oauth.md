@@ -22,6 +22,7 @@ As the process of registering the integration proceeds, Magento creates the toke
 * [2-legged Oauth handshake](#oauth-handshake)
 * [Access the web APIs](#web-api-access)
 * [Generating Oauth signatures](#oauth-signature)
+* [OAuth token exchange example](#oauth-example)
 
 ## OAuth overview {#overview}
 The following diagram shows the OAuth authentication process. Each step is described further.
@@ -209,6 +210,296 @@ Use the ampersand (`&`) character to concatenate these attributes and parameters
 8. `oauth_token`
 
 To generate the signature, you must use the HMAC-SHA1 signature method. The signing key is the concatenated values of the consumer secret and token secret separated by the ampersand (`&`) character (ASCII code 38), even if empty. You must use parameter encoding to encode each value.
+
+## OAuth token exchange example {#oauth-example}
+
+* These scripts can be used to simulate the Magento 2 [OAuth 1.0a](https://tools.ietf.org/html/rfc5849) token exchange flow in the admin to obtain credentials to make authenticated API requests.
+* For ease, scripts can be dropped under your application(that you integrate with Magento) document root folder so that they can be exposed as endpoints that your Magento application can interact with to mimic the token exchange.
+* The oauth client is extended from and attributed to [PHPoAuthLib](https://github.com/Lusitanian/PHPoAuthLib) which is the same lib used in the [Magento OAuth client](https://github.com/magento/magento2/blob/develop/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php).
+* Make sure you update the baseUrl in <code>OauthClient.php</code>. Currently its <code>http://magento.host</code>.
+* Steps for Oauth 1.0a token exchange flow :
+  * Login to your Magento Admin and navigate to **System > Extensions > Integrations**
+  * Click on "Add New Integration"
+  * Complete all details in the Integration Info tab:
+    * **Name** : SomeUniqueIntegrationName
+    * **Callback URL** : http://your_app_host/endpoint.php
+    * **Identity link URL** : http://your_app_host/login.php
+  * Add necessary permissions from the **API** tab
+  * Click on "Save and Activate" option from the drop down
+  * You should see the popup confirming API permissions. Click Allow. (Make sure Pop-ups are allowed)
+  * This will also post credentials to the endpoint : endpoint.php. You should also see another popup for the identity linking step that opens up the script from <code>login.php</code>.
+  * Click login ( there is no login check since its dummy). The <code>checklogin.php</code> script is called which uses the posted credentials to complete the token exchange
+  * When the token exchange completes successfully the user is redirected back to the Integrations Grid. The integration grid should show the newly created integration as "Active".
+* Click on the edit icon of the integration and check the Integration Details on the Integration Info Tab. It should show all the credentials that can be used to make an authenticated API request using Oauth 1.0
+
+<code>checklogin.php</code>
+{% highlight php %}
+<?php
+require './vendor/autoload.php';
+
+$consumerKey = $_REQUEST['oauth_consumer_key'];
+$callback = $_REQUEST['callback_url'];
+
+session_id('test');
+session_start();
+
+/** Use $consumerKey to retrieve the following data in case it was stored in DB when received at "endpoint.php" */
+if ($consumerKey !== $_SESSION['oauth_consumer_key']) {
+    throw new \Exception("Consumer keys received on on different requests do not match.");
+}
+
+$consumerSecret = $_SESSION['oauth_consumer_secret'];
+$magentoBaseUrl = rtrim($_SESSION['store_base_url'], '/');
+$oauthVerifier = $_SESSION['oauth_verifier'];
+
+define('TESTS_BASE_URL', $magentoBaseUrl);
+
+$credentials = new \OAuth\Common\Consumer\Credentials($consumerKey, $consumerSecret, $magentoBaseUrl);
+$oAuthClient = new OauthClient($credentials);
+$requestToken = $oAuthClient->requestRequestToken();
+$accessToken = $oAuthClient->requestAccessToken(
+    $requestToken->getRequestToken(),
+    $oauthVerifier,
+    $requestToken->getRequestTokenSecret()
+);
+
+header("location: $callback");
+{% endhighlight %}
+
+<code>endpoint.php</code>
+{% highlight php %}
+<?php
+session_id('test');
+session_start();
+
+// In case of storage these data in DB, oauth_consumer_key can be used as ID to retrieve this data later in "checklogin.php"
+// For simplicity of this sample it is stored in session
+$_SESSION['oauth_consumer_key'] = $_POST['oauth_consumer_key'];
+
+$_SESSION['oauth_consumer_secret'] = $_POST['oauth_consumer_secret'];
+$_SESSION['store_base_url'] = $_POST['store_base_url'];
+$_SESSION['oauth_verifier'] = $_POST['oauth_verifier'];
+
+session_write_close();
+
+header("HTTP/1.0 200 OK");
+echo "Response";
+{% endhighlight %}
+
+<code>login.php</code>
+{% highlight php %}
+<?php
+$consumerKey = $_REQUEST['oauth_consumer_key'];
+$callbackUrl = urlencode(urldecode($_REQUEST['success_call_back']));
+
+echo <<<HTML
+<table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+    <tr>
+        <form name="form1" method="post" action="checklogin.php?oauth_consumer_key={$consumerKey}&callback_url={$callbackUrl}">
+            <td>
+                <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+                    <tr>
+                        <td colspan="3"><strong>Integrations Login</strong></td>
+                    </tr>
+                    <tr>
+                        <td width="78">Username</td>
+                        <td width="6">:</td>
+                        <td width="294"><input name="myusername" type="text" id="myusername"></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>:</td>
+                        <td><input name="mypassword" type="text" id="mypassword"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><input type="submit" name="Submit" value="Login"></td>
+                    </tr>
+                </table>
+            </td>
+        </form>
+    </tr>
+</table>
+HTML;
+{% endhighlight %}
+
+<code>OauthClient.php</code>
+{% highlight php %}
+<?php
+
+use OAuth\Common\Consumer\Credentials;
+use OAuth\Common\Http\Client\ClientInterface;
+use OAuth\Common\Http\Exception\TokenResponseException;
+use OAuth\Common\Http\Uri\Uri;
+use OAuth\Common\Http\Uri\UriInterface;
+use OAuth\Common\Storage\TokenStorageInterface;
+use OAuth\OAuth1\Service\AbstractService;
+use OAuth\OAuth1\Signature\SignatureInterface;
+use OAuth\OAuth1\Token\StdOAuth1Token;
+use OAuth\OAuth1\Token\TokenInterface;
+
+class OauthClient extends AbstractService
+{
+    /** @var string|null */
+    protected $_oauthVerifier = null;
+
+    public function __construct(
+        Credentials $credentials,
+        ClientInterface $httpClient = null,
+        TokenStorageInterface $storage = null,
+        SignatureInterface $signature = null,
+        UriInterface $baseApiUri = null
+    ) {
+        if (!isset($httpClient)) {
+            $httpClient = new \OAuth\Common\Http\Client\StreamClient();
+        }
+        if (!isset($storage)) {
+            $storage = new \OAuth\Common\Storage\Session();
+        }
+        if (!isset($signature)) {
+            $signature = new \OAuth\OAuth1\Signature\Signature($credentials);
+        }
+        parent::__construct($credentials, $httpClient, $storage, $signature, $baseApiUri);
+    }
+
+    /**
+     * @return UriInterface
+     */
+    public function getRequestTokenEndpoint()
+    {
+        return new Uri('http://magento.host/oauth/token/request');
+    }
+
+    /**
+     * Returns the authorization API endpoint.
+     *
+     * @throws \OAuth\Common\Exception\Exception
+     */
+    public function getAuthorizationEndpoint()
+    {
+        throw new \OAuth\Common\Exception\Exception(
+            'Magento REST API is 2-legged. Current operation is not available.'
+        );
+    }
+
+    /**
+     * Returns the access token API endpoint.
+     *
+     * @return UriInterface
+     */
+    public function getAccessTokenEndpoint()
+    {
+        return new Uri('http://magento.host/oauth/token/access');
+    }
+
+    /**
+     * Parses the access token response and returns a TokenInterface.
+     *
+     * @param string $responseBody
+     * @return TokenInterface
+     */
+    protected function parseAccessTokenResponse($responseBody)
+    {
+        return $this->_parseToken($responseBody);
+    }
+
+    /**
+     * Parses the request token response and returns a TokenInterface.
+     *
+     * @param string $responseBody
+     * @return TokenInterface
+     * @throws TokenResponseException
+     */
+    protected function parseRequestTokenResponse($responseBody)
+    {
+        $data = $this->_parseResponseBody($responseBody);
+        if (isset($data['oauth_verifier'])) {
+            $this->_oauthVerifier = $data['oauth_verifier'];
+        }
+        return $this->_parseToken($responseBody);
+    }
+
+    /**
+     * Parse response body and create oAuth token object based on parameters provided.
+     *
+     * @param string $responseBody
+     * @return StdOAuth1Token
+     * @throws TokenResponseException
+     */
+    protected function _parseToken($responseBody)
+    {
+        $data = $this->_parseResponseBody($responseBody);
+        $token = new StdOAuth1Token();
+        $token->setRequestToken($data['oauth_token']);
+        $token->setRequestTokenSecret($data['oauth_token_secret']);
+        $token->setAccessToken($data['oauth_token']);
+        $token->setAccessTokenSecret($data['oauth_token_secret']);
+        $token->setEndOfLife(StdOAuth1Token::EOL_NEVER_EXPIRES);
+        unset($data['oauth_token'], $data['oauth_token_secret']);
+        $token->setExtraParams($data);
+        return $token;
+    }
+
+    /**
+     * Parse response body and return data in array.
+     *
+     * @param string $responseBody
+     * @return array
+     * @throws \OAuth\Common\Http\Exception\TokenResponseException
+     */
+    protected function _parseResponseBody($responseBody)
+    {
+        if (!is_string($responseBody)) {
+            throw new TokenResponseException("Response body is expected to be a string.");
+        }
+        parse_str($responseBody, $data);
+        if (null === $data || !is_array($data)) {
+            throw new TokenResponseException('Unable to parse response.');
+        } elseif (isset($data['error'])) {
+            throw new TokenResponseException("Error occurred: '{$data['error']}'");
+        }
+        return $data;
+    }
+
+    /**
+     * @override to fix since parent implementation from lib not sending the oauth_verifier when requesting access token
+     * Builds the authorization header for an authenticated API request
+     *
+     * @param string $method
+     * @param UriInterface $uri the uri the request is headed
+     * @param \OAuth\OAuth1\Token\TokenInterface $token
+     * @param $bodyParams array
+     * @return string
+     */
+    protected function buildAuthorizationHeaderForAPIRequest(
+        $method,
+        UriInterface $uri,
+        TokenInterface $token,
+        $bodyParams = null
+    ) {
+        $this->signature->setTokenSecret($token->getAccessTokenSecret());
+        $parameters = $this->getBasicAuthorizationHeaderInfo();
+        if (isset($parameters['oauth_callback'])) {
+            unset($parameters['oauth_callback']);
+        }
+
+        $parameters = array_merge($parameters, ['oauth_token' => $token->getAccessToken()]);
+        $parameters = array_merge($parameters, $bodyParams);
+        $parameters['oauth_signature'] = $this->signature->getSignature($uri, $parameters, $method);
+
+        $authorizationHeader = 'OAuth ';
+        $delimiter = '';
+
+        foreach ($parameters as $key => $value) {
+            $authorizationHeader .= $delimiter . rawurlencode($key) . '="' . rawurlencode($value) . '"';
+            $delimiter = ', ';
+        }
+
+        return $authorizationHeader;
+    }
+}
+{% endhighlight %}
 
 ## Related topics
 

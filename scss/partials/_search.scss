@@ -1,5 +1,12 @@
-#search-results table {
-    border: none;
+#search-results {
+    min-height: 400px;
+    .loading {
+        background: url(../i/loading.gif) no-repeat center center;
+        height: 40px;
+    }
+    table{
+        border: none;
+    }
 }
 
 .search .content {
@@ -223,7 +230,7 @@ a.gsc-trailing-more-results:link {
 
 .gsc-control-cse .gsc-control-wrapper-cse form.gsc-search-box {
 	margin: 0;
-	padding: 60px 0 0 0;
+	padding: 40px 0 0 0;
 }
 
 #searchResultsBox table {
@@ -405,4 +412,8 @@ body.search-active {
 .search .search-icon {
     z-index: 50;
     cursor: pointer;
+}
+.gsc-results-wrapper-nooverlay{
+    min-height: 500px;
+    background: url(../i/loading.gif) no-repeat center center;
 }

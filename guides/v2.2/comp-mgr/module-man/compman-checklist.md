@@ -17,7 +17,7 @@ This section discusses how to start the Module Manager, which updates or uninsta
 Before continuing, complete all tasks discussed in <a href="{{page.baseurl}}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 ## Module Manager checklist
-{% include install/update/checklist.md %}
+{% include comp-man/checklist.md %}
 
 #### Next step
 [Run the Module Manager]({{page.baseurl}}comp-mgr/module-man/compman-start.html)
