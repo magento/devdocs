@@ -6,7 +6,7 @@ title: Deploy static view files
 menu_title: Deploy static view files
 menu_node: 
 menu_order: 300
-version: 2.0
+version: 2.1
 github_link: config-guide/cli/config-cli-subcommands-static-view.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
 ---
@@ -65,14 +65,14 @@ To deploy static view files:
 
 Command options:
 
-	magento setup:static-content:deploy <lang> ... <lang> [--dry-run] 
+	magento setup:static-content:deploy <lang> ... <lang> [--dry-run] [--theme <theme> ... <theme>|--exclude-theme <theme> ... <theme>]
 
 The following table discusses the meanings of this command's parameters and values. 
 
 <table>
+	<col width="20%">
+	<col width="65%">
 	<col width="15%">
-  	<col width="65%">
-  	<col width="25%">
 	<tbody>
 		<tr>
 			<th>Option</th>
@@ -90,6 +90,16 @@ The following table discusses the meanings of this command's parameters and valu
 		<td><p>Include to view the files output by the tool without outputting anything.</p></td>
 		<td><p>No</p></td>
 	</tr>
+	<tr>
+		<td>--theme &lt;theme&gt;</td>
+		<td><p>Space-separated list of themes for which to deploy static content.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td>--exclude-theme &lt;theme&gt;</td>
+		<td><p>Space-separated list of themes to exclude when deploying static content.</p></td>
+		<td><p>No</p></td>
+    </tr>
 	</tbody>
 </table>
 
