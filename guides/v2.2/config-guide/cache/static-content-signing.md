@@ -1,13 +1,15 @@
 ---
 layout: default
-group: howdoi
-subgroup: Deploy
-title: Invalidate Browser Cache
-menu_title: Invalidate Browser Cache
-menu_node: parent
+group: config-guide
+subgroup: 08_Caching 
+title: Static Content Signing
+menu_title: Static Content Signing
+menu_node: 
 menu_order: 100
-version: 2.1
-github_link: howdoi/deploy/static-content-signing.md
+level3_menu_node: level3child
+level3_subgroup: cache-priv 
+version: 2.2
+github_link: config-guide/cache/static-content-signing.md
 ---
 
 ## {{page.title}}
