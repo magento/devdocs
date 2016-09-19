@@ -7,7 +7,6 @@ menu_title: Retrieve filtered responses
 menu_order: 3
 version: 2.0
 github_link: howdoi/webapi/filter-response.md
-
 ---
 
 ## Retrieving filtered responses
@@ -35,6 +34,8 @@ On POST and PUT requests, Magento ignores the `fields` parameter as input, but t
 
 * TOC
 {:toc}
+
+All examples use Magento CE sample data.
 
 ### Simple fields
 
@@ -131,9 +132,34 @@ This example returns only the following:
 {% endhighlight %}
 {% endcollapsible %}
 
+### POST operation
+
+The following POST operation and payload creates a catalog category named `New Category`. Magento returns only the `id`, `parent_id`, and `name` attributes
+
+`POST http://<host>/rest/V1/categories?fields=id,parent_id,name`
+
+{% highlight json %}
+{
+  "category": {
+    "name": "New Category",
+    "is_active": true
+  }
+}
+{% endhighlight %}
+
+{% collapsible Sample output %}
+{% highlight json %}
+{
+"id": 43
+"parent_id": 2
+"name": "New Category"
+}
+{% endhighlight %}
+{% endcollapsible %}
+
 ### Using with searchCriteria
 
-To receive a filtered response when performing a search that involves `searchCriteria`, treat the `fields=<field_or_object1>` expression as another name/value pair in the query string.
+The [`searchCriteria` query parameter]({{page.baseurl}}howdoi/webapi/search-criteria.html) allows you to search across multiple objects in a collection. You can use the `fields` query parameter in conjunction with `searchCriteria` to limit the output. The question mark (?) that precedes `fields` in all the other examples in this document is replaced with an ampersand (&amp;).
 
 The following query returns only the `sku` and `name` parameters for product items whose `category_gear` attribute includes the value `86`.
 
