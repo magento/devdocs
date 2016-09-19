@@ -169,7 +169,7 @@
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -1432,9 +1432,9 @@
 <p>Static view files deployment is affected by Magento modes as follows:</p>
 
 <ul>
-  <li><a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-developer">Developer mode</a>: Magento generates them on demand, but the rest are cached in a file for speed of access.</li>
+  <li><a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-default">The default</a> and <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>: Magento generates them on demand, but the rest are cached in a file for speed of access.</li>
   <li>
-    <p><a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-default">Default</a> and <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production">production</a> modes: Static files are <em>not</em> generated or cached.</p>
+    <p><a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production">The production</a> mode: Static files are <em>not</em> generated or cached.</p>
 
     <p>You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.</p>
   </li>
@@ -1446,7 +1446,7 @@
   <ul><li>Manually by clearing the <code>pub/static</code> and <code>var/view_preprocessed</code> directories and subdirectories. <em>except</em> for <code>pub/static/.htaccess</code>.<br /><br />
   	To clear the <code>pub/static</code> directory of all files except <code>.htaccess</code> (which is a hidden file), enter the following command:<br />
   	<code>rm -R pub/static/*</code></li>
-  <li>Using the Magento command line. Several commands support an optional parameter <code>--clear-static-content</code>, which cleans <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>. For example, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>.</li>
+  <li>Using the Magento command line. Several commands support an optional parameter <code>--clear-static-content</code>, which cleans <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>. For example, see <a href="/guides/v2.1/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.</li>
 <li>In the Magento Admin. Go to <strong>System</strong> &gt; Tools &gt; <strong>Cache Management</strong> and click <strong>Flush Static Files Cache</strong>.</li></ul>
 </div>
 
@@ -1503,22 +1503,17 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
     </li>
   </ol>
 
-  <p>Command options (Magento 2.1.1 and later only)</p>
+  <p>Command options:</p>
 
-  <pre><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; --language &lt;language&gt; [--dry-run] [--theme &lt;theme&gt; ... &lt;theme&gt;|--exclude-theme &lt;theme&gt; ... &lt;theme&gt;] [-a|--area[="..."]] [--exclude-area[="..."]] [-j|--jobs[="..."]] [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] 
-</code></pre>
-
-  <p>Command options (Magento versions earlier than 2.1.1)</p>
-
-  <pre><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run (-d)] 
+  <pre><code>magento setup:static-content:deploy [&lt;list of locales&gt;] [-t|--theme[="&lt;theme&gt;"]] [--exclude-theme[="&lt;theme&gt;"]] [-l|--language[="&lt;language&gt;"]] [--exclude-language[="&lt;language&gt;"]] [-a|--area[="&lt;area&gt;"]] [--exclude-area[="&lt;area&gt;"]] [-j|--jobs[="&lt;number&gt;"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] 
 </code></pre>
 
   <p>The following table discusses the meanings of this command’s parameters and values.</p>
 
   <table>
-	<col width="20%" />
-	<col width="65%" />
 	<col width="15%" />
+  	<col width="65%" />
+  	<col width="25%" />
 	<tbody>
 		<tr>
 			<th>Option</th>
@@ -1526,56 +1521,150 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 			<th>Required?</th>
 		</tr>
 	<tr>
-		<td>&lt;lang&gt;</td>
-		<td><p>List of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
-		<p>You can find the list by running <code>magento info:language:list</code>.</p></td>
-	<td><p>No</p></td>
-	</tr>
-		<tr>
-		<td>--dry-run</td>
-		<td><p>Include to view the files output by the tool without outputting anything.</p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td>--theme &lt;theme&gt;</td>
-		<td><p>List of themes for which to deploy static content.</p>
-			<p>For example, <code>--theme Magento/blank --theme Magento/luma</code></p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td>--exclude-theme &lt;theme&gt;</td>
-		<td><p>List of themes to exclude when deploying static content.</p>
-			<p>For example, <code>--exclude-theme Magento/blank --theme Magento/luma</code></p></td>
-		<td><p>No</p></td>
+        <td>&lt;lang&gt;</td>
+        <td><p>List of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
+        <p>You can find the list by running <code>magento info:language:list</code>.</p></td>
+    <td><p>No</p></td>
     </tr>
+	<tr>
+        <td>--language (-l)</td>
+        <td><p>Generate files only for the specified languages. The default, with no option specified, is to generate files for all <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes. You can specify the name of one language code at a time.</p>
+            <p>For example, <code>--language en_US --language es_ES</code></p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--exclude-language</td>
+        <td><p>Generate files for the specified language codes. The default, with no option specified, is to exclude nothing. You can specify the name of one language code or a comma-separated list of language codes.</p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--theme &lt;theme&gt;</td>
+        <td><p>Themes for which to deploy static content.</p>
+            <p>For example, <code>--theme Magento/blank --theme Magento/luma</code></p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--exclude-theme &lt;theme&gt;</td>
+        <td><p>Themes to exclude when deploying static content.</p>
+            <p>For example, <code>--exclude-theme Magento/blank --theme Magento/luma</code></p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--area (-a)</td>
+        <td><p>Generate files only for the specified areas. The default, with no option specified, is to generate files for all areas. Valid values are <code>adminhtml</code> and <code>frontend</code>.</p>
+            <p>For example, <code>--area adminthml</code></p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--exclude-area</td>
+        <td><p>Do not generate files for the specified areas. The default, with no option specified, is to exclude nothing. </p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--jobs (-j)</td>
+        <td><p>Enable parallel processing using the specified number of jobs. The default is 4. To cause the task to run in one process (for example, if your system does not support process forking), use <code>--jobs 1</code>.</p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--no-javascript</td>
+        <td><p>Do not deploy JavaScript files</p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--no-css</td>
+        <td><p>Do not deploy CSS files. </p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--no-less</td>
+        <td><p>Do not deploy LESS files. </p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--no-images</td>
+        <td>Do not deploy images.</td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--no-fonts</td>
+        <td><p>Do not deploy font files.</p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td><p>--no-html</p></td>
+        <td><p>Do not deploy HTML files.</p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--no-misc</td>
+        <td><p> Do not deploy other types of files (that is <code>.md</code>, <code>.jbf</code>, <code>.csv</code>, <code>.json</code>, <code>.txt</code>, <code>.htc</code>, or <code>.swf</code> files). </p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--no-html-minify</td>
+        <td><p> Do not minify HTML files.  </p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
+        <td>--dry-run (-d)</td>
+        <td><p>Include to view the files output by the tool without outputting anything.</p></td>
+        <td><p>No</p></td>
+    </tr>
+    
+
 	</tbody>
 </table>
 
-  <p>For example, to deploy static view files for the <code>pt_BR</code> language, enter</p>
+  <div class="bs-callout bs-callout-info" id="info">
+  <p>If you specify values for both <code>&lt;lang&gt;</code> and <code>--language</code>, <code>&lt;lang&gt;</code> takes precedence.</p>
+</div>
 
-  <pre><code>magento --ansi setup:static-content:deploy pt_BR
+  <h3 id="examples">Examples</h3>
+  <p>Following are some example commands.</p>
+
+  <h4 id="excluding-a-theme-and-html-minification">Excluding a theme and HTML minification</h4>
+  <p>The following command deploys static content for the US English (<code>en_US</code>) language, excludes the Luma theme provided with Magento, and does not minify HTML files.</p>
+
+  <pre><code>magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
 </code></pre>
 
-  <p>Following are some sample messages that display to indicate successful deployment:</p>
+  <p>Sample output:</p>
 
-  <pre><code>Requested languages: pt_BR
-=== frontend -&gt; Magento/luma -&gt; pt_BR ===
-... progress indicator ...
-Successful: 1613 files; errors: 0
-
-=== frontend -&gt; Magento/blank -&gt; pt_BR ===
-... progress indicator ...
-Successful: 1620 files; errors: 0
-
-=== adminhtml -&gt; Magento/backend -&gt; pt_BR ===
-... progress indicator ...
-Successful: 1626 files; errors: 0
-
-=== Minify templates ===
-... progress indicator ...
-Successful: 858 files modified
+  <pre><code>Requested languages: en_US
+Requested areas: frontend, adminhtml
+Requested themes: Magento/blank, Magento/backend
+=== frontend -&gt; Magento/blank -&gt; en_US ===
+=== adminhtml -&gt; Magento/backend -&gt; en_US ===
+...........................................................
+... more ...
+Successful: 2055 files; errors: 0
 ---
-New version of deployed files: 1430773903
+
+New version of deployed files: 1466710645
+............
+Successful: 1993 files; errors: 0
+---
+</code></pre>
+
+  <h4 id="generating-static-view-files-for-one-theme-and-one-area">Generating static view files for one theme and one area</h4>
+  <p>The following command generates static view files for all languages, the frontend area only, the Magento Luma theme only, without generating fonts:</p>
+
+  <pre><code>magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
+</code></pre>
+
+  <p>Sample output:</p>
+
+  <pre><code>Requested languages: en_US
+Requested areas: frontend
+Requested themes: Magento/luma
+=== frontend -&gt; Magento/luma -&gt; en_US ===
+...........................................................
+... more ...
+........................................................................
+Successful: 2092 files; errors: 0
+---
+
+New version of deployed files: 1466711110
 </code></pre>
 
   <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
@@ -1595,8 +1684,8 @@ New version of deployed files: 1430773903
       <p>Install the Magento software in any of the following ways:</p>
 
       <ul>
-        <li><a href="/guides/v2.1/install-gde/install/cli/install-cli.html">Command line</a></li>
-        <li><a href="/guides/v2.1/install-gde/install/cli/install-web.html">Setup wizard</a></li>
+        <li><a href="/guides/v2.1/install-gde/install/install-cli.html">Command line</a></li>
+        <li><a href="/guides/v2.1/install-gde/install/install-web.html">Setup wizard</a></li>
       </ul>
     </li>
     <li>Log in to the Magento server as, or <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.</li>
