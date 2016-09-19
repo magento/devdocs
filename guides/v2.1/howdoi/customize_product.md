@@ -113,7 +113,7 @@ For reference, view the product form configuration files of the Magento modules:
 
 ## Customize using a modifier class {#modifier}
 
-Modifier classes should be used when static declaration is not applicable. For example, in cases when additional data should be loaded from DB. Also, modifier is a place where you add validations to display only certain fields for certain product types.
+[Modifier classes]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.html) should be used when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Also, modifier is a place where you add validations to display only certain fields for certain product types.
 
 In the run time, the form structure set in the modifier is merged with the configuration that comes from the `product_form.xml` configuration.
 
