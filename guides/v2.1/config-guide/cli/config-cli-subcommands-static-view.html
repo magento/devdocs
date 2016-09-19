@@ -169,7 +169,7 @@
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -1407,7 +1407,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 19 September 2016 (PDT)</div>
             <h4 id="contents">Contents</h4>
 
 <ul>
@@ -1505,15 +1505,15 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 
   <p>Command options:</p>
 
-  <pre><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run] 
+  <pre><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; --language &lt;language&gt; [--dry-run] [--theme &lt;theme&gt; ... &lt;theme&gt;|--exclude-theme &lt;theme&gt; ... &lt;theme&gt;] [-a|--area[="..."]] [--exclude-area[="..."]] [-j|--jobs[="..."]] [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] 
 </code></pre>
 
   <p>The following table discusses the meanings of this command’s parameters and values.</p>
 
   <table>
+	<col width="20%" />
+	<col width="65%" />
 	<col width="15%" />
-  	<col width="65%" />
-  	<col width="25%" />
 	<tbody>
 		<tr>
 			<th>Option</th>
@@ -1522,7 +1522,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 		</tr>
 	<tr>
 		<td>&lt;lang&gt;</td>
-		<td><p>Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
+		<td><p>List of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
 		<p>You can find the list by running <code>magento info:language:list</code>.</p></td>
 	<td><p>No</p></td>
 	</tr>
@@ -1531,6 +1531,18 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 		<td><p>Include to view the files output by the tool without outputting anything.</p></td>
 		<td><p>No</p></td>
 	</tr>
+	<tr>
+		<td>--theme &lt;theme&gt;</td>
+		<td><p>List of themes for which to deploy static content.</p>
+			<p>For example, <code>--theme Magento/blank --theme Magento/luma</code></p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td>--exclude-theme &lt;theme&gt;</td>
+		<td><p>List of themes to exclude when deploying static content.</p>
+			<p>For example, <code>--exclude-theme Magento/blank --theme Magento/luma</code></p></td>
+		<td><p>No</p></td>
+    </tr>
 	</tbody>
 </table>
 
