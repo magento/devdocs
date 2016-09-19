@@ -24,8 +24,6 @@ To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> 
 
 * For all other cases, escape the data using [specific escape functions](#escape-functions-for-templates).
 
-* Escape data using the `$block->escapeHtml()`,  `$block->escapeQuote()`,  `$block->escapeUrl()`, `$block->escapeXssInUrl()` methods
-
 The following code sample illustrates the XSS-safe output in templates:
 
 {% highlight php %}
@@ -43,6 +41,13 @@ The following code sample illustrates the XSS-safe output in templates:
 #### Escape functions for templates
 
 For the following output cases, use the specified function to generate XSS-safe output.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+  The upcoming release of Magento 2.2 will deprecate these functions.
+
+  Please check back on this page after the 2.2 release for updated documentation on new escape functions.
+</div>
+
 
 **Case:** JSON output\\
 **Function:** No function needed for JSON output.
