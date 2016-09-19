@@ -593,22 +593,22 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 9 September 2016 (PDT)</div>
-            <p>Magento OAuth authentication is based on <a href="https://tools.ietf.org/html/rfc5849">OAuth 1.0a</a>, an open standard for secure API authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.</p>
+            <div class="updated">Updated: 19 September 2016 (PDT)</div>
+            <h2 id="contents">Contents</h2>
+<ul>
+  <li><a href="#overview">OAuth overview</a></li>
+  <li><a href="#activate">Activate an integration</a></li>
+  <li><a href="#oauth-handshake">2-legged OAuth handshake</a></li>
+  <li><a href="#web-api-access">Access the web APIs</a></li>
+  <li><a href="#oauth-signature">Generating OAuth signatures</a></li>
+  <li><a href="#oauth-example">OAuth token exchange example</a></li>
+</ul>
+
+<p>Magento OAuth authentication is based on <a href="https://tools.ietf.org/html/rfc5849">OAuth 1.0a</a>, an open standard for secure API authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.</p>
 
 <p>In Magento, a third-party extension that uses OAuth for authentication is called an <a href="/guides/v2.0//howdoi/webapi/integration.html"><em>integration</em></a>. An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.</p>
 
 <p>As the process of registering the integration proceeds, Magento creates the tokens that the extension needs for authentication. It first creates a request token. This token is short-lived and must be exchanged for access token. Access tokens are long-lived and will not expire unless the merchant revokes access to the extension.</p>
-
-<h2 id="contents">Contents</h2>
-<ul>
-  <li><a href="#overview">OAuth overview</a></li>
-  <li><a href="#activate">Activate an integration</a></li>
-  <li><a href="#oauth-handshake">2-legged Oauth handshake</a></li>
-  <li><a href="#web-api-access">Access the web APIs</a></li>
-  <li><a href="#oauth-signature">Generating Oauth signatures</a></li>
-  <li><a href="#oauth-example">OAuth token exchange example</a></li>
-</ul>
 
 <h2 id="overview">OAuth overview</h2>
 <p>The following diagram shows the OAuth authentication process. Each step is described further.
@@ -822,36 +822,34 @@
 
 <h2 id="oauth-example">OAuth token exchange example</h2>
 
-<ul>
-  <li>These scripts can be used to simulate the Magento 2 <a href="https://tools.ietf.org/html/rfc5849">OAuth 1.0a</a> token exchange flow in the admin to obtain credentials to make authenticated API requests.</li>
-  <li>For ease, scripts can be dropped under your application(that you integrate with Magento) document root folder so that they can be exposed as endpoints that your Magento application can interact with to mimic the token exchange.</li>
-  <li>The oauth client is extended from and attributed to <a href="https://github.com/Lusitanian/PHPoAuthLib">PHPoAuthLib</a> which is the same lib used in the <a href="https://github.com/magento/magento2/blob/develop/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php">Magento OAuth client</a>.</li>
-  <li>Make sure you update the baseUrl in <code>OauthClient.php</code>. Currently its <code>http://magento.host</code>.</li>
-  <li>Steps for Oauth 1.0a token exchange flow :
+<p>The scripts provided in this document simulate the Magento 2 <a href="https://tools.ietf.org/html/rfc5849">OAuth 1.0a</a> token exchange flow. You can drop these scripts under the document root directory of your Magento application so that they can be exposed as endpoints that your Magento application can interact with to mimic the token exchange.</p>
+
+<p>The OAuth client is extended from and attributed to <a href="https://github.com/Lusitanian/PHPoAuthLib">PHPoAuthLib</a>, which is the same lib used in the <a href="https://github.com/magento/magento2/blob/develop/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php">Magento OAuth client</a>.</p>
+
+<p>To simulate the OAuth 1.0a token exchange flow:</p>
+
+<ol>
+  <li>Login to your Magento Admin and navigate to <strong>System &gt; Extensions &gt; Integrations</strong></li>
+  <li>Click on <strong>Add New Integration</strong>.</li>
+  <li>Complete all details in the Integration Info tab:
     <ul>
-      <li>Login to your Magento Admin and navigate to <strong>System &gt; Extensions &gt; Integrations</strong></li>
-      <li>Click on “Add New Integration”</li>
-      <li>Complete all details in the Integration Info tab:
-        <ul>
-          <li><strong>Name</strong> : SomeUniqueIntegrationName</li>
-          <li><strong>Callback URL</strong> : http://your_app_host/endpoint.php</li>
-          <li><strong>Identity link URL</strong> : http://your_app_host/login.php</li>
-        </ul>
-      </li>
-      <li>Add necessary permissions from the <strong>API</strong> tab</li>
-      <li>Click on “Save and Activate” option from the drop down</li>
-      <li>You should see the popup confirming API permissions. Click Allow. (Make sure Pop-ups are allowed)</li>
-      <li>This will also post credentials to the endpoint : endpoint.php. You should also see another popup for the identity linking step that opens up the script from <code>login.php</code>.</li>
-      <li>Click login ( there is no login check since its dummy). The <code>checklogin.php</code> script is called which uses the posted credentials to complete the token exchange</li>
-      <li>When the token exchange completes successfully the user is redirected back to the Integrations Grid. The integration grid should show the newly created integration as “Active”.</li>
+      <li><strong>Name</strong> : SomeUniqueIntegrationName</li>
+      <li><strong>Callback URL</strong> : http://your_app_host/endpoint.php</li>
+      <li><strong>Identity link URL</strong> : http://your_app_host/login.php</li>
+      <li>Add permissions as desired on the <strong>API</strong> tab</li>
     </ul>
   </li>
-  <li>Click on the edit icon of the integration and check the Integration Details on the Integration Info Tab. It should show all the credentials that can be used to make an authenticated API request using Oauth 1.0</li>
-</ul>
+  <li>Select the <strong>Save and Activate</strong> option from the drop down menu.</li>
+  <li>A pop-up window displays, confirming API permissions. Click <strong>Allow</strong>. (Make sure your browser allows pop-up windows.)
+The credentials are posted to <code>endpoint.php</code>. You should also see another pop-up for the identity linking step that opens the script from <code>login.php</code>.</li>
+  <li>Click <strong>Login</strong>. (There is no actual login check since this is a simulation.). The <code>checklogin.php</code> script is called. It uses the posted credentials to complete the token exchange.</li>
+  <li>When the token exchange completes successfully, the user is redirected back to the Integrations grid. The newly-created integration should be in the Active state.</li>
+  <li>Click on the edit icon of the integration and check the Integration Details on the Integration Info tab. It should show all the credentials that can be used to make an authenticated API request using OAuth 1.0.</li>
+</ol>
 
-<p><code>checklogin.php</code></p>
+<h3 id="checkloginphp">checklogin.php</h3>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="collapsible"><h4 class="collapsible-title">Click to expand </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">require</span> <span class="s1">&#39;./vendor/autoload.php&#39;</span><span class="p">;</span>
 
 <span class="nv">$consumerKey</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_key&#39;</span><span class="p">];</span>
@@ -881,15 +879,15 @@
 <span class="p">);</span>
 
 <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;location: </span><span class="si">$callback</span><span class="s2">&quot;</span><span class="p">);</span></code></pre></figure>
+</div></div>
 
-<p><code>endpoint.php</code></p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<h3 id="endpointphp">endpoint.php</h3>
+<div class="collapsible"><h4 class="collapsible-title">Click to expand </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="nb">session_id</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
 <span class="nb">session_start</span><span class="p">();</span>
 
-<span class="c1">// In case of storage these data in DB, oauth_consumer_key can be used as ID to retrieve this data later in &quot;checklogin.php&quot;</span>
-<span class="c1">// For simplicity of this sample it is stored in session</span>
+<span class="c1">// If this data is stored in the DB, oauth_consumer_key can be used as ID to retrieve this data later in &quot;checklogin.php&quot;</span>
+<span class="c1">// For simplicity of this sample, it is stored in session</span>
 <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_key&#39;</span><span class="p">];</span>
 
 <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_secret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_secret&#39;</span><span class="p">];</span>
@@ -900,10 +898,10 @@
 
 <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;HTTP/1.0 200 OK&quot;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="s2">&quot;Response&quot;</span><span class="p">;</span></code></pre></figure>
+</div></div>
 
-<p><code>login.php</code></p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<h3 id="loginphp">login.php</h3>
+<div class="collapsible"><h4 class="collapsible-title">Click to expand </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="nv">$consumerKey</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_key&#39;</span><span class="p">];</span>
 <span class="nv">$callbackUrl</span> <span class="o">=</span> <span class="nb">urlencode</span><span class="p">(</span><span class="nb">urldecode</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;success_call_back&#39;</span><span class="p">]));</span>
 
@@ -937,10 +935,13 @@
     <span class="o">&lt;/</span><span class="nx">tr</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="nx">table</span><span class="o">&gt;</span>
 <span class="nx">HTML</span><span class="p">;</span></code></pre></figure>
+</div></div>
 
-<p><code>OauthClient.php</code></p>
+<h3 id="oauthclientphp">OauthClient.php</h3>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<p>Change the instances of <code>http://magento.host</code> in this example to a valid base URL.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to expand </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">OAuth\Common\Consumer\Credentials</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">OAuth\Common\Http\Client\ClientInterface</span><span class="p">;</span>
@@ -1113,6 +1114,7 @@
         <span class="k">return</span> <span class="nv">$authorizationHeader</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
+</div></div>
 
 <h2 id="related-topics">Related topics</h2>
 
