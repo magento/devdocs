@@ -151,9 +151,9 @@ Any content added here is rendered before the Shipping Address form on the Shipp
 
 ### Static forms
 
-The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the Admin.
+The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the Admin. (compare to [dynamic forms](#dynamic_form))
 
-The fields of static forms are not  generated dynamically, so they can be defined in a layout.
+The fields of static forms are not generated dynamically, so they can be defined in a layout.
 
 The following code sample shows configuration of the form that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (`checkoutProvider`) that is introduced in the `Magento_Checkout` module:
 
@@ -251,9 +251,9 @@ The following code sample shows configuration of the form that contains four fie
 </item>
 {%endhighlight%}
 
-### Dynamically defined forms
+### Dynamically defined forms {#dynamic_form}
 
-Th term dynamic refers to forms where the set of fields can change. For example, the fields displayed on the checkout form depend on the configuration settings. 
+Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the Admin > Stores > Configuration > Customers > Customer Configuration > Name and Address Options  
 For such forms, you must implement a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
 A plugin can add custom fields definitions to layout at run-time. The format of the field definition is the same as for fields defined in layout.
 
