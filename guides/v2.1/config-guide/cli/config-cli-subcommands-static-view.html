@@ -1503,9 +1503,14 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
     </li>
   </ol>
 
-  <p>Command options:</p>
+  <p>Command options (Magento 2.1.1 and later only)</p>
 
   <pre><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; --language &lt;language&gt; [--dry-run] [--theme &lt;theme&gt; ... &lt;theme&gt;|--exclude-theme &lt;theme&gt; ... &lt;theme&gt;] [-a|--area[="..."]] [--exclude-area[="..."]] [-j|--jobs[="..."]] [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] 
+</code></pre>
+
+  <p>Command options (Magento versions earlier than 2.1.1)</p>
+
+  <pre><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run (-d)] 
 </code></pre>
 
   <p>The following table discusses the meanings of this command’s parameters and values.</p>
