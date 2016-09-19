@@ -896,17 +896,14 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 19 September 2016 (PDT)</div>
             <h2>Security measures against XSS attacks</h2>
 
-<p>To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules of escaping HTML content in templates:</p>
+<p>To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules for escaping output in templates:</p>
 
 <ul>
   <li>
-    <p>If a method indicates that the contents are escaped, do not escape: <code>getTitleHtml()</code>, <code>getHtmlTitle()</code> (the title is ready for the HTML output)</p>
-  </li>
-  <li>
-    <p>Escape data using the <code>$block-&gt;escapeHtml()</code>,  <code>$block-&gt;escapeQuote()</code>,  <code>$block-&gt;escapeUrl()</code>, <code>$block-&gt;escapeXssInUrl()</code> methods</p>
+    <p>If a method indicates that the contents is escaped, do not escape: <code>getTitleHtml()</code>, <code>getHtmlTitle()</code> (the title is ready for the HTML output)</p>
   </li>
   <li>
     <p>Type casting and php function <code>count()</code> don’t need escaping  (for example <code>echo (int)$var</code>, <code>echo (bool)$var</code>, <code>echo count($var)</code>)</p>
@@ -918,7 +915,7 @@
     <p>Output in double quotes without variables doesn’t need escaping (for example <code>echo "some text"</code>)</p>
   </li>
   <li>
-    <p>Otherwise, escape the data using the <code>$block-&gt;escapeHtml()</code> method</p>
+    <p>For all other cases, escape the data using <a href="#escape-functions-for-templates">specific escape functions</a>.</p>
   </li>
 </ul>
 
@@ -934,11 +931,42 @@
 <span class="x">&lt;a href=&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">escapeXssInUrl</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getUrl</span><span class="p">())</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getAnchorTextHtml</span><span class="p">()</span> <span class="o">?</span>
 <span class="o">&gt;&lt;/</span><span class="nx">a</span><span class="o">&gt;</span></code></pre></figure>
 
+<h4 id="escape-functions-for-templates">Escape functions for templates</h4>
+
+<p>For the following output cases, use the specified function to generate XSS-safe output.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>The upcoming release of Magento 2.2 will deprecate these functions.</p>
+
+  <p>Please check back on this page after the 2.2 release for updated documentation on new escape functions.</p>
+</div>
+
+<p><strong>Case:</strong> JSON output<br />
+<strong>Function:</strong> No function needed for JSON output.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="c">&lt;!-- In this example $postData is a JSON string --&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;action&quot;</span> <span class="na">data-post=</span><span class="s">&#39;&lt;?php /* @noEscape */ echo $postData ?&gt;&#39;</span> <span class="nt">/&gt;</span></code></pre></figure>
+
+<p><strong>Case:</strong> String output that should not contain HTML<br />
+<strong>Function:</strong> <code>escapeHtml</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;label&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;?php echo $block-&gt;escapeHtml($block-&gt;getLabel()) ?&gt;</span><span class="nt">&lt;/span&gt;</span></code></pre></figure>
+
+<p><strong>Case:</strong> URL output<br />
+<strong>Function:</strong> <code>escapeXssInUrl</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&lt;?php echo $block-&gt;escapeXssInUrl($block-&gt;getCategoryUrl()) ?&gt;&quot;</span><span class="nt">&gt;</span>Some Link<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+
+<p><strong>Case:</strong> HTML attributes<br />
+<strong>Function:</strong> <code>escapeQuote</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;&lt;?php $block-&gt;escapeQuote($block-&gt;getSpanClass()) ?&gt;&quot;</span><span class="nt">&gt;</span>Product Description<span class="nt">&lt;/span&gt;</span></code></pre></figure>
+
 <h4>Static Test</h4>
 
-<p>To improve security against XSS injections, a static test <code>XssPhtmlTemplateTest.php</code> is added to <code>dev\tests\static\testsuite\Magento\Test\Php\</code>.</p>
+<p>To check your template for XSS vulnerabilities, you can use the static test <code>XssPhtmlTemplateTest.php</code> in <code>dev\tests\static\testsuite\Magento\Test\Php\</code>.</p>
 
-<p>This static test finds all echo calls in PHTML-templates and determines if it is properly escaped or not.</p>
+<p>This static test finds all echo calls in PHTML-templates and determines if the output is properly escaped.</p>
 
 <p>It covers the following cases:</p>
 
