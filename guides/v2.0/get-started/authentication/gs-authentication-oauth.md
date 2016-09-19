@@ -13,9 +13,9 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.h
 ## Contents
 * [OAuth overview](#overview)
 * [Activate an integration](#activate)
-* [2-legged Oauth handshake](#oauth-handshake)
+* [2-legged OAuth handshake](#oauth-handshake)
 * [Access the web APIs](#web-api-access)
-* [Generating Oauth signatures](#oauth-signature)
+* [Generating OAuth signatures](#oauth-signature)
 * [OAuth token exchange example](#oauth-example)
 
 Magento OAuth authentication is based on [OAuth 1.0a](https://tools.ietf.org/html/rfc5849), an open standard for secure API authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.
@@ -216,7 +216,7 @@ The scripts provided in this document simulate the Magento 2 [OAuth 1.0a](https:
 
 The OAuth client is extended from and attributed to [PHPoAuthLib](https://github.com/Lusitanian/PHPoAuthLib), which is the same lib used in the [Magento OAuth client](https://github.com/magento/magento2/blob/develop/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php).
 
-To simulate the Oauth 1.0a token exchange flow:
+To simulate the OAuth 1.0a token exchange flow:
 
 1. Login to your Magento Admin and navigate to **System > Extensions > Integrations**
 2. Click on **Add New Integration**.
@@ -227,10 +227,10 @@ To simulate the Oauth 1.0a token exchange flow:
     * Add permissions as desired on the **API** tab
 4. Select the **Save and Activate** option from the drop down menu.
 5. A pop-up window displays, confirming API permissions. Click **Allow**. (Make sure your browser allows pop-up windows.)
-The credentials are posted to `endpoint.php`. You should also see another pop-up for the identity linking step that opens up the script from `login.php`.
+The credentials are posted to `endpoint.php`. You should also see another pop-up for the identity linking step that opens the script from `login.php`.
 6. Click **Login**. (There is no actual login check since this is a simulation.). The `checklogin.php` script is called. It uses the posted credentials to complete the token exchange.
 7. When the token exchange completes successfully, the user is redirected back to the Integrations grid. The newly-created integration should be in the Active state.
-8. Click on the edit icon of the integration and check the Integration Details on the Integration Info tab. It should show all the credentials that can be used to make an authenticated API request using Oauth 1.0.
+8. Click on the edit icon of the integration and check the Integration Details on the Integration Info tab. It should show all the credentials that can be used to make an authenticated API request using OAuth 1.0.
 
 ### checklogin.php
 
@@ -276,8 +276,8 @@ header("location: $callback");
 session_id('test');
 session_start();
 
-// In case of storage these data in DB, oauth_consumer_key can be used as ID to retrieve this data later in "checklogin.php"
-// For simplicity of this sample it is stored in session
+// If this data is stored in the DB, oauth_consumer_key can be used as ID to retrieve this data later in "checklogin.php"
+// For simplicity of this sample, it is stored in session
 $_SESSION['oauth_consumer_key'] = $_POST['oauth_consumer_key'];
 
 $_SESSION['oauth_consumer_secret'] = $_POST['oauth_consumer_secret'];
