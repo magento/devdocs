@@ -63,9 +63,13 @@ To deploy static view files:
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
 	</div>
 
-Command options:
+Command options (Magento 2.1.1 and later only)
 
 	magento setup:static-content:deploy <lang> ... <lang> --language <language> [--dry-run] [--theme <theme> ... <theme>|--exclude-theme <theme> ... <theme>] [-a|--area[="..."]] [--exclude-area[="..."]] [-j|--jobs[="..."]] [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] 
+
+Command options (Magento versions earlier than 2.1.1)
+
+	magento setup:static-content:deploy <lang> ... <lang> [--dry-run (-d)] 
 
 The following table discusses the meanings of this command's parameters and values. 
 
