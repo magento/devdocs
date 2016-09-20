@@ -20,11 +20,9 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ### Highlights
 
-Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality that is currently available in the Admin interface into the Sales API. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. **These new interfaces will not break any existing customizations or extensions.**
+Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality that is currently available in the Admin interface into the Sales API. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. See Module Reference for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
 
-See Module Reference for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
-
-Why are we adding new APIs in a patch release? See AK’s blog for more information about these features and Magento’s use of semantic versioning. 
+**These new interfaces will not break any existing customizations or extensions.** So why are we adding new APIs in a patch release? See Alan Kent’s blog for more information about these features and Magento’s use of semantic versioning. 
 
 
 
@@ -67,6 +65,7 @@ You can no longer change or fake a product price from the Magento storefront and
 
 <!--- 45757 -->* CSRF vulnerability on cart checkout. I have found a CSRF vulnerability on deleting the user's CART in Magento2.
 There is no Server side validation of CSRF token in the body of the request. OPEN
+
 
 
 #### Cross-site scripting  

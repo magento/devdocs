@@ -20,12 +20,9 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 ### Highlights
+Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality that is currently available in the Admin interface into the Sales API. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. See Module Reference for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
 
-Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality that is currently available in the Admin interface into the Sales API. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. **These new interfaces will not break any existing customizations or extensions.**
-
-See Module Reference for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
-
-**Why are we adding new APIs in a patch release?** See AK’s blog for more information about these features and Magento’s use of semantic versioning. 
+**These new interfaces will not break any existing customizations or extensions.** So why are we adding new APIs in a patch release? See Alan Kent’s blog for more information about these features and Magento’s use of semantic versioning. 
 
 
 ### Fixed issues
@@ -40,34 +37,34 @@ See Module Reference for information on using the `salesShipOrderV1` and `salesI
 <!--- 56851 -->* Fixed issue with unserialized data during payment.
 
 
-<!--- 56542 -->* Resolved issue with potential SQL injection through the use of the ordering or grouping parameters. (APPSEC-1480) OPEN
+<!--- 56542/1480 -->* Resolved issue with potential SQL injection through the use of the ordering or grouping parameters. OPEN
 
 
-<!--- 56314 -->* Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context. APPSEC-1488
+<!--- 56314 -->* Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context. 
 
 
-<!--- 56108 -->* Fixed issue with certain payment methods potentially permitting the execution of malicious PHP code during check out.   APPSEC-1484
+<!--- 56108 -->* Fixed issue with certain payment methods potentially permitting the execution of malicious PHP code during check out. 
 
 
-<!--- 55478 -->* Resolved issue where a malicious user could trick Admin users into clicking on a phishing form. This form would then create a backup of the database,  which Admin users with limited privileges could then access. APPSEC-1481
+<!--- 55478 -->* Resolved issue where a malicious user could trick Admin users into clicking on a phishing form. This form would then create a backup of the database,  which Admin users with limited privileges could then access. 
 
 
 
 <!--- 52437 -->* You no longer receive a prompt to change your password after changing your password and clicking Save Account. <a href="https://github.com/magento/magento2/issues/4331" target="_blank">(GITHUB-4331)</a> 
 
 
-<!--- 52338 -->* You can no longer trick a user into deleting his store address book entries. APPSEC-1433 
+<!--- 52338/1433 -->* You can no longer trick a user into deleting his store address book entries. 
 
 
-<!--- 51376 -->* Fixed issue with using the Updater application to discover the Magento Admin URL. APPSEC-1404
+<!--- 51376/1404 -->* Fixed issue with using the Updater application to discover the Magento Admin URL.
 
 
-<!--- 51370 -->* Fixed issue with using the Setup application to discover the Magento local installation path. APPSEC-1402
+<!--- 51370/1402 -->* Fixed issue with using the Setup application to discover the Magento local installation path. 
 
 
-<!--- 48816 -->* You can no longer store incorrect pages under regular page URL entries. APPSEC-1338
+<!--- 48816/1338 -->* You can no longer store incorrect pages under regular page URL entries. 
 
-<!--- 48562 -->* Magento no longer exposes internal files when a store is in maintenance mode. APPSEC-1329. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
+<!--- 48562/1329 -->* Magento no longer exposes internal files when a store is in maintenance mode. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
 
 
 
