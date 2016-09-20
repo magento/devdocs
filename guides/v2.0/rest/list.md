@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/rest/list.html
 
 <h2 id="list">List of REST APIs</h2>
 
-Updated March 31, 2016. Additions since the last update are marked with asterisks (*).
+An asterisk (*) indicates the API was added since the initial release of Magento 2.0.
 
 * TOC
 {:toc}
@@ -348,6 +348,8 @@ Updated March 31, 2016. Additions since the last update are marked with asterisk
     POST   /V1/orders/
     GET    /V1/transactions/:id
     GET    /V1/transactions
+    * POST /V1/order/:orderId/invoice
+    * POST /V1/order/:orderId/ship
 
 <h3>SalesRule</h3>
 
