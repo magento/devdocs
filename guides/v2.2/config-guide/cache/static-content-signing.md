@@ -32,20 +32,20 @@ Manually clearing the browser cache works if you are a website administrator, bu
 Static content signing is a Magento feature that allows you to invalidate the browser cache for static resources.
 Magento accomplishes this by adding a deployment version to the URL of static files.
 
-Below is an example of a URL signed with a version:
+The following is an example of a URL signed with a version:
 
 ~~~
 https://127.0.0.1//magento2/pub/static/version8675309/frontend/magento_plushe/en_US/Magento_Theme/favicon.ico
 ~~~
 
-When you run the command `setup:static-content:deploy` to [deploy static content]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html), Magento automatically changes the deployment version.
+When you run the command [`setup:static-content:deploy`]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html) to deploy static content, Magento automatically changes the deployment version.
 This changes the URL of the static files and forces the browser to load the new version of the file.
 
-Magento enables this feature by default, but you can change it in [Stores/System/Configuration/Advanced/Developer/Static Files Settings](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html){:target="_blank"}.
+Magento enables this feature by default, and we recommend keeping this feature enabled to prevent issues related to browsers serving up old static resources.
+
+You can find the configuration for this feature in [**Stores > System > Configuration > Advanced > Developer > Static Files Settings**](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html){:target="_blank"}.
 
 ![Static Files Settings]({{ site.baseurl }}common/images/static-files-settings.png)
-
-We recommend keeping this feature enabled to prevent issues related to browsers serving up old static resources.
 
 #### Version Signatures
 
@@ -60,4 +60,4 @@ When you make changes to production through an upgrade or code change, you need 
 This forces the browser to load the updated resources.
 
 If you deploy code on a separate server and move it to production using a repository to reduce downtime, you also need to add the file `pub/static/deployed_version.txt` to the repository.
-This file contains the version for the generated static content.
+This file contains the new version for the static content generated externally.
