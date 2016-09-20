@@ -17,7 +17,7 @@ github_link: ui_comp_guide/concepts/ui_comp_modifier_concept.md
 
 ## What's in this topic
 
-This topics describes how to use PHP modifiers, that are the server-side part of [UI components configuration]({{page.baseurl}}ui_comp_guide/concepts//ui_comp_config_flow_concept.html). Using modifiers is optional, and might be necessary when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Or the other specific example is the [default product creation form]({{page.baseurl}}howdoi/customize_product.html), for which the modifier is a place where validations are added to display only certain fields for certain product types.
+This topics describes how to use PHP modifiers, that are the server-side part of [UI components configuration]({{page.baseurl}}ui_comp_guide/concepts//ui_comp_config_flow_concept.html). Using modifiers is optional and might be necessary when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Or the other specific example is the [default product creation form]({{page.baseurl}}howdoi/customize_product.html), for which the modifier is a place where validations are added to display only certain fields for certain product types.
 
 ## General implementation overview
 
@@ -110,13 +110,13 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
 </virtualType>
 {% endhighlight %}
 
-, where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a virtual class.
+, where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]({{page.baseurl}}extension-dev-guide/depend-inj.html#configuring-a-type).
 
 (If you want to use this sample in your `di.xml`, replace the sample values with with the real names of your entities.)
 
 **Step 3**
 
-To actually use your modifier, add a dependency on `\Magento\Ui\DataProvider\Modifier\PoolInterface` to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{site.mage2100url}}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
+To use your modifier, add a dependency on `\Magento\Ui\DataProvider\Modifier\PoolInterface` to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{site.mage2100url}}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
 
 
 ## Related reading
