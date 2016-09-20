@@ -294,6 +294,10 @@
         <td>Class was removed.</td>
     </tr>
     <tr>
+        <td>Magento\Reward\Observer\SaveRewardNotifications</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
         <td>Magento\PromotionPermissions\Block\Adminhtml\Promo\Quote\Edit\Plugin</td>
         <td>Class was removed.</td>
     </tr>
@@ -307,6 +311,10 @@
     </tr>
     <tr>
         <td>Magento\PersistentHistory\Observer\SkipWebsiteRestrictionObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleTagManager\Block\Plugin\Checkout\Cart\Sidebar</td>
         <td>Class was removed.</td>
     </tr>
     <tr>
@@ -354,6 +362,18 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfiguration::CONSUMER_NAME</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfiguration::QUEUE_NAME</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfiguration::MAX_MESSAGES</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\MessageQueue\ConsumerConfiguration::CALLBACK</td>
         <td>Constant has been removed.</td>
     </tr>
@@ -399,6 +419,10 @@
     </tr>
     <tr>
         <td>Magento\Framework\MessageQueue\Config\Data::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\ForeignKey\ObjectRelationProcessor\Plugin::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
@@ -818,6 +842,14 @@
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\GiftCard\Model\Plugin\QuoteItem::aroundConvert</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Model\Plugin\QuoteItem::$_scopeConfig</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\GiftCard\Model\Attribute\Backend\Giftcard\Amount::__construct</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -918,12 +950,80 @@
         <td>[protected] Method has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Amqp\Model\Config::__construct</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Config::__destruct</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Config::getValue</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Config::getChannel</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Config::QUEUE_CONFIG</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Config::AMQP_CONFIG</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Config::HOST</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Config::PORT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Config::USERNAME</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Config::PASSWORD</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Config::VIRTUALHOST</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Config::SSL</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Exchange::enqueue</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Amqp\Model\Exchange::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Amqp\Model\Queue::__construct</td>
-        <td>[public] Method parameter changed.</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Queue::dequeue</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Queue::acknowledge</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Queue::subscribe</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Queue::reject</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Amqp\Model\Topology::__construct</td>
@@ -1034,11 +1134,47 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Staging\Api\UpdateRepositoryInterface</td>
+        <td>Magento\Framework\Bulk\BulkManagementInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
-        <td>Magento\Staging\Api\VersionCookieManagerInterface</td>
+        <td>Magento\Framework\Bulk\BulkStatusInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\BulkSummaryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\OperationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\OperationManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Worldpay\Api\GuestPaymentInformationManagementProxyInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\HierarchyNodeRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\Data\HierarchyNodeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\Data\HierarchyNodeSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Model\Entity\Update\Action\ActionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Api\UpdateRepositoryInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -1047,6 +1183,94 @@
     </tr>
     <tr>
         <td>Magento\Staging\Api\Data\UpdateSearchResultInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ScalableInventory\Api\Counter\ItemInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ScalableInventory\Api\Counter\ItemsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRuleStaging\Api\SalesRuleStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Api\RewardManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Api\Data\WrappingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Api\Data\WrappingSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Api\ShippingMethodManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Api\GuestCart\ShippingMethodManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\GiftCardAccountManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\GuestGiftCardAccountManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\Data\GiftCardAccountInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\Data\GiftCardAccountSearchResultInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\Data\GiftCardInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Api\Data\GiftCardOptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CmsStaging\Api\BlockStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CmsStaging\Api\PageStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogStaging\Api\CategoryStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogStaging\Api\ProductStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRuleStaging\Api\CatalogRuleStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AsynchronousOperations\Api\Data\BulkSummaryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AsynchronousOperations\Api\Data\OperationInterface</td>
         <td>Interface was added.</td>
     </tr>
 </tbody></table>

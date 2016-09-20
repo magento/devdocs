@@ -12,7 +12,7 @@ github_link: config-guide/prod/prod.md
 
 We're constantly learning from our community about how to deploy Magento into production. Our current topics on the subject are basic but we'd love to hear from you to make them better.
 
-If you have advice or experience to share, open an [issue](https://github.com/magento/devdocs/issues){:target=_"blank"} or [pull request](https://github.com/magento/devdocs/pulls){:target=_"blank"}  in our GitHub repository. Also see our [contribution guidelines]({{page.baseurl}}http://devdocs.magento.com/guides/v2.0/contributor-guide/contributing.html).
+If you have advice or experience to share, open an [issue](https://github.com/magento/devdocs/issues){:target=_"blank"} or [pull request](https://github.com/magento/devdocs/pulls){:target=_"blank"}  in our GitHub repository. Also see our [contribution guidelines]({{page.baseurl}}contributor-guide/contributing.html).
 
 Current topics include:
 

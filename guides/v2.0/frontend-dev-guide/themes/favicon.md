@@ -4,6 +4,7 @@ group: fedg
 subgroup: A_Themes
 title: Adding custom favicons
 menu_title:  Adding custom favicons
+version: 2.0
 menu_order: 7
 github_link: frontend-dev-guide/themes/favicon.md
 ---

@@ -6,6 +6,7 @@ title: Creating a migration plan
 menu_title: Creating a migration plan
 menu_node: parent
 menu_order: 2
+version: 2.0
 github_link: migration/migration-plan.md
 redirect_from: /guides/v1.0/migration/migration-plan.html
 ---
@@ -19,7 +20,7 @@ To have a successful migration, you need to plan it and test it thoroughly. Use 
 
 * What extensions have you installed?
 * Have you identified if you need all these extensions in your new site?  (There might be old ones you can safely drop.)
-* Have you determined if Magento 2 versions your extensions exist?  (Check with your extension providers to see if they have been ported yet.)
+* Have you determined if Magento 2 versions of your extensions exist?  (Check with your extension providers to see if they have been ported yet.)
 * What database assets from your extensions do you want to migrate?
 
 <h4>Step 2: Capacity planning</h4>

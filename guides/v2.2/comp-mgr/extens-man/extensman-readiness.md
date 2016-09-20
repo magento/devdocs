@@ -6,6 +6,8 @@ title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_node: 
 menu_order: 5
+level3_menu_node: level3parent
+level3_subgroup: readiness
 version: 2.2
 github_link: comp-mgr/extens-man/extensman-readiness.md
 ---
@@ -17,7 +19,9 @@ To start, click either **Start Readiness Check** or **Next**. A sample follows.
 
 ![The readiness check enables you to find out if your server and environment are ready to proceed]({{ site.baseurl }}common/images/extensman_update_readiness.png){:width="650px"}
 
-{% include comp-man/readiness-check.md %}
+After the readiness check completes, see one of the following:
 
-#### Next step
-[Step 2. Backup]({{ page.baseurl }}comp-mgr/extens-man/extensman-backup.html)
+*	[Readiness check success]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness-success.html)
+*	[Readiness check failure]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness-fail.html)
+*	[Readiness check with multiple extension updates]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness-multi.html)
+

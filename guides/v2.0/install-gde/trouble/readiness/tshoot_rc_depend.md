@@ -7,7 +7,7 @@ menu_title: Component dependency readiness issues
 menu_node: 
 menu_order: 3
 version: 2.0
-github_link: install-gde/trouble/readiness/depend.md
+github_link: install-gde/trouble/readiness/tshoot_rc_depend.md
 ---
 
 {% include comp-man/dependency.md %}

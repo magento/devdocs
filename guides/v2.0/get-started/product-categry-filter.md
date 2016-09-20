@@ -7,7 +7,7 @@ menu_title: Filtering products by categories
 menu_order: 9
 version: 2.0
 github_link: get-started/product-category-filter.md
-redirect_from: /guides/v2.0/get-started/product-category-filter.html
+redirect_from: /guides/v2.0/get-started/product-categry-filter.html
 ---
 ## Overview
 

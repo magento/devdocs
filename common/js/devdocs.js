@@ -1,23 +1,4 @@
 $(document).ready(function(){
-	if(getURLParameter("cx"))
-		showSearchBox();
-
-	$('#searchbox').submit(function(event) {
-		showSearchBox();
-	});
-
-	$('#gsc-search-box').submit(function(){
-		$('input').blur();
-	});
-
-	$('.search-trigger').click(function () {
-		showSearchBox();
-	});
-
-	$('DIV.searchResultsBoxClose').click(function(){
-		hideSearchBox();
-	});
-
 	//Make sub navigations wide when there is not enough space vertically
 	$("#subnav>ul.menu>li").hover(
 		function(){
@@ -58,6 +39,11 @@ $(document).ready(function(){
 		heightStyle: "content"
 	});
 
+    //Do search when search icon is pressed
+    $(".search .search-icon").click(function(){
+        $("#searchbox").submit();
+    });
+
 });
 
 //Allows for sticky menu
@@ -66,43 +52,4 @@ $(document).scroll(function(){
 		$("#subnav-wrap").addClass("sticky-nav-main");
 	else
 		$("#subnav-wrap").removeClass("sticky-nav-main");
-})
-
-//Function to get URL parameter values
-function getURLParameter(sParam) {
-		var sPageURL = window.location.search.substring(1);
-		var sURLVariables = sPageURL.split('&');
-		for (var i = 0; i < sURLVariables.length; i++)
-		{
-				var sParameterName = sURLVariables[i].split('=');
-				if (sParameterName[0] == sParam)
-				{
-						return sParameterName[1];
-				}
-		}
-}
-
-function showSearchBox () {
-
-	$('#searchResultsBox').fadeIn(300, function () {
-		// Callback function that focuses on input
-		$('#searchResultsBox input.gsc-input').first().focus();
-	});
-	$('.searchResultsBack').fadeIn(300);
-	$.cookie('searchResultsState', '1');
-	$('body').addClass('search-active');
-
-}
-
-function hideSearchBox () {
-
-	$('#searchResultsBox').fadeOut(300, function () {
-		// Callback function that focuses out of input
-		$('#searchResultsBox input.gsc-input').first().blur();
-	});
-	$('.searchResultsBack').fadeOut(300);
-	$.cookie('searchResultsState','0');
-
-	$('body').removeClass('search-active');
-
-}
+});

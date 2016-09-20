@@ -13,6 +13,9 @@ github_link: rest/list.md
 
 Additions since 2.0 are marked with asterisks (*).
 
+* TOC
+{:toc}
+
 ### Backend
 
     GET    /V1/modules

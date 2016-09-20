@@ -2,8 +2,8 @@
 layout: default 
 group: SampleData
 subgroup: T_SampleData
-title: Remove or update optional sample data modules
-menu_title: Remove or update optional sample data modules
+title: Remove sample data modules or update sample data 
+menu_title: Remove sample data modules or update sample data 
 menu_node: 
 menu_order: 1000
 version: 2.0

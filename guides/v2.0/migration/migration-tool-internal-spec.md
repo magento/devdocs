@@ -6,6 +6,7 @@ title: Data Migration Tool Internal Specification
 menu_title: Data Migration Tool Internal Specification
 menu_node: parent
 menu_order: 7
+version: 2.0
 github_link: migration/migration-tool-internal-spec.md
 redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
 ---
@@ -1043,7 +1044,7 @@ After main migration some data could have been added to DB of Magento 1 e.g. by 
 
 <h2 id="data-sources">Data Sources</h2>
 
-To reach to the data sources of Magento 1 and Magento 2 and operate with its data (select, update, insert, delete) there are many classes in Resource folder. Migration\Resource\Source and Migration\Resource\Destination are main classes. All migration steps use it to operate with data. This data is contained in classes like Migration\Resource\Document, Migration\Resource\Record, Migration\Resource\Structure etc. 
+To reach to the data sources of Magento 1 and Magento 2 and operate with its data (select, update, insert, delete) there are many classes in Resource folder. Migration\ResourceModel\Source and Migration\ResourceModel\Destination are main classes. All migration steps use it to operate with data. This data is contained in classes like Migration\ResourceModel\Document, Migration\ResourceModel\Record, Migration\ResourceModel\Structure etc. 
 
 Here is a class diagram of these classes:
 
