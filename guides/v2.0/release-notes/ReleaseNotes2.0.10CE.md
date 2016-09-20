@@ -12,11 +12,20 @@ github_link: release-notes/ReleaseNotes2.0.10CE.md
 
 
 ## Magento Community Edition 2.0.10
-We are pleased to present Magento Community Edition 2.0.10. This release includes several functional fixes.
+We are pleased to present Magento Community Edition 2.0.10. This release includes multiple security and functional enhancements as well as enhancements to the Sales API. New Sales API methods allow third party solutions, such as shipping or ERP applications, to use APIs when they create an invoice or shipment. 
+
 
 
 Backward-incompatible changes are documented in <a href="{{ page.baseurl }}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
+
+### Highlights
+
+Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality that is currently available in the Admin interface into the Sales API. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. **These new interfaces will not break any existing customizations or extensions.**
+
+See Module Reference for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
+
+**Why are we adding new APIs in a patch release?** See AK’s blog for more information about these features and Magento’s use of semantic versioning. 
 
 
 ### Fixed issues
