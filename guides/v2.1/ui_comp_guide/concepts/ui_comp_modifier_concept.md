@@ -29,11 +29,15 @@ So in the run time, the component structure set in the modifier is merged with t
 
 To add a PHP modifier for a UI component, take the following steps:
 
-1. In your custom module, add a class that implements `\Magento\Ui\DataProvider\Modifier\ModifierInterface` with the following methods:
-	- `modifyData()`: for modifying UI component's data (for example, the list of options for a select element)
-	- `modifyMeta()`: for modifying UI component's metadata (for example, name, label, description, type)
+**Step 1**
+
+In your custom module, add a class that implements `\Magento\Ui\DataProvider\Modifier\ModifierInterface` with the following methods:
+
+- `modifyData()`: for modifying UI component's data (for example, the list of options for a select element)
+- `modifyMeta()`: for modifying UI component's metadata (for example, name, label, description, type)
    
-   Sample modifier:
+Sample modifier:
+
 {% highlight php %}
 
 <?php
@@ -89,7 +93,9 @@ class Example extends AbstractModifier
 }
 {%endhighlight%}
 
-2. Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adminhtml/di.xml`. This declaration looks like following: 
+**Step 2**
+
+Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adminhtml/di.xml`. This declaration looks like following: 
 
 {% highlight xml %}
 <virtualType name="%YourNamespace\YourModule\DataProvider\Modifier\Pool%" type="Magento\Ui\DataProvider\Modifier\Pool">
@@ -108,7 +114,9 @@ class Example extends AbstractModifier
 
 (If you want to use this sample in your `di.xml`, replace the sample values with with the real names of your entities.)
 
-3. To actually use your modifier, add a dependency on `\Magento\Ui\DataProvider\Modifier\PoolInterface` to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{site.mage2100url}}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
+**Step 3**
+
+To actually use your modifier, add a dependency on `\Magento\Ui\DataProvider\Modifier\PoolInterface` to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{site.mage2100url}}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
 
 
 ## Related reading
