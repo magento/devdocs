@@ -18,7 +18,7 @@ github_link: config-guide/cache/static-content-signing.md
 * TOC
 {:toc}
 
-### Static Content Cache
+### Static content cache
 
 To improve performance, Magento sets the `Expires` headers for static resources such as images, JavaScript, and CSS files.
 Setting the `Expires` header on a static resource tells the browser to cache the resource at that URL and serve the cached version until it expires.
@@ -27,7 +27,7 @@ This is a common [best practice](https://developer.yahoo.com/performance/rules.h
 When the browser caches a static resource and that resource changes on the server, you need to clear the browser cache so it can download the new version.
 Manually clearing the browser cache works if you are a website administrator, but this is not an appropriate request to make of your users when you want them to download new versions of a static resource.
 
-### Static Content Signing
+### Static content signing
 
 Static content signing is a Magento feature that allows you to invalidate the browser cache for static resources.
 Magento accomplishes this by adding a deployment version to the URL of static files.
@@ -47,7 +47,7 @@ You can find the configuration for this feature in [**Stores > System > Configur
 
 ![Static Files Settings]({{ site.baseurl }}common/images/static-files-settings.png)
 
-#### Version Signatures
+#### Version signatures
 
 Magento appends the version signature as a path component directly after the base URL of static view files to preserve the integrity of relative URLs across static resources.
 This also forces the browser to resolve a relative URL to the correct signed source while keeping its content independent of the presence/absence of the signature value.
