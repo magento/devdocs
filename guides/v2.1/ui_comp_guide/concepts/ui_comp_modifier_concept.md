@@ -23,7 +23,7 @@ This topics describes how to use PHP modifiers, that are the server-side part of
 
 `DataProvider()` is a PHP part of a UI component, a class responsible for the component's data and metadata preparation. The pool of modifiers (virtual type) is injected to this data provider using the `__construct()` method. The pool's preference is defined in `di.xml`.
 
-In the run time, the component structure set in the modifier is merged with the configuration that comes from the XML configuration.
+So in the run time, the component structure set in the modifier is merged with the configuration that comes from the XML configuration.
 
 ## Adding a custom PHP modifier
 
@@ -33,7 +33,7 @@ To add a PHP modifier for a UI component, take the following steps:
 	- `modifyData()`: for modifying UI component's data (for example, the list of options for a select element)
 	- `modifyMeta()`: for modifying UI component's metadata (for example, name, label, description, type)
    
-   Sample PHP modifier:
+   Sample modifier:
 {% highlight php %}
 
 <?php
@@ -89,20 +89,23 @@ class Example extends AbstractModifier
 }
 {%endhighlight%}
 
-2. Declare your modifier, by adding the following to your module Di configuration `<Your_Module>/etc/adminhtml/di.xml`:
+2. Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adminhtml/di.xml`. This declaration looks like following: 
 
 {% highlight xml %}
-    <virtualType name="My_Module\Ui\DataProvider\Modifier\Pool" type="Magento\Ui\DataProvider      \Modifier\Pool">
-        <arguments>
-            <argument name="modifiers" xsi:type="array">
-                <item name="modifier_name" xsi:type="array">
-                    <item name="class" xsi:type="string">My_Module\DataProvider\Modifier\Your_Class</item>
-                    <item name="sortOrder" xsi:type="number">10</item>
-                </item>
-            </argument>
-        </arguments>
-    </virtualType>
+<virtualType name="%YourNamespace\YourModule\DataProvider\Modifier\Pool%" type="Magento\Ui\DataProvider\Modifier\Pool">
+     <arguments>
+         <argument name="modifiers" xsi:type="array">
+             <item name="modifier_name" xsi:type="array">
+                 <item name="class" xsi:type="string">%YourNamespce\YourModule\Modifier\YourModifierClass%</item>
+                 <item name="sortOrder" xsi:type="number">10</item>
+             </item>
+         </argument>
+     </arguments>
+</virtualType>
 {% endhighlight %}
+
+, where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a virtual class.
+(If you want to use this sample in your `di.xml`, replace the sample values with with the real names of your entities.)
 
 3. To actually use your modifier, add a dependency on `\Magento\Ui\DataProvider\Modifier\PoolInterface` to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{site.mage2100url}}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
 
