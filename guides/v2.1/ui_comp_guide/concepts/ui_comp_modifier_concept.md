@@ -17,13 +17,13 @@ github_link: ui_comp_guide/concepts/ui_comp_modifier_concept.md
 
 ## What's in this topic
 
-This topics describes how to use PHP modifiers, that are the server-side part of [UI components configuration]({{page.baseurl}}ui_comp_guide/concepts//ui_comp_config_flow_concept.html). Using modifiers is optional and might be necessary when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Or the other specific example is the [default product creation form]({{page.baseurl}}howdoi/customize_product.html), for which the modifier is a place where validations are added to display only certain fields for certain product types.
+This topic describes how to use PHP modifiers that are the server-side part of [UI components configuration]({{page.baseurl}}ui_comp_guide/concepts//ui_comp_config_flow_concept.html). Using modifiers is optional and might be necessary when [static declaration in XML configuration files]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) is not suitable for the tasks. For example, in cases when additional data should be loaded from database. Or the other specific example is the [default product creation form]({{page.baseurl}}howdoi/customize_product.html), for which the modifier is a place where validations are added to display only certain fields for certain product types.
 
 ## General implementation overview
 
 `DataProvider()` is a PHP part of a UI component, a class responsible for the component's data and metadata preparation. The pool of modifiers (virtual type) is injected to this data provider using the `__construct()` method. The pool's preference is defined in `di.xml`.
 
-So in the run time, the component structure set in the modifier is merged with the configuration that comes from the XML configuration.
+So in runtime, the component structure set in the modifier is merged with the configuration that comes from the XML configuration.
 
 ## Adding a custom PHP modifier
 
@@ -31,14 +31,14 @@ To add a PHP modifier for a UI component, take the following steps:
 
 **Step 1**
 
-In your custom module, add a class that implements `\Magento\Ui\DataProvider\Modifier\ModifierInterface` with the following methods:
+In your custom module, add a class that implements [`\Magento\Ui\DataProvider\Modifier\ModifierInterface`]({{site.mage2100url}}app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php) with the following methods:
 
 - `modifyData()`: for modifying UI component's data (for example, the list of options for a select element)
 - `modifyMeta()`: for modifying UI component's metadata (for example, name, label, description, type)
    
 Sample modifier:
 
-{% highlight php %}
+{% highlight php%}
 
 <?php
 
@@ -95,7 +95,7 @@ class Example extends AbstractModifier
 
 **Step 2**
 
-Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adminhtml/di.xml`. This declaration looks like following: 
+Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adminhtml/di.xml`. This declaration looks like the following: 
 
 {% highlight xml %}
 <virtualType name="%YourNamespace\YourModule\DataProvider\Modifier\Pool%" type="Magento\Ui\DataProvider\Modifier\Pool">
