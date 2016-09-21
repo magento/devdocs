@@ -597,7 +597,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 20 September 2016 (PDT)</div>
+            <div class="updated">Updated: 21 September 2016 (PDT)</div>
             <h2 class="no_toc" id="about-php-modifiers-in-ui-components">About PHP modifiers in UI components</h2>
 
 <ul id="markdown-toc">
@@ -609,13 +609,13 @@
 
 <h2 id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>This topics describes how to use PHP modifiers, that are the server-side part of <a href="/guides/v2.1/ui_comp_guide/concepts//ui_comp_config_flow_concept.html">UI components configuration</a>. Using modifiers is optional and might be necessary when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Or the other specific example is the <a href="/guides/v2.1/howdoi/customize_product.html">default product creation form</a>, for which the modifier is a place where validations are added to display only certain fields for certain product types.</p>
+<p>This topic describes how to use PHP modifiers that are the server-side part of <a href="/guides/v2.1/ui_comp_guide/concepts//ui_comp_config_flow_concept.html">UI components configuration</a>. Using modifiers is optional and might be necessary when <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">static declaration in XML configuration files</a> is not suitable for the tasks. For example, in cases when additional data should be loaded from database. Or the other specific example is the <a href="/guides/v2.1/howdoi/customize_product.html">default product creation form</a>, for which the modifier is a place where validations are added to display only certain fields for certain product types.</p>
 
 <h2 id="general-implementation-overview">General implementation overview</h2>
 
 <p><code>DataProvider()</code> is a PHP part of a UI component, a class responsible for the component’s data and metadata preparation. The pool of modifiers (virtual type) is injected to this data provider using the <code>__construct()</code> method. The pool’s preference is defined in <code>di.xml</code>.</p>
 
-<p>So in the run time, the component structure set in the modifier is merged with the configuration that comes from the XML configuration.</p>
+<p>So in runtime, the component structure set in the modifier is merged with the configuration that comes from the XML configuration.</p>
 
 <h2 id="adding-a-custom-php-modifier">Adding a custom PHP modifier</h2>
 
@@ -623,7 +623,7 @@
 
 <p><strong>Step 1</strong></p>
 
-<p>In your custom module, add a class that implements <code>\Magento\Ui\DataProvider\Modifier\ModifierInterface</code> with the following methods:</p>
+<p>In your custom module, add a class that implements <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php"><code>\Magento\Ui\DataProvider\Modifier\ModifierInterface</code></a> with the following methods:</p>
 
 <ul>
   <li><code>modifyData()</code>: for modifying UI component’s data (for example, the list of options for a select element)</li>
@@ -686,7 +686,7 @@
 
 <p><strong>Step 2</strong></p>
 
-<p>Declare your modifier in your module Di configuration <code>&lt;Your_Module_dir&gt;/etc/adminhtml/di.xml</code>. This declaration looks like following:</p>
+<p>Declare your modifier in your module Di configuration <code>&lt;Your_Module_dir&gt;/etc/adminhtml/di.xml</code>. This declaration looks like the following:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;%YourNamespace\YourModule\DataProvider\Modifier\Pool%&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Ui\DataProvider\Modifier\Pool&quot;</span><span class="nt">&gt;</span>
      <span class="nt">&lt;arguments&gt;</span>
