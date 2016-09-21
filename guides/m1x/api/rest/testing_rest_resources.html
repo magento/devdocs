@@ -1,9 +1,7 @@
 ---
-layout: m1x
+layout: m1x_rest
 title: Testing REST Resources
 ---
-<p><a href="{{ site.m1xgithuburl }}api/rest/testing_rest_resources.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
-
 
 <p>Three steps are required for utilizing REST API resources:</p>
 <ul>
@@ -42,7 +40,6 @@ title: Testing REST Resources
 	<li>From the Authentication drop-down, select <b>OAuth</b>.<br/>
 <img src="{{ site.baseurl }}common/images/m1x/rest_test1.png" style="border: 1px solid black"/></li>
 	<li>In the OAuth window, on the Signature for the request tab, fill in the following fields:<br/>
-<img src="{{ site.baseurl }}common/images/m1x/29221106/35619337.png" style="border: 1px solid black"/>
 	<ul>
 		<li><b>Consumer key</b>: Enter the <b>Key</b> value provided when you created the consumer in Magento Admin Panel.</li>
 		<li><b>Consumer secret</b>: Enter the <b>Secret</b> value provided when you created the consumer in Magento Admin Panel.</li>
@@ -51,13 +48,21 @@ title: Testing REST Resources
 	</ul>
 	</li>
 	<li>On the OAuth setting tab, define the following options:
+		<img src="{{ site.baseurl }}common/images/m1x/rest_test_oauth_tab.png" width="600" style="border: 1px solid black"/>
 	<ul>
 		<li><b>Signature Methods</b>: From the drop-down list, select which method will be used for signatures (HMAC-SHA1 or  PLAINTEXT).</li>
 		<li><b>oAuth Version</b>: From the drop-down list, select the <b>1.0</b> option (REST API supports OAuth 1.0a).</li>
+		<li>Leave the <b>Realm</b>, <b>oAuth Nonce</b>, and <b>oAuth Timestemp</b> values set by default.</li>
 	</ul>
 	</li>
-	<li>Leave the <b>Realm</b>, <b>oAuth Nonce</b>, and <b>oAuth Timestemp</b> values set by default.</li>
-	<li>Click <b>Save</b>. You are prompted whether you want to save entered data. Click <b>Yes</b>.<br/>
+	<li>Click <b>Save</b> and wait for the confirmation dialog to close.<br/>
+	<li>Return to the Signature for the request tab and select <b>Insert &gt; Insert as header</b>.
+			<img src="{{ site.baseurl }}common/images/m1x/rest_test_insert.png" width="600" style="border: 1px solid black"/>
+		<p>An authorization header is created on the main page of REST Client. </p>
+		<img src="{{ site.baseurl }}common/images/m1x/rest_test_authheader.png" width="600" style="border: 1px solid black"/>
+
+	</li>
+
 <b>NOTE</b>: Click the header with authorization data and click <b>Auto refresh</b> in the opened pop-up in order to generate new values for oauth_nonce, oauth_timestamp, and oauth_signature at each request.<br/>
 <img src="{{ site.baseurl }}common/images/m1x/rest_test3.png" style="border: 1px solid black"/></span></li>
 	<li>From the <b>Headers</b> drop-down, select <b>Custom Header</b>.<br/>

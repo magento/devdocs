@@ -1,0 +1,1 @@
+../../../../v2.0/pattern-library/getting-user-input/image_uploader/image_uploader.md

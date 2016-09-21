@@ -1,7 +1,7 @@
-<?php
-    $title = 'Magento API - SOAP - customer_address.update';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Address Update
+---
 
 				    <h2><a name="customer_address.update-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
 
@@ -20,137 +20,134 @@
 <p>Update address data of the required customer</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> addressId </td>
-<td class='confluenceTd'> Address ID </td>
+<td> int </td>
+<td> addressId </td>
+<td> Address ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> addressdata </td>
-<td class='confluenceTd'> Array of customerAddressEntityCreate </td>
+<td> array </td>
+<td> addressdata </td>
+<td> Array of customerAddressEntityCreate </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> True if the customer address is updated </td>
+<td> boolean </td>
+<td> True if the customer address is updated </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>customerAddressEntityCreate</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> city <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Name of the city </td>
+<td> string </td>
+<td> city <br class="atl-forced-newline" /> </td>
+<td> Name of the city </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> company <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Name of the company </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> company <br class="atl-forced-newline" /> </td>
+<td> Name of the company </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> country_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Country ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> country_id <br class="atl-forced-newline" /> </td>
+<td> Country ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> fax <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Fax </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> fax <br class="atl-forced-newline" /> </td>
+<td> Fax </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> firstname <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer first name </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> firstname <br class="atl-forced-newline" /> </td>
+<td> Customer first name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> lastname <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer last name </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> lastname <br class="atl-forced-newline" /> </td>
+<td> Customer last name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> middlename <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer middle name </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> middlename <br class="atl-forced-newline" /> </td>
+<td> Customer middle name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> postcode <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Postcode </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> postcode <br class="atl-forced-newline" /> </td>
+<td> Postcode </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> prefix <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer prefix </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> prefix <br class="atl-forced-newline" /> </td>
+<td> Customer prefix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> region_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> ID of the region </td>
+<td> int </td>
+<td> region_id <br class="atl-forced-newline" /> </td>
+<td> ID of the region </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> region <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Name of the region </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> region <br class="atl-forced-newline" /> </td>
+<td> Name of the region </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString </td>
-<td class='confluenceTd'> street <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of streets </td>
+<td> ArrayOfString </td>
+<td> street <br class="atl-forced-newline" /> </td>
+<td> Array of streets </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> suffix <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer suffix </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> suffix <br class="atl-forced-newline" /> </td>
+<td> Customer suffix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> telephone <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Telephone number </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> telephone <br class="atl-forced-newline" /> </td>
+<td> Telephone number </td>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> is_default_billing <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> True if the address is the default one for billing </td>
+<td> boolean </td>
+<td> is_default_billing <br class="atl-forced-newline" /> </td>
+<td> True if the address is the default one for billing </td>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> is_default_shipping <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> True if the address is the default one for shipping </td>
+<td> boolean </td>
+<td> is_default_shipping <br class="atl-forced-newline" /> </td>
+<td> True if the address is the default one for shipping </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="customer_address.update-Examples"></a>Examples</h4>

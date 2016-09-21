@@ -1,8 +1,7 @@
 ---
-layout: m1x
+layout: m1x_soap
 title: List of Additional Product Attributes
 ---
-<p><a href="{{ site.m1xgithuburl }}api/soap/catalog/catalogProduct/catalog_product.listOfAdditionalAttributes.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
 
  <h3><a name="product.listOfAdditionalAttributes-Module%3AProductAPI"></a>Module: Product API</h3>
@@ -21,90 +20,87 @@ title: List of Additional Product Attributes
 <p>Get the list of additional attributes. Additional attributes are attributes that are not in the default set of attributes.</p>
 
 <p><b><em>Arguments:</em></b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> productType </td>
-<td class='confluenceTd'> Product type (e.g., simple) </td>
+<td> string </td>
+<td> productType </td>
+<td> Product type (e.g., simple) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> attributeSetId </td>
-<td class='confluenceTd'> Attribute set ID </td>
+<td> string </td>
+<td> attributeSetId </td>
+<td> Attribute set ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b><em>Returns:</em></b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> attribute_id </td>
-<td class='confluenceTd'> Attribute ID </td>
+<td> int </td>
+<td> attribute_id </td>
+<td> Attribute ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> code </td>
-<td class='confluenceTd'> Attribute code </td>
+<td> string </td>
+<td> code </td>
+<td> Attribute code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> type </td>
-<td class='confluenceTd'> Attribute type (e.g., text, select, date, etc.) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> type </td>
+<td> Attribute type (e.g., text, select, date, etc.) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> Defines whether the attribute is required </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> required </td>
+<td> Defines whether the attribute is required </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> scope </td>
-<td class='confluenceTd'> Attribute scope (global, website, or store) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> scope </td>
+<td> Attribute scope (global, website, or store) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b><em>Faults:</em></b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Product type is not in allowed types. </td>
+<td> 104 </td>
+<td> Product type is not in allowed types. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> Product attribute set is not existed </td>
+<td> 105 </td>
+<td> Product attribute set is not existed </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 106 </td>
-<td class='confluenceTd'> Product attribute set is not belong catalog product entity type </td>
+<td> 106 </td>
+<td> Product attribute set is not belong catalog product entity type </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="product.listOfAdditionalAttributes-Examples"></a>Examples</h4>

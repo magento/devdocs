@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - cataloginventory_stock_item.update';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Inventory Item Update
+---
 
-				    <h2><a name="cataloginventory_stock_item.update-Module%3AMageCatalogInventory"></a>Module: Mage_CatalogInventory</h2>
+<h2><a name="cataloginventory_stock_item.update-Module%3AMageCatalogInventory"></a>Module: Mage_CatalogInventory</h2>
 
 
 <h4><a name="cataloginventory_stock_item.update-Resource%3Acataloginventorystockitem"></a>Resource: cataloginventory_stock_item</h4>
@@ -32,134 +32,131 @@
 
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> product\productId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product ID or SKU </td>
+<td> string </td>
+<td> product\productId <br class="atl-forced-newline" /> </td>
+<td> Product ID or SKU </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> data <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogInventoryStockItemUpdateEntity </td>
+<td> array </td>
+<td> data <br class="atl-forced-newline" /> </td>
+<td> Array of catalogInventoryStockItemUpdateEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Result of stock item updating </td>
+<td> int </td>
+<td> result </td>
+<td> Result of stock item updating </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogInventoryStockItemUpdateEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Quantity of items to be updated </td>
+<td> string </td>
+<td> qty <br class="atl-forced-newline" /> </td>
+<td> Quantity of items to be updated </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_in_stock <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the item is in stock </td>
+<td> int </td>
+<td> is_in_stock <br class="atl-forced-newline" /> </td>
+<td> Defines whether the item is in stock </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> manage_stock <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Manage stock flag </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> manage_stock <br class="atl-forced-newline" /> </td>
+<td> Manage stock flag </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> use_config_manage_stock <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Use config manage stock </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> use_config_manage_stock <br class="atl-forced-newline" /> </td>
+<td> Use config manage stock </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> min_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Minimum quantity for items to be in stock </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> min_qty <br class="atl-forced-newline" /> </td>
+<td> Minimum quantity for items to be in stock </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> use_config_min_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Use config settings flag (value defined in the Inventory System Configuration) </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> use_config_min_qty <br class="atl-forced-newline" /> </td>
+<td> Use config settings flag (value defined in the Inventory System Configuration) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> min_sale_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Minimum quantity allowed in the shopping cart </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> min_sale_qty <br class="atl-forced-newline" /> </td>
+<td> Minimum quantity allowed in the shopping cart </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> use_config_min_sale_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Use config settings flag </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> use_config_min_sale_qty <br class="atl-forced-newline" /> </td>
+<td> Use config settings flag </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> max_sale_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Maximum quantity allowed in the shopping cart </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> max_sale_qty <br class="atl-forced-newline" /> </td>
+<td> Maximum quantity allowed in the shopping cart </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> use_config_max_sale_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Use config settings flag </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> use_config_max_sale_qty <br class="atl-forced-newline" /> </td>
+<td> Use config settings flag </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_qty_decimal <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the quantity is decimal </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> is_qty_decimal <br class="atl-forced-newline" /> </td>
+<td> Defines whether the quantity is decimal </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> backorders <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Backorders status </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> backorders <br class="atl-forced-newline" /> </td>
+<td> Backorders status </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> use_config_backorders <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Use config settings flag (for backorders) </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> use_config_backorders <br class="atl-forced-newline" /> </td>
+<td> Use config settings flag (for backorders) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> notify_stock_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Stock quantity below which a notification will appear </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> notify_stock_qty <br class="atl-forced-newline" /> </td>
+<td> Stock quantity below which a notification will appear </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> use_config_notify_stock_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Use config settings flag (for stock quantity) </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> use_config_notify_stock_qty <br class="atl-forced-newline" /> </td>
+<td> Use config settings flag (for stock quantity) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="cataloginventory_stock_item.update-Examples"></a>Examples</h4>

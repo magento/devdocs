@@ -1,10 +1,11 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: List widget
-menu_order: 4 
+menu_order: 7 
 menu_title: List widget
+version: 2.0
 github_link: javascript-dev-guide/widgets/widget_list.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/widget_list.html
@@ -17,8 +18,8 @@ The content can be moved using buttons and links.
 
 The list widget source file is <a href="{{site.mage2000url}}lib/web/mage/list.js" target="_blank">lib/web/mage/list.js</a>.
 
-<h2 id="quicksearch_init">Inititalize the list widget</h2>
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+<h2 id="quicksearch_init">Initialize the list widget</h2>
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="list_options">Options</h2>
 The list widget has the following options:

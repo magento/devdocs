@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - customer.delete';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Customer Delete
+---
 
-				    <h2><a name="customer.delete-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
+<h2><a name="customer.delete-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
 
 <p>Allows you to export/import customers from/to Magento</p>
 
@@ -21,40 +21,38 @@
 <p>Delete the required customer.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> customerId </td>
-<td class='confluenceTd'> Customer ID </td>
+<td> int </td>
+<td> customerId </td>
+<td> Customer ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> True if the customer is deleted </td>
+<td> boolean </td>
+<td> True if the customer is deleted </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="customer.delete-Examples"></a>Examples</h4>

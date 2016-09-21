@@ -6,6 +6,7 @@ title: Data Migration Tool Internal Specification
 menu_title: Data Migration Tool Internal Specification
 menu_node: parent
 menu_order: 7
+version: 2.0
 github_link: migration/migration-tool-internal-spec.md
 redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
 ---
@@ -35,7 +36,7 @@ This section describes an implementation details of Data Migration Tool and how 
 
 <h3 id="repositories">Repositories</h3>
 
-Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool-ce" target="_blank">migration-tool</a>
+Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="_blank">migration-tool</a>
 
 <h3 id="system-requirements">System requirements</h3>
 
@@ -49,68 +50,688 @@ The following diagram represents directory structure of Data Migration Tool:
 
 <pre>
 
-├ bin
-│ └ migrate                 -- entry point
-├ etc                       -- configurations of tool
-│ ├ ce-1.x.x                -- folder contains version specific set of config files
-│ │ ├ map.xml.dist
-│ │ ├ config.xml.dist
-│ │ ├ settings.xml.dist
-│ │ └ ...
-│ ├ config.xsd
-│ ├ map.xsd
-│ ├ magento_path.php
-│ └ ...
-├ src
-│ └ Migration
-│   ├ App
-│   │ └ Shell.php             -- shell application
-│   ├ Handler                 -- contains handlers for specific cases of processing data
-│   │ ├ Manager.php
-│   │ ├ HandlerInterface.php
-│   │ └ AbstractHandler.php
-│   ├ Resource                -- contains adapter for connection to data storage and classes to work with structured data
-│   │ ├ Adapter
-│   │ ├ Document              -- is a database table
-│   │ ├ Record
-│   │ ├ Structure
-│   │ ├ Source.php
-│   │ └ Destination.php
-│   ├ Logger                   -- classes for processing log information
-│   │ ├ ConsoleHandler.php
-│   │ ├ FileHandler.php
-│   │ ├ Logger.php
-│   │ ├ Manager.php
-│   │ ├ MessageFormatter.php
-│   │ └ MessageProcessor.php
-│   ├ Step
-│   │ ├ EAV
-│   │ ├ Map
-│   │ └ UrlRewrite
-│   ├ Config.php
-│   └ Migration.php    -- application
-├ tests
-│ ├ unit
-│ │ └ phpunit.xml.dist
-│ ├ static
-│ │ └ phpunit.xml.dist
-│ └ integration
-│   └ phpunit.xml.dist
-├ composer.json
-└ README.md
+.
+├── CHANGELOG.md
+├── composer.json
+├── COPYING.txt
+├── etc
+│   ├── ce-to-ce
+│   │   ├── 1.6.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── deltalog.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.6.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.6.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.8.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.8.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.1.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.3
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── class-map.xml.dist
+│   │   ├── customer-attribute-groups.xml.dist
+│   │   ├── customer-document-groups.xml.dist
+│   │   ├── deltalog.xml.dist
+│   │   ├── eav-attribute-groups.xml.dist
+│   │   ├── eav-document-groups.xml.dist
+│   │   ├── log-document-groups.xml.dist
+│   │   ├── map-customer.xml.dist
+│   │   ├── map-document-groups.xml.dist
+│   │   ├── map-eav.xml.dist
+│   │   ├── map-log.xml.dist
+│   │   ├── order-grids-document-groups.xml.dist
+│   │   └── settings.xml.dist
+│   ├── ce-to-ee
+│   │   ├── 1.6.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── deltalog.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.6.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.6.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.7.0.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.8.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.8.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.1.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.3
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── class-map.xml.dist
+│   │   ├── customer-attribute-groups.xml.dist
+│   │   ├── customer-document-groups.xml.dist
+│   │   ├── deltalog.xml.dist
+│   │   ├── eav-attribute-groups.xml.dist
+│   │   ├── eav-document-groups.xml.dist
+│   │   ├── log-document-groups.xml.dist
+│   │   ├── map-customer.xml.dist
+│   │   ├── map-document-groups.xml.dist
+│   │   ├── map-eav.xml.dist
+│   │   ├── map-log.xml.dist
+│   │   ├── order-grids-document-groups.xml.dist
+│   │   └── settings.xml.dist
+│   ├── class-map.xsd
+│   ├── config.xsd
+│   ├── ee-to-ee
+│   │   ├── 1.11.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.11.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.11.0.2
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.11.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.11.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   ├── map-customer.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.12.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.12.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.12.0.2
+│   │   │   ├── config.xml.dist
+│   │   │   ├── customer-attribute-groups.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.13.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.13.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.13.0.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.13.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.0.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.0.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.1.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.2.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.2.2
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.14.2.3
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── class-map.xml.dist
+│   │   ├── customer-attr-document-groups.xml.dist
+│   │   ├── customer-attribute-groups.xml.dist
+│   │   ├── customer-attr-map.xml.dist
+│   │   ├── customer-document-groups.xml.dist
+│   │   ├── deltalog.xml.dist
+│   │   ├── eav-attribute-groups.xml.dist
+│   │   ├── eav-document-groups.xml.dist
+│   │   ├── log-document-groups.xml.dist
+│   │   ├── map-customer.xml.dist
+│   │   ├── map-document-groups.xml.dist
+│   │   ├── map-eav.xml.dist
+│   │   ├── map-log.xml.dist
+│   │   ├── map-sales.xml.dist
+│   │   ├── order-grids-document-groups.xml.dist
+│   │   ├── settings.xml.dist
+│   │   ├── visual_merchandiser_attribute_groups.xml.dist
+│   │   ├── visual_merchandiser_document_groups.xml.dist
+│   │   └── visual_merchandiser_map.xml.dist
+│   ├── groups.xsd
+│   ├── magento_path.php
+│   ├── map.xsd
+│   └── settings.xsd
+├── LICENSE_MEE.txt
+├── LICENSE.txt
+├── README.md
+├── src
+│   └── Migration
+│       ├── App
+│       │   ├── Mode
+│       │   │   ├── ModeInterface.php
+│       │   │   └── StepList.php
+│       │   ├── Progress
+│       │   │   └── File.php
+│       │   ├── ProgressBar
+│       │   │   └── LogLevelProcessor.php
+│       │   ├── ProgressBarFactory.php
+│       │   ├── Progress.php
+│       │   ├── SetupDeltaLog.php
+│       │   └── Step
+│       │       ├── AbstractDelta.php
+│       │       ├── AbstractIntegrity.php
+│       │       ├── AbstractVolume.php
+│       │       ├── RollbackInterface.php
+│       │       ├── StageFactory.php
+│       │       └── StageInterface.php
+│       ├── cli_commands.php
+│       ├── Config.php
+│       ├── Console
+│       │   ├── AbstractMigrateCommand.php
+│       │   ├── CommandList.php
+│       │   ├── MigrateDataCommand.php
+│       │   ├── MigrateDeltaCommand.php
+│       │   └── MigrateSettingsCommand.php
+│       ├── Exception.php
+│       ├── Handler
+│       │   ├── AbstractHandler.php
+│       │   ├── AddPrefix.php
+│       │   ├── ClassMap.php
+│       │   ├── ConvertDateFormat.php
+│       │   ├── ConvertEavValue.php
+│       │   ├── ConvertIp.php
+│       │   ├── Convert.php
+│       │   ├── EavAttribute
+│       │   │   ├── ConvertConfigurableAttribute.php
+│       │   │   └── ConvertModel.php
+│       │   ├── EavAttributeGroup
+│       │   │   └── SetGroupCode.php
+│       │   ├── Gallery
+│       │   │   ├── InsertValueToEntity.php
+│       │   │   └── SetEntityId.php
+│       │   ├── GetDestinationValue.php
+│       │   ├── HandlerInterface.php
+│       │   ├── Manager.php
+│       │   ├── Placeholder.php
+│       │   ├── Rule
+│       │   │   ├── ConditionSql.php
+│       │   │   ├── CustomerSegmentConditionSql.php
+│       │   │   ├── NormalizationIds.php
+│       │   │   └── SerializedData.php
+│       │   ├── SalesOrderStatusState
+│       │   │   └── SetVisibleOnFront.php
+│       │   ├── SerializeToJson.php
+│       │   ├── SetDefaultWebsiteId.php
+│       │   ├── SetHash.php
+│       │   ├── Settings
+│       │   │   ├── CategoryRootId.php
+│       │   │   ├── Encrypt.php
+│       │   │   ├── Template.php
+│       │   │   └── UrlSuffix.php
+│       │   ├── SetValue.php
+│       │   ├── Timezone.php
+│       │   └── VisualMerchandiser
+│       │       ├── Attribute.php
+│       │       ├── InsertMode.php
+│       │       └── SmartAttribute.php
+│       ├── Logger
+│       │   ├── ConsoleHandler.php
+│       │   ├── FileHandler.php
+│       │   ├── Logger.php
+│       │   ├── Manager.php
+│       │   ├── MessageFormatter.php
+│       │   └── MessageProcessor.php
+│       ├── Mode
+│       │   ├── AbstractMode.php
+│       │   ├── Data.php
+│       │   ├── Delta.php
+│       │   └── Settings.php
+│       ├── Reader
+│       │   ├── ClassMap.php
+│       │   ├── GroupsFactory.php
+│       │   ├── Groups.php
+│       │   ├── MapFactory.php
+│       │   ├── MapInterface.php
+│       │   ├── Map.php
+│       │   └── Settings.php
+│       ├── RecordTransformer.php
+│       ├── ResourceModel
+│       │   ├── AbstractCollection.php
+│       │   ├── AbstractResource.php
+│       │   ├── Adapter
+│       │   │   └── Mysql.php
+│       │   ├── AdapterFactory.php
+│       │   ├── AdapterInterface.php
+│       │   ├── Destination.php
+│       │   ├── Document
+│       │   │   └── Collection.php
+│       │   ├── Document.php
+│       │   ├── Record
+│       │   │   └── Collection.php
+│       │   ├── Record.php
+│       │   ├── Source.php
+│       │   ├── Structure
+│       │   │   └── Collection.php
+│       │   └── Structure.php
+│       └── Step
+│           ├── ConfigurablePrices
+│           │   ├── Data.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── CustomCustomerAttributes
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── Customer
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── DatabaseStage.php
+│           ├── Eav
+│           │   ├── Data.php
+│           │   ├── Helper.php
+│           │   ├── InitialData.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── Log
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── Map
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── OrderGrids
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── OrderGridsEE
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── Ratings
+│           │   ├── Data.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── SalesIncrement
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── SalesOrder
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── InitialData.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── Settings
+│           │   ├── Data.php
+│           │   └── Integrity.php
+│           ├── Stores
+│           │   ├── Data.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── TierPrice
+│           │   ├── Data.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── UrlRewrite
+│           │   ├── Version11300to2000.php
+│           │   ├── Version11410to2000.php
+│           │   └── Version191to2000.php
+│           └── VisualMerchandiser
+│               ├── Data.php
+│               ├── Helper.php
+│               ├── Integrity.php
+│               └── Volume.php
+└── tests
+    ├── integration
+    │   ├── etc
+    │   │   └── mysql.php.dist
+    │   ├── framework
+    │   │   ├── autoload.php
+    │   │   ├── bootstrap.php
+    │   │   ├── Helper.php
+    │   │   ├── Listener.php
+    │   │   ├── ProgressBar.php
+    │   │   └── QuietLogHandler.php
+    │   ├── phpunit.ee.xml.dist
+    │   ├── phpunit.xml.dist
+    │   ├── resource
+    │   │   ├── default
+    │   │   │   ├── dest.sql
+    │   │   │   └── source.sql
+    │   │   ├── eav
+    │   │   │   ├── dest.sql
+    │   │   │   └── source.sql
+    │   │   ├── ee.eav
+    │   │   │   ├── dest.sql
+    │   │   │   └── source.sql
+    │   │   ├── sales_order
+    │   │   │   ├── dest.sql
+    │   │   │   └── source.sql
+    │   │   ├── stores
+    │   │   │   ├── dest.sql
+    │   │   │   └── source.sql
+    │   │   └── url_rewrite
+    │   │       ├── dest.sql
+    │   │       └── source.sql
+    │   └── testsuite
+    │       └── Migration
+    │           ├── App
+    │           │   └── SetupDeltaLogTest.php
+    │           ├── _files
+    │           │   ├── class-map.xml
+    │           │   ├── config-with-empty-map.xml
+    │           │   ├── config.xml
+    │           │   ├── deltalog-empty.xml
+    │           │   ├── deltalog.xml
+    │           │   ├── eav-attribute-groups.xml
+    │           │   ├── eav-document-groups.xml
+    │           │   ├── ee.config.xml
+    │           │   ├── ee.eav-document-groups.xml
+    │           │   ├── ee.map-eav.xml
+    │           │   ├── empty-map.xml
+    │           │   ├── list-log.xml.dist
+    │           │   ├── map-eav.xml
+    │           │   ├── map-sales.xml
+    │           │   ├── map.xml
+    │           │   └── settings.xml
+    │           ├── ResourceModel
+    │           │   └── SourceDestinationTest.php
+    │           └── Step
+    │               ├── EAV
+    │               │   ├── DataTest.php
+    │               │   ├── IntegrityTest.php
+    │               │   └── VolumeTest.php
+    │               ├── Map
+    │               │   ├── DataTest.php
+    │               │   ├── IntegrityTest.php
+    │               │   └── VolumeTest.php
+    │               ├── SalesOrder
+    │               │   ├── DataTest.php
+    │               │   ├── IntegrityTest.php
+    │               │   └── VolumeTest.php
+    │               ├── Settings
+    │               │   └── DataTest.php
+    │               ├── Stores
+    │               │   ├── DataTest.php
+    │               │   └── IntegrityTest.php
+    │               └── UrlRewrite
+    │                   └── Version11410to2000Test.php
+    ├── static
+    │   ├── framework
+    │   │   ├── autoload.php
+    │   │   └── bootstrap.php
+    │   ├── phpunit.xml.dist
+    │   └── testsuite
+    │       └── Migration
+    │           └── Php
+    │               ├── _files
+    │               │   ├── annotation
+    │               │   │   ├── blacklist
+    │               │   │   │   └── common.txt
+    │               │   │   └── whitelist
+    │               │   │       └── common.txt
+    │               │   ├── blacklist
+    │               │   │   └── common.txt
+    │               │   ├── phpcs
+    │               │   │   ├── blacklist
+    │               │   │   │   └── common.txt
+    │               │   │   ├── ruleset.xml
+    │               │   │   └── whitelist
+    │               │   │       └── common.txt
+    │               │   ├── phpmd
+    │               │   │   └── ruleset.xml
+    │               │   └── whitelist
+    │               │       └── common.txt
+    │               └── LiveCodeTest.php
+    └── unit
+        ├── framework
+        │   ├── autoload.php
+        │   ├── bootstrap.php
+        │   └── PdoTest.php
+        ├── phpunit.xml.dist
+        └── testsuite
+            └── Migration
+                ├── App
+                │   ├── Mode
+                │   │   └── StepListTest.php
+                │   ├── Progress
+                │   │   └── FileTest.php
+                │   ├── ProgressTest.php
+                │   ├── SetupDeltaLogTest.php
+                │   └── Step
+                │       └── FactoryTest.php
+                ├── ConfigTest.php
+                ├── _files
+                │   ├── class-map.xml
+                │   ├── invalid-config.xml
+                │   ├── map-invalid.xml
+                │   ├── map.xml
+                │   ├── settings-invalid.xml
+                │   ├── settings.xml
+                │   └── test-config.xml
+                ├── Handler
+                │   ├── AddPrefixTest.php
+                │   ├── ClassMapTest.php
+                │   ├── ConvertDateFormatTest.php
+                │   ├── ConvertIpTest.php
+                │   ├── ConvertTest.php
+                │   ├── EavAttribute
+                │   │   ├── ConvertConfigurableAttributeTest.php
+                │   │   └── ConvertModelTest.php
+                │   ├── EavAttributeGroup
+                │   │   └── SetGroupCodeTest.php
+                │   ├── GetDestinationValueTest.php
+                │   ├── ManagerTest.php
+                │   ├── PlaceholderTest.php
+                │   ├── Rule
+                │   │   ├── ConditionSqlTest.php
+                │   │   ├── CustomerSegmentConditionSqlTest.php
+                │   │   ├── NormalizationIdsTest.php
+                │   │   └── SerializedDataTest.php
+                │   ├── SalesOrderStatusState
+                │   │   └── SetVisibleOnFrontTest.php
+                │   ├── SerializeToJsonTest.php
+                │   ├── SetDefaultWebsiteIdTest.php
+                │   ├── SetHashTest.php
+                │   ├── Settings
+                │   │   ├── CategoryRootIdTest.php
+                │   │   ├── EncryptTest.php
+                │   │   ├── TemplateTest.php
+                │   │   └── UrlSuffixTest.php
+                │   ├── SetValueTest.php
+                │   └── TimezonesTest.php
+                ├── Logger
+                │   ├── ConsoleHandlerTest.php
+                │   ├── FileHandlerTest.php
+                │   ├── LoggerTest.php
+                │   └── ManagerTest.php
+                ├── Mode
+                │   ├── DataTest.php
+                │   └── SettingsTest.php
+                ├── Reader
+                │   ├── ClassMapTest.php
+                │   ├── MapTest.php
+                │   └── SettingsTest.php
+                ├── RecordTransformerTest.php
+                ├── ResourceModel
+                │   ├── AbstractCollectionTest.php
+                │   ├── AbstractResourceTest.php
+                │   ├── Adapter
+                │   │   └── MysqlTest.php
+                │   ├── AdapterFactoryTest.php
+                │   ├── DestinationTest.php
+                │   ├── Document
+                │   │   └── CollectionTest.php
+                │   ├── DocumentTest.php
+                │   ├── Record
+                │   │   └── CollectionTest.php
+                │   ├── RecordTest.php
+                │   ├── SourceTest.php
+                │   ├── Structure
+                │   │   └── CollectionTest.php
+                │   └── StructureTest.php
+                └── Step
+                    ├── CustomCustomerAttributes
+                    │   ├── DataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── CustomCustomerAttributesTest.php
+                    ├── Customer
+                    │   └── HelperTest.php
+                    ├── Eav
+                    │   ├── HelperTest.php
+                    │   ├── InitialDataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── Log
+                    │   ├── DataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── Map
+                    │   ├── DataTest.php
+                    │   ├── DeltaTest.php
+                    │   ├── HelperTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── Ratings
+                    │   ├── DataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── SalesOrder
+                    │   ├── DataTest.php
+                    │   ├── HelperTest.php
+                    │   ├── InitialDataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    ├── Settings
+                    │   ├── DataTest.php
+                    │   └── IntegrityTest.php
+                    ├── Stores
+                    │   ├── DataTest.php
+                    │   ├── IntegrityTest.php
+                    │   └── VolumeTest.php
+                    └── UrlRewrite
+                        ├── Version11410to2000Test.php
+                        └── Version191to2000Test.php
+
 </pre>
 
 <h3 id="entry-point">Entry Point</h3>
 
-Script that runs migration process is located at
-`magento-root/vendor/magento/data-migration-tool/bin/migrate`
+Script that runs migration process is located at magento-root/bin/magento
 
 
 <h3 id="configuration">Configuration</h3>
 
 The Schema for configuration file `config.xsd` is placed under `etc/directory`. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under `etc/`.
 
-Default configuration file can be replaced by custom one using CLI (see <a href="{{ site.gdeurl }}migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
+Default configuration file can be replaced by custom one using CLI (see <a href="{{page.baseurl}}migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
 
 Configuration file has the following structure:
 {% highlight xml %}
@@ -217,21 +838,21 @@ $this->progress->advance();
 $this->progress->finish();
 {% endhighlight %}
 
-##Stages
+## Stages
 
-###Integrity check
+### Integrity check
 
 Each step has to check that the structure of data source (Magento 1 by default) and the structure of data destination (Magento 2) are compatible. If not - an error will be shown with entities that are not compatible. In case when fields have different datatypes (e.g. the same field has decimal datatype in Magento 1 and integer in Magento 2), a warning message will be shown (except when it was covered in Map file).
 
-###Data Transfer
+### Data Transfer
 
-In case integrity check passed, transferring data is running. If some error appears then rollback will run to revert to previous state of Magneto 2. If a step class implements RollbackInterface then "rollback" method will be executed in case of error.
+In case integrity check passed, transferring data is running. If some error appears then rollback will run to revert to previous state of Magento 2. If a step class implements RollbackInterface then "rollback" method will be executed in case of error.
 
-###Volume check
+### Volume check
 
 After data has been migrated Volume Check provides additional check that all data was transferred correctly.
 
-###Delta delivery
+### Delta delivery
 
 Delta functionality is responsible for delivering the rest of data that was added after main migration.
 
@@ -245,7 +866,7 @@ The tool should be run in three different modes in particular order:
 
 Each mode has its own list of steps to be executed. See config.xml
 
-###Settings migration mode
+### Settings migration mode
 
 Settings migration mode of this tool is used to transfer following entities:
 
@@ -279,11 +900,11 @@ Under node <code>&lt;key&gt;</code> there are rules that work with 'path' column
 
 Under node <code>&lt;value&gt;</code> there are rules that work with 'value' column of core_config_data table. These rules aim to transform value of settings by handlers (classes that implement Migration\Handler\HandlerInterface) and adapt it for Magento 2
 
-###Data migration mode
+### Data migration mode
 
 In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If integrity check passed the Data Migration Tool installs deltalog tables (with prefix m2_cl_*) and corresponding triggers to Magento 1 database. And runs data migration stage of steps. When migration is completed without errors the volume check checks data consistency. It can show a warning message if you migrate live store. Do not worry, delta migration will take care of this incremental data. Next the most valuable migration steps are described. It is Map Step, URL Rewrite Step, EAV Step.
 
-####Map Step
+#### Map Step
 
 Map step is responsible for transferring most of data from Magento 1 to Magento 2. This step reads instructions from map.xml file (located in etc dir). The file describes differences between data structures of source (Magento 1) and destination (Magento 2). In case Magento 1 contains tables or fields that belong to some extension that does not exist in Magento 2, then these entities can be placed here to ignore them by Map Step. Otherwise it will show an error message. 
 
@@ -391,14 +1012,14 @@ Options:
 </tbody>
 </table>
 
-####Wildcards
+#### Wildcards
 To ignore documents with similar parts (e.g. document_name_1, document_name_2 e.t.c), you can use wildcard functionality. Just put * symbol instead of repeating part (e.g. document_name_*) and this mask will cover all source or destination documents that meet this mask.
 
-####URL Rewrite Step
+#### URL Rewrite Step
 
 This step is quite complex because there are many different algorithms developed in Magento 1 which are not compatible with Magento 2. For different versions of Magento 1 there can be different algorithms. Thus under Step/UrlRewrite folder there are classes that were developed for some of particular versions of Magento and Migration\Step\UrlRewrite\Version191to2000 is one of them. It can transfer URL Rewrites data from Magento 1.9.1 to Magento 2.
 
-####EAV Step
+#### EAV Step
 
 This step transfers all attributes (e.g. product, customer, RMA) from Magento 1 to Magento 2. It uses map-eav.xml file that contains rules similar to the ones in map.xml file for specific cases of processing data.
 
@@ -413,7 +1034,7 @@ Some of the tables that are processed in the step:
 * eav_entity_type
 * ...
 
-###Delta migration mode
+### Delta migration mode
 
 After main migration some data could have been added to DB of Magento 1 e.g. by customers on store-front. To track this data, database triggers are setup for tables in the beginning of main migration. If some extension has its own tables that need to be tracked for changing its data - then a developer should:
 
@@ -423,7 +1044,7 @@ After main migration some data could have been added to DB of Magento 1 e.g. by 
 
 <h2 id="data-sources">Data Sources</h2>
 
-To reach to the data sources of Magento 1 and Magento 2 and operate with its data (select, update, insert, delete) there are many classes in Resource folder. Migration\Resource\Source and Migration\Resource\Destination are main classes. All migration steps use it to operate with data. This data is contained in classes like Migration\Resource\Document, Migration\Resource\Record, Migration\Resource\Structure etc. 
+To reach to the data sources of Magento 1 and Magento 2 and operate with its data (select, update, insert, delete) there are many classes in Resource folder. Migration\ResourceModel\Source and Migration\ResourceModel\Destination are main classes. All migration steps use it to operate with data. This data is contained in classes like Migration\ResourceModel\Document, Migration\ResourceModel\Record, Migration\ResourceModel\Structure etc. 
 
 Here is a class diagram of these classes:
 
@@ -482,19 +1103,19 @@ As for now manipulation with logger, adding handler(s), processor(s) to it and p
 
 <h2 id="extension-points">Extension Points</h2>
 
-####Custom Resource Type of Source
+#### Custom Resource Type of Source
 
 By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to CSV as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.
 
-####Map Step configuration
+#### Map Step configuration
 
 In most cases modification of map will be enough.
 
-####Custom Handler
+#### Custom Handler
 
 Custom handlers can be used for cases where data in a field should be transformed with more complex algorithm. There are a lot of custom handlers out of the box in src/Migration/Handler/ folder. Custom handlers are used in Settings step and Map step.
 
-####Custom Steps
+#### Custom Steps
 
 Data Migration Tool provides possibility to add custom steps to migration procedure (see Step internals).
 

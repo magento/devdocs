@@ -5,6 +5,7 @@ subgroup: Architectural Layers
 title: Persistence layer
 menu_title: Persistence layer
 menu_order: 4
+version: 2.0
 github_link: architecture/archi_perspectives/persist_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/persist_layer.html
 ---
@@ -25,9 +26,9 @@ If you expect to return multiple items from a database query, then you would imp
 A simple resource model defines and interacts with a single table. However, some objects have a vast number of attributes, or they could have a set related objects that have varying numbers of attributes. In these cases, the objects are constructed using Entity-Attribute-Value (EAV) models. As a result, any model that uses an EAV resource has its attributes spread out over a number of MySQL tables. The `Customer` and `Catalog` resource models use EAV attributes.  
 
 <h3 id="related">Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
 
 
  

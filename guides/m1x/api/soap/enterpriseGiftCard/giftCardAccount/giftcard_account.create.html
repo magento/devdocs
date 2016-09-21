@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - giftcard_account.create';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Account Create
+---
 
-				    <h3><a name="giftcard_account.create-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
+<h3><a name="giftcard_account.create-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
 
 <h4><a name="giftcard_account.create-Resource%3Agiftcardaccount"></a>Resource: giftcard_account</h4>
 
@@ -19,134 +19,129 @@
 <p>Allows you to create a new gift card account.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> giftcardAccountData </td>
-<td class='confluenceTd'> Array of giftcardAccountCreateGiftcardAccountData </td>
+<td> array </td>
+<td> giftcardAccountData </td>
+<td> Array of giftcardAccountCreateGiftcardAccountData </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> notificationData </td>
-<td class='confluenceTd'> Array of giftcardAccountCreateNotificationData (optional) </td>
+<td> array </td>
+<td> notificationData </td>
+<td> Array of giftcardAccountCreateNotificationData (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> ID of the created gift card account </td>
+<td> string </td>
+<td> ID of the created gift card account </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>giftcardAccountCreateGiftcardAccountData</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> status <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift card status: available, used, redeemed, expired </td>
+<td> string </td>
+<td> status <br class="atl-forced-newline" /> </td>
+<td> Gift card status: available, used, redeemed, expired </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> date_expires <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift card expiration date in the YYYY-MM-DD format <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> date_expires <br class="atl-forced-newline" /> </td>
+<td> Gift card expiration date in the YYYY-MM-DD format <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> website_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift card website ID <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> website_id <br class="atl-forced-newline" /> </td>
+<td> Gift card website ID <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> balance <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Initial gift card balance <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> balance <br class="atl-forced-newline" /> </td>
+<td> Initial gift card balance <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> state <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> State: active or not active </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> state <br class="atl-forced-newline" /> </td>
+<td> State: active or not active </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_redeemable <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the gift card is redeemable </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> is_redeemable <br class="atl-forced-newline" /> </td>
+<td> Defines whether the gift card is redeemable </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>giftcardAccountCreateNotificationData</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> recipient_name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Recipient name </td>
+<td> string </td>
+<td> recipient_name <br class="atl-forced-newline" /> </td>
+<td> Recipient name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> recipient_email <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Recipient email address </td>
+<td> string </td>
+<td> recipient_email <br class="atl-forced-newline" /> </td>
+<td> Recipient email address </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> recipient_store <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Recipient store </td>
+<td> string </td>
+<td> recipient_store <br class="atl-forced-newline" /> </td>
+<td> Recipient store </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> Provided gift card account data is invalid. </td>
+<td> 105 </td>
+<td> Provided gift card account data is invalid. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Provided email notification data is invalid </td>
+<td> 104 </td>
+<td> Provided email notification data is invalid </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="giftcard_account.create-Examples"></a>Examples</h4>

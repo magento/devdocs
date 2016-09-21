@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - sales_order_shipment.info';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Shipment Info
+---
 
-				    <h2><a name="sales_order_shipment.info-Module%3AMageSales"></a>Module: Mage_Sales</h2>
+<h2><a name="sales_order_shipment.info-Module%3AMageSales"></a>Module: Mage_Sales</h2>
 
 
 <h4><a name="sales_order_shipment.info-Resource%3Asalesordershipment"></a>Resource: sales_order_shipment</h4>
@@ -32,255 +32,249 @@
 
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> shipmentIncrementId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order shipment increment ID </td>
+<td> string </td>
+<td> shipmentIncrementId <br class="atl-forced-newline" /> </td>
+<td> Order shipment increment ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of salesOrderShipmentEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of salesOrderShipmentEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>salesOrderShipmentEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> increment_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipment increment ID </td>
+<td> string </td>
+<td> increment_id <br class="atl-forced-newline" /> </td>
+<td> Shipment increment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> store_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> store_id <br class="atl-forced-newline" /> </td>
+<td> Store ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of shipment creation </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> created_at <br class="atl-forced-newline" /> </td>
+<td> Date of shipment creation </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> updated_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of shipment updating </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> updated_at <br class="atl-forced-newline" /> </td>
+<td> Date of shipment updating </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> shipping_address_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipping address ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> shipping_address_id <br class="atl-forced-newline" /> </td>
+<td> Shipping address ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> order_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> order_id <br class="atl-forced-newline" /> </td>
+<td> Order ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> total_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Total quantity of items to ship </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> total_qty <br class="atl-forced-newline" /> </td>
+<td> Total quantity of items to ship </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> shipment_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipment ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> shipment_id <br class="atl-forced-newline" /> </td>
+<td> Shipment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> items <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of salesOrderShipmentItemEntity </td>
+<td> array </td>
+<td> items <br class="atl-forced-newline" /> </td>
+<td> Array of salesOrderShipmentItemEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> tracks <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of salesOrderShipmentTrackEntity </td>
+<td> array </td>
+<td> tracks <br class="atl-forced-newline" /> </td>
+<td> Array of salesOrderShipmentTrackEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> comments <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of salesOrderShipmentCommentEntity </td>
+<td> array </td>
+<td> comments <br class="atl-forced-newline" /> </td>
+<td> Array of salesOrderShipmentCommentEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>salesOrderShipmentItemEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Parent ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> parent_id <br class="atl-forced-newline" /> </td>
+<td> Parent ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipment item SKU </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sku <br class="atl-forced-newline" /> </td>
+<td> Shipment item SKU </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipment item name </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> name <br class="atl-forced-newline" /> </td>
+<td> Shipment item name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> order_item_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order item ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> order_item_id <br class="atl-forced-newline" /> </td>
+<td> Order item ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> product_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> product_id <br class="atl-forced-newline" /> </td>
+<td> Product ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> weight <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Weight </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> weight <br class="atl-forced-newline" /> </td>
+<td> Weight </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Price </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Price </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Quantity of items </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> qty <br class="atl-forced-newline" /> </td>
+<td> Quantity of items </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> item_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Item ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> item_id <br class="atl-forced-newline" /> </td>
+<td> Item ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>salesOrderShipmentTrackEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Parent ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> parent_id <br class="atl-forced-newline" /> </td>
+<td> Parent ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of tracking number creation </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> created_at <br class="atl-forced-newline" /> </td>
+<td> Date of tracking number creation </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> updated_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of tracking number updating </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> updated_at <br class="atl-forced-newline" /> </td>
+<td> Date of tracking number updating </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> carrier_code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Carrier code </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> carrier_code <br class="atl-forced-newline" /> </td>
+<td> Carrier code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Track title </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> title <br class="atl-forced-newline" /> </td>
+<td> Track title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> number <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Tracking number </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> number <br class="atl-forced-newline" /> </td>
+<td> Tracking number </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> order_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> order_id <br class="atl-forced-newline" /> </td>
+<td> Order ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> track_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Track ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> track_id <br class="atl-forced-newline" /> </td>
+<td> Track ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>salesOrderShipmentCommentEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Parent ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> parent_id <br class="atl-forced-newline" /> </td>
+<td> Parent ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of comment creation </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> created_at <br class="atl-forced-newline" /> </td>
+<td> Date of comment creation </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> comment <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipment comment text </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> comment <br class="atl-forced-newline" /> </td>
+<td> Shipment comment text </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_customer_notified <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the customer is notified </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> is_customer_notified <br class="atl-forced-newline" /> </td>
+<td> Defines whether the customer is notified </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> comment_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Comment ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> comment_id <br class="atl-forced-newline" /> </td>
+<td> Comment ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

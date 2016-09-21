@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_attribute_set.remove';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Attribute Set Remove
+---
 
-				    <h3><a name="product_attribute_set.remove-Module%3AProductAttributeSetAPI"></a>Module: Product Attribute Set API</h3>
+<h3><a name="product_attribute_set.remove-Module%3AProductAttributeSetAPI"></a>Module: Product Attribute Set API</h3>
 
 <h4><a name="product_attribute_set.remove-Resource%3Aproductattributeset"></a>Resource: product_attribute_set</h4>
 
@@ -19,71 +19,68 @@
 <p>Allows you to remove an existing attribute set.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> attributeSetId </td>
-<td class='confluenceTd'> Attribute set ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> attributeSetId </td>
+<td> Attribute set ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> forceProductsRemove </td>
-<td class='confluenceTd'> Force product remove flag (optional) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> forceProductsRemove </td>
+<td> Force product remove flag (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean\int </td>
-<td class='confluenceTd'> isRemoved </td>
-<td class='confluenceTd'> True (1) if the attribute set is removed </td>
+<td> boolean\int </td>
+<td> isRemoved </td>
+<td> True (1) if the attribute set is removed </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 103 </td>
-<td class='confluenceTd'> Error while removing attribute set. Details in error message. </td>
+<td> 103 </td>
+<td> Error while removing attribute set. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Attribute set with requested id does not exist. </td>
+<td> 104 </td>
+<td> Attribute set with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> Unable to remove attribute set as it has related goods. Use forceProductsRemove parameter to remove attribute set with all goods. </td>
+<td> 105 </td>
+<td> Unable to remove attribute set as it has related goods. Use forceProductsRemove parameter to remove attribute set with all goods. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

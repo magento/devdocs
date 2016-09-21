@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - giftmessage.setForQuoteProduct';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Set For Quote Product
+---
 
-				    <h3><a name="giftmessage.setForQuoteProduct-Module%3AGiftMessageAPI"></a>Module: GiftMessage API</h3>
+<h3><a name="giftmessage.setForQuoteProduct-Module%3AGiftMessageAPI"></a>Module: GiftMessage API</h3>
 
 <h4><a name="giftmessage.setForQuoteProduct-Resource%3Agiftmessage"></a>Resource: giftmessage</h4>
 
@@ -18,175 +18,169 @@
 <p>Allows you to set a gift message for a product in the shopping cart (quote).</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> quoteId </td>
-<td class='confluenceTd'> Shopping cart ID (quote ID) </td>
+<td> string </td>
+<td> quoteId </td>
+<td> Shopping cart ID (quote ID) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> productsAndMessages <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of giftMessageAssociativeProductsEntity </td>
+<td> array </td>
+<td> productsAndMessages <br class="atl-forced-newline" /> </td>
+<td> Array of giftMessageAssociativeProductsEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> store </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of giftMessageResponse </td>
+<td> array </td>
+<td> result </td>
+<td> Array of giftMessageResponse </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>giftMessageAssociativeProductsEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> product </td>
-<td class='confluenceTd'> Array of shoppingCartProductEntity </td>
+<td> array </td>
+<td> product </td>
+<td> Array of shoppingCartProductEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> message <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of giftMessageEntity </td>
+<td> array </td>
+<td> message <br class="atl-forced-newline" /> </td>
+<td> Array of giftMessageEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>giftMessageResponse</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> entityId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Entity ID </td>
+<td> string </td>
+<td> entityId <br class="atl-forced-newline" /> </td>
+<td> Entity ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> result <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Result </td>
+<td> boolean </td>
+<td> result <br class="atl-forced-newline" /> </td>
+<td> Result </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> error <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Error </td>
+<td> string </td>
+<td> error <br class="atl-forced-newline" /> </td>
+<td> Error </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>shoppingCartProductEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> product_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> ID of the product <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> product_id <br class="atl-forced-newline" /> </td>
+<td> ID of the product <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> SKU of the product <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> sku <br class="atl-forced-newline" /> </td>
+<td> SKU of the product <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> double </td>
-<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Number of products <br class="atl-forced-newline" /> </td>
+<td> double </td>
+<td> qty <br class="atl-forced-newline" /> </td>
+<td> Number of products <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> associativeArray <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> options <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> An array of options </td>
+<td> associativeArray <br class="atl-forced-newline" /> </td>
+<td> options <br class="atl-forced-newline" /> </td>
+<td> An array of options </td>
 </tr>
 <tr>
-<td class='confluenceTd'> associativeArray <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> bundle_option <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> An array of bundle item options <br class="atl-forced-newline" /> </td>
+<td> associativeArray <br class="atl-forced-newline" /> </td>
+<td> bundle_option <br class="atl-forced-newline" /> </td>
+<td> An array of bundle item options <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> associativeArray <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> bundle_option_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> An array of bundle items quantity <br class="atl-forced-newline" /> </td>
+<td> associativeArray <br class="atl-forced-newline" /> </td>
+<td> bundle_option_qty <br class="atl-forced-newline" /> </td>
+<td> An array of bundle items quantity <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString </td>
-<td class='confluenceTd'> links <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> An array of links <br class="atl-forced-newline" /> </td>
+<td> ArrayOfString </td>
+<td> links <br class="atl-forced-newline" /> </td>
+<td> An array of links <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>giftMessageEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> from <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift message sender </td>
+<td> string </td>
+<td> from <br class="atl-forced-newline" /> </td>
+<td> Gift message sender </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> to <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift message recipient </td>
+<td> string </td>
+<td> to <br class="atl-forced-newline" /> </td>
+<td> Gift message recipient </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> message <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift message </td>
+<td> string </td>
+<td> message <br class="atl-forced-newline" /> </td>
+<td> Gift message </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Faults:</b><br/>
 <em>No Faults.</em></p>

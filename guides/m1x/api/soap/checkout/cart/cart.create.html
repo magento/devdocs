@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - cart.create';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Cart Create
+---
 
-				    <h2><a name="cart.create-Module%3AMageCheckout"></a>Module: Mage_Checkout</h2>
+<h2><a name="cart.create-Module%3AMageCheckout"></a>Module: Mage_Checkout</h2>
 
 
 <h4><a name="cart.create-Resource%3Acart"></a>Resource: cart</h4>
@@ -21,40 +21,38 @@
 
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> storeId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> storeId <br class="atl-forced-newline" /> </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> ID of the created empty shopping cart </td>
+<td> int </td>
+<td> ID of the created empty shopping cart </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b><br/>

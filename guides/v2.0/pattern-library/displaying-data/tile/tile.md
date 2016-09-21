@@ -2,10 +2,11 @@
 layout: default
 group: pattern
 subgroup: Displaying and Dealing with Data
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Tile
 menu_order: 1
 menu_node:
+version: 2.0
 github_link: pattern-library/displaying-data/tile/tile.md
 ---
 
@@ -28,7 +29,7 @@ github_link: pattern-library/displaying-data/tile/tile.md
 <h3 id="overview">Overview</h3>
 This article contains examples of the Tile pattern used in the Admin with functions for single selection, multi selection, drag and drop, and editing inline position. For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
 
-<h2>Functional Behavior</h2>
+<h4>Functional Behavior</h4>
 <ul>
 	<li>Drag and Drop</li>
 	<li>Remove</li>
@@ -111,4 +112,4 @@ For specific details concerning styling including fonts, colors and effects and 
 <br />
 
 <h3 id="assets">Assets</h3>
-Download <a href="src/tile-pattern-styles.zip">ZIP</a> of PhotoShop source files.
+Download <a href="src/tile-pattern-styles.psd">PhotoShop source file</a> .

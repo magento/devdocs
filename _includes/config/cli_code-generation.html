@@ -1,12 +1,4 @@
-<p>This section discusses the basics of code compilation.</p>
-<p>Code compilation consists of all of the following in no particular order:</p>
-<ul><li>Application code generation (factories, proxies, and so on)</li>
-<li>Area configuration aggregation (that is, optimized dependency injection configurations per area)</li>
-<li>Interceptor generation (that is, optimized code generation of interceptors)</li>
-<li>Interception cache generation</li>
-<li>Repositories code generation (that is, generated code for APIs)</li>
-<li>Service data attributes generation (that is, generated extension classes for data objects)</li></ul>
-<p>You can find code compilation in classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p> 
+
 
 <h3>Why generate code?</h3>
 <p>In brief, you can generate code to create non-existent classes. As an example, look at the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Model/Resource/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:</p>
@@ -24,12 +16,12 @@
 <p>Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug through the code.</p>
 
 <h4>When is code generated?</h4>
-<p>Provided the Magento application is <em>not</em> set for <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is generated when the Magento application cannot find a class when executing code.</p>
+<p>Provided the Magento application is <em>not</em> set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is generated when the Magento application cannot find a class when executing code.</p>
 <p>You can also use the compiler discussed in this topic to generate code at any time.</p>
 
 <h4>Proxies and factories</h4>
-<ul><li>A <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html#dep-inj-mod-type-fact">Factory</a> class creates instances of a type; for example, a generated <code>\Magento\Customer\Model\AddressFactory</code> creates new instances of <code>\Magento\Customer\Model\Address</code>. The code in <code>AddressFactory</code> has some specific code for the <code>Address</code> type.</li>
-<li>In more complex code generation, you can designate a <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html#dep-inj-preview-cons">Proxy</a> to be generated for a type.<br>
+<ul><li>A <a href="{{page.baseurl}}extension-dev-guide/depend-inj.html#dep-inj-mod-type-fact">Factory</a> class creates instances of a type; for example, a generated <code>\Magento\Customer\Model\AddressFactory</code> creates new instances of <code>\Magento\Customer\Model\Address</code>. The code in <code>AddressFactory</code> has some specific code for the <code>Address</code> type.</li>
+<li>In more complex code generation, you can designate a <a href="{{page.baseurl}}extension-dev-guide/depend-inj.html#dep-inj-preview-cons">Proxy</a> to be generated for a type.<br>
  Generally, a proxy must have an implementation of all the declared public methods of the original class.</br>
 The method implementation could be delegating to another object in memory, or the method could make a network call to another object on a different machine. All the Proxy methods in a class usually do the same thing (for example, they all delegate to another object or they all make a network call) except they need a slight difference to call a specific method.<br>
 As a practical example, you can see the <a href="{{ site.mage2000url }}app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated StoreManager Proxy class.</li></ul>

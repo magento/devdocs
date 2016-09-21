@@ -1,7 +1,0 @@
-<p>This command generates the following:</p>
-<ul><li>Non-existent classes such as factories declared in the code under <code>app/code</code>.</li>
-<li>Interceptors for classes that have plug-ins declared in declared in <code>di.xml</code>.</li>
-<li>The <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">dependency injection</a> configuration for the object manager.</li></ul>
-<p>Generated code and the dependency injection configuration is written to the <code>&lt;your Magento install dir>/var/generation</code> and <code>&lt;your Magento install dir>/var/di</code> directories, respectively.</p>
-<p>If <code>&lt;your Magento install dir>/var/di/definitions.php</code> exists, it is used by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Definition/Compiled.php" target="_blank">Magento\Framework\ObjectManager\Definition\Compiled</a>; otherwise, the much slower <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php" target="_blank">Magento\Framework\ObjectManager\Definition\Runtime</a> is used. (This class uses the reflection-based the definition builder.) </p>
-<p>Runtime definition compilation is fine in a development environment but you should use the compiler in a production environment.</p>

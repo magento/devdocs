@@ -1,8 +1,8 @@
-<?php
-    $title = 'Magento API - Create Your Own API';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
-<div class="navigation-block">
+---
+layout: m1x_soap
+title: Create Your Own API
+---
+
 <ul>
     <li><a href='#CreateYourOwnAPI-CreatingaCustomAPIorExtendingtheCoreAPI'>Creating a Custom API or Extending the Core API</a>
         <ul>
@@ -220,10 +220,10 @@
 
 <h3><a name="CreateYourOwnAPI-5.CreatingPHPCode"></a>5. Creating PHP Code</h3>
 
-<p> Next, write some PHP code to access the resources. Start by creating a class called Mage_Customer_Model_Api that extends Mage_Api_Model_Resource_Abstract. Save it into a file called <b>api.php</b>. </p>
+<p> Next, write some PHP code to access the resources. Start by creating a class called Mage_Customer_Model_Customer_Api that extends Mage_Api_Model_Resource_Abstract. Save it into a file called <b>api.php</b>. </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: java; gutter: false">class Mage_Customer_Model_Api extends Mage_Api_Model_Resource_Abstract
+		<pre class="theme: Default; brush: java; gutter: false">class Mage_Customer_Model_Customer_Api extends Mage_Api_Model_Resource_Abstract
 {
 
     public function create($customerData)

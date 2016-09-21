@@ -1,0 +1,1 @@
+../../../v2.0/cloud/trouble/trouble_ce-creds.md

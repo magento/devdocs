@@ -1,11 +1,10 @@
 ---
-layout: m1x
+layout: m1x_rest
 title: Inventory
 ---
-<p><a href="{{ site.m1xgithuburl }}api/rest/Resources/inventory.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
-<div class="toc"> <h4 class="toc">Table of Contents</h4>
-<ul>
+
+<ul class="introduction-menu">
     <li><a href='#RESTAPI-Resource-StockItems-RESTAPI-StockItems'>REST API: Stock Items</a>
     <ul>
         <li><a href='#RESTAPI-Resource-StockItems-URI--stockitems'>URI: /stockitems</a>
@@ -27,7 +26,7 @@ title: Inventory
         </li>
     </ul>
     </li>
-</ul></div>
+</ul>
 
 <h3><a name="RESTAPI-Resource-StockItems-RESTAPI-StockItems"></a>REST API: Stock Items</h3>
 
@@ -130,166 +129,165 @@ title: Inventory
 <p><b>Notes</b>: The Content-Type: text/xml parameter must be added to the request header.</p>
 
 <p><b>Parameters</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example Value </th>
+<th> Name </th>
+<th> Description </th>
+<th> Type </th>
+<th> Example Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> item_id </td>
-<td class='confluenceTd'> Item ID </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> item_id </td>
+<td> Item ID </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> product_id </td>
-<td class='confluenceTd'> Product ID </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> product_id </td>
+<td> Product ID </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> stock_id </td>
-<td class='confluenceTd'> Stock ID </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> stock_id </td>
+<td> Stock ID </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> qty </td>
-<td class='confluenceTd'> Quantity of stock items for the current product </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 20 </td>
+<td> qty </td>
+<td> Quantity of stock items for the current product </td>
+<td> string </td>
+<td> 20 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> min_qty </td>
-<td class='confluenceTd'> Quantity for stock items to become out of stock </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 0 </td>
+<td> min_qty </td>
+<td> Quantity for stock items to become out of stock </td>
+<td> string </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_min_qty </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Qty for Item's Status to Become Out of Stock option </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_min_qty </td>
+<td> Choose whether the Config settings will be applied for the Qty for Item's Status to Become Out of Stock option </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> is_qty_decimal </td>
-<td class='confluenceTd'> Choose whether the product can be sold using decimals (e.g., you can buy 2.5 product) </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> is_qty_decimal </td>
+<td> Choose whether the product can be sold using decimals (e.g., you can buy 2.5 product) </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> backorders </td>
-<td class='confluenceTd'> The customer can place the order for products that are out of stock at the moment (0 - No Backorders, 1 - Allow Qty Below 0, and 2 - Allow Qty Below 0 and Notify Customer) </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> backorders </td>
+<td> The customer can place the order for products that are out of stock at the moment (0 - No Backorders, 1 - Allow Qty Below 0, and 2 - Allow Qty Below 0 and Notify Customer) </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_backorders </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Backorders option </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_backorders </td>
+<td> Choose whether the Config settings will be applied for the Backorders option </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> min_sale_qty </td>
-<td class='confluenceTd'> Minimum number of items in the shopping cart to be sold </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 10 </td>
+<td> min_sale_qty </td>
+<td> Minimum number of items in the shopping cart to be sold </td>
+<td> string </td>
+<td> 10 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_min_sale_qty </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Minimum Qty Allowed in Shopping Cart option </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> use_config_min_sale_qty </td>
+<td> Choose whether the Config settings will be applied for the Minimum Qty Allowed in Shopping Cart option </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> max_sale_qty </td>
-<td class='confluenceTd'> Maximum number of items in the shopping cart to be sold </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 100 </td>
+<td> max_sale_qty </td>
+<td> Maximum number of items in the shopping cart to be sold </td>
+<td> string </td>
+<td> 100 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_max_sale_qty </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Maximum Qty Allowed in Shopping Cart option </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> use_config_max_sale_qty </td>
+<td> Choose whether the Config settings will be applied for the Maximum Qty Allowed in Shopping Cart option </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> is_in_stock </td>
-<td class='confluenceTd'> Defines whether the product is available for selling (0 - Out of Stock, 1 - In Stock) </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> is_in_stock </td>
+<td> Defines whether the product is available for selling (0 - Out of Stock, 1 - In Stock) </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> low_stock_date </td>
-<td class='confluenceTd'> Date when the number of stock items became lower than the number defined in the Notify for Quantity Below option </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 2012-02-24 12:37:51 </td>
+<td> low_stock_date </td>
+<td> Date when the number of stock items became lower than the number defined in the Notify for Quantity Below option </td>
+<td> string </td>
+<td> 2012-02-24 12:37:51 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> notify_stock_qty </td>
-<td class='confluenceTd'> The number of inventory items below which the customer will be notified via the RSS feed </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 10 </td>
+<td> notify_stock_qty </td>
+<td> The number of inventory items below which the customer will be notified via the RSS feed </td>
+<td> string </td>
+<td> 10 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_notify_stock_qty </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Notify for Quantity Below option </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> use_config_notify_stock_qty </td>
+<td> Choose whether the Config settings will be applied for the Notify for Quantity Below option </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> manage_stock </td>
-<td class='confluenceTd'> Choose whether to view and specify the product quantity and availability and whether the product is in stock management( 0 - No, 1 - Yes) </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> manage_stock </td>
+<td> Choose whether to view and specify the product quantity and availability and whether the product is in stock management( 0 - No, 1 - Yes) </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_manage_stock </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Manage Stock option </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_manage_stock </td>
+<td> Choose whether the Config settings will be applied for the Manage Stock option </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> stock_status_changed_auto </td>
-<td class='confluenceTd'> Defines whether products can be automatically returned to stock when the refund for an order is created </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> stock_status_changed_auto </td>
+<td> Defines whether products can be automatically returned to stock when the refund for an order is created </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_qty_increments </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Enable Qty Increments option </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_qty_increments </td>
+<td> Choose whether the Config settings will be applied for the Enable Qty Increments option </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> qty_increments </td>
-<td class='confluenceTd'> The product quantity increment value </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 5 </td>
+<td> qty_increments </td>
+<td> The product quantity increment value </td>
+<td> string </td>
+<td> 5 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_enable_qty_inc </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Qty Increments option </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_enable_qty_inc </td>
+<td> Choose whether the Config settings will be applied for the Qty Increments option </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> enable_qty_increments </td>
-<td class='confluenceTd'> Defines whether the customer can add products only in increments to the shopping cart </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> enable_qty_increments </td>
+<td> Defines whether the customer can add products only in increments to the shopping cart </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> is_decimal_divided </td>
-<td class='confluenceTd'> Defines whether the stock items can be divided into multiple boxes for shipping. </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> is_decimal_divided </td>
+<td> Defines whether the stock items can be divided into multiple boxes for shipping. </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Example: XML</b></p>
@@ -490,45 +488,44 @@ title: Inventory
 
 
 <p><b>Possible HTTP Status Codes:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Error Code </th>
-<th class='confluenceTh'> Error Message </th>
-<th class='confluenceTh'> Error Description </th>
+<th> Error Code </th>
+<th> Error Message </th>
+<th> Error Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 200 </td>
-<td class='confluenceTd'> Resource updated successful. </td>
-<td class='confluenceTd'> The required resource was successfully updated. </td>
+<td> 200 </td>
+<td> Resource updated successful. </td>
+<td> The required resource was successfully updated. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 404 </td>
-<td class='confluenceTd'> Resource not found. </td>
-<td class='confluenceTd'> The required resource is not found or does not exist. </td>
+<td> 404 </td>
+<td> Resource not found. </td>
+<td> The required resource is not found or does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Empty value for &lt;name of the parameter&gt; in request. </td>
-<td class='confluenceTd'> Value is not defined for the specified parameter in the request body. </td>
+<td> 400 </td>
+<td> Empty value for &lt;name of the parameter&gt; in request. </td>
+<td> Value is not defined for the specified parameter in the request body. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Invalid value for "item_id" in request. </td>
-<td class='confluenceTd'> The specified value for "item_id" is not valid. </td>
+<td> 400 </td>
+<td> Invalid value for "item_id" in request. </td>
+<td> The specified value for "item_id" is not valid. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Missing &lt;name of the parameter&gt; in request. </td>
-<td class='confluenceTd'> The specified parameter is missing in the request body. </td>
+<td> 400 </td>
+<td> Missing &lt;name of the parameter&gt; in request. </td>
+<td> The specified parameter is missing in the request body. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 500 </td>
-<td class='confluenceTd'> Resource internal error. </td>
-<td class='confluenceTd'> Resource internal error. </td>
+<td> 500 </td>
+<td> Resource internal error. </td>
+<td> Resource internal error. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <?php include(__ROOT__ . 'footer.php'); ?>		    

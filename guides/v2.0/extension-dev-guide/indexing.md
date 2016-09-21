@@ -1,18 +1,24 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development 
-title: PHP developer guide
+subgroup: 99_Module Development 
+title: Indexing
 menu_title: Indexing
-menu_order: 8
+menu_order: 12
+version: 2.0
 github_link: extension-dev-guide/indexing.md
 redirect_from: 
   - /guides/v1.0/architecture/index-cache/indexing.html
   - /guides/v2.0/architecture/index-cache/indexing.html
 ---
 
-<h2 id="m2devgde-indexing-intro">Introduction to indexing</h2>
+#### Contents
+*	<a href="#m2devgde-indexing-intro">Introduction to indexing</a>
+*	<a href="#m2devgde-indexing-implementation">How Magento implements indexing</a>
+*	<a href="#m2devgde-indexing-outofbox">Magento indexers</a>
+*	<a href="#m2devgde-indexing-custom">Adding a custom indexer</a>
 
+<h2 id="m2devgde-indexing-intro">Introduction to indexing</h2>
 _Indexing_ is how Magento transforms data such as products, categories, and so on, to improve the performance of your storefront. As data changes, the transformed data must be updated&mdash;or reindexed. Magento has a very sophisticated architecture that stores lots of merchant data (including catalog data, prices, users, stores, and so on) in many database tables. To optimize storefront performance, Magento accumulates data into special tables using indexers.
 
 For example, suppose you change the price of an item from $4.99 to $3.99. Magento must _reindex_ the price change to display it on your storefront.
@@ -40,7 +46,6 @@ Magento contains several indexers out of the box, but you might want to add your
 This topic provides a high level description of how indexing is implemented from a developer's point of view, and practical advice of how to add your own indexer.
 
 <h2 id="m2devgde-indexing-implementation">How Magento implements indexing</h2>
-
 The following components are involved in the indexing process:
 
 <table>
@@ -77,13 +82,13 @@ Each index can perform the following types of reindex operations:
 
 	Full reindexing can be caused by a variety of things, including creating a new web store or new customer group.
 
-	You can optionally fully reindex at any time using the <a href="#m2devgde-indexing-commandline">command line</a>.
+	You can optionally fully reindex at any time using the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">command line</a>.
 
 *	Partial reindex, which means rebuilding the database tables only for the things that changed (for example, changing a single product attribute or price).
 
 The type of reindex performed in each particular case depends on the type of changes made in the dictionary or in the system. This dependency is specific for <a href="#m2devgde-indexing-outofbox">each indexer</a>.
 
-The following figure shows the logic for full or partial reindexing.
+The following figure shows the logic for partial reindexing.
 
 <p><img src="{{ site.baseurl }}common/images/index_indexers_flow.png" width="400px" alt="The image displays the partial reindex workflow"></p>
 
@@ -98,7 +103,6 @@ Depending on whether an index data is up to date, an indexer status value is one
 The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the Admin panel under **System > New Index Management** or manually using the <a href="#m2devgde-indexing-commandline">command line</a>. -->
 
 <h3 id="m2devgde-indexing-modes">Indexing modes</h3>
-
 Reindexing can be performed in two modes:
 
 *	Update on Save: index tables are updated immediately after the dictionary data is changed.
@@ -116,10 +120,15 @@ The following figure shows an example of setting indexers to Update by Schedule.
 
 <p><img src="{{ site.baseurl }}common/images/index_index-modes.png" width="600px" alt="Changing indexer modes"></p>
 
-You can also reindex from the <a href="#m2devgde-indexing-commandline">command line</a>.
+You can also reindex from the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">command line</a>.
+
+<h3 id="m2devgde-indexing-how">How to reindex</h3>
+You can reindex in any of the following ways:
+
+*	Using a <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a> (preferred because indexing runs every minute)
+*	Using the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">`magento indexer:reindex [indexer]`</a> command, which reindexes selected indexers, or all indexers, one time only
 
 <h2 id="m2devgde-indexing-outofbox">Magento indexers</h2>
-
 Out of the box the Magento system has the following indexers implemented:
 
 <table>
@@ -181,11 +190,7 @@ Out of the box the Magento system has the following indexers implemented:
 
 </tbody></table>
 
-<h2 id="m2devgde-indexing-commandline">Running indexers from the command line</h2>
-To run indexers from the command line, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>.
-
 <h2 id="m2devgde-indexing-custom">Adding a custom indexer</h2>
-
 We strongly recommend you not modify core Magento code; instead, add your own modules.
 
 To implement your own indexer, add the following code in your module:
@@ -198,7 +203,7 @@ There are more details about each of these in the following paragraphs.
 
 <h3 id="m2devgde-indexing-customlogic">Custom indexer logic</h3>
 
-Your custom indexer class should implement <a href="{{ site.mage2000url }}app/code/Magento/Indexer/Model/ActionInterface.php" target="_blank">\Magento\Indexer\Model\ActionInterface</a>, and the indexer should be able to perform three types of operations:
+Your custom indexer class should implement <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Indexer/ActionInterface.php" target="_blank">\Magento\Framework\Indexer\ActionInterface</a>, and the indexer should be able to perform three types of operations:
 
 *	row reindex: processing a single entry from a dictionary; responsibility of `executeRow($id)`
 *	list reindex: processing a set of dictionary entries; responsibility of `executeList($ids)`, where `$ids` is an array of entity IDs
@@ -243,7 +248,7 @@ Next, declare the indexer in `Merchandizing/etc/indexer.xml`:
 
 <script src="https://gist.github.com/xcomSteveJohnson/5780857cdd5343cafacf.js"></script>
 
-Finally, declare the indexer view (`merchandizsing_popular_order`) that tracks sales (`Merchandizing/etc/mview.xml`):
+Finally, declare the indexer view (`merchandizing_popular_order`) that tracks sales (`Merchandizing/etc/mview.xml`):
 
 <script src="https://gist.github.com/xcomSteveJohnson/4313c5246b38ff8193df.js"></script>
 

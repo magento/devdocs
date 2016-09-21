@@ -1,15 +1,16 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
-title: PHP developer guide
+subgroup: 99_Module Development
+title: Routing
 menu_title: Routing
-menu_order: 7
+menu_order: 11
+version: 2.0
 github_link: extension-dev-guide/routing.md
 redirect_from: /guides/v1.0/extension-dev-guide/routing.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 
 In the Magento system, a URL has the following format:
@@ -40,17 +41,20 @@ Configurations of the routes are stored in `routes.xml` in the scopes area.
 
 Only the standard frontend and backend routers use routes. Typically, the configuration for a route is in the following format:
 
+{% highlight XML %}
+<config>
+    <router id="%routerId%">
+        <route id="%routeId%" frontName="%frontName%">
+            <module name="%moduleName%" before="%moduleName%"/>
+        </route>
+    </router>
+</config>
+{% endhighlight %}
 
-<pre>
-&lt;config>
-    &lt;router id="%routerId%">
-        &lt;route id="%routeId%" frontName="%frontName%">
-            &lt;module name="%moduleName%" before="%moduleName%"/>
-        &lt;/route>
-    &lt;/router>
-&lt;/config>
-</pre>
-
+<div class="bs-callout bs-callout-info" id="info">
+  <p><code>%routeId%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _</code>.</p>
+  <p><code>%frontName%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _, -</code>.</p>
+</div>
 
 To retrieve the configuration for route for an area by the specified router, use the `Magento\App\Framework\Route\Config`.
 
@@ -112,3 +116,6 @@ For this class, the `Magento\Framework\App\ActionInterface` processes the reques
 If a request cannot be processed by any router, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\App\Framework\Router\DefaultRouter</a> default router lists handlers for processing such request.
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.
+
+#### Related information
+See [The Route Config Kata](http://vinaikopp.com/2016/03/21/05_the_route_config_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list).

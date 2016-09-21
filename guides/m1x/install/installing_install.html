@@ -47,7 +47,7 @@
 <ul><li>Magento Community Edition (CE) 1.8.x or 1.9.x</li>
 <li>Magento Enterprise Edition (EE) 1.13.x or 1.14.x</li></ul>
 <p>To install Magento CE or Magento EE, use the following high-level guidelines:</p>
-<ol><li>Set up a system that meets the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li>
+<ol><li>Set up a system that meets the <a href="{{ site.m1xgdeurl }}system-requirements.html" target="_blank">Magento system requirements</a>.</li>
 <li>Install prerequisite software (web server, PHP, and required PHP extensions).</li>
 <li>Set up a MySQL Magento database instance.</li>
 <li>Run the Magento installer to complete the installation.</li>
@@ -58,7 +58,7 @@
 <h2 id="prereq">Prerequisites</h2>
 <p>Before starting your installation:</p>
 <ul><li>Get the Magento installation archive as discussed in <a href="{{ site.m1xgdeurl }}install/installing.html#get" target="_blank">Getting Magento CE or EE</a>.</li>
-<li>Set up one or more hosts that meet the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li>
+<li>Set up one or more hosts that meet the <a href="{{ site.m1xgdeurl }}system-requirements.html" target="_blank">Magento system requirements</a>.</li>
 <li>If you are setting up more than one web node with load balancing, set up and test that part of your system <em>before</em> you install Magento.</li>
 <li>If your database server and web server are located on different hosts, <a href="{{ site.m1xgdeurl }}install/installing.html#help" target="_blank">get help</a> before proceeding.</li>
 <li>Make sure you can back up your entire system at various points during the installation so you can roll back in the event of issues.</li></ul>
@@ -73,14 +73,15 @@
 <p>The following sections discuss how to download and install prerequisite software and install Magento CE or EE on a system running:</p>
 <ul>
 <li>Ubuntu 10 or later, or CentOS 6</li>
-<li>Apache 2</li>
+<li>Apache 2.x</li>
+<li>nginx 1.7.x</li>
 <li>PHP 5.4 and required extensions</li>
 <li>MySQL database</li></ul>
 <strong>Notes</strong>: 
 <ul><li>Discussing how to configure Secure Sockets Layer (SSL) is beyond the scope of this guide. You can consult some general resources such as <a href="http://httpd.apache.org/docs/2.4/ssl/" target="_blank">Apache</a>, <a href="http://www.zytrax.com/tech/survival/ssl.html" target="_blank">zytrax.com</a>, or the <a href="http://www.openssl.org/docs/ssl/ssl.html" target="_blank">OpenSSL documentation page</a>.</li>
 <li>Discussing how to <a href="http://wiki.nginx.org/Install" target="_blank">install and configure nginx</a> is beyond the scope of this article.</li>
 <li>Review the MySQL developer site's recommendations for <a href="http://dev.mysql.com/doc/refman/5.0/en/password-security-user.html" target="_blank">MySQL password security</a>.</li>
-<li>Before you continue, make sure the system on which you install Magento meets the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li></ul>
+<li>Before you continue, make sure the system on which you install Magento meets the <a href="{{ site.m1xgdeurl }}system-requirements.html" target="_blank">Magento system requirements</a>.</li></ul>
 <p>Complete the tasks discussed in the following sections in the order shown:</p>
 <ol><li>Installing and configuring required prerequisite Software for <a href="{{ site.m1xgdeurl }}install/installing_req-prereq_ubuntu.html" target="_blank">Ubuntu</a> or <a href="{{ site.m1xgdeurl }}install/installing_req-prereq_centos.html" target="_blank">CentOS</a></li>
 <li><a href="#install-prereq-selinux">SELinux Prerequisite</a></li>
@@ -493,7 +494,7 @@ Choose database storage if you have a clustered database; otherwise, there might
 </tr>
 <tr>
   <td>Encryption Key</td>
-  <td>If you have one, enter a key to encrypt sensitive data (such as passwords and personally identifiable customer information) in the Magento database. If you don't have one, Magento generates one for you.<br />
+  <td>If you have one, enter a key to encrypt sensitive data in the Magento database. If you don't have one, Magento generates one for you.<br />
   The encryption key is stored in <code>[your Magento install dir]/app/etc/local.xml</code>.</td>
 </tr>
 </tbody>

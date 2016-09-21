@@ -1,11 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: B_Security
+subgroup: 02_Security
 title: X-Frame-Options header
 menu_title: X-Frame-Options header
-menu_order: 2
+menu_order: 5
 menu_node: 
+version: 2.0
 github_link: config-guide/secy/secy-xframe.md
 ---
 

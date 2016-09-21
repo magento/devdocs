@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css">
+	<link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="{{ site.baseurl }}common/js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var currentUrl = window.location.href;
+			$.each($('.soap-api-menu a'), function(index, element) {
+				if (currentUrl.indexOf($(element).attr('href')) > -1) {
+					$(element).addClass('active');
+					$(element).parents('ul').show();
+					$(element).parents('li.parent').addClass('open');
+					$(element).nextAll('ul').show();
+				}
+			});
+			$.each($('.soap-api-menu li.parent .arr'), function(index, element) {
+				$(element).on('click', function(e){
+					$(this).parent('li.parent').toggleClass('open');
+					$(this).next('ul').slideToggle();
+				})
+			});
+		});
+	</script>
+	<title>{{ page.title }}</title>
+</head>
+<body>
+	<a name="top"></a>
+	<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
+	<h1>{{ page.title }}</h1>
+	<div id="content">
+		<p><a href="{{ site.m1xgithuburl }}{{ page.url }}" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
+		<div class="soap-api-menu">
+			<ul>
+				<li>
+					<a href="{{ site.m1xgdeurl }}api/rest/introduction.html">Introduction</a>
+				</li>
+				<li class="parent">
+					<a href="{{ site.m1xgdeurl }}api/rest/authentication/oauth_authentication.html">Authentication</a>
+					<span class="arr"></span>
+					<ul>
+						<li>
+							<a href="{{ site.m1xgdeurl }}api/rest/authentication/oauth_configuration.html">OAuth Configuration</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="{{ site.m1xgdeurl }}api/rest/common_http_status_codes.html">Common HTTP Status Codes</a>
+				</li>
+				<li>
+					<a href="{{ site.m1xgdeurl }}api/rest/http_methods.html">HTTP Methods</a>
+				</li>
+				<li>
+					<a href="{{ site.m1xgdeurl }}api/rest/get_filters.html">GET Filters</a>
+				</li>
+				<li class="parent">
+					<a href="{{ site.m1xgdeurl }}api/rest/permission_settings/permission_settings.html">Permission Settings</a>
+					<span class="arr"></span>
+					<ul>
+						<li>
+							<a href="{{ site.m1xgdeurl }}api/rest/permission_settings/roles_configuration.html">Roles Configuration</a>
+						</li>
+						<li>
+							<a href="{{ site.m1xgdeurl }}api/rest/permission_settings/attributes_configuration.html">Attributes Configuration</a>
+						</li>
+						<li>
+							<a href="{{ site.m1xgdeurl }}api/rest/permission_settings/attributes_description.html">Attributes Description</a>
+						</li>
+					</ul>
+				</li>
+				<li class="parent">
+					<a href="{{ site.m1xgdeurl }}api/rest/Resources/resources.html">Resources</a>
+					<span class="arr"></span>
+					<ul>
+						<li>
+							<a href="{{ site.m1xgdeurl }}api/rest/Resources/inventory.html">Inventory</a>
+						</li>
+						<li class="parent"><a href="{{ site.m1xgdeurl }}api/rest/Resources/Orders/sales_orders.html">Orders</a>
+							<span class="arr"></span>
+							<ul>
+								<li>
+									<a href="{{ site.m1xgdeurl }}api/rest/Resources/Orders/order_addresses.html">Order Addresses</a></li>
+								<li>
+									<a href="{{ site.m1xgdeurl }}api/rest/Resources/Orders/order_comments.html">Order Comments</a>
+								</li>
+								<li>
+									<a href="{{ site.m1xgdeurl }}api/rest/Resources/Orders/order_items.html">Order Items</a>
+								</li>
+							</ul>
+						</li>
+						<li class="parent">
+							<a href="{{ site.m1xgdeurl }}api/rest/Resources/Products/products.html">Products</a>
+							<span class="arr"></span>
+							<ul>
+								<li>
+									<a href="{{ site.m1xgdeurl }}api/rest/Resources/Products/product_categories.html">Product Categories</a></li>
+								<li>
+									<a href="{{ site.m1xgdeurl }}api/rest/Resources/Products/product_images.html">Product Images</a>
+								</li>
+								<li>
+									<a href="{{ site.m1xgdeurl }}api/rest/Resources/Products/product_websites.html">Product Websites</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="{{ site.m1xgdeurl }}api/rest/Resources/resource_customer_addresses.html">Customer Addresses</a>
+						</li>
+						<li>
+							<a href="{{ site.m1xgdeurl }}api/rest/Resources/resource_customers.html">Customers</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="{{ site.m1xgdeurl }}api/rest/response_formats.html">Response Formats</a>
+				</li>
+				<li>
+					<a href="{{ site.m1xgdeurl }}api/rest/testing_rest_resources.html">Testing REST Resources</a>
+				</li>
+			</ul>
+		</div>
+		<div class="soap-api-content">
+		{{ content }}
+		</div>
+	</div>
+</body>
+</html>

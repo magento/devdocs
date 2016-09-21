@@ -1,12 +1,11 @@
 ---
-layout: m1x
+layout: m1x_rest
 title: Products
 ---
-<p><a href="{{ site.m1xgithuburl }}api/rest/Resources/Products/products.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
 
-<div class="toc"> <h4 class="toc">Table of Contents</h4>
-<ul>
+
+<ul class="introduction-menu">
     <li><a href='#RESTAPI-Resource-Products-RESTAPI-Products'>REST API: Products</a>
     <ul>
         <li><a href='#RESTAPI-Resource-Products-URI--products'>URI: /products</a>
@@ -27,7 +26,7 @@ title: Products
     </ul>
     </li>
 </ul>
-</div>
+
 
 <h3><a name="RESTAPI-Resource-Products-RESTAPI-Products"></a>REST API: Products</h3>
 
@@ -232,493 +231,489 @@ title: Products
 <p><b>Authentication</b>: Admin<br/>
 <b>Default Format</b>: JSON<br/>
 <b>Parameters</b>:&nbsp;</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Required </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example Value </th>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> type_id </td>
-<td class='confluenceTd'> Product type. Can have the "simple" value. </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> simple </td>
+<td> type_id </td>
+<td> Product type. Can have the "simple" value. </td>
+<td> required </td>
+<td> string </td>
+<td> simple </td>
 </tr>
 <tr>
-<td class='confluenceTd'> attribute_set_id </td>
-<td class='confluenceTd'> Attribute set for the product. </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 4 </td>
+<td> attribute_set_id </td>
+<td> Attribute set for the product. </td>
+<td> required </td>
+<td> int </td>
+<td> 4 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> sku </td>
-<td class='confluenceTd'> Product SKU </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> new_product </td>
+<td> sku </td>
+<td> Product SKU </td>
+<td> required </td>
+<td> string </td>
+<td> new_product </td>
 </tr>
 <tr>
-<td class='confluenceTd'> name </td>
-<td class='confluenceTd'> Product name </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> New product </td>
+<td> name </td>
+<td> Product name </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> New product </td>
 </tr>
 <tr>
-<td class='confluenceTd'> meta_title </td>
-<td class='confluenceTd'> Product meta title </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> new product </td>
+<td> meta_title </td>
+<td> Product meta title </td>
+<td> optional </td>
+<td> string </td>
+<td> new product </td>
 </tr>
 <tr>
-<td class='confluenceTd'> meta_description <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product meta description </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> This is a new product </td>
+<td> meta_description <br class="atl-forced-newline" /> </td>
+<td> Product meta description </td>
+<td> optional </td>
+<td> string </td>
+<td> This is a new product </td>
 </tr>
 <tr>
-<td class='confluenceTd'> url_key <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> A friendly URL path for the product </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> new-product </td>
+<td> url_key <br class="atl-forced-newline" /> </td>
+<td> A friendly URL path for the product </td>
+<td> optional </td>
+<td> string </td>
+<td> new-product </td>
 </tr>
 <tr>
-<td class='confluenceTd'> custom_design <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom design applied for the product page </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> enterprise/default </td>
+<td> custom_design <br class="atl-forced-newline" /> </td>
+<td> Custom design applied for the product page </td>
+<td> optional </td>
+<td> string </td>
+<td> enterprise/default </td>
 </tr>
 <tr>
-<td class='confluenceTd'> page_layout <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Page template that can be applied to the product page </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> one_column </td>
+<td> page_layout <br class="atl-forced-newline" /> </td>
+<td> Page template that can be applied to the product page </td>
+<td> optional </td>
+<td> string </td>
+<td> one_column </td>
 </tr>
 <tr>
-<td class='confluenceTd'> options_container <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines how the custom options for the product will be displayed. Can have the following values: Block after Info Column or Product Info Column </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> container2 </td>
+<td> options_container <br class="atl-forced-newline" /> </td>
+<td> Defines how the custom options for the product will be displayed. Can have the following values: Block after Info Column or Product Info Column </td>
+<td> optional </td>
+<td> string </td>
+<td> container2 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> country_of_manufacture <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product country of manufacture </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> AD </td>
+<td> country_of_manufacture <br class="atl-forced-newline" /> </td>
+<td> Product country of manufacture </td>
+<td> optional </td>
+<td> string </td>
+<td> AD </td>
 </tr>
 <tr>
-<td class='confluenceTd'> msrp_enabled <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The Apply MAP option. Defines whether the price in the catalog in the frontend is substituted with a Click for price link </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> msrp_enabled <br class="atl-forced-newline" /> </td>
+<td> The Apply MAP option. Defines whether the price in the catalog in the frontend is substituted with a Click for price link </td>
+<td> optional </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> msrp_display_actual_price_type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines how the price will be displayed in the frontend. Can have the following values: In Cart, Before Order Confirmation, and On Gesture </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 2 </td>
+<td> msrp_display_actual_price_type <br class="atl-forced-newline" /> </td>
+<td> Defines how the price will be displayed in the frontend. Can have the following values: In Cart, Before Order Confirmation, and On Gesture </td>
+<td> optional </td>
+<td> int </td>
+<td> 2 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> gift_message_available <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the gift message is available for the product </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> gift_message_available <br class="atl-forced-newline" /> </td>
+<td> Defines whether the gift message is available for the product </td>
+<td> optional </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> price </td>
-<td class='confluenceTd'> Product price </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 2000 </td>
+<td> price </td>
+<td> Product price </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> 2000 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> special_price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product special price </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 150 </td>
+<td> special_price <br class="atl-forced-newline" /> </td>
+<td> Product special price </td>
+<td> optional </td>
+<td> string </td>
+<td> 150 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> weight </td>
-<td class='confluenceTd'> Product weight </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 0.5 </td>
+<td> weight </td>
+<td> Product weight </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> 0.5 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> msrp <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The Manufacturer's Suggested Retail Price option. The price that a manufacturer suggests to sell the product at </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 140 </td>
+<td> msrp <br class="atl-forced-newline" /> </td>
+<td> The Manufacturer's Suggested Retail Price option. The price that a manufacturer suggests to sell the product at </td>
+<td> optional </td>
+<td> string </td>
+<td> 140 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> status </td>
-<td class='confluenceTd'> Product status. Can have the following values: 1&#45; Enabled, 2 - Disabled. </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> status </td>
+<td> Product status. Can have the following values: 1&#45; Enabled, 2 - Disabled. </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> visibility </td>
-<td class='confluenceTd'> Product visibility. Can have the following values: 1 - Not Visible Individually, 2 - Catalog, 3 - Search, 4 - Catalog, Search. </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 4 </td>
+<td> visibility </td>
+<td> Product visibility. Can have the following values: 1 - Not Visible Individually, 2 - Catalog, 3 - Search, 4 - Catalog, Search. </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 4 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> enable_googlecheckout <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the product can be purchased with the help of the Google Checkout payment service. Can have the following values: Yes and No </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> enable_googlecheckout <br class="atl-forced-newline" /> </td>
+<td> Defines whether the product can be purchased with the help of the Google Checkout payment service. Can have the following values: Yes and No </td>
+<td> optional </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> tax_class_id </td>
-<td class='confluenceTd'> Product tax class. Can have the following values: 0 - None, 2 - taxable Goods, 4 - Shipping, etc., depending on created tax classes. </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 7 </td>
+<td> tax_class_id </td>
+<td> Product tax class. Can have the following values: 0 - None, 2 - taxable Goods, 4 - Shipping, etc., depending on created tax classes. </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 7 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> description </td>
-<td class='confluenceTd'> Product description. </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> This is a new product. </td>
+<td> description </td>
+<td> Product description. </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> This is a new product. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> short_description </td>
-<td class='confluenceTd'> Product short description. </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> A new product. </td>
+<td> short_description </td>
+<td> Product short description. </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> A new product. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> meta_keyword <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product meta keywords </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> new </td>
+<td> meta_keyword <br class="atl-forced-newline" /> </td>
+<td> Product meta keywords </td>
+<td> optional </td>
+<td> string </td>
+<td> new </td>
 </tr>
 <tr>
-<td class='confluenceTd'> custom_layout_update <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> An XML block to alter the page layout </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> XML body </td>
+<td> custom_layout_update <br class="atl-forced-newline" /> </td>
+<td> An XML block to alter the page layout </td>
+<td> optional </td>
+<td> string </td>
+<td> XML body </td>
 </tr>
 <tr>
-<td class='confluenceTd'> special_from_date <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date starting from which the special price will be applied to the product </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 2012-03-15 00:00:00 </td>
+<td> special_from_date <br class="atl-forced-newline" /> </td>
+<td> Date starting from which the special price will be applied to the product </td>
+<td> optional </td>
+<td> string </td>
+<td> 2012-03-15 00:00:00 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> special_to_date <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date till which the special price will be applied to the product </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 2012-03-15 00:00:00 </td>
+<td> special_to_date <br class="atl-forced-newline" /> </td>
+<td> Date till which the special price will be applied to the product </td>
+<td> optional </td>
+<td> string </td>
+<td> 2012-03-15 00:00:00 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> news_from_date <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date starting from which the product is promoted as a new product </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 2012-03-15 00:00:00 </td>
+<td> news_from_date <br class="atl-forced-newline" /> </td>
+<td> Date starting from which the product is promoted as a new product </td>
+<td> optional </td>
+<td> string </td>
+<td> 2012-03-15 00:00:00 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> news_to_date <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date till which the product is promoted as a new product </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 2012-03-15 00:00:00 </td>
+<td> news_to_date <br class="atl-forced-newline" /> </td>
+<td> Date till which the product is promoted as a new product </td>
+<td> optional </td>
+<td> string </td>
+<td> 2012-03-15 00:00:00 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> custom_design_from <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date starting from which the custom design will be applied to the product page </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 2012-03-15 00:00:00 </td>
+<td> custom_design_from <br class="atl-forced-newline" /> </td>
+<td> Date starting from which the custom design will be applied to the product page </td>
+<td> optional </td>
+<td> string </td>
+<td> 2012-03-15 00:00:00 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> custom_design_to <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date till which the custom design will be applied to the product page </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 2012-03-15 00:00:00 </td>
+<td> custom_design_to <br class="atl-forced-newline" /> </td>
+<td> Date till which the custom design will be applied to the product page </td>
+<td> optional </td>
+<td> string </td>
+<td> 2012-03-15 00:00:00 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> group_price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product group price </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> array of group price </td>
+<td> group_price <br class="atl-forced-newline" /> </td>
+<td> Product group price </td>
+<td> optional </td>
+<td> array </td>
+<td> array of group price </td>
 </tr>
 <tr>
-<td class='confluenceTd'> tier_price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product tier price </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> array of tier price </td>
+<td> tier_price <br class="atl-forced-newline" /> </td>
+<td> Product tier price </td>
+<td> optional </td>
+<td> array </td>
+<td> array of tier price </td>
 </tr>
 <tr>
-<td class='confluenceTd'> stock_data <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product inventory data </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> array of stock data </td>
+<td> stock_data <br class="atl-forced-newline" /> </td>
+<td> Product inventory data </td>
+<td> optional </td>
+<td> array </td>
+<td> array of stock data </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>Array of <b>Group Price</b> attributes is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Required </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example Value </th>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> website_id </td>
-<td class='confluenceTd'> Website ID </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> website_id </td>
+<td> Website ID </td>
+<td> optional </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> cust_group </td>
-<td class='confluenceTd'> Customer group </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> cust_group </td>
+<td> Customer group </td>
+<td> optional </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Group price </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 140 </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Group price </td>
+<td> optional </td>
+<td> string </td>
+<td> 140 </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>Array of <b>Tier Price</b> attributes is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Required </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example Value </th>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> website_id </td>
-<td class='confluenceTd'> Website ID </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> website_id </td>
+<td> Website ID </td>
+<td> optional </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> cust_group </td>
-<td class='confluenceTd'> Customer group </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> cust_group </td>
+<td> Customer group </td>
+<td> optional </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> price </td>
-<td class='confluenceTd'> Tier price </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 140 </td>
+<td> price </td>
+<td> Tier price </td>
+<td> optional </td>
+<td> string </td>
+<td> 140 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> price_qty </td>
-<td class='confluenceTd'> Price quantity </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 10 </td>
+<td> price_qty </td>
+<td> Price quantity </td>
+<td> optional </td>
+<td> string </td>
+<td> 10 </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>Array of <b>Stock Data</b> attributes is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Required </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example Value </th>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> qty </td>
-<td class='confluenceTd'> Quantity of stock items for the current product </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 99 </td>
+<td> qty </td>
+<td> Quantity of stock items for the current product </td>
+<td> optional </td>
+<td> string </td>
+<td> 99 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> min_qty </td>
-<td class='confluenceTd'> Quantity for stock items to become out of stock </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 5 </td>
+<td> min_qty </td>
+<td> Quantity for stock items to become out of stock </td>
+<td> optional </td>
+<td> string </td>
+<td> 5 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_min_qty </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Qty for Item's Status to Become Out of Stock option </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_min_qty </td>
+<td> Choose whether the Config settings will be applied for the Qty for Item's Status to Become Out of Stock option </td>
+<td> optional </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> is_qty_decimal </td>
-<td class='confluenceTd'> Choose whether the product can be sold using decimals (e.g., you can buy 2.5 product) </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> is_qty_decimal </td>
+<td> Choose whether the product can be sold using decimals (e.g., you can buy 2.5 product) </td>
+<td> optional </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> backorders <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the customer can place the order for products that are out of stock at the moment. <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> backorders <br class="atl-forced-newline" /> </td>
+<td> Defines whether the customer can place the order for products that are out of stock at the moment. <br class="atl-forced-newline" /> </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_backorders <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Backorders option </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_backorders <br class="atl-forced-newline" /> </td>
+<td> Choose whether the Config settings will be applied for the Backorders option </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> min_sale_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Minimum number of items in the shopping cart to be sold <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 10 </td>
+<td> min_sale_qty <br class="atl-forced-newline" /> </td>
+<td> Minimum number of items in the shopping cart to be sold <br class="atl-forced-newline" /> </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> 10 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_min_sale_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Minimum Qty Allowed in Shopping Cart option </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_min_sale_qty <br class="atl-forced-newline" /> </td>
+<td> Choose whether the Config settings will be applied for the Minimum Qty Allowed in Shopping Cart option </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> max_sale_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Maximum number of items in the shopping cart to be sold <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 50 </td>
+<td> max_sale_qty <br class="atl-forced-newline" /> </td>
+<td> Maximum number of items in the shopping cart to be sold <br class="atl-forced-newline" /> </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> 50 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_max_sale_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Maximum Qty Allowed in Shopping Cart option </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_max_sale_qty <br class="atl-forced-newline" /> </td>
+<td> Choose whether the Config settings will be applied for the Maximum Qty Allowed in Shopping Cart option </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> is_in_stock <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the product is available for selling. </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> is_in_stock <br class="atl-forced-newline" /> </td>
+<td> Defines whether the product is available for selling. </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> notify_stock_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The number of inventory items below which the customer will be notified </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 5 </td>
+<td> notify_stock_qty <br class="atl-forced-newline" /> </td>
+<td> The number of inventory items below which the customer will be notified </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> 5 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_notify_stock_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Notify for Quantity Below option </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_notify_stock_qty <br class="atl-forced-newline" /> </td>
+<td> Choose whether the Config settings will be applied for the Notify for Quantity Below option </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> manage_stock <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Choose whether to view and specify the product quantity and availability and whether the product is in stock management. </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> manage_stock <br class="atl-forced-newline" /> </td>
+<td> Choose whether to view and specify the product quantity and availability and whether the product is in stock management. </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_manage_stock <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Manage Stock option </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_manage_stock <br class="atl-forced-newline" /> </td>
+<td> Choose whether the Config settings will be applied for the Manage Stock option </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_qty_increments <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Qty Increments option </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_qty_increments <br class="atl-forced-newline" /> </td>
+<td> Choose whether the Config settings will be applied for the Qty Increments option </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> qty_increments <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The product quantity increment value </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 3 </td>
+<td> qty_increments <br class="atl-forced-newline" /> </td>
+<td> The product quantity increment value </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> 3 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> use_config_enable_qty_inc <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Enable Qty Increments option </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> use_config_enable_qty_inc <br class="atl-forced-newline" /> </td>
+<td> Choose whether the Config settings will be applied for the Enable Qty Increments option </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> enable_qty_increments <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the customer can add products only in increments to the shopping cart </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> enable_qty_increments <br class="atl-forced-newline" /> </td>
+<td> Defines whether the customer can add products only in increments to the shopping cart </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> is_decimal_divided <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the stock items can be divided into multiple boxes for shipping </td>
-<td class='confluenceTd'> optional <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> is_decimal_divided <br class="atl-forced-newline" /> </td>
+<td> Defines whether the stock items can be divided into multiple boxes for shipping </td>
+<td> optional <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
@@ -1045,30 +1040,29 @@ PUT for specific store <a href="http://magentohost/api/rest/products/8/store/3">
 
 <h4><a name="RESTAPI-Resource-Products-PossibleHTTPStatusCodes"></a>Possible HTTP Status Codes</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Status Code </th>
-<th class='confluenceTh'> Message </th>
-<th class='confluenceTh'> Description </th>
+<th> Status Code </th>
+<th> Message </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 404 </td>
-<td class='confluenceTd'> Resource not found. </td>
-<td class='confluenceTd'> The required resource is not found. </td>
+<td> 404 </td>
+<td> Resource not found. </td>
+<td> The required resource is not found. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 405 </td>
-<td class='confluenceTd'> Resource method not implemented yet. </td>
-<td class='confluenceTd'> The required method is not implemented yet. </td>
+<td> 405 </td>
+<td> Resource method not implemented yet. </td>
+<td> The required method is not implemented yet. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 405 </td>
-<td class='confluenceTd'> Resource does not support method. </td>
-<td class='confluenceTd'> The current resource does not support the specified method. </td>
+<td> 405 </td>
+<td> Resource does not support method. </td>
+<td> The current resource does not support the specified method. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

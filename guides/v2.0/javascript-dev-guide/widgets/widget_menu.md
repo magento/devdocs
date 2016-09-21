@@ -1,10 +1,11 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Menu widget
-menu_order: 7
+menu_order: 8
 menu_title: Menu widget
+version: 2.0
 github_link: javascript-dev-guide/widgets/widget_menu.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/widget_menu.html
@@ -21,7 +22,7 @@ The Magento menu widget is a customized <a href="http://api.jqueryui.com/menu/" 
 The Magento menu widget source is <a href="{{site.mage2000url}}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>.
 
 <h2 id="menu_init">Initialize the menu widget</h2>
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="menu_options">Options</h2>
 Menu widget options mostly coincide with the options of the jQuery UI Menu widget, with addition of the following custom ones:

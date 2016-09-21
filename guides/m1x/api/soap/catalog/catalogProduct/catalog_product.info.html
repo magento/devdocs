@@ -1,8 +1,7 @@
 ---
-layout: m1x
+layout: m1x_soap
 title: Product Info
 ---
-<p><a href="{{ site.m1xgithuburl }}api/soap/catalog/catalogProduct/catalog_product.info.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
 
 <h2><a name="catalog_product.info-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
@@ -34,298 +33,293 @@ title: Product Info
 
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description <br class="atl-forced-newline" /> </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description <br class="atl-forced-newline" /> </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> productId </td>
-<td class='confluenceTd'> Product ID or SKU </td>
+<td> string </td>
+<td> productId </td>
+<td> Product ID or SKU </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> storeView </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> storeView </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> attributes </td>
-<td class='confluenceTd'> Array of catalogProductRequestAttributes (optional) </td>
+<td> array </td>
+<td> attributes </td>
+<td> Array of catalogProductRequestAttributes (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> productIdentifierType </td>
-<td class='confluenceTd'> Defines whether the product ID or SKU value is passed in the "product" parameter. </td>
+<td> string </td>
+<td> productIdentifierType </td>
+<td> Defines whether the product ID or SKU value is passed in the "productId" parameter. (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> info </td>
-<td class='confluenceTd'> Array of catalogProductReturnEntity </td>
+<td> array </td>
+<td> info </td>
+<td> Array of catalogProductReturnEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductRequestAttributes</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> attributes <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of attributes </td>
+<td> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td> attributes <br class="atl-forced-newline" /> </td>
+<td> Array of attributes </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> additional_attributes <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of additional attributes </td>
+<td> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td> additional_attributes <br class="atl-forced-newline" /> </td>
+<td> Array of additional attributes </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductReturnEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> product_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product ID </td>
+<td> string </td>
+<td> product_id <br class="atl-forced-newline" /> </td>
+<td> Product ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product SKU </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sku <br class="atl-forced-newline" /> </td>
+<td> Product SKU </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> set <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product set </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> set <br class="atl-forced-newline" /> </td>
+<td> Product set </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product type </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> type <br class="atl-forced-newline" /> </td>
+<td> Product type </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString </td>
-<td class='confluenceTd'> categories <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of categories </td>
+<td> ArrayOfString </td>
+<td> categories <br class="atl-forced-newline" /> </td>
+<td> Array of categories </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString </td>
-<td class='confluenceTd'> websites <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of websites </td>
+<td> ArrayOfString </td>
+<td> websites <br class="atl-forced-newline" /> </td>
+<td> Array of websites </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date when the product was created </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> created_at <br class="atl-forced-newline" /> </td>
+<td> Date when the product was created </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> updated_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date when the product was last updated </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> updated_at <br class="atl-forced-newline" /> </td>
+<td> Date when the product was last updated </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> type_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Type ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> type_id <br class="atl-forced-newline" /> </td>
+<td> Type ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product name </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> name <br class="atl-forced-newline" /> </td>
+<td> Product name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> description <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product description </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> description <br class="atl-forced-newline" /> </td>
+<td> Product description </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> short_description <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Short description for a product </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> short_description <br class="atl-forced-newline" /> </td>
+<td> Short description for a product </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> weight <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product weight </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> weight <br class="atl-forced-newline" /> </td>
+<td> Product weight </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> status <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Status of a product </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> status <br class="atl-forced-newline" /> </td>
+<td> Status of a product </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> url_key <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Relative URL path that can be entered in place of a target path </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> url_key <br class="atl-forced-newline" /> </td>
+<td> Relative URL path that can be entered in place of a target path </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> url_path <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> URL path </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> url_path <br class="atl-forced-newline" /> </td>
+<td> URL path </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> visibility <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product visibility on the frontend </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> visibility <br class="atl-forced-newline" /> </td>
+<td> Product visibility on the frontend </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> category_ids <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of category IDs </td>
+<td> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td> category_ids <br class="atl-forced-newline" /> </td>
+<td> Array of category IDs </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> website_ids <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of website IDs </td>
+<td> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td> website_ids <br class="atl-forced-newline" /> </td>
+<td> Array of website IDs </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> has_options <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the product has options </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> has_options <br class="atl-forced-newline" /> </td>
+<td> Defines whether the product has options </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> gift_message_available <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the gift message is available for the product </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> gift_message_available <br class="atl-forced-newline" /> </td>
+<td> Defines whether the gift message is available for the product </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product price </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Product price </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> special_price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product special price </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> special_price <br class="atl-forced-newline" /> </td>
+<td> Product special price </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> special_from_date <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date starting from which the special price is applied to the product </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> special_from_date <br class="atl-forced-newline" /> </td>
+<td> Date starting from which the special price is applied to the product </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> special_to_date <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date till which the special price is applied to the product </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> special_to_date <br class="atl-forced-newline" /> </td>
+<td> Date till which the special price is applied to the product </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> tax_class_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Tax class ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> tax_class_id <br class="atl-forced-newline" /> </td>
+<td> Tax class ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> tier_price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductTierPriceEntity </td>
+<td> array </td>
+<td> tier_price <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductTierPriceEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> meta_title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Mate title </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> meta_title <br class="atl-forced-newline" /> </td>
+<td> Mate title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> meta_keyword <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Meta keyword </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> meta_keyword <br class="atl-forced-newline" /> </td>
+<td> Meta keyword </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> meta_description <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Meta description </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> meta_description <br class="atl-forced-newline" /> </td>
+<td> Meta description </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> custom_design <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom design </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> custom_design <br class="atl-forced-newline" /> </td>
+<td> Custom design </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> custom_layout_update <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom layout update </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> custom_layout_update <br class="atl-forced-newline" /> </td>
+<td> Custom layout update </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> options_container <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Options container </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> options_container <br class="atl-forced-newline" /> </td>
+<td> Options container </td>
 </tr>
 <tr>
-<td class='confluenceTd'> associativeArray </td>
-<td class='confluenceTd'> additional_attributes <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of additional attributes </td>
+<td> associativeArray </td>
+<td> additional_attributes <br class="atl-forced-newline" /> </td>
+<td> Array of additional attributes </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> enable_googlecheckout <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether Google Checkout is applied to the product </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> enable_googlecheckout <br class="atl-forced-newline" /> </td>
+<td> Defines whether Google Checkout is applied to the product </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductTierPriceEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> customer_group_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> ID of the customer group </td>
+<td> string </td>
+<td> customer_group_id <br class="atl-forced-newline" /> </td>
+<td> ID of the customer group </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> website <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Website </td>
+<td> string </td>
+<td> website <br class="atl-forced-newline" /> </td>
+<td> Website </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Quantity to which the price will be applied </td>
+<td> int </td>
+<td> qty <br class="atl-forced-newline" /> </td>
+<td> Quantity to which the price will be applied </td>
 </tr>
 <tr>
-<td class='confluenceTd'> double </td>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Price that each item will cost </td>
+<td> double </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Price that each item will cost </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="catalog_product.info-Examples"></a>Examples</h4>

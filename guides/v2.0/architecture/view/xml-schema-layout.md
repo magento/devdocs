@@ -5,6 +5,7 @@ subgroup: View library
 title: XML layouts and schemas
 menu_title: XML layouts and schemas
 menu_order: 
+version: 2.0
 github_link: architecture/view/xml-schema-layout.md
 redirect_from: /guides/v1.0/architecture/view/xml-schema-layout.html
 ---
@@ -63,8 +64,8 @@ redirect_from: /guides/v1.0/architecture/view/xml-schema-layout.html
          </td>
          <td>
             <ul>
-               <li><code>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code></li>
-               <li><code>xsi:noNamespaceSchemaLocation="../../../../Core/etc/layout_single.xsd"</code></li>
+               <li><code>xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"</code></li>
+               <li><code>xs:include schemaLocation="urn:magento:framework:View/Layout/etc/elements.xsd</code></li>
             </ul>
          </td>
          <td>

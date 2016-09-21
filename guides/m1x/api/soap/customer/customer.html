@@ -1,7 +1,8 @@
-<?php
-    $title = 'Magento API - SOAP - Customer';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Customer
+---
+
 <h2><a name="MAPI-Customer-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
 
 <p>The Mage_Customer module allows you to create, retrieve, update, and delete customers and customer addresses.</p>
@@ -24,30 +25,29 @@
 
 <h4><a name="MAPI-Customer-Faults"></a>Faults</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 100 </td>
-<td class='confluenceTd'> Invalid customer data. Details in error message. </td>
+<td> 100 </td>
+<td> Invalid customer data. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Invalid filters specified. Details in error message. </td>
+<td> 101 </td>
+<td> Invalid filters specified. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 102 </td>
-<td class='confluenceTd'> Customer does not exist. </td>
+<td> 102 </td>
+<td> Customer does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 103 </td>
-<td class='confluenceTd'> Customer not deleted. Details in error message. </td>
+<td> 103 </td>
+<td> Customer not deleted. Details in error message. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="MAPI-Customer-Examples"></a>Examples</h4>

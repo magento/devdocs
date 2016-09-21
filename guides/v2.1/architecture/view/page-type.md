@@ -1,0 +1,1 @@
+../../../v2.0/architecture/view/page-type.md

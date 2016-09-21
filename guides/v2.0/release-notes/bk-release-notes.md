@@ -2,118 +2,78 @@
 layout: default
 group: release-notes
 title: Release Notes
-menu_title: Highlights
+menu_title: List of Release Notes
 menu_order: 1
-menu_node: 
+version: 2.0
 github_link: release-notes/bk-release-notes.md
 redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 ---
 
-<h2 id="highlights">Highlights</h2>
-
-Welcome to Magento 2.0 documentation! And welcome to Magento 2.0!
-
-Following is is a summary of important
-features of all Magento 2 releases starting with Developer Beta in December 2014.
-
-<h3 id="highlights-devrc">Highlights of this release</h3>
-
-*   Services are mutable
-    *   Changed from Builders to Factory Pattern
-    *   Interfaces now have setters
-    *   Repository Objects can now be manipulated and passed
-*   Services can pass extended attributes as an object rather than an array
-    *   Easily extend existing service with additional data objects
-    *   No generated code
-*   Support for Varnish 4
-*   Services can be exposed as a <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">web API</a> supporting both SOAP and REST
-*   For SOAP:
-    *   The service name used in the WSDL endpoint URL is derived from the Service interface name. We use the following rules:
-    *   CamelCase is used for service naming.
-    *   Omit `Service`, the `Magento` prefix , and the `Interface` suffix
-    *   If the service name is the same as a module name, the module name is omitted (for example, if there is Customer service interface in the Customer module, the word `customer` is used in the service name only once).
-    Examples of service naming changes follow:
-        *   `\Magento\Customer\Service\V1\CustomerInterface` is now `customerV1`
-        *   `\Magento\Customer\Service\V1\CustomerAccountServiceInterface` is now `customerCustomerAccountServiceV1`
-        *   `\Enterprise\Customer\Service\V3\Customer\AddressInterface` is now `enterpriseCustomerAddressV3`
-    *   Extended attribute objects are marked as optional in WSDL
-*   <a href="{{ site.gdeurl }}release-notes/changes.html#change-devrc-unit">Unit tests</a> are now located in the module's directory
-*   Backward compatibility policy; marked Public APIs coming next quarter
-    *   Follows Semantic Versioning 2.0.0
-    *   Backward compatible for classes and methods annotated with `@api`
-    *   Backward compatible for all client users within minor and patch core updates
-    *   We'll use  `@deprecated` to notify you of removal on the next major change
-*   Removed the `Magento_Core` module; moved functions to other modules
+The Magento 2.0.x Release Notes have moved. Click one of the following links to be redirected.
 
 
-<h3 id="highlights-tech">Technology stack</h3>
+Magento Community Edition (CE) Release Notes
 
--   PHP and MySQL. Magento 2 supports PHP 5.5 and 5.6, and MySQL 5.6. See [System
-    requirements][1].
+*  <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1_RC3CE.html" target="_blank">Version 2.1 Release Candidate (RC3)</a>
 
-    [1]: <{{ site.gdeurl }}install-gde/system-requirements.html>
 
--   HTML5. The reference themes available out of the box are responsive and
-    based on HTML5. See [Themes][2] and [Responsive web design.][3]
+*  <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1_RC2CE.html" target="_blank">Version 2.1 Release Candidate (RC2)</a>
 
-    [2]: <{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html>
 
-    [3]: <{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_overview.html>
+*  <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1_RC1CE.html" target="_blank">Version 2.1 Release Candidate (RC1)</a>
 
--   CSS3, and CSS preprocessing. The reference themes use CSS3. Magento 2 uses
-    the LESS CSS pre-processor, or you can add support for Sass and Compass. See
-    [Cascading style sheets][4], and [CSS pre-processor.][5]
+*  <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.9CE.html" target="_blank">Version 2.0.9</a>
 
-    [4]: <{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html>
 
-    [5]: <{{ site.gdeurl }}frontend-dev-guide/css-topics/css-preprocess.html>
+*  <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.8CE.html" target="_blank">Version 2.0.8</a>
 
--   jQuery. Magento 2 uses jQuery as the primary JavaScript library. Magento
-    ships with an extensible set of jQuery widgets. See [Magento JQuery
-    widgets][6].
 
-    [6]: <{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widgets-about.html>
--   RequireJS. The RequireJS library helps load JS resources on demand to
-    improve page load times. It's also intended to encourage modular design of
-    frontend components. See [JavaScript resources][6].
+*  <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.7CE.html" target="_blank">Version 2.0.7</a>
 
-    [6]: <{{ site.gdeurl }}config-guide/config/js-resources.html>
+*  <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.6CE.html" target="_blank">Version 2.0.6</a>
 
--   PSR Compliance. PSR compliance standardizes the use of PHP to allow
-    different sets of code libraries to work together. See [PHP coding
-    standard][7].
+*  <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.5CE.html" target="_blank">Version 2.0.5</a>
 
-    [7]: <{{ site.gdeurl }}coding-standards/code-standard-php.html>
+*   <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.4CE.html" target="_blank">Version 2.0.4</a>
 
--   Modular architecture. Define your own set of modules. Cross-module
-    dependencies are reduced, and interfaces among multiple extensions are
-    cleaner and more discrete. See [What is Magento?][8], [Magento as a modular
-    system][9], and [Service contracts][10].
+*   <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.3CE.html" target="_blank">Version 2.0.3</a>
 
-    [8]: <{{ site.gdeurl }}architecture/arch_whatis.html>
+*   <a href="http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.2.html" target="_blank">Version 2.0.2</a>
 
-    [9]: <{{ site.gdeurl }}architecture/arch_asmodsys.html>
+*   <a href="http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.1.html" target="_blank">Version 2.0.1</a>
 
-    [10]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
-
--   Testing framework. Magento 2 includes a pre-packaged series of test scripts,
-    including tests for integration, units, static environments, functional
-    areas, and performance criteria. See [Magento Test Framework][11], and the
-    [JavaScript unit tests][12].
-
-    [11]: <https://github.com/magento/mtf/blob/master/docs/install-config.md>
-
-    [12]: <{{ site.gdeurl }}extension-dev-guide/test/test_js-unit.html>
+*   <a href="http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.html" target="_blank">Version 2.0.0</a>
 
 
 
-<h2 id="help">Help improve this documentation</h2>
+Magento Enterprise Edition (EE) Release Notes
 
-Magento 2.0 product documentation is hosted on GitHub, and we welcome your
-feedback there.
+*  <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1_RC3EE.html" target="_blank">Version 2.1 Release Candidate (RC3)</a>
 
-Click the **Edit this page on GitHub** link at the top of a documentation page to
-open the file in our GitHub repository, where you are invited to suggest changes
-by creating pull requests, or open a discussion by creating an issue.
-Feel free to contact the documentation team directly at
-<a href="mailto:DL-Magento-Doc-Feedback@ebay.com">DL-Magento-Doc-Feedback@ebay.com</a>
+
+*  <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1_RC2EE.html" target="_blank">Version 2.1 Release Candidate (RC2)</a>
+
+*  <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1_RC1EE.html" target="_blank">Version 2.1 Release Candidate (RC1)</a>
+
+*   <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.9EE.html" target="_blank">Version 2.0.9</a>
+
+
+*   <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.8EE.html" target="_blank">Version 2.0.8</a>
+
+
+*   <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.7EE.html" target="_blank">Version 2.0.7</a>
+
+*   <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.6EE.html" target="_blank">Version 2.0.6</a>
+
+*   <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.5EE.html" target="_blank">Version 2.0.5</a>
+
+*   <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.4EE.html" target="_blank">Version 2.0.4</a>
+
+*   <a href="{{page.baseurl}}release-notes/ReleaseNotes2.0.3EE.html" target="_blank">Version 2.0.3</a>
+
+*   <a href="http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.2.html" target="_blank">Version 2.0.2</a>
+
+*   <a href="http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.1.html" target="_blank">Version 2.0.1</a>
+
+
+*   <a href="http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.html" target="_blank">Version 2.0.0</a>

@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - customer.update';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Customer Update
+---
 
-				    <h2><a name="customer.update-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
+<h2><a name="customer.update-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
 
 
 <h3><a name="customer.update-Resource%3Acustomer"></a>Resource: customer</h3>
@@ -20,117 +20,114 @@
 <p>Update information about the required customer. Note that you need to pass only those arguments which you want to be updated.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> customerId </td>
-<td class='confluenceTd'> Customer ID </td>
+<td> int </td>
+<td> customerId </td>
+<td> Customer ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> customerData </td>
-<td class='confluenceTd'> Array of customerCustomerEntityToCreate </td>
+<td> array </td>
+<td> customerData </td>
+<td> Array of customerCustomerEntityToCreate </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> True if the customer is updated </td>
+<td> boolean </td>
+<td> True if the customer is updated </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>customerCustomerEntityToCreate</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> customer_id </td>
-<td class='confluenceTd'> Customer ID </td>
+<td> int </td>
+<td> customer_id </td>
+<td> Customer ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> email </td>
-<td class='confluenceTd'> Customer email </td>
+<td> string </td>
+<td> email </td>
+<td> Customer email </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> firstname </td>
-<td class='confluenceTd'> Customer first name </td>
+<td> string </td>
+<td> firstname </td>
+<td> Customer first name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> lastname </td>
-<td class='confluenceTd'> Customer last name </td>
+<td> string </td>
+<td> lastname </td>
+<td> Customer last name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> password </td>
-<td class='confluenceTd'> Customer password </td>
+<td> string </td>
+<td> password </td>
+<td> Customer password </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> group_id </td>
-<td class='confluenceTd'> Group ID </td>
+<td> int </td>
+<td> group_id </td>
+<td> Group ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> prefix </td>
-<td class='confluenceTd'> Customer prefix </td>
+<td> string </td>
+<td> prefix </td>
+<td> Customer prefix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> suffix </td>
-<td class='confluenceTd'> Customer suffix </td>
+<td> string </td>
+<td> suffix </td>
+<td> Customer suffix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> dob </td>
-<td class='confluenceTd'> Customer date of birth </td>
+<td> string </td>
+<td> dob </td>
+<td> Customer date of birth </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> taxvat </td>
-<td class='confluenceTd'> Customer tax/VAT number </td>
+<td> string </td>
+<td> taxvat </td>
+<td> Customer tax/VAT number </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> gender </td>
-<td class='confluenceTd'> Customer gender: 1 - Male, 2 - Female </td>
+<td> int </td>
+<td> gender </td>
+<td> Customer gender: 1 - Male, 2 - Female </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> middlename </td>
-<td class='confluenceTd'> Customer middle name/initial </td>
+<td> string </td>
+<td> middlename </td>
+<td> Customer middle name/initial </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="customer.update-Examples"></a>Examples</h4>

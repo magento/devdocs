@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - Gift Message';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Enterprise Gift Message
+---
 				    
-				    <h2><a name="MAPI-GiftMessage-Module%3AMageGiftMessage"></a>Module: Mage_GiftMessage</h2>
+<h2><a name="MAPI-GiftMessage-Module%3AMageGiftMessage"></a>Module: Mage_GiftMessage</h2>
 
 <p><font color="black">This module allows you to set a gift message for a quote or for a product in a quote.</font></p>
 
@@ -24,34 +24,33 @@
 
 <h5><a name="MAPI-GiftMessage-Faults%3A"></a>Faults:</h5>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> <font color="#333333">Fault Code</font> </th>
-<th class='confluenceTh'> <font color="#333333">Fault Message</font> </th>
+<th> <font color="#333333">Fault Code</font> </th>
+<th> <font color="#333333">Fault Message</font> </th>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">1001</font> </td>
-<td class='confluenceTd'> <font color="#333333">Can not make operation because store is not exists</font> </td>
+<td> <font color="#333333">1001</font> </td>
+<td> <font color="#333333">Can not make operation because store is not exists</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">1002</font> </td>
-<td class='confluenceTd'> <font color="#333333">Can not make operation because quote is not exists</font> </td>
+<td> <font color="#333333">1002</font> </td>
+<td> <font color="#333333">Can not make operation because quote is not exists</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">1101</font> </td>
-<td class='confluenceTd'> <font color="#333333">Gift message data is not valid.</font> </td>
+<td> <font color="#333333">1101</font> </td>
+<td> <font color="#333333">Gift message data is not valid.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">1102</font> </td>
-<td class='confluenceTd'> <font color="#333333">Product's data is not valid.</font> </td>
+<td> <font color="#333333">1102</font> </td>
+<td> <font color="#333333">Product's data is not valid.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">1103</font> </td>
-<td class='confluenceTd'> <font color="#333333">Quote item is not exists</font> </td>
+<td> <font color="#333333">1103</font> </td>
+<td> <font color="#333333">Quote item is not exists</font> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h5><a name="MAPI-GiftMessage-Example%3A"></a>Example:</h5>
@@ -122,4 +121,4 @@ print_r( $giftMessageSetForProductResult );</pre>
 </div></div>
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

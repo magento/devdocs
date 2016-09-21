@@ -5,6 +5,7 @@ subgroup: Testing
 title: JavaScript unit tests
 menu_title: JavaScript unit tests
 menu_order: 2
+version: 2.0
 github_link: extension-dev-guide/test/test_js-unit.md
 redirect_from: /guides/v1.0/extension-dev-guide/test/test_js-unit.html
 ---
@@ -13,7 +14,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/test/test_js-unit.html
 <p>After you run the PHP interpreter once to run unit tests, you can <a href="#phpstorm">run the JavaScript unit tests from the PhpStorm IDE</a>.</p>
 <p>To run JavaScript unit tests, read these topics:</p>
 <ul>
-<li><a href="#unit-test-overiew">Overview</a></li>
+<li><a href="#unit-test-overview">Overview</a></li>
 <li><a href="#config-files">Configuration files</a></li>
 <li><a href="#process-overview">run_js_tests.php script</a></li>
 <li><a href="#test-prereqs">Step 1. Before you begin</a></li>

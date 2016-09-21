@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - core_magento.info';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Magento Info
+---
 
-				    <h2><a name="magento.info-MagentoInfoAPI"></a>Magento Info API</h2>
+<h2><a name="magento.info-MagentoInfoAPI"></a>Magento Info API</h2>
 
 <p>Allows you to get information about the current Magento installation.</p>
 
@@ -27,41 +27,39 @@
 <p><b>Aliases</b>: magento.info</p>
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type <br class="atl-forced-newline" /> </th>
-<th class='confluenceTh'> Name <br class="atl-forced-newline" /> </th>
-<th class='confluenceTh'> Description <br class="atl-forced-newline" /> </th>
+<th> Type <br class="atl-forced-newline" /> </th>
+<th> Name <br class="atl-forced-newline" /> </th>
+<th> Description <br class="atl-forced-newline" /> </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type <br class="atl-forced-newline" /> </th>
-<th class='confluenceTh'> Name <br class="atl-forced-newline" /> </th>
-<th class='confluenceTh'> Description <br class="atl-forced-newline" /> </th>
+<th> Type <br class="atl-forced-newline" /> </th>
+<th> Name <br class="atl-forced-newline" /> </th>
+<th> Description <br class="atl-forced-newline" /> </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> magento_version </td>
-<td class='confluenceTd'> Magento version </td>
+<td> string </td>
+<td> magento_version </td>
+<td> Magento version </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> magento_edition </td>
-<td class='confluenceTd'> Magento edition (Community, Professional, Enterprise) </td>
+<td> string </td>
+<td> magento_edition </td>
+<td> Magento edition (Community, Professional, Enterprise) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

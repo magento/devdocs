@@ -2,10 +2,11 @@
 layout: default
 group: pattern
 subgroup: Navigation
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Wizard
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: pattern-library/navigation/wizard/wizard.md
 ---
 

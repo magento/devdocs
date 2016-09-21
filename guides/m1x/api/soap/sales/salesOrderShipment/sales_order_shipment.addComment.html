@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - sales_order_shipment.addComment';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
-
-				    <h2><a name="sales_order_shipment.addComment-Module%3AMageSales"></a>Module: Mage_Sales</h2>
+---
+layout: m1x_soap
+title: Shipment Add Comment
+---
+				    
+<h2><a name="sales_order_shipment.addComment-Module%3AMageSales"></a>Module: Mage_Sales</h2>
 
 
 <h4><a name="sales_order_shipment.addComment-Resource%3Asalesordershipment"></a>Resource: sales_order_shipment</h4>
@@ -32,55 +32,53 @@
 
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> shipmentIncrementId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipment increment ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> shipmentIncrementId <br class="atl-forced-newline" /> </td>
+<td> Shipment increment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> comment <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipment comment (optional) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> comment <br class="atl-forced-newline" /> </td>
+<td> Shipment comment (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> email <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Send email flag (optional) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> email <br class="atl-forced-newline" /> </td>
+<td> Send email flag (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> includeInEmail <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Include comment in email flag (optional) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> includeInEmail <br class="atl-forced-newline" /> </td>
+<td> Include comment in email flag (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean\int </td>
-<td class='confluenceTd'> True (1) if the comment is added to the order shipment </td>
+<td> boolean\int </td>
+<td> True (1) if the comment is added to the order shipment </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="sales_order_shipment.addComment-Examples"></a>Examples</h4>

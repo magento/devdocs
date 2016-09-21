@@ -5,6 +5,7 @@ subgroup: Architecture
 title: Logical view
 menu_title: Logical view
 menu_order: 3
+version: 2.0
 github_link: architecture/logical_view.md
 redirect_from: /guides/v1.0/architecture/logical_view.html
 ---

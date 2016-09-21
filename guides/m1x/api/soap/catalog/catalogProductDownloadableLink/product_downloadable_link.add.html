@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_downloadable_link.add';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Downloadable Link Add
+---
 
-				    <h3><a name="product_downloadable_link.add-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
+<h3><a name="product_downloadable_link.add-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
 
 
 <h4><a name="product_downloadable_link.add-Resource%3Aproductdownloadablelink"></a>Resource: product_downloadable_link</h4>
@@ -20,199 +20,193 @@
 <p>Allows you to add a new link to a downloadable product.</p>
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> productId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product ID </td>
+<td> string </td>
+<td> productId <br class="atl-forced-newline" /> </td>
+<td> Product ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> resource <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductDownloadableLinkAddEntity </td>
+<td> array </td>
+<td> resource <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductDownloadableLinkAddEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> resourceType <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Resource type. Can have one of the following values: "sample" or "link". </td>
+<td> string </td>
+<td> resourceType <br class="atl-forced-newline" /> </td>
+<td> Resource type. Can have one of the following values: "sample" or "link". </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> store <br class="atl-forced-newline" /> </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> identifierType <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Type of the product identifier. Can have one of the following values: "sku" or "id". </td>
+<td> string </td>
+<td> identifierType <br class="atl-forced-newline" /> </td>
+<td> Type of the product identifier. Can have one of the following values: "sku" or "id". </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Result of adding a link to the downloadable product </td>
+<td> int </td>
+<td> result </td>
+<td> Result of adding a link to the downloadable product </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductDownloadableLinkAddEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Link title </td>
+<td> string </td>
+<td> title <br class="atl-forced-newline" /> </td>
+<td> Link title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option value row price </td>
+<td> string </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Custom option value row price </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_unlimited <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the number of downloads is unlimited </td>
+<td> int </td>
+<td> is_unlimited <br class="atl-forced-newline" /> </td>
+<td> Defines whether the number of downloads is unlimited </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> number_of_downloads <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Maximum number of possible downloads </td>
+<td> int </td>
+<td> number_of_downloads <br class="atl-forced-newline" /> </td>
+<td> Maximum number of possible downloads </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_shareable <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the link is shareable </td>
+<td> int </td>
+<td> is_shareable <br class="atl-forced-newline" /> </td>
+<td> Defines whether the link is shareable </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> sample <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductDownloadableLinkAddSampleEntity </td>
+<td> array </td>
+<td> sample <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductDownloadableLinkAddSampleEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Type of the data source. Can have one of the following values: "file" or "url" </td>
+<td> string </td>
+<td> type <br class="atl-forced-newline" /> </td>
+<td> Type of the data source. Can have one of the following values: "file" or "url" </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> file <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductDownloadableLinkFileEntity </td>
+<td> array </td>
+<td> file <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductDownloadableLinkFileEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> link_url <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Link URL address </td>
+<td> string </td>
+<td> link_url <br class="atl-forced-newline" /> </td>
+<td> Link URL address </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sample_url <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Sample URL address </td>
+<td> string </td>
+<td> sample_url <br class="atl-forced-newline" /> </td>
+<td> Sample URL address </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Link sort order </td>
+<td> int </td>
+<td> sort_order <br class="atl-forced-newline" /> </td>
+<td> Link sort order </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
 
 
 <p>The <b>catalogProductDownloadableLinkAddSampleEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> type </td>
-<td class='confluenceTd'> Type of the data source. Can have one of the following values: "file" or "url"&nbsp; <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> type </td>
+<td> Type of the data source. Can have one of the following values: "file" or "url"&nbsp; <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> file <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductDownloadableLinkFileEntity </td>
+<td> array </td>
+<td> file <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductDownloadableLinkFileEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> url <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> URL to upload </td>
+<td> string </td>
+<td> url <br class="atl-forced-newline" /> </td>
+<td> URL to upload </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductDownloadableLinkFileEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> File name </td>
+<td> string </td>
+<td> name <br class="atl-forced-newline" /> </td>
+<td> File name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> base64_content <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> BASE64 encoded file <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> base64_content <br class="atl-forced-newline" /> </td>
+<td> BASE64 encoded file <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Faults</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 414 </td>
-<td class='confluenceTd'> Unable to save action. Details in error message. <br class="atl-forced-newline" /> </td>
+<td> 414 </td>
+<td> Unable to save action. Details in error message. <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 415 </td>
-<td class='confluenceTd'> Validation error has occurred. <br class="atl-forced-newline" /> </td>
+<td> 415 </td>
+<td> Validation error has occurred. <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="product_downloadable_link.add-Examples"></a>Examples</h4>

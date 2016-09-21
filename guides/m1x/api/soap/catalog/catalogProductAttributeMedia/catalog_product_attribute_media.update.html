@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - catalog_product_attribute_media.update';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Media Update
+---
 
-				    <h2><a name="catalog_product_attribute_media.update-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+<h2><a name="catalog_product_attribute_media.update-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
 
 
 <h4><a name="catalog_product_attribute_media.update-Resource%3Acatalogproductattributemedia"></a>Resource:catalog_product_attribute_media</h4>
@@ -33,133 +33,129 @@
 
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> product\productId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product ID or code </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> product\productId <br class="atl-forced-newline" /> </td>
+<td> Product ID or code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> file <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Image file name (e.g., /i/m/image.jpeg) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> file <br class="atl-forced-newline" /> </td>
+<td> Image file name (e.g., /i/m/image.jpeg) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> data <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductAttributeMediaCreateEntity </td>
+<td> array </td>
+<td> data <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductAttributeMediaCreateEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> storeView <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store view ID or code </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> storeView <br class="atl-forced-newline" /> </td>
+<td> Store view ID or code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> identifierType </td>
-<td class='confluenceTd'> Defines whether the product ID or SKU is passed in the 'product' parameter </td>
+<td> string </td>
+<td> identifierType </td>
+<td> Defines whether the product ID or SKU is passed in the 'product' parameter </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Notes</b>: You should specify only those parameters which you want to be updated. Parameters that were not specified in the request, will preserve the previous values.</p>
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Result of product image updating </td>
+<td> boolean </td>
+<td> result </td>
+<td> Result of product image updating </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductAttributeMediaCreateEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description <br class="atl-forced-newline" /> </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description <br class="atl-forced-newline" /> </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> file <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductImageFileEntity <br class="atl-forced-newline" /> </td>
+<td> array </td>
+<td> file <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductImageFileEntity <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> label <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product image label </td>
+<td> string </td>
+<td> label <br class="atl-forced-newline" /> </td>
+<td> Product image label </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> position <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product image position </td>
+<td> string </td>
+<td> position <br class="atl-forced-newline" /> </td>
+<td> Product image position </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString </td>
-<td class='confluenceTd'> types <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of types </td>
+<td> ArrayOfString </td>
+<td> types <br class="atl-forced-newline" /> </td>
+<td> Array of types </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> exclude <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the image will associate only to one of three image types </td>
+<td> string </td>
+<td> exclude <br class="atl-forced-newline" /> </td>
+<td> Defines whether the image will associate only to one of three image types </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> remove <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Image remove flag </td>
+<td> string </td>
+<td> remove <br class="atl-forced-newline" /> </td>
+<td> Image remove flag </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductImageFileEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> content </td>
-<td class='confluenceTd'> Product image content (base_64 encoded) </td>
+<td> string </td>
+<td> content </td>
+<td> Product image content (base_64 encoded) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> mime </td>
-<td class='confluenceTd'> Image mime type (e.g., image/jpeg) </td>
+<td> string </td>
+<td> mime </td>
+<td> Image mime type (e.g., image/jpeg) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> name </td>
-<td class='confluenceTd'> Image name </td>
+<td> string </td>
+<td> name </td>
+<td> Image name </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="catalog_product_attribute_media.update-Examples"></a>Examples</h4>

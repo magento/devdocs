@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_custom_option_value.info';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Product Custom Value Info
+---
 
-				    <h3><a name="product_custom_option_value.info-Module%3AComplexProductAPI"></a><b>Module: Complex Product API</b></h3>
+<h3><a name="product_custom_option_value.info-Module%3AComplexProductAPI"></a><b>Module: Complex Product API</b></h3>
 
 
 <h4><a name="product_custom_option_value.info-Resource%3Aproductcustomoptionvalue"></a><b>Resource: product_custom_option_value</b></h4>
@@ -20,139 +20,135 @@
 <p>Allows you to retrieve full information about the specified product custom option value.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> valueId </td>
-<td class='confluenceTd'> Value ID </td>
+<td> string </td>
+<td> valueId </td>
+<td> Value ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> store </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of catalogProductCustomOptionValueInfoEntity </td>
+<td> array <br class="atl-forced-newline" /> </td>
+<td> result </td>
+<td> Array of catalogProductCustomOptionValueInfoEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductCustomOptionValueInfoEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> value_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Option value ID <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> value_id <br class="atl-forced-newline" /> </td>
+<td> Option value ID <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> option_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Option ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> option_id <br class="atl-forced-newline" /> </td>
+<td> Option ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option value row SKU <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sku <br class="atl-forced-newline" /> </td>
+<td> Custom option value row SKU <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Option value sort order </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sort_order <br class="atl-forced-newline" /> </td>
+<td> Option value sort order </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> default_price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Option value default price <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> default_price <br class="atl-forced-newline" /> </td>
+<td> Option value default price <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> default_price_type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Default price type. Possible values are as follows: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> default_price_type <br class="atl-forced-newline" /> </td>
+<td> Default price type. Possible values are as follows: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> store_price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Option value store price <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> store_price <br class="atl-forced-newline" /> </td>
+<td> Option value store price <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> store_price_type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store price type. Possible values are as follows: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> store_price_type <br class="atl-forced-newline" /> </td>
+<td> Store price type. Possible values are as follows: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Option value price </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Option value price </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> price_type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Price type. Possible values are as follows: "fixed" or "percent" </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> price_type <br class="atl-forced-newline" /> </td>
+<td> Price type. Possible values are as follows: "fixed" or "percent" </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> default_title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Option value default title </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> default_title <br class="atl-forced-newline" /> </td>
+<td> Option value default title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> store_title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Option value store title </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> store_title <br class="atl-forced-newline" /> </td>
+<td> Option value store title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Option value title </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> title <br class="atl-forced-newline" /> </td>
+<td> Option value title </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Option value with requested id does not exist. <br class="atl-forced-newline" /> </td>
+<td> 101 </td>
+<td> Option value with requested id does not exist. <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="product_custom_option_value.info-Examples"></a>Examples</h4>

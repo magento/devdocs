@@ -69,7 +69,7 @@ $collection[] = 'bar';
 
 <p>It should come as no surprise that Magento offers you a number of these Collections.  In fact, every Model object that follows the Magento interfaces gets a Collection type for free.  Understanding how these Collections work is a key part to being an effective Magento programmer.  We're going to take a look at Magento Collections, starting from the bottom and working our way up.  Set up a <a href="http://alanstorm.com/magento_controller_hello_world">controller action</a> where you can run arbitrary code, and let's get started.</p>
 
-<h2>A Collection of Things</h2>
+<h2 id="a-collection-of-things">A Collection of Things</h2>
 
 <p>First, we're going to create a few new Objects.</p>
 
@@ -156,7 +156,7 @@ var_dump($collection_of_things->getLastItem()->getData());
 
 <p>Neat stuff.</p>
 
-<h2>Model Collections</h2>
+<h2 id="model-collections">Model Collections</h2>
 <p>So, this is an interesting exercise, but why do we care? </p>
 
 <p>We care because all of Magento's built in data Collections inherit from this object.  That means if you have, say, a product Collection you can do the same sort of things.  Let's take a look </p>
@@ -248,7 +248,7 @@ $collection_of_products = Mage::getModel('catalog/product')
     ->addAttributeToSelect('price');
 </pre>
 
-<h2>Lazy Loading</h2>
+<h2 id="lazy-loading">Lazy Loading</h2>
 
 <p>One thing that will trip up PHP developers new to Magento's ORM system is <strong>when</strong> Magento makes its database calls.  When you're writing literal SQL, or even when you're using a basic ORM system, SQL calls are often made immediately when instantiating an Object.</p>
 
@@ -277,7 +277,7 @@ $collection_of_products->addAttributeToSelect('meta_title');
 
 <p>In general, try not to worry too much about the implementation details in your day to day work.  It's good to know that there's s SQL backend and Magento is doing SQLy things, but when you're coding up a feature try to forget about it, and just treat the objects as block boxes that do what you need.  </p>
 
-<h2>Filtering Database Collections</h2>
+<h2 id="filtering-database-collections">Filtering Database Collections</h2>
 
 <p>The most important method on a database Collection is <tt>addFieldToFilter</tt>.  This adds your <tt>WHERE</tt> clauses to the SQL query being used behind the scenes.  Consider this bit of code, run against the sample data database (substitute your own SKU is you're using a different set of product data)</p>
 
@@ -353,7 +353,7 @@ WHERE (IF(_table_meta_title.value_id>0, _table_meta_title.value, _table_meta_tit
 
 <p>Not to belabor the point, but try not to think too much about the SQL if you're on deadline.</p>
 
-<h2>Other Comparison Operators</h2>
+<h2 id="other-comparison-operators">Other Comparison Operators</h2>
 
 <p>I'm sure you're wondering "what if I want something other than an equals by query"?  Not equal, greater than, less than, etc.  The <tt>addFieldToFilter</tt> method's second parameter has you covered there as well.  It supports an alternate syntax where, instead of passing in a string, you pass in a single element Array.  </p>
 
@@ -418,7 +418,7 @@ WHERE (e.sku < 'n2610')
 array("gteq"=>'n2610')
 WHERE (e.sku >= 'n2610')
 
-array("moreq"=>'n2610') //a weird, second way to do greater than equal
+array("moreq"=>'n2610') //a weird, second way to do greater than equal (Doesn't work on > 1.8 CE EDITION do the same as eq)
 WHERE (e.sku >= 'n2610')
 
 array("lteq"=>'n2610')
@@ -470,7 +470,7 @@ public function testAction
 <p>The above yields</p>
 <pre>WHERE (_table_price.value >= '10' and _table_price.value <= '20')'</pre>
 
-<h2>AND or OR, or is that OR and AND?</h2>
+<h2 id="and-or-or">AND or OR, or is that OR and AND?</h2>
 
 <p>Finally, we come to the boolean operators.  It's the rare moment where we're only filtering by one attribute.  Fortunately, Magento's Collections have us covered.  You can chain together multiple calls to <tt>addFieldToFilter</tt> to get a number of "AND" queries.</p>
 
@@ -487,7 +487,7 @@ function testAction()
 }
 </pre>
 
-<p>By chaining together multiple calls as above, we'll produce a where clause that looks something like the the following</p>
+<p>By chaining together multiple calls as above, we'll produce a where clause that looks something like the following</p>
 
 <pre>WHERE (e.sku like 'a%') AND (e.sku like 'b%')</pre>
 
@@ -525,6 +525,6 @@ public function testAction()
 
 <pre>WHERE (((e.sku like 'a%') or (e.sku like 'b%'))) </pre>
 
-<h2>Wrap Up</h2>
+<h2 id="wrap-up">Wrap Up</h2>
 
 <p>You're now a Magento developer walking around with some serious firepower.  Without having to write a single line of SQL you now know how to query Magento for any Model your store or application might need. </p>

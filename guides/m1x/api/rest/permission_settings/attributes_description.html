@@ -1,13 +1,10 @@
 ---
-layout: m1x
+layout: m1x_rest
 title: Attributes Description
 ---
-<p><a href="{{ site.m1xgithuburl }}api/rest/permission_settings/attributes_description.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
 
-
-<div class="toc"> <h4 class="toc">Table of Contents</h4>
-<ul>
+<ul class="introduction-menu">
     <li><a href='#RESTAttributes-Description-Order%2FOrders'>Order/Orders</a>
     <ul>
         <li><a href='#RESTAttributes-Description-OrderAddresses'>Order Addresses</a></li>
@@ -23,8 +20,7 @@ title: Attributes Description
         <li><a href='#RESTAttributes-Description-ProductImage'>Product Image</a></li>
     </ul>
     </li>
-</ul></div>
-
+</ul>
 <p>The following table describes REST attributes that can be managed in the Magento Admin Panel.<br/>
 To access these attributes, go to <b>System &gt; Web Services &gt; REST Attributes</b> and select the type of the user for which attributes will be managed.</p>
 
@@ -32,552 +28,547 @@ To access these attributes, go to <b>System &gt; Web Services &gt; REST Attribut
 <h3><a name="RESTAttributes-Description-Order%2FOrders"></a>Order/Orders</h3>
 
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Attribute Name </th>
-<th class='confluenceTh'> Attribute Description </th>
-<th class='confluenceTh'> Notes </th>
+<th> Attribute Name </th>
+<th> Attribute Description </th>
+<th> Notes </th>
 </tr>
 <tr>
-<td class='confluenceTd'> Order ID </td>
-<td class='confluenceTd'> Sales order ID </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Order ID </td>
+<td> Sales order ID </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Order Date <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date when the sales order was placed </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Order Date <br class="atl-forced-newline" /> </td>
+<td> Date when the sales order was placed </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Order Status </td>
-<td class='confluenceTd'> Sales order status. Can have the following values: Pending, Processing, Complete, Closed, Holded, Pending PayPal, and Payment Review. </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Order Status </td>
+<td> Sales order status. Can have the following values: Pending, Processing, Complete, Closed, Holded, Pending PayPal, and Payment Review. </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Shipping Method </td>
-<td class='confluenceTd'> Shipping method selected during the checkout process (e.g., Flat rate - Fixed) </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Shipping Method </td>
+<td> Shipping method selected during the checkout process (e.g., Flat rate - Fixed) </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Payment Method </td>
-<td class='confluenceTd'> Payment method selected during the checkout process (e.g., Check/money order) </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Payment Method </td>
+<td> Payment method selected during the checkout process (e.g., Check/money order) </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Currency <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base currency code (e.g., USD) </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Currency <br class="atl-forced-newline" /> </td>
+<td> Base currency code (e.g., USD) </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Order Currency </td>
-<td class='confluenceTd'> Order currency code (e.g., EUR) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Order Currency </td>
+<td> Order currency code (e.g., EUR) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Store Name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Name of the store from which the order was placed <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Store Name <br class="atl-forced-newline" /> </td>
+<td> Name of the store from which the order was placed <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Placed from IP <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> IP address from which the order was placed <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Placed from IP <br class="atl-forced-newline" /> </td>
+<td> IP address from which the order was placed <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Store Currency to Base Currency Rate <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store currency to base currency rate <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Store Currency to Base Currency Rate <br class="atl-forced-newline" /> </td>
+<td> Store currency to base currency rate <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Subtotal <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Subtotal amount in order currency (excluding shipping and tax) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Subtotal <br class="atl-forced-newline" /> </td>
+<td> Subtotal amount in order currency (excluding shipping and tax) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Subtotal Including Tax <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Subtotal amount including tax (in order currency) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Subtotal Including Tax <br class="atl-forced-newline" /> </td>
+<td> Subtotal amount including tax (in order currency) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Discount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Discount amount applied in the sales order in order currency <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Discount <br class="atl-forced-newline" /> </td>
+<td> Discount amount applied in the sales order in order currency <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Grand Total to Be Charged <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Total amount of money to be paid for the order in base currency (including tax) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Grand Total to Be Charged <br class="atl-forced-newline" /> </td>
+<td> Total amount of money to be paid for the order in base currency (including tax) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Grand Total <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Grand total amount in order currency (including tax and shipping) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Grand Total <br class="atl-forced-newline" /> </td>
+<td> Grand total amount in order currency (including tax and shipping) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Shipping <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipping amount applied in the sales order in order currency <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Shipping <br class="atl-forced-newline" /> </td>
+<td> Shipping amount applied in the sales order in order currency <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Shipping Including Tax <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipping amount including tax (in order currency) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Shipping Including Tax <br class="atl-forced-newline" /> </td>
+<td> Shipping amount including tax (in order currency) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Shipping Tax <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Tax amount for shipping in order currency <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Shipping Tax <br class="atl-forced-newline" /> </td>
+<td> Tax amount for shipping in order currency <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Tax Amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Tax amount applied in the sales order in order currency <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Tax Amount <br class="atl-forced-newline" /> </td>
+<td> Tax amount applied in the sales order in order currency <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Tax Name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Name of the applied tax </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Tax Name <br class="atl-forced-newline" /> </td>
+<td> Name of the applied tax </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Tax Rate <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Tax rate applied in the order (in order currency) </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Tax Rate <br class="atl-forced-newline" /> </td>
+<td> Tax rate applied in the order (in order currency) </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Gift Cards Amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift card pricing amount </td>
-<td class='confluenceTd'> This attribute is available only in Magento EE </td>
+<td> Gift Cards Amount <br class="atl-forced-newline" /> </td>
+<td> Gift card pricing amount </td>
+<td> This attribute is available only in Magento EE </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Reward Points Balance <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Reward points amount (that can be converted to currency) </td>
-<td class='confluenceTd'> This attribute is available only in Magento EE <br class="atl-forced-newline" /> </td>
+<td> Reward Points Balance <br class="atl-forced-newline" /> </td>
+<td> Reward points amount (that can be converted to currency) </td>
+<td> This attribute is available only in Magento EE <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Reward Currency Amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Reward currency amount </td>
-<td class='confluenceTd'> This attribute is available only in Magento EE <br class="atl-forced-newline" /> </td>
+<td> Reward Currency Amount <br class="atl-forced-newline" /> </td>
+<td> Reward currency amount </td>
+<td> This attribute is available only in Magento EE <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Coupon Code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Coupon code that was applied in the order <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Coupon Code <br class="atl-forced-newline" /> </td>
+<td> Coupon code that was applied in the order <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Discount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Amount of applied discount in base currency <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Discount <br class="atl-forced-newline" /> </td>
+<td> Amount of applied discount in base currency <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Subtotal <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Subtotal amount for all products in the order in base currency (excluding tax and shipping) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Subtotal <br class="atl-forced-newline" /> </td>
+<td> Subtotal amount for all products in the order in base currency (excluding tax and shipping) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Shipping <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Amount of money to be paid for shipping in base currency <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Shipping <br class="atl-forced-newline" /> </td>
+<td> Amount of money to be paid for shipping in base currency <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Shipping Tax <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Tax amount for shipping in base currency <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Shipping Tax <br class="atl-forced-newline" /> </td>
+<td> Tax amount for shipping in base currency <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Tax Amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Tax amount applied to the order items in base currency <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Tax Amount <br class="atl-forced-newline" /> </td>
+<td> Tax amount applied to the order items in base currency <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Total Paid <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Total amount paid for the order (in order currency) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Total Paid <br class="atl-forced-newline" /> </td>
+<td> Total amount paid for the order (in order currency) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Total Paid <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Total amount paid for the order (in base currency) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Total Paid <br class="atl-forced-newline" /> </td>
+<td> Total amount paid for the order (in base currency) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Total Refunded <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Total refunded amount in order currency <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Total Refunded <br class="atl-forced-newline" /> </td>
+<td> Total refunded amount in order currency <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Total Refunded <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Total amount refunded for the order (in base currency) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Total Refunded <br class="atl-forced-newline" /> </td>
+<td> Total amount refunded for the order (in base currency) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Subtotal Including Tax <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Subtotal amount including tax but excluding the discount amount (in base currency) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Subtotal Including Tax <br class="atl-forced-newline" /> </td>
+<td> Subtotal amount including tax but excluding the discount amount (in base currency) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Total Due <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The rest of the money to be paid for the order in base currency (e.g., when partial invoice is applied) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Total Due <br class="atl-forced-newline" /> </td>
+<td> The rest of the money to be paid for the order in base currency (e.g., when partial invoice is applied) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Total Due <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The rest of the money to be paid for the order in order currency (e.g., when partial invoice is applied) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Total Due <br class="atl-forced-newline" /> </td>
+<td> The rest of the money to be paid for the order in order currency (e.g., when partial invoice is applied) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Shipping Discount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Discount amount for shipping (in order currency) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Shipping Discount <br class="atl-forced-newline" /> </td>
+<td> Discount amount for shipping (in order currency) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Shipping Discount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Discount amount for shipping (in base currency) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Shipping Discount <br class="atl-forced-newline" /> </td>
+<td> Discount amount for shipping (in base currency) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Discount Description <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Discount code (coupon code applied in the order) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Discount Description <br class="atl-forced-newline" /> </td>
+<td> Discount code (coupon code applied in the order) <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Customer Balance <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer balance (in order currency) </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Customer Balance <br class="atl-forced-newline" /> </td>
+<td> Customer balance (in order currency) </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Customer Balance <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer balance (in base currency) </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Base Customer Balance <br class="atl-forced-newline" /> </td>
+<td> Customer balance (in base currency) </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Gift Cards Amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift card pricing amount (in base currency) </td>
-<td class='confluenceTd'> This attribute is available only in Magento EE <br class="atl-forced-newline" /> </td>
+<td> Base Gift Cards Amount <br class="atl-forced-newline" /> </td>
+<td> Gift card pricing amount (in base currency) </td>
+<td> This attribute is available only in Magento EE <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Rewards Currency <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Reward currency amount (in base currency) </td>
-<td class='confluenceTd'> This attribute is available only in Magento EE <br class="atl-forced-newline" /> </td>
+<td> Base Rewards Currency <br class="atl-forced-newline" /> </td>
+<td> Reward currency amount (in base currency) </td>
+<td> This attribute is available only in Magento EE <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
 <h4><a name="RESTAttributes-Description-OrderAddresses"></a>Order Addresses</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Attribute Name </th>
-<th class='confluenceTh'> Attribute Description </th>
+<th> Attribute Name </th>
+<th> Attribute Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> Customer Last Name </td>
-<td class='confluenceTd'> Customer last name </td>
+<td> Customer Last Name </td>
+<td> Customer last name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Customer First Name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer first name </td>
+<td> Customer First Name <br class="atl-forced-newline" /> </td>
+<td> Customer first name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Customer Middle Name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer middle name or initial </td>
+<td> Customer Middle Name <br class="atl-forced-newline" /> </td>
+<td> Customer middle name or initial </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Customer Prefix <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer prefix </td>
+<td> Customer Prefix <br class="atl-forced-newline" /> </td>
+<td> Customer prefix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Customer Suffix <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer suffix </td>
+<td> Customer Suffix <br class="atl-forced-newline" /> </td>
+<td> Customer suffix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Company <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Company name </td>
+<td> Company <br class="atl-forced-newline" /> </td>
+<td> Company name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Street <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Street address </td>
+<td> Street <br class="atl-forced-newline" /> </td>
+<td> Street address </td>
 </tr>
 <tr>
-<td class='confluenceTd'> City <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> City </td>
+<td> City <br class="atl-forced-newline" /> </td>
+<td> City </td>
 </tr>
 <tr>
-<td class='confluenceTd'> State <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> State </td>
+<td> State <br class="atl-forced-newline" /> </td>
+<td> State </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ZIP/Postal Code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> ZIP or postal code </td>
+<td> ZIP/Postal Code <br class="atl-forced-newline" /> </td>
+<td> ZIP or postal code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Country <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Country name </td>
+<td> Country <br class="atl-forced-newline" /> </td>
+<td> Country name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Phone Number <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer phone number </td>
+<td> Phone Number <br class="atl-forced-newline" /> </td>
+<td> Customer phone number </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Address Type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Address type. Can have the following values: billing or shipping </td>
+<td> Address Type <br class="atl-forced-newline" /> </td>
+<td> Address type. Can have the following values: billing or shipping </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
 
 <h4><a name="RESTAttributes-Description-OrderItems"></a>Order Items</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Attribute Name </th>
-<th class='confluenceTh'> Attribute Description </th>
+<th> Attribute Name </th>
+<th> Attribute Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Discount Amount </td>
-<td class='confluenceTd'> Discount amount applied to the row in base currency </td>
+<td> Base Discount Amount </td>
+<td> Discount amount applied to the row in base currency </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Item Subtotal </td>
-<td class='confluenceTd'> Row subtotal in base currency </td>
+<td> Base Item Subtotal </td>
+<td> Row subtotal in base currency </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Item Subtotal Including tax </td>
-<td class='confluenceTd'> Row subtotal including tax in base currency <br class="atl-forced-newline" /> </td>
+<td> Base Item Subtotal Including tax </td>
+<td> Row subtotal including tax in base currency <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Original Price </td>
-<td class='confluenceTd'> Original item price in base currency <br class="atl-forced-newline" /> </td>
+<td> Base Original Price </td>
+<td> Original item price in base currency <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Price </td>
-<td class='confluenceTd'> Item price in base currency <br class="atl-forced-newline" /> </td>
+<td> Base Price </td>
+<td> Item price in base currency <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Price Including tax </td>
-<td class='confluenceTd'> Item price including tax in base currency <br class="atl-forced-newline" /> </td>
+<td> Base Price Including tax </td>
+<td> Item price including tax in base currency <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Base Tax Amount </td>
-<td class='confluenceTd'> Tax amount applied to the row in base currency <br class="atl-forced-newline" /> </td>
+<td> Base Tax Amount </td>
+<td> Tax amount applied to the row in base currency <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Canceled Qty </td>
-<td class='confluenceTd'> Number of canceled order items <br class="atl-forced-newline" /> </td>
+<td> Canceled Qty </td>
+<td> Number of canceled order items <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Discount Amount </td>
-<td class='confluenceTd'> Discount amount applied to the row in order currency </td>
+<td> Discount Amount </td>
+<td> Discount amount applied to the row in order currency </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Invoiced Qty </td>
-<td class='confluenceTd'> Number of invoiced order items <br class="atl-forced-newline" /> </td>
+<td> Invoiced Qty </td>
+<td> Number of invoiced order items <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Item Subtotal </td>
-<td class='confluenceTd'> Row subtotal in order currency </td>
+<td> Item Subtotal </td>
+<td> Row subtotal in order currency </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Item Subtotal Including Tax </td>
-<td class='confluenceTd'> Row subtotal including tax in order currency </td>
+<td> Item Subtotal Including Tax </td>
+<td> Row subtotal including tax in order currency </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Order Item ID </td>
-<td class='confluenceTd'> Order item ID </td>
+<td> Order Item ID </td>
+<td> Order item ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Ordered Qty </td>
-<td class='confluenceTd'> Number of ordered items <br class="atl-forced-newline" /> </td>
+<td> Ordered Qty </td>
+<td> Number of ordered items <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Original Price </td>
-<td class='confluenceTd'> Original item price in order currency </td>
+<td> Original Price </td>
+<td> Original item price in order currency </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Parent Order Item ID </td>
-<td class='confluenceTd'> ID of the configurable product to which the simple product is assigned </td>
+<td> Parent Order Item ID </td>
+<td> ID of the configurable product to which the simple product is assigned </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Price </td>
-<td class='confluenceTd'> Item price in order currency <br class="atl-forced-newline" /> </td>
+<td> Price </td>
+<td> Item price in order currency <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Price Including Tax </td>
-<td class='confluenceTd'> Item price including tax in order currency </td>
+<td> Price Including Tax </td>
+<td> Item price including tax in order currency </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Product and Custom Options Name </td>
-<td class='confluenceTd'> Name of the product (custom options name) </td>
+<td> Product and Custom Options Name </td>
+<td> Name of the product (custom options name) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Refunded Qty </td>
-<td class='confluenceTd'> Number of refunded order items <br class="atl-forced-newline" /> </td>
+<td> Refunded Qty </td>
+<td> Number of refunded order items <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> SKU </td>
-<td class='confluenceTd'> Product SKU <br class="atl-forced-newline" /> </td>
+<td> SKU </td>
+<td> Product SKU <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Shipped Qty </td>
-<td class='confluenceTd'> Number of shipped order items <br class="atl-forced-newline" /> </td>
+<td> Shipped Qty </td>
+<td> Number of shipped order items <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Tax Amount </td>
-<td class='confluenceTd'> Tax amount applied to the row in order currency </td>
+<td> Tax Amount </td>
+<td> Tax amount applied to the row in order currency </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Tax Percent </td>
-<td class='confluenceTd'> Tax percent applied to the row </td>
+<td> Tax Percent </td>
+<td> Tax percent applied to the row </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
 
 <h3><a name="RESTAttributes-Description-StockItem"></a>Stock Item</h3>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Attribute Name </th>
-<th class='confluenceTh'> Attribute Description </th>
+<th> Attribute Name </th>
+<th> Attribute Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> Automatically Return Credit Memo Item to Stock </td>
-<td class='confluenceTd'> Defines whether products can be automatically returned to stock when the refund for an order is created </td>
+<td> Automatically Return Credit Memo Item to Stock </td>
+<td> Defines whether products can be automatically returned to stock when the refund for an order is created </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Backorders </td>
-<td class='confluenceTd'> Defines whether the customer can place the order for products that are out of stock at the moment. Can have the following values: 0 - No Backorders, 1 - Allow Qty Below 0, and 2 - Allow Qty Below 0 and Notify Customer </td>
+<td> Backorders </td>
+<td> Defines whether the customer can place the order for products that are out of stock at the moment. Can have the following values: 0 - No Backorders, 1 - Allow Qty Below 0, and 2 - Allow Qty Below 0 and Notify Customer </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Can Be Divided into Multiple Boxes for Shipping </td>
-<td class='confluenceTd'> Defines whether the stock items can be divided into multiple boxes for shipping <br class="atl-forced-newline" /> </td>
+<td> Can Be Divided into Multiple Boxes for Shipping </td>
+<td> Defines whether the stock items can be divided into multiple boxes for shipping <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Enable Qty Increments </td>
-<td class='confluenceTd'> Defines whether the customer can add products only in increments to the shopping cart <br class="atl-forced-newline" /> </td>
+<td> Enable Qty Increments </td>
+<td> Defines whether the customer can add products only in increments to the shopping cart <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Item ID </td>
-<td class='confluenceTd'> Stock item ID <br class="atl-forced-newline" /> </td>
+<td> Item ID </td>
+<td> Stock item ID <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Low Stock Date </td>
-<td class='confluenceTd'> Date when the number of stock items became lower than the number defined in the Notify for Quantity Below option <br class="atl-forced-newline" /> </td>
+<td> Low Stock Date </td>
+<td> Date when the number of stock items became lower than the number defined in the Notify for Quantity Below option <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Manage Stock </td>
-<td class='confluenceTd'> Choose whether to view and specify the product quantity and availability and whether the product is in stock management. Can have the following values: 0 - No, 1 - Yes <br class="atl-forced-newline" /> </td>
+<td> Manage Stock </td>
+<td> Choose whether to view and specify the product quantity and availability and whether the product is in stock management. Can have the following values: 0 - No, 1 - Yes <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Maximum Qty Allowed in Shopping Cart </td>
-<td class='confluenceTd'> Maximum number of items in the shopping cart to be sold <br class="atl-forced-newline" /> </td>
+<td> Maximum Qty Allowed in Shopping Cart </td>
+<td> Maximum number of items in the shopping cart to be sold <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Minimum Qty Allowed in Shopping Cart </td>
-<td class='confluenceTd'> Minimum number of items in the shopping cart to be sold <br class="atl-forced-newline" /> </td>
+<td> Minimum Qty Allowed in Shopping Cart </td>
+<td> Minimum number of items in the shopping cart to be sold <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Notify for Quantity Below </td>
-<td class='confluenceTd'> The number of inventory items below which the customer will be notified via the RSS feed <br class="atl-forced-newline" /> </td>
+<td> Notify for Quantity Below </td>
+<td> The number of inventory items below which the customer will be notified via the RSS feed <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Product ID </td>
-<td class='confluenceTd'> Product ID <br class="atl-forced-newline" /> </td>
+<td> Product ID </td>
+<td> Product ID <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Qty </td>
-<td class='confluenceTd'> Quantity of stock items for the current product <br class="atl-forced-newline" /> </td>
+<td> Qty </td>
+<td> Quantity of stock items for the current product <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Qty Increments </td>
-<td class='confluenceTd'> The product quantity increment value <br class="atl-forced-newline" /> </td>
+<td> Qty Increments </td>
+<td> The product quantity increment value <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Qty Uses Decimals </td>
-<td class='confluenceTd'> Choose whether the product can be sold using decimals (e.g., you can buy 2.5 product) <br class="atl-forced-newline" /> </td>
+<td> Qty Uses Decimals </td>
+<td> Choose whether the product can be sold using decimals (e.g., you can buy 2.5 product) <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Qty for Item's Status to Become Out of Stock </td>
-<td class='confluenceTd'> Quantity for stock items to become out of stock <br class="atl-forced-newline" /> </td>
+<td> Qty for Item's Status to Become Out of Stock </td>
+<td> Quantity for stock items to become out of stock <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Stock Availability </td>
-<td class='confluenceTd'> Defines whether the product is available for selling. Can have the following values: 0 - Out of Stock, 1 - In Stock <br class="atl-forced-newline" /> </td>
+<td> Stock Availability </td>
+<td> Defines whether the product is available for selling. Can have the following values: 0 - Out of Stock, 1 - In Stock <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Stock ID </td>
-<td class='confluenceTd'> Stock ID <br class="atl-forced-newline" /> </td>
+<td> Stock ID </td>
+<td> Stock ID <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Use Config Settings for Backorders </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Backorders option <br class="atl-forced-newline" /> </td>
+<td> Use Config Settings for Backorders </td>
+<td> Choose whether the Config settings will be applied for the Backorders option <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Use Config Settings for Enable Qty Increments </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Enable Qty Increments option <br class="atl-forced-newline" /> </td>
+<td> Use Config Settings for Enable Qty Increments </td>
+<td> Choose whether the Config settings will be applied for the Enable Qty Increments option <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Use Config Settings for Manage Stock </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Manage Stock option <br class="atl-forced-newline" /> </td>
+<td> Use Config Settings for Manage Stock </td>
+<td> Choose whether the Config settings will be applied for the Manage Stock option <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Use Config Settings for Maximum Qty Allowed in Shopping Cart </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Maximum Qty Allowed in Shopping Cart option <br class="atl-forced-newline" /> </td>
+<td> Use Config Settings for Maximum Qty Allowed in Shopping Cart </td>
+<td> Choose whether the Config settings will be applied for the Maximum Qty Allowed in Shopping Cart option <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Use Config Settings for Minimum Qty Allowed in Shopping Cart </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Minimum Qty Allowed in Shopping Cart option <br class="atl-forced-newline" /> </td>
+<td> Use Config Settings for Minimum Qty Allowed in Shopping Cart </td>
+<td> Choose whether the Config settings will be applied for the Minimum Qty Allowed in Shopping Cart option <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Use Config Settings for Notify for Quantity Below </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Notify for Quantity Below option <br class="atl-forced-newline" /> </td>
+<td> Use Config Settings for Notify for Quantity Below </td>
+<td> Choose whether the Config settings will be applied for the Notify for Quantity Below option <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Use Config Settings for Qty Increments </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Qty Increments option <br class="atl-forced-newline" /> </td>
+<td> Use Config Settings for Qty Increments </td>
+<td> Choose whether the Config settings will be applied for the Qty Increments option <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Use Config Settings for Qty for Item's Status to Become Out of Stock </td>
-<td class='confluenceTd'> Choose whether the Config settings will be applied for the Qty for Item's Status to Become Out of Stock option <br class="atl-forced-newline" /> </td>
+<td> Use Config Settings for Qty for Item's Status to Become Out of Stock </td>
+<td> Choose whether the Config settings will be applied for the Qty for Item's Status to Become Out of Stock option <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
 <p><b>Notes</b>: The Admin user type has restrictions concerning the WRITE operations for definite stock item attributes. These are as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Attribute Name </th>
-<th class='confluenceTh'> Admin </th>
+<th> Attribute Name </th>
+<th> Admin </th>
 </tr>
 <tr>
-<td class='confluenceTd'> Item ID </td>
-<td class='confluenceTd'> No </td>
+<td> Item ID </td>
+<td> No </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Product ID </td>
-<td class='confluenceTd'> No </td>
+<td> Product ID </td>
+<td> No </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Stock ID </td>
-<td class='confluenceTd'> No </td>
+<td> Stock ID </td>
+<td> No </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Low Stock Date </td>
-<td class='confluenceTd'> No </td>
+<td> Low Stock Date </td>
+<td> No </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>However, these attributes are available for READ operations.</p>
@@ -586,164 +577,162 @@ To access these attributes, go to <b>System &gt; Web Services &gt; REST Attribut
 
 <h3><a name="RESTAttributes-Description-Customer"></a>Customer</h3>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Attribute Name </th>
-<th class='confluenceTh'> Attribute Description </th>
+<th> Attribute Name </th>
+<th> Attribute Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> Customer ID </td>
-<td class='confluenceTd'> Customer ID </td>
+<td> Customer ID </td>
+<td> Customer ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Last Logged In </td>
-<td class='confluenceTd'> Date when the customer was logged in last </td>
+<td> Last Logged In </td>
+<td> Date when the customer was logged in last </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Is Confirmed </td>
-<td class='confluenceTd'> Defines whether the email confirmation is sent to the customer </td>
+<td> Is Confirmed </td>
+<td> Defines whether the email confirmation is sent to the customer </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Created At </td>
-<td class='confluenceTd'> Date when the customer was created </td>
+<td> Created At </td>
+<td> Date when the customer was created </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Associate to Website </td>
-<td class='confluenceTd'> Website ID to which the customer is associated </td>
+<td> Associate to Website </td>
+<td> Website ID to which the customer is associated </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Created From </td>
-<td class='confluenceTd'> Store view from which the customer was created </td>
+<td> Created From </td>
+<td> Store view from which the customer was created </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Group </td>
-<td class='confluenceTd'> Customer group ID </td>
+<td> Group </td>
+<td> Customer group ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Disable automatic group change </td>
-<td class='confluenceTd'> Defines whether the automatic group change will be applied to the customer </td>
+<td> Disable automatic group change </td>
+<td> Defines whether the automatic group change will be applied to the customer </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Prefix </td>
-<td class='confluenceTd'> Customer prefix </td>
+<td> Prefix </td>
+<td> Customer prefix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> First Name </td>
-<td class='confluenceTd'> Customer first name </td>
+<td> First Name </td>
+<td> Customer first name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Middle Name/Initial </td>
-<td class='confluenceTd'> Customer middle name or initial </td>
+<td> Middle Name/Initial </td>
+<td> Customer middle name or initial </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Last Name </td>
-<td class='confluenceTd'> Customer last name </td>
+<td> Last Name </td>
+<td> Customer last name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Suffix </td>
-<td class='confluenceTd'> Customer suffix </td>
+<td> Suffix </td>
+<td> Customer suffix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Email </td>
-<td class='confluenceTd'> Customer email address </td>
+<td> Email </td>
+<td> Customer email address </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Date Of Birth </td>
-<td class='confluenceTd'> Customer date of birth </td>
+<td> Date Of Birth </td>
+<td> Customer date of birth </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Tax/VAT Number </td>
-<td class='confluenceTd'> Customer tax or VAT number </td>
+<td> Tax/VAT Number </td>
+<td> Customer tax or VAT number </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Gender </td>
-<td class='confluenceTd'> Customer gender (male or female) </td>
+<td> Gender </td>
+<td> Customer gender (male or female) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
 <h3><a name="RESTAttributes-Description-CustomerAddress"></a>Customer Address</h3>
 
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Attribute Name </th>
-<th class='confluenceTh'> Attribute Description </th>
+<th> Attribute Name </th>
+<th> Attribute Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> City </td>
-<td class='confluenceTd'> City name </td>
+<td> City </td>
+<td> City name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Company </td>
-<td class='confluenceTd'> Company name </td>
+<td> Company </td>
+<td> Company name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Country </td>
-<td class='confluenceTd'> Country </td>
+<td> Country </td>
+<td> Country </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Customer Address ID </td>
-<td class='confluenceTd'> Customer address ID </td>
+<td> Customer Address ID </td>
+<td> Customer address ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Fax </td>
-<td class='confluenceTd'> Fax number </td>
+<td> Fax </td>
+<td> Fax number </td>
 </tr>
 <tr>
-<td class='confluenceTd'> First Name </td>
-<td class='confluenceTd'> Customer first name </td>
+<td> First Name </td>
+<td> Customer first name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Is Default Billing Address </td>
-<td class='confluenceTd'> Defines whether the address is a default one for billing </td>
+<td> Is Default Billing Address </td>
+<td> Defines whether the address is a default one for billing </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Is Default Shipping Address </td>
-<td class='confluenceTd'> Defines whether the address is a default one for shipping </td>
+<td> Is Default Shipping Address </td>
+<td> Defines whether the address is a default one for shipping </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Last Name </td>
-<td class='confluenceTd'> Customer last name </td>
+<td> Last Name </td>
+<td> Customer last name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Middle Name/Initial </td>
-<td class='confluenceTd'> Customer middle name or initial </td>
+<td> Middle Name/Initial </td>
+<td> Customer middle name or initial </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Prefix </td>
-<td class='confluenceTd'> Customer prefix </td>
+<td> Prefix </td>
+<td> Customer prefix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> State/Province </td>
-<td class='confluenceTd'> Customer state/region </td>
+<td> State/Province </td>
+<td> Customer state/region </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Street Address </td>
-<td class='confluenceTd'> Customer street address </td>
+<td> Street Address </td>
+<td> Customer street address </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Suffix </td>
-<td class='confluenceTd'> Customer suffix </td>
+<td> Suffix </td>
+<td> Customer suffix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Telephone </td>
-<td class='confluenceTd'> Customer phone number </td>
+<td> Telephone </td>
+<td> Customer phone number </td>
 </tr>
 <tr>
-<td class='confluenceTd'> VAT Number </td>
-<td class='confluenceTd'> Customer VAT number </td>
+<td> VAT Number </td>
+<td> Customer VAT number </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ZIP/Postal Code </td>
-<td class='confluenceTd'> Customer ZIP or postal code </td>
+<td> ZIP/Postal Code </td>
+<td> Customer ZIP or postal code </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
@@ -752,364 +741,361 @@ To access these attributes, go to <b>System &gt; Web Services &gt; REST Attribut
 
 <p>Attributes for the product resource are divided into those available for the Admin type of user and those available for the Customer and Guest types of user.</p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Attribute Name </th>
-<th class='confluenceTh'> Attribute Description </th>
-<th class='confluenceTh'> Notes </th>
+<th> Attribute Name </th>
+<th> Attribute Description </th>
+<th> Notes </th>
 </tr>
 <tr>
-<td class='confluenceTd'> Product ID </td>
-<td class='confluenceTd'> Product ID </td>
-<td class='confluenceTd'> Available only for Admin </td>
+<td> Product ID </td>
+<td> Product ID </td>
+<td> Available only for Admin </td>
 </tr>
 <tr>
-<td class='confluenceTd'> name </td>
-<td class='confluenceTd'> Product Name </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> name </td>
+<td> Product Name </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Product Type </td>
-<td class='confluenceTd'> Product type. Can have the following values: Simple, Grouped, Configurable, Virtual, Bundle, or Downloadable </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Product Type </td>
+<td> Product type. Can have the following values: Simple, Grouped, Configurable, Virtual, Bundle, or Downloadable </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Attribute Set Name </td>
-<td class='confluenceTd'> Name of the attribute set which the product is based on </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> Attribute Set Name </td>
+<td> Name of the attribute set which the product is based on </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product SKU </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> sku <br class="atl-forced-newline" /> </td>
+<td> Product SKU </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> price </td>
-<td class='confluenceTd'> Product price </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> price </td>
+<td> Product price </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> visibility </td>
-<td class='confluenceTd'> Product visibility in the store. Can have the following values: Catalog, Search; Search; Catalog; Not Visible Individually </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> visibility </td>
+<td> Product visibility in the store. Can have the following values: Catalog, Search; Search; Catalog; Not Visible Individually </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> description </td>
-<td class='confluenceTd'> Product description </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> description </td>
+<td> Product description </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> short_description </td>
-<td class='confluenceTd'> Product short description </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> short_description </td>
+<td> Product short description </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> weight </td>
-<td class='confluenceTd'> Product weight </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> weight </td>
+<td> Product weight </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> news_from_date </td>
-<td class='confluenceTd'> Date starting from which the product is promoted as a new product </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> news_from_date </td>
+<td> Date starting from which the product is promoted as a new product </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> news_to_date </td>
-<td class='confluenceTd'> Date till which the product is promoted as a new product </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> news_to_date </td>
+<td> Date till which the product is promoted as a new product </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> status </td>
-<td class='confluenceTd'> Product status in the store. Can have the following values: Enabled or Disabled </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> status </td>
+<td> Product status in the store. Can have the following values: Enabled or Disabled </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> url_key </td>
-<td class='confluenceTd'> A friendly URL path for the product </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> url_key </td>
+<td> A friendly URL path for the product </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Create Permanent Redirect for Old URL </td>
-<td class='confluenceTd'> Defines whether the redirect to an original URL will be applied (when the existing URL for a product is edited) </td>
-<td class='confluenceTd'> Available only for Admin; available only for product update <br class="atl-forced-newline" /> </td>
+<td> Create Permanent Redirect for Old URL </td>
+<td> Defines whether the redirect to an original URL will be applied (when the existing URL for a product is edited) </td>
+<td> Available only for Admin; available only for product update <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> country_of_manufacture </td>
-<td class='confluenceTd'> Product country of manufacture </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> country_of_manufacture </td>
+<td> Product country of manufacture </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> is_returnable </td>
-<td class='confluenceTd'> Defines whether the product can be returned </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> is_returnable </td>
+<td> Defines whether the product can be returned </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> special_price </td>
-<td class='confluenceTd'> Product special price </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> special_price </td>
+<td> Product special price </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> special_from_date </td>
-<td class='confluenceTd'> Date starting from which the special price will be applied for the product </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> special_from_date </td>
+<td> Date starting from which the special price will be applied for the product </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> special_to_date </td>
-<td class='confluenceTd'> Date till which the special price will be applied for the product </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> special_to_date </td>
+<td> Date till which the special price will be applied for the product </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> group_price </td>
-<td class='confluenceTd'> Product group price </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> group_price </td>
+<td> Product group price </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> tier_price </td>
-<td class='confluenceTd'> Product tier price </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> tier_price </td>
+<td> Product tier price </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> msrp_enabled </td>
-<td class='confluenceTd'> The Apply MAP option. Defines whether the price in the catalog in the frontend is substituted with a Click for price link </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> msrp_enabled </td>
+<td> The Apply MAP option. Defines whether the price in the catalog in the frontend is substituted with a Click for price link </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> msrp_display_actual_price_type </td>
-<td class='confluenceTd'> Defines how the price will be displayed in the frontend. Can have the following values: In Cart, Before Order Confirmation, and On Gesture </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> msrp_display_actual_price_type </td>
+<td> Defines how the price will be displayed in the frontend. Can have the following values: In Cart, Before Order Confirmation, and On Gesture </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> msrp </td>
-<td class='confluenceTd'> The Manufacturer's Suggested Retail Price option. The price that a manufacturer suggests to sell the product at </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> msrp </td>
+<td> The Manufacturer's Suggested Retail Price option. The price that a manufacturer suggests to sell the product at </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> enable_googlecheckout </td>
-<td class='confluenceTd'> Defines whether the product can be purchased with the help of the Google Checkout payment service. Can have the following values: Yes and No </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> enable_googlecheckout </td>
+<td> Defines whether the product can be purchased with the help of the Google Checkout payment service. Can have the following values: Yes and No </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> tax_class_id </td>
-<td class='confluenceTd'> The product tax class to which the product will be associated </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> tax_class_id </td>
+<td> The product tax class to which the product will be associated </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> meta_title </td>
-<td class='confluenceTd'> Product meta title </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> meta_title </td>
+<td> Product meta title </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> meta_keyword </td>
-<td class='confluenceTd'> Product meta keywords </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> meta_keyword </td>
+<td> Product meta keywords </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> meta_description </td>
-<td class='confluenceTd'> Product meta description </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> meta_description </td>
+<td> Product meta description </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> custom_design </td>
-<td class='confluenceTd'> Custom design applied for the product page </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> custom_design </td>
+<td> Custom design applied for the product page </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> custom_design_from </td>
-<td class='confluenceTd'> Date starting from which the custom design will be applied for the product page </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> custom_design_from </td>
+<td> Date starting from which the custom design will be applied for the product page </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> custom_design_to </td>
-<td class='confluenceTd'> Date till which the custom design will be applied for the product page </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> custom_design_to </td>
+<td> Date till which the custom design will be applied for the product page </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> custom_layout_update </td>
-<td class='confluenceTd'> An XML block to alter the page layout </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> custom_layout_update </td>
+<td> An XML block to alter the page layout </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> page_layout </td>
-<td class='confluenceTd'> Page template that can be applied to the product page </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> page_layout </td>
+<td> Page template that can be applied to the product page </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> options_container </td>
-<td class='confluenceTd'> Defines how the custom options for the product will be displayed. Can have the following values: Block after Info Column or Product Info Column </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> options_container </td>
+<td> Defines how the custom options for the product will be displayed. Can have the following values: Block after Info Column or Product Info Column </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> gift_message_available </td>
-<td class='confluenceTd'> Defines whether the gift message is available for the product </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> gift_message_available </td>
+<td> Defines whether the gift message is available for the product </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Use Config Settings for Allow Gift Message </td>
-<td class='confluenceTd'> Defines whether the configuration settings will be used for the Allow Gift Message option </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> Use Config Settings for Allow Gift Message </td>
+<td> Defines whether the configuration settings will be used for the Allow Gift Message option </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> gift_wrapping_available </td>
-<td class='confluenceTd'> Defines whether the gift wrapping is available for the product </td>
-<td class='confluenceTd'> Available only for Admin. This attribute is available in Magento EE </td>
+<td> gift_wrapping_available </td>
+<td> Defines whether the gift wrapping is available for the product </td>
+<td> Available only for Admin. This attribute is available in Magento EE </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Use Config Settings for Allow Gift Wrapping </td>
-<td class='confluenceTd'> Defines whether the configuration settings will be used for the Allow Gift Wrapping option </td>
-<td class='confluenceTd'> Available only for Admin. This attribute is available in Magento EE <br class="atl-forced-newline" /> </td>
+<td> Use Config Settings for Allow Gift Wrapping </td>
+<td> Defines whether the configuration settings will be used for the Allow Gift Wrapping option </td>
+<td> Available only for Admin. This attribute is available in Magento EE <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> gift_wrapping_price </td>
-<td class='confluenceTd'> Price for the gift wrapping (available in Magento EE) </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> gift_wrapping_price </td>
+<td> Price for the gift wrapping (available in Magento EE) </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Inventory Data </td>
-<td class='confluenceTd'> Product inventory data </td>
-<td class='confluenceTd'> Available only for Admin <br class="atl-forced-newline" /> </td>
+<td> Inventory Data </td>
+<td> Product inventory data </td>
+<td> Available only for Admin <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Custom attr </td>
-<td class='confluenceTd'> Product custom attributes </td>
-<td class='confluenceTd'> The customer can see only attributes that are set as visible on frontend </td>
+<td> Custom attr </td>
+<td> Product custom attributes </td>
+<td> The customer can see only attributes that are set as visible on frontend </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Regular Price </td>
-<td class='confluenceTd'> The original product price displayed in the frontend </td>
-<td class='confluenceTd'> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
+<td> Regular Price </td>
+<td> The original product price displayed in the frontend </td>
+<td> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Final Price </td>
-<td class='confluenceTd'> The final product price </td>
-<td class='confluenceTd'> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
+<td> Final Price </td>
+<td> The final product price </td>
+<td> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Final Price with Tax <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The final product price with tax </td>
-<td class='confluenceTd'> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
+<td> Final Price with Tax <br class="atl-forced-newline" /> </td>
+<td> The final product price with tax </td>
+<td> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Final Price Without Tax <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The final product price without tax </td>
-<td class='confluenceTd'> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
+<td> Final Price Without Tax <br class="atl-forced-newline" /> </td>
+<td> The final product price without tax </td>
+<td> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Stock Status <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The product stock status (availability) </td>
-<td class='confluenceTd'> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
+<td> Stock Status <br class="atl-forced-newline" /> </td>
+<td> The product stock status (availability) </td>
+<td> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Product Is Saleable <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the product can be sold </td>
-<td class='confluenceTd'> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
+<td> Product Is Saleable <br class="atl-forced-newline" /> </td>
+<td> Defines whether the product can be sold </td>
+<td> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Total Reviews Number <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The number of all reviews for a product </td>
-<td class='confluenceTd'> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
+<td> Total Reviews Number <br class="atl-forced-newline" /> </td>
+<td> The number of all reviews for a product </td>
+<td> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Product URL Link <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> A link to the product without the assigned category </td>
-<td class='confluenceTd'> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
+<td> Product URL Link <br class="atl-forced-newline" /> </td>
+<td> A link to the product without the assigned category </td>
+<td> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Buy Now Link <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> A link that adds a product to the shopping cart </td>
-<td class='confluenceTd'> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
+<td> Buy Now Link <br class="atl-forced-newline" /> </td>
+<td> A link that adds a product to the shopping cart </td>
+<td> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Product Has Custom Options <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the product has custom options or not </td>
-<td class='confluenceTd'> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
+<td> Product Has Custom Options <br class="atl-forced-newline" /> </td>
+<td> Defines whether the product has custom options or not </td>
+<td> Available only for Customer and Guest <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Default Product Image <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Default product image </td>
-<td class='confluenceTd'> Available only for Customer and Guest </td>
+<td> Default Product Image <br class="atl-forced-newline" /> </td>
+<td> Default product image </td>
+<td> Available only for Customer and Guest </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="RESTAttributes-Description-ProductCategory"></a>Product Category</h4>
 
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Attribute Name </th>
-<th class='confluenceTh'> Attribute Description </th>
+<th> Attribute Name </th>
+<th> Attribute Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> Category ID </td>
-<td class='confluenceTd'> ID of the category to which the product is assigned </td>
+<td> Category ID </td>
+<td> ID of the category to which the product is assigned </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
 <h4><a name="RESTAttributes-Description-ProductImage"></a>Product Image</h4>
 
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Attribute Name </th>
-<th class='confluenceTh'> Attribute Description </th>
-<th class='confluenceTh'> Notes </th>
+<th> Attribute Name </th>
+<th> Attribute Description </th>
+<th> Notes </th>
 </tr>
 <tr>
-<td class='confluenceTd'> Exclude </td>
-<td class='confluenceTd'> Defines whether the image will associate only to one of the three image types. </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Exclude </td>
+<td> Defines whether the image will associate only to one of the three image types. </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> ID </td>
-<td class='confluenceTd'> Image file ID </td>
-<td class='confluenceTd'> Available only for READ operations </td>
+<td> ID </td>
+<td> Image file ID </td>
+<td> Available only for READ operations </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Label </td>
-<td class='confluenceTd'> A label that will be displayed on the frontend when pointing to the image <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Label </td>
+<td> A label that will be displayed on the frontend when pointing to the image <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Position </td>
-<td class='confluenceTd'> The Sort Order option. The order in which the images are displayed in the MORE VIEWS section. <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Position </td>
+<td> The Sort Order option. The order in which the images are displayed in the MORE VIEWS section. <br class="atl-forced-newline" /> </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> Type </td>
-<td class='confluenceTd'> Image type. Can have the following values: Base Image, Small Image, or Thumbnail. </td>
-<td class='confluenceTd'>&nbsp;</td>
+<td> Type </td>
+<td> Image type. Can have the following values: Base Image, Small Image, or Thumbnail. </td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td class='confluenceTd'> URL </td>
-<td class='confluenceTd'> Image file URL path </td>
-<td class='confluenceTd'> Available only for READ operations <br class="atl-forced-newline" /> </td>
+<td> URL </td>
+<td> Image file URL path </td>
+<td> Available only for READ operations <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> File Content </td>
-<td class='confluenceTd'> Image file content (base_64 encoded) </td>
-<td class='confluenceTd'> Available only for WRITE operations </td>
+<td> File Content </td>
+<td> Image file content (base_64 encoded) </td>
+<td> Available only for WRITE operations </td>
 </tr>
 <tr>
-<td class='confluenceTd'> File MIME Type </td>
-<td class='confluenceTd'> File MIME type. Can have the following values: image/jpeg, image/png, image/gif, etc. </td>
-<td class='confluenceTd'> Available only for WRITE operations <br class="atl-forced-newline" /> </td>
+<td> File MIME Type </td>
+<td> File MIME type. Can have the following values: image/jpeg, image/png, image/gif, etc. </td>
+<td> Available only for WRITE operations <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> File Name </td>
-<td class='confluenceTd'> Image file name </td>
-<td class='confluenceTd'> Available only for WRITE operations <br class="atl-forced-newline" /> </td>
+<td> File Name </td>
+<td> Image file name </td>
+<td> Available only for WRITE operations <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 				    					    <br/>
                         				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

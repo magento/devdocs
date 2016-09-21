@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - cataloginventory_stock_item.list';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Inventory Item List
+---
 
-				    <h2><a name="cataloginventory_stock_item.list-Module%3AMageCatalogInventory"></a>Module: Mage_CatalogInventory</h2>
+<h2><a name="cataloginventory_stock_item.list-Module%3AMageCatalogInventory"></a>Module: Mage_CatalogInventory</h2>
 
 
 <h4><a name="cataloginventory_stock_item.list-Resource%3Acataloginventorystockitem"></a>Resource: cataloginventory_stock_item</h4>
@@ -32,74 +32,71 @@
 
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> products/productIds (for WS-I mode) <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> List of product IDs or SKUs </td>
+<td> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td> products/productIds (for WS-I mode) <br class="atl-forced-newline" /> </td>
+<td> List of product IDs or SKUs </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of catalogInventoryStockItemEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of catalogInventoryStockItemEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogInventoryStockItemEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> product_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product ID </td>
+<td> string </td>
+<td> product_id <br class="atl-forced-newline" /> </td>
+<td> Product ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product SKU </td>
+<td> string </td>
+<td> sku <br class="atl-forced-newline" /> </td>
+<td> Product SKU </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product quantity </td>
+<td> string </td>
+<td> qty <br class="atl-forced-newline" /> </td>
+<td> Product quantity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> is_in_stock <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the product is in stock </td>
+<td> string </td>
+<td> is_in_stock <br class="atl-forced-newline" /> </td>
+<td> Defines whether the product is in stock </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

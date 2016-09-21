@@ -1,0 +1,32 @@
+
+.site-header {
+   background: #ef672f;
+   height: 66px;
+   position: relative;
+   z-index: 50;
+
+   @media (max-width:767px) {
+      overflow: hidden;
+   }
+}
+
+.site-header .logo {
+   width: 155px;
+   height: 66px;
+   float: left;
+   background: #c14800 url(../i/magento_logo.svg) center center no-repeat;
+}
+
+.site-header .sub-site-name {
+   float: left;
+   padding: 16px 0 11px 11px;
+}
+
+.site-header .sub-site-name a {
+   color: #fff;
+   background: none;
+   text-decoration: none;
+   text-transform: none;
+   font: normal 24px 'Open Sans', sans-serif;
+   font-weight: 200;
+}

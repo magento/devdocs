@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_custom_option.remove';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Product Custom Option Remove
+---
 
-				    <h3><a name="product_custom_option.remove-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
+<h3><a name="product_custom_option.remove-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
 
 <h4><a name="product_custom_option.remove-Resource%3Aproductcustomoption"></a>Resource: product_custom_option</h4>
 
@@ -19,60 +19,57 @@
 <p>Allows you to remove a custom option from the product.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> optionId </td>
-<td class='confluenceTd'> Custom option ID </td>
+<td> string </td>
+<td> optionId </td>
+<td> Custom option ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> True if the custom option is removed </td>
+<td> boolean </td>
+<td> True if the custom option is removed </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> Option with requested id does not exist. </td>
+<td> 105 </td>
+<td> Option with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 107 </td>
-<td class='confluenceTd'> Error while deleting an option. Details are in the error message. </td>
+<td> 107 </td>
+<td> Error while deleting an option. Details are in the error message. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="product_custom_option.remove-Examples"></a>Examples</h4>

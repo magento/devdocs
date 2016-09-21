@@ -1,0 +1,101 @@
+
+.page-intro {
+   position: relative;
+   padding: 30px 0px 0px;
+   background-color: #ef672f;
+
+	a {
+	   color: #fff;
+	   text-decoration: underline;
+	}
+
+    .contributor {
+        clear: both;
+        float: right;
+        text-decoration: none;
+        font-size: 15px; 
+
+        &:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+
+	.page-heading {
+      color: #fff;
+      margin: 10;
+	   padding: 0;
+	   font-size: 38px;
+	   font-weight: 700;
+	   padding: 0 160px 0 0;
+
+
+	   letter-spacing: 0;
+
+      @media (max-width:767px) {
+   		padding-right: 0;
+   	}
+	}
+
+   .container {
+      position: relative;
+      min-height: 115px;
+   }
+
+   p {
+      font-size: 24px;
+      color: #fff;
+      max-width: 30em;
+   }
+}
+
+
+
+.page-intro .improve-page {
+	color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    bottom: 0.2em;
+    right: 66px;
+    text-align: right;
+
+	&:hover {
+   	color: #fff;
+   	text-decoration: underline
+	}
+
+	&:after {
+	   display: inline-block;
+	   position: relative;
+	   top: 4px;
+	   left: 5px;
+	   content: '';
+	   background: url(/i/icon-new-window.gif) no-repeat;
+	   width: 16px;
+	   height: 16px;
+	}
+}
+
+.topic-info {
+    float: right;
+
+    .updated {
+        font-size: 13px;
+        color: #fff;
+        margin: 7px 10px;
+    }
+
+    .github-link, a{
+        float: right;
+    }
+
+    .github-link{
+        margin-top: 5px;
+    }
+
+} 
+
+.float-break{
+    clear:  both;
+}
+

@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_attribute_set.groupAdd';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Attribute Set Group Add
+---
 
-				    <h3><a name="product_attribute_set.groupAdd-Module%3AProductAttributeSetAPI"></a>Module: Product Attribute Set API</h3>
+<h3><a name="product_attribute_set.groupAdd-Module%3AProductAttributeSetAPI"></a>Module: Product Attribute Set API</h3>
 
 <h4><a name="product_attribute_set.groupAdd-Resource%3Aproductattributeset"></a>Resource: product_attribute_set</h4>
 
@@ -19,67 +19,64 @@
 <p>Allows you to add a new group for attributes to the attribute set.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> attributeSetId </td>
-<td class='confluenceTd'> Attribute set ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> attributeSetId </td>
+<td> Attribute set ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> groupName </td>
-<td class='confluenceTd'> Group name </td>
+<td> string </td>
+<td> groupName </td>
+<td> Group name </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> ID of the created group </td>
+<td> int </td>
+<td> result </td>
+<td> ID of the created group </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 112 </td>
-<td class='confluenceTd'> Requested group exist already in requested attribute set. </td>
+<td> 112 </td>
+<td> Requested group exist already in requested attribute set. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 113 </td>
-<td class='confluenceTd'> Error while adding group to attribute set. Details in error message. </td>
+<td> 113 </td>
+<td> Error while adding group to attribute set. Details in error message. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="product_attribute_set.groupAdd-Examples"></a>Examples</h4>

@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - cart_giftcard.list';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Gift Card List
+---
 
-				    <h3><a name="cart_giftcard.list-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
+<h3><a name="cart_giftcard.list-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
 
 <h4><a name="cart_giftcard.list-Resource%3Acartgiftcard"></a>Resource: cart_giftcard</h4>
 
@@ -19,99 +19,95 @@
 <p>Allows you to retrieve the list of gift cards used in the shopping cart (quote).</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> quoteId </td>
-<td class='confluenceTd'> Shopping cart ID (quote ID) </td>
+<td> string </td>
+<td> quoteId </td>
+<td> Shopping cart ID (quote ID) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> storeId </td>
-<td class='confluenceTd'> Store ID (optional) </td>
+<td> string </td>
+<td> storeId </td>
+<td> Store ID (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of enterpriseGiftcardaccountListEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of enterpriseGiftcardaccountListEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>enterpriseGiftcardaccountListEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> giftcardaccount_id </td>
-<td class='confluenceTd'> Gift card account ID </td>
+<td> string </td>
+<td> giftcardaccount_id </td>
+<td> Gift card account ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift card code </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> code <br class="atl-forced-newline" /> </td>
+<td> Gift card code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> used_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Used amount (in store currency) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> used_amount <br class="atl-forced-newline" /> </td>
+<td> Used amount (in store currency) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base amount (in base currency) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_amount <br class="atl-forced-newline" /> </td>
+<td> Base amount (in base currency) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 1001 </td>
-<td class='confluenceTd'> Can not make operation because store is not exists </td>
+<td> 1001 </td>
+<td> Can not make operation because store is not exists </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 1002 </td>
-<td class='confluenceTd'> Can not make operation because quote is not exists </td>
+<td> 1002 </td>
+<td> Can not make operation because quote is not exists </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="cart_giftcard.list-Examples"></a>Examples</h4>

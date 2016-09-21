@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_attribute.addOption';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
-				    
-				    <h3><a name="product_attribute.addOption-Module%3AProductAttributesAPI"></a>Module: Product Attributes API</h3>
+---
+layout: m1x_soap
+title: Add Option
+---
+
+<h3><a name="product_attribute.addOption-Module%3AProductAttributesAPI"></a>Module: Product Attributes API</h3>
 
 <h4><a name="product_attribute.addOption-Resource%3Aproductattribute"></a>Resource: product_attribute</h4>
 
@@ -19,119 +19,114 @@
 <p>Allows you to add a new option for attributes with selectable fields.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> attribute <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Attribute code or ID </td>
+<td> string </td>
+<td> attribute <br class="atl-forced-newline" /> </td>
+<td> Attribute code or ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> data </td>
-<td class='confluenceTd'> Array of catalogProductAttributeOptionEntityToAdd </td>
+<td> array </td>
+<td> data </td>
+<td> Array of catalogProductAttributeOptionEntityToAdd </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> True on success </td>
+<td> boolean </td>
+<td> result </td>
+<td> True on success </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductAttributeOptionEntityToAdd</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> label </td>
-<td class='confluenceTd'> Array of catalogProductAttributeOptionLabel </td>
+<td> array </td>
+<td> label </td>
+<td> Array of catalogProductAttributeOptionLabel </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> order </td>
-<td class='confluenceTd'> Option order </td>
+<td> int </td>
+<td> order </td>
+<td> Option order </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_default </td>
-<td class='confluenceTd'> Defines whether the option is a default one </td>
+<td> int </td>
+<td> is_default </td>
+<td> Defines whether the option is a default one </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductAttributeOptionLabel</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString </td>
-<td class='confluenceTd'> store_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of store view IDs </td>
+<td> ArrayOfString </td>
+<td> store_id <br class="atl-forced-newline" /> </td>
+<td> Array of store view IDs </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> value <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Text label </td>
+<td> string </td>
+<td> value <br class="atl-forced-newline" /> </td>
+<td> Text label </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Requested attribute not found. </td>
+<td> 101 </td>
+<td> Requested attribute not found. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Incorrect attribute type. </td>
+<td> 104 </td>
+<td> Incorrect attribute type. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 108 </td>
-<td class='confluenceTd'> Unable to add option. </td>
+<td> 108 </td>
+<td> Unable to add option. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="product_attribute.addOption-Examples"></a>Examples</h4>
@@ -212,4 +207,4 @@ var_dump ($orders);
 </div></div>
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

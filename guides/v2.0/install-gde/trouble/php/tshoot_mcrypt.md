@@ -1,12 +1,13 @@
 ---
 layout: default
 group: install_trouble
-subgroup: PHP issues
+subgroup: 10_php
 title: The PHP mcrypt extension is not installed properly
 menu_title: The PHP mcrypt extension is not installed properly
 menu_node:
-menu_order: 5
-github_link: install-gde/trouble/tshoot_mcrypt.md
+menu_order: 355
+version: 2.0
+github_link: install-gde/trouble/php/tshoot_mcrypt.md
 redirect_from:
   -  /guides/v1.0/install-gde/trouble/tshoot_mcrypt.html
   -  /guides/v2.0/install-gde/trouble/tshoot_mcrypt.html
@@ -50,5 +51,5 @@ Determine if the mcrypt extension is loaded in any of the following ways:
 
 	<pre>PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory in Unknown on line 0</pre>
 
-In some cases, you might need to install the Magento software from the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">command line</a> and specify the full path to the LAMP stack that has mcrypt installed.
+In some cases, you might need to install the Magento software from the <a href="{{page.baseurl}}install-gde/install/cli/install-cli.html">command line</a> and specify the full path to the LAMP stack that has mcrypt installed.
 

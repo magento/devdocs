@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - Cart Product';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Cart Product
+---
 				    
-				    <h2><a name="MAPI-CartProduct-MageCheckout"></a>Mage_Checkout</h2>
+<h2><a name="MAPI-CartProduct-MageCheckout"></a>Mage_Checkout</h2>
 
 <p>The Mage_Checkout module allows you to manage shopping carts and the checkout process. This module allows you to create an order once filling the shopping cart is complete.</p>
 
@@ -25,71 +25,70 @@
 
 <h4><a name="MAPI-CartProduct-Faults"></a>Faults</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> <font color="#555555">Fault Code</font> </th>
-<th class='confluenceTh'> <font color="#555555">Fault Message</font> </th>
+<th> <font color="#555555">Fault Code</font> </th>
+<th> <font color="#555555">Fault Message</font> </th>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1001</font> </td>
-<td class='confluenceTd'> <font color="#555555">Can not make operation because store is not exists</font> </td>
+<td> <font color="#555555">1001</font> </td>
+<td> <font color="#555555">Can not make operation because store is not exists</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1002</font> </td>
-<td class='confluenceTd'> <font color="#555555">Can not make operation because quote is not exists</font> </td>
+<td> <font color="#555555">1002</font> </td>
+<td> <font color="#555555">Can not make operation because quote is not exists</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1021</font> </td>
-<td class='confluenceTd'> <font color="#555555">Product’s data is not valid.</font> </td>
+<td> <font color="#555555">1021</font> </td>
+<td> <font color="#555555">Product’s data is not valid.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1022</font> </td>
-<td class='confluenceTd'> <font color="#555555">Product(s) could not be added.</font> </td>
+<td> <font color="#555555">1022</font> </td>
+<td> <font color="#555555">Product(s) could not be added.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1023</font> </td>
-<td class='confluenceTd'> <font color="#555555">Quote could not be saved during adding product(s) operation.</font> </td>
+<td> <font color="#555555">1023</font> </td>
+<td> <font color="#555555">Quote could not be saved during adding product(s) operation.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1024</font> </td>
-<td class='confluenceTd'> <font color="#555555">Product(s) could not be updated.</font> </td>
+<td> <font color="#555555">1024</font> </td>
+<td> <font color="#555555">Product(s) could not be updated.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1025</font> </td>
-<td class='confluenceTd'> <font color="#555555">Quote could not be saved during updating product(s) operation.</font> </td>
+<td> <font color="#555555">1025</font> </td>
+<td> <font color="#555555">Quote could not be saved during updating product(s) operation.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1026</font> </td>
-<td class='confluenceTd'> <font color="#555555">Product(s) could not be removed.</font> </td>
+<td> <font color="#555555">1026</font> </td>
+<td> <font color="#555555">Product(s) could not be removed.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1027</font> </td>
-<td class='confluenceTd'> <font color="#555555">Quote could not be saved during removing product(s) operation.</font> </td>
+<td> <font color="#555555">1027</font> </td>
+<td> <font color="#555555">Quote could not be saved during removing product(s) operation.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1028</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer is not set for quote.</font> </td>
+<td> <font color="#555555">1028</font> </td>
+<td> <font color="#555555">Customer is not set for quote.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1029</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer’s quote is not existed.</font> </td>
+<td> <font color="#555555">1029</font> </td>
+<td> <font color="#555555">Customer’s quote is not existed.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1030</font> </td>
-<td class='confluenceTd'> <font color="#555555">Quotes are identical.</font> </td>
+<td> <font color="#555555">1030</font> </td>
+<td> <font color="#555555">Quotes are identical.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1031</font> </td>
-<td class='confluenceTd'> <font color="#555555">Product(s) could not be moved.</font> </td>
+<td> <font color="#555555">1031</font> </td>
+<td> <font color="#555555">Product(s) could not be moved.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1032</font> </td>
-<td class='confluenceTd'> <font color="#555555">One of quote could not be saved during moving product(s) operation.</font> </td>
+<td> <font color="#555555">1032</font> </td>
+<td> <font color="#555555">One of quote could not be saved during moving product(s) operation.</font> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

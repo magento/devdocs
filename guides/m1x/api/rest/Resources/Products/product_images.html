@@ -1,12 +1,11 @@
 ---
-layout: m1x
+layout: m1x_rest
 title: Product Images
 ---
-<p><a href="{{ site.m1xgithuburl }}api/rest/Resources/Products/product_images.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
 
-<div class="toc"> <h4 class="toc">Table of Contents</h4>
-<ul>
+
+<ul class="introduction-menu">
     <li><a href='#RESTAPI-Resource-ProductImages-RESTAPI-ProductImages'>REST API: Product Images</a>
     <ul>
         <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images'>URI: /products/:product_id/images</a>
@@ -39,7 +38,7 @@ title: Product Images
     </li>
     <li><a href='#RESTAPI-Resource-ProductImages-PossibleHTTPStatusCodes'>Possible HTTP Status Codes</a></li>
 </ul>
-</div>
+
 
 <h3><a name="RESTAPI-Resource-ProductImages-RESTAPI-ProductImages"></a>REST API: Product Images</h3>
 
@@ -107,38 +106,37 @@ title: Product Images
 <b>Default Format</b>: XML<br/>
 <b>Parameters</b>:</p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Required </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example Value </th>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> file_mime_type </td>
-<td class='confluenceTd'> File mime type. Can have the following values: image/jpeg, image/png, etc. </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> image/jpeg </td>
+<td> file_mime_type </td>
+<td> File mime type. Can have the following values: image/jpeg, image/png, etc. </td>
+<td> required </td>
+<td> string </td>
+<td> image/jpeg </td>
 </tr>
 <tr>
-<td class='confluenceTd'> file_content </td>
-<td class='confluenceTd'> Graphic image file content (base_64 encoded) </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAWtJREFUeNpi/P//P8NgBkwMgxyMOnDUgTDAyMhIDNYF4vNA/B+IDwCxHLoakgEoFxODiQRXQUYi4e3k2gfDjMRajsP3zED8F8pmA+JvUDEYeArEMugOpFcanA/Ef6A0CPwC4uNoag5SnAjJjGI2tKhkg4rLAfFGIH4IxEuBWIjSKKYkDfZCHddLiwChVhokK8YGohwEZYy3aBmEKmDEhOCgreomo+VmZHxsMEQxIc2MAx3FO/DI3RxMmQTZkI9ALDCaSUYdOOrAIeRAPzQ+PxCHUM2FFDb5paGNBPRa5C20bUhxc4sSB4JaLnvxVHWHsbVu6OnACjyOg+HqgXKgGRD/JMKBoD6LDb0dyAPE94hwHAw/hGYcujlwEQmOg+EV9HJgLBmOg+FMWjsQVKR8psCBoDSrQqoDSSmoG6Hpj1wA6ju30LI9+BBX4UsC+Ai0T4BWVd1EIL5PgeO+APECmoXgaGtm1IE0AgABBgAJAICuV8dAUAAAAABJRU5ErkJggg== </td>
+<td> file_content </td>
+<td> Graphic image file content (base_64 encoded) </td>
+<td> required </td>
+<td> string </td>
+<td> iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAWtJREFUeNpi/P//P8NgBkwMgxyMOnDUgTDAyMhIDNYF4vNA/B+IDwCxHLoakgEoFxODiQRXQUYi4e3k2gfDjMRajsP3zED8F8pmA+JvUDEYeArEMugOpFcanA/Ef6A0CPwC4uNoag5SnAjJjGI2tKhkg4rLAfFGIH4IxEuBWIjSKKYkDfZCHddLiwChVhokK8YGohwEZYy3aBmEKmDEhOCgreomo+VmZHxsMEQxIc2MAx3FO/DI3RxMmQTZkI9ALDCaSUYdOOrAIeRAPzQ+PxCHUM2FFDb5paGNBPRa5C20bUhxc4sSB4JaLnvxVHWHsbVu6OnACjyOg+HqgXKgGRD/JMKBoD6LDb0dyAPE94hwHAw/hGYcujlwEQmOg+EV9HJgLBmOg+FMWjsQVKR8psCBoDSrQqoDSSmoG6Hpj1wA6ju30LI9+BBX4UsC+Ai0T4BWVd1EIL5PgeO+APECmoXgaGtm1IE0AgABBgAJAICuV8dAUAAAAABJRU5ErkJggg== </td>
 </tr>
 <tr>
-<td class='confluenceTd'> file_name </td>
-<td class='confluenceTd'> Name for the added image file </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> new image </td>
+<td> file_name </td>
+<td> Name for the added image file </td>
+<td> optional </td>
+<td> string </td>
+<td> new image </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Note</b>: If the file_name parameter is not defined, the original file name is set for the image. The first created image will be called "image", the second created image will be called "image_2", etc.</p>
@@ -217,38 +215,37 @@ title: Product Images
 <b>Default Format</b>: XML<br/>
 <b>Parameters</b>:</p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Required </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example Value </th>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> file_mime_type </td>
-<td class='confluenceTd'> File mime type. Can have the following values: image/jpeg, image/png, etc. </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> image/png </td>
+<td> file_mime_type </td>
+<td> File mime type. Can have the following values: image/jpeg, image/png, etc. </td>
+<td> required </td>
+<td> string </td>
+<td> image/png </td>
 </tr>
 <tr>
-<td class='confluenceTd'> file_content </td>
-<td class='confluenceTd'> Graphic image file content (base_64 encoded) </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAWtJREFUeNpi/P//P8NgBkwMgxyMOnDUgTDAyMhIDNYF4vNA/B+IDwCxHLoakgEoFxODiQRXQUYi4e3k2gfDjMRajsP3zED8F8pmA+JvUDEYeArEMugOpFcanA/Ef6A0CPwC4uNoag5SnAjJjGI2tKhkg4rLAfFGIH4IxEuBWIjSKKYkDfZCHddLiwChVhokK8YGohwEZYy3aBmEKmDEhOCgreomo+VmZHxsMEQxIc2MAx3FO/DI3RxMmQTZkI9ALDCaSUYdOOrAIeRAPzQ+PxCHUM2FFDb5paGNBPRa5C20bUhxc4sSB4JaLnvxVHWHsbVu6OnACjyOg+HqgXKgGRD/JMKBoD6LDb0dyAPE94hwHAw/hGYcujlwEQmOg+EV9HJgLBmOg+FMWjsQVKR8psCBoDSrQqoDSSmoG6Hpj1wA6ju30LI9+BBX4UsC+Ai0T4BWVd1EIL5PgeO+APECmoXgaGtm1IE0AgABBgAJAICuV8dAUAAAAABJRU5ErkJggg== </td>
+<td> file_content </td>
+<td> Graphic image file content (base_64 encoded) </td>
+<td> required </td>
+<td> string </td>
+<td> iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAWtJREFUeNpi/P//P8NgBkwMgxyMOnDUgTDAyMhIDNYF4vNA/B+IDwCxHLoakgEoFxODiQRXQUYi4e3k2gfDjMRajsP3zED8F8pmA+JvUDEYeArEMugOpFcanA/Ef6A0CPwC4uNoag5SnAjJjGI2tKhkg4rLAfFGIH4IxEuBWIjSKKYkDfZCHddLiwChVhokK8YGohwEZYy3aBmEKmDEhOCgreomo+VmZHxsMEQxIc2MAx3FO/DI3RxMmQTZkI9ALDCaSUYdOOrAIeRAPzQ+PxCHUM2FFDb5paGNBPRa5C20bUhxc4sSB4JaLnvxVHWHsbVu6OnACjyOg+HqgXKgGRD/JMKBoD6LDb0dyAPE94hwHAw/hGYcujlwEQmOg+EV9HJgLBmOg+FMWjsQVKR8psCBoDSrQqoDSSmoG6Hpj1wA6ju30LI9+BBX4UsC+Ai0T4BWVd1EIL5PgeO+APECmoXgaGtm1IE0AgABBgAJAICuV8dAUAAAAABJRU5ErkJggg== </td>
 </tr>
 <tr>
-<td class='confluenceTd'> file_name </td>
-<td class='confluenceTd'> Name for the added image file </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> test image </td>
+<td> file_name </td>
+<td> Name for the added image file </td>
+<td> optional </td>
+<td> string </td>
+<td> test image </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Note</b>: If the file_name parameter is not defined, the original file name is set for the image. The first created image will be called "image", the second created image will be called "image_2", etc.</p>
@@ -324,66 +321,65 @@ title: Product Images
 <b>Default Format</b>: XML<br/>
 <b>Parameters</b>:</p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Required </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example </th>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example </th>
 </tr>
 <tr>
-<td class='confluenceTd'> exclude </td>
-<td class='confluenceTd'> Defines whether the image will associate only to one of the three image types. </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> exclude </td>
+<td> Defines whether the image will associate only to one of the three image types. </td>
+<td> optional </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> file_content </td>
-<td class='confluenceTd'> Image file content (base_64 encoded). </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> base_64 encoded file content </td>
+<td> file_content </td>
+<td> Image file content (base_64 encoded). </td>
+<td> optional </td>
+<td> string </td>
+<td> base_64 encoded file content </td>
 </tr>
 <tr>
-<td class='confluenceTd'> file_mime_type </td>
-<td class='confluenceTd'> File mime type. Can have the following values: image/jpeg, image/png, etc. </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> image/png </td>
+<td> file_mime_type </td>
+<td> File mime type. Can have the following values: image/jpeg, image/png, etc. </td>
+<td> optional </td>
+<td> string </td>
+<td> image/png </td>
 </tr>
 <tr>
-<td class='confluenceTd'> file_name </td>
-<td class='confluenceTd'> Image file name. </td>
-<td class='confluenceTd'> optional&nbsp; </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> test name </td>
+<td> file_name </td>
+<td> Image file name. </td>
+<td> optional&nbsp; </td>
+<td> string </td>
+<td> test name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> label </td>
-<td class='confluenceTd'> A label that will be displayed on the frontend when pointing to the image </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> test label </td>
+<td> label </td>
+<td> A label that will be displayed on the frontend when pointing to the image </td>
+<td> optional </td>
+<td> string </td>
+<td> test label </td>
 </tr>
 <tr>
-<td class='confluenceTd'> position </td>
-<td class='confluenceTd'> The Sort Order option. The order in which the images are displayed in the MORE VIEWS section. </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> position </td>
+<td> The Sort Order option. The order in which the images are displayed in the MORE VIEWS section. </td>
+<td> optional </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> types </td>
-<td class='confluenceTd'> Array of image types. Can have the following values: image, small_image, and thumbnail. </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> thumbnail </td>
+<td> types </td>
+<td> Array of image types. Can have the following values: image, small_image, and thumbnail. </td>
+<td> optional </td>
+<td> array </td>
+<td> thumbnail </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
@@ -488,66 +484,65 @@ title: Product Images
 <b>Default Format</b>: XML<br/>
 <b>Parameters</b>:</p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Required </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example </th>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example </th>
 </tr>
 <tr>
-<td class='confluenceTd'> exclude </td>
-<td class='confluenceTd'> Defines whether the image will associate only to one of the three image types. </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> exclude </td>
+<td> Defines whether the image will associate only to one of the three image types. </td>
+<td> optional </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> file_content </td>
-<td class='confluenceTd'> Image file content (base_64 encoded). </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> base_64 encoded file content </td>
+<td> file_content </td>
+<td> Image file content (base_64 encoded). </td>
+<td> optional </td>
+<td> string </td>
+<td> base_64 encoded file content </td>
 </tr>
 <tr>
-<td class='confluenceTd'> file_mime_type </td>
-<td class='confluenceTd'> File mime type. Can have the following values: image/jpeg, image/png, etc. </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> image/png </td>
+<td> file_mime_type </td>
+<td> File mime type. Can have the following values: image/jpeg, image/png, etc. </td>
+<td> optional </td>
+<td> string </td>
+<td> image/png </td>
 </tr>
 <tr>
-<td class='confluenceTd'> file_name </td>
-<td class='confluenceTd'> Image file name. </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> test name </td>
+<td> file_name </td>
+<td> Image file name. </td>
+<td> optional </td>
+<td> string </td>
+<td> test name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> label </td>
-<td class='confluenceTd'> A label that will be displayed on the frontend when pointing to the image </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> test label </td>
+<td> label </td>
+<td> A label that will be displayed on the frontend when pointing to the image </td>
+<td> optional </td>
+<td> string </td>
+<td> test label </td>
 </tr>
 <tr>
-<td class='confluenceTd'> position </td>
-<td class='confluenceTd'> The Sort Order option. The order in which the images are displayed in the MORE VIEWS section. </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> position </td>
+<td> The Sort Order option. The order in which the images are displayed in the MORE VIEWS section. </td>
+<td> optional </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> types </td>
-<td class='confluenceTd'> Array of image types. Can have the following values: image, small_image, and thumbnail. </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> thumbnail </td>
+<td> types </td>
+<td> Array of image types. Can have the following values: image, small_image, and thumbnail. </td>
+<td> optional </td>
+<td> array </td>
+<td> thumbnail </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
@@ -593,65 +588,64 @@ title: Product Images
 
 <h3><a name="RESTAPI-Resource-ProductImages-PossibleHTTPStatusCodes"></a>Possible HTTP Status Codes</h3>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Status Code </th>
-<th class='confluenceTh'> Message </th>
-<th class='confluenceTh'> Description </th>
+<th> Status Code </th>
+<th> Message </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Requested store is invalid <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The specified store is not valid or does not exist </td>
+<td> 400 </td>
+<td> Requested store is invalid <br class="atl-forced-newline" /> </td>
+<td> The specified store is not valid or does not exist </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 404 </td>
-<td class='confluenceTd'> Resource not found </td>
-<td class='confluenceTd'> The specified resource is not found or does not exist </td>
+<td> 404 </td>
+<td> Resource not found </td>
+<td> The specified resource is not found or does not exist </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 404 </td>
-<td class='confluenceTd'> Product image not found </td>
-<td class='confluenceTd'> The specified product image is not found or does not exist </td>
+<td> 404 </td>
+<td> Product image not found </td>
+<td> The specified product image is not found or does not exist </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Resource data pre-validator error </td>
-<td class='confluenceTd'> Resource validation error </td>
+<td> 400 </td>
+<td> Resource data pre-validator error </td>
+<td> Resource validation error </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> The image content must be valid base64 encoded data <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The image file content must be in the base_64 encoded format (when image content does not contain supported letters and symbols) </td>
+<td> 400 </td>
+<td> The image content must be valid base64 encoded data <br class="atl-forced-newline" /> </td>
+<td> The image file content must be in the base_64 encoded format (when image content does not contain supported letters and symbols) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Requested product does not support images <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The specified product does not support images adding </td>
+<td> 400 </td>
+<td> Requested product does not support images <br class="atl-forced-newline" /> </td>
+<td> The specified product does not support images adding </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Unsupported image MIME type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The image MIME type is not supported (e.g., image/bmp) </td>
+<td> 400 </td>
+<td> Unsupported image MIME type <br class="atl-forced-newline" /> </td>
+<td> The image MIME type is not supported (e.g., image/bmp) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Resource unknown error <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Resource unknown error </td>
+<td> 400 </td>
+<td> Resource unknown error <br class="atl-forced-newline" /> </td>
+<td> Resource unknown error </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 500 </td>
-<td class='confluenceTd'> Resource internal error <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Resource internal error </td>
+<td> 500 </td>
+<td> Resource internal error <br class="atl-forced-newline" /> </td>
+<td> Resource internal error </td>
 </tr>
 <tr>
-<td class='confluenceTd'> &#45; </td>
-<td class='confluenceTd'> The image is not specified <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The image is not specified during the POST request. </td>
+<td> &#45; </td>
+<td> The image is not specified <br class="atl-forced-newline" /> </td>
+<td> The image is not specified during the POST request. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <?php include(__ROOT__ . 'footer.php'); ?>		    

@@ -1,12 +1,10 @@
 ---
-layout: m1x
+layout: m1x_rest
 title: Customer Addresses
 ---
-<p><a href="{{ site.m1xgithuburl }}api/rest/Resources/resource_customer_addresses.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
 
-<div class="toc"> <h4 class="toc">Table of Contents</h4>
-<ul>
+<ul class="introduction-menu">
     <li><a href='#RESTAPI-Resource-CustomerAddresses-RESTAPI-CustomerAddresses'>REST API: Customer Addresses</a>
     <ul>
         <li><a href='#RESTAPI-Resource-CustomerAddresses-URI--customers--customerid-addresses'>URI: /customers/:customer_id/addresses</a>
@@ -28,7 +26,7 @@ title: Customer Addresses
     </ul>
     </li>
     <li><a href='#RESTAPI-Resource-CustomerAddresses-PossibleHTTPStatusCodes'>Possible HTTP Status Codes</a></li>
-</ul></div>
+</ul>
 
 
 <h3><a name="RESTAPI-Resource-CustomerAddresses-RESTAPI-CustomerAddresses"></a>REST API: Customer Addresses</h3>
@@ -113,73 +111,72 @@ title: Customer Addresses
 <b>Default Format</b>: XML</p>
 
 <p><b>Parameters</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Required </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example Value </th>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> firstname </td>
-<td class='confluenceTd'> Customer first name </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> John </td>
+<td> firstname </td>
+<td> Customer first name </td>
+<td> required </td>
+<td> string </td>
+<td> John </td>
 </tr>
 <tr>
-<td class='confluenceTd'> lastname </td>
-<td class='confluenceTd'> Customer last name </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> Doe </td>
+<td> lastname </td>
+<td> Customer last name </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> Doe </td>
 </tr>
 <tr>
-<td class='confluenceTd'> street <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer street address. There can be more than one street address. </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 2800 Watson Lane <br class="atl-forced-newline" /> </td>
+<td> street <br class="atl-forced-newline" /> </td>
+<td> Customer street address. There can be more than one street address. </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> 2800 Watson Lane <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> city <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Name of the city </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> Asheville <br class="atl-forced-newline" /> </td>
+<td> city <br class="atl-forced-newline" /> </td>
+<td> Name of the city </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> Asheville <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> country_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Name of the country </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> US <br class="atl-forced-newline" /> </td>
+<td> country_id <br class="atl-forced-newline" /> </td>
+<td> Name of the country </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> US <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> region </td>
-<td class='confluenceTd'> Region name or code </td>
-<td class='confluenceTd'> required for countries with regions (USA, Canada, etc.) </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> Palau </td>
+<td> region </td>
+<td> Region name or code </td>
+<td> required for countries with regions (USA, Canada, etc.) </td>
+<td> string </td>
+<td> Palau </td>
 </tr>
 <tr>
-<td class='confluenceTd'> postcode <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer ZIP/postal code </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 28803 <br class="atl-forced-newline" /> </td>
+<td> postcode <br class="atl-forced-newline" /> </td>
+<td> Customer ZIP/postal code </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> 28803 <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> telephone <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer phone number </td>
-<td class='confluenceTd'> required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 828-775-0519 <br class="atl-forced-newline" /> </td>
+<td> telephone <br class="atl-forced-newline" /> </td>
+<td> Customer phone number </td>
+<td> required <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> 828-775-0519 <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Example:</b></p>
@@ -348,75 +345,74 @@ title: Customer Addresses
 
 <h3><a name="RESTAPI-Resource-CustomerAddresses-PossibleHTTPStatusCodes"></a>Possible HTTP Status Codes</h3>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Status Code </th>
-<th class='confluenceTh'> Message </th>
-<th class='confluenceTh'> Description </th>
+<th> Status Code </th>
+<th> Message </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 405 </td>
-<td class='confluenceTd'> Resource method not implemented yet. </td>
-<td class='confluenceTd'> The required method is not implemented or not allowed. </td>
+<td> 405 </td>
+<td> Resource method not implemented yet. </td>
+<td> The required method is not implemented or not allowed. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 404 </td>
-<td class='confluenceTd'> Resource not found. <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The specified resource is not found or does not exist. </td>
+<td> 404 </td>
+<td> Resource not found. <br class="atl-forced-newline" /> </td>
+<td> The specified resource is not found or does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Invalid country identifier type </td>
-<td class='confluenceTd'> The &lt;country_id&gt; value is passed not as a string type. </td>
+<td> 400 </td>
+<td> Invalid country identifier type </td>
+<td> The &lt;country_id&gt; value is passed not as a string type. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> &lt;value name&gt; is a required value. <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The specified value is a required one. </td>
+<td> 400 </td>
+<td> &lt;value name&gt; is a required value. <br class="atl-forced-newline" /> </td>
+<td> The specified value is a required one. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Country does not exist <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The specified country does not exist. </td>
+<td> 400 </td>
+<td> Country does not exist <br class="atl-forced-newline" /> </td>
+<td> The specified country does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Country is required </td>
-<td class='confluenceTd'> The &lt;country_id&gt; value is required. </td>
+<td> 400 </td>
+<td> Country is required </td>
+<td> The &lt;country_id&gt; value is required. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Country is not between '2' and '3' inclusively.<br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The country code is not in the range of 2 and 3 symbols inclusively. </td>
+<td> 400 </td>
+<td> Country is not between '2' and '3' inclusively.<br class="atl-forced-newline" /> </td>
+<td> The country code is not in the range of 2 and 3 symbols inclusively. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Invalid State/Province type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The &lt;region&gt; value is invalid (value is empty or passed as an array) </td>
+<td> 400 </td>
+<td> Invalid State/Province type <br class="atl-forced-newline" /> </td>
+<td> The &lt;region&gt; value is invalid (value is empty or passed as an array) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> State/Province is required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The &lt;region&gt; value is required for the specified country. </td>
+<td> 400 </td>
+<td> State/Province is required <br class="atl-forced-newline" /> </td>
+<td> The &lt;region&gt; value is required for the specified country. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> State/Province is invalid <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The entered value for &lt;region&gt; is invalid. It must be the region code (TX) or region name (Texas). </td>
+<td> 400 </td>
+<td> State/Province is invalid <br class="atl-forced-newline" /> </td>
+<td> The entered value for &lt;region&gt; is invalid. It must be the region code (TX) or region name (Texas). </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> State/Province does not exist <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The specified region does not exist (only for the country with predefined regions). </td>
+<td> 400 </td>
+<td> State/Province does not exist <br class="atl-forced-newline" /> </td>
+<td> The specified region does not exist (only for the country with predefined regions). </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Address is default for customer so is not allowed to be deleted <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The address cannot be deleted because it is set as a default one for billing or shipping. </td>
+<td> 400 </td>
+<td> Address is default for customer so is not allowed to be deleted <br class="atl-forced-newline" /> </td>
+<td> The address cannot be deleted because it is set as a default one for billing or shipping. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <?php include(__ROOT__ . 'footer.php'); ?>		    

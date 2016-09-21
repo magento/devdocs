@@ -73,12 +73,18 @@
 
 <p>Magento Models don't contain any code for connecting to the database.  Instead, each Model uses a <tt>modelResource</tt> class, that is used to communicate with the database server (via one read and one write adapter object).  By decoupling the logical Model and the code that talks to the database, it's theoretically possible to write new resource classes for a different database schemas and platforms while keeping your Models themselves untouched. </p>
 
+<h2>Enable developer mode</h2>
+<p>Something you should do in development&mdash;but <em>never</em> in production&mdash;is to enable Magento's <em>developer mode</em> which, among other things, displays exceptions in your browser. It's useful for debugging your code.</p>
+<p>Enable developer mode in any of the following ways:</p>
+<ul><li><a href="https://magento2.atlassian.net/wiki/display/m1wiki/How+to+Configure+a+Magento+1.x+Error+Page#display_errors_on_the_same_page_developer_mode">developer mode</a></a>
+    <li>Edit the <code>.htaccess</code> in the Magento root directory file to add <code>SetEnv MAGE_IS_DEVELOPER_MODE "true"</code></p>
+
 <h2>Creating a Basic Model</h2>
 
 <p>To begin, we're going to create a basic Magento Model.  PHP MVC tradition insists we model a weblog post.  The steps we'll need to take are</p>
 
 <ol>
-<li>Crete a new "Weblog" module</li>
+<li>Create a new "Weblog" module</li>
 <li>Create a database table for our Model</li>
 <li>Add Model information to the config for a Model named Blogpost</li>
 <li>Add Model Resource information to the config for the Blogpost Model</li>
@@ -146,7 +152,7 @@ CREATE TABLE `blog_posts` (
 
 <h3>The Global Config and Creating The Model</h3>
 
-<p>There are five individual things we need to setup for a Model in our config.</p>
+<p>There are three individual things we need to setup for a Model in our config.</p>
 
 <ol>
 <li>Enabling Models in our Module</li>
@@ -188,7 +194,7 @@ CREATE TABLE `blog_posts` (
     }
 </pre>
 
-<p>and reload your page.  You should see an exception that looks something like this (be sure you've turned on <a href="http://c3-stage.magedevteam.com/wiki/3_-_store_setup_and_management/configure_magento_error_page#display_errors_on_the_same_page_developer_mode">developer mode</a>).</p>
+<p>and reload your page. You should see an error like the following:</p>
 
 <pre>
 include(Magentotutorial/Weblog/Model/Blogpost.php) [function.include]: failed to open stream: No such file or directory
@@ -253,7 +259,7 @@ weblog_resource/blogpost
 &lt;/global>
 </pre>
 
-<p>You're adding the &lt;weblog_resource /&gt; tag, which is the value of the &lt;resourceModel /&gt; tag you just setup.  The value of &lt;class /&gt; is the base name that all your resource modes will have, and should be named with the following format</p>
+<p>You're adding the &lt;weblog_resource /&gt; tag, which is the value of the &lt;resourceModel /&gt; tag you just setup.  The value of &lt;class /&gt; is the base name that all your resource models will have, and should be named with the following format</p>
 
 <pre>
 Packagename_Modulename_Model_Resource
@@ -330,7 +336,7 @@ array
 
 <h2>Basic Model Operations</h2>
 
-<p>All Magento Models inherit from the the Varien_Object class.  This class is part of the Magento system library and <strong>not</strong> part of any Magento core module.  You can find this object at</p>
+<p>All Magento Models inherit from the Varien_Object class.  This class is part of the Magento system library and <strong>not</strong> part of any Magento core module.  You can find this object at</p>
 
 <pre>lib/Varien/Object.php</pre>
 
@@ -414,7 +420,7 @@ public function deleteFirstPostAction() {
 public function showAllBlogPostsAction() {
     $posts = Mage::getModel('weblog/blogpost')->getCollection();
     foreach($posts as $blogpost){
-        echo '&lt;h3>'.$blogpost->getTitle().'</h3>';
+        echo '&lt;h3>'.$blogpost->getTitle().'&lt;/h3>';
         echo nl2br($blogpost->getPost());
     }
 }
@@ -453,4 +459,4 @@ class Magentotutorial_Weblog_Model_Resource_Blogpost_Collection extends Mage_Cor
 
 <h2>Wrapup</h2>
 
-<p>Congratulations, you've created and configured you first Magento Model.  In a later article we'll take a look at Magento's Entity Attribute Value Models (EAV), which expand on what we've learned here.</p>
+<p>Congratulations, you've created and configured your first Magento Model.  In a later article we'll take a look at Magento's Entity Attribute Value Models (EAV), which expand on what we've learned here.</p>

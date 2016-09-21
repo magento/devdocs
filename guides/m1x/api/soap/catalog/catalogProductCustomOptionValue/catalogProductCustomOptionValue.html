@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - Product Custom Option Value';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
-				    
-				    <h2><a name="MAPI-ProductCustomOptionValue-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+---
+layout: m1x_soap
+title: Catalog Product Custom Option Value
+---
+
+<h2><a name="MAPI-ProductCustomOptionValue-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
 
 
 <h4><a name="MAPI-ProductCustomOptionValue-Resource%3Acatalogproductcustomoptionvalue"></a>Resource: catalog_product_custom_option_value</h4>
@@ -25,51 +25,50 @@
 
 <h5><a name="MAPI-ProductCustomOptionValue-Faults%3A"></a>Faults:</h5>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Option value with requested id does not exist. </td>
+<td> 101 </td>
+<td> Option value with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 102 </td>
-<td class='confluenceTd'> Error while adding an option value. Details are in the error message. </td>
+<td> 102 </td>
+<td> Error while adding an option value. Details are in the error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 103 </td>
-<td class='confluenceTd'> Option with requested id does not exist. </td>
+<td> 103 </td>
+<td> Option with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Invalid option type. </td>
+<td> 104 </td>
+<td> Invalid option type. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> Store with requested code/id does not exist. </td>
+<td> 105 </td>
+<td> Store with requested code/id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 106 </td>
-<td class='confluenceTd'> Can not delete option. </td>
+<td> 106 </td>
+<td> Can not delete option. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 107 </td>
-<td class='confluenceTd'> Error while updating an option value. Details are in the error message. </td>
+<td> 107 </td>
+<td> Error while updating an option value. Details are in the error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 108 </td>
-<td class='confluenceTd'> Title field is required. </td>
+<td> 108 </td>
+<td> Title field is required. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 109 </td>
-<td class='confluenceTd'> Option should have at least one value. Can not delete last value. </td>
+<td> 109 </td>
+<td> Option should have at least one value. Can not delete last value. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

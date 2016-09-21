@@ -82,7 +82,7 @@
 <pre>app/code/core/Mage/GoogleCheckout</pre>
 
 <h4>Your Code</h4>
-<p>When you want to customize or extend Magento, rather than editing core files directly, or even placing you new Controllers, Models, Helpers, Blocks, etc. next to Magento code, you'll create your own Modules in
+<p>When you want to customize or extend Magento, rather than editing core files directly, or even placing your new Controllers, Models, Helpers, Blocks, etc. next to Magento code, you'll create your own Modules in
 <pre>app/code/local/Package/Modulename</pre>
 
 <p><b>Package</b> (also often referred to as a <b>Namespace</b>) is a unique name that identifies your company or organization. The intent is that each member of the world-wide Magento community will use their own Package name when creating modules in order to avoid colliding with another user's code.  </p>
@@ -121,7 +121,7 @@
 
 <p>In any PHP system, the main PHP entry point remains a PHP file.  Magento is no different, and that file is <tt>index.php</tt>.
 
-<p>However, you never CODE in index.php. In an MVC system, index.php will contains code/calls to code that does the following:
+<p>However, you never CODE in index.php. In an MVC system, index.php will contain code/calls to code that does the following:
 <ol>
 <li><p>Examines the URL</p></li>
 <li><p>Based on some set of rules, turns this URL into a Controller class and an Action method (called Routing)</p></li>
@@ -258,7 +258,7 @@ $model-&gt;save();
 <p>You'll also notice it's possible to chain together several calls to the  set method: <br/>
 <tt>$model-&gt;setPrice($price)-&gt;setSku('SK83293432');</tt>
 
-<p>That's because each set method returns and instance of the Model.  This is a pattern you'll see used in much of the Magento codebase.</p>
+<p>That's because each set method returns an instance of the Model.  This is a pattern you'll see used in much of the Magento codebase.</p>
 
 <p>Magento's ORM also contains a way to query for multiple Objects via a Collections interface.  The following would get us a collection of all products that cost $5.00</p>
 
@@ -390,7 +390,7 @@ public function indexAction()
 &lt;/catalog_category_default>
 </pre>
 
-<p>It's saying in the catalog Module, in the category Controller, and the default Action, insert the the catalog/navigation Block into the "left" structure Block, using the catalog/navigation/left.phtml template.</p>
+<p>It's saying in the catalog Module, in the category Controller, and the default Action, insert the catalog/navigation Block into the "left" structure Block, using the catalog/navigation/left.phtml template.</p>
 
 <p>One last important thing about Blocks.  You'll often see code in templates that looks like this:<br/>
 <tt>$this-&gt;getChildHtml('order_items')</tt>

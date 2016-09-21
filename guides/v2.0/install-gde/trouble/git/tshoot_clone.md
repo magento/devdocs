@@ -1,12 +1,13 @@
 ---
 layout: default
 group: install_trouble
-subgroup: GitHub issues
+subgroup: 10_github
 title: Cannot clone the Magento GitHub repository
 menu_title: Cannot clone the Magento GitHub repository
 menu_node:
-menu_order: 15
-github_link: install-gde/trouble/tshoot_clone.md
+menu_order: 400
+version: 2.0
+github_link: install-gde/trouble/git/tshoot_clone.md
 redirect_from:
   -  /guides/v1.0/install-gde/trouble/tshoot_clone.html
   -  /guides/v2.0/install-gde/trouble/tshoot_clone.html

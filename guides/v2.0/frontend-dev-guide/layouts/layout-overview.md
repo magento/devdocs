@@ -6,6 +6,7 @@ title: Layout overview
 menu_title: Layout
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: frontend-dev-guide/layouts/layout-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-overview.html
 ---
@@ -18,7 +19,12 @@ The major part of the view layer of Magento application is layout. Functionally,
 
 This article describes the basic concepts you need to know to create layouts for your custom theme.
 
-<h2 id="layout-over-terms">Terms used</h2>
+**Contents**
+
+ * TOC
+ {:toc}
+
+## Terms used {#layout-over-terms}
 
 <span id="handle">*Layout handle*</span>
 
@@ -30,7 +36,7 @@ There are three kinds of layout handles:
 - **page layout handles** – Identifiers of specific pages. Correspond to controller actions with parameters that identify specific pages, for example, catalog_product_view_type_simple_id_128.
 - **arbitrary handles** - Do not correspond to any page type, but other handles use them by including.
 
-<h2 id="layout_overview_blocks">Basic layout elements</h2>
+## Basic layout elements {#layout_overview_blocks}
 
 The basic components of Magento page design are blocks and containers. 
 
@@ -46,10 +52,20 @@ The following figure shows an example:
 
 <img src="{{ site.baseurl }}common/images/layouts_block_defn.jpg"/>.
 
-<h2>Layout files types and conventions</h2>
+## Basic layouts 
 
+The basic view of all Magento storefront pages in defined in two page configuration layout files located in the Magento_Theme module: 
 
-<h3>Layout file types: by role</h3>
+* `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`: defines the page layout. 
+* `<Magento_Theme_module_dir>/view/frontend/layout/default_head_blocks.xml`: defines the scripts, images, and meta data included in pages' `<head>` section. 
+
+These basic page configuration layouts are extended in other Magento modules and in Magento themes.
+
+You can also [extend]({{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html) or [override]({{page.baseurl}}frontend-dev-guide/layouts/layout-override.html) these files in your custom theme. 
+
+## Layout files types and conventions
+
+### Layout file types: by role
 
 For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file (or *generic layout* for pages returned in AJAX requests, emails, and so on).
 
@@ -59,7 +75,7 @@ Following are the definitions of each layout file type:
 * *Page configuration*: an XML file declaring detailed structure, contents and meta-information of a page (includes the `<html>`, `<head>`, and `<body>` sections of the HTML page markup).
 * *Generic layout*: an XML file declaring page detailed structure and contents inside the `body` section of the HTML page markup. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.
 
-For details, refer to <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.
+For details, refer to <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.
 
 In this guide we use *layout files* when talking about concepts which are similarly applied to all of these types of layout files.
 
@@ -68,26 +84,26 @@ In this guide we use *layout files* when talking about concepts which are simila
 The following terms are used to distinguish layouts provided by different application components:
 
 * *Base layouts*: Layout files provided by modules. Conventional location: 
-	* Page configuration and generic layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code>
-	* Page layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/page_layout</code>
+	* Page configuration and generic layout files: `<module_dir>/view/frontend/layout`
+	* Page layout files: `<module_dir>/view/frontend/page_layout`
 * *Theme layouts*: Layout files provided by themes. Conventional location:
-	* Page configuration and generic layout files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code>
-	* Page layout files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page_layout</code>
+	* Page configuration and generic layout files: `<theme_dir>/<Namespace>_<Module>/layout`
+	* Page layout files: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
 
-<h2 id="layout-custom">Customize layout</h2>
+## Customize layout {#layout-custom}
 
 To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts.
 
-To make the necessary changes, create <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme. 
+To make the necessary changes, create <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme. 
 
-<h2 id="layout_processing">Layout files processing</h2>
+## Layout files processing {#layout_processing}
 
 
 The Magento application processes layout files in the following order:
 
 1.	Collects all layout files from modules. The order is determined by the modules order in the module list from `app/etc/config.php`.
-2.	Determines the sequence of <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherited</a> themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
+2.	Determines the sequence of <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherited</a> themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
 3.	Iterates the sequence of themes from last ancestor to current:
 
 	a.	Adds all extending theme layout files to the list.
@@ -103,13 +119,13 @@ The Magento application processes layout files in the following order:
 
 
 
-#### Related topics:
+## Related topics
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-manage.html" target="_blank">Common layout customization tasks</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-practice.html" target="_blank">Customizing layout - step-by-step illustration</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-manage.html" target="_blank">Common layout customization tasks</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-practice.html" target="_blank">Customizing layout - step-by-step illustration</a>
 
 
 

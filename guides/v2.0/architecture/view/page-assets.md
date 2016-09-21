@@ -5,6 +5,7 @@ subgroup: View library
 title: Page assets
 menu_title: Page assets
 menu_order: 
+version: 2.0
 github_link: architecture/view/page-assets.md
 redirect_from: /guides/v1.0/architecture/view/page-assets.html
 ---
@@ -14,7 +15,7 @@ redirect_from: /guides/v1.0/architecture/view/page-assets.html
 An _asset_ is a reference to a certain resource linked to an HTML page; that is, references to scripts, stylesheets, RSS feeds, and so on using `<head/>`, `<img/>`, `<object/>` elements.
 
 This topic discusses how to work with Magento page assets (particularly interfaces and classes). The article is mostly aimed at developers
-who have solid experience with PHP and are familiar with <a href="{{ site.gdeurl }}architecture/view/xml-schema-layout.html">Magento XML layouts</a>.
+who have solid experience with PHP and are familiar with <a href="{{page.baseurl}}architecture/view/xml-schema-layout.html">Magento XML layouts</a>.
 
 <h2 id="m2devgde-page-assets-interf">Asset interfaces</h2>
 
@@ -109,7 +110,7 @@ This section discusses the following ways to work with view assets:
 
 <h3 id="m2devgde-page-assets-static-manip-xml">Use layout XML to manipulate assets</h3>
 
-Although you can use the API to manipulate assets, frontend developers should use <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">layout XML instructions</a> to register assets.
+Although you can use the API to manipulate assets, frontend developers should use <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html">layout XML instructions</a> to register assets.
 
 This method is preferred because it enables you to implement particular discriminators for assets, like browser matching and conditional loading.
 
@@ -191,4 +192,4 @@ For example, to add a local JavaScript or CSS file to the page output:
 
 #### Related topics
 
-* <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
+* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>

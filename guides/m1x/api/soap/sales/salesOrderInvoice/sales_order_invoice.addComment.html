@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - sales_order_invoice.addComment';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Add Comment
+---
 
-				    <h2><a name="sales_order_invoice.addComment-Module%3AMageSales"></a>Module: Mage_Sales</h2>
+<h2><a name="sales_order_invoice.addComment-Module%3AMageSales"></a>Module: Mage_Sales</h2>
 
 
 <h4><a name="sales_order_invoice.addComment-Resource%3Asalesorderinvoice"></a>Resource: sales_order_invoice</h4>
@@ -31,55 +31,53 @@
 
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> invoiceIncrementId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Invoice increment ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> invoiceIncrementId <br class="atl-forced-newline" /> </td>
+<td> Invoice increment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> comment <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Invoice comment (optional) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> comment <br class="atl-forced-newline" /> </td>
+<td> Invoice comment (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> email <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Send invoice on email flag (optional) </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> email <br class="atl-forced-newline" /> </td>
+<td> Send invoice on email flag (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> includeComment <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Include comment in email flag (optional) </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> includeComment <br class="atl-forced-newline" /> </td>
+<td> Include comment in email flag (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> True if the comment is added to the invoice </td>
+<td> boolean </td>
+<td> True if the comment is added to the invoice </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="sales_order_invoice.addComment-Examples"></a>Examples</h4>

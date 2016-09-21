@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - Inventory';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Catalog Inventory
+---
 				    
-				    <h2><a name="MAPI-Inventory-Module%3AMageCatalogInventory"></a>Module: Mage_CatalogInventory</h2>
+<h2><a name="MAPI-Inventory-Module%3AMageCatalogInventory"></a>Module: Mage_CatalogInventory</h2>
 
 <p>The Mage_CatalogInventory module allows you to retrieve and update stock attributes, such as status and quantity.</p>
 
@@ -28,29 +28,28 @@
 
 <h4><a name="MAPI-Inventory-Faults"></a>Faults</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'>  Fault Code  </th>
-<th class='confluenceTh'>  Fault Message  </th>
+<th>  Fault Code  </th>
+<th>  Fault Message  </th>
 </tr>
 <tr>
-<td class='confluenceTd'>  101  </td>
-<td class='confluenceTd'>  Product not exists.  </td>
+<td>  101  </td>
+<td>  Product not exists.  </td>
 </tr>
 <tr>
-<td class='confluenceTd'>  102  </td>
-<td class='confluenceTd'>  Product inventory not updated. Details in error message.  </td>
+<td>  102  </td>
+<td>  Product inventory not updated. Details in error message.  </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="MAPI-Inventory-Examples"></a>Examples</h4>
 
 <p>Change manage_stock setting to ‘off’ in the inventory area.</p>
 
-<p>$attributeSets = $client→call($session, ‘product_stock.update’, array(’SKU’,array(’manage_stock’⇒‘0’,’use_config_manage_stock’⇒‘0’)));</p>
+<p>$attributeSets = $client-&gt;call($session, ‘product_stock.update’, array(’SKU’,array(’manage_stock’=&gt;'0’,’use_config_manage_stock’=&gt;'0’)));</p>
 
 <p>The use_config_manage_stock unchecks the ‘Use Config Settings’ box which allows you to make changes to this product and not to use the global settings that are set by default.</p>
 
@@ -95,4 +94,4 @@ print_r(
 </div></div>
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

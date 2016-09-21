@@ -1,0 +1,126 @@
+html,body {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+.main-container {
+   padding-top: 0;
+   padding-bottom: 60px
+}
+
+.main-container h2 {
+   font-size: 30px;
+   text-transform: none;
+   letter-spacing: 0;
+   margin: 1.3em 0 0.7em 0;
+   padding: 0
+}
+
+.main-container h2:first-child {
+   margin-top: 0
+}
+
+.main-container h3 {
+   font-weight: 700;
+   text-transform: none;
+   letter-spacing: 0;
+   font-size: 20px;
+   line-height: 1.4em;
+   margin: 1.5em 0 0.5em 0;
+   padding: 0
+}
+
+.main-container h4 {
+   font-size: 18px;
+   margin: 1.5em 0 0.5em 0;
+   text-transform: none;
+   letter-spacing: 0
+}
+
+.main-container a {
+   color: #c14800;
+   letter-spacing: 0;
+   text-transform: none
+}
+
+.main-container a:hover {
+   color: #ef672f
+}
+
+
+
+.main-container p, .main-container ul, .main-container ol, .main-container ul li, .main-container ol li, .main-container a {
+   font-size: 16px;
+   line-height: 1.5em;
+   font-weight: normal
+}
+
+.main-container ul li, .main-container ol li {
+   margin: 0 0 0.5em 0
+}
+
+.main-container small {
+   font-size: 70%;
+   font-weight: 400
+}
+
+
+
+
+
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, .nav-main #global-nav, .nav-main #subnav-wrap #subnav {
+   width: 100%;
+   max-width: 1300px
+}
+.content {
+   float: right;
+   width: 77%;
+   padding: 40px 0 0 0
+}
+
+.content .content-wrap {
+   padding: 0 0 0 40px
+}
+
+
+
+
+
+.container {
+   width: 980px;
+}
+.container:before, .container:after {
+   display: table;
+   content: "";
+   line-height: 0;
+}
+.container:after {
+   clear: both;
+}
+
+
+
+
+
+/*
+.main-container {
+   padding-top: 105px;
+   background: #fff
+}
+
+#gl-wrapper {
+   width: 100%;
+   position: relative;
+   z-index: 50;
+}
+*/
+
+.full-width-content {
+    width: 90%;
+
+    .content-wrap {
+        float: left;
+    }
+}

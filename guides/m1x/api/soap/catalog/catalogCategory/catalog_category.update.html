@@ -1,8 +1,7 @@
 ---
-layout: m1x
+layout: m1x_soap
 title: Category Update
 ---
-<p><a href="{{ site.m1xgithuburl }}api/soap/catalog/catalogCategory/catalog_category.update.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
 
 
@@ -35,172 +34,169 @@ title: Category Update
 
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> categoryId </td>
-<td class='confluenceTd'> ID of the category to be updated </td>
+<td> int </td>
+<td> categoryId </td>
+<td> ID of the category to be updated </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> categoryData </td>
-<td class='confluenceTd'> An array of catalogCategoryEntityCreate </td>
+<td> array </td>
+<td> categoryData </td>
+<td> An array of catalogCategoryEntityCreate </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> storeView </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> storeView </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> True if the category is updated </td>
+<td> boolean </td>
+<td> True if the category is updated </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogCategoryEntityCreate</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> name </td>
-<td class='confluenceTd'> Name of the category to be updated <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> name </td>
+<td> Name of the category to be updated <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_active </td>
-<td class='confluenceTd'> Defines whether the category is visible in the frontend <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> is_active </td>
+<td> Defines whether the category is visible in the frontend <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> position </td>
-<td class='confluenceTd'> Position of the category to be updated <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> position </td>
+<td> Position of the category to be updated <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> arrayOfString <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> available_sort_by <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> All available options by which products in the category can be sorted <br class="atl-forced-newline" /> </td>
+<td> arrayOfString <br class="atl-forced-newline" /> </td>
+<td> available_sort_by <br class="atl-forced-newline" /> </td>
+<td> All available options by which products in the category can be sorted <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> custom_design <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The custom design for the category <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> custom_design <br class="atl-forced-newline" /> </td>
+<td> The custom design for the category <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> custom_apply_to_products&nbsp; <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Apply the custom design to all products assigned to the category <br class="atl-forced-newline" /> </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> custom_apply_to_products&nbsp; <br class="atl-forced-newline" /> </td>
+<td> Apply the custom design to all products assigned to the category <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> custom_design_from <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date starting from which the custom design will be applied to the category <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> custom_design_from <br class="atl-forced-newline" /> </td>
+<td> Date starting from which the custom design will be applied to the category <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> custom_design_to <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date till which the custom design will be applied to the category <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> custom_design_to <br class="atl-forced-newline" /> </td>
+<td> Date till which the custom design will be applied to the category <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> custom_layout_update <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom layout update <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> custom_layout_update <br class="atl-forced-newline" /> </td>
+<td> Custom layout update <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> default_sort_by <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> The default option by which products in the category are sorted <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> default_sort_by <br class="atl-forced-newline" /> </td>
+<td> The default option by which products in the category are sorted <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> description <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category description <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> description <br class="atl-forced-newline" /> </td>
+<td> Category description <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> display_mode <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Content that will be displayed on the category view page <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> display_mode <br class="atl-forced-newline" /> </td>
+<td> Content that will be displayed on the category view page <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_anchor <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the category will be anchored <br class="atl-forced-newline" /> </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> is_anchor <br class="atl-forced-newline" /> </td>
+<td> Defines whether the category will be anchored <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> landing_page <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Landing page <br class="atl-forced-newline" /> </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> landing_page <br class="atl-forced-newline" /> </td>
+<td> Landing page <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> meta_description <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category meta description <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> meta_description <br class="atl-forced-newline" /> </td>
+<td> Category meta description <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> meta_keywords <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category meta keywords <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> meta_keywords <br class="atl-forced-newline" /> </td>
+<td> Category meta keywords <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> meta_title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category meta title <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> meta_title <br class="atl-forced-newline" /> </td>
+<td> Category meta title <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> page_layout <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Type of page layout that the category should use <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> page_layout <br class="atl-forced-newline" /> </td>
+<td> Type of page layout that the category should use <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> url_key <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> A relative URL path which can be entered in place of the standard target path <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> url_key <br class="atl-forced-newline" /> </td>
+<td> A relative URL path which can be entered in place of the standard target path <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> include_in_menu <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the category is visible on the top menu bar in the frontend <br class="atl-forced-newline" /> </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> include_in_menu <br class="atl-forced-newline" /> </td>
+<td> Defines whether the category is visible on the top menu bar in the frontend <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> filter_price_range <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Price range of each price level displayed in the layered navigation block <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> filter_price_range <br class="atl-forced-newline" /> </td>
+<td> Price range of each price level displayed in the layered navigation block <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> custom_use_parent_settings <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the category will inherit custom design settings of the category to which it is assigned. 1 - Yes, 0 - No <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> custom_use_parent_settings <br class="atl-forced-newline" /> </td>
+<td> Defines whether the category will inherit custom design settings of the category to which it is assigned. 1 - Yes, 0 - No <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults</b>:<br/>

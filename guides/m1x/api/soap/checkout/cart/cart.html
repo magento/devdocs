@@ -1,7 +1,8 @@
-<?php
-    $title = 'Magento API - SOAP - Shopping Cart';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Cart
+---
+
 <h2><a name="MAPI-ShoppingCart-Module%3AMageCheckout"></a>Module: Mage_Checkout</h2>
 
 <p>The Mage_Checkout module allows you to manage shopping carts and the checkout process. This module allows you to create an order once filling the shopping cart is complete.</p>
@@ -24,46 +25,45 @@
 
 <h4><a name="MAPI-ShoppingCart-Faults"></a>Faults</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> <font color="#555555">Fault Code</font> </th>
-<th class='confluenceTh'> <font color="#555555">Fault Message</font> </th>
+<th> <font color="#555555">Fault Code</font> </th>
+<th> <font color="#555555">Fault Message</font> </th>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1001</font> </td>
-<td class='confluenceTd'> <font color="#555555">Can not make operation because store is not exists</font> </td>
+<td> <font color="#555555">1001</font> </td>
+<td> <font color="#555555">Can not make operation because store is not exists</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1002</font> </td>
-<td class='confluenceTd'> <font color="#555555">Can not make operation because quote is not exists</font> </td>
+<td> <font color="#555555">1002</font> </td>
+<td> <font color="#555555">Can not make operation because quote is not exists</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1003</font> </td>
-<td class='confluenceTd'> <font color="#555555">Can not create a quote.</font> </td>
+<td> <font color="#555555">1003</font> </td>
+<td> <font color="#555555">Can not create a quote.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1004</font> </td>
-<td class='confluenceTd'> <font color="#555555">Can not create a quote because quote with such identifier is already exists</font> </td>
+<td> <font color="#555555">1004</font> </td>
+<td> <font color="#555555">Can not create a quote because quote with such identifier is already exists</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1005</font> </td>
-<td class='confluenceTd'> <font color="#555555">You did not set all required agreements</font> </td>
+<td> <font color="#555555">1005</font> </td>
+<td> <font color="#555555">You did not set all required agreements</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1006</font> </td>
-<td class='confluenceTd'> <font color="#555555">The checkout type is not valid. Select single checkout type.</font> </td>
+<td> <font color="#555555">1006</font> </td>
+<td> <font color="#555555">The checkout type is not valid. Select single checkout type.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1007</font> </td>
-<td class='confluenceTd'> <font color="#555555">Checkout is not available for guest</font> </td>
+<td> <font color="#555555">1007</font> </td>
+<td> <font color="#555555">Checkout is not available for guest</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1008</font> </td>
-<td class='confluenceTd'> <font color="#555555">Can not create an order.</font> </td>
+<td> <font color="#555555">1008</font> </td>
+<td> <font color="#555555">Can not create an order.</font> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="MAPI-ShoppingCart-Example"></a>Example</h4>

@@ -1,12 +1,10 @@
 ---
-layout: m1x
+layout: m1x_rest
 title: Product Categories
 ---
-<p><a href="{{ site.m1xgithuburl }}api/rest/Resources/Products/product_categories.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
 
-<div class="toc"> <h4 class="toc">Table of Contents</h4>
-<ul>
+<ul class="introduction-menu">
     <li><a href='#RESTAPI-Resource-ProductCategories-RESTAPI-ProductCategories'>REST API: Product Categories</a>
     <ul>
         <li><a href='#RESTAPI-Resource-ProductCategories-URI--products-productid-categories'>URI: /products/productid/categories</a>
@@ -24,7 +22,7 @@ title: Product Categories
     </ul>
     </li>
 </ul>
-</div>
+
 
 <h3><a name="RESTAPI-Resource-ProductCategories-RESTAPI-ProductCategories"></a>REST API: Product Categories</h3>
 
@@ -71,24 +69,23 @@ title: Product Categories
 <b>Default Format</b>: JSON<br/>
 <b>Parameters</b>:</p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Required </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example Value </th>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> category_id </td>
-<td class='confluenceTd'> The category ID </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 2 </td>
+<td> category_id </td>
+<td> The category ID </td>
+<td> required </td>
+<td> int </td>
+<td> 2 </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
@@ -130,30 +127,29 @@ title: Product Categories
 
 <h4><a name="RESTAPI-Resource-ProductCategories-PossibleHTTPStatusCodes"></a>Possible HTTP Status Codes</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Status Code </th>
-<th class='confluenceTh'> Message </th>
-<th class='confluenceTh'> Description </th>
+<th> Status Code </th>
+<th> Message </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Product &lt;product ID&gt; is already assigned to category &lt;category ID&gt; </td>
-<td class='confluenceTd'> The message is returned when the required category is already assigned to the product </td>
+<td> 400 </td>
+<td> Product &lt;product ID&gt; is already assigned to category &lt;category ID&gt; </td>
+<td> The message is returned when the required category is already assigned to the product </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 400 </td>
-<td class='confluenceTd'> Category not found </td>
-<td class='confluenceTd'> The specified category is not found </td>
+<td> 400 </td>
+<td> Category not found </td>
+<td> The specified category is not found </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 405 </td>
-<td class='confluenceTd'> Resource method not implemented yet </td>
-<td class='confluenceTd'> The specified method is not implemented yet </td>
+<td> 405 </td>
+<td> Resource method not implemented yet </td>
+<td> The specified method is not implemented yet </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <?php include(__ROOT__ . 'footer.php'); ?>		    

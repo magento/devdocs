@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_custom_option_value.add';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Product Custom Value Add
+---
 
-				    <h3><a name="product_custom_option_value.add-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
+<h3><a name="product_custom_option_value.add-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
 
 
 <h4><a name="product_custom_option_value.add-Resource%3Aproductcustomoptionvalue"></a>Resource: product_custom_option_value</h4>
@@ -20,110 +20,106 @@
 <p>Allows you to add a new custom option value to a custom option. Note that the custom option value can be added only to the option with the <b>Select</b> Input Type.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> optionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Option ID </td>
+<td> string </td>
+<td> optionId <br class="atl-forced-newline" /> </td>
+<td> Option ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> data </td>
-<td class='confluenceTd'> Array of catalogProductCustomOptionValueAdd </td>
+<td> array </td>
+<td> data </td>
+<td> Array of catalogProductCustomOptionValueAdd </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> store </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> True if the custom option value is added </td>
+<td> boolean </td>
+<td> True if the custom option value is added </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductCustomOptionValueAdd</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option value title </td>
+<td> string </td>
+<td> title <br class="atl-forced-newline" /> </td>
+<td> Custom option value title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option value price </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Custom option value price </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> price_type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Type of the custom option value price. Can have one of the following values:&nbsp;"fixed" or "percent" </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> price_type <br class="atl-forced-newline" /> </td>
+<td> Type of the custom option value price. Can have one of the following values:&nbsp;"fixed" or "percent" </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option value row SKU </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sku <br class="atl-forced-newline" /> </td>
+<td> Custom option value row SKU </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option value sort order </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sort_order <br class="atl-forced-newline" /> </td>
+<td> Custom option value sort order </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Option value with requested id does not exist. </td>
+<td> 101 </td>
+<td> Option value with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 102 </td>
-<td class='confluenceTd'> Error while adding an option value. Details are in the error message. </td>
+<td> 102 </td>
+<td> Error while adding an option value. Details are in the error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Invalid option type. </td>
+<td> 104 </td>
+<td> Invalid option type. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="product_custom_option_value.add-Examples"></a>Examples</h4>

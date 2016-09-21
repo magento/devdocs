@@ -5,11 +5,12 @@ subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
 menu_order: 6
+version: 2.0
 github_link: frontend-dev-guide/layouts/xml-manage.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-manage.html
 ---
 
-<h2>Introduction</h2>
+<h2>What's in this topic</h2>
 
 This article describes the following typical layout customization tasks:
 
@@ -19,7 +20,7 @@ This article describes the following typical layout customization tasks:
 *	<a href="#create_cont">Create a container</a>
 *	<a href="#ref_container">Reference a container</a>
 *	<a href="#xml-manage-block">Create a block</a>
-*	<a href="#set_template">Set the template used by a block</a>
+*	<a href="#set_template">Set a block's template</a>
 *	<a href="#layout_markup_modify-block">Modify block arguments</a>
 *	<a href="#xml-manage-ref-block">Reference a block</a>
 *	<a href="#layout_markup_block-properties">Use block object methods to set block properties</a>
@@ -40,37 +41,39 @@ Example:
 Change the layout of Advanced Search page from default "1-column" to "2-column with left bar". To do this, extend `catalogsearch_advanced_index.xml` in your theme by adding the following layout:
 
 <b><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_CatalogSearch/layout/catalogsearch_advanced_index.xml</code></b>
-<pre>
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;layout=&quot;2columns-left&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
+
+{%highlight xml%}
+<page layout="2columns-left" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 ...
-&lt;/page&gt;
-</pre>
+</page>
+{%endhighlight xml%}
+
 
 <h2 id="layout_markup_css">Include static resources (JavaScript, CSS, fonts)</h2>
 
-JavaScript, CSS and other static assets are added in the `<head>` section of a <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
+JavaScript, CSS and other static assets are added in the `<head>` section of a <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
 
-<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code>
+<code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code>
 
-<pre>
-&lt;page xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-    &lt;head&gt;
-        &lt;!-- Add local resources --&gt;
-	&lt;css src=&quot;css/my-styles.css&quot;/&gt;
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!-- Add local resources -->
+    	<css src="css/my-styles.css"/>
     
-        &lt;!-- The following two ways to add local JavaScript files are equal --&gt;
-        &lt;script src=&quot;Magento_Catalog::js/sample1.js&quot;/&gt;
-        &lt;link src=&quot;js/sample.js&quot;/&gt;
+        <!-- The following two ways to add local JavaScript files are equal -->
+        <script src="Magento_Catalog::js/sample1.js"/>
+        <link src="js/sample.js"/>
 		
-	&lt;!-- Add external resources --&gt;
-	&lt;css src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot; src_type=&quot;url&quot; /&gt;
-        &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot; src_type=&quot;url&quot; /&gt;
-        &lt;link src=&quot;http://fonts.googleapis.com/css?family=Montserrat&quot; src_type=&quot;url&quot; /&gt; 
+    	<!-- Add external resources -->
+	    <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" src_type="url" />
+        <link src="http://fonts.googleapis.com/css?family=Montserrat" src_type="url" /> 
+    </head>
+</page>
+{%endhighlight xml%}
 
-    &lt;/head&gt;
-&lt;/page&gt;
-</pre>
 
 When adding external resources, specifying the <code>src_type="url"</code> argument value is a must.
 
@@ -79,8 +82,8 @@ You can use either `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>
 
 The path to assets is specified relatively to one the following locations:
 <ul>
-<li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code></li>
-<li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>
+<li><code>&lt;theme_dir&gt;/web</code></li>
+<li><code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>
 
 </ul>
 
@@ -89,21 +92,20 @@ The path to assets is specified relatively to one the following locations:
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:
 
-<pre>
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;css src=&quot;css/ie-9.css&quot; ie_condition=&quot;IE 9&quot; /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;
-&lt;/page&gt;
-
-</pre>
+{%highlight xml%}
+    <head>
+        <css src="css/ie-9.css" ie_condition="IE 9" />
+    </head>
+</page>
+{%endhighlight xml%}
 
 This adds an IE conditional comment in the generated HTML, like in the following example:
-<pre>
-&lt;!--[if IE 9]&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; href=&quot;&lt;your_store_web_address&gt;/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css&quot; /&gt;
-&lt;![endif]--&gt;
-</pre>
+
+{%highlight html%}
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" media="all" href="<your_store_web_address>/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css" />
+<![endif]-->
+{%endhighlight html%}
 
 In this example, <code>orange</code> is a custom theme created by the OrangeCo vendor.
 
@@ -113,21 +115,20 @@ To remove the static resources, linked in a page `<head>`, make a change similar
 
 `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
 
-<pre>
-&lt;page&gt;
-   &lt;head&gt;
-        &lt;!-- Remove local resources --&gt;
-        &lt;remove src=&quot;css/styles-m.css&quot; /&gt;
-        &lt;remove src=&quot;my-js.js&quot;/&gt;
-        &lt;remove src=&quot;Magento_Catalog::js/compare.js&quot; /&gt;
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <head>
+        <!-- Remove local resources -->
+        <remove src="css/styles-m.css" />
+        <remove src="my-js.js"/>
+        <remove src="Magento_Catalog::js/compare.js" />
 								
-	&lt;!-- Remove external resources --&gt;
-        &lt;remove src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot;/&gt;
-        &lt;remove src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot;/&gt;
-        &lt;remove src=&quot;http://fonts.googleapis.com/css?family=Montserrat&quot; /&gt; 
-   &lt;/head&gt;
-&lt;/page&gt;
-</pre>
+	<!-- Remove external resources -->
+        <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
+        <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
+        <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
+   </head>
+{%endhighlight xml%}
 
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
 
@@ -135,66 +136,91 @@ Note, that if a static asset is added with a module path (for example `Magento_C
 
 Use the following sample to create (declare) a container:
 
-<pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
+{%highlight xml%}
+<container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" />
+{%endhighlight xml%}
 
 <h2 id="ref_container">Reference a container</h2>
 
-To update a container use the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceContainer>`</a> instruction.
+To update a container use the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceContainer>`</a> instruction.
 
 Example: add links to the page header panel.
 
-<pre>
-&lt;referenceContainer&nbsp;name=&quot;header.panel&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Framework\View\Element\Html\Links&quot;&nbsp;name=&quot;header.links&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;css_class&quot;&nbsp;xsi:type=&quot;string&quot;&gt;header&nbsp;links&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&lt;/referenceContainer&gt;
-</pre>
+{%highlight xml%}
+<referenceContainer name="header.panel">
+        <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+            <arguments>
+                <argument name="css_class" xsi:type="string">header links</argument>
+            </arguments>
+        </block>
+</referenceContainer>
+{%endhighlight xml%}
 
 <h2 id="xml-manage-block">Create a block</h2>
 
-Blocks are created (declared) using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
+Blocks are created (declared) using the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
 
 Example: add a block with a product SKU information.
 
-<pre>
-&lt;block&nbsp;class=&quot;Magento\Catalog\Block\Product\View\Description&quot;&nbsp;name=&quot;product.info.sku&quot;&nbsp;template=&quot;product/view/attribute.phtml&quot;&nbsp;after=&quot;product.info.type&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;at_call&quot;&nbsp;xsi:type=&quot;string&quot;&gt;getSku&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;at_code&quot;&nbsp;xsi:type=&quot;string&quot;&gt;sku&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;css_class&quot;&nbsp;xsi:type=&quot;string&quot;&gt;sku&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/block&gt;
+{%highlight xml%}
+<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
+    <arguments>
+        <argument name="at_call" xsi:type="string">getSku</argument>
+        <argument name="at_code" xsi:type="string">sku</argument>
+        <argument name="css_class" xsi:type="string">sku</argument>
+    </arguments>
+</block>
+{%endhighlight xml%}
 
-</pre>
 
 <h2 id="xml-manage-ref-block">Reference a block</h2>
 
-To update a block use the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceBlock>`</a> instruction.
+To update a block use the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceBlock>`</a> instruction.
 
 Example: pass the image to the `logo` block.
 
-<pre>
-&lt;referenceBlock&nbsp;name=&quot;logo&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;logo_file&quot;&nbsp;xsi:type=&quot;string&quot;&gt;images/logo.png&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/referenceBlock&gt;
-</pre>
+{%highlight xml%}
+<referenceBlock name="logo">
+        <arguments>
+            <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+        </arguments>
+</referenceBlock>
+{%endhighlight xml%}
 
-<h2 id="set_template">Set the template used by a block</h2>
+## Set a block template {#set_template}
 
-To setup template for a block, use the `template` attribute.
+There are two ways to set the template for a block:
 
-Example: change template of the page title block.
+- using the `template` attribute
+- using the `<argument>` instruction
 
-<pre>
+Both approaches are demonstrated in the following examples of changing the template of the page title block.
 
-&lt;referenceBlock&nbsp;name=&quot;page.main.title&quot;&nbsp;template=&quot;html/title_new.phtml&quot;/&gt;
+**Example 1:**
 
-</pre>
+{%highlight xml%}
+ <referenceBlock name="page.main.title" template="%Namespace_Module::new_template.phtml%"/>
+{%endhighlight%}
+
+**Example 2:** 
+
+{%highlight xml%}
+ <referenceBlock name="page.main.title">
+        <arguments>
+            <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
+        </arguments>
+ </referenceBlock>
+{%endhighlight%}
+
+In both example, the template is specified according to the following:
+
+ * `Namespace_Module:` defines the module the template belongs to. For example, `Magento_Catalog`.
+ * `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
+
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Template values specified as attributes have higher priority during layout generation, than the ones specified using <code>&lt;argument&gt;</code>. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in <code>&lt;argument&gt;</code> for the same block.</p>
+</div>
 
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
@@ -203,49 +229,51 @@ To modify block arguments, use the `<referenceBlock>` instruction.
 Example: change the value of the existing block argument and add a new argument.
 
 Initial block declaration:
-<pre>
+
+{%highlight xml%}
 ...
-&lt;block&nbsp;class=&quot;Namespace_Module_Block_Type&quot;&nbsp;name=&quot;block.example&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Block&nbsp;Label&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/block&gt;
+<block class="Namespace_Module_Block_Type" name="block.example">
+    <arguments>
+        <argument name="label" xsi:type="string">Block Label</argument>
+    </arguments>
+</block>
 ...
-</pre>
+{%endhighlight xml%}
 
 Extending layout:
 
-<pre>
+{%highlight xml%}
 ...
-&lt;referenceBlock&nbsp;name=&quot;block.example&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Modified&nbsp;block&nbsp;argument&nbsp;-&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;New&nbsp;Block&nbsp;Label&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-&nbsp;Newly&nbsp;added&nbsp;block&nbsp;argument&nbsp;-&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;custom_label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Custom&nbsp;Block&nbsp;Label&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/referenceBlock&gt;&nbsp;
+<referenceBlock name="block.example">
+    <arguments>
+        <!-- Modified block argument -->
+        <argument name="label" xsi:type="string">New Block Label</argument>
+        <!- Newly added block argument -->
+        <argument name="custom_label" xsi:type="string">Custom Block Label</argument>
+    </arguments>
+</referenceBlock> 
 ...
-</pre>
+{%endhighlight xml%}
 
 <h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
 
 There are two ways to access block object methods:
 
-- using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#argument"><code>&lt;argument&gt;</code></a> instruction for `<block>` or `<referenceBlock>`
-- using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`. 
+- using the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#argument"><code>&lt;argument&gt;</code></a> instruction for `<block>` or `<referenceBlock>`
+- using the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`. 
 
 Example 1: Set a CSS class and add an attribute for the product page using `<argument>`.
 
 Extending layout:
 
+{%highlight xml%}
 	<referenceBlock name="page.main.title">
 		<arguments>
 		    <argument name="css_class" xsi:type="string">product</argument>
 		    <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
 		</arguments>
 	</referenceBlock>
-
+{%endhighlight xml%}
 
 Example 2: Set a page title using `<action>`. 
 
@@ -257,6 +285,7 @@ Example 2: Set a page title using `<action>`.
 
 Extending layout:
 
+{%highlight xml%}
 	...
 	<referenceBlock name="page.main.title">
 	    <action method="setPageTitle">
@@ -264,14 +293,14 @@ Extending layout:
 	    </action>
 	</referenceBlock>
 	...
-
+{%endhighlight xml%}
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing elements' order and parent.
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank">`before` and `after` attributes of `<block>`</a>: allows changing elements' order within one parent.
+* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing elements' order and parent.
+* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank">`before` and `after` attributes of `<block>`</a>: allows changing elements' order within one parent.
 
 <p></p>
 Example of `<move>` usage:
@@ -283,14 +312,16 @@ In the Magento Blank theme these elements are located as follows:
 
 Let's place the stock availability and SKU blocks after product price block on a product page, and move the review block out of the product-info-price container.
 To do this, add the extending `catalog_product_view.xml` in the `app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/` directory:
-<pre>
-&lt;page&nbsp;layout=&quot;1column&quot;&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;move&nbsp;element=&quot;product.info.stock.sku&quot;&nbsp;destination=&quot;product.info.price&quot;&nbsp;after=&quot;product.price.final&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;move&nbsp;element=&quot;product.info.review&quot;&nbsp;destination=&quot;product.info.main&quot;&nbsp;before=&quot;product.info.price&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
-&lt;/page&gt;
-</pre>
+
+{%highlight xml%}
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
+        <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+    </body>
+</page>
+
+{%endhighlight xml%}
 
 This would make the product page look like following:
 
@@ -298,48 +329,55 @@ This would make the product page look like following:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To learn how to locate the layout file you need to customize, see <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
+  <p>To learn how to locate the layout file you need to customize, see <a href="{{page.baseurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
 </div>
 
 <h2 id="layout_markup_remove_elements">Remove elements</h2>
 
-Elements are removed using the `<remove>` instruction.
+Elements are removed using the `remove` attribute for the `<referenceBlock>` and `<referenceContainer>`. 
 
-Example: remove the Compare Products sidebar block from all store pages. This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
+**Example**: remove the Compare Products sidebar block from all store pages. 
 
-<pre>
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
+This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
+
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
 ...
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceContainer&nbsp;name=&quot;sidebar.additional&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Catalog\Block\Product\Compare\Sidebar&quot;&nbsp;name=&quot;catalog.compare.sidebar&quot;&nbsp;template=&quot;product/compare/sidebar.phtml&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceContainer&gt;
+        <referenceContainer name="sidebar.additional">
+            <block class="Magento\Catalog\Block\Product\Compare\Sidebar" name="catalog.compare.sidebar" template="product/compare/sidebar.phtml"/>
+        </referenceContainer>
 ...
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
-&lt;/page&gt;
-</pre>
+    </body>
+</page>
+{%endhighlight xml%}
+
 
 To remove the block, add the extending `default.xml` in your theme:
-`app/design/frontend/<Vendor>/<theme>/Magento_Catalog/layout/default.xml`
+`<theme_dir>/Magento_Catalog/layout/default.xml`
 
-In this file, add the `<remove>` instruction:
-<pre>
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
+In this file, reference the element having added the `remove` attribute:
+
+{%highlight xml%}
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
 ...
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;catalog.compare.sidebar&quot;&nbsp;/&gt;
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
 ...
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
-&lt;/page&gt;
-</pre>
+    </body>
+</page>
+
+{%endhighlight xml%}
+
 
 <h2 id="layout_markup_replace_elements">Replace elements</h2>
 
-To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
+To replace an element, <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
 
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html" target="_blank">Theme design best practices</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
+

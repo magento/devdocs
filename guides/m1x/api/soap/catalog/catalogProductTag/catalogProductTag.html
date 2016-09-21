@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - Product Tag';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
-				    
-				    <h2><a name="MAPI-ProductTag-Module%3ATag"></a>Module: Tag</h2>
+---
+layout: m1x_soap
+title: Catalog Product Tag
+---
+
+<h2><a name="MAPI-ProductTag-Module%3ATag"></a>Module: Tag</h2>
 
 <p>Allows you to operate with product tags.</p>
 
@@ -29,42 +29,41 @@
 
 <h5><a name="MAPI-ProductTag-Faults%3A"></a>Faults:</h5>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> <font color="#333333">Fault Code</font> </th>
-<th class='confluenceTh'> <font color="#333333">Fault Message</font> </th>
+<th> <font color="#333333">Fault Code</font> </th>
+<th> <font color="#333333">Fault Message</font> </th>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">101</font> </td>
-<td class='confluenceTd'> <font color="#333333">Requested store does not exist.</font> </td>
+<td> <font color="#333333">101</font> </td>
+<td> <font color="#333333">Requested store does not exist.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">102</font> </td>
-<td class='confluenceTd'> <font color="#333333">Requested product does not exist.</font> </td>
+<td> <font color="#333333">102</font> </td>
+<td> <font color="#333333">Requested product does not exist.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">103</font> </td>
-<td class='confluenceTd'> <font color="#333333">Requested customer does not exist.</font> </td>
+<td> <font color="#333333">103</font> </td>
+<td> <font color="#333333">Requested customer does not exist.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">104</font> </td>
-<td class='confluenceTd'> <font color="#333333">Requested tag does not exist.</font> </td>
+<td> <font color="#333333">104</font> </td>
+<td> <font color="#333333">Requested tag does not exist.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">105</font> </td>
-<td class='confluenceTd'> <font color="#333333">Provided data is invalid.</font> </td>
+<td> <font color="#333333">105</font> </td>
+<td> <font color="#333333">Provided data is invalid.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">106</font> </td>
-<td class='confluenceTd'> <font color="#333333">Error while saving tag. Details in error message.</font> </td>
+<td> <font color="#333333">106</font> </td>
+<td> <font color="#333333">Error while saving tag. Details in error message.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#333333">107</font> </td>
-<td class='confluenceTd'> <font color="#333333">Error while removing tag. Details in error message.</font> </td>
+<td> <font color="#333333">107</font> </td>
+<td> <font color="#333333">Error while removing tag. Details in error message.</font> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h5><a name="MAPI-ProductTag-Example%3A"></a>Example:</h5>
@@ -132,4 +131,4 @@ echo ($removeResult ? "Done!" : "Fail!");</pre>
 </div></div>
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

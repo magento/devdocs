@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - cart_product.add';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Product Add
+---
 
-				    <h2><a name="cart_product.add-ShoppingCartAPI"></a>Shopping Cart API</h2>
+<h2><a name="cart_product.add-ShoppingCartAPI"></a>Shopping Cart API</h2>
 
 <p>Allows you to create/modify shopping cart and create an order after complete filling the shopping cart. Consists of two main parts: Shopping Cart and Checkout processes.</p>
 
@@ -22,97 +22,94 @@
 <p>Allows you to add one or more products to the shopping cart (quote).</p>
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> quoteId </td>
-<td class='confluenceTd'> Shopping cart ID (quote ID) <br class="atl-forced-newline" /> </td>
+<td> int </td>
+<td> quoteId </td>
+<td> Shopping cart ID (quote ID) <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> products\productsData <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> An array with the list of shoppingCartProductEntity <br class="atl-forced-newline" /> </td>
+<td> array <br class="atl-forced-newline" /> </td>
+<td> products\productsData <br class="atl-forced-newline" /> </td>
+<td> An array with the list of shoppingCartProductEntity <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> storeId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store view ID or code (optional) <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> storeId <br class="atl-forced-newline" /> </td>
+<td> Store view ID or code (optional) <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> True on success (if the product is added to the shopping cart) </td>
+<td> boolean </td>
+<td> True on success (if the product is added to the shopping cart) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The shoppingCartProductEntity array attributes are as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> product_id </td>
-<td class='confluenceTd'> ID of the product to be added to the shopping cart (quote) (optional) </td>
+<td> string </td>
+<td> product_id </td>
+<td> ID of the product to be added to the shopping cart (quote) (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> SKU of the product to be added to the shopping cart (quote) (optional) <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sku <br class="atl-forced-newline" /> </td>
+<td> SKU of the product to be added to the shopping cart (quote) (optional) <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> double <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Number of products to be added to the shopping cart (quote) (optional) <br class="atl-forced-newline" /> </td>
+<td> double <br class="atl-forced-newline" /> </td>
+<td> qty <br class="atl-forced-newline" /> </td>
+<td> Number of products to be added to the shopping cart (quote) (optional) <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> associativeArray <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> options <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> An array in the form of option_id =&gt; content (optional) <br class="atl-forced-newline" /> </td>
+<td> associativeArray <br class="atl-forced-newline" /> </td>
+<td> options <br class="atl-forced-newline" /> </td>
+<td> An array in the form of option_id =&gt; content (optional) <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> associativeArray <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> bundle_option <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> An array of bundle item options (optional) </td>
+<td> associativeArray <br class="atl-forced-newline" /> </td>
+<td> bundle_option <br class="atl-forced-newline" /> </td>
+<td> An array of bundle item options (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> associativeArray <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> bundle_option_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> An array of bundle items quantity (optional) </td>
+<td> associativeArray <br class="atl-forced-newline" /> </td>
+<td> bundle_option_qty <br class="atl-forced-newline" /> </td>
+<td> An array of bundle items quantity (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> links <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> An array of links (optional) </td>
+<td> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td> links <br class="atl-forced-newline" /> </td>
+<td> An array of links (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Faults</b>:<br/>
 <em>No Faults.</em></p>

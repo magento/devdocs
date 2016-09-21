@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - Customer Address';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Customer Address
+---
 				    
-				    <h4><a name="CustomerAddress-CustomerAddress"></a>Customer Address</h4>
+<h4><a name="CustomerAddress-CustomerAddress"></a>Customer Address</h4>
 
 <p>Allows you to create, retrieve, update, and delete address data for a required customer.</p>
 
@@ -21,30 +21,29 @@
 
 <h4><a name="CustomerAddress-Faults"></a>Faults</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 100 </td>
-<td class='confluenceTd'> Invalid address data. Details in error message. </td>
+<td> 100 </td>
+<td> Invalid address data. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Customer not exists. </td>
+<td> 101 </td>
+<td> Customer not exists. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 102 </td>
-<td class='confluenceTd'> Address not exists. </td>
+<td> 102 </td>
+<td> Address not exists. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 103 </td>
-<td class='confluenceTd'> Address not deleted. Details in error message. </td>
+<td> 103 </td>
+<td> Address not deleted. Details in error message. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="CustomerAddress-Examples"></a>Examples</h4>
@@ -101,4 +100,4 @@ var_dump($proxy-&gt;call($sessionId, 'customer_address.list', $newCustomerId));<
 </div></div>
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

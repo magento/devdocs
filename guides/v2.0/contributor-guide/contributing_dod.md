@@ -1,17 +1,15 @@
 ---
 layout: default
-group: Contributor Guide
-subgroup: Contributor Guide
-title: Contributor Guide
+group: contributor
+subgroup: contributor
+title: Magento Definition of Done
 menu_title: Magento Definition of Done
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: contributor-guide/contributing_dod.md
 redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
 ---
-
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: contributing.md owned by core -->
 
 
 <h2 id="dod">Magento Definition of Done</h2>
@@ -28,13 +26,13 @@ The following sections provide additional details about each of these criteria:
 
 Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the "business value". 
 
-For more information, see <a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
+For more information, see <a href="{{page.baseurl}}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
 
 <h3>Documentation</h3>
 
 All changes, additions, and extensions to the product should be documented by the author. The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.
 
-Ideally, the informatin about the submitted code should be added to the official Magento DevDocs library. Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>. 
+Ideally, the information about the submitted code should be added to the official Magento DevDocs library. Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>.
 
 When submitting either code or documentation, a brief summary of the work should be included in the commit message. 
 
@@ -117,7 +115,7 @@ Expected code coverage: must cover all applicable files in entire code base.
 Code to cover: 
 
 * Must cover any formal backwards-incompatible changes on code level. For more information, see 
-<a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
+<a href="{{page.baseurl}}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
 
 A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.
 

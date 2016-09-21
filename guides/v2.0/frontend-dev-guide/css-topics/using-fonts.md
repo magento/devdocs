@@ -4,20 +4,21 @@ group: fedg
 subgroup: D_CSS
 title: Using custom fonts
 menu_order: 6
+version: 2.0
 github_link: frontend-dev-guide/css-topics/using-fonts.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html
 ---
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 The Magento application contains a set of built-in fonts, but you can easily include custom fonts. This topic describes how to include a locally stored custom font in your Magento theme.
 
 
 <h2 id="fonts_location">Font files location</h2>
 
 <h3 id="local_fonts">Locally stored fonts</h3>
-Place the font files to your theme directory under: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/fonts</code>.
+Place the font files to your theme directory under: <code>&lt;theme_dir&gt;/web/fonts</code>.
 
 <h3 id="ext_fonts">External fonts</h3>
-To use external fonts, include them in the page configuration file, as described in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css" >Include static resources (JavaScript, CSS, fonts)</a>.
+To use external fonts, include them in the page configuration file, as described in <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css" >Include static resources (JavaScript, CSS, fonts)</a>.
 
 <h2 id="fonts">Include fonts</h2>
 
@@ -27,9 +28,9 @@ To ensure stability and secure your customizations from being deleted during upg
 To include a custom font stored locally, use one of the following approaches:
 
 <ul> 
-<li>If you build a theme using Magento UI library, declare the font by adding the <code>.font-face</code> mixin in the <code>app/design/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_typography.less</code> file:
+<li>If you build a theme using Magento UI library, declare the font by adding the <code>.lib-font-face</code> mixin in the <code>&lt;theme_dir&gt;/web/css/source/_typography.less</code> file:
 <pre>
-.font-face(
+.lib-font-face(
     @family-name:'&lt;any_font_name&gt;',
     @font-path: '@{baseDir}fonts/&lt;path_to_font_file&gt;',
     @font-weight: <a href="http://www.w3schools.com/cssref/pr_font_weight.asp" target="_blank">&lt;font_weight&gt;</a>,

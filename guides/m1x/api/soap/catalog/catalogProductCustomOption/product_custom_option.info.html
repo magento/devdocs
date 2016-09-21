@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_custom_option.info';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Product Custom Option Info
+---
 
-				    <h3><a name="product_custom_option.info-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
+<h3><a name="product_custom_option.info-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
 
 <h4><a name="product_custom_option.info-Resource%3Aproductcustomoption"></a>Resource: product_custom_option</h4>
 
@@ -19,170 +19,165 @@
 <p>Allows you to retrieve full information about the custom option in a product.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> optionId </td>
-<td class='confluenceTd'> Option ID </td>
+<td> string </td>
+<td> optionId </td>
+<td> Option ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> store </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of catalogProductCustomOptionInfoEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of catalogProductCustomOptionInfoEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductCustomOptionInfoEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option title </td>
+<td> string </td>
+<td> title <br class="atl-forced-newline" /> </td>
+<td> Custom option title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option type. Can have one of the following values: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> type <br class="atl-forced-newline" /> </td>
+<td> Custom option type. Can have one of the following values: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option sort order </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sort_order <br class="atl-forced-newline" /> </td>
+<td> Custom option sort order </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_require <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the custom option is required </td>
+<td> int </td>
+<td> is_require <br class="atl-forced-newline" /> </td>
+<td> Defines whether the custom option is required </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> additional_fields <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductCustomOptionAdditionalFields </td>
+<td> array </td>
+<td> additional_fields <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductCustomOptionAdditionalFields </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductCustomOptionAdditionalFields</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option title </td>
+<td> string </td>
+<td> title <br class="atl-forced-newline" /> </td>
+<td> Custom option title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option price </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Custom option price </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> price_type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Price type. Possible values are as follows: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> price_type <br class="atl-forced-newline" /> </td>
+<td> Price type. Possible values are as follows: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option SKU <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sku <br class="atl-forced-newline" /> </td>
+<td> Custom option SKU <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> max_characters <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Maximum number of characters for the customer input on the frontend (optional) <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> max_characters <br class="atl-forced-newline" /> </td>
+<td> Maximum number of characters for the customer input on the frontend (optional) <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option sort order </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sort_order <br class="atl-forced-newline" /> </td>
+<td> Custom option sort order </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> file_extension <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> List of file extensions allowed to upload by the user on the frontend (optional; for the <b>File</b> input type) <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> file_extension <br class="atl-forced-newline" /> </td>
+<td> List of file extensions allowed to upload by the user on the frontend (optional; for the <b>File</b> input type) <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> image_size_x <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Width limit for uploaded images (optional; for the <b>File</b> input type) <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> image_size_x <br class="atl-forced-newline" /> </td>
+<td> Width limit for uploaded images (optional; for the <b>File</b> input type) <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> image_size_y <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Height limit for uploaded images (optional; for the <b>File</b> input type) <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> image_size_y <br class="atl-forced-newline" /> </td>
+<td> Height limit for uploaded images (optional; for the <b>File</b> input type) <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> value_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Value ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> value_id <br class="atl-forced-newline" /> </td>
+<td> Value ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Product with requested id does not exist. </td>
+<td> 101 </td>
+<td> Product with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Store with requested code/id does not exist. </td>
+<td> 104 </td>
+<td> Store with requested code/id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> Option with requested id does not exist. </td>
+<td> 105 </td>
+<td> Option with requested id does not exist. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

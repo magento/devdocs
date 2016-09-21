@@ -1,11 +1,12 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Manage the indexers
 menu_title: Manage the indexers
 menu_node: 
-menu_order: 6
+menu_order: 90
+version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-index.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-index.html
 ---
@@ -20,7 +21,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-index.html
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-index-info">View the list of indexers</h2>
 To view the list of indexers to use in the commands discussed in this topic, enter
@@ -69,11 +70,16 @@ Sample result:
 Reindexing is discussed in the next section.
 
 <h2 id="config-cli-subcommands-index-reindex">Reindex</h2>
-This command enables you to reindex all or selected indexers.
+This command enables you to reindex all or selected indexers one time only.
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>This command reindexes one time only. To keep indexers up-to-date, you must set up a <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a>.</p></span>
+</div>
 
 Command options:
 
-	magento reindex [indexer]
+	magento indexer:reindex [indexer]
 
 where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to reindex all indexers.
 
@@ -107,7 +113,7 @@ This command enables you to set the following indexer options:
 *	Update on save (`realtime`): Indexed data is updated as soon as a change is made in the Admin. (For example, the category products index is reindex after products are added to a category in the Admin.) This is the default.
 *	Update by schedule (`schedule`): Data is indexed according to the schedule set by your Magento cron job.
 
-<a href="{{ site.gdeurl }}architecture/index-cache/indexing.html">More information about indexing</a>.
+[More information about indexing]({{ page.baseurl }}extension-dev-guide/indexing.html)
 
 <h3 id="config-cli-subcommands-index-conf-show">Display the current configuration</h3>
 To view the current indexer configuration, enter
@@ -157,15 +163,15 @@ Sample result:
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

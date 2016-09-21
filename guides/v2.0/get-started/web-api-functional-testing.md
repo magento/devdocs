@@ -5,13 +5,18 @@ subgroup: A_Concepts
 title: Web API functional testing
 menu_title: Web API functional testing
 menu_order: 1
+version: 2.0
 github_link: get-started/web-api-functional-testing.md
 redirect_from: /guides/v1.0/get-started/web-api-functional-testing.html
 ---
 
+## Web API functional testing
+{:.no_toc}
 
-The Web API testing framework allows you to test Magento Web API from the client application point of view. The tests can used with either REST or SOAP. The REST or SOAP adapter that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
+The Web API testing framework allows you to test Magento Web API from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP adapter that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
 
+* TOC
+{:toc}
 
 <h2 id="details">Implementation Details</h2>
 
@@ -26,7 +31,7 @@ In the Web API functional tests only, the custom annotation  `@magentoApiDataFix
 
 <p>If data was added to the DB using <code>@magentoApiDataFixture</code>, it will not be automatically cleared after test execution. The data is cleared when <code>@magentoDataFixture</code> is used.</p>
 </div>
-	
+
 Do not define fixtures in `dev/tests/api-functional`. Instead, they must be taken from `dev/tests/integration`. The integration framework defines most necessary fixtures, and they should be reused during Web API functional testing. If the existing set of fixtures is insufficient, add new fixtures under `dev/tests/integration`. The fixtures will then be available for both testing frameworks.
 
 To keep your test environment clean, clear all entities created in fixture files or within tests itself from the DB after test execution. This can be done either directly in tearDown or by a corresponding rollback for the fixture file. This file should be named the same as a fixture, but with `_rollback` suffix.
@@ -38,7 +43,7 @@ All Web API functional tests should inherit from the generic test case `Magento\
 {% highlight php %}
 <?php
 namespace Magento\Webapi\Routing;
- 
+
 class CoreRoutingTest extends \Magento\TestFramework\TestCase\WebapiAbstract
 {
     public function testBasicRoutingExplicitPath()
@@ -67,7 +72,7 @@ The test above should is able to test SOAP and REST depending on what adapter is
 <?php
 
 namespace Magento\TestFramework\TestCase\Webapi;
- 
+
 interface AdapterInterface
 {
     /**
@@ -100,7 +105,7 @@ interface AdapterInterface
 
 <h2 id="howto">How to Run the Tests</h2>
 <h3 id="prereq">Prerequisites</h3>
-1. Install the PHP Soap extension. 
+1. Install the PHP Soap extension.
 
 	Copy `php_soap.dll` or `php_soap.so` to your PHP extensions directory. Edit your `php.ini` file and enable the PHP Soap extension. Usually this means deleting the leading semi-colon in front of the extension. Then restart Apache.
 

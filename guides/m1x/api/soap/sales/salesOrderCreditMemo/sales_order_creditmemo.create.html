@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - order_creditmemo.create';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Memo Create
+---
 
-				    <h3><a name="order_creditmemo.create-Module%3AOrderCreditMemoAPI"></a>Module: Order Credit Memo API</h3>
+<h3><a name="order_creditmemo.create-Module%3AOrderCreditMemoAPI"></a>Module: Order Credit Memo API</h3>
 
 <h4><a name="order_creditmemo.create-Resource%3Asalesordercreditmemo"></a>Resource: sales_order_creditmemo</h4>
 
@@ -20,149 +20,144 @@
 <p>Allows you to create a new credit memo for the invoiced order. Comments can be added and an email notification can be sent to the user email.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> orderIncrementId </td>
-<td class='confluenceTd'> Order increment ID </td>
+<td> string </td>
+<td> orderIncrementId </td>
+<td> Order increment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> creditmemoData </td>
-<td class='confluenceTd'> Array of salesOrderCreditmemoData (optional) </td>
+<td> array </td>
+<td> creditmemoData </td>
+<td> Array of salesOrderCreditmemoData (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> comment </td>
-<td class='confluenceTd'> Comment text (optional) </td>
+<td> string </td>
+<td> comment </td>
+<td> Comment text (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> notifyCustomer </td>
-<td class='confluenceTd'> Notify customer by email flag (optional) </td>
+<td> int </td>
+<td> notifyCustomer </td>
+<td> Notify customer by email flag (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> includeComment </td>
-<td class='confluenceTd'> Include comment text into an email notification (optional) </td>
+<td> int </td>
+<td> includeComment </td>
+<td> Include comment text into an email notification (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> refundToStoreCreditAmount </td>
-<td class='confluenceTd'> Payment amount to be refunded to the customer store credit (optional) </td>
+<td> string </td>
+<td> refundToStoreCreditAmount </td>
+<td> Payment amount to be refunded to the customer store credit (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Created credit memo increment ID </td>
+<td> string </td>
+<td> result </td>
+<td> Created credit memo increment ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>salesOrderCreditmemoData</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> qtys <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of orderItemIdQty </td>
+<td> array </td>
+<td> qtys <br class="atl-forced-newline" /> </td>
+<td> Array of orderItemIdQty </td>
 </tr>
 <tr>
-<td class='confluenceTd'> double </td>
-<td class='confluenceTd'> shipping_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Refund shipping amount (optional) <br class="atl-forced-newline" /> </td>
+<td> double </td>
+<td> shipping_amount <br class="atl-forced-newline" /> </td>
+<td> Refund shipping amount (optional) <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> double </td>
-<td class='confluenceTd'> adjustment_positive <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Adjustment refund amount (optional) <br class="atl-forced-newline" /> </td>
+<td> double </td>
+<td> adjustment_positive <br class="atl-forced-newline" /> </td>
+<td> Adjustment refund amount (optional) <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> double </td>
-<td class='confluenceTd'> adjustment_negative <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Adjustment fee amount (optional) <br class="atl-forced-newline" /> </td>
+<td> double </td>
+<td> adjustment_negative <br class="atl-forced-newline" /> </td>
+<td> Adjustment fee amount (optional) <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>orderItemIdQty</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> order_item_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order item ID to be refunded </td>
+<td> int </td>
+<td> order_item_id <br class="atl-forced-newline" /> </td>
+<td> Order item ID to be refunded </td>
 </tr>
 <tr>
-<td class='confluenceTd'> double </td>
-<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Items quantity to be refunded </td>
+<td> double </td>
+<td> qty <br class="atl-forced-newline" /> </td>
+<td> Items quantity to be refunded </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 102 </td>
-<td class='confluenceTd'> Invalid data given. Details in error message. </td>
+<td> 102 </td>
+<td> Invalid data given. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 103 </td>
-<td class='confluenceTd'> Requested order does not exist. </td>
+<td> 103 </td>
+<td> Requested order does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> Money can not be refunded to the store credit account as order was created by guest. </td>
+<td> 105 </td>
+<td> Money can not be refunded to the store credit account as order was created by guest. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 106 </td>
-<td class='confluenceTd'> Credit memo for requested order can not be created. </td>
+<td> 106 </td>
+<td> Credit memo for requested order can not be created. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="order_creditmemo.create-Examples"></a>Examples</h4>

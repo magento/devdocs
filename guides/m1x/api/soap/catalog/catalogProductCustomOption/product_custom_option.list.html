@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_custom_option.list';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Product Custom Option List
+---
 
-				    <h3><a name="product_custom_option.list-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
+<h3><a name="product_custom_option.list-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
 
 
 <h4><a name="product_custom_option.list-Resource%3Aproductcustomoption"></a>Resource: product_custom_option</h4>
@@ -20,102 +20,98 @@
 <p>Allows you to retrieve the list of custom options for a specific product.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> productId </td>
-<td class='confluenceTd'> Product ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> productId </td>
+<td> Product ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store </td>
-<td class='confluenceTd'> Store view ID or code (optional but required for WS-I mode) </td>
+<td> string </td>
+<td> store </td>
+<td> Store view ID or code (optional but required for WS-I mode) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of catalogProductCustomOptionList <br class="atl-forced-newline" /> </td>
+<td> array </td>
+<td> result </td>
+<td> Array of catalogProductCustomOptionList <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductCustomOptionList</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> option_id </td>
-<td class='confluenceTd'> Custom option ID </td>
+<td> string </td>
+<td> option_id </td>
+<td> Custom option ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option title </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> title <br class="atl-forced-newline" /> </td>
+<td> Custom option title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option type </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> type <br class="atl-forced-newline" /> </td>
+<td> Custom option type </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Custom option sort order </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sort_order <br class="atl-forced-newline" /> </td>
+<td> Custom option sort order </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_require <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the custom option is required </td>
+<td> int </td>
+<td> is_require <br class="atl-forced-newline" /> </td>
+<td> Defines whether the custom option is required </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Faults:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Product with requested id does not exist. </td>
+<td> 101 </td>
+<td> Product with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Store with requested code/id does not exist. </td>
+<td> 104 </td>
+<td> Store with requested code/id does not exist. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="product_custom_option.list-Examples"></a>Examples</h4>

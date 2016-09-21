@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_attribute_set.attributeAdd';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Attribute Set Add
+---
 
-				    <h3><a name="product_attribute_set.attributeAdd-Module%3AProductAttributeSetAPI"></a>Module: Product Attribute Set API</h3>
+<h3><a name="product_attribute_set.attributeAdd-Module%3AProductAttributeSetAPI"></a>Module: Product Attribute Set API</h3>
 
 <h4><a name="product_attribute_set.attributeAdd-Resource%3Aproductattributeset"></a>Resource: product_attribute_set</h4>
 
@@ -19,90 +19,87 @@
 <p>Allows you to add an existing attribute to an attribute set.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> attributeId </td>
-<td class='confluenceTd'> Attribute ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> attributeId </td>
+<td> Attribute ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> attributeSetId </td>
-<td class='confluenceTd'> Attribute set ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> attributeSetId </td>
+<td> Attribute set ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> attributeGroupId </td>
-<td class='confluenceTd'> Group ID (optional) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> attributeGroupId </td>
+<td> Group ID (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sortOrder </td>
-<td class='confluenceTd'> Sort order (optional) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sortOrder </td>
+<td> Sort order (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Note</b>: If the <em>attributeGroupId</em> parameter is not passed, the attribute is added to the <em>General</em> group by default.</p>
 
 <p><b>Returns:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> isAdded </td>
-<td class='confluenceTd'> True if the attribute is added to an attribute set </td>
+<td> boolean </td>
+<td> isAdded </td>
+<td> True if the attribute is added to an attribute set </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Attribute set with requested id does not exist. </td>
+<td> 104 </td>
+<td> Attribute set with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 106 </td>
-<td class='confluenceTd'> Attribute with requested id does not exist. </td>
+<td> 106 </td>
+<td> Attribute with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 107 </td>
-<td class='confluenceTd'> Error while adding attribute to attribute set. Details in error message. </td>
+<td> 107 </td>
+<td> Error while adding attribute to attribute set. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 108 </td>
-<td class='confluenceTd'> Attribute group with requested id does not exist. </td>
+<td> 108 </td>
+<td> Attribute group with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 109 </td>
-<td class='confluenceTd'> Requested attribute is already in requested attribute set. </td>
+<td> 109 </td>
+<td> Requested attribute is already in requested attribute set. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

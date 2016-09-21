@@ -1,12 +1,10 @@
 ---
-layout: m1x
+layout: m1x_rest
 title: Customers
 ---
-<p><a href="{{ site.m1xgithuburl }}api/rest/Resources/resource_customers.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
 
-<div class="toc"> <h4 class="toc">Table of Contents</h4>
-<ul>
+<ul class="introduction-menu">
     <li><a href='#RESTAPI-Resource-Customers-RESTAPI-Customers'>REST API: Customers</a>
     <ul>
         <li><a href='#RESTAPI-Resource-Customers-URI--customers'>URI: /customers</a>
@@ -31,7 +29,7 @@ title: Customers
         </li>
     </ul>
     </li>
-</ul></div>
+</ul>
 
 <h3><a name="RESTAPI-Resource-Customers-RESTAPI-Customers"></a>REST API: Customers</h3>
 
@@ -96,94 +94,93 @@ title: Customers
 <b>Default Format</b>: XML<br/>
 <b>Parameters</b>:</p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Required </th>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Example Value </th>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> firstname </td>
-<td class='confluenceTd'> The customer first name </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> John </td>
+<td> firstname </td>
+<td> The customer first name </td>
+<td> required </td>
+<td> string </td>
+<td> John </td>
 </tr>
 <tr>
-<td class='confluenceTd'> lastname </td>
-<td class='confluenceTd'> The customer last name </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> Doe </td>
+<td> lastname </td>
+<td> The customer last name </td>
+<td> required </td>
+<td> string </td>
+<td> Doe </td>
 </tr>
 <tr>
-<td class='confluenceTd'> email </td>
-<td class='confluenceTd'> The customer email address </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> johny@example.com </td>
+<td> email </td>
+<td> The customer email address </td>
+<td> required </td>
+<td> string </td>
+<td> johny@example.com </td>
 </tr>
 <tr>
-<td class='confluenceTd'> password </td>
-<td class='confluenceTd'> The customer password. The password must contain minimum 7 characters </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> 123123q </td>
+<td> password </td>
+<td> The customer password. The password must contain minimum 7 characters </td>
+<td> required </td>
+<td> string </td>
+<td> 123123q </td>
 </tr>
 <tr>
-<td class='confluenceTd'> website_id </td>
-<td class='confluenceTd'> Website ID </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> website_id </td>
+<td> Website ID </td>
+<td> required </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> group_id </td>
-<td class='confluenceTd'> Customer group ID </td>
-<td class='confluenceTd'> required </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 1 </td>
+<td> group_id </td>
+<td> Customer group ID </td>
+<td> required </td>
+<td> int </td>
+<td> 1 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> disable_auto_group_change </td>
-<td class='confluenceTd'> Defines whether the automatic group change for the customer will be disabled </td>
-<td class='confluenceTd'> optional </td>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> 0 </td>
+<td> disable_auto_group_change </td>
+<td> Defines whether the automatic group change for the customer will be disabled </td>
+<td> optional </td>
+<td> int </td>
+<td> 0 </td>
 </tr>
 <tr>
-<td class='confluenceTd'> prefix<br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer prefix </td>
-<td class='confluenceTd'> optional<br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> Mr. </td>
+<td> prefix<br class="atl-forced-newline" /> </td>
+<td> Customer prefix </td>
+<td> optional<br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> Mr. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> middlename<br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer middle name or initial </td>
-<td class='confluenceTd'> optional<br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> R. </td>
+<td> middlename<br class="atl-forced-newline" /> </td>
+<td> Customer middle name or initial </td>
+<td> optional<br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> R. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> suffix<br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer suffix </td>
-<td class='confluenceTd'> optional<br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> Sr. </td>
+<td> suffix<br class="atl-forced-newline" /> </td>
+<td> Customer suffix </td>
+<td> optional<br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> Sr. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> taxvat<br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer Tax or VAT number </td>
-<td class='confluenceTd'> optional<br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> GB999&nbsp;9999&nbsp;73<br class="atl-forced-newline" /> </td>
+<td> taxvat<br class="atl-forced-newline" /> </td>
+<td> Customer Tax or VAT number </td>
+<td> optional<br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> GB999&nbsp;9999&nbsp;73<br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Notes</b>: The list of parameters may change depending on the attributes settings in <b>Customers</b> &gt; <b>Attributes</b> &gt; <b>Manage Customer Attributes</b> page in Magento Admin Panel. For example, a required status of the <b>middlename</b> attribute (Middle Name/Initial) may be changed to 'YES". Please note that managing customer attributes is available only in Magento Enterprise Edition.</p>

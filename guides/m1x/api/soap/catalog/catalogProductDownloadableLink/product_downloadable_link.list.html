@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_downloadable_link.list';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Downloadable Link List
+---
 
-				    <h3><a name="product_downloadable_link.list-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
+<h3><a name="product_downloadable_link.list-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
 
 
 <h4><a name="product_downloadable_link.list-Resource%3Aproductdownloadablelink"></a>Resource: product_downloadable_link</h4>
@@ -20,245 +20,239 @@
 <p>Allows you to retrieve a list of links of a downloadable product.</p>
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> productId </td>
-<td class='confluenceTd'> Product ID or SKU </td>
+<td> string </td>
+<td> productId </td>
+<td> Product ID or SKU </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> store </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> identifierType </td>
-<td class='confluenceTd'> Defines whether the product ID or SKU is passed in the request </td>
+<td> string </td>
+<td> identifierType </td>
+<td> Defines whether the product ID or SKU is passed in the request </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of catalogProductDownloadableLinkListEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of catalogProductDownloadableLinkListEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductDownloadableLinkListEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> links </td>
-<td class='confluenceTd'> Array of catalogProductDownloadableLinkEntity </td>
+<td> array </td>
+<td> links </td>
+<td> Array of catalogProductDownloadableLinkEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> samples </td>
-<td class='confluenceTd'> Array of catalogProductDownloadableLinkSampleEntity </td>
+<td> array </td>
+<td> samples </td>
+<td> Array of catalogProductDownloadableLinkSampleEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductDownloadableLinkEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> link_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Link ID </td>
+<td> string </td>
+<td> link_id <br class="atl-forced-newline" /> </td>
+<td> Link ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Link title </td>
+<td> string </td>
+<td> title <br class="atl-forced-newline" /> </td>
+<td> Link title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Downloadable link price value&nbsp; <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Downloadable link price value&nbsp; <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> number_of_downloads <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Maximum number of possible downloads </td>
+<td> int </td>
+<td> number_of_downloads <br class="atl-forced-newline" /> </td>
+<td> Maximum number of possible downloads </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_unlimited <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the number of downloads is unlimited </td>
+<td> int </td>
+<td> is_unlimited <br class="atl-forced-newline" /> </td>
+<td> Defines whether the number of downloads is unlimited </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_shareable <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the link is shareable </td>
+<td> int </td>
+<td> is_shareable <br class="atl-forced-newline" /> </td>
+<td> Defines whether the link is shareable </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> link_url <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Link URL address </td>
+<td> string </td>
+<td> link_url <br class="atl-forced-newline" /> </td>
+<td> Link URL address </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> link_type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Type of the link data source. Can have one of the following values: "file" or "url" <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> link_type <br class="atl-forced-newline" /> </td>
+<td> Type of the link data source. Can have one of the following values: "file" or "url" <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sample_file <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Sample file name </td>
+<td> string </td>
+<td> sample_file <br class="atl-forced-newline" /> </td>
+<td> Sample file name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sample_url <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Sample URL </td>
+<td> string </td>
+<td> sample_url <br class="atl-forced-newline" /> </td>
+<td> Sample URL </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sample_type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Type of sample data source. Can have one of the following values: "file" or "url" <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> sample_type <br class="atl-forced-newline" /> </td>
+<td> Type of sample data source. Can have one of the following values: "file" or "url" <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Link sort order </td>
+<td> int </td>
+<td> sort_order <br class="atl-forced-newline" /> </td>
+<td> Link sort order </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> file_save <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductDownloadableLinkFileInfoEntity </td>
+<td> array </td>
+<td> file_save <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductDownloadableLinkFileInfoEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> sample_file_save <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductDownloadableLinkFileInfoEntity </td>
+<td> array </td>
+<td> sample_file_save <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductDownloadableLinkFileInfoEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductDownloadableLinkSampleEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sample_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Sample ID </td>
+<td> string </td>
+<td> sample_id <br class="atl-forced-newline" /> </td>
+<td> Sample ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> product_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> product_id <br class="atl-forced-newline" /> </td>
+<td> Product ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sample_file <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Sample file name </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sample_file <br class="atl-forced-newline" /> </td>
+<td> Sample file name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sample_url <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Sample URL </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sample_url <br class="atl-forced-newline" /> </td>
+<td> Sample URL </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sample_type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Sample type. Can have one of the following values: "file" or "url" </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sample_type <br class="atl-forced-newline" /> </td>
+<td> Sample type. Can have one of the following values: "file" or "url" </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Sort order </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sort_order <br class="atl-forced-newline" /> </td>
+<td> Sort order </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> default_title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Default title </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> default_title <br class="atl-forced-newline" /> </td>
+<td> Default title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> store_title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store title </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> store_title <br class="atl-forced-newline" /> </td>
+<td> Store title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Sample title </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> title <br class="atl-forced-newline" /> </td>
+<td> Sample title </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductDownloadableLinkFileInfoEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> file <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> File </td>
+<td> string </td>
+<td> file <br class="atl-forced-newline" /> </td>
+<td> File </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> File name </td>
+<td> string </td>
+<td> name <br class="atl-forced-newline" /> </td>
+<td> File name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> size <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> File size </td>
+<td> int </td>
+<td> size <br class="atl-forced-newline" /> </td>
+<td> File size </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> status <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Status </td>
+<td> string </td>
+<td> status <br class="atl-forced-newline" /> </td>
+<td> Status </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

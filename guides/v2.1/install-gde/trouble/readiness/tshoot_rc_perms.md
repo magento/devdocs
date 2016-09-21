@@ -1,0 +1,1 @@
+../../../../v2.0/install-gde/trouble/readiness/tshoot_rc_perms.md

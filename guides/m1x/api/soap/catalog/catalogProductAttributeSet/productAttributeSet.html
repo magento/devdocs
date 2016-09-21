@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - Product Attribute Set';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
-				    
-				    <h2><a name="MAPI-ProductAttributeSets-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+---
+layout: m1x_soap
+title: Catalog Product Attribute Set
+---
+
+<h2><a name="MAPI-ProductAttributeSets-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
 
 <p>The Mage_Catalog module allows you to manage categories and products.</p>
 
@@ -34,86 +34,85 @@
 
 <h5><a name="MAPI-ProductAttributeSets-Faults%3A"></a>Faults:</h5>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 100 </td>
-<td class='confluenceTd'> Attribute set with requested id does not exist. </td>
+<td> 100 </td>
+<td> Attribute set with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Invalid data given. </td>
+<td> 101 </td>
+<td> Invalid data given. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 102 </td>
-<td class='confluenceTd'> Error while creating attribute set. Details in error message. </td>
+<td> 102 </td>
+<td> Error while creating attribute set. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 103 </td>
-<td class='confluenceTd'> Error while removing attribute set. Details in error message. </td>
+<td> 103 </td>
+<td> Error while removing attribute set. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Attribute set with requested id does not exist. </td>
+<td> 104 </td>
+<td> Attribute set with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> Unable to remove attribute set as it has related goods. Use forceProductsRemove parameter to remove attribute set with all goods. </td>
+<td> 105 </td>
+<td> Unable to remove attribute set as it has related goods. Use forceProductsRemove parameter to remove attribute set with all goods. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 106 </td>
-<td class='confluenceTd'> Attribute with requested id does not exist. </td>
+<td> 106 </td>
+<td> Attribute with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 107 </td>
-<td class='confluenceTd'> Error while adding attribute to attribute set. Details in error message. </td>
+<td> 107 </td>
+<td> Error while adding attribute to attribute set. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 108 </td>
-<td class='confluenceTd'> Attribute group with requested id does not exist. </td>
+<td> 108 </td>
+<td> Attribute group with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 109 </td>
-<td class='confluenceTd'> Requested attribute is already in requested attribute set. </td>
+<td> 109 </td>
+<td> Requested attribute is already in requested attribute set. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 110 </td>
-<td class='confluenceTd'> Error while removing attribute from attribute set. Details in error message. </td>
+<td> 110 </td>
+<td> Error while removing attribute from attribute set. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 111 </td>
-<td class='confluenceTd'> Requested attribute is not in requested attribute set. </td>
+<td> 111 </td>
+<td> Requested attribute is not in requested attribute set. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 112 </td>
-<td class='confluenceTd'> Requested group exist already in requested attribute set. </td>
+<td> 112 </td>
+<td> Requested group exist already in requested attribute set. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 113 </td>
-<td class='confluenceTd'> Error while adding group to attribute set. Details in error message. </td>
+<td> 113 </td>
+<td> Error while adding group to attribute set. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 114 </td>
-<td class='confluenceTd'> Error while renaming group. Details in error message. </td>
+<td> 114 </td>
+<td> Error while renaming group. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 115 </td>
-<td class='confluenceTd'> Error while removing group from attribute set. Details in error message. </td>
+<td> 115 </td>
+<td> Error while removing group from attribute set. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 116 </td>
-<td class='confluenceTd'> Group can not be removed as it contains system attributes. </td>
+<td> 116 </td>
+<td> Group can not be removed as it contains system attributes. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 117 </td>
-<td class='confluenceTd'> Group can not be removed as it contains attributes, used in configurable products. </td>
+<td> 117 </td>
+<td> Group can not be removed as it contains attributes, used in configurable products. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h5><a name="MAPI-ProductAttributeSets-Example%3A"></a>Example:</h5>
@@ -208,4 +207,4 @@ $result = $proxy-&gt;call(
 </div></div>
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

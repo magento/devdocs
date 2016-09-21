@@ -349,7 +349,7 @@ If an error displays when you attempt to save the configuration, see <a href="#t
 
 <h3 id="customizing-theme-prelim">Basic Recommendations for Development</h3>
 <p>We recommend you do the following things when you start developing your responsive theme:</p>
-<ul><li>Edit <tt>[your Magento install dir]/skin/frontend/custompackage/customtheme/config.rb</tt> to change <tt>environment = &#58;production</tt> to <tt>environment = &#58;development</tt>.<br />
+<ul><li>Edit <tt>[your Magento install dir]/skin/frontend/custompackage/customtheme/scss/config.rb</tt> to change <tt>environment = &#58;production</tt> to <tt>environment = &#58;development</tt>.<br />
 For more information about this setting, see <a href="http://compass-style.org/help/documentation/configuration-reference//" target="_blank">Compass Configuration Reference</a>.</li>
 <li>Disable the Magento cache as discussed in <a href="#disable-cache">Disabling Magento's Cache</a>.</li></ul>
 
@@ -469,8 +469,8 @@ For more information about this setting, see <a href="http://compass-style.org/h
 <h3 id="customze-theme-sass-partials">Adding Your Own Sass Partials</h3>
 <p>To customize styles for an existing Magento theme, you should edit existing Sass partials. However, if you are building a highly custom theme, you will likely want to create new partial files to contain styles for new functionality that you are introducing. Here is how to do that:</p>
 <ol>
-    <li>Add your partials to a new file named <tt>skin/frontend/custompackage/customtheme/module/<em>_new-module.scss</em></tt>.</li>
-	<li>Create a new <tt>skin/frontend/custompackage/customtheme/_custom_core.scss</tt> file with the following line to import your new partial:
+    <li>Add your partials to a new file named <tt>skin/frontend/custompackage/customtheme/scss/module/<em>_new-module.scss</em></tt>.</li>
+	<li>Create a new <tt>skin/frontend/custompackage/customtheme/scss/_custom_core.scss</tt> file with the following line to import your new partial:
     <pre>@import &quot;module/<em>new-module</em>&quot;;</pre>
 	<strong>Note</strong>: Although you could edit <tt>core.scss</tt> to import your new partials, you should create <tt>_custom_core.scss</tt> to clearly distinguish which partial files are custom versus native.</li>
     <li>Add this line to the bottom of <tt>styles.scss</tt> and <tt>styles-ie8.scss</tt> files:
@@ -589,13 +589,13 @@ skin/frontend/custompackage/customtheme/scss/module/
 skin/frontend/custompackage/customtheme/scss/override/
 skin/frontend/custompackage/customtheme/scss/vendor/</pre>
 The following files should now be located in <tt>skin/frontend/custompackage/customtheme/scss</tt>:<br />
-<pre>var.scss
-core.scss
+<pre>_var.scss
+_core.scss
 styles-ie8.scss
 styles.scss
 scaffold-forms.scss
-custom_core.scss
-framework.scss</pre></li>
+_custom_core.scss
+_framework.scss</pre></li>
 <li>If you're familiar with Magento theme development and you did <em>not</em> already copy Sass partials, copy <em>only</em> the Sass partials you want to override from <tt>rwd/default</tt> to <tt>skin/frontend/custompackage/customtheme/scss</tt>.</li></ul>
 <p>Now you can set up a fallback structure:</p>
 <ol>
@@ -606,9 +606,9 @@ The preceding causes Compass to look for Sass files in <tt>skin/frontend/rwd/ent
 <li>Following is what to do with copies of Sass files from <tt>rwd/default</tt>:<br />
         <ul>
             <li><tt>styles.scss</tt>, <tt>styles-ie8.scss</tt>: You must copy these files into your custom theme so that Compass knows which files to compile into CSS files.</li>
-            <li><tt>core.scss</tt>, <tt>framework.scss</tt>: You must copy these files into your custom theme so Compass looks in the <tt>custompackage/customtheme</tt> directory for any of the files imported by these two files.</li>
-            <li><tt>var.scss</tt>: You'll typically edit the values in this file for your custom theme.<br />
-			If you don't like the idea of editing this file and want to override its values with a <tt>_var_custom.scss</tt> file, make sure it gets imported immediately after <tt>var.scss</tt>.</li>
+            <li><tt>_core.scss</tt>, <tt>framework.scss</tt>: You must copy these files into your custom theme so Compass looks in the <tt>custompackage/customtheme</tt> directory for any of the files imported by these two files.</li>
+            <li><tt>_var.scss</tt>: You'll typically edit the values in this file for your custom theme.<br />
+			If you don't like the idea of editing this file and want to override its values with a <tt>_var_custom.scss</tt> file, make sure it gets imported immediately after <tt>_var.scss</tt>.</li>
         </ul>
     </li>
 

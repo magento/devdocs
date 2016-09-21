@@ -1,8 +1,8 @@
 ---
-layout: m1x
+layout: m1x_soap
 title: Category Move
 ---
-<p><a href="{{ site.m1xgithuburl }}api/soap/catalog/catalogCategory/catalog_category.move.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
+
 
 
 <h2><a name="catalog_category.move-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
@@ -35,52 +35,50 @@ title: Category Move
 
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> categoryId </td>
-<td class='confluenceTd'> ID of the category to be moved </td>
+<td> int </td>
+<td> categoryId </td>
+<td> ID of the category to be moved </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> parentId </td>
-<td class='confluenceTd'> ID of the new parent category </td>
+<td> int </td>
+<td> parentId </td>
+<td> ID of the new parent category </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> afterId </td>
-<td class='confluenceTd'> ID of the category after which the required category will be moved (optional for V1 and V2) </td>
+<td> string </td>
+<td> afterId </td>
+<td> ID of the category after which the required category will be moved (optional for V1 and V2) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> id </td>
-<td class='confluenceTd'> True if the category is moved </td>
+<td> boolean </td>
+<td> id </td>
+<td> True if the category is moved </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

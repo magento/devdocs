@@ -10,10 +10,12 @@ _site/
 .Trashes
 ehthumbs.db
 Thumbs.db
+.idea
 
 # Config and output files #
 ###########################
-_site
+/_site/
+.jekyll-metadata
 CNAME
 _config.yml
 /Readme.md
@@ -29,6 +31,9 @@ ignore
 /jk.bat
 *.bat
 *.sh
+!/vagrant/bootstrap.sh
 Rakefile
-Gemfile
-Gemfile.lock
+/vagrant/.vagrant/
+/vendor/
+/Gemfile.lock
+/node_modules/

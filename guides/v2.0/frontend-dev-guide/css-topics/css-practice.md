@@ -5,17 +5,18 @@ subgroup: D_CSS
 title: Customizing styles illustration
 menu_order: 5
 menu_title: Customizing styles illustration
+version: 2.0
 github_link: frontend-dev-guide/css-topics/css-practice.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-practice.html
 ---
 
-<h2 id ="practice_over">Overview</h2>
+<h2 id ="practice_over">What's in this topic</h2>
 
 This topic features a step-by-step illustration of how to change a theme's color scheme using Magento UI library.
 
 <h2>Changing theme color scheme</h2>
 
-OrangeCo created a custom theme that inherits from the default Blank theme.
+OrangeCo created a custom theme that inherits from the Magento basic Blank theme.
 The following image illustrates how store pages look when the Blank theme is applied:
 
 <div style="border: 1px solid #ABABAB">

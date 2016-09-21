@@ -5,6 +5,7 @@ subgroup: B_Layouts
 title: Layout file types
 menu_title: Layout file types
 menu_order: 3
+version: 2.0
 github_link: frontend-dev-guide/layouts/layout-types.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-types.html
 ---
@@ -13,13 +14,13 @@ redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-types.html
 		table tr td, table tr th {border: 1px solid #ABABAB}
 	</style>
 </head>
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file. 
 
-A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
+A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
 All page layouts used for page rendering should be declared in the page layout declaration file.
 
-Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">blocks of particular classes</a> and containers.
+Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">blocks of particular classes</a> and containers.
 
 We also distinguish the third type of layout files, *generic layouts*. They are .xml files which define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. These files are used for pages returned by AJAX requests, emails, HTML snippets and so on.
 
@@ -30,37 +31,35 @@ Page layout declares the wireframe of a page inside the <code>&lt;body&gt;</code
 
 Allowed layout instructions:
 
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont" target="_blank">&nbsp;&lt;container&gt;</a>
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">&nbsp;&lt;referenceContainer&gt;</a>
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">&nbsp;&lt;move&gt;</a>
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">&nbsp;&lt;remove&gt;</a>
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd" target="_blank">&nbsp;&lt;update&gt;</a> 
+* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont" target="_blank">&nbsp;&lt;container&gt;</a>
+* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">&nbsp;&lt;referenceContainer&gt;</a>
+* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">&nbsp;&lt;move&gt;</a>
+* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd" target="_blank">&nbsp;&lt;update&gt;</a> 
 
 Sample page layout:
 
-**`magento2/app/code/Magento/Theme/view/frontend/page_layout/2columns-left.xml`**
+`<Magento_Theme_module_dir>/view/frontend/page_layout/2columns-left.xml`
 
-<pre>
-&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_layout.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;1column&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceContainer&nbsp;name=&quot;columns&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;div.sidebar.main&quot;&nbsp;htmlTag=&quot;div&quot;&nbsp;htmlClass=&quot;sidebar&nbsp;sidebar-main&quot;&nbsp;after=&quot;main&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;sidebar.main&quot;&nbsp;as=&quot;sidebar_main&quot;&nbsp;label=&quot;Sidebar&nbsp;Main&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;div.sidebar.additional&quot;&nbsp;htmlTag=&quot;div&quot;&nbsp;htmlClass=&quot;sidebar&nbsp;sidebar-additional&quot;&nbsp;after=&quot;div.sidebar.main&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;sidebar.additional&quot;&nbsp;as=&quot;sidebar_additional&quot;&nbsp;label=&quot;Sidebar&nbsp;Additional&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceContainer&gt;
-&lt;/layout&gt;
-</pre>
-
+{%highlight xml%}
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="1column"/>
+    <referenceContainer name="columns">
+        <container name="div.sidebar.main" htmlTag="div" htmlClass="sidebar sidebar-main" after="main">
+            <container name="sidebar.main" as="sidebar_main" label="Sidebar Main"/>
+        </container>
+        <container name="div.sidebar.additional" htmlTag="div" htmlClass="sidebar sidebar-additional" after="div.sidebar.main">
+            <container name="sidebar.additional" as="sidebar_additional" label="Sidebar Additional"/>
+        </container>
+    </referenceContainer>
+</layout>
+{%endhighlight xml%}
 
 <h3 id="layout-types-page-conv">Page layout files conventional location</h3>
 
 Conventionally page layouts must be located as follows:
 
-* Module page layouts: `app/code/<Namespace>/<Module>/view/frontend/page_layout`
-* Theme page layouts: `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/page_layout`
+* Module page layouts: `<module_dir>/view/frontend/page_layout`
+* Theme page layouts: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
 <h3 id="layout-types-page-dec">Page layouts declaration</h3>
 
@@ -70,8 +69,8 @@ Conventionally layout declaration file can be located in one of the following lo
 
 
 <ul>
-<li>Module layout declarations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layouts.xml</code></li>
-<li>Theme layout declaration: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layouts.xml</code></li>
+<li>Module layout declarations: <code>&lt;module_dir&gt;/view/frontend/layouts.xml</code></li>
+<li>Theme layout declaration: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layouts.xml</code></li>
 
 </ul>
 
@@ -87,25 +86,24 @@ Conventionally layout declaration file can be located in one of the following lo
 
 Sample page layout declaration file:
 
-<p><b><code>app/code/Magento/Theme/view/frontend/layouts.xml</code></b></p>
+    <Magento_Theme_module_dir>/view/frontend/layouts.xml
 
-<pre>
-&lt;page_layouts&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../lib/internal/Magento/Framework/View/PageLayout/etc/layouts.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;1column&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;1&nbsp;column&lt;/label&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;2columns-left&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;2&nbsp;columns&nbsp;with&nbsp;left&nbsp;bar&lt;/label&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;2columns-right&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;2&nbsp;columns&nbsp;with&nbsp;right&nbsp;bar&lt;/label&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;3columns&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;3&nbsp;columns&lt;/label&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
-&lt;/page_layouts&gt;
-</pre>
-
+{%highlight xml%}
+<page_layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/PageLayout/etc/layouts.xsd">
+    <layout id="1column">
+        <label translate="true">1 column</label>
+    </layout>
+    <layout id="2columns-left">
+        <label translate="true">2 columns with left bar</label>
+    </layout>
+    <layout id="2columns-right">
+        <label translate="true">2 columns with right bar</label>
+    </layout>
+    <layout id="3columns">
+        <label translate="true">3 columns</label>
+    </layout>
+</page_layouts>
+{%endhighlight xml%}
 
 <h2 id="layout-types-conf">Page configuration</h2>
 
@@ -116,14 +114,14 @@ The page configuration adds content to the wireframe defined in a page layout fi
 Conventionally page configuration files must be located as follows:
 
 <ul>
-<li> Module page configurations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
-<li> Theme page configurations: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+<li> Module page configurations: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
+<li> Theme page configurations: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
 
 
 <h3>Page configuration structure and allowed layout instructions</h3>
 
-The following table describes the instructions specific for page configuration files. For the descriptions of common layout instructions see the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
+The following table describes the instructions specific for page configuration files. For the descriptions of common layout instructions see the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
 
 <table>
   <tbody>
@@ -192,7 +190,6 @@ The following table describes the instructions specific for page configuration f
         <ul>
           <li><code>&lt;block&gt;</code></li>
           <li><code>&lt;container&gt;</code></li>
-          <li><code>&lt;remove&gt;</code></li>
           <li><code>&lt;move&gt;</code></li>
        <li><code>&lt;attribute&gt;</code></li>
           <li><code>&lt;referenceBlock&gt;</code></li>
@@ -389,14 +386,14 @@ Generic layouts define the contents and detailed structure inside the <code>&lt;
 Conventionally generic layout files must be located as follows:
 
 <ul>
-<li>Module generic layouts: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
-<li>Theme generic layouts: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+<li>Module generic layouts: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
+<li>Theme generic layouts: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
 
 
 <h3>Generic layout structure and allowed layout instructions</h3>
 
-The following table describes the instructions specific for generic layout files. For the descriptions of common layout instructions see the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
+The following table describes the instructions specific for generic layout files. For the descriptions of common layout instructions see the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
 
 <table>
   <tbody>
@@ -449,7 +446,7 @@ none
       <td colspan="1">
 <ul>
 <li><code>name="root"</code></li>
-<li>For complete list of attributes, see <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#container" target="_blank">Layout instructions</a></li>
+<li>For complete list of attributes, see <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#container" target="_blank">Layout instructions</a></li>
 </ul>
 </td>
       <td colspan="1">
@@ -469,19 +466,14 @@ none
 </table>
 
 Sample generic layout:
-<pre>
 
-&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../Core/etc/layout_generic.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;formkey&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;adminhtml_googleshopping_types_block&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;root&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Backend\Block\Widget\Grid\Container&quot;&nbsp;name=&quot;googleshopping.types.container&quot;&nbsp;template=&quot;Magento_Backend::widget/grid/container/empty.phtml&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
-&lt;/layout&gt;
-</pre>
-
-
-
-
-
+{%highlight xml%}
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <update handle="formkey"/>
+    <update handle="adminhtml_googleshopping_types_block"/>
+    <container name="root">
+        <block class="Magento\Backend\Block\Widget\Grid\Container" name="googleshopping.types.container" template="Magento_Backend::widget/grid/container/empty.phtml"/>
+    </container>
+</layout>
+{%endhighlight xml%}
 

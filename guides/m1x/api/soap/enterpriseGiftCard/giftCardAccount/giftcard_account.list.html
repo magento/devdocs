@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - giftcard_account.list';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Account List
+---
 
-				    <h3><a name="giftcard_account.list-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
+<h3><a name="giftcard_account.list-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
 
 <h4><a name="giftcard_account.list-Resource%3Agiftcardaccount"></a>Resource: giftcard_account</h4>
 
@@ -19,110 +19,106 @@
 <p>Allows you to retrieve the list of available gift card accounts.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> filters </td>
-<td class='confluenceTd'> Array of filters (optional) </td>
+<td> array </td>
+<td> filters </td>
+<td> Array of filters (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of giftcardAccountEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of giftcardAccountEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>giftcardAccountEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> giftcard_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift card ID </td>
+<td> int </td>
+<td> giftcard_id <br class="atl-forced-newline" /> </td>
+<td> Gift card ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift card code </td>
+<td> string </td>
+<td> code <br class="atl-forced-newline" /> </td>
+<td> Gift card code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> store_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift card store ID </td>
+<td> int </td>
+<td> store_id <br class="atl-forced-newline" /> </td>
+<td> Gift card store ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> date_created <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Creation date in the YYYY-MM-DD format <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> date_created <br class="atl-forced-newline" /> </td>
+<td> Creation date in the YYYY-MM-DD format <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> expire_date <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Expiration date in the YYYY-MM-DD format <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> expire_date <br class="atl-forced-newline" /> </td>
+<td> Expiration date in the YYYY-MM-DD format <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the gift card is active </td>
+<td> int </td>
+<td> is_active <br class="atl-forced-newline" /> </td>
+<td> Defines whether the gift card is active </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> status <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift card status </td>
+<td> string </td>
+<td> status <br class="atl-forced-newline" /> </td>
+<td> Gift card status </td>
 </tr>
 <tr>
-<td class='confluenceTd'> double </td>
-<td class='confluenceTd'> balance <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Gift card balance </td>
+<td> double </td>
+<td> balance <br class="atl-forced-newline" /> </td>
+<td> Gift card balance </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Invalid filters specified. Details in error message. </td>
+<td> 101 </td>
+<td> Invalid filters specified. Details in error message. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="giftcard_account.list-Examples"></a>Examples</h4>

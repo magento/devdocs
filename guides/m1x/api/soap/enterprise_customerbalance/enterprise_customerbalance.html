@@ -1,8 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - Customer Balance';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
-				    <h1><a name="MAPI-StoreCredit-General-StoreCreditAPI"></a>Store Credit API</h1>
+---
+layout: m1x_soap
+title: Enterprise Customer Balance
+---
+
+<h1><a name="MAPI-StoreCredit-General-StoreCreditAPI"></a>Store Credit API</h1>
 
 <p>Allows you to operate with customer virtual balance.</p>
 
@@ -22,26 +23,25 @@
 
 <h6><a name="MAPI-StoreCredit-General-Faults%3A"></a>Faults:</h6>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 100 </td>
-<td class='confluenceTd'> Provided data is invalid. </td>
+<td> 100 </td>
+<td> Provided data is invalid. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> No balance found with requested parameters. </td>
+<td> 101 </td>
+<td> No balance found with requested parameters. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 102 </td>
-<td class='confluenceTd'> No history found with requested parameters. </td>
+<td> 102 </td>
+<td> No history found with requested parameters. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="MAPI-StoreCredit-General-Resource%3Aenterprisecustomerbalancequote"></a>Resource: enterprise_customerbalance_quote</h4>
@@ -58,30 +58,29 @@
 
 <h6><a name="MAPI-StoreCredit-General-Faults%3A"></a>Faults:</h6>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 100 </td>
-<td class='confluenceTd'> Provided data is invalid. </td>
+<td> 100 </td>
+<td> Provided data is invalid. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 103 </td>
-<td class='confluenceTd'> No quote found with requested id. </td>
+<td> 103 </td>
+<td> No quote found with requested id. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Store credit can not be used for quote created by guest. </td>
+<td> 104 </td>
+<td> Store credit can not be used for quote created by guest. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> No store found with requested id or code. </td>
+<td> 105 </td>
+<td> No store found with requested id or code. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h5><a name="MAPI-StoreCredit-General-Example%3A"></a>Example:</h5>
@@ -111,4 +110,4 @@ echo $balanceAmountUsedInQuote;</pre>
 </div></div>
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

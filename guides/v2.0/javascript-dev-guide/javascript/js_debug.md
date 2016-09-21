@@ -1,10 +1,11 @@
 ---
 layout: default
 group: jsdg
-subgroup: Javascript
+subgroup: 1_Javascript
 title: Locate JavaScript components
 menu_title: Locate JavaScript components
 menu_order: 4
+version: 2.0
 github_link: javascript-dev-guide/javascript/js_debug.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/js_debug.html
@@ -24,7 +25,7 @@ To locate scripts used for a certain element:
 <li>Open the store page in a browser, and locate the element's <code>class</code> or <code>id</code> using browser debugging tools, such as Firebug (Firefox) or Inspect Element (Chrome).</li>
 
 <li>Select to view the page source.</li>
-<li>Find the corresponding element in the page source and see if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#init_phtml" target="_blank">JavaScript initialization</a>. 
+<li>Find the corresponding element in the page source and see if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html#init_phtml" target="_blank">JavaScript initialization</a>. 
 </li>
 <li>
 To find the source file of the used script:
@@ -37,9 +38,9 @@ To find the source file of the used script:
 </li>
 <li>In the <code>var config = {...}</code> section of <code>requirejs-config.js</code>, find the required script name, and view the path to its source file. This path is relative to certain directories, depending on whether it contains module reference:
 <ul>
-<li>If the module context is not specified, the path is relative to <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/web</code> (current theme). If the file is not found there, according to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback</a>, it is searched for in parent theme <code>web</code> directory, and then <code>lib/web</code>(library) directory.</li>
+<li>If the module context is not specified, the path is relative to <code>&lt;theme_dir&gt;/web</code> (current theme). If the file is not found there, according to the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback</a>, it is searched for in parent theme <code>web</code> directory, and then <code>lib/web</code>(library) directory.</li>
 
-<li>If the module context is specified, the path is relative to  <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module). If the file is not found there, according to the assets fallback, it is searched for in the same location in the parent theme files, and then in the <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;</code> (module) directory.</li>
+<li>If the module context is specified, the path is relative to  <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module). If the file is not found there, according to the assets fallback, it is searched for in the same location in the parent theme files, and then in the <code>&lt;module_dir&gt;</code> (module) directory.</li>
 
 </ul>
 </li>
@@ -80,10 +81,10 @@ According to the JS components initialization notation, this means that this cod
 "menu":                   "mage/menu",
 </pre>
 
-This means we should check for <code>mage/menu.js</code> the following locations, in the following priority order (according to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback rules</a>):
+This means we should check for <code>mage/menu.js</code> the following locations, in the following priority order (according to the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback rules</a>):
 <ol>
-<li><code>app/design/frontend/Magento/luma/web/js</code> (current theme JS files)</li>
-<li><code>app/design/frontend/Magento/blank/web/js</code> (parent theme JS files)</li>
+<li><code>&lt;Magento_Luma_theme_dir&gt;/web/js</code> (current theme JS files)</li>
+<li><code>&lt;Magento_Blank_theme_dir&gt;/web/js</code> (parent theme JS files)</li>
 <li><code>lib/web</code> (library files)</li>
 </ol>
 There is no <code>mage/menu.js</code> in the current theme or parent theme JS files, so the source file for menu component used for the main navigation menu is <code>lib/web/mage/menu.js</code>

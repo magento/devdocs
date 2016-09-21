@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - enterprise_customerbalance_quote.setAmount';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Balance Set Amount
+---
 
-				    <h3><a name="storecredit_quote.setAmount-Module%3ACustomerBalanceQuoteAPI"></a>Module: Customer Balance Quote API</h3>
+<h3><a name="storecredit_quote.setAmount-Module%3ACustomerBalanceQuoteAPI"></a>Module: Customer Balance Quote API</h3>
 
 
 <h4><a name="storecredit_quote.setAmount-enterprisecustomerbalancequote"></a>enterprise_customerbalance_quote</h4>
@@ -21,73 +21,70 @@
 <p>Allows you to set amount from the customer store credit to the shopping cart.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> quoteId </td>
-<td class='confluenceTd'> Shopping cart ID (quote ID) </td>
+<td> string </td>
+<td> quoteId </td>
+<td> Shopping cart ID (quote ID) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store </td>
-<td class='confluenceTd'> Store view code or ID (optional) </td>
+<td> string </td>
+<td> store </td>
+<td> Store view code or ID (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> float </td>
-<td class='confluenceTd'> Customer balance amount used in the shopping cart (quote) </td>
+<td> float </td>
+<td> Customer balance amount used in the shopping cart (quote) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 100 </td>
-<td class='confluenceTd'> Provided data is invalid. </td>
+<td> 100 </td>
+<td> Provided data is invalid. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 103 </td>
-<td class='confluenceTd'> No quote found with requested id. </td>
+<td> 103 </td>
+<td> No quote found with requested id. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Store credit can not be used for quote created by guest. </td>
+<td> 104 </td>
+<td> Store credit can not be used for quote created by guest. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> No store found with requested id or code. </td>
+<td> 105 </td>
+<td> No store found with requested id or code. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="storecredit_quote.setAmount-Examples"></a>Examples</h4>

@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - directory_region.list';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Region List
+---
 
-				    <h2><a name="directory_region.list-RegionAPI"></a>Region API</h2>
+<h2><a name="directory_region.list-RegionAPI"></a>Region API</h2>
 
 <p>Allows you to export the list of regions from Magento</p>
 
@@ -34,86 +34,82 @@
 
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> country </td>
-<td class='confluenceTd'> Country code in ISO2 or ISO3 </td>
+<td> string </td>
+<td> country </td>
+<td> Country code in ISO2 or ISO3 </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> directoryRegionEntityArray <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> An array of directoryRegionEntity </td>
+<td> array </td>
+<td> directoryRegionEntityArray <br class="atl-forced-newline" /> </td>
+<td> An array of directoryRegionEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
 <p>The <b>directoryRegionEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> region_id </td>
-<td class='confluenceTd'> ID of the region </td>
+<td> string </td>
+<td> region_id </td>
+<td> ID of the region </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> code </td>
-<td class='confluenceTd'> Region code </td>
+<td> string </td>
+<td> code </td>
+<td> Region code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> name </td>
-<td class='confluenceTd'> Name of the region </td>
+<td> string </td>
+<td> name </td>
+<td> Name of the region </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Country not exists. </td>
+<td> 101 </td>
+<td> Country not exists. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="directory_region.list-Examples"></a>Examples</h4>

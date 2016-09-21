@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - sales_order_shipment.list';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Shipment List
+---
 
-				    <h2><a name="sales_order_shipment.list-Module%3AMageSales"></a>Module: Mage_Sales</h2>
+<h2><a name="sales_order_shipment.list-Module%3AMageSales"></a>Module: Mage_Sales</h2>
 
 
 <h4><a name="sales_order_shipment.list-Resource%3Asalesordershipment"></a>Resource: sales_order_shipment</h4>
@@ -32,74 +32,71 @@
 
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> filters <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of filters for the list of shipments </td>
+<td> array </td>
+<td> filters <br class="atl-forced-newline" /> </td>
+<td> Array of filters for the list of shipments </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>Returns:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of salesOrderShipmentEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of salesOrderShipmentEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>salesOrderShipmentEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> increment_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Increment ID </td>
+<td> string </td>
+<td> increment_id <br class="atl-forced-newline" /> </td>
+<td> Increment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of shipment creation </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> created_at <br class="atl-forced-newline" /> </td>
+<td> Date of shipment creation </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> total_qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Total quantity of items to ship </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> total_qty <br class="atl-forced-newline" /> </td>
+<td> Total quantity of items to ship </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> shipment_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipment ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> shipment_id <br class="atl-forced-newline" /> </td>
+<td> Shipment ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

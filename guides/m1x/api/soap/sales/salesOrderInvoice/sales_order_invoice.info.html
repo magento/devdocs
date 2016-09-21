@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - sales_order_invoice.info';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Invoice Info
+---
 
-				    <h2><a name="sales_order_invoice.info-Module%3AMageSales"></a>Module: Mage_Sales</h2>
+<h2><a name="sales_order_invoice.info-Module%3AMageSales"></a>Module: Mage_Sales</h2>
 
 
 <h4><a name="sales_order_invoice.info-Resource%3Asalesorderinvoice"></a>Resource: sales_order_invoice</h4>
@@ -32,423 +32,418 @@
 
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> invoiceIncrementId </td>
-<td class='confluenceTd'> Invoice increment ID </td>
+<td> string </td>
+<td> invoiceIncrementId </td>
+<td> Invoice increment ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of salesOrderInvoiceEntity <br class="atl-forced-newline" /> </td>
+<td> array </td>
+<td> result </td>
+<td> Array of salesOrderInvoiceEntity <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>salesOrderInvoiceEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> increment_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Increment ID </td>
+<td> string </td>
+<td> increment_id <br class="atl-forced-newline" /> </td>
+<td> Increment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Parent ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> parent_id <br class="atl-forced-newline" /> </td>
+<td> Parent ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> store_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> store_id <br class="atl-forced-newline" /> </td>
+<td> Store ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of creation </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> created_at <br class="atl-forced-newline" /> </td>
+<td> Date of creation </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> updated_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of updating </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> updated_at <br class="atl-forced-newline" /> </td>
+<td> Date of updating </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the invoice is active </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> is_active <br class="atl-forced-newline" /> </td>
+<td> Defines whether the invoice is active </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> global_currency_code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Global currency code </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> global_currency_code <br class="atl-forced-newline" /> </td>
+<td> Global currency code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_currency_code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base currency code </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_currency_code <br class="atl-forced-newline" /> </td>
+<td> Base currency code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> store_currency_code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store currency code </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> store_currency_code <br class="atl-forced-newline" /> </td>
+<td> Store currency code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> order_currency_code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order currency code </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> order_currency_code <br class="atl-forced-newline" /> </td>
+<td> Order currency code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> store_to_base_rate <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store to base rate </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> store_to_base_rate <br class="atl-forced-newline" /> </td>
+<td> Store to base rate </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> store_to_order_rate <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store to order rate </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> store_to_order_rate <br class="atl-forced-newline" /> </td>
+<td> Store to order rate </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_to_global_rate <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base to global rate </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_to_global_rate <br class="atl-forced-newline" /> </td>
+<td> Base to global rate </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_to_order_rate <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base to order rate </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_to_order_rate <br class="atl-forced-newline" /> </td>
+<td> Base to order rate </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> subtotal <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Subtotal </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> subtotal <br class="atl-forced-newline" /> </td>
+<td> Subtotal </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_subtotal <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base subtotal </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_subtotal <br class="atl-forced-newline" /> </td>
+<td> Base subtotal </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_grand_total <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base grand total </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_grand_total <br class="atl-forced-newline" /> </td>
+<td> Base grand total </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> discount_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Discount amount </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> discount_amount <br class="atl-forced-newline" /> </td>
+<td> Discount amount </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_discount_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base discount amount </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_discount_amount <br class="atl-forced-newline" /> </td>
+<td> Base discount amount </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> shipping_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipping amount </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> shipping_amount <br class="atl-forced-newline" /> </td>
+<td> Shipping amount </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_shipping_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base shipping amount </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_shipping_amount <br class="atl-forced-newline" /> </td>
+<td> Base shipping amount </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> tax_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Tax amount </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> tax_amount <br class="atl-forced-newline" /> </td>
+<td> Tax amount </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_tax_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base tax amount </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_tax_amount <br class="atl-forced-newline" /> </td>
+<td> Base tax amount </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> billing_address_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Billing address ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> billing_address_id <br class="atl-forced-newline" /> </td>
+<td> Billing address ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> billing_firstname <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> First name in the billing address </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> billing_firstname <br class="atl-forced-newline" /> </td>
+<td> First name in the billing address </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> billing_lastname <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Last name in the billing address </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> billing_lastname <br class="atl-forced-newline" /> </td>
+<td> Last name in the billing address </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> order_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> order_id <br class="atl-forced-newline" /> </td>
+<td> Order ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> order_increment_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order increment ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> order_increment_id <br class="atl-forced-newline" /> </td>
+<td> Order increment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> order_created_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of order creation </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> order_created_at <br class="atl-forced-newline" /> </td>
+<td> Date of order creation </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> state <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order state </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> state <br class="atl-forced-newline" /> </td>
+<td> Order state </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> grand_total <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Grand total </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> grand_total <br class="atl-forced-newline" /> </td>
+<td> Grand total </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> invoice_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Invoice ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> invoice_id <br class="atl-forced-newline" /> </td>
+<td> Invoice ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> items <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of salesOrderInvoiceItemEntity </td>
+<td> array </td>
+<td> items <br class="atl-forced-newline" /> </td>
+<td> Array of salesOrderInvoiceItemEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> comments <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of salesOrderInvoiceCommentEntity </td>
+<td> array </td>
+<td> comments <br class="atl-forced-newline" /> </td>
+<td> Array of salesOrderInvoiceCommentEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>salesOrderInvoiceItemEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> increment_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Increment ID </td>
+<td> string </td>
+<td> increment_id <br class="atl-forced-newline" /> </td>
+<td> Increment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Parent ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> parent_id <br class="atl-forced-newline" /> </td>
+<td> Parent ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of creation </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> created_at <br class="atl-forced-newline" /> </td>
+<td> Date of creation </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> updated_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of updating </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> updated_at <br class="atl-forced-newline" /> </td>
+<td> Date of updating </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Active flag </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> is_active <br class="atl-forced-newline" /> </td>
+<td> Active flag </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> weee_tax_applied <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Applied fixed product tax </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> weee_tax_applied <br class="atl-forced-newline" /> </td>
+<td> Applied fixed product tax </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Quantity </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> qty <br class="atl-forced-newline" /> </td>
+<td> Quantity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> cost <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Cost </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> cost <br class="atl-forced-newline" /> </td>
+<td> Cost </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Price </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Price </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> tax_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Tax amount </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> tax_amount <br class="atl-forced-newline" /> </td>
+<td> Tax amount </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> row_total <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Row total </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> row_total <br class="atl-forced-newline" /> </td>
+<td> Row total </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base price </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_price <br class="atl-forced-newline" /> </td>
+<td> Base price </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_tax_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base tax amount </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_tax_amount <br class="atl-forced-newline" /> </td>
+<td> Base tax amount </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_row_total <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Base row total </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_row_total <br class="atl-forced-newline" /> </td>
+<td> Base row total </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_weee_tax_applied_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Applied fixed product tax amount (in base currency) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_weee_tax_applied_amount <br class="atl-forced-newline" /> </td>
+<td> Applied fixed product tax amount (in base currency) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_weee_tax_applied_row_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Applied fixed product tax row amount (in base currency) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_weee_tax_applied_row_amount <br class="atl-forced-newline" /> </td>
+<td> Applied fixed product tax row amount (in base currency) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> weee_tax_applied_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Applied fixed product tax amount </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> weee_tax_applied_amount <br class="atl-forced-newline" /> </td>
+<td> Applied fixed product tax amount </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> weee_tax_applied_row_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Applied fixed product tax row amount </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> weee_tax_applied_row_amount <br class="atl-forced-newline" /> </td>
+<td> Applied fixed product tax row amount </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> weee_tax_disposition <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Fixed product tax disposition </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> weee_tax_disposition <br class="atl-forced-newline" /> </td>
+<td> Fixed product tax disposition </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> weee_tax_row_disposition <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Fixed product tax row disposition </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> weee_tax_row_disposition <br class="atl-forced-newline" /> </td>
+<td> Fixed product tax row disposition </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_weee_tax_disposition <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Fixed product tax disposition (in base currency) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_weee_tax_disposition <br class="atl-forced-newline" /> </td>
+<td> Fixed product tax disposition (in base currency) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_weee_tax_row_disposition <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Fixed product tax row disposition (in base currency) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_weee_tax_row_disposition <br class="atl-forced-newline" /> </td>
+<td> Fixed product tax row disposition (in base currency) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> SKU </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sku <br class="atl-forced-newline" /> </td>
+<td> SKU </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Name </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> name <br class="atl-forced-newline" /> </td>
+<td> Name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> order_item_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order item ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> order_item_id <br class="atl-forced-newline" /> </td>
+<td> Order item ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> product_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> product_id <br class="atl-forced-newline" /> </td>
+<td> Product ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> item_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Item ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> item_id <br class="atl-forced-newline" /> </td>
+<td> Item ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>salesOrderInvoiceCommentEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> increment_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Increment ID </td>
+<td> string </td>
+<td> increment_id <br class="atl-forced-newline" /> </td>
+<td> Increment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Parent ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> parent_id <br class="atl-forced-newline" /> </td>
+<td> Parent ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of creation </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> created_at <br class="atl-forced-newline" /> </td>
+<td> Date of creation </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> updated_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date of updating </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> updated_at <br class="atl-forced-newline" /> </td>
+<td> Date of updating </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Active flag </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> is_active <br class="atl-forced-newline" /> </td>
+<td> Active flag </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> comment <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Invoice comment </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> comment <br class="atl-forced-newline" /> </td>
+<td> Invoice comment </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_customer_notified <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the customer is notified </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> is_customer_notified <br class="atl-forced-newline" /> </td>
+<td> Defines whether the customer is notified </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> comment_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Comment ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> comment_id <br class="atl-forced-newline" /> </td>
+<td> Comment ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="sales_order_invoice.info-Examples"></a>Examples</h4>

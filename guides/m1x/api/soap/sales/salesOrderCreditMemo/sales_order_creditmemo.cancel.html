@@ -1,7 +1,7 @@
-<?php
-    $title = 'Magento API - SOAP - order_creditmemo.cancel';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Memo Cancel
+---
 				    
 				    <h3><a name="order_creditmemo.cancel-Module%3AOrderCreditMemoAPI"></a>Module: Order Credit Memo API</h3>
 
@@ -19,62 +19,59 @@
 <p>Allows you to cancel an existing credit memo.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> creditmemoIncrementId </td>
-<td class='confluenceTd'> Credit memo increment ID </td>
+<td> string </td>
+<td> creditmemoIncrementId </td>
+<td> Credit memo increment ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Result of canceling the credit memo </td>
+<td> string </td>
+<td> result </td>
+<td> Result of canceling the credit memo </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 100 </td>
-<td class='confluenceTd'> Requested credit memo does not exist. </td>
+<td> 100 </td>
+<td> Requested credit memo does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Credit memo status not changed. </td>
+<td> 104 </td>
+<td> Credit memo status not changed. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
@@ -93,4 +90,4 @@ $isCreditMemoCanceled = $proxy-&gt;call($sessionId, 'order_creditmemo.cancel', a
 </div></div>
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - enterprise_customerbalance.history';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Credit History
+---
 
-				    <h3><a name="storecredit.history-Module%3ACustomerBalanceAPI"></a>Module: Customer Balance API</h3>
+<h3><a name="storecredit.history-Module%3ACustomerBalanceAPI"></a>Module: Customer Balance API</h3>
 
 
 <h4><a name="storecredit.history-Resource%3Aenterprisecustomerbalance"></a>Resource: enterprise_customerbalance</h4>
@@ -21,134 +21,130 @@
 <p>Allows you to retrieve the customer store credit history information.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> customerId </td>
-<td class='confluenceTd'> Customer ID </td>
+<td> string </td>
+<td> customerId </td>
+<td> Customer ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> websiteId </td>
-<td class='confluenceTd'> Website ID (optional) </td>
+<td> string </td>
+<td> websiteId </td>
+<td> Website ID (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of enterpriseCustomerbalanceHistoryItemEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of enterpriseCustomerbalanceHistoryItemEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>enterpriseCustomerbalanceHistoryItemEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> history_id </td>
-<td class='confluenceTd'> History item ID <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> history_id </td>
+<td> History item ID <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> balance_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer balance ID <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> balance_id <br class="atl-forced-newline" /> </td>
+<td> Customer balance ID <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> updated_at <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Date when the balance was updated </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> updated_at <br class="atl-forced-newline" /> </td>
+<td> Date when the balance was updated </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> action <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Code of the reason for balance change <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> action <br class="atl-forced-newline" /> </td>
+<td> Code of the reason for balance change <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> balance_amount <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Balance amount after changing <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> balance_amount <br class="atl-forced-newline" /> </td>
+<td> Balance amount after changing <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> balance_delta <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Balance change amount <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> balance_delta <br class="atl-forced-newline" /> </td>
+<td> Balance change amount <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> additional_info <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Comment text <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> additional_info <br class="atl-forced-newline" /> </td>
+<td> Comment text <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_customer_notified <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the customer is notified </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> is_customer_notified <br class="atl-forced-newline" /> </td>
+<td> Defines whether the customer is notified </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> customer_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Balance owner ID <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> customer_id <br class="atl-forced-newline" /> </td>
+<td> Balance owner ID <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> website_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Website ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> website_id <br class="atl-forced-newline" /> </td>
+<td> Website ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> base_currency_code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Currency code for the customer balance <br class="atl-forced-newline" /> </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> base_currency_code <br class="atl-forced-newline" /> </td>
+<td> Currency code for the customer balance <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 100 </td>
-<td class='confluenceTd'> Provided data is invalid. </td>
+<td> 100 </td>
+<td> Provided data is invalid. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 102 </td>
-<td class='confluenceTd'> No history found with requested parameters. </td>
+<td> 102 </td>
+<td> No history found with requested parameters. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="storecredit.history-Examples"></a>Examples</h4>

@@ -5,6 +5,7 @@ subgroup: Architectural Layers
 title: Domain layer
 menu_title: Domain layer
 menu_order: 3
+version: 2.0
 github_link: architecture/archi_perspectives/domain_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/domain_layer.html
 ---
@@ -43,9 +44,9 @@ Your strategy for calling another module's domain-layer code is highly dependent
   
 
 <h2 id="related">Related topics</h2>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
 
  

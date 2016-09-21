@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - Cart Customer';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Cart Customer
+---
 				    
-				    <h2><a name="MAPI-CartCustomer-Module%3AMageCheckout"></a>Module: Mage_Checkout</h2>
+<h2><a name="MAPI-CartCustomer-Module%3AMageCheckout"></a>Module: Mage_Checkout</h2>
 
 <p>The Mage_Checkout module allows you to manage shopping carts and the checkout process. This module allows you to create an order once filling the shopping cart is complete.</p>
 
@@ -22,63 +22,62 @@
 
 <h4><a name="MAPI-CartCustomer-Faults"></a>Faults</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1001</font> </td>
-<td class='confluenceTd'> <font color="#555555">Can not make operation because store is not exists</font> </td>
+<td> <font color="#555555">1001</font> </td>
+<td> <font color="#555555">Can not make operation because store is not exists</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1002</font> </td>
-<td class='confluenceTd'> <font color="#555555">Can not make operation because quote is not exists</font> </td>
+<td> <font color="#555555">1002</font> </td>
+<td> <font color="#555555">Can not make operation because quote is not exists</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1041</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer is not set.</font> </td>
+<td> <font color="#555555">1041</font> </td>
+<td> <font color="#555555">Customer is not set.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1042</font> </td>
-<td class='confluenceTd'> <font color="#555555">The customer’s identifier is not valid or customer is not existed</font> </td>
+<td> <font color="#555555">1042</font> </td>
+<td> <font color="#555555">The customer’s identifier is not valid or customer is not existed</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1043</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer could not be created.</font> </td>
+<td> <font color="#555555">1043</font> </td>
+<td> <font color="#555555">Customer could not be created.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1044</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer data is not valid.</font> </td>
+<td> <font color="#555555">1044</font> </td>
+<td> <font color="#555555">Customer data is not valid.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1045</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer’s mode is unknown</font> </td>
+<td> <font color="#555555">1045</font> </td>
+<td> <font color="#555555">Customer’s mode is unknown</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1051</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer address data is empty.</font> </td>
+<td> <font color="#555555">1051</font> </td>
+<td> <font color="#555555">Customer address data is empty.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1052</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer’s address data is not valid.</font> </td>
+<td> <font color="#555555">1052</font> </td>
+<td> <font color="#555555">Customer’s address data is not valid.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1053</font> </td>
-<td class='confluenceTd'> <font color="#555555">The customer’s address identifier is not valid</font> </td>
+<td> <font color="#555555">1053</font> </td>
+<td> <font color="#555555">The customer’s address identifier is not valid</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1054</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer address is not set.</font> </td>
+<td> <font color="#555555">1054</font> </td>
+<td> <font color="#555555">Customer address is not set.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1055</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer address identifier do not belong customer, which set in quote</font> </td>
+<td> <font color="#555555">1055</font> </td>
+<td> <font color="#555555">Customer address identifier do not belong customer, which set in quote</font> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

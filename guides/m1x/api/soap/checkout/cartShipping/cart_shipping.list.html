@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - cart_shipping.list';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Shipping List
+---
 
-				    <h2><a name="cart_shipping.list-MageCheckout"></a>Mage_Checkout</h2>
+<h2><a name="cart_shipping.list-MageCheckout"></a>Mage_Checkout</h2>
 
 
 <h3><a name="cart_shipping.list-Module%3AShoppingCartAPI"></a>Module: Shopping Cart API</h3>
@@ -21,94 +21,91 @@
 <p>Allows you to retrieve the list of available shipping methods for a shopping cart (quote).</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> quoteId </td>
-<td class='confluenceTd'> Shopping cart ID </td>
+<td> int </td>
+<td> quoteId </td>
+<td> Shopping cart ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> store </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of shoppingCartShippingMethodEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of shoppingCartShippingMethodEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>shoppingCartShippingMethodEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Code </td>
+<td> string </td>
+<td> code <br class="atl-forced-newline" /> </td>
+<td> Code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> carrier <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Carrier </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> carrier <br class="atl-forced-newline" /> </td>
+<td> Carrier </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> carrier_title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Carrier title </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> carrier_title <br class="atl-forced-newline" /> </td>
+<td> Carrier title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> method <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipping method </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> method <br class="atl-forced-newline" /> </td>
+<td> Shipping method </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> method_title <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipping method title </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> method_title <br class="atl-forced-newline" /> </td>
+<td> Shipping method title </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> method_description <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipping method description </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> method_description <br class="atl-forced-newline" /> </td>
+<td> Shipping method description </td>
 </tr>
 <tr>
-<td class='confluenceTd'> double </td>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Shipping price </td>
+<td> double </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Shipping price </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Faults:</b><br/>
 <em>No Faults.</em></p>

@@ -4,14 +4,17 @@ group: fedg
 title: Frontend Developer Guide
 menu_title: Introduction
 menu_order: 1
+version: 2.0
 github_link: frontend-dev-guide/bk-frontend-dev-guide.md
 redirect_from: /guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html
 ---
 
 <h2 id="overview-introduction">Introduction</h2>
-This document describes Magento's content rendering process, explains the view layer of the system, and provides instructions for creating and installing themes. It also walks through everyday frontend developer's tasks.
+This document provides instructions for creating and installing custom storefront themes for a Magento application. It describes Magento's content rendering process and explains the view layer of the system to the extent required to build a theme efficiently. The document also walks through everyday frontend developer's tasks.
 
-Frontend developers can use this guide to create custom themes to tailor the Magento frontend for a specific customer.
+Developing the view part of a custom module and customizing the Magento Admin panel design is out of the scope of this guide.
+
+Frontend developers can use this guide to create custom themes to tailor the Magento storefront for a specific customer.
 
 <p>You can apply these levels of customization to your site, where the levels require different development skills:</p>
 <ul>
@@ -38,12 +41,7 @@ Frontend developers can use this guide to create custom themes to tailor the Mag
 
 To implement what is discussed in this guide, you need a working Magento installation and the following browser versions installed on your device:
 
-*	Internet Explorer 9 or later (Windows)
-*	Mozilla Firefox latest, latest-2 (any operating system)
-*	Google Chrome latest, latest-2 (any operating system)
-*	Apple Safari 5 or later (Mac OS)
-*	Apple Safari Mobile for iPad, iPad Mini, iPad with Retina Display (iOS 6 or later), for Desktop Frontend
-*	Apple Safari Mobile for iPhone 4 or later; iOS 6 or later, for Mobile Frontend
+{% include browsers/supported-browsers.md %}
 
 To use this guide, you must be familiar with:
 
@@ -55,11 +53,10 @@ To use this guide, you must be familiar with:
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS) </a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a>
-*	<a href="{{ site.gdeurl }}coding-standards/code-standard-javascript.html">JavaScript coding standard</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
-*	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/themes/theme-general.html">Themes</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS) </a>
+*	<a href="{{page.baseurl}}coding-standards/code-standard-javascript.html">JavaScript coding standard</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
+*	[Translations]({{ page.baseurl }}frontend-dev-guide/translations/xlate.html)
 

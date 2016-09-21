@@ -1,11 +1,12 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Access issues
+subgroup: 02_access
 title: After installing, images and stylesheets do not load; only text displays, no graphics
 menu_title: After installing, images and stylesheets do not load; only text displays, no graphics
 menu_node:
 menu_order: 5
+version: 2.0
 github_link: install-gde/trouble/tshoot_no-styles.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_no-styles.html
 ---
@@ -20,4 +21,6 @@ Magento static assets should be located under `<your Magento install dir>/pub/st
 
 ### Solution
 
-Verify your <a href="{{ site.gdeurl }}install-gde/prereq/apache.html#apache-help-rewrite">server rewrites</a> setting and your Magento server's base URL and try again. If you set up the `AllowOverride` directive incorrectly, static files aren't served from the correct location.
+*	Verify your <a href="{{page.baseurl}}install-gde/prereq/apache.html#apache-help-rewrite">Apache server rewrites</a> setting and your Magento server's base URL and try again. If you set up the `AllowOverride` directive incorrectly, static files aren't served from the correct location.
+
+*	If the Magento application is in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, try deploying static view files using the command <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">`magento setup:static-content:deploy`</a>.

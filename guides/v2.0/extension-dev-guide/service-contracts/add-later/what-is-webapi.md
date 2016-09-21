@@ -9,11 +9,11 @@ Although REST and SOAP use different payloads and routing, they use the same aut
 
 ## Exposing a Service Using REST or SOAP
 
-A Magento service can be exposed using REST only or using both SOAP and REST. In othe words, you cannot expose a service using SOAP without also exposing it using REST.
+A Magento service can be exposed using REST only or using both SOAP and REST. In other words, you cannot expose a service using SOAP without also exposing it using REST.
 
 ### Configuring webapi.xml
 
-To start, you must configure your service using `app/code/[Vendor]/<ModuleName>/etc/webapi.xml`. Each REST API call must have a corresponding `<rest route>` in `webapi.xml`. In other words, to access a method using REST, the method must have a `<rest route>` in `webapi.xml`; otherwise, the method cannot be accssed.
+To start, you must configure your service using `app/code/[Vendor]/<ModuleName>/etc/webapi.xml`. Each REST API call must have a corresponding `<rest route>` in `webapi.xml`. In other words, to access a method using REST, the method must have a `<rest route>` in `webapi.xml`; otherwise, the method cannot be accessed.
 
 If a REST route is sensitive and is expected to be executed over HTTPS only, the method must use the `secure = true` attribute. Attempting to access a `secure` route using non-secure means results in an exception.
 
@@ -49,7 +49,7 @@ Your module can use `webapi.xsd` or you can create a customized validation.
 
 #### Related Topics:
 
-*	<a href="{{ site.gdeurl }}config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
-*	<a href="{{ site.gdeurl }}get-started/gs-web-api-request.html">Step 2. Construct a request</a>
+*	<a href="{{page.baseurl}}config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a>
+*	<a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
+*	<a href="{{page.baseurl}}get-started/gs-web-api-request.html">Step 2. Construct a request</a>
 

@@ -4,7 +4,8 @@ group: coding-standards
 subgroup: Coding standards
 title: JavaScript DocBlock standard
 menu_title: JavaScript DocBlock standard
-menu_order: 6
+menu_order: 5
+version: 2.0
 github_link: coding-standards/docblock-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
 ---
@@ -12,7 +13,7 @@ redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>
 
 To add JavaScript code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
-This standard are a subset of <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
+This standard are a subset of <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
 
@@ -34,11 +35,11 @@ JSDoc comments requirements:
 
 Example:
 
-<pre>/*\*
+<pre>/**
 *&nbsp;A&nbsp;JSDoc&nbsp;comment&nbsp;should&nbsp;begin&nbsp;with&nbsp;a&nbsp;slash&nbsp;and&nbsp;2&nbsp;asterisks.
 *&nbsp;Inline&nbsp;tags&nbsp;should&nbsp;be&nbsp;enclosed&nbsp;in&nbsp;braces&nbsp;like{@code&nbsp;this}.
 *&nbsp;@desc&nbsp;Block&nbsp;tags&nbsp;should&nbsp;always&nbsp;start&nbsp;on&nbsp;their&nbsp;own&nbsp;line.
-\*/
+*/
 </pre>
 
 Many tools extract metadata from JSDoc comments to validate and optimize the code.

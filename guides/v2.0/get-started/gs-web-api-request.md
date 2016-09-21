@@ -6,16 +6,18 @@ title: Construct a request
 menu_title: Construct a request
 menu_order: 1
 
+version: 2.0
 github_link: get-started/gs-web-api-request.md
 redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
 ---
 
-<p>To configure a web API, developers define some of the elements of each API call in the <code>app/code/Magento/&lt;MODULE&gt;/etc/webapi.xml</code> file, where <code>&lt;MODULE></code> is the module name. For example, the web API for the Customer service is defined in the <code>app/code/Magento/Customer/etc/webapi.xml</code> configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.</p>
+To configure a web API, developers define some of the elements of each API call in the `<module root dir>/vendor/<vendor-name>/<module-name>/etc/webapi.xml` file, where `<vendor-name>` is your vendor name (for example, `magento`) and `<module-name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<your Magento install dir>/vendor/magento/module-customer/etc/webapi.xml` configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.
 
 <p>To construct a web API request, read these topics:</p>
 <ul>
-<li><a href="#requests">Overview</a></li>
+<li><a href="#request-overview">Overview</a></li>
 <li><a href="#construct-request">Construct a request</a></li>
+<li><a href="#customers-search-api-request-example">Customers Search API Request Example</a></li>
 </ul>
 
 <h2 id="request-overview">Overview</h2>
@@ -123,18 +125,18 @@ redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
       </td>
       <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
       <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
-See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
+See <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
    </tr>
    <tr>
       <td><pre>Accept</pre>
       </td>
-      <td><p>Optional. Specifies the format of the response body. Default is <code>json</code>.</p></td>
+      <td><p>Optional. Specifies the format of the response body. Default is <code>JSON</code>.</p></td>
       <td>
       <pre>Accept: application/&lt;FORMAT&gt;</pre>
       <p>Where
          <code>&lt;FORMAT&gt;</code> is either
-         <code>json</code>or
-         <code>xml</code>.</p>
+         <code>JSON</code>or
+         <code>XML</code>.</p>
          <p>If you omit this header, the response is returned in JSON format.</p></td>
    </tr>
    <tr>
@@ -148,8 +150,8 @@ See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html"
      <pre>Content-Type:application/&lt;FORMAT&gt;</pre>
      <p>Where
          <code>&lt;FORMAT&gt;</code>is either
-         <code>json</code>or
-         <code>xml</code>.
+         <code>JSON</code>or
+         <code>XML</code>.
       </p></td>
    </tr>
 </table>
@@ -198,7 +200,7 @@ See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html"
 <h2 id="construct-request">Construct a request</h2>
 <p>This example shows you how to construct a REST web API call to create an account.</p>
 
-<ol><li>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a> configuration file.</li>
+<ol><li>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file.</li>
 <li><p>Find the route element that defines the <code>createAccount</code> call:</p>
 <pre>
 &lt;route url="/V1/customers" method="POST">
@@ -224,6 +226,47 @@ See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html"
 <li><p>To pass the <code>customer</code> data object in the POST call payload, specify a <a href="http://www.json.com/" target="_blank">JSON</a> or XML request body on the call.</p></li>
 </ol>
 
-<h2>Next step</h2>
-<p>Run the web API call through a <a href="{{ site.gdeurl }}get-started/gs-curl.html">cURL command</a> or a REST client.</p>
+<h3 id="customers-search-api-request-example">Customers Search API Request Example</h3>
+<p>The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.</p>
+<ol>
+<li><p>Prepare <code>Authorization</code>, <code>Accept</code> and <code>Content-Type</code> headers to be passed to a request object. Use the Authorization token returned by the Magento token service.</p></li>
+<pre>
+$token = 'token';
+$httpHeaders = new \Zend\Http\Headers();
+$httpHeaders->addHeaders([
+   'Authorization' => 'Bearer ' . $token,
+   'Accept' => 'application/json',
+   'Content-Type' => 'application/json'
+]);
+</pre>
+<li><p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
+<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="http://devdocs.magento.com/guides/v2.0/get-started/usage.html" target="_blank">searchCriteria usage</a>.</p></li>
+<pre>
+$request = new \Zend\Http\Request();
+$request->setHeaders($httpHeaders);
+$request->setUri('http://magento.ll/rest/V1/customers/search');
+$request->setMethod(\Zend\Http\Request::METHOD_GET);
 
+$params = new \Zend\Stdlib\Parameters([
+   'searchCriteria' => '*'
+]);
+$request->setQuery($params);
+</pre>
+<li><p>Prepare a HTTP Curl client object and pass the request object to <code>Client::send()</code> method.</p></li>
+<pre>
+$client = new \Zend\Http\Client();
+$options = [
+   'adapter'   => 'Zend\Http\Client\Adapter\Curl',
+   'curloptions' => [CURLOPT_FOLLOWLOCATION => true],
+   'maxredirects' => 0,
+   'timeout' => 30
+];
+$client->setOptions($options);
+
+$response = $client->send($request);
+</pre>
+<li><p>This request returns a list of all customers in JSON format. You can also specify XML format by changing <code>Accept</code> header of the request.</p></li>
+</ol>
+
+<h2>Next step</h2>
+<p>Run the web API call through a <a href="{{page.baseurl}}get-started/gs-curl.html">cURL command</a> or a REST client.</p>

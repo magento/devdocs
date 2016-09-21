@@ -1,66 +1,165 @@
 <!-- sidebar -->
 <aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
 	<div class="sidebar-wrapper">
 
+{% if page.group == "ext-best-practices" %}
+<h4>Extension Best Practices</h4>
+
+{% elsif page.group == "compman" %}
+<h4>Component Manager and System Upgrade Guide</h4>
+
+{% elsif page.group == "coding-standards" %}
+<h4>Coding Standards</h4>
+
+{% elsif page.group == "rest" %}
+<h4>REST API Reference</h4>
+
+{% elsif page.group == "contributor" %}
+<h4>Contributor Guide</h4>
+
+{% elsif page.group == "get-started" %}
+<h4>Getting Started with Web APIs</h4>
+
+{% elsif page.group == "pattern" %}
+<h4>Admin Pattern Library</h4>
+
+{% elsif page.group == "mtf-guide" %}
+<h4>Testing Framework Guide</h4>
+
+{% elsif page.group == "migration" %}
+<h4>Migration Guide</h4>
+
+{% elsif page.group == "release-notes" %}
+<h4>Release Information</h4>
+
+{% elsif page.group == "extension-dev-guide" %}
+<h4>PHP Developer Guide</h4>
+
+{% elsif page.group == "arch-guide" %}
+<h4>Architecture Guide</h4>
+
+{% elsif page.group == "fedg" %}
+<h4>Frontend Developer Guide</h4>
+
+{% elsif page.group == "UI_Components_guide" %}
+<h4>UI Components Guide</h4>
+
+{% elsif page.group == "jsdg" %}
+<h4>JavaScript Developer Guide</h4>
+
+{% elsif page.group == "install2" %}
+<h4>Installation Guide</h4>
+
+{% elsif page.group == "install_cli" %}
+<h4>Installation Guide<br>Part 2: Installing</h4>
+
+{% elsif page.group == "install_hosted" %}
+<h4>Newbie Installation Guide</h4>
+
+{% elsif page.group == "install_pre" %}
+<h4>Installation Guide<br>Part 1: Getting started</h4>
+
+{% elsif page.group == "install" %}
+<h4>Installation Guide<br>Part 3: Post-installation</h4>
+
+{% elsif page.group == "install_wiz" %}
+<h4>Installation Guide<br>Part 2: Installing</h4>
+
+{% elsif page.group == "install_trouble" %}
+<h4>Installation Guide<br>Part 3: Post-installation</h4>
+
+{% elsif page.group == "config-guide" %}
+<h4>Configuration Guide</h4>
+
+{% elsif page.group == "cloud" %}
+<h4>Magento Enterprise Cloud Guide</h4>
+{% endif %}
+
+
+
+
 		<ul role="navigation">
-		
-		{% assign categories = site.articles | group_by:"group" %}
-		
+
+		{% assign categories = site.pages | where: "guide_version", page.guide_version | group_by:"group" %}
+
 		{% for node in categories %}
-				
+
 				{% if node.name == page.group %}
-					
+
 					{% assign subcategories =  node.items | group_by:"subgroup" %}
 					{% assign subcategories_sorted =  subcategories | sort: "name" %}
-					
+
 					{% for subcats in subcategories_sorted %}
-					
+
 						{% assign articles_sorted = subcats.items | sort: "menu_order" | where:"menu_node", null %}
-						
+
 						{% if subcats.name != "" %}
-						
+
 							{% assign parents = subcats.items | where:"menu_node","parent" %}
-														
-							
+
+
 								{% assign n = 0 %}
+
+
 								{% for parent in parents %}
-									<li class=" {% if page.url == parent.url %} active {%endif%}"><a class="nav-header" href="{{site.toc_baseurl}}{{parent.url}}">{% if parent.menu_title %}{{parent.menu_title}}{% else %}{{parent.title}}{% endif %}</a></li>
+									<li class="level1 {% if page.url == parent.url %} active {%endif%}"><a class="nav-header" href="{{site.toc_baseurl}}{{parent.url}}">{% if parent.menu_title %}{{parent.menu_title}}{% else %}{{parent.title}}{% endif %}</a></li>
 									{% assign n = 1 %}
 								{% endfor %}
-								
-								{% if n == 0 %}
-							
-									<li class=""><span class="nav-header">{{ subcats.name }}</span></li>
-								
-								{% endif %}
-							
-								
+
+									{% if n == 0 %}
+
+										<li class="levela1"><span class="nav-header">{{ subcats.name }}</span></li>
+
+									{% endif %}
+
+
 								{% for article in articles_sorted %}
-							
+
+									{% if article.level3_menu_node == "level3parent" %}
+
+										<li class="level3Parent {% if page.url == article.url %} active {%endif%}" id="{{ article.level3_subgroup }}"><a href="#">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a>
+
+
+									{% elsif article.level3_menu_node == "level3child" %}
+
+
+											<li class="level3Child {{ article.level3_subgroup }} {% if page.url == article.url %} active {%endif%}" data-menunode="{{ article.level3_subgroup }}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a>
+
+
+									{% elsif article.externalURL %}
+
+									<li class="level-2"><a href="{{article.externalURL}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
+
+
+									{% else %}
+
 									<li class="level-2 {% if page.url == article.url %} active {%endif%}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
-						
+
+									{% endif %}
+
 								{% endfor %}
-								
-								
-							
-							
+
+
+
+
 						{% else %}
-						
+
 							{% for article in articles_sorted %}
-							
-								<li class="{% if page.url == article.url %} active {%endif%}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
-				
+
+								<li class="q {% if page.url == article.url %} active {%endif%}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
+
 							{% endfor %}
-							
+
 						{% endif %}
 
 					{% endfor %}
 
 
 				{% endif %}
-			
+
 			{% endfor %}
-		
+
 		</ul>
 
 	</div>

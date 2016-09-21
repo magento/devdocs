@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - store.info';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Store Info
+---
 
-				    <h3><a name="store.info-Module%3AStoreViewAPI"></a>Module: Store View API</h3>
+<h3><a name="store.info-Module%3AStoreViewAPI"></a>Module: Store View API</h3>
 
 <h4><a name="store.info-Resource%3Astore"></a>Resource: store</h4>
 
@@ -18,107 +18,103 @@
 <p>Allows you to retrieve information about the required store view.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> storeId </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> storeId </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of storeEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of storeEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>storeEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> store_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store view ID </td>
+<td> int </td>
+<td> store_id <br class="atl-forced-newline" /> </td>
+<td> Store view ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> code <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store view code </td>
+<td> string </td>
+<td> code <br class="atl-forced-newline" /> </td>
+<td> Store view code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> website_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Website ID </td>
+<td> int </td>
+<td> website_id <br class="atl-forced-newline" /> </td>
+<td> Website ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> group_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Group ID </td>
+<td> int </td>
+<td> group_id <br class="atl-forced-newline" /> </td>
+<td> Group ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store name </td>
+<td> string </td>
+<td> name <br class="atl-forced-newline" /> </td>
+<td> Store name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Store view sort order </td>
+<td> int </td>
+<td> sort_order <br class="atl-forced-newline" /> </td>
+<td> Store view sort order </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the store is active </td>
+<td> int </td>
+<td> is_active <br class="atl-forced-newline" /> </td>
+<td> Defines whether the store is active </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Requested store view not found. </td>
+<td> 101 </td>
+<td> Requested store view not found. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="store.info-Examples"></a>Examples</h4>

@@ -2,10 +2,11 @@
 layout: default
 group: pattern
 subgroup: Getting User Input
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Date and Time Selector
 menu_order: 3
 menu_node:
+version: 2.0
 github_link: pattern-library/getting-user-input/date_time_selector/date_time_selector.md
 ---
 
@@ -19,6 +20,7 @@ github_link: pattern-library/getting-user-input/date_time_selector/date_time_sel
 * <a href="#style">Style</a>
 * <a href="#accessibility">Accessibility</a>
 * <a href="#assets">Assets</a>
+* <a href="#implementation">Implementation</a>
 
 <h3 id="overview">Overview</h3>
 This article will establish design standards and rules for date and time selection in Magento. This article is related to the Form Elements pattern. Please refer to <a href="../form_elements/form_elements.html">Form Elements</a> for general rules on form usage and placement.
@@ -242,7 +244,7 @@ Keyboard navigation on days that are not included the currently displayed month 
 
 *	Ctrl+End moves the focus to the last day of the year.
 
-*	Shift+Arrow performs continous selection to the next/previous day/week/month.  
+*	Shift+Arrow performs continuous selection to the next/previous day/week/month.
 
 *	Ctrl+Space multiple selection of certain days.
 
@@ -288,3 +290,6 @@ When the datepicker is active a calender day of the week should always have focu
 <h3 id="assets">Assets</h3>
 PSD files can be found here:
 <a href="src/date&timepicker.psd">Download Date&Time PSD source</a>
+
+<h3 id="implementation">Implementation</h3>
+Date and time selectors are implemented using the standard <a href="https://jqueryui.com/datepicker/" target="_blank">jQuery UI datepicker widget</a> and Magento <a href="{{site.mage2000url}}lib/web/jquery/jquery-ui-timepicker-addon.js" target="_blank">addon</a>. 

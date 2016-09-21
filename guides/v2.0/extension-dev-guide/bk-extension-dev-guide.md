@@ -1,55 +1,39 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 1_Introduction
-title: PHP developer guide
+subgroup: 01_Introduction
+title: Introduction
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: extension-dev-guide/bk-extension-dev-guide.md
-redirect_from: /guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html
+redirect_from:
+  - /guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html
+  - /guides/v2.0/mktpl-quickstart/bk-marketplace-qs.html
+  - /guides/v2.0/mktpl-quickstart/intro-moreinfo.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
-This guide contains information for developers who want to extend, or customize, any of the components in the Magento platform. That includes building a new module from scratch for custom extension of Magento functionality. This guide is also for those who want to create an extension for Magento Connect, although it does not cover the publishing process.
+The PHP Developer Guide contains information for developers who want to know more about developing or modifying Magento components. With this knowledge you can extend or customize any of the existing components in the Magento application. You can also create components that introduce new functionality and distribute them to merchants.
 
+## Magento components
 
-##Magento components
+The Magento application is made up of *Modules*, *Themes*, and *Language Packages*:
 
-Magento is made up of components:
+* <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_intro.html">*Modules*</a> interact with other parts of the application to accomplish a particular business function or provide a feature. A module can contain a user interface for displaying information or interacting with the user. It can also contain application interfaces that another Magento module or code chunk might call.
 
-* Modules
-* Themes
-* Language packages
+* <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-general.html">*Themes*</a> provide a personalized touch for each Magento installation by changing the look and feel of the storefront or Admin.
 
-
-A Magento *module* is code that accomplishes a particular business function or handles a Magento feature. A module is a collection `.php` and `.xml` files, but may also contain other files such as `.phtml` and image files. Modules are interactive with each other. A module also contains any user interface required for a user&#8217;s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.
-
-*Themes* applied to your Magento development can change your modules appearance. 
-*Language Packages* provides translations for strings that display on the frontend and Administration panels.
-
-This guide focuses on Magento modules.
-
-
-###Modules
-
-
-A *package* is a module that is wrapped up in a distributable form using Composer.
-
-An *extension* is a module&#8212;plus any themes and/or language packages needed for the extension&#8212;that is packaged for sale on Magento Connect.
-
-
-
+* <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html">*Language packages*</a> assist in internationalization(I18n) and localization by providing translations for strings that display on the storefront and Admin.
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
 </div>
 
+#### Related topics
 
-
-
-
-<h2 id="m2arch-related">Related topic</h2>
-
-<a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a> in the Magento Architecture Guide.
+*	<a href="{{page.baseurl}}extension-dev-guide/intro/developers_roadmap.html">Developer roadmap</a>
+*	<a href="{{page.baseurl}}extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a>
+*	<a href="{{page.baseurl}}extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a>

@@ -5,6 +5,7 @@ subgroup: Step 3. Use cURL to run the request
 title: Firefox REST client
 menu_title: Firefox REST client
 menu_order: 3
+version: 2.0
 github_link: get-started/gs-rest-ff-client.md
 redirect_from: /guides/v1.0/get-started/gs-rest-ff-client.html
 ---
@@ -155,7 +156,7 @@ An example follows:<br>
 <h4 id="svcs_rest_reltop">Related topics</h4>
 
 
-<ul><li><a href="{{ site.gdeurl }}get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
-<li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+<ul><li><a href="{{page.baseurl}}get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
+<li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
 </ul>
 

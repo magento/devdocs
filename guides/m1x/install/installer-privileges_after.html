@@ -43,12 +43,14 @@
 <p>The guidelines discussed in this article apply to:</p>
 <ul><li>New installations of or upgrades to the previously listed Magento versions only.<br />
 The instructions might not work with older versions. If you have already installed Magento, you can optionally change your file system permissions and ownership as discussed in this article.</li>
-<li><a href="http://www.magentocommerce.com/system-requirements" target="_blank">Supported operating systems</a> only</li></ul>
+<li><a href="{{ site.m1xgdeurl }}system-requirements.html" target="_blank">Supported operating systems</a> only</li></ul>
 <p>This article discusses the following permission and ownership schemes:</p>
 <ul>
 <li><a href="#privs-after">Post-installation</a> for both a hosted Magento server and for a dedicated Magento server (in other words, you have <code>root</code> access on the server).</li>
 <li><a href="#extensions">Securing extensions</a>, recommended ownership and privilege settings to apply after you install Magento extensions.<br />
 Typically, Magento extensions install with 777 (world-writable) privileges, which is undesirable from a security point of view.</li></ul>
+
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This topic contains <em>suggestions</em> based on our experience. They are not <em>requirements</em> because we don't know the details of your deployment. Consult your hosting provider, a qualified security specialist, or an experienced system administrator for advice about specific security settings.</span></div>
 
 <h2 id="terms">Terminology</h2>
 <p>This article uses the following terminology:</p>
@@ -168,7 +170,6 @@ For example, on Ubuntu where Apache usually runs as <code>www-data</code>, enter
 
 <h2 id="more-info">For More Information</h2>
 <p>For more information about UNIX permissions, see the following resources:</p>
-<ul><li><a href="http://www.dartmouth.edu/~rc/help/faq/permissions.html" target="_blank">Tutorial</a></li>
 <li><a href="http://www.statslab.cam.ac.uk/~eva/unixinfo/perms.html" target="_blank">UNIX File Permissions</a></li>
 <li><a href="http://permissions-calculator.org/" target="_blank">Unix Permissions Calculator</a></li>
 <li><a href="http://unix.stackexchange.com/questions/39710/how-to-get-permission-number-by-string-rw-r-r" target="_blank">Article on unix.stackexchange</a></li></ul>

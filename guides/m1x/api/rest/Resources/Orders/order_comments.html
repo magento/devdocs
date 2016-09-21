@@ -1,12 +1,9 @@
 ---
-layout: m1x
+layout: m1x_rest
 title: Order Comments
 ---
-<p><a href="{{ site.m1xgithuburl }}api/rest/Resources/Orders/order_comments.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
-
-<div class="toc"> <h4 class="toc">Table of Contents</h4>
-<ul>
+<ul class="introduction-menu">
     <li><a href='#RESTAPI-Resource-OrderComments-RESTAPI-OrderComments'>REST API: Order Comments</a>
     <ul>
         <li><a href='#RESTAPI-Resource-OrderComments-URI--orders--orderid-comments'>URI: /orders/:orderid/comments</a>
@@ -21,7 +18,7 @@ title: Order Comments
     </li>
     <li><a href='#RESTAPI-Resource-OrderComments-OrderCommentsAttributes'>Order Comments Attributes</a></li>
 </ul>
-</div>
+
 
 <h3><a name="RESTAPI-Resource-OrderComments-RESTAPI-OrderComments"></a>REST API: Order Comments</h3>
 
@@ -112,40 +109,39 @@ title: Order Comments
 
 <h3><a name="RESTAPI-Resource-OrderComments-OrderCommentsAttributes"></a>Order Comments Attributes</h3>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Attribute Name </th>
-<th class='confluenceTh'> Attribute Description </th>
-<th class='confluenceTh'> Notes </th>
+<th> Attribute Name </th>
+<th> Attribute Description </th>
+<th> Notes </th>
 </tr>
 <tr>
-<td class='confluenceTd'> Comment Date </td>
-<td class='confluenceTd'> Date when the comment was added </td>
-<td class='confluenceTd'> Admin and Customer </td>
+<td> Comment Date </td>
+<td> Date when the comment was added </td>
+<td> Admin and Customer </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Comment Text </td>
-<td class='confluenceTd'> Comment text </td>
-<td class='confluenceTd'> Admin and Customer </td>
+<td> Comment Text </td>
+<td> Comment text </td>
+<td> Admin and Customer </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Is Customer Notified </td>
-<td class='confluenceTd'> Defines whether the customer is notified about the comment. Can have the following values: 0 - Customer is not notified, 1 - Customer is notified. </td>
-<td class='confluenceTd'> Admin only </td>
+<td> Is Customer Notified </td>
+<td> Defines whether the customer is notified about the comment. Can have the following values: 0 - Customer is not notified, 1 - Customer is notified. </td>
+<td> Admin only </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Is Comment Visible on Frontend </td>
-<td class='confluenceTd'> Defines whether the comment is visible on the frontend.&nbsp;Can have the following values: 0 - Comment is not visible, 1 - Comment is visible. </td>
-<td class='confluenceTd'> Admin only <br class="atl-forced-newline" /> </td>
+<td> Is Comment Visible on Frontend </td>
+<td> Defines whether the comment is visible on the frontend.&nbsp;Can have the following values: 0 - Comment is not visible, 1 - Comment is visible. </td>
+<td> Admin only <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> Comment Status </td>
-<td class='confluenceTd'> Comment status. </td>
-<td class='confluenceTd'> Admin only <br class="atl-forced-newline" /> </td>
+<td> Comment Status </td>
+<td> Comment status. </td>
+<td> Admin only <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

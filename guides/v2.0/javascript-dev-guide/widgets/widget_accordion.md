@@ -1,10 +1,11 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Accordion widget
 menu_order: 1
 menu_title: Accordion widget
+version: 2.0
 github_link: javascript-dev-guide/widgets/widget_accordion.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html
@@ -13,7 +14,7 @@ redirect_from:
 
 <h2>Overview</h2>
 
-Magento accordion widget is an extension of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.html" target="_blank">Magento Tabs widget</a>.
+Magento accordion widget is an extension of the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Magento Tabs widget</a>.
 
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
 
@@ -59,30 +60,40 @@ Accordions support arbitrary markup, but the following requirements should be ke
 </ol>
 
 Mark-up examples:
-<pre>
-&lt;div id=&quot;element&quot;&gt;
-    &lt;div data-role=&quot;title&quot;&gt;
-        &lt;div data-role=&quot;trigger&quot;&gt;
-            &lt;span&gt;Title 1&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div data-role=&quot;content&quot;&gt;Content 1&lt;/div&gt;
-  
-    &lt;div data-role=&quot;title&quot;&gt;
-        &lt;div data-role=&quot;trigger&quot;&gt;
-            &lt;span&gt;Title 2&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div data-role=&quot;content&quot;&gt;Content 2&lt;/div&gt;
-  
-   &lt;div data-role=&quot;title&quot;&gt;
-        &lt;div data-role=&quot;trigger&quot;&gt;
-            &lt;span&gt;Title 3&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div data-role=&quot;content&quot;&gt;Content 3&lt;/div&gt;
-&lt;/div&gt;
-</pre>
+
+{%highlight html%}
+<div id="element">
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 1</span>
+        </div>
+    </div>
+    <div data-role="content">Content 1</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 2</span>
+        </div>
+    </div>
+    <div data-role="content">Content 2</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 3</span>
+        </div>
+    </div>
+    <div data-role="content">Content 3</div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'tabs'], function ($) {
+        $("#element").accordion();
+    });
+</script>
+
+{%endhighlight%}
 
 
 <h4>Initialize accordion with option</h4>
@@ -90,20 +101,20 @@ You can specify the header, content, trigger as options when you initialize the 
 For example:
 <pre>
 $("#element").accordion({
-    header : "#title-1"
+    header : "#title-1",
     content : "#content-1",
-    trigger : "#trigger-1,
+    trigger : "#trigger-1",
     ajaxUrlElement: "a"
  });
 </pre>
 
 <h3>Initialize accordion in a template</h3>
 
-The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initializaiton</a>.
+The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
 
 
 <h2 id="accordion_options">Options</h2>
-Accordion options coincide with <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.html#fedg_tabs_options" target="_blank">Magento Tabs options</a>, plus the following custom ones:
+Accordion options coincide with <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options" target="_blank">Magento Tabs options</a>, plus the following custom ones:
 <ul>
 <li><a href="#collaps_active">active</a></li>
 <li><a href="#collaps_multi">multipleCollapsible</a></li>
@@ -139,7 +150,7 @@ $("#element").accordion({ multipleCollapsible: false});
 Get or set the <code>multipleCollapsible</code> option, after initialization:
 <pre>
 //getter
-var multipleCollapsible = $("#element).accordion("option","multipleCollapsible");
+var multipleCollapsible = $("#element").accordion("option","multipleCollapsible");
 
 //setter
 $("#element").tabs("option","multipleCollapsible",false);

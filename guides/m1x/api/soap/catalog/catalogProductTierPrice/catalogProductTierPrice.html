@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - Product Tier Price';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
-				    
-				    <h2><a name="MAPI-ProductTierPrice-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+---
+layout: m1x_soap
+title: Catalog Product Tier Price
+---
+
+<h2><a name="MAPI-ProductTierPrice-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
 
 <p>The Mage_Catalog module allows you to manage categories and products.</p>
 
@@ -29,26 +29,25 @@
 
 <h4><a name="MAPI-ProductTierPrice-Faults"></a>Faults</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 100 </td>
-<td class='confluenceTd'> Product not exists. </td>
+<td> 100 </td>
+<td> Product not exists. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Invalid data given. Details in error message. </td>
+<td> 101 </td>
+<td> Invalid data given. Details in error message. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 102 </td>
-<td class='confluenceTd'> Tier prices not updated. Details in error message. </td>
+<td> 102 </td>
+<td> Tier prices not updated. Details in error message. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="MAPI-ProductTierPrice-Examples"></a>Examples</h4>
@@ -81,4 +80,4 @@ var_dump($tierPrices);</pre>
 </div></div>
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

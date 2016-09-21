@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - sales_order_invoice.create';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Invoice Create
+---
 
-				    <h2><a name="sales_order_invoice.create-Module%3AMageSales"></a>Module: Mage_Sales</h2>
+<h2><a name="sales_order_invoice.create-Module%3AMageSales"></a>Module: Mage_Sales</h2>
 
 
 <h4><a name="sales_order_invoice.create-Resource%3Asalesorderinvoice"></a>Resource: sales_order_invoice</h4>
@@ -32,82 +32,79 @@
 
 
 <p><b>Arguments</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> orderIncrementId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order increment ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> orderIncrementId <br class="atl-forced-newline" /> </td>
+<td> Order increment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> itemsQty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of orderItemIdQty (quantity of items to invoice) </td>
+<td> array </td>
+<td> itemsQty <br class="atl-forced-newline" /> </td>
+<td> Array of orderItemIdQty (quantity of items to invoice) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> comment <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Invoice comment (optional) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> comment <br class="atl-forced-newline" /> </td>
+<td> Invoice comment (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> email <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Send invoice on email (optional) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> email <br class="atl-forced-newline" /> </td>
+<td> Send invoice on email (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> includeComment <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Include comments in email (optional) </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> includeComment <br class="atl-forced-newline" /> </td>
+<td> Include comments in email (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> ID of the created invoice </td>
+<td> string </td>
+<td> ID of the created invoice </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>orderItemIdQty</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> order_item_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Order item ID </td>
+<td> int </td>
+<td> order_item_id <br class="atl-forced-newline" /> </td>
+<td> Order item ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> double </td>
-<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Quantity </td>
+<td> double </td>
+<td> qty <br class="atl-forced-newline" /> </td>
+<td> Quantity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="sales_order_invoice.create-Examples"></a>Examples</h4>

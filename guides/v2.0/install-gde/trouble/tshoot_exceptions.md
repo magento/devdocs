@@ -1,11 +1,12 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Access issues
+subgroup: 02_access
 title: Exceptions during installation
 menu_title: Exceptions during installation
 menu_node: 
 menu_order: 8
+version: 2.0
 github_link: install-gde/trouble/tshoot_access-browser.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html
 ---

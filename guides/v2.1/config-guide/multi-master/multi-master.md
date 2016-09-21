@@ -1,0 +1,1 @@
+../../../v2.0/config-guide/multi-master/multi-master.md

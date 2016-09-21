@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - Product Attribute';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
-				    
-				    <h2><a name="MAPI-ProductAttributes-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+---
+layout: m1x_soap
+title: Catalog Product Attribute
+---
+
+<h2><a name="MAPI-ProductAttributes-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
 
 <p>The Mage_Catalog module allows you to manage categories and products.</p>
 
@@ -37,54 +37,53 @@
 
 <h5><a name="MAPI-ProductAttributes-Faults%3A"></a>Faults:</h5>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 100 </td>
-<td class='confluenceTd'> Requested store view not found. </td>
+<td> 100 </td>
+<td> Requested store view not found. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Requested attribute not found. </td>
+<td> 101 </td>
+<td> Requested attribute not found. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 102 </td>
-<td class='confluenceTd'> Invalid request parameters. </td>
+<td> 102 </td>
+<td> Invalid request parameters. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 103 </td>
-<td class='confluenceTd'> Attribute code is invalid. Please use only letters (a-z), numbers (0-9) or underscore (_) in this field, first character should be a letter. </td>
+<td> 103 </td>
+<td> Attribute code is invalid. Please use only letters (a-z), numbers (0-9) or underscore (_) in this field, first character should be a letter. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Incorrect attribute type. </td>
+<td> 104 </td>
+<td> Incorrect attribute type. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> Unable to save attribute. </td>
+<td> 105 </td>
+<td> Unable to save attribute. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 106 </td>
-<td class='confluenceTd'> This attribute cannot be deleted. </td>
+<td> 106 </td>
+<td> This attribute cannot be deleted. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 107 </td>
-<td class='confluenceTd'> This attribute cannot be edited. </td>
+<td> 107 </td>
+<td> This attribute cannot be edited. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 108 </td>
-<td class='confluenceTd'> Unable to add option. </td>
+<td> 108 </td>
+<td> Unable to add option. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 109 </td>
-<td class='confluenceTd'> Unable to remove option. </td>
+<td> 109 </td>
+<td> Unable to remove option. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h5><a name="MAPI-ProductAttributes-Example%3A"></a>Example:</h5>
@@ -225,4 +224,4 @@ $result = $proxy-&gt;call(
 </div></div>
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

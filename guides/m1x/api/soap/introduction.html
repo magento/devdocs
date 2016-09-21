@@ -1,26 +1,20 @@
 ---
-layout: m1x
+layout: m1x_soap
 title: Introduction to the Magento 1.x SOAP API
 ---
-<p><a href="{{ site.m1xgithuburl }}api/soap/introduction.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
-<div class="toc"> 
-<ul>
-    <li><a href='#Introduction-Introduction'><strong>Introduction</strong></a>
+<ul class="introduction-menu">
+    <li><a href='#Introduction-Introduction'>Introduction</a></li>
+    <li><a href='#Introduction-SupportedTypes'>Supported Types</a>
         <ul>
-            <li><a href='#Introduction-SupportedTypes'>Supported Types</a>
-                <ul>
-                    <li><a href='#Introduction-SOAP'>SOAP</a></li>
-                    <li><a href='#Introduction-XMLRPC'>XML-RPC</a></li>
-                </ul>
-            </li>
-            <li><a href='#Introduction-APIMethods'>API Methods</a></li>
-            <li><a href='#Introduction-GlobalAPIFaults'>Global API Faults</a></li>
-            <li><a href='#Introduction-SOAPAPIVersionv2'>SOAP API Version v2</a></li>
+            <li><a href='#Introduction-SOAP'>SOAP</a></li>
+            <li><a href='#Introduction-XMLRPC'>XML-RPC</a></li>
         </ul>
     </li>
-</ul></div>
-
+    <li><a href='#Introduction-APIMethods'>API Methods</a></li>
+    <li><a href='#Introduction-GlobalAPIFaults'>Global API Faults</a></li>
+    <li><a href='#Introduction-SOAPAPIVersionv2'>SOAP API Version v2</a></li>
+</ul>
 
 <h1><a name="Introduction-Introduction"></a>Introduction</h1>
 
@@ -38,13 +32,13 @@ title: Introduction to the Magento 1.x SOAP API
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/?wsdl</pre>
-		</div>
+        <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/?wsdl</pre>
+        </div>
 </div></div>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/soap/?wsdl</pre>
-		</div>
+        <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/soap/?wsdl</pre>
+        </div>
 </div></div>
 
 <p>where magentohost is the domain for your Magento host.</p>
@@ -53,15 +47,15 @@ title: Introduction to the Magento 1.x SOAP API
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/v2_soap?wsdl=1</pre>
-		</div>
+        <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/v2_soap?wsdl=1</pre>
+        </div>
 </div></div>
 
 <p>The following PHP example shows how to make SOAP calls to the Magento API v1:</p>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/soap/api/?wsdl');
+        <pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/soap/api/?wsdl');
 
 // If somestuff requires api authentification,
 // then get a session token
@@ -79,7 +73,7 @@ $result = $client-&gt;multiCall($session, array(
 
 // If you don't need the session anymore
 $client-&gt;endSession($session);</pre>
-		</div>
+        </div>
 </div></div>
 
 <h3><a name="Introduction-XMLRPC"></a>XML-RPC</h3>
@@ -88,8 +82,8 @@ $client-&gt;endSession($session);</pre>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/xmlrpc/</pre>
-		</div>
+        <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/xmlrpc/</pre>
+        </div>
 </div></div>
 
 <p>where magentohost is the domain for your Magento host.</p>
@@ -98,7 +92,7 @@ $client-&gt;endSession($session);</pre>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: php; gutter: false">$client = new Zend_XmlRpc_Client('http://magentohost/api/xmlrpc/');
+        <pre class="theme: Default; brush: php; gutter: false">$client = new Zend_XmlRpc_Client('http://magentohost/api/xmlrpc/');
 
 // If somestuff requires api authentification,
 // we should get session token
@@ -117,7 +111,7 @@ $client-&gt;call('multiCall', array($session,
 
 // If you don't need the session anymore
 $client-&gt;call('endSession', array($session));</pre>
-		</div>
+        </div>
 </div></div>
 
 <p>The XML-RPC only supports the version 1 of the Magento API.</p>
@@ -127,55 +121,54 @@ $client-&gt;call('endSession', array($session));</pre>
 <p>The following table contains the API methods that can be called from your SOAP or XML-RPC client on the Magento v1 API.</p>
 
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Method </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Return Value </th>
+<th> Method </th>
+<th> Description </th>
+<th> Return Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> startSession() </td>
-<td class='confluenceTd'> Start the API session and return session ID. </td>
-<td class='confluenceTd'> string </td>
+<td> startSession() </td>
+<td> Start the API session and return session ID. </td>
+<td> string </td>
 </tr>
 <tr>
-<td class='confluenceTd'> endSession(sessionId) </td>
-<td class='confluenceTd'> End the API session. </td>
-<td class='confluenceTd'> boolean </td>
+<td> endSession(sessionId) </td>
+<td> End the API session. </td>
+<td> boolean </td>
 </tr>
 <tr>
-<td class='confluenceTd'> login(apiUser, apiKey) </td>
-<td class='confluenceTd'> Start the API session, return the session ID, and authorize the API user. </td>
-<td class='confluenceTd'> string </td>
+<td> login(apiUser, apiKey) </td>
+<td> Start the API session, return the session ID, and authorize the API user. </td>
+<td> string </td>
 </tr>
 <tr>
-<td class='confluenceTd'> call(sessionId, resourcePath,array arguments) </td>
-<td class='confluenceTd'> Call the API resource that is allowed in the current session. See Note below. </td>
-<td class='confluenceTd'> mixed </td>
+<td> call(sessionId, resourcePath,array arguments) </td>
+<td> Call the API resource that is allowed in the current session. See Note below. </td>
+<td> mixed </td>
 </tr>
 <tr>
-<td class='confluenceTd'> multiCall(sessionId, array calls,array options) </td>
-<td class='confluenceTd'> Call the API resource’s methods that are allowed for current session. See Notes below. </td>
-<td class='confluenceTd'> array </td>
+<td> multiCall(sessionId, array calls,array options) </td>
+<td> Call the API resource’s methods that are allowed for current session. See Notes below. </td>
+<td> array </td>
 </tr>
 <tr>
-<td class='confluenceTd'> resources(sessionId) </td>
-<td class='confluenceTd'> Return a list of available API resources and methods allowed for the current session. </td>
-<td class='confluenceTd'> array </td>
+<td> resources(sessionId) </td>
+<td> Return a list of available API resources and methods allowed for the current session. </td>
+<td> array </td>
 </tr>
 <tr>
-<td class='confluenceTd'> globalFaults(sessionId) </td>
-<td class='confluenceTd'> Return a list of fault messages and their codes that do not depend on any resource. </td>
-<td class='confluenceTd'> array </td>
+<td> globalFaults(sessionId) </td>
+<td> Return a list of fault messages and their codes that do not depend on any resource. </td>
+<td> array </td>
 </tr>
 <tr>
-<td class='confluenceTd'> resourceFaults(sessionId, resourceName) </td>
-<td class='confluenceTd'> Return a list of the specified resource fault messages, if this resource is allowed in the current session. </td>
-<td class='confluenceTd'> array </td>
+<td> resourceFaults(sessionId, resourceName) </td>
+<td> Return a list of the specified resource fault messages, if this resource is allowed in the current session. </td>
+<td> array </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Note:</b> For <b>call</b> and <b>multiCall</b>, if no session is specified, you can call only resources that are not protected by ACL.</p>
 
@@ -186,34 +179,33 @@ $client-&gt;call('endSession', array($session));</pre>
 <h2><a name="Introduction-GlobalAPIFaults"></a>Global API Faults</h2>
 
 <p>The following table contains fault codes that apply to all SOAP/XML-RPC API calls.</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 0 </td>
-<td class='confluenceTd'> Unknown Error </td>
+<td> 0 </td>
+<td> Unknown Error </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 1 </td>
-<td class='confluenceTd'> Internal Error. Please see log for details. </td>
+<td> 1 </td>
+<td> Internal Error. Please see log for details. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 2 </td>
-<td class='confluenceTd'> Access denied. </td>
+<td> 2 </td>
+<td> Access denied. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 3 </td>
-<td class='confluenceTd'> Invalid api path. </td>
+<td> 3 </td>
+<td> Invalid api path. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 4 </td>
-<td class='confluenceTd'> Resource path is not callable. </td>
+<td> 4 </td>
+<td> Resource path is not callable. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h2><a name="Introduction-SOAPAPIVersionv2"></a>SOAP API Version v2</h2>
@@ -223,23 +215,23 @@ $client-&gt;call('endSession', array($session));</pre>
 <p>For example, consider the following PHP code using SOAP v1.</p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: php; gutter: false">$params = array(array(
+        <pre class="theme: Default; brush: php; gutter: false">$params = array(array(
     'status'=&gt;array('eq'=&gt;'pending'),
     'customer_is_guest'=&gt;array('eq'=&gt;'1'))
 ));
 $result = $client-&gt;call($sessionId, 'sales_order.list', $params);</pre>
-		</div>
+        </div>
 </div></div>
 
 <p>With SOAP v2, the following code would be equivalent.</p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: php; gutter: false">$params = array('filter' =&gt; array(
+        <pre class="theme: Default; brush: php; gutter: false">$params = array('filter' =&gt; array(
     array('key' =&gt; 'status', 'value' =&gt; 'pending'),
     array('key' =&gt; 'customer_is_guest', 'value' =&gt; '1')
 ));
 $result = $client-&gt;salesOrderList($sessionId, $params);</pre>
-		</div>
+        </div>
 </div></div>
 
 <p>Note that the WSDL for SOAP v1 and SOAP v2 are different. Note that in SOAP v1, customizing the API did not involve changing the WSDL. In SOAP v2, changes to the WSDL are required.</p>
@@ -249,5 +241,6 @@ $result = $client-&gt;salesOrderList($sessionId, $params);</pre>
 <p>Note that the WSDL for the SOAP v2 API is different when in WS-I compliant mode.</p>
 
 <p>Using the WS-I compliant SOAP v2 API WSDL, it is easy to automatically generate client classes for Java, .NET, and other languages using standard libraries. </p>
+
 
 <?php include(__ROOT__ . 'footer.php'); ?>

@@ -1,12 +1,25 @@
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir>/bin</code> to your system <code>PATH</code>.<br>
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br>
-bash shell example for CentOS:<br>
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div markdown="1">
+
+1.	Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
+
+	If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:
+
+		su <Magento file system owner> -s /bin/bash -c <command>
+	If the Magento file system owner does not allow logins you can do the following
+	
+		sudo -u <Magento file system owner>  <command>
+2.	To run Magento commands from any directory, add `<your Magento install dir>/bin` to your system `PATH`.
+
+	Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.
+
+	bash shell example for CentOS:
+		
+		export PATH=$PATH:/var/www/html/magento2/bin
+
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir>/bin</code> and run them as <code>./magento &lt;command name></code></li>
 <li><code>php &lt;your Magento install dir>/bin/magento &lt;command name></code></li></ul>
-<p><code>&lt;your Magento install dir></code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.</p></span>
+<p><code>&lt;your Magento install dir></code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{page.baseurl}}install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>

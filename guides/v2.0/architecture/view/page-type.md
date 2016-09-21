@@ -5,6 +5,7 @@ subgroup: View library
 title: Page types
 menu_title: Page types
 menu_order: 
+version: 2.0
 github_link: architecture/view/page-type.md
 redirect_from: /guides/v1.0/architecture/view/page-type.html
 ---
@@ -50,7 +51,7 @@ Page types for each module are declared in `page_types.xml`. The declaration is 
 
 `page_types.xml` is typically located in:
 
-	app/code/<VendorName>/<ModuleName>/etc/frontend
+	vendor/<vendorname>/module-<name>/etc/frontend
 
 For example, <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/page_types.xml" target="_blank">Customer module page_types.xml</a>.
 

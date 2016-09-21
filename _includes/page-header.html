@@ -2,8 +2,20 @@
 <section class="page-intro">
 	<div class="container">
 		<h1 class="page-heading">{{ page.title }}</h1>
-		{% if page.github_link %}	
-			<a class="improve-page" href="{{ site.githuburl }}{{ page.github_link }}" target="_blank">Edit this page on GitHub</a>
-		{% endif %}
+
+        {% include tabs.md %}
+        <div class="topic-info">
+
+            {% if page.github_link %}
+               <div class="github-link"><a class="improve-page" href="{{ site.github }}v{{page.version}}/{{ page.github_link }}" target="_blank">Edit this page on GitHub</a></div>
+            {% endif %}
+            {% if page.contributor_link %}
+                <a class="contributor" href="{{ page.contributor_link }}" target="_blank">Thanks to {{ page.contributor_name }} for contributing this topic</a>
+            {% endif %}
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
 	</div>
 </section>

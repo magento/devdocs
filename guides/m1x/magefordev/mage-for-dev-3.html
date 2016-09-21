@@ -5,7 +5,6 @@
 
 <head>
     <meta charset=utf-8>
-
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
     <link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
     <link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
@@ -72,7 +71,7 @@
 <ul>
 <li>URLs routing is often inflexible.</li>
 <li>Controllers are often bound to specific views.</li>
-<li>Even when a system offers a way to override these defaults, the convention leads to applications where it's difficult/impossible to drop in new a new model, view, or Controller implementation without massive re-factoring.</li>
+<li>Even when a system offers a way to override these defaults, the convention leads to applications where it's difficult/impossible to drop in a new model, view, or Controller implementation without massive re-factoring.</li>
 </ul>
 </ul>
 
@@ -152,7 +151,7 @@ app/code/local/Magentotutorial/Helloworld/sql
 
 <p>Next, we're going to configure a route.  A route will turn a URL into an Action Controller and a method.  Unlike other convention based PHP MVC systems, with Magento you need to explicitly define a route in the global Magento config.
 
-<p>In your config.xml file, add the following section:
+<p>In your config.xml file(at path app/code/local/Magentotutorial/Helloworld/etc/config.xml), add the following section:
 
 <pre>
 &lt;config>    
@@ -176,7 +175,7 @@ app/code/local/Magentotutorial/Helloworld/sql
 
 <h4>What is a &lt;frontend&gt;?</h4>
 
-<p>The &lt;frontend&gt; tag refers to a Magento Area.  For now, think of Areas as individual Magento applications.  The "frontend" Area is the public facing Magento shopping cart application.  The "admin" Area is the the private administrative console application.  The "install" Area is the application you use to run though installing Magento the first time.</p>
+<p>The &lt;frontend&gt; tag refers to a Magento Area.  For now, think of Areas as individual Magento applications.  The "frontend" Area is the public facing Magento shopping cart application.  The "admin" Area is the private administrative console application.  The "install" Area is the application you use to run though installing Magento the first time.</p>
 
 <h4>Why a &lt;routers&gt; tags if we're configuring individual routes?</h4>
 
@@ -185,7 +184,7 @@ app/code/local/Magentotutorial/Helloworld/sql
   <p>"There are only two hard things in Computer Science: cache invalidation and naming things"</p>
 </blockquote>
 
-<p>Magento, like all large systems, suffers from the naming problem in spades.  You'll find there are are many places in the global config, and the system in general, where the naming conventions seem unintuitive or even ambiguous.  This is one of those places.  Sometimes the <tt>&lt;routers&gt;</tt> tag will enclose configuration information about routers, other times it will enclose configuration information about the actual router objects that do the routing.  This is going to seem counter intuitive at first, but as you start to work with Magento more and more, you'll start to understand its world view a little better. (Or, in the words of Han Solo, "Hey, trust me!").</p>
+<p>Magento, like all large systems, suffers from the naming problem in spades.  You'll find there are many places in the global config, and the system in general, where the naming conventions seem unintuitive or even ambiguous.  This is one of those places.  Sometimes the <tt>&lt;routers&gt;</tt> tag will enclose configuration information about routers, other times it will enclose configuration information about the actual router objects that do the routing.  This is going to seem counter intuitive at first, but as you start to work with Magento more and more, you'll start to understand its world view a little better. (Or, in the words of Han Solo, "Hey, trust me!").</p>
 
 <h4>What is a &lt;frontName&gt;?</h4>
 
@@ -218,21 +217,22 @@ app/code/local/Magentotutorial/Helloworld/sql
 <p>That contains the following
 
 <pre>
+&#60;&#63;php
 class Magentotutorial_Helloworld_IndexController extends Mage_Core_Controller_Front_Action {        
     public function indexAction() {
-        echo 'Hello Index!';
+        echo 'Hello World';
     }
 }
 </pre>
 
 <p>Clear your config cache, and load the following URL </p>
 
-<pre>http://exmaple.com/helloworld/index/index</pre>
+<pre>http://example.com/helloworld/index/index</pre>
 
 <p>You should also be able to load</p>
 
-<pre>http://exmaple.com/helloworld/index/
-http://exmaple.com/helloworld/</pre>
+<pre>http://example.com/helloworld/index/
+http://example.com/helloworld/</pre>
 
 <p>You should see a blank page with the text "Hello World".  Congratulations, you've setup your first Magento Controller!</p>
 

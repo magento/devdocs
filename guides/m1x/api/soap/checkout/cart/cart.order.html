@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - cart.order';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Cart Order
+---
 
-				    <h2><a name="cart.order-MageCheckout"></a>Mage_Checkout</h2>
+<h2><a name="cart.order-MageCheckout"></a>Mage_Checkout</h2>
 
 
 <h3><a name="cart.order-Module%3AShoppingCartAPI"></a>Module: Shopping Cart API</h3>
@@ -22,52 +22,50 @@
 Before placing the order, you need to add the customer, customer address, shipping and payment methods.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> quoteId </td>
-<td class='confluenceTd'> Shopping Cart ID (quote ID) </td>
+<td> int </td>
+<td> quoteId </td>
+<td> Shopping Cart ID (quote ID) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> store </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString </td>
-<td class='confluenceTd'> agreements <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Website license ID (optional) </td>
+<td> ArrayOfString </td>
+<td> agreements <br class="atl-forced-newline" /> </td>
+<td> Website license ID (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Result of creating an order </td>
+<td> string </td>
+<td> result </td>
+<td> Result of creating an order </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b><br/>

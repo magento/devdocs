@@ -1,0 +1,1 @@
+../../../v2.0/howdoi/install/mode-switch.md

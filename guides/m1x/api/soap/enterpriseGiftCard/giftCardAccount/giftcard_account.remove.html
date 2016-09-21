@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - giftcard_account.remove';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Account Remove
+---
 
-				    <h3><a name="giftcard_account.remove-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
+<h3><a name="giftcard_account.remove-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
 
 <h4><a name="giftcard_account.remove-Resource%3Agiftcardaccount"></a>Resource: giftcard_account</h4>
 
@@ -19,60 +19,57 @@
 <p>Allows you to remove the specified gift card account.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> giftcardAccountId </td>
-<td class='confluenceTd'> Gift card account ID </td>
+<td> string </td>
+<td> giftcardAccountId </td>
+<td> Gift card account ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> True if the gift card account is removed </td>
+<td> boolean </td>
+<td> True if the gift card account is removed </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 106 </td>
-<td class='confluenceTd'> Gift card account with requested id does not exist </td>
+<td> 106 </td>
+<td> Gift card account with requested id does not exist </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 107 </td>
-<td class='confluenceTd'> Error occurs while deleting gift card </td>
+<td> 107 </td>
+<td> Error occurs while deleting gift card </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="giftcard_account.remove-Examples"></a>Examples</h4>

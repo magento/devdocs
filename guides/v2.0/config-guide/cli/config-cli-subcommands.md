@@ -1,11 +1,12 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Get started with command-line configuration
 menu_title: Get started with command-line configuration
 menu_node: 
 menu_order: 2
+version: 2.0
 github_link: config-guide/cli/config-cli-subcommands.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands.html
 ---
@@ -26,7 +27,7 @@ See one of the following sections:
 {% include install/before-you-begin-cli.html %}
 
 <h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">switch to</a>, the web server user.</li>
+<ol><li>Log in to the Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
 <li>Change to the following directory:<br>
 <pre>cd &lt;your Magento install dir>/bin</pre>
 Examples:
@@ -48,7 +49,7 @@ The following table summarizes the available commands. Commands are shown in sum
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Before you run any of these commands, you must either <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">install the Magento application</a> or <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">enable some modules</a>.</p></span>
+  <p>Before you run any of these commands, you must either <a href="{{page.baseurl}}install-gde/install/install-cli.html">install the Magento application</a> or <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">enable some modules</a>.</p></span>
 </div>
 
 <table>
@@ -62,63 +63,60 @@ The following table summarizes the available commands. Commands are shown in sum
 		</tr>
 		
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">magento setup:cache:{enable|disable|clean|flush|status}</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">magento setup:cache:{enable|disable|clean|flush|status}</a></td>
 		<td><p>Manages the cache</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
 		<td><p>Manages the indexers</p></td>
 	</tr>
+	
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">magento log {status|clean}</a></td>
-		<td><p>Cleans logs older than a specified number of days</p></td>
-	</tr>
-	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">magento cron:run</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">magento cron:run</a></td>
 		<td><p>Runs Magento cron jobs</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">magento setup:di:compile-multi-tenant</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler-multi.html">magento setup:di:compile-multi-tenant</a></td>
 		<td><p>Use only if you have multiple independent Magento applications (in other words, one common Magento code base but more than one independent instance of the Magento application).</p>
 		<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites.</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">magento setup:di:compile</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler-single.html">magento setup:di:compile</a></td>
 		<td><p>Use if you have one instance of the Magento application.</p>
 			<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website.</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-depen.html">magento info:dependencies:{show-modules|show-modules-circular|show-framework}e</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">magento info:dependencies:{show-modules|show-modules-circular|show-framework}e</a></td>
 		<td><p>Module dependencies, circular dependencies, and Magento framework dependencies.</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">magento i18n:{collect-phrases|pack}</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">magento i18n:{collect-phrases|pack}</a></td>
 		<td><p>Creates a translation dictionary or a translation package</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">magento setup:static-content:deploy</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">magento setup:static-content:deploy</a></td>
 		<td><p>Deploys static view files</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">magento dev:css:deploy</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html">magento dev:source-theme:deploy</a></td>
 		<td><p>Creates CSS from LESS</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">magento dev:tests:run</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">magento dev:tests:run</a></td>
 		<td><p>Runs automated tests</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">magento dev:xml:convert</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">magento dev:xml:convert</a></td>
 		<td><p>Update your layout XML files to match the new Extensible Stylesheet Language Transformations (XSLT) stylesheet</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">magento setup:perf:generate-fixtures</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">magento setup:perf:generate-fixtures</a></td>
 		<td><p>Generate data to use for performance testing.</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/sample-data.html#instgde-install-sample-enable-after">magento sampledata:install</a></td>
+		<td><a href="{{page.baseurl}}install-gde/install/sample-data.html#instgde-install-sample-enable-after">magento sampledata:install</a></td>
 		<td><p>Installs optional Magento sample data after you install the Magento application.</p>
-			<p>For more details about Magento sample data, see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Optional Magento sample data</a>.</p></td>
+			<p>For more details about Magento sample data, see <a href="{{page.baseurl}}install-gde/install/sample-data.html">Optional Magento sample data</a>.</p></td>
 	</tr>
 	
 	</tbody>
@@ -134,17 +132,17 @@ The following table summarizes the available commands. Commands are shown in sum
 <h2 id="config-cli-subcommands">Commands</h2>
 The following sections discuss the available commands. 
 
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
 

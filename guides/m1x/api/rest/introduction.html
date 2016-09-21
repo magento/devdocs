@@ -1,56 +1,52 @@
 ---
-layout: m1x
+layout: m1x_rest
 title: Introduction to the Magento 1.x REST API
 ---
-<p><a href="{{ site.m1xgithuburl }}api/rest/introduction.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
-<div class="toc"> 
 
-<h4 class="toc">Table of Contents</h4>
-
-<ul>
-    <li><a href='#RESTAPIIntroduction-IntroductiontoAPI'><strong>Introduction to API</strong></a>
-    <ul>
-        <li><a href='#RESTAPIIntroduction-Overview'>Overview</a></li>
-        <li><a href='#RESTAPIIntroduction-OverallCapabilities'>Overall Capabilities</a></li>
-        <li><a href='#RESTAPIIntroduction-Authentication'>Authentication</a></li>
-        <li><a href='#RESTAPIIntroduction-OutputFormats'>Output Formats</a></li>
-        <li><a href='#RESTAPIIntroduction-HTTPVerbs'>HTTP Verbs</a></li>
-        <li><a href='#RESTAPIIntroduction-RequestStructure'>Request Structure</a></li>
-        <li><a href='#RESTAPIIntroduction-RESTResources'>REST Resources</a>
-        <ul>
-            <li><a href='#RESTAPIIntroduction-Products'>Products</a>
+    <ul class="introduction-menu">
+        <li><a href='#RESTAPIIntroduction-IntroductiontoAPI'><strong>Introduction to API</strong></a>
             <ul>
-                <li><a href='#RESTAPIIntroduction-ProductCategories'>Product Categories</a></li>
-                <li><a href='#RESTAPIIntroduction-ProductImages'>Product Images</a></li>
-                <li><a href='#RESTAPIIntroduction-ProductWebsites'>Product Websites</a></li>
+                <li><a href='#RESTAPIIntroduction-Overview'>Overview</a></li>
+                <li><a href='#RESTAPIIntroduction-OverallCapabilities'>Overall Capabilities</a></li>
+                <li><a href='#RESTAPIIntroduction-Authentication'>Authentication</a></li>
+                <li><a href='#RESTAPIIntroduction-OutputFormats'>Output Formats</a></li>
+                <li><a href='#RESTAPIIntroduction-HTTPVerbs'>HTTP Verbs</a></li>
+                <li><a href='#RESTAPIIntroduction-RequestStructure'>Request Structure</a></li>
+                <li><a href='#RESTAPIIntroduction-RESTResources'>REST Resources</a>
+                    <ul>
+                        <li><a href='#RESTAPIIntroduction-Products'>Products</a>
+                            <ul>
+                                <li><a href='#RESTAPIIntroduction-ProductCategories'>Product Categories</a></li>
+                                <li><a href='#RESTAPIIntroduction-ProductImages'>Product Images</a></li>
+                                <li><a href='#RESTAPIIntroduction-ProductWebsites'>Product Websites</a></li>
+                            </ul>
+                        </li>
+                        <li><a href='#RESTAPIIntroduction-Customers'>Customers</a></li>
+                        <li><a href='#RESTAPIIntroduction-CustomerAddresses'>Customer Addresses</a></li>
+                        <li><a href='#RESTAPIIntroduction-Inventory'>Inventory</a></li>
+                        <li><a href='#RESTAPIIntroduction-SalesOrders'>Sales Orders</a>
+                            <ul>
+                                <li><a href='#RESTAPIIntroduction-OrderItems'>Order Items</a></li>
+                                <li><a href='#RESTAPIIntroduction-OrderAddresses'>Order Addresses</a></li>
+                                <li><a href='#RESTAPIIntroduction-OrderComments'>Order Comments</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href='#RESTAPIIntroduction-PreparingforRESTAPI'>Preparing for REST API</a></li>
+                <li><a href='#RESTAPIIntroduction-PreparingRESTAPIfortheThirdPartyApplication'>Preparing REST API for the Third-Party Application</a></li>
+                <li><a href='#RESTAPIIntroduction-PHPExamples'>PHP Examples</a>
+                    <ul>
+                        <li><a href='#RESTAPIIntroduction-CreateasimpleproductasanAdminuserwithOAuthauthentication'>Create a simple product as an Admin user with OAuth authentication</a></li>
+                        <li><a href='#RESTAPIIntroduction-RetrievethelistofproductsasaCustomeruserwithOAuthauthentication'>Retrieve the list of products as a Customer user with OAuth authentication</a></li>
+                    </ul>
+                </li>
+                <li><a href='#RESTAPIIntroduction-RESTClientExample'>REST Client Example</a></li>
             </ul>
-            </li>
-            <li><a href='#RESTAPIIntroduction-Customers'>Customers</a></li>
-            <li><a href='#RESTAPIIntroduction-CustomerAddresses'>Customer Addresses</a></li>
-            <li><a href='#RESTAPIIntroduction-Inventory'>Inventory</a></li>
-            <li><a href='#RESTAPIIntroduction-SalesOrders'>Sales Orders</a>
-            <ul>
-                <li><a href='#RESTAPIIntroduction-OrderItems'>Order Items</a></li>
-                <li><a href='#RESTAPIIntroduction-OrderAddresses'>Order Addresses</a></li>
-                <li><a href='#RESTAPIIntroduction-OrderComments'>Order Comments</a></li>
-            </ul>
-            </li>
-        </ul>
         </li>
-        <li><a href='#RESTAPIIntroduction-PreparingforRESTAPI'>Preparing for REST API</a></li>
-        <li><a href='#RESTAPIIntroduction-PreparingRESTAPIfortheThirdPartyApplication'>Preparing REST API for the Third-Party Application</a></li>
-        <li><a href='#RESTAPIIntroduction-PHPExamples'>PHP Examples</a>
-        <ul>
-            <li><a href='#RESTAPIIntroduction-CreateasimpleproductasanAdminuserwithOAuthauthentication'>Create a simple product as an Admin user with OAuth authentication</a></li>
-            <li><a href='#RESTAPIIntroduction-RetrievethelistofproductsasaCustomeruserwithOAuthauthentication'>Retrieve the list of products as a Customer user with OAuth authentication</a></li>
-        </ul>
-        </li>
-        <li><a href='#RESTAPIIntroduction-RESTClientExample'>REST Client Example</a></li>
     </ul>
-    </li>
-</ul>
-</div>
+
 
 
 <h2><a name="RESTAPIIntroduction-IntroductiontoAPI"></a>Introduction to API</h2>
@@ -62,10 +58,10 @@ title: Introduction to the Magento 1.x REST API
 <p>Common characteristics of Magento REST API resources are as follows: (<b>magentohost</b> is your domain)</p>
 
 <ul>
-	<li>You access the resource by sending an HTTP request to the Magento API server. The server replies with a response that contains either the data you requested, or the status indicator, or even both.</li>
-	<li>All resources are located at <a href="https://magentohost/api/rest/">https://magentohost/api/rest/</a>.</li>
-	<li>All resources may return different HTTP status codes (e.g., HTTP Status Code 200 for success response or HTTP Status Code 400 for the bad request).</li>
-	<li>You request a particular resource by adding a particular path to the base URL that specifies the resource.</li>
+    <li>You access the resource by sending an HTTP request to the Magento API server. The server replies with a response that contains either the data you requested, or the status indicator, or even both.</li>
+    <li>All resources are located at <a href="https://magentohost/api/rest/">https://magentohost/api/rest/</a>.</li>
+    <li>All resources may return different HTTP status codes (e.g., HTTP Status Code 200 for success response or HTTP Status Code 400 for the bad request).</li>
+    <li>You request a particular resource by adding a particular path to the base URL that specifies the resource.</li>
 </ul>
 
 
@@ -74,11 +70,11 @@ title: Introduction to the Magento 1.x REST API
 <p>Magento REST API allows managing a number of features, namely:</p>
 
 <ul>
-	<li>Managing customers.</li>
-	<li>Managing customer addresses.</li>
-	<li>Managing products.</li>
-	<li>Retrieving sales orders.</li>
-	<li>Managing inventory.</li>
+    <li>Managing customers.</li>
+    <li>Managing customer addresses.</li>
+    <li>Managing products.</li>
+    <li>Retrieving sales orders.</li>
+    <li>Managing inventory.</li>
 </ul>
 
 
@@ -108,14 +104,14 @@ title: Introduction to the Magento 1.x REST API
 <p>Supposing, you want to retrieve the list of customers from Magento. To do this, you need to use the GET HTTP method. The GET request to retrieve the list of customers will look as follows:</p>
 
 <div class="panel" style="border-width: 1px;"><div class="panelContent">
-<p><a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a></p>
+    <p><a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a></p>
 </div></div>
 
 <p>where</p>
 
 <ul>
-	<li><a href="http://magentohost/api/rest/">http://magentohost/api/rest/</a> &#45; endpoint</li>
-	<li>/customers - action URL</li>
+    <li><a href="http://magentohost/api/rest/">http://magentohost/api/rest/</a> &#45; endpoint</li>
+    <li>/customers - action URL</li>
 </ul>
 
 
@@ -126,88 +122,88 @@ title: Introduction to the Magento 1.x REST API
 <h5><a name="RESTAPIIntroduction-Products"></a>Products</h5>
 
 <ul>
-	<li>Retrieve the list of products, create, update, and delete a product.<br/>
-<b>Resource Structure</b>: <a href="http://magentohost/api/rest/products">http://magentohost/api/rest/products</a></li>
+    <li>Retrieve the list of products, create, update, and delete a product.<br/>
+        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/products">http://magentohost/api/rest/products</a></li>
 </ul>
 
 
 <h6><a name="RESTAPIIntroduction-ProductCategories"></a>Product Categories</h6>
 
 <ul>
-	<li>Retrieve the list of categories assigned to a product, assign, and unassign the category to/from the specific product.<br/>
-<b>Resource Structure</b>: <a href="http://magentohost/api/rest/products/:productId/categories">http://magentohost/api/rest/products/:productId/categories</a></li>
+    <li>Retrieve the list of categories assigned to a product, assign, and unassign the category to/from the specific product.<br/>
+        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/products/:productId/categories">http://magentohost/api/rest/products/:productId/categories</a></li>
 </ul>
 
 
 <h6><a name="RESTAPIIntroduction-ProductImages"></a>Product Images</h6>
 
 <ul>
-	<li>Retrieve the list of images assigned to a product, add, update, and remove an image to/from the specific product.<br/>
-<b>Resource Structure</b>: <a href="http://magentohost/api/rest/products/:productId/images">http://magentohost/api/rest/products/:productId/images</a></li>
+    <li>Retrieve the list of images assigned to a product, add, update, and remove an image to/from the specific product.<br/>
+        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/products/:productId/images">http://magentohost/api/rest/products/:productId/images</a></li>
 </ul>
 
 
 <h6><a name="RESTAPIIntroduction-ProductWebsites"></a>Product Websites</h6>
 
 <ul>
-	<li>Retrieve the list of websites assigned to a product, assign, and unassign a  website to/from the specific product.<br/>
-<b>Resource Structure</b>: <a href="http://magentohost/api/rest/products/:productId/websites">http://magentohost/api/rest/products/:productId/websites</a></li>
+    <li>Retrieve the list of websites assigned to a product, assign, and unassign a  website to/from the specific product.<br/>
+        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/products/:productId/websites">http://magentohost/api/rest/products/:productId/websites</a></li>
 </ul>
 
 
 <h5><a name="RESTAPIIntroduction-Customers"></a>Customers</h5>
 
 <ul>
-	<li>Retrieve the list of customers, create, delete a customer, and update the customer information.<br/>
-<b>Resource Structure</b>: <a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a></li>
+    <li>Retrieve the list of customers, create, delete a customer, and update the customer information.<br/>
+        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a></li>
 </ul>
 
 
 <h5><a name="RESTAPIIntroduction-CustomerAddresses"></a>Customer Addresses</h5>
 
 <ul>
-	<li>Retrieve the list of customer addresses, create, update, and delete the customer address.<br/>
-<b>Resource Structure</b>: <a href="http://magentohost/api/rest/customers/:customerId/addresses">http://magentohost/api/rest/customers/:customerId/addresses</a></li>
+    <li>Retrieve the list of customer addresses, create, update, and delete the customer address.<br/>
+        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/customers/:customerId/addresses">http://magentohost/api/rest/customers/:customerId/addresses</a></li>
 </ul>
 
 
 <h5><a name="RESTAPIIntroduction-Inventory"></a>Inventory</h5>
 
 <ul>
-	<li>Retrieve the list of stock items and update required stock items.<br/>
-<b>Resource Structure</b>: <a href="http://magentohost/api/rest/stockitems">http://magentohost/api/rest/stockitems</a></li>
+    <li>Retrieve the list of stock items and update required stock items.<br/>
+        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/stockitems">http://magentohost/api/rest/stockitems</a></li>
 </ul>
 
 
 <h5><a name="RESTAPIIntroduction-SalesOrders"></a>Sales Orders</h5>
 
 <ul>
-	<li>Retrieve the list of sales orders as well as the specific order information.<br/>
-<b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders">http://magentohost/api/rest/orders</a></li>
+    <li>Retrieve the list of sales orders as well as the specific order information.<br/>
+        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders">http://magentohost/api/rest/orders</a></li>
 </ul>
 
 
 <h6><a name="RESTAPIIntroduction-OrderItems"></a>Order Items</h6>
 
 <ul>
-	<li>Retrieve order items for the specific order.<br/>
-<b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders/:orderId/items">http://magentohost/api/rest/orders/:orderId/items</a></li>
+    <li>Retrieve order items for the specific order.<br/>
+        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders/:orderId/items">http://magentohost/api/rest/orders/:orderId/items</a></li>
 </ul>
 
 
 <h6><a name="RESTAPIIntroduction-OrderAddresses"></a>Order Addresses</h6>
 
 <ul>
-	<li>Retrieve information on order billing and shipping addresses for the specific order.<br/>
-<b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders/:orderId/addresses">http://magentohost/api/rest/orders/:orderId/addresses</a></li>
+    <li>Retrieve information on order billing and shipping addresses for the specific order.<br/>
+        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders/:orderId/addresses">http://magentohost/api/rest/orders/:orderId/addresses</a></li>
 </ul>
 
 
 <h6><a name="RESTAPIIntroduction-OrderComments"></a>Order Comments</h6>
 
 <ul>
-	<li>Retrieve order comments for the specific order<br/>
-<b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders/:orderId/comments">http://magentohost/api/rest/orders/:orderId/comments</a></li>
+    <li>Retrieve order comments for the specific order<br/>
+        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders/:orderId/comments">http://magentohost/api/rest/orders/:orderId/comments</a></li>
 </ul>
 
 
@@ -216,16 +212,16 @@ title: Introduction to the Magento 1.x REST API
 <p>These steps are required for utilizing REST API resources:</p>
 
 <ol>
-	<li>Set up permissions for REST resource operations from Magento Admin Panel.</li>
-	<li>Configure the attributes for different users types in Magento Admin Panel. There are 3 different types of users in accessing the data: Admin, Customer, and Guest. Admin is the backend logged in user, Customer is the fronted logged in user, and Guest is a non-logged in fronted user.</li>
+    <li>Set up permissions for REST resource operations from Magento Admin Panel.</li>
+    <li>Configure the attributes for different users types in Magento Admin Panel. There are 3 different types of users in accessing the data: Admin, Customer, and Guest. Admin is the backend logged in user, Customer is the fronted logged in user, and Guest is a non-logged in fronted user.</li>
 </ol>
 
 
 <h3><a name="RESTAPIIntroduction-PreparingRESTAPIfortheThirdPartyApplication"></a>Preparing REST API for the Third-Party Application</h3>
 
 <ol>
-	<li>Register the third-party application (Consumer) in Magento Admin Panel.</li>
-	<li>The third-party application will utilize the provided consumer credentials to call Magento store for getting the access token to access the data.</li>
+    <li>Register the third-party application (Consumer) in Magento Admin Panel.</li>
+    <li>The third-party application will utilize the provided consumer credentials to call Magento store for getting the access token to access the data.</li>
 </ol>
 
 
@@ -237,7 +233,7 @@ title: Introduction to the Magento 1.x REST API
 <h4><a name="RESTAPIIntroduction-CreateasimpleproductasanAdminuserwithOAuthauthentication"></a>Create a simple product as an Admin user with OAuth authentication</h4>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+    <div id="root">
 		<pre class="theme: Default; brush: php; gutter: false">&lt;?php
 /**
 * Example of simple product POST using Admin account via Magento REST API. OAuth authorization is used
@@ -296,13 +292,13 @@ try {
 } catch (OAuthException $e) {
     print_r($e);
 }</pre>
-		</div>
+    </div>
 </div></div>
 
 <h4><a name="RESTAPIIntroduction-RetrievethelistofproductsasaCustomeruserwithOAuthauthentication"></a>Retrieve the list of products as a Customer user with OAuth authentication</h4>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+    <div id="root">
 		<pre class="theme: Default; brush: php; gutter: false">&lt;?php
 /**
  * Example of products list retrieve using Customer account via Magento REST API. OAuth authorization is used
@@ -348,7 +344,7 @@ try {
 } catch (OAuthException $e) {
     print_r($e);
 }</pre>
-		</div>
+    </div>
 </div></div>
 
 <h3><a name="RESTAPIIntroduction-RESTClientExample"></a>REST Client Example</h3>
@@ -356,15 +352,15 @@ try {
 <p>Retrieving the list of Products as a Guest</p>
 
 <ol>
-	<li>Use the <a href="https://addons.mozilla.org/en-US/firefox/addon/restclient/">REST Client</a> that is a FireFox add-on. In the REST Client, in the <b>Method</b> drop-down list, select the <b>GET</b> option.</li>
-	<li>In the URL field, enter the following URL: <a href="http://magentohost/api/rest/products?limit=2">http://magentohost/api/rest/products?limit=2</a>.</li>
-	<li>Click <b>Send</b>. Information about the products will be displayed in the response body. Example in the XML format is as follows:</li>
+    <li>Use the <a href="https://addons.mozilla.org/en-US/firefox/addon/restclient/">REST Client</a> that is a FireFox add-on. In the REST Client, in the <b>Method</b> drop-down list, select the <b>GET</b> option.</li>
+    <li>In the URL field, enter the following URL: <a href="http://magentohost/api/rest/products?limit=2">http://magentohost/api/rest/products?limit=2</a>.</li>
+    <li>Click <b>Send</b>. Information about the products will be displayed in the response body. Example in the XML format is as follows:</li>
 </ol>
 
 
 <p><b>Example: XML</b></p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+    <div id="root">
 		<pre class="theme: Default; brush: java; gutter: false">&lt;?xml version="1.0"?&gt;
 &lt;magento_api&gt;
   &lt;data_item&gt;
@@ -406,7 +402,7 @@ The BlackBerry 8100 Pearl sports a large 240 x 260 screen that supports over 65,
     &lt;image_url&gt;http://magentohost/imageulr/blackberry.jpg&lt;/image_url&gt;
   &lt;/data_item&gt;
 &lt;/magento_api&gt;</pre>
-		</div>
+    </div>
 </div></div>
 
 <p><b>Additional Information</b></p>
@@ -414,18 +410,18 @@ The BlackBerry 8100 Pearl sports a large 240 x 260 screen that supports over 65,
 <p>You can define the limit of items returned in the response by passing the limit parameter. By default, 10 items are returned and the maximum number is 100 items. You can also define the page number by passing the page parameter. Example:</p>
 
 <div class="panel" style="border-width: 1px;"><div class="panelContent">
-<p><a href="http://magentohost/api/rest/products?page=2&amp;limit=20">http://magentohost/api/rest/products?page=2&amp;limit=20</a></p>
+    <p><a href="http://magentohost/api/rest/products?page=2&amp;limit=20">http://magentohost/api/rest/products?page=2&amp;limit=20</a></p>
 </div></div>
 
 <p>Authorization header will be required for Admin and Customer user types. The following parameters must be provided in the Authorization header for the call:</p>
 <ul>
-	<li>oauth_consumer_key - the Consumer Key value provided after the registration of the application.</li>
-	<li>oauth_nonce - a random value, uniquely generated by the application.</li>
-	<li>oauth_signature_method - name of the signature method used to sign the request. Can have one of the following values: HMAC-SHA1, RSA-SHA1, and PLAINTEXT.</li>
-	<li>oauth_signature - a generated value (signature).</li>
-	<li>oauth_timestamp - a positive integer, expressed in the number of seconds since January 1, 1970 00:00:00 GMT.</li>
-	<li>oauth_token - the oauth_token value (Request Token).</li>
-	<li>oauth_version - OAuth version.</li>
+    <li>oauth_consumer_key - the Consumer Key value provided after the registration of the application.</li>
+    <li>oauth_nonce - a random value, uniquely generated by the application.</li>
+    <li>oauth_signature_method - name of the signature method used to sign the request. Can have one of the following values: HMAC-SHA1, RSA-SHA1, and PLAINTEXT.</li>
+    <li>oauth_signature - a generated value (signature).</li>
+    <li>oauth_timestamp - a positive integer, expressed in the number of seconds since January 1, 1970 00:00:00 GMT.</li>
+    <li>oauth_token - the oauth_token value (Request Token).</li>
+    <li>oauth_version - OAuth version.</li>
 </ul>
 <br/>
 <?php include(__ROOT__ . 'footer.php'); ?>

@@ -1,8 +1,7 @@
 ---
-layout: m1x
+layout: m1x_soap
 title: Category Level
 ---
-<p><a href="{{ site.m1xgithuburl }}api/soap/catalog/catalogCategory/catalog_category.info.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
 				    
 <h2><a name="catalog_category.level-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
@@ -34,94 +33,91 @@ title: Category Level
 
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> website </td>
-<td class='confluenceTd'> Website ID or code (optional) </td>
+<td> string </td>
+<td> website </td>
+<td> Website ID or code (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> storeView </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> storeView </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> parentCategory </td>
-<td class='confluenceTd'> Parent category ID (optional) </td>
+<td> string </td>
+<td> parentCategory </td>
+<td> Parent category ID (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> tree </td>
-<td class='confluenceTd'> Array of CatalogCategoryEntitiesNoChildren </td>
+<td> array </td>
+<td> tree </td>
+<td> Array of CatalogCategoryEntitiesNoChildren </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>CatalogCategoryEntitityNoChildren</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> category_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category ID </td>
+<td> int </td>
+<td> category_id <br class="atl-forced-newline" /> </td>
+<td> Category ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Parent category ID </td>
+<td> int </td>
+<td> parent_id <br class="atl-forced-newline" /> </td>
+<td> Parent category ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category name </td>
+<td> string </td>
+<td> name <br class="atl-forced-newline" /> </td>
+<td> Category name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the category is active </td>
+<td> int </td>
+<td> is_active <br class="atl-forced-newline" /> </td>
+<td> Defines whether the category is active </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> position <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category position </td>
+<td> int </td>
+<td> position <br class="atl-forced-newline" /> </td>
+<td> Category position </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> level <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category level </td>
+<td> int </td>
+<td> level <br class="atl-forced-newline" /> </td>
+<td> Category level </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="catalog_category.level-Examples"></a>Examples</h4>
@@ -181,4 +177,3 @@ var_dump($result);</pre>
 		</div>
 </div></div>
 
-<?php include(__ROOT__ . 'footer.php'); ?>		    

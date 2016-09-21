@@ -5,7 +5,8 @@ subgroup: Architectural Basics
 title:  Stack basics
 menu_title: Stack basics
 menu_order: 2
-github_link: extension-dev-guide/stack-basics
+version: 2.0
+github_link: architecture/stack-basics.md
 ---
 <h2>Stack basics</h2>
 
@@ -15,9 +16,9 @@ github_link: extension-dev-guide/stack-basics
 <h3>Related topics</h3>
 
 
-<a href="{{ site.gdeurl }}architecture/tech-stack.html">Technology stack</a>
+<a href="{{page.baseurl}}architecture/tech-stack.html">Technology stack</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
 
 
 

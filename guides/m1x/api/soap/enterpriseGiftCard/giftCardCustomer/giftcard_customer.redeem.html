@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - giftcard_customer.redeem';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Customer Redeem
+---
 
-				    <h3><a name="giftcard_customer.redeem-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
+<h3><a name="giftcard_customer.redeem-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
 
 <h4><a name="giftcard_customer.redeem-Resource%3Agiftcardcustomer"></a>Resource: giftcard_customer</h4>
 
@@ -19,78 +19,75 @@
 <p>Allows you to redeem amount from a giftcard to the customer store credit.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> code </td>
-<td class='confluenceTd'> Gift card code </td>
+<td> string </td>
+<td> code </td>
+<td> Gift card code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> customer_id </td>
-<td class='confluenceTd'> Customer ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> customer_id </td>
+<td> Customer ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> store_id </td>
-<td class='confluenceTd'> Store view ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> store_id </td>
+<td> Store view ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> True if the amount is redeemed </td>
+<td> boolean </td>
+<td> True if the amount is redeemed </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 100 </td>
-<td class='confluenceTd'> Gift card does not exists. </td>
+<td> 100 </td>
+<td> Gift card does not exists. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Gift card is not valid. </td>
+<td> 101 </td>
+<td> Gift card is not valid. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 103 </td>
-<td class='confluenceTd'> Redemption functionality is disabled. </td>
+<td> 103 </td>
+<td> Redemption functionality is disabled. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Unable to redeem gift card. </td>
+<td> 104 </td>
+<td> Unable to redeem gift card. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="giftcard_customer.redeem-Examples"></a>Examples</h4>

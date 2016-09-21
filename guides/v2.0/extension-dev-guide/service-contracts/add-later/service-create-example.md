@@ -14,14 +14,14 @@ title: Create a service - example
          </div>
          <div class="col-xs-9" role="main">
             <div class="bs-docs-section">
-               <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-create-example.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+               <p><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-create-example.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
                <p>Create a service - example.</p>
                              <h3 id="related-topics">Related topics</h3>
                <ul>
-                    <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
+                    <li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
                   </li>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
+                  <li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+                  <li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
                   </li>
                </ul>
             </div>

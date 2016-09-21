@@ -1,7 +1,7 @@
-<?php
-    $title = 'Magento API - SOAP - Cart Payment';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Cart Payment
+---
 				    
 				    <h2><a name="MAPI-CartPayment-Module%3AMageCheckout"></a>Module: Mage_Checkout</h2>
 
@@ -22,43 +22,42 @@
 
 <h4><a name="MAPI-CartPayment-Faults"></a>Faults</h4>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> <font color="#555555">Fault Code</font> </th>
-<th class='confluenceTh'> <font color="#555555">Fault Message</font> </th>
+<th> <font color="#555555">Fault Code</font> </th>
+<th> <font color="#555555">Fault Message</font> </th>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1001</font> </td>
-<td class='confluenceTd'> <font color="#555555">Can not make operation because store is not exists</font> </td>
+<td> <font color="#555555">1001</font> </td>
+<td> <font color="#555555">Can not make operation because store is not exists</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1002</font> </td>
-<td class='confluenceTd'> <font color="#555555">Can not make operation because quote is not exists</font> </td>
+<td> <font color="#555555">1002</font> </td>
+<td> <font color="#555555">Can not make operation because quote is not exists</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1071</font> </td>
-<td class='confluenceTd'> <font color="#555555">Payment method data is empty.</font> </td>
+<td> <font color="#555555">1071</font> </td>
+<td> <font color="#555555">Payment method data is empty.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1072</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer’s billing address is not set. Required for payment method data.</font> </td>
+<td> <font color="#555555">1072</font> </td>
+<td> <font color="#555555">Customer’s billing address is not set. Required for payment method data.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1073</font> </td>
-<td class='confluenceTd'> <font color="#555555">Customer’s shipping address is not set. Required for payment method data.</font> </td>
+<td> <font color="#555555">1073</font> </td>
+<td> <font color="#555555">Customer’s shipping address is not set. Required for payment method data.</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1074</font> </td>
-<td class='confluenceTd'> <font color="#555555">Payment method is not allowed</font> </td>
+<td> <font color="#555555">1074</font> </td>
+<td> <font color="#555555">Payment method is not allowed</font> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> <font color="#555555">1075</font> </td>
-<td class='confluenceTd'> <font color="#555555">Payment method is not set.</font> </td>
+<td> <font color="#555555">1075</font> </td>
+<td> <font color="#555555">Payment method is not set.</font> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

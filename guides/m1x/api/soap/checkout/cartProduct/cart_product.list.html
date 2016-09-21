@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - cart_product.list';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Product List
+---
 
-				    <h2><a name="cart_product.list-MageCheckout"></a>Mage_Checkout</h2>
+<h2><a name="cart_product.list-MageCheckout"></a>Mage_Checkout</h2>
 
 
 <h3><a name="cart_product.list-Module%3AShoppingCartAPI"></a>Module: Shopping Cart API</h3>
@@ -22,94 +22,91 @@
 <p>Allows you to retrieve the list of products in the shopping cart (quote).</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> quoteId </td>
-<td class='confluenceTd'> Shopping cart ID </td>
+<td> int </td>
+<td> quoteId </td>
+<td> Shopping cart ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store </td>
-<td class='confluenceTd'> Store view ID or code (optional) </td>
+<td> string </td>
+<td> store </td>
+<td> Store view ID or code (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of shoppingCartProductResponseEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of shoppingCartProductResponseEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>shoppingCartProductResponseEntity</b> (<b>catalogProductEntity</b>) content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> product_id </td>
-<td class='confluenceTd'> Product ID </td>
+<td> string </td>
+<td> product_id </td>
+<td> Product ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product SKU </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> sku <br class="atl-forced-newline" /> </td>
+<td> Product SKU </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product name </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> name <br class="atl-forced-newline" /> </td>
+<td> Product name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> set <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product attribute set </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> set <br class="atl-forced-newline" /> </td>
+<td> Product attribute set </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product type </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> type <br class="atl-forced-newline" /> </td>
+<td> Product type </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> category_ids <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of category IDs </td>
+<td> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td> category_ids <br class="atl-forced-newline" /> </td>
+<td> Array of category IDs </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> website_ids <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of website IDs </td>
+<td> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td> website_ids <br class="atl-forced-newline" /> </td>
+<td> Array of website IDs </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Faults:</b></p>
 

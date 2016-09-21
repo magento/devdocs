@@ -6,6 +6,7 @@ title: Translations overview
 menu_title: Translations
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: frontend-dev-guide/translations/xlate.md
 redirect_from: 
   - /guides/v1.0/architecture/behavior/xlate.html
@@ -36,7 +37,7 @@ A *translation dictionary* is a comma-separated value (.csv) file with at least 
 A *language package* is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. <a href="#m2devgde-xlate-languagepack">More information about language packages</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>To create a language package, the .csv file requires additional columns that specify the themes or modules in which the translations were found. For more information, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>.</p>
+  <p>To create a language package, the .csv file requires additional columns that specify the themes or modules in which the translations were found. For more information, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>.</p>
 </div>
 
 ### Benefits
@@ -50,7 +51,7 @@ Benefits include:
 		This is intended to be used and distributed as a standalone component (similar to modules and themes).
 
 *	You can use the ready-to-use language packages prepared by other users or you can create your own.
-*	You can create localizations based on existing, or parent, translations using <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework">language inheritance</a>. Inheritance means (among other things) that if you missed or omitted localizing some phrases or terms, parent translations are used.
+*	You can create localizations based on existing, or parent, translations using <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework">language inheritance</a>. Inheritance means (among other things) that if you missed or omitted localizing some phrases or terms, parent translations are used.
 *	You can customize your translations even further by creating more than one version of a translation for the same language.
 
 Depending on your needs, you can use the existing <a href="#m2devgde-xlate-languagepack">language packages</a> or <a href="#m2devgde-xlate-translating">translate Magento by yourself</a>.
@@ -64,16 +65,26 @@ Changes made:
 ### More information
 See one of the following sections for more information:
 
+* <a href="#m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</a>
 *	<a href="#m2devgde-xlate-translating">Manually translate words and phrases</a>
 *	<a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a>
 *	<a href="#m2devgde-xlate-languagepack">Language packages</a>
 
+<h2 id="m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</h2>
+
+You might need to add a dictionary for the default language (en_US) in the following cases:
+
+- if you want to replace certain strings from the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html">parent theme</a>. For example, use "Compare" instead of "Add to Compare".
+- if you want your theme to be ready for localization. 
+
+For practical illustration of creating a dictionary for a theme for both cases, see the <a href="{{page.baseurl}}frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic.
+
 <h2 id="m2devgde-xlate-translating">Manually translate words and phrases</h2>
 Translating the names, titles and phrases used in Magento involves the following steps:
 
-1.	Generate a dictionary of your instance using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">translation dictionary tool</a>.
+1.	Generate a dictionary of your instance using the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">translation dictionary tool</a>.
 2.	Translate the terms.
-2.	If desired, package your translations in a <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack">language package</a>.
+2.	If desired, package your translations in a <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack">language package</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Only one variant of translation can be used for a word or phrase in a package. Otherwise, Magento returns an error.</p>
@@ -87,8 +98,6 @@ Magento translates words and phrases when all of the following conditions are me
 *	The Magento code base has the necessary translation dictionaries for a language
 *	This language is configured by the store administrator to be used in specified scope (that is, storefront)
 
-In a dictionary, every phrase is used only once even if belongs to different modules or themes. The only exception to this is when a duplicate phrase belongs to one or more modules and a themes at the same time.
-
 The Magento application automatically assembles translation dictionaries located in modules' `i18n` directory into a dictionary per language. For example, Brazilian Portuguese (`pt_BR`) translation dictionaries might be located in module and theme directories similar to the following:
 
 	app/code/Magento/Checkout/i18n/pt_BR.csv
@@ -97,7 +106,7 @@ The Magento application automatically assembles translation dictionaries located
 Assembling the preceding `pt_BR.csv` files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).
 
 <h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
-<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">More information about the dictionary generator tool</a>.
+<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">More information about the dictionary generator tool</a>.
 
 <h2 id="m2devgde-xlate-languagepack">Language packages</h2>
 Magento enables you to create the following types of language packages:
@@ -140,6 +149,6 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 
 #### Next step
 
-To create translation dictionaries and language packages, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and packages</a>.
+To create translation dictionaries and language packages, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and packages</a>.
 
 

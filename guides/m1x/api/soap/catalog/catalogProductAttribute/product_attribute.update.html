@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_attribute.update';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Attribute Update
+---
 
-				    <h3><a name="product_attribute.update-Module%3AProductAttributesAPI"></a>Module: Product Attributes API</h3>
+<h3><a name="product_attribute.update-Module%3AProductAttributesAPI"></a>Module: Product Attributes API</h3>
 
 <h4><a name="product_attribute.update-Resource%3Aproductattribute"></a>Resource: product_attribute</h4>
 
@@ -19,298 +19,288 @@
 <p>Allows you to update the required attribute.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> attribute <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Attribute code or ID </td>
+<td> string </td>
+<td> attribute <br class="atl-forced-newline" /> </td>
+<td> Attribute code or ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> data </td>
-<td class='confluenceTd'> Array of catalogProductAttributeEntityToUpdate </td>
+<td> array </td>
+<td> data </td>
+<td> Array of catalogProductAttributeEntityToUpdate </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> True if the attribute is updated </td>
+<td> boolean </td>
+<td> True if the attribute is updated </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductAttributeEntityToUpdate</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> scope <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Attribute scope. Possible values are as follows: 'store', 'website', or 'global' <br class="atl-forced-newline" /> </td>
+<td> string </td>
+<td> scope <br class="atl-forced-newline" /> </td>
+<td> Attribute scope. Possible values are as follows: 'store', 'website', or 'global' <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> default_value <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Attribute default value </td>
+<td> string </td>
+<td> default_value <br class="atl-forced-newline" /> </td>
+<td> Attribute default value </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_unique <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the attribute is unique </td>
+<td> int </td>
+<td> is_unique <br class="atl-forced-newline" /> </td>
+<td> Defines whether the attribute is unique </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_required <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the attribute is required </td>
+<td> int </td>
+<td> is_required <br class="atl-forced-newline" /> </td>
+<td> Defines whether the attribute is required </td>
 </tr>
 <tr>
-<td class='confluenceTd'> ArrayOfString </td>
-<td class='confluenceTd'> apply_to <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Apply to. Empty for "Apply to all" or array of the following possible values: 'simple', 'grouped', 'configurable', 'virtual', 'bundle', 'downloadable', 'giftcard' <br class="atl-forced-newline" /> </td>
+<td> ArrayOfString </td>
+<td> apply_to <br class="atl-forced-newline" /> </td>
+<td> Apply to. Empty for "Apply to all" or array of the following possible values: 'simple', 'grouped', 'configurable', 'virtual', 'bundle', 'downloadable', 'giftcard' <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_configurable <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the attribute can be used for configurable products </td>
+<td> int </td>
+<td> is_configurable <br class="atl-forced-newline" /> </td>
+<td> Defines whether the attribute can be used for configurable products </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_searchable <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the attribute can be used in Quick Search <br class="atl-forced-newline" /> </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> is_searchable <br class="atl-forced-newline" /> </td>
+<td> Defines whether the attribute can be used in Quick Search <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_visible_in_advanced_search <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the attribute can be used in Advanced Search <br class="atl-forced-newline" /> </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> is_visible_in_advanced_search <br class="atl-forced-newline" /> </td>
+<td> Defines whether the attribute can be used in Advanced Search <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_comparable <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the attribute can be compared on the frontend <br class="atl-forced-newline" /> </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> is_comparable <br class="atl-forced-newline" /> </td>
+<td> Defines whether the attribute can be compared on the frontend <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_used_for_promo_rules <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the attribute can be used for promo rules <br class="atl-forced-newline" /> </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> is_used_for_promo_rules <br class="atl-forced-newline" /> </td>
+<td> Defines whether the attribute can be used for promo rules <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> is_visible_on_front <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the attribute can be visible on the frontend <br class="atl-forced-newline" /> </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> is_visible_on_front <br class="atl-forced-newline" /> </td>
+<td> Defines whether the attribute can be visible on the frontend <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> used_in_product_listing <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Defines whether the attribute can be used in product listing <br class="atl-forced-newline" /> </td>
+<td> int <br class="atl-forced-newline" /> </td>
+<td> used_in_product_listing <br class="atl-forced-newline" /> </td>
+<td> Defines whether the attribute can be used in product listing <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> associativeArray </td>
-<td class='confluenceTd'> additional_fields <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of additional fields </td>
+<td> associativeArray </td>
+<td> additional_fields <br class="atl-forced-newline" /> </td>
+<td> Array of additional fields </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> frontend_label <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductAttributeFrontendLabel </td>
+<td> array </td>
+<td> frontend_label <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductAttributeFrontendLabel </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>AdditionaFieldsEntity</b> array of additional fields for the <b>text</b> type is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> frontend_class </td>
-<td class='confluenceTd'> Input Validation for Store Owner. Possible values: 'validate-number' (Decimal Number), 'validate-digits' (Integer Number), 'validate-email', 'validate-url', 'validate-alpha' (Letters), 'validate-alphanum' (Letters (a-z, A-Z), or Numbers (0-9)) </td>
+<td> string </td>
+<td> frontend_class </td>
+<td> Input Validation for Store Owner. Possible values: 'validate-number' (Decimal Number), 'validate-digits' (Integer Number), 'validate-email', 'validate-url', 'validate-alpha' (Letters), 'validate-alphanum' (Letters (a-z, A-Z), or Numbers (0-9)) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> is_html_allowed_on_front </td>
-<td class='confluenceTd'> Defines whether the HTML tags are allowed on the frontend <br class="atl-forced-newline" /> </td>
+<td> boolean </td>
+<td> is_html_allowed_on_front </td>
+<td> Defines whether the HTML tags are allowed on the frontend <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> used_for_sort_by </td>
-<td class='confluenceTd'> Defines whether it is used for sorting in product listing <br class="atl-forced-newline" /> </td>
+<td> boolean </td>
+<td> used_for_sort_by </td>
+<td> Defines whether it is used for sorting in product listing <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>AdditionaFieldsEntity</b> array of additional fields for the <b>text area</b> type is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> is_wysiwyg_enabled </td>
-<td class='confluenceTd'> Enable WYSIWYG flag </td>
+<td> boolean </td>
+<td> is_wysiwyg_enabled </td>
+<td> Enable WYSIWYG flag </td>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> is_html_allowed_on_front </td>
-<td class='confluenceTd'> Defines whether the HTML tags are allowed on the frontend <br class="atl-forced-newline" /> </td>
+<td> boolean </td>
+<td> is_html_allowed_on_front </td>
+<td> Defines whether the HTML tags are allowed on the frontend <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>AdditionaFieldsEntity</b> array of additional fields for the <b>date</b> and <b>boolean</b> types is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> used_for_sort_by </td>
-<td class='confluenceTd'> Defines whether it is used for sorting in product listing <br class="atl-forced-newline" /> </td>
+<td> boolean </td>
+<td> used_for_sort_by </td>
+<td> Defines whether it is used for sorting in product listing <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>AdditionaFieldsEntity</b> array of additional fields for the <b>multiselect</b> type is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> is_filterable </td>
-<td class='confluenceTd'> Defines whether it used in layered navigation <br class="atl-forced-newline" /> </td>
+<td> boolean </td>
+<td> is_filterable </td>
+<td> Defines whether it used in layered navigation <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> is_filterable_in_search </td>
-<td class='confluenceTd'> Defines whether it is used in search results layered navigation <br class="atl-forced-newline" /> </td>
+<td> boolean </td>
+<td> is_filterable_in_search </td>
+<td> Defines whether it is used in search results layered navigation <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> integer </td>
-<td class='confluenceTd'> position </td>
-<td class='confluenceTd'> Position </td>
+<td> integer </td>
+<td> position </td>
+<td> Position </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>AdditionaFieldsEntity</b> array of additional fields for the <b>select</b> and <b>price</b> types is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> is_filterable </td>
-<td class='confluenceTd'> Defines whether it used in layered navigation <br class="atl-forced-newline" /> </td>
+<td> boolean </td>
+<td> is_filterable </td>
+<td> Defines whether it used in layered navigation <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> is_filterable_in_search </td>
-<td class='confluenceTd'> Defines whether it is used in search results layered navigation <br class="atl-forced-newline" /> </td>
+<td> boolean </td>
+<td> is_filterable_in_search </td>
+<td> Defines whether it is used in search results layered navigation <br class="atl-forced-newline" /> </td>
 </tr>
 <tr>
-<td class='confluenceTd'> integer </td>
-<td class='confluenceTd'> position </td>
-<td class='confluenceTd'> Position </td>
+<td> integer </td>
+<td> position </td>
+<td> Position </td>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> used_for_sort_by </td>
-<td class='confluenceTd'> Defines whether it is used for sorting in product listing <br class="atl-forced-newline" /> </td>
+<td> boolean </td>
+<td> used_for_sort_by </td>
+<td> Defines whether it is used for sorting in product listing <br class="atl-forced-newline" /> </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductAttributeFrontendLabel</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store_id </td>
-<td class='confluenceTd'> Store ID </td>
+<td> string </td>
+<td> store_id </td>
+<td> Store ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> label </td>
-<td class='confluenceTd'> Text label </td>
+<td> string </td>
+<td> label </td>
+<td> Text label </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Requested attribute not found. </td>
+<td> 101 </td>
+<td> Requested attribute not found. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 105 </td>
-<td class='confluenceTd'> Unable to save attribute. </td>
+<td> 105 </td>
+<td> Unable to save attribute. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 107 </td>
-<td class='confluenceTd'> This attribute cannot be edited. </td>
+<td> 107 </td>
+<td> This attribute cannot be edited. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="product_attribute.update-Examples"></a>Examples</h4>
@@ -409,4 +399,4 @@ var_dump ($orders);
 
 
 				    
-<?php include(__ROOT__ . 'footer.php'); ?>                    			    
+Create the Magento file system owner                   			    

@@ -1,11 +1,12 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Z_Other issues
+subgroup: 20_other
 title: Error 'MySQL server has gone away' during installation
 menu_title: Error 'MySQL server has gone away' during installation
 menu_node: 
-menu_order: 25 
+menu_order: 505 
+version: 2.0
 github_link: install-gde/trouble/tshoot_mysql_table-open-cache.md
 ---
 

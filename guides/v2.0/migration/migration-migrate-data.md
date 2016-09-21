@@ -1,11 +1,12 @@
 ---
 layout: default
 group:  migration
-subgroup: Migrate using data migration tool
-title: Migrate Data
-menu_title: Migrate Data
+subgroup: D_Migrate using the data migration tool
+title: Migrate data
+menu_title: Migrate data
 menu_node:
 menu_order: 2
+version: 2.0
 github_link: migration/migration-migrate-data.md
 redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 ---
@@ -21,10 +22,23 @@ If you encounter such an error, you can:
 
 After resolving issues, run the Data Migration Tool again.
 
-To run the Data Migration Tool, use the following command:
+<h2 id="migrate-first">First steps</h2>
+{% include install/first-steps-cli.html %}
 
-	cd <your Magento 2 install dir>/vendor/magento/data-migration-tool/bin
-	php migrate data --config=<path to config.xml> [--reset]
+In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+
+<h2 id="migrate-data-cmd">Run the data migration command</h2>
+To migrate data, use the following command:
+
+Command usage:
+
+	bin/magento migrate:data [-r|--reset] {<path to config.xml>}
+
+where
+
+`{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
+
+`[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -32,6 +46,6 @@ To run the Data Migration Tool, use the following command:
   <p>To force the Data Migration Tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
 </div>
 
-###Related topics
+### Related topics
 
-* <a href="{{ site.gdeurl }}migration/migration-migrate-delta.html">Migrate changes</a>
+* <a href="{{page.baseurl}}migration/migration-migrate-delta.html">Migrate changes</a>

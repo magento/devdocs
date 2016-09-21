@@ -1,0 +1,33 @@
+<p>For the installation to work properly, all files written by Composer *must* be owned by the web server user. There are at least two ways to do this:</p>
+<ul><li>Run Composer as the web server user as discussed in this section</li>
+	<li>Run Composer as another user and change file ownership afterward (more secure)</li></ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>We suggest running Composer in a web server shell in a development environment <em>only</em>. In a more secure environment, you should change ownership to the web server user after you run Composer.</p></span>
+</div>
+
+<p>In the discussion that follows, it's assumed that the CentOS web server user is <code>apache</code> and the Ubuntu web server user is </code>www-data</code>.</p>
+
+<h3 id="install-update-depend-apache-ubuntu">Ubuntu</h3>
+<p>To switch to the web server user on Ubuntu:</p>
+<ol><li>Enter the following command:
+<pre>su www-data</pre></li>
+<li>If a password prompt displays but you don't know the user's password, continue with the next step; otherwise, continue with <a href="#install-composer-install">Running Composer to update dependencies</a>.</li>
+<li>To enable the <code>www-data</code> user's shell and to set a password, enter the following command:
+<pre>sudo chsh -s /bin/bash www-data &amp;&amp; sudo passwd www-data</pre></li>
+<li>Enter the following command again and enter the user's password:</li>
+<pre>su www-data</pre>
+<li>Continue with <a href="#install-composer-install">Running Composer to update dependencies</a>.</li></ol>
+
+<h3 id="install-update-depend-apache-centos">CentOS</h3>
+<p>To switch to the web server user on CentOS:</p>
+<ol><li>Enter the following command:
+<pre>su - apache</pre>
+If you don't know the user's password or if the following error displays, continue with the next step; otherwise, continue with <a href="#install-composer-install">Running Composer to update dependencies</a>.
+<pre>This account is currently not available.</pre></li>
+<li>To give <code>apache</code> a valid shell account so you can switch to it, enter the following command:
+<pre>sudo chsh -s /bin/bash apache &amp;&amp; sudo passwd apache</pre></li>
+<li>Run the following command again; this time, it should work:
+<pre>su - apache</pre></li>
+<li>Continue with the next section.</li></ol>

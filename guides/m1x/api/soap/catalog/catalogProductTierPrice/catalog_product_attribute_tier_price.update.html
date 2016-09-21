@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - catalog_product_attribute_tier_price.update';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Product Attribute Tier Price Update
+---
 
-				    <h2><a name="catalog_product_attribute_tier_price.update-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+<h2><a name="catalog_product_attribute_tier_price.update-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
 
 
 <h4><a name="catalog_product_attribute_tier_price.update-Resource%3Acatalogproductattributetierprice"></a>Resource: catalog_product_attribute_tier_price</h4>
@@ -34,84 +34,81 @@
 
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> product\productId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Product ID or SKU </td>
+<td> string </td>
+<td> product\productId <br class="atl-forced-newline" /> </td>
+<td> Product ID or SKU </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> tierPrices <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of catalogProductTierPriceEntity </td>
+<td> array </td>
+<td> tierPrices <br class="atl-forced-newline" /> </td>
+<td> Array of catalogProductTierPriceEntity </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> identifierType </td>
-<td class='confluenceTd'> Defines whether the product ID or SKU is passed in the 'product' parameter </td>
+<td> string </td>
+<td> identifierType </td>
+<td> Defines whether the product ID or SKU is passed in the 'product' parameter </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean\int </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> True (1) if the product tier price is updated </td>
+<td> boolean\int </td>
+<td> result </td>
+<td> True (1) if the product tier price is updated </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductTierPriceEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> customer_group_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Customer group ID </td>
+<td> string </td>
+<td> customer_group_id <br class="atl-forced-newline" /> </td>
+<td> Customer group ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> website <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Website </td>
+<td> string </td>
+<td> website <br class="atl-forced-newline" /> </td>
+<td> Website </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Quantity of items to which the price will be applied </td>
+<td> int </td>
+<td> qty <br class="atl-forced-newline" /> </td>
+<td> Quantity of items to which the price will be applied </td>
 </tr>
 <tr>
-<td class='confluenceTd'> double </td>
-<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Price that each item will cost </td>
+<td> double </td>
+<td> price <br class="atl-forced-newline" /> </td>
+<td> Price that each item will cost </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="catalog_product_attribute_tier_price.update-Examples"></a>Examples</h4>

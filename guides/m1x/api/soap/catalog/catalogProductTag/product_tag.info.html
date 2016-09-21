@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - catalog_product_tag.info';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Product Tag Info
+---
 
-				    <h3><a name="product_tag.info-Module%3ATagAPI"></a>Module: Tag API</h3>
+<h3><a name="product_tag.info-Module%3ATagAPI"></a>Module: Tag API</h3>
 
 <h4><a name="product_tag.info-Resource%3Acatalogproducttag"></a>Resource: catalog_product_tag</h4>
 
@@ -21,98 +21,94 @@
 <p>Allows you to retrieve information about the required product tag.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> tagId </td>
-<td class='confluenceTd'> Tag ID </td>
+<td> string </td>
+<td> tagId </td>
+<td> Tag ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> store </td>
-<td class='confluenceTd'> Store view code or ID </td>
+<td> string </td>
+<td> store </td>
+<td> Store view code or ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of catalogProductTagInfoEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of catalogProductTagInfoEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductTagInfoEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> name </td>
-<td class='confluenceTd'> Tag name </td>
+<td> string </td>
+<td> name </td>
+<td> Tag name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> status </td>
-<td class='confluenceTd'> Tag status </td>
+<td> string </td>
+<td> status </td>
+<td> Tag status </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> base_popularity </td>
-<td class='confluenceTd'> Tag base popularity for a specific store </td>
+<td> string </td>
+<td> base_popularity </td>
+<td> Tag base popularity for a specific store </td>
 </tr>
 <tr>
-<td class='confluenceTd'> associativeArray </td>
-<td class='confluenceTd'> products </td>
-<td class='confluenceTd'> Associative array of tagged products with related product ID as a key and popularity as a value </td>
+<td> associativeArray </td>
+<td> products </td>
+<td> Associative array of tagged products with related product ID as a key and popularity as a value </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 101 </td>
-<td class='confluenceTd'> Requested store does not exist. </td>
+<td> 101 </td>
+<td> Requested store does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 104 </td>
-<td class='confluenceTd'> Requested tag does not exist. </td>
+<td> 104 </td>
+<td> Requested tag does not exist. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="product_tag.info-Examples"></a>Examples</h4>

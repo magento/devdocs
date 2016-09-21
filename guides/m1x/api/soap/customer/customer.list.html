@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - customer.list';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Customer List
+---
 
-				    <h2><a name="customer.list-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
+<h2><a name="customer.list-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
 
 
 <h3><a name="customer.list-Resource%3Acustomer"></a>Resource: customer</h3>
@@ -20,144 +20,141 @@
 <p>Allows you to retrieve the list of customers.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> filters </td>
-<td class='confluenceTd'> Array of filters by customer attributes (optional) </td>
+<td> array </td>
+<td> filters </td>
+<td> Array of filters by customer attributes (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> storeView </td>
-<td class='confluenceTd'> Array of customerCustomerEntity </td>
+<td> array </td>
+<td> storeView </td>
+<td> Array of customerCustomerEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>customerCustomerEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> customer_id </td>
-<td class='confluenceTd'> ID of the customer </td>
+<td> int </td>
+<td> customer_id </td>
+<td> ID of the customer </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> created_at </td>
-<td class='confluenceTd'> Date when the customer was created </td>
+<td> string </td>
+<td> created_at </td>
+<td> Date when the customer was created </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> updated_at </td>
-<td class='confluenceTd'> Date of when the customer was updated </td>
+<td> string </td>
+<td> updated_at </td>
+<td> Date of when the customer was updated </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> increment_id </td>
-<td class='confluenceTd'> Increment ID </td>
+<td> string </td>
+<td> increment_id </td>
+<td> Increment ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> store_id </td>
-<td class='confluenceTd'> Store ID </td>
+<td> int </td>
+<td> store_id </td>
+<td> Store ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> website_id </td>
-<td class='confluenceTd'> Website ID </td>
+<td> int </td>
+<td> website_id </td>
+<td> Website ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> created_in </td>
-<td class='confluenceTd'> Created in </td>
+<td> string </td>
+<td> created_in </td>
+<td> Created in </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> email </td>
-<td class='confluenceTd'> Customer email </td>
+<td> string </td>
+<td> email </td>
+<td> Customer email </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> firstname </td>
-<td class='confluenceTd'> Customer first name </td>
+<td> string </td>
+<td> firstname </td>
+<td> Customer first name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> middlename </td>
-<td class='confluenceTd'> Customer middle name </td>
+<td> string </td>
+<td> middlename </td>
+<td> Customer middle name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> lastname </td>
-<td class='confluenceTd'> Customer last name </td>
+<td> string </td>
+<td> lastname </td>
+<td> Customer last name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> group_id </td>
-<td class='confluenceTd'> Group ID </td>
+<td> int </td>
+<td> group_id </td>
+<td> Group ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> prefix </td>
-<td class='confluenceTd'> Customer prefix </td>
+<td> string </td>
+<td> prefix </td>
+<td> Customer prefix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> suffix </td>
-<td class='confluenceTd'> Customer suffix </td>
+<td> string </td>
+<td> suffix </td>
+<td> Customer suffix </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> dob </td>
-<td class='confluenceTd'> Customer date of birth </td>
+<td> string </td>
+<td> dob </td>
+<td> Customer date of birth </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> taxvat </td>
-<td class='confluenceTd'> Taxvat value </td>
+<td> string </td>
+<td> taxvat </td>
+<td> Taxvat value </td>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean </td>
-<td class='confluenceTd'> confirmation </td>
-<td class='confluenceTd'> Confirmation flag </td>
+<td> boolean </td>
+<td> confirmation </td>
+<td> Confirmation flag </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> password_hash </td>
-<td class='confluenceTd'> Password hash </td>
+<td> string </td>
+<td> password_hash </td>
+<td> Password hash </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Note</b>: The password_hash parameter will only match exactly with the same MD5 and salt as was used when Magento stored the value. If you try to match with an unsalted MD5 hash, or any salt other than what Magento used, it will not match. This is just a straight string comparison.</p>
 

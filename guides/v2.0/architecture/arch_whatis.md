@@ -6,6 +6,7 @@ title: What is Magento?
 menu_title: Introduction
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: architecture/arch_whatis.md
 redirect_from: /guides/v1.0/architecture/arch_whatis.html
 ---
@@ -18,7 +19,7 @@ The essential principles of Magento’s powerful and highly scalable product arc
 
 <h3>OOP architecture and programming principles</h3> are inherent in Magento’s design. Object-Oriented Programming (OOP) design allows for maximum flexibility and extensibility of software components, permitting you to design and implement highly customized web sites. The advantages of OOP principles include incorporation of industry-standard programming design patterns and the strict separation of business logic from presentation. Object inheritance is important, too: In keeping with classic object-oriented programming methodology, the Magento platform provides core components with base functionality that can be inherited by custom components for a specific web site or application.
 
-<h3>Strongly layered product architecture</h3> supports the separation of visual presentation from business logic. This compartmentalization simplifies customization of store appearance and behavior. Architectural layers also provide programmers with a high level-model for understanding the most optimal placement of features and code in a complex system. Magento tweaks the classic Model-View-Controller architectural model, though: Files within modules are typically grouped by functionality rather than file type. 
+<h3>Strongly layered product architecture</h3> supports the separation of visual presentation from business logic. This compartmentalization simplifies customization of store appearance and behavior. Architectural layers also provide programmers with a high level-model for understanding the  optimal placement of features and code in a complex system. Magento tweaks the classic Model-View-Controller architectural model, though: Files within modules are typically grouped by functionality rather than file type. 
 
 The <i>Magento Framework</i> defines the fundamental concepts and rules for how the components of the web site can behave. The Magento framework contains libraries that modules access but no business logic components. It accepts HTTP requests and routes them to the appropriate module. 
 
@@ -52,19 +53,19 @@ Modules form the basic functional unit of a Magento system. Magento modules cont
 Extend and customize the core components of your Magento store's PHP-, HTML5- and CSS3- based default themes and language packages to precisely control your site’s behavior and look-and-feel.
  
  <h3>Strong stack of open-source technologies</h3>
-The Magento tech stack supplies a robust toolset for deploying large, distributed storefronts and for customizing the product for your particular needs. The Magento stack includes popular open-source technologies such as the Linux OS, Apache/Nginx server, MySQL, Zend, and Composer.For a comprehensive description of the Magento technology stack, see <a href="{{ site.gdeurl }}architecture/tech-stack.html">Magento Technology Stack</a>. 
+The Magento tech stack supplies a robust toolset for deploying large, distributed storefronts and for customizing the product for your particular needs. The Magento stack includes popular open-source technologies such as the Linux OS, Apache/Nginx server, MySQL, Zend, and Composer.
 
-With Magento 2.0, the Magento product architecture continues its evolution toward increased modularity.
+
+For a comprehensive description of the Magento technology stack, see <a href="{{page.baseurl}}architecture/tech-stack.html">Magento Technology Stack</a>. 
+
 
 
 <div class="bs-callout bs-callout-info" id="info">
 
-  <p>For more information about designing and extending the Magento components, refer to the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a>.</p>
+  <p>For more information about designing and extending the Magento components, refer to the <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>.</p>
 
 </div>
 
 
-<h3 id="m2arch-related">Related topics</h3>
 
-* <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
 

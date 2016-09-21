@@ -6,6 +6,7 @@ title: Authentication
 menu_title: Authentication
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: get-started/authentication/gs-authentication.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication.html
 ---
@@ -67,7 +68,7 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
 
 {% highlight XML %}
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <!-- Customer Group -->
     <route url="/V1/customerGroups/:id" method="GET">
         <service class="Magento\Customer\Api\GroupRepositoryInterface" method="getById"/>
@@ -133,7 +134,7 @@ Authorization is granted to either an administrator (or an integration) defined 
          <p>Mobile application</p>
       </td>
       <td>
-         <p>Registered users use <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-token.html">token-based authentication</a> to make web API calls using a mobile application. The token acts like an electronic key that provides access to the API(s).</p>
+         <p>Registered users use <a href="{{page.baseurl}}get-started/authentication/gs-authentication-token.html">token-based authentication</a> to make web API calls using a mobile application. The token acts like an electronic key that provides access to the API(s).</p>
          <ol>
             <li>
                <p>As a registered Magento user, you request a token from the Magento token service at the endpoint that is defined for your user type.</p>
@@ -155,7 +156,7 @@ Authorization is granted to either an administrator (or an integration) defined 
          <p>Third-party application</p>
       </td>
       <td>
-         <p>Third-party applications use <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> to access the web APIs.</p>
+         <p>Third-party applications use <a href="{{page.baseurl}}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> to access the web APIs.</p>
          <ol>
             <li>
                <p>The third-party Integration registers with Magento.</p>
@@ -171,7 +172,7 @@ Authorization is granted to either an administrator (or an integration) defined 
          <p>JavaScript widget on the Magento storefront or Magento Admin</p>
       </td>
       <td>
-         <p>Registered users use <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">session-based authentication</a> to log in to the Magento storefront or Magento Admin.</p>
+         <p>Registered users use <a href="{{page.baseurl}}get-started/authentication/gs-authentication-session.html">session-based authentication</a> to log in to the Magento storefront or Magento Admin.</p>
          <p>A session is identified by a cookie and time out after a period of inactivity. Additionally, you can have a session as a guest user without logging in.</p>
          <ol>
             <li>
@@ -188,10 +189,10 @@ Authorization is granted to either an administrator (or an integration) defined 
 <h2 id="next-step-auth">Next step</h2>
 <p>Proceed to the authentication method for your preferred client:</p>
 <ul>
-   <li>Mobile application. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</li>
-   <li>Third-party application. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>.</li>
-   <li>JavaScript widget on the Magento Admin or storefront. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">Session-based authentication</a>.</li>
+   <li>Mobile application. <a href="{{page.baseurl}}get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</li>
+   <li>Third-party application. <a href="{{page.baseurl}}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>.</li>
+   <li>JavaScript widget on the Magento Admin or storefront. <a href="{{page.baseurl}}get-started/authentication/gs-authentication-session.html">Session-based authentication</a>.</li>
 </ul>
 
 <h2 id="related">Related topics</h2>
-<a href="{{ site.gdeurl }}extension-dev-guide/attributes.html">Extension attribute authentication</a>
+<a href="{{page.baseurl}}extension-dev-guide/attributes.html">Extension attribute authentication</a>

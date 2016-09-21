@@ -1,11 +1,12 @@
 ---
 layout: default
 group:  migration
-subgroup: Data migration tool
+subgroup: C_Data migration tool
 title: Data migration tool
 menu_title: Data migration tool
 menu_node: parent
 menu_order: 3
+version: 2.0
 github_link: migration/migration-tool.md
 redirect_from: /guides/v1.0/migration/migration-tool.html
 ---

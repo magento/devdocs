@@ -6,6 +6,7 @@ title: Prerequisites
 menu_node: parent
 menu_title: Prerequisites
 menu_order: 1
+version: 2.0
 github_link: install-gde/prereq/prereq-overview.md
 redirect_from: /guides/v1.0/install-gde/prereq/prereq-overview.html
 ---
@@ -14,7 +15,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/prereq-overview.html
 
 Before you install Magento, you must do all of the following:
 
-*	Set up one or more hosts that meet the <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>.
+*	Set up one or more hosts that meet the <a href="{{page.baseurl}}install-gde/system-requirements.html">Magento system requirements</a>.
 *	If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
 *	Make sure you can back up your entire system at various points during the installation so you can roll back in the event of issues.
 
@@ -27,7 +28,7 @@ We strongly recommend you update and upgrade your operating system software. The
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Don't know what any of this means? Check out our <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">installation overview page</a>.</p></span>
+  <p>Don't know what any of this means? Check out our <a href="{{page.baseurl}}install-gde/bk-install-guide.html">installation overview page</a>.</p></span>
 </div>
 	
 
@@ -58,7 +59,7 @@ You must run Apache version 2.2 or 2.4 as the following result indicates:
 	Server version: Apache/2.2.15 (Unix)
 	Server built:   Jul 23 2014 14:17:29
 
-To install or upgrade Apache, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>.
+To install or upgrade Apache, see <a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>.
 	
 ### PHP
 
@@ -73,8 +74,8 @@ You must run PHP version 5.5 or later as the following result indicates:
 
 To install PHP, see:
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
 
 ### MySQL
 
@@ -100,21 +101,20 @@ You must run MySQL version 5.6 or later as the following result indicates:
 
 Enter `exit` at the `mysql>` prompt to exit.
 
-To install or upgrade MySQL, see <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>.
+To install or upgrade MySQL, see <a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>.
 
 #### Next step
-
-Either install <a href="{{ site.gdeurl }}install-gde/prereq/security.html">security-related software</a> or see <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a>.
+<a href="{{page.baseurl}}install-gde/bk-install-guide.html">Choose how to install the Magento software</a>
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	<a href="{{page.baseurl}}install-gde/system-requirements.html">Magento system requirements</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
+*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
 
 
 

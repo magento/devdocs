@@ -5,6 +5,7 @@ subgroup: Logical View
 title: Magento Framework
 menu_title: Magento Framework
 menu_order: 4
+version: 2.0
 github_link: architecture/archi_perspectives/framework.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/framework.html
 ---
@@ -118,7 +119,7 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
       </tr><tr>
          <td><code>Magento\Framework\Api</code>
          </td>
-         <td>Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data through Magento Connection extensions).</td>
+         <td>Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data using Magento Marketplace extensions).</td>
       </tr><tr>
          <td><code>Magento\Framework\Config</code>
          </td>
@@ -150,18 +151,19 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
          </td>
          <td>Contains the code that publishes synchronous events and that handles observers for any Magento event is handled here.
 </td>
-      </t>
+      </tr>
+<tr>
 
-         <td>
-         </td>
-         <tr>
          <td><code>Magento\Framework\Validator</code>
          </td>
          <td>Contains the code that validates data (currencies, not empty) and that handles observers for any Magento event.
 </td>
-      </t>
-
-         <td></td>
+      </tr>
+      <tr>
+      <td><code>Magento\Framework\Amqp</code></td>
+      <td><p>Enterprise Edition only.</p>
+      <p></p>Supports the Advanced Message Queuing Protocol, which is used by the Magento Message Queue Framework.</td>
+      </tr>
 </tbody>
 </table>
 

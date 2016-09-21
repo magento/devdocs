@@ -1,7 +1,8 @@
-<?php
-    $title = 'Magento API - SOAP - wsi_compliance';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: WS-I Compliance
+---
+
 <h3>WS-I Compliance Mode</h3>
 				    <p>Magento provides you with the ability to use two modes for SOAP API V2. These are with WS-I compliance mode enabled and WS-I compliance mode disabled. The first one was introduced to make the system flexible, namely, to increase compatibility with .NET and Java programming languages.</p>
 
@@ -9,7 +10,7 @@
 <ol>
 	<li>In the Magento Admin Panel, go to <b>System &gt; Configuration &gt; Magento Core API</b>.</li>
 	<li>In the WS-I Compliance drop-down, select <b>Yes</b> to enable the WS-I compliance mode and <b>No</b> to disable the WS-I compliance mode, correspondingly.<br/>
-<span class="image-wrap" style=""><img src="attachments/35497145/35619935.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/soap_wsi-config.png" style="border: 1px solid black"/></li>
 </ol>
 
 
@@ -17,12 +18,9 @@
 </p>
 
 <p>WSDL file with disabled WS-I compliance mode:<br/>
-<span class="image-wrap" style=""><img src="attachments/35497145/35619940.png" style="border: 1px solid black"/></span></p>
+<img src="{{ site.baseurl }}common/images/m1x/soap_wsdl.png" style="border: 1px solid black"/></p>
 
 <p>WSDL file with enabled WS-I compliance mode:<br/>
-<span class="image-wrap" style=""><img src="attachments/35497145/35619941.png" style="border: 1px solid black"/></span></p>
+<img src="{{ site.baseurl }}common/images/m1x/soap_wsdl-wsi.png" style="border: 1px solid black"/></span></p>
 
-				    					    <br/>
-
-				    
-<?php include(__ROOT__ . 'footer.php'); ?>
+				    					    

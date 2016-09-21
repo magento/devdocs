@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - catalog_product_link.attributes';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Product Link Attributes
+---
 
-				    <h2><a name="catalog_product_link.attributes-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+<h2><a name="catalog_product_link.attributes-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
 
 
 <h4><a name="catalog_product_link.attributes-Resource%3Acatalogproductlink"></a>Resource: catalog_product_link</h4>
@@ -32,64 +32,61 @@
 
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> type <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Type of the link (cross_sell, up_sell, related, or grouped) </td>
+<td> string </td>
+<td> type <br class="atl-forced-newline" /> </td>
+<td> Type of the link (cross_sell, up_sell, related, or grouped) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns</b>:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> result </td>
-<td class='confluenceTd'> Array of catalogProductLinkAttributeEntity </td>
+<td> array </td>
+<td> result </td>
+<td> Array of catalogProductLinkAttributeEntity </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogProductLinkAttributeEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> code </td>
-<td class='confluenceTd'> Attribute code </td>
+<td> string </td>
+<td> code </td>
+<td> Attribute code </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> type </td>
-<td class='confluenceTd'> Attribute type </td>
+<td> string </td>
+<td> type </td>
+<td> Attribute type </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="catalog_product_link.attributes-Examples"></a>Examples</h4>

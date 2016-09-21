@@ -1,8 +1,8 @@
 ---
-layout: m1x
+layout: m1x_soap
 title: Category Tree
 ---
-<p><a href="{{ site.m1xgithuburl }}api/soap/catalog/catalogCategory/catalog_category.tree.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
+
 
 
 
@@ -35,137 +35,133 @@ title: Category Tree
 
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> parentId </td>
-<td class='confluenceTd'> ID of the parent category (optional) </td>
+<td> string </td>
+<td> parentId </td>
+<td> ID of the parent category (optional) </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> storeView </td>
-<td class='confluenceTd'> Store view (optional) </td>
+<td> string </td>
+<td> storeView </td>
+<td> Store view (optional) </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Returns:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> tree </td>
-<td class='confluenceTd'> Array of catalogCategoryTree </td>
+<td> array </td>
+<td> tree </td>
+<td> Array of catalogCategoryTree </td>
 </tr>
 </tbody></table>
-</div>
 
 
 
 <p>The <b>catalogCategoryTree</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> category_id </td>
-<td class='confluenceTd'> Category ID </td>
+<td> int </td>
+<td> category_id </td>
+<td> Category ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Parent category ID </td>
+<td> int </td>
+<td> parent_id <br class="atl-forced-newline" /> </td>
+<td> Parent category ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category name </td>
+<td> string </td>
+<td> name <br class="atl-forced-newline" /> </td>
+<td> Category name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> position <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category position </td>
+<td> int </td>
+<td> position <br class="atl-forced-newline" /> </td>
+<td> Category position </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> level <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category level </td>
+<td> int </td>
+<td> level <br class="atl-forced-newline" /> </td>
+<td> Category level </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> children <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of CatalogCategoryEntities </td>
+<td> array </td>
+<td> children <br class="atl-forced-newline" /> </td>
+<td> Array of CatalogCategoryEntities </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p>The <b>catalogCategoryEntity</b> content is as follows:</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> category_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category ID </td>
+<td> int </td>
+<td> category_id <br class="atl-forced-newline" /> </td>
+<td> Category ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Parent category ID </td>
+<td> int </td>
+<td> parent_id <br class="atl-forced-newline" /> </td>
+<td> Parent category ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category name </td>
+<td> string </td>
+<td> name <br class="atl-forced-newline" /> </td>
+<td> Category name </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> defines whether the category is active </td>
+<td> int </td>
+<td> is_active <br class="atl-forced-newline" /> </td>
+<td> defines whether the category is active </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> position <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category position </td>
+<td> int </td>
+<td> position <br class="atl-forced-newline" /> </td>
+<td> Category position </td>
 </tr>
 <tr>
-<td class='confluenceTd'> int </td>
-<td class='confluenceTd'> level <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Category level </td>
+<td> int </td>
+<td> level <br class="atl-forced-newline" /> </td>
+<td> Category level </td>
 </tr>
 <tr>
-<td class='confluenceTd'> array </td>
-<td class='confluenceTd'> children <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Array of CatalogCategoryEntities </td>
+<td> array </td>
+<td> children <br class="atl-forced-newline" /> </td>
+<td> Array of CatalogCategoryEntities </td>
 </tr>
 </tbody></table>
-</div>
 
 
 

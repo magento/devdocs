@@ -1,9 +1,9 @@
-<?php
-    $title = 'Magento API - SOAP - product_custom_option_value.remove';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x_soap
+title: Product Custom Value Remove
+---
 
-				    <h3><a name="product_custom_option_value.remove-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
+<h3><a name="product_custom_option_value.remove-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
 
 
 <h4><a name="product_custom_option_value.remove-Resource%3Aproductcustomoptionvalue"></a>Resource: product_custom_option_value</h4>
@@ -20,63 +20,60 @@
 <p>Allows you to remove the custom option value from a product.</p>
 
 <p><b>Arguments:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Name </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Name </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> string </td>
-<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> Session ID </td>
+<td> string </td>
+<td> sessionId <br class="atl-forced-newline" /> </td>
+<td> Session ID </td>
 </tr>
 <tr>
-<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
-<td class='confluenceTd'> valueId </td>
-<td class='confluenceTd'> Custom option value ID </td>
+<td> string <br class="atl-forced-newline" /> </td>
+<td> valueId </td>
+<td> Custom option value ID </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Return:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Type </th>
-<th class='confluenceTh'> Description </th>
+<th> Type </th>
+<th> Description </th>
 </tr>
 <tr>
-<td class='confluenceTd'> boolean\int </td>
-<td class='confluenceTd'> True (1) if the custom option value is removed </td>
+<td> boolean\int </td>
+<td> True (1) if the custom option value is removed </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <p><b>Faults:</b></p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 103 </td>
-<td class='confluenceTd'> Option with requested id does not exist. </td>
+<td> 103 </td>
+<td> Option with requested id does not exist. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 106 </td>
-<td class='confluenceTd'> Can not delete option. </td>
+<td> 106 </td>
+<td> Can not delete option. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 109 </td>
-<td class='confluenceTd'> Option should have at least one value. Can not delete last value. </td>
+<td> 109 </td>
+<td> Option should have at least one value. Can not delete last value. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h4><a name="product_custom_option_value.remove-Examples"></a>Examples</h4>

@@ -5,6 +5,7 @@ subgroup: B_Authentication
 title: Token-based authentication
 menu_title: Token-based authentication
 menu_order: 1
+version: 2.0
 github_link: get-started/authentication/gs-authentication-token.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.html
 ---
@@ -24,7 +25,7 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.h
 <a name="curl-command-syntax"></a>
 <h2>cURL command syntax</h2>
 <p>The examples on this page use cURL commands. For more information, see
-   <a href="{{ site.gdeurl }}get-started/gs-curl.html">How cURL commands work</a>.
+   <a href="{{page.baseurl}}get-started/gs-curl.html">How cURL commands work</a>.
 </p>
 <p>To use cURL to request an authentication token from the Magento token service, use this syntax:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/{customer|admin}/token" \
@@ -55,7 +56,7 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.h
    <tr>
       <td>Credentials</td>
       <td>
-         <p>The user name and password for a Magento account.</p>
+         <p>The user name and password for a Magento account. For customers, the username is an email address.</p>
          <p>To specify these credentials in a JSON request body, include <code>-d '{"username":"&lt;USER-NAME&gt;", "password":"&lt;PASSWORD&gt;"}'</code> in the call.</p>
       </td>
    </tr>
@@ -69,19 +70,19 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.h
    <li>Use the <code>-d</code> option to specify the XML-formatted request body.</li>
 </ul>
 <p>For example:</p>
-<pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token.xml" \
+<pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/xml" \
-     -d '&lt;login>&lt;username>test@example.com&lt;/username>&lt;password>123123q&lt;/password>&lt;/login>'</pre>
+     -d '&lt;login>&lt;username>customer@example.com&lt;/username>&lt;password>123123q&lt;/password>&lt;/login>'</pre>
 <a name="auth-request"></a>
 <h2>Authentication token request</h2>
 <p>To request an authentication token for a customer user for the REST web API:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
-     -d '{"username":"test@example.com", "password":"123123q"}'</pre>
+     -d '{"username":"customer@example.com", "password":"123123q"}'</pre>
 <p>To request an authentication token for an admin user for the REST web API:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/admin/token" \
      -H "Content-Type:application/json" \
-     -d '{"username":"test@example.com", "password":"123123q"}'</pre>
+     -d '{"username":"customer@example.com", "password":"123123q"}'</pre>
 <a name="auth-response"></a>
 <h2>Authentication token response</h2>
 <p>A successful request returns a response body with the token, as follows:</p>
@@ -106,15 +107,10 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.h
 </p>
 <h2>Next step</h2>
 <ul>
-   <li><a href="{{ site.gdeurl }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+   <li><a href="{{page.baseurl}}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
 </ul>
 <h2>Related topic</h2>
 <ul>
 
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+   <li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>
-
-
-
-
-

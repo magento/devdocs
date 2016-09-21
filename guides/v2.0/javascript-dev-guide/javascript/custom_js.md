@@ -1,10 +1,11 @@
 ---
 layout: default
 group: jsdg
-subgroup: Javascript
+subgroup: 1_Javascript
 title: Use custom JavaScript
 menu_order: 3
 menu_title: Use custom JavaScript
+version: 2.0
 github_link: javascript-dev-guide/javascript/custom_js.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/custom_js.html
@@ -23,8 +24,8 @@ To use a custom implementation of an existing Magento JS component:
 <ol>
 <li>Place the custom component source file in one of the following locations:
 <ul>
-<li>Your theme JS files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/js</code></li>
-<li>Your module view JS files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/web/js</code></li>
+<li>Your theme JS files: <code>&lt;theme_dir&gt;/web/js</code></li>
+<li>Your module view JS files: <code>&lt;module_dir&gt;/view/frontend/web/js</code></li>
 </ul>
 </li>
 <li>Create a RequireJS configuration file <code>requirejs-config.js</code>, having specified the following:
@@ -33,7 +34,7 @@ To use a custom implementation of an existing Magento JS component:
 var config = {
   "map": {
     "*": {
-      "<custom_component>": "<default_component>"
+      "<default_component>": "<custom_component>"
     }
   }
 };
@@ -64,8 +65,8 @@ var config = {
 </ul>
 <li>Place your <code>requirejs-config.js</code> file in one of the following directories (according to the location of your custom script, see step 1 of this procedure):
 <ul>
-<li>Your theme files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code></li>
-<li>Your module view files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend</code></li>
+<li>Your theme files: <code>&lt;theme_dir&gt;</code></li>
+<li>Your module view files: &lt;module_dir&gt;/view/frontend</code></li>
 </ul>
 </li>
 </ol>
@@ -99,7 +100,7 @@ Where the following notation is used:
 <li><code>mage.&lt;widget.name&gt;</code> - the name of the Magento widget that you extend.</li>
 </ul>
 
-For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h3 id="extend_js_component">Extend a default Ui component</h3>
 
@@ -141,7 +142,7 @@ define([
 {% endhighlight %}
 
 
-For information about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h2 id="disable_default_js">Disable default Magento JS</h2>
 
@@ -157,8 +158,8 @@ var config = {
 </li>
 <li>Put the <code>requirejs-config.js</code> file in one of the following locations:
 <ul>
-<li>Your custom theme files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> </li>
-<li>Your custom module files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend</code></li>
+<li>Your custom theme files: <code>&lt;theme_dir&gt;</code> </li>
+<li>Your custom module files: <code>&lt;module_dir&gt;/view/frontend</code></li>
 </ul>
 </li>
 </ol>
@@ -169,5 +170,6 @@ $(mage.apply);
 {% endhighlight %}
 
 
-<h2>Related topics</h2>
-<a href="{{site.gdeurl}}config-guide/config/js-resources.html" target="_blank">JavaScript resources configuration</a>
+#### Related topic
+[Configure JavaScript resources]({{ page.baseurl }}javascript-dev-guide/javascript/js-resources.html)
+
