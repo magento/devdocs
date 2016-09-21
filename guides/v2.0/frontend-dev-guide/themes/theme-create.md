@@ -65,10 +65,6 @@ After you create a directory for your theme, you must create `theme.xml` contain
  </theme>
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>If you update theme.xml later</p>
-</div>
-
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any Magento Admin page for your changes to be saved in the database.
 
 ## Make your theme a Composer package (optional) {#fedg_create_theme_composer}
