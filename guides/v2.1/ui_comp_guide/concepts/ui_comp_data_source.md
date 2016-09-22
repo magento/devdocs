@@ -19,7 +19,7 @@ github_link: ui_comp_guide/concepts/ui_comp_data_source.md
 ## Overview
 Magento provides a component that is designed to interact with data in your component. Many of the core UI Components use this DataSource component. Many UI components also require that this component is included. However, there are specific requirements it has in order for it to work correctly. 
 
-In this guide, we will explain how to take advantage of the powerful functionality of the data provider in a UI Component.
+In this topic, we will explain how to take advantage of the powerful functionality of the data provider in a UI Component.
 
 ### Declaring the XML
 
@@ -42,7 +42,7 @@ The main node of interest is `<argument name="class" />.` This references a PHP 
 
 While the XML tells Magento about the component's data provider, Magento doesn't do anything with that unless you hook it up to the component's main PHP class. Add a `getDataSourceData()` method to the UI component's PHP class and return `$this->getContext()->getDataProvider()->getData()`. This will output the result of the data provider's `getData()` method into the JSON that is sent to the browser along with the rest of the UI component's configuration. 
 
-Declare a `getData()` method in the data provider class that was just set up and return a value. Since that value will be part of the JSON rendered on the page, it is accessible via the javascript class that is associated with the UI component and handles its behavior. Magento's Form Provider javascript component is often a good place to start. 
+Declare a `getData()` method in the data provider class that was just set up and return a value. Since that value will be part of the JSON rendered on the page, it is accessible via the javascript class that is associated with the UI component and handles its behavior. Magento's Form Provider javascript class is often a good place to start. 
 
 ```
 <div class="bs-callout bs-callout-info" id="info">
@@ -61,7 +61,7 @@ Include the Form Provider Javascript component by adding this inside the `<dataS
 
 This will include `Magento/Ui/view/base/web/js/form/provider.js` on the page as part of this DataSource component. The Form Provider Javascript can also be extended if the functionality doesn't do what is necessary in your case. 
 
-Remember that this data provider is still, technically speaking, a completely separate UI Component. There are few things that need to happen in order to fully link it to the "base" component so that it can use the data provided by the data provider. 
+Remember that this data provider is still, technically speaking, a completely separate UI Component. There are a few things that need to happen in order to fully link it to the "base" component so that it can use the data provided by the data provider. 
 
 First, we need to declare a "provider" in our base component so it will be able to find that data provider component. Under the `<argument name="data" />` node, add a node like this (where `[ComponentName]` is the name of the component):
 
