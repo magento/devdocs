@@ -45,6 +45,6 @@ To set up a Magento project using a template:
 	
 #### Next steps
 *	[Set up an environment]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
-*	[Set Magento Admin environment variables]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
+*	[Set Magento Admin environment variables]({{ page.baseurl }}cloud/access-acct/admin-env-vars.html)
 
 
