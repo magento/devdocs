@@ -10,9 +10,8 @@ version: 2.0
 github_link: extension-dev-guide/package/package_mktpl.md
 redirect_from:
   - /guides/v2.0/mktpl-quickstart/mktpl-intro.html
-  - /guides/v2.0/extension-dev-guide/mktpl-intro.html
-  - /guides/v2.1/extension-dev-guide/mktpl-intro.html
-  - /guides/v2.2/extension-dev-guide/mktpl-intro.html
+  - /guides/v2.1/mktpl-quickstart/mktpl-intro.html
+  - /guides/v2.2/mktpl-quickstart/mktpl-intro.html
 ---
 
 ## {{page.menu_title}}
