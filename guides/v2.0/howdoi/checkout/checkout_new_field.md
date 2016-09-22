@@ -27,6 +27,7 @@ Add the field to layout. Both shipping address and billing address forms are [ge
 Following is a sample plugin adding a field named `Custom Attribute` to the shipping address form:
 
 {%highlight php%}
+<?php
 $customAttributeCode = 'custom_field';
 $customField = [
     'component' => 'Magento_Ui/js/form/element/abstract',
