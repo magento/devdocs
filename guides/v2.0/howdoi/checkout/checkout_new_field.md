@@ -9,19 +9,22 @@ version: 2.0
 github_link: howdoi/checkout/checkout_new_field.md
 ---
 ## What's in this topic
+{:.no_toc}
 
-This topic describes how to add a new field to the shipping address or billing address form used on checkout. 
+This topic describes how to add a new field to default checkout forms: shipping address or billing address form. For illustration we use a case of adding a field to the shipping address form. 
 
-`new-customer-address.js` lists all predefined address attributes and matches corresponding backend interface `\Magento\Quote\Api\Data\AddressInterface`. 
+**Contents**
 
-## Add a custom field in the address form
+* TOC
+{:toc}
+
+## Add the field to layout and processing models
 
 **Step 1**
 
+Add the field to layout. Both shipping address and billing address forms are [generated dynamically]({{page.baseurl}}howdoi/checkout/checkout_form.html#dynamic_form). So to modify its layout, you need to create a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. 
 
-Add the field to layout. Both shipping address and billing address are [dynamic forms]({{page.baseurl}}howdoi/checkout/checkout_form.html#dynamic_form). So to modify its layout, you need to create a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. 
-
-Sample plugin (adding a field named `Custom Attribute` to the shipping address form):
+Following is a sample plugin adding a field named `Custom Attribute` to the shipping address form:
 
 {%highlight php%}
 $customAttributeCode = 'custom_field';
@@ -53,18 +56,16 @@ $customField = [
 $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']['shippingAddress']['children']['shipping-address-fieldset']['children'][$customAttributeCode] = $customField;
 {%endhighlight%}
 
-This way, your field is added to the `customAttributes` property of `new-customer-address.js`, a JS object that lists all predefined address attributes and matches corresponding server-side interface `\Magento\Quote\Api\Data\AddressInterface`. The `customAttributes` property was designed to contain custom EAV address attributes and is related to `\Magento\Quote\Model\Quote\Address\CustomAttributeListInterface::getAttributes` method. The code above will automatically handle local storage persistence on frontend. You can get your field value from local storage using `checkoutData.getShippingAddressFromData()`, where `checkoutData` is `Magento_Checkout/js/checkout-data`.
+This way, your field is added to the `customAttributes` property of `new-customer-address.js`, a JS object that lists all predefined address attributes and matches the corresponding server-side interface `\Magento\Quote\Api\Data\AddressInterface`. The `customAttributes` property was designed to contain custom EAV address attributes and is related to `\Magento\Quote\Model\Quote\Address\CustomAttributeListInterface::getAttributes` method. The code above will automatically handle local storage persistence on frontend.
 
 
 **Step 2**
 
-Add a JS mixin to change the behavior of `Magento_Checkout/js/action/set-shipping-information` (this component is responsible for data submission between shipping and billing checkout steps)
+Add a JS mixin to change the behavior of the component responsible for the data submission to the server-side. 
+There is no mandatory requirements for the mixin file name and location. If you want it to be consisted with Magento approach, place the mixin in the `view/frontend/web/js/` directory in your custom module.
 
-There no mandatory requirements on the file name and location. If want it to be consisted with Magento approach, place the mixin in the `js/model/`directory in your custom module.
 
-<p class="q">should the name of the mixin coincide with the name of the component it relates to? should we add info about what should be the name in case of billing address?</p>
-
-Sample mixin:
+Following is a sample mixin modifying the behavior of `Magento_Checkout/js/action/set-shipping-information` (this component is responsible for data submission between shipping and billing checkout steps):
 {%highlight js%}
 
 /*jshint browser:true jquery:true*/
@@ -92,9 +93,13 @@ define([
 });
 {%endhighlight%}
 
+When adding a field to the billing address form, you need to modify the behavior of one of the following components: `Magento_Checkout/js/action/place-order` or `Magento_Checkout/js/action/set-payment-information`, depending on when do you need the custom field valued to be passed to the server-side. For example of a mixin, modifying one of these components, see the [place-order-mixin.js]({{site.mage2100url}}app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js) in the Magento_CheckoutAgreements module.
+
 **Step 3**
 
-Create `<YourModule_dir>/view/frontend/requirejs-config.js` with content similar to the following:
+Tell Magento to load your mixin for the corresponding JS component. For this, in the `<YourModule_dir>/view/frontend/` directory, add the `requirejs-config.js`.
+
+Following is a sample of such `requirejs-config.js` for the sample mixin added in the Step 2:
 
 {%highlight js%}
 
@@ -102,7 +107,7 @@ var config = {
     config: {
         mixins: {
             'Magento_Checkout/js/action/set-shipping-information': {
-                '<>/js/action/set-shipping-information-mixin': true
+                '<YourNamespace_YourModule>/js/action/set-shipping-information-mixin': true
             }
         }
     }
@@ -112,8 +117,11 @@ var config = {
 
 **Step 4**
 
-To add an extension attribute to address model on the server side, add the <YourModule_dir>/etc/extension_attributes.xml file
+To add an extension attribute to the address model on the server-side, add the `extension_attributes.xml` file in the `<YourModule_dir>/etc/` directory.
 
+Following is a sample `extension_attributes.xml`:
+
+{%highlight xml%}
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
@@ -121,9 +129,14 @@ To add an extension attribute to address model on the server side, add the <Your
         <attribute code="custom_field" type="string" />
     </extension_attributes>
 </config>
+{%endhighlight%}
 
-## Access the value of the field
-If you took all the steps described in the previous paragraph, 
-Magento will generate interface that includes your custom attribute and you can access your field value like this:
+## Access the value of the custom field
+If you took all the steps described in the previous paragraphs, 
+Magento will generate the interface that includes your custom attribute and you can access your field value like this:
 
     $value = $address->getExtensionAttributes()->getCustomField();
+
+## Related reading
+
+- [EAV and extension attributes]({{page.baseurl}}extension-dev-guide/attributes.html) 
