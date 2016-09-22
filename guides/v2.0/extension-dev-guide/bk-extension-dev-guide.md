@@ -12,6 +12,9 @@ redirect_from:
   - /guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html
   - /guides/v2.0/mktpl-quickstart/bk-marketplace-qs.html
   - /guides/v2.0/mktpl-quickstart/intro-moreinfo.html
+  - /guides/v2.1/mktpl-quickstart/bk-marketplace-qs.html
+  - /guides/v2.2/mktpl-quickstart/intro-moreinfo.html
+  - /guides/v2.1/mktpl-quickstart/intro-moreinfo.html
 ---
 
 ## {{page.menu_title}}
