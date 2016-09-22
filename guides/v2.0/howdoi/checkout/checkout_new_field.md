@@ -24,7 +24,7 @@ This topic describes how to add a new field to default checkout forms: shipping 
 
 Add the field to layout. Both shipping address and billing address forms are [generated dynamically]({{page.baseurl}}howdoi/checkout/checkout_form.html#dynamic_form). So to modify its layout, you need to create a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. 
 
-Following is a sample plugin adding a field named `Custom Attribute` to the shipping address form:
+Following is a sample logic for a plugin method adding a field named `Custom Attribute` to the shipping address form:
 
 {%highlight php%}
 <?php
@@ -57,7 +57,7 @@ $customField = [
 $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']['shippingAddress']['children']['shipping-address-fieldset']['children'][$customAttributeCode] = $customField;
 {%endhighlight%}
 
-This way, your field is added to the `customAttributes` property of `new-customer-address.js`, a JS object that lists all predefined address attributes and matches the corresponding server-side interface `\Magento\Quote\Api\Data\AddressInterface`. The `customAttributes` property was designed to contain custom EAV address attributes and is related to `\Magento\Quote\Model\Quote\Address\CustomAttributeListInterface::getAttributes` method. The code above will automatically handle local storage persistence on frontend.
+This way, your field is added to the `customAttributes` property of `'Magento_Checkout/js/model/new-customer-address.js`, a JS object that lists all predefined address attributes and matches the corresponding server-side interface `\Magento\Quote\Api\Data\AddressInterface`. The `customAttributes` property was designed to contain custom EAV address attributes and is related to `\Magento\Quote\Model\Quote\Address\CustomAttributeListInterface::getAttributes` method. The code above will automatically handle local storage persistence on frontend.
 
 
 **Step 2**
