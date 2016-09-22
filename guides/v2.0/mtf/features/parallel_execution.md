@@ -8,7 +8,8 @@ version: 2.0
 github_link: mtf/features/parallel_execution.md
 ---
 
-<h4>Contents</h4>
+### Contents
+{:.no_toc}
 
 * TOC
 {:toc}
@@ -25,7 +26,7 @@ A general mechanism is:
 
 Comparatively to the common testing flow
 
-![Common flow image]({{site.baseurl}}common/images/mtf_features_common_dia.png){:width="600px"}
+![Common flow image]({{site.baseurl}}common/images/mtf_features_common_dia.png)
 
 you can run a test suite using parallel execution flow with one Magento instance
 
