@@ -257,8 +257,6 @@ Dynamically defined, or dynamic, forms are the forms where the set or type of fi
 For such forms, you must implement a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
 A plugin can add custom fields definitions to layout at run-time. The format of the field definition is the same as for fields defined in layout.
 
-<p class="q">What is meant by checkout form? what step of checkout? which settings</p>
-
 For example:
 
 {% highlight php startinline=true %}
