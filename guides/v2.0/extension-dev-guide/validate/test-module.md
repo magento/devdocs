@@ -10,6 +10,8 @@ version: 2.0
 github_link: extension-dev-guide/validate/test-module.md
 redirect_from: 
   - /guides/v2.0/mktpl-quickstart/dev-test.html
+  - /guides/v2.1/mktpl-quickstart/dev-test.html
+  - /guides/v2.2/mktpl-quickstart/dev-test.html
 ---
 
 ## {{page.menu_title}}

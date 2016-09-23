@@ -12,6 +12,10 @@ redirect_from:
   - /guides/v2.0/mktpl-quickstart/dev-intro.html
   - /guides/v2.0/mktpl-quickstart/dev-summary.html
   - /guides/v2.0/extension-dev-guide/dev-summary.html
+  - /guides/v2.1/mktpl-quickstart/dev-summary.html
+  - /guides/v2.2/mktpl-quickstart/dev-summary.html
+  - /guides/v2.1/mktpl-quickstart/dev-intro.html
+  - /guides/v2.2/mktpl-quickstart/dev-intro.html
 ---
 
 ## {{page.menu_title}}
