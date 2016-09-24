@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Update components</title>
+	<title>Update extensions</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -162,7 +162,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Update components</h1>
+		<h1 class="page-heading">Update extensions</h1>
 
         
 
@@ -348,6 +348,33 @@
 									<li class="level-2 "><a href="/guides/v2.1/cloud/before/before-repos.html">Magento Enterprise Cloud Edition repositories</a></li>
 
 									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/before/before-project-owner.html">Account owner tasks</a></li>
+									
+								
+
+									
+
 
 								
 
@@ -802,7 +829,7 @@
 									
 
 
-											<li class="level3Child upgrade-update  active " data-menunode="upgrade-update"><a href="/guides/v2.1/cloud/howtos/update-components.html">Update components</a>
+											<li class="level3Child upgrade-update  active " data-menunode="upgrade-update"><a href="/guides/v2.1/cloud/howtos/update-components.html">Update extensions</a>
 
 
 									
@@ -1145,23 +1172,27 @@
 	<section class="content">
 		<div class="content-wrap">
             <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="cloud-howto-upcomp">How update components</h2>
-<p>This topic discusses how to update components you previously installed from Magento Marketplace or from another source.</p>
+            <h2 id="cloud-howto-upcomp">How update extensions</h2>
+<p>This topic discusses how to update extensions you previously installed from Magento Marketplace or from another source.</p>
 
 <p>Before you continue, you must:</p>
 
 <ul>
-  <li>Know the component’s <a href="#update-composer-name">Composer name</a> and version</li>
-  <li>Know the component is compatible with your project (in particular, check the required PHP version)</li>
+  <li>Know the extension’s <a href="#update-composer-name">Composer name</a> and version</li>
+  <li>Know the extension is compatible with your project (in particular, check the required PHP version)</li>
 </ul>
 
-<h3 id="update-composer-name">Find a component’s Composer name</h3>
+<div class="bs-callout bs-callout-warning">
+    <p>You must check in <code>composer.lock</code> to your environment; otherwise, the extension won't load in Magento Enterprise Cloud Edition. That's because we run <code>composer install</code> (which uses <code>composer.lock</code>) and not <code>composer update</code> when we build and deploy the environment.</p>
+</div>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><div>
+<h3 id="update-composer-name">Find a extension’s Composer name</h3>
 
-  <p>This section discusses how to get a component’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> component (whether or not you purchased it on Marketplace) in the component’s <code>composer.json</code> file. Open <code>composer.json</code> in a text editor and write down the values of <code>"name"</code> and <code>"version"</code>.</p>
+<div class="collapsible"><h4 class="collapsible-title">To find the extension's Composer name </h4><div class="collapsible-content"><div>
 
-  <p>To get the component’s Composer name from Magento Marketplace:</p>
+  <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code>composer.json</code> file. Open <code>composer.json</code> in a text editor and write down the values of <code>"name"</code> and <code>"version"</code>.</p>
+
+  <p>To get the extension’s Composer name from Magento Marketplace:</p>
 
   <ol>
     <li>Log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with the user name and password you used to purchase the component.</li>
@@ -1171,34 +1202,35 @@
       <p><img src="/common/images/cloud_marketplace-account.png" alt="Access your Marketplace account" width="650px" /></p>
     </li>
     <li>
-      <p>On the My Account page, click <strong>Purchase History</strong> as the following figure shows.</p>
+      <p>On the My Account page, click <strong>My Purchases</strong> as the following figure shows.</p>
 
       <p><img src="/common/images/cloud_marketplace-purch-history.png" alt="Marketplace purchase history" width="650px" /></p>
     </li>
     <li>
-      <p>On the Purchase History page, click <strong>Download Invoice</strong> for the component you purchased as the following figure shows.</p>
+      <p>On the My Purchases page, click <strong>Technical Details</strong> for the extension you purchased as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Download an invoice" width="650px" /></p>
+      <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Technical details shows the extension's Composer name" width="200px" /></p>
     </li>
+    <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
+    <li>Open a text editor.</li>
+    <li>Paste the extension name in the text editor.</li>
+    <li>Append a colon character (<code>:</code>) to the component name.</li>
+    <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
     <li>
-      <p>Copy the SKU to the clipboard and paste it in a text editor.</p>
+      <p>Append the version number to the component name after the colon.</p>
 
-      <p>A sample SKU follows:</p>
+      <p>A sample follows:</p>
 
-      <pre><code>celebros/module-autocomplete1.0.0-ee_edition
+      <pre><code>pixlee/magento2:1.0.0
 </code></pre>
     </li>
-    <li>Remove <code>-ee_edition</code> from the value.</li>
-    <li>Replace the dash character between the name and version with a colon character (in this example, <code>celebros/module-autocomplete:1.0.0</code>).</li>
   </ol>
 </div>
 </div></div>
 
 <h3 id="get-started">Get started</h3>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><p>To get started:</p>
-
-<div>
+<div class="collapsible"><h4 class="collapsible-title">To get started: </h4><div class="collapsible-content"><div>
 
   <ol>
     <li>Log in to the server on which your SSH keys are located.</li>
@@ -1271,11 +1303,9 @@
 </div>
 </div></div>
 
-<h3 id="update-components">Update components</h3>
+<h3 id="update-extensions">Update extensions</h3>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><p>To update components:</p>
-
-<ol>
+<div class="collapsible"><h4 class="collapsible-title">To update extensions: </h4><div class="collapsible-content"><ol>
   <li>If you haven’t done so already, change to your environment root directory.</li>
   <li>
     <p>Make a backup of <code>composer.json</code>:</p>
@@ -1284,7 +1314,7 @@
 </code></pre>
   </li>
   <li>Open <code>composer.json</code> in a text editor.</li>
-  <li>Locate your component.</li>
+  <li>Locate your extension.</li>
   <li>Update its version.</li>
   <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
   <li>
@@ -1294,7 +1324,7 @@
 </code></pre>
   </li>
   <li>
-    <p>Enter the following commands in the order shown to commit the changes and deploy the project:</p>
+    <p>Enter the following commands in the order shown to commit the changes and deploy the project, including <code>composer.lock</code>:</p>
 
     <pre><code>git add -A
 git commit -m "&lt;message&gt;"
@@ -1311,7 +1341,7 @@ git push origin &lt;environment ID&gt;
 
 <h4 id="related-topic">Related topic</h4>
 <ul>
-  <li><a href="/guides/v2.1/cloud/howtos/install-components.html">Install components</a></li>
+  <li><a href="/guides/v2.1/cloud/howtos/install-components.html">Install extensions</a></li>
   <li><a href="/guides/v2.1/cloud/howtos/sample-data.html">Install optional sample data</a></li>
   <li><a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
 </ul>

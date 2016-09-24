@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Cloud environment variables</title>
+	<title>Account owner tasks</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/cloud/env/environment-vars_cloud.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/before/before-project-owner.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -44,9 +44,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/before/before-project-owner.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/before/before-project-owner.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,14 +162,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento Cloud environment variables</h1>
+		<h1 class="page-heading">Account owner tasks</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/env/environment-vars_cloud.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/before/before-project-owner.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -369,7 +369,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/before/before-project-owner.html">Account owner tasks</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/cloud/before/before-project-owner.html">Account owner tasks</a></li>
 									
 								
 
@@ -763,7 +763,7 @@
 									
 
 
-											<li class="level3Child vars  active " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Cloud environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Cloud environment variables</a>
 
 
 									
@@ -1171,60 +1171,158 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="cloud-env-vars-cloud">Magento Enterprise Cloud Edition environment variables</h2>
+            <div class="updated">Updated: 24 September 2016 (PDT)</div>
+            <h2 id="account-owner-tasks">Account owner tasks</h2>
+<p>After your company licenses the Magento Enterprise Cloud Edition, the only person who has access to it is the <em>account owner</em>, who purchased the software. The account owner is typically a “business user”— someone in the business or finance organization. Initially, developers and technical people can’t access the code.</p>
 
-<p>Environment variables that are specific to Magento Enterprise Cloud Edition are prefixed with <code>MAGENTO_CLOUD_*</code>.</p>
+<p>This topic discusses initial tasks the account owner should perform to give technical people access to the project.</p>
+
+<p>Before you start, you must know the e-mail address for each user you’d like to add. After you add these users to the project, they receive an invitation to register with Magento Enterprise Cloud Edition.</p>
+
+<h2 id="generate-authorization-keys">Generate authorization keys</h2>
+
+<div class="collapsible"><h4 class="collapsible-title">To create authorization keys: </h4><div class="collapsible-content"><p>Getting the Magento Enterprise Cloud Edition requires authorization keys. Only the account owner can create these keys.</p>
+
+<p>As the account owner, you must create one set of keys for each technical person you expect will work on Magento Enterprise Cloud Edition. Each user must add these keys to their <code>auth.json</code> file, which is located in the project root directory.</p>
+
+<div>
+
+  <p>To get your authentication keys:</p>
+
+  <ol>
+    <li>Go to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a>.</li>
+    <li>
+      <p>Click <strong>Sign In</strong> and enter your login credentials.</p>
+
+      <p>If you don’t have a free account, click <strong>Create an Account</strong>.</p>
+    </li>
+    <li>
+      <p>After you log in, click <strong>My Access Keys</strong> as the following figure shows.</p>
+
+      <p><img src="/common/images/install_mkpl_access-keys.png" alt="Get your secure access keys on Magento Marketplace" width="500px" /></p>
+    </li>
+    <li>If you already have keys, use the <strong>Public key</strong> as your user name and the <strong>Private key</strong> as your password.</li>
+    <li>To create a new key pair, click <strong>Create a New Access Key</strong>.</li>
+    <li>When prompted, enter a descritive name to identify the key pair.</li>
+    <li>
+      <p>Click <strong>Generate New</strong>.</p>
+
+      <p>Use the <strong>Public key</strong> as your user name and the <strong>Private key</strong> as your password.</p>
+    </li>
+  </ol>
+
+  <h4 id="manage-your-authentiation-keys">Manage your authentiation keys</h4>
+  <p>You can optionally disable or delete authentication keys you created. For example, you can disable or delete keys for security reasons after someone left your organization.</p>
+
+  <ul>
+    <li>Disable keys: Click <strong>Disable</strong>. You can do this if you want to suspend use of your keys.</li>
+    <li>Enable a previously disabled key: Click <strong>Enable</strong>.</li>
+    <li>Delete keys: Click <strong>Delete</strong>.</li>
+  </ul>
+
+  <p>You cannot delete or disable keys you created by logging in to <code>magento.com</code>. To manage those keys:</p>
+
+  <ol>
+    <li><a href="https://www.magentocommerce.com/products/customer/account/login" target="_blank">Log in</a> to your <code>magento.com</code> account.</li>
+    <li>In the top navigation bar, click <strong>Connect</strong>.</li>
+    <li>
+      <p>In the left pane, click <strong>Secure keys</strong>.</p>
+
+      <p><img src="/common/images/connect_keys1.png" alt="Access your keys" width="200px" /></p>
+    </li>
+    <li>Enable or disable the desired keys.</li>
+  </ol>
+</div>
+</div></div>
+
+<h2 id="create-project-users">Create project users</h2>
+<p>As discussed in more detail in <a href="/guides/v2.1/cloud/admin/admin-user-admin.html">Manage users</a>, Magento Enterprise Cloud Edition has a number of user roles.</p>
+
+<p>Typically, the only user the account owner must create is the <em>project administrator</em> (also referred to as the super user). This user can create other users and delegate roles as desired.</p>
+
+<div class="collapsible"><h4 class="collapsible-title">To create project administrators: </h4><div class="collapsible-content"><ol>
+  <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Enterprise Cloud Edition account</a>.</li>
+  <li>
+    <p>Click the <strong>Projects</strong> tab as the following figure shows.</p>
+
+    <p><img src="/common/images/cloud_account_project.png" alt="Click the projects tab to access your Cloud project" width="550px" /></p>
+  </li>
+  <li>
+    <p>Click the name of your project (typically, <strong>Untitled Project</strong>).</p>
+
+    <p>The Setting up your project page displays as follows.</p>
+
+    <p><img src="/common/images/cloud_project_continue-later.png" alt="Cancel project creation" width="500px" /></p>
+  </li>
+  <li>Click <strong>Continue later</strong>. (Someone else can create the project at a later time.)</li>
+  <li>
+    <p>Click the configure project button next to <strong>Project Title</strong> in the top navigation bar as the following figure shows.</p>
+
+    <p><img src="/common/images/cloud_project-configure.png" alt="Configure the project" width="300px" /></p>
+  </li>
+  <li>
+    <p>In the right pane, click <strong>Add Users</strong>.</p>
+
+    <p><img src="/common/images/cloud_project-config.png" alt="Start creating users" width="500px" /></p>
+  </li>
+  <li>
+    <p>Click <strong>Add User</strong>.</p>
+
+    <p>The page displays as follows.</p>
+
+    <p><img src="/common/images/cloud_project-add-superuser.png" alt="" width="500px" /></p>
+  </li>
+  <li>
+    <p>Enter the following information:</p>
+
+    <ul>
+      <li>In the first field, enter the user’s e-mail address.</li>
+      <li>Select the <strong>Super User</strong> check box.</li>
+    </ul>
+  </li>
+  <li>Click <strong>Add User</strong>.</li>
+</ol>
+
+<p>The super users you add receive an e-mail inviting them to join the Magento Enterprise Cloud Edition project. The user must follow the prompts to register an account and verify their e-mail address.</p>
+
+<p>Initially, a super user must create the project in any of the following ways:</p>
 
 <ul>
-  <li><strong>MAGENTO_CLOUD_APP_DIR</strong>: The absolute path to the application directory.</li>
-  <li><strong>MAGENTO_CLOUD_APPLICATION</strong>: A base64-encoded JSON object that
-describes the application. It maps the content of the
-<code>.magento.app.yaml</code> that you have in Git and it has a few subkeys.</li>
-  <li><strong>MAGENTO_CLOUD_APPLICATION_NAME</strong>: The name of the application, as configured
-in the <code>.magento.app.yaml</code> file.</li>
-  <li><strong>MAGENTO_CLOUD_DOCUMENT_ROOT</strong>: The absolute path to the web document root, if
-applicable.</li>
-  <li><strong>MAGENTO_CLOUD_ENVIRONMENT</strong>: The name of the environment (that is, the
-name of the branch in Git).</li>
-  <li><strong>MAGENTO_CLOUD_PROJECT</strong>: The ID of the project.</li>
-  <li><strong>MAGENTO_CLOUD_RELATIONSHIPS</strong>: A base64-encoded JSON object whose keys
-are the relationship name and the values are arrays of relationship
-endpoint definitions. Each relationship endpoint definition is a
-decomposed form of a URL. It has a <code>scheme</code>, a <code>host</code>, a <code>port</code>, and
-optionally a <code>username</code>, <code>password</code>, <code>path</code> and some additional
-information in <code>query</code>.</li>
-  <li><strong>MAGENTO_CLOUD_ROUTES</strong>: Describe the routes that you defined in the
-environment. It maps the content of the <code>.magento/routes.yaml</code>
-file.</li>
-  <li><strong>MAGENTO_CLOUD_TREE_ID</strong>: The ID of the tree the application was built
-from. It’s essentially the SHA of the tree in Git.</li>
-  <li><strong>MAGENTO_CLOUD_VARIABLES</strong>: A base64-encoded JSON object which keys are
-variables names and values are variable values (a string).</li>
+  <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup_template.html">Create a sample Magento project from a template</a></li>
+  <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import.html">Import an existing Magento project</a></li>
 </ul>
+</div></div>
 
-<p>Since values can change over time, the best thing is to just inspect
-the variable at runtime and use it to configure your application.</p>
+<h2 id="provide-access-to-blackfire-and-new-relic">Provide access to Blackfire and New Relic</h2>
+<p>Your project includes Blackfire and New Relic credentials. Only you—the account owner—can access them. You should provide these credentials to technical people as needed.</p>
 
-<p>For example, we use the <strong>MAGENTO_CLOUD_RELATIONSHIPS</strong> variable to retrieve environment-related relationships as follows:</p>
+<div class="collapsible"><h4 class="collapsible-title">To provide access to Blackfire and New Relic: </h4><div class="collapsible-content"><h3 id="blackfire-credentials">Blackfire credentials</h3>
+<p>To get your Blackfire credentials:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> /**
-     * Get relationships information from MagentoCloud environment variable.
-     *
-     * @return mixed
-     */
-    protected function getRelationships()
-    {
-        return json_decode(base64_decode($_ENV[&quot;MAGENTO_CLOUD_RELATIONSHIPS&quot;]), true);
-    }</code></pre></figure>
+<ol>
+  <li>As the Magento Enterprise Cloud Edition account owner, <a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-login">log in</a> to your Magento Enterprise Cloud Edition project.</li>
+  <li>
+    <p>In the upper right corner, click <strong>&lt;your name&gt;</strong> &gt; <strong>Account Settings</strong> as the following figure shows.</p>
 
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
-</ul>
+    <p><img src="/common/images/cloud_acct-settings-option.png" alt="Go to account settings" width="650px" /></p>
+  </li>
+  <li>
+    <p>On your account page, click <strong>View Details</strong> for your project as the following figure shows.</p>
+
+    <p><img src="/common/images/cloud_blackfire-edit-details.png" alt="View your project details" width="200px" /></p>
+  </li>
+  <li>
+    <p>On your project details page, expand <strong>Blackfire</strong>.</p>
+
+    <p>Your Blackfire credentials display similar to the following.</p>
+
+    <p><img src="/common/images/cloud_blackfire-account-info.png" alt="Your Blackfire credentials" width="450px" /></p>
+  </li>
+</ol>
+
+<h3 id="new-relic-credentials">New Relic credentials</h3>
+<p>Your New Relic credentials are displayed on the same page as Blackfire. You can create New Relic users and provide that information to the people responsible for administering New Relic.</p>
+</div></div>
 
 		</div>
 	</section>

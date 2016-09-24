@@ -800,7 +800,7 @@
 									
 
 
-											<li class="level3Child upgrade-update " data-menunode="upgrade-update"><a href="/guides/v2.0/cloud/howtos/update-components.html">Update components</a>
+											<li class="level3Child upgrade-update " data-menunode="upgrade-update"><a href="/guides/v2.0/cloud/howtos/update-components.html">Update extensions</a>
 
 
 									
@@ -1227,9 +1227,9 @@
 
 <div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><div>
 
-  <p>This section discusses how to get a component’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> component (whether or not you purchased it on Marketplace) in the component’s <code>composer.json</code> file. Open <code>composer.json</code> in a text editor and write down the values of <code>"name"</code> and <code>"version"</code>.</p>
+  <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code>composer.json</code> file. Open <code>composer.json</code> in a text editor and write down the values of <code>"name"</code> and <code>"version"</code>.</p>
 
-  <p>To get the component’s Composer name from Magento Marketplace:</p>
+  <p>To get the extension’s Composer name from Magento Marketplace:</p>
 
   <ol>
     <li>Log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with the user name and password you used to purchase the component.</li>
@@ -1239,25 +1239,28 @@
       <p><img src="/common/images/cloud_marketplace-account.png" alt="Access your Marketplace account" width="650px" /></p>
     </li>
     <li>
-      <p>On the My Account page, click <strong>Purchase History</strong> as the following figure shows.</p>
+      <p>On the My Account page, click <strong>My Purchases</strong> as the following figure shows.</p>
 
       <p><img src="/common/images/cloud_marketplace-purch-history.png" alt="Marketplace purchase history" width="650px" /></p>
     </li>
     <li>
-      <p>On the Purchase History page, click <strong>Download Invoice</strong> for the component you purchased as the following figure shows.</p>
+      <p>On the My Purchases page, click <strong>Technical Details</strong> for the extension you purchased as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Download an invoice" width="650px" /></p>
+      <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Technical details shows the extension's Composer name" width="200px" /></p>
     </li>
+    <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
+    <li>Open a text editor.</li>
+    <li>Paste the extension name in the text editor.</li>
+    <li>Append a colon character (<code>:</code>) to the component name.</li>
+    <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
     <li>
-      <p>Copy the SKU to the clipboard and paste it in a text editor.</p>
+      <p>Append the version number to the component name after the colon.</p>
 
-      <p>A sample SKU follows:</p>
+      <p>A sample follows:</p>
 
-      <pre><code>celebros/module-autocomplete1.0.0-ee_edition
+      <pre><code>pixlee/magento2:1.0.0
 </code></pre>
     </li>
-    <li>Remove <code>-ee_edition</code> from the value.</li>
-    <li>Replace the dash character between the name and version with a colon character (in this example, <code>celebros/module-autocomplete:1.0.0</code>).</li>
   </ol>
 </div>
 </div></div>

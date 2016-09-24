@@ -800,7 +800,7 @@
 									
 
 
-											<li class="level3Child upgrade-update " data-menunode="upgrade-update"><a href="/guides/v2.0/cloud/howtos/update-components.html">Update components</a>
+											<li class="level3Child upgrade-update " data-menunode="upgrade-update"><a href="/guides/v2.0/cloud/howtos/update-components.html">Update extensions</a>
 
 
 									
@@ -1134,7 +1134,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 24 August 2016 (PDT)</div>
+            <div class="updated">Updated: 24 September 2016 (PDT)</div>
             <h2 id="cloud-howto-comp">How install extensions</h2>
 <p>This topic discusses how to install <em>extensions</em>, which can be any of the following:</p>
 
@@ -1148,11 +1148,15 @@
   <p>This topic discusses how to install extensions you purchased from Magento Marketplace. You can use the same procedure to install <em>any</em> extension; all you need is the extension's Composer name. To find it, open the extension's <code>composer.json</code> file and note the values for <code>"name"</code> and <code>"version"</code>.</p>
 </div>
 
+<div class="bs-callout bs-callout-warning">
+    <p>You must check in <code>composer.lock</code> to your environment; otherwise, the extension won't load in Magento Enterprise Cloud Edition. That's because we run <code>composer install</code> (which uses <code>composer.lock</code>) and not <code>composer update</code> when we build and deploy the environment.</p>
+</div>
+
 <p>To install a extension, you must:</p>
 
 <ol>
   <li>Obtain the extension from <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> or elsewhere.</li>
-  <li><a href="#cloud-howto-comp-composer">Get the extension’s Composer name</a> and version from the Magento Marketplace invoice.</li>
+  <li><a href="#cloud-howto-comp-composer">Get the extension’s Composer name</a> and version from your purchase history.</li>
   <li>In your local Magento Enterprise Cloud Edition project, <a href="#cloud-howto-comp-json">update the Magento <code>composer.json</code></a> file with the name and version of the extension.</li>
   <li><a href="#cloud-howto-comp-push">Push</a> the changes to your environment.</li>
   <li><a href="#cloud-howto-comp-verify">Verify</a> the extension installed properly.</li>
@@ -1160,9 +1164,7 @@
 
 <h3 id="get-started">Get started</h3>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><p>To get started:</p>
-
-<div>
+<div class="collapsible"><h4 class="collapsible-title">To get started: </h4><div class="collapsible-content"><div>
 
   <ol>
     <li>Log in to the server on which your SSH keys are located.</li>
@@ -1238,11 +1240,11 @@
 <h3 id="cloud-howto-comp-composer">Step 1: Get the extension’s Composer name and version</h3>
 <p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#cloud-howto-comp-json">Update Magento’s <code>composer.json</code></a>.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><div>
+<div class="collapsible"><h4 class="collapsible-title">To get the Composer name: </h4><div class="collapsible-content"><div>
 
-  <p>This section discusses how to get a component’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> component (whether or not you purchased it on Marketplace) in the component’s <code>composer.json</code> file. Open <code>composer.json</code> in a text editor and write down the values of <code>"name"</code> and <code>"version"</code>.</p>
+  <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code>composer.json</code> file. Open <code>composer.json</code> in a text editor and write down the values of <code>"name"</code> and <code>"version"</code>.</p>
 
-  <p>To get the component’s Composer name from Magento Marketplace:</p>
+  <p>To get the extension’s Composer name from Magento Marketplace:</p>
 
   <ol>
     <li>Log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with the user name and password you used to purchase the component.</li>
@@ -1252,25 +1254,28 @@
       <p><img src="/common/images/cloud_marketplace-account.png" alt="Access your Marketplace account" width="650px" /></p>
     </li>
     <li>
-      <p>On the My Account page, click <strong>Purchase History</strong> as the following figure shows.</p>
+      <p>On the My Account page, click <strong>My Purchases</strong> as the following figure shows.</p>
 
       <p><img src="/common/images/cloud_marketplace-purch-history.png" alt="Marketplace purchase history" width="650px" /></p>
     </li>
     <li>
-      <p>On the Purchase History page, click <strong>Download Invoice</strong> for the component you purchased as the following figure shows.</p>
+      <p>On the My Purchases page, click <strong>Technical Details</strong> for the extension you purchased as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Download an invoice" width="650px" /></p>
+      <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Technical details shows the extension's Composer name" width="200px" /></p>
     </li>
+    <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
+    <li>Open a text editor.</li>
+    <li>Paste the extension name in the text editor.</li>
+    <li>Append a colon character (<code>:</code>) to the component name.</li>
+    <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
     <li>
-      <p>Copy the SKU to the clipboard and paste it in a text editor.</p>
+      <p>Append the version number to the component name after the colon.</p>
 
-      <p>A sample SKU follows:</p>
+      <p>A sample follows:</p>
 
-      <pre><code>celebros/module-autocomplete1.0.0-ee_edition
+      <pre><code>pixlee/magento2:1.0.0
 </code></pre>
     </li>
-    <li>Remove <code>-ee_edition</code> from the value.</li>
-    <li>Replace the dash character between the name and version with a colon character (in this example, <code>celebros/module-autocomplete:1.0.0</code>).</li>
   </ol>
 
   <p>Continue with the next section.</p>
@@ -1292,12 +1297,12 @@
   <li>
     <p>Enter the following command to update it:</p>
 
-    <pre><code>composer require &lt;extension-name&gt;:&lt;version&gt;
+    <pre><code>composer require &lt;component-name&gt;:&lt;version&gt;
 </code></pre>
 
     <p>For example,</p>
 
-    <pre><code>composer require celebros/module-autocomplete:1.0.0
+    <pre><code>composer require pixlee/magento2:1.0.0
 </code></pre>
   </li>
   <li>Wait for project dependencies to update.</li>
@@ -1307,9 +1312,7 @@
 
 <h3 id="cloud-howto-comp-push">Step 3: Push the extension to your environment</h3>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><p>To push the extension:</p>
-
-<p>Enter the following commands in the order shown:</p>
+<div class="collapsible"><h4 class="collapsible-title">To push the extension: </h4><div class="collapsible-content"><p>Enter the following commands in the order shown to commit your changes, including <code>composer.lock</code>:</p>
 
 <pre><code>git add -A
 git commit -m "&lt;message&gt;"
@@ -1321,7 +1324,7 @@ git push origin &lt;environment ID&gt;
 
 <h3 id="cloud-howto-comp-verify">Step 4: Verify the extension</h3>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to expand/collapse content </h4><div class="collapsible-content"><p>To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
+<div class="collapsible"><h4 class="collapsible-title">To verify the extension: </h4><div class="collapsible-content"><p>To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
 
 <ol>
   <li><a href="/guides/v2.0/cloud/env/environments-start.html#env-start-ssh">SSH to the environment</a> on which the extension is installed.</li>
