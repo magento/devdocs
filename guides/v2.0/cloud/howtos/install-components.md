@@ -23,19 +23,21 @@ This topic discusses how to install *extensions*, which can be any of the follow
   <p>This topic discusses how to install extensions you purchased from Magento Marketplace. You can use the same procedure to install <em>any</em> extension; all you need is the extension's Composer name. To find it, open the extension's <code>composer.json</code> file and note the values for <code>"name"</code> and <code>"version"</code>.</p>
 </div>
 
+<div class="bs-callout bs-callout-warning">
+    <p>You must check in <code>composer.lock</code> to your environment; otherwise, the extension won't load in Magento Enterprise Cloud Edition. That's because we run <code>composer install</code> (which uses <code>composer.lock</code>) and not <code>composer update</code> when we build and deploy the environment.</p>
+</div>
+
 To install a extension, you must:
 
 1.	Obtain the extension from [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or elsewhere.
-1.	[Get the extension's Composer name](#cloud-howto-comp-composer) and version from the Magento Marketplace invoice.
+1.	[Get the extension's Composer name](#cloud-howto-comp-composer) and version from your purchase history.
 2.	In your local Magento Enterprise Cloud Edition project, [update the Magento `composer.json`](#cloud-howto-comp-json) file with the name and version of the extension.
 3.	[Push](#cloud-howto-comp-push) the changes to your environment.
 4.	[Verify](#cloud-howto-comp-verify) the extension installed properly.
 
 ### Get started
 
-{% collapsible Click to expand/collapse content %}
-
-To get started:
+{% collapsible To get started: %}
 
 {% include cloud/cli-get-started.md %}
 
@@ -44,7 +46,7 @@ To get started:
 ### Step 1: Get the extension's Composer name and version {#cloud-howto-comp-composer}
 If you already know the extension's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#cloud-howto-comp-json).
 
-{% collapsible Click to expand/collapse content %}
+{% collapsible To get the Composer name: %}
 
 {% include cloud/composer-name.md %}
 
@@ -63,11 +65,11 @@ To update `composer.json`:
 		cp composer.json composer.json.orig
 2.	Enter the following command to update it:
 
-		composer require <extension-name>:<version>
+		composer require <component-name>:<version>
 
 	For example,
 
-		composer require celebros/module-autocomplete:1.0.0
+		composer require pixlee/magento2:1.0.0
 4.	Wait for project dependencies to update.
 3.	Continue with the next section.
 
@@ -75,10 +77,9 @@ To update `composer.json`:
 
 ### Step 3: Push the extension to your environment {#cloud-howto-comp-push}
 
-{% collapsible Click to expand/collapse content %}
-To push the extension:
+{% collapsible To push the extension: %}
 
-Enter the following commands in the order shown:
+Enter the following commands in the order shown to commit your changes, including `composer.lock`:
 
 	git add -A
 	git commit -m "<message>"
@@ -90,7 +91,7 @@ If there are errors, see [extension deployment failure]({{page.baseurl}}cloud/tr
 
 ### Step 4: Verify the extension {#cloud-howto-comp-verify}
 
-{% collapsible Click to expand/collapse content %}
+{% collapsible To verify the extension: %}
 
 To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 

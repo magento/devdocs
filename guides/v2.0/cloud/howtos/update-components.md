@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 10_howto
-title: Update components
-menu_title: Update components
+title: Update extensions
+menu_title: Update extensions
 menu_order: 5
 level3_menu_node: level3child
 level3_subgroup: upgrade-update
@@ -12,17 +12,22 @@ version: 2.0
 github_link: cloud/howtos/update-components.md
 ---
 
-## How update components {#cloud-howto-upcomp}
-This topic discusses how to update components you previously installed from Magento Marketplace or from another source.
+## How update extensions {#cloud-howto-upcomp}
+This topic discusses how to update extensions you previously installed from Magento Marketplace or from another source.
 
 Before you continue, you must:
 
-*	Know the component's [Composer name](#update-composer-name) and version
-*	Know the component is compatible with your project (in particular, check the required PHP version)
+*	Know the extension's [Composer name](#update-composer-name) and version
+*	Know the extension is compatible with your project (in particular, check the required PHP version)
 
-### Find a component's Composer name {#update-composer-name}
+<div class="bs-callout bs-callout-warning">
+    <p>You must check in <code>composer.lock</code> to your environment; otherwise, the extension won't load in Magento Enterprise Cloud Edition. That's because we run <code>composer install</code> (which uses <code>composer.lock</code>) and not <code>composer update</code> when we build and deploy the environment.</p>
+</div>
 
-{% collapsible Click to expand/collapse content %}
+
+### Find a extension's Composer name {#update-composer-name}
+
+{% collapsible To find the extension's Composer name %}
 
 {% include cloud/composer-name.md %}
 
@@ -30,32 +35,28 @@ Before you continue, you must:
 
 ### Get started
 
-{% collapsible Click to expand/collapse content %}
-
-To get started:
+{% collapsible To get started: %}
 
 {% include cloud/cli-get-started.md %}
 
 {% endcollapsible %}
 
-### Update components
+### Update extensions
 
-{% collapsible Click to expand/collapse content %}
-
-To update components:
+{% collapsible To update extensions: %}
 
 1.	If you haven't done so already, change to your environment root directory.
 2.	Make a backup of `composer.json`:
 
 		cp composer.json composer.json.orig
 3.	Open `composer.json` in a text editor.
-4.	Locate your component.
+4.	Locate your extension.
 5.	Update its version.
 6.	Save your changes to `composer.json` and exit the text editor.
 7.	Update project dependencies:
 
 		composer update
-8.	Enter the following commands in the order shown to commit the changes and deploy the project:
+8.	Enter the following commands in the order shown to commit the changes and deploy the project, including `composer.lock`:
 
 		git add -A
 		git commit -m "<message>"
@@ -67,6 +68,6 @@ To update components:
 {% endcollapsible %}
 
 #### Related topic
-*	[Install components]({{page.baseurl}}cloud/howtos/install-components.html)
+*	[Install extensions]({{page.baseurl}}cloud/howtos/install-components.html)
 *	[Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
 *	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
