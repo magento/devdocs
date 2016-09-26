@@ -37,7 +37,7 @@ Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-pack
 npm install -g grunt-cli
 </pre>
 </li>
-<li>Create a package.json file for npm<br>
+<li>Create a package.json file for npm. To do this, run the following command in a command prompt:<br>
 <pre>
 cp package.json.sample package.json
 </pre>
