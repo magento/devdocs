@@ -896,7 +896,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 12 September 2016 (PDT)</div>
             <h2 id="theme-inherit-over">What's in this topic</h2>
 
 <p>Theme inheritance enables you to easily extend themes and minimize the maintenance efforts. You can use an existing theme as a basis for customizations, or minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.</p>
@@ -923,14 +923,14 @@ subsequent chapters in this guide.</p>
 
 <p>A parent theme is specified in the child theme <code>theme.xml</code> declaration file.</p>
 
-<p>Example: 
+<p>Example:
 the Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in <code>app/design/frontend/OrangeCo/orange/theme.xml</code> as follows:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Config/etc/theme.xsd&quot;</span><span class="nt">&gt;</span>
      <span class="nt">&lt;title&gt;</span>Orange<span class="nt">&lt;/title&gt;</span>
-     <span class="nt">&lt;parent&gt;</span>Magento/blank<span class="nt">&lt;/parent&gt;</span> 
+     <span class="nt">&lt;parent&gt;</span>Magento/blank<span class="nt">&lt;/parent&gt;</span>
      <span class="nt">&lt;media&gt;</span>
-         <span class="nt">&lt;preview_image&gt;</span>media/preview.jpg<span class="nt">&lt;/preview_image&gt;</span> 
+         <span class="nt">&lt;preview_image&gt;</span>media/preview.jpg<span class="nt">&lt;/preview_image&gt;</span>
      <span class="nt">&lt;/media&gt;</span>
  <span class="nt">&lt;/theme&gt;</span></code></pre></figure>
 
@@ -940,7 +940,7 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 
 <h2 id="override-viewxml-file">Override view.xml file</h2>
 
-<p>If your theme does not contain a <code>view.xml</code> configuration file, it will be inherited from the parent theme. If you add the <code>&lt;you_theme_dir&gt;/view.xml</code> file in your theme, it overrides the parent’s file.</p>
+<p>If your theme does not contain a <code>view.xml</code> configuration file, it will be inherited from the parent theme. If you add the <code>&lt;theme_dir&gt;/etc/view.xml</code> file in your theme, it overrides the parent’s file.</p>
 
 <h2 id="theme-inherit-static">Override static assets</h2>
 
