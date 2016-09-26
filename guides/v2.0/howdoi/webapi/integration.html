@@ -880,18 +880,18 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 26 September 2016 (PDT)</div>
             <p>An <strong>integration</strong> enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.</p>
 
 <p>Implementing a simple integration requires little knowledge of PHP or Magento internal processes. However, you will need a working knowledge of</p>
 
 <ul>
-  <li><a href="../../get-started/bk-get-started-api.html">Magento REST or SOAP Web APIs</a></li>
-  <li><a href="../../get-started/authentication/gs-authentication.html">Web API authentication</a></li>
-  <li><a href="/guides/v2.0//get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a></li>
+  <li><a href="/guides/v2.0/get-started/bk-get-started-api.html">Magento REST or SOAP Web APIs</a></li>
+  <li><a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Web API authentication</a></li>
+  <li><a href="/guides/v2.0/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a></li>
 </ul>
 
-<p>Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the <a href="../../install-gde/system-requirements.html">Magento System Requirements</a>.</p>
+<p>Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the <a href="/guides/v2.0/install-gde/system-requirements.html">Magento System Requirements</a>.</p>
 
 <p>To create an integration, follow these general steps:</p>
 
@@ -918,7 +918,7 @@
  mkdir -p vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;/etc/integration
  mkdir -p vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;/Setup
 </pre>
-    <p>For more detailed information, see <a href="../../extension-dev-guide/module-file-structure.html">Create your component file structure</a>.</p>
+    <p>For more detailed information, see <a href="/guides/v2.0/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a>.</p>
   </li>
   <li>
     <p><strong>Define your module configuration file.</strong> The <code>etc/module.xml</code> file provides basic information about the module. Change directories to the <code>etc</code> directory and create the <code>module.xml</code> file. You must specify values for the following attributes:</p>
@@ -982,7 +982,7 @@
    }
  </pre>
 
-    <p>For more information, see <a href="extension-dev-guide/build/create_component.html">Create a component</a>.</p>
+    <p>For more information, see <a href="/guides/v2.0/extension-dev-guide/build/create_component.html">Create a component</a>.</p>
   </li>
   <li>
     <p><strong>Create a <code>registration.php</code> file</strong> The <code>registration.php</code> registers the module with the Magento system. It must be placed in the module’s root directory.</p>
@@ -1134,7 +1134,7 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
 <tr>
 <td>endpoint_url</td>
 <td><p>Optional. The URL where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using <code>https://</code>.</p>
-<p>See [OAuth-based authentication](../../get-started/authentication/gs-authentication-oauth.html) for details.</p></td>
+<p>See [OAuth-based authentication](/guides/v2.0/get-started/authentication/gs-authentication-oauth.html) for details.</p></td>
 </tr>
 <tr>
 <td>identity_link_url</td>
@@ -1211,11 +1211,11 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
 
 <h2 id="related-topics">Related Topics</h2>
 <ul>
-  <li><a href="../../get-started/authentication/gs-authentication.html">Web API authentication</a></li>
+  <li><a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Web API authentication</a></li>
   <li><a href="/guides/v2.0//get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a></li>
-  <li><a href="../../install-gde/system-requirements.html">Magento System Requirements</a></li>
-  <li><a href="../../extension-dev-guide/module-file-structure.html">Create the module file structure</a></li>
-  <li><a href="../../extension-dev-guide/create_component.html">Create a component</a></li>
+  <li><a href="/guides/v2.0/install-gde/system-requirements.html">Magento System Requirements</a></li>
+  <li><a href="/guides/v2.0/extension-dev-guide/build/module-file-structure.html">Create the module file structure</a></li>
+  <li><a href="/guides/v2.0/extension-dev-guide/build/create_component.html">Create a component</a></li>
 </ul>
 
 		</div>
