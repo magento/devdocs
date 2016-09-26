@@ -37,6 +37,11 @@ Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-pack
 npm install -g grunt-cli
 </pre>
 </li>
+<li>Create a package.json file for npm<br>
+<pre>
+cp package.json.sample package.json
+</pre>
+</li>
 <li>
 Install (or refresh) the <code>node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:<br>
 
