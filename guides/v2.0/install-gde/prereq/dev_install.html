@@ -811,7 +811,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 14 August 2016 (PDT)</div>
+            <div class="updated">Updated: 27 September 2016 (PDT)</div>
             <div class="bs-callout bs-callout-tip">
   <p>Totally lost? Need a helping hand? Try our <a href="/guides/v2.0/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="/guides/v2.0/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
@@ -827,6 +827,10 @@
 
 <h2 id="integrator-aud">Intended audience</h2>
 <p>The audience for this topic is anyone who contributes to the Magento CE codebase. You should be highly technical, understand Composer and Git commands, and be able to upgrade the Magento system software and extensions using those commands. If that isn’t you, go back and <a href="/guides/v2.0/install-gde/bk-install-guide.html">choose another starting point</a>.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
+</div>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
@@ -899,7 +903,7 @@ mv composer.phar /usr/local/bin/composer
 
       <ul>
         <li>
-          <p>Release branches like <code>2.0</code> or <code>2.0.6</code> are more stable</p>
+          <p>Release branches like <code>2.1.0</code> are more stable</p>
 
           <p>You <em>must</em> use a released branch with the <a href="/guides/v2.0/migration/bk-migration-guide.html">Data Migration Tool</a>.</p>
         </li>
@@ -908,7 +912,7 @@ mv composer.phar /usr/local/bin/composer
         </li>
       </ul>
 
-      <p>Currently, the <code>develop</code> branch is the default but you can checkout a release branch like <code>2.0.6</code> after cloning.</p>
+      <p>Currently, the <code>develop</code> branch is the default but you can checkout a release branch like <code>2.1.0</code> after cloning.</p>
 
       <h3 id="instgde-prereq-compose-clone-auth">Creating an authorization file</h3>
       <p>The Magento 2 GitHub repository requires you to authenticate. The <code>composer install</code> commands fails if you do not. To authenticate, <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an <code>auth.json</code> file in the home directory of the Magento file system owner.</p>
@@ -1056,9 +1060,9 @@ fatal: The remote end hung up unexpectedly</pre>
               <pre><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
 </code></pre>
 
-              <p>For example, to check out the 2.0.6 release tag in a new branch named <code>2.0.6</code>, enter</p>
+              <p>For example, to check out the 2.1.0 release tag in a new branch named <code>2.1.0</code>, enter</p>
 
-              <pre><code>git checkout tags/2.0.6 -b 2.0.6
+              <pre><code>git checkout tags/2.1.0 -b 2.1.0
 </code></pre>
             </li>
             <li>
@@ -1113,9 +1117,9 @@ fatal: The remote end hung up unexpectedly</pre>
               <pre><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
 </code></pre>
 
-              <p>For example, to check out the 2.0.6 release tag in a branch named <code>2.0.6</code>, enter</p>
+              <p>For example, to check out the 2.1.0 release tag in a branch named <code>2.1.0</code>, enter</p>
 
-              <pre><code>git checkout tags/2.0.6 -b 2.0.6
+              <pre><code>git checkout tags/2.1.0 -b 2.1.0
 </code></pre>
             </li>
           </ol>
