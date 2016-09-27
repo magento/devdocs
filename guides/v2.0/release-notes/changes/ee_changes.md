@@ -12,8 +12,6 @@ github_link: release-notes/changes/ee_changes.md
 
 This topic provides details about backward incompatible changes made in a Magento EE mainline after the Magento 2.0.0 release. The content is auto-generated.
 
-Be aware that no `@api` code has been modified.
-
 All changes are aggregated into two tables:
 
 - [Class][] that contains backward incompatible changes made to Magento classes
