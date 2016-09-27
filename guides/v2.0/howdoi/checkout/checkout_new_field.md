@@ -18,19 +18,13 @@ This topic describes how to add a new field to default checkout forms: shipping 
 * TOC
 {:toc}
 
-## Overview
-
-To add a field the following general steps are required:
-
-1. Add the field to layout.
-2. Provide the field value submission to the server-side. 
-3. Add the field to the address model on the server-side.
-
-Each step is described further in details.
-
 ## Add the field to layout and handle its value on the client side 
 
+To add your custom field to the checkout address form and access its value on the client side, 
+take the steps described further.
+
 **Step 1**
+
 Add the field to layout. Both shipping address and billing address forms are [generated dynamically]({{page.baseurl}}howdoi/checkout/checkout_form.html#dynamic_form). So to modify its layout, you need to create a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. 
 
 Following is a sample logic for a plugin method adding a field named `Custom Attribute` to the shipping address form:
@@ -117,10 +111,11 @@ define([
 });
 {%endhighlight%}
 
-When adding a field to the billing address form, you need to modify the behavior of one of the following components: `Magento_Checkout/js/action/place-order` or `Magento_Checkout/js/action/set-payment-information`, depending on when do you need the custom field valued to be passed to the server-side. For example of a mixin, modifying one of these components, see the [place-order-mixin.js]({{site.mage2100url}}app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js) in the Magento_CheckoutAgreements module.
+When adding a field to the billing address form, you need to modify the behavior of one of the following components: `Magento_Checkout/js/action/place-order` or `Magento_Checkout/js/action/set-payment-information`, depending on when do you need the custom field valued to be passed to the server side. For example of a mixin, modifying one of these components, see the [place-order-mixin.js]({{site.mage2100url}}app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js) in the Magento_CheckoutAgreements module.
 
 
 **Step 3**
+
 Tell Magento to load your mixin for the corresponding JS component. For this, in the `<YourModule_dir>/view/frontend/` directory, add the `requirejs-config.js`.
 
 Following is a sample of such `requirejs-config.js` for the sample mixin added earlier:
@@ -140,7 +135,8 @@ var config = {
 
 
 **Step 4**
-To add the field to the address model on the server-side, add the `extension_attributes.xml` file in the `<YourModule_dir>/etc/` directory.
+
+To add the field to the address model on the server side, add the `extension_attributes.xml` file in the `<YourModule_dir>/etc/` directory.
 
 Following is a sample `extension_attributes.xml`:
 
@@ -154,7 +150,7 @@ Following is a sample `extension_attributes.xml`:
 </config>
 {%endhighlight%}
 
-## Access the value of the custom field on server-side
+## Access the value of the custom field on server side
 If you took all the steps described in the previous paragraphs, 
 Magento will generate the interface that includes your custom attribute and you can access your field value like this:
 
