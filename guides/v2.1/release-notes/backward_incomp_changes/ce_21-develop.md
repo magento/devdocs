@@ -28,7 +28,7 @@ where each change is displayed in a separate row in the table, with the followin
 <!-- LINK DEFINITIONS -->
 
 [Magento CE mainline]: https://github.com/magento/magento2
-[Magento 2.1.0]: https://github.com/magento/magento2/tree/909a2d7e8c2ac5ca55359827c22cea93fdb719df
+[Magento 2.1.0 GA]: https://github.com/magento/magento2/tree/909a2d7e8c2ac5ca55359827c22cea93fdb719df
 
 [Class]: #class
 [Interface]: #interface
