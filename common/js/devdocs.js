@@ -54,20 +54,30 @@ $(document).ready(function(){
             src: baseUrl+"i/icons/ico-link-grey.png",
             width: 25
         });
-
+        
         link.prepend(img);
-
         $(this).prepend(link);
 
         $(this).hover(function(){
             img.show();
-
         },
         function(){
             img.hide();
         });
     });
 
+    // Fix anchor jumps hiding headers
+    $(window).on("hashchange",function(){
+        $(document).scrollTop($(document).scrollTop()-86);
+    });
+
+});
+
+$(window).load(function(){
+    // Fix headers hiding behind nav when loading on anchor link
+    if(window.location.hash) {
+        $(document).scrollTop($(document).scrollTop()-43);
+    }
 });
 
 //Allows for sticky menu
