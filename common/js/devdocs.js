@@ -44,6 +44,30 @@ $(document).ready(function(){
         $("#searchbox").submit();
     });
 
+    // Prepend link anchor to content headers
+    $(".content-wrap :header").each(function(){
+        var link = $("<a>",{
+            href: "#"+$(this).attr("id"),
+            class: "anchor"
+        });
+        var img = $("<img>",{
+            src: baseUrl+"i/icons/ico-link-grey.png",
+            width: 25
+        });
+
+        link.prepend(img);
+
+        $(this).prepend(link);
+
+        $(this).hover(function(){
+            img.show();
+
+        },
+        function(){
+            img.hide();
+        });
+    });
+
 });
 
 //Allows for sticky menu
