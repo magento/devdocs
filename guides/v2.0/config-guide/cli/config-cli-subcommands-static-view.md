@@ -18,7 +18,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.
 *	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-xlate-dict">Deploy static view files</a>
 *	<a href="#view-file-trouble">Troubleshooting the static view files deployment tool</a>
-*	<a href="#view-file-trouble">Troubleshooting the static view files deployment tool</a>
+*	<a href="#deploy_without_db">Running Content Deploy on Magento Without Installation</a>
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
 The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
@@ -145,7 +145,7 @@ Use the following steps:
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
 	</div> -->
 
-**Running Content Deploy on Magento Without Installation**
+<h3 id="deploy_without_db">Running Content Deploy on Magento Without Installation</h3>
 
 In some cases should be the possibility to run deployment process on non-production (separate) environment in order to avoid any build processes on sensitive production machines.
 So the easiest way is to allow content generation 
