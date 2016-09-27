@@ -24,7 +24,7 @@ Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the S
 
 #### Why are we adding new APIs in a patch release?
 
-**These new interfaces will not break any existing customizations or extensions.**  See Alan Kent’s blog for more information about these features and Magento’s use of semantic versioning. 
+<i>These new interfaces will not break any existing customizations or extensions</i>.  See Alan Kent’s blog for more information about these features and Magento’s use of semantic versioning. 
 
 
 
