@@ -20,7 +20,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 ### Highlights
-Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality that is currently available in the Admin interface into the Sales API. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. See Module Reference for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
+Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. See Module Reference for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
 
 #### Why are we adding new APIs in a patch release?
 
@@ -143,27 +143,31 @@ We address the following functional issues in this release.
 ### Known issues
 
 
-<!--- 58017 -->* Issue: Error creating configurable products <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
+<!--- 58017 -->* **Issue: Error creating configurable products** <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
 
 While creating a configurable product, the configurable options appear to be created properly, but when you go to save the product, the associated simple products are not saved.
 
 
-Workaround: Clear browser cache. 
+**Workaround**: Clear browser cache. 
 
 
 
-<!--- 56853 -->* Issue: Restful Api Returned unexpected attribute
+<!--- 56853 -->* **Issue: Restful API returns unexpected attribute**
+
+The value type of the `catalogProductRepositoryV1` method `category_ids` attribute should be string, but instead returns an array. 
+
+**Workaround**: Adjust your code to handle a response of type array instead of string. 
 
 
 
-<!--- 54618 -->* Issue: Magento does not display the Products > Catalog table after you upgrade from 2.0.1 to 2.1.0, but instead displays a JavaScript error. 
+<!--- 54618 -->* **Issue: Magento does not display the Products > Catalog table after you upgrade from 2.0.1 to 2.1.0, but instead displays a JavaScript error** 
 
-Workaround: After your upgrade is complete, 
+**Workaround**: After your upgrade is complete, follow these steps:
 
-1. Clean the page cache by either selecting Flush Magento Cache from the Admin dashboard, or using the command line interface (CLI). To clean the cache from CLI, see Manage the Cache  http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli...
+1. Clean the page cache by either selecting Flush Magento Cache from the Admin dashboard, or by using the command line interface (CLI). To clean the cache from CLI, see Manage the Cache. <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html" target="_blank">Manage the Cache</a>.
 
-2. Restart Varnish: service varnish restart
 
+2. Restart Varnish. 
 
 
 
