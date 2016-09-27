@@ -20,11 +20,11 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ### Highlights
 
-Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality that is currently available in the Admin interface into the Sales API. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. See Module Reference for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
+Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality that is currently available in the Admin interface into the Sales API. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. See Module Reference Guide for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
 
-**These new interfaces will not break any existing customizations or extensions.** So why are we adding new APIs in a patch release? See Alan Kent’s blog for more information about these features and Magento’s use of semantic versioning. 
+#### Why are we adding new APIs in a patch release?
 
-
+**These new interfaces will not break any existing customizations or extensions.**  See Alan Kent’s blog for more information about these features and Magento’s use of semantic versioning. 
 
 
 
@@ -35,7 +35,6 @@ We address the following security issues in this release.
 
 #### General security 
 
-<!--- 57303 -->* FPC Cache Poisoning / Log Evadence for 2.0. It appears to be possible to poison Magento page caches with different pages from the same site. 
 
 <!--- 57811 -->* You can no longer delete a currently logged-in user. 
 
@@ -44,60 +43,41 @@ We address the following security issues in this release.
 <!--- 57582/1488 -->* Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.
 
 
-<!--- 57566/1533-->* Change/fake any product price from frontend and complete an order with that faked price. 
-You can no longer change or fake a product price from the Magento storefront and then complete an order with that fake price. 
+<!--- 57566/1533-->* You can no longer change or fake a product price from the Magento storefront and then complete an order with that fake price. 
 
 
-<!--- 57464 -->* The Guest order view protection code is no longer vulnerable to brute force attacks. 
+<!--- 56902 -->* A user with lesser privileges can no longer use a JSON call to force an Admin user to add his private or public key.
+
+<!--- 56700 -->* The order comment timestamp now correctly reflects the time that the comment was submitted, not when the page was last refreshed.<a href="https://github.com/magento/magento2/issues/5719" target="_blank">(GITHUB-5719)</a>, <a href="https://github.com/magento/magento2/issues/5890" target="_blank">(GITHUB-5890)</a>
 
 
-
-<!--- 56902 -->* A user with lesser privileges can no longer force an Admin user to add his private or public key using a JSON call.
-
-<!--- 56700 -->* <a href="https://github.com/magento/magento2/issues/5719" target="_blank">(GITHUB-5719)</a>, <a href="https://github.com/magento/magento2/issues/5890" target="_blank">(GITHUB-5890)</a>
-
-
-<!--- 56851 -->* Fixed issue with unserialized data during payment. <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a>
+<!--- 56851 -->* Fixed issue with the `_convertAdditionalData` method's use of unserialized data during payment. <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a>
 
 
 <!--- 56542/1480 -->* Resolved issue with potential SQL injection through the use of the ordering or grouping parameters.
 
 
-<!--- 45757 -->* CSRF vulnerability on cart checkout. I have found a CSRF vulnerability on deleting the user's CART in Magento2.
-There is no Server side validation of CSRF token in the body of the request. OPEN
+#### Denial-of-service attacks and brute force attacks
+
+<!--- 57464 -->* The Guest order view protection code is no longer vulnerable to brute force attacks. 
+
+<!--- 57303 -->* Fixed vulnerability to denial-of-service (DoS) attacks by full page cache poisoning. 
+
+
+#### Cross-Site Request Forgery  (CSRF)
+
+<!--- 45757 -->* Removed vulnerability in cart checkout experience by enhancing server-side Cross-Site Request Forgery (CSRF) validation.
 
 
 
-#### Cross-site scripting  
+#### Cross-site scripting  (XSS)
 
-<!--- 57463 -->* You can no longer insert malicious cross-site scripting code during email creation. 
+<!--- 57580/1433 -->* Resolved a potential XSS vulnerability in which customer addresses could be deleted. You can no longer deceive a user into deleting his store address book entries.
 
-<!--- 57580/1433 -->* Resolved a potential cross-site scripting (XSS) vulnerability in which customer addresses could be deleted. You can no longer trick a user into deleting his store address book entries.
-
-<!--- 57803/1539 -->* Cross-Site Scripting: Reflected in loading section. Fixed issue with cross-site scripting reflected in loading section of request.
-
-<!--- 57363 -->*  Stored XSS - Email Template.
-
-1.)Login to your magento2 admin panel
-
-2.)Click on marketing tab
-
-3.)Now select email templates and now create a template
-
-4.)type the name of template anything
-
-5.)Now type template subject anything
-
-6.)In Template Content : Type this payload
-
-<object data="data:text/html;base64,PHNjcmlwdD5hbGVydChkb2N1bWVudC5jb29raWUpOzwvc2NyaXB0Pg==">
-
-and save it
-
-7.)Now click on preview and you will get stored xss which can be used to steal users ,cookies or to bypass csrf protection.
+<!--- 57803/1539 -->* Fixed issue with XSS reflection in the loading section of REST requests.
 
 
-
+<!--- 57363 -->*  Fixed issue with potential storage of malicious XSS code in the body of an email template. (A malicious user could use this this script to steal user information and cookies, or to bypass cross-site request forgery protection.)
 
 
 
@@ -107,29 +87,14 @@ We address the following functional issues in this release.
 
 
 
-#### Upgrade
-
-<!--- 57579 -->* Upgrade does not put store in maintenance mode. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
-
-
-
 
 #### Tracking and shipping 
 
-<!--- 57098 -->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city on your order form. 
+<!--- 57098 -->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate was not updated when you changed the city on your order form. 
 
 <!--- 56908 -->* Magento now returns UPS shipping rates for Puerto Rico.
 
 <!--- 57461 -->* Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.
-
-
-
-#### Performance
-
-<!--- 55300 -->* We’ve improved storefront performance when creating 2500 or more product variants.
-
-
-<!--- 55785 -->* We've improved the load speed of the Configurable Product page. 
 
 
 
@@ -143,41 +108,41 @@ We address the following functional issues in this release.
 
 #### Sales API enhancements
 
-<!--- 56429 -->*  Shipment creation through API change order status. As an API client I want the order status has to be changed after Invoice has been created via API. Sales API must update status in the same way as Admin actions. 
+<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `salesShipOrderV1` interface support tasks you can already do through the Admin dashboard and include the ability to:  
 
-<!--- 56428 -->*  Invoice creation through API change order status. 
+* Post with an empty POST body and ship the entire order
+
+* Create a partial shipment by specifying the order line item(s) that you're shipping in the post body
+
+* Capture the remaining part of an order if you’ve already partially shipped an order and call again with an empty POST body
+
+
+
+<!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `salesInvoiceOrderV1` interface support tasks you can already do through the Admin dashboard and include the ability to:  
+
+* Post with an empty POST body and capture payment for the entire order
+
+* Create a partial invoice by specifying the order line item(s) in the post body
+
+* Capture the remaining part of an order if you’ve already partially invoiced an order and call again with an empty POST body
+
 
 
 
 #### Miscellaneous
 
-<!--- 56905 -->* Local File Inclusion for 2.0.x
 
+<!--- 57065 -->* Magento now returns you to the Admin dashboard after you've successfully changed your Admin password. Previously, Magento prompted you to change your password even after you just successfully changed it. <a href="https://github.com/magento/magento2/issues/4331" target="_blank">(GITHUB-4331)</a>
 
-<!--- 58611 -->*  
-
-<!--- 57065 -->* Magento now returns you to the Admin panel after you've successfully changed your Admin password. Previously, Magento prompted you to change your password even after you just successfully changed it. <a href="https://github.com/magento/magento2/issues/4331" target="_blank">(GITHUB-4331)</a>
-
-<!--- 58625 -->* Not display specific page by adminSetup. Request Setup Wizard Pages when Admin has Permission and is Logged in. The goal is to ensure that an admin user who is logged in and have permission to perform system upgrade can successfully and completely perform an upgrade without been requested to enter a password. OPEN
-
-
-<!--- 58674 -->* Visual Swatches are not displayed when using search. OPEN
-
-<!--- 58671 -->* Save Credit Cards for registered user during checkout with Braintree Credit Card with 3D Secure enabled does not working OPEN
-
-<!--- 58666 -->* Product is present only in the website3 OPEN
+<!--- 57579 -->* Upgrade now puts stores in maintenance mode as expected. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
 
 
 
 
 
-
-<!--- Omitted (can't be reproduced or won't fix) 57800 (CLONES: 58314) (CANNOT REPRO: 53971, 53431) (INTERNAL ONLY: 56759, 58167, 57879, 57577, 57568, 57294, 57546), 57303, 55862, 52239, 58626-->
+<!--- Omitted (can't be reproduced or won't fix) 57800 (CLONES: 58314, 58798, 58695, 58883) (CANNOT REPRO: 53971, 53431) (INTERNAL ONLY: 58674, 58816, 558874, 56759, 58167, 57879, 57577, 57568, 57294, 57546), 57303, 55862, 52239, 58626, 58625, 58666, 58933, 58923 (WONT FIX: 58671-->
 
 ### Known issues
-
-
-
 
 
 <!--- 58017 -->* Issue: Error creating configurable products <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
@@ -189,13 +154,7 @@ Workaround: Clear browser cache.
 
 
 
-
-
-<!--- 55594 -->* Issue: Client-side rendering performance times deteriorate if top-level product categories exceed 2000. 
-
-
-Workaround: You can still load product pages with more than 2,000 categories, but product performance will be enhanced by limiting top-level categories to less than 2,000. Load times otherwise may exceed your patience. 
-
+<!--- 56853 -->* Issue: Restful Api Returned unexpected attribute
 
 
 
