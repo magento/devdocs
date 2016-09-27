@@ -18,6 +18,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.
 *	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-xlate-dict">Deploy static view files</a>
 *	<a href="#view-file-trouble">Troubleshooting the static view files deployment tool</a>
+*	<a href="#view-file-trouble">Troubleshooting the static view files deployment tool</a>
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
 The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
@@ -143,6 +144,27 @@ Use the following steps:
 		<span class="glyphicon-class">
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
 	</div> -->
+
+**Running Content Deploy on Magento Without Installation**
+
+In some cases should be the possibility to run deployment process on non-production (separate) environment in order to avoid any build processes on sensitive production machines.
+So the easiest way is to allow content generation 
+on any code base with minimal vital configurations.
+
+***Exporting db configurations***
+
+Static content deploy require some system configurations, stores and inline translations to be loaded. So this information should be
+exported from the db. In order to do this, run below command on installed Magento (on production):
+
+	magento config:export
+	
+After running this command few files will appear in app/etc/ folder: <pre>setup.config.php, scope.config.php, i18n.config.php (optional)</pre>.
+You can copy this files and paste them into any Magento codebase (app/etc/) in order to generate static content.	
+
+***Magento Admin Panel Behavior***
+
+<pre>Store -> Configuration</pre> UI remains displaying all settings, even those defined 
+in setup.config.php file. All fields that defined in the file are disabled, so you can't change their values. There are no restrictions on which settings might be defined in that file, so any field could be disabled.
 
 #### Related topics
 
