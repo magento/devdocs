@@ -32,7 +32,7 @@ There are more details for each step in the following section.
 
 To add a JS mixin take the following steps:
 
-1. In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the `<your_module_dir>/view/%area%/web` directory. In this notation `%area%` stands for the [application area]({{page.sitebaseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html), and might be one of the following: `frontend`, `backend`, or `base`. There are no strict requirements for the mixin file naming. 
+1. In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the `<your_module_dir>/view/%area%/web` directory. In this notation `%area%` stands for the [application area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html), and might be one of the following: `frontend`, `backend`, or `base`. There are no strict requirements for the mixin file naming. 
 
    Sample mixin `Orange/Sample/view/base/web/js/columns-mixin.js`:
 
