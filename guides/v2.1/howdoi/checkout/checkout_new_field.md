@@ -1,1 +1,0 @@
-../../../v2.0/howdoi/checkout/checkout_new_field.md
