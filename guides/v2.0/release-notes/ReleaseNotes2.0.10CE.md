@@ -108,23 +108,28 @@ We address the following functional issues in this release.
 
 #### Sales API enhancements
 
-<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `salesShipOrderV1` interface support tasks you can already do through the Admin dashboard and include the ability to:  
+<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `salesShipOrderV1` interface support tasks you can already carry out through the Admin dashboard. These tasks include creating a shipment document or modifying an existing one. This call also has the ability to: 
 
-* Post with an empty POST body and ship the entire order
+* write information about shipped items to the order
 
-* Create a partial shipment by specifying the order line item(s) that you're shipping in the post body
+* change order status and state to reflect actions
 
-* Capture the remaining part of an order if you’ve already partially shipped an order and call again with an empty POST body
+* notify customer about shipment creation
 
 
 
-<!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `salesInvoiceOrderV1` interface support tasks you can already do through the Admin dashboard and include the ability to:  
 
-* Post with an empty POST body and capture payment for the entire order
+<!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `salesInvoiceOrderV1` interface support tasks you can already do through the Admin dashboard. These tasks  include creating a full or partial invoice or modifying an existing one.  This call also has the ability to:  
 
-* Create a partial invoice by specifying the order line item(s) in the post body
 
-* Capture the remaining part of an order if you’ve already partially invoiced an order and call again with an empty POST body
+* capture money that was placed with order payment
+
+* change order status and state to reflect actions
+
+* notify customer about invoice creation
+
+
+
 
 
 
@@ -169,6 +174,8 @@ The value type of the `catalogProductRepositoryV1` method `category_ids` attribu
 
 2. Restart Varnish. 
 
+
+<!--- 57004 -->* **Issue: The scope selector on the Product page does not display all websites associated with a restricted user.**
 
 
 ### System requirements

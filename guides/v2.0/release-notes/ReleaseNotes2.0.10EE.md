@@ -172,6 +172,7 @@ The value type of the `catalogProductRepositoryV1` method `category_ids` attribu
 2. Restart Varnish. 
 
 
+<!--- 57004 -->* **Issue: The scope selector on the Product page does not display all websites associated with a restricted user.**
 
 
 
