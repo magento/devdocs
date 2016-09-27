@@ -164,7 +164,7 @@ The value type of the `catalogProductRepositoryV1` method `category_ids` attribu
 
 **Workaround**: After your upgrade is complete, follow these steps:
 
-1. Clean the page cache by either selecting Flush Magento Cache from the Admin dashboard, or by using the command line interface (CLI). To clean the cache from CLI, see Manage the Cache. <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html" target="_blank">Manage the Cache</a>.
+1. Clean the page cache by either selecting Flush Magento Cache from the Admin dashboard, or by using the command line interface (CLI). To clean the cache from CLI, see <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html" target="_blank">Manage the Cache</a>.
 
 
 2. Restart Varnish. 
