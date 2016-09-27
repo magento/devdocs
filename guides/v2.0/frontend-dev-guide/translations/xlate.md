@@ -27,7 +27,7 @@ The Magento application enables you to localize your store for multiple regions 
 <h3 id="translate_terms">Terms used</h3>
 A *translation dictionary* is a comma-separated value (.csv) file with at least two columns: the original phrase in the `en_US` locale and a translation of that phrase in an another locale. Sample translation from English (`en_US`) to German (`de_DE`):
 
-	"Add to Cart","Zum Warenkobrn hinzufügen"
+	"Add to Cart","Zum Warenkorb hinzufügen"
 	"Add to Compare","Hinzufügen um zu vergleichen"
 	"Add to Wishlist","Zum Wunschzettel hinzufügen"
 	"Additional Product Info","Zusätzliche Angaben zum Produkt"

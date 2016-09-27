@@ -4,7 +4,7 @@ group: cloud
 subgroup: 04_setup
 title: Set Magento Admin environment variables
 menu_title: Set Magento Admin environment variables
-menu_order: 11
+menu_order: 21
 menu_node: 
 version: 2.0
 github_link: cloud/access-acct/admin-env-vars.md

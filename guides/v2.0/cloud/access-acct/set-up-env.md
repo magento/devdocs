@@ -4,7 +4,7 @@ group: cloud
 subgroup: 04_setup
 title: Set up an environment
 menu_title: Set up an environment
-menu_order: 10
+menu_order: 20
 menu_node: 
 version: 2.0
 github_link: cloud/access-acct/set-up-env.md
