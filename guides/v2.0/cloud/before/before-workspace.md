@@ -4,7 +4,7 @@ group: cloud
 subgroup: 04_setup
 title: Set up a Magento workspace
 menu_title: Set up a Magento workspace
-menu_order: 2
+menu_order: 5
 menu_node: 
 version: 2.0
 github_link: cloud/before/before-workspace.md

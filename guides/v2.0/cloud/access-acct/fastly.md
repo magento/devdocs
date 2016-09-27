@@ -4,7 +4,7 @@ group: cloud
 subgroup: 04_setup
 title: Set up Fastly
 menu_title: Set up Fastly
-menu_order: 12
+menu_order: 25
 menu_node: 
 version: 2.0
 github_link: cloud/access-acct/fastly.md
