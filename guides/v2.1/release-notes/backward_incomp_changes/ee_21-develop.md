@@ -2,15 +2,16 @@
 layout: no-timestamp
 group: release-notes
 subgroup: 05_BC
-title: Magento EE Backward Incompatible Changes
-menu_title: Magento EE changes between 2.0.0 and develop
-version: 2.0
-github_link: release-notes/changes/ee_changes.md
+title: Magento EE Backward Incompatible Changes between 2.1 and develop branches
+menu_title: Magento EE changes between 2.1 and develop
+menu_order: 13
+version: 2.1
+github_link: release-notes/backward_incomp_changes/ee_2.0-2.1.md
 ---
 
 ## Preface
 
-This topic provides details about backward incompatible changes made in a Magento EE mainline after the Magento 2.0.0 release. The content is auto-generated.
+This topic provides details about backward incompatible changes made in a Magento EE mainline after the Magento 2.1.0 GA release. The content is auto-generated.
 
 All changes are aggregated into two tables:
 
@@ -22,7 +23,7 @@ where each change is displayed in a separate row in the table, with the followin
 - **Target** with the name of an affected class or interface
 - **What changed** with the description of a backward incompatible change
 
-{% include changes/ee_changes.html %}
+{% include changes/ee_changes-21-develop.html %}
 
 <!-- LINK DEFINITIONS -->
 

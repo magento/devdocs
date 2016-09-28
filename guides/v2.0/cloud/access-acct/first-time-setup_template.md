@@ -4,7 +4,7 @@ group: cloud
 subgroup: 04_setup
 title: Create a sample Magento project from a template
 menu_title: Create a sample Magento project from a template
-menu_order: 3
+menu_order: 10
 menu_node: 
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_template.md

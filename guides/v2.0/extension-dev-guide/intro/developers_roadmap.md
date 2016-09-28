@@ -9,7 +9,6 @@ version: 2.0
 github_link: extension-dev-guide/intro/developers_roadmap.md
 redirect_from: 
   - /guides/v1.0/extension-dev-guide/developers_roadmap.html
-  - /guides/v2.0/mktpl-quickstart/intro-moreinfo.html
   - /guides/v2.0/extension-dev-guide/developers_roadmap.html
 ---
 

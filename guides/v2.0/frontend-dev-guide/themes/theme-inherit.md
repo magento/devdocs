@@ -30,15 +30,15 @@ subsequent chapters in this guide.
 
 A parent theme is specified in the child theme `theme.xml` declaration file.
 
-Example: 
+Example:
 the Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in `app/design/frontend/OrangeCo/orange/theme.xml` as follows:
 
 {% highlight xml %}
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
      <title>Orange</title>
-     <parent>Magento/blank</parent> 
+     <parent>Magento/blank</parent>
      <media>
-         <preview_image>media/preview.jpg</preview_image> 
+         <preview_image>media/preview.jpg</preview_image>
      </media>
  </theme>
 {% endhighlight xml %}
@@ -49,7 +49,7 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 
 ## Override view.xml file
 
-If your theme does not contain a `view.xml` configuration file, it will be inherited from the parent theme. If you add the `<you_theme_dir>/view.xml` file in your theme, it overrides the parent's file.
+If your theme does not contain a `view.xml` configuration file, it will be inherited from the parent theme. If you add the `<theme_dir>/etc/view.xml` file in your theme, it overrides the parent's file.
 
 ## Override static assets {#theme-inherit-static}
 
@@ -122,7 +122,7 @@ To do this, they need to add an overriding template for the corresponding module
 Note, that the path to the template inside the `templates` directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:
 <p><img src="{{ site.baseurl }}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
-You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{page.baseurl}}frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>. 
+You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{page.baseurl}}frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.
 
 ## Extend layouts {#theme-inherit-layout}
 
