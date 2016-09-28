@@ -100,11 +100,3 @@ To tell Grunt to use a custom configuration file, instead the default one, add t
    Example:
 
        var themes = fileRouter.get('themes');
-
-
-
-
-
-
-
-

@@ -49,7 +49,7 @@ module.exports = {
 
 {%endhighlight%}
 
-, where the following notation is used:
+where the following notation is used:
 
 * `%theme%`: your theme code, conventionally should correspond to the theme directory name.
 * `%language%`: specified in the 'code_subtag' format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `%language%`.
@@ -69,12 +69,10 @@ Action
 </th>
 </tr>
 <tr>
-
 <td>
 <pre>
 grunt clean:&lt;theme&gt;
 </pre>
-
 For example: 
 <pre>
 grunt clean:blank
@@ -85,21 +83,17 @@ Removes the theme related static files in the <code>pub/static</code> and <code>
 </td>
 </tr>
 <tr>
-
 <td>
 <pre>
 grunt exec:&lt;theme&gt;
 </pre>
-
 </td>
 <td>
 Republishes symlinks to the source files to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory.
-
 </td>
 </tr>
 <tr>
 <td>
-
 <pre>
 grunt less:&lt;theme&gt;
 </pre>
@@ -108,9 +102,7 @@ grunt less:&lt;theme&gt;
 Compiles <code>.css</code> files using the symlinks published in the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory
 </td>
 </tr>
-
 <tr>
-
 <td>
 <pre>
 grunt watch
@@ -131,10 +123,7 @@ The following shows which Grunt tasks to use for debugging:
 <li>After you switch the compilation mode from client-side to server-side, run the <code>exec</code> command.</li>
 <li>
 After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page. </li>
-
 <li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
-
-
 </ul>
 
 If you have LiveReload installed, run the <code>grunt watch</code> command, and the flow is even simpler:
