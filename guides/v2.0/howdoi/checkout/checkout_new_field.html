@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Migrate extensions</title>
+	<title>Add a new field in address form</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/howdoi/migrate/migrate-extensions.html">
+	<link rel="canonical" href="//guides/v2.0/howdoi/checkout/checkout_new_field.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -44,9 +44,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/howdoi/migrate/migrate-extensions.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/howdoi/checkout/checkout_new_field.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/howdoi/migrate/migrate-extensions.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/howdoi/checkout/checkout_new_field.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -160,14 +160,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Migrate extensions</h1>
+		<h1 class="page-heading">Add a new field in address form</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/migrate/migrate-extensions.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/checkout/checkout_new_field.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -497,7 +497,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/howdoi/migrate/migrate-extensions.html">Migrate extensions</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/howdoi/migrate/migrate-extensions.html">Migrate extensions</a></li>
 
 									
 
@@ -753,7 +753,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/howdoi/checkout/checkout_new_field.html">Add a new field in address form</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/howdoi/checkout/checkout_new_field.html">Add a new field in address form</a></li>
 
 									
 
@@ -888,12 +888,147 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="migrate-extensions-from-magento-1-to-magento-2">Migrate extensions from Magento 1 to Magento 2</h2>
+            <div class="updated">Updated: 28 September 2016 (PDT)</div>
+            <h2 class="no_toc" id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>Magento 1 extensions in most cases will not be compatible with Magento 2 code. Many extension providers offer updated versions of their products available for purchase or download on the <a href="https://marketplace.magento.com/extensions.html" target="_blank">Magento Marketplace</a>.</p>
+<p>This topic describes how to add new fields to default checkout forms: shipping address or billing address form. For illustration we use a case of adding a field to the shipping address form.</p>
 
-<p>Use this chance to review the list of extensions. To simplify future upgrades, install only the extensions that are required for your business.</p>
+<p><strong>Contents</strong></p>
+
+<ul id="markdown-toc">
+  <li><a href="#add-the-field-to-layout-and-handle-its-value-on-the-client-side" id="markdown-toc-add-the-field-to-layout-and-handle-its-value-on-the-client-side">Add the field to layout and handle its value on the client side</a></li>
+  <li><a href="#access-the-value-of-the-custom-field-on-server-side" id="markdown-toc-access-the-value-of-the-custom-field-on-server-side">Access the value of the custom field on server side</a></li>
+  <li><a href="#related-reading" id="markdown-toc-related-reading">Related reading</a></li>
+</ul>
+
+<h2 id="add-the-field-to-layout-and-handle-its-value-on-the-client-side">Add the field to layout and handle its value on the client side</h2>
+
+<p>To add your custom field to the checkout address form and access its value on the client side, 
+take the steps described further.</p>
+
+<p><strong>Step 1</strong></p>
+
+<p>Add the field to layout. Both shipping address and billing address forms are <a href="/guides/v2.0/howdoi/checkout/checkout_form.html#dynamic_form">generated dynamically</a>. So to modify its layout, you need to create a <a href="/guides/v2.0/extension-dev-guide/plugins.html">plugin</a> for the <code>\Magento\Checkout\Block\Checkout\LayoutProcessor::process</code> method.</p>
+
+<p>Following is a sample logic for a plugin method adding a field named <code>Custom Attribute</code> to the shipping address form:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$customAttributeCode</span> <span class="o">=</span> <span class="s1">&#39;custom_field&#39;</span><span class="p">;</span>
+<span class="nv">$customField</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;component&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento_Ui/js/form/element/abstract&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="c1">// customScope is used to group elements within a single form (e.g. they can be validated separately)</span>
+        <span class="s1">&#39;customScope&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;shippingAddress.custom_attributes&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;customEntry&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
+        <span class="s1">&#39;template&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ui/form/field&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;elementTmpl&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ui/form/element/input&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;tooltip&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;description&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;this is what the field is for&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;dataScope&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;shippingAddress.custom_attributes&#39;</span> <span class="o">.</span> <span class="s1">&#39;.&#39;</span> <span class="o">.</span> <span class="nv">$customAttributeCode</span><span class="p">,</span>
+    <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Custom Attribute&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;provider&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;checkoutProvider&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sortOrder&#39;</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;validation&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+       <span class="s1">&#39;required-entry&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;options&#39;</span> <span class="o">=&gt;</span> <span class="p">[],</span>
+    <span class="s1">&#39;filterBy&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
+    <span class="s1">&#39;customEntry&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
+    <span class="s1">&#39;visible&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$jsLayout</span><span class="p">[</span><span class="s1">&#39;components&#39;</span><span class="p">][</span><span class="s1">&#39;checkout&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;shipping-step&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;shippingAddress&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;shipping-address-fieldset&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="nv">$customAttributeCode</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$customField</span><span class="p">;</span></code></pre></figure>
+
+<p>This way, your field is added to the <code>customAttributes</code> property of <code>'Magento_Checkout/js/model/new-customer-address.js</code>, a JS object that lists all predefined address attributes and matches the corresponding server-side interface <code>\Magento\Quote\Api\Data\AddressInterface</code>. The <code>customAttributes</code> property was designed to contain custom EAV address attributes and is related to <code>\Magento\Quote\Model\Quote\Address\CustomAttributeListInterface::getAttributes</code> method. The code above will automatically handle local storage persistence on frontend.</p>
+
+<p>Optionally, instead of adding a plugin, you can use <a href="/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection (DI)</a>. For this, in <code>&lt;your_module_dir&gt;/Block/Checkout/</code> directory, add the <code>LayoutProcessor</code> class adding the custom field to the address form. The class must implement the <code>\Magento\Checkout\Block\Checkout\LayoutProcessorInterface</code> interface. You can use the code sample above as an example of the <code>\Magento\Checkout\Block\Checkout\LayoutProcessorInterface::process()</code> method implementation. To add your <code>LayoutProcessor</code> class the corresponding pool of processors, in the <code>&lt;your_module_dir&gt;/etc/frontend/di.xml</code> file specify the following:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Checkout\Block\Onepage&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;layoutProcessors&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%unique_name%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>%path\to\your\LayoutProcessor%<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span></code></pre></figure>
+
+<p>where <code>%unique_name%</code> and <code>%path\to\your\LayoutProcessor%</code> must be replaced by your real values.</p>
+
+<p><strong>Step 2</strong></p>
+
+<p>Add a JS mixin to change the behavior of the component responsible for the data submission to the server side. For this, in your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the <code>&lt;your_module_dir&gt;/view/frontend/web</code> directory. There are no strict requirements for the mixin file naming.</p>
+
+<p>Following is a sample mixin modifying the behavior of <code>Magento_Checkout/js/action/set-shipping-information</code> (this component is responsible for data submission between shipping and billing checkout steps):</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/*jshint browser:true jquery:true*/</span>
+<span class="cm">/*global alert*/</span>
+<span class="nx">define</span><span class="p">([</span>
+    <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mage/utils/wrapper&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Magento_Checkout/js/model/quote&#39;</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">wrapper</span><span class="p">,</span> <span class="nx">quote</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">setShippingInformationAction</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="nx">wrapper</span><span class="p">.</span><span class="nx">wrap</span><span class="p">(</span><span class="nx">setShippingInformationAction</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">originalAction</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">shippingAddress</span> <span class="o">=</span> <span class="nx">quote</span><span class="p">.</span><span class="nx">shippingAddress</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">shippingAddress</span><span class="p">[</span><span class="s1">&#39;extension_attributes&#39;</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">shippingAddress</span><span class="p">[</span><span class="s1">&#39;extension_attributes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span>
+            <span class="p">}</span>
+
+            <span class="nx">shippingAddress</span><span class="p">[</span><span class="s1">&#39;extension_attributes&#39;</span><span class="p">][</span><span class="s1">&#39;custom_field&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">shippingAddress</span><span class="p">.</span><span class="nx">customAttributes</span><span class="p">[</span><span class="s1">&#39;custom_field&#39;</span><span class="p">];</span>
+            <span class="c1">// pass execution to original action (&#39;Magento_Checkout/js/action/set-shipping-information&#39;)</span>
+            <span class="k">return</span> <span class="nx">originalAction</span><span class="p">();</span>
+        <span class="p">});</span>
+    <span class="p">};</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>When adding a field to the billing address form, you need to modify the behavior of one of the following components: <code>Magento_Checkout/js/action/place-order</code> or <code>Magento_Checkout/js/action/set-payment-information</code>, depending on when do you need the custom field valued to be passed to the server side. For example of a mixin, modifying one of these components, see the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js">place-order-mixin.js</a> in the Magento_CheckoutAgreements module.</p>
+
+<p><strong>Step 3</strong></p>
+
+<p>Tell Magento to load your mixin for the corresponding JS component. For this, in the <code>&lt;YourModule_dir&gt;/view/frontend/</code> directory, add the <code>requirejs-config.js</code>.</p>
+
+<p>Following is a sample of such <code>requirejs-config.js</code> for the sample mixin added earlier:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">config</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">mixins</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;Magento_Checkout/js/action/set-shipping-information&#39;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s1">&#39;&lt;YourNamespace_YourModule&gt;/js/action/set-shipping-information-mixin&#39;</span><span class="o">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span></code></pre></figure>
+
+<p><strong>Step 4</strong></p>
+
+<p>To add the field to the address model on the server side, add the <code>extension_attributes.xml</code> file in the <code>&lt;YourModule_dir&gt;/etc/</code> directory.</p>
+
+<p>Following is a sample <code>extension_attributes.xml</code>:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Api/etc/extension_attributes.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Quote\Api\Data\AddressInterface&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;custom_field&quot;</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/extension_attributes&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<h2 id="access-the-value-of-the-custom-field-on-server-side">Access the value of the custom field on server side</h2>
+<p>If you took all the steps described in the previous paragraphs, 
+Magento will generate the interface that includes your custom attribute and you can access your field value like this:</p>
+
+<pre><code>$value = $address-&gt;getExtensionAttributes()-&gt;getCustomField();
+</code></pre>
+
+<h2 id="related-reading">Related reading</h2>
+
+<ul>
+  <li><a href="/guides/v2.0/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
+</ul>
 
 		</div>
 	</section>

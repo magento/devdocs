@@ -782,6 +782,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/howdoi/checkout/checkout_new_field.html">Add a new field in address form</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/howdoi/checkout/checkout_address.html">Add a custom shipping address renderer</a></li>
 
 									
@@ -1083,7 +1091,9 @@ For example, the shipping JS component (see <code>&lt;Magento_Checkout_module_di
 
 <h3 id="static-forms">Static forms</h3>
 
-<p>If the form fields are not generated dynamically, they can be defined in a layout.</p>
+<p>The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the Admin. (compare to <a href="#dynamic_form">dynamic forms</a>)</p>
+
+<p>The fields of static forms are not generated dynamically, so they can be defined in a layout.</p>
 
 <p>The following code sample shows configuration of the form that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (<code>checkoutProvider</code>) that is introduced in the <code>Magento_Checkout</code> module:</p>
 
@@ -1178,9 +1188,10 @@ For example, the shipping JS component (see <code>&lt;Magento_Checkout_module_di
     <span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/item&gt;</span></code></pre></figure>
 
-<h3 id="dynamically-defined-forms">Dynamically defined forms</h3>
+<h3 id="dynamic_form">Dynamically defined forms</h3>
 
-<p>If form fields are generated dynamically, you must implement a <a href="/guides/v2.1/extension-dev-guide/plugins.html">plugin</a> for the <code>\Magento\Checkout\Block\Checkout\LayoutProcessor::process</code> method.
+<p>Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the Admin &gt; Stores &gt; Configuration &gt; Customers &gt; Customer Configuration &gt; Name and Address Options<br />
+For such forms, you must implement a <a href="/guides/v2.1/extension-dev-guide/plugins.html">plugin</a> for the <code>\Magento\Checkout\Block\Checkout\LayoutProcessor::process</code> method.
 A plugin can add custom fields definitions to layout at run-time. The format of the field definition is the same as for fields defined in layout.</p>
 
 <p>For example:</p>
