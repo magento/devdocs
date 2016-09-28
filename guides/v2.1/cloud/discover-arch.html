@@ -396,7 +396,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/access-acct/first-time-setup.html">First-time setup</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/access-acct/first-time-setup.html">First-time setup (developers)</a></li>
 									
 								
 
@@ -407,7 +407,8 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/before/before-workspace.html">Set up a Magento workspace</a></li>
+										<li class="level3Parent " id="workspace"><a href="#">Set up a Magento workspace</a>
+
 
 									
 
@@ -415,7 +416,9 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/first-time-setup_template.html">Create a sample Magento project from a template</a></li>
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.1/cloud/before/before-workspace.html">Overview of a Magento workspace</a>
+
 
 									
 
@@ -423,7 +426,9 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import.html">Import an existing Magento project</a></li>
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.1/cloud/before/before-workspace-cloud-account.html">Step 1, Set up an account</a>
+
 
 									
 
@@ -431,7 +436,9 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/set-up-env.html">Set up an environment</a></li>
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Step 2, Set up the Magento file system owner</a>
+
 
 									
 
@@ -439,7 +446,66 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/admin-env-vars.html">Set Magento Admin environment variables</a></li>
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.1/cloud/before/before-workspace-cli.html">Step 3, Install the CLI</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.1/cloud/before/before-workspace-ssh.html">Step 4, Enable Secure Shell (SSH)</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.1/cloud/before/before-workspace-php.html">Step 5, Set up PHP and MySQL</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="newproj"><a href="#">Deploy the Magento software to the cloud (create a new project)</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child newproj " data-menunode="newproj"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_template.html">Create a sample Magento project from a template</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child newproj " data-menunode="newproj"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import.html">Import an existing Magento project</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/set-up-env.html">Set up an environment and install the Magento software locally</a></li>
 
 									
 
@@ -950,18 +1016,75 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/live/live.html">Go live</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/live/stage-prod-live.html">From integration to live</a></li>
 									
 								
 
 									
 
+
+								
+
+									
+
+										<li class="level3Parent " id="stage-prod"><a href="#">Staging and production</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.1/cloud/live/stage-prod-over.html">Overview of staging and production</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html">Prepare to migrate data</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate data</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.1/cloud/live/stage-prod-test.html">Testing</a>
+
+
+									
 
 								
 
 									
 
 									<li class="level-2 "><a href="/guides/v2.1/cloud/live/live-prot.html">Protective block</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/live.html">Go live</a></li>
 
 									
 
@@ -1172,19 +1295,71 @@
 	<section class="content">
 		<div class="content-wrap">
             <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="architecture">Architecture</h2>
+            <h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#cloud-arch">Architecture</a></li>
+  <li><a href="#cloud-arch-scale">Scalability</a></li>
+  <li><a href="#cloud-arch-projects">Projects</a></li>
+  <li><a href="#cloud-arch-services">Services</a></li>
+  <li><a href="#cloud-arch-software">Software versions used</a></li>
+</ul>
+
+<h2 id="cloud-arch">Architecture</h2>
+<p>Magento Enterprise Cloud Edition enables you to use the following three types of systems.</p>
+
+<h3 id="cloud-arch-int">Integration systems</h3>
+<p>This is the type of system on which individual developers customize the Magento application.</p>
+
+<p>An integration system runs in a Linux container. You can have up to eight active <em>environments</em> (that is, Git branches) at a time to do your development and testing.</p>
+
+<p>Use an integration system to write custom code and test it. Push your code to staging or production for iterative development.</p>
+
+<h3 id="cloud-arch-stage">Staging system</h3>
+<p>This system runs on hardware similar to production.</p>
+
+<p>Staging is where you test your finalized code before deploying to your live production system.</p>
+
+<h3 id="cloud-arch-prod">Production system</h3>
+<p>This system runs your public-facing store on triple-redundant hardware.</p>
+
+<h4 id="advantage-of-redundant-hardware">Advantage of redundant hardware</h4>
+<p>Rather than running a traditional active-passive master or master-slave setup, Magento Enterprise Cloud Edition runs a triple-redundant multimaster where all three instances accept reads and writes. This architecture offers zero downtime when scaling, and also provides guaranteed transactional integrity.</p>
+
+<p>Because of our unique triple-redundant hardware, we can provide you with a set of three gateway servers. Most external services enable you to whitelist multiple IPs, so having more than one fixed IP isn’t usually a problem.</p>
+
+<p>These three gateways map to the three servers in your Magento Enterprise Cloud Edition cluster and retain permanent addresses.</p>
+
+<p>Furthermore, Magento Enterprise Cloud Edition is fully redundant and highly available at every level:</p>
+
+<ul>
+  <li>DNS</li>
+  <li>Content Delivery Network (CDN)</li>
+  <li>Elastic load balancer (ELB)</li>
+  <li>Three-server cluster comprising all Magento services, including the database and web server.</li>
+</ul>
+
+<h4 id="backup-and-disaster-recovery">Backup and disaster recovery</h4>
+<p>We automatically back up your production system every six hours. Each production system cluster is designed to withstand the loss of an entire server and all of the services running on it.</p>
+
+<p>The coordinating agent that monitors your production system detects failures at the service level (for example, MySQL), and for all cases where an automated recovery is possible, fully automates and coordinates that recovery.</p>
+
+<h2 id="cloud-arch-scale">Scalability</h2>
+<p>Magento Enterprise Cloud Edition seamlessly scales from the smallest six CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means that upscaling can be conducted swiftly and without downtime: each of the three instances in the cluster is taken out of rotation in turn, upgraded to the new size and returned to rotation.</p>
+
+<p>In addition, extra web servers can be added to an existing cluster should the constriction be at the PHP level rather than the database level. This provides <a href="https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling" target="_blank"><em>horizontal scaling</em></a> to complement the vertical scaling provided by extra CPUs on the database level.</p>
+
+<h2 id="cloud-arch-projects">Projects</h2>
 <p>The container for your Magento application is a <em>project</em>. The project is your Magento store. Each project has one or more <em>environments</em>, which are Git branches that enable developers to work on new features or perform testing. Each environment is comprised of <em>services</em>, which are deployed inside highly restricted containers on a grid of servers.</p>
 
-<p>Monitoring and fail-over happen automatically, behind the scenes.</p>
+<p>Monitoring and failover happen automatically, behind the scenes.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Magento Enterprise Cloud Edition currently supports the following services: PHP, MySQL (MariaDB), Solr, Elasticsearch, Redis and RabbitMQ.</p>
 </div>
 
-<h2 id="services">Services</h2>
-<p>Each service runs in its own secure container; containers are managed together in the project.</p>
-
-<p>Some services are built-in, such as the following:</p>
+<h2 id="cloud-arch-services">Services</h2>
+<p>Each service runs in its own secure container; containers are managed together in the project. 
+Some services are built-in, such as the following:</p>
 
 <ul>
   <li>HTTP router (handling incoming requests, but also caching and redirects)</li>
@@ -1197,7 +1372,7 @@
 a microservice oriented architecture with Magento Enterprise Cloud Edition is
 as easy as managing a monolithic application.</p>
 
-<h2 id="software-versions-used">Software versions used</h2>
+<h2 id="cloud-arch-software">Software versions used</h2>
 <p>Magento Enterprise Cloud Edition uses:</p>
 
 <ul>

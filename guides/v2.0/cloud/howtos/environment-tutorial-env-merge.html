@@ -367,7 +367,34 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time setup</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/before/before-project-owner.html">Account owner tasks</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time setup (developers)</a></li>
 									
 								
 
@@ -378,7 +405,8 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/before/before-workspace.html">Set up a Magento workspace</a></li>
+										<li class="level3Parent " id="workspace"><a href="#">Set up a Magento workspace</a>
+
 
 									
 
@@ -386,7 +414,9 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/first-time-setup_template.html">Create a sample Magento project from a template</a></li>
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace.html">Overview of a Magento workspace</a>
+
 
 									
 
@@ -394,7 +424,9 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import.html">Import an existing Magento project</a></li>
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-cloud-account.html">Step 1, Set up an account</a>
+
 
 									
 
@@ -402,7 +434,9 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/set-up-env.html">Set up an environment</a></li>
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Step 2, Set up the Magento file system owner</a>
+
 
 									
 
@@ -410,7 +444,66 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/admin-env-vars.html">Set Magento Admin environment variables</a></li>
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-cli.html">Step 3, Install the CLI</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-ssh.html">Step 4, Enable Secure Shell (SSH)</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-php.html">Step 5, Set up PHP and MySQL</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="newproj"><a href="#">Deploy the Magento software to the cloud (create a new project)</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child newproj " data-menunode="newproj"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_template.html">Create a sample Magento project from a template</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child newproj " data-menunode="newproj"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import.html">Import an existing Magento project</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/set-up-env.html">Set up an environment and install the Magento software locally</a></li>
 
 									
 
@@ -921,18 +1014,75 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/live/live.html">Go live</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/live/stage-prod-live.html">From integration to live</a></li>
 									
 								
 
 									
 
+
+								
+
+									
+
+										<li class="level3Parent " id="stage-prod"><a href="#">Staging and production</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-over.html">Overview of staging and production</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html">Prepare to migrate data</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate data</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-test.html">Testing</a>
+
+
+									
 
 								
 
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/live/live-prot.html">Protective block</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/live/live.html">Go live</a></li>
 
 									
 
@@ -1158,7 +1308,8 @@
 <div>
 
   <ol>
-    <li>Log in to the server on which your SSH keys are located.</li>
+    <li>Log in to the server on which your SSH keys are located as, or switch to, the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+    <li>Change to a directory to which the Magento file system owner has write access, such as the web server docroot.</li>
     <li>
       <p>Log in to your project:</p>
 
