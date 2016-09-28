@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Modal widget</title>
+	<title>Using JavaScript mixins</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/javascript-dev-guide/widgets/widget_modal.html">
+	<link rel="canonical" href="//guides/v2.0/javascript-dev-guide/javascript/js_mixins.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -44,9 +44,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/javascript-dev-guide/widgets/widget_modal.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/javascript-dev-guide/javascript/js_mixins.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/javascript-dev-guide/widgets/widget_modal.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -160,14 +160,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Modal widget</h1>
+		<h1 class="page-heading">Using JavaScript mixins</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/widgets/widget_modal.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/javascript/js_mixins.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -371,7 +371,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/javascript/js_mixins.html">Using JavaScript mixins</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/javascript-dev-guide/javascript/js_mixins.html">Using JavaScript mixins</a></li>
 
 									
 
@@ -494,7 +494,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_modal.html">Modal widget</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_modal.html">Modal widget</a></li>
 
 									
 
@@ -625,182 +625,106 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="modal_overview">Overview</h2>
+            <div class="updated">Updated: 27 September 2016 (PDT)</div>
+            
+<h2 class="no_toc" id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>The Magento modal widget implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:</p>
+<p>This topic describes how to use JavaScript mixins to overwrite <a href="/guides/v2.0/javascript-dev-guide/javascript/js_overview.html#js_terms">JavaScript components’</a> methods in Magento.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>In Magento, mixins are included on the on the RequireJS loading level. This approach allows to extend/overwrite result that any JavaScript component returns before it is used anywhere.</p>
+
+<p>To add a JS mixin take the following steps:</p>
+
+<ol>
+  <li>Define a mixin as a separate AMD module. It should return a callback function. This function must get the target JS component (module) as an argument.</li>
+  <li>Declare the AMD module you created as a mixin to the target module.</li>
+</ol>
+
+<p>There are more details for each step in the following section.</p>
+
+<h2 id="add-a-js-mixin">Add a JS mixin</h2>
+
+<p>To add a JS mixin take the following steps:</p>
+
+<ol>
+  <li>
+    <p>In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/%area%/web</code> directory. In this notation <code class="highlighter-rouge">%area%</code> stands for the <a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_and_areas.html">application area</a>, and might be one of the following: <code class="highlighter-rouge">frontend</code>, <code class="highlighter-rouge">backend</code>, or <code class="highlighter-rouge">base</code>. There are no strict requirements for the mixin file naming.</p>
+
+    <p>Sample mixin <code class="highlighter-rouge">Orange/Sample/view/base/web/js/columns-mixin.js</code>:</p>
+
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">define</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+ <span class="s1">'use strict'</span><span class="p">;</span>
+ 
+ <span class="kd">var</span> <span class="nx">mixin</span> <span class="o">=</span> <span class="p">{</span>
+ 
+     <span class="cm">/**
+      * Adds ability to disable visibility control for a specific column.
+      *
+      * @param {Column} elem
+      */</span>
+     <span class="na">isDisabled</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">elem</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nx">elem</span><span class="p">.</span><span class="nx">blockVisibility</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+     <span class="p">}</span>
+ <span class="p">};</span>
+  
+ <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// target == Result that Magento_Ui/.../columns returns.</span>
+     <span class="k">return</span> <span class="nx">target</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">mixin</span><span class="p">);</span> <span class="c1">// new result that all other modules receive </span>
+ <span class="p">};</span>
+<span class="p">});</span>
+
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>In the <code class="highlighter-rouge">requirejs-config.js</code> configuration file in your module, declare the AMD module you created as a mixin to the target module. File must be located in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/%area%</code> directory. Use the following syntax:</p>
+
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>  
+ <span class="na">config</span><span class="p">:</span> <span class="p">{</span>   
+     <span class="na">mixins</span><span class="p">:</span> <span class="p">{</span>  
+         <span class="s1">'%path/to/target/component%'</span><span class="p">:</span> <span class="p">{</span>  
+             <span class="s1">'%path/to/mixin/component%'</span><span class="p">:</span> <span class="kc">true</span>  
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+    </div>
+
+    <p>, where:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">%path/to/target/component%</code> is the RequireJS ID (alias/path) of the target component (module)</li>
+      <li><code class="highlighter-rouge">%path/to/mixin/component%</code> is the RequireJS ID (alias/path) of the mixin</li>
+      <li><code class="highlighter-rouge">mixins</code> is the RequireJS ID (alias/path) for the <code class="highlighter-rouge">mage/requirejs/mixin.js</code> file</li>
+    </ul>
+
+    <p>For details about the <code class="highlighter-rouge">config</code> RequireJS option, see <a href="http://requirejs.org/docs/api.html#config-moduleconfig">http://requirejs.org/docs/api.html#config-moduleconfig</a>.</p>
+
+    <p>Sample RequireJS configuration file <code class="highlighter-rouge">&lt;Orange_Sample_module_dir&gt;/view/base/web/js/requirejs-config.js</code>:</p>
+
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>  
+ <span class="na">config</span><span class="p">:</span> <span class="p">{</span>   
+     <span class="na">mixins</span><span class="p">:</span> <span class="p">{</span>  
+         <span class="s1">'Magento_Ui/js/grid/controls/columns'</span><span class="p">:</span> <span class="p">{</span>  
+             <span class="s1">'Orange_Sample/js/columns-mixin'</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h2 id="example-of-usage">Example of usage</h2>
+<p>For example of using JavaScript mixins, see the Magento_CheckoutAgreement module files:</p>
 
 <ul>
-<li>Configuring as popup or slide</li>
-<li>Controlling stack of modal widgets</li> 
-<li>Setting buttons for action bar</li>
+  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js">Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CheckoutAgreements/view/frontend/requirejs-config.js">Magento/CheckoutAgreements/view/frontend/requirejs-config.js</a></li>
 </ul>
-
-<p>The modal widget source is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/modal/modal.js" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/modal.js</code></a></p>
-
-<p>The widget uses the following templates:</p>
-
-<ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-popup.html</code></a> popup type template.</li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-slide.html</code></a> slide type template.</li>
-</ul>
-
-<p>The design patterns for the modal pop-up windows in the Admin are described in the <a href="/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a></p>
-
-<h2 id="modal_initialize">Initialize the modal widget</h2>
-
-<p>To initialize the widget in your script, use the following general notation:</p>
-<pre>
-$('#modal_content').modal({
-    &lt;option1&gt;: &lt;value1&gt;,
-    &lt;option2&gt;: &lt;value2&gt;,
-    ...
-});
-</pre>
-
-<p>For details about how to initialize the widget in a<code>.phtml</code> template, refer to the <a href="/guides/v2.0/frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
-
-<h2 id="modal_options">Options</h2>
-<p>The modal widget has the following options:</p>
-<ul>
-<li><a href="#modal_autoopen">autoOpen</a></li>
-<li><a href="#modal_buttons">buttons</a></li>
-<li><a href="#modal_clickableOverlay">clickableOverlay</a></li>
-<li><a href="#modal_focus">focus</a></li>
-<li><a href="#modal_innerScroll">innerScroll</a></li>
-<li><a href="#modal_modalClass">modalClass</a></li>
-<li><a href="#modal_modalLeftMargin">modalLeftMargin</a></li>
-<li><a href="#modal_responsive">responsive</a></li>
-<li><a href="#modal_title">title</a></li>
-<li><a href="#modal_type">type</a></li>
-</ul>
-
-<h3 id="modal_autoopen">autoOpen</h3>
-<p>Automatically open the modal window when the widget is initialized.</p>
-
-<p><strong>Type</strong>: Boolean</p>
-
-<p><strong>Default value</strong>: <code>false</code></p>
-
-<h3 id="modal_buttons"><code>buttons</code></h3>
-<p>Array of buttons for action pane.</p>
-
-<p><strong>Type</strong>: Array</p>
-
-<p><strong>Structure</strong>:</p>
-<pre>
-buttons: [{
-    text: '',
-    class: '',
-    click: function() {} //handler on button click
-}]
-</pre>
-
-<p><strong>Default value</strong>:</p>
-<pre>
-buttons: [{
-    text: 'Ok',
-    class: '',
-    click: function() {
-        this.closeModal();
-    }
-}]
-</pre>
-
-<h3 id="modal_clickableOverlay">clickableOverlay</h3>
-<p>Close the modal window when a user clicks on the overlay.</p>
-
-<p><strong>Type</strong>: Boolean</p>
-
-<p><strong>Default value</strong>: <code>true</code></p>
-
-<h3 id="modal_focus"><code>focus</code></h3>
-<p>Selector to focusing when a modal window opens or ‘none’ if focusing is not necessary.</p>
-
-<p><strong>Type</strong>: String</p>
-
-<p><strong>Default value</strong>: <code>''</code></p>
-
-<h3 id="modal_innerScroll"><code>innerScroll</code></h3>
-<p>Modal scroll position.</p>
-
-<p><strong>Type</strong>: Boolean</p>
-
-<p><strong>Default value</strong>: <code>false</code></p>
-
-<h3 id="modal_modalClass"><code>modalClass</code></h3>
-<p>Custom classes for modal window.</p>
-
-<p><strong>Type</strong>: String</p>
-
-<p><strong>Default value</strong>: empty</p>
-
-<h3 id="modal_modalLeftMargin"><code>modalLeftMargin</code></h3>
-<p>Sets a margin between slide modal windows.</p>
-
-<p><strong>Type</strong>: Number</p>
-
-<p><strong>Default value</strong>: 45</p>
-
-<h3 id="modal_responsive"><code>responsive</code></h3>
-<p>Turn popup modal window to slide panel on small screens. Available if the <code>type</code> option is set to <code>modal</code>.</p>
-
-<p><strong>Type</strong>: Boolean</p>
-
-<p><strong>Default value</strong>: <code>false</code></p>
-
-<h3 id="modal_title"><code>title</code></h3>
-<p>Translated title for popup window.</p>
-
-<p><strong>Type</strong>: String</p>
-
-<p><strong>Default value</strong>: empty</p>
-
-<h3 id="modal_type"><code>type</code></h3>
-
-<p>The type of window: popup or slide.</p>
-
-<p><strong>Type</strong>: String</p>
-
-<p><strong>Default value</strong>: <code>popup</code></p>
-
-<h2 id="modal_methods">Methods</h2>
-<p>The modal widget has the following methods:</p>
-<ul>
-<li><a href="#modal_close">closeModal()</a></li>
-<li><a href="#modal_open">openModal()</a></li>
-</ul>
-
-<h3 id="modal_open"><code>openModal()</code></h3>
-<p>Open the modal window.</p>
-
-<h3 id="modal_close"><code>closeModal()</code></h3>
-<p>Close the modal window.</p>
-
-<h2 id="modal_events">Events</h2>
-
-<p>The modal widget is subscribed to the following events:</p>
-<ul>
-<li><a href="#modal_closed">closed</a></li>
-<li><a href="#modal_opened">opened</a></li>
-</ul>
-
-<h3 id="modal_closed"><code>closed</code></h3>
-<p>Called when the modal window is closed.</p>
-
-<h3 id="modal_opened"><code>opened</code></h3>
-<p>Called when the modal window is opened.</p>
-
-<h3 id="modal_opened"><code>always</code></h3>
-<p>….</p>
-
-<h2 id="key_navigation">Keyboard navigation</h2>
-<ul>
-  <li>the ESC key: close the current modal window</li>
-  <li>the TAB key: set focus to the next focusable element (looped inside the modal window)</li>
-  <li>the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)</li>
-</ul>
-
 
 		</div>
 	</section>

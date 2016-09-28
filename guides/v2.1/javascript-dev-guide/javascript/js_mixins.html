@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Calling and initializing JavaScript</title>
+	<title>Using JavaScript mixins</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/javascript-dev-guide/javascript/js_init.html">
+	<link rel="canonical" href="//guides/v2.1/javascript-dev-guide/javascript/js_mixins.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -44,9 +44,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/javascript-dev-guide/javascript/js_mixins.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/javascript-dev-guide/javascript/js_init.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,14 +162,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Calling and initializing JavaScript</h1>
+		<h1 class="page-heading">Using JavaScript mixins</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/javascript/js_init.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/javascript/js_mixins.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -341,7 +341,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/javascript-dev-guide/javascript/js_init.html">Calling and initializing JavaScript</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/javascript/js_init.html">Calling and initializing JavaScript</a></li>
 
 									
 
@@ -373,7 +373,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html">Using JavaScript mixins</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html">Using JavaScript mixins</a></li>
 
 									
 
@@ -635,196 +635,106 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="js_init_overview">Overview</h2>
+            <div class="updated">Updated: 27 September 2016 (PDT)</div>
+            
+<h2 class="no_toc" id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>This topic talks about how to insert a <a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html#js_terms">JavaScript component</a> in <code>.phtml</code> page templates and <code>.js</code> files in Magento 2.</p>
+<p>This topic describes how to use JavaScript mixins to overwrite <a href="/guides/v2.1/javascript-dev-guide/javascript/js_overview.html#js_terms">JavaScript components’</a> methods in Magento.</p>
 
-<p>It covers declarative notation, used when initialization is required, and imperative notation, used in other cases.</p>
+<h2 id="overview">Overview</h2>
 
-<p>We strongly recommend that you use the described approaches and do not add inline JavaScript.</p>
+<p>In Magento, mixins are included on the on the RequireJS loading level. This approach allows to extend/overwrite result that any JavaScript component returns before it is used anywhere.</p>
 
-<p><strong>Contents</strong></p>
+<p>To add a JS mixin take the following steps:</p>
 
-<ul id="markdown-toc">
-  <li><a href="#init_phtml" id="markdown-toc-init_phtml">Insert a JS component in a PHTML template</a>    <ul>
-      <li><a href="#declarative-notation" id="markdown-toc-declarative-notation">Declarative notation</a>        <ul>
-          <li><a href="#data_mage_init" id="markdown-toc-data_mage_init">Declarative notation using the <code>data-mage-init</code> attribute</a>            <ul>
-              <li><a href="#init_process" id="markdown-toc-init_process">How <code>data-mage-init</code> is processed</a></li>
-            </ul>
-          </li>
-          <li><a href="#declarative-notation-using-the-script-typetextx-magento-init--tag-decltag" id="markdown-toc-declarative-notation-using-the-script-typetextx-magento-init--tag-decltag">Declarative notation using the <code>&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</a></li>
-        </ul>
-      </li>
-      <li><a href="#init_script" id="markdown-toc-init_script">Imperative notation</a></li>
-    </ul>
-  </li>
-  <li><a href="#js_widget_init" id="markdown-toc-js_widget_init">Calling JS components requiring initialization in JS files</a></li>
-</ul>
+<ol>
+  <li>Define a mixin as a separate AMD module. It should return a callback function. This function must get the target JS component (module) as an argument.</li>
+  <li>Declare the AMD module you created as a mixin to the target module.</li>
+</ol>
 
-<h2 id="init_phtml">Insert a JS component in a PHTML template</h2>
-<p>Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.</p>
+<p>There are more details for each step in the following section.</p>
 
-<h3 id="declarative-notation">Declarative notation</h3>
+<h2 id="add-a-js-mixin">Add a JS mixin</h2>
 
-<p>Using the declarative notation to insert a JS component allows preparing all the configuration on the backend side and outputting it to the page source using standard tools. You should use declarative notation if your JavaScript component requires initialization.</p>
+<p>To add a JS mixin take the following steps:</p>
 
-<p>In Magento 2 there are two ways of declarative notation:</p>
+<ol>
+  <li>
+    <p>In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/%area%/web</code> directory. In this notation <code class="highlighter-rouge">%area%</code> stands for the <a href="/guides/v2.1/architecture/archi_perspectives/components/modules/mod_and_areas.html">application area</a>, and might be one of the following: <code class="highlighter-rouge">frontend</code>, <code class="highlighter-rouge">backend</code>, or <code class="highlighter-rouge">base</code>. There are no strict requirements for the mixin file naming.</p>
 
-<ul>
-  <li>using the <code>data-mage-init</code> attribute</li>
-  <li>using the <code>&lt;script type="text/x-magento-init" /&gt;</code> tag</li>
-</ul>
+    <p>Sample mixin <code class="highlighter-rouge">Orange/Sample/view/base/web/js/columns-mixin.js</code>:</p>
 
-<p>Both ways are described further.</p>
-
-<h4 id="data_mage_init">Declarative notation using the <code>data-mage-init</code> attribute</h4>
-
-<p>Use the <code>data-mage-init</code> attribute to insert a JS component in a certain HTML element. The following code sample is an illustration. Here a JS component is inserted in the <code>&lt;nav/&gt;</code> element:</p>
-<pre>
-&lt;nav data-mage-init='{ &quot;&lt;component_name&gt;&quot;: {...} }'&gt;&lt;/nav&gt;
-</pre>
-
-<p>When inserted in a certain element, the script is called only for this particular element. It is not automatically called for other elements of this type on the page.</p>
-
-<h5 id="init_process">How <code>data-mage-init</code> is processed</h5>
-
-<p>On DOM ready, the <code>data-mage-init</code> attribute is parsed to extract components’ names and configuration to be applied to the element. 
-Depending on the type of the inserted JS component, processing is performed as follows:</p>
-<ul>
-
-<li>If an object is returned, the initializer tries to find the <code>&lt;component_name&gt;</code> key. If the corresponding value is a function, the initializer passes the <code>config</code> and <code>element</code> values to this function.
-
-For example:
-<pre>
-return {
-    '&lt;component_name&gt;': function(config, element) { ... }
-};
-</pre>
-</li>
-<li>If a function is returned, the initializer passes the <code>config</code> and <code>element</code> values to this function. 
-
-For example:
-
-<pre>
-return function(config, element) { ... };
-</pre>
-
-</li>
-<li>If neither a function nor an object with the <code>"&lt;component_name&gt;"</code> key are returned, then the initializer tries to search for <code>"&lt;component_name&gt;"</code> in the jQuery prototype. If found, the initializer applies it as <code>$(element).&lt;component_name&gt;(config)</code>. 
-
-For example:
-<pre>
-$.fn.&lt;component_name&gt; = function() { ... };
-return;
-</pre>
-</li>
-
-<li>If none of the previous cases is true, the component is executed with no further processing. 
-Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
-</ul>
-
-<h4 id="declarative-notation-using-the-script-typetextx-magento-init--tag-decltag">Declarative notation using the <code>&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</h4>
-
-<p>To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the <code>&lt;script type="text/x-magento-init"&gt;</code> tag and attribute. The syntax is following:</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-magento-init&quot;</span><span class="nt">&gt;</span>
-<span class="p">{</span>
-    <span class="c1">// components initialized on the element defined by selector</span>
-	<span class="s2">&quot;&lt;element_selector&gt;&quot;</span><span class="o">:</span> <span class="p">{</span>
-		<span class="s2">&quot;&lt;js_component1&gt;&quot;</span><span class="o">:</span> <span class="p">...,</span>
-		<span class="s2">&quot;&lt;js_component2&gt;&quot;</span><span class="o">:</span> <span class="p">...</span>
-    <span class="p">},</span>
-    <span class="c1">// components initialized without binding to an element</span>
-    <span class="s2">&quot;*&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;&lt;js_component3&gt;&quot;</span><span class="o">:</span> <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></figure>
-
-<p>Where:</p>
-<ul>
-<li><code>&lt;element_selector&gt;</code> is a &lt;a https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"&gt;selector&lt;/a&gt; (in terms of querySelectorAll) for the element on which the following JS components are called.</li>
-<li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
-<li><code>&lt;js_component3&gt;</code> is the JS component called with no binding to an element.</li> 
-</ul>
-
-<p>The following is a working code sample of a widget call using <code>&lt;script&gt;</code>. Here the <code>accordion</code> and <code>navigation</code> widgets are added to the element with the <code>#main-container</code> selector, and the <code>pageCache</code> script is inserted with no binding to any element.</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-magento-init&quot;</span><span class="nt">&gt;</span>
-<span class="p">{</span>
-    <span class="s2">&quot;#main-container&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;navigation&quot;</span><span class="o">:</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getNavigationConfig</span><span class="p">();</span> <span class="o">?&gt;</span><span class="p">,</span>
-        <span class="s2">&quot;accordion&quot;</span><span class="o">:</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getNavigationAccordionConfig</span><span class="p">();</span> <span class="o">?&gt;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;*&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;pageCache&quot;</span><span class="o">:</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getPageCacheConfig</span><span class="p">();</span> <span class="o">?&gt;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></figure>
-
-<h3 id="init_script">Imperative notation</h3>
-
-<p>Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the <code>&lt;script&gt;</code> tag, without the <code>type="text/x-magento-init</code> attribute, is the imperative notation. The syntax is following:</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
-<span class="nx">require</span><span class="p">([</span>
-    <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;accordion&#39;</span>  <span class="c1">// the alias for &quot;mage/accordion&quot;</span>
-<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">)</span>  <span class="c1">// we expect that page contains the &lt;tag data-role=&quot;example&quot;&gt;..&lt;/tag&gt; markup</span>
-            <span class="p">.</span><span class="nx">accordion</span><span class="p">({</span> <span class="c1">// now we can use &quot;accordion&quot; as jQuery plugin</span>
-                <span class="nx">header</span><span class="o">:</span>  <span class="s1">&#39;[data-role=header]&#39;</span><span class="p">,</span>
-                <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;[data-role=content]&#39;</span><span class="p">,</span>
-                <span class="nx">trigger</span><span class="o">:</span> <span class="s1">&#39;[data-role=trigger]&#39;</span><span class="p">,</span>
-                <span class="nx">ajaxUrlElement</span><span class="o">:</span> <span class="s2">&quot;a&quot;</span>
-            <span class="p">});</span>
-    <span class="p">});</span>
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">define</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+ <span class="s1">'use strict'</span><span class="p">;</span>
+ 
+ <span class="kd">var</span> <span class="nx">mixin</span> <span class="o">=</span> <span class="p">{</span>
+ 
+     <span class="cm">/**
+      * Adds ability to disable visibility control for a specific column.
+      *
+      * @param {Column} elem
+      */</span>
+     <span class="na">isDisabled</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">elem</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="nx">elem</span><span class="p">.</span><span class="nx">blockVisibility</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+     <span class="p">}</span>
+ <span class="p">};</span>
+  
+ <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// target == Result that Magento_Ui/.../columns returns.</span>
+     <span class="k">return</span> <span class="nx">target</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">mixin</span><span class="p">);</span> <span class="c1">// new result that all other modules receive </span>
+ <span class="p">};</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
-<h2 id="js_widget_init">Calling JS components requiring initialization in JS files</h2>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>In the <code class="highlighter-rouge">requirejs-config.js</code> configuration file in your module, declare the AMD module you created as a mixin to the target module. File must be located in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/%area%</code> directory. Use the following syntax:</p>
 
-<p>To call a widget in JS code, use a notation similar to the following (<a href="/guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html">accordion</a> widget is intiialized on the <code>[data-role=example]</code> element as illustration):</p>
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>  
+ <span class="na">config</span><span class="p">:</span> <span class="p">{</span>   
+     <span class="na">mixins</span><span class="p">:</span> <span class="p">{</span>  
+         <span class="s1">'%path/to/target/component%'</span><span class="p">:</span> <span class="p">{</span>  
+             <span class="s1">'%path/to/mixin/component%'</span><span class="p">:</span> <span class="kc">true</span>  
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+    </div>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span></code></pre></figure>
+    <p>, where:</p>
 
-<p>To initialize a widget with options, use notation similar to the following:</p>
+    <ul>
+      <li><code class="highlighter-rouge">%path/to/target/component%</code> is the RequireJS ID (alias/path) of the target component (module)</li>
+      <li><code class="highlighter-rouge">%path/to/mixin/component%</code> is the RequireJS ID (alias/path) of the mixin</li>
+      <li><code class="highlighter-rouge">mixins</code> is the RequireJS ID (alias/path) for the <code class="highlighter-rouge">mage/requirejs/mixin.js</code> file</li>
+    </ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">)</span>  <span class="c1">// we expect that page contains markup &lt;tag data-role=&quot;example&quot;&gt;..&lt;/tag&gt;</span>
-        <span class="p">.</span><span class="nx">accordion</span><span class="p">({</span> <span class="c1">// now we can use &quot;accordion&quot; as jQuery plugin</span>
-            <span class="nx">header</span><span class="o">:</span>  <span class="s1">&#39;[data-role=header]&#39;</span><span class="p">,</span>
-	    <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;[data-role=content]&#39;</span><span class="p">,</span>
-	    <span class="nx">trigger</span><span class="o">:</span> <span class="s1">&#39;[data-role=trigger]&#39;</span><span class="p">,</span>
-            <span class="nx">ajaxUrlElement</span><span class="o">:</span> <span class="s1">&#39;a&#39;</span>
-        <span class="p">});</span>
-<span class="p">});</span></code></pre></figure>
+    <p>For details about the <code class="highlighter-rouge">config</code> RequireJS option, see <a href="http://requirejs.org/docs/api.html#config-moduleconfig">http://requirejs.org/docs/api.html#config-moduleconfig</a>.</p>
 
-<p>In a similar way, you can initialize any JS component that a returns callback function accepting a <code>config</code> object and <code>element</code> (a DOM node).</p>
+    <p>Sample RequireJS configuration file <code class="highlighter-rouge">&lt;Orange_Sample_module_dir&gt;/view/base/web/js/requirejs-config.js</code>:</p>
 
-<p>For example:</p>
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>  
+ <span class="na">config</span><span class="p">:</span> <span class="p">{</span>   
+     <span class="na">mixins</span><span class="p">:</span> <span class="p">{</span>  
+         <span class="s1">'Magento_Ui/js/grid/controls/columns'</span><span class="p">:</span> <span class="p">{</span>  
+             <span class="s1">'Orange_Sample/js/columns-mixin'</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+    </div>
+  </li>
+</ol>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span> <span class="p">([</span>
-    <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;mage/gallery/gallery&#39;</span>
-<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">Gallery</span><span class="p">)</span> <span class="p">{</span>
+<h2 id="example-of-usage">Example of usage</h2>
+<p>For example of using JavaScript mixins, see the Magento_CheckoutAgreement module files:</p>
 
-    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">)</span>  <span class="c1">// we expect that page contains markup &lt;tag data-role=&quot;example&quot;&gt;..&lt;/tag&gt;</span>
-            <span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">Gallery</span><span class="p">({</span>
-                    <span class="nx">options</span><span class="o">:</span>  <span class="p">{},</span>
-                    <span class="nx">data</span><span class="o">:</span> <span class="p">[{</span>
-                        <span class="nx">img</span><span class="o">:</span> <span class="s1">&#39;https://c2.staticflickr.com/8/7077/27935031965_facd03b4cb_b_d.jpg&#39;</span>
-                    <span class="p">}],</span>
-                    <span class="nx">fullscreen</span><span class="o">:</span> <span class="p">{}</span>
-                <span class="p">},</span> <span class="nx">element</span><span class="p">);</span>  <span class="c1">// &#39;element&#39; is simgle DOM node. </span>
-            <span class="p">});</span>
-    <span class="p">});</span>
-<span class="p">});</span></code></pre></figure>
-
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js">Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CheckoutAgreements/view/frontend/requirejs-config.js">Magento/CheckoutAgreements/view/frontend/requirejs-config.js</a></li>
+</ul>
 
 		</div>
 	</section>
