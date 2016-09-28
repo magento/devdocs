@@ -159,8 +159,16 @@ exported from the db. In order to do this, run below command on installed Magent
 	magento config:export
 	
 After running this command few files will appear in app/etc/ folder: <pre>setup.config.php, scope.config.php, i18n.config.php (optional)</pre>.
-You can copy this files and paste them into any Magento codebase (app/etc/) in order to generate static content.	
+Each file contains specific configuration:		
+1. **setup.config.php** 		
+    In this files contains all system configurations required for successful static content deployment.		
+2. **scope.config.php** 		
+    In this files contains list of stores, store groups and websites with own information.
+3. **i18n.config.php**		
+    In this files contains all inline translations. It is used for generation js-translation.json.
 
+You can copy this files and paste them into any Magento codebase (app/etc/) in order to generate static content.	
+For exporting additional configuration, another module could extend this functionality via di.xml.		
 ***Magento Admin Panel Behavior***
 
 <pre>Store -> Configuration</pre> UI remains displaying all settings, even those defined 
