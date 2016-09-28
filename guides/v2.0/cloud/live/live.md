@@ -4,8 +4,8 @@ group: cloud
 subgroup: 20_live
 title: Go live
 menu_title: Go live
-menu_order: 1
-menu_node: parent
+menu_order: 500
+menu_node: 
 version: 2.0
 github_link: cloud/live/live.md
 ---
