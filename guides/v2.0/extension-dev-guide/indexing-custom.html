@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Code generation</title>
+	<title>Adding a custom indexer</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/code-generation.html">
+	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/indexing-custom.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -44,9 +44,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/code-generation.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/indexing-custom.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/code-generation.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/indexing-custom.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -160,14 +160,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Code generation</h1>
+		<h1 class="page-heading">Adding a custom indexer</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/code-generation.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/indexing-custom.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -627,7 +627,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/code-generation.html">Code generation</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/code-generation.html">Code generation</a></li>
 
 									
 
@@ -679,7 +679,7 @@
 									
 
 
-											<li class="level3Child index " data-menunode="index"><a href="/guides/v2.0/extension-dev-guide/indexing-custom.html">Adding a custom indexer</a>
+											<li class="level3Child index  active " data-menunode="index"><a href="/guides/v2.0/extension-dev-guide/indexing-custom.html">Adding a custom indexer</a>
 
 
 									
@@ -883,85 +883,76 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="codegen-over">Overview of code generation</h2>
-<p>The Magento application generates code to create non-existent classes. As an example, look at the <a href="https://github.com/magento/magento2/blob/2.0//app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:</p>
+            <div class="updated">Updated: 28 September 2016 (PDT)</div>
+            <h2 id="m2devgde-indexing-custom">Adding a custom indexer</h2>
+<p>This topic discusses how to create a custom indexer. We’ve recently made a performance improvment that enables you to declare one or more <em>shared</em> indexers; if one of the shared indexes is already up-to-date, it doesn’t need to be reindexed.</p>
 
-<pre><code>...
-    public function __construct(
-        \Magento\Customer\Model\AddressFactory $addressFactory,	
-...
-</code></pre>
-
-<p>The first constructor parameter has a type of <code>Magento\Customer\Model\AddressFactory</code>. However, this class does not exist in <code>\Magento\Customer\Model</code> in the Magento 2 codebase. The Magento application <em>generates</em> this class because its name uses a recognized convention (in this case, because the name ends with <code>Factory</code>).</p>
-
-<p>Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug the code.</p>
-
-<h3 id="codegen-over-when">When is code generated?</h3>
-<p>Provided the Magento application is not set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is generated when the Magento application cannot find a class when executing code.</p>
-
-<p>In particular,</p>
+<p>To implement your own indexer, add the following code in your module:</p>
 
 <ul>
-  <li>
-    <p>A Factory class creates instances of a type. See <a href="/guides/v2.0/extension-dev-guide/factories.html">Instantiating objects with factories</a> for more information. Factories are directly referenced within application code.</p>
-  </li>
-  <li>
-    <p>You can designate a Proxy to be generated for a type in order to ensure the type is not instantiated until it is needed. See <a href="/guides/v2.0/extension-dev-guide/proxies.html">Proxies</a> for more information. Proxies are directly referenced within DI configuration.</p>
-  </li>
-  <li>
-    <p>Interceptor classes are automatically generated to facilitate Magento’s plugin system. An interceptor class extends a type and is returned by the Object Manager to allow multiple plugin classes to inject logic into different methods. Interceptors work behind the scenes and are <em>not</em> directly referenced in application code.</p>
-  </li>
+  <li><a href="#m2devgde-indexing-customlogic">Indexer logic</a></li>
+  <li><a href="#m2devgde-indexing-customconfiguration">Indexer configuration</a></li>
+  <li><a href="#m2devgde-indexing-mview">MView configuration</a></li>
 </ul>
 
-<p>You can also use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to generate code at any time.  In Magento 2, “compiling” your application means performing code generation for any eligible class encountered by the configuration/code scanner, as well as performing a number of different dependency injection optimizations.</p>
+<h3 id="m2devgde-indexing-customlogic">Custom indexer logic</h3>
 
-<h3 id="codegen-over-why">Why should you regenerate code?</h3>
-<p>Suppose a Customer or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Customer or Proxy exists on the file system, it is not regenerated. However, the Customer or Proxy implementation is incomplete now because it does not have the new methods. In this case, you must regenerate the Customer or Proxy class.</p>
-
-<p>If the code generator implementation itself is changed, you must regenerate all the classes. This is rare, however.</p>
-
-<h3 id="codegen-over-adv">Advantages of generating code</h3>
-<p>Code generation is required in Magento 2. Generating code assures you of the following:</p>
+<p>Your custom indexer class should implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Indexer/ActionInterface.php" target="_blank">\Magento\Framework\Indexer\ActionInterface</a>, and the indexer should be able to perform three types of operations:</p>
 
 <ul>
-  <li>The code is correct. You don’t have to worry that the generated code is delegating to the wrong method or forgetting a semicolon, and you don’t have to write tests for the generated code.</li>
-  <li>Code generation writes the boilerplate code to enable you to write more challenging and interesting code.</li>
-  <li>
-    <p>Consistent implementation.</p>
-
-    <p>All generated Factories work the same way. After you learn know how one Factory works, you know how they all work.</p>
-  </li>
+  <li>Row reindex: processing a single entry from a dictionary; responsibility of <code>executeRow($id)</code></li>
+  <li>List reindex: processing a set of dictionary entries; responsibility of <code>executeList($ids)</code>, where <code>$ids</code> is an array of entity IDs</li>
+  <li>Rull reindex: processing all entities from a specific dictionary; responsibility of <code>executeFull()</code></li>
 </ul>
 
-<h2 id="codegen-om">Object Manager responsibility for code compilation</h2>
-<p>When code changes as discussed in the preceding section, one of two Object Manager classes compiles it. The class is chosen based on whether or not the single-tenant compiler or the multi-tenant compiler has been run before.</p>
-
-<p>The single-tenant and multi-tenant compiler create <code>var/di/global.ser</code>, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. <code>di.xml</code> is the dependency injection configuration. There is a global <code>app/etc/di.xml</code> and there can be one defined for every module.</p>
-
-<!--synced-->
-<div class="bs-callout bs-callout-warning">
-<p>If you&#8217;re preparing to deploy to production, you must use the multi-tenant compiler. There is a known issue with the single-tenant compiler that prevents it from compiling proxies.</p>
-</div>
-
-<p>Depending on whether or not one of the compilers has been run before, the Magento application consumes the compilation using one of the following classes:</p>
+<h3 id="m2devgde-indexing-customconfiguration">Indexer configuration</h3>
+<p>In the the <code>etc</code> directory of your module, add <code>indexer.xml</code> with the following:</p>
 
 <ul>
-  <li>
-    <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Interception/ObjectManager/Config/Compiled.php" target="_blank">Magento\Framework\Interception\ObjectManager\Config\Compiled</a>, which is used if <code>global.ser</code> exists.</p>
-  </li>
-  <li>
-    <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Interception/ObjectManager/Config/Developer.php" target="_blank">Magento\Framework\Interception\ObjectManager\Config\Developer</a>, which is used if <code>global.ser</code> does not exist.</p>
-
-    <p>This class is slower than <code>Magento\Framework\Interception\ObjectManager\Config\Compiled</code>.</p>
-  </li>
+  <li>indexer ID</li>
+  <li>indexer class name</li>
+  <li>indexer title</li>
+  <li>indexer description</li>
+  <li>indexer view ID</li>
+  <li>shared indexes, if any</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The <code>Developer</code> class has nothing to do with Magento's <em>developer mode</em>.</p></span>
-</div>
+<p>Use the optional <code>shared_index=</code> parameter to improve performance if your indexer is related to another indexer. In this <a href="https://github.com/magento/magento2/blob/2.0/develop/app/code/Magento/CatalogRule/etc/indexer.xml" target="_blank">example</a>, if catalog rule product needs to be reindexed, but othe catalog product rule index is up-to-date, then only catalog rule product is reindexed.</p>
 
+<p>All indexers related to a module should be declared in one file.</p>
+
+<h3 id="m2devgde-indexing-mview">MView configuration</h3>
+<p>Add the the <code>mview.xml</code> configuration file in the <code>etc</code> module directory, where you declare the following:</p>
+
+<ul>
+  <li>indexer view ID</li>
+  <li>indexer class</li>
+  <li>the database tables the indexer tracks</li>
+  <li>what column data is sent to the indexer</li>
+</ul>
+
+<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/mview.xml" target="_blank">Example</a></p>
+
+<p>All Mview declarations related to a module should be declared in one file.</p>
+
+<h3 id="m2devgde-indexing-exampleimplementation">Example of a custom indexer implementation</h3>
+<p>Suppose you want to push best-selling products to the top of a category listing. This requires processing statistics about sales to change the product position dynamically.</p>
+
+<p>Assuming your module is named <code>&lt;VendorName&gt;_Merchandizing</code>, you must write the appropriate code in the indexer class:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/ef9be4963011bb13efe5.js"></script>
+
+<p>Next, declare the indexer in <code>Merchandizing/etc/indexer.xml</code>:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/5780857cdd5343cafacf.js"></script>
+
+<p>Finally, declare the indexer view (<code>merchandizing_popular_order</code>) that tracks sales (<code>Merchandizing/etc/mview.xml</code>):</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/4313c5246b38ff8193df.js"></script>
+
+<p>These settings start <code>&lt;VendorName&gt;\Merchandizing\Model\Indexer\Popular::execute</code> method every time an order is changed.</p>
+
+<p>Now when an order is placed, the Popular Products indexer calculates the sorting order of the products by popularity and stores this data in the index table, so that it can be used in product displaying logic.</p>
 
 		</div>
 	</section>

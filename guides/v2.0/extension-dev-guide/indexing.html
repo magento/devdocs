@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Indexing</title>
+	<title>Indexing overview</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -160,7 +160,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Indexing</h1>
+		<h1 class="page-heading">Indexing overview</h1>
 
         
 
@@ -659,7 +659,8 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/indexing.html">Indexing</a></li>
+										<li class="level3Parent " id="index"><a href="#">Indexing</a>
+
 
 									
 
@@ -667,7 +668,9 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+
+											<li class="level3Child index  active " data-menunode="index"><a href="/guides/v2.0/extension-dev-guide/indexing.html">Indexing overview</a>
+
 
 									
 
@@ -675,7 +678,9 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
+
+											<li class="level3Child index " data-menunode="index"><a href="/guides/v2.0/extension-dev-guide/indexing-custom.html">Adding a custom indexer</a>
+
 
 									
 
@@ -692,6 +697,22 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/extension_attributes/adding-attributes.html">Adding extension attributes to entity</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
 
 									
 
@@ -862,7 +883,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 4 August 2016 (PDT)</div>
+            <div class="updated">Updated: 28 September 2016 (PDT)</div>
             <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#m2devgde-indexing-intro">Introduction to indexing</a></li>
@@ -948,16 +969,18 @@
 
 <p>The following figure shows the logic for partial reindexing.</p>
 
-<p><img src="/common/images/index_indexers_flow.png" width="400px" alt="The image displays the partial reindex workflow" /></p>
+<p><img src="/common/images/index_indexers_flow.png" alt="Partial indexing workflow" width="300px" /></p>
 
-<!-- <h3 id="m2devgde-indexing-status">Indexer status</h3>
+<h3 id="m2devgde-indexing-status">Indexer status</h3>
+<p>Depending on whether an index data is up to date, an indexer status value is one of the following:</p>
 
-Depending on whether an index data is up to date, an indexer status value is one of the following:
+<ul>
+  <li>valid: data is synchronized, no reindex required</li>
+  <li>invalid: the original data was changed, the index should be updated</li>
+  <li>working: indexing is in progress</li>
+</ul>
 
-*	valid: data is synchronized, no reindex required
-*	invalid: the original data was changed, the index should be updated
-
-The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the Admin panel under **System > New Index Management** or manually using the <a href="#m2devgde-indexing-commandline">command line</a>. -->
+<p>The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the Admin panel under <strong>System &gt; New Index Management</strong> or manually using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-status">command line</a>.</p>
 
 <h3 id="m2devgde-indexing-modes">Indexing modes</h3>
 <p>Reindexing can be performed in two modes:</p>
@@ -977,11 +1000,11 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
   <li>Click <strong>Submit</strong>.</li>
 </ol>
 
+<p>You can also reindex from the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-conf">command line</a></p>
+
 <p>The following figure shows an example of setting indexers to Update by Schedule.</p>
 
-<p><img src="/common/images/index_index-modes.png" width="600px" alt="Changing indexer modes" /></p>
-
-<p>You can also reindex from the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">command line</a>.</p>
+<p><img src="/common/images/index_index-modes.png" alt="Changing indexer modes" width="600px" /></p>
 
 <h3 id="m2devgde-indexing-how">How to reindex</h3>
 <p>You can reindex in any of the following ways:</p>
@@ -992,7 +1015,7 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 </ul>
 
 <h2 id="m2devgde-indexing-outofbox">Magento indexers</h2>
-<p>Out of the box the Magento system has the following indexers implemented:</p>
+<p>The Magento application implements the following indexers:</p>
 
 <table>
 	<tbody>
@@ -1053,79 +1076,6 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 
 </tbody></table>
 
-<h2 id="m2devgde-indexing-custom">Adding a custom indexer</h2>
-<p>We strongly recommend you not modify core Magento code; instead, add your own modules.</p>
-
-<p>To implement your own indexer, add the following code in your module:</p>
-
-<ul>
-  <li>indexer logic</li>
-  <li>indexer configuration</li>
-  <li>MView configuration</li>
-</ul>
-
-<p>There are more details about each of these in the following paragraphs.</p>
-
-<h3 id="m2devgde-indexing-customlogic">Custom indexer logic</h3>
-
-<p>Your custom indexer class should implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Indexer/ActionInterface.php" target="_blank">\Magento\Framework\Indexer\ActionInterface</a>, and the indexer should be able to perform three types of operations:</p>
-
-<ul>
-  <li>row reindex: processing a single entry from a dictionary; responsibility of <code>executeRow($id)</code></li>
-  <li>list reindex: processing a set of dictionary entries; responsibility of <code>executeList($ids)</code>, where <code>$ids</code> is an array of entity IDs</li>
-  <li>full reindex: processing all entities from a specific dictionary; responsibility of <code>executeFull()</code></li>
-</ul>
-
-<h3 id="m2devgde-indexing-customconfiguration">Indexer configuration</h3>
-
-<p>In the the <code>etc</code> directory of your module, add <code>indexer.xml</code> with the following:</p>
-
-<ul>
-  <li>indexer ID</li>
-  <li>indexer class name</li>
-  <li>indexer title</li>
-  <li>indexer description</li>
-  <li>indexer view ID</li>
-</ul>
-
-<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/indexer.xml" target="_blank">Example</a></p>
-
-<p>All indexers related to a module should be declared in one file.</p>
-
-<h3 id="m2devgde-indexing-mview">MView configuration</h3>
-
-<p>Add the the <code>mview.xml</code> configuration file in the <code>etc</code> module directory, where you declare the following:</p>
-
-<ul>
-  <li>indexer view ID</li>
-  <li>indexer class</li>
-  <li>the database tables the indexer tracks</li>
-  <li>what column data is sent to the indexer</li>
-</ul>
-
-<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/mview.xml" target="_blank">Example</a></p>
-
-<p>All Mview declarations related to a module should be declared in one file.</p>
-
-<h3 id="m2devgde-indexing-exampleimplementation">Example of a custom indexer implementation</h3>
-
-<p>Suppose you want to push best-selling products to the top of a category listing. This requires processing statistics about sales to change the product position dynamically.</p>
-
-<p>Assuming your module is named <code>&lt;VendorName&gt;_Merchandizing</code>, you must write the appropriate code in the indexer class:</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/ef9be4963011bb13efe5.js"></script>
-
-<p>Next, declare the indexer in <code>Merchandizing/etc/indexer.xml</code>:</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/5780857cdd5343cafacf.js"></script>
-
-<p>Finally, declare the indexer view (<code>merchandizing_popular_order</code>) that tracks sales (<code>Merchandizing/etc/mview.xml</code>):</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/4313c5246b38ff8193df.js"></script>
-
-<p>These settings start <code>&lt;VendorName&gt;\Merchandizing\Model\Indexer\Popular::execute</code> method every time an order is changed.</p>
-
-<p>Now when an order is placed, the Popular Products indexer calculates the sorting order of the products by popularity and stores this data in the index table, so that it can be used in product displaying logic.</p>
 
 		</div>
 	</section>
