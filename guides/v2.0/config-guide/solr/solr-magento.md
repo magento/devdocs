@@ -77,6 +77,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 	
 	As a user with <code>root</code> privileges, enter the following command to start Solr:
 
+		cd <your Solr install dir>/example/magento2
 		java -jar <your Solr install dir>/example/start.jar
 
 	<div class="bs-callout bs-callout-warning">
