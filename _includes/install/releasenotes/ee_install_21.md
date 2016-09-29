@@ -7,8 +7,6 @@ See one of the following sections:
 *	[Get Magento EE using a compressed archive](#get-zip)
 *	[Complete the installation](#install-complete)
 
-A Release Candidate is for testing purposes only. Do not install it in a production environment.
-
 ### Get Magento EE using Composer {#install-rc-composer}
 {:.no_toc}
 
@@ -16,11 +14,11 @@ Magento EE is available from `repo.magento.com`. Before installing the Magento E
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>
 
-where `<version>` is `2.1.0` (GA release) or `2.1.0-rc3` for Release Candidate 3 (RC3)
+where `<version>` is `2.1.0`, `2.1.1`, and so on
 
-For example, to install 2.1.0 in the `magento2` directory:
+For example, to install 2.1.1 in the `magento2` directory:
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.0 magento2
+	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
 
 ### Get Magento EE using a compressed archive {#get-zip}
 {:.no_toc}

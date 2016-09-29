@@ -116,3 +116,11 @@ html,body {
    z-index: 50;
 }
 */
+
+.full-width-content {
+    width: 90%;
+
+    .content-wrap {
+        float: left;
+    }
+}

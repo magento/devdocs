@@ -10,7 +10,7 @@ version: 2.0
 github_link: install-gde/install/cli/dev_add-update.md
 ---
 
-
+## Add or update components
 A contributing developer updates components by specifying components and their versions in Magento's `composer.json`. 
 
 To update components if you're *not* a contributing developer, see <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.

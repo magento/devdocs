@@ -170,6 +170,10 @@ $font-size-sm: 12px;
   right: 0;
   left: auto; // Reset the default from `.dropdown-menu`
 }
+.dropdown-menu.dropdown-menu-left {
+    left: 0;
+    right: auto;
+}
 // With v3, we enabled auto-flipping if you have a dropdown within a right
 // aligned nav component. To enable the undoing of that, we provide an override
 // to restore the default dropdown menu alignment.

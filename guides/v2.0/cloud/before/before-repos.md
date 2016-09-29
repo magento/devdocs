@@ -19,7 +19,7 @@ Especially if you already have a GitHub repository and workflows for code review
 
 Don't have a GitHub or Bitbucket repository? See the [GitHub](https://help.github.com/articles/create-a-repo){:target="_blank"} or [Bitbucket](https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html){:target="_blank"} documentation for more information.
 
-#### Related topics
-*	[Set up a Magento workspace]({{page.baseurl}}cloud/before/before-workspace.html)
-*	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
+#### Next step
+[Set up a Magento workspace]({{page.baseurl}}cloud/before/before-workspace.html)
+
 

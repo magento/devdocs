@@ -2,15 +2,29 @@
 layout: default
 group: cloud
 subgroup: 04_setup
-title: Set up an environment
-menu_title: Set up an environment
-menu_order: 10
+title: Set up an environment and install the Magento software locally
+menu_title: Set up an environment and install the Magento software locally
+menu_order: 60
 menu_node: 
 version: 2.0
 github_link: cloud/access-acct/set-up-env.md
+redirect_from: 
+  - /guides/v2.0/cloud/howtos/environment-tutorial-set-mage-vars.html
+  - /guides/v2.1/cloud/howtos/environment-tutorial-set-mage-vars.html
+  - /guides/v2.0/cloud/env/environment-tutorial-set-mage-vars.html
+  - /guides/v2.1/cloud/env/environment-tutorial-set-mage-vars.html
+  - /guides/v2.0/cloud/access-acct/admin-env-vars.html
+  - /guides/v2.1/cloud/access-acct/admin-env-vars.html
 ---
 
-## Set up an environment
+#### Contents
+*	[Step 1: Set up an environment](#setup-env-setup)
+*	[Step 2: Change the Admin URI, user name, and password in the master branch](#setup-env-adminurl)
+*	[Step 3: Clone a project and environment](#setenv-new-env)
+*   [Step 4: Set file system permissions and ownership](#setup-env-perms)
+*	[Step 5: Install the Magento software](#setup-env-install)
+
+## Step 1: Set up an environment {#setup-env-setup}
 This topic discusses how to clone an environment locally, set up global Git environment variables, and to enable SSH if you haven't done so already.
 
 ### Enable SSH to the environment
@@ -22,11 +36,20 @@ This is a one-time setup that was covered previously in this guide; skip this se
 
 {% endcollapsible %}
 
-### Clone a project and environment
+### Set global Git variables
+To set global Git variables required to commit or push to an environment (that is, Git branch), enter the following commands:
+
+	git config --global user.name "<your name>"
+	git config --global user.email <your e-mail address>
+
+For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time){:target="_blank"}
+
+### Clone a project and environment {#setenv-clone}
 
 {% collapsible To clone a project and environment: %}
 
-1.	Log in to the server on which your SSH keys are located.
+1.	Log in to your local development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+2.  Change to the web server or virtual host docroot.
 2.	Log in to your project:
 
 		magento-cloud login
@@ -36,9 +59,11 @@ This is a one-time setup that was covered previously in this guide; skip this se
 4.	Clone a project.
 
 		magento-cloud project:get <project ID>
-4.	Change to a project directory.
 
-	For example if your project is named Magento 2, `cd magento-2`
+    When prompted for a directory name, enter `magento2`.
+4.	Change to the project directory.
+
+	For example, `cd magento2`
 4.	List environments in the project:
 
 		magento-cloud environment:list
@@ -50,30 +75,141 @@ This is a one-time setup that was covered previously in this guide; skip this se
 5.	Fetch origin branches:
 
 		git fetch origin
-6.	Create a new environment:
-
-		magento-cloud environment:branch <environment name> <parent environment ID>
-8.	Pull updated code:
+6.	Pull updated code:
 
 		git pull origin <environment ID>
-9.	Update dependencies:
+
+{% endcollapsible %}
+
+## Step 2: Change the Admin URI, user name, and password in the master branch {#setup-env-adminurl}
+This section discusses how to change Magento Admin parameters for security reasons. This must be done only once for a new project.
+
+If your master branch is already configured, skip this section and continue with [Step 3: Clone or branch an environment](#setenv-new-env).
+
+If you're not sure whether or not the master branch has been configured, enter the following command:
+
+    magento-cloud magento-cloud variable:get -e <environment ID>
+
+{% collapsible To change the Admin URI, user name, and administrator password in the master branch: %}
+
+1.  Set the variable values.
+
+        magento-cloud variable:set <name> <value> -e <environment ID>
+2.  To set the administrator's user name to `meister_x2U8` in the `master` environment, enter:
+
+        magento-cloud variable:set ADMIN_USERNAME meister_x2U8 -e master
+3.  Wait for the project to redeploy.
+2.  To set the administrator's password to `admin_A456`, enter:
+
+        magento-cloud variable:set ADMIN_PASSWORD admin_A456 -e master
+6.  Wait while the project redeploys.
+7.  To set the Admin URI to `magento_A8v10`, enter:
+
+        magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
+6.  Wait while the project redeploys.
+7.  Log in to the Magento Admin using the values you just changed.
+
+    The simplest way to do that is to use the environment routes that display when you redeploy the `master` branch. An example follows:
+
+        Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
+            Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
+            Slug already built for this tree id, skipping.
+
+        Re-deploying environment k4wtvm7ogzr5s-master.
+        Environment configuration:
+            mymagento (type: php:7.0, size: S, disk: 2048)
+            mysql (type: mysql:10.0, size: S, disk: 2048)
+            redis (type: redis:3.0, size: S)
+            solr (type: solr:4.10, size: S, disk: 1024)
+
+        Environment routes:
+            http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+            https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+
+    In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `meister_x2U8` and password `admin_A456`
+
+{% endcollapsible %}
+
+## Step 3: Clone or branch an environment {#setenv-new-env}
+Now that you've change the Magento Admin variables, you should create a new environment for your development work; this new environment inherits the variable values from master.
+
+After you create the branch, update project dependencies so you can install the Magento software locally.
+
+{% collapsible To branch a new environment: %}
+
+1.	Do any of the following:
+
+    *   To create a new environment, enter the following command:
+
+            magento-cloud environment:branch <environment name> <parent environment ID>
+    *   To check out an existing environment, enter the following command:
+
+            magento-cloud environment:checkout
+
+    For example, to create a new branch named `sprint1` from master, enter
+
+        magento-cloud environment:branch sprint1 master
+
+2.  After the command completes, enter the following command to see the URLs by which you can access the environment in the cloud:
+
+        magento-cloud environment:url
+3.	Update dependencies:
 
 		composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
-7.  Create a [snapshot]({{page.baseurl}}cloud/admin/admin-snap.html) of the environment.
+4.  Create a [snapshot]({{page.baseurl}}cloud/admin/admin-snap.html) of the environment.
 
         magento-cloud snapshot:create -e <environment ID>
 
 {% endcollapsible %}
 
-### Set global Git variables
-To set global Git variables required to commit or push to an environment (that is, Git branch), enter the following commands:
+### Step 4: Set file system permissions and ownership {#setup-env-perms}
 
-	git config --global user.name "<your name>"
-	git config --global user.email <your e-mail address>
+{% collapsible To set ownership and permissions before you install the Magento software:}
 
-For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time){:target="_blank"}
+1.  Log in to your Magento server as, or switch to, the Magento file system owner.
+2.  Enter the following commands in the order shown:
+
+        cd <your Magento install dir>
+        find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+        find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+        chown -R :<web server group> .
+        chmod u+x bin/magento
+
+{% include install/file-system-perms-twouser_cmds-only.md %}
+
+{% endcollapsible %}
+
+## Step 5: Install the Magento software {#setup-env-install}
+
+{% collapsible To install the Magento software locally: %}
+
+To be able to customize the Magento software on your local machine, you should install it using the following information:
+
+*	Host name or IP address of your machine
+*	Admin user name, password, and URI you created earlier
+
+Before you begin, list the environment variables.
+
+	magento-cloud variable:get -e <environment ID>
+
+A sample result follows:
+
+	+----------------+---------------+-----------+------+
+	| ID             | Value         | Inherited | JSON |
+	+----------------+---------------+-----------+------+
+	| ADMIN_PASSWORD | admin_A456    | Yes       | No   |
+	| ADMIN_URL      | magento_A8v10 | Yes       | No   |
+	| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
+	+----------------+---------------+-----------+------+
+
+For more information:
+
+*	[Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
+*	[Install the Magento software using the command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
+
+{% endcollapsible %}
 
 #### Next step
-[Set Magento Admin environment variables]({{ page.baseurl }}cloud/access-acct/admin-env-vars.html)
+[Set up Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html)
 
 

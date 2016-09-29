@@ -4,8 +4,10 @@ group: cloud
 subgroup: 04_setup
 title: Import an existing Magento project
 menu_title: Import an existing Magento project
-menu_order: 5
+menu_order: 52
 menu_node: 
+level3_menu_node: level3child
+level3_subgroup: newproj
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_import.md
 ---
@@ -64,7 +66,7 @@ Add `auth.json`, replacing the sample values with your public and private keys.
 ### Configuration files
 Magento Enterprise Cloud Edition enables you to specify information like the Magento docroot, details about services (like the database, Redis, and so on), and routes in `yaml` files.
 
-We recommend you create these files before you push to your repository; otherwise, Magento might not deploy at all or might behave unexpectedly.
+These files must be created before you push to your repository for Magento to be properly deployed.
 
 <!-- https://docs.platform.sh/drupal_migrate/guides/configuration/drupal_application.html 
   https://docs.platform.sh/drupal_migrate/guides/type/php/drupal/migrate/import-database.html
@@ -73,8 +75,8 @@ We recommend you create these files before you push to your repository; otherwis
 #### More information
 
 *	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[`.routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[`.services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
 
 #### Next steps
 * [Set up an environment]({{ page.baseurl }}cloud/access-acct/set-up-env.html)

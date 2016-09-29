@@ -19,22 +19,7 @@ github_link: cloud/project/project-integrate-blackfire.md
 *	[Profile your site](#cloud-int-black-profile)
 
 ## Get your Blackfire credentials {#cloud-int-black}
-Your project includes Blackfire credentials, which are available to owner of the Magento Enterprise Cloud Edition.
-
-To get your Blackfire credentials:
-
-1.	As the Magento Enterprise Cloud Edition account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Enterprise Cloud Edition project.
-2.	In the upper right corner, click **&lt;your name>** > **Account Settings** as the following figure shows.
-
-	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png){:width="650px"}
-3.	On your account page, click **View Details** for your project as the following figure shows.
-
-	![View your project details]({{ site.baseurl }}common/images/cloud_blackfire-edit-details.png)
-4.	On your project details page, expand **Blackfire**.
-
-	Your Blackfire credentials display similar to the following.
-
-	![Your Blackfire credentials]({{ site.baseurl }}common/images/cloud_blackfire-account-info.png){:width="450px"}
+The account owner has access to the Blackfire credentials for your project. Contact the account owner for more information.
 
 ## Enable the Blackfire integration {#cloud-int-black-en}
 We recommend you enable the Blackfire integration in an environment (that is, branch). You can optionally merge the environment with its parent after you know it's working.

@@ -2,18 +2,18 @@
 layout: default 
 group: compman
 subgroup: 06_UseExtMan
-title: Step 3. Component Update
-menu_title: Component Update
+title: Step 3. Extension Update
+menu_title: Extension Update
 menu_node: 
-menu_order: 10
+menu_order: 30
 level3_menu_node: level3child
 level3_subgroup: step3-ext
 version: 2.2
 github_link: comp-mgr/extens-man/extensman-update.md
 ---
 
-## Step 3. Component Update
-This step displays if you're updating components. The following figure shows an example.
+## Step 3. Extension Update
+This step displays if you're updating extensions. The following figure shows an example.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/extensman_update-step.png" width="350px" alt="Click update to complete the task">
 
@@ -58,8 +58,6 @@ Updating dependencies (including require-dev)
 - Installing magento/module-bundle-sample-data (100.1.0)
 Downloading: Connecting... Downloading: 0%..... Downloading: 100%
 
-Package fabpot/php-cs-fixer is abandoned, you should avoid using it. Use friendsofphp/php-cs-fixer instead.
-Writing lock file
 Generating autoload files
 
 [2016-07-27 15:38:36 CDT] Composer update completed successfully

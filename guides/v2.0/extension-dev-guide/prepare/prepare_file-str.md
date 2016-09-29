@@ -11,6 +11,8 @@ github_link: extension-dev-guide/prepare/prepare_file-str.md
 redirect_from: 
   - /guides/v2.0/mktpl-quickstart/dev-filesys.html
   - /guides/v2.0/extension-dev-guide/prepare_file-str.html
+  - /guides/v2.1/mktpl-quickstart/dev-filesys.html
+  - /guides/v2.2/mktpl-quickstart/dev-filesys.html
 ---
 
 ## {{page.menu_title}}

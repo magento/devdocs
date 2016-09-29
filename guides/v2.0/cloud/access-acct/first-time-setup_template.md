@@ -4,8 +4,10 @@ group: cloud
 subgroup: 04_setup
 title: Create a sample Magento project from a template
 menu_title: Create a sample Magento project from a template
-menu_order: 3
+menu_order: 51
 menu_node: 
+level3_menu_node: level3child
+level3_subgroup: newproj
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_template.md
 ---
@@ -45,6 +47,6 @@ To set up a Magento project using a template:
 	
 #### Next steps
 *	[Set up an environment]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
-*	[Set Magento Admin environment variables]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
+*	[Set Magento Admin environment variables]({{ page.baseurl }}cloud/access-acct/admin-env-vars.html)
 
 
