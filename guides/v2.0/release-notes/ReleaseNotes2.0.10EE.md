@@ -152,24 +152,24 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 ### Known issues
 
 
-<!--- 58017 -->#### Issue: Error creating configurable products <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
+#### Issue: Error creating configurable products <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
 
 While creating a configurable product, the configurable options appear to be created properly, but when you go to save the product, the associated simple products are not saved.
 
 
-**Workaround**: Clear browser cache. 
+**Workaround**: Clear browser cache. <!--- 58017 -->
 
 
 
-<!--- 56853 -->#### Issue: Restful API returns unexpected attribute
+#### Issue: Restful API returns unexpected attribute 
 
 The value type of the `catalogProductRepositoryV1` method `category_ids` attribute should be string, but instead returns array. 
 
-**Workaround**: Adjust your code to handle a response of type array instead of string. 
+**Workaround**: Adjust your code to handle a response of type array instead of string. <!---56853-->
 
 
 
-<!--- 54618 -->#### Issue: Magento does not display the Products > Catalog table after you upgrade from 2.0.1 to 2.1.0, but instead displays a JavaScript error
+#### Issue: Magento does not display the Products > Catalog table after you upgrade from 2.0.1 to 2.1.0, but instead displays a JavaScript error
 
 **Workaround**: After your upgrade is complete, follow these steps:
 
@@ -178,8 +178,11 @@ The value type of the `catalogProductRepositoryV1` method `category_ids` attribu
 
 2. Restart Varnish. 
 
+<!-- 54618 -->
 
-<!--- 57004 -->* **Issue: The scope selector on the Product page does not display all websites associated with a restricted user.**
+
+#### Issue: The scope selector on the Product page does not display all websites associated with a restricted user. 
+<!--- 57004 -->
 
 
 
