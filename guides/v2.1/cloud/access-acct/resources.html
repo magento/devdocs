@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage users</title>
+	<title>Magento 2 resources</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/cloud/admin/admin-user-admin.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/access-acct/resources.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -44,9 +44,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/admin/admin-user-admin.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/access-acct/resources.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/admin/admin-user-admin.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/access-acct/resources.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,14 +162,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Manage users</h1>
+		<h1 class="page-heading">Magento 2 resources</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/admin/admin-user-admin.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/access-acct/resources.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -529,7 +529,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/resources.html">Magento 2 resources</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/access-acct/resources.html">Magento 2 resources</a></li>
 
 									
 
@@ -992,7 +992,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/cloud/admin/admin-user-admin.html">Manage users</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/admin/admin-user-admin.html">Manage users</a></li>
 
 									
 
@@ -1302,125 +1302,37 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h4 id="contents">Contents</h4>
-<ul>
-  <li><a href="#cloud-user-over">Overview of Magento Enterprise Cloud Edition user management</a></li>
-  <li><a href="#cloud-user-mg-cli">Manage users with the CLI</a></li>
-</ul>
+            <div class="updated">Updated: 29 September 2016 (PDT)</div>
+            <h2 id="magento-2-resources">Magento 2 resources</h2>
+<p>For more information, or in the event of issues, you can find help and information as follows:</p>
 
-<h2 id="cloud-user-over">Overview of Magento Enterprise Cloud Edition user management</h2>
-<p>Magento Enterprise Cloud Edition enables you to administer users by assigning them one or more roles. A <em>role</em> provides access and
-improves security in your project. Different roles are authorized to do different things with your applications, environments, and users.</p>
-
-<h3 id="cloud-role-acct-owner">Account owner role</h3>
-<p>The account owner (that is, the person who registered the Magento Enterprise Cloud Edition account) is the only user with the Account Owner role. This user can perform any task in any project or environment, including delete it.</p>
-
-<h3 id="cloud-role-project">Project-level roles</h3>
-<p>You can assign users to the following roles per project:</p>
+<h3 id="documentation">Documentation</h3>
+<p>We have the following resources available:</p>
 
 <ul>
-  <li>Project administrator (also referred to as <em>super user</em>) can change settings and execute actions on any environment, including creating and restoring snapshots.</li>
-  <li>Project reader can view all environments in a project but cannot execute any actions on them.</li>
-</ul>
+  <li><a href="https://magento.com/help/documentation" target="_blank">Documentation home page</a></li>
+  <li>
+    <p>User guides (how to use options in the Magento Admin)</p>
 
-<h3 id="cloud-role-env">Environment-level roles</h3>
-<p>A Project Reader can have one of the following roles per environment:</p>
-
-<ul>
-  <li>Environment administrator can
-change settings and execute actions on this environment, including merging with the parent environment.</li>
-  <li>Environment contributor can push
-code to this environment. This role can also branch the environment.</li>
-  <li>Environment reader can view this environment only.</li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We recommend you limit the environment administrator role to as few users as possible.</p>
-</div>
-
-<h3 id="role-management-best-practices">Role management best practices</h3>
-<p>When a development team works on a project, the team leader can be the
-project administrator and decide which roles to give his team members.
-One team member can contribute to one environment, another member can
-administer a different environment, and the customer can be a reader of
-the <code>master</code> environment.</p>
-
-<p>For your users to be able to see everything but only
-commit to a specific branch, change their permission level on that
-environment to “Contributor”.</p>
-
-<div class="bs-callout bs-callout-warning">
-    <p>An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in <code>.magento.app.yaml</code> by specifying <code>ssh: contributor</code>.</p>
-</div>
-
-<h3 id="rebuild-the-environment">Rebuild the environment</h3>
-<p>After a new user is added to an environment, the environment must be rebuilt. Rebuilds
-are triggered when you push a new commit to an environment.
-To be able to rebuild without new code changes, use the command
-<code>git commit --allow-empty -m'rebuild' &amp;&amp; git push</code>
-to create an empty commit and “force” rebuilding the environment.</p>
-
-<p>When the environment rebuild is complete, allow a minute for the routes to 
-update fully and for the new user to be able to use SSH access.</p>
-
-<h3 id="cloud-user-mg-cli">Manage users with the CLI</h3>
-<p>You can user the Magento Enterprise Cloud Edition command line client to fully manage your users
-and integrate this with any other automated system.</p>
-
-<p>Available commands:</p>
-
-<ul>
-  <li><code>magento-cloud user:add</code>
     <ul>
-      <li>Add a user to the project</li>
+      <li><a href="http://docs.magento.com/m2/2.0/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112" target="_blank">Magento 2.0.x</a></li>
+      <li><a href="http://docs.magento.com/m2/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112" target="_blank">Magento 2.1.x</a></li>
     </ul>
   </li>
-  <li><code>magento-cloud user:delete</code>
+  <li>
+    <p>Developer documentation</p>
+
     <ul>
-      <li>Delete a user</li>
-    </ul>
-  </li>
-  <li><code>magento-cloud user:list [users]</code>
-    <ul>
-      <li>List project users</li>
-    </ul>
-  </li>
-  <li><code>magento-cloud user:role</code>
-    <ul>
-      <li>View or change a user’s role</li>
+      <li><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Front end development</a></li>
+      <li><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">Customizing the Magento software</a></li>
+      <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation</a></li>
+      <li><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration</a></li>
     </ul>
   </li>
 </ul>
 
-<p>For example, the following command adds the project administrator (<code>admin</code>) role to <code>alice@example.com</code> and gives her <code>contributor</code> privileges to the <code>development</code> environment:</p>
-
-<p>The following prompts display:</p>
-
-<pre><code>magento-cloud user:add
-
-Email address: alice@example.com
-The user's project role can be 'viewer' ('v') or 'admin' ('a').
-Project role [V/a]: a
-The user's environment-level roles can be 'viewer', 'contributor', or 'admin'.
-development environment role [V/c/a]: c
-Summary:
-    Email address: alice@example.com
-    Project role: contributor
-Adding users can result in additional charges.
-Are you sure you want to add this user? [Y/n]
-User alice@example.com created
-</code></pre>
-
-<p>After this has been done, the user will receive an e-mail asking her to confirm
-her details and register an account name and a password.</p>
-
-<p>To change Alice’s role on the environment <code>development</code> to <code>admin</code>, use the following command:</p>
-
-<pre><code>magento-cloud user:role alice@example.com --level environment --environment development --role admin
-</code></pre>
-
-<p>Use <code>magento-cloud list</code> to get the full list of commands.</p>
+<h3 id="technical-support">Technical support</h3>
+<p>See <a href="/guides/v2.1/cloud/get-help.html">Get help with your deployment</a></p>
 
 		</div>
 	</section>

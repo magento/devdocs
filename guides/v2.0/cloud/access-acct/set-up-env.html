@@ -527,6 +527,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/resources.html">Magento 2 resources</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/trouble.html">Troubleshoot deployment</a></li>
 
 									
@@ -1284,14 +1292,15 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 28 September 2016 (PDT)</div>
+            <div class="updated">Updated: 29 September 2016 (PDT)</div>
             <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#setup-env-setup">Step 1: Set up an environment</a></li>
   <li><a href="#setup-env-adminurl">Step 2: Change the Admin URI, user name, and password in the master branch</a></li>
   <li><a href="#setenv-new-env">Step 3: Clone a project and environment</a></li>
-  <li><a href="#setup-env-perms">Step 4: Set file system permissions and ownership</a></li>
-  <li><a href="#setup-env-install">Step 5: Install the Magento software</a></li>
+  <li><a href="#setenv-keys">Step 4: Get your authentication keys</a></li>
+  <li><a href="#setup-env-perms">Step 5: Set file system permissions and ownership</a></li>
+  <li><a href="#setup-env-install">Step 6: Install the Magento software</a></li>
 </ul>
 
 <h2 id="setup-env-setup">Step 1: Set up an environment</h2>
@@ -1392,17 +1401,17 @@
     </li>
     <li>Follow the prompts on your screen to complete the task.</li>
   </ol>
-</div>
-</div></div>
 
-<h3 id="set-global-git-variables">Set global Git variables</h3>
-<p>To set global Git variables required to commit or push to an environment (that is, Git branch), enter the following commands:</p>
+  <h3 id="set-global-git-variables">Set global Git variables</h3>
+  <p>To set global Git variables required to commit or push to an environment (that is, Git branch), enter the following commands:</p>
 
-<pre><code>git config --global user.name "&lt;your name&gt;"
+  <pre><code>git config --global user.name "&lt;your name&gt;"
 git config --global user.email &lt;your e-mail address&gt;
 </code></pre>
 
-<p>For more information, see <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time" target="_blank">First-Time Git Setup</a></p>
+  <p>For more information, see <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time" target="_blank">First-Time Git Setup</a></p>
+</div>
+</div></div>
 
 <h3 id="setenv-clone">Clone a project and environment</h3>
 
@@ -1573,9 +1582,55 @@ Environment routes:
 </ol>
 </div></div>
 
-<h3 id="setup-env-perms">Step 4: Set file system permissions and ownership</h3>
+<h2 id="setenv-keys">Step 4: Get your authentication keys</h2>
 
-<h2 id="setup-env-install">Step 5: Install the Magento software</h2>
+<div class="collapsible"><h4 class="collapsible-title">To get your authentication keys: </h4><div class="collapsible-content"><p>Before you can upgrade the Magento software or install extensions, you must have authentication keys in the <code>auth.json</code> file in the Magento root directory. The Magento Enterprise Cloud Edition account owner has your keys. Contact that person to get them.</p>
+
+<p>The <em>account owner</em> is the person who purchased Magento Enterprise Cloud Edition.</p>
+
+<p>When you have your keys, add them to <code>auth.json</code>, which has the following contents:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+   <span class="nt">&quot;http-basic&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;repo.magento.com&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your public key&gt;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your private key&gt;&quot;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 id="setup-env-perms">Step 5: Set file system permissions and ownership</h2>
+
+<div class="collapsible"><h4 class="collapsible-title">To set ownership and permissions before you install the Magento software: </h4><div class="collapsible-content"><ol>
+  <li>Log in to your Magento server as, or switch to, the Magento file system owner.</li>
+  <li>
+    <p>Enter the following commands in the order shown:</p>
+
+    <pre><code>cd &lt;your Magento install dir&gt;
+find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+chown -R :&lt;web server group&gt; .
+chmod u+x bin/magento
+</code></pre>
+  </li>
+</ol>
+
+<div>
+
+  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code>/var/www/html/magento2</code> and the web server group name is <code>apache</code>:</p>
+
+  <pre><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
+</code></pre>
+
+  <p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code>root</code> privileges:</p>
+
+  <pre><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
+</code></pre>
+</div>
+</div></div>
+
+<h2 id="setup-env-install">Step 6: Install the Magento software</h2>
 
 <div class="collapsible"><h4 class="collapsible-title">To install the Magento software locally: </h4><div class="collapsible-content"><p>To be able to customize the Magento software on your local machine, you should install it using the following information:</p>
 
@@ -1600,8 +1655,7 @@ Environment routes:
 +----------------+---------------+-----------+------+
 </code></pre>
 
-<p>For more information:</p>
-
+<h4 id="related-topics">Related topics</h4>
 <ul>
   <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Install the Magento software using the Web Setup Wizard</a></li>
   <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li>
