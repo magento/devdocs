@@ -112,5 +112,5 @@ For example of using JavaScript mixins, see the Magento_CheckoutAgreement module
 
 ## Related reading
 
-- [About AMD modules and RequireJS]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_requirejs_concept.html) 
+- [About AMD modules and RequireJS](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/concepts/ui_comp_requirejs_concept.html) 
 - [Configure JS resources]({{page.baseurl}}javascript-dev-guide/javascript/js-resources.html)
