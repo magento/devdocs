@@ -57,16 +57,16 @@ We address the following security issues in this release.
 <!--- 56542/1480 -->* Resolved issue with potential SQL injection through the use of the ordering or grouping parameters.
 
 
-#### Denial-of-service attacks and brute force attacks
+#### Denial-of-service (DoS) attacks and brute force attacks
 
 <!--- 57464 -->* The Guest order view protection code is no longer vulnerable to brute force attacks. 
 
-<!--- 57303 -->* Fixed vulnerability to denial-of-service (DoS) attacks by full page cache poisoning. 
+<!--- 57303 -->* Fixed vulnerability to DoS attacks by full page cache poisoning. For more information, see 
 
 
 #### Cross-Site Request Forgery  (CSRF)
 
-<!--- 45757 -->* Removed vulnerability in cart checkout experience by enhancing server-side Cross-Site Request Forgery (CSRF) validation.
+<!--- 45757 -->* Removed vulnerability in cart checkout experience by enhancing server-side CSRF validation.
 
 
 
@@ -87,6 +87,33 @@ We address the following functional issues in this release.
 
 
 
+#### Sales API enhancements
+For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
+<a href="{{ page.baseurl }}mrg/ce/Sales/services.html#shiporder" target="_blank">ship order</a>
+
+
+<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `salesShipOrderV1` interface support tasks you can already do through the Admin dashboard and include the ability to:  
+
+	* Post with an empty POST body and ship the entire order
+
+	* Create a partial shipment by specifying the order line item(s) that you're shipping in the post body
+
+	* Capture the remaining part of an order if you’ve already partially shipped an order  with an empty POST body
+
+
+
+<!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `salesInvoiceOrderV1` interface support tasks you can already do through the Admin dashboard and include the ability to:  
+
+	* Post with an empty POST body and capture payment for the entire order
+
+	* Create a partial invoice by specifying the order line item(s) in the post body
+
+	* Capture the remaining part of an order if you’ve already partially invoiced an order and call again with an empty POST body
+
+
+For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
+<a href="{{ page.baseurl }}mrg/ce/Sales/services.html#shiporder" target="_blank">ship order</a>
+
 
 #### Tracking and shipping 
 
@@ -106,46 +133,26 @@ We address the following functional issues in this release.
 <!--- 56911 -->* You can now use an alternative Merchant Account ID when using Braintree as a payment method. <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a>
 
 
-#### Sales API enhancements
-
-<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `salesShipOrderV1` interface support tasks you can already do through the Admin dashboard and include the ability to:  
-
-* Post with an empty POST body and ship the entire order
-
-* Create a partial shipment by specifying the order line item(s) that you're shipping in the post body
-
-* Capture the remaining part of an order if you’ve already partially shipped an order and call again with an empty POST body
-
-
-
-<!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `salesInvoiceOrderV1` interface support tasks you can already do through the Admin dashboard and include the ability to:  
-
-* Post with an empty POST body and capture payment for the entire order
-
-* Create a partial invoice by specifying the order line item(s) in the post body
-
-* Capture the remaining part of an order if you’ve already partially invoiced an order and call again with an empty POST body
-
-
-
 
 #### Miscellaneous
 
 
 <!--- 57065 -->* Magento now returns you to the Admin dashboard after you've successfully changed your Admin password. Previously, Magento prompted you to change your password even after you just successfully changed it. <a href="https://github.com/magento/magento2/issues/4331" target="_blank">(GITHUB-4331)</a>
 
-<!--- 57579 -->* Upgrade now puts stores in maintenance mode as expected. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
+<!--- 57579 -->* Upgrade now places stores in maintenance mode as expected. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
+
+<!--- 56905 -->* Local File Inclusion
 
 
 
 
 
-<!--- Omitted (can't be reproduced or won't fix) 57800 (CLONES: 58314, 58798, 58695, 58883) (CANNOT REPRO: 53971, 53431) (INTERNAL ONLY: 58674, 58816, 558874, 56759, 58167, 57879, 57577, 57568, 57294, 57546), 57303, 55862, 52239, 58626, 58625, 58666, 58933, 58923 (WONT FIX: 58671-->
+<!--- Omitted (can't be reproduced or won't fix) 57800 (CLONES: 5704858314, 58798, 58695, 58883) (CANNOT REPRO: 53971, 53431) (INTERNAL ONLY: 58674, 58816, 558874, 56759, 58167, 57879, 57577, 57568, 57294, 57546), 57303, 55862, 52239, 58626, 58625, 58666, 58933, 58923 (WONT FIX: 58671-->
 
 ### Known issues
 
 
-<!--- 58017 -->* **Issue: Error creating configurable products** <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
+<!--- 58017 -->#### Issue: Error creating configurable products <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
 
 While creating a configurable product, the configurable options appear to be created properly, but when you go to save the product, the associated simple products are not saved.
 
@@ -154,15 +161,15 @@ While creating a configurable product, the configurable options appear to be cre
 
 
 
-<!--- 56853 -->* **Issue: Restful API returns unexpected attribute**
+<!--- 56853 -->#### Issue: Restful API returns unexpected attribute
 
-The value type of the `catalogProductRepositoryV1` method `category_ids` attribute should be string, but instead returns an array. 
+The value type of the `catalogProductRepositoryV1` method `category_ids` attribute should be string, but instead returns array. 
 
 **Workaround**: Adjust your code to handle a response of type array instead of string. 
 
 
 
-<!--- 54618 -->* **Issue: Magento does not display the Products > Catalog table after you upgrade from 2.0.1 to 2.1.0, but instead displays a JavaScript error** 
+<!--- 54618 -->#### Issue: Magento does not display the Products > Catalog table after you upgrade from 2.0.1 to 2.1.0, but instead displays a JavaScript error
 
 **Workaround**: After your upgrade is complete, follow these steps:
 
