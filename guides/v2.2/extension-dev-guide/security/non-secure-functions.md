@@ -17,7 +17,7 @@ As a Magento developer, you should avoid using functions that introduce vulnerab
 ## PHP functions to avoid
 
 The following is a list of PHP functions that are known to be vulnerable and exploitable.
-Avoid using these in your code.
+Avoid using these functions in your `php`,`phtml`, and `js` files.
 
 * `eval`
 * `seralize`/`unserialize`
