@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 99_Module Development
 title: Configure services as web APIs
 menu_title: Configure services as web APIs
-menu_order: 13
+menu_order: 20
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
 version: 2.0

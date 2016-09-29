@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 99_Module Development
 title: PHP developer guide
 menu_title: Backward compatibility
-menu_order: 14
+menu_order: 21
 version: 2.0
 github_link: extension-dev-guide/backward-compatibility.md
 redirect_from: 

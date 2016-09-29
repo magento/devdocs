@@ -26,7 +26,7 @@ github_link: cloud/project/project-conf-files_routes.md
 A *route* describes how an incoming URL is processed by
 Magento Enterprise Cloud Edition. 
 
-`routes.yaml` defines routes for development, testing, staging, and production
+`routes.yaml` defines routes for development, integration, staging, and production
 systems. This one configuration file handles routes for all systems.
 
 This file is located at `.magento/routes.yaml` in your project.
