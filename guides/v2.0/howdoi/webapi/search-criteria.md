@@ -109,7 +109,7 @@ searchCriteria[filter_groups][0][filters][0][field]=name&
 searchCriteria[filter_groups][0][filters][0][value]=%25Leggings%25&
 searchCriteria[filter_groups][0][filters][0][condition_type]=like&
 searchCriteria[filter_groups][0][filters][1][field]=name&
-searchCriteria[filter_groups][0][filters][1][value]=%25Leggings%25&
+searchCriteria[filter_groups][0][filters][1][value]=%25Parachute%25&
 searchCriteria[filter_groups][0][filters][1][condition_type]=like
 {% endhighlight %}
 
