@@ -13,13 +13,13 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.
 
 
 #### Contents
+{:.no_toc}
 
-*	<a href="#config-cli-static-overview">Overview of static view files deployment</a>
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-xlate-dict">Deploy static view files</a>
-*	<a href="#view-file-trouble">Troubleshooting the static view files deployment tool</a>
+* TOC
+{:toc}
 
-<h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
+
+## Overview of static view files deployment {#config-cli-static-overview}
 The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
 
 The term *static view file* refers to the following:
@@ -46,7 +46,7 @@ Static view files deployment is affected by Magento modes as follows:
 <li>In the Magento Admin. Go to <strong>System</strong> > Tools > <strong>Cache Management</strong> and click <strong>Flush Static Files Cache</strong>.</li></ul>
 </div>
 
-<h2 id="config-cli-before">First steps</h2>
+## First steps {#config-cli-before}
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
@@ -178,6 +178,36 @@ The following table discusses the meanings of this command's parameters and valu
   <p>If you specify values for both <code>&lt;lang></code> and <code>--language</code>, <code>&lt;lang></code> takes precedence.</p>
 </div>
 
+### Deploy static view files without installing Magento {#deploy_without_db}
+
+You might want to run the deployment process in the non-production, separate environment, in order to avoid any build processes on sensitive production machines. 
+
+To do this, take the following steps:
+
+1. Export the minimum required configuration from the Magento instance that is in production. (described further in details)
+2. Copy the exported files to the non-production code base.
+3. Run the deployment tool.
+
+#### Exporting the configuration
+
+The configuration required to deploy static view files can be exported from the database of the production Magento instance. To do it, run the following command for the production instance:
+
+	magento config:export
+	
+As a result of the command execution, the following files must appear in the `app/etc/` directory: 
+
+- `setup.config.php`: contains all system configurations required for successful static content deployment		 
+- `scope.config.php`: contains the list of stores, store groups and websites with own information
+- i18n.config.php (optional):  contains all inline translations. It is used for generation `js-translation.json`
+
+You can copy this files and paste them into any Magento codebase (`app/etc`) in order to generate static content.	
+
+		
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+<p>While the exported configuration files reside in the `app/etc` directory, you cannot change the value of the corresponding configuration fields under **Store** -> **Configuration** in the Admin Panel. The fields are displayed, but disabled. You need to remove the configuration files from `app/etc` to make the settings available.</p></span>
+</div> 
+
 ### Examples
 Following are some example commands.
 
@@ -250,7 +280,7 @@ Use the following steps:
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
 	</div> -->
 
-#### Related topics
+## Related topics
 
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
