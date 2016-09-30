@@ -20,14 +20,41 @@ We are pleased to present Magento Enterprise Edition 2.1.2. This release include
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
+
+### Highlights
+
+Patch 2.1.2 introduces **two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. See Module Reference Guide for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
+
+#### Why are we adding new APIs in a patch release?
+
+<i>These new interfaces will not break any existing customizations or extensions.</i>  See Alan Kent’s blog for more information about these features and Magento’s use of semantic versioning. 
+
+This patch also introduces **support for PHP 7.0.4 and 5.6.5+**. 
+
+
 ### Security enhancements
 This release includes enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento installation to the latest version as soon as possible.
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the Magento Security Center.
 
+#### General security enhancements
 
 
 <!--- 57812/1539, 1543-->* You can no longer delete a currently logged-in user. 
+
+<!--- 55476/1478-->*  Sessions now expire as expected after logout. 
+
+
+#### Denial-of-service (DoS) attacks and brute force attacks
+
+#### Cross-Site Request Forgery  (CSRF)
+
+#### Cross-site scripting  (XSS)
+
+
+#### SQL injection
+
+
 
 
 <!--- 57581/1433-->* Resolved a potential cross-site scripting (XSS) vulnerability in which customer addresses could be deleted. You can no longer trick a user into deleting his store address book entries.  
@@ -55,11 +82,15 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 53971-->*  Fixed issue with running `cron` jobs less frequently than the application `cron` setting. 
 
+<!--- 57362-->*  
 
 <!--- 46026/1270-->* The Guest order view protection code is no longer vulnerable to brute force attacks.
 
 
-<!--- 55476/1478-->*  Sessions now expire as expected after logout. 
+
+<!--- 57965-->
+
+<!--- 57463-->*  
 
 
 
@@ -100,20 +131,36 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 54964-->* Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. <a href="https://github.com/magento/magento2/issues/6121" target="_blank">(GITHUB-6121)</a> 
 
+<!--- 58568-->* 
+
+<!--- 58401-->* 
+
+<!--- 58283-->* 
+
+<!--- 56425-->* 
+
+<!--- 57797-->* 
 
 
 
 
-
-<!--- DELETED:  (won't fix) 57578, CLONE: 58123, 58111, 57049, 57032, OMIT: 57878 (releasenotes),57845, 55862, 57294, 58166, 58204, 57965 (internal) -->
+<!--- DELETED:  (won't fix) 57578, CLONE: 58123, 58111, 57049, 57032, OMIT: 58667, 57878, 58473, 58421, 58402, 58313 (releasenotes),57845, 55862, 57294, 58166, 58204, (internal) 58929, 58875, 58700, 58606, 58590, 58474 -->
 
 
 
 ### Known issues
 
+59082?
+
+57797
+
+
+
+
+
 <!--- 58017-->
 
-**Issue**: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
+#### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
 
 
 **Workaround**: Clear your browser cache after upgrading. 
@@ -122,7 +169,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 58034-->
 
-**Issue**: When you edit a configurable product and add options to a simple product, Magento does not save these options. 
+#### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options. 
 
 **Workaround**: 
 
