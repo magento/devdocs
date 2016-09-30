@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Validate</title>
+	<title>Non-secure functions</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/validate/validate.html">
+	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/security/non-secure-functions.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -44,9 +44,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/validate/validate.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/security/non-secure-functions.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/validate/validate.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/security/non-secure-functions.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -162,14 +162,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Validate</h1>
+		<h1 class="page-heading">Non-secure functions</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/validate/validate.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/extension-dev-guide/security/non-secure-functions.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -488,7 +488,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/validate/validate.html">Validate</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/validate/validate.html">Validate</a></li>
 									
 								
 
@@ -781,7 +781,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/security/non-secure-functions.html">Non-secure functions</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/security/non-secure-functions.html">Non-secure functions</a></li>
 
 									
 
@@ -948,15 +948,25 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="validate">Validate</h2>
-<p>After your module is built, you should test it. Read through the Definition of Done to confirm that your module and coding practice is compliant with Magento.</p>
+            <div class="updated">Updated: 30 September 2016 (PDT)</div>
+            <h2 id="overview">Overview</h2>
+
+<p>Using functions that are known to be exploitable or non-secure can lead to remote code execution or weak cryptography.
+As a developer, you should avoid using functions that introduce vulnerabilities in your code.</p>
+
+<h2 id="php-functions-to-avoid">PHP functions to avoid</h2>
+
+<p>The following is a list of PHP functions that are known to be vulnerable and exploitable.
+Avoid using these functions in your code.</p>
 
 <ul>
-  <li><a href="/guides/v2.1/contributor-guide/contributing_dod.html">Definition of done</a> in the Contributor Guide.</li>
-  <li><a href="/guides/v2.1/extension-dev-guide/validate/test-module.html">Testing</a></li>
+  <li><a href="http://php.net/manual/en/function.eval.php" target="_blank"><code>eval</code></a> - Using <code>eval</code> is considered bad practice because of its ability to <a href="https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#Code_Injection" target="_blank">execute arbitrary PHP code</a>.</li>
+  <li><a href="http://php.net/manual/en/function.serialize.php" target="_blank"><code>seralize</code></a>/<a href="http://php.net/manual/en/function.unserialize.php" target="_blank"><code>unserialize</code></a> - Attackers can create an exploit for these functions by passing a string with a serialized arbitrary object to the <code>unserialize</code> function to <a href="https://www.owasp.org/index.php/PHP_Object_Injection" target="_blank">run arbitrary code</a>.</li>
+  <li><a href="http://php.net/manual/en/function.md5.php" target="_blank"><code>md5</code></a> - The algorithm for this function is known to have <a href="https://www.owasp.org/index.php/Guide_to_Cryptography#Hashes" target="_blank">cryptographic weaknesses</a>.
+You should never use this function for hashing passwords or any other sensitive data.</li>
+  <li><a href="http://php.net/manual/en/function.srand.php" target="_blank"><code>srand</code></a> - Using a predetermined number to seed the random number generator results in a <a href="http://programmers.stackexchange.com/questions/76229/predicting-the-output-of-phps-rand" target="_blank">predictable sequence of numbers</a>.</li>
+  <li><a href="http://php.net/manual/en/function.mt-rand.php" target="_blank"><code>mt_srand</code></a> - This function is a pseudo-random number generator (PRNG) and is <a href="http://phpsecurity.readthedocs.io/en/latest/Insufficient-Entropy-For-Random-Values.html" target="_blank">not cryptographically secure</a>.</li>
 </ul>
-
 
 		</div>
 	</section>
