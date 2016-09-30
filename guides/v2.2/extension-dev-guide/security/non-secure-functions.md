@@ -17,7 +17,7 @@ As a developer, you should avoid using functions that introduce vulnerabilities 
 ## PHP functions to avoid
 
 The following is a list of PHP functions that are known to be vulnerable and exploitable.
-Avoid using these functions in your `php`, `phtml`, and `js` files.
+Avoid using these functions in your code.
 
 * [`eval`](http://php.net/manual/en/function.eval.php){:target="_blank"} - This function is considered dangerous because it allows execution of arbitrary PHP code.
   Using `eval` is considered bad practice because of its [code injection](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#Code_Injection){:target="_blank"} ability.
