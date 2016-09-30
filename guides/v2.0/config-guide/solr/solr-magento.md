@@ -5,7 +5,7 @@ subgroup: 15_Solr
 title: Configure Solr and Magento
 menu_title: Configure Solr and Magento
 menu_order: 2
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/solr/solr-magento.md
 ---
@@ -50,7 +50,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir>/vendor/magento/module-solr/conf/* .</code></p>
 	</div>
 
-2.  After copying files, open `example/solr/core.properties` in a text editor and change:
+2.  After copying files, open `example/solr/magento2/core.properties` in a text editor and change:
 
 		name=collection1
 
@@ -74,7 +74,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 		<dataDir>${solr.data.dir:}</dataDir>
 
 4.  Start Solr.
-	
+
 	As a user with <code>root</code> privileges, enter the following command to start Solr:
 
 		java -jar <your Solr install dir>/example/start.jar
@@ -179,7 +179,7 @@ After you change Magento's Solr configuration, you must reindex the catalog sear
 To refresh the cache using the Admin:
 
 1.  In the Admin, click <strong>System</strong> > <strong>Cache Management</strong>.
-2.  Select the check box next to <strong>Page Cache</strong>. 
+2.  Select the check box next to <strong>Page Cache</strong>.
 3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
 		The following figure shows an example.<br />
 		<img src="{{ site.baseurl }}common/images/solr_refresh-cache.png" width="600px">
