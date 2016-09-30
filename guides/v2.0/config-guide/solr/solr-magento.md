@@ -77,7 +77,8 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 
 	As a user with <code>root</code> privileges, enter the following command to start Solr:
 
-		java -jar <your Solr install dir>/example/start.jar
+		cd <your Solr install dir>/example
+		java -jar start.jar
 
 	<div class="bs-callout bs-callout-warning">
 			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="{{page.baseurl}}config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
