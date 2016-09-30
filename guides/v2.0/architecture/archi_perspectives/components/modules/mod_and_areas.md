@@ -30,6 +30,8 @@ Magento is organized into these main areas:
 
 *     **Storefront** (`frontend`): entry point for this area is `index.php` or `pub/index.php`. The storefront (or `frontend`)  contains template and layout files that define the appearance of your storefront. 
 
+*     **Basic** (`base`): used as a fallback for files absent in `adminhtml` and `frontend` areas.
+
 
 You can also send requests to Magento using the SOAP and REST APIs. These two areas 
 
