@@ -641,11 +641,19 @@
 
 <p>This topic describes how to use JavaScript mixins to overwrite <a href="/guides/v2.1/javascript-dev-guide/javascript/js_overview.html#js_terms">JavaScript components’</a> methods in Magento.</p>
 
-<h2 id="overview">Overview</h2>
+<h2 id="overview-of-js-mixins">Overview of JS mixins</h2>
 
-<p>One of the ways to implement JavaScript mixins is declaring them on the RequireJS loading level. This approach allows to extend/overwrite result that any JavaScript component returns before it is used anywhere. This approach allows to mix behavior any file but in whole area. You can use base area to mix behavior in every usage.</p>
+<p>One of the ways to implement JavaScript mixins is declaring them on the RequireJS loading level. This approach allows to modify (extend/overwrite) result that a JavaScript component returns before it is used anywhere.</p>
 
-<p>To add a JS mixin take the following steps:</p>
+<p>The scope of your mixin usage depends on the <a href="/guides/v2.1/architecture/archi_perspectives/components/modules/mod_and_areas.html">application area</a> it is defined for:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">frontend</code>: the mixin is applied for all usages of the modified JS component on the storefront</li>
+  <li><code class="highlighter-rouge">adminhtml</code>: the mixin is applied for all usages of the modified JS component in the Admin panel</li>
+  <li><code class="highlighter-rouge">base</code>: the mixin is applied for all all usages of the modified JS component, if nothing else is specified in <code class="highlighter-rouge">frontend</code> and <code class="highlighter-rouge">adminhtml</code></li>
+</ul>
+
+<p>Generally, to add a JS mixin you need to do the following:</p>
 
 <ol>
   <li>Define a mixin as a separate <a href="https://en.wikipedia.org/wiki/Asynchronous_module_definition">AMD module</a>. It should return a callback function. This function must get the target JS component (module) as an argument.</li>
@@ -660,9 +668,11 @@
 
 <ol>
   <li>
-    <p>In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/%area%/web</code> directory. In this notation <code class="highlighter-rouge">%area%</code> stands for the <a href="/guides/v2.1/architecture/archi_perspectives/components/modules/mod_and_areas.html">application area</a>, and might be one of the following: <code class="highlighter-rouge">frontend</code>, <code class="highlighter-rouge">backend</code>, or <code class="highlighter-rouge">base</code>. There are no strict requirements for the mixin file naming.</p>
+    <p>In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/%area%/web</code> directory. In this notation <code class="highlighter-rouge">%area%</code> stands for the [application area], and might be one of the following: <code class="highlighter-rouge">frontend</code>, <code class="highlighter-rouge">backend</code>, or <code class="highlighter-rouge">base</code>. There are no strict requirements for the mixin file naming.</p>
 
-    <p><strong>Sample mixin</strong> <code class="highlighter-rouge">Orange/Sample/view/base/web/js/columns-mixin.js</code>:</p>
+    <p><strong>Sample mixin</strong></p>
+
+    <p><code class="highlighter-rouge">Orange/Sample/view/base/web/js/columns-mixin.js</code>:</p>
 
     <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">define</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
  <span class="s1">'use strict'</span><span class="p">;</span>
@@ -711,22 +721,24 @@
     </ul>
 
     <p>For details about the <code class="highlighter-rouge">config</code> RequireJS option, see <a href="http://requirejs.org/docs/api.html#config-moduleconfig">http://requirejs.org/docs/api.html#config-moduleconfig</a>.</p>
+
+    <p><strong>Sample RequireJS configuration file</strong></p>
+
+    <p><code class="highlighter-rouge">&lt;Orange_Sample_module_dir&gt;/view/base/web/js/requirejs-config.js</code>:</p>
+
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>  
+ <span class="na">config</span><span class="p">:</span> <span class="p">{</span>   
+     <span class="na">mixins</span><span class="p">:</span> <span class="p">{</span>  
+         <span class="s1">'Magento_Ui/js/grid/controls/columns'</span><span class="p">:</span> <span class="p">{</span>  
+             <span class="s1">'Orange_Sample/js/columns-mixin'</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+    </div>
   </li>
 </ol>
-
-<p>** Sample RequireJS configuration file** <code class="highlighter-rouge">&lt;Orange_Sample_module_dir&gt;/view/base/web/js/requirejs-config.js</code>:</p>
-
-<p><code class="highlighter-rouge">javascript
-var config = {  
-    config: {   
-        mixins: {  
-            'Magento_Ui/js/grid/controls/columns': {  
-                'Orange_Sample/js/columns-mixin': true
-            }
-        }
-    }
-};
-  </code></p>
 
 <h2 id="example-of-usage">Example of usage</h2>
 <p>For example of using JavaScript mixins, see the Magento_CheckoutAgreement module files:</p>
@@ -739,7 +751,7 @@ var config = {
 <h2 id="related-reading">Related reading</h2>
 
 <ul>
-  <li><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_requirejs_concept.html">About AMD modules and RequireJS</a></li>
+  <li><a href="http://devdocs.magento.com/guides/v2.1/ui_comp_guide/concepts/ui_comp_requirejs_concept.html">About AMD modules and RequireJS</a></li>
   <li><a href="/guides/v2.1/javascript-dev-guide/javascript/js-resources.html">Configure JS resources</a></li>
 </ul>
 

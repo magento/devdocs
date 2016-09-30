@@ -987,15 +987,19 @@
   <li>Create an <code>.html</code> template for the component.</li>
 </ol>
 
-<p>Each step is described in details in the folowing paragraphs.</p>
+<p>Each step is described in details in the following paragraphs.</p>
 
 <h3 id="component">Add the JavaScript file implementing the new step</h3>
 
 <p>A new checkout step must be implemented as UI component. That is, its JavaScript implementation must be a JavaScript module.</p>
 
-<p>The file must be stored under the <code>&lt;your_module_dir&gt;/view</code> directory.</p>
+<p>The file must be stored under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/view</code> directory.</p>
 
-<p>A sample <code>view/my-step-view.js</code> with comments follows:</p>
+<div class="bs-callout bs-callout-info" id="info">
+<p><code>&lt;your_module_dir&gt;</code> notation stands for the path to your module directory from the root directory. Usually it will be one of the following: <code>app/code/&lt;YourVendor&gt;/&lt;YourModule&gt;</code> or <code>vendor/&lt;yourvendor&gt;/module-&lt;module&gt;-&lt;name&gt;</code>. For more details see <a href="/guides/v2.1/frontend-dev-guide/conventions.html">Conventional notations for paths to modules and themes</a></p>
+</div>
+
+<p>A sample <code>my-step-view.js</code> with comments follows:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
@@ -1014,12 +1018,12 @@
         <span class="cm">/**</span>
 <span class="cm">        *</span>
 <span class="cm">        * mystep - is the name of the component&#39;s .html template, </span>
-<span class="cm">        * your_module_dir - is the name of the your module directory.</span>
+<span class="cm">        * &lt;Vendor&gt;_&lt;Module&gt;  - is the name of the your module directory.</span>
 <span class="cm">        * </span>
 <span class="cm">        */</span>
         <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
             <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;your_module_dir/mystep&#39;</span>
+                <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;Vendor&gt;_&lt;Module&gt;/mystep&#39;</span>
             <span class="p">},</span>
  
             <span class="c1">//add here your logic to display step,</span>
@@ -1120,7 +1124,7 @@
                                         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                                             <span class="c">&lt;!-- The new step you add --&gt;</span>
                                             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;my-new-step&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Your_Module_Name/js/view/my-step-view<span class="nt">&lt;/item&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%Vendor%_%Module%/js/view/my-step-view<span class="nt">&lt;/item&gt;</span>
                                                     <span class="c">&lt;!--To display step content before shipping step &quot;sortOrder&quot; value should be &lt; 1--&gt;</span>
                                                     <span class="c">&lt;!--To display step content between shipping step and payment step  1 &lt; &quot;sortOrder&quot; &lt; 2 --&gt;</span>
                                                     <span class="c">&lt;!--To display step content after payment step &quot;sortOrder&quot; &gt; 2 --&gt;</span>

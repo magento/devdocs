@@ -837,7 +837,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 30 August 2016 (PDT)</div>
+            <div class="updated">Updated: 30 September 2016 (PDT)</div>
             <h2 id="m2arch-module-areas-overview"> Overview</h2>
 <p>An <i>area</i> is a logical component that organizes code for optimized request processing. Magento uses areas to streamline web service calls by loading only the dependent code for the specified area.  Each of the default areas defined by Magento can contain completely different code on how to process URLs and requests.</p>
 
@@ -853,6 +853,9 @@
   </li>
   <li>
     <p><strong>Storefront</strong> (<code>frontend</code>): entry point for this area is <code>index.php</code> or <code>pub/index.php</code>. The storefront (or <code>frontend</code>)  contains template and layout files that define the appearance of your storefront.</p>
+  </li>
+  <li>
+    <p><strong>Basic</strong> (<code>base</code>): used as a fallback for files absent in <code>adminhtml</code> and <code>frontend</code> areas.</p>
   </li>
 </ul>
 
