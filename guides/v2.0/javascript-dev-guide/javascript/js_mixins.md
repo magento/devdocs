@@ -25,7 +25,7 @@ The scope of your mixin usage depends on the [application area]({{page.baseurl}}
 
  - `frontend`: the mixin is applied for all usages of the modified JS component on the storefront
  - `adminhtml`: the mixin is applied for all usages of the modified JS component in the Admin panel
- - `base`: the mixin is applied for all all usages of the modified JS component 
+ - `base`: the mixin is applied for all all usages of the modified JS component, if nothing else is specified in `frontend` and `adminhtml`
 
 Generally, to add a JS mixin you need to do the following:
 
