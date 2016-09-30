@@ -31,7 +31,7 @@ Environment
 :	A project's Git branch. You can use environments for development and testing, and use a standard Git workflow to synchronize (pull) and merge (push) to its parent. Merging an environment with the `master` enables you to deploy the changes to your live site.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Manual tasks are required for live deployment.</p>
+  <p><a href="{{ page.baseurl }}cloud/live/stage-prod-over.html">Manual tasks</a> are required for live deployment.</p>
 </div>
 
 Service

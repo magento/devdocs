@@ -22,8 +22,8 @@ We require the following:
 ## License {#cloud-require-lic}
 You must have all of the following to use Magento Enterprise Cloud Edition:
 
-*	An account
-*	An [authentication key]({{page.baseurl}}install-gde/prereq/connect-auth.html)
+*	[An account]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct)
+*	An [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who needs to contribute to the project
 
 ## Authentication {#cloud-require-auth}
 Your Magento Enterprise Cloud Edition account must *authenticate* using any of the following:
