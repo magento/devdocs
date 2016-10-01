@@ -169,20 +169,20 @@ To install Solr and Jetty:
 
 		mkdir -p <empty-directory<>  
 		cd <directory>
-		wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
+		wget http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
 
 	Messages similar to the following display to confirm a successful download.
 
-		wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
-		--2015-07-11 14:39:05--  http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
-		Resolving www.trieuvan.com... 66.201.46.168
-		Connecting to www.trieuvan.com|66.201.46.168|:80... connected.
+		wget http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
+		--2016-10-01 15:54:37--  http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
+		Resolving archive.apache.org... 163.172.17.199
+		Connecting to archive.apache.org|163.172.17.199|:80... connected.
 		HTTP request sent, awaiting response... 200 OK
-		Length: 35866329 (34M) [application/x-gzip]
+		Length: 150059757 (143M) [application/x-gzip]
 		Saving to: “solr-4.10.4.tgz”
 
-		100%[==============================================================================================>] 35,866,329  8.63M/s   in 4.3s
-		2015-07-11 14:39:09 (8.04 MB/s) - "solr-4.10.4.tgz" saved [35866329/35866329]0
+		100%[==========================================================>] 150,059,757 8.99M/s   in 4.5s
+		2016-10-01 15:55:23 (3.18 MB/s) - “solr-4.10.4.tgz” saved [150059757/150059757]
 
 2.  Unpack the Solr installation; an example follows.
 
