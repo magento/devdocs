@@ -31,9 +31,9 @@ After you <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html">
 
 To apply a theme:
 
-2. In Admin, go to **Stores** > **Configuration** > **Design**.
-3. In the **Store View** drop-down field, select the store view where you want to apply the theme.
-4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
+2. In Admin, go to **Content** > **Configuration**.
+3. Click "EDIT".
+4. On the **Default Theme** section, select your newly created theme in the **Applied Theme** drop-down.
 5. Click **Save Config**.
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.
