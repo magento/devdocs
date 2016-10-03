@@ -32,15 +32,19 @@ To create the view part of the new checkout step:
 1. Create the `.js` file implementing the view model.
 2. Create an `.html` template for the component.
 
-Each step is described in details in the folowing paragraphs. 
+Each step is described in details in the following paragraphs. 
 
 ### Add the JavaScript file implementing the new step {#component}
 
 A new checkout step must be implemented as UI component. That is, its JavaScript implementation must be a JavaScript module. 
 
-The file must be stored under the `<your_module_dir>/view` directory.
+The file must be stored under the `<your_module_dir>/view/frontend/web/js/view` directory.
+
+<div class="bs-callout bs-callout-info" id="info">
+<p><code>&lt;your_module_dir&gt;</code> notation stands for the path to your module directory from the root directory. Usually it will be one of the following: <code>app/code/&lt;YourVendor&gt;/&lt;YourModule&gt;</code> or <code>vendor/&lt;yourvendor&gt;/module-&lt;module&gt;-&lt;name&gt;</code>. For more details see <a href="{{page.baseurl}}frontend-dev-guide/conventions.html">Conventional notations for paths to modules and themes</a></p>
+</div>
  
-A sample `view/my-step-view.js` with comments follows:
+A sample `my-step-view.js` with comments follows:
 
 {%highlight js%}
 
@@ -61,12 +65,12 @@ define(
         /**
         *
         * mystep - is the name of the component's .html template, 
-        * your_module_dir - is the name of the your module directory.
+        * <Vendor>_<Module>  - is the name of the your module directory.
         * 
         */
         return Component.extend({
             defaults: {
-                template: 'your_module_dir/mystep'
+                template: '<Vendor>_<Module>/mystep'
             },
  
             //add here your logic to display step,
@@ -173,7 +177,7 @@ A sample `checkout_index_index.xml` follows:
                                         <item name="children" xsi:type="array">
                                             <!-- The new step you add -->
                                             <item name="my-new-step" xsi:type="array">
-                                                <item name="component" xsi:type="string">Magento_Your_Module_Name/js/view/my-step-view</item>
+                                                <item name="component" xsi:type="string">%Vendor%_%Module%/js/view/my-step-view</item>
                                                     <!--To display step content before shipping step "sortOrder" value should be < 1-->
                                                     <!--To display step content between shipping step and payment step  1 < "sortOrder" < 2 -->
                                                     <!--To display step content after payment step "sortOrder" > 2 -->

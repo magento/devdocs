@@ -130,15 +130,15 @@ See the markdown version of this file for examples.
 ### Collapsible Group
 
 <div class="collapsible">
-  <h4 class="collapsible-title">Collapsible Topic 1</h4>
+  <b class="collapsible-title">Collapsible Topic 1</b>
   <div class="collapsible-content">
     <p>You can have multiple title-content pairs in a collapsible container.</p>
   </div>
-  <h4 class="collapsible-title">Collapsible Topic 2</h4>
+  <b class="collapsible-title">Collapsible Topic 2</b>
   <div class="collapsible-content">
     <p>Each content is controlled by its preceding title. </p>
   </div>
-  <h4 class="collapsible-title">Collapsible Topic 3</h4>
+  <b class="collapsible-title">Collapsible Topic 3</b>
   <div class="collapsible-content">
     <p>Clicking on each title will open its corresponding content and close any open contents.</p>
   </div>
