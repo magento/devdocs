@@ -20,7 +20,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ### Highlights
 
-Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. See Module Reference Guide for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
+Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. For more information on these API enhancements, see the <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">Sales API</a> discussion in the <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a>. 
 
 #### Why are we adding new APIs in a patch release?
 
@@ -30,6 +30,10 @@ Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the S
 
 
 ### Security enhancements
+
+This release includes  enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento installation to the latest version as soon as possible.
+
+The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
 We address the following security issues in this release. 
 
@@ -57,6 +61,7 @@ We address the following security issues in this release.
 <!--- 56542/1480 -->* Resolved issue with potential SQL injection through the use of the ordering or grouping parameters.
 
 
+
 #### Denial-of-service (DoS) attacks and brute force attacks
 
 <!--- 57464 -->* The Guest order view protection code is no longer vulnerable to brute force attacks. 
@@ -64,9 +69,11 @@ We address the following security issues in this release.
 <!--- 57303 -->* Fixed vulnerability to DoS attacks by full page cache poisoning. For more information, see 
 
 
+
 #### Cross-Site Request Forgery  (CSRF)
 
 <!--- 45757 -->* Removed vulnerability in cart checkout experience by enhancing server-side CSRF validation.
+
 
 
 
@@ -81,6 +88,7 @@ We address the following security issues in this release.
 
 
 
+
 ### Functional fixes
 
 We address the following functional issues in this release.
@@ -88,31 +96,35 @@ We address the following functional issues in this release.
 
 
 #### Sales API enhancements
-For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
+For more information on these API enhancements, see Sales API <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
 <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#shiporder" target="_blank">ship order</a>
 
 
-<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `salesShipOrderV1` interface support tasks you can already do through the Admin dashboard and include the ability to:  
+<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `ShipOrder` interface support tasks you can already do through the Admin dashboard, including the ability to:  
 
-	* Post with an empty POST body and ship the entire order
+	* create a shipment document (full or partial)
 
-	* Create a partial shipment by specifying the order line item(s) that you're shipping in the post body
+	* add details about shipped items into an order
 
-	* Capture the remaining part of an order if you’ve already partially shipped an order  with an empty POST body
+	* change status and state of an order according to performed actions
 
-
-
-<!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `salesInvoiceOrderV1` interface support tasks you can already do through the Admin dashboard and include the ability to:  
-
-	* Post with an empty POST body and capture payment for the entire order
-
-	* Create a partial invoice by specifying the order line item(s) in the post body
-
-	* Capture the remaining part of an order if you’ve already partially invoiced an order and call again with an empty POST body
+	* notify customer about new shipment document
 
 
-For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
+
+<!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `InvoiceOrder` interface supports tasks you can already do through the Admin dashboard, including the ability to:  
+
+	* create an invoice document (full or partial)
+
+	* capture money placed with order payment
+
+	* notify a customer about document creation
+
+	* change order status and state
+
+For more information on these API enhancements, see Sales API <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
 <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#shiporder" target="_blank">ship order</a>
+
 
 
 #### Tracking and shipping 
