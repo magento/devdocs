@@ -23,17 +23,7 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 ### Highlights
 
-*<!--- 54737, 55116-->* Magento 2.1.2 now supports PHP 7.0.4. 
-
-
-<!--- 57003-->* The Product page scope selector now displays all related websites associated with a restricted user. 
-
-<!--- 56952-->* We've resolved an issue with the get active payment methods (`getActiveMethods`). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a>
-
-
-#### Tracking and shipping 
-<!--- 57460-->* Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.  
-<!--- 57097-->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city field. 	
+*  **support for PHP 7.0.4 and 5.6.5+** 
 
 
 * Patch 2.1.2 also introduces **two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See Module Reference Guide for information on using the `ShipOrder` and `InvoiceOrder` interfaces. 
@@ -42,7 +32,9 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 <i>These new interfaces will not break any existing customizations or extensions.</i>  See Alan Kent’s blog for more information about these features and Magento’s use of semantic versioning. 
 
-This patch also introduces **support for PHP 7.0.4 and 5.6.5+**. 
+
+
+
 
 
 ### Security enhancements
@@ -144,7 +136,7 @@ We address the following functional issues in this release.
 For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html" target="_blank">Magento Sales API</a>.
 
 
-<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `ShipOrder` interface support tasks you can already do through the Admin dashboard and include the ability to:  
+<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `ShipOrder` interface support tasks you can already do through the Admin dashboard, including the ability to:  
 
 	* Post with an empty POST body and ship the entire order
 
@@ -154,7 +146,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-<!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `InvoiceOrder` interface support tasks you can already do through the Admin dashboard and include the ability to:  
+<!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `InvoiceOrder` interface supports tasks you can already do through the Admin dashboard, including the ability to:  
 
 	* Post with an empty POST body and capture payment for the entire order
 
@@ -184,6 +176,9 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 <!--- 54964-->* Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. <a href="https://github.com/magento/magento2/issues/6121" target="_blank">(GITHUB-6121)</a> 
 
 
+#### Tracking and shipping 
+<!--- 57460-->* Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.  
+<!--- 57097-->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city field. 	
 
 
 
@@ -197,12 +192,6 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 <!--- 56952-->* We've resolved an issue with the get active payment methods (`getActiveMethods`). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a>
 
 
-#### Tracking and shipping 
-<!--- 57460-->* Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.  
-<!--- 57097-->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city field. 	
-
-
-
 <!--- 58568-->* Magento now correctly renders HTML tags on the Sales Order page price field. 
 
 
@@ -210,6 +199,8 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 <!--- 57797-->* 
+
+
 
 
 
