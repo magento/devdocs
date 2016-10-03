@@ -101,3 +101,5 @@ The following is a list of optimizations you can make on your sandbox server:
   Flush the cache when there is a valid need to refresh the cached files.
 * If you need sample data, you can install it using [composer]({{page.baseurl}}install-gde/install/web/install-web-sample-data-composer.html) or by [cloning repositories]({{page.baseurl}}install-gde/install/web/install-web-sample-data-clone.html).
 * To speed up front end development, [turn off merging of CSS and JavaScript](http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html){:target="_blank"}.
+* [Opcache timestamp validation](http://php.net/manual/en/opcache.configuration.php#ini.opcache.validate-timestamps){:target="_blank"} should always be on for development.
+  Development is impossible with opcache off because any PHP modification would require a cache reset.
