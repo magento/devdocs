@@ -138,21 +138,18 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 <!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `ShipOrder` interface support tasks you can already do through the Admin dashboard, including the ability to:  
 
-	* Post with an empty POST body and ship the entire order
-
-	* Create a partial shipment by specifying the order line item(s) that you're shipping in the post body
-
-	* Capture the remaining part of an order if you’ve already partially shipped an order  with an empty POST body
-
+	* create a shipment document (full or partial)
+	* add details about shipped items into an order
+	* change status and state of an order according to performed actions
+	* notify customer about new shipment document
 
 
 <!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `InvoiceOrder` interface supports tasks you can already do through the Admin dashboard, including the ability to:  
 
-	* Post with an empty POST body and capture payment for the entire order
-
-	* Create a partial invoice by specifying the order line item(s) in the post body
-
-	* Capture the remaining part of an order if you’ve already partially invoiced an order and call again with an empty POST body
+	* create an invoice document (full or partial)
+	* capture money placed with order payment
+	* notify a customer about document creation
+	* change order status and state
 
 
 For more information on these API enhancements, see Sales API <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
@@ -222,9 +219,8 @@ For more information on these API enhancements, see Sales API <a href="{{ page.b
 
 <!--- 58017-->
 
-#### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
+#### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>{:.no_toc} 
 
-{:.no_toc}
 
 **Workaround**: Clear your browser cache after upgrading. 
 
@@ -232,9 +228,8 @@ For more information on these API enhancements, see Sales API <a href="{{ page.b
 
 <!--- 58034-->
 
-#### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options. 
+#### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options.{:.no_toc} 
 
-{:.no_toc}
 
 **Workaround**: 
 
