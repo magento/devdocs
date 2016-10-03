@@ -826,7 +826,7 @@ The credentials are posted to <code>endpoint.php</code>. You should also see ano
 
 <h3 id="checkloginphp">checklogin.php</h3>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to expand </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="collapsible"><b class="collapsible-title">Click to expand </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">require</span> <span class="s1">&#39;./vendor/autoload.php&#39;</span><span class="p">;</span>
 
 <span class="nv">$consumerKey</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_key&#39;</span><span class="p">];</span>
@@ -859,7 +859,7 @@ The credentials are posted to <code>endpoint.php</code>. You should also see ano
 </div></div>
 
 <h3 id="endpointphp">endpoint.php</h3>
-<div class="collapsible"><h4 class="collapsible-title">Click to expand </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="collapsible"><b class="collapsible-title">Click to expand </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="nb">session_id</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
 <span class="nb">session_start</span><span class="p">();</span>
 
@@ -878,7 +878,7 @@ The credentials are posted to <code>endpoint.php</code>. You should also see ano
 </div></div>
 
 <h3 id="loginphp">login.php</h3>
-<div class="collapsible"><h4 class="collapsible-title">Click to expand </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="collapsible"><b class="collapsible-title">Click to expand </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="nv">$consumerKey</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;oauth_consumer_key&#39;</span><span class="p">];</span>
 <span class="nv">$callbackUrl</span> <span class="o">=</span> <span class="nb">urlencode</span><span class="p">(</span><span class="nb">urldecode</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;success_call_back&#39;</span><span class="p">]));</span>
 
@@ -918,7 +918,7 @@ The credentials are posted to <code>endpoint.php</code>. You should also see ano
 
 <p>Change the instances of <code>http://magento.host</code> in this example to a valid base URL.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to expand </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="collapsible"><b class="collapsible-title">Click to expand </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">OAuth\Common\Consumer\Credentials</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">OAuth\Common\Http\Client\ClientInterface</span><span class="p">;</span>

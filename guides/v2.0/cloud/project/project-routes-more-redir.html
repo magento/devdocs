@@ -1367,7 +1367,7 @@ keys:</p>
 <p>Optional, defaults to <code>false</code>. Specifies whether the path key should be interpreted as
    a PCRE regular expression.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>In the following example, a request to <code>http://example.com/regexp/a/b/c/match</code> redirects to <code>http://example.com/a/b/c</code>:</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>In the following example, a request to <code>http://example.com/regexp/a/b/c/match</code> redirects to <code>http://example.com/a/b/c</code>:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span> 
@@ -1381,7 +1381,7 @@ keys:</p>
 <h3 id="cloud-route-partial-prefix"><code>prefix</code></h3>
 <p>Specifies whether or not to redirect both the path and all its children or just the path itself. Defaults to <code>true</code>, but is not supported if <code>regexp</code> is <code>true</code>.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>For example,</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>For example,</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>
@@ -1399,7 +1399,7 @@ keys:</p>
 <h3 id="cloud-route-partial-append"><code>append_suffix</code></h3>
 <p>Determines if the suffix is carried over with the redirect. Defaults to <code>true</code>, but not supported if <code>regexp</code> is <code>true</code> <em>or</em> if <code>prefix</code> is <code>false</code>.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>For example,</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>For example,</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>

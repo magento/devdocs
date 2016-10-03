@@ -1340,7 +1340,7 @@
 supports multiple applications in a project, so each application
 must have a <em>unique name</em> in a project.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p><code>name</code> can consist only of lower case alphanumeric characters; that is, <code>a</code>–<code>z</code> and <code>0</code>–<code>9</code>. <code>name</code>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p><code>name</code> can consist only of lower case alphanumeric characters; that is, <code>a</code>–<code>z</code> and <code>0</code>–<code>9</code>. <code>name</code>
 is used in the <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a> to define the HTTP upstream
 (by default, <code>php:php</code>).</p>
 
@@ -1354,7 +1354,7 @@ is used in the <a href="/guides/v2.1/cloud/project/project-conf-files_routes.htm
 <h2 id="cloud-yaml-platform-type"><code>type</code> and <code>build</code></h2>
 <p>The <code>type</code>  and <code>build</code> properties are used to build and run the project. The only supported <code>type</code> currently is PHP.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>Supported versions:</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>Supported versions:</p>
 
 <pre><code>type: php:5.5
 type: php:5.6
@@ -1375,7 +1375,7 @@ build:
 <p><code>access</code> defines the user roles who can log in using SSH to the
 environments to which they have access.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>Possible values are:</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>Possible values are:</p>
 
 <pre><code>ssh: admin
 ssh: contributor
@@ -1387,7 +1387,7 @@ ssh: viewer
 <p><code>relationships</code> defines how services are mapped in your
 application.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>The left-hand side is the name of the relationship as it will be exposed
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>The left-hand side is the name of the relationship as it will be exposed
 to the application in the <code>MAGENTO_CLOUD_RELATIONSHIPS</code> environment
 variable. The right-hand side is in the form
 <code>&lt;service name&gt;:&lt;endpoint name&gt;</code>, where <code>&lt;service name&gt;</code> comes from 
@@ -1408,7 +1408,7 @@ search: "searchengine:solr"
 <h2 id="cloud-yaml-platform-web"><code>web</code></h2>
 <p><code>web</code> defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an <code>index.php</code> file on the root. We support any directory structure so the static file can be in a sub directory, and the <code>index.php</code> file can be further down.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p><code>web</code> supports the following:</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p><code>web</code> supports the following:</p>
 
 <ul>
   <li><code>document_root</code>: The path relative to the root of the application
@@ -1457,7 +1457,7 @@ application in MB.</p>
 <p><code>mounts</code> is an object whose keys are paths relative to the root of
 the application. It’s in the form <code>volume_id[/subpath]</code>.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>The format is:</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>The format is:</p>
 
 <pre><code>"/public/sites/default/files": "shared:files/files"
 </code></pre>
@@ -1471,7 +1471,7 @@ the application. It’s in the form <code>volume_id[/subpath]</code>.</p>
 <p><code>dependencies</code> enables you to specify dependencies that your
 application might need during the build process.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>Magento Enterprise Cloud Edition supports dependencies on the following
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>Magento Enterprise Cloud Edition supports dependencies on the following
 languages:</p>
 
 <ul>
@@ -1500,7 +1500,7 @@ commands to run during the deployment process.</p>
 <p>They can be executed at various points in the lifecycle of the
 application.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>Possible hooks are:</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>Possible hooks are:</p>
 
 <ul>
   <li><code>build</code>: We run build hooks before your application has been
@@ -1638,7 +1638,7 @@ hooks:
 <p><code>crons</code> describes processes that are triggered on a
 schedule.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p><code>crons</code> supports the following:</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p><code>crons</code> supports the following:</p>
 
 <ul>
   <li><code>spec</code>: The cron specification. The minimum interval is once per 5 minutes.</li>
@@ -1662,7 +1662,7 @@ cronrun:
 
 <p>We support PHP versions 5.5, 5.6, and 7.0.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>See one of the following sections for more information:</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>See one of the following sections for more information:</p>
 
 <ul>
   <li><a href="#cloud-yaml-platform-php-ext">PHP extensions</a></li>

@@ -1355,7 +1355,7 @@ configurations. A route  template can look like this: <code>http://www.{default}
 <code>https://{default}/blog</code>, where <code>{default}</code> is the fully qualified domain 
 name configured for the project.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>If the domain is <code>example.com</code>, these 
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>If the domain is <code>example.com</code>, these 
 routes resolve: <code>http://www.example.com/</code> and 
 <code>https://example.com/blog</code> for the live environment (that is, the Master).</p>
 
@@ -1401,7 +1401,7 @@ another route that will be identified by its template (see the following example
 
 <h2 id="cloud-yaml-routes-sample-simple">Simple routes</h2>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>Following is a sample <code>routes.yaml</code> file:</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>Following is a sample <code>routes.yaml</code> file:</p>
 
 <pre><code>"http://{default}/":
   type: upstream
@@ -1439,7 +1439,7 @@ simply prefix the route with a star (<code>*</code>), for example <code>*.exampl
 <code>www.example.com</code>, <code>blog.example.com</code>, and <code>us.example.com</code> all get routed to the
 same application.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>For your live environment, this functions as a catch-all domain.</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>For your live environment, this functions as a catch-all domain.</p>
 
 <h3 id="routing-a-non-mapped-domain">Routing a non-mapped domain</h3>
 <p>You can also route to a system that is not mapped to a domain (basically anything other than

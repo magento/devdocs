@@ -578,7 +578,7 @@
 <p>In the module’s root directory, create the file <code>composer.json</code>. This file gives composer the ability to install this module and its dependencies. 
 For more information see: <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html"><code>composer.json</code></a>.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">File content for composer.json </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json">    <span class="p">{</span>
+<div class="collapsible"><b class="collapsible-title">File content for composer.json </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json">    <span class="p">{</span>
       <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;mycompany/sample-module-minimal&quot;</span><span class="p">,</span>
       <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A module that creates a page in the Magento admin area&quot;</span><span class="p">,</span>
       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="p">,</span>
@@ -605,7 +605,7 @@ For more information see: <a href="/guides/v2.0/extension-dev-guide/build/compos
 
 <p>For more information see: <a href="/guides/v2.0/extension-dev-guide/build/component-registration.html">registering your component</a>.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">File content for registration.php </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="o">&lt;?</span><span class="nx">php</span>
+<div class="collapsible"><b class="collapsible-title">File content for registration.php </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="o">&lt;?</span><span class="nx">php</span>
     <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
         <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span>
         <span class="s1">&#39;MyCompany_ExampleAdminNewPage&#39;</span><span class="p">,</span>
@@ -619,7 +619,7 @@ For more information see: <a href="/guides/v2.0/extension-dev-guide/build/compos
 
 <p>For more information see: <a href="/guides/v2.0/extension-dev-guide/build/create_component.html">naming your component</a>.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">File content for module.xml </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<div class="collapsible"><b class="collapsible-title">File content for module.xml </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
     <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Module/etc/module.xsd&quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;1.0.0&quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;/module&gt;</span>
@@ -653,7 +653,7 @@ For more information see: <a href="/guides/v2.0/extension-dev-guide/build/compos
   <li><code>index</code> - In the XML file, since the action for the controller is not specified, Magento uses the default value <code>index</code>.</li>
 </ul>
 
-<div class="collapsible"><h4 class="collapsible-title">File content for menu.xml </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<div class="collapsible"><b class="collapsible-title">File content for menu.xml </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
     <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Backend:etc/menu.xsd&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;menu&gt;</span>
           <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage::greetings&quot;</span> <span class="na">title=</span><span class="s">&quot;Greetings&quot;</span> <span class="na">translate=</span><span class="s">&quot;title&quot;</span> <span class="na">module=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage&quot;</span> <span class="na">parent=</span><span class="s">&quot;Magento_Backend::content&quot;</span> <span class="na">sortOrder=</span><span class="s">&quot;50&quot;</span> <span class="na">dependsOnModule=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage&quot;</span> <span class="na">resource=</span><span class="s">&quot;MyCompany_ExampleAdminNewPage::greetings&quot;</span><span class="nt">/&gt;</span>
@@ -666,7 +666,7 @@ For more information see: <a href="/guides/v2.0/extension-dev-guide/build/compos
 <h4 class="no_toc" id="etcadminhtmlroutesxml"><code>etc/adminhtml/routes.xml</code></h4>
 <p>Under <code>etc/adminhtml</code> create the file <code>routes.xml</code>. The contents of this  XML file tells Magento to route requests that use the <code>frontName</code> <code>exampleadminnewpage</code> to this module.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">File content for routes.xml </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">  <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<div class="collapsible"><b class="collapsible-title">File content for routes.xml </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">  <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
   <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:App/etc/routes.xsd&quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;router</span> <span class="na">id=</span><span class="s">&quot;admin&quot;</span><span class="nt">&gt;</span>
           <span class="nt">&lt;route</span> <span class="na">id=</span><span class="s">&quot;exampleadminnewpage&quot;</span> <span class="na">frontName=</span><span class="s">&quot;exampleadminnewpage&quot;</span><span class="nt">&gt;</span>
@@ -688,7 +688,7 @@ For more information see: <a href="/guides/v2.0/extension-dev-guide/build/compos
 </code></pre>
 
 <p>Inside <code>Controller/Adminhtml/HelloWorld</code> directory, create the file <code>Index.php</code>. This file is the class assigned to the default Index action for the <code>HelloWorld</code> controller. Since the admin area serves this page, the file belongs in the <code>Adminhtml</code> directory, and the class itself extends <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Backend/App/Action.php" target="_blank"><code>\Magento\Backend\App\Action</code></a>.</p>
-<div class="collapsible"><h4 class="collapsible-title">File content for Index.php </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">    </span><span class="cp">&lt;?php</span>
+<div class="collapsible"><b class="collapsible-title">File content for Index.php </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">    </span><span class="cp">&lt;?php</span>
       <span class="k">namespace</span> <span class="nx">MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld</span><span class="p">;</span>
       
       <span class="k">class</span> <span class="nc">Index</span> <span class="k">extends</span> <span class="nx">\Magento\Backend\App\Action</span>
@@ -744,7 +744,7 @@ mkdir -pm view/adminhtml/templates
 
 <p>The name of this file uses the following pattern: <em>frontName</em>_<em>controller</em>_<em>action</em>.xml</p>
 
-<div class="collapsible"><h4 class="collapsible-title">File content for exampleadminnewpage_helloworld_index.xml </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<div class="collapsible"><b class="collapsible-title">File content for exampleadminnewpage_helloworld_index.xml </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;head&gt;</span>
             <span class="nt">&lt;title&gt;</span>
@@ -764,7 +764,7 @@ mkdir -pm view/adminhtml/templates
 
 <p>This template file contains the actual page content for the <strong>Hello World</strong> page.</p>
 
-<div class="collapsible"><h4 class="collapsible-title">File content for helloworld.phtml </h4><div class="collapsible-content"><figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;p&gt;</span>Hello World!<span class="nt">&lt;/p&gt;</span>
+<div class="collapsible"><b class="collapsible-title">File content for helloworld.phtml </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;p&gt;</span>Hello World!<span class="nt">&lt;/p&gt;</span>
   </code></pre></figure>
 </div></div>
 
