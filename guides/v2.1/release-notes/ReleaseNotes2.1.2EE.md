@@ -23,7 +23,20 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 ### Highlights
 
-Patch 2.1.2 introduces **two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `salesShipOrderV1` and `salesInvoiceOrderV1` methods to capture payment and ship product. See Module Reference Guide for information on using the `salesShipOrderV1` and `salesInvoiceOrderV1` interfaces. 
+*<!--- 54737, 55116-->* Magento 2.1.2 now supports PHP 7.0.4. 
+
+
+<!--- 57003-->* The Product page scope selector now displays all related websites associated with a restricted user. 
+
+<!--- 56952-->* We've resolved an issue with the get active payment methods (`getActiveMethods`). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a>
+
+
+#### Tracking and shipping 
+<!--- 57460-->* Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.  
+<!--- 57097-->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city field. 	
+
+
+* Patch 2.1.2 also introduces **two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See Module Reference Guide for information on using the `ShipOrder` and `InvoiceOrder` interfaces. 
 
 #### Why are we adding new APIs in a patch release?
 
@@ -37,37 +50,15 @@ This release includes enhancements to improve the security of your Magento insta
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the Magento Security Center.
 
+
+
 #### General security enhancements
 
-
-<!--- 57812/1539, 1543-->* You can no longer delete a currently logged-in user. 
-
-<!--- 55476/1478-->*  Sessions now expire as expected after logout. 
-
-
-#### Denial-of-service (DoS) attacks and brute force attacks
-
-#### Cross-Site Request Forgery  (CSRF)
-
-#### Cross-site scripting  (XSS)
-
-
-#### SQL injection
-
-
-
-
-<!--- 57581/1433-->* Resolved a potential cross-site scripting (XSS) vulnerability in which customer addresses could be deleted. You can no longer trick a user into deleting his store address book entries.  
+<!--- 56912/1488-->*  Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.  
 
 
 <!--- 57565/1533-->* You can no longer change or fake a product price from the Magento storefront and then complete an order with that faked price. 
 
-
-<!--- 57302/1338-->*  You can no longer manipulate the full page cache to store incorrect pages under regular page URL entries.
-
-<!--- 56912/1488-->*  Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.  
-
-<!--- 56901/1492-->*  A user with lesser privileges can no longer force an Admin user to add his private or public key using a JSON call. 
 
 
 <!--- 56852/1484-->*  Fixed issue with arbitrary PHP code execution via the PHP unserialize function during checkout. 
@@ -77,30 +68,15 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-<!--- 56540/1480-->*  SQL injection in Zend framework. A bug in Zend Framework value escaping allows to inject SQL through ordering or grouping parameters. 
+<!--- 53971-->*  Fixed issue with running `cron` jobs less frequently than specified by the application `cron` setting. 
 
 
-<!--- 53971-->*  Fixed issue with running `cron` jobs less frequently than the application `cron` setting. 
-
-<!--- 57362-->*  
-
-<!--- 46026/1270-->* The Guest order view protection code is no longer vulnerable to brute force attacks.
+<!--- 57965--> Sessions now expire as expected after logout.
 
 
 
-<!--- 57965-->
 
-<!--- 57463-->*  
-
-
-
-<!--- 58007/1544-->* We've reduced the risk of SQL injection in the F1 Sqli backend cache adapter by adding proper variable escaping. 
-
-
-<!--- 57804/1539-->* Fixed issue with cross-site scripting reflected in loading section of request.
-
-
-<!--- 56700/5719, 5890-->*  The timestamp associated with an order on the Admin > Sales > Order list now identifies when the  order status was last updated or a commented upon. Previously, the timestamp indicated when the browser page was last refreshed. 
+<!--- 56700/5719, 5890-->*  The timestamp associated with an order on the Admin > Sales > Order list now identifies when the order status was last updated or a commented upon. Previously, the timestamp indicated when the browser page was last refreshed. 
 
 <!--- 57463-->* Removed potential for exploitation of guest order view feature to harvest order information.  
 
@@ -108,60 +84,153 @@ The following list provides an overview of the security issues fixed in this rel
 <!--- 56940-->* Kount and 3D Secure now work as expected for Braintree Vault. 
 
 
+<!--- 57812/1539, 1543-->* You can no longer delete a currently logged-in user. 
+
+<!--- 56901/1492-->*  A user with lesser privileges can no longer force an Admin user to add his private or public key using a JSON call. 
+
+
+
+
+
+#### Denial-of-service (DoS) attacks and brute force attacks
+
+<!--- 46026/1270-->* The Guest order view protection code is no longer vulnerable to brute force attacks.
+
+<!--- 57302/1338-->*  You can no longer manipulate the full page cache to store incorrect pages under regular page URL entries.
+
+
+
+
+#### Cross-Site Request Forgery  (CSRF)
+
+<!--- 57581/1433-->* Resolved a potential cross-site scripting (XSS) vulnerability in which customer addresses could be deleted. You can no longer trick a user into deleting his store address book entries.  
+
+
+
+#### Cross-site scripting  (XSS)
+
+<!--- 57362-->*  Fixed issue with potential storage of malicious XSS code in the body of an email template. (A malicious user could use this this script to steal user information and cookies, or to bypass cross-site request forgery protection.) 
+
+<!--- 57804/1539-->* Fixed issue with cross-site scripting reflected in loading section of request.
+
+
+
+
+#### SQL injection
+
+<!--- 58007/1544-->* We've reduced the risk of SQL injection in the F1 Sqli backend cache adapter by adding proper variable escaping. 
+has multiple places that generate SQL queries without proper variable escaping causing the risk of SQL injections.
+Variables should not be included into the query "as is".
+
+<!--- 56540/1480-->*  SQL injection in Zend framework. A bug in Zend Framework value escaping allows to inject SQL through ordering or grouping parameters. 
+
+
+
+
+
+
+
+
+
+
+
 
 ### Functional fixes and enhancements
-
-<!--- 54737, 55116-->* Magento 2.1.2 now supports PHP 7.0.4. 
-
-
-<!--- 55126-->* We've fixed an issue with using the REST API to link simple products to configurable ones. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a>
+We address the following functional issues in this release.
 
 
 
-<!--- 57460-->* Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.  
+#### Sales API enhancements
+For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html" target="_blank">Magento Sales API</a>.
 
-<!--- 57097-->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city field. 	
 
-<!--- 57003-->* The Product page scope selector now displays all related websites associated with a restricted user. 
+<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `ShipOrder` interface support tasks you can already do through the Admin dashboard and include the ability to:  
 
-<!--- 56952-->* We've resolved an issue with the get active payment methods (`getActiveMethods`). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a>
+	* Post with an empty POST body and ship the entire order
+
+	* Create a partial shipment by specifying the order line item(s) that you're shipping in the post body
+
+	* Capture the remaining part of an order if you’ve already partially shipped an order  with an empty POST body
+
+
+
+<!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `InvoiceOrder` interface support tasks you can already do through the Admin dashboard and include the ability to:  
+
+	* Post with an empty POST body and capture payment for the entire order
+
+	* Create a partial invoice by specifying the order line item(s) in the post body
+
+	* Capture the remaining part of an order if you’ve already partially invoiced an order and call again with an empty POST body
+
+
+For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
+<a href="{{ page.baseurl }}mrg/ce/Sales/services.html#shiporder" target="_blank">ship order</a>
+
+
+
+<!--- 55126, 58401-->* We've fixed an issue with using the REST API to link simple products to configurable ones. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a>
+
+
+
+
+
+
+
+#### Cart and checkout
 
 <!--- 56431, 56426-->* Magento now updates order status as expected after a shipment or invoice has been created through the API.
 
 
 <!--- 54964-->* Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. <a href="https://github.com/magento/magento2/issues/6121" target="_blank">(GITHUB-6121)</a> 
 
-<!--- 58568-->* 
 
-<!--- 58401-->* 
 
-<!--- 58283-->* 
 
-<!--- 56425-->* 
+
+#### General fixes
+
+<!--- 54737, 55116-->* Magento 2.1.2 now supports PHP 7.0.4. 
+
+
+<!--- 57003-->* The Product page scope selector now displays all related websites associated with a restricted user. 
+
+<!--- 56952-->* We've resolved an issue with the get active payment methods (`getActiveMethods`). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a>
+
+
+#### Tracking and shipping 
+<!--- 57460-->* Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.  
+<!--- 57097-->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city field. 	
+
+
+
+<!--- 58568-->* Magento now correctly renders HTML tags on the Sales Order page price field. 
+
+
+<!--- 58283-->* EE only. 
+
 
 <!--- 57797-->* 
 
 
 
 
-<!--- DELETED:  (won't fix) 57578, CLONE: 58123, 58111, 57049, 57032, OMIT: 58667, 57878, 58473, 58421, 58402, 58313 (releasenotes),57845, 55862, 57294, 58166, 58204, (internal) 58929, 58875, 58700, 58606, 58590, 58474 -->
+
+
+<!--- DELETED:  (won't fix) 57578, CLONE: 58123, 58111, 57049, 57032, OMIT: 58667, 57878, 58473, 58421, 58402, 58313 (releasenotes),57845, 55862, 57294, 58166, 58204, (internal) 58929, 58875, 58700, 58606, 58590, 58474, 56425 -->
 
 
 
 ### Known issues
 
-59082?
+57797 ?
 
-57797
-
-
-
-
+58034 (clones 52974) Configurable product options not saved when editing 
 
 <!--- 58017-->
 
 #### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
 
+{:.no_toc}
 
 **Workaround**: Clear your browser cache after upgrading. 
 
@@ -170,6 +239,8 @@ The following list provides an overview of the security issues fixed in this rel
 <!--- 58034-->
 
 #### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options. 
+
+{:.no_toc}
 
 **Workaround**: 
 
