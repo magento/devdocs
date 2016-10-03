@@ -34,7 +34,6 @@ This release includes  enhancements to improve the security of your Magento inst
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
-We address the following security issues in this release. 
 
 #### General security 
 
@@ -125,7 +124,7 @@ For more information on these API enhancements, see Sales API <a href="{{ page.b
 <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#shiporder" target="_blank">ship order</a>
 
 
-### Tracking and shipping 
+#### Tracking and shipping 
 
 <!--- 57098 -->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate was not updated when you changed the city on your order form. 
 
@@ -158,8 +157,6 @@ For more information on these API enhancements, see Sales API <a href="{{ page.b
 
 
 <!--- Omitted (can't be reproduced or won't fix) 57800 (CLONES: 58314, 58798, 58695, 58883) (CANNOT REPRO: 53971, 53431) (INTERNAL ONLY: 58674, 58816, 558874, 56759, 58167, 57879, 57577, 57568, 57294, 57546), 57303, 55862, 52239, 58626, 58625, 58666, 58933, 58923 (WONT FIX: 58671-->
-
-### Known issues
 
 
 ### Known issues

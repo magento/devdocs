@@ -35,7 +35,6 @@ This release includes  enhancements to improve the security of your Magento inst
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
-We address the following security issues in this release. 
 
 #### General security 
 
