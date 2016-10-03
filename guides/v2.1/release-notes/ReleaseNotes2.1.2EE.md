@@ -155,7 +155,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 	* Capture the remaining part of an order if you’ve already partially invoiced an order and call again with an empty POST body
 
 
-For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
+For more information on these API enhancements, see Sales API <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
 <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#shiporder" target="_blank">ship order</a>
 
 
@@ -177,7 +177,10 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 #### Tracking and shipping 
-<!--- 57460-->* Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.  
+
+<!--- 57460-->* Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.
+
+
 <!--- 57097-->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city field. 	
 
 
@@ -195,10 +198,10 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 <!--- 58568-->* Magento now correctly renders HTML tags on the Sales Order page price field. 
 
 
-<!--- 58283-->* EE only. 
+<!--- 58283 EE only-->
 
 
-<!--- 57797-->* 
+<!--- 57797-->
 
 
 
