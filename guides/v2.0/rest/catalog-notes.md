@@ -12,7 +12,7 @@ github_link: rest/catalog-notes.md
 
 ## POST V1/categories
 
-When you create a category from Admin, you have the option to configure display and search engine optimization settings. The `POST V1/categories` API does not accept any of these parameters directly, but they can be defined as custom attributes.
+When you create a category from Admin, you have the option to configure display and search engine optimization settings. The `POST V1/categories` API does not accept any of these parameters directly, but they can be defined as custom attributes, as shown in the following example.
 
 {% highlight json %}
 
