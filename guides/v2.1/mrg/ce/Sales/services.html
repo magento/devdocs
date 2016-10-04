@@ -515,15 +515,12 @@
 <span class="k">use</span> <span class="nx">Magento\Sales\Api\InvoiceOrderInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Sales\Api\OrderRepositoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\Config</span> <span class="k">as</span> <span class="nx">OrderConfig</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\Invoice\InvoiceValidatorInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\Invoice\NotifierInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\InvoiceDocumentFactory</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\InvoiceQuantityValidator</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\InvoiceRepository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\OrderStateResolverInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\OrderValidatorInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\PaymentAdapterInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\Validation\CanInvoice</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\Validation\InvoiceOrderInterface</span> <span class="k">as</span> <span class="nx">InvoiceOrderValidator</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Psr\Log\LoggerInterface</span><span class="p">;</span>
 
 <span class="sd">/**</span>
@@ -548,11 +545,6 @@
     <span class="k">private</span> <span class="nv">$invoiceDocumentFactory</span><span class="p">;</span>
 
     <span class="sd">/**</span>
-<span class="sd">     * @var InvoiceValidatorInterface</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="nv">$invoiceValidator</span><span class="p">;</span>
-
-    <span class="sd">/**</span>
 <span class="sd">     * @var PaymentAdapterInterface</span>
 <span class="sd">     */</span>
     <span class="k">private</span> <span class="nv">$paymentAdapter</span><span class="p">;</span>
@@ -573,6 +565,11 @@
     <span class="k">private</span> <span class="nv">$invoiceRepository</span><span class="p">;</span>
 
     <span class="sd">/**</span>
+<span class="sd">     * @var InvoiceOrderValidator</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$invoiceOrderValidator</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
 <span class="sd">     * @var NotifierInterface</span>
 <span class="sd">     */</span>
     <span class="k">private</span> <span class="nv">$notifierInterface</span><span class="p">;</span>
@@ -583,21 +580,15 @@
     <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
 
     <span class="sd">/**</span>
-<span class="sd">     * @var OrderValidatorInterface</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="nv">$orderValidator</span><span class="p">;</span>
-
-    <span class="sd">/**</span>
-<span class="sd">     * OrderInvoice constructor.</span>
+<span class="sd">     * InvoiceOrder constructor.</span>
 <span class="sd">     * @param ResourceConnection $resourceConnection</span>
 <span class="sd">     * @param OrderRepositoryInterface $orderRepository</span>
 <span class="sd">     * @param InvoiceDocumentFactory $invoiceDocumentFactory</span>
-<span class="sd">     * @param InvoiceValidatorInterface $invoiceValidator</span>
-<span class="sd">     * @param OrderValidatorInterface $orderValidator</span>
 <span class="sd">     * @param PaymentAdapterInterface $paymentAdapter</span>
 <span class="sd">     * @param OrderStateResolverInterface $orderStateResolver</span>
 <span class="sd">     * @param OrderConfig $config</span>
 <span class="sd">     * @param InvoiceRepository $invoiceRepository</span>
+<span class="sd">     * @param InvoiceOrderValidator $invoiceOrderValidator</span>
 <span class="sd">     * @param NotifierInterface $notifierInterface</span>
 <span class="sd">     * @param LoggerInterface $logger</span>
 <span class="sd">     * @SuppressWarnings(PHPMD.ExcessiveParameterList)</span>
@@ -606,24 +597,22 @@
         <span class="nx">ResourceConnection</span> <span class="nv">$resourceConnection</span><span class="p">,</span>
         <span class="nx">OrderRepositoryInterface</span> <span class="nv">$orderRepository</span><span class="p">,</span>
         <span class="nx">InvoiceDocumentFactory</span> <span class="nv">$invoiceDocumentFactory</span><span class="p">,</span>
-        <span class="nx">InvoiceValidatorInterface</span> <span class="nv">$invoiceValidator</span><span class="p">,</span>
-        <span class="nx">OrderValidatorInterface</span> <span class="nv">$orderValidator</span><span class="p">,</span>
         <span class="nx">PaymentAdapterInterface</span> <span class="nv">$paymentAdapter</span><span class="p">,</span>
         <span class="nx">OrderStateResolverInterface</span> <span class="nv">$orderStateResolver</span><span class="p">,</span>
         <span class="nx">OrderConfig</span> <span class="nv">$config</span><span class="p">,</span>
         <span class="nx">InvoiceRepository</span> <span class="nv">$invoiceRepository</span><span class="p">,</span>
+        <span class="nx">InvoiceOrderValidator</span> <span class="nv">$invoiceOrderValidator</span><span class="p">,</span>
         <span class="nx">NotifierInterface</span> <span class="nv">$notifierInterface</span><span class="p">,</span>
         <span class="nx">LoggerInterface</span> <span class="nv">$logger</span>
     <span class="p">)</span> <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span> <span class="o">=</span> <span class="nv">$resourceConnection</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderRepository</span> <span class="o">=</span> <span class="nv">$orderRepository</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceDocumentFactory</span> <span class="o">=</span> <span class="nv">$invoiceDocumentFactory</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceValidator</span> <span class="o">=</span> <span class="nv">$invoiceValidator</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderValidator</span> <span class="o">=</span> <span class="nv">$orderValidator</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">paymentAdapter</span> <span class="o">=</span> <span class="nv">$paymentAdapter</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderStateResolver</span> <span class="o">=</span> <span class="nv">$orderStateResolver</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceRepository</span> <span class="o">=</span> <span class="nv">$invoiceRepository</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceOrderValidator</span> <span class="o">=</span> <span class="nv">$invoiceOrderValidator</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notifierInterface</span> <span class="o">=</span> <span class="nv">$notifierInterface</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
     <span class="p">}</span>
@@ -661,19 +650,19 @@
             <span class="p">(</span><span class="nv">$appendComment</span> <span class="o">&amp;&amp;</span> <span class="nv">$notify</span><span class="p">),</span>
             <span class="nv">$arguments</span>
         <span class="p">);</span>
-        <span class="nv">$errorMessages</span> <span class="o">=</span> <span class="nb">array_merge</span><span class="p">(</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceValidator</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
-                <span class="nv">$invoice</span><span class="p">,</span>
-                <span class="p">[</span><span class="nx">InvoiceQuantityValidator</span><span class="o">::</span><span class="na">class</span><span class="p">]</span>
-            <span class="p">),</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderValidator</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
-                <span class="nv">$order</span><span class="p">,</span>
-                <span class="p">[</span><span class="nx">CanInvoice</span><span class="o">::</span><span class="na">class</span><span class="p">]</span>
-            <span class="p">)</span>
+        <span class="nv">$errorMessages</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceOrderValidator</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+            <span class="nv">$order</span><span class="p">,</span>
+            <span class="nv">$invoice</span><span class="p">,</span>
+            <span class="nv">$capture</span><span class="p">,</span>
+            <span class="nv">$items</span><span class="p">,</span>
+            <span class="nv">$notify</span><span class="p">,</span>
+            <span class="nv">$appendComment</span><span class="p">,</span>
+            <span class="nv">$comment</span><span class="p">,</span>
+            <span class="nv">$arguments</span>
         <span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$errorMessages</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$errorMessages</span><span class="o">-&gt;</span><span class="na">hasMessages</span><span class="p">())</span> <span class="p">{</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Sales\Exception\DocumentValidationException</span><span class="p">(</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s2">&quot;Invoice Document Validation Error(s):</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$errorMessages</span><span class="p">))</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s2">&quot;Invoice Document Validation Error(s):</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$errorMessages</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()))</span>
             <span class="p">);</span>
         <span class="p">}</span>
         <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">beginTransaction</span><span class="p">();</span>
