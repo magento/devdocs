@@ -20,11 +20,13 @@ We are pleased to present Magento Community Edition 2.1.2. This release includes
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
 ### Highlights
+Magento 2.1.2 contains multiple bug fixes and enhancements, including
+
 
 *  **support for PHP 7.0.4 and 5.6.5+** 
 
 
-* Patch 2.1.2 also introduces **two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See Module Reference Guide for information on using the `ShipOrder` and `InvoiceOrder` interfaces. 
+* Patch 2.1.2 also introduces **two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the `ShipOrder` and `InvoiceOrder` interfaces.
 
 #### Why are we adding new APIs in a patch release?
 
@@ -37,7 +39,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-#### General security enhancements
+#### General security 
 
 <!--- 56912/1488-->*  Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.  
 
@@ -56,7 +58,7 @@ The following list provides an overview of the security issues fixed in this rel
 <!--- 53971-->*  Fixed issue with running `cron` jobs less frequently than specified by the application `cron` setting. 
 
 
-<!--- 57965--> Sessions now expire as expected after logout.
+<!--- 57965-->*  Sessions now expire as expected after logout.
 
 
 
