@@ -19,7 +19,24 @@ Some existing behaviour and logic from Magento 1 was implemented in a different 
 
 2. The numbers of Orders, Invoices, Shipments, Credit Memos and RMA migrate as is. But after migration and switching to Magento 2 the numeration for newly created sales entities will be different.
 
-3. The Data Migration Tool has special handler `\Migration\Handler\Timezone` for transforming time to a different time zone. Using it you can change time for some fields of database. These fields can be specified in your `map.xml` file with offset parameter.
+3. If Magento 1 server has Time Zone set to anything other than UTC, it is necessary to configure offset for timestamp fields migration. The Data Migration Tool has special handler `\Migration\Handler\Timezone` for transforming time to a different time zone. In the following example Magento 1 server timezone is UTC-7. To convert customer account creation date properly, the following rule should be added to `map-customer.xml`:
+{% highlight xml %}
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="../map.xsd">
+    <!--...-->
+    <destination>
+        <field_rules>
+            <!--...-->
+            <transform>
+                <field>customer_entity.created_at</field>
+                <handler class="\Migration\Handler\Timezone">
+                    <param name="offset" value="-7" />
+                </handler>
+            </transform>
+        </field_rules>
+    </destination>
+</map>
+{% endhighlight %}
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Data Migration Tool doesn't support split database.</p>
