@@ -30,6 +30,12 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 <i>These new interfaces will not break any existing customizations or extensions.</i>  See Alan Kent’s blog for more information about these features and Magento’s use of semantic versioning. 
 
+## Security enhancements
+This release includes enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento installation to the latest version as soon as possible.
+
+The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the Magento Security Center.
+
+
 
 #### General security enhancements
 
