@@ -149,7 +149,7 @@ We address the following functional issues in this release.
 	* capture money placed with order payment
 
 	* notify a customer about document creation
-	
+
 	* change order status and state
 
 
@@ -219,7 +219,8 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 <!--- 58017-->
 
-#### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a> {:.no_toc} 
+#### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a> 
+{:.no_toc} 
 
 
 **Workaround**: Clear your browser cache after upgrading. 
@@ -228,7 +229,8 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 <!--- 58034-->
 
-#### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options. {:.no_toc} 
+#### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options. 
+{:.no_toc} 
 
 
 **Workaround**: 

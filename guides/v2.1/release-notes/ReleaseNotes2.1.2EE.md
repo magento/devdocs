@@ -139,16 +139,22 @@ We address the following functional issues in this release.
 <!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `ShipOrder` interface support tasks you can already do through the Admin dashboard, including the ability to:  
 
 	* create a shipment document (full or partial)
+
 	* add details about shipped items into an order
+
 	* change status and state of an order according to performed actions
+
 	* notify customer about new shipment document
 
 
 <!--- 56428 -->*  We've added the ability to change the status of an invoice through the web API.  The new `InvoiceOrder` interface supports tasks you can already do through the Admin dashboard, including the ability to:  
 
 	* create an invoice document (full or partial)
+
 	* capture money placed with order payment
+
 	* notify a customer about document creation
+
 	* change order status and state
 
 
@@ -218,7 +224,8 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 <!--- 58017-->
 
-#### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a> {:.no_toc} 
+#### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a> 
+{:.no_toc} 
 
 
 **Workaround**: Clear your browser cache after upgrading. 
@@ -227,7 +234,8 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 <!--- 58034-->
 
-#### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options. {:.no_toc} 
+#### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options. 
+{:.no_toc} 
 
 
 **Workaround**: 
