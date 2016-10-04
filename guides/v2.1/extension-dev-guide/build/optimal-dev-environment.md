@@ -35,7 +35,7 @@ Development using the Magento 2 framework requires knowledge in the following to
 ## Tools for development
 
 A developer cannot create code without a proper set of tools.
-The following is a list tools and applications needed for Magento 2 development. 
+The following is a list tools and applications recommended for Magento 2 development. 
 
 ### Integrated Development Environment (IDE)
 
@@ -48,14 +48,14 @@ Here is a [list of other IDEs](https://en.wikipedia.org/wiki/Comparison_of_integ
 
 ### Version control system
 
+Putting your project under a version control system is highly recommended.
 [Git](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller){:target="_blank"} is the preferred version control system for Magento 2 development because of its distributed nature and advanced merging process.
-Git is one of the tools you can use to get a copy of the Magento source code and keep it updated.
 
 ### Testing framework
 
 A testing framework provides test automation and prevents you from wasting your time on manually performing unit and regression tests.
 
-The [PHPUnit](https://phpunit.de/) framework is the basis for Magento's [Functional Testing Framework]({{page.baseurl}}mtf/mtf_introduction.html).
+The [PHPUnit](https://phpunit.de/) framework is the basis for all of Magento's non-javascript tests including the [Functional Testing Framework]({{page.baseurl}}mtf/mtf_introduction.html).
 Developers should learn how to use these frameworks to create automated tests in their projects.
 
 ### JavaScript task runner
@@ -66,19 +66,22 @@ Use the command [`grunt watch`]({{page.baseurl}}frontend-dev-guide/css-topics/cs
 [Gulp](http://gulpjs.com/){:target="_blank"} is another JavaScript build system you can use as an alternative to Grunt for front end development.
 For example, the [`magento2-frontools`](https://github.com/SnowdogApps/magento2-frontools){:target="_blank"} project is a set of front end tools based on Gulp.
 
-## Sandbox server
+## Development server
 
-Your sandbox server is the development server where you deploy your code and test it against a running Magento application.
+Your development server is where you deploy your code and test it against a running Magento application.
 It's configuration should be as close to a production server as possible.
+
+Make sure you are running the Magento application in [developer mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). 
+You can enable this mode with the command `bin/magento deploy:mode:set developer`.
 
 ### Installation
 
-The following is a list of the different ways you can install a sandbox server:
+The following is a list of the different ways you can install a development server:
 
 * **External server installation**\\
   If you have a spare computer or server laying around, you can [install Magento 2]({{page.baseurl}}install-gde/bk-install-guide.html) for testing as long as it meets the [system requirements]({{page.baseurl}}install-gde/system-requirements-tech.html).
 * **Local installation**\\
-  If you are developing on a Linux-based environment with Apache, MySQL, and PHP installed, you can run Magento 2 locally.
+  If you are developing on a machine that meets the system requirements, you can run Magento 2 locally.
 * **Virtual Machine (VM) installation**\\
   Installing Magento 2 in a virtual environment allows you to run Magento 2 without the need to install a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)){:target="_blank"} stack.
 
@@ -86,20 +89,16 @@ The following is a list of the different ways you can install a sandbox server:
 
 ### Optimal Configuration
 
-The following is a list of optimizations you can make on your sandbox server:
+The following is a list of optimizations you can make on your development server:
 
-* Make sure you are running the Magento application in [developer mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). 
-  You can enable this mode with the command `bin/magento deploy:mode:set developer`.
-
-  Unless the constructor has changed, this mode lets you skip the [code compile]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) process.
 * Install and use the latest supported version of PHP 7.
 * Replace your MySQL database with [Percona](https://www.percona.com/software/mysql-database/percona-server){:target="_blank"}.
 * Make sure you install and enable [PHP OPcache](http://php.net/manual/en/intro.opcache.php){:target="_blank"}.
-* Xdebug is off by default. Enable this feature when you need it because it requires a lot of memory.
+* Xdebug is off by default. Enable this feature only when you need it because it requires a lot of memory.
   As an alternative, you can increase the memory available to PHP.
-* [Turn on caching]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html) for the parts you do not need to test or validate and disable the parts your code affects. 
-  Flush the cache when there is a valid need to refresh the cached files.
+* Make sure caching is turned on (this is the default behavior).
+  Generally, only page cache and block cache should be turned off for development and turned back on when testing.
 * If you need sample data, you can install it using [composer]({{page.baseurl}}install-gde/install/web/install-web-sample-data-composer.html) or by [cloning repositories]({{page.baseurl}}install-gde/install/web/install-web-sample-data-clone.html).
 * To speed up front end development, [turn off merging of CSS and JavaScript](http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html){:target="_blank"}.
 * [Opcache timestamp validation](http://php.net/manual/en/opcache.configuration.php#ini.opcache.validate-timestamps){:target="_blank"} should always be on for development.
-  Development is impossible with opcache off because any PHP modification would require a cache reset.
+  Development is impossible with opcache on and revalidation off because any PHP modification would require a cache reset.
