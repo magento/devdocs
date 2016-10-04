@@ -38,7 +38,6 @@ Some existing behaviour and logic from Magento 1 was implemented in a different 
     </destination>
   </map>
   {% endhighlight %}
-
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Data Migration Tool doesn't support split database.</p>
 </div>
