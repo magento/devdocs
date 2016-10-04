@@ -134,7 +134,6 @@ We address the following functional issues in this release.
 
 
 #### Sales API enhancements
-For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html" target="_blank">Magento Sales API</a>.
 
 
 <!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `ShipOrder` interface support tasks you can already do through the Admin dashboard, including the ability to:  
@@ -153,8 +152,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 	* change order status and state
 
 
-For more information on these API enhancements, see Sales API <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
-<a href="{{ page.baseurl }}mrg/ce/Sales/services.html#shiporder" target="_blank">ship order</a>
+For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html" target="_blank">Magento Sales API</a>.
 
 
 
@@ -220,7 +218,7 @@ For more information on these API enhancements, see Sales API <a href="{{ page.b
 
 <!--- 58017-->
 
-#### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>{:.no_toc} 
+#### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a> {:.no_toc} 
 
 
 **Workaround**: Clear your browser cache after upgrading. 
@@ -229,7 +227,7 @@ For more information on these API enhancements, see Sales API <a href="{{ page.b
 
 <!--- 58034-->
 
-#### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options.{:.no_toc} 
+#### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options. {:.no_toc} 
 
 
 **Workaround**: 
