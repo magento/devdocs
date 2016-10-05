@@ -54,7 +54,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 56902 -->* A user with lesser privileges can no longer use a JSON call to force an Admin user to add his private or public key.
 
-<!--- 56700 -->* The order comment timestamp now correctly reflects the time that the comment was submitted, not when the page was last refreshed.<a href="https://github.com/magento/magento2/issues/5719" target="_blank">(GITHUB-5719)</a>, <a href="https://github.com/magento/magento2/issues/5890" target="_blank">(GITHUB-5890)</a>
+<!--- 56700 -->* The order comment timestamp now correctly reflects the time that the comment was submitted, not when the page was last refreshed. <a href="https://github.com/magento/magento2/issues/5719" target="_blank">(GITHUB-5719)</a>, <a href="https://github.com/magento/magento2/issues/5890" target="_blank">(GITHUB-5890)</a>
 
 
 <!--- 56851 -->* Fixed issue with the `_convertAdditionalData` method's use of unserialized data during payment. <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a>
@@ -65,14 +65,16 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 ### Denial-of-service (DoS) attacks and brute force attacks
+{:.no_toc} 
 
 <!--- 57464 -->* The Guest order view protection code is no longer vulnerable to brute force attacks. 
 
-<!--- 57303 -->* Fixed vulnerability to DoS attacks by full page cache poisoning. For more information, see 
+<!--- 57303 -->* Fixed vulnerability to DoS attacks by full page cache poisoning. 
 
 
 
 ### Cross-Site Request Forgery  (CSRF)
+{:.no_toc} 
 
 <!--- 45757 -->* Removed vulnerability in cart checkout experience by enhancing server-side CSRF validation.
 
@@ -80,6 +82,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 ### Cross-site scripting  (XSS)
+{:.no_toc} 
 
 <!--- 57580/1433 -->* Resolved a potential XSS vulnerability in which customer addresses could be deleted. You can no longer deceive a user into deleting his store address book entries.
 

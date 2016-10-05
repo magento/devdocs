@@ -23,6 +23,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. For more information on these API enhancements, see the <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">Sales API</a> discussion in the <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a>. 
 
 #### Why are we adding new APIs in a patch release?
+{:.no_toc} 
 
 <i>These new interfaces will not break any existing customizations or extensions.</i>   See <a href="https://alankent.me/category/magento/" target="_blank">Alan Kent’s blog about Magento</a> for more information about these features and Magento’s use of semantic versioning. 
 
@@ -53,7 +54,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 56902 -->* A user with lesser privileges can no longer use a JSON call to force an Admin user to add his private or public key.
 
-<!--- 56700 -->* The order comment timestamp now correctly reflects the time that the comment was submitted, not when the page was last refreshed.<a href="https://github.com/magento/magento2/issues/5719" target="_blank">(GITHUB-5719)</a>, <a href="https://github.com/magento/magento2/issues/5890" target="_blank">(GITHUB-5890)</a>
+<!--- 56700 -->* The order comment timestamp now correctly reflects the time that the comment was submitted, not when the page was last refreshed. <a href="https://github.com/magento/magento2/issues/5719" target="_blank">(GITHUB-5719)</a>, <a href="https://github.com/magento/magento2/issues/5890" target="_blank">(GITHUB-5890)</a>
 
 
 <!--- 56851 -->* Fixed issue with the `_convertAdditionalData` method's use of unserialized data during payment. <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a>
@@ -67,11 +68,11 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 57464 -->* The Guest order view protection code is no longer vulnerable to brute force attacks. 
 
-<!--- 57303 -->* Fixed vulnerability to DoS attacks by full page cache poisoning. For more information, see 
+<!--- 57303 -->* Fixed vulnerability to DoS attacks by full page cache poisoning. 
 
 
 
-### Cross-Site Request Forgery  (CSRF)
+### Cross-Site Request Forgery (CSRF)
 {:.no_toc} 
 
 
@@ -80,7 +81,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-### Cross-site scripting  (XSS)
+### Cross-site scripting (XSS)
 {:.no_toc} 
 
 
