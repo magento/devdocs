@@ -103,9 +103,9 @@ The <a href="http://requirejs.org" target="_blank">RequireJS library</a> loads J
 
 <h2 id="m2devgde-js-resources-mapping">Specify JavaScript resources mapping</h2>
 
-To work with the RequireJS library, specify the mapping of JavaScript resources; that is, assign the aliases to resources. Use `requires-config.js` to create the mapping.
+To work with the RequireJS library, specify the mapping of JavaScript resources; that is, assign the aliases to resources. Use `requirejs-config.js` to create the mapping.
 
-To make your configurations more precise and specific for different modules/themes, you can identify mapping in `requires-config.js` file at several <a href="#m2devgde-js-resources-configuring">levels</a> depending on your needs. All configurations will be collected and executed in the following order:
+To make your configurations more precise and specific for different modules/themes, you can identify mapping in `requirejs-config.js` file at several <a href="#m2devgde-js-resources-configuring">levels</a> depending on your needs. All configurations will be collected and executed in the following order:
 
 <ol>
 <li>Library configurations.</li>
@@ -145,4 +145,3 @@ You can adjust RequireJS for your needs in two ways:
 
 *	Fallback mechanism: general rules on customizing URLs or paths for static view files apply to JavaScript, because JavaScript files are static view files
 *	Configuration files as described earlier in <a href="#m2devgde-js-resources-configrequirejs">Configure the RequireJS library</a>
-

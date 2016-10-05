@@ -30,6 +30,7 @@ Menu widget options mostly coincide with the options of the jQuery UI Menu widge
 
 <li><a href="#m_delay">delay</a></li>
 <li><a href="#m_responsive">responsive</a></li>
+<li><a href="#m_expanded">expanded</a></li>
 
 
 </ul>
@@ -43,6 +44,13 @@ Set the delay length of opening submenu.
 
 <h3 id="m_responsive"><code>responsive</code></h3>
 Setting the default responsive handler for the navigation widget.
+
+**Type**: Boolean.
+
+**Default value**: `false`
+
+<h3 id="m_expanded"><code>expanded</code></h3>
+Display top level navigational items in mobile menu or all items.
 
 **Type**: Boolean.
 

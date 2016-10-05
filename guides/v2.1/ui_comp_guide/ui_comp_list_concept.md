@@ -158,6 +158,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - **Top-level parent component**: Form
 - **Description**: Provides data for a form.
 - **Has server-side template**: No.
+
 {% endcollapsible %}
 
 
@@ -198,5 +199,5 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 
 <!-- 
-Notes: the column called Top-level nested... the UI component must be nested in the specific top-level UI component. Or use magic workaround from Olha. -->
+Notes: the column called Top-level nested... the UI component must be nested in the specific top-level UI component. Or use magic workaround  -->
 

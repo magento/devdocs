@@ -23,7 +23,7 @@ module Jekyll
 
       content = super.strip
       content = converter.convert(content)
-      "<div class=\"collapsible\"><h4 class=\"collapsible-title\">"+@title+"</h4><div class=\"collapsible-content\">"+content+"</div></div>"
+      "<div class=\"collapsible\"><b class=\"collapsible-title\">"+@title+"</b><div class=\"collapsible-content\">"+content+"</div></div>"
     end
   end
 end

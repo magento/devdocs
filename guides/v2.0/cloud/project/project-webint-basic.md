@@ -95,8 +95,7 @@ Configuring a project means:
 *	Managing users
 *	Using a deploy key to pull code from a private repository
 
-{% collapsible Click to show/hide content %}
-To configure your project:
+{% collapsible To configure your project: %}
 
 1.	[Log in to your project](#project-login).
 2.	Click ![configure your project]({{ site.baseurl }}common/images/cloud_edit-project.png) (Configure project) next to the project name.

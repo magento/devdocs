@@ -79,7 +79,7 @@ The overall configuration is loaded in the following stages:
 2. Global (`<moduleDir>/etc/di.xml`)
 3. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
 
-During [bootstrapping]({{site.mageurl}}config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the [area]({{site.mageurl}}architecture/modules/mod_and_areas.html) being requested.
+During [bootstrapping]({{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the [area]({{page.baseurl}}architecture/modules/mod_and_areas.html) being requested.
 
 **Examples:**
 

@@ -1,6 +1,7 @@
 <div markdown="1">
 
-1.	Log in to the server on which your SSH keys are located.
+1.	Log in to the server on which your SSH keys are located as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+2.	Change to a directory to which the Magento file system owner has write access, such as the web server docroot.
 2.	Log in to your project:
 
 		magento-cloud login
