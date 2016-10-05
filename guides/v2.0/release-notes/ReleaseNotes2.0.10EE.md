@@ -65,6 +65,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 #### Denial-of-service (DoS) attacks and brute force attacks
+{:.no_toc} 
 
 <!--- 57464 -->* The Guest order view protection code is no longer vulnerable to brute force attacks. 
 
