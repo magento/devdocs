@@ -23,7 +23,7 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 Magento 2.1.2 contains multiple bug fixes and enhancements, including
 
 
-*  **Added support for PHP 7.0.4 and 5.6.5+** 
+*  **Added support for PHP 7.0.4 and 5.6.5+**. This release supports PHP 5.6.5 and above instead of 5.6.x.
 
 
 * Patch 2.1.2 also introduces **two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the `ShipOrder` and `InvoiceOrder` interfaces.
@@ -111,11 +111,9 @@ The following list provides an overview of the security issues fixed in this rel
 ### SQL injection
 {:.no_toc} 
 
-<!--- 58007/1544-->* We've reduced the risk of SQL injection in the F1 Sqli backend cache adapter by adding proper variable escaping. 
-has multiple places that generate SQL queries without proper variable escaping causing the risk of SQL injections.
-Variables should not be included into the query "as is".
+<!--- 58007/1544-->* We've reduced the risk of SQL injection in the F1 Sqli backend cache adapter by adding proper variable escaping.
 
-<!--- 56540/1480-->*  SQL injection in Zend framework. A bug in Zend Framework value escaping allows to inject SQL through ordering or grouping parameters. 
+<!--- 56540/1480-->*  Fixed issue with potential SQL injection through the Zend framework through ordering or grouping parameters. 
 
 
 
@@ -253,8 +251,6 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 Note: Magento 2.1.2 requirements have changed slightly from 2.1.1. This release supports PHP 5.6.5 and above instead of 5.6.x.
 
-
- Requirements</a>.
 
 
 {% include install/releasenotes/ce_install_21.md %}
