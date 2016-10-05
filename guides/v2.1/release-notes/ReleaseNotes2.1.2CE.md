@@ -19,7 +19,7 @@ We are pleased to present Magento Community Edition 2.1.2. This release includes
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
-### Highlights
+## Highlights
 Magento 2.1.2 contains multiple bug fixes and enhancements, including
 
 
@@ -28,7 +28,7 @@ Magento 2.1.2 contains multiple bug fixes and enhancements, including
 
 * Patch 2.1.2 also introduces **two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the `ShipOrder` and `InvoiceOrder` interfaces.
 
-#### Why are we adding new APIs in a patch release?
+### Why are we adding new APIs in a patch release?
 {:.no_toc} 
 
 <i>These new interfaces will not break any existing customizations or extensions.</i>  See Alan Kent’s blog for more information about these features and Magento’s use of semantic versioning. 
@@ -36,11 +36,11 @@ Magento 2.1.2 contains multiple bug fixes and enhancements, including
 ## Security enhancements
 This release includes enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento installation to the latest version as soon as possible.
 
-The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the Magento Security Center.
+The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href=https://magento.com/security/patches/magento-212-security-update" target="_blank">Magento Security Center</a>.
 
 
 
-#### General security 
+### General security 
 {:.no_toc} 
 
 <!--- 56912/1488-->*  Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.  
@@ -81,7 +81,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-#### Denial-of-service (DoS) attacks and brute force attacks
+### Denial-of-service (DoS) attacks and brute force attacks
 {:.no_toc} 
 
 <!--- 46026/1270-->* The Guest order view protection code is no longer vulnerable to brute force attacks.
@@ -91,14 +91,14 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-#### Cross-Site Request Forgery  (CSRF)
+### Cross-Site Request Forgery  (CSRF)
 {:.no_toc} 
 
 <!--- 57581/1433-->* Resolved a potential cross-site scripting (XSS) vulnerability in which customer addresses could be deleted. You can no longer trick a user into deleting his store address book entries.  
 
 
 
-#### Cross-site scripting  (XSS)
+### Cross-site scripting  (XSS)
 {:.no_toc} 
 
 <!--- 57362-->*  Fixed issue with potential storage of malicious XSS code in the body of an email template. (A malicious user could use this this script to steal user information and cookies, or to bypass cross-site request forgery protection.) 
@@ -108,7 +108,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-#### SQL injection
+### SQL injection
 {:.no_toc} 
 
 <!--- 58007/1544-->* We've reduced the risk of SQL injection in the F1 Sqli backend cache adapter by adding proper variable escaping. 
@@ -128,12 +128,12 @@ Variables should not be included into the query "as is".
 
 
 
-### Functional fixes and enhancements
+## Functional fixes and enhancements
 We address the following functional issues in this release.
 
 
 
-#### Sales API enhancements
+### Sales API enhancements
 {:.no_toc} 
 
 
@@ -172,7 +172,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-#### Cart and checkout
+### Cart and checkout
 {:.no_toc} 
 
 <!--- 56431, 56426-->* Magento now updates order status as expected after a shipment or invoice has been created through the API.
@@ -181,7 +181,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 <!--- 54964-->* Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. <a href="https://github.com/magento/magento2/issues/6121" target="_blank">(GITHUB-6121)</a> 
 
 
-#### Tracking and shipping
+### Tracking and shipping
 {:.no_toc}  
 
 <!--- 57460-->* Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.
@@ -191,7 +191,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-#### General fixes
+### General fixes
 {:.no_toc} 
 
 <!--- 54737, 55116-->* Magento 2.1.2 now supports PHP 7.0.4. 
@@ -221,7 +221,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-### Known issues
+## Known issues
 
 57797 ?
 
@@ -261,7 +261,7 @@ Note: Magento 2.1.2 requirements have changed slightly from 2.1.1. This release 
 
 
 
-### Migration toolkits
+## Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
