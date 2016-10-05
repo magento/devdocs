@@ -18,25 +18,27 @@ We are pleased to present Magento Enterprise Edition 2.0.10. This release includ
 
 Backward-incompatible changes are documented in <a href="{{ page.baseurl }}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
-### Highlights
+## Highlights
 
 Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. For more information on these API enhancements, see the <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">Sales API</a> discussion in the <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a>. 
 
 #### Why are we adding new APIs in a patch release?
 
-<i>These new interfaces will not break any existing customizations or extensions.</i>  See Alan Kent’s blog for more information about these features and Magento’s use of semantic versioning. 
+<i>These new interfaces will not break any existing customizations or extensions.</i>   See <a href="https://alankent.me/category/magento/" target="_blank">Alan Kent’s blog about Magento</a> for more information about these features and Magento’s use of semantic versioning. 
 
 
 
 
-### Security enhancements
+## Security enhancements
 
-This release includes  enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento installation to the latest version as soon as possible.
+This release includes enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento installation to the latest version as soon as possible.
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
 
-#### General security 
+### General security 
+{:.no_toc} 
+
 
 
 <!--- 57811 -->* You can no longer delete a currently logged-in user. 
@@ -69,14 +71,18 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-#### Cross-Site Request Forgery  (CSRF)
+### Cross-Site Request Forgery  (CSRF)
+{:.no_toc} 
+
 
 <!--- 45757 -->* Removed vulnerability in cart checkout experience by enhancing server-side CSRF validation.
 
 
 
 
-#### Cross-site scripting  (XSS)
+### Cross-site scripting  (XSS)
+{:.no_toc} 
+
 
 <!--- 57580/1433 -->* Resolved a potential XSS vulnerability in which customer addresses could be deleted. You can no longer deceive a user into deleting his store address book entries.
 
@@ -88,15 +94,14 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-### Functional fixes
+## Functional fixes
 
 We address the following functional issues in this release.
 
 
 
-#### Sales API enhancements
-For more information on these API enhancements, see Sales API <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
-<a href="{{ page.baseurl }}mrg/ce/Sales/services.html#shiporder" target="_blank">ship order</a>
+### Sales API enhancements
+{:.no_toc} 
 
 
 <!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `ShipOrder` interface support tasks you can already do through the Admin dashboard, including the ability to:  
@@ -121,12 +126,14 @@ For more information on these API enhancements, see Sales API <a href="{{ page.b
 
 	* change order status and state
 
-For more information on these API enhancements, see Sales API <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">invoice order</a> and 
-<a href="{{ page.baseurl }}mrg/ce/Sales/services.html#shiporder" target="_blank">ship order</a>
+For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html" target="_blank">Magento Sales API</a>.
 
 
 
-#### Tracking and shipping 
+
+### Tracking and shipping
+{:.no_toc} 
+
 
 <!--- 57098 -->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate was not updated when you changed the city on your order form. 
 
@@ -136,7 +143,9 @@ For more information on these API enhancements, see Sales API <a href="{{ page.b
 
 
 
-#### Cart and checkout
+### Cart and checkout
+{:.no_toc} 
+
 
 <!--- 56953 -->* Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. <a href="https://github.com/magento/magento2/issues/6121" target="_blank">(GITHUB-6121)</a>
 
@@ -145,7 +154,9 @@ For more information on these API enhancements, see Sales API <a href="{{ page.b
 
 
 
-#### Miscellaneous
+### General fixes
+{:.no_toc} 
+
 
 
 <!--- 57065 -->* Magento now returns you to the Admin dashboard after you've successfully changed your Admin password. Previously, Magento prompted you to change your password even after you just successfully changed it. <a href="https://github.com/magento/magento2/issues/4331" target="_blank">(GITHUB-4331)</a>
@@ -160,10 +171,12 @@ For more information on these API enhancements, see Sales API <a href="{{ page.b
 
 <!--- Omitted (can't be reproduced or won't fix) 57800 (CLONES: 5704858314, 58798, 58695, 58883) (CANNOT REPRO: 53971, 53431) (INTERNAL ONLY: 58674, 58816, 558874, 56759, 58167, 57879, 57577, 57568, 57294, 57546), 57303, 55862, 52239, 58626, 58625, 58666, 58933, 58923 (WONT FIX: 58671-->
 
-### Known issues
+## Known issues
 
 
 #### Issue: Error creating configurable products <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
+{:.no_toc} 
+
 
 While creating a configurable product, the configurable options appear to be created properly, but when you go to save the product, the associated simple products are not saved.
 
@@ -173,6 +186,8 @@ While creating a configurable product, the configurable options appear to be cre
 
 
 #### Issue: Restful API returns unexpected attribute 
+{:.no_toc} 
+
 
 The value type of the `catalogProductRepositoryV1` method `category_ids` attribute should be string, but instead returns array. 
 
@@ -181,6 +196,8 @@ The value type of the `catalogProductRepositoryV1` method `category_ids` attribu
 
 
 #### Issue: Magento does not display the Products > Catalog table after you upgrade from 2.0.1 to 2.1.0, but instead displays a JavaScript error
+{:.no_toc} 
+
 
 **Workaround**: After your upgrade is complete, follow these steps:
 
@@ -192,12 +209,14 @@ The value type of the `catalogProductRepositoryV1` method `category_ids` attribu
 <!-- 54618 -->
 
 
-#### Issue: The scope selector on the Product page does not display all websites associated with a restricted user. 
+#### Issue: The scope selector on the Product page does not display all websites associated with a restricted user.
+{:.no_toc} 
+
 <!--- 57004 -->
 
 
 
-### System requirements
+## System requirements
 Our technology stack is built on PHP and MySQL. See
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
