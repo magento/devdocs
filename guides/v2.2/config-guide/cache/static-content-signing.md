@@ -35,11 +35,11 @@ Magento accomplishes this by adding a deployment version to the URL of static fi
 The following is an example of a URL signed with a version:
 
 ~~~
-https://127.0.0.1//magento2/pub/static/version8675309/frontend/magento_plushe/en_US/Magento_Theme/favicon.ico
+http://magento2.com/pub/static/version1475604434/frontend/Magento/luma/en_US/images/logo.svg
 ~~~
 
 When you run the command [`setup:static-content:deploy`]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html) to deploy static content, Magento automatically changes the deployment version.
-This changes the URL of the static files and forces the browser to load the new version of the file.
+This changes the URL of the static files and forces the browser to load the new version of the files.
 
 Magento enables this feature by default, and we recommend keeping this feature enabled to prevent issues related to browsers serving up old static resources.
 
@@ -56,8 +56,8 @@ When a browser requests a signed source from the server, the server uses URL rew
 
 ### Usage during deployments
 
-When you make changes to production through an upgrade or code change, you need to run the `setup:static-content:deploy` command to update the version and URL of static contents.
+After upgrading or modifying static resources, you need to run the `setup:static-content:deploy` command to deploy and update the version of the static contents.
 This forces the browser to load the updated resources.
 
-If you deploy code on a separate server and move it to production using a repository to reduce downtime, you also need to add the file `pub/static/deployed_version.txt` to the repository.
-This file contains the new version for the static content generated externally.
+If you deploy code on a separate server and move it to production using a code repository to reduce downtime, you also need to add the file `pub/static/deployed_version.txt` to the repository.
+This file contains the new version for the deployed static content.
