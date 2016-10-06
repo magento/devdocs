@@ -113,11 +113,11 @@ The only attribute of a rule node is the `scope`, which enables you to use the f
 
 This scope enables you to filter functional tests using the following criteria:
 
-| Option | Semantics | Occurrence | Example
+| Option | Description | Occurrence | Example
 |---|---|---|---
 | `<class>` | Apply a rule to the test case with the specified class name. | multiple |`<class value = "Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest" />`
-| `<module>` | Apply a rule to all test cases from the specified module. |multiple|`<module value = "Magento_Tax"`
-| `<namespace>` | Apply a rule to all test cases with the specified namespace. | multiple | `<namespace value = "Magento\Catalog\Test\TestCase\Product" />"`
+| `<module>` | Apply a rule to all test cases from the specified module. Some test cases may refer to other modules using merging functionality of variations, fixtures etc. You can restrict such reference to other modules adding the `strict="1"` argument. The default value is `strict="0"`. |multiple|`<module value = "Magento_Tax" strict="1" />`
+| `<namespace>` | Apply a rule to all test cases with the specified namespace. | multiple | `<namespace value = "Magento\Catalog\Test\TestCase\Product" />`
 
 The namespace filter example:
 
@@ -153,7 +153,8 @@ The module filter example:
         xsi:noNamespaceSchemaLocation="../../../../../vendor/magento/mtf/Magento/Mtf/TestRunner/etc/testRunner.xsd">
     <rule scope="testsuite">
         <allow>
-            <module value="Magento_Catalog" />
+            <module value="Magento_Catalog" strict="1" />
+            <module value="Magento_Cms" />
         </allow>
     </rule>
 </config>
