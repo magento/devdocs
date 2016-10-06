@@ -10,7 +10,7 @@ github_link: ui-components/ui_components_js.md
 ---
 
 ## What's in this topic
-This topic is aimed for developers, who need to reuse the [Magento UI Components]({{page.baseurl}}ui-library/ui-library-component.html). 
+This topic is aimed for developers, who need to reuse the [Magento UI Components]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html). 
 
 The topic covers the following:
 
