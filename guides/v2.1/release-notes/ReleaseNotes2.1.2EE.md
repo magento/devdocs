@@ -25,10 +25,12 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 Magento 2.1.2 contains multiple bug fixes and enhancements, including
 
-*  **Added support for PHP 7.0.4 and 5.6.5+**. This release supports PHP 5.6.5 and above instead of 5.6.x. 
+* **Support for PHP 7.0.4 and 5.6.5+*. This release **supports PHP 5.6.5 and above instead of 5.6.x**.
+
+* **Compatible with MySQL 5.7**.
 
 
-* Patch 2.1.2 also introduces **two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the `ShipOrder` and `InvoiceOrder` interfaces. 
+* **Two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the `ShipOrder` and `InvoiceOrder` interfaces. 
 
 ### Why are we adding new APIs in a patch release?
 {:.no_toc} 
@@ -221,12 +223,9 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 ## Known issues
 
-57797 ?
 
-58034 (clones 52974) Configurable product options not saved when editing 
 
 <!--- 58017-->
-
 #### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a> 
 {:.no_toc} 
 
@@ -235,13 +234,46 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-<!--- 58034-->
 
 #### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options. 
 {:.no_toc} 
 
 
-**Workaround**: 
+**Workaround**: None
+
+<!--- 58034-->
+
+
+
+#### Issue: Logo for transactional emails cannot be uploaded successfully <a href="https://github.com/magento/magento2/issues/6275" target="_blank">(GITHUB-6275)</a>
+{:.no_toc} 
+
+**Workaround:** Create a header template and reference the image location absolutely.
+ 
+
+<!--- 57291-->
+
+
+
+#### Issue: REST API returns unexpected attribute
+{:.no_toc} 
+
+
+**Workaround**: None 
+
+<!--- 56853-->
+
+
+
+
+#### Issue:  Magento does not correctly display Product > Catalog table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. 
+{:.no_toc} 
+
+
+**Workaround**: Restart Varnish after upgrading. For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/upgrader/upgrade.html" target="_blank">Component Manager and System Upgrade Guide: Step 4</a>
+<!--- 54618-->
+
+
 
 
 
