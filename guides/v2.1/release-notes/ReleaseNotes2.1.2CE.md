@@ -230,7 +230,6 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 **Workaround**: Clear your browser cache after upgrading. 
-
 <!--- 58017-->
 
 
@@ -241,7 +240,6 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 **Workaround**: None
-
 <!--- 58034-->
 
 
@@ -249,18 +247,17 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 #### Issue: Logo for transactional emails cannot be uploaded successfully <a href="https://github.com/magento/magento2/issues/6275" target="_blank">(GITHUB-6275)</a>
 {:.no_toc} 
 
-**Workaround:** Create a header template and reference the image location absolutely.
- 
+**Workaround:** None
 
 <!--- 57291-->
 
 
 
-#### Issue: REST API returns unexpected attribute
+#### Issue: The `catalogProductRepository` API (REST) returns an unexpected attribute type. Certain `attribute_code` values (for example,  `category_ids`) return an array instead of the expected string.
 {:.no_toc} 
 
 
-**Workaround**: None 
+**Workaround**: As needed, adjust your code so that it handles the response as an array.  
 
 <!--- 56853-->
 
