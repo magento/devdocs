@@ -25,9 +25,9 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 Magento 2.1.2 contains multiple bug fixes and enhancements, including
 
-* **Support for PHP 7.0.4 and 5.6.5+*. This release **supports PHP 5.6.5 and above instead of 5.6.x**.
+* Support for **PHP 7.0.4 and 5.6.5**. This release **supports PHP 5.6.5 and above instead of 5.6.x.
 
-* **Compatible with MySQL 5.7**.
+* Compatible with **MySQL 5.7**.
 
 
 * **Two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the `ShipOrder` and `InvoiceOrder` interfaces. 
