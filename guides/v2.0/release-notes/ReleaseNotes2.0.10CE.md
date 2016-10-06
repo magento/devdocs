@@ -66,6 +66,9 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 56905 -->* Fixed issue with using `retrieveImage` function to potentially access sensitive information using Products > Catalog -> Edit A Product> Images and Videos > Insert URL Youtube video.
 
+<!--- 56905 -->* Fixed issue with using `retrieveImage` function to potentially access sensitive information using Products > Catalog -> Edit A Product> Images and Videos > Insert URL Youtube video.
+
+
 
 ### Denial-of-service (DoS) attacks and brute force attacks
 {:.no_toc} 
@@ -163,7 +166,6 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 <!--- 57579 -->* Upgrade now places stores in maintenance mode as expected. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
 
-<!--- 56905 -->* Local File Inclusion
 
 
 
