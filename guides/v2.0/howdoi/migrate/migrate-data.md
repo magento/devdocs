@@ -22,7 +22,7 @@ Data Migration allows you to migrate several types of data from your Magento 1 s
   <li>Use the migration tool to <a href="{{page.baseurl}}migration/migration-migrate-settings.html">migrate settings</a> and websites.</li>
   <li>Copy your Magento 1.x media files to Magento 2.0. (You must copy these manually from <code>&lt;magento1-root>/media</code> to <code>&lt;magento2-root>/pub/media</code>)</li> 
   <li>Use Data Migration Tool to <a href="{{page.baseurl}}migration/migration-migrate-data.html">migrate your data</a> from Magento 1 database to Magento 2 database. If some of your extensions have data you want to migrate, you might need to install these extensions adapted for Magento 2. In case the extensions have a different structure in Magento 2 database, use the mapping files provided with the Data Migration Tool.</li>
-  <li>Use the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">magento indexer:reindex</code></a> command to reindex all indexers.</li>
+  <li>Use the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex"><code>magento indexer:reindex</code></a> command to reindex all indexers.</li>
   <li>Thoroughly test your Magento 2.0 site.</li>
 </ol>
 
