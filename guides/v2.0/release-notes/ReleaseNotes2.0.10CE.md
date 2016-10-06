@@ -62,6 +62,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 56542/1480 -->* Resolved issue with potential SQL injection through the use of the ordering or grouping parameters.
 
+<!--- 56905 -->* Fixed issue with using `retrieveImage` function to potentially access sensitive information using Products > Catalog -> Edit A Product> Images and Videos > Insert URL Youtube video.
 
 
 ### Denial-of-service (DoS) attacks and brute force attacks
