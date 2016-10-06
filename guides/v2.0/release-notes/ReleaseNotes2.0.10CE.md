@@ -48,8 +48,6 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 56930 -->* Sessions now expire as expected after logout.
 
-<!--- 57582/1488 -->* Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.
-
 
 <!--- 57566/1533-->* You can no longer change or fake a product price from the Magento storefront and then complete an order with that fake price. 
 
