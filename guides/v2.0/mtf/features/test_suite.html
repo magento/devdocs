@@ -826,7 +826,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 27 July 2016 (PDT)</div>
+            <div class="updated">Updated: 6 October 2016 (PDT)</div>
             <h4>Contents</h4>
 
 <ul id="markdown-toc">
@@ -944,7 +944,7 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></
   <thead>
     <tr>
       <th>Option</th>
-      <th>Semantics</th>
+      <th>Description</th>
       <th>Occurrence</th>
       <th>Example</th>
     </tr>
@@ -958,15 +958,15 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></
     </tr>
     <tr>
       <td><code>&lt;module&gt;</code></td>
-      <td>Apply a rule to all test cases from the specified module.</td>
+      <td>Apply a rule to all test cases from the specified module. Some test cases may refer to other modules using merging functionality of variations, fixtures etc. You can restrict such reference to other modules adding the <code>strict="1"</code> argument. The default value is <code>strict="0"</code>.</td>
       <td>multiple</td>
-      <td><code>&lt;module value = "Magento_Tax"</code></td>
+      <td><code>&lt;module value = "Magento_Tax" strict="1" /&gt;</code></td>
     </tr>
     <tr>
       <td><code>&lt;namespace&gt;</code></td>
       <td>Apply a rule to all test cases with the specified namespace.</td>
       <td>multiple</td>
-      <td><code>&lt;namespace value = "Magento\Catalog\Test\TestCase\Product" /&gt;"</code></td>
+      <td><code>&lt;namespace value = "Magento\Catalog\Test\TestCase\Product" /&gt;</code></td>
     </tr>
   </tbody>
 </table>
@@ -1002,7 +1002,8 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../vendor/magento/mtf/Magento/Mtf/TestRunner/etc/testRunner.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;rule</span> <span class="na">scope=</span><span class="s">&quot;testsuite&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;allow&gt;</span>
-            <span class="nt">&lt;module</span> <span class="na">value=</span><span class="s">&quot;Magento_Catalog&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">value=</span><span class="s">&quot;Magento_Catalog&quot;</span> <span class="na">strict=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">value=</span><span class="s">&quot;Magento_Cms&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/allow&gt;</span>
     <span class="nt">&lt;/rule&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
