@@ -224,12 +224,14 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 ## Known issues
 
-<!--- 58017-->
+
 #### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a> 
 {:.no_toc} 
 
 
 **Workaround**: Clear your browser cache after upgrading. 
+
+<!--- 58017-->
 
 
 
