@@ -56,7 +56,7 @@ When a browser requests a signed source from the server, the server uses URL rew
 
 ### Usage during deployments
 
-After upgrading or modifying static resources, you need to run the `setup:static-content:deploy` command to deploy and update the version of the static contents.
+After upgrading or modifying static resources, you need to run the `setup:static-content:deploy` command to deploy the version and update the static contents.
 This forces the browser to load the updated resources.
 
 If you deploy code on a separate server and move it to production using a code repository to reduce downtime, you also need to add the file `pub/static/deployed_version.txt` to the repository.
