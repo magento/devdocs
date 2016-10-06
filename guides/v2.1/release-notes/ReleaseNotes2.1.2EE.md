@@ -25,7 +25,7 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 Magento 2.1.2 contains multiple bug fixes and enhancements, including
 
-* Support for **PHP 7.0.4 and 5.6.5**. This release **supports PHP 5.6.5 and above instead of 5.6.x.
+* Support for **PHP 7.0.4 and 5.6.5**. This release supports PHP 5.6.5 and above instead of 5.6.x.
 
 * Compatible with **MySQL 5.7**.
 
