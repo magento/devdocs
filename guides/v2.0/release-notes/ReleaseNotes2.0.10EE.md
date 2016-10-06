@@ -20,7 +20,9 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ## Highlights
 
-Patch 2.0.10 introduces two new web APIs (or <i>service contracts</i>) for the Sales module that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. For more information on these API enhancements, see the <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">Sales API</a> discussion in the <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a>. 
+* Patch 2.0.10 is now **compatible with MySQL 5.7**.
+
+* Patch 2.0.10 introduces **two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. For more information on these API enhancements, see the <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">Sales API</a> discussion in the <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a>. 
 
 #### Why are we adding new APIs in a patch release?
 {:.no_toc} 
@@ -177,46 +179,28 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 ## Known issues
 
 
-#### Issue: Error creating configurable products <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>
+#### Issue:  Logo Email for transactional emails can not be uploaded successfully <a href="https://github.com/magento/magento2/issues/6275" target="_blank">(GITHUB-6275)</a>
 {:.no_toc} 
 
-
-While creating a configurable product, the configurable options appear to be created properly, but when you go to save the product, the associated simple products are not saved.
-
-
-**Workaround**: Clear browser cache. <!--- 58017 -->
+**Workaround:** Create a header template and reference the image location absolutely.
 
 
+<!-- 59428 -->
 
-#### Issue: Restful API returns unexpected attribute 
+#### Issue: Cannot save a custom transactional email logo
 {:.no_toc} 
 
-
-The value type of the `catalogProductRepositoryV1` method `category_ids` attribute should be string, but instead returns array. 
-
-**Workaround**: Adjust your code to handle a response of type array instead of string. <!---56853-->
+**Workaround:** None
 
 
+<!-- 53010 -->
 
-#### Issue: Magento does not display the Products > Catalog table after you upgrade from 2.0.1 to 2.1.0, but instead displays a JavaScript error
+#### Issue: The scope selector on the Product page does not display all websites associated with a restricted user
 {:.no_toc} 
 
-
-**Workaround**: After your upgrade is complete, follow these steps:
-
-1. Clean the page cache by either selecting Flush Magento Cache from the Admin dashboard, or by using the command line interface (CLI). To clean the cache from CLI, see <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html" target="_blank">Manage the Cache</a>.
-
-
-2. Restart Varnish. 
-
-<!-- 54618 -->
-
-
-#### Issue: The scope selector on the Product page does not display all websites associated with a restricted user.
-{:.no_toc} 
+**Workaround:** None
 
 <!--- 57004 -->
-
 
 
 ## System requirements
