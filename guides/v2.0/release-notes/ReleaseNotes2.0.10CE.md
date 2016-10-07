@@ -175,26 +175,17 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 ## Known issues
 
 
-#### Issue:  Logo Email for transactional emails can not be uploaded successfully <a href="https://github.com/magento/magento2/issues/6275" target="_blank">(GITHUB-6275)</a>
-{:.no_toc} 
-
-**Workaround:** Create a header template and reference the image location absolutely.
+* **Issue**:  Logo Email for transactional emails can not be uploaded successfully <a href="https://github.com/magento/magento2/issues/6275" target="_blank">(GITHUB-6275)</a>. **Workaround**: Create a header template and reference the image location absolutely.
 
 
 <!-- 59428 -->
 
-#### Issue: Cannot save a custom transactional email logo
-{:.no_toc} 
-
-**Workaround:** None
+* **Issue**: Cannot save a custom transactional email logo. **Workaround**: None.
 
 
 <!-- 53010 -->
 
-#### Issue: The scope selector on the Product page does not display all websites associated with a restricted user
-{:.no_toc} 
-
-**Workaround:** None
+* **Issue**: The scope selector on the Product page does not display all websites associated with a restricted user. **Workaround**: None.
 
 <!--- 57004 -->
 
