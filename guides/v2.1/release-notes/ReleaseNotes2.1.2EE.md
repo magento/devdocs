@@ -217,8 +217,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-#### Issue: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a> 
-{:.no_toc} 
+* **Issue**: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a> 
 
 
 **Workaround**: Clear your browser cache after upgrading. 
@@ -226,8 +225,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-#### Issue: When you edit a configurable product and add options to a simple product, Magento does not save these options. 
-{:.no_toc} 
+* **Issue**: When you edit a configurable product and add options to a simple product, Magento does not save these options. 
 
 
 **Workaround**: None
@@ -235,16 +233,13 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-#### Issue: Logo for transactional emails cannot be uploaded successfully <a href="https://github.com/magento/magento2/issues/6275" target="_blank">(GITHUB-6275)</a>
-{:.no_toc} 
+* **Issue**: Logo for transactional emails cannot be uploaded successfully <a href="https://github.com/magento/magento2/issues/6275" target="_blank">(GITHUB-6275)</a>
 
-**Workaround:** None.
+**Workaround:** None
 <!--- 57291-->
 
 
-
-#### Issue: The `catalogProductRepository` API (REST) returns an unexpected attribute type. Certain `attribute_code` values (for example,  `category_ids`) return an array instead of the expected string.
-{:.no_toc} 
+* **Issue**: The `catalogProductRepository` API (REST) returns an unexpected attribute type. Certain `attribute_code` values (for example,  `category_ids`) return an array instead of the expected string.
 
 
 **Workaround**: As needed, adjust your code so that it handles the response as an array.  
@@ -252,8 +247,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 <!--- 56853-->
 
 
-#### Issue:  Magento does not correctly display Product > Catalog table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. 
-{:.no_toc} 
+* **Issue**:  Magento does not correctly display Product > Catalog table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. 
 
 
 **Workaround**: Restart Varnish after upgrading. For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/upgrader/upgrade.html" target="_blank">Component Manager and System Upgrade Guide: Step 4</a>
