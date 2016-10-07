@@ -21,7 +21,7 @@ The Magento web API framework allows *guest users* to access resources that are 
 Use the following calls to get an authentication token:
 
 Request|REST|SOAP
-===|===|===
+---|---|---
 Get an admin token | `POST /V1/integration/admin/token` | `integrationAdminTokenServiceV1`
 Get a customer token | `POST /V1/integration/customer/token` | `integrationCustomerTokenServiceV1`
 
@@ -40,8 +40,10 @@ A authentication token request contains three basic elements:
       <td>Endpoint</td>
       <td>
          <p>A combination of the <i>server</i> that fulfills the request, the web service, and the <i>resource</i> against which the request is being made.</p>
-         <p>For example, in the <code>POST https://magento.host/index.php/rest/V1/integration/customer/token</code> endpoint, the server is <code>magento.host/index.php/</code>, the web service is <code>rest</code>, and the resource is <code>/V1/integration/customer/token</code>.</p>
-         <p>For an admin user, the resource is <code>/V1/integration/admin/token</code>.</p>
+         <p>For example, in the <code>POST https://magento.host/index.php/rest/V1/integration/customer/token</code> endpoint:</p>
+         <p>The server is <code>magento.host/index.php/</code></p>
+         <p>the web service is <code>rest</code></p>
+          the resource is <code>/V1/integration/customer/token</code>.</p>
       </td>
    </tr>
    <tr>
@@ -55,7 +57,7 @@ A authentication token request contains three basic elements:
       <td>
          <p>The user name and password for a Magento account.</p>
          <p>To specify these credentials in a JSON request body, include <code>'{"username":"&lt;USER-NAME&gt;", "password":"&lt;PASSWORD&gt;"}'</code> in the call.</p>
-         <p> To specify these credentials in XML, include &lt;code>&lt;login>&lt;username>customer1@example.com &lt;/username>&lt;password>customer1pw&lt;/password>&lt;/login></code> in the call.</p>
+         <p> To specify these credentials in XML, include <code>&lt;login>&lt;username>customer1@example.com&lt;/username>&lt;password>customer1pw&lt;/password>&lt;/login></code> in the call.</p>
       </td>
    </tr>
 </table>
@@ -88,7 +90,7 @@ A successful request returns a response body with the token, as follows:
 
 Any web API call that accesses a resource that requires a permission level higher than anonymous must contain the authentication token in the header To do this, specify a HTTP header in the following format:
 
-`Authorization Bearer: <authentication token>`
+`Authorization: Bearer <authentication token>`
 
 ### Admin access
 Admins can access any resources for which they are authorized.
