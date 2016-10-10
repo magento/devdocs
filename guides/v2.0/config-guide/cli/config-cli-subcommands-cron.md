@@ -1,10 +1,10 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Configure and run cron
 menu_title: Configure and run cron
-menu_node: 
+menu_node:
 menu_order: 100
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-cron.md
@@ -63,7 +63,7 @@ This section discusses how to run all Magento cron jobs every minute, which is t
   <p>Cron is critical for Magento operation; among other things, it's the only way to reindex on an ongoing basis, it generates automated e-mails, newsletters, the sitemap, and so on.</p></span>
 </div>
 
-Run Magento cron jobs as the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>. 
+Run Magento cron jobs as the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 
 {% include config/setup-cron.md %}
 
@@ -103,7 +103,7 @@ The following table discusses the meanings of the options.
 			<th>Value</th>
 			<th>Description</th>
 		</tr>
-		
+
 	<tr>
 		<td><p>&lt;group_name></p></td>
 		<td><p>Name of the cron group. The group name doesn't have to be unique.</p>
@@ -141,7 +141,7 @@ In addition, the `<group>` element supports the following options, all of which 
 			<th>Option</th>
 			<th>Description</th>
 		</tr>
-		
+
 	<tr>
 		<td><p>schedule_generate_every</p></td>
 		<td><p>Determines the frequency, in minutes, that schedules are written to the <code>cron_schedule</code> table.</p></td>
@@ -167,11 +167,14 @@ In addition, the `<group>` element supports the following options, all of which 
 		<td><p>history_failure_lifetime</p></td>
 		<td><p>Determines the number of minutes that the record of failed cron jobs are kept in the database.</p></td>		
 	</tr>
-	<tr>
+  <tr>
 		<td><p>use_separate_process</p></td>
-		<td><p>If set to <code>1</code>, all cron jobs in this group run in parallel as separate processes.</p>
-			<p>If set to <code>0</code>, all cron jobs in this group run one after the other as separate processes.</p></td>		
-	</tr>
+		<td><p>Specifies how the groups of cron jobs are run: in parallel or one by one.</p>
+			<p>Note that this applies to cron groups, not separate jobs in them.</p>
+
+			<p>If set to <code>1</code>, cron groups will run in parallel as separate processes. Jobs from every group will be executed one after another.</p>
+			<p>If set to <code>0</code>, cron groups will run one by one as separate processes. Jobs from all groups will be merged into a single list and executed one after another.</p></td>		
+</tr>
 	</tbody>
 </table>
 
@@ -180,7 +183,7 @@ As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/
 <h3 id="config-cli-cron-group-run">Run cron from the command line</h3>
 Command options:
 
-	magento cron:run [--group="<cron group name>"] 
+	magento cron:run [--group="<cron group name>"]
 
 where `--group` specifies the cron group to run (omit this option to run cron for all groups)
 
