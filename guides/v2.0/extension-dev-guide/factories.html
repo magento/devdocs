@@ -924,7 +924,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 20 July 2016 (PDT)</div>
+            <div class="updated">Updated: 10 October 2016 (PDT)</div>
             <h2 id="instantiating-objects-with-factories">Instantiating objects with factories</h2>
 
 <p>The most common way to request and work with objects in Magento is using <a href="/guides/v2.0/extension-dev-guide/depend-inj.html##dep-inj-preview-cons">constructor injection</a>.  Objects obtained this way (that is, using injectable classes) follow a singleton pattern, whereby the same instance is always returned by the Object Manager whenever a class is requested.</p>
@@ -938,7 +938,7 @@
 <span class="p">{</span>
     <span class="k">protected</span> <span class="nv">$_objectManager</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Magento\Framework\ObjectManager</span> <span class="nv">$objectManager</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Magento\Framework\ObjectManagerInterface</span> <span class="nv">$objectManager</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span> <span class="o">=</span> <span class="nv">$objectManager</span><span class="p">;</span>
     <span class="p">}</span>
