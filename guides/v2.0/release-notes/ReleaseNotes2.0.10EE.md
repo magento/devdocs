@@ -139,6 +139,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 ### Performance
+{:.no_toc} 
 
 <!--- 55300 -->* We've improved the load speed of the configurable product form. 
 
