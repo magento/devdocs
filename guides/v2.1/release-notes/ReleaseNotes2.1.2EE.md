@@ -55,7 +55,7 @@ The following list provides an overview of the security issues fixed in this rel
 <!--- 56912/1488-->*  Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.  
 
 
-<!--- 57565/1533-->* You can no longer change or fake a product price from the Magento storefront and then complete an order with that faked price. 
+<!--- 57565-->* You can no longer change or fake a product price from the Magento storefront and then complete an order with that faked price. 
 
 
 
@@ -74,7 +74,6 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-<!--- 56700/5719, 5890-->*  The timestamp associated with an order on the Admin > Sales > Order list now identifies when the order status was last updated or a commented upon. Previously, the timestamp indicated when the browser page was last refreshed. 
 
 <!--- 57463-->* Removed potential for exploitation of guest order view feature to harvest order information.  
 
@@ -99,14 +98,6 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-
-### Cross-Site Request Forgery  (CSRF)
-{:.no_toc} 
-
-<!--- 57581/1433-->* Resolved a potential cross-site scripting (XSS) vulnerability in which customer addresses could be deleted. You can no longer trick a user into deleting his store address book entries.  
-
-
-
 ### Cross-site scripting  (XSS)
 {:.no_toc} 
 
@@ -114,13 +105,14 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 57804/1539-->* Fixed issue with cross-site scripting reflected in loading section of request.
 
+<!--- 57580/1433 -->* Resolved a potential  vulnerability in which customer addresses could be deleted. You can no longer deceive a user into deleting his store address book entries.
+
+
 
 
 
 ### SQL injection
 {:.no_toc} 
-
-<!--- 58007/1544-->* We've reduced the risk of SQL injection in the F1 Sqli backend cache adapter by adding proper variable escaping. 
 
 
 <!--- 56540/1480-->*  Fixed issue with potential SQL injection through the Zend framework through ordering or grouping parameters. 
@@ -164,9 +156,10 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-<!--- 55126, 58401-->* We've fixed an issue with using the REST API to link simple products to configurable ones. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a>
+<!--- 55126-->* We've fixed an issue with using the REST API to link simple products to configurable ones. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a>
 
 
+<!--- 58401-->* You can now use the REST API to create a configurable product with a linked child product. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a>
 
 
 
@@ -204,6 +197,13 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 <!--- 58568-->* Magento now correctly renders HTML tags on the Sales Order page price field. 
 
+<!--- 57032-->* Visual swatches are now displayed  in search results.
+
+<!--- 57049-->* Magento now factors in the Weight attribute as expected when you use advanced search on grouped products.
+
+
+
+<!--- 56700/5719, 5890-->*  The timestamp associated with an order on the Admin > Sales > Order list now identifies when the order status was last updated or a commented upon. Previously, the timestamp indicated when the browser page was last refreshed. 
 
 
 

@@ -46,18 +46,19 @@ The following list provides an overview of the security issues fixed in this rel
 ### General security 
 {:.no_toc} 
 
+
+
 <!--- 56912/1488-->*  Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.  
 
 
-<!--- 57565/1533-->* You can no longer change or fake a product price from the Magento storefront and then complete an order with that faked price. 
+<!--- 57565-->* You can no longer change or fake a product price from the Magento storefront and then complete an order with that faked price. 
 
 
 
 <!--- 56852/1484-->*  Fixed issue with arbitrary PHP code execution via the PHP unserialize function during checkout. 
 
 
-<!--- 56594/1490-->*  Magento no longer permits you to use Products > Images and Videos > Insert YouTube video to potentially upload malicious code.
-
+<!--- 56594/1490-->*  Fixed issue with retrieving potentially sensitive information through the use of backend media.
 
 
 <!--- 53971-->*  Fixed issue with running `cron` jobs less frequently than specified by the application `cron` setting. 
@@ -68,7 +69,6 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-<!--- 56700/5719, 5890-->*  The timestamp associated with an order on the Admin > Sales > Order list now identifies when the order status was last updated or a commented upon. Previously, the timestamp indicated when the browser page was last refreshed. 
 
 <!--- 57463-->* Removed potential for exploitation of guest order view feature to harvest order information.  
 
@@ -101,9 +101,6 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-### Cross-site scripting  (XSS)
-{:.no_toc} 
-
 <!--- 57362-->*  Fixed issue with potential storage of malicious XSS code in the body of an email template. (A malicious user could use this this script to steal user information and cookies, or to bypass cross-site request forgery protection.) 
 
 <!--- 57804/1539-->* Fixed issue with cross-site scripting reflected in loading section of request.
@@ -113,8 +110,6 @@ The following list provides an overview of the security issues fixed in this rel
 
 ### SQL injection
 {:.no_toc} 
-
-<!--- 58007/1544-->* We've reduced the risk of SQL injection in the F1 Sqli backend cache adapter by adding proper variable escaping.
 
 <!--- 56540/1480-->*  Fixed issue with potential SQL injection through the Zend framework through ordering or grouping parameters. 
 
@@ -165,7 +160,10 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-<!--- 55126, 58401-->* We've fixed an issue with using the REST API to link simple products to configurable ones. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a>
+<<!--- 55126-->* We've fixed an issue with using the REST API to link simple products to configurable ones. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a>
+
+
+<!--- 58401-->* You can now use the REST API to create a configurable product with a linked child product. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a>
 
 
 
@@ -203,10 +201,16 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 <!--- 56952-->* We've resolved an issue with the get active payment methods (`getActiveMethods`). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a>
 
 
-<!--- 58568-->* Magento now correctly renders HTML tags on the Sales Order page price field. 
+<!--- 58568-->* Magento now correctly renders HTML tags on the Sales Order page price field.
 
 
-<!--- 58283 EE only-->
+<!--- 57032-->* Visual swatches are now displayed  in search results.
+
+<!--- 57049-->* Magento now factors in the Weight attribute as expected when you use advanced search on grouped products.
+
+<!--- 57401-->*
+
+
 
 
 <!--- 57797-->
@@ -217,8 +221,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-
-<!--- DELETED:  (won't fix) 57578, CLONE: 58123, 58111, 57049, 57032, OMIT: 58667, 57878, 58473, 58421, 58402, 58313 (releasenotes),57845, 55862, 57294, 58166, 58204, (internal) 58929, 58875, 58700, 58606, 58590, 58474, 56425 -->
+<!--- DELETED:  (won't fix) 57578, CLONE: 58123, 58111, 57049, OMIT: 58667, 57878, 58473, 58421, 58402, 58313 (releasenotes),57845, 55862, 57294, 58166, 58204, (internal) 58929, 58875, 58700, 58606, 58590, 58474, 56425 -->
 
 
 
