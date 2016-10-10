@@ -6,8 +6,8 @@ You can get Magento Community Edition 2.1 from Github, Composer, or using a comp
 See one of the following sections for more information:
 
 *	[Get the Magento CE software using Composer](#install-rc-composer)
-*	[Get the Magento CE software from GitHub](#install-rc-gh)
 *	[Get a compressed archive](#install-archive)
+*	[Get the Magento CE software from GitHub](#install-rc-gh)
 *	[Complete the installation](#install-finish)
 
 ### Get the Magento CE software using Composer {#install-rc-composer}
@@ -23,8 +23,17 @@ For example, to install Magento CE 2.1.1 in the `magento2` directory:
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
 
+### Get a compressed archive {#install-archive}
+{:.no_toc}
+
+{% include install/releasenotes/get-ce-software_zip.md %}
+
 ### Get the Magento CE software from GitHub {#install-rc-gh}
 {:.no_toc}
+
+<div class="bs-callout bs-callout-warning">
+    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
+</div>
 
 Before proceeding, please familiarize yourself with these prerequisites, then run
 
@@ -38,10 +47,6 @@ where
 
 `[-b <version>]` optionally checks out a new branch.
 
-### Get a compressed archive {#install-archive}
-{:.no_toc}
-
-{% include install/releasenotes/get-ce-software_zip.md %}
 
 ### Complete the installation {#install-finish}
 {:.no_toc}
