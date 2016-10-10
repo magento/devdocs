@@ -46,6 +46,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 57811 -->* You can no longer delete a currently logged-in user. 
 
+<!--- 51376 -->* Fixed issue that occurred during update with disclosure of the application's internal path.
 
 <!--- 51370 -->* Fixed issue that occurred during setup with disclosure of the application's internal path. 
 
@@ -69,7 +70,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 56542/1480 -->* Resolved issue with potential SQL injection through the use of the ordering or grouping parameters.
 
-<!--- 56905 -->* Fixed issue with retrieving potentially sensitive information by using backend media access functionality.
+<!--- 56905 -->* Fixed issue with retrieving potentially sensitive information through the use of backend media.
 
 
 ### Denial-of-service (DoS) attacks and brute force attacks
