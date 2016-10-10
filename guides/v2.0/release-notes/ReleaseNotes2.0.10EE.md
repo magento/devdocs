@@ -94,7 +94,6 @@ The following list provides an overview of the security issues fixed in this rel
 {:.no_toc} 
 
 
-
 <!--- 57803/1539 -->* Fixed issue with XSS reflection in the loading section of REST requests.
 
 

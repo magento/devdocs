@@ -97,7 +97,7 @@ The following list provides an overview of the security issues fixed in this rel
 {:.no_toc} 
 
 
-!--- 57803/1539 -->* Fixed issue with XSS reflection in the loading section of REST requests.
+<!--- 57803/1539 -->* Fixed issue with XSS reflection in the loading section of REST requests.
 
 
 <!--- 57363 -->*  Fixed issue with potential storage of malicious XSS code in the body of an email template. (A malicious user could use this this script to steal user information and cookies, or to bypass cross-site request forgery protection.)
