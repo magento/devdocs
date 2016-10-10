@@ -24,7 +24,7 @@ class Magento\Core\Model\Config\BaseFactory
 {
     protected $_objectManager;
 
-    public function __construct(Magento\Framework\ObjectManager $objectManager)
+    public function __construct(Magento\Framework\ObjectManagerInterface $objectManager)
     {
         $this->_objectManager = $objectManager;
     }
