@@ -1010,8 +1010,8 @@ This Release Candidate is for test purposes only. Do not install it in a product
 
   <ul>
     <li><a href="#install-rc-composer">Get the Magento CE software using Composer</a></li>
-    <li><a href="#install-rc-gh">Get the Magento CE software from GitHub</a></li>
     <li><a href="#install-archive">Get a compressed archive</a></li>
+    <li><a href="#install-rc-gh">Get the Magento CE software from GitHub</a></li>
     <li><a href="#install-finish">Complete the installation</a></li>
   </ul>
 
@@ -1028,21 +1028,6 @@ This Release Candidate is for test purposes only. Do not install it in a product
 
   <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
 </code></pre>
-
-  <h3 id="install-rc-gh" class="no_toc">Get the Magento CE software from GitHub</h3>
-
-  <p>Before proceeding, please familiarize yourself with these prerequisites, then run</p>
-
-  <pre><code>git clone git@github.com:magento/magento2.git
-cd magento2
-git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
-</code></pre>
-
-  <p>where</p>
-
-  <p><code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
-
-  <p><code>[-b &lt;version&gt;]</code> optionally checks out a new branch.</p>
 
   <h3 id="install-archive" class="no_toc">Get a compressed archive</h3>
 
@@ -1074,6 +1059,25 @@ git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
         <p><code>&lt;version&gt;</code> is the three-digit release number (for example, <code>2.0.7</code>, <code>2.1.0</code>, and so on).</p>
       </li>
     </ol>
+
+    <h3 id="install-rc-gh" class="no_toc">Get the Magento CE software from GitHub</h3>
+
+    <div class="bs-callout bs-callout-warning">
+    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
+</div>
+
+    <p>Before proceeding, please familiarize yourself with these prerequisites, then run</p>
+
+    <pre><code>git clone git@github.com:magento/magento2.git
+cd magento2
+git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
+</code></pre>
+
+    <p>where</p>
+
+    <p><code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
+
+    <p><code>[-b &lt;version&gt;]</code> optionally checks out a new branch.</p>
 
     <h3 id="install-finish" class="no_toc">Complete the installation</h3>
 

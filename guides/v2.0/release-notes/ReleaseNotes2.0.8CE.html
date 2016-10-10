@@ -837,27 +837,12 @@
   <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
 
-  <p>where <code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.8</code>)</p>
+  <p>where <code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.10</code>)</p>
 
-  <p>For example, to install Magento CE 2.0.8 in the <code>magento2</code> directory:</p>
+  <p>For example, to install Magento CE 2.0.10 in the <code>magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.8 magento2
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
 </code></pre>
-
-  <h3 id="install-rc-gh" class="no_toc">Get the Magento CE software from GitHub</h3>
-
-  <p>Before proceeding, please familiarize yourself with <a href="/guides/v2.0/install-gde/prereq/dev_install.html">these prerequisites</a>, then run</p>
-
-  <pre><code>git clone git@github.com:magento/magento2.git
-cd magento2
-git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
-</code></pre>
-
-  <p>where</p>
-
-  <p><code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.8</code>)</p>
-
-  <p><code>[-b &lt;version&gt;]</code> optionally checks out a new branch.</p>
 
   <h3 id="get-zip" class="no_toc">Get Magento CE using a compressed archive</h3>
 
@@ -889,6 +874,25 @@ git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
         <p><code>&lt;version&gt;</code> is the three-digit release number (for example, <code>2.0.7</code>, <code>2.1.0</code>, and so on).</p>
       </li>
     </ol>
+
+    <h3 id="install-rc-gh" class="no_toc">Get the Magento CE software from GitHub</h3>
+
+    <div class="bs-callout bs-callout-warning">
+    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
+</div>
+
+    <p>Before proceeding, please familiarize yourself with <a href="/guides/v2.0/install-gde/prereq/dev_install.html">these prerequisites</a>, then run</p>
+
+    <pre><code>git clone git@github.com:magento/magento2.git
+cd magento2
+git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
+</code></pre>
+
+    <p>where</p>
+
+    <p><code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.10</code>)</p>
+
+    <p><code>[-b &lt;version&gt;]</code> optionally checks out a new branch.</p>
 
     <h3 id="install-complete" class="no_toc">Complete the installation</h3>
 
