@@ -46,26 +46,30 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 57811 -->* You can no longer delete a currently logged-in user. 
 
+
+<!--- 51370 -->* Fixed issue that occurred during setup with disclosure of the application's internal path. 
+
+
+
 <!--- 56930 -->* Sessions now expire as expected after logout.
 
-
-<!--- 57566/1533-->* You can no longer change or fake a product price from the Magento storefront and then complete an order with that fake price. 
-
-
-<!--- 56902 -->* A user with lesser privileges can no longer use a JSON call to force an Admin user to add his private or public key.
-
-<!--- 56700 -->* The order comment timestamp now correctly reflects the time that the comment was submitted, not when the page was last refreshed. <a href="https://github.com/magento/magento2/issues/5719" target="_blank">(GITHUB-5719)</a>, <a href="https://github.com/magento/magento2/issues/5890" target="_blank">(GITHUB-5890)</a>
+<!--- 57582/1488 -->* Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.
 
 
-<!--- 56851 -->* Fixed issue with the `_convertAdditionalData` method's use of unserialized data during payment. <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a>
+<!--- 57566-->* You can no longer change or fake a product price from the Magento storefront and then complete an order with that fake price. 
+
+
+<!--- 56902, 56834  -->* A user with lesser privileges can no longer use a JSON call to force an Admin user to add his private or public key.
+
+<!--- 56851 -->* Fixed remote code execution issue in checkout. 
+
+<!--- 57579 -->* Upgrade now places stores in maintenance mode as expected. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
+
 
 
 <!--- 56542/1480 -->* Resolved issue with potential SQL injection through the use of the ordering or grouping parameters.
 
-<!--- 56905 -->* Fixed issue with using `retrieveImage` function to potentially access sensitive information using Products > Catalog -> Edit A Product> Images and Videos > Insert URL Youtube video.
-
-<!--- 56905 -->* Fixed issue with using `retrieveImage` function to potentially access sensitive information using Products > Catalog -> Edit A Product> Images and Videos > Insert URL Youtube video.
-
+<!--- 56905 -->* Fixed issue with retrieving potentially sensitive information by using backend media access functionality.
 
 
 ### Denial-of-service (DoS) attacks and brute force attacks
@@ -82,15 +86,18 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 45757 -->* Removed vulnerability in cart checkout experience by enhancing server-side CSRF validation.
 
+<!--- 57580/1433 -->* Resolved a potential  vulnerability in which customer addresses could be deleted. You can no longer deceive a user into deleting his store address book entries.
+
+
+
 
 
 
 ### Cross-site scripting  (XSS)
 {:.no_toc} 
 
-<!--- 57580/1433 -->* Resolved a potential XSS vulnerability in which customer addresses could be deleted. You can no longer deceive a user into deleting his store address book entries.
 
-<!--- 57803/1539 -->* Fixed issue with XSS reflection in the loading section of REST requests.
+!--- 57803/1539 -->* Fixed issue with XSS reflection in the loading section of REST requests.
 
 
 <!--- 57363 -->*  Fixed issue with potential storage of malicious XSS code in the body of an email template. (A malicious user could use this this script to steal user information and cookies, or to bypass cross-site request forgery protection.)
@@ -132,6 +139,11 @@ We address the following functional issues in this release.
 
 For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html" target="_blank">Magento Sales API</a>.
 
+### Performance
+
+<!--- 55300 -->* We've improved the load speed of the configurable product form. 
+
+<!--- 55791 -->* We've improved the load speed of the review step for the wizard used to create a configurable product.
 
 
 ### Tracking and shipping
@@ -160,9 +172,32 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 ### General fixes
 {:.no_toc} 
 
+
 <!--- 57065 -->* Magento now returns you to the Admin dashboard after you've successfully changed your Admin password. Previously, Magento prompted you to change your password even after you just successfully changed it. <a href="https://github.com/magento/magento2/issues/4331" target="_blank">(GITHUB-4331)</a>
 
-<!--- 57579 -->* Upgrade now places stores in maintenance mode as expected. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
+
+<!--- 55054 -->* You can now update multiselect attribute values for multiple products from the server side.  <a href="https://github.com/magento/magento2/issues/5459" target="_blank">(GITHUB-5459)</a>
+
+
+
+<!--- 56963, 57069 -->* State/Province field is now displayed as required on the Add New Address page. <a href="https://github.com/magento/magento2/issues/5279" target="_blank">(GITHUB-5279)</a>
+
+
+<!--- 57072 -->* Maestro credit card now passes validation. 
+
+<!--- 57390 -->* The cursor now appears as expected when you edit a product description.
+
+<!--- 57811 -->* You can no longer delete the Admin account or role you are logged in as. 
+
+<!--- 58674 -->* Visual swatches are now displayed when in search results. 
+
+<!--- 58695 -->* GiftRegistry *.less file is not properly packaged in the composer package
+
+<!--- 58883 -->* UI upgrade failures during S2 builds 2.0.10
+
+<!--- 58933 -->* Delete paging functionality for configurable product variations. 
+
+<!--- 56700 -->* The order comment timestamp now correctly reflects the time that the comment was submitted, not when the page was last refreshed. <a href="https://github.com/magento/magento2/issues/5719" target="_blank">(GITHUB-5719)</a>, <a href="https://github.com/magento/magento2/issues/5890" target="_blank">(GITHUB-5890)</a>
 
 
 
