@@ -189,7 +189,6 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 <!--- 57390 -->* The cursor now appears as expected when you edit a product description.
 
-<!--- 57811 -->* You can no longer delete the Admin account or role you are logged in as. 
 
 <!--- 58674 -->* Visual swatches are now displayed when in search results. 
 
