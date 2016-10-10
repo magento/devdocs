@@ -35,7 +35,7 @@ MariaDB and Percona are compatible with Magento because we support MySQL 5.6 API
 ### PHP 
 
 *	5.6.x
-*	7.0.2, 7.0.6 up to 7.1
+*	7.0.2, 7.0.6 up to but not including 7.1
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Magento 2.1.x no longer supports PHP 5.5.</p>

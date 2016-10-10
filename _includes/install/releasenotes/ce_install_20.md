@@ -15,14 +15,23 @@ This software is available from `repo.magento.com`. Before installing the CE sof
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
 
-where `<version>` matches the version you want (for example, `2.0.8`)
+where `<version>` matches the version you want (for example, `2.0.10`)
 
-For example, to install Magento CE 2.0.8 in the `magento2` directory:
+For example, to install Magento CE 2.0.10 in the `magento2` directory:
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.8 magento2
+	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
+
+### Get Magento CE using a compressed archive {#get-zip}
+{:.no_toc}
+
+{% include install/releasenotes/get-ce-software_zip.md %}
 
 ### Get the Magento CE software from GitHub {#install-rc-gh}
 {:.no_toc}
+
+<div class="bs-callout bs-callout-warning">
+    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
+</div>
 
 Before proceeding, please familiarize yourself with [these prerequisites]({{ page.baseurl }}install-gde/prereq/dev_install.html), then run
 
@@ -32,14 +41,9 @@ Before proceeding, please familiarize yourself with [these prerequisites]({{ pag
 
 where 
 
-`<version>` matches the version you want (for example, `2.0.8`)
+`<version>` matches the version you want (for example, `2.0.10`)
 
 `[-b <version>]` optionally checks out a new branch.
-
-### Get Magento CE using a compressed archive {#get-zip}
-{:.no_toc}
-
-{% include install/releasenotes/get-ce-software_zip.md %}
 
 ### Complete the installation {#install-complete}
 {:.no_toc}
