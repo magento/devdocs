@@ -25,12 +25,12 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 Magento 2.1.2 contains multiple bug fixes and enhancements, including
 
-* Support for **PHP 7.0.4 and 5.6.5**. This release supports PHP 5.6.5 and above instead of 5.6.x.
+* Support for <i>PHP 7.0.4 and 5.6.5</i>. This release supports PHP 5.6.5 and above instead of 5.6.x.
 
-* Compatible with **MySQL 5.7**.
+* Compatible with <i>MySQL 5.7</i>.
 
 
-* **Two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the `ShipOrder` and `InvoiceOrder` interfaces. 
+* <i>Two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the `ShipOrder` and `InvoiceOrder` interfaces. 
 
 ### Why are we adding new APIs in a patch release?
 {:.no_toc} 
@@ -43,7 +43,7 @@ Magento 2.1.2 contains multiple bug fixes and enhancements, including
 
 
 ## Security enhancements
-This release includes enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento installation to the latest version as soon as possible.
+This release includes enhancements to improve the security of your Magento software. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security/patches/magento-212-security-update" target="_blank">Magento Security Center</a>.
 
@@ -92,7 +92,7 @@ The following list provides an overview of the security issues fixed in this rel
 ### Denial-of-service (DoS) attacks and brute force attacks
 {:.no_toc} 
 
-<!--- 46026/1270-->* The Guest order view protection code is no longer vulnerable to brute force attacks.
+<!--- 46026/57463-->* The Guest order view protection code is no longer vulnerable to brute force attacks.
 
 <!--- 57302/1338-->*  You can no longer manipulate the full page cache to store incorrect pages under regular page URL entries.
 
@@ -197,13 +197,9 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 <!--- 58568-->* Magento now correctly renders HTML tags on the Sales Order page price field. 
 
-<!--- 57032-->* Visual swatches are now displayed  in search results.
+<!--- 57032-->* Visual swatches are now displayed in search results.
 
 <!--- 57049-->* Magento now factors in the Weight attribute as expected when you use advanced search on grouped products.
-
-
-
-<!--- 56700/5719, 5890-->*  The timestamp associated with an order on the Admin > Sales > Order list now identifies when the order status was last updated or a commented upon. Previously, the timestamp indicated when the browser page was last refreshed. 
 
 
 
