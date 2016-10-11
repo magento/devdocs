@@ -1337,7 +1337,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 11 October 2016 (PDT)</div>
             <h4 id="contents">Contents</h4>
 
 <ul>
@@ -1395,12 +1395,6 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
   <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
   <h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
-  <p>Use this command if you have one website and store. If you have multiple websites and stores, use the <a href="#config-cli-subcommands-run">multi-tenant compiler</a> instead.</p>
-
-  <div class="bs-callout bs-callout-warning">
-    <p>There is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you're preparing to deploy to production, you must use the multi-tenant compiler.</p>
-</div>
-
   <p>Run the command as follows (there are no options):</p>
 
   <pre><code>magento setup:di:compile
