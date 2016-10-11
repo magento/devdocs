@@ -20,9 +20,9 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ## Highlights
 
-* Patch 2.0.10 is now **compatible with MySQL 5.7**.
+* Patch 2.0.10 is now <i>compatible with MySQL 5.7</i>.
 
-* Patch 2.0.10 introduces **two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. For more information on these API enhancements, see the <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">Sales API</a> discussion in the <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a>. 
+* Patch 2.0.10 introduces <i>two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. For more information on these API enhancements, see the <a href="{{ page.baseurl }}mrg/ce/Sales/services.html#invoiceorder" target="_blank">Sales API</a> discussion in the <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a>. 
 
 #### Why are we adding new APIs in a patch release?
 {:.no_toc} 
@@ -34,7 +34,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 ## Security enhancements
 
-This release includes enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento installation to the latest version as soon as possible.
+This release includes enhancements to improve the security of your Magento software. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
@@ -195,7 +195,6 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 <!--- 58695 -->* GiftRegistry *.less file is not properly packaged in the composer package
 
-<!--- 58883 -->* UI upgrade failures during S2 builds 2.0.10
 
 <!--- 58933 -->* Delete paging functionality for configurable product variations. 
 
@@ -205,7 +204,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-<!--- Omitted (can't be reproduced or won't fix) 57800 (CLONES: 5704858314, 58798, 58695, 58883) (CANNOT REPRO: 53971, 53431) (INTERNAL ONLY: 58674, 58816, 558874, 56759, 58167, 57879, 57577, 57568, 57294, 57546), 57303, 55862, 52239, 58626, 58625, 58666, 58933, 58923 (WONT FIX: 58671-->
+<!--- Omitted (can't be reproduced or won't fix) 57800 (CLONES: 5704858314, 58798, 58883) (CANNOT REPRO: 53971, 53431) (INTERNAL ONLY:  58816, 558874, 56759, 58167, 57879, 57577, 57568, 57294, 57546), 57303, 55862, 52239, 58626, 58625, 58666, 58933, 58923 (WONT FIX: 58671-->
 
 ## Known issues
 
