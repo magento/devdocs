@@ -55,7 +55,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-<!--- 56852/1484-->*  Fixed issue with arbitrary PHP code execution via the PHP unserialize function during checkout. 
+<!--- 56852/1484-->*  Fixed issue with arbitrary PHP code execution during checkout. 
 
 
 <!--- 56594/1490-->*  Fixed issue with retrieving potentially sensitive information through the use of backend media.

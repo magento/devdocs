@@ -59,7 +59,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-<!--- 56852/1484-->*  Fixed issue with arbitrary PHP code execution via the PHP unserialize function during checkout. 
+<!--- 56852/1484-->*  Fixed issue with arbitrary PHP code execution during checkout. 
 
 
 <!--- 56594/1490-->*  Magento no longer permits you to use Products > Images and Videos > Insert YouTube video to potentially upload malicious code.
