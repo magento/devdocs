@@ -40,7 +40,7 @@ Magento storefront:
 
 If Magento *is* installed and you want to manage or upgrade components, see the following guides instead:
 
-*	<a href="{{ site.gdeurl" }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
+*	<a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
 
 	A Magento *component* is an extension, language package, or theme. The Component Manager installs, uninstalls, updates, enables, or disables components.
 *	<a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a>

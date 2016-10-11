@@ -50,7 +50,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir>/vendor/magento/module-solr/conf/* .</code></p>
 	</div>
 
-2.  After copying files, open `example/solr/magento2/core.properties` in a text editor and change:
+2.  After copying files, open the `<your Solr install dir>/example/solr/magento2/core.properties` file in a text editor and change:
 
 		name=collection1
 
