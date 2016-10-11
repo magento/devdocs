@@ -67,9 +67,9 @@ If PHP is installed, continue with the next prerequisite, <a href="{{page.baseur
 If PHP is *not* installed, see one of the following sections:
 
 *	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
-*	<a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a>
-*	<a href="#instgde-prereq-php5.66-install-ubuntu12">PHP 5.6 on Ubuntu 12</a>
-*	<a href="#instgde-prereq-php5.65-install-ubuntu14">PHP 5.5 on Ubuntu 14</a>
+*	<a href="#instgde-prereq-php5.6-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a>
+*	<a href="#instgde-prereq-php5.6-install-ubuntu12">PHP 5.6 on Ubuntu 12</a>
+*	<a href="#instgde-prereq-php5.5-install-ubuntu14">PHP 5.5 on Ubuntu 14</a>
 
 ## PHP 7.0 on Ubuntu 14 or 16 {#instgde-prereq-php70-ubuntu}
 
@@ -105,7 +105,7 @@ If PHP is *not* installed, see one of the following sections:
 
 {% endcollapsible %}
 
-<h2 id="instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</h2>
+<h2 id="instgde-prereq-php5.6-install-ubuntu">PHP 5.6 on Ubuntu 14</h2>
 
 {% collapsible To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14: %}
 
@@ -135,7 +135,7 @@ If PHP is *not* installed, see one of the following sections:
 
 {% endcollapsible %}
 
-<h3 id="instgde-prereq-php5.65-install-ubuntu14">PHP 5.5 on Ubuntu 14</h3>
+<h3 id="instgde-prereq-php5.5-install-ubuntu14">PHP 5.5 on Ubuntu 14</h3>
 
 {% collapsible To install PHP 5.5 on Ubuntu 14: %}
 
