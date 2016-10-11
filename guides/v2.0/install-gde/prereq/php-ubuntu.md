@@ -18,8 +18,8 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 *	<a href="#php-ubuntu-help-beginner">Help if you're just starting out</a>
 *	<a href="#ubuntu-verify-php">Verify PHP is installed</a>
 *	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
-*	<a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</a>
-*	<a href="#instgde-prereq-php5.65-install-ubuntu14">PHP 5.5 on Ubuntu 14</a>
+*	<a href="#instgde-prereq-php5.6-install-ubuntu">PHP 5.6 on Ubuntu 14</a>
+*	<a href="#instgde-prereq-php5.5-install-ubuntu14">PHP 5.5 on Ubuntu 14</a>
 *	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -114,7 +114,7 @@ If PHP is *not* installed, see one of the following sections:
 		apt-get -y update
 		add-apt-repository ppa:ondrej/php
 		apt-get -y update
-		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl
+		apt-get -y install php5 php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
 
 2.	Enter the following command to verify PHP 5.6 installed properly:
 
