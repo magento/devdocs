@@ -38,12 +38,6 @@ redirect_from:
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
-Use this command if you have one website and store. If you have multiple websites and stores, use the <a href="#config-cli-subcommands-run">multi-tenant compiler</a> instead.
-
-<div class="bs-callout bs-callout-warning">
-    <p>There is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you're preparing to deploy to production, you must use the multi-tenant compiler.</p>
-</div>
-
 Run the command as follows (there are no options):
 
 	magento setup:di:compile
