@@ -1337,7 +1337,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 7 September 2016 (PDT)</div>
+            <div class="updated">Updated: 11 October 2016 (PDT)</div>
             <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#mode-introduction">Introduction to Magento modes</a></li>
@@ -1382,6 +1382,21 @@
 </tbody>
 </table>
 
+<h2 id="mode-default">Default mode</h2>
+<p>As its name implies, default mode is how the Magento software operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not as optimized for production as is production mode.</p>
+
+<p>To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.</p>
+
+<p>In default mode:</p>
+
+<ul>
+  <li>Errors are logged to the file reports at server, and never shown to a user</li>
+  <li>Static view files are cached</li>
+  <li>Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being dynamically generated rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.</li>
+</ul>
+
+<p>For more information, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.</p>
+
 <h2 id="mode-developer">Developer mode</h2>
 <p>You should run the Magento software in developer mode when you’re extending or customizing it.</p>
 
@@ -1393,21 +1408,6 @@
   <li>System logging in <code>var/report</code> is verbose</li>
   <li>An exception is thrown in the error handler, rather than being logged</li>
   <li>An exception is thrown when an event subscriber cannot be invoked</li>
-</ul>
-
-<p>For more information, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.</p>
-
-<h2 id="mode-default">Default mode</h2>
-<p>As its name implies, default mode is how the Magento software operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not optimized for production.</p>
-
-<p>To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.</p>
-
-<p>In default mode:</p>
-
-<ul>
-  <li>Errors are logged to the file reports at server, and never shown to a user</li>
-  <li>Static view files are cached</li>
-  <li>Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being dynamically generated rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.</li>
 </ul>
 
 <p>For more information, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.</p>

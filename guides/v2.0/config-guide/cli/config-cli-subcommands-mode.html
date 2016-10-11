@@ -1337,7 +1337,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 11 October 2016 (PDT)</div>
             <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#config-mode-over">Overview of setting Magento modes</a></li>
@@ -1357,7 +1357,7 @@
 
 <p>For more information about Magento file system ownership and permissions, see <a href="/guides/v2.0/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a>.</p>
 
-<p>When you change to developer or production mode, we clear the contents of following directories when you change modes:</p>
+<p>When you change to developer or production mode, we clear the contents of following directories:</p>
 
 <pre><code>var/cache
 var/di
@@ -1402,6 +1402,10 @@ pub/static
 <p><code>{mode}</code> is required; it can be either <code>developer</code> or <code>production</code></p>
 
 <p><code>--skip-compilation</code> is an optional parameter you can use to skip <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html#config-cli-subcommands-single-overview">code compilation</a> when you change to production mode.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>You cannot currently change from either developer or production mode to <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
+</div>
 
 <p>Examples follow.</p>
 
