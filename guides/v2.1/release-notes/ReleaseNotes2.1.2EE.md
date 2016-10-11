@@ -130,7 +130,7 @@ We address the following functional issues in this release.
 {:.no_toc} 
 
 
-<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `ShipOrder` interface support tasks you can already do through the Admin dashboard, including the ability to:  
+<!--- 56429 -->*  We've added the ability to change the status of a shipment through the web API.  The new `ShipOrder` interface supports tasks you can already do through the Admin dashboard, including the ability to:  
 
 	* create a shipment document (full or partial)
 
