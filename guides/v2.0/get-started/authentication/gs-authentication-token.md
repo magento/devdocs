@@ -66,7 +66,7 @@ A authentication token request contains three basic elements:
 
 The following image shows a token request for the admin account using a REST client:
 
-![REST client](./gs_auth_token1.png)
+![REST client]({{page.baseurl}}get-started/authentication/gs_auth_token1.png)
 
 The following example uses the `curl` command to request a token for a customer account:
 
