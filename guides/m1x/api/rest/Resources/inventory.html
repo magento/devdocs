@@ -28,6 +28,8 @@ title: Inventory
     </li>
 </ul>
 
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: The default response for all APIs is JSON; however, this page currently uses mostly XML examples. We don't maintain this documentation much anymore so if you'd like to contribute some JSON, we'll acknowledge your help on this page. Click <strong>Edit this page on GitHub</strong> at the top of the page if you can help us out.</div>
+
 <h3><a name="RESTAPI-Resource-StockItems-RESTAPI-StockItems"></a>REST API: Stock Items</h3>
 
 <h4><a name="RESTAPI-Resource-StockItems-URI--stockitems"></a>URI: /stockitems</h4>
@@ -43,7 +45,7 @@ title: Inventory
 <b>Notes</b>: The list of attributes that will be returned for stock items is configured in the Magento Admin Panel.</p>
 
 <p><b>Authentication</b>: Admin<br/>
-<b>Default Format</b>: XML<br/>
+<b>Default Format</b>: JSON<br/>
 <b>Parameters</b> :<br/>
 <em>No Parameters</em></p>
 
@@ -124,7 +126,7 @@ title: Inventory
 
 
 <p><b>Authentication</b>: Admin<br/>
-<b>Default Format</b>: XML</p>
+<b>Default Format</b>: JSON</p>
 
 <p><b>Notes</b>: The Content-Type: text/xml parameter must be added to the request header.</p>
 
@@ -381,7 +383,7 @@ title: Inventory
 
 <p><b>Description</b>: Allows you to retrieve the stock item information.<br/>
 <b>Authentication</b>: Admin<br/>
-<b>Default Format</b>: XML</p>
+<b>Default Format</b>: JSON</p>
 
 <p><b>Response Example: XML</b></p>
 
@@ -442,7 +444,7 @@ title: Inventory
 <p><b>Description</b>: Allows you to update existing stock item data.<br/>
 <b>Notes</b>: The Content-Type: text/xml parameter must be added to the request header.<br/>
 <b>Authentication</b>: Admin<br/>
-<b>Default Format</b>: XML<br/>
+<b>Default Format</b>: JSON<br/>
 <b>Parameters</b>:<br/>
 <em>Enter only those parameters which you want to update.</em></p>
 
