@@ -183,6 +183,11 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 <!--- 57097-->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city field. 	
 
 
+### Upgrade
+{:.no_toc} 
+
+<!--- 59505-->* You can now save simple products created in 2.0.x environments after upgrading to environments running Magento 2.1.x. Previously, you could not successfully save the opened product after upgrading. 
+
 
 ### General fixes
 {:.no_toc} 
