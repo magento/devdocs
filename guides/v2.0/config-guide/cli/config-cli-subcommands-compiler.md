@@ -46,6 +46,11 @@ The following message displays to confirm success:
 
 	Generated code and dependency injection configuration successfully.
 
+<div class="bs-callout bs-callout-warning">
+    <p>In Magento versions 2.0.5 and earlier, there is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you're preparing to deploy to production, you must use the multi-tenant compiler.</p>
+    <p>The issue was resolved in Magento versions 2.0.6 and later.</p>
+</div>
+
 <h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
 Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
 
