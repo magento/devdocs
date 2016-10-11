@@ -59,13 +59,6 @@ class BaseFactory
 }
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-You may notice in the Magento 2 codebase that some core classes still call the `ObjectManager` directly.
-
-These instances are bits of legacy code from Magento 1 that need porting or exist for backwards compatibility purposes.
-
-They are not tacit endorsements of using the `ObjectManager` directly.  
-</div>
 
 ### Writing factories
 
