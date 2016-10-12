@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Restricting access to anonymous web APIs</title>
+	<title>Catalog module</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/rest/anonymous-api-security.html">
+	<link rel="canonical" href="//guides/v2.0/rest/catalog-notes.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/rest/anonymous-api-security.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/rest/catalog-notes.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/rest/anonymous-api-security.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/rest/catalog-notes.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -163,14 +163,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Restricting access to anonymous web APIs</h1>
+		<h1 class="page-heading">Catalog module</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/anonymous-api-security.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/catalog-notes.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -305,7 +305,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/rest/anonymous-api-security.html">Restricting access to anonymous web APIs</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/rest/anonymous-api-security.html">Restricting access to anonymous web APIs</a></li>
 
 									
 
@@ -349,7 +349,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/rest/catalog-notes.html">Catalog module</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/rest/catalog-notes.html">Catalog module</a></li>
 
 									
 
@@ -492,493 +492,43 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <p>Magento 2 allows some web APIs to be accessed by unauthenticated (anonymous) users. Many of these APIs allow a customer to have a robust shopping experience on the website without having to log in.</p>
+            <div class="updated">Updated: 3 October 2016 (PDT)</div>
+            <h2 id="post-v1categories">POST V1/categories</h2>
 
-<p>A subset of these APIs can return information about products, promotions, and storefronts that a merchant might consider proprietary. For example, Catalog module APIs can provide information about an item’s pricing and quantity, as well as items that are currently not for sale. The CMS module could reveal information about upcoming promotional landing pages and coupons. The Store module can reveal too much information about individual websites.</p>
+<p>When you create a category from Admin, you have the option to configure display and search engine optimization settings. The <code>POST V1/categories</code> API does not accept any of these parameters directly, but they can be defined as custom attributes, as shown in the following example.</p>
 
-<p>For this reason, by default, Magento 2 now prevents anonymous users from accessing the APIs that could reveal sensitive information.  When the feature is enabled, the user must have administrator privileges to execute the affected APIs.</p>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;My New Category&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;is_active&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;include_in_menu&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:[</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span><span class="s2">&quot;description&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;Women category description&quot;</span>
+         <span class="p">},</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span><span class="s2">&quot;meta_title&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value”:”Women meta title&quot;</span>
+         <span class="p">},</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span><span class="s2">&quot;meta_keywords&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value”:”Women meta keywords&quot;</span>
+         <span class="p">},</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span><span class="s2">&quot;meta_description&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value”:”Women meta description&quot;</span>
+         <span class="p">},</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span><span class="s2">&quot;url_key&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;women-test-key&quot;</span>
+         <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-<p>The following table lists the APIs that are no longer available to an anonymous user by default:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Module</th>
-      <th>API</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/:sku</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/attributes/:attributeCode</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/types</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/attribute-sets/sets/list</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/attribute-sets/:attributeSetId</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/attribute-sets/:attributeSetId/attributes</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/attribute-sets/groups/list</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/attributes/:attributeCode/options</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/media/types/:attributeSetName</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/:sku/media/:entryId</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/:sku/media</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/:sku/group-prices/:customerGroupId/tiers</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/categories/:categoryId</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/categories</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/:sku/options</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/:sku/options/:optionId</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/links/types</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/links/:type/attributes</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/products/:sku/links/:type</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Catalog</td>
-      <td>/V1/categories/:categoryId/products</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>CatalogInventory</td>
-      <td>/V1/stockStatuses/:productSku</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Cms</td>
-      <td>/V1/cmsPage/:pageId</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Cms</td>
-      <td>/V1/cmsBlock/:blockId</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>ConfigurableProduct</td>
-      <td>/V1/configurable-products/:sku/children</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>ConfigurableProduct</td>
-      <td>/V1/configurable-products/:sku/options/:id</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>ConfigurableProduct</td>
-      <td>/V1/configurable-products/:sku/options/all</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Store</td>
-      <td>/V1/store/storeViews</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Store</td>
-      <td>/V1/store/storeGroups</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Store</td>
-      <td>/V1/store/websites</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Store</td>
-      <td>/V1/store/storeConfigs</td>
-      <td>GET</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="bs-callout bs-callout-warning">
-    <p>Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, you might need to disable this feature.</p>
-    <p>To disable this feature, log in to the Admin panel and navigate to <b>Stores &gt; Configuration &gt; Services &gt; Magento Web API &gt; Web API Security</b>. Then select <b>Yes</b> from the <b>Allow Anonymous Guest Access</b> menu.</p>
-</div>
-
-<p>If the list of APIs that are inaccessible to anonymous users must be updated for a third-party extension, an integrator can add to their extension’s <code>di.xml</code> file to update or replace the functionality defined in the WebapiSecurity module.</p>
-
-<p>The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the checkout and add-to-cart Ajax functionalities.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Module</th>
-      <th>API</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CE</td>
-      <td>Checkout</td>
-      <td>/V1/guest-carts/:cartId/shipping-information</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Checkout</td>
-      <td>/V1/guest-carts/:cartId/totals-information</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Checkout</td>
-      <td>/V1/guest-carts/:cartId/payment-information</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Checkout</td>
-      <td>/V1/guest-carts/:cartId/payment-information</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Checkout</td>
-      <td>/V1/guest-carts/:cartId/set-payment-information</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Customer</td>
-      <td>/V1/customers</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Customer</td>
-      <td>/V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Customer</td>
-      <td>/V1/customers/password</td>
-      <td>PUT</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Customer</td>
-      <td>/V1/customers/isEmailAvailable</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Directory</td>
-      <td>/V1/directory/currency</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Directory</td>
-      <td>/V1/directory/countries</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Directory</td>
-      <td>/V1/directory/countries/:countryId</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>GiftMessage</td>
-      <td>/V1/guest-carts/:cartId/gift-message</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>GiftMessage</td>
-      <td>/V1/guest-carts/:cartId/gift-message/:itemId</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>GiftMessage</td>
-      <td>/V1/guest-carts/:cartId/gift-message</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>GiftMessage</td>
-      <td>/V1/guest-carts/:cartId/gift-message/:itemId</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Integration</td>
-      <td>/V1/integration/admin/token</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Integration</td>
-      <td>/V1/integration/customer/token</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId</td>
-      <td>PUT</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/order</td>
-      <td>PUT</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/shipping-methods</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/estimate-shipping-methods</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/items</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/items</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/items/:itemId</td>
-      <td>PUT</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/items/:itemId</td>
-      <td>DELETE</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/selected-payment-method</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/selected-payment-method</td>
-      <td>PUT</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/payment-methods</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/billing-address</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/billing-address</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/coupons</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/coupons/:couponCode</td>
-      <td>PUT</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/coupons</td>
-      <td>DELETE</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/collect-totals</td>
-      <td>PUT</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Quote</td>
-      <td>/V1/guest-carts/:cartId/totals</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>CE</td>
-      <td>Search</td>
-      <td>/V1/search</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>EE</td>
-      <td>GiftCardAccount</td>
-      <td>/V1/carts/guest-carts/:cartId/giftCards/:giftCardCode</td>
-      <td>DELETE</td>
-    </tr>
-    <tr>
-      <td>EE</td>
-      <td>GiftCardAccount</td>
-      <td>/V1/carts/guest-carts/:cartId/giftCards</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>EE</td>
-      <td>GiftCardAccount</td>
-      <td>/V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>EE</td>
-      <td>GiftRegistry</td>
-      <td>/V1/guest-giftregistry/:cartId/estimate-shipping-methods</td>
-      <td>POST</td>
-    </tr>
-  </tbody>
-</table>
 
 		</div>
 	</section>

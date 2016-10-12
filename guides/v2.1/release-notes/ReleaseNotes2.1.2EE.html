@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento CE 2.1.1 Release Notes</title>
+	<title>Magento EE 2.1.2 Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/release-notes/ReleaseNotes2.1.1CE.html">
+	<link rel="canonical" href="//guides/v2.1/release-notes/ReleaseNotes2.1.2EE.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.1.1CE.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.1.2EE.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.1.1CE.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.1.2EE.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento CE 2.1.1 Release Notes</h1>
+		<h1 class="page-heading">Magento EE 2.1.2 Release Notes</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/release-notes/ReleaseNotes2.1.1CE.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/release-notes/ReleaseNotes2.1.2EE.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -280,7 +280,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.1CE.html">Magento CE 2.1.1 Release Notes</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.1CE.html">Magento CE 2.1.1 Release Notes</a></li>
 
 									
 
@@ -304,7 +304,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.2EE.html">Magento EE 2.1.2 Release Notes</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.2EE.html">Magento EE 2.1.2 Release Notes</a></li>
 
 									
 
@@ -594,245 +594,359 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 6 September 2016 (PDT)</div>
+            <div class="updated">Updated: 12 October 2016 (PDT)</div>
             <ul id="markdown-toc">
-  <li><a href="#magento-community-edition-211" id="markdown-toc-magento-community-edition-211">Magento Community Edition 2.1.1</a>    <ul>
-      <li><a href="#fixed-issues" id="markdown-toc-fixed-issues">Fixed issues</a>        <ul>
-          <li><a href="#installation-and-upgrade" id="markdown-toc-installation-and-upgrade">Installation and upgrade</a></li>
-          <li><a href="#pricing" id="markdown-toc-pricing">Pricing</a></li>
-          <li><a href="#shopping-cart" id="markdown-toc-shopping-cart">Shopping cart</a></li>
-          <li><a href="#performance" id="markdown-toc-performance">Performance</a></li>
-          <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
-        </ul>
-      </li>
-      <li><a href="#known-issue" id="markdown-toc-known-issue">Known issue</a></li>
-      <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
-    </ul>
-  </li>
+  <li><a href="#magento-enterprise-edition-212" id="markdown-toc-magento-enterprise-edition-212">Magento Enterprise Edition 2.1.2</a></li>
+  <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
+  <li><a href="#security-enhancements" id="markdown-toc-security-enhancements">Security enhancements</a></li>
+  <li><a href="#functional-fixes-and-enhancements" id="markdown-toc-functional-fixes-and-enhancements">Functional fixes and enhancements</a></li>
+  <li><a href="#known-issues" id="markdown-toc-known-issues">Known issues</a></li>
+  <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
   <li><a href="#install-the-magento-software" id="markdown-toc-install-the-magento-software">Install the Magento software</a></li>
-  <li><a href="#upgrade-from-an-earlier-version" id="markdown-toc-upgrade-from-an-earlier-version">Upgrade from an earlier version</a>    <ul>
-      <li><a href="#migration-toolkits" id="markdown-toc-migration-toolkits">Migration toolkits</a></li>
-    </ul>
-  </li>
+  <li><a href="#upgrade-from-an-earlier-version" id="markdown-toc-upgrade-from-an-earlier-version">Upgrade from an earlier version</a></li>
+  <li><a href="#migration-toolkits" id="markdown-toc-migration-toolkits">Migration toolkits</a></li>
 </ul>
 
-<h2 id="magento-community-edition-211">Magento Community Edition 2.1.1</h2>
-<p>We are pleased to present Magento Community Edition 2.1.1. This release includes several functional fixes and enhancements to the deployment of static assets.</p>
+<h2 id="magento-enterprise-edition-212">Magento Enterprise Edition 2.1.2</h2>
+<p>We are pleased to present Magento Enterprise Edition 2.1.2. This release includes security enhancements and several functional fixes.</p>
 
 <p>Backward-incompatible changes are documented in <a href="/guides/v2.1/release-notes/backward-incompatible-changes-2.1.html">Magento 2.1 backward incompatible changes</a>.</p>
 
-<h3 id="fixed-issues">Fixed issues</h3>
+<h2 id="highlights">Highlights</h2>
 
+<p>Magento 2.1.2 contains multiple bug fixes and enhancements, including</p>
+
+<ul>
+  <li>
+    <p>Support for <i>PHP 7.0.4 and 5.6.5</i>. This release supports PHP 5.6.5 and above instead of 5.6.x.</p>
+  </li>
+  <li>
+    <p>Compatible with <i>MySQL 5.7</i>.</p>
+  </li>
+  <li>
+    <p><i>Two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API <code>ShipOrder</code> and <code>InvoiceOrder</code> methods to capture payment and ship product. See <a href="/guides/v2.1/mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the <code>ShipOrder</code> and <code>InvoiceOrder</code> interfaces.</p>
+  </li>
+</ul>
+
+<h3 class="no_toc" id="why-are-we-adding-new-apis-in-a-patch-release">Why are we adding new APIs in a patch release?</h3>
+
+<p><i>These new interfaces will not break any existing customizations or extensions.</i>  See <a href="https://alankent.me/category/magento/" target="_blank">Alan Kent’s blog about Magento</a> for more information about these features and Magento’s use of semantic versioning.</p>
+
+<h2 id="security-enhancements">Security enhancements</h2>
+<p>This release includes enhancements to improve the security of your Magento software. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
+
+<p>The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security/patches/magento-2010-and-212-security-update" target="_blank">Magento Security Center</a>.</p>
+
+<h3 class="no_toc" id="general-security">General security</h3>
+
+<!--- 56912/1488-->
+<ul>
+  <li>Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.</li>
+</ul>
+
+<!--- 57565-->
+<ul>
+  <li>You can no longer change or fake a product price from the Magento storefront and then complete an order with that faked price.</li>
+</ul>
+
+<!--- 56852/1484-->
+<ul>
+  <li>Fixed issue with arbitrary PHP code execution during checkout.</li>
+</ul>
+
+<!--- 56594/1490-->
+<ul>
+  <li>Magento no longer permits you to use Products &gt; Images and Videos &gt; Insert YouTube video to potentially upload malicious code.</li>
+</ul>
+
+<!--- 53971-->
+<ul>
+  <li>Fixed issue with running <code>cron</code> jobs less frequently than specified by the application <code>cron</code> setting.</li>
+</ul>
+
+<!--- 57965-->
+<ul>
+  <li>Sessions now expire as expected after logout.</li>
+</ul>
+
+<!--- 57463-->
+<ul>
+  <li>Removed potential for exploitation of guest order view feature to harvest order information.</li>
+</ul>
+
+<!--- 56940-->
+<ul>
+  <li>Kount and 3D Secure now work as expected for Braintree Vault.</li>
+</ul>
+
+<!--- 57812/1539, 1543-->
+<ul>
+  <li>You can no longer delete a currently logged-in user.</li>
+</ul>
+
+<!--- 56901/1492-->
+<ul>
+  <li>A user with lesser privileges can no longer force an Admin user to add his private or public key using a JSON call.</li>
+</ul>
+
+<h3 class="no_toc" id="denial-of-service-dos-attacks-and-brute-force-attacks">Denial-of-service (DoS) attacks and brute force attacks</h3>
+
+<!--- 46026/57463-->
+<ul>
+  <li>The Guest order view protection code is no longer vulnerable to brute force attacks.</li>
+</ul>
+
+<!--- 57302/1338-->
+<ul>
+  <li>You can no longer manipulate the full page cache to store incorrect pages under regular page URL entries.</li>
+</ul>
+
+<h3 class="no_toc" id="cross-site-scripting--xss">Cross-site scripting  (XSS)</h3>
+
+<!--- 57362-->
+<ul>
+  <li>Fixed issue with potential storage of malicious XSS code in the body of an email template. (A malicious user could use this this script to steal user information and cookies, or to bypass cross-site request forgery protection.)</li>
+</ul>
+
+<!--- 57804/1539-->
+<ul>
+  <li>Fixed issue with cross-site scripting reflected in loading section of request.</li>
+</ul>
+
+<!--- 57580/1433 -->
+<ul>
+  <li>Resolved a potential  vulnerability in which customer addresses could be deleted. You can no longer deceive a user into deleting his store address book entries.</li>
+</ul>
+
+<h3 class="no_toc" id="sql-injection">SQL injection</h3>
+
+<!--- 56540/1480-->
+<ul>
+  <li>Fixed issue with potential SQL injection through the Zend framework through ordering or grouping parameters.</li>
+</ul>
+
+<h2 id="functional-fixes-and-enhancements">Functional fixes and enhancements</h2>
 <p>We address the following functional issues in this release.</p>
 
-<h4 id="installation-and-upgrade">Installation and upgrade</h4>
+<h3 class="no_toc" id="sales-api-enhancements">Sales API enhancements</h3>
 
-<!--- 55357/53777-->
-<ul>
-  <li>You can now run <code>magento setup:upgrade --keep-generated</code> in production mode. Previously, Magento would throw an error when you ran <code>setup:upgrade</code> after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a></li>
-</ul>
-
-<!--- 56974-->
-<ul>
-  <li>You can now upgrade 2.0.9 with sample data to 2.1.1.</li>
-</ul>
-
-<h4 id="pricing">Pricing</h4>
-<!--- 54320 -->
-<ul>
-  <li>The Category page now displays current, rather than outdated,  product prices.</li>
-</ul>
-
-<!--- 55055 -->
-<ul>
-  <li>Tier pricing now works correctly with full page cache. <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a></li>
-</ul>
-
-<!--- 45339 -->
-<ul>
-  <li>Cart Price rules are now applied as expected to payment method conditions. Previously, discounts set in Cart Price rules were not applied during checkout.</li>
-</ul>
-
-<h4 id="shopping-cart">Shopping cart</h4>
-
-<!--- 53793 -->
-<ul>
-  <li>Magento now implements the minicart maximum display recently added item setting to your shopping cart.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a></li>
-</ul>
-
-<h4 id="performance">Performance</h4>
-
-<!--- 57410-->
-<ul>
-  <li>You can now quickly generate or preview multiple variations of a configurable product. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations.</li>
-</ul>
-
-<!--- 52660 -->
-<ul>
-  <li>We’ve improved the speed of static asset deployment.</li>
-</ul>
-
-<!--- 52614 -->
-<ul>
-  <li>The <code>setup:static-content:deploy</code> command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see <a href="https://github.com/magento/magento2/issues/4294" target="_blank">(GITHUB-4294)</a>.</li>
-</ul>
-
-<!--- 55300, 55620, 54682-->
-<ul>
-  <li>We’ve improved storefront performance when creating 2500 or more product variants.</li>
-</ul>
-
-<h4 id="miscellaneous">Miscellaneous</h4>
-
-<!--- 56892-->
-<ul>
-  <li>You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute.</li>
-</ul>
-
-<!--- 56951-->
-<ul>
-  <li>Magento now displays configurable products as expected after creation.</li>
-</ul>
-
-<!--- 56582-->
-<ul>
-  <li>You can now save a product with images multiple times.</li>
-</ul>
-
-<!--- 56126 -->
-<ul>
-  <li>You can now log in successfully after creating a custom attribute. Previously, Magento would display an error message, and you could not log in, after first creating a custom attribute, then logging out.</li>
-</ul>
-
-<!--- 55598/54787 -->
-<ul>
-  <li>You can now successfully place orders when the Enable and Configure Website Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase.  <a href="https://github.com/magento/magento2/issues/4785" target="_blank">(GITHUB-4785)</a></li>
-</ul>
-
-<!--- 50026 -->
-<ul>
-  <li>Attributes of the <code>salesInvoiceRepository</code> methods are now more appropriately type cast. (The datatype is now a nullable float.)  Previously, due to the use of an incorrect datatype, Magento would produce an error when calling the <code>salesInvoiceRepositoryV1GetList</code> method. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a></li>
-</ul>
-
-<!--- 55462/52448-->
-<ul>
-  <li>Magento now correctly displays customer address during account creation. Previously, when you selected a default billing address during creation of a new customer account, Magento would not display the address.</li>
-</ul>
-
-<!--- 54721-->
-<ul>
-  <li>You can now use Braintree as a payment method when applying reward points or store credit to an order.</li>
-</ul>
-
-<!--- 57420/54320-->
-<ul>
-  <li>The category page now shows the current price after Magento runs a scheduled update.  Previously, the category page would not update the  price after running a scheduled update.	<a href="https://github.com/magento/magento2/issues/4945" target="_blank">(GITHUB-4945)</a></li>
-</ul>
-
-<!--- DELETED: 54839 (release notes), 56893 (clone), 54647, 55897, 56945, 54963 -->
-
-<h3 id="known-issue">Known issue</h3>
-
-<p>The Sales API does not currently support all the update operations on objects that you can execute from the Admin. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
- 
-The Sales API</p>
-
+<!--- 56429 -->
 <ul>
   <li>
-    <p>supports create, read, delete, and search operations on objects</p>
-  </li>
-  <li>
-    <p>does not support updates to order status or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)</p>
+    <p>We’ve added the ability to change the status of a shipment through the web API.  The new <code>ShipOrder</code> interface supports tasks you can already do through the Admin dashboard, including the ability to:</p>
+
+    <ul>
+      <li>
+        <p>create a shipment document (full or partial)</p>
+      </li>
+      <li>
+        <p>add details about shipped items into an order</p>
+      </li>
+      <li>
+        <p>change status and state of an order according to performed actions</p>
+      </li>
+      <li>
+        <p>notify customer about new shipment document</p>
+      </li>
+    </ul>
   </li>
 </ul>
 
-<p>You can run these operations from the Admin.</p>
+<!--- 56428 -->
+<ul>
+  <li>
+    <p>We’ve added the ability to change the status of an invoice through the web API.  The new <code>InvoiceOrder</code> interface supports tasks you can already do through the Admin dashboard, including the ability to:</p>
 
-<h3 id="system-requirements">System requirements</h3>
+    <ul>
+      <li>
+        <p>create an invoice document (full or partial)</p>
+      </li>
+      <li>
+        <p>capture money placed with order payment</p>
+      </li>
+      <li>
+        <p>notify a customer about document creation</p>
+      </li>
+      <li>
+        <p>change order status and state</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>For more information on these API enhancements, see <a href="/guides/v2.1/mrg/ce/Sales/services.html" target="_blank">Magento Sales API</a>.</p>
+
+<!--- 55126-->
+<ul>
+  <li>We’ve fixed an issue with using the REST API to link simple products to configurable ones. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a></li>
+</ul>
+
+<!--- 58401-->
+<ul>
+  <li>You can now use the REST API to create a configurable product with a linked child product. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a></li>
+</ul>
+
+<h3 class="no_toc" id="cart-and-checkout">Cart and checkout</h3>
+
+<!--- 56431, 56426-->
+<ul>
+  <li>Magento now updates order status as expected after a shipment or invoice has been created through the API.</li>
+</ul>
+
+<!--- 54964-->
+<ul>
+  <li>Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. <a href="https://github.com/magento/magento2/issues/6121" target="_blank">(GITHUB-6121)</a></li>
+</ul>
+
+<h3 class="no_toc" id="tracking-and-shipping">Tracking and shipping</h3>
+
+<!--- 57460-->
+<ul>
+  <li>Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.</li>
+</ul>
+
+<!--- 57097-->
+<ul>
+  <li>Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city field.</li>
+</ul>
+
+<h3 class="no_toc" id="upgrade">Upgrade</h3>
+
+<!--- 59505-->
+<ul>
+  <li>You can now save simple products created in 2.0.x environments after upgrading to environments running Magento 2.1.x. Previously, you could not successfully save the opened product after upgrading.</li>
+</ul>
+
+<h3 class="no_toc" id="general-fixes">General fixes</h3>
+
+<!--- 54737, 55116-->
+<ul>
+  <li>Magento 2.1.2 now supports PHP 7.0.4.</li>
+</ul>
+
+<!--- 57003-->
+<ul>
+  <li>The Product page scope selector now displays all related websites associated with a restricted user.</li>
+</ul>
+
+<!--- 56952-->
+<ul>
+  <li>We’ve resolved an issue with the get active payment methods (<code>getActiveMethods</code>). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a></li>
+</ul>
+
+<!--- 58568-->
+<ul>
+  <li>Magento now correctly renders HTML tags on the Sales Order page price field.</li>
+</ul>
+
+<!--- 57032-->
+<ul>
+  <li>Visual swatches are now displayed in search results.</li>
+</ul>
+
+<!--- 57049-->
+<ul>
+  <li>Magento now factors in the Weight attribute as expected when you use advanced search on grouped products.</li>
+</ul>
+
+<!--- DELETED:  (won't fix) 57578, CLONE: 58123, 58111, 57049, 57032, OMIT: 58667, 57878, 58473, 58421, 58402, 58313 (releasenotes),57845, 55862, 57294, 58166, 58204, (internal) 58929, 58875, 58700, 58606, 58590, 58474, 56425 -->
+
+<h2 id="known-issues">Known issues</h2>
+
+<ul>
+  <li>
+    <p><strong>Issue</strong>: Error creating configurable products in 2.1.1 <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>. <strong>Workaround</strong>: Clear your browser cache after upgrading. 
+<!--- 58017--></p>
+  </li>
+  <li>
+    <p><strong>Issue</strong>: When you edit a configurable product and add options to a simple product, Magento does not save these options. <strong>Workaround</strong>: None.
+<!--- 58034--></p>
+  </li>
+  <li>
+    <p><strong>Issue</strong>: Logo for transactional emails cannot be uploaded successfully <a href="https://github.com/magento/magento2/issues/6275" target="_blank">(GITHUB-6275)</a>. <strong>Workaround:</strong> None.
+<!--- 57291--></p>
+  </li>
+  <li>
+    <p><strong>Issue</strong>: The <code>catalogProductRepository</code> API (REST) returns an unexpected attribute type. Certain <code>attribute_code</code> values (for example,  <code>category_ids</code>) return an array instead of the expected string. <strong>Workaround</strong>: As needed, adjust your code so that it handles the response as an array.</p>
+  </li>
+</ul>
+
+<!--- 56853-->
+
+<ul>
+  <li><strong>Issue</strong>:  Magento does not correctly display Product &gt; Catalog table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. <strong>Workaround</strong>: Restart Varnish after upgrading. For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/upgrader/upgrade.html" target="_blank">Component Manager and System Upgrade Guide: Step 4</a>.
+<!--- 54618--></li>
+</ul>
+
+<h2 id="system-requirements">System requirements</h2>
 <p>Our technology stack is built on PHP and MySQL. For more information, see
 <a href="/guides/v2.1/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento 2.1.2 requirements have changed slightly from 2.1.1. This release supports PHP 5.6.5 and above instead of 5.6.x.</p>
+</div>
 
 <div>
 
   <h2 id="install-the-magento-software">Install the Magento software</h2>
-  <p>You can get Magento Community Edition 2.1 from Github, Composer, or using a compressed archive.</p>
-
-  <p>See one of the following sections for more information:</p>
+  <p>See one of the following sections:</p>
 
   <ul>
-    <li><a href="#install-rc-composer">Get the Magento CE software using Composer</a></li>
-    <li><a href="#install-archive">Get a compressed archive</a></li>
-    <li><a href="#install-rc-gh">Get the Magento CE software from GitHub</a></li>
-    <li><a href="#install-finish">Complete the installation</a></li>
+    <li><a href="#install-rc-composer">Get Magento EE using Composer</a></li>
+    <li><a href="#get-zip">Get Magento EE using a compressed archive</a></li>
+    <li><a href="#install-complete">Complete the installation</a></li>
   </ul>
 
-  <h3 id="install-rc-composer" class="no_toc">Get the Magento CE software using Composer</h3>
+  <h3 id="install-rc-composer" class="no_toc">Get Magento EE using Composer</h3>
 
-  <p>The CE software is available from <code>repo.magento.com</code>. Before getting the CE software, familiarize yourself with the Composer metapackage  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
+  <p>Magento EE is available from <code>repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
 
   <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
 
-  <p>For example, to install Magento CE 2.1.1 in the <code>magento2</code> directory:</p>
+  <p>For example, to install 2.1.1 in the <code>magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
 </code></pre>
 
-  <h3 id="install-archive" class="no_toc">Get a compressed archive</h3>
+  <h3 id="get-zip" class="no_toc">Get Magento EE using a compressed archive</h3>
 
   <div>
 
     <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
 
     <ul>
-      <li>Magento CE software only</li>
-      <li>Magento CE software with sample data (designed to help you learn Magento faster)</li>
+      <li>Magento EE software only</li>
+      <li>Magento EE software with sample data (designed to help you learn Magento faster)</li>
     </ul>
 
     <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
     <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
 
-    <p>To get the Magento CE software archive:</p>
+    <p>To get the Magento EE archive:</p>
 
     <ol>
-      <li>Go to <a href="http://magento.com/download" target="_blank">http://magento.com/download</a>.</li>
+      <li>Go to <a href="https://www.magentocommerce.com/products/customer/account/login/" target="_blank">your account on magento.com</a>.</li>
+      <li>Log in with your Magento user name and password.</li>
+      <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+      <li>In the right pane, click <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Full Release</strong> or <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Full Release + Sample Data</strong> for the software.</li>
       <li>
-        <p>Choose either the software or the software and sample data:</p>
+        <p>Follow the instructions on your screen to complete the Magento EE download:</p>
 
         <ul>
-          <li><code>Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code>Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+          <li><code>Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code>Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
         </ul>
-
-        <p><code>&lt;version&gt;</code> is the three-digit release number (for example, <code>2.0.7</code>, <code>2.1.0</code>, and so on).</p>
       </li>
+      <li>Transfer the installation package to your development system.</li>
     </ol>
 
-    <h3 id="install-rc-gh" class="no_toc">Get the Magento CE software from GitHub</h3>
+    <h3 id="install-complete" class="no_toc">Complete the installation</h3>
 
-    <div class="bs-callout bs-callout-warning">
-    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
-</div>
-
-    <p>Before proceeding, please familiarize yourself with these prerequisites, then run</p>
-
-    <pre><code>git clone git@github.com:magento/magento2.git
-cd magento2
-git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
-</code></pre>
-
-    <p>where</p>
-
-    <p><code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
-
-    <p><code>[-b &lt;version&gt;]</code> optionally checks out a new branch.</p>
-
-    <h3 id="install-finish" class="no_toc">Complete the installation</h3>
-
-    <p>After you get the CE software:</p>
+    <p>After you get the EE software:</p>
 
     <ol>
       <li><a href="/guides/v2.1/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
@@ -847,26 +961,9 @@ git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
     </ol>
 
     <h2 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h2>
-    <p>See the following sections for more information.</p>
+    <p>To upgrade to Magento EE 2.1 from an earlier version, see <a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
 
-    <h3 id="upgrade-github" class="no_toc">Upgrade an existing installation from the GitHub repository</h3>
-
-    <p>Developers who contribute to the CE codebase can <a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.</p>
-
-    <ol>
-      <li>
-        <p>Go to the <a href="/guides/v2.1/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.</p>
-      </li>
-      <li>
-        <p>Follow the instructions to pull the updates from the repository and update using Composer.</p>
-      </li>
-    </ol>
-
-    <h3 id="upgrade-other" class="no_toc">Other upgrades</h3>
-
-    <p>Other types of upgrades are discussed in <a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
-
-    <h3 id="migration-toolkits">Migration toolkits</h3>
+    <h2 id="migration-toolkits">Migration toolkits</h2>
     <p>The <a href="/guides/v2.1/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.1/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
 
     <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
