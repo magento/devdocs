@@ -30,7 +30,12 @@
 <p>These Release Notes contain the following information:</p>
 <ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
 <li><a href="#ce19-patches">Recent Patches</a></li>
-<li><a href="http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.1.1.html" target="_blank">Magento CE 1.9.1.1 Release Notes</a></li>
+<li><a href="#ce19-1930">Magento CE 1.9.3.0 Release Notes</a></li>
+<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.4.html" target="_blank">Magento CE 1.9.2.4 Release Notes</a></li>
+<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.3.html" target="_blank">Magento CE 1.9.2.3 Release Notes</a></li>
+<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.2.html" target="_blank">Magento CE 1.9.2.2 Release Notes</a></li>
+<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.1.html" target="_blank">Magento CE 1.9.2.1 Release Notes</a></li>
+<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.html" target="_blank">Magento CE 1.9.2.0 Release Notes</a></li>
 <li><a href="http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.1.html" target="_blank">Magento CE 1.9.1.0 Release Notes</a></li>
 <li><a href="#ce19-1901">Magento CE 1.9.0.1 Release Notes</a></li>
 <li><a href="#ce19-1900">Magento CE 1.9.0.0 Release Notes</a></li>
@@ -42,13 +47,236 @@
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use CE 1.9.1.0 or later for <em>all new CE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
 
-<h2 id="ce19-1911">Magento CE 1.9.1.1 Release Notes</h2>
-<p>Magento CE 1.9.1.1 Release Notes are now part of the <a href="http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.1.1.html" target="_blank">User Guide</a>.</p>
+<h2 id="ce19-1930">Magento CE 1.9.3.0 Release Notes</h2>
+<p>See the following sections for information about this release:</p>
 
-<h2 id="ce19-1910">Magento CE 1.9.1.0 Release Notes</h2>
-<p>Magento CE 1.9.1.0 Release Notes are now part of the <a href="http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.1.html" target="_blank">User Guide</a>.</p>
+<ul><li><a href="#ce19-1930-highlights">Highlights</a></li>
+<li><a href="#ce19-1930security">Security Enhancements</a></li>
+<li><a href="#ce19-1930back">Backward-Incompatible Changes</a></li>
+<li><a href="#ce19-1930-changes">Changes</a></li>
+<li><a href="#ce19-1930fixes">Fixes</a></li>
+
+<h3 id="ce19-1930-highlights">Highlights</h3>
+<p>Magento Community Edition 1.9.3 delivers more than 120 quality improvements, as well as support for PHP 5.6 in addition to PHP 5.4 and 5.5. <!-- <a href="https://jira.corp.magento.com/browse/MPERF-7852" target="_blank">MPERF-7852</a> --></p>
+
+<h3 id="ce19-1930security">Security Enhancements</h3>
+<p>We addressed the following security issues in this release:</p>
+<ul><li><a href="#ce19-1930security-general">General security enhancements</a></li>
+	<li><a href="#ce19-1930security-pwd">Password enhancements<a></li>
+</ul>
+
+<h4 id="ee114-1430security-general">General security enhancements</h4>
+<p>For more information about these security enhancements, see <a href="https://magento.com/security/patches/supee-8788" target="_blank">our Security Center article</a>.</p>
+<p>Patches for major security issues in earlier versions of the Magento software are available on the <a href="https://www.magentocommerce.com/download" target="_blank">Magento download page (look for <code>SUPEE-8788</code>.)</p>
+<ul><li>Resolved a potential SQL injection (Zend Framework issue)</li>
+	<li>Resolved a cache poisoning issue</li>
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7714" target="_blank">MPERF-7714</a> --> We now provide better protection against path exploits.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8444" target="_blank">MPERF-8444</a>. --> Resolved a potential <a href="https://www.owasp.org/index.php/XSS" target="_blank">cross-site scripting (XSS)</a> vulnerability when adding a category.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8968" target="_blank">MPERF-8968</a>. --> Resolved a potential XSS vulnerability that affected the Magento server's request URI.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/APPSEC-1488" target="_blank">APPSEC-1488</a>. --> Resolved a potential XSS vulnerability in invitations.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8077" target="_blank">MPERF-8077</a> --> You can no longer cause out-of-memory errors on the Magento server by flooding it with images that have incorrect dimensions.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8059" target="_blank">MPERF-8059</a> --> The Magento Admin Panel login page now renders in HTTPS if you configured the Magento server for HTTPS.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8050" target="_blank">MPERF-8050</a> --> We added the <a href="https://www.owasp.org/index.php/List_of_useful_HTTP_headers" target="_blank"><code>nosniff</code> header</a> to our <code>.htaccess</code> files.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7516" target="_blank">MPERF-7516</a> --> Magento no longer uses Adobe Flash for uploads.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8192" target="_blank">MPERF-8192</a>, <a href="https://jira.corp.magento.com/browse/MPERF-7860" target="_blank">MPERF-7860</a>, <a href="https://jira.corp.magento.com/browse/MPERF-7859" target="_blank">MPERF-7859</a>, <a href="https://jira.corp.magento.com/browse/MPERF-7858" target="_blank">MPERF-7858</a>, <a href="https://jira.corp.magento.com/browse/MPERF-7846" target="_blank">MPERF-7846</a> --> Fixed several potential issues indicated by static code scans.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7707" target="_blank">MPERF-7707</a>. --> Resolved a potential man-in-the-middle vulnerability.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7649" target="_blank">MPERF-7649</a>.  -->Resolved a potential PHP security vulnerability.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8572" target="_blank">MPERF-8572</a>. --> An administrative user is no longer able to create a potential security vulnerability that used the block cache.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8363" target="_blank">MPERF-8363</a>. --> Resolved a potential <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)" target="_blank">cross-site request forgery (CSRF)</a> vulnerability involving the wishlist.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/APPSEC-1484" target="_blank">APPSEC-1484</a>.  -->Resolved a potential remote code excecution exploit.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/APPSEC-1517" target="_blank">APPSEC-1517</a>. --> It is no longer possible to  log in to a store as an existing customer using only an e-mail address.</li>
 
 
+
+
+</ul>
+
+
+<h4 id="ce19-1930security-pwd">Password enhancements</h4>
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7728" target="_blank">MPERF-7728</a> --> A user can reset a password only after receiving an e-mail. In addition, we introduced the following configuration settings:
+	<ul><li>Limit the number of forgotten password requests from one IP address to five times per hour.</li>
+		<li>Limit the number of forgotten password requests from one e-mail address to five times per 24 hours.</li>
+		<li>Limit the number of forgotten password requests to no more than once ever 10 minutes per e-mail address.</li></ul>
+</li>
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7609" target="_blank">MPERF-7609</a> --> The forgot password link expires after the first use or two hours (by default).</li>
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7588" target="_blank">MPERF-7588</a>, <a href="https://jira.corp.magento.com/browse/MPERF-7982" target="_blank">MPERF-7982</a> --> When a user changes their e-mail address, they are required to provide their password and to acknowledge the change from the previous address.</li>
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8039" target="_blank">MPERF-8039</a> --> We now ignore leading and trailing spaces in a user's password.</li>
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6831" target="_blank">MPERF-6831</a> --> The new customer e-mail now includes the customer's password.</li>
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5029" target="_blank">MPERF-5029</a> --> Resetting a password using a password recovery e-mail succeeds.</li>
+
+
+</ul>
+
+
+	
+
+</ul>
+
+
+
+
+</ul>
+
+<h3 id="ce19-1930back">Backward-Incompatible Changes</h3>
+<p>The following backward-incompatible changes were made in this release:</p>
+<p><code>Mage_Adminhtml_Block_Cms_Wysiwyg_Images_Content_Uploader</code>: Parent class was removed.</p>
+<p><code>Mage_Uploader_Model_Config_Abstract</code>: Overrides the magic method <code>__call</code> and its behavior can be inconsistent. For example: </p>
+
+<pre>->setData('underscore_key', 1)
+->getUnderscoreKey() //null</pre>
+
+<h3 id="ce19-1930fixes">Fixes</h3>
+<p>The following sections discuss other fixes in this release:</p>
+
+<ul><li><a href="#ce19-1930tax">Tax Calculation Fixes</a></li>
+	<li><a href="#ce19-1930fixes-cart">Shopping cart and checkout fixes</a></li>
+	<li><a href="#ce19-1930fixes-cat">Catalog fixes</a></li>
+	<li><a href="#ce19-1930fixes-price">Price rule fixes</a></li>
+	<li><a href="#ce19-1930fixes-swatch">Configurable swatches fixes</a></li>
+	<li><a href="#ce19-1930fixes-import">Import/export fixes</a></li>
+	<li><a href="#ce19-1930fixes-index">Indexer fixes</a></li>
+	<li><a href="#ce19-1930fixes-other">Other fixes</a></li>
+</ul>
+
+<h4 id="ce19-1930tax">Tax Calculation Fixes</h4>
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7035" target="_blank">MPERF-7035</a> --> The subtotal including tax on an invoice is calculated correctly. </li>
+
+
+</ul>
+
+<h4 id="ce19-1930fixes-cart">Shopping cart and checkout fixes</h4>
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7685" target="_blank">MPERF-7685</a> --> One product displays one time in a cart even if the product was added once as a guest and another time as a logged-in user. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7634" target="_blank">MPERF-7634</a> --> Bundled products now display properly in the mini cart as well as the shopping cart. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8032" target="_blank">MPERF-8032</a> --> Moving a configurable product to a shopping cart in the Admin Panel functions normally. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7770" target="_blank">MPERF-7770</a> --> Shipping discount coupons are now based correctly on a customer's shipping address. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7426" target="_blank">MPERF-7426</a> --> First Class Mail letter now displays as a shipping option in the shopping cart. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7003" target="_blank">MPERF-7003</a> --> You can now pay for a product using both store credit and reward points. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6877" target="_blank">MPERF-6877</a> --> An exception no longer displays when a customer uses a gift card in an invalid transaction (such as an incorrect payment card number). </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5976" target="_blank">MPERF-5976</a> --> We added validation so a special price must be less than the actual price. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6909" target="_blank">MPERF-6909</a>  -->Exceptions no longer display when a customer checks out. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8844" target="_blank">MPERF-8844</a> --> Fixed a programming issue that prevented serializing and unserializing values in the shopping cart. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7403" target="_blank">MPERF-7403</a> --> Magento recovers from payment processor unavailability properly; the customer is charged and the item is shipped. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6985" target="_blank">MPERF-6985</a> --> You can no longer order an empty product; that is, a product with no options. </li>
+
+
+
+
+</ul>
+
+<h4 id="ce19-1930fixes-cat">Catalog fixes</h4>
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7283" target="_blank">MPERF-7283</a> --> A configurable product with decimal quantity less 1 now displays the proper quantity in the catalog. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6530" target="_blank">MPERF-6530</a>  -->Configurable products are now sorted by attribute, not by product ID. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7962" target="_blank">MPERF-7962</a> --> Errors no longer display when you use <code>Mage_Catalog_Block_Product_List</code> on a product detail page. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7998" target="_blank">MPERF-7998</a> --> Removed the undefined variable <code>where</code> from <code>app/code/core/Mage/CatalogSearch/Model/Resource/Fulltext.php</code>. </li>
+
+
+
+
+</ul>
+
+<h4 id="ce19-1930fixes-price">Price rule fixes</h4>
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7314" target="_blank">MPERF-7314</a> --> A catalog price rule that targets a bundled product by percentage calculates the price properly. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6346" target="_blank">MPERF-6346</a> --> A shopping cart price rule that includes tax now calculates properly. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6903" target="_blank">MPERF-6903</a> --> With the flat product catalog enabled, a catalog price rule with multi-select attributes works properly. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5246" target="_blank">MPERF-5246</a> --> Errors no longer display when two users add a product at the same time. Magento thanks Babenko eCommerce for contributing this fix. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6980" target="_blank">MPERF-6980</a> --> You can now add configurable products to the shopping cart after configuring a shopping cart rule. </li>
+
+
+</ul>
+
+<h4 id="ce19-1930fixes-swatch">Configurable swatches fixes</h4>
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7036" target="_blank">MPERF-7036</a> --> Fixed a memory leak in the configurable swatches module. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7631" target="_blank">MPERF-7631</a>  -->Configurable swatches for out-of-stock products now display consistently in layered navigation, the category view page, and the product view page. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7066" target="_blank">MPERF-7066</a> --> Configurable swatches work properly even if there is no image (before the fix, a JavaScript error was thrown). </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8763" target="_blank">MPERF-8763</a> --> Resolved performance issues. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7066" target="_blank">MPERF-7066</a> --> Swatch images for configurable products display properly. </li>
+
+
+
+
+</ul>
+
+
+<h4 id="ce19-1930fixes-import">Import/export fixes</h4>
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-2074" target="_blank">MPERF-2074</a>  -->We bundled the following fixes in a patch:
+	<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-2074" target="_blank">MPERF-2074</a>  -->Exporting a large number of products no longer results in an out-of-memory error. </li>
+		<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-3579" target="_blank">MPERF-3579</a> --> You can import into multiple stores if some stores are set to be replaced. </li>
+		<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-3528" target="_blank">MPERF-3528</a> --> Re-importing customers that have a multi-select attribute preserves the attribute. </li>
+		<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-3689" target="_blank">MPERF-3689</a> --> File uploads are processed properly. </li>
+		<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7675" target="_blank">MPERF-7675</a> --> Fixed broken help links in the Magento Admin Panel. </li>
+	
+</ul>
+</li>
+
+
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-4068" target="_blank">MPERF-4068</a> --> Importing products no longer consumes an excessive amount of memory. </li>
+	
+	
+	
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5891" target="_blank">MPERF-5891</a> --> Coupon reports exported as <code>.csv</code> now display the correct totals. </li>
+
+
+
+</ul>
+
+<h4 id="ce19-1930fixes-index">Indexer fixes</h4>
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5426" target="_blank">MPERF-5426</a> --> With flat category tables enabled, reindexing no longer removes the category class tag. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7028" target="_blank">MPERF-7028</a> --> Resolved errors with the Product Flat Index not completely indexing a large number of changes. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5198" target="_blank">MPERF-5198</a> --> All indexes now reindex when set to update when scheduled. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5336" target="_blank">MPERF-5336</a> --> Improved performance of the category indexers. Magento thanks Vaimo for contributing this fix.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-2141" target="_blank">MPERF-2141</a>  -->Categories saved with a <code>/</code> character as the suffix display properly.</li>
+
+
+	</ul>
+
+<h4 id="ce19-1930fixes-other">Other fixes</h4>
+<ul>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8575" target="_blank">MPERF-8575</a> --> Applied United States Postal Service API changes for <a href="https://www.usps.com/business/web-tools-apis/documentation-updates.htm" target="_blank">January 17, 2016</a>. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7785" target="_blank">MPERF-7785</a> --> Default variable values now save normally. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7424" target="_blank">MPERF-7424</a> --> The WYSIWYG editor handles XHTML tags like <code>cellpadding</code> and <code>cellspacing</code> properly. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7362" target="_blank">MPERF-7362</a> --> The configuration setting <strong>Allow HTML Tags on Frontend</strong> is honored. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7349" target="_blank">MPERF-7349</a> --> Orders created using the Magento Admin now display on the Orders and Returns page on the storefront. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7348" target="_blank">MPERF-7348</a> --> The option to merge Cascading Stylesheets (CSS) and JavaScript now works properly with a responsive web design (RWD) theme. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7324" target="_blank">MPERF-7324</a> --> On a mobile device when the Magento storefront uses an RWD theme, the Filter bar displays one time only. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7320" target="_blank">MPERF-7320</a> --> The Magento Connect Manager downloader's <code>.htaccess</code> file is no longer overwritten when the downloader component is updated. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7258" target="_blank">MPERF-7258</a> --> The configuration cache is no longer corrupted under heavy load. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7062" target="_blank">MPERF-7062</a> --> Order update e-mails are sent only once. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7049" target="_blank">MPERF-7049</a> --> A SOAP API call to <code>/api/soap/?wsdl</code> returns normally. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6475" target="_blank">MPERF-6475</a> --> A value that contains special characters is handled without errors by the SOAP API. </li>
+	
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7000" target="_blank">MPERF-7000</a> --> Fixed the untranslatable <code>base/default/template/sales/guest/form.phtml</code> template. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6910" target="_blank">MPERF-6910</a> --> Magento now stores two-digit birth years properly (for example, <code>80</code> is stored as <code>1980</code>). </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6891" target="_blank">MPERF-6891</a> --> HTTP 200 (OK) status codes are returned for pages after a session expires. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6802" target="_blank">MPERF-6802</a> --> You can view a disabled product without errors if compilation is enabled. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6387" target="_blank">MPERF-6387</a> --> A Value Added Tax (VAT) ID now validates properly. If the customer specifies an invalid ID, the customer is notified they will be charged VAT tax. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5492" target="_blank">MPERF-5492</a> --> Listing shipments no longer displays an exception. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5162" target="_blank">MPERF-5162</a> --> You can filter associated products for a group product without errors. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5155" target="_blank">MPERF-5155</a> --> When you manage product attributes, selecting an action from <strong>Actions</strong> works properly. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-3281" target="_blank">MPERF-3281</a> --> You can now add a configurable product by SKU to an order using the Admin Panel. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-2615" target="_blank">MPERF-2615</a> --> You can now save a product's weight attribute. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-1808" target="_blank">MPERF-1808</a> --> You can now save changes to a CMS page hierarchy when hierarchy metadata is disabled. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5798" target="_blank">MPERF-5798</a>  -->You can now save a banner after upgrading. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7047" target="_blank">MPERF-7047</a> --> Using a Portable Network Graphics (<code>.png</code>) image on a CMS page no longer results in a <code>HEADERS_ALREADY_SENT</code> message to be logged. </li>
+	<li>Fixed an exception related to an unknown database table. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7059" target="_blank">MPERF-7059</a> --> Fixed an issue with JavaScript merging. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7053" target="_blank">MPERF-7053</a>  -->You can now print 10 or more shipping labels without issues. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7500" target="_blank">MPERF-7500</a> --> A PHP notice no longer occurs when you log the Magento Admin Panel IP address in the event log. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7068" target="_blank">MPERF-7068</a>  -->A SQL error no longer displays when you create a new floating point product attribute programmatically. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6881" target="_blank">MPERF-6881</a> --> Added a missing image to the codebase. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7063" target="_blank">MPERF-7063</a> --> The expression <code>Mage::getModel('core/variable')->addValuesToResult()</code> returning a collection with column <code>plain_value</code> and <code>html_value</code> now returns a collection with columns <code>plain_value</code> and <code>html_value</code>. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-6909" target="_blank">MPERF-6909</a> --> Payment no longer results in the exception <code>ERR (3): Notice: Undefined offset: 1 in app/code/core/Mage/Sales/Model/Order.php on line 1258</code>. </li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8069" target="_blank">MPERF-8069</a>  -->The correct telephone number displays in transactional e-mails. We changed the variable <code>phone</code> to <code>store_phone</code>. Magento thanks Classy Llama Studios for contributing this fix.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7918" target="_blank">MPERF-7918</a> --> The Google sitemap now lists store URLs properly.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8759" target="_blank">MPERF-8759</a> --> Implemented search query caching, which speeds up search results.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8592" target="_blank">MPERF-8592</a> --> After a customer submits an order, the following error should not display: <code>SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'ECO0000148' for key 'UNQ_SALES_FLAT_ORDER_INCREMENT_ID'</code>.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5460" target="_blank">MPERF-5460</a> --> With flat category enabled, you no longer see errors due to an undefined method call.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5453" target="_blank">MPERF-5453</a> --> Case-sensitive variations of URL rewrites work as expected.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-3718" target="_blank">MPERF-3718</a> --> Resolved a JavaScript syntax error in <code>bundle.js</code>.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7305" target="_blank">MPERF-7305</a>  -->The cron-related error <code>Warning: shell_exec() has been disabled for security reasons...</code> has been resolved. Magento thanks Stefan Hagspiel for reporting this issue.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7095" target="_blank">MPERF-7095</a> --> cron no longer runs multiple times unnecessarily.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7817" target="_blank">MPERF-7817</a> --> Cached static blocks now display properly.</li>
+
+</ul>
 
 <h2 id="ce19-1901">Magento CE 1.9.0.1 Release Notes</h2>
 <p>CE 1.9.0.1 resolved the following issues:</p>

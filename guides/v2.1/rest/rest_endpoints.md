@@ -197,6 +197,8 @@ salesInvoiceManagementV1: `http://<magento_host>/rest/default/schema&services=sa
 
 salesInvoiceCommentRepositoryV1: `http://<magento_host>/rest/default/schema&services=salesInvoiceCommentRepositoryV1`
 
+salesInvoiceOrderV1: `http://<magento_host>/rest/default/schema&services=salesInvoiceOrderV1`
+
 salesCreditmemoManagementV1: `http://<magento_host>/rest/default/schema&services=salesCreditmemoManagementV1`
 
 salesCreditmemoRepositoryV1: `http://<magento_host>/rest/default/schema&services=salesCreditmemoRepositoryV1`
@@ -210,6 +212,8 @@ salesShipmentManagementV1: `http://<magento_host>/rest/default/schema&services=s
 salesShipmentCommentRepositoryV1: `http://<magento_host>/rest/default/schema&services=salesShipmentCommentRepositoryV1`
 
 salesShipmentTrackRepositoryV1: `http://<magento_host>/rest/default/schema&services=salesShipmentTrackRepositoryV1`
+
+salesShipOrderV1: `http://<magento_host>/rest/default/schema&services=salesShipOrderV1`
 
 salesTransactionRepositoryV1: `http://<magento_host>/rest/default/schema&services=salesTransactionRepositoryV1`
 
