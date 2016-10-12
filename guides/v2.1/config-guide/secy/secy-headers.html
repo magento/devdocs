@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install Varnish</title>
+	<title>Prevent cache poisoning</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/config-guide/varnish/config-varnish-install.html">
+	<link rel="canonical" href="//guides/v2.1/config-guide/secy/secy-headers.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/secy/secy-headers.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/varnish/config-varnish-install.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/secy/secy-headers.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Install Varnish</h1>
+		<h1 class="page-heading">Prevent cache poisoning</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/varnish/config-varnish-install.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/secy/secy-headers.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -349,7 +349,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/secy/secy-headers.html">Prevent cache poisoning</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/config-guide/secy/secy-headers.html">Prevent cache poisoning</a></li>
 
 									
 
@@ -895,7 +895,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
 
 									
 
@@ -1414,37 +1414,59 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="config-varnish-install">Install Varnish</h2>
-<p>Installing the Varnish software is beyond the scope of this guide. For more information about installing Varnish, see:</p>
+            <div class="updated">Updated: 12 October 2016 (PDT)</div>
+            <h2 id="prevent-cache-poisoning">Prevent cache poisoning</h2>
+<p>This topic discusses how to prevent cache poisoning if you use the Microsoft Internet Information Server (IIS) web server. <em>Cache poisoning</em> is a method of changing cache contents to include different pages from the same site. For example, it is possible to inject an HTTP 404 (Not Found) error page in place of some benign page (for example, the storefront home page), which can lead to a potential denial-of-service (DoS). The malicious page URLs are cached by Varnish or Redis, hence the name <em>page cache poisoning</em>.</p>
+
+<p>These types of attacks can be difficult to detect because they do not result in errors in web server logs.</p>
+
+<p>This solution applies to the following Magento versions:</p>
 
 <ul>
-  <li><a href="http://wiki.mikejung.biz/Varnish" target="_blank">installation wiki</a></li>
-  <li><a href="https://www.varnish-cache.org/docs" target="_blank">Varnish installation guides</a></li>
-  <li><a href="http://www.tecmint.com/install-varnish-cache-web-accelerator" target="_blank">How to install Varnish (Tecmint)</a></li>
+  <li>2.0.10 and later</li>
+  <li>2.1.12 and later</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.</p>
+  <p>This topic is intended for experienced IIS administrators. </p>
 </div>
 
-<h2 id="config-varnish-version">Confirm your Varnish version</h2>
-<p>Enter the following command to display the version of Varnish you’re running:</p>
+<h3 id="description">Description</h3>
+<p>The issue results if URL rewrites are enabled on the IIS server, and any of the following HTTP headers are altered before the request reaches the Varnish or Redis caching service:</p>
 
-<pre><code>varnishd -V
-</code></pre>
+<ul>
+  <li><code>X-Rewrite-Url</code></li>
+  <li><code>X-Original-Url</code></li>
+  <li><code>IIS-wasurlrewritten</code></li>
+  <li><code>Unencoded-URL</code></li>
+  <li><code>Orig-path-info</code></li>
+</ul>
 
-<p>A sample follows:</p>
+<p>If these headers are changed, the resulting URL and content are cached, resulting in potential vulnerabilities.</p>
 
-<pre><code>varnishd (varnish-4.0.3 revision b8c4a34)
-Copyright (c) 2006 Verdens Gang AS
-Copyright (c) 2006-2014 Varnish Software AS
-</code></pre>
+<h3 id="solution">Solution</h3>
+<p>We provide the option to remove the values of all of the preceding headers based on the IIS server setting for <code>Enable_IIS_Rewrites</code>.</p>
 
-<p>Make sure the version is at least 3.0.5 or any version of 4.x before continuing.</p>
+<ul>
+  <li>If <code>Enable_IIS_Rewrites</code> is set to <code>0</code>,  the values of the headers are removed.</li>
+  <li>
+    <p>If <code>Enable_IIS_Rewrites</code> is set to <code>1</code>, the values of the headers are left intact.</p>
 
-<h3 id="next-step">Next step</h3>
-<p><a href="/guides/v2.1/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></p>
+    <div class="bs-callout bs-callout-warning">
+	<p>If you set <code>Enable_IIS_Rewrites</code> to <code>1</code>, you must not allow the values of the preceding headers to be altered before the request reaches the IIS web server.</p>
+       
+</div>
+  </li>
+</ul>
+
+<!--
+	http://www.iis.net/learn/extensions/url-rewrite-module/url-rewrite-module-configuration-reference
+
+	http://www.iis.net/learn/extensions/url-rewrite-module/url-rewrite-module-configuration-reference#UsingServerVars
+
+	http://www.iis.net/learn/extensions/url-rewrite-module
+
+	http://www.iis.net/learn/extensions/url-rewrite-module/setting-http-request-headers-and-iis-server-variables -->
 
 		</div>
 	</section>

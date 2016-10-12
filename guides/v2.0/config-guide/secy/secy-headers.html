@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Database caching</title>
+	<title>Prevent cache poisoning</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/config-guide/cache/caching-database.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/secy/secy-headers.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/cache/caching-database.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/secy/secy-headers.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/cache/caching-database.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/secy/secy-headers.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -163,14 +163,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Database caching</h1>
+		<h1 class="page-heading">Prevent cache poisoning</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/cache/caching-database.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/secy/secy-headers.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -347,7 +347,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-headers.html">Prevent cache poisoning</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/secy/secy-headers.html">Prevent cache poisoning</a></li>
 
 									
 
@@ -755,7 +755,7 @@
 									
 
 
-											<li class="level3Child cache-types  active " data-menunode="cache-types"><a href="/guides/v2.0/config-guide/cache/caching-database.html">Database caching</a>
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.0/config-guide/cache/caching-database.html">Database caching</a>
 
 
 									
@@ -1345,282 +1345,59 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 27 July 2016 (PDT)</div>
-            <h4 id="contents">Contents</h4>
-<ul>
-  <li><a href="#mage-cache-db-over">Overview of database caching</a></li>
-  <li><a href="#mage-cache-db-prereq">Prerequisites</a></li>
-  <li><a href="#mage-cache-db-di">Database caching using the <code>default</code> cache frontend</a></li>
-  <li><a href="#mage-cache-db-env">Database caching using a custom cache frontend</a></li>
-  <li><a href="#mage-cache-db-verify">Verify database caching is working</a></li>
-  <li><a href="#mage-cache-db-config">Configuration examples</a></li>
-</ul>
+            <div class="updated">Updated: 12 October 2016 (PDT)</div>
+            <h2 id="prevent-cache-poisoning">Prevent cache poisoning</h2>
+<p>This topic discusses how to prevent cache poisoning if you use the Microsoft Internet Information Server (IIS) web server. <em>Cache poisoning</em> is a method of changing cache contents to include different pages from the same site. For example, it is possible to inject an HTTP 404 (Not Found) error page in place of some benign page (for example, the storefront home page), which can lead to a potential denial-of-service (DoS). The malicious page URLs are cached by Varnish or Redis, hence the name <em>page cache poisoning</em>.</p>
 
-<h2 id="mage-cache-db-over">Overview of database caching</h2>
-<p>This topic discusses how to use the Magento 2 database for caching. After you complete these tasks, cached objects are stored in the <code>cache</code> and <code>cache_tag</code> Magento 2 database tables. Nothing is stored <code>var/cache</code> or <code>var/page_cache</code>.</p>
+<p>These types of attacks can be difficult to detect because they do not result in errors in web server logs.</p>
 
-<p>This topic discusses how to set up database caching and how to verify database caching is working. We discuss the following options:</p>
+<p>This solution applies to the following Magento versions:</p>
 
 <ul>
-  <li>Using the <code>default</code> cache frontend, in which case you modify <code>di.xml</code> only.</li>
-  <li>Using a custom cache frontend, in which case you modify <code>env.php</code> only.</li>
+  <li>2.0.10 and later</li>
+  <li>2.1.12 and later</li>
 </ul>
-
-<div class="bs-callout bs-callout-warning">
-    <p>Database caching&mdash;like file-based caching&mdash; works well in a development environment but we <em>strongly recommend</em> you use <a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish</a> in production instead.</p>
-    <p>Varnish is designed to accelerate the HTTP protocol.</p>
-</div>
-
-<h2 id="mage-cache-db-prereq">Prerequisites</h2>
-<p>Before you continue, if you’re using your own frontend cache, make sure you <a href="/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you’re using the <code>default</code> frontend cache, you don’t have to do that.</p>
-
-<p>We provide <a href="#mage-cache-db-config">sample configurations</a> at the end of this topic.</p>
-
-<h2 id="mage-cache-db-di">Database caching using the <code>default</code> cache frontend</h2>
-<p>To enable database caching using the <code>default</code> frontend, you must modify <code>&lt;your Magento install dir&gt;/app/etc/di.xml</code>, which is the global deployment injection configuration for the Magento application.</p>
-
-<p>To modify <code>di.xml</code>:</p>
-
-<ol>
-  <li>Log in to the Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-  <li>
-    <p>Enter the following commands to make a copy of <code>di.xml</code>:</p>
-
-    <pre><code>cd &lt;your Magento install dir&gt;/app/etc
-cp di.xml di.xml.bak
-</code></pre>
-  </li>
-  <li>
-    <p>Open <code>di.xml</code> in a text editor and locate the following block:</p>
-
-    <pre><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
-   &lt;arguments&gt;
-      &lt;argument name="frontendSettings" xsi:type="array"&gt;
-          &lt;item name="page_cache" xsi:type="array"&gt;
-              &lt;item name="backend_options" xsi:type="array"&gt;
-                &lt;item name="cache_dir" xsi:type="string"&gt;page_cache&lt;/item&gt;
-              &lt;/item&gt;
-          &lt;/item&gt;
-      &lt;/argument&gt;
-   &lt;/arguments&gt;
-&lt;/type&gt;
-&lt;type name="Magento\Framework\App\Cache\Type\FrontendPool"&gt;
-   &lt;arguments&gt;
-      &lt;argument name="typeFrontendMap" xsi:type="array"&gt;
-        &lt;item name="full_page" xsi:type="string"&gt;page_cache&lt;/item&gt;
-      &lt;/argument&gt;
-   &lt;/arguments&gt;
-&lt;/type&gt;
-</code></pre>
-
-    <p>The <code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;</code> node configures options for the in-memory pool of all frontend cache instances.</p>
-
-    <p>The <code>&lt;type name="Magento\Framework\App\Cache\Type\FrontendPool"&gt;</code> node configures cache frontend options specific to each cache type.</p>
-  </li>
-  <li>
-    <p>Replace the entire block with the following:</p>
-
-    <pre><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
-	&lt;arguments&gt;
-    	&lt;argument name="frontendSettings" xsi:type="array"&gt;
-    	    &lt;item name="page_cache" xsi:type="array"&gt;
-    	      &lt;item name="backend" xsi:type="string"&gt;database&lt;/item&gt;
-     	       &lt;/item&gt;
-     	     &lt;item name="&lt;your cache id&gt;" xsi:type="array"&gt;
-     	     &lt;item name="backend" xsi:type="string"&gt;database&lt;/item&gt;
-     	     &lt;/item&gt;
-   		&lt;/argument&gt;
-	&lt;/arguments&gt;
-&lt;/type&gt;
-&lt;type name="Magento\Framework\App\Cache\Type\FrontendPool"&gt;
-	&lt;arguments&gt;
- 	   &lt;argument name="typeFrontendMap" xsi:type="array"&gt;
- 	       &lt;item name="backend" xsi:type="string"&gt;database&lt;/item&gt;
- 	   &lt;/argument&gt;
-	&lt;/arguments&gt;
-&lt;/type&gt;
-</code></pre>
-
-    <p>where <code>&lt;your cache id&gt;</code> is your unique cache identifier.</p>
-  </li>
-  <li>
-    <p>Save your changes to <code>di.xml</code> and exit the text editor.</p>
-  </li>
-  <li>Continue with <a href="#mage-cache-db-verify">Verify database caching is working</a>.</li>
-</ol>
-
-<h2 id="mage-cache-db-env">Database caching using a custom cache frontend</h2>
-<p>This section discusses how to set up database caching with a custom cache frontend.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p></span>
+  <p>This topic is intended for experienced IIS administrators. </p>
 </div>
 
-<p>To enable database caching using a custom cache frontend, you must modify <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> as follows:</p>
+<h3 id="description">Description</h3>
+<p>The issue results if URL rewrites are enabled on the IIS server, and any of the following HTTP headers are altered before the request reaches the Varnish or Redis caching service:</p>
 
-<ol>
-  <li>Log in to the Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+<ul>
+  <li><code>X-Rewrite-Url</code></li>
+  <li><code>X-Original-Url</code></li>
+  <li><code>IIS-wasurlrewritten</code></li>
+  <li><code>Unencoded-URL</code></li>
+  <li><code>Orig-path-info</code></li>
+</ul>
+
+<p>If these headers are changed, the resulting URL and content are cached, resulting in potential vulnerabilities.</p>
+
+<h3 id="solution">Solution</h3>
+<p>We provide the option to remove the values of all of the preceding headers based on the IIS server setting for <code>Enable_IIS_Rewrites</code>.</p>
+
+<ul>
+  <li>If <code>Enable_IIS_Rewrites</code> is set to <code>0</code>,  the values of the headers are removed.</li>
   <li>
-    <p>Enter the following commands to make a copy of <code>env.php</code>:</p>
+    <p>If <code>Enable_IIS_Rewrites</code> is set to <code>1</code>, the values of the headers are left intact.</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;/app/etc
-cp env.php env.php.bak
-</code></pre>
-  </li>
-  <li>
-    <p>Open <code>env.php</code> in a text editor and add the following anywhere, such as before <code>'cache_types' =&gt;</code>:</p>
-
-    <pre><code>'cache' =&gt; [
-    'frontend' =&gt; [
-        '&lt;unique frontend id&gt;' =&gt; [
-             &lt;cache options&gt;
-        ],
-    ],
-    'type' =&gt; [
-         &lt;cache type 1&gt; =&gt; [
-             'frontend' =&gt; '&lt;unique frontend id&gt;'
-        ],
-    ],
-    'type' =&gt; [
-         &lt;cache type 2&gt; =&gt; [
-             'frontend' =&gt; '&lt;unique frontend id&gt;'
-        ],
-    ],
-],
-</code></pre>
-
-    <p>An example is shown in <a href="#mage-cache-db-config">Configuration examples</a>.</p>
-  </li>
-  <li>Save your changes to <code>env.php</code> and exit the text editor.</li>
-  <li>Continue with the next section.</li>
-</ol>
-
-<h2 id="mage-cache-db-verify">Verify database caching is working</h2>
-<p>To verify database caching is working, clear the current cache directories, go to any cacheable page in a web browser, and verify that data is written to the database and not to the file system.</p>
-
-<p>Use the following steps:</p>
-
-<ol>
-  <li>If you haven’t done so already, log in to the Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-  <li>
-    <p>Clear the current cache directories:</p>
-
-    <pre><code>rm -rf &lt;your Magento install dir&gt;/var/cache/* &lt;your Magento install dir&gt;/var/page_cache/* &lt;your Magento install dir&gt;/var/di/* &lt;your Magento install dir&gt;/var/generation/*
-</code></pre>
-  </li>
-  <li>
-    <p>In a web browser, go to any cacheable page (such as the storefront front door page).</p>
-
-    <p>If exceptions display, verify <code>di.xml</code> syntax and try again. (To see exceptions in the browser, you must <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html#config-mode">enable developer mode</a>.)</p>
-  </li>
-  <li>
-    <p>Enter the following commands:</p>
-
-    <pre><code>ls &lt;your Magento install dir&gt;/var/cache/*
-ls &lt;your Magento install dir&gt;/var/page_cache/*
-</code></pre>
-
-    <div class="bs-callout bs-callout-info" id="info">
-  <span class="glyphicon-class">
-  <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p>
-  <p>If you use the <code>default</code> cache frontend, you don't have this issue.</p></span>
+    <div class="bs-callout bs-callout-warning">
+	<p>If you set <code>Enable_IIS_Rewrites</code> to <code>1</code>, you must not allow the values of the preceding headers to be altered before the request reaches the IIS web server.</p>
+       
 </div>
   </li>
-  <li>Verify both directories are empty; if not, edit <code>di.xml</code> again and correct any issues.</li>
-  <li>
-    <p>Use a database tool such as <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> to verify there is data in the <code>cache</code> and <code>cache_tag</code> tables.</p>
+</ul>
 
-    <p>The following figures show examples. The important thing is that there are rows in the tables. <em>The data in your tables will be different than the following</em>.</p>
+<!--
+	http://www.iis.net/learn/extensions/url-rewrite-module/url-rewrite-module-configuration-reference
 
-    <p><code>cache</code> table example.</p>
+	http://www.iis.net/learn/extensions/url-rewrite-module/url-rewrite-module-configuration-reference#UsingServerVars
 
-    <p><img src="/common/images/config-db_cache-table.png" alt="Sample contents of the cache table with database caching enabled" /></p>
+	http://www.iis.net/learn/extensions/url-rewrite-module
 
-    <p><code>cache_tag</code> table example.</p>
-
-    <p><img src="/common/images/config-db_cache-tag-table.png" alt="Sample contents of the cache tag table with database caching enabled" /></p>
-  </li>
-</ol>
-
-<h2 id="mage-cache-db-config">Configuration examples</h2>
-<p>This section contains code sample snippets to refer to when configuring database caching.</p>
-
-<h3 id="mage-cache-db-config-default">Sample <code>di.xml</code> for the default cache frontend</h3>
-<p><code>di.xml</code> snippet:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\App\Cache\Frontend\Pool&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;frontendSettings&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;page_cache&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;backend&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;/item&gt;</span>
-                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;default&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;backend&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
-                  <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
-    <span class="nt">&lt;/type&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\App\Cache\Type\FrontendPool&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;typeFrontendMap&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;backend&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
- <span class="nt">&lt;/type&gt;</span></code></pre></figure>
-
-<h3 id="mage-cache-db-config-custom">Sample <code>env.php</code> for a custom cache frontend</h3>
-<p><code>env.php</code> snippet that enables all cache types with a custom frontend named <code>magento_cache</code>:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-     <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">&#39;magento_cache&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-             <span class="s1">&#39;backend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;database&#39;</span>
-         <span class="p">],</span>
-      <span class="p">],</span>
-      <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-         <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;layout&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;block_html&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;view_files_fallback&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;view_files_preprocessing&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;collections&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;db_ddl&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;eav&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;full_page&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;translate&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;config_integration&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;config_integration_api&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;config_webservice&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-      <span class="p">],</span>
-  <span class="p">],</span></code></pre></figure>
-
+	http://www.iis.net/learn/extensions/url-rewrite-module/setting-http-request-headers-and-iis-server-variables -->
 
 		</div>
 	</section>
