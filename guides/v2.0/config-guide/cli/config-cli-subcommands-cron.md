@@ -170,10 +170,8 @@ In addition, the `<group>` element supports the following options, all of which 
   <tr>
 		<td><p>use_separate_process</p></td>
 		<td><p>Specifies how the groups of cron jobs are run: in parallel or one by one.</p>
-			<p>Note that this applies to cron groups, not separate jobs in them.</p>
-
-			<p>If set to <code>1</code>, cron groups will run in parallel as separate processes. Jobs from every group will be executed one after another.</p>
-			<p>If set to <code>0</code>, cron groups will run one by one as separate processes. Jobs from all groups will be merged into a single list and executed one after another.</p></td>		
+			<p>Note: This feature is only available for Magento v2.1 and later.</p>
+		</td>		
 </tr>
 	</tbody>
 </table>
