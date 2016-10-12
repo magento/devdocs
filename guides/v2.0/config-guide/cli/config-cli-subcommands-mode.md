@@ -28,7 +28,7 @@ Production mode also has better performance because static view files are popula
 
 For more information about Magento file system ownership and permissions, see [Magento ownership and permissions in development and production]({{page.baseurl}}config-guide/prod/prod_file-sys-perms.html).
 
-When you change to developer or production mode, we clear the contents of following directories when you change modes:
+When you change to developer or production mode, we clear the contents of following directories:
 
 	var/cache
 	var/di
@@ -68,6 +68,9 @@ where
 
 `--skip-compilation` is an optional parameter you can use to skip <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler-single.html#config-cli-subcommands-single-overview">code compilation</a> when you change to production mode.
 
+<div class="bs-callout bs-callout-info" id="info">
+	<p>You cannot currently change from either developer or production mode to <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
+</div>
 
 Examples follow.
 
