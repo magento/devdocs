@@ -206,7 +206,51 @@
 		</div>
 </div></div>
 </div></div>
-
+<p><b>response body: json</b>:</p>
+<div class="panel" style="border-width: 1px;"><div class="panelcontent">
+<div class="code panel" style="border-width: 1px;"><div class="codecontent panelcontent">
+<div id="root">
+		<pre class="theme: default; brush: java; gutter: false">
+		
+[
+  {
+    "entity_id": "98",
+    "firstname": "John",
+    "middlename": null,
+    "lastname": "Doe",
+    "company": null,
+    "city": "Philly",
+    "country_id": "US",
+    "region": "California",
+    "postcode": "94131",
+    "telephone": "888-555-1212",
+    "fax": null,
+    "street": [
+      "123 Center St"
+    ],
+    "is_default_billing": 0,
+    "is_default_shipping": 1
+  },
+  {
+    "entity_id": "99",
+    "firstname": "John",
+    "lastname": "Doe",
+    "city": "San Jose",
+    "country_id": "US",
+    "region": "California",
+    "postcode": "94070",
+    "telephone": "898-555-1212",
+    "street": [
+      "123 Easy St"
+    ],
+    "is_default_billing": 1,
+    "is_default_shipping": 0
+  }
+]
+		</pre>
+		</div>
+</div></div>
+</div></div>
 <p><b>Notes</b>: If the customer has more than two street addresses, they will be returned in the following form: first address in the first string and all other addresses in the second string separated with a semicolon (like in the example above).</p>
 
 <h5><a name="RESTAPI-Resource-CustomerAddresses-HTTPMethod-POST-customers--customerid-addresses"></a>HTTP Method: POST /customers/:customer_id/addresses</h5>
@@ -327,7 +371,7 @@
 
 <h5><a name="RESTAPI-Resource-CustomerAddresses-HTTPMethod-PUT-customers--customerid-addresses"></a>HTTP Method: PUT /customers/:customer_id/addresses</h5>
 
-<p><b>Description</b>: Not allowed.</p>
+<p><b>Update Customer Address</b>: not allowed.</p>
 
 
 <h5><a name="RESTAPI-Resource-CustomerAddresses-HTTPMethod-DELETE-customers--customerid-addresses"></a>HTTP Method: DELETE /customers/:customer_id/addresses</h5>
@@ -389,7 +433,30 @@
 		</div>
 </div></div>
 </div></div>
-
+<p><b>response body: json</b>:</p>
+<div class="panel" style="border-width: 1px;"><div class="panelcontent">
+<div class="code panel" style="border-width: 1px;"><div class="codecontent panelcontent">
+<div id="root">
+		<pre class="theme: default; brush: java; gutter: false">
+		
+{
+  "entity_id": "2",
+  "firstname": "John",
+  "lastname": "Doe",
+  "city": "San Jose",
+  "country_id": "US",
+  "region": "California",
+  "postcode": "94070",
+  "telephone": "898-555-1212",
+  "street": [
+    "123 Easy St"
+  ],
+  "is_default_billing": 1,
+  "is_default_shipping": 0
+}		</pre>
+		</div>
+</div></div>
+</div></div>
 
 <h5><a name="RESTAPI-Resource-CustomerAddresses-HTTPMethod-POST-customers-addresses--addressid"></a>HTTP Method: POST /customers/addresses/:address_id</h5>
 
@@ -446,7 +513,30 @@
 		</div>
 </div></div>
 </div></div>
-
+<p><b>request body: json</b>:</p>
+<div class="panel" style="border-width: 1px;"><div class="panelcontent">
+<div class="code panel" style="border-width: 1px;"><div class="codecontent panelcontent">
+<div id="root">
+		<pre class="theme: default; brush: java; gutter: false">
+		
+{
+  "entity_id": "99",
+  "firstname": "John",
+  "lastname": "Doe",
+  "city": "San Jose",
+  "country_id": "US",
+  "region": "California",
+  "postcode": "94070",
+  "telephone": "898-555-1212",
+  "street": [
+    "123 Easy St"
+  ],
+  "is_default_billing": 1,
+  "is_default_shipping": 0
+}		</pre>
+		</div>
+</div></div>
+</div></div>
 <h5><a name="RESTAPI-Resource-CustomerAddresses-HTTPMethod-DELETE-customers-addresses--addressid"></a>HTTP Method: DELETE /customers/addresses/:address_id</h5>
 
 <p><b>Description</b>: Allows you to delete an existing customer address.<br/>
