@@ -17,7 +17,7 @@ github_link: ui_comp_guide/concepts/ui_comp_data_source.md
 
 
 ## Overview
-Magento provides a component that is designed to interact with data in your component. Many of the core UI Components use this DataSource component. Many UI components also require that this component is included. However, there are specific requirements it has in order for it to work correctly. 
+Magento provides the DataSource object, which is designed to interact with data in your UI component. Many of the core UI components use this DataSource component. Many UI components require that this object is included. However, there are specific requirements it has in order for it to work correctly. 
 
 In this topic, we will explain how to take advantage of the powerful functionality of the data provider in a UI Component.
 
@@ -66,7 +66,7 @@ Remember that this data provider is still, technically speaking, a completely se
 First, we need to declare a "provider" in our base component so it will be able to find that data provider component. Under the `<argument name="data" />` node, add a node like this (where `[ComponentName]` is the name of the component):
 
 ```
-<item name="js_config" xsi:type="array">
+<item name="config" xsi:type="array">
     <item name="provider" xsi:type="string">[ComponentName].[ComponentName]_data_source</item>
 </item>
 ```
@@ -85,7 +85,7 @@ But, XML is static and while that gets us the name of the data provider componen
 
 # Javascript Component Linking
 
-Every Javascript component should extend the core Element class in some way (mapped to `uiElement` with RequireJS and located in `Magento/Ui/view/base/web/js/lib/core/element/element.js`.  When this class initializes it runs an `initLinks()` method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (`lib/core/element/link.js`) binds the values of those parameters to actual components. 
+Every Javascript component should extend the core Element class in some way (mapped to [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) with RequireJS and located in `Magento/Ui/view/base/web/js/lib/core/element/element.js`.  When this class initializes it runs an `initLinks()` method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (`lib/core/element/link.js`) binds the values of those parameters to actual components. 
 
 The properties Magento will parse are: 
 - `imports`
