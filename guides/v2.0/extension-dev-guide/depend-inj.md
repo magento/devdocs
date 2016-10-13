@@ -15,7 +15,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html
 * TOC
 {:toc}
 
-### Dependency injection overview
+## Dependency injection overview
 
 Magento 2 uses *dependency injection* as an alternative to the Magento 1.x `Mage` class.
 [Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection){:target="_blank"} is the concept of the external environment injecting dependencies for an object instead of that object manually creating them internally.
@@ -26,15 +26,14 @@ A dependency creates a degree of coupling between objects in your code.
 A large amount of coupling limits code reuse and makes moving components to new projects difficult.
 Using dependency injection allows for a loose coupling in your code.
 
-### Dependency inversion principle
+## Dependency inversion principle
 
 When using dependency injection, we encourage you to follow the  [dependency inversion principle](http://www.oodesign.com/dependency-inversion-principle.html){:target="_blank"}, a coding principle that stipulates you use abstractions to reduce code dependencies.
 This means that high level classes should use the interface of a low level class instead of working with it directly.
 
 ## Object manager
 
-The [object manager]({{page.baseurl}}extension-dev-guide/object-manager.html) is a Magento service class that helps instantiate objects.
-In larger applications (such as Magento), the object manager composes objects at the beginning of the bootstrapping process.
+The [object manager]({{page.baseurl}}extension-dev-guide/object-manager.html) is a Magento service class that helps instantiate objects at the beginning of the bootstrapping process.
 
 During class construction, the object manager injects the appropriate dependency as defined in the [`di.xml`]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html) file.
 

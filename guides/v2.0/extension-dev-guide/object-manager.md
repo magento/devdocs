@@ -16,7 +16,7 @@ github_link: extension-dev-guide/object-manager.md
 
 ## Overview
 
-Large applications, such as Magento, use an object manager to avoid boilerplate code and compose objects during the bootstrapping process.
+Large applications, such as the Magento framework, use an object manager to avoid boilerplate code and compose objects during the bootstrapping process.
 
 In Magento, the [`ObjectManager`]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManagerInterface.php){:target="_blank"} class performs the duties of an object manager.
 
@@ -43,16 +43,16 @@ The file also specifies whether the object manager should create an object for e
 
 ## Usage Rules
 
-Magento uses the `ObjectManager` to generate and inject the classes declared in your constructor.
-You do not call the object manager directly because Magento handles this automatically.
+The Magento framework uses the `ObjectManager` to generate and inject the classes declared in your constructor.
+You do not call the object manager directly because the framework handles this automatically.
 
 The `ObjectManager` should not be a direct dependency for your classes unless the class is an object creation class such as a [factory]({{page.baseurl}}extension-dev-guide/factories.html) or [proxy]({{page.baseurl}}extension-dev-guide/proxies.html}}).
-In most cases, Magento generates these classes automatically during code compilation.
+In most cases, the framework generates these classes automatically during code compilation.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 You may notice in the Magento 2 codebase that some core classes still call the `ObjectManager` directly.
 
-These instances are bits of legacy code that need porting or exist for backwards compatibility purposes.
+These instances are bits of legacy code that need porting or exist for backward compatibility purposes.
 
 They are not tacit endorsements of using the `ObjectManager` directly.  
 </div>
