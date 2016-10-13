@@ -36,6 +36,11 @@
 
 </div> 
 
+<h2 id="upgrade">SUPEE-8788 Security Patch Advisory</h2>
+<p>The <a href="https://magento.com/security/patches/supee-8788" target="_blank">SUPEE-8788 security patch</a> released in October 2016 has potential issues for certain Magento EE versions.</p>
+<p><em>Magento EE 1.13 and earlier</em>. If you previously applied the SUPEE-1533 patch, you must revert it before applying the SUPEE-8788 patch. For more information about reverting a patch, see <a href="{{ site.m1xurl }}other/ht_install-patches.html">How to Apply and Revert Magento Patches</a>.</p>
+<p><em>Magento EE 1.14.2 only</em>. After applying SUPEE-8788, remove <code>test_oauth.php</code> from your Magento base directory.</p>
+
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use EE 1.14.3.0 or later for <em>all new EE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
 
@@ -60,6 +65,8 @@
 <h4 id="ee114-1430security-general">General security enhancements</h4>
 <p>For more information about these security enhancements, see <a href="https://magento.com/security/patches/supee-8788" target="_blank">our Security Center article</a>.</p>
 <p>Patches for major security issues in earlier versions of the Magento software are available in the Magento EE customer portal.</p>
+
+<p>Details about security fixes:</p>
 <ul><li>Resolved a potential SQL injection (Zend Framework issue)</li>
 	<li>Resolved a cache poisoning issue</li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7714" target="_blank">MPERF-7714</a> --> We now provide better protection against path exploits.</li>
