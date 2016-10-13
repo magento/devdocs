@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Listing/Grid component</title>
+	<title>UI Components Guide outline (proposed)</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">
+	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/ui_comp_outline_proposed.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/components/ui-listing-grid.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/ui_comp_outline_proposed.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/ui_comp_outline_proposed.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Listing/Grid component</h1>
+		<h1 class="page-heading">UI Components Guide outline (proposed)</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/components/ui-listing-grid.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/ui_comp_outline_proposed.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -326,7 +326,7 @@
 
 							
 
-								<li class="q "><a href="/guides/v2.1/ui_comp_guide/ui_comp_outline_proposed.html">UI Components Guide outline (proposed)</a></li>
+								<li class="q  active "><a href="/guides/v2.1/ui_comp_guide/ui_comp_outline_proposed.html">UI Components Guide outline (proposed)</a></li>
 
 							
 
@@ -365,7 +365,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Listing/Grid component</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Listing/Grid component</a></li>
 
 									
 
@@ -600,77 +600,206 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 28 September 2016 (PDT)</div>
-            <h2 class="no_toc" id="listinggrid-component">Listing/Grid component</h2>
+            <div class="updated">Updated: 30 September 2016 (PDT)</div>
+            <h2 id="intended-ui-components-guide-outline">Intended UI Components Guide outline</h2>
+<p>Below is the proposed structure of the new UI Components Guide. The Frontend development and the DevDocs teams are writing as quickly as we can (linked topics are done!), but as you can see we sill have a lot of topics to write.
+If you would like to help us by writing any of the topics that we have not yet gotten do, we welcome your contributions!</p>
 
-<p><strong>Contents</strong></p>
+<div class="bs-callout bs-callout-info" id="info">
+<p>These are not the exact titles for the sections, but rather the content.</p>
+</div>
 
-<ul id="markdown-toc">
-  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-  <li><a href="#integration" id="markdown-toc-integration">Integration</a></li>
-  <li><a href="#datasource" id="markdown-toc-datasource">DataSource</a></li>
+<ul>
+  <li>Overview</li>
+  <li>What are UI components
+    <ul>
+      <li>What is a UI component</li>
+      <li><a href="/guides/v2.1//ui_comp_guide/concepts/ui_comp_architecture_concept.html">The architectural structure of a UI component</a></li>
+      <li>Application workflow description</li>
+      <li><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">Configuration flow: the configuration pieces and their part in workflow</a>
+        <ul>
+          <li>Declaration in <code>definition.xml</code></li>
+          <li><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">UI component’s XML declaration (the instance)</a></li>
+          <li><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_modifier_concept.html">PHP modifiers</a></li>
+          <li>Configuration inside the JS class</li>
+        </ul>
+      </li>
+      <li>Data sources</li>
+      <li>Javascript in UI components
+        <ul>
+          <li>Basic JS components
+            <ul>
+              <li><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html"><code>uiClass</code> as a core of OOP in components (initialize, initConfig, extend, _super, defaults)</a></li>
+              <li><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code>uiElement</code> as genaral component class</a></li>
+              <li><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html"><code>uiCollection</code> as general component for collections</a></li>
+              <li><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uilayout_concept.html"><code>uiLayout</code>  as a built-in initializer</a></li>
+              <li><code>uiRegistry</code> as a in memory storage</li>
+              <li>Linking properties of UI components</li>
+            </ul>
+          </li>
+          <li><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_requirejs_concept.html">Require JS with UI components</a></li>
+        </ul>
+      </li>
+      <li>Templates customization rules &amp; techniques (using Knockout.js)
+        <ul>
+          <li>Overview of Knockout templates (explain custom bindings, whatever else is important)</li>
+          <li>Templates syntax
+            <ul>
+              <li>UI components implement the MVVM pattern (the UI component instance is a ViewModel)</li>
+              <li>New tags and their meaning</li>
+            </ul>
+          </li>
+          <li>Custom bindings
+            <ul>
+              <li><code>afterRender</code> – allows you to call a method (piece of code that exist in context) after the  rendering of the current DOM node finished</li>
+              <li><code>autoselect</code> – when applied to <code>&lt;input&gt;</code> does text selection when <code>&lt;input&gt;</code> gets focus. (E.g.: via click)</li>
+              <li><code>bindHtml</code> – same as <em>html</em> binding. But does useful fro Magento app additional staff: applies bindings and process data-mage-init declarations.</li>
+              <li><code>collapsible</code> – allows you to build collapsible panels</li>
+              <li><code>datepicker</code> – only for inputs. Adds datepicker control via calendar.js widget.</li>
+              <li><code>fadeVisible</code> – show/hide an element via jQuery fadeIn/fadeout functions</li>
+              <li><code>i18n</code> – analogue to <em>text</em> binding. Has two features: replace text with translation lib, correctly handle behavior of InlineTranslate module.</li>
+              <li><code>keyboard</code> - attaches keypress handlers to element</li>
+              <li><code>mageInit</code> – has same format as data-mage-init attribute. In opposite to attribute binding handles situation with appear/removal of an element</li>
+              <li><code>optgroup</code> – same as building “option” binding. But allows you to render hierarchy options with the &lt;optgroup&gt; tag.</li>
+              <li><code>outerClick</code> – similar to “click” binding. Handles situation when a click is done outside of an element.</li>
+              <li><code>range</code> – allows you to use the jQuery UI Slider widget.</li>
+              <li><code>resizable</code> – adds the jQuery UI Resizable widget.</li>
+              <li><code>scope</code> – allows you to bind an object from uiRegistry as the scope to particular element. Used in Ui components.</li>
+              <li><code>simpleChecked</code></li>
+              <li><code>staticChecked</code> - Implements same functionality as a standard ‘checked’ binding, but with a difference that it wont’ change values array if value of DOM element changes.</li>
+              <li><code>tooltip</code> – allows to create tooltip within inner content</li>
+              <li><code>template</code>(render) – inner content will be replaced with the external template. Builtin “template” binding expects that the templates are on the page already. Magento’s one expects to load template from separate external files.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Provide simple table of all of UI сomponents</li>
+    </ul>
+  </li>
+  <li>UI components usage: common use cases, advantages, links to the scenario-based topics</li>
+  <li>What changed since 2.0
+    <ul>
+      <li>Magento 2.0 vs Magento 2.1: changes in the UI component (XML changes)
+        <ul>
+          <li>Grid</li>
+          <li>Form</li>
+        </ul>
+      </li>
+      <li>The syntax of UI Components templates has changed</li>
+      <li>New UI Components
+        <ul>
+          <li>Insert</li>
+          <li>Modal</li>
+          <li>File Uploader</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Best practices for UI components
+    <ul>
+      <li>Don’t rely on DOM instead rely on data structure.</li>
+    </ul>
+  </li>
+  <li>Troubleshooting and debugging UI components
+    <ul>
+      <li>Checklist/workflow for debugging UI components</li>
+      <li>PHP app checkpoints</li>
+      <li>Validate XML:
+        <ul>
+          <li>PHP Storm</li>
+          <li>Using developer mode (running in dev mode automatically validates XML)</li>
+        </ul>
+      </li>
+      <li><a href="/guides/v2.1/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html">Debug UI components JS</a>
+        <ul>
+          <li>Common break-points for diagnostic
+            <ul>
+              <li>Loading files (Require.js)</li>
+              <li>uiLayout</li>
+              <li>uiRegistry</li>
+              <li>uiElement/uiCLass</li>
+              <li>template engine</li>
+            </ul>
+          </li>
+          <li>Using OoB Unit tests as a debug tool</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Tutorials, Workflow, Process
+    <ul>
+      <li>List of general use cases.</li>
+      <li>Tutorial: customize the existing instances (ex.: customize product creation form)</li>
+      <li>Implement an existing UI Comp type with zero behavior customization or changes</li>
+      <li>Implement an existing, out of the box UI component, but with some behavior customization</li>
+      <li>Create a custom instance of the custom type (limitations: custom UI component types are not reusable, you need to copy-paste all config each time you want to use it)</li>
+    </ul>
+  </li>
+  <li>Common How Tos
+    <ul>
+      <li>How to create category attribute programmatically</li>
+      <li>How to add a custom attribute for CMS page (best practice to use Service Layer. Should be added to the CMS form and CMS grid)</li>
+      <li>How to add a form, where fields have options in drop-down (Select field Backend form)</li>
+      <li>How to create multi-select with source model in UI component</li>
+      <li>How to create category attribute thumbnail and upload image using File Uploader Component</li>
+      <li>How to test if something goes wrong (including php part)</li>
+      <li>How to get data into the UI components</li>
+      <li>How to add image attribute to a category</li>
+      <li>How to add custom field to a form dynamically using application.</li>
+      <li>How to integrate an jQuery widget?</li>
+      <li>How implement filter (or sorting order) in existing listing without filed in DB</li>
+    </ul>
+  </li>
+  <li>Real-Life Scenarios</li>
+  <li>Specific UI сomponents (Reference material)
+    <ul>
+      <li>A list of Magento UI components</li>
+      <li><a href="/guides/v2.1/ui_comp_guide/components/ui-form.html">Form</a></li>
+      <li><a href="/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Listing</a></li>
+      <li>Fieldset</li>
+      <li>Field</li>
+      <li>Group</li>
+      <li>Tab</li>
+      <li>Nav</li>
+      <li>Insert</li>
+      <li>Insert Form</li>
+      <li>Insert Listing</li>
+      <li><a href="/guides/v2.1/ui_comp_guide/components/ui-modal.html">Modal</a></li>
+      <li>Button adapter</li>
+      <li>Form provider</li>
+      <li>Paging</li>
+      <li>Filters</li>
+      <li>FilterSearch</li>
+      <li>FilterSelect</li>
+      <li>FilterRange</li>
+      <li>FilterInput</li>
+      <li>FilterDate</li>
+      <li>ContainerMassAction</li>
+      <li>Actions</li>
+      <li>Action</li>
+      <li>ActionDelete</li>
+      <li>Column</li>
+      <li>Columns</li>
+      <li>ActionsColumn</li>
+      <li>SelectionsColumn</li>
+      <li>Component</li>
+      <li>Container</li>
+      <li>Fieldset</li>
+      <li>Field</li>
+      <li>Bookmark</li>
+      <li>InsertForm</li>
+      <li>InsertListing</li>
+      <li>ExportButton</li>
+      <li>ColumnsControls</li>
+      <li>ListingToolbar</li>
+      <li>DynamicRows</li>
+      <li>HtmlContent</li>
+      <li>Button</li>
+      <li>DataSource</li>
+    </ul>
+  </li>
+  <li>Glossary and Standard Terms</li>
 </ul>
-
-<h2 id="overview">Overview</h2>
-<p>Listing is a basic component responsible for rendering grids, lists and tiles, providing filtering, pagination, sorting and other features.</p>
-
-<h2 id="integration">Integration</h2>
-
-<p>Example configuration of Listing component instance:</p>
-
-<p><code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;context&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;configurableObject&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Framework\View\Element\UiComponent\Context<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;namespace&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_page_listing<span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;provider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing_data_source<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;deps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing_data_source<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;spinner&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_page_columns<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;buttons&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;add&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>add<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Add New Page<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>primary<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>*/*/new<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/listing&gt;</span></code></pre></figure>
-
-<h2 id="datasource">DataSource</h2>
-
-<p>DataSource is another UI component that provides data in specific format which is shared among all UI components.</p>
-
-<p>The listing component requires the data source to be properly configured and associated with it:</p>
-
-<p><code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;dataSource</span> <span class="na">name=</span><span class="s">&quot;cms_page_listing_data_source&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;dataProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;configurableObject&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>PageGridDataProvider<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_page_listing_data_source<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;primaryFieldName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>page_id<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;requestFieldName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>id<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/provider<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;update_url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;url&quot;</span> <span class="na">path=</span><span class="s">&quot;mui/index/render&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;storageConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;indexField&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>page_id<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/dataSource&gt;</span>
-<span class="nt">&lt;/listing&gt;</span>    </code></pre></figure>
 
 
 		</div>
