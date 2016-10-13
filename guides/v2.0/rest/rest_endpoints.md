@@ -30,6 +30,8 @@ To specify all services:
 
 ## List of Service Names per Module
 
+* TOC
+{:toc}
 
 ### Backend
 backendModuleServiceV1: `http://<magento_host>/rest/default/schema&services=backendModuleServiceV1`
@@ -195,6 +197,8 @@ salesInvoiceRepositoryV1: `http://<magento_host>/rest/default/schema&services=sa
 
 salesInvoiceManagementV1: `http://<magento_host>/rest/default/schema&services=salesInvoiceManagementV1`
 
+salesInvoiceOrderV1: `http://<magento_host>/rest/default/schema&services=salesInvoiceOrderV1`
+
 salesInvoiceCommentRepositoryV1: `http://<magento_host>/rest/default/schema&services=salesInvoiceCommentRepositoryV1`
 
 salesCreditmemoManagementV1: `http://<magento_host>/rest/default/schema&services=salesCreditmemoManagementV1`
@@ -210,6 +214,8 @@ salesShipmentManagementV1: `http://<magento_host>/rest/default/schema&services=s
 salesShipmentCommentRepositoryV1: `http://<magento_host>/rest/default/schema&services=salesShipmentCommentRepositoryV1`
 
 salesShipmentTrackRepositoryV1: `http://<magento_host>/rest/default/schema&services=salesShipmentTrackRepositoryV1`
+
+salesShipOrderV1: `http://<magento_host>/rest/default/schema&services=salesShipOrderV1`
 
 salesTransactionRepositoryV1: `http://<magento_host>/rest/default/schema&services=salesTransactionRepositoryV1`
 

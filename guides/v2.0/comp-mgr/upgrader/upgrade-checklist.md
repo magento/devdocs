@@ -1,13 +1,13 @@
 ---
 layout: default 
 group: compman
-subgroup: 15_UseUpgrade
+subgroup: 32_UseUpgrade
 title: Run System Upgrade
 menu_title: Run System Upgrade
 menu_node: parent
 menu_order: 1
 version: 2.0
-github_link: comp-mgr/upgrader/upgrade-checklist.md
+github_link: comp-mgr/upgrader/upgrade-checklist.md 
 ---
 
 <h2 id="compman-overview">Overview of System Upgrade</h2>
@@ -32,7 +32,7 @@ You can upgrade in any of the following ways:
 </div>
 
 ## System Upgrade checklist
-{% include install/update/checklist.md %}
+{% include comp-man/checklist.md %}
 
 #### Next step
 [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html)

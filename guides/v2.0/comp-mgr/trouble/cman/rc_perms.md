@@ -2,8 +2,8 @@
 layout: default
 group: compman
 subgroup: 50_trouble
-title: file permissions readiness check issues
-menu_title: file permissions readiness check issues
+title: File permissions readiness check issues
+menu_title: File permissions readiness check issues
 menu_node: 
 menu_order: 105
 version: 2.0

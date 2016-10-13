@@ -1,7 +1,7 @@
 ---
 layout: default
 group: contributor
-subgroup: Contributor Guide
+subgroup: contributor
 title: DevDocs Contributions
 menu_title: DevDocs Contributions
 menu_order: 1
@@ -32,7 +32,7 @@ The following topics are included in the Guide:
 
 What's your area of expertise? Please share your knowledge with us! Contributions can take the form of completely new topics, changes and edits to existing documentation, or just good suggestions.
 
-We have a <a href="{{page.baseurl}}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/2.0/guides/v2.0/contributor-guide/basic_template.md">.md file  on Github</a>.
+We have a <a href="{{page.baseurl}}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/develop/guides/v2.0/contributor-guide/basic_template.md">.md file  on Github</a>.
 
 The language we use in our documentation is [Markdown](http://daringfireball.net/projects/markdown/){:target="_blank"}, which is a simple markup language that gets converted to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html){:target="_blank"}. 
 
@@ -76,7 +76,7 @@ To fork a repository on Github, do the following:
 
 4. Clone the repo into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on mulitple changes.
 
-5. You can build this site using Jekyll by following the <a href="https://github.com/magento/devdocs/blob/2.0/README.md" target="_blank">instructions in our README</a>.
+5. You can build this site using Jekyll by following the <a href="https://github.com/magento/devdocs/blob/develop/README.md" target="_blank">instructions in our README</a>.
 
 ### Update the fork with the latest changes {#sync}
 As community and Magento writers' changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message `This branch is <number> commits behind magento:2.0.` displays, it means your fork must be updated.

@@ -9,7 +9,12 @@ menu_node: parent
 version: 2.1
 github_link: soap/bk-soap.md
 ---
-Additional information about SOAP APIs will be published in a future sprint.
+
+### Contents
+{:.no_toc}
+
+* TOC
+{:toc}
 
 ## Soap WSDL Endpoint Format
 
@@ -20,11 +25,12 @@ Additional information about SOAP APIs will be published in a future sprint.
   <ul>
   <li><code>default</code></li>
   <li>The assigned store code</li>
-  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>get</code>operations cannot be performed when you specify <code>all</code>.</li>
+  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores.</li>
   </ul>
 </div>
 
 ## List of Service Names per Module
+
 The entire list can be retrieved here: `http://<magento_host>/soap/default?wsdl_list=1`
 
 ### Backend
@@ -193,6 +199,8 @@ salesInvoiceManagementV1: `http://<magento_host>/soap/default?wsdl&services=sale
 
 salesInvoiceCommentRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesInvoiceCommentRepositoryV1`
 
+salesInvoiceOrderV1: `http://<magento_host>/soap/default?wsdl&services=salesInvoiceOrderV1`
+
 salesCreditmemoManagementV1: `http://<magento_host>/soap/default?wsdl&services=salesCreditmemoManagementV1`
 
 salesCreditmemoRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesCreditmemoRepositoryV1`
@@ -206,6 +214,8 @@ salesShipmentManagementV1: `http://<magento_host>/soap/default?wsdl&services=sal
 salesShipmentCommentRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesShipmentCommentRepositoryV1`
 
 salesShipmentTrackRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesShipmentTrackRepositoryV1`
+
+salesShipOrderV1: `http://<magento_host>/soap/default?wsdl&services=salesShipOrderV1`
 
 salesTransactionRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesTransactionRepositoryV1`
 

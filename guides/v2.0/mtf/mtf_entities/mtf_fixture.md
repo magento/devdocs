@@ -27,9 +27,9 @@ You will need fixture:
 - as test data for particular set
 - as precondition for the test
 
-In this chapter we will create a new fixture and modify it, considering different use cases.
+In this chapter, we will create a new fixture and modify it, considering different use cases.
 
-To apply any changes of the fixture, you should run generate tool:
+To apply any changes in fixture, run generate tool:
 
     cd <magento2>/dev/tests/functional/utils
     php generate.php
@@ -42,7 +42,7 @@ You can check fixture PHP class in corresponding module in the `<magento2>/dev/t
 
 Let's imagine that we want to create new fixture to test our Widget module.
 
-Magento has a tool that automatically generates your fixture with parameters you indicated in arguments.  That is `generateFixtureXml.php,` located in `<magento2>/dev/tests/functional/utils`.
+Magento has a tool, `generateFixtureXml.php,`, to automatically generate fixture with parameters indicated in arguments. It is located in `<magento2>/dev/tests/functional/utils`.
 
     cd <magento2>/dev/tests/functional/utils
     php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
@@ -107,7 +107,7 @@ To generate PHP classes, enter the following commands in the order shown:
 
 That's it!
 
-For a detailed description of XML structure see the next section.
+For a detailed description of XML structure, see next section.
 
 ## Read and update your new fixture {#mtf_fixture_read}
 
@@ -118,7 +118,7 @@ Let's look closer at fixture structure.
   - `<data_config>` defines additional fixture configuration for the fixture.
   - `<field>` defines field in fixture.
 
-The following table describes `<fixture>` attributes.
+Following table describes `<fixture>` attributes.
 
 | `<fixture>` attribute | Semantics                    |     Value    | Example| Is required? |
 |:----------------------|:--------------------------------|:-----------:|-------|:------------:|
@@ -207,9 +207,9 @@ For this goal, link to the repository where all test data has already been defin
 
 {% endhighlight xml%}
 
-The repository is located in the `Repository` directory of the corresponding module. The `Repository` directory contains a subdirectory with the name of fixture, and repository XML file in it with the name of fixture field.
+Repository is located in `Repository` directory of corresponding module. `Repository` directory contains a subdirectory with the name of fixture, and repository XML file in it with the name of fixture field.
 
-The repository is located in `<magento_roo>/dev/tests/functional/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`.
+The repository is located in `<magento2>/dev/tests/functional/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`.
 
 Following is the code of `LayoutUpdates.xml`. It specifies two data sets that you can choose to define in your test.
 
@@ -244,12 +244,12 @@ Following is the code of `LayoutUpdates.xml`. It specifies two data sets that yo
 
 {% endhighlight xml %}
 
-To apply the changes, enter the following commands:
+To apply changes, enter following commands:
 
     cd <magento2>/dev/tests/functional/utils
     php generate.php
 
-## Add the data source to the fixture field {#mtf_fixture_source}
+## Add data source to fixture field {#mtf_fixture_source}
 
 Our new field `layout_updates` is complex and contains different elements and logic, depending on the type of layout chosen.
 
@@ -371,7 +371,7 @@ To apply the changes, enter the following commands:
 
 Let's assume that you want to add new fixture based on our `Widget.xml` fixture to another Magento entity.
 
-To do that you should supplement your `Widget.xml` code with `extends` attribute in `<fixture>` node. As you already know `extends` value stores a link to the class from which you want to extend your fixture.
+To do that you should supplement your `Widget.xml` code with `extends` attribute in `<fixture>` node. As you already know, `extends` value stores a link to the class from which you want to extend your fixture.
 
 {% highlight xml %}
 

@@ -97,7 +97,9 @@ See the following explanations.
 |-|-|-
 |`--name`|`synonym`|A name of the fixture. It can have any name. `synonym` seems to be logical.
 |`--entity_type`|`search_synonyms`|Database table name where entity data is stored. You can track database input when you perform a [manual testing][]. A new record will be created in a table that you need.
-|`--collection`|`Magento\\Search\\Model\\ResourceModel\\Query\\Collection`|Collection to generate data sets. Synonyms are the entities of a Magento_Search module. Collection can always be find in model resources. All slashes must be escaped `\\`.
+|`--collection`|`Magento\\Search\\Model\\ResourceModel\\Query\\Collection`|Collection to generate data sets. Synonyms are the entities of a Magento_Search module. A collection can always be found in model resources. 
+
+All slashes must be escaped with `\\`.
 
 As a result of previous commands, a brand new fixture can be found in the `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture` directory.
 
@@ -1096,7 +1098,7 @@ That's it!
 
 [adjust a configuration]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html
 [prepare Magento application]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_magento.html
-[prepare environment for test run]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html
+[prepare environment for test run]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html
 
 [`generateFixtureXml.php`]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create
 [set data to a fixture field]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html#fixture_field
@@ -1119,7 +1121,7 @@ That's it!
 [`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
 [`\Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
 [`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
-[up and running]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium
+[up and running]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium
 
 <!-- ABBREVIATIONS -->
 

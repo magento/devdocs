@@ -18,4 +18,3 @@ These topics discuss what you need to do before you get started using Magento En
 
 *	Understand [Common terminology]({{page.baseurl}}cloud/before/terms.html).
 *	Decide which [Git repository]({{page.baseurl}}cloud/before/before-repos.html) to use (the one provided with Magento Enterprise Cloud Edition or a private repository you already use).
-*	Set up [SSH access to your workstation and install the CLI]({{page.baseurl}}cloud/before/before-workspace.html).

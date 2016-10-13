@@ -6,6 +6,7 @@ title: Migrate changes
 menu_title: Migrate changes
 menu_node:
 menu_order: 3
+version: 2.0
 github_link: migration/migration-migrate-delta.md
 redirect_from: /guides/v1.0/migration/migration-migrate-delta.html
 ---

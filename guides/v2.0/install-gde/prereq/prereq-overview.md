@@ -104,7 +104,7 @@ Enter `exit` at the `mysql>` prompt to exit.
 To install or upgrade MySQL, see <a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>.
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/continue.html">Choose how to install the Magento software</a>
+<a href="{{page.baseurl}}install-gde/bk-install-guide.html">Choose how to install the Magento software</a>
 
 #### Related topics
 
@@ -114,7 +114,7 @@ To install or upgrade MySQL, see <a href="{{page.baseurl}}install-gde/prereq/mys
 *	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/continue.html)
+*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
 
 
 

@@ -28,7 +28,7 @@ See one of the following sections:
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-subcommands-db-prereq">Prerequisites</h2>
-Before you run this command, you must <a href="{{page.baseurl}}install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>.
+Before you run this command, you must <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>.
 
 <h2 id="instgde-cli-displayurl">Display the Admin URI</h2>
 This section discusses how to use the command line to display the Admin Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>).
@@ -56,7 +56,7 @@ To change the Admin URI, use the <a href="{{page.baseurl}}/install-gde/install/i
 #### Related topics
 
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>
-*	[Remove or update sample data]({{ page.baseurl }}install-gde/install/cli/install-cli-sample-data-other.html)
+*	[Remove sample data modules or update sample data]({{ page.baseurl }}install-gde/install/cli/install-cli-sample-data-other.html)
 *	[Display or change the Admin URI]({{ page.baseurl }}install-gde/install/cli/install-cli-adminurl.html)
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>
 *	[Uninstall modules]({{ page.baseurl }}install-gde/install/cli/install-cli-uninstall-mods.html)

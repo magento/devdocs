@@ -14,6 +14,9 @@ github_link: install-gde/system-requirements-tech.md
 
 Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on
 
+### Memory requirement
+Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file]({{ page.baseurl }}comp-mgr/trouble/cman/out-of-memory.html); otherwise, your upgrade might fail.
+
 ### Composer (latest stable version)
 Composer is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions
 
@@ -25,12 +28,17 @@ Composer is required for developers who wish to contribute to the Magento 2 code
 
 ### Database
 
-MySQL 5.6 (Oracle or Percona)
+MySQL 5.6
+
+MariaDB and Percona are compatible with Magento because we support MySQL 5.6 APIs.
 	
 ### PHP 
 
-*	5.6.x
-*	7.0.2, 7.0.6 up to 7.1
+*	5.6.x (versions 2.1.0 and 2.1.1)
+*	5.6.5 and later (version 2.1.2)
+*	7.0.2, 7.0.6 up to 7.1 (all 2.1.x versions)
+
+	7.0.4 is supported by 2.1.2 and later only
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Magento 2.1.x no longer supports PHP 5.5.</p>
@@ -93,6 +101,10 @@ Mail Transfer Agent (MTA) or an SMTP server
 	*   Apache Solr 4.x
  
     	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Solr search</a> can be used as a search provider. Available for Magento Enterprise Edition (EE) only.
+
+    *	Elasticsearch versions 1.0 and later up to version 5.0
+
+    	For additional details, see [Elasticsearch supported versions]({{ page.baseurl }}config-guide/elasticsearch/es-overview.html#es-spt-versions)
 
 	*	RabbitMQ 3.5
 

@@ -27,8 +27,7 @@ You can set `MAGE_DIRS` in any of the following ways:
 *	<a href="{{page.baseurl}}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>
 *	Use a custom entry point script such as the following:
 
-	{% highlight php %}
-	<?php
+	{% highlight php startinline=true %}
 	use Magento\Framework\App\Filesystem\DirectoryList;
 	use Magento\Framework\App\Bootstrap;
  
@@ -49,7 +48,6 @@ You can set `MAGE_DIRS` in any of the following ways:
 	/** @var \Magento\Framework\App\Http $app */
 	$app = $bootstrap->createApplication('Magento\Framework\App\Http');
 	$bootstrap->run($app);
-	?>
 	{% endhighlight %}
 
 The preceding example sets paths for `[cache]` and `[media]` directories to `/mnt/nfs/cache` and `/mnt/nfs/media`, respectively.

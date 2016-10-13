@@ -9,7 +9,9 @@ level3_menu_node: level3child
 level3_subgroup: modules
 version: 2.0
 github_link: architecture/archi_perspectives/components/modules/mod_and_areas.md
-redirect_from: /guides/v1.0/architecture/modules/mod_and_areas.html
+redirect_from: 
+  - /guides/v1.0/architecture/modules/mod_and_areas.html
+  - /guides/v2.0/architecture/modules/mod_and_areas.html
 ---
 
 <h2 id="m2arch-module-areas-overview"> Overview</h2>
@@ -27,6 +29,8 @@ Magento is organized into these main areas:
 *     **Magento Admin** (`adminhtml`): entry point for this area is `index.php` or `pub/index.php`. The Admin panel area includes the code needed for store management. The /app/design/adminhtml directory contains all the code for components you'll see while working in the Admin panel. 
 
 *     **Storefront** (`frontend`): entry point for this area is `index.php` or `pub/index.php`. The storefront (or `frontend`)  contains template and layout files that define the appearance of your storefront. 
+
+*     **Basic** (`base`): used as a fallback for files absent in `adminhtml` and `frontend` areas.
 
 
 You can also send requests to Magento using the SOAP and REST APIs. These two areas 

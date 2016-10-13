@@ -1,7 +1,7 @@
 ---
 layout: default
 group: contributor
-subgroup: Contributor Guide
+subgroup: contributor
 title: Code Contributions
 menu_title: Code Contributions
 menu_order: 1
@@ -98,8 +98,9 @@ If you find a bug in Magento 2 code, you can report it by creating an issue in t
 
 **Note**: Before creating an issue, please do the following:
 
- 1. Check the <a href="{{ site.baseurl }}">documentation</a> to make sure the behavior you are reporting is really a bug, not a feature.
- 2. Check the <a href="https://github.com/magento/magento2/issues" target="_blank"> existing issues</a> to make sure you are not duplicating somebody's work.
+ 1. Read the [issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines) to learn how to create an issue that can be processed in a timely manner.
+ 2. Check the <a href="{{ site.baseurl }}">documentation</a> to make sure the behavior you are reporting is really a bug, not a feature.
+ 3. Check the <a href="https://github.com/magento/magento2/issues" target="_blank"> existing issues</a> to make sure you are not duplicating somebody's work.
 
 To add an issue:
 

@@ -5,7 +5,9 @@ subgroup: Getting Started
 title: Is the Magento software installed already?
 menu_title: Is the Magento software installed already?
 menu_node: 
-menu_order: 2
+menu_order: 101
+level3_menu_node: level3child
+level3_subgroup: basics
 version: 2.0
 github_link: install-gde/basics/basics_magento-installed.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_magento-installed.html
@@ -38,7 +40,7 @@ Magento storefront:
 
 If Magento *is* installed and you want to manage or upgrade components, see the following guides instead:
 
-*	<a href="{{ site.gdeurl" }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
+*	<a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
 
 	A Magento *component* is an extension, language package, or theme. The Component Manager installs, uninstalls, updates, enables, or disables components.
 *	<a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a>

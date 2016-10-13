@@ -39,7 +39,7 @@ A text editor displays. (You might need to choose a text editor first.)
 
 	* * * * * <path to php binary> <magento install dir>/bin/magento cron:run | grep -v "Ran jobs by schedule" >> <magento install dir>/var/log/magento.cron.log
 	* * * * * <path to php binary> <magento install dir>/update/cron.php >> <magento install dir>/var/log/update.cron.log
-	* * * * * <path to php binary> <magento install dir>/bin/magento setup:cron:run >> <magento_dir>/var/log/setup.cron.log
+	* * * * * <path to php binary> <magento install dir>/bin/magento setup:cron:run >> <magento install dir>/var/log/setup.cron.log
 
 where 
 
@@ -49,6 +49,12 @@ where
 
 The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If you're a contributing developer (that is, you <a href="{{ page.baseurl }}install-gde/prereq/dev_install.html">cloned the Magento 2 GitHub repository</a>), only the first line applies to you. See the examples that follow for details.</p>
+</div>
+
+**Example 1:** Everyone except contributing developers
+
 For example, if the PHP binary is located in `/usr/bin`, you installed Magento in `/var/www/html/magento2`, enter
 
 Example:
@@ -56,5 +62,11 @@ Example:
 	* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /var/www/magento2/var/log/magento.cron.log
 	* * * * * /usr/bin/php /var/www/magento2/update/cron.php >> /var/www/magento2/var/log/update.cron.log
 	* * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run >> /var/www/magento2/var/log/setup.cron.log
+
+**Example 2:** Contributing developers only (that is, you cloned the Magento 2 GitHub repository):
+
+	* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /var/www/magento2/var/log/magento.cron.log
+
+The preceding works for contributing developers because if you cloned the GitHub repository you don't have an `update` directory and errors result if you run `magento setup:cron:run`. These cron jobs work in the Web Setup Wizard, which contributing developers cannot use for installing or updating the Magento application or components. 
 
 Save your changes to the crontab and exit the editor.

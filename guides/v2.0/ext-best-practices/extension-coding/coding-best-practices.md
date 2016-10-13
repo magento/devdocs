@@ -7,6 +7,9 @@ menu_title: Extension Coding
 menu_order: 1
 menu_node: parent
 version: 2.0
+tabgroup: best-practices
+tablabel: Coding
+tabweight: 10
 github_link: ext-best-practices/extension-coding/coding-best-practices.md
 ---
 ## {{page.menu_title}}

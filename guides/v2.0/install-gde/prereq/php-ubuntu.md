@@ -14,12 +14,12 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 
 #### Contents
 
-*	<a href="#php-support">PHP versions supported</a>
+*	[PHP versions supported](#php-support)
 *	<a href="#php-ubuntu-help-beginner">Help if you're just starting out</a>
 *	<a href="#ubuntu-verify-php">Verify PHP is installed</a>
 *	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
-*	<a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</a>
-*	<a href="#instgde-prereq-php5.65-install-ubuntu14">PHP 5.5 on Ubuntu 14</a>
+*	[PHP 5.6 on Ubuntu 14](#php-56-on-ubuntu-14)
+*	[PHP 5.5 on Ubuntu 14](#php-55-on-ubuntu-14)
 *	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -27,7 +27,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
   <p>If you must install both Apache and PHP, <a href="{{page.baseurl}}install-gde/prereq/apache.html">install Apache</a> first.</p></span>
 </div>
 
-<h2 id="php-support">PHP versions supported</h2>
+## PHP versions supported {#php-support}
 Magento requires:
 
 *	7.0.6 up to 7.1.0
@@ -67,9 +67,9 @@ If PHP is installed, continue with the next prerequisite, <a href="{{page.baseur
 If PHP is *not* installed, see one of the following sections:
 
 *	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
-*	<a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a>
-*	<a href="#instgde-prereq-php5.66-install-ubuntu12">PHP 5.6 on Ubuntu 12</a>
-*	<a href="#instgde-prereq-php5.65-install-ubuntu14">PHP 5.5 on Ubuntu 14</a>
+*	[PHP 5.6 on Ubuntu 14](#php-56-on-ubuntu-14)
+*	<a href="#instgde-prereq-php5.6-install-ubuntu12">PHP 5.6 on Ubuntu 12</a>
+*	[PHP 5.5 on Ubuntu 14](#php-55-on-ubuntu-14)
 
 ## PHP 7.0 on Ubuntu 14 or 16 {#instgde-prereq-php70-ubuntu}
 
@@ -105,7 +105,7 @@ If PHP is *not* installed, see one of the following sections:
 
 {% endcollapsible %}
 
-<h2 id="instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</h2>
+## PHP 5.6 on Ubuntu 14
 
 {% collapsible To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14: %}
 
@@ -113,8 +113,9 @@ If PHP is *not* installed, see one of the following sections:
 
 		apt-get -y update
 		add-apt-repository ppa:ondrej/php
-		apt-get -y update
 		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl
+		apt-get -y update
+		
 
 2.	Enter the following command to verify PHP 5.6 installed properly:
 
@@ -135,15 +136,15 @@ If PHP is *not* installed, see one of the following sections:
 
 {% endcollapsible %}
 
-<h3 id="instgde-prereq-php5.65-install-ubuntu14">PHP 5.5 on Ubuntu 14</h3>
+## PHP 5.5 on Ubuntu 14
 
 {% collapsible To install PHP 5.5 on Ubuntu 14: %}
 
-1.	Enter the following command:
+1.	Enter the following commands in the order shown:
 
 		apt-get -y update
-		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl
-
+		apt-get -y install php5 php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
+		
 2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
 
 		PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
@@ -171,5 +172,5 @@ If PHP is *not* installed, see one of the following sections:
 *	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/continue.html)
+*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
 

@@ -6,7 +6,7 @@ title: Quick start with the Functional Testing Framework
 menu_title: Prepare environment for test run
 menu_order: 2
 version: 2.1
-github_link: mtf/mtf_quickstart/mtf_quickstart_environmemt.md
+github_link: mtf/mtf_quickstart/mtf_quickstart_environment.md
 ---
 <h2 id="mtf_quickstart_config">Prepare environment for test run</h2>
 

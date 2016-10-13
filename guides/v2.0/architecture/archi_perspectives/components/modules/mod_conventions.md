@@ -9,7 +9,9 @@ level3_menu_node: level3child
 level3_subgroup: modules
 version: 2.0
 github_link: architecture/archi_perspectives/components/modules/mod_conventions.md
-redirect_from: /guides/v1.0/architecture/modules/mod_conventions.html
+redirect_from: 
+  - /guides/v1.0/architecture/modules/mod_conventions.html
+  - /guides/v2.0/architecture/modules/mod_conventions.html
 ---
 
 <h2 id="m2arch-module-conventions-overview"> Overview</h2>

@@ -5,7 +5,7 @@ subgroup: 07_conf
 title: Magento's deployment configuration
 menu_title: Magento's deployment configuration
 menu_order: 1
-version: 2.0
+version: 2.2
 github_link: config-guide/config/config-php.md
 redirect_from: /guides/v1.0/config-guide/config/config-php.html
 ---
@@ -22,11 +22,11 @@ redirect_from: /guides/v1.0/config-guide/config/config-php.html
 <h2 id="config-php-contents">Details about the deployment configuration</h2>
 `config.php` and `env.php` are PHP files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.
 
-On the top level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key&mdash;where both the key and its value are defined by the Magento framework. 
+On the top level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key&mdash;where both the key and its value are defined by the Magento framework.
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.
 
-On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules' configuration files, with the exception of disabled modules. 
+On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules' configuration files, with the exception of disabled modules.
 
 The following sections discusses the structure and contents of the deployment configuration&mdash;`config.php` and `env.php`.
 
@@ -38,15 +38,14 @@ The following sections discusses the structure and contents of the deployment co
 
 Examples:
 
-* Uninstall components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a> 
+* Uninstall components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a>
 * Enable or disable components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
 * Component Manager: coming soon
 * System Upgrade: coming soon
 
 `config.php` snippet:
 
-{% highlight PHP %}
-<?php
+{% highlight php startinline=true %}
 return array (
   'modules' =>
   array (
@@ -61,12 +60,12 @@ return array (
     'Magento_Customer' => 1,
 ...
   ),
-); ?>
+);
 {% endhighlight %}
 
-The value `1` or `0` indicates whether a module is enabled or disabled. 
+The value `1` or `0` indicates whether a module is enabled or disabled.
 
-Disabled modules are not recognized by the Magento application; in other words, they don't participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the storefront or Admin and don't affect routing. 
+Disabled modules are not recognized by the Magento application; in other words, they don't participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the storefront or Admin and don't affect routing.
 
 The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
 
@@ -139,7 +138,7 @@ The following table provides details about each `env.php` segment and its struct
       <td><code>cache_types</code></td>
       <td><pre>__/cache_types
  |-- &lt;enumerated cache types></pre></td>
-    </tr>
+    </tr>     
   </tbody>
 </table>
 

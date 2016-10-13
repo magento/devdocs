@@ -20,7 +20,7 @@ Be sure that your system is ready for test run.
 - <a href="{{page.baseurl}}mtf/mtf_installation.html#mtf_install_pre">Magento is ready for tests</a>
 - <a href="{{page.baseurl}}mtf/mtf_installation.html#mtf_install_check">The Functional Testing Framework is installed</a>
 - <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html">The Functional Testing Framework is configured</a>
-- <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Environment is ready to test run</a>
+- <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html">Environment is ready to test run</a>
 
 ### Run all tests {#mtf_quickstart_testrun_all}
 
@@ -49,4 +49,4 @@ Let's check creating of new category. For this we should run `<magento2>/dev/tes
 
 <h2 id="mtf_install_pre">Next Steps</h2>
 
-[&lt;&lt; Prepare environment for test]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html) | [See logs for failed tests &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_logs.html)
+[&lt;&lt; Prepare environment for test]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html) | [See logs for failed tests &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_logs.html)

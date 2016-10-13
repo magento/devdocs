@@ -29,6 +29,7 @@ This interception approach reduces conflicts among extensions that change the be
 
 Plugins cannot be used with any of the following:
 
+* Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
 * Final methods
 * Final classes
 * Any class that contains at least one final public method
@@ -132,6 +133,59 @@ class ProductPlugin
     }
 }
 ?>
+{% endhighlight %}
+
+When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method with regards to default parameters and type hints. 
+
+For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
+
+{% highlight PHP %}
+<?php
+
+namespace My\Module\Model;
+
+class MyUtility
+{
+    public function save(SomeType $obj = null)
+    {
+        //do something
+    }
+}
+{% endhighlight %}
+
+If you wrapped this method with a plugin like below:
+
+{% highlight PHP %}
+<?php
+
+namespace My\Module\Plugin;
+
+class MyUtilityPlugin
+{
+    public function aroundSave(\My\Module\Model\MyUtility $subject, \callable $proceed, SomeType $obj)
+    {
+      //do something
+    }
+}
+{% endhighlight %}
+
+Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> PHP would throw a fatal error as your plugin does not accept <code>null</code>.
+
+It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this simply:
+
+{% highlight PHP %}
+<?php
+
+namespace My\Module\Plugin;
+
+class MyUtilityPlugin
+{
+    public function aroundSave(\My\Module\Model\MyUtility $subject, \callable $proceed, ...$args)
+    {
+      //do something
+      $proceed(...$args);
+    }
+}
 {% endhighlight %}
 
 ### Prioritizing plugins
