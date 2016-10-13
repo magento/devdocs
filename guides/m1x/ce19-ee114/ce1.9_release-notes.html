@@ -52,6 +52,7 @@
 
 <ul><li><a href="#ce19-1930-highlights">Highlights</a></li>
 <li><a href="#ce19-1930security">Security Enhancements</a></li>
+<li><a href="#ce19-1930security-upgrade">Check for <code>.swf</code> Files After Upgrade</li>
 <li><a href="#ce19-1930back">Backward-Incompatible Changes</a></li>
 <li><a href="#ce19-1930-changes">Changes</a></li>
 <li><a href="#ce19-1930fixes">Fixes</a></li>
@@ -116,6 +117,16 @@
 
 
 </ul>
+
+<h3 id="ce19-1930security-upgrade">Check for <code>.swf</code> Files After Upgrade</h3>
+<p>If you upgraded to Magento CE 1.9.3 after applying the <a href="https://magento.com/security/patches/supee-8788" target="_blank">SUPEE-8788 patch</a>, make sure the following files have been deleted:</p>
+
+<pre>skin/adminhtml/default/default/media/flex.swf
+skin/adminhtml/default/default/media/uploader.swf
+skin/adminhtml/default/default/media/uploaderSingle.swf</pre>
+
+<p>If the files are present, delete them to avoid a potential security exploit. As of Magento CE 1.9.0.0, we no longer distribute <code>.swf</code> files with the Magento software.</p>
+
 
 <h3 id="ce19-1930back">Backward-Incompatible Changes</h3>
 <p>The following backward-incompatible changes were made in this release:</p>
