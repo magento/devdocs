@@ -21,57 +21,12 @@ A development environment consists of the tools and processes involved in softwa
 Whether you are writing a new Magento 2 extension or contributing to the [code base](https://github.com/magento/magento2){:target="_blank"}, the first step for any developer is setting up a development environment.
 This article will guide you in optimizing or setting up your Magento 2 development environment.
 
-## Prerequisite skills and knowledge
-
-As a developer, the most important tool for development is your personal knowledge.
-Development using the Magento 2 framework requires knowledge in the following topics:
-
-* [SOLID principles](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)){:target="_blank"} - The essential principles needed to create maintainable and extendible code.
-* [PHP](http://php.net/){:target="_blank"} - This is the programming language used for developing Magento 2 code.
-* [HTML](https://en.wikipedia.org/wiki/HTML){:target="_blank"}, [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets){:target="_blank"}, and [JavaScript](https://www.javascript.com/){:target="_blank"} - Languages used for [frontend development]({{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html).
-* [Magento architecture]({{page.baseurl}}architecture/arch_whatis.html) - Developers should be familiar with the architectural concepts used in Magento such as the [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller){:target="_blank"} pattern and the [Command Query Responsibility Segregation](http://martinfowler.com/bliki/CQRS.html){:target="_blank"} principle.
-* [Dependency Injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) - An important design pattern used in Magento to handle dependencies across classes and modules.
-
-## Tools for development
-
-A developer cannot create code without a proper set of tools.
-The following is a list tools and applications recommended for Magento 2 development. 
-
-### Integrated Development Environment (IDE)
-
-You can write source code using the most basic text editor, but you will miss out on useful features such as syntax highlighting, code completion, and integrations for testing and debugging that IDEs provide.
-Using an IDE can boost your productivity by providing support during code development, testing, and debugging.
-
-[PhpStorm](https://www.jetbrains.com/phpstorm/){:target="_blank"} is an example of an IDE that contains useful features for Magento 2 development.
-
-Here is a [list of other IDEs](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#PHP){:target="_blank"} that support PHP.
-
-### Version control system
-
-Putting your project under a version control system is highly recommended.
-[Git](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller){:target="_blank"} is the preferred version control system for Magento 2 development because of its distributed nature and advanced merging process.
-
-### Testing framework
-
-A testing framework provides test automation and prevents you from wasting your time on manually performing unit and regression tests.
-
-The [PHPUnit](https://phpunit.de/) framework is the basis for all of Magento's non-javascript tests including the [Functional Testing Framework]({{page.baseurl}}mtf/mtf_introduction.html).
-Developers should learn how to use these frameworks to create automated tests in their projects.
-
-### JavaScript task runner
-
-If you are doing any front end development that involve CSS, you will need to download and use [Grunt](http://gruntjs.com/){:target="_blank"} to compile your `.less` files for deployment.
-Use the command [`grunt watch`]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html) to reload your changes automatically in the browser.
-
-[Gulp](http://gulpjs.com/){:target="_blank"} is another JavaScript build system you can use as an alternative to Grunt for front end development.
-For example, the [`magento2-frontools`](https://github.com/SnowdogApps/magento2-frontools){:target="_blank"} project is a set of front end tools based on Gulp.
-
 ## Development server
 
 Your development server is where you deploy your code and test it against a running Magento application.
-It's configuration should be as close to a production server as possible.
+Its configuration should be as close to a production server as possible.
 
-Make sure you are running the Magento application in [developer mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). 
+In your development server, make sure you are running the Magento application in [developer mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). 
 You can enable this mode with the command `bin/magento deploy:mode:set developer`.
 
 ### Installation
@@ -79,7 +34,7 @@ You can enable this mode with the command `bin/magento deploy:mode:set developer
 The following is a list of the different ways you can install a development server:
 
 * **External server installation**\\
-  If you have a spare computer or server laying around, you can [install Magento 2]({{page.baseurl}}install-gde/bk-install-guide.html) for testing as long as it meets the [system requirements]({{page.baseurl}}install-gde/system-requirements-tech.html).
+  If you have a spare computer or server laying around, you can [install Magento 2]({{page.baseurl}}install-gde/bk-install-guide.html) for development.
 * **Local installation**\\
   If you are developing on a machine that meets the system requirements, you can run Magento 2 locally.
 * **Virtual Machine (VM) installation**\\
