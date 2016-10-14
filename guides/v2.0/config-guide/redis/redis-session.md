@@ -13,6 +13,7 @@ github_link: config-guide/redis/redis-session.md
 #### Contents
 *	<a href="#reds-cache-prereq">Prerequisite</a>
 *	<a href="#config-redis-config">Configure Magento to use Redis for session storage</a>
+*	<a href="#very-redis-config">Verify Redis Configuration</a>
 
 <h2 id="reds-cache-prereq">Prerequisite</h2>
 Before you continue, install Redis as discussed in <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Use Redis for page caching or session storage</a>.
@@ -157,6 +158,12 @@ where
 </tr>
 </tbody>
 </table>
+
+<h2 id="very-redis-config">Verify Redis Configuration</h2>
+To verify your Redis Installation and Configuration, you can run the following commands in your shell.
+Type `redis-cli monitor` and refresh your site, you will see an output on your screen.
+Type `redis-cli ping` and you’ll get a reply of `PONG` which means everything is looking good.
+Type `php -m | grep redis` by which you’ll see `redis` in reply, which confirms that the PHP Redis Extension is ready to go.
 
 #### Related topics
 
