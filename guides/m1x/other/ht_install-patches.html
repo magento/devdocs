@@ -103,9 +103,10 @@ For example, on Ubuntu where Apache usually runs as <code>www-data</code>, enter
 (For example, some patches require you to stop external services, such as the Solr search engine.)</li></ol>
 
 <h2 id="apply-8788">How to Apply the SUPEE-8788 Patch</h2>
-<p>We released a <a href="https://magento.com/security/patches/supee-8788" target="_blank">security patch</a> in October, 2016 that might cause issues for some users. This section applies to you <em>only</em> if the either of the following are true:</p>
-<ul><li>You applied version 1 of the SUPEE-8788 patch. (The patch name includes <code>PATCH_SUPEE-8788_&lt;magento version>_v1</code>.)</li>
-	<li>You applied the SUPEE-1533 patch.</li></ul>
+<p>We released a <a href="https://magento.com/security/patches/supee-8788" target="_blank">security patch</a> in October, 2016 that might cause issues for some users. This section applies to you if any of the following is true:</p>
+<ul><li>You haven't yet applied SUPEE-8788 and your Magento version is earlier than EE 1.14.1.0 or CE 1.9.1.0.</li>
+	<li>You applied version 1 of the SUPEE-8788 patch. (The patch name includes <code>PATCH_SUPEE-8788_&lt;magento version>_v1</code>.)</li>
+	<li>You applied the SUPEE-1533 patch and you want to apply the SUPEE-8788 patch.</li></ul>
 <p>We recommend the following:</p>
 <ul><li>If you applied SUPEE-8788 version 1, revert that patch, revert SUPEE-1533 (version restrictions apply), apply SUPEE-3941 (version restrictions apply), then apply SUPEE-8788 version 2. <a href="#apply-8788-v1">More information</a>.</li>
 	<li>If you haven't applied SUPEE-8788, revert SUPEE-1533 (version restrictions apply), install SUPEE-3941 (version restrictions apply), then apply SUPEE-8788. <a href="#apply-8788-new">More information</a>.</li></ul>
@@ -115,7 +116,7 @@ For example, on Ubuntu where Apache usually runs as <code>www-data</code>, enter
 <ol><li>Log in to your Magento server.</li>
 	<li>Open <code>&lt;your Magento install dir>/app/etc/applied.patches.list</code> in a text editor.</li>
 	<li>Determine which patches are already applied. Version 1 of SUPEE-8788 includes <code>PATCH_SUPEE-8788_&lt;magento version>_v1</code> in the name.</li>
-	<li>If your Magento version is EE 1.14.1.0 or CE 1.9.1.0, <em>and</em> patch SUPEE-1533 is applied <a href="#revert">revert</a> SUPEE-1533.</li>
+	<li>If your Magento version is EE 1.14.1.0 or CE 1.9.1.0, <em>and</em> patch SUPEE-1533 is applied, <a href="#revert">revert</a> SUPEE-1533.</li>
 	<li>If you reverted patch SUPEE-1533 as discussed in the preceding step, applied patch SUPEE-3941.</li>
 	<li><a href="#get">Get</a> version 2 of SUPEE-8788.</li>
 	<li><a href="#apply">Apply</a> version 2 of SUPEE-8788.</li></ol>
