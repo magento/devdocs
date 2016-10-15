@@ -1345,9 +1345,10 @@
     <td>en_US</td>
     </tr>
     <tr><td>APPLICATION_MODE</td>
-    <td>Determines whether or not Magento operates in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During development, we recommend the default setting.</td>
+    <td><p>Determines whether or not Magento operates in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During development, we recommend the default setting.</p>
+        <p>For production, set to <code>MAGENTO_PRODUCTION_MODE</code>.&lt;/td&gt;
     <td>MAGENTO_DEVELOPER_MODE</td>
-    </tr>
+    &lt;/tr&gt;
     <tr><td>CLEAN_STATIC_FILES</td>
     <td><p>The default value, <code>true</code>, cleans <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development.</p>
     <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
@@ -1363,33 +1364,27 @@
     <td>The default value, <code>true</code>, enables <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
     <td>true</td>
     </tr> -->
-</tbody>
-</table>
+&lt;/tbody&gt;
+&lt;/table&gt;
 
-<p>For an example, see <a href="/guides/v2.0/cloud/access-acct/set-up-env.html#setup-env-adminurl">Step 2: Change the Admin URI, user name, and password in the master branch</a>.</p>
+For an example, see [Step 2: Change the Admin URI, user name, and password in the master branch](/guides/v2.0/cloud/access-acct/set-up-env.html#setup-env-adminurl).
 
-<h2 id="cloud-env-vars-tshoot">Troubleshooting</h2>
-<p>In the event something goes wrong and you can’t access your environment after it deploys, try the following:</p>
+## Troubleshooting {#cloud-env-vars-tshoot}
+In the event something goes wrong and you can't access your environment after it deploys, try the following:
 
-<ul>
-  <li><a href="/guides/v2.0/cloud/env/environments-start.html#env-start-tunn">SSH to the environment</a> and make sure <a href="/guides/v2.0/cloud/env/environments-start.html#cloud-ssh-tunnel-service">services</a> are running.</li>
-  <li>
-    <p>Restore your snapshot:</p>
+*   [SSH to the environment](/guides/v2.0/cloud/env/environments-start.html#env-start-tunn) and make sure [services](/guides/v2.0/cloud/env/environments-start.html#cloud-ssh-tunnel-service) are running.
+*   Restore your snapshot: 
 
-    <pre><code>magento-cloud snapshot:list
-magento-cloud snapshot:restore &lt;snapshot&gt;
-</code></pre>
-  </li>
-</ul>
+        magento-cloud snapshot:list
+        magento-cloud snapshot:restore <snapshot>
 
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.0/cloud/howtos/environment-tutorial-set-mage-vars.html">Tutorial—Set Magento environment variables</a></li>
-  <li><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Cloud environment variables</a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
-</ul>
+#### Related topics
+*   [Tutorial&mdash;Set Magento environment variables](/guides/v2.0/cloud/howtos/environment-tutorial-set-mage-vars.html) 
+*   [Magento Cloud environment variables](/guides/v2.0/cloud/env/environment-vars_cloud.html)
+*   [`.magento.app.yaml`](/guides/v2.0/cloud/project/project-conf-files_magento-app.html)
+*   [`services.yaml`](/guides/v2.0/cloud/project/project-conf-files_services.html)
+*   [`routes.yaml`](/guides/v2.0/cloud/project/project-conf-files_routes.html)
+</snapshot></p></td></tr></tbody></table>
 
 		</div>
 	</section>
