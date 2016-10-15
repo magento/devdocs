@@ -59,7 +59,8 @@ The following table lists variables that you can override using environment vari
     <td>en_US</td>
     </tr>
     <tr><td>APPLICATION_MODE</td>
-    <td>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During development, we recommend the default setting.</td>
+    <td><p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During development, we recommend the default setting.</p>
+        <p>For production, set to <code>MAGENTO_PRODUCTION_MODE</code>.</td>
     <td>MAGENTO_DEVELOPER_MODE</td>
     </tr>
     <tr><td>CLEAN_STATIC_FILES</td>
