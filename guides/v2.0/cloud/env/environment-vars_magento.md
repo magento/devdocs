@@ -69,8 +69,9 @@ The following table lists variables that you can override using environment vari
     <td>true</td>
     </tr>
     <tr><td>UPDATE_URLS</td>
-    <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment.</p></td>
-    <td>true</td>
+    <td><p><em>Version 2.1.2 and later.</em>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
+        <p>You should set this variable to <code>disabled</code> <em>only</em> in staging or production, where the base URLs can't change.</p></td>
+    <td>enabled</td>
     </tr>
     <!-- <tr><td>RECOMPILE_DI</td>
     <td>The default value, <code>true</code>, enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
