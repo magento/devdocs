@@ -44,6 +44,7 @@
 
 <ul><li><a href="#ee114-11430-highlights">Highlights</a></li>
 <li><a href="#ee114-1430security">Security Enhancements</a></li>
+<li><a href="#ee114-1430security-upgrade">Check for <code>.swf</code> File After Upgrade</a></li>
 <li><a href="#ee114-1430back">Backward-Incompatible Changes</a></li>
 <li><a href="#ee114-11430-changes">Changes</a></li>
 <li><a href="#ee114-1430fixes">Fixes</a></li>
@@ -108,6 +109,15 @@
 
 
 </ul>
+
+<h3 id="ee114-1430security-upgrade">Check for <code>.swf</code> Files After Upgrade</h3>
+<p>If you upgraded to Magento EE 1.14.3 after applying the <a href="https://magento.com/security/patches/supee-8788" target="_blank">SUPEE-8788 patch</a>, make sure the following files have been deleted:</p>
+
+<pre>skin/adminhtml/default/default/media/flex.swf
+skin/adminhtml/default/default/media/uploader.swf
+skin/adminhtml/default/default/media/uploaderSingle.swf</pre>
+
+<p>If the files are present, delete them to avoid a potential security exploit. As of Magento EE 1.14.0.0, we no longer distribute <code>.swf</code> files with the Magento software.</p>
 
 <h3 id="ee114-1430back">Backward-Incompatible Changes</h3>
 <p>The following backward-incompatible changes were made in this release:</p>
