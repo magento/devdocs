@@ -86,8 +86,9 @@ The following figure shows an example.</br>
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: This article assumes your patch file name ends in <code>.sh</code>. If your patch file name ends in <code>.patch</code> or something else, <a href="http://support.magentocommerce.com/" target="_blank">contact Magento Support</a> before proceeding.</div>
 
 For example, <code>/var/www/html/magento</code>.</li>
-<li>Enter the following command as a user with sufficient privileges to write to Magento files (typically, the web server user or <code>root</code>):
-<pre>sh <em>patch-file-name</em>.sh</pre>
+<li>Enter the following commands as a user with sufficient privileges to write to Magento files (typically, the web server user or <code>root</code>):
+	<pre>chmod +x &lt;patch-file-name>.sh
+./&lt;patch-file-name>.sh</pre>
 A message such as the following displays to confirm the patch installed successfully:
 <pre>Patch was applied/reverted successfully.</pre></li>
 <li>To reapply ownership to the files changed by the patch:
