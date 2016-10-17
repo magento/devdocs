@@ -60,6 +60,8 @@ namem2install: "Magento 2 Installation Guide"
 # Build settings
 markdown: kramdown
 highlighter: pygments
+kramdown:
+  toc_levels: 2..3
 
 incremental: true
 

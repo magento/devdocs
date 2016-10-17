@@ -89,7 +89,15 @@ If you're currently using an EE version earlier than EE 1.13.0.0, upgrade <em>di
 <li>Back up the system</li>
 <li>Upgrade to CE 1.9 or EE 1.14</li></ol>
 </p>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Use caution when upgrading from versions older than CE 1.7 or EE 1.12 because core code on which your extensions are based and database schema have likely changed.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: 
+  <ul><li>Use caution when upgrading from versions older than CE 1.7 or EE 1.12 because core code on which your extensions are based and database schema have likely changed.</li>
+    <li>If you upgraded to Magento CE 1.9.3 or Magento EE 1.14.3 after applying the <a href="https://magento.com/security/patches/supee-8788" target="_blank">SUPEE-8788 patch</a>, make sure the following files have been deleted:<br>
+
+<pre>skin/adminhtml/default/default/media/flex.swf
+skin/adminhtml/default/default/media/uploader.swf
+skin/adminhtml/default/default/media/uploaderSingle.swf</pre>
+
+If the files are present, delete them to avoid a potential security exploit. As of Magento CE 1.9.0.0 and Magento EE 1.14.0.0, we no longer distribute <code>.swf</code> files with the Magento software.</li></ul></div>
 
 <p>To upgrade to CE 1.8, skip the remainder of this article and continue with <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html" target="_blank">Upgrading to and Verifying Magento Community Edition 1.8 and Enterprise Edition 1.13&mdash;Part 2</a>.</p>
 <p>To upgrade from EE 1.13.0.2 to EE 1.13.1.0, skip the remainder of this article and continue with <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html" target="_blank">Upgrading to and Verifying Magento Community Edition 1.8 and Enterprise Edition 1.13&mdash;Part 2</a>.</p>
