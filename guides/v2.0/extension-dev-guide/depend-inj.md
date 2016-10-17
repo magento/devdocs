@@ -22,14 +22,12 @@ Magento 2 uses *dependency injection* as an alternative to the Magento 1.x `Mage
 
 In simple terms, when object A requires object or value B to fulfill a function, then B is a dependency of A.
 
-A dependency creates a degree of coupling between objects in your code.
-A large amount of coupling limits code reuse and makes moving components to new projects difficult.
-Using dependency injection allows for a loose coupling in your code.
-
 ## Dependency inversion principle
 
 When using dependency injection, we encourage you to follow the  [dependency inversion principle](http://www.oodesign.com/dependency-inversion-principle.html){:target="_blank"}, a coding principle that stipulates you use abstractions to reduce code dependencies.
 This means that high level classes should use the interface of a low level class instead of working with it directly.
+
+The [`di.xml`]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html) file maps an interface dependency to a preferred implementation class.
 
 ## Object manager
 
@@ -43,8 +41,8 @@ Magento uses class constructor signatures, not doc-block annotations, to retriev
 If you write your code in a regular way using the dependency inversion principle, you do not have to worry about class definitions.
 
 ## Compiling dependencies
-A [code compiler tool]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) reads the dependencies in a class and passes them on to the `ObjectManager` for creation.
-In other words, the compiler generates all non-existing dependency injection service classes ([proxies]({{page.baseurl}}extension-dev-guide/proxies.html), [factories]({{page.baseurl}}extension-dev-guide/factories) and [interceptors]({{page.baseurl}}extension-dev-guide/plugins.html)) declared in code or configuration.
+A [code compiler tool]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) collects all the dependency information in a class and passes them on to the `ObjectManager` for creating concrete objects in the application.
+In other words, the compiler helps generate all non-existing dependency injection service classes ([proxies]({{page.baseurl}}extension-dev-guide/proxies.html), [factories]({{page.baseurl}}extension-dev-guide/factories) and [interceptors]({{page.baseurl}}extension-dev-guide/plugins.html)) declared in code or configuration.
 
 
 ## Injection types used in Magento
@@ -74,45 +72,45 @@ class Builder
 }
 {% endhighlight %}
 
-### Construction Injection
+### Constructor Injection
 
 Magento uses constructor injection to provide dependencies through an object's class constructor.
 In the example above, `$menuItemFactory` and `$menu` are the dependencies provided to the class through its constructor.
 
 You must use constructor dependency injection for all optional and required dependencies of an object.
 
-<div class="bs-callout bs-callout-info" id="proxy-info">
-  <b>Optional dependencies</b><br/>
-  <p>Optional dependencies are expensive to instantiate objects that the dependent class can use.
-In these cases, you can use a <a href="{{page.baseurl}}extension-dev-guide/proxies.html">proxy</a></p>
+<div class="bs-callout bs-callout-info" id="proxy-info" markdown="1">
+  **Optional dependencies**\\
+  Optional dependencies are the objects that your class uses for specific methods and scenarios.
+  Since your class does not always use these classes and instantiating them is expensive, you should use a [proxy]({{page.baseurl}}extension-dev-guide/proxies.html).
 </div>
 
 ### Method Injection
 
-Method injection is when an object specifies a dependency in one of its methods instead of its constructors.
+Method injection is when an object specifies a dependency in one of its methods instead of its constructor.
 In the example, above `$command` is the dependency passed into the class through the `processCommand` method.
 
 When an object needs to act on a dependency, you can use method injection.
 
 ## Injectable and Newable Objects
 
-**Injectable:** Objects obtained through dependency injection.
-Any object the object manager instantiates, such as singletons and factories, fall into this category.
+**Injectable:** Service objects that are singletons obtained through dependency injection.
+The object manager uses the configuration in the `di.xml` file to create these objects and inject them into constructors.
 
 **Newable/non-injectable:** Objects obtained by creating a new class instance every time.
 Transient objects, such as those that require external input from the user or database, fall into this category.
-Injecting these objects returns an undefined object.
+Attempts to inject these objects produce either an error that the object could not be created or an incorrect object that is incomplete.
 
-For example, you cannot use a model object such as [`app/code/Magento/User/Model/User.php`]({{ site.mage2000url }}app/code/Magento/Catalog/Model/Product.php){:target="_blank"} for dependency injection.
+For example, you cannot use a model object such as [`app/code/Magento/Catalog/Model/Product.php`]({{ site.mage2000url }}app/code/Magento/Catalog/Model/Product.php){:target="_blank"} for dependency injection.
 You need to provide a product id or explicitly request a new, empty instance of that object, and since you cannot specify this in the constructor signature, Magento cannot inject the object.
 
 ## Rules for using dependency injection
 
-* Injectable objects may request dependent objects in their constructors if those objects are also injectable.
+* Injectable objects may request other dependencies in their constructors if those objects are also injectable, but make sure you are not introducing circular dependencies.
 * If an injectable object needs to produce newable objects, it must ask for a [factory]({{page.baseurl}}extension-dev-guide/factories.html) in its constructor since factories are injectable.
 * If an injectable object needs to perform some actions on newable object, it must receive that object as a function method argument.
 * You can create newable objects in services with object [factories]({{page.baseurl}}extension-dev-guide/factories.html) or you can pass them in as method parameters.
-* Newable objects should not hold a field reference to an injectable object nor should they request one in their constructor.
+* Newable objects should not hold a reference to an injectable object as a property or class variable nor should they request one in their constructor.
 This is a [Law of Demeter](http://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} violation.
 
 
