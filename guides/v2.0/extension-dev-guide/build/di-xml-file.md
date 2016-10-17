@@ -48,7 +48,6 @@ You can configure the type in your `di.xml` configuration node in the following 
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Magento\Core\Model\Session" />
     <virtualType name="moduleConfig" type="Magento\Core\Model\Config">
         <arguments>
             <argument name="type" xsi:type="string">system</argument>
@@ -64,7 +63,6 @@ You can configure the type in your `di.xml` configuration node in the following 
 
 The preceding example declares the following types:
 
-*	`Magento\Core\Model\Session`: The attribute name always specifies type configured by the node.
 *	`moduleConfig`: A virtual type that extends the type `Magento\Core\Model\Config`.
 *	`Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
 
@@ -74,7 +72,7 @@ This allows you to use a customized class without affecting other classes that h
 
 The example creates a virtual type for `Magento\Core\Model\Config` and specifies `system` as the constructor argument for `type`.
 
-## Construction arguments
+## Constructor arguments
 
 You can configure the class constructor arguments in your `di.xml` in the argument node.
 The object manager injects these arguments into the class during creation.

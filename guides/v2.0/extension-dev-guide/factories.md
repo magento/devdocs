@@ -90,6 +90,14 @@ $block = $this->blockFactory->create();
 
 For classes that require parameters, the automatically generated `create()` function accepts an array of parameters that it passes on to the `ObjectManager` to create the target class.
 
+The example below shows the construction of a `Magento\Search\Model\Autocomplete\Item` object by passing in an array of parameters to a factory:
+{% highlight php startinline=true %} 
+$resultItem = $this->itemFactory->create([
+  'title' => $item->getQueryText(),
+  'num_results' => $item->getNumResults(),
+]); 
+{%endhighlight%}
+
 ### Interfaces
 
 Factories are smart enough to resolve dependencies and allow you to get the correct instance of an interface as defined in your module's `di.xml`.
