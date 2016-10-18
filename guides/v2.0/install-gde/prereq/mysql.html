@@ -842,16 +842,13 @@
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>The Magento application requires MySQL 5.6.x.</p>
-<p>The Magento application 2.1.2 and later is compatible with MySQL 5.7.x.</p></span>
-</div>
+&lt;/div&gt;
 
-<p>Magento <em>strongly</em> recommends you observe the following standard when you set up your Magento database:</p>
+Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
-<ul>
-  <li>Magento uses <a href="http://dev.mysql.com/doc/refman/5.0/en/triggers.html" target="_blank">MySQL database triggers</a> to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.</li>
-  <li>Familiarize yourself with <a href="http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html" target="_blank">these potential MySQL trigger limitations</a> before you continue.</li>
-  <li>If you use MySQL database replication, be aware that Magento does <em>not</em> support MySQL statement-based replication. Make sure you use <em>only</em> <a href="http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html" target="_blank">row-based replication</a>.</li>
-</ul>
+*	Magento uses <a href="http://dev.mysql.com/doc/refman/5.0/en/triggers.html" target="_blank">MySQL database triggers</a> to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
+*	Familiarize yourself with <a href="http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html" target="_blank">these potential MySQL trigger limitations</a> before you continue.
+*	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ <a href="http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html" target="_blank">row-based replication</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -859,46 +856,90 @@
 </div>
 
 <h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
-<p>See one of the following sections for more information:</p>
+See one of the following sections for more information:
 
-<ul>
-  <li><a href="#instgde-prereq-mysql57-ub16">Installing and configuring MySQL 5.7 on Ubuntu 16</a></li>
-  <li><a href="#instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</a></li>
-  <li><a href="#instgde-prereq-mysql56ubu12">Installing MySQL 5.6 on Ubuntu 12</a></li>
-</ul>
+*	[Installing and configuring MySQL 5.7 on Ubuntu 16](#instgde-prereq-mysql57-ub16)
+*	<a href="#instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</a>
+*	<a href="#instgde-prereq-mysql56ubu12">Installing MySQL 5.6 on Ubuntu 12</a>
 
-<h3 id="instgde-prereq-mysql57-ub16">Installing and configuring MySQL 5.7 on Ubuntu 16</h3>
-<p>This section discusses how to install MySQL 5.7 on Ubuntu 16.</p>
+### Installing and configuring MySQL 5.7 on Ubuntu 16 {#instgde-prereq-mysql57-ub16}
+This section discusses how to install MySQL 5.7 on Ubuntu 16.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>The Magento application 2.1.2 and later is compatible with MySQL 5.7.</p></span>
+  <p>The Magento application 2.1.2 and later are compatible with MySQL 5.7.</p></span>
 </div>
 
-<p>To install MySQL 5.7 on Ubuntu 16:</p>
+To install MySQL 5.7 on Ubuntu 16:
 
-<ol>
-  <li>
-    <p>Enter the following command:</p>
+1.	Enter the following command:
 
-    <pre><code>sudo apt install -y mysql-server mysql-client
+		sudo apt install -y mysql-server mysql-client
+
+2.	Secure the installation.
+
+		sudo mysql_secure_installation
+
+2.	Test the installation by entering the following command:
+
+		mysql -u root -p
+
+	Sample output:
+
+		Welcome to the MySQL monitor.  Commands end with ; or \g.
+		Your MySQL connection id is 45
+		Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
+
+		Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+		Oracle is a registered trademark of Oracle Corporation and/or its
+		affiliates. Other names may be trademarks of their respective
+		owners.
+
+		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+		mysql&gt;
+
+4.	If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank">`max_allowed_packet`</a> that is larger than the default, 16MB.
+
+	<div>
+
+      <pre><code>To increase the value, open `/etc/mysql/mysql.cnf` in a text editor and locate the value for `max_allowed_packet`. Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysql restart`).
+
+To optionally verify the value you set, enter the following command at a `mysql&gt;` prompt:
+
+	 SHOW VARIABLES LIKE 'max_allowed_packet';
 </code></pre>
-  </li>
-  <li>
-    <p>Secure the installation.</p>
 
-    <pre><code>sudo mysql_secure_installation
+      <ol>
+        <li><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</li>
+      </ol>
+
+      <h3 id="instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</h3>
+      <p>To install MySQL 5.6 on Ubuntu 14:</p>
+
+      <ol>
+        <li>
+          <p>Enter the following command:</p>
+
+          <pre><code>apt-get -y install mysql-server-5.6 mysql-client-5.6
 </code></pre>
-  </li>
-  <li>
-    <p>Test the installation by entering the following command:</p>
+        </li>
+        <li>
+          <p>Secure the installation.</p>
 
-    <pre><code>mysql -u root -p
+          <pre><code>mysql_secure_installation
+</code></pre>
+        </li>
+        <li>
+          <p>Test the installation by entering the following command:</p>
+
+          <pre><code>mysql -u root -p
 </code></pre>
 
-    <p>Sample output:</p>
+          <p>Sample output:</p>
 
-    <pre><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
+          <pre><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 45
 Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
 
@@ -912,113 +953,55 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 mysql&gt;
 </code></pre>
-  </li>
-  <li>
-    <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code>max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
+        </li>
+        <li>
+          <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code>max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
 
-    <div>
+          <div>
 
-      <p>To increase the value, open <code>/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code>max_allowed_packet</code>. Save your changes to <code>mysql.cnf</code>, close the text editor, and restart MySQL (<code>service mysql restart</code>).</p>
+            <p>To increase the value, open <code>/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code>max_allowed_packet</code>. Save your changes to <code>mysql.cnf</code>, close the text editor, and restart MySQL (<code>service mysql restart</code>).</p>
 
-      <p>To optionally verify the value you set, enter the following command at a <code>mysql&gt;</code> prompt:</p>
+            <p>To optionally verify the value you set, enter the following command at a <code>mysql&gt;</code> prompt:</p>
 
-      <pre><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+            <pre><code> SHOW VARIABLES LIKE 'max_allowed_packet';
 </code></pre>
 
-    </div>
-  </li>
-  <li>
-    <p><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</p>
-  </li>
-</ol>
+          </div>
+        </li>
+        <li>
+          <p><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</p>
+        </li>
+      </ol>
 
-<h3 id="instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</h3>
-<p>To install MySQL 5.6 on Ubuntu 14:</p>
+      <h3 id="instgde-prereq-mysql56ubu12">Installing MySQL 5.6 on Ubuntu 12</h3>
 
-<ol>
-  <li>
-    <p>Enter the following command:</p>
+      <p>To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="http://askubuntu.com/questions/433014/unable-to-install-mysql-5-6-in-ubuntu-12-04" target="_blank">askubuntu.com</a>.</p>
 
-    <pre><code>apt-get -y install mysql-server-5.6 mysql-client-5.6
-</code></pre>
-  </li>
-  <li>
-    <p>Secure the installation.</p>
+      <ol>
+        <li>
+          <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>mysql_secure_installation
-</code></pre>
-  </li>
-  <li>
-    <p>Test the installation by entering the following command:</p>
-
-    <pre><code>mysql -u root -p
-</code></pre>
-
-    <p>Sample output:</p>
-
-    <pre><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 45
-Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql&gt;
-</code></pre>
-  </li>
-  <li>
-    <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code>max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
-
-    <div>
-
-      <p>To increase the value, open <code>/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code>max_allowed_packet</code>. Save your changes to <code>mysql.cnf</code>, close the text editor, and restart MySQL (<code>service mysql restart</code>).</p>
-
-      <p>To optionally verify the value you set, enter the following command at a <code>mysql&gt;</code> prompt:</p>
-
-      <pre><code> SHOW VARIABLES LIKE 'max_allowed_packet';
-</code></pre>
-
-    </div>
-  </li>
-  <li>
-    <p><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</p>
-  </li>
-</ol>
-
-<h3 id="instgde-prereq-mysql56ubu12">Installing MySQL 5.6 on Ubuntu 12</h3>
-
-<p>To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="http://askubuntu.com/questions/433014/unable-to-install-mysql-5-6-in-ubuntu-12-04" target="_blank">askubuntu.com</a>.</p>
-
-<ol>
-  <li>
-    <p>Enter the following commands in the order shown:</p>
-
-    <pre><code>apt-get -y update
+          <pre><code>apt-get -y update
 apt-add-repository ppa:ondrej/mysql-5.6
 apt-get -y update
 apt-get -y install mysql-server
 </code></pre>
-  </li>
-  <li>
-    <p>Secure the installation.</p>
+        </li>
+        <li>
+          <p>Secure the installation.</p>
 
-    <pre><code>mysql_secure_installation
+          <pre><code>mysql_secure_installation
 </code></pre>
-  </li>
-  <li>
-    <p>Test the installation by entering the following command:</p>
+        </li>
+        <li>
+          <p>Test the installation by entering the following command:</p>
 
-    <pre><code>mysql -u root -p
+          <pre><code>mysql -u root -p
 </code></pre>
 
-    <p>Messages similar to the following display:</p>
+          <p>Messages similar to the following display:</p>
 
-    <pre><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
+          <pre><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 43
 Server version: 5.6.21-1+deb.sury.org~precise+1 (Ubuntu)
 
@@ -1032,136 +1015,136 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 mysql&gt;
 </code></pre>
-  </li>
-  <li>
-    <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code>max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
+        </li>
+        <li>
+          <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code>max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
 
-    <div>
+          <div>
 
-      <p>To increase the value, open <code>/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code>max_allowed_packet</code>. Save your changes to <code>mysql.cnf</code>, close the text editor, and restart MySQL (<code>service mysql restart</code>).</p>
+            <p>To increase the value, open <code>/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code>max_allowed_packet</code>. Save your changes to <code>mysql.cnf</code>, close the text editor, and restart MySQL (<code>service mysql restart</code>).</p>
 
-      <p>To optionally verify the value you set, enter the following command at a <code>mysql&gt;</code> prompt:</p>
+            <p>To optionally verify the value you set, enter the following command at a <code>mysql&gt;</code> prompt:</p>
 
-      <pre><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+            <pre><code> SHOW VARIABLES LIKE 'max_allowed_packet';
 </code></pre>
 
-    </div>
-  </li>
-  <li>
-    <p><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</p>
-  </li>
-</ol>
+          </div>
+        </li>
+        <li>
+          <p><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</p>
+        </li>
+      </ol>
 
-<h2 id="instgde-prereq-mysql57-centos">Installing and configuring MySQL 5.7 on CentOS</h2>
-<p>This section discusses how to to install MySQL 5.7 on CentOS 6 or CentOS 7.</p>
+      <h2 id="instgde-prereq-mysql57-centos">Installing and configuring MySQL 5.7 on CentOS</h2>
+      <p>This section discusses how to to install MySQL 5.7 on CentOS 6 or CentOS 7.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
+      <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>The Magento application 2.1.2 and later is compatible with MySQL 5.7.</p></span>
+  <p>The Magento application 2.1.2 and later are compatible with MySQL 5.7.</p></span>
 </div>
 
-<h3 id="get-mysql-57-for-centos-7">Get MySQL 5.7 for CentOS 7</h3>
-<p>The following procedure is based on <a href="http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora" target="_blank">How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21</a>.</p>
+      <h3 id="get-mysql-57-for-centos-7">Get MySQL 5.7 for CentOS 7</h3>
+      <p>The following procedure is based on <a href="http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora" target="_blank">How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21</a>.</p>
 
-<p>As a user with <code>root</code> privileges, enter the following commands in the order shown:</p>
+      <p>As a user with <code>root</code> privileges, enter the following commands in the order shown:</p>
 
-<pre><code>wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
+      <pre><code>wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
 yum -y localinstall mysql57-community-release-el7-7.noarch.rpm
 </code></pre>
 
-<p>Continue with <a href="#mysql57-centos-config">Install and configure MySQL 5.7 on CentOS 6 or 7</a>.</p>
+      <p>Continue with <a href="#mysql57-centos-config">Install and configure MySQL 5.7 on CentOS 6 or 7</a>.</p>
 
-<h3 id="get-mysql-57-for-centos-6">Get MySQL 5.7 for CentOS 6</h3>
-<p>The following procedure is based on <a href="http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora" target="_blank">How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21</a>.</p>
+      <h3 id="get-mysql-57-for-centos-6">Get MySQL 5.7 for CentOS 6</h3>
+      <p>The following procedure is based on <a href="http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora" target="_blank">How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21</a>.</p>
 
-<p>As a user with <code>root</code> privileges, enter the following commands in the order shown:</p>
+      <p>As a user with <code>root</code> privileges, enter the following commands in the order shown:</p>
 
-<pre><code>wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
+      <pre><code>wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
 yum -y localinstall mysql57-community-release-el6-7.noarch.rpm
 </code></pre>
 
-<p>Continue with the next section.</p>
+      <p>Continue with the next section.</p>
 
-<h3 id="mysql57-centos-config">Install and configure MySQL 5.7 on CentOS 6 or 7</h3>
-<ol>
-  <li>
-    <p>Enter the following commands in the order shown:</p>
+      <h3 id="mysql57-centos-config">Install and configure MySQL 5.7 on CentOS 6 or 7</h3>
+      <ol>
+        <li>
+          <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>yum -y install mysql-community-server
+          <pre><code>yum -y install mysql-community-server
 service mysqld start
 </code></pre>
-  </li>
-  <li>
-    <p>Verify the version using the following command:</p>
+        </li>
+        <li>
+          <p>Verify the version using the following command:</p>
 
-    <pre><code>mysql --version
+          <pre><code>mysql --version
 </code></pre>
 
-    <p>Sample output follows:</p>
+          <p>Sample output follows:</p>
 
-    <pre><code>mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
+          <pre><code>mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
 </code></pre>
-  </li>
-  <li>
-    <p>Enter the following command to get the temporary database <code>root</code> user password:</p>
+        </li>
+        <li>
+          <p>Enter the following command to get the temporary database <code>root</code> user password:</p>
 
-    <pre><code>grep 'temporary password' /var/log/mysqld.log
+          <pre><code>grep 'temporary password' /var/log/mysqld.log
 </code></pre>
-  </li>
-  <li>
-    <p>Enter the following command to secure the installation:</p>
+        </li>
+        <li>
+          <p>Enter the following command to secure the installation:</p>
 
-    <pre><code>mysql_secure_installation
+          <pre><code>mysql_secure_installation
 </code></pre>
 
-    <p>Follow the prompts on your screen to set a new password and configure other options.</p>
-  </li>
-  <li>
-    <p>Configure MySQL 5.7 as discussed in <a href="#instgde-prereq-mysql-config">Configuring the Magento database instance</a>.</p>
-  </li>
-</ol>
+          <p>Follow the prompts on your screen to set a new password and configure other options.</p>
+        </li>
+        <li>
+          <p>Configure MySQL 5.7 as discussed in <a href="#instgde-prereq-mysql-config">Configuring the Magento database instance</a>.</p>
+        </li>
+      </ol>
 
-<h2 id="instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</h2>
-<p>The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/" target="_blank">Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux</a>.</p>
+      <h2 id="instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</h2>
+      <p>The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/" target="_blank">Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux</a>.</p>
 
-<ol>
-  <li>
-    <p><em>CentOS 6</em> Install the MySQL database:</p>
+      <ol>
+        <li>
+          <p><em>CentOS 6</em> Install the MySQL database:</p>
 
-    <pre><code>yum -y update
+          <pre><code>yum -y update
 sudo wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm &amp;&amp; sudo rpm -ivh mysql-community-release-el6-5.noarch.rpm
 sudo yum -y install mysql-server
 </code></pre>
-  </li>
-  <li>
-    <p><em>CentOS 7</em> Install the MySQL database:</p>
+        </li>
+        <li>
+          <p><em>CentOS 7</em> Install the MySQL database:</p>
 
-    <pre><code>yum -y update
+          <pre><code>yum -y update
 sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm &amp;&amp; sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 sudo yum -y install mysql-server
 </code></pre>
-  </li>
-  <li>
-    <p>Start MySQL.</p>
+        </li>
+        <li>
+          <p>Start MySQL.</p>
 
-    <pre><code>service mysqld start
+          <pre><code>service mysqld start
 </code></pre>
-  </li>
-  <li>
-    <p>Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration.</p>
+        </li>
+        <li>
+          <p>Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration.</p>
 
-    <pre><code>mysql_secure_installation
+          <pre><code>mysql_secure_installation
 </code></pre>
-  </li>
-  <li>
-    <p>Verify the MySQL server version.</p>
+        </li>
+        <li>
+          <p>Verify the MySQL server version.</p>
 
-    <pre><code>mysql -u root -p
+          <pre><code>mysql -u root -p
 </code></pre>
 
-    <p>Messages similar to the following display:</p>
+          <p>Messages similar to the following display:</p>
 
-    <pre><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
+          <pre><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 15
 Server version: 5.6.23 MySQL Community Server (GPL)
 
@@ -1173,76 +1156,77 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 </code></pre>
-  </li>
-  <li>
-    <p>If you expect to import large numbers of products into Magento, you can configure MySQL to use the <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code>max_allowed_packet</code></a> parameter. We recommend a value of at least 16MB.</p>
+        </li>
+        <li>
+          <p>If you expect to import large numbers of products into Magento, you can configure MySQL to use the <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code>max_allowed_packet</code></a> parameter. We recommend a value of at least 16MB.</p>
 
-    <div>
+          <div>
 
-      <p>To increase the value, open <code>/etc/mysql.cnf</code> in a text editor and add search for <code>max_allowed_packet</code>. Set the value to <code>16M</code> or larger.</p>
+            <p>To increase the value, open <code>/etc/mysql.cnf</code> in a text editor and add search for <code>max_allowed_packet</code>. Set the value to <code>16M</code> or larger.</p>
 
-      <p>If it does not exist, add it before <code>[mysqld_safe]</code>.</p>
+            <p>If it does not exist, add it before <code>[mysqld_safe]</code>.</p>
 
-      <p>Save your changes to <code>mysql.cnf</code>, close the text editor, and restart MySQL (<code>service mysqld restart</code>).</p>
+            <p>Save your changes to <code>mysql.cnf</code>, close the text editor, and restart MySQL (<code>service mysqld restart</code>).</p>
 
-      <p>To optionally verify the value you set, enter the following command at a <code>mysql&gt;</code> prompt:</p>
+            <p>To optionally verify the value you set, enter the following command at a <code>mysql&gt;</code> prompt:</p>
 
-      <pre><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+            <pre><code> SHOW VARIABLES LIKE 'max_allowed_packet';
 </code></pre>
 
-    </div>
-  </li>
-  <li>
-    <p>Configure the Magento database instance as discussed in the next section.</p>
-  </li>
-</ol>
+          </div>
+        </li>
+        <li>
+          <p>Configure the Magento database instance as discussed in the next section.</p>
+        </li>
+      </ol>
 
-<h2 id="instgde-prereq-mysql-config">Configuring the Magento database instance</h2>
-<p>This section discusses how to create a new database instance for Magento. Although a new database instance is recommended, you can optionally install Magento into an existing database instance.</p>
+      <h2 id="instgde-prereq-mysql-config">Configuring the Magento database instance</h2>
+      <p>This section discusses how to create a new database instance for Magento. Although a new database instance is recommended, you can optionally install Magento into an existing database instance.</p>
 
-<p>To configure a MySQL database instance:</p>
+      <p>To configure a MySQL database instance:</p>
 
-<ol>
-  <li>Log in to your database server as any user.</li>
-  <li>
-    <p>Enter the following command to get to a MySQL command prompt:</p>
+      <ol>
+        <li>Log in to your database server as any user.</li>
+        <li>
+          <p>Enter the following command to get to a MySQL command prompt:</p>
 
-    <pre><code>mysql -u root -p
+          <pre><code>mysql -u root -p
 </code></pre>
-  </li>
-  <li>Enter the MySQL <code>root</code> user’s password when prompted.</li>
-  <li>
-    <p>Enter the following commands in the order shown to create a database instance named <code>magento</code> with user name <code>magento</code>:</p>
+        </li>
+        <li>Enter the MySQL <code>root</code> user’s password when prompted.</li>
+        <li>
+          <p>Enter the following commands in the order shown to create a database instance named <code>magento</code> with user name <code>magento</code>:</p>
 
-    <pre><code>create database magento;
+          <pre><code>create database magento;
 GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
 </code></pre>
-  </li>
-  <li>
-    <p>Enter <code>exit</code> to quit the command prompt.</p>
-  </li>
-  <li>
-    <p>Verify the database:</p>
+        </li>
+        <li>
+          <p>Enter <code>exit</code> to quit the command prompt.</p>
+        </li>
+        <li>
+          <p>Verify the database:</p>
 
-    <pre><code>mysql -u magento -p
+          <pre><code>mysql -u magento -p
 </code></pre>
 
-    <p>If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.</p>
-  </li>
-  <li>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</li>
-</ol>
+          <p>If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.</p>
+        </li>
+        <li>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</li>
+      </ol>
 
-<h4 id="related-topics">Related topics</h4>
+      <h4 id="related-topics">Related topics</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Installing optional software</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0—Ubuntu</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0—CentOS</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/security.html">Configuring security options</a></li>
-  <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">How to get the Magento software</a></li>
-</ul>
+      <ul>
+        <li><a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
+        <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Installing optional software</a></li>
+        <li><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
+        <li><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0—Ubuntu</a></li>
+        <li><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0—CentOS</a></li>
+        <li><a href="/guides/v2.0/install-gde/prereq/security.html">Configuring security options</a></li>
+        <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">How to get the Magento software</a></li>
+      </ul>
+    </div></span></div>
 
 		</div>
 	</section>
