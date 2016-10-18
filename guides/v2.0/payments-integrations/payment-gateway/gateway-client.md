@@ -11,6 +11,7 @@ github_link: payments-integrations/payment-gateway/gateway-client.md
 ---
 
 Gateway client is responsible for transaction payload transmission.
+
 ```php
 interface ClientInterface
 {
@@ -26,21 +27,21 @@ interface ClientInterface
 }
 ```
 
-Any Client implementation receives so called Transfer object and may be configured with Response Converter, which maps response to array structure.
+Any Client implementation receives a called Transfer object and may be configured with Response Converter, which maps response to array structure.
 
 ### Useful implementations
 There are two client implementations which can be used of the box:
 
-* \Magento\Payment\Gateway\Http\Client\Zend
-* \Magento\Payment\Gateway\Http\Client\Soap
+* [\Magento\Payment\Gateway\Http\Client\Zend]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/Client/Zend.php)
+* [\Magento\Payment\Gateway\Http\Client\Soap]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/Client/Soap.php)
 
 ### Example of Zend client configuration
 
 ```xml
 <virtualType name="HtmlConverterZendClient" type="Magento\Payment\Gateway\Http\Client\Zend">
-        <arguments>
-            <argument name="converter" xsi:type="object">Magento\Payment\Gateway\Http\Converter\HtmlFormConverter</argument>
+    <arguments>
+        <argument name="converter" xsi:type="object">Magento\Payment\Gateway\Http\Converter\HtmlFormConverter</argument>
             <argument name="logger" xsi:type="object">MyCustomLogger</argument>
         </arguments>
-    </virtualType>
+</virtualType>
 ```

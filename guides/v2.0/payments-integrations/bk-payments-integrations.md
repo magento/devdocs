@@ -15,8 +15,9 @@ Payments Integrations guide provides high level view on integration approaches, 
 
 These components are:
 
-* Gateway Command
-* Request Builder
-* Gateway Client
-* Response Validator
-* Response Handler
+* [Gateway Command]({{site.gdeurl}}payments-integrations/payment-gateway/gateway-command)
+* [Gateway Command Pool]({{site.gdeurl}}payments-integrations/payment-gateway/command-pool)
+* [Request Builder]({{site.gdeurl}}payments-integrations/payment-gateway/request-builder)
+* [Gateway Client]({{site.gdeurl}}payments-integrations/payment-gateway/gateway-client)
+* [Response Validator]({{site.gdeurl}}payments-integrations/payment-gateway/response-validator)
+* [Response Handler]({{site.gdeurl}}payments-integrations/payment-gateway/response-handler)

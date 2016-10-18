@@ -11,10 +11,12 @@ github_link: payments-integrations/payment-gateway/response-validator.md
 ---
 
 Response validator performs gateway response verification, which may vary from low level data formatting/security verification to some business logic, required by store configuration.
-As a result, Validator returns a Result object, which has _isValid()_ method returning Boolean and _getFailsDescription()_ which returns a list of _Phrases_. 
-Validator, by its sense is not intended to modify anything, but perform validation and return validation result accordingly.
+
+As a result, _Validator_ returns a _Result_ object, which has `isValid()` method returning _Boolean_ and `getFailsDescription()` which returns a list of _Phrases_. 
+_Validator_, by its sense is not intended to modify anything, but perform validation and return validation result accordingly.
 
 ##### ValidatorInterface:
+
 ```php
 interface ValidatorInterface
 {
@@ -29,6 +31,7 @@ interface ValidatorInterface
 ```
 
 ##### ResultInterface
+
 ```php
 interface ResultInterface
 {
@@ -51,9 +54,9 @@ interface ResultInterface
 
 ### Useful implementations
 
-* \Magento\Payment\Gateway\Validator\AbstractValidator - may be used as a base class for your validators, as it already has an ability to create Result object
-* \Magento\Payment\Gateway\Validator\ValidatorComposite - a chain of Validator objects, which are executed one by one and the result gets aggregated into one Result object.
-* \Magento\Payment\Gateway\Validator\Result - base class for Result object. You still have an ability to create a Result of your own, but the default one covers the most amount of cases.
+* [\Magento\Payment\Gateway\Validator\AbstractValidator]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/AbstractValidator) - may be used as a base class for your validators, as it already has an ability to create Result object
+* [\Magento\Payment\Gateway\Validator\ValidatorComposite]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/ValidatorComposite) - a chain of Validator objects, which are executed one by one and the result gets aggregated into one _Result_ object.
+* [\Magento\Payment\Gateway\Validator\Result]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/Result) - base class for Result object. You still have an ability to create a _Result_ of your own, but the default one covers the most amount of cases.
 
 ### Example
 
@@ -80,9 +83,11 @@ class AcceptValidator extends AbstractValidator
                 __('Currency doesn\'t match.')
             ],
             [
-                sprintf('%.2F', $paymentDO->getOrder()->getGrandTotalAmount())
-                === $response['authCost'],
-                __('Amount doesn\'t match.')
+                sprintf(
+                    '%.2F',
+                    $paymentDO->getOrder()->getGrandTotalAmount()) === $response['authCost'],
+                    __('Amount doesn\'t match.'
+                )
             ],
             [
                 in_array($response['authMode'], ['A', 'E']),
@@ -100,4 +105,17 @@ class AcceptValidator extends AbstractValidator
         return $this->createResult($isValid, $fails);
     }
 }
+```
+
+Each payment method can have multiple validators and they should be added to a _Validator Pool_:
+
+```xml
+<virtualType name="BraintreeValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
+    <arguments>
+        <argument name="validators" xsi:type="array">
+            <item name="country" xsi:type="object">Magento\Payment\Gateway\Validator\CountryValidator</item>
+            <item name="accept" xsi:type="string">AcceptValidator</item>
+        </argument>
+    </arguments>
+</virtualType>
 ```

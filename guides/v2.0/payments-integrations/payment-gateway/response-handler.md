@@ -35,11 +35,12 @@ interface HandlerInterface
 
 ### Useful implementations
 
-* \Magento\Payment\Gateway\Response\HandlerChain - may be used as a basic container of response handlers, handling different parts.
+* `\Magento\Payment\Gateway\Response\HandlerChain` - may be used as a basic container of response handlers, handling different parts.
 
 ### Example
 
 Example of a simple response handler is shown below
+
 ```php
 class PayPalDetailsHandler implements HandlerInterface
 {
