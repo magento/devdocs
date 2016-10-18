@@ -85,103 +85,160 @@ A *cron group* is a logical group that enables you to easily run cron for more t
 
 If you're implementing cron for a custom module, it's your choice of whether or not to use the `default` group or a different group.
 
-To configure a cron group for your module, create `<your component base dir>/<vendorname>/module-<name>/etc/crontab.xml` with the following contents:
+To configure a cron group for your module, create a `crontab.xml` file in your module directory:
+`<your component base dir>/<vendorname>/module-<name>/etc/crontab.xml`
 
-	<config>
-    	<group id="<group_name>">
-	        <job name="<job_name>" instance="<classpath>" method="<method>">
-	            <schedule><time></schedule>
-	        </job>
-	    </group>
-	</config>
+For one group, the file should have the following contents:
 
-The following table discusses the meanings of the options.
+{%highlight xml%}
+<config>
+    <group id="<group_name>">
+        <job name="<job_name>" instance="<classpath>" method="<method>">
+            <schedule><time></schedule>
+        </job>
+    </group>
+</config>
+{%endhighlight%}
 
+where:
 
-<table>
-	<col width="25%">
-	<col width="65%">
-	<tbody>
-		<tr>
-			<th>Value</th>
-			<th>Description</th>
-		</tr>
+|Value|Description|
+|---|---|
+|`group_name`|Name of the cron group. The group name doesn't have to be unique. You can run cron for one group at a time.|
+|`job_name`|Unique ID for this cron job.|
+|`classpath`|Class to be instantiated (classpath).|
+|`method`|Method in `classpath` to call.|
+|`time`|Schedule in [cron format](http://www.nncron.ru/help/EN/working/cron-format.htm){:target="_blank"}. Omit this parameter if the schedule is defined in the Magento database or other storage.|
 
-	<tr>
-		<td><p>&lt;group_name></p></td>
-		<td><p>Name of the cron group. The group name doesn't have to be unique.</p>
-			<p>You can run cron for one group at a time.</p></td>
-	</tr>
-	<tr>
-		<td><p>&lt;job_name></p></td>
-		<td><p>Unique ID for this cron job.</p>
-		</td>		
-	</tr>
-	<tr>
-		<td><p>&lt;classpath></p></td>
-		<td><p>Classpath.</p></td>		
-	</tr>
-	<tr>
-		<td><p>&lt;method></p></td>
-		<td><p>Method in <code>&lt;classpath></code> to call.</p></td>		
-	</tr>
-	<tr>
-		<td><p>&lt;time></p></td>
-		<td><p>Schedule in <a href="http://www.nncron.ru/help/EN/working/cron-format.htm" target="_blank">cron format</a>.</p>
-			<p>Omit this parameter if the schedule is defined in the Magento database or other storage.</p></td>		
-	</tr>
-	</tbody>
-</table>
+The resulting `crontab.xml` with two groups may look like this:
 
+{%highlight xml%}
+    <config>
+    	<group id="default">
+    		<job name="<job_1_name>" instance="<classpath>" method="<method_name>">
+    			<schedule>* * * * *</schedule>
+    		</job>
+    		<job name="<job_2_name>" instance="<classpath>" method="<method_name>">
+    			<schedule>* * * * *</schedule>
+    		</job>
+    	</group>
+    	<group id="index">
+    		<job name="<job_3_name>" instance="<classpath>" method="<method_name>">
+    			<schedule>* * * * *</schedule>
+    		</job>
+    		<job name="<job_4_name>" instance="<classpath>" method="<method_name>">
+    			<schedule>* * * * *</schedule>
+    		</job>
+    	</group>
+    </config>
+{%endhighlight%}
 
-In addition, the `<group>` element supports the following options, all of which run in store view scope:
+As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>.
 
-<table>
-	<col width="25%">
-	<col width="65%">
-	<tbody>
-		<tr>
-			<th>Option</th>
-			<th>Description</th>
-		</tr>
+#### Specifying Cron group options {#specify-cron-group-options}
 
-	<tr>
-		<td><p>schedule_generate_every</p></td>
-		<td><p>Determines the frequency, in minutes, that schedules are written to the <code>cron_schedule</code> table.</p></td>
-	</tr>
-	<tr>
-		<td><p>schedule_ahead_for</p></td>
-		<td><p>Determines the number of minutes in advance that schedules are written to the <code>cron_schedule</code> table.</p>
-		</td>		
-	</tr>
-	<tr>
-		<td><p>schedule_lifetime</p></td>
-		<td><p>Schedule lifetime in minutes.</p></td>		
-	</tr>
-	<tr>
-		<td><p>history_cleanup_every</p></td>
-		<td><p>Determines the number of minutes that cron history is kept in the database.</p></td>		
-	</tr>
-	<tr>
-		<td><p>history_success_lifetime</p></td>
-		<td><p>Determines the number of minutes that the record of successfully completed cron jobs are kept in the database.</p></td>		
-	</tr>
-	<tr>
-		<td><p>history_failure_lifetime</p></td>
-		<td><p>Determines the number of minutes that the record of failed cron jobs are kept in the database.</p></td>		
-	</tr>
-  <tr>
-		<td><p>use_separate_process</p></td>
-		<td><p>Specifies how the groups of cron jobs are run: in parallel or one by one.</p>
-			<p>Note that this applies to cron groups, not separate jobs in them. Jobs will always run one by one, in the order they are listed in the <code>crontab.xml</code> configuration file.</p>
+You may declare a new group and specify its configuration options (all of which run in store view scope) via the `cron_groups.xml` file, located in:
 
-			<p>If set to <code>1</code>, cron groups will run in parallel as separate processes. Jobs from every group will be executed one after another.</p>
-			<p>If set to <code>0</code>, cron groups will run one by one as separate processes. Jobs from all groups will be merged into a single list and executed one after another.</p></td>		
-</tr>
-	</tbody>
-</table>
+`<your component base dir>/<vendorname>/module-<name>/etc/cron_groups.xml`
 
-As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>
+Below is an example of the `cron_groups.xml` file:
+
+{%highlight xml%}
+<config>
+    <group id="<group_name>">
+		    <schedule_generate_every>1</schedule_generate_every>
+		    <schedule_ahead_for>4</schedule_ahead_for>
+		    <schedule_lifetime>2</schedule_lifetime>
+		    <history_cleanup_every>10</history_cleanup_every>
+		    <history_success_lifetime>60</history_success_lifetime>
+		    <history_failure_lifetime>600</history_failure_lifetime>
+        <use_separate_process>1</use_separate_process>
+    </group>
+</config>
+{%endhighlight%}
+
+where:
+
+|Option|Description|
+|---|---|
+|`schedule_generate_every`|Frequency (in minutes) that schedules are written to the `cron_schedule` table.|
+|`schedule_ahead_for`|Time (in minutes) in advance that schedules are written to the `cron_schedule` table.|
+|`schedule_lifetime`|Schedule lifetime in minutes.|
+|`history_cleanup_every`|Time (in minutes) that cron history is kept in the database.|
+|`history_success_lifetime`|Time (in minutes) that the record of successfully completed cron jobs are kept in the database.|
+|`history_failure_lifetime`|Time (in minutes) that the record of failed cron jobs are kept in the database.|
+|`use_separate_process`|Specifies how the groups of cron jobs are run: in parallel or one by one. See the <a href="#run-groups-as-separate-processes">Running cron groups as separate processes</a> section below for more details.|
+
+##### Running cron groups as separate processes {#run-groups-as-separate-processes}
+
+You can execute cron groups simultaneously using the `use_separate_process` configuration option.
+
+If the option is set to `1`, cron groups will run in parallel as separate processes. Jobs from every group will be executed one after another.
+
+If set to `0`, cron groups will run one by one (as separate processes, too). Jobs from all groups will be merged into a single list and executed one after another.
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>
+    Note that this applies to cron groups, not separate jobs in them. Jobs will always run one by one, in the order they are listed in the crontab.xml configuration file.
+  </p>
+</span>
+</div>
+
+Below is a practical example.
+
+Let's say we have two groups and two jobs for each of them:
+
+- `Group_1` : `Group_1_Cron_Job_1` ; `Group_1_Cron_Job_2`;
+
+- `Group_2` : `Group_2_Cron_Job_1` ; `Group_2_Cron_Job_2`.
+
+In this case, the `crontab.xml` file would look like this:
+
+{%highlight xml%}
+<config>
+    <group id="Group_1">
+        <job name="Group_1_Cron_Job_1" instance="<classpath>" method="<method_name>">
+            <schedule>* * * * *</schedule>
+        </job>
+        <job name="Group_1_Cron_Job_2" instance="<classpath>" method="<method_name>">
+            <schedule>* * * * *</schedule>
+        </job>
+    </group>
+    <group id="Group_2">
+        <job name="Group_2_Cron_Job_1" instance="<classpath>" method="<method_name>">
+            <schedule>* * * * *</schedule>
+        </job>
+        <job name="Group_2_Cron_Job_2" instance="<classpath>" method="<method_name>">
+            <schedule>* * * * *</schedule>
+        </job>
+    </group>
+</config>
+{%endhighlight%}
+
+With the `use_separate_process` parameter enabled (set to `1`), the cron groups start simultaneously and their jobs are executed in the following order:
+
+{%highlight html%}
+Group_1_Cron_Job_1 : running
+Group_1_Cron_Job_2 : pending
+Group_2_Cron_Job_1 : running
+Group_2_Cron_Job_2 : pending
+{%endhighlight%}
+
+`Group_1_Cron_Job_2` will be started after the first task (`Group_1_Cron_Job_1`) completes.
+The same happens in `Group_2`.
+
+On the contrary: with the `use_separate_process` option disabled (set to `0`), the cron groups start one by one, and so do their jobs:
+
+{%highlight html%}
+Group_1_Cron_Job_1 : running
+Group_1_Cron_Job_2 : pending
+Group_2_Cron_Job_1 : pending
+Group_2_Cron_Job_2 : pending
+{%endhighlight%}
+
+`Group_1_Cron_Job_2` starts after `Job_1` stops.
+`Group_2` starts after `Group_1` stops.
 
 ### Run cron from the command line {#config-cli-cron-group-run}
 
