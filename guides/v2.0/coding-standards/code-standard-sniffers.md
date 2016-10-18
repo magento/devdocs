@@ -15,7 +15,6 @@ We recommend the consistent use of a <i>code sniffer</i> to enhance the readabil
 
 ### Magento provides
 
-Magento provides 
 Here are the sniffing tools that Magento provides: 
 
 * <a href="https://github.com/magento-ecg/coding-standard.xml" target="_blank">ECG Magento PHP Code Sniffer Coding Standard</a>
