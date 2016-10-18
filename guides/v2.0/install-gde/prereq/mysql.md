@@ -33,7 +33,8 @@ If you're new to all this and need some help getting started, we suggest the fol
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento requires MySQL 5.6.x.</p></span>
+  <p>The Magento application requires MySQL 5.6.x.</p>
+<p>The Magento application 2.1.2 and later is compatible with MySQL 5.7.x.</p></span>
 </div>
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
@@ -59,7 +60,7 @@ This section discusses how to install MySQL 5.7 on Ubuntu 16.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento does not support MySQL 5.7 at this time. These instructions are provided for your convenience if you'd like to test MySQL 5.7.</p></span>
+  <p>The Magento application 2.1.2 and later is compatible with MySQL 5.7.</p></span>
 </div>
 
 To install MySQL 5.7 on Ubuntu 16:
@@ -181,7 +182,7 @@ This section discusses how to to install MySQL 5.7 on CentOS 6 or CentOS 7.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento does not support MySQL 5.7 at this time. These instructions are provided for your convenience if you'd like to test MySQL 5.7.</p></span>
+  <p>The Magento application 2.1.2 and later is compatible with MySQL 5.7.</p></span>
 </div>
 
 ### Get MySQL 5.7 for CentOS 7
