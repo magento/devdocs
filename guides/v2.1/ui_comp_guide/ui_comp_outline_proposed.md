@@ -14,7 +14,7 @@ Below is the proposed structure of the new UI Components Guide. The Frontend dev
 If you would like to help us by writing any of the topics that we have not yet gotten do, we welcome your contributions! 
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>These are not the exact titles for the sections, but rather the content.</p>
+<p>These are not the exact titles for the sections but rather the content.</p>
 </div>
 
 - Overview
