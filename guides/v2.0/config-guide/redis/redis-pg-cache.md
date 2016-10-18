@@ -45,7 +45,7 @@ Following is a sample configuration to add to `<your Magento install dir>app/etc
 	       )
 	    )
 	  )
-	)
+	),
 
 where
 

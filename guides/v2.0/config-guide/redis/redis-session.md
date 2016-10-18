@@ -50,7 +50,7 @@ Following is a sample configuration to add to `<your Magento install dir>app/etc
 		'min_lifetime' => '60',
 		'max_lifetime' => '2592000'
         )
-    )
+    ),
 
 where
 
