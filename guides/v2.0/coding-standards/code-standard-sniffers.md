@@ -15,10 +15,10 @@ We recommend the consistent use of a <i>code sniffer</i> to enhance the readabil
 
 
 Magento provides the <a href="https://github.com/magento-ecg/coding-standard.xml" target="_blank">ECG Magento PHP Code Sniffer Coding Standard</a>
-for PHP developers. Use these specifications to configure your code sniffer of choice to bring your <i>PHP coding style closer to Magento PHP standards</i>. 
+for PHP developers who use a code sniffer in their development process. Use these specifications to configure your code sniffer of choice to bring your <i>PHP coding style closer to Magento PHP standards</i>. 
 
 
-There are many open-source code sniffers that can enhance the readability of your code. Although Magento does not specifically recommend alternative sniffers, many community members use <a href="http://pear.php.net/manual/en/package.php.php-codesniffer.faq.php" target="_blank">PHP_CodeSniffer</a> to identify PHP syntax errors. It incorporates the same syntax-checking tools that are included in `composer.json` plus more extensive stylistic checks. 
+A quick search of the web reveals many open-source code sniffers.  Although Magento does not recommend a particular sniffer, <a href="http://pear.php.net/manual/en/package.php.php-codesniffer.faq.php" target="_blank">PHP_CodeSniffer</a> is popular in the Magento development community. It incorporates the same syntax-checking tools that are included in `composer.json` plus more extensive stylistic checks. 
 
 
 
