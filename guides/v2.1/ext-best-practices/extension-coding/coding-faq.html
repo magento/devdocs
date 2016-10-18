@@ -554,15 +554,24 @@
 
 <p>This page is a compilation of frequently asked coding questions by the Magento Community.</p>
 
-<h3 class="no_toc" id="frequently-asked-questions">Frequently Asked Questions</h3>
+<h2 class="no_toc" id="frequently-asked-questions">Frequently Asked Questions</h2>
 <ul id="markdown-toc">
+  <li><a href="#what-do-i-need-to-know-to-work-with-the-framework" id="markdown-toc-what-do-i-need-to-know-to-work-with-the-framework">What do I need to know to work with the framework?</a></li>
   <li><a href="#in-magento-2-how-can-my-extension-distinguish-between-the-community-edition-and-the-enterprise-edition" id="markdown-toc-in-magento-2-how-can-my-extension-distinguish-between-the-community-edition-and-the-enterprise-edition">In Magento 2, how can my extension distinguish between the Community Edition and the Enterprise Edition?</a></li>
   <li><a href="#how-do-i-configure-my-module-so-that-it-appears-in-a-specific-place-on-the-admin" id="markdown-toc-how-do-i-configure-my-module-so-that-it-appears-in-a-specific-place-on-the-admin">How do I configure my module so that it appears in a specific place on the Admin?</a></li>
 </ul>
 
-<hr />
+<h3 id="what-do-i-need-to-know-to-work-with-the-framework">What do I need to know to work with the framework?</h3>
 
-<h4 id="in-magento-2-how-can-my-extension-distinguish-between-the-community-edition-and-the-enterprise-edition">In Magento 2, how can my extension distinguish between the Community Edition and the Enterprise Edition?</h4>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)" target="_blank">SOLID principles</a> - The essential principles needed to create maintainable and extendible code.</li>
+  <li><a href="http://php.net/" target="_blank">PHP</a> - This is the programming language used for developing Magento 2 code.</li>
+  <li><a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML</a>, <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">CSS</a>, and <a href="https://www.javascript.com/" target="_blank">JavaScript</a> - Languages used for <a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">frontend development</a>.</li>
+  <li><a href="/guides/v2.1/architecture/arch_whatis.html">Magento architecture</a> - Developers should be familiar with the architectural concepts used in Magento such as the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-View-Controller</a> pattern and the <a href="http://martinfowler.com/bliki/CQRS.html" target="_blank">Command Query Responsibility Segregation</a> principle.</li>
+  <li><a href="/guides/v2.1/extension-dev-guide/depend-inj.html">Dependency Injection</a> - An important design pattern used in Magento to handle dependencies across classes and modules.</li>
+</ul>
+
+<h3 id="in-magento-2-how-can-my-extension-distinguish-between-the-community-edition-and-the-enterprise-edition">In Magento 2, how can my extension distinguish between the Community Edition and the Enterprise Edition?</h3>
 
 <p>The correct edition can be obtained through <code>\Magento\Framework\App\ProductMetadataInterface::getEdition</code>.</p>
 
@@ -571,9 +580,7 @@ However, in Magento EE, the Enterprise module will override that mapping and the
 
 <p>Just relying on the interface through dependency injection will get you the right class, and calling “getEdition” will return the right answer.</p>
 
-<hr />
-
-<h4 id="how-do-i-configure-my-module-so-that-it-appears-in-a-specific-place-on-the-admin">How do I configure my module so that it appears in a specific place on the Admin?</h4>
+<h3 id="how-do-i-configure-my-module-so-that-it-appears-in-a-specific-place-on-the-admin">How do I configure my module so that it appears in a specific place on the Admin?</h3>
 
 <p>Use the <code>&lt;Module Directory&gt;/etc/adminhtml/menu.xml</code> file to configure from where on the Admin your extension is accessible.</p>
 

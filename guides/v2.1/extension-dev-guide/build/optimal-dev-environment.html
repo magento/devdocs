@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Command naming guidelines</title>
+	<title>Optimal Development Environment</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">
+	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/build/optimal-dev-environment.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/build/optimal-dev-environment.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/build/optimal-dev-environment.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Command naming guidelines</h1>
+		<h1 class="page-heading">Optimal Development Environment</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/cli-cmds/cli-naming-guidelines.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/extension-dev-guide/build/optimal-dev-environment.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -368,7 +368,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/optimal-dev-environment.html">Optimal development environment</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/build/optimal-dev-environment.html">Optimal development environment</a></li>
 
 									
 
@@ -545,7 +545,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a></li>
 
 									
 
@@ -959,175 +959,70 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <!-- http://olgakopylova.espritica.com/naming-conventions-for-cli-commands-in-magento-2/
- -->
+            <div class="updated">Updated: 17 October 2016 (PDT)</div>
+            <h2 class="no_toc" id="optimal-development-environment">Optimal development environment</h2>
 
-<h4 id="contents">Contents</h4>
-<ul>
-  <li><a href="#cli-over">Naming guideline overview</a></li>
-  <li><a href="#cli-name">Command name</a></li>
-  <li><a href="#cli-args">Command options and arguments</a></li>
-  <li><a href="#cli-collision">Recommendations to avoid naming collisions</a></li>
-</ul>
-
-<h2 id="cli-over">Naming guideline overview</h2>
-<p>Magento 2 introduces a new command-line interface (CLI) that enables component developers to plug in commands provided by modules.</p>
-
-<p>As an extension developer, you can now create and distribute your own commands for Magento applications. But as for any implementation, it’s also important to follow some general conventions to keep your commands consistent with commands from other developers. Being consistent in this way reduces the user’s learning curve.</p>
-
-<p>This topic discusses our recommended naming conventions.</p>
-
-<h2 id="cli-name">Command name</h2>
-<p>A command <em>name</em> is a part of the command, which defines behavior of the command on the very high level. In the command it goes right after the command’s name.
-For example, in <code>bin/magento setup:upgrade</code>, <code>bin/magento</code> is the command’s name and <code>setup:upgrade</code> is the name of the command.</p>
-
-<p>If you have a Magento installation handy, enter the following to display the current list of commands:</p>
-
-<pre><code>php &lt;your Magento install dir&gt;/bin/magento --list
-</code></pre>
-
-<h4 id="format-groupsubjectaction">Format: <code>group:[subject:]action</code></h4>
-
-<h3 id="group">group</h3>
-<p><code>group</code> represents a group of related commands. Commands in a group display in a list, which in turn makes it easier for the user to find the desired command. To find a group name for a command, imagine an subject area where it can be used. The subject area can be any of the following:</p>
-
-<ul>
-  <li><em>Domain</em> area (for example, <code>module</code> for actions with modules, <code>info</code> for commands that provide some information)</li>
-  <li><em>Workflow</em> area (for example, <code>admin</code> for commands that can be used by an administrator, <code>dev</code> for a developer)</li>
-</ul>
-
-<h3 id="subject">subject</h3>
-<p><code>subject</code> is a subject for the action. The subject is optional, but it can be useful for defining sets of commands that work with the same object. If a subject is represented by a compound word, use a dash or hyphen character to separate the words.</p>
-
-<h3 id="action">action</h3>
-<p><code>action</code> is an action the command does.</p>
-
-<h3 id="examples">Examples</h3>
-<pre><code>// general commands: just a group and an action
-magento setup:install
-magento module:status
-
-// set of commands with a subject
-magento setup:config:set
-magento setup:config:delete
-magento setup:db-schema:upgrade
-magento setup:db-data:upgrade
-</code></pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>db-schema</code> and <code>db-data</code> are examples of compound words.</p>
-</div>
-
-<h2 id="cli-args">Command options and arguments</h2>
-<p>Options and arguments follow the command name and modify the command’s behavior.</p>
-
-<p>For example, in <code>bin/magento module:disable --force Magento_Catalog</code>, the <code>--force</code> <em>option</em> and the <code>Magento_Catalog</code> <em>argument</em> bypass the restrictions and specify a particular module to be disabled; in this case, regardless of dependencies on other modules.</p>
-
-<p>Options and arguments create different user experiences. As a developer, you can choose which type of input is better for your particular case.</p>
-
-<h3 id="command-arguments">Command arguments</h3>
-<p>Arguments are values passed by the user in a specified order. The argument name is not visible to the user.</p>
-
-<h4 id="format-single-word-or-a-compound-word-separated-with-a-dash-or-hyphen-character">Format: single word or a compound word separated with a dash or hyphen character</h4>
-
-<p>Example:</p>
-
-<pre><code>magento dev:theme:create frontend vendor themename
-</code></pre>
-
-<p>where:</p>
-
-<p><code>frontend</code> is a subject area argument</p>
-
-<p><code>vendor</code> is a vendor argument</p>
-
-<p><code>themename</code> is a theme name argument</p>
-
-<p>Use arguments when you need required data from the user. We recommend as few arguments as possible (no more then three) so the user will not confuse their order.</p>
-
-<p>To make it simpler for the user, we recommend the following:</p>
-
-<ul>
-  <li>Run the CLI multiple times for providing multiple similar values instead of running it once with 20 values</li>
-  <li>
-    <p>Use default values for required arguments where possible.</p>
-
-    <p>You can then use options instead of arguments to minimize the amount of required data the user must enter.</p>
-  </li>
-  <li>Replace arguments with options: options are named, so the user can provide them in any order. This requires additional data validation (by default, all options are optional).</li>
-</ul>
-
-<h3 id="command-options">Command Options</h3>
-<p>Options are name-value pairs. The sequence of entered values doesn’t matter.</p>
-
-<p>An option can have a value or no value. An option that does not require a value represents a flag (<code>yes</code> or <code>no</code>).</p>
-
-<p>An option can also have a one-letter shortcut as an alternative to its full name. Enable shortcuts for often-used options or if it’s easy to determine what the shortcut means. Usually it makes sense to enable shortcuts for options similar to the ones used in widely-used commands (for example, <code>-f</code> for <code>--force</code>, <code>-v</code> for <code>--verbose</code>, <code>-h</code> for <code>--help</code>).</p>
-
-<h4 id="format-single-word-or-a-compound-word-separated-with-a-dash-or-hyphen-character-1">Format: single word or a compound word separated with a dash or hyphen character.</h4>
-
-<p>For example,</p>
-
-<pre><code>magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
-magento dev:theme:create -p=Magento/luma frontend vendor themename
-magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
-magento module:disable -f Magento_Cms
-</code></pre>
-
-<p>Where:</p>
-
-<p><code>--parent</code> is an option that specifies a parent theme</p>
-
-<p><code>-p</code> is a shortcut for <code>--parent</code></p>
-
-<p><code>-f</code> is a shortcut for a non-value option <code>--force</code></p>
-
-<p><code>arg1</code>, <code>arg2</code>, <code>frontend</code>, <code>vendor</code> and <code>themename</code> are arguments (see <a href="#cli-args">Command options and arguments</a>).</p>
-
-<p>Use options for:</p>
-
-<ul>
-  <li>Optional data</li>
-  <li>Required data that has a default value</li>
-</ul>
-
-<p>Example:</p>
-
-<pre><code>// correct
-magento dev:theme:create --extend-from=Magento/luma frontend Foo bar
-magento module:disable --force Magento_Catalog
-magento module:disable -f Magento_Catalog
-
-//incorrect
-magento module:disable --force=1 Magento_Catalog
-magento module:disable -f=yes Magento_Catalog
-</code></pre>
-
-<h2 id="cli-collision">Recommendations to avoid naming collisions</h2>
-<p>To avoid naming your command the same as another command, we recommend:</p>
-
-<ul>
-  <li>
-    <p>Looking at other extensions in the Magento Marketplace before you choose a name for your commands. By planning ahead, you can avoid naming collisions entirely.</p>
-  </li>
-  <li>
-    <p>Restricting command names to start with a unique name, such as a vendor name. The usability of the command depends on what you choose for a vendor name.</p>
-
-    <p>For example, <code>myname:dev:theme:create</code> is not obvious and is hard to remember.</p>
-
-    <p>The vendor name doesn’t have to start the command name; it could be in the middle. This way, related commands are grouped together.</p>
-
-    <p>Examples:</p>
-
-    <pre><code>dev:myname:theme:create
-dev:myname:theme:delete
-</code></pre>
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#local-development-machine" id="markdown-toc-local-development-machine">Local development machine</a>    <ul>
+      <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
+      <li><a href="#optimal-configuration" id="markdown-toc-optimal-configuration">Optimal Configuration</a></li>
+    </ul>
   </li>
 </ul>
 
-<h4 id="related-topic">Related topic</h4>
-<p><a href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a></p>
+<h2 id="overview">Overview</h2>
+
+<p>A typical software development flow is as follows:</p>
+
+<p><strong>Local dev machine</strong> &gt; <strong>QA/integration server</strong> &gt; <strong>Preview server</strong>(optional) &gt; <strong>Production server</strong></p>
+
+<p>Whether you are writing a new Magento 2 extension or contributing to the <a href="https://github.com/magento/magento2" target="_blank">code base</a>, the first step for any developer is setting up a development environment.
+This article will guide you in setting up and optimizing your local development machine.</p>
+
+<h2 id="local-development-machine">Local development machine</h2>
+
+<p>Your local development machine is where you develop and deploy your code to test it against a running Magento application.
+Its configuration should be as close to a production server as possible.</p>
+
+<p>In your development machine, make sure you are running the Magento application in <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">developer mode</a>. 
+You can enable this mode with the command <code>bin/magento deploy:mode:set developer</code>.</p>
+
+<h3 id="installation">Installation</h3>
+
+<p>The following is a list of the different ways you can install Magento 2 locally:</p>
+
+<ul>
+  <li><strong>Manual installation</strong><br />
+If you are developing on a local machine that meets the system requirements, you can follow the same steps as <a href="/guides/v2.1/install-gde/bk-install-guide.html">installing Magento</a> on a production server.</li>
+  <li>
+    <p><strong>Virtual Machine (VM) installation</strong><br />
+Installing Magento 2 in a virtual environment allows you to run Magento 2 without the need to install a local <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)" target="_blank">LAMP</a> stack.</p>
+
+    <p>You can use a VM tool, such as <a href="https://www.virtualbox.org/wiki/VirtualBox" target="_blank">VirtualBox</a>, together with a virtual environment tool, such as <a href="https://www.vagrantup.com/" target="_blank">Vagrant</a> or <a href="https://www.docker.com/" target="_blank">Docker</a>, to create reusable and shareable instances of Magento for development.</p>
+
+    <p>A search for <a href="https://github.com/search?utf8=%E2%9C%93&amp;q=magento+developer+box" target="_blank">“magento developer box”</a> in GitHub provides a list of unofficial virtual machines configured for Magento development.</p>
+  </li>
+</ul>
+
+<h3 id="optimal-configuration">Optimal Configuration</h3>
+
+<p>The following is a list of optimizations you can make on your local development machine</p>
+
+<ul>
+  <li>Magento recommends installing and using the latest supported version of PHP 7 to increase performance.</li>
+  <li>Replace your MySQL database with <a href="https://www.percona.com/software/mysql-database/percona-server" target="_blank">Percona</a>.</li>
+  <li>Make sure you install and enable <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a>.</li>
+  <li>Xdebug is off by default. Enable this feature only when you need it because it requires a lot of memory and degrades performance.
+The <code>xdebug.max_nesting_level</code> configuration needs to be set to 200 or greater for Magento.
+You can increase the memory available to PHP to get an increase in performance with Xdebug on.</li>
+  <li>If you need sample data, you can install it using <a href="/guides/v2.1/install-gde/install/web/install-web-sample-data-composer.html">composer</a> or by <a href="/guides/v2.1/install-gde/install/web/install-web-sample-data-clone.html">cloning repositories</a>.</li>
+  <li>To speed up front end development, <a href="http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html" target="_blank">turn off merging of CSS and JavaScript</a>.</li>
+  <li>Make sure <a href="/guides/v2.1/config-guide/cache/caching.html">caching</a> is turned on (this is the default behavior).
+Generally, only page cache and block cache should be turned off for development and turned back on when testing.</li>
+  <li><a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.validate-timestamps" target="_blank">Opcache timestamp validation</a> should always be on for development.
+Development is impossible with opcache on and revalidation off because any PHP modification would require a cache reset.</li>
+</ul>
 
 		</div>
 	</section>
