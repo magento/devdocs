@@ -8,8 +8,7 @@ version: 2.0
 github_link: mtf/features/reporting.md
 ---
 
-### Contents
-{:.no_toc}
+#### Contents
 
 * TOC
 {:toc}
@@ -265,7 +264,6 @@ You can add a tag with a name of existing event to any observer. If you want to 
 [`BrowserInterface.php`]: (https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/BrowserInterface.php)
 [`ClientError.php`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/ClientError.php
 [`CurlResponse.php`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/CurlResponse.php
-[EventManager.php]:
 [`EventState`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/State.php
 [`Fixture.php`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/Fixture.php
 [listener]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/StateListener.php
