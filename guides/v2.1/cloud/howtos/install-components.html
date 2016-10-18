@@ -1445,7 +1445,7 @@
 
       <p>A sample follows:</p>
 
-      <pre><code>pixlee/magento2:1.0.0
+      <pre><code>pixlee/magento2:1.0.1
 </code></pre>
     </li>
   </ol>
@@ -1461,22 +1461,19 @@
 <ol>
   <li>If you haven’t done so already, change to your environment root directory.</li>
   <li>
-    <p>Make a backup of <code>composer.json</code>:</p>
+    <p>Enter the following commands to update it:</p>
 
-    <pre><code>cp composer.json composer.json.orig
-</code></pre>
-  </li>
-  <li>
-    <p>Enter the following command to update it:</p>
-
-    <pre><code>composer require &lt;component-name&gt;:&lt;version&gt;
+    <pre><code>composer require &lt;component-name&gt;:&lt;version&gt; --no-update
+composer update
 </code></pre>
 
     <p>For example,</p>
 
-    <pre><code>composer require pixlee/magento2:1.0.0
+    <pre><code>composer require pixlee/magento2:1.0.1 --no-update
+composer update
 </code></pre>
   </li>
+  <li>Enter the following</li>
   <li>Wait for project dependencies to update.</li>
   <li>Continue with the next section.</li>
 </ol>

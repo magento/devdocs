@@ -1310,10 +1310,11 @@
 <ul>
   <li><a href="#setup-env-setup">Step 1: Set up an environment</a></li>
   <li><a href="#setup-env-adminurl">Step 2: Change the Admin URI, user name, and password in the master branch</a></li>
-  <li><a href="#setenv-new-env">Step 3: Clone a project and environment</a></li>
-  <li><a href="#setenv-keys">Step 4: Get your authentication keys</a></li>
-  <li><a href="#setup-env-perms">Step 5: Set file system permissions and ownership</a></li>
-  <li><a href="#setup-env-install">Step 6: Install the Magento software</a></li>
+  <li><a href="#setenv-cron">Step 3: Set up cron</a></li>
+  <li><a href="#setenv-new-env">Step 4: Clone a project and environment</a></li>
+  <li><a href="#setenv-keys">Step 5: Get your authentication keys</a></li>
+  <li><a href="#setup-env-perms">Step 6: Set file system permissions and ownership</a></li>
+  <li><a href="#setup-env-install">Step 7: Install the Magento software</a></li>
 </ul>
 
 <h2 id="setup-env-setup">Step 1: Set up an environment</h2>
@@ -1545,7 +1546,99 @@ Environment routes:
 </ol>
 </div></div>
 
-<h2 id="setenv-new-env">Step 3: Clone or branch an environment</h2>
+<h2 id="setenv-cron">Step 3: Set up cron</h2>
+
+<div class="collapsible"><b class="collapsible-title">To set up cron: </b><div class="collapsible-content"><div>
+
+  <h3 id="prerequisites">Prerequisites</h3>
+  <p>Magento uses cron for two sets of tasks, and for each, cron can run with a different configuration:</p>
+
+  <ul>
+    <li>
+      <p>PHP command-line configuration: The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.</p>
+
+      <p>You can find the command-line configuration using the command <code>php --ini</code>.</p>
+    </li>
+    <li>
+      <p>Web server PHP plug-in configuration: Two other cron jobs are used by the <a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>.</p>
+
+      <p>You can find the web server plug-in configuration using <a href="/guides/v2.1/install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code>.</a></p>
+    </li>
+  </ul>
+
+  <div class="bs-callout bs-callout-warning">
+    <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the instructions in either the <a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a> or <a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">CentOS</a> PHP topics.</p>
+</div>
+
+  <p>If you’re not experienced with running cron, you can run all commands with the web server’s configuration; however, we leave the decision up to you.</p>
+
+  <h4 id="find-the-php-binary-and-phpini-path">Find the PHP binary and php.ini path</h4>
+  <p>To display the path to your PHP binary, enter</p>
+
+  <pre><code>which php
+</code></pre>
+
+  <p>A sample result follows:</p>
+
+  <pre><code>/usr/bin/php
+</code></pre>
+
+  <h4 id="create-the-cron-job">Create the cron job</h4>
+
+  <p>To create a cron job for the Magento file system owner, enter the following command as a user with <code>root</code> privileges:</p>
+
+  <pre><code>crontab -u &lt;Magento file system owner user name&gt; -e
+</code></pre>
+
+  <p>For example,</p>
+
+  <pre><code>crontab -u magento_user -e
+</code></pre>
+
+  <p>A text editor displays. (You might need to choose a text editor first.)</p>
+
+  <pre><code>* * * * * &lt;path to php binary&gt; &lt;magento install dir&gt;/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; &lt;magento install dir&gt;/var/log/magento.cron.log
+* * * * * &lt;path to php binary&gt; &lt;magento install dir&gt;/update/cron.php &gt;&gt; &lt;magento install dir&gt;/var/log/update.cron.log
+* * * * * &lt;path to php binary&gt; &lt;magento install dir&gt;/bin/magento setup:cron:run &gt;&gt; &lt;magento install dir&gt;/var/log/setup.cron.log
+</code></pre>
+
+  <p>where</p>
+
+  <ul>
+    <li><code>&lt;path to php binary&gt;</code> is the absolute file system path to your PHP binary</li>
+    <li><code>&lt;magento install dir&gt;</code> is the directory in which you installed the Magento software; for example, <code>/var/www</code></li>
+    <li><code>| grep -v "Ran jobs by schedule"</code> filters this message from the log, making any errors easier to spot</li>
+  </ul>
+
+  <p>The first command (<code>magento cron:run</code>) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it’s associated with the PHP command line <code>.ini</code> file. The other two commands are used by the Component Manager and System Upgrade.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+  <p>If you're a contributing developer (that is, you <a href="/guides/v2.1/install-gde/prereq/dev_install.html">cloned the Magento 2 GitHub repository</a>), only the first line applies to you. See the examples that follow for details.</p>
+</div>
+
+  <p><strong>Example 1:</strong> Everyone except contributing developers</p>
+
+  <p>For example, if the PHP binary is located in <code>/usr/bin</code>, you installed Magento in <code>/var/www/html/magento2</code>, enter</p>
+
+  <p>Example:</p>
+
+  <pre><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+* * * * * /usr/bin/php /var/www/magento2/update/cron.php &gt;&gt; /var/www/magento2/var/log/update.cron.log
+* * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/magento2/var/log/setup.cron.log
+</code></pre>
+
+  <p><strong>Example 2:</strong> Contributing developers only (that is, you cloned the Magento 2 GitHub repository):</p>
+
+  <pre><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+</code></pre>
+
+  <p>The preceding works for contributing developers because if you cloned the GitHub repository you don’t have an <code>update</code> directory and errors result if you run <code>magento setup:cron:run</code>. These cron jobs work in the Web Setup Wizard, which contributing developers cannot use for installing or updating the Magento application or components.</p>
+
+  <p>Save your changes to the crontab and exit the editor.</p>
+</div>
+</div></div>
+
+<h2 id="setenv-new-env">Step 4: Clone or branch an environment</h2>
 <p>Now that you’ve change the Magento Admin variables, you should create a new environment for your development work; this new environment inherits the variable values from master.</p>
 
 <p>After you create the branch, update project dependencies so you can install the Magento software locally.</p>
@@ -1575,13 +1668,7 @@ Environment routes:
 </code></pre>
   </li>
   <li>
-    <p>After the command completes, enter the following command to see the URLs by which you can access the environment in the cloud:</p>
-
-    <pre><code>magento-cloud environment:url
-</code></pre>
-  </li>
-  <li>
-    <p>Update dependencies:</p>
+    <p>After the command completes, update dependencies:</p>
 
     <pre><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 </code></pre>
@@ -1595,7 +1682,7 @@ Environment routes:
 </ol>
 </div></div>
 
-<h2 id="setenv-keys">Step 4: Get your authentication keys</h2>
+<h2 id="setenv-keys">Step 5: Get your authentication keys</h2>
 
 <div class="collapsible"><b class="collapsible-title">To get your authentication keys: </b><div class="collapsible-content"><p>Before you can upgrade the Magento software or install extensions, you must have authentication keys in the <code>auth.json</code> file in the Magento root directory. The Magento Enterprise Cloud Edition account owner has your keys. Contact that person to get them.</p>
 
@@ -1613,7 +1700,7 @@ Environment routes:
 <span class="p">}</span></code></pre></figure>
 </div></div>
 
-<h2 id="setup-env-perms">Step 5: Set file system permissions and ownership</h2>
+<h2 id="setup-env-perms">Step 6: Set file system permissions and ownership</h2>
 
 <div class="collapsible"><b class="collapsible-title">To set ownership and permissions before you install the Magento software: </b><div class="collapsible-content"><ol>
   <li>Log in to your Magento server as, or switch to, the Magento file system owner.</li>
@@ -1643,7 +1730,7 @@ chmod u+x bin/magento
 </div>
 </div></div>
 
-<h2 id="setup-env-install">Step 6: Install the Magento software</h2>
+<h2 id="setup-env-install">Step 7: Install the Magento software</h2>
 
 <div class="collapsible"><b class="collapsible-title">To install the Magento software locally: </b><div class="collapsible-content"><p>To be able to customize the Magento software on your local machine, you should install it using the following information:</p>
 

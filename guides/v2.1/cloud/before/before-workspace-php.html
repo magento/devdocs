@@ -1341,7 +1341,7 @@
 
 <div class="collapsible"><b class="collapsible-title">To view and set `auto_increment_increment`: </b><div class="collapsible-content"><p>First, view the current value:</p>
 
-<pre><code>mysqladmin variables -u &lt;root user name&gt; -p
+<pre><code>mysqladmin variables -u &lt;root user name&gt; -p | grep 'auto_increment'
 </code></pre>
 
 <p>If necessary, set <code>auto_increment_increment</code> to 3:</p>
@@ -1365,7 +1365,7 @@
 
 <h4 id="next-steps">Next steps</h4>
 <ul>
-  <li>If the Magento software isn’t installed in a cloud environment, see <a href="/guides/v2.1/cloud/access-acct/first-time-setup_template.html">create a new project from a template</a> or <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import.html">import an existing project</a></li>
+  <li>If the Magento software isn’t installed in a Cloud environment, see <a href="/guides/v2.1/cloud/access-acct/first-time-setup_template.html">create a new project from a template</a> or <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import.html">import an existing project</a></li>
   <li>Otherwise, see <a href="/guides/v2.1/cloud/access-acct/set-up-env.html">Set up an environment and install the Magento software locally</a></li>
 </ul>
 
