@@ -113,24 +113,24 @@ where:
 The resulting `crontab.xml` with two groups may look like this:
 
 {%highlight xml%}
-    <config>
-    	<group id="default">
-    		<job name="<job_1_name>" instance="<classpath>" method="<method_name>">
-    			<schedule>* * * * *</schedule>
-    		</job>
-    		<job name="<job_2_name>" instance="<classpath>" method="<method_name>">
-    			<schedule>* * * * *</schedule>
-    		</job>
-    	</group>
-    	<group id="index">
-    		<job name="<job_3_name>" instance="<classpath>" method="<method_name>">
-    			<schedule>* * * * *</schedule>
-    		</job>
-    		<job name="<job_4_name>" instance="<classpath>" method="<method_name>">
-    			<schedule>* * * * *</schedule>
-    		</job>
-    	</group>
-    </config>
+<config>
+    <group id="default">
+        <job name="<job_1_name>" instance="<classpath>" method="<method_name>">
+            <schedule>* * * * *</schedule>
+        </job>
+        <job name="<job_2_name>" instance="<classpath>" method="<method_name>">
+            <schedule>* * * * *</schedule>
+        </job>
+    </group>
+    <group id="index">
+        <job name="<job_3_name>" instance="<classpath>" method="<method_name>">
+            <schedule>* * * * *</schedule>
+        </job>
+        <job name="<job_4_name>" instance="<classpath>" method="<method_name>">
+            <schedule>* * * * *</schedule>
+        </job>
+    </group>
+</config>
 {%endhighlight%}
 
 As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>.
@@ -146,12 +146,12 @@ Below is an example of the `cron_groups.xml` file:
 {%highlight xml%}
 <config>
     <group id="<group_name>">
-		    <schedule_generate_every>1</schedule_generate_every>
-		    <schedule_ahead_for>4</schedule_ahead_for>
-		    <schedule_lifetime>2</schedule_lifetime>
-		    <history_cleanup_every>10</history_cleanup_every>
-		    <history_success_lifetime>60</history_success_lifetime>
-		    <history_failure_lifetime>600</history_failure_lifetime>
+        <schedule_generate_every>1</schedule_generate_every>
+        <schedule_ahead_for>4</schedule_ahead_for>
+        <schedule_lifetime>2</schedule_lifetime>
+        <history_cleanup_every>10</history_cleanup_every>
+        <history_success_lifetime>60</history_success_lifetime>
+        <history_failure_lifetime>600</history_failure_lifetime>
         <use_separate_process>1</use_separate_process>
     </group>
 </config>
@@ -180,7 +180,7 @@ If set to `0`, cron groups will run one by one (as separate processes, too). Jo
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>
-    Note that this applies to cron groups, not separate jobs in them. Jobs will always run one by one, in the order they are listed in the crontab.xml configuration file.
+    Note that this applies to cron groups, not separate jobs in them. Jobs will always run one by one, in the order they are listed in the "crontab.xml" configuration file.
   </p>
 </span>
 </div>
