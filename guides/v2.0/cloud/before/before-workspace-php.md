@@ -43,7 +43,7 @@ To avoid issues, we recommend you set `auto_increment_increment=3`.
 
 First, view the current value:
 
-	mysqladmin variables -u <root user name> -p
+	mysqladmin variables -u <root user name> -p | grep 'auto_increment'
 
 If necessary, set `auto_increment_increment` to 3:
 
@@ -58,5 +58,5 @@ If necessary, set `auto_increment_increment` to 3:
 {% endcollapsible %}
 
 #### Next steps
-*	If the Magento software isn't installed in a cloud environment, see [create a new project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html) or [import an existing project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import.html)
+*	If the Magento software isn't installed in a Cloud environment, see [create a new project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html) or [import an existing project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import.html)
 *	Otherwise, see [Set up an environment and install the Magento software locally]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
