@@ -11,7 +11,7 @@ github_link: coding-standards/code-standard-sniffers.md
 
 ## PHP code sniffers
 
-We recommend the consistent use of a <i>code sniffer</i> to enhance the readability of your code and help ensure that it meets Magento code standards.  Although a sniffer will identify many more inconsistencies and errors than a manual edit, we recommend that you manually evaluate and make any fixes that your sniffer program has identified.  
+We recommend the consistent use of a <i>code sniffer</i> to enhance the readability of your code and help ensure that it meets Magento code standards.  Although a sniffer will identify many more inconsistencies and errors than a manual edit, we recommend that you evaluate and make any fixes that your sniffer program identifies.  
 
 ### Magento provides
 
