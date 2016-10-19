@@ -60,7 +60,7 @@ The following table lists variables that you can override using environment vari
     </tr>
     <tr><td>APPLICATION_MODE</td>
     <td><p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During development, we recommend the default setting.</p>
-        <p>For production, set to <code>MAGENTO_PRODUCTION_MODE</code>.</td>
+        <p>For production, set to <code>MAGENTO_PRODUCTION_MODE</code>.</p></td>
     <td>MAGENTO_DEVELOPER_MODE</td>
     </tr>
     <tr><td>CLEAN_STATIC_FILES</td>
@@ -74,12 +74,14 @@ The following table lists variables that you can override using environment vari
         <p>You should set this variable to <code>disabled</code> <em>only</em> in staging or production, where the base URLs can't change.</p></td>
     <td>enabled</td>
     </tr>
-    <!-- <tr><td>RECOMPILE_DI</td>
+</tbody>
+</table>
+
+<!-- <tr><td>RECOMPILE_DI</td>
     <td>The default value, <code>true</code>, enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
     <td>true</td>
     </tr> -->
-</tbody>
-</table>
+
 
 For an example, see [Step 2: Change the Admin URI, user name, and password in the master branch]({{page.baseurl}}cloud/access-acct/set-up-env.html#setup-env-adminurl).
 
