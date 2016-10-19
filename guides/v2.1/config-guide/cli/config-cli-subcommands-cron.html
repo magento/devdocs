@@ -172,7 +172,7 @@
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -1414,19 +1414,40 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h4 id="contents">Contents</h4>
+            <div class="updated">Updated: 19 October 2016 (PDT)</div>
+            <h4 class="no_toc" id="contents">Contents</h4>
 
-<ul>
-  <li><a href="#config-cli-cron-overview">Overview of cron</a></li>
-  <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-cron-bkg">Run cron in the background</a></li>
-  <li><a href="#config-cli-cron-group">Configure and run cron using the command line</a></li>
+<ul id="markdown-toc">
+  <li><a href="#config-cli-cron-overview" id="markdown-toc-config-cli-cron-overview">Overview of cron</a></li>
+  <li><a href="#config-cli-before" id="markdown-toc-config-cli-before">First steps</a></li>
+  <li><a href="#config-cli-cron-bkg" id="markdown-toc-config-cli-cron-bkg">Run cron in the background</a>    <ul>
+      <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a>        <ul>
+          <li><a href="#find-the-php-binary-and-phpini-path" id="markdown-toc-find-the-php-binary-and-phpini-path">Find the PHP binary and php.ini path</a></li>
+          <li><a href="#create-the-cron-job" id="markdown-toc-create-the-cron-job">Create the cron job</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#config-cli-cron-group" id="markdown-toc-config-cli-cron-group">Configure and run cron using the command line</a>    <ul>
+      <li><a href="#config-cli-cron-group-conf" id="markdown-toc-config-cli-cron-group-conf">Configure cron groups for custom modules</a>        <ul>
+          <li><a href="#specify-cron-group-options" id="markdown-toc-specify-cron-group-options">Specifying Cron group options</a>            <ul>
+              <li><a href="#run-groups-as-separate-processes" id="markdown-toc-run-groups-as-separate-processes">Running cron groups as separate processes</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#config-cli-cron-group-run" id="markdown-toc-config-cli-cron-group-run">Run cron from the command line</a>        <ul>
+          <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
 <p>To run cron in a web browser, see <a href="/guides/v2.1/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></p>
 
 <h2 id="config-cli-cron-overview">Overview of cron</h2>
+
 <p>Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:</p>
 
 <ul>
@@ -1462,6 +1483,7 @@
 </ul>
 
 <h2 id="config-cli-before">First steps</h2>
+
 <div>
 
   <ol>
@@ -1498,6 +1520,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
   <p>In addition to the command arguments discussed here, see <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
   <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
+
   <p>This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).</p>
 
   <div class="bs-callout bs-callout-info" id="info">
@@ -1596,6 +1619,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
     <p>Save your changes to the crontab and exit the editor.</p>
 
     <h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
+
     <p>This section discusses how to run cron at any time using the command line. You can optionally configure a cron group for a custom module as discussed in the next section.</p>
 
     <p>See one of the following sections:</p>
@@ -1606,110 +1630,218 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
     </ul>
 
     <h3 id="config-cli-cron-group-conf">Configure cron groups for custom modules</h3>
+
     <p>This section discusses how to optionally create a cron group for a custom module. If you don’t need to do this, continue with the next section.</p>
 
     <p>A <em>cron group</em> is a logical group that enables you to easily run cron for more than one process at a time. Most Magento modules use the <code>default</code> cron group; some modules use the <code>index</code> group.</p>
 
     <p>If you’re implementing cron for a custom module, it’s your choice of whether or not to use the <code>default</code> group or a different group.</p>
 
-    <p>To configure a cron group for your module, create <code>&lt;your component base dir&gt;/&lt;vendorname&gt;/module-&lt;name&gt;/etc/crontab.xml</code> with the following contents:</p>
+    <p>To configure a cron group for your module, create a <code>crontab.xml</code> file in your module directory:
+<code>&lt;your component base dir&gt;/&lt;vendorname&gt;/module-&lt;name&gt;/etc/crontab.xml</code></p>
 
-    <pre><code>&lt;config&gt;
-	&lt;group id="&lt;group_name&gt;"&gt;
-        &lt;job name="&lt;job_name&gt;" instance="&lt;classpath&gt;" method="&lt;method&gt;"&gt;
-            &lt;schedule&gt;&lt;time&gt;&lt;/schedule&gt;
-        &lt;/job&gt;
-    &lt;/group&gt;
-&lt;/config&gt;
-</code></pre>
+    <p>For one group, the file should have the following contents:</p>
 
-    <p>The following table discusses the meanings of the options.</p>
+    <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;&lt;group_name&gt;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;&lt;job_name&gt;&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method&gt;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;schedule&gt;&lt;time&gt;&lt;/schedule&gt;</span>
+        <span class="nt">&lt;/job&gt;</span>
+    <span class="nt">&lt;/group&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-    <table>
-	<col width="25%" />
-	<col width="65%" />
-	<tbody>
-		<tr>
-			<th>Value</th>
-			<th>Description</th>
-		</tr>
-		
-	<tr>
-		<td><p>&lt;group_name&gt;</p></td>
-		<td><p>Name of the cron group. The group name doesn't have to be unique.</p>
-			<p>You can run cron for one group at a time.</p></td>
-	</tr>
-	<tr>
-		<td><p>&lt;job_name&gt;</p></td>
-		<td><p>Unique ID for this cron job.</p>
-		</td>		
-	</tr>
-	<tr>
-		<td><p>&lt;classpath&gt;</p></td>
-		<td><p>Classpath.</p></td>		
-	</tr>
-	<tr>
-		<td><p>&lt;method&gt;</p></td>
-		<td><p>Method in <code>&lt;classpath&gt;</code> to call.</p></td>		
-	</tr>
-	<tr>
-		<td><p>&lt;time&gt;</p></td>
-		<td><p>Schedule in <a href="http://www.nncron.ru/help/EN/working/cron-format.htm" target="_blank">cron format</a>.</p>
-			<p>Omit this parameter if the schedule is defined in the Magento database or other storage.</p></td>		
-	</tr>
-	</tbody>
-</table>
-
-    <p>In addition, the <code>&lt;group&gt;</code> element supports the following options, all of which run in store view scope:</p>
+    <p>where:</p>
 
     <table>
-	<col width="25%" />
-	<col width="65%" />
-	<tbody>
-		<tr>
-			<th>Option</th>
-			<th>Description</th>
-		</tr>
-		
-	<tr>
-		<td><p>schedule_generate_every</p></td>
-		<td><p>Determines the frequency, in minutes, that schedules are written to the <code>cron_schedule</code> table.</p></td>
-	</tr>
-	<tr>
-		<td><p>schedule_ahead_for</p></td>
-		<td><p>Determines the number of minutes in advance that schedules are written to the <code>cron_schedule</code> table.</p>
-		</td>		
-	</tr>
-	<tr>
-		<td><p>schedule_lifetime</p></td>
-		<td><p>Schedule lifetime in minutes.</p></td>		
-	</tr>
-	<tr>
-		<td><p>history_cleanup_every</p></td>
-		<td><p>Determines the number of minutes that cron history is kept in the database.</p></td>		
-	</tr>
-	<tr>
-		<td><p>history_success_lifetime</p></td>
-		<td><p>Determines the number of minutes that the record of successfully completed cron jobs are kept in the database.</p></td>		
-	</tr>
-	<tr>
-		<td><p>history_failure_lifetime</p></td>
-		<td><p>Determines the number of minutes that the record of failed cron jobs are kept in the database.</p></td>		
-	</tr>
-	<tr>
-		<td><p>use_separate_process</p></td>
-		<td><p>If set to <code>1</code>, all cron jobs in this group run in parallel as separate processes.</p>
-			<p>If set to <code>0</code>, all cron jobs in this group run one after the other as separate processes.</p></td>		
-	</tr>
-	</tbody>
-</table>
+      <thead>
+        <tr>
+          <th>Value</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>group_name</code></td>
+          <td>Name of the cron group. The group name doesn’t have to be unique. You can run cron for one group at a time.</td>
+        </tr>
+        <tr>
+          <td><code>job_name</code></td>
+          <td>Unique ID for this cron job.</td>
+        </tr>
+        <tr>
+          <td><code>classpath</code></td>
+          <td>Class to be instantiated (classpath).</td>
+        </tr>
+        <tr>
+          <td><code>method</code></td>
+          <td>Method in <code>classpath</code> to call.</td>
+        </tr>
+        <tr>
+          <td><code>time</code></td>
+          <td>Schedule in <a href="http://www.nncron.ru/help/EN/working/cron-format.htm" target="_blank">cron format</a>. Omit this parameter if the schedule is defined in the Magento database or other storage.</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <p>As an example, see <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a></p>
+    <p>The resulting <code>crontab.xml</code> with two groups may look like this:</p>
+
+    <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;&lt;job_1_name&gt;&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
+        <span class="nt">&lt;/job&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;&lt;job_2_name&gt;&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
+        <span class="nt">&lt;/job&gt;</span>
+    <span class="nt">&lt;/group&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;index&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;&lt;job_3_name&gt;&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
+        <span class="nt">&lt;/job&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;&lt;job_4_name&gt;&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
+        <span class="nt">&lt;/job&gt;</span>
+    <span class="nt">&lt;/group&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+    <p>As an example, see <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>.</p>
+
+    <h4 id="specify-cron-group-options">Specifying Cron group options</h4>
+
+    <p>You may declare a new group and specify its configuration options (all of which run in store view scope) via the <code>cron_groups.xml</code> file, located in:</p>
+
+    <p><code>&lt;your component base dir&gt;/&lt;vendorname&gt;/module-&lt;name&gt;/etc/cron_groups.xml</code></p>
+
+    <p>Below is an example of the <code>cron_groups.xml</code> file:</p>
+
+    <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;&lt;group_name&gt;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;schedule_generate_every&gt;</span>1<span class="nt">&lt;/schedule_generate_every&gt;</span>
+        <span class="nt">&lt;schedule_ahead_for&gt;</span>4<span class="nt">&lt;/schedule_ahead_for&gt;</span>
+        <span class="nt">&lt;schedule_lifetime&gt;</span>2<span class="nt">&lt;/schedule_lifetime&gt;</span>
+        <span class="nt">&lt;history_cleanup_every&gt;</span>10<span class="nt">&lt;/history_cleanup_every&gt;</span>
+        <span class="nt">&lt;history_success_lifetime&gt;</span>60<span class="nt">&lt;/history_success_lifetime&gt;</span>
+        <span class="nt">&lt;history_failure_lifetime&gt;</span>600<span class="nt">&lt;/history_failure_lifetime&gt;</span>
+        <span class="nt">&lt;use_separate_process&gt;</span>1<span class="nt">&lt;/use_separate_process&gt;</span>
+    <span class="nt">&lt;/group&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+    <p>where:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Option</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>schedule_generate_every</code></td>
+          <td>Frequency (in minutes) that schedules are written to the <code>cron_schedule</code> table.</td>
+        </tr>
+        <tr>
+          <td><code>schedule_ahead_for</code></td>
+          <td>Time (in minutes) in advance that schedules are written to the <code>cron_schedule</code> table.</td>
+        </tr>
+        <tr>
+          <td><code>schedule_lifetime</code></td>
+          <td>Schedule lifetime in minutes.</td>
+        </tr>
+        <tr>
+          <td><code>history_cleanup_every</code></td>
+          <td>Time (in minutes) that cron history is kept in the database.</td>
+        </tr>
+        <tr>
+          <td><code>history_success_lifetime</code></td>
+          <td>Time (in minutes) that the record of successfully completed cron jobs are kept in the database.</td>
+        </tr>
+        <tr>
+          <td><code>history_failure_lifetime</code></td>
+          <td>Time (in minutes) that the record of failed cron jobs are kept in the database.</td>
+        </tr>
+        <tr>
+          <td><code>use_separate_process</code></td>
+          <td>Specifies how the groups of cron jobs are run: in parallel or one by one. See the <a href="#run-groups-as-separate-processes">Running cron groups as separate processes</a> section below for more details.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h5 id="run-groups-as-separate-processes">Running cron groups as separate processes</h5>
+
+    <p>You can execute cron groups simultaneously using the <code>use_separate_process</code> configuration option.</p>
+
+    <p>If the option is set to <code>1</code>, cron groups will run in parallel as separate processes. Jobs from every group will be executed one after another.</p>
+
+    <p>If set to <code>0</code>, cron groups will run one by one (as separate processes, too). Jobs from all groups will be merged into a single list and executed one after another.</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>
+    Note that this applies to cron groups, not separate jobs in them. Jobs will always run one by one, in the order they are listed in the "crontab.xml" configuration file.
+  </p>
+</span>
+</div>
+
+    <p>Below is a practical example.</p>
+
+    <p>Let’s say we have two groups and two jobs for each of them:</p>
+
+    <ul>
+      <li>
+        <p><code>Group_1</code> : <code>Group_1_Cron_Job_1</code> ; <code>Group_1_Cron_Job_2</code>;</p>
+      </li>
+      <li>
+        <p><code>Group_2</code> : <code>Group_2_Cron_Job_1</code> ; <code>Group_2_Cron_Job_2</code>.</p>
+      </li>
+    </ul>
+
+    <p>In this case, the <code>crontab.xml</code> file would look like this:</p>
+
+    <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;Group_1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;Group_1_Cron_Job_1&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
+        <span class="nt">&lt;/job&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;Group_1_Cron_Job_2&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
+        <span class="nt">&lt;/job&gt;</span>
+    <span class="nt">&lt;/group&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;Group_2&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;Group_2_Cron_Job_1&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
+        <span class="nt">&lt;/job&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;Group_2_Cron_Job_2&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
+        <span class="nt">&lt;/job&gt;</span>
+    <span class="nt">&lt;/group&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+    <p>With the <code>use_separate_process</code> parameter enabled (set to <code>1</code>), the cron groups start simultaneously and their jobs are executed in the following order:</p>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html">Group_1_Cron_Job_1 : running
+Group_1_Cron_Job_2 : pending
+Group_2_Cron_Job_1 : running
+Group_2_Cron_Job_2 : pending</code></pre></figure>
+
+    <p><code>Group_1_Cron_Job_2</code> will be started after the first task (<code>Group_1_Cron_Job_1</code>) completes.
+The same happens in <code>Group_2</code>.</p>
+
+    <p>On the contrary: with the <code>use_separate_process</code> option disabled (set to <code>0</code>), the cron groups start one by one, and so do their jobs:</p>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html">Group_1_Cron_Job_1 : running
+Group_1_Cron_Job_2 : pending
+Group_2_Cron_Job_1 : pending
+Group_2_Cron_Job_2 : pending</code></pre></figure>
+
+    <p><code>Group_1_Cron_Job_2</code> starts after <code>Job_1</code> stops.
+<code>Group_2</code> starts after <code>Group_1</code> stops.</p>
 
     <h3 id="config-cli-cron-group-run">Run cron from the command line</h3>
+
     <p>Command options:</p>
 
-    <pre><code>magento cron:run [--group="&lt;cron group name&gt;"] 
+    <pre><code>magento cron:run [--group="&lt;cron group name&gt;"]
 </code></pre>
 
     <p>where <code>--group</code> specifies the cron group to run (omit this option to run cron for all groups)</p>
