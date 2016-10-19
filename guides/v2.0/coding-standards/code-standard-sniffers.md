@@ -3,7 +3,7 @@ layout: default
 group: coding-standards
 subgroup: Coding standards
 title: Code sniffers
-menu_title: Code sniffers
+menu_title: PHP code sniffers
 menu_order: 3
 version: 2.0
 github_link: coding-standards/code-standard-sniffers.md
