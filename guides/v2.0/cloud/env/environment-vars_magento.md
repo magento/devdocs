@@ -54,8 +54,13 @@ The following table lists variables that you can override using environment vari
     <td>Enter the relative URL by which to access the Magento Admin. For security reasons, we recommend you choose a value other than <code>admin</code> or <code>backend</code> or another term that is easy to guess.</td>
     <td>admin</td>
     </tr>
+    <tr><td>ADMIN_LOCALE</td>
+    <td>Specifies the default locale used by the Magento Admin.</td>
+    <td>en_US</td>
+    </tr>
     <tr><td>APPLICATION_MODE</td>
-    <td>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During development, we recommend the default setting.</td>
+    <td><p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During development, we recommend the default setting.</p>
+        <p>For production, set to <code>MAGENTO_PRODUCTION_MODE</code>.</p></td>
     <td>MAGENTO_DEVELOPER_MODE</td>
     </tr>
     <tr><td>CLEAN_STATIC_FILES</td>
@@ -64,14 +69,21 @@ The following table lists variables that you can override using environment vari
     <p>In other words, because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p></td>
     <td>true</td>
     </tr>
-    <tr><td>RECOMPILE_DI</td>
-    <td>The default value, <code>true</code>, enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
-    <td>true</td>
+    <tr><td>UPDATE_URLS</td>
+    <td><p><em>Version 2.1.2 and later.</em>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
+        <p>You should set this variable to <code>disabled</code> <em>only</em> in staging or production, where the base URLs can't change.</p></td>
+    <td>enabled</td>
     </tr>
 </tbody>
 </table>
 
-For an example, see [Tutorial&mdash;Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html).
+<!-- <tr><td>RECOMPILE_DI</td>
+    <td>The default value, <code>true</code>, enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
+    <td>true</td>
+    </tr> -->
+
+
+For an example, see [Step 2: Change the Admin URI, user name, and password in the master branch]({{page.baseurl}}cloud/access-acct/set-up-env.html#setup-env-adminurl).
 
 ## Troubleshooting {#cloud-env-vars-tshoot}
 In the event something goes wrong and you can't access your environment after it deploys, try the following:
