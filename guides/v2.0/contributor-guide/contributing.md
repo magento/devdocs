@@ -33,6 +33,13 @@ This contribution model has contributors maintaining their own copy of the forke
 
 Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post all questions to a question-and-answer site, such as <a href="https://magento.stackexchange.com/" target="_blank">Stack Exchange </a> and the <a href="https://community.magento.com/" target="_blank">Magento Forums</a>, where Magento community members can quickly provide recommendations and advice.
+
+Submit feature requests or enhancement suggestions to the new <a href="https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests" target="_blank">Magento 2 Feature Requests and Improvements forum</a> (see details <a href="https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96" target="_blank">here</a>). 
+</p>
+</div>
+
 The Magento 2 development team reviews all issues and contributions submitted by the community of developers in a first-in, first-out basis. During the review we might require clarifications from the contributor. If there is no response from the contributor for two weeks, the issue is closed.
 
 Often when the Magento 2 team works on reviewing the suggested changes, we will add a label to the issue to indicate to our internal team certain information, like status or who is working the issue. If you're ever curious what the different labels mean, see the <a href="#labels">table</a> below for an explanation of each one.
