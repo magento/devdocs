@@ -54,7 +54,11 @@ This section briefly discusses settings we recommend you consider for the server
 
 The UNIX `logrotate` utility enables you to administer systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files.  Each log file can be handled daily, weekly, monthly, or when the log file exceeds a specified size.
 
-For more information, see the <a href="http://linuxconfig.org/logrotate-8-manual-page" target="_blank">logrotate man page</a> or a tutorial like this one on <a href="http://www.thegeekstuff.com/2010/07/logrotate-examples" target="_blank">geekstuff</a>.
+For more information, see one of the following:
+
+*	[HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples](http://www.thegeekstuff.com/2010/07/logrotate-examples){:target="_blank"}
+*	[stackexchange](http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app){:target="_blank"}
+*	[logrotate man page](http://linuxconfig.org/logrotate-8-manual-page){:target="_blank"}
 
 #### Set up iptables rules to enable various Magento services to communicate.
 

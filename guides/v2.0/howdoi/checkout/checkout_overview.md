@@ -27,7 +27,7 @@ You can customize the default checkout in many ways. Here the following customiz
  - [Add custom input mask for ZIP code]({{page.baseurl}}howdoi/checkout/checkout_zip.html)
  - [Add a custom template for a form field on Checkout page]({{page.baseurl}}howdoi/checkout/checkout_edit_form.html)
  - [Add a new input form to checkout]({{page.baseurl}}howdoi/checkout/checkout_form.html)
- - [Add a new field in address form]({{page.baseurl}}howdoi/checkout/checkout_new_field.md)
+ - [Add a new field in address form]({{page.baseurl}}howdoi/checkout/checkout_new_field.html)
  - [Add custom shipping address renderer]({{page.baseurl}}howdoi/checkout/checkout_address.html)
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom module. 

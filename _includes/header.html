@@ -15,6 +15,9 @@
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        var baseUrl = "{{site.baseurl}}";
+    </script>
 
 </head>
 <body>
@@ -39,7 +42,7 @@
 	</nav>
 
 	<div class="search-btn">
-        <a class="search-trigger search-icon" href="{{page.baseurl}}search.html"></a>
+        <a class="search-trigger search-icon" href="{{site.baseurl}}search.html"></a>
 	</div>
 
 </header>
