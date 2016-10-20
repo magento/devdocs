@@ -15,13 +15,15 @@ github_link: cloud/howtos/upgrade-magento.md
 ## How upgrade the Magento software {#cloud-howto-upgrade}
 This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from version 2.0.9 to a later version. If you have a version earlier than 2.0.9, [contact Support]({{ page.baseurl }}cloud/get-help.html).
 
-## Upgrade to the latest version
+## Get started
 
 {% collapsible To get started: %}
 
 {% include cloud/cli-get-started.md %}
 
 {% endcollapsible %}
+
+## Upgrade to the latest version
 
 {% collapsible To upgrade to the latest version: %}
 
