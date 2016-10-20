@@ -125,39 +125,13 @@ Refer to the following table for a description of each label. These labels are a
       </tr>
    </thead>
    <tbody>
-      <tr>
-        <th colspan="2">Issue Type</th>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_bug.png" alt="the Bug button"/></td>
-         <td>An error, flaw, or failure in an existing feature that produces unexpected results.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_featureRequest.png" alt="the Feature Request button"/></td>
-         <td>A community request to introduce a new feature in Magento.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_improvement.png" alt="the Improvement button"/></td>
-         <td>A request to enhance existing functionality.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_question.png" alt="the Question button"/></td>
-         <td>An inquiry about existing functionality.</td>
-      </tr>
+      
+      
+     
       <tr>
         <th colspan="2">Domains Impacted</th>
       </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_MX.png" alt="the MX button"/></td>
-         <td>Affects Merchant Experience.</td>
-      </tr>
-       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_CS.png" alt="the CS button"/></td>
-         <td>Affects Commerce Services.</td>
-      </tr>
-       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_PS.png" alt="the PS button"/></td>
-         <td>Affects Platform Services.</td>
+      
       </tr>
        <tr>
          <td><img src="{{ site.baseurl }}common/images/github_DOC.png" alt="the Doc button"/></td>
@@ -184,6 +158,10 @@ Refer to the following table for a description of each label. These labels are a
       </tr>
       <tr>
         <th colspan="2">Issue Resolution Status</th>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_bug.png" alt="the Bug button"/></td>
+         <td>The Magento Team has confirmed that this issue contains the minimum required information to reproduce.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/gitHub_acknowledged.png" alt="the Acknowledged button"/></td>
