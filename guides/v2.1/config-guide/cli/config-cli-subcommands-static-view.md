@@ -192,15 +192,46 @@ To do this, take the following steps:
 
 The configuration required to deploy static view files can be exported from the database of the production Magento instance. To do it, run the following command for the production instance:
 
-	magento config:export
+	magento app:config:dump
 	
-As a result of the command execution, the following files must appear in the `app/etc/` directory: 
+As a result of the command execution, the `config.local.php` file must appear in the `app/etc/` directory. You can copy this file and paste it into any Magento codebase (`app/etc`) in order to generate static content.
 
-- `setup.config.php`: contains all system configurations required for successful static content deployment		 
-- `scope.config.php`: contains the list of stores, store groups and websites with own information
-- i18n.config.php (optional):  contains all inline translations. It is used for generation `js-translation.json`
+In the `config.local.php` file you can distinguish the following sections:
 
-You can copy this files and paste them into any Magento codebase (`app/etc`) in order to generate static content.	
+- `system`: contains all system configurations required for successful static content deployment		 
+- `scopes`: contains the list of stores, store groups and websites with related information
+- `i18n`:  contains all inline translations. It is used for generation `js-translation.json`
+
+Developer can have 3 file versions with different priority: 
+1. <pre>config.dist.php</pre> - This is initial file and can be ported with help of VCS system. It uses for provide additional config in system.
+2. <pre>config.local.php</pre>
+3. <pre>config.php</pre> - Runtime version. After installation config.php will be the only place, from which configuration will be read. 
+    
+Config.dist.php file has the lowest priority and config.php has the highest.
+In this files developer can add some configurations like: stores, websites, stores configurations, etc...
+This files override the same values from db.
+    
+Below example of configuration is listed:
+    
+{% highlight php  %}
+    <?php
+    return array (
+      'system' => 
+      array (
+        'default' => 
+        array (
+          'general' => 
+          array (
+            'region' => 
+            array (
+              'display_all' => '1',
+              'state_required' => 'AT,BR,CA,CH,EE,ES,FI,LT,LV,RO,US',
+            ),
+          ),
+        ),
+      ),
+    );
+{% endhighlight %}
 
 		
 <div class="bs-callout bs-callout-info" id="info">
