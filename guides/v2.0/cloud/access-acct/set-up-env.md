@@ -92,7 +92,7 @@ If your master branch is already configured, skip this section and continue with
 
 If you're not sure whether or not the master branch has been configured, enter the following command:
 
-    magento-cloud magento-cloud variable:get -e <environment ID>
+    magento-cloud variable:get -e <environment ID>
 
 {% collapsible To change the Admin URI, user name, and administrator password in the master branch: %}
 
@@ -171,7 +171,7 @@ After you create the branch, update project dependencies so you can install the 
 
 {% endcollapsible %}
 
-## Step 5: Get your authentication keys {#setenv-keys}
+## Step 5: Add your authentication keys to auth.json {#setenv-keys}
 
 {% collapsible To get your authentication keys: %}
 Before you can upgrade the Magento software or install extensions, you must have authentication keys in the `auth.json` file in the Magento root directory. The Magento Enterprise Cloud Edition account owner has your keys. Contact that person to get them.

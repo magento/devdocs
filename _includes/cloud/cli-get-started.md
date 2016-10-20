@@ -11,9 +11,11 @@
 4.	If necessary, clone a project.
 
 		magento-cloud project:get <project ID>
+
+	Typically, you should clone the project in the web server's docroot or a Virtual Host docroot.
 4.	Change to a project directory.
 
-	For example if your project is named Magento 2, `cd magento-2`
+	For example, `cd /var/www/html/magento2`
 4.	List environments in the project:
 
 		magento-cloud environment:list
@@ -33,9 +35,6 @@
 8.	Pull updated code:
 
 		git pull origin <environment ID>
-9.	Update project dependencies.
-
-		composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 7.  Create a [snapshot]({{page.baseurl}}cloud/admin/admin-snap.html) of the environment.
 
         magento-cloud snapshot:create -e <environment ID>
