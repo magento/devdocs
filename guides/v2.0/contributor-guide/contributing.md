@@ -132,7 +132,7 @@ Refer to the following table for a description of each label. These labels are a
         <th colspan="2">Domains Impacted</th>
       </tr>
       
-      </tr>
+      
        <tr>
          <td><img src="{{ site.baseurl }}common/images/github_DOC.png" alt="the Doc button"/></td>
          <td>Affects Documentation domain.</td>
