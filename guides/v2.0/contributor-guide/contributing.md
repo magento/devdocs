@@ -109,6 +109,16 @@ To add an issue:
 3. Fill in the Title and issue description.
 4. Click **Submit new issue**.
 
+### Have a request for a feature enhancement or a question?
+
+We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post questions to a question-and-answer site, such as <a href="https://magento.stackexchange.com/" target="_blank">Stack Exchange/a> and the <a href="https://community.magento.com/" target="_blank">Magento Forums</a>Magento Forums, where Magento community members can quickly provide recommendations and advice.
+
+Submit feature requests or enhancment suggestions to the new <a href="https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests" target="_blank">Magento 2 Feature Requests and Improvements forum</a> (see details <a href="https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96" target="_blank">here</a>). 
+
+
+https://community.magento.com/
+
+
 <h2 id="labels">Labels applied by the Magento team</h2>
 
 Refer to the following table for a description of each label. These labels are applied by the Magento development team to community contributed issues and pull requests, to communicate status, impact, or which team is working on it.
