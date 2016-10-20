@@ -15,6 +15,9 @@ The following topics are included in the Guide:
 
 * <a href="#contribute">Contribute to Magento 2 code</a>
 
+* <a href="#question">Submitting a question, feature request, or suggested improvement?</a>
+
+
 * <a href="#requirements">Contribution requirements</a>
 
 * <a href="#fork">Fork a repository</a>
@@ -33,12 +36,6 @@ This contribution model has contributors maintaining their own copy of the forke
 
 Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post all questions to a question-and-answer site, such as <a href="https://magento.stackexchange.com/" target="_blank">Stack Exchange </a> and the <a href="https://community.magento.com/" target="_blank">Magento Forums</a>, where Magento community members can quickly provide recommendations and advice.
-
-Submit feature requests or enhancement suggestions to the new <a href="https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests" target="_blank">Magento 2 Feature Requests and Improvements forum</a> (see details <a href="https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96" target="_blank">here</a>). 
-</p>
-</div>
 
 The Magento 2 development team reviews all issues and contributions submitted by the community of developers in a first-in, first-out basis. During the review we might require clarifications from the contributor. If there is no response from the contributor for two weeks, the issue is closed.
 
@@ -47,6 +44,14 @@ Often when the Magento 2 team works on reviewing the suggested changes, we will 
 <div class="bs-callout bs-callout-info" id="info">
 <p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
 </div>
+
+<h2 id="question">Submitting a question, feature request, or suggested improvement?</h2>
+
+We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post all questions to a question-and-answer site, such as <a href="https://magento.stackexchange.com/" target="_blank">Stack Exchange </a> and the <a href="https://community.magento.com/" target="_blank">Magento Forums</a>, where Magento community members can quickly provide recommendations and advice.
+
+Submit feature requests or enhancement suggestions to the new <a href="https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests" target="_blank">Magento 2 Feature Requests and Improvements forum</a> (see details <a href="https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96" target="_blank">here</a>). 
+</p>
+
 
 <h2 id="requirements">Contribution requirements</h2>
 
