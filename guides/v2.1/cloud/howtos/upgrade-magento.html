@@ -1307,7 +1307,308 @@
 		<div class="content-wrap">
             <div class="updated">Updated: 1 August 2016 (PDT)</div>
             <h2 id="cloud-howto-upgrade">How upgrade the Magento software</h2>
-<p><em>This topic is coming soon.</em></p>
+<p>This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from version 2.0.9 to a later version. If you have a version earlier than 2.0.9, <a href="/guides/v2.1/cloud/get-help.html">contact Support</a>.</p>
+
+<h2 id="upgrade-to-the-latest-version">Upgrade to the latest version</h2>
+
+<div class="collapsible"><b class="collapsible-title">To get started: </b><div class="collapsible-content"><div>
+
+  <ol>
+    <li>Log in to the server on which your SSH keys are located as, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+    <li>Change to a directory to which the Magento file system owner has write access, such as the web server docroot.</li>
+    <li>
+      <p>Log in to your project:</p>
+
+      <pre><code>magento-cloud login
+</code></pre>
+    </li>
+    <li>
+      <p>List your projects:</p>
+
+      <pre><code>magento-cloud project:list
+</code></pre>
+    </li>
+    <li>
+      <p>If necessary, clone a project.</p>
+
+      <pre><code>magento-cloud project:get &lt;project ID&gt;
+</code></pre>
+
+      <p>Typically, you should clone the project in the web server’s docroot or a Virtual Host docroot.</p>
+    </li>
+    <li>
+      <p>Change to a project directory.</p>
+
+      <p>For example, <code>cd /var/www/html/magento2</code></p>
+    </li>
+    <li>
+      <p>List environments in the project:</p>
+
+      <pre><code>magento-cloud environment:list
+</code></pre>
+
+      <div class="bs-callout bs-callout-info" id="info">
+  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
+</div>
+    </li>
+    <li>
+      <p>Fetch origin branches:</p>
+
+      <pre><code>git fetch origin
+</code></pre>
+    </li>
+    <li>
+      <p>Check out an environment:</p>
+
+      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre>
+
+      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+    </li>
+    <li>
+      <p>Pull updated code:</p>
+
+      <pre><code>git pull origin &lt;environment ID&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>Create a <a href="/guides/v2.1/cloud/admin/admin-snap.html">snapshot</a> of the environment.</p>
+
+      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre>
+    </li>
+  </ol>
+</div>
+</div></div>
+
+<div class="collapsible"><b class="collapsible-title">To upgrade to the latest version: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Back up the Magento application in its current state.</p>
+
+    <pre><code>php &lt;Magento root dir&gt;/bin/magento setup:backup --code --db --media
+</code></pre>
+  </li>
+  <li>
+    <p>Open <code>composer.json</code> in a text editor.</p>
+
+    <p>It’s located in your Magento project root directory.</p>
+  </li>
+  <li>
+    <p>In the <code>require</code> block, change the value of <code>"magento/magento-cloud-metapackage":</code> to the desired version.</p>
+
+    <p>An example follows:</p>
+
+    <pre><code>"require": {
+   "magento/magento-cloud-metapackage": "2.1.2",
+   "composer/composer": "@alpha",
+   "colinmollenhour/credis": "1.6",
+   "colinmollenhour/php-redis-session-abstract": "1.1",
+},
+</code></pre>
+  </li>
+  <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
+  <li>
+    <p>Enter the following commands in the order shown:</p>
+
+    <pre><code>composer update
+git add -A &amp;&amp; git commit -m "Upgrade"
+git push origin &lt;branch name&gt;
+</code></pre>
+  </li>
+  <li>Wait for deployment to complete.</li>
+  <li>
+    <p>Take a snapshot of your environment:</p>
+
+    <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre>
+  </li>
+  <li><a href="#upgrade-verify">Verify your upgrade</a>.</li>
+</ol>
+</div></div>
+
+<h2 id="upgrade-from-version-204">Upgrade from version 2.0.4</h2>
+<p>This section discusses steps to upgrade <em>only</em> if your current Magento Enterprise Cloud Edition version is 2.0.4.</p>
+
+<div class="collapsible"><b class="collapsible-title">To upgrade from version 2.0.4 </b><div class="collapsible-content"><h3 id="create-an-authorization-file">Create an authorization file</h3>
+<p>To enable you to install and update the Magento software, you must have an <code>auth.json</code> file in your project’s root directory. <code>auth.json</code> contains your Magento EE <a href="http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a>.</p>
+
+<p>In some cases, you might already have <code>auth.json</code> so check to see if it exists and has your authentication credentials before you create a new one.</p>
+
+<p>To create a new <code>auth.json</code> in the event you don’t have one:</p>
+
+<ol>
+  <li>
+    <p>Copy the provided sample using the following command:</p>
+
+    <pre><code>cp auth.json.sample auth.json
+</code></pre>
+  </li>
+  <li>Open <code>auth.json</code> in a text editor.</li>
+  <li>
+    <p>Replace <code>&lt;public-key&gt;</code> and <code>&lt;private-key&gt;</code> with your authentication credentials.</p>
+
+    <p>See the following example:</p>
+
+    <pre><code>"http-basic": {
+   "repo.magento.com": {
+      "username": "&lt;public-key&gt;",
+      "password": "&lt;private-key&gt;"
+    }
+}
+</code></pre>
+  </li>
+  <li>Save your changes to <code>auth.json</code> and exit the text editor.</li>
+</ol>
+
+<h2 id="update-magentoappyaml-and-composerjson">Update .magento.app.yaml and composer.json</h2>
+<p>This section discusses how to update:</p>
+
+<ul>
+  <li><code>.magento.app.yaml</code>, the main project configuration file.</li>
+  <li><code>composer.json</code>, which specifies project dependencies.</li>
+</ul>
+
+<p>Changes are discussed in the sections that follow.</p>
+
+<h3 id="magentoappyaml"><code>.magento.app.yaml</code></h3>
+<p>Open <code>.magento.app.yaml</code> in a text editor and update the <code>build</code> section (which is nested in the <code>deploy</code> section) and <code>crons</code> sections as follows:</p>
+
+<h4 id="deploy-section">deploy section</h4>
+<pre><code>deploy: |
+    php ./vendor/magento/magento-cloud-configuration/pre-deploy.php
+    php ./bin/magento magento-cloud:deploy
+</code></pre>
+
+<h4 id="crons-section">crons section</h4>
+<pre><code>crons:
+        cronrun:
+            spec: "*/5 * * * *"
+            cmd: "php bin/magento cron:run &amp;&amp; php bin/magento cron:run"
+</code></pre>
+
+<h3 id="composerjson"><code>composer.json</code></h3>
+<p>Open <code>composer.json</code> and update the <code>"files"</code> directive in the <code>autoload</code> section as follows:</p>
+
+<pre><code>"autoload": {
+        "psr-4": {
+            "Magento\\Framework\\": "lib/internal/Magento/Framework/",
+            "Magento\\Setup\\": "setup/src/Magento/Setup/",
+            "Magento\\": "app/code/Magento/"
+        },
+        "psr-0": {
+            "": "app/code/"
+        },
+        "files": [
+            "app/etc/NonComposerComponentRegistration.php"
+        ]
+    }
+</code></pre>
+
+<p>Move <code>app/NonComposerComponentRegistration.php</code> to <code>app/etc/NonComposerComponentRegistration.php</code>.
+Make sure the relative paths that point to locations in the app and lib directories reflect the 
+new location of the file. For an example that can be copied, see the <a href="app/etc/NonComposerComponentRegistration.php">copy in this project</a>.</p>
+
+<p>Update the <code>require</code> section as follows to:</p>
+
+<ul>
+  <li>Replace <code>"magento/product-enterprise-edition": "&lt;current version&gt;",</code> with <code>"magento/magento-cloud-metapackage": "&lt;upgrade version&gt;",</code></li>
+  <li>Remove <code>"magento/magento-cloud-configuration": "1.0.*",</code></li>
+</ul>
+
+<p>(In some cases, your <code>composer.json</code> might already be correct.)</p>
+
+<pre><code> },
+    "require": {
+        "magento/magento-cloud-metapackage": "2.1.0",
+        "composer/composer": "@alpha",
+        "colinmollenhour/credis": "1.6",
+        "colinmollenhour/php-redis-session-abstract": "1.1",
+        "fastly/magento2": "^1.0"
+    },
+</code></pre>
+
+<p>Run <code>composer update</code>, and make sure the updated composer.lock and other changed files are
+checked in to git.</p>
+
+<h2 id="repository-structure">Repository structure</h2>
+<p>Here are the specific files for this example to work on Magento Enterprise Cloud Edition:</p>
+
+<pre><code>.magento/
+         /routes.yaml
+         /services.yaml
+.magento.app.yaml
+auth.json
+composer.json
+magento-vars.php
+php.ini
+</code></pre>
+
+<p><code>.magento/routes.yaml</code> redirects <code>www</code> to the naked domain, and that the application that will be serving HTTP is named <code>php</code>.</p>
+
+<p><code>.magento/services.yaml</code> sets up a MySQL instance, plus Redis and Solr.</p>
+
+<p><code>composer.json</code> fetches the Magento Enterprise Edition and some configuration scripts to prepare your application.</p>
+</div></div>
+
+<h2 id="upgrade-verify">Verify your upgrade</h2>
+<p>This section discusses how to verify your upgrade on your local development machine and in the cloud.</p>
+
+<h3 id="verify-the-upgrade-locally">Verify the upgrade locally</h3>
+<p>To verify your upgrade locally, enter the following command from your Magento root directory:</p>
+
+<pre><code>php bin/magento --version
+</code></pre>
+
+<p>You can also log in to the Magento Admin; the version displays in the lower right corner of the page.</p>
+
+<p>To find the base URL for your integration environment, enter the following command:</p>
+
+<pre><code>magento-cloud environment:url
+</code></pre>
+
+<p>When prompted, choose the HTTP or HTTPS URL.</p>
+
+<p>If errors display in the browser, see <a href="#upgrade-verify-tshoot">Troubleshooting your upgrade</a>.</p>
+
+<h3 id="upgrade-verify-tshoot">Troubleshooting your upgrade</h3>
+<p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
+
+<pre><code>There has been an error processing your request
+Exception printing is disabled by default for security reasons.
+  Error log record number: &lt;number&gt;
+</code></pre>
+
+<p>To view error details locally, open the indicated file name in the <code>&lt;Magento root dir&gt;/var/report</code> directory.</p>
+
+<p>To view the error in your integration environment, <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-ssh">SSH</a> to the environment and open the indicated file in the <code>/app/var/report</code> directory.</p>
+
+<p>If the error includes the following, run the <code>bin/magento setup:upgrade</code> command to resolve it:</p>
+
+<pre><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
+The following modules are outdated:
+Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
+Magento_Sales data: current version - 2.0.2, required version - 2.0.3
+Magento_CatalogStaging schema: current version - 2.0.0, required version - 2.1.0
+</code></pre>
+
+<p>To resolve the error:</p>
+
+<ol>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>php bin/magento setup:upgrade
+</code></pre>
+  </li>
+  <li>Wait for the command to complete.</li>
+  <li>
+    <p>Update the branch:</p>
+
+    <pre><code>git add -A &amp;&amp; git commit -m "Update"
+git push origin &lt;branch name&gt;
+</code></pre>
+  </li>
+</ol>
 
 <h4 id="related-topic">Related topic</h4>
 <ul>

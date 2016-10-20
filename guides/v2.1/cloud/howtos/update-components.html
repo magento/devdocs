@@ -1386,11 +1386,13 @@
 
       <pre><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+
+      <p>Typically, you should clone the project in the web server’s docroot or a Virtual Host docroot.</p>
     </li>
     <li>
       <p>Change to a project directory.</p>
 
-      <p>For example if your project is named Magento 2, <code>cd magento-2</code></p>
+      <p>For example, <code>cd /var/www/html/magento2</code></p>
     </li>
     <li>
       <p>List environments in the project:</p>
@@ -1420,12 +1422,6 @@
       <p>Pull updated code:</p>
 
       <pre><code>git pull origin &lt;environment ID&gt;
-</code></pre>
-    </li>
-    <li>
-      <p>Update project dependencies.</p>
-
-      <pre><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 </code></pre>
     </li>
     <li>

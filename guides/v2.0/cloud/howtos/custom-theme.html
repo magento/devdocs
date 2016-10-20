@@ -1295,7 +1295,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 24 August 2016 (PDT)</div>
+            <div class="updated">Updated: 20 October 2016 (PDT)</div>
             <h2 id="cloud-howto-theme">How to install a theme</h2>
 <p>This topic discusses how to install a theme either by extracting its code to the Magento file system or using Composer.</p>
 
@@ -1323,11 +1323,13 @@
 
       <pre><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+
+      <p>Typically, you should clone the project in the web server’s docroot or a Virtual Host docroot.</p>
     </li>
     <li>
       <p>Change to a project directory.</p>
 
-      <p>For example if your project is named Magento 2, <code>cd magento-2</code></p>
+      <p>For example, <code>cd /var/www/html/magento2</code></p>
     </li>
     <li>
       <p>List environments in the project:</p>
@@ -1357,12 +1359,6 @@
       <p>Pull updated code:</p>
 
       <pre><code>git pull origin &lt;environment ID&gt;
-</code></pre>
-    </li>
-    <li>
-      <p>Update project dependencies.</p>
-
-      <pre><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 </code></pre>
     </li>
     <li>
@@ -1455,7 +1451,14 @@
     <pre><code>composer require zero1/theme-fashionista-theme:1.0.0
 </code></pre>
   </li>
-  <li>Wait for the project to deploy.</li>
+  <li>Wait for dependencies to update.</li>
+  <li>
+    <p>Enter the following commands:</p>
+
+    <pre><code>git add -A &amp;&amp; git commit -m "Add theme"
+git push origin &lt;branch name&gt;
+</code></pre>
+  </li>
   <li>Log in to the Magento Admin.</li>
   <li>
     <p>Click <strong>Content</strong> &gt; Design &gt; <strong>Themes</strong>.</p>

@@ -1295,14 +1295,13 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 20 October 2016 (PDT)</div>
             <h2 id="cloud-howto-samp">How to install optional sample data</h2>
 <p>This topic discusses how to install optional Magento sample data. Sample data simulates an active Magento store, including customers, products, and other data.</p>
 
 <h3 id="get-started">Get started</h3>
-<p>To get started:</p>
 
-<div>
+<div class="collapsible"><b class="collapsible-title">To get started: </b><div class="collapsible-content"><div>
 
   <ol>
     <li>Log in to the server on which your SSH keys are located as, or switch to, the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
@@ -1324,11 +1323,13 @@
 
       <pre><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+
+      <p>Typically, you should clone the project in the web server’s docroot or a Virtual Host docroot.</p>
     </li>
     <li>
       <p>Change to a project directory.</p>
 
-      <p>For example if your project is named Magento 2, <code>cd magento-2</code></p>
+      <p>For example, <code>cd /var/www/html/magento2</code></p>
     </li>
     <li>
       <p>List environments in the project:</p>
@@ -1361,54 +1362,60 @@
 </code></pre>
     </li>
     <li>
-      <p>Update project dependencies.</p>
-
-      <pre><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
-</code></pre>
-    </li>
-    <li>
       <p>Create a <a href="/guides/v2.0/cloud/admin/admin-snap.html">snapshot</a> of the environment.</p>
 
       <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
     </li>
   </ol>
-
-  <h3 id="install-sample-data">Install sample data</h3>
-  <p>To upgrade:</p>
-
-  <ol>
-    <li>If you have not done so already, check out the environment to upgrade.</li>
-    <li>
-      <p>Enter the following commands at a terminal prompt:</p>
-
-      <pre><code>&lt;Magento root dir&gt;/bin/magento sampledata:deploy
-</code></pre>
-    </li>
-    <li>Wait for components to update.</li>
-    <li>
-      <p>Commit and push the changes:</p>
-
-      <pre><code>git add -A
-git commit -m "Install sample data"
-git push origin
-</code></pre>
-    </li>
-    <li>Wait for the project to deploy.</li>
-    <li>
-      <p>Verify the installation was successful by going to your storefront main page.</p>
-
-      <p>The URL displays on the command line under the heading <code>Environment routes:</code>.</p>
-    </li>
-  </ol>
-
-  <h4 id="related-topics">Related topics</h4>
-  <ul>
-    <li><a href="/guides/v2.0/cloud/howtos/install-components.html">Install components</a></li>
-    <li><a href="/guides/v2.0/cloud/howtos/update-components.html">Update components</a></li>
-    <li><a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
-  </ul>
 </div>
+</div></div>
+
+<h3 id="install-sample-data">Install sample data</h3>
+<p>To install sample data:</p>
+
+<ol>
+  <li>If you have not done so already, check out the environment in which to install sample data.</li>
+  <li>
+    <p>Enter the following commands at a terminal prompt:</p>
+
+    <pre><code>&lt;Magento root dir&gt;/bin/magento sampledata:deploy
+</code></pre>
+  </li>
+  <li>Wait for components to update.</li>
+  <li>
+    <p>Upgrade the database and schema:</p>
+
+    <pre><code>&lt;Magento root dir&gt;/bin/magento setup:upgrade
+</code></pre>
+  </li>
+  <li>
+    <p>Commit and push the changes:</p>
+
+    <pre><code>git add -A &amp;&amp; git commit -m "Install sample data"
+git push origin &lt;branch name&gt;
+</code></pre>
+  </li>
+  <li>Wait for the project to deploy.</li>
+  <li>
+    <p>Verify the installation was successful by going to your storefront main page.</p>
+
+    <p>The URL displays on the command line under the heading <code>Environment routes:</code> after the project deploys.</p>
+  </li>
+  <li>
+    <p>Take a snapshot of your environment:</p>
+
+    <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre>
+  </li>
+</ol>
+
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.0/cloud/howtos/install-components.html">Install components</a></li>
+  <li><a href="/guides/v2.0/cloud/howtos/update-components.html">Update components</a></li>
+  <li><a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
+</ul>
 
 		</div>
 	</section>
