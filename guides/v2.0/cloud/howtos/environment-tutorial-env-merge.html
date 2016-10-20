@@ -1295,7 +1295,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 1 August 2016 (PDT)</div>
+            <div class="updated">Updated: 20 October 2016 (PDT)</div>
             <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#tut-env-merge">Merge an environment</a></li>
@@ -1437,7 +1437,18 @@ git push origin &lt;branch name&gt;
 
   <ol>
     <li>Log in to your project if you haven’t already done so.</li>
-    <li>To delete the branch entirely (removing it from the project), check out the branch.</li>
+    <li>
+      <p>Fetch branches from the origin server.</p>
+
+      <pre><code>git fetch origin
+</code></pre>
+    </li>
+    <li>
+      <p>To delete the branch entirely (removing it from the project), check out the branch.</p>
+
+      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre>
+    </li>
     <li>
       <p>Delete the environment:</p>
 
