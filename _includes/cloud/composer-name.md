@@ -23,4 +23,4 @@ To get the extension's Composer name from Magento Marketplace:
 
 	A sample follows:
 
-		pixlee/magento2:1.0.0
+		pixlee/magento2:1.0.1

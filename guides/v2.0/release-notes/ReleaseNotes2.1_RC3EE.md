@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento EE 2.1 Release Candidate 3 (RC3) Release Notes 
 menu_title: Magento EE 2.1 Release Candidate 3 (RC3) Release Notes 
-menu_order: 19
+menu_order: 26
 version: 2.0
 github_link: release-notes/ReleaseNotes2.1_RC3EE.md
 ---

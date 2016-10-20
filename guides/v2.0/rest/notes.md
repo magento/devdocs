@@ -1,10 +1,10 @@
 ---
 layout: default
 group: rest
-subgroup: A_rest
-title: Notes
-menu_title: Notes
-menu_order: 6
+subgroup: Notes
+title: REST usage notes
+menu_title: REST usage notes
+menu_order: 1
 version: 2.0
 github_link: rest/notes.md
 

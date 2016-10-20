@@ -46,9 +46,6 @@ Before you continue, you must:
 {% collapsible To update extensions: %}
 
 1.	If you haven't done so already, change to your environment root directory.
-2.	Make a backup of `composer.json`:
-
-		cp composer.json composer.json.orig
 3.	Open `composer.json` in a text editor.
 4.	Locate your extension.
 5.	Update its version.

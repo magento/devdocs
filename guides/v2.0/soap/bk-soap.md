@@ -202,6 +202,8 @@ salesInvoiceManagementV1: `http://<magento_host>/soap/default?wsdl&services=sale
 
 salesInvoiceCommentRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesInvoiceCommentRepositoryV1`
 
+salesInvoiceOrderV1: `http://<magento_host>/soap/default?wsdl&services=salesInvoiceOrderV1`
+
 salesCreditmemoManagementV1: `http://<magento_host>/soap/default?wsdl&services=salesCreditmemoManagementV1`
 
 salesCreditmemoRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesCreditmemoRepositoryV1`
@@ -215,6 +217,8 @@ salesShipmentManagementV1: `http://<magento_host>/soap/default?wsdl&services=sal
 salesShipmentCommentRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesShipmentCommentRepositoryV1`
 
 salesShipmentTrackRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesShipmentTrackRepositoryV1`
+
+salesShipOrderV1: `http://<magento_host>/soap/default?wsdl&services=salesShipOrderV1`
 
 salesTransactionRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesTransactionRepositoryV1`
 
