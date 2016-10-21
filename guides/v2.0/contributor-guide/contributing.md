@@ -120,7 +120,6 @@ To add an issue:
 3. Fill in the Title and issue description.
 4. Click **Submit new issue**.
 
-#
 
 <h2 id="labels">Labels applied by the Magento team</h2>
 
