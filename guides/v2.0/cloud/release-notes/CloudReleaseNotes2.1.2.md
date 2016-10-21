@@ -17,21 +17,19 @@ github_link: cloud/CloudReleaseNotes2.1.2.md
 {:toc}
 
 ### Changes
-We made the following changes in this release:
+We made the following change in this release:
 
-*	*Magento 2.1.2 only*. Added a new environment variable in Magento 2.1.2, `UPDATE_URLS`, which if set to `enabled` causes Magento base URLs in the database with to be replaced with Cloud project URLs. 
+*Magento 2.1.2 only*. Added a new environment variable in Magento 2.1.2, `UPDATE_URLS`, which if set to `enabled` causes Magento base URLs in the database with to be replaced with Cloud project URLs. 
 
-	By default, `UPDATE_URLS` is set to `enabled`. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
+By default, `UPDATE_URLS` is set to `enabled`. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
 
-	You should set this variable to `disabled` *only* in staging or production, where the base URLs can't change.
-
-*	You can now upgrade to version 2.1.2 if you enabled [static file signatures](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html){:target="_blank"}.
+You should set this variable to `disabled` *only* in staging or production, where the base URLs can't change.
 
 ### Functional fixes and enhancements
 We made the following fixes in this release:
 
 *   Improved the performance of static file deployment.
-
+*	You can now upgrade to version 2.1.2 if you enabled [static file signatures](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html){:target="_blank"}.
 *   You no longer need a `pub/front-static.php` in your template.
 *   We now back up `env.php` before disabling the Redis cache during deployment.
 *   Patches are now applied in alphabetical order.
