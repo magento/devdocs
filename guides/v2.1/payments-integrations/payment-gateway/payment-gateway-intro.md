@@ -1,1 +1,1 @@
-/var/www/devdocs_internal/guides/v2.0/payments-integrations/payment-gateway/payment-gateway-intro.md
+../../../v2.0/payments-integrations/payment-gateway/payment-gateway-intro.md

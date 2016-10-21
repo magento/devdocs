@@ -1,1 +1,1 @@
-/var/www/devdocs_internal/guides/v2.0/payments-integrations/payment-integration-whatis.md
+../../v2.0/payments-integrations/payment-integration-whatis.md
