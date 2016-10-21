@@ -1350,28 +1350,20 @@
 </ul>
 
 <h3 id="changes">Changes</h3>
-<p>We made the following changes in this release:</p>
+<p>We made the following change in this release:</p>
 
-<ul>
-  <li>
-    <p><em>Magento 2.1.2 only</em>. Added a new environment variable in Magento 2.1.2, <code>UPDATE_URLS</code>, which if set to <code>enabled</code> causes Magento base URLs in the database with to be replaced with Cloud project URLs.</p>
+<p><em>Magento 2.1.2 only</em>. Added a new environment variable in Magento 2.1.2, <code>UPDATE_URLS</code>, which if set to <code>enabled</code> causes Magento base URLs in the database with to be replaced with Cloud project URLs.</p>
 
-    <p>By default, <code>UPDATE_URLS</code> is set to <code>enabled</code>. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
+<p>By default, <code>UPDATE_URLS</code> is set to <code>enabled</code>. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
 
-    <p>You should set this variable to <code>disabled</code> <em>only</em> in staging or production, where the base URLs can’t change.</p>
-  </li>
-  <li>
-    <p>You can now upgrade to version 2.1.2 if you enabled <a href="http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html" target="_blank">static file signatures</a>.</p>
-  </li>
-</ul>
+<p>You should set this variable to <code>disabled</code> <em>only</em> in staging or production, where the base URLs can’t change.</p>
 
 <h3 id="functional-fixes-and-enhancements">Functional fixes and enhancements</h3>
 <p>We made the following fixes in this release:</p>
 
 <ul>
-  <li>
-    <p>Improved the performance of static file deployment.</p>
-  </li>
+  <li>Improved the performance of static file deployment.</li>
+  <li>You can now upgrade to version 2.1.2 if you enabled <a href="http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html" target="_blank">static file signatures</a>.</li>
   <li>You no longer need a <code>pub/front-static.php</code> in your template.</li>
   <li>We now back up <code>env.php</code> before disabling the Redis cache during deployment.</li>
   <li>Patches are now applied in alphabetical order.</li>
