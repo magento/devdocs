@@ -75,7 +75,12 @@ This section discusses how to optionally delete an environment in the following 
 To delete a environment:
 
 1.	Log in to your project if you haven't already done so.
+2.	Fetch branches from the origin server.
+
+		git fetch origin
 2.	To delete the branch entirely (removing it from the project), check out the branch.
+
+		magento-cloud environment:checkout <environment ID>
 2.	Delete the environment:
 
 		magento-cloud environment:delete <environment ID>

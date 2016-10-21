@@ -85,7 +85,11 @@ Installing a theme using Composer is the same as installing any other extension 
     For example,
 
         composer require zero1/theme-fashionista-theme:1.0.0
-4.  Wait for the project to deploy.
+4.  Wait for dependencies to update.
+5.  Enter the following commands:
+
+        git add -A && git commit -m "Add theme"
+        git push origin <branch name>
 5.  Log in to the Magento Admin.
 6.  Click **Content** > Design > **Themes**.
 
