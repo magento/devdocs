@@ -15,7 +15,7 @@ redirect_from: /guides/v1.0/get-started/gs-web-api-response.html
 
 Each web API call returns a HTTP status code and a response payload. When an error occcurs, the response body also returns an error message.
 
-<h3>Contents</h3>
+* TOC
 {:toc}
 
 ### HTTP status codes {#http-status-codes}
