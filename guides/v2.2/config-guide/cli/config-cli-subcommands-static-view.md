@@ -111,7 +111,7 @@ The following table discusses the meanings of this command's parameters and valu
     <tr>
         <td>--area (-a)</td>
         <td><p>Generate files only for the specified areas. The default, with no option specified, is to generate files for all areas. Valid values are <code>adminhtml</code> and <code>frontend</code>.</p>
-            <p>For example, <code>--area adminthml</code></p></td>
+            <p>For example, <code>--area adminhtml</code></p></td>
         <td><p>No</p></td>
     </tr>
     <tr>
