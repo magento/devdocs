@@ -14,7 +14,8 @@ redirect_from: /guides/v1.0/get-started/gs-web-api-response.html
 ## REST responses
 
 Each web API call returns an [HTTP status code](#http-status-codes) that reflects the result of a request.
-POST, PUT, and GET web API calls return a [response payload](#response-payload) response payload</a>.</p>
+POST, PUT, and GET web API calls return a [response payload](#response-payload).
+
 <!-- <p>When an error occurs, the response body contains an <code>Error</code> element that contains the error code returned by the service and an error message. For authentication or authorization error occurs, the error code denotes the authentication or authorization error code.</p> -->
 
 ### HTTP status codes {#http-status-codes}
@@ -36,6 +37,8 @@ HTTP code | Meaning | Description
 ### Response payload {#response-payload}
 
 POST, PUT, and GET web API calls return a response payload. This payload is a JSON- or XML-formatted response body. The `Accept: application/<FORMAT>` header in the request determines the format of the response body, where `FORMAT` is either `json` or `xml`.
+
+A successful DELETE call returns `true`. An unsuccessful DELETE call returns a payload similar to the other calls.
 
 The response payload depends on the call.
 For example, a `GET /V1/customers/:customerId` call returns the following payload:
