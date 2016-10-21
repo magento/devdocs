@@ -26,7 +26,7 @@ When creating a new component, use the `uiElement` class as a direct parent, if 
 
 ## Commonly used `uiElement` methods
 
-- The `initLinks()` method implements component communication by using [`links.js`]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js).  `initLinks()` introduces processing of the [`exports`, `imports`, `links` and `listens` properties]({{page.baseurl}}ui-components/ui_components_js.html#comp_link).
+- The `initLinks()` method implements component communication by using [`links.js`]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js).  `initLinks()` introduces processing of the [`exports`, `imports`, `links` and `listens` properties](http://devdocs.magento.com/guides/v2.0/ui-components/ui_components_js.html#comp_link).
 
 - The `initObservable()` method allows you to declare observable variables within the same instance. 
  
