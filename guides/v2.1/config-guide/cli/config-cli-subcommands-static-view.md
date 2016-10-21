@@ -196,44 +196,13 @@ The configuration required to deploy static view files can be exported from the 
 	
 As a result of the command execution, the `config.local.php` file must appear in the `app/etc/` directory. You can copy this file and paste it into any Magento codebase (`app/etc`) in order to generate static content.
 
-In the `config.local.php` file you can distinguish the following sections:
+In the `config.local.php` file contains the following sections:
 
-- `system`: contains all system configurations required for successful static content deployment		 
-- `scopes`: contains the list of stores, store groups and websites with related information
-- `i18n`:  contains all inline translations. It is used for generation `js-translation.json`
+- `system`: all system configurations required for successful static content deployment		 
+- `scopes`: the list of stores, store groups and websites with related information
+- `i18n`:  all inline translations, is used for generating `js-translation.json`
 
-Developer can have 3 file versions with different priority: 
-1. <pre>config.dist.php</pre> - This is initial file and can be ported with help of VCS system. It uses for provide additional config in system.
-2. <pre>config.local.php</pre>
-3. <pre>config.php</pre> - Runtime version. After installation config.php will be the only place, from which configuration will be read. 
-    
-Config.dist.php file has the lowest priority and config.php has the highest.
-In this files developer can add some configurations like: stores, websites, stores configurations, etc...
-This files override the same values from db.
-    
-Below example of configuration is listed:
-    
-{% highlight php  %}
-    <?php
-    return array (
-      'system' => 
-      array (
-        'default' => 
-        array (
-          'general' => 
-          array (
-            'region' => 
-            array (
-              'display_all' => '1',
-              'state_required' => 'AT,BR,CA,CH,EE,ES,FI,LT,LV,RO,US',
-            ),
-          ),
-        ),
-      ),
-    );
-{% endhighlight %}
-
-		
+	
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
 <p>While the exported configuration files reside in the `app/etc` directory, you cannot change the value of the corresponding configuration fields under **Store** -> **Configuration** in the Admin Panel. The fields are displayed, but disabled. You need to remove the configuration files from `app/etc` to make the settings available.</p></span>
