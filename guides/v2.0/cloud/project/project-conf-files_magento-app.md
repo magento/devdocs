@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: .magento.app.yaml
 menu_title: .magento.app.yaml
 menu_order: 11

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
+subgroup: 15_howto
 title: Merge and delete an environment
 menu_title: Merge and delete an environment
 menu_order: 12

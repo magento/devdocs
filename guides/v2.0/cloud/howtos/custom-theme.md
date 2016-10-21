@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
+subgroup: 15_howto
 title: Install a theme
 menu_title: Install a theme
 menu_order: 19

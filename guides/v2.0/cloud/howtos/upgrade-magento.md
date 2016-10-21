@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
+subgroup: 15_howto
 title: Upgrade the Magento software
 menu_title: Upgrade the Magento software
 menu_order: 7

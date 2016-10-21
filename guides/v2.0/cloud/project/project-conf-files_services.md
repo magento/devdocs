@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: services.yaml
 menu_title: services.yaml
 menu_order: 30

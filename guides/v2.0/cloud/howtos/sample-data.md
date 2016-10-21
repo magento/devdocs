@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
+subgroup: 15_howto
 title: Install optional sample data
 menu_title: Install optional sample data
 menu_order: 20

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Step 5, Set up PHP and MySQL
 menu_title: Step 5, Set up PHP and MySQL
 menu_order: 20

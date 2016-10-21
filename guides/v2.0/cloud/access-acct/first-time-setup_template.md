@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Create a sample Magento project from a template
 menu_title: Create a sample Magento project from a template
 menu_order: 51

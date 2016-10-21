@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Set up an environment and install the Magento software locally
 menu_title: Set up an environment and install the Magento software locally
 menu_order: 60

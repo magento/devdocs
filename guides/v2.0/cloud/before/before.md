@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 02_before
+subgroup: 05_before
 title: Before you get started
 menu_title: Before you get started
 menu_order: 1

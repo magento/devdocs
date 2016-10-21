@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Basic project information
 menu_title: Basic project information
 menu_order: 4
