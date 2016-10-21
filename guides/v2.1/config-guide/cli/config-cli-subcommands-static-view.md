@@ -50,7 +50,7 @@ Static view files deployment is affected by Magento modes as follows:
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
+## Deploy static view files {#config-cli-subcommands-xlate-dict}
 To deploy static view files:
 
 1.	Log in to the Magento server as, or <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.
@@ -180,11 +180,11 @@ The following table discusses the meanings of this command's parameters and valu
 
 ### Deploy static view files without installing Magento {#deploy_without_db}
 
-You might want to run the deployment process in the non-production, separate environment, in order to avoid any build processes on sensitive production machines. 
+You might want to run the deployment process in a separate, non-production, environment, in order to avoid any build processes on sensitive production machines. 
 
 To do this, take the following steps:
 
-1. Export the minimum required configuration from the Magento instance that is in production. (described further in details)
+1. Export the minimum required application configuration from the Magento instance that is in production. (described further in details)
 2. Copy the exported files to the non-production code base.
 3. Run the deployment tool.
 
@@ -194,18 +194,18 @@ The configuration required to deploy static view files can be exported from the 
 
 	magento app:config:dump
 	
-As a result of the command execution, the `config.local.php` file must appear in the `app/etc/` directory. You can copy this file and paste it into any Magento codebase (`app/etc`) in order to generate static content.
+As a result of the command execution, the `config.local.php` file appears in the `app/etc/` directory. In order to generate the static content using the other Magento codebase, you must copy this file and paste it to the `app/etc` directory of the Magento codebase you will use.
 
-In the `config.local.php` file contains the following sections:
+The `config.local.php` file contains the following sections:
 
 - `system`: all system configurations required for successful static content deployment		 
 - `scopes`: the list of stores, store groups and websites with related information
-- `i18n`:  all inline translations, is used for generating `js-translation.json`
+- `i18n`:  all inline translations. This section is used for generating `js-translation.json`
 
 	
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-<p>While the exported configuration files reside in the `app/etc` directory, you cannot change the value of the corresponding configuration fields under **Store** -> **Configuration** in the Admin Panel. The fields are displayed, but disabled. You need to remove the configuration files from `app/etc` to make the settings available.</p></span>
+<p>While the exported configuration files reside in the <code>app/etc</code> directory, you cannot change the value of the corresponding configuration fields under <b>Store</b> -> <b>Configuration</b> in the Admin Panel. The fields are displayed, but disabled. You need to remove the configuration files from <code>app/etc</code> to make the settings available.</p></span>
 </div> 
 
 ### Examples
