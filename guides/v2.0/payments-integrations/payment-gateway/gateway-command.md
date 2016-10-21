@@ -14,7 +14,7 @@ As was said in Introduction article, _Gateway Command_ is a proxy service, which
 
 Basic abstraction in such case is `\Magento\Payment\Gateway\CommandInterface`:
 
-```php
+{% highlight php startinline=1%}
 interface CommandInterface
 {
     /**
@@ -26,7 +26,7 @@ interface CommandInterface
      */
     public function execute(array $commandSubject);
 }
-```
+{% endhighlight %}
 
 ### Base implementation
 
@@ -34,7 +34,7 @@ The `\Magento\Payment\Gateway\Command\GatewayCommand` is a default `CommandInter
 This type is not intended to be extended through inheritance but through composition via DI configuration.
 Here is an example of a typical _Command_ definition through DI:
 
-```xml
+{% highlight xml %}
 <virtualType name="BraintreeAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
     <arguments>
         <argument name="requestBuilder" xsi:type="object">BraintreeAuthorizeRequest</argument>
@@ -44,7 +44,7 @@ Here is an example of a typical _Command_ definition through DI:
         <argument name="validator" xsi:type="object">Magento\Braintree\Gateway\Validator\ResponseValidator</argument>
     </arguments>
 </virtualType>
-```
+{% endhighlight %}
 
 GatewayCommand should be configured with:
 

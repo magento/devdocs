@@ -29,7 +29,7 @@ Transaction payload in such case is specific to a concrete Gateway, and may enca
 
 Following interface represents all requirements, defined above. Which allows us to define any domain-specific logic which may be executed before or after actual Gateway Command execution.
 
-```php
+{% highlight php startinline=1 %}
 <?php
 namespace Magento\Payment\Gateway;
 
@@ -51,7 +51,7 @@ interface CommandInterface
      */
     public function execute(array $commandSubject);
 }
-```
+{% endhighlight %}
 
 
 ### Integration service consumers

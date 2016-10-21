@@ -13,7 +13,7 @@ github_link: payments-integrations/payment-gateway/request-builder.md
 Request builder is responsible for building a transaction payload/request from several parts.
 This abstract interface allows you to have complex building strategies, but still atomic and testable.
 
-```php
+{% highlight php startinline=1 %}
 interface BuilderInterface
 {
     /**
@@ -24,7 +24,7 @@ interface BuilderInterface
      */
     public function build(array $buildSubject);
 }
-```
+{% endhighlight %}
 
 ### Builder Composite
 
@@ -38,7 +38,7 @@ Inspect the behavior of `merge()` method, and in a case you want another strateg
 
 Configuration below may be used as a reference of a case when a simple decomposition can be applied
 
-```xml
+{% highlight xml %}
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
     <arguments>
         <argument name="builders" xsi:type="array">
@@ -51,4 +51,4 @@ Configuration below may be used as a reference of a case when a simple decomposi
         </argument>
     </arguments>
 </virtualType>
-```
+{% endhighlight %}

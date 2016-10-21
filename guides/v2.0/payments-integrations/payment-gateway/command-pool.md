@@ -14,7 +14,7 @@ All implemented _Commands_ should be added to the _Command Pool_.
 
 The basic abstraction is `\Magento\Payment\Gateway\Command\CommandPoolInterface`:
 
-```php
+{% highlight php startinline=1 %}
 interface CommandPoolInterface
 {
     /**
@@ -26,7 +26,7 @@ interface CommandPoolInterface
      */
     public function get($commandCode);
 }
-```
+{% endhighlight %}
 
 
 The default [CommandPool]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Command/CommandPool.php)
@@ -34,7 +34,7 @@ implements `CommandPoolInterface` and takes a list of commands as optional argum
 
 And the _Command Pool_ can be configured in the following way:
 
-```xml
+{% highlight xml %}
 <virtualType name="BraintreeCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
     <arguments>
         <argument name="commands" xsi:type="array">
@@ -44,24 +44,24 @@ And the _Command Pool_ can be configured in the following way:
         </argument>
     </arguments>
 </virtualType>
-```
+{% endhighlight %}
 
 The next recommended way is creating virtual type for _Command Manager_ and configuring it by early specified _Command Pool_:
 
-```xml
+{% highlight xml %}
 <virtualType name="BraintreeCommandManager" type="Magento\Payment\Gateway\Command\CommandManager">
     <arguments>
         <argument name="commandPool" xsi:type="object">BraintreeCommandPool</argument>   
     </arguments>
 </virtualType>
-```
+{% endhighlight %}
 
 Then a configured command manager should be added to payment adapter configuration:
 
-```xml
+{% highlight xml %}
 <virtualType name="BraintreeFacade" type="Magento\Payment\Model\Method\Adapter">
     <arguments>
         <argument name="commandExecutor" xsi:type="object">BraintreeCommandManager</argument>
     </arguments>
 </virtualType>
-```
+{% endhighlight %}

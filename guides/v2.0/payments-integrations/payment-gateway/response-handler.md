@@ -18,7 +18,7 @@ Response handler processes Gateway response which is usually expressed in follow
 
 As from the sense of a Handler to modify some state basing on a response from a Gateway, it's signature represents this approach
 
-```php
+{% highlight php startinline=1 %}
 interface HandlerInterface
 {
     /**
@@ -30,7 +30,7 @@ interface HandlerInterface
      */
     public function handle(array $handlingSubject, array $response);
 }
-```
+{% endhighlight %}
 
 
 ### Useful implementations
@@ -41,7 +41,7 @@ interface HandlerInterface
 
 Example of a simple response handler is shown below
 
-```php
+{% highlight php startinline=1 %}
 class PayPalDetailsHandler implements HandlerInterface
 {
     const PAYMENT_ID = 'paymentId';
@@ -81,4 +81,4 @@ class PayPalDetailsHandler implements HandlerInterface
         $payment->setAdditionalInformation(self::PAYER_EMAIL, $payPal[self::PAYER_EMAIL]);
     }
 }
-```
+{% endhighlight %}

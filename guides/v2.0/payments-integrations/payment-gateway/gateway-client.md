@@ -12,7 +12,7 @@ github_link: payments-integrations/payment-gateway/gateway-client.md
 
 Gateway client is responsible for transaction payload transmission.
 
-```php
+{% highlight php startinline=1 %}
 interface ClientInterface
 {
     /**
@@ -25,7 +25,7 @@ interface ClientInterface
      */
     public function placeRequest(TransferInterface $transferObject);
 }
-```
+{% endhighlight %}
 
 Any Client implementation receives a called Transfer object and may be configured with Response Converter, which maps response to array structure.
 
@@ -37,11 +37,11 @@ There are two client implementations which can be used of the box:
 
 ### Example of Zend client configuration
 
-```xml
+{% highlight xml %}
 <virtualType name="HtmlConverterZendClient" type="Magento\Payment\Gateway\Http\Client\Zend">
     <arguments>
         <argument name="converter" xsi:type="object">Magento\Payment\Gateway\Http\Converter\HtmlFormConverter</argument>
             <argument name="logger" xsi:type="object">MyCustomLogger</argument>
         </arguments>
 </virtualType>
-```
+{% endhighlight %}

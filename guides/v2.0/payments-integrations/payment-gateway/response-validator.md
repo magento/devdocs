@@ -17,7 +17,7 @@ _Validator_, by its sense is not intended to modify anything, but perform valida
 
 ##### ValidatorInterface:
 
-```php
+{% highlight php startinline=1 %}
 interface ValidatorInterface
 {
     /**
@@ -28,11 +28,11 @@ interface ValidatorInterface
      */
     public function validate(array $validationSubject);
 }
-```
+{% endhighlight %}
 
 ##### ResultInterface
 
-```php
+{% highlight php startinline=1 %}
 interface ResultInterface
 {
     /**
@@ -49,7 +49,7 @@ interface ResultInterface
      */
     public function getFailsDescription();
 }
-```
+{% endhighlight %}
 
 
 ### Useful implementations
@@ -60,7 +60,7 @@ interface ResultInterface
 
 ### Example
 
-```php
+{% highlight php startinline=1 %}
 class AcceptValidator extends AbstractValidator
 {
     /**
@@ -105,11 +105,11 @@ class AcceptValidator extends AbstractValidator
         return $this->createResult($isValid, $fails);
     }
 }
-```
+{% endhighlight %}
 
 Each payment method can have multiple validators and they should be added to a _Validator Pool_:
 
-```xml
+{% highlight xml %}
 <virtualType name="BraintreeValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
     <arguments>
         <argument name="validators" xsi:type="array">
@@ -118,4 +118,4 @@ Each payment method can have multiple validators and they should be added to a _
         </argument>
     </arguments>
 </virtualType>
-```
+{% endhighlight %}
