@@ -24,31 +24,87 @@ This topic discusses how to upgrade the Magento Enterprise Cloud Edition softwar
 {% endcollapsible %}
 
 ## Upgrade to the latest version
+We recommend you start by backing up both your local installation and the database in your integration environment.
 
-{% collapsible To upgrade to the latest version: %}
+### Step 1: Back up your local system
 
-1.  Back up the Magento application in its current state.
+{% collapsible To back up your local system: %}
 
-        php <Magento root dir>/bin/magento setup:backup --code --db --media
-        
-1.	Open `composer.json` in a text editor.
+Enter the following command:
 
-	It's located in your Magento project root directory.
-2.	In the `require` block, change the value of `"magento/magento-cloud-metapackage":` to the desired version.
+        php <Magento root dir>/bin/magento setup:backup --code --db [--media]
 
-	An example follows:
+You can omit `[--media]` if you have a large number of media files and if you don't expect the upgrade to affect them. 
 
-        "require": {
-           "magento/magento-cloud-metapackage": "2.1.2",
-           "composer/composer": "@alpha",
-           "colinmollenhour/credis": "1.6",
-           "colinmollenhour/php-redis-session-abstract": "1.1",
-        },
+If the upgrade fails, you can roll back your backup using the [`magento setup:rollback` command]({{ site.baseurl }}install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll).
 
-3.	Save your changes to `composer.json` and exit the text editor.
-4.	Enter the following commands in the order shown:
+{% endcollapsible %}
 
-		composer update
+### Step 2: Back up your integration environment database
+
+{% collapsible To back up your integration environment database: %}
+
+1.  Enter the following command to SSH to your integration environment:
+
+        magento-cloud environment:ssh
+2.  Enter the following command:
+
+        echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp
+
+    This command finds:
+
+    *   Database name
+    *   Database user name
+    *   Database password
+    *   Database host
+
+    An example follows:
+
+        "database" : [
+           {
+              "username" : "user",
+              "port" : 3306,
+              "scheme" : "mysql",
+              "host" : "database.internal",
+              "ip" : "250.0.64.241",
+              "path" : "main",
+              "password" : "",
+              "query" : {
+              "is_master" : true
+              }
+           }
+        ],
+
+    In the preceding, the database name is `main`, the user name is `user`, the host is `database.internal`, and there is no password.
+
+2.  Dump the database to a file in the `/tmp` directory, which is writable:
+
+        mysqldump -u <user name> -p -h <database host> <database name> > /tmp/10-21-16-backup.sql
+
+    For example,
+
+        mysqldump -u user -p main -h database.internal > /tmp/10-21-16-backup.sql
+
+3.  Enter `exit` to close the SSH tunnel.
+
+{% endcollapsible %} 
+
+### Step 3: Complete the upgrade
+
+{% collapsible To complete the upgrade: %}
+
+1.  Change to your Magento base directory and enter the following commands in the order shown:
+
+        composer require magento/magento-cloud-metapackage <requiredversion> --no-update
+        composer update
+
+    For example, to upgrade to version 2.1.2:
+
+        composer require magento/magento-cloud-metapackage 2.1.2 --no-update
+        composer update
+2.  Wait for dependencies to update.
+4.	Add, commit, and push your changes to start deployment:
+
         git add -A && git commit -m "Upgrade"
         git push origin <branch name>
 
@@ -190,25 +246,37 @@ To verify your upgrade locally, enter the following command from your Magento ro
 
 You can also log in to the Magento Admin; the version displays in the lower right corner of the page.
 
-To find the base URL for your integration environment, enter the following command:
+### Verify the upgrade in your integration environment
+To verify the upgrade:
 
-    magento-cloud environment:url
+1.  Find the base URL for your integration environment:
 
-When prompted, choose the HTTP or HTTPS URL.
+        magento-cloud environment:url
+2.  When prompted, choose the HTTP or HTTPS URL.
+2.  Find the values of the Admin URL, user name, and password:
 
-If errors display in the browser, see [Troubleshooting your upgrade](#upgrade-verify-tshoot).
+        magento-cloud variable:list
+4.  Log in to the Magento Admin.
 
-### Troubleshooting your upgrade {#upgrade-verify-tshoot}
+    The version displays in the lower right corner of the page.
+
+### Troubleshoot your upgrade {#upgrade-verify-tshoot}
 In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:
 
     There has been an error processing your request
     Exception printing is disabled by default for security reasons.
       Error log record number: <number>
 
+#### View error details locally
 To view error details locally, open the indicated file name in the `<Magento root dir>/var/report` directory. 
 
-To view the error in your integration environment, [SSH]({{ page.baseurl }}cloud/env/environments-start.html#env-start-ssh) to the environment and open the indicated file in the `/app/var/report` directory.
+#### View error details in the integration environment
+To view the error in your integration environment, enter the following commands:
 
+    magento-cloud environment:ssh
+    vim /app/var/report/<file name>
+
+#### Resolve the error
 If the error includes the following, run the `bin/magento setup:upgrade` command to resolve it:
 
     a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
@@ -219,11 +287,14 @@ If the error includes the following, run the `bin/magento setup:upgrade` command
 
 To resolve the error:
 
-1.  Enter the following command:
+1.  If the error is in your integration environment, SSH to the environment:
 
-        php bin/magento setup:upgrade
-2.  Wait for the command to complete.
-3.  Update the branch:
+        magento-cloud environment:ssh
+2.  Enter the following command:
+
+        php <Magento root dir>/bin/magento setup:upgrade
+3.  Wait for the command to complete.
+4.  *Local environment only*. Update the branch:
 
         git add -A && git commit -m "Update"
         git push origin <branch name>
