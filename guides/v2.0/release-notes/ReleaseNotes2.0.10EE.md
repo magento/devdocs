@@ -226,7 +226,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. See
-<a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}

@@ -37,7 +37,7 @@ Backward-incompatible changes are documented in <a href="{{page.baseurl}}release
 
 <h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
-<a href="{{page.baseurl}}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+<a href="{{ site.baseurl }}magento-system-requirements.html" target="_blank">System Requirements</a>.
 
 
 <h3>Installation instructions</h3>
