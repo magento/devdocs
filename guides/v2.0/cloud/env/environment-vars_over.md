@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_env
+subgroup: 12_env
 title: Overview of environment variables
 menu_title: Overview of environment variables
 menu_order: 71

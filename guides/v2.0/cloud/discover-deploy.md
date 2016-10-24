@@ -45,7 +45,9 @@ Deployment consists of the following phases:
 6.	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
 ### Phase 1: Configuration validation and code retrieval {#cloud-deploy-over-phases-conf}
-The remote server gets your code using Git. The built-in Git server checks the following:
+The remote server gets your code using Git. When you initially set up a project from a template, we retrieve the code from the [`magento-cloud-configuration` repository](https://github.com/magento-cloud/magento-cloud-configuration){:target="_blank"}.
+
+The built-in Git server checks the following:
 
 *	Inspects what you sent it. 
 

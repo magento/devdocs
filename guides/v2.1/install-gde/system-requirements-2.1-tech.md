@@ -2,12 +2,13 @@
 layout: default
 group: install_pre
 subgroup: Getting Started
-title: Magento technology stack requirements
-menu_title: Magento technology stack requirements
+title: Magento 2.1.x technology stack requirements
+menu_title: Magento 2.1.x technology stack requirements
 menu_node: 
 menu_order: 2
 version: 2.1
-github_link: install-gde/system-requirements-tech.md
+github_link: install-gde/system-requirements-2-1.tech.md
+redirect_from: /guides/v2.1/install-gde/system-requirements-tech.html
 ---
 
 ### Operating systems (Linux x86-64)

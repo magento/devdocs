@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: GitHub integration
 menu_title: GitHub integration
 menu_order: 110

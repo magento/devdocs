@@ -61,7 +61,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 * MySQL 5.6 
 
 For more information, see
-<a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 {% include install/releasenotes/ce_install_20.md %}
 

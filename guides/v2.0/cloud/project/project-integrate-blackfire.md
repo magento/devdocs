@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Blackfire integration
 menu_title: Blackfire integration
 menu_order: 105

@@ -1105,7 +1105,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.1.0 supports:
 *	nginx 1.8 (or <a href="http://nginx.org/en/linux_packages.html#mainline" target="_blank">latest mainline version</a>)
 
 
-For more information, <a href="{{page.baseurl}}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+For more information, [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 ### Installation and upgrade instructions
 

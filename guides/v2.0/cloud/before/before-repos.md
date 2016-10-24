@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 02_before
+subgroup: 05_before
 title: Magento Enterprise Cloud Edition repositories
 menu_title: Magento Enterprise Cloud Edition repositories
 menu_order: 4
