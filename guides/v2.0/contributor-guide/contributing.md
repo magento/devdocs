@@ -172,19 +172,19 @@ Refer to the following table for a description of each label. These labels are a
         <th colspan="2">Issue Resolution Status</th>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_bug.png" alt="the Bug button"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_bug.png" alt="the bug report button"/></td>
          <td>The Magento Team has confirmed that this issue contains the minimum required information to reproduce.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/gitHub_acknowledged.png" alt="the Acknowledged button"/></td>
+         <td><img src="{{ site.baseurl }}common/images/gitHub_acknowledged.png" alt="the acknowledged button"/></td>
          <td>The Magento Team has validated the issue and an internal ticket has been created.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_inProgress.png" alt="the In progress button"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_inProgress.png" alt="the in progress button"/></td>
          <td>The internal ticket is currently in progress, fix is scheduled to be delivered.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the Needs update button"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
          <td>The Magento Team needs additional information from the reporter to properly prioritize and process the issue or pull request.</td>
       </tr>
    </tbody>
