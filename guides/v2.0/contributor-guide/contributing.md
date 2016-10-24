@@ -172,7 +172,7 @@ Refer to the following table for a description of each label. These labels are a
         <th colspan="2">Issue Resolution Status</th>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_bug.png" height="21"  alt="the bug report button"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_bug.png" height="21" width="90" alt="the bug report button"/></td>
          <td>The Magento Team has confirmed that this issue contains the minimum required information to reproduce.</td>
       </tr>
       <tr>
