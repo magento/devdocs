@@ -30,7 +30,7 @@ We've been working hard with the development community to help you use your Mage
 
 Also, we have developed the <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a>, which will help to port your extensions and custom code to Magento 2, significantly reducing your efforts.
 
-More information on developing extensions for Magento 2 is available in the <a href="http://devdocs.magento.com/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html" target="_blank">Magento 2 Extension Developer Guide</a>.
+More information on developing extensions for Magento 2 is available in the <a href="http://devdocs.magento.com/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html" target="_blank">PHP Developer Guide</a>.
 
 ### Themes and customizations {#migrate-themes-customizations}
 Magento 2 uses new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 <a href="http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/themes/theme-general.html" target="_blank">themes</a>, <a href="http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html" target="_blank">layouts</a>, and <a href="http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/xml-manage.html" target="_blank">customizations</a>.
