@@ -1435,68 +1435,31 @@
 <p>If the upgrade fails, you can roll back your backup using the <a href="/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll"><code>magento setup:rollback</code> command</a>.</p>
 </div></div>
 
-<h3 id="step-2-back-up-your-integration-environment-database">Step 2: Back up your integration environment database</h3>
+<h3 id="step-2-back-up-your-remote-database">Step 2: Back up your remote database</h3>
 
-<div class="collapsible"><b class="collapsible-title">To back up your integration environment database: </b><div class="collapsible-content"><ol>
-  <li>
-    <p>Enter the following command to SSH to your integration environment:</p>
+<div class="collapsible"><b class="collapsible-title">To back up your remote database: </b><div class="collapsible-content"><p>Enter the following command to make a local backup of the remote database:</p>
 
-    <pre><code>magento-cloud environment:ssh
+<pre><code>magento-cloud environment:mysql-dump
 </code></pre>
-  </li>
+</div></div>
+
+<h3 id="step-3-verify-other-changes">Step 3: Verify other changes</h3>
+
+<div class="collapsible"><b class="collapsible-title">To verify other changes: </b><div class="collapsible-content"><p>Verify other changes you’re going to submit to source control before you start the upgrade:</p>
+
+<ol>
+  <li>If you haven’t done so already, change to your project root directory.</li>
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp
-</code></pre>
-
-    <p>This command finds:</p>
-
-    <ul>
-      <li>Database name</li>
-      <li>Database user name</li>
-      <li>Database password</li>
-      <li>Database host</li>
-    </ul>
-
-    <p>An example follows:</p>
-
-    <pre><code>"database" : [
-   {
-      "username" : "user",
-      "port" : 3306,
-      "scheme" : "mysql",
-      "host" : "database.internal",
-      "ip" : "250.0.64.241",
-      "path" : "main",
-      "password" : "",
-      "query" : {
-      "is_master" : true
-      }
-   }
-],
-</code></pre>
-
-    <p>In the preceding, the database name is <code>main</code>, the user name is <code>user</code>, the host is <code>database.internal</code>, and there is no password.</p>
-  </li>
-  <li>
-    <p>Dump the database to a file in the <code>/tmp</code> directory, which is writable:</p>
-
-    <pre><code>mysqldump -u &lt;user name&gt; -p -h &lt;database host&gt; &lt;database name&gt; &gt; /tmp/10-21-16-backup.sql
-</code></pre>
-
-    <p>For example,</p>
-
-    <pre><code>mysqldump -u user -p main -h database.internal &gt; /tmp/10-21-16-backup.sql
+    <pre><code>git status
 </code></pre>
   </li>
-  <li>
-    <p>Enter <code>exit</code> to close the SSH tunnel.</p>
-  </li>
+  <li>If there are changes you do <em>not</em> want to submit to source control, branch or stash them now.</li>
 </ol>
 </div></div>
 
-<h3 id="step-3-complete-the-upgrade">Step 3: Complete the upgrade</h3>
+<h3 id="step-4-complete-the-upgrade">Step 4: Complete the upgrade</h3>
 
 <div class="collapsible"><b class="collapsible-title">To complete the upgrade: </b><div class="collapsible-content"><ol>
   <li>
@@ -1519,6 +1482,10 @@ composer update
     <pre><code>git add -A &amp;&amp; git commit -m "Upgrade"
 git push origin &lt;branch name&gt;
 </code></pre>
+
+    <p><code>git add -A</code> is required to add all changed files to source control because of the way Composer marshals base packages. Both <code>composer install</code> and <code>composer update</code> marshal files from the base package (that is, <code>magento/magento2-base</code> and <code>magento/magento2-ee-base</code>) into the package root.</p>
+
+    <p>The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, mashaling is disabled in Magento Enterprise Cloud Edition, so you must add the marshaled files to source control.</p>
   </li>
   <li>Wait for deployment to complete.</li>
   <li>
@@ -1666,8 +1633,8 @@ php.ini
 
 <p>You can also log in to the Magento Admin; the version displays in the lower right corner of the page.</p>
 
-<h3 id="verify-the-upgrade-in-your-integration-environment">Verify the upgrade in your integration environment</h3>
-<p>To verify the upgrade:</p>
+<h3 id="verify-the-upgrade-on-the-server">Verify the upgrade on the server</h3>
+<p>To verify the upgrade in your Cloud integration environment:</p>
 
 <ol>
   <li>
@@ -1701,8 +1668,8 @@ Exception printing is disabled by default for security reasons.
 <h4 id="view-error-details-locally">View error details locally</h4>
 <p>To view error details locally, open the indicated file name in the <code>&lt;Magento root dir&gt;/var/report</code> directory.</p>
 
-<h4 id="view-error-details-in-the-integration-environment">View error details in the integration environment</h4>
-<p>To view the error in your integration environment, enter the following commands:</p>
+<h4 id="view-error-details-on-the-server">View error details on the server</h4>
+<p>To view the error in your Cloud integration environment, enter the following commands:</p>
 
 <pre><code>magento-cloud environment:ssh
 vim /app/var/report/&lt;file name&gt;

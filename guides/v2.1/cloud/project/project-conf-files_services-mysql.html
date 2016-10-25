@@ -1349,7 +1349,7 @@
 <p>The <code>mysql</code> service provides data storage. It’s based on <a href="https://mariadb.com/products/subscription-plans" target="_blank">MariaDB</a>, supporting the <a href="https://www.percona.com/software/mysql-database/percona-server/xtradb" target="_blank">XtraDB</a> storage
 engine (equivalent to MySQL with InnoDB).</p>
 
-<p>We support MySQL version 10.0.</p>
+<p>We support MariaDB version 10.0, which includes reimplemented features from MySQL 5.6 and 5.7.</p>
 
 <p>To access the MariaDB database directly, <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-tunn">open an SSH tunnel</a> and use the
 following command:</p>
@@ -1380,9 +1380,9 @@ following command:</p>
 <h2 id="usage-example">Usage example</h2>
 <p>In your <code>.magento/services.yaml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mydatabase</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mysql:5.5</span>
-    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mysql</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mysql:10.0</span>
+    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2048</span></code></pre></figure>
 
 <p>In your <code>.magento.app.yaml</code>:</p>
 
