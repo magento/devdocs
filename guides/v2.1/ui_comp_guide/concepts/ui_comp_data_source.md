@@ -23,7 +23,7 @@ In this topic, we will explain how to take advantage of the powerful functionali
 
 ### Declaring the XML
 
-The DataSource component can be included with the `<dataSource />` node in the component's top-level configuration file. The `name` attribute is recommended and should follow the `%instance_name%_data_source` pattern where `%instance_name%` is the name of the component.
+The DataSource UI component can be included with the `<dataSource />` node in the component's top-level configuration file. The `name` attribute is recommended and should follow the `%instance_name%_data_source` pattern where `%instance_name%` is the name of the component.
 
 The component's data provider class is declared inside `<dataSource />`. The following provides an example and demonstrates what nodes are required.
 
