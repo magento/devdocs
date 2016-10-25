@@ -27,9 +27,10 @@ The following properties are used for linking observable properties and methods 
 These properties are processed by the `initLinks()` method of the [`uiElement` class]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html). To implement component's communication the method uses `links.js`.
 
 ## List of linking properties 
+
 ### `exports`
 
-- `exports`: used to notify some external entity about property changing. `exports`s value is an object, composed of the following:
+- `exports`: used to notify some external entity about property changing. `exports`'s value is an object, composed of the following:
 
   - `key`: name of the internal property or method which is tracked for changes.
   - `value`: name of the property or method which receives the notification. Can use [string templates](#string_templ).
@@ -44,7 +45,9 @@ Example of setting `exports` in a component's `.js` file:
 }
 {% endhighlight js%}
 
-Here `visible` is the `key`, `${ $.provider }.visibility` is the `value`. `
+Here `visible` is the `key`, `${ $.provider }.visibility` is the `value`.
+
+<p class="q"> Can we give more details about `${ $.provider }.visibility` It is the visibility property of...? </p>
 
 Example of setting `exports` in a component's configuration `.xml` file:
 
@@ -59,6 +62,7 @@ Example of setting `exports` in a component's configuration `.xml` file:
 {% endhighlight xml%}
 
 In this example, `visible` is the `key`, `sample_config.sample_provider.visibility` is the `value`.
+<p class="q"> Can we give more details about sample_config.sample_provider.visibility. Ex.: this is the `visibility` property of the `sample_config.sample_provider`? </p>
 
 ### `imports` 
 - `imports`: used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
@@ -149,7 +153,10 @@ Example of using `listens` in a component's configuration `.xml` file:
 
 During component’s initialization a value in the `${$.someName}` format is evaluated as a string template using ES6 templates (or underscore template, in case when ES6 templates are not supported).
 
+<p class="q">How do the following two paragraphs relate to the first one. Do they explain it?</p>
 If we put a variable name in `${ }`, it is processed into string representation of the variable’s value.
+
+<p class="q">Is it something generally known or Magento-specific?</p>
 
 A UI component which own this template property is also marked as ‘$’ in the template, which probably makes it confusing.
 
@@ -168,3 +175,5 @@ In this example, initialized component will have two properties: `someName = ‘
 We can also build complex templates by 
 -	concatenating them: ‘${$.someName}${$.someName}123’ // give us ‘ShrekShrek123’
 -	using variables from another component using ‘:’ to separate variable name, as ‘${ $.fullNameOfOtherComponent }:someName’ //give us ‘Fiona’
+
+<p class="q">Can we have an example from Magento/UI comps world? when do we need this?</p>
