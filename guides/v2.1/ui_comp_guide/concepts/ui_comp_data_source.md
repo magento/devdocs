@@ -23,55 +23,55 @@ In this topic, we will explain how to take advantage of the powerful functionali
 
 ### Declaring the XML
 
-The DataSource component can be included with the `<dataSource />` node in the component's top-level configuration file. The `name` attribute is recommended and should follow the `%instance_name%_data_source` pattern where `%instance_name%` is the name of the component.
+The DataSource UI component can be included with the `<dataSource />` node in the component's top-level configuration file. The `name` attribute is recommended and should follow the `%instance_name%_data_source` pattern where `%instance_name%` is the name of the component.
 
-Inside the `<dataSource />` node declare the component's data provider class. This is done like this:
+The component's data provider class is declared inside `<dataSource />`. The following provides an example and demonstrates what nodes are required.
 
-```
+{% highlight xml%}
 <argument name="dataProvider" xsi:type="configurableObject">
     <argument name="class" xsi:type="string">[YourNameSpace]\[YourModule]\Ui\DataProvider\[YourComponentName]DataProvider</argument>
     <argument name="name" xsi:type="string">[YourComponentName]_data_source</argument>
     <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
     <argument name="requestFieldName" xsi:type="string">id</argument>
 </argument>
-```
+{% endhighlight %}
 
-In the block of code above [YourNameSpace]\[YourModule] is the directory that contains all of the module's files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.
+In the block of code above, [YourNameSpace]\[YourModule] would the directory that contains all of the module's files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.
 
-The main node of interest is `<argument name="class" />.` This references a PHP class that must implement `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface` (or extend `\Magento\Ui\DataProvider\AbstractDataProvider`). If you extend the `AbstractDataProvider` class, there are no required methods to implement. This class will be the primary source of any data or metadata that the component needs. 
+The main node of interest is `<argument name="class" />.` This references a PHP class that must implement `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`. To meet that requirement, it can extend `\Magento\Ui\DataProvider\AbstractDataProvider`. The `AbstractDataProvider` class implements all of the required methods in the `DataProviderInterface`. The DataProvider class is the primary source of any data or metadata that the component needs or will use. 
 
-While the XML tells Magento about the component's data provider, Magento doesn't do anything with that unless you hook it up to the component's main PHP class. Add a `getDataSourceData()` method to the UI component's PHP class and return `$this->getContext()->getDataProvider()->getData()`. This will output the result of the data provider's `getData()` method into the JSON that is sent to the browser along with the rest of the UI component's configuration. 
+While the XML tells Magento about the component's data provider, Magento doesn't do anything in particular with that unless you hook it up to the component's main PHP class. To make the data available in javascript, add a `getDataSourceData()` method to the UI component's PHP class and return `$this->getContext()->getDataProvider()->getData()`. This will output the result of the data provider's `getData()` method into the JSON that is sent to the browser along with the rest of the UI component's configuration. 
 
-Declare a `getData()` method in the data provider class that was just set up and return a value. Since that value will be part of the JSON rendered on the page, it is accessible via the javascript class that is associated with the UI component and handles its behavior. Magento's Form Provider javascript class is often a good place to start. 
+Declare a `getData()` method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the javascript class that is associated with the UI component and handles its behavior. Magento's Form Provider javascript class is often a good place to start. 
 
-```
+
 <div class="bs-callout bs-callout-info" id="info">
     <p>A Javascript "component" is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.</p>
 </div>
-```
+
 Include the Form Provider Javascript component by adding this inside the `<dataSource />` node:
 
-```
+{% highlight xml%}
 <argument name="data" xsi:type="array">
     <item name="js_config" xsi:type="array">
         <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
     </item>
 </argument>
-``` 
+{% endhighlight %}
 
-This will include `Magento/Ui/view/base/web/js/form/provider.js` on the page as part of this DataSource component. The Form Provider Javascript can also be extended if the functionality doesn't do what is necessary in your case. 
+This will include `Magento/Ui/view/base/web/js/form/provider.js` on the page as part of this DataSource component. The Form Provider javascript can also be extended if the functionality doesn't do what is necessary in your case. 
 
-Remember that this data provider is still, technically speaking, a completely separate UI Component. There are a few things that need to happen in order to fully link it to the "base" component so that it can use the data provided by the data provider. 
+Remember that this data provider is still, technically speaking, a completely separate UI Component. To fully link it to the "base" component, there are a few things that need to happen so that the "base" UI component's javascript can use the data provided by the data provider. 
 
-First, we need to declare a "provider" in our base component so it will be able to find that data provider component. Under the `<argument name="data" />` node, add a node like this (where `[ComponentName]` is the name of the component):
+A good way to keep configuration data out of the javascript is to declare a "provider" in the base component's XML so it will be able to find that data provider component. Under the `<argument name="data" />` node, add a node like this (where `[ComponentName]` is the name of the component):
 
-```
+{% highlight xml%}
 <item name="config" xsi:type="array">
     <item name="provider" xsi:type="string">[ComponentName].[ComponentName]_data_source</item>
 </item>
-```
+{% endhighlight %}
 
-Take note of that item as it is a useful way to connect the UI component, not just the data provider, but other components and sub-components as well.
+This example declares the name of the data provider class and will be output in the JSON that contains the UI component's configuration. It can then be used to locate the data source component. This is essentially declaring a variable that will be available to a javascript class.
 
 # Javascript Template Literals
 
