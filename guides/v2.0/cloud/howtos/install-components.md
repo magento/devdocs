@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
+subgroup: 15_howto
 title: Install extensions
 menu_title: Install extensions
 menu_order: 4
@@ -60,16 +60,16 @@ Continue with the next section.
 To update `composer.json`:
 
 1.	If you haven't done so already, change to your environment root directory.
-1.	Make a backup of `composer.json`:
+2.	Enter the following commands to update it:
 
-		cp composer.json composer.json.orig
-2.	Enter the following command to update it:
-
-		composer require <component-name>:<version>
+		composer require <component-name>:<version> --no-update
+		composer update
 
 	For example,
 
-		composer require pixlee/magento2:1.0.0
+		composer require pixlee/magento2:1.0.1 --no-update
+		composer update
+3.	Enter the following 
 4.	Wait for project dependencies to update.
 3.	Continue with the next section.
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Import an existing Magento project
 menu_title: Import an existing Magento project
 menu_order: 52

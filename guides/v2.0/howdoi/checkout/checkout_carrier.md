@@ -18,7 +18,7 @@ To add new shipping carrier validations to the Magento checkout, do the followin
 
 1. [Create validation rules](#rules).
 2. [Create validator](#validator).
-3. [Register validator and rules in the vaidators pool](#register).
+3. [Register validator and rules in the validators pool](#register).
 4. [Add the the validators and rules to the checkout layout](#layout).
 
 More details about each step follow.

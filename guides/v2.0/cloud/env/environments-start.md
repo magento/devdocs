@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_env
+subgroup: 12_env
 title: Get started with an environment
 menu_title: Get started with an environment
 menu_order: 2

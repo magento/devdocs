@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Project directory structure
 menu_title: Project directory structure
 menu_order: 80

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Set up an environment and install the Magento software locally
 menu_title: Set up an environment and install the Magento software locally
 menu_order: 60
@@ -20,10 +20,11 @@ redirect_from:
 #### Contents
 *	[Step 1: Set up an environment](#setup-env-setup)
 *	[Step 2: Change the Admin URI, user name, and password in the master branch](#setup-env-adminurl)
-*	[Step 3: Clone a project and environment](#setenv-new-env)
-*   [Step 4: Get your authentication keys](#setenv-keys)
-*   [Step 5: Set file system permissions and ownership](#setup-env-perms)
-*	[Step 6: Install the Magento software](#setup-env-install)
+*   [Step 3: Set up cron](#setenv-cron)
+*	[Step 4: Clone a project and environment](#setenv-new-env)
+*   [Step 5: Get your authentication keys](#setenv-keys)
+*   [Step 6: Set file system permissions and ownership](#setup-env-perms)
+*	[Step 7: Install the Magento software](#setup-env-install)
 
 ## Step 1: Set up an environment {#setup-env-setup}
 This topic discusses how to clone an environment locally, set up global Git environment variables, and to enable SSH if you haven't done so already.
@@ -91,7 +92,7 @@ If your master branch is already configured, skip this section and continue with
 
 If you're not sure whether or not the master branch has been configured, enter the following command:
 
-    magento-cloud magento-cloud variable:get -e <environment ID>
+    magento-cloud variable:get -e <environment ID>
 
 {% collapsible To change the Admin URI, user name, and administrator password in the master branch: %}
 
@@ -133,7 +134,15 @@ If you're not sure whether or not the master branch has been configured, enter t
 
 {% endcollapsible %}
 
-## Step 3: Clone or branch an environment {#setenv-new-env}
+## Step 3: Set up cron {#setenv-cron}
+
+{% collapsible To set up cron: %}
+
+{% include config/setup-cron.md %}
+
+{% endcollapsible %}
+
+## Step 4: Clone or branch an environment {#setenv-new-env}
 Now that you've change the Magento Admin variables, you should create a new environment for your development work; this new environment inherits the variable values from master.
 
 After you create the branch, update project dependencies so you can install the Magento software locally.
@@ -153,10 +162,7 @@ After you create the branch, update project dependencies so you can install the 
 
         magento-cloud environment:branch sprint1 master
 
-2.  After the command completes, enter the following command to see the URLs by which you can access the environment in the cloud:
-
-        magento-cloud environment:url
-3.	Update dependencies:
+3.	After the command completes, update dependencies:
 
 		composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 4.  Create a [snapshot]({{page.baseurl}}cloud/admin/admin-snap.html) of the environment.
@@ -165,7 +171,7 @@ After you create the branch, update project dependencies so you can install the 
 
 {% endcollapsible %}
 
-## Step 4: Get your authentication keys {#setenv-keys}
+## Step 5: Add your authentication keys to auth.json {#setenv-keys}
 
 {% collapsible To get your authentication keys: %}
 Before you can upgrade the Magento software or install extensions, you must have authentication keys in the `auth.json` file in the Magento root directory. The Magento Enterprise Cloud Edition account owner has your keys. Contact that person to get them.
@@ -187,7 +193,7 @@ When you have your keys, add them to `auth.json`, which has the following conten
 
 {% endcollapsible %}
 
-## Step 5: Set file system permissions and ownership {#setup-env-perms}
+## Step 6: Set file system permissions and ownership {#setup-env-perms}
 
 {% collapsible To set ownership and permissions before you install the Magento software: %}
 
@@ -204,7 +210,7 @@ When you have your keys, add them to `auth.json`, which has the following conten
 
 {% endcollapsible %}
 
-## Step 6: Install the Magento software {#setup-env-install}
+## Step 7: Install the Magento software {#setup-env-install}
 
 {% collapsible To install the Magento software locally: %}
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Manage your projects
 menu_title: Manage your projects
 menu_order: 1

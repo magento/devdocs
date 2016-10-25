@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
+subgroup: 15_howto
 title: Environment tutorials
 menu_title: Environment tutorials
 menu_order: 10
