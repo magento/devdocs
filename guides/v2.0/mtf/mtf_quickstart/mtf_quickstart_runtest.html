@@ -540,6 +540,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -826,12 +834,12 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 16 August 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2 id="mtf_quickstart_testrun">Test run</h2>
 
-<p>All tests classified by categories in corresponding directories in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento</code>.</p>
+<p>All tests classified by categories in corresponding directories in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento</code>.</p>
 
-<p>FTF uses PHPUnit, which is located in <code>&lt;magento2&gt;/dev/tests/functional/vendor/bin</code> directory.</p>
+<p>FTF uses PHPUnit, which is located in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/bin</code> directory.</p>
 
 <p>Be sure that your system is ready for test run.</p>
 
@@ -846,17 +854,17 @@
 
 <p>Enter in terminal:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
 vendor/bin/phpunit
 </code></pre>
 
-<p>This command will run all tests from <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/</code>.</p>
+<p>This command will run all tests from <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/</code>.</p>
 
 <h3 id="mtf_quickstart_testrun_one">Run particular test</h3>
 
 <p>Enter in terminal:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
 vendor/bin/phpunit --filter &lt;name of test&gt;
 </code></pre>
 
@@ -864,9 +872,9 @@ vendor/bin/phpunit --filter &lt;name of test&gt;
 
 <p>Example:</p>
 
-<p>Let’s check creating of new category. For this we should run <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Category/CreateCategoryEntityTest.php</code>. To run this test enter the following script in your terminal:</p>
+<p>Let’s check creating of new category. For this we should run <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Category/CreateCategoryEntityTest.php</code>. To run this test enter the following script in your terminal:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
 vendor/bin/phpunit --filter CreateCategoryEntityTest
 </code></pre>
 

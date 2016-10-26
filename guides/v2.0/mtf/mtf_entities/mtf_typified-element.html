@@ -540,6 +540,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -826,7 +834,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2>Typified element</h2>
 
 <ul id="markdown-toc">
@@ -884,7 +892,7 @@
 
 <h4 id="basic_class">Default typified elements</h4>
 
-<p>Default typified elements are stored in the <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Client/Element</code> directory.</p>
+<p>Default typified elements are stored in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Client/Element</code> directory.</p>
 
 <p>A root class for a typified element is the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php"><code>\Magento\Mtf\Client\Element\SimpleElement</code></a> class. This class implements <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/ElementInterface.php"><code>ElementInterface</code></a> which contains methods such as <code>click()</code>, <code>doubleClick()</code>, <code>isVisible()</code>, <code>setValue()</code>, <code>getValue()</code>, <code>getText()</code>, <code>find()</code>, <code>dragAndDrop()</code>, <code>getElements()</code> etc.</p>
 
@@ -932,7 +940,7 @@
 
 <h4 id="magento_class">Magento custom typified elements</h4>
 
-<p>Magento custom typified elements are stored in the <code>&lt;magento2&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Element</code> directory.</p>
+<p>Magento custom typified elements are stored in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Element</code> directory.</p>
 
 <table>
   <thead>
@@ -1023,7 +1031,7 @@
 
 <h2 id="create">How to create a class for the typified element</h2>
 
-<p><strong>Step 1.</strong> Create a PHP class in the <code>&lt;magento2&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Element</code> directory</p>
+<p><strong>Step 1.</strong> Create a PHP class in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Element</code> directory</p>
 
 <p>It must be named according to the following naming convention. Two capital letters in the name: the first letter and a capital <code>E</code> in the <code>Element.php</code>. For example: <code>OptgroupselectElement.php</code>.</p>
 

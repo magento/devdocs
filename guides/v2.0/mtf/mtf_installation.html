@@ -540,6 +540,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -826,7 +834,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 29 August 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2>Preface</h2>
 <p>Well, you are on the way to install the Functional Testing Framework!</p>
 
@@ -862,13 +870,13 @@
 <h4 id="mtf_install_pre_mtf-check">Check if the Functional Testing Framework has been already installed</h4>
 
 <ol>
-  <li>Find directory <code>&lt;magento2&gt;/dev/tests/functional/</code>.</li>
+  <li>Find directory <code>&lt;magento2_root_dir&gt;/dev/tests/functional/</code>.</li>
   <li>Find the <code>vendor</code> directory. If the directory exists, you already have the Functional Testing Framework installed in <code>vendor/magento/mtf</code>.</li>
 </ol>
 
 <h2 id="mtf_install_perform">Perform the installation</h2>
 
-<p>The Functional Testing Framework requires Composer, which downloads libraries defined in <code>&lt;magento2&gt;/dev/tests/functional/composer.json</code>.</p>
+<p>The Functional Testing Framework requires Composer, which downloads libraries defined in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/composer.json</code>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you're not sure that Composer is installed, see <a href="/guides/v2.0/install-gde/prereq/dev_install.html#instgde-prereq-compose-install">Install Composer</a>.</p>
@@ -879,7 +887,7 @@
   <li>Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="/guides/v2.0/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)</li>
 </ol>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/
 composer install
 </code></pre>
 
@@ -894,9 +902,9 @@ And run from this directory <code>php composer.phar install</code>.</p>
 
 <h3 id="mtf_install_check_dir">Find the Functional Testing Framework directory</h3>
 
-<p>Check whether the <code>vendor</code> directory exists in <code>&lt;magento2&gt;/dev/tests/functional/</code>.</p>
+<p>Check whether the <code>vendor</code> directory exists in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/</code>.</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/
 ls
 </code></pre>
 
@@ -908,7 +916,7 @@ ls
 
 <h3 id="mtf_install_check_verify">Verify the Functional Testing Framework version</h3>
 
-<p>Open <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code>. The latest version in <code>CHANGELOG.md</code> is version of the FTF you installed.</p>
+<p>Open <code>&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code>. The latest version in <code>CHANGELOG.md</code> is version of the FTF you installed.</p>
 
 <h2 id="mtf_install_next">Next Steps</h2>
 <p><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust FTF configuration </a></p>

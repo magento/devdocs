@@ -540,6 +540,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -826,7 +834,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 1 July 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2>Fixture repository</h2>
 
 <ul id="markdown-toc">
@@ -857,7 +865,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <h2 id="mtf_repository_create">Create a repository for the entire fixture</h2>
 
-<p>Let’s create a repository for the Widget fixture <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code>.</p>
+<p>Let’s create a repository for the Widget fixture <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code>.</p>
 
 <p><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">More details about fixtures</a>.</p>
 
@@ -902,11 +910,11 @@ Reference to the repository is placed in the fixture XML file in attribute named
     <span class="nt">&lt;/fixture&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>The <code>repository_class="Magento\Widget\Test\Repository\Widget"</code> attribute tells us that this fixture uses data from the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml</code> repository.</p>
+<p>The <code>repository_class="Magento\Widget\Test\Repository\Widget"</code> attribute tells us that this fixture uses data from the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml</code> repository.</p>
 
 <p>In this section we will show the logic of how to create this repository.</p>
 
-<p>Also <code>layout</code> and <code>widgetOptions</code> fields use <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml</code> and <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml</code> repositories respectively.</p>
+<p>Also <code>layout</code> and <code>widgetOptions</code> fields use <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml</code> and <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml</code> repositories respectively.</p>
 
 <p><a href="#mtf_repository_create-field"> Learn how to create repository for the fixture field</a>.</p>
 
@@ -969,7 +977,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>This simple code contains a bit more complex logic, where <a href="#mtf_repository_create-field">the repository is applied to the fixture field</a>. Just to remind you, how this field is represented in the fixture: <code>&lt;field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" /&gt;</code>.</p>
 
-<p>In brief, we reference another repository <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml</code>, and a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php</code>.</p>
+<p>In brief, we reference another repository <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml</code>, and a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php</code>.</p>
 
 <p>The <code>WidgetOptions.xml</code> repository includes <code>cmsPageLink</code> data set:</p>
 
@@ -981,11 +989,11 @@ Reference to the repository is placed in the fixture XML file in attribute named
     <span class="nt">&lt;/field&gt;</span>
 <span class="nt">&lt;/dataset&gt;</span></code></pre></figure>
 
-<p>The source understands the <code>entities</code> field as an instruction to create a CMS Page using <code>&lt;dataset name="default"&gt;</code> from the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml</code> repository.</p>
+<p>The source understands the <code>entities</code> field as an instruction to create a CMS Page using <code>&lt;dataset name="default"&gt;</code> from the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml</code> repository.</p>
 
 <h4 id="mtf_repo_widgetxml">Widget.xml</h4>
 
-<p>Now we can create a repository XML file <code>Widget.xml</code>. In our case the file should be placed in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository</code>. The full name must be specified in the <code>repository_class</code> attribute of the fixture: <code>repository_class="Magento\Widget\Test\Repository\Widget"</code>.</p>
+<p>Now we can create a repository XML file <code>Widget.xml</code>. In our case the file should be placed in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository</code>. The full name must be specified in the <code>repository_class</code> attribute of the fixture: <code>repository_class="Magento\Widget\Test\Repository\Widget"</code>.</p>
 
 <p>See the entire repository sample so far:</p>
 
@@ -1125,7 +1133,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>In the preceding section, the Widget fixture code contains fields with the links for repositories. Let’s consider the field <code>layout</code> with <code>repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates</code>.</p>
 
-<p>The repository value is a reference to the repository XML file. Therefore, we should create <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml</code>. The XML structure of this repository is the same as of <a href="#mtf_repository_create">repository for the entire fixture</a>.</p>
+<p>The repository value is a reference to the repository XML file. Therefore, we should create <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml</code>. The XML structure of this repository is the same as of <a href="#mtf_repository_create">repository for the entire fixture</a>.</p>
 
 <p>Assume that we want to provide data for the Layout Update block for the following cases shown on the screenshots (name of data sets have orange font, fields defined in repository are highlighted in orange).</p>
 
@@ -1201,7 +1209,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Config">Magento_Config module</a> and is named <code>ConfigData.xml</code>.</p>
 
-<p>Let’s see the following example of configuration settings for <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet">Authorize.Net module</a> <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml</code>.</p>
+<p>Let’s see the following example of configuration settings for <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet">Authorize.Net module</a> <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml</code>.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
@@ -1342,11 +1350,11 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>As you can see, the <code>ConfigData.xml</code> of the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet"><code>Magento_Authorizenet</code> module</a> and the <code>ConfigData.xml</code> of the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend"><code>Magento_Backend</code> module</a> have the same reference to the repository class; that is <code>Magento\Config\Test\Repository\ConfigData</code>.</p>
 
-<p><code>ConfigData.php</code> will be generated in <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Config/Test/Repository</code>. This PHP repository will contain repository data sets from all Magento modules that have a <code>ConfigData.xml</code> repository.</p>
+<p><code>ConfigData.php</code> will be generated in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Config/Test/Repository</code>. This PHP repository will contain repository data sets from all Magento modules that have a <code>ConfigData.xml</code> repository.</p>
 
 <p>To run the generator, enter the following command in your terminal:</p>
 
-<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+<pre><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
 
 <p>The preceding is an example of repository merging. Using the approach from the example you can merge repositories for any other fixture, not <code>Config</code> only.</p>
@@ -1355,7 +1363,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>Credentials are stored in an <code>*.xml</code> file that is specified in <code>phpunit.xml</code>.</p>
 
-<p>You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/credentials.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/credentials.xml.dist</code></a>.</p>
+<p>You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/credentials.xml.dist"><code>&lt;magento2_root_dir&gt;/dev/tests/functional/credentials.xml.dist</code></a>.</p>
 
 <p>Credentials always should stay invisible for security reasons. The FTF implicitly pastes credentials during the test run only.
 There are two ways to paste credentials:</p>

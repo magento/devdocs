@@ -540,6 +540,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -826,7 +834,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2 id="mtf_update">How to update</h2>
 
 <p>Two types of updates are available.</p>
@@ -849,9 +857,9 @@
 
 <h3 id="mtf_update_install">Install a new version of the Functional Testing Framework</h3>
 
-<p>Step 1.    To avoid conflicts with the previous version, remove directory <code>&lt;magento2&gt;/dev/tests/functional/generate</code>.</p>
+<p>Step 1.    To avoid conflicts with the previous version, remove directory <code>&lt;magento2_root_dir&gt;/dev/tests/functional/generate</code>.</p>
 
-<p>Step 2.    Remove file <code>&lt;magento2&gt;/dev/tests/functional/composer.lock</code>.</p>
+<p>Step 2.    Remove file <code>&lt;magento2_root_dir&gt;/dev/tests/functional/composer.lock</code>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p><b>Why:</b> Composer reads dependencies from <code>composer.lock</code> instead of reading <code>composer.json</code>. File <code>composer.lock</code> currently is not maintained.</p>
@@ -863,7 +871,7 @@
 
 <p>Enter in terminal:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/
 composer update
 </code></pre>
 

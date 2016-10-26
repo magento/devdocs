@@ -540,6 +540,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -826,7 +834,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 20 July 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2>Data set</h2>
 
 <ul id="markdown-toc">
@@ -936,7 +944,7 @@ The following data types are available:
 
 <h3 id="example">Example data set</h3>
 
-<p>Let’s see an example for <code>CreateSimpleProductEntityTest</code>. A data set and its corresponding <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> must be placed in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product</code> directory.</p>
+<p>Let’s see an example for <code>CreateSimpleProductEntityTest</code>. A data set and its corresponding <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> must be placed in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product</code> directory.</p>
 
 <p><a href="/common/images/mtf_dataset_dir.png"><img src="/common/images/mtf_dataset_dir.png" /></a></p>
 
@@ -969,7 +977,7 @@ The following data types are available:
 <p>This is a data set that:</p>
 
 <ul>
-  <li>corresponds to the XSD schema <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/etc/variations.xsd</code></li>
+  <li>corresponds to the XSD schema <code>&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/etc/variations.xsd</code></li>
   <li>relates to the <code>Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest</code> test case (performs creation of the simple product).</li>
   <li>relates to the ticket <code>MAGETWO-23414</code> in Jira</li>
   <li>contains variation <code>CreateSimpleProductEntityTestVariation1</code> that
@@ -1149,7 +1157,7 @@ The following data types are available:
 <p>To add a new variation using merging, you should simply use the name of a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> that you want to merge with. For example, you want to add a new variations from the Magento_ProductVideo module to the <code>Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest</code> that is placed in the Magento_Catalog module. You can create data set in the Magento_ProductVideo module, containing variations you need, and paste the test case name that you want to merge with:</p>
 
 <ul>
-  <li>Create <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/ProductVideo/Test/TestCase/Product/UpdateSimpleProductEntityTest.xml</code> with the following code:</li>
+  <li>Create <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/ProductVideo/Test/TestCase/Product/UpdateSimpleProductEntityTest.xml</code> with the following code:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>

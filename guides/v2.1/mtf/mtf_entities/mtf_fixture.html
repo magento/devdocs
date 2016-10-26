@@ -546,6 +546,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -857,10 +865,10 @@
 
 <p>An FTF fixture is a list of properties of the Magento entity under test.</p>
 
-<p>A fixture is represented as an XML file located in the <code>Fixture</code> directory that corresponds to a module in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/functional</code>. Example for <code>Widget</code>:</p>
+<p>A fixture is represented as an XML file located in the <code>Fixture</code> directory that corresponds to a module in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/functional</code>. Example for <code>Widget</code>:</p>
 
 <ul>
-  <li><code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code></li>
+  <li><code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code></li>
 </ul>
 
 <p>You will need fixture:</p>
@@ -874,21 +882,21 @@
 
 <p>To apply any changes in fixture, run generate tool:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php generate.php
 </code></pre>
 
 <p>This tool creates PHP classes that are used by the test.</p>
 
-<p>You can check fixture PHP class in corresponding module in the <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento</code> directory.</p>
+<p>You can check fixture PHP class in corresponding module in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento</code> directory.</p>
 
 <h2 id="mtf_fixture_create">Create new fixture</h2>
 
 <p>Let’s imagine that we want to create new fixture to test our Widget module.</p>
 
-<p>Magento has a tool, <code>generateFixtureXml.php,</code>, to automatically generate fixture with parameters indicated in arguments. It is located in <code>&lt;magento2&gt;/dev/tests/functional/utils</code>.</p>
+<p>Magento has a tool, <code>generateFixtureXml.php,</code>, to automatically generate fixture with parameters indicated in arguments. It is located in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/utils</code>.</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
 </code></pre>
 
@@ -947,7 +955,7 @@ php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --c
 
 <p>This tool creates a new fixture using data from a database table you specified using the <code>--entity_type</code> argument.</p>
 
-<p>Following is the generated Widget fixture located in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code>.</p>
+<p>Following is the generated Widget fixture located in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code>.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
@@ -978,7 +986,7 @@ php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --c
 
 <p>To generate PHP classes, enter the following commands in the order shown:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php generate.php
 </code></pre>
 
@@ -1054,7 +1062,7 @@ php generate.php
     </tr>
     <tr>
       <td style="text-align: left"><code>collection</code></td>
-      <td style="text-align: left">Collection to generate data sets. It is taken from <code>&lt;magento2&gt;/app/code/Magento</code>.</td>
+      <td style="text-align: left">Collection to generate data sets. It is taken from <code>&lt;magento2_root_dir&gt;/app/code/Magento</code>.</td>
       <td style="text-align: center">string</td>
       <td>Magento\Catalog\Model\Resource\Product\Collection</td>
       <td style="text-align: center">optional</td>
@@ -1185,7 +1193,7 @@ php generate.php
 
 <p>To apply the changes, enter the following commands:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php generate.php
 </code></pre>
 
@@ -1199,7 +1207,7 @@ php generate.php
 
 <p>Repository is located in <code>Repository</code> directory of corresponding module. <code>Repository</code> directory contains a subdirectory with the name of fixture, and repository XML file in it with the name of fixture field.</p>
 
-<p>The repository is located in <code>&lt;magento2&gt;/dev/tests/functional/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml</code>.</p>
+<p>The repository is located in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml</code>.</p>
 
 <p>Following is the code of <code>LayoutUpdates.xml</code>. It specifies two data sets that you can choose to define in your test.</p>
 
@@ -1233,7 +1241,7 @@ php generate.php
 
 <p>To apply changes, enter following commands:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php generate.php
 </code></pre>
 
@@ -1255,7 +1263,7 @@ php generate.php
        <span class="na">source=</span><span class="s">&quot;Magento\Widget\Test\Fixture\Widget\LayoutUpdates&quot;</span>
        <span class="na">group=</span><span class="s">&quot;storefront_properties&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
 
-<p>Let’s see our data source file <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php</code></p>
+<p>Let’s see our data source file <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php</code></p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
@@ -1306,7 +1314,7 @@ php generate.php
 
 <p>To apply the changes, enter the following commands:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php generate.php
 </code></pre>
 
@@ -1339,7 +1347,7 @@ Example from <code>LayoutUpdates.php</code><br />
 
 <p>To apply the changes, enter the following commands:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php generate.php
 </code></pre>
 
@@ -1373,7 +1381,7 @@ php generate.php
 
 <p>To generate your new fixture PHP class, enter the following commands:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php generate.php
 </code></pre>
 

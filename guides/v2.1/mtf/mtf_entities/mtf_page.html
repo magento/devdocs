@@ -546,6 +546,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -894,7 +902,7 @@ A page serves as container for <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.h
 
 <p>Let’s see an example of the Magento Widget page:</p>
 
-<p><code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml</code></p>
+<p><code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml</code></p>
 
 <p>where four blocks have been added:</p>
 
@@ -927,13 +935,13 @@ A page serves as container for <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.h
   <tbody>
     <tr>
       <td><code>name</code></td>
-      <td>Name of the page PHP class, that will be generated in <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/&lt;module&gt;/Page/&lt;area&gt;/&lt;name&gt;.php</code>.</td>
+      <td>Name of the page PHP class, that will be generated in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/&lt;module&gt;/Page/&lt;area&gt;/&lt;name&gt;.php</code>.</td>
       <td><code>WidgetInstanceIndex</code></td>
     </tr>
     <tr>
       <td><code>area</code></td>
       <td>The page usage area. Determines a <a href="#mtf_page_types">type of the page</a>. The directory with the name assigned to <code>area</code> will be created in the module. Value can be <code>Adminhtml</code> for the Admin area, or any other for another area.</td>
-      <td><code>Adminhtml</code>. The page class will be generated in the <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml</code>.</td>
+      <td><code>Adminhtml</code>. The page class will be generated in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml</code>.</td>
     </tr>
     <tr>
       <td><code id="mca">mca</code></td>
@@ -943,7 +951,7 @@ A page serves as container for <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.h
     <tr>
       <td><code>module</code></td>
       <td>Module where the page will be generated.</td>
-      <td><code>Magento_Widget</code>. The page will be generated in the <code>&lt;magento2&gt;/dev/tests/functional/Magento/Widget/Page</code></td>
+      <td><code>Magento_Widget</code>. The page will be generated in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/Magento/Widget/Page</code></td>
     </tr>
   </tbody>
 </table>
@@ -1016,13 +1024,13 @@ A page serves as container for <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.h
 
 <p>Admin page has attribute <code>area="Adminhtml"</code> in <code>&lt;page&gt;</code> node of the page XML file. Generated page extends  <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class. You will log in automatically to the Admin.</p>
 
-<p>The page will be opened as a concatenation of <code>app_backend_url</code> from <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
+<p>The page will be opened as a concatenation of <code>app_backend_url</code> from <code>&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
 
 <h3 id="mtf_page_storefront">Storefront page</h3>
 
 <p>Storefront page is recognizable by <code>area</code> assigned any value except <code>Adminhtml</code>, <em>and</em> <code>mca</code> doesn’t have <code>http</code>. This type of page extends class <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a>.</p>
 
-<p>Page will be opened as concatenation of <code>app_frontend_url</code> from <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
+<p>Page will be opened as concatenation of <code>app_frontend_url</code> from <code>&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
 
 <h3 id="mtf_page_extern">External page</h3>
 
@@ -1096,10 +1104,10 @@ A page serves as container for <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.h
 
 <p>And generate the updated page:</p>
 
-<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+<pre><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
 
-<p>The result is in the <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php</code> with the following code:</p>
+<p>The result is in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php</code> with the following code:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
@@ -1274,7 +1282,7 @@ A page serves as container for <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.h
 
 <p>To use the <code>editForm</code> block from the Magento_NewModule, we must follow:</p>
 
-<p><strong>Step 1.</strong> Create a <code>CatalogCategoryEdit.xml</code> page in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml</code> directory.</p>
+<p><strong>Step 1.</strong> Create a <code>CatalogCategoryEdit.xml</code> page in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml</code> directory.</p>
 
 <p><strong>Step 2.</strong> Assign page attributes</p>
 
@@ -1303,7 +1311,7 @@ A page serves as container for <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.h
 
 <p>Enter in terminal:</p>
 
-<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+<pre><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
 
 <p>Now when you call <code>editForm</code> block from the <code>CatalogCategoryEdit</code> page, class <code>\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code> will be used.</p>

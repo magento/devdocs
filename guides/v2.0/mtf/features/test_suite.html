@@ -540,6 +540,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2  active "><a href="/guides/v2.0/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -826,7 +834,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 6 October 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h4>Contents</h4>
 
 <ul id="markdown-toc">
@@ -855,7 +863,7 @@
   <li><strong>deny</strong>, specifying what must be excluded during the test run</li>
 </ul>
 
-<p>The rules for a test case are defined in a separate <code>.xml</code> file. (Recommended naming: use lowercase letters and underscore as a separator). One file contains rules for one test suite. All files are stored in the <code>&lt;magento2&gt;/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests</code> directory by default. Only one test suite can be run at a time.</p>
+<p>The rules for a test case are defined in a separate <code>.xml</code> file. (Recommended naming: use lowercase letters and underscore as a separator). One file contains rules for one test suite. All files are stored in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests</code> directory by default. Only one test suite can be run at a time.</p>
 
 <p>The example of the default test suite:</p>
 
@@ -904,12 +912,12 @@
 
 <h2 id="configure">Configure <code>phpunit.xml</code></h2>
 
-<p>Define the test suite to be run in the <code>&lt;magento2&gt;dev/tests/functional/phpunit.xml</code>:</p>
+<p>Define the test suite to be run in the <code>&lt;magento2_root_dir&gt;dev/tests/functional/phpunit.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;env</span> <span class="na">name =</span> <span class="s">&quot;testsuite_rule&quot;</span> <span class="na">value =</span> <span class="s">&lt;test_suite_name</span><span class="nt">&gt;</span> /&gt;
 <span class="nt">&lt;env</span> <span class="na">name =</span> <span class="s">&quot;testsuite_rule_path&quot;</span> <span class="na">value =</span> <span class="s">&lt;test_suite_directory</span><span class="nt">&gt;</span> /&gt;</code></pre></figure>
 
-<p>The default test suite is <code>&lt;magento2&gt;/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests/basic.xml</code>.</p>
+<p>The default test suite is <code>&lt;magento2_root_dir&gt;/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests/basic.xml</code>.</p>
 
 <p>In <code>phpunit.xml</code>:</p>
 
@@ -920,7 +928,7 @@
 
 <p>To run a test suite enter the following commands from your terminal:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>phpunit &lt;magento2&gt;/dev/tests/functional
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>phpunit &lt;magento2_root_dir&gt;/dev/tests/functional
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></pre></figure>
 
 <h2 id="rule">Rule</h2>

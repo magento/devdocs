@@ -540,6 +540,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -826,7 +834,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 11 July 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2>Constraint</h2>
 
 <ul id="markdown-toc">
@@ -854,7 +862,7 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <h3 id="mtf_constraint_directory"><code>Constraint</code> directory</h3>
 
-<p>A module in functional tests (<code>&lt;magento2&gt;/dev/tests/app/Magento/</code>) stores constraints in the <code>Constraint</code> directory. The following image shows the <code>Constraint</code> directory of the Magento_Widget module.</p>
+<p>A module in functional tests (<code>&lt;magento2_root_dir&gt;/dev/tests/app/Magento/</code>) stores constraints in the <code>Constraint</code> directory. The following image shows the <code>Constraint</code> directory of the Magento_Widget module.</p>
 
 <p><img src="/common/images/mtf_constraint_dir.png" alt="" /></p>
 
@@ -879,7 +887,7 @@ Each constraint name must be globally unique in Magento application and must be 
     <p>Contain the following methods:</p>
 
     <ul>
-      <li><code>processAssert()</code> which contains assertions. A <code>PHPUnit_Framework_Assert</code> class (<code>&lt;magento2&gt;/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php</code>) can be used to simplify assertions.</li>
+      <li><code>processAssert()</code> which contains assertions. A <code>PHPUnit_Framework_Assert</code> class (<code>&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php</code>) can be used to simplify assertions.</li>
       <li><code>toString()</code> which returns a success message if the assertion is performed successfully</li>
     </ul>
   </li>
@@ -928,7 +936,7 @@ Each constraint name must be globally unique in Magento application and must be 
   </p>
 </div>
 
-<p>The following example shows the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml</code> <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a> with two constraints.</p>
+<p>The following example shows the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml</code> <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a> with two constraints.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
@@ -976,7 +984,7 @@ Each constraint name must be globally unique in Magento application and must be 
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
-<p>For example, <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml</code>:</p>
+<p>For example, <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
@@ -1010,13 +1018,13 @@ Each constraint name must be globally unique in Magento application and must be 
 <p>Step 1. What module does it belong?</p>
 
 <p>Widget grid and widget fixture are related to the Magento_Widget module.
-  Thus, we need to create constraint in the Magento_Widget module, in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint</code>.</p>
+  Thus, we need to create constraint in the Magento_Widget module, in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint</code>.</p>
 
 <p>Step 2. What name should constraint have?</p>
 
 <p>Using <a href="#mtf_constraint_assert">constraint naming principle</a>, the constraint should be named as <code>AssertWidgetInGrid</code>.</p>
 
-<p>Step 3. Create <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetInGrid.php</code> with <a href="#mtf_constraint_assert">required structure</a></p>
+<p>Step 3. Create <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetInGrid.php</code> with <a href="#mtf_constraint_assert">required structure</a></p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 

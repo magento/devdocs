@@ -546,6 +546,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -955,7 +963,7 @@
 
 <p>Enter in your terminal:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --collection Magento\\Search\\Model\\ResourceModel\\Query\\Collection
 </code></pre>
 
@@ -990,7 +998,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <p>All slashes must be escaped with <code>\\</code>.</p>
 
-<p>As a result of previous commands, a brand new fixture can be found in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Fixture</code> directory.</p>
+<p>As a result of previous commands, a brand new fixture can be found in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Fixture</code> directory.</p>
 
 <p><img src="/common/images/mtf_tut_fixt.png" alt="A new Synonym fixture" /></p>
 
@@ -1146,12 +1154,12 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <ol>
   <li>Checks if a field has a <code>dataset</code> key in a value that comes from a variation. If it doesn’t, then field is assigned a value from the variation.</li>
-  <li>If it does, then a new Store fixture is created with a <code>dataset</code> from a Store repository (<code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml</code>).</li>
+  <li>If it does, then a new Store fixture is created with a <code>dataset</code> from a Store repository (<code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml</code>).</li>
   <li>Checks if the <code>store_id</code> field exists in the Store fixture. If it doesn’t, a new Store in Magento is created.</li>
   <li>Returns a Store <code>name</code> value.</li>
 </ol>
 
-<p>We should save it as <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php</code>.</p>
+<p>We should save it as <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php</code>.</p>
 
 <p><img src="/common/images/mtf_tutorial_datasource.png" alt="Synonym ScopeID data source location" /></p>
 
@@ -1165,10 +1173,10 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <p>Then, we must regenerate the fixture to apply changes:</p>
 
-<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+<pre><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
 
-<p>A new PHP class <code>Synonym.php</code> is generated in <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Search/Test/Fixture</code>.</p>
+<p>A new PHP class <code>Synonym.php</code> is generated in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Search/Test/Fixture</code>.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
@@ -1246,7 +1254,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 <p>Now we can create a <a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">test case</a>.</p>
 
 <p>From the <a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">test case topic</a> we know about the structure, location and name of the test case.
-In this example it is named <code>CreateSynonymEntityTest.php</code> and stored in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase</code>.</p>
+In this example it is named <code>CreateSynonymEntityTest.php</code> and stored in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase</code>.</p>
 
 <p><img src="/common/images/mtf_tutorial_testcase_location.png" alt="A test case location" /></p>
 
@@ -1313,7 +1321,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <h4 id="create-data-set">Step 4. Create the data set</h4>
 
-<p>Now we can add a <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">data set</a> with variations that cover cases in the <a href="#auto-test">test description</a>: <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml</code></p>
+<p>Now we can add a <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">data set</a> with variations that cover cases in the <a href="#auto-test">test description</a>: <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml</code></p>
 
 <p><img src="/common/images/mtf_tutor_dataset.png" alt="Created data set" /></p>
 
@@ -1338,7 +1346,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <ul>
   <li><code>synonyms</code> field. We need to <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html#fixture_field">set data to a fixture field</a>. The name of the field should be <code>&lt;name of a fixture&gt;/data/&lt;name of the field&gt;</code>. It is <code>name = "synonym/data/synonyms"</code>. To make data unique in each variation, we can use the <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation"><code>%isolation%</code> placeholder</a>.</li>
-  <li><code>scope_id</code> field. We need to <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html#fixture_field_repository">set data to a fixture field from a repository</a>. The name of the field should be <code>&lt;name of a fixture&gt;/data/&lt;name of the field&gt;/dataset</code>. It is <code>name="synonym/data/scope_id/dataset"</code>. As you remember from <a href="#create-test-object">Step 2</a>, we use the <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> to process this field. The data source loads the Store fixture with the Store repository, and returns the name of the field we need. In a <code>dataset</code> value, we should specify a name of the Store repository <code>dataset name</code> from <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml</code>.</li>
+  <li><code>scope_id</code> field. We need to <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html#fixture_field_repository">set data to a fixture field from a repository</a>. The name of the field should be <code>&lt;name of a fixture&gt;/data/&lt;name of the field&gt;/dataset</code>. It is <code>name="synonym/data/scope_id/dataset"</code>. As you remember from <a href="#create-test-object">Step 2</a>, we use the <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> to process this field. The data source loads the Store fixture with the Store repository, and returns the name of the field we need. In a <code>dataset</code> value, we should specify a name of the Store repository <code>dataset name</code> from <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml</code>.</li>
 </ul>
 
 <table>
@@ -1391,7 +1399,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <h4 id="create-pages">Step 5. Create the pages</h4>
 
-<p>In <a href="#create-init-test-case">Step 3</a>, we added two <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">pages</a> to the test case class. Because both pages are in the Admin area, we should create them in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml</code> directory.</p>
+<p>In <a href="#create-init-test-case">Step 3</a>, we added two <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">pages</a> to the test case class. Because both pages are in the Admin area, we should create them in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml</code> directory.</p>
 
 <p><strong>SynonymsIndex.xml</strong></p>
 
@@ -1416,7 +1424,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>To generate PHP classes for these <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">pages</a> enter and run in your terminal</p>
 
-<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+<pre><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
 
 <p><img src="/common/images/mtf_tutorial_pages_php.png" alt="PHP classes of pages" /></p>
@@ -1531,7 +1539,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p><strong>Search Synonym page</strong></p>
 
-<p>A corresponding page object in a functional test is <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml</code></p>
+<p>A corresponding page object in a functional test is <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml</code></p>
 
 <p>The page with a block:</p>
 
@@ -1544,7 +1552,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p><strong>New Synonym Group page</strong></p>
 
-<p>A corresponding page object in a functional test is <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml</code></p>
+<p>A corresponding page object in a functional test is <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml</code></p>
 
 <p>The page with blocks:</p>
 
@@ -1558,7 +1566,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>To generate PHP classes for these pages, enter the following command from your terminal.</p>
 
-<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+<pre><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
 
 <p>Now we can define the test flow in a <code>test()</code> method of the test case (<a href="#create-init-test-case">Step 3</a>).</p>
@@ -1715,7 +1723,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>You can run the test using your <abbr title="Integrated Development Environment">IDE</abbr> or the <abbr title="Command Line Interface">CLI</abbr>. The Selenium Server must be <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">up and running</a>. To run the test using the <abbr title="Command Line Interface">CLI</abbr>, enter in your terminal:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
 vendor/bin/phpunit --filter CreateSynonymEntityTest
 </code></pre>
 
@@ -1729,7 +1737,7 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 <p>To cover this, we should create the test assertion (<a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">constraint</a>) and add the full class name to a variation of the data set.</p>
 
-<p>Fortunately, this type of assertion  is commonly used in functional tests. If we search on the phrase “SuccessSaveMessage” in <code>&lt;magento2&gt;/dev/tests/functional</code>, there will be several matches. Let’s select from the list of results a <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php"><code>\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage</code></a> class. It has the following code:</p>
+<p>Fortunately, this type of assertion  is commonly used in functional tests. If we search on the phrase “SuccessSaveMessage” in <code>&lt;magento2_root_dir&gt;/dev/tests/functional</code>, there will be several matches. Let’s select from the list of results a <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php"><code>\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage</code></a> class. It has the following code:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
@@ -1827,13 +1835,13 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>To handle the messages we use the <code>\Magento\Backend\Test\Block\Messages</code> class, by adding the <code>messagesBlock</code> block to the <code>SynonymsIndex</code> page. In <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Page/Adminhtml/CustomerGroupIndex.xml</code>, we can see that the following block is used:</p>
+<p>To handle the messages we use the <code>\Magento\Backend\Test\Block\Messages</code> class, by adding the <code>messagesBlock</code> block to the <code>SynonymsIndex</code> page. In <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Page/Adminhtml/CustomerGroupIndex.xml</code>, we can see that the following block is used:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;#messages .messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
 
 <p>This block must be added to <code>SynonymsIndex</code> class. To do this:</p>
 
-<p>1) Open <code>&lt;magento2&gt;dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml</code>.</p>
+<p>1) Open <code>&lt;magento2_root_dir&gt;dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml</code>.</p>
 
 <p>2) Add the block node:</p>
 
@@ -1841,10 +1849,10 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 <p>3) Launch the generating tool to update the page class:</p>
 
-<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+<pre><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
 
-<p>And now we can add <code>&lt;constraint&gt;</code> to each variation of a data set <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml</code>:</p>
+<p>And now we can add <code>&lt;constraint&gt;</code> to each variation of a data set <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
@@ -1870,7 +1878,7 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 <p>You can run the test using your <abbr title="Integrated Development Environment">IDE</abbr> or the <abbr title="Command Line Interface">CLI</abbr>. The Selenium Server must be <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">up and running</a>. To run the test using the <abbr title="Command Line Interface">CLI</abbr>, enter in your terminal:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
 vendor/bin/phpunit --filter CreateSynonymEntityTest
 </code></pre>
 

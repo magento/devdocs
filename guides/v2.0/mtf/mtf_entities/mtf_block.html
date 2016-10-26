@@ -540,6 +540,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -826,7 +834,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2>Block</h2>
 
 <ul id="markdown-toc">
@@ -894,7 +902,7 @@
 
 <h3 id="mtf_block_path">How to determine a block name and a path</h3>
 
-<p>The block name and path in the Magento functional tests (<code>&lt;magento2&gt;/dev/tests/functional/tests/app</code>) should reflect a corresponding block in the Magento code base for your convenience.
+<p>The block name and path in the Magento functional tests (<code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app</code>) should reflect a corresponding block in the Magento code base for your convenience.
 For example, you develop a functional test for the bundle product creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the <code>.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>, so in the Magento functional tests you can create a new file <code>.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>.</p>
 
 <p>Magento can show you a full class name of the block and path to the PHTML template on the Magento page (changes web page design) or implicitly in the HTML code of the page.</p>
@@ -930,7 +938,7 @@ For example, you develop a functional test for the bundle product creation, that
 
 <ul>
   <li>
-    <p>Open <code>&lt;magento2&gt;/lib/internal/Magento/Framework/View/Element/Template.php</code></p>
+    <p>Open <code>&lt;magento2_root_dir&gt;/lib/internal/Magento/Framework/View/Element/Template.php</code></p>
   </li>
   <li>
     <p>Find the method</p>
@@ -1110,7 +1118,7 @@ For example, you develop a functional test for the bundle product creation, that
 
 <p><a href="/common/images/mtf_block_login_ui.png"><img src="/common/images/mtf_block_login_ui.png" /></a></p>
 
-<p>The mapping file for the block is stored in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml</code>, along with the block.</p>
+<p>The mapping file for the block is stored in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml</code>, along with the block.</p>
 
 <p><img src="/common/images/mtf_block_login_dir.png" /></p>
 
@@ -1161,7 +1169,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <p><img src="/common/images/mtf_block_tabs_ui.png" /></p>
 
-<p>Four tabs are mapped in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml</code> file, which is stored along with the block class.</p>
+<p>Four tabs are mapped in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml</code> file, which is stored along with the block class.</p>
 
 <p><img src="/common/images/mtf_block_tab_struc.png" /></p>
 

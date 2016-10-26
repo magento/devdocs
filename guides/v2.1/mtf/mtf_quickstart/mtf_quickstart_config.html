@@ -546,6 +546,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/mtf/features/test_suite.html">Test suite</a></li>
 
 									
@@ -862,7 +870,7 @@
 
 <h3 id="mtf_quickstart_config_phpunitxml">Edit <code>phpunit.xml</code> to configure PHPUnit</h3>
 
-<p>Find <code>phpunit.xml</code> in <code>&lt;magento2&gt;/dev/tests/functional</code>, and open it in editor.</p>
+<p>Find <code>phpunit.xml</code> in <code>&lt;magento2_root_dir&gt;/dev/tests/functional</code>, and open it in editor.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you cannot find <code>phpunit.xml</code>, create it from <code>phpunit.xml.dist</code>.</p>
@@ -889,7 +897,7 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
   <p>The default configuration is set in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
 </div>
 
-<p>Find <code>config.xml</code> in <code>&lt;magento2&gt;/dev/tests/functional/etc</code>, and open it in editor.</p>
+<p>Find <code>config.xml</code> in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/etc</code>, and open it in editor.</p>
 
 <h4 id="mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</h4>
 <p>In <code>&lt;application&gt;</code> element find elements <code>&lt;backendLogin&gt;</code> and <code>&lt;backendPassword&gt;</code>. Change content of these elements to your actual credentials for Magento Admin URL.</p>
@@ -899,7 +907,7 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
 
 <p>If you want to use another browser for tests you have to specify it in <code>config.xml</code>.</p>
 
-<p>Copy <code>&lt;server&gt;</code> element from <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/etc/config.xml&gt;</code> and paste it in <code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml</code> after <code>&lt;install&gt;</code> element.</p>
+<p>Copy <code>&lt;server&gt;</code> element from <code>&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/etc/config.xml&gt;</code> and paste it in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/etc/config.xml</code> after <code>&lt;install&gt;</code> element.</p>
 
 <p>Enter actual data in <code>&lt;browserName&gt;</code> and <code>&lt;browser&gt;</code> attributes.</p>
 
@@ -922,7 +930,7 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
 
 <h3 id="mtf_quickstart_config_credentialsxml">Edit <code>credentials.xml</code> to work with Magento modules that requires credentials</h3>
 
-<p>Find <code>credentials.xml</code> in <code>&lt;magento2&gt;/dev/tests/functional</code>, and open it in editor.</p>
+<p>Find <code>credentials.xml</code> in <code>&lt;magento2_root_dir&gt;/dev/tests/functional</code>, and open it in editor.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you cannot find <code>credentials.xml</code>, create it from <code>credentials.xml.dist</code>.</p>
