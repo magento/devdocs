@@ -614,7 +614,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 25 October 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2 class="no_toc" id="the-datasource-component">The DataSource Component</h2>
 
 <h2 id="overview">Overview</h2>
@@ -681,10 +681,13 @@
 
 <p>Every Javascript component should extend the core Element class in some way (mapped to <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code>uiElement</code></a> with RequireJS and located in <code>Magento/Ui/view/base/web/js/lib/core/element/element.js</code>.  When this class initializes it runs an <code>initLinks()</code> method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (<code>lib/core/element/link.js</code>) binds the values of those parameters to actual components.</p>
 
-<p>The properties Magento will parse are: 
-- <code>imports</code>
-- <code>exports</code>
--  <code>links</code></p>
+<p>The properties Magento will parse are:</p>
+
+<ul>
+  <li><code>imports</code></li>
+  <li><code>exports</code></li>
+  <li><code>links</code></li>
+</ul>
 
 <p>The <code>links</code> property is the same as duplicating a value in both <code>imports</code> and <code>exports</code>. Each of those properties expect an object that contains key/value pairs to bind the expression to. In the example above, it would appear in the <code>defaults</code> property like this:</p>
 
@@ -693,7 +696,7 @@
 }
 </code></pre>
 
-<p>When the Element class initializes, it will process the link that was declared in <code>imports</code>. Remember that one of the first things Magento does is process string literals, though, so it is actually working with something that looks more like the following (where <code>example</code> is the Component Name for clarity):</p>
+<p>When the Element class initializes, it will process the link that was declared in <code>imports</code>. Remember that one of the first things Magento does is process string literals, though, so it is actually working with something that looks more like the following (where <code>example</code> is the UI Component Name for clarity):</p>
 
 <pre><code>imports: {
     totalRecords: 'example.example_data_source:data.totalRecords'
@@ -702,7 +705,7 @@
 
 <p>The <code>:</code> is a special separator that is used to divide the component name that it is to link to and the values it should access in the returned value. No <code>:</code> is necessary, though, and the expression, <code>$.provider</code> could be any key that was passed into the javascript configuration.</p>
 
-<p>In the example above, it will return the <code>totalRecords</code> property of the <code>data</code> object in the <code>example.example_data_source</code> component. As a result of these connections, `` will display the output of <code>DataProvider::getData()</code>.</p>
+<p>In the example above, it will return the <code>totalRecords</code> property of the <code>data</code> object in the <code>example.example_data_source</code> component. As a result of these connections, <code>totalRecords</code> will display the output of <code>DataProvider::getData()</code>.</p>
 
 		</div>
 	</section>
