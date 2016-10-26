@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Coding Standards</title>
+	<title>Code sniffers</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/coding-standards/bk-coding-standards.html">
+	<link rel="canonical" href="//guides/v2.0/coding-standards/code-standard-sniffers.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/coding-standards/bk-coding-standards.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/coding-standards/code-standard-sniffers.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/coding-standards/bk-coding-standards.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/coding-standards/code-standard-sniffers.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -163,14 +163,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Coding Standards</h1>
+		<h1 class="page-heading">Code sniffers</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/coding-standards/bk-coding-standards.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/coding-standards/code-standard-sniffers.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -285,7 +285,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/coding-standards/bk-coding-standards.html">Introduction</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/coding-standards/bk-coding-standards.html">Introduction</a></li>
 									
 								
 
@@ -340,7 +340,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/coding-standards/code-standard-sniffers.html">PHP code sniffers</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/coding-standards/code-standard-sniffers.html">PHP code sniffers</a></li>
 
 									
 
@@ -507,25 +507,18 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 17 October 2016 (PDT)</div>
-            <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: contributing.md owned by core -->
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
+            <h2 id="php-code-sniffers">PHP code sniffers</h2>
 
-<p>Like many large projects, Magento has coding standards.</p>
+<p>We recommend the consistent use of a <i>code sniffer</i> to enhance the readability of your code and help ensure that it meets Magento code standards.  A code sniffer is a tool that automates the process of identifying code irregularities. Although a sniffer will identify many more inconsistencies and errors than a manual edit, we recommend that you evaluate and make any fixes that your sniffer program identifies.</p>
 
-<p>To code extensions, follow the Magento standards for code:</p>
+<p>Magento recommends the use of <a href="http://pear.php.net/manual/en/package.php.php-codesniffer.faq.php" target="_blank">PHP_CodeSniffer</a>, the most popular code sniffer in use throughout the PHP development community.  PHP_CodeSniffer implements the full PSR4 standard. You can extend PHP_CodeSniffer to include your own rules, too, <a href="https://github.com/magento/magento2/blob/develop/dev/tests/static/framework/Magento/ruleset.xml" target="_blank">as we have</a>. The <a href="https://github.com/magento-ecg/coding-standard" target="_blank">ECG Magento PHP Code Sniffer Coding Standard</a> provides specifications that you can use to configure your code sniffer of choice to bring your <i>PHP coding style closer to Magento PHP standards</i>.</p>
 
-<ul>
-  <li><a href="/guides/v2.0/coding-standards/code-standard-demarcation.html">Code demarcation standard</a></li>
-  <li><a href="/guides/v2.0/coding-standards/code-standard-php.html">PHP coding standard</a></li>
-  <li><a href="/guides/v2.0/coding-standards/code-standard-sniffers.html">PHP code sniffers</a></li>
-  <li><a href="/guides/v2.0/coding-standards/code-standard-javascript.html">JavaScript coding standard</a></li>
-  <li><a href="/guides/v2.0/coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a></li>
-  <li><a href="/guides/v2.0/coding-standards/docblock-standard-general.html">DocBlock standard</a></li>
-  <li><a href="/guides/v2.0/coding-standards/docblock-standard-javascript.html">JavaScript DocBlock standard</a></li>
-  <li><a href="/guides/v2.0/coding-standards/code-standard-less.html">LESS coding standard</a></li>
-  <li><a href="/guides/v2.0/coding-standards/code-standard-html.html">HTML style guide</a></li>
-</ul>
+<h3 id="code-standards">Code standards</h3>
+
+<p>Magento supports the full <a href="http://stackoverflow.com/questions/24868586/what-is-the-difference-between-psr-0-and-psr-4983" target="_blank">PSR4</a> standard plus some Magento-specific coding practices.</p>
+
+<p>The <a href="http://devdocs.magento.com/guides/v2.0/coding-standards/bk-coding-standards.html" target="_blank">Coding standards overview</a> introduces Magento-specific practices for PHP, JavaScript, and JQuery.</p>
 
 
 		</div>
