@@ -339,7 +339,7 @@ public function persist(FixtureInterface $fixture = null)
 }
 {% endhighlight %}
 
-Step 3. Add the observer and the tag to the `base` preset in `events.xml`
+Step 3. Add the observer and the tag to the `base` preset in `events.xml`.
 
 In `<magento2>/dev/tests/functional/etc/events.xml`, add to a preset `<preset name="base">` an observer `<observer class="Magento\Mtf\System\Observer\WebapiResponse">` with a tag `<tag name="webapi_failed" />`:
 
