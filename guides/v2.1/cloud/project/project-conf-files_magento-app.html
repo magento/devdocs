@@ -1383,7 +1383,7 @@
 supports multiple applications in a project, so each application
 must have a <em>unique name</em> in a project.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p><code>name</code> can consist only of lower case alphanumeric characters; that is, <code>a</code>–<code>z</code> and <code>0</code>–<code>9</code>. <code>name</code>
+<div class="collapsible"><b class="collapsible-title">name property: </b><div class="collapsible-content"><p><code>name</code> can consist only of lower case alphanumeric characters; that is, <code>a</code>–<code>z</code> and <code>0</code>–<code>9</code>. <code>name</code>
 is used in the <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a> to define the HTTP upstream
 (by default, <code>php:php</code>).</p>
 
@@ -1397,7 +1397,7 @@ is used in the <a href="/guides/v2.1/cloud/project/project-conf-files_routes.htm
 <h2 id="cloud-yaml-platform-type"><code>type</code> and <code>build</code></h2>
 <p>The <code>type</code>  and <code>build</code> properties are used to build and run the project. The only supported <code>type</code> currently is PHP.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>Supported versions:</p>
+<div class="collapsible"><b class="collapsible-title">type and build properties </b><div class="collapsible-content"><p>Supported versions:</p>
 
 <pre><code>type: php:5.5
 type: php:5.6
@@ -1418,7 +1418,7 @@ build:
 <p><code>access</code> defines the user roles who can log in using SSH to the
 environments to which they have access.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>Possible values are:</p>
+<div class="collapsible"><b class="collapsible-title">access property </b><div class="collapsible-content"><p>Possible values are:</p>
 
 <pre><code>ssh: admin
 ssh: contributor
@@ -1430,7 +1430,7 @@ ssh: viewer
 <p><code>relationships</code> defines how services are mapped in your
 application.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>The left-hand side is the name of the relationship as it will be exposed
+<div class="collapsible"><b class="collapsible-title">relationships: </b><div class="collapsible-content"><p>The left-hand side is the name of the relationship as it will be exposed
 to the application in the <code>MAGENTO_CLOUD_RELATIONSHIPS</code> environment
 variable. The right-hand side is in the form
 <code>&lt;service name&gt;:&lt;endpoint name&gt;</code>, where <code>&lt;service name&gt;</code> comes from 
@@ -1451,7 +1451,7 @@ search: "searchengine:solr"
 <h2 id="cloud-yaml-platform-web"><code>web</code></h2>
 <p><code>web</code> defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an <code>index.php</code> file on the root. We support any directory structure so the static file can be in a sub directory, and the <code>index.php</code> file can be further down.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p><code>web</code> supports the following:</p>
+<div class="collapsible"><b class="collapsible-title">web: </b><div class="collapsible-content"><p><code>web</code> supports the following:</p>
 
 <ul>
   <li><code>document_root</code>: The path relative to the root of the application
@@ -1486,6 +1486,7 @@ URL.</p>
   <li>From the root (<code>/</code>) path, only web, media, and <code>robots.txt</code> files can be accessed</li>
   <li>From the <code>/pub/static</code> and <code>/pub/media</code> paths, any file can be accessed</li>
 </ul>
+</div></div>
 
 <h2 id="cloud-yaml-platform-disk"><code>disk</code></h2>
 <p><code>disk</code> defines the size of the persistent disk size of the
@@ -1494,13 +1495,12 @@ application in MB.</p>
 <div class="bs-callout bs-callout-info" id="info">
   <p>The minimal recommended disk size is 256MB. If you see the error <code>UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
 </div>
-</div></div>
 
 <h2 id="cloud-yaml-platform-mounts"><code>mounts</code></h2>
 <p><code>mounts</code> is an object whose keys are paths relative to the root of
 the application. It’s in the form <code>volume_id[/subpath]</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>The format is:</p>
+<div class="collapsible"><b class="collapsible-title">mounts: </b><div class="collapsible-content"><p>The format is:</p>
 
 <pre><code>"/public/sites/default/files": "shared:files/files"
 </code></pre>
@@ -1514,7 +1514,7 @@ the application. It’s in the form <code>volume_id[/subpath]</code>.</p>
 <p><code>dependencies</code> enables you to specify dependencies that your
 application might need during the build process.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>Magento Enterprise Cloud Edition supports dependencies on the following
+<div class="collapsible"><b class="collapsible-title">dependencies: </b><div class="collapsible-content"><p>Magento Enterprise Cloud Edition supports dependencies on the following
 languages:</p>
 
 <ul>
@@ -1543,11 +1543,11 @@ commands to run during the deployment process.</p>
 <p>They can be executed at various points in the lifecycle of the
 application.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>Possible hooks are:</p>
+<div class="collapsible"><b class="collapsible-title">hooks: </b><div class="collapsible-content"><p>Possible hooks are:</p>
 
 <ul>
   <li><code>build</code>: We run build hooks before your application has been
-packaged. No other services are accessible at this time since the
+packaged. No other services (such as the database, or redis) are accessible at this time since the
 application has not been deployed yet.</li>
   <li><code>deploy</code>: We run deploy hooks after your application has been
 deployed and started. You can access other services at this point.</li>
@@ -1571,85 +1571,6 @@ run unless you <code>cd</code> somewhere else.</p>
 cause them to fail on the first failed command, add <code>set -e</code> to the beginning
 of the hook.</p>
 
-<p>After a Git push, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream
-of <code>git push</code>, so you can observe them in the terminal or capture them (along with error messages) with
-<code>git push &gt; build.log 2&gt;&amp;1</code>.</p>
-
-<p>Logs from the deployment hook are written to the <code>/tmp/log/deploy.log</code> file if you access the environment using <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-ssh">SSH</a>. Logs for all deployments that have happened on this environment are appended to
-this file, so check the timestamps on log entries to verify that you’re seeing the logs that correspond to the deployment that
-you are interested in.</p>
-
-<p>For example:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">[2016-04-05 17:54:38.585827] Launching hook &#39;php ./vendor/magento/magento-cloud-configuration/magento-deploy.php
-&#39;.
-
-[2016-04-05 17:54:38] Start deploy.
-[2016-04-05 17:54:38] Preparing environment specific data.
-[2016-04-05 17:54:38] Initializing routes.
-[2016-04-05 17:54:38] Routes: array (
-  &#39;unsecure&#39; =&gt;
-  array (
-    &#39;&#39; =&gt; &#39;http://test-n5on2ejx6iozi.us.magentosite.cloud/&#39;,
-  ),
-  &#39;secure&#39; =&gt;
-  array (
-    &#39;&#39; =&gt; &#39;https://test-n5on2ejx6iozi.us.magentosite.cloud/&#39;,
-  ),
-)
-[2016-04-05 17:54:38] Copying read/write directories back.
-[2016-04-05 17:54:38] Copied directory: var
-[2016-04-05 17:54:38] Copied directory: app/etc
-[2016-04-05 17:54:38] Copied directory: pub
-[2016-04-05 17:54:38] File env.php exists. Updating configuration.
-[2016-04-05 17:54:38] Updating env.php database configuration.
-[2016-04-05 17:54:38] Updating admin credentials.
-[2016-04-05 17:54:38] Updating SOLR configuration.
-[2016-04-05 17:54:38] Updating secure and unsecure URLs.
-[2016-04-05 17:54:38] Running setup upgrade.
-[2016-04-05 17:54:51] Clearing cache.
-[2016-04-05 17:54:51] Clearing generated code.
-[2016-04-05 17:54:51] Clearing application cache.
-[2016-04-05 17:54:52] Set Magento application to &#39;production&#39; mode
-[2016-04-05 17:54:52] Removing existing static content.
-[2016-04-05 17:54:52] Removing existing compilation files.
-[2016-04-05 17:54:52] Changing application mode.
-
-[2016-04-05 17:59:25.713148] Launching hook &#39;php ./vendor/magento/magento-cloud-configuration/magento-deploy.php
-&#39;.
-
-[2016-04-05 17:59:25] Start deploy.
-[2016-04-05 17:59:25] Preparing environment specific data.
-[2016-04-05 17:59:25] Initializing routes.
-[2016-04-05 17:59:25] Routes: array (
-  &#39;unsecure&#39; =&gt;
-  array (
-    &#39;&#39; =&gt; &#39;http://test-n5on2ejx6iozi.us.magentosite.cloud/&#39;,
-  ),
-  &#39;secure&#39; =&gt;
-  array (
-    &#39;&#39; =&gt; &#39;https://test-n5on2ejx6iozi.us.magentosite.cloud/&#39;,
-  ),
-)
-[2016-04-05 17:59:25] Copying read/write directories back.
-[2016-04-05 17:59:25] Copied directory: var
-[2016-04-05 17:59:25] Copied directory: app/etc
-[2016-04-05 17:59:25] Copied directory: pub
-[2016-04-05 17:59:25] File env.php exists. Updating configuration.
-[2016-04-05 17:59:25] Updating env.php database configuration.
-[2016-04-05 17:59:25] Updating admin credentials.
-[2016-04-05 17:59:25] Updating SOLR configuration.
-[2016-04-05 17:59:25] Updating secure and unsecure URLs.
-[2016-04-05 17:59:25] Running setup upgrade.
-[2016-04-05 17:59:35] Clearing cache.
-[2016-04-05 17:59:35] Clearing generated code.
-[2016-04-05 17:59:35] Clearing application cache.
-[2016-04-05 17:59:36] Set Magento application to &#39;production&#39; mode
-[2016-04-05 17:59:36] Removing existing static content.
-[2016-04-05 17:59:36] Removing existing compilation files.
-[2016-04-05 17:59:36] Changing application mode.
-[2016-04-05 18:05:33] Disabling Google Analytics</code></pre></figure>
-
 <h4 id="example-compile-sass-files-using-grunt">[Example] Compile SASS files using grunt</h4>
 <p>For example, to compile SASS files using grunt:</p>
 
@@ -1664,17 +1585,6 @@ hooks:
     cd public/profiles/project_name/themes/custom/theme_name
     npm install
     grunt</code></pre></figure>
-
-<h4 id="example-deployment-hook">[Example] Deployment hook</h4>
-<p>Following is a sample deployment hook:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">hooks:
-    # We run build hooks before your application has been packaged.
-    build: |
-        php ./vendor/magento/magento-cloud-configuration/magento-build.php
-    # We run deploy hook after your application has been deployed and started.
-    deploy: |
-        php ./vendor/magento/magento-cloud/magento-cloud-configuration/magento-deploy.php</code></pre></figure>
 </div></div>
 
 <h2 id="cloud-yaml-platform-cron"><code>crons</code></h2>
@@ -1698,14 +1608,14 @@ cronrun:
 </div></div>
 
 <h2 id="cloud-yaml-platform-php">Configure PHP options</h2>
-<p>You can choose which version of PHP you want to run in your <code>.magento.app.yaml</code> file:</p>
+<p>You can choose which version of PHP you want to run in your <code>.magento.app.yaml</code> file.:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">myphpapp</span>
 <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php:5.6</span></code></pre></figure>
 
-<p>We support PHP versions 5.5, 5.6, and 7.0.</p>
+<p>We support PHP versions 5.5, 5.6, and 7.0. The default is 7.0.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>See one of the following sections for more information:</p>
+<div class="collapsible"><b class="collapsible-title">Configure PHP options: </b><div class="collapsible-content"><p>See one of the following sections for more information:</p>
 
 <ul>
   <li><a href="#cloud-yaml-platform-php-ext">PHP extensions</a></li>
@@ -1713,20 +1623,20 @@ cronrun:
 </ul>
 
 <h3 id="cloud-yaml-platform-php-ext">PHP extensions</h3>
-<p>You can define the PHP extensions you want to enable or disable:</p>
+<p>You can define additional PHP extensions you want to enable or disable. Example:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># .magento.app.yaml</span>
 <span class="l-Scalar-Plain">runtime</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">http</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">xdebug</span>
         <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">redis</span>
         <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ssh2</span>
     <span class="l-Scalar-Plain">disabled_extensions</span><span class="p-Indicator">:</span>
         <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">sqlite3</span></code></pre></figure>
 
-<p>To view the current list of PHP extensions, create an <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-tunn">SSH tunnel</a> to your environment and enter the following command:</p>
+<p>To view the current list of PHP extensions, SSH into your environment and enter the following command:</p>
 
-<pre><code>ls /etc/php5/mods-available
+<pre><code>php -m
 </code></pre>
 
 <p>Magento requires the following PHP extensions that are enabled by default:</p>
@@ -1795,10 +1705,10 @@ cronrun:
 the configuration maintained by Magento Enterprise Cloud Edition.</p>
 
 <p>In your repository, the <code>php.ini</code> file should be added to the root of
-the application (normally the repository root).</p>
+the application (the repository root).</p>
 
 <div class="bs-callout bs-callout-warning">
-    <p>We don't limit what PHP settings you can configure. Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.</p>
+    <p>Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.</p>
 </div>
 
 <p>For example, if you need to increase the PHP memory limit:</p>
@@ -1809,7 +1719,7 @@ the application (normally the repository root).</p>
 <p>For a list of recommended PHP configuration settings, see <a href="/guides/v2.1/install-gde/prereq/php-centos.html#instgde-prereq-timezone">Set PHP configuration options</a>.</p>
 
 <p>After pushing your file, you can check that the custom PHP configuration
-has been added to your environment <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-tunn">creating an SSH tunnel</a> and entering:</p>
+has been added to your environment by SSHing into your environment and entering:</p>
 
 <pre><code>cat /etc/php5/fpm/php.ini
 </code></pre>
@@ -1818,8 +1728,8 @@ has been added to your environment <a href="/guides/v2.1/cloud/env/environments-
 <h4 id="related-topics">Related topics</h4>
 <ul>
   <li><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html">routes.yaml</a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html">services.yaml</a></li>
 </ul>
 
 		</div>

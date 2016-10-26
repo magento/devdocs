@@ -825,6 +825,22 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH into your environment</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/env/environments-logs.html">Viewing logs from your environment</a></li>
+
+									
+
+								
+
+									
+
 										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
@@ -1330,7 +1346,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 25 October 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2 id="cloud-howto-upgrade">How upgrade the Magento software</h2>
 <p>This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from version 2.0.9 to a later version. If you have a version earlier than 2.0.9, <a href="/guides/v2.0/cloud/get-help.html">contact Support</a>.</p>
 
@@ -1407,13 +1423,13 @@
 </div></div>
 
 <h2 id="upgrade-to-the-latest-version">Upgrade to the latest version</h2>
-<p>We recommend you start by backing up both your local installation and the database in your integration environment.</p>
+<p>We recommend you start by backing up both your local installation and the database in your integration environment on the remote Cloud server.</p>
 
 <h3 id="step-1-back-up-your-local-system">Step 1: Back up your local system</h3>
 
 <div class="collapsible"><b class="collapsible-title">To back up your local system: </b><div class="collapsible-content"><p>Enter the following command:</p>
 
-<pre><code>    php &lt;Magento root dir&gt;/bin/magento setup:backup --code --db [--media]
+<pre><code>php &lt;Magento root dir&gt;/bin/magento setup:backup --code --db [--media]
 </code></pre>
 
 <p>You can omit <code>[--media]</code> if you have a large number of media files and if you don’t expect the upgrade to affect them.</p>
@@ -1471,7 +1487,7 @@ git push origin &lt;branch name&gt;
 
     <p><code>git add -A</code> is required to add all changed files to source control because of the way Composer marshals base packages. Both <code>composer install</code> and <code>composer update</code> marshal files from the base package (that is, <code>magento/magento2-base</code> and <code>magento/magento2-ee-base</code>) into the package root.</p>
 
-    <p>The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, mashaling is disabled in Magento Enterprise Cloud Edition, so you must add the marshaled files to source control.</p>
+    <p>The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Enterprise Cloud Edition, so you must add the marshaled files to source control.</p>
   </li>
   <li>Wait for deployment to complete.</li>
   <li>
@@ -1648,7 +1664,7 @@ php.ini
 
 <pre><code>There has been an error processing your request
 Exception printing is disabled by default for security reasons.
-  Error log record number: &lt;number&gt;
+  Error log record number: &lt;error number&gt;
 </code></pre>
 
 <h4 id="view-error-details-locally">View error details locally</h4>
@@ -1658,7 +1674,7 @@ Exception printing is disabled by default for security reasons.
 <p>To view the error in your Cloud integration environment, enter the following commands:</p>
 
 <pre><code>magento-cloud environment:ssh
-vim /app/var/report/&lt;file name&gt;
+vim /app/var/report/&lt;error number&gt;
 </code></pre>
 
 <h4 id="resolve-the-error">Resolve the error</h4>

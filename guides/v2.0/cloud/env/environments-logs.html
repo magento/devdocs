@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Environment variables</title>
+	<title>Viewing logs from your environment</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/cloud/env/environment-vars-parent.html">
+	<link rel="canonical" href="//guides/v2.0/cloud/env/environments-logs.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/env/environment-vars-parent.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/env/environments-logs.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/env/environment-vars-parent.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/env/environments-logs.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -163,14 +163,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Environment variables</h1>
+		<h1 class="page-heading">Viewing logs from your environment</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/env/environment-vars-parent.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/env/environments-logs.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -833,7 +833,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/env/environments-logs.html">Viewing logs from your environment</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/cloud/env/environments-logs.html">Viewing logs from your environment</a></li>
 
 									
 
@@ -841,7 +841,7 @@
 
 									
 
-										<li class="level3Parent  active " id="vars"><a href="#">Environment variables</a>
+										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
 									
@@ -1346,8 +1346,42 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 21 October 2016 (PDT)</div>
-            
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
+            <p>The <a href="/guides/v2.0/cloud/discover-deploy.html#cloud-deploy-over-phases-build">build hooks</a> and the <a href="/guides/v2.0/cloud/discover-deploy.html#cloud-deploy-over-phases-hook">deploy hooks</a> 
+produce logs that can be helpful in troubleshooting issues.</p>
+
+<h2 id="build-logs">Build logs</h2>
+
+<p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream
+of <code>git push</code>, so you can observe them in the terminal or capture them (along with error messages) with
+<code>git push &gt; build.log 2&gt;&amp;1</code>.</p>
+
+<h2 id="log-deploy-log">Deploy logs</h2>
+
+<p>Logs from the deploy hook are located on the server. The location depends on whether it is an integration environment or
+a staging/production environment. For integration environments the location is <code>/tmp/log/deploy.log</code>, and for staging/production
+environments the location is <code>/var/log/platform/&lt;user&gt;/post_deploy.log</code>. The value of <code>&lt;user&gt;</code> depends on the project ID
+ and whether the environment is staging or production: with a project code of <code>yw1unoukjcawe</code>, the staging environment user
+ will be <code>yw1unoukjcawe_stg</code> and the production environment user will ust be <code>yw1unoukjcawe</code>. So on a staging
+ environment for project <code>yw1unoukjcawe</code>, the deploy log will be located at <code>/var/log/platform/yw1unoukjcawe_stg/post_deploy.log</code>.</p>
+
+<p>Logs for all deployments that have happened on this environment are appended to
+this file, so check the timestamps on log entries to verify that you’re seeing the logs that correspond to the deployment that
+you are interested in.</p>
+
+<p>The actual log output is highly verbose to allow troubleshooting. Here is a condensed example:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">[2016-10-11 22:15:38] Starting pre-deploy.
+...
+[2016-10-11 22:15:39] Pre-deploy complete.
+[2016-10-11 22:15:42] Start deploy.
+[2016-10-11 22:15:42] Preparing environment specific data.
+[2016-10-11 22:15:42] Initializing routes.
+...
+[2016-10-11 22:15:46] Deployment complete.</code></pre></figure>
+
+<p>The deploy log contains start and stop messages for each of the two hooks: 
+<code>Starting pre-deploy</code>, <code>Pre-deploy complete.</code>, <code>Start deploy.</code>, and <code>Deployment complete.</code>.</p>
 
 		</div>
 	</section>

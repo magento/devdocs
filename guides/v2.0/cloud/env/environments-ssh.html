@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Environment variables</title>
+	<title>SSH into your environment</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/cloud/env/environment-vars-parent.html">
+	<link rel="canonical" href="//guides/v2.0/cloud/env/environments-ssh.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/env/environment-vars-parent.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/env/environments-ssh.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/env/environment-vars-parent.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/env/environments-ssh.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -163,14 +163,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Environment variables</h1>
+		<h1 class="page-heading">SSH into your environment</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/env/environment-vars-parent.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/env/environments-ssh.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -825,7 +825,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH into your environment</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH into your environment</a></li>
 
 									
 
@@ -841,7 +841,7 @@
 
 									
 
-										<li class="level3Parent  active " id="vars"><a href="#">Environment variables</a>
+										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
 									
@@ -1346,8 +1346,73 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 21 October 2016 (PDT)</div>
-            
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
+            <h2 id="env-ssh">Connect to the environment using SSH</h2>
+<p>Before you can use SSH to connect to an environment, you must add your <a href="/guides/v2.0/cloud/before/before-workspace.html#cloud-ssh-cli-ssh">SSH public key</a> 
+to your account. For security reasons, in order to add your public key to a production or staging environment,
+ you must create a support ticket requesting the key to be added.</p>
+
+<p>You can then connect using SSH in any of the following ways:</p>
+
+<h2 id="integration-environments">Integration environments</h2>
+
+<p>Following are methods to SSH into your integration environment.</p>
+
+<p>###$# SSH using the magento-cloud tool</p>
+
+<p>To SSH to an environment using the <code>magento-cloud</code> command line:</p>
+
+<ol>
+  <li>
+    <p>Log in to the project:</p>
+
+    <pre><code>magento-cloud login
+</code></pre>
+  </li>
+  <li>
+    <p>List the project IDs:</p>
+
+    <pre><code>magento-cloud project:list
+</code></pre>
+  </li>
+  <li>
+    <p>List the environments in that project:</p>
+
+    <pre><code>magento-cloud environment:list -p &lt;project ID&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>SSH to the environment:</p>
+
+    <pre><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
+</code></pre>
+  </li>
+</ol>
+
+<p>###$# Find SSH connection details using the Web Interface
+To SSH to an environment using the Web Interface:</p>
+
+<ol>
+  <li>Log in to the Web Interface.</li>
+  <li>
+    <p>Hover the mouse pointer over <strong>Access Site</strong> in the desired environment as the following figure shows.</p>
+
+    <p><img src="/common/images/cloud_ssh-access.png" alt="Find the SSH URL using the Web Interface" width="500px" /></p>
+  </li>
+  <li>Click the clipboard button to copy the full SSH command to the clipboard. Enter the command in a terminal window.</li>
+</ol>
+
+<h2 id="staging-and-production-environments">Staging and Production environments</h2>
+
+<p>The <code>magento-cloud</code> tool is not used to SSH into staging and production environments. To SSH into staging and production 
+environments, first create a support ticket requesting for your public key to be added to the environment. The user and 
+URL will have been supplied when the environment was provisioned.</p>
+
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.0/cloud/env/environments.html">Manage your environments</a></li>
+  <li><a href="/guides/v2.0/cloud/before/before-workspace.html#cloud-ssh-cli-ssh">Adding keys to your environment</a></li>
+</ul>
 
 		</div>
 	</section>
