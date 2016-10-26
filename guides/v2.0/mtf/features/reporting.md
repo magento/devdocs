@@ -21,7 +21,7 @@ The following image demonstrates example of a general flow.
 
 <a href="{{site.baseurl}}common/images/ftf-reporting-diagram.png" alt="Reporting mechanism diagram" target="_blank"><img src="{{site.baseurl}}common/images/ftf-reporting-diagram.png" /></a>
 
-Event manager is a core component, which:
+The event manager is a core component which:
 
 - dispatches events
 - gets a list of observers
@@ -29,7 +29,7 @@ Event manager is a core component, which:
 
 ### Event manager {#event-manger}
 
-Event manager is defined in the [`\Magento\Mtf\System\Event\EventManager`][EventManager] class that:
+The event manager is defined in the [`\Magento\Mtf\System\Event\EventManager`][EventManager] class that:
 
 - is an entry point to the event management system
 - fetches configuration and observers
@@ -38,35 +38,35 @@ Event manager is defined in the [`\Magento\Mtf\System\Event\EventManager`][Event
 
 ## `phpunit.xml` configuration {#configuration}
 
-In `<magento2>/dev/tests/functional/phpunit.xml`, you can set a preset to use and a directory to store reports.
+In `<magento_2_root_dir>/dev/tests/functional/phpunit.xml`, you can set a preset to use and a directory to store reports.
 
 ### Set a preset {#set-preset}
 
-Set a [preset], which is a list of dispatched [events][event] and an [observers][observer] to handle them:
+Set a preset, which is a list of dispatched [events][event] and an [observers][observer] to handle them:
 
 {% highlight xml %}
 <php>
-    <env name="events_preset" value="<PRESET_NAME>" />
+    <env name="events_preset" value="<preset_name>" />
 </php>
 {% endhighlight xml %}
 
-Replace `<PRESET_NAME>` with a name of preset that you want to use. The default preset is `base`.
+Replace `<preset_name>` with a name of preset that you want to use.
 
 ### Set a reporting directory {#report-directory}
 
-A directory to store your reports is set as `<env name="log_directory">` value.
+Set the value of `<env name="log_directory">` to the directory in which to store your reports.
 
 {% highlight xml %}
 <php>
-    <env name="log_directory" value="<YOUR_DIRECTORY_PATH>" />
+    <env name="log_directory" value="<your_directory_path>" />
 </php>
 {% endhighlight %}
 
-The default path is `<magento2>/dev/tests/functional/var/log`.
+The default path is `<magento_2_root_dir>/dev/tests/functional/var/log`.
 
 ## `events.xml` configuration  {#event-presets}
 
-Event preset specifies observers and dispatched events handled by them. `<magento2>/dev/tests/functional/etc/events.xml` contains a list of event presets.
+An event preset specifies observers and dispatched events handled by them. `<magento_2_root_dir>/dev/tests/functional/etc/events.xml` contains a list of event presets.
 
 **Format of a preset**:
 
@@ -102,51 +102,61 @@ Event preset specifies observers and dispatched events handled by them. `<magent
 
 **Explanation of the example**:
 
-Each time when the `"exception"` and `"failure"` events are [dispatched][dispatch], HTML code and screenshot of a current web page are captured (see [Observers][observer] section for details). If the `"curl_failed"` event is dispatched, a correspondingcURL response will be saved into HTML file in the `magento/<module>/<test_case>/<variation>/curl-response` directory inside the [report directory].
+Each time the `"exception"` and `"failure"` events are [dispatched][dispatch], HTML code and screen capture of the current web page are logged (see [Observers][observer] section for details). If the `"curl_failed"` event is dispatched, a corresponding cURL response is saved in an HTML file in the `magento/<module>/<test_case>/<variation>/curl-response` directory inside the [report directory].
 
-Initially, event presets are defined in the FTF in `<magento2>/dev/tests/functional/vendor/magento/mtf/etc/events.xml` ([open the `events.xml` on GitHub repository][`events.xml` on GitHub]). It is not recommended to edit this file. You can extend the initial list or add new presets in `<magento2>/dev/tests/functional/etc/events.xml`. All changes are merged automatically.
+Initially, event presets are defined in the FTF in `<magento_2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc/events.xml` ([open the `events.xml` on GitHub repository][`events.xml` on GitHub]). It is not recommended to edit this file. You can extend the initial list or add new presets in `<magento_2_root_dir>/dev/tests/functional/etc/events.xml`. All changes are merged automatically.
 
 ### Observers  {#observers}
 
-Observer is a PHP class which defines actions under Magento instance, browser, test run etc.
+An observer is a PHP class which defines actions under Magento instance, browser, test run, and so on.
 
 The list of ready-to-use observers is the following:
 
 |Observer full class name | Description |
 |---|---|
 |[`\Magento\Mtf\System\Observer\ClientError`][ClientError] | Collects information about JavaScript errors on a web page under test. Uses an instance of the [`BrowserInterface`] to collect exceptions from a web page. Saves collected errors to `<reporting_directory>/magento/client-error.log`. |
-|[`\Magento\Mtf\System\Observer\CurlResponse`][CurlResponse] | Saves response into HTML file in `<reporting_directory>/magento/<module>/<test_case>/<variation>/curl-response` directory by the corresponding destination. |
+|[`\Magento\Mtf\System\Observer\CurlResponse`][CurlResponse] | Saves response into HTML file in `<reporting_directory>/magento/<module>/<test_case>/<variation>/curl-response` directory. |
 |[`\Magento\Mtf\System\Observer\Log`][Log] | Saves event message to the `<reporting_directory>/magento/logger.log`. |
 |[`\Magento\Mtf\System\Observer\PageUrl`][PageUrl] |Sets a page URL parameter to the instance of the [`EventState`] class. |
-|[`\Magento\Mtf\System\Observer\Screenshot`][Screenshot] | Captures a screenshot of a web page. Saves a PNG image to the `<reporting_directory>/magento/<module>/<test_case>/<variation>/screenshots` directory by the corresponding destination. |
+|[`\Magento\Mtf\System\Observer\Screenshot`][Screenshot] | Captures a screenshot of a web page. Saves a PNG image to the `<reporting_directory>/magento/<module>/<test_case>/<variation>/screenshots` directory. |
 |[`\Magento\Mtf\System\Observer\SourceCode`][SourceCode] | Collects HTML code of a web page. Saves HTML code to the `<reporting_directory>/magento/<module>/<test_case>/<variation>/page-source`.|
 
 ### Tags {#tags}
 
-A tag contains name of event. When you want to process any event by a particular [observer], you need to:
+A tag contains name of an event. When you want to process any event by a particular [observer], you need to:
 
 1. [Dispatch][dispatch] the event.
 2. Add a tag with name of the event to required observer in corresponding [event preset].
 
-In terms of XML, it is represented as an element `<tag />` in `events.xml`. `<tag />` is a child element of an `<observer>` element.
+In terms of XML, it is represented as an element `<tag />` in `events.xml`. `<tag />` is a child element of an `<observer>` element. See the following example:
 
 {% highlight xml %}
-<observer ... >
-    <tag ... />
-    <tag ... />
-    ...
-<observer />
+<observer class="Magento\Mtf\System\Observer\ClientError">
+    <tag name="page_changed" />
+    <tag name="exception" />
+</observer>
+<observer class="Magento\Mtf\System\Observer\Log">
+    <tag name="exception" />
+    <tag name="failure" />
+</observer>
+<observer class="Magento\Mtf\System\Observer\SourceCode">
+    <tag name="exception" />
+    <tag name="failure" />
+</observer>
+<observer class="Magento\Mtf\System\Observer\Screenshot">
+    <tag name="exception" />
+    <tag name="failure" />
+</observer>
+<observer class="Magento\Mtf\System\Observer\CurlResponse">
+    <tag name="curl_failed" />
+</observer>
 {% endhighlight %}
 
-It contains one required attribute `name`, where a name of event must be assigned.
-
-{% highlight xml %}
-<tag name="failure" />
-{% endhighlight %}
+As you can see, a tag contains one required attribute `name`, where a name of event must be assigned.
 
 ## Event dispatching {#dispatch-event}
 
-A method that is used to dispatch events is defined in [`\Magento\Mtf\System\Event\EventManagerInterface`][EventManagerInterface] . The FTF uses its default implementation `\Magento\Mtf\System\Event\EventManager::dispatchEvent()`.
+A method that is used to dispatch events is defined in [`\Magento\Mtf\System\Event\EventManagerInterface`][EventManagerInterface]. The FTF uses its default implementation `\Magento\Mtf\System\Event\EventManager::dispatchEvent()`.
 
 {% highlight php startinline=1%}
 $this->eventManager->dispatchEvent(['your_event_tag'], [$your_input_parameters]);
@@ -154,7 +164,7 @@ $this->eventManager->dispatchEvent(['your_event_tag'], [$your_input_parameters])
 
 It has two arguments:
 
-- Array of event tags. Event tag is a name of event that is dispatched. It is used as a [tag] in [event preset].
+- Array of event tags. Event tags specify the name of event that is dispatched. It is used as a [tag] in [event preset].
 - Input parameters. The parameters used by observers as input parameters. For example, a cURL response.
 
 Example of use:
@@ -168,15 +178,19 @@ if (!strpos($response, 'data-ui-id="messages-message-success"')) {
 }
 {% endhighlight %}
 
-## Practice {#practice}
+## Examples {#examples}
 
-The following examples explain how to use reporting tool on practice.
+The following examples explain how to use the reporting tool on practice.
+
+* [Create a preset][create preset]
+* [Edit a preset][edit preset]
+* [Create and apply a custom observer][add custom observer]
 
 ### Create a preset {#create-preset}
 
 The following example shows how to add a `custom` preset.
 
-**Task**: Create a preset that logs only a web page HTML code and its screenshot when test run is failed.
+**Task**: Create a preset that logs only a web page HTML code and its screenshot when a test run is failed.
 
 **Reports**:
 
@@ -193,9 +207,9 @@ The following example shows how to add a `custom` preset.
 
 **Solution**:
 
-Step 1. [Dispatch][dispatch] the `failure` event in the test case. This event is already existed and added to the code where the FTF processes the test failure.
+Step 1. [Dispatch][dispatch] the `failure` event in the test case. This event already exists and is added to the code where the FTF processes the test failure.
 
-Step 2. Open `<magento2>/dev/tests/functional/etc/events.xml`.
+Step 2. Open `<magento_2_root_dir>/dev/tests/functional/etc/events.xml`.
 
 Step 3. Add a preset with required observers and tags.
 
@@ -214,7 +228,7 @@ Step 3. Add a preset with required observers and tags.
 
 The following example shows how to edit the `base` preset.
 
-**Task**: Take a screenshot before click, after click and when a value is set.
+**Task**: Take a screenshot before click, after click, and when a value is set.
 
 **Reports**:
 
@@ -261,11 +275,11 @@ You can create your own observer using existing examples.
 General implementation rules:
 
 - An observer must implement [`ObserverInterface`].
-- Put the class in `<magento2>/dev/tests/functional/lib/Magento/Mtf/System/Observer`.
+- Put the class in `<magento_2_root_dir>/dev/tests/functional/lib/Magento/Mtf/System/Observer`.
 
-The following example shows how to use custom observer on the example with the `\Magento\Mtf\System\Observer\WebapiResponse` observer. Let's see how it's been done.
+The following example shows how to use a custom observer in the example with the `\Magento\Mtf\System\Observer\WebapiResponse` observer.
 
-**Task**: Create observer that logs WebAPI responds containing exceptions. Use the observer when a fixture is saved.
+**Task**: Create observer that logs WebAPI responses containing exceptions. Use the observer when a fixture is saved.
 
 **Reports**:
 
@@ -341,7 +355,7 @@ public function persist(FixtureInterface $fixture = null)
 
 Step 3. Add the observer and the tag to the `base` preset in `events.xml`.
 
-In `<magento2>/dev/tests/functional/etc/events.xml`, add to a preset `<preset name="base">` an observer `<observer class="Magento\Mtf\System\Observer\WebapiResponse">` with a tag `<tag name="webapi_failed" />`:
+In `<magento_2_root_dir>/dev/tests/functional/etc/events.xml`, add to a preset `<preset name="base">` an observer `<observer class="Magento\Mtf\System\Observer\WebapiResponse">` with a tag `<tag name="webapi_failed" />`:
 
 {% highlight xml %}
 <preset name="base">
@@ -370,6 +384,9 @@ In `<magento2>/dev/tests/functional/etc/events.xml`, add to a preset `<preset na
 [SourceCode]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/SourceCode.php
 
 <!-- Devdocs links -->
+[add custom observer]: #add-custom-observer
+[edit preset]: #edit-preset
+[create preset]: #create-preset
 [configuration]: #configuration
 [dispatch]: #dispatch-event
 [event]: {{page.baseurl}}extension-dev-guide/events-and-observers.html#events

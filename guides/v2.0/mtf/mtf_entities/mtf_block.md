@@ -40,7 +40,7 @@ A basic flow is the following:
 
 ### How to determine a block name and a path {#mtf_block_path}
 
-The block name and path in the Magento functional tests (`<magento2>/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base for your convenience.
+The block name and path in the Magento functional tests (`<magento2_root_dir>/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base for your convenience.
 For example, you develop a functional test for the bundle product creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`, so in the Magento functional tests you can create a new file `.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`.
 
 Magento can show you a full class name of the block and path to the PHTML template on the Magento page (changes web page design) or implicitly in the HTML code of the page.
@@ -72,7 +72,7 @@ Now each UI block has hint about its name and path. Also, you can see the path t
 
 If you want to change the representation of block details, you can change a <a href="{{site.mage2000url}}lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:
 
-* Open `<magento2>/lib/internal/Magento/Framework/View/Element/Template.php`
+* Open `<magento2_root_dir>/lib/internal/Magento/Framework/View/Element/Template.php`
 
 * Find the method
 
@@ -204,7 +204,7 @@ Let's see the [Customer Login]({{site.mage2000url}}app/code/Magento/Customer/Blo
 
 <a href="{{site.baseurl}}common/images/mtf_block_login_ui.png"><img src="{{site.baseurl}}common/images/mtf_block_login_ui.png" /></a>
 
-The mapping file for the block is stored in `<magento2>/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml`, along with the block.
+The mapping file for the block is stored in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml`, along with the block.
 
 <img src="{{site.baseurl}}common/images/mtf_block_login_dir.png" />
 
@@ -258,7 +258,7 @@ For example, let's see tabs for the Magento Widget: **Settings**, **Storefront p
 
 <img src="{{site.baseurl}}common/images/mtf_block_tabs_ui.png" />
 
-Four tabs are mapped in the `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml` file, which is stored along with the block class. 
+Four tabs are mapped in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml` file, which is stored along with the block class. 
 
 <img src="{{site.baseurl}}common/images/mtf_block_tab_struc.png" />
 

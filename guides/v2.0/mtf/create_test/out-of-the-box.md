@@ -11,7 +11,7 @@ github_link: mtf/create_test/out-of-the-box.md
 
 <h2>Out-of-the-box test</h2>
 
-The out-of-the-box tests are the ready to use functional tests developed by Magento. You can find them in the `<magento2>/dev/tests/functional` directory.
+The out-of-the-box tests are the ready to use functional tests developed by Magento. You can find them in the `<magento2_root_dir>/dev/tests/functional` directory.
 
 <h3>Contents</h3>
 
