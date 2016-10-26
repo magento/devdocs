@@ -28,7 +28,7 @@ This topic discusses how to upgrade the Magento Enterprise Cloud Edition softwar
 {% endcollapsible %}
 
 ## Upgrade to the latest version
-We recommend you start by backing up both your local installation and the database in your integration environment on the remote Cloud server.
+We recommend you start by backing up all of the databases you're about to change (local, remote integration, and staging or production).
 
 ### Step 1: Back up your local system (database, code, and media)
 
