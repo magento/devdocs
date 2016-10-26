@@ -19,7 +19,7 @@ Magento recommends the use of <a href="http://pear.php.net/manual/en/package.php
 
 ### Code standards 
 
-Magento supports the full <a href="http://stackoverflow.com/questions/24868586/what-is-the-difference-between-psr-0-and-psr-4" target="_blank">PSR4</a> standard plus some Magento-specific coding practices. 
+Magento supports the full <a href="http://stackoverflow.com/questions/24868586/what-is-the-difference-between-psr-0-and-psr-4983" target="_blank">PSR4</a> standard plus some Magento-specific coding practices. 
 
 
 The <a href="http://devdocs.magento.com/guides/v2.0/coding-standards/bk-coding-standards.html" target="_blank">Coding standards overview</a> introduces Magento-specific practices for PHP, JavaScript, and JQuery. 
