@@ -45,20 +45,9 @@ Deployment consists of the following phases:
 6.	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
 ### Phase 1: Configuration validation and code retrieval {#cloud-deploy-over-phases-conf}
-The remote server gets your code using Git. When you initially set up a project from a template, we retrieve the code from the [`magento-cloud-configuration` repository](https://github.com/magento-cloud/magento-cloud-configuration){:target="_blank"}.
+The remote server gets your code using Git. When you initially set up a project from a template, we retrieve the code from the [the Magento ECE tempalte](https://github.com/magento-cloud/magento-cloud){:target="_blank"}.
 
-The built-in Git server checks the following:
-
-*	Inspects what you sent it. 
-
-	If, for example, you have a syntax error in a configuration file, our Git server refuses the push.
-*	Looks for critical vulnerabilities.
-
-	Refusing to push because the built-in Git server detects a vulnerability is a good thing because it means you 
-can't break your production system that easily. 
-
-The built-in Git server diffs not only the code but also the
-infrastructure (by looking at changes to the `.yaml` configuration files like `.magento.app.yaml`).
+The built-in Git server checks what you are pushing: if you have a syntax error in a configuration file, our Git server refuses the push.
 
 Suppose you had a single MySQL database in your cluster and now you want two of those, or maybe you want to add an Elasticsearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
 
@@ -68,11 +57,13 @@ This phase also runs `composer install` to retrieve dependencies.
 We build only what has changed since the last build. This is one of the things that
 make Magento Enterprise Cloud Edition so fast in deployment. 
 
-Magento Enterprise Cloud Edition builds containers, in parallel, each server where something changed. If for example you pushed a
-PHP `composer.json` file, it will know it needs to go search for the
-dependencies, and shuffle things around to create the correct directory
-structure. If in your `.magento.app.yaml` file you also specified a
-build hook, you can now run whatever scripts you wish.
+Magento Enterprise Cloud Edition builds the codebase. It runs hooks in the `build` section of `.magento.app.yaml`. 
+
+The default Magento build hook is a CLI command called `magento-cloud:build`. It does the following:
+
+*   Applies patches located in vendor/magento/magento-cloud-configuration/patches, as well as optional project-specific patches in m2-hotfixes
+*	Enables all extensions
+*	Regenerates code and the dependency injection configuration (that is, the Magento `var/generation` and `var/di` directories) using `bin/magento setup:di:compile`.
 
 It is important to note that at this point the cluster has not been
 created yet. So you should not try to connect to a database or imagine
@@ -82,12 +73,7 @@ But also know that once the application has been built it is going to be
 mounted on a read-only file system (you will be able to configure specific
 mount points that are going to be read/write). 
 
-This means you cannot FTP to the server and add modules. Instead, you must add code to your environment and push the environment, which builds and deploys it.
-
-The default Magento build hook is a CLI command called `magento-cloud:build`. It does the following:
-
-*	Enables all extensions
-*	Regenerates code and the dependency injection configuration (that is, the Magento `var/generation` and `var/di` directories) using `bin/magento setup:di:compile`.
+This means you cannot FTP to the server and add modules. Instead, you must add code to your git repo and run `git push`, which builds and deploys the environment.
 
 ### Phase 3: Prepare the slug {#cloud-deploy-over-phases-slug}
 The result of the build phase is a read-only file system we refer to as a *slug*. In this phase, we create an archive and put it in permanent storage. The next time
@@ -114,7 +100,8 @@ The last step runs a deployment script. You can use this for example to anonymiz
 
 When this script runs, you have access to all the services in your environment (Redis, database, and so on).
 
-The default Magento deployment hook is a CLI command that does the following:
+There are two default deploy hooks. One is `pre-deploy.php`, which does some necessary cleanup and retrieval of 
+resources that were generated in the build hook. The second is `bin/magento magento-cloud:deploy`, which does the following
 
 *	If Magento is not installed, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment (for example, Redis and website URLs).
 
@@ -126,7 +113,7 @@ The default Magento deployment hook is a CLI command that does the following:
 
 *	Sets the mode to either [`developer`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer}}) or [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production) based on the environment variable [`APPLICATION_MODE`]({{ page.baseurl }}cloud/env/environment-vars_magento.html).
 
-	In `production` mode, the script generates static web content using the command
+	In `production` mode, the script optionally generates static web content using the command
 	[`magento setup:static-content:deploy`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html).
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -135,17 +122,8 @@ The default Magento deployment hook is a CLI command that does the following:
 
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}
 While the deployment is running, we freeze the incoming traffic at the entry point
-so no transactions are lost.
-
-If everything went fine, we are now ready to configure routing so your
-web traffic will arrive at your newly created cluster. If something
-failed, well then nothing would have happened; the "old cluster" is
-still there, so from your users' perspective, nothing changed. 
-
-Neither
-failed nor successful deployments result in application downtime.
-Because we also route SSH, you can also simply SSH to your cluster, where
-you have the same permissions to execute commands as the web server.
+for 60 seconds. We are now ready to configure routing so your
+web traffic will arrive at your newly created cluster.
 
 #### Related topics
 *	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
