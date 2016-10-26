@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: full-width
 group: techbull
 subgroup: Magento Technical Bulletins
 title: Magento Technical Bulletins

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: full-width
 group: oss
 subgroup: Magento third party licenses
 title: Magento third party licenses
@@ -7,7 +7,7 @@ menu_title: Magento third party licenses
 menu_order: 1
 menu_node: parent
 version: 2.0
-github_link: magento-oss.md
+github_link: magento-third-party.md
 ---
 
 ## Magento third party licenses
