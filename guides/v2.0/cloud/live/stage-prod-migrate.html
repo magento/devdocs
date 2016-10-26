@@ -1346,7 +1346,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 21 October 2016 (PDT)</div>
+            <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2 id="cloud-live-migrate">Migrate data</h2>
 <p>To migrate your database and code:</p>
 
@@ -1421,7 +1421,7 @@
 
 <ol>
   <li>
-    <p>SSH to the master branch:</p>
+    <p>SSH to the master branch of your integration environment:</p>
 
     <pre><code>magento-cloud environment:ssh
 </code></pre>
@@ -1431,34 +1431,11 @@
 
     <pre><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
 </code></pre>
-
-    <p>Sample output follows:</p>
-
-    <pre><code>Array
-(
-	[0] =&gt; stdClass Object
-	(
-    	[username] =&gt; user
-    	[password] =&gt;
-    	[ip] =&gt; 192.0.2.60
-    	[host] =&gt; database.internal
-    	[query] =&gt; stdClass Object
-        	(
-       	     	[is_master] =&gt; 1
-       		)
-
-    	[path] =&gt; main
-    	[scheme] =&gt; mysql
-    	[port] =&gt; 3306
-	)
-
-)
-</code></pre>
   </li>
   <li>
     <p>Create a database dump:</p>
 
-    <pre><code>mysqldump -h database.internal --single-transaction main | gzip - &gt; /tmp/database.sql.gz
+    <pre><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main | gzip - &gt; /tmp/database.sql.gz
 </code></pre>
   </li>
   <li>

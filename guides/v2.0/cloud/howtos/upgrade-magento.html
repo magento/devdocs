@@ -1348,7 +1348,11 @@
 		<div class="content-wrap">
             <div class="updated">Updated: 26 October 2016 (PDT)</div>
             <h2 id="cloud-howto-upgrade">How upgrade the Magento software</h2>
-<p>This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from version 2.0.9 to a later version. If you have a version earlier than 2.0.9, <a href="/guides/v2.0/cloud/get-help.html">contact Support</a>.</p>
+<p>This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from any version after 2.0.4. If you’re currently using version 2.0.4, see <a href="#cloud-upgrade-204">Upgrade from version 2.0.4</a>.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Always upgrade your local system first, then your <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before upgrading to either <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
+</div>
 
 <h2 id="get-started">Get started</h2>
 
@@ -1425,7 +1429,7 @@
 <h2 id="upgrade-to-the-latest-version">Upgrade to the latest version</h2>
 <p>We recommend you start by backing up both your local installation and the database in your integration environment on the remote Cloud server.</p>
 
-<h3 id="step-1-back-up-your-local-system">Step 1: Back up your local system</h3>
+<h3 id="step-1-back-up-your-local-system-database-code-and-media">Step 1: Back up your local system (database, code, and media)</h3>
 
 <div class="collapsible"><b class="collapsible-title">To back up your local system: </b><div class="collapsible-content"><p>Enter the following command:</p>
 
@@ -1437,15 +1441,44 @@
 <p>If the upgrade fails, you can roll back your backup using the <a href="/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll"><code>magento setup:rollback</code> command</a>.</p>
 </div></div>
 
-<h3 id="step-2-back-up-your-remote-database">Step 2: Back up your remote database</h3>
+<h3 id="step-2-back-up-your-remote-integration-database">Step 2: Back up your remote integration database</h3>
 
-<div class="collapsible"><b class="collapsible-title">To back up your remote database: </b><div class="collapsible-content"><p>Enter the following command to make a local backup of the remote database:</p>
+<div class="collapsible"><b class="collapsible-title">To back up your remote integration database: </b><div class="collapsible-content"><p>Enter the following command to make a local backup of the remote database:</p>
 
 <pre><code>magento-cloud environment:mysql-dump
 </code></pre>
 </div></div>
 
-<h3 id="step-3-verify-other-changes">Step 3: Verify other changes</h3>
+<h3 id="step-3-back-up-your-staging-and-production-databases">Step 3: Back up your staging and production databases</h3>
+
+<div class="collapsible"><b class="collapsible-title">To back up your staging and production databases: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Open an SSH connection to your staging or production server:</p>
+
+    <ul>
+      <li>Staging: <code>ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Production: <code>ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Find the database login information:</p>
+
+    <pre><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
+</code></pre>
+  </li>
+  <li>
+    <p>Create a database dump:</p>
+
+    <pre><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main | gzip - &gt; /tmp/database.sql.gz
+</code></pre>
+  </li>
+  <li>
+    <p>Enter <code>exit</code> to terminate the SSH connection.</p>
+  </li>
+</ol>
+</div></div>
+
+<h3 id="step-4-verify-other-changes">Step 4: Verify other changes</h3>
 
 <div class="collapsible"><b class="collapsible-title">To verify other changes: </b><div class="collapsible-content"><p>Verify other changes you’re going to submit to source control before you start the upgrade:</p>
 
@@ -1461,7 +1494,7 @@
 </ol>
 </div></div>
 
-<h3 id="step-4-complete-the-upgrade">Step 4: Complete the upgrade</h3>
+<h3 id="step-5-complete-the-upgrade">Step 5: Complete the upgrade</h3>
 
 <div class="collapsible"><b class="collapsible-title">To complete the upgrade: </b><div class="collapsible-content"><ol>
   <li>
@@ -1500,7 +1533,7 @@ git push origin &lt;branch name&gt;
 </ol>
 </div></div>
 
-<h2 id="upgrade-from-version-204">Upgrade from version 2.0.4</h2>
+<h2 id="cloud-upgrade-204">Upgrade from version 2.0.4</h2>
 <p>This section discusses steps to upgrade <em>only</em> if your current Magento Enterprise Cloud Edition version is 2.0.4.</p>
 
 <div class="collapsible"><b class="collapsible-title">To upgrade from version 2.0.4 </b><div class="collapsible-content"><h3 id="create-an-authorization-file">Create an authorization file</h3>
@@ -1622,6 +1655,8 @@ php.ini
 <p><code>.magento/services.yaml</code> sets up a MySQL instance, plus Redis and Solr.</p>
 
 <p><code>composer.json</code> fetches the Magento Enterprise Edition and some configuration scripts to prepare your application.</p>
+
+<p>Verify your upgrade as discussed in the next section.</p>
 </div></div>
 
 <h2 id="upgrade-verify">Verify your upgrade</h2>
