@@ -19,7 +19,7 @@ github_link: cloud/CloudReleaseNotes2.1.2.md
 ### Changes
 We made the following change in this release:
 
-*Magento 2.1.2 only*. Added a new environment variable in Magento 2.1.2, `UPDATE_URLS`, which if set to `enabled` causes Magento base URLs in the database with to be replaced with Cloud project URLs. 
+Added a new environment variable, `UPDATE_URLS`, which if set to `enabled` causes Magento base URLs in the database with to be replaced with Cloud project URLs. 
 
 By default, `UPDATE_URLS` is set to `enabled`. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
 
