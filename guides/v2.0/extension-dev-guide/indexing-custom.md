@@ -29,7 +29,7 @@ Your custom indexer class should implement <a href="{{ site.mage2000url }}lib/in
 *	Rull reindex: processing all entities from a specific dictionary; responsibility of `executeFull()`
 
 <h3 id="m2devgde-indexing-customconfiguration">Indexer configuration</h3>
-In the the `etc` directory of your module, add `indexer.xml` with the following:
+In the `etc` directory of your module, add `indexer.xml` with the following:
 
 *	indexer ID
 *	indexer class name
@@ -43,7 +43,7 @@ Use the optional `shared_index=` parameter to improve performance if your indexe
 All indexers related to a module should be declared in one file.
 
 <h3 id="m2devgde-indexing-mview">MView configuration</h3>
-Add the the `mview.xml` configuration file in the `etc` module directory, where you declare the following:
+Add the `mview.xml` configuration file in the `etc` module directory, where you declare the following:
 
 *	indexer view ID
 *	indexer class
