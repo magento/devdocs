@@ -24,7 +24,7 @@ This topic discusses how to upgrade the Magento Enterprise Cloud Edition softwar
 {% endcollapsible %}
 
 ## Upgrade to the latest version
-We recommend you start by backing up both your local installation and the database in your integration environment.
+We recommend you start by backing up both your local installation and the database in your integration environment on the remote Cloud server.
 
 ### Step 1: Back up your local system
 
@@ -32,7 +32,7 @@ We recommend you start by backing up both your local installation and the databa
 
 Enter the following command:
 
-        php <Magento root dir>/bin/magento setup:backup --code --db [--media]
+    php <Magento root dir>/bin/magento setup:backup --code --db [--media]
 
 You can omit `[--media]` if you have a large number of media files and if you don't expect the upgrade to affect them. 
 
@@ -78,16 +78,16 @@ Verify other changes you're going to submit to source control before you start t
         composer require magento/magento-cloud-metapackage 2.1.2 --no-update
         composer update
 2.  Wait for dependencies to update.
-4.	Add, commit, and push your changes to start deployment:
+4.  Add, commit, and push your changes to start deployment:
 
         git add -A && git commit -m "Upgrade"
         git push origin <branch name>
 
     `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages. Both `composer install` and `composer update` marshal files from the base package (that is, `magento/magento2-base` and `magento/magento2-ee-base`) into the package root. 
 
-    The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, mashaling is disabled in Magento Enterprise Cloud Edition, so you must add the marshaled files to source control.
+    The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Enterprise Cloud Edition, so you must add the marshaled files to source control.
 
-5.	Wait for deployment to complete.
+5.  Wait for deployment to complete.
 5.  Take a snapshot of your environment:
 
         magento-cloud snapshot:create -e <environment ID>
@@ -244,7 +244,7 @@ In some cases, an error similar to the following displays when you try to access
 
     There has been an error processing your request
     Exception printing is disabled by default for security reasons.
-      Error log record number: <number>
+      Error log record number: <error number>
 
 #### View error details locally
 To view error details locally, open the indicated file name in the `<Magento root dir>/var/report` directory. 
@@ -253,7 +253,7 @@ To view error details locally, open the indicated file name in the `<Magento roo
 To view the error in your Cloud integration environment, enter the following commands:
 
     magento-cloud environment:ssh
-    vim /app/var/report/<file name>
+    vim /app/var/report/<error number>
 
 #### Resolve the error
 If the error includes the following, run the `bin/magento setup:upgrade` command to resolve it:
@@ -279,6 +279,6 @@ To resolve the error:
         git push origin <branch name>
 
 #### Related topic
-*	[Install components]({{page.baseurl}}cloud/howtos/install-components.html)
-*	[Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
-*	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
+*   [Install components]({{page.baseurl}}cloud/howtos/install-components.html)
+*   [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
+*   [Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
