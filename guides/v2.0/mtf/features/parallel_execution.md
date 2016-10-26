@@ -21,7 +21,7 @@ Parallel execution is applicable for [test suites] only. It decreases the time o
 A general mechanism is:
 
 1. The FTF creates the list of all test cases in a test suite.
-2. The FTF creates the required quantity of sessions corresponding to the quantity of threads defined in `<magento2>/dev/tests/functional/phpunit.xml`.
+2. The FTF creates the required quantity of sessions corresponding to the quantity of threads defined in `<magento2_root_dir>/dev/tests/functional/phpunit.xml`.
 3. The FTF distributes test cases between sessions. When a sessions is free, a new test case from the queue runs.
 
 Comparatively to the common testing flow
@@ -38,7 +38,7 @@ or run a test suite using parallel execution flow with multiple Magento instance
 
 ## Set up parallel execution
 
-To set up a parallel execution flow, add Magento instances to `<magento2>/dev/tests/functional/phpunit.xml` in the following format:
+To set up a parallel execution flow, add Magento instances to `<magento2_root_dir>/dev/tests/functional/phpunit.xml` in the following format:
 
 {%highlight xml%}
 
@@ -115,10 +115,10 @@ To run parallel execution flow, you must configure and run a test suite and corr
 Run a test suite:
 
 {% highlight bash %}
-cd phpunit <magento2>/dev/tests/functional
+cd phpunit <magento2_root_dir>/dev/tests/functional
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
 {% endhighlight %}
 
 <!-- LINK DEFINITIONS -->
 
-[test suits]: {{page.baseurl}}mtf/features/test_suite.html
+[test suites]: {{page.baseurl}}mtf/features/test_suite.html

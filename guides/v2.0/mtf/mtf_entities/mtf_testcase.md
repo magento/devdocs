@@ -140,7 +140,7 @@ All data required for the test are stored in variations of a data set. A `__prep
 
 __Step 1.__ Create a [data set][]
 
-__Step 2.__ Create a PHP class in the `<magento2>/dev/tests/functional/tests/app/Magento/<module>/TestCase` directory
+__Step 2.__ Create a PHP class in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/<module>/TestCase` directory
 
 __Step 3.__ Give it a name using the following format:
 
