@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: full-width
 group: system-requirements
 subgroup: Magento system requirements
 title: Magento system requirements

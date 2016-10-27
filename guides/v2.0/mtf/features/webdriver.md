@@ -33,11 +33,11 @@ Use provided in the FTF web drivers as examples.
 
 To set up the Facebook web driver, use the following steps:
 
-1. In `<magento2>/dev/tests/functional/etc/di.xml`, add the `<preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\Facebook\Driver" />` element.
-2. In `<magento2>/dev/tests/functional/composer.json`, move the `"facebook/webdriver": "dev-master"` entry from the `"suggest"` list to the `"require"` list.
+1. In `<magento2_root_dir>/dev/tests/functional/etc/di.xml`, add the `<preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\Facebook\Driver" />` element.
+2. In `<magento2_root_dir>/dev/tests/functional/composer.json`, move the `"facebook/webdriver": "dev-master"` entry from the `"suggest"` list to the `"require"` list.
 3. Run in your terminal:
 
-        cd <magento2>/dev/tests/functional
+        cd <magento2_root_dir>/dev/tests/functional
         composer update
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -48,15 +48,15 @@ To set up the Facebook web driver, use the following steps:
 
 To add a custom web driver, you must implement the [`DriverInterface.php`] interface.
 
-1. Create the `<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Driver/<Your_driver>` directory.
+1. Create the `<magento2_root_dir>/dev/tests/functional/lib/Magento/Mtf/Client/Driver/<Your_driver>` directory.
 2. In the directory, create the `Driver.php` class which implements [`DriverInterface.php`].
 
 To setup the custom web driver, follow:
 
-1. In `<magento2>/dev/tests/functional/etc/di.xml`, add the `<preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\<Your_driver>\Driver" />` element.
-2. In `<magento2>/dev/tests/functional/composer.json`, add corresponding entry to the `"require"` list (if related module is available on [Packagist]). And run in your terminal:
+1. In `<magento2_root_dir>/dev/tests/functional/etc/di.xml`, add the `<preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\<Your_driver>\Driver" />` element.
+2. In `<magento2_root_dir>/dev/tests/functional/composer.json`, add corresponding entry to the `"require"` list (if related module is available on [Packagist]). And run in your terminal:
 
-        cd <magento2>/dev/tests/functional
+        cd <magento2_root_dir>/dev/tests/functional
         composer update
 
 <div class="bs-callout bs-callout-info" id="info">

@@ -72,7 +72,7 @@ Each handler must implement a handler interface.
 
 You should mention in a fixture the `handler_interface` attribute with a reference to the PHP class: `Magento\[module_name]\Test\Handler\[object_name]\[object_name]Interface` (example for the Widget: `Magento\Widget\Test\Handler\Widget\WidgetInterface`).
 
-Example of `WidgetInterface.php` (should be placed in `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`):
+Example of `WidgetInterface.php` (should be placed in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`):
 
 {% highlight php %}
 
@@ -100,7 +100,7 @@ interface WidgetInterface extends HandlerInterface
 
 To use the handler class, create <a href="#mtf_handler_interface">an interface</a>, declare a fallback in the <a href="#mtf_handler_config"><code>config.xml</code></a>, and declare interface/class relationships in the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, you can call the `persist()` method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.
 
-The `persist()` method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path `<magento2>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php`.
+The `persist()` method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php`.
 
 {% highlight php %}
 
@@ -126,13 +126,13 @@ public function persist()
 
 {% endhighlight %}
 
-Create the handler in the same directory where the interface is stored: `<magento2>/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php`
+Create the handler in the same directory where the interface is stored: `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php`
 
 ### `di.xml` {#mtf_handler_di}
 
-The `di.xml` file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in `<magento2>/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
+The `di.xml` file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
 
-See an example for the Widget cURL handler (`<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
+See an example for the Widget cURL handler (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
 
 {%highlight xml%}
 
@@ -150,7 +150,7 @@ See the directory structure mentioned for the case with the Widget cURL handler:
 
 Let's create a cURL handler that creates a new widget.
 
-* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
+* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
 * In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
 {% highlight php %}
@@ -313,7 +313,7 @@ $curl = new FrontendDecorator(new CurlTransport(), $this->customer);
 
 Let's create a UI handler that creates a new widget.
 
-* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
+* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
 * In the same directory, create <a href="#mtf_handler_interface">interface</a> for the UI handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
 {% highlight php %}
@@ -454,7 +454,7 @@ class Curl extends AbstractCurl
 
 Let's create a WebAPI handler that creates a new tax rule.
 
-* Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `<magento2>/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
+* Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
 * In the same directory, create <a href="#mtf_handler_interface">interface</a> for the WebAPI handler, and call the file `TaxRuleInterface.php`. Our new interface extends `HandlerInterface` class.
 
 {% highlight php %}

@@ -60,38 +60,16 @@ To migrate static files:
 ### Migrate the database {#cloud-live-migrate-db}
 To migrate the database:
 
-1.	SSH to the master branch:
+1.	SSH to the master branch of your integration environment:
 
 		magento-cloud environment:ssh
-3.	Find the database login information:
+2.	Find the database login information:
 
 		php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+3.	Create a database dump:
 
-	Sample output follows:
-
-		Array
-		(
-    		[0] => stdClass Object
-        	(
-            	[username] => user
-            	[password] =>
-            	[ip] => 192.0.2.60
-            	[host] => database.internal
-            	[query] => stdClass Object
-                	(
-               	     	[is_master] => 1
-               		)
-
-            	[path] => main
-            	[scheme] => mysql
-            	[port] => 3306
-        	)
-
-		)
-7.	Create a database dump:
-
-		mysqldump -h database.internal --single-transaction main | gzip - > /tmp/database.sql.gz
-8.	Transfer the database dump to staging or production:
+		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main | gzip - > /tmp/database.sql.gz
+4.	Transfer the database dump to staging or production:
 
 	*	Staging: `rsync -azvP /tmp/database.sql.gz <project ID>_stg@<project ID>.ent.magento.cloud:/tmp`
 	*	Production: `rsync -azvP /tmp/database.sql.gz <project ID>@<project ID>.ent.magento.cloud:/tmp`
