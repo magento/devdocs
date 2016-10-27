@@ -24,13 +24,14 @@ The following properties are used for linking observable properties and methods 
 - `links` 
 - `listens`
 
-These properties are processed by the `initLinks()` method of the [`uiElement` class]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html). To implement component's communication the method uses `links.js`.
+These properties are processed by the `initLinks()` method of the [`uiElement` class]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) which is called at the moment of a component's instantion. To implement component's communication the method uses `links.js`.
+
 
 ## List of linking properties 
 
 ### `exports`
 
-- `exports`: used to notify some external entity about property changing. `exports`'s value is an object, composed of the following:
+The `exports` property is used to notify some external entity about property changing. `exports`'s value is an object, composed of the following:
 
   - `key`: name of the internal property or method which is tracked for changes.
   - `value`: name of the property or method which receives the notification. Can use [string templates](#string_templ).
@@ -61,8 +62,6 @@ Example of setting `exports` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-In this example, `visible` is the `key`, `sample_config.sample_provider.visibility` is the `value`.
-<p class="q"> Can we give more details about sample_config.sample_provider.visibility. Ex.: this is the `visibility` property of the `sample_config.sample_provider`? </p>
 
 ### `imports` 
 - `imports`: used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
@@ -123,7 +122,7 @@ Example of using `links` in a component's configuration `.xml` file:
 
 
 ### `listens`
-- `listens`: used to track the changes of a component's proporty.
+- `listens`: used to track the changes of a component's property.
   - `key` - name of the internal property which listens to the changes.
   - `value` - name of the property or method which is tracked for changes. Can use [string templates](#string_templ).
 
@@ -149,35 +148,37 @@ Example of using `listens` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-## Syntax of string templates {#string_templ}
+'${ $.provider }:data.overload': 'overload reset validate'
+'${ $.provider }:data.overload': 'overload',
 
-During component’s initialization a value in the `${$.someName}` format is evaluated as a string template using ES6 templates (or underscore template, in case when ES6 templates are not supported).
+## Template strings usage {#string_templ}
 
-<p class="q">String template or template string? or template literals? https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals</p>
+During component’s initialization a value the `'${...}'` format is processed as a template string using [ES6 templates](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals) or underscore template, in case when ES6 templates are not supported by user's browser.
 
-<p class="q">How do the following two paragraphs relate to the first one. Do they explain it?</p>
-If we put a variable name in `${ }`, it is processed into string representation of the variable’s value.
+So if we put a variable name in `'${ }'`, it is processed into a string representation of the variable’s value.
 
-<p class="q">Is it something generally known or Magento-specific?</p>
+When working with UI components, we often need to use the string representation of a certain property of the UI component. To address a property of the UI component in the scope of this component, the `$.someProperty`syntax is used.
 
-A UI component which own this template property is also marked as ‘$’ in the template, which probably makes it confusing.
+As a result, if the component's property is the variable for the template string, we get notation similar to the following:
 
-I mean if we have component with configuration 
-{
-defaults: {
-                someName: ‘Shrek’,
-                theExactSameName: ‘${$.someName}’
-}
-}
-The internal `$` refers to the component itself, giving us that `$.someName = ‘Shrek’` when processed using ES6 templates.
+    '${ $.provider }' // we'll have the string represenation of the provider property of the current UI component
 
-In this example, initialized component will have two properties: `someName = ‘Shrek’` and
-`theExactSameName = ‘Shrek’`.
+We can also build complex templates strings using this syntax, following are the illustrations:
 
-We can also build complex templates by 
--	concatenating them: ‘${$.someName}${$.someName}123’ // give us ‘ShrekShrek123’
--	using variables from another component using ‘:’ to separate variable name, as ‘${ $.fullNameOfOtherComponent }:someName’ //give us ‘Fiona’
+- Using variables from the other component:
 
-<p class="q">Can we have an example from Magento/UI comps world? when do we need this?</p>
+    '${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
+ 
+- Calling several functions in one string: 
 
-<p class="q">What else we might need to tell here??</p>
+    '${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
+
+- Using inline conditions:
+
+    '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate' // 
+
+    
+
+ 
+
+
