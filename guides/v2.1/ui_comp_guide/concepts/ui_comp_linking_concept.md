@@ -153,6 +153,8 @@ Example of using `listens` in a component's configuration `.xml` file:
 
 During component’s initialization a value in the `${$.someName}` format is evaluated as a string template using ES6 templates (or underscore template, in case when ES6 templates are not supported).
 
+<p class="q">String template or template string? or template literals? https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals</p>
+
 <p class="q">How do the following two paragraphs relate to the first one. Do they explain it?</p>
 If we put a variable name in `${ }`, it is processed into string representation of the variable’s value.
 
@@ -177,3 +179,5 @@ We can also build complex templates by
 -	using variables from another component using ‘:’ to separate variable name, as ‘${ $.fullNameOfOtherComponent }:someName’ //give us ‘Fiona’
 
 <p class="q">Can we have an example from Magento/UI comps world? when do we need this?</p>
+
+<p class="q">What else we might need to tell here??</p>
