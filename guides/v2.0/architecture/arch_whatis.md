@@ -11,17 +11,19 @@ github_link: architecture/arch_whatis.md
 redirect_from: /guides/v1.0/architecture/arch_whatis.html
 ---
 
-#### Contents
-{: .no_toc}
+## What is Magento? {#m2arch-whatis-overview}
+{:.no_toc}
 
 * TOC
 {:toc}
 
-## What is Magento? {#m2arch-whatis-overview}
+## Overview
 
 Magento is a highly customizable e-commerce platform and content management system that you can use to build online storefronts or web sites for selling merchandise. Magento provides common e-commerce features, such as shopping carts and inventory management, and encourages extensive customization to meet your organization’s specific goals.
 
-The essential principles of Magento’s powerful and highly scalable product architecture include:
+## Magento architecture principles
+
+The essential principles of Magento’s powerful and highly scalable product architecture are the following.
 
 ### OOP architecture and programming principles {#m2arch-oop-architecture}
 Object-Oriented Programming (OOP) design allows for maximum flexibility and extensibility of software components, permitting you to design and implement highly customized web sites. The advantages of OOP principles include incorporation of industry-standard programming design patterns and the strict separation of business logic from presentation. Object inheritance is important, too: in keeping with classic object-oriented programming methodology, the Magento platform provides core components with base functionality that can be inherited by custom components for a specific web site or application.
