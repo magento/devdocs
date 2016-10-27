@@ -9,24 +9,21 @@ version: 2.0
 github_link: architecture/security_intro.md
 ---
 
-#### Contents
-{: .no_toc}
+## {{page.title}}
+{:.no_toc}
 
 * TOC
 {:toc}
 
-## Security overview {#security_intro}
-Magento 2.0 includes the following security enhancements.
-
-### Enhanced password management
+## Enhanced password management
 
 Magento has strengthened the hashing algorithms (SHA-256) used in password management.
 
-### Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default
+## Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default
 
 The Magento Framework has adopted conventions that regulate the escaping of data in output. These conventions include the ability to escape  output for HTML pages (HTML, JSON, and JavaScript) and email. Where possible, escaping is transparent to client code. See <a href="{{page.baseurl}}frontend-dev-guide/templates/template-security.html">Security measures against XSS attacks</a> in the Frontend Developer Guide.
 
-### More flexible file system ownership and permissions
+## More flexible file system ownership and permissions
 
 Starting in version 2.0.6, Magento no longer explicitly sets file system permissions. Instead, we recommend that certain files and directories be writable in a development environment and read-only in a production environment.
 
@@ -36,11 +33,11 @@ For an overview, see [Overview of ownership and permissions]({{page.baseurl}}ins
 
 For details about ownership and permissions in development and production, see [Magento ownership and permissions in development and production]({{page.baseurl}}).
 
-### Improved prevention of clickjacking exploits
+## Improved prevention of clickjacking exploits
 
 Magento safeguards your store from clickjacking attacks by using an X-Frame-Options HTTP request header. For more information, see <a href="{{page.baseurl}}config-guide/secy/secy-xframe.html"> X-Frame-Options header</a>.
 
-### Use of non-default Magento Admin URL
+## Use of non-default Magento Admin URL
 
 A simple Magento Admin URL (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI is provided so that you can  see the password if you forget it. You can also use the CLI change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See <a href="{{page.baseurl}}install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a> in Configuration Guide for more information.
 
