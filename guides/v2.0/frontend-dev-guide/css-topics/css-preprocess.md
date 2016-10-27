@@ -137,6 +137,17 @@ This is required in the following cases:
 
 To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
 
+<h2 id="fedg_css-import">Usage of the @import directive</h2>
+According to LESS documentation it is possible to define path to the imported resource without file extension (i.e. `@import 'source/lib/_lib';`), but in the process of resolving file path Magento adds .less extension to the file to find the source using fallback mechanism, and replaces original path notation with actually found file (with extension).
+`@import 'source/lib/_lib';` will be replaced with `@import 'source/lib/_lib.less';`
+
+It is recommended to define full path with .less extension in order to avoid differencies between original source and published file (in [client-side compilation mode]() or when using [grunt commands]()), so symlinks will be published instead of modified copy.
+
+If you need to import remote CSS file in you .less source please use `url()` notation so Magento will skip this @import directive while resolving pathes to the local resources. For example to import google font use
+<pre>
+@import url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css');
+</pre>
+
 <h2 id="fedg_css-magento-import">The @magento_import directive</h2>
 
 <p><code>@magento_import</code> is a Magento-specific LESS directive that allows including multiple files by a name pattern. It is used to include files with the same name from the different locations, for example, different modules.
