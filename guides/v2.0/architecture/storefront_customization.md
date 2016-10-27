@@ -9,15 +9,17 @@ version: 2.0
 github_link: architecture/storefront_customization.md
 ---
 
-#### Contents
-{: .no_toc}
+## {{page.menu_title}}
+{:.no_toc}
 
 * TOC
 {:toc}
 
-## Storefront customization strategies
+## Overview
 
 We can generalize about the range of storefront customizations that the Magento supports. This range spans the simplest customizations, which involve only small additions to the default Magento storefront settings, to a complete replacement of Magento-provided HTML and CSS.
+
+## Storefront customization levels
 
 These four levels of potential storefront customization are listed in order to increase complexity.
 
