@@ -13,7 +13,11 @@ github_link: cloud/howtos/upgrade-magento.md
 ---
 
 ## How upgrade the Magento software {#cloud-howto-upgrade}
-This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from version 2.0.9 to a later version. If you have a version earlier than 2.0.9, [contact Support]({{ page.baseurl }}cloud/get-help.html).
+This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
+
+<div class="bs-callout bs-callout-warning">
+    <p>Always upgrade your local system first, then your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before upgrading to either <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
+</div>
 
 ## Get started
 
@@ -24,9 +28,9 @@ This topic discusses how to upgrade the Magento Enterprise Cloud Edition softwar
 {% endcollapsible %}
 
 ## Upgrade to the latest version
-We recommend you start by backing up both your local installation and the database in your integration environment on the remote Cloud server.
+We recommend you start by backing up all of the databases you're about to change (local, remote integration, and staging or production).
 
-### Step 1: Back up your local system
+### Step 1: Back up your local system (database, code, and media)
 
 {% collapsible To back up your local system: %}
 
@@ -40,9 +44,9 @@ If the upgrade fails, you can roll back your backup using the [`magento setup:ro
 
 {% endcollapsible %}
 
-### Step 2: Back up your remote database
+### Step 2: Back up your remote integration database
 
-{% collapsible To back up your remote database: %}
+{% collapsible To back up your remote integration database: %}
 
 Enter the following command to make a local backup of the remote database:
 
@@ -50,7 +54,26 @@ Enter the following command to make a local backup of the remote database:
 
 {% endcollapsible %} 
 
-### Step 3: Verify other changes
+### Step 3: Back up your staging and production databases
+
+{% collapsible To back up your staging and production databases: %}
+
+1.  Open an SSH connection to your staging or production server:
+
+    *   Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
+    *   Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+3.  Find the database login information:
+
+        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+
+7.  Create a database dump:
+
+        mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main | gzip - > /tmp/database.sql.gz
+8.  Enter `exit` to terminate the SSH connection.
+
+{% endcollapsible %} 
+
+### Step 4: Verify other changes
 
 {% collapsible To verify other changes: %}
 
@@ -64,7 +87,7 @@ Verify other changes you're going to submit to source control before you start t
 
 {% endcollapsible %} 
 
-### Step 4: Complete the upgrade
+### Step 5: Complete the upgrade
 
 {% collapsible To complete the upgrade: %}
 
@@ -95,7 +118,7 @@ Verify other changes you're going to submit to source control before you start t
 
 {% endcollapsible %}
 
-## Upgrade from version 2.0.4
+## Upgrade from version 2.0.4 {#cloud-upgrade-204}
 This section discusses steps to upgrade *only* if your current Magento Enterprise Cloud Edition version is 2.0.4.
 
 {% collapsible To upgrade from version 2.0.4 %}
@@ -212,6 +235,8 @@ php.ini
 `.magento/services.yaml` sets up a MySQL instance, plus Redis and Solr. 
 
 ``composer.json`` fetches the Magento Enterprise Edition and some configuration scripts to prepare your application.
+
+Verify your upgrade as discussed in the next section.
 
 {% endcollapsible %}
 
