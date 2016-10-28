@@ -1,9 +1,9 @@
 ---
 layout: default
 group: extension-dev-guide
-title: Serializer
+title: Serialize Library
 subgroup: Framework
-menu_title: Serializer
+menu_title: Serialize Library
 menu_order: 1000
 version: 2.2
 github_link: extension-dev-guide/framework/serializer.md
@@ -17,15 +17,15 @@ github_link: extension-dev-guide/framework/serializer.md
 
 ## Overview
 
-Magento's Serialize library class provides the `Magento\Framework\Serialize\SerializerInterface` interface class and implementations to support different kinds of data.
+Magento's Serialize library provides the `Magento\Framework\Serialize\SerializerInterface` and the Json and Serialize implementations for serializing data.
 
-This library provides a secure way of serializing and unserializing strings, integers, floats, boolean, and array data.
+This library provides a secure way of serializing and unserializing strings, integers, floats, booleans, and arrays.
 
 ## Serialization
 
-The main purpose of data serialization is to convert an array or object into a string using `serialize()` to store in a database, a cache, or pass onto another architectural layer.
+The main purpose of data serialization is to convert data into a string using `serialize()` to store in a database, a cache, or pass onto another architectural layer.
 
-The other half of this process uses the `unserialize()` function to reverse the process and convert a string back into an array or object.
+The other half of this process uses the `unserialize()` function to reverse the process and convert a serialized string back into string, integer, float, boolean, or array data.
 
 <div class class="bs-callout bs-callout-warning" markdown="1">
 
@@ -35,18 +35,20 @@ For security reasons, `SerializerInterface` implementations, such as the Json an
 
 ## Implementations
 
-### Json
+### Json (default)
 
-The `Magento\Framework\Serialize\Serializer\Json` class uses the [JSON](http://www.json.org/){:target="_blank"} format to serialize/unserialize string, integer, float, boolean, or array data.
-This is the default implementation of `SerializerInterface`.
+The `Magento\Framework\Serialize\Serializer\Json` class uses PHP's native `json_encode()` and `json_decode()` functions to serialize and unserialize data using the [JSON](http://www.json.org/){:target="_blank"} format.
+This class does not unserialize objects.
 
 ### Serialize
 
-The `Magento\Framework\Serialize\Serializer\Serialize` class uses PHP's native `serialize()` and `unserialize()` methods to provide better performance on big arrays at the expense of security.
+The `Magento\Framework\Serialize\Serializer\Serialize` class uses PHP's native `serialize()` and `unserialize()` functions, so it is less secure than the Json implementation but provides better performance on large arrays.
+This class does not unserialize objects in PHP 7.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 
-Magento discourages using the Serialize implementation in PHP 5.x environments because it can lead to security vulnerabilities.
+Magento discourages using the Serialize implementation directly because it can lead to security vulnerabilities.
+Always use the `SerializerInterface` for serializing and unserializing.
 
 </div>
 
@@ -82,7 +84,7 @@ The example below shows how to use a serializer's `serialize()` and `unserialize
 /**
  * @var string
  */ 
-protected $cacheId = 'mySerializedData';
+private $cacheId = 'mySerializedData';
 
 ...
 
