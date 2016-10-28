@@ -26,6 +26,7 @@ The following properties are used for linking observable properties and methods 
 
 These properties are processed by the `initLinks()` method of the [`uiElement` class]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) which is called at the moment of a component's instantion. To implement component's communication the method uses `links.js`.
 
+Linking properties are set in [UI components configuration files]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html): XML, JS or PHP. 
 
 ## List of linking properties 
 
@@ -48,7 +49,6 @@ Example of setting `exports` in a component's `.js` file:
 
 Here `visible` is the `key`, `${ $.provider }.visibility` is the `value`.
 
-<p class="q"> Can we give more details about `${ $.provider }.visibility` It is the visibility property of...? </p>
 
 Example of setting `exports` in a component's configuration `.xml` file:
 
@@ -57,14 +57,15 @@ Example of setting `exports` in a component's configuration `.xml` file:
        <item name="config" xsi:type="array">
                     <item name="exports" xsi:type="array">
                         <item name="visible" xsi:type="string">sample_config.sample_provider.visibility</item>
-                    </item>
+                	</item>
        </item>
 </argument>
 {% endhighlight xml%}
 
+For example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{site.mage2100url}}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
 
 ### `imports` 
-- `imports`: used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
+The `imports` property is used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
 
   - `key`: name of the internal property or method which receives the notifications. 
   - `value`: name of the property or method which is tracked for changes. Can use [string templates](#string_templ).
@@ -91,12 +92,14 @@ Example of using `imports` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
+For example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{site.mage2100url}}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
+
 ### `links`
 
-- `links`: used for mutual tracking property changes. `links`'s value is an object, composed of the following:
+The `links` property is used for mutual tracking property changes. `links`'s value is an object, composed of the following:
 
   - `key`: name of the internal property or method which sends and receives the notifications. 
-  - `value` - name of the property or method which sends and receives the notifications. Can use [string templates](#string_templ).
+  - `value`: name of the property or method which sends and receives the notifications. Can use [string templates](#string_templ).
 
 Example of using `links` in a component's `.js` file:
 
@@ -120,11 +123,12 @@ Example of using `links` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
+For example of `links` usage in Magento code see [`text.js`, line 19]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19)
 
 ### `listens`
-- `listens`: used to track the changes of a component's property.
-  - `key` - name of the internal property which listens to the changes.
-  - `value` - name of the property or method which is tracked for changes. Can use [string templates](#string_templ).
+The `listens` property is used to track the changes of a component's property. `listens`'s value is an object, composed of the following:
+  - `key`: name of the internal property which listens to the changes.
+  - `value`: name of the property or method which is tracked for changes. Can use [string templates](#string_templ).
 
 Example of using `listens` in a component's `.js` file :
 
@@ -148,12 +152,11 @@ Example of using `listens` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-'${ $.provider }:data.overload': 'overload reset validate'
-'${ $.provider }:data.overload': 'overload',
+For example of `listens` usage in Magento code see [`new_category_form.xml`, line 92]({{site.mage2100url}}app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92)
 
 ## Template strings usage {#string_templ}
 
-During component’s initialization a value the `'${...}'` format is processed as a template string using [ES6 templates](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals) or underscore template, in case when ES6 templates are not supported by user's browser.
+The `value` options of linking properties can contain template strings in the `'${...}'` format. During component’s initialization values in this format are processed as template strings using [ES6 templates](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals) or underscore templates, in case when ES6 templates are not supported by user's browser.
 
 So if we put a variable name in `'${ }'`, it is processed into a string representation of the variable’s value.
 
@@ -161,21 +164,26 @@ When working with UI components, we often need to use the string representation 
 
 As a result, if the component's property is the variable for the template string, we get notation similar to the following:
 
-    '${ $.provider }' // we'll have the string represenation of the provider property of the current UI component
+    '${ $.provider }' 
 
 We can also build complex templates strings using this syntax, following are the illustrations:
 
 - Using variables from the other component:
 
+    ``` 
     '${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
- 
+    ```
 - Calling several functions in one string: 
 
+    ```
     '${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
+    ```
 
 - Using inline conditions:
 
-    '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate' // 
+    ```
+    '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
+    ``` 
 
     
 
