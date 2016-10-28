@@ -109,12 +109,19 @@ In Magento 2.2 the behavior of repositories regarding the Filters added to Searc
 
 For details about repositories see the [Searching with repositories]({{page.baseurl}}extension-dev-guide/searching-with-repositories.html) topic.
 
+### ObjectManager changes
+
+* New [Serialize]({{page.baseurl}}extension-dev-guide/framework/serializer.html) library created for secure serilization/unserialization of data.
+* Removed Igbinary support for compiled definitions because Igbinary has no option for secure unserialization in PHP 7.
+* Removed classes `\Magento\Framework\ObjectManager\Definition\Compiled\Binary` and `\Magento\Framework\ObjectManager\Definition\Compiled\Serialized`.
+* `\Magento\Framework\ObjectManager\Definition\Compiled` is now a concrete class that uses the new Serialize library.
+* The `bin/magento setup:config:set` command no longer has the `--definition-format` option since there is now only one serialization implementation.
+
 ### Changes in UI
 
 ### Database Schema changes
 
 #### Staging (EE Only)
-
 
 ### Persistence management
 
