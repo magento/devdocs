@@ -10,27 +10,29 @@ version: 2.0
 github_link: architecture/frontend_custom_strategies.md
 ---
 
-#### Contents
-{: .no_toc}
+## {{page.menu_title}}
+{:.no_toc}
 
 * TOC
 {:toc}
 
-## Ease of frontend customization {#m2arch-whatis-overview}
+## Overview {#m2arch-whatis-overview}
 
-The Magento frontend is designed to optimize storefront customization. Merchants are encouraged to use Magento components to customize the look-and-feel of their storefronts.
+The Magento frontend is designed to optimize storefront customization, with highly extensible <i>themes</i> being the central customization mechanism.
 
-Highly extensible <i>themes</i> are the central mechanism for Magento front-end customization. Merchants are encouraged to extend and transform the appearance of their storefronts using themes.
+Merchants are encouraged to use Magento components and themes to extend and transform the appearance of their storefronts.
+
+## Storefront customization tools
 
 Magento provides several tools to help you significantly jumpstart the storefront customization process:
 
 * Magento Blank Theme
 
-* <a href="{{page.baseurl}}ui-components/ui-component.html" target="_blank">Magento UI Library Components</a>
+* <a href="{{page.baseurl}}ui-components/ui-component.html">Magento UI Library Components</a>
 
-* <a href="{{page.baseurl}}pattern-library/bk-pattern.html" target="_blank">Magento Admin Pattern Library</a>
+* <a href="{{page.baseurl}}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a>
 
-See the <a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html" target="_blank">Frontend Developer Guide</a> for information on creating your own themes.
+See the <a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a> for information on creating your themes.
 
 ### Magento Blank theme
 
@@ -44,11 +46,11 @@ Using Magento standard coding and styling tools can help:
 
 This component library contains standard reusable components for form features, such as fields and buttons, and navigation elements. The Magento UI library is a set of generic web components and Magento-specific patterns, which simplifies the process of Magento theme creation and customization.
 
-See <a href="{{page.baseurl}}ui-components/ui-component.html" target="_blank">Magento UI Library Components</a> for details about this library.
+See <a href="{{page.baseurl}}ui-components/ui-component.html">Magento UI Library Components</a> for details about this library.
 
 ### Magento Admin pattern library
 
-A <i>pattern library</i> is a collection of user interface (UI) design patterns that can be re-used in locations throughout your product installation. The <a href="{{page.baseurl}}pattern-library/bk-pattern.html" target="_blank">Magento Admin Pattern Library</a> defines examples of components that administrators working with the storefront can use.
+A <i>pattern library</i> is a collection of user interface (UI) design patterns that can be re-used in locations throughout your product installation. The <a href="{{page.baseurl}}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a> defines examples of components that administrators working with the storefront can use.
 
 Form elements included in the Magento Admin pattern library include:
 
@@ -56,20 +58,20 @@ Form elements included in the Magento Admin pattern library include:
 * button bar
 * container
 * tabs
-* sign in form
+* sign-in form
 
 Users of the default Magento storefront encounter examples of these form elements throughout the product. These patterns provide a valuable language of software components (and indirectly, user experiences) for extension developers and administrators.
 
 The Magento Admin Pattern library is built on the LESS preprocessor and implemented as a module. You can download a free, current version of this module from [Magento Marketplace](https://marketplace.magento.com/){:target="_blank"}.
 
-See <a href="{{page.baseurl}}pattern-library/bk-pattern.html" target="_blank">Magento Admin Pattern Library</a> for more information on using this library.
+See <a href="{{page.baseurl}}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a> for more information on using this library.
 
-### Related topics {#m2arch-related}
+## Related topics {#m2arch-related}
 
-<a href="{{page.baseurl}}architecture/extensibility.html" target="_blank">Extensibility and modularity</a>
+<a href="{{page.baseurl}}architecture/extensibility.html">Extensibility and modularity</a>
 
-<a href="{{page.baseurl}}architecture/global_extensibility_features.html" target="_blank">Global extensibility features</a>
+<a href="{{page.baseurl}}architecture/global_extensibility_features.html">Global extensibility features</a>
 
-<a href="{{page.baseurl}}pattern-library/bk-pattern.html" target="_blank">Magento Admin Pattern Library</a>
+<a href="{{page.baseurl}}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a>
 
-<a href="{{page.baseurl}}ui-components/ui-component.html" target="_blank">Magento UI Library Components</a>
+<a href="{{page.baseurl}}ui-components/ui-component.html">Magento UI Library Components</a>
