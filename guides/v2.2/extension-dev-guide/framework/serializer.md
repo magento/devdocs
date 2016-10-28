@@ -19,13 +19,19 @@ github_link: extension-dev-guide/framework/serializer.md
 
 Magento's Serialize library class provides the `Magento\Framework\Serialize\SerializerInterface` interface class and implementations to support different kinds of data.
 
-This library provides secure alternatives to PHP's native [`serialize()`](http://php.net/manual/en/function.serialize.php){:target="_blank"} and [`unserialize()`](http://php.net/manual/en/function.unserialize.php){:target="_blank"} functions.
+This library provides a secure way of serializing and unserializing strings, integers, floats, boolean, and array data.
 
 ## Serialization
 
 The main purpose of data serialization is to convert an array or object into a string using `serialize()` to store in a database, a cache, or pass onto another architectural layer.
 
 The other half of this process uses the `unserialize()` function to reverse the process and convert a string back into an array or object.
+
+<div class class="bs-callout bs-callout-warning" markdown="1">
+
+For security reasons, `SerializerInterface` implementations, such as the Json and Serialize classes, should not serialize and unserialize objects.
+
+</div>
 
 ## Implementations
 
@@ -38,18 +44,16 @@ This is the default implementation of `SerializerInterface`.
 
 The `Magento\Framework\Serialize\Serializer\Serialize` class uses PHP's native `serialize()` and `unserialize()` methods to provide better performance on big arrays at the expense of security.
 
-For security reasons, the implementation of this class does not unserialize objects in PHP 7.
-
 <div class="bs-callout bs-callout-warning" markdown="1">
 
-Magento discourages using the Serialize implementation because it can lead to security vulnerabilities.
+Magento discourages using the Serialize implementation in PHP 5.x environments because it can lead to security vulnerabilities.
 
 </div>
 
 
 ## Usage
 
-Use [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) to inject a concrete implementation of the `SerializerInterface` by declaring it as a constructor dependency.
+Declare `SerializerInterface` as a [constructor dependency]({{page.baseurl}}extension-dev-guide/depend-inj.html) to get an instance of a serializer class.
 
 {% highlight php startinline %}
 use Magento\Framework\Serialize\SerializerInterface;
@@ -69,6 +73,7 @@ public function __construct(SerializerInterface $serializer) {
 
 {% endhighlight %}
 
+\\
 The example below shows how to use a serializer's `serialize()` and `unserialize()` functions to store and retrieve array data from a cache:
 {% highlight php startinline %}
 
@@ -77,7 +82,7 @@ The example below shows how to use a serializer's `serialize()` and `unserialize
 /**
  * @var string
  */ 
-protected $pathToCacheFile = 'mySerializedData';
+protected $cacheId = 'mySerializedData';
 
 ...
 
@@ -88,7 +93,7 @@ protected $pathToCacheFile = 'mySerializedData';
  */
 public function saveDataToCache($data)
 {
-  return $this->getCache()->save($this->serializer->serialize($data), $this->pathToCacheFile);
+  return $this->getCache()->save($this->serializer->serialize($data), $this->cacheId);
 }
 
 ...
@@ -99,7 +104,7 @@ public function saveDataToCache($data)
  */
 public function loadDataFromCache()
 {
-  $data = $this->getCache()->load($this->pathToCacheFile);
+  $data = $this->getCache()->load($this->cacheId);
   if (false !== $data) {
     $data = $this->serializer->unserialize($data);
   }
