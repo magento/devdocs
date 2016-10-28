@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Customize Checkout</title>
+	<title>Customize checkout</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -163,7 +163,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Customize Checkout</h1>
+		<h1 class="page-heading">Customize checkout</h1>
 
         
 
@@ -681,7 +681,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_overview.html">Customize checkout</a></li>
 									
 								
 
@@ -891,8 +891,10 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 14 October 2016 (PDT)</div>
-            <p>Magento checkout is implemented using the UI components. 
+            <div class="updated">Updated: 28 October 2016 (PDT)</div>
+            <h2 id="customize-checkout">Customize checkout</h2>
+<p>### Default checkout overview
+Magento checkout is implemented using the UI components. 
 Out of the box, the checkout consists of two steps:</p>
 
 <ul>
@@ -900,6 +902,11 @@ Out of the box, the checkout consists of two steps:</p>
   <li>Review and Payment Information</li>
 </ul>
 
+<p>The checkout totals and the corresponding side-bar are only displayed after the first step is completed.</p>
+
+<p>The only exception is checkout of virtual and/or downloadable products: if there are only these  types of products in the shopping cart, checkout is automatically transformed to one-step procedure, because shipping information is not required.</p>
+
+<h3 id="list-of-described-customizations">List of described customizations</h3>
 <p>You can customize the default checkout in many ways. Here the following customizations are described:</p>
 
 <ul>
