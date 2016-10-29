@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Upgrade the Magento application</title>
+	<title>Patch the Magento application</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/cloud/howtos/upgrade-magento.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/howtos/patch-magento.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/howtos/upgrade-magento.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/howtos/patch-magento.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/howtos/upgrade-magento.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/howtos/patch-magento.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Upgrade the Magento application</h1>
+		<h1 class="page-heading">Patch the Magento application</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/howtos/upgrade-magento.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/howtos/patch-magento.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -911,7 +911,7 @@
 									
 
 
-											<li class="level3Child update-magento  active " data-menunode="update-magento"><a href="/guides/v2.1/cloud/howtos/upgrade-magento.html">Upgrade the Magento application</a>
+											<li class="level3Child update-magento " data-menunode="update-magento"><a href="/guides/v2.1/cloud/howtos/upgrade-magento.html">Upgrade the Magento application</a>
 
 
 									
@@ -921,7 +921,7 @@
 									
 
 
-											<li class="level3Child update-magento " data-menunode="update-magento"><a href="/guides/v2.1/cloud/howtos/patch-magento.html">Patch the Magento application</a>
+											<li class="level3Child update-magento  active " data-menunode="update-magento"><a href="/guides/v2.1/cloud/howtos/patch-magento.html">Patch the Magento application</a>
 
 
 									
@@ -1371,15 +1371,35 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 1 August 2016 (PDT)</div>
-            <h2 id="cloud-howto-upgrade">How to upgrade the Magento application</h2>
-<p>This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from any version after 2.0.4. If you’re currently using version 2.0.4, see <a href="#cloud-upgrade-204">Upgrade from version 2.0.4</a>.</p>
+            <div class="updated">Updated: 29 October 2016 (PDT)</div>
+            <h2 id="cloud-howto-patch">How to patch the Magento application</h2>
+<p>This topic discusses how to apply patches to your Magento Enterprise Cloud Edition system. There are two types of patches:</p>
+
+<ul>
+  <li>
+    <p><a href="#cloud-patch-gen">General patches</a></p>
+
+    <p>These patches are provided for all Magento Enterprise Cloud Edition customers in a GitHub repository that’s referenced in your <code>composer.json</code>. To install general patches, use <code>composer update</code>, test your system, and push the patches to the remote server.</p>
+  </li>
+  <li>
+    <p><a href="#cloud-patch-custom">Custom patches</a></p>
+
+    <p>Custom patches can be provided by Magento to address a specific issue you raised in a Support ticket. Third-party extension developers can also provide a custom patch.</p>
+
+    <p>Copy custom patches to the <code>m2-hotfixes</code> directory, then add, commit, and push them to your Cloud integration environment.</p>
+  </li>
+</ul>
 
 <div class="bs-callout bs-callout-warning">
-    <p>Always upgrade your local system first, then your <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before upgrading to either <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
+    <p>Always patch your local system first, then your <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before you patch either <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
 </div>
 
-<h2 id="get-started">Get started</h2>
+<h2 id="cloud-patch-gen">Apply general patches</h2>
+<p><em>General patches</em> are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your <code>composer.json</code>. To apply these patches, use <code>composer update</code>.</p>
+
+<p>The procedure you use is slightly different, depending on the type of environment: <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration</a>, <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">staging</a>, or <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
+
+<h3 id="get-started">Get started</h3>
 
 <div class="collapsible"><b class="collapsible-title">To get started: </b><div class="collapsible-content"><div>
 
@@ -1451,32 +1471,35 @@
 </div>
 </div></div>
 
-<h2 id="upgrade-to-the-latest-version">Upgrade to the latest version</h2>
-<p>We recommend you start by backing up all of the databases you’re about to change (local, remote integration, and staging or production).</p>
+<h3 id="patch-the-integration-environment">Patch the integration environment</h3>
 
-<h3 id="step-1-back-up-your-local-system-database-code-and-media">Step 1: Back up your local system (database, code, and media)</h3>
+<div class="collapsible"><b class="collapsible-title">To apply a general patch to an integration environment: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>On your local system, enter the following command as the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>:</p>
 
-<div class="collapsible"><b class="collapsible-title">To back up your local system: </b><div class="collapsible-content"><p>Enter the following command:</p>
-
-<pre><code>php &lt;Magento root dir&gt;/bin/magento setup:backup --code --db [--media]
+    <pre><code>&lt;Magento root dir&gt;/composer update
 </code></pre>
+  </li>
+  <li>
+    <p>Apply the patch:</p>
 
-<p>You can omit <code>[--media]</code> if you have a large number of media files and if you don’t expect the upgrade to affect them.</p>
+    <pre><code>git apply vendor/magento/magento-cloud-configuration/patches/&lt;patch file name&gt;
+</code></pre>
+  </li>
+  <li>Thoroughly test your local system to make sure the patch doesn’t have unexpected side-affects.</li>
+  <li>
+    <p>After testing the patch, push it to the remote server and deploy it:</p>
 
-<p>If the upgrade fails, you can roll back your backup using the <a href="/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll"><code>magento setup:rollback</code> command</a>.</p>
+    <pre><code>git add -A &amp;&amp; git commit -m "Apply patch"
+git push origin &lt;branch name&gt;
+</code></pre>
+  </li>
+</ol>
 </div></div>
 
-<h3 id="step-2-back-up-your-remote-integration-database">Step 2: Back up your remote integration database</h3>
+<h3 id="patch-the-staging-or-production-environment">Patch the staging or production environment</h3>
 
-<div class="collapsible"><b class="collapsible-title">To back up your remote integration database: </b><div class="collapsible-content"><p>Enter the following command to make a local backup of the remote database:</p>
-
-<pre><code>magento-cloud environment:mysql-dump
-</code></pre>
-</div></div>
-
-<h3 id="step-3-back-up-your-staging-and-production-databases">Step 3: Back up your staging and production databases</h3>
-
-<div class="collapsible"><b class="collapsible-title">To back up your staging and production databases: </b><div class="collapsible-content"><ol>
+<div class="collapsible"><b class="collapsible-title">To apply a general patch to a staging or production environment: </b><div class="collapsible-content"><ol>
   <li>
     <p>Open an SSH connection to your staging or production server:</p>
 
@@ -1486,293 +1509,113 @@
     </ul>
   </li>
   <li>
-    <p>Find the database login information:</p>
-
-    <pre><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
-</code></pre>
-  </li>
-  <li>
-    <p>Create a database dump:</p>
-
-    <pre><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main | gzip - &gt; /tmp/database.sql.gz
-</code></pre>
-  </li>
-  <li>
-    <p>Enter <code>exit</code> to terminate the SSH connection.</p>
-  </li>
-</ol>
-</div></div>
-
-<h3 id="step-4-verify-other-changes">Step 4: Verify other changes</h3>
-
-<div class="collapsible"><b class="collapsible-title">To verify other changes: </b><div class="collapsible-content"><p>Verify other changes you’re going to submit to source control before you start the upgrade:</p>
-
-<ol>
-  <li>If you haven’t done so already, change to your project root directory.</li>
-  <li>
     <p>Enter the following command:</p>
 
-    <pre><code>git status
+    <pre><code>&lt;Magento root dir&gt;/composer update
 </code></pre>
   </li>
-  <li>If there are changes you do <em>not</em> want to submit to source control, branch or stash them now.</li>
+  <li>
+    <p>Apply the patch:</p>
+
+    <pre><code>git apply vendor/magento/magento-cloud-configuration/patches/&lt;patch file name&gt;
+</code></pre>
+  </li>
+  <li>Thoroughly test your local system to make sure the patch doesn’t have unexpected side-affects.</li>
+  <li>
+    <p>After testing the patch, push it to the remote server and deploy it:</p>
+
+    <pre><code>git add -A &amp;&amp; git commit -m "Apply patch"
+git push origin master
+</code></pre>
+  </li>
 </ol>
 </div></div>
 
-<h3 id="step-5-complete-the-upgrade">Step 5: Complete the upgrade</h3>
+<h2 id="cloud-patch-custom">Apply custom patches</h2>
+<p><em>Custom patches</em> are provided to specific customers in a Support ticket. Before you continue, make sure the patch file we provided you is available.</p>
 
-<div class="collapsible"><b class="collapsible-title">To complete the upgrade: </b><div class="collapsible-content"><ol>
+<p>The procedure you use is slightly different, depending on the type of environment: <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration</a>, <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">staging</a>, or <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
+
+<h3 id="apply-a-custom-patch-an-integration-environment">Apply a custom patch an integration environment</h3>
+
+<div class="collapsible"><b class="collapsible-title">To apply a custom patch to an integration environment: </b><div class="collapsible-content"><ol>
   <li>
-    <p>Change to your Magento base directory and enter the following commands in the order shown:</p>
+    <p>On your local system, enter the following command as the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a> if you haven’t done so already:</p>
 
-    <pre><code>composer require magento/magento-cloud-metapackage &lt;requiredversion&gt; --no-update
-composer update
-</code></pre>
-
-    <p>For example, to upgrade to version 2.1.2:</p>
-
-    <pre><code>composer require magento/magento-cloud-metapackage 2.1.2 --no-update
-composer update
+    <pre><code>mkdir &lt;Magento root dir&gt;/m2-hotfixes
 </code></pre>
   </li>
-  <li>Wait for dependencies to update.</li>
+  <li>Copy the patch file to that directory.</li>
   <li>
-    <p>Add, commit, and push your changes to start deployment:</p>
+    <p>Apply the patch:</p>
 
-    <pre><code>git add -A &amp;&amp; git commit -m "Upgrade"
-git push origin &lt;branch name&gt;
-</code></pre>
-
-    <p><code>git add -A</code> is required to add all changed files to source control because of the way Composer marshals base packages. Both <code>composer install</code> and <code>composer update</code> marshal files from the base package (that is, <code>magento/magento2-base</code> and <code>magento/magento2-ee-base</code>) into the package root.</p>
-
-    <p>The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Enterprise Cloud Edition, so you must add the marshaled files to source control.</p>
-  </li>
-  <li>Wait for deployment to complete.</li>
-  <li>
-    <p>Take a snapshot of your environment:</p>
-
-    <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre>
-  </li>
-  <li><a href="#upgrade-verify">Verify your upgrade</a>.</li>
-</ol>
-</div></div>
-
-<h2 id="cloud-upgrade-204">Upgrade from version 2.0.4</h2>
-<p>This section discusses steps to upgrade <em>only</em> if your current Magento Enterprise Cloud Edition version is 2.0.4.</p>
-
-<div class="collapsible"><b class="collapsible-title">To upgrade from version 2.0.4 </b><div class="collapsible-content"><h3 id="create-an-authorization-file">Create an authorization file</h3>
-<p>To enable you to install and update the Magento software, you must have an <code>auth.json</code> file in your project’s root directory. <code>auth.json</code> contains your Magento EE <a href="http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a>.</p>
-
-<p>In some cases, you might already have <code>auth.json</code> so check to see if it exists and has your authentication credentials before you create a new one.</p>
-
-<p>To create a new <code>auth.json</code> in the event you don’t have one:</p>
-
-<ol>
-  <li>
-    <p>Copy the provided sample using the following command:</p>
-
-    <pre><code>cp auth.json.sample auth.json
-</code></pre>
-  </li>
-  <li>Open <code>auth.json</code> in a text editor.</li>
-  <li>
-    <p>Replace <code>&lt;public-key&gt;</code> and <code>&lt;private-key&gt;</code> with your authentication credentials.</p>
-
-    <p>See the following example:</p>
-
-    <pre><code>"http-basic": {
-   "repo.magento.com": {
-      "username": "&lt;public-key&gt;",
-      "password": "&lt;private-key&gt;"
-    }
-}
-</code></pre>
-  </li>
-  <li>Save your changes to <code>auth.json</code> and exit the text editor.</li>
-</ol>
-
-<h2 id="update-magentoappyaml-and-composerjson">Update .magento.app.yaml and composer.json</h2>
-<p>This section discusses how to update:</p>
-
-<ul>
-  <li><code>.magento.app.yaml</code>, the main project configuration file.</li>
-  <li><code>composer.json</code>, which specifies project dependencies.</li>
-</ul>
-
-<p>Changes are discussed in the sections that follow.</p>
-
-<h3 id="magentoappyaml"><code>.magento.app.yaml</code></h3>
-<p>Open <code>.magento.app.yaml</code> in a text editor and update the <code>build</code> section (which is nested in the <code>deploy</code> section) and <code>crons</code> sections as follows:</p>
-
-<h4 id="deploy-section">deploy section</h4>
-<pre><code>deploy: |
-    php ./vendor/magento/magento-cloud-configuration/pre-deploy.php
-    php ./bin/magento magento-cloud:deploy
-</code></pre>
-
-<h4 id="crons-section">crons section</h4>
-<pre><code>crons:
-        cronrun:
-            spec: "*/5 * * * *"
-            cmd: "php bin/magento cron:run &amp;&amp; php bin/magento cron:run"
-</code></pre>
-
-<h3 id="composerjson"><code>composer.json</code></h3>
-<p>Open <code>composer.json</code> and update the <code>"files"</code> directive in the <code>autoload</code> section as follows:</p>
-
-<pre><code>"autoload": {
-        "psr-4": {
-            "Magento\\Framework\\": "lib/internal/Magento/Framework/",
-            "Magento\\Setup\\": "setup/src/Magento/Setup/",
-            "Magento\\": "app/code/Magento/"
-        },
-        "psr-0": {
-            "": "app/code/"
-        },
-        "files": [
-            "app/etc/NonComposerComponentRegistration.php"
-        ]
-    }
-</code></pre>
-
-<p>Move <code>app/NonComposerComponentRegistration.php</code> to <code>app/etc/NonComposerComponentRegistration.php</code>.
-Make sure the relative paths that point to locations in the app and lib directories reflect the 
-new location of the file. For an example that can be copied, see the <a href="app/etc/NonComposerComponentRegistration.php">copy in this project</a>.</p>
-
-<p>Update the <code>require</code> section as follows to:</p>
-
-<ul>
-  <li>Replace <code>"magento/product-enterprise-edition": "&lt;current version&gt;",</code> with <code>"magento/magento-cloud-metapackage": "&lt;upgrade version&gt;",</code></li>
-  <li>Remove <code>"magento/magento-cloud-configuration": "1.0.*",</code></li>
-</ul>
-
-<p>(In some cases, your <code>composer.json</code> might already be correct.)</p>
-
-<pre><code> },
-    "require": {
-        "magento/magento-cloud-metapackage": "2.1.0",
-        "composer/composer": "@alpha",
-        "colinmollenhour/credis": "1.6",
-        "colinmollenhour/php-redis-session-abstract": "1.1",
-        "fastly/magento2": "^1.0"
-    },
-</code></pre>
-
-<p>Run <code>composer update</code>, and make sure the updated composer.lock and other changed files are
-checked in to git.</p>
-
-<h2 id="repository-structure">Repository structure</h2>
-<p>Here are the specific files for this example to work on Magento Enterprise Cloud Edition:</p>
-
-<pre><code>.magento/
-         /routes.yaml
-         /services.yaml
-.magento.app.yaml
-auth.json
-composer.json
-magento-vars.php
-php.ini
-</code></pre>
-
-<p><code>.magento/routes.yaml</code> redirects <code>www</code> to the naked domain, and that the application that will be serving HTTP is named <code>php</code>.</p>
-
-<p><code>.magento/services.yaml</code> sets up a MySQL instance, plus Redis and Solr.</p>
-
-<p><code>composer.json</code> fetches the Magento Enterprise Edition and some configuration scripts to prepare your application.</p>
-
-<p>Verify your upgrade as discussed in the next section.</p>
-</div></div>
-
-<h2 id="upgrade-verify">Verify your upgrade</h2>
-<p>This section discusses how to verify your upgrade on your local development machine and in the cloud.</p>
-
-<h3 id="verify-the-upgrade-locally">Verify the upgrade locally</h3>
-<p>To verify your upgrade locally, enter the following command from your Magento root directory:</p>
-
-<pre><code>php bin/magento --version
-</code></pre>
-
-<p>You can also log in to the Magento Admin; the version displays in the lower right corner of the page.</p>
-
-<h3 id="verify-the-upgrade-on-the-server">Verify the upgrade on the server</h3>
-<p>To verify the upgrade in your Cloud integration environment:</p>
-
-<ol>
-  <li>
-    <p>Find the base URL for your integration environment:</p>
-
-    <pre><code>magento-cloud environment:url
-</code></pre>
-  </li>
-  <li>When prompted, choose the HTTP or HTTPS URL.</li>
-  <li>
-    <p>Find the values of the Admin URL, user name, and password:</p>
-
-    <pre><code>magento-cloud variable:list
+    <pre><code>git apply &lt;Magento root dir&gt;/m2-hotfixes/&lt;patch file name&gt;
 </code></pre>
   </li>
   <li>
-    <p>Log in to the Magento Admin.</p>
+    <p>After testing the patch, push it to the remote server and deploy it:</p>
 
-    <p>The version displays in the lower right corner of the page.</p>
-  </li>
-</ol>
-
-<h3 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h3>
-<p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
-
-<pre><code>There has been an error processing your request
-Exception printing is disabled by default for security reasons.
-  Error log record number: &lt;error number&gt;
-</code></pre>
-
-<h4 id="view-error-details-locally">View error details locally</h4>
-<p>To view error details locally, open the indicated file name in the <code>&lt;Magento root dir&gt;/var/report</code> directory.</p>
-
-<h4 id="view-error-details-on-the-server">View error details on the server</h4>
-<p>To view the error in your Cloud integration environment, enter the following commands:</p>
-
-<pre><code>magento-cloud environment:ssh
-vim /app/var/report/&lt;error number&gt;
-</code></pre>
-
-<h4 id="resolve-the-error">Resolve the error</h4>
-<p>If the error includes the following, run the <code>bin/magento setup:upgrade</code> command to resolve it:</p>
-
-<pre><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
-The following modules are outdated:
-Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
-Magento_Sales data: current version - 2.0.2, required version - 2.0.3
-Magento_CatalogStaging schema: current version - 2.0.0, required version - 2.1.0
-</code></pre>
-
-<p>To resolve the error:</p>
-
-<ol>
-  <li>
-    <p>If the error is in your integration environment, SSH to the environment:</p>
-
-    <pre><code>magento-cloud environment:ssh
-</code></pre>
-  </li>
-  <li>
-    <p>Enter the following command:</p>
-
-    <pre><code>php &lt;Magento root dir&gt;/bin/magento setup:upgrade
-</code></pre>
-  </li>
-  <li>Wait for the command to complete.</li>
-  <li>
-    <p><em>Local environment only</em>. Update the branch:</p>
-
-    <pre><code>git add -A &amp;&amp; git commit -m "Update"
+    <pre><code>git add -A &amp;&amp; git commit -m "Apply patch"
 git push origin &lt;branch name&gt;
 </code></pre>
   </li>
 </ol>
+</div></div>
 
-<h4 id="related-topic">Related topic</h4>
+<h3 id="apply-a-custom-patch-to-a-staging-or-production-environment">Apply a custom patch to a staging or production environment</h3>
+
+<div class="collapsible"><b class="collapsible-title">To apply a custom patch to a staging or production environment: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Open an SSH connection to your staging or production server:</p>
+
+    <ul>
+      <li>Staging: <code>ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Production: <code>ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>On your staging or production system, enter the following command if you haven’t done so already:</p>
+
+    <pre><code>mkdir &lt;Magento root dir&gt;/m2-hotfixes
+</code></pre>
+  </li>
+  <li>
+    <p>Copy the patch file to that directory.</p>
+
+    <p>We suggest using the following command:</p>
+
+    <pre><code>rsync -azvP &lt;source&gt; &lt;destination&gt;
+</code></pre>
+
+    <p>Options:</p>
+
+    <p><code>a</code> archive</p>
+
+    <p><code>z</code> compress</p>
+
+    <p><code>v</code> verbose</p>
+
+    <p><code>P</code> partial progress</p>
+
+    <p>For additional options, see the <a href="http://linux.die.net/man/1/rsync" target="_blank">rsync man page</a>.</p>
+  </li>
+  <li>
+    <p>Apply the patch:</p>
+
+    <pre><code>git apply &lt;Magento root dir&gt;/m2-hotfixes/&lt;patch file name&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>After testing the patch, push it to the remote server and deploy it:</p>
+
+    <pre><code>git add -A &amp;&amp; git commit -m "Apply patch"
+git push origin &lt;branch name&gt;
+</code></pre>
+  </li>
+</ol>
+</div></div>
+
+<h4 id="related-topics">Related topics</h4>
 <ul>
   <li><a href="/guides/v2.1/cloud/howtos/install-components.html">Install components</a></li>
   <li><a href="/guides/v2.1/cloud/howtos/sample-data.html">Install optional sample data</a></li>
