@@ -4,7 +4,7 @@ group: cloud
 subgroup: 15_howto
 title: Install optional sample data
 menu_title: Install optional sample data
-menu_order: 20
+menu_order: 70
 menu_node: 
 version: 2.0
 github_link: cloud/howtos/sample-data.md

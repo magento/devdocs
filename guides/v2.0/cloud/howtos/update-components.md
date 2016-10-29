@@ -4,9 +4,9 @@ group: cloud
 subgroup: 15_howto
 title: Update extensions
 menu_title: Update extensions
-menu_order: 5
+menu_order: 45
 level3_menu_node: level3child
-level3_subgroup: upgrade-update
+level3_subgroup: update-extensions
 menu_node: 
 version: 2.0
 github_link: cloud/howtos/update-components.md
