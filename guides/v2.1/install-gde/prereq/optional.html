@@ -955,7 +955,13 @@ server 2.us.pool.ntp.org</pre>
 </ol>
 
 <h2 id="install-optional-phpinfo">Create phpinfo.php</h2>
-<p><a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about PHP and its extensions. Add the following code anywhere in your web server’s docroot:</p>
+<p><a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about PHP and its extensions.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Use <code>phpinfo.php</code> in a development system <em>only</em>. It can be a security issue in production.</p>
+</div>
+
+<p>Add the following code anywhere in your web server’s docroot:</p>
 <pre>&lt;?php
 
 // Show all information, defaults to INFO_ALL
@@ -987,6 +993,10 @@ phpinfo();</pre>
 <p>For more information about <code>phpmyadmin</code>, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank">phpmyadmin home page</a>.</p>
 
 <p>For more detailed information about installation, see the <a href="http://docs.phpmyadmin.net/en/latest/setup.html#quick-install" target="_blank">phpmyadmin installation documentation</a>.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Use phpmyadmin in a development system <em>only</em>. It can be a security issue in production.</p>
+</div>
 
 <h2 id="install-optional-phpmyadmin-ubuntu">Install phpmyadmin on Ubuntu</h2>
 <p>To install phpmyadmin on Ubuntu:</p>
