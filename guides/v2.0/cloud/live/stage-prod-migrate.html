@@ -1365,7 +1365,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 26 October 2016 (PDT)</div>
+            <div class="updated">Updated: 31 October 2016 (PDT)</div>
             <h2 id="cloud-live-migrate">Migrate data</h2>
 <p>To migrate your database and code:</p>
 
@@ -1486,6 +1486,23 @@
 </code></pre>
   </li>
 </ol>
+
+<h4 id="troubleshooting-the-database-migration">Troubleshooting the database migration</h4>
+<p>If you set up stored procedures or views in your database, the following error might display during the import:</p>
+
+<pre><code>ERROR 1277 (42000) at line &lt;number&gt;: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
+</code></pre>
+
+<p>The reason is that stored procedures and views both use <code>"DEFINER='root'@'localhost'"</code>, and you don’t have <code>root</code> user access to the staging or production databases.</p>
+
+<p>To solve the issue, create another database dump, replacing the <code>DEFINER</code> string with an empty string.</p>
+
+<p>You can do this using a text editor or by using the following command:</p>
+
+<pre><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main | gzip | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' &gt; /tmp/database_no-definer.sql.gz
+</code></pre>
+
+<p>Use the database dump you just created to <a href="#cloud-live-migrate-db">migrate the database</a>.</p>
 
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.0/cloud/live/stage-prod-test.html">Test</a></p>
