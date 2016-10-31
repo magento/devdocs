@@ -11,8 +11,10 @@ github_link: howdoi/checkout/checkout_overview.md
 ---
 
 ## Customize checkout 
+
 ### Default checkout overview
-Magento checkout is implemented using the UI components. 
+
+Magento checkout is implemented using the [UI components](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/bk-ui_comps.html). 
 Out of the box, the checkout consists of two steps:
  
  - Shipping Information
