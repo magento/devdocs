@@ -4,7 +4,7 @@ group: cloud
 subgroup: 15_howto
 title: Environment tutorials
 menu_title: Environment tutorials
-menu_order: 10
+menu_order: 50
 menu_node: 
 level3_menu_node: level3parent
 level3_subgroup: env-tut

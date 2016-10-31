@@ -1,0 +1,1 @@
+../../../v2.0/cloud/howtos/patch-magento.md
