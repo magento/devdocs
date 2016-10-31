@@ -42,13 +42,12 @@ Example of setting `exports` in a component's `.js` file:
 {% highlight js%}
 {
   'exports': {
-   'visible': '${ $.provider }.visibility'
+   'visible': '${ $.provider }:visibility'
   }
 }
 {% endhighlight js%}
 
-Here `visible` is the `key`, `${ $.provider }.visibility` is the `value`.
-
+Here `visible` is the `key`, `${ $.provider }:visibility` is the `value`. The value of the local `visible` property is assigned to the `visibility` property of the `provider` component. The latter is changed automatically if the value of `visible` changes.
 
 Example of setting `exports` in a component's configuration `.xml` file:
 
@@ -56,7 +55,7 @@ Example of setting `exports` in a component's configuration `.xml` file:
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="exports" xsi:type="array">
-                        <item name="visible" xsi:type="string">sample_config.sample_provider.visibility</item>
+                        <item name="visible" xsi:type="string">sample_config.sample_provider:visibility</item>
                 	</item>
        </item>
 </argument>
@@ -75,10 +74,12 @@ Example of using `imports` in a component's `.js` file:
 {% highlight js%}
 {
   'imports': {
-   'visible': '${ $.provider }.visibility'
+   'visible': '${ $.provider }:visibility'
   }
 }
 {% endhighlight js%}
+
+Here the value of the `visibility` property of the `provider` component is assigned to the local `visible` property. The latter is automatically updated if `visibility` changes.
 
 Example of using `imports` in a component's configuration `.xml` file:
 
@@ -86,7 +87,7 @@ Example of using `imports` in a component's configuration `.xml` file:
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="imports" xsi:type="array">
-                        <item name="visible" xsi:type="string">sample_config.sample_provider.visibility</item>
+                        <item name="visible" xsi:type="string">sample_config.sample_provider:visibility</item>
                     </item>
        </item>
 </argument>
@@ -106,10 +107,12 @@ Example of using `links` in a component's `.js` file:
 {% highlight js%}
 {
   'links': {
-   'visible': '${ $.provider }.visibility'
+   'visible': '${ $.provider }:visibility'
   }
 }
 {% endhighlight js%}
+
+Here the local `visible` property is linked with the `visibility`  property of the provider component. Once any of them changes, the other is changed automatically.
 
 Example of using `links` in a component's configuration `.xml` file:
 
@@ -117,7 +120,7 @@ Example of using `links` in a component's configuration `.xml` file:
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="links" xsi:type="array">
-                        <item name="visible" xsi:type="string">sample_config.sample_provider.visibility</item>
+                        <item name="visible" xsi:type="string">sample_config.sample_provider:visibility</item>
                     </item>
        </item>
 </argument>
@@ -135,10 +138,13 @@ Example of using `listens` in a component's `.js` file :
 {% highlight js%}
 {
   'listens': {
-   'visible': '${ $.provider }.visibility'
+   'visible': '${ $.provider }:visibility'
   }
 }
 {% endhighlight js%}
+
+Here the value of the local `visible` property is assigned to the `visibility` property of the `provider` component. The latter is changed automatically if the value of `visible` changes.
+
 
 Example of using `listens` in a component's configuration `.xml` file:
 
@@ -146,7 +152,7 @@ Example of using `listens` in a component's configuration `.xml` file:
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="listens" xsi:type="array">
-                        <item name="visible" xsi:type="string">sample_config.sample_provider.visibility</item>
+                        <item name="visible" xsi:type="string">sample_config.sample_provider:visibility</item>
                     </item>
        </item>
 </argument>
