@@ -28,7 +28,7 @@ This topic describes how to create the frontend part of the component, implement
 
 To create the view part of the new checkout step:
 
-1. Add a module directory (not covered in this topic). See [Build your module]({{page.baseurl}}extension-dev-guide/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
+1. Add a module directory (not covered in this topic). See [Build your module]({{page.baseurl}}extension-dev-guide/build/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
 1. Create the `.js` file implementing the view model.
 2. Create an `.html` template for the component.
 
