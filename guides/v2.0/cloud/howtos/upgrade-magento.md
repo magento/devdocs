@@ -2,17 +2,17 @@
 layout: default
 group: cloud
 subgroup: 15_howto
-title: Upgrade the Magento software
-menu_title: Upgrade the Magento software
-menu_order: 7
+title: Upgrade the Magento application
+menu_title: Upgrade the Magento application
+menu_order: 3
 level3_menu_node: level3child
-level3_subgroup: upgrade-update
+level3_subgroup: update-magento
 menu_node: 
 version: 2.0
 github_link: cloud/howtos/upgrade-magento.md
 ---
 
-## How upgrade the Magento software {#cloud-howto-upgrade}
+## How to upgrade the Magento application {#cloud-howto-upgrade}
 This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
 
 <div class="bs-callout bs-callout-warning">
