@@ -4,7 +4,7 @@ group: cloud
 subgroup: 15_howto
 title: Install a theme
 menu_title: Install a theme
-menu_order: 19
+menu_order: 60
 menu_node: 
 version: 2.0
 github_link: cloud/howtos/custom-theme.md
