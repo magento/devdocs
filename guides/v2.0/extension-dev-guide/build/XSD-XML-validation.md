@@ -44,7 +44,8 @@ where
 ### Framework XSD
 The syntax for the framework XSD is a colon separated declaration. An example follows:
 
-`urn:magento:framework:Api/etc/extension_attributes.xsd
+`urn:magento:framework:Api/etc/extension_attributes.xsd`
+
 where 
 
 *  `urn:magento` is the URN identifier
