@@ -86,5 +86,20 @@ To migrate the database:
 
 		zcat database.sql.gz | mysql -u user main
 
+#### Troubleshooting the database migration
+If you set up stored procedures or views in your database, the following error might display during the import:
+
+	ERROR 1277 (42000) at line <number>: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
+
+The reason is that stored procedures and views both use `"DEFINER='root'@'localhost'"`, and you don't have `root` user access to the staging or production databases.
+
+To solve the issue, create another database dump, replacing the `DEFINER` string with an empty string. 
+
+You can do this using a text editor or by using the following command:
+
+	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main | gzip | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > /tmp/database_no-definer.sql.gz
+
+Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
+
 #### Next step
 [Test]({{ page.baseurl }}cloud/live/stage-prod-test.html)
