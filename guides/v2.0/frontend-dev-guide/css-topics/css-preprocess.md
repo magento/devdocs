@@ -107,7 +107,7 @@ In server-side LESS compilation mode, to have your changes applied, clear <code>
 
 Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
 
-See the [Compile LESS with Grunt]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html) topic for details how to install, configure and use Grunt.
+See the [Compile LESS with Grunt]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html) topic for details on how to install, configure and use Grunt.
 
 <h3 id="client-side">Client-side LESS compilation</h3>
 The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:
@@ -137,8 +137,9 @@ This is required in the following cases:
 
 To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
 
-<h2 id="fedg_css-import">Usage of the @import directive</h2>
-According to LESS documentation it is possible to define path to the imported resource without file extension (i.e. `@import 'source/lib/_lib';`), but in the process of resolving file path Magento adds .less extension to the file to find the source using fallback mechanism, and replaces original path notation with actually found file (with extension).
+## The @import directive usage{#fedg_css-import}
+You can import local and remote LESS and CSS files by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
+According to the `@import` syntax, you can specify the path the imported resource without file extension (for example: `@import 'source/lib/_lib';`). But in this case, in the process of resolving the file path, the Magento application adds the file extension to the `@import` notation, and pub for .less files we recommend specifying the extens but in the process of resolving file path Magento adds .less extension to the file to find the source using fallback mechanism, and replaces original path notation with actually found file (with extension).
 `@import 'source/lib/_lib';` will be replaced with `@import 'source/lib/_lib.less';`
 
 It is recommended to define full path with .less extension in order to avoid differencies between original source and published file (in [client-side compilation mode]() or when using [grunt commands]()), so symlinks will be published instead of modified copy.
