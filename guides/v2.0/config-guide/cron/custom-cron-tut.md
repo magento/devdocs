@@ -180,7 +180,6 @@ This step shows how to optionally set up a custom cron group. You should set up 
         <history_cleanup_every>10</history_cleanup_every>
         <history_success_lifetime>60</history_success_lifetime>
         <history_failure_lifetime>600</history_failure_lifetime>
-        <use_separate_process>1</use_separate_process>
     </group>
 </config>
 {% endhighlight %}
