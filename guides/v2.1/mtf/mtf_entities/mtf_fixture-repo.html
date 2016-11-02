@@ -856,7 +856,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 20 July 2016 (PDT)</div>
+            <div class="updated">Updated: 2 November 2016 (PDT)</div>
             <h2>Fixture repository</h2>
 
 <ul id="markdown-toc">
@@ -951,7 +951,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <h4 id="mtf_repo_ex_set">Settings form</h4>
 
-<p><img src="/common/images/mtf_ent_fixt_repo_cms_set_ui.png" alt="cms_page_link &quot;Settings&quot; data set for entire fixture view on GUI" /></p>
+<p><img src="/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui.png" alt="cms_page_link &quot;Settings&quot; data set for entire fixture view on GUI" /></p>
 
 <ul>
   <li>Set the <strong>Type</strong> field (<code>field name="code"</code>) to “CMS Page Link”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;field name="code" xsi:type="string"&gt;CMS Page Link&lt;/field&gt;</code>.</li>
@@ -960,7 +960,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <h4 id="mtf_repo_ex_store">Storefront Properties form</h4>
 
-<p><img src="/common/images/mtf_ent_fixt_repo_cms_set_ui_storefront.png" alt="cms_page_link &quot;Storefront properties&quot; data set for entire fixture view on GUI" /></p>
+<p><img src="/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_storefront.png" alt="cms_page_link &quot;Storefront properties&quot; data set for entire fixture view on GUI" /></p>
 
 <ul>
   <li>Set the <strong>Frontend App Title</strong> field to “Cms Page Link [random integer value]”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;field name="title" xsi:type="string"&gt;Cms Page Link %isolation%&lt;/field&gt;</code>.</li>
@@ -986,7 +986,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <h4 id="mtf_repo_ex_front">Frontend App Options</h4>
 
-<p><img src="/common/images/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png" alt="cms_page_link &quot;Frontend App Options&quot; data set for entire fixture view on GUI" /></p>
+<p><img src="/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png" alt="cms_page_link &quot;Frontend App Options&quot; data set for entire fixture view on GUI" /></p>
 
 <ul>
   <li>Set the <strong>Anchor Custom Text</strong> field to “text”.</li>
@@ -1169,7 +1169,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
   <li>Set the <strong>Container</strong> field (<code>item name="block"</code>) to “Main content Area”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a>  <code>&lt;item name="block" xsi:type="string"&gt;Main Content Area&lt;/item&gt;</code></li>
 </ul>
 
-<p><img src="/common/images/mtf_repository_layout-allpages_w_dropd.png" alt="all_pages data set view on GUI" /></p>
+<p><img src="/common/images/ftf/mtf_repository_layout-allpages_w_dropd.png" alt="all_pages data set view on GUI" /></p>
 
 <p>Case 2. <strong>on_category</strong> data set:</p>
 
@@ -1180,7 +1180,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
   <li>Set the <strong>Container</strong> field (<code>item name="block"</code>) to “Main content Area”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;item name="block" xsi:type="string"&gt;Main Content Area&lt;/item&gt;</code>.</li>
 </ul>
 
-<p><img src="/common/images/mtf_repository_layout-oncategory_w_dropd.png" alt="on_category data set view on GUI" /></p>
+<p><img src="/common/images/ftf/mtf_repository_layout-oncategory_w_dropd.png" alt="on_category data set view on GUI" /></p>
 
 <p>Case 3. <strong>for_cms_page_link</strong> data set:</p>
 
@@ -1190,7 +1190,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
   <li>Set the <strong>Template</strong> field (<code>item name="template"</code>) to “CMS Page Link Block Template”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;</code>item name=”template” xsi:type=”string”<code>&gt;CMS Page Link Block Template&lt;/item&gt;</code>.</li>
 </ul>
 
-<p><img src="/common/images/mtf_repository_layout-for-cms-page-link_w_dropd.png" alt="layout_for_cms_page_link data set view on GUI" /></p>
+<p><img src="/common/images/ftf/mtf_repository_layout-for-cms-page-link_w_dropd.png" alt="layout_for_cms_page_link data set view on GUI" /></p>
 
 <p>The repository code for these cases follows:</p>
 
@@ -1359,11 +1359,11 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>The following screenshot helps to understand the <code>scope_id</code> attribute.</p>
 
-<p><img src="/common/images/mtf_ent_fixt_repo_config_scope-id.png" alt="authorizenet data set view on GUI" /></p>
+<p><img src="/common/images/ftf/mtf_ent_fixt_repo_config_scope-id.png" alt="authorizenet data set view on GUI" /></p>
 
 <p>Let’s see the <code>authorizenet</code> data set in action. Fields defined in repository are in orange. Other fields are set in default values.</p>
 
-<p><img src="/common/images/mtf_repo_config_ex.png" alt="authorizenet data set view on GUI" /></p>
+<p><img src="/common/images/ftf/mtf_repo_config_ex.png" alt="authorizenet data set view on GUI" /></p>
 
 <h2 id="mtf_repository_merge">Merging repositories</h2>
 
@@ -1371,7 +1371,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>Modules that require configuration adjustment store <code>ConfigData.xml</code> in their <code>Repository</code> directory. All <code>ConfigData.xml</code> repositories have reference to the <code>Config</code> repository class. See the example on the following screenshot:</p>
 
-<p><a href="/common/images/mtf_repo_merge_ex.png"><img src="/common/images/mtf_repo_merge_ex.png" /></a></p>
+<p><a href="/common/images/ftf/mtf_repo_merge_ex.png"><img src="/common/images/ftf/mtf_repo_merge_ex.png" /></a></p>
 
 <p>As you can see, the <code>ConfigData.xml</code> of the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet"><code>Magento_Authorizenet</code> module</a> and the <code>ConfigData.xml</code> of the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend"><code>Magento_Backend</code> module</a> have the same reference to the repository class; that is <code>Magento\Config\Test\Repository\ConfigData</code>.</p>
 

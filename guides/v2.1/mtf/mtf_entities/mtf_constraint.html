@@ -878,7 +878,7 @@
 <p>The Functional Testing Framework (FTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
 Each constraint name must be globally unique in Magento application and must be placed in the module to which it belongs. Constraints run automatically after test flow has finished.</p>
 
-<p><img src="/common/images/mtf_constraint_flow.png" alt="Constraints and test flow" /></p>
+<p><img src="/common/images/ftf/mtf_constraint_flow.png" alt="Constraints and test flow" /></p>
 
 <h2 id="mtf_constraint_structure">Constraint structure</h2>
 
@@ -886,7 +886,7 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <p>A module in functional tests (<code>&lt;magento2_root_dir&gt;/dev/tests/app/Magento/</code>) stores constraints in the <code>Constraint</code> directory. The following image shows the <code>Constraint</code> directory of the Magento_Widget module.</p>
 
-<p><img src="/common/images/mtf_constraint_dir.png" alt="" /></p>
+<p><img src="/common/images/ftf/mtf_constraint_dir.png" alt="" /></p>
 
 <h3 id="mtf_constraint_assert">Constraint class</h3>
 
@@ -925,15 +925,15 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <p>Let’s see the following images for the <code>CreateSimpleProductEntityTest</code> test and the <code>AssertProductPricesOnCategoryPage</code> constraint. Data set from the diagrams contains three variables with data: <code>product</code>, <code>category</code> and <code>price</code>.</p>
 
-<p><img src="/common/images/mtf_constraint_arguments_green.png" width="800" /></p>
+<p><img src="/common/images/ftf/mtf_constraint_arguments_green.png" width="800" /></p>
 
 <p><span style="color: #21610B; font-weight:bold">Green arrows</span> show that <code>product</code> value is transferred to the test and the constraint.</p>
 
-<p><img src="/common/images/mtf_constraint_arguments_orange.png" width="800" /></p>
+<p><img src="/common/images/ftf/mtf_constraint_arguments_orange.png" width="800" /></p>
 
 <p><span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that <code>category</code> variable is transferred to the test directly, overwritten by <code>testCreate()</code> method and only then transferred to constraint.</p>
 
-<p><img src="/common/images/mtf_constraint_arguments_blue.png" width="800" /></p>
+<p><img src="/common/images/ftf/mtf_constraint_arguments_blue.png" width="800" /></p>
 
 <p><span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that <code>price</code> value is transferred to the constraint only.</p>
 

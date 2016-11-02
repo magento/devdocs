@@ -928,11 +928,11 @@ For example, you develop a functional test for the bundle product creation, that
   <li><strong>Save Config</strong></li>
 </ol>
 
-<p><img src="/common/images/mtf_bloch_namepath_ui_onoff.png" alt="" /></p>
+<p><img src="/common/images/ftf/mtf_bloch_namepath_ui_onoff.png" alt="" /></p>
 
 <p>Now each UI block has hint about its name and path. Also, you can see the path to a PHTML template, where you can find a path to the Magento block, if you cannot find it in the hint.</p>
 
-<p><a href="/common/images/mtf_block_name_path_in_ui.png"><img src="/common/images/mtf_block_name_path_in_ui.png" /></a></p>
+<p><a href="/common/images/ftf/mtf_block_name_path_in_ui.png"><img src="/common/images/ftf/mtf_block_name_path_in_ui.png" /></a></p>
 
 <div class="bs-callout bs-callout-tip">
   <p>If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.</p>
@@ -986,7 +986,7 @@ For example, you develop a functional test for the bundle product creation, that
 
 <p>Now you can inspect any element in a browser, and find which block contains it.</p>
 
-<p><a href="/common/images/mtf_block_name_path_in_code.png"><img src="/common/images/mtf_block_name_path_in_code.png" /></a></p>
+<p><a href="/common/images/ftf/mtf_block_name_path_in_code.png"><img src="/common/images/ftf/mtf_block_name_path_in_code.png" /></a></p>
 
 <h3 id="mtf_block_class">Block class</h3>
 
@@ -1122,11 +1122,11 @@ For example, you develop a functional test for the bundle product creation, that
 
 <p>Let’s see the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Block/Form/Login.php">Customer Login</a> block. The block has two input fields: <code>email</code> and <code>password</code>.</p>
 
-<p><a href="/common/images/mtf_block_login_ui.png"><img src="/common/images/mtf_block_login_ui.png" /></a></p>
+<p><a href="/common/images/ftf/mtf_block_login_ui.png"><img src="/common/images/ftf/mtf_block_login_ui.png" /></a></p>
 
 <p>The mapping file for the block is stored in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml</code>, along with the block.</p>
 
-<p><img src="/common/images/mtf_block_login_dir.png" /></p>
+<p><img src="/common/images/ftf/mtf_block_login_dir.png" /></p>
 
 <p>The mapping file defines the fields from the form.</p>
 
@@ -1164,7 +1164,7 @@ For example, you develop a functional test for the bundle product creation, that
 
 <p>The general structure of the form mapping file:</p>
 
-<p><img src="/common/images/mtf_block_map_form_xml.png" /></p>
+<p><img src="/common/images/ftf/mtf_block_map_form_xml.png" /></p>
 
 <h3 id="mtf_block_map_form_tab">Form tab mapping</h3>
 
@@ -1173,11 +1173,11 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <p>For example, let’s see tabs for the Magento Widget: <strong>Settings</strong>, <strong>Storefront properties</strong>, <strong>Frontend App Options</strong>, <strong>Layout Updates</strong> .</p>
 
-<p><img src="/common/images/mtf_block_tabs_ui.png" /></p>
+<p><img src="/common/images/ftf/mtf_block_tabs_ui.png" /></p>
 
 <p>Four tabs are mapped in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml</code> file, which is stored along with the block class.</p>
 
-<p><img src="/common/images/mtf_block_tab_struc.png" /></p>
+<p><img src="/common/images/ftf/mtf_block_tab_struc.png" /></p>
 
 <p>The file contains the following mapping:</p>
 
@@ -1257,11 +1257,11 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <p>On the UI:</p>
 
-<p><img src="/common/images/mtf_block_tab_composite_ui.png" alt="Example of `composite` field" /></p>
+<p><img src="/common/images/ftf/mtf_block_tab_composite_ui.png" alt="Example of `composite` field" /></p>
 
 <p>The general structure of the form tab mapping file:</p>
 
-<p><img src="/common/images/mtf_block_map_form_tab_xml.png" /></p>
+<p><img src="/common/images/ftf/mtf_block_map_form_tab_xml.png" /></p>
 
 <h3 id="mtf_block_map_form_tab_merge">Merging form tab mapping files</h3>
 
@@ -1271,7 +1271,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <p>Form tab mapping files in the following example will be merged automatically:</p>
 
-<p><img src="/common/images/mtf_block_formtab_merge.png" /></p>
+<p><img src="/common/images/ftf/mtf_block_formtab_merge.png" /></p>
 
 <h2 id="mtf_block_render">Renders</h2>
 

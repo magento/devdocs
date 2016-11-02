@@ -834,7 +834,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 26 October 2016 (PDT)</div>
+            <div class="updated">Updated: 2 November 2016 (PDT)</div>
             <h2>New functional test: Practice</h2>
 
 <p>To demonstrate the usage of test components from previous sections in the test creation process, we will create a new functional <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">injectable test</a> step-by-step. Before creating automated test, try to pass it manually.</p>
@@ -974,7 +974,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <p>As a result of previous commands, a brand new fixture can be found in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Fixture</code> directory.</p>
 
-<p><img src="/common/images/mtf_tut_fixt.png" alt="A new Synonym fixture" /></p>
+<p><img src="/common/images/ftf/mtf_tut_fixt.png" alt="A new Synonym fixture" /></p>
 
 <p>The following is a code of the new Synonym fixture.</p>
 
@@ -998,7 +998,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <p>If we open a New Synonym Group page in a browser</p>
 
-<p><img src="/common/images/mtf_tutorial_new_syn_ui.png" alt="New Synonym Group page" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_new_syn_ui.png" alt="New Synonym Group page" /></p>
 
 <p>we see that <code>store_id</code> and <code>website_id</code> are combined in the “Scope” fields. To set <code>store_id</code> and <code>website_id</code>, we have to perform some more logic than just entering the data. That’s why we should use a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a>.</p>
 
@@ -1006,7 +1006,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <p>Let’s check the functional tests for the Magento_Widget module.</p>
 
-<p><img src="/common/images/mtf_tutorial_storeIds-widget.png" alt="ScopeID data source alternative from Magento_Widget" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_storeIds-widget.png" alt="ScopeID data source alternative from Magento_Widget" /></p>
 
 <p>It contains a <code>StoreIds.php</code> data source, that is similar to what we need. It has the following code:</p>
 
@@ -1135,7 +1135,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <p>We should save it as <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php</code>.</p>
 
-<p><img src="/common/images/mtf_tutorial_datasource.png" alt="Synonym ScopeID data source location" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_datasource.png" alt="Synonym ScopeID data source location" /></p>
 
 <p>Now we should change the fixture. Instead of <code>store_id</code> and <code>website_id</code>, we must use <code>scope_id</code> with the <code>Magento\Search\Test\Fixture\Synonym\ScopeId</code> data source class.</p>
 
@@ -1230,7 +1230,7 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 <p>From the <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case topic</a> we know about the structure, location and name of the test case.
 In this example it is named <code>CreateSynonymEntityTest.php</code> and stored in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase</code>.</p>
 
-<p><img src="/common/images/mtf_tutorial_testcase_location.png" alt="A test case location" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_testcase_location.png" alt="A test case location" /></p>
 
 <p>As a result of <a href="#manual-test">manual testing</a> we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. We can code the initialization of these pages in the test using an <code>__inject()</code> method of the <code>Magento\Mtf\TestCase\Injectable</code> class. The pages will be created in <a href="#create-pages">Step 5</a>. Also, we will use the fixture from the <a href="#create-test-object">Step 2</a>.</p>
 
@@ -1297,7 +1297,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>Now we can add a <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a> with variations that cover cases in the <a href="#auto-test">test description</a>: <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml</code></p>
 
-<p><img src="/common/images/mtf_tutor_dataset.png" alt="Created data set" /></p>
+<p><img src="/common/images/ftf/mtf_tutor_dataset.png" alt="Created data set" /></p>
 
 <p>The following code contains a data set, but doesn’t have data yet:</p>
 
@@ -1394,14 +1394,14 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
     <span class="nt">&lt;/page&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p><img src="/common/images/mtf_tutorial_pages.png" alt="Created pages" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_pages.png" alt="Created pages" /></p>
 
 <p>To generate PHP classes for these <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">pages</a> enter and run in your terminal</p>
 
 <pre><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
 
-<p><img src="/common/images/mtf_tutorial_pages_php.png" alt="PHP classes of pages" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_pages_php.png" alt="PHP classes of pages" /></p>
 
 <p>In the next step we will create <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html">blocks</a> that implements logic in these pages.</p>
 
@@ -1446,15 +1446,15 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>We need to enter data from a data set into the form fields.</p>
 
-<p><img src="/common/images/mtf_tutorial_page_new_synonym.png" alt="New Synonym Group page" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_page_new_synonym.png" alt="New Synonym Group page" /></p>
 
 <p>The <code>Block</code> directory in the Magento_Search module (in the Magento code) contains the <code>Adminhtml/Synonyms/Edit</code> directories, as shown below:</p>
 
-<p><img src="/common/images/mtf_tutorial_block_struct.png" alt="Block structure in a code base" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_block_struct.png" alt="Block structure in a code base" /></p>
 
 <p>The <code>Search/Test</code> directory in functional tests should be constructed in a similar manner:</p>
 
-<p><img src="/common/images/mtf_tutorial_block_struct_test.png" alt="Block structure in a functional test" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_block_struct_test.png" alt="Block structure in a functional test" /></p>
 
 <p>We need a <code>fill()</code> method from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php"><code>\Magento\Mtf\Block\Form</code></a> class and a mapping file.</p>
 
@@ -1491,7 +1491,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p>Now we have the following structure:</p>
 
-<p><img src="/common/images/mtf_tutorial_block_mapping.png" alt="Form mapping block" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_block_mapping.png" alt="Form mapping block" /></p>
 
 <p>Then we should add the block class to the <code>SynonymsNew.xml</code> page object. To identify a form block on the HTML page, use an <code>id='page:main-container'</code> css selector.</p>
 
@@ -1707,7 +1707,7 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 <p>The last item in the test description says that the test must check that a success message is displayed after the test flow completes.</p>
 
-<p><img src="/common/images/mtf_tutorial_success_message.png" alt="Message about the successful save" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_success_message.png" alt="Message about the successful save" /></p>
 
 <p>To cover this, we should create the test assertion (<a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraint</a>) and add the full class name to a variation of the data set.</p>
 
@@ -1762,7 +1762,7 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 <p>By making a simple change, we can create a constraint class that is needed <code>\Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage</code></p>
 
-<p><img src="/common/images/mtf_tutorial_constraint_dir.png" alt="A constraint location" /></p>
+<p><img src="/common/images/ftf/mtf_tutorial_constraint_dir.png" alt="A constraint location" /></p>
 
 <p>with the following code:</p>
 
