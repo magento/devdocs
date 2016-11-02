@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Configure a custom cron job and cron group (tutorial)</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.0/config-guide/cron/custom-cron-tut.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        var baseUrl = "/";
+    </script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.0)</a>
+				</div>
+			</div>
+            
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/cron/custom-cron-tut.html">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/cron/custom-cron-tut.html">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+        <a class="search-trigger search-icon" href="/search.html"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               
+			   
+			   
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+               <li class="leaf"><a href="/guides/v2.0/mrg/intro.html">Module Reference Guide</a></li>
+               
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.0/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="/search.html">
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search" autofocus>
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Configure a custom cron job and cron group (tutorial)</h1>
+
+        
+
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/cron/custom-cron-tut.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Configuration Guide</h4>
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/bk-config-guide.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/secy/secy.html">Security settings</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-headers.html">Prevent cache poisoning</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">About Magento modes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable profiling (MAGE_PROFILER)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/cli/config-cli.html">Command line configuration</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Enterprise Edition only)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/log/log-intro.html">Custom logging</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/log/log-magento.html">Magento logging in more detail</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/log/log-db.html">Example&mdash;logging database activity</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/config/config-magento.html">Magento configuration files</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/cache/caching.html">Caching</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="cache-types"><a href="#">Cache types</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.0/config-guide/cache/caching_frontend-cache-types.html">Associate cache frontends with cache types</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.0/config-guide/cache/caching_low-level.html">Low-level cache options</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.0/config-guide/cache/caching-database.html">Database caching</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.0/config-guide/cache/caching-cache-type.html">Create a cache type</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="cache-priv"><a href="#">Magento page caching</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.0/config-guide/cache/cache-priv-over.html">Page caching overview</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.0/config-guide/cache/cache-priv-priv.html">Public and private content</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.0/config-guide/cache/cache-priv-context.html">HTTP context</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.0/config-guide/cache/cache-priv-inval.html">Cache invalidation and private content versioning</a>
+
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/redis/config-redis.html">Configure Redis</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/redis/redis-pg-cache.html">Use Redis for page caching</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/redis/redis-session.html">Use Redis for session storage</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Backend Fetch Failed) errors</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/memcache/memcache.html">Use memcached for session storage</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/cron/custom-cron.html">Set up a custom cron job and cron group</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cron/custom-cron-ref.html">Custom cron job and cron group reference</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/cron/custom-cron-tut.html">Configure a custom cron job and cron group (tutorial)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/db-profiler/db-profiler.html">Configure the database profiler</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/mq/config-mq.html">Configure message queue topology</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/mq/manage-mysql.html">MySQL message queues</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-magento.html">Configure Solr and Magento</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-script.html">Prepare Solr for production</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_manual.html">Manually configure master databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/multi-site/ms_over.html">Multiple websites or stores</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/sessions.html">How to locate your session files</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/prod/prod.html">Deploy Magento to production</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/prod/prod_deploy.html">Deployment steps</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+            <div class="updated">Updated: 2 November 2016 (PDT)</div>
+            <h2 id="config-cli-crontab">Configure a custom cron job and cron group (tutorial)</h2>
+<p>This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample module. You can use a module you already have or you can use a sample module from our <a href="https://github.com/magento/magento2-samples" target="_blank"><code>magento2-samples</code> repository</a>.</p>
+
+<p>Running the cron job results in a row being added to the <code>cron_schedule</code> table with the name of the cron job, <code>custom_cron</code>.</p>
+
+<p>We also show you how to optionally create a cron group, which you can use to run custom cron jobs with settings other than Magento application defaults.</p>
+
+<p>In this tutorial, we assume the following:</p>
+
+<ul>
+  <li>The Magento application is installed in <code>/var/www/html/magento2</code></li>
+  <li>Your Magento database user name and password are both <code>magento</code></li>
+  <li>You perform all actions as the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a></li>
+</ul>
+
+<h2 id="cron-tut-get">Step 1: Get a sample module</h2>
+<p>To set up a custom cron job, you need a sample module. We suggest the <code>magento-module-minimal</code> module.</p>
+
+<p>If you already have a sample module, you can use it; skip this step and the next step and continue with <a href="#cron-tut-class">Step 3: Create a class to run cron</a>.</p>
+
+<div class="collapsible"><b class="collapsible-title">To get a sample module: </b><div class="collapsible-content"><ol>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>Change to a directory that is not in your Magento application root (for example, your home directory).</li>
+  <li>
+    <p>Clone the <a href="https://github.com/magento/magento2-samples" target="_blank"><code>magento2-samples</code> repository</a>.</p>
+
+    <p>For example,</p>
+
+    <pre><code>cd ~
+git clone git@github.com:magento/magento2-samples.git
+</code></pre>
+
+    <p>If the command fails with the error <code>Permission denied (publickey).</code>, you must <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account" target="_blank">add your SSH public key to github.com</a>.</p>
+  </li>
+  <li>
+    <p>Make a directory to which to copy the sample code:</p>
+
+    <pre><code>mkdir -p /var/www/html/magento2/app/code/Magento/SampleMinimal
+</code></pre>
+  </li>
+  <li>
+    <p>Copy the sample module code:</p>
+
+    <pre><code>cp -r ~/magento2-samples/sample-module-minimal/* /var/www/html/magento2/app/code/Magento/SampleMinimal
+</code></pre>
+  </li>
+  <li>
+    <p>Verify the files copied properly:</p>
+
+    <pre><code>ls -al /var/www/html/magento2/app/code/Magento/SampleMinimal
+</code></pre>
+
+    <p>You should see the following result:</p>
+
+    <pre><code>drwxrwsr-x.   4 magento_user apache  4096 Oct 30 13:19 .
+drwxrwsr-x. 121 magento_user apache  4096 Oct 30 13:19 ..
+-rw-rw-r--.   1 magento_user apache   372 Oct 30 13:19 composer.json
+drwxrwsr-x.   2 magento_user apache  4096 Oct 30 13:19 etc
+-rw-rw-r--.   1 magento_user apache 10376 Oct 30 13:19 LICENSE_AFL.txt
+-rw-rw-r--.   1 magento_user apache 10364 Oct 30 13:19 LICENSE.txt
+-rw-rw-r--.   1 magento_user apache  1157 Oct 30 13:19 README.md
+-rw-rw-r--.   1 magento_user apache   270 Oct 30 13:19 registration.php
+drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
+</code></pre>
+  </li>
+  <li>
+    <p>Update the Magento database and schema:</p>
+
+    <pre><code>php /var/www/html/magento2/bin/magento setup:upgrade
+</code></pre>
+  </li>
+</ol>
+</div></div>
+
+<h2 id="cron-tut-verify">Step 2: Verify the sample module</h2>
+<p>Before you continue, make sure the sample module is registered and enabled.</p>
+
+<div class="collapsible"><b class="collapsible-title">To verify the sample module: </b><div class="collapsible-content"><ol>
+  <li>Log in to the Magento Admin as an administrator.</li>
+  <li>Click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; ADVANCED &gt; <strong>Advanced</strong>.</li>
+  <li>
+    <p>In the right pane, under Disable Modules Output, look for <strong>Magento_SampleMinimal</strong> as the following figure shows.</p>
+
+    <p><img src="/common/images/config_module-enabled.png" alt="Verify your sample module" width="900px" /></p>
+  </li>
+</ol>
+
+<p>If the module doesn’t display, review <a href="#cron-tut-get">step 1</a> carefully. Make sure your code is in the correct directory. Spelling and case are important; if anything is different, the module won’t load. Also, don’t forget to run <code>magento setup:upgrade</code>.</p>
+</div></div>
+
+<h2 id="cron-tut-class">Step 3: Create a class to run cron</h2>
+<p>This step shows a simple class to create a cron job. The class only writes a row to the <code>cron_schedule</code> table that confirms it’s set up successfully.</p>
+
+<div class="collapsible"><b class="collapsible-title">To create a class: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Create a directory for the class and change to that directory:</p>
+
+    <pre><code>mkdir /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron &amp;&amp; cd /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron
+</code></pre>
+  </li>
+  <li>
+    <p>Created a file named <code>Test.php</code> in that directory with the following contents:</p>
+  </li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Magento\SampleMinimal\Cron</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">\Psr\Log\LoggerInterface</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Test</span> <span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$logger</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">LoggerInterface</span> <span class="nv">$logger</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">(</span><span class="s1">&#39;Cron Works&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+</div></div>
+
+<h2 id="cron-tut-crontab">Step 4: Create <code>crontab.xml</code></h2>
+<p><code>crontab.xml</code> sets a schedule to run your custom cron code.</p>
+
+<div class="collapsible"><b class="collapsible-title">To create crontab.xml: </b><div class="collapsible-content"><p>Create <code>crontab.xml</code> as follows in the <code>/var/www/html/magento2/app/code/Magento/SampleMinimal/etc</code> directory:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Cron:etc/crontab.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;custom_cronjob&quot;</span> <span class="na">instance=</span><span class="s">&quot;Magento\SampleMinimal\Cron\Test&quot;</span> <span class="na">method=</span><span class="s">&quot;execute&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
+        <span class="nt">&lt;/job&gt;</span>
+    <span class="nt">&lt;/group&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p>The preceding <code>crontab.xml</code> runs the <code>Magento/SampleMinimal/Cron/Test.php</code> class once per minute, resulting in a row being added to the <code>cron_schedule</code> table.</p>
+</div></div>
+
+<h2 id="cron-tut-cronver">Step 5: Verify the cron job</h2>
+<p>This step shows how to verify the custom cron job successfully using a SQL query on the <code>cron_schedule</code> database table.</p>
+
+<div class="collapsible"><b class="collapsible-title">To verify cron: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Run Magento cron jobs:</p>
+
+    <pre><code>php /var/www/html/magento2/bin/magento cron:run
+</code></pre>
+  </li>
+  <li>
+    <p>Run the SQL query <code>SELECT * from cron_schedule WHERE job_code like '%custom%'</code> as follows:</p>
+
+    <ol>
+      <li>Enter <code>mysql -u magento -p</code></li>
+      <li>At the <code>mysql&gt;</code> prompt, enter <code>use magento;</code></li>
+      <li>Enter <code>SELECT * from cron_schedule WHERE job_code like '%custom%';</code></li>
+    </ol>
+  </li>
+</ol>
+
+<p>The result should be similar to the following:</p>
+
+<pre><code>+-------------+-----------------------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+| schedule_id | job_code                    | status  | messages | created_at          | scheduled_at        | executed_at         | finished_at         |
++-------------+-----------------------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+|        3715 | custom_cronjob              | success | Cron works     | 2016-10-30 10:39:04 | 2016-10-30 10:39:00 | 2016-10-30 10:40:04 | 2016-10-30 10:40:04 |
+</code></pre>
+</div></div>
+
+<h2 id="step-6-optional-set-up-a-custom-cron-group">Step 6 (optional): Set up a custom cron group</h2>
+<p>This step shows how to optionally set up a custom cron group. You should set up a custom cron group you want your custom cron job to run on a different schedule than other cron jobs (typically, once per minute) or if you want several custom cron jobs to run with different settings.</p>
+
+<div class="collapsible"><b class="collapsible-title">To set up a custom cron group: </b><div class="collapsible-content"><ol>
+  <li>Open <code>crontab.xml</code> in a text editor.</li>
+  <li>Change <code>&lt;group id="default"&gt;</code> to <code>&lt;group id="custom_crongroup"&gt;</code></li>
+  <li>Exit the text editor.</li>
+  <li>Create <code>/var/www/html/magento2/app/code/Magento/SampleMinimal/etc/crongroup.xml</code> with the following contents:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Cron:etc/cron_groups.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;custom_crongroup&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;schedule_generate_every&gt;</span>1<span class="nt">&lt;/schedule_generate_every&gt;</span>
+        <span class="nt">&lt;schedule_ahead_for&gt;</span>4<span class="nt">&lt;/schedule_ahead_for&gt;</span>
+        <span class="nt">&lt;schedule_lifetime&gt;</span>2<span class="nt">&lt;/schedule_lifetime&gt;</span>
+        <span class="nt">&lt;history_cleanup_every&gt;</span>10<span class="nt">&lt;/history_cleanup_every&gt;</span>
+        <span class="nt">&lt;history_success_lifetime&gt;</span>60<span class="nt">&lt;/history_success_lifetime&gt;</span>
+        <span class="nt">&lt;history_failure_lifetime&gt;</span>600<span class="nt">&lt;/history_failure_lifetime&gt;</span>
+        <span class="nt">&lt;use_separate_process&gt;</span>1<span class="nt">&lt;/use_separate_process&gt;</span>
+    <span class="nt">&lt;/group&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p>For a description of what the options mean, see <a href="/guides/v2.0/config-guide/cron/custom-cron-ref.html">Reference—configure custom cron jobs and cron groups</a>.</p>
+</div></div>
+
+<h2 id="step-7-optional-verify-your-custom-cron-group">Step 7 (optional): Verify your custom cron group</h2>
+<p>This step shows how to verify your custom cron group using the Magento Admin.</p>
+
+<div class="collapsible"><b class="collapsible-title">To verify your custom cron group: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Run Magento cron jobs for your custom group:</p>
+
+    <pre><code>php /var/www/html/magento2/bin/magento cron:run --group="custom_crongroup"
+</code></pre>
+  </li>
+  <li>Log in to the Magento Admin as an administrator.</li>
+  <li>Click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong>.</li>
+  <li>
+    <p>In the right pane, expand <strong>Cron</strong>.</p>
+
+    <p>Your cron group displays as follows:</p>
+  </li>
+</ol>
+</div></div>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
