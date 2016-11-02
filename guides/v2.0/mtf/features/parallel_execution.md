@@ -26,15 +26,15 @@ A general mechanism is:
 
 Comparatively to the common testing flow
 
-![Common flow image]({{site.baseurl}}common/images/mtf_features_common_dia.png)
+![Common flow image]({{site.baseurl}}common/images/ftf/mtf_features_common_dia.png)
 
 you can run a test suite using parallel execution flow with one Magento instance
 
-![Parallel execution flow with one instance image]({{site.baseurl}}common/images/mtf_features_parallel_one_dia.png)
+![Parallel execution flow with one instance image]({{site.baseurl}}common/images/ftf/mtf_features_parallel_one_dia.png)
 
 or run a test suite using parallel execution flow with multiple Magento instances.
 
-![Common flow and Parallel execution flow image]({{site.baseurl}}common/images/mtf_features_parallel_multi_dia.png)
+![Common flow and Parallel execution flow image]({{site.baseurl}}common/images/ftf/mtf_features_parallel_multi_dia.png)
 
 ## Set up parallel execution
 

@@ -23,7 +23,7 @@ A Selenium web-driver cannot enter data to fields with WYSIWYG. This option disa
 3. Set **Enable WYSIWYG Editor** to **Disabled Completely**.
 4. Click **Save Config**.
 
-![Change content settings]({{site.baseurl}}common/images/mtf_qstart_mag_wysiwyg.png){:width="650px"}
+![Change content settings]({{site.baseurl}}common/images/ftf/mtf_qstart_mag_wysiwyg.png){:width="650px"}
 
 ## Change security settings
 
@@ -33,13 +33,13 @@ Enable the **Admin Account Sharing** setting to avoid unpredictable logout durin
 2. Set **Admin Account Sharing** to **Yes**.
 3. Set **Add Secret Key to URLs** to **No**.
 
-![Change security settings]({{site.baseurl}}common/images/mtf_qstart_mag_secur.png){:width="650px"}
+![Change security settings]({{site.baseurl}}common/images/ftf/mtf_qstart_mag_secur.png){:width="650px"}
 
 ## Refresh page cache
 
 * Go to **Cache Management**.
 
-![Cache Management message]({{site.baseurl}}common/images/mtf_cache_mngt.png){:width="650px"}
+![Cache Management message]({{site.baseurl}}common/images/ftf/mtf_cache_mngt.png){:width="650px"}
 
 * Select the check boxes next to **Configuration** and **Page Cache**.
 * From the **Actions** list in the upper left, click **Refresh**.
