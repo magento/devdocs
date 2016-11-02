@@ -109,8 +109,9 @@ class Test {
     }
 
 }
-?>
 {% endhighlight %}
+
+<!-- ?> -->
 
 {% endcollapsible %}
 
@@ -144,6 +145,9 @@ This step shows how to verify the custom cron job successfully using a SQL query
 1.  Run Magento cron jobs:
 
         php /var/www/html/magento2/bin/magento cron:run
+2.  Enter the `magento cron:run` command two or three times. 
+
+    The first time you enter the command, it queues jobs; subsequently, the cron jobs are run. You must enter the command _at least_ twice.
 2.  Run the SQL query `SELECT * from cron_schedule WHERE job_code like '%custom%'` as follows:
 
     1.  Enter `mysql -u magento -p`
@@ -152,11 +156,16 @@ This step shows how to verify the custom cron job successfully using a SQL query
 
 The result should be similar to the following:
 
-    +-------------+-----------------------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
-    | schedule_id | job_code                    | status  | messages | created_at          | scheduled_at        | executed_at         | finished_at         |
-    +-------------+-----------------------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
-    |        3715 | custom_cronjob              | success | Cron works     | 2016-10-30 10:39:04 | 2016-10-30 10:39:00 | 2016-10-30 10:40:04 | 2016-10-30 10:40:04 |
+    +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+    | schedule_id | job_code       | status  | messages | created_at          | scheduled_at        | executed_at         | finished_at         |
+    +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+    |        3670 | custom_cronjob | success | NULL     | 2016-11-02 09:38:03 | 2016-11-02 09:38:00 | 2016-11-02 09:39:03 | 2016-11-02 09:39:03 |
+    |        3715 | custom_cronjob | success | NULL     | 2016-11-02 09:53:03 | 2016-11-02 09:53:00 | 2016-11-02 09:54:04 | 2016-11-02 09:54:04 |
+    |        3758 | custom_cronjob | success | NULL     | 2016-11-02 10:09:03 | 2016-11-02 10:09:00 | 2016-11-02 10:10:03 | 2016-11-02 10:10:03 |
+    |        3797 | custom_cronjob | success | NULL     | 2016-11-02 10:24:03 | 2016-11-02 10:24:00 | 2016-11-02 10:25:03 | 2016-11-02 10:25:03 |
+    +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
 
+If nothing displays, run the `magento cron:run` command a few more times and wait. It can take some time for the database to update.
 
 {% endcollapsible %}
 
@@ -168,7 +177,7 @@ This step shows how to optionally set up a custom cron group. You should set up 
 1.  Open `crontab.xml` in a text editor.
 2.  Change `<group id="default">` to `<group id="custom_crongroup">`
 3.  Exit the text editor.
-4.  Create `/var/www/html/magento2/app/code/Magento/SampleMinimal/etc/crongroup.xml` with the following contents:
+4.  Create `/var/www/html/magento2/app/code/Magento/SampleMinimal/etc/cron_groups.xml` with the following contents:
 
 {% highlight xml %}
 <?xml version="1.0"?>
@@ -184,7 +193,7 @@ This step shows how to optionally set up a custom cron group. You should set up 
 </config>
 {% endhighlight %}
 
-For a description of what the options mean, see [Reference&mdash;configure custom cron jobs and cron groups]({{ page.baseurl }}config-guide/cron/custom-cron-ref.html).
+For a description of what the options mean, see [Configure custom cron jobs and cron groups reference]({{ page.baseurl }}config-guide/cron/custom-cron-ref.html).
 
 {% endcollapsible %}
 
@@ -196,11 +205,18 @@ This step shows how to verify your custom cron group using the Magento Admin.
 1.  Run Magento cron jobs for your custom group:
 
         php /var/www/html/magento2/bin/magento cron:run --group="custom_crongroup"
+
+    Run the command at least twice.
+2.  Clean the Magento cache:
+
+        php /var/www/html/magento2/bin/magento cache:clean
 2.  Log in to the Magento Admin as an administrator.
 3.  Click **Stores** > **Configuration** > **Advanced** > **System**.
 4.  In the right pane, expand **Cron**.
 
     Your cron group displays as follows:
+
+    ![Your custom cron group]({{ site.baseurl }}common/images/config_cron-group.png)
 
 
 
