@@ -1590,8 +1590,9 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">(</span><span class="s1">&#39;Cron Works&#39;</span><span class="p">);</span>
     <span class="p">}</span>
 
-<span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
+
+<!-- ?> -->
 </div></div>
 
 <h2 id="cron-tut-crontab">Step 4: Create <code>crontab.xml</code></h2>
@@ -1622,6 +1623,11 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
 </code></pre>
   </li>
   <li>
+    <p>Enter the <code>magento cron:run</code> command two or three times.</p>
+
+    <p>The first time you enter the command, it queues jobs; subsequently, the cron jobs are run. You must enter the command <em>at least</em> twice.</p>
+  </li>
+  <li>
     <p>Run the SQL query <code>SELECT * from cron_schedule WHERE job_code like '%custom%'</code> as follows:</p>
 
     <ol>
@@ -1634,11 +1640,17 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
 
 <p>The result should be similar to the following:</p>
 
-<pre><code>+-------------+-----------------------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
-| schedule_id | job_code                    | status  | messages | created_at          | scheduled_at        | executed_at         | finished_at         |
-+-------------+-----------------------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
-|        3715 | custom_cronjob              | success | Cron works     | 2016-10-30 10:39:04 | 2016-10-30 10:39:00 | 2016-10-30 10:40:04 | 2016-10-30 10:40:04 |
+<pre><code>+-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+| schedule_id | job_code       | status  | messages | created_at          | scheduled_at        | executed_at         | finished_at         |
++-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+|        3670 | custom_cronjob | success | NULL     | 2016-11-02 09:38:03 | 2016-11-02 09:38:00 | 2016-11-02 09:39:03 | 2016-11-02 09:39:03 |
+|        3715 | custom_cronjob | success | NULL     | 2016-11-02 09:53:03 | 2016-11-02 09:53:00 | 2016-11-02 09:54:04 | 2016-11-02 09:54:04 |
+|        3758 | custom_cronjob | success | NULL     | 2016-11-02 10:09:03 | 2016-11-02 10:09:00 | 2016-11-02 10:10:03 | 2016-11-02 10:10:03 |
+|        3797 | custom_cronjob | success | NULL     | 2016-11-02 10:24:03 | 2016-11-02 10:24:00 | 2016-11-02 10:25:03 | 2016-11-02 10:25:03 |
++-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
 </code></pre>
+
+<p>If nothing displays, run the <code>magento cron:run</code> command a few more times and wait. It can take some time for the database to update.</p>
 </div></div>
 
 <h2 id="step-6-optional-set-up-a-custom-cron-group">Step 6 (optional): Set up a custom cron group</h2>
@@ -1648,7 +1660,7 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   <li>Open <code>crontab.xml</code> in a text editor.</li>
   <li>Change <code>&lt;group id="default"&gt;</code> to <code>&lt;group id="custom_crongroup"&gt;</code></li>
   <li>Exit the text editor.</li>
-  <li>Create <code>/var/www/html/magento2/app/code/Magento/SampleMinimal/etc/crongroup.xml</code> with the following contents:</li>
+  <li>Create <code>/var/www/html/magento2/app/code/Magento/SampleMinimal/etc/cron_groups.xml</code> with the following contents:</li>
 </ol>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
@@ -1663,7 +1675,7 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
     <span class="nt">&lt;/group&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>For a description of what the options mean, see <a href="/guides/v2.1/config-guide/cron/custom-cron-ref.html">Reference—configure custom cron jobs and cron groups</a>.</p>
+<p>For a description of what the options mean, see <a href="/guides/v2.1/config-guide/cron/custom-cron-ref.html">Configure custom cron jobs and cron groups reference</a>.</p>
 </div></div>
 
 <h2 id="step-7-optional-verify-your-custom-cron-group">Step 7 (optional): Verify your custom cron group</h2>
@@ -1675,6 +1687,14 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
 
     <pre><code>php /var/www/html/magento2/bin/magento cron:run --group="custom_crongroup"
 </code></pre>
+
+    <p>Run the command at least twice.</p>
+  </li>
+  <li>
+    <p>Clean the Magento cache:</p>
+
+    <pre><code>php /var/www/html/magento2/bin/magento cache:clean
+</code></pre>
   </li>
   <li>Log in to the Magento Admin as an administrator.</li>
   <li>Click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong>.</li>
@@ -1682,6 +1702,8 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
     <p>In the right pane, expand <strong>Cron</strong>.</p>
 
     <p>Your cron group displays as follows:</p>
+
+    <p><img src="/common/images/config_cron-group.png" alt="Your custom cron group" /></p>
   </li>
 </ol>
 </div></div>
