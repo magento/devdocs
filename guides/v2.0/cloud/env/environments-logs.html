@@ -1365,30 +1365,37 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 26 October 2016 (PDT)</div>
+            <div class="updated">Updated: 1 November 2016 (PDT)</div>
             <p>The <a href="/guides/v2.0/cloud/discover-deploy.html#cloud-deploy-over-phases-build">build hooks</a> and the <a href="/guides/v2.0/cloud/discover-deploy.html#cloud-deploy-over-phases-hook">deploy hooks</a> 
 produce logs that can be helpful in troubleshooting issues.</p>
 
 <h2 id="build-logs">Build logs</h2>
 
-<p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream
-of <code>git push</code>, so you can observe them in the terminal or capture them (along with error messages) with
-<code>git push &gt; build.log 2&gt;&amp;1</code>.</p>
+<p>After pushing code to your environment, you can see the results of both hooks. Logs from the build hook are redirected to the output stream
+of <code>git push</code>, so you can observe them in the terminal or capture them (along with error messages) using the command <code>git push &gt; build.log 2&gt;&amp;1</code>.</p>
 
 <h2 id="log-deploy-log">Deploy logs</h2>
 
-<p>Logs from the deploy hook are located on the server. The location depends on whether it is an integration environment or
-a staging/production environment. For integration environments the location is <code>/tmp/log/deploy.log</code>, and for staging/production
-environments the location is <code>/var/log/platform/&lt;user&gt;/post_deploy.log</code>. The value of <code>&lt;user&gt;</code> depends on the project ID
- and whether the environment is staging or production: with a project code of <code>yw1unoukjcawe</code>, the staging environment user
- will be <code>yw1unoukjcawe_stg</code> and the production environment user will ust be <code>yw1unoukjcawe</code>. So on a staging
- environment for project <code>yw1unoukjcawe</code>, the deploy log will be located at <code>/var/log/platform/yw1unoukjcawe_stg/post_deploy.log</code>.</p>
+<p>Logs from the deployment hook are located on the server. The location depends on whether it is an integration environment or
+a staging/production environment.</p>
+
+<ul>
+  <li>Integration environments: <code>/tmp/log/deploy.log</code></li>
+  <li>Staging or production: <code>/var/log/platform/&lt;user&gt;/post_deploy.log</code></li>
+</ul>
+
+<p>The value of <code>&lt;user&gt;</code> depends on the project ID
+ and whether the environment is staging or production. For example, if the project ID is <code>yw18fW0Xjcawe</code>, the staging environment user
+is <code>yw18fW0Xjcawe_stg</code> and the production environment user is <code>yw18fW0Xjcawe</code>.</p>
+
+<p>On a staging
+ environment for project <code>yw18fW0Xjcawe</code>, the deploy log is located at <code>/var/log/platform/yw18fW0Xjcawe_stg/post_deploy.log</code>.</p>
 
 <p>Logs for all deployments that have happened on this environment are appended to
 this file, so check the timestamps on log entries to verify that you’re seeing the logs that correspond to the deployment that
 you are interested in.</p>
 
-<p>The actual log output is highly verbose to allow troubleshooting. Here is a condensed example:</p>
+<p>Log output is highly verbose to allow troubleshooting. For example:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">[2016-10-11 22:15:38] Starting pre-deploy.
 ...
@@ -1396,7 +1403,9 @@ you are interested in.</p>
 [2016-10-11 22:15:42] Start deploy.
 [2016-10-11 22:15:42] Preparing environment specific data.
 [2016-10-11 22:15:42] Initializing routes.
-...
+
+... more ...
+
 [2016-10-11 22:15:46] Deployment complete.</code></pre></figure>
 
 <p>The deploy log contains start and stop messages for each of the two hooks: 

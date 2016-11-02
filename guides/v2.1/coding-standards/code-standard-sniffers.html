@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>HTML style guide</title>
+	<title>Code sniffers</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/coding-standards/code-standard-html.html">
+	<link rel="canonical" href="//guides/v2.1/coding-standards/code-standard-sniffers.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/coding-standards/code-standard-html.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/coding-standards/code-standard-sniffers.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/coding-standards/code-standard-html.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/coding-standards/code-standard-sniffers.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">HTML style guide</h1>
+		<h1 class="page-heading">Code sniffers</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/coding-standards/code-standard-html.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/coding-standards/code-standard-sniffers.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -342,7 +342,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-sniffers.html">PHP code sniffers</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/coding-standards/code-standard-sniffers.html">PHP code sniffers</a></li>
 
 									
 
@@ -390,7 +390,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/coding-standards/code-standard-html.html">HTML style guide</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/coding-standards/code-standard-html.html">HTML style guide</a></li>
 
 									
 
@@ -529,124 +529,18 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <p>This style guide defines Magento internal requirements for HTML code style for teams that develop LESS and CSS code. We recommend that developers who create Magento extensions and customizations also use these standards.</p>
+            <div class="updated">Updated: 2 November 2016 (PDT)</div>
+            <h2 id="php-code-sniffers">PHP code sniffers</h2>
 
-<p>The guide is based on the <a href="https://google.github.io/styleguide/htmlcssguide.xml">Google HTML/CSS Style Guide</a> with certain modifications that are described further.</p>
+<p>We recommend the consistent use of a <i>code sniffer</i> to enhance the readability of your code and help ensure that it meets Magento code standards.  A code sniffer is a tool that automates the process of identifying code irregularities. Although a sniffer will identify many more inconsistencies and errors than a manual edit, we recommend that you evaluate and make any fixes that your sniffer program identifies.</p>
 
-<p><strong>Contents</strong></p>
+<p>Magento recommends the use of <a href="http://pear.php.net/manual/en/package.php.php-codesniffer.faq.php" target="_blank">PHP_CodeSniffer</a>, the most popular code sniffer in use throughout the PHP development community.  PHP_CodeSniffer implements the full PSR4 standard. You can extend PHP_CodeSniffer to include your own rules, too, <a href="https://github.com/magento/magento2/blob/develop/dev/tests/static/framework/Magento/ruleset.xml" target="_blank">as we have</a>. The <a href="https://github.com/magento-ecg/coding-standard" target="_blank">ECG Magento PHP Code Sniffer Coding Standard</a> provides specifications that you can use to configure your code sniffer of choice to bring your <i>PHP coding style closer to Magento PHP standards</i>.</p>
 
-<ul id="markdown-toc">
-  <li><a href="#indentations" id="markdown-toc-indentations">Indentations</a></li>
-  <li><a href="#end-of-file" id="markdown-toc-end-of-file">End of file</a></li>
-  <li><a href="#self-closing-tags" id="markdown-toc-self-closing-tags">Self-closing tags</a></li>
-  <li><a href="#line-length" id="markdown-toc-line-length">Line length</a></li>
-  <li><a href="#spaces-around-equals-sign-" id="markdown-toc-spaces-around-equals-sign-">Spaces around equals sign (“=”)</a></li>
-  <li><a href="#spaces-and-colon-in-attributes" id="markdown-toc-spaces-and-colon-in-attributes">Spaces and colon in attributes</a></li>
-  <li><a href="#block-level-elements" id="markdown-toc-block-level-elements">Block-level elements</a></li>
-  <li><a href="#class-names" id="markdown-toc-class-names">Class names</a></li>
-  <li><a href="#accessibility" id="markdown-toc-accessibility">Accessibility</a></li>
-  <li><a href="#microdata" id="markdown-toc-microdata">Microdata</a></li>
-</ul>
+<h3 id="code-standards">Code standards</h3>
 
-<h2 id="indentations">Indentations</h2>
+<p>Magento supports the full <a href="http://stackoverflow.com/questions/24868586/what-is-the-difference-between-psr-0-and-psr-4983" target="_blank">PSR4</a> standard plus some Magento-specific coding practices.</p>
 
-<p>Use only spaces for indentation:</p>
-
-<ul>
-  <li>Tab size: 4 spaces</li>
-  <li>Indent size: 4 spaces</li>
-  <li>Continuation indent: 4 spaces</li>
-</ul>
-
-<p><strong>Recommended</strong></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
-    <span class="nt">&lt;li&gt;</span>One<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>Two<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
-
-<h2 id="end-of-file">End of file</h2>
-<p>Add a blank line at the end of file.</p>
-
-<h2 id="self-closing-tags">Self-closing tags</h2>
-<p>Always close self-closing tags.</p>
-
-<p><strong>Inappropriate</strong></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;br&gt;</span>
-<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;image.png&quot;</span> <span class="na">alt=</span><span class="s">&quot;image&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span><span class="nt">&gt;</span></code></pre></figure>
-
-<p><strong>Recommended</strong></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;image.png&quot;</span> <span class="na">alt=</span><span class="s">&quot;image&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
-
-<h2 id="line-length">Line length</h2>
-<p>Avoid code lines longer than 120 characters. When using an editor, it is inconvenient to scroll right and left to read the HTML code. Align tag attributes one under another to increase code readability.</p>
-
-<p><strong>Inappropriate</strong></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">data-bind=</span><span class="s">&quot;attr: { id: &#39;cart-item-&#39;+item_id+&#39;-qty&#39;, &#39;data-cart-item&#39;: item_id, &#39;data-item-qty&#39;: qty }, value: qty&quot;</span> <span class="na">type=</span><span class="s">&quot;number&quot;</span> <span class="na">size=</span><span class="s">&quot;4&quot;</span> <span class="na">class=</span><span class="s">&quot;item-qty cart-item-qty&quot;</span> <span class="na">maxlength=</span><span class="s">&quot;12&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
-
-<p><strong>Recommended</strong></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">data-bind=</span><span class="s">&quot;attr: {</span>
-<span class="s">       id: &#39;cart-item-&#39;+item_id+&#39;-qty&#39;,</span>
-<span class="s">       &#39;data-cart-item&#39;: item_id,</span>
-<span class="s">       &#39;data-item-qty&#39;: qty</span>
-<span class="s">       }, value: qty&quot;</span>
-       <span class="na">type=</span><span class="s">&quot;number&quot;</span>
-       <span class="na">size=</span><span class="s">&quot;4&quot;</span>
-       <span class="na">class=</span><span class="s">&quot;item-qty cart-item-qty&quot;</span>
-       <span class="na">maxlength=</span><span class="s">&quot;12&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
-
-<h2 id="spaces-around-equals-sign-">Spaces around equals sign (“=”)</h2>
-<p>Spaces around equals sign (“=”) are acceptable, but not recommended. The code without spaces is easier to read.</p>
-
-<p><strong>Not recommended</strong></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel =</span><span class="err"> </span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href =</span><span class="err"> </span><span class="s">&quot;styles.css&quot;</span><span class="nt">&gt;</span></code></pre></figure>
-
-<p><strong>Recommended</strong></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;styles.css&quot;</span><span class="nt">&gt;</span></code></pre></figure>
-
-<h2 id="spaces-and-colon-in-attributes">Spaces and colon in attributes</h2>
-<p>Use no space before the colon and one space after the colon for the sake of readability.</p>
-
-<p><strong>Not recommended</strong></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;i18n : &#39;Update&#39;&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;i18n:&#39;Update&#39;&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></figure>
-
-<p><strong>Recommended</strong></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;i18n: &#39;Update&#39;&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></figure>
-
-<h2 id="block-level-elements">Block-level elements</h2>
-<p>Use appropriate HTML5 elements for blocks. The following diagram shows how to define which HTML5 element to use for a block:</p>
-
-<p><img src="/common/images/h5d-sectioning-flowchart.png" /></p>
-
-<h2 id="class-names">Class names</h2>
-<p>Use semantic class names and IDs. Avoid presentational class names.</p>
-
-<p><strong>Inappropriate</strong></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;button-green&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span></code></pre></figure>
-
-<p><strong>Recommended</strong></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;action-primary&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span></code></pre></figure>
-
-<h2 id="accessibility">Accessibility</h2>
-<p>All pages should comply with the <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a>.</p>
-
-<h2 id="microdata">Microdata</h2>
-<p>All crucial pages (like product page) should contain <a href="https://www.w3.org/TR/microdata/">microdata</a>. Please pay attention to this recommendation when adding new functionality.</p>
+<p>The <a href="http://devdocs.magento.com/guides/v2.0/coding-standards/bk-coding-standards.html" target="_blank">Coding standards overview</a> introduces Magento-specific practices for PHP, JavaScript, and JQuery.</p>
 
 
 		</div>

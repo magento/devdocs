@@ -1365,7 +1365,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 29 October 2016 (PDT)</div>
+            <div class="updated">Updated: 1 November 2016 (PDT)</div>
             <h2 id="cloud-howto-patch">How to patch the Magento application</h2>
 <p>This topic discusses how to apply patches to your Magento Enterprise Cloud Edition system. There are two types of patches:</p>
 
@@ -1480,6 +1480,14 @@
     <pre><code>git apply vendor/magento/magento-cloud-configuration/patches/&lt;patch file name&gt;
 </code></pre>
   </li>
+  <li>
+    <p>Clean the Magento cache:</p>
+
+    <pre><code>php &lt;Magento root dir&gt;/bin/magento cache:clean
+</code></pre>
+
+    <p>You can also clean the cache using the <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">Magento Admin</a>.</p>
+  </li>
   <li>Thoroughly test your local system to make sure the patch doesn’t have unexpected side-affects.</li>
   <li>
     <p>After testing the patch, push it to the remote server and deploy it:</p>
@@ -1514,6 +1522,14 @@ git push origin &lt;branch name&gt;
     <pre><code>git apply vendor/magento/magento-cloud-configuration/patches/&lt;patch file name&gt;
 </code></pre>
   </li>
+  <li>
+    <p>Clean the Magento cache:</p>
+
+    <pre><code>php &lt;Magento root dir&gt;/bin/magento cache:clean
+</code></pre>
+
+    <p>You can also clean the cache using the <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">Magento Admin</a>.</p>
+  </li>
   <li>Thoroughly test your local system to make sure the patch doesn’t have unexpected side-affects.</li>
   <li>
     <p>After testing the patch, push it to the remote server and deploy it:</p>
@@ -1545,6 +1561,14 @@ git push origin master
 
     <pre><code>git apply &lt;Magento root dir&gt;/m2-hotfixes/&lt;patch file name&gt;
 </code></pre>
+  </li>
+  <li>
+    <p>Clean the Magento cache:</p>
+
+    <pre><code>php &lt;Magento root dir&gt;/bin/magento cache:clean
+</code></pre>
+
+    <p>You can also clean the cache using the <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">Magento Admin</a>.</p>
   </li>
   <li>
     <p>After testing the patch, push it to the remote server and deploy it:</p>
@@ -1598,6 +1622,14 @@ git push origin &lt;branch name&gt;
 
     <pre><code>git apply &lt;Magento root dir&gt;/m2-hotfixes/&lt;patch file name&gt;
 </code></pre>
+  </li>
+  <li>
+    <p>Clean the Magento cache:</p>
+
+    <pre><code>php &lt;Magento root dir&gt;/bin/magento cache:clean
+</code></pre>
+
+    <p>You can also clean the cache using the <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">Magento Admin</a>.</p>
   </li>
   <li>
     <p>After testing the patch, push it to the remote server and deploy it:</p>
