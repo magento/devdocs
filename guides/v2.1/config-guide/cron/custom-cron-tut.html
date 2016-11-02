@@ -1586,6 +1586,12 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
     <span class="p">}</span>
 
+<span class="sd">/**</span>
+<span class="sd">   * Write to system.log</span>
+<span class="sd">   *</span>
+<span class="sd">   * @return void</span>
+<span class="sd">   */</span>
+
     <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span> <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">(</span><span class="s1">&#39;Cron Works&#39;</span><span class="p">);</span>
     <span class="p">}</span>
@@ -1635,12 +1641,10 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
       <li>At the <code>mysql&gt;</code> prompt, enter <code>use magento;</code></li>
       <li>Enter <code>SELECT * from cron_schedule WHERE job_code like '%custom%';</code></li>
     </ol>
-  </li>
-</ol>
 
-<p>The result should be similar to the following:</p>
+    <p>The result should be similar to the following:</p>
 
-<pre><code>+-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+    <pre><code>+-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
 | schedule_id | job_code       | status  | messages | created_at          | scheduled_at        | executed_at         | finished_at         |
 +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
 |        3670 | custom_cronjob | success | NULL     | 2016-11-02 09:38:03 | 2016-11-02 09:38:00 | 2016-11-02 09:39:03 | 2016-11-02 09:39:03 |
@@ -1649,8 +1653,27 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
 |        3797 | custom_cronjob | success | NULL     | 2016-11-02 10:24:03 | 2016-11-02 10:24:00 | 2016-11-02 10:25:03 | 2016-11-02 10:25:03 |
 +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
 </code></pre>
+  </li>
+  <li>
+    <p>(Optional) Verify messages are written to Magento’s system log:</p>
 
-<p>If nothing displays, run the <code>magento cron:run</code> command a few more times and wait. It can take some time for the database to update.</p>
+    <pre><code>cat /var/www/html/magento2/var/log/system.log
+</code></pre>
+
+    <p>You should see one or more entries like the following:</p>
+
+    <pre><code>[2016-11-02 22:17:03] main.INFO: Cron Works [] []
+</code></pre>
+
+    <p>These messages come from the <code>execute</code> method in <code>Test.php</code>:</p>
+
+    <pre><code>public function execute() {
+   $this-&gt;logger-&gt;info('Cron Works');
+</code></pre>
+  </li>
+</ol>
+
+<p>If the SQL command and system log contain no entries, run the <code>magento cron:run</code> command a few more times and wait. It can take some time for the database to update.</p>
 </div></div>
 
 <h2 id="step-6-optional-set-up-a-custom-cron-group">Step 6 (optional): Set up a custom cron group</h2>
