@@ -109,14 +109,17 @@ Alternatively, to streamline the process of applying and debugging styles custom
 
 See the [Compile LESS with Grunt]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html) topic for details on how to install, configure and use Grunt.
 
-<h3 id="client-side">Client-side LESS compilation</h3>
+### Client-side LESS compilation {#client-side}
+
 The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:
 
 <ul>
 <li>root source (.less) files with resolved <code>@magento_import</code> directive </li>
 <li> <a href="http://en.wikipedia.org/wiki/Symbolic_link" target="_blank">symlinks</a> to the root source file that do not contain <code>@magento_import</code></li>
-<li>symlinks to the <code>.less</code> files included to the root source files using the imported by <code>@magento_import</code> and <code>@import</code> directives</li>
+<li>symlinks to all other `.less` files imported recursively by the <code>@magento_import</code> and <code>@import</code> directives</li>
 </ul>
+
+Note: Symlinks are not created, and the copy of files are published to `pub/static` instead, if the source file differs from the processed ones. This might happen if in the `@import` directives in the source the extensions of imported files are not specified. See [The @import directive usage](#fedg_css-import) for more details.
 
 #### Styles debugging in client-side compilation mode {#css_debug_client}
 
@@ -139,15 +142,28 @@ To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&g
 
 ## The @import directive usage{#fedg_css-import}
 You can import local and remote LESS and CSS files by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
-According to the `@import` syntax, you can specify the path the imported resource without file extension (for example: `@import 'source/lib/_lib';`). But in this case, in the process of resolving the file path, the Magento application adds the file extension to the `@import` notation, and pub for .less files we recommend specifying the extens but in the process of resolving file path Magento adds .less extension to the file to find the source using fallback mechanism, and replaces original path notation with actually found file (with extension).
-`@import 'source/lib/_lib';` will be replaced with `@import 'source/lib/_lib.less';`
+According to the `@import` syntax, you can specify the path the imported resource without file extension. For example: 
 
-It is recommended to define full path with .less extension in order to avoid differencies between original source and published file (in [client-side compilation mode]() or when using [grunt commands]()), so symlinks will be published instead of modified copy.
+    @import 'source/lib/_lib';
+    @import (css) 'styles';
 
-If you need to import remote CSS file in you .less source please use `url()` notation so Magento will skip this @import directive while resolving pathes to the local resources. For example to import google font use
+But in process of resolving the file path, the Magento application adds the `.less` extension to the `@import` notation. So in the processed files the statements from the previous example will look like following:
+
+    @import 'source/lib/_lib.less';
+    @import (css) 'styles.less';
+
+
+As a result, the processed file is different from the source file, and Magento uses the copies of processed files, instead of symlinks in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md). And in case of importing a `.css` files, the will also result in not importing the required `.css` file. 
+
+### Importing remote CSS files
+
+If you need to import remote CSS file in your `.less` source please use `url()` notation. For example to import Google font use the following notation:
+
 <pre>
 @import url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css');
 </pre>
+
+This way Magento will skip the `@import` directive while resolving paths to the local resources.
 
 <h2 id="fedg_css-magento-import">The @magento_import directive</h2>
 

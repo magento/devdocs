@@ -686,3 +686,27 @@ Extends that are used in several files should be specified in the theme's `sourc
 ### Naming
 
 Extend names should start with the `.abs-` prefix.
+
+## `@import` directive
+
+Always add the file extension of the imported resource.
+
+**Recommended**:
+
+    @import 'source/lib/_lib.less';
+    @import (css) 'styles.css';
+
+**Not recommended**:
+
+    @import 'source/lib/_lib';
+    @import (css) 'styles';
+
+Use single quotes.
+
+**Correct**:
+
+    @import 'source/lib/_lib.less';
+
+**Incorrect**:
+
+    @import "source/lib/_lib.less";
