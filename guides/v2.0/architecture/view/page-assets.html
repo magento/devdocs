@@ -369,7 +369,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 2 November 2016 (PDT)</div>
             <h2 id="m2devgde-page-assets-intro">Introduction to page assets</h2>
 
 <p>An <em>asset</em> is a reference to a certain resource linked to an HTML page; that is, references to scripts, stylesheets, RSS feeds, and so on using <code>&lt;head/&gt;</code>, <code>&lt;img/&gt;</code>, <code>&lt;object/&gt;</code> elements.</p>
@@ -555,8 +555,12 @@ http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css
 <p>The following classes implement Magento asset collections:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>—a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.</li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>—an extended collection that also implements asset grouping by properties (for example by content type)</li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>—a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>—an extended collection that also implements asset grouping by properties (for example by content type)</p>
+  </li>
 </ul>
 
 <p>Asset collections enable you to:</p>
