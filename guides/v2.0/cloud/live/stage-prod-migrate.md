@@ -101,5 +101,9 @@ You can do this using a text editor or by using the following command:
 
 Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>After migrating the database, you can set up your stored procedures or views in staging or production the same way you did in your integration environment.</p>
+</div> 
+
 #### Next step
 [Test]({{ page.baseurl }}cloud/live/stage-prod-test.html)
