@@ -103,7 +103,7 @@ All slashes must be escaped with `\\`.
 
 As a result of previous commands, a brand new fixture can be found in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture` directory.
 
-![A new Synonym fixture]({{site.baseurl}}common/images/mtf_tut_fixt.png)
+![A new Synonym fixture]({{site.baseurl}}common/images/ftf/mtf_tut_fixt.png)
 
 The following is a code of the new Synonym fixture.
 
@@ -129,7 +129,7 @@ The following is a code of the new Synonym fixture.
 
 If we open a New Synonym Group page in a browser
 
-![New Synonym Group page]({{ site.baseurl }}common/images/mtf_tutorial_new_syn_ui.png)
+![New Synonym Group page]({{ site.baseurl }}common/images/ftf/mtf_tutorial_new_syn_ui.png)
 
 we see that `store_id` and `website_id` are combined in the "Scope" fields. To set `store_id` and `website_id`, we have to perform some more logic than just entering the data. That's why we should use a [data source][].
 
@@ -137,7 +137,7 @@ The same field is present in Magento_Widget module. It means that data source ha
 
 Let's check the functional tests for the Magento_Widget module.
 
-![ScopeID data source alternative from Magento_Widget]({{ site.baseurl }}common/images/mtf_tutorial_storeIds-widget.png)
+![ScopeID data source alternative from Magento_Widget]({{ site.baseurl }}common/images/ftf/mtf_tutorial_storeIds-widget.png)
 
 It contains a `StoreIds.php` data source, that is similar to what we need. It has the following code:
 
@@ -272,7 +272,7 @@ This data source:
  
 We should save it as `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php`.
 
-![Synonym ScopeID data source location]({{site.baseurl}}common/images/mtf_tutorial_datasource.png)
+![Synonym ScopeID data source location]({{site.baseurl}}common/images/ftf/mtf_tutorial_datasource.png)
 
 Now we should change the fixture. Instead of `store_id` and `website_id`, we must use `scope_id` with the `Magento\Search\Test\Fixture\Synonym\ScopeId` data source class.
 
@@ -373,7 +373,7 @@ Now we can create a [test case][].
 From the [test case topic][] we know about the structure, location and name of the test case.
 In this example it is named `CreateSynonymEntityTest.php` and stored in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase`.
  
- ![A test case location]({{site.baseurl}}common/images/mtf_tutorial_testcase_location.png)
+ ![A test case location]({{site.baseurl}}common/images/ftf/mtf_tutorial_testcase_location.png)
  
 As a result of [manual testing][] we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. We can code the initialization of these pages in the test using an `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. The pages will be created in [Step 5][]. Also, we will use the fixture from the [Step 2][].
 
@@ -444,7 +444,7 @@ class CreateSynonymEntityTest extends Injectable
 
 Now we can add a [data set][] with variations that cover cases in the [test description][]: `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`
 
-![Created data set]({{site.baseurl}}common/images/mtf_tutor_dataset.png)
+![Created data set]({{site.baseurl}}common/images/ftf/mtf_tutor_dataset.png)
 
 The following code contains a data set, but doesn't have data yet:
 
@@ -534,13 +534,13 @@ In [Step 3][], we added two [pages][] to the test case class. Because both pages
 
 {% endhighlight %}
 
-![Created pages]({{site.baseurl}}common/images/mtf_tutorial_pages.png)
+![Created pages]({{site.baseurl}}common/images/ftf/mtf_tutorial_pages.png)
 
 To generate PHP classes for these [pages][] enter and run in your terminal
 
     php <magento2_root_dir>/dev/tests/functional/utils/generate.php
     
-![PHP classes of pages]({{site.baseurl}}common/images/mtf_tutorial_pages_php.png)
+![PHP classes of pages]({{site.baseurl}}common/images/ftf/mtf_tutorial_pages_php.png)
     
 In the next step we will create [blocks][] that implements logic in these pages.
 
@@ -591,15 +591,15 @@ Now you can run `generate.php` as we did before to re-generate page classes.
 
 We need to enter data from a data set into the form fields.
 
-![New Synonym Group page]({{site.baseurl}}common/images/mtf_tutorial_page_new_synonym.png)
+![New Synonym Group page]({{site.baseurl}}common/images/ftf/mtf_tutorial_page_new_synonym.png)
 
 The `Block` directory in the Magento_Search module (in the Magento code) contains the `Adminhtml/Synonyms/Edit` directories, as shown below:
  
-![Block structure in a code base]({{site.baseurl}}common/images/mtf_tutorial_block_struct.png) 
+![Block structure in a code base]({{site.baseurl}}common/images/ftf/mtf_tutorial_block_struct.png) 
  
 The `Search/Test` directory in functional tests should be constructed in a similar manner:
  
-![Block structure in a functional test]({{site.baseurl}}common/images/mtf_tutorial_block_struct_test.png) 
+![Block structure in a functional test]({{site.baseurl}}common/images/ftf/mtf_tutorial_block_struct_test.png) 
 
 We need a `fill()` method from the [`\Magento\Mtf\Block\Form`][] class and a mapping file.
 
@@ -644,7 +644,7 @@ class SynonymsForm extends Form
 
 Now we have the following structure:
 
-![Form mapping block]({{site.baseurl}}common/images/mtf_tutorial_block_mapping.png)
+![Form mapping block]({{site.baseurl}}common/images/ftf/mtf_tutorial_block_mapping.png)
 
 
 Then we should add the block class to the `SynonymsNew.xml` page object. To identify a form block on the HTML page, use an `id='page:main-container'` css selector.
@@ -905,7 +905,7 @@ You can run the test using your IDE or the CLI. The Selenium Server must be [up 
 
 The last item in the test description says that the test must check that a success message is displayed after the test flow completes.
 
-![Message about the successful save]({{site.baseurl}}common/images/mtf_tutorial_success_message.png)
+![Message about the successful save]({{site.baseurl}}common/images/ftf/mtf_tutorial_success_message.png)
 
 To cover this, we should create the test assertion ([constraint][]) and add the full class name to a variation of the data set. 
  
@@ -964,7 +964,7 @@ class AssertCustomerSuccessSaveMessage extends AbstractConstraint
 
 By making a simple change, we can create a constraint class that is needed `\Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage`
 
-![A constraint location]({{site.baseurl}}common/images/mtf_tutorial_constraint_dir.png)
+![A constraint location]({{site.baseurl}}common/images/ftf/mtf_tutorial_constraint_dir.png)
 
 with the following code:
 

@@ -144,7 +144,7 @@ See an example for the Widget cURL handler (`<magento2_root_dir>/dev/tests/funct
 
 See the directory structure mentioned for the case with the Widget cURL handler:
 
-<img src="{{ site.baseurl }}common/images/mtf_widget_handler_tree.png">
+<img src="{{ site.baseurl }}common/images/ftf/mtf_widget_handler_tree.png">
 
 ## How to create a cURL handler {#mtf_handler_howto-create-curl}
 

@@ -146,7 +146,7 @@ The following table describes `<field>` attributes.
 
 The following image shows how XML is connected with GUI of your new widget.
 
-<a href="{{ site.baseurl }}common/images/mtf_fixture_xml_pic.png"><img src="{{ site.baseurl }}common/images/mtf_fixture_xml_pic.png" /></a>
+<a href="{{ site.baseurl }}common/images/ftf/mtf_fixture_xml_pic.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_fixture_xml_pic.png" /></a>
 
 Orange arrows show relations between `<field>` nodes of fixture and GUI element of Magento widget, that we are going to test.
 
@@ -253,7 +253,7 @@ To apply changes, enter following commands:
 
 Our new field `layout_updates` is complex and contains different elements and logic, depending on the type of layout chosen.
 
-![Layout update subelements]({{ site.baseurl }}common/images/mtf_layout_update.jpg)
+![Layout update subelements]({{ site.baseurl }}common/images/ftf/mtf_layout_update.jpg)
 
 You can use a data source that provides additional processing of the field (for example, parsing or creation of new field).
 
