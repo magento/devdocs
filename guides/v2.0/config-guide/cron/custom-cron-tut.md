@@ -104,6 +104,12 @@ class Test {
         $this->logger = $logger;
     }
 
+/**
+   * Write to system.log
+   *
+   * @return void
+   */
+
     public function execute() {
         $this->logger->info('Cron Works');
     }
@@ -154,18 +160,31 @@ This step shows how to verify the custom cron job successfully using a SQL query
     2.  At the `mysql>` prompt, enter `use magento;`
     3.  Enter `SELECT * from cron_schedule WHERE job_code like '%custom%';`
 
-The result should be similar to the following:
+    The result should be similar to the following:
 
-    +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
-    | schedule_id | job_code       | status  | messages | created_at          | scheduled_at        | executed_at         | finished_at         |
-    +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
-    |        3670 | custom_cronjob | success | NULL     | 2016-11-02 09:38:03 | 2016-11-02 09:38:00 | 2016-11-02 09:39:03 | 2016-11-02 09:39:03 |
-    |        3715 | custom_cronjob | success | NULL     | 2016-11-02 09:53:03 | 2016-11-02 09:53:00 | 2016-11-02 09:54:04 | 2016-11-02 09:54:04 |
-    |        3758 | custom_cronjob | success | NULL     | 2016-11-02 10:09:03 | 2016-11-02 10:09:00 | 2016-11-02 10:10:03 | 2016-11-02 10:10:03 |
-    |        3797 | custom_cronjob | success | NULL     | 2016-11-02 10:24:03 | 2016-11-02 10:24:00 | 2016-11-02 10:25:03 | 2016-11-02 10:25:03 |
-    +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+        +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+        | schedule_id | job_code       | status  | messages | created_at          | scheduled_at        | executed_at         | finished_at         |
+        +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+        |        3670 | custom_cronjob | success | NULL     | 2016-11-02 09:38:03 | 2016-11-02 09:38:00 | 2016-11-02 09:39:03 | 2016-11-02 09:39:03 |
+        |        3715 | custom_cronjob | success | NULL     | 2016-11-02 09:53:03 | 2016-11-02 09:53:00 | 2016-11-02 09:54:04 | 2016-11-02 09:54:04 |
+        |        3758 | custom_cronjob | success | NULL     | 2016-11-02 10:09:03 | 2016-11-02 10:09:00 | 2016-11-02 10:10:03 | 2016-11-02 10:10:03 |
+        |        3797 | custom_cronjob | success | NULL     | 2016-11-02 10:24:03 | 2016-11-02 10:24:00 | 2016-11-02 10:25:03 | 2016-11-02 10:25:03 |
+        +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
 
-If nothing displays, run the `magento cron:run` command a few more times and wait. It can take some time for the database to update.
+3.  (Optional) Verify messages are written to Magento's system log:
+
+        cat /var/www/html/magento2/var/log/system.log
+
+    You should see one or more entries like the following:
+
+        [2016-11-02 22:17:03] main.INFO: Cron Works [] []
+
+    These messages come from the `execute` method in `Test.php`:
+
+        public function execute() {
+           $this->logger->info('Cron Works');
+
+If the SQL command and system log contain no entries, run the `magento cron:run` command a few more times and wait. It can take some time for the database to update.
 
 {% endcollapsible %}
 
