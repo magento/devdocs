@@ -10,13 +10,18 @@ github_link: frontend-dev-guide/css-topics/css-preprocess.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 ---
 
-<h2 id="preproc_over">What's in this topic</h2>
+## What's in this topic {#preproc_over}
+{:.no_toc}
 
 The topic describes how stylesheets are preprocessed and compiled to CSS in the Magento application. It provides the theoretical background a frontend developer needs to debug stylesheets effectively.
 
+**Contents**
 
+* TOC
+{:toc}
 
-<h2 id="css_preprocess_terms">Terms used</h2>
+## Terms used {#css_preprocess_terms}
+
 <table>
 <tr>
 <th>
@@ -56,7 +61,7 @@ The root source files for the Blank theme:
 </table>
 
 
-<h2 id="less_modes">LESS compilation modes</h2>
+## LESS compilation modes {#less_modes}
 
 In the Magento application, the following modes of compiling <code>.less</code> files to CSS are implemented:
 
@@ -81,7 +86,7 @@ To set the compilation mode, do the following:
 <li>Make sure that the same compilation mode is set for each configuration scope. That is, check the <b>Front-end development workflow</b> option having switched the <b>Store View</b> drop-down field to the website scope first, and then to the store view. Change the option to match the default config if it is different.</li>
 </ol>
 
-<h3 id="server-side">Server-side LESS compilation</h3>
+### Server-side LESS compilation {#server-side}
 
 The following paragraph describes how the LESS preprocessor works in server-side compilation mode.
 For each CSS file included in the layouts, LESS preprocessor does the following:
@@ -116,10 +121,13 @@ The client-side compilation flow is similar to server-side. The difference is in
 <ul>
 <li>root source (.less) files with resolved <code>@magento_import</code> directive </li>
 <li> <a href="http://en.wikipedia.org/wiki/Symbolic_link" target="_blank">symlinks</a> to the root source file that do not contain <code>@magento_import</code></li>
-<li>symlinks to all other `.less` files imported recursively by the <code>@magento_import</code> and <code>@import</code> directives</li>
+<li>symlinks to all other <code>.less</code> files imported recursively by the <code>@magento_import</code> and <code>@import</code> directives</li>
 </ul>
 
-Note: Symlinks are not created, and the copy of files are published to `pub/static` instead, if the source file differs from the processed ones. This might happen if in the `@import` directives in the source the extensions of imported files are not specified. See [The @import directive usage](#fedg_css-import) for more details.
+<div class="bs-callout bs-callout-info" id="info">
+<p>Symlink is not created, and a copy of the processed file is published to <code>pub/static</code> instead, if the source file differs from the processed one. One of the reasons of this difference might be the usage of the <code>@import</code> directive without file extension in the source file. See <a href="#fedg_css-import>The @import directive usage</a> for more details.</p>
+</div>
+
 
 #### Styles debugging in client-side compilation mode {#css_debug_client}
 
@@ -140,32 +148,35 @@ This is required in the following cases:
 
 To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
 
-## The @import directive usage{#fedg_css-import}
-You can import local and remote LESS and CSS files by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
-According to the `@import` syntax, you can specify the path the imported resource without file extension. For example: 
+## The `@import` directive rules of usage {#fedg_css-import}
+You can import local and remote `.less` and `.css` files by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
+According to the `@import` syntax, you can specify the path to the imported resource without file extension. For example: 
 
+{%highlight css%}
     @import 'source/lib/_lib';
     @import (css) 'styles';
+{%endhighlight%}
 
 But in process of resolving the file path, the Magento application adds the `.less` extension to the `@import` notation. So in the processed files the statements from the previous example will look like following:
 
+{%highlight css%}
     @import 'source/lib/_lib.less';
     @import (css) 'styles.less';
+{%endhighlight%}
 
-
-As a result, the processed file is different from the source file, and Magento uses the copies of processed files, instead of symlinks in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md). And in case of importing a `.css` files, the will also result in not importing the required `.css` file. 
+As a result, the processed file is different from the source file, and Magento uses the copies of processed files, instead of symlinks in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md). In case of importing a `.css` file, this will also result in not finding the required `.css` file. 
 
 ### Importing remote CSS files
 
-If you need to import remote CSS file in your `.less` source please use `url()` notation. For example to import Google font use the following notation:
+If you need to import remote CSS file in your `.less` source, use `url()` notation. For example, to import Google font use the following notation:
 
-<pre>
+{%highlight css%}
 @import url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css');
-</pre>
+{%endhighlight%}
 
 This way Magento will skip the `@import` directive while resolving paths to the local resources.
 
-<h2 id="fedg_css-magento-import">The @magento_import directive</h2>
+## The `@magento_import` directive {#fedg_css-magento-import}
 
 <p><code>@magento_import</code> is a Magento-specific LESS directive that allows including multiple files by a name pattern. It is used to include files with the same name from the different locations, for example, different modules.
 The standard <code>@import</code> directive includes a single file, which is found according to the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">static files fallback</a>.</p>
@@ -174,7 +185,7 @@ The standard <code>@import</code> directive includes a single file, which is fou
 <code>@magento_import</code> can be used in the root source files of a theme only.
 
 
-<h3 id="magento-import-usage">@magento_import rules of usage</h3>
+### `@magento_import` rules of usage {#magento-import-usage}
 
 To include a <code>.less</code> file using the <code>@magento_import</code> directive:
 
@@ -206,7 +217,7 @@ The best practice is to specify the file extension in the path, though technical
 
 </ol>
 
-<h3 id="magento_import_example">@magento_import processing</h3>
+### `@magento_import` processing {#magento_import_example}
 
 In the scope of static resources preprocessing, the built-in LESS preprocessor does the following:
 

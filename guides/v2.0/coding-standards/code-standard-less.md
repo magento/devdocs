@@ -691,12 +691,12 @@ Extend names should start with the `.abs-` prefix.
 
 Always add the file extension of the imported resource.
 
-**Recommended**:
+**Correct**:
 
     @import 'source/lib/_lib.less';
     @import (css) 'styles.css';
 
-**Not recommended**:
+**Incorrect**:
 
     @import 'source/lib/_lib';
     @import (css) 'styles';
