@@ -1,6 +1,6 @@
 <div markdown="1">
 
-Browsers support (both storefront and admin area)
+Both storefront and admin area
 
 *	Internet Explorer 11 or later, Microsoft Edge, latest&ndash;1
 *	Firefox latest, latest&ndash;1 (any operating system)
