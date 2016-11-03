@@ -198,8 +198,8 @@ The following code is a corresponding mapping with the typified element `optgrou
 
 <!-- PICTURE DEFINITIONS -->
 
-[A typified element mapping example in GUI]: {{site.baseurl}}common/images/mtf_typ_element_map_gui.png
-[A typified element example in the browser]: {{site.baseurl}}common/images/mtf_typ_element_brows.png
+[A typified element mapping example in GUI]: {{site.baseurl}}common/images/ftf/mtf_typ_element_map_gui.png
+[A typified element example in the browser]: {{site.baseurl}}common/images/ftf/mtf_typ_element_brows.png
 
 
 <!-- LINK DEFINITIONS -->

@@ -58,11 +58,11 @@ To enable this feature follow:
 1. Set **Add Block Name to Hints** to **Yes**
 1. **Save Config**
 
-![]({{site.baseurl}}common/images/mtf_bloch_namepath_ui_onoff.png)
+![]({{site.baseurl}}common/images/ftf/mtf_bloch_namepath_ui_onoff.png)
 
 Now each UI block has hint about its name and path. Also, you can see the path to a PHTML template, where you can find a path to the Magento block, if you cannot find it in the hint.
 
-<a href="{{ site.baseurl }}common/images/mtf_block_name_path_in_ui.png"><img src="{{ site.baseurl }}common/images/mtf_block_name_path_in_ui.png" /></a>
+<a href="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_ui.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_ui.png" /></a>
 
 <div class="bs-callout bs-callout-tip">
   <p>If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.</p>
@@ -111,7 +111,7 @@ protected function _toHtml()
 
 Now you can inspect any element in a browser, and find which block contains it.
 
-<a href="{{ site.baseurl }}common/images/mtf_block_name_path_in_code.png"><img src="{{ site.baseurl }}common/images/mtf_block_name_path_in_code.png" /></a>
+<a href="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_code.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_code.png" /></a>
 
 ### Block class {#mtf_block_class}
 
@@ -202,11 +202,11 @@ A mapping file is an XML file which has the same name and path as the block does
 
 Let's see the [Customer Login]({{site.mage2000url}}app/code/Magento/Customer/Block/Form/Login.php) block. The block has two input fields: `email` and `password`.
 
-<a href="{{site.baseurl}}common/images/mtf_block_login_ui.png"><img src="{{site.baseurl}}common/images/mtf_block_login_ui.png" /></a>
+<a href="{{site.baseurl}}common/images/ftf/mtf_block_login_ui.png"><img src="{{site.baseurl}}common/images/ftf/mtf_block_login_ui.png" /></a>
 
 The mapping file for the block is stored in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml`, along with the block.
 
-<img src="{{site.baseurl}}common/images/mtf_block_login_dir.png" />
+<img src="{{site.baseurl}}common/images/ftf/mtf_block_login_dir.png" />
 
 The mapping file defines the fields from the form.
 
@@ -247,7 +247,7 @@ All nodes are optional. Default value is assigned automatically if a node (`sele
 
 The general structure of the form mapping file:
 
-<img src="{{site.baseurl}}common/images/mtf_block_map_form_xml.png" />
+<img src="{{site.baseurl}}common/images/ftf/mtf_block_map_form_xml.png" />
 
 ### Form tab mapping {#mtf_block_map_form_tab}
 
@@ -256,11 +256,11 @@ To get the block class with form tab mapping, extend your class from <a href="{{
 
 For example, let's see tabs for the Magento Widget: **Settings**, **Storefront properties**, **Frontend App Options**, **Layout Updates** .
 
-<img src="{{site.baseurl}}common/images/mtf_block_tabs_ui.png" />
+<img src="{{site.baseurl}}common/images/ftf/mtf_block_tabs_ui.png" />
 
 Four tabs are mapped in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml` file, which is stored along with the block class. 
 
-<img src="{{site.baseurl}}common/images/mtf_block_tab_struc.png" />
+<img src="{{site.baseurl}}common/images/ftf/mtf_block_tab_struc.png" />
 
 The file contains the following mapping:
 
@@ -344,11 +344,11 @@ In the mapping file:
 
 On the UI:
 
-![Example of `composite` field]({{site.baseurl}}common/images/mtf_block_tab_composite_ui.png)
+![Example of `composite` field]({{site.baseurl}}common/images/ftf/mtf_block_tab_composite_ui.png)
 
 The general structure of the form tab mapping file:
 
-<img src="{{site.baseurl}}common/images/mtf_block_map_form_tab_xml.png" />
+<img src="{{site.baseurl}}common/images/ftf/mtf_block_map_form_tab_xml.png" />
 
 ### Merging form tab mapping files {#mtf_block_map_form_tab_merge}
 
@@ -358,7 +358,7 @@ The form tab mapping files that have the same name and path inside different mod
 
 Form tab mapping files in the following example will be merged automatically:
 
-<img src="{{site.baseurl}}common/images/mtf_block_formtab_merge.png" />
+<img src="{{site.baseurl}}common/images/ftf/mtf_block_formtab_merge.png" />
 
 ## Renders {#mtf_block_render}
 

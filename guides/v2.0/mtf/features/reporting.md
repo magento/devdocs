@@ -19,7 +19,7 @@ The Functional Testing Framework (FTF) provides a reporting tool, which logs fai
 
 The following image demonstrates example of a general flow.  
 
-<a href="{{site.baseurl}}common/images/ftf-reporting-diagram.png" alt="Reporting mechanism diagram" target="_blank"><img src="{{site.baseurl}}common/images/ftf-reporting-diagram.png" /></a>
+<a href="{{site.baseurl}}common/images/ftf/ftf-reporting-diagram.png" alt="Reporting mechanism diagram" target="_blank"><img src="{{site.baseurl}}common/images/ftf/ftf-reporting-diagram.png" /></a>
 
 The event manager is a core component which:
 
