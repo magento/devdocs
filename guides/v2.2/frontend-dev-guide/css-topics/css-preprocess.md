@@ -246,7 +246,3 @@ Example of how <code>@magento_import</code> is used and processed in <code>&lt;M
    </tbody>
 </table>
 
-### Developer experience when working with LESS {#debugging_less_files}
-
-server-side
-
