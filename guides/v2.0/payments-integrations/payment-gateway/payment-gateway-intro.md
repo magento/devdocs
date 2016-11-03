@@ -11,5 +11,8 @@ github_link: payments-integrations/payment-gateway/payment-gateway-intro.md
 redirect_from: /guides/v1.0/payments-integrations/payment-gateway/payment-gateway-intro.html
 ---
 
-In this section you can find main Payment Gateway components available in Magento2 which allow to construct complex integration flows, having simple components.
+In this section you can find main Payment Gateway components available in Magento that allow constructing complex integration flows.
 
+<p class="q">What kind of integration? Integration with Payment Gateway?</p>
+
+<p class="q">Need more details. How these flows might look, how to link components? What are these components? (modules? libraries?interfaces) Can we created a flow diagram? Or other diagram linking the components? </p>

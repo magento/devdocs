@@ -3,14 +3,21 @@ layout: default
 group: payments-integrations
 subgroup: p_gateway
 title: Gateway Command
-menu_title: 
+menu_title: Gateway Command 
 menu_node: 
 menu_order: 1 
 version: 2.0
 github_link: payments-integrations/payment-gateway/gateway-command.md
 ---
 
-As was said in Introduction article, _Gateway Command_ is a proxy service, which takes gateway specific payload and produces _Result_.
+##  {{page.menu_title}}
+{:.no_toc}
+
+## What's in this topic
+This topic describes Gateway Command.
+
+
+_Gateway Command_ is a proxy service, which takes gateway specific payload and produces _Result_.
 
 Basic abstraction in such case is `\Magento\Payment\Gateway\CommandInterface`:
 

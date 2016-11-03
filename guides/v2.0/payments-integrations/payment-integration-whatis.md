@@ -2,7 +2,7 @@
 layout: default
 group: payments-integrations
 subgroup: p_whatis
-title: What is an integration with Payment Gateway/Provider in Magento2
+title: What is an integration with Payment Gateway/Provider in Magento
 menu_title: Introduction
 menu_node: parent
 menu_order: 1
@@ -11,10 +11,19 @@ github_link: payments-integrations/payments-integrations-whatis.md
 redirect_from: /guides/v1.0/payments-integrations/payments-integrations-whatis.html
 ---
 
-In this section you can find information about what Payment Gateway is from Magento perspective, it's consumers, and client customizations.
+##  {{page.menu_title}}
+{:.no_toc}
+
+## What's in this topic
+This topic describes what a payment gateway is from Magento perspective, its consumers, and client customizations.
+
+**Contents**
+
+* TOC
+{:toc}
 
 ### Payment Gateway from Magento perspective
-Basically integration provides an ability to put/create a transaction based on _Order_ details or perform available operations on existing _Transaction_.
+Integration provides an ability to put/create a transaction based on _Order_ details or perform available operations on existing _Transaction_.
 Let's say we have a function _F_, which represents a Gateway operation, and transaction payload _p_, the operation can be represented as follows:
 _F(p) = t_
 
@@ -28,6 +37,8 @@ Transaction payload in such case is specific to a concrete Gateway, and may enca
 * Payment details
 
 Following interface represents all requirements, defined above. Which allows us to define any domain-specific logic which may be executed before or after actual Gateway Command execution.
+
+<p class="q">What is the nature of Gateway Command? Is it a php method? A cli command</p>
 
 {% highlight php startinline=1 %}
 <?php
@@ -53,6 +64,8 @@ interface CommandInterface
 }
 {% endhighlight %}
 
+<p class="q">So to sum up, what is a payment gateway from magento perspective?</p>
+<p class="q">Is a "payment gateway" a synonym of "integration"?</p>
 
 ### Integration service consumers
 As Magento2 is a complex system containing various atomic modules, module bundles still exist to ease implementation of complex business processes.
@@ -65,6 +78,8 @@ One of such bundle contains next modules:
 * Quote
 * Payment
 
+<p class="q'>What business process does this bundle implement?</p>
+
 Next topics will be focused on Payment module in scope of this bundle.
 
 
@@ -72,4 +87,7 @@ Next topics will be focused on Payment module in scope of this bundle.
 
 Each module from the bundle above requires every Payment integration to provide components/interfaces/configuration for available extension points to build a fullstack e-commerce platform.
 
+<p class="q">Can we change the wording to:<p>
+
+Every payment integration must provide components/interfaces/configuration for available extension points in the modules of the bundle. 
 
