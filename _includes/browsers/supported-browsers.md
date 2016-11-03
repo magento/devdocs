@@ -1,13 +1,8 @@
 <div markdown="1">
 
-Internet Explorer and Microsoft Edge (Windows)
+Browsers support (both storefront and admin area)
 
-*	Storefront: Internet Explorer 9 or later
-*	Magento Admin: Internet Explorer 11 or later, Microsoft Edge, latest&ndash;1
-
-All other browsers (both storefront and Admin)
-
-*	Magento Admin: Internet Explorer 11 or later, Microsoft Edge, latest&ndash;1
+*	Internet Explorer 11 or later, Microsoft Edge, latest&ndash;1
 *	Firefox latest, latest&ndash;1 (any operating system)
 *	Chrome latest, latest&ndash;1 (any operating system)
 *	Safari latest, latest&ndash;1 (Mac OS)
