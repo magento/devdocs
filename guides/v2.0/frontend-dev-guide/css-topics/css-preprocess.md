@@ -149,22 +149,22 @@ This is required in the following cases:
 To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
 
 ## The `@import` directive rules of usage {#fedg_css-import}
-You can import local and remote `.less` and `.css` files by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
-According to the `@import` syntax, you can specify the path to the imported resource without file extension. For example: 
+You can import local and remote `.less` and `.css` files in your `.less` Magento stylesheets by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
+According to the `@import` syntax, specifying the file extension for the imported file is not mandatory. For example, the following notation is allowed:
 
 {%highlight css%}
-    @import 'source/lib/_lib';
-    @import (css) 'styles';
+@import 'source/lib/_lib';
+@import (css) 'styles';
 {%endhighlight%}
 
-But in process of resolving the file path, the Magento application adds the `.less` extension to the `@import` notation. So in the processed files the statements from the previous example will look like following:
+But in process of resolving the file path, Magento adds the `.less` extension for the imported files in all `@import` entrees. So in the processed files, the statements from the previous example will look like following:
 
 {%highlight css%}
-    @import 'source/lib/_lib.less';
-    @import (css) 'styles.less';
+@import 'source/lib/_lib.less';
+@import (css) 'styles.less';
 {%endhighlight%}
 
-As a result, the processed file is different from the source file, and Magento uses the copies of processed files, instead of symlinks in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md). In case of importing a `.css` file, this will also result in not finding the required `.css` file. 
+As a result, the processed file is different from the source file. So in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md), Magento cannot use symlinks to the source files. It uses the copies of processed files instead, and they are stored in the `pub/static` directory. In case of importing CSS resources, this will also result in not finding and not importing the required files. 
 
 ### Importing remote CSS files
 
