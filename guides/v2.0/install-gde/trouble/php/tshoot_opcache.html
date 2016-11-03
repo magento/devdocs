@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP version readiness check issues</title>
+	<title>Resolve an illegal offset error</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/readiness/tshoot_rc_php.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/php/tshoot_opcache.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_php.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/trouble/php/tshoot_opcache.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/trouble/readiness/tshoot_rc_php.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/trouble/php/tshoot_opcache.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -163,14 +163,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">PHP version readiness check issues</h1>
+		<h1 class="page-heading">Resolve an illegal offset error</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_php.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/trouble/php/tshoot_opcache.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -601,7 +601,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_php.html">PHP version readiness check issues</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_php.html">PHP version readiness check issues</a></li>
 
 									
 
@@ -679,7 +679,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_opcache.html">Resolve an illegal offset error</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_opcache.html">Resolve an illegal offset error</a></li>
 
 									
 
@@ -852,54 +852,68 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 1 August 2016 (PDT)</div>
-            <div>
+            <div class="updated">Updated: 3 November 2016 (PDT)</div>
+            <h2 id="resolve-an-illegal-offset-error">Resolve an illegal offset error</h2>
+<p>In Magento 2.1 or later, when creating a new product in the Magento Admin, the following error might display:</p>
 
-  <h2 id="php-version-readiness-check-issues">PHP version readiness check issues</h2>
-  <p>You might encounter the following issues with the PHP version readiness check:</p>
+<pre><code>Warning: Illegal string offset 'is_in_stock' in [...]/vendor/
+magento/module-catalog-inventory/Ui/DataProvider/Product/Form/
+Modifier/AdvancedInventory.php on line 87
+</code></pre>
 
-  <ul>
+<h3 id="detail">Detail</h3>
+<p>Magento 2.1 and later use PHP code comments in the <code>getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73" target="_blank"><code>getExtensionAttributes</code></a> method in <code>Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
+
+<p>If you enabled the PHP OPcache (which we recommend), this error displays because by default, the OPcache setting <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments" target="_blank"><code>opcache.save-comments</code></a> is disabled.</p>
+
+<h3 id="workaround">Workaround</h3>
+<p>To solve the issue, locate your OPcache configuration settings and enable <code>opcache.save-comments</code> as follows:</p>
+
+<h4 id="step-1-locate-your-opcache-configuration">Step 1: Locate your OPcache configuration</h4>
+<div>
+
+  <div class="collapsible"><b class="collapsible-title">To find OPcache configuration settings: </b><div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code>php.ini</code> or <code>opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code>[opcache]</code> section or settings like <code>opcache.enable</code>.</p>
+
+<p>Use the following guidelines to find it:</p>
+
+<ul>
+  <li>
+    <p>Apache web server:</p>
+
+    <p>For Ubuntu with Apache, OPcache settings are typically located in <code>php.ini</code>.</p>
+
+    <p>For CentOS with Apache or nginx, OPcache settings are typically located in <code>/etc/php.d/opcache.ini</code></p>
+
+    <p>If not, use the following command to locate it:</p>
+
+    <pre><code>sudo find / -name 'opcache.ini'
+</code></pre>
+  </li>
+  <li>
+    <p>nginx web server with PHP-FPM: <code>/etc/php5/fpm/php.ini</code></p>
+  </li>
+</ul>
+
+<p>If you have more than one <code>opcache.ini</code>, modify all of them.</p>
+</div></div>
+
+  <h4 id="step-2-enable-opcachesave-comments">Step 2: Enable <code>opcache.save-comments</code></h4>
+  <ol>
+    <li>Open your OPcache configuration file in a text editor.</li>
+    <li>Locate <code>opcache.save-comments</code> and uncomment it if necessary.</li>
+    <li>Make sure its value is set to <code>1</code>.</li>
+    <li>Save your changes and exit the text editor.</li>
     <li>
-      <p>The check fails because you’re using an unsupported PHP version.</p>
-
-      <p>To solve this issue, use one of the supported versions listed in our <a href="/guides/v2.0/install-gde/system-requirements.html">System Requirements</a>.</p>
-    </li>
-    <li>
-      <p>The check reports the incorrect PHP version.</p>
-
-      <p>Typically, this happens only to advanced users who have multiple PHP versions installed. In some cases, the readiness check fails; in other cases, it might pass.</p>
-    </li>
-    <li>
-      <p>The PHP readiness check doesn’t display the PHP version as the following figure shows.</p>
-
-      <p><img src="/common/images/upgr-tshoot-no-cron.png" /></p>
-
-      <p>This is a symptom of incorrect cron job setup. For more information, see <a href="/guides/v2.0/install-gde/install/post-install-config.html#post-install-cron&quot;">Set up cron jobs</a>.</p>
-    </li>
-  </ul>
-
-  <h3 id="php-version-is-incorrect">PHP version is incorrect</h3>
-  <p>If the PHP version reported by the readiness check is incorrect, it’s the result of a mismatch of PHP versions between the PHP CLI and the web server plug-in. Magento requires you to use <em>one version</em> of PHP for both the CLI (which runs cron) and the web server (which runs the Magento Admin, Component Manager, and System Upgrade).</p>
-
-  <p>We assume that if you have this issue, you’re an advanced user who has likely installed multiple versions of PHP on your system.</p>
-
-  <p>To resolve the issue, try the following:</p>
-
-  <ul>
-    <li>Restart your web server or php-fm.</li>
-    <li>Check the <code>$PATH</code> environment variable for multiple paths to PHP</li>
-    <li>Use the <code>which php</code> command to locate the first PHP executable in your path; if it’s not correct, remove it or create a symlink to the correct PHP version</li>
-    <li>Use a <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code></a> page to collect more information</li>
-    <li>
-      <p>Make sure you’re running a supported PHP version according to our System Requirements:</p>
+      <p>Restart your web server:</p>
 
       <ul>
-        <li><a href="/guides/v2.0/install-gde/system-requirements.html">Version 2.0</a></li>
-        <li><a href="/guides/v2.1/install-gde/system-requirements.html">Version 2.1</a></li>
+        <li>Apache, Ubuntu: <code>service apache2 restart</code></li>
+        <li>Apache, CentOS: <code>service httpd restart</code></li>
+        <li>nginx, Ubuntu and CentOS: <code>service nginx restart</code></li>
       </ul>
     </li>
-    <li>Set the same PHP settings for both the PHP command line and the PHP web server plug-in as discussed in <a href="/guides/v2.0/install-gde/prereq/php-centos.html#instgde-prereq-timezone">PHP configuration options</a></li>
-  </ul>
+  </ol>
+
 </div>
 
 		</div>

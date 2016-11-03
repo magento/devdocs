@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>The PHP mcrypt extension is not installed properly</title>
+	<title>Resolve an illegal offset error</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/install-gde/trouble/php/tshoot_mcrypt.html">
+	<link rel="canonical" href="//guides/v2.1/install-gde/trouble/php/tshoot_opcache.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/trouble/php/tshoot_opcache.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/trouble/php/tshoot_mcrypt.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/trouble/php/tshoot_opcache.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">The PHP mcrypt extension is not installed properly</h1>
+		<h1 class="page-heading">Resolve an illegal offset error</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/trouble/php/tshoot_opcache.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -685,7 +685,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_opcache.html">Resolve an illegal offset error</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_opcache.html">Resolve an illegal offset error</a></li>
 
 									
 
@@ -701,7 +701,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
 
 									
 
@@ -874,51 +874,69 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="trouble-php-mycrypt">The PHP mcrypt extension is not installed properly</h2>
+            <div class="updated">Updated: 3 November 2016 (PDT)</div>
+            <h2 id="resolve-an-illegal-offset-error">Resolve an illegal offset error</h2>
+<p>In Magento 2.1 or later, when creating a new product in the Magento Admin, the following error might display:</p>
+
+<pre><code>Warning: Illegal string offset 'is_in_stock' in [...]/vendor/
+magento/module-catalog-inventory/Ui/DataProvider/Product/Form/
+Modifier/AdvancedInventory.php on line 87
+</code></pre>
 
 <h3 id="detail">Detail</h3>
+<p>Magento 2.1 and later use PHP code comments in the <code>getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73" target="_blank"><code>getExtensionAttributes</code></a> method in <code>Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
 
-<p>Errors can include the following:</p>
+<p>If you enabled the PHP OPcache (which we recommend), this error displays because by default, the OPcache setting <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments" target="_blank"><code>opcache.save-comments</code></a> is disabled.</p>
 
-<pre>exception 'Exception' with message 'PHP Warning: PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory</pre>
-<pre>Installing data fixtures:
-/usr/bin/php -f '/Users/username/www/magento/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/Users/username/www/magento' 2&gt;&amp;1
-[ERROR] exception 'Exception' with message '
-Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' depends on 'mcrypt' PHP extension that is not loaded.'
-</pre>
-<pre>======================================================================
-   The application has thrown an exception!
-======================================================================
- Magento\Framework\Exception
- Command returned non-zero exit code:
-`/usr/bin/php5 -f '/var/www/magento2/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/var/www/magento2' 2&gt;&amp;1`</pre>
+<h3 id="workaround">Workaround</h3>
+<p>To solve the issue, locate your OPcache configuration settings and enable <code>opcache.save-comments</code> as follows:</p>
 
-<h3 id="description">Description</h3>
+<h4 id="step-1-locate-your-opcache-configuration">Step 1: Locate your OPcache configuration</h4>
+<div>
 
-<p>Particularly on developer systems that include a Linux/Apache/MySQL/PHP (LAMP) “stack” that is separate from the operating system, it’s possible that mcrypt is either not installed at all or it’s installed in the LAMP stack’s path but not the operating system’s path.</p>
+  <div class="collapsible"><b class="collapsible-title">To find OPcache configuration settings: </b><div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code>php.ini</code> or <code>opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code>[opcache]</code> section or settings like <code>opcache.enable</code>.</p>
 
-<p>As a result, the Magento installer cannot locate the extension and the installation fails.</p>
-
-<h3 id="suggestion">Suggestion</h3>
-
-<p>Determine if the mcrypt extension is loaded in any of the following ways:</p>
+<p>Use the following guidelines to find it:</p>
 
 <ul>
-  <li>Set up a <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">phpinfo.php</a> file in the web server’s root directory and examine the output in a web browser.</li>
   <li>
-    <p>Run the following command:</p>
+    <p>Apache web server:</p>
 
-    <pre>php -r "phpinfo();" | grep mcrypt</pre>
+    <p>For Ubuntu with Apache, OPcache settings are typically located in <code>php.ini</code>.</p>
 
-    <p>If mycrypt is <em>not</em> installed, messages similar to the following display:</p>
+    <p>For CentOS with Apache or nginx, OPcache settings are typically located in <code>/etc/php.d/opcache.ini</code></p>
 
-    <pre>PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory in Unknown on line 0</pre>
+    <p>If not, use the following command to locate it:</p>
+
+    <pre><code>sudo find / -name 'opcache.ini'
+</code></pre>
+  </li>
+  <li>
+    <p>nginx web server with PHP-FPM: <code>/etc/php5/fpm/php.ini</code></p>
   </li>
 </ul>
 
-<p>In some cases, you might need to install the Magento software from the <a href="/guides/v2.1/install-gde/install/cli/install-cli.html">command line</a> and specify the full path to the LAMP stack that has mcrypt installed.</p>
+<p>If you have more than one <code>opcache.ini</code>, modify all of them.</p>
+</div></div>
 
+  <h4 id="step-2-enable-opcachesave-comments">Step 2: Enable <code>opcache.save-comments</code></h4>
+  <ol>
+    <li>Open your OPcache configuration file in a text editor.</li>
+    <li>Locate <code>opcache.save-comments</code> and uncomment it if necessary.</li>
+    <li>Make sure its value is set to <code>1</code>.</li>
+    <li>Save your changes and exit the text editor.</li>
+    <li>
+      <p>Restart your web server:</p>
+
+      <ul>
+        <li>Apache, Ubuntu: <code>service apache2 restart</code></li>
+        <li>Apache, CentOS: <code>service httpd restart</code></li>
+        <li>nginx, Ubuntu and CentOS: <code>service nginx restart</code></li>
+      </ul>
+    </li>
+  </ol>
+
+</div>
 
 		</div>
 	</section>
