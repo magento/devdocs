@@ -22,12 +22,20 @@ This section discusses how to:
 	If `asp_tags are` enabled, errors display when accessing PHTML templates.
 
 	`asp_tags` will be removed in PHP 7.
+*	Enable [`opcache.save-comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments){:target="_blank"}, which is required for Magento 2.1 and later. 
+
+	We recommend you enable the [PHP OpCache](http://php.net/manual/en/intro.opcache.php){:target="_blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
+
+	Magento 2.1 and later use PHP code comments in the `getDocComment` validation call in the [`getExtensionAttributes`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73){:target="_blank"} method in `Magento\Framework\Api\ExtensionAttributesFactory.php`.
 
 <div class="bs-callout bs-callout-warning">
     <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.</p>
 </div>
 
 ### Find PHP configuration files
+This section discusses how you find the configuration files necesary to update required settings.
+
+{% collapsible To find the PHP configuration file, php.ini: %}
 To find the web server configuration, run a <a href="{{page.baseurl}}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
 
 <img src="{{ site.baseurl }}common/images/config_phpini-webserver.png" width="700px">
@@ -37,6 +45,10 @@ To locate the PHP command-line configuration, enter
 	php --ini
 
 Use the value of Loaded Configuration file.
+
+{% endcollapsible %}
+
+{% include install/opcache-ini.md %}
 
 ### Set PHP options
 
@@ -66,6 +78,14 @@ To set PHP options:
 9.	Make sure its value is set to `Off`.
 10.	Save your changes and exit the text editor.
 11.	Open the other `php.ini` (if they are different) and make the same changes in it.
+12.	Open your OpCache configuration file in a text editor:
+
+	*	`opcache.ini` (CentOS)
+	*	`php.ini` (Ubuntu)
+	*	`/etc/php5/fpm/php.ini` (nginx web server (CentOS or Ubuntu))
+13.	Locate `opcache.save-comments` and uncomment it if necessary.
+14.	Make sure its value is set to `1`.
+15.	Save your changes and exit the text editor.
 11.	Restart your web server:
 
 	*	Apache, Ubuntu: `service apache2 restart`
