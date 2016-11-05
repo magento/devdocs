@@ -12,7 +12,7 @@ github_link: mtf/features/modularity.md
 
 The Functional Testing Framework (FTF) enables you to follow the principle of modularity as Magento does. Functional tests for each module are collected in separate directory with the name of corresponding module.
 
-![Functional tests modules image]({{site.baseurl}}common/images/mtf_modularity_dirs.png)
+![Functional tests modules image]({{site.baseurl}}common/images/ftf/mtf_modularity_dirs.png)
 
 Modularity gives the following advantages:
 
