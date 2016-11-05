@@ -45,7 +45,7 @@ Deployment consists of the following phases:
 6.	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
 ### Phase 1: Configuration validation and code retrieval {#cloud-deploy-over-phases-conf}
-The remote server gets your code using Git. When you initially set up a project from a template, we retrieve the code from the [the Magento ECE tempalte](https://github.com/magento-cloud/magento-cloud){:target="_blank"}.
+The remote server gets your code using Git. When you initially set up a project from a template, we retrieve the code from the [the Magento ECE template](https://github.com/magento/magento-cloud){:target="_blank"}.
 
 The built-in Git server checks what you are pushing: if you have a syntax error in a configuration file, our Git server refuses the push.
 
