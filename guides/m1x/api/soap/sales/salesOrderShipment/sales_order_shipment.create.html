@@ -550,10 +550,17 @@
 		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
 
 $session = $proxy-&gt;login('apiUser', 'apiKey');
-var_dump ($session);
 
 $orderIncrementId = '200000006';
-$itemsQty = array('3' =&gt; '3', '4' =&gt; '5');
+$itemsQty = array(
+    array(
+        'order_item_id' => 3,
+        'qty' => 3
+    ),
+    array(
+        'order_item_id' => 4,
+        'qty' => 5
+    ));
 
 $result = $proxy-&gt;call(
     $session,
@@ -574,10 +581,20 @@ var_dump ($result);</pre>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
-$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
 
-$result = $proxy-&gt;salesOrderShipmentCreate($sessionId, '200000006', array('8', '1'), 'shipment comment');
+$itemsQty = array(
+    array(
+        'order_item_id' => 3,
+        'qty' => 3
+    ),
+    array(
+        'order_item_id' => 4,
+        'qty' => 5
+    ));
+
+$result = $proxy-&gt;salesOrderShipmentCreate($sessionId, '200000006', $itemsQty, 'shipment comment');
 var_dump($result);</pre>
 		</div>
 </div></div>
@@ -591,8 +608,24 @@ var_dump($result);</pre>
 		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
 
 $sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+
+$itemsQty = array(
+    array(
+        'order_item_id' => 3,
+        'qty' => 3
+    ),
+    array(
+        'order_item_id' => 4,
+        'qty' => 5
+    ));
  
-$result = $proxy-&gt;salesOrderShipmentCreate((object)array('sessionId' =&gt; $sessionId-&gt;result, 'orderIncrementId' =&gt; '200000006', 'itemsQty' =&gt; array('order_item_id' =&gt; '8', 'qty' =&gt; '1'), 'comment' =&gt; 'shipment comment', 'email' =&gt; null, 'includeComment' =&gt; null));   
+$result = $proxy-&gt;salesOrderShipmentCreate((object)array(
+    'sessionId' =&gt; $sessionId-&gt;result,
+    'orderIncrementId' =&gt; '200000006',
+    'itemsQty' =&gt; $itemsQty,
+    'comment' =&gt; 'shipment comment',
+    'email' =&gt; null, 'includeComment' =&gt; null));   
+    
 var_dump($result-&gt;result);</pre>
 		</div>
 </div></div>
