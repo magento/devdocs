@@ -62,7 +62,7 @@ A authentication token request contains three basic elements:
    </tr>
 </table>
 
-#### Examples {# token-example}
+#### Examples {#token-example}
 
 The following image shows a token request for the admin account using a REST client:
 
