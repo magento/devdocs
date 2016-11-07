@@ -63,10 +63,12 @@ where:
   <p>Logs are written to the <code>&lt;your Magento install dir>/var/</code> directory.</p></span>
 </div>
 
-## Order of migration steps
+## Migration order {#migration_order}
 
-The Data Migration Tool works correctly if you follow the order below and migrate:
+When we created the Data Migration Tool, we assumed the following data transfer sequence:
 
-1.	<a href="{{page.baseurl}}migration/migration-migrate-settings.html">settings</a>
-2.	<a href="{{page.baseurl}}migration/migration-migrate-data.html">data</a>
-3.	<a href="{{page.baseurl}}migration/migration-migrate-delta.html">changes</a>
+1.	<a href="{{page.baseurl}}migration/migration-migrate-settings.html">Settings</a>
+2.	<a href="{{page.baseurl}}migration/migration-migrate-data.html">Data</a>
+3.	<a href="{{page.baseurl}}migration/migration-migrate-delta.html">Changes</a>
+
+That's why we strongly recommend to keep this order to migrate quickly and with no issues.

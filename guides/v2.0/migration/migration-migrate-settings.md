@@ -14,14 +14,19 @@ redirect_from: /guides/v1.0/migration/migration-migrate-settings.html
 ## {{page.menu_title}}
 {:.no_toc}
 
+The `Settings` mode migrates stores, websites, and system configuration like shipping, payment, tax settings, etc.
+According to our data migration [order]({{page.baseurl}}/migration/migration-migrate.html#migration_order), you should migrate settings first.
+
 * TOC
 {:toc}
 
-<h2 id="migrate-command-settings">Migrating settings</h2>
+## Before you start
 
-You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment, some tax settings etc.
+### Configure custom migration rules
 
-If necessary, here is how to change how settings are migrated:
+You may apply your custom rules while migrating settings and thus ignore, rename or change values of the database entities. To do that, specify the rules in the `settings.xml` file. Read the [Settings migration mode]({{page.baseurl}}migration/migration-tool-internal-spec.html#settings-migration-mode) section for more information.
+
+To specify your rules, follow these steps.
 
 1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the following directory:
@@ -34,17 +39,25 @@ If necessary, here is how to change how settings are migrated:
 		/var/www/html/vendor/magento/data-migration-tool/etc/ee-to-ee
 		/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ce
 
-3. 	Enter the following command to create `settings.xml` from the provided sample:
+3. 	To create a `settings.xml` file from the provided sample, run:
 
 		cp settings.xml.dist settings.xml
-2. Make your changes in `settings.xml`.
-3. Make changes to the `<settings_map_file>` tag in `<ce or ee version>/config.xml` to specify the new name of the settings file.
+
+4. Make your changes in `settings.xml`.
+
+5. Specify the new name of the settings file. To do that, change the `<settings_map_file>` tag in the `<ce or ee version>/config.xml` file.
+
+### Make routine preparations
+
+1. Log in to Magento server as [the file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+
+2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
+
+See the [First steps]({{page.baseurl}}migration/migration-migrate.html#migration-command-run-first) section for more details.
 
 ## Run the settings migration command {#migrate-data-cmd}
 
-Before running the command, make the necessary preparations: log in as Magento file system owner, change to the Magento `/bin` directory or make sure it is added to your system PATH, and so on. See the [First steps]({{page.baseurl}}migration/migration-migrate.html#migration-command-run-first) section for more details.
-
-To migrate settings, run:
+To start migrating settings, run:
 
 	bin/magento migrate:settings [-r|--reset] {<path to config.xml>}
 
@@ -58,6 +71,8 @@ where:
 <span class="glyphicon-class">
   <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
 </div>
+
+The `Migration completed` message is displayed after the settings are transferred successfully.
 
 ## Next step
 
