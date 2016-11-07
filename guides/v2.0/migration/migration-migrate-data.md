@@ -17,22 +17,21 @@ redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 * TOC
 {:toc}
 
-## Before you start: Possible consistency errors {#migrate-command-data}
+## Possible consistency errors {#migrate-command-data}
 
 When you migrate data, the Data Migration Tool verifies that tables and fields are consistent between Magento 1 and Magento 2. If they are not, you will see an error message that lists the problematic tables and fields, for example:
 
-`Source fields are not mapped. Document: <document_name>. Fields: <field_name>`
+    Source fields are not mapped. Document: <document_name>. Fields: <field_name>
 
 **Possible reason for error:** some database entities belong to Magento 1 extensions that do not exist in the Magento 2 database.
 
-Below are the possible ways to handle these errors.
-Don't forget to run the Data Migration Tool again to see if the issues have been resolved.
+Below are the possible ways to handle these errors. Don't forget to run the Data Migration Tool again to see if the issues have been resolved.
 
-### Install corresponding Magento 2 extensions
+### Fix errors: Install corresponding Magento 2 extensions
 
 Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest extension versions or contact your extension provider.
 
-### Ignore entities
+### Fix errors: Ignore entities
 
 You may tell the Data Migration Tool to ignore the problematic entites.
 
@@ -48,29 +47,31 @@ To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this
     <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
 </div>
 
-## First steps {#migrate-first}
+## Before you start: routine preparations
 
-{% include install/first-steps-cli.html %}
+1. Log in to Magento server as [the file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
 
-In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
+
+See the [First steps]({{page.baseurl}}migration/migration-migrate.html#migration-command-run-first) section for more details.
 
 ## Run the data migration command {#migrate-data-cmd}
-To migrate data, run:
+To start migrating data, run:
 
-`bin/magento migrate:data [-r|--reset] {<path to config.xml>}`
+    bin/magento migrate:data [-r|--reset] {<path to config.xml>}
 
 where:
 
-* `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required
-
 * `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration
+
+* `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Data Migration Tool resumes progress at the last known good state.</p>
+  <p>The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Tool resumes progress at the last known good state.</p>
   <p>To force the Data Migration Tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
 </div>
 
-## Related topics
+## What's next
 
 <a href="{{page.baseurl}}migration/migration-migrate-delta.html">Migrate changes</a>
