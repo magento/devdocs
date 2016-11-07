@@ -111,7 +111,7 @@ The Magento_CatalogStaging module makes irreversible changes in a database durin
 
 ## Dependencies
 
-You can find the list of modules that have dependencies on the Magento_CatalogStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
+You can find the list of modules that the Magento_CatalogStaging module depends on in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
 ## Extension points
 
