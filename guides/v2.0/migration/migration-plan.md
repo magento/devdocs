@@ -14,7 +14,7 @@ redirect_from: /guides/v1.0/migration/migration-plan.html
 ## {{page.menu_title}}
 {:.no_toc}
 
-To migrate faster and avoid issues, you need to thourougly plan and test your migration. We hope the guidelines below will help.
+To migrate successfully and avoid issues, you need to thourougly plan and test your migration. We hope the guidelines below will help.
 
 * TOC
 {:toc}
@@ -61,21 +61,17 @@ To prepare for the migration, make sure you do all of the following:
 
 8. Thoroughly test your Magento 2.x site.
 
-<div class="bs-callout bs-callout-warning">
-  <p>
-    Be aware that after such testing the next step (Incremental data update) might not work properly or even fail.
-  </p>
-</div>
+    Note that after such testing the next step (Incremental data update) might not work properly.
 
-## Step 5: Incremental data updates
+## Step 5: Update incremental data
 
 Now that you’ve migrated your data, you must incrementally capture data updates that are added in Magento 1 store (such as new orders, reviews and changes in customer profiles) and migrate it to Magento 2 store.
 
 * Start the incremental migration; updates run continually.
-You can stop the updates at any time by pressing CTRL+C
+You can stop the updates at any time by pressing `Ctrl+C`
 
 * Test your Magento 2 site during this time so you can catch any issues as soon as possible.
-In case you find any issues, press `Ctrl + C` to stop incremental migration and start it again after issues are resolved
+In case you find any issues, press `Ctrl+C` to stop incremental migration and start it again after issues are resolved
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.</p>
