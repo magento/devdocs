@@ -16,7 +16,7 @@ github_link: extension-dev-guide/object-manager.md
 
 ## Overview
 
-Large applications, such as the Magento framework, use an object manager to avoid boilerplate code and compose objects during instantiation.
+Large applications, such as the Magento framework, use an object manager to avoid boilerplate code when composing objects during instantiation.
 
 In the Magento framework, the implementation of the [`ObjectManagerInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManagerInterface.php){:target="_blank"} performs the duties of an object manager.
 

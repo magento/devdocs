@@ -24,7 +24,7 @@ The `di.xml` file configures which [dependencies]({{page.baseurl}}extension-dev-
 Each module can have a global and area-specific `di.xml` file.
 Magento reads all the `di.xml` configuration files declared in the system and merges them all together by appending all nodes.
 
-As a general rule, the area specific `di.xml` files should configure dependencies in the presentation layer, and your module's global `di.xml` file should configure the remaining dependencies.
+As a general rule, the area specific `di.xml` files should configure dependencies for the presentation layer, and your module's global `di.xml` file should configure the remaining dependencies.
 
 Magento loads The configuration in the following stages:
 

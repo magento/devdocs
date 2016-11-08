@@ -41,7 +41,9 @@ Magento uses class constructor signatures, not doc-block annotations, to retriev
 If you write your code in a regular way using the dependency inversion principle, you do not have to worry about class definitions.
 
 ## Compiling dependencies
-A [code compiler tool]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) collects all the dependency information in a class and passes them on to the `ObjectManager` for creating concrete objects in the application.
+A [code compiler tool]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) collects all the dependency information in a class and stores that information in files.
+During class creation, the `ObjectManager` uses this information to create concrete objects in the application.
+
 In other words, the compiler helps generate all non-existing dependency injection service classes ([proxies]({{page.baseurl}}extension-dev-guide/proxies.html), [factories]({{page.baseurl}}extension-dev-guide/factories) and [interceptors]({{page.baseurl}}extension-dev-guide/plugins.html)) declared in code or configuration.
 
 
@@ -82,7 +84,7 @@ You must use constructor dependency injection for all optional and required depe
 <div class="bs-callout bs-callout-info" id="proxy-info" markdown="1">
   **Optional dependencies**\\
   Optional dependencies are the objects that your class uses for specific methods and scenarios.
-  Since your class does not always use these classes and instantiating them is expensive, you should use a [proxy]({{page.baseurl}}extension-dev-guide/proxies.html).
+  If your class does not always use these classes and instantiating them is expensive, consider using a [proxy]({{page.baseurl}}extension-dev-guide/proxies.html).
 </div>
 
 ### Method Injection
@@ -110,9 +112,6 @@ You need to provide a product id or explicitly request a new, empty instance of 
 * If an injectable object needs to produce newable objects, it must ask for a [factory]({{page.baseurl}}extension-dev-guide/factories.html) in its constructor since factories are injectable.
 * If an injectable object needs to perform some actions on newable object, it must receive that object as a function method argument.
 * You can create newable objects in services with object [factories]({{page.baseurl}}extension-dev-guide/factories.html) or you can pass them in as method parameters.
-* Newable objects should not hold a reference to an injectable object as a property or class variable nor should they request one in their constructor.
-This is a [Law of Demeter](http://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} violation.
-
 
 **Related topics**
 
