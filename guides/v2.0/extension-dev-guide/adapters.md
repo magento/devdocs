@@ -18,7 +18,7 @@ github_link: extension-dev-guide/adapters.md
 ## Overview
 
 Adapter classes follow the [adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern){:target="_blank"} and wrap around classes from third-party libraries.
-This allows you to use functionality from third-party libraries in your code using the adapter classes.
+These classes allow you to use functionality from third-party libraries in your code by converting the third-party class's interface into one your code expects.
 
 ## When to use
 
