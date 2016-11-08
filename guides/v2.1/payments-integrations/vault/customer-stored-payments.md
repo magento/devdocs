@@ -9,10 +9,13 @@ version: 2.1
 github_link: payments-integrations/vault/customer-stored-payments.md
 ---
 
+<h2 id="vault_customer_stored_payments">Customer Stored Payments</h2>
+
 This topic provides information how to display stored tokens in the customer account. Also, customer should have
 an ability to remove stored tokens.
 
-At first, you need to create custom _Renderer_, it's implementation depends on type of token (card, account), but both renders
+At first, you need to create custom _Renderer_, which provides functionality for displaying token details like: credit card icon,
+type of credit card, expiration date, etc., _Renderer_ implementation depends on type of token (card, account), but both renders
 implement the common abstractions [TokenRendererInterface]({{site.mage2100url}}app/code/Magento/Vault/Block/TokenRendererInterface.php)
 and [IconInterface]({{site.mage2100url}}app/code/Magento/Vault/BLock/Customer/IconInterface.php):
 
@@ -128,7 +131,8 @@ class CardRenderer extends AbstractCardRenderer
 }
 {% endhighlight %}
 
-Now, need to create layout and add custom token renderer to layout, for example [vault_cards_listaction.xml]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml):
+Now, need to create layout and specify custom token renderer for layout, which will provide token details displaying,
+for example [vault_cards_listaction.xml]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml):
 
 {% highlight xml %}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -142,7 +146,7 @@ Now, need to create layout and add custom token renderer to layout, for example 
 </page>
 {% endhighlight %}
 
-As you can see, in this case default `credit_card.phtml` view is used from Vault module, which already have markup to display token and
+As you can see, in this case default `credit_card.phtml` view is used from _Vault_ module, which already have markup to display token and
 actions to remove stored token, but you always can specify your own view.
 
 The next topic, will describe how to use stored tokens to place order from Admin panel.

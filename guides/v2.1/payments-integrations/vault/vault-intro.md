@@ -22,7 +22,12 @@ The main features are:
 * Customizable
 * Allow to store credit card details without sensitive data
 
-The [Magento Vault]({{site.mage2100url}}app/code/Magento/Vault) module is based on the [Payment Gateway]({{site.gdeurl}}payments-integrations/bk-payments-integrations.html) and
+The [Magento Vault]({{site.mage2100url}}app/code/Magento/Vault) is implemented using the [Payment Gateway]({{site.gdeurl}}payments-integrations/bk-payments-integrations.html) and
 can be easily configured or extended in the same way as payment method based on the _Payment Gateway_.
 
-The next topics will be focused on the Vault payment configuration, usage and customization.
+The next topics will be focused on the Vault payment configuration, usage and customization:
+
+ - [Vault Payment Configuration]({{site.gdeurl21}}payments-integrations/vault/configuration.html)
+ - [Token UI Component Provider]({{site.gdeurl21}}payments-integrations/vault/token-ui-component-provider.html)
+ - [Customer Stored Payments]({{site.gdeurl21}}payments-integrations/vault/customer-stored-payments.html)
+ - [Admin Integration]({{site.gdeurl21}}payments-integrations/vault/admin-integration.html)

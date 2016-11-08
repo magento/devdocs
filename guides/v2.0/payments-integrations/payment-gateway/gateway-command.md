@@ -10,7 +10,12 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/gateway-command.md
 ---
 
-As was said in Introduction article, _Gateway Command_ is a proxy service, which takes gateway specific payload and produces _Result_.
+## Gateway Command
+
+As was said in Introduction article, _Gateway Command_ is a proxy service, which takes gateway specific payload and produces _Result_ - 
+in most cases it will be a response from payment processor with transaction details.
+
+The _Gateway Command_ allows to perform payment actions, build transaction request, call specified validators and response handlers.
 
 Basic abstraction in such case is `\Magento\Payment\Gateway\CommandInterface`:
 
@@ -30,7 +35,7 @@ interface CommandInterface
 
 ### Base implementation
 
-The `\Magento\Payment\Gateway\Command\GatewayCommand` is a default `CommandInterface` implementation, which allows to perform most operations available be Payment Gateway.
+The `\Magento\Payment\Gateway\Command\GatewayCommand` is a default `CommandInterface` implementation, which allows to perform most operations available for Payment Gateway.
 This type is not intended to be extended through inheritance but through composition via DI configuration.
 Here is an example of a typical _Command_ definition through DI:
 

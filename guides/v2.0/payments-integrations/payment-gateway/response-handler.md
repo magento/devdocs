@@ -10,6 +10,8 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/response-handler.md
 ---
 
+## Response Handler
+
 Response handler processes Gateway response which is usually expressed in following actions:
 
 - Order status needs to be modified

@@ -12,7 +12,7 @@ github_link: payments-integrations/vault/configuration.md
 
 At first need to add _Vault_ module dependencies for payment method, which will provide vaulting transactions.
 
-Update `composer.json` file with vault dependencies:
+Update your payment integration `Module_Name/composer.json` file with vault dependencies:
 
 {% highlight json %}
 {
@@ -27,7 +27,7 @@ Update `composer.json` file with vault dependencies:
 }
 {% endhighlight %}
 
-Update `etc/module.xml` configuration:
+Update `Module_Name/etc/module.xml` configuration:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
@@ -41,7 +41,7 @@ Update `etc/module.xml` configuration:
 </config>
 {% endhighlight %}
 
-Next step - configuration in the `etc/config.xml`:
+Next step - configuration in the `Module_Name/etc/config.xml`:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
@@ -60,7 +60,7 @@ Next step - configuration in the `etc/config.xml`:
 </config>
 {% endhighlight %}
 
-In this short example Vault added as payment method, let's look more detail about specified config:
+In this short example new Vault integration added as payment method, let's look more detail about specified config:
 
 * `braintree_cc_vault` section - it's unique payment code, similar to other payments
 * `model` - instance of payment adapter, will be configured in the `di.xml`
@@ -73,7 +73,7 @@ the next section describes how do it.
 
 This section describes how to configure Vault payment adapter and create payment actions, like authorize and sale.
 
-At first, need to create virtual type Vault payment method, in the most cases it will extend default implementation of `VaultPaymentInterface`:
+At first, need to create virtual type for _Vault_ payment method, in the most cases it will extend default implementation of `VaultPaymentInterface`:
 
 {% highlight xml %}
 <virtualType name="BraintreeCreditCardVaultFacade" type="Magento\Vault\Model\Method\Vault">
@@ -172,10 +172,12 @@ only for Vault payment related to their payment provider.
 
 <h2 id="vault_create_payment_token">Payment Token Creation</h2>
 
-The common abstraction for _Payment Token_ is [PaymentTokenInterface]({{{{site.mage2100url}}}}/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php),
-which contains a lot of methods to store credit card details.
+A _Payment Token_ represents entity which contains payment processor token and credit card details without sensitive data.
 
-You need to implement response handler to create `Payment Token` and store it in the payment extension attributes:
+The common abstraction for _Payment Token_ is [PaymentTokenInterface]({{{{site.mage2100url}}}}/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php).
+
+To retrieve and store token details you need to implement response handler in your payment integration, create `Payment Token` entity and store it in the payment extension attributes,
+follow sample shows how it might looks:
 
 {% highlight php startinline=1 %}
 class VaultDetailsHandler implements HandlerInterface
@@ -231,7 +233,7 @@ class VaultDetailsHandler implements HandlerInterface
 > * [CreditCardTokenFactory]({{site.mage2100url}}app/code/Magento/Vault/Model/CreditCardTokenFactory.php) - using for credit cards
 > * [AccountPaymentTokenFactory]({{site.mage2100url}}app/code/Magento/Vault/Model/AccountPaymentTokenFactory.php) - using for payments accounts, like PayPal
 
-And add created response handler to _Handler Chain_ to Vault payment provider:
+And add created response handler to _Handler Chain_ to _Vault_ payment provider:
 
 {% highlight xml %}
 <virtualType name="BraintreeAuthorizationHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
@@ -248,4 +250,4 @@ And add created response handler to _Handler Chain_ to Vault payment provider:
 The persistence layer for _Payment Token_ is implemented in the [Vault Module]({{site.mage2100url}}app/code/Magento/Vault) and
 you don't need worry about saving tokens.
 
-Next topic will describe how to add and use Vault component to place orders on the Storefront.
+[Next topic]({{site.gdeurl21}}payments-integrations/vault/token-ui-component-provider.html) will describe how to add and use  UI _Vault_ component to place orders on the Storefront.

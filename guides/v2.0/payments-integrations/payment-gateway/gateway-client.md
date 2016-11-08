@@ -10,6 +10,8 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/gateway-client.md
 ---
 
+## Gateway Client
+
 Gateway client is responsible for transaction payload transmission.
 
 {% highlight php startinline=1 %}
