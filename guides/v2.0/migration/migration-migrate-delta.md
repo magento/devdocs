@@ -52,9 +52,9 @@ where;
 
 ## Migrate data created by 3rd party extensions
 
-In the `Delta` mode, the Data Migration Tool migrates data created only by Magento's own modules and cannot handle the code or extensions made by third-party developers. If these extensions created some data in the storefront database and the merchant wants to have this data in Magento 2 — config files of the Data Migration Tool should be created and modified.
+In the `Delta` mode, the Data Migration Tool migrates data created only by Magento's own modules and cannot handle the code or extensions made by third-party developers. If these extensions created data in the storefront database and the merchant wants to have this data in Magento 2 — config files of the Data Migration Tool should be created and modified.
 
-See the Data Migration Tool <a href="{{page.baseurl}}migration/migration-tool-internal-spec.html">Internal Specification</a> for more information.
+See the <a href="{{page.baseurl}}migration/migration-tool-internal-spec.html#delta-migration-mode">Delta migration mode</a> section of the Tool's Internal Specification for more information.
 
 ## Related topics
 
