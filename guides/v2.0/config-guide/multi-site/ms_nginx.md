@@ -53,47 +53,48 @@ This section discusses how to load websites on the storefront. You can use eithe
 
 {% collapsible To create virtual hosts: %}
 
-1.	Open a text editor.
-2.	Add the following contents to the file:
+Open a text editor and add the following contents to the file:
 
-	{% highlight xml %}
-	map $http_host $MAGE_RUN_CODE {
-    	french.example.com french;
-	}
+{% highlight xml %}
+map $http_host $MAGE_RUN_CODE {
+   	french.example.com french;
+}
 
-	server {
-    	listen 80;
-    	server_name french.example.com;
-    	set $MAGE_ROOT /var/www/html/magento2;
-    	set $MAGE_MODE developer;
-    	include /var/www/html/magento2/nginx.conf.sample;
-	}
-	{% endhighlight %}
+server {
+   	listen 80;
+   	server_name french.example.com;
+   	set $MAGE_ROOT /var/www/html/magento2;
+   	set $MAGE_MODE developer;
+   	include /var/www/html/magento2/nginx.conf.sample;
+}
+{% endhighlight %}
 
-3.	Save the file as `/etc/nginx/sites-available/french.example.com`.
-4.	Create another file in the same location with the following contents:
+Save the file as `/etc/nginx/sites-available/french.example.com`.
 
-	{% highlight xml %}
-	map $http_host $MAGE_RUN_CODE {
-    	german.example.com german;
-	}
+Create another file in the same location with the following contents:
 
-	server {
-    	listen 80;
-    	server_name german.example.com;
-    	set $MAGE_ROOT /var/www/html/magento2;
-    	set $MAGE_MODE developer;
-    	include /var/www/html/magento2/nginx.conf.sample;
-	}
-	{% endhighlight %}
-5.	Save the file as `/etc/nginx/sites-available/german.example.com`.
-6.	Create symbolic links in the `/etc/nginx/sites-enabled` directory:
+{% highlight xml %}
+map $http_host $MAGE_RUN_CODE {
+   	german.example.com german;
+}
 
-		cd /etc/nginx/sites-enabled
-		ln -s /etc/nginx/sites-available/french.example.com french.example.com
-		ln -s /etc/nginx/sites-available/german.example.com german.example.com
+server {
+   	listen 80;
+   	server_name german.example.com;
+   	set $MAGE_ROOT /var/www/html/magento2;
+   	set $MAGE_MODE developer;
+   	include /var/www/html/magento2/nginx.conf.sample;
+}
+{% endhighlight %}
 
-See [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"} for more details.
+Save the file as `/etc/nginx/sites-available/german.example.com`.
+Create symbolic links in the `/etc/nginx/sites-enabled` directory:
+
+	cd /etc/nginx/sites-enabled
+	ln -s /etc/nginx/sites-available/french.example.com french.example.com
+	ln -s /etc/nginx/sites-available/german.example.com german.example.com
+
+For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"}.
 
 {% endcollapsible %}
 
@@ -104,7 +105,7 @@ See [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx
 1.	Open `/var/www/html/magento2/nginx.conf` in a text editor.
 2.	Locate the following block:
 
-	location ~ (index|get|static|report|404|503)\.php$ { ... }
+		location ~ (index|get|static|report|404|503)\.php$ { ... }
 3.	In that block, add the following lines:
 
 		fastcgi_param  MAGE_RUN_TYPE website;
@@ -119,7 +120,7 @@ See [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx
 ## Verify your site  {#ms-nginx-verify}
 Unless you have DNS set up for the URL, you must add a static route to the host in your `hosts` file:
 
-1.	Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}
+1.	Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
 2.	Add the static route in the format:
 
 		<ip address> french.example.com
