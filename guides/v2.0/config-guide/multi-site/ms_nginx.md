@@ -95,6 +95,8 @@ This section discusses how to load websites on the storefront. You can use eithe
 
 See [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"} for more details.
 
+{% endcollapsible %}
+
 ## Step 3. Pass the Magento variables to nginx {#ms-nginx-vars}
 
 {% collapsible To pass Magento variables to nginx: %}
