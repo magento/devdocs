@@ -15,13 +15,15 @@ The example in this topic assumes you have set up your nginx configuration as re
 
 That is, you should have a small, main configuration file that includes your Magento-specific configuration in the server block. This file is referred to in this topic as `main.conf`; the configuration file based on the Magento-provided sample is referred to in this topic as `nginx.magento.conf`.
 
+`$MAGE_RUN_TYPE` can be either `store` or `website`
+
+`$MAGE_RUN_CODE` is the unique code that corresponds to `$MAGE_RUN_TYPE`
+
 This section discusses how to have two websites at `site1.store.com` and `site2.store.com` that use the codes `site1` and `site2`. Multiple hosts require only one entry point. 
 
-You can use the same method to run multiple stores using the value `store` instead of `website` for the `$MAGE_RUN_TYPE` variable.
+Step 1. In your nginx virtual host configuration file, write a map directive to set the `$MAGE_RUN_CODE` variable in the `server` directive.
 
-Step 1. Write a map directive to set the `$MAGE_RUN_CODE` variable.
-
-{% highlight php startinline=true %}
+{% highlight xml %}
 map $http_host $MAGE_RUN_CODE {
     site1.store.com site1;
     site2.store.com site2;
@@ -30,7 +32,8 @@ map $http_host $MAGE_RUN_CODE {
 
 The preceding sets the `$MAGE_RUN_CODE` variable based on the host. For example, if the host to which the request is made is `site1.store.com`, `$MAGE_RUN_CODE` is set to `site1`. See [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"} for more details.
 
-Step 2. Send `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables to the php-fpm server.
+Step 2. Send `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables to the php-fpm server in your nginx configuration file (for example, `/var/www/html/magento2/nginx.conf`).
+
 Inside this block:
 
 	location ~ (index|get|static|report|404|503)\.php$ { ... }
