@@ -40,7 +40,7 @@ title: Payment Method
 </tr>
 <tr>
 <td> array </td>
-<td> paymentData </td>
+<td> method </td>
 <td> Array of shoppingCartPaymentMethodEntity </td>
 </tr>
 <tr>
@@ -180,7 +180,7 @@ var_dump($result);</pre>
 
 $sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
  
-$result = $proxy-&gt;shoppingCartPaymentMethod((object)array('sessionId' =&gt; $sessionId-&gt;result, 'quoteId' =&gt; 10, 'paymentData' =&gt; array(
+$result = $proxy-&gt;shoppingCartPaymentMethod((object)array('sessionId' =&gt; $sessionId-&gt;result, 'quoteId' =&gt; 10, 'method' =&gt; array(
 'po_number' =&gt; null,
 'method' =&gt; 'checkmo',
 'cc_cid' =&gt; null,
