@@ -118,7 +118,7 @@ For more detail about the map directive, see [nginx documentation on the map dir
 {% endcollapsible %}
 
 ## Verify your site  {#ms-nginx-verify}
-Unless you have DNS set up for the URL, you must add a static route to the host in your `hosts` file:
+Unless you have DNS set up for your stores' URLs, you must add a static route to the host in your `hosts` file:
 
 1.	Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
 2.	Add the static route in the format:
