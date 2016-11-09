@@ -79,7 +79,7 @@ The code below is an implementation class of the `AdapterInterface` that uses th
 namespace MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown;
 
 use \Michelf\Markdown;
-use MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface
+use MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface;
 
 /**
  * Adapter for php-markdown library
@@ -94,21 +94,29 @@ class PhpMarkdown implements AdapterInterface
      */
     public function parse($text)
     {
-        return Markdown::default_transform($text);
+        return Markdown::defaultTransform($text);
     }
 }
 {% endhighlight %}
 
 \\
+
+The code below is the entry you need to add in your `di.xml` file to configure the ObjectManager to return the PhpMarkdown implementation when the `AdapertInterface` class is requested as a dependency.
+
+{% highlight php startinline %}
+<preference for="MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface" type="MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown\PhpMarkdown" />
+{% endhighlight %}
+
+\\
+
 The code below is an alternate implementation class of the `AdapterInterface` that uses the [Ciconia](https://github.com/kzykhys/Ciconia){:target="_blank"} library to parse markdown into HTML.
 
 The difference between this and the previous implementations is the constructor dependency that provides an instance of the `Ciconia` class.
 
 {% highlight php startinline %}
 namespace MyCompany\MyModule\Markdown\Parser\Adapter\Ciconia;
-
 use Ciconia\Ciconia;
-use MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface
+use MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface;
 
 /**
  * Adapter for the Ciconia library
@@ -136,14 +144,25 @@ class CiconiaParser implements AdapterInterface
      */
     public function parse($text)
     {
-        return $parser->render($text);
+        return $this->parser->render($text);
     }
 }
 {% endhighlight %}
 
 \\
-To inject the `Ciconia` dependency in the adapter class, you need to add the following entry in the module's `di.xml` file.
+The following dependency injection entries belong in the `di.xml` file.
+They describe to the ObjectManager how to create the third-party and adapter classes.
+
 
 {% highlight xml %}
-<type name="Ciconia\Ciconia" shared="false" />
+<virtualType name="defaultCiconia" type="Ciconia\Ciconia" shared="false">
+   <arguments>
+       <argument name="renderer" xsi:type="null"/>
+   </arguments>
+</virtualType>
+<type name="MyCompany\MyModule\Markdown\Parser\Adapter\Ciconia\CiconiaParser">
+   <arguments>
+       <argument name="parser" xsi:type="object">defaultCiconia</argument>
+   </arguments>
+</type>
 {% endhighlight %}
