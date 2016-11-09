@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install_trouble
-subgroup: PHP issues
+subgroup: 10_php
 title: PHP settings errors
 menu_title: PHP settings errors
 menu_node:
-menu_order: 1
+menu_order: 350
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_php-set.md
 ---

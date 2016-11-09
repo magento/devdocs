@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: 10_CE-EEUpgrade
+subgroup: 26_CE-EEUpgrade
 title: Upgrade from CE to EE
 menu_title: Upgrade from CE to EE
 menu_node: parent
@@ -46,6 +46,10 @@ To run System Upgrade:
 	<img src="{{ site.baseurl }}common/images/upgr-ee-version-list.png" width="750px" alt="Magento finds software to upgrade"><br><br>
 
 	From the list, click the version to which to upgrade. Typically, you'll choose the most recent version (indicated by **(latest)**.)
+
+After the upgrade completes, restart Varnish if you use it for page caching.
+
+	service varnish restart
 
 #### Errors
 *	The following error can indicate one of several issues, including that you haven't entered your <a href="{{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:

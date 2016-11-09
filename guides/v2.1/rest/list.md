@@ -13,6 +13,9 @@ github_link: rest/list.md
 
 Additions since 2.0 are marked with asterisks (*).
 
+* TOC
+{:toc}
+
 ### Backend
 
     GET    /V1/modules
@@ -344,6 +347,9 @@ Additions since 2.0 are marked with asterisks (*).
     POST   /V1/orders/
     GET    /V1/transactions/:id
     GET    /V1/transactions
+    * POST /V1/order/:orderId/invoice
+    * POST /V1/order/:orderId/ship
+
 
 ### SalesRule
 

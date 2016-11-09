@@ -10,10 +10,11 @@ version: 2.0
 github_link: extension-dev-guide/intro/intro-composer-gloss.md
 redirect_from:
   - /guides/v2.0/mktpl-quickstart/intro-composer-gloss.html
-  - /guides/v2.0/extension-dev-guide/intro-composer-gloss.html
+  - /guides/v2.1/mktpl-quickstart/intro-composer-gloss.html
+  - /guides/v2.2/mktpl-quickstart/intro-composer-gloss.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 #### List of terms
 

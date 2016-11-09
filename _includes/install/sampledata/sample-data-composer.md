@@ -10,6 +10,10 @@ You can use this method of getting sample data if you used Magento Community Edi
 
 If you're a contributing developer, see one of the other topics on the left side of this page.
 
+<div class="bs-callout bs-callout-warning">
+    <p>Do not install sample data if your Magento application is set for <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. Switch to <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> first. Installing sample data in production mode <a href="{{ page.baseurl }}install-gde/trouble/tshoot_sample-data.html#trouble-samp-prod">fails</a>.</p>
+</div>
+
 To install sample data using the command line, enter the following command as the Magento file system owner:
 
     php <your Magento install dir>/bin/magento sampledata:deploy
@@ -27,18 +31,6 @@ The following error might display:
     You must be using the interactive console to authenticate
 
 If the error displays, change to your Magento installation directory and run `composer update`, which will prompt you for your <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">authentication keys</a>.
-
-### Install the Magento software {#magento-install}
-After downloading sample data packages, install the Magento software in any of the following ways:
-
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli.html">Command line</a>
-*	<a href="{{page.baseurl}}install-gde/install/web/install-web.html">Setup Wizard</a>
-
-
-<!-- <h3 id="sample-data-modules">Complete list of modules</h3>
-The complete list of sample data modules follows:
-
-{% include install/sampledata/sample-data_list-of-modules.md %} -->
 
 <!-- ABBREVIATIONS -->
 

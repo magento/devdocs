@@ -8,7 +8,7 @@ menu_order: 6
 version: 2.0
 github_link: extension-dev-guide/events-and-observers.md
 ---
-##{{page.menu_title}}
+## {{page.menu_title}}
 {:.no_toc}
 
 * TOC
@@ -117,7 +117,7 @@ Observers can be configured to watch certain events in the `events.xml` file.
 
 The `observer` xml element has the following properties:
 
-* `name` (required) - The unique observer name.
+* `name` (required) - The name of the observer for the event definition.
 * `instance` (required) - The fully qualified class name of the observer.
 * `disabled` - Determines whether this observer is active or not. Default value is false.
 * `shared` - Determines the [lifestyle]({{page.baseurl}}extension-dev-guide/depend-inj.html#object-lifestyle-management) of the class. Default is false.
@@ -138,7 +138,7 @@ Below is an example of how to assign observers to watch certain events:
 
 In the preceding example, we assign the observer `MyObserver` to the custom event `my_module_event_before` and `AnotherObserver` to `my_module_event_after`.
 
-Observer names must be unique in the event they assigned to. In the example, both observers have the name `myObserverName`. This is fine because each of those observers belong to different events.
+Observer names must be unique per event definition. This means that you cannot have two observers with the same name in the same event definition. In the example, both observers have the name `myObserverName`. This is acceptable because each of those observers belong to different event definitions.
 
 ### Recommended Reading
 

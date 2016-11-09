@@ -11,7 +11,6 @@ github_link: install-gde/install/cli/dev_downgrade.md
 ---
 
 ## Change to a released version
-
 This topic discusses how a contributing developer can change versions of the Magento software after cloning the `develop` branch. This might be necessary to perform some tasks that require a specific Magento version other than `develop`.
 
 The `develop` branch is the default branch, which means you get it by default when you clone the Magento 2 GitHub repository. For some tasks, such as data migration from Magento 1.x to Magento 2.x, you must switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a>.

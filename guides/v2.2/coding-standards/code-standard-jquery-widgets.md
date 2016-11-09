@@ -1,0 +1,1 @@
+../../v2.1/coding-standards/code-standard-jquery-widgets.md

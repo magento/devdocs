@@ -41,10 +41,9 @@ To use the one-owner setup, you must log in to your Magento server as the same u
 In default or developer mode, the following directories must be writable by the user:
 
 *	`vendor` (Composer or compressed archive installation)
-*	`app/code` (contributing developers only)
 *	`app/etc`
-*	`lib`
 *	`pub/static`
+*	`var`
 *	Any other static resources
 *	`var/generation`
 *	`var/di`
@@ -58,7 +57,6 @@ When you're ready to deploy your site to production, you should remove write acc
 *	`vendor` (Composer or compressed archive installation)
 *	`app/code` (contributing developers only)
 *	`app/etc`
-*	`lib`
 *	`pub/static`
 *	Any other static resources
 *	`var/generation`
@@ -77,14 +75,14 @@ To remove writable permissions to files and directories from the web server user
 		php bin/magento deploy:mode:set production
 3.	Enter the following commands:
 
-		find var vendor lib pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \;
-		find var vendor lib pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \;
+		find var vendor pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod u-w {} \;
+		find var vendor pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod u-w {} \;
 		chmod o-rwx app/etc/env.php
 		chmod u+x bin/magento
 
 	You can optionally enter all the preceding commands as one command:
 
-		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \; && find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
+		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod u-w {} \; && find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod u-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
@@ -97,7 +95,7 @@ To make files and directories writable so you can update components and upgrade 
 2.	Change to your Magento installation directory.
 3.	Enter the following commands:
 
-		chmod -R u+x .
+		chmod -R u+w .
 		
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>

@@ -10,7 +10,7 @@ github_link: ext-best-practices/extension-coding/common-programming-bp.md
 
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 {:.no_toc}
 
 You should do your best to adhere to common programming best practices to reduce the amount of bugs and improve the quality and maintainability of your extensions. The following list of best practices addresses commonly reported issues found in third party extensions.
@@ -36,7 +36,19 @@ Coding standards are a set of guidelines that describe how code should be writte
 To help you stick to coding standards, we recommend using the [PHP_CodeSniffer tool](https://github.com/squizlabs/PHP_CodeSniffer){:target="_blank"}.
 
 ### Write and utilize re-usable code
-Avoid using redundant or duplicate code. Instead of copying and pasting the same code throughout application, create a single class or method and reference it when needed. As a general rule of thumb, be sure to reuse code as much as possible.
+Avoid using redundant or duplicate code, which can be hard to maintain. Instead of copying and pasting the same code throughout application, create a single class or method and reference it when needed. As a general rule of thumb, be sure to reuse code as much as possible to save yourself the from the costs of duplication.
+
+The code you write should be small, focused, and provides a generic solution. This will let you re-use these pieces again in future development.
+
+### Design your code to be replaceable
+Designing and writing your code to be replaceable is just as important as making it re-usable. Having a replaceable design means your code is modular and loosely coupled, therefore allowing easy updates and improvements in the future.
+
+It is common practice to replace parts of your codebase with newer and better pieces as bugs are found or newer strategies become available. Writing replaceable code in your codebase makes this practice easier and more efficient.
+
+### Avoid creating helper classes
+Helper or utility classes are classes filled with static methods that do not quite fit anywhere else. These classes are considered an antipattern and go against the principles of object oriented programming. If you have `ClassA` and a `ClassAHelper` with static functions that work on `ClassA`, you should consider refactoring those functions into `ClassA`.
+
+A helper class that functions as a catch-all for random methods breaks the single responsibility principle because it is an attempt to solve multiple problems in a single class. You should refactor your code and move those functions into the appropriate classes they work on.
 
 ### Be consistent with case and naming conventions
 You should be consistent in your naming conventions for files, folder names, Classes, and Methods. Following standard conventions will make your code look professional and easy to read.

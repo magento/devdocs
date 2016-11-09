@@ -17,10 +17,10 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
 
 <h2 id="elements">Component elements</h2>
 
-* Constructor: `app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js`
+* Constructor: `<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`
 * JQuery file upload plugin: `jquery/fileUploader/jquery.fileupload-fp`
-* Default template: `app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html`
-* Preview template: `app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html`
+* Default template: `<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`
+* Preview template: `<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html`
 
 <h2 id="structure">Component options</h2>
 
@@ -38,7 +38,7 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
     <td>Path to the files' preview template</td>
     <td>No</td>
     <td>String</td>
-    <td>app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html
+    <td><Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html
 </td>
 </tr>
 <tr>
@@ -93,9 +93,14 @@ Here is an example of how File Uploader component integrates with <a href="{{pag
 {% highlight xml %}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     ...
-    <fieldset name="foo" xsi:type="array">
+    <fieldset name="foo">
         ...
-        <field name="bar" xsi:type="array">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string"/>
+            </item>
+        </argument>
+        <field name="bar">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string">Sound Check</item>

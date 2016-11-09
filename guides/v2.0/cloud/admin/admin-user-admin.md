@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 20_admin
+subgroup: 30_admin
 title: Manage users
 menu_title: Manage users
 menu_order: 2
@@ -51,11 +51,11 @@ For your users to be able to see everything but only
 commit to a specific branch, change their permission level on that
 environment to "Contributor".
 
-> **Important!**
-> An environment contributor can push code to the environment, but that user 
-> role does not have SSH access to the environment. By default, only 
-> environment administrators have SSH access. You can change the default
-> in `.magento.app.yaml` by example by specifying `ssh: contributor`
+
+<div class="bs-callout bs-callout-warning">
+    <p>An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in <code>.magento.app.yaml</code> by specifying <code>ssh: contributor</code>.</p>
+</div>
+
 
 ### Rebuild the environment
 After a new user is added to an environment, the environment must be rebuilt. Rebuilds

@@ -17,7 +17,7 @@ redirect_from: /guides/v1.0/migration/migration-overview-how.html
 This document uses the following terminology to discuss the Data Migration Tool:
 
 * Step: A unique migration task that must be executed in a prescribed order
-* Map: A set of rules that describe connections between Magento 1.x and Magento 2.0 data structures
+* Map: A set of rules that describe connections between Magento 1.x and Magento 2.x data structures
 * Mode: Represented by a separate Data Migration Tool command, defines the basic mode of operation as:
   * Settings: Migrates the system configuration and website-related settings
   * Data: Migrates database assets in bulk
@@ -36,12 +36,12 @@ This section previews your migration experience by providing a high-level overvi
 <h4>Conceptual overview</h4>
 The data migration tool recognizes the differences in database structure between Magento 1.x versions. Most of these database structural differences are declared in *map files*. Each step in the process uses map files to transform data for use in your Magento 2 store.
 
-For example, when you transform data from a Magento CE 1.8.0.0 database to Magento 2.0.4, the map file accounts for the fact that a table was renamed and renames it accordingly in the destination database. If there are no differences in data structure or data format, the Data Migration Tool transfers it as-is to the Magento 2 database, including data from tables created by extensions. 
+For example, when you transform data from a Magento CE 1.8.0.0 database to Magento 2.x.x, the map file accounts for the fact that a table was renamed and renames it accordingly in the destination database. If there are no differences in data structure or data format, the Data Migration Tool transfers it as-is to the Magento 2 database, including data from tables created by extensions. 
 
 When differences are not declared in map files, then the Data Migration Tool displays an error and does not start.
 
 Mapping files are discussed in more detail in <a href="{{page.baseurl}}migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification.</a>
 
-####The following diagram illustrates the migration flow in general:
+#### The following diagram illustrates the migration flow in general:
 
 <p><img src="{{ site.baseurl }}common/images/migration_flow.png" alt="Migration Flow"></p> 

@@ -10,7 +10,7 @@ github_link: extension-dev-guide/attributes.md
 redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
 
 ---
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:
 
@@ -154,7 +154,7 @@ Individual fields that are defined as extension attributes can be restricted, ba
 The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a “third-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
 {% highlight XML %}
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Api/etc/extension_attributes.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="stock_item" type="Magento\CatalogInventory\Api\Data\StockItemInterface">
             <resources>
@@ -211,7 +211,6 @@ An `ExtensionInterface` will be empty if no extension attributes have been added
 However, if an extension similar to the following has been defined, the interface will not be empty.
 
 {% highlight XML %}
-
 <extension_attributes for=“Magento\Customer\Api\Data\CustomerInterface">
     <attribute code=“attributeName" type=“Magento\Some\Type[]" />
 </extension_attributes>

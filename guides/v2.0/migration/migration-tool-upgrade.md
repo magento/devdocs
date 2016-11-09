@@ -58,7 +58,7 @@ To upgrade the Data Migration Tool:
 	`composer require magento/data-migration-tool:2.0.2`
 4.	Wait while the command completes.
 
-###Related topics
+### Related topics
 
 * <a href="{{page.baseurl}}migration/migration-tool-configure.html">Configure migration</a>
 * <a href="{{page.baseurl}}migration/migration-tool-preconditions.html">Preconditions</a>

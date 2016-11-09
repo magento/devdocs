@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: 15_UseUpgrade
+subgroup: 32_UseUpgrade
 title: Step 4. Upgrade
 menu_title: Step 4. Upgrade
 menu_node: 
@@ -28,7 +28,12 @@ Messages similar to the following display in the Console Log:
 
 {% endcollapsible %}
 
-After the upgrade finishes, access your storefront.
+## After upgrading
+After the upgrade completes, restart Varnish if you use it for page caching.
+
+	service varnish restart
+
+Then access your storefront and verify everything is working properly.
 
 ## Errors after upgrade
 After you finish your upgrade, errors might display.

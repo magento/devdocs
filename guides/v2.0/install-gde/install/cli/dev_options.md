@@ -8,10 +8,17 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: install-gde/install/cli/dev_options.md
-redirect_from: guides/v2.0/install-gde/install/dev_updater.md
+redirect_from: 
+  - guides/v2.0/install-gde/install/dev_updater.html
+  - guides/v2.1/install-gde/install/dev_updater.html
 ---
 
+## Contributing developers&mdash;update, reinstall Magento
 The following topics apply to you *only* if you used `git clone` to install the Magento CE GitHub repository. This usually means you contribute code to the Magento CE codebase.
+
+<div class="bs-callout bs-callout-warning">
+    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
+</div>
 
 *	To <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html">update the Magento software</a>, use `git pull origin` and `composer update`, then update the Magento database
 *	To <a href="{{page.baseurl}}install-gde/install/cli/dev_downgrade.html">change versions</a> from `develop` to a release version like `2.0.4`, you must uninstall the Magento software and install the released version.

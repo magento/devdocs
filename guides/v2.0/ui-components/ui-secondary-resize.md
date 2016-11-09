@@ -16,7 +16,7 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-resize.html
 
 The Resize Component is responsible for resizing listing columns. The Resize component is not defined in definition.xml, but can be added if needed.
 
-####Integration
+#### Integration
 
 Resize can be switched on for any listing column like this:
 
@@ -35,9 +35,9 @@ resizeDefaultWidth - set width value in pixels.
 
 resizeEnabled - value can be set `true`, meaning the resize is switched on, or `false`, , meaning the resize is switched off for the column.
 
-####Configuration
+#### Configuration
 
-The Resize component is currently configured as a plugin for the Listing component in `<your module root dir>/Magento/Ui/view/base/web/js/grid/listing.js`. It has the following options:
+The Resize component is currently configured as a plugin for the Listing component in `<Magento_Ui_module_dir>/view/base/web/js/grid/listing.js`. It has the following options:
 
 * resizeConfig
 
@@ -46,17 +46,17 @@ The Resize component is currently configured as a plugin for the Listing compone
   * component
   * provider - can use listing provider
 
-###Resize JS Component Structure
+### Resize JS Component Structure
 
-####Component elements
+#### Component elements
 
-The following is the component's element: `<your module root dir>/Magento/Ui/view/base/web/js/grid/resize.js`
+The following is the component's element: `<Magento_Ui_module_dir>/view/base/web/js/grid/resize.js`
 
-####Dependencies on other components
+#### Dependencies on other components
 
 The Resize components does not depend on other components
 
-####Component Options
+#### Component Options
 
 The following options are available:
 

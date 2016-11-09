@@ -24,7 +24,7 @@ The Magento application enables you to localize your store for multiple regions 
 <h3 id="translate_terms">Terms used</h3>
 A *translation dictionary* is a comma-separated value (.csv) file with at least two columns: the original phrase in the `en_US` locale and a translation of that phrase in an another locale. Sample translation from English (`en_US`) to German (`de_DE`):
 
-	"Add to Cart","Zum Warenkobrn hinzufügen"
+	"Add to Cart","Zum Warenkorb hinzufügen"
 	"Add to Compare","Hinzufügen um zu vergleichen"
 	"Add to Wishlist","Zum Wunschzettel hinzufügen"
 	"Additional Product Info","Zusätzliche Angaben zum Produkt"
@@ -66,7 +66,7 @@ Changes made:
 ### More information
 See one of the following sections for more information:
 
-* <a href="#m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</a>
+*	<a href="#m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</a>
 *	<a href="#m2devgde-xlate-translating">Manually translate words and phrases</a>
 *	<a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a>
 *	<a href="#m2devgde-xlate-languagepack">Language packages</a>
@@ -102,7 +102,7 @@ Magento translates words and phrases when all of the following conditions are me
 The Magento application automatically assembles translation dictionaries located in modules' `i18n` directory into a dictionary per language. For example, Brazilian Portuguese (`pt_BR`) translation dictionaries might be located in module and theme directories similar to the following:
 
 	app/code/Magento/Checkout/i18n/pt_BR.csv
-	app/design/frontend/Magento/demo/i18n/pt_BR.csv
+	app/design/frontend/<Vendor>/<theme>/i18n/pt_BR.csv
 
 Assembling the preceding `pt_BR.csv` files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).
 
@@ -128,8 +128,8 @@ Magento enables you to create the following types of language packages:
 		 |       |-- pt_BR.csv
 		 |__/design
 		   |__/frontend
-		     |__/Magento
-		       |__/demo
+		     |__/<Vendor>
+		       |__/<theme>
 		         |__/i18n
 		           |-- pt_BR.csv
 
@@ -142,11 +142,11 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 
 *	`composer.json` that contains any dependencies for the language package and a mapping to its defined locale
 
-	<a href="{{ site.mage2100url }}app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a>
+	<a href="{{ site.mage2100url }}app/i18n/Magento/de_DE/composer.json" target="_blank">Sample composer.json</a>
 
 *	`language.xml`, in which you declare a language package.
 
-	<a href="{{ site.mage2100url }}app/i18n/magento/de_de/language.xml" target="_blank">Sample language.xml</a>
+	<a href="{{ site.mage2100url }}app/i18n/Magento/de_DE/language.xml" target="_blank">Sample language.xml</a>
 
 #### Next step
 

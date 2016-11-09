@@ -81,7 +81,7 @@ To install the Data Migration Tool:
 3.  When prompted, enter your <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.
 
 
-###Related topics
+### Related topics
 
 * <a href="{{page.baseurl}}migration/migration-tool-configure.html">Configure migration</a>
 * <a href="{{page.baseurl}}migration/migration-tool-preconditions.html">Preconditions</a>

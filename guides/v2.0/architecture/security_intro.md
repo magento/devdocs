@@ -29,7 +29,7 @@ Magento 2.0 includes the following security enhancements:
 
 * <b>Improved prevention of clickjacking exploits</b>. Magento safeguards your store from clickjacking attacks by using an X-Frame-Options HTTP request header. For more information, see <a href="{{page.baseurl}}config-guide/secy/secy-xframe.html"> X-Frame-Options header</a>.
 
-* <b>Use of non-default Magento Admin URL</b>. A simple Magento Admin URL (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI is provided so that you can  see the password if you forget it. You can also use the CLI change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See <a href="{{page.baseurl}}install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a> in Configuration Guide for more information. 
+* <b>Use of non-default Magento Admin URL</b>. A simple Magento Admin URL (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI is provided so that you can  see the password if you forget it. You can also use the CLI to change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See <a href="{{page.baseurl}}install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a> in Configuration Guide for more information. 
 
 
 

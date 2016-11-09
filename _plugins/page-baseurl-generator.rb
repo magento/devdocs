@@ -2,7 +2,7 @@
 #
 # This custom plugin dynamically sets and injects the page.baseurl variable
 # based on the page's destination.
-# 
+#
 #
 
 module PageBaseUrlGenerator
@@ -21,7 +21,7 @@ module PageBaseUrlGenerator
         end
 
         page.data['baseurl'] = "#{siteBaseUrl}guides/v#{version}/"
-        page.data['version'] = version
+        page.data['guide_version'] = version
       end
     end
   end

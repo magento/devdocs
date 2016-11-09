@@ -10,21 +10,21 @@ menu_order: 1
 github_link: release-notes/backward-incompatible-changes-2.1.md
 ---
 
-##{{page.title}}
+## {{page.title}}
 {:.no_toc}
 
 * TOC
 {:toc}
 
-###Overview
+### Overview
 
 Magento 2.1 introduces several major changes that may affect the correct functionality of already released external modules. The purpose of this document is to highlight major changes between Magento 2.0 and 2.1.
 
-###API Changes
+### API Changes
 
 Magento 2.1 introduces changes in several API classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
 
-####Catalog Module API
+#### Catalog Module API
 
 The Catalog module introduces new service methods that enhance both options management and products to categories cross linking management.
 

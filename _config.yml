@@ -19,31 +19,34 @@ versions:
       url: guides/v2.0/
    -
       name: 2.1
-      url:
+      url: guides/v2.1/
+
+# GitHub variables
+github: "https://github.com/magento/devdocs/tree/develop/guides/"
 
 # 2.0.0 variables
 gdeurl: "/guides/v2.0/"
-githuburl: "https://github.com/magento/devdocs/tree/2.0/guides/v2.0/"
+githuburl: "https://github.com/magento/devdocs/tree/develop/guides/v2.0/"
 mage2000url: "https://github.com/magento/magento2/blob/2.0/"
 
 # 1.x variables
 m1xgdeurl: "/guides/m1x/"
-m1xgithuburl: "https://github.com/magento/devdocs/tree/m1x/guides/m1x/"
+m1xgithuburl: "https://github.com/magento/devdocs/blob/develop/"
 
 # 2.1.0 variables
 gdeurl21: "/guides/v2.1/"
-githuburl21: "https://github.com/magento/devdocs/tree/2.1/guides/v2.1/"
+githuburl21: "https://github.com/magento/devdocs/tree/develop/guides/v2.1/"
 mage2100url: "https://github.com/magento/magento2/blob/2.1/"
 
 # 2.2.0 variables
 gdeurl22: "/guides/v2.2/"
-githuburl22: "https://github.com/magento/devdocs/tree/2.2/guides/v2.2/"
-mage2200url: "https://github.com/magento/magento2/blob/2.2/"
+githuburl22: "https://github.com/magento/devdocs/tree/develop/guides/v2.2/"
+mage2200url: "https://github.com/magento/magento2/blob/develop/"
 
 # 2.3.0 variables
 
 gdeurl23: "/guides/v2.3/"
-githuburl23: "https://github.com/magento/devdocs/tree/2.3/guides/v2.3/"
+githuburl23: "https://github.com/magento/devdocs/tree/develop/guides/v2.3/"
 mage2300url: "https://github.com/magento/magento2/blob/2.3/"
 
 # Other variables
@@ -57,6 +60,8 @@ namem2install: "Magento 2 Installation Guide"
 # Build settings
 markdown: kramdown
 highlighter: pygments
+kramdown:
+  toc_levels: 2..3
 
 incremental: true
 
@@ -64,4 +69,4 @@ gems:
   - jekyll-redirect-from
   - jekyll-last-modified-at
 
-exclude: ['scss','bin','node_modules', 'vendor', 'guides/v2.2']
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'guides/v2.2']

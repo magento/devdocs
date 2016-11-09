@@ -10,14 +10,11 @@ github_link: install-gde/prereq/mysql.md
 redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core -->
-
-
 #### Contents
 
 *	<a href="#mysql-help-beginner">Help if you're just starting out</a>
 *	<a href="#instgde-prereq-mysql-intro">General guidelines</a>
+*	[Installing and configuring MySQL 5.7 on Ubuntu 16](#instgde-prereq-mysql57-ub16)
 *	<a href="#instgde-prereq-mysql-ubuntu">Installing and configuring MySQL 5.6 on Ubuntu</a>
 *	[Installing and configuring MySQL 5.7 on CentOS](#instgde-prereq-mysql57-centos)
 *	<a href="#instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</a>
@@ -31,19 +28,18 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{page.baseurl}}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
 *	<a href="{{page.baseurl}}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
-
-<h2 id="instgde-prereq-mysql-intro">General guidelines</h2>
+## General guidelines {#instgde-prereq-mysql-intro}
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento requires MySQL 5.6.x.</p></span>
+  <p>The Magento application requires MySQL 5.6.x.</p>
+  <p>Magention versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
 </div>
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
-*	Magento uses <a href="http://dev.mysql.com/doc/refman/5.0/en/triggers.html" target="_blank">MySQL database triggers</a> to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
-*	Familiarize yourself with <a href="http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html" target="_blank">these potential MySQL trigger limitations</a> before you continue.
-*	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ <a href="http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html" target="_blank">row-based replication</a>.
+*	Magento uses [MySQL database triggers](http://dev.mysql.com/doc/refman/5.0/en/triggers.html){:target="_blank"} to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
+*	Familiarize yourself with [these potential MySQL trigger limitations](http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html){:target="_blank"} before you continue.
+*	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -53,8 +49,53 @@ Magento _strongly_ recommends you observe the following standard when you set up
 <h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
 See one of the following sections for more information:
 
+*	[Installing and configuring MySQL 5.7 on Ubuntu 16](#instgde-prereq-mysql57-ub16)
 *	<a href="#instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</a>
 *	<a href="#instgde-prereq-mysql56ubu12">Installing MySQL 5.6 on Ubuntu 12</a>
+
+### Installing and configuring MySQL 5.7 on Ubuntu 16 {#instgde-prereq-mysql57-ub16}
+This section discusses how to install MySQL 5.7 on Ubuntu 16.
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The Magento application 2.1.2 and later are compatible with MySQL 5.7.</p></span>
+</div>
+
+To install MySQL 5.7 on Ubuntu 16:
+
+1.	Enter the following command:
+
+		sudo apt install -y mysql-server mysql-client
+
+2.	Secure the installation.
+
+		sudo mysql_secure_installation
+
+2.	Test the installation by entering the following command:
+
+		mysql -u root -p
+
+	Sample output:
+
+		Welcome to the MySQL monitor.  Commands end with ; or \g.
+		Your MySQL connection id is 45
+		Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
+
+		Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+		Oracle is a registered trademark of Oracle Corporation and/or its
+		affiliates. Other names may be trademarks of their respective
+		owners.
+
+		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+		mysql>
+
+4.	If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank">`max_allowed_packet`</a> that is larger than the default, 16MB.
+
+	{% include install/mysql_max-allowed-packet-ubuntu.md %}
+
+3.	<a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.	
 
 <h3 id="instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</h3>
 To install MySQL 5.6 on Ubuntu 14:
@@ -139,7 +180,7 @@ This section discusses how to to install MySQL 5.7 on CentOS 6 or CentOS 7.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento does not support MySQL 5.7 at this time. These instructions are provided for your convenience if you'd like to test MySQL 5.7.</p></span>
+  <p>The Magento application 2.1.2 and later are compatible with MySQL 5.7.</p></span>
 </div>
 
 ### Get MySQL 5.7 for CentOS 7
@@ -189,11 +230,18 @@ Continue with the next section.
 <h2 id="instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</h2>
 The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/" target="_blank">Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux</a>.
 
-1.	Install the MySQL database:
+1.	*CentOS 6* Install the MySQL database:
 
 		yum -y update
 		sudo wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el6-5.noarch.rpm
 		sudo yum -y install mysql-server
+
+2.	*CentOS 7* Install the MySQL database:
+
+		yum -y update
+		sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+		sudo yum -y install mysql-server
+
 
 2.	Start MySQL.
 
@@ -258,7 +306,7 @@ To configure a MySQL database instance:
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)

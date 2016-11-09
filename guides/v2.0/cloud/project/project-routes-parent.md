@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Configure routes
 menu_title: Configure routes
 menu_order: 15

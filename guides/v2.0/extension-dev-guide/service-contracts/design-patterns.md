@@ -9,7 +9,7 @@ version: 2.0
 github_link: extension-dev-guide/service-contracts/design-patterns.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html
 ---
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 <p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a design pattern as a best practice with conditions.</p>
 <p>Design patterns for service contracts tell you which types of interfaces to define, and how and where to define and implement those  interfaces.</p>
@@ -33,7 +33,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 <p>Define data interfaces in the <b>Api/Data</b> subdirectory for a module.</p>
 <p>For example, the data interfaces for the Customer module are in the <b>/app/code/Magento/Customer/Api/Data</b> subdirectory.</p>
 
-<h3 id="search-results">Data search results interfaces</h3>
+<h3 id="search-results-interfaces">Data search results interfaces</h3>
 <p>When you pass search criteria to a <code>getList()</code> call, a search results interface is returned with the search results.</p>
 <p>You must define one interface for each data entity for type hinting purposes. That is, the <code>getItems()</code> function in the
    <code>CustomerSearchResultsInterface</code> returns an array of <code>CustomerInterface</code> data entities.

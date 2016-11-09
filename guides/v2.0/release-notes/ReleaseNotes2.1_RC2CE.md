@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento CE 2.1 Release Candidate 2 (RC2) Release Notes 
 menu_title: Magento CE 2.1 Release Candidate 2 (RC2) Release Notes 
-menu_order: 16
+menu_order: 23
 version: 2.0
 github_link: release-notes/ReleaseNotes2.1_RC2CE.md
 ---
@@ -226,7 +226,7 @@ Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-m
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
 ### Other upgrades
-Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)]({{page.baseurl}}comp-mgr/release-notes/tech_bull_21-upgrade.html).
+Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)]({{page.baseurl}}release-notes/tech_bull_21-upgrade.html).
 
 ## Migration toolkits
 The <a href="{{page.baseurl}}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{page.baseurl}}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

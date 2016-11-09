@@ -27,7 +27,7 @@ To add an extending <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-t
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
 </pre>
 
-For example, to customize the layout defined in `<Magento_Catalog_module_dir>/view/frontend/layout/catalog_product_view.xml`, you need to add a layout files with the same name in your custom theme, like following:
+For example, to customize the layout defined in `<Magento_Catalog_module_dir>/view/frontend/layout/catalog_product_view.xml`, you need to add a layout file with the same name in your custom theme, like following:
 
 <code>&lt;theme_dir&gt;/Magento_Catalog/layout/catalog_product_view.xml</code>
 

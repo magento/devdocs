@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
+subgroup: 15_howto
 title: Tutorials
 menu_title: Tutorials
 menu_order: 1
@@ -19,7 +19,6 @@ Current topics:
 
 *	Install components, upgrade, update
 
-	*	[Upgrade the Magento system software]({{page.baseurl}}cloud/howtos/upgrade-magento.html)
 	*	[Install components]({{page.baseurl}}cloud/howtos/install-components.html)
 	*	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
 

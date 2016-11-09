@@ -11,3 +11,6 @@ github_link: install-gde/install/cli/install-cli-sample-data-clone.md
 ---
 
 {% include install/sampledata/sample-data-clone.md %}
+
+### Install the Magento software
+After sample data installation is complete, install the Magento software using the [command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html).

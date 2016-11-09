@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: 13_cli-upgr
+subgroup: 28_cli-upgr
 title: Command-line upgrade
 menu_title: Command-line upgrade
 menu_node: parent
@@ -51,7 +51,7 @@ To prevent access to your store while it's being upgraded, put your store in mai
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
 2.	Enter the following command:
 
-		php <your Magento install dir>/bin/magento magento maintenance:enable
+		php <your Magento install dir>/bin/magento maintenance:enable
 
 	For additional options, see [Enable or disable maintenance mode]({{page.baseurl}}install-gde/install/cli/install-cli-subcommands-maint.html).
 
@@ -88,6 +88,9 @@ To prevent access to your store while it's being upgraded, put your store in mai
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
+5.	Restart Varnish if you use it for page caching.
+
+		service varnish restart
 6.	Access your storefront.
 
 	The following error might display:

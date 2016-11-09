@@ -47,7 +47,7 @@ The following figure shows a basic view of Varnish in your Magento topology.
 
 <img src="{{ site.baseurl }}common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram">
 
-In the preceding figure, users' web page requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as *assets*). Varnish sits in front of the web server and proxies these requests to the web server. 
+In the preceding figure, users' HTTP requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as *assets*). Varnish sits in front of the web server and proxies these requests to the web server. 
 
 As the web server returns assets, cacheable assets are stored in Varnish. Any subsequent requests for those assets are fulfilled by Varnish (meaning, the requests don't reach the web server). Varnish returns cached content extremely quickly. The results are faster response times to return the content to users and a reduced number of requests that must be fulfilled by Magento.  
 

@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: RabbitMQ
 menu_title: RabbitMQ (Enterprise Edition)
-menu_order: 26
+menu_order: 50
 version: 2.0
 github_link: install-gde/prereq/install-rabbitmq.md
 ---
@@ -122,10 +122,10 @@ where:
 
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
 *	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message queue overview</a>
 *	<a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queues</a>
 

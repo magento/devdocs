@@ -7,7 +7,7 @@ menu_title: Install and configure Elasticsearch (Enterprise Edition only)
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link21: config-guide/elasticsearch/es-overview.md
+github_link: config-guide/elasticsearch/es-overview.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
@@ -40,7 +40,10 @@ In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elast
 *	Applications in framework beyond search&mdash;reporting, personalization, performance, and storage
 
 ### Supported versions {#es-spt-versions}
-Magento Enterprise Edition (EE) version 2.1.x supports Elasticsearch versions 1.7, 2.0, and 2.1.
+Magento Enterprise Edition (EE) version 2.1.x supports the following Elasticsearch versions:
+
+*	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 1.0 and later, up to 5.0&mdash;including all 2.x versions.
+*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `1.0` and `2.0` branches.
 
 ### Recommended configuration {#es-arch}
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
@@ -83,9 +86,9 @@ The tasks discussed in this section require the following:
 {% include config/install-java.md %}
 
 ### Install Elasticsearch {#es-install-es}
-Magento Enterprise Edition (EE) version 2.1.x supports Elasticsearch versions 1.7, 2.0, and 2.1.
+This section discusses how to install the latest 2.x version of Elasticsearch from their repository. 
 
-This section discusses how to install the latest version. To install older versions, see the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/index.html" target="_blank">Elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/2.0/setup.html" target="_blank">2.0 reference</a>).
+To install older versions, see the [https://www.elastic.co/guide/en/elasticsearch/reference/index.html](Elasticsearch reference){:target="_blank"} (for example, the [2.0 reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html){:target="_blank"}).
 
 To install Elasticsearch:
 
@@ -94,7 +97,7 @@ To install Elasticsearch:
 
 	*	CentOS:
 
-			rpm --import https://packages.elastic.co/GPG-KEY-Elasticsearch
+			rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 			vim /etc/yum.repos.d/Elasticsearch.repo
 
 		Add the following:
@@ -113,12 +116,12 @@ To install Elasticsearch:
 
 	*	Ubuntu:
 
-			wget -qO - https://packages.elastic.co/GPG-KEY-Elasticsearch | sudo apt-key add -
-			echo "deb http://packages.elastic.co/Elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/Elasticsearch-2.x.list
-			sudo apt-get -y update && sudo apt-get -y install Elasticsearch
+			wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+			echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
+			sudo apt-get -y update && sudo apt-get -y install elasticsearch
 
 	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.
-3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.x/setup-service.html" target="_blank">Elasticsearch service</a>.
+3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html" target="_blank">Elasticsearch service</a>.
 4.	Start Elasticsearch:
 
 		service elasticsearch start

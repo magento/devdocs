@@ -10,7 +10,12 @@ version: 2.0
 github_link: soap/bk-soap.md
 redirect_from: /guides/v1.0/soap/bk-soap.html
 ---
-Additional information about SOAP APIs will be published in a future sprint.
+
+### Contents
+{:.no_toc}
+
+* TOC
+{:toc}
 
 ## Soap WSDL Endpoint Format
 
@@ -27,12 +32,14 @@ Additional information about SOAP APIs will be published in a future sprint.
 </div>
 
 ## List of Service Names per Module
+
 The entire list can be retrieved here: `http://<magento_host>/soap/default?wsdl_list=1`
 
-###Backend
+
+### Backend
 backendModuleServiceV1: `http://<magento_host>/soap/default?wsdl&services=backendModuleServiceV1`
 
-###Bundle
+### Bundle
 bundleProductLinkManagementV1: `http://<magento_host>/soap/default?wsdl&services=bundleProductLinkManagementV1`
 
 bundleProductOptionRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=bundleProductOptionRepositoryV1`
@@ -41,7 +48,7 @@ bundleProductOptionTypeListV1: `http://<magento_host>/soap/default?wsdl&services
 
 bundleProductOptionManagementV1: `http://<magento_host>/soap/default?wsdl&services=bundleProductOptionManagementV1`
 
-###Catalog
+### Catalog
 catalogProductRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=catalogProductRepositoryV1`
 
 catalogProductAttributeTypesListV1: `http://<magento_host>/soap/default?wsdl&services=catalogProductAttributeTypesListV1`
@@ -92,17 +99,17 @@ catalogCategoryLinkRepositoryV1: `http://<magento_host>/soap/default?wsdl&servic
 
 catalogInventoryStockRegistryV1: `http://<magento_host>/soap/default?wsdl&services=catalogInventoryStockRegistryV1`
 
-###Checkout
+### Checkout
 checkoutAgreementsCheckoutAgreementsRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=checkoutAgreementsCheckoutAgreementsRepositoryV1`
 
-###Configurable
+### Configurable
 configurableProductLinkManagementV1: `http://<magento_host>/soap/default?wsdl&services=configurableProductLinkManagementV1`
 
 configurableProductConfigurableProductManagementV1: `http://<magento_host>/soap/default?wsdl&services=configurableProductConfigurableProductManagementV1`
 
 configurableProductOptionRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=configurableProductOptionRepositoryV1`
 
-###Customer
+### Customer
 customerGroupRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=customerGroupRepositoryV1`
 
 customerGroupManagementV1: `http://<magento_host>/soap/default?wsdl&services=customerGroupManagementV1`
@@ -117,27 +124,27 @@ customerAccountManagementV1: `http://<magento_host>/soap/default?wsdl&services=c
 
 customerAddressRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=customerAddressRepositoryV1`
 
-###Downloadable
+### Downloadable
 downloadableLinkRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=downloadableLinkRepositoryV1`
 
 downloadableSampleRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=downloadableSampleRepositoryV1`
 
-###Eav
+### Eav
 eavAttributeSetRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=eavAttributeSetRepositoryV1`
 
 eavAttributeSetManagementV1: `http://<magento_host>/soap/default?wsdl&services=eavAttributeSetManagementV1`
 
-###Gift Message
+### Gift Message
 giftMessageCartRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=giftMessageCartRepositoryV1`
 
 giftMessageItemRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=giftMessageItemRepositoryV1`
 
-###Integration
+### Integration
 integrationAdminTokenServiceV1: `http://<magento_host>/soap/default?wsdl&services=integrationAdminTokenServiceV1`
 
 integrationCustomerTokenServiceV1: `http://<magento_host>/soap/default?wsdl&services=integrationCustomerTokenServiceV1`
 
-###Quote
+### Quote
 quoteCartRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=quoteCartRepositoryV1`
 
 quoteCartManagementV1: `http://<magento_host>/soap/default?wsdl&services=quoteCartManagementV1`
@@ -182,7 +189,7 @@ quoteGuestCartTotalRepositoryV1: `http://<magento_host>/soap/default?wsdl&servic
 
 quoteCartTotalManagementV1: `http://<magento_host>/soap/default?wsdl&services=quoteCartTotalManagementV1`
 
-###Sales
+### Sales
 salesOrderRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesOrderRepositoryV1`
 
 salesOrderManagementV1: `http://<magento_host>/soap/default?wsdl&services=salesOrderManagementV1`
@@ -194,6 +201,8 @@ salesInvoiceRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=sale
 salesInvoiceManagementV1: `http://<magento_host>/soap/default?wsdl&services=salesInvoiceManagementV1`
 
 salesInvoiceCommentRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesInvoiceCommentRepositoryV1`
+
+salesInvoiceOrderV1: `http://<magento_host>/soap/default?wsdl&services=salesInvoiceOrderV1`
 
 salesCreditmemoManagementV1: `http://<magento_host>/soap/default?wsdl&services=salesCreditmemoManagementV1`
 
@@ -209,9 +218,11 @@ salesShipmentCommentRepositoryV1: `http://<magento_host>/soap/default?wsdl&servi
 
 salesShipmentTrackRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesShipmentTrackRepositoryV1`
 
+salesShipOrderV1: `http://<magento_host>/soap/default?wsdl&services=salesShipOrderV1`
+
 salesTransactionRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesTransactionRepositoryV1`
 
-###Tax
+### Tax
 taxTaxRateRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=taxTaxRateRepositoryV1`
 
 taxTaxRuleRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=taxTaxRuleRepositoryV1`

@@ -4,14 +4,14 @@ group: extension-dev-guide
 subgroup: 99_Module Development
 title: PHP developer guide
 menu_title: Backward compatibility
-menu_order: 14
+menu_order: 21
 version: 2.0
 github_link: extension-dev-guide/backward-compatibility.md
 redirect_from: 
   - /guides/v1.0/architecture/index-cache/backward-compatibility.html
   - /guides/v2.0/architecture/index-cache/backward-compatibility.html
 ---
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 
 
@@ -21,9 +21,10 @@ To help mitigate these concerns, this release introduces a backward compatibilit
 * MAJOR indicates incompatible API changes
 * MINOR indicates backward-compatible functionality has been added
 * PATCH indicates backward-compatible bug fixes
+
 The backward compatibility policy applies to PHP code annotated with `@api` 
 
-> We promise to be backward compatible for classes and methods annotated with `@api` within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with `@deprecated`.  The methods will be removed only with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.
+We promise to be backward compatible for classes and methods annotated with `@api` within MINOR and PATCH updates to our components. As changes are introduced, we annotate methods with `@deprecated`. The methods are removed only with the next MAJOR component version. We will strive to make MAJOR changes for a component no more than once per year.
 
 <h3>What code is affected?</h3>
 The backward compatibility policy applies to PHP code annotated with `@api`. This includes the following:

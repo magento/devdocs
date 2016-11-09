@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Project backup and restore (snapshot)
 menu_title: Project backup and restore (snapshot)
 menu_order: 7

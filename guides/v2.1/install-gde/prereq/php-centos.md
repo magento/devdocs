@@ -2,13 +2,13 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: PPHP 5.6 or 7.0&mdash;CentOS
-menu_title: PPHP 5.6 or 7.0&mdash;CentOS
+title: PHP 5.6 or 7.0&mdash;CentOS
+menu_title: PHP 5.6 or 7.0&mdash;CentOS
 menu_order: 22
 level3_menu_node: level3child
 level3_subgroup: php
 version: 2.1
-github_link21: install-gde/prereq/php-centos.md
+github_link: install-gde/prereq/php-centos.md
 ---
 
 #### Contents
@@ -17,8 +17,8 @@ github_link21: install-gde/prereq/php-centos.md
 *	<a href="#php-centos-help-beginner">Help if you're just starting out</a>
 *	<a href="#centos-verify-php">Verify PHP is installed</a>
 *	[CentOS repositories](#centos-php-repos)
-*	[PHP 7 on CentOS](#php-centos-7)
-*	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
+*	[PHP 7 on CentOS 6 or 7](#php-centos-7)
+*	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a>
 *	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -63,7 +63,7 @@ If PHP is installed, continue with the next prerequisite, <a href="{{page.baseur
 ## CentOS repositories {#centos-php-repos}
 Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="_blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
 
-We're not aware that you can install PPHP 5.6 or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:
+We're not aware that you can install PHP 5.6 or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:
 
 *	If you're setting up a system that will be deployed in production, you should choose a hosting provider who uses repositories considered to be safe and reliable. 
 
@@ -80,13 +80,13 @@ Before you continue, review their [Getting Started topic](https://ius.io/Getting
 
 Continue with one of the following sections:
 
-*	[PHP 7 on CentOS](#php-centos-7)
-*	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
+*	[PHP 7 on CentOS 6 or 7](#php-centos-7)
+*	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a>
 
-## PHP 7 on CentOS {#php-centos-7}
-There is more than one way to install PHP 7.0.2 or later; the following is a suggestion only. Consult a reference for additional options.
+## PHP 7 on CentOS 6 or 7 {#php-centos-7}
+There is more than one way to install PHP 7 on CentOS; the following is a suggestion only. Consult a reference for additional options.
 
-To upgrade to PHP 7 or later:
+{% collapsible To install PHP 7 on CentOS 6 or 7: %}
 
 1.	*CentOS 6*. Enter the following commands in the order shown:
 
@@ -127,17 +127,34 @@ To upgrade to PHP 7 or later:
 	</div>
 3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
 
-<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</h2>
-There is more than one way to upgrade CentOS 6.5 to PHP 5.6; the following is a suggestion only. Consult a reference for additional options.
+{% endcollapsible %}
 
-To upgrade to PHP 5.6:
+<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</h2>
+There is more than one way to install PHP 5.6 on CentOS; the following is a suggestion only. Consult a reference for additional options.
 
-1.	Enter the following commands in the order shown:
+{% collapsible To install PHP 5.6 on CentOS 6 or 7: %}
+
+1.	*CentOS 6*. Enter the following commands in the order shown:
 
 		yum -y update
 		yum -y install epel-release
 		wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 		wget https://centos6.iuscommunity.org/ius-release.rpm
+		rpm -Uvh ius-release*.rpm
+		yum -y update
+		yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-devel php56u-mysql php56u-intl php56u-mbstring php56u-bcmath
+
+
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+	</div>
+
+2.	*CentOS 7*. Enter the following commands in the order shown:
+
+		yum -y update
+		yum -y install epel-release
+		wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+		wget https://centos7.iuscommunity.org/ius-release.rpm
 		rpm -Uvh ius-release*.rpm
 		yum -y update
 		yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-devel php56u-mysql php56u-intl php56u-mbstring php56u-bcmath
@@ -165,6 +182,8 @@ To upgrade to PHP 5.6:
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
 3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
+
+{% endcollapsible %}
 
 
 <h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>

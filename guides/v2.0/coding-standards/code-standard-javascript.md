@@ -4,13 +4,13 @@ group: coding-standards
 subgroup: Coding standards
 title: JavaScript coding standard
 menu_title: JavaScript coding standard
-menu_order: 4
+menu_order: 5
 version: 2.0
 github_link: coding-standards/code-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-javascript.html
 ---
 
-The JavaScript coding standard, based on the <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>, defines Magento requirements for code formatting and style for teams that develop Magento JavaScript and jQuery code.
+The JavaScript coding standard, based on the <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>, defines Magento requirements for code formatting and style for teams that develop Magento JavaScript and jQuery code.
 
 Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 

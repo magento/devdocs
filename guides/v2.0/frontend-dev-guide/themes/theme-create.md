@@ -2,8 +2,8 @@
 layout: default  
 group: fedg
 subgroup: A_Themes
-title: Create a theme
-menu_title: Create a theme
+title: Create a storefront theme
+menu_title: Create a storefront theme
 menu_order: 2
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-create.md
@@ -19,7 +19,7 @@ This topic discusses how to create the files that make up a theme, how to add a 
 {:toc}
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure in described in the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
+<p>A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
 </div>
 
 ## Prerequisites 
@@ -65,6 +65,7 @@ After you create a directory for your theme, you must create `theme.xml` contain
  </theme>
 {% endhighlight %}
 
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any Magento Admin page for your changes to be saved in the database.
 
 ## Make your theme a Composer package (optional) {#fedg_create_theme_composer}
 
@@ -247,14 +248,13 @@ To learn more about theme layouts, refer to the <a href="{{page.baseurl}}fronten
 
 
 ## What's next {#next}
-See the [Apply and configure a theme in Admin]({{page.baseurl}}frontend-dev-guide/themes/theme-apply.html) topic.
 
-## Uninstall a theme
+### Theme registration {#register_theme}
+Once you open the Magento Admin (or reload any  Magento Admin page) having added the theme files to the files system, your theme gets registered and added to the database.
 
-If your theme is a composer package, you can uninstall it using the [theme uninstall CLI command]({{page.baseurl}}install-gde/install/cli/install-cli-theme-uninstall.html).
+### Applying a theme
+For information on how to apply the theme for the storefront, see the [Apply and configure a theme in Admin]({{page.baseurl}}frontend-dev-guide/themes/theme-apply.html) topic.
 
-If your theme is not a Composer package, you must uninstall it manually by doing the following:
+## See also
 
-* Update the parent node information in child's `theme.xml` to remove references to the theme.
-
-* Remove theme code from the file system.
+ * [Uninstall a theme]({{site.gdeurl}}install-gde/install/cli/install-cli-theme-uninstall.html)

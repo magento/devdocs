@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Access issues
+subgroup: 02_access
 title: Cannot access Magento software in a web browser
 menu_title: Cannot access Magento software in a web browser
 menu_node: 
-menu_order: 1
+menu_order: 2
 version: 2.0
 github_link: install-gde/trouble/tshoot_access-browser.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html

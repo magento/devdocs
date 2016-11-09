@@ -26,12 +26,12 @@ github_link: install-gde/prereq/connect-auth.md
 	*	<a href="{{page.baseurl}}install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub</a> (contributing developers only)
 	*	<a href="{{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html">Update components, upgrade the Magento software</a>
 
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
+*	<a href="{{ page.baseurl }}install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

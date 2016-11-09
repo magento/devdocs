@@ -8,7 +8,7 @@ menu_order: 1000
 version: 2.0
 github_link: ext-best-practices/admin/ext-best-practices_admin_FAQ.md
 ---
-##{{page.menu_title}}
+## {{page.menu_title}}
 {:.no_toc}
 
 This page is a compilation of frequently asked questions by the Magento Community about extensions integrating with the Admin.
@@ -27,7 +27,7 @@ The appropriate place for your extension to appear in the Admin depends on what 
 ____
 
 
-####What are the rules about using the left-navigation "slide-out panels" in the Admin?
+#### What are the rules about using the left-navigation "slide-out panels" in the Admin?
 
 The slide-out panel is designed to accommodate several links. There can be several columns in the slide-out panel to accommodate many extension links. See the details and specifications about [slide-out panels]({{page.baseurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
 

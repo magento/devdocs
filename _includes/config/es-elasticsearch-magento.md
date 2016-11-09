@@ -1,7 +1,7 @@
 <div markdown="1">
 
 ## Configure Magento to use Elasticsearch {#elastic-m2-configure}
-This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see TBD cross-ref to User Guide.
+This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see the [Magento EE User Guide](http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html){:target="_blank").
 
 To configure Magento to use Elasticsearch:
 

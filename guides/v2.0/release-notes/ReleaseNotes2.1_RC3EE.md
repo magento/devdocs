@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento EE 2.1 Release Candidate 3 (RC3) Release Notes 
 menu_title: Magento EE 2.1 Release Candidate 3 (RC3) Release Notes 
-menu_order: 19
+menu_order: 26
 version: 2.0
 github_link: release-notes/ReleaseNotes2.1_RC3EE.md
 ---
@@ -28,7 +28,7 @@ We welcome your participation in this process! Enterprise Edition customers can 
 This Release Candidate is available from `repo.magento.com` if you have an Enterprise Edition license or GitHub  if you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub.
 
 
-Backward-incompatible changes are documented in <a href="{{page.baseurl}}release-notes/backward-incompatible-changes-2.1.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in <a href="{{page.baseurl}}release-notes/changes_2.0.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
 <h3>Highlights</h3>
 
@@ -224,7 +224,7 @@ This Release Candidate is for test purposes only. Do not install it in a product
 {% include install/releasenotes/ee_install_21.md %}
 
 ### Upgrades
-To upgrade to Magento 2.1 (including a Release Candidate), see [Upgrade to Magento version 2.1 (June 22, 2016)]({{page.baseurl}}comp-mgr/release-notes/tech_bull_21-upgrade.html).
+To upgrade to Magento 2.1 (including a Release Candidate), see [Upgrade to Magento version 2.1 (June 22, 2016)]({{page.baseurl}}release-notes/tech_bull_21-upgrade.html).
 
 
 

@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento CE 2.1 Release Candidate 3 (RC3) Release Notes 
 menu_title: Magento CE 2.1 Release Candidate 3 (RC3) Release Notes 
-menu_order: 18
+menu_order: 25
 version: 2.0
 github_link: release-notes/ReleaseNotes2.1_RC3CE.md
 ---
@@ -211,7 +211,7 @@ Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-m
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
 ### Other upgrades
-Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)]({{page.baseurl}}comp-mgr/release-notes/tech_bull_21-upgrade.html).
+Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)]({{page.baseurl}}release-notes/tech_bull_21-upgrade.html).
 
 
 ## Migration toolkits

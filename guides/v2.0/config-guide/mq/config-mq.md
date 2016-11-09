@@ -12,9 +12,7 @@ github_link: config-guide/mq/config-mq.md
   <p>The message queue topology can only be configured after Magento Community Edition has been installed and before Magento Enterprise Editions has been installed. </p>
 </div>
 
-
-Each module that is to be a publisher must be configured as such. If you want a module to use the MQF, create a `<module>/etc/queue.xml` file and define the publisher, consumers, exchanges and bindings. 
-
+Each module that is to be a publisher must be configured as such. If you want a module to use the MQF, create a `<module>/etc/queue.xml` file and define the publisher, consumers, exchanges and bindings.
 
 <h2>Edit the <code>queue.xml</code> file</h2>
 The `queue.xml` file can contain the following elements:
@@ -133,13 +131,13 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
 </tr>
 <tr>
 <td>topic</td>
-<td>The <code>name</code> of a topic defined in a <code>topic</code> element. You can specify an asterisk (*) or pound sign (#) as wildcards. </td>
+<td>The <code>name</code> of a topic defined in a <code>topic</code> element. You can specify an asterisk (\*) or pound sign (#) as wildcards. </td>
 </tr>
 </table>
 
 <h2>Sample `queue.xml` file</h2>
 {% highlight xml %}
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../../../lib/internal/Magento/Framework/Amqp/etc/queue.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
     <publisher name="test-publisher-1" connection="rabbitmq" exchange="magento"/>
     <publisher name="test-publisher-2" connection="db" exchange="magento"/>
     <topic name="customer.created" schema="Magento\Customer\Api\Data\CustomerInterface" publisher="test-publisher-1"/>

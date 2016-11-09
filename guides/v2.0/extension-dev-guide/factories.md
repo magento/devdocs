@@ -10,7 +10,7 @@ contributor_link: http://www.classyllama.com/
 version: 2.0
 github_link: extension-dev-guide/factories.md
 ---
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 The most common way to request and work with objects in Magento is using <a href="{{page.baseurl}}extension-dev-guide/depend-inj.html##dep-inj-preview-cons">constructor injection</a>.  Objects obtained this way (that is, using injectable classes) follow a singleton pattern, whereby the same instance is always returned by the Object Manager whenever a class is requested.
 
@@ -24,7 +24,7 @@ class Magento\Core\Model\Config\BaseFactory
 {
     protected $_objectManager;
 
-    public function __construct(Magento\Framework\ObjectManager $objectManager)
+    public function __construct(Magento\Framework\ObjectManagerInterface $objectManager)
     {
         $this->_objectManager = $objectManager;
     }

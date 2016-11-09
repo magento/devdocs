@@ -25,7 +25,7 @@
 <h4>Admin Pattern Library</h4>
 
 {% elsif page.group == "mtf-guide" %}
-<h4>Testing Framework Guide</h4>
+<h4>Functional Testing Framework Guide</h4>
 
 {% elsif page.group == "migration" %}
 <h4>Migration Guide</h4>
@@ -42,8 +42,8 @@
 {% elsif page.group == "fedg" %}
 <h4>Frontend Developer Guide</h4>
 
-{% elsif page.group == "UI Library" %}
-<h4>UI Components</h4>
+{% elsif page.group == "UI_Components_guide" %}
+<h4>UI Components Guide</h4>
 
 {% elsif page.group == "jsdg" %}
 <h4>JavaScript Developer Guide</h4>
@@ -81,7 +81,7 @@
 
 		<ul role="navigation">
 
-		{% assign categories = site.articles | where: "version", page.version | group_by:"group" %}
+		{% assign categories = site.pages | where: "guide_version", page.guide_version | group_by:"group" %}
 
 		{% for node in categories %}
 

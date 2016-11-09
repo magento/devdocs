@@ -12,7 +12,7 @@ Do you know what a "terminal" application is? Do you know what operating system 
 {% collapsible Topics include: %}
 
 *	<a href="{{page.baseurl}}install-gde/bk-install-guide.html">Installation overview</a>
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Choose how to install Magento</a>
+*	[Choose how to get the Magento software]({{ page.baseurl }}install-gde/continue.html)
 *	<a href="{{page.baseurl}}install-gde/system-requirements.html">System requirements</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/prereq-overview.html">Prerequisites</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">The Magento file system owner</a>
@@ -33,7 +33,7 @@ Do you know what a "terminal" application is? Do you know what operating system 
 *	<a href="{{page.baseurl}}install-gde/trouble/tshoot.html">Troubleshooting</a>
 *	<a href="{{page.baseurl}}install-gde/install/post-install-config.html">Configuring</a>
 *	<a href="{{page.baseurl}}install-gde/install/sample-data-after-magento.html">Optional sample data (after installing Magento)</a>
-*	[Magento in production]({{page.baseurl}}howdoi/deploy/prod.html)
+*	[Magento in production]({{page.baseurl}}howdoi/deploy/deploy-to-prod.html)
 {% endcollapsible %}
 
 ## Upgrade, update
@@ -45,6 +45,6 @@ Do you know what a "terminal" application is? Do you know what operating system 
 {% endcollapsible %}
 
 ## Deploy to production
-<a href="{{page.baseurl}}howdoi/deploy/prod.html">Deploy Magento to production</a>
+<a href="{{page.baseurl}}howdoi/deploy/deploy-to-prod.html">Deploy Magento to production</a>
 
 *[Contributing developers]: A developer who contributes code to the Magento 2 CE codebase
