@@ -72,7 +72,8 @@ interface AdapterInterface
 }
 {% endhighlight %}
 
-\\
+<br/>
+
 The code below is an implementation class of the `AdapterInterface` that uses the [php-markdown](https://github.com/michelf/php-markdown){:target="_blank"} library to convert markdown into HTML.
 
 {% highlight php startinline %}
@@ -99,7 +100,7 @@ class PhpMarkdown implements AdapterInterface
 }
 {% endhighlight %}
 
-\\
+<br/>
 
 The code below is the entry you need to add in your `di.xml` file to configure the ObjectManager to return the PhpMarkdown implementation when the `AdapertInterface` class is requested as a dependency.
 
@@ -107,7 +108,7 @@ The code below is the entry you need to add in your `di.xml` file to configure t
 <preference for="MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface" type="MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown\PhpMarkdown" />
 {% endhighlight %}
 
-\\
+<br/>
 
 The code below is an alternate implementation class of the `AdapterInterface` that uses the [Ciconia](https://github.com/kzykhys/Ciconia){:target="_blank"} library to parse markdown into HTML.
 
@@ -149,7 +150,8 @@ class CiconiaParser implements AdapterInterface
 }
 {% endhighlight %}
 
-\\
+<br/>
+
 The following dependency injection entries belong in the `di.xml` file.
 They describe to the ObjectManager how to create the third-party and adapter classes.
 
