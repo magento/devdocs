@@ -17,5 +17,6 @@ Outline:
 
 1.	Set up routes
 2.	Set up stores and websites in the Admin
-3.	Modify your nginx virtual host to add a map
+3.	For subdomain, create multiple virtual hosts
+3.	Modify each virtual host to add a map
 4.	
