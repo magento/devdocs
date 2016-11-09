@@ -19,4 +19,6 @@ Outline:
 2.	Set up stores and websites in the Admin
 3.	For subdomain, create multiple virtual hosts
 3.	Modify each virtual host to add a map
-4.	
+4.	Modify the Magento nginx.conf to pass values to the server
+5.	Set up `hosts`
+6.	Be amazed

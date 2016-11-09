@@ -51,14 +51,7 @@ We use the following terms:
 
 Each website and each store view must have a unique identifier. This identifier is required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`.
 
-To create websites and stores:
 
-1.	Log in to the Magento Admin as a user authorized to create websites, stores, and store views.
-2.	Click **Stores** > **All Stores**.
-3.	To create a website, click **Create Website**.
-4.	To create a store, click **Create Store**.
-5.	To create a store view, click **Create Store View**.
-5.	When you create your website or store view, make note of its unique identifier because you'll use it later.
 
 #### Related topics
 *	[Set up multiple websites with nginx]({{page.baseurl}}config-guide/multi-site/ms_nginx.html)
