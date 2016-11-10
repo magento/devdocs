@@ -158,7 +158,7 @@ Instead of configuring an nginx virtual host, pass the `MAGE_RUN_CODE` and `MAGE
 		}
 5.	Save your changes to `magento-vars.php` and exit the text editor.
 
-To modify `magento-vars.php`:
+{% endcollapsible %}
 
 ### Deploy and test on the integration server {#cloud-multi-stores-deploy}
 The final step is to push your changes to your Magento Entperise Cloud Edition server and test your site there.
