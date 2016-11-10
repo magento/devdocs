@@ -40,7 +40,7 @@ Magento Enterprise Edition *routes* define how incoming URLs are processed. The 
 
 To configure routes in an integration environment:
 
-1.	Log in to your local environment as, or switch to, the [Magento file system owner]().
+1.	Log in to your local environment as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.	Change to your Magento Enterprise Cloud Edition base directory.
 3.	Open `.magento/routes.yaml` in a text editor.
 4.	Replace its contents with the following:
@@ -63,7 +63,43 @@ To configure routes in an integration environment:
 5.	Save your changes to `routes.yaml` and exit the text editor.
 
 ### Set up websites, stores, and store views {#cloud-multi-stores-admin}
-TBD
+Set up in your Magento Enterprise Cloud Edition Admin websites, stores, and store views identical to the ones you set up on your local system.
+
+#### Get your access information
+To get the access information you need to log in to the Magento Admin:
+
+1.	If you haven't done so already, log in to your local environment as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+2.	Change to your Magento Enterprise Cloud Edition base directory.
+3.	Log in to your Magento Enterprise Cloud Edition account:
+
+		magento-cloud login
+4.	List the environments:
+
+		magento-cloud environment:list
+3.	Check out your environment:
+
+		magento-cloud environment:checkout <environment ID>
+4.	View the environment's access URLs:
+
+		magento-cloud environment:url
+5.	View Admin login information:
+
+		magento-cloud variable:list
+
+	Admin access information displays similar to the following:
+
+		+----------------+---------------+-----------+------+
+		| ID             | Value         | Inherited | JSON |
+		+----------------+---------------+-----------+------+
+		| ADMIN_PASSWORD | admin_A456    | Yes       | No   |
+		| ADMIN_URL      | magento_A8v10 | Yes       | No   |
+		| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
+		+----------------+---------------+-----------+------+
+
+#### Configure websites, stores, and store views.
+Make sure you name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
+
+{% include config/multi-site_websites.md %}
 
 ### Modify `magento-vars.php` {#cloud-multi-stores-magento-vars}
 TBD
