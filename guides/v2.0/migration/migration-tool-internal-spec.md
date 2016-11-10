@@ -299,7 +299,30 @@ All store configuration keeps its data in core_config_data table in database. se
 
 Under node <code>&lt;key&gt;</code> there are rules that work with 'path' column of core_config_data table. <code>&lt;ignore&gt;</code> rules make the tool not to transfer some setting. Wildcards can be used in this node. All other settings not listed in <code>&lt;ignore&gt;</code> node, will be migrated. If path of some setting is changed in Magento 2, it should be added to //key/rename node, where old path indicates in //key/rename/path node and new path indicates in //key/rename/to node.
 
-Under node <code>&lt;value&gt;</code> there are rules that work with 'value' column of core_config_data table. These rules aim to transform value of settings by handlers (classes that implement Migration\Handler\HandlerInterface) and adapt it for Magento 2
+Under node <code>&lt;value&gt;</code> there are rules that work with 'value' column of core_config_data table. These rules aim to transform value of settings by handlers (classes that implement Migration\Handler\HandlerInterface) and adapt it for Magento 2.
+
+#### Add custom rules when migrating settings {#custom-rules-settings-mode}
+
+To apply your custom rules while migrating settings (ignore, rename or change values of the database entities to be transferred), follow these steps.
+
+1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+2.	Change to the following directory:
+
+		<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<edition-to-edition>
+
+	For example, if Magento 2 is installed in `/var/www/html`, you'll find `settings.xml.dist` in one of the following directories:
+
+		/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ee
+		/var/www/html/vendor/magento/data-migration-tool/etc/ee-to-ee
+		/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ce
+
+3. 	To create a `settings.xml` file from the provided sample, run:
+
+		cp settings.xml.dist settings.xml
+
+4. Make your changes in `settings.xml`.
+
+5. Specify the new name of the settings file. To do that, change the `<settings_map_file>` tag in the `<ce or ee version>/config.xml` file.
 
 ### Data migration mode
 
