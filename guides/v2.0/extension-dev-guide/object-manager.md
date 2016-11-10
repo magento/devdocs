@@ -45,8 +45,9 @@ The file also specifies whether the object manager should create an object for e
 ## Usage Rules
 
 The Magento framework uses the `ObjectManager` to generate and inject the classes declared in your constructor.
-You do not call the object manager directly because the framework handles this automatically.
+Classes should not ask for the `ObjectManager` itself as a constructor dependency.
 
+You do not call the object manager directly because the framework handles this automatically.
 Direct use of the `create` function prevents type validation and type hinting that a [factory]({{page.baseurl}}extension-dev-guide/factories.html) class provides.
 
 Object creation is also a separate responsibility that should be moved to a dedicated class such as a [factory]({{page.baseurl}}extension-dev-guide/factories.html) or [proxy]({{page.baseurl}}extension-dev-guide/proxies.html}}).
@@ -57,7 +58,7 @@ You may notice in the Magento 2 codebase that some core classes still call the `
 
 These instances are bits of legacy code that need porting or exist for backward compatibility purposes.
 
-They are not tacit endorsements of using the `ObjectManager` directly.  
+They are not tacit endorsements of using the `ObjectManager` directly.
 </div>
 
 ### Exceptions
@@ -67,7 +68,7 @@ You can depend on and use the `ObjectManager` class in the following scenarios:
 * You can use the object manager in static magic methods like `__wakeup()`, `__sleep()`, etc.
 * You can use the `ObjectManager` to maintain backward compatibility for a constructor.
 * In a global scope, like in fixtures of integration tests, you can use the object manager.
-* The object manager can be a dependency in classes used for the creation of objects, e.g. factories or proxies. 
+* The object manager can be a dependency in classes used for the creation of objects, e.g. factories or proxies.
 
 **Related topics**
 
