@@ -48,7 +48,7 @@ Setting up multiple stores consists of the following primary tasks:
 
 	The following figure shows an example.
 
-	![Add a website]({{ site.baseurl }}common/images/config_multi-site-website.png)
+	![Add a website]({{ site.baseurl }}common/images/config_multi-site-website.png){:width="500px"}
 4.	Click **Save Config**.
 4.	To create a store, click **Create Store**.
 
@@ -58,7 +58,7 @@ Setting up multiple stores consists of the following primary tasks:
 
 	The following figure shows an example.
 
-	![Add a store]({{ site.baseurl }}common/images/config_multi-site-store.png)
+	![Add a store]({{ site.baseurl }}common/images/config_multi-site-store.png){:width="500px"}
 4.	Click **Save Config**.
 6.	To create a store view, click **Create Store View**.
 
@@ -67,7 +67,7 @@ Setting up multiple stores consists of the following primary tasks:
 	*	**Status** list: Click **Enabled**.
 	The following figure shows an example.
 
-	![Add a store]({{ site.baseurl }}common/images/config_multi-site-storeview.png)
+	![Add a store]({{ site.baseurl }}common/images/config_multi-site-storeview.png){:width="500px"}
 4.	Click **Save Config**.
 7.	Repeat these tasks as many times as necessary to create your websites, stores, and store views.
 
