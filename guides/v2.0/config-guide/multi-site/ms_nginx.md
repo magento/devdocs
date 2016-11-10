@@ -41,10 +41,35 @@ Setting up multiple stores consists of the following primary tasks:
 1.	Log in to the Magento Admin as a user authorized to create websites, stores, and store views.
 2.	Click **Stores** > **All Stores**.
 3.	To create a website, click **Create Website**.
+
+	*	**Name** field: Enter a name to identify the website.
+	*	**Code** field: Enter `french`
+	*	**Sort Order** field: Enter an optional numerical sort order.
+
+	The following figure shows an example.
+
+	![Add a website]({{ site.baseurl }}common/images/config_multi-site-website.png)
+4.	Click **Save Config**.
 4.	To create a store, click **Create Store**.
-5.	Associate the store with a category.
+
+	*	**Name** field: Enter a name to identify the store.
+	*	**Code** field: Enter a unique code to identify the store.
+	*	**Category** list: Click the name of a category.
+
+	The following figure shows an example.
+
+	![Add a store]({{ site.baseurl }}common/images/config_multi-site-store.png)
+4.	Click **Save Config**.
 6.	To create a store view, click **Create Store View**.
-6.	When you create your website and store view, make note of their unique identifiers because you'll use them later.
+
+	*	**Store** list: Click the name of the store with which to associate this store view.
+	*	**Code** field: Enter a unique name to identify this store view.
+	*	**Status** list: Click **Enabled**.
+	The following figure shows an example.
+
+	![Add a store]({{ site.baseurl }}common/images/config_multi-site-storeview.png)
+4.	Click **Save Config**.
+7.	Repeat these tasks as many times as necessary to create your websites, stores, and store views.
 
 {% endcollapsible %}
 
@@ -53,46 +78,48 @@ This section discusses how to load websites on the storefront. You can use eithe
 
 {% collapsible To create virtual hosts: %}
 
-Open a text editor and add the following contents to the file:
+1.	Open a text editor and add the following contents to the file:
 
-{% highlight xml %}
-map $http_host $MAGE_RUN_CODE {
-   	french.example.com french;
-}
+		map $http_host $MAGE_RUN_CODE {
+   			french.example.com french;
+		}
 
-server {
-   	listen 80;
-   	server_name french.example.com;
-   	set $MAGE_ROOT /var/www/html/magento2;
-   	set $MAGE_MODE developer;
-   	include /var/www/html/magento2/nginx.conf.sample;
-}
-{% endhighlight %}
+		server {
+   			listen 80;
+   			server_name french.example.com;
+   			set $MAGE_ROOT /var/www/html/magento2;
+   			set $MAGE_MODE developer;
+   			include /var/www/html/magento2/nginx.conf.sample;
+		}
+2.	Save the file as `/etc/nginx/sites-available/french.example.com`
+3.	Create another file in the same location with the following contents:
 
-Save the file as `/etc/nginx/sites-available/french.example.com`.
+		map $http_host $MAGE_RUN_CODE {
+   			german.example.com german;
+		}
 
-Create another file in the same location with the following contents:
+		server {
+   			listen 80;
+   			server_name german.example.com;
+   			set $MAGE_ROOT /var/www/html/magento2;
+   			set $MAGE_MODE developer;
+   			include /var/www/html/magento2/nginx.conf.sample;
+		}
+4.	Save the file as `/etc/nginx/sites-available/german.example.com`.
+5.	Verify the server configuration:
 
-{% highlight xml %}
-map $http_host $MAGE_RUN_CODE {
-   	german.example.com german;
-}
+		nginx -t
+6.	If successful, the following message displays:
 
-server {
-   	listen 80;
-   	server_name german.example.com;
-   	set $MAGE_ROOT /var/www/html/magento2;
-   	set $MAGE_MODE developer;
-   	include /var/www/html/magento2/nginx.conf.sample;
-}
-{% endhighlight %}
+		nginx: configuration file /etc/nginx/nginx.conf test is successful
 
-Save the file as `/etc/nginx/sites-available/german.example.com`.
-Create symbolic links in the `/etc/nginx/sites-enabled` directory:
+	If errors display, check the syntax of your virtual host configuration files.
 
-	cd /etc/nginx/sites-enabled
-	ln -s /etc/nginx/sites-available/french.example.com french.example.com
-	ln -s /etc/nginx/sites-available/german.example.com german.example.com
+7.	Create symbolic links in the `/etc/nginx/sites-enabled` directory:
+
+		cd /etc/nginx/sites-enabled
+		ln -s /etc/nginx/sites-available/french.example.com french.example.com
+		ln -s /etc/nginx/sites-available/german.example.com german.example.com
 
 For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"}.
 
@@ -111,6 +138,7 @@ For more detail about the map directive, see [nginx documentation on the map dir
 		fastcgi_param  MAGE_RUN_TYPE website;
 		fastcgi_param  MAGE_RUN_CODE $MAGE_RUN_CODE;
 		include fastcgi_params;
+4.	Save your changes to `nginx.conf` and exit the text editor.
 4.	Reload the nginx configuration:
 
 		service nginx reload
