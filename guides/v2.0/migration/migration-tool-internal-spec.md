@@ -11,7 +11,6 @@ github_link: migration/migration-tool-internal-spec.md
 redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
 ---
 
-
 <h4>Contents</h4>
 
 See one of the following sections:
@@ -327,6 +326,36 @@ To apply your custom rules while migrating settings (ignore, rename or change va
 ### Data migration mode
 
 In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If integrity check passed the Data Migration Tool installs deltalog tables (with prefix m2_cl_*) and corresponding triggers to Magento 1 database. And runs data migration stage of steps. When migration is completed without errors the volume check checks data consistency. It can show a warning message if you migrate live store. Do not worry, delta migration will take care of this incremental data. Next the most valuable migration steps are described. It is Map Step, URL Rewrite Step, EAV Step.
+
+#### Handle data consistency errors {#consistency-errors-migrate-data}
+
+When you migrate data, the Data Migration Tool verifies that tables and fields are consistent between Magento 1 and Magento 2. If they are not, you will see an error message that lists the problematic tables and fields, for example:
+
+    Source fields are not mapped. Document: <document_name>. Fields: <field_name>
+
+**Possible reason for error:** some database entities belong to Magento 1 extensions that do not exist in the Magento 2 database.
+
+Below are the possible ways to handle these errors. Don't forget to run the Data Migration Tool again to see if the issues have been resolved.
+
+##### Fix errors: Install corresponding Magento 2 extensions
+
+Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest extension versions or contact your extension provider.
+
+##### Fix errors: Ignore entities
+
+You may tell the Data Migration Tool to ignore the problematic entites.
+
+To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
+
+{% highlight xml %}
+<ignore>
+    <field>sales_order_address_id</field>
+</ignore>
+{% endhighlight %}
+
+<div class="bs-callout bs-callout-warning">
+    <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
+</div>
 
 #### Map Step
 
