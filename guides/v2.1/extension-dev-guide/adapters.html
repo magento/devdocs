@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Events and observers</title>
+	<title>Adapters</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/events-and-observers.html">
+	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/adapters.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/events-and-observers.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/adapters.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/events-and-observers.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/adapters.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Events and observers</h1>
+		<h1 class="page-heading">Adapters</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/events-and-observers.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/adapters.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -651,7 +651,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/events-and-observers.html">Events and observers</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/events-and-observers.html">Events and observers</a></li>
 
 									
 
@@ -768,7 +768,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/adapters.html">Adapters</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/adapters.html">Adapters</a></li>
 
 									
 
@@ -979,140 +979,164 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 class="no_toc" id="events-and-observers">Events and observers</h2>
+            <div class="updated">Updated: 8 November 2016 (PST)</div>
+            <h2 class="no_toc" id="adapters">Adapters</h2>
 
 <ul id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-  <li><a href="#events" id="markdown-toc-events">Events</a></li>
-  <li><a href="#observers" id="markdown-toc-observers">Observers</a></li>
-  <li><a href="#recommended-reading" id="markdown-toc-recommended-reading">Recommended Reading</a></li>
+  <li><a href="#when-to-use" id="markdown-toc-when-to-use">When to use</a></li>
+  <li><a href="#how-to-write" id="markdown-toc-how-to-write">How to write</a></li>
+  <li><a href="#examples-of-adapters-in-magento" id="markdown-toc-examples-of-adapters-in-magento">Examples of adapters in Magento</a>    <ul>
+      <li><a href="#magentoframeworkcodeminifier" id="markdown-toc-magentoframeworkcodeminifier"><code>Magento/Framework/Code/Minifier</code></a></li>
+      <li><a href="#magentoframeworkimage" id="markdown-toc-magentoframeworkimage"><code>Magento/Framework/Image</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#example-code" id="markdown-toc-example-code">Example Code</a></li>
 </ul>
 
-<h3 id="overview">Overview</h3>
+<h2 id="overview">Overview</h2>
 
-<p>Working with events and observers is one of the main ways to extend Magento functionality. The events and observers implementation in Magento 2 is based on the <a href="https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern" target="_self">publish-subscribe pattern</a>. Using events and observers, you can run your custom code in response to a specific Magento event or even a custom event.</p>
+<p>Adapter classes follow the <a href="https://en.wikipedia.org/wiki/Adapter_pattern" target="_blank">adapter pattern</a> and wrap around classes from third-party libraries.
+These classes allow you to use functionality from third-party libraries in your code by converting the third-party class interfaces into an interface that is expected by your native code.</p>
 
-<h3 id="events">Events</h3>
+<h2 id="when-to-use">When to use</h2>
 
-<p>Events are dispatched by modules when certain actions are triggered. In addition to its own events, Magento allows you to create your own events that can be dispatched in your code. When an event is dispatched, it can pass data to any observers configured to watch that event.</p>
+<p>You should always use adapter classes instead of directly using classes from third-party libraries.
+This reduces the change impact on your code when the API changes in a third-party library.</p>
 
-<h4 id="dispatching-events">Dispatching events</h4>
+<p>We recommend using adapter classes for <a href="/guides/v2.1/extension-dev-guide/depend-inj.html">dependency injection</a> to get access to the functionality provided by third-party classes.</p>
 
-<p>Events can be dispatched using the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Event/Manager.php" target="_self"><code>Magento\Framework\Event\Manager</code></a> class. This class can be obtained through <a href="/guides/v2.1/extension-dev-guide/depend-inj.html">dependency injection</a> by defining the dependency in your constructor.</p>
+<h2 id="how-to-write">How to write</h2>
 
-<p>To dispatch an event, call the <code>dispatch</code> function of the event manager class and provide it with the name of the event you want to dispatch along with an array of data you wish to provide to observers.</p>
+<p>A common approach in developing an adapter is to create an interface named <code>AdapterInterface</code> to describe the functionality the third-party class provides.
+This class is typically found in a directory labeled <code>Adapter</code>.
+Classes implementing this adapter interface use the third-party class directly to provide indirect functionality.</p>
 
-<p>The following example shows you how to dispatch an event with and without an array of data.</p>
+<p>This approach allows you to update or substitute different implementations provided by other third-party classes without the need to update code that uses your adapter.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule</span><span class="p">;</span>
+<h2 id="examples-of-adapters-in-magento">Examples of adapters in Magento</h2>
 
-<span class="k">class</span> <span class="nc">MyClass</span><span class="p">{</span>
-  <span class="sd">/**</span>
-<span class="sd">  * @var EventManager</span>
-<span class="sd">  */</span>
-  <span class="k">private</span> <span class="nv">$eventManager</span><span class="p">;</span>
+<h3 id="magentoframeworkcodeminifier"><code>Magento/Framework/Code/Minifier</code></h3>
 
-  <span class="nx">__construct</span><span class="p">(</span><span class="nx">EventManager</span> <span class="nv">$eventManager</span><span class="p">){</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span> <span class="o">=</span> <span class="nv">$eventManager</span><span class="p">;</span>
-  <span class="p">}</span>
+<p>The <a href="https://github.com/magento/magento2/tree/2.0/lib/internal/Magento/Framework/Code/Minifier" target="_blank">minifier</a> functionality provided by the <code>Magento/Framework/Code</code> library involves the use of third-party libraries for code compression.</p>
 
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">something</span><span class="p">(){</span>
-    <span class="nv">$eventData</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
-    <span class="c1">// Code...</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">&#39;my_module_event_before&#39;</span><span class="p">);</span>
-    <span class="c1">// More code that sets $eventData...</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">&#39;my_module_event_after&#39;</span><span class="p">,[</span><span class="s1">&#39;myEventData&#39;</span><span class="o">=&gt;</span><span class="nv">$eventData</span><span class="p">]);</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<p>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/AdapterInterface.php" target="_blank"><code>AdapterInterface</code></a> for this class contains a <code>minify($content)</code> function that the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/Adapter/Css/CSSmin.php" target="_blank"><code>CSSmin</code></a> and <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/Adapter/Js/JShrink.php" target="_blank"><code>JShrink</code></a> implementation class define.</p>
 
-<h4 id="creating-new-events">Creating new events</h4>
+<p>The <a href="https://github.com/tedious/JShrink" target="_blank">jshrink</a>(tedivm/jshrink) and <a href="https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port" target="_blank">cssmin</a>(tubalmartin/cssmin) libraries registered in the <a href="https://github.com/magento/magento2/blob/develop/composer.json" target="_blank"><code>composer.json</code></a> file provide the functionalities for the implementation classes.</p>
 
-<p>Custom events can be dispatched by simply passing in a unique event name to the event manager when you call the <code>dispatch</code> function. Your unique event name is referenced in your module’s <code>events.xml</code> file where you specify which observers will react to that event.</p>
+<h3 id="magentoframeworkimage"><code>Magento/Framework/Image</code></h3>
 
-<h4 id="event-areas">Event areas</h4>
+<p>The <a href="https://github.com/magento/magento2/tree/2.0/lib/internal/Magento/Framework/Image" target="_blank"><code>Magento/Framework/Image</code></a> library uses adapters to access functionality provided by GD(php-gd2) and ImageMagick(php-imagick) third-party libraries.</p>
 
-<p>Generally, the location of the <code>events.xml</code> file will be under the <code>&lt;module-root&gt;/etc</code> directory. Observers that are associated with events here will watch for these events globally. The <code>events.xml</code> file can also be defined under the <code>&lt;module-root&gt;/etc/frontend</code> and <code>&lt;module-root&gt;/etc/adminhtml</code> directories to configure observers to only watch for events in those specific areas.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Image/Adapter/AdapterInterface.php" target="_blank"><code>AdapterInterface</code></a> class defines the available functionality, and the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Image/Adapter/Gd2.php" target="_blank"><code>Gd2</code></a> and <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Image/Adapter/ImageMagick.php" target="_blank"><code>ImageMagick</code></a> adapter classes provides the concrete implementation using the third-party libraries.</p>
 
-<h3 id="observers">Observers</h3>
+<h2 id="example-code">Example Code</h2>
 
-<p>Observers are a certain type of Magento class that can influence general behavior, performance, or change business logic. Observers are executed whenever the event they are configured to watch is dispatched by the event manager.</p>
+<p>The code below describes an interface for an adapter that parses markdown.</p>
 
-<h4 id="creating-an-observer">Creating an observer</h4>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Interface for markdown library adapters</span>
+<span class="sd"> */</span>
+<span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter</span><span class="p">;</span>
 
-<p>To create an observer, you must place your class file under your <code>&lt;module-root&gt;/Observer</code> directory. Your observer class should implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Event/ObserverInterface.php"><code>Magento\Framework\Event\ObserverInterface</code></a> and define its <code>execute</code> function.</p>
-
-<p>Below is an example of the basic observer class structure:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Observer</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">MyObserver</span> <span class="k">implements</span> <span class="nx">ObserverInterface</span>
+<span class="k">interface</span> <span class="nx">AdapterInterface</span>
 <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
-  <span class="p">{</span>
-    <span class="c1">//Observer initialization code...</span>
-    <span class="c1">//You can use dependency injection to get any class this observer may need.</span>
-  <span class="p">}</span>
-
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">\Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="c1">//Observer execution code...</span>
-  <span class="p">}</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Converts markdown text into another format</span>
+<span class="sd">     * </span>
+<span class="sd">     * @param string $text</span>
+<span class="sd">     * @return string</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">parse</span><span class="p">(</span><span class="nv">$text</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>One of the more powerful feature of observers is that they are able to use parameters passed into the event when it was dispatched. Below is an example of an observer obtaining data passed in when the event was dispatched.</p>
+<p><br /></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Observer</span><span class="p">;</span>
+<p>The code below is an implementation class of the <code>AdapterInterface</code> that uses the <a href="https://github.com/michelf/php-markdown" target="_blank">php-markdown</a> library to convert markdown into HTML.</p>
 
-<span class="k">class</span> <span class="nc">AnotherObserver</span> <span class="k">implements</span> <span class="nx">ObserverInterface</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">\Michelf\Markdown</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Adapter for php-markdown library</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">PhpMarkdown</span> <span class="k">implements</span> <span class="nx">AdapterInterface</span>
 <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
-  <span class="p">{</span>
-    <span class="c1">//Observer initialization code...</span>
-    <span class="c1">//You can use dependency injection to get any class this observer may need.</span>
-  <span class="p">}</span>
-
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">\Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="nv">$myEventData</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">&#39;myEventData&#39;</span><span class="p">);</span>
-    <span class="c1">//Additional observer execution code...</span>
-  <span class="p">}</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Convert markdown into HTML</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $text</span>
+<span class="sd">     * @return string</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">parse</span><span class="p">(</span><span class="nv">$text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">Markdown</span><span class="o">::</span><span class="na">defaultTransform</span><span class="p">(</span><span class="nv">$text</span><span class="p">);</span>
+    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<h4 id="subscribing-to-events">Subscribing to events</h4>
+<p><br /></p>
 
-<p>Observers can be configured to watch certain events in the <code>events.xml</code> file.</p>
+<p>To configure the ObjectManager to use the PhpMarkdown implementation when the AdapterInterface class is requested as a dependency, add the following code in your di.xml file.</p>
 
-<p>The <code>observer</code> xml element has the following properties:</p>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">preference</span> <span class="k">for</span><span class="o">=</span><span class="s2">&quot;MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown\PhpMarkdown&quot;</span> <span class="o">/&gt;</span></code></pre></figure>
 
-<ul>
-  <li><code>name</code> (required) - The name of the observer for the event definition.</li>
-  <li><code>instance</code> (required) - The fully qualified class name of the observer.</li>
-  <li><code>disabled</code> - Determines whether this observer is active or not. Default value is false.</li>
-  <li><code>shared</code> - Determines the <a href="/guides/v2.1/extension-dev-guide/depend-inj.html#object-lifestyle-management">lifestyle</a> of the class. Default is false.</li>
-</ul>
+<p><br /></p>
 
-<p>Below is an example of how to assign observers to watch certain events:</p>
+<p>The code below is an alternate implementation class of the <code>AdapterInterface</code> that uses the <a href="https://github.com/kzykhys/Ciconia" target="_blank">Ciconia</a> library to parse markdown into HTML.
+This code differs from the previous implementations in that an instance of the <code>Ciconia</code> class is a constructor dependency.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Event/etc/events.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">&quot;my_module_event_before&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;observer</span> <span class="na">name=</span><span class="s">&quot;myObserverName&quot;</span> <span class="na">instance=</span><span class="s">&quot;MyCompany\MyModule\Observer\MyObserver&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/event&gt;</span>
-    <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">&quot;my_module_event_after&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;observer</span> <span class="na">name=</span><span class="s">&quot;myObserverName&quot;</span> <span class="na">instance=</span><span class="s">&quot;MyCompany\MyModule\Observer\AnotherObserver&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/event&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\Ciconia</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Ciconia\Ciconia</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface</span><span class="p">;</span>
 
-<p>In the preceding example, we assign the observer <code>MyObserver</code> to the custom event <code>my_module_event_before</code> and <code>AnotherObserver</code> to <code>my_module_event_after</code>.</p>
+<span class="sd">/**</span>
+<span class="sd"> * Adapter for the Ciconia library</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">CiconiaParser</span> <span class="k">implements</span> <span class="nx">AdapterInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @var Ciconia</span>
+<span class="sd">     */</span>
+     <span class="k">protected</span> <span class="nv">$parser</span><span class="p">;</span>
 
-<p>Observer names must be unique per event definition. This means that you cannot have two observers with the same name in the same event definition. In the example, both observers have the name <code>myObserverName</code>. This is acceptable because each of those observers belong to different event definitions.</p>
+    <span class="sd">/**</span>
+<span class="sd">     * @param Ciconia</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Ciconia</span> <span class="nv">$parser</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">parser</span> <span class="o">=</span> <span class="nv">$parser</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<h3 id="recommended-reading">Recommended Reading</h3>
+    <span class="sd">/**</span>
+<span class="sd">     * Convert markdown into HTML</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $text</span>
+<span class="sd">     * @return string</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">parse</span><span class="p">(</span><span class="nv">$text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">parser</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="nv">$text</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-<ul>
-  <li><a href="/guides/v2.1/ext-best-practices/extension-coding/observers-bp.html">Observers best practices</a></li>
-</ul>
+<p><br /></p>
+
+<p>The following dependency injection entries belong in the <code>di.xml</code> file.
+They describe to the ObjectManager how to create the third-party and adapter classes.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;defaultCiconia&quot;</span> <span class="na">type=</span><span class="s">&quot;Ciconia\Ciconia&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;arguments&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;renderer&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;null&quot;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/virtualType&gt;</span>
+<span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;MyCompany\MyModule\Markdown\Parser\Adapter\Ciconia\CiconiaParser&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;arguments&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;parser&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>defaultCiconia<span class="nt">&lt;/argument&gt;</span>
+   <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span></code></pre></figure>
+
 
 		</div>
 	</section>
