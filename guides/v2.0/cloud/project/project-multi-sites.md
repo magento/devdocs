@@ -38,6 +38,8 @@ Magento Enterprise Edition *routes* define how incoming URLs are processed. The 
   <p>This section discusses how to configure your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> only. To set up routes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/get-help.html">Support ticket</a>.</p>
 </div>
 
+{% collapsible To configure routes: %}
+
 To configure routes in an integration environment:
 
 1.	Log in to your local environment as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
@@ -62,8 +64,12 @@ To configure routes in an integration environment:
     		upstream: "mymagento:php"
 5.	Save your changes to `routes.yaml` and exit the text editor.
 
+{% endcollapsible %}
+
 ### Set up websites, stores, and store views {#cloud-multi-stores-admin}
 Set up in your Magento Enterprise Cloud Edition Admin websites, stores, and store views identical to the ones you set up on your local system.
+
+{% collapsible To set up websites, stores, and store views: %}
 
 #### Get your access information
 To get the access information you need to log in to the Magento Admin:
@@ -101,10 +107,12 @@ Make sure you name your websites, stores, and store views in your Cloud Admin th
 
 {% include config/multi-site_websites.md %}
 
+{% endcollapsible %}
+
 ### Modify `magento-vars.php` {#cloud-multi-stores-magento-vars}
 Instead of configuring an nginx virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using `magento-vars.php` which is located in your Magento root directory.
 
-To modify `magento-vars.php`:
+{% collapsible To modify `magento-vars.php`: %}
 
 1.	Open `magento-vars.php` in a text editor.
 2.	Uncomment everything after the first two lines.
@@ -149,6 +157,8 @@ To modify `magento-vars.php`:
     		$_SERVER["MAGE_RUN_TYPE"] = "website";
 		}
 5.	Save your changes to `magento-vars.php` and exit the text editor.
+
+To modify `magento-vars.php`:
 
 ### Deploy and test on the integration server {#cloud-multi-stores-deploy}
 The final step is to push your changes to your Magento Entperise Cloud Edition server and test your site there.
