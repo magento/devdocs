@@ -96,7 +96,7 @@ To get the access information you need to log in to the Magento Admin:
 		| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 		+----------------+---------------+-----------+------+
 
-#### Configure websites, stores, and store views.
+#### Configure websites, stores, and store views
 Make sure you name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
 
 {% include config/multi-site_websites.md %}
@@ -126,7 +126,7 @@ To modify `magento-vars.php`:
 		    $_SERVER["MAGE_RUN_CODE"] = "default";
 		    $_SERVER["MAGE_RUN_TYPE"] = "store";
 		}
-4.	Replace the following values:
+4.	Replace the following values in the `if (isHttpHost("example.com"))` block:
 
 	*	`"example.com"` with the base URL of your website, replacing the first period with three dashes. 
 	*	`"default"` with the unique code for your website or store view.
@@ -144,7 +144,7 @@ To modify `magento-vars.php`:
     		}
     		return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
 		}
-		if (isHttpHost("site2.nginx-test1-sbgppoa-f5duezthjqtpy.us.magentosite.cloud")) {
+		if (isHttpHost("french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud")) {
     		$_SERVER["MAGE_RUN_CODE"] = "site2";
     		$_SERVER["MAGE_RUN_TYPE"] = "website";
 		}
