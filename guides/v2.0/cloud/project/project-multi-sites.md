@@ -13,7 +13,7 @@ github_link: cloud/project/project-multi-sites.md
 ## Set up multiple stores
 This topic discusses how to set up Magento Enterprise Cloud Edition to have multiple websites or stores; for example, you might have an English store, a French store, and a German store.
 
-To set up multipe stores, you must:
+To set up multiple stores, you must:
 
 1.	Configure your local installation and test it locally.
 2.	Configure Magento Enterprise Cloud edition routes and variables.
