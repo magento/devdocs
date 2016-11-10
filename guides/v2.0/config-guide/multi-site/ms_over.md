@@ -27,7 +27,7 @@ One instance of the Magento software can enable you to start multiple websites o
 
 This flexible solution enables one Magento codebase and Magento Admin to administer and display different stores.
 
-You configure the websites, stores, and store views in the Magento Admin. You use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in entry point scripts or `.htaccess` files to start the Magento application using these websites or store views. 
+You configure the websites, stores, and store views in the Magento Admin. You use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in entry point scriptsto start the Magento application using these websites or store views. 
 
 A typical use of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another domain that has categories and products for a different language.
 
@@ -49,9 +49,20 @@ We use the following terms:
 
 	Store views change the way pages are presented, and are typically used to display a store with different layouts or languages. 
 
-Each website and each store view must have a unique identifier. This identifier is required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`.
+Each website and each store view must have a unique identifier. This identifier is required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` as follows:
 
+*	`MAGE_RUN_TYPE` can be either `store` or `website`
 
+		*	Use `website` to load a website in your storefront.
+		*	Use `store` to load any store view in your storefront.
+
+*	`MAGE_RUN_CODE` is the unique website or store view code that corresponds to `MAGE_RUN_TYPE`
+
+You must perform the following basic tasks:
+
+1.	Define websites, stores, and store views in the Magento Admin.
+2.	Create one virtual host per Magento website or store view.
+3.	Pass the values of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` to the web server.
 
 #### Related topics
 *	[Set up multiple websites with nginx]({{page.baseurl}}config-guide/multi-site/ms_nginx.html)
