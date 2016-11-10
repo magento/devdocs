@@ -152,7 +152,7 @@ Instead of configuring an nginx virtual host, pass the `MAGE_RUN_CODE` and `MAGE
     		}
     		return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
 		}
-		if (isHttpHost("french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud")) {
+		if (isHttpHost("french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud")) {
     		$_SERVER["MAGE_RUN_CODE"] = "site2";
     		$_SERVER["MAGE_RUN_TYPE"] = "website";
 		}
