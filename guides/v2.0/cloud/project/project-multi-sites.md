@@ -102,7 +102,63 @@ Make sure you name your websites, stores, and store views in your Cloud Admin th
 {% include config/multi-site_websites.md %}
 
 ### Modify `magento-vars.php` {#cloud-multi-stores-magento-vars}
-TBD
+Instead of configuring an nginx virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using `magento-vars.php` which is located in your Magento root directory.
+
+To modify `magento-vars.php`:
+
+1.	Open `magento-vars.php` in a text editor.
+2.	Uncomment everything after the first two lines.
+3.	Move the entire block starting with `if (isHttpHost("example.com")` after `function isHttpHost($host)`.
+
+	Following is what the file should look like so far:
+
+		<?php
+		// enable, adjust and copy this code for each store you run
+		// Store #0, default one
+		function isHttpHost($host)
+		{
+    		if (!isset($_SERVER['HTTP_HOST'])) {
+        		return false;
+    		}
+    		return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+		}
+		if (isHttpHost("example.com")) {
+		    $_SERVER["MAGE_RUN_CODE"] = "default";
+		    $_SERVER["MAGE_RUN_TYPE"] = "store";
+		}
+4.	Replace the following values:
+
+	*	`"example.com"` with the base URL of your website, replacing the first period with three dashes. 
+	*	`"default"` with the unique code for your website or store view.
+	*	`"store"` with either `website` (to load the website in the storefront) or `store` (to load a storeview in the storefront).
+
+	An example follows:
+
+		<?php
+		// enable, adjust and copy this code for each store you run
+		// Store #0, default one
+		function isHttpHost($host)
+		{
+    		if (!isset($_SERVER['HTTP_HOST'])) {
+        		return false;
+    		}
+    		return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+		}
+		if (isHttpHost("site2.nginx-test1-sbgppoa-f5duezthjqtpy.us.magentosite.cloud")) {
+    		$_SERVER["MAGE_RUN_CODE"] = "site2";
+    		$_SERVER["MAGE_RUN_TYPE"] = "website";
+		}
+5.	Save your changes to `magento-vars.php` and exit the text editor.
 
 ### Deploy and test on the integration server {#cloud-multi-stores-deploy}
-TBD
+The final step is to push your changes to your Magento Entperise Cloud Edition server and test your site there.
+
+To deploy and test:
+
+1.	Enter the following commands in the order shown:
+
+		git add -A && git commit -m "Implement multiple sites"
+		git push origin <branch name>
+2.	Wait for deployment to complete.
+3.	When deployment is done, in a web browser, go to your site's base URL.
+4.	Make sure you test it thoroughly.
