@@ -16,7 +16,7 @@ github_link: extension-dev-guide/object-manager.md
 
 ## Overview
 
-Large applications, such as the Magento framework, use an object manager to avoid boilerplate code when composing objects during instantiation.
+Large applications, such as the Magento application, use an object manager to avoid boilerplate code when composing objects during instantiation.
 
 In the Magento framework, the implementation of the [`ObjectManagerInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManagerInterface.php){:target="_blank"} performs the duties of an object manager.
 
@@ -40,9 +40,9 @@ The [`di.xml`]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html) file 
 
 This file specifies the preferred implementation class the object manager generates for the interface declared in a class constructor.
 
-The file also specifies whether the object manager should create an object for every request or treat it as a singleton.
+The file also specifies whether the object manager should create an object for every request or treat the object as a singleton.
 
-## Usage Rules
+## Usage rules
 
 The Magento framework uses the `ObjectManager` to generate and inject the classes declared in your constructor.
 Classes should not ask for the `ObjectManager` itself as a constructor dependency.
@@ -56,7 +56,7 @@ In most cases, the framework generates these classes automatically during code c
 <div class="bs-callout bs-callout-warning" markdown="1">
 You may notice in the Magento 2 codebase that some core classes still call the `ObjectManager` directly.
 
-These instances are bits of legacy code that need porting or exist for backward compatibility purposes.
+This code needs porting or exist for backward compatibility purposes.
 
 They are not tacit endorsements of using the `ObjectManager` directly.
 </div>
@@ -66,6 +66,7 @@ They are not tacit endorsements of using the `ObjectManager` directly.
 You can depend on and use the `ObjectManager` class in the following scenarios:
 
 * You can use the object manager in static magic methods like `__wakeup()`, `__sleep()`, etc.
+  * An example can be found in the `__wakeup()` method in the [`Magento/Eav/Model/Entity/Attribute/AbstractAttribute`]({{site.mage2000url}}app/code/Magento/Eav/Model/Entity/Attribute/AbstractAttribute.php){:target="_blank"} class.
 * You can use the `ObjectManager` to maintain backward compatibility for a constructor.
 * In a global scope, like in fixtures of integration tests, you can use the object manager.
 * The object manager can be a dependency in classes used for the creation of objects, e.g. factories or proxies.

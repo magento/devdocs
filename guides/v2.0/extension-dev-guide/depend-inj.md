@@ -37,8 +37,8 @@ During class construction, the object manager injects the appropriate dependency
 
 ## Constructor signature dependencies
 
-Magento uses class constructor signatures, not doc-block annotations, to retrieve information about what dependencies to pass to an object's constructor.
-If you write your code in a regular way using the dependency inversion principle, you do not have to worry about class definitions.
+Magento uses class constructor signatures, not [DocBlock]({{page.baseurl}}coding-standards/docblock-standard-general.html) annotations, to retrieve information about what dependencies to pass to an object's constructor.
+If your code follows the dependency inversion principle and uses interfaces instead of specific implementations, you do not have to worry about class definitions.
 
 ## Compiling dependencies
 A [code compiler tool]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) collects all the dependency information in a class and stores that information in files.
@@ -74,10 +74,10 @@ class Builder
 }
 {% endhighlight %}
 
-### Constructor Injection
+### Constructor injection
 
 Magento uses constructor injection to provide dependencies through an object's class constructor.
-In the example above, `$menuItemFactory` and `$menu` are the dependencies provided to the class through its constructor.
+In the preceding example, `$menuItemFactory` and `$menu` are the dependencies provided to the class through its constructor.
 
 You must use constructor dependency injection for all optional and required dependencies of an object.
 
@@ -87,14 +87,14 @@ You must use constructor dependency injection for all optional and required depe
   If your class does not always use these classes and instantiating them is expensive, consider using a [proxy]({{page.baseurl}}extension-dev-guide/proxies.html).
 </div>
 
-### Method Injection
+### Method injection
 
 Method injection is when an object specifies a dependency in one of its methods instead of its constructor.
 In the example, above `$command` is the dependency passed into the class through the `processCommand` method.
 
 When an object needs to act on a dependency, you can use method injection.
 
-## Injectable and Newable Objects
+## Injectable and newable objects
 
 **Injectable:** Service objects that are singletons obtained through dependency injection.
 The object manager uses the configuration in the `di.xml` file to create these objects and inject them into constructors.

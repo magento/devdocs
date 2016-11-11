@@ -92,7 +92,7 @@ The following example creates instances of `Magento\Core\Model\Session` with the
 </config>
 {% endhighlight %}
 
-### Argument Types
+### Argument types
 
 `object`
 
@@ -249,7 +249,7 @@ During merging, arguments replace other arguments with the same name if their ty
 If the argument type is the same, then the newer argument replaces the old one.
 </div>
 
-### Abstraction-Implementation mappings
+### Abstraction-implementation mappings
 
 The object managers uses the abstraction-implementation mappings when the constructor signature of a class requests an object by its interface.
 The object manager uses these mappings to determine what the default implementation is for that class for a particular scope.
