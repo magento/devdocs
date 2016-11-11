@@ -300,62 +300,9 @@ Under node <code>&lt;key&gt;</code> there are rules that work with 'path' column
 
 Under node <code>&lt;value&gt;</code> there are rules that work with 'value' column of core_config_data table. These rules aim to transform value of settings by handlers (classes that implement Migration\Handler\HandlerInterface) and adapt it for Magento 2.
 
-#### Add custom rules when migrating settings {#custom-rules-settings-mode}
-
-To apply your custom rules while migrating settings (ignore, rename or change values of the database entities to be transferred), follow these steps.
-
-1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-2.	Change to the following directory:
-
-		<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<edition-to-edition>
-
-	For example, if Magento 2 is installed in `/var/www/html`, you'll find `settings.xml.dist` in one of the following directories:
-
-		/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ee
-		/var/www/html/vendor/magento/data-migration-tool/etc/ee-to-ee
-		/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ce
-
-3. 	To create a `settings.xml` file from the provided sample, run:
-
-		cp settings.xml.dist settings.xml
-
-4. Make your changes in `settings.xml`.
-
-5. Specify the new name of the settings file. To do that, change the `<settings_map_file>` tag in the `<ce or ee version>/config.xml` file.
-
 ### Data migration mode
 
 In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If integrity check passed the Data Migration Tool installs deltalog tables (with prefix m2_cl_*) and corresponding triggers to Magento 1 database. And runs data migration stage of steps. When migration is completed without errors the volume check checks data consistency. It can show a warning message if you migrate live store. Do not worry, delta migration will take care of this incremental data. Next the most valuable migration steps are described. It is Map Step, URL Rewrite Step, EAV Step.
-
-#### Handle data consistency errors {#consistency-errors-migrate-data}
-
-When you migrate data, the Data Migration Tool verifies that tables and fields are consistent between Magento 1 and Magento 2. If they are not, you will see an error message that lists the problematic tables and fields, for example:
-
-    Source fields are not mapped. Document: <document_name>. Fields: <field_name>
-
-**Possible reason for error:** some database entities belong to Magento 1 extensions that do not exist in the Magento 2 database.
-
-Below are the possible ways to handle these errors. Don't forget to run the Data Migration Tool again to see if the issues have been resolved.
-
-##### Fix errors: Install corresponding Magento 2 extensions
-
-Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest extension versions or contact your extension provider.
-
-##### Fix errors: Ignore entities
-
-You may tell the Data Migration Tool to ignore the problematic entites.
-
-To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
-
-{% highlight xml %}
-<ignore>
-    <field>sales_order_address_id</field>
-</ignore>
-{% endhighlight %}
-
-<div class="bs-callout bs-callout-warning">
-    <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
-</div>
 
 #### Map Step
 
@@ -489,11 +436,8 @@ Some of the tables that are processed in the step:
 
 ### Delta migration mode
 
-After main migration some data could have been added to DB of Magento 1 e.g. by customers on store-front. To track this data, database triggers are setup for tables in the beginning of main migration. If some extension has its own tables that need to be tracked for changing its data - then a developer should:
-
-1. add these tables into deltalog.xml file
-2. create its own delta class which extends Migration\App\Step\AbstractDelta
-3. add name of this class to config.xml into delta mode section
+After main migration, additional data could have been added to the Magento 1 database (for example, by customers on storefront). To track this data, database triggers should be set up for tables in the beginning of migration process.
+For detailed steps, see [Migrate data created by 3rd party extensions]({{page.baseurl}}migration/migration-migrate-delta.html#migrate-delta-external-extensions).
 
 <h2 id="data-sources">Data Sources</h2>
 

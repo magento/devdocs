@@ -50,11 +50,17 @@ where;
   <p>Incremental migration runs continuously until you stop it by pressing CTRL+C.</p></span>
 </div>
 
-## Migrate data created by 3rd party extensions
+## Migrate data created by 3rd party extensions {#migrate-delta-external-extensions}
 
-In the `Delta` mode, the Data Migration Tool migrates data created only by Magento's own modules and cannot handle the code or extensions made by third-party developers. If these extensions created data in the storefront database and the merchant wants to have this data in Magento 2 — config files of the Data Migration Tool should be created and modified.
+In the `Delta` mode, the Data Migration Tool migrates data created only by Magento's own modules and cannot handle the code or extensions made by third-party developers. If these extensions created data in the storefront database and the merchant wants to have this data in Magento 2 --- config files of the Data Migration Tool should be created and modified accordingly.
 
-See the <a href="{{page.baseurl}}migration/migration-tool-internal-spec.html#delta-migration-mode">Delta migration mode</a> section of the Tool's Internal Specification for more information.
+If an extension has its own tables, and you need to track their changes for delta migration, follow these steps:
+
+1. Add the tables to be tracked to the `deltalog.xml` file
+
+2. Create an additional delta class which extends the `Migration\App\Step\AbstractDelta`
+
+3. Add the name of the newly created class to the delta mode section of `config.xml`
 
 ## Related topics
 

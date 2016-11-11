@@ -20,13 +20,7 @@ According to our data migration [order]({{page.baseurl}}/migration/migration-mig
 * TOC
 {:toc}
 
-## Before you start
-
-### Configure custom migration rules
-
-You may apply your custom rules while migrating settings and thus ignore, rename or change values of the database entities. To do that, specify the rules in the `settings.xml` file. Read the [Add custom rules when migrating settings]({{page.baseurl}}migration/migration-tool-internal-spec.html#custom-rules-settings-mode) section for detailed steps.
-
-### Make routine preparations
+## Before you start: routine preparations
 
 1. Log in to Magento server as [the file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
 
@@ -53,6 +47,30 @@ where:
 
 The `Migration completed` message is displayed after the settings are transferred successfully.
 
-## Next step
+## Configure custom migration rules
+
+You may ignore, rename or change values of the database entities when migrating settings. For this, specify your custom rules in the `settings.xml` file.
+
+1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+
+2.	Change to the following directory:
+
+		<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<edition-to-edition>
+
+	For example, if Magento 2 is installed in `/var/www/html`, you'll find `settings.xml.dist` in one of the following directories:
+
+		/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ee
+		/var/www/html/vendor/magento/data-migration-tool/etc/ee-to-ee
+		/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ce
+
+3. To create a `settings.xml` file from the provided sample, run:
+
+		cp settings.xml.dist settings.xml
+
+4. Make your changes in `settings.xml`.
+
+5. Specify the new name of the settings file for mapping. To do that, change the `<settings_map_file>` tag in the `<ce or ee version>/config.xml` file.
+
+## Next migration step
 
 * <a href="{{page.baseurl}}migration/migration-migrate-data.html">Migrate data</a>
