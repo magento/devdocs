@@ -50,19 +50,21 @@
 
 <h2 id="ce19-1931">Magento CE 1.9.3.1 Release Notes</h2>
 <p>This patch addresses the following issues:</p>
-<ul><li><a href="https://jira.corp.magento.com/browse/MPERF-9229" target="_blank">MPERF-9229</a>. Configurable swatches work as expected.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-9221" target="_blank">MPERF-9221</a>. We restored the old tax calculation algorithm for shipping charges. The patch to apply new calculation will be available on request.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-9219" target="_blank">MPERF-9219</a>. You no longer get an exception due to an undefined <code>addCrumbs()</code> method call.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-9218" target="_blank">MPERF-9218</a>. Resolved the error <code>Notice: Undefined index: session_expire_timestamp</code> when accessing the storefront.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-9217" target="_blank">MPERF-9217</a>. Values for drop-down label values are saved correctly.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-9216" target="_blank">MPERF-9216</a>. The "Price as configured" for bundle products displays correctly in the shopping cart.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-9215" target="_blank">MPERF-9215</a>. Auto-generated passwords are sent to new customers as expected.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-9214" target="_blank">MPERF-9214</a>. The method <code>Mage_Api_Model_Server_Handler_Abstract::processingMethodResult()</code> accepts scalar and array values.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-9213" target="_blank">MPERF-9213</a>. The default MySQL Full-Text search works as expected; it no longer returns all products.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-9184" target="_blank">MPERF-9184</a>. Prevented a potential <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet" target="_blank">Cross-Site Request Forgery (CSRF)</a> vulnerability by changing the form key when a customer signs out of the storefront.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-8444" target="_blank">MPERF-8444</a>. Prevented a potential <a href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)" target="_blank">Cross-Site Scripting (XSS)</a> vulnerability when adding a category.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-5893" target="_blank">MPERF-5893</a>. Catalog price rules return the correct price.</li>
-	<li><a href="https://jira.corp.magento.com/browse/MPERF-5352" target="_blank">MPERF-5352</a>. Indexers now update all products instead of skipping the last product updated.</li>
+<ul><!-- <li><a href="https://jira.corp.magento.com/browse/MPERF-9229" target="_blank">MPERF-9229</a>. Configurable swatches work as expected.</li> -->
+	<!-- <li><a href="https://jira.corp.magento.com/browse/MPERF-9221" target="_blank">MPERF-9221</a>. We restored the old tax calculation algorithm for shipping charges. The patch to apply new calculation will be available on request.</li> -->
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9233" target="_blank">MPERF-9233</a> .--> The monthly cron job that cleans up the table that contains IP addresses and passwords runs properly.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9266" target="_blank">MPERF-9266</a>. --> All configurable product images are imported.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9219" target="_blank">MPERF-9219</a>. --> You no longer get an exception due to an undefined <code>addCrumbs()</code> method call.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9218" target="_blank">MPERF-9218</a>.  -->Resolved the error <code>Notice: Undefined index: session_expire_timestamp</code> when accessing the storefront.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9217" target="_blank">MPERF-9217</a>. --> Values for drop-down label values are saved correctly.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9216" target="_blank">MPERF-9216</a>. --> The "Price as configured" for bundle products displays correctly in the shopping cart.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9215" target="_blank">MPERF-9215</a>.  -->Auto-generated passwords are sent to new customers as expected.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9214" target="_blank">MPERF-9214</a>.  -->The method <code>Mage_Api_Model_Server_Handler_Abstract::processingMethodResult()</code> accepts scalar and array values.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9213" target="_blank">MPERF-9213</a>.  -->The default MySQL Full-Text search works as expected; it no longer returns all products.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9184" target="_blank">MPERF-9184</a>.  -->Prevented a potential <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet" target="_blank">Cross-Site Request Forgery (CSRF)</a> vulnerability by changing the form key when a customer signs out of the storefront.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8444" target="_blank">MPERF-8444</a>.  -->Prevented a potential <a href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)" target="_blank">Cross-Site Scripting (XSS)</a> vulnerability when adding a category.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5893" target="_blank">MPERF-5893</a>.  -->Catalog price rules return the correct price.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5352" target="_blank">MPERF-5352</a>.  -->Indexers now update all products instead of skipping the last product updated.</li>
 
 </ul>
 
