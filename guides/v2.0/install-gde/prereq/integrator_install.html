@@ -832,7 +832,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 14 August 2016 (PDT)</div>
+            <div class="updated">Updated: 12 November 2016 (PST)</div>
             <div class="bs-callout bs-callout-tip">
   <p>Totally lost? Need a helping hand? Try our <a href="/guides/v2.0/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="/guides/v2.0/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
@@ -840,7 +840,6 @@
 <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#int-aud">Intended audience</a></li>
-  <li><a href="#integrator-first-over">First steps</a></li>
   <li><a href="#int-comm">Commands</a></li>
   <li><a href="#instgde-overview-composer">Composer and Magento</a></li>
   <li><a href="#instgde-prereq-compose-install">Install Composer</a></li>
@@ -869,37 +868,38 @@
     </li>
   </ul>
 
-  <h2 id="integrator-first-over">First steps</h2>
-  <p>As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade.</p>
-
-  <p>To do so, you start by creating a Composer project from our metapackage. The metapackage installs each component so it can be centrally managed after installation.</p>
-
   <h2 id="int-comm">Commands</h2>
-  <p>If you already have everything set up, you can get the Magento CE and EE metapackages as follows:</p>
 
-  <h3 id="ce">CE</h3>
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;installation directory name&gt;
+  <div class="collapsible"><b class="collapsible-title">If you already have everything set up, enter these commands: </b><div class="collapsible-content"><h3 id="ce">CE</h3>
+<pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;installation directory name&gt;
 </code></pre>
 
-  <h3 id="ee">EE</h3>
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;installation directory name&gt;
+<h3 id="ee">EE</h3>
+<pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;installation directory name&gt;
 </code></pre>
+</div></div>
 
   <div>
 
     <h2 id="instgde-overview-composer">Composer and Magento</h2>
-    <p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> for dependency management. Composer enables us to manage the Magento components and their dependencies.</p>
 
-    <p>Composer provides you with the following advantages:</p>
+    <div class="collapsible"><b class="collapsible-title">About Composer and Magento: </b><div class="collapsible-content"><p>We use <a href="https://getcomposer.org/" target="_blank">Composer</a> for dependency management. Composer enables us to manage the Magento components and their dependencies.</p>
 
-    <ul>
-      <li>Enables you to reuse third-party libraries without bundling them with source code</li>
-      <li>Component-based architecture with robust dependency management</li>
-      <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
-      <li>Versioned dependencies</li>
-      <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
-      <li>Supports the PHP Framework Interoperability standard</li>
-    </ul>
+<p>As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade.</p>
+
+<p>To do so, you start by creating a Composer project from our metapackage. The metapackage installs each component so it can be centrally managed after installation.</p>
+
+<p>Composer provides you with the following advantages:</p>
+
+<ul>
+  <li>Enables you to reuse third-party libraries without bundling them with source code</li>
+  <li>Component-based architecture with robust dependency management</li>
+  <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
+  <li>Versioned dependencies</li>
+  <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
+  <li>Supports the PHP Framework Interoperability standard</li>
+</ul>
+</div></div>
 
     <div>
 
@@ -935,63 +935,63 @@ mv composer.phar /usr/local/bin/composer
       </ol>
 
       <h2 id="integrator-first-composer-ce">Get the Magento CE metapackage</h2>
-      <p>To get started:</p>
 
-      <ol>
-        <li>If you haven’t done so already, <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">get your authentication keys</a>.</li>
-        <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-        <li>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot.</li>
-        <li>
-          <p>Enter the following command:</p>
+      <div class="collapsible"><b class="collapsible-title">To get the Magento CE metapackage: </b><div class="collapsible-content"><ol>
+  <li>If you haven’t done so already, <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">get your authentication keys</a>.</li>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot.</li>
+  <li>
+    <p>Enter the following command:</p>
 
-          <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;installation directory name&gt;
+    <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;installation directory name&gt;
 </code></pre>
 
-          <p>When prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
+    <p>When prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
 
-          <p>This command creates the project and downloads dependencies for it. The project is in a directory named <code>&lt;installation directory name&gt;</code> if you provided the parameter or <code>project-community-edition</code> if you did not.</p>
+    <p>This command creates the project and downloads dependencies for it. The project is in a directory named <code>&lt;installation directory name&gt;</code> if you provided the parameter or <code>project-community-edition</code> if you did not.</p>
 
-          <div class="bs-callout bs-callout-info" id="info">
+    <div class="bs-callout bs-callout-info" id="info">
   		<p>If the following error displays, see <a href="/guides/v2.0/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
   		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
 </div>
-        </li>
-        <li>Continue with <a href="#perms-over">Set file system ownership and permissions</a>.</li>
-      </ol>
+  </li>
+  <li>Continue with <a href="#perms-over">Set file system ownership and permissions</a>.</li>
+</ol>
+</div></div>
 
       <h2 id="integrator-first-composer-ee">Get the Magento EE metapackage</h2>
-      <p>To get started:</p>
 
-      <ol>
-        <li>
-          <p>Make sure you know your support portal user name and password.</p>
+      <div class="collapsible"><b class="collapsible-title">To get the Magento EE metapackage: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Make sure you know your support portal user name and password.</p>
 
-          <p>If you don’t remember it, contact Magento Support before you continue.</p>
-        </li>
-        <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-        <li>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot.</li>
-        <li>
-          <p>Enter the following command:</p>
+    <p>If you don’t remember it, contact Magento Support before you continue.</p>
+  </li>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot.</li>
+  <li>
+    <p>Enter the following command:</p>
 
-          <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;installation directory name&gt;
+    <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;installation directory name&gt;
 </code></pre>
 
-          <p>When prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
+    <p>When prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
 
-          <p>The following error indicates your tokens are incorrect:</p>
+    <p>The following error indicates your tokens are incorrect:</p>
 
-          <pre><code>  Could not find package magento/project-enterprise-edition with version 2.0.0
+    <pre><code>  Could not find package magento/project-enterprise-edition with version 2.0.0
 </code></pre>
 
-          <p>This command creates the project and downloads dependencies for it. The project is in a directory named <code>&lt;installation directory name&gt;</code> if you provided the parameter or <code>project-enterprise-edition</code> if you did not.</p>
+    <p>This command creates the project and downloads dependencies for it. The project is in a directory named <code>&lt;installation directory name&gt;</code> if you provided the parameter or <code>project-enterprise-edition</code> if you did not.</p>
 
-          <div class="bs-callout bs-callout-info" id="info">
+    <div class="bs-callout bs-callout-info" id="info">
   		<p>If the following error displays, see <a href="/guides/v2.0/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
   		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
 </div>
-        </li>
-        <li>Continue with the next section.</li>
-      </ol>
+  </li>
+  <li>Continue with the next section.</li>
+</ol>
+</div></div>
 
       <div>
 

@@ -904,7 +904,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
+            <div class="updated">Updated: 12 November 2016 (PST)</div>
             <h4 id="contents">Contents</h4>
 
 <ul>
@@ -915,95 +915,83 @@
 
 <div>
 
-  <h2 id="auth-overview">Overview of Magento Marketplace authentication</h2>
-  <p>The <code>repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository.</p>
+  <h2 id="auth-overview">Overview of Magento authentication</h2>
+  <p>The <code>repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.</p>
 
-  <p>You get your credentials by logging in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with a user name and password, then going to <strong>My Account</strong> &gt; <strong>Connect</strong> &gt; <strong>Developers</strong> &gt; <strong>Secure Keys</strong>. There, you can generate, regenerate, or delete your authentication tokens to use to:</p>
+  <p>To get your authentication keys:</p>
+
+  <ol>
+    <li>Go to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a>.</li>
+    <li>
+      <p>Click <strong>Sign In</strong> and enter your login credentials.</p>
+
+      <p>If you don’t have a free account, click <strong>Create an Account</strong>.</p>
+    </li>
+    <li>
+      <p>After you log in, click <strong>My Access Keys</strong> as the following figure shows.</p>
+
+      <p><img src="/common/images/install_mkpl_access-keys.png" alt="Get your secure access keys on Magento Marketplace" width="500px" /></p>
+    </li>
+    <li>If you already have keys, use the <strong>Public key</strong> as your user name and the <strong>Private key</strong> as your password.</li>
+    <li>
+      <p>To create a new key pair, click <strong>Create a New Access Key</strong>.</p>
+
+      <p>The following figure shows an example.</p>
+
+      <p><img src="/common/images/install_mkpl_access-keys-detail.png" alt="" width="500px" /></p>
+    </li>
+    <li>When prompted, enter a descritive name to identify the key pair.</li>
+    <li>
+      <p>Click <strong>Generate New</strong>.</p>
+
+      <p>Use the <strong>Public key</strong> as your user name and the <strong>Private key</strong> as your password.</p>
+    </li>
+  </ol>
+
+  <h4 id="manage-your-authentiation-keys">Manage your authentiation keys</h4>
+  <p>You can optionally disable or delete authentication keys you created. For example, you can disable or delete keys for security reasons after someone left your organization.</p>
 
   <ul>
-    <li><a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Download the Magento software using Composer</a></li>
-    <li><a href="/guides/v2.0/install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub</a> (contributing developers only)</li>
-    <li>Install, update, or upgrade third-party components; and upgrade the Magento software using the <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> utilities.</li>
+    <li>Disable keys: Click <strong>Disable</strong>. You can do this if you want to suspend use of your keys.</li>
+    <li>Enable a previously disabled key: Click <strong>Enable</strong>.</li>
+    <li>Delete keys: Click <strong>Delete</strong>.</li>
   </ul>
 
-  <h2 id="auth-get">Get your authentication keys</h2>
-  <div>
+  <p>You cannot delete or disable keys you created by logging in to <code>magento.com</code>. To manage those keys:</p>
 
-    <p>To get your authentication keys:</p>
+  <ol>
+    <li><a href="https://www.magentocommerce.com/products/customer/account/login" target="_blank">Log in</a> to your <code>magento.com</code> account.</li>
+    <li>In the top navigation bar, click <strong>Connect</strong>.</li>
+    <li>
+      <p>In the left pane, click <strong>Secure keys</strong>.</p>
 
-    <ol>
-      <li>Go to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a>.</li>
-      <li>
-        <p>Click <strong>Sign In</strong> and enter your login credentials.</p>
+      <p><img src="/common/images/connect_keys1.png" alt="Access your keys" width="200px" /></p>
+    </li>
+    <li>Enable or disable the desired keys.</li>
+  </ol>
 
-        <p>If you don’t have a free account, click <strong>Create an Account</strong>.</p>
-      </li>
-      <li>
-        <p>After you log in, click <strong>My Access Keys</strong> as the following figure shows.</p>
-
-        <p><img src="/common/images/install_mkpl_access-keys.png" alt="Get your secure access keys on Magento Marketplace" width="500px" /></p>
-      </li>
-      <li>If you already have keys, use the <strong>Public key</strong> as your user name and the <strong>Private key</strong> as your password.</li>
-      <li>
-        <p>To create a new key pair, click <strong>Create a New Access Key</strong>.</p>
-
-        <p>The following figure shows an example.</p>
-
-        <p><img src="/common/images/install_mkpl_access-keys-detail.png" alt="" width="500px" /></p>
-      </li>
-      <li>When prompted, enter a descritive name to identify the key pair.</li>
-      <li>
-        <p>Click <strong>Generate New</strong>.</p>
-
-        <p>Use the <strong>Public key</strong> as your user name and the <strong>Private key</strong> as your password.</p>
-      </li>
-    </ol>
-
-    <h4 id="manage-your-authentiation-keys">Manage your authentiation keys</h4>
-    <p>You can optionally disable or delete authentication keys you created. For example, you can disable or delete keys for security reasons after someone left your organization.</p>
-
-    <ul>
-      <li>Disable keys: Click <strong>Disable</strong>. You can do this if you want to suspend use of your keys.</li>
-      <li>Enable a previously disabled key: Click <strong>Enable</strong>.</li>
-      <li>Delete keys: Click <strong>Delete</strong>.</li>
-    </ul>
-
-    <p>You cannot delete or disable keys you created by logging in to <code>magento.com</code>. To manage those keys:</p>
-
-    <ol>
-      <li><a href="https://www.magentocommerce.com/products/customer/account/login" target="_blank">Log in</a> to your <code>magento.com</code> account.</li>
-      <li>In the top navigation bar, click <strong>Connect</strong>.</li>
-      <li>
-        <p>In the left pane, click <strong>Secure keys</strong>.</p>
-
-        <p><img src="/common/images/connect_keys1.png" alt="Access your keys" width="200px" /></p>
-      </li>
-      <li>Enable or disable the desired keys.</li>
-    </ol>
-
-    <div class="bs-callout bs-callout-info" id="info">
+  <div class="bs-callout bs-callout-info" id="info">
 	<p>To upgrade your Magento Enterprise Edition (EE) version or to upgrade from Magento Community Edition (CE) to Magento EE, you must be authorized for Magento EE. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
 </div>
 
-    <h2 id="compman-token-admin">Enter the tokens in the Admin</h2>
-    <p>To enter your authentication tokens:</p>
+  <h2 id="compman-token-admin">Enter the tokens in the Admin</h2>
+  <p>To enter your authentication tokens:</p>
 
-    <ol>
-      <li>Log in to the Magento Admin as an administrator.</li>
-      <li>Click <strong>System</strong> &gt; Tools &gt; <strong>Web Setup Wizard</strong>.</li>
-      <li>
-        <p>Click <strong>System Configuration</strong>.</p>
+  <ol>
+    <li>Log in to the Magento Admin as an administrator.</li>
+    <li>Click <strong>System</strong> &gt; Tools &gt; <strong>Web Setup Wizard</strong>.</li>
+    <li>
+      <p>Click <strong>System Configuration</strong>.</p>
 
-        <p><img src="/common/images/cman_system-config.png" width="550px" /></p>
-      </li>
-      <li>Enter your public and private authentication keys in the provided fields.</li>
-      <li>
-        <p>Click <strong>Save Config</strong>.</p>
+      <p><img src="/common/images/cman_system-config.png" width="550px" /></p>
+    </li>
+    <li>Enter your public and private authentication keys in the provided fields.</li>
+    <li>
+      <p>Click <strong>Save Config</strong>.</p>
 
-        <p><img src="/common/images/cman_keys.png" width="550px" /></p>
-      </li>
-    </ol>
-  </div>
+      <p><img src="/common/images/cman_keys.png" width="550px" /></p>
+    </li>
+  </ol>
 </div>
 
 		</div>

@@ -873,18 +873,24 @@
   <div>
 
     <h2 id="instgde-overview-composer">Composer and Magento</h2>
-    <p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> for dependency management. Composer enables us to manage the Magento components and their dependencies.</p>
 
-    <p>Composer provides you with the following advantages:</p>
+    <div class="collapsible"><b class="collapsible-title">About Composer and Magento: </b><div class="collapsible-content"><p>We use <a href="https://getcomposer.org/" target="_blank">Composer</a> for dependency management. Composer enables us to manage the Magento components and their dependencies.</p>
 
-    <ul>
-      <li>Enables you to reuse third-party libraries without bundling them with source code</li>
-      <li>Component-based architecture with robust dependency management</li>
-      <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
-      <li>Versioned dependencies</li>
-      <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
-      <li>Supports the PHP Framework Interoperability standard</li>
-    </ul>
+<p>As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade.</p>
+
+<p>To do so, you start by creating a Composer project from our metapackage. The metapackage installs each component so it can be centrally managed after installation.</p>
+
+<p>Composer provides you with the following advantages:</p>
+
+<ul>
+  <li>Enables you to reuse third-party libraries without bundling them with source code</li>
+  <li>Component-based architecture with robust dependency management</li>
+  <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
+  <li>Versioned dependencies</li>
+  <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
+  <li>Supports the PHP Framework Interoperability standard</li>
+</ul>
+</div></div>
 
     <div>
 
@@ -941,6 +947,9 @@ mv composer.phar /usr/local/bin/composer
       <h4 id="generate-authentication-tokens">Generate authentication tokens</h4>
 
       <div>
+
+        <h2 id="auth-overview">Overview of Magento authentication</h2>
+        <p>The <code>repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.</p>
 
         <p>To get your authentication keys:</p>
 
