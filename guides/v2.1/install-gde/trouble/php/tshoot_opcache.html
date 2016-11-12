@@ -892,9 +892,7 @@ Modifier/AdvancedInventory.php on line 87
 <p>To solve the issue, locate your OPcache configuration settings and enable <code>opcache.save-comments</code> as follows:</p>
 
 <h4 id="step-1-locate-your-opcache-configuration">Step 1: Locate your OPcache configuration</h4>
-<div>
-
-  <div class="collapsible"><b class="collapsible-title">To find OPcache configuration settings: </b><div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code>php.ini</code> or <code>opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code>[opcache]</code> section or settings like <code>opcache.enable</code>.</p>
+<div class="collapsible"><b class="collapsible-title">To find OPcache configuration settings: </b><div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code>php.ini</code> or <code>opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code>[opcache]</code> section or settings like <code>opcache.enable</code>.</p>
 
 <p>Use the following guidelines to find it:</p>
 
@@ -919,24 +917,23 @@ Modifier/AdvancedInventory.php on line 87
 <p>If you have more than one <code>opcache.ini</code>, modify all of them.</p>
 </div></div>
 
-  <h4 id="step-2-enable-opcachesave-comments">Step 2: Enable <code>opcache.save-comments</code></h4>
-  <ol>
-    <li>Open your OPcache configuration file in a text editor.</li>
-    <li>Locate <code>opcache.save-comments</code> and uncomment it if necessary.</li>
-    <li>Make sure its value is set to <code>1</code>.</li>
-    <li>Save your changes and exit the text editor.</li>
-    <li>
-      <p>Restart your web server:</p>
+<h4 id="step-2-enable-opcachesave-comments">Step 2: Enable <code>opcache.save-comments</code></h4>
+<ol>
+  <li>Open your OPcache configuration file in a text editor.</li>
+  <li>Locate <code>opcache.save-comments</code> and uncomment it if necessary.</li>
+  <li>Make sure its value is set to <code>1</code>.</li>
+  <li>Save your changes and exit the text editor.</li>
+  <li>
+    <p>Restart your web server:</p>
 
-      <ul>
-        <li>Apache, Ubuntu: <code>service apache2 restart</code></li>
-        <li>Apache, CentOS: <code>service httpd restart</code></li>
-        <li>nginx, Ubuntu and CentOS: <code>service nginx restart</code></li>
-      </ul>
-    </li>
-  </ol>
+    <ul>
+      <li>Apache, Ubuntu: <code>service apache2 restart</code></li>
+      <li>Apache, CentOS: <code>service httpd restart</code></li>
+      <li>nginx, Ubuntu and CentOS: <code>service nginx restart</code></li>
+    </ul>
+  </li>
+</ol>
 
-</div>
 
 		</div>
 	</section>

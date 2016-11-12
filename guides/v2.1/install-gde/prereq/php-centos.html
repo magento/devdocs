@@ -409,14 +409,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a></li>
-
-									
-
-								
-
-									
-
 										<li class="level3Parent " id="php"><a href="#">PHP</a>
 
 
@@ -439,6 +431,24 @@
 
 											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
 
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a></li>
 
 									
 
@@ -844,7 +854,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 16 July 2016 (PDT)</div>
+            <div class="updated">Updated: 12 November 2016 (PST)</div>
             <h4 id="contents">Contents</h4>
 
 <ul>
@@ -1056,174 +1066,19 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </ol>
 </div></div>
 
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-<div>
+<h4 id="next">Next</h4>
+<p><a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a></p>
 
-  <p>This section discusses how to:</p>
-
-  <ul>
-    <li>
-      <p>Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:</p>
-
-      <pre><code>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
-</code></pre>
-    </li>
-    <li>
-      <p>Set <a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank"><code>always_populate_raw_post_data = -1</code></a></p>
-
-      <p><code>always_populate_raw_post_data</code> is deprecated in PHP 5.6 and is dropped in PHP 7.0.x. This setting causes PHP to always populate <code>$HTTP_RAW_POST_DAT</code> with raw POST data. Failure to set this properly in PHP 5.5 or 5.6 results in errors when connecting to the database.</p>
-    </li>
-    <li>
-      <p>Set the PHP memory limit.</p>
-
-      <p>Our detailed recommendations are:</p>
-
-      <ul>
-        <li>Compiling code, <code>768M</code></li>
-        <li>Deploying static asses, <code>768M</code></li>
-        <li>Installing and updating Magento components from Magento Marketplace, <code>2G</code></li>
-        <li>Testing, <code>2G</code></li>
-      </ul>
-    </li>
-    <li>
-      <p>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank"><code>asp_tags</code></a></p>
-
-      <p>If <code>asp_tags are</code> enabled, errors display when accessing PHTML templates.</p>
-
-      <p><code>asp_tags</code> will be removed in PHP 7.</p>
-    </li>
-    <li>
-      <p>Enable <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments" target="_blank"><code>opcache.save-comments</code></a>, which is required for Magento 2.1 and later.</p>
-
-      <p>We recommend you enable the <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OpCache</a> for performance reasons. The OPcache is enabled in many PHP distributions.</p>
-
-      <p>Magento 2.1 and later use PHP code comments in the <code>getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73" target="_blank"><code>getExtensionAttributes</code></a> method in <code>Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
-    </li>
-  </ul>
-
-  <div class="bs-callout bs-callout-warning">
-    <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.</p>
-</div>
-
-  <h3 id="find-php-configuration-files">Find PHP configuration files</h3>
-  <p>This section discusses how you find the configuration files necesary to update required settings.</p>
-
-  <div class="collapsible"><b class="collapsible-title">To find the PHP configuration file, php.ini: </b><div class="collapsible-content"><p>To find the web server configuration, run a <a href="/guides/v2.1/install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code> file</a> in your web browser and look for the Loaded Configuration File as follows:</p>
-
-<p><img src="/common/images/config_phpini-webserver.png" width="700px" /></p>
-
-<p>To locate the PHP command-line configuration, enter</p>
-
-<pre><code>php --ini
-</code></pre>
-
-<p>Use the value of Loaded Configuration file.</p>
-</div></div>
-
-  <div>
-
-    <div class="collapsible"><b class="collapsible-title">To find OPcache configuration settings: </b><div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code>php.ini</code> or <code>opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code>[opcache]</code> section or settings like <code>opcache.enable</code>.</p>
-
-<p>Use the following guidelines to find it:</p>
+<h4 id="related-topics">Related topics</h4>
 
 <ul>
-  <li>
-    <p>Apache web server:</p>
-
-    <p>For Ubuntu with Apache, OPcache settings are typically located in <code>php.ini</code>.</p>
-
-    <p>For CentOS with Apache or nginx, OPcache settings are typically located in <code>/etc/php.d/opcache.ini</code></p>
-
-    <p>If not, use the following command to locate it:</p>
-
-    <pre><code>sudo find / -name 'opcache.ini'
-</code></pre>
-  </li>
-  <li>
-    <p>nginx web server with PHP-FPM: <code>/etc/php5/fpm/php.ini</code></p>
-  </li>
+  <li><a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
+  <li><a href="/guides/v2.1/install-gde/prereq/apache.html">Apache</a></li>
+  <li><a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a></li>
+  <li><a href="/guides/v2.1/install-gde/prereq/security.html">Configuring security options</a></li>
+  <li><a href="/guides/v2.1/install-gde/prereq/optional.html">Installing optional software</a></li>
+  <li><a href="/guides/v2.1/install-gde/install/pre-install.html">Ways to install the Magento software</a></li>
 </ul>
-
-<p>If you have more than one <code>opcache.ini</code>, modify all of them.</p>
-</div></div>
-
-    <h3 id="set-php-options">Set PHP options</h3>
-
-    <p>To set PHP options:</p>
-
-    <ol>
-      <li>
-        <p>Locate <code>php.ini</code> for both the web server and the PHP command line as discussed in the preceding section.</p>
-
-        <p>Make the following changes to <em>both</em> configurations.</p>
-      </li>
-      <li>Open a <code>php.ini</code> in a text editor.</li>
-      <li>Locate your server’s time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a></li>
-      <li>
-        <p>Locate the following setting and uncomment it if necessary:</p>
-
-        <pre><code>date.timezone =
-</code></pre>
-      </li>
-      <li>Add the time zone setting you found in the preceding step.</li>
-      <li>
-        <p>Change the value of <code>memory_limit</code> to one of the values at the beginning of this section.</p>
-
-        <p>For example,</p>
-
-        <pre><code>memory_limit=2G
-</code></pre>
-      </li>
-      <li>
-        <p><em>Required for PHP 5.6, recommended for PHP 5.5</em>. Locate <code>always_populate_raw_post_data</code>, uncomment it if necessary, and set it as follows:</p>
-
-        <pre><code>always_populate_raw_post_data = -1
-</code></pre>
-      </li>
-      <li>
-        <p>Locate the following setting:</p>
-
-        <pre><code>asp_tags =
-</code></pre>
-      </li>
-      <li>Make sure its value is set to <code>Off</code>.</li>
-      <li>Save your changes and exit the text editor.</li>
-      <li>Open the other <code>php.ini</code> (if they are different) and make the same changes in it.</li>
-      <li>
-        <p>Open your OpCache configuration file in a text editor:</p>
-
-        <ul>
-          <li><code>opcache.ini</code> (CentOS)</li>
-          <li><code>php.ini</code> (Ubuntu)</li>
-          <li><code>/etc/php5/fpm/php.ini</code> (nginx web server (CentOS or Ubuntu))</li>
-        </ul>
-      </li>
-      <li>Locate <code>opcache.save-comments</code> and uncomment it if necessary.</li>
-      <li>Make sure its value is set to <code>1</code>.</li>
-      <li>Save your changes and exit the text editor.</li>
-      <li>
-        <p>Restart your web server:</p>
-
-        <ul>
-          <li>Apache, Ubuntu: <code>service apache2 restart</code></li>
-          <li>Apache, CentOS: <code>service httpd restart</code></li>
-          <li>nginx, Ubuntu and CentOS: <code>service nginx restart</code></li>
-        </ul>
-      </li>
-    </ol>
-
-    <h4 id="related-topics">Related topics</h4>
-
-    <ul>
-      <li><a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
-      <li><a href="/guides/v2.1/install-gde/prereq/apache.html">Apache</a></li>
-      <li><a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a></li>
-      <li><a href="/guides/v2.1/install-gde/prereq/security.html">Configuring security options</a></li>
-      <li><a href="/guides/v2.1/install-gde/prereq/optional.html">Installing optional software</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/pre-install.html">Ways to install the Magento software</a></li>
-    </ul>
-  </div>
-</div>
 
 		</div>
 	</section>
