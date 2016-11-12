@@ -15,7 +15,7 @@ github_link: install-gde/prereq/connect-auth.md
 *	<a href="#auth-overview">Overview of Magento Marketplace authentication</a>
 *	<a href="#auth-get">Get your authentication keys</a>
 
-{% include install/auth-tokens.md %}
+{% include install/auth-tokens-get.md %}
 
 
 #### Related topics:

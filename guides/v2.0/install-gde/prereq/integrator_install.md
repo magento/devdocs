@@ -16,7 +16,6 @@ github_link: install-gde/prereq/integrator_install.md
 
 #### Contents
 *	<a href="#int-aud">Intended audience</a>
-*	<a href="#integrator-first-over">First steps</a>
 *	[Commands](#int-comm)
 *	<a href="#instgde-overview-composer">Composer and Magento</a>
 *	<a href="#instgde-prereq-compose-install">Install Composer</a>
@@ -31,26 +30,25 @@ The audience for this topic is anyone who downloads the Magento metapackage usin
 
 {% include install/prereq.md %}
 
-<h2 id="integrator-first-over">First steps</h2>
-As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade.
-
-To do so, you start by creating a Composer project from our metapackage. The metapackage installs each component so it can be centrally managed after installation.
-
 ## Commands {#int-comm}
-If you already have everything set up, you can get the Magento CE and EE metapackages as follows:
+
+{%collapsible If you already have everything set up, enter these commands: %}
 
 ### CE
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition <installation directory name>
 
 ### EE
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <installation directory name>
+
+{% endcollapsible %}
 	
 {% include install/composer-overview.html %}
 
 {% include install/composer-clone.md %}
 
-<h2 id="integrator-first-composer-ce">Get the Magento CE metapackage</h2>
-To get started:
+## Get the Magento CE metapackage {#integrator-first-composer-ce}
+
+{% collapsible To get the Magento CE metapackage: %}
 
 1.	If you haven't done so already, <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">get your authentication keys</a>.
 1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
@@ -70,8 +68,11 @@ To get started:
 
 4.	Continue with <a href="#perms-over">Set file system ownership and permissions</a>.
 
-<h2 id="integrator-first-composer-ee">Get the Magento EE metapackage</h2>
-To get started:
+{% endcollapsible %}
+
+## Get the Magento EE metapackage {#integrator-first-composer-ee}
+
+{% collapsible To get the Magento EE metapackage: %}
 
 1.	Make sure you know your support portal user name and password.
 
@@ -96,6 +97,8 @@ To get started:
 	</div>
 
 5.	Continue with the next section.
+
+{% endcollapsible %}
 
 {% include install/file-system-perms-before.md %}
 

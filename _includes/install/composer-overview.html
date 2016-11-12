@@ -1,7 +1,14 @@
 <div markdown="1">
 
-<h2 id="instgde-overview-composer">Composer and Magento</h2>
-We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> for dependency management. Composer enables us to manage the Magento components and their dependencies.
+## Composer and Magento {#instgde-overview-composer}
+
+{% collapsible About Composer and Magento: %}
+
+We use <a href="https://getcomposer.org/" target="_blank">Composer</a> for dependency management. Composer enables us to manage the Magento components and their dependencies.
+
+As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade.
+
+To do so, you start by creating a Composer project from our metapackage. The metapackage installs each component so it can be centrally managed after installation.
 
 Composer provides you with the following advantages:
 
@@ -11,3 +18,5 @@ Composer provides you with the following advantages:
 *	Versioned dependencies
 *	<a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a>
 *	Supports the PHP Framework Interoperability standard
+
+{% endcollapsible %}
