@@ -11,14 +11,17 @@ github_link: migration/bk-migration-guide.md
 redirect_from: /guides/v1.0/migration/bk-migration-guide.html
 ---
 
-#### Contents
+## Migration overview
 {: .no_toc}
 
 * TOC
 {:toc}
 
-## Overview {#migrate-overview}
-We're pleased you're considering moving from the world's #1 eCommerce platform — Magento 1.x — to the eCommerce platform for the future, Magento 2. We're also excited to share the details about this process, which we refer to as migration.
+## Welcome {#migrate-overview}
+
+We're pleased you're considering moving from the world's #1 commerce platform --- Magento 1.x --- to the platform for the future, Magento 2. We're also excited to share the details about this process, which we refer to as migration.
+
+## Migration components
 
 Magento 2 migration involves four components: data, extensions and custom code, themes, and customizations.
 
