@@ -125,12 +125,11 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
 
 {% endcollapsible %}
 
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-{% include install/php-config.html %}
+#### Next
+[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
 
 
 #### Related topics

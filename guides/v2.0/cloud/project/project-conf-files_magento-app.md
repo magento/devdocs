@@ -383,7 +383,7 @@ For example, if you need to increase the PHP memory limit:
 
 	memory_limit = 768M
 
-For a list of recommended PHP configuration settings, see [Set PHP configuration options]({{page.baseurl}}install-gde/prereq/php-centos.html#instgde-prereq-timezone).
+For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 After pushing your file, you can check that the custom PHP configuration
 has been added to your environment by SSHing into your environment and entering:
