@@ -21,6 +21,7 @@ To code extensions, follow the Magento standards for code:
 
 - [Code demarcation standard]({{page.baseurl}}coding-standards/code-standard-demarcation.html)
 - [PHP coding standard]({{page.baseurl}}coding-standards/code-standard-php.html)
+- [PHP code sniffers]({{page.baseurl}}coding-standards/code-standard-sniffers.html)
 - [JavaScript coding standard]({{page.baseurl}}coding-standards/code-standard-javascript.html)
 - [jQuery widget coding standard]({{page.baseurl}}coding-standards/code-standard-jquery-widgets.html)
 - [DocBlock standard]({{page.baseurl}}coding-standards/docblock-standard-general.html)

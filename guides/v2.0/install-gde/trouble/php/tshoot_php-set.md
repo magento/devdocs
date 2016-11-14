@@ -91,4 +91,4 @@ Multiple templates have syntax for support abstract level on templates (use diff
 
 More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. 
 
-Edit `php.ini` and set `asp_tags = off`. For more information, see <a href="{{page.baseurl}}install-gde/prereq/php-centos.html#instgde-prereq-timezone">Set PHP configuration options</a>.
+Edit `php.ini` and set `asp_tags = off`. For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 06_sites
+subgroup: 500_sites
 title: Multiple websites or stores
 menu_title: Multiple websites or stores
 menu_order: 1

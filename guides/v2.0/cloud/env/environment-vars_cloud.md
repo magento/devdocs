@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_env
+subgroup: 12_env
 title: Magento Cloud environment variables
 menu_title: Magento Cloud environment variables
 menu_order: 75

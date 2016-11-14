@@ -186,8 +186,8 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
 {% endcollapsible %}
 
 
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-{% include install/php-config.html %}
+#### Next
+[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
 
 
 #### Related topics

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Step 3, Install the CLI
 menu_title: Step 3, Install the CLI
 menu_order: 12

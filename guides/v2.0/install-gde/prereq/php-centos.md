@@ -21,7 +21,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 *	[PHP 7 on CentOS 6 or 7](#php-centos-7)
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a>
 *	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS 6</a>
-*	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
+*	[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -225,10 +225,6 @@ There is more than one way to upgrade CentOS 6 to PHP 5.5; the following is a su
 4.	Continue with the next section.
 
 {% endcollapsible %}
-
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-{% include install/php-config.html %}
-
 
 #### Related topics
 

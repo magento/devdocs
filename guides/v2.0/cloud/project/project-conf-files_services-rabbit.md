@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Set up the rabbitmq service
 menu_title: Set up the rabbitmq service
 menu_order: 35

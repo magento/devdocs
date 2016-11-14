@@ -1280,7 +1280,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.1.0 supports:
 
 
 
-For more information, <a href="{{ page.baseurl }}install-gde/system-requirements-tech.html" target="_blank">System Requirements</a>.
+For more information, [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 ### Installation and upgrade instructions
 

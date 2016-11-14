@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Set up the elasticsearch service
 menu_title: Set up the elasticsearch service
 menu_order: 34

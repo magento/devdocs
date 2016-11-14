@@ -282,11 +282,6 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	<!-- <tr>
-		<td><p>--definition_format</p></td>
-		<td><p>Type of definitions used by the Object Manager. Possible values are <a href="https://github.com/phadej/igbinary" target="_blank"><code>igbinary</code></a> or <code>serialized</code>.</p></td>
-		<td><p>No</p></td>
-	</tr> -->
 <tr>
 <td><p>--amqp-host</p></td>
 <td><p>Enterprise Edition only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>

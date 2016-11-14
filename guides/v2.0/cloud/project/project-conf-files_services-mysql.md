@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Set up the mysql service
 menu_title: Set up the mysql service
 menu_order: 31
@@ -16,7 +16,7 @@ github_link: cloud/project/project-conf-files_services-mysql.md
 The `mysql` service provides data storage. It's based on [MariaDB](https://mariadb.com/products/subscription-plans){:target="_blank"}, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb){:target="_blank"} storage
 engine (equivalent to MySQL with InnoDB).
 
-We support MySQL version 10.0.
+We support MariaDB version 10.0, which includes reimplemented features from MySQL 5.6 and 5.7.
 
 To access the MariaDB database directly, [open an SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and use the
 following command: 
@@ -49,9 +49,9 @@ The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud
 In your `.magento/services.yaml`:
 
 {% highlight yaml %}
-mydatabase:
-    type: mysql:5.5
-    disk: 1024
+mysql:
+    type: mysql:10.0
+    disk: 2048
 {% endhighlight %}
 
 In your `.magento.app.yaml`:

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Get started with a project
 menu_title: Get started with a project
 menu_order: 2

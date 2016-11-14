@@ -53,6 +53,19 @@ You can run Magento in any of the following *modes*:
 </tbody>
 </table>
 
+<h2 id="mode-default">Default mode</h2>
+As its name implies, default mode is how the Magento software operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not as optimized for production as is production mode.
+
+To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.
+
+In default mode:
+
+*	Errors are logged to the file reports at server, and never shown to a user
+*	Static view files are cached
+*	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being dynamically generated rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
+
+For more information, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
+
 <h2 id="mode-developer">Developer mode</h2>
 You should run the Magento software in developer mode when you're extending or customizing it.
 
@@ -63,19 +76,6 @@ In developer mode:
 *	System logging in `var/report` is verbose
 *	An exception is thrown in the error handler, rather than being logged
 *	An exception is thrown when an event subscriber cannot be invoked
-
-For more information, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
-
-<h2 id="mode-default">Default mode</h2>
-As its name implies, default mode is how the Magento software operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not optimized for production.
-
-To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.
-
-In default mode:
-
-*	Errors are logged to the file reports at server, and never shown to a user
-*	Static view files are cached
-*	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being dynamically generated rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 

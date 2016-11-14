@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento EE 2.0.8 Release Notes
 menu_title: Magento EE 2.0.8 Release Notes
-menu_order: 14
+menu_order: 16
 version: 2.0
 github_link: release-notes/ReleaseNotes2.0.8EE.md
 ---
@@ -69,7 +69,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 * MySQL 5.6 
 
 For more information, see
-<a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}

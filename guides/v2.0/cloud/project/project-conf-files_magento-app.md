@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: .magento.app.yaml
 menu_title: .magento.app.yaml
 menu_order: 11
@@ -32,6 +32,10 @@ This file controls the application and the way it is built and deployed on Magen
 
 [Sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/get-help.html">Support issue</a>.</p>
+</div>
+
 The following sections discuss properties in `.magento.app.yaml`.
 
 ## Defaults {#cloud-yaml-default}
@@ -42,7 +46,7 @@ The following sections discuss properties in `.magento.app.yaml`.
 supports multiple applications in a project, so each application
 must have a *unique name* in a project. 
 
-{% collapsible Click to show/hide content %}
+{% collapsible name property: %}
 
 `name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name`
 is used in the [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) to define the HTTP upstream
@@ -59,7 +63,7 @@ For example, if the value of `name` is `app`, you must use `app:php` in the upst
 ## `type` and `build` {#cloud-yaml-platform-type}
 The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is PHP.
 
-{% collapsible Click to show/hide content %}
+{% collapsible type and build properties %}
 
 Supported versions:
 
@@ -81,7 +85,7 @@ Example:
 `access` defines the user roles who can log in using SSH to the
 environments to which they have access.
 
-{% collapsible Click to show/hide content %}
+{% collapsible access property %}
 
 Possible values are:
 
@@ -95,7 +99,7 @@ Possible values are:
 `relationships` defines how services are mapped in your
 application.
 
-{% collapsible Click to show/hide content %}
+{% collapsible relationships: %}
 
 The left-hand side is the name of the relationship as it will be exposed
 to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment
@@ -118,7 +122,7 @@ See also [`services.yaml` documentation]({{page.baseurl}}cloud/project/project-c
 ## `web` {#cloud-yaml-platform-web}
 `web` defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
 
-{% collapsible Click to show/hide content %}
+{% collapsible web: %}
 
 `web` supports the following:
 
@@ -150,6 +154,8 @@ Our default configuration allows the following:
 *   From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
 *   From the `/pub/static` and `/pub/media` paths, any file can be accessed
 
+{% endcollapsible %}
+
 ## `disk` {#cloud-yaml-platform-disk}
 `disk` defines the size of the persistent disk size of the
 application in MB.
@@ -158,13 +164,11 @@ application in MB.
   <p>The minimal recommended disk size is 256MB. If you see the error <code>UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
 </div>
 
-{% endcollapsible %}
-
 ## `mounts` {#cloud-yaml-platform-mounts}
 `mounts` is an object whose keys are paths relative to the root of
 the application. It's in the form `volume_id[/subpath]`.
 
-{% collapsible Click to show/hide content %}
+{% collapsible mounts: %}
 
 The format is:
 
@@ -180,7 +184,7 @@ The format is:
 `dependencies` enables you to specify dependencies that your
 application might need during the build process.
 
-{% collapsible Click to show/hide content %}
+{% collapsible dependencies: %}
 
 Magento Enterprise Cloud Edition supports dependencies on the following
 languages:
@@ -209,12 +213,12 @@ commands to run during the deployment process.
 They can be executed at various points in the lifecycle of the
 application.
 
-{% collapsible Click to show/hide content %}
+{% collapsible hooks: %}
 
 Possible hooks are:
 
 -   `build`: We run build hooks before your application has been
-    packaged. No other services are accessible at this time since the
+    packaged. No other services (such as the database, or redis) are accessible at this time since the
     application has not been deployed yet.
 -   `deploy`: We run deploy hooks after your application has been
     deployed and started. You can access other services at this point.
@@ -239,87 +243,6 @@ The hooks fail if the final command in them fails. To
 cause them to fail on the first failed command, add `set -e` to the beginning
 of the hook.
 
-After a Git push, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream
-of `git push`, so you can observe them in the terminal or capture them (along with error messages) with
-`git push > build.log 2>&1`. 
-
-Logs from the deployment hook are written to the `/tmp/log/deploy.log` file if you access the environment using [SSH]({{ page.baseurl }}cloud/env/environments-start.html#env-start-ssh). Logs for all deployments that have happened on this environment are appended to
-this file, so check the timestamps on log entries to verify that you're seeing the logs that correspond to the deployment that
-you are interested in.
-
-For example:
-
-{% highlight xml %}
-[2016-04-05 17:54:38.585827] Launching hook 'php ./vendor/magento/magento-cloud-configuration/magento-deploy.php
-'.
-
-[2016-04-05 17:54:38] Start deploy.
-[2016-04-05 17:54:38] Preparing environment specific data.
-[2016-04-05 17:54:38] Initializing routes.
-[2016-04-05 17:54:38] Routes: array (
-  'unsecure' =>
-  array (
-    '' => 'http://test-n5on2ejx6iozi.us.magentosite.cloud/',
-  ),
-  'secure' =>
-  array (
-    '' => 'https://test-n5on2ejx6iozi.us.magentosite.cloud/',
-  ),
-)
-[2016-04-05 17:54:38] Copying read/write directories back.
-[2016-04-05 17:54:38] Copied directory: var
-[2016-04-05 17:54:38] Copied directory: app/etc
-[2016-04-05 17:54:38] Copied directory: pub
-[2016-04-05 17:54:38] File env.php exists. Updating configuration.
-[2016-04-05 17:54:38] Updating env.php database configuration.
-[2016-04-05 17:54:38] Updating admin credentials.
-[2016-04-05 17:54:38] Updating SOLR configuration.
-[2016-04-05 17:54:38] Updating secure and unsecure URLs.
-[2016-04-05 17:54:38] Running setup upgrade.
-[2016-04-05 17:54:51] Clearing cache.
-[2016-04-05 17:54:51] Clearing generated code.
-[2016-04-05 17:54:51] Clearing application cache.
-[2016-04-05 17:54:52] Set Magento application to 'production' mode
-[2016-04-05 17:54:52] Removing existing static content.
-[2016-04-05 17:54:52] Removing existing compilation files.
-[2016-04-05 17:54:52] Changing application mode.
-
-[2016-04-05 17:59:25.713148] Launching hook 'php ./vendor/magento/magento-cloud-configuration/magento-deploy.php
-'.
-
-[2016-04-05 17:59:25] Start deploy.
-[2016-04-05 17:59:25] Preparing environment specific data.
-[2016-04-05 17:59:25] Initializing routes.
-[2016-04-05 17:59:25] Routes: array (
-  'unsecure' =>
-  array (
-    '' => 'http://test-n5on2ejx6iozi.us.magentosite.cloud/',
-  ),
-  'secure' =>
-  array (
-    '' => 'https://test-n5on2ejx6iozi.us.magentosite.cloud/',
-  ),
-)
-[2016-04-05 17:59:25] Copying read/write directories back.
-[2016-04-05 17:59:25] Copied directory: var
-[2016-04-05 17:59:25] Copied directory: app/etc
-[2016-04-05 17:59:25] Copied directory: pub
-[2016-04-05 17:59:25] File env.php exists. Updating configuration.
-[2016-04-05 17:59:25] Updating env.php database configuration.
-[2016-04-05 17:59:25] Updating admin credentials.
-[2016-04-05 17:59:25] Updating SOLR configuration.
-[2016-04-05 17:59:25] Updating secure and unsecure URLs.
-[2016-04-05 17:59:25] Running setup upgrade.
-[2016-04-05 17:59:35] Clearing cache.
-[2016-04-05 17:59:35] Clearing generated code.
-[2016-04-05 17:59:35] Clearing application cache.
-[2016-04-05 17:59:36] Set Magento application to 'production' mode
-[2016-04-05 17:59:36] Removing existing static content.
-[2016-04-05 17:59:36] Removing existing compilation files.
-[2016-04-05 17:59:36] Changing application mode.
-[2016-04-05 18:05:33] Disabling Google Analytics
-{% endhighlight %}
-
 #### [Example] Compile SASS files using grunt
 For example, to compile SASS files using grunt:
 
@@ -335,19 +258,6 @@ hooks:
     cd public/profiles/project_name/themes/custom/theme_name
     npm install
     grunt
-{% endhighlight %}
-
-#### [Example] Deployment hook
-Following is a sample deployment hook:
-
-{% highlight xml %}
-hooks:
-    # We run build hooks before your application has been packaged.
-    build: |
-        php ./vendor/magento/magento-cloud-configuration/magento-build.php
-    # We run deploy hook after your application has been deployed and started.
-    deploy: |
-        php ./vendor/magento/magento-cloud/magento-cloud-configuration/magento-deploy.php
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -373,16 +283,16 @@ A sample Magento cron job follows:
 {% endcollapsible %}
 
 ## Configure PHP options {#cloud-yaml-platform-php}
-You can choose which version of PHP you want to run in your `.magento.app.yaml` file:
+You can choose which version of PHP you want to run in your `.magento.app.yaml` file.:
 
 {% highlight yaml %}
 name: myphpapp
 type: php:5.6
 {% endhighlight %}
 
-We support PHP versions 5.5, 5.6, and 7.0.
+We support PHP versions 5.5, 5.6, and 7.0. The default is 7.0.
 
-{% collapsible Click to show/hide content %}
+{% collapsible Configure PHP options: %}
 
 See one of the following sections for more information:
 
@@ -390,22 +300,22 @@ See one of the following sections for more information:
 *	[Customize `php.ini` settings](#cloud-yaml-platform-php-set)
 
 ### PHP extensions {#cloud-yaml-platform-php-ext}
-You can define the PHP extensions you want to enable or disable:
+You can define additional PHP extensions you want to enable or disable. Example:
 
 {% highlight yaml %}
 # .magento.app.yaml
 runtime:
     extensions:
-        - http
+        - xdebug
         - redis
         - ssh2
     disabled_extensions:
         - sqlite3
 {% endhighlight %}
 
-To view the current list of PHP extensions, create an [SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) to your environment and enter the following command:
+To view the current list of PHP extensions, SSH into your environment and enter the following command:
 
-	ls /etc/php5/mods-available
+	php -m
 
 Magento requires the following PHP extensions that are enabled by default: 
 
@@ -463,20 +373,20 @@ You can also create and push a `php.ini` file that is appended to
 the configuration maintained by Magento Enterprise Cloud Edition.
 
 In your repository, the `php.ini` file should be added to the root of
-the application (normally the repository root).
+the application (the repository root).
 
 <div class="bs-callout bs-callout-warning">
-    <p>We don't limit what PHP settings you can configure. Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.</p>
+    <p>Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.</p>
 </div>
 
 For example, if you need to increase the PHP memory limit:
 
 	memory_limit = 768M
 
-For a list of recommended PHP configuration settings, see [Set PHP configuration options]({{page.baseurl}}install-gde/prereq/php-centos.html#instgde-prereq-timezone).
+For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 After pushing your file, you can check that the custom PHP configuration
-has been added to your environment [creating an SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and entering:
+has been added to your environment by SSHing into your environment and entering:
 
 	cat /etc/php5/fpm/php.ini
 
@@ -484,5 +394,5 @@ has been added to your environment [creating an SSH tunnel]({{page.baseurl}}clou
 
 #### Related topics
 *	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+*	[routes.yaml]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+*	[services.yaml]({{page.baseurl}}cloud/project/project-conf-files_services.html)

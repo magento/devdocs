@@ -7,7 +7,13 @@ menu_title: Overview of UI components
 menu_order: 1
 version: 2.1
 github_link: ui_comp_guide/bk-ui_comps.md
-redirect_from: /guides/v2.1/ui-components/ui-component.html
+redirect_from: 
+  - /guides/v2.1/ui-components/ui-component.html
+  - /guides/v2.1/ui-components/ui-component.html
+  - /guides/v2.1/ui-components/ui-definition.html
+  - /guides/v2.1/ui-components/ui-secondary.html
+  - /guides/v2.1/ui-components/ui_components_js.html
+  - /guides/v2.1/ui-components/ui-listing-grid.html
 ---
 
 ## Welcome to the new UI components Guide.

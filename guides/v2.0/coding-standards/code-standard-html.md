@@ -4,7 +4,7 @@ group: coding-standards
 subgroup: Coding standards
 title: HTML style guide
 menu_title: HTML style guide
-menu_order: 8
+menu_order: 9
 version: 2.0
 github_link: coding-standards/code-standard-html.md
 ---

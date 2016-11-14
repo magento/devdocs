@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 02_before
+subgroup: 05_before
 title: Common terms
 menu_title: Common terms
 menu_order: 2
