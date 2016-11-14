@@ -967,6 +967,8 @@
 <div>
 
   <h3 id="check-your-existing-crontab">Check your existing crontab</h3>
+  <p>This section discusses how to see if cron is currently running and to verify whether it’s set up properly.</p>
+
   <p>To verify whether or not your crontab is set up:</p>
 
   <ol>
@@ -977,7 +979,7 @@
       <pre><code>ls -al &lt;your Magento install dir&gt;/var/.setup_cronjob_status
 </code></pre>
 
-      <p>If the file exists, cron is set up.</p>
+      <p>If the file exists, cron is set up. If the file <em>does not</em> exist, either you haven’t yet installed Magento or cron isn’t running. In either case, continue with the next step.</p>
     </li>
     <li>
       <p>Get more detail about cron.</p>
