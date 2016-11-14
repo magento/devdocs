@@ -220,7 +220,7 @@ define(
             },
             // other payment method renderers if required
         );
-        /** Add view logic here if needed 
+        /** Add view logic here if needed */
         return Component.extend({});
     }
 );

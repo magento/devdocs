@@ -1,5 +1,8 @@
 <div markdown="1">
 
+## Overview of Magento authentication {#auth-overview}
+The `repo.magento.com` repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character *authentication tokens* you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.
+
 To get your authentication keys:
 
 1.	Go to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"}.
