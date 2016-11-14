@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento file system ownership and permissions</title>
+	<title>Install Composer</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/install-gde/prereq/file-sys-perms-parent.html">
+	<link rel="canonical" href="//guides/v2.1/install-gde/prereq/integrator_install_composer.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/prereq/file-sys-perms-parent.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/prereq/integrator_install.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/prereq/file-sys-perms-parent.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/prereq/integrator_install.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento file system ownership and permissions</h1>
+		<h1 class="page-heading">Install Composer</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/prereq/file-sys-perms-parent.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/prereq/integrator_install.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -464,7 +464,7 @@
 
 									
 
-										<li class="level3Parent  active " id="umask"><a href="#">Magento file system ownership and permissions</a>
+										<li class="level3Parent " id="umask"><a href="#">Magento file system ownership and permissions</a>
 
 
 									
@@ -614,7 +614,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/prereq/integrator_install_composer.html">Install Composer</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/install-gde/prereq/integrator_install_composer.html">Install Composer</a></li>
 
 									
 
@@ -878,8 +878,46 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            
+            <div class="updated">Updated: 13 November 2016 (PST)</div>
+            <div>
+
+  <h2 id="instgde-prereq-compose-install">Install Composer</h2>
+  <p>First, check  if Composer is already installed:</p>
+
+  <p>In a command prompt, enter any of the following commands:</p>
+
+  <ul>
+    <li><code>composer --help</code></li>
+    <li><code>composer list --help</code></li>
+  </ul>
+
+  <p>If command help displays, Composer is already installed.</p>
+
+  <p>If an error displays, use the following steps to install Composer.</p>
+
+  <p>To install Composer:</p>
+
+  <ol>
+    <li>
+      <p>Change to or create an empty directory on your Magento server.</p>
+    </li>
+    <li>
+      <p>Enter the following commands:</p>
+
+      <pre><code>curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+</code></pre>
+
+      <p>For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.</p>
+    </li>
+  </ol>
+
+  <h4 id="next-step">Next step</h4>
+  <ul>
+    <li><a href="/guides/v2.1/install-gde/prereq/integrator_install_ce.html">Get the Magento CE metapackage</a></li>
+    <li><a href="/guides/v2.1/install-gde/prereq/integrator_install_ee.html">Get the Magento EE metapackage</a></li>
+  </ul>
+</div>
 
 		</div>
 	</section>
