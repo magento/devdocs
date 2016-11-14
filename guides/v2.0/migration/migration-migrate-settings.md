@@ -49,7 +49,7 @@ The `Migration completed` message is displayed after the settings are transferre
 
 ## Configure custom migration rules
 
-You may ignore, rename or change values of the database entities when migrating settings. For this, specify your custom rules in the `settings.xml` file.
+You may ignore, rename or change the system configurations when migrating settings. For this, specify your custom rules in the `settings.xml` file.
 
 1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 
@@ -70,6 +70,8 @@ You may ignore, rename or change values of the database entities when migrating 
 4. Make your changes in `settings.xml`.
 
 5. Specify the new name of the settings file for mapping. To do that, change the `<settings_map_file>` tag in the `<ce or ee version>/config.xml` file.
+
+For more details, see the [Settings migration mode]({{page.baseurl}}migration/migration-tool-internal-spec.html#settings-migration-mode) section of the Tool's [specification]({{page.baseurl}}migration/migration-tool-internal-spec.html).
 
 ## Next migration step
 

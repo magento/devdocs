@@ -50,7 +50,7 @@ When you migrate data, the Data Migration Tool verifies that tables and fields a
 
 **Possible reason for error:** some database entities belong to Magento 1 extensions that do not exist in the Magento 2 database.
 
-Below are the possible ways to handle these errors. Run the Data Migration Tool again to see if the issues have been resolved.
+Below are the possible ways to handle these errors.
 
 ### Fix errors: Install corresponding Magento 2 extensions
 
@@ -71,6 +71,10 @@ To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this
 <div class="bs-callout bs-callout-warning">
     <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
 </div>
+
+### Verify fixes
+
+To know if the issues have been resolved successfully, run the Data Migration Tool again.
 
 ## Next migration step
 
