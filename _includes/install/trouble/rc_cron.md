@@ -7,6 +7,7 @@ To verify whether or not your crontab is set up:
 2.	See if the following file exists:
 
 		ls -al <your Magento install dir>/var/.setup_cronjob_status
+		
 	If the file exists, cron is set up. 
 3.	Get more detail about cron.
 
