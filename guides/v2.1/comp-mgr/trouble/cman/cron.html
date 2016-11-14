@@ -970,9 +970,19 @@
   <p>To verify whether or not your crontab is set up:</p>
 
   <ol>
-    <li>Log in to your Magento server.</li>
+    <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
     <li>
-      <p>As a user with <code>root</code> privileges, see if a crontab is already set up.</p>
+      <p>See if the following file exists:</p>
+
+      <pre><code>ls -al &lt;your Magento install dir&gt;/var/.setup_cronjob_status
+</code></pre>
+
+      <p>If the file exists, cron is set up.</p>
+    </li>
+    <li>
+      <p>Get more detail about cron.</p>
+
+      <p>As a user with <code>root</code> privileges, enter the following command:</p>
 
       <pre><code>crontab -u &lt;Magento file system owner name&gt; -l
 </code></pre>
@@ -997,15 +1007,13 @@
   <h3 id="solution-cron-running-from-incorrect-php-binary">Solution: cron running from incorrect PHP binary</h3>
   <p>If your cron job uses a PHP binary different from the web server plug-in, PHP settings errors might display. To resolve the issue, set identical PHP settings for both the PHP command line and the PHP web server plug-in.</p>
 
-  <p>For more information about PHP settings, see <a href="/guides/v2.1/install-gde/prereq/php-centos.html#instgde-prereq-timezone">PHP configuration options</a>.</p>
+  <p>For more information about PHP settings, see <a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
 
   <h3 id="solution-cron-running-with-errors">Solution: cron running with errors</h3>
   <p>Try running each command manually because the command might display helpful error messages. See <a href="/guides/v2.1/install-gde/install/post-install-config.html#post-install-cron&quot;">Set up cron jobs</a>.</p>
 
-  <p>See <a href="/guides/v2.1/install-gde/install/post-install-config.html#post-install-cron">Set up cron</a>.</p>
-
   <div class="bs-callout bs-callout-info" id="info">
-	<p>You must run cron at least <em>twice</em> for the job to execute.</p>
+	<p>You must run cron at least <em>twice</em> for the job to execute; the first time to queue jobs, the second time to execute the jobs.</p>
 </div>
 
 </div>
