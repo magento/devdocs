@@ -366,6 +366,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/build/di-xml-file.html">The di.xml file</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">The composer.json file</a></li>
 
 									
@@ -610,6 +618,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/object-manager.html">ObjectManager</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/events-and-observers.html">Events and observers</a></li>
 
 									
@@ -618,7 +634,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/factories.html">Instantiating objects with factories</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/factories.html">Factories</a></li>
 
 									
 
@@ -930,424 +946,56 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 5 October 2016 (PDT)</div>
+            <div class="updated">Updated: 14 November 2016 (PST)</div>
             <h2 class="no_toc" id="dependency-injection">Dependency injection</h2>
 
 <ul id="markdown-toc">
   <li><a href="#dependency-injection-overview" id="markdown-toc-dependency-injection-overview">Dependency injection overview</a></li>
-  <li><a href="#object-manager-overview" id="markdown-toc-object-manager-overview">Object manager overview</a></li>
-  <li><a href="#object-manager-configuration" id="markdown-toc-object-manager-configuration">Object Manager configuration</a></li>
-  <li><a href="#injection-types-used-in-magento" id="markdown-toc-injection-types-used-in-magento">Injection types used in Magento</a></li>
-  <li><a href="#injectable-and-newable-objects" id="markdown-toc-injectable-and-newable-objects">Injectable and Newable Objects</a></li>
+  <li><a href="#dependency-inversion-principle" id="markdown-toc-dependency-inversion-principle">Dependency inversion principle</a></li>
+  <li><a href="#object-manager" id="markdown-toc-object-manager">Object manager</a></li>
+  <li><a href="#constructor-signature-dependencies" id="markdown-toc-constructor-signature-dependencies">Constructor signature dependencies</a></li>
+  <li><a href="#compiling-dependencies" id="markdown-toc-compiling-dependencies">Compiling dependencies</a></li>
+  <li><a href="#injection-types-used-in-magento" id="markdown-toc-injection-types-used-in-magento">Injection types used in Magento</a>    <ul>
+      <li><a href="#constructor-injection" id="markdown-toc-constructor-injection">Constructor injection</a></li>
+      <li><a href="#method-injection" id="markdown-toc-method-injection">Method injection</a></li>
+    </ul>
+  </li>
+  <li><a href="#injectable-and-newable-objects" id="markdown-toc-injectable-and-newable-objects">Injectable and newable objects</a></li>
   <li><a href="#rules-for-using-dependency-injection" id="markdown-toc-rules-for-using-dependency-injection">Rules for using dependency injection</a></li>
 </ul>
 
-<h3 id="dependency-injection-overview">Dependency injection overview</h3>
+<h2 id="dependency-injection-overview">Dependency injection overview</h2>
 
-<p>Magento 2 uses <em>dependency injection</em> as an alternative to the Magento 1.x <code>Mage</code> class. <a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank">Dependency injection</a> is when an object’s dependencies are provided to it by its external environment instead of manually creating them internally.</p>
+<p>Magento 2 uses <em>dependency injection</em> as an alternative to the Magento 1.x <code>Mage</code> class.
+<a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank">Dependency injection</a> is the concept of the external environment injecting dependencies for an object instead of that object manually creating them internally.</p>
 
 <p>In simple terms, when object A requires object or value B to fulfill a function, then B is a dependency of A.</p>
 
-<p>A dependency creates a degree of coupling between objects in your code. A large amount of coupling limits code reuse and makes moving components to new projects difficult. Using dependency injection allows for a loose coupling in your code.</p>
+<h2 id="dependency-inversion-principle">Dependency inversion principle</h2>
 
-<h4 id="dependency-inversion-principle">Dependency inversion principle</h4>
+<p>When using dependency injection, we encourage you to follow the  <a href="http://www.oodesign.com/dependency-inversion-principle.html" target="_blank">dependency inversion principle</a>, a coding principle that stipulates you use abstractions to reduce code dependencies.
+This means that high level classes should use the interface of a low level class instead of working with it directly.</p>
 
-<p>When using dependency injection, we encourage you to follow the  <a href="http://www.oodesign.com/dependency-inversion-principle.html" target="_blank">dependency inversion principle</a>, a coding principle that stipulates you use abstractions to reduce code dependencies. This means that high level classes should use the interface of a low level class instead of working with it directly.</p>
+<p>The <a href="/guides/v2.0/extension-dev-guide/build/di-xml-file.html"><code>di.xml</code></a> file maps an interface dependency to a preferred implementation class.</p>
 
-<h3 id="object-manager-overview">Object manager overview</h3>
+<h2 id="object-manager">Object manager</h2>
 
-<p>Since dependency management is the responsibility of the environment, some kind of object manager must be present in complex systems to avoid boilerplate code. The object manager is present only when composing objects, and in larger applications (such as Magento), composing objects is performed early in the bootstrapping process and boilerplate code is moved to the configuration of the object manager.</p>
+<p>The <a href="/guides/v2.0/extension-dev-guide/object-manager.html">object manager</a> is a Magento service class that helps instantiate objects at the beginning of the bootstrapping process.</p>
 
-<p>In Magento, the object manager is represented by the appropriately named <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManagerInterface.php" target="_blank">Object Manager</a>.</p>
+<p>During class construction, the object manager injects the appropriate dependency as defined in the <a href="/guides/v2.0/extension-dev-guide/build/di-xml-file.html"><code>di.xml</code></a> file.</p>
 
-<h3 id="object-manager-configuration">Object Manager configuration</h3>
+<h2 id="constructor-signature-dependencies">Constructor signature dependencies</h2>
 
-<p>Magento’s object manager requires three types of configurations:</p>
+<p>Magento uses class constructor signatures, not <a href="/guides/v2.0/coding-standards/docblock-standard-general.html">DocBlock</a> annotations, to retrieve information about what dependencies to pass to an object’s constructor.
+If your code follows the dependency inversion principle and uses interfaces instead of specific implementations, you do not have to worry about class definitions.</p>
 
-<ul>
-  <li><a href="#class-metadata">Class metadata (definitions)</a> - These configurations describe the class dependencies for an object.</li>
-  <li><a href="#type-configuration">Type configuration</a> - These configurations describe how objects are instantiated and their lifestyle.</li>
-  <li><a href="#abstraction-implementation-mappings">Abstraction-Implementation mappings</a> - These configurations map which concrete implementations to use when interfaces are requested.</li>
-</ul>
+<h2 id="compiling-dependencies">Compiling dependencies</h2>
+<p>A <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">code compiler tool</a> collects all the dependency information in a class and stores that information in files.
+During class creation, the <code>ObjectManager</code> uses this information to create concrete objects in the application.</p>
 
-<h4 id="class-metadata">Class metadata</h4>
+<p>In other words, the compiler helps generate all non-existing dependency injection service classes (<a href="/guides/v2.0/extension-dev-guide/proxies.html">proxies</a>, <a href="/guides/v2.0/extension-dev-guide/factories">factories</a> and <a href="/guides/v2.0/extension-dev-guide/plugins.html">interceptors</a>) declared in code or configuration.</p>
 
-<p>Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object. If you write your code in a regular way using the dependency inversion principle, you do not have to worry about class definitions.</p>
-
-<h4 id="compiling-dependencies">Compiling dependencies</h4>
-<p>By default, class definitions are read using reflection, but reflection is slow in PHP. To make Magento’s ObjectManager as fast as possible, a definition compiler was introduced. One of the things the compiler does is generate all non-existing dependency injection service classes (proxies, factories and interceptors) declared in code or configuration.</p>
-
-<h4 id="type-configurations">Type configurations</h4>
-
-<p>Type configurations describe the parameters used to instantiate a class and lifestyle of class instances. Depending on it’s scope, the configuration for Magento’s object manager is stored in the following XML files:</p>
-
-<ul>
-  <li><code>app/etc/di.xml</code> - This is the global area application configuration.</li>
-  <li><code>&lt;moduleDir&gt;/etc/di.xml</code> - This is the module global area configuration.</li>
-  <li><code>&lt;moduleDir&gt;/etc/&lt;area&gt;/di.xml</code> - This is the module area-specific configuration.</li>
-</ul>
-
-<p>The <code>&lt;area&gt;</code> can be any Magento area such as <code>adminthtml</code> or <code>frontend</code>. Each scope overrides any previously existing configuration when it is loaded. Configurations for each scope are merged across modules, so there is no way to create a configuration that is only seen by a single module.</p>
-
-<p>All object manager configuration is located under the config node in the xml files:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
-    <span class="c">&lt;!-- Object Manager configuration --&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
-
-<p>These configurations are validated by the XML Schema file called <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank"><code>config.xsd</code></a>.</p>
-
-<h4 class="no_toc" id="areas-and-application-entry-points">Areas and application entry points</h4>
-
-<p>Magento reads all the <code>di.xml</code> configuration files declared in the system and merges them all together by appending all nodes.</p>
-
-<p>The overall configuration is loaded in the following stages:</p>
-
-<ol>
-  <li>Initial (<code>app/etc/di.xml</code>)</li>
-  <li>Global (<code>&lt;moduleDir&gt;/etc/di.xml</code>)</li>
-  <li>Area-specific (<code>&lt;moduleDir&gt;/etc/&lt;area&gt;/di.xml</code>)</li>
-</ol>
-
-<p>During <a href="/guides/v2.0/config-guide/bootstrap/magento-bootstrap.html">bootstrapping</a>, each application entry point loads the appropriate <code>di.xml</code> files for the <a href="/guides/v2.0/architecture/modules/mod_and_areas.html">area</a> being requested.</p>
-
-<p><strong>Examples:</strong></p>
-
-<ul>
-  <li>
-    <p>In <code>index.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Http.php#L130-L132" target="_blank"><code>\Magento\Framework\App\Http</code></a> class loads the area based on the front-name provided in url.</p>
-  </li>
-  <li>
-    <p>In <code>static.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104" target="_blank"><code>\Magento\Framework\App\StaticResource</code></a> class also loads the area based on the url in the request.</p>
-  </li>
-  <li>
-    <p>In <code>cron.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Cron.php#L68-L70" target="_blank"><code>\Magento\Framework\App\Cron</code></a> class always loads the ‘crontab’ area.</p>
-  </li>
-</ul>
-
-<h4 class="no_toc" id="configuring-a-type">Configuring a type</h4>
-
-<p>Type can be configured in your <code>di.xml</code> configuration node in the following ways:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Core\Model\Session&quot;</span> <span class="nt">/&gt;</span> // Default instance of Magento\Core\Model\Session type. Exists by default, can be omited.
-    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;moduleConfig&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Core\Model\Config&quot;</span><span class="nt">&gt;</span> // Instance with global name &quot;moduleConfig&quot; of Magento\Core\Model\Config type
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>system<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
-    <span class="nt">&lt;/virtualType&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Core\Model\App&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>moduleConfig<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
-    <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
-
-<p>The preceding example declares the following types:</p>
-
-<ul>
-  <li><code>Magento\Core\Model\Session</code>: The attribute name always specifies type configured by the node.</li>
-  <li><code>moduleConfig</code>: A virtual type that extends type <code>Magento\Core\Model\Config</code>.</li>
-  <li><code>Magento\Core\Model\App</code>: All instances of this type receive an instance of <code>moduleConfig</code> as a dependency.</li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <b>Virtual Type</b><br />
-  <p>A virtual type allows you to change the arguments of a specific injectable dependency and effectively create a new type of a particular class. This allows you to use a customized type without affecting other classes that have a dependency on the original.</p>
-</div>
-
-<h4 class="no_toc" id="arguments">Arguments</h4>
-
-<p>Class constructor arguments are configured in your <code>di.xml</code> in the argument node. All these arguments will be injected into the class during creation. The name of the argument configured in the XML file must correspond to the name of the parameter in the constructor in the configured class.</p>
-
-<p>The following example creates instances of <code>Magento\Core\Model\Session</code> with the class constructor argument <code>$sessionName</code> set to a value of <code>adminhtml</code>:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Core\Model\Session&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;sessionName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>adminhtml<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
-    <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
-
-<p><strong>Argument Types:</strong></p>
-
-<p><code>object</code></p>
-
-<dl>
-  <dt>Node Formats:</dt>
-  <dd>
-    <p><code>&lt;argument xsi:type="object"&gt;{typeName}&lt;/argument&gt;</code></p>
-  </dd>
-  <dd><code>&lt;argument xsi:type="object" shared="{shared}"&gt;{typeName}&lt;/argument&gt;</code></dd>
-</dl>
-
-<p>Creates an instance of <code>typeName</code> type and passes it in as an argument. Any class name, interface name, or virtual type name can be passed as <code>typeName</code>.</p>
-
-<p>Setting the <code>shared</code> property defines the lifestyle of a created instance. See <a href="#object-lifestyle-management">Object Lifestyle Management</a>.</p>
-
-<hr />
-
-<p><code>string</code></p>
-
-<dl>
-  <dt>Node Formats:</dt>
-  <dd>
-    <p><code>&lt;argument xsi:type="string"&gt;{strValue}&lt;/argument&gt;</code></p>
-  </dd>
-  <dd><code>&lt;argument xsi:type="string" translate="true"&gt;{strValue}&lt;/argument&gt;</code></dd>
-</dl>
-
-<p>Any value for this argument node will be interpreted as a string.</p>
-
-<hr />
-
-<p><code>boolean</code></p>
-
-<dl>
-  <dt>Node Format:</dt>
-  <dd>
-    <p><code>&lt;argument xsi:type="boolean"&gt;{boolValue}&lt;/argument&gt;</code></p>
-  </dd>
-</dl>
-
-<p>Any value for this argument node will be converted into a boolean value. See table below:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Input Type</th>
-      <th>Data</th>
-      <th>Boolean Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Boolean</td>
-      <td>true</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>Boolean</td>
-      <td>false</td>
-      <td>false</td>
-    </tr>
-    <tr>
-      <td>String</td>
-      <td>“true”*</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>String</td>
-      <td>“false”*</td>
-      <td>false</td>
-    </tr>
-    <tr>
-      <td>String</td>
-      <td>“1”</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>String</td>
-      <td>“0”</td>
-      <td>false</td>
-    </tr>
-    <tr>
-      <td>Integer</td>
-      <td>1</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>Integer</td>
-      <td>0</td>
-      <td>false</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><small>*These String literals are case-sensitive</small></p>
-
-<hr />
-
-<p><code>number</code></p>
-
-<dl>
-  <dt>Node Format:</dt>
-  <dd>
-    <p><code>&lt;argument xsi:type="number"&gt;{numericValue}&lt;/argument&gt;</code></p>
-  </dd>
-</dl>
-
-<p>Acceptable values for this type include: integers, floats, or <a href="http://us3.php.net/is_numeric" taget="_blank">numeric strings</a>.</p>
-
-<hr />
-
-<p><code>init_parameter</code></p>
-
-<dl>
-  <dt>Node Format:</dt>
-  <dd>
-    <p><code>&lt;argument xsi:type="init_parameter"&gt;{Constant::NAME}&lt;/argument&gt;</code></p>
-  </dd>
-</dl>
-
-<p>The global application initialization argument represented by <code>Constant::NAME</code> is looked up and passed as argument.</p>
-
-<hr />
-
-<p><code>const</code></p>
-
-<dl>
-  <dt>Node Format:</dt>
-  <dd>
-    <p><code>&lt;argument xsi:type="const"&gt;{Constant::NAME}&lt;/argument&gt;</code></p>
-  </dd>
-</dl>
-
-<p>The <code>Constant::NAME</code> constant value will be looked up and passed as the argument.</p>
-
-<hr />
-
-<p><code>null</code></p>
-
-<dl>
-  <dt>Node Format:</dt>
-  <dd>
-    <p><code>&lt;argument xsi:type="null"/&gt;</code></p>
-  </dd>
-</dl>
-
-<p>A null value will be passed in as an argument.</p>
-
-<hr />
-
-<p><code>array</code></p>
-
-<dl>
-  <dt>Node Format:</dt>
-  <dd>
-    <pre><code>&lt;argument xsi:type="array"&gt;
-  &lt;item name="someKey" xsi:type="&lt;type&gt;"&gt;someVal&lt;/item&gt;
-&lt;/argument&gt;
-</code></pre>
-  </dd>
-</dl>
-
-<p>An array with elements corresponding to the items will be passed as the argument. The array can contain an infinite number of items. Each array item can be of any object type including an array itself.</p>
-
-<p>When the configuration files for a given scope are merged, array arguments with the same name are merged into a new array. If a new configuration is loaded at a later time, either by a more specific scope or through code, then any array definitions in the new configuration will completely replace the previously loaded config instead of being merged.</p>
-
-<hr />
-
-<p><strong>Argument Examples:</strong></p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Example\Type&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="c">&lt;!-- Pass simple string --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;stringParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>someStringValue<span class="nt">&lt;/argument&gt;</span>
-            <span class="c">&lt;!-- Pass instance of Magento\Some\Type --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;instanceParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Some\Type<span class="nt">&lt;/argument&gt;</span>
-            <span class="c">&lt;!-- Pass true --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;boolParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/argument&gt;</span>
-            <span class="c">&lt;!-- Pass 1 --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;intParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/argument&gt;</span>
-            <span class="c">&lt;!-- Pass application init argument, named by constant value --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;globalInitParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;init_parameter&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/argument&gt;</span>
-            <span class="c">&lt;!-- Pass constant value --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;constantParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;const&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/argument&gt;</span>
-            <span class="c">&lt;!-- Pass null value --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;optionalParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;null&quot;</span><span class="nt">/&gt;</span>
-            <span class="c">&lt;!-- Pass array --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;arrayParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="c">&lt;!-- First element is value of constant --&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;firstElem&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;const&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/item&gt;</span>
-                <span class="c">&lt;!-- Second element is null --&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;secondElem&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;null&quot;</span><span class="nt">/&gt;</span>
-                <span class="c">&lt;!-- Third element is a subarray --&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;thirdElem&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="c">&lt;!-- Subarray contains scalar value --&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;scalarValue&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ScalarValue<span class="nt">&lt;/item&gt;</span>
-                    <span class="c">&lt;!-- and application init argument --&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;globalArgument &quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;init_parameter&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
-    <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
-
-<div class="bs-callout bs-callout-info" id="merging-info">
-  <b>Merging and Arguments</b><br />
-  <p>During merging, arguments with the same name are completely replaced if their type is different. If the argument type is the same, then they are overridden.</p>
-</div>
-
-<h4 id="abstraction-implementation-mappings">Abstraction-Implementation mappings</h4>
-
-<p>The abstraction-implementation mappings are used by Magento’s object manager when the constructor signature of a class requests an object by its interface. The object manager uses these mappings to determine what the default implementation is for that class for a particular scope.</p>
-
-<p>The default implementation is specified using the <code>preference</code> node:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!--  File: app/etc/di.xml --&gt;</span>
-<span class="nt">&lt;config&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Core\Model\UrlInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Core\Model\Url&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
-
-<p>Since this mapping is in <code>app/etc/di/config.xml</code>, wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the global scope, the <code>Magento\Core\Model\Url</code> implementation class will be used.</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- File: app/code/core/Magento/Backend/etc/adminhtml/di.xml --&gt;</span>
-<span class="nt">&lt;config&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Core\Model\UrlInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Backend\Model\Url&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
-
-<p>Since this mapping is in <code>app/code/core/Magento/Backend/etc/adminhtml/di.xml</code>, wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the admin area, the <code>Magento\Backend\Model\Url</code> implementation class will be used.</p>
-
-<h4 id="parameter-configuration-inheritance">Parameter configuration inheritance</h4>
-
-<p>Parameters configured for a class type are automatically configured for all of its descendant classes. Any descendant can override the parameters configured for its supertype; that is, the parent class or interface:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\View\Element\Context&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;urlBuilder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Core\Model\Url<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
-    <span class="nt">&lt;/type&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Backend\Block\Context&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;urlBuilder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Backend\Model\Url<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
-    <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
-
-<p>In the preceding example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/Block/Context.php" target="_blank"><code>Magento\Backend\Block\Context</code></a> is a descendant of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Context.php" target="_blank"><code>Magento\Framework\View\Element\Context</code></a>.</p>
-
-<p>The first entry configures all instances of <code>Magento\Framework\View\Element\Context</code> as well as its children to pass in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Url.php" target="_blank"><code>Magento\Core\Model\Url</code></a> as <code>$urlBuilder</code> in their constructors.</p>
-
-<p>The second entry overrides this and configures all instances of <code>Magento\Backend\Block\Context</code> to use <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/Model/Url.php" target="_blank"><code>Magento\Backend\Model\Url</code></a> as the <code>$urlBuilder</code> instead.</p>
-
-<h4 id="object-lifestyle-management">Object Lifestyle management</h4>
-
-<p>The main responsibility of the object manager is object creation and wiring, but it can also determine how many instances of that object can exist; e.g. its <strong>lifestyle</strong>.</p>
-
-<p>Magento’s object manager supports the following lifestyles:</p>
-
-<ul>
-  <li><strong>singleton</strong>(default) - Only one instance of this class exists and it is created at the first request. Subsequent use of the class will use that one instance. The instance is released when the container with which it is registered is disposed.</li>
-  <li><strong>transient</strong> - A new instance of the class is created every time the class is requested.</li>
-</ul>
-
-<p>The <code>shared</code> property determines the lifestyle of both <code>argument</code> and <code>type</code> configurations.</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Filesystem&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;adapter&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>Magento\Filesystem\Adapter\Local<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
-    <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
-
-<p>In this example <code>Magento\Filesystem</code> is configured as non-shared, so all clients will retrieve separate instances of <code>Magento\Filesystem</code>. Also, every instance of <code>Magento\Filesystem</code> will get separate instance of <code>$adapter</code>, because it too is non-shared.</p>
-
-<h3 id="injection-types-used-in-magento">Injection types used in Magento</h3>
+<h2 id="injection-types-used-in-magento">Injection types used in Magento</h2>
 
 <p>This section explains the two dependency injection types used in Magento using the following example:</p>
 
@@ -1372,35 +1020,42 @@
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<h4 id="construction-injection">Construction Injection</h4>
+<h3 id="constructor-injection">Constructor injection</h3>
 
-<p>Magento uses constructor injection to provide dependencies through an object’s class constructor. In the example above, <code>$menuItemFactory</code> and <code>$menu</code> are the dependencies provided to the class through its constructor.</p>
+<p>Magento uses constructor injection to provide dependencies through an object’s class constructor.
+In the preceding example, <code>$menuItemFactory</code> and <code>$menu</code> are the dependencies provided to the class through its constructor.</p>
 
-<p>Constructor dependency injection must be used for all optional and required dependencies of an object.</p>
+<p>You must use constructor dependency injection for all optional and required dependencies of an object.</p>
 
 <div class="bs-callout bs-callout-info" id="proxy-info">
-  <b>Optional dependencies</b><br />
-  <p>Optional dependencies are objects that are expensive to instantiate that may or may not be used by the dependent class. In these cases, a <a href="/guides/v2.0/extension-dev-guide/proxies.html">proxy</a> is used.</p>
+  <p><strong>Optional dependencies</strong><br />
+  Optional dependencies are the objects that your class uses for specific methods and scenarios.
+  If your class does not always use these classes and instantiating them is expensive, consider using a <a href="/guides/v2.0/extension-dev-guide/proxies.html">proxy</a>.</p>
 </div>
 
-<h4 id="method-injection">Method Injection</h4>
+<h3 id="method-injection">Method injection</h3>
 
-<p>When an object specifies a dependency in one of its methods instead of its constructors, it is called method injection. In the example, above <code>$command</code> is the dependency passed into the class through the <code>processCommand</code> method.</p>
+<p>Method injection is when an object specifies a dependency in one of its methods instead of its constructor.
+In the example, above <code>$command</code> is the dependency passed into the class through the <code>processCommand</code> method.</p>
 
-<p>Method injection is usually used when an object needs to act on a dependency.</p>
+<p>When an object needs to act on a dependency, you can use method injection.</p>
 
-<h3 id="injectable-and-newable-objects">Injectable and Newable Objects</h3>
+<h2 id="injectable-and-newable-objects">Injectable and newable objects</h2>
 
-<p><strong>Injectable:</strong> Objects that can be obtained through dependency injection. Any object that can be instantiated by the object manager, such as singletons and factories, fall into this category.</p>
+<p><strong>Injectable:</strong> Service objects that are singletons obtained through dependency injection.
+The object manager uses the configuration in the <code>di.xml</code> file to create these objects and inject them into constructors.</p>
 
-<p><strong>Newable:</strong> Objects that can only be obtained by creating a new class instance every time. Transient objects, such as those that require external input from the user or database, fall into this category. Attempts to obtain these objects using dependency injections will return an undefined object.</p>
+<p><strong>Newable/non-injectable:</strong> Objects obtained by creating a new class instance every time.
+Transient objects, such as those that require external input from the user or database, fall into this category.
+Attempts to inject these objects produce either an error that the object could not be created or an incorrect object that is incomplete.</p>
 
-<p>For example, a model object such as <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/Model/Product.php" target="_blank"><code>app/code/Magento/User/Model/User.php</code></a> cannot be used for dependency injection. You need to provide a product id or explicitly request a new, empty instance of that object, and since this cannot be done in the constructor signature, the object cannot be injected.</p>
+<p>For example, you cannot use a model object such as <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/Model/Product.php" target="_blank"><code>app/code/Magento/Catalog/Model/Product.php</code></a> for dependency injection.
+You need to provide a product id or explicitly request a new, empty instance of that object, and since you cannot specify this in the constructor signature, Magento cannot inject the object.</p>
 
-<h3 id="rules-for-using-dependency-injection">Rules for using dependency injection</h3>
+<h2 id="rules-for-using-dependency-injection">Rules for using dependency injection</h2>
 
 <ul>
-  <li>Injectable objects may request dependent objects in their constructors but only if those objects are also injectable.</li>
+  <li>Injectable objects may request other dependencies in their constructors if those objects are also injectable, but make sure you are not introducing circular dependencies.</li>
   <li>If an injectable object needs to produce newable objects, it must ask for a <a href="/guides/v2.0/extension-dev-guide/factories.html">factory</a> in its constructor since factories are injectable.</li>
   <li>If an injectable object needs to perform some actions on newable object, it must receive that object as a function method argument.</li>
   <li>You can create newable objects in services with object <a href="/guides/v2.0/extension-dev-guide/factories.html">factories</a> or you can pass them in as method parameters.</li>
@@ -1409,9 +1064,11 @@
   <li>The ObjectManager may be used in integration tests to arrange the test environment.</li>
 </ul>
 
-<h4 id="related-topics">Related topics</h4>
+<p><strong>Related topics</strong></p>
 
 <ul>
+  <li><a href="/guides/v2.0/extension-dev-guide/build/di-xml-file.html">The <code>di.xml</code> file</a></li>
+  <li><a href="/guides/v2.0/extension-dev-guide/object-manager.html">ObjectManager</a></li>
   <li><a href="/guides/v2.0/extension-dev-guide/plugins.html">Plugins</a></li>
   <li><a href="/guides/v2.0/extension-dev-guide/routing.html">Routing</a></li>
   <li><a href="/guides/v2.0/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>

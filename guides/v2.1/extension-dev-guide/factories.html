@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Instantiating objects with factories</title>
+	<title>Factories</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -165,7 +165,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Instantiating objects with factories</h1>
+		<h1 class="page-heading">Factories</h1>
 
         
 
@@ -369,6 +369,14 @@
 
 									
 
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html">The di.xml file</a></li>
+
+									
 
 								
 
@@ -653,6 +661,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/object-manager.html">ObjectManager</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/events-and-observers.html">Events and observers</a></li>
 
 									
@@ -661,7 +677,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/factories.html">Instantiating objects with factories</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/factories.html">Factories</a></li>
 
 									
 
@@ -982,53 +998,102 @@
 	<section class="content">
 		<div class="content-wrap">
             <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="instantiating-objects-with-factories">Instantiating objects with factories</h2>
+            <h2 class="no_toc" id="factories">Factories</h2>
 
-<p>The most common way to request and work with objects in Magento is using <a href="/guides/v2.1/extension-dev-guide/depend-inj.html##dep-inj-preview-cons">constructor injection</a>.  Objects obtained this way (that is, using injectable classes) follow a singleton pattern, whereby the same instance is always returned by the Object Manager whenever a class is requested.</p>
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#relationship-to-objectmanager" id="markdown-toc-relationship-to-objectmanager">Relationship to <code>ObjectManager</code></a></li>
+  <li><a href="#writing-factories" id="markdown-toc-writing-factories">Writing factories</a></li>
+  <li><a href="#using-factories" id="markdown-toc-using-factories">Using factories</a>    <ul>
+      <li><a href="#interfaces" id="markdown-toc-interfaces">Interfaces</a></li>
+    </ul>
+  </li>
+</ul>
 
-<p>Most development also requires working with objects that are individual instances of classes (for example, a model representing a database entity).  These are referred to as <a href="/guides/v2.1/extension-dev-guide/depend-inj.html#dep-inj-mod-type-inject"><em>non-injectables</em></a>. Non-injectiables are not obtained directly using constructor injection; instead, instantiate them using <em>factories</em>.</p>
+<h2 id="overview">Overview</h2>
 
-<h3 id="purpose-of-factories">Purpose of factories</h3>
-<p>Factories are special objects that have only one purpose: to create an instance of one non-injectable class or interface. Unlike other objects, factories are allowed to depend on the object manager. Factories are used to isolate the object manager from business code as the following example shows:</p>
+<p>Factories are service classes that instantiate non-injectable classes, that is, models that represent a database entity.
+They create a layer of abstraction between the <code>ObjectManager</code> and business code.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Magento\Core\Model\Config\BaseFactory</span>
+<h2 id="relationship-to-objectmanager">Relationship to <code>ObjectManager</code></h2>
+
+<p>The <code>Magento\Framework\ObjectManager</code> is the class responsible for instantiating objects in the Magento application.
+Magento prohibits depending on and directly using the <code>ObjectManager</code> in your code.</p>
+
+<p>Factories are an exception to this rule because they require the <code>ObjectManager</code> to instantiate specific models.</p>
+
+<p>The following example illustrates the relationship between a simple factory and the <code>ObjectManager</code>:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Framework\App\Config</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">BaseFactory</span>
 <span class="p">{</span>
-    <span class="k">protected</span> <span class="nv">$_objectManager</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Magento\Framework\ObjectManagerInterface</span> <span class="nv">$objectManager</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span> <span class="o">=</span> <span class="nv">$objectManager</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="nv">$sourceData</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;Magento\Core\Model\Config\Base&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;sourceData&#39;</span> <span class="o">=&gt;</span> <span class="nv">$sourceData</span><span class="p">]);</span>
-    <span class="p">}</span>
+  <span class="sd">/**</span>
+<span class="sd">   * @var \Magento\Framework\ObjectManagerInterface</span>
+<span class="sd">   */</span>
+  <span class="k">private</span> <span class="nv">$objectManager</span><span class="p">;</span>
+  
+  <span class="sd">/**</span>
+<span class="sd">   * @param \Magento\Framework\ObjectManagerInterface $objectManager</span>
+<span class="sd">   */</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">\Magento\Framework\ObjectManagerInterface</span> <span class="nv">$objectManager</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span> <span class="o">=</span> <span class="nv">$objectManager</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="sd">/**</span>
+<span class="sd">   * Create config model</span>
+<span class="sd">   * @param string|\Magento\Framework\Simplexml\Element $sourceData</span>
+<span class="sd">   * @return \Magento\Framework\App\Config\Base</span>
+<span class="sd">   */</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="nv">$sourceData</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">\Magento\Framework\App\Config\Base</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;sourceData&#39;</span> <span class="o">=&gt;</span> <span class="nv">$sourceData</span><span class="p">]);</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<h3 id="factories-are-generated-classes">Factories are generated classes</h3>
-<p>Factories are always named identically to the classes they instantiate, suffixed with <code>Factory</code>.  (For example, <code>Magento\Cms\Model\BlockFactory</code> is responsible for objects of the class <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Cms/Model/Block.php" target="_blank">Magento\Cms\Model\Block</a>.)</p>
+<h2 id="writing-factories">Writing factories</h2>
 
-<p>An important thing to understand about factories is that they are an automatically generated class type.  Factory classes do not need to be explicitly defined.  Simply reference a class name with <code>Factory</code> appended in a constructor, and Magento automatically generates the factory class if it does not already exist.  (See <a href="/guides/v2.1/extension-dev-guide/code-generation.html">Code generation</a> for more information.)</p>
+<p>Unless you require specific behavior for your factory classes, you do not need to explicitly define them because they are an <a href="/guides/v2.1/extension-dev-guide/code-generation.html">automatically generated</a> class type.
+When you reference a factory in a class constructor, Magento’s <a href="/guides/v2.1/extension-dev-guide/object-manager.html">object manager</a> generates the factory class if it does not exist.</p>
 
-<p>Factory classes can be explicitly defined, however, if customization of the typical factory behavior is desired for a specific class. The code in factories provides <code>typeSafety</code> (<code>@return</code> annotation) so IDEs understand the type of returned object for the type.</p>
+<p>Factories follow the naming convention <code>&lt;class-type&gt;Factory</code> where <code>&lt;class-type&gt;</code> is the name of the class the factory instantiates.</p>
 
-<h3 id="factories-are-injectable">Factories are injectable</h3>
-<p>Factories themselves are injectables, and therefore constructor injection is still key to the process of instantiating objects.  Receive a factory class via a constructor:</p>
+<p>For example the automatically generated <code>Magento\Cms\Model\BlockFactory</code> class is a factory that instantiates the class <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Cms/Model/Block.php"><code>Magento\Cms\Model\Block</code></a>.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">__construct</span> <span class="p">(</span>
-    <span class="nx">\Magento\Cms\Model\BlockFactory</span> <span class="nv">$blockFactory</span>
-<span class="p">)</span> <span class="p">{</span>
+<h2 id="using-factories">Using factories</h2>
+
+<p>You can get the singleton instance of a factory for a specific model using <a href="/guides/v2.1/extension-dev-guide/depend-inj.html##dep-inj-preview-cons" target="_blank">dependency injection</a>.</p>
+
+<p>The following example shows a class getting the <code>BlockFactory</code> instance through the constructor:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">__construct</span> <span class="p">(</span> <span class="nx">\Magento\Cms\Model\BlockFactory</span> <span class="nv">$blockFactory</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span> <span class="o">=</span> <span class="nv">$blockFactory</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>When an instance of the class is needed, use the factory to instantiate it:</p>
+<p>Calling the <code>create()</code> method on a factory gives you an instance of its specific class:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$block</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span></code></pre></figure>
 
-<p>The <code>_create_</code> method of factories accepts an array, which is passed as the <code>$data</code> array to the instantiated object.</p>
+<p>For classes that require parameters, the automatically generated <code>create()</code> function accepts an array of parameters that it passes on to the <code>ObjectManager</code> to create the target class.</p>
 
-<p>Just as interfaces can be specified in constructor injection to obtain the best object implementing that interface (as defined in dependency injection preferences), factories can be used for such interfaces as well.  For example, requesting an object of the class <code>Magento\Customer\Api\Data\CustomerInterfaceFactory</code> in a constructor results in a factory responsible for creating instances of the appropriate dependency injection preference implementing <code>Magento\Customer\Api\Data\CustomerInterface</code>.</p>
+<p>The example below shows the construction of a <code>Magento\Search\Model\Autocomplete\Item</code> object by passing in an array of parameters to a factory:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"> 
+<span class="nv">$resultItem</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">itemFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span>
+  <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="nv">$item</span><span class="o">-&gt;</span><span class="na">getQueryText</span><span class="p">(),</span>
+  <span class="s1">&#39;num_results&#39;</span> <span class="o">=&gt;</span> <span class="nv">$item</span><span class="o">-&gt;</span><span class="na">getNumResults</span><span class="p">(),</span>
+<span class="p">]);</span> </code></pre></figure>
+
+<h3 id="interfaces">Interfaces</h3>
+
+<p>Factories are smart enough to resolve dependencies and allow you to get the correct instance of an interface as defined in your module’s <code>di.xml</code>.</p>
+
+<p>For example, in the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory" target="_blank"><code>CatalogInventory</code></a> module, the <code>di.xml</code> file contains the following entry:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\CatalogInventory\Api\Data\StockItemInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\CatalogInventory\Model\Stock\Item&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
+
+<p>It instructs Magento to use the specific <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory/Model/Stock/Item.php" target="_blank"><code>Item</code></a> class wherever the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php" target="_blank"><code>StockItemInterface</code></a> is used.
+When a class in that module includes the factory <code>StockItemInterfaceFactory</code> as a dependency, Magento generates a factory that is capable of creating the specific <code>Item</code> objects.</p>
 
 		</div>
 	</section>

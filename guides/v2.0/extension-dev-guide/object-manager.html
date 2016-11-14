@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>About component file structure</title>
+	<title>ObjectManager</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/prepare/prepare_file-str.html">
+	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/object-manager.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/prepare/prepare_file-str.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/object-manager.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/prepare/prepare_file-str.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/object-manager.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -163,14 +163,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">About component file structure</h1>
+		<h1 class="page-heading">ObjectManager</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/prepare/prepare_file-str.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/object-manager.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -315,7 +315,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a></li>
 
 									
 
@@ -618,7 +618,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/object-manager.html">ObjectManager</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/object-manager.html">ObjectManager</a></li>
 
 									
 
@@ -946,47 +946,89 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 September 2016 (PDT)</div>
-            <h2 id="about-component-file-structure">About component file structure</h2>
+            <div class="updated">Updated: 11 November 2016 (PST)</div>
+            <h2 class="no_toc" id="objectmanager">ObjectManager</h2>
 
-<p>One of the first things you can do to get started with component development is to understand and set up the file system. Each type of component has a <em>different file structure</em>, although all components require certain files.</p>
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#responsibilities" id="markdown-toc-responsibilities">Responsibilities</a></li>
+  <li><a href="#configuration" id="markdown-toc-configuration">Configuration</a></li>
+  <li><a href="#usage-rules" id="markdown-toc-usage-rules">Usage rules</a>    <ul>
+      <li><a href="#exceptions" id="markdown-toc-exceptions">Exceptions</a></li>
+    </ul>
+  </li>
+</ul>
 
-<p>In addition, you can choose the component root directory to start development. The following sections have more information.</p>
+<h2 id="overview">Overview</h2>
 
-<div>
+<p>Large applications, such as the Magento application, use an object manager to avoid boilerplate code when composing objects during instantiation.</p>
 
-  <h3 id="root-directory-location">Root directory location</h3>
-  <p>A component’s root directory is the top-level directory for that component under which its folders and files are located. Depending on how your Magento development environment was installed, your component’s root directory can be located in two places:</p>
+<p>In the Magento framework, the implementation of the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManagerInterface.php" target="_blank"><code>ObjectManagerInterface</code></a> performs the duties of an object manager.</p>
 
-  <ul>
-    <li>
-      <p><code>&lt;Magento install directory&gt;/app</code>: This is the <em>recommended</em> location for component development. You can easily set up this type of environment by <a href="/guides/v2.0/install-gde/prereq/dev_install.html">Cloning the Magento 2 GitHub repository</a>.</p>
-
-      <ul>
-        <li>For modules, use <code>app/code</code>.</li>
-        <li>For storefront themes, use <code>app/design/frontend</code>.</li>
-        <li>For Admin themes, use <code>app/design/adminhtml</code>.</li>
-        <li>For language packages, use <code>app/i18n</code>.</li>
-      </ul>
-    </li>
-    <li>
-      <p><code>&lt;Magento install directory&gt;/vendor</code>: This location is found in the alternative setups where the <a href="/guides/v2.0/install-gde/prereq/integrator_install.html"><code>composer create-project</code></a> command was used to get a Magento 2 metapackage (which downloads the CE or EE code), or a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed Magento 2 archive</a> was extracted in order to install Magento.</p>
-
-      <p>Any third party components (and the Magento application itself) are downloaded and stored under the <code>vendor</code> directory. If you are using Git to manage project, this directory is typically added to the <code>.gitignore</code> file. Therefore, we recommend you do your customization work in <code>app/code</code>, not <code>vendor</code>.</p>
-    </li>
-  </ul>
-
-  <h3 id="required-files">Required files</h3>
-  <p>The following files are required for all components:</p>
-
-  <ul>
-    <li><code>registration.php</code>: Among other things, this file specifies the directory in which the component is installed by vendors in production environments. By default, composer automatically installs components in the <code>&lt;Magento root dir&gt;/vendor</code> directory. For more information, see <a href="/guides/v2.0/extension-dev-guide/build/component-registration.html">Component registration</a>.</li>
-    <li><code>composer.json</code>: Specifies component dependencies and other metadata. For more information, see <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</li>
-  </ul>
-
-  <h4 id="related-topic">Related topic</h4>
-  <p><a href="/guides/v2.0/extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a></p>
+<div class="bs-callout bs-callout-warning">
+  <p>Magento prohibits the direct use of the <code>ObjectManager</code> in your code because it hides the real dependencies of a class.
+See <a href="#usage-rules">usage rules</a>.</p>
 </div>
+
+<h2 id="responsibilities">Responsibilities</h2>
+
+<p>The object manager has the following responsibilities:</p>
+
+<ul>
+  <li>Object creation in factories and proxies.</li>
+  <li>Implementing the singleton pattern by returning the same shared instance of a class when requested.</li>
+  <li>Dependency management by instantiating the preferred class when a constructor requests its interface.</li>
+  <li>Automatically instantiating parameters in class constructors.</li>
+</ul>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>The <a href="/guides/v2.0/extension-dev-guide/build/di-xml-file.html"><code>di.xml</code></a> file configures the object manager and tells it how to handle <a href="/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection</a>.</p>
+
+<p>This file specifies the preferred implementation class the object manager generates for the interface declared in a class constructor.</p>
+
+<p>The file also specifies whether the object manager should create an object for every request or treat the object as a singleton.</p>
+
+<h2 id="usage-rules">Usage rules</h2>
+
+<p>The Magento framework uses the <code>ObjectManager</code> to generate and inject the classes declared in your constructor.
+Classes should not ask for the <code>ObjectManager</code> itself as a constructor dependency.</p>
+
+<p>You do not call the object manager directly because the framework handles this automatically.
+Direct use of the <code>create</code> function prevents type validation and type hinting that a <a href="/guides/v2.0/extension-dev-guide/factories.html">factory</a> class provides.</p>
+
+<p>Object creation is also a separate responsibility that should be moved to a dedicated class such as a <a href="/guides/v2.0/extension-dev-guide/factories.html">factory</a> or <a href="/guides/v2.0/extension-dev-guide/proxies.html}}">proxy</a>.
+In most cases, the framework generates these classes automatically during code compilation.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>You may notice in the Magento 2 codebase that some core classes still call the <code>ObjectManager</code> directly.</p>
+
+  <p>This code needs porting or exist for backward compatibility purposes.</p>
+
+  <p>They are not tacit endorsements of using the <code>ObjectManager</code> directly.</p>
+</div>
+
+<h3 id="exceptions">Exceptions</h3>
+
+<p>You can depend on and use the <code>ObjectManager</code> class in the following scenarios:</p>
+
+<ul>
+  <li>You can use the object manager in static magic methods like <code>__wakeup()</code>, <code>__sleep()</code>, etc.
+    <ul>
+      <li>An example can be found in the <code>__wakeup()</code> method in the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Eav/Model/Entity/Attribute/AbstractAttribute.php" target="_blank"><code>Magento/Eav/Model/Entity/Attribute/AbstractAttribute</code></a> class.</li>
+    </ul>
+  </li>
+  <li>You can use the <code>ObjectManager</code> to maintain backward compatibility for a constructor.</li>
+  <li>In a global scope, like in fixtures of integration tests, you can use the object manager.</li>
+  <li>The object manager can be a dependency in classes used for the creation of objects, e.g. factories or proxies.</li>
+</ul>
+
+<p><strong>Related topics</strong></p>
+
+<ul>
+  <li><a href="/guides/v2.0/extension-dev-guide/build/di-xml-file.html">The <code>di.xml</code> file</a></li>
+  <li><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+</ul>
 
 		</div>
 	</section>

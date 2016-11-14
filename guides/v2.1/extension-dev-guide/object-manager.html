@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Name your component</title>
+	<title>ObjectManager</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/build/create_component.html">
+	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/object-manager.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/build/create_component.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/object-manager.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/build/create_component.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/object-manager.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Name your component</h1>
+		<h1 class="page-heading">ObjectManager</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/build/create_component.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/object-manager.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -428,7 +428,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/build/create_component.html">Name your component</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/create_component.html">Name your component</a></li>
 
 									
 
@@ -659,7 +659,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/object-manager.html">ObjectManager</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/object-manager.html">ObjectManager</a></li>
 
 									
 
@@ -995,114 +995,89 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="name-your-component">Name your component</h2>
+            <div class="updated">Updated: 17 October 2016 (PDT)</div>
+            <h2 class="no_toc" id="objectmanager">ObjectManager</h2>
 
-<h4 id="contents">Contents</h4>
-<ul>
-  <li><a href="#overview-naming">Overview of naming a component</a></li>
-  <li><a href="#prereq">Prerequisites</a></li>
-  <li><a href="#module-xml">Add the component’s <code>module.xml</code> file</a></li>
-  <li><a href="#add-composer-json">Add the components <code>composer.json</code> file</a></li>
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#responsibilities" id="markdown-toc-responsibilities">Responsibilities</a></li>
+  <li><a href="#configuration" id="markdown-toc-configuration">Configuration</a></li>
+  <li><a href="#usage-rules" id="markdown-toc-usage-rules">Usage rules</a>    <ul>
+      <li><a href="#exceptions" id="markdown-toc-exceptions">Exceptions</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="overview-naming">Overview of naming a component</h2>
-<p>You give a name to your component in its <code>composer.json</code> and <code>module.xml</code> files. These files also contain other required configuration parameters, such as the module’s schema version.</p>
+<h2 id="overview">Overview</h2>
 
-<h2 id="prereq">Prerequisites</h2>
-<p>Before you continue, make sure you have completed all of the following tasks:</p>
+<p>Large applications, such as the Magento application, use an object manager to avoid boilerplate code when composing objects during instantiation.</p>
 
-<ul>
-  <li>Created a <a href="/guides/v2.1/extension-dev-guide/build/module-file-structure.html">file structure</a></li>
-  <li>Created the the <a href="/guides/v2.1/extension-dev-guide/build/required-configuration-files.html">configuration files</a> you’ll need</li>
-  <li><a href="/guides/v2.1/extension-dev-guide/build/component-registration.html">Registered</a> your component</li>
-</ul>
+<p>In the Magento framework, the implementation of the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManagerInterface.php" target="_blank"><code>ObjectManagerInterface</code></a> performs the duties of an object manager.</p>
 
-<h2 id="module-xml">Add the component’s <code>module.xml</code> file</h2>
-<p>Declare the component itself by adding a module.xml file in the <code>/etc</code> folder of your component.</p>
-
-<p>A component declares itself (that is, defines its name and existence) in the <code>module.xml</code> file, located in the Magento install directory at <code>&lt;ComponentName&gt;/etc/</code>.</p>
-
-<p>The smallest working module.xml file would look something like this:</p>
-
-<pre><code>&lt;?xml version="1.0"?&gt;
-&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd"&gt;
-		&lt;module name="Vendor_ComponentName" setup_version="2.0.0"/&gt;
-&lt;/config&gt;
-</code></pre>
-
-<p>…where <code>name</code>  is the name of your component, and <code>setup_version</code> is your module’s database schema version. Both of these attributes are required.</p>
-
-<p>Do not use “Ui” for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
-
-<h2 id="add-composer-json">Add the components <code>composer.json</code> file</h2>
-<p><code>composer.json</code> provides a component name and also specifies component dependencies.</p>
-
-<p>In addition, the <a href="/guides/v2.1/comp-mgr/compman-start.html">Component Manager</a> looks for a <code>composer.json</code> in a component’s root directory and can perform actions on the component and its dependencies.</p>
-
-<p>In particular:</p>
-
-<ul>
-  <li>If a component has <code>composer.json</code> <em>and</em> the component was installed using Composer (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.</li>
-  <li>If the component has <code>composer.json</code> but was <em>not</em> installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.</li>
-  <li>We strongly recommend you include <code>composer.json</code> in your component’s root directory whether or not you intend to distribute it to other Magento merchants.</li>
-</ul>
-
-<p>A sample follows:</p>
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json">	<span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;your-name/module-Acme&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Test component for Magento 2&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;~5.5.0|~5.6.0&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/module-store&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/module-catalog&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/module-catalog-inventory&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/module-ui&quot;</span><span class="p">:</span> <span class="s2">&quot;self.version&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;suggest&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;magento/module-webapi&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;OSL-3.0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;AFL-3.0&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;autoload&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;registration.php&quot;</span> <span class="p">],</span>
-        <span class="nt">&quot;psr-4&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;Magento\\CatalogImportExport\\&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="p">}</span></code></pre></figure>
-
-<p>where:</p>
-
-<ul>
-  <li><code>name</code>—is the name of your component.</li>
-  <li><code>description</code>—is a concise explanation of your component’s purpose.</li>
-  <li><code>require</code>—lists any components your component depends on.</li>
-  <li><code>suggest</code>—lists soft dependencies. The component can operate without them, but if the components are active, this component might impact their functionality. <code>Suggest</code> does not affect component load order.</li>
-  <li><code>type</code>—determines what the Magento component type. Choose from <em>magento2-theme</em>, <em>magento2-language</em>, or <em>magento2-module</em>.</li>
-  <li><code>version</code>—lists the version of the component.</li>
-  <li><code>license</code>—lists applicable licenses that apply to your component.</li>
-  <li><code>autoload</code>—instructs composer to load the specified files.</li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento does not currently support the <a href="https://getcomposer.org/doc/05-repositories.md#path" target="_blank"><code>path</code></a> repository.</p>
+<div class="bs-callout bs-callout-warning">
+  <p>Magento prohibits the direct use of the <code>ObjectManager</code> in your code because it hides the real dependencies of a class.
+See <a href="#usage-rules">usage rules</a>.</p>
 </div>
 
-<!-- <div class="bs-callout bs-callout-info" id="info">
-  <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
- </div> -->
+<h2 id="responsibilities">Responsibilities</h2>
 
-<h4 id="next">Next</h4>
+<p>The object manager has the following responsibilities:</p>
 
-<p><a href="/guides/v2.1/extension-dev-guide/build/module-load-order.html">Component load order</a></p>
+<ul>
+  <li>Object creation in factories and proxies.</li>
+  <li>Implementing the singleton pattern by returning the same shared instance of a class when requested.</li>
+  <li>Dependency management by instantiating the preferred class when a constructor requests its interface.</li>
+  <li>Automatically instantiating parameters in class constructors.</li>
+</ul>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>The <a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html"><code>di.xml</code></a> file configures the object manager and tells it how to handle <a href="/guides/v2.1/extension-dev-guide/depend-inj.html">dependency injection</a>.</p>
+
+<p>This file specifies the preferred implementation class the object manager generates for the interface declared in a class constructor.</p>
+
+<p>The file also specifies whether the object manager should create an object for every request or treat the object as a singleton.</p>
+
+<h2 id="usage-rules">Usage rules</h2>
+
+<p>The Magento framework uses the <code>ObjectManager</code> to generate and inject the classes declared in your constructor.
+Classes should not ask for the <code>ObjectManager</code> itself as a constructor dependency.</p>
+
+<p>You do not call the object manager directly because the framework handles this automatically.
+Direct use of the <code>create</code> function prevents type validation and type hinting that a <a href="/guides/v2.1/extension-dev-guide/factories.html">factory</a> class provides.</p>
+
+<p>Object creation is also a separate responsibility that should be moved to a dedicated class such as a <a href="/guides/v2.1/extension-dev-guide/factories.html">factory</a> or <a href="/guides/v2.1/extension-dev-guide/proxies.html}}">proxy</a>.
+In most cases, the framework generates these classes automatically during code compilation.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>You may notice in the Magento 2 codebase that some core classes still call the <code>ObjectManager</code> directly.</p>
+
+  <p>This code needs porting or exist for backward compatibility purposes.</p>
+
+  <p>They are not tacit endorsements of using the <code>ObjectManager</code> directly.</p>
+</div>
+
+<h3 id="exceptions">Exceptions</h3>
+
+<p>You can depend on and use the <code>ObjectManager</code> class in the following scenarios:</p>
+
+<ul>
+  <li>You can use the object manager in static magic methods like <code>__wakeup()</code>, <code>__sleep()</code>, etc.
+    <ul>
+      <li>An example can be found in the <code>__wakeup()</code> method in the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Eav/Model/Entity/Attribute/AbstractAttribute.php" target="_blank"><code>Magento/Eav/Model/Entity/Attribute/AbstractAttribute</code></a> class.</li>
+    </ul>
+  </li>
+  <li>You can use the <code>ObjectManager</code> to maintain backward compatibility for a constructor.</li>
+  <li>In a global scope, like in fixtures of integration tests, you can use the object manager.</li>
+  <li>The object manager can be a dependency in classes used for the creation of objects, e.g. factories or proxies.</li>
+</ul>
+
+<p><strong>Related topics</strong></p>
+
+<ul>
+  <li><a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html">The <code>di.xml</code> file</a></li>
+  <li><a href="/guides/v2.1/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+</ul>
 
 		</div>
 	</section>
