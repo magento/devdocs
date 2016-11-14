@@ -68,6 +68,10 @@ To locate the PHP command-line configuration, enter
 
 Use the value of Loaded Configuration file.
 
+<div class="bs-callout bs-callout-warning">
+    <p>If you have only one <code>php.ini</code> file, make the changes in that file. If you have two <code>php.ini</code> files, make the changes in <em>both</em> files. Failure to do so might cause unpredictable performance.</p>
+</div> 
+
 {% endcollapsible %}
 
 {% collapsible To find OPcache configuration settings: %}
