@@ -132,7 +132,7 @@ There is more than one way to install PHP 7.0.2 or later; the following is a sug
 	<span class="glyphicon-class">
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html</a>.
 
 {% endcollapsible %}
 
@@ -188,7 +188,7 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
 	<span class="glyphicon-class">
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html</a>.
 
 {% endcollapsible %}
 

@@ -18,7 +18,7 @@ github_link: install-gde/prereq/php-ubuntu.md
 *	<a href="#ubuntu-verify-php">Verify PHP is installed</a>
 *	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
 *	<a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</a>
-*	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
+*	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html">Required PHP settings</a>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -95,7 +95,7 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html">Required PHP settings</a>.
 
 {% endcollapsible %}
 
