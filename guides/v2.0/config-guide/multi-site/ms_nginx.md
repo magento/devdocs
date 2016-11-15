@@ -2,9 +2,9 @@
 layout: default
 group: config-guide
 subgroup: 500_sites
-title: Set up multiple websites with nginx (tutorial)
-menu_title: Set up multiple websites with nginx (tutorial)
-menu_order: 2
+title: Set up multiple websites or stores with nginx (tutorial)
+menu_title: Set up multiple websites or stores with nginx (tutorial)
+menu_order: 3
 menu_node: 
 version: 2.0
 github_link: config-guide/multi-site/ms_nginx.md
@@ -13,6 +13,11 @@ github_link: config-guide/multi-site/ms_nginx.md
 ## Set up multiple websites with nginx {#ms-nginx-over}
 This tutorial shows you step-by-step how to set up multiple stores with Magento using nginx. We assume the following:
 
+*	You're developing on a local machine or a development machine
+
+	Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
+
+	Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html)
 *	You use one virtual host per store; the virtual host configuration files are located in `/etc/nginx/sites-available`
 *	You use `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial
 *	The Magento software is installed in `/var/www/html/magento2`
@@ -23,7 +28,7 @@ This tutorial shows you step-by-step how to set up multiple stores with Magento 
 
 Setting up multiple stores consists of the following tasks:
 
-1.	[Define websites, stores, and store views](#ms-nginx-website) in the Magento Admin.
+1.	[Define websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the Magento Admin.
 2.	Create one [nginx virtual host](#ms-nginx-vhost) per Magento website or store view.
 3.	Pass the values of the [Magento variables](#ms-nginx-vars) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample`.
 
@@ -126,3 +131,10 @@ Unless you have DNS set up for your stores' URLs, you must add a static route to
 3.	Go to one of the preceding URLs in your browser.
 
 You're done!
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <ul><li>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</li>
+  	<li>Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see <a href="{{ page.baseurl }}cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li></span>
+</div>
+

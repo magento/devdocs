@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 10_project
-title: Set up multiple stores
-menu_title: Set up multiple stores
+title: Set up multiple Cloud websites or stores
+menu_title: Set up multiple Cloud websites or stores
 menu_order: 500
 menu_node: 
 version: 2.0

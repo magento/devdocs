@@ -15,6 +15,7 @@ redirect_from:
 
 #### Contents
 *	[Introduction to multiple Magento stores and websites](#ms-over)
+*	[Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}config-guide/multi-site/ms_websites.html)
 *	[Set up multiple websites with nginx]({{page.baseurl}}config-guide/multi-site/ms_nginx.html)
 *	[Set up multiple websites with Apache]({{page.baseurl}}config-guide/multi-site/ms_apache.html)
 
