@@ -30,6 +30,7 @@ html,body {
 
 
 .content {
+  position: relative;
   float: right;
   width: 77%;
 }
@@ -66,16 +67,11 @@ html,body {
 */
 
 .full-width-content {
-    width: 90%;
-
-  .content-wrap {
-    float: left;
-  }
+  width: 90%;
 }
 
 .content-wrap {
 
-  float: left;
   padding: 0 40px 0 40px;
   margin-right: 200px;
 
@@ -105,7 +101,9 @@ html,body {
 
   font-size: 12px;
 
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 200px;
   margin-left: -200px;
 
@@ -135,7 +133,6 @@ html,body {
 
   .content-wrap {
     margin-right: 0;
-    float: none;
   }
 
   .page-info {
