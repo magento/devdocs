@@ -20,11 +20,9 @@
 @import 'partials/typography';
 @import 'partials/version-switcher';
 @import 'partials/tabs';
-
-// TODO: Remove this:
-@import 'overrides';
-
+@import 'partials/breadcrumbs';
+@import 'partials/toc';
 
 .hide {
-   display: none;
+  display: none;
 }

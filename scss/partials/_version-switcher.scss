@@ -1,11 +1,8 @@
 .version-switcher  {
-    position: absolute;
-    margin-top: 18px;
-    top: 0;
-    right: 66px;
-	@media (max-width: 1130px)	{
-		right: 15px;
-	}
+  float: right;
+  margin-top: 14px;
+  margin-right: 10px;
+
 
 	@media (max-width:767px) {
 		position: relative;

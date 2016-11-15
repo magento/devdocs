@@ -14,45 +14,39 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}css/print.css" media="print"/>
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script>
-        var baseUrl = "{{site.baseurl}}";
-    </script>
+  <script>
+    var baseUrl = "{{ site.baseurl }}";
+  </script>
 
 </head>
 <body>
 
 <header class="site-header">
 
-	<nav role="navigation">
+	<nav id="global-nav">
 
-		<div class="menu-btn">
-			<a class="menu-trigger menu-icon" href="#"></a>
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="{{ site.baseurl }}"><img src="{{ site.baseurl }}i/m-logo.svg" alt=""><img src="{{ site.baseurl }}i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="{{ site.baseurl }}i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			{% include navigation.html %}
+
+			<div class="search-btn"><a class="search-trigger search-icon" href="{{site.baseurl}}search.html"></a></div>
+
+			{% include version-switcher.html %}
+
 		</div>
 
-		<div id="global-nav">
-			<div class="main-site-name">
-				<a class="logo pull-left" href="{{ site.baseurl }}"> </a>
-				<div class="sub-site-name">
-					<a href="{{ site.baseurl }}">Developer Documentation ({{page.guide_version}})</a>
-				</div>
-			</div>
-            {% include version-switcher.html %}
-		</div><!-- #global-nav -->
-	</nav>
-
-	<div class="search-btn">
-        <a class="search-trigger search-icon" href="{{site.baseurl}}search.html"></a>
-	</div>
+	</nav><!-- #global-nav -->
 
 </header>
+<div class="nav-main-fader"></div>
 
-{% include navigation.html %}
 
 <div id="gl-wrapper">
 
-	<!-- /.main-container -->
-	<div id="gl-container" class="main-container">
+	<!-- .main-container -->
+	<div class="main-container">
 		<a id="main-content"></a>
-		<div class="pane-content">
-			<div class="node node-panel">

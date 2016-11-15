@@ -2,7 +2,7 @@ $(document).ready(function(){
 	//Make sub navigations wide when there is not enough space vertically
 	$("#subnav>ul.menu>li").hover(
 		function(){
-			if(($(this).children("ul").outerHeight()+50) > $("#footer-wrap").offset().top - $("#subnav-wrap").offset().top)
+			if(($(this).children("ul").outerHeight()+50) > $("#footer").offset().top - $("#subnav-wrap").offset().top)
 				$(this).children("ul").addClass("wide");
 			else
 				$(this).children("ul").removeClass("wide");
@@ -45,7 +45,7 @@ $(document).ready(function(){
     });
 
     // Prepend link anchor to content headers
-    $(".content-wrap :header").each(function(){
+    $(".content-wrap :header:not(h1)").each(function(){
         var link = $("<a>",{
             href: "#"+$(this).attr("id"),
             class: "anchor"
@@ -54,7 +54,7 @@ $(document).ready(function(){
             src: baseUrl+"i/icons/ico-link-grey.png",
             width: 25
         });
-        
+
         link.prepend(img);
         $(this).prepend(link);
 
@@ -82,8 +82,8 @@ $(window).load(function(){
 
 //Allows for sticky menu
 $(document).scroll(function(){
-	if($(document).scrollTop()>66)
-		$("#subnav-wrap").addClass("sticky-nav-main");
+	if( $(document).scrollTop() > 10 )
+		$("#global-nav").addClass("sticky-nav-main");
 	else
-		$("#subnav-wrap").removeClass("sticky-nav-main");
+		$("#global-nav").removeClass("sticky-nav-main");
 });

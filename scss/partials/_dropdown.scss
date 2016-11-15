@@ -1,30 +1,7 @@
-$link-color: blue;
-$dropdown-bg:                    #fff !default;
-$dropdown-border-color:          rgba(0,0,0,.1) !default;
-$dropdown-border-width:          1px !default;
-$dropdown-divider-bg:            #e5e5e5 !default;
 
-$dropdown-link-color:            #333 !default;
-$dropdown-link-hover-color:      darken(#333, 5%) !default;
-$dropdown-link-hover-bg:         #DFF6FF;
-
-$dropdown-link-active-color:     $link-color !default;
-$dropdown-link-active-bg:        $link-color !default;
-
-$dropdown-link-disabled-color:   #ccc !default;
-$dropdown-header-color:          #ccc !default;
-
-$caret-width:            .3em !default;
-$caret-width-lg:         $caret-width !default;
-$zindex-dropdown: 9999;
-$font-size-base: 14px;
-$body-color: #333;
-$border-radius: 0;
-$line-height: 1.3;
-$font-size-sm: 12px;
 
 .dropdown {
-   position: relative;
+  position: relative;
 }
 
 .dropdown .dropdown-toggle {
@@ -65,7 +42,7 @@ $font-size-sm: 12px;
   padding: 5px 0;
   margin: 1px 0 0 0; // override default ul
   font-size: $font-size-base;
-  color: $body-color;
+  color: $body-font-color;
   text-align: left;
   list-style: none;
   background-color: $dropdown-bg;
@@ -75,7 +52,7 @@ $font-size-sm: 12px;
   box-shadow: 0 3px 6px rgba(0,0,0,.1);
 
   li {
-     margin: 0;
+    margin: 0;
   }
 }
 

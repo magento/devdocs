@@ -1,7 +1,7 @@
 ---
 layout: search
 group:
-subgroup: 
+subgroup:
 title: Search Results
 menu_title: Search
 ---

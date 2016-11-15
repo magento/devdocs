@@ -1,12 +1,59 @@
+.search-form {
+
+  position: relative;
+  max-width: 590px;
+  margin: 0 auto;
+
+  .search-icon {
+    width: 50px;
+    height: 47px;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('/i/icons/search.svg');
+    z-index: 3;
+  }
+
+  .search-field {
+
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 12px 20px 13px 50px;
+    margin: 0;
+  }
+
+  .search-submit {
+    height: 47px;
+    font-size: 16px;
+  }
+
+  @media (max-width:767px) {
+    .input-group-btn {
+      display: none;
+    }
+
+  }
+
+}
+
+
+
 #search-results {
-    min-height: 400px;
-    .loading {
-        background: url(../i/loading.gif) no-repeat center center;
-        height: 40px;
-    }
-    table{
-        border: none;
-    }
+  min-height: 400px;
+
+  .loading {
+    background: url(../i/loading.gif) no-repeat center center;
+    height: 40px;
+  }
+
+  table{
+    border: none;
+  }
 }
 
 .search .content {
@@ -385,19 +432,8 @@ body.search-active {
 /*Search styling */
 
 
-.search-icon {
-   background-size: contain;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-image: url('data:image/svg+xml;base64,PHN2ZyBjbGFzcz0ic2VhcmNoSW1hZ2UiIHdpZHRoPSIyMHB4IiBoZWlnaHQ9IjQycHgiIHZpZXdCb3g9IjAgMCA0NDIgNDQwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPg0KICAgICAgICA8ZyBpZD0ic2VhcmNoIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNC4wMDAwMDAsIDI0LjAwMDAwMCkiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSI0NyI+DQogICAgICAgICAgICA8Y2lyY2xlIGlkPSJsZW5zIiBjeD0iMTQ1IiBjeT0iMTQ1IiByPSIxNDUiPjwvY2lyY2xlPg0KICAgICAgICAgICAgPHBhdGggZD0iTTI2My4zNTEzMzEsMjYxLjM1MTMzMSBMMzcxLjUwNDYyMywzNjkuNTA0NjIzIiBpZD0iaGFuZGxlIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiA+PC9wYXRoPg0KICAgICAgICA8L2c+DQogICAgPC9nPg0KPC9zdmc+');
-}
 
-.search-icon {
-   position: relative;
-   width: 40px;
-   height: 45px;
-   top: -2px;
-}
+
 
 #subnav .search {
    background-color: rgb(49, 48, 43);

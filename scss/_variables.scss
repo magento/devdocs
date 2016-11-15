@@ -1,7 +1,56 @@
 $body-font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
 
 
+$header-height: 56px;
+
 
 // Colors
-
+$brand-color: #F26322;
 $body-font-color: #333;
+
+$light-gray-color: #F4F6F5;
+$beige-color: #CAC3B4;
+
+
+$link-color: #1572D0;
+$link-hover-color: #cc0000;
+$link-active-color: #EC632E;
+$link-visited-color: #609;
+
+
+// buttons
+$btn-color: $body-font-color;
+$btn-bg-color: #ccc;
+
+$btn-primary-color: #fff;
+$btn-primary-bg-color: $brand-color;
+
+
+
+
+
+
+// Dropdown
+
+$dropdown-bg: #fff;
+$dropdown-border-color: #ccc;
+$dropdown-border-width: 1px;
+$dropdown-divider-bg: #e5e5e5;
+
+$dropdown-link-color: $body-font-color;
+$dropdown-link-hover-color: darken($body-font-color, 5%);
+$dropdown-link-hover-bg: #DFF6FF;
+
+$dropdown-link-active-color: $link-color;
+$dropdown-link-active-bg: $link-color;
+
+$dropdown-link-disabled-color: #ccc;
+$dropdown-header-color: #ccc;
+
+$caret-width: .3em;
+$caret-width-lg: $caret-width;
+$zindex-dropdown: 9999;
+$font-size-base: 14px;
+$border-radius: 0;
+$line-height: 1.3;
+$font-size-sm: 12px;

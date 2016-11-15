@@ -1,32 +1,121 @@
 
+.main-site-name {
+  float: left;
+}
+
+#global-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-height;
+  background: $light-gray-color;
+  transition: box-shadow .1s;
+  box-shadow: 0 1px 2px transparent;
+  transform: translateZ(0); // to force nav rendering to GPU
+  z-index: 9999;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  &.sticky-nav-main {
+    position: fixed;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    transition: box-shadow 1s;
+  }
+
+}
+
+
 .site-header {
-   background: #ef672f;
-   height: 66px;
-   position: relative;
-   z-index: 50;
 
-   @media (max-width:767px) {
-      overflow: hidden;
-   }
-}
+  padding-top: $header-height;
 
-.site-header .logo {
-   width: 155px;
-   height: 66px;
-   float: left;
-   background: #c14800 url(../i/magento_logo.svg) center center no-repeat;
-}
+  .logo {
+    width: auto;
+    height: 40px;
+    float: left;
+    margin-top: 8px;
+    margin-right: 20px;
+  }
 
-.site-header .sub-site-name {
-   float: left;
-   padding: 16px 0 11px 11px;
-}
+  .devdocs-logo {
+    width: 126px;
+  }
 
-.site-header .sub-site-name a {
-   color: #fff;
-   background: none;
-   text-decoration: none;
-   text-transform: none;
-   font: normal 24px 'Open Sans', sans-serif;
-   font-weight: 200;
+  .menu-btn {
+    width: $header-height;
+    height: $header-height;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    display: none;
+    border-left: 1px solid $beige-color;
+  }
+
+  .menu-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../i/icons/menu.svg) center center no-repeat;
+    background-size: 50%;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+      background-color: #fff;
+      transition: background-color 0.2s linear
+    }
+  }
+
+  .search-btn {
+    width: $header-height;
+    height: $header-height;
+    float: right;
+
+    .search-icon {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('/i/icons/search.svg');
+    }
+  }
+
+  @media (max-width:1024px) {
+    .magento-logo {
+      display: none;
+    }
+  }
+
+  @media (max-width:1023px) {
+
+
+    #global-nav {
+      border-bottom: 1px solid $beige-color;
+    }
+
+    .menu-btn {
+      display: block;
+    }
+
+    .logo {
+      width: 100%;
+    }
+
+    .search-btn {
+      margin: 0;
+      position: absolute;
+      top: 0;
+      right: $header-height;
+    }
+
+
+
+
+  }
+
 }
