@@ -48,7 +48,7 @@ This section discusses how to load websites on the storefront. You can use eithe
 
 {% collapsible To create virtual hosts: %}
 
-1.	Open a text editor and add the following contents to the file:
+1.	Open a text editor and add the following contents to a file named `/etc/nginx/sites-available/french.example.com.conf`:
 
 		map $http_host $MAGE_RUN_CODE {
            french.example.com french;
@@ -61,8 +61,7 @@ This section discusses how to load websites on the storefront. You can use eithe
            set $MAGE_MODE developer;
            include /var/www/html/magento2/nginx.conf;
 		}
-2.	Save the file as `/etc/nginx/sites-available/french.example.com`
-3.	Create another file in the same location with the following contents:
+3.	Create another file named `german.example.com.conf` in the same directory with the following contents:
 
 		map $http_host $MAGE_RUN_CODE {
            german.example.com german;
@@ -75,7 +74,7 @@ This section discusses how to load websites on the storefront. You can use eithe
            set $MAGE_MODE developer;
            include /var/www/html/magento2/nginx.conf;
 		}
-4.	Save the file as `/etc/nginx/sites-available/german.example.com`.
+4.	Save your changes to the files and exit the text editor.
 5.	Verify the server configuration:
 
 		nginx -t
@@ -103,7 +102,7 @@ For more detail about the map directive, see [nginx documentation on the map dir
 1.	Open `/var/www/html/magento2/nginx.conf` in a text editor.
 2.	Locate the following block:
 
-		location ~ (index|get|static|report|404|503)\.php$ { ... }
+		location ~ (index|get|static|report|404|503)\.php$ 
 3.	In that block, add the following lines:
 
 		fastcgi_param  MAGE_RUN_TYPE website;
