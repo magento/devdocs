@@ -44,7 +44,7 @@ During [bootstrapping]({{page.baseurl}}config-guide/bootstrap/magento-bootstrap.
 
 ## Type configuration
 
-Type configurations describe an objects lifestyle and how to instantiate it.
+Type configurations describe an object's lifestyle and how to instantiate it.
 
 You can configure the type in your `di.xml` configuration node in the following ways:
 
