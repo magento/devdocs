@@ -15,7 +15,7 @@ This task requires you to create a root category (and additional categories if d
 ## Create a root category
 You should create at least a root category per store; you can create additional categories if you choose.
 
-{% collapsible To create a root category:}
+{% collapsible To create a root category: %}
 
 1.	Log in to the Magento Admin as a user authorized to create categories.
 2.	Click **Products** > **Categories**.
@@ -35,7 +35,7 @@ You should create at least a root category per store; you can create additional 
 
 ## Create a website
 
-{%collapsible To create a website: %}
+{% collapsible To create a website: %}
 
 1.	Log in to the Magento Admin as a user authorized to create websites, stores, and store views.
 2.	Click **Stores** > **All Stores**.
@@ -92,7 +92,7 @@ You should create at least a root category per store; you can create additional 
 
 ## Change the website's base URL
 
-{%collapsible To change the website's base URL: %}
+{% collapsible To change the website's base URL: %}
 
 1.	In the Admin, click **Stores** > Settings > **Configuration** > **Web**.
 2.	From the **Store View** list at the top of the page, click the name of one of your sites as the following figure shows.
