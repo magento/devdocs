@@ -10,7 +10,7 @@ To verify whether or not your crontab is set up:
 
 		ls -al <your Magento install dir>/var/.setup_cronjob_status
 		
-	If the file exists, cron is set up. If the file _does not_ exist, either you haven't yet installed Magento or cron isn't running. In either case, continue with the next step.
+	If the file exists, cron has run successfully in the past. If the file _does not_ exist, either you haven't yet installed Magento or cron isn't running. In either case, continue with the next step.
 3.	Get more detail about cron.
 
 	As a user with `root` privileges, enter the following command:
@@ -24,6 +24,12 @@ To verify whether or not your crontab is set up:
 	If no crontab has been set up for the user, the following message displays:
 
 		no crontab for magento_user
+
+	Your crontab tells you the following:
+
+	*	What PHP binary you're using (in some cases, you have more than one)
+	*	What Magento cron scripts you're running (in particular, the paths to those scripts)
+	*	Where your cron logs are located
 
 	See one of the following sections for a solution to your issue.
 
