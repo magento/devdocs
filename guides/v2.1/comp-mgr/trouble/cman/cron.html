@@ -979,7 +979,7 @@
       <pre><code>ls -al &lt;your Magento install dir&gt;/var/.setup_cronjob_status
 </code></pre>
 
-      <p>If the file exists, cron is set up. If the file <em>does not</em> exist, either you haven’t yet installed Magento or cron isn’t running. In either case, continue with the next step.</p>
+      <p>If the file exists, cron has run successfully in the past. If the file <em>does not</em> exist, either you haven’t yet installed Magento or cron isn’t running. In either case, continue with the next step.</p>
     </li>
     <li>
       <p>Get more detail about cron.</p>
@@ -998,6 +998,14 @@
 
       <pre><code>no crontab for magento_user
 </code></pre>
+
+      <p>Your crontab tells you the following:</p>
+
+      <ul>
+        <li>What PHP binary you’re using (in some cases, you have more than one)</li>
+        <li>What Magento cron scripts you’re running (in particular, the paths to those scripts)</li>
+        <li>Where your cron logs are located</li>
+      </ul>
 
       <p>See one of the following sections for a solution to your issue.</p>
     </li>
