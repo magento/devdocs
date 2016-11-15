@@ -24,8 +24,7 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these highlights:
 
-
-* You can now import or export CSV files with data that contains special symbols (for example,  = ,  | and other symbols that are not escaped during file processing).
+* You can now import or export CSV files with data that contains special symbols (that is, symbols that are not escaped during file processing).
 
 * The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
 
@@ -93,7 +92,7 @@ We address the following functional fixes and enhancements in this release.
 
 ### Import/Export
 
-<!---58977-->* You can now successfully import multiselect attributes that contain special symbols (, and |) or delimiters. Previously, when trying to import attributes containing delimiters, data validation (and the import) failed.  
+<!---58977-->* You can now successfully import multiselect attributes that contain special symbols or delimiters. Previously, when trying to import attributes containing delimiters, data validation (and the import) failed.  
 
 
 <!---56804-->* We've fixed an issue with the correct representation of date and timezones of items in product catalog during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard. 
