@@ -23,5 +23,5 @@ During the installation, the following message displays:
 
 ### Solution
 
-Set the PHP timezone properly (<a href="{{page.baseurl}}install-gde/prereq/php-centos.html#instgde-prereq-timezone">CentOS</a>, <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a>).
+Set the [PHP timezone]({{ page.baseurl }}install-gde/prereq/php-settings.html) properly.
 
