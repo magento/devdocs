@@ -28,8 +28,8 @@ This tutorial shows you step-by-step how to set up multiple stores with Magento 
 
 Setting up multiple stores consists of the following tasks:
 
-1.	[Define websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the Magento Admin.
-2.	Create one [nginx virtual host](#ms-nginx-vhost) per Magento website or store view.
+1.	[Set up websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the Magento Admin.
+2.	Create one [nginx virtual host](#ms-nginx-vhosts) per Magento website or store view.
 3.	Pass the values of the [Magento variables](#ms-nginx-vars) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample`.
 
 	*	`$MAGE_RUN_TYPE` can be either `store` or `website`
@@ -51,15 +51,15 @@ This section discusses how to load websites on the storefront. You can use eithe
 1.	Open a text editor and add the following contents to the file:
 
 		map $http_host $MAGE_RUN_CODE {
-   			french.example.com french;
+   		   french.example.com french;
 		}
 
 		server {
-   			listen 80;
-   			server_name french.example.com;
-   			set $MAGE_ROOT /var/www/html/magento2;
-   			set $MAGE_MODE developer;
-   			include /var/www/html/magento2/nginx.conf.sample;
+   		   listen 80;
+   		   server_name french.example.com;
+   		   set $MAGE_ROOT /var/www/html/magento2;
+   		   set $MAGE_MODE developer;
+   		   include /var/www/html/magento2/nginx.conf.sample;
 		}
 2.	Save the file as `/etc/nginx/sites-available/french.example.com`
 3.	Create another file in the same location with the following contents:

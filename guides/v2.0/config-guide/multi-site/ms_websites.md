@@ -122,3 +122,7 @@ You should create at least a root category per store; you can create additional 
 
 
 {% endcollapsible %}
+
+#### Next step
+*	[Set up multiple websites or stores with nginx (tutorial)]({{ page.baseurl }}config-guide/multi-site/ms_nginx.html)
+*	[Set up multiple websites with Apache]({{ page.baseurl }}config-guide/multi-site/ms_apache.html)
