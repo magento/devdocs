@@ -17,23 +17,55 @@ github_link: release-notes/ReleaseNotes2.1.3EE.md
 We are pleased to present Magento Enterprise Edition 2.1.3. This release includes security enhancements and several functional fixes.
 
 
-
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
 
 ## Highlights
 
-Magento 2.1.3 contains multiple bug fixes and enhancements, including
+Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these highlights:
 
-* performance improvements
 
-* API enhancements
+* You can now import or export CSV files with data that contains special symbols (for example,  = ,  | and other symbols that are not escaped during file processing).
 
-* improvements to configurable product processing
+* The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
 
-* payment method enhancements
 
-* new browser support
+* Multiple enhancements to the payment feature, including:
+
+	* Ease repeat purchases by enabling customers to save their PayPal account information as a payment option so that they don’t need to enter their PayPal ID and password when making future purchases. 
+
+	* Cut chargebacks and support calls by customizing the descriptor name, phone number and URL that appears on credit card statements for each of your websites through Braintree.
+
+	* Reduce your risk of  accidently shipping products to customers flagged by Braintree’s fraud risk feature with a new process that requires you to confirm the risk decision before proceeding.
+
+	* Encourage unregistered customers to reorder or add items to an existing order in the Admin interface by no longer requiring them to re-enter their credit card information for these purchases. Magento can now bill the last payment method used during a guest checkout.
+
+
+* Increase storefront performance by removing excessive and slow SQL media queries.
+
+* Manage configurable products with many variations in the Admin interface without degrading performance. 
+
+* Upgrade to Magento 2.1.x from Magento 2.0.x without issue when using multiple master databases for checkout, order management, and product data.
+
+
+
+* Additional services for the Sales moduleto support changing order status and returning products to stock.  These web APIs (or <i>service contracts</i>) for the Sales module  incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `RefundInvoice` method to  
+
+	* create a credit memo (complete or partial) for particular invoice
+
+	* add details about refunded items to an order
+
+	* change status and state of an order according to performed actions
+
+	* notify customer about performed refund operation
+
+See Module Reference Guide for information on using this new interface.
+
+
+
+### Why are we adding new APIs in a patch release?
+
+These new interfaces will not break any existing customizations or extensions. See Alan Kent’s blog about Magento’s use of semantic versioning.
 
 
 
@@ -46,12 +78,12 @@ We address the following functional fixes and enhancements in this release.
 ### Indexing
 
 
-<!---56928-->* We've improved the performance of the algorithm that Magento uses to calculate batch while indexing categories.  
+<!---56928-->* We've improved the performance of the algorithm that Magento uses to calculate batch sizes while indexing categories.  
 
 
 <!---57470 -->* Magento no longer throws an indexing error when Elastic search is enabled.
 
-<!---58703-->* The Category/Product indexer now successfully completes a full reindexing of all indexers on large profiles with 500k+ products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products.
+<!---58703-->* The category/product indexer now successfully completes a full reindexing of all ind on large profiles with 500k+ products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products.
 
 
 
@@ -61,25 +93,24 @@ We address the following functional fixes and enhancements in this release.
 
 ### Import/Export
 
-<!---58977-->* Import issue with a multiselect option having special symbols (, and |). 
+<!---58977-->* You can now successfully import multiselect attributes that contain special symbols (, and |) or delimiters. Previously, when trying to import attributes containing delimiters, data validation (and the import) failed.  
 
-<!---56804-->* Fixed issue with the correct representation of date and timezones of items in product catalog during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values you set to be displayed using another standard. 
+
+<!---56804-->* We've fixed an issue with the correct representation of date and timezones of items in product catalog during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard. 
 
 
 <!---57052-->* You can now import negative quantities. Previously, when importing a product quantity  of '-1',  Magento returned an error. 
 
 <!---56018-->* Magento now imports custom options correctly. <a href="https://github.com/magento/magento2/issues/5573" target="_blank">(GITHUB-5573)</a> 
 
-
-<!---57438-->* You can now successfully import images if you've set document root to `/pub`. Previously, you needed to set document root to `/magento` to import images. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a>
-
-
-<!---57490-->* Magento now removes category URL keys from the `url_rewrite` table as expected. Previously, Magento did not remove these keys, which resulted in failed import processes and quickly reaching the maximum error count. When importig products, the store returns an error: "Maximum error count has been reached or system error is occurred!". Import should complete without issues. <a href="https://github.com/magento/magento2/issues/1471" target="_blank">(GITHUB-1471)</a> 
+<!---57438-->* You can now successfully import images if you set document root to `/pub`. Previously, you needed to set document root to `/magento` to import images. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a>
 
 
-<!---57981-->* You can now export a bundle product that containa a custom Text Area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, "There is no data for the export".
+<!---57490-->* Magento now removes category URL keys from the `url_rewrite` table as expected. Previously, Magento did not remove these keys, which caused failure during import and quickly reaching the maximum error count. When importing products, the store returns an error: "Maximum error count has been reached or system error is occurred!". Import should complete without issues. <a href="https://github.com/magento/magento2/issues/1471" target="_blank">(GITHUB-1471)</a> 
 
-<!---60479-->* Importing existing products with 'Replace' behavior gives no errors and deletes them. 
+
+<!---57981-->* You can now export a bundle product that containa a custom text area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, "There is no data for the export".
+
 
 
 
@@ -98,18 +129,19 @@ We address the following functional fixes and enhancements in this release.
 
 ### Installation and upgrade
 
-<!---56397, 58064-->* Unable to Upgrade with Split Databases
+<!---56397, 58064-->* You can now upgrade your Magento installation using more than one database. 
+
 
 <!---58742-->* We've resolved multiple issues with the upgrade process from 2.0.7 to 2.1.x (for example, editing a category post-upgrade no longer results in a 500 error). 
 
-<!---56977-->* We fixed an issue successfully setting up Magento using the web installer. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and not complete installation. 
+<!---56977-->* We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete. 
 
 
 <!---60559-->* Queue `catalog_product_removed_queue` does not exists after upgrade. OPEN
 
 <!---57343-->*  You can now deploy build processes on a different staging machine than the one you're running your production environment on. 
 
-<!---58312-->* Products are no longer  “out of stock” after update from 2.0.7 to 2.1.0 <a href="https://github.com/magento/magento2/issues/5222" target="_blank">(GITHUB-5222)</a> 
+<!---58312-->* Products are no longer  “out of stock” after update from 2.0.7 to 2.1.0. <a href="https://github.com/magento/magento2/issues/5222" target="_blank">(GITHUB-5222)</a> 
 
 <!---57943-->* Magento 2.0.x and 2.1.x does not respect table prefix during installation. <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a> 
 
@@ -122,12 +154,12 @@ We've improved the performance of these tasks:
 <!---56927-->* Opening many products from the Admin interface.
 
 
-<!---55300-->* Creating many (2500 - 5000) product variants  
+<!---55300-->* Creating many (2500 - 5000) product variants.  
 
 
 <!---58433-->* Saving category on catalog with 20k+ products is very slow (from 5mins till 1 hour) OPEN
 
-<!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attirbutes and 250 options). <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a> 
+<!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options). <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a> 
 
 
 
@@ -151,9 +183,9 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products on the storeview level.
 
-<!---60483-->* Catalog broken when all child products of configurable are disabled
+<!---60483-->* Catalog broken when all child products of configurable are disabled OPEN
 
-<!---54808-->* Unable to mass-edit a product attribute for a configurable product
+<!---54808-->* Unable to mass-edit a product attribute for a configurable product.
 
 
 
@@ -209,6 +241,7 @@ Merchant can configure Dynamic Descriptors (Company Name, Phone and URL) system 
 Phone/ZIP code validation before submitting those to Braintree
 
 <!---59353-->* You can now use JCB and Diners Club credit cards with the Authorize.net payment method.
+
 <!--- 59124-->* Fixed issue with credit card capture information failing to remain associated with its first authorization. <a href="https://github.com/magento/magento2/issues/6716" target="_blank">(GITHUB-6716)</a> 
 
 <!---57086-->* You can now successfully place orders with Braintree when using an alternative merchant account ID. (Merchant account does not need to match the 3D Secure authorization merchant account.) <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a> 
@@ -246,20 +279,34 @@ Phone/ZIP code validation before submitting those to Braintree
 <!---56961-->* With valid permissions, you can now regain access to your Admin account after temporary disablement due to invalid Admin credentials. 
 
 
-<!---57297-->* Category empties when updating product with REST API. When updating products using the REST V1 PUT API request, the category the product is assigned to becomes empty. Creating new products works correctly. OPEN
-
-
-<!---60460-->* Remove minor changes in Payment and Vault API
+<!---60460-->* Remove minor changes in Payment and Vault API.
 
 
 <!---57039-->* You can now update a product's media gallery through the REST API. 
 
 
-<!---56432-->* Creditmemo creation through API change order status
+<!---56432-->* Order status is now updated as expected on the Admin dashboard when you use the REST API to create a creditmemo.
 
-<!---59422-->* Ability to return the product to the stock after Creditmemo API
+<!---59422-->* The product return feature now works as expected when you create the product using the Creditmemo API
 
-<!---56428-->* Invoice creation through API change order status.
+
+
+
+Refund Invoice service -- 
+
+With this service you can:
+
+
+* create a Credit Memo (complete or partial) for particular Invoice
+
+* add details about refunded items to an Order
+
+* change status and state of an Order according to performed actions
+
+* notify customer about performed refund operation
+
+
+
 
 
 
@@ -464,7 +511,28 @@ Phone/ZIP code validation before submitting those to Braintree
 
 <!---60053-->* Revert major changes in PaymentAdapter
 
+<!---60616-->* Customer Address/Customer attribute isn't validated if required in 2.1.3
 
+<!---60605-->* Exception when adding configurable product by sku from customer account if associated simple product is out of stock
+
+<!---60579-->* Price for configurable product when set price for child product on Store View level doesn't work
+
+<!---60801-->* Product price saved on wrong scope when in configuration set Global Price Scope
+
+<!---60781-->* Installing with varnish causes products to not appear on frontend even flushing cache
+
+<!---60736-->* Multistore: Import product with Add/Update behaviour causes an error "URL key for specified store already exists."
+
+<!---60738-->* Cannot checkout with Persistent Shopping Cart and Guest Checkout enabled
+
+<!---60140-->* Disable child product doesn't work in Configurable variations grid
+
+
+<!---60680-->* Unable to save modified gift card product
+
+<!---60483-->* Catalog broken when all child products of configurable are disabled
+
+<!---60064-->* Compare Database Data and Structure
 
 
 
@@ -502,7 +570,7 @@ Phone/ZIP code validation before submitting those to Braintree
 
 
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479
 -->
 
 
