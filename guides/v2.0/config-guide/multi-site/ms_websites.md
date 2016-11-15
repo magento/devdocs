@@ -10,7 +10,14 @@ version: 2.0
 github_link: config-guide/multi-site/ms_websites.md
 ---
 
+## Set up multiple websites, stores, and store views in the Admin
 This task requires you to create a root category (and additional categories if desired) for each store, a website, a store, and a store view.
+
+The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:
+
+*	[Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html){:target="_blank"}
+*	[Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html){:target="_blank"}
+*	[Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}
 
 ## Create a root category
 You should create at least a root category per store; you can create additional categories if you choose.
@@ -27,7 +34,7 @@ You should create at least a root category per store; you can create additional 
 
 	The following figure shows an example.
 
-	![Create and enable a root category]({{ site.baseurl }}common/images/config_multi-site_root-cat.png)
+	![Create and enable a root category]({{ site.baseurl }}common/images/config_multi-site_root-cat.png){:width="500px"}
 6.	Click **Save**.
 7.	Repeat these tasks as many times as necessary to create root categories for your stores.
 
@@ -60,14 +67,15 @@ You should create at least a root category per store; you can create additional 
 1.	In the Magento Admin, click **Stores** > **All Stores**.
 1.	To create a store, click **Create Store**.
 
+	*	**Web Site** list: Click the name of the website with which to associate this store.
 	*	**Name** field: Enter a name to identify the store.
 	*	**Code** field: Enter a unique code to identify the store.
-	*	**Category** list: Click the name of a category.
+	*	**Root Category** list: Click the name of the root category for this store.
 
 	The following figure shows an example.
 
 	![Add a store]({{ site.baseurl }}common/images/config_multi-site-store.png){:width="500px"}
-6.	Click **Save Config**.
+6.	Click **Save Store**.
 7.	Repeat these tasks as many times as necessary to create your stores.
 
 {% endcollapsible %}
@@ -80,12 +88,13 @@ You should create at least a root category per store; you can create additional 
 7.	To create a store view, click **Create Store View**.
 
 	*	**Store** list: Click the name of the store with which to associate this store view.
+	*	**Name** field: Enter a name to identify this store view.
 	*	**Code** field: Enter a unique name to identify this store view.
 	*	**Status** list: Click **Enabled**.
 	The following figure shows an example.
 
 	![Add a store]({{ site.baseurl }}common/images/config_multi-site-storeview.png){:width="500px"}
-8.	Click **Save Config**.
+8.	Click **Save Store View**.
 7.	Repeat these tasks as many times as necessary to create your store views.
 
 {% endcollapsible %}
@@ -94,12 +103,13 @@ You should create at least a root category per store; you can create additional 
 
 {% collapsible To change the website's base URL: %}
 
-1.	In the Admin, click **Stores** > Settings > **Configuration** > **Web**.
+1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
 2.	From the **Store View** list at the top of the page, click the name of one of your sites as the following figure shows.
 
-![Select a scope]({{ site.baseurl }}common/images/config_multi-site-scope.png){:width="250px"}
+	![Select a scope]({{ site.baseurl }}common/images/config_multi-site-scope.png){:width="250px"}
 
-3.	In the right pane, in the Base URL section, clear the **Use Default** check box.
+3.	In the right pane, expand **Base URLs**.
+4.	In the Base URL section, clear the **Use Default** check box.
 4.	Prefix the base URL with your website code as the following example shows.
 
 	![Set a base URL]({{ site.baseurl }}common/images/config_multi-site_base-url.png){:width="650px"}
@@ -107,7 +117,7 @@ You should create at least a root category per store; you can create additional 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're setting up a base URL for Magento Enterprise Cloud Edition, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french--branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
 	</div>
-
+5.	Click **Save Config**.
 5.	If prompted, flush the Magento cache. (**System** > **Cache Management**).
 
 
