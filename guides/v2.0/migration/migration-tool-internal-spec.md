@@ -2,8 +2,8 @@
 layout: default
 group:  migration
 subgroup: o_mapping
-title: Data Migration Tool Internal Specification
-menu_title: Data Migration Tool Internal Specification
+title: Data Migration Tool Technical Specification
+menu_title: Data Migration Tool Technical Specification
 menu_node: parent
 menu_order: 7
 version: 2.0
