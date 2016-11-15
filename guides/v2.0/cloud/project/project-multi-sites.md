@@ -107,6 +107,8 @@ Make sure you name your websites, stores, and store views in your Cloud Admin th
 
 See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}config-guide/multi-site/ms_websites.html).
 
+{% endcollapsible %}
+
 ### Modify `magento-vars.php` {#cloud-multi-stores-magento-vars}
 Instead of configuring an nginx virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using `magento-vars.php` which is located in your Magento root directory.
 
