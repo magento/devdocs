@@ -65,15 +65,15 @@ This section discusses how to load websites on the storefront. You can use eithe
 3.	Create another file in the same location with the following contents:
 
 		map $http_host $MAGE_RUN_CODE {
-   			german.example.com german;
+           german.example.com german;
 		}
 
 		server {
-   			listen 80;
-   			server_name german.example.com;
-   			set $MAGE_ROOT /var/www/html/magento2;
-   			set $MAGE_MODE developer;
-   			include /var/www/html/magento2/nginx.conf;
+           listen 80;
+           server_name german.example.com;
+           set $MAGE_ROOT /var/www/html/magento2;
+           set $MAGE_MODE developer;
+           include /var/www/html/magento2/nginx.conf;
 		}
 4.	Save the file as `/etc/nginx/sites-available/german.example.com`.
 5.	Verify the server configuration:
