@@ -44,27 +44,62 @@ $(document).ready(function(){
         $("#searchbox").submit();
     });
 
+
+
     // Prepend link anchor to content headers
-    $(".content-wrap :header:not(h1)").each(function(){
-        var link = $("<a>",{
-            href: "#"+$(this).attr("id"),
-            class: "anchor"
-        });
-        var img = $("<img>",{
-            src: baseUrl+"i/icons/ico-link-grey.png",
-            width: 25
-        });
+		var $toc = $('<div>',{
+			class: 'page-toc',
+		});
+		$toc.appendTo('.page-info');
+		$toc.append('<ul class="nav"></ul>');
 
-        link.prepend(img);
-        $(this).prepend(link);
+		$(".content-wrap :header:not(h1)").each(function(){
+				var $this = $(this),
+						id = $this.attr('id'),
+						no_toc = $this.hasClass('no_toc'),
+						anchor;
 
-        $(this).hover(function(){
-            img.show();
-        },
-        function(){
-            img.hide();
-        });
+				// check if we need to process the link
+				if ( !no_toc ) {
+
+					// check if we have id on heading already
+					if ( id ) {
+						// use that id for the anchor
+						anchor = id;
+					} else {
+						// generate id from the heading text
+						var text = $this.text();
+						anchor = text;
+					}
+
+					// clean up the anchor
+					anchor.replace(' ', '-').toLowerCase();
+					console.log(anchor);
+
+					// prepend anhor to title
+					var $link = $("<a>",{
+	          href: "#" + anchor,
+	          class: "anchor"
+	        });
+
+					$this.prepend( $link );
+
+					// Allow only h2 and h3 tags in page toc
+					var tag_name = $this.prop("tagName").toLowerCase();
+
+					if ( tag_name == 'h2' || tag_name == 'h3' ) {
+						var $li = $('<li class="' + tag_name + '"><a href="#' + anchor + '">' + $this.text() + '</a></li>');
+						$toc.find('ul').append($li);
+					}
+
+				}
+
     });
+		// do not show toc for less than 2 headings
+		if ( $toc.find('li').length <= 1 ) {
+			$toc.hide();
+		}
+
 
     // Fix anchor jumps hiding headers
     $(window).on("hashchange",function(){
@@ -74,10 +109,10 @@ $(document).ready(function(){
 });
 
 $(window).load(function(){
-    // Fix headers hiding behind nav when loading on anchor link
-    if(window.location.hash) {
-        $(document).scrollTop($(document).scrollTop()-43);
-    }
+  // Fix headers hiding behind nav when loading on anchor link
+  if(window.location.hash) {
+    $(document).scrollTop($(document).scrollTop() - 60);
+  }
 });
 
 //Allows for sticky menu

@@ -1,4 +1,4 @@
-#markdown-toc {
+.page-toc {
   background: $light-gray-color;
   padding: 10px 0;
   margin: 20px 0 0 0;
@@ -18,7 +18,9 @@
     font-weight: bold;
     padding: 0 10px 5px 15px;
   }
-
+  ul {
+    margin: 0;
+  }
   li {
     font-size: 12px;
     line-height: 1.4;
@@ -32,11 +34,7 @@
     background: $dropdown-link-hover-bg;
     border-left: 2px solid darken($dropdown-link-hover-bg, 20%);
   }
-  .active {
-    .active a {
-      border-left: 2px solid darken($dropdown-link-hover-bg, 20%);
-    }
-  }
+
 
   a {
     color: $body-font-color;
@@ -51,12 +49,29 @@
     }
   }
 
-  ul {
-    margin: 0;
-    padding: 0;
-    a {
-      padding-left: 25px;
-    }
+
+  .h3 a {
+    padding-left: 25px;
   }
 
+}
+
+
+
+h2, h3, h4, h5, h6 {
+  position: relative;
+}
+
+.anchor {
+  width: 40px;
+  height: 100%;
+  background: url('/i/icons/ico-link-grey.png') center center no-repeat;
+  background-size: 25px;
+  display: none;
+  position: absolute;
+  left: -36px;
+
+  h2:hover &, h3:hover &, h4:hover &, h5:hover &, h6:hover & {
+    display: block;
+  }
 }

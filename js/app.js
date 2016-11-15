@@ -48,11 +48,12 @@ $(function() {
 
 	// TODO: Refactor this
 	// This script copies markdown toc into the .page-info
-	$('#markdown-toc').clone().addClass('nav').appendTo( '.page-info' );
+	//$('#markdown-toc').clone().addClass('nav').appendTo( '.page-info' );
+	$('#markdown-toc').hide();
 
 	// Page toc on right side sticks to the browser window
 	$('body').scrollspy({ target: '.page-info' });
-	$('.page-info #markdown-toc').affix({
+	$('.page-info .page-toc').affix({
 		offset: {
 	    top: 40,
 	    bottom: function () {
@@ -65,7 +66,7 @@ $(function() {
 	var $root = $('html, body');
 	$('a').click(function() {
     $root.animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
+      scrollTop: $( $.attr(this, 'href') ).offset().top - 60
     }, 500);
     return false;
 	});
