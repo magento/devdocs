@@ -12,10 +12,10 @@ github_link: config-guide/multi-site/ms_websites.md
 
 This task requires you to create a root category (and additional categories if desired) for each store, a website, a store, and a store view.
 
-### Create a root category
+## Create a root category
 You should create at least a root category per store; you can create additional categories if you choose.
 
-To create a root category:
+{% collapsible To create a root category:}
 
 1.	Log in to the Magento Admin as a user authorized to create categories.
 2.	Click **Products** > **Categories**.
@@ -31,8 +31,11 @@ To create a root category:
 6.	Click **Save**.
 7.	Repeat these tasks as many times as necessary to create root categories for your stores.
 
-### Create a website
-To create a website:
+{% endcollapsible %}
+
+## Create a website
+
+{%collapsible To create a website: %}
 
 1.	Log in to the Magento Admin as a user authorized to create websites, stores, and store views.
 2.	Click **Stores** > **All Stores**.
@@ -48,8 +51,11 @@ To create a website:
 4.	Click **Save Config**.
 7.	Repeat these tasks as many times as necessary to create your websites.
 
-### Create a store
-To create a store:
+{% endcollapsible %}
+
+## Create a store
+
+{% collapsible To create a store: %}
 
 1.	In the Magento Admin, click **Stores** > **All Stores**.
 1.	To create a store, click **Create Store**.
@@ -64,8 +70,11 @@ To create a store:
 6.	Click **Save Config**.
 7.	Repeat these tasks as many times as necessary to create your stores.
 
-### Create a store view
-To create a store view:
+{% endcollapsible %}
+
+## Create a store view
+
+{% collapsible To create a store view: %}
 
 1.	In the Magento Admin, click **Stores** > **All Stores**.
 7.	To create a store view, click **Create Store View**.
@@ -79,8 +88,12 @@ To create a store view:
 8.	Click **Save Config**.
 7.	Repeat these tasks as many times as necessary to create your store views.
 
-### Change the website's base URL
-To change the website's base URL:
+{% endcollapsible %}
+
+## Change the website's base URL
+
+{%collapsible To change the website's base URL: %}
+
 1.	In the Admin, click **Stores** > Settings > **Configuration** > **Web**.
 2.	From the **Store View** list at the top of the page, click the name of one of your sites as the following figure shows.
 
@@ -96,3 +109,6 @@ To change the website's base URL:
 	</div>
 
 5.	If prompted, flush the Magento cache. (**System** > **Cache Management**).
+
+
+{% endcollapsible %}
