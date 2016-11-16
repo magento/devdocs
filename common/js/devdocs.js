@@ -71,17 +71,14 @@ $(document).ready(function(){
 						var text = $this.text();
 						anchor = text;
 					}
-
 					// clean up the anchor
 					anchor.replace(' ', '-').toLowerCase();
-					console.log(anchor);
-
 					// prepend anhor to title
 					var $link = $("<a>",{
 	          href: "#" + anchor,
 	          class: "anchor"
 	        });
-
+					// Add link to the header
 					$this.prepend( $link );
 
 					// Allow only h2 and h3 tags in page toc
