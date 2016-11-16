@@ -100,7 +100,7 @@ Where the following notation is used:
 <li><code>mage.&lt;widget.name&gt;</code> - the name of the Magento widget that you extend.</li>
 </ul>
 
-For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h3 id="extend_js_component">Extend a default Ui component</h3>
 
