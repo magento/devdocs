@@ -11,13 +11,16 @@ github_link: config-guide/multi-site/ms_nginx.md
 ---
 
 ## Set up multiple websites with nginx {#ms-nginx-over}
-This tutorial shows you step-by-step how to set up multiple stores with Magento using nginx. We assume the following:
+This tutorial shows you step-by-step how to set up multiple stores with Magento using nginx. 
+
+### Assumptions
+We assume the following:
 
 *	You're developing on a local machine or a development machine
 
 	Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
-	Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html)
+	Additional tasks are required to set up Magento Enterprise Cloud Edition. After you complete the tasks discussed in this topic, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html)
 *	You use one virtual host per store; the virtual host configuration files are located in `/etc/nginx/sites-available`
 *	You use `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial
 *	The Magento software is installed in `/var/www/html/magento2`
@@ -132,4 +135,3 @@ You're done!
   <ul><li>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</li>
   	<li>Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see <a href="{{ page.baseurl }}cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li></span>
 </div>
-

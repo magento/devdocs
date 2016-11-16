@@ -11,13 +11,16 @@ github_link: config-guide/multi-site/ms_apache.md
 ---
 
 ## Set up multiple websites with Apache  {#ms-apache-over}
-This tutorial shows you step-by-step how to set up multiple stores with Magento using Apache. We assume the following:
+This tutorial shows you step-by-step how to set up multiple stores with Magento using Apache. 
+
+### Assumptions
+We assume the following:
 
 *   You're developing on a local machine or a development machine
 
     Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
-    Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html)
+    Additional tasks are required to set up Magento Enterprise Cloud Edition. After you complete the tasks discussed in this topic, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html)
 *   You use one virtual host per store; the virtual host configuration file is `/etc/httpd/httpd.conf`
 
     Different versions of Apache on different operating systems set up virtual hosts differently. Consult the Apache documentation or a network administrator if you're not sure how to set yours up.
@@ -45,15 +48,12 @@ Setting up multiple stores consists of the following tasks:
 See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}config-guide/multi-site/ms_websites.html).
 
 ## Step 2: Create Apache virtual hosts {#ms-htaccess}
-This section discusses how to set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using Apache server variables `SetEnvIf` or `RewriteCond`. If you're not sure what environment variable to use, consult a network administrator.
+This section discusses how to set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using the Apache server variable `SetEnvIf` in a virtual host.
 
-For more information about `SetEnvIf` or `RewriteCond`, see:
+For more information about `SetEnvIf`, see:
 
-*   Apache 2.2: <a href="http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html" target="_blank">SetEnvIf</a>, <a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html#rewritecond" target="_blank">RewriteCond</a>
-*   Apache 2.4: <a href="http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html" target="_blank">SetEnvIf</a>, <a href="http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html#rewritecond" target="_blank">RewriteCond</a>
-
-### SetEnvIf example
-To set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using the Apache `SetEnvIf` variable:
+*   [Apache 2.2](http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html){:target="_blank"}
+*   [Apache 2.4](http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html){:target="_blank"}
 
 1.  Open the virtual host configuration file in a text editor.
 
@@ -82,24 +82,23 @@ To set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using the Apache `SetEnvIf
 
     *   CentOS: `service httpd restart`
     *   Ubuntu: `service apache2 restart`
-9.  [Verify your site]().
+9.  Verify your site as discussed in the next section.
 
-#### RewriteCond example
-Add code similar to the following after `RewriteBase /magento/` in `.htaccess`:
+## Verify your site  {#ms-apache-verify}
+Unless you have DNS set up for your stores' URLs, you must add a static route to the host in your `hosts` file:
 
-    RewriteCond %{HTTP_HOST} ^(.*)<your domain>\<domain suffix>
-    RewriteRule .* – [E=MAGE_RUN_CODE:<code>]
-    RewriteCond %{HTTP_HOST} ^(.*)<your domain>\<domain suffix>
-    RewriteRule .* – [E=MAGE_RUN_TYPE:{store|website}]
+1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
+2.  Add the static route in the format:
 
-For example, to use a website with the code `frenchsite.mysite.mg`:
+        <ip address> french.mysite.mg
+        <ip address> german.mysite.mg
+3.  Go to one of the preceding URLs in your browser.
 
-    RewriteCond %{HTTP_HOST} ^(.*)example\.com
-    RewriteRule .* – [E=MAGE_RUN_CODE:frenchsite.mysite.mg]
-    RewriteCond %{HTTP_HOST} ^(.*)example\.com
-    RewriteRule .* – [E=MAGE_RUN_TYPE:website]
+You're done!
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>The preceding is an example only. There is more than one way to configure the <code>RewriteCond</code> rule. Consult a system integrator or network administrator for more information.</p></span>
+  <ul><li>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</li>
+    <li>Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see <a href="{{ page.baseurl }}cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li></span>
 </div>
+
