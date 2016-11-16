@@ -115,10 +115,17 @@ For details about repositories see the [Searching with repositories]({{page.base
 
 ### ObjectManager changes
 
-* Removed Igbinary support for compiled definitions because Igbinary has no option for secure unserialization in PHP 7.
-* Removed classes `\Magento\Framework\ObjectManager\Definition\Compiled\Binary` and `\Magento\Framework\ObjectManager\Definition\Compiled\Serialized`.
-* `\Magento\Framework\ObjectManager\Definition\Compiled` is now a concrete class that uses the new Serialize library.
-* The `bin/magento setup:config:set` command no longer has the `--definition-format` option since there is now only one serialization implementation.
+This release removes the multi-tenant compiler option and support of the definitions option for the single tenant compiler in the `env.php` file.
+
+The following classes are no longer available:
+
+* `Magento\Setup\Console\Command\DiCompileMultiTenantCommand`
+* `Magento\Framework\ObjectManager\Relations\Compiled`
+* `Magento\Framework\ObjectManager\Definition\Compiled\Serialized`
+* `Magento\Framework\ObjectManager\Definition\Compiled\Binary`
+* `Magento\Framework\Interception\Definition\Compiled`
+
+The `bin/magento setup:config:set` command no longer has the `--definition-format` option since there is now only one serialization implementation.
 
 ### Changes in UI
 

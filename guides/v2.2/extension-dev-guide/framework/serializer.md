@@ -37,12 +37,12 @@ For security reasons, `SerializerInterface` implementations, such as the Json an
 
 ### Json (default)
 
-The `Magento\Framework\Serialize\Serializer\Json` class uses PHP's native `json_encode()` and `json_decode()` functions to serialize and unserialize data using the [JSON](http://www.json.org/){:target="_blank"} format.
+The `Magento\Framework\Serialize\Serializer\Json` class serializes and unserializes data using the [JSON](http://www.json.org/){:target="_blank"} format.
 This class does not unserialize objects.
 
 ### Serialize
 
-The `Magento\Framework\Serialize\Serializer\Serialize` class uses PHP's native `serialize()` and `unserialize()` functions, so it is less secure than the Json implementation but provides better performance on large arrays.
+The `Magento\Framework\Serialize\Serializer\Serialize` class is less secure than the Json implementation but provides better performance on large arrays.
 This class does not unserialize objects in PHP 7.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -91,6 +91,7 @@ private $cacheId = 'mySerializedData';
 /**
  * Save data to cache
  * @param array $data  
+ *
  * @return bool
  */
 public function saveDataToCache($data)
@@ -102,6 +103,7 @@ public function saveDataToCache($data)
 
 /**
  * Load data from cache
+ *
  * @return array
  */
 public function loadDataFromCache()
