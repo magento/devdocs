@@ -1469,14 +1469,18 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 19 September 2016 (PDT)</div>
-            <h4 id="contents">Contents</h4>
+            <div class="updated">Updated: 21 October 2016 (PDT)</div>
+            <h4 class="no_toc" id="contents">Contents</h4>
 
-<ul>
-  <li><a href="#config-cli-static-overview">Overview of static view files deployment</a></li>
-  <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-subcommands-xlate-dict">Deploy static view files</a></li>
-  <li><a href="#view-file-trouble">Troubleshooting the static view files deployment tool</a></li>
+<ul id="markdown-toc">
+  <li><a href="#config-cli-static-overview" id="markdown-toc-config-cli-static-overview">Overview of static view files deployment</a></li>
+  <li><a href="#config-cli-before" id="markdown-toc-config-cli-before">First steps</a></li>
+  <li><a href="#config-cli-subcommands-xlate-dict" id="markdown-toc-config-cli-subcommands-xlate-dict">Deploy static view files</a>    <ul>
+      <li><a href="#deploy_without_db" id="markdown-toc-deploy_without_db">Deploy static view files without installing Magento</a></li>
+      <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
 </ul>
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
@@ -1681,6 +1685,40 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
   <p>If you specify values for both <code>&lt;lang&gt;</code> and <code>--language</code>, <code>&lt;lang&gt;</code> takes precedence.</p>
 </div>
 
+  <h3 id="deploy_without_db">Deploy static view files without installing Magento</h3>
+
+  <p>You might want to run the deployment process in a separate, non-production, environment, in order to avoid any build processes on sensitive production machines.</p>
+
+  <p>To do this, take the following steps:</p>
+
+  <ol>
+    <li>Export the minimum required application configuration from the Magento instance that is in production. (described further in details)</li>
+    <li>Copy the exported files to the non-production code base.</li>
+    <li>Run the deployment tool.</li>
+  </ol>
+
+  <h4 id="exporting-the-configuration">Exporting the configuration</h4>
+
+  <p>The configuration required to deploy static view files can be exported from the database of the production Magento instance. To do it, run the following command for the production instance:</p>
+
+  <pre><code>magento app:config:dump
+</code></pre>
+
+  <p>As a result of the command execution, the <code>config.local.php</code> file appears in the <code>app/etc/</code> directory. In order to generate the static content using the other Magento codebase, you must copy this file and paste it to the <code>app/etc</code> directory of the Magento codebase you will use.</p>
+
+  <p>The <code>config.local.php</code> file contains the following sections:</p>
+
+  <ul>
+    <li><code>system</code>: all system configurations required for successful static content deployment</li>
+    <li><code>scopes</code>: the list of stores, store groups and websites with related information</li>
+    <li><code>i18n</code>:  all inline translations. This section is used for generating <code>js-translation.json</code></li>
+  </ul>
+
+  <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+<p>While the exported configuration files reside in the <code>app/etc</code> directory, you cannot change the value of the corresponding configuration fields under <b>Store</b> -&gt; <b>Configuration</b> in the Admin Panel. The fields are displayed, but disabled. You need to remove the configuration files from <code>app/etc</code> to make the settings available.</p></span>
+</div>
+
   <h3 id="examples">Examples</h3>
   <p>Following are some example commands.</p>
 
@@ -1763,7 +1801,7 @@ New version of deployed files: 1466711110
     </li>
   </ol>
 
-  <h4 id="related-topics">Related topics</h4>
+  <h2 id="related-topics">Related topics</h2>
 
   <ul>
     <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
