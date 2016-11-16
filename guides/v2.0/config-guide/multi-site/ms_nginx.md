@@ -23,8 +23,8 @@ This tutorial shows you step-by-step how to set up multiple stores with Magento 
 *	The Magento software is installed in `/var/www/html/magento2`
 *	You have two websites other than the default:
 
-	*	`french.example.com` with website code `french` and storeview code `fr`
-	*	`german.example.com` with website code `german` and storeview code `de`
+	*	`french.mysite.mg` with website code `french` and storeview code `fr`
+	*	`german.mysite.mg` with website code `german` and storeview code `de`
 
 Setting up multiple stores consists of the following tasks:
 
@@ -48,28 +48,28 @@ This section discusses how to load websites on the storefront. You can use eithe
 
 {% collapsible To create virtual hosts: %}
 
-1.	Open a text editor and add the following contents to a file named `/etc/nginx/sites-available/french.example.com.conf`:
+1.	Open a text editor and add the following contents to a file named `/etc/nginx/sites-available/french.mysite.mg.conf`:
 
 		map $http_host $MAGE_RUN_CODE {
-           french.example.com french;
+           french.mysite.mg french;
 		}
 
 		server {
            listen 80;
-           server_name french.example.com;
+           server_name french.mysite.mg;
            set $MAGE_ROOT /var/www/html/magento2;
            set $MAGE_MODE developer;
            include /var/www/html/magento2/nginx.conf;
 		}
-3.	Create another file named `german.example.com.conf` in the same directory with the following contents:
+3.	Create another file named `german.mysite.mg.conf` in the same directory with the following contents:
 
 		map $http_host $MAGE_RUN_CODE {
-           german.example.com german;
+           german.mysite.mg german;
 		}
 
 		server {
            listen 80;
-           server_name german.example.com;
+           server_name german.mysite.mg;
            set $MAGE_ROOT /var/www/html/magento2;
            set $MAGE_MODE developer;
            include /var/www/html/magento2/nginx.conf;
@@ -87,8 +87,8 @@ This section discusses how to load websites on the storefront. You can use eithe
 7.	Create symbolic links in the `/etc/nginx/sites-enabled` directory:
 
 		cd /etc/nginx/sites-enabled
-		ln -s /etc/nginx/sites-available/french.example.com french.example.com
-		ln -s /etc/nginx/sites-available/german.example.com german.example.com
+		ln -s /etc/nginx/sites-available/french.mysite.mg french.mysite.mg
+		ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
 
 For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"}.
 
@@ -121,8 +121,8 @@ Unless you have DNS set up for your stores' URLs, you must add a static route to
 1.	Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
 2.	Add the static route in the format:
 
-		<ip address> french.example.com
-		<ip address> german.example.com
+		<ip address> french.mysite.mg
+		<ip address> german.mysite.mg
 3.	Go to one of the preceding URLs in your browser.
 
 You're done!

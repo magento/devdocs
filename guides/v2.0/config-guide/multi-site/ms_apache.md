@@ -24,8 +24,8 @@ This tutorial shows you step-by-step how to set up multiple stores with Magento 
 *   The Magento software is installed in `/var/www/html/magento2`
 *   You have two websites other than the default:
 
-    *   `french.example.com` with website code `french` and storeview code `fr`
-    *   `german.example.com` with website code `german` and storeview code `de`
+    *   `french.mysite.mg` with website code `french` and storeview code `fr`
+    *   `german.mysite.mg` with website code `german` and storeview code `de`
 
 Setting up multiple stores consists of the following tasks:
 
@@ -57,17 +57,17 @@ To set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using the Apache `SetEnvIf
 
 1.  Open the virtual host configuration file in a text editor.
 
-    In this tutorial, open `/etc/httpd/conf/httpd.conf`
+    For example, open `/etc/httpd/conf/httpd.conf`
 2. Locate the line `<VirtualHost *:80>` and uncomment the entire section if necessary.
 3. Enter the following between the `<VirtualHost *:80>` and `</VirtualHost>` tags:
 
-        ServerName          french.example.com
+        ServerName          french.mysite.mg
         DocumentRoot        /var/www/html/magento2/
         SetEnv MAGE_RUN_CODE "french"
         SetEnv MAGE_RUN_TYPE "website"
 4.  Copy that virtual host definition to another one and change it as follows:
 
-        ServerName          german.example.com
+        ServerName          german.mysite.mg
         DocumentRoot        /var/www/html/magento2/
         SetEnv MAGE_RUN_CODE "german"
         SetEnv MAGE_RUN_TYPE "website"
@@ -75,7 +75,7 @@ To set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using the Apache `SetEnvIf
 6.  As the [Magento file system owner](), open `/var/www/html/magento2/.htaccess` in a text editor.
 7.  Add the following after `RewriteEngine on` in `.htaccess`:
 
-        SetEnvIf Host .*example.com.* MAGE_RUN_CODE=french.example.com
+        SetEnvIf Host .*example.com.* MAGE_RUN_CODE=french.mysite.mg
         SetEnvIf Host .*example.com.* MAGE_RUN_TYPE=website
 8.  Save your changes to `.htaccess` and exit the text editor.
 9.  Restart Apache:
@@ -92,10 +92,10 @@ Add code similar to the following after `RewriteBase /magento/` in `.htaccess`:
     RewriteCond %{HTTP_HOST} ^(.*)<your domain>\<domain suffix>
     RewriteRule .* – [E=MAGE_RUN_TYPE:{store|website}]
 
-For example, to use a website with the code `frenchsite.example.com`:
+For example, to use a website with the code `frenchsite.mysite.mg`:
 
     RewriteCond %{HTTP_HOST} ^(.*)example\.com
-    RewriteRule .* – [E=MAGE_RUN_CODE:frenchsite.example.com]
+    RewriteRule .* – [E=MAGE_RUN_CODE:frenchsite.mysite.mg]
     RewriteCond %{HTTP_HOST} ^(.*)example\.com
     RewriteRule .* – [E=MAGE_RUN_TYPE:website]
 

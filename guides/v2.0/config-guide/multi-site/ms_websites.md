@@ -118,8 +118,27 @@ You should create at least a root category per store; you can create additional 
   		<p>If you're setting up a base URL for Magento Enterprise Cloud Edition, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french--branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
 	</div>
 5.	Click **Save Config**.
-5.	If prompted, flush the Magento cache. (**System** > **Cache Management**).
 
+{% endcollapsible %}
+
+## Add the store code to the base URL
+The Magento application gives you the option to add the store code to the site's base URL, which simplifies the process of setting up multiple stores. Using this option, you don't have to create directories on the Magento file system to store `index.php` and `.htaccess`. These files might get out of sync when you upgrade the Magento application in the future.
+
+For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}.
+
+{% collapsible To add the store code to the website's base URL: %}
+
+1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
+2.	From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
+
+	![Select a scope]({{ site.baseurl }}common/images/config_multi-site-default.png){:width="250px"} 
+3.	In the right pane, expand **Url Options**.
+4.	Clear the **Use default** check box next to **Add Store Code to Urls**.
+5.	From the **Add Store Code to Urls** list, click **Yes** as the following figure shows.
+
+	![Add the store code to the store's base URL]({{ site.baseurl }}common/images/config_multi-site-add-store-url.png)
+6.	Click **Save Config**.
+7.	If prompted, flush the Magento cache. (**System** > **Cache Management**).
 
 {% endcollapsible %}
 
