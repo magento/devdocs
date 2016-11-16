@@ -30,6 +30,7 @@ We assume the following:
     *   `french.mysite.mg` with website code `french` and storeview code `fr`
     *   `german.mysite.mg` with website code `german` and storeview code `de`
 
+### Roadmap for setting up multiple websites with Apache
 Setting up multiple stores consists of the following tasks:
 
 1.  [Set up websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the Magento Admin.
@@ -47,13 +48,15 @@ Setting up multiple stores consists of the following tasks:
 
 See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}config-guide/multi-site/ms_websites.html).
 
-## Step 2: Create Apache virtual hosts {#ms-htaccess}
+## Step 2: Create Apache virtual hosts {#ms-apache-vhosts}
 This section discusses how to set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using the Apache server variable `SetEnvIf` in a virtual host.
 
 For more information about `SetEnvIf`, see:
 
 *   [Apache 2.2](http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html){:target="_blank"}
 *   [Apache 2.4](http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html){:target="_blank"}
+
+{% collapsible To create Apache virtual hosts: %}
 
 1.  Open the virtual host configuration file in a text editor.
 
@@ -72,7 +75,14 @@ For more information about `SetEnvIf`, see:
         SetEnv MAGE_RUN_CODE "german"
         SetEnv MAGE_RUN_TYPE "website"
 5.  Save your changes to `httpd.conf` and exit the text editor.
-6.  As the [Magento file system owner](), open `/var/www/html/magento2/.htaccess` in a text editor.
+
+{% endcollapsible %}
+
+## Step 3: Pass the Magento variables to Apache {#ms-apache-vars}
+
+{% collapsible To pass the Magento variables to Apache: %}
+
+1.  As the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html), open `/var/www/html/magento2/.htaccess` in a text editor.
 7.  Add the following after `RewriteEngine on` in `.htaccess`:
 
         SetEnvIf Host .*example.com.* MAGE_RUN_CODE=french.mysite.mg
@@ -83,6 +93,8 @@ For more information about `SetEnvIf`, see:
     *   CentOS: `service httpd restart`
     *   Ubuntu: `service apache2 restart`
 9.  Verify your site as discussed in the next section.
+
+{% endcollapsible %}
 
 ## Verify your site  {#ms-apache-verify}
 Unless you have DNS set up for your stores' URLs, you must add a static route to the host in your `hosts` file:

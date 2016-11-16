@@ -29,6 +29,7 @@ We assume the following:
 	*	`french.mysite.mg` with website code `french` and storeview code `fr`
 	*	`german.mysite.mg` with website code `german` and storeview code `de`
 
+### Roadmap for setting up multiple websites with Apache
 Setting up multiple stores consists of the following tasks:
 
 1.	[Set up websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the Magento Admin.
