@@ -10,9 +10,9 @@ version: 2.1
 github_link: payments-integrations/vault/vault-intro.md
 ---
 
-In this section you can find information about what is Vault and how to integrate it to existing payments methods.
+In this section you can find information about what is the vault functionality, and how to integrate it to existing payments methods.
 
-The Vault provides mechanism to store customer credit cards on the trusted payments gateways (Braintree, PayPal) instead own servers.
+The Vault provides mechanism to store customer credit cards information on the trusted payments gateways (Braintree, PayPal) instead own servers.
 This way is more secure and allow to save by store credit card details without any customer sensitive data.
 
 The main features are:

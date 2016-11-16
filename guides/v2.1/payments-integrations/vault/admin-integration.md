@@ -11,7 +11,7 @@ github_link: payments-integrations/vault/admin-integration.md
 
 The Vault integration for Admin panel is similar to Storefront.
 
-At first, need to implement `TokenUiComponentProviderInterface` similar to [Token UI Component Provider]({{site.gdeurl21/payments-integrations/vault/token-ui-component-provider.html#vault_token_ui_component_provider}}),
+At first, need to implement `TokenUiComponentProviderInterface` similar to [Token UI Component Provider]({{page.baseurl}}/payments-integrations/vault/token-ui-component-provider.html#vault_token_ui_component_provider}}),
 but in that case your js component hasn't default Vault implementation and you need to implement all logic for validation
 and place order.
 
