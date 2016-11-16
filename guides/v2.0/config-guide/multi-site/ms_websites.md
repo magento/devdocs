@@ -19,7 +19,7 @@ The tasks discussed in this topic provide one way to set up multiple stores. For
 *	[Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html){:target="_blank"}
 *	[Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}
 
-## Create a root category
+## Step 1: Create a root category
 You should create at least a root category per store; you can create additional categories if you choose.
 
 {% collapsible To create a root category: %}
@@ -30,7 +30,7 @@ You should create at least a root category per store; you can create additional 
 4.	In the **Category Name** field, enter a unique name to identify this category.
 5.	Make sure **Enable Category** is set to **Yes**.
 
-	For information about the other options on this page, see [Root Categories](http://docs.magento.com/m2/ce/user_guide/catalog/category-root.html?Highlight=create%20root%20category){:target="_blank"}
+	For information about the other options on this page, see [Root Categories](http://docs.magento.com/m2/ce/user_guide/catalog/category-root.html?Highlight=create%20root%20category){:target="_blank"}.
 
 	The following figure shows an example.
 
@@ -40,13 +40,13 @@ You should create at least a root category per store; you can create additional 
 
 {% endcollapsible %}
 
-## Create a website
+## Step 2: Create a website
 
 {% collapsible To create a website: %}
 
 1.	Log in to the Magento Admin as a user authorized to create websites, stores, and store views.
-2.	Click **Stores** > **All Stores**.
-3.	To create a website, click **Create Website**.
+2.	Click **Stores** > Settings > **All Stores**.
+3.	On the Stores page, click **Create Website**.
 
 	*	**Name** field: Enter a name to identify the website.
 	*	**Code** field: Enter a unique code; for example, if you have a French store, you can enter `french`
@@ -55,17 +55,17 @@ You should create at least a root category per store; you can create additional 
 	The following figure shows an example.
 
 	![Add a website]({{ site.baseurl }}common/images/config_multi-site-website.png){:width="500px"}
-4.	Click **Save Config**.
+4.	Click **Save Web Site**.
 7.	Repeat these tasks as many times as necessary to create your websites.
 
 {% endcollapsible %}
 
-## Create a store
+## Step 3: Create a store
 
 {% collapsible To create a store: %}
 
 1.	In the Magento Admin, click **Stores** > **All Stores**.
-1.	To create a store, click **Create Store**.
+1.	On the Stores page, click **Create Store**.
 
 	*	**Web Site** list: Click the name of the website with which to associate this store.
 	*	**Name** field: Enter a name to identify the store.
@@ -80,12 +80,12 @@ You should create at least a root category per store; you can create additional 
 
 {% endcollapsible %}
 
-## Create a store view
+## Step 4: Create a store view
 
 {% collapsible To create a store view: %}
 
 1.	In the Magento Admin, click **Stores** > **All Stores**.
-7.	To create a store view, click **Create Store View**.
+2.	On the Stores page, click **Create Store View**.
 
 	*	**Store** list: Click the name of the store with which to associate this store view.
 	*	**Name** field: Enter a name to identify this store view.
@@ -94,17 +94,17 @@ You should create at least a root category per store; you can create additional 
 	The following figure shows an example.
 
 	![Add a store]({{ site.baseurl }}common/images/config_multi-site-storeview.png){:width="500px"}
-8.	Click **Save Store View**.
-7.	Repeat these tasks as many times as necessary to create your store views.
+3.	Click **Save Store View**.
+4.	Repeat these tasks as many times as necessary to create your store views.
 
 {% endcollapsible %}
 
-## Change the website's base URL
+## Step 5: Change the website's base URL
 
 {% collapsible To change the website's base URL: %}
 
 1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
-2.	From the **Store View** list at the top of the page, click the name of one of your sites as the following figure shows.
+2.	From the **Store View** list at the top of the page, click the name of one of your websites as the following figure shows.
 
 	![Select a scope]({{ site.baseurl }}common/images/config_multi-site-scope.png){:width="250px"}
 
@@ -121,7 +121,7 @@ You should create at least a root category per store; you can create additional 
 
 {% endcollapsible %}
 
-## Add the store code to the base URL
+## Step 6: Add the store code to the base URL
 The Magento application gives you the option to add the store code to the site's base URL, which simplifies the process of setting up multiple stores. Using this option, you don't have to create directories on the Magento file system to store `index.php` and `.htaccess`. These files might get out of sync when you upgrade the Magento application in the future.
 
 For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}.
@@ -133,10 +133,10 @@ For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce
 
 	![Select a scope]({{ site.baseurl }}common/images/config_multi-site-default.png){:width="250px"} 
 3.	In the right pane, expand **Url Options**.
-4.	Clear the **Use default** check box next to **Add Store Code to Urls**.
+4.	Clear the **Use system value** check box next to **Add Store Code to Urls**.
 5.	From the **Add Store Code to Urls** list, click **Yes** as the following figure shows.
 
-	![Add the store code to the store's base URL]({{ site.baseurl }}common/images/config_multi-site-add-store-url.png)
+	![Add the store code to the store's base URL]({{ site.baseurl }}common/images/config_multi-site-add-store-url.png){:width="550px"}
 6.	Click **Save Config**.
 7.	If prompted, flush the Magento cache. (**System** > **Cache Management**).
 

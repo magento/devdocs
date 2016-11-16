@@ -16,11 +16,11 @@ This tutorial shows you step-by-step how to set up multiple stores with Magento 
 ### Assumptions
 We assume the following:
 
-*	You're developing on a local machine or a development machine
+*	You're developing on a development machine (laptop, virtual machine, and so on)
 
 	Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
-	Additional tasks are required to set up Magento Enterprise Cloud Edition. After you complete the tasks discussed in this topic, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html)
+	Additional tasks are required to set up Magento Enterprise Cloud Edition. After you complete the tasks discussed in this topic, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html).
 *	You use one virtual host per store; the virtual host configuration files are located in `/etc/nginx/sites-available`
 *	You use `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial
 *	The Magento software is installed in `/var/www/html/magento2`
