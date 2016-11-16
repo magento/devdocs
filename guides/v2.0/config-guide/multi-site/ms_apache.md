@@ -61,7 +61,7 @@ For more information about `SetEnvIf`, see:
 1.  Open the virtual host configuration file in a text editor.
 
     For example, open `/etc/httpd/conf/httpd.conf`
-2. Locate the line `<VirtualHost *:80>` and uncomment the entire section if necessary.
+2. Locate the section starting with `<VirtualHost *:80>` and uncomment the entire section if necessary.
 3. Enter the following between the `<VirtualHost *:80>` and `</VirtualHost>` tags:
 
         ServerName          french.mysite.mg
@@ -70,10 +70,13 @@ For more information about `SetEnvIf`, see:
         SetEnv MAGE_RUN_TYPE "website"
 4.  Copy that virtual host definition to another one and change it as follows:
 
-        ServerName          german.mysite.mg
-        DocumentRoot        /var/www/html/magento2/
-        SetEnv MAGE_RUN_CODE "german"
-        SetEnv MAGE_RUN_TYPE "website"
+        <VirtualHost *:80>
+           ServerName          german.mysite.mg
+           DocumentRoot        /var/www/html/magento2/
+           SetEnv MAGE_RUN_CODE "german"
+           SetEnv MAGE_RUN_TYPE "website"
+        </VirtualHost>
+        
 5.  Save your changes to `httpd.conf` and exit the text editor.
 
 {% endcollapsible %}
@@ -109,8 +112,7 @@ Unless you have DNS set up for your stores' URLs, you must add a static route to
 You're done!
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
   <ul><li>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</li>
-    <li>Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see <a href="{{ page.baseurl }}cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li></span>
+    <li>Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see <a href="{{ page.baseurl }}cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li>
 </div>
 
