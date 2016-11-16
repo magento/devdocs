@@ -72,18 +72,17 @@ To set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using the Apache `SetEnvIf
         SetEnv MAGE_RUN_CODE "german"
         SetEnv MAGE_RUN_TYPE "website"
 5.  Save your changes to `httpd.conf` and exit the text editor.
+6.  As the [Magento file system owner](), open `/var/www/html/magento2/.htaccess` in a text editor.
+7.  Add the following after `RewriteEngine on` in `.htaccess`:
 
+        SetEnvIf Host .*example.com.* MAGE_RUN_CODE=french.example.com
+        SetEnvIf Host .*example.com.* MAGE_RUN_TYPE=website
+8.  Save your changes to `.htaccess` and exit the text editor.
+9.  Restart Apache:
 
-
-Add the following after `RewriteEngine on` in `.htaccess`:
-
-    SetEnvIf Host .*<your domain>.* MAGE_RUN_CODE=<code>
-    SetEnvIf Host .*<your domain>.* MAGE_RUN_TYPE={store|website}
-
-For example, to use a website with the code `frenchsite.example.com`:
-
-    SetEnvIf Host .*example.com.* MAGE_RUN_CODE=frenchsite.example.com
-    SetEnvIf Host .*example.com.* MAGE_RUN_TYPE=website
+    *   CentOS: `service httpd restart`
+    *   Ubuntu: `service apache2 restart`
+9.  [Verify your site]().
 
 #### RewriteCond example
 Add code similar to the following after `RewriteBase /magento/` in `.htaccess`:
