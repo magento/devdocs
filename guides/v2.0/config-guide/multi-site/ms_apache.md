@@ -58,7 +58,7 @@ For more information about `SetEnvIf`, see:
 
 {% collapsible To create Apache virtual hosts: %}
 
-1.  Open the virtual host configuration file in a text editor.
+1.  As a user with `root` privileges, open the virtual host configuration file in a text editor.
 
     For example, open `/etc/httpd/conf/httpd.conf`
 2. Locate the section starting with `<VirtualHost *:80>` and uncomment the entire section if necessary.
