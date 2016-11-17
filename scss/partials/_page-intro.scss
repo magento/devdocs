@@ -13,5 +13,27 @@
 }
 
 .contributor {
-  padding: 5px 0;
+
+  position: relative;
+  padding: 5px 5px 5px 25px;
+  margin: 0 0 10px 0;
+  background: #fdf4e1;
+
+  a {
+    color: #95360B;
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+
+  &:after {
+    display: block;
+    content: '';
+    background: url(../i/icons/star.svg) center center no-repeat;
+    position: absolute;
+    width: 16px;
+    height: 17px;
+    top: 5px;
+    left: 4px;
+  }
 }
