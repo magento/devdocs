@@ -110,7 +110,7 @@ $("#element").accordion({
 
 <h3>Initialize accordion in a template</h3>
 
-The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
+The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
 
 
 <h2 id="accordion_options">Options</h2>

@@ -120,7 +120,7 @@ The `observer` xml element has the following properties:
 * `name` (required) - The name of the observer for the event definition.
 * `instance` (required) - The fully qualified class name of the observer.
 * `disabled` - Determines whether this observer is active or not. Default value is false.
-* `shared` - Determines the [lifestyle]({{page.baseurl}}extension-dev-guide/depend-inj.html#object-lifestyle-management) of the class. Default is false.
+* `shared` - Determines the [lifestyle]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html#object-lifestyle-configuration) of the class. Default is false.
 
 
 Below is an example of how to assign observers to watch certain events:

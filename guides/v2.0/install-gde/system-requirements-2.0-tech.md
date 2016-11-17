@@ -72,7 +72,7 @@ If you must install it separately, see the <a href="http://php.net/manual/en/opc
 #### PHP settings
 We recommend particular PHP configuration settings, such as `memory_limit`, that can avoid common problems when using Magento.
 
-For more information, see our recommendations for <a href="{{page.baseurl}}install-gde/prereq/php-centos.html#instgde-prereq-timezone">CentOS</a> and <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a>. 
+For more information, see our [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html). 
 
 ### SSL
 *	A valid security certificate is required for HTTPS.

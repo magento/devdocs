@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
-title: Instantiating objects with factories
-menu_title: Instantiating objects with factories
+title: Factories
+menu_title: Factories
 menu_order: 6
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
@@ -11,55 +11,102 @@ version: 2.0
 github_link: extension-dev-guide/factories.md
 ---
 ## {{page.menu_title}}
+{:.no_toc}
 
-The most common way to request and work with objects in Magento is using <a href="{{page.baseurl}}extension-dev-guide/depend-inj.html##dep-inj-preview-cons">constructor injection</a>.  Objects obtained this way (that is, using injectable classes) follow a singleton pattern, whereby the same instance is always returned by the Object Manager whenever a class is requested.
+* TOC
+{:toc}
 
-Most development also requires working with objects that are individual instances of classes (for example, a model representing a database entity).  These are referred to as <a href="{{page.baseurl}}extension-dev-guide/depend-inj.html#dep-inj-mod-type-inject">*non-injectables*</a>. Non-injectiables are not obtained directly using constructor injection; instead, instantiate them using *factories*.
+## Overview
 
-### Purpose of factories
-Factories are special objects that have only one purpose: to create an instance of one non-injectable class or interface. Unlike other objects, factories are allowed to depend on the object manager. Factories are used to isolate the object manager from business code as the following example shows:
+Factories are service classes that instantiate non-injectable classes, that is, models that represent a database entity.
+They create a layer of abstraction between the `ObjectManager` and business code.
+
+## Relationship to `ObjectManager`
+
+The `Magento\Framework\ObjectManager` is the class responsible for instantiating objects in the Magento application.
+Magento prohibits depending on and directly using the `ObjectManager` in your code.
+
+Factories are an exception to this rule because they require the `ObjectManager` to instantiate specific models.
+
+The following example illustrates the relationship between a simple factory and the `ObjectManager`:
 
 {% highlight php startinline=true %}
-class Magento\Core\Model\Config\BaseFactory
+namespace Magento\Framework\App\Config;
+
+class BaseFactory
 {
-    protected $_objectManager;
-
-    public function __construct(Magento\Framework\ObjectManagerInterface $objectManager)
-    {
-        $this->_objectManager = $objectManager;
-    }
-
-    public function create($sourceData = null)
-    {
-        return $this->_objectManager->create('Magento\Core\Model\Config\Base', ['sourceData' => $sourceData]);
-    }
+  /**
+   * @var \Magento\Framework\ObjectManagerInterface
+   */
+  private $objectManager;
+  
+  /**
+   * @param \Magento\Framework\ObjectManagerInterface $objectManager
+   */
+  public function __construct(\Magento\Framework\ObjectManagerInterface $objectManager)
+  {
+    $this->_objectManager = $objectManager;
+  }
+  /**
+   * Create config model
+   * @param string|\Magento\Framework\Simplexml\Element $sourceData
+   * @return \Magento\Framework\App\Config\Base
+   */
+  public function create($sourceData = null)
+  {
+    return $this->_objectManager->create(\Magento\Framework\App\Config\Base::class, ['sourceData' => $sourceData]);
+  }
 }
 {% endhighlight %}
 
-### Factories are generated classes
-Factories are always named identically to the classes they instantiate, suffixed with `Factory`.  (For example, `Magento\Cms\Model\BlockFactory` is responsible for objects of the class <a href="{{ site.mage2000url }}app/code/Magento/Cms/Model/Block.php" target="_blank">Magento\Cms\Model\Block</a>.)
 
-An important thing to understand about factories is that they are an automatically generated class type.  Factory classes do not need to be explicitly defined.  Simply reference a class name with `Factory` appended in a constructor, and Magento automatically generates the factory class if it does not already exist.  (See <a href="{{page.baseurl}}extension-dev-guide/code-generation.html">Code generation</a> for more information.)  
+## Writing factories
 
-Factory classes can be explicitly defined, however, if customization of the typical factory behavior is desired for a specific class. The code in factories provides `typeSafety` (`@return` annotation) so IDEs understand the type of returned object for the type.
+Unless you require specific behavior for your factory classes, you do not need to explicitly define them because they are an [automatically generated]({{page.baseurl}}extension-dev-guide/code-generation.html) class type.
+When you reference a factory in a class constructor, Magento's [object manager]({{page.baseurl}}extension-dev-guide/object-manager.html) generates the factory class if it does not exist.
 
-### Factories are injectable
-Factories themselves are injectables, and therefore constructor injection is still key to the process of instantiating objects.  Receive a factory class via a constructor:
+Factories follow the naming convention `<class-type>Factory` where `<class-type>` is the name of the class the factory instantiates.
+
+For example the automatically generated `Magento\Cms\Model\BlockFactory` class is a factory that instantiates the class [`Magento\Cms\Model\Block`]({{site.mage2000url}}app/code/Magento/Cms/Model/Block.php).
+
+
+## Using factories
+
+You can get the singleton instance of a factory for a specific model using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html##dep-inj-preview-cons){:target="_blank"}.
+
+The following example shows a class getting the `BlockFactory` instance through the constructor:
 
 {% highlight php startinline=true %}
-function __construct (
-    \Magento\Cms\Model\BlockFactory $blockFactory
-) {
+function __construct ( \Magento\Cms\Model\BlockFactory $blockFactory) {
     $this->blockFactory = $blockFactory;
 }
 {% endhighlight %}
 
-When an instance of the class is needed, use the factory to instantiate it:
+Calling the `create()` method on a factory gives you an instance of its specific class:
 
 {% highlight php startinline=true %}
 $block = $this->blockFactory->create();
 {% endhighlight %}
 
-The `_create_` method of factories accepts an array, which is passed as the `$data` array to the instantiated object.
+For classes that require parameters, the automatically generated `create()` function accepts an array of parameters that it passes on to the `ObjectManager` to create the target class.
 
-Just as interfaces can be specified in constructor injection to obtain the best object implementing that interface (as defined in dependency injection preferences), factories can be used for such interfaces as well.  For example, requesting an object of the class `Magento\Customer\Api\Data\CustomerInterfaceFactory` in a constructor results in a factory responsible for creating instances of the appropriate dependency injection preference implementing `Magento\Customer\Api\Data\CustomerInterface`.
+The example below shows the construction of a `Magento\Search\Model\Autocomplete\Item` object by passing in an array of parameters to a factory:
+{% highlight php startinline=true %} 
+$resultItem = $this->itemFactory->create([
+  'title' => $item->getQueryText(),
+  'num_results' => $item->getNumResults(),
+]); 
+{%endhighlight%}
+
+### Interfaces
+
+Factories are smart enough to resolve dependencies and allow you to get the correct instance of an interface as defined in your module's `di.xml`.
+
+For example, in the [`CatalogInventory`]({{site.mage2000url}}app/code/Magento/CatalogInventory){:target="_blank"} module, the `di.xml` file contains the following entry:
+
+{% highlight xml %}
+<preference for="Magento\CatalogInventory\Api\Data\StockItemInterface" type="Magento\CatalogInventory\Model\Stock\Item" />
+{% endhighlight %}
+
+It instructs Magento to use the specific [`Item`]({{site.mage2000url}}app/code/Magento/CatalogInventory/Model/Stock/Item.php){:target="_blank"} class wherever the [`StockItemInterface`]({{site.mage2000url}}app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php){:target="_blank"} is used.
+When a class in that module includes the factory `StockItemInterfaceFactory` as a dependency, Magento generates a factory that is capable of creating the specific `Item` objects.

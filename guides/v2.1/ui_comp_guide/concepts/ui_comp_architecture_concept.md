@@ -20,7 +20,7 @@ The usual UI component is seen by the user as an distinct and highly interactive
 
 UI components are configured using primarily the following:
 
-1. `declaration.xml` file: the structure with nodes, nested nodes, options and so on.
+1. `definition.xml` file: the structure with nodes, nested nodes, options and so on.
 2. UI component XML declaration (the instance).
 3. [Backend/PHP modifiers]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.md).
 4. Configuration inside the JavaScript classes.

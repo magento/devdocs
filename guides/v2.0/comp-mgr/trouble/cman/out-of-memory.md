@@ -26,7 +26,7 @@ The error `proc_open(): fork failed - Cannot allocate memory` can also display o
 We recommend you allocate 2GB of memory to PHP to make sure your installation or upgrade succeeds. The error might mean you have exhausted the physical memory in your machine and your system has no swap file available. At minimum, we recommend you have at least 2GB of RAM and an enabled swap file.
 
 ### Solution
-First, make sure you allocated [2GB of memory to PHP]({{ page.baseurl }}install-gde/prereq/php-centos.html#instgde-prereq-timezone); otherwise, your installation or upgrade might still run out of memory.
+First, make sure you allocated [2GB of memory to PHP]({{ page.baseurl }}install-gde/prereq/php-settings.html); otherwise, your installation or upgrade might still run out of memory.
 
 If you've already done that, create a swap file on your machine. A Linux machine uses *swap space* if it needs more memory resources and the RAM is full. The swap space is used for inactive pages in memory.
 

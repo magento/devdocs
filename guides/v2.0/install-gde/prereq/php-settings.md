@@ -68,6 +68,10 @@ To locate the PHP command-line configuration, enter
 
 Use the value of Loaded Configuration file.
 
+<div class="bs-callout bs-callout-warning">
+    <p>If you have only one <code>php.ini</code> file, make the changes in that file. If you have two <code>php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
+</div> 
+
 {% endcollapsible %}
 
 {% collapsible To find OPcache configuration settings: %}
@@ -101,7 +105,7 @@ If you have more than one `opcache.ini`, modify all of them.
 4.	Locate the following setting and uncomment it if necessary:
 
 		date.timezone =
-5.	Add the time zone setting you found in step 3.
+5.	Add the time zone setting you found in step 2.
 6.	Change the value of `memory_limit` to one of the values at the beginning of this section.
 
 	For example,
