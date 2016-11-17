@@ -64,6 +64,18 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 
 This implementation allow to retrieve all available _Payment Token_ details and specify js component for Storefront.
 
+After component provider creation need to add it to list of available _Vault_ config providers:
+
+{% highlight xml %}
+<type name="Magento\Vault\Model\Ui\TokensConfigProvider">
+    <arguments>
+        <argument name="tokenUiComponentProviders" xsi:type="array">
+            <item name="braintree" xsi:type="object">Magento\Braintree\Model\Ui\TokenUiComponentProvider</item>
+        </argument>
+    </arguments>
+</type>
+{% endhighlight %}
+
 Custom Vault js component should extend [vault.js]({{site.mage2100url}}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
 
 {% highlight javascript %}

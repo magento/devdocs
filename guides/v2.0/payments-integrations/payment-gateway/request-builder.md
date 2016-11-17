@@ -10,6 +10,8 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/request-builder.md
 ---
 
+## Request Builder
+
 Request builder is responsible for building a transaction payload/request from several parts.
 This abstract interface allows you to have complex building strategies, but still atomic and testable.
 

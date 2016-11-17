@@ -10,6 +10,8 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/command-pool.md
 ---
 
+## Gateway Command Pool
+
 All implemented _Commands_ should be added to the _Command Pool_.
 
 The basic abstraction is `\Magento\Payment\Gateway\Command\CommandPoolInterface`:

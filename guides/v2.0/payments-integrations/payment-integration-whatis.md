@@ -23,9 +23,9 @@ This topic describes what a payment gateway is from Magento perspective, its con
 {:toc}
 
 ### Payment Gateway from Magento perspective
-Integration provides an ability to put/create a transaction based on _Order_ details or perform available operations on existing _Transaction_.
-Let's say we have a function _F_, which represents a Gateway operation, and transaction payload _p_, the operation can be represented as follows:
-_F(p) = t_
+
+In general the _Payment Gateway_ it is a set of components (commands, builders, validators, handlers, etc.) which provide an ability to put/create transactions
+based on _Order_ details or perform available operations on existing _Transaction_.
 
 Transaction payload in such case is specific to a concrete Gateway, and may encapsulate various data parts:
 
@@ -36,7 +36,7 @@ Transaction payload in such case is specific to a concrete Gateway, and may enca
 * Merchants Gateway API credentials
 * Payment details
 
-Following interface represents all requirements, defined above. Which allows us to define any domain-specific logic which may be executed before or after actual Gateway Command execution.
+Following interface represents all requirements, defined above. Which allows us to define any domain-specific logic which may be executed before or after actual _Gateway Command_ execution.
 
 <p class="q">What is the nature of Gateway Command? Is it a php method? A cli command</p>
 
@@ -85,7 +85,7 @@ Next topics will be focused on Payment module in scope of this bundle.
 
 ### Client customizations
 
-Each module from the bundle above requires every Payment integration to provide components/interfaces/configuration for available extension points to build a fullstack e-commerce platform.
+Every payment integration must provide components/interfaces/configuration for available extension points in the modules of the bundle.
 
 <p class="q">Can we change the wording to:<p>
 

@@ -10,6 +10,8 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/response-validator.md
 ---
 
+## Response Validator
+
 Response validator performs gateway response verification, which may vary from low level data formatting/security verification to some business logic, required by store configuration.
 
 As a result, _Validator_ returns a _Result_ object, which has `isValid()` method returning _Boolean_ and `getFailsDescription()` which returns a list of _Phrases_. 
