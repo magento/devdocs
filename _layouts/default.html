@@ -6,17 +6,15 @@
 
 	<section class="content">
 		<div class="content-wrap">
-
 			{% include page-header.html %}
 			{{ content }}
-
 		</div>
 		<!-- /.content-wrap -->
 
 		<div class="page-info">
 
 			{% if page.contributor_link %}
-				<div class="contributor">
+				<div class="page-contributor">
 					<a href="{{ page.contributor_link }}" target="_blank">
 						Thanks to {{ page.contributor_name }} for contributing this topic
 					</a>

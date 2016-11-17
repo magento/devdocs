@@ -4,12 +4,9 @@
     <title>release</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Home-Page-and-Layout" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="devdocs-home-hd" transform="translate(-675.000000, -587.000000)">
-            <g id="Group-9" transform="translate(198.000000, 426.000000)"></g>
-            <g id="release" transform="translate(675.000000, 587.000000)" fill="#EE6321">
-                <path d="M16,47.7864559 L24.6186139,49.8576833 L24.6186139,33.3622332 L16,35.4286688 L16,47.7858808 M73.5002333,22 L29.4823375,32.5842291 L29.4823375,50.8258278 L36.8558382,71.2870096 L44.8264029,68.1663679 L39.3617819,53.0088011 L73.4988916,61.2181914 L73.4988916,22.0017251" id="Shape"></path>
-            </g>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/release" fill="#EE6321">
+            <path d="M16,46.0105804 L24.6935231,48.09981 L24.6935231,31.4609887 L16,33.5453848 L16,46.0100003 M74,20 L29.59952,30.6762225 L29.59952,49.0763692 L37.0371079,69.7153905 L45.0769492,66.5676256 L39.5648322,51.2783159 L73.9986466,59.5590586 L73.9986466,20.0017401" id="Shape"></path>
         </g>
     </g>
 </svg>
