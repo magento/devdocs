@@ -72,8 +72,8 @@ $(document).ready(function(){
 						anchor_text = text;
 					}
 					// clean up the anchor
-					anchor_text = anchor_text.replace(/\s/g, '-').replace(/[`~!@#$%^&*()_|+\=?;:'",.<>\{\}\[\]\\\/]/gi, '').toLowerCase();
-					console.log(anchor_text);
+					anchor_text = anchor_text.replace(/\s/g, '-').replace(/[`~!@#$%^&*()|+\=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+
 					// prepend anhor to title
 					var $link = $("<a>",{
 	          href: "#" + anchor_text,
@@ -93,6 +93,7 @@ $(document).ready(function(){
 						var $li = $('<li class="' + tag_name + '"><a href="#' + anchor_text + '">' + $this.text() + '</a></li>');
 						$toc.find('ul').append($li);
 					}
+					console.log(anchor_text);
 
 				}
 
