@@ -62,17 +62,23 @@ For more information about `SetEnvIf`, see:
 
     For example, open `/etc/httpd/conf/httpd.conf`
 2. Locate the section starting with `<VirtualHost *:80>` and uncomment the entire section if necessary.
-3. Enter the following between the `<VirtualHost *:80>` and `</VirtualHost>` tags:
+3. Create the following virtual hosts:
 
-        ServerName          french.mysite.mg
-        DocumentRoot        /var/www/html/magento2/
-        SetEnv MAGE_RUN_CODE "french"
-        SetEnv MAGE_RUN_TYPE "website"
-4.  Copy that virtual host definition to another one and change it as follows:
+        <VirtualHost *:80>
+           ServerName          mysite.mg
+           DocumentRoot        /var/www/html/magento2/pub/
+        </VirtualHost>
+
+        <VirtualHost *:80>
+           ServerName          french.mysite.mg
+           DocumentRoot        /var/www/html/magento2/pub/
+           SetEnv MAGE_RUN_CODE "french"
+           SetEnv MAGE_RUN_TYPE "website"
+        </VirtualHost>
 
         <VirtualHost *:80>
            ServerName          german.mysite.mg
-           DocumentRoot        /var/www/html/magento2/
+           DocumentRoot        /var/www/html/magento2/pub/
            SetEnv MAGE_RUN_CODE "german"
            SetEnv MAGE_RUN_TYPE "website"
         </VirtualHost>
