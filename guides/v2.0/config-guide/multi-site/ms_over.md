@@ -28,7 +28,7 @@ One instance of the Magento software can enable you to start multiple websites o
 
 This flexible solution enables one Magento codebase and Magento Admin to administer and display different stores.
 
-You configure the websites, stores, and store views in the Magento Admin. You use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in entry point scriptsto start the Magento application using these websites or store views. 
+You configure the websites, stores, and store views in the Magento Admin. You use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in entry point scripts to start the Magento application using these websites or store views. 
 
 A typical use of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another domain that has categories and products for a different language.
 
