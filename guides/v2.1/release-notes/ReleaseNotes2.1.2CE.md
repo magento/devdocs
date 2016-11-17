@@ -241,7 +241,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
-<a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Magento 2.1.2 requirements have changed slightly from 2.1.1. This release supports PHP 5.6.5 and above instead of 5.6.x.</p>

@@ -17,7 +17,7 @@ MySQL 5.6 (Oracle or Percona)
  
 #### PHP
  
-*	Magento CE 1.9.3 and later, Magento EE 1.14.3 and later: 
+*	Magento CE 1.9.2 and later, Magento EE 1.14.2 and later: 
 	*	PHP 5.6.x
 	*   PHP 5.4.x
 	*   PHP 5.5.x

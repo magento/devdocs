@@ -1,10 +1,10 @@
 ---
 layout: default
-group: 
+group:
 subgroup: View library
 title: Page assets
 menu_title: Page assets
-menu_order: 
+menu_order:
 version: 2.0
 github_link: architecture/view/page-assets.md
 redirect_from: /guides/v1.0/architecture/view/page-assets.html
@@ -171,8 +171,9 @@ That is why when you use PHP to work with assets, we recommended you add assets 
 
 The following classes implement Magento asset collections:
 
-* <a href="{{ site.mage2000url" }}lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>&mdash;a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.
-* <a href="{{ site.mage2000url" }}lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>&mdash;an extended collection that also implements asset grouping by properties (for example by content type)
+* <a href="{{site.mage2000url}}lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>&mdash;a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.
+
+* <a href="{{site.mage2000url}}lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>&mdash;an extended collection that also implements asset grouping by properties (for example by content type)
 
 Asset collections enable you to:
 

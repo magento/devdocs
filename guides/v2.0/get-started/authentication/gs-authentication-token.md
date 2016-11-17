@@ -27,7 +27,7 @@ Get a customer token | `POST /V1/integration/customer/token` | `integrationCusto
 
 For most web API calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP authorization scheme to prove your identity. The token never expires, but it can be revoked.
 
-## Request a token
+## Request a token {#request-token}
 
 A authentication token request contains three basic elements:
 
@@ -62,7 +62,7 @@ A authentication token request contains three basic elements:
    </tr>
 </table>
 
-#### Examples
+#### Examples {#token-example}
 
 The following image shows a token request for the admin account using a REST client:
 
@@ -92,7 +92,7 @@ Any web API call that accesses a resource that requires a permission level highe
 
 `Authorization: Bearer <authentication token>`
 
-### Admin access
+### Admin access {#admin-access}
 Admins can access any resources for which they are authorized.
 
 For example, to make a web API call with an admin token:

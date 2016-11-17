@@ -41,7 +41,7 @@ mage2100url: "https://github.com/magento/magento2/blob/2.1/"
 # 2.2.0 variables
 gdeurl22: "/guides/v2.2/"
 githuburl22: "https://github.com/magento/devdocs/tree/develop/guides/v2.2/"
-mage2200url: "https://github.com/magento/magento2/blob/2.2/"
+mage2200url: "https://github.com/magento/magento2/blob/develop/"
 
 # 2.3.0 variables
 
@@ -69,4 +69,4 @@ gems:
   - jekyll-redirect-from
   - jekyll-last-modified-at
 
-exclude: ['scss','bin','node_modules', 'vendor', 'guides/v2.2']
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'guides/v2.2']

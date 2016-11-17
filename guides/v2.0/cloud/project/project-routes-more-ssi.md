@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Server side includes
 menu_title: Server side includes
 menu_order: 20

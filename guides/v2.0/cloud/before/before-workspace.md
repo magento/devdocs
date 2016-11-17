@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Overview of a Magento workspace
 menu_title: Overview of a Magento workspace
 menu_order: 6

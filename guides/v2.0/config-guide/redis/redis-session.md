@@ -11,8 +11,9 @@ github_link: config-guide/redis/redis-session.md
 ---
 
 #### Contents
-*	<a href="#reds-cache-prereq">Prerequisite</a>
-*	<a href="#config-redis-config">Configure Magento to use Redis for session storage</a>
+*	[Prerequisite](#reds-cache-prereq)
+*	[Configure Magento to use Redis for session storage](#config-redis-config)
+*	[Basic verification](#redis-verify)
 
 <h2 id="reds-cache-prereq">Prerequisite</h2>
 Before you continue, install Redis as discussed in <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Use Redis for page caching or session storage</a>.
@@ -49,7 +50,7 @@ Following is a sample configuration to add to `<your Magento install dir>app/etc
 		'min_lifetime' => '60',
 		'max_lifetime' => '2592000'
         )
-    )
+    ),
 
 where
 
@@ -157,6 +158,10 @@ where
 </tr>
 </tbody>
 </table>
+
+## Basic verification {#redis-verify}
+
+{% include config/redis-verify.md %}
 
 #### Related topics
 

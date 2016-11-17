@@ -101,9 +101,9 @@ A data set should be placed in the same directory with a corresponding test case
 
 ### Example data set {#example}
 
-Let's see an example for `CreateSimpleProductEntityTest`. A data set and its corresponding [test case][] must be placed in the `<magento2>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product` directory.
+Let's see an example for `CreateSimpleProductEntityTest`. A data set and its corresponding [test case][] must be placed in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product` directory.
 
-<a href="{{ site.baseurl }}common/images/mtf_dataset_dir.png"><img src="{{ site.baseurl }}common/images/mtf_dataset_dir.png"/></a>
+<a href="{{ site.baseurl }}common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_dataset_dir.png"/></a>
 
 The `CreateSimpleProductEntityTest.xml` data set contains:
 
@@ -135,7 +135,7 @@ The `CreateSimpleProductEntityTest.xml` data set contains:
 
 This is a data set that:
 
-- corresponds to the XSD schema `<magento2>/dev/tests/functional/vendor/magento/mtf/etc/variations.xsd`
+- corresponds to the XSD schema `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc/variations.xsd`
 - relates to the `Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest` test case (performs creation of the simple product). 
 - relates to the ticket `MAGETWO-23414` in Jira
 - contains variation `CreateSimpleProductEntityTestVariation1` that 
@@ -327,7 +327,7 @@ There are two options to merge data sets in the FTF:
 
 To add a new variation using merging, you should simply use the name of a [test case][] that you want to merge with. For example, you want to add a new variations from the Magento_ProductVideo module to the `Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest` that is placed in the Magento_Catalog module. You can create data set in the Magento_ProductVideo module, containing variations you need, and paste the test case name that you want to merge with:
  
- * Create `<magento2>/dev/tests/functional/tests/app/Magento/ProductVideo/Test/TestCase/Product/UpdateSimpleProductEntityTest.xml` with the following code:
+ * Create `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/ProductVideo/Test/TestCase/Product/UpdateSimpleProductEntityTest.xml` with the following code:
 
 {%highlight xml%}
 <?xml version="1.0" encoding="utf-8"?>

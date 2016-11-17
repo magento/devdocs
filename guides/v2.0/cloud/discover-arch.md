@@ -32,7 +32,7 @@ This system runs on hardware similar to production.
 
 Staging is where you test your finalized code before deploying to your live production system.
 
-### Production system  {#cloud-arch-prod}
+### Production system {#cloud-arch-prod}
 This system runs your public-facing store on triple-redundant hardware.
 
 #### Advantage of redundant hardware

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 06_sites
+subgroup: 500_sites
 title: Set up multiple websites with nginx
 menu_title: Set up multiple websites with nginx
 menu_order: 2
