@@ -123,7 +123,7 @@ Creating a root category is optional but we show how to do it in this tutorial i
 
 {% endcollapsible %}
 
-## Step 6: Add the store code to the base URL
+## Step 6: Add the store code to the base URL {#multi-storecode-baseurl}
 The Magento application gives you the option to add the store code to the site's base URL, which simplifies the process of setting up multiple stores. Using this option, you don't have to create directories on the Magento file system to store `index.php` and `.htaccess`. These files might get out of sync when you upgrade the Magento application in the future.
 
 For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}.
@@ -169,7 +169,7 @@ You must perform this step last because after it's done, you'll lose access to t
 
 #### Next step
 *	[Set up multiple websites or stores with nginx (tutorial)]({{ page.baseurl }}config-guide/multi-site/ms_nginx.html)
-*	[Set up multiple websites with Apache]({{ page.baseurl }}config-guide/multi-site/ms_apache.html)
+*	[Set up multiple websites with Apache (tutorial)]({{ page.baseurl }}config-guide/multi-site/ms_apache.html)
 
 #### Related information
 [Add content to your websites](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}

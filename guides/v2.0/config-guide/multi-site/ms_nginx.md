@@ -16,7 +16,7 @@ This tutorial shows you step-by-step how to set up multiple stores with Magento 
 ### Assumptions
 We assume the following:
 
-*	You're developing on a development machine (laptop, virtual machine, and so on)
+*	You're working on a development machine (laptop, virtual machine, and so on)
 
 	Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
@@ -95,19 +95,4 @@ For more detail about the map directive, see [nginx documentation on the map dir
 {% endcollapsible %}
 
 ## Verify your site  {#ms-nginx-verify}
-Unless you have DNS set up for your stores' URLs, you must add a static route to the host in your `hosts` file:
-
-1.	Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
-2.	Add the static route in the format:
-
-		<ip address> french.mysite.mg
-		<ip address> german.mysite.mg
-3.	Go to one of the preceding URLs in your browser.
-
-You're done!
-
-<div class="bs-callout bs-callout-info" id="info">
-  <ul><li>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</li>
-    <li>Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see <a href="{{ page.baseurl }}cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li></ul>
-</div>
-
+{% include config/multi-site_verify.md %}

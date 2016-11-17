@@ -16,7 +16,7 @@ This tutorial shows you step-by-step how to set up multiple stores with Magento 
 ### Assumptions
 We assume the following:
 
-*   You're developing on a development machine (laptop, virtual machine, and so on)
+*   You're working on a development machine (laptop, virtual machine, and so on)
 
     Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
@@ -54,8 +54,8 @@ For more information about `SetEnvIf`, see:
 1.  As a user with `root` privileges, open the virtual host configuration file in a text editor.
 
     For example, open `/etc/httpd/conf/httpd.conf`
-2. Locate the section starting with `<VirtualHost *:80>` and uncomment the entire section if necessary.
-3. Create the following virtual hosts:
+2. Locate the section starting with `<VirtualHost *:80>`.
+3. Create the following virtual hosts after any existing virtual hosts:
 
         <VirtualHost *:80>
            ServerName          mysite.mg
@@ -77,23 +77,12 @@ For more information about `SetEnvIf`, see:
         </VirtualHost>
         
 5.  Save your changes to `httpd.conf` and exit the text editor.
+6.  Restart Apache:
+
+    *   CentOS: `service httpd restart`
+    *   Ubuntu: `service apache2 restart`
 
 {% endcollapsible %}
 
 ## Verify your site  {#ms-apache-verify}
-Unless you have DNS set up for your stores' URLs, you must add a static route to the host in your `hosts` file:
-
-1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
-2.  Add the static route in the format:
-
-        <ip address> french.mysite.mg
-        <ip address> german.mysite.mg
-3.  Go to one of the preceding URLs in your browser.
-
-You're done!
-
-<div class="bs-callout bs-callout-info" id="info">
-  <ul><li>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</li>
-    <li>Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see <a href="{{ page.baseurl }}cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li></ul>
-</div>
-
+{% include config/multi-site_verify.md %}
