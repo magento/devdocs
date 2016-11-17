@@ -6,7 +6,7 @@ code, pre {
 code {
   padding: 2px 4px;
 	margin: 0;
-	background-color: #EFF0F0;
+	background-color: $light-gray-color;
 	border-radius: 3px;
   word-wrap: break-word;
 }
@@ -71,6 +71,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code {
   }
   .btn-copy {
     visibility: hidden;
+    background: darken($light-gray-color, 10%);
     opacity: 0;
     transition: .3s;
     font-family: $body-font-family;
@@ -81,6 +82,9 @@ h1 code, h2 code, h3 code, h4 code, h5 code {
     right: 0;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
+    &:active {
+      background: darken($light-gray-color, 20%);
+    }
   }
 
 }
