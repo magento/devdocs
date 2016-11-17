@@ -18,9 +18,10 @@ The tasks discussed in this topic provide one way to set up multiple stores. For
 *	[Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html){:target="_blank"}
 *	[Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html){:target="_blank"}
 *	[Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}
+*	[Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}
 
-## Step 1: Create a root category
-You should create at least a root category per store; you can create additional categories if you choose.
+## Step 1: Create root categories
+Creating a root category is optional but we show how to do it in this tutorial in the event you want each website to have a unique root category. You can create additional categories if you choose.
 
 {% collapsible To create a root category: %}
 
@@ -40,7 +41,7 @@ You should create at least a root category per store; you can create additional 
 
 {% endcollapsible %}
 
-## Step 2: Create a website
+## Step 2: Create websites
 
 {% collapsible To create a website: %}
 
@@ -60,11 +61,11 @@ You should create at least a root category per store; you can create additional 
 
 {% endcollapsible %}
 
-## Step 3: Create a store
+## Step 3: Create stores
 
 {% collapsible To create a store: %}
 
-1.	In the Magento Admin, click **Stores** > **All Stores**.
+1.	In the Magento Admin, click **Stores** > Settings > **All Stores**.
 1.	On the Stores page, click **Create Store**.
 
 	*	**Web Site** list: Click the name of the website with which to associate this store.
@@ -80,11 +81,11 @@ You should create at least a root category per store; you can create additional 
 
 {% endcollapsible %}
 
-## Step 4: Create a store view
+## Step 4: Create store views
 
 {% collapsible To create a store view: %}
 
-1.	In the Magento Admin, click **Stores** > **All Stores**.
+1.	In the Magento Admin, click **Stores** > Settings > **All Stores**.
 2.	On the Stores page, click **Create Store View**.
 
 	*	**Store** list: Click the name of the store with which to associate this store view.
@@ -99,7 +100,7 @@ You should create at least a root category per store; you can create additional 
 
 {% endcollapsible %}
 
-## Step 5: Change the website's base URL
+## Step 5: Change a website's base URL
 
 {% collapsible To change the website's base URL: %}
 
@@ -110,7 +111,7 @@ You should create at least a root category per store; you can create additional 
 
 3.	In the right pane, expand **Base URLs**.
 4.	In the Base URL section, clear the **Use Default** check box.
-4.	Prefix the base URL with your website code as the following example shows.
+4.	Enter `http://french.mysite.mg` as the following example shows.
 
 	![Set a base URL]({{ site.baseurl }}common/images/config_multi-site_base-url.png){:width="650px"}
 
@@ -118,6 +119,7 @@ You should create at least a root category per store; you can create additional 
   		<p>If you're setting up a base URL for Magento Enterprise Cloud Edition, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french--branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
 	</div>
 5.	Click **Save Config**.
+6.	Repeat these tasks for your German website.
 
 {% endcollapsible %}
 
@@ -142,6 +144,30 @@ For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce
 
 {% endcollapsible %}
 
+## Step 7: Change the default store view's base URL
+You must perform this step last because after it's done, you'll lose access to the Magento Admin; your access returns after you set up virtual hosts as discussed in the web-server-specific topics.
+
+{% collapsible To change the default store view's base URL: %}
+
+1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
+2.	From the **Store View** list at the top of the page, click the name of one of your websites as the following figure shows.
+
+	![Select a scope]({{ site.baseurl }}common/images/config_multi-site_base-url-default.png){:width="250px"}
+
+3.	In the right pane, expand **Base URLs**.
+4.	In the Base URL section, clear the **Use Default** check box.
+4.	Enter `http://mysite.mg` as the following example shows.
+
+	![Set a base URL]({{ site.baseurl }}common/images/config_multi-site_base-url-default2.png){:width="650px"}
+
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p>If you're setting up a base URL for Magento Enterprise Cloud Edition, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french--branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
+	</div>
+5.	Click **Save Config**.
+
 #### Next step
 *	[Set up multiple websites or stores with nginx (tutorial)]({{ page.baseurl }}config-guide/multi-site/ms_nginx.html)
 *	[Set up multiple websites with Apache]({{ page.baseurl }}config-guide/multi-site/ms_apache.html)
+
+#### Related information
+[Add content to your websites](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}
