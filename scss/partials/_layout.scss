@@ -6,7 +6,6 @@ html,body {
   background: $light-gray-color; // this is needed for spring scrolling to not show the white border
 }
 
-
 .main-container {
   background: #fff;
   padding: 0 0 50px 0;
@@ -17,24 +16,16 @@ html,body {
   }
 }
 
-
-
+.content {
+  position: relative;
+  float: right;
+  width: 80%;
+}
 
 .container {
   padding-left: 20px;
   padding-right: 20px;
 }
-
-
-
-
-
-.content {
-  position: relative;
-  float: right;
-  width: 77%;
-}
-
 
 
 
@@ -76,7 +67,7 @@ html,body {
   margin-right: 200px;
 
 
-  
+
 
   #markdown-toc {
     display: none;

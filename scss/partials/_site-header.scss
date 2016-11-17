@@ -37,12 +37,12 @@
     width: auto;
     height: 40px;
     float: left;
-    margin-top: 8px;
+    margin-top: 7px;
     margin-right: 20px;
   }
 
   .devdocs-logo {
-    width: 126px;
+    width: 113px;
   }
 
   .menu-btn {
@@ -85,14 +85,13 @@
     }
   }
 
-  @media (max-width:1024px) {
+  @media (max-width:1200px) {
     .magento-logo {
       display: none;
     }
   }
 
   @media (max-width:1023px) {
-
 
     #global-nav {
       border-bottom: 1px solid $beige-color;

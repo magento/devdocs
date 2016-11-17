@@ -30,11 +30,11 @@
 }
 
 .btn:hover, .btn:focus {
-  color: #333333;
+  color: $body-font-color;
   text-decoration: none;
 }
 .btn:focus {
-  outline: thin dotted #333;
+  outline: thin dotted $body-font-color;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -48,7 +48,7 @@
 
 
 .btn-large {
-  padding: 11px 30px;
+  padding: 15px 30px;
   font-size: 20px;
 }
 

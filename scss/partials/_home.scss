@@ -16,6 +16,8 @@
 
 .home-features {
   text-align: center;
+  max-width: 1300px;
+  margin: 0 auto;
 
   .feature {
     vertical-align: top;
@@ -29,7 +31,7 @@
     font-weight: 600;
     text-align: center;
     margin: 0;
-    padding: 0 0 5px 0;
+    padding: 0;
   }
 
   ul,li {
@@ -88,6 +90,7 @@
     font-size: 14px;
   }
 
+  /* there will be single contact link per person for now. this code is not needed
   .contacts {
     list-style: none;
     margin: 0;
@@ -121,6 +124,6 @@
 
     }
 
-  }
+  }*/
 
 }

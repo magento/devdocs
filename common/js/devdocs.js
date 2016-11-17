@@ -57,7 +57,7 @@ $(document).ready(function(){
 				var $this = $(this),
 						id = $this.attr('id'),
 						no_toc = $this.hasClass('no_toc'),
-						anchor;
+						anchor_text = '';
 
 				// check if we need to process the link
 				if ( !no_toc ) {
@@ -65,27 +65,32 @@ $(document).ready(function(){
 					// check if we have id on heading already
 					if ( id ) {
 						// use that id for the anchor
-						anchor = id;
+						anchor_text = id;
 					} else {
 						// generate id from the heading text
 						var text = $this.text();
-						anchor = text;
+						anchor_text = text;
 					}
 					// clean up the anchor
-					anchor.replace(' ', '-').toLowerCase();
+					anchor_text = anchor_text.replace(/\s/g, '-').replace(/[`~!@#$%^&*()_|+\=?;:'",.<>\{\}\[\]\\\/]/gi, '').toLowerCase();
+					console.log(anchor_text);
 					// prepend anhor to title
 					var $link = $("<a>",{
-	          href: "#" + anchor,
+	          href: "#" + anchor_text,
 	          class: "anchor"
 	        });
 					// Add link to the header
 					$this.prepend( $link );
+					// Add id to the header if needed
+					if ( !id ) {
+						$this.attr('id', anchor_text);
+					}
 
 					// Allow only h2 and h3 tags in page toc
 					var tag_name = $this.prop("tagName").toLowerCase();
 
 					if ( tag_name == 'h2' || tag_name == 'h3' ) {
-						var $li = $('<li class="' + tag_name + '"><a href="#' + anchor + '">' + $this.text() + '</a></li>');
+						var $li = $('<li class="' + tag_name + '"><a href="#' + anchor_text + '">' + $this.text() + '</a></li>');
 						$toc.find('ul').append($li);
 					}
 

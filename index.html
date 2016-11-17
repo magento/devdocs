@@ -55,8 +55,6 @@ redirect_from: /guides/v2.1/index.html
       </ul>
     </div>
 
-
-
     <div class="feature">
       <img src="{{ site.baseurl }}i/icons/api.svg" alt="" />
       <h2 class="title">Magento APIs</h2>
@@ -72,7 +70,7 @@ redirect_from: /guides/v2.1/index.html
       <h2 class="title">Release Information</h2>
       <ul>
         <li><a href="{{page.baseurl}}release-notes/bk-release-notes.html">Release Notes</a></li>
-        <li><a href="">Backward Incompatible Changes</a></li>
+        <li><a href="{{site.baseurl}}guides/v2.1/release-notes/backward-incompatible-changes-2.1.html">Backward Incompatible Changes</a></li>
         <li><a href="">Technical Bulletins</a></li>
       </ul>
     </div>
@@ -81,66 +79,12 @@ redirect_from: /guides/v2.1/index.html
       <img src="{{ site.baseurl }}i/icons/community.svg" alt="" />
       <h2 class="title">Community</h2>
       <ul>
-        <li><a href="">DevDocs Blog</a></li>
         <li><a href="">Community Resources</a></li>
-        <li><a href="">Contributor's Guide</a></li>
+        <li><a href="{{page.baseurl}}contributor-guide/contributing.html">Contributor's Guide</a></li>
       </ul>
     </div>
 
   </div>
 </section><!-- END home-features -->
 
-
-<section class="home-contributors">
-  <div class="container">
-    <h2>Top Recent Contributors</h2>
-    <p class="intro">Our documentation is open-source on GitHub. Even the smallest of edits are appreciated, as are enhancements and clarifications to our existing content. We love when we get complete new topics from our community members!</p>
-
-    <div class="contributor">
-      <img class="avatar" src="https://randomuser.me/api/portraits/men/89.jpg" alt="Sam Smithson" />
-      <h5 class="name">Sam Smithson</h5>
-      <p class="role">Sr. Developer at ShopMage</p>
-      <ul class="contacts">
-        <li><a href="" title="twitter" class="twitter">Samsmithson</a></li>
-        <li><a href="" title="LinkedIn" class="linkedin">Samsmithson</a></li>
-        <li><a href="" title="GitHub" class="github">Samsmithson</a></li>
-      </ul>
-    </div>
-
-    <div class="contributor">
-      <img class="avatar" src="https://randomuser.me/api/portraits/men/19.jpg" alt="Sam Smithson" />
-      <h5 class="name">Olaf Endmundsenn</h5>
-      <p class="role">Sr. Developer at ShopMage</p>
-      <ul class="contacts">
-        <li><a href="" title="twitter" class="twitter">Samsmithson</a></li>
-        <li><a href="" title="LinkedIn" class="linkedin">Samsmithson</a></li>
-      </ul>
-    </div>
-
-    <div class="contributor">
-      <img class="avatar" src="https://randomuser.me/api/portraits/women/89.jpg" alt="Sam Smithson" />
-      <h5 class="name">Jane Doe</h5>
-      <p class="role">Sr. Developer at ShopMage</p>
-      <ul class="contacts">
-        <li><a href="" title="twitter" class="mail">Samsmithson</a></li>
-        <li><a href="" title="GitHub" class="github">Samsmithson</a></li>
-      </ul>
-    </div>
-
-    <div class="contributor">
-      <img class="avatar" src="https://randomuser.me/api/portraits/men/12.jpg" alt="Sam Smithson" />
-      <h5 class="name">Konstantin Konstantinopolsky</h5>
-      <p class="role">Sr. Developer at ShopMage</p>
-      <ul class="contacts">
-        <li><a href="" title="twitter" class="twitter">Samsmithson</a></li>
-        <li><a href="" title="LinkedIn" class="linkedin">Samsmithson</a></li>
-        <li><a href="" title="Website" class="web">Samsmithson</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <a href="{{ site.baseurl }}guides/v2.1/contributor-guide/contributing_docs.html" class="btn btn-large btn-primary">Become a Contributor</a>
-    </div>
-
-  </div>
-</section><!-- END home-contributors -->
+{% include home/contributors.html %}
