@@ -19,7 +19,7 @@ github_link: install-gde/prereq/php-centos.md
 *	[CentOS repositories](#centos-php-repos)
 *	[PHP 7 on CentOS 6 or 7](#php-centos-7)
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a>
-*	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
+*	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html">Required PHP settings</a>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -125,7 +125,7 @@ There is more than one way to install PHP 7 on CentOS; the following is a sugges
 	<span class="glyphicon-class">
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html</a>.
 
 {% endcollapsible %}
 
@@ -181,13 +181,13 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
 	<span class="glyphicon-class">
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html</a>.
 
 {% endcollapsible %}
 
 
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-{% include install/php-config.html %}
+#### Next
+[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
 
 
 #### Related topics
