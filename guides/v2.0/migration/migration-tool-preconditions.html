@@ -446,7 +446,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-migrate.html">Migrate using data migration tool</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-migrate.html">Migrate using Data Migration Tool</a></li>
 									
 								
 
@@ -559,7 +559,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-tool-internal-spec.html">Data Migration Tool Internal Specification</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-tool-internal-spec.html">Data Migration Tool Technical Specification</a></li>
 									
 								
 
@@ -657,16 +657,16 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 29 August 2016 (PDT)</div>
+            <div class="updated">Updated: 3 November 2016 (PDT)</div>
             <h2 id="preconditions">Preconditions</h2>
 
-<p>Before you start your migration, you must do all of the following:</p>
+<p>Before starting migration, you must do the following:</p>
 
 <ul>
   <li>
-    <p>Set up a Magento 2 system that meets our <a href="/guides/v2.0//install-gde/system-requirements.html">system requirements</a></p>
+    <p>Set up your Magento 2 system so that it meets the <a href="/guides/v2.0//install-gde/system-requirements.html">system requirements</a></p>
 
-    <p>Set up your system using a topology and design that at least matches your existing Magento 1 system.</p>
+    <p>Use a topology and design that at least matches your existing Magento 1 system.</p>
   </li>
   <li>
     <p><a href="/guides/v2.0/install-gde/bk-install-guide.html">Install Magento 2</a></p>
@@ -675,12 +675,12 @@
     <p>Do not start Magento 2 cron jobs</p>
   </li>
   <li>
-    <p>After installation back up or <a href="https://dev.mysql.com/doc/refman/5.1/en/mysqldump.html" target="_blank">dump</a> your Magento 2 database as soon as possible</p>
+    <p>After installation, back up or <a href="https://dev.mysql.com/doc/refman/5.1/en/mysqldump.html" target="_blank">dump</a> your Magento 2 database as soon as possible. This will allow you to restore the initial database state if migration is not successful.</p>
   </li>
   <li>
-    <p>Check that the Data Migration tool has a network access to connect the Magento 1 and Magento 2 databases</p>
+    <p>Verify if the Data Migration Tool has network access to connect the Magento 1 and Magento 2 databases</p>
 
-    <p>Open ports in your firewall so the migration tool can communicate with the databases</p>
+    <p>Open ports in your firewall so that the Migration Tool can communicate with the databases</p>
   </li>
   <li>
     <p>To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1 database</p>
@@ -688,11 +688,12 @@
   <li>
     <p>Migrate Magento 1 extension code to Magento 2</p>
 
-    <p>Reach out to your extension providers to see if they have been ported yet. For assistance, you can also use the <a href="https://github.com/magento/code-migration/blob/develop/README.md" target="_blank">Magento code migration tool</a>.</p>
+    <p>To find the latest extensions versions, visit <a href="https://marketplace.magento.com/">Magento Marketplace</a> or contact your extension provider.
+You can also use the Magento <a href="https://github.com/magento/code-migration/blob/develop/README.md" target="_blank">Code Migration Tool</a></p>
   </li>
 </ul>
 
-<h3 id="related-topics">Related topics</h3>
+<h2 id="related-topics">Related topics</h2>
 
 <ul>
   <li><a href="/guides/v2.0/migration/migration-tool-install.html">Install the Data Migration Tool</a></li>

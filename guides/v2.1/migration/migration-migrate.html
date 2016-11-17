@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Migrate using the data migration tool</title>
+	<title>Migrate using Data Migration Tool</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -165,7 +165,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Migrate using the data migration tool</h1>
+		<h1 class="page-heading">Migrate using Data Migration Tool</h1>
 
         
 
@@ -448,7 +448,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/migration/migration-migrate.html">Migrate using data migration tool</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/migration/migration-migrate.html">Migrate using Data Migration Tool</a></li>
 									
 								
 
@@ -561,7 +561,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-tool-internal-spec.html">Data Migration Tool Internal Specification</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-tool-internal-spec.html">Data Migration Tool Technical Specification</a></li>
 									
 								
 
@@ -680,30 +680,45 @@
 	<section class="content">
 		<div class="content-wrap">
             <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h4 id="contents">Contents</h4>
-<ul>
-  <li><a href="#migration-command-gen">General rules for successful migration</a></li>
-  <li><a href="#migration-command-run">Run the Data Migration Tool</a></li>
-  <li><a href="#migration-command-run-syntax">Command syntax</a></li>
+            <h2 class="no_toc" id="migrate-using-data-migration-tool">Migrate using Data Migration Tool</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#migration-command-gen" id="markdown-toc-migration-command-gen">General rules for successful migration</a></li>
+  <li><a href="#migration-command-run" id="markdown-toc-migration-command-run">Run Data Migration Tool</a>    <ul>
+      <li><a href="#migration-command-run-first" id="markdown-toc-migration-command-run-first">First steps</a></li>
+      <li><a href="#migration-command-run-syntax" id="markdown-toc-migration-command-run-syntax">Command syntax</a></li>
+    </ul>
+  </li>
+  <li><a href="#migration_order" id="markdown-toc-migration_order">Migration order</a></li>
 </ul>
 
 <h2 id="migration-command-gen">General rules for successful migration</h2>
 
-<p>During the time you’re migrating:</p>
+<p>Before you start migration, stop all Magento 1 cron jobs.</p>
 
-<ul>
-  <li>Do not make any changes in the Magento 1 Admin except for order management (shipping, creating invoice, credit memos etc.)</li>
-  <li>Stop all Magento 1 cron jobs</li>
-  <li>Do not alter any code</li>
-  <li>Do not make changes in the Magento 2 Admin and storefront</li>
-</ul>
+<p>During the migration process, <strong>do not:</strong></p>
 
-<p>All operations in Magento 1 storefront are allowed at this time.</p>
+<ol>
+  <li>
+    <p>Make any changes in the Magento 1 Admin except for order management (shipping, creating invoice, credit memos, etc.)</p>
+  </li>
+  <li>
+    <p>Alter any code</p>
+  </li>
+  <li>
+    <p>Make changes in the Magento 2 Admin and storefront</p>
+  </li>
+</ol>
 
-<h2 id="migration-command-run">Run the Data Migration Tool</h2>
-<p>This section discusses how to run the migration tool to migrate settings, data, or incremental changes.</p>
+<div class="bs-callout bs-callout-tip">
+  <p>All operations in Magento 1 storefront are allowed at this time.</p>
+</div>
+
+<h2 id="migration-command-run">Run Data Migration Tool</h2>
+<p>This section shows how to run the Data Migration Tool to migrate settings, data, or incremental changes.</p>
 
 <h3 id="migration-command-run-first">First steps</h3>
+
 <div>
 
   <ol>
@@ -737,35 +752,44 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+  <p>In addition to the command arguments mentioned here, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a></p>
 
   <h3 id="migration-command-run-syntax">Command syntax</h3>
-  <p>Command syntax:</p>
 
-  <pre><code>bin/magento migrate:&lt;mode&gt; [-r|--reset] {&lt;path to config.xml&gt;}
-</code></pre>
+  <p>Below is a typical command example:</p>
 
-  <p>where</p>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">bin/magento migrate:&lt;mode&gt; <span class="o">[</span>-r<span class="p">|</span>--reset<span class="o">]</span> <span class="o">{</span>&lt;path to config.xml&gt;<span class="o">}</span></code></pre></figure>
 
-  <p><code>&lt;mode&gt;</code> is <a href="/guides/v2.1/migration/migration-migrate-settings.html"><code>settings</code></a>, <a href="/guides/v2.1/migration/migration-migrate-data.html"><code>data</code></a>, or <a href="/guides/v2.1/migration/migration-migrate-delta.html"><code>delta</code></a></p>
+  <p>where:</p>
 
-  <p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
-
-  <p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
+  <ol>
+    <li>
+      <p><code>&lt;mode&gt;</code> may be: <a href="/guides/v2.1/migration/migration-migrate-settings.html"><code>settings</code></a>, <a href="/guides/v2.1/migration/migration-migrate-data.html"><code>data</code></a>, or <a href="/guides/v2.1/migration/migration-migrate-delta.html"><code>delta</code></a></p>
+    </li>
+    <li>
+      <p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
+    </li>
+    <li>
+      <p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
+    </li>
+  </ol>
 
   <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>Logs are written to the <code>&lt;your Magento install dir&gt;/var/</code> directory.</p></span>
 </div>
 
-  <p>The following sections should be performed in a specific order:</p>
+  <h2 id="migration_order">Migration order</h2>
+
+  <p>When we created the Data Migration Tool, we assumed the following data transfer sequence:</p>
 
   <ol>
-    <li><a href="/guides/v2.1/migration/migration-migrate-settings.html">Migrate settings</a></li>
-    <li><a href="/guides/v2.1/migration/migration-migrate-data.html">Migrate data</a></li>
-    <li><a href="/guides/v2.1/migration/migration-migrate-delta.html">Migrate changes</a></li>
+    <li><a href="/guides/v2.1/migration/migration-migrate-settings.html">Settings</a></li>
+    <li><a href="/guides/v2.1/migration/migration-migrate-data.html">Data</a></li>
+    <li><a href="/guides/v2.1/migration/migration-migrate-delta.html">Changes</a></li>
   </ol>
 
+  <p>That’s why we strongly recommend to keep this order to migrate quickly and with no issues.</p>
 </div>
 
 		</div>

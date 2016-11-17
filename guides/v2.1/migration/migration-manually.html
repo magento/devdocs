@@ -448,7 +448,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-migrate.html">Migrate using data migration tool</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-migrate.html">Migrate using Data Migration Tool</a></li>
 									
 								
 
@@ -561,7 +561,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-tool-internal-spec.html">Data Migration Tool Internal Specification</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-tool-internal-spec.html">Data Migration Tool Technical Specification</a></li>
 									
 								
 
@@ -680,21 +680,45 @@
 	<section class="content">
 		<div class="content-wrap">
             <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2>Data that needs to be migrated manually</h2>
+            <h2 class="no_toc" id="data-that-needs-to-be-migrated-manually">Data that needs to be migrated manually</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#data-types" id="markdown-toc-data-types">Data types</a></li>
+  <li><a href="#media" id="markdown-toc-media">Media</a>    <ul>
+      <li><a href="#media-files-stored-in-the-database" id="markdown-toc-media-files-stored-in-the-database">Media files stored in the database</a></li>
+      <li><a href="#media-files-in-the-file-system" id="markdown-toc-media-files-in-the-file-system">Media files in the file system</a></li>
+    </ul>
+  </li>
+  <li><a href="#storefront-design" id="markdown-toc-storefront-design">Storefront design</a></li>
+  <li><a href="#acls-access-control-lists" id="markdown-toc-acls-access-control-lists">ACLs (Access Control Lists)</a></li>
+  <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
+</ul>
+
+<h2 id="data-types">Data types</h2>
 
 <p>There are three types of data that need to be manually migrated:</p>
 
 <ul>
-  <li>Media</li>
-  <li>Storefront design</li>
-  <li>Admin users</li>
-  <li>ACLs</li>
+  <li>
+    <p>Media</p>
+  </li>
+  <li>
+    <p>Storefront design</p>
+  </li>
+  <li>
+    <p>Admin users</p>
+  </li>
+  <li>
+    <p>ACLs</p>
+  </li>
 </ul>
 
-<h3 id="media">Media</h3>
+<h2 id="media">Media</h2>
+
 <p>This section discusses how to manually migrate media files.</p>
 
-<h4 id="media-files-stored-in-the-database">Media files stored in the database</h4>
+<h3 id="media-files-stored-in-the-database">Media files stored in the database</h3>
+
 <p>This section applies to you <em>only</em> if you store media files in the Magento database. This step should be performed before <a href="/guides/v2.1/migration/migration-migrate-data.html">migration of data</a>:</p>
 
 <ol>
@@ -705,38 +729,45 @@
   <li>Click <strong>Synchronize</strong>.</li>
 </ol>
 
-<p>After that, use the following steps:</p>
+<p>Then, repeat the same steps in your Magento 2 Admin panel.</p>
 
-<ol>
-  <li>Log in to the Magento 2 Admin as an administrator.</li>
-  <li>Click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; ADVANCED &gt; <strong>System</strong>.</li>
-  <li>In the right pane, scroll to <strong>Storage Configuration for Media</strong>.</li>
-  <li>From the <strong>Select Media Database</strong> list, click the name of your media storage database.</li>
-  <li>Click <strong>Synchronize</strong>.</li>
-</ol>
+<h3 id="media-files-in-the-file-system">Media files in the file system</h3>
 
-<h4 id="media-files-on-the-file-system">Media files on the file system</h4>
-<p>All media files (for example, images for products, categories, the WYSIWYG editor, and so on) should be copied manually from <code>&lt;your Magento 1 install dir&gt;/media</code> to <code>&lt;your Magento 2 install dir&gt;/pub/media</code>.</p>
+<p>All media files (images for products, categories, the WYSIWYG editor, and so on) should be copied manually from <code>&lt;your Magento 1 install dir&gt;/media</code> to <code>&lt;your Magento 2 install dir&gt;/pub/media</code>.</p>
 
-<p>However, do <em>not</em> copy <code>.htaccess</code> files located in the Magento 1 <code>media</code> folder. Magento 2 has its own <code>.htaccess</code> that should be preserved.</p>
+<p>However, do <em>not</em> copy the <code>.htaccess</code> files located in the Magento 1 <code>media</code> folder. Magento 2 has its own <code>.htaccess</code> that should be preserved.</p>
 
-<h3 id="storefront-design">Storefront design</h3>
+<h2 id="storefront-design">Storefront design</h2>
+
 <ul>
-  <li>Design in files (css, js, templates, XML layouts) changed its location and format</li>
-  <li>Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages</li>
+  <li>
+    <p>Design in files (css, js, templates, XML layouts) changed its location and format</p>
+  </li>
+  <li>
+    <p>Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages</p>
+  </li>
 </ul>
 
-<h3 id="acls-access-control-lists">ACLs (Access Control Lists)</h3>
+<h2 id="acls-access-control-lists">ACLs (Access Control Lists)</h2>
+
+<p>You must manually re-create all:</p>
+
 <ul>
-  <li>You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST)</li>
-  <li>You must manually re-create all administrative users and associate them with access privileges</li>
+  <li>
+    <p>credentials for web services APIs (that is, SOAP, XML-RPC, and REST)</p>
+  </li>
+  <li>
+    <p>administrative user accounts and associate them with access privileges</p>
+  </li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The Data Migration Tool has special handler \Migration\Handler\Timezone for transforming time to different time zone. Using it you can change time for some fields of database. These fields can be specified in your map.xml file with offset parameter.</p>
+    <p>
+        You may adjust the time zone for a database entity using the <code>\Migration\Handler\Timezone</code> handler. See the <a href="/guides/v2.1/migration/migration-migrate-additional.html">Additional info</a> section for more details.
+    </p>
 </div>
 
-<h3 id="related-topics">Related topics</h3>
+<h2 id="related-topics">Related topics</h2>
 
 <ul>
   <li><a href="/guides/v2.1/migration/migration-migrate-after.html">After migration</a></li>

@@ -448,7 +448,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-migrate.html">Migrate using data migration tool</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-migrate.html">Migrate using Data Migration Tool</a></li>
 									
 								
 
@@ -561,7 +561,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-tool-internal-spec.html">Data Migration Tool Internal Specification</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-tool-internal-spec.html">Data Migration Tool Technical Specification</a></li>
 									
 								
 
@@ -680,13 +680,64 @@
 	<section class="content">
 		<div class="content-wrap">
             <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="migrate-command-settings">Migrating settings</h2>
-<p>You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment, some tax settings etc.</p>
+            <h2 class="no_toc" id="migrate-settings">Migrate settings</h2>
 
-<p>If necessary, here is how to change how settings are migrated:</p>
+<p>The <code>Settings</code> mode migrates stores, websites, and system configuration like shipping, payment, tax settings, etc.
+According to our data migration <a href="/guides/v2.1//migration/migration-migrate.html#migration_order">order</a>, you should migrate settings first.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#before-you-start-routine-preparations" id="markdown-toc-before-you-start-routine-preparations">Before you start: routine preparations</a></li>
+  <li><a href="#migrate-data-cmd" id="markdown-toc-migrate-data-cmd">Run the settings migration command</a></li>
+  <li><a href="#configure-custom-migration-rules" id="markdown-toc-configure-custom-migration-rules">Configure custom migration rules</a></li>
+  <li><a href="#next-migration-step" id="markdown-toc-next-migration-step">Next migration step</a></li>
+</ul>
+
+<h2 id="before-you-start-routine-preparations">Before you start: routine preparations</h2>
 
 <ol>
-  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>
+    <p>Log in to Magento server as <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">the file system owner</a>.</p>
+  </li>
+  <li>
+    <p>Change to the Magento <code>/bin</code> directory or make sure it is added to your system PATH.</p>
+  </li>
+</ol>
+
+<p>See the <a href="/guides/v2.1/migration/migration-migrate.html#migration-command-run-first">First steps</a> section for more details.</p>
+
+<h2 id="migrate-data-cmd">Run the settings migration command</h2>
+
+<p>To start migrating settings, run:</p>
+
+<pre><code>bin/magento migrate:settings [-r|--reset] {&lt;path to config.xml&gt;}
+</code></pre>
+
+<p>where:</p>
+
+<ul>
+  <li>
+    <p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration</p>
+  </li>
+  <li>
+    <p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
+  </li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
+</div>
+
+<p>The <code>Migration completed</code> message is displayed after the settings are transferred successfully.</p>
+
+<h2 id="configure-custom-migration-rules">Configure custom migration rules</h2>
+
+<p>You may ignore, rename or change the system configurations when migrating settings. For this, specify your custom rules in the <code>settings.xml</code> file.</p>
+
+<ol>
+  <li>
+    <p>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/apache-user.html">Magento file system owner</a>.</p>
+  </li>
   <li>
     <p>Change to the following directory:</p>
 
@@ -701,74 +752,26 @@
 </code></pre>
   </li>
   <li>
-    <p>Enter the following command to create <code>settings.xml</code> from the provided sample:</p>
+    <p>To create a <code>settings.xml</code> file from the provided sample, run:</p>
 
-    <pre><code>cp settings.xml.dist settings.xml
+    <pre><code> cp settings.xml.dist settings.xml
 </code></pre>
   </li>
-  <li>Make your changes in <code>settings.xml</code>.</li>
-  <li>Make changes to the <code>&lt;settings_map_file&gt;</code> tag in <code>&lt;ce or ee version&gt;/config.xml</code> to specify the new name of the settings file.</li>
+  <li>
+    <p>Make your changes in <code>settings.xml</code>.</p>
+  </li>
+  <li>
+    <p>Specify the new name of the settings file for mapping. To do that, change the <code>&lt;settings_map_file&gt;</code> tag in the <code>&lt;ce or ee version&gt;/config.xml</code> file.</p>
+  </li>
 </ol>
 
-<h2 id="migrate-first">First steps</h2>
-<div>
+<p>For more details, see the <a href="/guides/v2.1/migration/migration-tool-internal-spec.html#settings-migration-mode">Settings migration mode</a> section of the Tool’s <a href="/guides/v2.1/migration/migration-tool-internal-spec.html">specification</a>.</p>
 
-  <ol>
-    <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+<h2 id="next-migration-step">Next migration step</h2>
 
-      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
-
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
-
-sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-    </li>
-    <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
-
-      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
-
-      <p>bash shell example for CentOS:</p>
-
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-    </li>
-  </ol>
-
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
-
-  <h2 id="migrate-data-cmd">Run the settings migration command</h2>
-  <p>To migrate settings, use the following command:</p>
-
-  <pre><code>bin/magento migrate:settings [-r|--reset] {&lt;path to config.xml&gt;}
-</code></pre>
-
-  <p>where</p>
-
-  <p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
-
-  <p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
-
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
-</div>
-
-  <h3 id="related-topics">Related topics</h3>
-
-  <ul>
-    <li><a href="/guides/v2.1/migration/migration-migrate-data.html">Migrate data</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="/guides/v2.1/migration/migration-migrate-data.html">Migrate data</a></li>
+</ul>
 
 		</div>
 	</section>

@@ -446,7 +446,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-migrate.html">Migrate using data migration tool</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-migrate.html">Migrate using Data Migration Tool</a></li>
 									
 								
 
@@ -559,7 +559,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-tool-internal-spec.html">Data Migration Tool Internal Specification</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-tool-internal-spec.html">Data Migration Tool Technical Specification</a></li>
 									
 								
 
@@ -657,73 +657,89 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h2 id="migrate-command-delta">Migrate incremental changes</h2>
-<p>Incremental migration enables you to migrate only the changes made in Magento 1 since the last time you migrated data. These changes are data that was added through the storefront by customers (created orders, reviews, changes in customer profiles etc.) and all operations with orders in the Magento Admin.</p>
+            <div class="updated">Updated: 14 November 2016 (PST)</div>
+            <h2 class="no_toc" id="migrate-incremental-changes">Migrate incremental changes</h2>
 
-<h2 id="migrate-first">First steps</h2>
-<div>
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#before-you-start-routine-preparations" id="markdown-toc-before-you-start-routine-preparations">Before you start: routine preparations</a></li>
+  <li><a href="#migrate-data-cmd" id="markdown-toc-migrate-data-cmd">Run the incremental migration command</a></li>
+  <li><a href="#migrate-delta-external-extensions" id="markdown-toc-migrate-delta-external-extensions">Migrate data created by 3rd party extensions</a></li>
+  <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
+</ul>
 
-  <ol>
-    <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+<h2 id="overview">Overview</h2>
 
-      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+<p>Incremental migration enables you to migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
+<ul>
+  <li>
+    <p>data that customers added via storefront (created orders, reviews, changes in customer profiles, etc.)</p>
+  </li>
+  <li>
+    <p>all operations with orders in the Magento Admin panel</p>
+  </li>
+</ul>
 
-sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-    </li>
-    <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+<h2 id="before-you-start-routine-preparations">Before you start: routine preparations</h2>
 
-      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+<ol>
+  <li>
+    <p>Log in to Magento server as <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">the file system owner</a>.</p>
+  </li>
+  <li>
+    <p>Change to the Magento <code>/bin</code> directory or make sure it is added to your system PATH.</p>
+  </li>
+</ol>
 
-      <p>bash shell example for CentOS:</p>
+<p>See the <a href="/guides/v2.0/migration/migration-migrate.html#migration-command-run-first">First steps</a> section for more details.</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-    </li>
-  </ol>
+<h2 id="migrate-data-cmd">Run the incremental migration command</h2>
 
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
+<p>To start migrating incremental changes, run:</p>
 
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
-
-  <h2 id="migrate-data-cmd">Run the incremental migration command</h2>
-  <p>To migrate incremental changes, use the following command:</p>
-
-  <p>Command usage:</p>
-
-  <pre><code>bin/magento migrate:delta [-r|--reset] {&lt;path to config.xml&gt;}
+<pre><code>bin/magento migrate:delta [-r|--reset] {&lt;path to config.xml&gt;}
 </code></pre>
 
-  <p>where</p>
+<p>where;</p>
 
-  <p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
+<ul>
+  <li>
+    <p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
+  </li>
+  <li>
+    <p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
+  </li>
+</ul>
 
-  <p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
-
-  <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>Incremental migration runs continuously until you stop it by pressing CTRL+C.</p></span>
 </div>
 
-  <p>Please note that in this mode Data Migration Tool migrates data created only by Magento’s own modules and is not responsible for the code or extensions made by third-party developers. If these extensions created some data in the storefront database and the merchant wants to have this data in Magento 2 - config files of Data Migration Tool should be created and modified. Please check <a href="/guides/v2.0/migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification</a> for more information.</p>
+<h2 id="migrate-delta-external-extensions">Migrate data created by 3rd party extensions</h2>
 
-  <h4 id="related-topics">Related topics</h4>
+<p>In the <code>Delta</code> mode, the Data Migration Tool migrates data created only by Magento’s own modules and is not responsible for the code or extensions made by third-party developers. If these extensions created data in the storefront database and the merchant wants to have this data in Magento 2 — config files of the Data Migration Tool should be created and modified accordingly.</p>
 
-  <ul>
-    <li><a href="/guides/v2.0/migration/migration-manually.html">Data that needs to be migrated manually</a></li>
-  </ul>
-</div>
+<p>If an extension has its own tables, and you need to track their changes for delta migration, follow these steps:</p>
+
+<ol>
+  <li>
+    <p>Add the tables to be tracked to the <code>deltalog.xml</code> file</p>
+  </li>
+  <li>
+    <p>Create an additional delta class which extends the <code>Migration\App\Step\AbstractDelta</code></p>
+  </li>
+  <li>
+    <p>Add the name of the newly created class to the delta mode section of <code>config.xml</code></p>
+  </li>
+</ol>
+
+<h2 id="related-topics">Related topics</h2>
+
+<ul>
+  <li><a href="/guides/v2.0/migration/migration-manually.html">Data that needs to be migrated manually</a></li>
+</ul>
 
 		</div>
 	</section>

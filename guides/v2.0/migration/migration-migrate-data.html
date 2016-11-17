@@ -446,7 +446,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-migrate.html">Migrate using data migration tool</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-migrate.html">Migrate using Data Migration Tool</a></li>
 									
 								
 
@@ -559,7 +559,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-tool-internal-spec.html">Data Migration Tool Internal Specification</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-tool-internal-spec.html">Data Migration Tool Technical Specification</a></li>
 									
 								
 
@@ -657,81 +657,93 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 29 August 2016 (PDT)</div>
-            <h2 id="migrate-command-data">Migrating data</h2>
-<p>When you migrate data, the Data Migration Tool verifies that tables and fields are consistent between  Magento 1 and Magento 2. If not, an error displays that lists the problematic tables and fields. These entities, for example, can belong to some extensions from Magento 1 that do not exist in the Magento 2 database.</p>
+            <div class="updated">Updated: 14 November 2016 (PST)</div>
+            <h2 class="no_toc" id="migrate-data">Migrate data</h2>
 
-<p>If you encounter such an error, you can:</p>
-
-<ul>
-  <li>Install the corresponding extensions in Magento 2 if they exist</li>
-  <li>Ignore them by adding <code>&lt;ignore&gt;</code> tags to the <code>map.xml</code> file</li>
+<ul id="markdown-toc">
+  <li><a href="#before-you-start-routine-preparations" id="markdown-toc-before-you-start-routine-preparations">Before you start: routine preparations</a></li>
+  <li><a href="#migrate-data-cmd" id="markdown-toc-migrate-data-cmd">Run the data migration command</a></li>
+  <li><a href="#migrate-command-data" id="markdown-toc-migrate-command-data">Possible consistency errors</a>    <ul>
+      <li><a href="#fix-errors-install-corresponding-magento-2-extensions" id="markdown-toc-fix-errors-install-corresponding-magento-2-extensions">Fix errors: Install corresponding Magento 2 extensions</a></li>
+      <li><a href="#fix-errors-ignore-entities" id="markdown-toc-fix-errors-ignore-entities">Fix errors: Ignore entities</a></li>
+      <li><a href="#verify-fixes" id="markdown-toc-verify-fixes">Verify fixes</a></li>
+    </ul>
+  </li>
+  <li><a href="#next-migration-step" id="markdown-toc-next-migration-step">Next migration step</a></li>
 </ul>
 
-<p>After resolving issues, run the Data Migration Tool again.</p>
+<h2 id="before-you-start-routine-preparations">Before you start: routine preparations</h2>
 
-<h2 id="migrate-first">First steps</h2>
-<div>
+<ol>
+  <li>
+    <p>Log in to Magento server as <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">the file system owner</a>.</p>
+  </li>
+  <li>
+    <p>Change to the Magento <code>/bin</code> directory or make sure it is added to your system PATH.</p>
+  </li>
+</ol>
 
-  <ol>
-    <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+<p>See the <a href="/guides/v2.0/migration/migration-migrate.html#migration-command-run-first">First steps</a> section for more details.</p>
 
-      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+<h2 id="migrate-data-cmd">Run the data migration command</h2>
+<p>To start migrating data, run:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
-
-sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+<pre><code>bin/magento migrate:data [-r|--reset] {&lt;path to config.xml&gt;}
 </code></pre>
-    </li>
-    <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
 
-      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+<p>where:</p>
 
-      <p>bash shell example for CentOS:</p>
+<ul>
+  <li>
+    <p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration</p>
+  </li>
+  <li>
+    <p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required</p>
+  </li>
+</ul>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-    </li>
-  </ol>
-
-  <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
-
-  <h2 id="migrate-data-cmd">Run the data migration command</h2>
-  <p>To migrate data, use the following command:</p>
-
-  <p>Command usage:</p>
-
-  <pre><code>bin/magento migrate:data [-r|--reset] {&lt;path to config.xml&gt;}
-</code></pre>
-
-  <p>where</p>
-
-  <p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
-
-  <p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
-
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Data Migration Tool resumes progress at the last known good state.</p>
+  <p>The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Tool resumes progress at the last known good state.</p>
   <p>To force the Data Migration Tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
 </div>
 
-  <h3 id="related-topics">Related topics</h3>
+<h2 id="migrate-command-data">Possible consistency errors</h2>
 
-  <ul>
-    <li><a href="/guides/v2.0/migration/migration-migrate-delta.html">Migrate changes</a></li>
-  </ul>
+<p>When you migrate data, the Data Migration Tool verifies that tables and fields are consistent between Magento 1 and Magento 2. If they are inconsistent, you will see an error message that lists the problematic tables and fields, for example:</p>
+
+<pre><code>Source fields are not mapped. Document: &lt;document_name&gt;. Fields: &lt;field_name&gt;
+</code></pre>
+
+<p><strong>Possible reason for error:</strong> some database entities belong to Magento 1 extensions that do not exist in the Magento 2 database.</p>
+
+<p>Below are the possible ways to handle these errors.</p>
+
+<h3 id="fix-errors-install-corresponding-magento-2-extensions">Fix errors: Install corresponding Magento 2 extensions</h3>
+
+<p>Visit <a href="https://marketplace.magento.com/">Magento Marketplace</a> to find the latest extension versions or contact your extension provider.</p>
+
+<h3 id="fix-errors-ignore-entities">Fix errors: Ignore entities</h3>
+
+<p>You may tell the Data Migration Tool to ignore the problematic entites.</p>
+
+<p>To do that, add the <code>&lt;ignore&gt;</code> tag to an entity in the <code>map.xml</code> file, like this:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ignore&gt;</span>
+    <span class="nt">&lt;field&gt;</span>sales_order_address_id<span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/ignore&gt;</span></code></pre></figure>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
 </div>
+
+<h3 id="verify-fixes">Verify fixes</h3>
+
+<p>To know if the issues have been resolved successfully, run the Data Migration Tool again.</p>
+
+<h2 id="next-migration-step">Next migration step</h2>
+
+<p><a href="/guides/v2.0/migration/migration-migrate-delta.html">Migrate changes</a></p>
 
 		</div>
 	</section>
