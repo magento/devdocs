@@ -21,7 +21,7 @@ We assume the following:
     Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
     Additional tasks are required to set up Magento Enterprise Cloud Edition. After you complete the tasks discussed in this topic, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html).
-*   You use one virtual host per store; the virtual host configuration file is `/etc/httpd/httpd.conf`
+*   You use one virtual host per website; the virtual host configuration file is `/etc/httpd/httpd.conf`
 
     Different versions of Apache on different operating systems set up virtual hosts differently. Consult the [Apache documentation](https://httpd.apache.org/docs/2.4/vhosts){:target="_blank"} or a network administrator if you're not sure how to set up a virtual host.
 *   The Magento software is installed in `/var/www/html/magento2`
@@ -34,15 +34,8 @@ We assume the following:
 Setting up multiple stores consists of the following tasks:
 
 1.  [Set up websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the Magento Admin.
-2.  Create one [Apache virtual host](#ms-apache-vhosts) per Magento website or store view.
-3.  Pass the values of the [Magento variables](#ms-apache-vars) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to Apache using the Magento-provided `Apache.conf.sample`.
+2.  Create one [Apache virtual host](#ms-apache-vhosts) per Magento website.
 
-    *   `$MAGE_RUN_TYPE` can be either `store` or `website`
-
-        *   Use `website` to load your website in your storefront.
-        *   Use `store` to load any store view in your storefront.
-
-    *   `$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`
 
 ## Step 1: Create websites, stores, and store views in the Magento Admin
 
@@ -84,24 +77,6 @@ For more information about `SetEnvIf`, see:
         </VirtualHost>
         
 5.  Save your changes to `httpd.conf` and exit the text editor.
-
-{% endcollapsible %}
-
-## Step 3: Pass the Magento variables to Apache {#ms-apache-vars}
-
-{% collapsible To pass the Magento variables to Apache: %}
-
-1.  As the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html), open `/var/www/html/magento2/.htaccess` in a text editor.
-7.  Add the following after `RewriteEngine on` in `.htaccess`:
-
-        SetEnvIf Host .*example.com.* MAGE_RUN_CODE=french.mysite.mg
-        SetEnvIf Host .*example.com.* MAGE_RUN_TYPE=website
-8.  Save your changes to `.htaccess` and exit the text editor.
-9.  Restart Apache:
-
-    *   CentOS: `service httpd restart`
-    *   Ubuntu: `service apache2 restart`
-9.  Verify your site as discussed in the next section.
 
 {% endcollapsible %}
 

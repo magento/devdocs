@@ -21,7 +21,7 @@ We assume the following:
 	Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
 	Additional tasks are required to set up Magento Enterprise Cloud Edition. After you complete the tasks discussed in this topic, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html).
-*	You use one virtual host per store; the virtual host configuration files are located in `/etc/nginx/sites-available`
+*	You use one virtual host per website; the virtual host configuration files are located in `/etc/nginx/sites-available`
 *	You use `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial
 *	The Magento software is installed in `/var/www/html/magento2`
 *	You have two websites other than the default:
@@ -33,20 +33,15 @@ We assume the following:
 Setting up multiple stores consists of the following tasks:
 
 1.	[Set up websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the Magento Admin.
-2.	Create one [nginx virtual host](#ms-nginx-vhosts) per Magento website or store view.
-3.	Pass the values of the [Magento variables](#ms-nginx-vars) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample`.
+2.	Create one [nginx virtual host](#ms-nginx-vhosts) per Magento website.
+3.  Pass the values of the [Magento variables](#ms-nginx-vars) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to Apache using the Magento-provided `Apache.conf.sample`.
 
-	*	`$MAGE_RUN_TYPE` can be either `store` or `website`
+    *   `$MAGE_RUN_TYPE` can be either `store` or `website`
 
-		*	Use `website` to load your website in your storefront.
-		*	Use `store` to load any store view in your storefront.
+        *   Use `website` to load your website in your storefront.
+        *   Use `store` to load any store view in your storefront.
 
-	*	`$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`
-
-## Step 1: Create websites, stores, and store views in the Magento Admin
-
-See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}config-guide/multi-site/ms_websites.html).
-
+    *   `$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`
 ## Step 2: Create nginx virtual hosts {#ms-nginx-vhosts}
 This section discusses how to load websites on the storefront. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with `root` privileges.
 
@@ -96,26 +91,6 @@ This section discusses how to load websites on the storefront. You can use eithe
 
 For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"}.
 
-
-{% endcollapsible %}
-
-## Step 3. Pass the Magento variables to nginx {#ms-nginx-vars}
-
-{% collapsible To pass Magento variables to nginx: %}
-
-1.	Open `/var/www/html/magento2/nginx.conf` in a text editor.
-2.	Locate the following block:
-
-		location ~ (index|get|static|report|404|503)\.php$ 
-3.	In that block, add the following lines:
-
-		fastcgi_param  MAGE_RUN_TYPE website;
-		fastcgi_param  MAGE_RUN_CODE $MAGE_RUN_CODE;
-		include fastcgi_params;
-4.	Save your changes to `nginx.conf` and exit the text editor.
-4.	Reload the nginx configuration:
-
-		service nginx reload
 
 {% endcollapsible %}
 
