@@ -1365,7 +1365,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 21 October 2016 (PDT)</div>
+            <div class="updated">Updated: 17 November 2016 (PST)</div>
             <h2 id="set-up-fastly">Set up Fastly</h2>
 <p><a href="https://www.fastly.com/why-fastly" target="_blank">Fastly</a> is required for Magento Enterprise Cloud Edition. It works with Varnish to provide fast caching capabilities and a Content Delivery Network (CDN) for static assets.</p>
 
@@ -1469,11 +1469,18 @@
   <li>
     <p>In your local environment root directory, enter the following commands in the order shown:</p>
 
-    <pre><code>composer config repositories.fastly-magento2 vcs "https://github.com/fastly/fastly-magento2.git"
-composer require fastly/magento2:dev-master
+    <pre><code>composer config repositories.fastly-magento2 git "https://github.com/fastly/fastly-magento2.git"
+composer require fastly/magento2
 </code></pre>
   </li>
   <li>Wait for dependencies to be updated.</li>
+  <li>
+    <p>Enter the following commands:</p>
+
+    <pre><code>php bin/magento setup:upgrade
+php bin/magento cache:clean
+</code></pre>
+  </li>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
