@@ -16,7 +16,7 @@
     letter-spacing: .05em;
     color: #7b756b;
     font-weight: bold;
-    padding: 0 10px 5px 15px;
+    padding: 0 10px 5px 10px;
   }
   ul {
     margin: 0;
@@ -40,7 +40,7 @@
     color: $body-font-color;
     font-size: 12px;
     display: block;
-    padding: 5px 15px;
+    padding: 5px 10px;
     border-left: 2px solid transparent;
 
     &:hover {
@@ -49,9 +49,8 @@
     }
   }
 
-
   .h3 a {
-    padding-left: 25px;
+    padding-left: 16px;
   }
 
 }
