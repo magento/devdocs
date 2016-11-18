@@ -122,6 +122,13 @@ To install Elasticsearch:
 
 	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.
 3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html" target="_blank">Elasticsearch service</a>.
+4.	Open `/etc/elasticsearch/elasticsearch.yml` in a text editor.
+5.	Add the following parameter to the `Memory` section:
+
+		index.query.bool.max_clause_count: 8192
+
+	For more information, see [Setting the BooleanQuery maxClauseCount in Elasticsearch](http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch){:target="_blank"}.
+6.	Save your changes to `elasticsearch.yml` and exit the text editor.
 4.	Start Elasticsearch:
 
 		service elasticsearch start
