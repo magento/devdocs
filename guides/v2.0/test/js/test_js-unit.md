@@ -266,7 +266,7 @@ Complete these steps to use PhpStorm to run unit tests:
 
 <!-- Web links -->
 [Configuration file for test runner]: https://code.google.com/p/js-test-driver/wiki/ConfigurationFile
-[JsTestDriver]: https://code.google.com/p/js-test-driver/wiki/GettingStarted
+[JsTestDriver]: https://code.google.com/archive/p/js-test-driver/wikis/GettingStarted.wiki
 
 <!-- Topic links -->
 [Capture a browser]: #capture-browser
