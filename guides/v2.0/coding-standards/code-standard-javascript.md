@@ -22,8 +22,6 @@ This coding standard is recommended for third-party Magento developers.
 
 **Contents:**
 
-* TOC
-{:toc}
 
 ## JSHint tool {#fedg_js-coding_JSHint}
 Use <a href="http://www.JSHint.com" target="_blank">JSHint</a> to ensure the quality of your JavaScript code.

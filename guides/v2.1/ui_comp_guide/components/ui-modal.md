@@ -14,8 +14,6 @@ This topic describes the modal UI component.
 
 **Contents:**
 
-* TOC
-{:toc}
 
 ## Modal component: overview
 

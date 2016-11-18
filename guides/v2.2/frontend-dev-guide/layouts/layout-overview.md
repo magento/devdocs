@@ -20,8 +20,6 @@ This article describes the basic concepts you need to know to create layouts for
 
 **Contents**
 
- * TOC
- {:toc}
 
 ## Terms used {#layout-over-terms}
 

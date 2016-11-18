@@ -10,8 +10,6 @@ github_link: mtf/features/test_suite.md
 
 <h4>Contents</h4>
 
-* TOC
-{:toc}
 
 ## Overview {#overview}
 

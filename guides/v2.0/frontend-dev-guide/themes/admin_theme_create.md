@@ -14,8 +14,6 @@ This topic describes how to create your custom theme for Magento Admin, referenc
 
 **Contents**
 
-* TOC
-{:toc}
 
 ## Prerequisites 
 

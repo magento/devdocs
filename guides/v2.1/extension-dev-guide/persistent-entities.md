@@ -11,8 +11,6 @@ github_link: extension-dev-guide/persistent-entities.md
 ## {{page.menu_title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ### Overview
 

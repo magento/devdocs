@@ -23,8 +23,6 @@ We strongly recommend that you use the described approaches and do not add inlin
 
 **Contents**
 
-* TOC
-{:toc}
 
 ## Insert a JS component in a PHTML template {#init_phtml}
 Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.

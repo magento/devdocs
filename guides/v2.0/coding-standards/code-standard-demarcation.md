@@ -24,8 +24,6 @@ redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 
 <h2>Contents</h2>
 
-* TOC
-{:toc}
 
 
 ## Semantics

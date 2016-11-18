@@ -9,8 +9,6 @@ version: 2.0
 
 github_link: release-notes/ReleaseNotes2.0.8CE.md
 ---
-*	TOC
-{:toc}
 
 
 ## Magento Community Edition 2.0.8

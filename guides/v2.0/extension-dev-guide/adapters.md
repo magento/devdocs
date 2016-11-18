@@ -12,8 +12,6 @@ github_link: extension-dev-guide/adapters.md
 ## {{page.title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Overview
 

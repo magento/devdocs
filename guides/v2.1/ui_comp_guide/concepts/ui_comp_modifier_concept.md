@@ -12,8 +12,6 @@ github_link: ui_comp_guide/concepts/ui_comp_modifier_concept.md
 ## {{page.menu_title}}  
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## What's in this topic
 

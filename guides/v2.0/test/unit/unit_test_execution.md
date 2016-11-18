@@ -13,8 +13,6 @@ github_link: test/unit/unit_test_execution.md
 
 ## Running unit tests
 
-* TOC
-{:toc}
 
 Executing the Magento 2 unit tests is straight forward.
 They can be executed in several different ways.

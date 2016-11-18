@@ -11,8 +11,6 @@ github_link: mtf/mtf_entities/mtf_constraint.md
 
 <h2>Constraint</h2>
 
-* TOC
-{:toc}
 
 ## Constraint overview {#mtf_constraint_overview}
 

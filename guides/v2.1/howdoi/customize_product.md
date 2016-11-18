@@ -20,8 +20,6 @@ The following image is an illustration of the default view of the form on the **
 
 **Contents**
 
-* TOC
-{:toc}
 
 ## Overview
 

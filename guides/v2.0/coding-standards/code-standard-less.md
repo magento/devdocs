@@ -15,8 +15,6 @@ Some parts of Magento code might not comply with this coding standard yet, but w
 
 This coding standard is optional for third-party Magento developers.
 
-* TOC
-{:toc}
 
 ## General rules
 

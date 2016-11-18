@@ -14,8 +14,6 @@ redirect_from: /guides/v1.0/rest/list.html
 
 An asterisk (*) indicates the API was added since the initial release of Magento 2.0.
 
-* TOC
-{:toc}
 
 <h3>Backend</h3>
 

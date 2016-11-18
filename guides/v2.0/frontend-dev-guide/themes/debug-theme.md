@@ -16,8 +16,6 @@ When you create a Magento theme, you might need to create override files for def
 
 **Contents**
 
-* TOC
-{:toc}
 
 
 ## Locate templates {#debug-theme-templ}

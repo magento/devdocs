@@ -13,8 +13,6 @@ redirect_from:
 ## {{page.menu_title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 
 ### Overview

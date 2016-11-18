@@ -16,8 +16,6 @@ Also, it gives information how to add a theme independent logo for your store.
 
 **Contents**:
 
-* TOC
-{:toc}
 
 
 ## Prerequisites 

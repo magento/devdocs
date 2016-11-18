@@ -11,8 +11,6 @@ github_link: mtf/mtf_entities/mtf_dataset.md
 
 <h2>Data set</h2>
 
-* TOC
-{:toc}
 
 ## Data set overview {#overview}
 

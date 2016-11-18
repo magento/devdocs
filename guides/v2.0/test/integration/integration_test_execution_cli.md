@@ -13,8 +13,6 @@ github_link: test/integration/integration_test_execution.md
 
 ## Running integration tests on the command line interface (CLI)
 
-* TOC
-{:toc}
 
 Probably the most common way to execute integration tests is using the command line.  
 

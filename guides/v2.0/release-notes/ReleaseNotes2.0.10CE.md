@@ -7,8 +7,6 @@ menu_title: Magento CE 2.0.10 Release Notes
 menu_order: 19
 github_link: release-notes/ReleaseNotes2.0.10CE.md
 ---
-*	TOC
-{:toc}
 
 
 ## Magento Community Edition 2.0.10

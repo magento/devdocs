@@ -14,8 +14,6 @@ github_link:
 {:.no_toc}
 
 <!-- Table of Content -->
-* Table of Content placeholder; required but will not be rendered
-{:toc}
 
 <!-- Содержание -->
 

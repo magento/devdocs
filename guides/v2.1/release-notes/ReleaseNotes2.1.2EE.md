@@ -9,8 +9,6 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.2EE.md
 ---
 
-*	TOC
-{:toc}
 
 
 ## Magento Enterprise Edition 2.1.2

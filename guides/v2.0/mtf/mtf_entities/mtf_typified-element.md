@@ -11,8 +11,6 @@ github_link: mtf/mtf_entities/mtf_typified-element.md
 
 <h2>Typified element</h2>
 
-* TOC
-{:toc}
 
 ## Overview {#mtf_typified-element_overview}
 

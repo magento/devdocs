@@ -14,8 +14,6 @@ This topic describes how to add a custom CSS preprocessor. Adding [Sass](http://
 
 **Contents**
 
-* TOC
-{:toc} 
 
 
 ## Sample Sass module

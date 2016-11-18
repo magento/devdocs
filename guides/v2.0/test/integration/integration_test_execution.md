@@ -13,8 +13,6 @@ github_link: test/integration/integration_test_execution.md
 
 ## Running integration tests
 
-* TOC
-{:toc}
 
 Integration tests require the Magento runtime environment, so they need a little preparation before they can be executed.  
 Once the system is prepared, the tests can be executed using either the command line interface or within an IDE like PHPStorm.

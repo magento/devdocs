@@ -15,8 +15,6 @@ Magnifier is a widget that allows displaying images in 100% scaled size in separ
 In Magento it is used by the [gallery]({{page.baseurl}}javascript-dev-guide/widgets/widget_gallery.html) widget for zooming the product images on product pages.
 
 **Contents**
-* TOC
-{:toc}
 
 ## Initialize magnifier {#magnifier_init}
 

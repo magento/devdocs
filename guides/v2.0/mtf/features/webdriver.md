@@ -10,8 +10,6 @@ github_link: mtf/features/webdriver.md
 
 <h3>Contents</h3>
 
-* TOC
-{:toc}
 
 
 ## Overview

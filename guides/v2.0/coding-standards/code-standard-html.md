@@ -16,8 +16,6 @@ The guide is based on the [Google HTML/CSS Style Guide](https://google.github.io
 
 **Contents**
 
-* TOC
-{:toc}
 
 ## Indentations
 

@@ -18,8 +18,6 @@ Breakpoints are used in stylesheets to set up the screen width at which the desi
 
 **Contents**
 
-* TOC
-{:toc}
 
 ## Overview
 To add a custom breakpoint in your theme, you need to do the following:

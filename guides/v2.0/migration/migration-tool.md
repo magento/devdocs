@@ -14,8 +14,6 @@ redirect_from: /guides/v1.0/migration/migration-tool.html
 ## Data Migration Tool
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Overview
 

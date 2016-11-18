@@ -10,8 +10,6 @@ github_link: mtf/features/reporting.md
 
 #### Contents
 
-* TOC
-{:toc}
 
 ## About reporting  {#about}
 

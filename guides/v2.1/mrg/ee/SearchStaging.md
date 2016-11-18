@@ -15,8 +15,6 @@ github_link: mrg/ee/SearchStaging.md
 
 <h2>Contents</h2>
 
-* TOC
-{:toc}
 
 ## Magento_SearchStaging module
 

@@ -18,8 +18,6 @@ The topic describes how to install, configure and use [Grunt JavaScript task run
 
 **Contents**
 
-* TOC
-{:toc}
 
 ## Prerequisites 
 

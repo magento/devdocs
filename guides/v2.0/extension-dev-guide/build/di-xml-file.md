@@ -12,8 +12,6 @@ github_link: extension-dev-guide/build/di-xml-file.md
 ## {{page.menu_title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Overview
 

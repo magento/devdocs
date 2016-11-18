@@ -12,8 +12,6 @@ github_link: extension-dev-guide/prepare/lifecycle.md
 ## {{page.title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ### Overview
 

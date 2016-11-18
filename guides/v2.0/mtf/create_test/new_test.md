@@ -15,8 +15,6 @@ The FTF helps to create a new test, you can extend an out-of-the-box test, or cr
 
 <h3>Contents</h3>
 
-* TOC
-{:toc}
 
 ### Extend an out-of-the-box test {#extending-oob-test}
 

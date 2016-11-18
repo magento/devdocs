@@ -8,8 +8,6 @@ menu_order: 16
 version: 2.0
 github_link: release-notes/ReleaseNotes2.0.8EE.md
 ---
-*	TOC
-{:toc}
 
 
 ## Magento Enterprise Edition 2.0.8

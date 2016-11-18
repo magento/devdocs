@@ -21,8 +21,6 @@ This topic describes how to create the frontend part of the component, implement
 
 **Contents**
 
-* TOC
-{:toc}
 
 ## Create the view part of the checkout step component
 

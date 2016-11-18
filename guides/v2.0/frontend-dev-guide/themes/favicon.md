@@ -14,8 +14,6 @@ This topic describes how to add custom favicons.
 
 **Contents**
 
-* TOC
-{:toc}
 
 ## General overview
 

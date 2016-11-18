@@ -11,8 +11,6 @@ github_link: mtf/features/parallel_execution.md
 ### Contents
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Overview
 

@@ -15,8 +15,6 @@ github_link: config-guide/cache/static-content-signing.md
 ## {{page.title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ### Static content cache
 

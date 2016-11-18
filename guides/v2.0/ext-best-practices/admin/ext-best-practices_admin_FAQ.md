@@ -15,8 +15,6 @@ This page is a compilation of frequently asked questions by the Magento Communit
 
 ### Frequently Asked Questions
 {:.no_toc}
-* Table of Content
-{:toc}
 
 ____
 

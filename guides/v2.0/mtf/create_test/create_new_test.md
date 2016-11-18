@@ -17,8 +17,6 @@ To make the documentation more consistent, we created a completely new test spec
 
 <h3>Contents</h3>
 
-* TOC
-{:toc}
 
 ### Test description {#example-test-description}
 

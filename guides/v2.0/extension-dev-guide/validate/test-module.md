@@ -16,8 +16,6 @@ redirect_from:
 
 ## {{page.menu_title}}
 
-* TOC
-{:toc}
 
 ## Unit and Integration Tests {#test-unit}
 
