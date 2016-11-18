@@ -33,8 +33,7 @@ This topic discusses how to set required PHP options.
 
 	Our detailed recommendations are:
 
-	*	Compiling code, `768M`
-    *	Deploying static assets, `768M`
+	*	Compiling code or deploying static assets, `768M`
     *	Installing and updating Magento components from Magento Marketplace, `2G`
     *	Testing, `2G`
 *	Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}
