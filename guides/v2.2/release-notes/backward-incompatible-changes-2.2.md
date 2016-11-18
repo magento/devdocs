@@ -109,11 +109,7 @@ In Magento 2.2 the behavior of repositories regarding the Filters added to Searc
 
 For details about repositories see the [Searching with repositories]({{page.baseurl}}extension-dev-guide/searching-with-repositories.html) topic.
 
-### Serialize library
-
-* New [Serialize]({{page.baseurl}}extension-dev-guide/framework/serializer.html) library created for secure serilization/unserialization of data.
-
-### ObjectManager changes
+### Compiler changes
 
 This release removes the multi-tenant compiler option and support of the definitions option for the single tenant compiler in the `env.php` file.
 
@@ -125,7 +121,7 @@ The following classes are no longer available:
 * `Magento\Framework\ObjectManager\Definition\Compiled\Binary`
 * `Magento\Framework\Interception\Definition\Compiled`
 
-The `bin/magento setup:config:set` command no longer has the `--definition-format` option since there is now only one serialization implementation.
+The `bin/magento setup:config:set` command no longer has the `--definition-format` option.
 
 ### Changes in UI
 
