@@ -37,7 +37,7 @@ Following are requirements you should already have:
 ### Required testing configurations {#cloud-req-test}
 Before you test any custom code in any Magento Enterprise Cloud Edition environment, you must do all of the following:
 
-*	Set the Magento application cocroot to `pub/index.php` 
+*	Set the Magento application docroot to `pub/index.php` 
 *	Set MySQL [`auto_increment_increment` to 3]({{ page.baseurl }}cloud/before/before-workspace-php.html#cloud-mysql)
 *	Must test with the correct file permissions in production mode
 
