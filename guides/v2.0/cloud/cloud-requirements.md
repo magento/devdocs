@@ -18,7 +18,7 @@ This topic lists requirements for using Magento Enterprise Cloud Edition. Review
 *	[Required testing configurations](#cloud-req-test)
 *	[Development and testing](#cloud-req-devtest)
 *	[Before you go live](#cloud-req-live)
-*	[Git requirements]({{ page.pageurl }}cloud/cloud-requirements-git.html)
+*	[Git requirements]({{ page.baseurl }}cloud/cloud-requirements-git.html)
 *	[License and authentication requirements]({{ page.baseurl }}cloud/cloud-requirements-license.html)
 
 ### Prerequisites {#cloud-req-pre}
@@ -38,7 +38,7 @@ Following are requirements you should already have:
 Before you test any custom code in any Magento Enterprise Cloud Edition environment, you must do all of the following:
 
 *	Set the Magento application cocroot to `pub/index.php` 
-*	Set MySQL [`auto_increment_increment` to 3]()
+*	Set MySQL [`auto_increment_increment` to 3]({{ page.baseurl }}cloud/before/before-workspace-php.html#cloud-mysql)
 *	Must test with the correct file permissions in production mode
 
 	Correct permissions include no write access outside of `var`, `pub/static, pub/media`, and `app/etc` 
@@ -78,7 +78,7 @@ Before you go live, you must:
 *	Make sure that the Fastly SSL certificate is setup for your domain(s)
 
 #### Related topics
-*	[Git requirements]({{ page.pageurl }}cloud/cloud-requirements-git.html)
+*	[Git requirements]({{ page.baseurl }}cloud/cloud-requirements-git.html)
 *	[License and authentication requirements]({{ page.baseurl }}cloud/cloud-requirements-license.html)
 
 
