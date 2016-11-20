@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Migrate data</title>
+	<title>Git requirements</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/cloud/live/stage-prod-migrate.html">
+	<link rel="canonical" href="//guides/v2.0/cloud/cloud-requirements-git.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/cloud-requirements-git.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/cloud-requirements-git.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -163,14 +163,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Migrate data</h1>
+		<h1 class="page-heading">Git requirements</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/live/stage-prod-migrate.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/cloud-requirements-git.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -310,7 +310,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/cloud-requirements-git.html">Git requirements</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/cloud/cloud-requirements-git.html">Git requirements</a></li>
 
 									
 
@@ -1143,7 +1143,7 @@
 									
 
 
-											<li class="level3Child stage-prod  active " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate data</a>
+											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate data</a>
 
 
 									
@@ -1400,151 +1400,40 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 1 November 2016 (PDT)</div>
-            <h2 id="cloud-live-migrate">Migrate data</h2>
-<p>To migrate your database and code:</p>
+            <div class="updated">Updated: 19 November 2016 (PST)</div>
+            <h2 id="cloud-require-git">Git requirements</h2>
+<p>This page lists detailed requirements for using Git with Magento Enterprise Cloud Edition.</p>
 
-<ul>
-  <li><a href="#cloud-live-migrate-static">Migrate static files</a></li>
-  <li>
-    <p><a href="#cloud-live-migrate-db">Migrate the database</a></p>
+<h3 id="cloud-require-git">Source control with Git</h3>
+<p>Any change you make to your Magento Enterprise Cloud Edition project must be committed to a Git repository. You can use either the repository provided with your account or you can use your own private account on GitHub or Bitbucket. For more information, see <a href="/guides/v2.0/cloud/before/before-repos.html">Magento Enterprise Cloud Edition repositories</a>.</p>
 
-    <p>In the event of issues, make fixes in your integration system, test them, and push updated code to your staging repository using Git commands.</p>
-  </li>
-</ul>
+<p>If you don’t already have an account, we’ll create one for you. However, if you have a GitHub or Bitbucket account and you’re already using it in a development workflow, we recommend you use it.</p>
 
-<h3 id="cloud-live-migrate-static">Migrate static files</h3>
-<p>This section discusses how to migrate static files from your <code>pub/media</code> directory to staging or production. We recommend using the Linux remote synchronization and file transfer command <a href="https://en.wikipedia.org/wiki/Rsync" target="_blank"><code>rsync</code></a>. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.</p>
-
-<p>We suggest using the following syntax:</p>
-
-<pre><code>rsync -azvP &lt;source&gt; &lt;destination&gt;
-</code></pre>
-
-<p>Options:</p>
-
-<pre><code>`a` archive
-`z` compress
-`v` verbose
-`P` partial progress
-</code></pre>
-
-<p>For additional options, see the <a href="http://linux.die.net/man/1/rsync" target="_blank">rsync man page</a>.</p>
-
-<p>To migrate static files:</p>
-
-<ol>
-  <li>Log in to your local development machine.</li>
-  <li>
-    <p>Log in to your Magento Enterprise Cloud account:</p>
-
-    <pre><code>magento-cloud login
-</code></pre>
-  </li>
-  <li>If necessary, change to the project directory.</li>
-  <li>
-    <p>If necessary, check out the master branch:</p>
-
-    <pre><code>magento-cloud environment:checkout master
-</code></pre>
-  </li>
-  <li>
-    <p>Pull any changes from the server:</p>
-
-    <pre><code>git pull origin master
-</code></pre>
-  </li>
-  <li>
-    <p>Open an SSH connection to your staging or production server:</p>
-
-    <ul>
-      <li>Staging: <code>ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Production: <code>ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
-    </ul>
-  </li>
-  <li>
-    <p>rsync the <code>pub/media</code> directory from your local Magento server to staging or production:</p>
-
-    <pre><code>rsync -azvP pub/media/ &lt;developmemt machine user name&gt;@&lt;development machine host or IP&gt;:pub/media/ 
-</code></pre>
-  </li>
-</ol>
-
-<h3 id="cloud-live-migrate-db">Migrate the database</h3>
-<p>To migrate the database:</p>
-
-<ol>
-  <li>
-    <p>SSH to the master branch of your integration environment:</p>
-
-    <pre><code>magento-cloud environment:ssh
-</code></pre>
-  </li>
-  <li>
-    <p>Find the database login information:</p>
-
-    <pre><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
-</code></pre>
-  </li>
-  <li>
-    <p>Create a database dump:</p>
-
-    <pre><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main | gzip - &gt; /tmp/database.sql.gz
-</code></pre>
-  </li>
-  <li>
-    <p>Transfer the database dump to staging or production:</p>
-
-    <ul>
-      <li>Staging: <code>rsync -azvP /tmp/database.sql.gz &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud:/tmp</code></li>
-      <li>Production: <code>rsync -azvP /tmp/database.sql.gz &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud:/tmp</code></li>
-    </ul>
-  </li>
-  <li>Enter <code>exit</code> to terminate the SSH connection.</li>
-  <li>
-    <p>Open an SSH connection to your staging or production server:</p>
-
-    <ul>
-      <li>Staging: <code>ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Production: <code>ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
-    </ul>
-  </li>
-  <li>
-    <p>Import the database dump:</p>
-
-    <pre><code>zcat database.sql.gz | mysql -u &lt;username&gt; -p&lt;password&gt; &lt;database name&gt;
-</code></pre>
-
-    <p>Using the example from step 2,</p>
-
-    <pre><code>zcat database.sql.gz | mysql -u user main
-</code></pre>
-  </li>
-</ol>
-
-<h4 id="troubleshooting-the-database-migration">Troubleshooting the database migration</h4>
-<p>If you set up stored procedures or views in your database, the following error might display during the import:</p>
-
-<pre><code>ERROR 1277 (42000) at line &lt;number&gt;: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
-</code></pre>
-
-<p>The reason is that stored procedures and views both use <code>"DEFINER='root'@'localhost'"</code>, and you don’t have <code>root</code> user access to the staging or production databases.</p>
-
-<p>To solve the issue, create another database dump, replacing the <code>DEFINER</code> string with an empty string.</p>
-
-<p>You can do this using a text editor or by using the following command:</p>
-
-<pre><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main | gzip | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' &gt; /tmp/database_no-definer.sql.gz
-</code></pre>
-
-<p>Use the database dump you just created to <a href="#cloud-live-migrate-db">migrate the database</a>.</p>
+<p>To clone a Magento reference project, you must upload SSH keys to <code>github.com</code>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>After migrating the database, you can set up your stored procedures or views in staging or production the same way you did in your integration environment.</p>
+  <p>Your project's master branch always uses the provided Git repository. You can use an existing GitHub or Bitbucket account to manage branches of that repository. (Branches are also referred to as <em>environments</em>.</p>
 </div>
 
-<h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.0/cloud/live/stage-prod-test.html">Test</a></p>
+<h3 id="git-knowledge">Git knowledge</h3>
+<p>We assume you have a good working knowledge of Git. If not, consult the following resources:</p>
+
+<ul>
+  <li><a href="https://git-scm.com/documentation" target="_blank">Git documentation</a></li>
+  <li><a href="https://git-scm.com/docs" target="_blank">Git reference</a></li>
+  <li><a href="http://git-scm.com/docs/gittutorial" target="_blank">Git tutorial</a></li>
+</ul>
+
+<p>Before getting started, make sure you have a <a href="https://git-scm.com/downloads" target="_blank">Git client</a> installed on your computer
+to be able to interact with Magento Enterprise Cloud Edition.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, Magento Enterprise Cloud Edition adds two additional requirements:</p>
+  <ul><li>The <code>/</code> character isn't allowed.</li>
+  	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
+</div>
+
+<p>You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. For more information, see <a href="https://help.github.com/articles/generating-an-ssh-key" target="_blank">GitHub documentation</a>.</p>
 
 		</div>
 	</section>

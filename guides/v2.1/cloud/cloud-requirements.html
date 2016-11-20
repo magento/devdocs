@@ -277,7 +277,42 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/cloud/cloud-requirements.html">Magento Enterprise Cloud Edition requirements</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/get-help.html">Get help with your deployment</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/cloud/cloud-requirements.html">Magento Enterprise Cloud Edition requirements</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/cloud-requirements-license.html">License and authentication requirements</a></li>
 
 									
 
@@ -285,7 +320,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/get-help.html">Get help with your deployment</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/cloud-requirements-git.html">Git requirements</a></li>
 
 									
 
@@ -1373,64 +1408,100 @@
 		<div class="content-wrap">
             <div class="updated">Updated: 22 June 2016 (PDT)</div>
             <h2 id="magento-enterprise-cloud-edition-requirements">Magento Enterprise Cloud Edition requirements</h2>
-<p>We require the following:</p>
+<p>This topic lists requirements for using Magento Enterprise Cloud Edition. Review them carefully before you start developing.</p>
 
 <ul>
-  <li><a href="#cloud-require-lic">License</a></li>
-  <li><a href="#cloud-require-auth">Authentication</a></li>
-  <li><a href="#cloud-require-ssh">SSH keys</a></li>
-  <li><a href="#cloud-require-git">Source control with Git</a></li>
+  <li><a href="#cloud-req-pre">Prerequisites</a></li>
+  <li><a href="#cloud-req-test">Required testing configurations</a></li>
+  <li><a href="#cloud-req-devtest">Development and testing</a></li>
+  <li><a href="#cloud-req-live">Before you go live</a></li>
+  <li><a href="/guides/v2.1/cloud/cloud-requirements-git.html">Git requirements</a></li>
+  <li><a href="/guides/v2.1/cloud/cloud-requirements-license.html">License and authentication requirements</a></li>
 </ul>
 
-<h2 id="cloud-require-lic">License</h2>
-<p>You must have all of the following to use Magento Enterprise Cloud Edition:</p>
+<h3 id="cloud-req-pre">Prerequisites</h3>
+<p>Following are requirements you should already have:</p>
 
 <ul>
-  <li><a href="/guides/v2.1/cloud/before/before-project-owner.html#cloud-first-acct">An account</a></li>
-  <li>An <a href="/guides/v2.1/cloud/before/before-project-owner.html#cloud-owner-keys">authentication key</a> for each user who needs to contribute to the project</li>
+  <li>Must know how to use Git</li>
+  <li>Must know how to use Composer</li>
+  <li>Must be familiar with Magento 2</li>
+  <li>Must have familiarity with basic Continuous Integration Best Practices</li>
+  <li>Understand the three types of systems and how they’re used: <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration</a>, <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">staging</a>, <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a></li>
+  <li>
+    <p>Must set up a <a href="/guides/v2.1/">local development environment</a></p>
+
+    <p>The integration environment (sometimes referred to as <em>Platform as a Service (PaaS))</em> can help with integration testing but is not for developing for a production server. Among the differences are that, in integration, Magento is set for developer mode and not all directories are read-only.</p>
+  </li>
+  <li>Must have working <a href="/guides/v2.1/install-gde/prereq/connect-auth.html"><code>repo.magento.com</code> credentials</a> in your account</li>
 </ul>
 
-<h2 id="cloud-require-auth">Authentication</h2>
-<p>Your Magento Enterprise Cloud Edition account must <em>authenticate</em> using any of the following:</p>
+<h3 id="cloud-req-test">Required testing configurations</h3>
+<p>Before you test any custom code in any Magento Enterprise Cloud Edition environment, you must do all of the following:</p>
 
 <ul>
-  <li>GitHub</li>
-  <li>Bitbucket</li>
-  <li>Google</li>
-  <li>Create your own Cloud account</li>
+  <li>Set the Magento application docroot to <code>pub/index.php</code></li>
+  <li>Set MySQL <a href="/guides/v2.1/cloud/before/before-workspace-php.html#cloud-mysql"><code>auto_increment_increment</code> to 3</a></li>
+  <li>
+    <p>Must test with the correct file permissions in production mode</p>
+
+    <p>Correct permissions include no write access outside of <code>var</code>, <code>pub/static, pub/media</code>, and <code>app/etc</code></p>
+  </li>
+  <li>Test with minification for HTML, JavaScript, and CSS enabled</li>
+  <li>Test with <a href="/guides/v2.1/config-guide/redis/config-redis.html">Redis enabled for page cache and session cache</a></li>
+  <li>Install the <a href="/guides/v2.1/cloud/access-acct/fastly.html">Fastly</a> extension</li>
+  <li>Test using <a href="/guides/v2.1/config-guide/varnish/config-varnish.html">Varnish</a> for the page cache</li>
 </ul>
 
-<h2 id="cloud-require-ssh">SSH keys</h2>
-<p>To clone a Magento reference project, you must upload SSH keys to <code>github.com</code>.</p>
-
-<h2 id="cloud-require-git">Source control with Git</h2>
-<p>Any change you make to your Magento Enterprise Cloud Edition project must be committed to a Git repository. You can use either the repository provided with your account or you can use your own private account on GitHub or Bitbucket. For more information, see <a href="/guides/v2.1/cloud/before/before-repos.html">Magento Enterprise Cloud Edition repositories</a>.</p>
-
-<p>If you don’t already have an account, we’ll create one for you. However, if you have a GitHub or Bitbucket account and you’re already using it in a development workflow, we recommend you use it.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Your project's master branch always uses the provided Git repository. You can use an existing GitHub or Bitbucket account to manage branches of that repository. (Branches are also referred to as <em>environments</em>.</p>
-</div>
-
-<h2 id="git-knowledge">Git knowledge</h2>
-<p>We assume you have a good working knowledge of Git. If not, consult the following resources:</p>
+<h3 id="cloud-req-devtest">Development and testing</h3>
+<p>For development and testing, we require the following:</p>
 
 <ul>
-  <li><a href="https://git-scm.com/documentation" target="_blank">Git documentation</a></li>
-  <li><a href="https://git-scm.com/docs" target="_blank">Git reference</a></li>
-  <li><a href="http://git-scm.com/docs/gittutorial" target="_blank">Git tutorial</a></li>
+  <li>You must push code to the staging or production environment before the database is uploaded the first time</li>
+  <li>
+    <p>You should test using either the integration or the staging environment (or both) on a regular basis throughout the project</p>
+
+    <p>You can enable and test individual features or extensions on different environments to make sure they are working before merging</p>
+  </li>
+  <li>You must make sure that <code>composer:setup</code>  and <code>composer:install</code> work and that any extensions and customizations compile correctly in production mode</li>
+  <li>
+    <p>You must test the application, including any extensions and customizations, against Varnish and/or Fastly well in advance of going live</p>
+
+    <p>In particular, verify that content is being cached as expected</p>
+  </li>
+  <li>You must make sure the Fastly VCL is uploaded to Fastly (open a <a href="/guides/v2.1/cloud/get-help.html">support ticket</a>)</li>
+  <li>You must make sure that the Fastly SSL certificate is setup for your domain(s)</li>
+  <li>If you have any custom deploy hooks in integration, open a Support ticket to have them added to the staging and production deployment process</li>
+  <li>You should profile key flows and customizations using Blackfire.io</li>
 </ul>
 
-<p>Before getting started, make sure you have a <a href="https://git-scm.com/downloads" target="_blank">Git client</a> installed on your computer
-to be able to interact with Magento Enterprise Cloud Edition.</p>
+<h3 id="cloud-req-live">Before you go live</h3>
+<p>Before you go live, you must:</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, Magento Enterprise Cloud Edition adds two additional requirements:</p>
-  <ul><li>The <code>/</code> character isn't allowed.</li>
-  	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
-</div>
+<ul>
+  <li>Review <a href="/guides/v2.1/cloud/live/live.html">our documentation</a> about going live</li>
+  <li>Schedule the Go Live Preparation call with the support team</li>
+  <li>Adjust DNS TTL in advance</li>
+  <li>Change the default Magento Admin password</li>
+  <li>Optimize all images for the web</li>
+  <li>Enable minification for JS, CSS, and HTTP</li>
+  <li>
+    <p>Make sure that pages are being correctly cached in the page cache and Fastly</p>
 
-<p>You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. For more information, see <a href="https://help.github.com/articles/generating-an-ssh-key" target="_blank">GitHub documentation</a>.</p>
+    <ul>
+      <li>Make sure the Fastly Extension is up-to-date</li>
+      <li>Make sure the Fastly VCL is up-to-date</li>
+    </ul>
+  </li>
+  <li>Make sure that the Fastly SSL certificate is setup for your domain(s)</li>
+</ul>
+
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.1/cloud/cloud-requirements-git.html">Git requirements</a></li>
+  <li><a href="/guides/v2.1/cloud/cloud-requirements-license.html">License and authentication requirements</a></li>
+</ul>
+
 
 		</div>
 	</section>

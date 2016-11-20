@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>.magento.app.yaml</title>
+	<title>Git requirements</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/cloud/project/project-conf-files_magento-app.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/cloud-requirements-git.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/cloud-requirements-git.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/cloud-requirements-git.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">.magento.app.yaml</h1>
+		<h1 class="page-heading">Git requirements</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-conf-files_magento-app.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/cloud-requirements-git.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -320,7 +320,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/cloud-requirements-git.html">Git requirements</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/cloud-requirements-git.html">Git requirements</a></li>
 
 									
 
@@ -672,7 +672,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a></li>
 
 									
 
@@ -1406,393 +1406,40 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 22 June 2016 (PDT)</div>
-            <h4 id="contents">Contents</h4>
-<ul>
-  <li><a href="#cloud-yaml-platform">About <code>.magento.app.yaml</code></a></li>
-  <li><a href="#cloud-yaml-default">Defaults</a></li>
-  <li><a href="#name"><code>name</code></a></li>
-  <li><a href="#cloud-yaml-platform-type"><code>type</code> and <code>build</code></a></li>
-  <li><a href="#cloud-yaml-platform-access"><code>access</code></a></li>
-  <li><a href="#cloud-yaml-platform-rel"><code>relationships</code></a></li>
-  <li><a href="#cloud-yaml-platform-web"><code>web</code></a></li>
-  <li><a href="#cloud-yaml-platform-disk"><code>disk</code></a></li>
-  <li><a href="#cloud-yaml-platform-mounts"><code>mounts</code></a></li>
-  <li><a href="#cloud-yaml-platform-dep"><code>dependencies</code></a></li>
-  <li><a href="#cloud-yaml-platform-hooks"><code>hooks</code></a></li>
-  <li><a href="#cloud-yaml-platform-cron"><code>crons</code></a></li>
-  <li><a href="#cloud-yaml-platform-php">Configure PHP options</a></li>
-</ul>
+            <div class="updated">Updated: 19 November 2016 (PST)</div>
+            <h2 id="cloud-require-git">Git requirements</h2>
+<p>This page lists detailed requirements for using Git with Magento Enterprise Cloud Edition.</p>
 
-<h2 id="cloud-yaml-platform">About <code>.magento.app.yaml</code></h2>
-<p>Magento Enterprise Cloud Edition supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a <code>.magento.app.yaml</code> at the root of your repository.</p>
+<h3 id="cloud-require-git">Source control with Git</h3>
+<p>Any change you make to your Magento Enterprise Cloud Edition project must be committed to a Git repository. You can use either the repository provided with your account or you can use your own private account on GitHub or Bitbucket. For more information, see <a href="/guides/v2.1/cloud/before/before-repos.html">Magento Enterprise Cloud Edition repositories</a>.</p>
 
-<p>This file controls the application and the way it is built and deployed on Magento Enterprise Cloud Edition.</p>
+<p>If you don’t already have an account, we’ll create one for you. However, if you have a GitHub or Bitbucket account and you’re already using it in a development workflow, we recommend you use it.</p>
 
-<p><a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="_blank">Sample <code>.magento.app.yaml</code></a></p>
+<p>To clone a Magento reference project, you must upload SSH keys to <code>github.com</code>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Changes you make using <code>.yaml</code> files affect your <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="/guides/v2.1/cloud/get-help.html">Support issue</a>.</p>
+  <p>Your project's master branch always uses the provided Git repository. You can use an existing GitHub or Bitbucket account to manage branches of that repository. (Branches are also referred to as <em>environments</em>.</p>
 </div>
 
-<p>The following sections discuss properties in <code>.magento.app.yaml</code>.</p>
+<h3 id="git-knowledge">Git knowledge</h3>
+<p>We assume you have a good working knowledge of Git. If not, consult the following resources:</p>
 
-<h2 id="cloud-yaml-default">Defaults</h2>
-<p><code>.magento.app.yaml</code> has many default values; see the <a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="_blank">sample <code>.magento.app.yaml</code></a>.</p>
+<ul>
+  <li><a href="https://git-scm.com/documentation" target="_blank">Git documentation</a></li>
+  <li><a href="https://git-scm.com/docs" target="_blank">Git reference</a></li>
+  <li><a href="http://git-scm.com/docs/gittutorial" target="_blank">Git tutorial</a></li>
+</ul>
 
-<h2 id="name"><code>name</code> property</h2>
-<p><code>name</code> identifies the application in the project. Magento Enterprise Cloud Edition
-supports multiple applications in a project, so each application
-must have a <em>unique name</em> in a project.</p>
-
-<div class="collapsible"><b class="collapsible-title">name property: </b><div class="collapsible-content"><p><code>name</code> can consist only of lower case alphanumeric characters; that is, <code>a</code>–<code>z</code> and <code>0</code>–<code>9</code>. <code>name</code>
-is used in the <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a> to define the HTTP upstream
-(by default, <code>php:php</code>).</p>
-
-<p>For example, if the value of <code>name</code> is <code>app</code>, you must use <code>app:php</code> in the upstream field. You can also use this name in multi-application relationships.</p>
+<p>Before getting started, make sure you have a <a href="https://git-scm.com/downloads" target="_blank">Git client</a> installed on your computer
+to be able to interact with Magento Enterprise Cloud Edition.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you change the name you should think about updating your other configuration files (<code>routes.yaml</code> or the different <code>.magento.app.yaml</code>, you will have in a multi-application project. Changing the name has no effect on your different services (such as databases).</p>
-</div>
-</div></div>
-
-<h2 id="cloud-yaml-platform-type"><code>type</code> and <code>build</code></h2>
-<p>The <code>type</code>  and <code>build</code> properties are used to build and run the project. The only supported <code>type</code> currently is PHP.</p>
-
-<div class="collapsible"><b class="collapsible-title">type and build properties </b><div class="collapsible-content"><p>Supported versions:</p>
-
-<pre><code>type: php:5.5
-type: php:5.6
-type: php:7.0
-</code></pre>
-
-<p>The <code>build</code> determines what happens by default when building the project. The only value currently supported is <code>composer</code>.</p>
-
-<p>Example:</p>
-
-<pre><code>type: php:5.6
-build:
-    flavor: composer
-</code></pre>
-</div></div>
-
-<h2 id="cloud-yaml-platform-access"><code>access</code></h2>
-<p><code>access</code> defines the user roles who can log in using SSH to the
-environments to which they have access.</p>
-
-<div class="collapsible"><b class="collapsible-title">access property </b><div class="collapsible-content"><p>Possible values are:</p>
-
-<pre><code>ssh: admin
-ssh: contributor
-ssh: viewer
-</code></pre>
-</div></div>
-
-<h2 id="cloud-yaml-platform-rel"><code>relationships</code></h2>
-<p><code>relationships</code> defines how services are mapped in your
-application.</p>
-
-<div class="collapsible"><b class="collapsible-title">relationships: </b><div class="collapsible-content"><p>The left-hand side is the name of the relationship as it will be exposed
-to the application in the <code>MAGENTO_CLOUD_RELATIONSHIPS</code> environment
-variable. The right-hand side is in the form
-<code>&lt;service name&gt;:&lt;endpoint name&gt;</code>, where <code>&lt;service name&gt;</code> comes from 
- <code>.magento/services.yaml</code> and  <code>&lt;endpoint name&gt;</code> should be the same as the
- value of <code>type</code>  declared in that same file.</p>
-
-<p>Example of valid options are:</p>
-
-<pre><code>database: "mysql:mysql"
-database2: "mysql2:mysql"
-cache: "arediscache:redis"
-search: "searchengine:solr"
-</code></pre>
-
-<p>See also <a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code>services.yaml</code> documentation</a> for a full list of currently supported service types and endpoints.</p>
-</div></div>
-
-<h2 id="cloud-yaml-platform-web"><code>web</code></h2>
-<p><code>web</code> defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an <code>index.php</code> file on the root. We support any directory structure so the static file can be in a sub directory, and the <code>index.php</code> file can be further down.</p>
-
-<div class="collapsible"><b class="collapsible-title">web: </b><div class="collapsible-content"><p><code>web</code> supports the following:</p>
-
-<ul>
-  <li><code>document_root</code>: The path relative to the root of the application
-that is exposed on the web. Typical values include <code>/public</code> and <code>/web</code>.</li>
-  <li><code>passthru</code>: The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often <code>/index.php</code> or <code>/app.php</code>.</li>
-  <li>
-    <p><code>index_files</code>: To use a static file (for example, <code>index.html</code>) to serve
-your application. This key expects a collection.</p>
-
-    <p>For this to
-work, the static file(s) should be included in your whitelist. For example,
-to use a file named <code>index.html</code> as an index file, your whitelist should
-include an element that matches the filename, like <code>- \.html$</code>.</p>
-  </li>
-  <li><code>blacklist</code>: A list of files that should never be executed. Has no effect on static files.</li>
-  <li><code>whitelist</code>: A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.</li>
-  <li><code>expires</code>: The number of seconds whitelisted (that is, static) content
-should be cached by the browser. This enables the cache-control and
-Expires headers for static content. The <code>expires</code> directive and
-resulting headers are left out entirely if this isn’t set.</li>
-</ul>
-
-<p>Contrary to standard <code>.htaccess</code> approaches, which accept a
-<em>blacklist</em> and allow everything to be accessed except a specific
-list, we accept a <em>whitelist</em>, which means that anything not matched
-will trigger a 404 error and will be passed through to your <code>passthru</code>
-URL.</p>
-
-<p>Our default configuration allows the following:</p>
-
-<ul>
-  <li>From the root (<code>/</code>) path, only web, media, and <code>robots.txt</code> files can be accessed</li>
-  <li>From the <code>/pub/static</code> and <code>/pub/media</code> paths, any file can be accessed</li>
-</ul>
-</div></div>
-
-<h2 id="cloud-yaml-platform-disk"><code>disk</code></h2>
-<p><code>disk</code> defines the size of the persistent disk size of the
-application in MB.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The minimal recommended disk size is 256MB. If you see the error <code>UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
+  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, Magento Enterprise Cloud Edition adds two additional requirements:</p>
+  <ul><li>The <code>/</code> character isn't allowed.</li>
+  	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
 </div>
 
-<h2 id="cloud-yaml-platform-mounts"><code>mounts</code></h2>
-<p><code>mounts</code> is an object whose keys are paths relative to the root of
-the application. It’s in the form <code>volume_id[/subpath]</code>.</p>
-
-<div class="collapsible"><b class="collapsible-title">mounts: </b><div class="collapsible-content"><p>The format is:</p>
-
-<pre><code>"/public/sites/default/files": "shared:files/files"
-</code></pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>shared</code> means that the volume is shared between your applications inside an environment. The <code>disk</code> key defines the size available for that <code>shared</code> volume.</p>
-</div>
-</div></div>
-
-<h2 id="cloud-yaml-platform-dep"><code>dependencies</code></h2>
-<p><code>dependencies</code> enables you to specify dependencies that your
-application might need during the build process.</p>
-
-<div class="collapsible"><b class="collapsible-title">dependencies: </b><div class="collapsible-content"><p>Magento Enterprise Cloud Edition supports dependencies on the following
-languages:</p>
-
-<ul>
-  <li>PHP</li>
-  <li>Ruby</li>
-  <li>NodeJS</li>
-</ul>
-
-<p>Those dependencies are independent of the eventual dependencies of your
-application, and are available in the <code>PATH</code>, during the build process
-and in the runtime environment of your application.</p>
-
-<p>You can specify those dependencies as follows:</p>
-
-<pre><code>ruby:
-   sass: "~3.4"
-nodejs:
-   grunt-cli: "~0.3"
-</code></pre>
-</div></div>
-
-<h2 id="cloud-yaml-platform-hooks"><code>hooks</code></h2>
-<p>The <code>hooks</code> (also referred to as <code>deployment hooks</code>) enable you to define shell
-commands to run during the deployment process.</p>
-
-<p>They can be executed at various points in the lifecycle of the
-application.</p>
-
-<div class="collapsible"><b class="collapsible-title">hooks: </b><div class="collapsible-content"><p>Possible hooks are:</p>
-
-<ul>
-  <li><code>build</code>: We run build hooks before your application has been
-packaged. No other services (such as the database, or redis) are accessible at this time since the
-application has not been deployed yet.</li>
-  <li><code>deploy</code>: We run deploy hooks after your application has been
-deployed and started. You can access other services at this point.</li>
-</ul>
-
-<p>To add additional hooks (such as CLI commands that are offered by a custom extension), add them under the <code>build</code> or
-<code>deploy</code> sections as follows:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">hooks</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">build</span><span class="p-Indicator">:</span> <span class="p-Indicator">|</span>
-        <span class="no">php ./bin/magento magento-cloud:build</span>
-        <span class="no">php ./bin/magento additional:build:hook</span>
-    <span class="l-Scalar-Plain">deploy</span><span class="p-Indicator">:</span> <span class="p-Indicator">|</span>
-        <span class="no">php ./bin/magento magento-cloud:deploy</span>
-        <span class="no">php ./bin/magento additional:deploy:hook</span></code></pre></figure>
-
-<p>The home directory, where your application is mounted, is <code>/app</code>, and that is the directory from which hooks will be
-run unless you <code>cd</code> somewhere else.</p>
-
-<p>The hooks fail if the final command in them fails. To
-cause them to fail on the first failed command, add <code>set -e</code> to the beginning
-of the hook.</p>
-
-<h4 id="example-compile-sass-files-using-grunt">[Example] Compile SASS files using grunt</h4>
-<p>For example, to compile SASS files using grunt:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">dependencies:
-  ruby:
-    sass: &quot;3.4.7&quot;
-  nodejs:
-    grunt-cli: &quot;~0.1.13&quot;
-
-hooks:
-  build: |
-    cd public/profiles/project_name/themes/custom/theme_name
-    npm install
-    grunt</code></pre></figure>
-</div></div>
-
-<h2 id="cloud-yaml-platform-cron"><code>crons</code></h2>
-<p><code>crons</code> describes processes that are triggered on a
-schedule.</p>
-
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p><code>crons</code> supports the following:</p>
-
-<ul>
-  <li><code>spec</code>: The cron specification. The minimum interval is once per 5 minutes.</li>
-  <li><code>cmd</code>: The command to execute.</li>
-</ul>
-
-<p>A sample Magento cron job follows:</p>
-
-<pre><code>crons:
-cronrun:
-    spec: "*/5 * * * *"
-    cmd: "php bin/magento cron:run"
-</code></pre>
-</div></div>
-
-<h2 id="cloud-yaml-platform-php">Configure PHP options</h2>
-<p>You can choose which version of PHP you want to run in your <code>.magento.app.yaml</code> file.:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">myphpapp</span>
-<span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php:5.6</span></code></pre></figure>
-
-<p>We support PHP versions 5.5, 5.6, and 7.0. The default is 7.0.</p>
-
-<div class="collapsible"><b class="collapsible-title">Configure PHP options: </b><div class="collapsible-content"><p>See one of the following sections for more information:</p>
-
-<ul>
-  <li><a href="#cloud-yaml-platform-php-ext">PHP extensions</a></li>
-  <li><a href="#cloud-yaml-platform-php-set">Customize <code>php.ini</code> settings</a></li>
-</ul>
-
-<h3 id="cloud-yaml-platform-php-ext">PHP extensions</h3>
-<p>You can define additional PHP extensions you want to enable or disable. Example:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># .magento.app.yaml</span>
-<span class="l-Scalar-Plain">runtime</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">xdebug</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">redis</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ssh2</span>
-    <span class="l-Scalar-Plain">disabled_extensions</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">sqlite3</span></code></pre></figure>
-
-<p>To view the current list of PHP extensions, SSH into your environment and enter the following command:</p>
-
-<pre><code>php -m
-</code></pre>
-
-<p>Magento requires the following PHP extensions that are enabled by default:</p>
-
-<ul>
-  <li><a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a></li>
-  <li><a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both</li>
-  <li><a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a></li>
-  <li>
-    <p>PHP 7 only:</p>
-
-    <ul>
-      <li><a href="http://php.net/manual/en/book.json.php" target="_blank">json</a></li>
-      <li><a href="http://php.net/manual/en/book.iconv.php" target="_blank">iconv</a></li>
-    </ul>
-  </li>
-  <li><a href="http://php.net/manual/en/book.mcrypt.php" target="_blank">mcrypt</a></li>
-  <li><a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PDO/MySQL</a></li>
-  <li><a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a></li>
-  <li><a href="http://php.net/manual/en/book.mbstring.php" target="_blank">mbstring</a></li>
-  <li><a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a></li>
-  <li><a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a></li>
-  <li><a href="http://php.net/manual/en/book.simplexml.php" target="_blank">SimpleXML</a></li>
-  <li><a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a></li>
-  <li><a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a></li>
-  <li><a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a></li>
-</ul>
-
-<p>You must install the following extensions:</p>
-
-<ul>
-  <li><a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a></li>
-  <li><a href="https://pecl.php.net/package/redis" target="_blank">redis</a></li>
-</ul>
-
-<p>In addition, we strongly recommend you enable <code>opcache</code>.</p>
-
-<p>Other PHP extensions you can optionally install:</p>
-
-<ul>
-  <li><a href="http://php.net/manual/en/book.apcu.php" target="_blank">apcu</a></li>
-  <li><a href="https://blackfire.io/docs/up-and-running/installation" target="_blank">blackfire</a></li>
-  <li><a href="http://php.net/manual/en/book.enchant.php" target="_blank">enchant</a></li>
-  <li><a href="http://php.net/manual/en/book.gearman.php" target="_blank">gearman</a></li>
-  <li><a href="http://php.net/manual/en/book.geoip.php" target="_blank">geoip</a></li>
-  <li><a href="http://php.net/manual/en/book.imap.php" target="_blank">imap</a></li>
-  <li><a href="https://pecl.php.net/package/pecl_http" target="_blank">pecl-http</a></li>
-  <li><a href="http://pinba.org" target="_blank">pinba</a></li>
-  <li><a href="https://pecl.php.net/package/propro" target="_blank">propro</a></li>
-  <li><a href="http://php.net/manual/en/book.pspell.php" target="_blank">pspell</a></li>
-  <li><a href="https://pecl.php.net/package/raphf" target="_blank">raphf</a></li>
-  <li><a href="http://php.net/manual/en/book.readline.php" target="_blank">readline</a></li>
-  <li><a href="http://php.net/manual/en/book.recode.php" target="_blank">recode</a></li>
-  <li><a href="http://php.net/manual/en/book.snmp.php" target="_blank">snmp</a></li>
-  <li><a href="http://php.net/manual/en/book.sqlite3.php" target="_blank">sqlite3</a></li>
-  <li><a href="http://php.net/manual/en/book.ssh2.php" target="_blank">ssh2</a></li>
-  <li><a href="http://php.net/manual/en/book.tidy.php" target="_blank">tidy</a></li>
-  <li><a href="https://xcache.lighttpd.net" target="_blank">xcache</a></li>
-  <li><a href="https://xdebug.org" target="_blank">xdebug</a></li>
-  <li><a href="http://php.net/manual/en/book.xhprof.php" target="_blank">xhprof</a></li>
-  <li><a href="http://php.net/manual/en/book.xmlrpc.php" target="_blank">xmlrpc</a></li>
-</ul>
-
-<h3 id="cloud-yaml-platform-php-set">Customize <code>php.ini</code> settings</h3>
-<p>You can also create and push a <code>php.ini</code> file that is appended to
-the configuration maintained by Magento Enterprise Cloud Edition.</p>
-
-<p>In your repository, the <code>php.ini</code> file should be added to the root of
-the application (the repository root).</p>
-
-<div class="bs-callout bs-callout-warning">
-    <p>Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.</p>
-</div>
-
-<p>For example, if you need to increase the PHP memory limit:</p>
-
-<pre><code>memory_limit = 768M
-</code></pre>
-
-<p>For a list of recommended PHP configuration settings, see <a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
-
-<p>After pushing your file, you can check that the custom PHP configuration
-has been added to your environment by SSHing into your environment and entering:</p>
-
-<pre><code>cat /etc/php5/fpm/php.ini
-</code></pre>
-</div></div>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html">routes.yaml</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html">services.yaml</a></li>
-</ul>
+<p>You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. For more information, see <a href="https://help.github.com/articles/generating-an-ssh-key" target="_blank">GitHub documentation</a>.</p>
 
 		</div>
 	</section>
