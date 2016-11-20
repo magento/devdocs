@@ -11,7 +11,7 @@ github_link: config-guide/multi-site/ms_apache.md
 ---
 
 ## Set up multiple websites with Apache  {#ms-apache-over}
-This tutorial shows you step-by-step how to set up multiple stores with Magento using Apache. 
+This tutorial shows you step-by-step how to set up multiple websites using Apache. 
 
 ### Assumptions
 We assume the following:
@@ -27,8 +27,8 @@ We assume the following:
 *   The Magento software is installed in `/var/www/html/magento2`
 *   You have two websites other than the default:
 
-    *   `french.mysite.mg` with website code `french` and storeview code `fr`
-    *   `german.mysite.mg` with website code `german` and storeview code `de`
+    *   `french.mysite.mg` with website code `french` and store view code `fr`
+    *   `german.mysite.mg` with website code `german` and store view code `de`
 
 ### Roadmap for setting up multiple websites with Apache
 Setting up multiple stores consists of the following tasks:

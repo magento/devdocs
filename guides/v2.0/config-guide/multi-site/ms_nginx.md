@@ -11,7 +11,7 @@ github_link: config-guide/multi-site/ms_nginx.md
 ---
 
 ## Set up multiple websites with nginx {#ms-nginx-over}
-This tutorial shows you step-by-step how to set up multiple stores with Magento using nginx. 
+This tutorial shows you step-by-step how to set up multiple websites using nginx. 
 
 ### Assumptions
 We assume the following:
@@ -26,15 +26,15 @@ We assume the following:
 *	The Magento software is installed in `/var/www/html/magento2`
 *	You have two websites other than the default:
 
-	*	`french.mysite.mg` with website code `french` and storeview code `fr`
-	*	`german.mysite.mg` with website code `german` and storeview code `de`
-
-### Roadmap for setting up multiple websites with Apache
+	*	`french.mysite.mg` with website code `french` and store view code `fr`
+	*	`german.mysite.mg` with website code `german` and store view code `de`
+ 
+### Roadmap for setting up multiple websites with nginx
 Setting up multiple stores consists of the following tasks:
 
 1.	[Set up websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the Magento Admin.
 2.	Create one [nginx virtual host](#ms-nginx-vhosts) per Magento website.
-3.  Pass the values of the [Magento variables](#ms-nginx-vars) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to Apache using the Magento-provided `Apache.conf.sample`.
+3.  Pass the values of the [Magento variables](#ms-nginx-vars) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample`.
 
     *   `$MAGE_RUN_TYPE` can be either `store` or `website`
 
@@ -47,7 +47,7 @@ This section discusses how to load websites on the storefront. You can use eithe
 
 {% collapsible To create virtual hosts: %}
 
-1.	Open a text editor and add the following contents to a file named `/etc/nginx/sites-available/french.mysite.mg.conf`:
+1.	Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/french.mysite.mg.conf`:
 
 		map $http_host $MAGE_RUN_CODE {
            french.mysite.mg french;
