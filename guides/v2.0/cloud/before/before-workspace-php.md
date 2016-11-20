@@ -37,7 +37,7 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 
 {% endcollapsible %}
 
-## Set up MySQL
+## Set up MySQL {#cloud-mysql}
 The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation but the Magento Enterprise Cloud Edition cluster uses a value of `3`.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
