@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>TLS requirement for repo.magento.com</title>
+	<title>Magento 2.0.x system requirements</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/install-gde/system-requirements_repo-tls1-2.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/system-requirements2.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/system-requirements_repo-tls1-2.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/system-requirements2.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/system-requirements_repo-tls1-2.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/system-requirements2.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -163,14 +163,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">TLS requirement for repo.magento.com</h1>
+		<h1 class="page-heading">Magento 2.0.x system requirements</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/system-requirements_repo-tls1-2.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/system-requirements2.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -316,7 +316,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/system-requirements2.html">Magento 2.0.x system requirements</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/system-requirements2.html">Magento 2.0.x system requirements</a></li>
 									
 								
 
@@ -363,7 +363,7 @@
 									
 
 
-											<li class="level3Child tls  active " data-menunode="tls"><a href="/guides/v2.0/install-gde/system-requirements_repo-tls1-2.html">TLS requirement for repo.magento.com</a>
+											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.0/install-gde/system-requirements_repo-tls1-2.html">TLS requirement for repo.magento.com</a>
 
 
 									
@@ -856,35 +856,17 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 29 June 2016 (PDT)</div>
-            <h2 id="tls-12-requirement-for-repomagentocom">TLS 1.2 requirement for repo.magento.com</h2>
-<div>
+            <div class="updated">Updated: 20 November 2016 (PST)</div>
+            <p>Our system requirements include required software to run the Magento application, supported web browsers, and also recent requirements to securely connect with our software repository and with PayPal.</p>
 
-  <p>The Magento software and component repository, <code>repo.magento.com</code>, recently started requiring Transport Layer Security (TLS) 1.1 or later.</p>
+<p>See the following for more detail:</p>
 
-  <p>The <a href="https://en.wikipedia.org/wiki/Payment_Card_Industry_Security_Standards_Council" target="_blank">PCI Security Standards Council</a> removed SSL/TLS 1.0 as an example of strong cryptography from the <a href="https://www.pcisecuritystandards.org/pci_security" target="_blank">PCI Data Security Standard (PCI DSS)</a> version 3.1, stating that it can no longer be used as a security control after June 30, 2016.</p>
-
-  <p>For details, see <a href="http://blog.pcisecuritystandards.org/migrating-from-ssl-and-early-tls" target="_blank">Date Change for Migrating from SSL and Early TLS</a>.</p>
-
-  <h3 id="symptoms">Symptoms</h3>
-  <p>If you have an earlier version of TLS, you’ll see the errors discussed in this section.</p>
-
-  <h4 id="downloading-a-magento-metapackage">Downloading a Magento metapackage</h4>
-  <p>The following error displays if you attempt to run <code>composer create-project</code> to get a Magento metapackage:</p>
-
-  <pre><code>[Composer\Downloader\TransportException]                                           
-The "https://repo.magento.com/packages.json" file could not be downloaded: Failed to enable crypto                                                                  
-failed to open stream: operation failed  
-</code></pre>
-
-  <h3 id="using-the-web-setup-wizard">Using the Web Setup Wizard</h3>
-  <p>Actions like saving your authentication credentials or synchronizing with Magento Marketplace fail with the following error:</p>
-
-  <p><img src="/common/images/install_ssl-connect-error.png" alt="SSL connect error" /></p>
-
-  <h3 id="solution">Solution</h3>
-  <p>See the <a href="/guides/v2.0/release-notes/tech_bull_tls-repo.html">Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com</a>.</p>
-</div>
+<ul>
+  <li><a href="/guides/v2.0/install-gde/system-requirements-2.0-tech.html">Magento technology stack requirements</a></li>
+  <li><a href="/guides/v2.0/install-gde/system-requirements_browsers.html">Supported browsers</a></li>
+  <li><a href="/guides/v2.0/install-gde/system-requirements_repo-tls1-2.html">TLS requirement for repo.magento.com</a></li>
+  <li><a href="/guides/v2.0/install-gde/system-requirements_tls1-2.html">TLS 1.2 requirement for PayPal</a></li>
+</ul>
 
 		</div>
 	</section>
