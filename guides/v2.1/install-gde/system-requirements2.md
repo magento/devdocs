@@ -7,7 +7,7 @@ menu_title: Magento system requirements
 menu_node: parent
 menu_order: 1
 version: 2.1
-github_link: install-gde/system-requirements.md
+github_link: install-gde/system-requirements2.md
 redirect_from: 
   - /guides/v2.1/install-gde/system-requirements.html
   - /guides/v2.1/install-gde/system-requirements-2.0.html
