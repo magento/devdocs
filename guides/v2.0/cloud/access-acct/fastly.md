@@ -99,8 +99,6 @@ For details about Fastly configuration, see the [Fastly documentation](https://g
 #### Advanced configuration options
 For advanced configuration options, download and customize the [Fastly configuration](https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl){:target="_blank"}.
 
-If you changed the `.vcl` file, open a [support ticket]({{ page.baseurl }}cloud/get-help.html) to upload your configuration to your project.
-
 {% endcollapsible %}
 	
 ### Merge your Fastly branch {#cloud-fastly-merge}
