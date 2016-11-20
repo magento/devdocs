@@ -58,7 +58,7 @@ For development and testing, we require the following:
 *	You must test the application, including any extensions and customizations, against Varnish and/or Fastly well in advance of going live
 
 	In particular, verify that content is being cached as expected 
-*	You must make sure the Fastly VCL is uploaded to Fastly 
+*	You must make sure the Fastly VCL is uploaded to Fastly (open a [support ticket]({{ page.baseurl }}cloud/get-help.html))
 *	You must make sure that the Fastly SSL certificate is setup for your domain(s)
 *	If you have any custom deploy hooks in integration, open a Support ticket to have them added to the staging and production deployment process
 *	You should profile key flows and customizations using Blackfire.io
@@ -66,6 +66,7 @@ For development and testing, we require the following:
 ### Before you go live {#cloud-req-live}
 Before you go live, you must:
 
+*	Review [our documentation]({{ page.baseurl }}cloud/live/live.html) about going live
 *	Schedule the Go Live Preparation call with the support team
 *	Adjust DNS TTL in advance 
 *	Change the default Magento Admin password
