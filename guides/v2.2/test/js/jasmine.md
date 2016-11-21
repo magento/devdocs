@@ -6,7 +6,7 @@ title: JavaScript unit testing with Jasmine
 menu_title: Jasmine
 menu_node: parent
 menu_order:
-version: 2.0
+version: 2.2
 github_link: test/js/test_js-unit.md
 redirect_from: /guides/v1.0/extension-dev-guide/test/test_js-unit.html
 ---
@@ -45,7 +45,19 @@ Learn more in [Deploy static view files].
 
 ## Run tests
 
-`Gruntfile.js` contains the test run task, so you can run **tests for a theme** using the following command in root directory:
+`Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in root directory:
+
+    $ grunt spec
+
+You can run a **single test** adding an optional parameter:
+
+    $ grunt spec --file=<path_to_test>
+    
+  Example:
+
+    $ grunt spec --file="dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/core/layout.test.js"
+    
+If you want to run **tests for a theme**, enter: 
 
     $ grunt spec:<THEME>
     
