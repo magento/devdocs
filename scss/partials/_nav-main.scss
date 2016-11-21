@@ -183,7 +183,6 @@ body.offcanvas-active {
   overflow-x: hidden;
 }
 
-
 @media (max-width:1023px) {
 
   .nav-main {
@@ -191,16 +190,15 @@ body.offcanvas-active {
     transition: all .2s;
     margin: 0;
     top: $header-height;
-    bottom: 0;
     right: 0;
-    height: 100%;
+    height: auto;
     width: 100%;
     max-width: 360px;
     z-index: 1;
-    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     display: none;
     background: #fff;
+    overflow: auto;
   }
 
 
@@ -208,22 +206,19 @@ body.offcanvas-active {
   .nav-main ul ul {
     position: relative;
     left: 0;
+    top: 0;
     visibility: visible;
     opacity: 1;
     width: 100%;
   }
 
-
-  .nav-main ul li {
+  .nav-main li {
     width: 100%;
-  }
-
-  .nav-main > div > ul {
-    border-top: 1px solid #676056;
+    border-bottom: 1px solid $light-gray-color;
+    background: #fff;
   }
 
      .nav-main ul > li > a {
-        border-bottom: 1px solid #676056;
         font-size: 16px;
      }
 
@@ -244,6 +239,9 @@ body.offcanvas-active {
 
   .nav-main ul ul {
     max-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
     overflow: hidden;
     transition: max-height 0.2s;
   }
@@ -255,18 +253,31 @@ body.offcanvas-active {
   .nav-main .children-toggle {
     position: absolute;
     display: block;
-    width: 20px;
-    height: 22px;
+    width: $header-height;
+    height: 100%;
     border: none;
     background: none;
     top:0;
     right: 0;
-    border-left: 1px solid #676056;
+    z-index: 3;
+
+    &:after {
+      width: 0;
+      height: 0;
+      margin: 0 auto;
+      position: relative;
+      top: 3px;
+      border-style: solid;
+      border-width: 8px 6px 0 6px;
+      border-color: #333 transparent transparent transparent;
+      display: block;
+      content: '';
+      transition: all .2s;
+    }
   }
 
      .nav-main ul ul li a {
-        background: #22211D;
-        border-bottom-color: #413C35;
+        border-bottom-color: #ccc;
         padding-left: 20px;
      }
 
@@ -274,19 +285,7 @@ body.offcanvas-active {
         background: rgba(0,0,0,.2);
      }
 
-     .nav-main .children-toggle:after {
-        width: 0;
-        height: 0;
-        margin: 0 auto;
-        position: relative;
-        top: 7px;
-        border-style: solid;
-        border-width: 8px 6px 0 6px;
-        border-color: #ffffff transparent transparent transparent;
-        display: block;
-        content: '';
-        transition: all .2s;
-     }
+
      .nav-main .expanded .children-toggle:after {
         transform: rotate(180deg);
      }

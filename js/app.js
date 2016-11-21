@@ -12,12 +12,13 @@ $(function() {
 		var $children = $this.closest('li').find('ul');
 
 		if ( $children.length ) {
-			$this.closest('li').addClass('has-children').append('<a href="#" class="children-toggle"></a>');
+			$this.closest('li').addClass('has-children').append('<button href="#" class="children-toggle"></button>');
 			$this.closest('li').find('.children-toggle').on('click', function () {
 				$(this).closest('li').toggleClass('expanded');
 			});
 		}
 	});
+
 
 	// Responsive table of contents
 	$('.toc-toggler').on('click', function (e) {

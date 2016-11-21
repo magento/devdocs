@@ -1,9 +1,8 @@
 <!-- Main Navigation -->
-<div id="subnav-wrap" class="nav-main">
-  <div id="subnav">
-    <ul class="menu nav">
-      <li class="first">
-        <a href="#">Setup and Deployment</a>
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
         <ul class="menu nav">
           <li class="first leaf"><a href="{{page.baseurl}}install-gde/bk-install-guide.html">Installation Guide</a></li>
           {% if page.guide_version == "2.2" %}
@@ -18,9 +17,9 @@
           <li class="leaf"><a href="{{page.baseurl}}cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
           <li class="leaf"><a href="{{page.baseurl}}release-notes/bk-release-notes.html">Release Notes</a></li>
         </ul>
-      </li>
+    </li>
 
-      <li>
+    <li>
         <a href="#">Development</a>
         <ul class="menu nav">
           <li class="leaf"><a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
@@ -33,9 +32,9 @@
           {% endif %}
           <li class="first leaf"><a href="{{page.baseurl}}contributor-guide/contributing.html">Contributor Guide</a></li>
         </ul>
-      </li>
+    </li>
 
-      <li>
+    <li>
         <a href="#">Frontend</a>
         <ul class="menu nav">
           <li class="first leaf"><a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
@@ -48,18 +47,18 @@
           <li class="leaf"><a href="{{page.baseurl}}pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
           <li class="leaf"><a href="{{page.baseurl}}design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
         </ul>
-      </li>
+    </li>
 
-      <li>
+    <li>
         <a href="#">API</a>
         <ul class="menu nav">
           <li class="leaf"><a href="{{page.baseurl}}get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
           <li class="leaf"><a href="{{page.baseurl}}rest/bk-rest.html">REST Reference</a></li>
           <li class="leaf"><a href="{{page.baseurl}}soap/bk-soap.html">SOAP Reference</a></li>
         </ul>
-      </li>
+    </li>
 
-      <li>
+    <li>
         <a href="#">Testing</a>
         <ul class="menu nav">
           <li class="leaf"><a href="{{page.baseurl}}test/testing.html">Magento Testing Guide</a></li>
@@ -69,12 +68,10 @@
           <li class="leaf"><a href="{{page.baseurl}}test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
           <li class="leaf"><a href="{{page.baseurl}}get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
         </ul>
-      </li>
+    </li>
 
-      <li>
-        <a href="{{page.baseurl}}howdoi/bk-how-do-i.html">Tutorials</a>
-      </li>
-    </ul>
-
-  </div><!--END subnav -->
-</div><!--END subnav-wrap -->
+    <li>
+      <a href="{{page.baseurl}}howdoi/bk-how-do-i.html">Tutorials</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
