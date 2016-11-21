@@ -569,6 +569,7 @@
       <li><a href="#naming-2" id="markdown-toc-naming-2">Naming</a></li>
     </ul>
   </li>
+  <li><a href="#import-directive" id="markdown-toc-import-directive"><code>@import</code> directive</a></li>
 </ul>
 
 <h2 id="general-rules">General rules</h2>
@@ -1256,6 +1257,34 @@ Extends that are used in several files should be specified in the theme’s <cod
 <h3 id="naming-2">Naming</h3>
 
 <p>Extend names should start with the <code>.abs-</code> prefix.</p>
+
+<h2 id="import-directive"><code>@import</code> directive</h2>
+
+<p>Always add the file extension of the imported resource.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>@import 'source/lib/_lib.less';
+@import (css) 'styles.css';
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>@import 'source/lib/_lib';
+@import (css) 'styles';
+</code></pre>
+
+<p>Use single quotes.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>@import 'source/lib/_lib.less';
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>@import "source/lib/_lib.less";
+</code></pre>
 
 		</div>
 	</section>
