@@ -3,6 +3,7 @@ layout: default
 group:  migration
 subgroup: A_Overview
 title: Overview
+landing-page: Migration Guide
 menu_title: Overview
 menu_node: parent
 version: 2.0

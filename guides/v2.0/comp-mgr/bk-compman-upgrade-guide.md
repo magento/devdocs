@@ -3,6 +3,7 @@ layout: default
 group: compman
 subgroup: 01_Introduction
 title: Upgrade the Magento application and components
+landing-page: System Upgrade Guide
 menu_title: Upgrade the Magento application and components
 menu_node: parent
 menu_order: 1

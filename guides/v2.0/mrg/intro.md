@@ -3,6 +3,7 @@ layout: default
 group: mrg
 subgroup: 10_Introduction
 title: Introduction to Module Reference Guide
+landing-page: Module Reference Guide
 menu_title: INTRODUCTION
 menu_node: parent
 version: 2.0

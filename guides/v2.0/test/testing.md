@@ -2,6 +2,7 @@
 layout: default
 group: testing
 title: Magento Testing Guide
+landing-page: Testing Guide
 version: 2.0
 github_link: test/testing.md
 redirect_from: /guides/v2.0/howdoi/mtf/mtf.html

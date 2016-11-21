@@ -3,6 +3,7 @@ layout: default
 group: soap
 subgroup: A_soap
 title: SOAP Reference
+landing-page: SOAP API
 menu_title: Overview
 menu_order: 1
 menu_node: parent

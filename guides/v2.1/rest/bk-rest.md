@@ -3,6 +3,7 @@ layout: default
 group: rest
 subgroup: A_rest
 title: Overview
+landing-page: REST API
 menu_title: Overview
 menu_order: 1
 menu_node: parent

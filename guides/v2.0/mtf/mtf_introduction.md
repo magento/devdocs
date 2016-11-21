@@ -3,6 +3,7 @@ layout: default
 group: mtf-guide
 subgroup: 10_Introduction
 title: Introduction to the Functional Testing Framework
+landing-page: Functional Testing Framework Guide
 menu_title: INTRODUCTION
 menu_node: parent
 version: 2.0

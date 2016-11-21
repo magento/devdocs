@@ -2,6 +2,7 @@
 layout: default
 group: fedg
 title: Frontend Developer Guide
+landing-page: Frontend Developer Guide
 menu_title: Introduction
 menu_order: 1
 version: 2.0
