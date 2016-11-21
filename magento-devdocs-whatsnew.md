@@ -10,9 +10,6 @@ version: 2.0
 github_link: devdocs-changelog.md
 ---
 
-## What's new
-{:.no_toc}
-
 This page contains recent changes we think you'd like to know about.
 
 In the tables that follow, *N* means *new topic* and *U* means a *significant update*. We exclude from this list proofreading, spelling checks, and all minor updates.
