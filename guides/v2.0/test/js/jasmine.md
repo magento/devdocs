@@ -18,7 +18,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/test/test_js-unit.html
 
 ## Preface
 
-Magento uses custom [Grunt] task named `spec` to run Jasmine tests. It collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for a theme.
+Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for a theme.
 
 ## Prepare environment
 
