@@ -25,5 +25,22 @@ In particular, you should look for the following:
 You should perform the test on your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) site. The Fastly extension doesn't work the same way on an [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
 
 ## Test your staging or production site with curl
+This section discusses how to use `curl` to get response headers from your staging or production site. 
 
+The URL format follows:
 
+*	Staging: `http[s]://staging.<your domain>.<project ID>.ent.magento.cloud`
+*	Production: 
+
+	*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
+	*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+
+Your Magento Enterprise Cloud Edition OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for staging and production.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+  If your site is set up for DNS, you can use the DNS name in the `curl` command as the following examples show.
+</div>
+
+Enter the following command to test your site:
+
+	curl http://<staging or production URL> -vo /dev/null -HFastly-Debug:1
