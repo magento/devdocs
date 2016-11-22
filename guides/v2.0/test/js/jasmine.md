@@ -210,7 +210,7 @@ This topic doesn't provide Jasmine test writing methodology.
 [`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
 
 [Deploy static view files]: {{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
-[Jasmine framework]: https://jasmine.github.io/
+[Grunt]: http://gruntjs.com/
 [Install grunt-cli]: http://gruntjs.com/getting-started
 [Install Node.js]: https://nodejs.org/en/
 [Learn more about testing with Jasmine.]: https://jasmine.github.io/edge/introduction.html
