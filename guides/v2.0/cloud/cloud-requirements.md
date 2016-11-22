@@ -24,8 +24,8 @@ This topic lists requirements for using Magento Enterprise Cloud Edition. Review
 ### Prerequisites {#cloud-req-pre}
 Following are requirements you should already have:
 
-*	Must know how to use Git
-*	Must know how to use Composer
+*	Must know how to use [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
+*	Must know how to use [Composer](https://getcomposer.org/doc){:target="_blank"}
 *	Must be familiar with Magento 2
 *	Must have familiarity with basic Continuous Integration Best Practices
 *	Understand the three types of systems and how they’re used: [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int), [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage), [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod)
