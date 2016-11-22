@@ -18,12 +18,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/test/test_js-unit.html
 
 ## Preface
 
-Magento contains customized [Jasmine framework] and appropriate tests in `<magento_root_dir>dev/tests/js/jasmine/`:
-
-- The customized framework is located in `<magento_root_dir>dev/tests/js/jasmine/spec_runner`
-- and tests are collected in `<magento_root_dir>dev/tests/js/jasmine/tests`.
- 
- Also, in `<magento_root_dir>dev/tests/js/jasmine/assets`, you can store data variations to be used in tests.
+Magento uses custom [Grunt] task named `spec` to run Jasmine tests. It collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for a theme.
 
 ## Prepare environment
 
@@ -68,7 +63,7 @@ which tests a JS module:
 
 [`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]{:target="_blank"}
  
-in its static representations generated in [Step 6] previously
+in its static representations generated in [Step 6] previously:
 
 `<magento_root_dir>/pub/static/<area>/<theme>/<localisation>/Magento_Ui/js/columns/actions.js`.
 
