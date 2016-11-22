@@ -514,33 +514,10 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 20 September 2016 (PDT)</div>
-            <h2 id="list">List of REST APIs</h2>
+            <div class="updated">Updated: 22 November 2016 (PST)</div>
+            <h2 id="list">List of REST APIs for Magento Community Edition</h2>
 
 <p>Additions since 2.0 are marked with asterisks (*).</p>
-
-<ul id="markdown-toc">
-  <li><a href="#backend" id="markdown-toc-backend">Backend</a></li>
-  <li><a href="#bundle" id="markdown-toc-bundle">Bundle</a></li>
-  <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
-  <li><a href="#cataloginventory" id="markdown-toc-cataloginventory">CatalogInventory</a></li>
-  <li><a href="#checkout" id="markdown-toc-checkout">Checkout</a></li>
-  <li><a href="#checkoutagreements" id="markdown-toc-checkoutagreements">CheckoutAgreements</a></li>
-  <li><a href="#cms" id="markdown-toc-cms">Cms</a></li>
-  <li><a href="#configurableproduct" id="markdown-toc-configurableproduct">ConfigurableProduct</a></li>
-  <li><a href="#customer" id="markdown-toc-customer">Customer</a></li>
-  <li><a href="#directory" id="markdown-toc-directory">Directory</a></li>
-  <li><a href="#downloadable" id="markdown-toc-downloadable">Downloadable</a></li>
-  <li><a href="#eav" id="markdown-toc-eav">Eav</a></li>
-  <li><a href="#giftmessage" id="markdown-toc-giftmessage">GiftMessage</a></li>
-  <li><a href="#integration" id="markdown-toc-integration">Integration</a></li>
-  <li><a href="#quote" id="markdown-toc-quote">Quote</a></li>
-  <li><a href="#sales" id="markdown-toc-sales">Sales</a></li>
-  <li><a href="#salesrule" id="markdown-toc-salesrule">SalesRule</a></li>
-  <li><a href="#search" id="markdown-toc-search">Search</a></li>
-  <li><a href="#store" id="markdown-toc-store">Store</a></li>
-  <li><a href="#tax" id="markdown-toc-tax">Tax</a></li>
-</ul>
 
 <h3 id="backend">Backend</h3>
 
@@ -939,6 +916,70 @@ GET    /V1/taxClasses/:taxClassId
 PUT    /V1/taxClasses/:classId
 DELETE /V1/taxClasses/:taxClassId
 GET    /V1/taxClasses/search
+</code></pre>
+
+<h2 id="listee">List of REST APIs for Magento Enterprise Edition</h2>
+
+<h3 id="customerbalance">CustomerBalance</h3>
+
+<pre><code>POST   /V1/carts/mine/balance/apply
+</code></pre>
+
+<h3 id="giftcardaccount">GiftCardAccount</h3>
+
+<pre><code>GET    /V1/carts/:quoteId/giftCards
+PUT    /V1/carts/:cartId/giftCards
+DELETE /V1/carts/:cartId/giftCards/:giftCardCode
+* DELETE /V1/carts/guest-carts/:cartId/giftCards/:giftCardCode
+* DELETE /V1/carts/mine/giftCards/:giftCardCode
+POST   /V1/carts/mine/giftCards
+POST   /V1/carts/guest-carts/:cartId/giftCards
+GET    /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode
+GET    /V1/carts/mine/checkGiftCard/:giftCardCode
+</code></pre>
+
+<h3 id="giftregistry">GiftRegistry</h3>
+
+<pre><code>POST   /V1/giftregistry/mine/estimate-shipping-methods
+POST   /V1/guest-giftregistry/:cartId/estimate-shipping-methods
+</code></pre>
+
+<h3 id="giftwrapping">GiftWrapping</h3>
+
+<pre><code>GET    /V1/gift-wrappings/:id
+POST   /V1/gift-wrappings
+PUT    /V1/gift-wrappings/:wrappingId
+GET    /V1/gift-wrappings
+DELETE /V1/gift-wrappings/:id
+</code></pre>
+
+<h3 id="reward">Reward</h3>
+
+<pre><code>POST   /V1/reward/mine/use-reward
+</code></pre>
+
+<h3 id="rma">Rma</h3>
+
+<pre><code>POST   /V1/returns/:id/tracking-numbers
+DELETE /V1/returns/:id/tracking-numbers/:trackId
+GET    /V1/returns/:id
+DELETE /V1/returns/:id
+POST   /V1/returns/:id/comments
+POST   /V1/returns
+PUT    /V1/returns/:id
+GET    /V1/returns/:id/comments
+GET    /V1/returns
+GET    /V1/returnsAttributeMetadata/:attributeCode
+GET    /V1/returnsAttributeMetadata/form/:formCode
+GET    /V1/returnsAttributeMetadata
+GET    /V1/returnsAttributeMetadata/custom
+GET    /V1/returns/:id/tracking-numbers
+GET    /V1/returns/:id/labels
+</code></pre>
+
+<h3 id="worldpay">Worldpay</h3>
+
+<pre><code>* POST   /V1/worldpay-guest-carts/:cartId/payment-information
 </code></pre>
 
 		</div>

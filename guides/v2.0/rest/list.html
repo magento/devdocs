@@ -492,18 +492,17 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 20 September 2016 (PDT)</div>
-            <h2 id="list">List of REST APIs</h2>
+            <div class="updated">Updated: 22 November 2016 (PST)</div>
+            <h2 id="list">List of REST APIs for Magento Community Edition</h2>
 
 <p>An asterisk (*) indicates the API was added since the initial release of Magento 2.0.</p>
 
-
-<h3>Backend</h3>
+<h3 id="backend">Backend</h3>
 
 <pre><code>GET    /V1/modules
 </code></pre>
 
-<h3>Bundle</h3>
+<h3 id="bundle">Bundle</h3>
 
 <pre><code>POST   /V1/bundle-products/:sku/links/:optionId
 PUT    /V1/bundle-products/:sku/links/:id
@@ -517,7 +516,7 @@ PUT    /V1/bundle-products/options/:optionId
 DELETE /V1/bundle-products/:sku/options/:optionId
 </code></pre>
 
-<h3>Catalog</h3>
+<h3 id="catalog">Catalog</h3>
 
 <pre><code>POST   /V1/products
 PUT    /V1/products/:sku
@@ -585,7 +584,7 @@ DELETE /V1/categories/:categoryId/products/:sku
 * DELETE /V1/products/:sku/websites/:websiteId
 </code></pre>
 
-<h3>CatalogInventory</h3>
+<h3 id="cataloginventory">CatalogInventory</h3>
 
 <pre><code>GET    /V1/stockItems/:productSku
 PUT    /V1/products/:productSku/stockItems/:itemId
@@ -593,7 +592,7 @@ GET    /V1/stockItems/lowStock/
 GET    /V1/stockStatuses/:productSku
 </code></pre>
 
-<h3>Checkout</h3>
+<h3 id="checkout">Checkout</h3>
 
 <pre><code>* POST   /V1/guest-carts/:cartId/shipping-information
 POST   /V1/carts/mine/shipping-information
@@ -609,12 +608,12 @@ POST   /V1/guest-carts/:cartId/set-payment-information
 POST   /V1/carts/mine/set-payment-information
 </code></pre>
 
-<h3>CheckoutAgreements</h3>
+<h3 id="checkoutagreements">CheckoutAgreements</h3>
 
 <pre><code>GET    /V1/carts/licence
 </code></pre>
 
-<h3>Cms</h3>
+<h3 id="cms">Cms</h3>
 
 <pre><code>GET    /V1/cmsPage/:pageId
 GET    /V1/cmsPage/search
@@ -628,7 +627,7 @@ PUT    /V1/cmsBlock/:id
 DELETE /V1/cmsBlock/:blockId
 </code></pre>
 
-<h3>ConfigurableProduct</h3>
+<h3 id="configurableproduct">ConfigurableProduct</h3>
 
 <pre><code>GET    /V1/configurable-products/:sku/children
 DELETE /V1/configurable-products/:sku/children/:childSku
@@ -641,7 +640,7 @@ PUT    /V1/configurable-products/:sku/options/:id
 DELETE /V1/configurable-products/:sku/options/:id
 </code></pre>
 
-<h3>Customer</h3>
+<h3 id="customer">Customer</h3>
 
 <pre><code>GET    /V1/customerGroups/:id
 GET    /V1/customerGroups/default/:storeId
@@ -684,14 +683,14 @@ GET    /V1/customers/:customerId/shippingAddress
 DELETE /V1/addresses/:addressId
 </code></pre>
 
-<h3>Directory</h3>
+<h3 id="directory">Directory</h3>
 
 <pre><code>GET    /V1/directory/currency
 GET    /V1/directory/countries
 GET    /V1/directory/countries/:countryId
 </code></pre>
 
-<h3>Downloadable</h3>
+<h3 id="downloadable">Downloadable</h3>
 
 <pre><code>GET    /V1/products/:sku/downloadable-links
 GET    /V1/products/:sku/downloadable-links/samples
@@ -703,7 +702,7 @@ PUT    /V1/products/:sku/downloadable-links/samples/:id
 DELETE /V1/products/downloadable-links/samples/:id
 </code></pre>
 
-<h3>Eav</h3>
+<h3 id="eav">Eav</h3>
 
 <pre><code>GET    /V1/eav/attribute-sets/list
 GET    /V1/eav/attribute-sets/:attributeSetId
@@ -712,7 +711,7 @@ POST   /V1/eav/attribute-sets
 PUT    /V1/eav/attribute-sets/:attributeSetId
 </code></pre>
 
-<h3>GiftMessage</h3>
+<h3 id="giftmessage">GiftMessage</h3>
 
 <pre><code>GET    /V1/carts/:cartId/gift-message
 GET    /V1/carts/:cartId/gift-message/:itemId
@@ -728,13 +727,13 @@ POST   /V1/guest-carts/:cartId/gift-message
 POST   /V1/guest-carts/:cartId/gift-message/:itemId
 </code></pre>
 
-<h3>Integration</h3>
+<h3 id="integration">Integration</h3>
 
 <pre><code>POST   /V1/integration/admin/token
 POST   /V1/integration/customer/token
 </code></pre>
 
-<h3>Quote</h3>
+<h3 id="quote">Quote</h3>
 
 <pre><code>GET    /V1/carts/:cartId
 * GET    /V1/carts/search
@@ -801,7 +800,7 @@ GET    /V1/carts/mine/totals
 PUT    /V1/carts/mine/collect-totals
 </code></pre>
 
-<h3>Sales</h3>
+<h3 id="sales">Sales</h3>
 
 <pre><code>GET    /V1/orders/:id
 GET    /V1/orders
@@ -847,7 +846,7 @@ GET    /V1/transactions
 * POST /V1/order/:orderId/ship
 </code></pre>
 
-<h3>SalesRule</h3>
+<h3 id="salesrule">SalesRule</h3>
 
 <pre><code>GET    /V1/salesRules/:ruleId
 GET    /V1/salesRules/search
@@ -864,12 +863,12 @@ POST   /V1/coupons/deleteByIds
 POST   /V1/coupons/deleteByCodes
 </code></pre>
 
-<h3>Search</h3>
+<h3 id="search">Search</h3>
 
 <pre><code>GET    /V1/search
 </code></pre>
 
-<h3>Store</h3>
+<h3 id="store">Store</h3>
 
 <pre><code>GET    /V1/store/storeViews
 GET    /V1/store/storeGroups
@@ -877,7 +876,7 @@ GET    /V1/store/websites
 GET    /V1/store/storeConfigs
 </code></pre>
 
-<h3>Tax</h3>
+<h3 id="tax">Tax</h3>
 
 <pre><code>POST   /V1/taxRates
 GET    /V1/taxRates/:rateId
@@ -894,6 +893,63 @@ GET    /V1/taxClasses/:taxClassId
 PUT    /V1/taxClasses/:classId
 DELETE /V1/taxClasses/:taxClassId
 GET    /V1/taxClasses/search
+</code></pre>
+
+<h2 id="listee">List of REST APIs for Magento Enterprise Edition</h2>
+
+<h3 id="customerbalance">CustomerBalance</h3>
+
+<pre><code>POST   /V1/carts/mine/balance/apply
+</code></pre>
+
+<h3 id="giftcardaccount">GiftCardAccount</h3>
+
+<pre><code>GET    /V1/carts/:quoteId/giftCards
+PUT    /V1/carts/:cartId/giftCards
+DELETE /V1/carts/:quoteId/giftCards/:giftCardCode
+POST   /V1/carts/mine/giftCards
+POST   /V1/carts/guest-carts/:cartId/giftCards
+GET    /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode
+GET    /V1/carts/mine/checkGiftCard/:giftCardCode
+</code></pre>
+
+<h3 id="giftregistry">GiftRegistry</h3>
+
+<pre><code>POST   /V1/giftregistry/mine/estimate-shipping-methods
+POST   /V1/guest-giftregistry/:cartId/estimate-shipping-methods
+</code></pre>
+
+<h3 id="giftwrapping">GiftWrapping</h3>
+
+<pre><code>GET    /V1/gift-wrappings/:id
+POST   /V1/gift-wrappings
+PUT    /V1/gift-wrappings/:wrappingId
+GET    /V1/gift-wrappings
+DELETE /V1/gift-wrappings/:id
+</code></pre>
+
+<h3 id="reward">Reward</h3>
+
+<pre><code>POST   /V1/reward/mine/use-reward
+</code></pre>
+
+<h3 id="rma">Rma</h3>
+
+<pre><code>POST   /V1/returns/:id/tracking-numbers
+DELETE /V1/returns/:id/tracking-numbers/:trackId
+GET    /V1/returns/:id
+DELETE /V1/returns/:id
+POST   /V1/returns/:id/comments
+POST   /V1/returns
+PUT    /V1/returns/:id
+GET    /V1/returns/:id/comments
+GET    /V1/returns
+GET    /V1/returnsAttributeMetadata/:attributeCode
+GET    /V1/returnsAttributeMetadata/form/:formCode
+GET    /V1/returnsAttributeMetadata
+GET    /V1/returnsAttributeMetadata/custom
+GET    /V1/returns/:id/tracking-numbers
+GET    /V1/returns/:id/labels
 </code></pre>
 
 		</div>
