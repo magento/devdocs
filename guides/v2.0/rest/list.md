@@ -10,18 +10,16 @@ github_link: rest/list.md
 redirect_from: /guides/v1.0/rest/list.html
 ---
 
-<h2 id="list">List of REST APIs</h2>
+## List of REST APIs for Magento Community Edition {#list}
 
 An asterisk (*) indicates the API was added since the initial release of Magento 2.0.
 
-* TOC
-{:toc}
 
-<h3>Backend</h3>
+### Backend
 
     GET    /V1/modules
 
-<h3>Bundle</h3>
+### Bundle
 
     POST   /V1/bundle-products/:sku/links/:optionId
     PUT    /V1/bundle-products/:sku/links/:id
@@ -34,7 +32,7 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     PUT    /V1/bundle-products/options/:optionId
     DELETE /V1/bundle-products/:sku/options/:optionId
 
-<h3>Catalog</h3>
+### Catalog
 
     POST   /V1/products
     PUT    /V1/products/:sku
@@ -102,14 +100,14 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     * DELETE /V1/products/:sku/websites/:websiteId
 
 
-<h3>CatalogInventory</h3>
+### CatalogInventory
 
     GET    /V1/stockItems/:productSku
     PUT    /V1/products/:productSku/stockItems/:itemId
     GET    /V1/stockItems/lowStock/
     GET    /V1/stockStatuses/:productSku
 
-<h3>Checkout</h3>
+### Checkout
 
     * POST   /V1/guest-carts/:cartId/shipping-information
     POST   /V1/carts/mine/shipping-information
@@ -124,11 +122,11 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     POST   /V1/guest-carts/:cartId/set-payment-information
     POST   /V1/carts/mine/set-payment-information
 
-<h3>CheckoutAgreements</h3>
+### CheckoutAgreements
 
     GET    /V1/carts/licence
 
-<h3>Cms</h3>
+### Cms
 
     GET    /V1/cmsPage/:pageId
     GET    /V1/cmsPage/search
@@ -141,7 +139,7 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     PUT    /V1/cmsBlock/:id
     DELETE /V1/cmsBlock/:blockId
 
-<h3>ConfigurableProduct</h3>
+### ConfigurableProduct
 
     GET    /V1/configurable-products/:sku/children
     DELETE /V1/configurable-products/:sku/children/:childSku
@@ -153,7 +151,7 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     PUT    /V1/configurable-products/:sku/options/:id
     DELETE /V1/configurable-products/:sku/options/:id
 
-<h3>Customer</h3>
+### Customer
 
     GET    /V1/customerGroups/:id
     GET    /V1/customerGroups/default/:storeId
@@ -195,13 +193,13 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     GET    /V1/customers/:customerId/shippingAddress
     DELETE /V1/addresses/:addressId
 
-<h3>Directory</h3>
+### Directory
 
     GET    /V1/directory/currency
     GET    /V1/directory/countries
     GET    /V1/directory/countries/:countryId
 
-<h3>Downloadable</h3>
+### Downloadable
 
     GET    /V1/products/:sku/downloadable-links
     GET    /V1/products/:sku/downloadable-links/samples
@@ -212,7 +210,7 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     PUT    /V1/products/:sku/downloadable-links/samples/:id
     DELETE /V1/products/downloadable-links/samples/:id
 
-<h3>Eav</h3>
+### Eav
 
     GET    /V1/eav/attribute-sets/list
     GET    /V1/eav/attribute-sets/:attributeSetId
@@ -220,7 +218,7 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     POST   /V1/eav/attribute-sets
     PUT    /V1/eav/attribute-sets/:attributeSetId
 
-<h3>GiftMessage</h3>
+### GiftMessage
 
     GET    /V1/carts/:cartId/gift-message
     GET    /V1/carts/:cartId/gift-message/:itemId
@@ -235,12 +233,12 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     POST   /V1/guest-carts/:cartId/gift-message
     POST   /V1/guest-carts/:cartId/gift-message/:itemId
 
-<h3>Integration</h3>
+### Integration
 
     POST   /V1/integration/admin/token
     POST   /V1/integration/customer/token
 
-<h3>Quote</h3>
+### Quote
 
     GET    /V1/carts/:cartId
     * GET    /V1/carts/search
@@ -306,7 +304,7 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     GET    /V1/carts/mine/totals
     PUT    /V1/carts/mine/collect-totals
 
-<h3>Sales</h3>
+### Sales
 
     GET    /V1/orders/:id
     GET    /V1/orders
@@ -351,7 +349,7 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     * POST /V1/order/:orderId/invoice
     * POST /V1/order/:orderId/ship
 
-<h3>SalesRule</h3>
+### SalesRule
 
     GET    /V1/salesRules/:ruleId
     GET    /V1/salesRules/search
@@ -367,18 +365,18 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     POST   /V1/coupons/deleteByIds
     POST   /V1/coupons/deleteByCodes
 
-<h3>Search</h3>
+### Search
 
     GET    /V1/search
 
-<h3>Store</h3>
+### Store
 
     GET    /V1/store/storeViews
     GET    /V1/store/storeGroups
     GET    /V1/store/websites
     GET    /V1/store/storeConfigs
 
-<h3>Tax</h3>
+### Tax
 
     POST   /V1/taxRates
     GET    /V1/taxRates/:rateId
@@ -395,3 +393,54 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     PUT    /V1/taxClasses/:classId
     DELETE /V1/taxClasses/:taxClassId
     GET    /V1/taxClasses/search
+
+## List of REST APIs for Magento Enterprise Edition {#listee}
+
+### CustomerBalance
+
+    POST   /V1/carts/mine/balance/apply
+
+### GiftCardAccount
+
+    GET    /V1/carts/:quoteId/giftCards
+    PUT    /V1/carts/:cartId/giftCards
+    DELETE /V1/carts/:quoteId/giftCards/:giftCardCode
+    POST   /V1/carts/mine/giftCards
+    POST   /V1/carts/guest-carts/:cartId/giftCards
+    GET    /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode
+    GET    /V1/carts/mine/checkGiftCard/:giftCardCode
+
+### GiftRegistry
+
+    POST   /V1/giftregistry/mine/estimate-shipping-methods
+    POST   /V1/guest-giftregistry/:cartId/estimate-shipping-methods
+
+### GiftWrapping
+
+    GET    /V1/gift-wrappings/:id
+    POST   /V1/gift-wrappings
+    PUT    /V1/gift-wrappings/:wrappingId
+    GET    /V1/gift-wrappings
+    DELETE /V1/gift-wrappings/:id
+
+### Reward
+
+    POST   /V1/reward/mine/use-reward
+
+### Rma
+
+    POST   /V1/returns/:id/tracking-numbers
+    DELETE /V1/returns/:id/tracking-numbers/:trackId
+    GET    /V1/returns/:id
+    DELETE /V1/returns/:id
+    POST   /V1/returns/:id/comments
+    POST   /V1/returns
+    PUT    /V1/returns/:id
+    GET    /V1/returns/:id/comments
+    GET    /V1/returns
+    GET    /V1/returnsAttributeMetadata/:attributeCode
+    GET    /V1/returnsAttributeMetadata/form/:formCode
+    GET    /V1/returnsAttributeMetadata
+    GET    /V1/returnsAttributeMetadata/custom
+    GET    /V1/returns/:id/tracking-numbers
+    GET    /V1/returns/:id/labels
