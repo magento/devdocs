@@ -48,15 +48,11 @@ The URL format follows:
 
 Your Magento Enterprise Cloud Edition OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for staging and production.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-  If your site is set up for DNS, you can use the DNS name in the `curl` command as the following examples show.
-</div>
-
 Enter the following command to test your site:
 
-	curl -I -k <staging or production URL> [-H 'Host: <public host name>'] -vo /dev/null -HFastly-Debug:1
+	curl -I -k <staging or production URL> [-H 'Host: <public URL>'] -vo /dev/null -HFastly-Debug:1
 
-For example, if you have a public host name `www.mymagento.biz`, enter a command similar to the following to test the production site:
+For example, if you have a public URL `www.mymagento.biz`, enter a command similar to the following to test the production site:
 
 	curl -I -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -HFastly-Debug:1
 
@@ -64,7 +60,7 @@ If you do not have DNS set up for a public host name, enter a command similar to
 
 	curl -I -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
 
-The output for this command can be lengthy so the following is a summary:
+The output for this command can be lengthy so the following is a summary only:
 
 	* STATE: INIT => CONNECT handle 0x600057800; line 1402 (connection #-5000)
 	* Rebuilt URL to: https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud/
@@ -97,12 +93,16 @@ The output for this command can be lengthy so the following is a summary:
 	  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
 	* Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
 
+The preceding example shows the correct values for `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled`.
+
 ## Test your live site
-Enter the following command to test your site:
+Enter the following command to test your site if it's live:
 
 	curl http://<domain> -vo /dev/null -HFastly-Debug:1
 
-For example, http://www.mymagento.biz -vo /dev/null -HFastly-Debug:1
+For example,
+
+	http://www.mymagento.biz -vo /dev/null -HFastly-Debug:1
 
 The output for this command is similar to the preceding command; following are only the unique headers returned by this command:
 
@@ -118,6 +118,9 @@ Do the following:
 1.	[Install the Fastly module]({{ page.baseurl }}cloud/access-acct/fastly.html)
 2.	In the Magento Admin, [set Fastly as the page cache]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-fastly-admin)
 3.	Push the changes to your staging or production server.
+
+### Error: `Fastly-Magento-VCL-Uploaded` is `No`
+TBD
 
 ### `X-Cache` includes `MISS`
 If `X-Cache` is either `HIT, MISS` or `MISS, MISS`, enter the same `curl` command again to make sure the page wasn't recently evicted from the cache.

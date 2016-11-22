@@ -19,6 +19,7 @@ This topic discusses tasks you must perform before you migrate your database and
 2.	Get your [access URLs](#cloud-live-migrate-urls) for staging and production
 3.	Set up [remote Git repositories](#cloud-live-migrate-git)
 4.	Set up your [SSH agent](#cloud-live-migrate-agent)
+5.	Upload your [Fastly VCL](#cloud-live-migrate-fastly)
 
 After setting this up, your workflow is to code and test in your integration system, then push updates to your staging system using Git commands.
 
@@ -92,6 +93,19 @@ To set up an SSH agent:
 	A message similar to the following displays:
 
 		Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+
+### Upload your Fastly VCL {#cloud-live-migrate-fastly}
+For Fastly to work in staging or production, you must upload the Fastly VCL using the Magento Admin as follows:
+
+1.	Log in to the Magento Admin as an administrator. 
+2.	Click **Stores** > **Configuration** > **Advanced** > **System** as the following figure shows:
+
+	![Choose Fastly]({{ site.baseurl }}common/images/cloud_fastly_menu.png){:width="650px"}
+3.	In the right pane, expand **Full Page Cache**. 
+4.	Click **Upload VCL to Fastly** as the following figure shows.
+
+	![Upload a Magento VCL to Fastly]({{ site.baseurl }}common/images/cloud_upload-vcl-to-fastly.png)
+5.	Follow the prompts on your screen to complete the task.
 
 #### Next step
 [Migrate data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
