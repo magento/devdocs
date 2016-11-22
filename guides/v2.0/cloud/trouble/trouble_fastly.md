@@ -22,7 +22,7 @@ In particular, you should look for the following:
 *	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
 *	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
 
-You should perform the test on your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) site. The Fastly extension doesn't work the same way on an [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
+You should perform the test on your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) site. The Fastly extension isn't necessray on [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
 
 You must run two `curl` commands:
 
@@ -46,7 +46,7 @@ The URL format follows:
 	*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 	*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
-Your Magento Enterprise Cloud Edition OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for staging and production.
+If you don't know your staging or production URLs, consult your Magento Enterprise Cloud Edition OneDrive account. Your account includes an onboarding document that contains your Git, SSH, and project URLs for staging and production.
 
 Enter the following command to test your site:
 
@@ -120,7 +120,7 @@ Do the following:
 3.	Push the changes to your staging or production server.
 
 ### `Fastly-Magento-VCL-Uploaded` is `No`
-[Upload the Fastly VCL]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.#cloud-live-migrate-fastly)
+[Upload the Fastly VCL]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly)
 
 ### `X-Cache` includes `MISS`
 If `X-Cache` is either `HIT, MISS` or `MISS, MISS`, enter the same `curl` command again to make sure the page wasn't recently evicted from the cache.
