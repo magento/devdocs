@@ -36,6 +36,9 @@ implements `CommandPoolInterface` and takes a list of commands as optional argum
 
 And the _Command Pool_ can be configured in the following way:
 
+<p class="q">From what file does this code sample come?</p>
+Example: 
+app/code/Magento/Braintree/etc/di.xml 
 {% highlight xml %}
 <virtualType name="BraintreeCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
     <arguments>
@@ -50,6 +53,7 @@ And the _Command Pool_ can be configured in the following way:
 
 The next recommended way is creating virtual type for _Command Manager_ and configuring it by early specified _Command Pool_:
 
+app/code/Magento/Braintree/etc/di.xml 
 {% highlight xml %}
 <virtualType name="BraintreeCommandManager" type="Magento\Payment\Gateway\Command\CommandManager">
     <arguments>
@@ -59,6 +63,7 @@ The next recommended way is creating virtual type for _Command Manager_ and conf
 {% endhighlight %}
 
 Then a configured command manager should be added to payment adapter configuration:
+<p class="q">cannot find this code sample on github</p>
 
 {% highlight xml %}
 <virtualType name="BraintreeFacade" type="Magento\Payment\Model\Method\Adapter">

@@ -62,6 +62,9 @@ interface ResultInterface
 
 ### Example
 
+<p class="q">Is it an example of response validator implementation? A: yes</p>
+app/code/Magento/Worldpay/Gateway/Validator/AcceptValidator.php 
+
 {% highlight php startinline=1 %}
 class AcceptValidator extends AbstractValidator
 {

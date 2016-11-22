@@ -15,6 +15,8 @@ github_link: payments-integrations/payment-gateway/request-builder.md
 Request builder is responsible for building a transaction payload/request from several parts.
 This abstract interface allows you to have complex building strategies, but still atomic and testable.
 
+<p class="q">What strategies are possible at all?</p>
+
 {% highlight php startinline=1 %}
 interface BuilderInterface
 {
@@ -28,13 +30,16 @@ interface BuilderInterface
 }
 {% endhighlight %}
 
+
 ### Builder Composite
 
 The `\Magento\Payment\Gateway\Request\BuilderComposite` is a container for a list of `\Magento\Payment\Gateway\Request\BuilderInterface` which takes a list of class/type/virtualType
 names and performs a lazy instantiation on an actual `BuilderComposite::build([])` call.
 So you may have as many objects as required but only those which are needed for a request will be instantiated. 
 
-Inspect the behavior of `merge()` method, and in a case you want another strategy of parts concatenation, create `BuilderComposite` of your own.
+<p class="q">Why is it needed, having many objects?</p>
+
+Inspect the behavior of the `merge()` method, and in a case you want another strategy of parts concatenation, create `BuilderComposite` of your own.
 
 ### Example of a simple request decomposition
 

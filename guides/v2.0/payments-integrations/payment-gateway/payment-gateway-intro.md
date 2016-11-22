@@ -24,3 +24,5 @@ The next diagram shows the basic structure of _Payment Gateway_ components:
 
 <p class="q">How Command Manager is related to Payment Gateway? 
 Is Command Manager related to CommandInterface from payments-integrations-whatis.html </p>
+
+<p class="q">Can we have a diagram for the cooperation between those elements?</p>
