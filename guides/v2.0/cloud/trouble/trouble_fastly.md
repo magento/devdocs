@@ -35,7 +35,7 @@ You must run two `curl` commands:
 
 	This command works only if you have a DNS-mapped domain
 
-## Test your staging or production site with curl {#cloud-test-stage}
+## Test your staging or production site {#cloud-test-stage}
 This section discusses how to use `curl` to get response headers from your staging or production site. 
 
 The URL format follows:
@@ -112,15 +112,15 @@ The output for this command is similar to the preceding command; following are o
 ## Resolve errors
 This section provides suggestions for resolving errors you might find using the `curl` command.
 
-### Error: `Fastly-Module-Enabled` is `No`
+### `Fastly-Module-Enabled` is `No`
 Do the following:
 
 1.	[Install the Fastly module]({{ page.baseurl }}cloud/access-acct/fastly.html)
 2.	In the Magento Admin, [set Fastly as the page cache]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-fastly-admin)
 3.	Push the changes to your staging or production server.
 
-### Error: `Fastly-Magento-VCL-Uploaded` is `No`
-TBD
+### `Fastly-Magento-VCL-Uploaded` is `No`
+[Upload the Fastly VCL]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.#cloud-live-migrate-fastly)
 
 ### `X-Cache` includes `MISS`
 If `X-Cache` is either `HIT, MISS` or `MISS, MISS`, enter the same `curl` command again to make sure the page wasn't recently evicted from the cache.
