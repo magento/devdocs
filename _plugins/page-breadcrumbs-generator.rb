@@ -28,25 +28,24 @@ module PageBreadcrumbsGenerator
       end
 
       # Add subgroup parent. Some may not have a designated page.
-      if(page.data['subgroup'] && page.data['menu_node'] == nil)
-          parent = getSecondLevelParent(site, page)
-          if(parent)
-              breadcrumbs.push(getBreadcrumb(parent))
-          else
-              breadcrumbs.push({"url"=>convertToHtmlLink(page.data['github_link']),"title"=>page.data['subgroup']})
-          end
-      end
+#      if(page.data['subgroup'] && page.data['menu_node'] == nil)
+#          parent = getSecondLevelParent(site, page)
+#          if(parent)
+#              breadcrumbs.push(getBreadcrumb(parent))
+#          else
+#              breadcrumbs.push({"url"=>convertToHtmlLink(page.data['github_link']),"title"=>page.data['subgroup']})
+#          end
+#      end
 
       # Add third-level parent. A page exists but most likely does not have content
-      if(page.data['level3_subgroup'] && page.data['level3_menu_node'] == 'level3child')
-          parent = getThirdLevelParent(site, page)
-          if(parent)
-#             breadcrumbs.push(getBreadcrumb(parent))
-              breadcrumbs.push({"url"=>convertToHtmlLink(page.data['github_link']),"title"=>parent.data['title']})
-          else
-              breadcrumbs.push({"url"=>convertToHtmlLink(page.data['github_link']),"title"=>page.data['level3_subgroup']})
-          end 
-      end
+#      if(page.data['level3_subgroup'] && page.data['level3_menu_node'] == 'level3child')
+#          parent = getThirdLevelParent(site, page)
+#          if(parent)
+#              breadcrumbs.push({"url"=>convertToHtmlLink(page.data['github_link']),"title"=>parent.data['title']})
+#          else
+#              breadcrumbs.push({"url"=>convertToHtmlLink(page.data['github_link']),"title"=>page.data['level3_subgroup']})
+#          end 
+#      end
 
       # Add self entry
       breadcrumbs.push({"url"=>page.url,"title"=>page.data['title']})
@@ -56,7 +55,7 @@ module PageBreadcrumbsGenerator
 
     def getThirdLevelParent(site,page)
         parent = site.pages.select do |p|
-            p.data['level3_menu_node'] == 'level3parent' && p.data['level3_subgroup'] == page.data['level3_subgroup']
+            p.data['level3_menu_node'] == 'level3parent' && p.data['level3_subgroup'] == page.data['level3_subgroup'] && p.data['group'] == page.data['group']
         end
     
         if(parent.length && parent[0])
@@ -68,7 +67,7 @@ module PageBreadcrumbsGenerator
 
     def getSecondLevelParent(site, page)
         parent = site.pages.select do |p|
-            p.data['menu_node'] == 'parent' && p.data['subgroup'] == page.data['subgroup']
+            p.data['menu_node'] == 'parent' && p.data['subgroup'] == page.data['subgroup'] && p.data['group'] == page.data['group']
         end
     
         if(parent.length && parent[0])
@@ -80,7 +79,7 @@ module PageBreadcrumbsGenerator
 
     def getGuideLandingPage(site, page)
         parent = site.pages.select do |p|
-            p.data['landing-page'] != nil && p.data['group'] == page.data['group']
+            p.data['landing-page'] != nil && p.data['group'] == page.data['group'] && p.data['group'] == page.data['group']
         end
 
         if(parent.length && parent[0])
