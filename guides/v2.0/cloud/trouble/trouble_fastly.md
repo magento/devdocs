@@ -18,13 +18,24 @@ In particular, you should look for the following:
 *	`Fastly-Magento-VCL-Uploaded` should be `Yes`
 *	`X-Magento-Tags` should be returned
 *	`Fastly-Module-Enabled` should be `Yes`
-*	`X-Cache` should be either `HIT` or `HIT, HIT`
+*	`X-Cache` should be either `HIT` or `HIT, HIT` 
 *	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
 *	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
 
 You should perform the test on your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) site. The Fastly extension doesn't work the same way on an [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
 
-## Test your staging or production site with curl
+You must run two `curl` commands:
+
+*	One on your staging or production URL
+
+	This command bypasses the Fastly extension and returns the headers `Fastly-Module-Enabled`, `Cache-Control: max-age`, and `Pragma`
+*	One on your live site
+
+	This command goes through the Fastly extension and returns the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers
+
+	This command works only if you have a DNS-mapped domain
+
+## Test your staging or production site with curl {#cloud-test-stage}
 This section discusses how to use `curl` to get response headers from your staging or production site. 
 
 The URL format follows:
@@ -53,10 +64,10 @@ If you do not have DNS set up for a public host name, enter a command similar to
 
 	curl -I -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
 
-The output for this command can be lengthy so the following is a summary; emphasis added:
+The output for this command can be lengthy so the following is a summary:
 
 	* STATE: INIT => CONNECT handle 0x600057800; line 1402 (connection #-5000)
-	* Rebuilt URL to: https://www.soakandsleep.com.c.svuwxsxd6rpek.ent.magento.cloud/
+	* Rebuilt URL to: https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud/
 	* Added connection 0. The cache now contains 1 members
 	*   Trying 192.0.2.31...
 	* STATE: CONNECT => WAITCONNECT handle 0x600057800; line 1455 (connection #0)
@@ -69,11 +80,11 @@ The output for this command can be lengthy so the following is a summary; emphas
 	  ... portion omitted for brevity ...
 
 	< Set-Cookie: mage-messages=%5B%5D; expires=Wed, 22-Nov-2017 17:39:58 GMT; Max-Age=31536000; path=/
-	**< Pragma: cache**
+	< Pragma: cache
 	< Expires: Wed, 23 Nov 2016 17:39:56 GMT
-	**< Cache-Control: max-age=86400, public, s-maxage=86400, stale-if-error=5, stale-while-revalidate=5
+	< Cache-Control: max-age=86400, public, s-maxage=86400, stale-if-error=5, stale-while-revalidate=5
 	< X-Magento-Tags: cb_welcome_popup store cb cb_store_info_mobile cb_header_promotional_bar cb_store_info cb_discount-promo-bar cpg_2 cb_83 cb_81 cb_84 cb_85 cb_86 cb_87 cb_88 cb_89 p5646 catalog_product p5915 p6040 p6197 p6227 p7095 p6109 p6122 p6331 p7592 p7651 p7690
-	< Fastly-Module-Enabled: yes**
+	< Fastly-Module-Enabled: yes
 	< Strict-Transport-Security: max-age=31536000
 		< Content-Security-Policy: upgrade-insecure-requests
 	< X-Content-Type-Options: nosniff
@@ -84,4 +95,38 @@ The output for this command can be lengthy so the following is a summary; emphas
 	* STATE: PERFORM => DONE handle 0x600057800; line 1955 (connection #0)
 	* multi_done
 	  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
-	* Connection #0 to host www.soakandsleep.com.c.svuwxsxd6rpek.ent.magento.cloud left intact
+	* Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
+
+## Test your live site
+Enter the following command to test your site:
+
+	curl http://<domain> -vo /dev/null -HFastly-Debug:1
+
+For example, http://www.mymagento.biz -vo /dev/null -HFastly-Debug:1
+
+The output for this command is similar to the preceding command; following are only the unique headers returned by this command:
+
+	< Fastly-Magento-VCL-Uploaded: yes
+	< X-Cache: HIT, MISS
+
+## Resolve errors
+This section provides suggestions for resolving errors you might find using the `curl` command.
+
+### Error: `Fastly-Module-Enabled` is `No`
+Do the following:
+
+1.	[Install the Fastly module]({{ page.baseurl }}cloud/access-acct/fastly.html)
+2.	In the Magento Admin, [set Fastly as the page cache]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-fastly-admin)
+3.	Push the changes to your staging or production server.
+
+### `X-Cache` includes `MISS`
+If `X-Cache` is either `HIT, MISS` or `MISS, MISS`, enter the same `curl` command again to make sure the page wasn't recently evicted from the cache.
+
+If you get the same result, use the [first `curl` command](#cloud-test-stage) discussed in this topic to verify that:
+
+*	`Pragma` is `cache`
+*	`X-Magento-Tags` exists
+*	`Cache-Control: max-age` is greater than 0
+
+If the issue persists, another extension is likely resetting these headers. Contact your extension developers or conduct additional testing to identify the source of the issue.
+
