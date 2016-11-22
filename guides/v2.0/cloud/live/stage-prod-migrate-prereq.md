@@ -105,6 +105,11 @@ For Fastly to work in staging or production, you must upload the Fastly VCL usin
 4.	Click **Upload VCL to Fastly** as the following figure shows.
 
 	![Upload a Magento VCL to Fastly]({{ site.baseurl }}common/images/cloud_upload-vcl-to-fastly.png)
+
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.1.9 or later. For details, see [Update extensions]({{ page.baseurl cloud/howtos/update-components.html}}). Fastly's Composer name is `fastly/magento2`.
+	</div>
+
 5.	Follow the prompts on your screen to complete the task.
 
 #### Next step
