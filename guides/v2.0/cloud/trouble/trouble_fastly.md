@@ -18,5 +18,12 @@ In particular, you should look for the following:
 *	`Fastly-Magento-VCL-Uploaded` should be `Yes`
 *	`X-Magento-Tags` should be returned
 *	`Fastly-Module-Enabled` should be `Yes`
-*	`Cache-Control: max-age` should be greater than 0
-*	`Pragma` should be `cache`
+*	`X-Cache` should be either `HIT` or `HIT, HIT`
+*	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
+*	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
+
+You should perform the test on your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) site. The Fastly extension doesn't work the same way on an [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
+
+## Test your staging or production site with curl
+
+
