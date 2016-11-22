@@ -18,7 +18,12 @@ redirect_from: /guides/v1.0/extension-dev-guide/test/test_js-unit.html
 
 ## Preface
 
-Magento contains customized [Jasmine framework] and tests in `<magento_root_dir>dev/tests/js/jasmine/`. The customized framework is located in `<magento_root_dir>dev/tests/js/jasmine/spec_runner` and tests are collected in `<magento_root_dir>dev/tests/js/jasmine/tests`. In `<magento_root_dir>dev/tests/js/jasmine/assets` you can store data variations to be used in tests.
+Magento contains customized [Jasmine framework] and appropriate tests in `<magento_root_dir>dev/tests/js/jasmine/`:
+
+- The customized framework is located in `<magento_root_dir>dev/tests/js/jasmine/spec_runner`
+- and tests are collected in `<magento_root_dir>dev/tests/js/jasmine/tests`.
+ 
+ Also, in `<magento_root_dir>dev/tests/js/jasmine/assets`, you can store data variations to be used in tests.
 
 ## Prepare environment
 
@@ -26,9 +31,9 @@ Magento contains customized [Jasmine framework] and tests in `<magento_root_dir>
 
 **Step 2.** [Install grunt-cli].
 
-**Step 3.** In `<magento_root_dir>`, rename `Gruntfile.js.sample` to `Gruntfile.js`.
+**Step 3.** In `<magento_root_dir>`, create `Gruntfile.js` and copy `Gruntfile.js.sample` into it.
 
-**Step 4.** In `<magento_root_dir>`, rename `package.json.sample` to `package.json`.
+**Step 4.** In `<magento_root_dir>`, create `package.json` and copy `package.json.sample` into it.
 
 **Step 5.** In `<magento_root_dir>`, install all dependencies:
 
@@ -37,15 +42,15 @@ Magento contains customized [Jasmine framework] and tests in `<magento_root_dir>
 **Step 6.** In `<magento_root_dir>`, generate static view files in Magento that are going to be tested
 {:#prepare-step6}
 
-    $ php \-f bin/magento setup:static-content:deploy
+    $ php -f bin/magento setup:static-content:deploy -f
     
-Because you normally don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
+Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
     
 Learn more in [Deploy static view files].
 
 ## Run tests
 
-`Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in root directory:
+`Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in in the Magento root directory:
 
     $ grunt spec
 
@@ -67,25 +72,29 @@ If you want to run **tests for a theme**, enter:
 
 ## Write a test {#write-test}
 
-All tests are distributed through modules stored in `<magento_root_dir>/dev/tests/js/jasmine/tests`. Let's see how to write a test using an example of existing test:
+All tests are distributed through modules stored in `<magento_root_dir>/dev/tests/js/jasmine/tests`. Let's see how to write a test using an example of an existing test:
 
-[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]
+[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]{:target="_blank"}
  
 which tests a JS module:
 
-[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]
+[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]{:target="_blank"}
  
 in its static representations generated in [Step 6] previously
 
 `<magento_root_dir>/pub/static/<area>/<theme>/<localisation>/Magento_Ui/js/columns/actions.js`.
 
-**Step 1.** Create a new file with name `<fileName>.test.js` in an appropriate module directory.
+### Step 1. Create a new file with name `<fileName>.test.js` in an appropriate module directory.
 
-For the convenience, we can reflect the directory structure of a file to test.
+For convenience, we can reflect the directory structure of a file to test.
 
-In `<magento_root_dir>/dev/tests/js/jasmine/tests`, created the `app/code/Magento/Ui/base/js/grid/columns/actions.test.js` file that reflects path of a file to test `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`.
+A path to JS module that we want to cover with tests: `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`
 
-**Step 2.** Require a file that you want to test.
+A path to a test of the module: `app/code/Magento/Ui/base/js/grid/columns/actions.test.js`
+
+In `<magento_root_dir>/dev/tests/js/jasmine/tests` create the test with appropriate path.
+
+### Step 2. Require a file that you want to test.
 
 For our example we need to cover all static view files ending with `Magento_Ui/js/grid/columns/actions`.
 
@@ -100,12 +109,12 @@ define([
 });
 {% endhighlight %}
 
-**Step 3.** Write your Jasmine test code.
+### Step 3. Write your Jasmine test code.
 
-Jasmine test consists of main two parts:
+A Jasmine test consists of main two parts:
  
 - `describe` blocks
-- `it` blocks.
+- `it` blocks
 
 Both the `describe` and `it` functions contains two parameters:
  
