@@ -6,14 +6,19 @@ $(function() {
 		$('body').toggleClass('offcanvas-active');
 	});
 
+	// Duplicate main nav and version-switcher for responsive website
+	$('.nav-main').clone().addClass('nav-main-mobile').appendTo('body');
+	$('.version-switcher').clone().addClass('version-switcher-mobile').appendTo('.nav-main-mobile');
+
 	// Responsive item expand/collapse
-	$('.nav-main a').each(function () {
+	$('.nav-main-mobile a').each(function () {
 		var $this = $(this);
 		var $children = $this.closest('li').find('ul');
 
 		if ( $children.length ) {
-			$this.closest('li').addClass('has-children').append('<button href="#" class="children-toggle"></button>');
-			$this.closest('li').find('.children-toggle').on('click', function () {
+			$this.closest('li').addClass('has-children').append('<span class="children-toggle"></span>');
+			$this.on('click', function (e) {
+				e.preventDefault();
 				$(this).closest('li').toggleClass('expanded');
 			});
 		}
@@ -63,13 +68,22 @@ $(function() {
   	}
 	});
 
+
+
 	// Animate the anchor link scrolling
 	var $root = $('html, body');
 	$('a').click(function() {
-    $root.animate({
-      scrollTop: $( $.attr(this, 'href') ).offset().top - 60
-    }, 500);
-    return false;
+		var $this = $(this),
+				url = $this.attr('href'),
+				hash = url.split('#')[1];
+
+		if ( hash ) {
+			$root.animate({
+	      scrollTop: $( url ).offset().top - 60
+	    }, 500);
+			//return false;
+		}
+
 	});
 
 	// copy to clipboard

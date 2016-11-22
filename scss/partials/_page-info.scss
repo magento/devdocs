@@ -1,3 +1,19 @@
+.page-info {
+
+  font-size: 12px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  margin-left: -200px;
+
+
+  #markdown-toc {
+    display: block;
+  }
+}
+
 .page-contributor {
 
   position: relative;
@@ -30,4 +46,18 @@
 
 .github-link {
   margin: 0 0 5px 0;
+}
+
+
+@media (max-width:1023px) {
+  .page-info {
+    border-top: 1px solid $light-gray-color;
+    margin: 20px 0 0 0;
+    width: auto;
+    position: relative;
+    padding: 15px 0 0 0;
+    font-size: 14px;
+  }
+
+
 }

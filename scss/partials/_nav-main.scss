@@ -92,6 +92,11 @@
 
 }
 
+
+.nav-main-mobile {
+  display: none;
+}
+
 .nav-close {
   display: none;
 }
@@ -186,21 +191,22 @@ body.offcanvas-active {
 @media (max-width:1023px) {
 
   .nav-main {
-    position: absolute;
+    position: fixed;
     transition: all .2s;
     margin: 0;
-    top: $header-height;
+    top: 0;
     right: 0;
     height: auto;
+    max-height: 100%;
     width: 100%;
     max-width: 400px;
-    z-index: 1;
+    z-index: 3000;
     -webkit-overflow-scrolling: touch;
     background: #fff;
     overflow: auto;
     display: none;
 
-    .offcanvas-active & {
+    .offcanvas-active &.nav-main-mobile {
       display: block;
     }
 
@@ -210,13 +216,20 @@ body.offcanvas-active {
       border-bottom: 1px solid $light-gray-color;
     }
 
-    a {
+    li a, {
       display: block;
       font-size: 16px;
       padding: 20px $header-height 20px 20px;
+    }
+
+    li a, li a:hover {
+      background: none;
       border: none;
     }
 
+    ul {
+      padding-top: $header-height;
+    }
 
     // Second level menu
     ul ul {
@@ -248,19 +261,19 @@ body.offcanvas-active {
       position: absolute;
       display: block;
       width: $header-height;
-      height: 42px;
+      height: 57px;
       border: none;
       background: none;
       top:0;
       right: 0;
-      z-index: 3;
+      z-index: 1;
 
       &:after {
         width: 0;
         height: 0;
         margin: 0 auto;
         position: relative;
-        top: 3px;
+        top: 22px;
         border-style: solid;
         border-width: 8px 6px 0 6px;
         border-color: #333 transparent transparent transparent;
@@ -270,12 +283,8 @@ body.offcanvas-active {
       }
     }
 
-    .children-toggle:active {
-       background: rgba(0,0,0,.2);
-    }
-
     .expanded .children-toggle:after {
-       transform: rotate(180deg);
+      transform: rotate(180deg);
     }
 
 
