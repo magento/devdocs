@@ -10,10 +10,11 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/gateway-command.md
 ---
 
-## Gateway Command
-
-As was said in Introduction article, _Gateway Command_ is a proxy service, which takes gateway specific payload and produces _Result_ - 
+## Gateway Сommand
+Gateway Command is a proxy service that takes gateway specific payload and produces _Result_ - 
 in most cases it will be a response from payment processor with transaction details.
+
+<p class="q">Do I understand correctly that payment processor is something external? (relating to Payment Gateway) Then how gateway command can produce response from it?</p>
 
 The _Gateway Command_ allows to perform payment actions, build transaction request, call specified validators and response handlers.
 

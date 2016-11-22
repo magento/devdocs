@@ -17,10 +17,6 @@ redirect_from: /guides/v1.0/payments-integrations/payments-integrations-whatis.h
 ## What's in this topic
 This topic describes what a payment gateway is from Magento perspective, its consumers, and client customizations.
 
-**Contents**
-
-* TOC
-{:toc}
 
 ### Payment Gateway from Magento perspective
 
@@ -28,6 +24,8 @@ In general the _Payment Gateway_ it is a set of components (commands, builders, 
 based on _Order_ details or perform available operations on existing _Transaction_.
 
 Transaction payload in such case is specific to a concrete Gateway, and may encapsulate various data parts:
+
+<p class="q">Do we need this info about payload at all?</p>
 
 * Order items
 * Shipping, Billing addresses
@@ -64,7 +62,11 @@ interface CommandInterface
 }
 {% endhighlight %}
 
+
+<p class="q">Do we need this code here?
+</p>
 <p class="q">So to sum up, what is a payment gateway from magento perspective?</p>
+
 <p class="q">Is a "payment gateway" a synonym of "integration"?</p>
 
 ### Integration service consumers

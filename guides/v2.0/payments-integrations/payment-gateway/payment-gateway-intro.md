@@ -22,3 +22,5 @@ In this section you can find main _Payment Gateway_ components available in Mage
 The next diagram shows the basic structure of _Payment Gateway_ components:
 ![Payment Gateway Structure]({{site.baseurl}}common/images/payments-integrations/pg_structure.png)
 
+<p class="q">How Command Manager is related to Payment Gateway? 
+Is Command Manager related to CommandInterface from payments-integrations-whatis.html </p>
