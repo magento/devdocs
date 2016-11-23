@@ -15,10 +15,10 @@ redirect_from: /guides/v2.0/install-gde/system-requirements.html
 This page lists system requirements for the Magento application.
 
 ## Magento 2.0.x
-[Magento 2.0.x technology stack requirements]({{ site.gdeurl }}install-gde/system-requirements-2.0-tech.html)
+[Magento 2.0.x technology stack requirements]({{ site.gdeurl }}install-gde/system-requirements-tech.html)
 
 ## Magento 2.1.x
-[Magento 2.1.x technology stack requirements]({{ site.gdeurl21 }}install-gde/system-requirements-2.1-tech.html)
+[Magento 2.1.x technology stack requirements]({{ site.gdeurl21 }}install-gde/system-requirements-tech.html)
 
 Major differences from 2.0.x:
 
