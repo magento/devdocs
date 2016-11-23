@@ -11,9 +11,9 @@ github_link: cloud/trouble/trouble_fastly.md
 ---
 
 ## Overview of troubleshooting Fastly
-You can easily troubleshoot the Fastly extension using `curl` commands and looking for response headers that indicate whether it's operating normally or not.
+To verify the Fastly extension is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly.
 
-In particular, you should look for the following:
+Response headers and values:
 
 *	`Fastly-Magento-VCL-Uploaded` should be `Yes`
 *	`X-Magento-Tags` should be returned
@@ -22,18 +22,16 @@ In particular, you should look for the following:
 *	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
 *	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
 
-You must run two `curl` commands:
+To get values for these headers, you must run the following `curl` commands:
 
-*	One on your staging or production URL (also referred to as the [*origin server*](https://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3){:target="_blank"})
+*	Staging or production URL (also referred to as the [*origin server*](https://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3){:target="_blank"})
 
-	This command bypasses the Fastly extension and returns the headers `Fastly-Module-Enabled`, `Cache-Control: max-age`, and `Pragma`
-*	One on your live site
+	This command goes directly to the origin server, bypassing the Fastly extension; it returns the headers `Fastly-Module-Enabled`, `Cache-Control: max-age`, and `Pragma`
+*	Live site URL
 
 	This command goes through the Fastly extension and returns the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers
 
-	This command works only if you have a DNS-mapped domain
-
-You should perform the test on your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) site. The Fastly extension isn't necessray on [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
+You should perform the test on your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) site. The Fastly extension isn't necessray on your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
 
 ## Test your staging or production site {#cloud-test-stage}
 
@@ -101,12 +99,26 @@ The preceding example shows the correct values for `Pragma`, `X-Magento-Tags`, a
 {% endcollapsible %}
 
 ## Test your live site
+This section discusses how to test your live site URL, which means the `curl` command goes through the Fastly extension. This command returns the values of the `Fastly-Magento-VCL-Uploaded` and `X-Cache`.
+
+If you don't have a live site set up with DNS, you can use either a static route or you can use the optional `--resolve` flag, which bypasses DNS name resolution.
+
+{% collapsible To set up a static route: %}
+
+1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
+2.  Add the static route in the format:
+
+        <ip address> <url>
+
+{% endcollapsible %}
 
 {% collapsible Test your live site: %}
 
-Enter the following command to test your site if it's live:
+Enter the following command to test your site URL:
 
-	curl http://<domain> -vo /dev/null -HFastly-Debug:1
+	curl http://<live URL> -vo /dev/null -HFastly-Debug:1 [--resolve]
+
+Use `--resolve` only if your live URL isn't set up for DNS.
 
 For example,
 
