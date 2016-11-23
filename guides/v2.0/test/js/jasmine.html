@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>JavaScript unit testing with Jasmine</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.0/test/js/jasmine.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        var baseUrl = "/";
+    </script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.0)</a>
+				</div>
+			</div>
+            
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.0
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/test/js/test_js-unit.html">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/test/js/test_js-unit.html">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+        <a class="search-trigger search-icon" href="/search.html"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+               
+			   
+			   
+               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+               <li class="leaf"><a href="/guides/v2.0/mrg/intro.html">Module Reference Guide</a></li>
+               
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.0/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="/search.html">
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search" autofocus>
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">JavaScript unit testing with Jasmine</h1>
+
+        
+
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/test/js/test_js-unit.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>JavaScript Unit Testing Guide</h4>
+
+
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/test/js/jasmine.html">Jasmine</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/test/js/test_js-unit.html">JsTestDriver</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+            <div class="updated">Updated: 23 November 2016 (PST)</div>
+            <h4 id="contents">Contents</h4>
+
+<ul id="markdown-toc">
+  <li><a href="#preface" id="markdown-toc-preface">Preface</a></li>
+  <li><a href="#prepare-environment" id="markdown-toc-prepare-environment">Prepare environment</a></li>
+  <li><a href="#run-tests" id="markdown-toc-run-tests">Run tests</a></li>
+  <li><a href="#write-test" id="markdown-toc-write-test">Write a test</a>    <ul>
+      <li><a href="#step-1-create-a-new-file-with-name-filenametestjs-in-an-appropriate-module-directory" id="markdown-toc-step-1-create-a-new-file-with-name-filenametestjs-in-an-appropriate-module-directory">Step 1. Create a new file with name <code>&lt;fileName&gt;.test.js</code> in an appropriate module directory.</a></li>
+      <li><a href="#step-2-require-a-file-that-you-want-to-test" id="markdown-toc-step-2-require-a-file-that-you-want-to-test">Step 2. Require a file that you want to test.</a></li>
+      <li><a href="#step-3-write-your-jasmine-test-code" id="markdown-toc-step-3-write-your-jasmine-test-code">Step 3. Write your Jasmine test code.</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="preface">Preface</h2>
+
+<p>Magento uses a custom <a href="http://gruntjs.com/">Grunt</a> task named <code>spec</code> to run Jasmine tests. The task collects the tests from <code>&lt;magento_root_dir&gt;dev/tests/js/jasmine/tests</code> and can be run for a theme.</p>
+
+<h2 id="prepare-environment">Prepare environment</h2>
+
+<p><strong>Step 1.</strong> <a href="https://nodejs.org/en/">Install Node.js</a>.</p>
+
+<p><strong>Step 2.</strong> <a href="http://gruntjs.com/getting-started">Install grunt-cli</a>.</p>
+
+<p><strong>Step 3.</strong> In <code>&lt;magento_root_dir&gt;</code>, create <code>Gruntfile.js</code> and copy <code>Gruntfile.js.sample</code> into it.</p>
+
+<p><strong>Step 4.</strong> In <code>&lt;magento_root_dir&gt;</code>, create <code>package.json</code> and copy <code>package.json.sample</code> into it.</p>
+
+<p><strong>Step 5.</strong> In <code>&lt;magento_root_dir&gt;</code>, install all dependencies:</p>
+
+<pre><code>$ npm install
+</code></pre>
+
+<p id="prepare-step6"><strong>Step 6.</strong> In <code>&lt;magento_root_dir&gt;</code>, generate static view files in Magento</p>
+
+<pre><code>$ php bin/magento setup:static-content:deploy -f
+</code></pre>
+
+<p>Note that normally you don’t have permissions to <code>&lt;magento_root_dir&gt;/app/code/</code>, in fact the generated static view file is being tested.</p>
+
+<p>Learn more in <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict">Deploy static view files</a>.</p>
+
+<h2 id="run-tests">Run tests</h2>
+
+<p><code>Gruntfile.js</code> contains the test run task, so you can run tests for a theme using the following command in the Magento root directory:</p>
+
+<pre><code>$ grunt spec:&lt;THEME&gt;
+</code></pre>
+
+<p>Example:</p>
+
+<pre><code>$ grunt spec:backend
+</code></pre>
+
+<h2 id="write-test">Write a test</h2>
+
+<p>All tests are distributed through modules stored in <code>&lt;magento_root_dir&gt;/dev/tests/js/jasmine/tests</code>. Let’s see how to write a test using an example of an existing test:</p>
+
+<p><a href="https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js" target="_blank"><code>app/code/Magento/Ui/base/js/grid/columns/actions.test.js</code></a></p>
+
+<p>which tests a JS module:</p>
+
+<p><a href="https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js" target="_blank"><code>&lt;magento_root_dir&gt;/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js</code></a></p>
+
+<p>in its static representations generated in <a href="#prepare-step6">Step 6</a> previously:</p>
+
+<p><code>&lt;magento_root_dir&gt;/pub/static/&lt;area&gt;/&lt;theme&gt;/&lt;localisation&gt;/Magento_Ui/js/columns/actions.js</code>.</p>
+
+<h3 id="step-1-create-a-new-file-with-name-filenametestjs-in-an-appropriate-module-directory">Step 1. Create a new file with name <code>&lt;fileName&gt;.test.js</code> in an appropriate module directory.</h3>
+
+<p>For convenience, we can reflect the directory structure of a file to test.</p>
+
+<p>A path to JS module that we want to cover with tests: <code>app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js</code></p>
+
+<p>A path to a test of the module: <code>app/code/Magento/Ui/base/js/grid/columns/actions.test.js</code></p>
+
+<p>In <code>&lt;magento_root_dir&gt;/dev/tests/js/jasmine/tests</code> create the test with appropriate path.</p>
+
+<h3 id="step-2-require-a-file-that-you-want-to-test">Step 2. Require a file that you want to test.</h3>
+
+<p>For our example we need to cover all static view files ending with <code>Magento_Ui/js/grid/columns/actions</code>.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">([</span>
+    <span class="s1">&#39;Magento_Ui/js/grid/columns/actions&#39;</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">Actions</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+ 
+    <span class="c1">//Test code</span>
+    <span class="c1">//...</span>
+<span class="p">});</span></code></pre></figure>
+
+<h3 id="step-3-write-your-jasmine-test-code">Step 3. Write your Jasmine test code.</h3>
+
+<p>A Jasmine test consists of main two parts:</p>
+
+<ul>
+  <li><code>describe</code> blocks</li>
+  <li><code>it</code> blocks.</li>
+</ul>
+
+<p>Both the <code>describe</code> and <code>it</code> functions contains two parameters:</p>
+
+<ul>
+  <li>a text string with description of what is going to be done</li>
+  <li>a function with block of code implementing described action</li>
+</ul>
+
+<p>In <code>describe</code> you can use <code>beforeEach</code> and <code>afterEach</code> functions performing a preparation of what must be done before and after every <code>it</code> test followed.</p>
+
+<div class="collapsible"><b class="collapsible-title">See the full code of the test</b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/**</span>
+<span class="cm"> * Copyright © 2016 Magento. All rights reserved.</span>
+<span class="cm"> * See COPYING.txt for license details.</span>
+<span class="cm"> */</span>
+
+<span class="nx">define</span><span class="p">([</span>
+    <span class="s1">&#39;underscore&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Magento_Ui/js/grid/columns/actions&#39;</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">_</span><span class="p">,</span> <span class="nx">Actions</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+    <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;ui/js/grid/columns/actions&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">model</span><span class="p">,</span>
+            <span class="nx">action</span><span class="p">;</span>
+
+        <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Actions</span><span class="p">({</span>
+                <span class="nx">index</span><span class="o">:</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span>
+                <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;listing_action&#39;</span><span class="p">,</span>
+                <span class="nx">indexField</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+                <span class="nx">dataScope</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                <span class="nx">rows</span><span class="o">:</span> <span class="p">[{</span>
+                    <span class="nx">identifier</span><span class="o">:</span> <span class="s1">&#39;row&#39;</span>
+                <span class="p">}]</span>
+            <span class="p">});</span>
+            <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="nx">index</span><span class="o">:</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span>
+                <span class="nx">hidden</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">rowIndex</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">};</span>
+        <span class="p">});</span>
+
+        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check addAction function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="nx">action</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="nx">model</span><span class="p">);</span>
+        <span class="p">});</span>
+
+        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check getAction function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">someAction</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">clone</span><span class="p">(</span><span class="nx">action</span><span class="p">);</span>
+
+            <span class="nx">someAction</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="s1">&#39;edit&#39;</span><span class="p">;</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;edit&#39;</span><span class="p">,</span> <span class="nx">someAction</span><span class="p">);</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">getAction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;edit&#39;</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">someAction</span><span class="p">);</span>
+        <span class="p">});</span>
+
+        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check getVisibleActions function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">someAction</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">clone</span><span class="p">(</span><span class="nx">action</span><span class="p">);</span>
+
+            <span class="nx">someAction</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="nx">someAction</span><span class="p">.</span><span class="nx">index</span><span class="o">=</span> <span class="s1">&#39;view&#39;</span><span class="p">;</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;view&#39;</span><span class="p">,</span> <span class="nx">someAction</span><span class="p">);</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">getVisibleActions</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">([</span><span class="nx">someAction</span><span class="p">]);</span>
+        <span class="p">});</span>
+
+        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check updateActions function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">updateActions</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">model</span><span class="p">);</span>
+        <span class="p">});</span>
+
+        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check applyAction function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">applyAction</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">model</span><span class="p">);</span>
+        <span class="p">});</span>
+
+        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check isSingle and isMultiple function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">someAction</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">clone</span><span class="p">(</span><span class="nx">action</span><span class="p">);</span>
+
+            <span class="nx">action</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">isSingle</span><span class="p">(</span><span class="mi">0</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+            <span class="nx">someAction</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="nx">someAction</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="s1">&#39;edit&#39;</span><span class="p">;</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;edit&#39;</span><span class="p">,</span> <span class="nx">someAction</span><span class="p">);</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">isSingle</span><span class="p">(</span><span class="mi">0</span><span class="p">)).</span><span class="nx">toBeFalsy</span><span class="p">();</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">isMultiple</span><span class="p">(</span><span class="mi">0</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+        <span class="p">});</span>
+
+        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check isActionVisible function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">isActionVisible</span><span class="p">(</span><span class="nx">action</span><span class="p">)).</span><span class="nx">toBeFalsy</span><span class="p">();</span>
+            <span class="nx">action</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">isActionVisible</span><span class="p">(</span><span class="nx">action</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">});</span></code></pre></figure>
+</div></div>
+
+<p>This topic doesn’t provide Jasmine test writing methodology.</p>
+
+<p><a href="https://jasmine.github.io/edge/introduction.html">Learn more about testing with Jasmine.</a></p>
+
+<!-- LINK DEFINITIONS -->
+
+<!-- External -->
+
+<!-- Internal -->
+
+<!-- Abbreviations -->
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

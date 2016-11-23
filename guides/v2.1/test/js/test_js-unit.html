@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>JavaScript testing with JsTestDriver</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/test/js/test_js-unit.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        var baseUrl = "/";
+    </script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+            
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/test/js/test_js-unit.html">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/test/js/test_js-unit.html">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+        <a class="search-trigger search-icon" href="/search.html"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+               
+			   
+			   
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+               <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+               
+                   <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+               
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="/search.html">
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search" autofocus>
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">JavaScript testing with JsTestDriver</h1>
+
+        
+
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/test/js/test_js-unit.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>JavaScript Unit Testing Guide</h4>
+
+
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/test/js/jasmine.html">Jasmine</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/test/js/test_js-unit.html">JsTestDriver</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+            <div class="updated">Updated: 21 November 2016 (PST)</div>
+            <h4 id="contents">Contents</h4>
+
+<ul id="markdown-toc">
+  <li><a href="#preface" id="markdown-toc-preface">Preface</a></li>
+  <li><a href="#unit-test-overview" id="markdown-toc-unit-test-overview">Overview</a>    <ul>
+      <li><a href="#test-library" id="markdown-toc-test-library">JsTestDriver test library</a></li>
+      <li><a href="#jstestdriver-api" id="markdown-toc-jstestdriver-api">JsTestDriver API</a></li>
+      <li><a href="#framework" id="markdown-toc-framework">jsunit.requirejsUtil framework</a></li>
+    </ul>
+  </li>
+  <li><a href="#config-files" id="markdown-toc-config-files">Configuration files</a>    <ul>
+      <li><a href="#jstestdrivephp" id="markdown-toc-jstestdrivephp"><code>jsTestDriver.php.dist</code> file</a></li>
+      <li><a href="#jstestdriverorderphp" id="markdown-toc-jstestdriverorderphp"><code>jsTestDriverOrder.php</code> file</a></li>
+    </ul>
+  </li>
+  <li><a href="#process-overview" id="markdown-toc-process-overview"><code>run_js_tests.php</code> script</a></li>
+  <li><a href="#test-prereqs" id="markdown-toc-test-prereqs">Step 1. Before you begin</a></li>
+  <li><a href="#main-api" id="markdown-toc-main-api">Step 2. Configure unit tests</a></li>
+  <li><a href="#run-js-unit-tests" id="markdown-toc-run-js-unit-tests">Step 3. Run unit tests</a></li>
+  <li><a href="#step-4-use-phpstorm-to-run-unit-tests" id="markdown-toc-step-4-use-phpstorm-to-run-unit-tests">Step 4. Use PhpStorm to run unit tests</a>    <ul>
+      <li><a href="#install-plugin" id="markdown-toc-install-plugin">Install the JsTestDriver plugin</a></li>
+      <li><a href="#start-jstestdriver-server" id="markdown-toc-start-jstestdriver-server">Start the JsTestDriver server</a></li>
+      <li><a href="#run-configuration" id="markdown-toc-run-configuration">Create a run configuration</a></li>
+      <li><a href="#capture-browser" id="markdown-toc-capture-browser">Capture a browser</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="preface">Preface</h2>
+
+<p>Magento JavaScript unit tests use the external <a href="#test-library">JsTestDriver test library</a>. The tests are implemented using the external <a href="#jstestdriver-api">JsTestDriver API</a> and have their own <a href="#framework">jsunit.requirejsUtil framework</a>.</p>
+
+<p>After you run the PHP interpreter once to run unit tests, you can <a href="#phpstorm">run the JavaScript unit tests from the PhpStorm IDE</a>.</p>
+
+<h2 id="unit-test-overview">Overview</h2>
+
+<p>To run the automated JavaScript unit tests, you run the <a href="#process-overview"><code>run_js_tests.php</code> script</a> inside the PHP interpreter from the command line. When you run the PHP script, it reads <a href="#config-files">configuration files</a> in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory. It also generates a <code>jsTestDriver.conf</code> YAML configuration file in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory. The JsTestDriver reads this generated file to run the tests. After the PHP interpreter runs for the first time, you can run the unit tests from the [PhpStorm IDE].</p>
+
+<h3 id="test-library">JsTestDriver test library</h3>
+
+<p>Magento JavaScript unit tests use the external <a href="https://code.google.com/archive/p/js-test-driver/wikis/GettingStarted.wiki">JsTestDriver</a> library, which follows JUnit principles. The PHPUnit library also follows these principles.</p>
+
+<h3 id="jstestdriver-api">JsTestDriver API</h3>
+
+<p>The unit tests are implemented through the JsTestDriver API. Web developers should be familiar with this API and test structure.</p>
+
+<h3 id="framework">jsunit.requirejsUtil framework</h3>
+
+<p>The unit tests also have their own framework. The <code>framework/requirejs-util.js</code> file declares the <code>jsunit.requirejsUtil</code> framework object, which supports testing of <code>RequireJS</code> (AMD) modules.</p>
+
+<p>These modules actively call the global <code>define()</code> function just upon loading rather than passively declaring their classes or functions. <code>RequireJS</code> modules usually do not expose anything to the global state. Instead, the modules pass all declarations to the <code>define()</code> function.</p>
+
+<p>This organization enables testing of <code>RequireJS</code> modules without any additional Magento test framework (MTF) support. <code>jsunit.requirejsUtil</code> intercepts all <code>define()</code> calls and can pass <code>RequireJS</code> modules to their corresponding tests.</p>
+
+<p>For example, <code>&lt;magento2_root_dir&gt;/dev/tests/js/testsuite/mage/requirejs/plugin/id-normalizer-test.js</code>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">IdNormalizerTest</span> <span class="o">=</span> <span class="nx">TestCase</span><span class="p">(</span><span class="s1">&#39;IdNormalizerTest&#39;</span><span class="p">);</span>
+
+<span class="nx">IdNormalizerTest</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setUp</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">defineArgs</span> <span class="o">=</span> <span class="nx">jsunit</span><span class="p">.</span><span class="nx">requirejsUtil</span><span class="p">.</span><span class="nx">getDefineArgsInScript</span><span class="p">(</span><span class="s1">&#39;lib/web/mage/requirejs/plugin/id-normalizer.js&#39;</span><span class="p">);</span>
+
+    <span class="nx">assertNotUndefined</span><span class="p">(</span><span class="s1">&#39;There expected to be a define() call&#39;</span><span class="p">,</span> <span class="nx">defineArgs</span><span class="p">);</span>
+    <span class="nx">assertEquals</span><span class="p">(</span><span class="s1">&#39;Wrong number of arguments in the define() call&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">defineArgs</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">normalizer</span> <span class="o">=</span> <span class="nx">defineArgs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// Now we have object to be tested</span>
+<span class="p">};</span></code></pre></figure>
+
+<h2 id="config-files">Configuration files</h2>
+
+<p>The <code>run_js_tests.php</code> script processes the <a href="#jstestdrivephp"><code>jsTestDriver.php.dist</code></a> and <a href="#jstestdriverorderphp"><code>jsTestDriverOrder.php</code></a> configuration files.</p>
+
+<p>Both files reside in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</p>
+
+<h3 id="jstestdrivephp"><code>jsTestDriver.php.dist</code> file</h3>
+
+<p><code>&lt;magento2_root_dir&gt;/dev/tests/js/jsTestDriver.php.dist</code> specifies the contents of the YAML configuration file used by JsTestDriver. It contains the following PHP code:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;server&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://localhost:9876&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;proxy&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;matcher&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/lib/web/*&#39;</span><span class="p">,</span> <span class="s1">&#39;server&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;%s/test/%s/lib/web/&#39;</span><span class="p">)),</span>
+    <span class="s1">&#39;load&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;/lib/web/globalize&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;/lib/web/jquery/ui&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;/lib/web/mage/localization&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;/lib/web/mage/validation&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;/lib/web/mage/components&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;test&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;/dev/tests/js/testsuite&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;serve&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;/lib/web/mage/calendar&#39;</span><span class="p">)</span>
+<span class="p">);</span></code></pre></figure>
+
+<p>For a description of these configuration parameters, see <a href="https://code.google.com/p/js-test-driver/wiki/ConfigurationFile">Configuration file for test runner</a>.</p>
+
+<p>Parameters are the following:</p>
+
+<ul>
+  <li><strong>server</strong>. The default location of the JsTestDriver server in the form: <code>http://&lt;hostname&gt;:&lt;port&gt;</code></li>
+  <li><strong>proxy</strong>. Sets the JsTestDriver to behave as a proxy. The proxy parameter is an array of arrays that enables you to specify multiple matcher and server proxies.</li>
+  <li><strong>load</strong>. Defines the list of files to load in the browser before any tests run.</li>
+  <li><strong>test</strong>. Defines the list of test sources to run.</li>
+  <li><strong>serve</strong>. Defines the list of static files to load by using the same domain as the JsTestDriver.</li>
+</ul>
+
+<h3 id="jstestdriverorderphp"><code>jsTestDriverOrder.php</code> file</h3>
+
+<p><code>&lt;magento2_root_dir&gt;/dev/tests/js/jsTestDriverOrder.php</code> specifies the order in which the JsTestDriver loads certain JavaScript files. It contains the following PHP code:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;/lib/web/globalize/globalize.js&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;/lib/web/jquery/jquery.js&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;/lib/web/jquery/ui/jquery-ui.js&#39;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">);</span></code></pre></figure>
+
+<p>The array applies load ordering to the files specified by the <code>load</code> parameter in the <code>jsTestDriver.php</code> or <code>jsTestDriver.php.dist</code> file.</p>
+
+<h2 id="process-overview"><code>run_js_tests.php</code> script</h2>
+
+<p>To run the automated unit tests, you run the <a href="#process-overview"><code>run_js_tests.php</code> script</a> inside the PHP interpreter from the command line.</p>
+
+<p>To complete the unit tests, the PHP script completes this processing:</p>
+
+<ol>
+  <li>
+    <p>The script looks for the <code>JsTestDriver</code> parameter value in a <code>jsTestDriver</code> configuration file in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</p>
+
+    <p>If found, the script uses the custom <code>jsTestDriver.php</code> configuration file.</p>
+
+    <p>Otherwise, the script uses the default <code>jsTestDriver.php.dist</code> configuration file.</p>
+  </li>
+  <li>The script looks for the <code>Browser</code> parameter value in the <code>jsTestDriver</code> configuration file that it found.
+If the parameter is not set in the configuration file, the script uses to the default browser location, as follows:
+    <ul>
+      <li><strong>64-bit Windows</strong>. The location is <code>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.</li>
+      <li><strong>Linux</strong>. The script runs the <code>which firefox</code> command to determine the location of the Firefox executable in your PATH.</li>
+    </ul>
+  </li>
+  <li>If the script finds the browser executable and the <code>JsTestDriver.jar</code> file, it proceeds with the next step. Otherwise, the script fails.</li>
+  <li>The script determines the order in which the JsTestDriver loads certain JavaScript files through the <code>jsTestDriverOrder.php</code> configuration file in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</li>
+</ol>
+
+<h2 id="test-prereqs">Step 1. Before you begin</h2>
+
+<p>On the system where you plan to run the unit tests, install the following prerequisite software:</p>
+
+<ul>
+  <li><strong>PHP</strong></li>
+  <li>
+    <p><strong>The Firefox browser</strong></p>
+
+    <p>On 64-bit Windows machines, the default installation directory is <code>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.</p>
+
+    <p>On Linux machines, locate the browser executable in your PATH.</p>
+  </li>
+  <li><strong><code>JsTestDriver.jar</code></strong></li>
+</ul>
+
+<h2 id="main-api">Step 2. Configure unit tests</h2>
+
+<p>Configuration files are located in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</p>
+
+<p>In a custom <code>jsTestDriver.php</code> configuration file or the default <code>jsTestDriver.php.dist</code> file, set these configuration parameters:</p>
+
+<dl>
+  <dt>Browser</dt>
+  <dd>Defines the file path to the executable for the browser.
+
+    <p>If you do not set this value, the script uses to the default browser location, as follows:
+* <strong>64-bit Windows</strong>. The location is <code>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.
+* <strong>Linux</strong>. The script runs the <code>which firefox</code> command to determine the location of the Firefox executable in your PATH.</p>
+  </dd>
+  <dt>JsTestDriver</dt>
+  <dd>Required. Defines the file path to the <code>JsTestDriver.jar</code> file.</dd>
+</dl>
+
+<h2 id="run-js-unit-tests">Step 3. Run unit tests</h2>
+
+<p>To run the automated JavaScript tests, run the <code>run_js_tests.php</code> script inside the PHP interpreter from the command line:</p>
+
+<pre><code>php &lt;magento2_root_dir&gt;/dev/tests/js/run_js_tests.php
+</code></pre>
+
+<p>Find the test results in individual <code>.xml</code> files in the <code>&lt;magento2_root_dir&gt;/dev/tests/js/test-output</code> directory.</p>
+
+<p>The output of the PHP command resembles this output:</p>
+
+<p><strong>JsTestDriver output:</strong></p>
+
+<pre><code>$ php &lt;magento2_root_dir&gt;dev/tests/js/run_js_tests.php
+java -jar C:\Users\mchiocca\lib\JsTestDriver.jar --config C:\git\magento2\dev\tests\js/jsTestDriver.conf --port 9876 --browser "C:\Program Files (x86)\Mozilla Firefox\firefox.exe" --tests all --testOutput C:\git\magento2\dev\tests\js/test-output
+setting runnermode QUIET
+....................................
+Total 36 tests (Passed: 36; Fails: 0; Errors: 0) (138.00 ms)
+  Firefox 15.0 Windows: Run 36 tests (Passed: 36; Fails: 0; Errors 0) (138.00 ms)
+</code></pre>
+
+<p>On Linux, the X Server might generate one or more warning messages in the output:</p>
+
+<p><strong>X Server warning messages on Linux:</strong></p>
+
+<pre><code>FreeFontPath: FPE "unix/:7100" refcount is 2, should be 1; fixing.
+</code></pre>
+
+<p>An X Server bug causes these benign messages, which you can ignore.</p>
+
+<p>When you run the PHP script, it reads two configuration files. It also generates a <code>jsTestDriver.conf</code> YAML configuration file in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory. The JsTestDriver reads this generated file to run the tests.</p>
+
+<p>The contents of <code>jsTestDriver.conf</code> resembles this:</p>
+
+<p><strong>Generated jsTestDriver.conf file:</strong></p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">server</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://localhost:9876</span>
+<span class="l-Scalar-Plain">proxy</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">matcher</span><span class="p-Indicator">:</span> <span class="s">&quot;/lib/web/*&quot;</span><span class="p-Indicator">,</span> <span class="nv">server</span><span class="p-Indicator">:</span> <span class="s">&quot;http://localhost:9876/test/C:/git/magento2/lib/web/&quot;</span><span class="p-Indicator">}</span>
+  <span class="l-Scalar-Plain">...</span>
+<span class="l-Scalar-Plain">load</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">../../../lib/web/globalize/globalize.js</span>
+  <span class="l-Scalar-Plain">...</span>
+<span class="l-Scalar-Plain">test</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">../../../dev/tests/js/testsuite/mage/calendar/calendar-test.js</span>
+  <span class="l-Scalar-Plain">...</span>
+<span class="l-Scalar-Plain">serve</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">../../../lib/web/mage/calendar/calendar.js</span>
+  <span class="l-Scalar-Plain">...</span></code></pre></figure>
+
+<h2 id="step-4-use-phpstorm-to-run-unit-tests">Step 4. Use PhpStorm to run unit tests</h2>
+
+<p>After the PHP interpreter runs for the first time, you can <a href="#phpstorm">run the JavaScript unit tests from the PhpStorm IDE</a>.</p>
+
+<p>Complete these steps to use PhpStorm to run unit tests:</p>
+
+<ol>
+  <li><a href="#install-plugin">Install the JsTestDriver plugin</a></li>
+  <li><a href="#start-jstestdriver-server">Start the JsTestDriver server</a></li>
+  <li><a href="#run-configuration">Create a run configuration</a></li>
+  <li><a href="#capture-browser">Capture a browser</a></li>
+</ol>
+
+<h3 id="install-plugin">Install the JsTestDriver plugin</h3>
+
+<ol>
+  <li>In PhpStorm, open <strong>Settings</strong> and select <strong>Plugins</strong>.</li>
+  <li>Click <strong>Browse Repositories…</strong>.</li>
+  <li>Right click <strong>JSTestDriver Plugin</strong> and select <strong>Download and Install</strong>.</li>
+  <li>Restart PhpStorm.</li>
+</ol>
+
+<h3 id="start-jstestdriver-server">Start the JsTestDriver server</h3>
+
+<ol>
+  <li>At the bottom of the IDE, click <strong>JsTestDriver Server</strong>.</li>
+  <li>
+    <p>In the <strong>JsTestDriver Server</strong> panel, click the green right arrow to start the server.</p>
+
+    <p>The bar changes to yellow and reads <code>There are no captured browsers</code>.</p>
+  </li>
+</ol>
+
+<h3 id="run-configuration">Create a run configuration</h3>
+
+<ol>
+  <li>Enter a name for the run configuration.</li>
+  <li>Select <strong>Configuration File</strong> and provide the location of the <code>jsTestDriver.conf</code> file generated by PHP.</li>
+  <li>Select <strong>Running in IDE</strong>.</li>
+  <li>Click <strong>Test Connection</strong>.
+The <code>Connection to http://localhost:9876 is OK, no captured browsers</code> message appears.</li>
+</ol>
+
+<h3 id="capture-browser">Capture a browser</h3>
+
+<ol>
+  <li>
+    <p>In the <strong>JsTestDriver Server</strong> panel, click a browser icon.</p>
+
+    <p>The selected browser opens. In the browser, a green header shows the <code>Server: Waiting...</code> message.</p>
+
+    <p>The colored bar in the <strong>JsTestDriver Server</strong> panel turns green.</p>
+
+    <p>The <code>Ready to run tests</code> message appears.</p>
+  </li>
+  <li>
+    <p>To run the unit tests, select <strong>Run Configuration</strong> and click the <strong>Run</strong> icon.</p>
+
+    <p>A panel at the bottom of the IDE shows the test results.</p>
+  </li>
+  <li>
+    <p>Depending on whether you have changed one or more configuration files, complete the appropriate step to run the tests:</p>
+    <ul>
+      <li><strong>No changed configuration files</strong>
+Use PhpStorm to run the tests.
+Before you can run the tests, click the red square icon in the <strong>JsTestDriver Server</strong> panel to stop the JsTestDriver server that runs in PhpStorm. You must also close the captured browser.</li>
+      <li><strong>One or more changed configuration files</strong>
+Use the PHP interpreter at the command line to regenerate the <code>jsTestDriver.conf</code> file and run the tests.</li>
+    </ul>
+  </li>
+</ol>
+
+<!-- LINK DEFINITIONS -->
+
+<!-- Web links -->
+
+<!-- Topic links -->
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
