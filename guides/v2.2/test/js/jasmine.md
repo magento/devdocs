@@ -37,7 +37,7 @@ Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task c
 **Step 6.** In `<magento_root_dir>`, generate static view files in Magento that are going to be tested
 {:#prepare-step6}
 
-    $ php -f bin/magento setup:static-content:deploy -f
+    $ php bin/magento setup:static-content:deploy -f
     
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
     
