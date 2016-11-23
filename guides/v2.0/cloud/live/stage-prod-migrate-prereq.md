@@ -67,7 +67,7 @@ The SSH agent forwards authentication requests from staging or production to you
 
 To set up an SSH agent:
 
-1.	Log in to your Magento server.
+1.	Log in to local development machine.
 2.	Enter the following command:
 
 		ssh-add -l
