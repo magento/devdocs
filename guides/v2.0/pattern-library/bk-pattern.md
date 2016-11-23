@@ -3,6 +3,7 @@ layout: default
 group: pattern
 subgroup: 
 title: Admin Design Pattern Library
+landing-page: Pattern Library
 menu_title: Introduction
 menu_order: 
 menu_node: 

@@ -3,6 +3,7 @@ layout: default
 group: extension-dev-guide
 subgroup: 01_Introduction
 title: Introduction
+landing-page: Extension Developer Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent

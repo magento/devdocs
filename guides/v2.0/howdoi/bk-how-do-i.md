@@ -3,6 +3,7 @@ layout: default
 group: howdoi
 subgroup: AA_Top
 title: How do I...?
+landing-page: How do I...?
 menu_title: How do I...?
 menu_node: parent
 menu_order: 1

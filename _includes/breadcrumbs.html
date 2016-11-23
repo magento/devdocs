@@ -8,6 +8,7 @@
 
     <!-- Iteration breadcrumb item -->
     {% assign position = 0 %}
+    {% assign breadcrumbs = page.breadcrumbs %}
     {% for crumb in breadcrumbs %}
 
       <!-- Skip if root -->
@@ -23,7 +24,7 @@
       {% assign position = position  | plus: 1 %}
 
       <li class="breadcrumb-item{% if crumb.url == page.url %} active{% endif %}" property="itemListElement" typeof="ListItem">
-        {% if crumb.url != page.url %}<a property="item" typeof="WebPage" href="{{ crumb.url | prepend: site.baseurl | prepend: site.url }}">{% endif %}<span property="name">{{ caption }}</span>{% if crumb.url != page.url %}</a>{% endif %}
+        {% if crumb.url != page.url %}<a property="item" typeof="WebPage" href="{{ crumb.url | prepend: page.baseurl }}">{% endif %}<span property="name">{{ caption }}</span>{% if crumb.url != page.url %}</a>{% endif %}
         <meta property="position" content="{{ position }}" />
       </li>
 

@@ -2,6 +2,7 @@
 layout: default
 group: release-notes
 title: Release Notes
+landing-page: Release Notes
 menu_title: List of Release Notes
 menu_order: 1
 version: 2.0

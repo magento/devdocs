@@ -3,6 +3,7 @@ layout: default
 group: UI_Components_guide
 subgroup:
 title: Overview of UI components
+landing-page: UI Components
 menu_title: Overview of UI components
 menu_order: 1
 version: 2.1
