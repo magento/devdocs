@@ -11,6 +11,7 @@ redirect_from: /guides/v1.0/architecture/arch_libraries.html
 ---
 
 ## Magento libraries overview {#m2arch-libraries-overview}
+
 Magento uses the following types of libraries:
 
 *	Magento PHP libraries, which are discussed in the next section

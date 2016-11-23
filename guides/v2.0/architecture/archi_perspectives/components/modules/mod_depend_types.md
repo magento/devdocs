@@ -19,6 +19,7 @@ redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
 {:toc}
 
 ## Overview {#m2devgde-moddep-declare-dep}
+
 There are two types of Magento module dependencies: hard and soft dependencies.
 
 ## Hard dependencies

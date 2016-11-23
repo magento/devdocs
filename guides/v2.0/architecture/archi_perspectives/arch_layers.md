@@ -109,7 +109,7 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
    </tbody>
 </table>
 
-Other namespaces under `Magento\Framework` that will interest extension developers:</p>
+Other namespaces under `Magento\Framework` that will interest extension developers:
 
 <table>
     <tbody>
