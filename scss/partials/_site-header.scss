@@ -91,7 +91,7 @@
     }
   }
 
-  @media (max-width:1023px) {
+  @media ( $medium-screen ) {
 
     #global-nav {
       border-bottom: 1px solid $beige-color;
@@ -112,9 +112,6 @@
       right: $header-height;
     }
 
-
-
-
-  }
+  } // medium-screen
 
 }

@@ -74,6 +74,7 @@
   }
   li.has-children > a{
     border-bottom: none;
+    cursor: default;
   }
   a, a:visited {
     color: $body-font-color;
@@ -188,7 +189,7 @@ body.offcanvas-active {
   overflow: hidden;
 }
 
-@media (max-width:1023px) {
+@media ( $medium-screen ) {
 
   .nav-main {
     position: fixed;

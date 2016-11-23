@@ -11,7 +11,7 @@ $(function() {
 	$('.version-switcher').clone().addClass('version-switcher-mobile').appendTo('.nav-main-mobile');
 
 	// Responsive item expand/collapse
-	$('.nav-main-mobile a').each(function () {
+	$('.nav-main a').each(function () {
 		var $this = $(this);
 		var $children = $this.closest('li').find('ul');
 

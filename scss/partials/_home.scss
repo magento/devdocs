@@ -7,6 +7,9 @@
 
   .search-form {
     margin-top: 20px;
+    .input-group {
+      width: 100%;
+    }
   }
 
 }
@@ -39,7 +42,7 @@
     padding: 0;
   }
 
-  @media (max-width:767px) {
+  @media ( $small-screen ) {
 
     .feature {
       width: 100%;

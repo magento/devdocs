@@ -32,11 +32,10 @@
     font-size: 16px;
   }
 
-  @media (max-width:767px) {
+  @media ( $small-screen ) {
     .input-group-btn {
       display: none;
     }
-
   }
 
 }

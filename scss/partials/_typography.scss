@@ -177,12 +177,6 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 
 
 
-h1, h2, h3 {
-  line-height: 40px;
-}
-
-
-
 
 ul, ol {
   padding: 0;
@@ -300,4 +294,15 @@ p.q {
 	font-size: 15pt;
 	color: red;
 	/* display: none; */
+}
+
+
+
+@media ( $small-screen ) {
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 24px;
+  }
 }

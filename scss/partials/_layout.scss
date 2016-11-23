@@ -28,9 +28,6 @@ html,body {
 }
 
 
-
-
-
 .container:before, .container:after {
   display: table;
   content: "";
@@ -41,21 +38,6 @@ html,body {
 }
 
 
-
-
-
-/*
-.main-container {
-   padding-top: 105px;
-   background: #fff
-}
-
-#gl-wrapper {
-   width: 100%;
-   position: relative;
-   z-index: 50;
-}
-*/
 
 .full-width-content {
   width: 90%;
@@ -76,9 +58,7 @@ html,body {
 
 
 // for large screens, make more whitespace on sides
-@media (min-width: 1500px){
-
-
+@media ($large-screen){
 
   .container {
     padding-left: 66px;
@@ -90,7 +70,7 @@ html,body {
 }
 
 // For smaller screens, remove toc from left column and show in-page-toc
-@media ( max-width: 1024px ) {
+@media ( $medium-screen) {
 
   .content-wrap {
     margin-right: 0;
@@ -104,63 +84,34 @@ html,body {
     padding: 0;
   }
 
-}
 
+     .pane-content .container {
+        padding: 0;
+     }
 
+     .container, .page-intro .container, .home-section .container {
+        padding: 0 20px;
+     }
 
-
-@media (max-width:767px) {
-
-
-
-   .pane-content .container {
-      padding: 0;
-   }
-
-   .container, .page-intro .container, .home-section .container {
-      padding: 0 20px;
-   }
-
-  .main-container {
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  .content {
-    float: none;
-    width: auto;
-    padding: 10px 20px;
-  }
-
-  .content .content-wrap {
-    padding: 0;
-  }
-
-
-
-
-
-
-
-   #searchResultsBox {
-      left: 0;
-      top:0;
-      right: 0;
-      bottom: 0;
-      height: 100%;
-      overflow-x: hidden;
-   }
-
-   #searchResultsBox .gsc-control-wrapper-cse {
+    .main-container {
       width: 100%;
-      height: 100%;
-   }
+      overflow-x: auto;
+    }
 
-   .searchResultsBack {
-      background: #fff;
-      opacity: 1;
-   }
+    .content {
+      float: none;
+      width: auto;
+      padding: 10px 20px;
+    }
+
+    .content .content-wrap {
+      padding: 0;
+    }
+
+
+
 }
+
 
 
 .affix {

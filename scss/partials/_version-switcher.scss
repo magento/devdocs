@@ -7,7 +7,7 @@
     display: none;
   }
 
-  @media (max-width:1023px) {
+  @media ( $medium-screen ) {
     display: none;
 
     &.version-switcher-mobile {
