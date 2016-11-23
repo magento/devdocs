@@ -19,7 +19,7 @@ Following are symptoms of cron issues:
 	<img src="{{ site.baseurl }}common/images/upgr-tshoot-no-cron.png">
 *	The following error displays in the Magento Admin:
 
-	![cron isn't running]({{ site.baseurl }}common/images/compman-cron-not-running.png)
+	![cron isn't running]({{ site.baseurl }}common/images/compman-cron-not-running.png){:width="550px"}
 
 	To see the error, you might need to click **System Messages** at the top of the window as follows:
 
