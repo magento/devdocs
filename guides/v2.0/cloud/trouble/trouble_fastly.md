@@ -99,11 +99,13 @@ The preceding example shows the correct values for `Pragma`, `X-Magento-Tags`, a
 {% endcollapsible %}
 
 ## Test your live site
-This section discusses how to test your live site URL, which means the `curl` command goes through the Fastly extension. This command returns the values of the `Fastly-Magento-VCL-Uploaded` and `X-Cache`.
+This section discusses how to test your live site URL, which means the `curl` command goes through the Fastly extension. This command returns the values of the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers.
 
 If you don't have a live site set up with DNS, you can use either a static route or you can use the optional `--resolve` flag, which bypasses DNS name resolution.
 
-{% collapsible To set up a static route: %}
+{% collapsible To optionally set up a static route: %}
+
+Set up a static route only if your site isn't set up with DNS.
 
 1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
 2.  Add the static route in the format:
@@ -114,17 +116,17 @@ If you don't have a live site set up with DNS, you can use either a static route
 
 {% collapsible Test your live site: %}
 
-Enter the following command to test your site URL:
+Enter the following command to test your live site URL:
 
 	curl http://<live URL> -vo /dev/null -HFastly-Debug:1 [--resolve]
 
-Use `--resolve` only if your live URL isn't set up for DNS.
+Use `--resolve` only if your live URL isn't set up with DNS.
 
 For example,
 
 	http://www.mymagento.biz -vo /dev/null -HFastly-Debug:1
 
-The output for this command is similar to the preceding command; following are only the unique headers returned by this command:
+The output for this command is similar to the [preceding command](#cloud-test-stage); following are only the unique headers returned by this command:
 
 	< Fastly-Magento-VCL-Uploaded: yes
 	< X-Cache: HIT, MISS
@@ -138,7 +140,7 @@ This section provides suggestions for resolving errors you might find using the 
 Do the following:
 
 1.	[Install the Fastly module]({{ page.baseurl }}cloud/access-acct/fastly.html)
-2.	In the Magento Admin, [set Fastly as the page cache]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-fastly-admin)
+2.	In the Magento Admin, [set Fastly as the page cache]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-fastly-admin).
 3.	Push the changes to your staging or production server.
 
 ### `Fastly-Magento-VCL-Uploaded` is `No`
