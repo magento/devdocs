@@ -250,8 +250,8 @@ To verify your upgrade locally, enter the following command from your Magento ro
 
 You can also log in to the Magento Admin; the version displays in the lower right corner of the page.
 
-### Verify the upgrade on the server
-To verify the upgrade in your Cloud integration environment:
+### Verify the upgrade locally
+To verify the upgrade in your local Cloud integration environment:
 
 1.  Find the base URL for your integration environment:
 
