@@ -155,5 +155,17 @@ If you get the same result, use the [first `curl` command](#cloud-test-stage) di
 *	`X-Magento-Tags` exists
 *	`Cache-Control: max-age` is greater than 0
 
-If the issue persists, another extension is likely resetting these headers. Contact your extension developers or conduct additional testing to identify the source of the issue.
+If the issue persists, another extension is likely resetting these headers. Repeat the following procedure as many times as necessary to identify which extension is resetting the headers:
+
+1.	Log in to the Magento Admin as an administrator.
+2.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Advanced**.
+3.	In the Disable Modules Output section in the right pane, locate an extension.
+4.	From the list next to the extension name, click **Disable**.
+5.	Click **Save Config**.
+6.	Click **System** > Tools > **Cache Management**.
+7.	Click **Flush Magento Cache**.
+8.	Try the `curl` commands discussed in this topic again.
+9.	If the results are the same, repeat the tasks discussed in this section to disable another extension.
+
+When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance.
 
