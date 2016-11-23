@@ -7,8 +7,7 @@ menu_title: Jasmine
 menu_node: parent
 menu_order:
 version: 2.2
-github_link: test/js/test_js-unit.md
-redirect_from: /guides/v1.0/extension-dev-guide/test/test_js-unit.html
+github_link: test/js/jasmine.md
 ---
 
 #### Contents
