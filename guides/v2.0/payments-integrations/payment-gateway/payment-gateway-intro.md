@@ -21,3 +21,6 @@ In this section you can find main _Payment Gateway_ components available in Mage
 
 The next diagram shows the basic structure of _Payment Gateway_ components:
 ![Payment Gateway Structure]({{site.baseurl}}common/images/payments-integrations/pg_structure.png)
+
+As you can see, _Payment Gateway_ contains different components and structure of each component, also, can be complicated.
+Next topics will describe each component more detail.

@@ -48,22 +48,12 @@ And the _Command Pool_ can be configured in the following way:
 </virtualType>
 {% endhighlight %}
 
-The next recommended way is creating virtual type for _Command Manager_ and configuring it by early specified _Command Pool_:
-
-{% highlight xml %}
-<virtualType name="BraintreeCommandManager" type="Magento\Payment\Gateway\Command\CommandManager">
-    <arguments>
-        <argument name="commandPool" xsi:type="object">BraintreeCommandPool</argument>   
-    </arguments>
-</virtualType>
-{% endhighlight %}
-
-Then a configured command manager should be added to payment adapter configuration:
-
+Now, we need to add created _Command Pool_ to payment method configuration:
 {% highlight xml %}
 <virtualType name="BraintreeFacade" type="Magento\Payment\Model\Method\Adapter">
-    <arguments>
-        <argument name="commandExecutor" xsi:type="object">BraintreeCommandManager</argument>
-    </arguments>
-</virtualType>
+        <arguments>
+            ...
+            <argument name="commandPool" xsi:type="object">BraintreeCommandPool</argument>
+        </arguments>
+    </virtualType>
 {% endhighlight %}

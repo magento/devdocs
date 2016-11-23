@@ -13,7 +13,7 @@ github_link: payments-integrations/payment-gateway/request-builder.md
 ## Request Builder
 
 Request builder is responsible for building a transaction payload/request from several parts.
-This abstract interface allows you to have complex building strategies, but still atomic and testable.
+This abstract interface allows you to have complex building strategies (each builder can have simple logic or contains builder composites), but still atomic and testable.
 
 {% highlight php startinline=1 %}
 interface BuilderInterface
@@ -54,3 +54,19 @@ Configuration below may be used as a reference of a case when a simple decomposi
     </arguments>
 </virtualType>
 {% endhighlight %}
+
+Or another example for builder with composites:
+
+{% highlight xml %}
+<virtualType name="BraintreeSaleRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+    <arguments>
+        <argument name="builders" xsi:type="array">
+            <item name="authorize" xsi:type="string">BraintreeAuthorizeRequest</item>
+            <item name="settlement" xsi:type="string">Magento\Braintree\Gateway\Request\SettlementDataBuilder</item>
+        </argument>
+    </arguments>
+</virtualType>
+{% endhighlight %}
+
+In this example used previously configured `BraintreeAuthorizeRequest` builder and simple `SettlememtDataBuilder` similar to builders from
+authorize request.
