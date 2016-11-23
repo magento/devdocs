@@ -44,7 +44,7 @@ If you're currently in the `develop` branch, you must change to a <a href="{{pag
 	<p>If you're cloning the GitHub repository, make sure you check out a release tag as discussed in <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a>.</p>
 </div>
 
-### Find released versions of Data Migration Tool {#migration-tool-version}
+### Find released versions of Data Migration Tool {#migration-tool-release-version}
 
 Go to the [Releases](https://github.com/magento/data-migration-tool/releases){:target="_blank"} page of the Data Migration Tool [Github repository](https://github.com/magento/data-migration-tool) to find available released versions.
 
@@ -107,7 +107,7 @@ To specify location of the Data Migration Tool package, you must update the `com
 
 4.  When prompted, enter your <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.
 
-### Check version of installed Data Migration Tool
+### Check version of installed Data Migration Tool {#migration-tool-install-version}
 
 1. Change to your Data Migration Tool directory: `<vendor>/magento/data-migration-tool`.
 
