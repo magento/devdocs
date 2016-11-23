@@ -15,9 +15,9 @@ To verify the Fastly extension is working or to debug the Fastly extension, you 
 
 Response headers and values:
 
-*	`Fastly-Magento-VCL-Uploaded` should be `Yes`
+*	`Fastly-Magento-VCL-Uploaded` should be present
 *	`X-Magento-Tags` should be returned
-*	`Fastly-Module-Enabled` should be `Yes`
+*	`Fastly-Module-Enabled` should be either `Yes` or the Fastly extension version number
 *	`X-Cache` should be either `HIT` or `HIT, HIT` 
 *	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
 *	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
@@ -51,15 +51,15 @@ If you don't know your staging or production URLs, consult your Magento Enterpri
 
 Enter the following command to test your site:
 
-	curl -I -k <staging or production URL> [-H 'Host: <public URL>'] -vo /dev/null -HFastly-Debug:1
+	curl -k <staging or production URL> [-H 'Host: <public URL>'] -vo /dev/null -HFastly-Debug:1
 
 For example, if you have a public URL `www.mymagento.biz`, enter a command similar to the following to test the production site:
 
-	curl -I -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -HFastly-Debug:1
+	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -HFastly-Debug:1
 
 If you do not have DNS set up for a public host name, enter a command similar to the following:
 
-	curl -I -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
+	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
 
 The output for this command can be lengthy so the following is a summary only:
 
@@ -136,14 +136,14 @@ The output for this command is similar to the [preceding command](#cloud-test-st
 ## Resolve errors
 This section provides suggestions for resolving errors you might find using the `curl` command.
 
-### `Fastly-Module-Enabled` is `No`
+### `Fastly-Module-Enabled` is not present
 Do the following:
 
 1.	[Install the Fastly module]({{ page.baseurl }}cloud/access-acct/fastly.html)
 2.	In the Magento Admin, [set Fastly as the page cache]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-fastly-admin).
 3.	Push the changes to your staging or production server.
 
-### `Fastly-Magento-VCL-Uploaded` is `No`
+### `Fastly-Magento-VCL-Uploaded` is not present
 [Upload the Fastly VCL]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly)
 
 ### `X-Cache` includes `MISS`
