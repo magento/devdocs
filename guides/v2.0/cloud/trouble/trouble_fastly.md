@@ -22,11 +22,9 @@ In particular, you should look for the following:
 *	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
 *	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
 
-You should perform the test on your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) site. The Fastly extension isn't necessray on [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
-
 You must run two `curl` commands:
 
-*	One on your staging or production URL
+*	One on your staging or production URL (also referred to as the [*origin server*](https://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3){:target="_blank"})
 
 	This command bypasses the Fastly extension and returns the headers `Fastly-Module-Enabled`, `Cache-Control: max-age`, and `Pragma`
 *	One on your live site
@@ -35,8 +33,13 @@ You must run two `curl` commands:
 
 	This command works only if you have a DNS-mapped domain
 
+You should perform the test on your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) site. The Fastly extension isn't necessray on [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
+
 ## Test your staging or production site {#cloud-test-stage}
-This section discusses how to use `curl` to get response headers from your staging or production site. 
+
+{% collapsible Test your staging or production site: %}
+
+This section discusses how to use `curl` to get response headers from your staging or production site (that is, the origin server). 
 
 The URL format follows:
 
@@ -95,7 +98,12 @@ The output for this command can be lengthy so the following is a summary only:
 
 The preceding example shows the correct values for `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled`.
 
+{% endcollapsible %}
+
 ## Test your live site
+
+{% collapsible Test your live site: %}
+
 Enter the following command to test your site if it's live:
 
 	curl http://<domain> -vo /dev/null -HFastly-Debug:1
@@ -108,6 +116,8 @@ The output for this command is similar to the preceding command; following are o
 
 	< Fastly-Magento-VCL-Uploaded: yes
 	< X-Cache: HIT, MISS
+
+{% endcollapsible %}
 
 ## Resolve errors
 This section provides suggestions for resolving errors you might find using the `curl` command.
