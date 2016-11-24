@@ -4,7 +4,7 @@ group: payments-integrations
 subgroup: vault
 title: Admin Integration
 menu_title: Admin Integration
-menu_order: 15
+menu_order: 25
 version: 2.1
 github_link: payments-integrations/vault/admin-integration.md
 ---
