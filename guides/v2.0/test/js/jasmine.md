@@ -41,11 +41,11 @@ Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task c
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
 
 <div class="bs-callout bs-callout-tip">
-  <p><b>For CentOS users</b><br/>
-  <br>If the command fails with error message:</br>
-  <br><code>/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory</code></br>
-  <br>Install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctconfig library</a></br>
-  <br><code>yum install fontconfig</code></br></p>
+  <p><b>For CentOS users</b></p>
+  <p>If the command fails with error message:</p>
+  <p><code>/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory</code></p>
+  <p>install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/" target="_blank">fonctconfig library</a>.</p>
+  <p><code>yum install fontconfig</code></p>
 </div>
 
 Learn more in [Deploy static view files].
