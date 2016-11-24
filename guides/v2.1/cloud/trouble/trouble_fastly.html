@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Deploy the Magento software to the cloud (create a new project)</title>
+	<title>Troubleshoot Fastly</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/cloud/access-acct/first-time-setup_parent.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/trouble/trouble_fastly.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -47,9 +47,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/access-acct/first-time-setup_template.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/trouble/trouble_fastly.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/access-acct/first-time-setup_template.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/trouble/trouble_fastly.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -165,14 +165,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Deploy the Magento software to the cloud (create a new project)</h1>
+		<h1 class="page-heading">Troubleshoot Fastly</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/access-acct/first-time-setup_template.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/trouble_fastly.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -532,7 +532,7 @@
 
 									
 
-										<li class="level3Parent  active " id="newproj"><a href="#">Deploy the Magento software to the cloud (create a new project)</a>
+										<li class="level3Parent " id="newproj"><a href="#">Deploy the Magento software to the cloud (create a new project)</a>
 
 
 									
@@ -1218,7 +1218,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble_fastly.html">Troubleshoot Fastly</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/trouble/trouble_fastly.html">Troubleshoot Fastly</a></li>
 
 									
 
@@ -1421,8 +1421,189 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <div class="updated">Updated: 28 September 2016 (PDT)</div>
-            
+            <div class="updated">Updated: 22 November 2016 (PST)</div>
+            <h2 id="overview-of-troubleshooting-fastly">Overview of troubleshooting Fastly</h2>
+<p>To verify the Fastly extension is working or to debug the Fastly extension, you can use the <code>curl</code> command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly.</p>
+
+<p>Response headers and values:</p>
+
+<ul>
+  <li><code>Fastly-Magento-VCL-Uploaded</code> should be present</li>
+  <li><code>X-Magento-Tags</code> should be returned</li>
+  <li><code>Fastly-Module-Enabled</code> should be either <code>Yes</code> or the Fastly extension version number</li>
+  <li><code>X-Cache</code> should be either <code>HIT</code> or <code>HIT, HIT</code></li>
+  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9" target="_blank"><code>Cache-Control: max-age</code></a> should be greater than 0</li>
+  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32" target="_blank"><code>Pragma</code></a> should be <code>cache</code></li>
+</ul>
+
+<p>To get values for these headers, you must run the following <code>curl</code> commands:</p>
+
+<ul>
+  <li>
+    <p>Staging or production URL (also referred to as the <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3" target="_blank"><em>origin server</em></a>)</p>
+
+    <p>This command goes directly to the origin server, bypassing the Fastly extension; it returns the headers <code>Fastly-Module-Enabled</code>, <code>Cache-Control: max-age</code>, and <code>Pragma</code></p>
+  </li>
+  <li>
+    <p>Live site URL</p>
+
+    <p>This command goes through the Fastly extension and returns the <code>Fastly-Magento-VCL-Uploaded</code> and <code>X-Cache</code> headers</p>
+  </li>
+</ul>
+
+<p>You should perform the test on your <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a> site. The Fastly extension isn’t necessary on your <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration</a> site, so there’s no point in testing it there.</p>
+
+<h2 id="cloud-test-stage">Test your staging or production site</h2>
+
+<div class="collapsible"><b class="collapsible-title">Test your staging or production site: </b><div class="collapsible-content"><p>This section discusses how to use <code>curl</code> to get response headers from your staging or production site (that is, the origin server).</p>
+
+<p>The URL format follows:</p>
+
+<ul>
+  <li>Staging: <code>http[s]://staging.&lt;your domain&gt;.&lt;project ID&gt;.ent.magento.cloud</code></li>
+  <li>
+    <p>Production:</p>
+
+    <ul>
+      <li>Load balancer URL: <code>http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Direct access to one of the three redundant servers: <code>http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>If you don’t know your staging or production URLs, consult your Magento Enterprise Cloud Edition OneDrive account. Your account includes an onboarding document that contains your Git, SSH, and project URLs for staging and production.</p>
+
+<p>Enter the following command to test your site:</p>
+
+<pre><code>curl -k &lt;staging or production URL&gt; [-H 'Host: &lt;public URL&gt;'] -vo /dev/null -HFastly-Debug:1
+</code></pre>
+
+<p>For example, if you have a public URL <code>www.mymagento.biz</code>, enter a command similar to the following to test the production site:</p>
+
+<pre><code>curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -HFastly-Debug:1
+</code></pre>
+
+<p>If you do not have DNS set up for a public host name, enter a command similar to the following:</p>
+
+<pre><code>curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
+</code></pre>
+
+<p>The output for this command can be lengthy so the following is a summary only:</p>
+
+<pre><code>* STATE: INIT =&gt; CONNECT handle 0x600057800; line 1402 (connection #-5000)
+* Rebuilt URL to: https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud/
+* Added connection 0. The cache now contains 1 members
+*   Trying 192.0.2.31...
+* STATE: CONNECT =&gt; WAITCONNECT handle 0x600057800; line 1455 (connection #0)
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                             Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud (54.229.163.31) port 443 (#0)
+* STATE: WAITCONNECT =&gt; SENDPROTOCONNECT handle 0x600057800; line 1562 (connection #0)
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* ALPN, offering h2
+
+  ... portion omitted for brevity ...
+
+&lt; Set-Cookie: mage-messages=%5B%5D; expires=Wed, 22-Nov-2017 17:39:58 GMT; Max-Age=31536000; path=/
+&lt; Pragma: cache
+&lt; Expires: Wed, 23 Nov 2016 17:39:56 GMT
+&lt; Cache-Control: max-age=86400, public, s-maxage=86400, stale-if-error=5, stale-while-revalidate=5
+&lt; X-Magento-Tags: cb_welcome_popup store cb cb_store_info_mobile cb_header_promotional_bar cb_store_info cb_discount-promo-bar cpg_2 cb_83 cb_81 cb_84 cb_85 cb_86 cb_87 cb_88 cb_89 p5646 catalog_product p5915 p6040 p6197 p6227 p7095 p6109 p6122 p6331 p7592 p7651 p7690
+&lt; Fastly-Module-Enabled: yes
+&lt; Strict-Transport-Security: max-age=31536000
+	&lt; Content-Security-Policy: upgrade-insecure-requests
+&lt; X-Content-Type-Options: nosniff
+&lt; X-XSS-Protection: 1; mode=block
+&lt; X-Frame-Options: SAMEORIGIN
+&lt; X-Platform-Server: i-dff64b52
+&lt;
+* STATE: PERFORM =&gt; DONE handle 0x600057800; line 1955 (connection #0)
+* multi_done
+  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+* Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
+</code></pre>
+
+<p>The preceding example shows the correct values for <code>Pragma</code>, <code>X-Magento-Tags</code>, and <code>Fastly-Module-Enabled</code>.</p>
+</div></div>
+
+<h2 id="test-your-live-site">Test your live site</h2>
+<p>This section discusses how to test your live site URL, which means the <code>curl</code> command goes through the Fastly extension. This command returns the values of the <code>Fastly-Magento-VCL-Uploaded</code> and <code>X-Cache</code> headers.</p>
+
+<p>If you don’t have a live site set up with DNS, you can use either a static route or you can use the optional <code>--resolve</code> flag, which bypasses DNS name resolution.</p>
+
+<div class="collapsible"><b class="collapsible-title">To optionally set up a static route: </b><div class="collapsible-content"><p>Set up a static route only if your site isn’t set up with DNS.</p>
+
+<ol>
+  <li>Locate your operating system’s <a href="https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system" target="_blank"><code>hosts</code> file</a>.</li>
+  <li>
+    <p>Add the static route in the format:</p>
+
+    <pre><code>&lt;ip address&gt; &lt;url&gt;
+</code></pre>
+  </li>
+</ol>
+</div></div>
+
+<div class="collapsible"><b class="collapsible-title">Test your live site: </b><div class="collapsible-content"><p>Enter the following command to test your live site URL:</p>
+
+<pre><code>curl http://&lt;live URL&gt; -vo /dev/null -HFastly-Debug:1 [--resolve]
+</code></pre>
+
+<p>Use <code>--resolve</code> only if your live URL isn’t set up with DNS.</p>
+
+<p>For example,</p>
+
+<pre><code>http://www.mymagento.biz -vo /dev/null -HFastly-Debug:1
+</code></pre>
+
+<p>The output for this command is similar to the <a href="#cloud-test-stage">preceding command</a>; following are only the unique headers returned by this command:</p>
+
+<pre><code>&lt; Fastly-Magento-VCL-Uploaded: yes
+&lt; X-Cache: HIT, MISS
+</code></pre>
+</div></div>
+
+<h2 id="resolve-errors">Resolve errors</h2>
+<p>This section provides suggestions for resolving errors you might find using the <code>curl</code> command.</p>
+
+<h3 id="fastly-module-enabled-is-not-present"><code>Fastly-Module-Enabled</code> is not present</h3>
+<p>Do the following:</p>
+
+<ol>
+  <li><a href="/guides/v2.1/cloud/access-acct/fastly.html">Install the Fastly module</a></li>
+  <li>In the Magento Admin, <a href="/guides/v2.1/cloud/access-acct/fastly.html#cloud-fastly-admin">set Fastly as the page cache</a>.</li>
+  <li>Push the changes to your staging or production server.</li>
+</ol>
+
+<h3 id="fastly-magento-vcl-uploaded-is-not-present"><code>Fastly-Magento-VCL-Uploaded</code> is not present</h3>
+<p><a href="/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly">Upload the Fastly VCL</a></p>
+
+<h3 id="x-cache-includes-miss"><code>X-Cache</code> includes <code>MISS</code></h3>
+<p>If <code>X-Cache</code> is either <code>HIT, MISS</code> or <code>MISS, MISS</code>, enter the same <code>curl</code> command again to make sure the page wasn’t recently evicted from the cache.</p>
+
+<p>If you get the same result, use the <a href="#cloud-test-stage">first <code>curl</code> command</a> discussed in this topic to verify that:</p>
+
+<ul>
+  <li><code>Pragma</code> is <code>cache</code></li>
+  <li><code>X-Magento-Tags</code> exists</li>
+  <li><code>Cache-Control: max-age</code> is greater than 0</li>
+</ul>
+
+<p>If the issue persists, another extension is likely resetting these headers. Repeat the following procedure as many times as necessary to identify which extension is resetting the headers:</p>
+
+<ol>
+  <li>Log in to the Magento Admin as an administrator.</li>
+  <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>Advanced</strong>.</li>
+  <li>In the Disable Modules Output section in the right pane, locate an extension.</li>
+  <li>From the list next to the extension name, click <strong>Disable</strong>.</li>
+  <li>Click <strong>Save Config</strong>.</li>
+  <li>Click <strong>System</strong> &gt; Tools &gt; <strong>Cache Management</strong>.</li>
+  <li>Click <strong>Flush Magento Cache</strong>.</li>
+  <li>Try the <code>curl</code> commands discussed in this topic again.</li>
+  <li>If the results are the same, repeat the tasks discussed in this section to disable another extension.</li>
+</ol>
+
+<p>When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance.</p>
+
 
 		</div>
 	</section>

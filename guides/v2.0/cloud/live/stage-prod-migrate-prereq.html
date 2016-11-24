@@ -1224,6 +1224,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_fastly.html">Troubleshoot Fastly</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_comp-deploy-fail.html">Component deployment failure</a></li>
 
 									
@@ -1416,6 +1424,7 @@
   <li>Get your <a href="#cloud-live-migrate-urls">access URLs</a> for staging and production</li>
   <li>Set up <a href="#cloud-live-migrate-git">remote Git repositories</a></li>
   <li>Set up your <a href="#cloud-live-migrate-agent">SSH agent</a></li>
+  <li>Upload your <a href="#cloud-live-migrate-fastly">Fastly VCL</a></li>
 </ol>
 
 <p>After setting this up, your workflow is to code and test in your integration system, then push updates to your staging system using Git commands.</p>
@@ -1534,6 +1543,29 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
       <pre><code>Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
 </code></pre>
     </li>
+  </ol>
+
+  <h3 id="cloud-live-migrate-fastly">Upload your Fastly VCL</h3>
+  <p>For Fastly to work in staging or production, you must upload the Fastly VCL using the Magento Admin as follows:</p>
+
+  <ol>
+    <li>Log in to the Magento Admin as an administrator.</li>
+    <li>
+      <p>Click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> as the following figure shows:</p>
+
+      <p><img src="/common/images/cloud_fastly_menu.png" alt="Choose Fastly" width="650px" /></p>
+    </li>
+    <li>In the right pane, expand <strong>Full Page Cache</strong>.</li>
+    <li>
+      <p>Click <strong>Upload VCL to Fastly</strong> as the following figure shows.</p>
+
+      <p><img src="/common/images/cloud_upload-vcl-to-fastly.png" alt="Upload a Magento VCL to Fastly" /></p>
+
+      <div class="bs-callout bs-callout-info" id="info">
+  		If the <strong>Upload VCL to Fastly</strong> button does not display, you should upgrade the Fastly extension to version 1.1.9 or later. For details, see <a href="/guides/v2.0/">Update extensions</a>. Fastly’s Composer name is <code>fastly/magento2</code>.
+      </div>
+    </li>
+    <li>Follow the prompts on your screen to complete the task.</li>
   </ol>
 
   <h4 id="next-step">Next step</h4>
