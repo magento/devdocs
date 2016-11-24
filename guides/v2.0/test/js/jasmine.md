@@ -32,14 +32,22 @@ Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task c
 **Step 5.** In `<magento_root_dir>`, install all dependencies:
 
     $ npm install
-    
+
 **Step 6.** In `<magento_root_dir>`, generate static view files in Magento
 {:#prepare-step6}
 
     $ php bin/magento setup:static-content:deploy -f
-    
+
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
-    
+
+<div class="bs-callout bs-callout-tip">
+  <p><b>For CentOS users</b><br/>
+  <br>If the command fails with error message:</br>
+  <br><code>/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory</code></br>
+  <br>Install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctconfig library</a></br>
+  <br><code>yum install fontconfig</code></br></p>
+</div>
+
 Learn more in [Deploy static view files].
 
 ## Run tests
@@ -47,7 +55,7 @@ Learn more in [Deploy static view files].
 `Gruntfile.js` contains the test run task, so you can run tests for a theme using the following command in the Magento root directory:
 
     $ grunt spec:<THEME>
-    
+
   Example:
 
     $ grunt spec:backend
@@ -57,11 +65,11 @@ Learn more in [Deploy static view files].
 All tests are distributed through modules stored in `<magento_root_dir>/dev/tests/js/jasmine/tests`. Let's see how to write a test using an example of an existing test:
 
 [`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]{:target="_blank"}
- 
+
 which tests a JS module:
 
 [`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]{:target="_blank"}
- 
+
 in its static representations generated in [Step 6] previously:
 
 `<magento_root_dir>/pub/static/<area>/<theme>/<localisation>/Magento_Ui/js/columns/actions.js`.
@@ -85,7 +93,7 @@ define([
     'Magento_Ui/js/grid/columns/actions'
 ], function (Actions) {
     'use strict';
- 
+
     //Test code
     //...
 });
@@ -94,15 +102,15 @@ define([
 ### Step 3. Write your Jasmine test code.
 
 A Jasmine test consists of main two parts:
- 
+
 - `describe` blocks
 - `it` blocks.
 
 Both the `describe` and `it` functions contains two parameters:
- 
+
  - a text string with description of what is going to be done
  - a function with block of code implementing described action
-  
+
 In `describe` you can use `beforeEach` and `afterEach` functions performing a preparation of what must be done before and after every `it` test followed.
 
 {% collapsible See the full code of the test%}
@@ -221,4 +229,3 @@ This topic doesn't provide Jasmine test writing methodology.
 <!-- Abbreviations -->
 
 *[FTF]: Functional Testing Framework
-
