@@ -72,6 +72,10 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud-fastly_enable-admin.png){:width="650px"}
 
+After you receive a Magento VCL from Fastly, [upload it to your staging or production system]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly).
+
+
+
 {% endcollapsible %}
 
 ### Configure Fastly {#cloud-fastly-config}
