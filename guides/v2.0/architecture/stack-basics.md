@@ -11,10 +11,10 @@ github_link: architecture/stack-basics.md
 
 ## Stack basics
 
-<i>Information about routing, caching, and indexing will be provided in future sprints.</i>
+This document is not ready yet, but we're working on it.
 
-## Related topics
+Meanwhile, you may want to read:
 
-<a href="{{page.baseurl}}architecture/tech-stack.html">Technology stack</a>
+* <a href="{{page.baseurl}}architecture/tech-stack.html">Technology stack</a>
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+* <a href="{{page.baseurl}}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
