@@ -51,9 +51,9 @@ And the _Command Pool_ can be configured in the following way:
 Now, we need to add created _Command Pool_ to payment method configuration:
 {% highlight xml %}
 <virtualType name="BraintreeFacade" type="Magento\Payment\Model\Method\Adapter">
-        <arguments>
-            ...
-            <argument name="commandPool" xsi:type="object">BraintreeCommandPool</argument>
-        </arguments>
-    </virtualType>
+    <arguments>
+        ...
+        <argument name="commandPool" xsi:type="object">BraintreeCommandPool</argument>
+    </arguments>
+</virtualType>
 {% endhighlight %}
