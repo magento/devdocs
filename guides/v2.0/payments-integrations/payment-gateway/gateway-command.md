@@ -11,15 +11,15 @@ github_link: payments-integrations/payment-gateway/gateway-command.md
 ---
 
 ## Gateway Сommand
-Gateway Command is a proxy service that takes gateway specific payload and produces _Result_ - 
+Gateway Command is a proxy service that takes the [payload]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.md#terms) required for a particular payment service, receives and processes the response from the payment service provider.
 in most cases it will be a response from payment processor with transaction details.
 
 
-<p class="q">Do I understand correctly that payment processor is something external? (relating to Payment Gateway) Then how gateway command can produce response from it? A: gets and processes</p>
+<p class="q">does it send the response? does it receive from the external provider or some internal component</p>
 
-The _Gateway Command_ allows to perform payment actions, build transaction request, call specified validators and response handlers.
+Basic abstraction of the Gateway Command is:
 
-Basic abstraction in such case is `\Magento\Payment\Gateway\CommandInterface`:
+`\Magento\Payment\Gateway\CommandInterface`
 
 {% highlight php startinline=1%}
 interface CommandInterface
@@ -35,12 +35,19 @@ interface CommandInterface
 }
 {% endhighlight %}
 
-### Base implementation
+### Basic implementation
 
-The `\Magento\Payment\Gateway\Command\GatewayCommand` is a default `CommandInterface` implementation, which allows to perform most operations available for Payment Gateway.
-This type is not intended to be extended through inheritance but through composition via DI configuration.
-Here is an example of a typical _Command_ definition through DI:
+The `\Magento\Payment\Gateway\Command\GatewayCommand` class is a default `CommandInterface` implementation, that allows performing most operations available for Payment Gateway.
 
+<p class="q">which Payment Gateway?</p>
+
+This type must be extended using composition in [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration.
+
+<p class="q">Is it type or class?</p>
+<p class="q">Why should we extend it all? If we want to add custom integration?</p>
+
+Following is an example of a typical _Command_ definition using DI:
+<p class="q">What sort of entity is _Command_?</p>
 {% highlight xml %}
 <virtualType name="BraintreeAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
     <arguments>
@@ -55,12 +62,20 @@ Here is an example of a typical _Command_ definition through DI:
 
 GatewayCommand should be configured with:
 
-* `\Magento\Payment\Gateway\Request\BuilderInterface` - builds a map of gateway-specific arguments from Order parts as an array
-* `\Magento\Payment\Gateway\Http\TransferFactoryInterface` - maps an array of gateway-specific arguments to format, supported by gateway (JSON, XML, SOAP)
-* `\Magento\Payment\Gateway\Http\ClientInterface` - service which takes gateway-specific arguments and perform low-level call to a third-party system
+<p class="q">What is GatewayCommand? class? type? what is the difference between _Command_ and GatewayCommand</p>
 
-Optional arguments are:
+* `\Magento\Payment\Gateway\Request\BuilderInterface`: builds an array of gateway-specific arguments using the order information 
 
-* `\Magento\Payment\Gateway\Response\HandlerInterface` - applies changes to Order/Payment/etc depending on request result, may persist transaction details
+<p class="q">Is it the RequestBuilder described further?</p>
+* `\Magento\Payment\Gateway\Http\TransferFactoryInterface`: maps the array of gateway-specific arguments with the format, supported by a gateway (JSON, XML, SOAP)
+<p class="q">is it Magento gateway or payment gateway?</p>
+
+* `\Magento\Payment\Gateway\Http\ClientInterface`:takes the gateway-specific arguments and performs a low-level call to a third-party system
+
+<p class="q">this third-party system - is it payment gateway</p>
+
+Optional arguments:
+
+* `\Magento\Payment\Gateway\Response\HandlerInterface`: applies changes to Order/Payment/etc depending on request result, may persist transaction details
 * `\Magento\Payment\Gateway\Validator\ValidatorInterface` - validates transaction/gateway response
 

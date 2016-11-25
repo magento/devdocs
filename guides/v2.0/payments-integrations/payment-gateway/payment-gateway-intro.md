@@ -2,19 +2,74 @@
 layout: default
 group: payments-integrations
 subgroup: p_gateway
-title: Magento payment gateway overview
-menu_title: Magento payment gateway overview
+title: Magento payment provider gateway overview
+menu_title: Magento payment provider gateway overview
 menu_node: parent
-menu_order: 5
+menu_order: 1
 version: 2.0
 github_link: payments-integrations/payment-gateway/payment-gateway-intro.md
 
 ---
 
-Magento payment gateway is a mechanism for online  processing payments by external payment systems, using the Magento order information.
+### What is Magento payment provider gateway
+Magento payment provider gateway is a mechanism for your Magento store integration with payment service providers (payment providers), so that you can create and handle transactions based on order details.
 
-The next diagram shows the basic structure of _Payment Gateway_ components:
-![Payment Gateway Structure]({{site.baseurl}}common/images/payments-integrations/pg_structure.png)
+The following diagram shows a simplified interaction flow between Magento Sales Management,  payment service provider, and payment provider gateway: 
 
-As you can see, _Payment Gateway_ contains different components and structure of each component, also, can be complicated.
-Next topics will describe each component more detail.
+![Payment Gateway Interaction]({{site.baseurl}}common/images/payments-integrations/pg_interaction_flow.png)
+
+<p class="q">What is Magento Sales Management?</p>
+
+### What's in this chapter
+
+The topics of this chapter are conceptual and describe the components of the Magento payment provider gateway:
+ 
+* [Payment provider gateway structure]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-stucture.html)
+* [Gateway Command]({{page.baseurl}}payments-integrations/payment-gateway/gateway-command.html)
+* [Gateway Command Pool]({{page.baseurl}}payments-integrations/payment-gateway/command-pool.html)
+* [Request Builder]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html)
+* [Gateway Client]({{page.baseurl}}payments-integrations/payment-gateway/gateway-client.html)
+* [Response Validator]({{page.baseurl}}payments-integrations/payment-gateway/response-validator.html)
+* [Response Handler]({{page.baseurl}}payments-integrations/payment-gateway/response-handler.html)
+
+#### Terms used {#terms}
+
+<table>
+<tr>
+<th>
+Term
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+<i>Payment service provider, payment provider</i>
+</td>
+<td>
+ Online service for accepting electronic payments, like PayPal, Authorize.Net and so on.
+</td>
+</tr>
+</tr>
+<tr>
+<td>
+<i>Payload</i>
+</td>
+<td>
+Data used for a transaction. Might include the following:
+
+<ul>
+<li> Order items </li>
+<li> Shipping, Billing addresses </li>
+<li> Customer details </li>
+<li> Taxes </li>
+<li> Merchants gateway API credentials </li>
+<li> Payment details </li>
+</ul>
+</td>
+</tr>
+</table>
+
+<p class="q">what is merchant gateway?</p>
+
