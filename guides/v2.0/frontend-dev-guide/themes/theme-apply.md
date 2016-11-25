@@ -15,10 +15,6 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-apply.html
 The topic describes how to apply a theme for your store. This is a required step if you want a theme to be used on a storefront. 
 Also, it gives information how to add a theme independent logo for your store.
 
-**Contents**:
-
-
-
 ## Prerequisites 
 
 Make sure that you [set](#{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
