@@ -18,9 +18,6 @@ The major part of the view layer of Magento application is layout. Functionally,
 
 This article describes the basic concepts you need to know to create layouts for your custom theme.
 
-**Contents**
-
-
 ## Terms used {#layout-over-terms}
 
 <span id="handle">*Layout handle*</span>

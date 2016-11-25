@@ -11,7 +11,6 @@ redirect_from: /guides/v2.0/ui-library/ui-form.html
 
 ---
 
-
 ## Overview
 Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. 
 

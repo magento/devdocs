@@ -20,10 +20,6 @@ It covers declarative notation, used when initialization is required, and impera
 
 We strongly recommend that you use the described approaches and do not add inline JavaScript. 
 
-
-**Contents**
-
-
 ## Insert a JS component in a PHTML template {#init_phtml}
 Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.
 
