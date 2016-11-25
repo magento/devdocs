@@ -6,12 +6,12 @@ title: Staging (Enterprise Edition only)
 menu_title: Staging (Enterprise Edition only)
 version: 2.1
 menu_node: parent
-github_link: mrg/ee.md
+github_link: guides/v2.1/extension-dev-guide/staging.md
 ---
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Preface</h2>
+## Preface
 
 Staging functionality enables you to create scheduled campaigns, manage campaigns on dashboard and manipulate each future store object update. Moreover, you can preview a storefront during the future campaign.
 

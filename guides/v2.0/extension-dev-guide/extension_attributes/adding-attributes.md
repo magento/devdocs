@@ -7,10 +7,9 @@ menu_title: Adding extension attributes to entity
 menu_order: 20
 version: 2.0
 github_link: extension-dev-guide/extension_attributes/adding-attributes.md
-redirect_from: /guides/v2.0/extension-dev-guide/extension_attributes/adding-attributes.html
 ---
 
-##{{page.menu_title}}
+## {{page.menu_title}}
 
 Third party developers cannot change API Data interface in the Magento Core, so the one way to affect interfaces 
 using configuration is to add extension attributes. 
@@ -23,7 +22,7 @@ using configuration is to add extension attributes.
 In order to get product or list of products by Magento API you need to do API request to appropriate service (Product Repository in our case). 
 In Response we got object with next structure: 
 
-####Product response:
+### Product response:
 
 {% highlight xml %}
 <product>
@@ -34,7 +33,7 @@ In Response we got object with next structure:
 </product>
 {% endhighlight %}
 
-####Product list response:
+### Product list response:
 
 {% highlight xml %}
 <products>
@@ -53,7 +52,7 @@ In Response we got object with next structure:
 </products>
 {% endhighlight %}
 
-###Add plugin to product repository
+## Add plugin to product repository
  
 In order to add attributes, we need to use after plugin on Product Repository. 
 Plugin should listen next methods: save, get, getList. 
@@ -108,7 +107,7 @@ Likewise afterSave plugin should take data from entity and do some manipulations
         ?>
 {% endhighlight %}
 
-###Extension Attributes Configuration:
+## Extension Attributes Configuration:
 
 For scalar attributes we can use next configuration:
 {% highlight xml %}
