@@ -4,7 +4,7 @@ group: payments-integrations
 subgroup: vault
 title: Customer Stored Payments
 menu_title: Customer Stored Payments
-menu_order: 10
+menu_order: 20
 version: 2.1
 github_link: payments-integrations/vault/customer-stored-payments.md
 ---

@@ -4,7 +4,7 @@ group: payments-integrations
 subgroup: vault
 title: Token UI Component Provider
 menu_title: Token UI Component Provider
-menu_order: 5
+menu_order: 15
 version: 2.1
 github_link: payments-integrations/vault/token-ui-component-provider.md
 ---
@@ -63,6 +63,8 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 {% endhighlight %}
 
 This implementation allow to retrieve all available _Payment Token_ details and specify js component for Storefront.
+Also, as you can see, where are no any details with _Gateway Token_, only _Public Hash_ is used and you can be sure what customer
+_Gateway Token_ won't be shared.
 
 After component provider creation need to add it to list of available _Vault_ config providers:
 
@@ -92,5 +94,8 @@ define([
     });
 });
 {% endhighlight %}
+
+As you can remember, we already have implemented [`vault_authorize`]({{site.guideurl21}}payments-integrations/vault/configuration.html#commands)
+command and Vault implementation is ready to process payment transactions.
 
 A next topic will describe how to display stored tokens for customer and process their deleting.
