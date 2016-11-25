@@ -35,21 +35,22 @@ var gulp = require('gulp'),
       icons: 'icons/*.svg',
       html: [
       	'guides/**/*.{html,md}',
-         '_includes/**/*.html',
-			'_layouts/**/*.html',
-         'css/**/*.css',
-         '*.html'
+        '_includes/**/*.html',
+			  '_layouts/**/*.html',
+        'css/**/*.css',
+        '*.html'
 		],
       styles: 'scss/**/*.scss',
       scripts: [
       	'js/**/*.js',
-         '!js/vendor/**/*.js'
+        '!js/_vendor/**/*.js',
+        '!js/_includes/**/*.js'
 		],
    	images: 'i/**/*',
    	fonts: 'font/**/*',
    },
    destHtml = '_site/',
-   destJS = 'js/',
+   destJS = 'common/js/',
    destImg = '_site/i/',
    destCSS = 'css/',
    destFonts = '_site/font/',
@@ -63,8 +64,8 @@ var gulp = require('gulp'),
    	},
    	port: 9999,
    	files: [
-      	paths.scripts,
-         paths.images
+      paths.scripts,
+      paths.images
 		]
 	};
 
@@ -91,21 +92,22 @@ gulp.task('move', function() {
 gulp.task('scripts', function () {
    // Minify and copy all JavaScript (except vendor scripts)
    // with sourcemaps all the way down
-   gulp.src('js/vendor/**/*')
-   	.pipe(gulp.dest(destJS + 'vendor/'));
+   //gulp.src('js/vendor/**/*').pipe(gulp.dest(destJS + 'vendor/'));
 
-   return gulp.src(paths.scripts)
+  return gulp.src(paths.scripts)
    	.pipe(sourcemaps.init())
    	.pipe(include())
-		//.pipe(uglify())
+		.pipe(uglify())
 		//.pipe(concat('app.min.js'))
-		//.pipe(sourcemaps.write())
+		.pipe(sourcemaps.write())
 		.pipe(rename({suffix: '.min'}))
-      .pipe(gulp.dest(destJS))
-      .on('error', gutil.log)
-      .pipe(reload({stream: true}));
-		//.pipe(livereload(server));
+    .pipe(gulp.dest(destJS))
+    .on('error', gutil.log);
+  //  .pipe(reload({stream: true}));
 });
+
+
+
 
 //  Images
 gulp.task('images', ['clean'], function () {
@@ -119,7 +121,7 @@ gulp.task('images', ['clean'], function () {
 // Styles
 gulp.task('styles', function () {
    gulp.src(paths.styles)
-      .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init())
    	.pipe(sass({
          outputStyle: 'compressed'
    	}))
@@ -167,11 +169,11 @@ gulp.task('watch', function () {
 
 // The default task (called when you run `gulp` from cli)
 gulp.task('default',
-   [
-	   'move',
-   // 'scripts',
-      'images',
-      'styles',
-      'watch'
-   ]
+  [
+	  'move',
+    'scripts',
+    'images',
+    'styles',
+    'watch'
+  ]
 );

@@ -1,11 +1,10 @@
 {% include header.html %}
-
 <div class="search container">
 
 <!-- /main content -->
 
 	<section class="content">
-		{% include page-header.html %}
+		<h1 class="page-heading">{{ page.title }}</h1>
 		{{ content }}
 	</section>
 

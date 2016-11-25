@@ -1,108 +1,42 @@
+//= include _vendor/jsCookie.js
+//= include _vendor/affix.js
+//= include _vendor/scrollspy.js
+//= include _vendor/clipboard.min.js
+
+// This is what happens on document.ready
 $(function() {
 
-	// Responsive menu trigger
-	$('.menu-trigger, .nav-main-fader').on('click', function (e) {
-		e.preventDefault();
-		$('body').toggleClass('offcanvas-active');
-	});
+  //= include _includes/toc.js
+  //= include _includes/copy.js
+  //= include _includes/collapsible.js
+  //= include _includes/responsive.js
+	//= include _includes/anchors.js
+	//= include _includes/menu.js
 
-	// Duplicate main nav and version-switcher for responsive website
-	$('.nav-main').clone().addClass('nav-main-mobile').appendTo('body');
-	$('.version-switcher').clone().addClass('version-switcher-mobile').appendTo('.nav-main-mobile');
+  //Do search when search icon is pressed
+  $(".search .search-icon").on('click', function(){
+    $("#searchbox").submit();
+  });
 
-	// Responsive item expand/collapse
-	$('.nav-main a').each(function () {
-		var $this = $(this);
-		var $children = $this.closest('li').find('ul');
+});
+// END document ready
 
-		if ( $children.length ) {
-			$this.closest('li').addClass('has-children').append('<span class="children-toggle"></span>');
-			$this.on('click', function (e) {
-				e.preventDefault();
-				$(this).closest('li').toggleClass('expanded');
-			});
-		}
-	});
+$(window).on('load', function(){
+  // Fix headers hiding behind nav when loading on anchor link
+  if(window.location.hash) {
+    $(document).scrollTop($(document).scrollTop() - 60);
+  }
+});
 
+// Fix anchor jumps hiding headers
+$(window).on('hashchange',function(){
+	$(document).scrollTop($(document).scrollTop() - 60);
+});
 
-	// Responsive table of contents
-	$('.toc-toggler').on('click', function (e) {
-		e.preventDefault();
-		$(this).parent().toggleClass('expanded');
-	});
-
-	$('.dropdown .dropdown-toggle').on('click', function () {
-		var $this = $(this),
-			$dropdown = $this.parent();
-		$dropdown.toggleClass('open');
-	});
-
-	// Responsite site - for version switcher
-	/*
-	function responsiveSite() {
-		var $w = $( window ).width();
-		if ( $w < 767 ) {
-			$('.version-switcher').appendTo($('#subnav-wrap'));
-		} else {
-			//$('.version-switcher').insertBefore($('.updated'));
-		}
-	};
-	responsiveSite();
-	$( window ).on('resize', responsiveSite );
-	*/
-
-
-	// TODO: Refactor this
-	// This script copies markdown toc into the .page-info
-	//$('#markdown-toc').clone().addClass('nav').appendTo( '.page-info' );
-	$('#markdown-toc').hide();
-
-	// Page toc on right side sticks to the browser window
-	$('body').scrollspy({ target: '.page-info' });
-	$('.page-info .page-toc').affix({
-		offset: {
-	    top: 40,
-	    bottom: function () {
-	      return (this.bottom = $('#footer').outerHeight(true))
-	    }
-  	}
-	});
-
-
-
-	// Animate the anchor link scrolling
-	var $root = $('html, body');
-	$('a').click(function() {
-		var $this = $(this),
-				url = $this.attr('href'),
-				hash = url.split('#')[1];
-
-		if ( hash ) {
-			$root.animate({
-	      scrollTop: $( url ).offset().top - 60
-	    }, 500);
-			//return false;
-		}
-
-	});
-
-	// copy to clipboard
-	var $highlightBtn = $('<div class="btn btn-copy">Copy</div>');
-	$('.highlight').append($highlightBtn);
-	var clipboard = new Clipboard('.highlight .btn-copy', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
-    }
-	});
-
-	clipboard.on('success', function(e) {
-		console.log(e);
-		e.trigger.innerText = 'Copied';
-		var timerId = setTimeout( function () { e.trigger.innerText='Copy'; }, 3000);
-	});
-	clipboard.on('error', function(e) {
-		console.log(e);
-	});
-
-
+//Allows for sticky menu
+$(document).on('scroll', function(){
+	if( $(document).scrollTop() > 10 )
+		$('#global-nav').addClass('sticky-nav-main');
+	else
+		$('#global-nav').removeClass('sticky-nav-main');
 });
