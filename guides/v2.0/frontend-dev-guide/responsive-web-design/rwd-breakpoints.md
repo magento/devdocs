@@ -16,9 +16,6 @@ redirect_from:
 
 Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of [default breakpoints]({{page.baseurl}}frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break). This topic describes how to add a custom breakpoint in your theme. 
 
-**Contents**
-
-
 ## Overview
 To add a custom breakpoint in your theme, you need to do the following:
 

@@ -12,8 +12,6 @@ github_link: frontend-dev-guide/themes/admin_theme_create.md
 
 This topic describes how to create your custom theme for Magento Admin, referencing the similar [flow for creating a custom storefront theme]({{site.gdeurl}}frontend-dev-guide/themes/theme-create.html).
 
-**Contents**
-
 
 ## Prerequisites 
 

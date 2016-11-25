@@ -12,10 +12,6 @@ github_link: frontend-dev-guide/css-topics/custom_preprocess.md
 
 This topic describes how to add a custom CSS preprocessor. Adding [Sass](http://sass-lang.com/) support is used as an example.
 
-**Contents**
-
-
-
 ## Sample Sass module
 
 Magento has a sample [module-sample-scss](https://github.com/magento/magento2-samples/tree/master/module-sample-scss) module implementing the Sass preprocessor.

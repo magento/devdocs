@@ -12,9 +12,6 @@ github_link: frontend-dev-guide/themes/admin_theme_apply.md
 
 This topic describes how to apply your custom theme for Magento Admin.
 
-**Contents**
-
-
 ## Prerequisites 
 
 1. [Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way static files are cached by Magento. 
