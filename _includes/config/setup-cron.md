@@ -18,8 +18,6 @@ Magento uses cron for two sets of tasks, and for each, cron can run with a diffe
 	This applies to you only if you set up more than one webnode for reasons related to performance or scalability.
 </div>
 
-If you're not experienced with running cron, you can run all commands with the web server's configuration; however, we leave the decision up to you.
-
 #### Find the PHP binary and php.ini path
 To display the path to your PHP binary, enter
 
