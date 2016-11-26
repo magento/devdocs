@@ -11,12 +11,11 @@ Magento uses cron for two sets of tasks, and for each, cron can run with a diffe
 	You can find the web server plug-in configuration using <a href="{{ page.baseurl }}install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code>.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-	*	To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. 
+*	To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. 
+	For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+*	In a multi-node system, crontab can run on only one node. 
 
-		For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
-	*	In a multi-node system, crontab can run on only one node. 
-
-		This applies to you only if you set up more than one webnode for reasons related to performance or scalability.
+	This applies to you only if you set up more than one webnode for reasons related to performance or scalability.
 </div>
 
 If you're not experienced with running cron, you can run all commands with the web server's configuration; however, we leave the decision up to you.
