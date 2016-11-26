@@ -457,7 +457,7 @@ try {
     } else {
         $oauthClient-&gt;setToken($_SESSION['token'], $_SESSION['secret']);
         $resourceUrl = "$apiUrl/products";
-        $oauthClient-&gt;fetch($resourceUrl);
+        $oauthClient-&gt;fetch($resourceUrl, array(), 'GET', array('Content-Type' => 'application/json', 'Accept' => '*/*'));
         $productsList = json_decode($oauthClient-&gt;getLastResponse());
         print_r($productsList);
     }
@@ -545,6 +545,7 @@ The BlackBerry 8100 Pearl sports a large 240 x 260 screen that supports over 65,
 </ul>
 <br/>
 <?php include(__ROOT__ . 'footer.php'); ?>
+
 		</div>
 	</div>
 </body>
