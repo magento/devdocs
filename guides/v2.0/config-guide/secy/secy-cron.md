@@ -10,13 +10,6 @@ version: 2.0
 github_link: config-guide/secy/secy-cron.md
 ---
 
-#### Contents
-*	<a href="#config-cron-secure-over">Overview of securing cron</a>
-*	<a href="#config-cron-secure-apache">Secure cron with Apache</a>
-*	<a href="#config-cron-secure-nginx">Secure cron with nginx</a>
-*	<a href="#config-cron-secure-apache-verify">Verify cron is secure</a>
-*	<a href="#config-cli-cron-browser">Run cron from a web browser</a>
-
 <h2 id="config-cron-secure-over">Overview of securing cron</h2>
 The Magento cron job runs a number of scheduled tasks, including reindexing, generating e-mails, generating newsletters, generating sitemaps, and so on. cron is a vital part of your Magento configuration.
 

@@ -10,13 +10,6 @@ version: 2.0
 github_link: config-guide/log/log-intro.md
 ---
 
-
-#### Contents
-
-*	[Logging overview](#config-log-over)
-*	[Magento logging in more detail]({{ page.baseurl }}config-guide/log/log-magento.html)
-*	[Example&mdash;logging database activity]({{ page.baseurl }}config-guide/log/log-db.html)
-
 ## Logging overview {#config-log-over}
 Logs provide visibility into Magento system processes; for example, debugging information that assists you with understanding when an error occurred or what lead to the error.
 

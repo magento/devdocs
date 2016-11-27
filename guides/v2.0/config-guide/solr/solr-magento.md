@@ -12,14 +12,6 @@ github_link: config-guide/solr/solr-magento.md
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
 
-
-#### Contents
-
-*	<a href="#config-solr">Configure Solr to work with Magento</a>
-*	<a href="#solr-reindex">Reindexing catalog search and refreshing the full page cache</a>
-*	<a href="#solr-verify">Verify Solr is working</a>
-
-<h2 id="config-solr">Configure Solr to work with Magento</h2>
 The following topics discuss how to configure Solr to work with Magento EE:
 
 * <a href="#config-solr-copy-config-files">Copy the Magento Solr configuration and start Solr</a>

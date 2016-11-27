@@ -10,10 +10,6 @@ version: 2.0
 github_link: config-guide/multi-site/ms_apache.md
 ---
 
-#### Contents
-*	[Set values in an entry point script](#ms-entry-script)
-*	[Set values in .htaccess](#ms-htaccess)
-
 ## Set values in an entry point script {#ms-entry-script}
 If necessary, copy the existing `index.php` entry point script for your website or store view and add to it the following:
 
