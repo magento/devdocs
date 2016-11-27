@@ -11,8 +11,6 @@ github_link: mtf/mtf_entities/mtf_fixture.md
 
 <h2>Fixture</h2>
 
-* TOC
-{:toc}
 
 ## Fixture overview {#mtf_fixture_overview}
 

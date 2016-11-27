@@ -14,12 +14,6 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/debug-theme.html
 
 When you create a Magento theme, you might need to create override files for default theme and module view files. To do so, you must determine which template, layout, and style files Magento uses. This topic describes how to do this.
 
-**Contents**
-
-* TOC
-{:toc}
-
-
 ## Locate templates {#debug-theme-templ}
 
 To locate the template that is responsible for a specific part of the storefront or Admin, you can use Magento built-in template hints.

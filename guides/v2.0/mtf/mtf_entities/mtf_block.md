@@ -11,8 +11,6 @@ github_link: mtf/mtf_entities/mtf_block.md
 
 <h2>Block</h2>
 
-* TOC
-{:toc}
 
 ## Block overview {#mtf_block_overview}
 

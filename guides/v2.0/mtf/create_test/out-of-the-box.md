@@ -15,8 +15,6 @@ The out-of-the-box tests are the ready to use functional tests developed by Mage
 
 <h3>Contents</h3>
 
-* TOC
-{:toc}
 
 ### Coverage {#coverage}
 

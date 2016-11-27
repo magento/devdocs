@@ -14,8 +14,6 @@ redirect_from: /guides/v1.0/migration/migration-migrate.html
 ## {{page.menu_title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## General rules for successful migration {#migration-command-gen}
 

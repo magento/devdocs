@@ -11,8 +11,6 @@ github_link: mtf/mtf_quickstart/mtf_quickstart_magento.md
 
 <h2>Prepare Magento application</h2>
 
-* TOC
-{:toc}
 
 ## Change WYSIWYG settings
 

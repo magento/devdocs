@@ -11,8 +11,6 @@ github_link: mtf/mtf_entities/mtf_fixture-repo.md
 
 <h2>Fixture repository</h2>
 
-* TOC
-{:toc}
 
 ## Repository overview {#mtf_repository_overview}
 

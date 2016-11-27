@@ -13,8 +13,6 @@ github_link: test/unit/unit_test_execution_cli.md
 
 ## Running unit tests on the CLI
 
-* TOC
-{:toc}
 
 ### Running all unit tests
 

@@ -13,8 +13,6 @@ github_link: howdoi/checkout/checkout_customize.md
 
 This topic contains the basic information about how to customize the view of an existing checkout step. In the Magento application, checkout is implemented using UI components. You can customize each step by changing the JavaScript implementation or template for a component, adding, removing or disabling a component.
 
-* TOC
-{:toc}
 
 
 ## Change the component's .js implementation and template 

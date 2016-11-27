@@ -11,8 +11,6 @@ github_link: mtf/mtf_entities/mtf_handler.md
 
 <h2>Handler</h2>
 
-* TOC
-{:toc}
   
 ## Handler overview {#mtf_handler_overview}
 

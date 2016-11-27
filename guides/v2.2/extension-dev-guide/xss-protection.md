@@ -11,8 +11,6 @@ github_link: extension-dev-guide/xss-protection.md
 ## {{page.menu_title}}
 {:.no_toc}
 
-* Table of Content
-{:toc}
 
 ### Overview
 

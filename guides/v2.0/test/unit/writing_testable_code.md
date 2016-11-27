@@ -14,8 +14,6 @@ github_link: test/unit/writing_testable_code.md
 ## Writing testable code
 This topic does not aim to be a replacement for existing documentation about testing, but rather tries to highlight some thoughts on the subject. Although the truth of anything depends somewhat on the context, this topic attempts to provide information that is applicable in *most* situations.
 
-* TOC
-{:toc}
 
 ## Tests should be simple
 

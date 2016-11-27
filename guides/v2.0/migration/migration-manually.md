@@ -14,8 +14,6 @@ redirect_from: /guides/v1.0/migration/migration-manually.html
 ## {{page.menu_title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Data types
 

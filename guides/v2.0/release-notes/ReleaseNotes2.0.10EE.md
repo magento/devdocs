@@ -7,8 +7,6 @@ menu_title: Magento EE 2.0.10 Release Notes
 menu_order: 20
 github_link: release-notes/ReleaseNotes2.0.10EE.md
 ---
-*	TOC
-{:toc}
 
 
 ## Magento Enterprise Edition 2.0.10

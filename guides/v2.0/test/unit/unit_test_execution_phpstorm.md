@@ -13,8 +13,6 @@ github_link: test/unit/unit_test_execution_phpstorm.md
 
 ## Running unit tests in PHPStorm
 
-* TOC
-{:toc}
 
 ### Overview
 

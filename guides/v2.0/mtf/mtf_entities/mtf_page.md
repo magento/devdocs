@@ -11,8 +11,6 @@ github_link: mtf/mtf_entities/mtf_page.md
 
 <h2>Page</h2>
 
-* TOC
-{:toc}
 
 ## Page overview {#mtf_page_overview}
 

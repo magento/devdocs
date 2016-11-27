@@ -11,8 +11,6 @@ github_link: mtf/features/test_suite.md
 #### Contents
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Overview {#overview}
 

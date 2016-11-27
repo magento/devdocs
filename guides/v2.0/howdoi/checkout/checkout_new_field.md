@@ -15,8 +15,6 @@ This topic describes how to add new fields to default checkout forms: shipping a
 
 **Contents**
 
-* TOC
-{:toc}
 
 ## Add the field to layout and handle its value on the client side 
 

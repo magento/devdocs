@@ -25,8 +25,6 @@ There are more details about each step in the following sections.
 
 **Contents**:
 
-* TOC
-{:toc}
 
 ## Prerequisites 
 

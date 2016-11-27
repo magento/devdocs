@@ -14,8 +14,6 @@ redirect_from: /guides/v1.0/migration/migration-migrate-delta.html
 ## Migrate incremental changes
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Overview
 

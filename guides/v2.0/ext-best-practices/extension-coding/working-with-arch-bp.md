@@ -19,8 +19,6 @@ In addition to understanding fundamental programming designs/concepts, you are e
 ### Content
 {:.no_toc}
 
-* Table of Content
-{:toc}
 
 ---
 

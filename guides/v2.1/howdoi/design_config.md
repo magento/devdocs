@@ -17,8 +17,6 @@ This topic describes how to customize (add, delete, change) the configuration op
 
 **Contents:**
 
-* TOC
-{:toc}
 
 ## Overview
 

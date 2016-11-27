@@ -26,8 +26,6 @@ For more information about backward compatibility, see [Magento’s backward com
 ### Contents
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Framework changes
 

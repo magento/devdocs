@@ -8,8 +8,6 @@ menu_order: 17
 version: 2.0
 github_link: release-notes/ReleaseNotes2.0.9CE.md
 ---
-*	TOC
-{:toc}
 
 
 ## Magento Community Edition 2.0.9

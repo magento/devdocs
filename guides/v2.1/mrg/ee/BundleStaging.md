@@ -15,8 +15,6 @@ github_link: mrg/ee/BundleStaging.md
 
 <h2>Contents</h2>
 
-* TOC
-{:toc}
 
 ## Magento_BundleStaging module
 

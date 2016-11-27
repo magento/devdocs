@@ -11,8 +11,6 @@ redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_environment.html
 ---
 <h2 id="mtf_quickstart_config">Prepare environment for test run</h2>
 
-* TOC
-{:toc}
 
 ### Run the Selenium Server {#mtf_quickstart_env_selenium}
 The Selenium Server will drive a browser to execute your tests.

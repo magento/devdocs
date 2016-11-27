@@ -13,8 +13,6 @@ github_link: test/integration/integration_test_execution.md
 
 ## Running integration tests in PHPStorm
 
-* TOC
-{:toc}
 
 When writing new integration tests or during debugging, it is convenient to execute tests from within the the PHPStorm IDE.
 
