@@ -13,7 +13,6 @@ github_link: comp-mgr/module-man/compman-enable-disable.md
 redirect_from: /guides/v2.0/comp-mgr/compman-enable-disable.html
 ---
 
-## Step 3. Enable/Disable
 To enable or disable your component, click the appropriate button. The following figure shows an example of disabling a component, in which case you click **Disable**
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_actions_disable.png" width="300px" alt="Click Disable">

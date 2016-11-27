@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/trouble/cman/tshoot_backup.md
 ---
 
-<h2 id="trouble-backup">Troubleshoot backups</h2>
 A backup can fail for any of the following reasons:
 
 *	<a href="#trouble-backup-space">Insufficient disk space</a>
