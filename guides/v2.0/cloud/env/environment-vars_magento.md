@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/env/environment-vars_magento.md
 ---
 
-## Magento application environment variables {#cloud-env-vars-magento}
 <!-- The Magento application enables you to customize the values of many settings, including payment processors, shipping methods, and so on.
  -->
 The following table lists variables that you can override using environment variables.  

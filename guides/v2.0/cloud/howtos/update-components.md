@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/howtos/update-components.md
 ---
 
-## How update extensions {#cloud-howto-upcomp}
 This topic discusses how to update extensions you previously installed from Magento Marketplace or from another source.
 
 Before you continue, you must:

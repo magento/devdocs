@@ -12,8 +12,7 @@ version: 2.0
 github_link: cloud/access-acct/first-time-setup_import.md
 ---
 
-## Import an existing Magento project {#cloud-first-empty}
-This section discusses how to can start your Magento Enterprise Cloud Edition project from an existing Magento installation. We enable you to start in any of the following ways:
+This topic discusses how to can start your Magento Enterprise Cloud Edition project from an existing Magento installation. We enable you to start in any of the following ways:
 
 *	If you already have your Magento project in a Git repository, you'll add the Magento Enterprise Cloud Edition repository as a remote and continue working using your existing workflow.
 *	If your Magento project is *not* in a Git repository, you can create one and add Magento to it later.

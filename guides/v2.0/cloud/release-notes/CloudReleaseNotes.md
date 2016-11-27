@@ -10,7 +10,6 @@ version: 2.1
 github_link: cloud/CloudReleaseNotes.md
 ---
 
-## Magento Enterprise Cloud Edition Release Notes
 Release Notes provide important information about changes, fixes, and known issues in Magento Enterprise Cloud Edition releases.
 
 The following Release Notes are available:

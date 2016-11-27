@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/howtos/upgrade-magento.md
 ---
 
-## How to upgrade the Magento application {#cloud-howto-upgrade}
 This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
 
 <div class="bs-callout bs-callout-warning">

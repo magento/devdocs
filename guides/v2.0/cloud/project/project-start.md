@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/project/project-start.md
 ---
 
-## Get started with a project {#cloud-proj-start}
 This topic shows how to get started working on a project.
 
 ## Command summary {#cloud-proj-start-summ}

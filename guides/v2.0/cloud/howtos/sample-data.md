@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/howtos/sample-data.md
 ---
 
-## How to install optional sample data {#cloud-howto-samp}
 This topic discusses how to install optional Magento sample data. Sample data simulates an active Magento store, including customers, products, and other data.
 
 ### Get started

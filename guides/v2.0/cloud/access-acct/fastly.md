@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/access-acct/fastly.md
 ---
 
-## Set up Fastly
 [Fastly](https://www.fastly.com/why-fastly){:target="_blank"} is required for Magento Enterprise Cloud Edition. It works with Varnish to provide fast caching capabilities and a Content Delivery Network (CDN) for static assets.
 
 See the following sections for more information:

@@ -12,8 +12,6 @@ version: 2.0
 github_link: cloud/live/stage-prod-test.md
 ---
 
-## Testing
-
 When your code, database, and data is successfully migrated to staging or production, use
 the URLs in your onboarding document to test your application. (The onboarding document is available in your Magento Enterprise Cloud Edition OneDrive account.)
 

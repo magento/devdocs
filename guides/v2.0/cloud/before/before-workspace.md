@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/before/before-workspace.md
 ---
 
-## Overview of a Magento workspace {#cloud-first-workspace}
 The following sections discuss your options for setting up a Magento Enterprise Cloud Edition project.
 
 We assume you'll install the Magento software so you can use the command line and the Magento Admin on your laptop. That means you must set up the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html) on your laptop so files and directories you created are owned by that user.

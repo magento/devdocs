@@ -11,7 +11,6 @@ github_link: cloud/cloud-requirements.md
 ---
 
 
-## Magento Enterprise Cloud Edition requirements
 This topic lists requirements for using Magento Enterprise Cloud Edition. Review them carefully before you start developing.
 
 ### Prerequisites {#cloud-req-pre}
