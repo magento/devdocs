@@ -1,0 +1,1 @@
+../../v2.0/extension-dev-guide/object-manager.md

@@ -18,9 +18,9 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Week ending |
 |--------------|--------------|----------------------|--------|
-| [Use Jasmine for JavaScript unit testing]({{ page.baseurl }}test/js/jasmine.html) | 2.x | New | Nov 25 |
-| [Use adapters with third-party libraries]({{ page.baseurl }}extension-dev-guide/adapters.html) | 2.x | New | Nov 25 |
-| [Debug the Fastly extension with Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/trouble/trouble_fastly.html) | 2.x | New | Nov 25 |
+| [Use Jasmine for JavaScript unit testing]({{ page.baseurl }}test/js/jasmine.html){:target="_blank"} | 2.x | New | Nov 25 |
+| [Use adapters with third-party libraries]({{ page.baseurl }}extension-dev-guide/adapters.html){:target="_blank"} | 2.x | New | Nov 25 |
+| [Debug the Fastly extension with Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/trouble/trouble_fastly.html){:target="_blank"} | 2.x | New | Nov 25 |
 |[Magento Enterprise Cloud Edition requirements]({{ page.baseurl }}cloud/cloud-requirements.html){:target="_blank"}   |  2.x  |   Updated | Nov 18 | 
 |[Data migration toolkit directory structure]({{ page.baseurl }}migration/migration-tool-internal-spec.html){:target="_blank"}  |  2.x | Updated  | Nov 18 |  
 |[Added information about the `@import` directive and usage]({{ page.baseurl }}frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"}  |  2.x | Updated  |  Nov 18 | 

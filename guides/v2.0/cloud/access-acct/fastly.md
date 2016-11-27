@@ -45,10 +45,14 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 1.	In your local environment root directory, enter the following commands in the order shown:
 
-		composer config repositories.fastly-magento2 vcs "https://github.com/fastly/fastly-magento2.git"
-		composer require fastly/magento2:dev-master
+		composer config repositories.fastly-magento2 git "https://github.com/fastly/fastly-magento2.git"
+		composer require fastly/magento2
 
 2.	Wait for dependencies to be updated.
+3.	Enter the following commands:
+
+		php bin/magento setup:upgrade
+		php bin/magento cache:clean
 3.	Enter the following commands in the order shown:
 
 		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
@@ -67,6 +71,10 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 5.	From the **Caching Application** list, click **Fastly CDN** as the following figure shows.
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud-fastly_enable-admin.png){:width="650px"}
+
+After you receive a Magento VCL from Fastly, [upload it to your staging or production system]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly).
+
+
 
 {% endcollapsible %}
 
@@ -94,8 +102,6 @@ For details about Fastly configuration, see the [Fastly documentation](https://g
 
 #### Advanced configuration options
 For advanced configuration options, download and customize the [Fastly configuration](https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl){:target="_blank"}.
-
-If you changed the `.vcl` file, open a [support ticket]({{ page.baseurl }}cloud/get-help.html) to upload your configuration to your project.
 
 {% endcollapsible %}
 	

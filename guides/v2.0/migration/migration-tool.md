@@ -11,15 +11,26 @@ github_link: migration/migration-tool.md
 redirect_from: /guides/v1.0/migration/migration-tool.html
 ---
 
-  
-<h2>Data Migration Tool</h2>
+## Data Migration Tool
+{:.no_toc}
 
-To assist you with your migration, Magento provides the Data Migration Tool, a command-line interface (CLI) that provides verification, progress tracking, logging, and testing functions. The migration tool operates in three modes to transfer and adapt data from Magento 1 to Magento 2:
+* TOC
+{:toc}
 
-* Settings mode: Migrates all possible configuration settings from Magento 1 to Magento 2
+## Overview
 
-* Data mode: Bulk migrates data from your Magento 1 database to your Magento 2 database
+Data Migration Tool is a command-line interface (CLI) used for transferring data from Magento 1 to Magento 2. The Tool verifies consistency between Magento 1 and 2 database structures (tables and fields), tracks the data tranfer progress, creates logs, and runs data verification tests.
 
-* Delta mode: Incremental "catch-up" migration after the initial bulk data migration
+## Modes
 
-Each mode consists of several steps that perform tasks specific to the mode. (For example, URL rewrite step, EAV step, settings step.) Each step initially checks data integrity in the Magento 1 and Magento 2 databases and, after verification succeeds, performs the transfer, and verifies data again after it's done.
+The Tool operates in three modes:
+
+1. **Settings**: migrates configuration settings
+
+2. **Data**: bulk migrates main data in the database
+
+3. **Delta**: transfers incremental data updates, added to Magento 1 storefront and Admin Panel while running previous migration modes
+
+## Steps
+
+Each mode consists of several steps that perform specific steps (for example: URL rewrite, EAV, settings, etc.). Each step initially checks data integrity between Magento 1 and Magento 2 databases and, after verification succeeds, performs the transfer. Then the Tool runs the data verification tests again.
