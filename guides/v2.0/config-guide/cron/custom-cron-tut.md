@@ -10,7 +10,6 @@ version: 2.0
 github_link: config-guide/cron/custom-cron-tut.md
 ---
 
-## Configure a custom cron job and cron group (tutorial) {#config-cli-crontab}
 This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample module. You can use a module you already have or you can use a sample module from our [`magento2-samples` repository](https://github.com/magento/magento2-samples){:target="_blank"}.
 
 Running the cron job results in a row being added to the `cron_schedule` table with the name of the cron job, `custom_cron`.
