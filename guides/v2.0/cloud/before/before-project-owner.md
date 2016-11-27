@@ -10,14 +10,6 @@ version: 2.1
 github_link: cloud/before/before-project-owner.md
 ---
 
-#### Contents
-*	[Account owner overview](#cloud-owner-over)
-*	[Sign up for an account](#cloud-first-acct)
-*	[Your welcome e-mail](#cloud-first-email)
-*	[Generate authentication keys](#cloud-owner-keys)
-*	[Create project administrators](#cloud-owner-admins)
-*	[Blackfire and New Relic credentials](#cloud-owner-creds) 
-
 ## Account owner overview {#cloud-owner-over}
 After your company licenses the Magento Enterprise Cloud Edition, the only person who has access to it is the *account owner*&mdash;the person who purchased the software. The account owner is typically a "business user"&mdash; someone in the business or finance organization. 
 

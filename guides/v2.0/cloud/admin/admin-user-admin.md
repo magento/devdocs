@@ -10,10 +10,6 @@ version: 2.0
 github_link: cloud/admin/admin-user-admin.md
 ---
 
-#### Contents
-*	[Overview of Magento Enterprise Cloud Edition user management](#cloud-user-over)
-*	[Manage users with the CLI](#cloud-user-mg-cli) 
-
 ## Overview of Magento Enterprise Cloud Edition user management {#cloud-user-over}
 Magento Enterprise Cloud Edition enables you to administer users by assigning them one or more roles. A *role* provides access and
 improves security in your project. Different roles are authorized to do different things with your applications, environments, and users. 

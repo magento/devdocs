@@ -15,10 +15,6 @@ redirect_from:
   - guides/v2.1/cloud/env/environment-tutorial-env-merge.html
 ---
 
-#### Contents
-*	[Merge an environment](#tut-env-merge)
-*	[Optionally delete the environment](#tut-env-delete)
-
 ## Merge an environment {#tut-env-merge}
 This tutorial shows how to merge changes from an environment to its parent, which in this case is the master branch. You can, for example, merge code updates, new components, changes to themes, and so on.
 

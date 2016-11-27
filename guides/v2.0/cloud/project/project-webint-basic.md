@@ -12,15 +12,6 @@ version: 2.0
 github_link: cloud/project/project-webint-basic.md
 ---
 
-## Basic project information {#project-basic}
-This topic discusses how to use the Web Interface to:
-
-*	[Log in](#project-login) to the project
-*	[Access](#project-access) your site
-*	Get started [configuring your project](#project-conf)
-*	Get started [configuring an environment](#project-conf-env)
-*	View [environment history](#project-conf-hist)
-
 ## Log in to your project {#project-login}
 The Web Interface URL for your project is available in the following ways:
 

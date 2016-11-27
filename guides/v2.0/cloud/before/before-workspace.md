@@ -12,14 +12,6 @@ version: 2.0
 github_link: cloud/before/before-workspace.md
 ---
 
-#### Contents
-*	[Overview of a Magento workspace](#cloud-first-workspace)
-*	[Step 1, Set up an account]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
-*	[Step 2, Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html)
-*	[Step 3, Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)
-*	[Step 4, Set up SSH]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
-*	[Step 5, Set up PHP and MySQL]({{ page.baseurl }}cloud/before/before-workspace-php.html)
-
 ## Overview of a Magento workspace {#cloud-first-workspace}
 The following sections discuss your options for setting up a Magento Enterprise Cloud Edition project.
 

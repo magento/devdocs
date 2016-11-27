@@ -12,16 +12,6 @@ version: 2.0
 github_link: cloud/project/project-conf-files_routes.md
 ---
 
-#### Contents
-*	[`routes.yaml` overview](#cloud-yaml-routes-over)
-*	[Defaults](#cloud-yaml-routes-default)
-*	[Route templates](#cloud-yaml-routes-temp) 
-*	[Route options](#cloud-yaml-routes-opts)
-*	[Simple routes](#cloud-yaml-routes-sample-simple) 
-*	[Wildcard routes](#cloud-yaml-routes-sample-wild) 
-*	[Redirects](#cloud-yaml-routes-sample-redirects) 
-*	[List routes](#cloud-yaml-routes-setup) 
-
 ## `routes.yaml` overview {#cloud-yaml-routes-over}
 A *route* describes how an incoming URL is processed by
 Magento Enterprise Cloud Edition. 

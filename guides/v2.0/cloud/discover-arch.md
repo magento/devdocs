@@ -10,13 +10,6 @@ version: 2.0
 github_link: cloud/discover-arch.md
 ---
 
-#### Contents
-*	[Architecture](#cloud-arch)
-*	[Scalability](#cloud-arch-scale) 
-*	[Projects](#cloud-arch-projects)
-*	[Services](#cloud-arch-services)
-*	[Software versions used](#cloud-arch-software) 
-
 ## Architecture {#cloud-arch}
 Magento Enterprise Cloud Edition enables you to use the following three types of systems.
 

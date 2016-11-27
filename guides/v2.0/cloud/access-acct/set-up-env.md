@@ -17,15 +17,6 @@ redirect_from:
   - /guides/v2.1/cloud/access-acct/admin-env-vars.html
 ---
 
-#### Contents
-*	[Step 1: Set up an environment](#setup-env-setup)
-*	[Step 2: Change the Admin URI, user name, and password in the master branch](#setup-env-adminurl)
-*   [Step 3: Set up cron](#setenv-cron)
-*	[Step 4: Clone a project and environment](#setenv-new-env)
-*   [Step 5: Get your authentication keys](#setenv-keys)
-*   [Step 6: Set file system permissions and ownership](#setup-env-perms)
-*	[Step 7: Install the Magento software](#setup-env-install)
-
 ## Step 1: Set up an environment {#setup-env-setup}
 This topic discusses how to clone an environment locally, set up global Git environment variables, and to enable SSH if you haven't done so already.
 
