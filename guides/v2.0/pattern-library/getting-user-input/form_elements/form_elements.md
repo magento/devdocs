@@ -10,37 +10,7 @@ github_link: pattern-library/getting-user-input/form_elements/form_elements.md
 redirect_from: /guides/v1.0/pattern-library/getting-user-input/form_elements/form_elements.html
 ---
 
-<h2> Form Elements </h2>
-
-<h3>Contents</h3> 
-
-* <a href="#overview">Overview</a>
-* <a href="#use">Use of Form Elements</a>
-* <a href="#labels">Form Labels</a>
-* <a href="#indicator">"Required" Indicator</a>
-* <a href="#focus">Focus State</a>
-* <a href="#pageGrid">Form Elements and the Page Grid</a>
-* <a href="#textfield">Text Field (variations)</a>
-* <a href="#checkboxes">Checkboxes</a>
-* <a href="#radios">Radio Buttons</a>
-* <a href="#drop_sing">Drop Down Selector - Single</a>
-* <a href="#drop_mult">Multi-Select Drop Down</a>
-* <a href="#listbox">List Box</a>
-* <a href="#attributes">Attribute Builder - 'Chips'</a>
-* <a href="#disabled">Disabled Form Field</a>
-* <a href="#validation">Form Field Validation</a>
-* <a href="#measures">Units and Measurement Indicators</a>
-* <a href="#masking">Field Masking</a>
-* <a href="#read">Read-only Form Data</a>
-* <a href="#prog_dis">Progressive Disclosure</a>
-* <a href="#help_tip">Contextual Help tooltip</a>
-* <a href="#help_text">Help text</a>
-* <a href="#specs">Styling and Spacing</a>
-* <a href="#accessibility"> Accessibility </a>
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
+## Form elements
 Form elements are central to the Magento platform, particularly in the ‘Admin’ interface. This article contains examples of the various types of form elements encountered throughout the application to collect data input from its users.
 
 For solutions not described in this article, please refer to other form-related patterns or contact the Magento UX Design team.

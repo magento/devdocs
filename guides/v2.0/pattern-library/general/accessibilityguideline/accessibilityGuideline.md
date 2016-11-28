@@ -10,22 +10,9 @@ version: 2.0
 github_link: pattern-library/general/accessibilityguideline/accessibilityGuideline.md
 redirect_from: /guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html
 ---
-<h2> Accessibility Guidelines </h2>
 
-<h3> Contents </h3>
-
-* <a href="#overview">Overview</a>
-* <a href="#visual">Visual</a>
-* <a href="#content">Content</a>
-* <a href="#user-interaction">User Interaction</a>
-* <a href="#development">Development</a>
-* <a href="#resources">Resources</a>
-
-
-
-<h3 id="overview">Overview</h3>
-
-Magento application should be accessible for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. These are general guidelines that when adhere to, people with diverse range of hearing, movement, sight, and cognitive ability should be able to use.
+## Accessibility guidelines
+The Magento application should be accessible for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. These are general guidelines that when adhere to, people with diverse range of hearing, movement, sight, and cognitive ability should be able to use.
 
 <h3 id="visual">Visual</h3>
 **1. Be mindful of text length**

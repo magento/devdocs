@@ -11,19 +11,11 @@ github_link: pattern-library/templates/address-form/address-form.md
 redirect_from: /guides/v1.0/pattern-library/templates/address-form/address-form.html
 ---
 
-<h2> Address Form </h2>
+## Address Form
 
 <h3> Contents </h3>
+This article discusses  standards and rules for an address entry forms.
 
-* <a href="#overview">Overview</a>
-* <a href="#when-to-use">When to Use / When Not to Use</a>
-* <a href="#variations">Variations</a>
-* <a href="#styling">Styling</a>
-* <a href="#examples">Usage Example</a>
-* <a href="#assets">Assets</a>
-
-<h3 id="overview">Overview</h3>
-This article will establish standards and rules for an address entry forms.<br>
 For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
 
 

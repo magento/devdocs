@@ -10,23 +10,7 @@ version: 2.0
 github_link: pattern-library/navigation/wizard/wizard.md
 ---
 
-<h2> Wizard </h2>
-
-<h3> Contents </h3>
-
-* <a href="#overview">Overview</a>
-* <a href="#when-to-use">When to Use</a>
-* <a href="#when-not-to-use">When Not to Use</a>
-* <a href="#how-to-use">How to Use</a>
-* <a href="#structure">Structure</a>
-* <a href="#style">Style</a>
-* <a href="#interaction-and-behavior">Interaction and Behavior</a>
-* <a href="#variations">Variations</a>
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
-
+## Wizard
 Within the Magento application, it is often necessary to guide a user step-by-step through completing a process. By using a wizard, user can complete a task easier because the user can just follow a preplanned, step-by-step path to accomplish his/her goal. It also increases the chances that the task gets completed successfully.
 
 For solutions not described in this article or for further information, please contact the Magento UX Design Team.
