@@ -12,8 +12,6 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-pagination.html
 
 ---
 
-<h3 id="pagination">UI Pagination Component</h3>
-
 The UI pagination component is a plugin for the listing component. Responsible for rendering pagination UI and applying pagination criteria to collection.
 
 You can configure pagination in several ways:

@@ -8,9 +8,6 @@ version: 2.1
 github_link: ui_comp_guide/components/ui-listing-grid.md
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
 ## Overview
 Listing is a basic component responsible for rendering grids, lists and tiles, providing filtering, pagination, sorting and other features.
 
