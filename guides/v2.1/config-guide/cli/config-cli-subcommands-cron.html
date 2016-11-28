@@ -1591,10 +1591,16 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
       </ul>
 
       <div class="bs-callout bs-callout-warning">
-    <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the instructions in either the <a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a> or <a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">CentOS</a> PHP topics.</p>
-</div>
+        <ul>
+          <li>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in’s configuration. 
+For more information, see <a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a>.</li>
+          <li>
+            <p>In a multi-node system, crontab can run on only one node.</p>
 
-      <p>If you’re not experienced with running cron, you can run all commands with the web server’s configuration; however, we leave the decision up to you.</p>
+            <p>This applies to you only if you set up more than one webnode for reasons related to performance or scalability.</p>
+          </li>
+        </ul>
+      </div>
 
       <h4 id="find-the-php-binary-and-phpini-path">Find the PHP binary and php.ini path</h4>
       <p>To display the path to your PHP binary, enter</p>
