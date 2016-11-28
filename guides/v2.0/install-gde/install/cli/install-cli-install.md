@@ -16,17 +16,6 @@ redirect_from:
   <p>Totally lost? Need a helping hand? Try our <a href="{{page.baseurl}}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{page.baseurl}}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
   
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
-*	<a href="#instgde-install-cli-magento">Install the Magento software from the command line</a>
-*	[Set file system permissions after installing](#instgde-install-cli-magento-perms)
-
-See also <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
-
-
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 
 Before you begin, make sure that:
@@ -55,6 +44,9 @@ The installer is designed to be run multiple times if necessary so you can:
   <ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</li>
   <li>If you get errors during the installation, see <a href="{{page.baseurl}}install-gde/trouble/tshoot.html">Troubleshooting</a>.</li></ul></span>
 </div>
+
+See also <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
+
 
 <h2 id="instgde-cli-help-cmds">Installer help commands</h2>
 

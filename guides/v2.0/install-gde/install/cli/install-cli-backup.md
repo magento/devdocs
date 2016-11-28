@@ -13,16 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-backup.html
 ---
 
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-cli-uninst-back-over">Overview of backup</a>
-*	<a href="#instgde-cli-before">First steps</a>
-*	[Set ulimit for the web server user](#instgde-cli-ulimit)
-*	<a href="#instgde-cli-uninst-back">Back up</a>
-*	<a href="#instgde-cli-uninst-roll">Roll back</a>
 
 <h2 id="instgde-cli-uninst-back-over">Overview of backup</h2>
 This command enables you to back up:

@@ -11,13 +11,6 @@ github_link: install-gde/install/prepare-install.md
 redirect_from: /guides/v1.0/install-gde/install/prepare-install.html
 ---
 
-#### Contents
-
-*	<a href="#install-update-depend">Introduction to Magento installation dependencies</a>
-*	<a href="#install-composer-install">Run `composer install` to update dependencies</a>
-*	[Set pre-installation file system ownership and permissions](#perms-over) 
-
-  
 <h2 id="install-update-depend">Introduction to Magento installation dependencies</h2>
 We now use <a href="http://getcomposer.org">Composer</a> to resolve dependencies before you install the Magento software and extensions.
 
