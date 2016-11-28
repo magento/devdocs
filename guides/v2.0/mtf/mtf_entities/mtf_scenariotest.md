@@ -9,8 +9,6 @@ version: 2.0
 github_link: mtf/mtf_entities/mtf_scenariotest.md
 ---
 
-<h2 id="mtf_scenario-test_overview">Scenario test overview</h2>
-
 Scenario test has two main advantages:
 
 - Each step in the scenario is separate PHP class that is placed in the module it belongs to.

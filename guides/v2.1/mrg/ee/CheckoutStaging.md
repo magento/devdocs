@@ -13,11 +13,6 @@ github_link: mrg/ee/CheckoutStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-
-## Magento_CheckoutStaging module
-
 ## Overview
 
 The Magento_CheckoutStaging module is a part of the staging functionality in Magento EE.

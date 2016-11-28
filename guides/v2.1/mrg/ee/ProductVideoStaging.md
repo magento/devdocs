@@ -13,11 +13,6 @@ github_link: mrg/ee/ProductVideoStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-
-## Magento_ProductVideoStaging module
-
 ## Overview
 
 The Magento_ProductVideoStaging module is a part of the staging functionality in Magento EE. It enables you to add or remove a video to a product update.

@@ -11,8 +11,6 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary.html
 
 ---
 
-<h3>UI Listing/Grid Secondary Components</h3>
-
 The following components extend the functionality of the Listing component:
 
   * <a href="{{page.baseurl}}ui-components/ui-secondary-filter.html">Filter component</a>

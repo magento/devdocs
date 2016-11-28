@@ -13,11 +13,6 @@ github_link: mrg/ee/CatalogRuleStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-
-## Magento_CatalogRuleStaging module
-
 ## Overview
 
 The Magento_CatalogRuleStaging module is a part of the staging functionality in Magento EE. It enables you to add the catalog rule updates to existing store campaigns. In other words, you can add and/or remove catalog rules for some period of time. These updates are shown on the campaign dashboard.

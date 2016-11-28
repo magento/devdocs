@@ -13,9 +13,6 @@ github_link: howdoi/checkout/checkout_new_field.md
 
 This topic describes how to add new fields to default checkout forms: shipping address or billing address form. For illustration we use a case of adding a field to the shipping address form. 
 
-**Contents**
-
-
 ## Add the field to layout and handle its value on the client side 
 
 To add your custom field to the checkout address form and access its value on the client side, 

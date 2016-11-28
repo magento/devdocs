@@ -11,9 +11,6 @@ version: 2.0
 github_link: test/integration/integration_test_execution.md
 ---
 
-## Running integration tests in PHPStorm
-
-
 When writing new integration tests or during debugging, it is convenient to execute tests from within the the PHPStorm IDE.
 
 Please ensure you have [prepared the integration test environment]({{page.baseurl}}test/integration/integration_test_setup.html) before starting.

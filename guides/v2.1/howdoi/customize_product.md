@@ -2,8 +2,8 @@
 layout: default
 group: howdoi
 subgroup: product-create-page
-title: Customize Product Creation Form
-menu_title: Customize Product Creation Form 
+title: Customize product creation form
+menu_title: Customize product creation form 
 menu_node: parent
 menu_order: 1
 version: 2.1
@@ -17,9 +17,6 @@ This topic describes how developers can customize the product creation form used
 The following image is an illustration of the default view of the form on the **New Product** page:
 
 <img src="{{site.baseurl}}common/images/product_pmg.png" alt="The product creation page in Admin">
-
-**Contents**
-
 
 ## Overview
 

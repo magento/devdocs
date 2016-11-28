@@ -13,11 +13,6 @@ github_link: mrg/ee/ConfigurableProductStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-
-## Magento_ConfigurableProductStaging module
-
 ## Overview
 
 The Magento_ConfigurableProductStaging module is a part of the staging functionality in Magento EE. It enables you to add the Configurable Product updates to the existing store campaigns. In other words, you can change the Configurable Product attributes in campaigns. These updates are shown on the campaign dashboard.

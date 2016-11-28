@@ -11,9 +11,6 @@ version: 2.0
 github_link: test/integration/integration_test_execution.md
 ---
 
-## Running integration tests on the command line interface (CLI)
-
-
 Probably the most common way to execute integration tests is using the command line.  
 
 Please ensure you have [prepared the integration test environment]({{page.baseurl}}test/integration/integration_test_setup.html) before starting.

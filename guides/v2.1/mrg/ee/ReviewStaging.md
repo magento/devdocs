@@ -13,11 +13,6 @@ github_link: mrg/ee/ReviewStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-
-## Magento_ReviewStaging module
-
 ## Overview
 
 The Magento_ReviewStaging module is a part of the staging functionality in Magento EE. It displays the Product Reviews grid on the Schedule Update form.

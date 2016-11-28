@@ -9,8 +9,6 @@ version: 2.0
 github_link: mtf/mtf_quickstart/mtf_quickstart_config.md
 redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_config.html
 ---
-<h2 id="mtf_quickstart_config">Adjust configuration</h2>
-
 
 ### Edit `phpunit.xml` to configure PHPUnit {#mtf_quickstart_config_phpunitxml}
 

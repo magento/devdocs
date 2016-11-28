@@ -13,11 +13,6 @@ github_link: mrg/ee/CatalogStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-
-## Magento_CatalogStaging module
-
 ## Overview
 
 The Magento_CatalogStaging module is a part of the staging functionality in Magento EE. It enables you to add catalog updates to the existing store campaigns. In other words, you can change the category and product entity attributes in campaigns. These updates are shown on the campaign dashboard.

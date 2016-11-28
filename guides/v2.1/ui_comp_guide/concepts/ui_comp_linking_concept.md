@@ -9,10 +9,6 @@ version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_linking_concept.md
 ---
 
-## {{page.menu_title}}  
-{:.no_toc}
-
-
 ## Linking properties implementation
 
 The following properties are used for linking observable properties and methods of UI components:

@@ -23,8 +23,6 @@ To change the template of the form field, do the following:
 
 There are more details about each step in the following sections.
 
-**Contents**:
-
 
 ## Prerequisites 
 
