@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.3EE.md
 
 
 ## Magento Enterprise Edition 2.1.3
-We are pleased to present Magento Enterprise Edition 2.1.3. This release includes security enhancements and several functional fixes.
+We are pleased to present Magento Enterprise Edition 2.1.3. This release includes many functional fixes and enhancements.
 
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
@@ -24,14 +24,11 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these highlights:
 
-* You can now import or export CSV files with data that contains special symbols (that is, symbols that are not escaped during file processing).
-
-* The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
 
 
-* Multiple enhancements to the payment feature, including:
+* <i>Multiple enhancements to the payment feature</i>. These changes support your efforts to:
 
-	* Ease repeat purchases by enabling customers to save their PayPal account information as a payment option so that they don’t need to enter their PayPal ID and password when making future purchases. 
+	* Ease repeat purchases by enabling customers to save their PayPal account information as a payment option.  This improvement means that they don’t need to enter their PayPal ID and password when making future purchases. 
 
 	* Cut chargebacks and support calls by customizing the descriptor name, phone number and URL that appears on credit card statements for each of your websites through Braintree.
 
@@ -40,15 +37,22 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 	* Encourage unregistered customers to reorder or add items to an existing order in the Admin interface by no longer requiring them to re-enter their credit card information for these purchases. Magento can now bill the last payment method used during a guest checkout.
 
 
+
 * Increase storefront performance by removing excessive and slow SQL media queries.
 
 * Manage configurable products with many variations in the Admin interface without degrading performance. 
 
+
+
 * Upgrade to Magento 2.1.x from Magento 2.0.x without issue when using multiple master databases for checkout, order management, and product data.
 
+* You can now import or export CSV files with data that contains special symbols (that is, symbols that are not escaped during file processing).
+
+* The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
 
 
-* Additional services for the Sales moduleto support changing order status and returning products to stock.  These web APIs (or <i>service contracts</i>) for the Sales module  incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `RefundInvoice` method to  
+
+* Additional services for the Sales module to support changing order status and returning products to stock.  These web APIs (or <i>service contracts</i>) for the Sales module  incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `RefundInvoice` method to  
 
 	* create a credit memo (complete or partial) for particular invoice
 
@@ -58,7 +62,7 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 	* notify customer about performed refund operation
 
-See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using these new interfaces.
+See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for more information on using these new interfaces.
 
 
 ### Why are we adding new APIs in a patch release?
@@ -79,9 +83,9 @@ We address the following functional fixes and enhancements in this release.
 <!---56928-->* We've improved the performance of the algorithm that Magento uses to calculate batch sizes while indexing categories.  
 
 
-<!---57470 -->* Magento no longer throws an indexing error when Elasticsearch is enabled.
+<!---57470 -->* Magento no longer throws an indexing error when Elasticsearch is enabled. Previously, Magento threw this indexing error when Elasticsearch was enabled:  `mapper_parsing_exception`. 
 
-<!---58703-->* The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products.
+<!---58703-->* The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and threw the following error:  `Error 1114: Table is full`.
 
 
 
@@ -93,7 +97,7 @@ We address the following functional fixes and enhancements in this release.
 {:.no_toc} 
 
 
-<!---58977-->* You can now successfully import multiselect attributes that contain special symbols or delimiters. Previously, when trying to import attributes containing delimiters, data validation (and the import) failed.  
+<!---58977-->* You can now successfully import multiselect attributes that contain special symbols or delimiters. Previously, when you tried to import attributes containing delimiters, data validation (and the import) failed.  
 
 
 <!---56804-->* We've fixed an issue with the correct representation of date and timezones of items in product catalog during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard. 
@@ -101,7 +105,7 @@ We address the following functional fixes and enhancements in this release.
 
 <!---57052-->* You can now import negative quantities. Previously, when importing a product quantity  of '-1',  Magento returned an error. 
 
-<!---56018-->* Magento now imports custom options correctly. <a href="https://github.com/magento/magento2/issues/5573" target="_blank">(GITHUB-5573)</a> 
+<!---56018-->* Magento now imports custom options correctly. Previously, when you tried to import a custom option, the import failed, and Magento threw this error: `Javascript Error: Uncaught RangeError: Maximum call stack size exceeded`. <a href="https://github.com/magento/magento2/issues/5573" target="_blank">(GITHUB-5573)</a> 
 
 <!---57438-->* You can now successfully import images if you set document root to `/pub`. Previously, you needed to set document root to `/magento` to import images. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a>
 
@@ -110,8 +114,6 @@ We address the following functional fixes and enhancements in this release.
 
 
 <!---57981-->* You can now export a bundle product that contains a custom text area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, "There is no data for the export".
-
-<!---60736-->* In a multistore environment, importing product with Add/Update behaviour causes an error "URL key for specified store already exists." OPEN
 
 
 
@@ -131,25 +133,27 @@ We address the following functional fixes and enhancements in this release.
 ### Installation and upgrade
 {:.no_toc} 
 
-<!---56397, 58064-->* You can now upgrade your Magento installation using more than one database. 
+<!---56397, 58064-->* You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data.
 
 
 <!---58742-->* We've resolved multiple issues with the upgrade process from 2.0.7 to 2.1.x (for example, editing a category post-upgrade no longer results in a 500 error). 
 
+<!---57904-->* We've improved the speed of static asset deployment. See <a href="http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options. 
+
+
 <!---56977-->* We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete. 
 
 
-<!---60559-->* Queue `catalog_product_removed_queue` does not exists after upgrade. OPEN
+<!---60559-->* Magento now successfully updates the queue table during upgrade. Previously, Magento omitted the  `catalog_product_removed_queue` row of the queue table during upgrade from Magento 2.0.x to 2.1.x. 
 
 <!---57343-->*  You can now deploy build processes on a different staging machine than the one you're running your production environment on. 
 
-<!---58312-->* Products are no longer  “out of stock” after update from 2.0.7 to 2.1.0. <a href="https://github.com/magento/magento2/issues/5222" target="_blank">(GITHUB-5222)</a> 
+<!---58312-->* Magento no longer incorrectly shows products as “out of stock” after you update your instalaltion from 2.0.7 to 2.1.0. <a href="https://github.com/magento/magento2/issues/5222" target="_blank">(GITHUB-5222)</a> 
 
-<!---57943-->* Magento 2.0.x and 2.1.x does not respect table prefix during installation. <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a> 
+<!---57943-->* Magento 2.0.x and 2.1.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error:   "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a> 
 
-<!---60781-->* Installing with Varnish causes products to not appear on frontend even flushing cache.  Create a product on the backend. Product does not appear on frontend.
-2. Flush cache and reindex.
-3. Product still does not appear on frontend. OPEN
+<!---60781-->* When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. 
+ OPEN
 
 
 ### Performance
@@ -161,12 +165,12 @@ We've improved the performance of these tasks:
 
 <!---55300-->* Creating many (2500 - 5000) product variants
 
-<!---58433-->* Saving category on catalog with 20k+ products is very slow (from 5mins till 1 hour) OPEN
 
 <!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a> 
 
 <!---60041-->* Resizing images on the frontend.
 
+<!---57905-->* We've optimized compiler performance by adding several options to the `setup:di:compile` command. 
 
 
 
@@ -185,28 +189,21 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---58291-->* Magento no longer displays the "Invalid Form Key" exception when you try to save a configurable product with more than fifty options.
 
-<!---54808 -->* You can now edit a product attribute for multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without effecting the edits and then incorrectly tell you that the products had been edited.
+<!---54808 -->* You can now edit a product attribute for multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, and then incorrectly tell you that the products had been edited.
 
-<!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products on the storeview level.
-
-
-<!---54808-->* You can now bulk-edit a product attribute for a configurable product. Previously, when you tried to masbulks-edit an attribute on a collection of filtered, configurable products, the process saved, completed, and indicated that the products had been edited even though they hadn't
+<!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the storeview level.
 
 
-<!---60605-->* Exception when adding configurable product by sku from customer account if associated simple product is out of stock OPEN
-
-<!---60579-->* Price for configurable product when set price for child product on Store View level doesn't work OPEN
-
-<!---60140-->* Disable child product doesn't work in Configurable variations grid OPEN
+<!---54808-->* You can now bulk-edit a product attribute for a configurable product. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, the process saved, completed, and indicated that the products had been edited even though they hadn't.
 
 
-<!---61055-->* Catalog broken when all child products of configurable are disabled OPEN
+<!---60605-->* Magento no longer throws an exception when you add a configurable product by SKU if an associated simple product is out-of-stock. 
 
-Create a configurable product where all child products are disabled
-Open category page with this product
+<!---60140-->* Magento now correctly displays the status of all child products of a configurable product, even disabled ones. Previously, Magento did not correctly display the status of a configurable product's child product if they were disabled. 
 
-Category page doesn't contain that configurable product
-Product should be displayed as Out of Stock if user accesses it by direct link
+
+
+<!---61055-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the category page failed to list the product at all, rather than listing it as out-of-stock. 
 
 
 
@@ -302,37 +299,27 @@ Phone/ZIP code validation before submitting those to Braintree
 ### APIs
 {:.no_toc} 
 
-<!---56961-->* With valid permissions, you can now regain access to your Admin account after temporary disablement due to invalid Admin credentials. 
+<!---56961-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
 
-
-<!---60460-->* Remove minor changes in Payment and Vault API.
 
 
 <!---57039-->* You can now update a product's media gallery through the REST API. 
 
 
-<!---56432-->* Order status is now updated as expected on the Admin dashboard when you use the REST API to create a creditmemo.
+<!---56432-->* Magento now updates order status as expected on the Admin dashboard when you use the REST API to create a credit memo.
 
-<!---59422-->* The product return feature now works as expected when you create the product using the Creditmemo API
+<!---59422-->* The product return feature now works as expected when you create a product using the Creditmemo API. With the new Refund Invoice service, you can:
 
+	* create a credit Memo (complete or partial) for particular invoice
 
+	* add details about refunded items to an order
 
+	* change status and state of an order according to performed actions
 
-Refund Invoice service -- 
-
-With this service you can:
-
-
-* create a Credit Memo (complete or partial) for particular Invoice
-
-* add details about refunded items to an Order
-
-* change status and state of an Order according to performed actions
-
-* notify customer about performed refund operation
+	* notify customer about the refund operation.
 
 
-<!---59874-->* We've enhanced the process of using the WebAPI interface to saving a product stock item. Previously, this type of save action worked inconsistently.
+<!---59874-->* We've improved the process of using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently.
 
 
 
@@ -353,10 +340,10 @@ With this service you can:
 
 
 
-<!---57353-->* You can now add a gift card with an undefined amount to the Items Ordered table. Previously,  Magento did not permit you to add a gift card of an open value into this table.
+<!---57353-->* You can now add a gift card with an undefined amount to the Items Ordered table. Previously,  Magento did not permit you to add a gift card of an open value to this table.
 
 
-<!---60680-->* Unable to save modified gift card product OPEN
+<!---60680-->* You can now successfully change and save your settings for gift cards. (Setting include "allow open amount" or "open amount minimum".) Previously, Magento did not save your changes to the card configuration settings. OPEN
 
 
 
@@ -426,7 +413,7 @@ With this service you can:
 
 {:.no_toc} 
 
-<!---51776-->* You cannot disable the Staging module during installation unless you disable all modules that depend upon it. Because other staging modules (such as module-catalog-import-export-staging) depend on it, we cannot remove this dependency. However, you can disable the Staging module by deselecting all Staging modules in the module list form. (Note: Modules that have dependencies and should not be disabled are grayed out in the interface.)
+<!---51776-->* During Web Setup Wizard installation, in Step 4: Customize Your Store, you cannot use Advanced Modules Configuration to manually unselect Staging-related modules (for example, Magento_CmsStaging). (Note: Modules that have dependencies and should not be disabled are grayed out in the interface.)
 
 <!---57346-->*  The CMS page now refreshes as expected after an update. 
 
@@ -488,11 +475,6 @@ In the detail panel, click Save
 <!---55351, 56936 -->*  The list of allowed countries is now configured as part of website scope, not storeview scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
 
 
-<!---57905-->* Port Compiler optimizations to 2.1.x ASK FOR CLARIFICATION
-
-
-<!---57904-->* Port Deploy Asset optimizations to 2.1.x ASK FOR CLARIFICATION
-
 <!---57375-->*  ACL for Visual Merchandiser. Create a new role called 'Merch' and assign all role resources under 'Products'. 
 2. Create a user and assign him/her this role. 
  Once you login as the user created in step 2, you will not be able to resequence the products.
@@ -505,7 +487,6 @@ In the detail panel, click Save
 
 <!---57044-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products.  <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>,  <a href="https://github.com/magento/magento2/issues/5798" target="_blank">(GITHUB-5798)</a>, <a href="https://github.com/magento/magento2/issues/6041" target="_blank">(GITHUB-6041)</a>, <a href="https://github.com/magento/magento2/issues/6097" target="_blank">(GITHUB-6097)</a> 
 
-<!---57197-->*  Administrators with appropriate permissions can now save products successfully. 
 
 <!---56914-->* Versioning of static files (including CSS, JS, font, and image files) is now enabled by default. 
 
@@ -526,7 +507,7 @@ In the detail panel, click Save
 
 <!---58654-->* The `magento queue:consumers:start` command now works correctly when you provide the `max-messages` argument.
 
-<!---60553-->* Product Customizable Options do not work per store view.	When editing the product, customizable options cannot be edited on a per store view level. A change to one option affects products on all stores. OPEN
+<!---60553-->* Customizable options for products do not work on the store view level. When you are editing a product, changes to one store's customizable options affects products on all stores, not just the store you specified. OPEN
 
 <!---57351-->* We've removed the sample password from the Setup Wizard.
 
@@ -535,7 +516,7 @@ In the detail panel, click Save
 <!---58511-->* Magento now displays server-side Ajax error messages. 
 
 
-<!---60616-->* Customer Address/Customer attribute isn't validated if required in 2.1.3  OPEN
+<!---60616-->* Magento fails to validate required Customer Address or Customer attributes.  OPEN
 
 <!---60801-->* Product price saved on wrong scope when in configuration set Global Price Scope OPEN
  -Magento 2 with additional store view
@@ -550,7 +531,8 @@ Steps to reproduce
  Expected result: Price should be changed, scope label should be [Global]
 
 
-<!---60832-->* UI Upgrade Fails from CE 2.1.1 to EE 2.1.3.
+<!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento threw an exception, "Default website not defined" after this upgrade. This is because Magento read the list of websites from the database, not the config file (as it now does). Temporary workaround: Manually clear `var/cache` after upgrade. 
+
 
 
 
@@ -569,7 +551,7 @@ Steps to reproduce
 
 <!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. <a href="https://github.com/magento/magento2/issues/6401" target="_blank">(GITHUB-6401)</a>
 
-<!---60603-->* _requirejs asset retrieval via static.php does not work with static content versioning OPEN
+<!---60603-->* _requirejs asset retrieval via static.php does not work with static content versioning IN DEV
 
 
 
@@ -594,7 +576,7 @@ Steps to reproduce
 
 
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460
 -->
 
 
@@ -602,7 +584,7 @@ Steps to reproduce
 
 <!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 59293, 60586, 58916, 56957, 59376, 60662-->
 
-<!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738-->
+<!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736-->
 
 
 
@@ -613,6 +595,12 @@ Steps to reproduce
 
 
 ## Known issues
+60781
+60680
+60553
+60616
+60801
+<!---58433-->* Saving category on catalog with 20k+ products is very slow (from 5mins till 1 hour) OPEN
 
 
 
@@ -649,7 +637,7 @@ Workaround**:
 
 
 Workaround**: 
-<!---59555 -->
+<!---59555 --> Increase PHP memory limits 
 
 
 
@@ -670,3 +658,8 @@ Our technology stack is built on PHP and MySQL. For more information, see
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+
+## Credits
+Dear community members, thank you to all who have made suggestions and reported bugs. 
+
+
