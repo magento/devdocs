@@ -12,9 +12,12 @@ github_link: payments-integrations/payment-gateway/response-validator.md
 
 ## Response Validator
 
-Response validator performs gateway response verification, which may vary from low level data formatting/security verification to some business logic, required by store configuration.
+Response validator performs gateway response verification. This may include low level data formatting, security verification, and even execution of some business logic required by the store configuration.
 
-As a result, _Validator_ returns a _Result_ object, which has `isValid()` method returning _Boolean_ and `getFailsDescription()` which returns a list of _Phrases_. 
+As a result, _Validator_ returns a _Result_ object, which has `isValid()` method returning _Boolean_ and `getFailsDescription()` which returns a list of [Phrase](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Phrase.php)s. 
+
+<p class="q">what are phrases?</p>
+
 _Validator_, by its sense is not intended to modify anything, but perform validation and return validation result accordingly.
 
 ##### ValidatorInterface:

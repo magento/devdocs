@@ -12,10 +12,14 @@ github_link: payments-integrations/payment-gateway/request-builder.md
 
 ## Request Builder
 
-Request builder is responsible for building a transaction payload/request from several parts.
-This abstract interface allows you to have complex building strategies (each builder can have simple logic or contains builder composites), but still atomic and testable.
+Request builder is an abstract interface responsible for building a transaction payload/request from several parts. It allows you to implement complex, but still atomic and testable, building strategies: each builder can have simple logic or contain builder composites.
 
-<p class="q">What strategies are possible at all?</p>
+<p class="q">"transaction payload/request"  payload ?</p>
+<p class="q">atomic?</p>
+
+The basic abstraction for Request builder is `\Magento\Payment\Gateway\Request\BuilderInterface`:
+
+<p class="q">true?</p>
 
 {% highlight php startinline=1 %}
 interface BuilderInterface
@@ -31,21 +35,24 @@ interface BuilderInterface
 {% endhighlight %}
 
 
-### Builder Composite
+### Builder composite
 
-The `\Magento\Payment\Gateway\Request\BuilderComposite` is a container for a list of `\Magento\Payment\Gateway\Request\BuilderInterface` which takes a list of class/type/virtualType
-names and performs a lazy instantiation on an actual `BuilderComposite::build([])` call.
-So you may have as many objects as required but only those which are needed for a request will be instantiated. 
+`\Magento\Payment\Gateway\Request\BuilderComposite` is a container for a list of `\Magento\Payment\Gateway\Request\BuilderInterface` implementations. It gets a list of classes, or types, or virtualType names, and performs a lazy instantiation on an actual `BuilderComposite::build([])` call. So that you can have as many objects, as required, but only those, which are needed for a request are instantiated. 
 
-<p class="q">Why is it needed, having many objects?</p>
+`BuilderComposite` implements the [composite design pattern](http://designpatternsphp.readthedocs.io/en/latest/Structural/Composite/README.html pattern).
 
-Inspect the behavior of the `merge()` method, and in a case you want another strategy of parts concatenation, create `BuilderComposite` of your own.
+The concatenation strategy is defined in the `BuilderComposite::merge()` method. So if you need to alter the strategy, you need to add your custom implementation of `BuilderComposite`.
 
-### Example of a simple request decomposition
+### Builder composite configuration
 
-Configuration below may be used as a reference of a case when a simple decomposition can be applied
+Builder composite is configured in `di.xml`. A builder composite might comprise simple builders, and other builder composites.
 
+Example of composite builders configurations for the Braintree payment provider:
+
+    /app/code/Magento/Braintree/etc/di.xml
 {% highlight xml %}
+...
+<!--  is a composite builder comprising a number of builders -->
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
     <arguments>
         <argument name="builders" xsi:type="array">
@@ -58,11 +65,8 @@ Configuration below may be used as a reference of a case when a simple decomposi
         </argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
-
-Or another example for builder with composites:
-
-{% highlight xml %}
+...
+<!-- The same BraintreeAuthorizeRequest builder composite is a part of the BraintreeSaleRequest builder composite -->
 <virtualType name="BraintreeSaleRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
     <arguments>
         <argument name="builders" xsi:type="array">
@@ -73,5 +77,3 @@ Or another example for builder with composites:
 </virtualType>
 {% endhighlight %}
 
-In this example used previously configured `BraintreeAuthorizeRequest` builder and simple `SettlememtDataBuilder` similar to builders from
-authorize request.

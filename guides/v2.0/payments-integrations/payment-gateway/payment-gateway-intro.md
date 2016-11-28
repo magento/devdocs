@@ -18,8 +18,6 @@ The following diagram shows a simplified interaction flow between Magento Sales 
 
 ![Payment Gateway Interaction]({{site.baseurl}}common/images/payments-integrations/pg_interaction_flow.png)
 
-<p class="q">What is Magento Sales Management?</p>
-
 ### What's in this chapter
 
 The topics of this chapter are conceptual and describe the components of the Magento payment provider gateway:
@@ -45,12 +43,19 @@ Description
 </tr>
 <tr>
 <td>
-<i>Payment service provider, payment provider</i>
+<i>Magento sales management</i>
+</td>
+<td>
+Magento interfaces that provide the ability to create orders, invoices, and shipments.
+</td>
+</tr>
+<tr>
+<td>
+<i>Payment service provider, payment provider, provider</i>
 </td>
 <td>
  Online service for accepting electronic payments, like PayPal, Authorize.Net and so on.
 </td>
-</tr>
 </tr>
 <tr>
 <td>

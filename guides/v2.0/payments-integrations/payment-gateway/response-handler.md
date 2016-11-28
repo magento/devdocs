@@ -12,13 +12,17 @@ github_link: payments-integrations/payment-gateway/response-handler.md
 
 ## Response Handler
 
-Response handler processes Gateway response which is usually expressed in following actions:
+Response handler processes Gateway response. Typically it requires one of the following actions:
+
+<p class="q">Does it perform these actions</p>
 
 - Order status needs to be modified
 - There is something to save in Magento for a particular transaction response
 - Email needs to be sent
 
-As from the sense of a Handler to modify some state basing on a response from a Gateway, it's signature represents this approach
+By its nature, Handler is supposed to modify state basing on the payment gateway response. This defines the basic Handler interface signature.  
+
+<p class="q">whose state. A: order state</p>
 
 {% highlight php startinline=1 %}
 interface HandlerInterface
