@@ -257,7 +257,7 @@ Extension points enable extension developers to interact with the Magento_Stagin
 
 ### Public APIs
 
-You can use public APIs from the [`magento2ee/app/code/Magento/Staging/Api`](https://github.corp.magento.com/magento2/magento2ee/tree/develop/app/code/Magento/Staging/Api)
+You can use public APIs from the [`magento2ee/app/code/Magento/Staging/Api`](https://github.com/magento/magento2ee/tree/develop/app/code/Magento/Staging/Api)
 
 ### UI components
 

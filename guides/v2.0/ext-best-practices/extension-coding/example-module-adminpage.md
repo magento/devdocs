@@ -54,7 +54,7 @@ For more information see: [`composer.json`]({{page.baseurl}}extension-dev-guide/
         "AFL-3.0"
       ],
       "require": {
-        "php": "~5.6.0|7.0.2|7.0.4|~7.0.6",
+        "php": "~5.6.0|7.0.2|7.0.4|~7.0.6"
       },
       "autoload": {
         "files": [ "registration.php" ],

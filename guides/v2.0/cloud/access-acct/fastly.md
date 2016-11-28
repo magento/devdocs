@@ -110,6 +110,7 @@ When you're done with development, [merge your environment]({{ page.baseurl }}cl
 For Fastly to be used in production, you must merge with the `master` environment.
 
 #### Next steps
+*	If you have issues with the Fastly extension, see [Troubleshoot Fastly]({{ page.baseurl cloud/trouble/trouble_fastly.html}})
 *   [Manage your environments]({{ page.baseurl }}cloud/env/environments.html)
 *   [Use the Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html)
 *   Configure your project:

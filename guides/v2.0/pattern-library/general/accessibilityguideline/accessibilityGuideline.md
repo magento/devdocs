@@ -64,7 +64,7 @@ Examples
 
 <a href="http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/" target="blank"> http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/ </a>
 
-<a href="https://uie.paypal.com/" target="blank"> https://uie.paypal.com/ </a> (Skip-To Widget)
+<a href="https://github.com/paypal/skipto" target="blank">Skip-To Widget</a>
 
 **8. Use animation, video and audio with caution**
 
