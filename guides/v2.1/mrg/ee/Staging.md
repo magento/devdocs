@@ -13,11 +13,6 @@ github_link: mrg/ee/Staging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-
-## Magento_Staging module
-
 ## Overview
 
 The Magento_Staging module enables you to work with the future [campaigns](#campaign) in Magento EE.

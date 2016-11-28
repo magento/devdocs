@@ -8,8 +8,6 @@ menu_order: 2
 version: 2.1
 github_link: mtf/mtf_quickstart/mtf_quickstart_environment.md
 ---
-<h2 id="mtf_quickstart_config">Prepare environment for test run</h2>
-
 
 ### Run the Selenium Server {#mtf_quickstart_env_selenium}
 The Selenium Server will drive a browser to execute your tests.

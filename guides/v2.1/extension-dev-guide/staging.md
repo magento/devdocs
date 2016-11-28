@@ -11,8 +11,6 @@ github_link: mrg/ee.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Preface</h2>
-
 Staging functionality enables you to create scheduled campaigns, manage campaigns on dashboard and manipulate each future store object update. Moreover, you can preview a storefront during the future campaign.
 
 The functionality is distributed between staging modules. The [Magento_Staging module]({{page.baseurl}}mrg/ee/Staging.html) is a framework for the staging functionality, and other staging modules are extensions for the existing Magento modules. You can read about each staging module in a corresponding topic:

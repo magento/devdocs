@@ -10,10 +10,6 @@ menu_order: 1
 github_link: release-notes/backward-incompatible-changes-2.1.md
 ---
 
-## {{page.title}}
-{:.no_toc}
-
-
 ### Overview
 
 Magento 2.1 introduces several major changes that may affect the correct functionality of already released external modules. The purpose of this document is to highlight major changes between Magento 2.0 and 2.1.

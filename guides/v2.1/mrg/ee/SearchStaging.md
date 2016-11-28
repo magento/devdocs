@@ -13,11 +13,6 @@ github_link: mrg/ee/SearchStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-
-## Magento_SearchStaging module
-
 ## Overview
 
 The Magento_SearchStaging module is a part of the staging functionality in Magento EE. It disables searching in the staging preview mode.
