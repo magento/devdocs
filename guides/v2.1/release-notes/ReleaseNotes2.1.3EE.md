@@ -156,6 +156,8 @@ We address the following functional fixes and enhancements in this release.
  OPEN
 
 
+
+
 ### Performance
 {:.no_toc} 
 We've improved the performance of these tasks: 
@@ -168,7 +170,7 @@ We've improved the performance of these tasks:
 
 <!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a> 
 
-<!---60041-->* Resizing images on the frontend.
+<!---60041-->* Resizing images on the frontend
 
 <!---57905-->* We've optimized compiler performance by adding several options to the `setup:di:compile` command. 
 
@@ -231,34 +233,13 @@ We've enhanced the performance of configurable products in several ways:
 <!---57426-->* Magento no longer throws an error when using the Braintree Vault payment GET order API call. <a href="https://github.com/magento/magento2/issues/6215" target="_blank">(GITHUB-6215)</a>
 
 
-<!---59578 -->* Merge PayPal Ask MAGETWO-40517 and MAGETWO-52475
+<!---59578 -->* We've enhanced our PayPal and Braintree implementations so that merchants can now: 
 
 
-As a Merchant i want to have an ability to vault PayPal accounts when using Braintree as a service so i can offer quick an secure method to re-charge my customers without asking them to log in to PayPal from every singe device they use
-
-As a Merchant i want to have an ability to re-order and edit order using transaction saved in Vault for guest customer so i can offer quick an secure method to re-charge my customers without asking them a payment details again
-As a Merchant i want to have Maestro and Discover bins updated to latest ones so i can accept all possible cards from the customers increasing my conversion
-Acceptance Criteria:
-(Must Haves)
-Maestro and Discover bins added to the credit card form both for Braintree and PayPal solutions
-Customer is able to save PayPal details with the merchant's store using Vault to make future purchases
-Admin user is able to re-order and edit order using transaction saved in Vault for guest customer
-Helps links are updated to reflect latest knowledge base articles hosted by Braintree
+	* Save customer PayPal account information in the Braintree vault when using Braintree as a service. This enhancement provides a secure method for charging my customers without prompting them to enter a payment information for multiple purchases or for purchases from multiple devices. We've also added support for Maestro and Discover bins added to the credit card form both for Braintree and PayPal solutions. 
 
 
-
-
-As a Merchant i want to have an ability to send dynamic descriptors to the Braintree so i can allow customers to easily identify a source of transactions in their bank statements and so i can avoid spending time on resolving disputed transactions filed accidentally
-
-Card
-As a Merchant i want to show Kount status for Braintree in the admin panel so i can easily identify fraud and offer a better service to the customers
-Acceptance Criteria:
-(Should Haves)
-(Bug) Kount transactions are not processed
-Merchant can configure Dynamic Descriptors (Company Name, Phone and URL) system configuration parameters to be passed to Braintree
-Phone/ZIP code validation before submitting those to Braintree
-
-
+	* Configure dynamic descriptors (Company Name, Phone and URL) for Braintree.  This enhancement supports customers easily identifying a source of transactions in their bank statements. (This will potential simplify the resolution of disputed transactions by supporting the display of the Kount status for Braintree in the Admin interface.) 
 
 
 <!---59353-->* You can now use JCB and Diners Club credit cards with the Authorize.net payment method.
