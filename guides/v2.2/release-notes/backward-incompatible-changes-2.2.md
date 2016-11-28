@@ -109,12 +109,25 @@ In Magento 2.2 the behavior of repositories regarding the Filters added to Searc
 
 For details about repositories see the [Searching with repositories]({{page.baseurl}}extension-dev-guide/searching-with-repositories.html) topic.
 
+### Compiler changes
+
+This release removes the multi-tenant compiler option and support of the definitions option for the single tenant compiler in the `env.php` file.
+
+The following classes are no longer available:
+
+* `Magento\Setup\Console\Command\DiCompileMultiTenantCommand`
+* `Magento\Framework\ObjectManager\Relations\Compiled`
+* `Magento\Framework\ObjectManager\Definition\Compiled\Serialized`
+* `Magento\Framework\ObjectManager\Definition\Compiled\Binary`
+* `Magento\Framework\Interception\Definition\Compiled`
+
+The `bin/magento setup:config:set` command no longer has the `--definition-format` option.
+
 ### Changes in UI
 
 ### Database Schema changes
 
 #### Staging (EE Only)
-
 
 ### Persistence management
 
