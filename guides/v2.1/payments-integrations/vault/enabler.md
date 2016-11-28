@@ -127,7 +127,7 @@ public function execute(\Magento\Framework\Event\Observer $observer)
 Now, customers are allowed to enable _Vault_, but also payment should send this details to a payment processor.
 In our case we just set `storeInVaultOnSuccess` in transaction request:
 
-{% highlight php startline=1 %}
+{% highlight php startinline=1 %}
 class VaultDataBuilder implements BuilderInterface
 {
     /**
