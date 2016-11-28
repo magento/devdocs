@@ -15,9 +15,6 @@ To demonstrate the usage of test components from previous sections in the test c
 
 To make the documentation more consistent, we created a completely new test specially for this tutorial. We used the [concrete Magento commit][] functionality for this test. You can [install one][] and try to follow this guide.
 
-<h3>Contents</h3>
-
-
 ### Test description {#example-test-description}
 
 Create a synonym group (synonyms are a way to expand the scope of eligible matching products) with:

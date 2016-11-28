@@ -13,9 +13,6 @@ github_link: mtf/create_test/new_test.md
 
 The FTF helps to create a new test, you can extend an out-of-the-box test, or create a completely new test.
 
-<h3>Contents</h3>
-
-
 ### Extend an out-of-the-box test {#extending-oob-test}
 
 You can extend a test by adding or replacing a [test entity][]. Test entities for the module are stored in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/<testing_module>` directory.
