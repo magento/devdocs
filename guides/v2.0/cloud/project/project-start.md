@@ -33,21 +33,6 @@ All commands are shown with required options only. Get help for any command by a
 `magento-cloud project:info -p <project ID>`
 :	List information about the project, including ID, name, region, URL, and Git URL.
 
-## Delete a project {#project-delete}
-Before you delete a project, make sure you don't need it anymore. You cannot recover a deleted project later.
-
-You must be a [project administrator]({{page.baseurl}}cloud/admin/admin-user-admin.html#cloud-role-project) or [account owner]({{page.baseurl}}cloud/admin/admin-user-admin.html#cloud-role-acct-owner) to perform this task.
-
-To delete a project using the command line:
-
-1.	List the projects:
-
-		magento-cloud project:list
-2.	Delete the project using its project ID:
-
-		magento-cloud project:delete -p <project ID>
-3.	You are required to confirm the deletion.
-	
 #### Related topics
 *	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
 *	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
