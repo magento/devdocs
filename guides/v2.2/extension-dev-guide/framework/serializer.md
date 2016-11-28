@@ -17,13 +17,14 @@ github_link: extension-dev-guide/framework/serializer.md
 
 ## Overview
 
+This library provides a secure way of serializing and unserializing strings, integers, floats, booleans, and arrays.
+
 Magento's Serialize library provides the `Magento\Framework\Serialize\SerializerInterface` and the Json and Serialize implementations for serializing data.
 
-This library provides a secure way of serializing and unserializing strings, integers, floats, booleans, and arrays.
 
 ## Serialization
 
-The main purpose of data serialization is to convert data into a string using `serialize()` to store in a database, a cache, or pass onto another architectural layer.
+The main purpose of data serialization is to convert data into a string using `serialize()` to store in a database, a cache, or pass onto another layer in the application.
 
 The other half of this process uses the `unserialize()` function to reverse the process and convert a serialized string back into string, integer, float, boolean, or array data.
 
@@ -37,12 +38,12 @@ For security reasons, `SerializerInterface` implementations, such as the Json an
 
 ### Json (default)
 
-The `Magento\Framework\Serialize\Serializer\Json` class serializes and unserializes data using the [JSON](http://www.json.org/){:target="_blank"} format.
+The [`Magento\Framework\Serialize\Serializer\Json`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Serialize/Serializer/Json.php){:target="_blank"} class serializes and unserializes data using the [JSON](http://www.json.org/){:target="_blank"} format.
 This class does not unserialize objects.
 
 ### Serialize
 
-The `Magento\Framework\Serialize\Serializer\Serialize` class is less secure than the Json implementation but provides better performance on large arrays.
+The [`Magento\Framework\Serialize\Serializer\Serialize`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php){:target="_blank"} class is less secure than the Json implementation but provides better performance on large arrays.
 This class does not unserialize objects in PHP 7.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -76,7 +77,7 @@ public function __construct(SerializerInterface $serializer) {
 {% endhighlight %}
 
 \\
-The example below shows how to use a serializer's `serialize()` and `unserialize()` functions to store and retrieve array data from a cache:
+The following example shows how to use a serializer's `serialize()` and `unserialize()` functions to store and retrieve array data from a cache:
 {% highlight php startinline %}
 
 ...
