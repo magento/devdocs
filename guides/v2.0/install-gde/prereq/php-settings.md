@@ -11,14 +11,6 @@ version: 2.0
 github_link: install-gde/prereq/php-settings.md
 ---
 
-#### Contents
-
-*	[Required PHP settings](#php-required)
-*	[Step 1: Find PHP configuration files](#php-required-find) 
-*	[Step 2: How to set `php.ini` options](#php-required-set) 
-*	[Step 3: Set `opcache.ini` options](#php-required-opcache)
-
-## Required PHP settings {#php-required}
 This topic discusses how to set required PHP options.
 
 {% collapsible About required and recommended PHP options: %}

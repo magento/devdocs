@@ -10,16 +10,6 @@ github_link: install-gde/prereq/mysql.md
 redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 ---
 
-#### Contents
-
-*	<a href="#mysql-help-beginner">Help if you're just starting out</a>
-*	<a href="#instgde-prereq-mysql-intro">General guidelines</a>
-*	[Installing and configuring MySQL 5.7 on Ubuntu 16](#instgde-prereq-mysql57-ub16)
-*	<a href="#instgde-prereq-mysql-ubuntu">Installing and configuring MySQL 5.6 on Ubuntu</a>
-*	[Installing and configuring MySQL 5.7 on CentOS](#instgde-prereq-mysql57-centos)
-*	<a href="#instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</a>
-*	<a href="#instgde-prereq-mysql-config">Configuring the Magento database instance</a>
-
 <h2 id="mysql-help-beginner">Help if you're just starting out</h2>
 If you're new to all this and need some help getting started, we suggest the following:
 
