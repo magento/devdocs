@@ -13,11 +13,6 @@ github_link: mrg/ee/BundleStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-
-## Magento_BundleStaging module
-
 ## Overview
 
 The Magento_BundleStaging module is a part of the staging functionality in Magento EE. This new functionality enables you to stage a bundle product in the Schedule Update form of the product.

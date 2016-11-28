@@ -9,9 +9,6 @@ version: 2.0
 github_link: mtf/mtf_quickstart/mtf_quickstart_magento.md
 ---
 
-<h2>Prepare Magento application</h2>
-
-
 ## Change WYSIWYG settings
 
 A Selenium web-driver cannot enter data to fields with WYSIWYG. This option disables the WYSIWYG and enables the web-driver to process these fields as simple text areas.

@@ -9,12 +9,7 @@ version: 2.0
 github_link: mtf/create_test/new_test.md
 ---
 
-<h2>New functional test: Theory</h2>
-
 The FTF helps to create a new test, you can extend an out-of-the-box test, or create a completely new test.
-
-<h3>Contents</h3>
-
 
 ### Extend an out-of-the-box test {#extending-oob-test}
 
