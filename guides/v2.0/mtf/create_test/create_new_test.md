@@ -9,8 +9,6 @@ version: 2.0
 github_link: mtf/create_test/new_test.md
 ---
 
-<h2>New functional test: Practice</h2>
-
 To demonstrate the usage of test components from previous sections in the test creation process, we will create a new functional [injectable test][] step-by-step. Before creating automated test, try to pass it manually.
 
 To make the documentation more consistent, we created a completely new test specially for this tutorial. We used the [concrete Magento commit][] functionality for this test. You can [install one][] and try to follow this guide.

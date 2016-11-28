@@ -9,8 +9,6 @@ version: 2.0
 github_link: mrg/intro.md
 ---
 
-## Introduction
-
 The Module Reference Guide contains information about Magento modules of Community Edition and Enterprise Edition.
 
 The information includes:

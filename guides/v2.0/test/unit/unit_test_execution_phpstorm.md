@@ -11,11 +11,6 @@ version: 2.0
 github_link: test/unit/unit_test_execution_phpstorm.md
 ---
 
-## Running unit tests in PHPStorm
-
-
-### Overview
-
 Running tests in PHPStorm requires a couple steps to setup the system.
 
 1. Configuring the PHP interpreter

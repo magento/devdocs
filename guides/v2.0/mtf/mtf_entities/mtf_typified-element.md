@@ -9,9 +9,6 @@ version: 2.0
 github_link: mtf/mtf_entities/mtf_typified-element.md
 ---
 
-<h2>Typified element</h2>
-
-
 ## Overview {#mtf_typified-element_overview}
 
 A typified element is an element of the GUI (Select, Multiselect etc). Magento has custom typified elements with a special logic, for example: Customized Select, Suggest Dropdown, Store View Selector. Typified elements are often used as elements of a form or a grid.

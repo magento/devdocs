@@ -11,9 +11,6 @@ version: 2.0
 github_link: test/unit/unit_test_execution.md
 ---
 
-## Running unit tests
-
-
 Executing the Magento 2 unit tests is straight forward.
 They can be executed in several different ways.
 

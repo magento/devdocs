@@ -10,8 +10,6 @@ version: 2.0
 github_link: mtf/mtf_overview.md
 ---
 
-## Magento functional testing
-
 * <a href="{{page.baseurl}}mtf/mtf_installation.html">Install the FTF</a>
 * <a href="{{page.baseurl}}mtf/mtf_quickstart.html">FTF quick start</a>
 *	Entities

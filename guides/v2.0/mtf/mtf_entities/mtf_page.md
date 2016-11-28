@@ -9,10 +9,7 @@ version: 2.0
 github_link: mtf/mtf_entities/mtf_page.md
 ---
 
-<h2>Page</h2>
-
-
-## Page overview {#mtf_page_overview}
+## Overview {#mtf_page_overview}
 
 A page object is a class that serves to interact with the Magento page under test.
 A page serves as container for [blocks]({{page.baseurl}}mtf/mtf_entities/mtf_page.html).
