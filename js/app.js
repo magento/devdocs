@@ -14,9 +14,9 @@ $(function() {
 	//= include _includes/menu.js
 
   //Do search when search icon is pressed
-  $(".search .search-icon").on('click', function(){
+  /*$(".search .search-icon").on('click', function(){
     $("#searchbox").submit();
-  });
+  });*/
 
 });
 // END document ready
