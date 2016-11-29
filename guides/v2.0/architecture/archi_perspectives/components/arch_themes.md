@@ -18,11 +18,11 @@ redirect_from: /guides/v1.0/architecture/arch_perspectives/themes_intro.html
 
 ## Overview
 
-A <i>theme</i> is a core Magento component whose primary purpose is to control the appearance of your storefront. Themes use a combination of application elements, such as templates, layouts, styles, and images, and are highly extensible.
+A _theme_ is a core Magento component whose primary purpose is to control the appearance of your storefront. Themes use a combination of application elements, such as templates, layouts, styles, and images, and are highly extensible.
 
-<b>Custom theme development is one of two main methods of modifying Magento behavior and storefront appearance</b> (extending modules is the other primary way, and the main way to tailor Magento behavior). Themes are the primary way to customize your Magento storefront appearance. Unlike modules, themes do not provide new business features (other than branding and web user experience).
+**Custom theme development is one of two main methods of modifying Magento behavior and storefront appearance** (extending modules is the other primary way, and the main way to tailor Magento behavior). Themes are the primary way to customize your Magento storefront appearance. Unlike modules, themes do not provide new business features (other than branding and web user experience).
 
-Themes within a Magento installation relate to each other through <i>inheritance</i>, allowing you to customize an existing theme by defining it as a parent theme whose settings can be inherited by any designated child themes. Themes are also divided by area, allowing you to define themes that customize either the storefront or Magento Admin.
+Themes within a Magento installation relate to each other through _inheritance_, allowing you to customize an existing theme by defining it as a parent theme whose settings can be inherited by any designated child themes. Themes are also divided by area, allowing you to define themes that customize either the storefront or Magento Admin.
 
 Magento 2.0 themes are also characterized by responsive web design. For more information on responsive design, see <a href="{{page.baseurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html">Overview of responsive web design in Magento</a>.
 
@@ -32,7 +32,7 @@ For detailed information about working with themes, refer to  <a href="{{page.ba
 
 The location of a theme in your Magento installation depends upon how you installed your theme. Magento knows to look in both `vendor` and  `app/design` for themes. In Magento 2.0, each module and theme contain a `registration.php` file, which defines location information.
 
-<i>Areas</i> also determine a theme's location. Themes that affect the storefront are placed in the `frontend` area, while themes that affect the Admin panel are placed in `adminhtml` directory.
+_Areas_ also determine a theme's location. Themes that affect the storefront are placed in the `frontend` area, while themes that affect the Admin panel are placed in `adminhtml` directory.
 
 ### Location of themes in GitHub repository
 
@@ -50,9 +50,9 @@ While developing a theme, place it under `app/design`.  If you've defined the th
 
 The standard Magento installation provides two default themes: Luma theme (demonstration only) and Blank theme (boilerplate for theme customization).
 
-* <b>Luma theme</b> is for demonstration purposes only. Do not use it as a parent theme in your installation.  Explore it to better understand Magento themes, but do not base customizations on it.
+* **Luma theme** is for demonstration purposes only. Do not use it as a parent theme in your installation.  Explore it to better understand Magento themes, but do not base customizations on it.
 
-* <b>Blank theme</b> is provided as a tool to aid your theme development. Use the Magento Blank theme as a basis for custom theme creation. Because Blank theme is built on principles of responsive web design, it makes an excellent starting point for developing responsive Magento themes.
+* **Blank theme** is provided as a tool to aid your theme development. Use the Magento Blank theme as a basis for custom theme creation. Because Blank theme is built on principles of responsive web design, it makes an excellent starting point for developing responsive Magento themes.
 
 ## Related topics {#m2arch-related}
 
