@@ -1,9 +1,9 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 43_Config
+subgroup: 55_Config
 title: Functional Testing Framework Configuration and Structure
-menu_title: Configuration and Structure
+menu_title: Configuration
 menu_node: parent
 version: 2.0
 github_link: mtf/configuration.md
@@ -23,150 +23,123 @@ The Functional Testing Framework configuration setting are concentrated in two X
 
 ### `phpunit.xml` {#phpunit_xml}
 
-`<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings. Almost all blocks of settings are described in [PHPUnit documentation] except `<php>`, which contains the following settings:
+`<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings. Almost all blocks of settings are described in [PHPUnit documentation] except `<php>` that contain parameters described in the following table.
 
-- ["app_frontend_url"]
-- ["app_backend_url"]
-- ["testsuite_rule"]
-- ["testsuite_rule_path"]
-- ["log_directory"]
-- ["events_preset"]
-- ["module_whitelist"]
-- ["basedir"]
-- ["credentials_file_path"]
-- ["mage_mode"]
-
-#### `"app_frontend_url"` {#app_frontend_url}
-
-**Format:** `<env name="app_frontend_url" value="http://<name>.<domain>/" />`
-
-**Description:** URL to Magento storefront under test.
-
-**Usage:** [Set URL for Magento storefront under test]
-
-**Default:** `<env name="app_frontend_url" value="http://localhost/" />`
-
-
-#### `"app_backend_url"` {#app_backend_url}
-
-**Format:** `<env name="app_backend_url" value="http://<name>.<domain>/<path to Admin>/" />`
-
-**Description:** URL to Magento Admin under test.
-
-**Usage:** [Set URL for Magento Admin URL under test]
-
-**Default:** `<env name="app_backend_url" value="http://localhost/backend/" />`
-
-#### `"testsuite_rule"` {#testsuite_rule}
-
-**Format:** `<env name="testsuite_rule" value="<test suite name>" />`
-
-**Description:** Test suite name to be run.
-
-**Usage:** [Set a test suite][test suite]
-
-**Default:** `<env name="testsuite_rule" value="basic" />`
-
-#### `"testsuite_rule_path"` {#testsuite_rule_path}
-
-**Format:** `<env name="testsuite_rule_path" value="<path to test suite>" />`
-
-**Description:** Path to a test suite.
-
-**Usage:** [Set a path to test suite][test suite]
-
-**Default:** `<env name="testsuite_rule_path" value="Magento/Mtf/TestSuite/InjectableTests" />`
-
-#### `"log_directory"` {#log_directory}
-
-**Format:** `<env name="log_directory" value="<path to the reporting directory>" />`
-
-**Description:** Path to a directory with testing reports.
-
-**Usage:** [Set a reporting directory]
-
-**Default:** `<env name="log_directory" value="var/log" />`
-
-#### `"events_preset"` {#events_preset}
-
-**Format:** `<env name="events_preset" value="<event preset name>" />`
-
-**Description:** Name of a reporting event preset.
-
-**Usage:** [Set a preset]
-
-**Default:** `<env name="events_preset" value="base" />`
-
-#### `"module_whitelist"` {#module_whitelist}
-
-**Format:** `<env name="module_whitelist" value="<names of modules>" />`
-
-**Description:** List of special FTF modules which are present in functional tests only, not in Magento application.
-
-**Default:** `<env name="module_whitelist" value="Magento_Install,Magento_Setup" />`
-
-#### `"basedir"` {#basedir}
-
-**Format:** `<env name="basedir" value="<PHPUnit reports directory>" />`
-
-**Description:** A directory where PHPUnit reports are stored.
-
-**Default:** `<env name="basedir" value="var/log" />`
-
-#### `"credentials_file_path"` {#credentials_file_path}
-
-**Format:** `<env name="credentials_file_path" value="./credentials.xml.dist" />`
-
-**Description:** Relative path to the file with credentials required by services such as payment and shipment.
-
-**Usage:** [Edit credentials.xml to work with Magento modules that requires credentials][credentials]
-
-**Default:** <env name="credentials_file_path" value="./credentials.xml.dist" />
-
-#### `"mage_mode"` {#mage_mode}
-
-**Format:** `<env name="mage_mode" value="developer" />`
-
-**Description:** Magento mode ([About Magento modes]).
-
-**Usage:** This parameter is intended to be used directly in a test. The FTF doesn't use it. Example: `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/PageCache/Test/TestCase/FlushAdditionalCachesTest.php`
- 
-**Default:** `<env name="mage_mode" value="developer" />`
+<table>
+<thead>
+<tr>
+    <th>Parameter</th>
+    <th>Description</th>
+    <th>Format</th>
+    <th>Usage</th>
+    <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td><code>app_frontend_url</code></td>
+    <td>URL to Magento storefront under test.</td>
+    <td>{%highlight xml%}<env name="app_frontend_url" value="http://<name>.<domain>/" /> {% endhighlight %}</td>
+    <td><a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_frontend" target="_blank">Set URL for Magento storefront under test</a></td>
+    <td>{%highlight xml%}<env name="app_frontend_url" value="http://localhost/" /> {% endhighlight %}</td>
+</tr>
+<tr>
+    <td><code>app_backend_url</code></td>
+    <td>URL to Magento Admin under test.</td>
+    <td>{%highlight xml%}<env name="app_backend_url" value="http://<name>.<domain>/<path to Admin>/" /> {% endhighlight %}</td>
+    <td><a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_backend" target="_blank">Set URL for Magento Admin URL under test</a></td>
+    <td>{%highlight xml%}<env name="app_backend_url" value="http://localhost/backend/" /> {% endhighlight %}</td>
+</tr>
+<tr>
+    <td><code>testsuite_rule</code></td>
+    <td>Test suite name to be run.</td>
+    <td>{%highlight xml%}<env name="testsuite_rule" value="<test suite name>" /> {% endhighlight %}</td>
+    <td><a href="{{page.baseurl}}mtf/features/test_suite.html#configure" target="_blank" >Set a test suite</a></td>
+    <td>{%highlight xml%}<env name="testsuite_rule" value="basic" /> {% endhighlight %}</td>
+</tr>
+<tr>
+    <td><code>testsuite_rule_path</code></td>
+    <td>Path to a test suite.</td>
+    <td>{%highlight xml%}<env name="testsuite_rule_path" value="<path to test suite>" /> {% endhighlight %}</td>
+    <td><a href="{{page.baseurl}}mtf/features/test_suite.html#configure" target="_blank" >Set a path to test suite</a></td>
+    <td>{%highlight xml%}<env name="testsuite_rule_path" value="Magento/Mtf/TestSuite/InjectableTests" /> {% endhighlight %}</td>
+</tr>
+<tr>
+    <td><code>log_directory</code></td>
+    <td>Path to a directory with testing reports.</td>
+    <td>{%highlight xml%}<env name="log_directory" value="<path to the reporting directory>" /> {% endhighlight %}</td>
+    <td><a href="http://localhost:4000/guides/v2.0/mtf/features/reporting.html#report-directory" target="_blank">Set a reporting directory</a></td>
+    <td>{%highlight xml%}<env name="log_directory" value="var/log" /> {% endhighlight %}</td>
+</tr>
+<tr>
+    <td><code>events_preset</code></td>
+    <td>Name of a reporting event preset.</td>
+    <td>{%highlight xml%}<env name="events_preset" value="<event preset name>" /> {% endhighlight %}</td>
+    <td><a href="{{page.baseurl}}mtf/features/reporting.html#set-preset" target="_blank">Set a preset</a></td>
+    <td>{%highlight xml%}<env name="events_preset" value="base" /> {% endhighlight %}</td>
+</tr>
+<tr>
+    <td><code>module_whitelist</code></td>
+    <td>List of special FTF modules which are present in functional tests only, not in Magento application.</td>
+    <td>{%highlight xml%}<env name="module_whitelist" value="<names of modules>" /> {% endhighlight %}</td>
+    <td></td>
+    <td>{%highlight xml%}<env name="module_whitelist" value="Magento_Install,Magento_Setup" /> {% endhighlight %}</td>
+</tr>
+<tr>
+    <td><code>basedir</code></td>
+    <td>A directory where PHPUnit reports are stored.</td>
+    <td>{%highlight xml%}<env name="basedir" value="<PHPUnit reports directory>" /> {% endhighlight %}</td>
+    <td></td>
+    <td>{%highlight xml%}<env name="basedir" value="var/log" /> {% endhighlight %}</td>
+</tr>
+<tr>
+    <td><code>credentials_file_path</code></td>
+    <td>Relative path to the file with credentials required by services such as payment and shipment.</td>
+    <td>{%highlight xml%}<env name="credentials_file_path" value="./credentials.xml.dist" /> {% endhighlight %}</td>
+    <td><a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html" target="_blank">Edit credentials.xml to work with Magento modules that requires credentials</a></td>
+    <td>{%highlight xml%}<env name="credentials_file_path" value="./credentials.xml.dist" /> {% endhighlight %}</td>
+</tr>
+<tr>
+    <td><code>mage_mode</code></td>
+    <td>Magento mode (<a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html" target="_blank">About Magento modes</a>).</td>
+    <td>{%highlight xml%}<env name="mage_mode" value="developer" /> {% endhighlight %}</td>
+    <td>This parameter is intended to be used directly in a test. The FTF doesn't use it. Example: <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/PageCache/Test/TestCase/FlushAdditionalCachesTest.php</code></td>
+    <td>{%highlight xml%}<env name="mage_mode" value="developer" /> {% endhighlight %}</td>
+</tr>
+</tbody>
+</table>
 
 ### `config.xml` {#config_xml}
 
 The FTF configuration settings are declared and specified in two places:
 
-- **in the Framework: `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc`**
+{% collapsible in the Framework %}
 
-  {% collapsible Show/hide XML code %}
+The file is located in `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc`.
 
-  {% highlight xml %}
-  {% remote_markdown https://raw.githubusercontent.com/magento/mtf/2.0/etc/config.xml.dist%}
-  {% endhighlight %}
-  {% endcollapsible %}
-  
-  {% collapsible Show/hide XML Schema %}
-  ![image]({{site.baseurl}}common/images/ftf/ftf_mtf-config-xsd-dia.svg)
-  {% endcollapsible %}
+{% highlight xml %}
+{% remote_markdown https://raw.githubusercontent.com/magento/mtf/2.0/etc/config.xml.dist%}
+{% endhighlight %}
 
-  Figure 1 - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc/config.xml`
+![image]({{site.baseurl}}common/images/ftf/ftf_mtf-config-xsd-dia.svg)
 
-- **in Magento functional tests: `<magento2_root_dir>dev/tests/functional/`**
+Figure 1. - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc/config.xml`.
 
-  {% collapsible Show/hide XML code %}
+{%endcollapsible%}
 
-  {% highlight xml %}
-  {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/etc/config.xml.dist %}
-  {% endhighlight %}
-  {% endcollapsible %}
+{% collapsible in Magento functional tests %}
 
-  {% collapsible Show/hide XML Schema %}
-  ![image]({{site.baseurl}}common/images/ftf/ftf_config-xsd-dia.svg)
+The file is located in `<magento2_root_dir>dev/tests/functional/`
 
-  Figure 2 - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc/config.xml`
+{% highlight xml %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/etc/config.xml.dist %}
+{% endhighlight %}
 
-  {% endcollapsible %}
+![image]({{site.baseurl}}common/images/ftf/ftf_config-xsd-dia.svg)
+
+Figure 2. - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc/config.xml`.
+
+{% endcollapsible %}
 
 The FTF merges settings from both files with the following priority:
 
@@ -185,203 +158,73 @@ Settings are grouped into the following blocks:
 
 **Description:** Application configuration settings.
 
-- **&lt;reopenBrowser>`**
-{: #reopenBrowser}
-
-   **Description:** Type of entity that restarts browser.
-
-   **Values:** `test` or `testCase`.
-
-   **Default value:** `<reopenBrowser>test</reopenBrowser>`.
-
-   **Explanation of the default value:** The FTF restarts browser after each test case.
-
-
-- **&lt;backendLogin&gt;**
-{: #backendLogin}
-
-   **Description:** Magento Admin login that is used during functional testing.
-
-   **Default value:** `<backendLogin>admin</backendLogin>`
-
-   **Explanation of the default value:** Magento Admin login is set to `admin`.
-
-
-- **&lt;backendPassword&gt;**
-{: #backendPassword}
-
-   **Description:** Magento Admin password that is used during functional testing.
-
-   **Default value:** `<backendPassword>123123q</backendPassword>`
-
-   **Explanation of the default value:** Magento Admin password is set to `123123q`
-
-- **&lt;appBackendUrl&gt;**
-{: #appBackendUrl}
-
-   **Description:** Base URL of the Magento Admin. Reserved for future use. Not applicable currently.
-
-- **&lt;backendLoginUrl&gt;**
-{: #backendLoginUrl}
-
-   **Description:** Relative path to the Admin login page
-
-   **Default value:** `<backendLoginUrl>admin/auth/login</backendLoginUrl>`
-
-   **Explanation of the default value:** Relative path to the Admin login page is `admin/auth/login`.
-   
+|Parameter|Description |Values|Default value|Explanation of the default value|
+|---|---|---|---|---|
+|`<reopenBrowser>`|Type of entity that restarts browser.|`test` or `testCase`.|`<reopenBrowser>test</reopenBrowser>`|The FTF restarts browser after each test case.|
+|`<backendLogin>`|Magento Admin login that is used during functional testing.| |`<backendLogin>admin</backendLogin>`|Magento Admin login is set to `admin`.|
+|`<backendPassword>`|Magento Admin password that is used during functional testing.| |`<backendPassword>123123q</backendPassword>`|Magento Admin password is set to `123123q`|
+|`<appBackendUrl>`|Base URL of the Magento Admin. Reserved for future use. Not applicable currently.| | | |
+|`<backendLoginUrl>`|Relative path to the Admin login page.| |`<backendLoginUrl>admin/auth/login</backendLoginUrl>`|Relative path to the Admin login page is `admin/auth/login`.|
 
 #### `<isolation>` {#isolation}
 
 **Description:** Settings of a script to be run during functional testing.
 
-- **&lt;resetUrlPath&gt;**
-{: #isolation-resetUrlPath}
-
-   **Description:** URL of a script to be run. The UPL is opened as a usual web page in a browser, so that corresponding permissions must be set to the file.
-
-   **Default value:** `<resetUrlPath>dev/tests/mtf/isolation.php</resetUrlPath>`
-
-   **Explanation of the default value:** Relative path to the script is `dev/tests/mtf/isolation.php`.
-
-- **&lt;testSuite&gt;**
-{: #isolation-testSuite}
- 
-   **Description:** When the script must be called relatively to [test suite] run.
-
-   **Values:** `none`, `before`, `after`, `both`.
- 
-   **Default value:** `<testSuite>none</testSuite>`
-
-   **Explanation of the default value:** The script must never be run.
-
-- **&lt;testCase&gt;**
-{: #isolation-testCase}
-
-   **Description:** When the script must be called relatively to [test case] run.
-
-   **Values:** `none`, `before`, `after`, `both`
- 
-   **Default value:** `<testCase>none</testCase>`
-
-   **Explanation of the default value:** The script must never be run.
-
-- **&lt;test&gt;**
-{: #isolation-test}
-
-   **Description:** When the script must be called relatively to test run.
-
-   **Values:** `none`, `before`, `after`, `both`.
- 
-   **Default value:** `<test>none</test>`
-
-   **Explanation of the default value:** The script must never be run.
+|Parameter|Description |Values|Default value|Explanation of the default value|
+|---|---|---|---|---|
+|`<resetUrlPath>`|URL of a script to be run. The UPL is opened as a usual web page in a browser, so that corresponding permissions must be set to the file.| |`<resetUrlPath>dev/tests/mtf/isolation.php</resetUrlPath>`|Relative path to the script is `dev/tests/mtf/isolation.php`.|
+|`<testSuite>`|When the script must be called relatively to [test suite] run.|`none`, `before`, `after`, `both`|`<testSuite>none</testSuite>`|The script must never be run.|
+|`<testCase>`|When the script must be called relatively to [test case] run.|`none`, `before`, `after`, `both`|`<testCase>none</testCase>`|The script must never be run.|
+|`<test>`|When the script must be called relatively to test run.|`none`, `before`, `after`, `both`|`<test>none</test>`|The script must never be run.|
 
 #### `<server>` {#server}
 
 **Description:** Selenium server settings. [Open settings declarations in Selenium repository]
 
-- **name**
-{: #server-name}
+|Parameter|Description |Values|Default value|Explanation of the default value|
+|---|---|---|---|---|
+|`name`|Name of an item.|`"selenium"`|`"selenium"`|Item containing Selenium Server settings.|
+|`type`|Required Selenium setting. The FTF doesn't use it.|`"default"`|`"default"`| |
+|`browser`|A browser full name to be shown where you needed it. The FTF doesn't use it.| |`"Mozilla Firefox"`| |
+|`browserName`|A browser being used for functional testing.|`android`, `chrome`, `firefox`, `htmlunit`, `internet explorer`, `iPhone`, `iPad`, `opera`, `safari`|`"firefox"`|Mozilla Firefox is used by a web driver during test run.|
+|`host`| | |`"localhost"`| |
+|`port`| | |`"4444"`| |
+|`seleniumServerRequestsTimeout`| | |`"90"`| |
+|`sessionStrategy`| | |`"shared"`| |
 
-   **Description:** Name of an item.
+##### **&lt;desiredCapabilities&gt;**
 
-   **Constant value:** `"selenium"`
+[Learn about desiredCapabilities in Selenium official documentation.][desiredCapabilities]
 
-- **type** 
-{: #server-type}
-
-   **Description:** Required Selenium setting. The FTF doesn't use it.
-
-   **Constant value:** `"default"`
-
-- **browser** 
-{: #server-browser}
-
-   **Description:** Web browser full name to be shown where it is needed. The FTF doesn't use it.
-
-   **Default value:** `"Mozilla Firefox"`
-
-- **browserName**
-{: #server-browserName}
-
-   **Description:** The name of the browser being used for functional testing.
-
-   **Values:** `android, chrome, firefox, htmlunit, internet explorer, iPhone, iPad, opera, safari`.
-
-   **Default value:** `"firefox"`
-
-   **Explanation of the default value:** Mozilla Firefox is used by a web driver during test run.
-
-- **host**
-{#server-host}
-
-   **Description:**
- 
-   **Default value:** `"localhost"`
-
-   **Explanation of the default value:**
- 
-- **port**
-{#server-port}
-
-   **Description:**
-
-   **Default value:** `"4444"
-
-   **Explanation of the default value:**
-
-- **seleniumServerRequestsTimeout**
-{: #server-seleniumServerRequestsTimeout}
-
-   **Description:**
-
-   **Default value:** `"90"`
-
-   **Explanation of the default value:**
-
-- **sessionStrategy**
-{: #server-sessionStrategy}
-
-   **Description:**
-
-   **Default value:** `"shared"`
-
-   **Explanation of the default value:**
-
-- **&lt;desiredCapabilities&gt;**
-{: #server-desiredCapabilities}
-
-   [Learn about desiredCapabilities in Selenium official documentation.][desiredCapabilities]
 
 #### **&lt;handler&gt;** {#handler}
 
-	http://devdocs.magento.com/guides/v2.1/mtf/mtf_entities/mtf_handler.html#mtf_handler_configxml
+Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value 0. token contains access token (used by WebAPI handlers only). [Learn more about handlers.][handler]
 
-- `<curl priority=`
-- `<ui priority=`
-- `<webapi priority="0">`
-   
-   - `<token>integration_token</token>`
-      placeholder
-      добавить в топик по хендлерам
+|Parameter|Description |Values|Default value|
+|---|---|---|---|
+|`<webapi priority>`|Value of a WebAPI handler.|Decimal.|`"0"`|
+|`<curl priority>`|Value of a curl handler priority.|Decimal.|`"1"`|
+|`<ui priority>`|Value of a UI handler priority.|Decimal.|`"2"`|
+
+
+##### `<token>`
+
+`<token>integration_token</token>`
+
+        placeholder
+        добавить в топик по хендлерам
  
 #### **&lt;install&gt;** {#install}
 
-        <host>127.0.0.1</host>
-	Параметр для MySQL
-        <user>root</user>
-	Параметр для MySQL
-        <password>123123q</password>
-	Параметр для MySQL
-        <dbName>default</dbName>
-	Параметр для MySQL
-        <baseUrl>http://magento2ce.com/</baseUrl>
-	Значение для установки
-        <backendName>backend</backendName>
-	Значение для установки
-
-
+|Parameter|Description|Default value|
+|---|---|---|
+|`<host>`|Database host IP address required during Magento installation.|`127.0.0.1`|
+|`<user>`|Name of a database user.| `root`|
+|`<password>`| Password of a database user.|`123123q`|
+|`<dbName>`|Name of a database.|`default`|
+|`<baseUrl>`|Magento installation base URL.|`http://magento2ce.com/`|
+|`<backendName>`|Magento installation Admin relative URL.|`backend`|
 
 <!-- LINK DEFINITIONS -->
 
@@ -391,12 +234,7 @@ Settings are grouped into the following blocks:
 [PHPUnit documentation]: https://phpunit.de/manual/current/en/appendixes.configuration.html
 
 <!-- Internal -->
-[About Magento modes]: {{page.baseurl}}config-guide/bootstrap/magento-modes.html
-[credentials]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html
-[Set a preset]: {{page.baseurl}}mtf/features/reporting.html#set-preset
-[Set a reporting directory]: http://localhost:4000/guides/v2.0/mtf/features/reporting.html#report-directory
-[Set URL for Magento storefront under test]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_frontend
-[Set URL for Magento Admin URL under test]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_backend
+[handler]: {{page.baseurl}}mtf/mtf_entities/mtf_handler.html
 [test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
 [test suite]: {{page.baseurl}}mtf/features/test_suite.html#configure
 
