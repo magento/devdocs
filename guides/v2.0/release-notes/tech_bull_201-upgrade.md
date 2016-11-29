@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Technical Bulletin
+subgroup: 05_techbull
 title: Technical Bulletin
 menu_title: Magento upgrade issues (Jan. 28, 2016)
 menu_node: 
