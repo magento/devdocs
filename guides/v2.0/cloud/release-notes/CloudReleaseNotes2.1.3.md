@@ -22,7 +22,7 @@ Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to ver
 
 #### Update `.magento.app.yaml`
 
-{% collapsible To update `.magento.app.yaml`:}
+{% collapsible To update `.magento.app.yaml`: %}
 
 1.	Open `<Magento root dir>/.magento.app.yaml` in a text editor.
 2.	Locate the `web:` section.
