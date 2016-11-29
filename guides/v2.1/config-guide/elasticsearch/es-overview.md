@@ -16,7 +16,7 @@ github_link: config-guide/elasticsearch/es-overview.md
 #### Contents
 
 *	<a href="#overview">Overview of Elasticsearch</a>
-*	<a href="#es-prereq">Prerequisites</a>
+*	<a href="#es-prereq">Install prerequisites and Elasticsearch</a>
 *	<a href="#es-resources">Additional resources</a>
 *	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
 *	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
@@ -74,7 +74,7 @@ Search requests are processed as follows:
 4.	Elasticsearch processes the search request.
 5.	Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
 
-## Prerequisites {#es-prereq}
+## Install prerequisites and Elasticsearch {#es-prereq}
 The tasks discussed in this section require the following:
 
 *	[Firewall and SELinux](#firewall-selinux)
