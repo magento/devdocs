@@ -9,12 +9,9 @@ version: 2.1
 github_link: rest/list.md
 ---
 
-<h2 id="list">List of REST APIs</h2>
+## List of REST APIs for Magento Community Edition {#list}
 
 Additions since 2.0 are marked with asterisks (*).
-
-* TOC
-{:toc}
 
 ### Backend
 
@@ -395,3 +392,60 @@ Additions since 2.0 are marked with asterisks (*).
     PUT    /V1/taxClasses/:classId
     DELETE /V1/taxClasses/:taxClassId
     GET    /V1/taxClasses/search
+
+## List of REST APIs for Magento Enterprise Edition {#listee}
+
+### CustomerBalance
+
+    POST   /V1/carts/mine/balance/apply
+
+### GiftCardAccount
+
+    GET    /V1/carts/:quoteId/giftCards
+    PUT    /V1/carts/:cartId/giftCards
+    DELETE /V1/carts/:cartId/giftCards/:giftCardCode
+    * DELETE /V1/carts/guest-carts/:cartId/giftCards/:giftCardCode
+    * DELETE /V1/carts/mine/giftCards/:giftCardCode
+    POST   /V1/carts/mine/giftCards
+    POST   /V1/carts/guest-carts/:cartId/giftCards
+    GET    /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode
+    GET    /V1/carts/mine/checkGiftCard/:giftCardCode
+
+### GiftRegistry
+
+    POST   /V1/giftregistry/mine/estimate-shipping-methods
+    POST   /V1/guest-giftregistry/:cartId/estimate-shipping-methods
+
+### GiftWrapping
+
+    GET    /V1/gift-wrappings/:id
+    POST   /V1/gift-wrappings
+    PUT    /V1/gift-wrappings/:wrappingId
+    GET    /V1/gift-wrappings
+    DELETE /V1/gift-wrappings/:id
+
+### Reward
+
+    POST   /V1/reward/mine/use-reward
+
+### Rma
+
+    POST   /V1/returns/:id/tracking-numbers
+    DELETE /V1/returns/:id/tracking-numbers/:trackId
+    GET    /V1/returns/:id
+    DELETE /V1/returns/:id
+    POST   /V1/returns/:id/comments
+    POST   /V1/returns
+    PUT    /V1/returns/:id
+    GET    /V1/returns/:id/comments
+    GET    /V1/returns
+    GET    /V1/returnsAttributeMetadata/:attributeCode
+    GET    /V1/returnsAttributeMetadata/form/:formCode
+    GET    /V1/returnsAttributeMetadata
+    GET    /V1/returnsAttributeMetadata/custom
+    GET    /V1/returns/:id/tracking-numbers
+    GET    /V1/returns/:id/labels
+
+### Worldpay
+
+    * POST   /V1/worldpay-guest-carts/:cartId/payment-information
