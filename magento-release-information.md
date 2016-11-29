@@ -10,4 +10,7 @@ version: 2.0
 github_link: magento-release-information.md
 ---
 
-TBD
+To find Release Notes, technical bulletins, and backward-incompatible information for the Magento 2.0.x and 2.1.x releases, see the following:
+
+*	[Magento 2.0.x release information]({{ site.gdeurl }}release-notes/bk-release-notes.html)
+*	[Magento 2.1.x release information]({{ site.gdeurl21 }}release-notes/bk-release-notes.html)
