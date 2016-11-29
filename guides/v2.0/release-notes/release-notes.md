@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: 02_ReleaseNotes
+subgroup: 02_rel-notes
 title: Magento 2.0 Release Notes 
 menu_title: Magento 2.0 Release Notes 
 menu_node: parent
