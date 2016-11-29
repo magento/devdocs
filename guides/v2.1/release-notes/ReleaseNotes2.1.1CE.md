@@ -1,6 +1,6 @@
 ---
-layout: default
-group: release-notes
+layout: full-width
+group: 
 subgroup: 02_ReleaseNotes
 title: Magento CE 2.1.1 Release Notes
 menu_title: Magento CE 2.1.1 Release Notes
