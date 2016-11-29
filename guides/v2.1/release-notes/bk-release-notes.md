@@ -1,6 +1,7 @@
 ---
 layout: default
 group: release-notes
+subgroup: 2.1.x Release Information
 title: 2.1.x Release Information
 menu_title: 2.1.x Release Information
 menu_order: 1
@@ -9,12 +10,12 @@ version: 2.1
 github_link: release-notes/bk-release-notes.md
 ---
 
-### Magento Community Edition (CE) 2.1 Release Notes
+## Magento Community Edition (CE) 2.1 Release Notes
 *	[Version 2.1.2]({{page.baseurl}}release-notes/ReleaseNotes2.1.2CE.html){:target="_blank"}
 *	[Version 2.1.1]({{page.baseurl}}release-notes/ReleaseNotes2.1.1CE.html){:target="_blank"}
 *	[Version 2.1.0]({{page.baseurl}}release-notes/ReleaseNotes2.1.0CE.html){:target="_blank"}
 
-### Magento Enterprise Edition (EE) 2.1 Release Notes
+## Magento Enterprise Edition (EE) 2.1 Release Notes
 *	[Version 2.1.2]({{page.baseurl}}release-notes/ReleaseNotes2.1.2EE.html){:target="_blank"}
 *	[Version 2.1.1]({{page.baseurl}}release-notes/ReleaseNotes2.1.1EE.html){:target="_blank"}
 *	[Version 2.1.0]({{page.baseurl}}release-notes/ReleaseNotes2.1.0EE.html){:target="_blank"}

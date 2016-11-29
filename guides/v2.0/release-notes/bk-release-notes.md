@@ -1,6 +1,7 @@
 ---
 layout: default
 group: release-notes
+subgroup: 2.0.x Release Information
 title: 2.0.x Release Information
 menu_title: 2.0.x Release Information
 menu_order: 1
