@@ -11,11 +11,11 @@ github_link: release-notes/bk-release-notes.md
 ---
 
 ## Magento Community Edition (CE) 2.1 Release Notes
-{% include install/release-notes/ce_21_release-notes-links.md %}
+{% include install/releasenotes/ce_21_release-notes-links.md %}
 
 ## Magento Enterprise Edition (EE) 2.1 Release Notes
 
-{% include install/release-notes/ee_21_release-notes-links.md %}
+{% include install/releasenotes/ee_21_release-notes-links.md %}
 
 **Looking for the Magento 2.0.x Release Notes?** See <a href="{{site.gdeurl}}release-notes/bk-release-notes.html" target="_blank">Magento 2.0.x Release Notes</a>. 
 

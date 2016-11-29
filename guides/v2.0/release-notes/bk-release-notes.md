@@ -13,11 +13,11 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 
 ## Magento Community Edition (CE) 2.0 Release Notes
 
-{% include install/release-notes/ce_20_release-notes-links.md %}
+{% include install/releasenotes/ce_20_release-notes-links.md %}
 
 ## Magento Enterprise Edition (EE) 2.0 Release Notes
 
-{% include install/release-notes/ee_20_release-notes-links.md %}
+{% include install/releasenotes/ee_20_release-notes-links.md %}
 
 ## What's new on devdocs
 [What's new]({{ site.baseurl }}magento-devdocs-whatsnew.html)
