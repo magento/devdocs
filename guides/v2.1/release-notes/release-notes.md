@@ -11,7 +11,7 @@ github_link: release-notes/release-notes.md
 ---
 
 ### Magento Community Edition (CE) Release Notes
-{% include install/releasenotes/ce_20_release-notes-links.md %}
+{% include install/releasenotes/ce_21_release-notes-links.md %}
 
 ### Magento Enteprise Edition (EE) Release Notes
-{% include install/releasenotes/ee_20_release-notes-links.md %}
+{% include install/releasenotes/ee_21_release-notes-links.md %}
