@@ -37,6 +37,9 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 *	[Version 2.0.1](http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.1.html){:target="_blank"}
 *	[Version 2.0.0](http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.html){:target="_blank"}
 
+## What's new on devdocs
+[What's new]({{ site.baseurl }}magento-devdocs-whatsnew.html)
+
 ## Magento CE and EE Release Candidates
 
 *	[CE 2.1 Release Candidate 3 (RC3)]({{page.baseurl}}release-notes/ReleaseNotes2.1_RC3EE.html){:target="_blank"}
