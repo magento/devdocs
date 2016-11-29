@@ -18,7 +18,7 @@ Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to ver
 
 #### Get started
 
-{% include cloud/get-started-cli.md %}
+{% include cloud/cli-get-started.md %}
 
 #### Update `.magento.app.yaml`
 
