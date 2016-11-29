@@ -5,7 +5,7 @@ subgroup: Architectural Basics
 title: Architectural basics overview
 menu_title: Architectural basics
 menu_node: parent
-menu_order:
+menu_order: 1
 version: 2.0
 github_link: architecture/archi_perspectives/ABasics_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/ABasics_intro.html
@@ -24,7 +24,7 @@ The following discussion focuses on how these topics apply directly to Magento:
 * Event-driven architecture
 * Security
 
-### Related topics
+## Related topics
 
 <a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html" target="_blank">Architectural diagrams</a>
 
