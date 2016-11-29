@@ -1,22 +1,33 @@
 ---
 layout: default
-group: 
+group:
 subgroup: View library
 title: XML layouts and schemas
 menu_title: XML layouts and schemas
-menu_order: 
+menu_order:
 version: 2.0
 github_link: architecture/view/xml-schema-layout.md
 redirect_from: /guides/v1.0/architecture/view/xml-schema-layout.html
 ---
 
-<h2 id="m2devgde-xml-layout-intro">Overview</h2>
+## {{page.menu_title}}
+{:.no_toc}
+
+* TOC
+{:toc}
+
+## Overview {#m2devgde-xml-layout-intro}
+
 <p>In the Magento system, you define application page layouts in XML files, also known as <i>layouts</i>.</p>
+
 <p>The system uses the Magento XML schemas to validate these layouts.</p>
-<h2 id="xml-schemas">XML schemas</h2>
+
+## XML schemas {#xml-schemas}
+
 <p>The Magento system uses the following XML schemas to validate these layouts:</p>
 
 <p class="q">Reviewer: The original topic mentioned 3 XSD files, two of which do not exist or have been renamed: layout_single.xsd, layouts.xsd, and layout_merged.xsd. I guessed that layout_single = layout_generic but I do not know the correct reference for layouts.xsd. Please provide this information.</p>
+
 <table>
    <tbody>
       <tr style="background-color: lightgray">
@@ -38,11 +49,13 @@ redirect_from: /guides/v1.0/architecture/view/xml-schema-layout.html
       </tr>
    </tbody>
 </table>
-<p>These layout-specific XML schemas might use additional universal XML schemas.</p>
-<h2 id="layout-elements">XML layout elements and structure</h2>
-<p>The following table lists the allowable XML layout elements.
-   The table reflects the correct structure for these elements.
-</p>
+
+These layout-specific XML schemas might use additional universal XML schemas.
+
+## XML layout elements and structure {#layout-elements}
+
+The following table lists the allowable XML layout elements. The table reflects the correct structure for these elements.
+
 <table style="width:135%">
    <col width="33%">
    <col width="33%">
@@ -339,10 +352,11 @@ redirect_from: /guides/v1.0/architecture/view/xml-schema-layout.html
       </tr>
    </tbody>
 </table>
-<h2 id="xml-validation">Validate XML layouts</h2>
-<p>Use the following tests
-   to validate new or changed layouts:
-</p>
+
+## Validate XML layouts {#xml-validation}
+
+Use the following tests to validate new or changed layouts:
+
 <table style="width:125%">
    <col width="75%">
    <col width="25%">
