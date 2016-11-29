@@ -15,7 +15,7 @@ github_link: cloud/live/stage-prod-migrate-prereq.md
 ## Prepare to migrate data {#cloud-live-migrate-prereq}
 This topic discusses tasks you must perform before you migrate your database and code to staging or production:
 
-1.	Create a support ticket to [migrate your `.yaml` files](#cloud-live-migrate-yaml)
+1.	Create a support ticket to [migrate deployment hooks](#cloud-live-migrate-yaml)
 2.	Get your [access URLs](#cloud-live-migrate-urls) for staging and production
 3.	Set up [remote Git repositories](#cloud-live-migrate-git)
 4.	Set up your [SSH agent](#cloud-live-migrate-agent)
