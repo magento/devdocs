@@ -57,9 +57,9 @@ The RabbitMQ server is included on Ubuntu, but the version is often old. RabbitM
 Detailed installation instructions are beyond the scope of this document. See [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html) for more information.
 
 <h3>Install Erlang</h3>
-RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ
+RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ.
 
-<a href="https://www.erlang-solutions.com/downloads/download-erlang-otp" target="_blank">Manual installation</a> for more information.
+See <a href="https://www.erlang-solutions.com/resources/download.html" target="_blank">Manual installation</a> for more information.
 
 Run the following commands to install this feature.
 
