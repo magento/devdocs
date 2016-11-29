@@ -7,7 +7,7 @@ menu_title: Set up a custom cron job and cron group
 menu_order: 1
 menu_node: parent
 version: 2.0
-github_link: config/cron/custom-cron.md
+github_link: config-guide/cron/custom-cron.md
 ---
 
 ## Set up a custom crontab and cron group
