@@ -1489,7 +1489,7 @@
 
 <ul>
   <li><a href="#overview">Overview of Elasticsearch</a></li>
-  <li><a href="#es-prereq">Prerequisites</a></li>
+  <li><a href="#es-prereq">Install prerequisites and Elasticsearch</a></li>
   <li><a href="#es-resources">Additional resources</a></li>
   <li><a href="/guides/v2.1/config-guide/elasticsearch/es-config-nginx.html">Configure nginx and Elasticsearch</a></li>
   <li><a href="/guides/v2.1/config-guide/elasticsearch/es-config-apache.html">Configure Apache and Elasticsearch</a></li>
@@ -1567,7 +1567,7 @@
   <li>Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.</li>
 </ol>
 
-<h2 id="es-prereq">Prerequisites</h2>
+<h2 id="es-prereq">Install prerequisites and Elasticsearch</h2>
 <p>The tasks discussed in this section require the following:</p>
 
 <ul>
@@ -1697,8 +1697,10 @@ chkconfig --add elasticsearch
           <li>
             <p>Ubuntu:</p>
 
-            <pre><code>wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
+            <pre><code>wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
+echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list
+
 sudo apt-get -y update &amp;&amp; sudo apt-get -y install elasticsearch
 </code></pre>
           </li>
@@ -1706,6 +1708,20 @@ sudo apt-get -y update &amp;&amp; sudo apt-get -y install elasticsearch
 
         <p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.</p>
       </li>
+      <li>
+        <p>Open the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-configuration.html#settings" target="_blank">Elasticsearch configuration file</a>, elasticsearch.yml`, in a text editor.</p>
+
+        <p>For example, it might be located in <code>/etc/elasticsearch</code>.</p>
+      </li>
+      <li>
+        <p>Add the following parameter to the <code>Memory</code> section:</p>
+
+        <pre><code>index.query.bool.max_clause_count: 4096
+</code></pre>
+
+        <p>For more information, see <a href="http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch" target="_blank">Setting the BooleanQuery maxClauseCount in Elasticsearch</a>.</p>
+      </li>
+      <li>Save your changes to <code>elasticsearch.yml</code> and exit the text editor.</li>
       <li>Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html" target="_blank">Elasticsearch service</a>.</li>
       <li>
         <p>Start Elasticsearch:</p>
