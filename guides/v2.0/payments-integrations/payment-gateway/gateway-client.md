@@ -12,10 +12,7 @@ github_link: payments-integrations/payment-gateway/gateway-client.md
 
 ## Gateway Client
 
-Gateway client is an interface responsible for transmission of the transaction payload.
-
-<p class="q">can we say it simpler? where does it transfer the payload?
-Transfers the payload to the payment provider and gets the response</p>
+Gateway client is a component of the Magento payment gateway that transfers the payload to the payment provider and gets the response.
 
 {% highlight php startinline=1 %}
 interface ClientInterface
@@ -32,19 +29,16 @@ interface ClientInterface
 }
 {% endhighlight %}
 
-Any ClientInterface implementation receives a called (`Transfer`)[https://github.com/magento/magento2/blob/develop/app/code/Magento/Payment/Gateway/Http/Transfer.php] object and may be configured with response converter, which maps response to array structure.
-
-<p class="q">Do we need to say more about Transfer and Converter, perhaps?</p>
-<p class="q">Does it convert to array format or changes the structure to array? A: changes</p>
+A gateway client receives a called [`Transfer`]({{site.mage2000url}}/app/code/Magento/Payment/Gateway/Http/Transfer.php) object and may be configured with response converter, which converts response to the array structure.
 
 ### Default implementations
-There are two Client implementations which can be used of the box:
+There are two gateway client implementations that can be used of the box:
 
 * [\Magento\Payment\Gateway\Http\Client\Zend]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/Client/Zend.php)
 * [\Magento\Payment\Gateway\Http\Client\Soap]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/Client/Soap.php)
 
-### Example of Zend client configuration
-<p class="q">Should we move this to the previous paragraph? as illustration of Any Client implementation receives a called Transfer object and may be configured with Response Converter, which maps response to array structure.</p>
+
+Following is the example of Zend client configuration:
 
 {% highlight xml %}
 <virtualType name="HtmlConverterZendClient" type="Magento\Payment\Gateway\Http\Client\Zend">
@@ -55,4 +49,4 @@ There are two Client implementations which can be used of the box:
 </virtualType>
 {% endhighlight %}
 
-Gateway Client is command specific, is configured in di.xml (need a link here and there)
+<p class="q">Gateway Client is command specific, is configured in di.xml (need a link here and there)</p>

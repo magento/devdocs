@@ -12,14 +12,10 @@ github_link: payments-integrations/payment-gateway/request-builder.md
 
 ## Request Builder
 
-Request builder is an abstract interface responsible for building a transaction payload/request from several parts. It allows you to implement complex, but still atomic and testable, building strategies: each builder can have simple logic or contain builder composites.
+Request builder is a component of the Magento payment gateway responsible for building a request from several parts. It allows implementing complex, but still atomic and testable, building strategies: each builder can have simple logic or contain builder composites.
 
-<p class="q">"transaction payload/request"  payload ?</p>
-<p class="q">atomic?</p>
-
-The basic abstraction for Request builder is `\Magento\Payment\Gateway\Request\BuilderInterface`:
-
-<p class="q">true?</p>
+### Basic interface
+The basic interface for a request builder is `\Magento\Payment\Gateway\Request\BuilderInterface`:
 
 {% highlight php startinline=1 %}
 interface BuilderInterface

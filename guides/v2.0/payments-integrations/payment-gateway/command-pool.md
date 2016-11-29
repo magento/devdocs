@@ -10,14 +10,12 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/command-pool.md
 ---
 
-## Gateway Command Pool
+## Gateway command pool
 
-All _Commands_ implemented for a particular payment provider, should be added to the _Command Pool_ for this provider, and then the Pool is added to the configuration of the payment provider.
+All gateway commands implemented for a particular payment provider, should be added to the command pool for this provider, and then the pool is added to the configuration of the payment provider.
 
-<p class="q">What are these entities?</p>
-
-The basic abstraction for a _Command Pool_ is `\Magento\Payment\Gateway\Command\CommandPoolInterface`
-Implements the [Pool pattern](http://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html):
+## Basic interface
+The basic abstraction for a command pool is `\Magento\Payment\Gateway\Command\CommandPoolInterface`:
 
 {% highlight php startinline=1 %}
 interface CommandPoolInterface
@@ -33,11 +31,14 @@ interface CommandPoolInterface
 }
 {% endhighlight %}
 
+This interface implements the [Pool pattern](http://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html)
 
+## Default implementation
 The [default CommandPool]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Command/CommandPool.php)
 implements `CommandPoolInterface` and takes a list of commands as optional argument for construct.
 
-Following is an example of the _Command Pool_ configuring for the Braintree payment provider, and adding it to the provider's payment method configuration.
+## Command pool configuration for a particular provider
+Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider's payment method configuration.
 
 `app/code/Magento/Braintree/etc/di.xml` 
 {% highlight xml %}
