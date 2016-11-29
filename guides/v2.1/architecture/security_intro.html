@@ -876,36 +876,46 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="security_intro">Security overview</h2>
-<p>Magento 2.0 includes the following security enhancements:</p>
+            <h2 class="no_toc" id="security-overview">Security overview</h2>
 
-<ul>
-  <li>
-    <p><b>Enhanced password management</b>. Magento has strengthened the hashing algorithms (SHA-256) used in password management.</p>
-  </li>
-  <li>
-    <p><b>Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default</b>. The Magento Framework has adopted conventions that regulate the escaping of data in output. These conventions include the ability to escape  output for HTML pages (HTML, JSON, and JavaScript) and email. Where possible, escaping is transparent to client code. See <a href="/guides/v2.1/frontend-dev-guide/templates/template-security.html">Security measures against XSS attacks</a> in the Frontend Developer Guide.</p>
-  </li>
-  <li>
-    <p><b>More flexible file system ownership and permissions</b>. Starting in version 2.0.6, Magento no longer explicitly sets file system permissions. Instead, we recommend that certain files and directories be writable in a development environment and read-only in a production environment.</p>
-
-    <p>To provide you with a simple way to restrict access to the file system in production, we provide the flexibility for you to further restrict those permissions using a <a href="http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html" target="_blank">umask</a>.</p>
-
-    <p>For an overview, see <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>.</p>
-
-    <p>For details about ownership and permissions in development and production, see <a href="/guides/v2.1/">Magento ownership and permissions in development and production</a>.</p>
-  </li>
-  <li>
-    <p><b>Improved prevention of clickjacking exploits</b>. Magento safeguards your store from clickjacking attacks by using an X-Frame-Options HTTP request header. For more information, see <a href="/guides/v2.1/config-guide/secy/secy-xframe.html"> X-Frame-Options header</a>.</p>
-  </li>
-  <li>
-    <p><b>Use of non-default Magento Admin URL</b>. A simple Magento Admin URL (like <code>admin</code> or <code>backend</code>) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI is provided so that you can  see the password if you forget it. You can also use the CLI to change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See <a href="/guides/v2.1/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a> in Configuration Guide for more information.</p>
-  </li>
+<ul id="markdown-toc">
+  <li><a href="#enhanced-password-management" id="markdown-toc-enhanced-password-management">Enhanced password management</a></li>
+  <li><a href="#improved-prevention-of-cross-site-scripting-xss-attacks-by-making-escaped-data-the-default" id="markdown-toc-improved-prevention-of-cross-site-scripting-xss-attacks-by-making-escaped-data-the-default">Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default</a></li>
+  <li><a href="#more-flexible-file-system-ownership-and-permissions" id="markdown-toc-more-flexible-file-system-ownership-and-permissions">More flexible file system ownership and permissions</a></li>
+  <li><a href="#improved-prevention-of-clickjacking-exploits" id="markdown-toc-improved-prevention-of-clickjacking-exploits">Improved prevention of clickjacking exploits</a></li>
+  <li><a href="#use-of-non-default-magento-admin-url" id="markdown-toc-use-of-non-default-magento-admin-url">Use of non-default Magento Admin URL</a></li>
+  <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
 </ul>
 
-<h2>Related topics</h2>
-<p><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></p>
+<h2 id="enhanced-password-management">Enhanced password management</h2>
 
+<p>Magento has strengthened the hashing algorithms (SHA-256) used in password management.</p>
+
+<h2 id="improved-prevention-of-cross-site-scripting-xss-attacks-by-making-escaped-data-the-default">Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default</h2>
+
+<p>The Magento Framework has adopted conventions that regulate the escaping of data in output. These conventions include the ability to escape  output for HTML pages (HTML, JSON, and JavaScript) and email. Where possible, escaping is transparent to client code. See <a href="/guides/v2.1/frontend-dev-guide/templates/template-security.html">Security measures against XSS attacks</a> in the Frontend Developer Guide.</p>
+
+<h2 id="more-flexible-file-system-ownership-and-permissions">More flexible file system ownership and permissions</h2>
+
+<p>Starting in version 2.0.6, Magento no longer explicitly sets file system permissions. Instead, we recommend that certain files and directories be writable in a development environment and read-only in a production environment.</p>
+
+<p>To provide you with a simple way to restrict access to the file system in production, we provide the flexibility for you to further restrict those permissions using a <a href="http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html" target="_blank">umask</a>.</p>
+
+<p>For an overview, see <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>.</p>
+
+<p>For details about ownership and permissions in development and production, see <a href="/guides/v2.1/">Magento ownership and permissions in development and production</a>.</p>
+
+<h2 id="improved-prevention-of-clickjacking-exploits">Improved prevention of clickjacking exploits</h2>
+
+<p>Magento safeguards your store from clickjacking attacks by using an X-Frame-Options HTTP request header. For more information, see <a href="/guides/v2.1/config-guide/secy/secy-xframe.html"> X-Frame-Options header</a>.</p>
+
+<h2 id="use-of-non-default-magento-admin-url">Use of non-default Magento Admin URL</h2>
+
+<p>A simple Magento Admin URL (like <code>admin</code> or <code>backend</code>) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI is provided so that you can  see the password if you forget it. You can also use the CLI to change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See <a href="/guides/v2.1/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a> in Configuration Guide for more information.</p>
+
+<h2 id="related-topics">Related topics</h2>
+
+<p><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></p>
 
 		</div>
 	</section>

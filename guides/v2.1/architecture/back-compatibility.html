@@ -876,16 +876,23 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2>Backward compatibility</h2>
+            <h2 class="no_toc" id="backward-compatibility">Backward compatibility</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
 
 <p>Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.</p>
 
 <p>To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses Semantic Versioning 2.0.0 to indicate whether a change breaks backward compatibility. Version numbers are in the format MAJOR.MINOR.PATCH, where:</p>
 
 <ul>
-  <li>MAJOR indicates incompatible API changes</li>
-  <li>MINOR indicates backward-compatible functionality has been added</li>
-  <li>PATCH indicates backward-compatible bug fixes</li>
+  <li><em>MAJOR</em> indicates incompatible API changes</li>
+  <li><em>MINOR</em> indicates backward-compatible functionality has been added</li>
+  <li><em>PATCH</em> indicates backward-compatible bug fixes</li>
 </ul>
 
 <p>The backward compatibility policy applies to PHP code annotated with <code>@api</code>.</p>
@@ -894,10 +901,9 @@
 
 <p>For more information, see <a href="/guides/v2.1//extension-dev-guide/backward-compatibility.html">Backward compatibility</a> in the PHP Developer Guide.</p>
 
-<h3>Related topics</h3>
+<h2 id="related-topics">Related topics</h2>
 
 <p><a href="/guides/v2.1/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></p>
-
 
 		</div>
 	</section>

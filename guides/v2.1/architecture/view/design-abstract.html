@@ -405,7 +405,19 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2devgde-design-abstract-intro">Introduction</h2>
+            <h2 class="no_toc" id="design-abstractions">Design abstractions</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#m2devgde-design-abstract-intro" id="markdown-toc-m2devgde-design-abstract-intro">Overview</a></li>
+  <li><a href="#m2devgde-design-abstract-what" id="markdown-toc-m2devgde-design-abstract-what">About design abstractions</a></li>
+  <li><a href="#m2devgde-design-abstract-declare" id="markdown-toc-m2devgde-design-abstract-declare">Declare design abstractions</a></li>
+  <li><a href="#m2devgde-design-abstract-use" id="markdown-toc-m2devgde-design-abstract-use">How to use design abstractions</a>    <ul>
+      <li><a href="#m2devgde-design-abstract-widget" id="markdown-toc-m2devgde-design-abstract-widget">Design abstractions in widget creation</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="m2devgde-design-abstract-intro">Overview</h2>
 
 <p>A <em>design abstraction</em> is a layout file (a set of layout instructions) that does not have its own implementation as a page rendered by a certain controller action (page type), but could be used by one or more of such pages to define the look and feel of a page. Design abstractions are used to qualify pages by type, providing business users the ability to customize designs for certain types of pages. In particular design abstractions are used in widget creation to define the types of pages where a widget can be displayed.</p>
 
@@ -441,20 +453,25 @@ To declare a layout file as a design abstraction, you need to set the layout han
 <p>Note, that while you can put any string as label value, for the <code>design_abstraction</code> attribute <code>"custom"</code> is a mandatory value.
 The label specified here is used for <a href="#m2devgde-design-abstract-widget">identifying a design abstraction during widget creation</a>.
 If you look at the <code>&lt;layout&gt;</code> node of the <code>customer_account.xml</code> discussed in the previous section, you can see it is being declared a design abstraction:</p>
+
 <pre>
 &lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;label=&quot;Customer&nbsp;My&nbsp;Account&nbsp;(All&nbsp;Pages)&quot;&nbsp;design_abstraction=&quot;custom&quot;&gt;
 </pre>
 
 <h2 id="m2devgde-design-abstract-use">How to use design abstractions</h2>
+
 <p>To use a design abstraction in a layout file, insert the following code:</p>
+
 <pre>
 &lt;update&nbsp;handle=&quot;design_abstraction_name&quot;/&gt;
 </pre>
-<p>Where <code>design_abstraction_name</code> is the name of the design abstraction layout file.</p>
+
+<p>where <code>design_abstraction_name</code> is the name of the design abstraction layout file.</p>
 
 <p>To complete the <code>customer_account.xml</code> design abstraction example, look at <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Review/view/frontend/layout/review_customer_index.xml" target="_blank">customer_account_index.xml</a>, which uses the <code>customer_account</code> design abstraction. This layout is used for rendering the My Dashboard page of the My Account section of a store. The actual content of the page is defined directly, while the left-hand navigation menu is defined by <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a>.</p>
 
 <h3 id="m2devgde-design-abstract-widget">Design abstractions in widget creation</h3>
+
 <p>Specifying the pages where a widget is displayed is one of the required steps during widget creation. Widgets are added in the Admin under <b>Content/ Frontend App</b>. After choosing to create a new widget instance, a user specifies the widget type and the design theme. Then a page for configuring other widget options is displayed. To select a page where the widget should be displayed, you need to click <b>Add Layout Update</b>. Now you can specify pages by selecting the corresponding layout handles. If you want a widget to be displayed on pages with a certain layout, choose <b>Page Layouts</b>.</p>
 
 <p><img src="/common/images/view_da4.png" alt="Specifying page type" /></p>
@@ -462,7 +479,6 @@ If you look at the <code>&lt;layout&gt;</code> node of the <code>customer_accoun
 <p>Then in the <strong>Page</strong> list there are available layouts or, in other words, design abstractions. Among others, there is the <strong>Customer My Account (All Pages)</strong> option, which corresponds to the <code>customer_account</code> design abstraction.</p>
 
 <p><img src="/common/images/view_da5.png" alt="Specifying page" /></p>
-
 
 		</div>
 	</section>

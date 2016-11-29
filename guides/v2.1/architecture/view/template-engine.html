@@ -405,12 +405,32 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2devgde-temp-eng-over">Introduction to the Magento template engine</h2>
+            <h2 class="no_toc" id="introduction-to-the-magento-template-engine">Introduction to the Magento template engine</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#m2devgde-temp-eng-over" id="markdown-toc-m2devgde-temp-eng-over">Overview</a></li>
+  <li><a href="#m2devgde-temp-eng-role" id="markdown-toc-m2devgde-temp-eng-role">How the Magento template engine renders HTML output</a>    <ul>
+      <li><a href="#m2devgde-temp-eng-invoke" id="markdown-toc-m2devgde-temp-eng-invoke">Invoke a PHTML block from a PHTML block</a></li>
+      <li><a href="#m2devgde-temp-eng-temp" id="markdown-toc-m2devgde-temp-eng-temp">Template rendering</a></li>
+    </ul>
+  </li>
+  <li><a href="#m2devgde-temp-eng-temp" id="markdown-toc-m2devgde-temp-eng-temp">Template engine file structure</a>    <ul>
+      <li><a href="#m2devgde-temp-eng-basic" id="markdown-toc-m2devgde-temp-eng-basic">Basic classes</a></li>
+      <li><a href="#m2devgde-temp-eng-desc" id="markdown-toc-m2devgde-temp-eng-desc">Class descriptions</a></li>
+    </ul>
+  </li>
+  <li><a href="#m2devgde-temp-eng-class-cust" id="markdown-toc-m2devgde-temp-eng-class-cust">Customize the template rendering subsystem</a></li>
+  <li><a href="#add-a-new-template-engine" id="markdown-toc-add-a-new-template-engine">Add a new template engine</a></li>
+</ul>
+
+<h2 id="m2devgde-temp-eng-over">Overview</h2>
+
 <p>A template engine is a mechanism for rendering HTML output from templates associated with page layout blocks. The Magento template rendering subsystem can support multiple template engines, including the default PHP-based engine for processing PHTML templates.</p>
 
 <p>This article describes the design of the Magento template rendering subsystem and the implementation of the default template engine, and provides instructions on how to add a custom engine to support templates other than PHTML.</p>
 
 <h2 id="m2devgde-temp-eng-role">How the Magento template engine renders HTML output</h2>
+
 <p>A template engine is invoked during page layout processing. Any page layout is a hierarchy of containers, which are placeholders for content, and blocks, which actually generate content.  Each block corresponds to a certain Magento PHP class.</p>
 
 <p>All block classes are inherited from either <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank">Magento\Framework\View\Element\AbstractBlock</a> or <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\Framework\View\Element\Template</a> (which in its turn is inherited from <code>AbstractBlock</code>).</p>
@@ -425,7 +445,7 @@
 
 <ul>
   <li>
-    <p>Case 1: HTML was previously cached:</p>
+    <p><strong>Case 1:</strong> HTML was previously cached:</p>
 
     <ol>
       <li>
@@ -437,7 +457,7 @@
     </ol>
   </li>
   <li>
-    <p>Case 2: HTML was not previously cached:</p>
+    <p><strong>Case 2:</strong> HTML was not previously cached:</p>
 
     <ol>
       <li>
@@ -482,7 +502,9 @@
 <p><img src="/common/images/view_te7.png" alt="template rendering flow diagram" /></p>
 
 <h2 id="m2devgde-temp-eng-temp">Template engine file structure</h2>
+
 <p>All template engine files are stored in the <code>View</code> library:</p>
+
 <pre>
 _lib/Magento/View
 &nbsp;|--TemplateEngineFactory.php
@@ -498,7 +520,9 @@ _lib/Magento/View
 <p>The default engine for working with templates is the <code>Magento\Framework\View\TemplateEngine\Php</code> class.</p>
 
 <h3 id="m2devgde-temp-eng-basic">Basic classes</h3>
+
 <p>The class diagram of the basic classes Implement the template rendering subsystem:</p>
+
 <p><img src="/common/images/view_te8.png" alt="template rendering diagram of classes" /></p>
 
 <h3 id="m2devgde-temp-eng-desc">Class descriptions</h3>
@@ -516,7 +540,9 @@ _lib/Magento/View
 </ul>
 
 <h4 id="m2devgde-temp-eng-class-temp">Magento\Framework\View\Element\Template</h4>
+
 <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\Framework\View\Element\Template</a> is the starting point for template rendering. To initiate the rendering process, <code>Template::fetchView()</code> is invoked with the name of the template file. It starts by extracting the template file extension and passing it to <code>Magento\Framework\View\TemplateEngineFactory</code>. On receiving an instance of <code>Magento\Framework\View\TemplateEngineInterface</code>, it calls the <code>render()</code> method and passes the rendered output to the caller.</p>
+
 <table>
   <tbody>
     <tr>
@@ -639,6 +665,7 @@ render(&nbsp;&nbsp;
 </table>
 
 <h2 id="m2devgde-temp-eng-class-cust">Customize the template rendering subsystem</h2>
+
 <p>The Magento template rendering subsystem supports the following:</p>
 
 <ul>
@@ -647,33 +674,43 @@ render(&nbsp;&nbsp;
   <li>You can embed any block to other blocks regardless of the underlying template engine.</li>
 </ul>
 
-<h2>Add a new template engine</h2>
+<h2 id="add-a-new-template-engine">Add a new template engine</h2>
+
 <p>To add support for a new template engine:</p>
 
 <ol>
-  <li>Save the template engine code base in your Magento instance directory.</li>
-  <li>Create a new implementation of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/TemplateEngineInterface.php" target="_blank">Magento\Framework\View\TemplateEngineInterface</a>. This class is used to initialize the underlying template engine, and must also implement the <code>render()</code> function responsible for invoking the template engine on the given template file.</li>
-  <li>Register a newly introduced engine class through the DI configuration to process template files of a certain type as follows:</li>
+  <li>
+    <p>Save the template engine code base in your Magento instance directory.</p>
+  </li>
+  <li>
+    <p>Create a new implementation of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/TemplateEngineInterface.php" target="_blank">Magento\Framework\View\TemplateEngineInterface</a>. This class is used to initialize the underlying template engine, and must also implement the <code>render()</code> function responsible for invoking the template engine on the given template file.</p>
+  </li>
+  <li>
+    <p>Register a newly introduced engine class through the DI configuration to process template files of a certain type as follows:</p>
+  </li>
 </ol>
-<pre>
-&lt;config&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;type&nbsp;name=&quot;Magento\Framework\View\TemplateEngineFactory&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;param&nbsp;name=&quot;engines&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;array&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;key=&quot;{template_extension}&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;value&gt;{engine_class}&lt;/value&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/array&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/param&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/type&gt;
-&lt;/config&gt;
-</pre>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\View\TemplateEngineFactory&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;engines&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;array&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">key=</span><span class="s">&quot;{template_extension}&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;value&gt;</span>{engine_class}<span class="nt">&lt;/value&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/array&gt;</span>
+        <span class="nt">&lt;/param&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>Where:</p>
 
 <ul>
-  <li><code>{template_extension}</code> is the type of template files, which are to be processed by the template engine. For example, <code>phtml</code></li>
-  <li><code>{engine_class}</code> is the name of the class that implements a template engine</li>
+  <li>
+    <p><code>{template_extension}</code> is the type of template files, which are to be processed by the template engine. For example, <code>phtml</code></p>
+  </li>
+  <li>
+    <p><code>{engine_class}</code> is the name of the class that implements a template engine</p>
+  </li>
 </ul>
 
 <p>Example of a dependency injection configuration file:</p>

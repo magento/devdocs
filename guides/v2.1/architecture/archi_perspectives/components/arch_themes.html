@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Themes</title>
+	<title>Magento themes</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -173,7 +173,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento Themes</h1>
+		<h1 class="page-heading">Magento themes</h1>
 
         
 
@@ -876,43 +876,60 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2>Magento themes</h2>
+            <h2 class="no_toc" id="magento-themes">Magento themes</h2>
 
-<p>A <i>theme</i> is a core Magento component whose primary purpose is to control the appearance of your storefront.  Themes use a combination of application elements, such as templates, layouts, styles, and images, and are highly extensible.</p>
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#theme-location" id="markdown-toc-theme-location">Theme location</a>    <ul>
+      <li><a href="#location-of-themes-in-github-repository" id="markdown-toc-location-of-themes-in-github-repository">Location of themes in GitHub repository</a></li>
+      <li><a href="#location-of-themes-when-installing-with-composer" id="markdown-toc-location-of-themes-when-installing-with-composer">Location of themes when installing with Composer</a></li>
+      <li><a href="#location-of-custom-themes" id="markdown-toc-location-of-custom-themes">Location of custom themes</a></li>
+    </ul>
+  </li>
+  <li><a href="#default-magento-themes" id="markdown-toc-default-magento-themes">Default Magento themes</a></li>
+  <li><a href="#m2arch-related" id="markdown-toc-m2arch-related">Related topics</a></li>
+</ul>
 
-<p><b>Custom theme development is one of two main methods of modifying Magento behavior and storefront appearance</b>. (Extending modules is the other primary way, and the main way to tailor Magento behavior.) Themes are the primary way to customize your Magento storefront appearance. Unlike modules, themes do not provide new business features (other than branding and web user experience).</p>
+<h2 id="overview">Overview</h2>
 
-<p>Themes within a Magento installation relate to each other through <i>inheritance</i>, allowing you to customize an existing theme by defining it as a parent theme whose settings can be inherited by any designated child themes. Themes are also divided by area, allowing you to define themes that customize either the storefront or Magento Admin.</p>
+<p>A <em>theme</em> is a core Magento component whose primary purpose is to control the appearance of your storefront. Themes use a combination of application elements, such as templates, layouts, styles, and images, and are highly extensible.</p>
+
+<p><strong>Custom theme development is one of two main methods of modifying Magento behavior and storefront appearance</strong> (extending modules is the other primary way, and the main way to tailor Magento behavior). Themes are the primary way to customize your Magento storefront appearance. Unlike modules, themes do not provide new business features (other than branding and web user experience).</p>
+
+<p>Themes within a Magento installation relate to each other through <em>inheritance</em>, allowing you to customize an existing theme by defining it as a parent theme whose settings can be inherited by any designated child themes. Themes are also divided by area, allowing you to define themes that customize either the storefront or Magento Admin.</p>
 
 <p>Magento 2.0 themes are also characterized by responsive web design. For more information on responsive design, see <a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_overview.html">Overview of responsive web design in Magento</a>.</p>
 
 <p>For detailed information about working with themes, refer to  <a href="/guides/v2.1/frontend-dev-guide/themes/theme-general.html">Themes</a> in the Frontend Developers Guide.</p>
 
-<h3>Theme location</h3>
+<h2 id="theme-location">Theme location</h2>
+
 <p>The location of a theme in your Magento installation depends upon how you installed your theme. Magento knows to look in both <code>vendor</code> and  <code>app/design</code> for themes. In Magento 2.0, each module and theme contain a <code>registration.php</code> file, which defines location information.</p>
 
-<p><i>Areas</i> also determine a theme’s location. Themes that affect the storefront are placed in the <code>frontend</code> area, while themes that affect the Admin panel are placed in <code>adminhtml</code> directory.</p>
+<p><em>Areas</em> also determine a theme’s location. Themes that affect the storefront are placed in the <code>frontend</code> area, while themes that affect the Admin panel are placed in <code>adminhtml</code> directory.</p>
 
-<h4>Location of themes in GitHub repository</h4>
+<h3 id="location-of-themes-in-github-repository">Location of themes in GitHub repository</h3>
+
 <p>In the Magento repository on GitHub, themes exist under <code>app/design/frontend</code>. For example, you can find the Magento Blank theme at https://github.com/magento/magento2/tree/develop/app/design/frontend/Magento/blank.</p>
 
-<h4>Location of themes when installing with Composer</h4>
+<h3 id="location-of-themes-when-installing-with-composer">Location of themes when installing with Composer</h3>
 
 <p>We recommend using Composer to install your Magento application and components such as modules or themes. Composer places the theme you are installing under  <code>/vendor</code>. For example, <code>vendor/Magento/theme-frontend-blank</code> is the root directory of the Composer package holding the Blank theme.</p>
 
-<h4>Location of custom themes</h4>
+<h3 id="location-of-custom-themes">Location of custom themes</h3>
+
 <p>While developing a theme, place it under <code>app/design</code>.  If you’ve defined the theme for a local project (that is, you intend to install it in one project only),  place it under <code>app/design</code>. However, if you decide to sell the theme on Magento Marketplace, follow the instructions given there for uploading. When users download your theme from Magento Marketplace, they will use Composer to install the theme package, and Composer will automatically place it in <code>vendor</code>. (Essentially, <code>/vendor</code> holds all code that you have not written.)</p>
 
-<h3>Default Magento themes</h3>
+<h2 id="default-magento-themes">Default Magento themes</h2>
 
 <p>The standard Magento installation provides two default themes: Luma theme (demonstration only) and Blank theme (boilerplate for theme customization).</p>
 
 <ul>
   <li>
-    <p><b>Luma theme</b> is for demonstration purposes only. Do not use it as a parent theme in your installation.  Explore it to better understand Magento themes, but do not base customizations on it.</p>
+    <p><strong>Luma theme</strong> is for demonstration purposes only. Do not use it as a parent theme in your installation.  Explore it to better understand Magento themes, but do not base customizations on it.</p>
   </li>
   <li>
-    <p><b>Blank theme</b> is provided as a tool to aid your theme development. Use the Magento Blank theme as a basis for custom theme creation. Because Blank theme is built on principles of responsive web design, it makes an excellent starting point for developing responsive Magento themes.</p>
+    <p><strong>Blank theme</strong> is provided as a tool to aid your theme development. Use the Magento Blank theme as a basis for custom theme creation. Because Blank theme is built on principles of responsive web design, it makes an excellent starting point for developing responsive Magento themes.</p>
   </li>
 </ul>
 

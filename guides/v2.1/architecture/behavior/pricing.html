@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>The pricing library</title>
+	<title>Using Magento Pricing library</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -173,7 +173,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">The pricing library</h1>
+		<h1 class="page-heading">Using Magento Pricing library</h1>
 
         
 
@@ -405,9 +405,26 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2devgde-pricelib-intro">Introduction to the Magento pricing library</h2>
+            <h2 id="m2devgde-pricelib-intro" class="no_toc">Magento Pricing library: implementation and usage</h2>
 
 <p>This topic discusses how to use the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library in your module and how to add price rendering to page templates and layouts.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#m2devgde-pricelib-integrate" id="markdown-toc-m2devgde-pricelib-integrate">Use the pricing library in your module</a></li>
+  <li><a href="#m2devgde-pricelib-custom" id="markdown-toc-m2devgde-pricelib-custom">Implement price calculation and rendering</a>    <ul>
+      <li><a href="#m2devgde-pricelib-custom-price" id="markdown-toc-m2devgde-pricelib-custom-price">Add a custom price type</a></li>
+    </ul>
+  </li>
+  <li><a href="#m2devgde-pricelib-di" id="markdown-toc-m2devgde-pricelib-di">Configure prices and adjustments</a>    <ul>
+      <li><a href="#m2devgde-pricelib-adj" id="markdown-toc-m2devgde-pricelib-adj">Specify adjustments for a product</a></li>
+    </ul>
+  </li>
+  <li><a href="#m2devgde-pricelib-custom-price-render" id="markdown-toc-m2devgde-pricelib-custom-price-render">Add price rendering to a layout</a></li>
+  <li><a href="#m2devgde-pricelib-custom-price-config" id="markdown-toc-m2devgde-pricelib-custom-price-config">Configure price display options</a></li>
+  <li><a href="#m2devgde-pricelib-ins" id="markdown-toc-m2devgde-pricelib-ins">Insert price rendering into PHTML templates</a></li>
+  <li><a href="#m2devgde-pricelib-def" id="markdown-toc-m2devgde-pricelib-def">Default price types</a></li>
+  <li><a href="#m2devgde-pricelib-def_rend" id="markdown-toc-m2devgde-pricelib-def_rend">Default rendering arguments</a></li>
+</ul>
 
 <h2 id="m2devgde-pricelib-integrate">Use the pricing library in your module</h2>
 
@@ -417,14 +434,20 @@
   <li>
     <p>Create price calculating and rendering logic extending and implementing library interfaces.</p>
   </li>
-  <li>Add prices and adjustments in the <code>di.xml</code> of a module.</li>
-  <li>Prepare a layout: create a pricing layout handle (or use the default Magento one) and add a price rendering block to page layouts.</li>
-  <li>Add price rendering to page templates.</li>
+  <li>
+    <p>Add prices and adjustments in the <code>di.xml</code> of a module.</p>
+  </li>
+  <li>
+    <p>Prepare a layout: create a pricing layout handle (or use the default Magento one) and add a price rendering block to page layouts.</p>
+  </li>
+  <li>
+    <p>Add price rendering to page templates.</p>
+  </li>
 </ol>
 
 <p>Each step is described in the following paragraphs.</p>
 
-<p>If all you need is customizing the way prices are displayed on your pages, skip steps 1 and 2 and proceed directly to layout and template tasks.</p>
+<p>If all you need is to customize the way prices are displayed on your pages, skip steps 1 and 2 and proceed directly to layout and template tasks.</p>
 
 <h2 id="m2devgde-pricelib-custom">Implement price calculation and rendering</h2>
 
@@ -489,8 +512,9 @@
 
 <h2 id="m2devgde-pricelib-di">Configure prices and adjustments</h2>
 
-<p>To specify the price types which you plan to use for the corresponding product, add the price type codes to <code>Price\Pool</code> in the module’s <code>di.xml</code> file.
-An example of Catalog module price configuration in its <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
+<p>To specify the price types which you plan to use for the corresponding product, add the price type codes to <code>Price\Pool</code> in the module’s <code>di.xml</code> file.</p>
+
+<p>An example of Catalog module price configuration in its <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
 
 <p>Price type codes are discussed in <a href="#m2devgde-pricelib-def">Default price types</a>.</p>
 
@@ -512,7 +536,7 @@ An example of Catalog module price configuration in its <a href="https://github.
 
 <p>To configure price blocks displaying in layouts, you need to create a separate layout handle for price rendering.</p>
 
-<p>The name of the layout handle is arbitrary. But if you want to use also default Magento layouts for pricing, name the handle (and so the layout file defining it)  <code>catalog_product_prices.xml</code>.</p>
+<p>The name of the layout handle is arbitrary. But if you want to use also default Magento layouts for pricing, name the handle (and so the layout file defining it) <code>catalog_product_prices.xml</code>.</p>
 
 <p>To learn about locations of layouts in Magento application, see <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.</p>
 
@@ -564,6 +588,7 @@ An example of Catalog module price configuration in its <a href="https://github.
 </ul>
 
 <h2 id="m2devgde-pricelib-ins">Insert price rendering into PHTML templates</h2>
+
 <p>To invoke the price rendering block, you need to add the following code to a page template:</p>
 <pre>
 $this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
@@ -573,15 +598,22 @@ $this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
 );
 </pre>
 
-<p>where</p>
+<p>where:</p>
 
 <ul>
-  <li><code>&lt;price type&gt;</code>: the code of the price type</li>
-  <li><code>$product</code>: an instance of Saleable Item, for example <code>Magento\Catalog\Model\Product</code></li>
-  <li><code>$arguments</code>: is the array of rendering arguments.</li>
+  <li>
+    <p><code>&lt;price type&gt;</code>: the code of the price type</p>
+  </li>
+  <li>
+    <p><code>$product</code>: an instance of Saleable Item, for example <code>Magento\Catalog\Model\Product</code></p>
+  </li>
+  <li>
+    <p><code>$arguments</code>: is the array of rendering arguments.</p>
+  </li>
 </ul>
 
 <h2 id="m2devgde-pricelib-def">Default price types</h2>
+
 <p>In the following table you can find the complete list of the price types implemented in the Magento application.</p>
 
 <table>
@@ -753,7 +785,9 @@ $this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
 </table>
 
 <h2 id="m2devgde-pricelib-def_rend">Default rendering arguments</h2>
-<p>In the following table you can find the complete list of the rendering arguments implemented in the Magento application</p>
+
+<p>In the following table you can find the complete list of the rendering arguments implemented in the Magento application.</p>
+
 <table>
   <tbody>
     <tr>
@@ -902,7 +936,6 @@ $this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
     </tr>
   </tbody>
 </table>
-
 
 		</div>
 	</section>

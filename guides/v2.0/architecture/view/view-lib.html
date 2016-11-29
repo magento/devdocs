@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>View library</title>
+	<title>The View library</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -171,7 +171,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">View library</h1>
+		<h1 class="page-heading">The View library</h1>
 
         
 
@@ -383,24 +383,29 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2>Overview</h2>
+            <h2 class="no_toc" id="the-view-library">The View library</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#usingmagentoframeworkviewlibrary" id="markdown-toc-usingmagentoframeworkviewlibrary">Using Magento\Framework\View library</a></li>
+  <li><a href="#magentoview-librarycomponents" id="markdown-toc-magentoview-librarycomponents">Magento\View Library components</a></li>
+  <li><a href="#magentoframeworkviewlibrarydependencies" id="markdown-toc-magentoframeworkviewlibrarydependencies">Magento\Framework\View library dependencies</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
 
 <p>An independent view layer domain, the View component was created to eliminate
-global dependencies
-on <code>Magento_Core</code>, <code>Magento_Backend</code>, <code>Magento_Adminhtml</code> and <code>Magento_Page</code> modules
+global dependencies on <code>Magento_Core</code>, <code>Magento_Backend</code>, <code>Magento_Adminhtml</code> and <code>Magento_Page</code> modules
 for HTML content rendering. All application modules perform rendering using the
 View component, and remain independent from each other.</p>
 
-<p>The View component is represented
-as <code>Magento\Framework\View</code> library: <code>/lib/internal/Magento/Framework/View</code>.</p>
+<p>The View component is represented as <code>Magento\Framework\View</code> library: <code>/lib/internal/Magento/Framework/View</code>.</p>
 
-<h2>Using Magento\Framework\View Library</h2>
+<h2 id="usingmagentoframeworkviewlibrary">Using Magento\Framework\View library</h2>
 
-<p>The View component contains basic classes, factories and interfaces
-used to implement HTML content rendering  for the frontend and backend
-application areas. </p>
+<p>The View component contains basic classes, factories and interfaces used to implement HTML content rendering for the frontend and backend application areas. </p>
 
-<h2>Magento\View Library Components</h2>
+<h2 id="magentoview-librarycomponents">Magento\View Library components</h2>
 
 <p>The <code>Magento\Framework\View</code> library has the following components:</p>
 
@@ -434,10 +439,9 @@ application areas. </p>
   </li>
 </ul>
 
-<h2>Magento\Framework\View Library Dependencies</h2>
+<h2 id="magentoframeworkviewlibrarydependencies">Magento\Framework\View library dependencies</h2>
 
-<p>The <code>Magento\Framework\View</code> library closely interacts with other Magento
-libraries and modules, so it has multiple dependencies. </p>
+<p>The <code>Magento\Framework\View</code> library closely interacts with other Magento libraries and modules, so it has multiple dependencies. </p>
 
 <p><code>Magento\Framework\View</code> depends on the following Magento libraries:  </p>
 

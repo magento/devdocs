@@ -876,25 +876,38 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2>Domain layer</h2>
+            <h2 class="no_toc" id="domain-layer">Domain layer</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#what-is-magento-domain-layer" id="markdown-toc-what-is-magento-domain-layer">What is Magento Domain layer?</a></li>
+  <li><a href="#models" id="markdown-toc-models">Models</a></li>
+  <li><a href="#who-accesses-the-domain-layer" id="markdown-toc-who-accesses-the-domain-layer">Who accesses the domain layer?</a></li>
+  <li><a href="#related" id="markdown-toc-related">Related topics</a></li>
+</ul>
+
+<h2 id="what-is-magento-domain-layer">What is Magento Domain layer?</h2>
+
 <p>The domain layer holds the business logic layer of a Magento module. It typically does not contain resource-specific or database-specific information. Its primary functions include:</p>
 
 <ul>
   <li>
-    <p>Defines the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. These models contain generic information only. Applications can also use SOAP or RESTful endpoints to request data from models.</p>
+    <p>Defining the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. These models contain generic information only. Applications can also use SOAP or RESTful endpoints to request data from models.</p>
   </li>
   <li>
-    <p>(Optionally) Includes the implementation of service contracts, although not their definition.</p>
+    <p>(Optionally) Including the implementation of service contracts, although not their definition.</p>
   </li>
 </ul>
 
-<p>Best practice: Use service contracts to communicate to the domain layer by passing data types through strongly typed objects. This practice can help you avoid the need to replace presentation layer code when replacing business layer logic.</p>
+<div class="bs-callout bs-callout-tip">
+  <p><b>Best practice:</b> Use service contracts to communicate with the domain layer by passing data types through strongly typed objects. This helps you avoid the need to replace presentation layer code when replacing business layer logic.</p>
+</div>
 
-<h3>Models</h3>
+<h2 id="models">Models</h2>
 
 <p>Each domain-layer model contains a reference to a resource model, which it uses to retrieve data from the database with MySql calls.  This resource model contains logic for connecting to the underlying database, typically MySQL. A model requires a resource model only if the model data must persist.</p>
 
-<h3>Who accesses the domain layer?</h3>
+<h2 id="who-accesses-the-domain-layer">Who accesses the domain layer?</h2>
+
 <p>There are three primary ways of accessing a module’s domain-layer code:</p>
 
 <ul>
@@ -908,9 +921,15 @@
     <p>Domain layer code in one module can also plug itself into another module by:</p>
 
     <ul>
-      <li>event hooks</li>
-      <li>plugins</li>
-      <li><code>di.xml</code> files (with an SPI contract)</li>
+      <li>
+        <p>event hooks</p>
+      </li>
+      <li>
+        <p>plugins</p>
+      </li>
+      <li>
+        <p><code>di.xml</code> files (with an SPI contract)</p>
+      </li>
     </ul>
   </li>
 </ul>
@@ -918,10 +937,10 @@
 <p>Your strategy for calling another module’s domain-layer code is highly dependent upon the unique configuration and needs of your system.</p>
 
 <h2 id="related">Related topics</h2>
+
 <p><a href="/guides/v2.1/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
 
 <p><a href="/guides/v2.1/architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a></p>
-
 
 		</div>
 	</section>

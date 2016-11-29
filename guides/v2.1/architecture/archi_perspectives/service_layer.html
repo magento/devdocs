@@ -876,10 +876,21 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2>Service layer</h2>
+            <h2 class="no_toc" id="service-layer">Service layer</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#what-is-a-service-layer" id="markdown-toc-what-is-a-service-layer">What is a Service layer?</a></li>
+  <li><a href="#who-accesses-the-service-layer" id="markdown-toc-who-accesses-the-service-layer">Who accesses the service layer?</a></li>
+  <li><a href="#service-contract-anatomy" id="markdown-toc-service-contract-anatomy">Service contract anatomy</a></li>
+  <li><a href="#advantages-of-service-contracts" id="markdown-toc-advantages-of-service-contracts">Advantages of service contracts</a></li>
+  <li><a href="#related" id="markdown-toc-related">Related topics</a></li>
+</ul>
+
+<h2 id="what-is-a-service-layer">What is a Service layer?</h2>
+
 <p>The service layer provides a bridge between the presentation layer and the model layer of domain logic and resource-specific data. This is implemented using <em>service contracts</em>, which are defined using PHP interfaces.</p>
 
-<p>In general, the service layer</p>
+<p>In general, the service layer:</p>
 
 <ul>
   <li>
@@ -889,14 +900,14 @@
     <p>Contains service contracts, which define how the implementation will behave.</p>
   </li>
   <li>
-    <p>Provides an easy way to access the REST/SOAP API framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files – no coding required.</p>
+    <p>Provides an easy way to access the REST/SOAP API framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files — no coding required.</p>
   </li>
   <li>
     <p>Provides a stable API for other modules to call into.</p>
   </li>
 </ul>
 
-<h3>Who accesses the service layer?</h3>
+<h2 id="who-accesses-the-service-layer">Who accesses the service layer?</h2>
 
 <p>All calls from web service interfaces, or users working with your storefront (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic.</p>
 
@@ -905,12 +916,18 @@
 <p>Service contract clients include:</p>
 
 <ul>
-  <li>Controllers (initiated by actions of users of the storefront)</li>
-  <li>Web services (SOAP and REST API calls)</li>
-  <li>Other Magento modules through service contracts</li>
+  <li>
+    <p>Controllers (initiated by actions of users of the storefront)</p>
+  </li>
+  <li>
+    <p>Web services (SOAP and REST API calls)</p>
+  </li>
+  <li>
+    <p>Other Magento modules through service contracts</p>
+  </li>
 </ul>
 
-<h3>Service contract anatomy</h3>
+<h2 id="service-contract-anatomy">Service contract anatomy</h2>
 
 <p>The service contract of a module is defined by the set of interfaces in the module’s <code>/Api</code>. It typically consists of:</p>
 
@@ -926,23 +943,30 @@
 <p>Typically, service contracts provide three distinct types of interfaces:</p>
 
 <ul>
-  <li>Repository interfaces</li>
-  <li>Management interfaces</li>
-  <li>Metadata interfaces</li>
+  <li>
+    <p>Repository interfaces</p>
+  </li>
+  <li>
+    <p>Management interfaces</p>
+  </li>
+  <li>
+    <p>Metadata interfaces</p>
+  </li>
 </ul>
 
 <p>However, there is no requirement that service contracts conform to all three patterns.</p>
 
-<h3>Advantages of service contracts</h3>
-<p>Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the &lt;preference&gt; element of a dependency injection config file (<code>di.xml</code>) file. The <code>di.xml</code> file specifies which PHP class to use for the interface <code>Magento\Customer\Api\CustomerRepositoryInterface</code>.</p>
+<h2 id="advantages-of-service-contracts">Advantages of service contracts</h2>
+
+<p>Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the <em>&lt;preference&gt;</em> element of a dependency injection config file (<code>di.xml</code>) file. The <code>di.xml</code> file specifies which PHP class to use for the interface <code>Magento\Customer\Api\CustomerRepositoryInterface</code>.</p>
 
 <p>Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.</p>
 
-<h3 id="related">Related topics</h3>
+<h2 id="related">Related topics</h2>
+
 <p><a href="/guides/v2.1/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
 
 <p><a href="/guides/v2.1/architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a></p>
-
 
 		</div>
 	</section>

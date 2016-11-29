@@ -876,41 +876,55 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2arch-whatis-overview">Extensibility and modularity</h2>
+            <h2 class="no_toc" id="extensibility-and-modularity">Extensibility and modularity</h2>
 
-<p>Product <i>extensibility</i> describes how easy  it is to expand  a product’s feature set. An extensible product has been designed from its earliest  stages for  customization and enhancement. Extensible products are designed for ease in expanding your installation’s feature set, enriching current features, and integrating with third-party software.</p>
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#what-makes-a-product-extensible" id="markdown-toc-what-makes-a-product-extensible">What makes a product extensible?</a>    <ul>
+      <li><a href="#architectural-principles-that-guide-product-structure" id="markdown-toc-architectural-principles-that-guide-product-structure">Architectural principles that guide product structure</a></li>
+      <li><a href="#open-source-software-to-create-and-manage-extensions" id="markdown-toc-open-source-software-to-create-and-manage-extensions">Open-source software to create and manage extensions</a></li>
+      <li><a href="#coding-standards" id="markdown-toc-coding-standards">Coding standards</a></li>
+      <li><a href="#upgrade-and-versioning-strategies" id="markdown-toc-upgrade-and-versioning-strategies">Upgrade and versioning strategies</a></li>
+    </ul>
+  </li>
+  <li><a href="#m2arch-related" id="markdown-toc-m2arch-related">Related topics</a></li>
+</ul>
 
-<p>Maximizing extensibility has been our goal through all aspects of Magento development.  Core tasks such as shipping are packaged as discrete modules, and you expand your features by installing modules that you either buy from third-party vendors or create yourself. While logic specific to each shipping carrier is packaged in a discrete module, you can easily add or delete shipping providers by simply adding or deleting modules. The Magento Framework provides common logic to control routing and other core application functions.</p>
+<h2 id="overview">Overview</h2>
 
-<h3>What makes a product extensible? </h3>
+<p>Product <i>extensibility</i> describes how easy it is to expand a product’s feature set. An extensible product has been designed from its earliest  stages for customization and enhancement. Extensible products are designed for ease in expanding your installation’s feature set, enriching current features, and integrating with third-party software.</p>
+
+<p>Maximizing extensibility has been our goal through all aspects of Magento development. Core tasks such as shipping are packaged as discrete modules, and you expand your features by installing modules that you either buy from third-party vendors or create yourself. While logic specific to each shipping carrier is packaged in a discrete module, you can easily add or delete shipping providers by simply adding or deleting modules. The Magento Framework provides common logic to control routing and other core application functions.</p>
+
+<h2 id="what-makes-a-product-extensible">What makes a product extensible?</h2>
 
 <p><i>Magento extensibility</i> describes the product’s built-in ability for developers and merchants to routinely extend their storefront’s capabilities as their business grows.</p>
 
-<h4>Which factors affect extensibility?</h4>
+<p>Below are the main factors affect extensibility.</p>
 
-<ul>
-  <li>
-    <p><b>architectural principles that guide product structure</b>. Central to the Magento model of software development is the practice of replacing or extending core code rather than editing it. This strategy supports your efforts to maintain the integrity of the tested code we provide while still extensively customizing your storefront.</p>
-  </li>
-  <li>
-    <p><b>open-source software to create and manage extensions</b>. Magento is built on open-source technologies, built  for the development community. It uses Composer, an open-source tool, to manage dependencies. See <a href="/guides/v2.1/architecture/tech-stack.html">Technology Stack</a>  for a complete list.</p>
-  </li>
-  <li>
-    <p><b>coding standards</b>. Adherence to  standard best practices for PHP and JavaScript code ensures that the code base is sound. Magento has adopted most of the Zend Framework Coding Standards for PHP. See <a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a> for more information.</p>
-  </li>
-  <li>
-    <p><b>upgrade and versioning strategies</b>. Magento has well-defined upgrade and versioning strategies that can help you avoid any problems with software component dependencies. Add modules after confirming that the module version is compatible with the Magento Framework version.</p>
-  </li>
-</ul>
+<h3 id="architectural-principles-that-guide-product-structure">Architectural principles that guide product structure</h3>
 
-<h3 id="m2arch-related">Related topics</h3>
+<p>Central to the Magento model of software development is the practice of replacing or extending core code rather than editing it. This strategy supports your efforts to maintain the integrity of the tested code we provide while still extensively customizing your storefront.</p>
+
+<h3 id="open-source-software-to-create-and-manage-extensions">Open-source software to create and manage extensions</h3>
+
+<p>Magento is built on open-source technologies, created for the development community. For example, it uses Composer to manage dependencies. See <a href="/guides/v2.1/architecture/tech-stack.html">Technology Stack</a> for a complete list of technologies used.</p>
+
+<h3 id="coding-standards">Coding standards</h3>
+
+<p>Adherence to standard best practices for PHP and JavaScript code ensures that the code base is sound. Magento has adopted most of the Zend Framework Coding Standards for PHP. See <a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a> for more information.</p>
+
+<h3 id="upgrade-and-versioning-strategies">Upgrade and versioning strategies</h3>
+
+<p>Magento has well-defined upgrade and versioning strategies that can help you avoid any problems with software component dependencies. Add modules after confirming that the module version is compatible with the Magento Framework version.</p>
+
+<h2 id="m2arch-related">Related topics</h2>
 
 <p><a href="/guides/v2.1/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></p>
 
-<p><a href="/guides/v2.1/architecture/global_extensibility_features.html">Global product features that support extension development</a></p>
+<p><a href="/guides/v2.1/architecture/global_extensibility_features.html">Global features that support extensibility</a></p>
 
 <p><a href="/guides/v2.1/architecture/frontend_custom_strategies.html">Ease of frontend customization</a></p>
-
 
 		</div>
 	</section>

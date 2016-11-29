@@ -405,9 +405,10 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2>Architectural basics</h2>
+            <h2 id="architectural-basics">Architectural basics</h2>
 
-<h3>Magento technology stack</h3>
+<h3 id="magento-technology-stack">Magento technology stack</h3>
+
 <p>Magento’s highly modular structure includes the following open-source technologies:</p>
 
 <p>Stack components include:</p>
@@ -428,7 +429,9 @@
   <li>
     <p>JQuery (primary JavaScript library)</p>
   </li>
-  <li>RequireJS (library that helps load JavaScript resources on demand)</li>
+  <li>
+    <p>RequireJS (library that helps load JavaScript resources on demand)</p>
+  </li>
   <li>
     <p>Third-party libraries (Zend Framework 1, Zend Framework 2, Symfony)</p>
   </li>
@@ -438,38 +441,55 @@
   <li>
     <p>Nginx 1.7</p>
   </li>
-  <li>MySQL 5.6</li>
-  <li>Composer (dependency management package for PHP)</li>
+  <li>
+    <p>MySQL 5.6</p>
+  </li>
+  <li>
+    <p>Composer (dependency management package for PHP)</p>
+  </li>
 </ul>
 
 <p>Optional stack components include:</p>
 
 <ul>
-  <li>Varnish (caching)</li>
-  <li>Redis (used for session or page caching)</li>
-  <li>Solr (search engine)</li>
+  <li>
+    <p>Varnish (caching)</p>
+  </li>
+  <li>
+    <p>Redis (used for session or page caching)</p>
+  </li>
+  <li>
+    <p>Solr (search engine)</p>
+  </li>
 </ul>
 
 <p>Magento also provides an automated testing suite that includes - amongst others - unit, integration, functional and performance test scripts. Components include PHPUnit for the unit test framework and Selenium for the functional test framework.</p>
 
 <p>This framework is included in <code>dev/tests</code>. The functional testing framework <code>mtaf</code> can be found in the separate repository https://github.com/magento/mtf. For more information, see the <a href="/guides/v2.1/mtf/mtf.html">Functional Testing Framework</a> guide.</p>
 
-<h3>Stack basics</h3>
+<h3 id="stack-basics">Stack basics</h3>
+
 <p>Information about routing, caching, and indexing will be provided in a future sprint.</p>
 
-<h3>Backward compatibility</h3>
+<h3 id="backward-compatibility">Backward compatibility</h3>
 
 <p>Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.</p>
 
 <p>To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses Semantic Versioning 2.0.0 to indicate whether a change breaks backward compatibility. Version numbers are in the format MAJOR.MINOR.PATCH, where:</p>
 
-<p>MAJOR indicates incompatible API changes</p>
+<ul>
+  <li>
+    <p>MAJOR indicates incompatible API changes</p>
+  </li>
+  <li>
+    <p>MINOR indicates backward-compatible functionality has been added</p>
+  </li>
+  <li>
+    <p>PATCH indicates backward-compatible bug fixes</p>
+  </li>
+</ul>
 
-<p>MINOR indicates backward-compatible functionality has been added</p>
-
-<p>PATCH indicates backward-compatible bug fixes</p>
-
-<p>The backward compatibility policy applies to PHP code annotated with @api</p>
+<p>The backward compatibility policy applies to PHP code annotated with @api.</p>
 
 <p>We promise to be backward compatible for classes and methods annotated with @api within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with @deprecated. The methods will be removed only with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.</p>
 

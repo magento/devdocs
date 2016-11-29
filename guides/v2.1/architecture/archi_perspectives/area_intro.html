@@ -449,7 +449,18 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2> Magento area</h2>
+            <h2 class="no_toc" id="magento-area">Magento area</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a>    <ul>
+      <li><a href="#magento-area-module-structure" id="markdown-toc-magento-area-module-structure">Magento area module structure</a></li>
+    </ul>
+  </li>
+  <li><a href="#magento-area-configuration" id="markdown-toc-magento-area-configuration">Magento area configuration</a></li>
+  <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
 
 <p>A Magento Area contains user-oriented functionality, which is responsible for managing user interaction with the system. It consists of components that provide a bridge into the core business logic encapsulated in the Domain (business logic) layer.</p>
 
@@ -461,7 +472,8 @@
 
 <p>— when an area is disabled, then an entry point to module presentation is lost</p>
 
-<h3>Magento area module structure</h3>
+<h3 id="magento-area-module-structure">Magento area module structure</h3>
+
 <p>— router
 — base controller
 — area configuration
@@ -471,17 +483,19 @@
 
 <p>The resources visible and accessible in an area as well as area’s behavior are defined by modules. The same module can influence several areas</p>
 
-<p>{ModuleName}
+<pre>
+{ModuleName}
 +-Controller
 | +-{Area}
 |   L-{ControllerName}
 |   L-{ControllerName}
-|   L-…
+|   L-...
 L-view
   L-{area}
     L-layout
     L-template.phtml
-    L-…</p>
+    L-...
+</pre>
 
 <p>Each area declares itself in a module. All resources specific for an area are located in area’s module as well.
 You can use an area’s module to enable or disable an area. If this module is enabled, it injects an area’s routers into general application’s routing process. If this module is disabled, an area’s routers are not loaded and, as a result, an area’s resources and specific functionality are not available.</p>
@@ -492,21 +506,27 @@ You can use an area’s module to enable or disable an area. If this module is e
 
 <p>An area’s controllers are to be unique for an area</p>
 
-<h3>Magento area configuration</h3>
+<h2 id="magento-area-configuration">Magento area configuration</h2>
 
-<p>How do areas and modules interact?
- — Modules are independent of areas. Modules can belong to multiple Areas.
-— Area is declared in a separate module (Q: WHERE?) If this module is disabled, the entire Area in the module is disabled
-— Disabling an Area will not disable the module in any other Area 
-— Areas are independent of each other. Areas must not use resources that belong to another area (Q: MODULES?)
-— Areas cannot contain data models
-— Areas are indivisible. You cannot disable part of an Area. You disable the entire Area or none of it.</p>
+<p>How do areas and modules interact?</p>
 
-<h3 id="related">Related topics</h3>
+<p>— Modules are independent of areas. Modules can belong to multiple Areas.</p>
+
+<p>— Area is declared in a separate module (Q: WHERE?) If this module is disabled, the entire Area in the module is disabled</p>
+
+<p>— Disabling an Area will not disable the module in any other Area</p>
+
+<p>— Areas are independent of each other. Areas must not use resources that belong to another area (Q: MODULES?)</p>
+
+<p>— Areas cannot contain data models</p>
+
+<p>— Areas are indivisible. You cannot disable part of an Area. You disable the entire Area or none of it.</p>
+
+<h2 id="related-topics">Related topics</h2>
+
 <p><a href="/guides/v2.1/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
 
 <p>Presentation Layer</p>
-
 
 		</div>
 	</section>

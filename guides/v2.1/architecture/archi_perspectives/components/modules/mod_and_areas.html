@@ -876,12 +876,28 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2arch-module-areas-overview"> Overview</h2>
+            <h2 class="no_toc" id="modules-and-areas">Modules and areas</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#m2arch-module-areas-overview" id="markdown-toc-m2arch-module-areas-overview">Overview</a>    <ul>
+      <li><a href="#magento-area-types" id="markdown-toc-magento-area-types">Magento area types</a></li>
+    </ul>
+  </li>
+  <li><a href="#m2arch-module-using" id="markdown-toc-m2arch-module-using">How areas work with modules</a>    <ul>
+      <li><a href="#quick-view-of-modulearea-interactions" id="markdown-toc-quick-view-of-modulearea-interactions">Quick view of module/area interactions</a></li>
+      <li><a href="#note-about-magento-request-processing" id="markdown-toc-note-about-magento-request-processing">Note about Magento request processing</a></li>
+    </ul>
+  </li>
+  <li><a href="#m2arch-module-related" id="markdown-toc-m2arch-module-related">Related topics</a></li>
+</ul>
+
+<h2 id="m2arch-module-areas-overview">Overview</h2>
+
 <p>An <i>area</i> is a logical component that organizes code for optimized request processing. Magento uses areas to streamline web service calls by loading only the dependent code for the specified area.  Each of the default areas defined by Magento can contain completely different code on how to process URLs and requests.</p>
 
 <p>For example, if you are invoking a REST web service call, rather than load all the code related to generating user HTML pages, you can specify a separate area that loads code whose scope is limited to answering  REST calls.</p>
 
-<h3>Magento area types</h3>
+<h3 id="magento-area-types">Magento area types</h3>
 
 <p>Magento is organized into these main areas:</p>
 
@@ -918,7 +934,7 @@
 
 <p>You can enable or disable an area within a module. If this module is enabled, it injects an area’s routers into the general application’s routing process. If this module is disabled, Magento will not load an area’s routers and, as a result, an area’s resources and specific functionality are not available.</p>
 
-<h3>Quick view of module/area interactions</h3>
+<h3 id="quick-view-of-modulearea-interactions">Quick view of module/area interactions</h3>
 
 <ul>
   <li>
@@ -932,18 +948,17 @@
   </li>
 </ul>
 
-<h3>Note about Magento request processing</h3>
+<h3 id="note-about-magento-request-processing">Note about Magento request processing</h3>
 
 <p>Magento processes a URL request by first stripping off the base URL. The first path segment of the remaining URL identifies the request area.</p>
 
 <p>After the area name, the URI segment specifies the <em>full front name</em>. When an HTTP request arrives, the handle is extracted from the URL. Magento uses the handle to identify which controller (a PHP class) and action (a PHP method in the class) to execute. A common action to display a HTML page is <code>index</code>, which returns an HTML page.</p>
 
-<h2 id="m2arch-module-related"> Related topics</h2>
+<h2 id="m2arch-module-related">Related topics</h2>
 
 <ul>
   <li><a href="/guides/v2.1/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a></li>
 </ul>
-
 
 		</div>
 	</section>

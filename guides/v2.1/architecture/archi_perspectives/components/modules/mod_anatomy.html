@@ -405,13 +405,29 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="arch-modules-anatomy">Module anatomy</h2>
+            <h2 class="no_toc" id="module-anatomy">Module anatomy</h2>
 
-<p>A Magento <i>module</i> is a logical group of components that encapsulates  a particular business function, typically a business task. All components of a module relate to the module’s specific function. For example, each element of the Shipping module contains all the code and interfaces needed to implement core shipping-related tasks. A module directory typically contains blocks, controllers, helpers, models, configuration files, and other components that contribute to the module’s core purpose.</p>
+<ul id="markdown-toc">
+  <li><a href="#arch-modules-anatomy" id="markdown-toc-arch-modules-anatomy">Overview</a></li>
+  <li><a href="#module-components" id="markdown-toc-module-components">Module components</a>    <ul>
+      <li><a href="#block" id="markdown-toc-block">Block</a></li>
+      <li><a href="#controllers" id="markdown-toc-controllers">Controllers</a></li>
+      <li><a href="#etc" id="markdown-toc-etc">/etc</a></li>
+      <li><a href="#helper" id="markdown-toc-helper">Helper</a></li>
+      <li><a href="#model" id="markdown-toc-model">Model</a></li>
+      <li><a href="#sql" id="markdown-toc-sql">sql</a></li>
+    </ul>
+  </li>
+  <li><a href="#arch-modules-related" id="markdown-toc-arch-modules-related">Related topics</a></li>
+</ul>
+
+<h2 id="arch-modules-anatomy">Overview</h2>
+
+<p>A Magento <i>module</i> is a logical group of components that encapsulates a particular business function, typically a business task. All components of a module relate to the module’s specific function. For example, each element of the Shipping module contains all the code and interfaces needed to implement core shipping-related tasks. A module directory typically contains blocks, controllers, helpers, models, configuration files, and other components that contribute to the module’s core purpose.</p>
 
 <p>Module structure is defined by both module code components and logical structure.</p>
 
-<h3>Module components</h3>
+<h2 id="module-components">Module components</h2>
 
 <p>All types of modules contain the following core elements, categorized by directory:</p>
 
@@ -436,13 +452,16 @@
   </li>
 </ul>
 
-<h4>Block</h4>
+<h3 id="block">Block</h3>
+
 <p><i>Blocks</i> help provide the data used in the View component of the module structure. Blocks coordinate models with the template files. The files in this folder load the data from database and transfer it to the templates in your theme (<code>PHTML</code> files).</p>
 
-<h4>Controllers</h4>
+<h3 id="controllers">Controllers</h3>
+
 <p><i>Controllers</i> represent all business logic actions for the given request. These actions include <code>dispatch()</code>, <code>preDispatch()</code>, <code>postDispatch()</code> methods and delegate commands to other parts of the system. Controllers correspond to the Controller portion of the Model-View-Controller model.</p>
 
-<h4>/etc</h4>
+<h3 id="etc">/etc</h3>
+
 <p>This directory contains the XML files that declare and configure behavior of all modules. Each module must have a <code>config.xml</code> file, where  all models, routers, blocks, helpers are declared.</p>
 
 <p>Optionally, this folder could have <code>adminhtml.xml</code> (grant permissions for your tabs/sections in server-side menus) and <code>system.xml</code> (creates this new section or specifies where it should be displayed in the existing one).</p>
@@ -471,12 +490,13 @@
 
 <p>The specific set of configuration files that your module requires depends on the module’s purpose and the Magento area in which it functions.</p>
 
-<h4>Helper</h4>
+<h3 id="helper">Helper</h3>
+
 <p>Helpers contain utility methods, which are commonly used throughout the application. Methods, as declared in helpers, can be called from any template file or block, model, controller class.</p>
 
 <p>Each module has a default Data Helper class <code>Modulename/Helper/Data.php</code>.</p>
 
-<h4>Model</h4>
+<h3 id="model">Model</h3>
 <p>In a typical Model-View-Controller-based application, models are used to connect to the database and process  data from and to it. Magento has adapted this pattern slightly.</p>
 
 <p><i>Resource Models</i> are objects that contain code that fetches data from a data store. In practice, this means a resource model is the object that contains the SQL building and fetching code, as well as references to objects that connect to the main Magento database.</p>
@@ -485,13 +505,12 @@
 
 <p>A Magento model object contains a reference to a resource model, which it uses to load its data. There’s an individual resource model object for each model object. For example, a Product Model has a Product resource model.</p>
 
-<h4>sql</h4>
+<h3 id="sql">sql</h3>
 <p>Structures in this directory handle any custom database tables that are used by the module and process all upgrades to the extension.</p>
 
-<h3 id="arch-modules-related">Related topics</h3>
+<h2 id="arch-modules-related">Related topics</h2>
 
 <p><a href="/guides/v2.1/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a></p>
-
 
 		</div>
 	</section>

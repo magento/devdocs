@@ -383,7 +383,20 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2devgde-pricerend-intro">Introduction to Magento price rendering</h2>
+            <h2 id="m2devgde-pricerend-intro" class="no_toc">Introduction to Magento price rendering</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#m2devgde-pricerend-api" id="markdown-toc-m2devgde-pricerend-api">Price Rendering API</a>    <ul>
+      <li><a href="#m2devgde-pricerend-base-rend" id="markdown-toc-m2devgde-pricerend-base-rend">Base Renderer</a></li>
+      <li><a href="#m2devgde-pricerend-adjrendint" id="markdown-toc-m2devgde-pricerend-adjrendint">AdjustmentRenderInterface</a></li>
+      <li><a href="#m2devgde-pricerend-amrendint" id="markdown-toc-m2devgde-pricerend-amrendint">AmountRenderInterface</a></li>
+      <li><a href="#m2devgde-pricerend-pricebox" id="markdown-toc-m2devgde-pricerend-pricebox">PriceBox</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="overview">Overview</h2>
 
 <p>The Magento software renders prices using the Pricing library as follows:</p>
 
@@ -394,7 +407,7 @@
 <p>This section discusses the following APIs:</p>
 
 <ul>
-  <li><a href="#m2devgde-pricerend-base-rend">Base Renderer</a></li>
+  <li><a href="#m2devgde-pricerend-base-rend">BaseRenderer</a></li>
   <li><a href="#m2devgde-pricerend-adjrendint">AdjustmentRenderInterface</a></li>
   <li><a href="#m2devgde-pricerend-amrendint">AmountRenderInterface</a></li>
   <li><a href="#m2devgde-pricerend-pricebox">PriceBox</a></li>
@@ -489,7 +502,7 @@
 
 <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Render/AdjustmentRenderInterface.php" target="_blank">Magento\Framework\Pricing\Render\AdjustmentRenderInterface</a> is responsible for showing price adjustments according to the system configuration. It has a flexible internal config which allows specifying a separate template for each combination of price type and product type.</p>
 
-<p><code>AdjustmentRender</code> extends <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\View\Element\Template</a> and implements its behavior as well.</p>
+<p><code>AdjustmentRender</code> extends <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\View\Element\Template</a> and implements its behavior as well.&lt;/p&gt;</p>
 
 <table>
   <tbody>
@@ -654,6 +667,7 @@
 <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Render/PriceBox.php" target="_blank">Magento\Framework\Pricing\Render\PriceBox</a> is a main block that wraps all price rendering related content of particular Price Type.</p>
 
 <p>This is a private class, it cannot be accessed from general layout blocks or templates.</p>
+
 <table>
   <tbody>
     <tr>
@@ -722,7 +736,6 @@
     </tr>
   </tbody>
 </table>
-
 
 		</div>
 	</section>

@@ -383,35 +383,51 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2>Magento Blocks and Controllers</h2>
-<p>Blocks hold presentation logic – no business logic code that controls.</p>
+            <h2 class="no_toc" id="magento-blocks-and-controllers">Magento Blocks and Controllers</h2>
 
-<p>blocks provide methods that templates can use to make the template file easier to read. Blocks contain view-related logic. Blocks are cached. Keeping lots of logic in blocks in good!</p>
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#introduction-to-blocks" id="markdown-toc-introduction-to-blocks">Introduction to Blocks</a></li>
+  <li><a href="#introduction-to-controllers" id="markdown-toc-introduction-to-controllers">Introduction to Controllers</a>    <ul>
+      <li><a href="#magento-front-controller" id="markdown-toc-magento-front-controller">Magento Front Controller</a></li>
+    </ul>
+  </li>
+  <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
+</ul>
 
-<p>You can add new controllers without modifying the front controller</p>
+<h2 id="overview">Overview</h2>
 
-<h3>Introduction to Blocks</h3>
-<p>types of blocks</p>
+<p>Blocks hold presentation logic — no business logic code that controls.</p>
+
+<p>Blocks provide methods that templates can use to make the template file easier to read. Blocks contain view-related logic. Blocks are cached. Keeping lots of logic in blocks is good!</p>
+
+<p>You can add new controllers without modifying the front controller.</p>
+
+<h2 id="introduction-to-blocks">Introduction to Blocks</h2>
+
+<p>Types of blocks</p>
 
 <p>Layouts have output blocks</p>
 
-<h3>Introduction to Controllers</h3>
+<h2 id="introduction-to-controllers">Introduction to Controllers</h2>
 
-<h3>Magento Front Controller</h3>
-<p>front controller design pattern has two parts</p>
+<h3 id="magento-front-controller">Magento Front Controller</h3>
 
-<p>Tasks are highly limited, restricted to routing and dispatching.
-Follows the software design pattern commonly implemented in PHP-based applications of a front controller.</p>
+<p>Front controller design pattern has two parts</p>
+
+<p>Tasks are highly limited, restricted to routing and dispatching.</p>
+
+<p>Follows the software design pattern commonly implemented in PHP-based applications of a front controller.</p>
 
 <p>A solution to this problem is known as Front Controller. This design pattern channels every incoming request to a single point of entry – a front controller. This handler object performs all the common subroutines and then dispatches the request to a controller that handles specifics. The adoption of this approach is wide-spread owing to its flexibility and scalability.</p>
 
 <p>Blocks and controllers are discussed extensively in the</p>
 
-<h2 id="related">Related topics</h2>
+<h2 id="related-topics">Related topics</h2>
+
 <p><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
 
 <p>Presentation Layer</p>
-
 
 		</div>
 	</section>

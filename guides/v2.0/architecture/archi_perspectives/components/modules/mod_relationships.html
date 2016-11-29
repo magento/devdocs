@@ -854,7 +854,21 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2arch-module-relationships-overview">Overview</h2>
+            <h2 class="no_toc" id="module-relationships">Module relationships</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#m2arch-module-relationships-overview" id="markdown-toc-m2arch-module-relationships-overview">Overview</a></li>
+  <li><a href="#relationship-types-and-scenarios" id="markdown-toc-relationship-types-and-scenarios">Relationship types and scenarios</a>    <ul>
+      <li><a href="#a-uses-b-c-customizes-b" id="markdown-toc-a-uses-b-c-customizes-b">A uses B, C customizes B</a></li>
+      <li><a href="#a-reacts-to-b-c-customizes-b" id="markdown-toc-a-reacts-to-b-c-customizes-b">A reacts to B, C customizes B</a></li>
+      <li><a href="#a-and-c-customize-b" id="markdown-toc-a-and-c-customize-b">A and C customize B</a></li>
+      <li><a href="#a-replaces-b" id="markdown-toc-a-replaces-b">A replaces B</a></li>
+    </ul>
+  </li>
+  <li><a href="#m2arch-module-related" id="markdown-toc-m2arch-module-related">Related topics</a></li>
+</ul>
+
+<h2 id="m2arch-module-relationships-overview">Overview</h2>
 
 <p>Understanding how one module relates to another helps determine how it reacts to changes in that module.</p>
 
@@ -874,32 +888,39 @@
     <p><strong>implements</strong>: module A implements module B if it implements some, not necessarily all, behavior that is defined in module B</p>
   </li>
   <li>
-    <p><strong>replaces</strong>: 	module A replaces module B if it provides its own version of the API exposed and implemented by module B</p>
+    <p><strong>replaces</strong>: module A replaces module B if it provides its own version of the API exposed and implemented by module B</p>
   </li>
 </ul>
 
+<h2 id="relationship-types-and-scenarios">Relationship types and scenarios</h2>
+
+<h3 id="a-uses-b-c-customizes-b">A uses B, C customizes B</h3>
+
 <p>In a scenario where module A uses module B and module C customizes module B, the customizations in module C cannot break the API of module B so that module A still functions properly in the face of these customizations.</p>
 
-<p><span class="image-wrap" style=""><img src="/common/images/archi_first_relate.png" style="border: 0px solid black" /></span></p>
+<p><img src="/common/images/archi_first_relate.png" alt="Module relationship scenarios: A uses B, C customizes B" /></p>
+
+<h3 id="a-reacts-to-b-c-customizes-b">A reacts to B, C customizes B</h3>
 
 <p>Similarly, in a case where module A reacts to module B and module C customizes module B, the customizations in module C must not interfere with the events in module B that module A depends on.</p>
 
-<p><span class="image-wrap" style=""><img src="/common/images/archi_second_relate.png" style="border: 0px solid black" /></span></p>
+<p><img src="/common/images/archi_second_relate.png" alt="Module relationship scenarios: A reacts to B, C customizes B" /></p>
+
+<h3 id="a-and-c-customize-b">A and C customize B</h3>
 
 <p>If both module A and C customize module B, be careful about how these customizations are implemented so that you avoid conflicts (see below).</p>
 
-<p><span class="image-wrap" style=""><img src="/common/images/archi_third_relate.png" style="border: 0px solid black" /></span></p>
+<p><img src="/common/images/archi_third_relate.png" alt="Module relationship scenarios: A and C customize B" /></p>
 
-<p>If module A replaces module B, it needs to be able to do so in such a way that other modules are not affected.  That will mean not having direct hard dependencies on module B, but rather dependencies on a third module, module C, that both module A and B implement.</p>
+<h3 id="a-replaces-b">A replaces B</h3>
 
-<p><span class="image-wrap" style=""><img src="/common/images/archi_fourth_relate.png" style="border: 0px solid black" /></span></p>
+<p>If module A replaces module B, it needs to be able to do so in such a way that other modules are not affected. That will mean not having direct hard dependencies on module B, but rather dependencies on a third module, module C, that both module A and B implement.</p>
 
-<h2 id="m2arch-module-related"> Related topics</h2>
+<p><img src="/common/images/archi_fourth_relate.png" alt="Module relationship scenarios: A replaces B" /></p>
 
-<ul>
-  <li><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a></li>
-</ul>
+<h2 id="m2arch-module-related">Related topics</h2>
 
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a></p>
 
 		</div>
 	</section>

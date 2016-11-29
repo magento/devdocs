@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento 2 Developer Documentation</title>
+	<title>Module conventions</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -171,7 +171,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading"></h1>
+		<h1 class="page-heading">Module conventions</h1>
 
         
 
@@ -854,13 +854,20 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2arch-module-conventions-overview"> Overview</h2>
+            <h2 class="no_toc" id="module-conventions">Module conventions</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#m2arch-module-conventions-overview" id="markdown-toc-m2arch-module-conventions-overview">Overview</a></li>
+  <li><a href="#m2arch-module-conventions-location" id="markdown-toc-m2arch-module-conventions-location">Module location conventions</a></li>
+</ul>
+
+<h2 id="m2arch-module-conventions-overview">Overview</h2>
 
 <p>Modules must conform to Magento conventions regarding code location and file names. Keep these conventions in mind when working with or developing modules.</p>
 
 <p>Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see <a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a>.</p>
 
-<h2 id="m2arch-module-conventions-location"> Module location conventions</h2>
+<h2 id="m2arch-module-conventions-location">Module location conventions</h2>
 
 <p>The following table shows the <em>recommended</em> location within the Magento file system for specific components.</p>
 
@@ -869,28 +876,31 @@
 <p>We refer to a component’s root directory as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:</p>
 
 <table>
-	<tbody>
-		<tr>
-			<th>Entity</th>
-			<th>Location</th>
-		</tr>
-		<tr>
-			<td>Code base of your custom module</td>
-			<td><p><code>&lt;your Magento install dir&gt;/app/code/&lt;Vendor&gt;/&lt;Module&gt;</code></p></td>
-		</tr>
-		<tr>
-			<td colspan="1">Your custom theme files</td>
-			<td colspan="1"><code>&lt;<your Magento="" install="" dir="">/app/design/frontend (storefront themes) or &lt;Module&gt;/&lt;theme&gt;&lt;/code&gt;&lt;/td&gt;
-		&lt;/tr&gt;
-		<tr><td colspan="1">If you want to use a library</td>
-			<td colspan="1"><code>&lt;your Magento install dir&gt;/lib/&lt;Vendor_Library&gt;</code></td>
-		</tr>
-	&lt;/tbody&gt;
-&lt;/table&gt;
-
-
-
-</your></code></td></tr></tbody></table>
+  <thead>
+    <tr>
+      <th>Entity</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Code base of your custom module</td>
+      <td><code>/app/code/&lt;Vendor&gt;/&lt;Module&gt;</code></td>
+    </tr>
+    <tr>
+      <td>Custom theme files (storefront)</td>
+      <td><code>/app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code></td>
+    </tr>
+    <tr>
+      <td>Custom theme files (modules)</td>
+      <td><code>&lt;Module&gt;/&lt;theme&gt;</code></td>
+    </tr>
+    <tr>
+      <td>If you want to use a library</td>
+      <td><code>/lib/&lt;Vendor_Library&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
 
 		</div>
 	</section>

@@ -854,7 +854,16 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2devgde-moddep-intro"> Module dependencies</h2>
+            <h2 class="no_toc" id="module-dependencies">Module dependencies</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#m2devgde-moddep-intro" id="markdown-toc-m2devgde-moddep-intro">Overview</a></li>
+  <li><a href="#what-components-can-modules-depend-upon" id="markdown-toc-what-components-can-modules-depend-upon">What components can modules depend upon?</a></li>
+  <li><a href="#managing-module-dependencies" id="markdown-toc-managing-module-dependencies">Managing module dependencies</a></li>
+  <li><a href="#m2arch-module-related" id="markdown-toc-m2arch-module-related">Related topics</a></li>
+</ul>
+
+<h2 id="m2devgde-moddep-intro">Overview</h2>
 
 <p>A <i>software dependency</i> identifies  one software component’s reliance on another for proper functioning. A core principle of Magento architecture is the <strong>minimization of software dependencies</strong>. Instead of being closely interrelated with other modules, modules are optimally designed to be <i>loosely coupled</i>. Loosely coupled modules require little or no knowledge of other modules to perform their tasks.</p>
 
@@ -875,26 +884,39 @@
   </li>
 </ul>
 
-<h3>What components can modules depend upon?</h3>
+<h2 id="what-components-can-modules-depend-upon">What components can modules depend upon?</h2>
+
 <p>Although Magento architecture favors loosely coupled software components, modules can contain dependencies upon these software components:</p>
 
 <ul>
-  <li>other modules</li>
-  <li>PHP extensions</li>
-  <li>libraries (either Magento Framework library or third party libraries)</li>
+  <li>
+    <p>other modules</p>
+  </li>
+  <li>
+    <p>PHP extensions</p>
+  </li>
+  <li>
+    <p>libraries (either Magento Framework library or third party libraries)</p>
+  </li>
 </ul>
 
 <div class="bs-callout bs-callout-warning" id="warning">
 <p>Note: You can lose the historical information contained in a module if the module is removed or disabled. We recommend alternative storage of module information before you remove or disable a module.</p></div>
 
-<h3 id="m2devgde-moddep-intro">Manage module dependencies</h3>
+<h2 id="managing-module-dependencies">Managing module dependencies</h2>
 
 <p>At a high level, there are three main steps for managing module dependencies:</p>
 
 <ol>
-  <li>Name and declare the module in the <code>module.xml</code> file.</li>
-  <li>Declare any dependencies that the module has (whether on other modules or on a different component) in the module’s <code>composer.json</code> file.</li>
-  <li>(<em>Optional</em>) Define the desired load order of config files and <code>.css</code> files in the <code>module.xml</code> file.</li>
+  <li>
+    <p>Name and declare the module in the <code>module.xml</code> file.</p>
+  </li>
+  <li>
+    <p>Declare any dependencies that the module has (whether on other modules or on a different component) in the module’s <code>composer.json</code> file.</p>
+  </li>
+  <li>
+    <p>(<em>Optional</em>) Define the desired load order of config files and <code>.css</code> files in the <code>module.xml</code> file.</p>
+  </li>
 </ol>
 
 <p>Example: Module A declares a dependency upon Module B. Thus, in Module A’s <code>module.xml</code> file, Module B is listed in the &lt;sequence&gt; list, so that B’s files are loaded before A’s. Additionally, you must declare a dependency upon Module B in A’s <code>composer.json</code> file. Furthermore, in the <a href="/guides/v2.0/config-guide/config/config-php.html">deployment configuration</a>, Modules A and B must both be defined as enabled.</p>
@@ -904,7 +926,6 @@
 <p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a></p>
 
 <p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend_types.html">Types of module dependencies</a></p>
-
 
 		</div>
 	</section>

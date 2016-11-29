@@ -854,36 +854,51 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2>Storefront customization strategies</h2>
+            <h2 class="no_toc" id="storefront-customization-strategies">Storefront customization strategies</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#storefront-customization-levels" id="markdown-toc-storefront-customization-levels">Storefront customization levels</a>    <ul>
+      <li><a href="#extend-magento-provided-css" id="markdown-toc-extend-magento-provided-css">Extend Magento-Provided CSS</a></li>
+      <li><a href="#replace-phtml-template-files" id="markdown-toc-replace-phtml-template-files">Replace PHTML template files</a></li>
+      <li><a href="#replace-magento-provided-css" id="markdown-toc-replace-magento-provided-css">Replace Magento-Provided CSS</a></li>
+      <li><a href="#replace-magento-provided-css-html-and-javascript" id="markdown-toc-replace-magento-provided-css-html-and-javascript">Replace Magento-Provided CSS, HTML, and JavaScript</a></li>
+      <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="overview">Overview</h2>
 
 <p>We can generalize about the range of storefront customizations that the Magento supports. This range spans the simplest customizations, which involve only small additions to the default Magento storefront settings, to a complete replacement of Magento-provided HTML and CSS.</p>
 
+<h2 id="storefront-customization-levels">Storefront customization levels</h2>
+
 <p>These four levels of potential storefront customization are listed in order to increase complexity.</p>
 
-<h3>Extend Magento-Provided CSS</h3>
-<p>Magento supplies a default theme and a LESS-based CSS set of styles. You can substantially change a storefront using CSS only.  This uncomplicated strategy might suit projects with a limited budget, or might interest developers who create different skins for a site. A small business enter this process of storefront customization by buying a third-party developed theme from Magento Marketplace to extend the default values.</p>
+<h3 id="extend-magento-provided-css">Extend Magento-Provided CSS</h3>
+<p>Magento supplies a default theme and a LESS-based CSS. You can substantially change a storefront using CSS only. This uncomplicated strategy might suit projects with a limited budget, or might interest developers who create different skins for a site. A small business enter this process of storefront customization by buying a third-party developed theme from Magento Marketplace to extend the default values.</p>
 
-<h3>Replace PHTML template files</h3>
+<h3 id="replace-phtml-template-files">Replace PHTML template files</h3>
 <p>In addition to extending the default CSS, you can generate different HTML markup. For example, you might need to add a missing CSS class name, or an add an extra <code>&lt;div&gt;</code> tag to achieve some visual effect. You might also need to tweak some JavaScript to cope with different HTML markup. This change is more demanding than simply extending Magento CSS, but is still within the grasp of smaller projects and leaner teams.</p>
 
-<h3>Replace Magento-Provided CSS</h3>
+<h3 id="replace-magento-provided-css">Replace Magento-Provided CSS</h3>
 <p>Rather than edit the default CSS provided by Magento, you might decide to replace all the default storefront CSS code with your own. This strategy avoids tying a project to the Magento-provided CSS, but puts a greater burden on project development and integration. It also allows use of different CSS tools or technologies not provided with Magento. Partners who build their own set of CSS libraries could reuse these libraries on different customer projects. (These unique CSS libraries may help differentiate a partner from others in the market.)</p>
 
 <p>In addition to replacing CSS files, you might need to replace small amounts of HTML and JavaScript.</p>
 
-<h3>Replace Magento-Provided CSS, HTML, and JavaScript</h3>
+<h3 id="replace-magento-provided-css-html-and-javascript">Replace Magento-Provided CSS, HTML, and JavaScript</h3>
 <p>Delivering a sharply different shopping experience than the default Magento installation provides is a more substantial task. However, the tradeoff might be a more complicated experience integrating additional extensions into your installation in the future.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Note: Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in PHTML files; keep all JavaScript in JavaScript files.</p>
+  <p>Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in PHTML files; keep all JavaScript in JavaScript files.</p>
 </div>
 
-<h3>Related topics</h3>
+<h3 id="related-topics">Related topics</h3>
 
-<p><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></p>
+<p><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html" target="_blank">Frontend Developer Guide</a></p>
 
-<p><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></p>
-
+<p><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html" target="_blank">JavaScript Developer Guide</a></p>
 
 		</div>
 	</section>

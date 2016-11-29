@@ -854,10 +854,24 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2devgde-moddep-declare-dep">Types of module dependencies</h2>
+            <h2 class="no_toc" id="module-dependency-types">Module dependency types</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#m2devgde-moddep-declare-dep" id="markdown-toc-m2devgde-moddep-declare-dep">Overview</a></li>
+  <li><a href="#hard-dependencies" id="markdown-toc-hard-dependencies">Hard dependencies</a></li>
+  <li><a href="#soft-dependencies" id="markdown-toc-soft-dependencies">Soft dependencies</a></li>
+  <li><a href="#m2devgde-moddep-inapp-dep" id="markdown-toc-m2devgde-moddep-inapp-dep">Inappropriate dependencies</a></li>
+  <li><a href="#m2devgde-moddep-diff-layer" id="markdown-toc-m2devgde-moddep-diff-layer">Dependencies between modules in different product layers</a></li>
+  <li><a href="#m2devgde-moddep-frmwk-layer" id="markdown-toc-m2devgde-moddep-frmwk-layer">Dependencies in the Framework layer</a></li>
+  <li><a href="#m2devgde-moddep-app-layer" id="markdown-toc-m2devgde-moddep-app-layer">Dependencies in the Application layer</a></li>
+  <li><a href="#m2arch-module-related" id="markdown-toc-m2arch-module-related">Related topics</a></li>
+</ul>
+
+<h2 id="m2devgde-moddep-declare-dep">Overview</h2>
+
 <p>There are two types of Magento module dependencies: hard and soft dependencies.</p>
 
-<h3>Hard dependencies</h3>
+<h2 id="hard-dependencies">Hard dependencies</h2>
 
 <p>Modules with a <i>hard dependency</i> on another module cannot function without the module it depends on. Specifically:</p>
 
@@ -876,7 +890,7 @@
   </li>
 </ul>
 
-<h3>Soft dependencies</h3>
+<h2 id="soft-dependencies">Soft dependencies</h2>
 
 <p>Modules with a  <i>soft dependency</i> on another module can function properly without the other module, even if it has a dependency upon it. Specifically:</p>
 
@@ -903,26 +917,28 @@
 
 <p>2) the module dependent on it</p>
 
-<h3 id="m2devgde-moddep-inapp-dep">Inappropriate dependencies</h3>
+<h2 id="m2devgde-moddep-inapp-dep">Inappropriate dependencies</h2>
 
 <p>Avoid creating the following dependencies:</p>
 
 <ul>
   <li>
-    <p>Circular dependencies (both direct and indirect)</p>
+    <p>Circular (both direct and indirect)</p>
   </li>
   <li>
-    <p>Undeclared dependencies</p>
+    <p>Undeclared</p>
   </li>
   <li>
-    <p>Incorrect dependencies</p>
+    <p>Incorrect</p>
   </li>
 </ul>
 
-<h3 id="m2devgde-moddep-diff-layer">Dependencies between modules in different product layers</h3>
+<h2 id="m2devgde-moddep-diff-layer">Dependencies between modules in different product layers</h2>
+
 <p>You can build dependencies between the modules belonging to different layers.</p>
 
-<h3 id="m2devgde-moddep-frmwk-layer">Dependencies in the Framework layer</h3>
+<h2 id="m2devgde-moddep-frmwk-layer">Dependencies in the Framework layer</h2>
+
 <p>Modules belonging to the Magento Framework can be used in the application layer by an explicit dependency.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -930,7 +946,7 @@
   <p>You can build dependencies between classes in the Magento Framework  even if they belong to different modules.</p>
 </div>
 
-<h3 id="m2devgde-moddep-app-layer">Dependencies in the application layer</h3>
+<h2 id="m2devgde-moddep-app-layer">Dependencies in the Application layer</h2>
 <p>Modules belonging to the application layer cannot be used in the Magento Framework.</p>
 
 <p>You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the service contract or the service provider interface (SPI).</p>
@@ -938,7 +954,6 @@
 <h2 id="m2arch-module-related">Related topics</h2>
 
 <p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a></p>
-
 
 		</div>
 	</section>

@@ -854,13 +854,23 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="verpol">Release types and version numbers</h2>
+            <h2 id="verpol" class="no_toc">Release types and version numbers</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#development-releases" id="markdown-toc-development-releases">Development releases</a></li>
+  <li><a href="#stable-releases" id="markdown-toc-stable-releases">Stable releases</a></li>
+  <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
 
 <p>This topic describes how  and when the software version numbers will be changed with releases.</p>
 
 <p>The software version  always changes with any release of Magento source code.</p>
 
-<h3>Development releases</h3>
+<h2 id="development-releases">Development releases</h2>
+
 <p>In every development release (“pre-release” version), <strong>the same value of version number will be propagated in all Magento components and their dependencies</strong>.</p>
 
 <p>Magento may update the <code>x.y.z</code> version in way prescribed by Semantic Versioning, but also could release the same <code>x.y.z</code> with different stability and/or index numbers, For example, <code>0.1.0-alpha1 -&gt; 0.1.0-alpha2</code>, <code>0.1.0-alpha3</code> or <code>2.0.0-alpha3 -&gt; 2.1.0-beta1 -&gt; 2.1.0-beta2</code></p>
@@ -893,7 +903,7 @@
 </tbody>
 </table>
 
-<h3>Stable releases</h3>
+<h2 id="stable-releases">Stable releases</h2>
 
 <p>In every stable release, the same value of version number is propagated in all components, but dependencies have a wildcard (*) pattern.</p>
 
@@ -929,11 +939,16 @@
 </tbody>
 </table>
 
-<h3>Related topics</h3>
-<p><a href="/guides/v2.0/architecture/back-compatibility.html">Backward compatibility</a></p>
+<h2 id="related-topics">Related topics</h2>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></p>
-
+<ul>
+  <li>
+    <p><a href="/guides/v2.0/architecture/back-compatibility.html">Backward compatibility</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.0/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></p>
+  </li>
+</ul>
 
 		</div>
 	</section>

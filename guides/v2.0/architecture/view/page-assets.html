@@ -383,7 +383,30 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2devgde-page-assets-intro">Introduction to page assets</h2>
+            <h2 class="no_toc" id="introduction-to-page-assets">Introduction to page assets</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#m2devgde-page-assets-intro" id="markdown-toc-m2devgde-page-assets-intro">Overview</a></li>
+  <li><a href="#m2devgde-page-assets-interf" id="markdown-toc-m2devgde-page-assets-interf">Asset interfaces</a></li>
+  <li><a href="#m2devgde-page-assets-imp" id="markdown-toc-m2devgde-page-assets-imp">Implement assets</a>    <ul>
+      <li><a href="#m2devgde-page-assets-imp-no-info" id="markdown-toc-m2devgde-page-assets-imp-no-info">Assets without remote or local information</a></li>
+      <li><a href="#m2devgde-page-assets-imp-local" id="markdown-toc-m2devgde-page-assets-imp-local">Local assets</a></li>
+      <li><a href="#m2devgde-page-assets-imp-context" id="markdown-toc-m2devgde-page-assets-imp-context">Context implementations</a></li>
+    </ul>
+  </li>
+  <li><a href="#m2devgde-page-assets-static-view" id="markdown-toc-m2devgde-page-assets-static-view">Page assets and static view files</a></li>
+  <li><a href="#m2devgde-page-assets-static-manip" id="markdown-toc-m2devgde-page-assets-static-manip">Manipulate page assets</a>    <ul>
+      <li><a href="#m2devgde-page-assets-static-manip-xml" id="markdown-toc-m2devgde-page-assets-static-manip-xml">Use layout XML to manipulate assets</a></li>
+      <li><a href="#javascript-assets" id="markdown-toc-javascript-assets">JavaScript assets</a></li>
+      <li><a href="#css-assets" id="markdown-toc-css-assets">CSS assets</a></li>
+      <li><a href="#rss-feed-assets" id="markdown-toc-rss-feed-assets">RSS feed assets</a></li>
+      <li><a href="#m2devgde-page-assets-api" id="markdown-toc-m2devgde-page-assets-api">Use APIs to manipulate assets</a></li>
+    </ul>
+  </li>
+  <li><a href="#related-topics" id="markdown-toc-related-topics">Related topics</a></li>
+</ul>
+
+<h2 id="m2devgde-page-assets-intro">Overview</h2>
 
 <p>An <em>asset</em> is a reference to a certain resource linked to an HTML page; that is, references to scripts, stylesheets, RSS feeds, and so on using <code>&lt;head/&gt;</code>, <code>&lt;img/&gt;</code>, <code>&lt;object/&gt;</code> elements.</p>
 
@@ -396,7 +419,7 @@ who have solid experience with PHP and are familiar with <a href="/guides/v2.0/a
 
 <ul>
   <li>
-    <p>Asset—a basic definition of an asset that consists of:</p>
+    <p>Asset — a basic definition of an asset that consists of:</p>
 
     <ul>
       <li>URL to the asset</li>
@@ -404,15 +427,15 @@ who have solid experience with PHP and are familiar with <a href="/guides/v2.0/a
     </ul>
   </li>
   <li>
-    <p>Local asset—an extended definition that, in addition to the preceding also provides information about:</p>
+    <p>Local asset — an extended definition that, in addition to the preceding also provides information about:</p>
 
     <ul>
-      <li>Source file—an absolute path to the asset file in the local file system.</li>
-      <li>Relative path—a relative path to the asset file.</li>
+      <li>Source file — an absolute path to the asset file in the local file system.</li>
+      <li>Relative path — a relative path to the asset file.</li>
     </ul>
   </li>
   <li>
-    <p>Mergeable asset—a “marker” abstraction for local assets, indicating that their contents may be merged</p>
+    <p>Mergeable asset — a “marker” abstraction for local assets, indicating that their contents may be merged</p>
   </li>
 </ul>
 
@@ -424,8 +447,12 @@ who have solid experience with PHP and are familiar with <a href="/guides/v2.0/a
 <p>The classes Implement the interfaces are responsible for:</p>
 
 <ul>
-  <li>Remote: Implements an asset for which there is only URL and content type information. Used for rendering included RSS feeds, for example.</li>
-  <li>File: Implements  a local asset that is referred using a relative path in Magento file system. The same relative path invariant is appended to the base URL when the full URL is requested. Because these assets are available locally, the Magento system can work with them in many ways; for example, transform the content, merge assets, or substitute with other assets.</li>
+  <li>
+    <p>Remote: Implements an asset for which there is only URL and content type information. Used for rendering included RSS feeds, for example.</p>
+  </li>
+  <li>
+    <p>File: Implements  a local asset that is referred using a relative path in Magento file system. The same relative path invariant is appended to the base URL when the full URL is requested. Because these assets are available locally, the Magento system can work with them in many ways; for example, transform the content, merge assets, or substitute with other assets.</p>
+  </li>
 </ul>
 
 <h2 id="m2devgde-page-assets-imp">Implement assets</h2>
@@ -459,8 +486,12 @@ who have solid experience with PHP and are familiar with <a href="/guides/v2.0/a
 <p><code>File</code> specifics:</p>
 
 <ul>
-  <li><code>File</code> accepts scalar data in the constructor and is immutable, but requires an instance of “source” for lazy loading of content or a source file.</li>
-  <li>The <code>$context</code> argument in the constructor is a value object necessary for generating URLs. It contains the base URL and the context path that needs to be put in the beginning of the file path. See the next section for more information about context.</li>
+  <li>
+    <p><code>File</code> accepts scalar data in the constructor and is immutable, but requires an instance of “source” for lazy loading of content or a source file.</p>
+  </li>
+  <li>
+    <p>The <code>$context</code> argument in the constructor is a value object necessary for generating URLs. It contains the base URL and the context path that needs to be put in the beginning of the file path. See the next section for more information about context.</p>
+  </li>
 </ul>
 
 <h3 id="m2devgde-page-assets-imp-context">Context implementations</h3>
@@ -500,8 +531,12 @@ http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css
 <p>This section discusses the following ways to work with view assets:</p>
 
 <ul>
-  <li><a href="#m2devgde-page-assets-static-manip-xml">Manipulating Assets Using Layout XML</a></li>
-  <li><a href="#m2devgde-page-assets-api">Manipulating Assets Using the APIs</a></li>
+  <li>
+    <p><a href="#m2devgde-page-assets-static-manip-xml">Manipulating Assets Using Layout XML</a></p>
+  </li>
+  <li>
+    <p><a href="#m2devgde-page-assets-api">Manipulating Assets Using the APIs</a></p>
+  </li>
 </ul>
 
 <h3 id="m2devgde-page-assets-static-manip-xml">Use layout XML to manipulate assets</h3>
@@ -512,26 +547,35 @@ http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css
 
 <p>Expand one of the following sections for more information:</p>
 
-<div id="accordion">
-<h3>JavaScript assets</h3>
-<div><strong>Layout instructions</strong>
+<h3 id="javascript-assets">JavaScript assets</h3>
+
+<p><strong>Layout instructions</strong></p>
+
 <script src="https://gist.github.com/xcomSteveJohnson/82a10d4d61de9d832fcb.js"></script>
-<strong>Rendered HTML Output</strong>
+
+<p><strong>Rendered HTML Output</strong></p>
+
 <script src="https://gist.github.com/xcomSteveJohnson/d87ce5934b80a56c7292.js"></script>
-</div>
-<h3>CSS assets</h3>
-<div><strong>Layout instructions</strong>
+
+<h3 id="css-assets">CSS assets</h3>
+
+<p><strong>Layout instructions</strong></p>
+
 <script src="https://gist.github.com/xcomSteveJohnson/5c8dc5e2eb1229c63406.js"></script>
-<strong>Rendered HTML Output</strong>
+
+<p><strong>Rendered HTML Output</strong></p>
+
 <script src="https://gist.github.com/xcomSteveJohnson/118d51c5af7d371f809a.js"></script>
-</div>
-<h3>RSS feed assets</h3>
-<div><strong>Layout instructions</strong>
+
+<h3 id="rss-feed-assets">RSS feed assets</h3>
+
+<p><strong>Layout instructions</strong></p>
+
 <script src="https://gist.github.com/xcomSteveJohnson/6617872c0698ea1f5d07.js"></script>
-<strong>Rendered HTML Output</strong>
+
+<p><strong>Rendered HTML Output</strong></p>
+
 <script src="https://gist.github.com/xcomSteveJohnson/7957c6bd6b8d893da2a1.js"></script>
-</div>
-</div>
 
 <h4 id="m2devgde-page-assets-static-manip-xml-brows">Use layout XML to manipulate browser matching</h4>
 
@@ -594,7 +638,7 @@ http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css
 
 <script src="https://gist.github.com/xcomSteveJohnson/e292aca8a49fdab644fc.js"></script>
 
-<h4 id="related-topics">Related topics</h4>
+<h2 id="related-topics">Related topics</h2>
 
 <ul>
   <li><a href="/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a></li>

@@ -383,7 +383,17 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="m2devgde-pagetype-intro">Introduction to page types</h2>
+            <h2 id="m2devgde-pagetype-intro" class="no_toc">Introduction to page types</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#m2devgde-pagetype-handles" id="markdown-toc-m2devgde-pagetype-handles">Page types and layout handles</a></li>
+  <li><a href="#m2devgde-pagetype-declare" id="markdown-toc-m2devgde-pagetype-declare">Page type declaration</a></li>
+  <li><a href="#m2devge-pagetype-widget" id="markdown-toc-m2devge-pagetype-widget">Page types in widget creation</a></li>
+  <li><a href="#m2devge-pagetype-custom-pg" id="markdown-toc-m2devge-pagetype-custom-pg">Add custom pages for widget creation</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
 
 <p>Page types are semantic abstractions of those controller actions which are used for page rendering. They help to qualify pages by context type, like Product View page, Shopping Cart page, and so on, providing business users the ability to customize page design. In particular, page types are used in the widget creation  to define the pages where a widget can be displayed.</p>
 
@@ -403,10 +413,18 @@
 <p>where</p>
 
 <ul>
-  <li><code>module</code> is the name of a module</li>
-  <li><code>Controller</code> is the module’s <code>Controller</code> directory</li>
-  <li><code>controller</code> is the controller class name</li>
-  <li><code>action</code> is the name of the action method</li>
+  <li>
+    <p><code>module</code> is the name of a module</p>
+  </li>
+  <li>
+    <p><code>Controller</code> is the module’s <code>Controller</code> directory</p>
+  </li>
+  <li>
+    <p><code>controller</code> is the controller class name</p>
+  </li>
+  <li>
+    <p><code>action</code> is the name of the action method</p>
+  </li>
 </ul>
 
 <p>For example,</p>
@@ -448,21 +466,30 @@
 <p>To create a widget, you must specify the pages on which it displays in the Magento Admin as follows:</p>
 
 <ol>
-  <li>In the Magento Admin, click <strong>Content</strong> &gt; <strong>Frontend App</strong>.</li>
-  <li>After choosing to create a new widget instance, specify the widget type and the design theme.</li>
-  <li>In the page for configuring other widget options, click <strong>Add Layout Update</strong>. You can now specify pages by clicking the corresponding layout handle names.</li>
+  <li>
+    <p>In the Magento Admin, click <strong>Content</strong> &gt; <strong>Frontend App</strong>.</p>
+  </li>
+  <li>
+    <p>After choosing to create a new widget instance, specify the widget type and the design theme.</p>
+  </li>
+  <li>
+    <p>In the page for configuring other widget options, click <strong>Add Layout Update</strong>. You can now specify pages by clicking the corresponding layout handle names.</p>
+  </li>
   <li>
     <p>If you choose <strong>Specified Page</strong>, a list of available page types displays, as the following figure shows.</p>
 
     <p><img src="/common/images/page_types_widget_specified-page.png" /></p>
   </li>
-  <li>The page types in this list correspond to certain layout handles as follows.
-<img src="/common/images/page_types_widget_layout-handles.png" /></li>
+  <li>
+    <p>The page types in this list correspond to certain layout handles as follows.</p>
+
+    <p><img src="/common/images/page_types_widget_layout-handles.png" /></p>
+  </li>
 </ol>
 
 <h2 id="m2devge-pagetype-custom-pg">Add custom pages for widget creation</h2>
 
-<p>For your custom page type to be an option in the list of available pages during widget creation, you must declare this page type as discussed in  in <a href="#m2devgde-pagetype-declare">Page type declaration</a>.</p>
+<p>For your custom page type to be an option in the list of available pages during widget creation, you must declare this page type as discussed in in <a href="#m2devgde-pagetype-declare">Page type declaration</a>.</p>
 
 		</div>
 	</section>
