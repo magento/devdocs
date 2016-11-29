@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
+subgroup: 02_rel-notes
 title: Magento EE 2.0.10 Release Notes
 menu_title: Magento EE 2.0.10 Release Notes
 menu_order: 20
