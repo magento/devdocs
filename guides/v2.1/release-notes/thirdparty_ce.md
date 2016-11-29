@@ -12,7 +12,7 @@ This page contains links to license agreements of the third party components use
 
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
-Zend Framework|2.4.6|BSD-3-Clause|[Source](http://framework.zend.com/)|[License](http://framework.zend.com/license/new-bsd)
+Zend Framework|2.4.6|BSD-3-Clause|[Source](http://framework.zend.com/)|[License](https://framework.zend.com/license)
 colinmollenhour/credis || MIT|[Source](https://github.com/colinmollenhour/credis)|[License](https://github.com/colinmollenhour/credis/blob/master/LICENSE)
 colinmollenhour/php-redis-session-abstract || BSD-3-Clause|[Source](https://github.com/colinmollenhour/php-redis-session-abstract)|[License](https://github.com/colinmollenhour/php-redis-session-abstract#license)
 colinmollenhour/cache-backend-file |1.4| BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/blob/master/Cm/Cache/Backend/Redis.php)
