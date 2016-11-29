@@ -54,7 +54,7 @@ symfony/stopwatch || MIT|[Source](https://github.com/symfony/stopwatch)|[License
 symfony/yaml || MIT|[Source](https://github.com/symfony/yaml)|[License](https://github.com/symfony/yaml/blob/master/LICENSE)
 tedivm/jshrink || BSD-3-Clause|[Source](https://github.com/tedious/Jshrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
 tubalmartin/cssmin || BSD-3-Clause|[Source](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port)|
-Zend Framework||BSD-3-Clause|[Source](http://framework.zend.com/)|[License](http://framework.zend.com/license/new-bsd)
+Zend Framework||BSD-3-Clause|[Source](http://framework.zend.com/)|[License](https://framework.zend.com/license)
 Cm ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
 extjs |1.0.1|Open GPL 3.0 (when was included)|[Source](https://www.sencha.com/)|[License](https://www.gnu.org/licenses/lgpl.html)
 fotorama|4.6.4 |MIT|[Source](https://github.com/artpolikarpov/fotorama)|[License](https://github.com/artpolikarpov/fotorama/blob/master/MIT-LICENSE)
