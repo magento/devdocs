@@ -16,15 +16,19 @@ github_link: migration/migration-tool-upgrade.md
 * TOC
 {:toc}
 
+## Why do I need to upgrade?
+
+To make sure the versions of your current Magento 2 installation and the Data Migration Tool match exactly, you may need to upgrade the Tool.
+
 ## Prerequisites {#data-migrate-prereq}
 
-Before you upgrade, you must:
+Before upgrading the Data Migration Tool, you must:
 
-*	Upgrade your Magento software
+*	Upgrade your Magento software to get the latest version
 
 *	Back up the `vendor/magento/data-migration-tool` directory
 
-* Verify the versions of Magento 2 and Data Migration Tool match exactly
+* Make sure the Data Migration Tool version matches the Magento application version
 
 ### Upgrade your Magento software {#data-migrate-upgr-magento}
 
@@ -42,7 +46,7 @@ You can also back up the entire Magento codebase and database using the followin
     <p>The <code>vendor/magento/data-migration-tool</code> directory contains your custom code. Failure to back it up means you can lose your customizations during upgrade.</p>
 </div>
 
-### Verify that Magento and Tool versions match
+### Make sure versions match
 
 The versions of the Data Migration Tool and your Magento software must match exactly. For example, Magento 2.1.2 requires version 2.1.2 of the Data Migration Tool.
 
@@ -50,9 +54,9 @@ See the [Install Data Migration Tool]({{page.baseurl}}migration/migration-tool-i
 
 * [Check]({{page.baseurl}}migration/migration-tool-install.html#magento-version) your Magento 2 version
 
-* [Find]({{page.baseurl}}migration/migration-tool-install.html#migration-tool-release-version) released versions of Data Migration Tool
+* [Find]({{page.baseurl}}migration/migration-tool-install.html#migration-tool-release-version) released versions of the Data Migration Tool
 
-* [Check]({{page.baseurl}}migration/migration-tool-install.html#migration-tool-install-version) version of installed Data Migration Tool
+* [Check]({{page.baseurl}}migration/migration-tool-install.html#migration-tool-install-version) the Data Migration Tool version
 
 ## Upgrade Data Migration Tool {#data-migrate-upgr}
 
