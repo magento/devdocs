@@ -38,21 +38,19 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 
 
-* Increase storefront performance by removing excessive and slow SQL media queries.
+* <i>Increased storefront performance</i> by removing excessive and slow SQL media queries.
 
-* Manage configurable products with many variations in the Admin interface without degrading performance. 
+* <i>Management of configurable products with many variations</i> in the Admin interface without degrading performance. 
 
+* <i>Upgrade</i> to Magento 2.1.x from Magento 2.0.x without issue when using multiple master databases for checkout, order management, and product data.
 
+* <i>Successful import or export CSV files with data that contains special symbols</i> (that is, symbols that are not escaped during file processing).
 
-* Upgrade to Magento 2.1.x from Magento 2.0.x without issue when using multiple master databases for checkout, order management, and product data.
-
-* You can now import or export CSV files with data that contains special symbols (that is, symbols that are not escaped during file processing).
-
-* The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
+* <i>Enhanced performance in the processing of large catalogs</i>. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
 
 
 
-* Additional services for the Sales module to support changing order status and returning products to stock.  These web APIs (or <i>service contracts</i>) for the Sales module  incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `RefundInvoice` method to  
+* <i>Additional services for the Sales module</i>  support changing order status and returning products to stock.  These web APIs (or <i>service contracts</i>) for the Sales module  incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `RefundInvoice` method to  
 
 	* create a credit memo (complete or partial) for particular invoice
 
@@ -62,7 +60,7 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 	* notify customer about performed refund operation
 
-See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for more information on using these new interfaces.
+
 
 
 ### Why are we adding new APIs in a patch release?
