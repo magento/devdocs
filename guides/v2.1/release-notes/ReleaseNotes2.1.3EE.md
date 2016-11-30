@@ -585,53 +585,62 @@ S
 
 
 ## Known issues
-60781
-60680
-60553
-60616
-60801
+
+
+<!---60781-->* **Issue**: 
+
+**Workaround**:
 
 
 
 
-<!---60616-->* Magento fails to validate required Customer Address or Customer attributes.  OPEN
+
+<!---60680-->* **Issue**: 
+
+**Workaround**:
+
+
+
+
+
+<!---60553-->* **Issue**: 
+
+**Workaround**:
+
+
+
+
+
+<!---60801-->* **Issue**: 
+
+**Workaround**:
+
+
+
+
+
+
+<!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes.  
+
+**Workaround**:
+
+
 
 
 <!---61341-->* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  
 
-Workaround**: Upgrade your version of TLS to at least 1.2. 
+**Workaround**: Upgrade your version of TLS to at least 1.2. 
 
 
-<!---58433-->* Saving category on catalog with 20k+ products is very slow (from 5mins till 1 hour) OPEN
+<!---58433-->* **Issue**:** Saving category on catalog with 20k+ products is very slow (from 5 mins till 1 hour) 
+**Workaround**:
 
 
-
-
-
-* **Issue**: Varnish cache not cleared from Admin  <a href="https://github.com/magento/magento2/issues/7296" target="_blank">(GITHUB-7296)</a>. **
-System->Cache Management never clears it. Does not clear full page cache
-
-Stores->Configuration->System->Full Page Cache->Set to Varnish Cache
-Go to System->Cache Management
-Clear the cache
-Reload frontend browser. Front end doesn't change (e.g. CMS page updated content)
-Expected result
-
-Varnish Cache to appear in list. Full page caching should not appear?
-Varnish Cache to be cleared when selecting it or flushing Magento cache
-Actual result
-
-Varnish cache does not get cleared
-Old content displayed on the website
-
-
-Workaround**: 
-<!--- -->
 
 
 
 * **Issue**:**
-Workaround**: 
+**Workaround**: 
 <!--- -->
 
 
