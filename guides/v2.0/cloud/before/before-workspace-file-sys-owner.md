@@ -26,7 +26,7 @@ This section discusses how to create a new Magento file system owner and put tha
 ### Step 1: Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}
 This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the *command-line user*.)
 
-{% collapsible To create the Magento file system owner:% }
+{% collapsible To create the Magento file system owner: % }
 
 Enter the following command as a user with `root` privileges:
 
