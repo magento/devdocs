@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento EE 2.0.4 Release Notes 
 menu_title: Magento EE 2.0.4 Release Notes 
-menu_order: 6
+menu_order: 699
 version: 2.0
 github_link: release-notes/ReleaseNotes2.0.4EE.md
 ---
