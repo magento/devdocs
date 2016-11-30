@@ -35,6 +35,6 @@ To be able to manage your projects, environments, and services, you must set up 
 This guide assumes you're working on a UNIX system or in a UNIX shell environment. On Windows, you can use a UNIX environment like Cygwin or you can use Putty. The tool you use is up to you.
 
 #### Next step
-[Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html)
+[Step 1, Set up an account]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
 
 
