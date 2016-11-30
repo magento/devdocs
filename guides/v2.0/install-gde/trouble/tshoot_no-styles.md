@@ -11,8 +11,6 @@ github_link: install-gde/trouble/tshoot_no-styles.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_no-styles.html
 ---
 
-<h2 id="install-trouble-styles">After installing, images and stylesheets do not load; only text displays, no graphics</h2>
-
 ### Details
 
 The path to images and stylesheets is not correct, either because of an incorrect base URL or because server rewrites (CentOS, Ubuntu) are not set up properly. To confirm this is the case, use a web browser inspector to check the paths to static assets and verify those assets are located on the Magento file system.

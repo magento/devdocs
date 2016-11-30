@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/trouble/cman/cron.md
 ---
 
-## Troubleshoot cron readiness check errors
 Following are symptoms of cron issues:
 
 *	An error message about the PHP setting `$HTTP_RAW_POST_DATA` displays even though it's set properly
