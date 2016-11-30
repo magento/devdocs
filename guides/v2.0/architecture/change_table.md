@@ -15,9 +15,14 @@ github_link: architecture/versioning.md
 redirect_from: /guides/v1.0/architecture/version_store.html
 ---
 
+<!--
+This topic looks strange, since it may break the entire DevDocs hierarchy (try to search Google for "Changes to classes and method versions").
+Must be discussed with DevDocs team!
+-->
+
 <h2>Changes to classes and method versions</h2>
 
-The following table identifies typical Major, Minor and Patch level changes to interfaces and classes. 
+The following table identifies typical Major, Minor and Patch level changes to interfaces and classes.
 
 <table>
 <tbody>
@@ -48,7 +53,6 @@ The following table identifies typical Major, Minor and Patch level changes to i
 
 <h3>Related topics</h3>
 <a href="{{page.baseurl}}architecture/versioning_overview.html">Versioning policy overview</a>
-
 
 <a href="{{page.baseurl}}architecture/software_versions.html">Magento 2.0 software versions</a>
 

@@ -72,6 +72,10 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud-fastly_enable-admin.png){:width="650px"}
 
+After you receive a Magento VCL from Fastly, [upload it to your staging or production system]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly).
+
+
+
 {% endcollapsible %}
 
 ### Configure Fastly {#cloud-fastly-config}
@@ -107,6 +111,7 @@ When you're done with development, [merge your environment]({{ page.baseurl }}cl
 For Fastly to be used in production, you must merge with the `master` environment.
 
 #### Next steps
+*	If you have issues with the Fastly extension, see [Troubleshoot Fastly]({{ page.baseurl cloud/trouble/trouble_fastly.html}})
 *   [Manage your environments]({{ page.baseurl }}cloud/env/environments.html)
 *   [Use the Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html)
 *   Configure your project:
