@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/live/live-sanity-check.md
 ---
 
-This topic discusses tasks we strongly recommend you perform before pushing code from an [integration system]({{ page.baseurl cloud/discover-arch.html#cloud-arch-int}}) to either [staging]({{ page.baseurl cloud/discover-arch.html#cloud-arch-stage}}) or [production]({{ page.baseurl cloud/discover-arch.html#cloud-arch-prod}}). Failure to perform these tasks can result in additional debugging and delays in testing your site.
+This topic discusses tasks we strongly recommend you perform before pushing code from an [integration system]({{ page.baseurl}}cloud/discover-arch.html#cloud-arch-int) to either [staging]({{ page.baseurl}}cloud/discover-arch.html#cloud-arch-stage}}) or [production]({{ page.baseurl}}cloud/discover-arch.html#cloud-arch-prod}}). Failure to perform these tasks can result in additional debugging and delays in testing your site.
 
 As discussed in [Deployment process]({{ page.baseurl }}cloud/discover-deploy.html), build and deployment is a five-phase process. This topic discusses how to simulate build and deploy steps locally, which can expose issues early in your development process when they're easier to debug and fix.
 
@@ -38,7 +38,7 @@ Before you continue, make sure you push all current code to the remote Cloud ser
 
 {% endcollapsible %}
 
-## Build step
+## Build phase
 
 {% collapsible To build your site %}
 
@@ -78,7 +78,10 @@ Before you continue, make sure you push all current code to the remote Cloud ser
 		[2016-11-30 21:09:07] Status:0
 		[2016-11-30 21:09:07] Output:array (
 		0 => 'Compilation was started.',
-		1 => '%message% 0/7 [>---------------------------]   0% 1 sec 52.0 MiB%message% 0/7 [>---------------------------]   0% 1 sec 52.0 MiBProxies code generation... 0/7 [>---------------------------]   0% 1 sec 52.0 MiB',
+		1 => '%message% 0/7 [>---------------------------]
+		0% 1 sec 52.0 MiB%message% 0/7 [>---------------------------]
+		0% 1 sec 52.0 MiBProxies code generation... 0/7 [>---------------------------]
+		0% 1 sec 52.0 MiB',
 		2 => 'Proxies code generation... 1/7 [====>-----------------------]  14% 1 sec 56.0 MiB',
 		3 => 'Repositories code generation... 1/7 [====>-----------------------]  14% 1 sec 56.0 MiB',
 		4 => 'Repositories code generation... 2/7 [========>-------------------]  28% 44 secs 176.0 MiB',
