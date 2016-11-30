@@ -10,42 +10,28 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/response-handler.md
 ---
 
-## Response Handler
+Response Handler is a component of Magento payment provider gateway, that processes payment provider response. Typically the response requires one of the following actions:
 
-Response handler processes Gateway response. Typically it requires one of the following actions:
+- order status needs to be modified
+- there is something to save in Magento for a particular transaction response
+- email needs to be sent
 
-<p class="q">Does it perform these actions</p>
+Response Handler does not perform any actions required by response, it only modifies the order state basing on the payment gateway response. 
 
-- Order status needs to be modified
-- There is something to save in Magento for a particular transaction response
-- Email needs to be sent
+## Basic interface
 
-By its nature, Handler is supposed to modify state basing on the payment gateway response. This defines the basic Handler interface signature.  
-
-<p class="q">whose state. A: order state</p>
-
-{% highlight php startinline=1 %}
-interface HandlerInterface
-{
-    /**
-     * Handles response
-     *
-     * @param array $handlingSubject
-     * @param array $response
-     * @return void
-     */
-    public function handle(array $handlingSubject, array $response);
-}
-{% endhighlight %}
+Basic interface for a gateway command is [`Magento\Payment\Gateway\Response\HandlerInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Response/HandlerInterface.php)
 
 
 ### Useful implementations
 
-* `\Magento\Payment\Gateway\Response\HandlerChain` - may be used as a basic container of response handlers, handling different parts.
+`\Magento\Payment\Gateway\Response\HandlerChain` might be used as a basic container of response handlers, handling different parts.
 
 ### Example
 
-Example of a simple response handler is shown below
+Example of a simple response handler:
+
+    app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php
 
 {% highlight php startinline=1 %}
 class PayPalDetailsHandler implements HandlerInterface

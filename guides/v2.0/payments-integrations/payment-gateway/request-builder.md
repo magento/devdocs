@@ -10,28 +10,12 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/request-builder.md
 ---
 
-## Request Builder
+*Request Builder* is a component of the Magento payment gateway responsible for building a request from several parts. It allows implementing complex, but still atomic and testable, building strategies: each builder can have simple logic or contain builder composites.
 
-Request builder is a component of the Magento payment gateway responsible for building a request from several parts. It allows implementing complex, but still atomic and testable, building strategies: each builder can have simple logic or contain builder composites.
+## Basic interface
+The basic interface for a request builder is [`\Magento\Payment\Gateway\Request\BuilderInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Request/BuilderInterface.php).
 
-### Basic interface
-The basic interface for a request builder is `\Magento\Payment\Gateway\Request\BuilderInterface`:
-
-{% highlight php startinline=1 %}
-interface BuilderInterface
-{
-    /**
-     * Builds ENV request
-     *
-     * @param array $buildSubject
-     * @return array
-     */
-    public function build(array $buildSubject);
-}
-{% endhighlight %}
-
-
-### Builder composite
+## Builder composite
 
 `\Magento\Payment\Gateway\Request\BuilderComposite` is a container for a list of `\Magento\Payment\Gateway\Request\BuilderInterface` implementations. It gets a list of classes, or types, or virtualType names, and performs a lazy instantiation on an actual `BuilderComposite::build([])` call. So that you can have as many objects, as required, but only those, which are needed for a request are instantiated. 
 
@@ -39,16 +23,16 @@ interface BuilderInterface
 
 The concatenation strategy is defined in the `BuilderComposite::merge()` method. So if you need to alter the strategy, you need to add your custom implementation of `BuilderComposite`.
 
-### Builder composite configuration
+## Adding a builder composite 
 
-Builder composite is configured in `di.xml`. A builder composite might comprise simple builders, and other builder composites.
+Builder composites are added using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) in `di.xml`. A builder composite might comprise simple builders and other builder composites.
 
-Example of composite builders configurations for the Braintree payment provider:
+Example of adding composite builders for the Braintree payment provider:
 
     /app/code/Magento/Braintree/etc/di.xml
 {% highlight xml %}
 ...
-<!--  is a composite builder comprising a number of builders -->
+<!--  is a builder composite comprising a number of builders -->
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
     <arguments>
         <argument name="builders" xsi:type="array">

@@ -10,37 +10,20 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/gateway-command.md
 ---
 
-## Gateway Command overview
 *Gateway Command* in general is a component of the Magento payment gateway that takes the [payload]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.html#terms) required for a particular payment service and sends, receives, and processes the response from the payment service provider. 
 For each operation of a certain payment provider a separate gateway command is added.
 
 ## Basic interface
-Basic interface of a gateway command is `\Magento\Payment\Gateway\CommandInterface`:
-
-{% highlight php startinline=1%}
-interface CommandInterface
-{
-    /**
-     * Executes command basing on business object
-     *
-     * @param array $commandSubject
-     * @return null|Command\ResultInterface
-     * @throws CommandException
-     */
-    public function execute(array $commandSubject);
-}
-{% endhighlight %}
-
-`CommandInterface` implements the [Command design pattern](http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html).
+Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/CommandInterface.php). It implements the [Command design pattern](http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html).
 
 ## Basic implementation
 
 The `\Magento\Payment\Gateway\Command\GatewayCommand` class is the default `CommandInterface` implementation. It allows performing most of the operations implemented in the [Magento sales management]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.md#terms).
 
 ## Particular gateway commands
-For each particular integration with a payment provider, gateway commands are added by extending this class using composition in [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration.
+For each particular integration with a payment provider, gateway commands are added using virtual types in [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration.
 
-Example of Gateway Command extension for the "authorize" operation for the Braintree payment provider:
+Example of adding a gateway command for the "authorize" operation for the Braintree payment provider:
 
 {% highlight xml %}
 <virtualType name="BraintreeAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
@@ -54,7 +37,7 @@ Example of Gateway Command extension for the "authorize" operation for the Brain
 </virtualType>
 {% endhighlight %}
 
-A Gateway Command must be configured with the following arguments:
+A gateway command must be configured with the following arguments:
 
 * `\Magento\Payment\Gateway\Request\BuilderInterface`: builds an array of gateway-specific arguments using the order information. For details about `BuilderInterface`, see the [Request Builder topic]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html). 
 

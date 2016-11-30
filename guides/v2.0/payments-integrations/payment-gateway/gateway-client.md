@@ -10,43 +10,29 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/gateway-client.md
 ---
 
-## Gateway Client
+*Gateway Client* is a component of the Magento payment gateway that transfers the payload to the payment provider and gets the response.
 
-Gateway client is a component of the Magento payment gateway that transfers the payload to the payment provider and gets the response.
+## Basic interface 
 
-{% highlight php startinline=1 %}
-interface ClientInterface
-{
-    /**
-     * Places request to gateway. Returns result as array
-     *
-     * @param \Magento\Payment\Gateway\Http\TransferInterface $transferObject
-     * @return array
-     * @throws \Magento\Payment\Gateway\Http\ClientException
-     * @throws \Magento\Payment\Gateway\Http\ConverterException
-     */
-    public function placeRequest(TransferInterface $transferObject);
-}
-{% endhighlight %}
+The basic interface for a gateway client is [`Magento\Payment\Gateway\Http\ClientInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/ClientInterface.php).
 
-A gateway client receives a called [`Transfer`]({{site.mage2000url}}/app/code/Magento/Payment/Gateway/Http/Transfer.php) object and may be configured with response converter, which converts response to the array structure.
+A gateway client receives a called [`Transfer`]({{site.mage2000url}}/app/code/Magento/Payment/Gateway/Http/Transfer.php) object and may be configured with response converter, which converts response to the array structure, using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html).
 
-### Default implementations
-There are two gateway client implementations that can be used of the box:
+## Default implementations
+There following gateway client implementations can be used out-of-the-box:
 
 * [\Magento\Payment\Gateway\Http\Client\Zend]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/Client/Zend.php)
 * [\Magento\Payment\Gateway\Http\Client\Soap]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/Client/Soap.php)
 
-
-Following is the example of Zend client configuration:
+## Example
+Following is the illustration of how a Zend client can be added in `di.xml`:
 
 {% highlight xml %}
 <virtualType name="HtmlConverterZendClient" type="Magento\Payment\Gateway\Http\Client\Zend">
     <arguments>
         <argument name="converter" xsi:type="object">Magento\Payment\Gateway\Http\Converter\HtmlFormConverter</argument>
-            <argument name="logger" xsi:type="object">MyCustomLogger</argument>
+            <argument name="logger" xsi:type="object">CustomLogger</argument>
         </arguments>
 </virtualType>
 {% endhighlight %}
 
-<p class="q">Gateway Client is command specific, is configured in di.xml (need a link here and there)</p>
