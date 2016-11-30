@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up multiple websites with Apache</title>
+	<title>Set up multiple websites with Apache (tutorial)</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -171,7 +171,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Set up multiple websites with Apache</h1>
+		<h1 class="page-heading">Set up multiple websites with Apache (tutorial)</h1>
 
         
 
@@ -1209,7 +1209,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a></li>
 
 									
 
@@ -1217,7 +1217,15 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_nginx.html">Set up multiple websites or stores with nginx (tutorial)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache (tutorial)</a></li>
 
 									
 
@@ -1402,80 +1410,138 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h4 id="contents">Contents</h4>
+            <h2 id="ms-apache-over">Set up multiple websites with Apache</h2>
+<p>This tutorial shows you step-by-step how to set up multiple websites using Apache.</p>
+
+<h3 id="assumptions">Assumptions</h3>
+<p>We assume the following:</p>
+
 <ul>
-  <li><a href="#ms-entry-script">Set values in an entry point script</a></li>
-  <li><a href="#ms-htaccess">Set values in .htaccess</a></li>
+  <li>
+    <p>You’re working on a development machine (laptop, virtual machine, and so on)</p>
+
+    <p>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</p>
+
+    <p>Additional tasks are required to set up Magento Enterprise Cloud Edition. After you complete the tasks discussed in this topic, see <a href="/guides/v2.0/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>.</p>
+  </li>
+  <li>
+    <p>You use one virtual host per website; the virtual host configuration file is <code>/etc/httpd/httpd.conf</code></p>
+
+    <p>Different versions of Apache on different operating systems set up virtual hosts differently. Consult the <a href="https://httpd.apache.org/docs/2.4/vhosts" target="_blank">Apache documentation</a> or a network administrator if you’re not sure how to set up a virtual host.</p>
+  </li>
+  <li>The Magento software is installed in <code>/var/www/html/magento2</code></li>
+  <li>
+    <p>You have two websites other than the default:</p>
+
+    <ul>
+      <li><code>french.mysite.mg</code> with website code <code>french</code> and store view code <code>fr</code></li>
+      <li><code>german.mysite.mg</code> with website code <code>german</code> and store view code <code>de</code></li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="ms-entry-script">Set values in an entry point script</h2>
-<p>If necessary, copy the existing <code>index.php</code> entry point script for your website or store view and add to it the following:</p>
+<h3 id="roadmap-for-setting-up-multiple-websites-with-apache">Roadmap for setting up multiple websites with Apache</h3>
+<p>Setting up multiple stores consists of the following tasks:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
- <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_CODE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;code&gt;&#39;</span><span class="p">;</span>
- <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_TYPE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;{store|website}&#39;</span><span class="p">;</span>
- <span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
- <span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\Http&#39;</span><span class="p">);</span>
- <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
- </code></pre></figure>
+<ol>
+  <li><a href="/guides/v2.0/config-guide/multi-site/ms_websites.html">Set up websites, stores, and store views</a> in the Magento Admin.</li>
+  <li>Create one <a href="#ms-apache-vhosts">Apache virtual host</a> per Magento website.</li>
+</ol>
 
-<p>Sample <code>index.php</code> snippet that starts Magento with a website with the code <code>frenchsite.example.com</code>:</p>
+<h2 id="step-1-create-websites-stores-and-store-views-in-the-magento-admin">Step 1: Create websites, stores, and store views in the Magento Admin</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
- <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_CODE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;frenchsite.example.com&#39;</span><span class="p">;</span>
- <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_TYPE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;website&#39;</span><span class="p">;</span>
- <span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
- <span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\Http&#39;</span><span class="p">);</span>
- <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span></code></pre></figure>
+<p>See <a href="/guides/v2.0/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a>.</p>
 
-<h2 id="ms-htaccess">Set values in .htaccess</h2>
-<p>This section discusses how to set values for <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> using Apache server variables <code>SetEnvIf</code> or <code>RewriteCond</code>. If you’re not sure what environment variable to use, consult a network administrator.</p>
+<h2 id="ms-apache-vhosts">Step 2: Create Apache virtual hosts</h2>
+<p>This section discusses how to set values for <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> using the Apache server variable <code>SetEnvIf</code> in a virtual host.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Additional tasks required to set up the Magento 2 file system for this type of environment are beyond the scope of this topic.</p></span>
+<p>For more information about <code>SetEnvIf</code>, see:</p>
+
+<ul>
+  <li><a href="http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html" target="_blank">Apache 2.2</a></li>
+  <li><a href="http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html" target="_blank">Apache 2.4</a></li>
+</ul>
+
+<div class="collapsible"><b class="collapsible-title">To create Apache virtual hosts: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>As a user with <code>root</code> privileges, open the virtual host configuration file in a text editor.</p>
+
+    <p>For example, open <code>/etc/httpd/conf/httpd.conf</code></p>
+  </li>
+  <li>Locate the section starting with <code>&lt;VirtualHost *:80&gt;</code>.</li>
+  <li>
+    <p>Create the following virtual hosts after any existing virtual hosts:</p>
+
+    <pre><code> &lt;VirtualHost *:80&gt;
+    ServerName          mysite.mg
+    DocumentRoot        /var/www/html/magento2/pub/
+ &lt;/VirtualHost&gt;
+
+ &lt;VirtualHost *:80&gt;
+    ServerName          french.mysite.mg
+    DocumentRoot        /var/www/html/magento2/pub/
+    SetEnv MAGE_RUN_CODE "french"
+    SetEnv MAGE_RUN_TYPE "website"
+ &lt;/VirtualHost&gt;
+
+ &lt;VirtualHost *:80&gt;
+    ServerName          german.mysite.mg
+    DocumentRoot        /var/www/html/magento2/pub/
+    SetEnv MAGE_RUN_CODE "german"
+    SetEnv MAGE_RUN_TYPE "website"
+ &lt;/VirtualHost&gt;
+</code></pre>
+  </li>
+  <li>Save your changes to <code>httpd.conf</code> and exit the text editor.</li>
+  <li>
+    <p>Restart Apache:</p>
+
+    <ul>
+      <li>CentOS: <code>service httpd restart</code></li>
+      <li>Ubuntu: <code>service apache2 restart</code></li>
+    </ul>
+  </li>
+</ol>
+</div></div>
+
+<h2 id="ms-apache-verify">Verify your site</h2>
+<div>
+
+  <p>Unless you have DNS set up for your stores’ URLs, you must add a static route to the host in your <code>hosts</code> file:</p>
+
+  <ol>
+    <li>Locate your operating system’s <a href="https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system" target="_blank"><code>hosts</code> file</a>.</li>
+    <li>
+      <p>Add the static route in the format:</p>
+
+      <pre><code>&lt;ip address&gt; french.mysite.mg
+&lt;ip address&gt; german.mysite.mg
+</code></pre>
+    </li>
+    <li>
+      <p>Go to one of the following URLs in your browser:</p>
+
+      <pre><code>http://mysite.mg/admin
+http://french.mysite.mg/frenchstoreview
+http://german.mysite.mg/germanstoreview
+</code></pre>
+    </li>
+  </ol>
+
+  <p>You’re done!</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+  <ul><li>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</li>
+    <li>Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see <a href="/guides/v2.0/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li></ul>
 </div>
 
-<p>For more information about <code>SetEnvIf</code> or <code>RewriteCond</code>, see:</p>
+  <h3 id="troubleshooting">Troubleshooting</h3>
+  <ul>
+    <li>If your French and German sites return 404s but your Admin loads, make sure you completed <a href="/guides/v2.0/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl">Step 6: Add the store code to the base URL</a>.</li>
+    <li>If all URLs return 404s, make sure you restarted your web server.</li>
+    <li>If the Magento Admin doesn’t function properly, make sure you set up your virtual hosts properly.</li>
+  </ul>
 
-<ul>
-  <li>Apache 2.2: <a href="http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html" target="_blank">SetEnvIf</a>, <a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html#rewritecond" target="_blank">RewriteCond</a></li>
-  <li>Apache 2.4: <a href="http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html" target="_blank">SetEnvIf</a>, <a href="http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html#rewritecond" target="_blank">RewriteCond</a></li>
-</ul>
-
-<h4 id="setenvif-example">SetEnvIf example</h4>
-<p>Add the following after <code>RewriteEngine on</code> in <code>.htaccess</code>:</p>
-
-<pre><code>SetEnvIf Host .*&lt;your domain&gt;.* MAGE_RUN_CODE=&lt;code&gt;
-SetEnvIf Host .*&lt;your domain&gt;.* MAGE_RUN_TYPE={store|website}
-</code></pre>
-
-<p>For example, to use a website with the code <code>frenchsite.example.com</code>:</p>
-
-<pre><code>SetEnvIf Host .*example.com.* MAGE_RUN_CODE=frenchsite.example.com
-SetEnvIf Host .*example.com.* MAGE_RUN_TYPE=website
-</code></pre>
-
-<h4 id="rewritecond-example">RewriteCond example</h4>
-<p>Add code similar to the following after <code>RewriteBase /magento/</code> in <code>.htaccess</code>:</p>
-
-<pre><code>RewriteCond %{HTTP_HOST} ^(.*)&lt;your domain&gt;\&lt;domain suffix&gt;
-RewriteRule .* – [E=MAGE_RUN_CODE:&lt;code&gt;]
-RewriteCond %{HTTP_HOST} ^(.*)&lt;your domain&gt;\&lt;domain suffix&gt;
-RewriteRule .* – [E=MAGE_RUN_TYPE:{store|website}]
-</code></pre>
-
-<p>For example, to use a website with the code <code>frenchsite.example.com</code>:</p>
-
-<pre><code>RewriteCond %{HTTP_HOST} ^(.*)example\.com
-RewriteRule .* – [E=MAGE_RUN_CODE:frenchsite.example.com]
-RewriteCond %{HTTP_HOST} ^(.*)example\.com
-RewriteRule .* – [E=MAGE_RUN_TYPE:website]
-</code></pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The preceding is an example only. There is more than one way to configure the <code>RewriteCond</code> rule. Consult a system integrator or network administrator for more information.</p></span>
 </div>
 
 		</div>

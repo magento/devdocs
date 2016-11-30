@@ -1270,7 +1270,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a></li>
 
 									
 
@@ -1278,7 +1278,15 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Set up multiple websites or stores with nginx (tutorial)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache (tutorial)</a></li>
 
 									
 
@@ -1486,6 +1494,7 @@
             <h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#ms-over">Introduction to multiple Magento stores and websites</a></li>
+  <li><a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a></li>
   <li><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
   <li><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
 </ul>
@@ -1501,14 +1510,9 @@
 
 <p>This flexible solution enables one Magento codebase and Magento Admin to administer and display different stores.</p>
 
-<p>You configure the websites, stores, and store views in the Magento Admin. You use the <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> variables in entry point scripts or <code>.htaccess</code> files to start the Magento application using these websites or store views.</p>
+<p>You configure the websites, stores, and store views in the Magento Admin. You use the <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> variables in virtual hosts to start the Magento application using these websites or store views.</p>
 
 <p>A typical use of <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another domain that has categories and products for a different language.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This topic discusses only the basics of configuring multiple sites using the Admin and variables. Details about deploying the Magento application in multiple domains is beyond the scope of this topic.</p></span>
-</div>
 
 <h2 id="magerun-conf">Configure Magento websites and stores</h2>
 <p>This section discusses the minimum tasks required to use the <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> variables.</p>
@@ -1528,21 +1532,33 @@
   </li>
 </ul>
 
-<p>Each website and each store view must have a unique identifier. This identifier is required to use <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code>.</p>
+<p>Each website and each store view must have a unique identifier. This identifier is required to use <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> as follows:</p>
 
-<p>To create websites and stores:</p>
+<ul>
+  <li>
+    <p><code>MAGE_RUN_TYPE</code> can be either <code>store</code> or <code>website</code></p>
+
+    <ul>
+      <li>Use <code>website</code> to load a website in your storefront.</li>
+      <li>Use <code>store</code> to load any store view in your storefront.</li>
+    </ul>
+  </li>
+  <li>
+    <p><code>MAGE_RUN_CODE</code> is the unique website or store view code that corresponds to <code>MAGE_RUN_TYPE</code></p>
+  </li>
+</ul>
+
+<p>Following is a summary of the tasks you must perform. More details are provided in the sections that follow.</p>
 
 <ol>
-  <li>Log in to the Magento Admin as a user authorized to create websites, stores, and store views.</li>
-  <li>Click <strong>Stores</strong> &gt; <strong>All Stores</strong>.</li>
-  <li>To create a website, click <strong>Create Website</strong>.</li>
-  <li>To create a store, click <strong>Create Store</strong>.</li>
-  <li>To create a store view, click <strong>Create Store View</strong>.</li>
-  <li>When you create your website or store view, make note of its unique identifier because you’ll use it later.</li>
+  <li>Define websites, stores, and store views in the Magento Admin.</li>
+  <li>Create one virtual host per Magento website or store view.</li>
+  <li>Pass the values of <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> to the web server.</li>
 </ol>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
+  <li><a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a></li>
   <li><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
   <li><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
 </ul>

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up multiple websites with nginx</title>
+	<title>Set up multiple websites or stores with nginx (tutorial)</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -173,7 +173,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Set up multiple websites with nginx</h1>
+		<h1 class="page-heading">Set up multiple websites or stores with nginx (tutorial)</h1>
 
         
 
@@ -1270,7 +1270,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a></li>
 
 									
 
@@ -1278,7 +1278,15 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Set up multiple websites or stores with nginx (tutorial)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache (tutorial)</a></li>
 
 									
 
@@ -1484,41 +1492,159 @@
 	<section class="content">
 		<div class="content-wrap">
             <h2 id="ms-nginx-over">Set up multiple websites with nginx</h2>
-<p>The example in this topic assumes you have set up your nginx configuration as recommended in the <code>&lt;Magento root&gt;/nginx.conf.sample</code> provided with the Magento software.</p>
+<p>This tutorial shows you step-by-step how to set up multiple websites using nginx.</p>
 
-<p>That is, you should have a small, main configuration file that includes your Magento-specific configuration in the server block. This file is referred to in this topic as <code>main.conf</code>; the configuration file based on the Magento-provided sample is referred to in this topic as <code>nginx.magento.conf</code>.</p>
+<h3 id="assumptions">Assumptions</h3>
+<p>We assume the following:</p>
 
-<p>This section discusses how to have two websites at <code>site1.store.com</code> and <code>site2.store.com</code> that use the codes <code>site1</code> and <code>site2</code>. Multiple hosts require only one entry point.</p>
+<ul>
+  <li>
+    <p>You’re working on a development machine (laptop, virtual machine, and so on)</p>
 
-<p>You can use the same method to run multiple stores using the value <code>store</code> instead of <code>website</code> for the <code>$MAGE_RUN_TYPE</code> variable.</p>
+    <p>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</p>
 
-<p>Step 1. Write a map directive to set the <code>$MAGE_RUN_CODE</code> variable.</p>
+    <p>Additional tasks are required to set up Magento Enterprise Cloud Edition. After you complete the tasks discussed in this topic, see <a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>.</p>
+  </li>
+  <li>You use one virtual host per website; the virtual host configuration files are located in <code>/etc/nginx/sites-available</code></li>
+  <li>You use <code>nginx.conf.sample</code> provided by Magento with only the modifications discussed in this tutorial</li>
+  <li>The Magento software is installed in <code>/var/www/html/magento2</code></li>
+  <li>
+    <p>You have two websites other than the default:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">map</span> <span class="nv">$http_host</span> <span class="nv">$MAGE_RUN_CODE</span> <span class="p">{</span>
-    <span class="nx">site1</span><span class="o">.</span><span class="nx">store</span><span class="o">.</span><span class="nx">com</span> <span class="nx">site1</span><span class="p">;</span>
-    <span class="nx">site2</span><span class="o">.</span><span class="nx">store</span><span class="o">.</span><span class="nx">com</span> <span class="nx">site2</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+    <ul>
+      <li><code>french.mysite.mg</code> with website code <code>french</code> and store view code <code>fr</code></li>
+      <li><code>german.mysite.mg</code> with website code <code>german</code> and store view code <code>de</code></li>
+    </ul>
+  </li>
+</ul>
 
-<p>The preceding sets the <code>$MAGE_RUN_CODE</code> variable based on the host. For example, if the host to which the request is made is <code>site1.store.com</code>, <code>$MAGE_RUN_CODE</code> is set to <code>site1</code>. See <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map" target="_blank">nginx documentation on the map directive</a> for more details.</p>
+<h3 id="roadmap-for-setting-up-multiple-websites-with-nginx">Roadmap for setting up multiple websites with nginx</h3>
+<p>Setting up multiple stores consists of the following tasks:</p>
 
-<p>Step 2. Send <code>MAGE_RUN_CODE</code> and <code>MAGE_RUN_TYPE</code> variables to the php-fpm server.
-Inside this block:</p>
+<ol>
+  <li><a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up websites, stores, and store views</a> in the Magento Admin.</li>
+  <li>Create one <a href="#ms-nginx-vhosts">nginx virtual host</a> per Magento website.</li>
+  <li>
+    <p>Pass the values of the <a href="#ms-nginx-vars">Magento variables</a> <code>$MAGE_RUN_TYPE</code> and <code>$MAGE_RUN_CODE</code> to nginx using the Magento-provided <code>nginx.conf.sample</code>.</p>
 
-<pre><code>location ~ (index|get|static|report|404|503)\.php$ { ... }
+    <ul>
+      <li>
+        <p><code>$MAGE_RUN_TYPE</code> can be either <code>store</code> or <code>website</code></p>
+
+        <ul>
+          <li>Use <code>website</code> to load your website in your storefront.</li>
+          <li>Use <code>store</code> to load any store view in your storefront.</li>
+        </ul>
+      </li>
+      <li>
+        <p><code>$MAGE_RUN_CODE</code> is the unique website or store view code that corresponds to <code>$MAGE_RUN_TYPE</code>
+## Step 2: Create nginx virtual hosts {#ms-nginx-vhosts}
+This section discusses how to load websites on the storefront. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with <code>root</code> privileges.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<div class="collapsible"><b class="collapsible-title">To create virtual hosts: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Open a text editor and add the following contents to a new file named <code>/etc/nginx/sites-available/french.mysite.mg.conf</code>:</p>
+
+    <pre><code>map $http_host $MAGE_RUN_CODE {
+   french.mysite.mg french;
+}
+
+server {
+   listen 80;
+   server_name french.mysite.mg;
+   set $MAGE_ROOT /var/www/html/magento2;
+   set $MAGE_MODE developer;
+   include /var/www/html/magento2/nginx.conf;
+}
+</code></pre>
+  </li>
+  <li>
+    <p>Create another file named <code>german.mysite.mg.conf</code> in the same directory with the following contents:</p>
+
+    <pre><code>map $http_host $MAGE_RUN_CODE {
+   german.mysite.mg german;
+}
+
+server {
+   listen 80;
+   server_name german.mysite.mg;
+   set $MAGE_ROOT /var/www/html/magento2;
+   set $MAGE_MODE developer;
+   include /var/www/html/magento2/nginx.conf;
+}
+</code></pre>
+  </li>
+  <li>Save your changes to the files and exit the text editor.</li>
+  <li>
+    <p>Verify the server configuration:</p>
+
+    <pre><code>nginx -t
+</code></pre>
+  </li>
+  <li>
+    <p>If successful, the following message displays:</p>
+
+    <pre><code>nginx: configuration file /etc/nginx/nginx.conf test is successful
 </code></pre>
 
-<p>Add the following two lines:</p>
+    <p>If errors display, check the syntax of your virtual host configuration files.</p>
+  </li>
+  <li>
+    <p>Create symbolic links in the <code>/etc/nginx/sites-enabled</code> directory:</p>
 
-<pre><code>...
-fastcgi_param  MAGE_RUN_TYPE website;
-fastcgi_param  MAGE_RUN_CODE $MAGE_RUN_CODE;
-...
+    <pre><code>cd /etc/nginx/sites-enabled
+ln -s /etc/nginx/sites-available/french.mysite.mg french.mysite.mg
+ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
 </code></pre>
+  </li>
+</ol>
 
-<p>Step 3: Reload your nginx configuration as a user with <code>root</code> privileges:</p>
+<p>For more detail about the map directive, see <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map" target="_blank">nginx documentation on the map directive</a>.</p>
+</div></div>
 
-<pre><code>service nginx reload
+<h2 id="ms-nginx-verify">Verify your site</h2>
+<div>
+
+  <p>Unless you have DNS set up for your stores’ URLs, you must add a static route to the host in your <code>hosts</code> file:</p>
+
+  <ol>
+    <li>Locate your operating system’s <a href="https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system" target="_blank"><code>hosts</code> file</a>.</li>
+    <li>
+      <p>Add the static route in the format:</p>
+
+      <pre><code>&lt;ip address&gt; french.mysite.mg
+&lt;ip address&gt; german.mysite.mg
 </code></pre>
+    </li>
+    <li>
+      <p>Go to one of the following URLs in your browser:</p>
+
+      <pre><code>http://mysite.mg/admin
+http://french.mysite.mg/frenchstoreview
+http://german.mysite.mg/germanstoreview
+</code></pre>
+    </li>
+  </ol>
+
+  <p>You’re done!</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+  <ul><li>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</li>
+    <li>Additional tasks are required to set up Magento Enterprise Cloud Edition; for more information, see <a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li></ul>
+</div>
+
+  <h3 id="troubleshooting">Troubleshooting</h3>
+  <ul>
+    <li>If your French and German sites return 404s but your Admin loads, make sure you completed <a href="/guides/v2.1/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl">Step 6: Add the store code to the base URL</a>.</li>
+    <li>If all URLs return 404s, make sure you restarted your web server.</li>
+    <li>If the Magento Admin doesn’t function properly, make sure you set up your virtual hosts properly.</li>
+  </ul>
+
+</div>
 
 		</div>
 	</section>

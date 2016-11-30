@@ -838,6 +838,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
@@ -1506,9 +1514,11 @@ URL will have been supplied when the environment was provisioned.</p>
 <p>The following commands can be run from any directory. However, it’s simpler to run them from a project directory. If 
 so, you can omit the <code>-p &lt;project ID&gt;</code> parameter. These commands are meant to be used to manage integration environments.</p>
 
-<p>All commands are shown with required options only. Get help for any command by appending <code>--help</code>.</p>
+<p>All commands are shown with required options only. Get help for any <code>magento-cloud</code> command by appending <code>--help</code>.</p>
 
 <dl>
+  <dt><code>git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code></dt>
+  <dd>Push an empty commit to force a redeployment. Some actions, like adding a user for example, don’t result in deployment.</dd>
   <dt><code>magento-cloud login</code></dt>
   <dd>Log in to the project</dd>
   <dt><code>magento-cloud project:get &lt;project ID&gt; &lt;directory&gt; -e &lt;environment ID&gt;</code></dt>

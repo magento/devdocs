@@ -828,6 +828,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
@@ -1459,15 +1467,7 @@ systems. This one configuration file handles routes for all systems.</p>
 
 <pre><code>"http://{default}/":
     type: upstream
-    upstream: "php:php"
-    cache:
-        enabled: true
-    ssi:
-        enabled: false
-
-"http://www.{default}/":
-    type: redirect
-    to: "http://{default}/"
+ 	   upstream: "mymagento:php"
 </code></pre>
 
 <h2 id="cloud-yaml-routes-temp">Route templates</h2>

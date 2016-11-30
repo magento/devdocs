@@ -838,6 +838,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
@@ -1484,10 +1492,10 @@ environment to “Contributor”.</p>
 <p>After a new user is added to an environment, the environment must be rebuilt. Rebuilds
 are triggered when you push a new commit to an environment.
 To be able to rebuild without new code changes, use the command
-<code>git commit --allow-empty -m'rebuild' &amp;&amp; git push</code>
+<code>git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code>
 to create an empty commit and “force” rebuilding the environment.</p>
 
-<p>When the environment rebuild is complete, allow a minute for the routes to 
+<p>When the environment rebuild is complete, allow a short time for the routes to 
 update fully and for the new user to be able to use SSH access.</p>
 
 <h3 id="cloud-user-mg-cli">Manage users with the CLI</h3>

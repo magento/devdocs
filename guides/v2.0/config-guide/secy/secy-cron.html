@@ -1209,7 +1209,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a></li>
 
 									
 
@@ -1217,7 +1217,15 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_nginx.html">Set up multiple websites or stores with nginx (tutorial)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache (tutorial)</a></li>
 
 									
 
@@ -1580,7 +1588,7 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
   <li>
     <p>Delete all rows from the <code>cron_schedule</code> database table:</p>
 
-    <pre><code>TRUNCATE TABLE cron_schedule 
+    <pre><code>TRUNCATE TABLE cron_schedule;
 </code></pre>
   </li>
   <li>
@@ -1601,7 +1609,7 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
   <li>
     <p>Verify rows were added to the table:</p>
 
-    <pre><code>SELECT * from cron_schedule
+    <pre><code>SELECT * from cron_schedule;
 </code></pre>
 
     <p>Verify that some rows are returned. If so, you’re done!</p>
