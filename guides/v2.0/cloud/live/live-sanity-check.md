@@ -93,7 +93,7 @@ If errors display, debug them if possible or open a [support ticket]() to get ad
 ## Deploy phase
 Unlike the build phase, there is no command for deployment; instead, you should execute the same commands we do when we deploy your Magento application to the Cloud server.
 
-{% To deploy your site: %}
+{% collapsible To deploy your site: %}
 
 1.	If you haven't done so already, log in as or switch to the [Magento file system owner]().
 2.	Change to your project root directory.
