@@ -1,14 +1,15 @@
 #footer {
+  background: $footer-background-color;
+  color: $footer-color;
   padding: 20px 0;
-  border-top: 1px solid $beige-color;
   font-size: 13px;
-  color: #999;
+
 
   a {
-    color: $body-font-color;
+    color: $footer-color;
 
     &:hover {
-
+      color: lighten($footer-color, 20%);
     }
   }
 
