@@ -408,7 +408,6 @@ S
 
 
 ### Staging
-
 {:.no_toc} 
 
 <!---51776-->* During Web Setup Wizard installation, in Step 4: Customize Your Store, you cannot use Advanced Modules Configuration to manually unselect Staging-related modules (for example, Magento_CmsStaging). (Note: Modules that have dependencies and should not be disabled are grayed out in the interface.)
