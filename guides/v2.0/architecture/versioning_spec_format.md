@@ -61,7 +61,3 @@ If you are an extension developer, familiarize yourself about the types of code 
 
 
 <a href="{{page.baseurl}}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
-
-
-
-
