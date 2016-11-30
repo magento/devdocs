@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: 02_BC
+subgroup: 03_BC
 title: Magento 2.0 Backward Incompatible Changes
 menu_title: Backward incompatible changes
 menu_node: parent
