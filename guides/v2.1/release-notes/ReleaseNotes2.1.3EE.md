@@ -519,7 +519,6 @@ S
 {:.no_toc} 
 <!---54704-->* Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the store view level overrode the price set in website scope. <a href="https://github.com/magento/magento2/issues/5133" target="_blank">(GITHUB-5133)
 
-<!---60801-->* Magento now correctly applies the Catalog Price Scope attribute when it is set to Global. Previously, website scope values prevailed over global values. 
 
 <!---55351, 56936 -->*  The list of allowed countries is now configured as part of website scope, not storeview scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
 
@@ -587,7 +586,7 @@ S
 ## Known issues
 
 
-<!---60781-->* **Issue**: 
+<!---60781-->* **Issue**: Installing with varnish causes products to not appear on frontend even flushing cache
 
 **Workaround**:
 
@@ -595,7 +594,7 @@ S
 
 
 
-<!---60680-->* **Issue**: 
+<!---60680-->* **Issue**: You cannot successfully edit and save a gift card product. 
 
 **Workaround**:
 
@@ -603,7 +602,8 @@ S
 
 
 
-<!---60553-->* **Issue**: 
+<!---60553-->* **Issue**: When editing the product, customizable options cannot be edited on a per store view level. A change to one option affects products on all stores. The checkbox 'Use Default Value' for the option title does not work. Un-checking this box and then changing the title will affect all other store views (I have a store view per website).
+2. There are no checkbox 'Use Default Value' for the individual options themselves.
 
 **Workaround**:
 
@@ -611,7 +611,7 @@ S
 
 
 
-<!---60801-->* **Issue**: 
+<!---60801-->* **Issue**: Magento does not correctly apply the Catalog Price Scope attribute when it is set to Global. As a result, website scope values prevail over global values.
 
 **Workaround**:
 
