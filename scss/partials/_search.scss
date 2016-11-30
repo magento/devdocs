@@ -1,4 +1,10 @@
+
 // search box on home page
+
+input[type=search] {
+  -webkit-appearance: none;
+}
+
 .search-form {
 
   position: relative;
@@ -22,6 +28,7 @@
   .search-field {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    line-height: 1;
   }
 
   .search-submit {
@@ -116,7 +123,7 @@
 }
 
 
-DIV.gsc-control-wrapper-cse tr:nth-child(odd) td {
+div.gsc-control-wrapper-cse tr:nth-child(odd) td {
   background: transparent;
 }
 
@@ -144,8 +151,13 @@ div.gsc-control-cse {
 
 .gsc-tabsArea {
 	border-color: transparent !important;
-  float: right;
   padding: 0 10px 0 0 !important;
+
+  div &:after {
+    display: block;
+    clear: both;
+    content: '';
+  }
 }
 
 .cse .gsc-tabHeader, .gsc-tabHeader {
@@ -360,7 +372,7 @@ a.gsc-trailing-more-results:link {
 
 .gsc-control-cse .gsc-control-wrapper-cse form.gsc-search-box {
 	margin: 0;
-	padding: 10px 0 0 0;
+	padding: 0;
 }
 
 
@@ -405,6 +417,9 @@ td.gcsc-branding-text {
 	white-space: nowrap;
 }
 
+.gcsc-branding {
+  display: none;
+}
 
 
 /*Search styling */
