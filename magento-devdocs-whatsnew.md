@@ -32,7 +32,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 {% endcollapsibleh2 %}
 
 
-{% collapsibleh2 October 2016 changes: %}
+{% collapsibleh2 October 2016 %}
 
 | Week ending | Description  | Versions applied to  | New or Updated |
 |--------------|--------------|----------------------|--------|
