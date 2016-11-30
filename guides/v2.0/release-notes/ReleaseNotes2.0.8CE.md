@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
+subgroup: 02_rel-notes
 title: Magento CE 2.0.8 Release Notes
 menu_title: Magento CE 2.0.8 Release Notes
 menu_order: 15
