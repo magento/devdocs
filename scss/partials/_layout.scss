@@ -6,9 +6,20 @@ html,body {
   background: $light-gray-color; // this is needed for spring scrolling to not show the white border
 }
 
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#gl-wrapper {
+  flex: 1;
+}
+
 .main-container {
   background: #fff;
   padding: 0 0 50px 0;
+  min-height: 100%;
   clear: both; /* SRJ - fix Firefox bug */
 
   & > .container {
