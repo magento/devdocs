@@ -11,7 +11,7 @@ github_link: config-guide/multi-site/ms_websites.md
 ---
 
 ## Set up multiple websites, stores, and store views in the Admin
-This task requires you to create a root category (and additional categories if desired) for each store, a website, a store, and a store view.
+This task requires you to create a root category (and additional categories if desired) for each store.
 
 The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:
 
@@ -21,7 +21,7 @@ The tasks discussed in this topic provide one way to set up multiple stores. For
 *	[Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}
 
 ## Step 1: Create root categories
-Creating a root category is optional but we show how to do it in this tutorial in the event you want each website to have a unique root category. You can create additional categories if you choose.
+Creating a root category is optional, but we show how to do it in this tutorial in the event you want each website to have a unique root category. You can create additional categories if you choose.
 
 {% collapsible To create a root category: %}
 

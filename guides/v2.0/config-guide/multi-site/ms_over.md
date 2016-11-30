@@ -54,12 +54,13 @@ Each website and each store view must have a unique identifier. This identifier 
 
 *	`MAGE_RUN_CODE` is the unique website or store view code that corresponds to `MAGE_RUN_TYPE`
 
-You must perform the following basic tasks:
+Following is a summary of the tasks you must perform. More details are provided in the sections that follow.
 
 1.	Define websites, stores, and store views in the Magento Admin.
 2.	Create one virtual host per Magento website or store view.
 3.	Pass the values of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` to the web server.
 
 #### Related topics
+*	[Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}config-guide/multi-site/ms_websites.html)
 *	[Set up multiple websites with nginx]({{page.baseurl}}config-guide/multi-site/ms_nginx.html)
 *	[Set up multiple websites with Apache]({{page.baseurl}}config-guide/multi-site/ms_apache.html)
