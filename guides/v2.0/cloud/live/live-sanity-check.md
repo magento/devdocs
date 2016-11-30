@@ -10,15 +10,20 @@ version: 2.0
 github_link: cloud/live/live-sanity-check.md
 ---
 
-This topic discusses tasks we strongly recommend you perform before pushing code from an [integration system]() to either [staging]() or [production](). Failure to perform these tasks can result in additional debugging and delays in testing your site.
+This topic discusses tasks we strongly recommend you perform before pushing code from an [integration system]({{ page.baseurl cloud/discover-arch.html#cloud-arch-int}}) to either [staging]({{ page.baseurl cloud/discover-arch.html#cloud-arch-stage}}) or [production]({{ page.baseurl cloud/discover-arch.html#cloud-arch-prod}}). Failure to perform these tasks can result in additional debugging and delays in testing your site.
 
-As discussed in [TBD](), build and deployment, used by integration, staging, and production, is a five-phase process. This topic discusses how to simulate build and deploy steps locally, which can expose issues early in your development process when they're easier to debug and fix.
+As discussed in [Deployment process]({{ page.baseurl }}cloud/discover-deploy.html), build and deployment is a five-phase process. This topic discusses how to simulate build and deploy steps locally, which can expose issues early in your development process when they're easier to debug and fix.
 
 ## Step 1: Push code to the Cloud server
 Before you continue, make sure you push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.
 
 ### Get started
-TBD
+
+{% collapsible To get started: %}
+
+{% include cloud/cli-get-started.md %}
+
+{% endcollapsible %}
 
 ### Push code to the remote server
 
@@ -48,9 +53,9 @@ TBD
 		[2016-11-30 21:04:54] Command:/usr/bin/php /var/www/html/magento2/vendor/magento/magento-cloud-configuration/src/Magento/MagentoCloud/../../../../../../vendor/magento/magento-cloud-configuration/patch.php
 		[2016-11-30 21:04:54] Status:0
 		[2016-11-30 21:04:54] Output:array (
-  		0 => '[2016-11-30 15:04:54] Copying static.php to front-static.php',
-  		1 => '[2016-11-30 15:04:54] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/000-MAGETWO-57719-2.1.2.patch',
-  		2 => '[2016-11-30 15:04:54] Status:0',
+		0 => '[2016-11-30 15:04:54] Copying static.php to front-static.php',
+		1 => '[2016-11-30 15:04:54] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/000-MAGETWO-57719-2.1.2.patch',
+		2 => '[2016-11-30 15:04:54] Status:0',
   		... more ...
 
 		[2016-11-30 21:04:54] Checking if patches exist under /var/www/html/magento2/vendor/magento/magento-cloud-configuration/src/Magento/MagentoCloud/../../../../../../m2-hotfixes/
@@ -86,7 +91,7 @@ TBD
 
 		git reset --hard
 
-If errors display, debug them if possible or open a [support ticket]() to get additional assistance.
+If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/get-help.html) to get additional assistance.
 
 {% endcollapsible %}
 
@@ -95,19 +100,19 @@ Unlike the build phase, there is no command for deployment; instead, you should 
 
 {% collapsible To deploy your site: %}
 
-1.	If you haven't done so already, log in as or switch to the [Magento file system owner]().
+1.	If you haven't done so already, log in as or switch to the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.	Change to your project root directory.
 3.	Enter the following command:
 
 		php bin/magento setup:upgrade
 
-	(If you haven't installed the Magento application yet, use the [`magento setup:install`]() command instead.)
+	(If you haven't installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}install-gde/install/cli/install-cli.html) command instead.)
 4.	Clean the Magento cache:
 
-		TBD
-5.	Set the Magento application for production mode:
+		php bin/magento cache:clean
+5.	Set the Magento application for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production):
 
-		TBD
+		php bin/magento deploy:mode:set production
 
 If errors display, debug them if possible or open a [support ticket]() to get additional assistance.
 
