@@ -16,6 +16,8 @@ redirect_from: /guides/v1.0/migration/migration-plan.html
 
 To migrate successfully and avoid issues, you need to thourougly plan and test your migration. We hope the guidelines below will help.
 
+* TOC
+{:toc}
 
 ## Step 1: Review extensions on your current site
 

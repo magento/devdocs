@@ -14,6 +14,8 @@ redirect_from: /guides/v1.0/migration/bk-migration-guide.html
 ## Migration overview
 {: .no_toc}
 
+* TOC
+{:toc}
 
 ## Welcome {#migrate-overview}
 
