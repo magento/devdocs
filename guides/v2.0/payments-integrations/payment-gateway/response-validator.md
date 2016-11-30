@@ -12,60 +12,20 @@ github_link: payments-integrations/payment-gateway/response-validator.md
 
 ## Response Validator
 
-Response validator performs gateway response verification. This may include low level data formatting, security verification, and even execution of some business logic required by the store configuration.
+*Response Validator* is a component of the Magento payment provider gateway that performs gateway response verification. This may include low level data formatting, security verification, and even execution of some business logic required by the store configuration.
 
-As a result, _Validator_ returns a _Result_ object, which has `isValid()` method returning _Boolean_ and `getFailsDescription()` which returns a list of [Phrase](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Phrase.php)s. 
+*Response Validator* returns a *Result* object, containing validation result as Boolean value and fails description as list of [Phrase]({{site.mage2000url}}lib/internal/Magento/Framework/Phrase.php)'s.
 
-<p class="q">what are phrases?</p>
+*Response Validator* must implement [`Magento\Payment\Gateway\Validator\ValidatorInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/ValidatorInterface.php)
 
-_Validator_, by its sense is not intended to modify anything, but perform validation and return validation result accordingly.
+*Result* class must implement [`Magento\Payment\Gateway\Validator\ResultInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/ResultInterface.php)
 
-##### ValidatorInterface:
-
-{% highlight php startinline=1 %}
-interface ValidatorInterface
-{
-    /**
-     * Performs domain-related validation for business object
-     *
-     * @param array $validationSubject
-     * @return ResultInterface
-     */
-    public function validate(array $validationSubject);
-}
-{% endhighlight %}
-
-##### ResultInterface
-
-{% highlight php startinline=1 %}
-interface ResultInterface
-{
-    /**
-     * Returns validation result
-     *
-     * @return bool
-     */
-    public function isValid();
-
-    /**
-     * Returns list of fails description
-     *
-     * @return Phrase[]
-     */
-    public function getFailsDescription();
-}
-{% endhighlight %}
-
-
-### Useful implementations
-
-* [\Magento\Payment\Gateway\Validator\AbstractValidator]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/AbstractValidator) - may be used as a base class for your validators, as it already has an ability to create Result object
-* [\Magento\Payment\Gateway\Validator\ValidatorComposite]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/ValidatorComposite) - a chain of Validator objects, which are executed one by one and the result gets aggregated into one _Result_ object.
-* [\Magento\Payment\Gateway\Validator\Result]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/Result) - base class for Result object. You still have an ability to create a _Result_ of your own, but the default one covers the most amount of cases.
+A particular payment provider integration method can have multiple Response Validators, that should be added to the Response Validators' pool.
 
 ### Example
 
-<p class="q">Is it an example of response validator implementation? A: yes</p>
+Following is an example of a particular Response Validator implementation, and adding it to REap 
+
 app/code/Magento/Worldpay/Gateway/Validator/AcceptValidator.php 
 
 {% highlight php startinline=1 %}
@@ -115,7 +75,6 @@ class AcceptValidator extends AbstractValidator
 }
 {% endhighlight %}
 
-Each payment method can have multiple validators and they should be added to a _Validator Pool_:
 
 {% highlight xml %}
 <virtualType name="BraintreeValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
@@ -127,3 +86,11 @@ Each payment method can have multiple validators and they should be added to a _
     </arguments>
 </virtualType>
 {% endhighlight %}
+
+### Useful implementations
+
+* [\Magento\Payment\Gateway\Validator\AbstractValidator]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/AbstractValidator): an abstract class with ability to create a Result object. Can be inherited from by particular Response Validator implementations. 
+* [\Magento\Payment\Gateway\Validator\ValidatorComposite]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/ValidatorComposite) - a chain of Validator objects, which are executed one by one and the result gets aggregated into one _Result_ object.
+* [\Magento\Payment\Gateway\Validator\Result]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/Result) - base class for Result object. You still have an ability to create a _Result_ of your own, but the default one covers the most amount of cases.
+
+
