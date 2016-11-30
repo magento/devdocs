@@ -13,13 +13,20 @@ version: 2.0
 github_link: architecture/release_types.md
 ---
 
-<h2 id="verpol">Release types and version numbers</h2>
+## Release types and version numbers {#verpol}
+{:.no_toc}
+
+* TOC
+{:toc}
+
+## Overview
 
 This topic describes how  and when the software version numbers will be changed with releases.
 
 The software version  always changes with any release of Magento source code.
 
-<h3>Development releases</h3>
+## Development releases
+
 In every development release ("pre-release" version), **the same value of version number will be propagated in all Magento components and their dependencies**.
 
 Magento may update the `x.y.z` version in way prescribed by Semantic Versioning, but also could release the same `x.y.z` with different stability and/or index numbers, For example, `0.1.0-alpha1 -> 0.1.0-alpha2`, `0.1.0-alpha3` or `2.0.0-alpha3 -> 2.1.0-beta1 -> 2.1.0-beta2`
@@ -52,12 +59,11 @@ Magento may update the `x.y.z` version in way prescribed by Semantic Versioning,
 </tbody>
 </table>
 
-<h3>Stable releases</h3>
+## Stable releases
 
 In every stable release, the same value of version number is propagated in all components, but dependencies have a wildcard (*) pattern.
 
 The `x.y.z` numbers will change according to Semantic Versioning policy provisions. For example, `1.0.0 -> 1.0.1 -> 1.1.0 -> 1.5.0 -> 1.5.1 -> 2.0.0 -> 2.1.0`. Also, Magento may decide to change the "minor" version instead of the "patch" version.
-
 
 <table>
 <tbody>
@@ -89,14 +95,8 @@ The `x.y.z` numbers will change according to Semantic Versioning policy provisio
 </tbody>
 </table>
 
+## Related topics
 
+* <a href="{{page.baseurl}}architecture/back-compatibility.html">Backward compatibility</a>
 
-
-<h3>Related topics</h3>
-<a href="{{page.baseurl}}architecture/back-compatibility.html">Backward compatibility</a>
-
-<a href="{{page.baseurl}}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
-
-
-
-
+* <a href="{{page.baseurl}}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
