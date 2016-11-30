@@ -13,8 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/trouble/tshoot_xdebug.html
 ---
 
-<h2 id="install-trouble-xdebug">During installation, xdebug maximum function nesting level error</h2>
-
 ### Details
 
 During the installation, a  message similar to the following displays: 
