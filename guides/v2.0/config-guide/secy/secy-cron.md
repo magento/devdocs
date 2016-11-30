@@ -153,7 +153,7 @@ To verify cron:
 		use magento;
 1.	Delete all rows from the `cron_schedule` database table:
 	
-		TRUNCATE TABLE cron_schedule 
+		TRUNCATE TABLE cron_schedule;
 3.	Run cron from a browser:
 
 		http[s]://<magento hose name or ip>/pub/cron.php?group=default
@@ -167,7 +167,7 @@ To verify cron:
 	<img src="{{ site.baseurl }}common/images/cron_auth.png" alt="Authorizing cron using HTTP Basic">
 5.	Verify rows were added to the table:
 
-		SELECT * from cron_schedule
+		SELECT * from cron_schedule;
 
 	Verify that some rows are returned. If so, you're done!
 
