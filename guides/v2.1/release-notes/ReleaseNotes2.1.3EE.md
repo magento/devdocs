@@ -586,9 +586,9 @@ S
 ## Known issues
 
 
-<!---60781-->* **Issue**: Installing with varnish causes products to not appear on frontend even flushing cache
+<!---60781-->* **Issue**: Installing with Varnish results in products not appearing on the frontend even after flushing the cache.
 
-**Workaround**:
+**Workaround**: None
 
 
 
@@ -596,16 +596,16 @@ S
 
 <!---60680-->* **Issue**: You cannot successfully edit and save a gift card product. 
 
-**Workaround**:
+**Workaround**: None
 
 
 
 
 
-<!---60553-->* **Issue**: When editing the product, customizable options cannot be edited on a per store view level. A change to one option affects products on all stores. The checkbox 'Use Default Value' for the option title does not work. Un-checking this box and then changing the title will affect all other store views (I have a store view per website).
-2. There are no checkbox 'Use Default Value' for the individual options themselves.
+<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. 
 
-**Workaround**:
+
+**Workaround**: None
 
 
 
@@ -613,7 +613,7 @@ S
 
 <!---60801-->* **Issue**: Magento does not correctly apply the Catalog Price Scope attribute when it is set to Global. As a result, website scope values prevail over global values.
 
-**Workaround**:
+**Workaround**: None
 
 
 
@@ -622,7 +622,7 @@ S
 
 <!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes.  
 
-**Workaround**:
+**Workaround**: None
 
 
 
@@ -632,20 +632,12 @@ S
 **Workaround**: Upgrade your version of TLS to at least 1.2. 
 
 
-<!---58433-->* **Issue**:** Saving category on catalog with 20k+ products is very slow (from 5 mins till 1 hour) 
-**Workaround**:
+<!---58433-->* **Issue**: Saving a category in a catalog that contains 20,000 or more products is very slow. 
+
+**Workaround**: None 
 
 
-
-
-
-* **Issue**:**
-**Workaround**: 
-<!--- -->
-
-
-
-<!---59555 --> * **Issue**:** Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. 
+<!---59555 --> * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. 
 
 
 **Workaround**: 

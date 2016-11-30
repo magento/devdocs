@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.3CE.md
 
 
 ## Magento Community Edition 2.1.3
-We are pleased to present Magento Community Edition 2.1.3. This release includes functional enhancements and fixes.
+We are pleased to present Magento Community Edition 2.1.3. This release includes many functional enhancements and fixes.
 
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
@@ -71,6 +71,7 @@ These new interfaces will not break any existing customizations or extensions. S
 
 
 ## Functional fixes and enhancements
+
 ### Indexing
 {:.no_toc} 
 
@@ -124,7 +125,7 @@ These new interfaces will not break any existing customizations or extensions. S
 
 
 
-### Installation and upgrade
+### Installation, upgrade, and deployment
 {:.no_toc} 
 
 <!---56397, 58064-->* You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data.
@@ -132,7 +133,6 @@ These new interfaces will not break any existing customizations or extensions. S
 
 <!---58742-->* We've resolved multiple issues with the upgrade process from 2.0.7 to 2.1.x (for example, editing a category post-upgrade no longer results in a 500 error). 
 
-<!---57904-->* We've improved the speed of static asset deployment. See <a href="http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options. 
 
 
 <!---56977-->* We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete. 
@@ -142,13 +142,12 @@ These new interfaces will not break any existing customizations or extensions. S
 
 <!---57343-->*  You can now deploy build processes on a different staging machine than the one you're running your production environment on. 
 
-<!---58312-->* Magento no longer incorrectly shows products as “out of stock” after you update your instalaltion from 2.0.7 to 2.1.0. <a href="https://github.com/magento/magento2/issues/5222" target="_blank">(GITHUB-5222)</a> 
+<!---58312-->* Magento no longer incorrectly shows products as “out of stock” after you update your installation from 2.0.7 to 2.1.0. <a href="https://github.com/magento/magento2/issues/5222" target="_blank">(GITHUB-5222)</a> 
 
 <!---57943-->* Magento 2.0.x and 2.1.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error:   "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a> 
 
-<!---60781-->* When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. 
- OPEN
 
+<!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento threw an exception, "Default website not defined" when upgrading because Magento read the list of websites from the database. It now reads from the config file. 
 
 
 
@@ -187,7 +186,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---54808 -->* You can now edit a product attribute for multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, and then incorrectly tell you that the products had been edited.
 
-<!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the storeview level.
 
 
 <!---54808-->* You can now bulk-edit a product attribute for a configurable product. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, the process saved, completed, and indicated that the products had been edited even though they hadn't.
@@ -195,13 +193,14 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---60605-->* Magento no longer throws an exception when you add a configurable product by SKU if an associated simple product is out-of-stock. 
 
-<!---60140-->* Magento now correctly displays the status of all child products of a configurable product, even disabled ones. Previously, Magento did not correctly display the status of a configurable product's child product if they were disabled. 
+<!---60140-->* Magento now correctly displays the status of all child products of a configurable product, even disabled ones. Previously, Magento did not correctly display the status of a configurable product's child product if the child product were disabled. 
 
 
 
 <!---61055-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the category page failed to list the product at all, rather than listing it as out-of-stock. 
 
 
+<!---57044-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products.  <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>,  <a href="https://github.com/magento/magento2/issues/5798" target="_blank">(GITHUB-5798)</a>, <a href="https://github.com/magento/magento2/issues/6041" target="_blank">(GITHUB-6041)</a>, <a href="https://github.com/magento/magento2/issues/6097" target="_blank">(GITHUB-6097)</a> 
 
 
 
@@ -242,18 +241,32 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57086-->* You can now successfully place orders with Braintree when using an alternative merchant account ID. (The merchant account does not need to match the 3D Secure authorization merchant account.) <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a> 
 
+<!---59637-->*  Braintree no longer throws an error during checkout when you apply a 100% discount coupon to a product and enable free shipping. Previously, Magento  displayed a spinning loader widget, and your screen froze. The Developer console displayed this error:
+`Uncaught Error: [paypal-container] is not a valid DOM Element`. 
+
+
+
 
 
 
 ### Tier pricing
 {:.no_toc} 
 
-<!---57625-->* Magento no longer resets the tier price during quote recalculation. Previously, when you triggered an automatic quote recalculation (by changing the shipping address, for example), the tier price was lost. (This issue occurred only if the product record in the database has values for `row_id` and `entity_id` that don't match.)
+<!---57625-->* Magento no longer resets the tier price during quote recalculation. Previously, when you triggered an automatic quote recalculation (by changing the shipping address, for example), the tier price was lost. (This issue occurred only if the product record in the database had values for `row_id` and `entity_id` that don't match.)
 
 
 <!---56922-->*  Magento no longer adds a thousands separator ( , ) to representations of quantities that exceed 1000.  <a href="https://github.com/magento/magento2/issues/5745" target="_blank">(GITHUB-5745)</a> 
 
 
+
+
+
+### Varnish
+{:.no_toc} 
+<!---60781-->* When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. 
+ OPEN
+
+<!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. <a href="https://github.com/magento/magento2/issues/6401" target="_blank">(GITHUB-6401)</a>
 
 
 
@@ -281,7 +294,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---57039-->* You can now update a product's media gallery through the REST API. 
 
 
-<!---56432-->* Magento now updates order status as expected on the Admin dashboard when you use the REST API to create a credit memo.
+<!---56432-->* Magento now updates order status as expected on the Admin panel when you use the REST API to create a credit memo.
 S
 
 <!---59422-->* The product return feature now works as expected when you create a product using the Creditmemo API. With the new Refund Invoice service, you can:
@@ -334,7 +347,7 @@ S
 ### Orders
 {:.no_toc} 
 
-<!--- 57077-->* You can now set the customer group when creating a new order from the Admin dashboard. <a href="https://github.com/magento/magento2/issues/6162" target="_blank">(GITHUB-6162)</a> 
+<!--- 57077-->* You can now set the customer group when creating a new order from the Admin panel. <a href="https://github.com/magento/magento2/issues/6162" target="_blank">(GITHUB-6162)</a> 
 
 
 <!---57387 -->* You can now print invoices and credit memos from the Order page. 
@@ -361,15 +374,21 @@ S
 
 <!---59209-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a> 
 
-<!---60143-->* You can now successfully create a new checkout agreement. <a href="https://github.com/magento/magento2/issues/7171" target="_blank">(GITHUB-7171)</a> 
-
-<!---57168-->* We fixed a JavaScript error that occurred on the Checkout page after you change the country in the Estimate Shipping and Tax field.
 
 <!---57062-->* The minicart now performs as expected in deployments that span multiple websites. Previously, in a Magento installation that had multiple websites, products you added to one website appeared in the other websites' minicarts.
 
 <!---57843-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple cart rules are applied. Previously, when you created two cart rules and applied them to a cart,  the rule with a coupon was applied, but the second rule was not.<a href="https://github.com/magento/magento2/issues/7171" target="_blank">(GITHUB-6294)</a> 
 
 <!---59024-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the Ship to field if you refreshed your browser page during this process. 
+
+<!---60103-->* Magento no longer lets you add a product variation to your shopping cart if the item is out of stock. Previously, Magento permitted you to select an out-of-stock item and when you added it to your cart, displayed the "Product is out of stock" message.
+
+<!---58090-->* We've corrected a problem with Magento throwing an HTTP ERROR 500 intermittently during checkout. 
+
+<!---60143-->* You can now successfully create a new checkout agreement. <a href="https://github.com/magento/magento2/issues/7171" target="_blank">(GITHUB-7171)</a> 
+
+<!---57168-->* We fixed a JavaScript error that occurred on the Checkout page after you changed the country in the Estimate Shipping and Tax field.
+
 
 
 
@@ -383,15 +402,6 @@ S
 <!---57037-->* UPS now generates shipping rates for Puerto Rico postal codes.
 
 
-
-
-### Staging
-
-{:.no_toc} 
-
-<!---51776-->* During Web Setup Wizard installation, in Step 4: Customize Your Store, you cannot use Advanced Modules Configuration to manually unselect Staging-related modules (for example, Magento_CmsStaging). (Note: Modules that have dependencies and should not be disabled are grayed out in the interface.)
-
-<!---57346-->*  The CMS page now refreshes as expected after an update. 
 
 
 
@@ -413,6 +423,8 @@ S
 <!---61039-->*  You can now successfully edit and save an existing product with an associated image. Previously, when you tried to edit an existing product and image, Magento threw this error: `"Notice: Undefined index: label in /var/www/html/magento2ce/vendor/magento/module-catalog/Model/Product/Gallery/CreateHandler.php on line 168"`. 
 
 
+
+
 ### Email
 {:.no_toc}
 
@@ -430,44 +442,24 @@ S
 
 <!---57144-->* You can now assign a blank value to an attribute. <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/4910" target="_blank">(GITHUB-4910)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5485" target="_blank">(GITHUB-5485)</a>
 
-
 <!---55662-->* We've removed the duplicated PHP settings from the sample web server configuration files. 
-
 
 <!---58465-->* The order of products in a category display no longer changes when you add a new product to the category. 
 
+<!--- 59581-->* We've improved and streamlined the Magento Admin PayPal configuration interface. 
 
-<!---55351, 56936 -->*  The list of allowed countries is now configured as part of website scope, not storeview scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
-
-
-
-<!--- 59581-->* Enhanced the Magento Admin Payment panel look and feel. 
-
-<!---57001-->* A restricted user can now change storeview- or website- level attributes that are defined within his scope. 
-
-<!---57044-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products.  <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>,  <a href="https://github.com/magento/magento2/issues/5798" target="_blank">(GITHUB-5798)</a>, <a href="https://github.com/magento/magento2/issues/6041" target="_blank">(GITHUB-6041)</a>, <a href="https://github.com/magento/magento2/issues/6097" target="_blank">(GITHUB-6097)</a> 
-
-
-<!---56914-->* Versioning of static files (including CSS, JS, font, and image files) is now enabled by default. 
 
 <!---56962 -->* Magento now displays the State/Province field on the Add New Address page. <a href="https://github.com/magento/magento2/issues/5279" target="_blank">(GITHUB-5279)</a>
 
 
 <!---57383-->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront.
 
-
 <!---57187-->*  When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when Layout is set to empty. 
 
-
-
-<!---57035-->* You can now upload changes to the `robots.txt` file from the Admin dashboard. 
-
-<!---59284-->* You can now select the scope for an action that you are running from the Catalog page's product table. 
-
+<!---57035-->* You can now upload changes to the `robots.txt` file from the Admin panel. 
 
 <!---58654-->* The `magento queue:consumers:start` command now works correctly when you provide the `max-messages` argument.
 
-<!---60553-->* Customizable options for products do not work on the store view level. When you are editing a product, changes to one store's customizable options affects products on all stores, not just the store you specified. OPEN
 
 <!---57351-->* We've removed the sample password from the Setup Wizard.
 
@@ -476,43 +468,55 @@ S
 <!---58511-->* Magento now displays server-side Ajax error messages. 
 
 
-<!---60616-->* Magento fails to validate required Customer Address or Customer attributes.  OPEN
-
-<!---60801-->* Product price saved on wrong scope when in configuration set Global Price Scope OPEN
- -Magento 2 with additional store view
-Steps to reproduce
-1. Go to Configuration->Catalog->Catalog->Price
-2. Set Catalog Price Scope = Global
-3. Open any product for edit
-4. Select Scope level to Store View
-5. Change price and save product
-6. Open Product on All Store Views level
- Actual result: Price is not changed, scope label [website]
- Expected result: Price should be changed, scope label should be [Global]
 
 
-<!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento threw an exception, "Default website not defined" after this upgrade. This is because Magento read the list of websites from the database, not from the config file (as it now does). 
+<!---56964-->* Magento now validates the uniqueness of product attribute values as you create or edit them. Previously, you could add identically named values to an attribute. <a href="https://github.com/magento/magento2/issues/4881" target="_blank">(GITHUB-4881)
 
+
+<!---56973-->* You can now assign open-ended start and complete dates for product rules. Previously, if you left the start and end date field blanks when creating a rule, Magento would supply the start and end dates based on the save date. 
+
+<!---59879-->* Magento no longer displays the "as low as" label for a disabled price on the Category page.
+
+
+<!---58500-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`.  <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
+
+<!---57197-->* We've eliminated difficulties saving product information when logged in as Admin. Previously, the Product Save feature worked erratically for Admin users. 
+
+
+<!---59874-->* Magento now successfully saves Product Stock Items whether you used the WebAPI to save or saved from the Admin interface. 
+
+<!---59397, 60696-->* Custom themes now inherit parent XML configuration information as expected.  
+
+
+
+
+
+
+### Static file processing
+{:.no_toc} 
+<!---60603-->* We've corrected a problem with `_requirejs` asset retrieval via static.php in static content versioning. 
+
+<!---56914-->* Versioning of static files (including CSS, JS, font, and image files) is now enabled by default. 
+
+<!---57904-->* We've improved the speed of static asset deployment. See <a href="http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options. 
+
+
+
+
+### Scope
+{:.no_toc} 
 <!---54704-->* Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the store view level overrode the price set in website scope. <a href="https://github.com/magento/magento2/issues/5133" target="_blank">(GITHUB-5133)
 
 
+<!---55351, 56936 -->*  The list of allowed countries is now configured as part of website scope, not storeview scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
 
+<!---60553-->* Customizable options for products do not work on the store view level. When you are editing a product, changes to one store's customizable options affects products on all stores, not just the store you specified. OPEN
 
+<!---57001-->* A restricted user can now change storeview- or website- level attributes that are defined within his scope. 
 
+<!---59284-->* You can now select the scope for an action that you are running from the Catalog page's product table. 
 
-
-
-
-### Cloud infrastructure
-{:.no_toc} 
-
-<!---58090-->* We've corrected a problem with Magento throwing HTTP ERROR 500 intermittently during checkout. 
-
-<!---59397, 60696-->* Custom themes now use parent XML configuration on multithread deployments. Previously, 
-
-<!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. <a href="https://github.com/magento/magento2/issues/6401" target="_blank">(GITHUB-6401)</a>
-
-<!---60603-->* _requirejs asset retrieval via static.php does not work with static content versioning IN DEV
+<!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the storeview level.
 
 
 
@@ -537,28 +541,92 @@ Steps to reproduce
 
 
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375
+
+
+
+
+
+
+
+
+
+
+
+
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142
 -->
 
 
-<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457-->
+<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346-->
 
-<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 59293, 60586, 58916, 56957, 59376, 60662-->
+<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 59376, 60662, 60695, 60971, 61341 -->
 
 <!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736-->
 
 
 
-
-
-
-
-
 ## Known issues
 
+<!---60781-->* **Issue**: Installing with Varnish results in products not appearing on the frontend even after flushing the cache.
 
-* **Issue**: <a href="https://github.com/magento/magento2/issues/6424" target="_blank">(GITHUB-6424)</a>. **Workaround**: 
-<!--- 58017-->
+**Workaround**: None
+
+
+
+
+
+<!---60680-->* **Issue**: You cannot successfully edit and save a gift card product. 
+
+**Workaround**: None
+
+
+
+
+
+<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. 
+
+
+**Workaround**: None
+
+
+
+
+
+<!---60801-->* **Issue**: Magento does not correctly apply the Catalog Price Scope attribute when it is set to Global. As a result, website scope values prevail over global values.
+
+**Workaround**: None
+
+
+
+
+
+
+<!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes.  
+
+**Workaround**: None
+
+
+
+
+<!---61341-->* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  
+
+**Workaround**: Upgrade your version of TLS to at least 1.2. 
+
+
+<!---58433-->* **Issue**: Saving a category in a catalog that contains 20,000 or more products is very slow. 
+
+**Workaround**: None 
+
+
+<!---59555 --> * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. 
+
+
+**Workaround**: 
+You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB. 
+
+
+
+
 
 
 
