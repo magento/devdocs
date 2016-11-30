@@ -67,8 +67,7 @@ Both files reside in the `<magento2_root_dir>/dev/tests/js` directory.
 
 `<magento2_root_dir>/dev/tests/js/jsTestDriver.php.dist` specifies the contents of the YAML configuration file used by JsTestDriver. It contains the following PHP code:
 
-{% highlight php %}
-<?php
+{% highlight php startinline=true %}
 return array(
     'server' => 'http://localhost:9876',
     'proxy' => array(array('matcher' => '/lib/web/*', 'server' => '%s/test/%s/lib/web/')),
@@ -97,8 +96,7 @@ Parameters are the following:
 
 `<magento2_root_dir>/dev/tests/js/jsTestDriverOrder.php` specifies the order in which the JsTestDriver loads certain JavaScript files. It contains the following PHP code:
 
-{% highlight php %}
-<?php
+{% highlight php startinline=true %}
 return array(
     '/lib/web/globalize/globalize.js',
     '/lib/web/jquery/jquery.js',
