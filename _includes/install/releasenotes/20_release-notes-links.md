@@ -14,7 +14,7 @@
 *	[Version 2.0.1](http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.1.html){:target="_blank"}
 *	[Version 2.0.0](ttp://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.html){:target="_blank"}
 
-{% endcollapsibleh2e %}
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 Magento Enterprise Edition (EE) 2.0 Release Notes %} 
 
