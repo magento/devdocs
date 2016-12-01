@@ -117,7 +117,7 @@ To access a website using a unique URL like `http://french.mysite.mg`, you must 
 	![Set a base URL]({{ site.baseurl }}common/images/config_multi-site_base-url.png){:width="650px"}
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're setting up a base URL for deployment Magento Enterprise Cloud Edition, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french--branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
+  		<p>If you're setting up a base URL for deployment Magento Enterprise Cloud Edition, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
   		<p>If you're setting up a base URL for local testing, use a period.</p>
 	</div>
 5.	Click **Save Config**.
