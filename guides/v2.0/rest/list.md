@@ -348,6 +348,8 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     GET    /V1/transactions
     * POST /V1/order/:orderId/invoice
     * POST /V1/order/:orderId/ship
+    * POST /V1/invoice/:invoiceId/refund
+ +  * POST /V1/order/:orderId/refund
 
 ### SalesRule
 
