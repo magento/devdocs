@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Generate local REST API reference</title>
+	<title>Generate a local REST API reference</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -171,7 +171,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Generate local REST API reference</h1>
+		<h1 class="page-heading">Generate a local REST API reference</h1>
 
         
 
@@ -307,7 +307,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/rest/generate-local.html">Generate local API reference</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/rest/generate-local.html">Generate a local API reference</a></li>
 
 									
 
@@ -506,7 +506,13 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <p>The REST documentation on the Magento devdocs website is generated with <a href="http://swagger.io">Swagger UI</a> using a schema derived from the latest build of Magento 2 Community Edition. However, the REST API documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento and there is no live data.</p>
+            <h2 id="get-more-rest-api-documentation">Get more REST API documentation</h2>
+
+<p>The REST documentation on the Magento devdocs website is generated with <a href="http://swagger.io">Swagger UI</a> using a schema derived from the latest build of Magento 2 Community Edition. However, the REST API documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.</p>
+
+<p>Magento provides two ways to get detailed information about the structure of the REST APIs, as described below.</p>
+
+<h2 id="generate-a-full-rest-api-reference-locally">Generate a full REST API reference locally</h2>
 
 <p>The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include Magento Enterprise Edition (EE) modules, third-party modules, and extension attributes that have been installed on your system. To view this documentation, go to:</p>
 
@@ -520,7 +526,37 @@
   <p>The <b>Try it out!</b> feature is not available on Swagger documentation published on the Magento devdocs website.</p>
 </div>
 
-<p>You can also use a REST client to generate the JSON schema. In the client, set the method to <code>GET</code> and the URL to <code>http://&lt;magento_host&gt;/rest/default/schema</code>. You must specify a bearer authorization token in the header.</p>
+<h2 id="return-the-json-schema-for-one-or-more-services">Return the JSON schema for one or more services</h2>
+
+<p>You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to <code>GET</code> and the URL to</p>
+
+<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema&amp;services=&lt;serviceName1,serviceName2,..&gt;</code></p>
+
+<p>The value of <code>store_code</code> must be one of the following:
+* <code>default</code>
+* The assigned store code
+* <code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant’s stores.</p>
+
+<p>For example:</p>
+
+<p><code>http://&lt;magento_host&gt;/rest/default/schema?services=catalogProductRepositoryV1</code></p>
+
+<p>To return information about all services:</p>
+
+<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema</code></p>
+
+<div class="bs-callout bs-callout-info" id="info">
+
+<p>You must specify an authorization token for an admin user to return information for most endpoints. See <a href="/guides/v2.0/get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information. </p>
+</div>
+
+<h2>Related topics</h2>
+
+<p><a href="/guides/v2.0/get-started/authentication/gs-authentication-token.html">Token-based authentication</a></p>
+
+<p><a href="/guides/v2.0/rest/list.html">List of REST APIs by module</a></p>
+
+<p><a href="/guides/v2.0/rest/rest_endpoints.html">List of service names permodule</a></p>
 
 		</div>
 	</section>

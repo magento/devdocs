@@ -309,7 +309,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/rest/generate-local.html">Generate local API reference</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/rest/generate-local.html">Generate a local API reference</a></li>
 
 									
 
@@ -528,218 +528,215 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="rest-schema-endpoint-format">REST Schema Endpoint Format</h2>
-<p>To specify one or more services:</p>
+            <h2 id="eelist">Magento Enterprise Edition (EE) REST API Services per module</h2>
 
-<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema&amp;services=&lt;serviceName1,serviceName2,..&gt;</code></p>
+<p>The REST APIs for Magento EE are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.</p>
 
-<p>To specify all services:</p>
+<h3 id="customer-balance">Customer balance</h3>
+<pre><code>customerBalanceBalanceManagementV1
+</code></pre>
 
-<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema</code></p>
+<h3 id="gift-carts">Gift carts</h3>
+<pre><code>giftCardAccountGiftCardAccountManagementV1
+giftCardAccountGuestGiftCardAccountManagementV1
+giftRegistryGuestCartShippingMethodManagementV1
+giftRegistryShippingMethodManagementV1
+</code></pre>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The value of `store_code` can be one of the following:</p>
-  <ul>
-  <li><code>default</code></li>
-  <li>The assigned store code</li>
-  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores.</li>
-  </ul>
-</div>
+<h3 id="gift-wrapping">Gift wrapping</h3>
+<pre><code>giftWrappingWrappingRepositoryV1
+</code></pre>
 
-<h2 id="list-of-service-names-per-module">List of Service Names per Module</h2>
+<h3 id="reward">Reward</h3>
+<pre><code>rewardRewardManagementV1
+</code></pre>
+
+<h3 id="rma">RMA</h3>
+<pre><code>rmaCommentManagementV1
+rmaRmaAttributesManagementV1
+rmaRmaManagementV1
+rmaRmaRepositoryV1
+rmaTrackManagementV1
+</code></pre>
+
+<h3 id="worldpay">Worldpay</h3>
+<pre><code>worldpayGuestPaymentInformationManagementProxyV1
+</code></pre>
+
+<h2 id="celist">Magento Community Edition (CE) REST APIs Services per Module</h2>
+
+<p>The Magento CE REST APIs are available on all EE and CE installations.</p>
 
 <h3 id="backend">Backend</h3>
-<p>backendModuleServiceV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=backendModuleServiceV1</code></p>
+<pre><code>backendModuleServiceV1
+</code></pre>
 
-<h3 id="bundle">Bundle</h3>
-<p>bundleProductLinkManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=bundleProductLinkManagementV1</code></p>
-
-<p>bundleProductOptionRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=bundleProductOptionRepositoryV1</code></p>
-
-<p>bundleProductOptionTypeListV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=bundleProductOptionTypeListV1</code></p>
-
-<p>bundleProductOptionManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=bundleProductOptionManagementV1</code></p>
+<h3 id="bundle-product">Bundle product</h3>
+<pre><code>bundleProductLinkManagementV1
+bundleProductOptionManagementV1
+bundleProductOptionRepositoryV1
+bundleProductOptionTypeListV1
+</code></pre>
 
 <h3 id="catalog">Catalog</h3>
-<p>catalogProductRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductRepositoryV1</code></p>
+<pre><code>catalogAttributeSetManagementV1
+catalogAttributeSetRepositoryV1
+catalogCategoryAttributeOptionManagementV1
+catalogCategoryAttributeRepositoryV1
+catalogCategoryLinkManagementV1
+catalogCategoryLinkRepositoryV1
+catalogCategoryManagementV1
+catalogCategoryRepositoryV1
+catalogProductAttributeGroupRepositoryV1
+catalogProductAttributeManagementV1
+catalogProductAttributeMediaGalleryManagementV1
+catalogProductAttributeOptionManagementV1
+catalogProductAttributeRepositoryV1
+catalogProductAttributeTypesListV1
+catalogProductCustomOptionRepositoryV1
+catalogProductCustomOptionTypeListV1
+catalogProductLinkManagementV1
+catalogProductLinkRepositoryV1
+catalogProductLinkTypeListV1
+catalogProductMediaAttributeManagementV1
+catalogProductRepositoryV1
+catalogProductTierPriceManagementV1
+catalogProductTypeListV1
+catalogProductWebsiteLinkRepositoryV1
+</code></pre>
 
-<p>catalogProductAttributeTypesListV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductAttributeTypesListV1</code></p>
-
-<p>catalogProductAttributeRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductAttributeRepositoryV1</code></p>
-
-<p>catalogCategoryAttributeRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogCategoryAttributeRepositoryV1</code></p>
-
-<p>catalogCategoryAttributeOptionManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogCategoryAttributeOptionManagementV1</code></p>
-
-<p>catalogProductTypeListV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductTypeListV1</code></p>
-
-<p>catalogAttributeSetRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogAttributeSetRepositoryV1</code></p>
-
-<p>catalogAttributeSetManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogAttributeSetManagementV1</code></p>
-
-<p>catalogProductAttributeManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductAttributeManagementV1</code></p>
-
-<p>catalogProductAttributeGroupRepositoryV1: <code>http://mahgento.rest/soap/default/schema&amp;services=catalogProductAttributeGroupRepositoryV1</code></p>
-
-<p>catalogProductAttributeOptionManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductAttributeOptionManagementV1</code></p>
-
-<p>catalogProductMediaAttributeManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductMediaAttributeManagementV1</code></p>
-
-<p>catalogProductAttributeMediaGalleryManagementV1: <code>http://&lt;magento_host&gt;/soap/default?wsdl&amp;services=catalogProductAttributeMediaGalleryManagementV1</code></p>
-
-<p>catalogProductGroupPriceManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductGroupPriceManagementV1</code></p>
-
-<p>catalogProductTierPriceManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductTierPriceManagementV1</code></p>
-
-<p>catalogCategoryRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogCategoryRepositoryV1</code></p>
-
-<p>catalogCategoryManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogCategoryManagementV1</code></p>
-
-<p>catalogProductCustomOptionTypeListV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductCustomOptionTypeListV1</code></p>
-
-<p>catalogProductCustomOptionRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductCustomOptionRepositoryV1</code></p>
-
-<p>catalogProductLinkTypeListV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductLinkTypeListV1</code></p>
-
-<p>catalogProductLinkManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductLinkManagementV1</code></p>
-
-<p>catalogProductLinkRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogProductLinkRepositoryV1</code></p>
-
-<p>catalogCategoryLinkManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogCategoryLinkManagementV1</code></p>
-
-<p>catalogCategoryLinkRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogCategoryLinkRepositoryV1</code></p>
-
-<p>catalogInventoryStockRegistryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=catalogInventoryStockRegistryV1</code></p>
+<h3 id="catalog-inventory">Catalog inventory</h3>
+<pre><code>catalogInventoryStockRegistryV1
+</code></pre>
 
 <h3 id="checkout">Checkout</h3>
-<p>checkoutAgreementsCheckoutAgreementsRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=checkoutAgreementsCheckoutAgreementsRepositoryV1</code></p>
+<pre><code>checkoutGuestPaymentInformationManagementV1
+checkoutGuestShippingInformationManagementV1
+checkoutGuestTotalsInformationManagementV1
+checkoutPaymentInformationManagementV1
+checkoutShippingInformationManagementV1
+checkoutTotalsInformationManagementV1
+</code></pre>
 
-<h3 id="configurable">Configurable</h3>
-<p>configurableProductLinkManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=configurableProductLinkManagementV1</code></p>
+<h3 id="checkout-agreements">Checkout agreements</h3>
+<pre><code>checkoutAgreementsCheckoutAgreementsRepositoryV1
+</code></pre>
 
-<p>configurableProductConfigurableProductManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=configurableProductConfigurableProductManagementV1</code></p>
+<h3 id="cms">CMS</h3>
+<pre><code>cmsBlockRepositoryV1
+cmsPageRepositoryV1
+</code></pre>
 
-<p>configurableProductOptionRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=configurableProductOptionRepositoryV1</code></p>
+<h3 id="configurable-product">Configurable product</h3>
+<pre><code>configurableProductConfigurableProductManagementV1
+configurableProductLinkManagementV1
+configurableProductOptionRepositoryV1
+</code></pre>
 
 <h3 id="customer">Customer</h3>
-<p>customerGroupRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=customerGroupRepositoryV1</code></p>
+<pre><code>customerAccountManagementV1
+customerAddressMetadataV1
+customerAddressRepositoryV1
+customerCustomerMetadataV1
+customerCustomerRepositoryV1
+customerGroupManagementV1
+customerGroupRepositoryV1
+</code></pre>
 
-<p>customerGroupManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=customerGroupManagementV1</code></p>
-
-<p>customerCustomerMetadataV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=customerCustomerMetadataV1</code></p>
-
-<p>customerAddressMetadataV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=customerAddressMetadataV1</code></p>
-
-<p>customerCustomerRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=customerCustomerRepositoryV1</code></p>
-
-<p>customerAccountManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=customerAccountManagementV1</code></p>
-
-<p>customerAddressRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=customerAddressRepositoryV1</code></p>
+<h3 id="directory">Directory</h3>
+<pre><code>directoryCountryInformationAcquirerV1
+directoryCurrencyInformationAcquirerV1
+</code></pre>
 
 <h3 id="downloadable">Downloadable</h3>
-<p>downloadableLinkRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=downloadableLinkRepositoryV1</code></p>
+<pre><code>downloadableLinkRepositoryV1
+downloadableSampleRepositoryV1
+</code></pre>
 
-<p>downloadableSampleRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=downloadableSampleRepositoryV1</code></p>
+<h3 id="eav">EAV</h3>
+<pre><code>eavAttributeSetManagementV1
+eavAttributeSetRepositoryV1
+</code></pre>
 
-<h3 id="eav">Eav</h3>
-<p>eavAttributeSetRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=eavAttributeSetRepositoryV1</code></p>
-
-<p>eavAttributeSetManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=eavAttributeSetManagementV1</code></p>
-
-<h3 id="gift-message">Gift Message</h3>
-<p>giftMessageCartRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=giftMessageCartRepositoryV1</code></p>
-
-<p>giftMessageItemRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=giftMessageItemRepositoryV1</code></p>
+<h3 id="gift-message">Gift message</h3>
+<pre><code>giftMessageCartRepositoryV1
+giftMessageGuestCartRepositoryV1
+giftMessageGuestItemRepositoryV1
+giftMessageItemRepositoryV1
+</code></pre>
 
 <h3 id="integration">Integration</h3>
-<p>integrationAdminTokenServiceV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=integrationAdminTokenServiceV1</code></p>
-
-<p>integrationCustomerTokenServiceV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=integrationCustomerTokenServiceV1</code></p>
+<pre><code>integrationAdminTokenServiceV1
+integrationCustomerTokenServiceV1
+</code></pre>
 
 <h3 id="quote">Quote</h3>
-<p>quoteCartRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteCartRepositoryV1</code></p>
-
-<p>quoteCartManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteCartManagementV1</code></p>
-
-<p>quoteGuestCartRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteGuestCartRepositoryV1</code></p>
-
-<p>quoteGuestCartManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteGuestCartManagementV1</code></p>
-
-<p>quoteShippingMethodManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteShippingMethodManagementV1</code></p>
-
-<p>quoteGuestShippingMethodManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteGuestShippingMethodManagementV1</code></p>
-
-<p>quoteCartItemRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteCartItemRepositoryV1</code></p>
-
-<p>quoteGuestCartItemRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteGuestCartItemRepositoryV1</code></p>
-
-<p>quotePaymentMethodManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quotePaymentMethodManagementV1</code></p>
-
-<p>quoteGuestPaymentMethodManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteGuestPaymentMethodManagementV1</code></p>
-
-<p>quoteBillingAddressManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteBillingAddressManagementV1</code></p>
-
-<p>quoteGuestBillingAddressManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteGuestBillingAddressManagementV1</code></p>
-
-<p>quoteGuestAddressDetailsManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteGuestAddressDetailsManagementV1</code></p>
-
-<p>quoteCouponManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteCouponManagementV1</code></p>
-
-<p>quoteGuestCouponManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteGuestCouponManagementV1</code></p>
-
-<p>quoteShippingAddressManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteShippingAddressManagementV1</code></p>
-
-<p>quoteGuestShippingAddressManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteGuestShippingAddressManagementV1</code></p>
-
-<p>quoteAddressDetailsManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteAddressDetailsManagementV1</code></p>
-
-<p>quoteCartTotalRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteCartTotalRepositoryV1</code></p>
-
-<p>quoteGuestCartTotalManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteGuestCartTotalManagementV1</code></p>
-
-<p>quoteGuestCartTotalRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteGuestCartTotalRepositoryV1</code></p>
-
-<p>quoteCartTotalManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=quoteCartTotalManagementV1</code></p>
+<pre><code>quoteBillingAddressManagementV1
+quoteCartItemRepositoryV1
+quoteCartManagementV1
+quoteCartRepositoryV1
+quoteCartTotalManagementV1
+quoteCartTotalRepositoryV1
+quoteCouponManagementV1
+quoteGuestBillingAddressManagementV1
+quoteGuestCartItemRepositoryV1
+quoteGuestCartManagementV1
+quoteGuestCartRepositoryV1
+quoteGuestCartTotalManagementV1
+quoteGuestCartTotalRepositoryV1
+quoteGuestCouponManagementV1
+quoteGuestPaymentMethodManagementV1
+quoteGuestShipmentEstimationV1
+quoteGuestShippingMethodManagementV1
+quotePaymentMethodManagementV1
+quoteShipmentEstimationV1
+quoteShippingMethodManagementV1
+</code></pre>
 
 <h3 id="sales">Sales</h3>
-<p>salesOrderRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesOrderRepositoryV1</code></p>
+<pre><code>salesCreditmemoCommentRepositoryV1
+salesCreditmemoManagementV1
+salesCreditmemoRepositoryV1
+salesInvoiceCommentRepositoryV1
+salesInvoiceManagementV1
+salesInvoiceOrderV1
+salesInvoiceRepositoryV1
+salesOrderAddressRepositoryV1
+salesOrderItemRepositoryV1
+salesOrderManagementV1
+salesOrderRepositoryV1
+salesRefundInvoiceV1
+salesRefundOrderV1
+salesShipmentCommentRepositoryV1
+salesShipmentManagementV1
+salesShipmentRepositoryV1
+salesShipmentTrackRepositoryV1
+salesShipOrderV1
+salesTransactionRepositoryV1
+</code></pre>
 
-<p>salesOrderManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesOrderManagementV1</code></p>
+<h3 id="sales-rule">Sales rule</h3>
+<pre><code>salesRuleCouponManagementV1
+salesRuleCouponRepositoryV1
+salesRuleRuleRepositoryV1
+</code></pre>
 
-<p>salesOrderAddressRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesOrderAddressRepositoryV1</code></p>
+<h3 id="search">Search</h3>
+<pre><code>searchV1
+</code></pre>
 
-<p>salesInvoiceRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesInvoiceRepositoryV1</code></p>
-
-<p>salesInvoiceManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesInvoiceManagementV1</code></p>
-
-<p>salesInvoiceCommentRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesInvoiceCommentRepositoryV1</code></p>
-
-<p>salesInvoiceOrderV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesInvoiceOrderV1</code></p>
-
-<p>salesCreditmemoManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesCreditmemoManagementV1</code></p>
-
-<p>salesCreditmemoRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesCreditmemoRepositoryV1</code></p>
-
-<p>salesCreditmemoCommentRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesCreditmemoCommentRepositoryV1</code></p>
-
-<p>salesShipmentRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesShipmentRepositoryV1</code></p>
-
-<p>salesShipmentManagementV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesShipmentManagementV1</code></p>
-
-<p>salesShipmentCommentRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesShipmentCommentRepositoryV1</code></p>
-
-<p>salesShipmentTrackRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesShipmentTrackRepositoryV1</code></p>
-
-<p>salesShipOrderV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesShipOrderV1</code></p>
-
-<p>salesTransactionRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=salesTransactionRepositoryV1</code></p>
+<h3 id="store">Store</h3>
+<pre><code>storeGroupRepositoryV1
+storeStoreConfigManagerV1
+storeStoreRepositoryV1
+storeWebsiteRepositoryV1
+</code></pre>
 
 <h3 id="tax">Tax</h3>
-<p>taxTaxRateRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=taxTaxRateRepositoryV1</code></p>
-
-<p>taxTaxRuleRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=taxTaxRuleRepositoryV1</code></p>
-
-<p>taxTaxClassRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=taxTaxClassRepositoryV1</code></p>
+<pre><code>taxTaxClassRepositoryV1
+taxTaxRateRepositoryV1
+taxTaxRuleRepositoryV1
+</code></pre>
 
 		</div>
 	</section>
