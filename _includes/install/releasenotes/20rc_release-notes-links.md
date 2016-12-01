@@ -8,7 +8,7 @@
 
 {% endcollapsibleh2 %}
 
-{% h2collapsible Magento EE 2.0 Release Candidate Release Notes %} 
+{% collapsibleh2 Magento EE 2.0 Release Candidate Release Notes %} 
 
 *	[EE 2.1 RC3]({{page.baseurl}}release-notes/ReleaseNotes2.1_RC3CE.html){:target="_blank"}
 *	[EE 2.1 RC2]({{page.baseurl}}release-notes/ReleaseNotes2.1_RC2CE.html){:target="_blank"}
