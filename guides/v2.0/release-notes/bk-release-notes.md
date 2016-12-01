@@ -11,8 +11,11 @@ github_link: release-notes/bk-release-notes.md
 redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 ---
 
+## Magento Community Edition (CE) and Enterprise Edition (EE) Release Notes
+
 {% include install/releasenotes/20_release-notes-links.md %}
 
+## Magento CE and EE Release Candidate Release Notes
 
 {% include install/releasenotes/20rc_release-notes-links.md %}
 
