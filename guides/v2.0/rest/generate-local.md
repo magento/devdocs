@@ -10,11 +10,11 @@ github_link: rest/generate-local.md
 
 ---
 
-## Generate REST API reference information
+## Get more REST API documentation
 
-The REST documentation on the Magento devdocs website is generated with [Swagger UI](http://swagger.io) using a schema derived from the latest build of Magento 2 Community Edition. However, the REST API documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento and there is no live data.
+The REST documentation on the Magento devdocs website is generated with [Swagger UI](http://swagger.io) using a schema derived from the latest build of Magento 2 Community Edition. However, the REST API documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.
 
-Magento provides two ways to obtain detailed information about the structure of the REST APIs.
+Magento provides two ways to get detailed information about the structure of the REST APIs, as described below.
 
 ## Generate a full REST API reference locally
 
