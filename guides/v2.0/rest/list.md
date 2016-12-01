@@ -10,10 +10,67 @@ github_link: rest/list.md
 redirect_from: /guides/v1.0/rest/list.html
 ---
 
+
+## List of REST APIs for Magento Enterprise Edition {#listee}
+
+The REST APIs for Magento Enterprise Edition (EE) are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.
+
+Additions since 2.0 are marked with asterisks (*).
+
+### CustomerBalance
+
+    POST   /V1/carts/mine/balance/apply
+
+### GiftCardAccount
+
+    GET    /V1/carts/:quoteId/giftCards
+    PUT    /V1/carts/:cartId/giftCards
+    DELETE /V1/carts/:quoteId/giftCards/:giftCardCode
+    POST   /V1/carts/mine/giftCards
+    POST   /V1/carts/guest-carts/:cartId/giftCards
+    GET    /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode
+    GET    /V1/carts/mine/checkGiftCard/:giftCardCode
+
+### GiftRegistry
+
+    POST   /V1/giftregistry/mine/estimate-shipping-methods
+    POST   /V1/guest-giftregistry/:cartId/estimate-shipping-methods
+
+### GiftWrapping
+
+    GET    /V1/gift-wrappings/:id
+    POST   /V1/gift-wrappings
+    PUT    /V1/gift-wrappings/:wrappingId
+    GET    /V1/gift-wrappings
+    DELETE /V1/gift-wrappings/:id
+
+### Reward
+
+    POST   /V1/reward/mine/use-reward
+
+### Rma
+
+    POST   /V1/returns/:id/tracking-numbers
+    DELETE /V1/returns/:id/tracking-numbers/:trackId
+    GET    /V1/returns/:id
+    DELETE /V1/returns/:id
+    POST   /V1/returns/:id/comments
+    POST   /V1/returns
+    PUT    /V1/returns/:id
+    GET    /V1/returns/:id/comments
+    GET    /V1/returns
+    GET    /V1/returnsAttributeMetadata/:attributeCode
+    GET    /V1/returnsAttributeMetadata/form/:formCode
+    GET    /V1/returnsAttributeMetadata
+    GET    /V1/returnsAttributeMetadata/custom
+    GET    /V1/returns/:id/tracking-numbers
+    GET    /V1/returns/:id/labels
+
 ## List of REST APIs for Magento Community Edition {#list}
 
-An asterisk (*) indicates the API was added since the initial release of Magento 2.0.
+    The Magento Community Edition (CE) REST APIs are available on all EE and CE installations.
 
+    Additions since 2.0 are marked with asterisks (*).
 
 ### Backend
 
@@ -393,54 +450,3 @@ An asterisk (*) indicates the API was added since the initial release of Magento
     PUT    /V1/taxClasses/:classId
     DELETE /V1/taxClasses/:taxClassId
     GET    /V1/taxClasses/search
-
-## List of REST APIs for Magento Enterprise Edition {#listee}
-
-### CustomerBalance
-
-    POST   /V1/carts/mine/balance/apply
-
-### GiftCardAccount
-
-    GET    /V1/carts/:quoteId/giftCards
-    PUT    /V1/carts/:cartId/giftCards
-    DELETE /V1/carts/:quoteId/giftCards/:giftCardCode
-    POST   /V1/carts/mine/giftCards
-    POST   /V1/carts/guest-carts/:cartId/giftCards
-    GET    /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode
-    GET    /V1/carts/mine/checkGiftCard/:giftCardCode
-
-### GiftRegistry
-
-    POST   /V1/giftregistry/mine/estimate-shipping-methods
-    POST   /V1/guest-giftregistry/:cartId/estimate-shipping-methods
-
-### GiftWrapping
-
-    GET    /V1/gift-wrappings/:id
-    POST   /V1/gift-wrappings
-    PUT    /V1/gift-wrappings/:wrappingId
-    GET    /V1/gift-wrappings
-    DELETE /V1/gift-wrappings/:id
-
-### Reward
-
-    POST   /V1/reward/mine/use-reward
-
-### Rma
-
-    POST   /V1/returns/:id/tracking-numbers
-    DELETE /V1/returns/:id/tracking-numbers/:trackId
-    GET    /V1/returns/:id
-    DELETE /V1/returns/:id
-    POST   /V1/returns/:id/comments
-    POST   /V1/returns
-    PUT    /V1/returns/:id
-    GET    /V1/returns/:id/comments
-    GET    /V1/returns
-    GET    /V1/returnsAttributeMetadata/:attributeCode
-    GET    /V1/returnsAttributeMetadata/form/:formCode
-    GET    /V1/returnsAttributeMetadata
-    GET    /V1/returnsAttributeMetadata/custom
-    GET    /V1/returns/:id/tracking-numbers
-    GET    /V1/returns/:id/labels
