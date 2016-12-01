@@ -1,1 +1,0 @@
-../../v2.0/payments-integrations/bk-payments-integrations.md
