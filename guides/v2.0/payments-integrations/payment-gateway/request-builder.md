@@ -5,7 +5,7 @@ subgroup: p_gateway
 title: Request Builder
 menu_title: 
 menu_node: 
-menu_order: 5
+menu_order: 4
 version: 2.0
 github_link: payments-integrations/payment-gateway/request-builder.md
 ---

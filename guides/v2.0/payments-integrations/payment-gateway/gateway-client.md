@@ -3,9 +3,8 @@ layout: default
 group: payments-integrations
 subgroup: p_gateway
 title: Gateway Client
-menu_title: 
-menu_node: 
-menu_order: 10
+menu_title: Gateway Client
+menu_order: 5
 version: 2.0
 github_link: payments-integrations/payment-gateway/gateway-client.md
 ---

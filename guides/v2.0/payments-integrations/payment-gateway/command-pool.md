@@ -5,7 +5,7 @@ subgroup: p_gateway
 title: Gateway Command Pool
 menu_title: 
 menu_node: 
-menu_order: 2
+menu_order: 3
 version: 2.0
 github_link: payments-integrations/payment-gateway/command-pool.md
 ---
