@@ -6,7 +6,7 @@
 *	[CE 2.1 RC2)]({{page.baseurl}}release-notes/ReleaseNotes2.1_RC2EE.html){:target="_blank"}
 *	[CE 2.1 RC1]({{page.baseurl}}release-notes/ReleaseNotes2.1_RC1EE.html){:target="_blank"}
 
-{% endh2collapsible %}
+{% endcollapsibleh2 %}
 
 {% h2collapsible Magento EE 2.0 Release Candidate Release Notes %} 
 
