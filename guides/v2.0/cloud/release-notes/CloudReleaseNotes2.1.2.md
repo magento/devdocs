@@ -1,13 +1,13 @@
 ---
 layout: default
 group: cloud
-subgroup: 02_ReleaseNotes
+subgroup: 03_ReleaseNotes
 title: Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes
 menu_title: Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes
 menu_order: 2
 menu_node: 
 version: 2.1
-github_link: cloud/CloudReleaseNotes2.1.2.md
+github_link: cloud/release-notes/CloudReleaseNotes2.1.2.md
 ---
 
 ## Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes

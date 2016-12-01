@@ -44,7 +44,7 @@ During [bootstrapping]({{page.baseurl}}config-guide/bootstrap/magento-bootstrap.
 
 ## Type configuration
 
-Type configurations describe an objects lifestyle and how to instantiate it.
+Type configurations describe an object's lifestyle and how to instantiate it.
 
 You can configure the type in your `di.xml` configuration node in the following ways:
 
@@ -105,7 +105,7 @@ Creates an instance of `typeName` type and passes it in as an argument.
 You can pass any class name, interface name, or virtual type as `typeName`.
 
 Setting the `shared` property defines the lifestyle of a created instance.
-See [Object Lifestyle Management](#object-lifestyle-management).
+See [object lifestyle configuration](#object-lifestyle-configuration).
 
 ---
 

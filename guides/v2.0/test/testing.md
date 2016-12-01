@@ -29,7 +29,7 @@ When talking about testing in Magento 2, we have to distinguish between differen
 * **JavaScript**  
   Much of the functionality in Magento 2 is provided with the help of sophisticated JavaScript. JavaScript tests ensure the frontend portion of Magento functions as expected.  
 
-  For more information, please see the [Extension Developer Guide on JavaScript Tests]({{page.baseurl}}extension-dev-guide/test/test_js-unit.html).
+  For more information, please see the [Extension Developer Guide on JavaScript Tests]({{page.baseurl}}test/js/test_js-unit.html).
   
 * **Static**  
   Static code analysis checks that PHP code follows the Magento 2 coding standards and best practices. They usually are executed during continuous integration using the `bin/magento` tool. 

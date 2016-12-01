@@ -3,7 +3,7 @@ encoding: "utf-8"
 title: Magento 2 Developer Documentation
 email: mailto:DL-Magento-Doc-Feedback@magento.com
 description: > # this means to ignore newlines until "baseurl:"
-  Magento 2 Developer Guide.
+  Magento 2 Developer Documentation.
 baseurl: "/"
 # url: "https://github.com/magento/devdocs" # the base hostname & protocol for your site
 # twitter_username: magento

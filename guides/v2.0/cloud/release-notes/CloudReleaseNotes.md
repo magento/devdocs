@@ -1,13 +1,13 @@
 ---
 layout: default
 group: cloud
-subgroup: 02_ReleaseNotes
+subgroup: 03_ReleaseNotes
 title: Magento Enterprise Cloud Edition Release Notes
 menu_title: Magento Enterprise Cloud Edition Release Notes
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: cloud/CloudReleaseNotes.md
+github_link: cloud/release-notes/CloudReleaseNotes.md
 ---
 
 ## Magento Enterprise Cloud Edition Release Notes

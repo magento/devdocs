@@ -33,8 +33,7 @@ This topic discusses how to set required PHP options.
 
 	Our detailed recommendations are:
 
-	*	Compiling code, `768M`
-    *	Deploying static assets, `768M`
+	*	Compiling code or deploying static assets, `768M`
     *	Installing and updating Magento components from Magento Marketplace, `2G`
     *	Testing, `2G`
 *	Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}
@@ -105,7 +104,7 @@ If you have more than one `opcache.ini`, modify all of them.
 4.	Locate the following setting and uncomment it if necessary:
 
 		date.timezone =
-5.	Add the time zone setting you found in step 3.
+5.	Add the time zone setting you found in step 2.
 6.	Change the value of `memory_limit` to one of the values at the beginning of this section.
 
 	For example,

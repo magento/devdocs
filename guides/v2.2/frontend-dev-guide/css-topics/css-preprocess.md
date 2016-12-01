@@ -147,8 +147,12 @@ The client-side compilation flow is similar to server-side. The difference is in
 <ul>
 <li>root source (.less) files with resolved <code>@magento_import</code> directive </li>
 <li> <a href="http://en.wikipedia.org/wiki/Symbolic_link" target="_blank">symlinks</a> to the root source file that do not contain <code>@magento_import</code></li>
-<li>symlinks to the <code>.less</code> files included to the root source files using the imported by <code>@magento_import</code> and <code>@import</code> directives</li>
+<li>symlinks to all other <code>.less</code> files imported recursively by the <code>@magento_import</code> and <code>@import</code> directives</li>
 </ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>Symlink is not created, and a copy of the processed file is published to <code>pub/static</code> instead, if the source file differs from the processed one. One of the reasons of this difference might be the usage of the <code>@import</code> directive without file extension in the source file. See <a href="#fedg_css-import>The @import directive usage</a> for more details.</p>
+</div>
 
 #### Styles debugging in client-side compilation mode {#css_debug_client}
 
@@ -168,6 +172,34 @@ This is required in the following cases:
 </ul>
 
 To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
+
+## The `@import` directive rules of usage {#fedg_css-import}
+You can import local and remote `.less` and `.css` files in your `.less` Magento stylesheets by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
+According to the `@import` syntax, specifying the file extension for the imported file is not mandatory. For example, the following notation is allowed:
+
+{%highlight css%}
+@import 'source/lib/_lib';
+@import (css) 'styles';
+{%endhighlight%}
+
+But in process of resolving the file path, Magento adds the `.less` extension for the imported files in all `@import` entrees. So in the processed files, the statements from the previous example will look like following:
+
+{%highlight css%}
+@import 'source/lib/_lib.less';
+@import (css) 'styles.less';
+{%endhighlight%}
+
+As a result, the processed files are different from the source files. So in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md), Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the `pub/static` directory. In case of importing CSS resources, this also results in not finding and not importing the required files. 
+
+### Importing remote CSS files
+
+If you need to import a remote CSS file in your `.less` source, use `url()` notation. For example, to import a Google font, use the following notation:
+
+{%highlight css%}
+@import url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css');
+{%endhighlight%}
+
+This way Magento will skip the `@import` directive while resolving paths to the local resources.
 
 <h2 id="fedg_css-magento-import">The @magento_import directive</h2>
 
@@ -245,8 +277,4 @@ Example of how <code>@magento_import</code> is used and processed in <code>&lt;M
       </tr>
    </tbody>
 </table>
-
-### Developer experience when working with LESS {#debugging_less_files}
-
-server-side
 

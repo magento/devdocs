@@ -16,7 +16,10 @@ This topic shows how to get started working on a project.
 ## Command summary {#cloud-proj-start-summ}
 The following commands can be run from any directory. However, it's simpler to run them from a project directory. If so, you can omit the `-p <project ID>` parameter.
 
-All commands are shown with required options only. Get help for any command by appending `--help`.
+All commands are shown with required options only. Get help for any `magento-cloud` command by appending `--help`.
+
+`git commit --allow-empty -m "redeploy" && git push <branch name>`
+:  Push an empty commit to force a redeployment. Some actions, like adding a user for example, don't result in deployment.
 
 `magento-cloud login`
 :	Log in to the project
@@ -33,21 +36,6 @@ All commands are shown with required options only. Get help for any command by a
 `magento-cloud project:info -p <project ID>`
 :	List information about the project, including ID, name, region, URL, and Git URL.
 
-## Delete a project {#project-delete}
-Before you delete a project, make sure you don't need it anymore. You cannot recover a deleted project later.
-
-You must be a [project administrator]({{page.baseurl}}cloud/admin/admin-user-admin.html#cloud-role-project) or [account owner]({{page.baseurl}}cloud/admin/admin-user-admin.html#cloud-role-acct-owner) to perform this task.
-
-To delete a project using the command line:
-
-1.	List the projects:
-
-		magento-cloud project:list
-2.	Delete the project using its project ID:
-
-		magento-cloud project:delete -p <project ID>
-3.	You are required to confirm the deletion.
-	
 #### Related topics
 *	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
 *	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
