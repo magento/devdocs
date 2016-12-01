@@ -15,7 +15,7 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 
 {% include install/releasenotes/20_release-notes-links.md %}
 
-## Magento CE and EE Release Candidate Release Notes
+## Magento CE and EE Release Candidate Notes
 
 {% include install/releasenotes/20rc_release-notes-links.md %}
 

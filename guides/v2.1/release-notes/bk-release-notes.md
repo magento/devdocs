@@ -14,9 +14,6 @@ github_link: release-notes/bk-release-notes.md
 
 {% include install/releasenotes/20_release-notes-links.md %}
 
-## Backward-incompatible changes
-Overview of backward-incompatible changes between the 2.0 and 2.1 releases: [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html)
-
 ## What's new on devdocs
 [What's new]({{ site.baseurl }}magento-devdocs-whatsnew.html)
 
