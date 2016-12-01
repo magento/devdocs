@@ -12,9 +12,9 @@ github_link: payments-integrations/payment-gateway/payment-gateway-intro.md
 ---
 
 ### What is Magento payment provider gateway
-Magento payment provider gateway is a mechanism for your Magento store integration with payment service providers (payment providers), so that you can create and handle transactions based on order details.
+Magento payment provider gateway is a mechanism for your Magento store integration with payment service providers, so that you can create and handle transactions based on order details.
 
-The following diagram shows a simplified interaction flow between Magento Sales Management,  payment service provider, and payment provider gateway: 
+The following diagram shows a simplified interaction flow between Magento sales management,  payment service provider, and payment provider gateway: 
 
 ![Payment Gateway Interaction]({{site.baseurl}}common/images/payments-integrations/pg_interaction_flow.png)
 
@@ -65,16 +65,14 @@ Magento interfaces that provide the ability to create orders, invoices, and ship
 Data used for a transaction. Might include the following:
 
 <ul>
-<li> Order items </li>
-<li> Shipping, Billing addresses </li>
-<li> Customer details </li>
-<li> Taxes </li>
-<li> Merchants gateway API credentials </li>
-<li> Payment details </li>
+<li> order items </li>
+<li> shipping, billing addresses </li>
+<li> customer details </li>
+<li> taxes </li>
+<li> merchant's payment provider API credentials </li>
+<li> payment details </li>
 </ul>
 </td>
 </tr>
 </table>
-
-<p class="q">what is merchant gateway?</p>
 

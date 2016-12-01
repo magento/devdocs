@@ -12,10 +12,10 @@ github_link: payments-integrations/payment-gateway/command-pool.md
 
 ## Gateway command pool
 
-All gateway commands implemented for a particular payment provider, should be added to the command pool for this provider. The pool is added to the configuration of the payment provider.
+All [gateway commands]({{page.baseurl}}payments-integrations/payment-gateway/gateway-command.html) implemented for a particular payment provider, should be added to a command pool for this provider. The pool is added to the configuration of the payment provider using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html).
 
-## Basic interface
-The basic abstraction for a command pool is [`\Magento\Payment\Gateway\Command\CommandPoolInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Command/CommandPoolInterface.php). It implements the [Pool pattern](http://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html)
+## Interface
+The basic interface for a command pool is [`\Magento\Payment\Gateway\Command\CommandPoolInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Command/CommandPoolInterface.php). It implements the [Pool pattern](http://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html)
 
 ## Default implementation
 The [default CommandPool]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Command/CommandPool.php)

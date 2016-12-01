@@ -16,10 +16,10 @@ github_link: payments-integrations/payment-gateway/gateway-client.md
 
 The basic interface for a gateway client is [`Magento\Payment\Gateway\Http\ClientInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/ClientInterface.php).
 
-A gateway client receives a called [`Transfer`]({{site.mage2000url}}/app/code/Magento/Payment/Gateway/Http/Transfer.php) object and may be configured with response converter, which converts response to the array structure, using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html).
+A gateway client receives a called [`Transfer`]({{site.mage2000url}}/app/code/Magento/Payment/Gateway/Http/Transfer.php) object and may be configured with response converter using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html).
 
 ## Default implementations
-There following gateway client implementations can be used out-of-the-box:
+The following gateway client implementations can be used out-of-the-box:
 
 * [\Magento\Payment\Gateway\Http\Client\Zend]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/Client/Zend.php)
 * [\Magento\Payment\Gateway\Http\Client\Soap]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/Client/Soap.php)

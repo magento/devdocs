@@ -9,9 +9,6 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/payment-gateway-structure.md
 ---
 
-Magento payment provider gateway is a set of components, that allow performing different payment actions (like authorize, sale, capture, void),
-building requests for transactions, validating (like transaction status, response codes, and so on), and handling response details.
-
 The following diagram shows the basic components of the Magento payment provider gateway:
 
 ![Payment Gateway Structure]({{site.baseurl}}common/images/payments-integrations/pg_structure.png)
