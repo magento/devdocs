@@ -30,4 +30,4 @@
 *	[Version 2.0.1](http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.1.html){:target="_blank"}
 *	[Version 2.0.0](http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.html){:target="_blank"}
 
-{% endcollapsibleh2 %}
+{% endcollapsibleh3 %}
