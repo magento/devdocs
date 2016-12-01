@@ -49,7 +49,8 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 
 
-* <b>Additional services for the Sales module</b>  support changing order status and returning products to stock.  These web APIs (or <i>service contracts</i>) for the Sales module  incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `RefundInvoice` method to  
+* <b>Ten new web APIs/b> (or service contracts) for the Sales module that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use these new Sales API  methods to carry out these tasks:
+
 
 	* create a credit memo (complete or partial) for particular invoice
 
@@ -59,13 +60,40 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 	* notify customer about performed refund operation
 
+
+These new service contracts include the following: 
+
+
+`InvoiceOrderInterface`
+
+`PaymentAdapterInterface`
+
+`CreditmemoItemCreationInterface`
+
+`CreditmemoCommentCreationInterface`
+
+`CreditmemoCreationArgumentsInterface`
+
+`CreditmemoDocumentFactory`
+
+`RefundInvoiceInterface`
+
+`RefundAdapterInterface`
+
+`RefundOrderInterface`
+
+`ShipOrderInterface`
+
+
+
 See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for more information on using these new interfaces.
+
 
 
 ### Why are we adding new APIs in a patch release?
 {:.no_toc} 
 
-These new interfaces will not break any existing customizations or extensions. See Alan Kent’s blog about Magento’s use of semantic versioning.
+These new interfaces will not break any existing customizations or extensions. These new interfaces will not break any existing customizations or extensions. See <a href="https://alankent.me/category/magento/" target="_blank">Alan Kent’s blog about Magento</a> for more information about these features and Magento’s use of semantic versioning.
 
 
 
@@ -230,7 +258,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---59578 -->* We've enhanced our PayPal and Braintree implementations so that merchants can now: 
 
 
-	* Save customer PayPal account information in the Braintree vault when using Braintree as a service. This enhancement provides a secure method for charging my customers without prompting them to enter a payment information for multiple purchases or for purchases from multiple devices. We've also added support for Maestro and Discover bins added to the credit card form both for Braintree and PayPal solutions. 
+	* Save customer PayPal account information in the Braintree Vault when using Braintree as a service. This enhancement provides a secure method for charging my customers without prompting them to enter a payment information for multiple purchases or for purchases from multiple devices. We've also added support for Maestro and Discover bins added to the credit card form both for Braintree and PayPal solutions. 
 
 
 	* Configure dynamic descriptors (Company Name, Phone and URL) for Braintree.  This enhancement supports customers easily identifying a source of transactions in their bank statements. (This will potential simplify the resolution of disputed transactions by supporting the display of the Kount status for Braintree in the Admin interface.) 
@@ -265,7 +293,7 @@ We've enhanced the performance of configurable products in several ways:
 ### Varnish
 {:.no_toc} 
 <!---60781-->* When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. 
- OPEN
+ 
 
 <!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. <a href="https://github.com/magento/magento2/issues/6401" target="_blank">(GITHUB-6401)</a>
 
@@ -332,8 +360,6 @@ S
 
 <!---57353-->* You can now add a gift card with an undefined amount to the Items Ordered table. Previously,  Magento did not permit you to add a gift card of an open value to this table.
 
-
-<!---60680-->* You can now successfully change and save your settings for gift cards. (Setting include "allow open amount" or "open amount minimum".) Previously, Magento did not save your changes to the card configuration settings. OPEN
 
 
 
@@ -509,7 +535,6 @@ S
 
 <!---55351, 56936 -->*  The list of allowed countries is now configured as part of website scope, not storeview scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
 
-<!---60553-->* Customizable options for products do not work on the store view level. When you are editing a product, changes to one store's customizable options affects products on all stores, not just the store you specified. OPEN
 
 <!---57001-->* A restricted user can now change storeview- or website- level attributes that are defined within his scope. 
 
@@ -566,62 +591,53 @@ S
 
 ## Known issues
 
-<!---60781-->* **Issue**: Installing with Varnish results in products not appearing on the frontend even after flushing the cache.
 
-**Workaround**: None
-
+<!---60680-->* You cannot successfully change and save your settings for gift cards. (<i>Settings</i>i> include "allow open amount" or "open amount minimum".) **Workaround**: None
 
 
+<!---60781-->* **Issue**: Installing with Varnish results in products not appearing on the frontend even after flushing the cache. **Workaround**: None
 
 
-<!---60680-->* **Issue**: You cannot successfully edit and save a gift card product. 
-
-**Workaround**: None
+<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. **Workaround**: None
 
 
 
+<!---60781-->* When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. 
 
 
-<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. 
 
 
-**Workaround**: None
+<!---60680-->* **Issue**: You cannot successfully edit and save a gift card product. **Workaround**: None
 
 
 
 
 
-<!---60801-->* **Issue**: Magento does not correctly apply the Catalog Price Scope attribute when it is set to Global. As a result, website scope values prevail over global values.
-
-**Workaround**: None
+<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. **Workaround**: None
 
 
 
 
 
-
-<!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes.  
-
-**Workaround**: None
+<!---60801-->* **Issue**: Magento does not correctly apply the Catalog Price Scope attribute when it is set to Global. As a result, website scope values prevail over global values. **Workaround**: None
 
 
 
 
-<!---61341-->* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  
-
-**Workaround**: Upgrade your version of TLS to at least 1.2. 
 
 
-<!---58433-->* **Issue**: Saving a category in a catalog that contains 20,000 or more products is very slow. 
-
-**Workaround**: None 
+<!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes.  **Workaround**: None
 
 
-<!---59555 --> * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. 
 
 
-**Workaround**: 
-You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB. 
+<!---61341-->* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  **Workaround**: Upgrade your version of TLS to at least 1.2. 
+
+
+<!---58433-->* **Issue**: Saving a category in a catalog that contains 20,000 or more products is very slow. **Workaround**: None 
+
+
+<!---59555 --> * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB. 
 
 
 
