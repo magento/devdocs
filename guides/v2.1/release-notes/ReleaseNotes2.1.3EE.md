@@ -614,7 +614,7 @@ S
 
 ## Known issues
 
-<!---60680-->* You cannot successfully change and save your settings for gift cards. (<i>Settings</i>i> include "allow open amount" or "open amount minimum".) 
+<!---60680-->* **Issue**: You cannot successfully change and save your settings for gift cards. (<i>Settings</i> include "allow open amount" or "open amount minimum".) 
 
 <!---60781-->* **Issue**: Installing with Varnish results in products not appearing on the frontend even after flushing the cache. 
 

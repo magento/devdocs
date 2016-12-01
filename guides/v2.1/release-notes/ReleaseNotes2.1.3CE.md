@@ -590,7 +590,7 @@ S
 ## Known issues
 
 
-<!---60680-->* You cannot successfully change and save your settings for gift cards. (<i>Settings</i>i> include "allow open amount" or "open amount minimum".) 
+<!---60680-->* **Issue**: You cannot successfully change and save your settings for gift cards. (<i>Settings</i> include "allow open amount" or "open amount minimum".) 
 
 
 <!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. 
@@ -615,7 +615,6 @@ S
 
 
 <!---60801-->* **Issue**: Magento does not correctly apply the Catalog Price Scope attribute when it is set to Global. As a result, website scope values prevail over global values. 
-
 
 
 
