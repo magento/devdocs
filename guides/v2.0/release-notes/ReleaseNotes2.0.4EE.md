@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento EE 2.0.4 Release Notes 
 menu_title: Magento EE 2.0.4 Release Notes 
-menu_order: 855
+menu_order: 899
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
 version: 2.0
