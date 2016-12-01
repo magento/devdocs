@@ -49,7 +49,7 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 
 
-* <b>Ten new web APIs/b> (or service contracts) for the Sales module that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use these new Sales API  methods to carry out these tasks:
+* <b>Ten new web APIs</b> (or <i>service contracts</i>) for the Sales module that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use these new Sales API  methods to carry out these tasks:
 
 
 	* create a credit memo (complete or partial) for particular invoice
@@ -519,7 +519,7 @@ S
 
 ### Static file processing
 {:.no_toc} 
-<!---60603-->* We've corrected a problem with `_requirejs` asset retrieval via static.php in static content versioning. 
+<!---60603-->* We've corrected a problem with `_requirejs` asset retrieval via `static.php` in static content versioning. 
 
 <!---56914-->* Versioning of static files (including CSS, JS, font, and image files) is now enabled by default. 
 
