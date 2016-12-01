@@ -135,9 +135,7 @@ For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce
 {% collapsible To add the store code to the website's base URL: %}
 
 1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
-2.	From the **Store View** list at the top of the page, click the name of one of your websites as the following figure shows.
-
-	![Select a scope]({{ site.baseurl }}common/images/config_multi-site-scope.png){:width="250px"}
+2.	From the **Store View** list at the top of the page, click on **Default Config**.
 3.	In the right pane, expand **Url Options**.
 4.	Clear the **Use system value** check box next to **Add Store Code to Urls**.
 5.	From the **Add Store Code to Urls** list, click **Yes** as the following figure shows.
