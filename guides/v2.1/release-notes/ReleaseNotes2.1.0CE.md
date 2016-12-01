@@ -1,10 +1,12 @@
 ---
-layout: full-width
-group: 
+layout: default
+group: release-notes
 subgroup: 02_ReleaseNotes
 title: Magento CE 2.1.0 Release Notes
 menu_title: Magento CE 2.1.0  Release Notes
-menu_order: 2
+menu_order: 998
+level3_menu_node: level3child
+level3_subgroup: ce21-relnotes
 version: 2.1
 github_link: release-notes/ReleaseNotes2.1.0CE.md
 ---
