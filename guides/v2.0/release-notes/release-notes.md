@@ -10,10 +10,10 @@ version: 2.0
 github_link: release-notes/release-notes.md
 ---
 
-## Magento CE Release Candidate Notes
+## Magento Community Edition (CE) and Enterprise Edition (EE) Release Notes
 
 {% include install/releasenotes/20_release-notes-links.md %}
 
-## Magento EE Release Candidate Notes
+## Magento CE and EE Release Candidate Release Notes
 
 {% include install/releasenotes/20rc_release-notes-links.md %}
