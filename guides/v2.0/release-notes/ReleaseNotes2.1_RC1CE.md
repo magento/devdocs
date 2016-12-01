@@ -4,8 +4,10 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento CE 2.1 Release Candidate 1 (RC1) Release Notes 
 menu_title: Magento CE 2.1 Release Candidate 1 (RC1) Release Notes 
-menu_order: 800
+menu_order: 1000
 version: 2.0
+level3_menu_node: level3child
+level3_subgroup: rc20-relnotes
 github_link: release-notes/ReleaseNotes2.1_RC1CE.md
 ---
 
