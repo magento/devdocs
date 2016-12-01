@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: 02_ReleaseNotes
+subgroup: 02_rel-notes
 title: Magento EE 2.1.2 Release Notes
 menu_title: Magento EE 2.1.2 Release Notes
 menu_order: 696
