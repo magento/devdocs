@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_ReleaseNotes
 title: Magento CE 2.1.2 Release Notes
 menu_title: Magento CE 2.1.2 Release Notes
-menu_order: 996
+menu_order: 596
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes
 version: 2.1

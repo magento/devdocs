@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_ReleaseNotes
 title: Magento EE 2.1.2 Release Notes
 menu_title: Magento EE 2.1.2 Release Notes
-menu_order: 896
+menu_order: 696
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
 version: 2.1
