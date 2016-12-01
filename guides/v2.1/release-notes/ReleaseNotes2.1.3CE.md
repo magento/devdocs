@@ -291,9 +291,7 @@ We've enhanced the performance of configurable products in several ways:
 
 
 ### Varnish
-{:.no_toc} 
-<!---60781-->* When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. 
- 
+{:.no_toc}  
 
 <!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. <a href="https://github.com/magento/magento2/issues/6401" target="_blank">(GITHUB-6401)</a>
 
@@ -592,13 +590,10 @@ S
 ## Known issues
 
 
-<!---60680-->* You cannot successfully change and save your settings for gift cards. (<i>Settings</i>i> include "allow open amount" or "open amount minimum".) **Workaround**: None
+<!---60680-->* You cannot successfully change and save your settings for gift cards. (<i>Settings</i>i> include "allow open amount" or "open amount minimum".) 
 
 
-<!---60781-->* **Issue**: Installing with Varnish results in products not appearing on the frontend even after flushing the cache. **Workaround**: None
-
-
-<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. **Workaround**: None
+<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. 
 
 
 
@@ -607,26 +602,26 @@ S
 
 
 
-<!---60680-->* **Issue**: You cannot successfully edit and save a gift card product. **Workaround**: None
+<!---60680-->* **Issue**: You cannot successfully edit and save a gift card product.
 
 
 
 
 
-<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. **Workaround**: None
+<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. 
 
 
 
 
 
-<!---60801-->* **Issue**: Magento does not correctly apply the Catalog Price Scope attribute when it is set to Global. As a result, website scope values prevail over global values. **Workaround**: None
+<!---60801-->* **Issue**: Magento does not correctly apply the Catalog Price Scope attribute when it is set to Global. As a result, website scope values prevail over global values. 
 
 
 
 
 
 
-<!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes.  **Workaround**: None
+<!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes.  
 
 
 
@@ -634,7 +629,7 @@ S
 <!---61341-->* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  **Workaround**: Upgrade your version of TLS to at least 1.2. 
 
 
-<!---58433-->* **Issue**: Saving a category in a catalog that contains 20,000 or more products is very slow. **Workaround**: None 
+<!---58433-->* **Issue**: Saving a category in a catalog that contains 20,000 or more products is very slow. 
 
 
 <!---59555 --> * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB. 
