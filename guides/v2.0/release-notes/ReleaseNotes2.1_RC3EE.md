@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento EE 2.1 Release Candidate 3 (RC3) Release Notes 
 menu_title: Magento EE 2.1 Release Candidate 3 (RC3) Release Notes 
-menu_order: 981
+menu_order: 5
 version: 2.0
 level3_menu_node: level3child
 level3_subgroup: rc20-relnotes
