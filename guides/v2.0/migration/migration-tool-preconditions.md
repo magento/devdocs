@@ -11,8 +11,6 @@ github_link: migration/migration-tool-preconditions.md
 redirect_from: /guides/v1.0/migration/migration-tool-preconditions.html
 ---
 
-## Preconditions
-
 Before starting migration, you must do the following:
 
 *	Set up your Magento 2 system so that it meets the <a href="{{page.baseurl}}/install-gde/system-requirements.html">system requirements</a>
