@@ -506,9 +506,73 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="list">List of REST APIs for Magento Community Edition</h2>
+            <h2 id="listee">List of REST APIs for Magento Enterprise Edition</h2>
 
-<p>An asterisk (*) indicates the API was added since the initial release of Magento 2.0.</p>
+<p>The REST APIs for Magento Enterprise Edition (EE) are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.</p>
+
+<p>Additions since 2.0 are marked with asterisks (*).</p>
+
+<h3 id="customerbalance">CustomerBalance</h3>
+
+<pre><code>POST   /V1/carts/mine/balance/apply
+</code></pre>
+
+<h3 id="giftcardaccount">GiftCardAccount</h3>
+
+<pre><code>GET    /V1/carts/:quoteId/giftCards
+PUT    /V1/carts/:cartId/giftCards
+DELETE /V1/carts/:quoteId/giftCards/:giftCardCode
+POST   /V1/carts/mine/giftCards
+POST   /V1/carts/guest-carts/:cartId/giftCards
+GET    /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode
+GET    /V1/carts/mine/checkGiftCard/:giftCardCode
+</code></pre>
+
+<h3 id="giftregistry">GiftRegistry</h3>
+
+<pre><code>POST   /V1/giftregistry/mine/estimate-shipping-methods
+POST   /V1/guest-giftregistry/:cartId/estimate-shipping-methods
+</code></pre>
+
+<h3 id="giftwrapping">GiftWrapping</h3>
+
+<pre><code>GET    /V1/gift-wrappings/:id
+POST   /V1/gift-wrappings
+PUT    /V1/gift-wrappings/:wrappingId
+GET    /V1/gift-wrappings
+DELETE /V1/gift-wrappings/:id
+</code></pre>
+
+<h3 id="reward">Reward</h3>
+
+<pre><code>POST   /V1/reward/mine/use-reward
+</code></pre>
+
+<h3 id="rma">Rma</h3>
+
+<pre><code>POST   /V1/returns/:id/tracking-numbers
+DELETE /V1/returns/:id/tracking-numbers/:trackId
+GET    /V1/returns/:id
+DELETE /V1/returns/:id
+POST   /V1/returns/:id/comments
+POST   /V1/returns
+PUT    /V1/returns/:id
+GET    /V1/returns/:id/comments
+GET    /V1/returns
+GET    /V1/returnsAttributeMetadata/:attributeCode
+GET    /V1/returnsAttributeMetadata/form/:formCode
+GET    /V1/returnsAttributeMetadata
+GET    /V1/returnsAttributeMetadata/custom
+GET    /V1/returns/:id/tracking-numbers
+GET    /V1/returns/:id/labels
+</code></pre>
+
+<h2 id="list">List of REST APIs for Magento Community Edition</h2>
+
+<pre><code>The Magento Community Edition (CE) REST APIs are available on all EE and CE installations.
+
+Additions since 2.0 are marked with asterisks (*).
+</code></pre>
 
 <h3 id="backend">Backend</h3>
 
@@ -906,63 +970,6 @@ GET    /V1/taxClasses/:taxClassId
 PUT    /V1/taxClasses/:classId
 DELETE /V1/taxClasses/:taxClassId
 GET    /V1/taxClasses/search
-</code></pre>
-
-<h2 id="listee">List of REST APIs for Magento Enterprise Edition</h2>
-
-<h3 id="customerbalance">CustomerBalance</h3>
-
-<pre><code>POST   /V1/carts/mine/balance/apply
-</code></pre>
-
-<h3 id="giftcardaccount">GiftCardAccount</h3>
-
-<pre><code>GET    /V1/carts/:quoteId/giftCards
-PUT    /V1/carts/:cartId/giftCards
-DELETE /V1/carts/:quoteId/giftCards/:giftCardCode
-POST   /V1/carts/mine/giftCards
-POST   /V1/carts/guest-carts/:cartId/giftCards
-GET    /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode
-GET    /V1/carts/mine/checkGiftCard/:giftCardCode
-</code></pre>
-
-<h3 id="giftregistry">GiftRegistry</h3>
-
-<pre><code>POST   /V1/giftregistry/mine/estimate-shipping-methods
-POST   /V1/guest-giftregistry/:cartId/estimate-shipping-methods
-</code></pre>
-
-<h3 id="giftwrapping">GiftWrapping</h3>
-
-<pre><code>GET    /V1/gift-wrappings/:id
-POST   /V1/gift-wrappings
-PUT    /V1/gift-wrappings/:wrappingId
-GET    /V1/gift-wrappings
-DELETE /V1/gift-wrappings/:id
-</code></pre>
-
-<h3 id="reward">Reward</h3>
-
-<pre><code>POST   /V1/reward/mine/use-reward
-</code></pre>
-
-<h3 id="rma">Rma</h3>
-
-<pre><code>POST   /V1/returns/:id/tracking-numbers
-DELETE /V1/returns/:id/tracking-numbers/:trackId
-GET    /V1/returns/:id
-DELETE /V1/returns/:id
-POST   /V1/returns/:id/comments
-POST   /V1/returns
-PUT    /V1/returns/:id
-GET    /V1/returns/:id/comments
-GET    /V1/returns
-GET    /V1/returnsAttributeMetadata/:attributeCode
-GET    /V1/returnsAttributeMetadata/form/:formCode
-GET    /V1/returnsAttributeMetadata
-GET    /V1/returnsAttributeMetadata/custom
-GET    /V1/returns/:id/tracking-numbers
-GET    /V1/returns/:id/labels
 </code></pre>
 
 		</div>
