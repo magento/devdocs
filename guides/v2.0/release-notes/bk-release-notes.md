@@ -13,14 +13,6 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 
 {% include install/releasenotes/20_release-notes-links.md %}
 
-## What's new on devdocs
-[What's new]({{ site.baseurl }}magento-devdocs-whatsnew.html)
-
-## Magento CE and EE Release Candidates
 
 {% include install/releasenotes/20rc_release-notes-links.md %}
 
-## Third-party license agreements
-
-*	[Magento CE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
-*	[Magento EE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)

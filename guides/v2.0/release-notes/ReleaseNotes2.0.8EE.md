@@ -4,7 +4,9 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento EE 2.0.8 Release Notes
 menu_title: Magento EE 2.0.8 Release Notes
-menu_order: 695
+menu_order: 895
+level3_menu_node: level3child
+level3_subgroup: ee20-relnotes
 version: 2.0
 github_link: release-notes/ReleaseNotes2.0.8EE.md
 ---
