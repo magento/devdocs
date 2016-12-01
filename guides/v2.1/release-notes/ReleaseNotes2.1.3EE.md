@@ -26,7 +26,7 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 
 
-* <i>Multiple enhancements to the payment feature</i>. These changes support your efforts to:
+* <b>Multiple enhancements to the payment feature</b>. These changes support your efforts to:
 
 	* Ease repeat purchases by enabling customers to save their PayPal account information as a payment option.  This improvement means that they don’t need to enter their PayPal ID and password when making future purchases. 
 
@@ -38,19 +38,19 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 
 
-* <i>Increased storefront performance</i> by removing excessive and slow SQL media queries.
+* <b>Increased storefront performance</b> by removing excessive and slow SQL media queries.
 
-* <i>Management of configurable products with many variations</i> in the Admin interface without degrading performance. 
+* <b>Management of configurable products with many variations</b> in the Admin interface without degrading performance. 
 
-* <i>Upgrade</i> to Magento 2.1.x from Magento 2.0.x without issue when using multiple master databases for checkout, order management, and product data.
+* <b>Upgrade</b> to Magento 2.1.x from Magento 2.0.x without issue when using multiple master databases for checkout, order management, and product data.
 
-* <i>Successful import or export CSV files with data that contains special symbols</i> (that is, symbols that are not escaped during file processing).
+* <b>Successful import or export CSV files with data that contains special symbols</b> (that is, symbols that are not escaped during file processing).
 
-* <i>Enhanced performance in the processing of large catalogs</i>. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
+* <b>Enhanced performance in the processing of large catalogs</b>. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
 
 
 
-* <i>Additional services for the Sales module</i>  support changing order status and returning products to stock.  These web APIs (or <i>service contracts</i>) for the Sales module  incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `RefundInvoice` method to  
+* <b>Additional services for the Sales module</b>  support changing order status and returning products to stock.  These web APIs (or <i>service contracts</i>) for the Sales module  incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API `RefundInvoice` method to  
 
 	* create a credit memo (complete or partial) for particular invoice
 
@@ -64,6 +64,7 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 
 ### Why are we adding new APIs in a patch release?
+{:.no_toc} 
 
 These new interfaces will not break any existing customizations or extensions. See Alan Kent’s blog about Magento’s use of semantic versioning.
 
@@ -199,7 +200,6 @@ We've enhanced the performance of configurable products in several ways:
 <!---60140-->* Magento now correctly displays the status of all child products of a configurable product, even disabled ones. Previously, Magento did not correctly display the status of a configurable product's child product if the child product were disabled. 
 
 
-
 <!---61055-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the category page failed to list the product at all, rather than listing it as out-of-stock. 
 
 
@@ -302,7 +302,7 @@ S
 
 <!---59422-->* The product return feature now works as expected when you create a product using the Creditmemo API. With the new Refund Invoice service, you can:
 
-	* create a credit Memo (complete or partial) for particular invoice
+	* create a credit memo (complete or partial) for particular invoice
 
 	* add details about refunded items to an order
 
@@ -431,7 +431,6 @@ S
 
 <!---55608-->*  Graphics now scroll as expected on mobile devices. <a href="https://github.com/magento/magento2/issues/5302" target="_blank">(GITHUB-5302)</a> 
 
-<!---61039-->*  You can now successfully edit and save an existing product with an associated image. Previously, when you tried to edit an existing product and image, Magento threw this error: `"Notice: Undefined index: label in /var/www/html/magento2ce/vendor/magento/module-catalog/Model/Product/Gallery/CreateHandler.php on line 168"`. 
 
 
 
@@ -564,7 +563,7 @@ S
 
 
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039
 -->
 
 
