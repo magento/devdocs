@@ -10,23 +10,17 @@ github_link: architecture/components/arch_translations.md
 redirect_from: /guides/v1.0/architecture/components/arch_translations.html
 ---
 
-## Language packages and translation
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview {#m2arch-translations-overview}
 
-Any text that is presented to the user can have several captions or labels on the control elements, notifications, and error messages.  By default, Magento renders all these phrases in English (`US`) language (`en_US`). But if you deploy a storefront in a different language (or use the Magento Admin panel in a different language), you can incorporate other dictionaries for translations.
+Any text that is presented to the user can have several captions or labels on the control elements, notifications, and error messages. By default, Magento renders all these phrases in English (`US`) language (`en_US`). But if you deploy a storefront in a different language (or use the Magento Admin panel in a different language), you can incorporate other dictionaries for translations.
 
 You can use the language packages provided with Magento, create your own, or obtain packages from the community. Check out the language packages, modules, and themes available on Magento Marketplace.
 
-Creating a language package is part of the process of <i>localizing</i> your storefront.
+Creating a language package is part of the process of *localizing* your storefront.
 
 ## Magento language packages
 
-A <i>language package</i> is  a collection of translation dictionaries for a particular language together with additional information that tells Magento how to process the information, including:
+A <i>language package</i> is a collection of translation dictionaries for a particular language together with additional information that tells Magento how to process the information, including:
 
 * `.csv` file contains the actual strings that comprise the language dictionary. A translation dictionary is a comma-separated value (`.csv`) file with at least two columns: the original phrase in the `en_US` locale and a translation of that phrase to another locale.
 

@@ -10,12 +10,6 @@ github_link: architecture/arch_perspectives/components/arch_themes.md
 redirect_from: /guides/v1.0/architecture/arch_perspectives/themes_intro.html
 ---
 
-## {{page.title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 A _theme_ is a core Magento component whose primary purpose is to control the appearance of your storefront. Themes use a combination of application elements, such as templates, layouts, styles, and images, and are highly extensible.

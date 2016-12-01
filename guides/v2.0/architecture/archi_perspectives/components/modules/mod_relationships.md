@@ -14,12 +14,6 @@ redirect_from:
   - /guides/v2.0/architecture/modules/mod_relationships.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview {#m2arch-module-relationships-overview}
 
 Understanding how one module relates to another helps determine how it reacts to changes in that module.
