@@ -149,10 +149,9 @@ When creating a custom implementation of the static content deployment tool, do 
 
 One of the options for making it atomic, is writing to files stored in a temporary directory and coping or moving them to the destination directory (from where they are actually loaded to client side) once writing is over. For details about writing to files see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php).
 
-Please note, that the default Magento implementation of the <code>\Magento\Framework\Filesystem\Directory\WriteInterface::writeFile</code> uses non-atomic write to file.</p>
-</div>
+Please note, that the default Magento implementation of `\Magento\Framework\Filesystem\Directory\WriteInterface::writeFile` uses non-atomic write to file.
 
-#### Related topics
+## Related topics
 
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
