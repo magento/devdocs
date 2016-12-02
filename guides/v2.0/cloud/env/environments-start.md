@@ -71,7 +71,10 @@ You can find additional information about accessing staging and production envir
 The following commands can be run from any directory. However, it's simpler to run them from a project directory. If 
 so, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage integration environments.
 
-All commands are shown with required options only. Get help for any command by appending `--help`.
+All commands are shown with required options only. Get help for any `magento-cloud` command by appending `--help`.
+
+`git commit --allow-empty -m "redeploy" && git push <branch name>`
+:  Push an empty commit to force a redeployment. Some actions, like adding a user for example, don't result in deployment.
 
 `magento-cloud login`
 :	Log in to the project

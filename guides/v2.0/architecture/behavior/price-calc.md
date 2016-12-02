@@ -1,19 +1,24 @@
 ---
 layout: default
-group: 
-subgroup: 
+group:
+subgroup:
 title: How Magento calculates prices
 menu_title: How Magento calculates prices
-menu_order: 
+menu_order:
 version: 2.0
 github_link: architecture/behavior/price-calc.md
 redirect_from: /guides/v1.0/architecture/behavior/price-calc.html
 ---
 
-<h2 id="m2devgde-pricecalc-intro">Introduction to the Magento pricing library</h2>
+## Introduction to the Magento pricing library {#m2devgde-pricecalc-intro}
+{:.no_toc}
+
 This article provides in-depth information about Magento price calculation logic implemented in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library.
 
-<h2 id="m2devgde-pricecalc-gen">Price Calculation General Flow</h2>
+* TOC
+{:toc}
+
+## Price calculation: general flow {#m2devgde-pricecalc-gen}
 
 To use the Pricing library for a product (`SaleableItem`), the product model should implement <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>.
 
@@ -24,7 +29,7 @@ The `Price` object provides the Amount calculated by applying or excluding `Adju
 The flow can be illustrated as follows:
 <p><img src="{{ site.baseurl }}common/images/price_usage1.png" alt="The diagram SaleableItem to PriceInfoFactory to PriceInfoInterface, from here to Price and to Adjustment, from Price to Adjustment Calculator, from here to Adjustment and to Amount, from Amount to Value"></p>
 
-<h2 id="m2devgde-pricecalc-api">Price Calculation API</h2>
+## Price Calculation API {#m2devgde-pricecalc-api}
 
 This section discusses the following APIs:
 
@@ -33,9 +38,8 @@ This section discusses the following APIs:
 *	<a href="#m2devgde-pricecalc-amint">AmountInterface</a>
 *	<a href="#m2devgde-pricecalc-absprice">AbstractPrice</a>
 *	<a href="#m2devgde-pricecalc-abs-priceinfo">PriceInfo</a>
-*	<a href="#m2devgde-pricecalc-absprice">AbstractPrice</a>
 
-<h3 id="m2devgde-pricecalc-api_adj">AdjustmentInterface</h3>
+### AdjustmentInterface {#m2devgde-pricecalc-api_adj}
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a> contains the business logic responsible for applying adjustment to the `SaleableItem` final price.
 
@@ -139,9 +143,10 @@ This section discusses the following APIs:
   </tbody>
 </table>
 
-<h3 id="m2devgde-pricecalc-calcint">CalculatorInterface</h3>
+### CalculatorInterface {#m2devgde-pricecalc-calcint}
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Adjustment/CalculatorInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\CalculatorInterface</a> prepares `Amount` (applies and extracts adjustments) according to the saleable item (product) configuration.
+
 <table>
   <tbody>
     <tr>
@@ -175,8 +180,7 @@ This section discusses the following APIs:
   </tbody>
 </table>
 
-<h4 id="m2devgde-pricecalc-calcint-dep">Price Calculator Dependencies</h4>
-
+#### Price Calculator Dependencies {#m2devgde-pricecalc-calcint-dep}
 
 <table>
   <tbody>
@@ -192,9 +196,10 @@ This section discusses the following APIs:
   </tbody>
 </table>
 
-<h3 id="m2devgde-pricecalc-amint">AmountInterface</h3>
+### AmountInterface {#m2devgde-pricecalc-amint}
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Amount/AmountInterface.php" target="_blank">Magento\Framework\Pricing\Amount\AmountInterface</a> is a container of a composite price value information. Price is represented as base amount value and an array of adjustment codes.
+
 <table>
   <tbody>
     <tr>
@@ -311,9 +316,10 @@ This section discusses the following APIs:
   </tbody>
 </table>
 
-<h3 id="m2devgde-pricecalc-absprice">AbstractPrice</h3>
+### AbstractPrice {#m2devgde-pricecalc-absprice}
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank">Magento\Framework\Pricing\Price\AbstractPrice</a> is responsible for providing information about specific price type.
+
 <table>
   <tbody>
     <tr>
@@ -380,7 +386,8 @@ This section discusses the following APIs:
   </tbody>
 </table>
 
-<h4 id="m2devgde-pricecalc-abs-dep">AbstractPrice Dependencies</h4>
+#### AbstractPrice Dependencies {#m2devgde-pricecalc-abs-dep}
+
 <table>
   <tbody>
     <tr>
@@ -402,10 +409,12 @@ This section discusses the following APIs:
   </tbody>
 </table>
 
-<h4 id="m2devgde-pricecalc-abs-type">Price Types</h4>
+#### Price types implementation {#m2devgde-pricecalc-abs-type}
+
 Every class implementing a price type should extend <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank"><code>Magento\Framework\Pricing\Price\AbstractPrice</code></a>.
 
-<h3 id="m2devgde-pricecalc-abs-priceinfo">PriceInfo</h3>
+### PriceInfo {#m2devgde-pricecalc-abs-priceinfo}
+
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/PriceInfoInterface.php" target="_blank">Magento\Framework\Pricing\PriceInfoInterface</a> holds prices and adjustments collections and provides access to them.
 
 <table>
@@ -463,7 +472,8 @@ Every class implementing a price type should extend <a href="{{ site.mage2000url
   </tbody>
 </table>
 
-<h4 id="m2devgde-pricecalc-prinfdep">Price Info Dependencies</h4>
+#### PriceInfo Dependencies {#m2devgde-pricecalc-prinfdep}
+
 <table>
   <tbody>
     <tr>
@@ -484,4 +494,3 @@ Every class implementing a price type should extend <a href="{{ site.mage2000url
     </tr>
   </tbody>
 </table>
-
