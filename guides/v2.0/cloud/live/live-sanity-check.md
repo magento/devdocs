@@ -5,7 +5,7 @@ subgroup: 40_live
 title: Sanity checks before pushing to staging or production
 menu_title: Sanity checks before pushing to staging or production
 menu_order: 2
-menu_node: parent
+menu_node: 
 version: 2.0
 github_link: cloud/live/live-sanity-check.md
 ---
@@ -39,6 +39,14 @@ Before you continue, make sure you push all current code to the remote Cloud ser
 {% endcollapsible %}
 
 ## Build phase
+During the [build phase]({{ page.baseurl }}cloud/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
+
+*	Apply patches distributed to all Magento Enterprise Cloud Edition customers
+*	Apply patches we provided specifically to you
+*	Enable all modules
+*	Compile code and the dependency injection configuration
+
+This section discusses how those tasks locally.
 
 {% collapsible To build your site %}
 
@@ -99,7 +107,12 @@ If errors display, debug them if possible or open a [support ticket]({{ page.bas
 {% endcollapsible %}
 
 ## Deploy phase
-Unlike the build phase, there is no command for deployment; instead, you should execute the same commands we do when we deploy your Magento application to the Cloud server.
+During the [deployment phase]({{ page.baseurl }}cloud/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
+
+*	Installs the Magento application if it isn't already
+*	If the Magento application is installed, upgrades components
+*	Clears the cache
+*	Sets the Magento application for [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production)
 
 {% collapsible To deploy your site: %}
 
