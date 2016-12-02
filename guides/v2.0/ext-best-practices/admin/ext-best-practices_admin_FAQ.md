@@ -8,15 +8,9 @@ menu_order: 1000
 version: 2.0
 github_link: ext-best-practices/admin/ext-best-practices_admin_FAQ.md
 ---
-## {{page.menu_title}}
-{:.no_toc}
 
 This page is a compilation of frequently asked questions by the Magento Community about extensions integrating with the Admin.
 
-### Frequently Asked Questions
-{:.no_toc}
-
-____
 
 #### Where should my extension appear in the Admin?
 

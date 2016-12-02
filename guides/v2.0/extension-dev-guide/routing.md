@@ -10,9 +10,6 @@ github_link: extension-dev-guide/routing.md
 redirect_from: /guides/v1.0/extension-dev-guide/routing.html
 ---
 
-## {{page.menu_title}}
-
-
 In the Magento system, a URL has the following format:
 
 `<area front name>/<VendorName>/<ModuleName>/<controller name>/<action name>`

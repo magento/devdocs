@@ -1,7 +1,7 @@
 ---
 layout: default
 group: UI Components
-subgroup: 
+subgroup:
 title:
 menu_title:
 menu_node:
@@ -10,31 +10,25 @@ version: 2.0
 github_link: contributor-guide/basic_template.md
 ---
 
-<!-- контент -->
+### Overview
 
-
-## Title (ex. How to make coffee)
-{:.no_toc}
-
-### Overview 
-
-One or two sentences, describing what is the procedure and when the user might need it. High-level workflow. 
+One or two sentences, describing what is the procedure and when the user might need it. High-level workflow.
 
 
 ### Prerequisites (if relevant)
-What preparations are required, what a user should be familiar with.  
+What preparations are required, what a user should be familiar with.
 
 
 ## Actual steps
 
 Intro sentence (ex.: To make coffee, take the following steps:)
-1.	First Step 
+1.	First Step
 2.	Second Step
 3.	Third Step
 
 For big steps, add info how to validate that step was successful.
 
-For the whole procedure, add info how to validate that procedure was successful, and what to do if not.  
+For the whole procedure, add info how to validate that procedure was successful, and what to do if not.
 
 <!-- форматирование -->
 

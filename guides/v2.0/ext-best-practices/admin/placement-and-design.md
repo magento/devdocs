@@ -9,9 +9,6 @@ version: 2.0
 github_link: ext-best-practices/admin/placement-and-design.md
 
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
 
 ## Overview
 

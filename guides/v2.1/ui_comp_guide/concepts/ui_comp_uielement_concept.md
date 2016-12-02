@@ -10,13 +10,9 @@ version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uielement_concept.md
 ---
 
-## {{page.menu_title}}  
-{:.no_toc}
-
-
 ## What is the `uiElement` class
 
-The `uiElement` class is a direct successor of the [uiClass library]({{page.baseur}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html). 
+The `uiElement` class is a direct successor of the [uiClass library]({{page.baseur}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html).
 When creating a new component, use the `uiElement` class as a direct parent, if your component will be the last in the components hierarchy chain.
 
 `uiElement` source code is `<UI_Module_dir>/view/base/web/js/lib/core/element/element.js`, in the Magento CE github repository: [app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js).
@@ -26,25 +22,25 @@ When creating a new component, use the `uiElement` class as a direct parent, if 
 
 - The `initLinks()` method implements component communication by using [`links.js`]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js).  `initLinks()` introduces processing of the [`exports`, `imports`, `links` and `listens` properties](http://devdocs.magento.com/guides/v2.0/ui-components/ui_components_js.html#comp_link).
 
-- The `initObservable()` method allows you to declare observable variables within the same instance. 
- 
+- The `initObservable()` method allows you to declare observable variables within the same instance.
+
   Example:
-    
+
       initObservable: function () {
           this._super();
-  
+
           this.track('childTemplate')
           this.observe([
               '%myVariable1%',
               '%myVariable2%'
           ]);
-   
-          return this; 
+
+          return this;
       }
-        
+
   , where:
 
-    - the `observe()` method is a wrapper for the `ko.observable()` and `ko.observableArray()` methods. It converts the properties of the current method into the observable properties.  
+    - the `observe()` method is a wrapper for the `ko.observable()` and `ko.observableArray()` methods. It converts the properties of the current method into the observable properties.
 `observe([{Boolean} isTracked,] {String|Array|Object} listOfProperties)`:
 
         - `isTracked` - `{Boolean}`, optional, - defines access usage: whether to use observable properties (`isTracked = false`) or property accessors (`isTracked = true`).

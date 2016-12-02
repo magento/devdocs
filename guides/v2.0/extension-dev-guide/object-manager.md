@@ -8,10 +8,6 @@ menu_order: 5
 version: 2.0
 github_link: extension-dev-guide/object-manager.md
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
-
 ## Overview
 
 Large applications, such as the Magento application, use an object manager to avoid boilerplate code when composing objects during instantiation.

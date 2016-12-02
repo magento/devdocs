@@ -9,14 +9,9 @@ version: 2.2
 github_link: frontend-dev-guide/css-topics/css_debug.md
 ---
 
-## {{page.menu_title}}
+The topic describes how to install, configure and use [Grunt JavaScript task runner](http://gruntjs.com/) for compiling `.less` files in Magento 2.
 
-## What's in this topic
-{:.no_toc}
-
-The topic describes how to install, configure and use [Grunt JavaScript task runner](http://gruntjs.com/) for compiling `.less` files in Magento 2. 
-
-## Prerequisites 
+## Prerequisites
 
 
 - Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
@@ -33,7 +28,7 @@ module.exports = {
     %theme%: {
         area: 'frontend',
         name: '%Vendor%/%theme%',
-        locale: '%language%', 
+        locale: '%language%',
         files: [
             '%path_to_file1%', //path to root source file
             '%path_to_file2%'
@@ -68,7 +63,7 @@ Action
 <pre>
 grunt clean:&lt;theme&gt;
 </pre>
-For example: 
+For example:
 <pre>
 grunt clean:blank
 </pre>

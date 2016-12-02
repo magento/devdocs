@@ -9,16 +9,12 @@ version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 ---
 
-## {{page.menu_title}}  
-{:.no_toc}
-
-
 ## Overview
-The `uiLayout` service module is used to initialize UI components. 
+The `uiLayout` service module is used to initialize UI components.
 
 The source file of the `uiLayout` module is `<UI_Module_dir>/view/base/web/js/core/renderer/layout.js`.
 
-`uiLayout` source code is `<UI_Module_dir>/view/base/web/js/core/renderer/layout.js`, in the Magento CE github repository: [app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js). 
+`uiLayout` source code is `<UI_Module_dir>/view/base/web/js/core/renderer/layout.js`, in the Magento CE github repository: [app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js).
 
 In a [typical UI component's configuration flow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html), the `uiLayout` module is called by `app.js` (`<Ui_module_dir>/view/base/web/js/core/app.js`) and receives the component's configuration as a parameter.
 
@@ -28,7 +24,7 @@ In the same way, anyone who wants to create a component dynamically (from other 
 
 The `uiLayout` module is a singleton. It returns `function run(nodes, parent, toCache, toMerge)`, where arguments are the following:
 
-* `{array} nodes`: array of configurations of the UI components that we want to initialize 
+* `{array} nodes`: array of configurations of the UI components that we want to initialize
 * `{string} parent`: parent component for that UI components
 * `{boolean} toCache`: defines whether argument `nodes` will be cached. The key for cache will be constructed from `nodes` object keys
 * `{boolean} toMerge`: defines whether the  argument `nodes` should be merged with the same one, that has been cached
@@ -43,7 +39,7 @@ Each item in `nodes` array is an object with the following properties:
 
   Note: The full name of the created UI component is formed by concatenating the `parent.name + '.' + name`, and then set as the `name` property. If an instance with the same full name already exists, `uiLayout` will skip its initialization.
 
-* `{string} parent`: the `name` of the component's parent element (full name). If the parent component is not yet initialized, then `uiLayout` waits for it to appear in the `uiRegistry`. 
+* `{string} parent`: the `name` of the component's parent element (full name). If the parent component is not yet initialized, then `uiLayout` waits for it to appear in the `uiRegistry`.
 * `{string} template`: a path to `.html` template
 * `{string} component`: path to the JavaScript class (function-constructor) of the new component
 * `{object} config`: the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:
@@ -62,8 +58,8 @@ Each item in `nodes` array is an object with the following properties:
 ## Example 1
 
 Let's consider a case when we want to create a UI component instance dynamically as a child of another UI component.
-    
-We can put the configuration of the desired UI component directly into `uiLayout`. 
+
+We can put the configuration of the desired UI component directly into `uiLayout`.
 
 We need to create the following files:
 
@@ -91,7 +87,7 @@ define([
         },
         initialize: function () {
             this._super();
-            layout([this.my_newComponentConfig]); // this call creates a new myNewComponent component, that is stored in uiRegistry, like any other component. myNewComponent is the child of the current uiCollection component. The rendering of the myNewComponent template is performed to the general rules of child components' templates rendering in uiCollection 
+            layout([this.my_newComponentConfig]); // this call creates a new myNewComponent component, that is stored in uiRegistry, like any other component. myNewComponent is the child of the current uiCollection component. The rendering of the myNewComponent template is performed to the general rules of child components' templates rendering in uiCollection
 
             return this;
         }
@@ -107,7 +103,7 @@ The `layout([this.my_newComponentConfig])` call creates a new `myNewComponent` c
 
 ## Example 2
 
-Another option is to create a UI component using other components configuration as configuration template. We can only use a component, that has already been configured with `isTemplate: true` property. 
+Another option is to create a UI component using other components configuration as configuration template. We can only use a component, that has already been configured with `isTemplate: true` property.
 
 In this example we want to add table rows.
 
@@ -129,7 +125,7 @@ Then in our `table.js` we need to add the following:
 define([
     'uiLayout',
     'uiCollection',
-    'mageUtils' 
+    'mageUtils'
 ], function (layout, Collection, utils) {
     'use strict';
 
@@ -153,6 +149,6 @@ define([
 });
 {%endhighlight%}
 
-Now the `addRow()` method could be called from the `.html` template of the current component. 
+Now the `addRow()` method could be called from the `.html` template of the current component.
 
 In this example we use [`mageUtils`]({{site.mage2100url}}lib/web/mage/utils), the Magento internal JS library that provides a bunch of useful helpers without extending any built-in objects. Specifically, we use `utils.template(myRowTemplateConfig)` which creates a new  component based on `myRowTemplateConfig`.

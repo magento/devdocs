@@ -8,9 +8,6 @@ menu_order: 1100
 version: 2.2
 github_link: extension-dev-guide/xss-protection.md
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
 
 ### Overview
 

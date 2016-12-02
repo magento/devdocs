@@ -10,11 +10,6 @@ version: 2.1
 github_link: ui_comp_guide/ui_comp_conceptual_template.md
 ---
 
-# Title
-{:.no_toc}
-
-<!-- Table of Content -->
-
 <!-- Содержание -->
 
 ## Overview

@@ -9,17 +9,13 @@ version: 2.2
 github_link: frontend-dev-guide/tools/using_grunt.md
 ---
 
-## {{page.menu_title}}
+The topic describes how to install and configure [Grunt JavaScript task runner](http://gruntjs.com/).
 
-## What's in this topic
-{:.no_toc}
-The topic describes how to install and configure [Grunt JavaScript task runner](http://gruntjs.com/). 
-
-## Overview 
-You can use Grunt to automatize any tasks you need, but out of the box Magento comes with pre-configured grunt tasks for compiling LESS files. 
+## Overview
+You can use Grunt to automatize any tasks you need, but out of the box Magento comes with pre-configured grunt tasks for compiling LESS files.
 
 
-## Prerequisites 
+## Prerequisites
 Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
 
 ## Installing and configuring Grunt {#grunt_prereq}
@@ -35,18 +31,18 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
 	- `package.json.sample` to `package.json`
 	- `Gruntfile.js.sample` to `Gruntfile.js`
 4. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
-    
+
        cd your_Magento_instance_directory
        npm install
        npm update
 
-5. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension](http://livereload.com/extensions/) in your browser. 
+5. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension](http://livereload.com/extensions/) in your browser.
 
 ## Grunt configuration file {#grunt_config}
 
 If installed as described above, Grunt will use the default configuration files located in the `dev/tools/grunt/configs/` directory. For example, the default configuration file for working with themes is `dev/tools/grunt/configs/themes.js`.
 
-The problem with using the default configuration files is that they can get overwritten during code updates, together with your changes in them. To avoid this, you can use custom configuration files. Ability t use custom configuration files is implemented by the file router mechanism added by Magento. 
+The problem with using the default configuration files is that they can get overwritten during code updates, together with your changes in them. To avoid this, you can use custom configuration files. Ability t use custom configuration files is implemented by the file router mechanism added by Magento.
 
 ## Using custom Grunt configuration files
 
@@ -76,7 +72,7 @@ You can also use the other way to declare a custom config file:
 1. In your Grunt related scripts, in the file router set the alias and path to the default configuration file. For example, for the `themes.js` configuration file this would look like following:
 
        filesRouter.set('themes', 'dev/tools/grunt/configs/themes');
-   
+
    It must be added earlier, than the `get()` method with  this alias is called.
 
 2. In the `dev/tools/grunt/configs/` directory, create a copy of the default configuration file. Change it name by adding the ".loc" suffix. For example, your copy of `themes.js` will be `themes.loc.js`.
@@ -90,8 +86,8 @@ To tell Grunt to use a custom configuration file, instead the default one, add t
 
        var fileRouter = require('/files-router');
 
-2. Call the `get(%file_alias%)` method to get the configuration file. 
-   
+2. Call the `get(%file_alias%)` method to get the configuration file.
+
    Example:
 
        var themes = fileRouter.get('themes');

@@ -10,11 +10,6 @@ menu_node: parent
 version: 2.1
 github_link: soap/bk-soap.md
 ---
-
-### Contents
-{:.no_toc}
-
-
 ## Soap WSDL Endpoint Format
 
 `http://<magento_host>/soap/<store_code>?wsdl&services=<serviceName1,serviceName2,..>`

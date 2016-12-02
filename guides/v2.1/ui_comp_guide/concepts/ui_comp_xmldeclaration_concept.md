@@ -9,10 +9,6 @@ version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.md
 ---
 
-##  {{page.menu_title}}
-{:.no_toc}
-
-
 ## Overview
 
 This topic discusses the XML declaration of UI components.
@@ -116,9 +112,9 @@ The `name` attribute value must be a unique among the other components on the sa
 
 All other child nodes are declared as items. `<item name="config"> ...</item>` contains the children nodes that describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use `<item name="component">...</item>` to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in [`require.js` configuration]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_requirejs_concept.html#config).
 
-In our example, the `<item name="component">...</item>` node within `<fieldset>` is omitted, because this property of the Fieldset UI component is already defined in `definition.xml`. 
+In our example, the `<item name="component">...</item>` node within `<fieldset>` is omitted, because this property of the Fieldset UI component is already defined in `definition.xml`.
 
-In this example we showed only a small part of the possible configuration. 
+In this example we showed only a small part of the possible configuration.
 
 The default configuration of a UI component is declared in one of the following ways:
 

@@ -7,8 +7,6 @@ menu_title: Modal component
 version: 2.1
 github_link: ui_comp_guide/components/ui-modal.md
 ---
-## What's in this topic
-{:.no_toc}
 
 This topic describes the modal UI component.
 

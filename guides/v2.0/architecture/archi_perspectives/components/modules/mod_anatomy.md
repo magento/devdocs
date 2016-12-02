@@ -10,12 +10,6 @@ github_link: architecture/archi_perspectives/components/modules/mod_anatomy.md
 redirect: /guides/v2.0/architecture/modules/mod_anatomy.html
 ---
 
-## Module anatomy
-{: .no_toc}
-
-* TOC
-{:toc}
-
 ## Overview {#arch-modules-anatomy}
 
 A Magento <i>module</i> is a logical group of components that encapsulates a particular business function, typically a business task. All components of a module relate to the module's specific function. For example, each element of the Shipping module contains all the code and interfaces needed to implement core shipping-related tasks. A module directory typically contains blocks, controllers, helpers, models, configuration files, and other components that contribute to the module's core purpose.

@@ -10,17 +10,7 @@ github_link: ext-best-practices/extension-coding/working-with-arch-bp.md
 
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
 In addition to understanding fundamental programming designs/concepts, you are encouraged to learn how the MVC architecture works in our code and how to work with Magento's generated code and factories.
-
-
-### Content
-{:.no_toc}
-
-
----
 
 ### Avoid modification of the Magento Core
   The core code is the default Magento code that comes with the application. You should never edit the core code because code changes occur between version upgrades and any changes you make will get overwritten. Try achieving your desired behavior with plugins, overriding interface preferences, and event observers.

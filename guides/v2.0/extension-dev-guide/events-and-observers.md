@@ -8,9 +8,6 @@ menu_order: 6
 version: 2.0
 github_link: extension-dev-guide/events-and-observers.md
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
 
 ### Overview
 

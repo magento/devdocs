@@ -1,5 +1,5 @@
 ---
-layout: default  
+layout: default
 group: fedg
 subgroup: I_TOOLS
 title: Additional tools for frontend developers
@@ -10,7 +10,6 @@ version: 2.2
 github_link: frontend-dev-guide/tools/tools_overview.md
 ---
 
-## {{page.menu.title}}
 
 This chapter describes how to install and use additional tools that can make your Magento frontend development tasks easier.
 

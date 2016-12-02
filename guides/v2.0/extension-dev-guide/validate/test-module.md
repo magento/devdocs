@@ -5,17 +5,14 @@ subgroup: 06_Validate
 title: Test your component
 menu_title: Test your component
 menu_order: 2
-menu_node: 
+menu_node:
 version: 2.0
 github_link: extension-dev-guide/validate/test-module.md
-redirect_from: 
+redirect_from:
   - /guides/v2.0/mktpl-quickstart/dev-test.html
   - /guides/v2.1/mktpl-quickstart/dev-test.html
   - /guides/v2.2/mktpl-quickstart/dev-test.html
 ---
-
-## {{page.menu_title}}
-
 
 ## Unit and Integration Tests {#test-unit}
 
@@ -27,7 +24,7 @@ For further testing with the Magento functional testing frameworks, see
 [Functional Testing Framework]({{page.baseurl}}mtf/mtf_introduction.html).
 
 ## Test using Community Edition {#test-comm}
-Test your component by deploying Magento Community Edition and adding the component to the project's <code>composer.json</code>. 
+Test your component by deploying Magento Community Edition and adding the component to the project's <code>composer.json</code>.
 
 {% highlight JSON %}
 "require": {
@@ -49,7 +46,7 @@ One way to do this follows:
 
 	To create a static route, add a line similar to the following to your `hosts` file:
 
-		<IP or host name of your GitHub repository> https://repo.magento.com 
+		<IP or host name of your GitHub repository> https://repo.magento.com
 
 3.	<a href="{{page.baseurl}}comp-mgr/compman-main-pg.html#compman-access" target="_blank">Install your component</a> exactly like a merchant.
 4.	Verify the component installed properly.

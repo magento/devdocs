@@ -9,10 +9,6 @@ version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_modifier_concept.md
 ---
 
-## {{page.menu_title}}  
-{:.no_toc}
-
-
 ## What's in this topic
 
 This topic describes how to use PHP modifiers that are the server-side part of [UI components configuration]({{page.baseurl}}ui_comp_guide/concepts//ui_comp_config_flow_concept.html). Using modifiers is optional and might be necessary when [static declaration in XML configuration files]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) is not suitable for the tasks. For example, in cases when additional data should be loaded from database. Or the other specific example is the [default product creation form]({{page.baseurl}}howdoi/customize_product.html), for which the modifier is a place where validations are added to display only certain fields for certain product types.
@@ -33,7 +29,7 @@ In your custom module, add a class that implements [`\Magento\Ui\DataProvider\Mo
 
 - `modifyData()`: for modifying UI component's data (for example, the list of options for a select element)
 - `modifyMeta()`: for modifying UI component's metadata (for example, name, label, description, type)
-   
+
 Sample modifier:
 
 {% highlight php%}
@@ -93,7 +89,7 @@ class Example extends AbstractModifier
 
 **Step 2**
 
-Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adminhtml/di.xml`. This declaration looks like the following: 
+Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adminhtml/di.xml`. This declaration looks like the following:
 
 {% highlight xml %}
 <virtualType name="%YourNamespace\YourModule\DataProvider\Modifier\Pool%" type="Magento\Ui\DataProvider\Modifier\Pool">

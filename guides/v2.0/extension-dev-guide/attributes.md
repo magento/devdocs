@@ -10,7 +10,6 @@ github_link: extension-dev-guide/attributes.md
 redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
 
 ---
-## {{page.menu_title}}
 
 Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:
 
@@ -51,7 +50,7 @@ Use `ExtensibleDataInterface` to implement extension attributes. In your code, y
 
 <code>public function getExtensionAttributes();</code>
 
-Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of a Magento module. 
+Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of a Magento module.
 
 <h3 id="declare">Declare extension attributes</h3>
 
@@ -66,7 +65,7 @@ You must create an `<Module>/etc/extension_attributes.xml` file to define the ex
            </resources>
            <join reference_table="" reference_field="" join_on_field="">
               <field>fieldname</field>
-           </join>            
+           </join>
         </attribute>
     </extension_attributes>
 </config>
@@ -131,9 +130,9 @@ where:
 
 <h3 id="search">Searching extension attributes</h3>
 
-The system uses a join directive to add external attributes to a collection and to make the collection filterable. The `join` element in the `extension_attributes.xml` file defines which object fields and the database table/column to use as the source of a search. 
+The system uses a join directive to add external attributes to a collection and to make the collection filterable. The `join` element in the `extension_attributes.xml` file defines which object fields and the database table/column to use as the source of a search.
 
-In the following example, an attribute named `stock_item` of type `Magento\CatalogInventory\Api\Data\StockItemInterface` added to the `Magento\Catalog\Api\Data\ProductInterface`. 
+In the following example, an attribute named `stock_item` of type `Magento\CatalogInventory\Api\Data\StockItemInterface` added to the `Magento\Catalog\Api\Data\ProductInterface`.
 
 {% highlight XML %}
 <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
@@ -145,7 +144,7 @@ In the following example, an attribute named `stock_item` of type `Magento\Catal
 </extension_attributes>
 {% endhighlight %}
 
-When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property come from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column. 
+When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property come from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column.
 
 <h3 id="ext-auth">Extension attribute authentication</h3>
 
@@ -219,4 +218,3 @@ However, if an extension similar to the following has been defined, the interfac
 
 <h2 id="related">Related topics</h2>
 <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Web API authentication overview</a>
-
