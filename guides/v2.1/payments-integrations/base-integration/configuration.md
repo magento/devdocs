@@ -9,15 +9,29 @@ version: 2.1
 github_link: payments-integrations/base-integration/configuration.md
 ---
 
-## Configuration
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module.
 
-At first, we need to create new module structure
-(as said in [Introduction]({site.gdeurl21}}payments-integrations/base-integration/integration-intro.html) topic,
-you can use _Payment Sample Module_ with initial structure). Let's start with `composer.json` dependencies:
+You can use the [sample Magento_SamplePaymentGateway module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway) files as basis for your custom module structure and files (do not forget to change the module-specific info):
+
+- composer.json
+
+## Specify your module dependencies 
+
+Your custom payment integration module must have at least the following dependencies:
+
+- Magento_Sales:: to be able to get order details
+- Magento_Checkout: to be able to add the new payment method to checkout
+- Magento_Payment: to use the Magento payment provider gateway infrastructure
+
+
+Specify these dependencies in your `composer.json` and `module.xml` files. 
+
+### Composer.json
+
+In your `%Vendor_Module%/composer.json` file, specify the dependencies like in the following example:
 
 {% highlight json %}
 {
-    "name": "magento/module-braintree",
     ...
     "require": {
         ...
@@ -27,27 +41,19 @@ you can use _Payment Sample Module_ with initial structure). Let's start with `c
         ...
     },
     ...
-    "autoload": {
-        ...
-        "psr-4": {
-            "Magento\\Braintree\\": ""
-        }
-    }
+
 }
 {% endhighlight %}
 
-We added dependencies to Magento `Sales`, `Checkout` and `Payment` modules, this modules are required for us, because,
-we will use _Payment Gateway_ infrastructure from _Payment_ module, order details (customer shipping and billing addresses,
-amount) from _Sales_ module, also, our payment should be available on the Checkout page and that's why _Checkout_ module
-infrastructure is required for us.
-
-Next, we need to add `etc/config.xml` with the same dependencies:
+### module.xml
+Add the same dependencies in `%Vendor_Module%/etc/module.xml`
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Magento_Braintree" setup_version="2.0.0">
+    <module name="Vendor_Module" setup_version="2.0.0">
         <sequence>
             ...
+            <module name="Magento_Sales"/>
             <module name="Magento_Payment"/>
             <module name="Magento_Checkout"/>
             ...
@@ -56,38 +62,72 @@ Next, we need to add `etc/config.xml` with the same dependencies:
 </config>
 {% endhighlight %}
 
-In implementation process, when your code requires more Magento modules, you need to update your dependencies.
+Your payment method implementation might require adding more dependencies.
 
-We have created, some initial configuration, now first interesting thing, we need to create configuration file for new
-payment integration (`Module_Name/etc/config.xml`):
+## Set your payment method options (`config.xml`)
+
+In the `config.xml `file in your `%Vendor_Module%` directory, configure the following options of your payment method:
+
+- `debug`: enables debug mode by default, e.g log for request/response
+- `active`: is payment active by default
+- `model`: [payment method facade](#facade) used for integration with Sales and Checkout modules
+<p class="q">What is Payment Method Facade</p>
+- `merchant_gateway_key`: encrypted merchant credential
+- `order_status`: default order status
+- `payment_action`: default action of payment
+- `title`: default title for a payment method
+- `currency`: supported currency
+- `can_authorize`: whether payment method supports authorization
+- `can_capture`: whether payment method supports the capture operation
+- `can_void`: whether payment method supports the void operation 
+- `can_use_checkout`: whether payment method is available in checkout
+<p class="q">if not available, no need to add dependency for Checkout module?</p>
+- `is_gateway` is an integration with gateway
+<p class="q">??</p>
+- `sort_order`: payment method order position on checkout/system configuration pages
+- `debugReplaceKeys`: request/response fields, which will be masked in log
+- `paymentInfoKeys`: transaction request/response fields displayed on payment information block
+- `privateInfoKeys`: paymentInfoKeys fields which should not be displayed in customer payment information block
+
+
+<p class="q">Please add possible values info</p>
+
+Following is the illustration of such configuration (`config.xml` of the SamplePaymentGateway module)
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
-            <braintree>
-                <model>BraintreeFacade</model>
-                <title>Credit Card (Braintree)</title>
-                <payment_action>authorize</payment_action>
+            <sample_gateway>
+                <debug>1</debug>
                 <active>0</active>
-                <is_gateway>1</is_gateway>
-                <can_use_checkout>1</can_use_checkout>
+                <model>SamplePaymentGatewayFacade</model>
+                <merchant_gateway_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <order_status>pending_payment</order_status>
+                <payment_action>authorize</payment_action>
+                <title>Payment method (SampleGateway)</title>
+                <currency>USD</currency>
                 <can_authorize>1</can_authorize>
-                ...
-            </braintree>
+                <can_capture>1</can_capture>
+                <can_void>1</can_void>
+                <can_use_checkout>1</can_use_checkout>
+                <is_gateway>1</is_gateway>
+                <sort_order>1</sort_order>
+                <debugReplaceKeys>MERCHANT_KEY</debugReplaceKeys>
+                <paymentInfoKeys>FRAUD_MSG_LIST</paymentInfoKeys>
+                <privateInfoKeys>FRAUD_MSG_LIST</privateInfoKeys>
+            </sample_gateway>
+        </payment>
     </default>
 </config>
 {% endhighlight %}
 
-This configuration can contain a lof of specific details, even specific for your payment integration.
-More options are described in [Payment Sample Module]({{https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway#lets-look-into-configuration-attributes}}).
 
-> You do not need to override methods from `\Magento\Payment\Model\MethodInterface` as in previous payment implementations, like
-`canAuthorize()`, `canCapture()`, etc. Now, you can do all this thing in the `config.xml`.
+### Payment method facade {#facade}
 
-### Payment method facade
+Add the [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration for payment method facade in your `%Vendor_Module/etc/di.xml`.
 
-Now, need to create DI configuration for payment method facade in `Module_Name/etc/di.xml`:
+The following sample is an illustration of such configuration:
 
 {% highlight xml %}
 <virtualType name="BraintreeFacade" type="Magento\Payment\Model\Method\Adapter">

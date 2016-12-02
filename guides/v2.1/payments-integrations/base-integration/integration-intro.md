@@ -21,7 +21,7 @@ samples from [Braintree]({{site.mage2100url}}app/code/Magento/Braintree) payment
 
 <p class="q">is "new payment method" a synonym of "payment method integration"</p>
 
-To simplify the development of a new payment integration, Magento developed the [Payment Sample Module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway).
+To simplify the development of a new payment integration, Magento developed the [Payment sample module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway).
 It contains all required infrastructure and you can use it as starting point.
 
 Topics of this chapter:
