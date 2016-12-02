@@ -46,61 +46,56 @@ During the [build phase]({{ page.baseurl }}cloud/discover-deploy.html#cloud-depl
 *	Enable all modules
 *	Compile code and the dependency injection configuration
 
-This section discusses how those tasks locally.
+Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the `<Magento root dir>/m2-hotfixes` directory.
 
-{% collapsible To build your site %}
+{% collapsible To build your site: %}
 
-1.	Enter the following command from the project root directory:
+1.	Apply patches distributed to all Magento Enterprise Cloud Edition customers.
 
-		php bin/magento magento-cloud:build
+	Enter the following command from the project root directory:
 
-	Output includes the following (some portions omitted for brevity):
+		php vendor/magento/magento-cloud-configuration/patch.php
 
-		[2016-11-30 21:04:54] Start build.
-		[2016-11-30 21:04:54] Applying magento-cloud-configuration patches.
-		[2016-11-30 21:04:54] Command:/usr/bin/php /var/www/html/magento2/vendor/magento/magento-cloud-configuration/src/Magento/MagentoCloud/../../../../../../vendor/magento/magento-cloud-configuration/patch.php
-		[2016-11-30 21:04:54] Status:0
-		[2016-11-30 21:04:54] Output:array (
-		0 => '[2016-11-30 15:04:54] Copying static.php to front-static.php',
-		1 => '[2016-11-30 15:04:54] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/000-MAGETWO-57719-2.1.2.patch',
-		2 => '[2016-11-30 15:04:54] Status:0',
-  		... more ...
+	Output includes the following:
 
-		[2016-11-30 21:04:54] Checking if patches exist under /var/www/html/magento2/vendor/magento/magento-cloud-configuration/src/Magento/MagentoCloud/../../../../../../m2-hotfixes/
-		[2016-11-30 21:04:54] Command:rm -rf var/generation/*
-		[2016-11-30 21:04:54] Status:0
-		[2016-11-30 21:04:54] Output:array (
+		[2016-11-30 15:05:15] Copying static.php to front-static.php
+		[2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/000-MAGETWO-57719-2.1.2.patch
+		[2016-11-30 15:05:15] Status:0
+		[2016-11-30 15:05:15] Output:array (
 		)
-		[2016-11-30 21:04:54] Command:rm -rf var/di/*
-		[2016-11-30 21:04:54] Status:0
-		[2016-11-30 21:04:54] Output:array (
+		[2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/MAGETWO-52660-scd-improvement.patch
+		[2016-11-30 15:05:15] Status:0
+		[2016-11-30 15:05:15] Output:array (
 		)
-		[2016-11-30 21:04:54] Enabling all modules
-		[2016-11-30 21:04:54] Command:cd bin/; /usr/bin/php ./magento module:enable --all
-		[2016-11-30 21:04:55] Status:0
-		[2016-11-30 21:04:55] Output:array (
-		0 => 'No modules were changed.',
-		)
-		[2016-11-30 21:04:55] Running DI compilation
-		[2016-11-30 21:04:55] Command:cd bin/; /usr/bin/php ./magento setup:di:compile
-		[2016-11-30 21:09:07] Status:0
-		[2016-11-30 21:09:07] Output:array (
-		0 => 'Compilation was started.',
-		1 => '%message% 0/7 [>---------------------------]
-		0% 1 sec 52.0 MiB%message% 0/7 [>---------------------------]
-		0% 1 sec 52.0 MiBProxies code generation... 0/7 [>---------------------------]
-		0% 1 sec 52.0 MiB',
-		2 => 'Proxies code generation... 1/7 [====>-----------------------]  14% 1 sec 56.0 MiB',
-		3 => 'Repositories code generation... 1/7 [====>-----------------------]  14% 1 sec 56.0 MiB',
-		4 => 'Repositories code generation... 2/7 [========>-------------------]  28% 44 secs 176.0 MiB',
- 		... more ...
-		[2016-11-30 21:09:07] Clearing temporary directory.
-		[2016-11-30 21:09:07] Command:rm -rf ../init/*
-		[2016-11-30 21:09:07] Status:0
+
 		... more ...
-3.	Because the build command removes some files from `app/etc`, you must use the following command to recover them from the server:
+							)
+3.	Apply hot fixes and other patches provided to you:
 
-		git reset --hard
+		git apply <path to patch>
+
+	For example, to apply hot fixes:
+
+		git apply m2-hotfixes
+
+	Putput from this command is similar to the preceding command.
+
+	If there are no hot fixes, the following message is displayed:
+
+		fatal: can't open patch 'm2-hotfixes': No such file or directory
+4.	Enable all modules:
+
+		php bin/magento module:enable --all
+
+5.	Compile code and the dependency injection configuration:
+
+		php bin/magento  setup:di:compile
+
+	This command can take several minutes to complete.
+
+	Messages similar to the following are displayed:
+
+		TBD
 
 If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/get-help.html) to get additional assistance.
 
@@ -112,7 +107,7 @@ During the [deployment phase]({{ page.baseurl }}cloud/discover-deploy.html#cloud
 *	Installs the Magento application if it isn't already
 *	If the Magento application is installed, upgrades components
 *	Clears the cache
-*	Sets the Magento application for [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production)
+*	Sets the Magento application for [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production) mode
 
 {% collapsible To deploy your site: %}
 
