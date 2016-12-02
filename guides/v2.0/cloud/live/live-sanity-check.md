@@ -76,13 +76,11 @@ Before you continue, you must know the file system path to any patch we provided
 
 	For example, to apply hot fixes:
 
-		git apply m2-hotfixes
+		git apply m2-hotfixes/<patch file name>
 
-	Putput from this command is similar to the preceding command.
+	If the `m2-hotfixes` directory is emtpy, skip this step.
 
-	If there are no hot fixes, the following message is displayed:
-
-		fatal: can't open patch 'm2-hotfixes': No such file or directory
+	If patches are present, output from this command is similar to the preceding command.
 4.	Enable all modules:
 
 		php bin/magento module:enable --all
@@ -95,7 +93,17 @@ Before you continue, you must know the file system path to any patch we provided
 
 	Messages similar to the following are displayed:
 
-		TBD
+		Compilation was started.
+		0% 1 sec 54.0 MiB%message% 0/7 [>---------------------------] 
+		0% 1 sec 54.0 MiBProxies code generation... 
+		0/7 [>---------------------------]   
+		0% 1 sec 54.0 MiB
+		Proxies code generation... 1/7 [====>-----------------------]  14% 1 sec 58.0 MiB
+		Repositories code generation... 1/7 [====>-----------------------]  14% 1 sec 58.0 MiB
+		Repositories code generation... 2/7 [========>-------------------]  28% 30 secs 176.0 MiB
+
+		... more ...
+		Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
 
 If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/get-help.html) to get additional assistance.
 
