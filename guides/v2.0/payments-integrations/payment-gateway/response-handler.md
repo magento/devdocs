@@ -3,9 +3,9 @@ layout: default
 group: payments-integrations
 subgroup: p_gateway
 title: Response Handler
-menu_title: 
+menu_title: Response Handler
 menu_node: 
-menu_order: 20
+menu_order: 7
 version: 2.0
 github_link: payments-integrations/payment-gateway/response-handler.md
 ---
@@ -29,9 +29,7 @@ Basic interface for a response handler is [`Magento\Payment\Gateway\Response\Han
 
 ### Example
 
-Example of a simple response handler:
-
-    app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php
+Example of a simple response handler (`app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php`):
 
 {% highlight php startinline=1 %}
 class PayPalDetailsHandler implements HandlerInterface

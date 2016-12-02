@@ -3,7 +3,7 @@ layout: default
 group: payments-integrations
 subgroup: p_gateway
 title: Request Builder
-menu_title: 
+menu_title: Request Builder
 menu_node: 
 menu_order: 4
 version: 2.0
@@ -27,9 +27,8 @@ The concatenation strategy is defined in the `BuilderComposite::merge()` method.
 
 Builder composites are added using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) in `di.xml`. A builder composite might comprise simple builders as well as other builder composites.
 
-Example of adding composite builders for the Braintree payment provider:
+Example of adding composite builders for the Braintree payment provider (`app/code/Magento/Braintree/etc/di.xml`):
 
-    /app/code/Magento/Braintree/etc/di.xml
 {% highlight xml %}
 ...
 <!--  is a builder composite comprising a number of builders -->

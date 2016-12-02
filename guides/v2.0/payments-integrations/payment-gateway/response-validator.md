@@ -3,9 +3,9 @@ layout: default
 group: payments-integrations
 subgroup: p_gateway
 title: Response Validator
-menu_title: 
+menu_title: Response Validator
 menu_node: 
-menu_order: 15
+menu_order: 6
 version: 2.0
 github_link: payments-integrations/payment-gateway/response-validator.md
 ---

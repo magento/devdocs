@@ -3,7 +3,7 @@ layout: default
 group: payments-integrations
 subgroup: p_gateway
 title: Gateway Command Pool
-menu_title: 
+menu_title:  Gateway Command Pool
 menu_node: 
 menu_order: 3
 version: 2.0
@@ -22,9 +22,8 @@ The [default CommandPool]({{site.mage2000url}}app/code/Magento/Payment/Gateway/C
 implements `CommandPoolInterface` and takes a list of commands as optional argument for construct.
 
 ## Command pool configuration for a particular provider
-Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider's payment method configuration.
+Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider's payment method configuration (`app/code/Magento/Braintree/etc/di.xml`).
 
-`app/code/Magento/Braintree/etc/di.xml` 
 {% highlight xml %}
 ...
 <!-- BrainreeCommandPool - a command pool for the Braintree payments provider -->

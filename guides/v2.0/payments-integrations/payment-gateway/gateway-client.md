@@ -30,8 +30,8 @@ Following is the illustration of how a Zend client can be added in `di.xml`:
 <virtualType name="HtmlConverterZendClient" type="Magento\Payment\Gateway\Http\Client\Zend">
     <arguments>
         <argument name="converter" xsi:type="object">Magento\Payment\Gateway\Http\Converter\HtmlFormConverter</argument>
-            <argument name="logger" xsi:type="object">CustomLogger</argument>
-        </arguments>
+        <argument name="logger" xsi:type="object">CustomLogger</argument>
+    </arguments>
 </virtualType>
 {% endhighlight %}
 
