@@ -59,7 +59,7 @@
 .sidebar ul a:hover {
   background: $dropdown-link-hover-bg;
 }
- 
+
 .sidebar ul .nav-header {
   text-transform: uppercase;
   font-weight: 700;
@@ -74,7 +74,7 @@
 
 .sidebar ul .active > a {
   color: $body-font-color;
-  background: darken( $dropdown-link-hover-bg, 10%);
+  background: darken( $dropdown-link-hover-bg, 5%);
 }
 
 
