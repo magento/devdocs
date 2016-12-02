@@ -30,8 +30,6 @@ This page contains recent changes that we think you'd like to know about. We exc
 |[UI components linking properties]({{ site.gdeurl21 }}ui_comp_guide/concepts/ui_comp_linking_concept.html){:target="_blank"}  |  2.1.x  |  New  | Nov 4 |
 
 
-
-
 {% collapsibleh2 October 2016 %}
 
 | Week ending | Description  | Versions applied to  | New or Updated |

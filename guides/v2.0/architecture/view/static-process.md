@@ -1,10 +1,10 @@
 ---
 layout: default
-group: 
+group:
 subgroup: View library
 title: Static file processing
 menu_title: Static file processing
-menu_order: 
+menu_order:
 version: 2.0
 github_link: architecture/view/static-process.md
 redirect_from: /guides/v1.0/architecture/view/static-process.html
@@ -45,7 +45,8 @@ Whenever a static view file is requested in the Magento application, it uses the
    </dd>
 </dl>
 
-<h2 id="example-fallback">Fallback mechanism example</h2>
+## Fallback mechanism example {#example-fallback}
+
 As an example of static file fallback, suppose there is a request for the `logo.svg` image in the Blank theme.
 
 The request URL is similar to:
@@ -78,13 +79,14 @@ Using theme inheritance and view file fallback rules, Magento uses the following
    <li><code>app/design/frontend/Magento/parent_theme/web/logo.svg</code></li>
 </ol>
 
-If the file is found, it is published in the following location: 
+If the file is found, it is published in the following location:
 
       pub/static/frontend/blank/web/images/logo.svg
 
 The path inside the `pub/static` directory coincides with the initial path in the `app/design` directory.
 
-<h2 id="publish-static-view-files">Static view file publication</h2>
+## Static view file publication {#publish-static-view-files}
+
 The Magento application has a *static view files publication command* that enables you to publish static view files in certain Magento <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html">modes</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -93,15 +95,20 @@ The Magento application has a *static view files publication command* that enabl
 
 To use the static view file publication tool, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">deploy static view files</a>.
 
-<h2 id="css-files">CSS file publication</h2>
-<p>The publication flow for CSS files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.</p>
+## CSS file publication {#css-files}
+
+The publication flow for CSS files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.
+
 <h3 id="merging-enabled">Merging enabled</h3>
+
 <p>If CSS merging is enabled in your Magento instance, a CSS file copied from <code>app/design/&lt;areaname>/&lt;VendorName>/&lt;ThemeName></code> to <code>pub/static</code> is also parsed for references to other static resources, such as images or other CSS files.</p>
 <p>To enable publication of these files, reference them in a CSS file, as follows:</p>
+
 <ul>
    <li>Use the CSS <code>url()</code> directive to reference the file.</li>
    <li>Use a relative path to reference the file. The Magento application does not recognize absolute URLs or URIs.</li>
 </ul>
+
 <!-- <p>For example, if the original CSS file is to be published from <code>app/design/frontend/Magento/blank/web/css-topics/styles.css</code>,
 the identified references are published from following locations:</p>
 
@@ -149,20 +156,28 @@ the identified references are published from following locations:</p>
 </table> -->
 
 <p>The referenced files can be located on different fallback levels, the publishing mechanism locates them recursively.</p>
-<h3 id="merging-disabled">Merging disabled</h3>
+
+### Merging disabled {#merging-disabled}
+
 <p>If CSS merging is disabled, CSS files are not parsed for references during the publication process.</p>
+
 <p>Instead, the server requests the resource as soon as it is displayed on a browser page.</p>
+
 <p>If the requested file is intended to be in the <code>pub/static</code> directory, the web server processes it and optionally, depending on the application mode, publishes it.</p>
-<h3 id="context-notation">Context notation in CSS file references</h3>
+
+### Context notation in CSS file references {#context-notation}
+
 <p>You can reference resources in CSS files relative to a theme or a certain module using scope notation.</p>
+
 <p>The resulting link to a resource in the published file is relative to the original CSS file.</p>
+
 <p>Examples follow:</p>
-<h4 id="merging-disabled-css1">CSS specified by path</h4>
+
+#### CSS specified by path {#merging-disabled-css1}
 
 Example: <code>css-topics/one/two/file.css</code>
 
 <table>
-
    <thead>
       <tr>
          <th>Reference with context notation</th>
@@ -174,11 +189,10 @@ Example: <code>css-topics/one/two/file.css</code>
          <td><code>url(&lt;VendorName>_&lt;ModuleName>::images/image.gif)</code></td>
 		 <td><code>url(../../../../&lt;VendorName>_&lt;ModuleName>/images/image.gif)</code></td>
       </tr>
-
    </tbody>
 </table>
 
-<h4 id="merging-disabled-css1">CSS specified by module</h4>
+#### CSS specified by module {#merging-disabled-css2}
 
 Example: <code>&lt;VendorName>_&lt;ModuleName>::css-topics/one/two/file.css</code>
 
@@ -202,13 +216,21 @@ Example: <code>&lt;VendorName>_&lt;ModuleName>::css-topics/one/two/file.css</cod
 </table>
 
 <h2 id="static-view-files-url-resolution">URL resolution for static view files</h2>
-<p>The URL resolution mechanism builds URLs for static view files.</p>
-<p>The mechanism also performs file publishing, if the initial location is not web accessible.</p>
-<p>The following description of the URL resolution process illustrates the static view files processing from the prospective of the logic involved.</p>
-<p>A fully qualified context for generating a URL path to a static view file includes: area code, theme path, and locale code. The URL path is generated from a file ID an invariant relative path to the file, which does not change regardless of whether it is used as part of the absolute file name or URL. The file ID may optionally qualify module name.</p>
-<p>The following diagram illustrates how a URL to a static view file is generated:</p>
+
+The URL resolution mechanism builds URLs for static view files.
+
+The mechanism also performs file publishing, if the initial location is not web accessible.</p>
+
+The following description of the URL resolution process illustrates the static view files processing from the prospective of the logic involved.
+
+A fully qualified context for generating a URL path to a static view file includes: area code, theme path, and locale code. The URL path is generated from a file ID an invariant relative path to the file, which does not change regardless of whether it is used as part of the absolute file name or URL. The file ID may optionally qualify module name.
+
+The following diagram illustrates how a URL to a static view file is generated:
+
 <p><img src="{{ site.baseurl }}common/images/va_10.png" alt="Generate a URL to a static view file"></p>
-<p>The diagram uses these notations:</p>
+
+The diagram uses these notations:
+
 <ul>
    <li><b>Client code</b>. Any client code that needs a URL to a static file.
    Typically, a page template, but can be a layout XML or helper file.</li>
@@ -217,19 +239,28 @@ Example: <code>&lt;VendorName>_&lt;ModuleName>::css-topics/one/two/file.css</cod
    <li><b>AssetContext</b>. <code>\Magento\Framework\View\Asset\ContextInterface</code></li>
    <li><b>Asset</b>. <code>\Magento\Framework\View\Asset\File</code></li>
 </ul>
+
 <p>To generate a URL for a static file, client code uses the <code>getUrl()</code> or <code>getUrlWithParams()</code> method of the asset repository.</p>
+
 <p>The asset repository is <code>\Magento\Framework\View\Asset\Repository</code>.</p>
+
 <p>The repository:</p>
+
 <ol>
    <li>Determines all necessary parameters and context.</li>
    <li>Creates a <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Asset/Repository.php" target="_blank">\Magento\Framework\View\Asset\File</a> object.</li>
    <li>Uses the <code>File::getUrl()</code> method to get the necessary URL to the static view file.</li>
 </ol>
+
 <p>If a client requests the URL, the web server handles it as a separate request:</p>
+
 <ul>
 <li>If the file already exists in the specified location in the <code>pub/static</code> directory, a web server returns it as-is, as a static resource.</li>
 <li>If the file does not exist in the specified location, an internal URL rewrite rule from <code>pub/static/.htaccess</code> routes the request to the <code>pub/static.php</code> entry point, which publishes the file to this location in <code>pub/static</code> and returns the file content.</li>
-<h3 id="example-url-resolution">URL resolution example</h3>
+</ul>
+
+### URL resolution example {#example-url-resolution}
+
 <p>The context:</p>
 
 <table>
@@ -258,5 +289,6 @@ Example: <code>&lt;VendorName>_&lt;ModuleName>::css-topics/one/two/file.css</cod
 </table>
 
 <p>The generated URL is: <code>http://www.example.com/pub/static/frontend/Magento/blank/en_US/Magento_Catalog/web/images/product.gif</code>.</p>
+
 <div class="bs-callout bs-callout-info" id="info">
  <p>In production mode, the URL generating mechanism does not support the locale code; that is, generated URLs do not contain locale code.</p>

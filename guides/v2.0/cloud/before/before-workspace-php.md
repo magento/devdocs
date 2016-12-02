@@ -29,8 +29,11 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 4.	Save your changes to `php.ini` and exit the text editor.
 5.	Restart your web server:
 
-	*	CentOS: `service httpd restart`
-	*	Ubuntu: `service apache2 restart`
+	*	Apache
+
+		*	CentOS: `service httpd restart`
+		*	Ubuntu: `service apache2 restart`
+	*	nginx: `service nginx restart`
 
 {% endcollapsible %}
 

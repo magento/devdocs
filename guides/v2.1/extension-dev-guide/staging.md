@@ -6,7 +6,7 @@ title: Staging (Enterprise Edition only)
 menu_title: Staging (Enterprise Edition only)
 version: 2.1
 menu_node: parent
-github_link: guides/v2.1/extension-dev-guide/staging.md
+github_link: extension-dev-guide/staging.md
 ---
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
