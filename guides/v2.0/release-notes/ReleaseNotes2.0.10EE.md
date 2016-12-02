@@ -7,6 +7,7 @@ menu_title: Magento EE 2.0.10 Release Notes
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
 menu_order: 250
+version: 2.0
 github_link: release-notes/ReleaseNotes2.0.10EE.md
 ---
 

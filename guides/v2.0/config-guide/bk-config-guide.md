@@ -23,7 +23,7 @@ You can configure the Magento application in any of the following ways:
 *	Caching
 
 	*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Set up Varnish</a>
-	*  	<a href="{{page.baseurl}}config-guide/config/caching.html">Set up caching</a>
+	*  	<a href="{{page.baseurl}}config-guide/cache/caching.html">Set up caching</a>
 	*	<a href="{{page.baseurl}}config-guide/database/database.html">Set up database caching</a>
 	*	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Set up Redis</a>
 

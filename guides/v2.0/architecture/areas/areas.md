@@ -1,9 +1,9 @@
 ---
 layout: default
-group: 
-subgroup: 
-title: 
-menu_title: 
+group:
+subgroup:
+title:
+menu_title:
 menu_order: 1
 menu_node: parent
 version: 2.0
@@ -11,7 +11,7 @@ github_link: architecture/areas/areas.md
 redirect_from: /guides/v1.0/architecture/areas/areas.html
 ---
 
-<h2 id="m2devgde-area-intro">Introduction</h2>
+## Magento areas overview {#m2devgde-area-intro}
 
 Magento uses *areas* to efficiently make web service calls, loading only the dependent code for that area. Examples of areas include the `storefront` (frontend), `Magento Admin` (adminhtml, the administration interface), and `web API REST` (webapi_rest).
 
@@ -30,7 +30,9 @@ Typically, an area has behavior and view components, which operate separately.
 The Magento areas currently available are:
 
 * Magento Admin (adminhtml)
+
 * Storefront (frontend)
+
 * Web API REST (webapi_rest)
 
 If your extension works in several different areas, you should make sure it has separate behavior and view components for each area.

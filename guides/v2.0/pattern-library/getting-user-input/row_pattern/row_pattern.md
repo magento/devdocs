@@ -6,6 +6,7 @@ title: Admin Design Pattern Library
 menu_title: Row Pattern (Table)
 menu_order: 4
 menu_node:
+version: 2.0
 github_link: pattern-library/getting-user-input/row_pattern/row_pattern.md
 ---
 

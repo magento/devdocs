@@ -1254,8 +1254,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 * <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/2121" target="_blank"> (GITHUB-2121)</a> removed. </i>
 
-* <i>Fixed GitHub issue <a href="https://git
-hub.com/magento/magento2/issues/3605" target="_blank"> (GITHUB-3605)</a>  removed.</i>
+* <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/3605" target="_blank"> (GITHUB-3605)</a>  removed.</i>
 
 * <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/59" target="_blank"> (GITHUB-59)</a>  removed.</i>
 

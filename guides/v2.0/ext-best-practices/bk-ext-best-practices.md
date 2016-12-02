@@ -18,7 +18,7 @@ tabweight: 0
 <div class="bs-callout bs-callout-info" id="info">
   <p>DRAFT/PROPOSAL: This Best Practices Guide is a first draft! The guide combines Best Practices that we have heard the community ask for, along with guidelines that our Magento UX, Engineering, and Product teams are working on.
   <p></p>
-We want your feedback; please do a pull request on <a href="https://github.com/magento/devdocs/blob/2.0/guides/v2.0/ext-best-practices/admin/feedback-placement-and-design.md" target="_blank">feedback-placement-and-design.md</a> and let us know what your best practices are, your challenges, and how you would like Magento to help standardize (where needed).
+We want your feedback; please do a pull request on <a href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/admin/feedback-placement-and-design.md" target="_blank">feedback-placement-and-design.md</a> and let us know what your best practices are, your challenges, and how you would like Magento to help standardize (where needed).
   </p>
 </div>
 
