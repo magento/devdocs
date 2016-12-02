@@ -1,20 +1,16 @@
 ---
 layout: default
 group: config-guide
-subgroup: 08_Caching 
+subgroup: 08_Caching
 title: Static Content Signing
 menu_title: Static Content Signing
-menu_node: 
+menu_node:
 menu_order: 100
 level3_menu_node: level3child
-level3_subgroup: cache-priv 
+level3_subgroup: cache-priv
 version: 2.2
 github_link: config-guide/cache/static-content-signing.md
 ---
-
-## {{page.title}}
-{:.no_toc}
-
 
 ### Static content cache
 
