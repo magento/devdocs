@@ -11,13 +11,7 @@ github_link: migration/migration-plan.md
 redirect_from: /guides/v1.0/migration/migration-plan.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
 To migrate successfully and avoid issues, you need to thourougly plan and test your migration. We hope the guidelines below will help.
-
-* TOC
-{:toc}
 
 ## Step 1: Review extensions on your current site
 

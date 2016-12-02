@@ -10,11 +10,6 @@ version: 2.0
 github_link: config-guide/redis/redis-pg-cache.md
 ---
 
-#### Contents
-*	[Prerequisite](#reds-sess-prereq)
-*	[Configure Magento to use Redis for page caching](#config-redis-config)
-*	[Basic verification](#redis-verify)
-
 <h2 id="reds-sess-prereq">Prerequisite</h2>
 Before you continue, install Redis as discussed in <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Use Redis for page caching or session storage</a>.
 

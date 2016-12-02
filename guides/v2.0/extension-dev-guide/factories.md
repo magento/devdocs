@@ -13,8 +13,6 @@ github_link: extension-dev-guide/factories.md
 ## {{page.menu_title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Overview
 

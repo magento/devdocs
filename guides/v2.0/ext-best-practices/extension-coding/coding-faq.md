@@ -15,8 +15,6 @@ This page is a compilation of frequently asked coding questions by the Magento C
 
 ## Frequently Asked Questions
 {:.no_toc}
-* Table of Content
-{:toc}
 
 ### What do I need to know to work with the framework?
 

@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/trouble/cman/were-sorry.md
 ---
 
-<h2 id="trouble-update-were-sorry">"Sorry, we can't take that action right now"</h2>
 The following error might display at the start of your upgrade:
 
 <img src="{{ site.baseurl }}common/images/upgr-sorry.png" width="600px">

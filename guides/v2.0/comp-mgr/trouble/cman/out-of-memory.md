@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/trouble/cman/out-of-memory.md
 ---
 
-## Out of memory errors
 Sometimes when you attempt to install or update, you can encounter an error due to your system running out of physical memory. We recommend you create a swap file to avoid this error.
 
 ### Symptom

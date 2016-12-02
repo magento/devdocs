@@ -13,13 +13,6 @@ github_link: mrg/ee/CmsStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-* TOC
-{:toc}
-
-## Magento_CmsStaging module
-
 ## Overview
 
 The Magento_CmsStaging module is a part of the staging functionality in Magento EE. It enables you to add the CMS Page and the CMS Block updates to the existing store campaigns. These updates are shown on the campaign dashboard.

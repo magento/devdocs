@@ -13,8 +13,6 @@ github_link: release-notes/backward-incompatible-changes-2.2.md
 ## {{page.title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ### Overview
 

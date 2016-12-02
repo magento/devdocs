@@ -10,11 +10,6 @@ version: 2.0
 github_link: config-guide/varnish/use-varnish-cache-how.md
 ---
 
-#### Contents
-*	<a href="#config-varnish-cache-over">Overview of Varnish caching</a>
-*	<a href="#config-varnish-cache-browser">Caching by browser request</a>
-*	<a href="#config-varnish-cache-etag">How Magento uses Etag</a>
-
 <h2 id="config-varnish-cache-over">Overview of Varnish caching</h2>
 This topic discusses how Varnish caching works with Magento using:
 

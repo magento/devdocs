@@ -12,13 +12,6 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.h
 ---
 
 
-#### Contents
-
-*	<a href="#config-cli-xml-overview">Overview of layout XML conversion</a>
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-xml-run">Convert layout XML files</a>
-
-
 <h2 id="config-cli-xml-overview">Overview of layout XML conversion</h2>
 This command enables you to update your layout XML files if you update the corresponding Extensible Stylesheet Language Transformations (XSLT) stylesheet. 
 

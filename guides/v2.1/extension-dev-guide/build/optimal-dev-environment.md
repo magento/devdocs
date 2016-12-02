@@ -12,8 +12,6 @@ github_link: extension-dev-guide/build/optimal-dev-environment.md
 ## {{page.menu_title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Overview
 

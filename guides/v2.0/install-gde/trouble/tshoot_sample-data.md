@@ -10,7 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/tshoot_sample-data.md
 ---
 
-## Errors installing optional sample data
 This topic discusses solutions to errors you might encounter installing optional sample data.
 
 #### Contents

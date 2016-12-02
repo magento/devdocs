@@ -9,9 +9,6 @@ version: 2.0
 github_link: release-notes/changes_2.0.md
 ---
 
-## Preface
-{:.no_toc}
-
 This topic discusses the most important backward incompatible changes made after Magento 2.0.0 release in scope of 2.0 version.
 
 Be aware that no @api code has been modified.
@@ -22,12 +19,6 @@ To see all backward incompatible changes follow:
  - [Magento EE backward incompatible changes][]
 
 For more information about backward compatibility, see [Magento’s backward compatibility policy][].
-
-### Contents
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## Framework changes
 

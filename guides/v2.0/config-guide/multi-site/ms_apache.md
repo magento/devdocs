@@ -10,11 +10,8 @@ version: 2.0
 github_link: config-guide/multi-site/ms_apache.md
 ---
 
-## Set up multiple websites with Apache  {#ms-apache-over}
-This tutorial shows you step-by-step how to set up multiple websites using Apache. 
-
-### Assumptions
-We assume the following:
+## Set values in an entry point script {#ms-entry-script}
+If necessary, copy the existing `index.php` entry point script for your website or store view and add to it the following:
 
 *   You're working on a development machine (laptop, virtual machine, and so on)
 

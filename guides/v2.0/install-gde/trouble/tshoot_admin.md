@@ -11,7 +11,7 @@ github_link: install-gde/trouble/tshoot_admin.md
 ---
 
 
-<h2 id="install-trouble-admin-login">Error after logging in to the Magento Admin</h2>
+### Details
 
 	The requested URL /magento2index.php/admin/admin/dashboard/index/key/0c81957145a968b697c32a846598dc2e/ was not found on this server.
 

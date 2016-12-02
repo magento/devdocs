@@ -12,8 +12,6 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-massaction.html
 
 ---
 
-<h3 id="massaction">UI MassAction Component</h3>
-
 ### MassAction JS component structure
 
 MassActions component adds ability to be selectable (by attaching it's template to each item in Listing) to items in Listing and creates actions to perform with selected items (for example: 'Delete', 'Update attributes' and so on).

@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/discover-tools.md
 ---
 
-## Tooling
 Our job is to make developers and teams more productive, so we spent a lot of
 time not only in making Magento Enterprise Cloud Edition a very robust hosting environment but also
 a very easy one to use.

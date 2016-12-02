@@ -11,21 +11,7 @@ github_link: pattern-library/navigation/links/links.md
 redirect_from: /guides/v1.0/pattern-library/navigation/links/links.html
 ---
 
-<h2> Links </h2>
-
-<h3> Contents </h3>
-
-* <a href="#overview">Overview</a>
-* <a href="#when-to-use">When to Use</a>
-* <a href="#when-not-to-use">When Not to Use</a>
-* <a href="#style">Style</a>
-* <a href="#accessibility">Accessibility</a>
-* <a href="#examples">Usage Examples</a>
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
-
+## Links
 Within the Magento application, users often need to navigate through information inside or outside of the application by using links. These links should follow this guideline.
 
 <h3 id="when-to-use">When to Use</h3>

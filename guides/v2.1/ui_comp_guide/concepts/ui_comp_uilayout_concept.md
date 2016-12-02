@@ -12,8 +12,6 @@ github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 ## {{page.menu_title}}  
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Overview
 The `uiLayout` service module is used to initialize UI components. 

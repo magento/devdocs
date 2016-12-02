@@ -13,7 +13,6 @@ redirect_from:
   - /guides/v2.1/release-notes/tech_bull_201-upgrade.html
 ---
 
-## Magento upgrade issues (Jan. 28, 2016)
 This bulletin informs you of the following issues:
 
 *	[Issue: Upgrade fails because of missing `.gitignore` files](#gitignore)

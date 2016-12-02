@@ -12,8 +12,6 @@ redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html
 ## {{page.menu_title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Dependency injection overview
 

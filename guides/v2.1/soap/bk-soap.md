@@ -14,8 +14,6 @@ github_link: soap/bk-soap.md
 ### Contents
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Soap WSDL Endpoint Format
 

@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/howtos/install-components.md
 ---
 
-## How install extensions {#cloud-howto-comp}
 This topic discusses how to install *extensions*, which can be any of the following:
 
 *	Modules (extend Magento capabilities)

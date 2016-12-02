@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/prereq/prereq_compman.md
 ---
 
-## Prerequisites
 Before running the Component Manager or System Upgrade, complete the following tasks:
 
 *	<a href="{{page.baseurl}}comp-mgr/prereq/prereq_cron.html">Set up cron</a>

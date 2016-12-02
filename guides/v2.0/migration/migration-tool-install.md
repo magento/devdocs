@@ -11,12 +11,6 @@ github_link: migration/migration-tool-install.md
 redirect_from: /guides/v1.0/migration/migration-tool-install.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Prerequisite: Versions of Magento and Data Migration Tool must match {#data-migrate-prereq}
 
 Make sure you are using *the same released version* of both Magento 2 and the Data Migration Tool. For example, for Magento version 2.1.2, you must also use the Data Migration Tool version 2.1.2.

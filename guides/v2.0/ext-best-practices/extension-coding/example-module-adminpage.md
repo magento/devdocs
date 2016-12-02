@@ -13,8 +13,6 @@ github_link: ext-best-practices/extension-coding/example-module-adminpage.md
 ## {{page.menu_title}}
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ### Overview
 

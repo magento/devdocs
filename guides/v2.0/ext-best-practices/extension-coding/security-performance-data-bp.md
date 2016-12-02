@@ -18,8 +18,6 @@ You should make sure that your extension handles data with care in order to prev
 ### Content
 {:.no_toc}
 
-* Table of Content
-{:toc}
 
 ---
 

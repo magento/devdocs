@@ -11,15 +11,6 @@ github_link: install-gde/install/cli/install-cli-subcommands-admin.md
 redirect_from: /guides/v2.0/install-gde/install/install-cli-subcommands-admin.html
 ---
 
-  
-<h4>Contents</h4>
-See one of the following sections:
-
-*	<a href="#instgde-install-cli-first">First steps</a>
-*	<a href="#instgde-cli-admin-prereq">Prerequisites</a>
-*	<a href="#instgde-cli-admin">Create an administrator</a>
-*	<a href="#instgde-cli-admin-unlock">Unlock an administrator account</a>
-
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}

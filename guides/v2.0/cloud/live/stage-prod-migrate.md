@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/live/stage-prod-migrate.md
 ---
 
-## Migrate data {#cloud-live-migrate}
 To migrate your database and code:
 
 *	[Migrate static files](#cloud-live-migrate-static)

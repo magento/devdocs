@@ -16,11 +16,6 @@ github_link: frontend-dev-guide/css-topics/css_debug.md
 
 The topic describes how to install, configure and use [Grunt JavaScript task runner](http://gruntjs.com/) for compiling `.less` files in Magento 2. 
 
-**Contents**
-
-* TOC
-{:toc}
-
 ## Prerequisites 
 
 

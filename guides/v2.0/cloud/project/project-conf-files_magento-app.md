@@ -10,21 +10,6 @@ version: 2.0
 github_link: cloud/project/project-conf-files_magento-app.md
 ---
 
-#### Contents
-*	[About `.magento.app.yaml`](#cloud-yaml-platform)
-*	[Defaults](#cloud-yaml-default)
-*	[`name`](#name)
-*	[`type` and `build`](#cloud-yaml-platform-type)
-*	[`access`](#cloud-yaml-platform-access)
-*	[`relationships`](#cloud-yaml-platform-rel)
-*	[`web`](#cloud-yaml-platform-web) 
-*	[`disk`](#cloud-yaml-platform-disk)
-*	[`mounts`](#cloud-yaml-platform-mounts)
-*	[`dependencies`](#cloud-yaml-platform-dep) 
-*	[`hooks`](#cloud-yaml-platform-hooks)
-*	[`crons`](#cloud-yaml-platform-cron) 
-*	[Configure PHP options](#cloud-yaml-platform-php)
-
 ## About `.magento.app.yaml` {#cloud-yaml-platform}
 Magento Enterprise Cloud Edition supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a `.magento.app.yaml` at the root of your repository.
 

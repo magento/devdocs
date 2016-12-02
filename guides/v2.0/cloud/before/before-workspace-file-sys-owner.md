@@ -12,12 +12,6 @@ version: 2.0
 github_link: cloud/before/before-workspace-file-sys-owner.md
 ---
 
-#### Contents
-*	[About the shared group](#mage-owner-about-group)
-*	[Step 1: Create the Magento file system owner and give the user a strong password](#mage-owner-create-user)
-*	[Step 2: Find the web server group](#install-update-depend-user-findgroup)
-*	[Step 3: Put the Magento file system owner in the web server's group](#install-update-depend-user-add2group)
-
 ### About the shared group {#mage-owner-about-group}
 To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the Magento file system owner, both users must be in the same group. This is necessary so both users can share access to Magento files (including files created using the Magento Admin or other web-based utilities).
 

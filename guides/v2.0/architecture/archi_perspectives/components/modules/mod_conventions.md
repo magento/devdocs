@@ -14,12 +14,6 @@ redirect_from:
   - /guides/v2.0/architecture/modules/mod_conventions.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview {#m2arch-module-conventions-overview}
 
 Modules must conform to Magento conventions regarding code location and file names. Keep these conventions in mind when working with or developing modules.
@@ -38,5 +32,5 @@ We refer to a component’s root directory as the top-level directory in which y
 |---|---|
 |Code base of your custom module|`/app/code/<Vendor>/<Module>`|
 |Custom theme files (storefront)|`/app/design/frontend/<Vendor>/<theme>`|
-|Custom theme files (modules)|`<Module>/<theme>`
+|Custom theme files (modules)|`<Module>/<theme>`|
 |If you want to use a library|`/lib/<Vendor_Library>`|

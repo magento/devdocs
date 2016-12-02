@@ -13,8 +13,6 @@ github_link: ui_comp_guide/concepts/ui_comp_uiclass_concept.md
 
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## What is `uiClass` 
 

@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/before/terms.md
 ---
 
-## Common terms
 This topic provides definitions for common terms.
  
 Project

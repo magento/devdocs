@@ -12,12 +12,6 @@ version: 2.0
 github_link: cloud/project/project-integrate-blackfire.md
 ---
 
-#### Contents
-*	[Get your Blackfire credentials](#cloud-int-black) 
-*	[Enable the Blackfire integration](#cloud-int-black-en)
-*	[Verify it's working](#cloud-int-black-verify)
-*	[Profile your site](#cloud-int-black-profile)
-
 ## Get your Blackfire credentials {#cloud-int-black}
 The account owner has access to the Blackfire credentials for your project. Contact the account owner for more information.
 

@@ -10,12 +10,6 @@ version: 2.0
 github_link: migration/migration-tool-upgrade.md
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Why do I need to upgrade?
 
 To make sure the versions of your current Magento 2 installation and the Data Migration Tool match exactly, you may need to upgrade the Tool.

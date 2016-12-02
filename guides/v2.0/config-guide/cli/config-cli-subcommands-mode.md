@@ -10,12 +10,6 @@ version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-mode.md
 ---
 
-
-#### Contents
-*	<a href="#config-mode-over">Overview of setting Magento modes</a>
-*	<a href="#config-mode-show">Display the current mode</a>
-*	<a href="#config-mode-change">Change modes</a>
-
 <h2 id="config-mode-over">Overview of setting Magento modes</h2>
 To improve security and ease-of-use, we added a command that switches <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. 
 

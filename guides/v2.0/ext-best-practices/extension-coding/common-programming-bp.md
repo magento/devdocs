@@ -19,8 +19,6 @@ You should do your best to adhere to common programming best practices to reduce
 ### Content
 {:.no_toc}
 
-* Table of Content
-{:toc}
 
 ---
 

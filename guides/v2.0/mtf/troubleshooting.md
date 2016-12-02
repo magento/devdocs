@@ -8,10 +8,6 @@ menu_node: parent
 version: 2.0
 github_link: mtf/troubleshooting.md
 ---
-<h2 id="mtf_update">Known issues and their solutions</h2>
-
-* TOC
-{:toc}
 
 ### Installation issues {#install-issues}
 

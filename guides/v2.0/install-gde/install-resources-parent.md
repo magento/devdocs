@@ -10,7 +10,6 @@ version: 2.0
 github_link: install-gde/install-resources-parent.md
 ---
 
-## Helpful resources
 You can use the following resources at any time to help you with your Magento installation:
 
 *	[Quick reference (tutorial)]({{ page.baseurl }}install-gde/install-quick-ref.html), a quick tutorial to get your installation off the ground quickly
