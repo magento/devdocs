@@ -11,7 +11,6 @@ version: 2.0
 github_link: release-notes/ReleaseNotes2.0.7EE.md
 ---
 
-<h2>Magento Enterprise Edition 2.0.7</h2>
 We are pleased to present Magento Enterprise Edition 2.0.7. This release includes  several functional fixes.
 
 

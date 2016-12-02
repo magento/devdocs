@@ -11,7 +11,6 @@ version: 2.0
 github_link: release-notes/ReleaseNotes2.0.6CE.md
 ---
 
-<h2>Magento Community Edition 2.0.6</h2>
 We are pleased to present Magento Community Edition 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements. 
 
 <div class="bs-callout bs-callout-warning">

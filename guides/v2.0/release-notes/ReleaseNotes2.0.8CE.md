@@ -10,11 +10,7 @@ level3_menu_node: level3child
 level3_subgroup: ce20-relnotes
 github_link: release-notes/ReleaseNotes2.0.8CE.md
 ---
-*	TOC
-{:toc}
 
-
-## Magento Community Edition 2.0.8
 We are pleased to present Magento Community Edition 2.0.8. This release includes  several functional fixes.
 
 

@@ -11,7 +11,6 @@ version: 2.0
 github_link: release-notes/ReleaseNotes2.0.7CE.md
 ---
 
-<h2>Magento Community Edition 2.0.7</h2>
 We are pleased to present Magento Community Edition 2.0.7. This release includes one functional fix. 
 
 

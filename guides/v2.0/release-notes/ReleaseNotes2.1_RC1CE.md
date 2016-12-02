@@ -11,8 +11,6 @@ level3_subgroup: rc20-relnotes
 github_link: release-notes/ReleaseNotes2.1_RC1CE.md
 ---
 
-<h2>Magento Community Edition 2.1 Release Candidate 1 (RC1)</h2>
-
 We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
 
 * preview the new features and fixes that Magento 2.1 GA will contain

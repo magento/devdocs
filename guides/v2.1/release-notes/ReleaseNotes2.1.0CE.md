@@ -11,12 +11,6 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.0CE.md
 ---
 
-* Table of Content
-{:toc}
-
-## Magento Community Edition 2.1.0 
-
-
 We are pleased to present Magento Community Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 

@@ -11,7 +11,6 @@ level3_subgroup: ce20-relnotes
 github_link: release-notes/ReleaseNotes2.0.4CE.md
 ---
 
-<h2>Magento Community Edition 2.0.4</h2>
 We are pleased to present Magento Community Edition 2.0.4. This release includes all of the security enhancements and performance improvements of Magento 2.0.3, in improved packaging. **You must download and install 2.0.4 to ensure that you receive all the security enhancements of 2.0.3**. 
 
 
