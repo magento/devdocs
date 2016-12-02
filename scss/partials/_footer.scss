@@ -6,16 +6,17 @@
 
 
   a {
-    color: $footer-color;
+    color: $footer-link-color;
 
     &:hover {
-      color: lighten($footer-color, 20%);
+      color: lighten( $footer-link-color, 10% );
     }
   }
 
 
   .copyright-links {
-    float: left;
+    text-align: center;
+    padding: 0 0 10px 0;
   }
 
 
@@ -30,7 +31,7 @@
   }
 
   .copyright-date {
-    float: right;
+    text-align: center;
   }
 
 
@@ -40,11 +41,10 @@
     padding: 10px 0;
 
     .copyright-date {
-      float: none;
+      text-align: left;
     }
     .copyright-links {
-      float: none;
-      padding: 0 0 10px 0;
+      text-align: left;
     }
     li {
       display: block;
