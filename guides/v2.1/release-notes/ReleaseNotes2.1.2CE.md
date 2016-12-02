@@ -1,19 +1,16 @@
 ---
-layout: full-width
-group: 
-subgroup: 02_ReleaseNotes
+layout: default
+group: release-notes
+subgroup: 02_rel-notes
 title: Magento CE 2.1.2 Release Notes
 menu_title: Magento CE 2.1.2 Release Notes
-menu_order: 7
+menu_order: 100
+level3_menu_node: level3child
+level3_subgroup: ce21-relnotes
 version: 2.1
 github_link: release-notes/ReleaseNotes2.1.2CE.md
 ---
 
-*	TOC
-{:toc}
-
-
-## Magento Community Edition 2.1.2
 We are pleased to present Magento Community Edition 2.1.2. This release includes security enhancements and several functional fixes.
 
 

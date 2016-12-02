@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento CE 2.0.10 Release Notes
 menu_title: Magento CE 2.0.10 Release Notes
-menu_order: 100
+menu_order: 350
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes
 github_link: release-notes/ReleaseNotes2.0.10CE.md

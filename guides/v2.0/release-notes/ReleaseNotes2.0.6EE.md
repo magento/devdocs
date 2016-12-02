@@ -4,12 +4,13 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento EE 2.0.6 Release Notes 
 menu_title: Magento EE 2.0.6 Release Notes 
-menu_order: 697
+menu_order: 256
+level3_menu_node: level3child
+level3_subgroup: ee20-relnotes
 version: 2.0
 github_link: release-notes/ReleaseNotes2.0.6EE.md
 ---
 
-<h2>Magento Enterprise Edition 2.0.6</h2>
 We are pleased to present Magento Enterprise Edition 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements.
 
 <div class="bs-callout bs-callout-warning">
