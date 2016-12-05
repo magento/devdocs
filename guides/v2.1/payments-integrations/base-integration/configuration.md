@@ -68,28 +68,26 @@ Your payment method implementation might require adding more dependencies.
 
 In the `config.xml `file in your `%Vendor_Module%` directory, configure the following options of your payment method:
 
-- `debug`: enables debug mode by default, e.g log for request/response
 - `active`: is payment active by default
-- `model`: [payment method facade](#facade) used for integration with Sales and Checkout modules
-<p class="q">What is Payment Method Facade</p>
-- `merchant_gateway_key`: encrypted merchant credential
-- `order_status`: default order status
-- `payment_action`: default action of payment
-- `title`: default title for a payment method
-- `currency`: supported currency
+- `debug`: enables debug mode by default, e.g log for request/response
+- `debugReplaceKeys`: request/response fields, which will be masked in log
 - `can_authorize`: whether payment method supports authorization
 - `can_capture`: whether payment method supports the capture operation
 - `can_void`: whether payment method supports the void operation 
 - `can_use_checkout`: whether payment method is available in checkout
 <p class="q">if not available, no need to add dependency for Checkout module?</p>
+- `currency`: supported currency
 - `is_gateway` is an integration with gateway
 <p class="q">??</p>
-- `sort_order`: payment method order position on checkout/system configuration pages
-- `debugReplaceKeys`: request/response fields, which will be masked in log
+- `merchant_gateway_key`: encrypted merchant credential
+- `model`: [payment method facade](#facade) used for integration with Sales and Checkout modules
+<p class="q">What is Payment Method Facade</p>
+- `order_status`: default order status
 - `paymentInfoKeys`: transaction request/response fields displayed on payment information block
 - `privateInfoKeys`: paymentInfoKeys fields which should not be displayed in customer payment information block
-
-
+- `payment_action`: default action of payment
+- `sort_order`: payment method order position on checkout/system configuration pages
+- `title`: default title for a payment method
 <p class="q">Please add possible values info</p>
 
 Following is the illustration of such configuration (`config.xml` of the SamplePaymentGateway module)
@@ -98,31 +96,39 @@ Following is the illustration of such configuration (`config.xml` of the SampleP
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
-            <sample_gateway>
-                <debug>1</debug>
-                <active>0</active>
-                <model>SamplePaymentGatewayFacade</model>
-                <merchant_gateway_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
-                <order_status>pending_payment</order_status>
+            <braintree>
+                <model>BraintreeFacade</model>
+                <title>Credit Card (Braintree)</title>
                 <payment_action>authorize</payment_action>
-                <title>Payment method (SampleGateway)</title>
-                <currency>USD</currency>
+                <active>0</active>
+                <is_gateway>1</is_gateway>
+                <can_use_checkout>1</can_use_checkout>
                 <can_authorize>1</can_authorize>
                 <can_capture>1</can_capture>
+                <can_capture_partial>1</can_capture_partial>
+                <can_authorize_vault>1</can_authorize_vault>
+                <can_capture_vault>1</can_capture_vault>
+                <can_use_internal>1</can_use_internal>
+                <can_refund_partial_per_invoice>1</can_refund_partial_per_invoice>
+                <can_refund>1</can_refund>
                 <can_void>1</can_void>
-                <can_use_checkout>1</can_use_checkout>
-                <is_gateway>1</is_gateway>
-                <sort_order>1</sort_order>
-                <debugReplaceKeys>MERCHANT_KEY</debugReplaceKeys>
-                <paymentInfoKeys>FRAUD_MSG_LIST</paymentInfoKeys>
-                <privateInfoKeys>FRAUD_MSG_LIST</privateInfoKeys>
-            </sample_gateway>
-        </payment>
-    </default>
-</config>
+                <can_cancel>1</can_cancel>
+                <cctypes>AE,VI,MC,DI,JCB,CUP,DN,MI</cctypes>
+                <useccv>1</useccv>
+                <cctypes_braintree_mapper><![CDATA[{"american-express":"AE","discover":"DI","jcb":"JCB","mastercard":"MC","master-card":"MC","visa":"VI","maestro":"MI","diners-club":"DN","unionpay":"CUP"}]]></cctypes_braintree_mapper>
+                <order_status>processing</order_status>
+                <environment>sandbox</environment>
+                <allowspecific>0</allowspecific>
+                <sdk_url><![CDATA[https://js.braintreegateway.com/js/braintree-2.17.6.min.js]]></sdk_url>
+                <public_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <private_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <masked_fields>cvv,number</masked_fields>
+                <privateInfoKeys>avsPostalCodeResponseCode,avsStreetAddressResponseCode,cvvResponseCode,processorAuthorizationCode,processorResponseCode,processorResponseText,liabilityShifted,liabilityShiftPossible,riskDataId,riskDataDecision</privateInfoKeys>
+                <paymentInfoKeys>cc_type,cc_number,avsPostalCodeResponseCode,avsStreetAddressResponseCode,cvvResponseCode,processorAuthorizationCode,processorResponseCode,processorResponseText,liabilityShifted,liabilityShiftPossible,riskDataId,riskDataDecision</paymentInfoKeys>
+            </braintree>
 {% endhighlight %}
 
-
+<p class="q">There's a number of settings in this config, which are not present in our list</p>
 ### Payment method facade {#facade}
 
 Add the [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration for payment method facade in your `%Vendor_Module/etc/di.xml`.
@@ -142,8 +148,17 @@ The following sample is an illustration of such configuration:
 </virtualType>
 {% endhighlight %}
 
-More details about `commandPool` and `validatorPool` you can find in [Gateway Command Pool]({{site.gdeurl}}payments-integrations/payment-gateway/command-pool.html)
-and [Response Validator]({{site.gdeurl}}payments-integrations/payment-gateway/response-validator.html) topics, we are stop
+The following arguments must be configured:
+
+- `code`: payment method's code
+- `formBlockType`: name of the block class responsible for Payment Gateway Form rendering on a checkout. Since Opepage Checkout uses knockout.js for rendering, this renderer is used only during Checkout process from Admin panel.
+- `infoBlockType`: name of the block class responsible for Transaction/Payment Information details rendering in Order block.
+-`valueHandlerPool`: Value handler pool used for queries to configuration.
+- `validatorPool`: pool 
+- `commandPool`: [pool of gateway commands]({{page.baseurl}}payment-gateway/command-pool.html)
+
+More details about `commandPool` and `validatorPool` you can find in [Gateway Command Pool]({{page.baseurl}}payments-integrations/payment-gateway/command-pool.html)
+and [Response Validator]({{page.baseurl}}payments-integrations/payment-gateway/response-validator.html) topics, we are stop
 our attention on `valueHandlerPool` argument.
 
 > More details about `code`, `formBlockType`, `infoBlockType` you can find in [Payment Sample Module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway#dependency-injection-configuration) description.
