@@ -13,6 +13,7 @@ github_link: payments-integrations/base-integration/payment-action.md
 
 To implement a payment action for a payment method, take the following steps:
 1. Specify and configure the [gateway command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands) for this payment action using dependency injection.
+	1. 
 2. Add the command to the [commands pool]({{page.baseurl}}/payments-integrations/payment-gateway/command-pool.html).
 
 
@@ -81,7 +82,7 @@ Our _authorize command_ has request builder composite and it looks like this:
 The most important builder for us - `payment` builder. The Braintree payment processor requires [Payment Nonce](https://developers.braintreepayments.com/start/overview#payment-method-nonce)
 to process transactions and our builder should send it per each authorization transaction. Your custom payment integrations can
 require similar data (this way is more secure, then receiving card details), and next topic will describes to get
-specific payment data from payment form, now, let's assume, we already have _Payment Nonce_ in payment additional information.
+specific payment data from payment form, now, let's assume, we already have _Payment Nonce_ in payment additional information (order).
 
 And that's how payment builder looks:
 
@@ -113,8 +114,9 @@ class PaymentDataBuilder implements BuilderInterface
 }
 {% endhighlight %}
 
-As you can see, we get _Payment Nonce_ from payment additional information and in this way you can get any
-specific data according to your requirements.
+As you can see, we get _Payment Nonce_ from payment additional information and in this way you can get any specific data (like credit card information) according to your requirements.
+
+If you store credit card info in payment additional information, you need to clear it, to be PCI compliant.
 
 Perhaps, you have a question - "How to set some data from payment form to payment additional information?" - the next
 section will show how to retrieve all required data.
@@ -123,7 +125,7 @@ section will show how to retrieve all required data.
 
 Our payment request builder can read payment information, but how this data will be set into additional information?
 
-In most cases, customers fill all required information (credit card, expiration date, billing address, etc) on payment form.
+In most cases, customers fill all required information (credit card, expiration date, billing address, etc) on checkout payment form.
 So, our payment should provide an ability to display and process payment form on checkout step. Information,
 how to add a custom payment integration to checkout page you can find in [this topic]({{site.gdeurl21}}howdoi/checkout/checkout_payment.html),
 but we should pay our attention on some important things.
@@ -176,11 +178,10 @@ complicated. we need last step to retrieve data from storefront in the backend. 
 mechanisms - where are called [Observers]({{site.gdeurl21}}extension-dev-guide/events-and-observers.html).
  
 ### Read additional data
- 
-Our payment implementation will use _Magento Observers_ to retrieve additional data from payment from and store it
+
+You need to add an observer to retrieve additional data from payment form and store it
 in the payment additional information. In most cases it will be enough to extend
-[AbstractDataAssignObserver]({{site.mage2100url}}app/code/Magento/Payment/Observer/AbstractDataAssignObserver.php)
-and add custom behavior.
+[AbstractDataAssignObserver]({{site.mage2100url}}app/code/Magento/Payment/Observer/AbstractDataAssignObserver.php) and add custom behavior.
 
 That's how observer might looks:
 
@@ -262,8 +263,8 @@ public function assignData(\Magento\Framework\DataObject $data)
 
 There are two events:
 
- * `payment_method_assign_data_payment_code` - specific for current method
- * `payment_method_assign_data` - global for all payments
+ * `payment_method_assign_data_payment_code` - specific for current method (placing order using this payment method)
+ * `payment_method_assign_data` - global for all payments (place order)
  
 What type of event to use - depends on your implementation, but in most cases it will be enough to use the event for
 current payment method.

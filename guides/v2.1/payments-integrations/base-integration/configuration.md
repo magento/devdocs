@@ -66,7 +66,7 @@ Your payment method implementation might require adding more dependencies.
 
 ## Set your payment method options (`config.xml`)
 
-In the `config.xml `file in your `%Vendor_Module%` directory, configure the following options of your payment method:
+In the `config.xml` file in your `%Vendor_Module%` directory, configure the following options of your payment method:
 
 - `active`: is payment active by default
 - `debug`: enables debug mode by default, e.g log for request/response
@@ -75,13 +75,11 @@ In the `config.xml `file in your `%Vendor_Module%` directory, configure the foll
 - `can_capture`: whether payment method supports the capture operation
 - `can_void`: whether payment method supports the void operation 
 - `can_use_checkout`: whether payment method is available in checkout
-<p class="q">if not available, no need to add dependency for Checkout module?</p>
+<p class="q">if not available, no need to add dependency for Checkout module? да</p>
 - `currency`: supported currency
 - `is_gateway` is an integration with gateway
-<p class="q">??</p>
 - `merchant_gateway_key`: encrypted merchant credential
 - `model`: [payment method facade](#facade) used for integration with Sales and Checkout modules
-<p class="q">What is Payment Method Facade</p>
 - `order_status`: default order status
 - `paymentInfoKeys`: transaction request/response fields displayed on payment information block
 - `privateInfoKeys`: paymentInfoKeys fields which should not be displayed in customer payment information block
@@ -90,6 +88,7 @@ In the `config.xml `file in your `%Vendor_Module%` directory, configure the foll
 - `title`: default title for a payment method
 <p class="q">Please add possible values info</p>
 
+These are default settings available for any payment method. Particular payment method configuration can contain any other custom options. 
 Following is the illustration of such configuration (`config.xml` of the SamplePaymentGateway module)
 
 {% highlight xml %}
@@ -128,10 +127,13 @@ Following is the illustration of such configuration (`config.xml` of the SampleP
             </braintree>
 {% endhighlight %}
 
-<p class="q">There's a number of settings in this config, which are not present in our list</p>
+
+
 ### Payment method facade {#facade}
 
 Add the [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration for payment method facade in your `%Vendor_Module/etc/di.xml`.
+
+Facade is the extension of Magento payment adapter.app/code/Magento/Payment/Model/Method/Adapter
 
 The following sample is an illustration of such configuration ([app/code/Magento/Braintree/etc/di.xml#L10]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L10)):
 
@@ -174,7 +176,6 @@ For example, the `can_void` configuration option might depend on payment transac
 </virtualType>
 {% endhighlight %}
 
-<p class="q">"can_void and can_cancel have the same value, is it correct?</p>
 <p class="q">How does configuration show that can_void depends on the transaction status</p>
 
 Pay attention, that you must always specify the default handler. In the example it is config reader for Braintree:
@@ -195,5 +196,3 @@ configuration from database or payment config file.
 Other handlers contain some logic, for example, `can_cancel` option the same as `can_void` and depends if order has paid amount (invoiced),
 your handler can check transaction status or do anything else what you need.
 
-[Next topic]({{site.gdeurl21}}payments-integrations/base-integration/payment-action.html)
-describes how process `authorization` transaction, required infrastructure and customization.

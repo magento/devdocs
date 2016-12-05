@@ -15,6 +15,7 @@ Payment integration for Admin panel is similar to Storefront integration and con
 
  - Payment configuration
  - Blocks implementation
+ - Block template
  - Specific DI settings
  
 ### Payment configuration
@@ -32,10 +33,15 @@ At, we need to update payment configuration file (`Braintree/etc/config.xml`):
 
 The `can_use_internal` option allows to display our payment method in Admin panel.
 
+
 As you can remember, we have specified [`formBlockType`]({{site.gdeurl21}}payments-integrations/base-integration/configuration.html#payment-method-facade)
 argument for our payment facade. This block will be used to display payment form on billing form in Admin panel, in
 most cases will be enough to use `\Magento\Payment\Block\Form\Cc`, but in our case we will use customized `\Magento\Braintree\Block\Form`:
 
+Default \Magento\Payment\Block\Form\. You can specify it, or create a custom implementation extending it.
+
+This method allows, to show only card types available for configured countries, in your payment methods you can use
+it to any required customization.
 {% highlight php startinline=1 %}
 class Form extends Cc
 {
@@ -80,17 +86,18 @@ class Form extends Cc
 }
 {% endhighlight %}
 
-This method allows, to show only card types available for configured countries, in your payment methods you can use
-it to any required customization.
+
 
 Now, need to create template view (similar to [cc.phtml]({{site.mage2100url}}app/code/Magento/Braintree/view/adminhtml/templates/form/cc.phtml))
 and add it to [billing form layout]({{site.mage2100url}}app/code/Magento/Braintree/view/adminhtml/layout/sales_order_create_index.xml):
 
+<p class="q">do we need to name the file exactly like that?</p>
 {% highlight xml %}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="order_create_billing_form">
             <action method="setMethodFormTemplate">
+				<!-- your method code and template -->
                 <argument name="method" xsi:type="string">braintree</argument>
                 <argument name="template" xsi:type="string">Magento_Braintree::form/cc.phtml</argument>
             </action>
