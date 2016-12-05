@@ -15,6 +15,8 @@ A vault for payment methods is a mechanism providing ability to store customer c
 Magento is a [PCI compliant](https://www.pcisecuritystandards.org/) application, thus it does not store card details like: number,
 CVV, expiration date or any other private data for Vault payments only data available from payment providers.
 
+<p class="q">what does it mean "for vault payments"?</p>
+
 This chapter describes how to add Vault functionality to an existing payment method.
 
 The main features are:
