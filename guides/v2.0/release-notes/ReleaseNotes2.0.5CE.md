@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento CE 2.0.5 Release Notes 
 menu_title: Magento CE 2.0.5 Release Notes 
-menu_order: 112
+menu_order: 139
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes
 version: 2.0
