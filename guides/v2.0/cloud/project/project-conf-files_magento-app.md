@@ -266,7 +266,7 @@ hooks:
 `crons` describes processes that are triggered on a
 schedule.
 
-{% collapsible Click to show/hide content %}
+{% collapsible More information about crons: %}
 
 `crons` supports the following:
 
@@ -292,12 +292,10 @@ type: php:5.6
 
 We support PHP versions 5.5, 5.6, and 7.0. The default is 7.0.
 
-{% collapsible Configure PHP options: %}
-
 See one of the following sections for more information:
 
-*	[PHP extensions](#cloud-yaml-platform-php-ext)
-*	[Customize `php.ini` settings](#cloud-yaml-platform-php-set)
+*   [PHP extensions](#cloud-yaml-platform-php-ext)
+*   [Customize `php.ini` settings](#cloud-yaml-platform-php-set)
 
 ### PHP extensions {#cloud-yaml-platform-php-ext}
 You can define additional PHP extensions you want to enable or disable. Example:
@@ -312,6 +310,8 @@ runtime:
     disabled_extensions:
         - sqlite3
 {% endhighlight %}
+
+{% collapsible View PHP extensions: %}
 
 To view the current list of PHP extensions, SSH into your environment and enter the following command:
 
