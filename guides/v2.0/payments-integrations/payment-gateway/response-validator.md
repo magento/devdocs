@@ -79,7 +79,7 @@ class AcceptValidator extends AbstractValidator
 }
 {% endhighlight %}
 
-
+## Pool of validators {#validators_pool} 
 The following sample demonstrates defining a validator's pool and adding validators to this pool for the Braintree payment provider in `di.xml`:
  
 {% highlight xml %}
