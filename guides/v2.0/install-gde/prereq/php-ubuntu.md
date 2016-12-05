@@ -20,7 +20,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 *	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
 *	[PHP 5.6 on Ubuntu 14](#php-56-on-ubuntu-14)
 *	[PHP 5.5 on Ubuntu 14](#php-55-on-ubuntu-14)
-*	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
+*	[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -31,6 +31,8 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 Magento requires:
 
 *	7.0.6 up to 7.1.0
+
+	PHP 7.1 is not supported
 
 	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5.
 *	PHP 5.6.x
@@ -101,7 +103,7 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html">Required PHP settings</a>.
 
 {% endcollapsible %}
 
@@ -113,7 +115,7 @@ If PHP is *not* installed, see one of the following sections:
 
 		apt-get -y update
 		add-apt-repository ppa:ondrej/php
-		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl
+		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip
 		apt-get -y update
 		
 
@@ -132,7 +134,7 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html">Required PHP settings</a>.
 
 {% endcollapsible %}
 
@@ -157,13 +159,9 @@ If PHP is *not* installed, see one of the following sections:
   		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
 
-3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
+3.	[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
-
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-{% include install/php-config.html %}
-
 
 #### Related topics
 

@@ -90,14 +90,14 @@ To create a new CMS page link the user must enter data of all required fields. T
 
 <h4 id="mtf_repo_ex_set">Settings form</h4>
 
-![cms_page_link "Settings" data set for entire fixture view on GUI]({{ site.baseurl }}common/images/mtf_ent_fixt_repo_cms_set_ui.png)
+![cms_page_link "Settings" data set for entire fixture view on GUI]({{ site.baseurl }}common/images/ftf/mtf_ent_fixt_repo_cms_set_ui.png)
 
 - Set the **Type** field (`field name="code"`) to "CMS Page Link". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<field name="code" xsi:type="string">CMS Page Link</field>`.
 - Set the **Design Theme** field (`field name="theme_id"`) to "Magento Blank". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<field name="theme_id" xsi:type="string">Magento Blank</field>`.
 
 <h4 id="mtf_repo_ex_store">Storefront Properties form</h4>
 
-![cms_page_link "Storefront properties" data set for entire fixture view on GUI]({{ site.baseurl }}common/images/mtf_ent_fixt_repo_cms_set_ui_storefront.png)
+![cms_page_link "Storefront properties" data set for entire fixture view on GUI]({{ site.baseurl }}common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_storefront.png)
 
 - Set the **Frontend App Title** field to "Cms Page Link [random integer value]". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<field name="title" xsi:type="string">Cms Page Link %isolation%</field>`.
 - Set the **Assign to Store Views** field to "All Store Views". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a>:
@@ -117,7 +117,7 @@ To create a new CMS page link the user must enter data of all required fields. T
 
 <h4 id="mtf_repo_ex_front">Frontend App Options</h4>  
 
-![cms_page_link "Frontend App Options" data set for entire fixture view on GUI]({{ site.baseurl }}common/images/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png)
+![cms_page_link "Frontend App Options" data set for entire fixture view on GUI]({{ site.baseurl }}common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png)
 
 - Set the **Anchor Custom Text** field to "text".
 - Set the **Anchor Custom Title** field to "anchor title".
@@ -256,7 +256,7 @@ Case 1. **all_pages** data set:
 * Set the **Display on** field (`item name="page_group"`) to "All Pages", which is the subcategory of "Generic Pages" (see drop-down menu on the following screenshot). It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="page_group" xsi:type="string">Generic Pages/All Pages</item>`
 * Set the **Container** field (`item name="block"`) to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a>  `<item name="block" xsi:type="string">Main Content Area</item>`
 
-![all_pages data set view on GUI]({{ site.baseurl }}common/images/mtf_repository_layout-allpages_w_dropd.png)
+![all_pages data set view on GUI]({{ site.baseurl }}common/images/ftf/mtf_repository_layout-allpages_w_dropd.png)
 
 Case 2. **on_category** data set:
 
@@ -265,7 +265,7 @@ Case 2. **on_category** data set:
 * Set the in a tree of categories the **Default Category** (`item name="entities"`). It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="entities" xsi:type="string">category::default_subcategory</item>`.
 * Set the **Container** field (`item name="block"`) to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="block" xsi:type="string">Main Content Area</item>`.
 
-![on_category data set view on GUI]({{site.baseurl}}common/images/mtf_repository_layout-oncategory_w_dropd.png)
+![on_category data set view on GUI]({{site.baseurl}}common/images/ftf/mtf_repository_layout-oncategory_w_dropd.png)
 
 Case 3. **for_cms_page_link** data set:
 
@@ -273,7 +273,7 @@ Case 3. **for_cms_page_link** data set:
 * Set the **Container** field (`item name="block"`) to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="block" xsi:type="string">Main Content Area</item>`.
 * Set the **Template** field (`item name="template"`) to "CMS Page Link Block Template". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<`item name="template" xsi:type="string"`>CMS Page Link Block Template</item>`.
 
-![layout_for_cms_page_link data set view on GUI]({{site.baseurl}}common/images/mtf_repository_layout-for-cms-page-link_w_dropd.png)
+![layout_for_cms_page_link data set view on GUI]({{site.baseurl}}common/images/ftf/mtf_repository_layout-for-cms-page-link_w_dropd.png)
 
 The repository code for these cases follows:
 
@@ -412,11 +412,11 @@ Each field contains 4 items:
 
 The following screenshot helps to understand the `scope_id` attribute.
 
-![authorizenet data set view on GUI]({{site.baseurl}}common/images/mtf_ent_fixt_repo_config_scope-id.png)
+![authorizenet data set view on GUI]({{site.baseurl}}common/images/ftf/mtf_ent_fixt_repo_config_scope-id.png)
 
 Let's see the `authorizenet` data set in action. Fields defined in repository are in orange. Other fields are set in default values.
 
-![authorizenet data set view on GUI]({{site.baseurl}}common/images/mtf_repo_config_ex.png)
+![authorizenet data set view on GUI]({{site.baseurl}}common/images/ftf/mtf_repo_config_ex.png)
 
 ## Merging repositories {#mtf_repository_merge}
 
@@ -424,7 +424,7 @@ The FTF enables you to split data sets among different modules. The configuratio
 
 Modules that require configuration adjustment store `ConfigData.xml` in their `Repository` directory. All `ConfigData.xml` repositories have reference to the `Config` repository class. See the example on the following screenshot:
 
-<a href="{{site.baseurl}}common/images/mtf_repo_merge_ex.png"><img src="{{site.baseurl}}common/images/mtf_repo_merge_ex.png" /></a>
+<a href="{{site.baseurl}}common/images/ftf/mtf_repo_merge_ex.png"><img src="{{site.baseurl}}common/images/ftf/mtf_repo_merge_ex.png" /></a>
 
 As you can see, the `ConfigData.xml` of the [`Magento_Authorizenet` module]({{site.mage2000url}}app/code/Magento/Authorizenet) and the `ConfigData.xml` of the [`Magento_Backend` module]({{site.mage2000url}}app/code/Magento/Backend) have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
 

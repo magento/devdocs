@@ -16,7 +16,7 @@ redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_config.html
 
 ### Edit `phpunit.xml` to configure PHPUnit {#mtf_quickstart_config_phpunitxml}
 
-Find `phpunit.xml` in `<magento2>/dev/tests/functional`, and open it in editor.
+Find `phpunit.xml` in `<magento2_root_dir>/dev/tests/functional`, and open it in editor.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you cannot find <code>phpunit.xml</code>, create it from <code>phpunit.xml.dist</code>.</p>
@@ -43,7 +43,7 @@ Example:
   <p>The default configuration is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
 </div>
 
-Find `config.xml` in `<magento2>/dev/tests/functional/etc`, and open it in editor.
+Find `config.xml` in `<magento2_root_dir>/dev/tests/functional/etc`, and open it in editor.
 
 #### Set credentials for Magento Admin under test {#mtf_quickstart_config_configxml_credent-backend}
 In `<application>` element find elements `<backendLogin>` and `<backendPassword>`. Change content of these elements to your actual credentials for Magento Admin URL.
@@ -53,7 +53,7 @@ The default browser is **Mozilla Firefox**.
 
 If you want to use another browser for tests you have to specify it in `config.xml`.
 
-Copy `<server>` element from `<magento2>/dev/tests/functional/vendor/magento/mtf/etc/config.xml>` and paste it in `<magento2>/dev/tests/functional/etc/config.xml` after `<install>` element.
+Copy `<server>` element from `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc/config.xml>` and paste it in `<magento2_root_dir>/dev/tests/functional/etc/config.xml` after `<install>` element.
 
 Enter actual data in `<browserName>` and `<browser>` attributes.
 
@@ -80,7 +80,7 @@ Example for Google Chrome:
 
 ### Edit `credentials.xml` to work with Magento modules that requires credentials {#mtf_quickstart_config_credentialsxml}
 
-Find `credentials.xml` in `<magento2>/dev/tests/functional`, and open it in editor.
+Find `credentials.xml` in `<magento2_root_dir>/dev/tests/functional`, and open it in editor.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you cannot find <code>credentials.xml</code>, create it from <code>credentials.xml.dist</code>.</p>

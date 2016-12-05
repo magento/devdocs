@@ -17,7 +17,7 @@ See <a href="https://www.digitalocean.com/community/tutorials/how-to-install-jav
 
 Be sure to install the JDK and *not* the JRE.
 
-	apt-get install openjdk-7-jdk
+	yum -y install java-1.7.0-openjdk
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Java version 7 might not be available for all operating systems. For example, you can <a href="http://packages.ubuntu.com/" target="_blank">search the list of available packages for Ubuntu</a>.</p>

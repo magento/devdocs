@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Step 3, Install the CLI
 menu_title: Step 3, Install the CLI
 menu_order: 12
@@ -17,7 +17,7 @@ The Magento Enterprise Cloud Edition command-line interface (CLI) helps you mana
 
 To install the Magento Enterprise Cloud Edition CLI:
 
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+1.	Log in to your local development machine, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.	Change to a directory to which the Magento file system owner has write access (for example, the web server docroot).
 1.	Enter the following command:
 

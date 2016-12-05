@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 20_live
+subgroup: 40_live
 title: Overview of staging and production
 menu_title: Overview of staging and production
 menu_order: 5

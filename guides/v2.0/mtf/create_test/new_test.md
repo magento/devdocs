@@ -20,7 +20,7 @@ The FTF helps to create a new test, you can extend an out-of-the-box test, or cr
 
 ### Extend an out-of-the-box test {#extending-oob-test}
 
-You can extend a test by adding or replacing a [test entity][]. Test entities for the module are stored in the `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>` directory.
+You can extend a test by adding or replacing a [test entity][]. Test entities for the module are stored in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/<testing_module>` directory.
 
 #### Usage {#ext-usage}
 
@@ -38,7 +38,7 @@ Example use cases:
 
 If new modules are added to Magento you would need to create a new test to check the functionality.
 
-New test must be stored in the corresponding module `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>`.
+New test must be stored in the corresponding module `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/<testing_module>`.
 
 Each test consists of four main components: a test object, test data, a test flow, a test assertion.
 

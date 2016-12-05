@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Deploy the Magento software to the cloud (create a new project)
 menu_title: Deploy the Magento software to the cloud (create a new project)
 menu_order: 50

@@ -24,7 +24,7 @@ There are two rule types available:
 - **allow**, specifying what must be included during the test run
 - **deny**, specifying what must be excluded during the test run
 
-The rules for a test case are defined in a separate `.xml` file. (Recommended naming: use lowercase letters and underscore as a separator). One file contains rules for one test suite. All files are stored in the `<magento2>/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests` directory by default. Only one test suite can be run at a time.
+The rules for a test case are defined in a separate `.xml` file. (Recommended naming: use lowercase letters and underscore as a separator). One file contains rules for one test suite. All files are stored in the `<magento2_root_dir>/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests` directory by default. Only one test suite can be run at a time.
 
 The example of the default test suite:
 
@@ -73,14 +73,14 @@ Learn more details in next topics.
 
 ## Configure `phpunit.xml` {#configure}
 
-Define the test suite to be run in the `<magento2>dev/tests/functional/phpunit.xml`:
+Define the test suite to be run in the `<magento2_root_dir>dev/tests/functional/phpunit.xml`:
 
 {% highlight xml %}
 <env name = "testsuite_rule" value = <test_suite_name> />
 <env name = "testsuite_rule_path" value = <test_suite_directory> />
 {% endhighlight %}
 
-The default test suite is `<magento2>/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests/basic.xml`.
+The default test suite is `<magento2_root_dir>/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests/basic.xml`.
 
 In `phpunit.xml`:
 
@@ -94,7 +94,7 @@ In `phpunit.xml`:
 To run a test suite enter the following commands from your terminal:
 
 {% highlight bash %}
-cd phpunit <magento2>/dev/tests/functional
+cd phpunit <magento2_root_dir>/dev/tests/functional
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
 {% endhighlight %}
 

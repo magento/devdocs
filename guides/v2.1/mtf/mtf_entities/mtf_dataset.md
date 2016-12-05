@@ -103,7 +103,7 @@ A data set should be placed in the same directory with a corresponding test case
 
 Let's see an example for `CreateSimpleProductEntityTest`. A data set and its corresponding [test case][] must be placed in the `<magento2>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product` directory.
 
-<a href="{{ site.baseurl }}common/images/mtf_dataset_dir.png"><img src="{{ site.baseurl }}common/images/mtf_dataset_dir.png"/></a>
+<a href="{{ site.baseurl }}common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_dataset_dir.png"/></a>
 
 The `CreateSimpleProductEntityTest.xml` data set contains:
 
