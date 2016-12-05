@@ -10,11 +10,12 @@ version: 2.1
 github_link: payments-integrations/vault/vault-intro.md
 ---
 
-In this section you can find information about what is Vault and how to integrate it to existing payments methods.
+A vault for payment methods is a mechanism providing ability to store customer credit cards information on the trusted payments gateways (Braintree, PayPal) instead of storing them on your server.
 
-The Vault provides mechanism to store customer credit cards on the trusted payments gateways (Braintree, PayPal) instead own servers.
-And according to [PCI compliance](https://www.pcisecuritystandards.org/) Magento does not store card details like: number,
+Magento is a [PCI compliant](https://www.pcisecuritystandards.org/) application, thus it does not store card details like: number,
 CVV, expiration date or any other private data for Vault payments only data available from payment providers.
+
+This chapter describes how to add Vault functionality to an existing payment method.
 
 The main features are:
 
