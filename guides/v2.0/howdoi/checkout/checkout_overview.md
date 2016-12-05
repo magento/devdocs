@@ -2,21 +2,29 @@
 layout: default
 group: howdoi
 subgroup: checkout
-title: Customize Checkout
-menu_title: Customize Checkout
+title: Customize checkout
+menu_title: Customize checkout
 menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: howdoi/checkout/checkout_overview.md
 ---
 
-Magento checkout is implemented using the UI components. 
+## Customize checkout 
+
+### Default checkout overview
+
+Magento checkout is implemented using the [UI components](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/bk-ui_comps.html). 
 Out of the box, the checkout consists of two steps:
  
  - Shipping Information
  - Review and Payment Information
 
+The checkout totals and the corresponding side-bar are only displayed after the first step is completed. 
 
+The only exception is checkout of virtual and/or downloadable products: if there are only these  types of products in the shopping cart, checkout is automatically transformed to one-step procedure, because shipping information is not required.
+
+### List of described customizations
 You can customize the default checkout in many ways. Here the following customizations are described:
 
  - [Add a new checkout step]({{page.baseurl}}howdoi/checkout/checkout_new_step.html)
@@ -27,7 +35,7 @@ You can customize the default checkout in many ways. Here the following customiz
  - [Add custom input mask for ZIP code]({{page.baseurl}}howdoi/checkout/checkout_zip.html)
  - [Add a custom template for a form field on Checkout page]({{page.baseurl}}howdoi/checkout/checkout_edit_form.html)
  - [Add a new input form to checkout]({{page.baseurl}}howdoi/checkout/checkout_form.html)
- - [Add a new field in address form]({{page.baseurl}}howdoi/checkout/checkout_new_field.md)
+ - [Add a new field in address form]({{page.baseurl}}howdoi/checkout/checkout_new_field.html)
  - [Add custom shipping address renderer]({{page.baseurl}}howdoi/checkout/checkout_address.html)
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom module. 

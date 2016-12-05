@@ -5,6 +5,7 @@ subgroup: Release Notes
 title: Magento EE 2.0.10 Release Notes
 menu_title: Magento EE 2.0.10 Release Notes
 menu_order: 20
+version: 2.0
 github_link: release-notes/ReleaseNotes2.0.10EE.md
 ---
 *	TOC
@@ -226,7 +227,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. See
-<a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}

@@ -46,7 +46,7 @@ There are two types of typified elements: default typified elements and Magento 
 
 #### Default typified elements {#basic_class}
 
-Default typified elements are stored in the `<magento2>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Client/Element` directory.
+Default typified elements are stored in the `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Client/Element` directory.
 
 A root class for a typified element is the [`\Magento\Mtf\Client\Element\SimpleElement`][] class. This class implements [`ElementInterface`][] which contains methods such as `click()`, `doubleClick()`, `isVisible()`, `setValue()`, `getValue()`, `getText()`, `find()`, `dragAndDrop()`, `getElements()` etc.
 
@@ -61,7 +61,7 @@ A root class for a typified element is the [`\Magento\Mtf\Client\Element\SimpleE
 
 #### Magento custom typified elements {#magento_class}
 
-Magento custom typified elements are stored in the `<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Element` directory.
+Magento custom typified elements are stored in the `<magento2_root_dir>/dev/tests/functional/lib/Magento/Mtf/Client/Element` directory.
 
 | UI element | FTF class | Notes|
 |---|---|---|
@@ -83,7 +83,7 @@ Magento custom typified elements are stored in the `<magento2>/dev/tests/functio
 
 ## How to create a class for the typified element {#create}
 
-__Step 1.__ Create a PHP class in the `<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Element` directory
+__Step 1.__ Create a PHP class in the `<magento2_root_dir>/dev/tests/functional/lib/Magento/Mtf/Client/Element` directory
  
  It must be named according to the following naming convention. Two capital letters in the name: the first letter and a capital `E` in the `Element.php`. For example: `OptgroupselectElement.php`.
  
@@ -198,8 +198,8 @@ The following code is a corresponding mapping with the typified element `optgrou
 
 <!-- PICTURE DEFINITIONS -->
 
-[A typified element mapping example in GUI]: {{site.baseurl}}common/images/mtf_typ_element_map_gui.png
-[A typified element example in the browser]: {{site.baseurl}}common/images/mtf_typ_element_brows.png
+[A typified element mapping example in GUI]: {{site.baseurl}}common/images/ftf/mtf_typ_element_map_gui.png
+[A typified element example in the browser]: {{site.baseurl}}common/images/ftf/mtf_typ_element_brows.png
 
 
 <!-- LINK DEFINITIONS -->
@@ -208,7 +208,7 @@ The following code is a corresponding mapping with the typified element `optgrou
 [`ElementInterface`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/ElementInterface.php
 [form mapping]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
 [`\Magento\Mtf\Client\Element\OptgroupselectElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php
-[`<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Element`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element
+[`<magento2_root_dir>/dev/tests/functional/lib/Magento/Mtf/Client/Element`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element
 [FTF blocks]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
 [\Magento\Catalog\Test\Block\Adminhtml\Category\Tree]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Category/Tree.php
 

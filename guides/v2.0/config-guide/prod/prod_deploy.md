@@ -11,9 +11,7 @@ github_link: config-guide/prod/prod_deploy.md
 redirect_from: /guides/v2.0/howdoi/deploy/deploy-to-prod.html
 ---
 
-The topic that used to be here involved significant downtime when deploying to production and we realize that is not acceptable.
-
-We're currently researching the best way to deploy Magento to production and when it's verified and tested, we'll publish that information here.
+We're currently working with internal teams to research and publish best practice recommendations for deploying the Magento application to production.
 
 If you have input, we'd like to hear from you in [GitHub issue 419](https://github.com/magento/devdocs/issues/419).
 

@@ -1,14 +1,22 @@
 ---
 layout: default
-group: 
+group:
 subgroup: Architecture
 title: Libraries
 menu_title: Libraries
-menu_order: 
+menu_order:
 version: 2.0
 github_link: architecture/arch_libraries.md
 redirect_from: /guides/v1.0/architecture/arch_libraries.html
 ---
+
+<!---
+This topic is duplicated by:
+architecture/archi_perspectives/components/arch_libraries.md,
+which is currently published on DevDocs.
+
+Thus, the HTML elements in this topic haven't been fixed.
+-->
 
 <h2 id="m2arch-libraries-overview">Overview</h2>
 The Magento software can use the following types of libraries:
@@ -43,4 +51,3 @@ For example:
 * <a href="{{page.baseurl}}architecture/modules/mod_intro.html">Modules</a>
 * <a href="{{page.baseurl}}architecture/arch_themes.html">Themes</a>
 * <a href="{{page.baseurl}}architecture/arch_translations.html">Language packages</a>
-

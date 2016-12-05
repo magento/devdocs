@@ -3,6 +3,8 @@ layout: m1x_rest
 title: GET Filters
 ---
 
+<em>JSON responses on this page contributed by Tim Reynolds</em>
+
 				    <p>Some requests use GET parameters in the URL. These are as follows:</p>
 
 <ul>
@@ -68,5 +70,8 @@ title: GET Filters
 
 <p><a href="http://magentohost/api/rest/products/?order=entity_id&amp;filter\[0\]\[attribute\]=description&amp;filter\[0\]\[in\]\[0\]=simple01">http://magentohost/api/rest/products/?order=entity_id&amp;filter[0][attribute]=description&amp;filter[0][in][0]=simple01</a></p>
 
+<p>To filter customers by email address:</p>
+
+<p><a href="http://magentohost/api/rest/customers?filter\[1\]\[attribute\]=email&amp;filter\[1\]\[in\]\[0\]=ryan@test.com">http://magentohost/api/rest/customers?filter[1][attribute]=email&amp;filter[1][in][0]=ryan@test.com</a></p>
 
 <?php include(__ROOT__ . 'footer.php'); ?>		    

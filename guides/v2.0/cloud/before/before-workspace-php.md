@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Step 5, Set up PHP and MySQL
 menu_title: Step 5, Set up PHP and MySQL
 menu_order: 20
@@ -29,12 +29,15 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 4.	Save your changes to `php.ini` and exit the text editor.
 5.	Restart your web server:
 
-	*	CentOS: `service httpd restart`
-	*	Ubuntu: `service apache2 restart`
+	*	Apache
+
+		*	CentOS: `service httpd restart`
+		*	Ubuntu: `service apache2 restart`
+	*	nginx: `service nginx restart`
 
 {% endcollapsible %}
 
-## Set up MySQL
+## Set up MySQL {#cloud-mysql}
 The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation but the Magento Enterprise Cloud Edition cluster uses a value of `3`.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
@@ -43,7 +46,7 @@ To avoid issues, we recommend you set `auto_increment_increment=3`.
 
 First, view the current value:
 
-	mysqladmin variables -u <root user name> -p
+	mysqladmin variables -u <root user name> -p | grep 'auto_increment'
 
 If necessary, set `auto_increment_increment` to 3:
 
@@ -58,5 +61,5 @@ If necessary, set `auto_increment_increment` to 3:
 {% endcollapsible %}
 
 #### Next steps
-*	If the Magento software isn't installed in a cloud environment, see [create a new project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html) or [import an existing project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import.html)
+*	If the Magento software isn't installed in a Cloud environment, see [create a new project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html) or [import an existing project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import.html)
 *	Otherwise, see [Set up an environment and install the Magento software locally]({{ page.baseurl }}cloud/access-acct/set-up-env.html)

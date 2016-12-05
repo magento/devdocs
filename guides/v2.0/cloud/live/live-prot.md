@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 20_live
+subgroup: 40_live
 title: Protective block
 menu_title: Protective block
 menu_order: 100

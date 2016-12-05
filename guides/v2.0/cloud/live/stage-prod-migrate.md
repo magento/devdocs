@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 20_live
+subgroup: 40_live
 title: Migrate data
 menu_title: Migrate data
 menu_order: 10
@@ -60,38 +60,16 @@ To migrate static files:
 ### Migrate the database {#cloud-live-migrate-db}
 To migrate the database:
 
-1.	SSH to the master branch:
+1.	SSH to the master branch of your integration environment:
 
 		magento-cloud environment:ssh
-3.	Find the database login information:
+2.	Find the database login information:
 
 		php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+3.	Create a database dump:
 
-	Sample output follows:
-
-		Array
-		(
-    		[0] => stdClass Object
-        	(
-            	[username] => user
-            	[password] =>
-            	[ip] => 192.0.2.60
-            	[host] => database.internal
-            	[query] => stdClass Object
-                	(
-               	     	[is_master] => 1
-               		)
-
-            	[path] => main
-            	[scheme] => mysql
-            	[port] => 3306
-        	)
-
-		)
-7.	Create a database dump:
-
-		mysqldump -h database.internal --single-transaction main | gzip - > /tmp/database.sql.gz
-8.	Transfer the database dump to staging or production:
+		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main | gzip - > /tmp/database.sql.gz
+4.	Transfer the database dump to staging or production:
 
 	*	Staging: `rsync -azvP /tmp/database.sql.gz <project ID>_stg@<project ID>.ent.magento.cloud:/tmp`
 	*	Production: `rsync -azvP /tmp/database.sql.gz <project ID>@<project ID>.ent.magento.cloud:/tmp`
@@ -107,6 +85,25 @@ To migrate the database:
 	Using the example from step 2,
 
 		zcat database.sql.gz | mysql -u user main
+
+#### Troubleshooting the database migration
+If you set up stored procedures or views in your database, the following error might display during the import:
+
+	ERROR 1277 (42000) at line <number>: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
+
+The reason is that stored procedures and views both use `"DEFINER='root'@'localhost'"`, and you don't have `root` user access to the staging or production databases.
+
+To solve the issue, create another database dump, replacing the `DEFINER` string with an empty string. 
+
+You can do this using a text editor or by using the following command:
+
+	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main | gzip | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > /tmp/database_no-definer.sql.gz
+
+Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>After migrating the database, you can set up your stored procedures or views in staging or production the same way you did in your integration environment.</p>
+</div> 
 
 #### Next step
 [Test]({{ page.baseurl }}cloud/live/stage-prod-test.html)

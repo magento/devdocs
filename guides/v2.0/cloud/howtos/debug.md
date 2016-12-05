@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
+subgroup: 15_howto
 title: Run a PHP debugger
 menu_title: Run a PHP debugger
-menu_order: 25
+menu_order: 100
 menu_node: 
 version: 2.0
 github_link: cloud/howtos/debug.md

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Use the project Web Interface
 menu_title: Use the project Web Interface
 menu_order: 3

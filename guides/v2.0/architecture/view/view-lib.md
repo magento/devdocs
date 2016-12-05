@@ -1,58 +1,58 @@
 ---
 layout: default
-group: 
-subgroup: View library
-title: View library
-menu_title: View library
-menu_order: 
+group:
+subgroup: The View library
+title: The View library
+menu_title: The View library
+menu_order:
 version: 2.0
 github_link: architecture/view/view-lib.md
 redirect_from: /guides/v1.0/architecture/view/view-lib.html
 ---
 
-{{ Magento\_View Library }}
+## The View library
+{:.no_toc}
 
-<h2>Overview</h2>
+* TOC
+{:toc}
+
+
+## Overview
 
 An independent view layer domain, the View component was created to eliminate
-global dependencies
-on `Magento_Core`, `Magento_Backend`, `Magento_Adminhtml` and `Magento_Page` modules
+global dependencies on `Magento_Core`, `Magento_Backend`, `Magento_Adminhtml` and `Magento_Page` modules
 for HTML content rendering. All application modules perform rendering using the
 View component, and remain independent from each other.
 
-The View component is represented
-as `Magento\Framework\View` library: `/lib/internal/Magento/Framework/View`.
+The View component is represented as `Magento\Framework\View` library: `/lib/internal/Magento/Framework/View`.
 
-<h2>Using Magento\Framework\View Library</h2>
+## Using Magento\Framework\View library
 
-The View component contains basic classes, factories and interfaces
-used to implement HTML content rendering  for the frontend and backend
-application areas. 
+The View component contains basic classes, factories and interfaces used to implement HTML content rendering for the frontend and backend application areas. 
 
-<h2>Magento\View Library Components</h2>
+## Magento\View Library components
 
 The `Magento\Framework\View` library has the following components:
 
--   Template Engine
+* Template Engine
 
--   Page Assets
+* Page Assets
 
--   Element (Block)
+* Element (Block)
 
--   Design
+* Design
 
-    -   File Resolution
+    * File Resolution
 
-    -   Fallback
+    * Fallback
 
-    -   Theme
+    * Theme
 
--   Layout.
+* Layout.
 
-<h2>Magento\Framework\View Library Dependencies</h2>
+## Magento\Framework\View library dependencies
 
-The `Magento\Framework\View` library closely interacts with other Magento
-libraries and modules, so it has multiple dependencies. 
+The `Magento\Framework\View` library closely interacts with other Magento libraries and modules, so it has multiple dependencies. 
 
 `Magento\Framework\View` depends on the following Magento libraries:  
 

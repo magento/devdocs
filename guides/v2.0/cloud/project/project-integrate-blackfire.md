@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: Blackfire integration
 menu_title: Blackfire integration
 menu_order: 105
@@ -26,7 +26,7 @@ We recommend you enable the Blackfire integration in an environment (that is, br
 
 To enable Blackfire:
 
-1.	Log in to the server on which your SSH keys are stored.
+1.	Log in to the machine on which your SSH keys are stored.
 1.	Log in to your Magento Enterprise Cloud Edition project.
 
 		magento-cloud login

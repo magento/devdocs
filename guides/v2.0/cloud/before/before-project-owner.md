@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 03_setup
+subgroup: 06_setup
 title: Account owner tasks
 menu_title: Account owner tasks
 menu_order: 1
@@ -92,12 +92,12 @@ Initially, a super user must create the project in any of the following ways:
 
 {% endcollapsible %}
 
-## Provide access to Blackfire and New Relic
+## Blackfire and New Relic credentials {#cloud-owner-creds}
 Your project includes Blackfire and New Relic credentials. Only you&mdash;the account owner&mdash;can access them. You should provide these credentials to technical people as needed.
 
 {% collapsible To provide access to Blackfire and New Relic: %}
 
-### Blackfire credentials {#cloud-owner-creds}
+### Blackfire credentials 
 To get your Blackfire credentials:
 
 1.	As the Magento Enterprise Cloud Edition account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Enterprise Cloud Edition project.

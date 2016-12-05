@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: First-time setup (developers)
 menu_title: First-time setup (developers)
 menu_order: 1
