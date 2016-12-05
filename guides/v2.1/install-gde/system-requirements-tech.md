@@ -2,13 +2,13 @@
 layout: default
 group: install_pre
 subgroup: Getting Started
-title: Magento 2.0.x technology stack requirements
-menu_title: Magento 2.0.x technology stack requirements
+title: Magento 2.1.x technology stack requirements
+menu_title: Magento 2.1.x technology stack requirements
 menu_node: 
-menu_order: 3
-version: 2.0
-github_link: install-gde/system-requirements-2.0-tech.md
-redirect_from: /guides/v1.0/install-gde/system-requirements.html
+menu_order: 2
+version: 2.1
+github_link: install-gde/system-requirements-tech.md
+redirect_from: /guides/v2.1/install-gde/system-requirements-2-1.tech.html
 ---
 
 ### Operating systems (Linux x86-64)
@@ -31,15 +31,23 @@ Composer is required for developers who wish to contribute to the Magento 2 code
 
 MySQL 5.6
 
+Magento application version 2.1.2 and later are compatible with MySQL 5.7.
+
 MariaDB and Percona are compatible with Magento because we support MySQL 5.6 APIs.
 	
 ### PHP 
 
-*	5.6.x
-*	5.5.x, where x is 22 or greater
-*	7.0.2, 7.0.6 up to but not including 7.1, except for 7.0.5
+*	5.6.x (versions 2.1.0 and 2.1.1)
+*	5.6.5 and later (version 2.1.2)
+*	7.0.2, 7.0.6 up to 7.1 (all 2.1.x versions)
+	
+	7.0.4 is supported by 2.1.2 and later only
 
-	There is a [known PHP 7.0.5 issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html); to avoid the issue, do not use PHP 7.0.5. 
+	PHP 7.1 is _not_ supported
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>Magento 2.1.x no longer supports PHP 5.5.</p>
+</div>
 
 PHP documentation: <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
@@ -72,7 +80,7 @@ If you must install it separately, see the <a href="http://php.net/manual/en/opc
 #### PHP settings
 We recommend particular PHP configuration settings, such as `memory_limit`, that can avoid common problems when using Magento.
 
-For more information, see our recommendations for <a href="{{page.baseurl}}install-gde/prereq/php-centos.html#instgde-prereq-timezone">CentOS</a> and <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a>. 
+For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html). 
 
 ### SSL
 *	A valid security certificate is required for HTTPS.
@@ -84,7 +92,7 @@ For more information, see our recommendations for <a href="{{page.baseurl}}insta
 	*	[More information about PayPal]({{page.baseurl}}install-gde/system-requirements_tls1-2.html)
 
 	*	[More information about `repo.magento.com`]({{ page.baseurl }}release-notes/tech_bull_tls-repo.html)
-
+	
 ### Mail server
 Mail Transfer Agent (MTA) or an SMTP server
 
@@ -98,6 +106,10 @@ Mail Transfer Agent (MTA) or an SMTP server
 	*   Apache Solr 4.x
  
     	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Solr search</a> can be used as a search provider. Available for Magento Enterprise Edition (EE) only.
+
+    *	Elasticsearch versions 1.0 and later up to version 5.0
+
+    	For additional details, see [Elasticsearch supported versions]({{ page.baseurl }}config-guide/elasticsearch/es-overview.html#es-spt-versions)
 
 	*	RabbitMQ 3.5
 

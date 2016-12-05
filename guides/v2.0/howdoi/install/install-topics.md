@@ -17,7 +17,7 @@ github_link: howdoi/install/install-topics.md
 *	<a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade (post-installation)</a>
 
 ## Configuration
-*	<a href="{{page.baseurl}}config-guide/config/caching.html">Set up caching (general)</a>
+*	<a href="{{page.baseurl}}config-guide/cache/caching.html">Set up caching (general)</a>
 *	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Set up Redis</a>
 *	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Set up Varnish</a>
 *	Common configuration commands:

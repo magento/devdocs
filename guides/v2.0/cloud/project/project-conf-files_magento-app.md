@@ -33,7 +33,7 @@ This file controls the application and the way it is built and deployed on Magen
 [Sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/get-help.html">Support issue</a>.</p>
+  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/get-help.html">Support ticket</a>.</p>
 </div>
 
 The following sections discuss properties in `.magento.app.yaml`.
@@ -383,7 +383,7 @@ For example, if you need to increase the PHP memory limit:
 
 	memory_limit = 768M
 
-For a list of recommended PHP configuration settings, see [Set PHP configuration options]({{page.baseurl}}install-gde/prereq/php-centos.html#instgde-prereq-timezone).
+For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 After pushing your file, you can check that the custom PHP configuration
 has been added to your environment by SSHing into your environment and entering:

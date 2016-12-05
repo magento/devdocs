@@ -18,7 +18,7 @@ github_link: install-gde/prereq/php-ubuntu.md
 *	<a href="#ubuntu-verify-php">Verify PHP is installed</a>
 *	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
 *	<a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</a>
-*	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
+*	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html">Required PHP settings</a>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -28,7 +28,9 @@ github_link: install-gde/prereq/php-ubuntu.md
 <h2 id="php-support">PHP versions supported</h2>
 Magento requires:
 
-*	7.0.2, 7.0.6 up to 7.1.0
+*	7.0.2, 7.0.6 up to but not including 7.1.0
+
+	PHP 7.1 is not supported
 *	PHP 5.6.x
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -95,7 +97,7 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html">Required PHP settings</a>.
 
 {% endcollapsible %}
 
@@ -125,12 +127,11 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
 
 {% endcollapsible %}
 
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-{% include install/php-config.html %}
+#### Next
+[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
 
 
 #### Related topics
