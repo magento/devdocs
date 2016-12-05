@@ -9,9 +9,24 @@ version: 2.1
 github_link: payments-integrations/base-integration/payment-action.md
 ---
 
-## Payments Processing
+## Adding command overview
 
-We already have created payment method and in this topic will create `authorize` payment action.
+To implement a payment action for a payment method, take the following steps:
+1. Specify and configure the [gateway command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands) for this payment action using dependency injection.
+2. Add the command to the [commands pool]({{page.baseurl}}/payments-integrations/payment-gateway/command-pool.html).
+
+
+## Configure the command
+
+The gateway command for the payment action must be configured in the `di.xml` file of your module. Conventionally its location must be `<your_module_dir>/etc/di.xml`
+<p class="q">is payment action a term?</p>
+
+Configure the command as described in [Gateway Command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands).
+
+One of the options you specify for a command, is 
+
+## Example: Implementing the `authorize` payment action
+We have already created payment method and in this topic will create `authorize` payment action.
 
 In the [previous topic]({{site.gdeurl21}}payments-integrations/base-integration/configuration.html#payment-method-facade)
 we configured payment method with _Command Pool_ and now need to add authorize command to our command pool:

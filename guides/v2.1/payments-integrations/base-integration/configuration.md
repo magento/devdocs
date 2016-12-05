@@ -133,7 +133,7 @@ Following is the illustration of such configuration (`config.xml` of the SampleP
 
 Add the [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration for payment method facade in your `%Vendor_Module/etc/di.xml`.
 
-The following sample is an illustration of such configuration:
+The following sample is an illustration of such configuration ([app/code/Magento/Braintree/etc/di.xml#L10]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L10)):
 
 {% highlight xml %}
 <virtualType name="BraintreeFacade" type="Magento\Payment\Model\Method\Adapter">
@@ -149,23 +149,18 @@ The following sample is an illustration of such configuration:
 {% endhighlight %}
 
 The following arguments must be configured:
-
 - `code`: payment method's code
 - `formBlockType`: name of the block class responsible for Payment Gateway Form rendering on a checkout. Since Opepage Checkout uses knockout.js for rendering, this renderer is used only during Checkout process from Admin panel.
 - `infoBlockType`: name of the block class responsible for Transaction/Payment Information details rendering in Order block.
--`valueHandlerPool`: Value handler pool used for queries to configuration.
-- `validatorPool`: pool 
+-`valueHandlerPool`: pool of value handlers used for queries to configuration (for details see the following paragraph).
+<p class="q">queries to configuration??</p>
+- `validatorPool`: [pool of response validators]({{page.baseurl}}payment-gateway/response-validator.html#validators_pool)
 - `commandPool`: [pool of gateway commands]({{page.baseurl}}payment-gateway/command-pool.html)
 
-More details about `commandPool` and `validatorPool` you can find in [Gateway Command Pool]({{page.baseurl}}payments-integrations/payment-gateway/command-pool.html)
-and [Response Validator]({{page.baseurl}}payments-integrations/payment-gateway/response-validator.html) topics, we are stop
-our attention on `valueHandlerPool` argument.
+#### Value handlers pool
+Let's look closer at a value handlers pool of a payment method. This pool enables you to create payment configuration base on conditions. 
 
-> More details about `code`, `formBlockType`, `infoBlockType` you can find in [Payment Sample Module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway#dependency-injection-configuration) description.
-
-The _Value Handler Pool_ provides and ability to specify payment configuration, which can depends on some logic.
-For example, a `can_void` configuration option can depends on payment transaction status or paid amount. Let's look how
-it can be configured:
+For example, the `can_void` configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration ([app/code/Magento/Braintree/etc/di.xml#L296]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L296)):
 
 {% highlight xml %}
 <virtualType name="BraintreeValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
@@ -179,8 +174,10 @@ it can be configured:
 </virtualType>
 {% endhighlight %}
 
-In that case, the _Value Handler Pool_ it's a list of different handlers, but we always need to specify `default` handler,
-in our example it's config reader for Braintree:
+<p class="q">"can_void and can_cancel have the same value, is it correct?</p>
+<p class="q">How does configuration show that can_void depends on the transaction status</p>
+
+Pay attention, that you must always specify the default handler. In the example it is config reader for Braintree:
 
 {% highlight xml %}
 <virtualType name="BraintreeConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
@@ -189,6 +186,8 @@ in our example it's config reader for Braintree:
     </arguments>
 </virtualType>
 {% endhighlight %}
+
+<p class="q">is "config interface" a synonym for "default handler"? </p>
 
 And [Magento\Braintree\Gateway\Config\Config]({{site.mage2100url}}app/code/Magento/Braintree/Gateway/Config/Config.php) reads
 configuration from database or payment config file.
