@@ -20,7 +20,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Set up multiple Magento stores on Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/project/project-multi-sites.html){:target="_blank"} | 2.x  |  New | Dec 2  |
 | [Install the Magento data migration tool]({{ page.baseurl }}migration/migration-tool-install.html){:target="_blank"} | 2.x  | Updated  |  Dec 2 |
 | [Upgrade the Magento data migration tool]({{ page.baseurl }}migration/migration-tool-upgrade.html){:target="_blank"} |  2.x | Updated  | Dec 2  |
-| [Add REST APIs for Magento Enterprise Edition]({{ page.baseurl }}rest/list.html){:target="_blank"} | 2.x  |   | Updated  | Dec 2 |
+| [Add REST APIs for Magento Enterprise Edition]({{ page.baseurl }}rest/list.html){:target="_blank"} | 2.x  | Updated  |  Dec 2 |
 | [Add REST API endoints for Magento EE]({{ page.baseurl }}rest/rest_endpoints.html){:target="_blank"} | 2.x  |  Updated |  Dec 2 |
 | [Use Jasmine for JavaScript unit testing]({{ page.baseurl }}test/js/jasmine.html){:target="_blank"} | 2.x | New | Nov 25 |
 | [Use adapters with third-party libraries]({{ page.baseurl }}extension-dev-guide/adapters.html){:target="_blank"} | 2.x | New | Nov 25 |
