@@ -84,7 +84,7 @@ Before you continue, you must know the file system path to any patch we provided
 
 		git apply m2-hotfixes/<patch file name>
 
-	If the `m2-hotfixes` directory is emtpy, skip this step.
+	If the `m2-hotfixes` directory is empty, skip this step.
 
 	If patches are present, output from this command is similar to the preceding command.
 4.	Enable all modules:
