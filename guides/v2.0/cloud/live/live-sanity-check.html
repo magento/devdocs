@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento 2 resources</title>
+	<title>Build and deploy before pushing to staging or production</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/cloud/access-acct/resources.html">
+	<link rel="canonical" href="//guides/v2.0/cloud/live/live-sanity-check.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -55,9 +55,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/access-acct/resources.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/live/live-sanity-check.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/access-acct/resources.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/live/live-sanity-check.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -171,14 +171,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento 2 resources</h1>
+		<h1 class="page-heading">Build and deploy before pushing to staging or production</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/access-acct/resources.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/live/live-sanity-check.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -583,7 +583,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/cloud/access-acct/resources.html">Magento 2 resources</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/resources.html">Magento 2 resources</a></li>
 
 									
 
@@ -1140,7 +1140,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/live/live-sanity-check.html">Build and deploy before pushing to staging or production</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/cloud/live/live-sanity-check.html">Build and deploy before pushing to staging or production</a></li>
 
 									
 
@@ -1447,36 +1447,236 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="magento-2-resources">Magento 2 resources</h2>
-<p>For more information, or in the event of issues, you can find help and information as follows:</p>
+            <p>This topic discusses tasks we strongly recommend you perform before pushing code from an <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-int">integration system</a> to either <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-stage}}">staging</a> or <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-prod}}">production</a>. Failure to perform these tasks can result in additional debugging and delays in testing your site.</p>
 
-<h3 id="documentation">Documentation</h3>
-<p>We have the following resources available:</p>
+<p>As discussed in <a href="/guides/v2.0/cloud/discover-deploy.html">Deployment process</a>, building and deployment is a five-phase process. This topic discusses how to simulate build and deploy steps locally, which can expose issues early in your development process when they’re easier to debug and fix.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Do your testing in an integration or staging environment <em>only</em>. Do not do any testing in production; the production environment is your live site; it shouldn’t be used for testing.</p>
+
+  <p>Your staging environment is better for testing because it has Fastly, New Relic, and so on. Your integration environment typically does not have Fastly or New Relic.</p>
+</div>
+
+<h2 id="step-1-push-code-to-the-cloud-server">Step 1: Push code to the Cloud server</h2>
+<p>Before you continue, make sure you push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.</p>
+
+<h3 id="get-started">Get started</h3>
+
+<div class="collapsible"><b class="collapsible-title">To get started: </b><div class="collapsible-content"><div>
+
+  <ol>
+    <li>Log in to the server on which your SSH keys are located as, or switch to, the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+    <li>Change to a directory to which the Magento file system owner has write access, such as the web server docroot.</li>
+    <li>
+      <p>Log in to your project:</p>
+
+      <pre><code>magento-cloud login
+</code></pre>
+    </li>
+    <li>
+      <p>List your projects:</p>
+
+      <pre><code>magento-cloud project:list
+</code></pre>
+    </li>
+    <li>
+      <p>If necessary, clone a project.</p>
+
+      <pre><code>magento-cloud project:get &lt;project ID&gt;
+</code></pre>
+
+      <p>Typically, you should clone the project in the web server’s docroot or a Virtual Host docroot.</p>
+    </li>
+    <li>
+      <p>Change to a project directory.</p>
+
+      <p>For example, <code>cd /var/www/html/magento2</code></p>
+    </li>
+    <li>
+      <p>List environments in the project:</p>
+
+      <pre><code>magento-cloud environment:list
+</code></pre>
+
+      <div class="bs-callout bs-callout-info" id="info">
+  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
+</div>
+    </li>
+    <li>
+      <p>Fetch origin branches:</p>
+
+      <pre><code>git fetch origin
+</code></pre>
+    </li>
+    <li>
+      <p>Check out an environment:</p>
+
+      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre>
+
+      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+    </li>
+    <li>
+      <p>Pull updated code:</p>
+
+      <pre><code>git pull origin &lt;environment ID&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>Create a <a href="/guides/v2.0/cloud/admin/admin-snap.html">snapshot</a> of the environment.</p>
+
+      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre>
+    </li>
+  </ol>
+</div>
+</div></div>
+
+<h3 id="push-code-to-the-remote-server">Push code to the remote server</h3>
+
+<div class="collapsible"><b class="collapsible-title">To push code to your remote server: </b><div class="collapsible-content"><ol>
+  <li>If you haven’t already done so, change to your project root directory.</li>
+  <li>
+    <p>Enter the following commands:</p>
+
+    <pre><code>git add -A &amp;&amp; git commit -m "&lt;comment&gt;"
+git push origin &lt;branch name&gt;
+</code></pre>
+  </li>
+  <li>Wait for deployment to complete.</li>
+</ol>
+</div></div>
+
+<h2 id="build-phase">Build phase</h2>
+<p>During the <a href="/guides/v2.0/cloud/discover-deploy.html#cloud-deploy-over-phases-build">build phase</a>, we perform the following tasks:</p>
 
 <ul>
-  <li><a href="https://magento.com/help/documentation" target="_blank">Documentation home page</a></li>
-  <li>
-    <p>User guides (how to use options in the Magento Admin)</p>
-
-    <ul>
-      <li><a href="http://docs.magento.com/m2/2.0/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112" target="_blank">Magento 2.0.x</a></li>
-      <li><a href="http://docs.magento.com/m2/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112" target="_blank">Magento 2.1.x</a></li>
-    </ul>
-  </li>
-  <li>
-    <p>Developer documentation</p>
-
-    <ul>
-      <li><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Front end development</a></li>
-      <li><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Customizing the Magento software</a></li>
-      <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation</a></li>
-      <li><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration</a></li>
-    </ul>
-  </li>
+  <li>Apply patches distributed to all Magento Enterprise Cloud Edition customers</li>
+  <li>Apply patches we provided specifically to you</li>
+  <li>Enable all modules</li>
+  <li>Compile code and the dependency injection configuration</li>
 </ul>
 
-<h3 id="technical-support">Technical support</h3>
-<p>See <a href="/guides/v2.0/cloud/get-help.html">Get help with your deployment</a></p>
+<p>Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the <code>&lt;Magento root dir&gt;/m2-hotfixes</code> directory.</p>
+
+<div class="collapsible"><b class="collapsible-title">To build your site: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Apply patches distributed to all Magento Enterprise Cloud Edition customers.</p>
+
+    <p>Enter the following command from the project root directory:</p>
+
+    <pre><code>php vendor/magento/magento-cloud-configuration/patch.php
+</code></pre>
+
+    <p>Output includes the following:</p>
+
+    <pre><code>[2016-11-30 15:05:15] Copying static.php to front-static.php
+[2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/000-MAGETWO-57719-2.1.2.patch
+[2016-11-30 15:05:15] Status:0
+[2016-11-30 15:05:15] Output:array (
+)
+[2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/MAGETWO-52660-scd-improvement.patch
+[2016-11-30 15:05:15] Status:0
+[2016-11-30 15:05:15] Output:array (
+)
+
+... more ...
+                    )
+</code></pre>
+  </li>
+  <li>
+    <p>Apply hot fixes and other patches provided to you:</p>
+
+    <pre><code>git apply &lt;path to patch&gt;
+</code></pre>
+
+    <p>For example, to apply hot fixes:</p>
+
+    <pre><code>git apply m2-hotfixes/&lt;patch file name&gt;
+</code></pre>
+
+    <p>If the <code>m2-hotfixes</code> directory is empty, skip this step.</p>
+
+    <p>If patches are present, output from this command is similar to the preceding command.</p>
+  </li>
+  <li>
+    <p>Enable all modules:</p>
+
+    <pre><code>php bin/magento module:enable --all
+</code></pre>
+  </li>
+  <li>
+    <p>Compile code and the dependency injection configuration:</p>
+
+    <pre><code>php bin/magento  setup:di:compile
+</code></pre>
+
+    <p>This command can take several minutes to complete.</p>
+
+    <p>Messages similar to the following are displayed:</p>
+
+    <pre><code>Compilation was started.
+0% 1 sec 54.0 MiB%message% 0/7 [&gt;---------------------------] 
+0% 1 sec 54.0 MiBProxies code generation... 
+0/7 [&gt;---------------------------]   
+0% 1 sec 54.0 MiB
+Proxies code generation... 1/7 [====&gt;-----------------------]  14% 1 sec 58.0 MiB
+Repositories code generation... 1/7 [====&gt;-----------------------]  14% 1 sec 58.0 MiB
+Repositories code generation... 2/7 [========&gt;-------------------]  28% 30 secs 176.0 MiB
+
+... more ...
+Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
+</code></pre>
+  </li>
+</ol>
+
+<p>If errors display, debug them if possible or open a <a href="/guides/v2.0/cloud/get-help.html">support ticket</a> to get additional assistance.</p>
+
+<p>We strongly recommend you do all your testing in an integration or staging environment only, and <em>not</em> in production.</p>
+</div></div>
+
+<h2 id="deploy-phase">Deploy phase</h2>
+<p>During the <a href="/guides/v2.0/cloud/discover-deploy.html#cloud-deploy-over-phases-hook">deployment phase</a>, we perform the following tasks:</p>
+
+<ul>
+  <li>Installs the Magento application if it isn’t already</li>
+  <li>If the Magento application is installed, upgrades components</li>
+  <li>Clears the cache</li>
+  <li>Sets the Magento application for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production"><code>production</code></a> mode</li>
+</ul>
+
+<div class="collapsible"><b class="collapsible-title">To deploy your site: </b><div class="collapsible-content"><ol>
+  <li>If you haven’t done so already, log in as or switch to the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+  <li>Change to your project root directory.</li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>php bin/magento setup:upgrade
+</code></pre>
+
+    <p>(If you haven’t installed the Magento application yet, use the <a href="/guides/v2.0/install-gde/install/cli/install-cli.html"><code>magento setup:install</code></a> command instead.)</p>
+  </li>
+  <li>
+    <p>Clean the Magento cache:</p>
+
+    <pre><code>php bin/magento cache:clean
+</code></pre>
+  </li>
+  <li>
+    <p>Set the Magento application for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>:</p>
+
+    <pre><code>php bin/magento deploy:mode:set production
+</code></pre>
+  </li>
+</ol>
+
+<p>If errors display, debug them if possible or open a <a href="">support ticket</a> to get additional assistance.</p>
+
+<p>We strongly recommend you do all your testing in an integration or staging environment only, and <em>not</em> in production.</p>
+</div></div>
+
+<h4 id="next-step">Next step</h4>
+<p><a href="/guides/v2.0/cloud/live/stage-prod-over.html">Overview of staging and production</a></p>
 
 		</div>
 	</section>

@@ -1134,8 +1134,7 @@
 
 									
 
-										<li class="level3Parent " id="stage-prod"><a href="#">Staging and production</a>
-
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/live-sanity-check.html">Build and deploy before pushing to staging or production</a></li>
 
 									
 
@@ -1145,6 +1144,15 @@
 
 
 											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.1/cloud/live/stage-prod-over.html">Overview of staging and production</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="stage-prod"><a href="#">Staging and production</a>
 
 
 									
@@ -1461,7 +1469,7 @@
 <h3 id="mage-owner-create-user">Step 1: Create the Magento file system owner and give the user a strong password</h3>
 <p>This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the <em>command-line user</em>.)</p>
 
-<p>To create a user on CentOS or Ubuntu, enter the following command as a user with <code>root</code> privileges:</p>
+<div class="collapsible"><b class="collapsible-title">To create the Magento file system owner: </b><div class="collapsible-content"><p>Enter the following command as a user with <code>root</code> privileges:</p>
 
 <pre><code>adduser &lt;username&gt;
 </code></pre>
@@ -1486,9 +1494,11 @@ sudo passwd magento_user
 <div class="bs-callout bs-callout-warning">
     <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
 </div>
+</div></div>
 
 <h3 id="install-update-depend-user-findgroup">Step 2: Find the web server user’s group</h3>
-<p>To find the web server user’s group:</p>
+
+<div class="collapsible"><b class="collapsible-title">To find the web server user's group: </b><div class="collapsible-content"><p>To find the web server user’s group:</p>
 
 <ul>
   <li>
@@ -1502,9 +1512,11 @@ sudo passwd magento_user
     <p>Typically, the user name and the group name are both <code>www-data</code></p>
   </li>
 </ul>
+</div></div>
 
 <h3 id="install-update-depend-user-add2group">Step 3: Put the Magento file system owner in the web server’s group</h3>
-<p>To put the Magento file system owner in the web server’s primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code>root</code> privileges:</p>
+
+<div class="collapsible"><b class="collapsible-title">To put the Magento file system owner in the web server's primary group: </b><div class="collapsible-content"><p>Asuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code>root</code> privileges:</p>
 
 <ul>
   <li>CentOS: <code>usermod -g apache &lt;username&gt;</code></li>
@@ -1532,6 +1544,7 @@ sudo passwd magento_user
   <li>Ubuntu: <code>service apache2 restart</code></li>
   <li>CentOS: <code>service httpd restart</code></li>
 </ul>
+</div></div>
 
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.1/cloud/before/before-workspace-cli.html">Install the CLI</a></p>

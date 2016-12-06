@@ -1140,8 +1140,7 @@
 
 									
 
-										<li class="level3Parent " id="stage-prod"><a href="#">Staging and production</a>
-
+									<li class="level-2 "><a href="/guides/v2.0/cloud/live/live-sanity-check.html">Build and deploy before pushing to staging or production</a></li>
 
 									
 
@@ -1151,6 +1150,15 @@
 
 
 											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-over.html">Overview of staging and production</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="stage-prod"><a href="#">Staging and production</a>
 
 
 									
@@ -1441,7 +1449,7 @@
 		<div class="content-wrap">
             <h4 id="contents">Contents</h4>
 <ul>
-  <li><a href="#setup-env-setup">Step 1: Set up an environment</a></li>
+  <li><a href="#setup-env-setup">Step 1: Clone the master environment</a></li>
   <li><a href="#setup-env-adminurl">Step 2: Change the Admin URI, user name, and password in the master branch</a></li>
   <li><a href="#setenv-cron">Step 3: Set up cron</a></li>
   <li><a href="#setenv-new-env">Step 4: Clone a project and environment</a></li>
@@ -1450,8 +1458,32 @@
   <li><a href="#setup-env-install">Step 7: Install the Magento software</a></li>
 </ul>
 
-<h2 id="setup-env-setup">Step 1: Set up an environment</h2>
-<p>This topic discusses how to clone an environment locally, set up global Git environment variables, and to enable SSH if you haven’t done so already.</p>
+<h2 id="setup-env-setup">Step 1: Clone the master environment</h2>
+<p>This topic discusses how to clone the <code>master</code> environment, set up global Git environment variables, and to enable SSH if you haven’t done so already.</p>
+
+<p>If you have already performed these tasks, you can skip this step and the next step and continue with <a href="#setenv-cron">Step 3: Set up cron</a>.</p>
+
+<ol>
+  <li>Log in to your local development machine as, or switch to, the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+  <li>Change to the web server or virtual host docroot.</li>
+  <li>
+    <p>Log in to your project:</p>
+
+    <p>magento-cloud login</p>
+  </li>
+  <li>
+    <p>List your projects:</p>
+
+    <p>magento-cloud project:list</p>
+  </li>
+  <li>
+    <p>Clone a project.</p>
+
+    <p>magento-cloud project:get <project ID=""></project></p>
+
+    <p>When prompted for a directory name, enter <code>magento2</code>.</p>
+  </li>
+</ol>
 
 <h3 id="enable-ssh-to-the-environment">Enable SSH to the environment</h3>
 <p>This is a one-time setup that was covered previously in this guide; skip this section if you’ve already enabled SSH.</p>
@@ -1616,7 +1648,7 @@ git config --global user.email &lt;your e-mail address&gt;
 </div></div>
 
 <h2 id="setup-env-adminurl">Step 2: Change the Admin URI, user name, and password in the master branch</h2>
-<p>This section discusses how to change Magento Admin parameters for security reasons. This must be done only once for a new project.</p>
+<p>This section discusses how to change Magento Admin parameters for security reasons. If you change the variables in the <code>master</code> branch, you have to do it only once because other environments inherit the variables from <code>master</code>.</p>
 
 <p>If your master branch is already configured, skip this section and continue with <a href="#setenv-new-env">Step 3: Clone or branch an environment</a>.</p>
 
@@ -1823,7 +1855,7 @@ For more information, see <a href="/guides/v2.0/install-gde/prereq/php-settings.
 
 <h2 id="setenv-keys">Step 5: Add your authentication keys to auth.json</h2>
 
-<div class="collapsible"><b class="collapsible-title">To get your authentication keys: </b><div class="collapsible-content"><p>Before you can upgrade the Magento software or install extensions, you must have authentication keys in the <code>auth.json</code> file in the Magento root directory. The Magento Enterprise Cloud Edition account owner has your keys. Contact that person to get them.</p>
+<div class="collapsible"><b class="collapsible-title">To get your authentication keys and add them to auth.json: </b><div class="collapsible-content"><p>Before you can upgrade the Magento software or install extensions, you must have authentication keys in the <code>auth.json</code> file in the Magento root directory. The Magento Enterprise Cloud Edition account owner has your keys. Contact that person to get them.</p>
 
 <p>The <em>account owner</em> is the person who purchased Magento Enterprise Cloud Edition.</p>
 

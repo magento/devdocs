@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Get started with an environment</title>
+	<title>Build and deploy before pushing to staging or production</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/cloud/env/environments-start.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/live/live-sanity-check.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -55,9 +55,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/env/environments-start.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/live/live-sanity-check.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/env/environments-start.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/live/live-sanity-check.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -173,14 +173,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Get started with an environment</h1>
+		<h1 class="page-heading">Build and deploy before pushing to staging or production</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/env/environments-start.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/live/live-sanity-check.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -889,7 +889,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/cloud/env/environments-start.html">Get started with an environment</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/env/environments-start.html">Get started with an environment</a></li>
 
 									
 
@@ -1134,7 +1134,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/live/live-sanity-check.html">Build and deploy before pushing to staging or production</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/live/live-sanity-check.html">Build and deploy before pushing to staging or production</a></li>
 
 									
 
@@ -1453,122 +1453,22 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="cloud-env-start">Get started with an environment</h2>
-<p>This topic shows how to get started working on an environment:</p>
+            <p>This topic discusses tasks we strongly recommend you perform before pushing code from an <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration system</a> to either <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage}}">staging</a> or <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod}}">production</a>. Failure to perform these tasks can result in additional debugging and delays in testing your site.</p>
 
-<ul>
-  <li><a href="#env-start-ssh">Connect to the environment using Secure Shell (SSH)</a></li>
-  <li><a href="#env-start-comm">Common commands</a></li>
-  <li><a href="#env-start-ssh">SSH to an environment</a></li>
-</ul>
+<p>As discussed in <a href="/guides/v2.1/cloud/discover-deploy.html">Deployment process</a>, building and deployment is a five-phase process. This topic discusses how to simulate build and deploy steps locally, which can expose issues early in your development process when they’re easier to debug and fix.</p>
 
-<h2 id="env-start-ssh">Connect to the environment using Secure Shell (SSH)</h2>
-<p>Before you can use SSH to connect to an environment, you must add your <a href="/guides/v2.1/cloud/before/before-workspace.html#cloud-ssh-cli-ssh">SSH public key</a> 
-to your account. For security reasons, in order to add your public key to a production or staging environment,
- you must create a support ticket requesting the key to be added.</p>
+<div class="bs-callout bs-callout-warning">
+  <p>Do your testing in an integration or staging environment <em>only</em>. Do not do any testing in production; the production environment is your live site; it shouldn’t be used for testing.</p>
 
-<p>You can then connect using SSH in any of the following ways:</p>
+  <p>Your staging environment is better for testing because it has Fastly, New Relic, and so on. Your integration environment typically does not have Fastly or New Relic.</p>
+</div>
 
-<h2 id="integration-environments">Integration environments</h2>
+<h2 id="step-1-push-code-to-the-cloud-server">Step 1: Push code to the Cloud server</h2>
+<p>Before you continue, make sure you push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.</p>
 
-<p>Following are methods to SSH to your <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration environment</a>:</p>
+<h3 id="get-started">Get started</h3>
 
-<div class="collapsible"><b class="collapsible-title">To SSH to an integration environment: </b><div class="collapsible-content"><h3 id="ssh-from-the-command-line">SSH from the command line</h3>
-
-<p>To SSH to an environment using the <code>magento-cloud</code> command line:</p>
-
-<ol>
-  <li>
-    <p>Log in to the project:</p>
-
-    <pre><code>magento-cloud login
-</code></pre>
-  </li>
-  <li>
-    <p>List the project IDs:</p>
-
-    <pre><code>magento-cloud project:list
-</code></pre>
-  </li>
-  <li>
-    <p>List the environments in that project:</p>
-
-    <pre><code>magento-cloud environment:list -p &lt;project ID&gt;
-</code></pre>
-  </li>
-  <li>
-    <p>SSH to the environment:</p>
-
-    <pre><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
-</code></pre>
-  </li>
-</ol>
-
-<h3 id="ssh-using-the-web-interface">SSH using the Web Interface</h3>
-<p>To SSH to an environment using the Web Interface:</p>
-
-<ol>
-  <li>Log in to the Web Interface.</li>
-  <li>
-    <p>Hover the mouse pointer over <strong>Access Site</strong> in the desired environment as the following figure shows.</p>
-
-    <p><img src="/common/images/cloud_ssh-access.png" alt="Find the SSH URL using the Web Interface" width="500px" /></p>
-  </li>
-  <li>Click the clipboard button to copy the full SSH command to the clipboard. Enter the command in a terminal window.</li>
-</ol>
-</div></div>
-
-<h2 id="staging-and-production-environments">Staging and production environments</h2>
-
-<p>You can’t use <code>magento-cloud</code> tool to SSH to <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a> environments. To SSH into staging and production 
-environments, first create a <a href="/guides/v2.1/cloud/get-help.html">support ticket</a> requesting your public key be added to the environment. The user and 
-URL will have been supplied when the environment was provisioned.</p>
-
-<p>You can find additional information about accessing staging and production environments in <a href="/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-agent">Set up your SSH agent</a>.</p>
-
-<h2 id="env-start-comm">Common commands</h2>
-<p>The following commands can be run from any directory. However, it’s simpler to run them from a project directory. If 
-so, you can omit the <code>-p &lt;project ID&gt;</code> parameter. These commands are meant to be used to manage integration environments.</p>
-
-<p>All commands are shown with required options only. Get help for any <code>magento-cloud</code> command by appending <code>--help</code>.</p>
-
-<dl>
-  <dt><code>git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code></dt>
-  <dd>Push an empty commit to force a redeployment. Some actions, like adding a user for example, don’t result in deployment.</dd>
-  <dt><code>magento-cloud login</code></dt>
-  <dd>Log in to the project</dd>
-  <dt><code>magento-cloud project:get &lt;project ID&gt; &lt;directory&gt; -e &lt;environment ID&gt;</code></dt>
-  <dd>Clone a project to a directory. To clone the <code>master</code> environment, omit <code>-e &lt;environment ID&gt;</code>.</dd>
-  <dt><code>magento-cloud environment:list -p &lt;project ID&gt;</code></dt>
-  <dd>List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).</dd>
-  <dt><code>magento-cloud environment:branch &lt;name&gt; &lt;parent branch&gt;</code></dt>
-  <dd>Create a new branch (that is, environment); the environment has both a name and an ID</dd>
-</dl>
-
-<div class="bs-callout bs-callout-info" id="info">
-   <p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
-   <p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code>{ }</code>), parentheses, asterisk (<code>*</code>), angle brackets (<code>&lt; &gt;</code>), ampersand (<code>&amp;</code>), percent (<code>%</code>), and other characters.</p>
- </div>
-
-<dl>
-  <dt><code>magento-cloud environment:checkout &lt;environment ID&gt;</code></dt>
-  <dd>Check out an existing environment</dd>
-  <dt><code>magento-cloud environment:merge -p &lt;project ID&gt; -e &lt;environment ID&gt;</code></dt>
-  <dd>Merge changes in this environment with its parent.</dd>
-  <dt><code>magento-cloud environment:synchronize -p &lt;project ID&gt; -e &lt;environment ID&gt; {code|data}</code></dt>
-  <dd>Synchronize (that is, <code>git pull</code>) code and/or data from the parent to this environment</dd>
-  <dt><code>magento-cloud variable:list</code></dt>
-  <dd>List variables in this environment</dd>
-  <dt><code>magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code></dt>
-  <dd>Set a value for an environment variable in this environment</dd>
-</dl>
-
-<p><a href="#env-start-ssh">SSH to an environment</a>
-This section discusses how to SSH to an environment so you can run commands as if you were logged in to the environment itself.</p>
-
-<h3 id="step-1-get-started">Step 1: Get started</h3>
-
-<div>
+<div class="collapsible"><b class="collapsible-title">To get started: </b><div class="collapsible-content"><div>
 
   <ol>
     <li>Log in to the server on which your SSH keys are located as, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
@@ -1635,62 +1535,154 @@ This section discusses how to SSH to an environment so you can run commands as i
 </code></pre>
     </li>
   </ol>
-
-  <h3 id="step-2-ssh-to-the-environment">Step 2: SSH to the environment</h3>
-  <p>To SSH to the environment, use the following command:</p>
-
-  <pre><code>magento-cloud environment:ssh
-</code></pre>
-
-  <h3 id="step-3-enter-commands">Step 3: Enter commands</h3>
-  <p>Now you can connect to services as if they were running locally.</p>
-
-  <p>For example, to connect to the database, use the following command:</p>
-
-  <p>Find the database login information:</p>
-
-  <pre><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
-</code></pre>
-
-  <p>Sample output follows:</p>
-
-  <pre><code>Array
-(
-   		[0] =&gt; stdClass Object
-   	(
-       	[username] =&gt; user
-       	[password] =&gt;
-       	[ip] =&gt; 192.0.2.60
-       	[host] =&gt; database.internal
-       	[query] =&gt; stdClass Object
-           	(
-         	     	[is_master] =&gt; 1
-          		)
-
-       	[path] =&gt; main
-       	[scheme] =&gt; mysql
-       	[port] =&gt; 3306
-   	)
-)
-</code></pre>
-
-  <p>Use the following command to connect to the database:</p>
-
-  <pre><code>mysql --host=&lt;host&gt; --user='&lt;database user name&gt;' --pass='&lt;user password&gt;' --database='&lt;name&gt;' --port='&lt;port&gt;'
-</code></pre>
-
-  <p>Using the preceding example, the command is:</p>
-
-  <pre><code>mysql --host=atabase.internal --user='user' --pass='' --database='main' --port='3306'
-</code></pre>
-
-  <h4 id="related-topics">Related topics</h4>
-  <ul>
-    <li><a href="/guides/v2.1/cloud/env/environments.html">Manage your environments</a></li>
-    <li><a href="/guides/v2.1/cloud/env/environment-vars_over.html">Overview of environment variables</a></li>
-    <li><a href="/guides/v2.1/cloud/howtos/environment-tutorial-set-mage-vars.html">Set Magento environment variables</a></li>
-  </ul>
 </div>
+</div></div>
+
+<h3 id="push-code-to-the-remote-server">Push code to the remote server</h3>
+
+<div class="collapsible"><b class="collapsible-title">To push code to your remote server: </b><div class="collapsible-content"><ol>
+  <li>If you haven’t already done so, change to your project root directory.</li>
+  <li>
+    <p>Enter the following commands:</p>
+
+    <pre><code>git add -A &amp;&amp; git commit -m "&lt;comment&gt;"
+git push origin &lt;branch name&gt;
+</code></pre>
+  </li>
+  <li>Wait for deployment to complete.</li>
+</ol>
+</div></div>
+
+<h2 id="build-phase">Build phase</h2>
+<p>During the <a href="/guides/v2.1/cloud/discover-deploy.html#cloud-deploy-over-phases-build">build phase</a>, we perform the following tasks:</p>
+
+<ul>
+  <li>Apply patches distributed to all Magento Enterprise Cloud Edition customers</li>
+  <li>Apply patches we provided specifically to you</li>
+  <li>Enable all modules</li>
+  <li>Compile code and the dependency injection configuration</li>
+</ul>
+
+<p>Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the <code>&lt;Magento root dir&gt;/m2-hotfixes</code> directory.</p>
+
+<div class="collapsible"><b class="collapsible-title">To build your site: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Apply patches distributed to all Magento Enterprise Cloud Edition customers.</p>
+
+    <p>Enter the following command from the project root directory:</p>
+
+    <pre><code>php vendor/magento/magento-cloud-configuration/patch.php
+</code></pre>
+
+    <p>Output includes the following:</p>
+
+    <pre><code>[2016-11-30 15:05:15] Copying static.php to front-static.php
+[2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/000-MAGETWO-57719-2.1.2.patch
+[2016-11-30 15:05:15] Status:0
+[2016-11-30 15:05:15] Output:array (
+)
+[2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/MAGETWO-52660-scd-improvement.patch
+[2016-11-30 15:05:15] Status:0
+[2016-11-30 15:05:15] Output:array (
+)
+
+... more ...
+                    )
+</code></pre>
+  </li>
+  <li>
+    <p>Apply hot fixes and other patches provided to you:</p>
+
+    <pre><code>git apply &lt;path to patch&gt;
+</code></pre>
+
+    <p>For example, to apply hot fixes:</p>
+
+    <pre><code>git apply m2-hotfixes/&lt;patch file name&gt;
+</code></pre>
+
+    <p>If the <code>m2-hotfixes</code> directory is empty, skip this step.</p>
+
+    <p>If patches are present, output from this command is similar to the preceding command.</p>
+  </li>
+  <li>
+    <p>Enable all modules:</p>
+
+    <pre><code>php bin/magento module:enable --all
+</code></pre>
+  </li>
+  <li>
+    <p>Compile code and the dependency injection configuration:</p>
+
+    <pre><code>php bin/magento  setup:di:compile
+</code></pre>
+
+    <p>This command can take several minutes to complete.</p>
+
+    <p>Messages similar to the following are displayed:</p>
+
+    <pre><code>Compilation was started.
+0% 1 sec 54.0 MiB%message% 0/7 [&gt;---------------------------] 
+0% 1 sec 54.0 MiBProxies code generation... 
+0/7 [&gt;---------------------------]   
+0% 1 sec 54.0 MiB
+Proxies code generation... 1/7 [====&gt;-----------------------]  14% 1 sec 58.0 MiB
+Repositories code generation... 1/7 [====&gt;-----------------------]  14% 1 sec 58.0 MiB
+Repositories code generation... 2/7 [========&gt;-------------------]  28% 30 secs 176.0 MiB
+
+... more ...
+Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
+</code></pre>
+  </li>
+</ol>
+
+<p>If errors display, debug them if possible or open a <a href="/guides/v2.1/cloud/get-help.html">support ticket</a> to get additional assistance.</p>
+
+<p>We strongly recommend you do all your testing in an integration or staging environment only, and <em>not</em> in production.</p>
+</div></div>
+
+<h2 id="deploy-phase">Deploy phase</h2>
+<p>During the <a href="/guides/v2.1/cloud/discover-deploy.html#cloud-deploy-over-phases-hook">deployment phase</a>, we perform the following tasks:</p>
+
+<ul>
+  <li>Installs the Magento application if it isn’t already</li>
+  <li>If the Magento application is installed, upgrades components</li>
+  <li>Clears the cache</li>
+  <li>Sets the Magento application for <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production"><code>production</code></a> mode</li>
+</ul>
+
+<div class="collapsible"><b class="collapsible-title">To deploy your site: </b><div class="collapsible-content"><ol>
+  <li>If you haven’t done so already, log in as or switch to the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+  <li>Change to your project root directory.</li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>php bin/magento setup:upgrade
+</code></pre>
+
+    <p>(If you haven’t installed the Magento application yet, use the <a href="/guides/v2.1/install-gde/install/cli/install-cli.html"><code>magento setup:install</code></a> command instead.)</p>
+  </li>
+  <li>
+    <p>Clean the Magento cache:</p>
+
+    <pre><code>php bin/magento cache:clean
+</code></pre>
+  </li>
+  <li>
+    <p>Set the Magento application for <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>:</p>
+
+    <pre><code>php bin/magento deploy:mode:set production
+</code></pre>
+  </li>
+</ol>
+
+<p>If errors display, debug them if possible or open a <a href="">support ticket</a> to get additional assistance.</p>
+
+<p>We strongly recommend you do all your testing in an integration or staging environment only, and <em>not</em> in production.</p>
+</div></div>
+
+<h4 id="next-step">Next step</h4>
+<p><a href="/guides/v2.1/cloud/live/stage-prod-over.html">Overview of staging and production</a></p>
 
 		</div>
 	</section>
