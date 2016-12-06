@@ -8,7 +8,6 @@ menu_node:
 menu_order: 3
 version: 2.0
 github_link: release-notes/tech_bull_207-upgrade.md
-redirect_from: 
 ---
 
 This bulletin informs you of a known issue updating from Magento EE and CE environments that run the following:   

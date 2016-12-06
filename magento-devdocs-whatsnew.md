@@ -1,6 +1,6 @@
 ---
 layout: full-width
-group:
+group: whatsnew
 subgroup: none
 title: What's new
 menu_title: What's new
