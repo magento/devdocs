@@ -33,7 +33,7 @@ At, we need to update payment configuration file (`Braintree/etc/config.xml`):
 
 The `can_use_internal` option allows to display our payment method in Admin panel.
 
-
+### formBlockType {#formBlockType}
 As you can remember, we have specified [`formBlockType`]({{site.gdeurl21}}payments-integrations/base-integration/configuration.html#payment-method-facade)
 argument for our payment facade. This block will be used to display payment form on billing form in Admin panel, in
 most cases will be enough to use `\Magento\Payment\Block\Form\Cc`, but in our case we will use customized `\Magento\Braintree\Block\Form`:

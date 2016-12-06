@@ -19,7 +19,7 @@ You can use the [sample Magento_SamplePaymentGateway module](https://github.com/
 
 Your custom payment integration module must have at least the following dependencies:
 
-- Magento_Sales:: to be able to get order details
+- Magento_Sales: to be able to get order details
 - Magento_Payment: to use the Magento payment provider gateway infrastructure
 - Magento_Checkout: to be able to add the new payment method to checkout. Though if you do not plan to use it on the storefront checkout, this dependency is not required. 
 
@@ -66,26 +66,29 @@ Your payment method implementation might require adding more dependencies.
 
 ## Set your payment method options (`config.xml`)
 
-In the `config.xml` file in your `%Vendor_Module%` directory, configure the following options of your payment method:
+In the `config.xml` file in your `%Vendor_Module%` directory, configure the options of your payment method. The following table contains the default options available for any payment method.
+Custom options can be added
+<p class="q">How they can be added, in general?</p>
 
-- `active`: is payment active by default
-- `debug`: enables debug mode by default, e.g log for request/response
-- `debugReplaceKeys`: request/response fields, which will be masked in log
-- `can_authorize`: whether payment method supports authorization
-- `can_capture`: whether payment method supports the capture operation
-- `can_void`: whether payment method supports the void operation 
-- `can_use_checkout`: whether payment method is available in checkout
-- `currency`: supported currency
-- `is_gateway` is an integration with gateway
-- `merchant_gateway_key`: encrypted merchant credential
-- `model`: [payment method facade](#facade) used for integration with Sales and Checkout modules
-- `order_status`: default order status
-- `paymentInfoKeys`: transaction request/response fields displayed on payment information block
-- `privateInfoKeys`: paymentInfoKeys fields which should not be displayed in customer payment information block
-- `payment_action`: default action of payment
-- `sort_order`: payment method order position on checkout/system configuration pages
-- `title`: default title for a payment method
-<p class="q">Please add possible values info</p>
+| Option               | Description                                                                                                                                          | Value type                            |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| `active`               | is payment active by default                                                                                                                         | Boolean                               |
+| `debug`                | enables debug mode by default, for example log for request/response                                                                                  | Boolean                               |
+| `debugReplaceKeys`     | request/response fields that are masked in log                                                                                                       | comma separtated list                 |
+| `can_authorize`        | whether payment method supports authorization                                                                                                        | Boolean                               |
+| `can_capture`          | whether payment method supports the capture operation                                                                                                | Boolean                               |
+| `can_void`             | whether payment method supports the void operation                                                                                                   | Boolean                               |
+| `can_use_checkout`     | whether payment method is available in checkout                                                                                                      | Boolean                               |
+| `currency`             | supported currency                                                                                                                                   | comma separated list of what values?  |
+| `is_gateway`           | is an integration with gateway                                                                                                                       | Boolean                               |
+| `merchant_gateway_key` | encrypted merchant credential                                                                                                                        | string                                |
+| `model`                | [payment method facade](#facade) used for integration with Sales and Checkout modules                                                                | string                                |
+| `order_status`         | default order status                                                                                                                                 | what are possible values?             |
+| `paymentInfoKeys`      | transaction request/response fields displayed on payment information block (can be any fields from payment additional information)                   | what is the list of fields?           |
+| `privateInfoKeys`      | `paymentInfoKeys` fields which should not be displayed in customer payment information block (can be any fields from payment additional information) | what is the list of fields?           |
+| `payment_action`       | default action of payment for the payment method (authorize, sale)                                                                                   | what is the list of available actions |
+| `sort_order`           | payment method order position on checkout/system configuration pages                                                                                 | integer                               |
+| `title`                | default title for a payment method                                                                                                                   | string                                |
 
 These are default settings available for any payment method. Particular payment method configuration can contain any other custom options. 
 Following is the illustration of such configuration (`config.xml` of the SamplePaymentGateway module)
@@ -151,7 +154,7 @@ The following sample is an illustration of such configuration ([app/code/Magento
 The following arguments must be configured:
 
 - `code`: payment method's code
-- `formBlockType`: name of the block class responsible for Payment Gateway Form rendering on a checkout. Since Opepage Checkout uses knockout.js for rendering, this renderer is used only during Checkout process from Admin panel.
+- `formBlockType`: name of the block class responsible for Payment Gateway Form rendering on a checkout. Since Opepage Checkout uses knockout.js for rendering, this renderer is used only during Checkout process from Admin panel. See the [Admin integration]({{page.baseurl}}payments-integrations/base-integration/admin-integration.html#formBlockType) topic for details.
 - `infoBlockType`: name of the block class responsible for Transaction/Payment Information details rendering in Order block.
 -`valueHandlerPool`: pool of value handlers used for queries to configuration (for details see the following paragraph).
 - `validatorPool`: [pool of response validators]({{page.baseurl}}payment-gateway/response-validator.html#validators_pool)

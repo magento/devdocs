@@ -115,7 +115,11 @@ class PaymentDataBuilder implements BuilderInterface
 
 As you can see, we get _Payment Nonce_ from payment additional information and in this way you can get any specific data (like credit card information) according to your requirements.
 
-If you store credit card info in payment additional information, you need to clear it, to be PCI compliant.
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>You should remove any sensitive data (like credit card details) from payment additional information  when you do not use it in your code. You can remove it
+ in request builder, after reading, or in response handler, after processing response. In other case it will be stored in database.</p>
+</div>
 
 Perhaps, you have a question - "How to set some data from payment form to payment additional information?" - the next
 section will show how to retrieve all required data.
@@ -173,10 +177,10 @@ define(
 {% endhighlight %}
  
 The `getData()` method returns data what we need and depending on payment integration the returned data can be more
-complicated. we need last step to retrieve data from storefront in the backend. Fortunately for us, Magento provides some
-mechanisms - where are called [Observers]({{site.gdeurl21}}extension-dev-guide/events-and-observers.html).
+complicated. we need last step to retrieve data from storefront in the backend. Magento provides some
+mechanisms called [Observers]({{site.gdeurl21}}extension-dev-guide/events-and-observers.html).
  
-### Read additional data
+#### Read additional data
 
 You need to add an observer to retrieve additional data from payment form and store it
 in the payment additional information. In most cases it will be enough to extend
