@@ -115,7 +115,6 @@ class PaymentDataBuilder implements BuilderInterface
 
 As you can see, we get _Payment Nonce_ from payment additional information and in this way you can get any specific data (like credit card information) according to your requirements.
 
-
 <div class="bs-callout bs-callout-info" id="info">
 <p>You should remove any sensitive data (like credit card details) from payment additional information  when you do not use it in your code. You can remove it
  in request builder, after reading, or in response handler, after processing response. In other case it will be stored in database.</p>
