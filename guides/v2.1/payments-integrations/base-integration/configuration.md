@@ -134,6 +134,9 @@ Following is the illustration of such configuration (`config.xml` of the SampleP
 
 Add the [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration for payment method facade in your `%Vendor_Module/etc/di.xml`.
 
+Payment facade it is an instance of [Payment Adapter]({{site.mage2100url}}app/code/Magento/Payment/Model/Method/Adapter.php) configured with virtual types and allows to
+process payment actions between Magento Sales Management and payment processor.
+
 Facade is the extension of Magento payment adapter.app/code/Magento/Payment/Model/Method/Adapter
 
 The following sample is an illustration of such configuration ([app/code/Magento/Braintree/etc/di.xml#L10]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L10)):
