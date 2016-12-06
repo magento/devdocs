@@ -16,7 +16,7 @@ To make a web API call from a client such as a mobile application, you must supp
 
 Magento provides a separate token service for administrators and customers. When you request a token from one of these services, the service returns a unique authentication token in exchange for the user name and password for a Magento account.
 
-The Magento web API framework allows *guest users* to access resources that are configured with the permission level of anonymous. Guest users are users who the framework cannot authenticate through existing authentication mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission. [Restricting access to anonymous web APIs]({{page.baseurl}}rest/anonymous-api-security.md) contains a list of APIs that do not require a token.
+The Magento web API framework allows *guest users* to access resources that are configured with the permission level of anonymous. Guest users are users who the framework cannot authenticate through existing authentication mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission. [Restricting access to anonymous web APIs]({{page.baseurl}}rest/anonymous-api-security.html) contains a list of APIs that do not require a token.
 
 Use the following calls to get an authentication token:
 
@@ -110,4 +110,4 @@ For example, to make a web API call with a customer token:
 
 [Configure services as web APIs]({{page.baseurl}}extension-dev-guide/service-contracts/service-to-web-service.html)
 
-[Restricting access to anonymous web APIs]({{page.baseurl}}rest/anonymous-api-security.md)
+[Restricting access to anonymous web APIs]({{page.baseurl}}rest/anonymous-api-security.html)
