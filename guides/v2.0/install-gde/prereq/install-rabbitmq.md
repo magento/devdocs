@@ -57,9 +57,9 @@ The RabbitMQ server is included on Ubuntu, but the version is often old. RabbitM
 Detailed installation instructions are beyond the scope of this document. See [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html) for more information.
 
 <h3>Install Erlang</h3>
-RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ
+RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ.
 
-<a href="https://www.erlang-solutions.com/downloads/download-erlang-otp" target="_blank">Manual installation</a> for more information.
+See <a href="https://www.erlang-solutions.com/resources/download.html" target="_blank">Manual installation</a> for more information.
 
 Run the following commands to install this feature.
 
@@ -125,7 +125,7 @@ where:
 *	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/continue.html)
+*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
 *	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message queue overview</a>
 *	<a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queues</a>
 

@@ -11,12 +11,19 @@ redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 
 ## Magento technology stack
+{:.no_toc}
+
+* TOC
+{:toc}
+
+## Overview
+
 This page summarizes the technologies we use. For more detailed information, see the System Requirements:
 
 *	[Version 2.0.x]({{ site.gdeurl }}install-gde/system-requirements.html)
-*	[Version 2.1.x]({{ site.gdeurl21 }}install-gde/system-requirements-tech.html)
+*	[Version 2.1.x]({{site.gdeurl21}}install-gde/system-requirements-tech.html)
 
-Magento’s highly modular structure includes the following open-source technologies:
+Magento’s highly modular structure includes the following open-source technologies.
 
 ### Web servers
 
@@ -24,6 +31,7 @@ Magento’s highly modular structure includes the following open-source technolo
 *	nginx
 
 ### PHP
+
 *	Composer (dependency management package for PHP)
 
 ### Database
@@ -60,15 +68,18 @@ Magento’s highly modular structure includes the following open-source technolo
 *	Varnish (caching)
 *	Redis (used for page caching)
 *	Solr (search engine)
-*	Elasticserach (search engine)
+*	Elasticsearch (search engine)
 
 Magento is *compatible with but not supported* for:
 
-*	HHVM 3.9 PHP interpreter 
+*	HHVM 3.9 PHP interpreter
 
-Magento also provides a automated testing suites that include unit, integration, functional and performance test scripts, as well as JavaScript tests and tools for static code analysis. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. 
+### Automated testing
 
-This framework is located in the `dev/tests` directory. The functional testing framework `mtf` can be found in a [separate repository](https://github.com/magento/mtf). For more information, see the [Functional Testing Framework]({{page.baseurl}}mtf/mtf_introduction.html) guide.
+Magento also provides automated testing suites that include unit, integration, functional and performance test scripts, as well as JavaScript tests and tools for static code analysis. Components include PHPUnit for the unit test framework and Selenium for the functional test framework.
 
-#### Related topics
+This framework is located in the `dev/tests` directory. The functional testing framework `mtf` can be found in a [separate repository](https://github.com/magento/mtf){:target="_blank"}.
+For more information, see the [Functional Testing Framework]({{page.baseurl}}mtf/mtf_introduction.html) guide.
+
+## Related topics
 <a href="{{page.baseurl}}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>

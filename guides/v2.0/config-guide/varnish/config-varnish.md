@@ -38,16 +38,16 @@ Magento 2 supports Varnish versions 3.0.5 or later or any Varnish 4.x version.
 For more information about Varnish, see:
 
 *	<a href="https://en.wikipedia.org/wiki/Varnish_%28software%29" target="_blank">wikipedia</a>
-*	<a href="https://www.varnish-software.com/book/4.0/chapters/Introduction.html#what-is-varnish" target="_blank">Introduction to Varnish</a>
+*	<a href="https://www.varnish-cache.org/docs/trunk/users-guide/intro.html" target="_blank">The Big Varnish Picture</a>
 *	<a href="https://www.varnish-cache.org/docs/trunk/reference/varnishd.html#ref-varnishd-options" target="_blank">Varnish startup options</a>
-*	<a href="https://www.varnish-software.com/book/3/Tuning.html#threading-parameters" target="_blank">Varnish tuning parameters</a>
+*	<a href="https://www.varnish-cache.org/docs/trunk/users-guide/performance.html#users-performance" target="_blank">Varnish and Website Performance</a>
 
 <h2 id="varnish-arch">Varnish topology diagram</h2>
 The following figure shows a basic view of Varnish in your Magento topology.
 
 <img src="{{ site.baseurl }}common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram">
 
-In the preceding figure, users' web page requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as *assets*). Varnish sits in front of the web server and proxies these requests to the web server. 
+In the preceding figure, users' HTTP requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as *assets*). Varnish sits in front of the web server and proxies these requests to the web server. 
 
 As the web server returns assets, cacheable assets are stored in Varnish. Any subsequent requests for those assets are fulfilled by Varnish (meaning, the requests don't reach the web server). Varnish returns cached content extremely quickly. The results are faster response times to return the content to users and a reduced number of requests that must be fulfilled by Magento.  
 

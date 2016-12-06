@@ -8,7 +8,8 @@ version: 2.0
 github_link: mtf/features/parallel_execution.md
 ---
 
-<h4>Contents</h4>
+### Contents
+{:.no_toc}
 
 * TOC
 {:toc}
@@ -20,24 +21,24 @@ Parallel execution is applicable for [test suites] only. It decreases the time o
 A general mechanism is:
 
 1. The FTF creates the list of all test cases in a test suite.
-2. The FTF creates the required quantity of sessions corresponding to the quantity of threads defined in `<magento2>/dev/tests/functional/phpunit.xml`.
+2. The FTF creates the required quantity of sessions corresponding to the quantity of threads defined in `<magento2_root_dir>/dev/tests/functional/phpunit.xml`.
 3. The FTF distributes test cases between sessions. When a sessions is free, a new test case from the queue runs.
 
 Comparatively to the common testing flow
 
-![Common flow image]({{site.baseurl}}common/images/mtf_features_common_dia.png){:width="150px"}
+![Common flow image]({{site.baseurl}}common/images/ftf/mtf_features_common_dia.png)
 
 you can run a test suite using parallel execution flow with one Magento instance
 
-![Parallel execution flow with one instance image]({{site.baseurl}}common/images/mtf_features_parallel_one_dia.png){:width="400px"}
+![Parallel execution flow with one instance image]({{site.baseurl}}common/images/ftf/mtf_features_parallel_one_dia.png)
 
 or run a test suite using parallel execution flow with multiple Magento instances.
 
-![Common flow and Parallel execution flow image]({{site.baseurl}}common/images/mtf_features_parallel_multi_dia.png){:width="400px"}
+![Common flow and Parallel execution flow image]({{site.baseurl}}common/images/ftf/mtf_features_parallel_multi_dia.png)
 
-## Setup parallel execution
+## Set up parallel execution
 
-To setup a parallel execution flow, add Magento instances to `<magento2>/dev/tests/functional/phpunit.xml` in the following format:
+To set up a parallel execution flow, add Magento instances to `<magento2_root_dir>/dev/tests/functional/phpunit.xml` in the following format:
 
 {%highlight xml%}
 
@@ -86,7 +87,7 @@ The following example shows a setup configuration of the flow with one Magento i
 
 ### Parallel execution flow with multiple Magento instances
 
-The following example shows the setup configuration of the flow with three Magento instances.
+The following example shows a setup configuration of the flow with three Magento instances.
 
 {% highlight xml %}
 
@@ -114,10 +115,10 @@ To run parallel execution flow, you must configure and run a test suite and corr
 Run a test suite:
 
 {% highlight bash %}
-cd phpunit <magento2>/dev/tests/functional
+cd phpunit <magento2_root_dir>/dev/tests/functional
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
 {% endhighlight %}
 
 <!-- LINK DEFINITIONS -->
 
-[test suits]: {{page.baseurl}}mtf/features/test_suite.html
+[test suites]: {{page.baseurl}}mtf/features/test_suite.html

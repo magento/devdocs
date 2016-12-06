@@ -30,9 +30,6 @@ Use the Ruby bundler to get compatible versions of other dependencies.
 To build this site locally:
 
 ```bash
-# Copy the sample config file and name it "config.yml"
-$ cp _config.devdocs.yml _config.yml
-
 # Install dependencies
 $ bundle install
 

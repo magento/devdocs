@@ -10,7 +10,12 @@ version: 2.0
 github_link: soap/bk-soap.md
 redirect_from: /guides/v1.0/soap/bk-soap.html
 ---
-Additional information about SOAP APIs will be published in a future sprint.
+
+### Contents
+{:.no_toc}
+
+* TOC
+{:toc}
 
 ## Soap WSDL Endpoint Format
 
@@ -27,7 +32,9 @@ Additional information about SOAP APIs will be published in a future sprint.
 </div>
 
 ## List of Service Names per Module
+
 The entire list can be retrieved here: `http://<magento_host>/soap/default?wsdl_list=1`
+
 
 ### Backend
 backendModuleServiceV1: `http://<magento_host>/soap/default?wsdl&services=backendModuleServiceV1`
@@ -195,6 +202,8 @@ salesInvoiceManagementV1: `http://<magento_host>/soap/default?wsdl&services=sale
 
 salesInvoiceCommentRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesInvoiceCommentRepositoryV1`
 
+salesInvoiceOrderV1: `http://<magento_host>/soap/default?wsdl&services=salesInvoiceOrderV1`
+
 salesCreditmemoManagementV1: `http://<magento_host>/soap/default?wsdl&services=salesCreditmemoManagementV1`
 
 salesCreditmemoRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesCreditmemoRepositoryV1`
@@ -208,6 +217,8 @@ salesShipmentManagementV1: `http://<magento_host>/soap/default?wsdl&services=sal
 salesShipmentCommentRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesShipmentCommentRepositoryV1`
 
 salesShipmentTrackRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesShipmentTrackRepositoryV1`
+
+salesShipOrderV1: `http://<magento_host>/soap/default?wsdl&services=salesShipOrderV1`
 
 salesTransactionRepositoryV1: `http://<magento_host>/soap/default?wsdl&services=salesTransactionRepositoryV1`
 

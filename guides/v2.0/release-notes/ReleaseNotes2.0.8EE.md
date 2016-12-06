@@ -4,7 +4,8 @@ group: release-notes
 subgroup: Release Notes
 title: Magento EE 2.0.8 Release Notes
 menu_title: Magento EE 2.0.8 Release Notes
-menu_order: 14
+menu_order: 16
+version: 2.0
 github_link: release-notes/ReleaseNotes2.0.8EE.md
 ---
 *	TOC
@@ -57,18 +58,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports:
-
-* PHP 5.5.x, where x is 22 or greater
-
-* PHP 5.6.x
-
-* PHP 7.0.2 up to 7.1.0, except for 7.0.5
-
-* MySQL 5.6 
-
-For more information, see
-<a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}

@@ -24,7 +24,7 @@ The Magento application enables you to localize your store for multiple regions 
 <h3 id="translate_terms">Terms used</h3>
 A *translation dictionary* is a comma-separated value (.csv) file with at least two columns: the original phrase in the `en_US` locale and a translation of that phrase in an another locale. Sample translation from English (`en_US`) to German (`de_DE`):
 
-	"Add to Cart","Zum Warenkobrn hinzufügen"
+	"Add to Cart","Zum Warenkorb hinzufügen"
 	"Add to Compare","Hinzufügen um zu vergleichen"
 	"Add to Wishlist","Zum Wunschzettel hinzufügen"
 	"Additional Product Info","Zusätzliche Angaben zum Produkt"
@@ -142,11 +142,11 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 
 *	`composer.json` that contains any dependencies for the language package and a mapping to its defined locale
 
-	<a href="{{ site.mage2100url }}app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a>
+	<a href="{{ site.mage2100url }}app/i18n/Magento/de_DE/composer.json" target="_blank">Sample composer.json</a>
 
 *	`language.xml`, in which you declare a language package.
 
-	<a href="{{ site.mage2100url }}app/i18n/magento/de_de/language.xml" target="_blank">Sample language.xml</a>
+	<a href="{{ site.mage2100url }}app/i18n/Magento/de_DE/language.xml" target="_blank">Sample language.xml</a>
 
 #### Next step
 

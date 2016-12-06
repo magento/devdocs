@@ -14,7 +14,7 @@ To back up:
 
 	The following figure shows an example of backing up everything.
 
-	<img src="{{ site.baseurl }}common/images/cman_create-backup.png" width="650px" alt="You can back up the Magento 2 file system, media directory, and database">
+	<img src="{{ site.baseurl }}common/images/modman_create-backup.png" width="550px" alt="You can back up the Magento 2 file system, media directory, and database">
 
 	(If you choose not to back up, clear all check boxes and click **Next**.)
 
@@ -26,6 +26,6 @@ To back up:
 
 The following page displays to confirm a successful backup. 
 
-![A page displays to confirm your backup was a success]({{ site.baseurl }}common/images/cman_backup-success.png){:width="650px"}
+![A page displays to confirm your backup was a success]({{ site.baseurl }}common/images/extensman_backup-success.png){:width="650px"}
 
 If errors display, see [Troubleshoot backups]({{page.baseurl}}comp-mgr/trouble/cman/tshoot_backup.html)

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 20_admin
+subgroup: 30_admin
 title: Other administrative tasks
 menu_title: Other administrative tasks
 menu_order: 1

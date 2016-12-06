@@ -4,7 +4,7 @@ group: coding-standards
 subgroup: Coding standards
 title: LESS coding standard
 menu_title: LESS coding standard
-menu_order: 7
+menu_order: 8
 version: 2.0
 github_link: coding-standards/code-standard-less.md
 ---
@@ -686,3 +686,27 @@ Extends that are used in several files should be specified in the theme's `sourc
 ### Naming
 
 Extend names should start with the `.abs-` prefix.
+
+## `@import` directive
+
+Always add the file extension of the imported resource.
+
+**Correct**:
+
+    @import 'source/lib/_lib.less';
+    @import (css) 'styles.css';
+
+**Incorrect**:
+
+    @import 'source/lib/_lib';
+    @import (css) 'styles';
+
+Use single quotes.
+
+**Correct**:
+
+    @import 'source/lib/_lib.less';
+
+**Incorrect**:
+
+    @import "source/lib/_lib.less";

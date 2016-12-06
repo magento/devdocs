@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: Get your authentication keys
 menu_title: Get your authentication keys
-menu_order: 25
+menu_order: 26
 menu_node: 
 version: 2.0
 github_link: install-gde/prereq/connect-auth.md
@@ -15,7 +15,7 @@ github_link: install-gde/prereq/connect-auth.md
 *	<a href="#auth-overview">Overview of Magento Marketplace authentication</a>
 *	<a href="#auth-get">Get your authentication keys</a>
 
-{% include install/auth-tokens.md %}
+{% include install/auth-tokens-get.md %}
 
 
 #### Related topics:
@@ -31,7 +31,7 @@ github_link: install-gde/prereq/connect-auth.md
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{page.baseurl}}install-gde/install/continue.html">Determine your installation or upgrade path</a>
+*	<a href="{{ page.baseurl }}install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

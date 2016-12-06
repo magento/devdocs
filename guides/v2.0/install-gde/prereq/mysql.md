@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: MySQL
 menu_title: MySQL
-menu_order: 10
+menu_order: 25
 version: 2.0
 github_link: install-gde/prereq/mysql.md
 redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
@@ -28,19 +28,18 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{page.baseurl}}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
 *	<a href="{{page.baseurl}}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
-
-<h2 id="instgde-prereq-mysql-intro">General guidelines</h2>
+## General guidelines {#instgde-prereq-mysql-intro}
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento requires MySQL 5.6.x.</p></span>
+  <p>The Magento application requires MySQL 5.6.x.</p>
+  <p>Magention versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
 </div>
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
-*	Magento uses <a href="http://dev.mysql.com/doc/refman/5.0/en/triggers.html" target="_blank">MySQL database triggers</a> to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
-*	Familiarize yourself with <a href="http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html" target="_blank">these potential MySQL trigger limitations</a> before you continue.
-*	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ <a href="http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html" target="_blank">row-based replication</a>.
+*	Magento uses [MySQL database triggers](http://dev.mysql.com/doc/refman/5.0/en/triggers.html){:target="_blank"} to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
+*	Familiarize yourself with [these potential MySQL trigger limitations](http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html){:target="_blank"} before you continue.
+*	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -59,7 +58,7 @@ This section discusses how to install MySQL 5.7 on Ubuntu 16.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento does not support MySQL 5.7 at this time. These instructions are provided for your convenience if you'd like to test MySQL 5.7.</p></span>
+  <p>The Magento application 2.1.2 and later are compatible with MySQL 5.7.</p></span>
 </div>
 
 To install MySQL 5.7 on Ubuntu 16:
@@ -181,7 +180,7 @@ This section discusses how to to install MySQL 5.7 on CentOS 6 or CentOS 7.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento does not support MySQL 5.7 at this time. These instructions are provided for your convenience if you'd like to test MySQL 5.7.</p></span>
+  <p>The Magento application 2.1.2 and later are compatible with MySQL 5.7.</p></span>
 </div>
 
 ### Get MySQL 5.7 for CentOS 7
@@ -310,4 +309,4 @@ To configure a MySQL database instance:
 *	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/continue.html)
+*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)

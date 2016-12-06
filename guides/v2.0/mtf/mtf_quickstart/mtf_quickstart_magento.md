@@ -23,7 +23,7 @@ A Selenium web-driver cannot enter data to fields with WYSIWYG. This option disa
 3. Set **Enable WYSIWYG Editor** to **Disabled Completely**.
 4. Click **Save Config**.
 
-![Change content settings]({{site.baseurl}}common/images/mtf_qstart_mag_wysiwyg.png){:width="650px"}
+![Change content settings]({{site.baseurl}}common/images/ftf/mtf_qstart_mag_wysiwyg.png){:width="650px"}
 
 ## Change security settings
 
@@ -32,13 +32,13 @@ Disable the Secret Key in URL setting to open pages using direct URLs.
 1. Follow **Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security**.
 2. Set **Add Secret Key to URLs** to **No**.
 
-![Change security settings]({{site.baseurl}}common/images/mtf_qstart_mag_secur_20.png){:width="650px"}
+![Change security settings]({{site.baseurl}}common/images/ftf/mtf_qstart_mag_secur_20.png){:width="650px"}
 
 ## Refresh page cache
 
 * Go to **Cache Management**.
 
-![Cache Management message]({{site.baseurl}}common/images/mtf_cache_mngt.png){:width="650px"}
+![Cache Management message]({{site.baseurl}}common/images/ftf/mtf_cache_mngt.png){:width="650px"}
 
 * Select the check box next to **Configuration** and **Page Cache**.
 * From the **Actions** list in the upper left, click **Refresh**.
@@ -46,4 +46,4 @@ Disable the Secret Key in URL setting to open pages using direct URLs.
 
 <h2 id="mtf_install_pre">Next Steps</h2>
 
-[&lt;&lt; Adjust configuration]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html)
+[&lt;&lt; Adjust configuration]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html)

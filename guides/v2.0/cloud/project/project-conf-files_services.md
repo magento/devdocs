@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 07_project
+subgroup: 10_project
 title: services.yaml
 menu_title: services.yaml
 menu_order: 30
@@ -24,7 +24,16 @@ Magento Enterprise Cloud Edition provides [*services*](#cloud-yaml-services-type
 
 This file is located at `.magento/services.yaml` in your project.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+</div>
+
 [Sample `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"}
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/get-help.html">Support issue</a>.</p>
+</div>
+
 
 The following sections discuss properties in `services.yaml`.
 

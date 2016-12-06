@@ -33,7 +33,7 @@ Make sure you're using your own keys, and *not* [shared account keys](http://doc
 #### Get started
 To get started:
 
-1.	Log in to the server on which your SSH keys are located.
+1.	Log in to the machine on which your SSH keys are located.
 2.	Log in to your project:
 
 		magento-cloud login

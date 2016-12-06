@@ -16,7 +16,7 @@ github_link: comp-mgr/prereq/prereq_auth-token.md
 *	<a href="#auth-get">Get your authentication tokens</a>
 *	<a href="#compman-token-admin">Enter the tokens in the Admin</a>
 
-{% include install/auth-tokens.md %}
+{% include install/auth-tokens-get.md %}
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>To upgrade your Magento Enterprise Edition (EE) version or to upgrade from Magento Community Edition (CE) to Magento EE, you must be authorized for Magento EE. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>

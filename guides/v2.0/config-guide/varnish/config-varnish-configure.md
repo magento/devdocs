@@ -212,7 +212,7 @@ A long list of response headers display in your command prompt window. Look for 
 If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
 #### Look at HTML response headers
-There are several ways to look at response headers, including using a browser plug-in like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>, <a href="https://chrome.google.com/webstore/detail/live-http-headers/iaiioopjkcekapmldfgbebdclcnpgnlo?hl=en" target="_blank">Chrome</a>), or a browser inspector.
+There are several ways to look at response headers, including using a browser plug-in like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>) or a browser inspector.
 
 The following example uses `curl`. You can enter this command from any machine that can access the Magento server using HTTP.
 

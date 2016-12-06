@@ -8,19 +8,23 @@ menu_node: parent
 version: 2.0
 github_link: release-notes/changes_2.0.md
 ---
-<h2>Preface</h2>
-This topic discusses the most important backward incompatible changes made after Magento 2.0.
+
+## Preface
+{:.no_toc}
+
+This topic discusses the most important backward incompatible changes made after Magento 2.0.0 release in scope of 2.0 version.
 
 Be aware that no @api code has been modified.
 
 To see all backward incompatible changes follow:
- 
+
  - [Magento CE backward incompatible changes][]
  - [Magento EE backward incompatible changes][]
- 
+
 For more information about backward compatibility, see [Magento’s backward compatibility policy][].
 
-<h2>Contents</h2>
+### Contents
+{:.no_toc}
 
 * TOC
 {:toc}
@@ -42,7 +46,7 @@ For more information about backward compatibility, see [Magento’s backward com
 * The **Subproduct discounts** dropdown on a catalog price rule was deleted, including **Apply** and **Discount Amount** subfields.
 
 |---
-| Setup version 2.0.0  | Setup version 2.0.1 
+| Setup version 2.0.0  | Setup version 2.0.1
 |-|:-
 | ![OLD - Adding a new catalog price rule]({{site.baseurl}}common/images/backw_chang_cat_pr_rul_200.png 'OLD - Adding a new catalog price rule') | ![NEW - Adding a new catalog price rule]({{site.baseurl}}common/images/backw_chang_cat_pr_rul_201.png 'NEW - Adding a new catalog price rule')
 
@@ -101,11 +105,11 @@ For more information about backward compatibility, see [Magento’s backward com
 You can find a `setup_version` parameter in the `<your_Magento_module_dir>/etc/module.xml` file.
 
 * The Google Optimizer POST data moved to a specific array.
-* `On/Off` fields 
+* `On/Off` fields
   * The input type has been changed from `select` to `switcher`.
   * A web page sends POST message with attribute `value = "true"` if the field is checked or `value = "false"` if it is not.
   * A server converts `value` attribute to the PHP `true/false` boolean type value.
-    
+
 <table>
   <tr>
     <th><code>setup_version</code> version 2.0.3</th>
@@ -139,10 +143,10 @@ Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Dat
 
 ### Form initialization changes
 
-* A form is built with the UI components ([more info about a form component][]).
-* The form is extended using the form configuration file [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`][] (see [Overview of UI components][]).
-* The data provider `\Magento\Catalog\Model\Category\DataProvider` is used to set data and fields metadata for the form.
-* The default form data is now a part of metadata that is fetched from the `\Magento\Catalog\Model\Category\DataProvider`.
+* A form is built with UI components ([more info about a form component][]).
+* The form is extended using a form configuration file [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`][] (see [Overview of UI components][]).
+* A data provider `\Magento\Catalog\Model\Category\DataProvider` is used to set data and fields metadata for the form.
+* Default form data is now a part of metadata that is fetched from the `\Magento\Catalog\Model\Category\DataProvider`.
 
 ### Flow changes
 

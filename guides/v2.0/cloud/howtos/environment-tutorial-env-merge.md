@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
+subgroup: 15_howto
 title: Merge and delete an environment
 menu_title: Merge and delete an environment
-menu_order: 12
+menu_order: 51
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: env-tut
@@ -22,7 +22,7 @@ redirect_from:
 ## Merge an environment {#tut-env-merge}
 This tutorial shows how to merge changes from an environment to its parent, which in this case is the master branch. You can, for example, merge code updates, new components, changes to themes, and so on.
 
-You can them optionally delete the environment.
+You can then optionally delete the environment.
 
 This tutorial shows how to create a sample file and merge it. This tutorial assumes you're already working in an environment; if not, see [Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-comm) to create one.
 
@@ -75,7 +75,12 @@ This section discusses how to optionally delete an environment in the following 
 To delete a environment:
 
 1.	Log in to your project if you haven't already done so.
+2.	Fetch branches from the origin server.
+
+		git fetch origin
 2.	To delete the branch entirely (removing it from the project), check out the branch.
+
+		magento-cloud environment:checkout <environment ID>
 2.	Delete the environment:
 
 		magento-cloud environment:delete <environment ID>

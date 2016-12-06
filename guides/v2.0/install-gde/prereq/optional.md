@@ -97,7 +97,13 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 	If all else fails, try rebooting the server.
 
 <h2 id="install-optional-phpinfo">Create phpinfo.php</h2>
-<a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about PHP and its extensions. Add the following code anywhere in your web server's docroot:
+<a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about PHP and its extensions. 
+
+<div class="bs-callout bs-callout-warning">
+    <p>Use <code>phpinfo.php</code> in a development system <em>only</em>. It can be a security issue in production.</p>
+</div>
+
+Add the following code anywhere in your web server's docroot:
 <pre>&lt;?php
 
 // Show all information, defaults to INFO_ALL
@@ -124,6 +130,10 @@ If a 404 (Not Found) error displays, check the following:
 For more information about `phpmyadmin`, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank">phpmyadmin home page</a>.
 
 For more detailed information about installation, see the <a href="http://docs.phpmyadmin.net/en/latest/setup.html#quick-install" target="_blank">phpmyadmin installation documentation</a>.
+
+<div class="bs-callout bs-callout-warning">
+    <p>Use phpmyadmin in a development system <em>only</em>. It can be a security issue in production.</p>
+</div>
 
 <h2 id="install-optional-phpmyadmin-ubuntu">Install phpmyadmin on Ubuntu</h2>
 To install phpmyadmin on Ubuntu:
@@ -195,4 +205,4 @@ To install phpmyadmin on CentOS:
 *	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/continue.html)
+*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)

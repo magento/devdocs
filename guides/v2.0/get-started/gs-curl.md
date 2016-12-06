@@ -101,15 +101,5 @@ redirect_from: /guides/v1.0/get-started/gs-curl.html
 
 <h2>Next step</h2>
 <ul>
-   <li><a href="{{page.baseurl}}/get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
+   <li><a href="{{page.baseurl}}/get-started/gs-web-api-response.html">Status codes and responses</a></li>
 </ul>
-
-
-
-
-
-
-
-
-
-

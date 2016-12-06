@@ -21,7 +21,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 *	[PHP 7 on CentOS 6 or 7](#php-centos-7)
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a>
 *	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS 6</a>
-*	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
+*	[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -32,16 +32,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 
 Magento requires:
 
-*	7.0.6 up to 7.1.0
-
-	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5.
-*	PHP 5.6.x
-*	PHP 5.5.x, where x is 22 or greater 
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento no longer supports PHP 5.4.</p></span>
-</div>
+{% include install/php_2.0.md %}
 
 <h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
 If you're new to all this and need some help getting started, we suggest the following:
@@ -132,7 +123,7 @@ There is more than one way to install PHP 7.0.2 or later; the following is a sug
 	<span class="glyphicon-class">
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html</a>.
 
 {% endcollapsible %}
 
@@ -188,7 +179,7 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
 	<span class="glyphicon-class">
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html</a>.
 
 {% endcollapsible %}
 
@@ -226,10 +217,6 @@ There is more than one way to upgrade CentOS 6 to PHP 5.5; the following is a su
 
 {% endcollapsible %}
 
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-{% include install/php-config.html %}
-
-
 #### Related topics
 
 *	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
@@ -237,4 +224,4 @@ There is more than one way to upgrade CentOS 6 to PHP 5.5; the following is a su
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/continue.html)
+*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)

@@ -1,0 +1,1 @@
+../../../v2.1/ui_comp_guide/concepts/ui_comp_architecture_concept.md

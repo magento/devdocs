@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 03_Build
 title: URN schema validation
 menu_title: URN schema validation
-menu_order: 6
+menu_order: 5000
 version: 2.0
 github_link: extension-dev-guide/build/XSD-XML-validation.md
 redirect_from: /guides/v2.0/extension-dev-guide/XSD-XML-validation.html
@@ -44,7 +44,8 @@ where
 ### Framework XSD
 The syntax for the framework XSD is a colon separated declaration. An example follows:
 
-`urn:magento:framework:Api/etc/extension_attributes.xsd
+`urn:magento:framework:Api/etc/extension_attributes.xsd`
+
 where 
 
 *  `urn:magento` is the URN identifier

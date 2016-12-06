@@ -33,7 +33,7 @@ Before you begin, make sure that:
 
 1.	Your system meets the requirements discussed in <a href="{{page.baseurl}}install-gde/system-requirements.html">Magento system requirements</a>.
 2.	You completed all prerequisite tasks discussed in <a href="{{page.baseurl}}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
-3.	You took your first installation steps as discussed in <a href="{{page.baseurl}}install-gde/continue.html">Your install or upgrade path</a>.
+3.	You took your first installation steps as discussed in <a href="{{page.baseurl}}install-gde/bk-install-guide.html">Your install or upgrade path</a>.
 4.	After you log in to the Magento server, <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
 5.	Review the information discussed in <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.
 
@@ -151,7 +151,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--backend-frontname</p></td>
 		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.</p>
 			<p>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.</p>
-			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="{{page.baseurl}}install-gde/install/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
+			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
 			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only. It can be up to 255 characters in length.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -282,11 +282,6 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	<!-- <tr>
-		<td><p>--definition_format</p></td>
-		<td><p>Type of definitions used by the Object Manager. Possible values are <a href="https://github.com/phadej/igbinary" target="_blank"><code>igbinary</code></a> or <code>serialized</code>.</p></td>
-		<td><p>No</p></td>
-	</tr> -->
 <tr>
 <td><p>--amqp-host</p></td>
 <td><p>Enterprise Edition only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
@@ -313,7 +308,7 @@ The following table discusses the meanings of installation option names and valu
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To enable or disable modules after installing Magento, see <a href="{{page.baseurl}}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+  <p>To enable or disable modules after installing Magento, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
   	</span>
 </div>
 
@@ -417,7 +412,7 @@ Messages similar to the following display to indicate a successful installation:
 #### Related topics
 
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>
-*	[Remove or update sample data]({{ page.baseurl }}install-gde/install/cli/install-cli-sample-data-other.html)
+*	[Remove sample data modules or update sample data]({{ page.baseurl }}install-gde/install/cli/install-cli-sample-data-other.html)
 *	[Display or change the Admin URI]({{ page.baseurl }}install-gde/install/cli/install-cli-adminurl.html)
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>
 *	[Uninstall modules]({{ page.baseurl }}install-gde/install/cli/install-cli-uninstall-mods.html)

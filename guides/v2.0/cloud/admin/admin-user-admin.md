@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 20_admin
+subgroup: 30_admin
 title: Manage users
 menu_title: Manage users
 menu_order: 2
@@ -51,20 +51,20 @@ For your users to be able to see everything but only
 commit to a specific branch, change their permission level on that
 environment to "Contributor".
 
-> **Important!**
-> An environment contributor can push code to the environment, but that user 
-> role does not have SSH access to the environment. By default, only 
-> environment administrators have SSH access. You can change the default
-> in `.magento.app.yaml` by example by specifying `ssh: contributor`
+
+<div class="bs-callout bs-callout-warning">
+    <p>An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in <code>.magento.app.yaml</code> by specifying <code>ssh: contributor</code>.</p>
+</div>
+
 
 ### Rebuild the environment
 After a new user is added to an environment, the environment must be rebuilt. Rebuilds
 are triggered when you push a new commit to an environment.
 To be able to rebuild without new code changes, use the command
-`git commit --allow-empty -m'rebuild' && git push`
+`git commit --allow-empty -m "redeploy" && git push <branch name>`
 to create an empty commit and "force" rebuilding the environment.
 
-When the environment rebuild is complete, allow a minute for the routes to 
+When the environment rebuild is complete, allow a short time for the routes to 
 update fully and for the new user to be able to use SSH access.
 
 ### Manage users with the CLI {#cloud-user-mg-cli}

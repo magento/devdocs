@@ -1,16 +1,24 @@
 <div markdown="1">
 
+## Overview of Magento authentication {#auth-overview}
+The `repo.magento.com` repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character *authentication tokens* you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.
+
 To get your authentication keys:
 
 1.	Go to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"}.
 2.	Click **Sign In** and enter your login credentials.
 
 	If you don't have a free account, click **Create an Account**.
+
 2.	After you log in, click **My Access Keys** as the following figure shows.
 
 	![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}common/images/install_mkpl_access-keys.png){:width="500px"}
 3.	If you already have keys, use the **Public key** as your user name and the **Private key** as your password.
 3.	To create a new key pair, click **Create a New Access Key**.
+
+	The following figure shows an example.
+
+	![]({{ site.baseurl }}common/images/install_mkpl_access-keys-detail.png){:width="500px"}
 4.	When prompted, enter a descritive name to identify the key pair.
 5.	Click **Generate New**.
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: contributor
-subgroup: Contributor Guide
+subgroup: contributor
 title: Magento Definition of Done
 menu_title: Magento Definition of Done
 menu_order: 2
@@ -11,13 +11,10 @@ github_link: contributor-guide/contributing_dod.md
 redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: contributing.md owned by core -->
-
 
 <h2 id="dod">Magento Definition of Done</h2>
 
-<h3>Overview</h3>
+### Overview
 
 The "Definition of Done" (DoD) is a collective term for a set of acceptance criteria that is applied to any changes in the product code base. The requirements that result from our DoD are applied by default to all user stories and to each task within this user story.  Internally, the Magento development teams follow the DoD to ensure that all work meets consistent release criteria. We encourage our community contributors to also follow the Magento DoD.
 
@@ -25,13 +22,14 @@ At a high level, the criteria defined in our "definition of done" revolve around
 
 The following sections provide additional details about each of these criteria: 
 
-<h3>Functional Backward Compatibility</h3>
+
+### Functional Backward Compatibility
 
 Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the "business value". 
 
-For more information, see <a href="{{page.baseurl}}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
+For more information, see [Magento's backward compatibility policy]({{page.baseurl}}architecture/back-compatibility.html)
 
-<h3>Documentation</h3>
+### Documentation
 
 All changes, additions, and extensions to the product should be documented by the author. The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.
 
@@ -64,11 +62,11 @@ Code changes must be covered by automated tests according to Classification of M
 
 Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes. Continuous integration enforces execution of all tests and author is accountable for broken builds.
 
-<h5>Functional Tests</h5>
+#### Functional Tests
 Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional autotest(s) related to previous sprint commitment in scope of current sprint.
 
-<h5>Unit Tests</h5>
+#### Unit Tests
 
 Code to cover:
 
@@ -81,7 +79,7 @@ In cases where it is impossible to cover, replace with integration tests.
 
 It is not necessary to cover classes created by auto-generation and methods that don't have any business logic.
 
-<h5>Integration Tests</h5>
+#### Integration Tests
 
 Code to cover:
 
@@ -92,7 +90,7 @@ Code to cover:
 	*	If it is impossible to cover due to high code coupling
 	*	If code had only minor modification and in order to cover it with unit test it would require refactoring of code, not related to the original modification
 
-<h5>Integrity Tests</h5>
+#### Integrity Tests
 
 Code to cover: 
 
@@ -129,11 +127,11 @@ Expected code coverage:
 
 Not all changes can be covered. For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.
 
-<h4>Functional Manual Tests</h4>
+#### Functional Manual Tests
 Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional Zephyr test(s) related to current sprint commitment.
 
-<h3>Review</h3>
+### Review
 A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review. The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:
 
 * There are no unauthorized backward-incompatible functional changes 

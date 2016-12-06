@@ -28,10 +28,10 @@ Two types of updates are available.
 
 <h3 id="mtf_update_install">Install a new version of the Functional Testing Framework</h3>
 
-Step 1.    To avoid conflicts with the previous version, remove directory `<magento2>/dev/tests/functional/generate`.
+Step 1.    To avoid conflicts with the previous version, remove directory `<magento2_root_dir>/dev/tests/functional/generate`.
 
 
-Step 2.    Remove file `<magento2>/dev/tests/functional/composer.lock`.
+Step 2.    Remove file `<magento2_root_dir>/dev/tests/functional/composer.lock`.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p><b>Why:</b> Composer reads dependencies from <code>composer.lock</code> instead of reading <code>composer.json</code>. File <code>composer.lock</code> currently is not maintained.</p>
@@ -43,5 +43,5 @@ Step 3.    <a href="{{page.baseurl}}mtf/mtf_installation.html#mtf_install_perfor
 
 Enter in terminal:
 
-    cd <magento2>/dev/tests/functional/
+    cd <magento2_root_dir>/dev/tests/functional/
     composer update

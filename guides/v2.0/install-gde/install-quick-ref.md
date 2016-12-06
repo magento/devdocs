@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install_pre
-subgroup: Getting Started
+subgroup: 01_resource
 title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)
-menu_node: parent
-menu_order: 1
+menu_node: 
+menu_order: 2
 version: 2.0
 github_link: install-gde/install-quick-ref.md
 ---
@@ -33,10 +33,7 @@ Do you know what a "terminal" application is? Do you know what operating system 
 If not, see the <a href="{{page.baseurl}}install-gde/bk-install-guide.html">Installation overview</a>.
 
 ## Installation part 1: Getting started
-1.	See the System Requirements:
-
-	*	[Version 2.0.x]({{ site.gdeurl }}install-gde/system-requirements.html)
-	*	[Version 2.1.x]({{ site.gdeurl21 }}install-gde/system-requirements-tech.html)
+1.	See the [system requirements]({{ site.baseurl }}magento-system-requirements.html).
 2.	If your system lacks any requirements, see the prerequisites documentation:
 
 	*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>

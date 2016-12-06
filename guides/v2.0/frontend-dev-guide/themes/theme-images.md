@@ -13,7 +13,7 @@ github_link: frontend-dev-guide/themes/theme-images.md
 
 The properties of product images used on the storefront are stored in the `view.xml` configuration file. This topic provides all details about what properties are available and how to configure them.
 
-The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the theme `view.xml` as well. For detail view the [Gallery widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_gallery.html) topic.
+The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the theme `view.xml` as well. For more details, view the [Gallery widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_gallery.html) topic.
 
 <h2 id="view_xml_structure">Configure image properties in view.xml</h2>
 
@@ -238,14 +238,12 @@ The following table contains the list of all properties which can be configured:
 </table>
 
 #### Resize catalog images
-The `magento catalog:images:resize` command enables you to resize images for display on your storefront; for example:
+Generally, product images are cached while saving the product. However, the `magento catalog:images:resize` command enables you to resize all images for display on your storefront. Situations where this could be necessary might be:
 
-* After you import products, which might have variable sized images
+* After you import products, which might have images of various sizes
 * If images were resized or deleted manually from cache 
 
 Each image assigned to a product must be resized in accordance with image metadata defined in a module's <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images">`view.xml`</a> configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
-
-Generally, product images are cached while saving the product. However, sometimes you might need to re-create the product images cache using this command&mdash;for example, after you import products, if images were resized manually in the cache, or if the cache was manually cleared by mistake.
 
 Command usage:
 

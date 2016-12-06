@@ -2,9 +2,10 @@
 layout: default  
 group: fedg 
 subgroup: A_Themes
-title: Apply a custom Admin theme
-menu_title: Apply a custom Admin theme
-menu_order: 9
+title: Apply an Admin theme
+menu_title: Apply an Admin theme
+version: 2.0
+menu_order: 10
 github_link: frontend-dev-guide/themes/admin_theme_apply.md
 ---
 <h2 id="favicon-intro">What's in this topic</h2>

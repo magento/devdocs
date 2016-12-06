@@ -26,7 +26,15 @@ redirect_from:
 *	<a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>
 
 <h2 id="integrator-aud">Intended audience</h2>
-The audience for this topic is anyone who contributes to the Magento codebase. If that isn't you, go back and <a href="{{page.baseurl}}install-gde/continue.html">choose another starting point</a>.
+The audience for this topic is anyone who contributes to the Magento CE codebase. You should be highly technical, understand Composer and Git commands, and be able to upgrade the Magento system software and extensions using those commands. If that isn't you, go back and <a href="{{page.baseurl}}install-gde/bk-install-guide.html">choose another starting point</a>.
+
+<div class="bs-callout bs-callout-warning">
+    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
+</div>
+
+## Prerequisites
+
+{% include install/prereq.md %}
 
 {% include install/composer-overview.html %}
 
@@ -35,12 +43,12 @@ The audience for this topic is anyone who contributes to the Magento codebase. I
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
 This section discusses how to get current code by cloning the Magento GitHub's develop branch. You can clone either a release branch or the `develop` branch:
 
-*	Release branches like `2.0` or `2.0.6` are more stable
+*	Release branches like `2.1.0` are more stable
 
 	You *must* use a released branch with the <a href="{{page.baseurl}}migration/bk-migration-guide.html">Data Migration Tool</a>.
 *	`develop` is more recent
 
-Currently, the `develop` branch is the default but you can checkout a release branch like `2.0.6` after cloning.
+Currently, the `develop` branch is the default but you can checkout a release branch like `2.1.0` after cloning.
 
 <h3 id="instgde-prereq-compose-clone-auth">Creating an authorization file</h3>
 The Magento 2 GitHub repository requires you to authenticate. The `composer install` commands fails if you do not. To authenticate, <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an `auth.json` file in the home directory of the Magento file system owner.
@@ -103,9 +111,9 @@ fatal: The remote end hung up unexpectedly</pre>
 
 		git checkout tags/<tag name> [-b <version>]
 
-	For example, to check out the 2.0.6 release tag in a new branch named `2.0.6`, enter
+	For example, to check out the 2.1.0 release tag in a new branch named `2.1.0`, enter
 
-		git checkout tags/2.0.6 -b 2.0.6
+		git checkout tags/2.1.0 -b 2.1.0
 
 4.	Continue with <a href="{{page.baseurl}}install-gde/install/prepare-install.html">Update installation dependencies</a>.
 
@@ -147,9 +155,9 @@ fatal: The remote end hung up unexpectedly</pre>
 
 		git checkout tags/<tag name> [-b <version>]
 
-	For example, to check out the 2.0.6 release tag in a branch named `2.0.6`, enter
+	For example, to check out the 2.1.0 release tag in a branch named `2.1.0`, enter
 
-		git checkout tags/2.0.6 -b 2.0.6
+		git checkout tags/2.1.0 -b 2.1.0
 
 #### Next step
 

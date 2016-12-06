@@ -10,9 +10,15 @@ github_link: architecture/versioning.md
 redirect_from: /guides/v1.0/architecture/versioning.html
 ---
 
-<h2 id="verpol">Versioning policy overview</h2>
+## {{page.menu_title}}
+{:.no_toc}
 
-The Magento system and its components use the software (or "platform") version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="{{page.baseurl}}architecture/backward-compatibility.html">backwards-incompatible</a> changes in the public API or other significant code changes.
+* TOC
+{:toc}
+
+## Overview {#verpol}
+
+The Magento system and its components use the software (or "platform") version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="{{page.baseurl}}architecture/back-compatibility.html">backward-incompatible</a> changes in the public API or other significant code changes.
 
 Magento software versioning complies with the following specifications:
 
@@ -20,9 +26,7 @@ Magento software versioning complies with the following specifications:
 * [Versioning specification of Composer system](https://getcomposer.org/doc/04-schema.md#version)
 * [PHP version_compare()](http://php.net/version_compare)
 
-
-<h3>Version formats</h3>
-
+## Version formats
 
 Stable release versions are in the format `MAJOR.MINOR.PATCH`, where:
 
@@ -32,18 +36,16 @@ Stable release versions are in the format `MAJOR.MINOR.PATCH`, where:
 
 * PATCH indicates backward-compatible bug fixes
 
-
 The pre-release version format is: `MAJOR.MINOR.PATCH-<alpha | beta | rc>n`, where `alpha`, `beta` or `rc` are stability indications, as described in the `version_compare()` specification, and
 `n` is an increment number to distinguish releases of the non-stable versions.
 
-<h3>Public APIs</h3>
+## Public APIs
 
 Source code is considered public API only if it is explicitly marked as such using the `@api` docblock tag. This designation indicates the code can be used or customized by other components, such as formal interfaces and dependency injection points.
 
 For PHP code, compatibility of `@api` may be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on file level (for example, the file has been deleted or renamed).
 
-
-<h3>Where versioning is used</h3>
+## Where versioning is used
 The software version can be found in the source code of any Magento component or bundle, inside the `composer.json` file.
 
 It can be declared as the version of the component:
@@ -62,13 +64,14 @@ Or it can be used to declare a dependency on a particular version of a component
 }
 {% endhighlight %}
 
+## Release types
 
-<h3>Release types</h3>
 This section describes how exactly and when the software version numbers will be changed with releases.
 
 The software version will always change with any release of Magento source code.
 
-<h3>Development releases</h3>
+### Development releases
+
 In every development release ("pre-release" version), **the same value of version number will be propagated in all Magento components and their dependencies**.
 
 Magento may update the `x.y.z` version in way perscribed by Semantic Versioning, but also could release the same `x.y.z` with different stability and/or index numbers, For example, `0.1.0-alpha1 -> 0.1.0-alpha2`, `0.1.0-alpha3` or `2.0.0-alpha3 -> 2.1.0-beta1 -> 2.1.0-beta2`
@@ -101,12 +104,11 @@ Magento may update the `x.y.z` version in way perscribed by Semantic Versioning,
 </tbody>
 </table>
 
-<h3>Stable releases</h3>
+### Stable releases
 
 In every stable release, the same value of version number will be propagated in all components, but dependencies will have a wildcard (*) pattern.
 
 The `x.y.z` numbers will change according to Semantic Versioning policy provisions. For example, `1.0.0 -> 1.0.1 -> 1.1.0 -> 1.5.0 -> 1.5.1 -> 2.0.0 -> 2.1.0`. Also, Magento may decide to change the "minor" version instead of the "patch" version.
-
 
 <table>
 <tbody>
@@ -138,15 +140,15 @@ The `x.y.z` numbers will change according to Semantic Versioning policy provisio
 </tbody>
 </table>
 
+## Example lifecycle
 
-<h3>Example lifecycle</h3>
 The following steps demonstrate the packaging and backward compatibility story from the view of Magento, system integrators, and extension developers. This example uses several composer packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.
 <ol>
 <li>Start by cloning the master branch from github.
 
 
    This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
-   
+
 {% highlight JSON %}
 {
   "name": "myexamplestore/sample-site",
@@ -196,7 +198,7 @@ The following steps demonstrate the packaging and backward compatibility story f
 {% endhighlight %}
 </li>
 
-<li>Run <code>composer update</code> and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy. 
+<li>Run <code>composer update</code> and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy.
 
    This step repeats with each subsequent release of Magento (2.1, 2.2, 2.3, etc.). Deprecation strategy and community communication happens in 2.3.
 </li>
@@ -239,11 +241,8 @@ The following steps demonstrate the packaging and backward compatibility story f
 
 </ol>
 
-<h3>Related topics</h3>
+## Related topics
+
 <a href="{{page.baseurl}}architecture/backward-compatibility.html">Backward compatibility</a>
 
 <a href="{{page.baseurl}}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
-
-
-
-
