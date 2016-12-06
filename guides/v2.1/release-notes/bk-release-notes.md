@@ -12,7 +12,7 @@ github_link: release-notes/bk-release-notes.md
 
 ## Magento Community Edition (CE) and Enterprise Edition (EE) Release Notes
 
-{% include install/releasenotes/20_release-notes-links.md %}
+{% include install/releasenotes/21_release-notes-links.md %}
 
 ## What's new on devdocs
 [What's new]({{ site.baseurl }}magento-devdocs-whatsnew.html)
