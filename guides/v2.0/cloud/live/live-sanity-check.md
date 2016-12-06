@@ -15,7 +15,7 @@ This topic discusses tasks we strongly recommend you perform before pushing code
 As discussed in [Deployment process]({{ page.baseurl }}cloud/discover-deploy.html), building and deployment is a five-phase process. This topic discusses how to simulate build and deploy steps locally, which can expose issues early in your development process when they're easier to debug and fix.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Do your testing in an integration or staging environment _only_. Do not do any testing in production; the production environment should be used only for verification. 
+Do your testing in an integration or staging environment _only_. Do not do any testing in production; the production environment is your live site; it shouldn't be used for testing.
 
 Your staging environment is better for testing because it has Fastly, New Relic, and so on. Your integration environment typically does not have Fastly or New Relic.
 </div>
