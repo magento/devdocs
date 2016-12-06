@@ -1726,12 +1726,12 @@ cronrun:
     <span class="l-Scalar-Plain">disabled_extensions</span><span class="p-Indicator">:</span>
         <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">sqlite3</span></code></pre></figure>
 
-<div class="collapsible"><b class="collapsible-title">View PHP extensions: </b><div class="collapsible-content"><p>To view the current list of PHP extensions, SSH into your environment and enter the following command:</p>
+<p>To view the current list of PHP extensions, SSH into your environment and enter the following command:</p>
 
 <pre><code>php -m
 </code></pre>
 
-<p>Magento requires the following PHP extensions that are enabled by default:</p>
+<div class="collapsible"><b class="collapsible-title">View PHP extensions: </b><div class="collapsible-content"><p>Magento requires the following PHP extensions that are enabled by default:</p>
 
 <ul>
   <li><a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a></li>
@@ -1791,6 +1791,7 @@ cronrun:
   <li><a href="http://php.net/manual/en/book.xhprof.php" target="_blank">xhprof</a></li>
   <li><a href="http://php.net/manual/en/book.xmlrpc.php" target="_blank">xmlrpc</a></li>
 </ul>
+</div></div>
 
 <h3 id="cloud-yaml-platform-php-set">Customize <code>php.ini</code> settings</h3>
 <p>You can also create and push a <code>php.ini</code> file that is appended to
@@ -1815,7 +1816,6 @@ has been added to your environment by SSHing into your environment and entering:
 
 <pre><code>cat /etc/php5/fpm/php.ini
 </code></pre>
-</div></div>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
