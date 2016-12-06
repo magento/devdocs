@@ -913,96 +913,98 @@
 
 <p>Magento requires:</p>
 
-<ul>
-  <li>5.6.x (versions 2.1.0 and 2.1.1)</li>
-  <li>
-    <p>7.0.2, 7.0.6–7.0.x (all 2.1.x versions)</p>
+<div>
 
-    <p>There is a <a href="https://bugs.php.net/bug.php?id=71914" target="_blank">known PHP 7.0.5 issue</a> that affects our <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a>; to avoid the issue, do not use PHP 7.0.5.</p>
-  </li>
-  <li>
-    <p>2.1.2 and later supports:</p>
+  <ul>
+    <li>
+      <p>All 2.1.x versions support: 7.0.2, 7.0.6–7.0.x (all 2.1.x versions)</p>
 
-    <ul>
-      <li>PHP 5.6.5 and later</li>
-      <li>7.0.4</li>
-    </ul>
-  </li>
-  <li>
-    <p><em>Not</em> supported by any 2.1.x version:</p>
+      <p>There is a <a href="https://bugs.php.net/bug.php?id=71914" target="_blank">known PHP 7.0.5 issue</a> that affects our <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a>; to avoid the issue, do not use PHP 7.0.5.</p>
+    </li>
+    <li>2.1.0 and 2.1.1 support 5.6.x (versions 2.1.0 and 2.1.1)</li>
+    <li>
+      <p>2.1.2 and later supports:</p>
 
-    <ul>
-      <li>PHP 5.5</li>
-      <li>PHP 7.1</li>
-    </ul>
-  </li>
-</ul>
+      <ul>
+        <li>PHP 5.6.5 and later</li>
+        <li>7.0.4</li>
+      </ul>
+    </li>
+    <li>
+      <p><em>Not</em> supported by any 2.1.x version:</p>
 
-<div class="bs-callout bs-callout-info" id="info">
+      <ul>
+        <li>PHP 7.1</li>
+        <li>PHP 5.5</li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="bs-callout bs-callout-info" id="info">
 	<p>Magento 2.1.x no longer supports PHP 5.5.</p>
 </div>
 
-<h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
-<p>If you’re new to all this and need some help getting started, we suggest the following:</p>
+  <h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
+  <p>If you’re new to all this and need some help getting started, we suggest the following:</p>
 
-<ul>
-  <li><a href="/guides/v2.1/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
-  <li><a href="/guides/v2.1/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
-  <li><a href="/guides/v2.1/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
-  <li><a href="/guides/v2.1/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.1/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
+    <li><a href="/guides/v2.1/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
+    <li><a href="/guides/v2.1/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
+    <li><a href="/guides/v2.1/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
+  </ul>
 
-<h2 id="centos-verify-php">Verify PHP is installed</h2>
-<p>To verify if PHP is installed already, enter <code>php -v</code>. If PHP is installed, messages similar to the following display:</p>
+  <h2 id="centos-verify-php">Verify PHP is installed</h2>
+  <p>To verify if PHP is installed already, enter <code>php -v</code>. If PHP is installed, messages similar to the following display:</p>
 
-<pre><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
+  <pre><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
 Copyright (c) 1997-2014 The PHP Group
 Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
 with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 </code></pre>
 
-<div class="bs-callout bs-callout-info" id="info">
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 </div>
 
-<p>If PHP is installed, continue with the next prerequisite, <a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a>.</p>
+  <p>If PHP is installed, continue with the next prerequisite, <a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a>.</p>
 
-<h2 id="centos-php-repos">CentOS repositories</h2>
-<p>Linux systems provide software like PHP in one or more <em>repositories</em>. CentOS, unlike Ubuntu, has a set of <a href="https://wiki.centos.org/AdditionalResources/Repositories" target="_blank">officially recommended repositories</a>. Other repositories are considered less safe for the reasons stated on the CentOS wiki.</p>
+  <h2 id="centos-php-repos">CentOS repositories</h2>
+  <p>Linux systems provide software like PHP in one or more <em>repositories</em>. CentOS, unlike Ubuntu, has a set of <a href="https://wiki.centos.org/AdditionalResources/Repositories" target="_blank">officially recommended repositories</a>. Other repositories are considered less safe for the reasons stated on the CentOS wiki.</p>
 
-<p>We’re not aware that you can install PHP 5.6 or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:</p>
+  <p>We’re not aware that you can install PHP 5.6 or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:</p>
 
-<ul>
-  <li>
-    <p>If you’re setting up a system that will be deployed in production, you should choose a hosting provider who uses repositories considered to be safe and reliable.</p>
+  <ul>
+    <li>
+      <p>If you’re setting up a system that will be deployed in production, you should choose a hosting provider who uses repositories considered to be safe and reliable.</p>
 
-    <p>You should also consider upgrading to a later version of CentOS that has the desired PHP version in a recommended repository.</p>
-  </li>
-  <li>
-    <p>If you’re setting up a development system, you can use any repository you wish.</p>
-  </li>
-</ul>
+      <p>You should also consider upgrading to a later version of CentOS that has the desired PHP version in a recommended repository.</p>
+    </li>
+    <li>
+      <p>If you’re setting up a development system, you can use any repository you wish.</p>
+    </li>
+  </ul>
 
-<p>In this topic, we show how to install PHP using the <a href="https://ius.io/GettingStarted" target="_blank">Inline with Upstream Stable (IUS)</a> repository, which is <em>not</em> on the CentOS recommended list. However, packages installed from IUS do not use the same names as CentOS-provided packages, so <a href="https://ius.io/Philosophy" target="_blank">no existing system packages are replaced</a>.</p>
+  <p>In this topic, we show how to install PHP using the <a href="https://ius.io/GettingStarted" target="_blank">Inline with Upstream Stable (IUS)</a> repository, which is <em>not</em> on the CentOS recommended list. However, packages installed from IUS do not use the same names as CentOS-provided packages, so <a href="https://ius.io/Philosophy" target="_blank">no existing system packages are replaced</a>.</p>
 
-<p>Before you continue, review their <a href="https://ius.io/GettingStarted" target="_blank">Getting Started topic</a>.</p>
+  <p>Before you continue, review their <a href="https://ius.io/GettingStarted" target="_blank">Getting Started topic</a>.</p>
 
-<div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning">
     <p>Magento does <em>not</em> officially recommend using the IUS repository. We discuss it here for example purposes only.</p>
 </div>
 
-<p>Continue with one of the following sections:</p>
+  <p>Continue with one of the following sections:</p>
 
-<ul>
-  <li><a href="#php-centos-7">PHP 7 on CentOS 6 or 7</a></li>
-  <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a></li>
-</ul>
+  <ul>
+    <li><a href="#php-centos-7">PHP 7 on CentOS 6 or 7</a></li>
+    <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a></li>
+  </ul>
 
-<h2 id="php-centos-7">PHP 7 on CentOS 6 or 7</h2>
-<p>There is more than one way to install PHP 7 on CentOS; the following is a suggestion only. Consult a reference for additional options.</p>
+  <h2 id="php-centos-7">PHP 7 on CentOS 6 or 7</h2>
+  <p>There is more than one way to install PHP 7 on CentOS; the following is a suggestion only. Consult a reference for additional options.</p>
 
-<div class="collapsible"><b class="collapsible-title">To install PHP 7 on CentOS 6 or 7: </b><div class="collapsible-content"><ol>
+  <div class="collapsible"><b class="collapsible-title">To install PHP 7 on CentOS 6 or 7: </b><div class="collapsible-content"><ol>
   <li>
     <p><em>CentOS 6</em>. Enter the following commands in the order shown:</p>
 
@@ -1059,10 +1061,10 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </ol>
 </div></div>
 
-<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</h2>
-<p>There is more than one way to install PHP 5.6 on CentOS; the following is a suggestion only. Consult a reference for additional options.</p>
+  <h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</h2>
+  <p>There is more than one way to install PHP 5.6 on CentOS; the following is a suggestion only. Consult a reference for additional options.</p>
 
-<div class="collapsible"><b class="collapsible-title">To install PHP 5.6 on CentOS 6 or 7: </b><div class="collapsible-content"><ol>
+  <div class="collapsible"><b class="collapsible-title">To install PHP 5.6 on CentOS 6 or 7: </b><div class="collapsible-content"><ol>
   <li>
     <p><em>CentOS 6</em>. Enter the following commands in the order shown:</p>
 
@@ -1123,19 +1125,20 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </ol>
 </div></div>
 
-<h4 id="next">Next</h4>
-<p><a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a></p>
+  <h4 id="next">Next</h4>
+  <p><a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a></p>
 
-<h4 id="related-topics">Related topics</h4>
+  <h4 id="related-topics">Related topics</h4>
 
-<ul>
-  <li><a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
-  <li><a href="/guides/v2.1/install-gde/prereq/apache.html">Apache</a></li>
-  <li><a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a></li>
-  <li><a href="/guides/v2.1/install-gde/prereq/security.html">Configuring security options</a></li>
-  <li><a href="/guides/v2.1/install-gde/prereq/optional.html">Installing optional software</a></li>
-  <li><a href="/guides/v2.1/install-gde/install/pre-install.html">Ways to install the Magento software</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
+    <li><a href="/guides/v2.1/install-gde/prereq/apache.html">Apache</a></li>
+    <li><a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a></li>
+    <li><a href="/guides/v2.1/install-gde/prereq/security.html">Configuring security options</a></li>
+    <li><a href="/guides/v2.1/install-gde/prereq/optional.html">Installing optional software</a></li>
+    <li><a href="/guides/v2.1/install-gde/install/pre-install.html">Ways to install the Magento software</a></li>
+  </ul>
+</div>
 
 		</div>
 	</section>
