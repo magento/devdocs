@@ -95,6 +95,6 @@ The following sample demonstrates defining a validator's pool and adding validat
 ...
 {% endhighlight %}
 
-(this code sample was created for demonstration only, the real Braintree configuration is different).
+(This code sample was created for demonstration only, the real Braintree configuration is different).
 
 

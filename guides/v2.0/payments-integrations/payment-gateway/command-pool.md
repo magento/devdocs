@@ -22,7 +22,7 @@ The [default CommandPool]({{site.mage2000url}}app/code/Magento/Payment/Gateway/C
 implements `CommandPoolInterface` and takes a list of commands as optional argument for construct.
 
 ## Command pool configuration for a particular provider
-Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider's payment method configuration (`app/code/Magento/Braintree/etc/di.xml`).
+Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider's payment method configuration ([`app/code/Magento/Braintree/etc/di.xml`]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml)).
 
 {% highlight xml %}
 ...
@@ -33,6 +33,7 @@ Following is an example of the command pool configuring for the Braintree paymen
             <item name="authorize" xsi:type="string">BraintreeAuthorizeCommand</item>
             <item name="sale" xsi:type="string">BraintreeSaleCommand</item>
             <item name="capture" xsi:type="string">BraintreeCaptureStrategyCommand</item>
+			...
         </argument>
     </arguments>
 </virtualType>
@@ -47,4 +48,4 @@ Following is an example of the command pool configuring for the Braintree paymen
 ...
 {% endhighlight %}
 
-
+(The code sample is from Magento CE v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1.)
