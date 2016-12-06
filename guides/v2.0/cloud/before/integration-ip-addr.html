@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Prepare to migrate data</title>
+	<title>Public IP addresses for integration environments</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/cloud/live/stage-prod-migrate-prereq.html">
+	<link rel="canonical" href="//guides/v2.0/cloud/before/integration-ip-addr.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -55,9 +55,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/before/integration-ip-addr.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/before/integration-ip-addr.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -171,14 +171,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Prepare to migrate data</h1>
+		<h1 class="page-heading">Public IP addresses for integration environments</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/live/stage-prod-migrate-prereq.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/before/integration-ip-addr.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -599,7 +599,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/before/integration-ip-addr.html">Public IP addresses for integration environments</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/cloud/before/integration-ip-addr.html">Public IP addresses for integration environments</a></li>
 
 									
 
@@ -1160,7 +1160,7 @@
 									
 
 
-											<li class="level3Child stage-prod  active " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html">Prepare to migrate data</a>
+											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html">Prepare to migrate data</a>
 
 
 									
@@ -1439,161 +1439,34 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="cloud-live-migrate-prereq">Prepare to migrate data</h2>
-<p>This topic discusses tasks you must perform before you migrate your database and code to staging or production:</p>
+            <p>This topic lists incoming and outgoing IP addresses used by Magento Enterprise Cloud Edition <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-int">integration environments</a>.These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.</p>
 
-<ol>
-  <li>Create a support ticket to <a href="#cloud-live-migrate-yaml">migrate your <code>.yaml</code> files</a></li>
-  <li>Get your <a href="#cloud-live-migrate-urls">access URLs</a> for staging and production</li>
-  <li>Set up <a href="#cloud-live-migrate-git">remote Git repositories</a></li>
-  <li>Set up your <a href="#cloud-live-migrate-agent">SSH agent</a></li>
-  <li>Upload your <a href="#cloud-live-migrate-fastly">Fastly VCL</a></li>
-</ol>
+<h2 id="outbound-ip-addresses">Outbound IP addresses</h2>
+<p>This section lists public outbound IP addresses for integration environments.</p>
 
-<p>After setting this up, your workflow is to code and test in your integration system, then push updates to your staging system using Git commands.</p>
+<h3 id="us-region">US region</h3>
+<p>52.200.155.111
+52.200.149.44
+50.17.163.75</p>
 
-<h3 id="cloud-live-migrate-yaml">Migrate deployment hooks in your <code>.magento.app.yaml</code> file</h3>
+<h2 id="eu-region">EU region</h2>
+<p>52.51.163.159
+52.209.44.60
+52.208.156.247</p>
 
-<div>
+<h2 id="inbound-ip-addresses">Inbound IP addresses</h2>
+<p>If you have a corporate firewall that blocks outgoing SSH connections, you can add the following IP addresses for inbound traffic to your whitelist:</p>
 
-  <p>For technical reasons, Magento Enterprise Cloud Edition staging and production systems don’t implement any deployment hooks automatically. These hooks, defined in the <code>hooks</code> section of your <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-hooks"><code>.magento.app.yaml</code> file</a>, must be manually migrated to staging or production.</p>
+<h3 id="us-region-1">US region</h3>
+<p>52.200.159.23
+52.200.159.125
+52.200.160.5</p>
 
-  <p>Create a <a href="/guides/v2.0/cloud/get-help.html">support ticket</a> to let us help you implement any deployment hooks you set up.</p>
+<h3 id="eu-region-1">EU region</h3>
+<p>52.209.44.44
+52.209.23.96
+52.51.117.101</p>
 
-  <p>Among the settings you can request us to enable are Xdebug and PHPUnit, which assists you in troubleshooting any coding issues you might have during deployment. Because of its memory requirements, we recommend you disable Xdebug before your site is live.</p>
-
-  <div class="bs-callout bs-callout-info" id="info">
-  <p>You can optionally replace the <code>hooks</code> section with a shell script that you can maintain without intervention. You need only to create a support ticket the first time you'd like to use the shell script.</p>
-</div>
-
-  <h3 id="cloud-live-migrate-urls">Get your access URLs</h3>
-  <p>Your Magento Enterprise Cloud Edition OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for staging and production. You must know those URLs to continue.</p>
-
-  <ul>
-    <li>
-      <p>Git URL format:</p>
-
-      <ul>
-        <li>Staging: <code>git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
-        <li>Production: <code>git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
-      </ul>
-    </li>
-    <li>
-      <p>SSH URL format:</p>
-
-      <ul>
-        <li>Staging: <code>&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-        <li>Production: <code>&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      </ul>
-    </li>
-    <li>
-      <p>Web URL format:</p>
-
-      <ul>
-        <li>Staging: <code>http[s]://staging.&lt;your domain&gt;.&lt;project ID&gt;.ent.magento.cloud</code></li>
-        <li>
-          <p>Production:</p>
-
-          <ul>
-            <li>Load balancer URL: <code>http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-            <li>Direct access to one of the three redundant servers: <code>http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-
-  <h3 id="cloud-live-migrate-git">Set up remote Git repositories</h3>
-  <p>When you know your Git URLs, you must set them up as remote upstream repositories so you can push code to them.</p>
-
-  <p>Command syntax:</p>
-
-  <pre><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
-</code></pre>
-
-  <p>For example,</p>
-
-  <pre><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
-git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
-</code></pre>
-
-  <h3 id="cloud-live-migrate-agent">Set up your SSH agent</h3>
-  <p>You can use any SSH client you wish; however, this topic discusses using the OpenSSH client only. To learn how to use Putty and Pageant on Windows, for example, consult a reference such as <a href="http://www.howtogeek.com/125364/how-to-ssh-hop-with-key-forwarding-from-windows/" target="_blank">How-To Geek</a>.</p>
-
-  <p>The SSH agent forwards authentication requests from staging or production to your working Magento system. (That is, the machine on which you did your deployment and testing.) An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.</p>
-
-  <p>To set up an SSH agent:</p>
-
-  <ol>
-    <li>Log in to local development machine.</li>
-    <li>
-      <p>Enter the following command:</p>
-
-      <pre><code>ssh-add -l
-</code></pre>
-
-      <p>One of the following messages displays:</p>
-
-      <ul>
-        <li>
-          <p>Working SSH agent: <code>2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
-
-          <p>Skip the next step and continue with step 4.</p>
-        </li>
-        <li>
-          <p>SSH agent not started: <code>Could not open a connection to your authentication agent.</code></p>
-
-          <p>Continue with step 3.</p>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <p>To start the SSH agent, enter the following command:</p>
-
-      <pre><code>eval $(ssh-agent -s)
-</code></pre>
-
-      <p>The agent’s process ID (PID) displays.</p>
-    </li>
-    <li>
-      <p>Add your SSH key to the agent:</p>
-
-      <pre><code>ssh-add ~/.ssh/id_rsa
-</code></pre>
-
-      <p>A message similar to the following displays:</p>
-
-      <pre><code>Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
-</code></pre>
-    </li>
-  </ol>
-
-  <h3 id="cloud-live-migrate-fastly">Upload your Fastly VCL</h3>
-  <p>For Fastly to work in staging or production, you must upload the Fastly VCL using the Magento Admin as follows:</p>
-
-  <ol>
-    <li>Log in to the Magento Admin as an administrator.</li>
-    <li>
-      <p>Click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> as the following figure shows:</p>
-
-      <p><img src="/common/images/cloud_fastly_menu.png" alt="Choose Fastly" width="650px" /></p>
-    </li>
-    <li>In the right pane, expand <strong>Full Page Cache</strong>.</li>
-    <li>
-      <p>Click <strong>Upload VCL to Fastly</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_upload-vcl-to-fastly.png" alt="Upload a Magento VCL to Fastly" /></p>
-
-      <div class="bs-callout bs-callout-info" id="info">
-  		If the <strong>Upload VCL to Fastly</strong> button does not display, you should upgrade the Fastly extension to version 1.1.9 or later. For details, see <a href="/guides/v2.0/">Update extensions</a>. Fastly’s Composer name is <code>fastly/magento2</code>.
-      </div>
-    </li>
-    <li>Follow the prompts on your screen to complete the task.</li>
-  </ol>
-
-  <h4 id="next-step">Next step</h4>
-  <p><a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate data</a></p>
-</div>
 
 		</div>
 	</section>
