@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>GitHub integration</title>
+	<title>Public IP addresses for integration environments</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/cloud/project/project-integrate-github.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/before/integration-ip-addr.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -55,9 +55,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-integrate-github.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/before/integration-ip-addr.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-integrate-github.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/before/integration-ip-addr.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -173,14 +173,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">GitHub integration</h1>
+		<h1 class="page-heading">Public IP addresses for integration environments</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-integrate-github.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/before/integration-ip-addr.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -609,7 +609,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/before/integration-ip-addr.html">Public IP addresses for integration environments</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/before/integration-ip-addr.html">Public IP addresses for integration environments</a></li>
 
 									
 
@@ -837,7 +837,7 @@
 									
 
 
-											<li class="level3Child integrate  active " data-menunode="integrate"><a href="/guides/v2.1/cloud/project/project-integrate-github.html">GitHub integration</a>
+											<li class="level3Child integrate " data-menunode="integrate"><a href="/guides/v2.1/cloud/project/project-integrate-github.html">GitHub integration</a>
 
 
 									
@@ -1445,232 +1445,34 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h4 id="contents">Contents</h4>
-<ul>
-  <li><a href="#cloud-int-gh-about">About the GitHub integration</a></li>
-  <li><a href="#cloud-int-gh-token">Generate a GitHub token</a></li>
-  <li><a href="#cloud-int-gh-enable">Enable the GitHub integration</a></li>
-  <li><a href="#cloud-int-gh-hook">Add the webhook</a></li>
-  <li><a href="#cloud-int-gh-verify">Verify it works</a></li>
-</ul>
+            <p>This topic lists incoming and outgoing IP addresses used by Magento Enterprise Cloud Edition <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration environments</a>.These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.</p>
 
-<h2 id="cloud-int-gh-about">About the GitHub integration</h2>
-<p>The GitHub integration enables you to manage your Magento Enterprise Cloud Edition environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with Magento Enterprise Cloud Edition. Therefore, before you begin, make sure your project and environments are in a GitHub repository.</p>
+<h2 id="outbound-ip-addresses">Outbound IP addresses</h2>
+<p>This section lists public outbound IP addresses for integration environments.</p>
 
-<p>We strongly recommend you use a <em>private</em> GitHub repository.</p>
+<h3 id="us-region">US region</h3>
+<p>52.200.155.111
+52.200.149.44
+50.17.163.75</p>
 
-<p>This integration enables you to:</p>
+<h2 id="eu-region">EU region</h2>
+<p>52.51.163.159
+52.209.44.60
+52.208.156.247</p>
 
-<ul>
-  <li>Create a new environment when you create a branch or opening a pull request on GitHub.</li>
-  <li>Rebuild the environment when you push new code to GitHub.</li>
-  <li>Delete the environment when you merge a pull request.</li>
-</ul>
+<h2 id="inbound-ip-addresses">Inbound IP addresses</h2>
+<p>If you have a corporate firewall that blocks outgoing SSH connections, you can add the following IP addresses for inbound traffic to your whitelist:</p>
 
-<p>To set up the integration, you must obtain a GitHub token and a webhook. The following sections walk you through the process.</p>
+<h3 id="us-region-1">US region</h3>
+<p>52.200.159.23
+52.200.159.125
+52.200.160.5</p>
 
-<h2 id="cloud-int-gh-token">Generate a GitHub token</h2>
-<p>To perform this task, you must be a member of a group that can write to the GitHub repository. (In other words, you must be able to push to the repository.)</p>
+<h3 id="eu-region-1">EU region</h3>
+<p>52.209.44.44
+52.209.23.96
+52.51.117.101</p>
 
-<p>To generate a token:</p>
-
-<ol>
-  <li>Log in to GitHub.</li>
-  <li>In your personal settings, on the <strong>Personal access tokens</strong> tab page, click <a href="https://github.com/settings/tokens/new" target="_blank"><strong>Generate new token</strong></a>.</li>
-  <li>In the <strong>Token description</strong> field, enter a meaningful name.</li>
-  <li>
-    <p>Select check boxes corresponding to how you intend to use the token:</p>
-
-    <ul>
-      <li>To integrate with public repositories, select <strong>public_repo</strong></li>
-      <li>To integrate with your personal, private repositories, select <strong>repo</strong></li>
-      <li>To integrate with your organization’s private repositories, select <strong>repo</strong> and <strong>read:org</strong></li>
-    </ul>
-
-    <p>The following figure shows an example of creating a token that can be used to integrate with a private repository to which you have write access:</p>
-
-    <p><img src="/common/images/cloud_github-token.png" alt="Create a GitHub token for a private repository" width="600px" /></p>
-  </li>
-  <li>Click <strong>Generate token</strong>.</li>
-  <li>
-    <p>Copy the token to the clipboard.</p>
-
-    <p><img src="/common/images/cloud_github-token-copy.png" alt="Create a GitHub token for a private repository" width="600px" /></p>
-  </li>
-</ol>
-
-<h2 id="cloud-int-gh-enable">Enable the GitHub integration</h2>
-<p>This section discusses how to enable the GitHub integration.</p>
-
-<h3 id="get-started">Get started</h3>
-<p>To get started:</p>
-
-<div>
-
-  <ol>
-    <li>Log in to the server on which your SSH keys are located as, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
-    <li>Change to a directory to which the Magento file system owner has write access, such as the web server docroot.</li>
-    <li>
-      <p>Log in to your project:</p>
-
-      <pre><code>magento-cloud login
-</code></pre>
-    </li>
-    <li>
-      <p>List your projects:</p>
-
-      <pre><code>magento-cloud project:list
-</code></pre>
-    </li>
-    <li>
-      <p>If necessary, clone a project.</p>
-
-      <pre><code>magento-cloud project:get &lt;project ID&gt;
-</code></pre>
-
-      <p>Typically, you should clone the project in the web server’s docroot or a Virtual Host docroot.</p>
-    </li>
-    <li>
-      <p>Change to a project directory.</p>
-
-      <p>For example, <code>cd /var/www/html/magento2</code></p>
-    </li>
-    <li>
-      <p>List environments in the project:</p>
-
-      <pre><code>magento-cloud environment:list
-</code></pre>
-
-      <div class="bs-callout bs-callout-info" id="info">
-  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
-</div>
-    </li>
-    <li>
-      <p>Fetch origin branches:</p>
-
-      <pre><code>git fetch origin
-</code></pre>
-    </li>
-    <li>
-      <p>Check out an environment:</p>
-
-      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
-</code></pre>
-
-      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
-    </li>
-    <li>
-      <p>Pull updated code:</p>
-
-      <pre><code>git pull origin &lt;environment ID&gt;
-</code></pre>
-    </li>
-    <li>
-      <p>Create a <a href="/guides/v2.1/cloud/admin/admin-snap.html">snapshot</a> of the environment.</p>
-
-      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre>
-    </li>
-  </ol>
-
-  <h3 id="enable-the-integration">Enable the integration</h3>
-  <p>To enable the GitHub integration for your environment:</p>
-
-  <ol>
-    <li>
-      <p>Enable the integration:</p>
-
-      <pre><code>magento-cloud integration:add --type=github --project=&lt;project ID&gt; --token=&lt;your GitHub token&gt; {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
-</code></pre>
-
-      <p>where</p>
-
-      <p><code>&lt;project ID&gt;</code> is your Magento Enterprise Cloud Edition project ID</p>
-
-      <p><code>&lt;your GitHub token&gt;</code> is the token you got in the preceding section</p>
-
-      <p><code>--repository=USER/REPOSITORY</code> is how you specify your personal, private GitHub repository</p>
-
-      <p><code>--repository=ORGANIZATION/REPOSITORY</code> is how you specify an organization repository</p>
-
-      <p><code>--build-pull-requests</code> is an optional parameter that instructs Magento Cloud to deploy after you merge a pull request (<code>true</code> by default)</p>
-
-      <p><code>--fetch-branches</code> is an optional parameter that causes Magento Cloud to track branches and deploy after you update a branch (<code>true</code> by default)</p>
-
-      <p><strong>Example 1</strong>: Enable the GitHub integration for a personal, private repository:</p>
-
-      <pre><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=myUserName/myrepo
-</code></pre>
-
-      <p><strong>Example 2</strong>: Enable the GitHub integration for an organization repository:</p>
-
-      <pre><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=Magento/teamrepo
-</code></pre>
-    </li>
-    <li>
-      <p>Enter the required information when prompted.</p>
-
-      <p>Sample output:</p>
-
-      <pre><code>Created integration wp2f2thlmxwcg (type: github)
-Repository: myUserName/myrepo
-Build PRs: yes
-Fetch branches: yes
-Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
-</code></pre>
-    </li>
-    <li>
-      <p>Copy the Payload URL displayed by the command and continue with the next section.</p>
-    </li>
-  </ol>
-
-  <h2 id="cloud-int-gh-hook">Add the webhook</h2>
-  <p>To add the webhook to your GitHub repository:</p>
-
-  <ol>
-    <li>
-      <p>In your GitHub repository, click <strong>Settings</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_github-acct-settings.png" alt="Go to your GitHub's account settings" width="650px" /></p>
-    </li>
-    <li>In the left navigation bar, click <strong>Webhooks &amp; services</strong>.</li>
-    <li>
-      <p>In the right pane, click <strong>Add webhook</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_github-acct-webhook.png" alt="Add the webhook to your account" width="650px" /></p>
-    </li>
-    <li>
-      <p>Enter the following information:</p>
-
-      <ul>
-        <li><strong>Payload URL</strong>: Enter the URL displayed by the command in the preceding section.</li>
-        <li><strong>Content type</strong>: Click <strong>application/json</strong></li>
-        <li><strong>Secret</strong>: Enter a verification secret.</li>
-        <li><strong>Which events would you like to trigger this webhook?</strong>: Click <strong>Send me everything</strong></li>
-        <li>Select the <strong>Active</strong> check box.</li>
-      </ul>
-
-      <p>The following figure shows an example:</p>
-
-      <p><img src="/common/images/cloud_github-acct-webhook2.png" alt="Add the webhook to your account" width="650px" /></p>
-    </li>
-    <li>Click <strong>Add webhook</strong></li>
-  </ol>
-
-  <h2 id="cloud-int-gh-verify">Verify it works</h2>
-  <p>To verify the integration works:</p>
-
-  <ol>
-    <li>Make a change in the GitHub repository with which you integrated.</li>
-    <li>In the Magento Cloud CLI, pull the change to an environment.</li>
-  </ol>
-
-  <h4 id="related-topics">Related topics</h4>
-  <ul>
-    <li><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
-    <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-  </ul>
-</div>
 
 		</div>
 	</section>
