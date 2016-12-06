@@ -117,7 +117,7 @@ To access a website using a unique URL like `http://french.mysite.mg`, you must 
 	![Set a base URL]({{ site.baseurl }}common/images/config_multi-site_base-url.png){:width="650px"}
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're setting up a base URL for deployment Magento Enterprise Cloud Edition, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french--branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
+  		<p>If you're setting up a base URL for deployment Magento Enterprise Cloud Edition, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
   		<p>If you're setting up a base URL for local testing, use a period.</p>
 	</div>
 5.	Click **Save Config**.
@@ -135,9 +135,9 @@ For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce
 {% collapsible To add the store code to the website's base URL: %}
 
 1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
-2.	From the **Store View** list at the top of the page, click the name of one of your websites as the following figure shows.
+2.	From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
 
-	![Select a scope]({{ site.baseurl }}common/images/config_multi-site-scope.png){:width="250px"}
+	![Select the default config scope]({{ site.baseurl }}common/images/config_multi-site-default.png){:width="250px"}
 3.	In the right pane, expand **Url Options**.
 4.	Clear the **Use system value** check box next to **Add Store Code to Urls**.
 5.	From the **Add Store Code to Urls** list, click **Yes** as the following figure shows.
