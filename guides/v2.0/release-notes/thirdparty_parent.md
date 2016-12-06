@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Third-party licenses
+subgroup: 99_third
 menu_title: Third-party licenses
 menu_order: 1
 menu_node: parent
