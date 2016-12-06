@@ -116,7 +116,8 @@ class PaymentDataBuilder implements BuilderInterface
 
 As you can see, we get _Payment Nonce_ from payment additional information and in this way you can get any specific data (like credit card information) according to your requirements.
 
-If you store credit card info in payment additional information, you need to clear it, to be PCI compliant.
+> You should remove any sensitive data from additional information (like credit card details) when you do not use it in your code, you can remove it
+in _Request Builder_, after reading, or in _Response Handler_, after processing response, in other case it will be stored in database.
 
 Perhaps, you have a question - "How to set some data from payment form to payment additional information?" - the next
 section will show how to retrieve all required data.

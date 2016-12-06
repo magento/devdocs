@@ -81,9 +81,10 @@ In the `config.xml` file in your `%Vendor_Module%` directory, configure the foll
 - `merchant_gateway_key`: encrypted merchant credential
 - `model`: [payment method facade](#facade) used for integration with Sales and Checkout modules
 - `order_status`: default order status
-- `paymentInfoKeys`: transaction request/response fields displayed on payment information block
-- `privateInfoKeys`: paymentInfoKeys fields which should not be displayed in customer payment information block
-- `payment_action`: default action of payment
+- `paymentInfoKeys`: transaction request/response fields displayed on payment information block (can be any fields from payment additional information)
+- `privateInfoKeys`: paymentInfoKeys fields which should not be displayed in customer payment information block (can be any
+fields from payment additional information)
+- `payment_action`: default action of payment (authorize, sale)
 - `sort_order`: payment method order position on checkout/system configuration pages
 - `title`: default title for a payment method
 <p class="q">Please add possible values info</p>
