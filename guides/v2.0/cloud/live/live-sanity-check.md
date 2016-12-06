@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: Sanity checks before pushing to staging or production
-menu_title: Sanity checks before pushing to staging or production
+title: Build and deploy before pushing to staging or production
+menu_title: Build and deploy before pushing to staging or production
 menu_order: 2
 menu_node: 
 version: 2.0
@@ -12,7 +12,13 @@ github_link: cloud/live/live-sanity-check.md
 
 This topic discusses tasks we strongly recommend you perform before pushing code from an [integration system]({{ page.baseurl}}cloud/discover-arch.html#cloud-arch-int) to either [staging]({{ page.baseurl}}cloud/discover-arch.html#cloud-arch-stage}}) or [production]({{ page.baseurl}}cloud/discover-arch.html#cloud-arch-prod}}). Failure to perform these tasks can result in additional debugging and delays in testing your site.
 
-As discussed in [Deployment process]({{ page.baseurl }}cloud/discover-deploy.html), build and deployment is a five-phase process. This topic discusses how to simulate build and deploy steps locally, which can expose issues early in your development process when they're easier to debug and fix.
+As discussed in [Deployment process]({{ page.baseurl }}cloud/discover-deploy.html), building and deployment is a five-phase process. This topic discusses how to simulate build and deploy steps locally, which can expose issues early in your development process when they're easier to debug and fix.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+    Do your testing in an integration or staging environment _only_. Do not do any testing in production; the production environment should be used only for verification. 
+
+    Your staging environment is better for testing because it has Fastly, New Relic, and so on. Your integration environment typically does not have Fastly or New Relic.
+</div>
 
 ## Step 1: Push code to the Cloud server
 Before you continue, make sure you push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.
@@ -107,6 +113,8 @@ Before you continue, you must know the file system path to any patch we provided
 
 If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/get-help.html) to get additional assistance.
 
+We strongly recommend you do all your testing in an integration or staging environment only, and _not_ in production.
+
 {% endcollapsible %}
 
 ## Deploy phase
@@ -135,6 +143,7 @@ During the [deployment phase]({{ page.baseurl }}cloud/discover-deploy.html#cloud
 
 If errors display, debug them if possible or open a [support ticket]() to get additional assistance.
 
+We strongly recommend you do all your testing in an integration or staging environment only, and _not_ in production.
 
 {% endcollapsible %}
 
