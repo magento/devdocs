@@ -32,13 +32,12 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 
 Magento requires:
 
-*	7.0.6 up to 7.1.0
+*	5.6.x
+*	5.5.x, where x is 22 or greater
+*	7.0.2, 7.0.6&ndash;7.0.x 
 
-	PHP 7.1 is not supported
-
-	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5.
-*	PHP 5.6.x
-*	PHP 5.5.x, where x is 22 or greater 
+	There is a [known PHP 7.0.5 issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html); to avoid the issue, do not use PHP 7.0.5. 
+*	_Not_ supported: PHP 7.1
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
