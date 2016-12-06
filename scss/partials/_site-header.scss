@@ -74,6 +74,8 @@
     width: $header-height;
     height: $header-height;
     float: right;
+    position: relative;
+    z-index: 3;
 
     .search-icon {
       width: 100%;
