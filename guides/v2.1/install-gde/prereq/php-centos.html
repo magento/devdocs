@@ -914,13 +914,27 @@
 <p>Magento requires:</p>
 
 <ul>
+  <li>5.6.x (versions 2.1.0 and 2.1.1)</li>
   <li>
-    <p>7.0.2, 7.0.6 up to 7.1.0</p>
+    <p>7.0.2, 7.0.6–7.0.x (all 2.1.x versions)</p>
 
-    <p>PHP 7.1 is not supported</p>
+    <p>There is a <a href="https://bugs.php.net/bug.php?id=71914" target="_blank">known PHP 7.0.5 issue</a> that affects our <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a>; to avoid the issue, do not use PHP 7.0.5.</p>
   </li>
   <li>
-    <p>PHP 5.6.x</p>
+    <p>2.1.2 and later supports:</p>
+
+    <ul>
+      <li>PHP 5.6.5 and later</li>
+      <li>7.0.4</li>
+    </ul>
+  </li>
+  <li>
+    <p><em>Not</em> supported by any 2.1.x version:</p>
+
+    <ul>
+      <li>PHP 5.5</li>
+      <li>PHP 7.1</li>
+    </ul>
   </li>
 </ul>
 
