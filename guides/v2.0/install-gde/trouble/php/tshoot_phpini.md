@@ -10,8 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/php/tshoot_phpini.md
 ---
 
-<h2 id="install-trouble-phpini">SQLSTATE[HY000] [2002] No such file or directory</h2>
-
 ### Details
 
 During or after installation, a  message similar to the following displays: 

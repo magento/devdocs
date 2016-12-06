@@ -11,11 +11,6 @@ version: 2.0
 github_link: test/integration/integration_test_setup.md
 ---
 
-## Preparing Integration Test Execution
-
-* TOC
-{:toc}
-
 Before the Magento integration test framework can be used, the test environment has to be prepared.  
 The following prerequisites are required:
 

@@ -11,8 +11,6 @@ github_link: ui-components/ui-secondary-filter.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-filter.html
 ---
 
-<h3 id="filter">UI Filter Component</h3>
-
 The filter component must be declared as a child to the listing component.
 All column filters are declared as children to the filter component.
 

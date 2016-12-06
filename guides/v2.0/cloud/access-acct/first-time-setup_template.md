@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/access-acct/first-time-setup_template.md
 ---
 
-## Create a sample Magento project from a template {#cloud-first-clone}
 This section discusses how to get started with a Magento cloud deployment by cloning an existing sample project. You can customize your project to your needs anytime, including before you deploy it.
 
 When you initially set up a project from a template, we retrieve the code from the [`magento-cloud-configuration` repository](https://github.com/magento-cloud/magento-cloud-configuration){:target="_blank"}.

@@ -10,12 +10,6 @@ github_link: config-guide/config/config-php.md
 redirect_from: /guides/v1.0/config-guide/config/config-php.html
 ---
 
-
-#### Contents
-
-*  <a href="#config-php-overview">Purpose of the deployment configuration</a>
-*  <a href="#config-php-contents">Details about the deployment configuration</a>
-
 <h2 id="config-php-overview">Purpose of the deployment configuration</h2>
 {% include install/deployment-config.html %}
 

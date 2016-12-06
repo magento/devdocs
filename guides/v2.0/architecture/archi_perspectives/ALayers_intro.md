@@ -10,7 +10,8 @@ version: 2.0
 github_link: architecture/archi_perspectives/ALayers_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/ALayers_intro.html
 ---
-## Architectural layers overview
+
+## Magento as layered software
 
 At its highest level, Magento's product architecture consists of the core product code plus optional <i>modules</i>. These optional modules enhance or replace the basic product code.
 

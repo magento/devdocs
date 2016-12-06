@@ -11,14 +11,6 @@ github_link: config-guide/cli/config-cli-subcommands-perf-data.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html
 ---
 
-
-#### Contents
-
-*	<a href="#config-cli-perf-overview">Overview of performance testing data</a>
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-perf-prof">About profiles</a>
-*	<a href="#config-cli-perf-run">Run the data generator</a>
-
 <h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
 To use the Magento performance toolkit or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
 

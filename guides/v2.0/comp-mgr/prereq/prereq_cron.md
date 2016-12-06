@@ -11,7 +11,6 @@ github_link: comp-mgr/prereq/prereq_cron.md
 redirect_from: /guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html
 ---
 
-## Set up cron for update and upgrade {#compman-prereq-cron}
 To enable us to update or upgrade your system, you must configure two cron jobs. Each cron job should run every minute.
 
 The cron jobs schedule tasks for the Setup Wizard and for the updater application. These applications work together to install, update, and upgrade the Magento application and components.

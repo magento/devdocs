@@ -8,8 +8,6 @@ version: 2.0
 github_link: release-notes/changes/ce_changes.md
 ---
 
-## Preface
-
 This topic provides details about backward incompatible changes made in a [Magento CE mainline][] after the [Magento 2.0.0][] release. The content is auto-generated.
 
 All changes are aggregated into two tables:

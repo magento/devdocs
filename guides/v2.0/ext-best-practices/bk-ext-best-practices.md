@@ -13,8 +13,6 @@ tablabel: Home
 tabweight: 0
 ---
 
-## {{page.menu_title}}
-
 <div class="bs-callout bs-callout-info" id="info">
   <p>DRAFT/PROPOSAL: This Best Practices Guide is a first draft! The guide combines Best Practices that we have heard the community ask for, along with guidelines that our Magento UX, Engineering, and Product teams are working on.
   <p></p>

@@ -12,17 +12,6 @@ github_link: install-gde/prereq/php-centos.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 ---
 
-#### Contents
-
-*	<a href="#php-support">PHP versions supported</a>
-*	<a href="#php-centos-help-beginner">Help if you're just starting out</a>
-*	<a href="#centos-verify-php">Verify PHP is installed</a>
-*	[CentOS repositories](#centos-php-repos)
-*	[PHP 7 on CentOS 6 or 7](#php-centos-7)
-*	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a>
-*	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS 6</a>
-*	[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
-
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>If you must install both Apache and PHP, <a href="{{page.baseurl}}install-gde/prereq/apache.html">install Apache</a> first.</p></span>
@@ -33,6 +22,8 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 Magento requires:
 
 *	7.0.6 up to 7.1.0
+
+	PHP 7.1 is not supported
 
 	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5.
 *	PHP 5.6.x

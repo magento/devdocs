@@ -10,16 +10,7 @@ version: 2.0
 github_link: install-gde/install/post-install-config.md
 ---
 
-## Configure the Magento application
 Now that you've finished installing the Magento application, you need to configure it. This topic provides some recommended configuration settings for Magento; the list is not complete so watch this space.
-
-#### Contents
-*	<a href="#post-install-cron">Set up cron</a>
-*	<a href="#post-install-secy">Security settings</a>
-*	<a href="#post-install-rewrites">Enable Apache server rewrites</a>
-*	[Caching in a multi-webnode environment](#config-redis)
-*	<a href="#post-install-server">Server settings</a>
-*	<a href="#post-install-ee">Settings for Magento Enterprise Edition (EE) only</a>
 
 <h2 id="post-install-cron">Set up cron</h2>
 cron&mdash;the UNIX task scheduler&mdash;is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on.

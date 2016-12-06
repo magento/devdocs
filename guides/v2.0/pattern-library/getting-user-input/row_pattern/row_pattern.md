@@ -10,30 +10,19 @@ version: 2.0
 github_link: pattern-library/getting-user-input/row_pattern/row_pattern.md
 ---
 
-<h2> Row Pattern </h2>
-_(also known as "Table Light" and "Mini Grid")_
+## Row Pattern
+The "row pattern" (also referred to as _table light_ and _mini grid_) is used in the Magento Admin interface wherever the User is expected to want to input tabular data. This pattern allows the user to add as many rows of data as they desire. "Light tables" are used when the User needs to add/edit a relatively small amount of items (rows).
 
-<h3>Contents</h3> 
+The pattern supports following actions:
 
-* <a href="#overview">Overview</a>
-* <a href="#anotomy">Anatomy</a>
-* <a href="#behavior">Behavior and Interaction</a>
-* <a href="#pagination">Pagination</a>
-* <a href="#examples">Examples</a>
-* <a href="#accessibility">Accessibility</a>
-* <a href="#assets">Assets</a>
-
-<h3 id="overview">Overview</h3>
-The "Row Pattern" is used in the Magento Admin interface wherever the User is expected to want to input tabular data. This pattern allows the user to add as many rows of data as they desire. "Light tables" are used when the User needs to add/edit a relatively small amount of items (rows).
-
-The pattern **supports** following actions:
 - Add new row
 - Remove row
 - Rearrange/drag the rows
 - Edit fields in a row
 - Pagination (for 20 > more rows)
 
-The pattern **does not support**:
+The pattern does _not_ support:
+
 - Filtering, sorting, searching the table
 - Adding, removing, rearranging of _columns_
 

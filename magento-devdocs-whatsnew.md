@@ -16,6 +16,12 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Week ending |
 |--------------|--------------|----------------------|--------|
+| [Set up the Magento application to use multiple stores]({{ page.baseurl }}config-guide/multi-site/ms_over.html){:target="_blank"}  | 2.x  |  Updated | Dec 2  |
+| [Set up multiple Magento stores on Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/project/project-multi-sites.html){:target="_blank"} | 2.x  |  New | Dec 2  |
+| [Install the Magento data migration tool]({{ page.baseurl }}migration/migration-tool-install.html){:target="_blank"} | 2.x  | Updated  |  Dec 2 |
+| [Upgrade the Magento data migration tool]({{ page.baseurl }}migration/migration-tool-upgrade.html){:target="_blank"} |  2.x | Updated  | Dec 2  |
+| [Add REST APIs for Magento Enterprise Edition]({{ page.baseurl }}rest/list.html){:target="_blank"} | 2.x  | Updated  |  Dec 2 |
+| [Add REST API endoints for Magento EE]({{ page.baseurl }}rest/rest_endpoints.html){:target="_blank"} | 2.x  |  Updated |  Dec 2 |
 | [Use Jasmine for JavaScript unit testing]({{ page.baseurl }}test/js/jasmine.html){:target="_blank"} | 2.x | New | Nov 25 |
 | [Use adapters with third-party libraries]({{ page.baseurl }}extension-dev-guide/adapters.html){:target="_blank"} | 2.x | New | Nov 25 |
 | [Debug the Fastly extension with Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/trouble/trouble_fastly.html){:target="_blank"} | 2.x | New | Nov 25 |

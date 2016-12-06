@@ -10,11 +10,6 @@ github_link: architecture/view/page-assets.md
 redirect_from: /guides/v1.0/architecture/view/page-assets.html
 ---
 
-## Introduction to page assets
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## Overview {#m2devgde-page-assets-intro}
 

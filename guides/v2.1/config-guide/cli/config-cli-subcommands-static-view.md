@@ -15,8 +15,6 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.
 #### Contents
 {:.no_toc}
 
-* TOC
-{:toc}
 
 
 ## Overview of static view files deployment {#config-cli-static-overview}

@@ -9,12 +9,7 @@ version: 2.0
 github_link: mtf/mtf_entities/mtf_testcase.md
 ---
 
-<h2>Test case</h2>
-
-* TOC
-{:toc}
-
-## Test case overview {#mtf_testcase_overview}
+## Overview {#mtf_testcase_overview}
 
 The Magento Functional Testing Framework supports two types of functional tests:
 

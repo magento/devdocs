@@ -10,15 +10,6 @@ version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-i18n.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
 ---
- 
-
-#### Contents
-
-*	<a href="#config-cli-xlate-overview">Overview of translations</a>
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>
-*	<a href="#config-cli-subcommands-xlate-pack">Create a language package</a>
-*	<a href="#config-cli-subcommands-xlate-examples">Examples of using translation commands</a>
 
 <h2 id="config-cli-xlate-overview">Overview of translations</h2>
 Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced amount of code coupling and duplication.

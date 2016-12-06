@@ -9,14 +9,7 @@ version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uiclass_concept.md
 ---
 
-## {{page.menu_title}}
-
-{:.no_toc}
-
-* TOC
-{:toc}
-
-## What is `uiClass` 
+## What is `uiClass`
 
 The `uiClass` is an abstract class from which all components are extended. The `uiClass` is a low-level class and is rarely used as direct parent for UI components' classes.
 
@@ -26,13 +19,13 @@ The `uiClass` is an abstract class from which all components are extended. The `
 The uiClass class introduces the architecture of UI components through the following methods:
 
 *  The `extend()` method implements inheritance of UI components. The `extend()` returns new class. The `extend()` method gets a JavaScript object as a parameter, and then extends the base object with the properties and methods of the argument's object. The properties of the argument's object have higher priority than base object's properties.
-   As an example: 
+   As an example:
     %componentName%.extend(%JavaScript_extender_object%);
 
 * The `initConfig()` method processes the UI component's configurations. The `initConfig()` method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the `initConfig()` method) and in the parent UI component. This resulting configuration is then set as first level properties in the current UI component instance.
 
   As an example:
-{%highlight js%}  
+{%highlight js%}
 	defaults: {
 		myFirstProperty: 0,
 		mySecondProperty: 1

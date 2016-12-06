@@ -10,11 +10,12 @@ github_link: architecture/archi_perspectives/components/arch_libraries.md
 redirect_from: /guides/v1.0/architecture/arch_libraries.html
 ---
 
-## Magento libraries overview {#m2arch-libraries-overview}
+## Overview {#m2arch-libraries-overview}
 
 Magento uses the following types of libraries:
 
 *	Magento PHP libraries, which are discussed in the next section
+
 *	Magento UI libraries, which are located in the <a href="{{ site.mage2000url }}lib/web" target="_blank">lib/web</a> directory
 
 	For more information, see <a href="{{ site.mage2000url }}lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a> and <a href="{{page.baseurl}}architecture/view/view-lib.html">View Library</a>.
@@ -34,7 +35,9 @@ For example:
 *	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is a special PHP library that is aware of Magento as an application. It represents a greater level of abstraction and provides the following:
 
 	* <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html">Application areas</a>
+
 	* <a href="{{page.baseurl}}extension-dev-guide/routing.html">Routing requests</a>
+
 	* Application state
 
 <div class="bs-callout bs-callout-info" id="info">

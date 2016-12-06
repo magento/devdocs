@@ -11,12 +11,6 @@ github_link: migration/migration-migrate-data.md
 redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Before you start: routine preparations
 
 1. Log in to Magento server as [the file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).

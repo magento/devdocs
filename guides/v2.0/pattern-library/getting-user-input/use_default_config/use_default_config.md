@@ -10,20 +10,7 @@ version: 2.0
 github_link: pattern-library/getting-user-input/use_default_config/use_default_config.md
 ---
 
-<h2> Use Default Config </h2>
-
-<h3>Contents</h3> 
-
-* <a href="#overview">Overview</a>
-* <a href="#whentouse">When to Use</a>
-* <a href="#whennottouse">Variations</a>
-* <a href="#behavior">Behavior</a>
-* <a href="#style">Style</a>
-* <a href="#variation">Variations</a>
-* <a href="#accessibility">Accessibility</a>
-* <a href="#assets">Assets</a>
-
-<h3 id="overview">Overview</h3>
+## Use Default Config 
 In the Magento Admin some textfields can inherit default values (which have been set in config by the Merchant). A user has the ability to overwrite these default values at the page level. The "Use Default Value" or "Use Configuration Value" controls allow the user to revert an overwritten textfield value to the original default value.
 
 <h3 id="whentouse">When to Use</h3>

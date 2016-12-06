@@ -11,8 +11,6 @@ github_link: comp-mgr/module-man/compman-backup.md
 redirect_from: /guides/v2.0/comp-mgr/compman-backup.html
 ---
 
-## Step 2. Back up the file system and database
-
 {% include comp-man/backup.md %}
 
 #### Next step

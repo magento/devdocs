@@ -13,16 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-subcommands-db.html
 ---
 
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-install-cli-first">First steps</a>
-*	<a href="#instgde-cli-subcommands-store-prereq">Prerequisites</a>
-*	<a href="#instgde-cli-dbconfig">Configure the database and add data</a>
-
-
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.

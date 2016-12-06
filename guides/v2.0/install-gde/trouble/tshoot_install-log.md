@@ -11,8 +11,6 @@ github_link: install-gde/trouble/tshoot_install-log.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_install-log.html
 ---
 
-<h2 id="install-trouble-install-log">Installation fails; cannot create install.log</h2>
-
 ### Symptom
 
 The Setup Wizard does not create `install.log` during the installation; as a result, the installation fails.

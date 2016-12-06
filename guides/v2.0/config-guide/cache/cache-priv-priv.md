@@ -12,7 +12,6 @@ version: 2.0
 github_link: config-guide/cache/cache-priv-priv.md
 ---
 
-## Public and private content {#config-cache-priv-over}
 The Magento page cache stores *entire* cacheable pages; where pages are stored depends on whether the content is private or public. These terms are defined as follows:
 
 *	*Public*, which can display to many customers. 

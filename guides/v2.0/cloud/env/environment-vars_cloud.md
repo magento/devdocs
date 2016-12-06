@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 12_env
-title: Magento Cloud environment variables
-menu_title: Magento Cloud environment variables
+title: Magento Enterprise Cloud Edition environment variables
+menu_title: Magento Enterprise Cloud Edition environment variables
 menu_order: 75
 menu_node: 
 level3_menu_node: level3child
@@ -11,8 +11,6 @@ level3_subgroup: vars
 version: 2.0
 github_link: cloud/env/environment-vars_cloud.md
 ---
-
-## Magento Enterprise Cloud Edition environment variables {#cloud-env-vars-cloud}
 
 Environment variables that are specific to Magento Enterprise Cloud Edition are prefixed with `MAGENTO_CLOUD_*`.
 

@@ -10,18 +10,7 @@ github_link: ext-best-practices/extension-coding/security-performance-data-bp.md
 
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
 You should make sure that your extension handles data with care in order to prevent sensitive information from being exposed. Incorrect handling of data requests or class usage can negatively impact your extension and create security vulnerabilities. Consider applying the following best practices to your extension to improve performance and security.
-
-### Content
-{:.no_toc}
-
-* Table of Content
-{:toc}
-
----
 
 ### Avoid using low-level functionality
   The Magento application is made up of a variety of components that work together to perform different business functions. We discourage the use of low-level functionality such as the PHP `curl_*` functions and encourage the use of high-level components such as [`\Magento\Framework\HTTP\Adapter\Curl`]({{site.mage2000url}}lib/internal/Magento/Framework/HTTP/Adapter/Curl.php). The use of low-level functionality can make Magento behave in unexpected ways that effectively disable built-in protection mechanisms, introduce exploitable inconsistencies, or otherwise expose the application to attack.

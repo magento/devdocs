@@ -17,7 +17,7 @@ redirect_from:
   - /guides/v2.1/ui-components/ui-listing-grid.html
 ---
 
-## Welcome to the new UI components Guide.
+## Welcome to the new UI components Guide
 
 This document started as a [week-long doc sprint in Kyiv](http://bhmarks.com/blog/ui-components-doc-sprint-hello-kyiv/){:target="_blank"} with core Magento developers writing documentation about the UI Components. We will add additional topics to this book as we continue our work.
 

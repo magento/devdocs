@@ -32,7 +32,6 @@ To specify all services:
 
 The REST APIs for Magento EE are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.
 
-
 ### Customer balance
     customerBalanceBalanceManagementV1
 

@@ -11,10 +11,6 @@ github_link: config-guide/log/log-magento.md
 ---
 
 
-#### Contents
-
-*	[Monolog](#config-log-monolog)
-*	[Get started with logging](#config-log-start)
 
 ## Monolog {#config-log-monolog}
 Magento 2 complies with the PSR-3 standard. By default, Magento uses [Monolog](https://github.com/Seldaek/monolog){:target="_blank"}. Monolog implemented as a preference for `Psr\Log\LoggerInterface` in the Magento application [`di.xml`]({{ site.mage2000url }}app/etc/di.xml#L9){:target="_blank"}.
