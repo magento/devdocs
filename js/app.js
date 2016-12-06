@@ -3,6 +3,8 @@
 //= include _vendor/scrollspy.js
 //= include _vendor/clipboard.min.js
 
+//= include _includes/analytics.js
+
 // This is what happens on document.ready
 $(function() {
 

@@ -19,7 +19,7 @@ $(".content-wrap :header:not(h1)").each(function(){
         anchor_text = '';
 
     // check if we need to process the link
-    if ( !no_toc ) {
+    if ( !no_toc && !$this.parents('.collapsible').length ) {
 
       // check if we have id on heading already
       if ( id ) {
@@ -52,7 +52,7 @@ $(".content-wrap :header:not(h1)").each(function(){
         var $li = $('<li class="' + tag_name + '"><a href="#' + anchor_text + '">' + $this.text() + '</a></li>');
         $toc.find('ul').append($li);
       }
-      console.log(anchor_text);
+      //console.log(anchor_text);
 
     }
 
