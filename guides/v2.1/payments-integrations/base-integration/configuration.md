@@ -20,8 +20,8 @@ You can use the [sample Magento_SamplePaymentGateway module](https://github.com/
 Your custom payment integration module must have at least the following dependencies:
 
 - Magento_Sales:: to be able to get order details
-- Magento_Checkout: to be able to add the new payment method to checkout
 - Magento_Payment: to use the Magento payment provider gateway infrastructure
+- Magento_Checkout: to be able to add the new payment method to checkout. Though if you do not plan to use it on the storefront checkout, this dependency is not required. 
 
 
 Specify these dependencies in your `composer.json` and `module.xml` files. 
@@ -75,7 +75,6 @@ In the `config.xml` file in your `%Vendor_Module%` directory, configure the foll
 - `can_capture`: whether payment method supports the capture operation
 - `can_void`: whether payment method supports the void operation 
 - `can_use_checkout`: whether payment method is available in checkout
-<p class="q">if not available, no need to add dependency for Checkout module? да</p>
 - `currency`: supported currency
 - `is_gateway` is an integration with gateway
 - `merchant_gateway_key`: encrypted merchant credential
@@ -128,12 +127,11 @@ Following is the illustration of such configuration (`config.xml` of the SampleP
 {% endhighlight %}
 
 
-
 ### Payment method facade {#facade}
 
 Add the [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration for payment method facade in your `%Vendor_Module/etc/di.xml`.
 
-Facade is the extension of Magento payment adapter.app/code/Magento/Payment/Model/Method/Adapter
+Payment facade is the extension of the [Magento payment adapter]({{site.mage2100url}}app/code/Magento/Payment/Model/Method/Adapter).
 
 The following sample is an illustration of such configuration ([app/code/Magento/Braintree/etc/di.xml#L10]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L10)):
 
@@ -151,11 +149,11 @@ The following sample is an illustration of such configuration ([app/code/Magento
 {% endhighlight %}
 
 The following arguments must be configured:
+
 - `code`: payment method's code
 - `formBlockType`: name of the block class responsible for Payment Gateway Form rendering on a checkout. Since Opepage Checkout uses knockout.js for rendering, this renderer is used only during Checkout process from Admin panel.
 - `infoBlockType`: name of the block class responsible for Transaction/Payment Information details rendering in Order block.
 -`valueHandlerPool`: pool of value handlers used for queries to configuration (for details see the following paragraph).
-<p class="q">queries to configuration??</p>
 - `validatorPool`: [pool of response validators]({{page.baseurl}}payment-gateway/response-validator.html#validators_pool)
 - `commandPool`: [pool of gateway commands]({{page.baseurl}}payment-gateway/command-pool.html)
 
@@ -176,8 +174,6 @@ For example, the `can_void` configuration option might depend on payment transac
 </virtualType>
 {% endhighlight %}
 
-<p class="q">How does configuration show that can_void depends on the transaction status</p>
-
 Pay attention, that you must always specify the default handler. In the example it is config reader for Braintree:
 
 {% highlight xml %}
@@ -187,8 +183,6 @@ Pay attention, that you must always specify the default handler. In the example 
     </arguments>
 </virtualType>
 {% endhighlight %}
-
-<p class="q">is "config interface" a synonym for "default handler"? </p>
 
 And [Magento\Braintree\Gateway\Config\Config]({{site.mage2100url}}app/code/Magento/Braintree/Gateway/Config/Config.php) reads
 configuration from database or payment config file.

@@ -20,7 +20,6 @@ To implement a payment action for a payment method, take the following steps:
 ## Configure the command
 
 The gateway command for the payment action must be configured in the `di.xml` file of your module. Conventionally its location must be `<your_module_dir>/etc/di.xml`
-<p class="q">is payment action a term?</p>
 
 Configure the command as described in [Gateway Command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands).
 
