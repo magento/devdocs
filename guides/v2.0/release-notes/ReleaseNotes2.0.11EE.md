@@ -18,27 +18,14 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 ## Highlights
-Magento 2.10.11 contains more than 90 bug fixes and enhancements, including these highlights:
+Magento 2.0.11 contains more than 90 bug fixes and enhancements, including these highlights:
 
-* **Multiple enhancements to the payment feature**. These changes support your efforts to:
-
-	* Ease repeat purchases by enabling customers to save their PayPal account information as a payment option. This improvement means that they don’t need to enter their PayPal ID and password when making future purchases.
-
-	* Cut chargebacks and support calls by customizing the descriptor name, phone number and URL that appears on credit card statements for each of your websites through Braintree.
-
-	* Reduce your risk of accidently shipping products to customers flagged by Braintree’s fraud risk feature with a new process that requires you to confirm the risk decision before proceeding.
-
-	* Encourage unregistered customers to reorder or add items to an existing order in the Admin interface by no longer requiring them to re-enter their credit card information for these purchases. Magento can now bill the last payment method used during a guest checkout.
-
-* **Increased storefront performance** by removing excessive and slow SQL media queries.
 
 * **Management of configurable products with many variations** in the Admin interface without degrading performance.
 
 * **Upgrade to Magento 2.0.11 without issue** when using multiple master databases for checkout, order management, and product data.
 
 * **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
-
-* **Enhanced performance in the processing of large catalogs**. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
 
 * **Ten new web APIs (or service contracts) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use these new Sales API methods to carry out these tasks:
 
