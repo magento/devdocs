@@ -20,7 +20,9 @@ This section discusses how to create a new Magento file system owner and put tha
 ### Step 1: Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}
 This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the *command-line user*.)
 
-To create a user on CentOS or Ubuntu, enter the following command as a user with `root` privileges:
+{% collapsible To create the Magento file system owner: %}
+
+Enter the following command as a user with `root` privileges:
 
 	adduser <username>
 
@@ -43,7 +45,11 @@ For example, to create a user named `magento_user` and give the user a password,
     <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
 </div>
 
+{% endcollapsible %}
+
 ### Step 2: Find the web server user's group {#install-update-depend-user-findgroup}
+
+{% collapsible To find the web server user's group: %}
 To find the web server user's group:
 
 *	CentOS: `egrep -i '^user|^group' /etc/httpd/conf/httpd.conf`
@@ -53,8 +59,13 @@ To find the web server user's group:
 
 	Typically, the user name and the group name are both `www-data`
 
+{% endcollapsible %}
+
 ### Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}
-To put the Magento file system owner in the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
+
+{% collapsible To put the Magento file system owner in the web server's primary group: %}
+
+Asuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
 
 *	CentOS: `usermod -g apache <username>`
 *	Ubuntu: `usermod -g www-data <username>`
@@ -75,6 +86,8 @@ To complete the task, restart the web server:
 
 *	Ubuntu: `service apache2 restart`
 *	CentOS: `service httpd restart`
+
+{% endcollapsible %}
 
 #### Next step
 [Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)

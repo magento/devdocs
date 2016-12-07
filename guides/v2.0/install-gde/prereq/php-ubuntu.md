@@ -20,13 +20,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 ## PHP versions supported {#php-support}
 Magento requires:
 
-*	7.0.6 up to 7.1.0
-
-	PHP 7.1 is not supported
-
-	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5.
-*	PHP 5.6.x
-*	PHP 5.5.x, where x is 22 or greater
+{% include install/php_2.0.md %}
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

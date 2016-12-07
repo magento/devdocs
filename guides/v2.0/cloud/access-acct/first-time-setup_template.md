@@ -26,7 +26,7 @@ To set up a Magento project using a template:
 2.	Click the **Projects** tab as the following figure shows.
 
 	![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}
-3.	Click the name of your project.
+3.	Click the name of your project (initially, it's named **[Untitled Project]**).
 2.	When prompted, enter a name for your project and click **Next**.
 
 	![Enter a name for your project]({{ site.baseurl }}common/images/cloud_project_name.png){:width="550px"}
