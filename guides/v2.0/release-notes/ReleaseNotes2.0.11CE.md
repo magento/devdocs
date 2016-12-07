@@ -106,15 +106,15 @@ We address the following functional issues in this release.
 ### Performance
 {:.no_toc} 
 
-We’ve improved the performance of these tasks:
+* We’ve improved the performance of these tasks:
 
-<!--- 60187-->* Using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
+<!--- 60187-->	* Using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
 
-<!--- 55785-->* Loading the Configurable Product page.
+<!--- 55785-->	* Loading the Configurable Product page.
 
-<!---59394 -->* Calculating batch sizes while indexing categories.
+<!---59394 -->	* Calculating batch sizes while indexing categories.
 
-<!--- 57509-->We've also streamlined the JavaScript bundling process, which reduces the size of bundled files. <a href="https://github.com/magento/magento2/issues/4506" target="_blank">(GITHUB-4506)</a> 
+<!--- 57509-->* We've also streamlined the JavaScript bundling process, which reduces the size of bundled files. <a href="https://github.com/magento/magento2/issues/4506" target="_blank">(GITHUB-4506)</a> 
 
 <!--- 57894-->* We’ve optimized compiler performance by adding several options to the `setup:di:compile` command.
 
@@ -155,13 +155,13 @@ We’ve improved the performance of these tasks:
 ### APIs
 {:.no_toc} 
 
-We’ve added the ability to change the status of a shipment through the web API. The new Creditmemo interface supports tasks you can already do through the Admin dashboard, including the ability to:
+* We’ve added the ability to change the status of a shipment through the web API. The new Creditmemo interface supports tasks you can already do through the Admin dashboard, including the ability to:
 
-<!--- 61268-->* Support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
+<!--- 61268-->	* Support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
 
-<!--- 59424 -->* Return the product to stock 
+<!--- 59424 -->	* Return the product to stock 
 
-<!--- 56433 -->* Change order status after a credit memo has been created
+<!--- 56433 -->	* Change order status after a credit memo has been created
 
 
 * Magento now updates order status as expected on the Admin panel when you use the REST API to create a credit memo. 
@@ -248,6 +248,9 @@ We’ve added the ability to change the status of a shipment through the web API
 
 <!--- 56895-->*  We’ve improved the speed of static asset deployment. See Deploy static view files for more information about available options.
 
+<!--- 56076-->* Versioning of static files (including CSS, JS, fonts, and images) is now enabled by default.
+
+<!---59547-->* Static versioning now works under nginx. 
 
 
 ### Scope
@@ -277,9 +280,7 @@ We’ve added the ability to change the status of a shipment through the web API
 
 <!--- 60608-->* We've corrected a pagination problem that Magento experienced when using the `groupBy` function. <a href="https://github.com/magento/magento2/issues/4767" target="_blank">(GITHUB-4767)</a>
 
-<!---59547-->* Static versioning now works under nginx. 
 
-<!--- 56076-->* Versioning of static files (including CSS, JS, fonts, and images) is now enabled by default.
 
 <!--- 59449-->* Magento now decrements stock as expected in a multi-website environment. 
 
@@ -291,7 +292,7 @@ We’ve added the ability to change the status of a shipment through the web API
 
 <!--- 55664-->* We've removed the duplicate PHP settings from the sampple web server configuration files.
 
-<!--- 58894-->* The Compare Products page now works as expected. Previously, you would be erroneously redirected to another page when you removed an item from the Compare Products side bar. 
+<!--- 58894-->* The Compare Products page now works as expected. Previously, you were erroneously redirected to another page when you removed an item from the Compare Products side bar. 
 
 
 
