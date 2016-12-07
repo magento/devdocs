@@ -43,7 +43,7 @@ A gateway command must be configured with the following arguments:
 
 * `requestBuilder`: [request builder]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html), builds an array of provider-specific arguments using the order information. 
 
-* `transferFactory`: maps the array of provider-specific arguments with the format, supported by this provider (JSON, XML, SOAP).
+* `transferFactory`: [transfer factory]({{page.baseurl}}payments-integrations/payment-gateway/gateway-client.html#transfer-factory), creates transfer object from request data, which will be used by _Gateway Client_ to process requests.
 
 * `client`: [gateway client]({{page.baseurl}}payments-integrations/payment-gateway/gateway-client.html), takes the provider-specific arguments and performs a low-level call to the provider.
 
