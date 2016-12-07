@@ -2,9 +2,9 @@
 layout: full-width
 group: whatsnew
 subgroup: none
-title: What's new
-menu_title: What's new
-landing-page: What's New on DevDocs
+title: What's new on DevDocs
+menu_title: What's new on DevDocs
+landing-page: Release Information
 menu_order: 1
 menu_node: parent
 version: 2.0
