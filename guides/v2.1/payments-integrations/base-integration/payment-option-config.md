@@ -2,67 +2,12 @@
 layout: default
 group: payments-integrations
 subgroup: integration
-title: Payment Configuration
-menu_title: Payment Configuration
+title: Payment method configuration
+menu_title: Payment method configuration
 menu_order: 1
 version: 2.1
-github_link: payments-integrations/base-integration/configuration.md
+github_link: payments-integrations/base-integration/payment-options-config.md
 ---
-
-For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module.
-
-You can use the [sample Magento_SamplePaymentGateway module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway) files as basis for your custom module structure and files (do not forget to change the module-specific info):
-
-- composer.json
-
-## Specify your module dependencies 
-
-Your custom payment integration module must have at least the following dependencies:
-
-- Magento_Sales: to be able to get order details
-- Magento_Payment: to use the Magento payment provider gateway infrastructure
-- Magento_Checkout: to be able to add the new payment method to checkout. Though if you do not plan to use it on the storefront checkout, this dependency is not required. 
-
-
-Specify these dependencies in your `composer.json` and `module.xml` files. 
-
-### Composer.json
-
-In your `%Vendor_Module%/composer.json` file, specify the dependencies like in the following example:
-
-{% highlight json %}
-{
-    ...
-    "require": {
-        ...
-        "magento/module-payment": "100.1.*",
-        "magento/module-checkout": "100.1.*",
-        "magento/module-sales": "100.1.*",
-        ...
-    },
-    ...
-
-}
-{% endhighlight %}
-
-### module.xml
-Add the same dependencies in `%Vendor_Module%/etc/module.xml`
-
-{% highlight xml %}
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Vendor_Module" setup_version="2.0.0">
-        <sequence>
-            ...
-            <module name="Magento_Sales"/>
-            <module name="Magento_Payment"/>
-            <module name="Magento_Checkout"/>
-            ...
-        </sequence>
-    </module>
-</config>
-{% endhighlight %}
-
-Your payment method implementation might require adding more dependencies.
 
 ## Set your payment method options (`config.xml`)
 
@@ -90,6 +35,7 @@ Custom options can be added
 | `sort_order`           | payment method order position on checkout/system configuration pages                                                                                 | integer                               |
 | `title`                | default title for a payment method                                                                                                                   | string                                |
 
+<p class="q">can_use_internal<p>
 These are default settings available for any payment method. Particular payment method configuration can contain any other custom options. 
 Following is the illustration of such configuration (`config.xml` of the SamplePaymentGateway module)
 
@@ -128,69 +74,3 @@ Following is the illustration of such configuration (`config.xml` of the SampleP
                 <paymentInfoKeys>cc_type,cc_number,avsPostalCodeResponseCode,avsStreetAddressResponseCode,cvvResponseCode,processorAuthorizationCode,processorResponseCode,processorResponseText,liabilityShifted,liabilityShiftPossible,riskDataId,riskDataDecision</paymentInfoKeys>
             </braintree>
 {% endhighlight %}
-
-
-### Payment method facade {#facade}
-
-Add the [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration for payment method facade in your `%Vendor_Module/etc/di.xml`.
-
-Payment facade it is an instance of [Payment Adapter]({{site.mage2100url}}app/code/Magento/Payment/Model/Method/Adapter.php) configured with virtual types and allows to
-process payment actions between Magento Sales Management and payment processor.
-
-The following sample is an illustration of such configuration ([app/code/Magento/Braintree/etc/di.xml#L10]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L10)):
-
-{% highlight xml %}
-<virtualType name="BraintreeFacade" type="Magento\Payment\Model\Method\Adapter">
-    <arguments>
-        <argument name="code" xsi:type="const">Magento\Braintree\Model\Ui\ConfigProvider::CODE</argument>
-        <argument name="formBlockType" xsi:type="string">Magento\Braintree\Block\Form</argument>
-        <argument name="infoBlockType" xsi:type="string">Magento\Braintree\Block\Info</argument>
-        <argument name="valueHandlerPool" xsi:type="object">BraintreeValueHandlerPool</argument>
-        <argument name="validatorPool" xsi:type="object">BraintreeValidatorPool</argument>
-        <argument name="commandPool" xsi:type="object">BraintreeCommandPool</argument>
-    </arguments>
-</virtualType>
-{% endhighlight %}
-
-The following arguments must be configured:
-
-- `code`: payment method's code
-- `formBlockType`: name of the block class responsible for Payment Gateway Form rendering on a checkout. Since Opepage Checkout uses knockout.js for rendering, this renderer is used only during Checkout process from Admin panel. See the [Admin integration]({{page.baseurl}}payments-integrations/base-integration/admin-integration.html#formBlockType) topic for details.
-- `infoBlockType`: name of the block class responsible for Transaction/Payment Information details rendering in Order block.
--`valueHandlerPool`: pool of value handlers used for queries to configuration (for details see the following paragraph).
-- `validatorPool`: [pool of response validators]({{page.baseurl}}payment-gateway/response-validator.html#validators_pool)
-- `commandPool`: [pool of gateway commands]({{page.baseurl}}payment-gateway/command-pool.html)
-
-#### Value handlers pool
-Let's look closer at a value handlers pool of a payment method. This pool enables you to create payment configuration base on conditions. 
-
-For example, the `can_void` configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration ([app/code/Magento/Braintree/etc/di.xml#L296]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L296)):
-
-{% highlight xml %}
-<virtualType name="BraintreeValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
-    <arguments>
-        <argument name="handlers" xsi:type="array">
-            <item name="default" xsi:type="string">BraintreeConfigValueHandler</item>
-            <item name="can_void" xsi:type="string">Magento\Braintree\Gateway\Config\CanVoidHandler</item>
-            <item name="can_cancel" xsi:type="string">Magento\Braintree\Gateway\Config\CanVoidHandler</item>
-        </argument>
-    </arguments>
-</virtualType>
-{% endhighlight %}
-
-Pay attention, that you must always specify the default handler. In the example it is config reader for Braintree:
-
-{% highlight xml %}
-<virtualType name="BraintreeConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
-    <arguments>
-        <argument name="configInterface" xsi:type="object">Magento\Braintree\Gateway\Config\Config</argument>
-    </arguments>
-</virtualType>
-{% endhighlight %}
-
-And [Magento\Braintree\Gateway\Config\Config]({{site.mage2100url}}app/code/Magento/Braintree/Gateway/Config/Config.php) reads
-configuration from database or payment config file.
-
-Other handlers contain some logic, for example, `can_cancel` option the same as `can_void` and depends if order has paid amount (invoiced),
-your handler can check transaction status or do anything else what you need.
-

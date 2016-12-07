@@ -24,12 +24,14 @@ samples from [Braintree]({{site.mage2100url}}app/code/Magento/Braintree) payment
 To simplify the development of a new payment integration, Magento developed the [Payment sample module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway).
 It contains all required infrastructure and you can use it as starting point.
 
+Steps required:
 
-Topics of this chapter:
+1. Configure general payment method module options. Described in the [Payment method module configuration]({{page.baseurl}}payments-integrations/base-integration/module-configuration.md) topic.
+2. Configure payment method options. Described in [Payment method configuration]({{page.baseurl}}payments-integrations/base-integration/payment-options-config.md)
+3. Implement and configure payment method facade - the entity allowing to process payment actions between Magento sales management and payment processor. Described in [Payment facade configuration]({{page.baseurl}}payments-integrations/base-integration/facade-configuration.html) and [Payment info rendering in Admin checkout]({{page.base}}payments-integrations/base-integration/formblocktype.html)
+4. Implement and configure [gateway commands]({{page.baseurl}}gateway-command.html). Described in [Process payment action]({{page.baseurl}}payments-integrations/base-integration/payment-action.html) 
 
- - [Configuration]({{site.gdeurl21}}payments-integrations/base-integration/configuration.html)
- - [Process payment action]({{site.gdeurl21}}payments-integrations/base-integration/payment-action.html)
- - [Admin Integration]({{site.gdeurl21}}payments-integrations/base-integration/admin-integration.html)
+Your payment method might be available from either storefront and Admin, or both. And also can have different configuration for each area. The key notes, how to configure where the method can be used, and how to implement different behavior, are described in the 
 
 ## Terms Used
 
@@ -52,7 +54,7 @@ Payment additional information
 </tr>
 <tr>
 <td>
-
+Payment facade
 </td>
 <td>
 </td>
