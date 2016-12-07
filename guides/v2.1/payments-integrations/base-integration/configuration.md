@@ -199,5 +199,4 @@ And [Magento\Braintree\Gateway\Config\Config]({{site.mage2100url}}app/code/Magen
 configuration from database or payment config file.
 
 Other handlers contain some logic, for example, `can_cancel` option the same as `can_void` and depends if order has paid amount (invoiced),
-your handler can check transaction status or do anything else what you need.
-
+your handler can check transaction status or do anything else what you need you just need to implement [Value Handler Interface]({{site.mage2100url}}app/code/Magento/Payment/Gateway/Config/ValueHandlerInterface.php);
