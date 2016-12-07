@@ -57,3 +57,46 @@ Example of adding composite builders for the Braintree payment provider ([`app/c
 {% endhighlight %}
 
 (The code sample is from Magento CE v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1)
+
+## Example: Braintree request builder for the payment part of the request
+
+In the previous example, the `BraintreeAuthorizeRequest` builder composite includes the `Magento\Braintree\Gateway\Request\PaymentDataBuilder` builder. This is builder responsible for the payment information part of the request, in other words, the credit card information. Let's look closer at it's implementation.
+
+The Braintree payment provider requires the [payment method nonce](https://developers.braintreepayments.com/start/overview#payment-method-nonce)
+to process transactions, and our builder should send it per each authorization transaction. 
+Here is how the Braintree payment builder looks:
+
+{% highlight php startinline=1 %}
+class PaymentDataBuilder implements BuilderInterface
+{
+    /**
+     * @inheritdoc
+     */
+    public function build(array $buildSubject)
+    {
+        $paymentDO = $this->subjectReader->readPayment($buildSubject);
+
+        $payment = $paymentDO->getPayment();
+        $order = $paymentDO->getOrder();
+
+        $result = [
+            self::AMOUNT => $this->formatPrice($this->subjectReader->readAmount($buildSubject)),
+            self::PAYMENT_METHOD_NONCE => $payment->getAdditionalInformation(
+                DataAssignObserver::PAYMENT_METHOD_NONCE
+            ),
+            self::ORDER_ID => $order->getOrderIncrementId()
+        ];
+
+        ...
+
+        return $result;
+    }
+}
+{% endhighlight %}
+
+As you can see, we get the payment nonce from payment additional information. And so any specific data (like credit card information) can be retrieved.
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>All out of the bYou should remove any sensitive data (like credit card details) from payment additional information  when you do not use it in your code. You can remove it
+ in request builder, after reading, or in response handler, after processing response. In other case it will be stored in database.</p>
+</div>
