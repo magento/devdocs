@@ -23,17 +23,17 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these highlights:
 
+* **New PayPal and Braintree payment features**
 
+	* Increase conversion rates through faster checkouts by empowering customers to save their PayPal account as a payment option. This feature eliminates the need to enter a PayPal ID and password when making future purchases.
 
-* <b>Multiple enhancements to the payment feature</b>. These changes support your efforts to:
+	* Reduce chargebacks and support calls by customizing the business name, phone number, and URL that appears on credit card statements for each of your websites through Braintree.
 
-	* Ease repeat purchases by enabling customers to save their PayPal account information as a payment option.  This improvement means that they don’t need to enter their PayPal ID and password when making future purchases. 
+	* Reduce your risk of accidently shipping products to customers flagged by Braintree’s fraud risk feature with a new process that requires you to confirm risk decisions before proceeding with orders.
 
-	* Cut chargebacks and support calls by customizing the descriptor name, phone number and URL that appears on credit card statements for each of your websites through Braintree.
+	* Enable unregistered customers to reorder or add items to an existing order in the Admin without having to re-enter their credit card information. Merchant can now bill the last payment method used during a guest checkout.
 
-	* Reduce your risk of accidently shipping products to customers flagged by Braintree’s fraud risk feature with a new process that requires you to confirm the risk decision before proceeding.
-
-	* Encourage unregistered customers to reorder or add items to an existing order in the Admin interface by no longer requiring them to re-enter their credit card information for these purchases. Magento can now bill the last payment method used during a guest checkout.
+	* Simplify the process of configuring payments for your store with a redesigned Payment Methods page in the Admin interface.
 
 
 
