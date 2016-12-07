@@ -155,9 +155,11 @@ The following sample is an illustration of such configuration ([app/code/Magento
 The following arguments must be configured:
 
 - `code`: payment method's code
-- `formBlockType`: name of the block class responsible for Payment Gateway Form rendering on a checkout. Since Opepage Checkout uses knockout.js for rendering, this renderer is used only during Checkout process from Admin panel. See the [Admin integration]({{page.baseurl}}payments-integrations/base-integration/admin-integration.html#formBlockType) topic for details.
-- `infoBlockType`: name of the block class responsible for Transaction/Payment Information details rendering in Order block.
--`valueHandlerPool`: pool of value handlers used for queries to configuration (for details see the following paragraph).
+- `formBlockType`: name of the block class responsible for Payment Gateway Form rendering on a checkout. Since Opepage Checkout uses knockout.js for rendering, this renderer is used only during Checkout process from Admin panel.
+- `infoBlockType`: name of the block class responsible for Transaction/Payment Information details rendering in Order block (for Admin panel or customer account on Storefront).
+In most cases it will be enough to set default implementation of [Configurable Info]({{site.mage2100url}}app/code/Magento/Payment/Block/ConfigurableInfo.php), but for customizations you
+always can specify your own implementation.
+- `valueHandlerPool`: pool of value handlers used for queries to configuration (for details see the following paragraph).
 - `validatorPool`: [pool of response validators]({{page.baseurl}}payment-gateway/response-validator.html#validators_pool)
 - `commandPool`: [pool of gateway commands]({{page.baseurl}}payment-gateway/command-pool.html)
 
@@ -187,6 +189,11 @@ Pay attention, that you must always specify the default handler. In the example 
     </arguments>
 </virtualType>
 {% endhighlight %}
+
+In your implementations you can use [Payment Gateway Config]({{site.mage2100url}}app/code/Magento/Payment/Gateway/Config/Config.php) or implement `Magento\Payment\Gateway\ConfigInterface` interface.
+
+> _Payment Gateway Config_ can read configuration by payment method code, so is useful to use it or extend it for your own purposes.
+
 
 And [Magento\Braintree\Gateway\Config\Config]({{site.mage2100url}}app/code/Magento/Braintree/Gateway/Config/Config.php) reads
 configuration from database or payment config file.
