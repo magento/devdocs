@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento CE 2.1.0 Release Notes
 menu_title: Magento CE 2.1.0  Release Notes
-menu_order: 150
+menu_order: 199
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes
 version: 2.1
