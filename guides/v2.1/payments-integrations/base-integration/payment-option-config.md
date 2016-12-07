@@ -37,7 +37,7 @@ Custom options can be added
 
 <p class="q">can_use_internal<p>
 These are default settings available for any payment method. Particular payment method configuration can contain any other custom options. 
-Following is the illustration of such configuration (`config.xml` of the SamplePaymentGateway module)
+Following is the illustration of such configuration (`config.xml` of the Braintree module)
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
@@ -52,25 +52,16 @@ Following is the illustration of such configuration (`config.xml` of the SampleP
                 <can_use_checkout>1</can_use_checkout>
                 <can_authorize>1</can_authorize>
                 <can_capture>1</can_capture>
-                <can_capture_partial>1</can_capture_partial>
-                <can_authorize_vault>1</can_authorize_vault>
-                <can_capture_vault>1</can_capture_vault>
-                <can_use_internal>1</can_use_internal>
-                <can_refund_partial_per_invoice>1</can_refund_partial_per_invoice>
                 <can_refund>1</can_refund>
                 <can_void>1</can_void>
                 <can_cancel>1</can_cancel>
                 <cctypes>AE,VI,MC,DI,JCB,CUP,DN,MI</cctypes>
                 <useccv>1</useccv>
-                <cctypes_braintree_mapper><![CDATA[{"american-express":"AE","discover":"DI","jcb":"JCB","mastercard":"MC","master-card":"MC","visa":"VI","maestro":"MI","diners-club":"DN","unionpay":"CUP"}]]></cctypes_braintree_mapper>
                 <order_status>processing</order_status>
-                <environment>sandbox</environment>
-                <allowspecific>0</allowspecific>
-                <sdk_url><![CDATA[https://js.braintreegateway.com/js/braintree-2.17.6.min.js]]></sdk_url>
-                <public_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
-                <private_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
-                <masked_fields>cvv,number</masked_fields>
                 <privateInfoKeys>avsPostalCodeResponseCode,avsStreetAddressResponseCode,cvvResponseCode,processorAuthorizationCode,processorResponseCode,processorResponseText,liabilityShifted,liabilityShiftPossible,riskDataId,riskDataDecision</privateInfoKeys>
                 <paymentInfoKeys>cc_type,cc_number,avsPostalCodeResponseCode,avsStreetAddressResponseCode,cvvResponseCode,processorAuthorizationCode,processorResponseCode,processorResponseText,liabilityShifted,liabilityShiftPossible,riskDataId,riskDataDecision</paymentInfoKeys>
             </braintree>
+        </payment>
+    </default>
+</config>
 {% endhighlight %}
