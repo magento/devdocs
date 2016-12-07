@@ -38,11 +38,16 @@
 
 		<div class="container">
 
-			<a class="logo" href="{{ site.baseurl }}"><img src="{{ site.baseurl }}i/m-logo.svg" alt=""><img src="{{ site.baseurl }}i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="{{ site.baseurl }}i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+			<a class="logo" href="{% if page.guide_version == site.version %}{{site.baseurl}}{% else %}{{page.baseurl}}{% endif %}"><img src="{{site.baseurl}}i/m-logo.svg" alt=""><img src="{{site.baseurl}}i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="{{site.baseurl}}i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
 
 			{% include navigation.html %}
 
-			<div class="search-btn"><a class="search-trigger search-icon" href="{{site.baseurl}}search.html"></a></div>
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="{{site.baseurl}}search.html"></a>
+				<form class="quick-search" action="{{site.baseurl}}search.html" method="get">
+	        <input type="search" name="q" placeholder="search"  />
+	      </form>
+			</div>
 
 			{% include version-switcher.html %}
 
