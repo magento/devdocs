@@ -16,6 +16,6 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 {% include install/releasenotes/20_release-notes-links.md %}
 
 ## What's new on devdocs
-[What's new]({{ site.baseurl }}magento-devdocs-whatsnew.html)
+[What's new]({{ page.baseurl }}magento-devdocs-whatsnew.html)
 
 
