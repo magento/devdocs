@@ -5,7 +5,7 @@ subgroup: 09_Varnish
 title: Install Varnish
 menu_title: Install Varnish
 menu_order: 5
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/varnish/config-varnish-install.md
 ---
@@ -32,7 +32,7 @@ A sample follows:
 	Copyright (c) 2006 Verdens Gang AS
 	Copyright (c) 2006-2014 Varnish Software AS
 
-Make sure the version is at least 3.0.5 or any version of 4.x before continuing.
+Make sure the version is 4.x or 5.x before continuing. If you are running version 3.x, you must upgrade to a supported version. Consult the Varnish installation documentation for more information.
 
 ### Next step
 <a href="{{page.baseurl}}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
