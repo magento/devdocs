@@ -116,6 +116,7 @@ We’ve improved the performance of these tasks:
 
 <!--- 57509-->We've also streamlined the JavaScript bundling process, which reduces the size of bundled files. <a href="https://github.com/magento/magento2/issues/4506" target="_blank">(GITHUB-4506)</a> 
 
+<!--- 57894-->* We’ve optimized compiler performance by adding several options to the `setup:di:compile` command.
 
 
 ### Configurable products
@@ -146,6 +147,8 @@ We’ve improved the performance of these tasks:
 {:.no_toc} 
 
 <!--- 57099-->* You can now successfully place an order using the Payflow Pro payment method. 
+
+<!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and threw this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
 
 
 
@@ -240,6 +243,11 @@ We’ve added the ability to change the status of a shipment through the web API
 <!--- 56859-->* The **Send Welcome Email From** field now accurately identifies the store that the customer is associated with. Previously, the **Attribute for Send Welcome Email From** displayed the wrong store ID.
 
 
+### Static file processing
+{:.no_toc}
+
+<!--- 56895-->*  We’ve improved the speed of static asset deployment. See Deploy static view files for more information about available options.
+
 
 
 ### Scope
@@ -331,7 +339,7 @@ We’ve added the ability to change the status of a shipment through the web API
 
 
 
-<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716 -->
+<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323 -->
 
 
 <!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803 -->
@@ -347,7 +355,7 @@ We’ve added the ability to change the status of a shipment through the web API
 
 <!---  OMIT 58461-->
 
-<!--- 57172 CC Model doesn't assigns cc data passed in additional_data field patch for 2.0.x. <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a> ** -->*
+
 
 
 ## System requirements
