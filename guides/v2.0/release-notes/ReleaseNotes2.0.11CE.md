@@ -106,13 +106,13 @@ We address the following functional issues in this release.
 ### Performance
 {:.no_toc} 
 
-* We’ve improved the performance of these tasks:
+<!--- 60187, 55785, 59394--> * We’ve improved the performance of these tasks:
 
-<!--- 60187-->-- Using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
+	* Using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
 
-<!--- 55785-->-- Loading the Configurable Product page.
+	* Loading the Configurable Product page.
 
-<!---59394 -->-- Calculating batch sizes while indexing categories.
+	* Calculating batch sizes while indexing categories.
 
 <!--- 57509-->* We've also streamlined the JavaScript bundling process, which reduces the size of bundled files. <a href="https://github.com/magento/magento2/issues/4506" target="_blank">(GITHUB-4506)</a> 
 
@@ -155,13 +155,13 @@ We address the following functional issues in this release.
 ### APIs
 {:.no_toc} 
 
-* We’ve added the ability to change the status of a shipment through the web API. The new Creditmemo interface supports tasks you can already do through the Admin dashboard, including the ability to:
+<!--- 61268, 59424, 56433--> * We’ve added the ability to change the status of a shipment through the web API. The new Creditmemo interface supports tasks you can already do through the Admin dashboard, including the ability to:
 
-<!--- 61268-->-- Support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
+	* Support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
 
-<!--- 59424 -->-- Return the product to stock 
+	* Return the product to stock 
 
-<!--- 56433 -->-- Change order status after a credit memo has been created
+	* Change order status after a credit memo has been created
 
 
 * Magento now updates order status as expected on the Admin panel when you use the REST API to create a credit memo. 
@@ -228,7 +228,7 @@ We address the following functional issues in this release.
 ### Images
 {:.no_toc} 
 
-<!--- 59829-->* You can now successfully import images when you set  your document root to `/pub`. Previously, you needed to set document root to `/magento` to import images. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a> 
+<!--- 59829-->* We've added a new way to import images: You can now successfully import images when you set  your document root to `/pub`. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a> 
 
 <!--- 56171-->* You can now preview uploaded images. 
 
