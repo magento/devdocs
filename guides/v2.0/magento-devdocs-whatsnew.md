@@ -4,7 +4,7 @@ group: whatsnew
 subgroup: none
 title: What's new on DevDocs
 menu_title: What's new on DevDocs
-landing-page: Release Information
+landing-page: What's new on DevDocs
 menu_order: 1
 menu_node: parent
 version: 2.0
