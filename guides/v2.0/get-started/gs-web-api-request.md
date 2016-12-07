@@ -74,8 +74,8 @@ To configure a web API, developers define some of the elements of each API call 
       </td>
    </tr>
 </table>
-<a name="verbs"></a>
-<h3>HTTP verb</h3>
+
+### HTTP verb {#verbs}
 <p>Specify one of these HTTP verbs in the request:</p>
 <ul>
    <li><code>GET</code>.
@@ -97,15 +97,15 @@ To configure a web API, developers define some of the elements of each API call 
       resource.
    </li>
 </ul>
-<a name="endpoints"></a>
-<h3>Endpoint</h3>
+
+### Endpoint {#endpoints}
+
 <p>An endpoint is a combination of the <i>server</i> that fulfills a request, the web service, the <i>resource</i> against which the request is being made, and any template parameters.</p>
 
 <p>For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is <code>magento.ll/index.php/</code>, the web service is <code>rest</code>, the resource is <code>/V1/customerGroups</code>, and the template parameter is <code>id</code>.</p>
 
+### HTTP headers {#http-headers}
 
-<a name="http-headers"></a>
-<h3>HTTP headers</h3>
 <div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
 <p>Specify one or more of the following HTTP headers
    in your web API calls:</p>
@@ -156,12 +156,9 @@ See <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">
    </tr>
 </table>
 
-<a name="payload"></a>
-<h3>Call payload</h3>
-<p>The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request.
-            API operations have both
-            <em>required</em> and
-            <em>optional</em> inputs.</p>
+### Call payload {#payload}
+<p>The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both
+<em>required</em> and <em>optional</em> inputs.</p>
 <p>You specify input parameters in the URI. For example, in the <code>GET&nbsp;/V1/customers/:customerId</code> URI, you must specify the <code>customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
 <p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code>POST&nbsp;/V1/customers</code> call, you must specify a request body like this:</p>
 
@@ -240,7 +237,7 @@ $httpHeaders->addHeaders([
 ]);
 </pre>
 <li><p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
-<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="http://devdocs.magento.com/guides/v2.0/get-started/usage.html" target="_blank">searchCriteria usage</a>.</p></li>
+<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{page.baseurl}}get-started/usage.html" target="_blank">searchCriteria usage</a>.</p></li>
 <pre>
 $request = new \Zend\Http\Request();
 $request->setHeaders($httpHeaders);
