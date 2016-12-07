@@ -69,11 +69,12 @@ h2, h3, h4, h5, h6 {
 .anchor {
   width: 40px;
   height: 100%;
-  background: url('/i/icons/ico-link-grey.png') center center no-repeat;
-  background-size: 25px;
+  background: url('../i/icons/link.svg') center center no-repeat;
+  background-size: 20px;
   display: none;
   position: absolute;
   left: -36px;
+  opacity: .5;
 
   h2:hover &, h3:hover &, h4:hover &, h5:hover &, h6:hover & {
     display: block;
