@@ -11,17 +11,15 @@ github_link: payments-integrations/base-integration/module-configuration.md
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module.
 
-You can use the [sample Magento_SamplePaymentGateway module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway) files as basis for your custom module structure and files (do not forget to change the module-specific info):
-
-- composer.json
+You can use the [sample Magento_SamplePaymentGateway module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway) files as basis for your custom module structure and files.
 
 ## Specify your module dependencies 
 
 Your custom payment integration module must have at least the following dependencies:
 
-- Magento_Sales: to be able to get order details
-- Magento_Payment: to use the Magento payment provider gateway infrastructure
-- Magento_Checkout: to be able to add the new payment method to checkout. Though if you do not plan to use it on the storefront checkout, this dependency is not required. 
+- Magento_Sales module: to be able to get order details
+- Magento_Payment module: to use the Magento payment provider gateway infrastructure
+- Magento_Checkout module: to be able to add the new payment method to checkout. Though if you do not plan to use it on the storefront checkout, this dependency is not required. 
 
 
 Specify these dependencies in your `composer.json` and `module.xml` files. 
@@ -46,7 +44,8 @@ In your `%Vendor_Module%/composer.json` file, specify the dependencies like in t
 {% endhighlight %}
 
 ### module.xml
-Add the same dependencies in `%Vendor_Module%/etc/module.xml`
+
+Add the same dependencies in `%Vendor_Module%/etc/module.xml` like in the following example:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">

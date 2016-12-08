@@ -9,11 +9,7 @@ version: 2.1
 github_link: payments-integrations/base-integration/payment-options-config.md
 ---
 
-## Set your payment method options (`config.xml`)
-
 In the `config.xml` file in your `%Vendor_Module%` directory, configure the options of your payment method. The following table contains the default options available for any payment method.
-Custom options can be added
-<p class="q">How they can be added, in general?</p>
 
 | Option               | Description                                                                                                                                          | Value type                            |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
@@ -23,7 +19,8 @@ Custom options can be added
 | `can_authorize`        | whether payment method supports authorization                                                                                                        | Boolean                               |
 | `can_capture`          | whether payment method supports the capture operation                                                                                                | Boolean                               |
 | `can_void`             | whether payment method supports the void operation                                                                                                   | Boolean                               |
-| `can_use_checkout`     | whether payment method is available in checkout                                                                                                      | Boolean                               |
+| `can_use_checkout`     | whether payment method is available in storefront checkout                                                                                                      | Boolean 
+| `can_use_internal`     | whether payment method is available in Admin order creation                                                                                                     | Boolean                               |
 | `currency`             | supported currency                                                                                                                                   | comma separated list of what values?  |
 | `is_gateway`           | is an integration with gateway                                                                                                                       | Boolean                               |
 | `merchant_gateway_key` | encrypted merchant credential                                                                                                                        | string                                |
@@ -35,8 +32,8 @@ Custom options can be added
 | `sort_order`           | payment method order position on checkout/system configuration pages                                                                                 | integer                               |
 | `title`                | default title for a payment method                                                                                                                   | string                                |
 
-<p class="q">can_use_internal<p>
-These are default settings available for any payment method. Particular payment method configuration can contain any other custom options. 
+Additionally to the default option, a payment method configuration can contain any other custom options. 
+
 Following is the illustration of such configuration (`config.xml` of the Braintree module)
 
 {% highlight xml %}

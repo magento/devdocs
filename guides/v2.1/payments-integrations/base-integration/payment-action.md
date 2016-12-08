@@ -2,18 +2,18 @@
 layout: default
 group: payments-integrations
 subgroup: integration
-title: Process payment action
-menu_title: Process payment action
+title: Add a gateway command
+menu_title: Add a gateway command
 menu_order: 5
 version: 2.1
 github_link: payments-integrations/base-integration/payment-action.md
 ---
 
-## Adding command overview
+You need to add a [gateway command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands) for each payment action available for the payment method. There should be a separate command for "authorize", "void" and so on.
 
-To implement a payment action for a payment method, take the following steps:
-1. Specify and configure the [gateway command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands) for this payment action using dependency injection.
-	1. 
+To add a gateway command. take the following steps:
+1. Specify and configure the gateway command as described in [Gateway command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands)
+	
 2. Add the command to the [commands pool]({{page.baseurl}}/payments-integrations/payment-gateway/command-pool.html).
 
 
@@ -23,7 +23,6 @@ The gateway command for the payment action must be configured in the `di.xml` fi
 
 Configure the command as described in [Gateway Command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands).
 
-One of the options you specify for a command, is 
 
 ## Example: Implementing the `authorize` payment action
 We have already created payment method and in this topic will create `authorize` payment action.
@@ -51,7 +50,8 @@ we configured payment method with _Command Pool_ and now need to add authorize c
 </virtualType>
 {% endhighlight %}
 
-#### Let's look into common command arguments
+Let's look into common command arguments
+
  * `requestBuilder` - list of builders to process transaction details, more information in
  [Request Builder]({{site.gdeurl21}}payments-integrations/payment-gateway/request-builder.html) component description.
  * `transferFactory` - creates transfer object and should implement `Magento\Payment\Gateway\Http\TransferFactoryInterface`.
@@ -59,69 +59,6 @@ we configured payment method with _Command Pool_ and now need to add authorize c
  * `handler` - handles response from payment provider, [more details]({{site.gdeurl21}}payments-integrations/payment-gateway/response-handler.html).
  * `validator` - processes response validations, the [component description]({{site.gdeurl21}}payments-integrations/payment-gateway/response-validator.html).
  
-Most of described components you can find in topics _Payment Gateway_, but we will focus our attention on some important things.
-
-### Request Builder
-
-Our _authorize command_ has request builder composite and it looks like this:
-
-{% highlight xml %}
-<virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
-    <arguments>
-        <argument name="builders" xsi:type="array">
-            <item name="customer" xsi:type="string">Magento\Braintree\Gateway\Request\CustomerDataBuilder</item>
-            <item name="payment" xsi:type="string">Magento\Braintree\Gateway\Request\PaymentDataBuilder</item>
-            <item name="3dsecure" xsi:type="string">Magento\Braintree\Gateway\Request\ThreeDSecureDataBuilder</item>
-            ...
-        </argument>
-    </arguments>
-</virtualType>
-{% endhighlight %}
-
-The most important builder for us - `payment` builder. The Braintree payment processor requires [Payment Nonce](https://developers.braintreepayments.com/start/overview#payment-method-nonce)
-to process transactions and our builder should send it per each authorization transaction. Your custom payment integrations can
-require similar data (this way is more secure, then receiving card details), and next topic will describes to get
-specific payment data from payment form, now, let's assume, we already have _Payment Nonce_ in payment additional information (order).
-
-And that's how payment builder looks:
-
-{% highlight php startinline=1 %}
-class PaymentDataBuilder implements BuilderInterface
-{
-    /**
-     * @inheritdoc
-     */
-    public function build(array $buildSubject)
-    {
-        $paymentDO = $this->subjectReader->readPayment($buildSubject);
-
-        $payment = $paymentDO->getPayment();
-        $order = $paymentDO->getOrder();
-
-        $result = [
-            self::AMOUNT => $this->formatPrice($this->subjectReader->readAmount($buildSubject)),
-            self::PAYMENT_METHOD_NONCE => $payment->getAdditionalInformation(
-                DataAssignObserver::PAYMENT_METHOD_NONCE
-            ),
-            self::ORDER_ID => $order->getOrderIncrementId()
-        ];
-
-        ...
-
-        return $result;
-    }
-}
-{% endhighlight %}
-
-As you can see, we get _Payment Nonce_ from payment additional information and in this way you can get any specific data (like credit card information) according to your requirements.
-
-<div class="bs-callout bs-callout-info" id="info">
-<p>You should remove any sensitive data (like credit card details) from payment additional information  when you do not use it in your code. You can remove it
- in request builder, after reading, or in response handler, after processing response. In other case it will be stored in database.</p>
-</div>
-
-Perhaps, you have a question - "How to set some data from payment form to payment additional information?" - the next
-section will show how to retrieve all required data.
 
 ### From frontend to backend
 

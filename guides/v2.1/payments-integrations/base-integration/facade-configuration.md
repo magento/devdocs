@@ -2,19 +2,17 @@
 layout: default
 group: payments-integrations
 subgroup: integration
-title: Payment facade configuration
-menu_title: Payment facade configuration
+title: Payment method facade
+menu_title: Payment method facade
 menu_order: 1
 version: 2.1
 github_link: payments-integrations/base-integration/facade-configuration.md
 ---
 
-### Payment method facade {#facade}
-
-Add the [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration for payment method facade in your `%Vendor_Module/etc/di.xml`.
-
 Payment facade it is an instance of [Payment Adapter]({{site.mage2100url}}app/code/Magento/Payment/Model/Method/Adapter.php) configured with virtual types and allows to
 process payment actions between Magento Sales Management and payment processor.
+
+Add the [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration for payment method facade in your `%Vendor_Module/etc/di.xml`.
 
 The following sample is an illustration of such configuration ([app/code/Magento/Braintree/etc/di.xml#L10]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L10)):
 
@@ -31,17 +29,19 @@ The following sample is an illustration of such configuration ([app/code/Magento
 </virtualType>
 {% endhighlight %}
 
-The following arguments must be configured:
+The following arguments must be configured (all arguments are mandatory):
 
-- `code`: payment method's code
-- `formBlockType`: name of the block class responsible for Payment Gateway Form rendering on a checkout. Since store front checkout uses knockout.js for form rendering, this renderer is used only during checkout process in the Admin panel. See the [Admin integration]({{page.baseurl}}payments-integrations/base-integration/admin-integration.html#formBlockType) topic for details.
-- `infoBlockType`: name of the block class responsible for Transaction/Payment Information details rendering in Order block.
--`valueHandlerPool`: pool of value handlers used for queries to configuration (for details see the following paragraph).
-- `validatorPool`: [pool of response validators]({{page.baseurl}}payment-gateway/response-validator.html#validators_pool)
-- `commandPool`: [pool of gateway commands]({{page.baseurl}}payment-gateway/command-pool.html)
+| Option           | Description                                                                                                                                                                                                                                                                                                                                                                                       |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `code`           | Payment method's code.                                                                                                                                                                                                                                                                                                                                                                           |
+| `formBlockType`  | Name of the block class responsible for payment provider gateway form rendering. This block is used in the Admin panel only, because on the storefront the form is rendered using knockout.js. See the [Admin integration]({{page.baseurl}}payments-integrations/base-integration/formblocktype.html) topic for details.                                                                          |
+| `infoBlockType`  | Name of the block class responsible for Transaction/Payment Information details rendering in Order block in Admin panel or customer account on storefront. In most cases it will be enough to specify the default implementation of [Configurable Info]({{site.mage2100url}}app/code/Magento/Payment/Block/ConfigurableInfo.php), but for customizations you can specify your own implementation. |
+| `valueHandlerPool` | Pool of value handlers used for queries to configuration. For details see the [following paragraph](#value_handlers_pool).                                                                                                                                                                                                                                                                         |
+| `validatorPool`    | [Pool of response validators]({{page.baseurl}}payments-integrations/payment-gateway/response-validator.html#validators_pool).                                                                                                                                                                                                                                                                                            |
+| `commandPool`      | [Pool of gateway commands]({{page.baseurl}}payments-integrations/payment-gateway/command-pool.html).                                                                                                                                                                                                                                                                                                                     |
 
-#### Value handlers pool
-Let's look closer at a value handlers pool of a payment method. This pool enables you to create payment configuration base on conditions. 
+#### Value handlers pool {#value_handlers_pool}
+Let's look closer at the value handlers pool of a payment method. This pool enables you to set payment configuration that is based on certain conditions. 
 
 For example, the `can_void` configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration ([app/code/Magento/Braintree/etc/di.xml#L296]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L296)):
 
@@ -66,6 +66,10 @@ Pay attention, that you must always specify the default handler. In the example 
     </arguments>
 </virtualType>
 {% endhighlight %}
+
+In your configuration you can use default [Magento\Payment\Gateway\Config\Config]({{site.mage2100url}}app/code/Magento/Payment/Gateway/Config/Config.php). Or you can add a custom config interface. It must implement the `Magento\Payment\Gateway\ConfigInterface` interface.
+
+`Magento\Payment\Gateway\Config\Config` can read configuration by payment method code, so is useful to use it or extend it for your own purposes.
 
 And [Magento\Braintree\Gateway\Config\Config]({{site.mage2100url}}app/code/Magento/Braintree/Gateway/Config/Config.php) reads
 configuration from database or payment config file.
