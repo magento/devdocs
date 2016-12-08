@@ -18,7 +18,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 ## Highlights
-Magento 2.0.11 contains more than 90 bug fixes and enhancements, including these highlights:
+Magento 2.0.11 contains more than 60 bug fixes and enhancements, including these highlights:
 
 
 * **Management of configurable products with many variations** in the Admin interface without degrading performance.
@@ -27,20 +27,17 @@ Magento 2.0.11 contains more than 90 bug fixes and enhancements, including these
 
 * **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
 
-* **Two new web APIs (or <i>service contracts</i>) for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use these new Sales API methods to carry out these tasks:
+* **Two new web APIs for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use `RefundInvoiceInterface` and `RefundOrderInterface` to carry out these tasks:
 
-	* create a credit memo (complete or partial) for particular invoice
+	* create a credit memo (complete or partial) for particular invoice or order
 
 	* add details about refunded items to an order
 
-	* change status and state of an order according to performed actions
+	* update the status and state of an order after actions are performed
 
-	* notify customer about performed refund operation
+	* notify a customer about refunded items
 
-
-
-
-
+	
 
 ## Functional fixes
 
@@ -137,16 +134,24 @@ We address the following functional issues in this release.
 <!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and threw this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
 
 
-### Web APIs
+
+### Orders
 {:.no_toc} 
 
-<!--- 61268,59424,56433 -->* We’ve added the ability to change the status of a shipment through the web API. The new Creditmemo interface supports tasks you can already do through the Admin dashboard, including the ability to:
+<!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
 
 	* Support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
 
 	* Return the product to stock 
 
-	* Change order status after a credit memo has been created. 
+	* Change order status after a credit memo has been created
+
+
+
+### Web APIs
+{:.no_toc} 
+
+* We've added two new REST APIs to the Sales module:  `RefundInvoiceInterface` and `RefundOrderInterface`. 
 
 
 * Magento now updates order status as expected on the Magento Admin when you use the REST API to create a credit memo. 
@@ -172,6 +177,16 @@ We address the following functional issues in this release.
 
 <!--- 57715-->* A user can view orders only on stores to which they've been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website. 
 
+<!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
+
+	* Support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
+
+	* Return the product to stock 
+
+	* Change order status after a credit memo has been created
+
+
+
 
 
 ### Cart and checkout
@@ -185,7 +200,7 @@ We address the following functional issues in this release.
 
 <!--- 59211-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a> 
 
-<!--- 59374-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the Ship to field if you refreshed your browser page during this process. 
+<!--- 59374-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the **Ship to** field if you refreshed your browser page during this process. 
 
 <!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your shopping cart. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
 
@@ -306,11 +321,34 @@ We address the following functional issues in this release.
 
 <!--- 57103-->* We've fixed an issue with how the Customer Segments report calculate the same customer on two websites. 
 
-<!--- 57384, 39489 -->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront. 
+<!--- 57384, 39489 -->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**. 
 
 <!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 
 
 
+## Known issues
+
+* **Issue**: You cannot successfully change and save your settings for gift cards. (Settings include `allow open amount` or “`open amount minimum`.) **Workaround**: None
+
+
+* **Issue**: When editing a product, you cannot edit customizable options on the store view level. That is, a change to one option affects products on all stores. Also, the ‘Use Default Value’ checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. **Workaround**: None
+
+
+<!--- 57199-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. **Workaround**: Flush Varnish cache using the Varnish admin CLI. 
+
+
+* **Issue: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If it isn’t, then Magento throws this error: curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s). Workaround: Upgrade your version of TLS to at least 1.2.
+
+
+** Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.
+
+* **Issue**: Gallery doesn't show all images added to configurable options. **Workaround**: None
+
+
+* **Issue**: The Add Products Manually link is not available after removing all variations. **Workaround**: Retain at least one variation or use the **Choose a different product option** option.
+
+
+* **Issue**: When you log in to run a system upgade, Magento throws an `Encountered end of file` error.  **Workaround**: Upgrade your SSL protocol to a minimum of TLS 1.0. 
 
 
 
