@@ -60,14 +60,10 @@ Let's look into common command arguments
  * `validator` - processes response validations, the [component description]({{site.gdeurl21}}payments-integrations/payment-gateway/response-validator.html).
  
 
-### From frontend to backend
-
-Our payment request builder can read payment information, but how this data will be set into additional information?
+## Getting payment information from frontend to backend 
 
 In most cases, customers fill all required information (credit card, expiration date, billing address, etc) on checkout payment form.
-So, our payment should provide an ability to display and process payment form on checkout step. Information,
-how to add a custom payment integration to checkout page you can find in [this topic]({{site.gdeurl21}}howdoi/checkout/checkout_payment.html),
-but we should pay our attention on some important things.
+So our payment method implementation should provide the ability to display and process payment form on checkout step. 
 
 We can send to backend any specific data, just need to override `getData()` method in
 [payment UI component]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js):
@@ -202,10 +198,12 @@ public function assignData(\Magento\Framework\DataObject $data)
 
 There are two events:
 
- * `payment_method_assign_data_payment_code` - specific for current method (placing order using this payment method)
- * `payment_method_assign_data` - global for all payments (place order)
+ * `payment_method_assign_data_payment_code`: specific for current method (placing order using this payment method)
+ * `payment_method_assign_data`: global for all payments (place order)
  
-What type of event to use - depends on your implementation, but in most cases it will be enough to use the event for
-current payment method.
+What type of event to use depends on your implementation, but in most cases it will be enough to use the event for current payment method.
 
-Now, you can read all payment specific data in request builders.
+
+## Related topics
+
+You can find detailed information on how to add a custom payment integration to checkout page in [Add a custom payment method to checkout]({{site.gdeurl21}}howdoi/checkout/checkout_payment.html) topic. 
