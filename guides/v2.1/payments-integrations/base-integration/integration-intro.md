@@ -49,7 +49,7 @@ Description
 Payment additional information
 </td>
 <td>
-
+Array of data where you can store any payment-related information 
 </td>
 </tr>
 <tr>
