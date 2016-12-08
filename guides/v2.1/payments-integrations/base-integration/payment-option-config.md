@@ -4,7 +4,7 @@ group: payments-integrations
 subgroup: integration
 title: Payment method configuration
 menu_title: Payment method configuration
-menu_order: 1
+menu_order: 2
 version: 2.1
 github_link: payments-integrations/base-integration/payment-options-config.md
 ---
