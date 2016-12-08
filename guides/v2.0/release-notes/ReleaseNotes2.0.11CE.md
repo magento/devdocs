@@ -35,16 +35,6 @@ Magento 2.0.11 contains more than 60 bug fixes and enhancements, including these
 	* notify a customer about refunded items or order
 
 
-### Breaking changes
-
-No changes for 2.0.11
-
-removed four classes (2.1.3)
-added new method to render interface
-
-
-
-
 ## Functional fixes
 
 We address the following functional issues in this release.
@@ -318,19 +308,21 @@ We address the following functional issues in this release.
 
 ## Known issues
 
+## Known issues
+
 * **Issue**: You cannot successfully change and save your settings for gift cards. (Settings include `allow open amount` or “`open amount minimum`.) **Workaround**: None
 
 
-* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the ‘Use Default Value’ checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. **Workaround**: None
+* **Issue**: When editing a product, you cannot edit customizable options on the store view level. That is, a change to one option affects products on all stores. Also, the ‘Use Default Value’ checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. **Workaround**: None
 
 
 <!--- 57199-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. **Workaround**: Flush Varnish cache using the Varnish admin CLI. 
 
 
-* **Issue: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If it isn’t, then Magento throws this error: curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s). Workaround: Upgrade your version of TLS to at least 1.2.
+* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If it isn’t, then Magento throws this error: curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s). Workaround: Upgrade your version of TLS to at least 1.2.
 
 
-** Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.
+* **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.
 
 * **Issue**: Gallery doesn't show all images added to configurable options. **Workaround**: None
 
@@ -339,7 +331,7 @@ We address the following functional issues in this release.
 
 
 * **Issue**: When you log in to run a system upgade, Magento throws an `Encountered end of file` error.  **Workaround**: Upgrade your SSL protocol to a minimum of TLS 1.0. 
- 
+
 
 
 
