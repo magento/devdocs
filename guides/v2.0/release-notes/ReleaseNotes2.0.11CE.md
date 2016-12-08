@@ -284,7 +284,7 @@ We address the following functional issues in this release.
 
 <!--- 57331-->* The Magento storefront now reflect changes in the swatch attribute properties as expected. 
 
-<!--- 57326-->* The Sales Order object can now contain more than one extension_attribute.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a>
+<!--- 57326-->* The Sales Order object can now contain more than one `extension_attribute`.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a>
 
 <!--- 57352-->* We've removed the sample password from the Setup wizard.
 
@@ -328,7 +328,7 @@ We address the following functional issues in this release.
 * **Issue**: The Add Products Manually link is not available after removing all variations. **Workaround**: Retain at least one variation or use the **Choose a different product option** option.
 
 
-* **Issue**: When you log in to run a system upgade, Magento throws an `Encountered end of file` error.  **Workaround**: Upgrade your SSL protocol to a minimum of TLS 1.0. 
+* **Issue**: When you log in to run a system upgrade, Magento throws an `Encountered end of file` error.  **Workaround**: Upgrade your SSL protocol to a minimum of TLS 1.0. 
 
 
 

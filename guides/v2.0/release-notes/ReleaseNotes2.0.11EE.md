@@ -307,7 +307,7 @@ We address the following functional issues in this release.
 <!--- 57331-->* The Magento storefront now reflect changes in the swatch attribute properties as expected. 
 
 
-<!--- 57326-->* The Sales Order object can now contain more than one extension_attribute.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a>
+<!--- 57326-->* The Sales Order object can now contain more than one `extension_attribute`.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a>
 
 <!--- 57352-->* We've removed the sample password from the Setup wizard.
 
