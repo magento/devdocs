@@ -14,6 +14,3 @@ github_link: release-notes/bk-release-notes.md
 
 {% include install/releasenotes/21_release-notes-links.md %}
 
-## What's new on devdocs
-[What's new]({{ page.baseurl }}magento-devdocs-whatsnew.html)
-
