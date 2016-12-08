@@ -308,8 +308,6 @@ We address the following functional issues in this release.
 
 ## Known issues
 
-## Known issues
-
 * **Issue**: You cannot successfully change and save your settings for gift cards. (Settings include `allow open amount` or “`open amount minimum`.) **Workaround**: None
 
 
