@@ -1,1 +1,0 @@
-../../../v2.0/install-gde/docker/docker-install.md
