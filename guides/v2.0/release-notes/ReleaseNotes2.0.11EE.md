@@ -27,9 +27,9 @@ Magento 2.0.11 contains more than 60 bug fixes and enhancements, including these
 
 * **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
 
-* **Two new web APIs for the Sales module** that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use `RefundInvoiceInterface` and `RefundOrderInterface` to carry out these tasks:
+* **Two new web APIs for the Sales module** that incorporate functionality into the Sales module that is currently available in the Admin interface. After you install this patch, you’ll be able to use `RefundInvoiceInterface` and `RefundOrderInterface` to carry out these tasks:
 
-	* create a credit memo (complete or partial) for particular invoice or order
+	* create a credit memo (complete or partial) for a particular invoice or order
 
 	* add details about refunded items to an order
 
@@ -42,6 +42,8 @@ Magento 2.0.11 contains more than 60 bug fixes and enhancements, including these
 ## Functional fixes
 
 We address the following functional issues in this release.
+
+
 
 
 
@@ -117,11 +119,11 @@ We address the following functional issues in this release.
 
 <!--- 59415-->* Magento no longer displays the *as low as* price for a configurable product's simple options if the options are disabled.
 
-<!--- 58035-->* You can now edit a product attribute for multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, then incorrectly tell you that the products had been edited.
+<!--- 58035-->* You can now edit a single product attribute and apply it to multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, then incorrectly tell you that the products had been edited.
 
 <!--- 58192-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products. <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>
 
-<!--- 59950-->* Configurable product option price is displayed Web correctly per website.
+<!--- 59950-->* Configurable product option price is displayed  correctly per website.
 
 <!--- 57056-->* You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. <a href="https://github.com/magento/magento2/issues/4419" target="_blank">(GITHUB-4419)</a>
 
@@ -138,24 +140,21 @@ We address the following functional issues in this release.
 ### Orders
 {:.no_toc} 
 
+<!--- 57681-->* You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a>
+
+<!--- 57715-->* A user can view orders only on stores to which they've been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website. 
+
 <!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
 
 	* Support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
 
 	* Return the product to stock 
 
-	* Change order status after a credit memo has been created
-
+	* Change order status after a credit memo has been created.
 
 
 ### Web APIs
 {:.no_toc} 
-
-* We've added two new REST APIs to the Sales module:  `RefundInvoiceInterface` and `RefundOrderInterface`. 
-
-
-* Magento now updates order status as expected on the Magento Admin when you use the REST API to create a credit memo. 
-
 
 <!--- 57066-->* Swagger now correctly documents how to retrieve gift message data for a sales order using the API.
 
@@ -173,18 +172,7 @@ We address the following functional issues in this release.
 ### Orders
 {:.no_toc} 
 
-<!--- 57681-->* You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a>
-
-<!--- 57715-->* A user can view orders only on stores to which they've been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website. 
-
-<!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
-
-	* Support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
-
-	* Return the product to stock 
-
-	* Change order status after a credit memo has been created
-
+<
 
 
 
@@ -331,7 +319,7 @@ We address the following functional issues in this release.
 * **Issue**: You cannot successfully change and save your settings for gift cards. (Settings include `allow open amount` or “`open amount minimum`.) **Workaround**: None
 
 
-* **Issue**: When editing a product, you cannot edit customizable options on the store view level. That is, a change to one option affects products on all stores. Also, the ‘Use Default Value’ checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. **Workaround**: None
+* **Issue**: When editing a product, you cannot edit customizable options on the store view level. That is, a change to one option affects products on all stores. Also, the ‘Use Default Value’ checkbox for the option title does not work. Unchecking this box and then changing the title affects all store views. **Workaround**: None
 
 
 <!--- 57199-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. **Workaround**: Flush Varnish cache using the Varnish admin CLI. 
@@ -348,7 +336,7 @@ We address the following functional issues in this release.
 * **Issue**: The Add Products Manually link is not available after removing all variations. **Workaround**: Retain at least one variation or use the **Choose a different product option** option.
 
 
-* **Issue**: When you log in to run a system upgade, Magento throws an `Encountered end of file` error.  **Workaround**: Upgrade your SSL protocol to a minimum of TLS 1.0. 
+* **Issue**: When you log in to run a system upgrade, Magento throws an `Encountered end of file` error.  **Workaround**: Upgrade your SSL protocol to a minimum of TLS 1.0. 
 
 
 
