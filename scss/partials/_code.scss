@@ -42,7 +42,51 @@ a code {
   overflow-y: scroll;
 }
 
+.pre-wrap {
+  position: relative;
 
+  &:hover {
+    .btn-copy, .btn-no-copy  {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .btn-copy, .btn-no-copy {
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    font-family: $body-font-family;
+    font-size: 12px;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .btn-copy {
+    color: #fff;
+    background: $brand-color;
+    &:hover {
+      color: #fff;
+      background: darken($brand-color, 10%);
+    }
+    &:active {
+      color: #fff;
+      background: darken($brand-color, 20%);
+    }
+  }
+
+  .btn-no-copy {
+    cursor: default;
+    outline: none;
+    background: darken($light-gray-color, 5%);
+    &:active, &:hover {
+      background: darken($light-gray-color, 5%);
+    }
+  }
+}
 
 
 /* TDD code format in headers */
@@ -62,29 +106,4 @@ h1 code, h2 code, h3 code, h4 code, h5 code {
   position: relative;
   border-radius: 3px;
   margin: 0 0 20px;
-
-  &:hover {
-    .btn-copy {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-  .btn-copy {
-    visibility: hidden;
-    background: darken($light-gray-color, 10%);
-    opacity: 0;
-    transition: .3s;
-    font-family: $body-font-family;
-    font-size: 12px;
-    user-select: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 0;
-    &:active {
-      background: darken($light-gray-color, 20%);
-    }
-  }
-
 }

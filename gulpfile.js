@@ -102,6 +102,7 @@ gulp.task('scripts', function () {
 		.pipe(sourcemaps.write())
 		.pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(destJS))
+    .pipe(gulp.dest( destHtml + 'common/js/' ))
     .on('error', gutil.log);
   //  .pipe(reload({stream: true}));
 });
@@ -159,11 +160,11 @@ gulp.task('browser-sync', function () {
 
 // Rerun the task when a file changes
 gulp.task('watch', function () {
-   browsersync(bsconfig);
-   gulp.watch(paths.html, ['jekyll']);
-//   gulp.watch(paths.scripts, ['scripts']);
-   gulp.watch(paths.images, ['images']);
-   gulp.watch(paths.styles, ['styles']);
+  browsersync(bsconfig);
+  gulp.watch(paths.html, ['jekyll']);
+  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.styles, ['styles']);
 });
 
 

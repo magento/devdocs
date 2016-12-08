@@ -18,7 +18,7 @@ $(".content-wrap :header:not(h1)").each(function(){
         no_toc = $this.hasClass('no_toc'),
         anchor_text = '';
 
-    // check if we need to process the link
+    // check if we need to process the link. do not process links that are hidden inside collapsible blocks
     if ( !no_toc && !$this.parents('.collapsible').length ) {
 
       // check if we have id on heading already

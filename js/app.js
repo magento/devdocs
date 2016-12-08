@@ -3,6 +3,7 @@
 //= include _vendor/scrollspy.js
 //= include _vendor/clipboard.min.js
 
+
 //= include _includes/analytics.js
 
 // This is what happens on document.ready
@@ -14,11 +15,6 @@ $(function() {
   //= include _includes/responsive.js
 	//= include _includes/anchors.js
 	//= include _includes/menu.js
-
-  //Do search when search icon is pressed
-  /*$(".search .search-icon").on('click', function(){
-    $("#searchbox").submit();
-  });*/
 
 });
 // END document ready
