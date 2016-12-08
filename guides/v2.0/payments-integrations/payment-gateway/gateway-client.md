@@ -9,13 +9,13 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/gateway-client.md
 ---
 
-*Gateway Client* is a component of the Magento payment gateway that transfers the payload to the payment provider and gets the response.
+Gateway Client is a component of the Magento payment gateway that transfers the payload to the payment provider and gets the response.
 
 ## Basic interface 
 
 The basic interface for a gateway client is [`Magento\Payment\Gateway\Http\ClientInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/ClientInterface.php).
 
-A gateway client receives a called [`Transfer`]({{site.mage2000url}}/app/code/Magento/Payment/Gateway/Http/Transfer.php) object and may be configured with response converter using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html).
+A gateway client receives a called [`Transfer`]({{site.mage2000url}}/app/code/Magento/Payment/Gateway/Http/Transfer.php) object. The client may be configured with response converter using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html).
 
 ## Default implementations
 The following gateway client implementations can be used out-of-the-box:
