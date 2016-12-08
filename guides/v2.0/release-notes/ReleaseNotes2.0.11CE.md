@@ -24,15 +24,19 @@ Magento 2.0.11 contains more than 60 bug fixes and enhancements, including these
 
 * **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
 
-* **Two new web APIs for the Sales module** that incorporate functionality into the Sales module that is currently available in the Magento Admin interface. After you install this patch, you’ll be able to use the `RefundInvoiceInterface` and `RefundOrderInterface`  services to carry out these tasks:
+* The Sales module provides two new web APIs that allow you to process refunds from an order or invoice. Previously, these actions could only be performed from Admin. After you install this patch, you can:
 
-	* create a credit memo (complete or partial) for a particular invoice
+	* Create a credit memo (complete or partial) for a particular invoice or order.
 
-	* add details about refunded items to an order
+	* Add details about refunded items to an order or invoice.
 
-	* update the status and state of an order after actions are performed
+	* Update the status and state of an order or invoice after actions are performed.
 
-	* notify a customer about refunded items or order
+	* Notify a customer about refunded items or order/invoice.
+
+
+REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
+
 
 
 ## Functional fixes
@@ -190,7 +194,7 @@ We address the following functional issues in this release.
 ### Tracking and shipping
 {:.no_toc} 
 
-<!--- 56908-->* UPS now generates shipping rates for Puerto Rico postal codes.
+<!--- 56908-->* The UPS module now generates shipping rates for Puerto Rico postal codes.
 
 
 
@@ -303,8 +307,6 @@ We address the following functional issues in this release.
 
 
 ## Known issues
-
-* **Issue**: You cannot successfully change and save your settings for gift cards. (Settings include `allow open amount` or “`open amount minimum`.) **Workaround**: None
 
 
 * **Issue**: When editing a product, you cannot edit customizable options on the store view level. That is, a change to one option affects products on all stores. Also, the ‘Use Default Value’ checkbox for the option title does not work. Unchecking this box and then changing the title affects all store views. **Workaround**: None
