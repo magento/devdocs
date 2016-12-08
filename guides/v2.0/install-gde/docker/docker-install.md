@@ -42,11 +42,11 @@ Before you continue, make sure you install and configure the following:
 
        PowerShell should already be installed on Windows 10. If you've never used it, click the search button in the Windows taskbar and enter `PowerShell`, right click on PowerShell icon and choose "Run as administrator" to start it. Give permission to run scripts with command in the PowerShell console: `Set-ExecutionPolicy Unrestricted`
 
-{% collapsible Magento authentication prerequisites %}
+{% collapsibleh3 Magento authentication prerequisites %}
 
 {% include install/auth-tokens-get.md %}
 
-{% endcollapsible %}
+{% endcollapsibleh3 %}
 
 ## How DevBox works
 Magento's DevBox installation is a step-by-step wizard that enables you to download a personalized script that sets up Magento DevBox on your machine. The script either installs the Magento software in a Docker container or creates a shared file system between existing Magento code and a Docker container.
@@ -70,7 +70,7 @@ When we build your Docker installation scripts, we need to know the path to your
 
 The simplest option is to specify the absolute file system path to an existing Magento root directory, if any. If you haven't downloaded the Magento software yet, you can specify any value.
 
-{% collapsible New container options %}
+{% collapsibleh3 New container options %}
 This section discusses options available to you if you install the Magento software in a new Docker container.
 
 #### Choose your Magento edition
@@ -103,10 +103,11 @@ To provide you more control over your Magento installation, we provide the follo
 </tbody>
 </table>
 
-{% endcollapsible %}
+{% endcollapsibleh3 %}
 
 
+{% collapsibleh3 Existing code options %}
 
+TBD
 
-
-/Users/kimbthomas/Development/magento2
+{% endcollapsibleh3 %}
