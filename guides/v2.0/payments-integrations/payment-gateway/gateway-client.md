@@ -15,7 +15,7 @@ Gateway Client is a component of the Magento payment gateway that transfers the 
 
 The basic interface for a gateway client is [`Magento\Payment\Gateway\Http\ClientInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/ClientInterface.php).
 
-A gateway client receives a called [`Transfer`]({{site.mage2000url}}/app/code/Magento/Payment/Gateway/Http/Transfer.php) object. The client may be configured with response converter using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html).
+A gateway client receives a called [`Transfer`](#transfer_factory) object. The client may be configured with response converter using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html).
 
 ## Default implementations
 The following gateway client implementations can be used out-of-the-box:
@@ -37,14 +37,13 @@ Following is the illustration of how a Zend client can be added in `di.xml`:
 ...
 {% endhighlight %}
 
-## Transfer Factory
+## Transfer Factory {#transfer_factory}
 
-Transfer factory, specified in [Gateway Command]({{page.baseurl}}payments-integrations/payment-gateway/gateway-command.html) allows to
-create transfer object with all data from request builders and this object will be used by _Gateway Client_ to process
-requests to payment processor.
+Transfer Factory allows to create transfer object with all data from [request builders]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.md). This object is then used by Gateway Client to process requests to payment processor.
 
-In your payment integration you need to implement [Transfer Factory Interface]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/TransferFactoryInterface.php)
-and use [Transfer Builder]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/TransferBuilder.php) to set all required params for request.
+Transfer Factory uses [Transfer Builder]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/TransferBuilder.php) to set required request parameters. 
+
+The basic Transfer Factory interface is [Magento\Payment\Gateway\Http\TransferFactoryInterface]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/TransferFactoryInterface.php).
 
 The similar example of factory might looks like this:
 
@@ -57,8 +56,9 @@ The similar example of factory might looks like this:
  }
 {% endhighlight %}
 
-This method just use _Transfer Builder_ to set request data and returns created object, but your integration might be
-more complicated, like:
+In this example transfer factory simply sets request data using Transfer Builder and returns the created object.
+
+Following is an example of a more complicated behavior. Here transfer factory sets all required data to process requests using API credentials and all data is sent in JSON format.
 
 {% highlight php startinline=1 %}
 public function create(array $request)
@@ -74,6 +74,4 @@ public function create(array $request)
 }
 {% endhighlight%}
 
-Second example sets all needed data to process requests using API credentials and all data will be sent in JSON format.
-If you open _Transfer Builder_ source code, you will see what it has useful methods to configure request data like, authentication, request headers,
-data encoding, etc.
+
