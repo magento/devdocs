@@ -34,6 +34,8 @@ In the `config.xml` file in your `%Vendor_Module%` directory, configure the opti
 
 Additionally to the default option, a payment method configuration can contain any other custom options. 
 
+## Example
+
 Following is the illustration of such configuration (`config.xml` of the Braintree module)
 
 {% highlight xml %}
@@ -62,3 +64,4 @@ Following is the illustration of such configuration (`config.xml` of the Braintr
     </default>
 </config>
 {% endhighlight %}
+

@@ -9,36 +9,20 @@ version: 2.1
 github_link: payments-integrations/base-integration/admin-integration.md
 ---
 
-## Payment integration for Admin panel
+You define whether the payment method is available for the storefront and checkout in the [payment method configuration in `config.xml`]({{page.baseurl}}payments-integrations/base-integration/payment-options-config.html):
 
-Payment integration for Admin panel is similar to Storefront integration and contain few additional steps:
+- `can_use_checkout`: whether payment method is available in storefront checkout
+- `can_use_internal`: whether payment method is available in Admin order creation 
 
- - Payment configuration
- - Blocks implementation
- - Block template
- - Specific DI settings
- 
-### Payment configuration
+If your payment flow should be different for storefront and Admin panel, you can use a separate DI configuration for each [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html#magento-area-types):
 
-At, we need to update payment configuration file (`Braintree/etc/config.xml`):
+- `%Vendor_Module%/etc/adminhtml/di.xml`: DI configuration for the Admin panel
+- `%Vendor_Module%/etc/frontend/di.xml`: DI configuration for the storefront
 
-{% highlight xml %}
-<payment>
-    <braintree>
-        ...
-        <can_use_internal>1</can_use_internal>
-    </braintree>
-</payment>
-{% endhighlight %}
+## Example
 
-The `can_use_internal` option allows to display our payment method in Admin panel.
-
-
-
-All other customization depends on your payment integration, but some important thing. If your payment flow should be different for Storefront and Admin panel,
-for example, on Storefront you integrated 3D Secure verification, but it should not be available in Admin panel,
-you can use own DI configurations for different areas. As example, DI configuration for authorization request builder for 
-[admin area]({{site.mage2100url}}app/code/Magento/Braintree/etc/adminhtml/di.xml):
+For example, on the storefront 3D Secure verification is integrated for the Braintree payment method, but it should not be available in Admin panel
+The ВI configuration for authorization request builder for [admin area]({{site.mage2100url}}app/code/Magento/Braintree/etc/adminhtml/di.xml) looks like following:
 
 {% highlight xml %}
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
@@ -52,6 +36,5 @@ you can use own DI configurations for different areas. As example, DI configurat
 </virtualType>
 {% endhighlight %}
 
-With comparision to [payment global DI]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L140), we do not
+While the general [app/code/Magento/Braintree/etc/di.xml]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L140) does not
 have 3D secure verification builder for Admin panel, but virtual type has the same name (object will be created according to context of area).
-Similar to this example, you can specify any DI configuration for frontend area.
