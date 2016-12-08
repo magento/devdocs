@@ -40,7 +40,7 @@ Through the use of service contracts, the Service layer defines the overall inte
 
 ### Domain layer
 
-The Domain layer (also referred to as the Business Logic layer) provides core business logic and functionality in base classes, resource models, and data access capabilities that you can extend and customize. Business logic rules, which define how data is retrieved from the database and manipulated, are stored in the Domain layer.
+The Domain layer (also referred to as the Business Logic layer) provides business logic and functionality in base classes, resource models, and data access capabilities that you can extend and customize.
 
 ## Ease of extensibility {#m2arch-extensibility}
 
