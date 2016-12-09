@@ -27,9 +27,10 @@ $(window).on('load', function(){
 });
 
 // Fix anchor jumps hiding headers
+/*
 $(window).on('hashchange',function(){
 	$(document).scrollTop($(document).scrollTop() - 60);
-});
+});*/
 
 //Allows for sticky menu
 $(document).on('scroll', function(){

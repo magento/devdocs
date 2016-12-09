@@ -59,6 +59,7 @@
     right: 0;
     overflow: hidden;
     display: none;
+    z-index: 50;
     border-left: 1px solid $beige-color;
   }
 
@@ -102,7 +103,7 @@
   @media ( $medium-screen ) {
 
     #global-nav {
-      border-bottom: 1px solid $beige-color;
+      outline: 1px solid $beige-color;
     }
 
     .menu-btn {
@@ -110,7 +111,7 @@
     }
 
     .logo {
-      width: auto;
+      width: a;
     }
 
     .search-btn {

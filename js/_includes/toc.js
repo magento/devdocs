@@ -64,7 +64,10 @@ if ( $toc.find('li').length <= 1 ) {
 
 
 // Page toc on right side sticks to the browser window
-$('body').scrollspy({ target: '.page-info' });
+$('body').scrollspy({
+  target: '.page-info',
+  offset: 61
+});
 $('.page-info .page-toc').affix({
   offset: {
     top: 40,

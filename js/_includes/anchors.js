@@ -1,12 +1,14 @@
 // Animate the anchor link scrolling
 var $root = $('html, body');
-$('a').on('click', function() {
+
+$('.main-container a').on('click', function(e) {
   var $this = $(this),
       url = $this.attr('href'),
       hash = url.split('#')[1];
 
   if ( hash ) {
-    $root.animate({
+    e.preventDefault();
+    $root.stop().animate({
       scrollTop: $( url ).offset().top - 60
     }, 500);
     //return false;

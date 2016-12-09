@@ -34,11 +34,17 @@ $('.toc-toggler').on('click', function (e) {
   $(this).parent().toggleClass('expanded');
 });
 
+
 $('.dropdown .dropdown-toggle').on('click', function () {
   var $this = $(this),
     $dropdown = $this.parent();
+
   $dropdown.toggleClass('open');
+
+
+
 });
+
 
 // Responsite site - for version switcher
 /*
