@@ -9,14 +9,11 @@ version: 2.1
 github_link: payments-integrations/vault/token-ui-component-provider.md
 ---
 
-<h2 id="vault_token_ui_component_provider">Token UI Component Provider</h2>
 
-This topic describes how to display stored tokens on the payment step on checkout page, how create
-UI components for custom Vault payments and use it to place order from Storefront via Vault payment.
+This topic describes how to display stored tokens on the payment step on checkout page, how to create UI components for custom Vault payments, and how to use it to place order from storefront using Vault.
 
-The main logic to display tokens on checkout page located in the
-[Vault TokensConfigProvider]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php) and you
-just need to specify token component providers, which should implement 
+The main logic for displaying tokens on checkout page is located in
+[Vault TokensConfigProvider]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php). You just need to specify token component providers. They should implement the 
 [TokenUiComponentProviderInterface]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface:
 
 {% highlight php startinline=1 %}
@@ -33,7 +30,7 @@ interface TokenUiComponentProviderInterface
 }
 {% endhighlight %}
 
-The basic implementation of _Token Ui Component Provider_ can look like this:
+The basic implementation of Token UI component provider can be like following:
 
 {% highlight php startinline=1 %}
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface
@@ -62,11 +59,9 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 }
 {% endhighlight %}
 
-This implementation allow to retrieve all available _Payment Token_ details and specify js component for Storefront.
-Also, as you can see, where are no any details with _Gateway Token_, only _Public Hash_ is used and you can be sure what customer
-_Gateway Token_ won't be shared.
+This implementation allows to retrieve all available Payment Token details and specify the JS component for Storefront.
 
-After component provider creation need to add it to list of available _Vault_ config providers:
+Having created the component provider, you need to add it to the list of available Vault config providers:
 
 {% highlight xml %}
 <type name="Magento\Vault\Model\Ui\TokensConfigProvider">
@@ -78,7 +73,7 @@ After component provider creation need to add it to list of available _Vault_ co
 </type>
 {% endhighlight %}
 
-Custom Vault js component should extend [vault.js]({{site.mage2100url}}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
+Custom Vault JS component should extend [vault.js]({{site.mage2100url}}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
 
 {% highlight javascript %}
 define([
@@ -95,7 +90,4 @@ define([
 });
 {% endhighlight %}
 
-As you can remember, we already have implemented [`vault_authorize`]({{site.guideurl21}}payments-integrations/vault/configuration.html#commands)
-command and Vault implementation is ready to process payment transactions.
 
-A next topic will describe how to display stored tokens for customer and process their deleting.

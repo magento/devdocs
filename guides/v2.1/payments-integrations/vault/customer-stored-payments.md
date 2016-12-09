@@ -9,14 +9,11 @@ version: 2.1
 github_link: payments-integrations/vault/customer-stored-payments.md
 ---
 
-<h2 id="vault_customer_stored_payments">Customer Stored Payments</h2>
+This topic describes how to display stored tokens in the customer account and give customers ability to remove stored tokens. 
 
-This topic provides information how to display stored tokens in the customer account. Also, customer should have
-an ability to remove stored tokens.
-
-At first, you need to create custom _Renderer_, which provides functionality for displaying token details like: credit card icon,
-type of credit card, expiration date, etc., _Renderer_ implementation depends on type of token (card, account), but both renders
-implement the common abstractions [TokenRendererInterface]({{site.mage2100url}}app/code/Magento/Vault/Block/TokenRendererInterface.php)
+First, you need to create a custom Renderer that provides functionality for displaying token details.
+The Renderer implementation depends on token type (card or account), but both renders
+implement the common interfaces [TokenRendererInterface]({{site.mage2100url}}app/code/Magento/Vault/Block/TokenRendererInterface.php)
 and [IconInterface]({{site.mage2100url}}app/code/Magento/Vault/BLock/Customer/IconInterface.php):
 
 {% highlight php startinline=1 %}
@@ -67,13 +64,12 @@ interface IconInterface
 }
 {% endhighlight %}
 
-If you Vault integration uses card token type - you need to extend [AbstractCardRenderer]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractCardRenderer.php),
-in other case - [AbstractTokenRenderer]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractTokenRenderer.php).
+If you Vault integration uses card token type, then you need to extend [AbstractCardRenderer]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractCardRenderer.php). In other case extend [AbstractTokenRenderer]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractTokenRenderer.php).
 
-The `AbstractCardRenderer` implements [CardRendererInterface]({{site.mage2100url}}app/code/Magento/Vault/Block/CardRendererInterface.php) and
+`AbstractCardRenderer` implements [CardRendererInterface]({{site.mage2100url}}app/code/Magento/Vault/Block/CardRendererInterface.php) and
 has additional method to get card details.
 
-The simple implementation can look like this:
+The simple implementation might be like following:
 
 {% highlight php startinline=1 %}
 class CardRenderer extends AbstractCardRenderer
@@ -131,8 +127,9 @@ class CardRenderer extends AbstractCardRenderer
 }
 {% endhighlight %}
 
-Now, need to create layout and specify custom token renderer for layout, which will provide token details displaying,
-for example [vault_cards_listaction.xml]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml):
+Next, you need to create the layout to be used for displaying token details. You have to specify the token renderer in this layout.
+
+Example ([vault_cards_listaction.xml]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml)):
 
 {% highlight xml %}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -146,7 +143,5 @@ for example [vault_cards_listaction.xml]({{site.mage2100url}}app/code/Magento/Br
 </page>
 {% endhighlight %}
 
-As you can see, in this case default `credit_card.phtml` view is used from _Vault_ module, which already have markup to display token and
-actions to remove stored token, but you always can specify your own view.
+In this example the default vault template, `credit_card.phtml`, is used. But you can create and specify a custom template. 
 
-The next topic, will describe how to use stored tokens to place order from Admin panel.

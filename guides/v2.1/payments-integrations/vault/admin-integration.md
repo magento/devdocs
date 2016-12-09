@@ -2,21 +2,17 @@
 layout: default
 group: payments-integrations
 subgroup: vault
-title: Admin Integration
-menu_title: Admin Integration
+title: Vault implementation for Admin
+menu_title: Vault implementation for Admin
 menu_order: 25
 version: 2.1
 github_link: payments-integrations/vault/admin-integration.md
 ---
 
-<h2 id="vault_admin_integration">Integration for Admin panel</h2>
 
-The Vault integration for Admin panel is similar to Storefront.
+To be able to use vault in Admin order creation, you first need to implement `TokenUiComponentProviderInterface`, similar to [Token UI Component Provider]({{site.gdeurl21/payments-integrations/vault/token-ui-component-provider.html#vault_token_ui_component_provider}}). But in that case your JS component has no default Vault implementation and you need to implement all logic for validation and order placement.
 
-At first, need to implement `TokenUiComponentProviderInterface` similar to [Token UI Component Provider]({{site.gdeurl21/payments-integrations/vault/token-ui-component-provider.html#vault_token_ui_component_provider}}),
-but in that case your js component hasn't default Vault implementation and you need to implement all logic for validation and place order.
-
-In the most cases, will be enough to implement methods to get payment code and set _Public Hash_ and this component might looks like:
+In the most cases, it is enough to implement getting payment code and setting Public Hash. This implementation might look like following:
 
 {% highlight javascript %}
 define([
@@ -58,9 +54,9 @@ define([
 });
 {% endhighlight %}
 
-This component will set _Public Hash_ to hidden input when user select _Payment Token_ as active.
+This component will set Public Hash to a hidden input when a user selects Payment Token as active.
 
-Also, you need create view for displaying token details and specify the created view in the _Config Provider_ as template:
+Next you need create a template for displaying token details and specify it in the Config Provider:
 
 {% highlight php startinline=1 %}
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface
@@ -89,7 +85,7 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 }
 {% endhighlight %}
 
-The billing form block for admin layout (`Module_Name/view/adminhtml/layout/sales_order_create_index.xml`) can look like this:
+The billing form block for Admin layout (`Module_Name/view/adminhtml/layout/sales_order_create_index.xml`) might be like following:
 
 {% highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -104,11 +100,11 @@ The billing form block for admin layout (`Module_Name/view/adminhtml/layout/sale
 </page>
 {% endhighlight %}
 
-You just need to specify payment method code and path for template, this configuration allow to render Vault payments by Vault module and create all depending js components.
+You just need to specify the payment method code and path for the template. This configuration allow to render Vault payments by Vault module and create all depending JS components.
 
-Now, you can use Vault in Admin panel as payment method.
+This way you vault can be used in Admin order creation as payment method.
 
-> If you have specific request builders, response handlers, etc (for example, 3D Secure should not be available in the Admin panel),
+If you have specific request builders, response handlers, and so on (for example, 3D Secure should not be available in the Admin panel),
 you need to create corresponds virtual types for adminhtml area in `Module_Name/etc/adminhtml/di.xml`. For example:
 
 {% highlight xml %}
@@ -125,4 +121,4 @@ you need to create corresponds virtual types for adminhtml area in `Module_Name/
 </virtualType>
 {% endhighlight %}
 
-> This configuration will works only for admin area.
+This configuration will be applied only in Admin panel.
