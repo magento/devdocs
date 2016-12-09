@@ -3,7 +3,7 @@ layout: default
 group: payments-integrations
 subgroup: vault
 title: Vault DI Configuration
-menu_title: Vault Payment Configuration
+menu_title: Vault DI Configuration
 menu_order: 3
 version: 2.1
 github_link: payments-integrations/vault/vault-di.md
