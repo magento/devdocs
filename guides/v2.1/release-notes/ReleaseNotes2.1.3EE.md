@@ -575,9 +575,6 @@ We've enhanced the performance of configurable products in several ways:
 <!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. 
 
 
-
-
-
 <!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes. 
 
 
