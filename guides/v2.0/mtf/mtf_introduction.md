@@ -55,7 +55,7 @@ FTF is purposed to test user interactions with web application under
 test.
 
 FTF works with functional tests located in
-`<magento2>/dev/tests/functional/`.
+`<magento2_root_dir>/dev/tests/functional/`.
 
 Out-of-the-box tests cover basic functionality. Extended functionality
 can be tested using customized tests, created with FTF.
@@ -74,7 +74,7 @@ Relative to your software development lifecycle, the FTF can help you:
 
 <h3 id="mtf_intro_scope_non-func-test">Non-functional testing</h3>
 
-FTF works with tests from `<magento2>/dev/tests/functional` only.
+FTF works with tests from `<magento2_root_dir>/dev/tests/functional` only.
 
 For other tests please see the following topics:
 
@@ -82,7 +82,7 @@ For other tests please see the following topics:
 
 - <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">How to run unit and integration tests using `bin/magento` in continuous integration.</a>
 
-- <a href="{{page.baseurl}}extension-dev-guide/test/test_js-unit.html">More information about JavaScript unit tests.</a>
+- <a href="{{page.baseurl}}test/js/test_js-unit.html">More information about JavaScript unit tests.</a>
 
 - <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">More information about performance testing.</a>
 

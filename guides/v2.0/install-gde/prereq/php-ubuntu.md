@@ -14,27 +14,23 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 
 #### Contents
 
-*	<a href="#php-support">PHP versions supported</a>
+*	[PHP versions supported](#php-support)
 *	<a href="#php-ubuntu-help-beginner">Help if you're just starting out</a>
 *	<a href="#ubuntu-verify-php">Verify PHP is installed</a>
 *	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
-*	<a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</a>
-*	<a href="#instgde-prereq-php5.65-install-ubuntu14">PHP 5.5 on Ubuntu 14</a>
-*	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
+*	[PHP 5.6 on Ubuntu 14](#php-56-on-ubuntu-14)
+*	[PHP 5.5 on Ubuntu 14](#php-55-on-ubuntu-14)
+*	[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>If you must install both Apache and PHP, <a href="{{page.baseurl}}install-gde/prereq/apache.html">install Apache</a> first.</p></span>
 </div>
 
-<h2 id="php-support">PHP versions supported</h2>
+## PHP versions supported {#php-support}
 Magento requires:
 
-*	7.0.6 up to 7.1.0
-
-	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5.
-*	PHP 5.6.x
-*	PHP 5.5.x, where x is 22 or greater
+{% include install/php_2.0.md %}
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -67,9 +63,9 @@ If PHP is installed, continue with the next prerequisite, <a href="{{page.baseur
 If PHP is *not* installed, see one of the following sections:
 
 *	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
-*	<a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a>
-*	<a href="#instgde-prereq-php5.66-install-ubuntu12">PHP 5.6 on Ubuntu 12</a>
-*	<a href="#instgde-prereq-php5.65-install-ubuntu14">PHP 5.5 on Ubuntu 14</a>
+*	[PHP 5.6 on Ubuntu 14](#php-56-on-ubuntu-14)
+*	<a href="#instgde-prereq-php5.6-install-ubuntu12">PHP 5.6 on Ubuntu 12</a>
+*	[PHP 5.5 on Ubuntu 14](#php-55-on-ubuntu-14)
 
 ## PHP 7.0 on Ubuntu 14 or 16 {#instgde-prereq-php70-ubuntu}
 
@@ -101,11 +97,11 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html">Required PHP settings</a>.
 
 {% endcollapsible %}
 
-<h2 id="instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</h2>
+## PHP 5.6 on Ubuntu 14
 
 {% collapsible To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14: %}
 
@@ -113,8 +109,9 @@ If PHP is *not* installed, see one of the following sections:
 
 		apt-get -y update
 		add-apt-repository ppa:ondrej/php
+		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip
 		apt-get -y update
-		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl
+		
 
 2.	Enter the following command to verify PHP 5.6 installed properly:
 
@@ -131,19 +128,19 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
+3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html">Required PHP settings</a>.
 
 {% endcollapsible %}
 
-<h3 id="instgde-prereq-php5.65-install-ubuntu14">PHP 5.5 on Ubuntu 14</h3>
+## PHP 5.5 on Ubuntu 14
 
 {% collapsible To install PHP 5.5 on Ubuntu 14: %}
 
-1.	Enter the following command:
+1.	Enter the following commands in the order shown:
 
 		apt-get -y update
-		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl
-
+		apt-get -y install php5 php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
+		
 2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
 
 		PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
@@ -156,13 +153,9 @@ If PHP is *not* installed, see one of the following sections:
   		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
 
-3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
+3.	[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
-
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-{% include install/php-config.html %}
-
 
 #### Related topics
 

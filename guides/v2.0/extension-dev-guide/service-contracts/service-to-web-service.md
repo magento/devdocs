@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 99_Module Development
 title: Configure services as web APIs
 menu_title: Configure services as web APIs
-menu_order: 13
+menu_order: 20
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
 version: 2.0
@@ -180,7 +180,7 @@ Following are some examples of various types and what they would look like in th
                <p><code>ref</code>.
                   Required. Referenced resource. Valid values are <code>self</code>, <code>anonymous</code>, or a Magento resource, such as <code>Magento_Customer::group</code>.
                </p>
-               <strong>Note</strong>:The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.</p>
+               <p><strong>Note</strong>:The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.</p>
                   <p>Any user that the framework cannot authenticate through existing <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">authentication
                      mechanisms</a> is considered a guest user.</p>
 

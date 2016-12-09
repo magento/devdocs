@@ -1,5 +1,5 @@
 ---
-layout: no-timestamp
+layout: default
 group: release-notes
 subgroup: 05_BC
 title: Magento EE Backward Incompatible Changes
@@ -11,8 +11,6 @@ github_link: release-notes/changes/ee_changes.md
 ## Preface
 
 This topic provides details about backward incompatible changes made in a Magento EE mainline after the Magento 2.0.0 release. The content is auto-generated.
-
-Be aware that no @api code has been modified.
 
 All changes are aggregated into two tables:
 

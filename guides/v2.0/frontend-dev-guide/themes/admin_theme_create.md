@@ -49,10 +49,11 @@ Configure it using the following example (replace placeholders with your theme i
      <title>%Theme title%</title> <!-- your theme's name -->
      <parent>%vendor_dir%/%parent_theme_dir%</parent> <!-- the parent theme. Example: Magento/backend -->
  </theme>
+{%endhighlight%}
 
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any Magento Admin page for your changes to be saved in the database.
 
-{%endhighlight%}
+
 
 ## Add `registration.php` {#add_registry}
 In your theme directory, create a `registration.php` file.

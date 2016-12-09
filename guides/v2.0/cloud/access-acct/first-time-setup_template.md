@@ -1,17 +1,21 @@
 ---
 layout: default
 group: cloud
-subgroup: 04_setup
+subgroup: 08_setup
 title: Create a sample Magento project from a template
 menu_title: Create a sample Magento project from a template
-menu_order: 10
+menu_order: 51
 menu_node: 
+level3_menu_node: level3child
+level3_subgroup: newproj
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_template.md
 ---
 
 ## Create a sample Magento project from a template {#cloud-first-clone}
 This section discusses how to get started with a Magento cloud deployment by cloning an existing sample project. You can customize your project to your needs anytime, including before you deploy it.
+
+When you initially set up a project from a template, we retrieve the code from the [`magento-cloud-configuration` repository](https://github.com/magento-cloud/magento-cloud-configuration){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Before you continue, make sure you completed the tasks discussed in <a href="{{page.baseurl}}cloud/before/before-workspace.html">Set up a Magento workspace</a>.</p>
@@ -23,7 +27,7 @@ To set up a Magento project using a template:
 2.	Click the **Projects** tab as the following figure shows.
 
 	![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}
-3.	Click the name of your project.
+3.	Click the name of your project (initially, it's named **[Untitled Project]**).
 2.	When prompted, enter a name for your project and click **Next**.
 
 	![Enter a name for your project]({{ site.baseurl }}common/images/cloud_project_name.png){:width="550px"}

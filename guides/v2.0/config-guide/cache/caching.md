@@ -9,7 +9,7 @@ menu_node: parent
 version: 2.0
 github_link: config-guide/cache/caching.md
 redirect_from: 
-  - /guides/v1.0/config-guide/config/caching.html
+  - /guides/v1.0/config-guide/cache/caching.html
   - /guides/v2.0/config-guide/config/caching.html
 ---
 

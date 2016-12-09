@@ -2,12 +2,13 @@
 layout: default
 group: install_pre
 subgroup: Getting Started
-title: Magento technology stack requirements
-menu_title: Magento technology stack requirements
+title: Magento 2.1.x technology stack requirements
+menu_title: Magento 2.1.x technology stack requirements
 menu_node: 
 menu_order: 2
 version: 2.1
 github_link: install-gde/system-requirements-tech.md
+redirect_from: /guides/v2.1/install-gde/system-requirements-2-1.tech.html
 ---
 
 ### Operating systems (Linux x86-64)
@@ -30,16 +31,13 @@ Composer is required for developers who wish to contribute to the Magento 2 code
 
 MySQL 5.6
 
+Magento application version 2.1.2 and later are compatible with MySQL 5.7.
+
 MariaDB and Percona are compatible with Magento because we support MySQL 5.6 APIs.
 	
 ### PHP 
 
-*	5.6.x
-*	7.0.2, 7.0.6 up to 7.1
-
-<div class="bs-callout bs-callout-info" id="info">
-	<p>Magento 2.1.x no longer supports PHP 5.5.</p>
-</div>
+{% include install/php_2.1.md %}
 
 PHP documentation: <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
@@ -72,7 +70,7 @@ If you must install it separately, see the <a href="http://php.net/manual/en/opc
 #### PHP settings
 We recommend particular PHP configuration settings, such as `memory_limit`, that can avoid common problems when using Magento.
 
-For more information, see our recommendations for <a href="{{page.baseurl}}install-gde/prereq/php-centos.html#instgde-prereq-timezone">CentOS</a> and <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a>. 
+For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html). 
 
 ### SSL
 *	A valid security certificate is required for HTTPS.

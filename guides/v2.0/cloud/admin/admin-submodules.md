@@ -1,7 +1,7 @@
 ---
 layout: default
 group: 
-subgroup: 20_admin
+subgroup: 30_admin
 title: Reuse code across projects with Git submodules
 menu_title: Reuse code across projects with Git submodules
 menu_order: 200

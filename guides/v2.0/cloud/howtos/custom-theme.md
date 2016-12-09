@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_howto
+subgroup: 15_howto
 title: Install a theme
 menu_title: Install a theme
-menu_order: 19
+menu_order: 60
 menu_node: 
 version: 2.0
 github_link: cloud/howtos/custom-theme.md
@@ -85,7 +85,11 @@ Installing a theme using Composer is the same as installing any other extension 
     For example,
 
         composer require zero1/theme-fashionista-theme:1.0.0
-4.  Wait for the project to deploy.
+4.  Wait for dependencies to update.
+5.  Enter the following commands:
+
+        git add -A && git commit -m "Add theme"
+        git push origin <branch name>
 5.  Log in to the Magento Admin.
 6.  Click **Content** > Design > **Themes**.
 

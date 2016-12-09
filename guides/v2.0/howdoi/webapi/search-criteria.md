@@ -109,9 +109,11 @@ searchCriteria[filter_groups][0][filters][0][field]=name&
 searchCriteria[filter_groups][0][filters][0][value]=%25Leggings%25&
 searchCriteria[filter_groups][0][filters][0][condition_type]=like&
 searchCriteria[filter_groups][0][filters][1][field]=name&
-searchCriteria[filter_groups][0][filters][1][value]=%25Leggings%25&
+searchCriteria[filter_groups][0][filters][1][value]=%25Parachute%25&
 searchCriteria[filter_groups][0][filters][1][condition_type]=like
 {% endhighlight %}
+
+The system creates an array, as shown in the following pseudo-code.
 
 <pre>
 searchCriteria => [
@@ -147,6 +149,8 @@ searchCriteria[filter_groups][1][filters][0][field]=price&
 searchCriteria[filter_groups][1][filters][0][value]=30&
 searchCriteria[filter_groups][1][filters][0][condition_type]=lt
 {% endhighlight %}
+
+The system creates an array, as shown in the following pseudo-code.
 
 <pre>
 searchCriteria => [

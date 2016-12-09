@@ -42,7 +42,7 @@ The general flow is the following:
 
 Let's see an example of the Magento Widget page:
 
-`<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml`
+`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml`
 
 where four blocks have been added:
 
@@ -71,10 +71,10 @@ The following table explains `<page>` attributes.
 
 |`<page>` attribute|Description|Example with explanation|
 |---|---|---|
-|`name`|Name of the page PHP class, that will be generated in `<magento2>/dev/tests/functional/generated/Magento/<module>/Page/<area>/<name>.php`.|`WidgetInstanceIndex` |
-|`area`|The page usage area. Determines a [type of the page](#mtf_page_types). The directory with the name assigned to `area` will be created in the module. Value can be `Adminhtml` for the Admin area, or any other for another area.|`Adminhtml`. The page class will be generated in the `<magento2>/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml`. |
+|`name`|Name of the page PHP class, that will be generated in `<magento2_root_dir>/dev/tests/functional/generated/Magento/<module>/Page/<area>/<name>.php`.|`WidgetInstanceIndex` |
+|`area`|The page usage area. Determines a [type of the page](#mtf_page_types). The directory with the name assigned to `area` will be created in the module. Value can be `Adminhtml` for the Admin area, or any other for another area.|`Adminhtml`. The page class will be generated in the `<magento2_root_dir>/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml`. |
 |`mca`{:#mca}|Path following the base URL for the Magento pages (storefront or Admin), or full URL for other pages. MCA is an abbreviation of the Module Controller Action.|`admin/widget_instance/index`. Considering that `area="Adminhtml"`, the Magento page under test is `http://example.com/admin/admin/widget_instance/index`|
-|`module`|Module where the page will be generated. |`Magento_Widget`. The page will be generated in the `<magento2>/dev/tests/functional/Magento/Widget/Page`|
+|`module`|Module where the page will be generated. |`Magento_Widget`. The page will be generated in the `<magento2_root_dir>/dev/tests/functional/Magento/Widget/Page`|
 
 {% include mtf/block_attributes.md %}
 
@@ -94,13 +94,13 @@ Depending on `area` and `mca` attributes, page can be of one of the following ty
 
 Admin page has attribute `area="Adminhtml"` in `<page>` node of the page XML file. Generated page extends  [Magento\Mtf\Page\BackendPage][] class. You will log in automatically to the Admin.
 
-The page will be opened as a concatenation of `app_backend_url` from `<magento2>/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
+The page will be opened as a concatenation of `app_backend_url` from `<magento2_root_dir>/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
 
 ### Storefront page {#mtf_page_storefront}
 
 Storefront page is recognizable by `area` assigned any value except `Adminhtml`, *and* `mca` doesn't have `http`. This type of page extends class [Magento\Mtf\Page\FrontendPage][].
 
-Page will be opened as concatenation of `app_frontend_url` from `<magento2>/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
+Page will be opened as concatenation of `app_frontend_url` from `<magento2_root_dir>/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
 
 ### External page {#mtf_page_extern}
 
@@ -177,9 +177,9 @@ We should create `dev/tests/functional/tests/app/Magento/Review/Test/Page/Produc
 
 And generate the updated page:
 
-    php <magento2>/dev/tests/functional/utils/generate.php
+    php <magento2_root_dir>/dev/tests/functional/utils/generate.php
     
-The result is in the `<magento2>/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php` with the following code:
+The result is in the `<magento2_root_dir>/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php` with the following code:
 
 {%highlight php%}
 <?php
@@ -358,7 +358,7 @@ Assume that we already created the new block `\Magento\NewModule\Test\Block\Admi
 
 To use the `editForm` block from the Magento_NewModule, we must follow:
   
-**Step 1.** Create a `CatalogCategoryEdit.xml` page in the `<magento2>/dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml` directory.
+**Step 1.** Create a `CatalogCategoryEdit.xml` page in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml` directory.
 
 **Step 2.** Assign page attributes
 
@@ -391,7 +391,7 @@ To use the `editForm` block from the Magento_NewModule, we must follow:
 
 Enter in terminal:
 
-    php <magento2>/dev/tests/functional/utils/generate.php
+    php <magento2_root_dir>/dev/tests/functional/utils/generate.php
 
 Now when you call `editForm` block from the `CatalogCategoryEdit` page, class `\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm` will be used.
 

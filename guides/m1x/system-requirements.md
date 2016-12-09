@@ -17,8 +17,13 @@ MySQL 5.6 (Oracle or Percona)
  
 #### PHP
  
-*   PHP 5.4.x
-*   PHP 5.5.x
+*	Magento CE 1.9.2 and later, Magento EE 1.14.2 and later: 
+	*	PHP 5.6.x
+	*   PHP 5.4.x
+	*   PHP 5.5.x
+*	Earlier Magento versions:
+	*   PHP 5.4.x
+	*   PHP 5.5.x
  
 #### SSL
 *   A valid security certificate is required for HTTPS.
@@ -27,7 +32,7 @@ MySQL 5.6 (Oracle or Percona)
 #### Magento can utilize the following technologies:
 *   <a href="http://devdocs.magento.com/guides/m1x/ce18-ee113/using_redis.html">Redis</a>
     
-	Redis  can be used for session or cache storage
+	Redis can be used for session or cache storage
 
 *   memcached
     
