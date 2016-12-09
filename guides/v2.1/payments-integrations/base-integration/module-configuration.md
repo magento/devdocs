@@ -19,7 +19,7 @@ Your custom payment integration module must have at least the following dependen
 
 - Magento_Sales module: to be able to get order details
 - Magento_Payment module: to use the Magento payment provider gateway infrastructure
-- Magento_Checkout module: to be able to add the new payment method to checkout. Though if you do not plan to use it on the storefront checkout, this dependency is not required. 
+- Magento_Checkout module: to be able to add the new payment method to checkout. If you do not plan to use it on the storefront checkout, this dependency is not required. 
 
 
 Specify these dependencies in your `composer.json` and `module.xml` files. 

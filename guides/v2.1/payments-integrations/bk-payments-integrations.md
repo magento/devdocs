@@ -11,15 +11,12 @@ github_link: payments-integrations/bk-payments-integrations.md
 redirect_from: /guides/v1.0/payments-integrations/bk-payments-integrations.html
 ---
 
-The Payments Integrations guide provides high level view on integration approaches, but not leaving the implementation details, describing components from which any integration can be built.
+Magento payment provider gateway is a mechanism that allows you to integrate your stores with payment service providers. As a result, you can create and handle transactions based on order details.
 
-<p class="q">Need to change wording</p>
+This guide describes how the Magento payment provider gateway is implemented and how you can add custom integration with payment providers and add vault payments.
 
-These components are:
+The chapters of this guide are:
 
-* [Gateway Command]({{page.baseurl}}payments-integrations/payment-gateway/gateway-command)
-* [Gateway Command Pool]({{page.baseurl}}payments-integrations/payment-gateway/command-pool)
-* [Request Builder]({{page.baseurl}}payments-integrations/payment-gateway/request-builder)
-* [Gateway Client]({{page.baseurl}}payments-integrations/payment-gateway/gateway-client)
-* [Response Validator]({{page.baseurl}}payments-integrations/payment-gateway/response-validator)
-* [Response Handler]({{page.baseurl}}payments-integrations/payment-gateway/response-handler)
+* [Magento payment provider gateway]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.html)
+* [How to add a custom payment method using Magento payment provider gateway]({{page.baseurl}}payments-integrations/base-integration/integration-intro.html)
+* [How to add vault for the custom payment method]({{page.baseurl}}payments-integrations/vault/vault-intro.html) 
