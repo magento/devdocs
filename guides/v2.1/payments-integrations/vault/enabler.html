@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Enable vault</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.1/payments-integrations/vault/enabler.html">
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        var baseUrl = "/";
+    </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav role="navigation">
+
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/">Developer Documentation (2.1)</a>
+				</div>
+			</div>
+            
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Version 2.1
+	</button>
+
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/payments-integrations/vault/enabler.html">Version 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/payments-integrations/vault/enabler.html">Version 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	<div class="search-btn">
+        <a class="search-trigger search-icon" href="/search.html"></a>
+	</div>
+
+</header>
+
+<!--Sub Navigation-->
+<div id="subnav-wrap" class="nav-main">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first">
+            <a href="#">Get Started</a>
+            <ul class="menu nav">
+               <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Information</a></li>
+
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               
+               <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+               
+
+               <li class="first leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+               <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+               
+                   <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+               
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Designers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+            </ul>
+         </li>
+         <li class="first">
+            <a href="#">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+          <li class="first">
+              <a href="/guides/v2.1/test/testing.html">Testing</a>
+              <ul class="menu nav">
+                  <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+                  <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+              </ul>
+          </li>
+         <li class="first">
+            <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Do I...?</a>
+         </li>
+      </ul>
+
+      <div class ="search">
+         <div class="search-icon"></div>
+         <form id="searchbox" name="gs" method="GET" action="/search.html">
+            <input type="text" name="q" id="searchtext" value="" placeholder="Search" autofocus>
+         </form>
+      </div><!-- END searchbox-->
+
+      <a href="#" class="nav-close">&times;</a>
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Enable vault</h1>
+
+        
+
+        <div class="topic-info">
+
+            
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/payments-integrations/vault/enabler.md" target="_blank">Edit this page on GitHub</a></div>
+            
+            
+
+        </div> 
+		        
+		
+        <div class="float-break"></div>
+	</div>
+</section>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+
+
+		<ul role="navigation">
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/payments-integrations/base-integration/integration-intro.html">Payment Integration</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/base-integration/module-configuration.html">Payment method module configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/base-integration/payment-option-config.html">Payment method configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/base-integration/facade-configuration.html">Payment method facade</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/base-integration/formblocktype.html">Payment info rendering in Admin checkout</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/base-integration/payment-action.html">Add a payment action</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/base-integration/get-payment-info.html">Get payment information from frontend to backend</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/base-integration/admin-integration.html">Configure payment method by area</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-intro.html">Magento payment provider gateway overview</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-stucture.html">Payment provider gateway structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/gateway-command.html">Gateway Command</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/command-pool.html">Gateway Command Pool</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/request-builder.html">Request Builder</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/gateway-client.html">Gateway Client</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/response-validator.html">Response Validator</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/response-handler.html">Response Handler</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/payments-integrations/vault/vault-intro.html">Vault Integration</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/module-configuration.html">Adding Vault module dependencies</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/vault-payment-configuration.html">Vault Payment Configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/vault-di.html">Vault Payment Configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/payments-integrations/vault/enabler.html">Enable vault</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/payment-token.html">Payment Token</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/token-ui-component-provider.html">Token UI Component Provider</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/customer-stored-payments.html">Customer Stored Payments</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/admin-integration.html">Vault implementation for Admin</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+            <p>Store customers should have an ability to enable credit cards details storing.
+Magento has some mechanisms to provide this ability by default, but your still need to add certain modifications in our payment method implementation.</p>
+
+<h2 id="checkbox-on-the-payment-form">Checkbox on the payment form</h2>
+
+<p>First you need to add the Vault enabling controls to the payment form.</p>
+
+<p>Example (<a href="https://github.com/magento/magento2/blob/2.1/}}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html">Magento/Braintree/view/frontend/web/template/payment/form.html</a>):</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;co-transparent-form-braintree&quot;</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;#&quot;</span> <span class="na">novalidate=</span><span class="s">&quot;novalidate&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset</span> <span class="na">data-bind=</span><span class="s">&quot;attr: {class: &#39;fieldset payment items&#39; + getCode(), id: &#39;payment_form_&#39; + getCode()}&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;legend</span> <span class="na">class=</span><span class="s">&quot;legend&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span><span class="c">&lt;!-- ko i18n: &#39;Credit Card Information&#39;--&gt;&lt;!-- /ko --&gt;</span><span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/legend&gt;</span>
+        ...
+        <span class="c">&lt;!-- ko if: (isVaultEnabled())--&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field choice&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span>
+                <span class="na">name=</span><span class="s">&quot;vault[is_enabled]&quot;</span>
+                <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span>
+                <span class="na">data-bind=</span><span class="s">&quot;attr: {&#39;id&#39;: getCode() + &#39;_enable_vault&#39;}, checked: vaultEnabler.isActivePaymentTokenEnabler&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;label&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;attr: {&#39;for&#39;: getCode() + &#39;_enable_vault&#39;}&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span><span class="c">&lt;!-- ko i18n: &#39;Save for later use.&#39;--&gt;&lt;!-- /ko --&gt;</span><span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="c">&lt;!-- /ko --&gt;</span>
+        ...
+    <span class="nt">&lt;/fieldset&gt;</span>
+    ...
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+
+<p><a href="https://github.com/magento/magento2/blob/2.1/}}app/code/Magento/Braintree/view/frontend/web/js/payment/method-renderer/hosted-fields.js">The payment UI component</a>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
+    <span class="p">...</span>
+    <span class="s1">&#39;Magento_Braintree/js/view/payment/method-renderer/cc-form&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Magento_Vault/js/view/payment/vault-enabler&#39;</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(...</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">VaultEnabler</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * @returns {exports.initialize}</span>
+<span class="cm">         */</span>
+        <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+
+            <span class="p">...</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">vaultEnabler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VaultEnabler</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">vaultEnabler</span><span class="p">.</span><span class="nx">setPaymentCode</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getVaultCode</span><span class="p">());</span>
+
+            <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * @returns {Object}</span>
+<span class="cm">         */</span>
+        <span class="nx">getData</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+
+            <span class="k">this</span><span class="p">.</span><span class="nx">vaultEnabler</span><span class="p">.</span><span class="nx">visitAdditionalData</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+
+            <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * @returns {Bool}</span>
+<span class="cm">         */</span>
+        <span class="nx">isVaultEnabled</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">vaultEnabler</span><span class="p">.</span><span class="nx">isVaultEnabled</span><span class="p">();</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * @returns {String}</span>
+<span class="cm">         */</span>
+        <span class="nx">getVaultCode</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">window</span><span class="p">.</span><span class="nx">checkoutConfig</span><span class="p">.</span><span class="nx">payment</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">getCode</span><span class="p">()].</span><span class="nx">vaultCode</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Magento has a default Vault enabler UI component (<code>Magento_Vault/js/view/payment/vault-enabler</code>). In the payment component, you just need to call <code>visitAdditionalData</code> to update the <code>additional_data</code> property.</p>
+
+<p>The rest is done by the <code>\Magento\Vault\Observer\VaultEnableAssigner</code> observer:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">\Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">readDataArgument</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+    
+    <span class="nv">$additionalData</span> <span class="o">=</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="nx">PaymentInterface</span><span class="o">::</span><span class="na">KEY_ADDITIONAL_DATA</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$additionalData</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$additionalData</span><span class="p">[</span><span class="nx">VaultConfigProvider</span><span class="o">::</span><span class="na">IS_ACTIVE_CODE</span><span class="p">]))</span> <span class="p">{</span>
+        <span class="nv">$payment</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">readPaymentModelArgument</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+        <span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">setAdditionalInformation</span><span class="p">(</span>
+            <span class="nx">VaultConfigProvider</span><span class="o">::</span><span class="na">IS_ACTIVE_CODE</span><span class="p">,</span>
+            <span class="nb">filter_var</span><span class="p">(</span><span class="nv">$additionalData</span><span class="p">[</span><span class="nx">VaultConfigProvider</span><span class="o">::</span><span class="na">IS_ACTIVE_CODE</span><span class="p">],</span> <span class="nx">FILTER_VALIDATE_BOOLEAN</span><span class="p">)</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="request-data-builder">Request data builder</h2>
+
+<p>The payment must send this details to a payment processor.
+In the Braintree vault implementation, we just set <code>storeInVaultOnSuccess</code> in transaction request:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">VaultDataBuilder</span> <span class="k">implements</span> <span class="nx">BuilderInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Additional options in request to gateway</span>
+<span class="sd">     */</span>
+    <span class="k">const</span> <span class="no">OPTIONS</span> <span class="o">=</span> <span class="s1">&#39;options&#39;</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * The option that determines whether the payment method associated with</span>
+<span class="sd">     * the successful transaction should be stored in the Vault.</span>
+<span class="sd">     */</span>
+    <span class="k">const</span> <span class="no">STORE_IN_VAULT_ON_SUCCESS</span> <span class="o">=</span> <span class="s1">&#39;storeInVaultOnSuccess&#39;</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @inheritdoc</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">build</span><span class="p">(</span><span class="k">array</span> <span class="nv">$buildSubject</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="nx">self</span><span class="o">::</span><span class="na">OPTIONS</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="nx">self</span><span class="o">::</span><span class="na">STORE_IN_VAULT_ON_SUCCESS</span> <span class="o">=&gt;</span> <span class="k">true</span>
+            <span class="p">]</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>This builder must be added to payment authorize request:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeAuthorizeRequest&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Request\BuilderComposite&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;builders&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            ...
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;vault&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\VaultDataBuilder<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+    <div id="copyright">
+        <div class="container">
+            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
+            <div class="copyright-links">
+                <ul class="nav">
+                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script src="/js/app.js"></script>
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
