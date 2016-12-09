@@ -18,7 +18,7 @@ Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInter
 
 ## Basic implementation
 
-The `\Magento\Payment\Gateway\Command\GatewayCommand` class is the default `CommandInterface` implementation. It allows performing most of the operations implemented in the [Magento sales management]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.md#terms).
+The `\Magento\Payment\Gateway\Command\GatewayCommand` class is the default `CommandInterface` implementation. It allows performing most of the operations implemented in the [Magento sales management]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.html#terms).
 
 ## Adding gateway commands
 For each particular integration with a payment provider, gateway commands are added using virtual types in [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration.

@@ -11,13 +11,8 @@ github_link: payments-integrations/bk-payments-integrations.md
 redirect_from: /guides/v1.0/payments-integrations/bk-payments-integrations.html
 ---
 
-Payments Integrations guide provides high level view on integration approaches, but not leaving the implementation details, describing components from which any integration can be built.
+This guide describes the Magento payment provider gateway: a mechanism that allows you to integrate your stores with payment service providers. As a result, you can create and handle transactions based on order details.
 
-These components are:
+The [Magento payment provider gateway overview]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.html) topic is the entry point of this guide.
 
-* [Gateway Command]({{site.gdeurl}}payments-integrations/payment-gateway/gateway-command)
-* [Gateway Command Pool]({{site.gdeurl}}payments-integrations/payment-gateway/command-pool)
-* [Request Builder]({{site.gdeurl}}payments-integrations/payment-gateway/request-builder)
-* [Gateway Client]({{site.gdeurl}}payments-integrations/payment-gateway/gateway-client)
-* [Response Validator]({{site.gdeurl}}payments-integrations/payment-gateway/response-validator)
-* [Response Handler]({{site.gdeurl}}payments-integrations/payment-gateway/response-handler)
+

@@ -39,7 +39,7 @@ Following is the illustration of how a Zend client can be added in `di.xml`:
 
 ## Transfer Factory {#transfer_factory}
 
-Transfer Factory allows to create transfer object with all data from [request builders]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.md). This object is then used by Gateway Client to process requests to payment processor.
+Transfer Factory allows to create transfer object with all data from [request builders]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html). This object is then used by Gateway Client to process requests to payment processor.
 
 Transfer Factory uses [Transfer Builder]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/TransferBuilder.php) to set required request parameters. 
 

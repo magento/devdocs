@@ -19,7 +19,7 @@ The basic interface for a request builder is [`\Magento\Payment\Gateway\Request\
 
 `\Magento\Payment\Gateway\Request\BuilderComposite` is a container for a list of `\Magento\Payment\Gateway\Request\BuilderInterface` implementations. It gets a list of classes, or types, or virtual type names, and performs a lazy instantiation on an actual `BuilderComposite::build([])` call. So that you can have as many objects, as required, but only those, which are needed for a request are instantiated. 
 
-`BuilderComposite` implements the [composite design pattern](http://designpatternsphp.readthedocs.io/en/latest/Structural/Composite/README.html pattern).
+`BuilderComposite` implements the [composite design pattern](http://designpatternsphp.readthedocs.io/en/latest/Structural/Composite/README.html).
 
 The concatenation strategy is defined in the `BuilderComposite::merge()` method. So if you need to alter the strategy, you need to add your custom implementation of `BuilderComposite`.
 
