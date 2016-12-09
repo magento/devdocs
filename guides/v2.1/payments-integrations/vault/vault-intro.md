@@ -15,31 +15,17 @@ A vault for payment methods is a mechanism providing ability to store customer c
 Magento is a [PCI compliant](https://www.pcisecuritystandards.org/) application, thus it does not store card details like: number,
 CVV, expiration date or any other private data for Vault payments only data available from payment providers.
 
-<p class="q">what does it mean "for vault payments"?</p>
+The [Magento Vault]({{site.mage2100url}}app/code/Magento/Vault) is implemented using the Magento [payment gateway]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.html). It is used in the out of the box vault implementations (for the Braintree payment method) and can be used by third party developers for adding vaults to other default or custom payment methods.
 
-This chapter describes how to add Vault functionality to an existing payment method.
+The following diagram shows a simplified interaction flow between Magento sales management, vault, payment integration and external payment service provider.
 
-The main features are:
-
-* Configurable
-* Easy to add Vault implementation for existing payment method
-* Customizable
-* Allow to store credit card details without sensitive data
-* Each payment method can have own Vault (if payment processor supports cards storing)
-
-The [Magento Vault]({{site.mage2100url}}app/code/Magento/Vault) is implemented using the [Payment Gateway]({{site.gdeurl}}payments-integrations/bk-payments-integrations.html) and
-can be easily configured or extended in the same way as payment method based on the _Payment Gateway_.
-If you already have worked with _Magento Payment Gateway_, you would easily understand common principles and how to use
-it in your custom payment integrations.
-
-Next diagram shows main Vault interaction flow and how it interacts with _Magento Sales Management_ and existing payment integration:
 ![Vault Interaction]({{site.baseurl}}common/images/payments-integrations/vault_interaction_flow.png)
 
-As you can see, this diagram very similar to [Payment Gateway interaction flow]({{site.gdeurl21}}payment-integrations/payment-gateway/payment-gateway-intro.html), the main difference
-is now Vault chooses needed command and when calls this command from _Payment Gateway_ implementation.
+The flow is similar to usual Magento [payment gateway interaction flow]({{page.baseurl}}payment-integrations/payment-gateway/payment-gateway-intro.html). 
 
-The next topics will be focused on the Vault payment configuration, usage, customization and will describe how to add new Vault 
-implementation to existing payment integration based on _Payment Gateway_:
+The main difference is that when Vault is used, it "decides" what command is required and when this command must be called.
+
+The topics of this chapter describe how to add new Vault implementation to existing payment integration based on _Payment Gateway_:
 
  - [Vault Payment Configuration]({{site.gdeurl21}}payments-integrations/vault/configuration.html)
  - [Vault Enabler]({{site.gdeurl21}}payments-integrations/vault/enabler.html)
