@@ -2,19 +2,19 @@
 layout: default
 group: payments-integrations
 subgroup: integration
-title: Add a gateway command
-menu_title: Add a gateway command
+title: Add a payment action
+menu_title: Add a payment action
 menu_order: 5
 version: 2.1
 github_link: payments-integrations/base-integration/payment-action.md
 ---
 
-You need to add a [gateway command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands) for each payment action available for the payment method. There should be a separate command for "authorize", "void" and so on.
+For each payment action available for the payment method, you must implement the following:
 
-To add a gateway command. take the following steps:
-1. Specify and configure the gateway command as described in [Gateway command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands)
-	
-2. Add the command to the [commands pool]({{page.baseurl}}/payments-integrations/payment-gateway/command-pool.html).
+- Creating a request with payment details. Described in [Get payment information from frontend to backend]({{page.baseurl}}payments-integrations/base-integration/get-payment-info.html).
+- Request processing using [response handler]({{page.baseurl}}payments-integrations/payment-gateway/response-handler.html) and [response validator]({{page.baseurl}}payments-integrations/payment-gateway/response-validator.html).
+- Specify and configure the gateway command. Described in the [Gateway Command](({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands) topic.
+- Add the command to the commands pool, as described in [Command Pool]({{page.baseurl}}/payments-integrations/payment-gateway/command-pool.html#command-pool-configuration-for-a-particular-provider).
 
 
 ## Configure the command
@@ -24,11 +24,9 @@ The gateway command for the payment action must be configured in the `di.xml` fi
 Configure the command as described in [Gateway Command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands).
 
 
-## Example: Implementing the `authorize` payment action
-We have already created payment method and in this topic will create `authorize` payment action.
+## Example: `authorize` payment action for Braintree
 
-In the [previous topic]({{site.gdeurl21}}payments-integrations/base-integration/configuration.html#payment-method-facade)
-we configured payment method with _Command Pool_ and now need to add authorize command to our command pool:
+Configuring the gateway command and adding it to command pool (`app/code/Magento/Braintree/etc/di.xml`): 
 
 {% highlight xml %}
 <virtualType name="BraintreeCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
@@ -50,19 +48,33 @@ we configured payment method with _Command Pool_ and now need to add authorize c
 </virtualType>
 {% endhighlight %}
 
-Let's look into common command arguments
 
- * `requestBuilder` - list of builders to process transaction details, more information in
- [Request Builder]({{site.gdeurl21}}payments-integrations/payment-gateway/request-builder.html) component description.
- * `transferFactory` - creates transfer object and should implement `Magento\Payment\Gateway\Http\TransferFactoryInterface`.
- * `client` - processes transaction, more details in [Gateway Client]({{site.gdeurl21}}payments-integrations/payment-gateway/gateway-client.html) section.
- * `handler` - handles response from payment provider, [more details]({{site.gdeurl21}}payments-integrations/payment-gateway/response-handler.html).
- * `validator` - processes response validations, the [component description]({{site.gdeurl21}}payments-integrations/payment-gateway/response-validator.html).
- 
+In the command configuration we see that `BraintreeAuthorizeRequest` is specified as `requestBuilder`, that is a
+Let's look closer on the `requestBuilder` arguments. This argument value is a list of builders, builder composite.  
+
+The `BraintreeAuthorizeRequest` builder contains the following builders (`app/code/Magento/Braintree/etc/di.xml`):
+
+{% highlight xml%}
+<virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Magento\Braintree\Gateway\Request\CustomerDataBuilder</item>
+                <item name="payment" xsi:type="string">Magento\Braintree\Gateway\Request\PaymentDataBuilder</item>
+                <item name="channel" xsi:type="string">Magento\Braintree\Gateway\Request\ChannelDataBuilder</item>
+                <item name="address" xsi:type="string">Magento\Braintree\Gateway\Request\AddressDataBuilder</item>
+                <item name="vault" xsi:type="string">Magento\Braintree\Gateway\Request\VaultDataBuilder</item>
+                <item name="3dsecure" xsi:type="string">Magento\Braintree\Gateway\Request\ThreeDSecureDataBuilder</item>
+                <item name="kount" xsi:type="string">Magento\Braintree\Gateway\Request\KountPaymentDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+{%endhighlight%}
+
+The most important builder in this pool is `Magento\Braintree\Gateway\Request\PaymentDataBuilder`, the `payment` builder. It is responsible for the payment information part of the request.  
+
+Please see the [Get payment information from frontend to backend]({{page.baseurl}}payments-integrations/base-integration/get-payment-info.md) for details about how payment information can be handled.
 
 ## Related topics
 
-
 - [Add a custom payment method to checkout]({{page.baseurl}}howdoi/checkout/checkout_payment.html): how to add a custom payment integration to checkout page.
-- [Get payment information from frontend to backend]({{page.baseurl}}payments-integrations/base-integration/get-payment-info.html): how data is added to payments additional information and how to get it
-- 
+

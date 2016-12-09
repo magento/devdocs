@@ -29,7 +29,7 @@ To add a new payment method, you need to take the following high-level steps:
 1. Configure general payment method module options. Described in the [Payment method module configuration]({{page.baseurl}}payments-integrations/base-integration/module-configuration.md) topic.
 2. Configure payment method options. Described in [Payment method configuration]({{page.baseurl}}payments-integrations/base-integration/payment-options-config.md)
 3. Implement and configure payment method facade - the entity allowing to process payment actions between Magento sales management and payment processor. Described in [Payment  method facade]({{page.baseurl}}payments-integrations/base-integration/facade-configuration.html) and [Payment info rendering in Admin checkout]({{page.baseurl}}payments-integrations/base-integration/formblocktype.html)
-4. Implement and configure [gateway commands]({{page.baseurl}}gateway-command.html). Described in [Add a gateway command]({{page.baseurl}}payments-integrations/base-integration/payment-action.html) 
+4. Implement and configure payment actions (like authorize, void and so on). Described in [Add a gateway command]({{page.baseurl}}payments-integrations/base-integration/payment-action.html) 
 
 Your payment method might be available from either storefront and Admin, or both. And also can have different configuration for each area. The key notes on how to configure where the method can be used, and how to implement different behavior, are described in the [Configure payment method by area]({{page.baseulr}}payments-integrations/base-integration/admin-integration.html) topic.
 

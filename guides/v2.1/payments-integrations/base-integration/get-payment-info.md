@@ -14,7 +14,7 @@ github_link: payments-integrations/base-integration/get-payment-info.md
 In the previous example, the `BraintreeAuthorizeRequest` builder composite includes the `Magento\Braintree\Gateway\Request\PaymentDataBuilder` builder. This is builder responsible for the payment information part of the request, in other words, the credit card information. Let's look closer at it's implementation.
 
 The Braintree payment provider requires the [payment method nonce](https://developers.braintreepayments.com/start/overview#payment-method-nonce)
-to process transactions, and our builder should send it per each authorization transaction. 
+to process transactions, and our builder should send it for each authorization transaction. 
 Here is how the Braintree payment builder looks:
 
 {% highlight php startinline=1 %}

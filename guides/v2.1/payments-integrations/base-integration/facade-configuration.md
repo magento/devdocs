@@ -74,5 +74,6 @@ In your configuration you can use default [Magento\Payment\Gateway\Config\Config
 And [Magento\Braintree\Gateway\Config\Config]({{site.mage2100url}}app/code/Magento/Braintree/Gateway/Config/Config.php) reads
 configuration from database or payment config file.
 
-Other handlers contain some logic, for example, `can_cancel` option the same as `can_void` and depends if order has paid amount (invoiced),
-your handler can check transaction status or do anything else what you need.
+Other handlers contain some logic, for example, `can_cancel` option is the same as `can_void` and depends on whether the order has paid amount (invoiced). 
+
+Your custom handlers must implement the [Value Handler interface]({{site.mage2100url}}app/code/Magento/Payment/Gateway/Config/ValueHandlerInterface.php).
