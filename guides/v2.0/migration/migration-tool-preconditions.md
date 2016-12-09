@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: C_Data migration tool
+subgroup: C_DMTool
 title: Preconditions
 menu_title: Preconditions
 menu_node:
