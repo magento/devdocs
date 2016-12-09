@@ -13,8 +13,6 @@ redirect_from: /guides/v1.0/payments-integrations/bk-payments-integrations.html
 
 The Payments Integrations guide provides high level view on integration approaches, but not leaving the implementation details, describing components from which any integration can be built.
 
-<p class="q">Need to change wording</p>
-
 These components are:
 
 * [Gateway Command]({{page.baseurl}}payments-integrations/payment-gateway/gateway-command)

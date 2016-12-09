@@ -1,3 +1,4 @@
+---
 layout: default
 group: payments-integrations
 subgroup: integration
