@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: C_Data migration tool
+subgroup: C_DMTool
 title: Configure migration
 menu_title: Configure migration
 menu_node:

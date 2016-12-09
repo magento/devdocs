@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: C_Data migration tool
+subgroup: C_DMTool
 title: Install Data Migration Tool
 menu_title: Install Data Migration Tool
 menu_node:

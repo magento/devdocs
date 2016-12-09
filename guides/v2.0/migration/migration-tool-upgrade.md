@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: C_Data migration tool
+subgroup: C_DMTool
 title: Upgrade Data Migration Tool
 menu_title: Upgrade Data Migration Tool
 menu_node:
