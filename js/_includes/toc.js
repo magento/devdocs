@@ -16,10 +16,25 @@ $(".content-wrap :header:not(h1)").each(function(){
     var $this = $(this),
         id = $this.attr('id'),
         no_toc = $this.hasClass('no_toc'),
-        anchor_text = '';
+        inside_collapsible = $this.parents('.collapsible').length,
+        collapsible_title = $this.hasClass('collapsible-title'),
+        anchor_text = '',
+        show = true;
 
     // check if we need to process the link. do not process links that are hidden inside collapsible blocks
-    if ( !no_toc && !$this.parents('.collapsible').length ) {
+    if ( inside_collapsible ) {
+      show = false;
+      if ( collapsible_title) {
+        show = true;
+      }
+    }
+    if ( no_toc ) {
+      show = false;
+    }
+
+
+
+    if ( show ) {
 
       // check if we have id on heading already
       if ( id ) {
