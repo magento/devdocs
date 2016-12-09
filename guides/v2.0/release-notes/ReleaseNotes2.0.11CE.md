@@ -70,7 +70,6 @@ We address the following functional issues in this release.
 {:.no_toc} 
 
 
-<!--- 58065-->* You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data. 
 
 <!--- 57082-->* The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension. 
 
@@ -190,14 +189,6 @@ We address the following functional issues in this release.
 
 
 
-### Tracking and shipping
-{:.no_toc} 
-
-<!--- 56908-->* The UPS module now generates shipping rates for Puerto Rico postal codes.
-
-
-
-
 ### Images
 {:.no_toc} 
 
@@ -211,8 +202,6 @@ We address the following functional issues in this release.
 ### Email
 {:.no_toc} 
 
-<!--- 58243-->* Order emails now specify the amount of the gift card that you've purchased. 
-
 <!--- 56859-->* The **Send Welcome Email From** field now accurately identifies the store that the customer is associated with. 
 
 <!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento would not save this information, and threw an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
@@ -220,8 +209,6 @@ We address the following functional issues in this release.
 
 ### Static file processing
 {:.no_toc}
-
-<!--- 56895-->* We’ve improved the speed of static asset deployment. See Deploy static view files for more information about available options.
 
 <!--- 56076-->* Versioning of static files (including CSS, JS, fonts, and images) is now enabled by default.
 
@@ -231,7 +218,7 @@ We address the following functional issues in this release.
 ### Scope
 {:.no_toc}
 
-<!--- 57336, 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento threw this error when you tried to assign products to a category: "Wrong request parameters". 
+<!--- 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento threw this error when you tried to assign products to a category: "Wrong request parameters". 
 
 <!--- 57002-->* A restricted user can now change the store view- or website- level attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
 
@@ -245,6 +232,7 @@ We address the following functional issues in this release.
 ### General fixes
 {:.no_toc} 
 
+
 <!--- 59503-->* Magento now creates a URL rewrite for the new URL key of a product as expected. Previously, after you saved a change to the URL key of a product by selecting the **Create Permanent Redirect for old URL** option, Magento did not rewrite the old URL to the new URL.
 
 <!--- 61106-->* The Product page now displays swatches based on the color swatch attribute. Previously, the Product page did not display swatches. 
@@ -253,15 +241,13 @@ We address the following functional issues in this release.
 
 <!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
 
-<!--- 60608-->* We've corrected a pagination problem that Magento experienced when using the `groupBy` function. <a href="https://github.com/magento/magento2/issues/4767" target="_blank">(GITHUB-4767)</a>
-
 
 
 <!--- 59449-->* Magento now decrements stock as expected in a multi-website environment. 
 
 <!--- 55682-->* The catalog category now retrieves prices from the price index update as expected. 
 
-<!--- 56001-->* The search field now works as expected on iOS devices using Safari. Previously on these devices, the search box closed randomly. 
+<!--- 56001-->* The search field now works as expected on iOS devices using the Safari browser. Previously on these devices, the search box closed randomly. 
 
 <!--- 55664-->* We've removed the duplicate PHP settings from the sample web server configuration files.
 
@@ -277,8 +263,6 @@ We address the following functional issues in this release.
 
 <!--- 57322-->* Magento no longer redirects users to the Checkout page after login. Now, if you set **Redirect Customer to Account Dashboard after Logging in**  value to Yes, users will be redirected to the Account Dashboard page. If you set this value to No, then users will stay on the home page after login. 
 
-<!--- 56875-->* We've eliminated difficulties saving product information when logged in as `admin`. Previously, the Product Save feature worked erratically for some Admin users. 
-
 <!--- 59102-->* Customers can now continue shopping after selecting an unavailable bundle product. Previously, if a customer selected a bundle product that was no longer available, Magento threw a fatal error. 
 
 <!--- 57331-->* The Magento storefront now reflects changes in the swatch attribute properties as expected. 
@@ -289,15 +273,11 @@ We address the following functional issues in this release.
 
 <!--- 57338-->* Customers are now redirected as expected to the destination URL identified in the **Redirect to My Account After Log-in** setting. Previously, customers were redirected to the My Account page, no matter which URL you identified in this setting.
 
-<!--- 58466-->* The order of products in a category display no longer changes when you add a new product to the category. 
 
 <!--- 57498-->* Lengthy Order Status tables are now paginated as expected.
 
 <!---57030 -->* We've fixed a problem with [custom zip code masks]({{ page.baseurl }}/howdoi/checkout/checkout_zip.html) in previous versions of Magento. <a href="https://github.com/magento/magento2/issues/4131" target="_blank">(GITHUB-4131)</a>
 
-<!--- 57103-->* We've fixed an issue with how the Customer Segments report calculate the same customer on two websites. 
-
-<!--- 57384, 39489 -->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**. 
 
 <!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 
 

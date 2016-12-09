@@ -197,15 +197,6 @@ We address the following functional issues in this release.
 
 
 
-
-### Tracking and shipping
-{:.no_toc} 
-
-<!--- 56908-->* The UPS module  generates shipping rates for Puerto Rico postal codes.
-
-
-
-
 ### Images
 {:.no_toc} 
 
@@ -228,7 +219,7 @@ We address the following functional issues in this release.
 ### Scope
 {:.no_toc}
 
-<!--- 57336, 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento threw this error when you tried to assign products to a category: "Wrong request parameters". 
+<!--- 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento threw this error when you tried to assign products to a category: "Wrong request parameters". 
 
 <!--- 57002-->* A restricted user can now change the store view- or website- level attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
 
@@ -238,7 +229,6 @@ We address the following functional issues in this release.
 ### Static file processing
 {:.no_toc}
 
-<!--- 56895-->* We’ve improved the speed of static asset deployment. See Deploy static view files for more information about available options.
 
 <!--- 56076-->* Versioning of static files (including CSS, JS, fonts, and images) is now enabled by default.
 
@@ -250,6 +240,8 @@ We address the following functional issues in this release.
 ### General fixes
 {:.no_toc} 
 
+<!--- 61354-->* Categories are removed when admin with rights restricted to one store saves a product. 
+
 <!--- 59503-->* Magento now creates a URL rewrite for the new URL key of a product as expected. Previously, after you saved a change to the URL key of a product by selecting the **Create Permanent Redirect for old URL** option, Magento did not rewrite the old URL to the new URL.
 
 <!--- 61106-->* The Product page now displays swatches based on the color swatch attribute. Previously, the Product page did not display swatches. 
@@ -258,16 +250,13 @@ We address the following functional issues in this release.
 
 <!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
 
-<!--- 60608-->* We've corrected a pagination problem that Magento experienced when using the `groupBy` function. <a href="https://github.com/magento/magento2/issues/4767" target="_blank">(GITHUB-4767)</a>
-
-
 <!--- 59449-->* Magento now decrements stock as expected in a multi-website environment. 
 
 <!--- 59409-->* Magento now correctly manages the maximum number of messages a message queue consumer can process. Previously, the consumer would stop processing messages before reaching the specified maximum number.
 
 <!--- 55682-->* The catalog category now retrieves prices from the price index update as expected. 
 
-<!--- 56001-->* The search field now works as expected on iOS devices using Safari. Previously on these devices, the search box closed randomly. 
+<!--- 56001-->* The search field now works as expected on iOS devices using the Safari browser. Previously on these devices, the search box closed randomly. 
 
 <!--- 55664-->* We've removed the duplicate PHP settings from the sample web server configuration files.
 
