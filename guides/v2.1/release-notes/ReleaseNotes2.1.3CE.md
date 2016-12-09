@@ -17,8 +17,6 @@ github_link: release-notes/ReleaseNotes2.1.3CE.md
 We are pleased to present Magento Community Edition 2.1.3. This release includes many functional enhancements and fixes.
 
 
-Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
-
 ## Highlights
 
 Magento 2.1.3 contains more than 70 bug fixes and enhancements, including these highlights:
@@ -46,7 +44,7 @@ Magento 2.1.3 contains more than 70 bug fixes and enhancements, including these 
 
 * **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
 
-* The Sales module provides two new web APIs that allow you to process refunds from an order or invoice. Previously, these actions could only be performed from Admin. After you install this patch, you can:
+* The Sales module provides **two new web APIs that allow you to process refunds from an order or invoice**. Previously, these actions could only be performed from the Admin interface. After you install this patch, you can:
 
 	* Create a credit memo (complete or partial) for a particular invoice or order.
 
@@ -59,7 +57,8 @@ Magento 2.1.3 contains more than 70 bug fixes and enhancements, including these 
 REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
 
 
-* <b>Enhanced performance in the processing of large catalogs</b>. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
+* **Enhanced performance in the processing of large catalogs**. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
+
 
 ## Breaking changes
 
@@ -67,15 +66,18 @@ REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{o
 
 ## Functional fixes and enhancements
 
+We address the following functional issues in this release.
+
+
 ### Indexing
 {:.no_toc} 
 
 <!---56928-->* We've improved the performance of the algorithm that Magento uses to calculate batch sizes while indexing categories.  
 
 
-<!---57470 -->* Magento no longer throws an indexing error when Elasticsearch is enabled. Previously, Magento threw this indexing error when Elasticsearch was enabled:  `mapper_parsing_exception`. 
+<!---57470 -->* Magento no longer encounters an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  `mapper_parsing_exception`. 
 
-<!---58703-->* The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and threw the following error:  `Error 1114: Table is full`.
+<!---58703-->* The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and displayed the following error:  `Error 1114: Table is full`.
 
 
 
@@ -93,9 +95,9 @@ REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{o
 <!---56804-->* We've fixed an issue with the correct representation of date and timezones of items in product catalog during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard. 
 
 
-<!---57052-->* You can now import negative quantities. Previously, when importing a product quantity  of '-1',  Magento returned an error. 
+<!---57052-->* You can now import negative quantities. 
 
-<!---56018-->* Magento now imports custom options correctly. Previously, when you tried to import a custom option, the import failed, and Magento threw this error: `Javascript Error: Uncaught RangeError: Maximum call stack size exceeded`. <a href="https://github.com/magento/magento2/issues/5573" target="_blank">(GITHUB-5573)</a> 
+<!---56018-->* Magento now imports custom options correctly. Previously, when you tried to import a custom option, the import failed, and Magento displayed this error: `Javascript Error: Uncaught RangeError: Maximum call stack size exceeded`. <a href="https://github.com/magento/magento2/issues/5573" target="_blank">(GITHUB-5573)</a> 
 
 <!---57438-->* You can now successfully import images if you set document root to `/pub`. Previously, you needed to set document root to `/magento` to import images. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a>
 
@@ -142,7 +144,7 @@ REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{o
 <!---57943-->* Magento 2.0.x and 2.1.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error:   "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a> 
 
 
-<!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento threw an exception, "Default website not defined" when upgrading because Magento read the list of websites from the database. It now reads from the config file. 
+<!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento displayed this error, "Default website not defined" when upgrading because Magento read the list of websites from the database. It now reads from the config file. 
 
 
 
@@ -177,7 +179,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---56998 -->* Magento no longer applies one simple product's special price to another simple product of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a>
 
 
-<!---58291-->* Magento no longer displays the "Invalid Form Key" exception when you try to save a configurable product with more than fifty options.
+<!---58291-->* Magento no longer displays the "Invalid Form Key" message when you try to save a configurable product with more than fifty options.
 
 <!---54808 -->* You can now edit a product attribute for multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, and then incorrectly tell you that the products had been edited.
 
@@ -236,7 +238,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57086-->* You can now successfully place orders with Braintree when using an alternative merchant account ID. (The merchant account does not need to match the 3D Secure authorization merchant account.) <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a> 
 
-<!---59637-->*  Braintree no longer throws an error during checkout when you apply a 100% discount coupon to a product and enable free shipping. Previously, Magento  displayed a spinning loader widget, and your screen froze. The Developer console displayed this error:
+<!---59637-->*  Braintree no longer encounters an error during checkout when you apply a 100% discount coupon to a product and enable free shipping. Previously, Magento  displayed a spinning loader widget, and your screen froze. The Developer console displayed this error:
 `Uncaught Error: [paypal-container] is not a valid DOM Element`. 
 
 
@@ -247,10 +249,10 @@ We've enhanced the performance of configurable products in several ways:
 ### Tier pricing
 {:.no_toc} 
 
-<!---57625-->* Magento no longer resets the tier price during quote recalculation. Previously, when you triggered an automatic quote recalculation (by changing the shipping address, for example), the tier price was lost. (This issue occurred only if the product record in the database had values for `row_id` and `entity_id` that don't match.)
+<!---57625-->* Magento no longer resets the tier price during quote recalculation. Previously, when you triggered an automatic quote recalculation (by changing the shipping address, for example), the tier price was lost. (This issue occurred only if the product record in the database had values for `row_id` and `entity_id` that didn't match.)
 
 
-<!---56922-->*  Magento no longer adds a thousands separator ( , ) to representations of quantities that exceed 1000.  <a href="https://github.com/magento/magento2/issues/5745" target="_blank">(GITHUB-5745)</a> 
+<!---56922-->*  Magento no longer adds a thousands separator ( , ) to representations of quantities that exceed 1,000.  <a href="https://github.com/magento/magento2/issues/5745" target="_blank">(GITHUB-5745)</a> 
 
 
 
@@ -287,7 +289,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---57039-->* You can now update a product's media gallery through the REST API. 
 
 
-<!---56432-->* Magento now updates order status as expected on the Admin panel when you use the REST API to create a credit memo.
+<!---56432-->* Magento now updates order status as expected on the Admin interface when you use the REST API to create a credit memo.
 
 
 <!---59422-->* The product return feature now works as expected when you create a product using the Creditmemo API. With the new Refund Invoice service, you can:
@@ -316,9 +318,9 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57054 -->* Order emails now specify the amount of the gift card that you've purchased. 
 
-<!---56932 -->* The Checkout page no longer freezes when you order a virtual gift card using the Authorize.net Payment Action value set to Authorize and Capture.
+<!---56932 -->* The Checkout page no longer freezes when you order a virtual gift card using the Authorize.net Payment Action value set to **Authorize and Capture**.
 
-<!---57512-->*  You can now complete the purchase of a gift card in environments where you have set the Braintree payment method Payment Action to Authorize and Capture. Previously, any order made under these conditions would remain indefinitely in the 'processing' stage. 
+<!---57512-->*  You can now complete the purchase of a gift card in environments where you have set the Braintree payment method Payment Action to **Authorize and Capture**. Previously, any order made under these conditions would remain indefinitely in the processing stage. 
 
 
 
@@ -338,7 +340,7 @@ We've enhanced the performance of configurable products in several ways:
 ### Orders
 {:.no_toc} 
 
-<!--- 57077-->* You can now set the customer group when creating a new order from the Admin panel. <a href="https://github.com/magento/magento2/issues/6162" target="_blank">(GITHUB-6162)</a> 
+<!--- 57077-->* You can now set the customer group when creating a new order from the Admin interface. <a href="https://github.com/magento/magento2/issues/6162" target="_blank">(GITHUB-6162)</a> 
 
 
 <!---57387 -->* You can now print invoices and credit memos from the Order page. 
@@ -378,7 +380,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---60143-->* You can now successfully create a new checkout agreement. <a href="https://github.com/magento/magento2/issues/7171" target="_blank">(GITHUB-7171)</a> 
 
-<!---57168-->* We fixed a JavaScript error that occurred on the Checkout page after you changed the country in the Estimate Shipping and Tax field.
+<!---57168-->* We fixed a JavaScript error that occurred on the Checkout page after you changed the country in the **Estimate Shipping and Tax** field.
 
 
 
@@ -419,7 +421,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57496-->* Magento now successfully loads the New Order Email templates. 
 
-<!---57204 -->* The Send Welcome Email From field now identifies the store that the customer is associated with. 
+<!---57204 -->* The **Send Welcome Email From** field now identifies the store that the customer is associated with. 
 
 
 
@@ -438,10 +440,10 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 59581-->* We've improved and streamlined the Magento Admin PayPal configuration interface. 
 
 
-<!---56962 -->* Magento now displays the State/Province field on the Add New Address page. <a href="https://github.com/magento/magento2/issues/5279" target="_blank">(GITHUB-5279)</a>
+<!---56962 -->* Magento now displays the **State/Province** field on the Add New Address page. <a href="https://github.com/magento/magento2/issues/5279" target="_blank">(GITHUB-5279)</a>
 
 
-<!---57383-->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront.
+<!---57383-->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**.
 
 <!---57187-->*  When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when Layout is set to empty. 
 
@@ -497,14 +499,14 @@ We've enhanced the performance of configurable products in several ways:
 <!---54704-->* Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the store view level overrode the price set in website scope. <a href="https://github.com/magento/magento2/issues/5133" target="_blank">(GITHUB-5133)
 
 
-<!---55351, 56936 -->*  The list of allowed countries is now configured as part of website scope, not storeview scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
+<!---55351, 56936 -->*  The list of allowed countries is now configured as part of website scope, not store view scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
 
 
 <!---57001-->* A restricted user can now change storeview- or website- level attributes that are defined within his scope. 
 
 <!---59284-->* You can now select the scope for an action that you are running from the Catalog page's product table. 
 
-<!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the storeview level.
+<!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.
 
 <!---60801-->* Magento now correctly applies the Catalog Price Scope attribute when it is set to Global. Previously, website scope values prevailed over global values. 
 
