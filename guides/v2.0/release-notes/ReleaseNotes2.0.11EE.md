@@ -147,11 +147,11 @@ We address the following functional issues in this release.
 
 <!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
 
-	* Support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
+	* support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
 
-	* Return the product to stock 
+	* return the product to stock 
 
-	* Change order status after a credit memo has been created.
+	* change order status after a credit memo has been created.
 
 
 ### Web APIs
@@ -261,15 +261,15 @@ We address the following functional issues in this release.
 <!--- 60608-->* We've corrected a pagination problem that Magento experienced when using the `groupBy` function. <a href="https://github.com/magento/magento2/issues/4767" target="_blank">(GITHUB-4767)</a>
 
 
-<!--- 59449-->* Magento now decremeA uts stock as expected in a multi-website environment. 
+<!--- 59449-->* Magento now decrements stock as expected in a multi-website environment. 
 
-<!--- 59409-->* We've fixed an issue with the `max-message` argument setting for the consumer of the AMQP module. Previously, the consumer died after consuming only the existing messages in the queue, rather than waiting to reach the maximum messages. 
+<!--- 59409-->* Magento now correctly manages the maximum number of messages a message queue consumer can process. Previously, the consumer would stop processing messages before reaching the specified maximum number.
 
 <!--- 55682-->* The catalog category now retrieves prices from the price index update as expected. 
 
 <!--- 56001-->* The search field now works as expected on iOS devices using Safari. Previously on these devices, the search box closed randomly. 
 
-<!--- 55664-->* We've removed the duplicate PHP settings from the sampple web server configuration files.
+<!--- 55664-->* We've removed the duplicate PHP settings from the sample web server configuration files.
 
 <!--- 58894-->* The Compare Products page now works as expected. Previously, you were erroneously redirected to another page when you removed an item from the Compare Products sidebar. 
 
@@ -285,7 +285,7 @@ We address the following functional issues in this release.
 
 <!--- 59102-->* Customers can now continue shopping after selecting an unavailable bundle product. Previously, if a customer selected a bundle product that was no longer available, Magento threw a fatal error. 
 
-<!--- 57331-->* The Magento storefront now reflect changes in the swatch attribute properties as expected. 
+<!--- 57331-->* The Magento storefront now reflects changes in the swatch attribute properties as expected. 
 
 
 <!--- 57326-->* The Sales Order object can now contain more than one `extension_attribute`.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a>
@@ -316,7 +316,7 @@ We address the following functional issues in this release.
 <!--- 57199-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. **Workaround**: Flush Varnish cache using the Varnish admin CLI. 
 
 
-* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. **Workaround**: Upgrade your version of TLS to at least 1.2.
+* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. **Workaround**: Upgrade CURL to a minimum version of 7.39.0.
 
 
 * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.

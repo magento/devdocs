@@ -138,11 +138,11 @@ We address the following functional issues in this release.
 
 <!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
 
-	* Support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
+	* support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
 
-	* Return the product to stock 
+	* return the product to stock 
 
-	* Change order status after a credit memo has been created
+	* change order status after a credit memo has been created
 
 
 
@@ -264,7 +264,7 @@ We address the following functional issues in this release.
 
 <!--- 56001-->* The search field now works as expected on iOS devices using Safari. Previously on these devices, the search box closed randomly. 
 
-<!--- 55664-->* We've removed the duplicate PHP settings from the sampple web server configuration files.
+<!--- 55664-->* We've removed the duplicate PHP settings from the sample web server configuration files.
 
 <!--- 58894-->* The Compare Products page now works as expected. Previously, you were erroneously redirected to another page when you removed an item from the Compare Products sidebar. 
 
@@ -282,7 +282,7 @@ We address the following functional issues in this release.
 
 <!--- 59102-->* Customers can now continue shopping after selecting an unavailable bundle product. Previously, if a customer selected a bundle product that was no longer available, Magento threw a fatal error. 
 
-<!--- 57331-->* The Magento storefront now reflect changes in the swatch attribute properties as expected. 
+<!--- 57331-->* The Magento storefront now reflects changes in the swatch attribute properties as expected. 
 
 <!--- 57326-->* The Sales Order object can now contain more than one `extension_attribute`.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a>
 
