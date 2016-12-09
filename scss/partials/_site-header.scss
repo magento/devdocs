@@ -33,7 +33,13 @@
 
   padding-top: $header-height;
 
+  .container {
+    position: relative;
+  }
+
   .logo {
+    position: relative;
+    z-index: 11;
     width: auto;
     height: 40px;
     float: left;
@@ -104,7 +110,7 @@
     }
 
     .logo {
-      width: 100%;
+      width: auto;
     }
 
     .search-btn {

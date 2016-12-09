@@ -44,12 +44,16 @@
 
 			<div class="search-btn">
 				<a class="search-trigger search-icon" href="{{site.baseurl}}search.html"></a>
-				<form class="quick-search" action="{{site.baseurl}}search.html" method="get">
-	        <input type="search" name="q" placeholder="search"  />
-	      </form>
 			</div>
 
+			<form class="quick-search" action="{{site.baseurl}}search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+
 			{% include version-switcher.html %}
+
 
 		</div>
 

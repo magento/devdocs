@@ -1,7 +1,12 @@
 // Responsive menu trigger
-$('.menu-trigger, .nav-main-fader').on('click', function (e) {
+$('.menu-trigger').on('click', function (e) {
   e.preventDefault();
   $('body').toggleClass('offcanvas-active');
+});
+
+$('.nav-main-fader').on('click', function (e) {
+  e.preventDefault();
+  $('body').removeClass('offcanvas-active search-active');
 });
 
 // Duplicate main nav and version-switcher for responsive website
