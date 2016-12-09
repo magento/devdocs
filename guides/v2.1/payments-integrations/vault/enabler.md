@@ -2,22 +2,21 @@
 layout: default
 group: payments-integrations
 subgroup: vault
-title: Vault Enabler
-menu_title: Vault Enabler
+title: Enable vault 
+menu_title: Enable vault 
 menu_order: 5
 version: 2.1
 github_link: payments-integrations/vault/enabler.md
 ---
 
-## Vault Enabler
+Store customers should have an ability to enable credit cards details storing.
+Magento has some mechanisms to provide this ability by default, but your still need to add certain modifications in our payment method implementation.
 
-Now, our customers should have an ability to enable credit cards details storing.
-Magento already has some mechanisms to provide this ability but we need to perform some modifications in our payment.
+## Checkbox on the payment form
 
-### Checkbox on the payment form
+First you need to add the Vault enabling controls to the payment form.
 
-At, first we need to update our payment form and Vault enabler to it, for example, we already have form with credit card details
-([Magento/Braintree/view/frontend/web/template/payment/form.html]({{{{site.mage2100url}}}}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
+Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{{{site.mage2100url}}}}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
 
 {% highlight html %}
 <form id="co-transparent-form-braintree" class="form" data-bind="" method="post" action="#" novalidate="novalidate">
@@ -43,8 +42,8 @@ At, first we need to update our payment form and Vault enabler to it, for exampl
 </form>
 {% endhighlight %}
 
-As you can see, where are specified few methods and properties `isVaultEnabled()` and `vaultEnabler.isActivePaymentTokenEnabler`.
-What how looks [payment UI component]({{{{site.mage2100url}}}}app/code/Magento/Braintree/view/frontend/web/js/payment/method-renderer/hosted-fields.js):
+
+[The payment UI component]({{{{site.mage2100url}}}}app/code/Magento/Braintree/view/frontend/web/js/payment/method-renderer/hosted-fields.js):
 
 {% highlight javascript %}
 define([
@@ -97,9 +96,9 @@ define([
 });
 {% endhighlight %}
 
-Magento has Vault enabler UI component (`Magento_Vault/js/view/payment/vault-enabler`) and in the payment component just need to call `visitAdditionalData` to update additional_data property.
+Magento has a default Vault enabler UI component (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call `visitAdditionalData` to update the `additional_data` property.
 
-All rest will do `\Magento\Vault\Observer\VaultEnableAssigner` observer:
+The rest is done by the `\Magento\Vault\Observer\VaultEnableAssigner` observer:
 
 {% highlight php startinline=1 %}
 public function execute(\Magento\Framework\Event\Observer $observer)
@@ -122,10 +121,10 @@ public function execute(\Magento\Framework\Event\Observer $observer)
 }
 {% endhighlight %}
 
-### Request data builder
+## Request data builder
 
-Now, customers are allowed to enable _Vault_, but also payment should send this details to a payment processor.
-In our case we just set `storeInVaultOnSuccess` in transaction request:
+The payment must send this details to a payment processor.
+In the Braintree vault implementation, we just set `storeInVaultOnSuccess` in transaction request:
 
 {% highlight php startinline=1 %}
 class VaultDataBuilder implements BuilderInterface
@@ -155,7 +154,7 @@ class VaultDataBuilder implements BuilderInterface
 }
 {% endhighlight %}
 
-And add this builder to payment authorize request:
+This builder must be added to payment authorize request:
 
 {% highlight xml %}
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
@@ -168,5 +167,4 @@ And add this builder to payment authorize request:
 </virtualType>
 {% endhighlight %}
 
-Now, payment allows enabling _Vault_ and send specific options to a payment processor,
-the next topic describes how payment implementation should process a response from payment processor and store available card details.
+

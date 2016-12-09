@@ -25,11 +25,22 @@ The flow is similar to usual Magento [payment gateway interaction flow]({{page.b
 
 The main difference is that when Vault is used, it "decides" what command is required and when this command must be called.
 
-The topics of this chapter describe how to add new Vault implementation to existing payment integration based on _Payment Gateway_:
+You don't need to create a new module for Vault implementation, all required configuration and entities are added in the module of the payment method. 
 
- - [Vault Payment Configuration]({{site.gdeurl21}}payments-integrations/vault/configuration.html)
- - [Vault Enabler]({{site.gdeurl21}}payments-integrations/vault/enabler.html)
- - [Payment Token]({{site.gdeurl21}}payments-integrations/vault/payment-token.html)
- - [Token UI Component Provider]({{site.gdeurl21}}payments-integrations/vault/token-ui-component-provider.html)
- - [Customer Stored Payments]({{site.gdeurl21}}payments-integrations/vault/customer-stored-payments.html)
- - [Admin Integration]({{site.gdeurl21}}payments-integrations/vault/admin-integration.html)
+The topics of this chapter describe how to add the vault functionality to a payment method (the payment method must be implemented using Magento payment gateway):
+
+
+
+1. Adding Vault module dependencies payments-integrations/vault/module-configuration.md
+2. Configure vault general parameters.
+3. Add vault and payment methods entities using dependency injection configuration.
+4. Implement the ability for customers to choose whether to use vault.
+5. How payment implementation should process a response from payment processor and store available card details.
+
+ - [Vault Payment Configuration]({{page.baseurl}}payments-integrations/vault/configuration.html)
+ - [Vault Enabler]({{page.baseurl}}payments-integrations/vault/enabler.html)
+ - [Payment Token]({{page.baseurl}}payments-integrations/vault/payment-token.html)
+ - [Token UI Component Provider]({{page.baseurl}}payments-integrations/vault/token-ui-component-provider.html)
+ - [Customer Stored Payments]({{page.baseurl}}payments-integrations/vault/customer-stored-payments.html)
+ - [Admin Integration]({{page.baseurl}}payments-integrations/vault/admin-integration.html)
+

@@ -9,10 +9,8 @@ version: 2.1
 github_link: payments-integrations/vault/payment-token.md
 ---
 
-## Payment Token
-
-As said in introduction topic, Magento does not store any private data from credit card details, only data which are provided
-from a concrete payment provider. And Magento already has all needed infrastructure to store card data.
+Magento does not store any private credit card details. It only stores the , except data from
+the payment provider. To store this daata And Magento already has all needed infrastructure to store card data.
 
 A _Payment Token_ represents entity which contains payment processor token and credit card details without sensitive data.
 
