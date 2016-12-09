@@ -22,7 +22,7 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 ## Highlights
 
-Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these highlights:
+Magento 2.1.3 contains more than 70 bug fixes and enhancements, including these highlights:
 
 
 
@@ -39,69 +39,28 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 	* Simplify the process of configuring payments for your store with a redesigned Payment Methods page in the Admin interface.
 
 
-* <b>Increased storefront performance</b> by removing excessive and slow SQL media queries.
+* **Increased storefront performance** by removing excessive and slow SQL media queries.
 
-* <b>Management of configurable products with many variations</b> in the Admin interface without degrading performance. 
+* **Management of configurable products with many variations** in the Admin interface without degrading performance.
 
-* <b>Upgrade</b> to Magento 2.1.x from Magento 2.0.x without issue when using multiple master databases for checkout, order management, and product data.
+* **Upgrade to Magento 2.1.3 without issue** when using multiple master databases for checkout, order management, and product data.
 
-* <b>Successful import or export CSV files with data that contains special symbols</b> (that is, symbols that are not escaped during file processing).
+* **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
+
+* The Sales module provides two new web APIs that allow you to process refunds from an order or invoice. Previously, these actions could only be performed from Admin. After you install this patch, you can:
+
+	* Create a credit memo (complete or partial) for a particular invoice or order.
+
+	* Add details about refunded items to an order or invoice.
+
+	* Update the status and state of an order or invoice after actions are performed.
+
+	* Notify a customer about refunded items or order/invoice.
+
+REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
+
 
 * <b>Enhanced performance in the processing of large catalogs</b>. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
-
-
-
-* <b>Ten new web APIs</b> (or <i>service contracts</i>) for the Sales module that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use these new Sales API  methods to carry out these tasks:
-
-
-	* create a credit memo (complete or partial) for particular invoice
-
-	* add details about refunded items to an order
-
-	* change status and state of an order according to performed actions
-
-	* notify customer about performed refund operation
-	
-
-These new service contracts include the following: 
-
-
-`InvoiceOrderInterface`
-
-`PaymentAdapterInterface`
-
-`CreditmemoItemCreationInterface`
-
-`CreditmemoCommentCreationInterface`
-
-`CreditmemoCreationArgumentsInterface`
-
-`CreditmemoDocumentFactory`
-
-`RefundInvoiceInterface`
-
-`RefundAdapterInterface`
-
-`RefundOrderInterface`
-
-`ShipOrderInterface`
-
-
-
-See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for more information on using these new interfaces.
-
-
-
-
-
-
-### Why are we adding new APIs in a patch release?
-{:.no_toc} 
-
-These new interfaces will not break any existing customizations or extensions. See <a href="https://alankent.me/category/magento/" target="_blank">Alan Kent’s blog about Magento</a> for more information about these features and Magento’s use of semantic versioning.  
-
-
-.
 
 
 
