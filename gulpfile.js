@@ -62,6 +62,7 @@ var gulp = require('gulp'),
 		server: {
 			baseDir: destHtml
    	},
+    notify: false,
    	port: 9999,
    	files: [
       paths.scripts,
