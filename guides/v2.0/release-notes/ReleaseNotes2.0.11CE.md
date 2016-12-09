@@ -115,7 +115,6 @@ We address the following functional issues in this release.
 <!--- 59415-->* Magento no longer displays the *as low as* price for a configurable product's simple options if the options are disabled.
 
 <!--- 58035-->* You can now edit a single product attribute and apply it to multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, then incorrectly tell you that the products had been edited.
-. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, then incorrectly tell you that the products had been edited.
 
 <!--- 58192-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products. <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>
 
@@ -142,7 +141,7 @@ We address the following functional issues in this release.
 
 	* return the product to stock 
 
-	* change order status after a credit memo has been created
+	* change order status after a credit memo has been created.
 
 
 
@@ -250,7 +249,7 @@ We address the following functional issues in this release.
 
 <!--- 61106-->* The Product page now displays swatches based on the color swatch attribute. Previously, the Product page did not display swatches. 
 
-<!--- 57336-->* Magento no longer throws a "Wrong request parameters" error when you try to assign products to a category at the storeview level. Previously, Magento threw a levelWrong request parameters error when you assigned products to a category.
+<!--- 57336-->* Magento no longer throws a "Wrong request parameters" error when you try to assign products to a category at the store view level. Previously, Magento threw a `levelWrong` request parameters error when you assigned products to a category.
 
 <!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
 
@@ -298,7 +297,7 @@ We address the following functional issues in this release.
 
 <!--- 57103-->* We've fixed an issue with how the Customer Segments report calculate the same customer on two websites. 
 
-<!--- 57384, 39489 -->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront. 
+<!--- 57384, 39489 -->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**. 
 
 <!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 
 
@@ -315,7 +314,7 @@ We address the following functional issues in this release.
 <!--- 57199-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. **Workaround**: Flush Varnish cache using the Varnish admin CLI. 
 
 
-* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. **Workaround**: Upgrade your version of TLS to at least 1.2.
+* **Issue**: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. **Workaround**: **Workaround**: Upgrade CURL to a minimum version of 7.39.0.
 
 
 * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.

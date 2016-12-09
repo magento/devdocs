@@ -76,7 +76,7 @@ We address the following functional issues in this release.
 
 <!--- 57082-->* The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension. 
 
-<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the var/session directory. We skip that directory because the web server usually owns those files, causing the permissions check to fail.
+<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the `var/session` directory. We skip that directory because the web server usually owns those files, causing the permissions check to fail.
 
 <!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
 
@@ -185,7 +185,7 @@ We address the following functional issues in this release.
 
 <!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your shopping cart. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
 
-<!--- 55444-->* The Checkout page no longer freezes when you order a virtual gift card using the Authorize.net Payment Action value set to Authorize and Capture.
+<!--- 55444-->* The Checkout page no longer freezes when you order a virtual gift card using the **Authorize.net Payment Action** value set to **Authorize and Capture**.
 
 <!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
 
@@ -228,7 +228,7 @@ We address the following functional issues in this release.
 ### Scope
 {:.no_toc}
 
-<!--- 57336, 58205-->* You can now successfully assign products to a category on the store theview level. Previously, Magento threw this error when you tried to assign products to a category: "Wrong request parameters". 
+<!--- 57336, 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento threw this error when you tried to assign products to a category: "Wrong request parameters". 
 
 <!--- 57002-->* A restricted user can now change the store view- or website- level attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
 
@@ -254,7 +254,7 @@ We address the following functional issues in this release.
 
 <!--- 61106-->* The Product page now displays swatches based on the color swatch attribute. Previously, the Product page did not display swatches. 
 
-<!--- 57336-->* Magento no longer throws a "Wrong request parameters" error when you try to assign products to a category at the storeview level. Previously, Magento threw a levelWrong request parameters error when you assigned products to a category.
+<!--- 57336-->* Magento no longer throws a "Wrong request parameters" error when you try to assign products to a category at the storeview level. Previously, Magento threw a `levelWrong` request parameters error when you assigned products to a category.
 
 <!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
 
@@ -316,7 +316,7 @@ We address the following functional issues in this release.
 <!--- 57199-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. **Workaround**: Flush Varnish cache using the Varnish admin CLI. 
 
 
-* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. **Workaround**: Upgrade CURL to a minimum version of 7.39.0.
+* **Issue**: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. **Workaround**: Upgrade CURL to a minimum version of 7.39.0.
 
 
 * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.
