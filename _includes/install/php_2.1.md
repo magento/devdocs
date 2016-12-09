@@ -7,7 +7,7 @@
 *	2.1.2 and later supports:
 
 	*	PHP 5.6.5 and later
-	*	7.0.4
+	*	7.0.4 (in addition to the versions listed previously)
 *	_Not_ supported by any 2.1.x version:
 
 	*	PHP 7.1
