@@ -9,9 +9,16 @@ version: 2.1
 github_link: payments-integrations/base-integration/get-payment-info.md
 ---
 
+To implement transaction authorization our payment should receive some payment details from payment form, like credit card details,
+and send received details to payment processor.
+
+Depends on your payment integration payment details might be different, but, usually, it's credit card details, tokenized cards, payment nonce, etc.
+
+However, in any case you should write some code to retrieve payment details from payment form.
+
 ## Example: Braintree request builder for the `payment` part of the request
 
-In the previous example, the `BraintreeAuthorizeRequest` builder composite includes the `Magento\Braintree\Gateway\Request\PaymentDataBuilder` builder. This is builder responsible for the payment information part of the request, in other words, the credit card information. Let's look closer at it's implementation.
+We have specified `BraintreeAuthorizeRequest` builder composite to process authorization and it includes the `Magento\Braintree\Gateway\Request\PaymentDataBuilder` builder. This is builder responsible for the payment information part of the request, in other words, the credit card information. Let's look closer at it's implementation.
 
 The Braintree payment provider requires the [payment method nonce](https://developers.braintreepayments.com/start/overview#payment-method-nonce)
 to process transactions, and our builder should send it for each authorization transaction. 
