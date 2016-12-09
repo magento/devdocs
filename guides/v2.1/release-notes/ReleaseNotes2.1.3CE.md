@@ -556,7 +556,7 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-<!---60781-->* When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. 
+<!---60781-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. 
 
 
 

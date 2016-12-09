@@ -65,7 +65,9 @@ REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{o
 
 ## Breaking changes
 
-
+We moved Magento/Store/Model/Config/Reader/ReaderPool.php to the framework (this is implementation of corresponding interface and wasn’t referenced directly).
+We moved Magento/Store/Model/Config/Reader/DefaultReader.php to the framework, since we need to have default configuration available without having module Store as enabled/installed
+Magento/Store/Model/Config/Reader/Store.php and Magento/Store/Model/Config/Reader/Website.php are both moved to another locations and completely re-implemented in different manner. 
 
 
 ## Functional fixes and enhancements
