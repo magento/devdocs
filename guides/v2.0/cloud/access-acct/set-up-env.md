@@ -18,7 +18,7 @@ redirect_from:
 ---
 
 #### Contents
-*	[Step 1: Set up an environment](#setup-env-setup)
+*	[Step 1: Clone the master environment](#setup-env-setup)
 *	[Step 2: Change the Admin URI, user name, and password in the master branch](#setup-env-adminurl)
 *   [Step 3: Set up cron](#setenv-cron)
 *	[Step 4: Clone a project and environment](#setenv-new-env)
@@ -26,8 +26,24 @@ redirect_from:
 *   [Step 6: Set file system permissions and ownership](#setup-env-perms)
 *	[Step 7: Install the Magento software](#setup-env-install)
 
-## Step 1: Set up an environment {#setup-env-setup}
-This topic discusses how to clone an environment locally, set up global Git environment variables, and to enable SSH if you haven't done so already.
+## Step 1: Clone the master environment {#setup-env-setup}
+This topic discusses how to clone the `master` environment, set up global Git environment variables, and to enable SSH if you haven't done so already.
+
+If you have already performed these tasks, you can skip this step and the next step and continue with [Step 3: Set up cron](#setenv-cron).  
+
+1.  Log in to your local development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+2.  Change to the web server or virtual host docroot.
+2.  Log in to your project:
+
+    magento-cloud login
+3.  List your projects:
+
+    magento-cloud project:list
+4.  Clone a project.
+
+    magento-cloud project:get <project ID>
+
+    When prompted for a directory name, enter `magento2`.
 
 ### Enable SSH to the environment
 This is a one-time setup that was covered previously in this guide; skip this section if you've already enabled SSH.
@@ -35,8 +51,6 @@ This is a one-time setup that was covered previously in this guide; skip this se
 {% collapsible To enable SSH: %}
 
 {% include cloud/enable-ssh.md %}
-
-
 
 ### Set global Git variables
 To set global Git variables required to commit or push to an environment (that is, Git branch), enter the following commands:
@@ -86,7 +100,7 @@ For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/
 {% endcollapsible %}
 
 ## Step 2: Change the Admin URI, user name, and password in the master branch {#setup-env-adminurl}
-This section discusses how to change Magento Admin parameters for security reasons. This must be done only once for a new project.
+This section discusses how to change Magento Admin parameters for security reasons. If you change the variables in the `master` branch, you have to do it only once because other environments inherit the variables from `master`.
 
 If your master branch is already configured, skip this section and continue with [Step 3: Clone or branch an environment](#setenv-new-env).
 
@@ -173,7 +187,7 @@ After you create the branch, update project dependencies so you can install the 
 
 ## Step 5: Add your authentication keys to auth.json {#setenv-keys}
 
-{% collapsible To get your authentication keys: %}
+{% collapsible To get your authentication keys and add them to auth.json: %}
 Before you can upgrade the Magento software or install extensions, you must have authentication keys in the `auth.json` file in the Magento root directory. The Magento Enterprise Cloud Edition account owner has your keys. Contact that person to get them.
 
 The *account owner* is the person who purchased Magento Enterprise Cloud Edition.

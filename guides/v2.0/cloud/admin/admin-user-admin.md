@@ -61,10 +61,10 @@ environment to "Contributor".
 After a new user is added to an environment, the environment must be rebuilt. Rebuilds
 are triggered when you push a new commit to an environment.
 To be able to rebuild without new code changes, use the command
-`git commit --allow-empty -m'rebuild' && git push`
+`git commit --allow-empty -m "redeploy" && git push <branch name>`
 to create an empty commit and "force" rebuilding the environment.
 
-When the environment rebuild is complete, allow a minute for the routes to 
+When the environment rebuild is complete, allow a short time for the routes to 
 update fully and for the new user to be able to use SSH access.
 
 ### Manage users with the CLI {#cloud-user-mg-cli}

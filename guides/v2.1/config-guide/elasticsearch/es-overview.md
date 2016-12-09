@@ -16,7 +16,7 @@ github_link: config-guide/elasticsearch/es-overview.md
 #### Contents
 
 *	<a href="#overview">Overview of Elasticsearch</a>
-*	<a href="#es-prereq">Prerequisites</a>
+*	<a href="#es-prereq">Install prerequisites and Elasticsearch</a>
 *	<a href="#es-resources">Additional resources</a>
 *	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
 *	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
@@ -42,8 +42,8 @@ In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elast
 ### Supported versions {#es-spt-versions}
 Magento Enterprise Edition (EE) version 2.1.x supports the following Elasticsearch versions:
 
-*	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 1.0 and later, up to 5.0&mdash;including all 2.x versions.
-*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `1.0` and `2.0` branches.
+*	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
+*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `2.0` branch.
 
 ### Recommended configuration {#es-arch}
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
@@ -74,7 +74,7 @@ Search requests are processed as follows:
 4.	Elasticsearch processes the search request.
 5.	Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
 
-## Prerequisites {#es-prereq}
+## Install prerequisites and Elasticsearch {#es-prereq}
 The tasks discussed in this section require the following:
 
 *	[Firewall and SELinux](#firewall-selinux)
@@ -116,11 +116,22 @@ To install Elasticsearch:
 
 	*	Ubuntu:
 
-			wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-			echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
+			wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
+			echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list
+
 			sudo apt-get -y update && sudo apt-get -y install elasticsearch
 
 	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.
+4.	Open the [Elasticsearch configuration file](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-configuration.html#settings){:target="_blank"}, `elasticsearch.yml`, in a text editor.
+
+	For example, it might be located in `/etc/elasticsearch`.
+5.	Add the following parameter to the `Memory` section:
+
+		index.query.bool.max_clause_count: 4096
+
+	For more information, see [Setting the BooleanQuery maxClauseCount in Elasticsearch](http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch){:target="_blank"}.
+6.	Save your changes to `elasticsearch.yml` and exit the text editor.
 3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html" target="_blank">Elasticsearch service</a>.
 4.	Start Elasticsearch:
 
