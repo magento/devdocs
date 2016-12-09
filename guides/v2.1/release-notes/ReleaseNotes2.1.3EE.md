@@ -259,8 +259,6 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-
-
 ### Varnish
 {:.no_toc} 
 
@@ -271,44 +269,38 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-### APIs
+### Orders
 {:.no_toc} 
 
-<!---56961-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
+<!--- 57681-->* You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a>
 
+<!--- 57715-->* A user can view orders only on stores to which they've been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website. 
+
+<!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
+
+	* support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
+
+	* return the product to stock 
+
+	* change order status after a credit memo has been created.
+
+
+<!--- 57077-->* You can now set the customer group when creating a new order from the Admin interface. <a href="https://github.com/magento/magento2/issues/6162" target="_blank">(GITHUB-6162)</a> 
+
+
+<!---57387 -->* You can now print invoices and credit memos from the Order page. 
+
+
+
+### Web APIs
+{:.no_toc} 
+
+<!--- 57066-->* Swagger now correctly documents how to retrieve gift message data for a sales order using the API.
+
+<!---59874-->* We've improved the process of using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently.
 
 
 <!---57039-->* You can now update a product's media gallery through the REST API. 
-
-
-<!---56432-->* Magento now updates order status as expected on the Admin panel when you use the REST API to create a credit memo.
-
-
-<!---59422-->* The product return feature now works as expected when you create a product using the Creditmemo API. With the new Refund Invoice service, you can:
-
-	* create a credit memo (complete or partial) for particular invoice
-
-	* add details about refunded items to an order
-
-	* change status and state of an order according to performed actions
-
-	* notify customer about the refund operation.
-
-
-<!---59874-->* We've improved the process of using the Web API interface to save a product stock item. Previously, this type of save action worked inconsistently.
-
-
 
 
 
@@ -341,14 +333,6 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-
-### Orders
-{:.no_toc} 
-
-<!--- 57077-->* You can now set the customer group when creating a new order from the Admin interface. <a href="https://github.com/magento/magento2/issues/6162" target="_blank">(GITHUB-6162)</a> 
-
-
-<!---57387 -->* You can now print invoices and credit memos from the Order page. 
 
 
 
@@ -455,6 +439,9 @@ We've enhanced the performance of configurable products in several ways:
 
 
 <!---56962 -->* Magento now displays the **State/Province** field on the Add New Address page. <a href="https://github.com/magento/magento2/issues/5279" target="_blank">(GITHUB-5279)</a>
+
+<!---56961-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
+
 
 
 <!---57383-->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**.
