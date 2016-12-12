@@ -191,7 +191,6 @@ We've enhanced the performance of configurable products in several ways:
 
 
 ### Gift cards
-
 {:.no_toc} 
 
 <!---57054 -->* Order emails now specify the amount of the gift card that you've purchased. 
