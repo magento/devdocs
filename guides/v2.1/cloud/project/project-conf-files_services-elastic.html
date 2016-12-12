@@ -1467,36 +1467,355 @@
   <li>Indexing does not impact customers until reindex is completed</li>
 </ul>
 
-<p>We support Elasticsearch version 1.7.</p>
+<p>We support Elasticsearch version 1.4.</p>
 
 <p><img src="/common/images/2.1-only_small.png" alt="This feature is supported in Magento 2.1 only" />. Elasticsearch is supported in Magento 2.1.</p>
 
 <p><a href="/guides/v2.1/config-guide/elasticsearch/es-overview.html">More information about Elasticsearch</a>.</p>
 
-<h2 id="relationship">Relationship</h2>
+<h2 id="update-your-configuration">Update your configuration</h2>
+<p>This section discusses how to update your <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration</a> system to replace Solr with Elasticsearch. Currently, all Magento Enterprise Cloud Edition users must perform these tasks.</p>
+
+<p>To use Elasticsearch on a <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a> system, open a <a href="/guides/v2.1/cloud/get-help.html">Support ticket</a> and request Elasticsearch 1.4.</p>
+
+<p>To use Elasticsearch, you must perform all the tasks discussed in this section.</p>
+
+<h3 id="get-started">Get started</h3>
+
+<div class="collapsible"><b class="collapsible-title">To get started: </b><div class="collapsible-content"><div>
+
+  <ol>
+    <li>Log in to your local development machine, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+    <li>Change to a directory to which the Magento file system owner has write access, such as the web server docroot.</li>
+    <li>
+      <p>Log in to your project:</p>
+
+      <pre><code>magento-cloud login
+</code></pre>
+    </li>
+    <li>
+      <p>List your projects:</p>
+
+      <pre><code>magento-cloud project:list
+</code></pre>
+    </li>
+    <li>
+      <p>If necessary, clone a project.</p>
+
+      <pre><code>magento-cloud project:get &lt;project ID&gt;
+</code></pre>
+
+      <p>Typically, you should clone the project in the web server’s docroot or a Virtual Host docroot.</p>
+    </li>
+    <li>
+      <p>Change to a project directory.</p>
+
+      <p>For example, <code>cd /var/www/html/magento2</code></p>
+    </li>
+    <li>
+      <p>List environments in the project:</p>
+
+      <pre><code>magento-cloud environment:list
+</code></pre>
+
+      <div class="bs-callout bs-callout-info" id="info">
+  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
+</div>
+    </li>
+    <li>
+      <p>Fetch origin branches:</p>
+
+      <pre><code>git fetch origin
+</code></pre>
+    </li>
+    <li>
+      <p>Check out an environment:</p>
+
+      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre>
+
+      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+    </li>
+    <li>
+      <p>Pull updated code:</p>
+
+      <pre><code>git pull origin &lt;environment ID&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>Create a <a href="/guides/v2.1/cloud/admin/admin-snap.html">snapshot</a> of the environment.</p>
+
+      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre>
+    </li>
+  </ol>
+</div>
+</div></div>
+
+<h3 id="step-1-update-magentoappyaml">Step 1: Update .magento.app.yaml</h3>
+
+<div class="collapsible"><b class="collapsible-title">To update .magento.app.yaml: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Open <code>.magento.app.yaml</code> in a text editor.</p>
+
+    <p>It’s located in your Magento Enterprise Cloud Edition project root directory.</p>
+  </li>
+  <li>In the <code>relationships:</code> section, delete <code>solr: "solr:solr"</code> if it exists.</li>
+  <li>
+    <p>Add <code>elasticsearch: "elasticsearch:elasticsearch"</code></p>
+
+    <p>A sample follows:</p>
+
+    <pre><code>relationships:
+   database: "mysql:mysql"
+   elasticsearch: "elasticsearch:elasticsearch"
+   redis: "redis:redis"
+</code></pre>
+  </li>
+  <li>Save your changes to <code>.magento.app.yaml</code> and exit the text editor.</li>
+</ol>
+</div></div>
+
+<h3 id="step-2-update-magentoservicesyaml">Step 2: Update .magento/services.yaml</h3>
+
+<div class="collapsible"><b class="collapsible-title">To update .magento/services.yaml: </b><div class="collapsible-content"><ol>
+  <li>Open <code>.magento/services.yaml</code> in a text editor.</li>
+  <li>Remove the entire <code>solr:</code> section.</li>
+  <li>
+    <p>Add a new <code>elasticsearch:</code> section with the following contents:</p>
+
+    <pre><code>elasticsearch:
+   type: elasticsearch:1.4
+   disk: 1024
+</code></pre>
+  </li>
+  <li>Save your changes to <code>.magento/services.yaml</code> and exit the text editor.</li>
+</ol>
+</div></div>
+
+<h3 id="step-3-push-the-changes-and-redeploy-the-environment">Step 3: Push the changes and redeploy the environment</h3>
+
+<div class="collapsible"><b class="collapsible-title">To push the changes: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Add, commit, and push the changes:</p>
+
+    <pre><code>git add -A &amp;&amp; git commit -m "Add Elasticsearch"
+git push origin &lt;branch name&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>Wait for the project to deploy.</p>
+  </li>
+</ol>
+</div></div>
+
+<h3 id="cloud-es-config-mg">Step 4: Get Elasticsearch connection information</h3>
+<p>This section discusses how to get connection information for Elasticsearch so you can configure the Magento application to use it as your search engine.</p>
+
+<div class="collapsible"><b class="collapsible-title">To get Elasticsearch connection information: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Open an SSH tunnel to your integration environment.</p>
+
+    <pre><code>magento-cloud environment:ssh
+</code></pre>
+  </li>
+  <li>
+    <p>Enter the following command to get Elasticsearch connection details:</p>
+
+    <pre><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+</code></pre>
+
+    <p>A sample follows:</p>
+
+    <pre><code> "elasticsearch" : [
+   {
+      "host" : "elasticsearch.internal",
+      "ip" : "250.0.97.96",
+      "scheme" : "http",
+      "port" : "9200"
+   }
+],
+</code></pre>
+  </li>
+  <li>Write down the connection information.</li>
+  <li>Enter <code>exit</code> to close the SSH tunnel.</li>
+  <li>
+    <p>Log in to the Magento Admin as an administrator.</p>
+
+    <p>To view the Magento Admin connection details, enter the following commands:</p>
+
+    <pre><code>magento-cloud environment:url
+magento-cloud variable:list
+</code></pre>
+
+    <p>These two commands provide you with the environment’s base URL and Admin login information, respectively.</p>
+
+    <p>An example follows:</p>
+
+    <pre><code>magento-cloud environment:url
+Enter a number to choose a URL
+   [0] https://mybranch-vyaprfq-dyrupdn6bw82h.us.magentosite.cloud/
+   [1] http://mybranch-vyaprfq-dyrupdn6bw82h.us.magentosite.cloud/
+   &gt; 1
+http://mybranch-vyaprfq-dyrupdn6bw82h.us.magentosite.cloud/
+
+magento-cloud variable:list
++----------------+---------------+-----------+------+
+| ID             | Value         | Inherited | JSON |
++----------------+---------------+-----------+------+
+| ADMIN_PASSWORD | admin_A456    | Yes       | No   |
+| ADMIN_URL      | magento_A8v10 | Yes       | No   |
+| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
++----------------+---------------+-----------+------+
+</code></pre>
+  </li>
+  <li>Continue with the next section.</li>
+</ol>
+</div></div>
+
+<h3 id="step-5-configure-the-magento-application-to-use-elasticsearch">Step 5: Configure the Magento application to use Elasticsearch</h3>
+
+<div class="collapsible"><b class="collapsible-title">To configure the Magento application: </b><div class="collapsible-content"><div>
+
+  <p>This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see the <a href="http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html" target="_blank">Magento EE User Guide</a>.</p>
+
+  <p>To configure Magento to use Elasticsearch:</p>
+
+  <ol>
+    <li>Log in to the Magento Admin as an administrator.</li>
+    <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog Search</strong>.</li>
+    <li>
+      <p>From the <strong>Search Engine</strong> list, click <strong>Elasticsearch</strong> as the following figure shows.</p>
+
+      <p><img src="/common/images/elastic_choose-in-admin.png" width="650px" /></p>
+    </li>
+    <li>
+      <p>The following table discusses only the configuration options required to test the connection with Magento.</p>
+
+      <p>Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.</p>
+
+      <table>
+    <tbody>
+    <tr><th>Option</th>
+    <th>Description</th>
+</tr>
+<tr>
+    <td>Elasticsearch Server Hostname</td>
+    <td><p>Enter the fully qualified host name or IP address of the machine running Elasticsearch.</p>
+    <p>Magento Enterprise Cloud Edition: <a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p> </td>
+</tr>
+<tr>
+    <td>Elasticsearch Server Port</td>
+    <td><p>Enter the Elasticsearch web server proxy port. In our example, the port is <code>8080</code> but if you're using a secure proxy, it's typically <code>443</code>.</p>
+    <p>Magento Enterprise Cloud Edition: <a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p></td>
+</tr>
+<tr>
+    <td>Enable Elasticsearch HTTP Auth</td>
+    <td>Click <strong>Yes</strong> only if you enabled authentication for your Elasticsearch server. If so, provide a user name and password in the provided fields.</td>
+</tr>
+</tbody>
+</table>
+    </li>
+    <li>Click <strong>Test Connection</strong>.</li>
+  </ol>
+
+  <p>One of the following displays:</p>
+
+  <table>
+<tbody>
+	<tr><th>Result</th>
+	<th>Meaning</th>
+	</tr>
+	<tr>
+		<td><img src="/common/images/elastic_test-success.png" /></td>
+		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="/guides/v2.1/config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>.</td>
+	</tr>
+	<tr>
+		<td><img src="/common/images/elastic_test-fail.png" /></td>
+		<td><p>Try the following:</p>
+			<ul>
+				<li>Make sure the Elasticsearch server is running.</li>
+				<li>If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.</li>
+				<li>Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue.<br />
+	In particular, make sure you started Elasticsearch as a user with <code>root</code> privileges.</li>
+<li>Make sure that <a href="/guides/v2.1/config-guide/elasticsearch/elasticsearch-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
+	<li>Verify the value of the <strong>Elasticsearch Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
+	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Elasticsearch Server Port</strong> field is not being used by another process.<br />
+	For example, to see if Elasticsearch is running on its default port, use the following command:
+	<pre>netstat -an | grep 9200</pre>
+	If Elasticsearch is running on port 9200, it displays similar to the following:
+	<pre>tcp        0      0 :::9200            :::*          LISTEN</pre></li></ul></td>
+	</tr>
+</tbody>
+</table>
+
+  <h3 id="es-reindex">Reindexing catalog search and refreshing the full page cache</h3>
+  <p>After you change Magento’s Elasticsearch configuration, you must reindex the catalog search index and refresh the full page using the Admin or command line.</p>
+
+  <p>To refresh the cache using the Admin:</p>
+
+  <ol>
+    <li>In the Admin, click <strong>System</strong> &gt; <strong>Cache Management</strong>.</li>
+    <li>Select the check box next to <strong>Page Cache</strong>.</li>
+    <li>From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
+    The following figure shows an example.<br />
+    <img src="/common/images/solr_refresh-cache.png" width="600px" /></li>
+  </ol>
+
+  <p>To clean the cache using the command line, use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean</code></a> command.</p>
+
+  <p>To reindex using the command line:</p>
+
+  <ol>
+    <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+    <li>
+      <p>Enter any of the following commands:</p>
+
+      <p>Enter the following command to reindex the catalog search index only:</p>
+
+      <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
+</code></pre>
+
+      <p>Enter the following command to reindex all indexers:</p>
+
+      <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
+</code></pre>
+    </li>
+    <li>Wait while the reindexing completes.</li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
+	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
+</div>
+</div>
+</div></div>
+
+<h2 id="elasticsearch-reference">Elasticsearch reference</h2>
+<p>The following sections provide information about the default Elasticsearch configuration for the Magento Enterprise Cloud Edition.</p>
+
+<h3 id="relationship">Relationship</h3>
 <p>The format exposed in the <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code>$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-    <span class="s2">&quot;elasticsearch&quot;</span>: <span class="o">[</span>
-        <span class="o">{</span>
-            <span class="s2">&quot;host&quot;</span>: <span class="s2">&quot;248.0.65.198&quot;</span>,
-            <span class="s2">&quot;scheme&quot;</span>: <span class="s2">&quot;http&quot;</span>,
-            <span class="s2">&quot;port&quot;</span>: <span class="s2">&quot;9200&quot;</span>
-        <span class="o">}</span>
-    <span class="o">]</span>
-<span class="o">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="s2">&quot;elasticsearch&quot;</span> : <span class="o">[</span>
+      <span class="o">{</span>
+         <span class="s2">&quot;host&quot;</span> : <span class="s2">&quot;elasticsearch.internal&quot;</span>,
+         <span class="s2">&quot;ip&quot;</span> : <span class="s2">&quot;250.0.97.96&quot;</span>,
+         <span class="s2">&quot;scheme&quot;</span> : <span class="s2">&quot;http&quot;</span>,
+         <span class="s2">&quot;port&quot;</span> : <span class="s2">&quot;9200&quot;</span>
+      <span class="o">}</span>
+   <span class="o">]</span>,</code></pre></figure>
 
-<h2 id="usage-example">Usage example</h2>
+<h3 id="usage-example">Usage example</h3>
 <p>In your <code>.magento/services.yaml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mysearch</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">elasticsearch:1.4</span>
-    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">elasticsearch</span><span class="p-Indicator">:</span>
+   <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">elasticsearch:1.4</span>
+   <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span></code></pre></figure>
 
 <p>In your <code>.magento.app.yaml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">elasticsearch</span><span class="p-Indicator">:</span> <span class="s">&quot;mysearch:elasticsearch&quot;</span></code></pre></figure>
+    <span class="l-Scalar-Plain">elasticsearch</span><span class="p-Indicator">:</span> <span class="s">&quot;elasticsearch:elasticsearch&quot;</span></code></pre></figure>
 
 <p>You can use the preceding service in a configuration file of your application as follows:</p>
 
