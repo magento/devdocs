@@ -26,7 +26,7 @@ In the `config.xml` file in your `%Vendor_Module%` directory, configure the opti
 | `merchant_gateway_key` | encrypted merchant credential                                                                                                                        | string                                |
 | `model`                | [payment method facade](#facade) used for integration with Sales and Checkout modules                                                                | string                                |
 | `order_status`         | default order status                                                                                                                                 |              |
-| `paymentInfoKeys`      | transaction request/response fields displayed on payment information block (can be any fields from payment additional information)                   |            |
+| `paymentInfoKeys`      | transaction request/response fields displayed on payment information block (can be any fields from payment additional information)                   | list of comma separated values           |
 | `privateInfoKeys`      | `paymentInfoKeys` fields which should not be displayed in customer payment information block (can be any fields from payment additional information) |           |
 | `payment_action`       | default action of payment for the payment method (authorize, sale)                                                                                   | what is the list of available actions |
 | `sort_order`           | payment method order position on checkout/system configuration pages                                                                                 | integer                               |
