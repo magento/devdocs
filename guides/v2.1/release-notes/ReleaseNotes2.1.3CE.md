@@ -48,11 +48,11 @@ Magento 2.1.3 contains more than 70 bug fixes and enhancements, including these 
 
 	* Create a credit memo (complete or partial) for a particular invoice or order.
 
-	* Add details about refunded items to an order or invoice.
+	* Add details about refunded items to an invoice or order.
 
-	* Update the status and state of an order or invoice after actions are performed.
+	* Update the status and state of an invoice or order after actions are performed.
 
-	* Notify a customer about refunded items or order/invoice.
+	* Notify a customer about refunded items or invoice/order.
 
 	REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
 
@@ -60,26 +60,6 @@ Magento 2.1.3 contains more than 70 bug fixes and enhancements, including these 
 * **Enhanced performance in the processing of large catalogs**. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
 
 
-## Breaking changes
-
-We've introduced the following breaking changes in 2.1.3.
-
-
-### New methods
-{:.no_toc}
-`Magento\Vault\Block\TokenRendererInterface::getToken` 
-
-
-### Removed methods
-{:.no_toc}
-
-`Magento\Vault\Block\CardRendererInterface::getIconUrl`
-
-`Magento\Vault\Block\CardRendererInterface::getIconHeight`
-
-`Magento\Vault\Block\CardRendererInterface::getIconWidth`
-
-`Magento\Vault\Block\CardRendererInterface::getToken`
 
 
 ## Functional fixes and enhancements
@@ -166,6 +146,7 @@ We address the following functional issues in this release.
 
 <!---59376, 59809-->*  We've added support for a split build or deployment process by adding the ability to define  environment variables for each  environment (development, staging, and production). 
 
+<!---59142-->* Magento now loads initial data after it initializes all components. Previously, Magento indefinitely displayed the spinning widget after initializing all components. 
 
 
 ### Performance
@@ -532,6 +513,26 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
+## Breaking changes
+
+We've introduced the following breaking changes in 2.1.3.
+
+
+### New methods
+{:.no_toc}
+`Magento\Vault\Block\TokenRendererInterface::getToken` 
+
+
+### Removed methods
+{:.no_toc}
+
+`Magento\Vault\Block\CardRendererInterface::getIconUrl`
+
+`Magento\Vault\Block\CardRendererInterface::getIconHeight`
+
+`Magento\Vault\Block\CardRendererInterface::getIconWidth`
+
+`Magento\Vault\Block\CardRendererInterface::getToken`
 
 
 
@@ -564,15 +565,15 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 59309, 60381
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 60477, 59309, 60381, 58004
 -->
 
 
 <!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346, 59835-->
 
-<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957,  60662, 60695, 60971, 61341 -->
+<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341, 60579, 57602 -->
 
-<!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736-->
+<!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736, 61827, 60780, 61024, 60744, 61731-->
 
 
 

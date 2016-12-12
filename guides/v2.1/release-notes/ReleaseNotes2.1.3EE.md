@@ -51,38 +51,17 @@ Magento 2.1.3 contains more than 70 bug fixes and enhancements, including these 
 
 	* Create a credit memo (complete or partial) for a particular invoice or order.
 
-	* Add details about refunded items to an order or invoice.
+	* Add details about refunded items to an invoice or order.
 
-	* Update the status and state of an order or invoice after actions are performed.
+	* Update the status and state of an invoice or order after actions are performed.
 
-	* Notify a customer about refunded items or order/invoice.
+	* Notify a customer about refunded items or invoice/order.
 
-REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
+	REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
 
 
 * **Enhanced performance in the processing of large catalogs**. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
 
-
-## Breaking changes
-We've introduced the following breaking changes in 2.1.3.
-
-
-### New methods
-{:.no_toc} 
-
-`Magento\Vault\Block\TokenRendererInterface::getToken` 
-
-
-### Removed methods
-{:.no_toc} 
-
-`Magento\Vault\Block\CardRendererInterface::getIconUrl`
-
-`Magento\Vault\Block\CardRendererInterface::getIconHeight`
-
-`Magento\Vault\Block\CardRendererInterface::getIconWidth`
-
-`Magento\Vault\Block\CardRendererInterface::getToken`
 
 
 
@@ -170,6 +149,9 @@ We address the following functional fixes and enhancements in this release.
 
 <!---59376, 59809-->*  We've added support for a split build or deployment process by adding the ability to define  environment variables for each  environment (development, staging, and production). 
 
+<!---59142-->* Magento now loads initial data after it initializes all components. Previously, Magento indefinitely displayed the spinning widget after initializing all components. 
+
+
 
 
 ### Performance
@@ -206,10 +188,6 @@ We've enhanced the performance of configurable products in several ways:
 <!---58291-->* Magento no longer displays the "Invalid Form Key" exception when you try to save a configurable product with more than fifty options.
 
 <!---54808 -->* You can now edit a product attribute for multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, and then incorrectly tell you that the products had been edited.
-
-
-
-<!---54808-->* You can now bulk-edit a product attribute for a configurable product. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, the process saved, completed, and indicated that the products had been edited even though they hadn't.
 
 
 <!---60605-->* Magento no longer throws an exception when you add a configurable product by SKU if an associated simple product is out-of-stock. 
@@ -268,7 +246,6 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-
 ### Tier pricing
 {:.no_toc} 
 
@@ -296,7 +273,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 57715-->* A user can view orders only on stores to which they've been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website. 
 
-<!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
+<!--- 61268, 59424, 56433, 59422--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
 
 	* support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
 
@@ -502,8 +479,6 @@ We've enhanced the performance of configurable products in several ways:
 <!---57197-->* We've eliminated difficulties saving product information when logged in as Admin. Previously, the Product Save feature worked erratically for Admin users. 
 
 
-<!---59874-->* Magento now successfully saves Product Stock Items whether you used the WebAPI to save or saved from the Admin interface. 
-
 <!---59397, 60696-->* Custom themes now inherit parent XML configuration information as expected.  
 
 
@@ -543,6 +518,27 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
+## Breaking changes
+We've introduced the following breaking changes in 2.1.3.
+
+
+### New methods
+{:.no_toc} 
+
+`Magento\Vault\Block\TokenRendererInterface::getToken` 
+
+
+### Removed methods
+{:.no_toc} 
+
+`Magento\Vault\Block\CardRendererInterface::getIconUrl`
+
+`Magento\Vault\Block\CardRendererInterface::getIconHeight`
+
+`Magento\Vault\Block\CardRendererInterface::getIconWidth`
+
+`Magento\Vault\Block\CardRendererInterface::getToken`
+
 
 
 
@@ -578,9 +574,9 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346, 59835-->
 
-<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341 -->
+<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341, 60579, 57602 -->
 
-<!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736-->
+<!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736, 61827, 60780, 61024, 60744, 61731-->
 
 
 
