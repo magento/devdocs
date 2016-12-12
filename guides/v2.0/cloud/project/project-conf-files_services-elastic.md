@@ -96,16 +96,49 @@ This section discusses how to get connection information for Elasticsearch so yo
 1.  Open an SSH tunnel to your integration environment.
 
         magento-cloud environment:ssh
-2.  Enter the following command to get connection details:
+2.  Enter the following command to get Elasticsearch connection details:
 
         echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+
+    A sample follows:
+
+         "elasticsearch" : [
+           {
+              "host" : "elasticsearch.internal",
+              "ip" : "250.0.97.96",
+              "scheme" : "http",
+              "port" : "9200"
+           }
+        ],
 3.  Write down the connection information.
 4.  Enter `exit` to close the SSH tunnel.
 4.  Log in to the Magento Admin as an administrator.
 
-    To view the Magento Admin connection details, enter the following command:
+    To view the Magento Admin connection details, enter the following commands:
+
+        magento-cloud environment:url
+        magento-cloud variable:list
+
+    These two commands provide you with the environment's base URL and Admin login information, respectively.
+
+    An example follows:
+
+        magento-cloud environment:url
+        Enter a number to choose a URL
+           [0] https://mybranch-vyaprfq-dyrupdn6bw82h.us.magentosite.cloud/
+           [1] http://mybranch-vyaprfq-dyrupdn6bw82h.us.magentosite.cloud/
+           > 1
+        http://mybranch-vyaprfq-dyrupdn6bw82h.us.magentosite.cloud/
 
         magento-cloud variable:list
+        +----------------+---------------+-----------+------+
+        | ID             | Value         | Inherited | JSON |
+        +----------------+---------------+-----------+------+
+        | ADMIN_PASSWORD | admin_A456    | Yes       | No   |
+        | ADMIN_URL      | magento_A8v10 | Yes       | No   |
+        | ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
+        +----------------+---------------+-----------+------+
+    
 5.  Continue with the next section.
 
 {% endcollapsible %}
@@ -118,35 +151,37 @@ This section discusses how to get connection information for Elasticsearch so yo
 
 {% endcollapsible %}
 
-## Relationship
+## Elasticsearch reference
+The following sections provide information about the default Elasticsearch configuration for the Magento Enterprise Cloud Edition.
+
+### Relationship
 The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html) follows:
 
 {% highlight bash %}
-{
-    "elasticsearch": [
-        {
-            "host": "248.0.65.198",
-            "scheme": "http",
-            "port": "9200"
-        }
-    ]
-}
+"elasticsearch" : [
+      {
+         "host" : "elasticsearch.internal",
+         "ip" : "250.0.97.96",
+         "scheme" : "http",
+         "port" : "9200"
+      }
+   ],
 {% endhighlight %}
 
-## Usage example
+### Usage example
 In your `.magento/services.yaml`:
 
 {% highlight yaml %}
-mysearch:
-    type: elasticsearch:1.4
-    disk: 1024
+elasticsearch:
+   type: elasticsearch:1.4
+   disk: 1024
 {% endhighlight %}
 
 In your `.magento.app.yaml`:
 
 {% highlight yaml %}
 relationships:
-    elasticsearch: "mysearch:elasticsearch"
+    elasticsearch: "elasticsearch:elasticsearch"
 {% endhighlight %}
 
 You can use the preceding service in a configuration file of your application as follows:
