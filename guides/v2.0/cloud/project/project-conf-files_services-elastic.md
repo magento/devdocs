@@ -74,6 +74,8 @@ To use Elasticsearch, you must perform all the tasks discussed in this section.
            disk: 1024
 4.  Save your changes to `.magento/services.yaml` and exit the text editor.
 
+{% endcollapsible %}
+
 ### Step 3: Push the changes and redeploy the environment
 
 {% collapsible To push the changes: %}
@@ -86,9 +88,10 @@ To use Elasticsearch, you must perform all the tasks discussed in this section.
 
 {% endcollapsible %}
 
-### Step 4: Update the Magento application to use Elasticsearch
+### Step 4: Get Elasticsearch connection information {#cloud-es-config-mg}
+This section discusses how to get connection information for Elasticsearch so you can configure the Magento application to use it as your search engine.
 
-{% collapsible To update the Magento application to use Elasticsearch: %}
+{% collapsible To get Elasticsearch connection information: %}
 
 1.  Open an SSH tunnel to your integration environment.
 
@@ -96,9 +99,24 @@ To use Elasticsearch, you must perform all the tasks discussed in this section.
 2.  Enter the following command to get connection details:
 
         echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+3.  Write down the connection information.
+4.  Enter `exit` to close the SSH tunnel.
+4.  Log in to the Magento Admin as an administrator.
+
+    To view the Magento Admin connection details, enter the following command:
+
+        magento-cloud variable:list
+5.  Continue with the next section.
 
 {% endcollapsible %}
 
+### Step 5: Configure the Magento application to use Elasticsearch
+
+{% collapsible To configure the Magento application: %}
+
+{% include config/es-elasticsearch-magento.md %}
+
+{% endcollapsible %}
 
 ## Relationship
 The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html) follows:
