@@ -32,7 +32,6 @@ They are listed here because the content has been well received within the Magen
 
 ## Mastering Magento 2
 
-* *Presentation:* [Mastering Magento 2 for Magento 1 Developers](http://www.slideshare.net/otoclinicas/the-journey-of-mastering-magento-2-for-magento-1-developers){:target="_blank"} by Gabriel Guarino
 *  *Book:* [Magento 2 DIY](https://leanpub.com/magento2diy){:target="_blank"} by Viktor Khliupko
 *  *Book:* [Magento 2 Cookbook](https://www.packtpub.com/web-development/magento-2-cookbook){:target="_blank"} by Ray Bogman and Vladimir Kerkhoff
 *  *Presentation:* [Staging and Preview](http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-igor-melnykov-staging-and-preview){:target="_blank"} by Igor Melnykov
@@ -43,7 +42,3 @@ They are listed here because the content has been well received within the Magen
 *  *Presentation:* [Micro Services](https://www.dropbox.com/s/j9a65kmqo5s4zys/MageTitansUSA%202016%20-%20Creating%20Micro-Services%20for%20Magento%202.pdf?dl=0){:target="_blank"} by Ivan Chepurnyi
 *  *Blog post:* [A technical guide to the Magento 2 checkout](https://inviqa.com/blog/technical-guide-magento-2-checkout){:target="_blank"} by Richard Thompson
 *  *Blog post:* [What two years developing Magento 2 extensions has taught me](http://store.fooman.co.nz/blog/write-better-m2-extensions.html){:target="_blank"} by Kristof Ringleff
-
-## Performance
-
-* *Presentation:* [Premium performance with PHP 7 and Varnish](http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-miguel-balparda-magento-2-premium-performance-with-php-7-and-varnish){:target="_blank"} by Miguel Balparda
