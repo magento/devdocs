@@ -64,16 +64,50 @@ REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{o
 
 
 ## Breaking changes
-
-The following classes have been moved to the Framework:
-
+We've introduced the following breaking changes in 2.1.3.
 
 
+### New methods
+`Magento\Vault\Block\TokenRendererInterface::getToken` 
 
 
-We moved Magento/Store/Model/Config/Reader/ReaderPool.php to the framework (this is implementation of corresponding interface and wasn’t referenced directly).
-We moved Magento/Store/Model/Config/Reader/DefaultReader.php to the framework, since we need to have default configuration available without having module Store as enabled/installed
-Magento/Store/Model/Config/Reader/Store.php and Magento/Store/Model/Config/Reader/Website.php are both moved to another locations and completely re-implemented in different manner. 
+### Removed methods
+
+Magento\Vault\Block\CardRendererInterface::getIconUrl
+
+Magento\Vault\Block\CardRendererInterface::getIconHeight
+
+Magento\Vault\Block\CardRendererInterface::getIconWidth
+
+Magento\Vault\Block\CardRendererInterface::getToken
+
+
+
+
+
+
+
+`Magento\Quote\Setup\Recurring`
+
+`Magento\MysqlMq\Setup\InstallData` (EE only)
+
+
+
+#### Moved to Framework
+
+`Magento/Store/Model/Config/Reader/ReaderPool.php`  (this is an implementation of corresponding interface and wasn’t referenced directly).
+
+`Magento/Store/Model/Config/Reader/DefaultReader.php` (makes the default configuration available without the need to enable or install module Store)
+
+
+
+#### Moved to other locations
+These methods have been moved to other locations and have been re-implemented differently:
+
+`Magento/Store/Model/Config/Reader/Store.php`
+
+`Magento/Store/Model/Config/Reader/Website.php`
+
 
 
 ## Functional fixes and enhancements
@@ -158,6 +192,8 @@ We address the following functional fixes and enhancements in this release.
 
 <!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento displayed this error, "Default website not defined" when upgrading because Magento read the list of websites from the database. It now reads from the config file. 
 
+<!---59376, 59809-->*  We've added support for a split build or deployment process by adding the ability to define  environment variables for each  environment (development, staging, and production). 
+
 
 
 ### Performance
@@ -167,14 +203,14 @@ We've improved the performance of these tasks:
 <!---56927-->* Opening many products from the Admin interface
 
 
-<!---55300-->* Creating many (2500 - 5000) product variants
+<!---55300, 59708-->* Creating many (2500 - 5000) product variants, both simple and complex product types
 
 
 <!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a> 
 
 <!---60041-->* Resizing images on the frontend
 
-<!---57905-->* We've optimized compiler performance by adding several options to the `setup:di:compile` command. 
+<!---57905-->We've optimized compiler performance by adding several options to the `setup:di:compile` command. 
 
 
 
@@ -437,6 +473,13 @@ We've enhanced the performance of configurable products in several ways:
 {:.no_toc} 
 
 
+<!--- 60890 -->* Admin users with restricted permissions can now log in successfully as determined by those permissions. Previously, Magento displayed a fatal error when you logged in under these conditions.
+
+
+<!--- 55184 -->* You can now select and add a category to a Cart Price rule. Previously, Magento displayed this error: "Uncaught ReferenceError: sales_rule_form is not defined", and did not add the selected category to the condition. <a href="https://github.com/magento/magento2/issues/5526" target="_blank">(GITHUB-5526)</a>
+
+
+
 <!---57144-->* You can now assign a blank value to an attribute. <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/4910" target="_blank">(GITHUB-4910)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5485" target="_blank">(GITHUB-5485)</a>
 
 <!---55662-->* We've removed the duplicated PHP settings from the sample web server configuration files. 
@@ -553,13 +596,13 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 60477, 59309, 60381, 58004
 -->
 
 
-<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346-->
+<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346, 59835-->
 
-<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 59376, 60662, 60695, 60971, 61341 -->
+<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341 -->
 
 <!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736-->
 
@@ -615,6 +658,6 @@ The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank"
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
-Dear community members, thank you to all who have made suggestions and reported bugs. 
+Dear community members, thank you for your suggestions and bug reports. 
 
 

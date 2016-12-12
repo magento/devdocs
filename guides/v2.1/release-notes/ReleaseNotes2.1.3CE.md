@@ -62,6 +62,22 @@ REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{o
 
 ## Breaking changes
 
+We've introduced the following breaking changes in 2.1.3.
+
+
+### New methods
+`Magento\Vault\Block\TokenRendererInterface::getToken` 
+
+
+### Removed methods
+
+`Magento\Vault\Block\CardRendererInterface::getIconUrl`
+
+`Magento\Vault\Block\CardRendererInterface::getIconHeight`
+
+`Magento\Vault\Block\CardRendererInterface::getIconWidth`
+
+`Magento\Vault\Block\CardRendererInterface::getToken`
 
 
 ## Functional fixes and enhancements
@@ -146,6 +162,8 @@ We address the following functional issues in this release.
 
 <!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento displayed this error, "Default website not defined" when upgrading because Magento read the list of websites from the database. It now reads from the config file. 
 
+<!---59376, 59809-->*  We've added support for a split build or deployment process by adding the ability to define  environment variables for each  environment (development, staging, and production). 
+
 
 
 ### Performance
@@ -155,7 +173,7 @@ We've improved the performance of these tasks:
 <!---56927-->* Opening many products from the Admin interface
 
 
-<!---55300-->* Creating many (2500 - 5000) product variants
+<!---55300, 59708-->* Creating many (2500 - 5000) product variants, both simple and complex product types
 
 
 <!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a> 
@@ -295,6 +313,8 @@ We've enhanced the performance of configurable products in several ways:
 <!---57387 -->* You can now print invoices and credit memos from the Order page. 
 
 
+
+
 ### Web APIs
 {:.no_toc} 
 
@@ -421,6 +441,14 @@ We've enhanced the performance of configurable products in several ways:
 {:.no_toc} 
 
 
+<!--- 60890 -->* Admin users with restricted permissions can now log in successfully as determined by those permissions. Previously, Magento displayed a fatal error upon login under these conditions.
+
+
+
+
+
+
+
 <!---57144-->* You can now assign a blank value to an attribute. <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/4910" target="_blank">(GITHUB-4910)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5485" target="_blank">(GITHUB-5485)</a>
 
 <!---55662-->* We've removed the duplicated PHP settings from the sample web server configuration files. 
@@ -534,13 +562,13 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 59309, 60381
 -->
 
 
-<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346-->
+<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346, 59835-->
 
-<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 59376, 60662, 60695, 60971, 61341 -->
+<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957,  60662, 60695, 60971, 61341 -->
 
 <!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736-->
 
@@ -583,8 +611,6 @@ We've enhanced the performance of configurable products in several ways:
 <!---61341-->* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  **Workaround**: Upgrade your version of TLS to at least 1.2. 
 
 
-<!---58433-->* **Issue**: Saving a category in a catalog that contains 20,000 or more products is very slow. 
-
 
 <!---59555 --> * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB. 
 
@@ -612,3 +638,7 @@ Our technology stack is built on PHP and MySQL. For more information, see
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+
+## Credits
+Dear community members, thank you for your suggestions and bug reports. 
+
