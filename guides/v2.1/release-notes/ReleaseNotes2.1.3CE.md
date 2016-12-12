@@ -54,7 +54,7 @@ Magento 2.1.3 contains more than 70 bug fixes and enhancements, including these 
 
 	* Notify a customer about refunded items or order/invoice.
 
-REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
+	REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
 
 
 * **Enhanced performance in the processing of large catalogs**. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
