@@ -13,7 +13,6 @@ github_link: release-notes/ReleaseNotes2.1.3CE.md
 {:toc}
 
 
-## Magento Community Edition 2.1.3
 We are pleased to present Magento Community Edition 2.1.3. This release includes many functional enhancements and fixes.
 
 
@@ -143,8 +142,6 @@ We address the following functional issues in this release.
 
 
 <!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento displayed this error, "Default website not defined" when upgrading because Magento read the list of websites from the database. It now reads from the config file. 
-
-<!---59376, 59809-->*  We've added support for a split build or deployment process by adding the ability to define  environment variables for each  environment (development, staging, and production). 
 
 <!---59142-->* Magento now loads initial data after it initializes all components. Previously, Magento indefinitely displayed the spinning widget after initializing all components. 
 
@@ -565,7 +562,7 @@ We've introduced the following breaking changes in 2.1.3.
 
 
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 60477, 59309, 60381, 58004
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 60477, 59309, 60381, 58004, 59376, 59809
 -->
 
 

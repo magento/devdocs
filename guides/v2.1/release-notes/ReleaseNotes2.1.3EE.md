@@ -12,8 +12,6 @@ github_link: release-notes/ReleaseNotes2.1.3EE.md
 *	TOC
 {:toc}
 
-
-## Magento Enterprise Edition 2.1.3
 We are pleased to present Magento Enterprise Edition 2.1.3. This release includes many functional fixes and enhancements.
 
 
