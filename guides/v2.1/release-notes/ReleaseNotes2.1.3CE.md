@@ -66,10 +66,12 @@ We've introduced the following breaking changes in 2.1.3.
 
 
 ### New methods
+{:.no_toc}
 `Magento\Vault\Block\TokenRendererInterface::getToken` 
 
 
 ### Removed methods
+{:.no_toc}
 
 `Magento\Vault\Block\CardRendererInterface::getIconUrl`
 
@@ -623,11 +625,6 @@ We've enhanced the performance of configurable products in several ways:
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento 2.1.2 requirements have changed slightly from 2.1.1. This release supports PHP 5.6.5 and above instead of 5.6.x.</p>
-</div>
-
 
 
 {% include install/releasenotes/ce_install_21.md %}

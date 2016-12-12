@@ -68,45 +68,21 @@ We've introduced the following breaking changes in 2.1.3.
 
 
 ### New methods
+{:.no_toc} 
+
 `Magento\Vault\Block\TokenRendererInterface::getToken` 
 
 
 ### Removed methods
+{:.no_toc} 
 
-Magento\Vault\Block\CardRendererInterface::getIconUrl
+`Magento\Vault\Block\CardRendererInterface::getIconUrl`
 
-Magento\Vault\Block\CardRendererInterface::getIconHeight
+`Magento\Vault\Block\CardRendererInterface::getIconHeight`
 
-Magento\Vault\Block\CardRendererInterface::getIconWidth
+`Magento\Vault\Block\CardRendererInterface::getIconWidth`
 
-Magento\Vault\Block\CardRendererInterface::getToken
-
-
-
-
-
-
-
-`Magento\Quote\Setup\Recurring`
-
-`Magento\MysqlMq\Setup\InstallData` (EE only)
-
-
-
-#### Moved to Framework
-
-`Magento/Store/Model/Config/Reader/ReaderPool.php`  (this is an implementation of corresponding interface and wasn’t referenced directly).
-
-`Magento/Store/Model/Config/Reader/DefaultReader.php` (makes the default configuration available without the need to enable or install module Store)
-
-
-
-#### Moved to other locations
-These methods have been moved to other locations and have been re-implemented differently:
-
-`Magento/Store/Model/Config/Reader/Store.php`
-
-`Magento/Store/Model/Config/Reader/Website.php`
+`Magento\Vault\Block\CardRendererInterface::getToken`
 
 
 
