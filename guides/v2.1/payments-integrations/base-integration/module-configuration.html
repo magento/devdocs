@@ -684,7 +684,7 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module.</p>
+            <p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code; add your customizations in a separate module.</p>
 
 <p>You can use the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway">sample Magento_SamplePaymentGateway module</a> files as basis for your custom module structure and files.</p>
 
@@ -700,7 +700,7 @@
 
 <p>Specify these dependencies in your <code>composer.json</code> and <code>module.xml</code> files.</p>
 
-<h3 id="composerjson">Composer.json</h3>
+<h3 id="composerjson"><code>composer.json</code></h3>
 
 <p>In your <code>%Vendor_Module%/composer.json</code> file, specify the dependencies like in the following example:</p>
 
@@ -717,7 +717,9 @@
 
 <span class="p">}</span></code></pre></figure>
 
-<h3 id="modulexml">module.xml</h3>
+<p>For details about composer.json see <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">The composer.json</a> file topic.</p>
+
+<h3 id="modulexml"><code>module.xml</code></h3>
 
 <p>Add the same dependencies in <code>%Vendor_Module%/etc/module.xml</code> like in the following example:</p>
 
