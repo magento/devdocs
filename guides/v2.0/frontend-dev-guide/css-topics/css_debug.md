@@ -30,7 +30,7 @@ Magento has built-in Grunt tasks configured, but there are still several prerequ
 
 <ol>
 <li>
-Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)" target="_blank">node.js</a> to any location on your machine.
+Install <a href="https://nodejs.org/en/download/package-manager/" target="_blank">node.js</a> to any location on your machine.
 </li>
 <li>Install Grunt CLI tool globally. To do this, run the following command in a command prompt:<br>
 <pre>
