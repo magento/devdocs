@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento CE 2.0.11 Release Notes
 menu_title: Magento CE 2.0.11 Release Notes
-menu_order: 19
+menu_order: 20
 github_link: release-notes/ReleaseNotes2.0.10CE.md
 ---
 *	TOC
@@ -35,7 +35,7 @@ Magento 2.0.11 contains more than 60 bug fixes and enhancements, including these
 	* Notify a customer about refunded items or order/invoice.
 
 
-REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
+	REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
 
 
 
@@ -64,7 +64,7 @@ We address the following functional issues in this release.
 
 <!--- 58037-->* You can now reload a page during checkout without unintentionally changing shipping information. 
 
-<!--- 58614-->* You can now successfully reorder a product. Previously, if you tried to reorder a product, the checkout page would not load, and Magento would throw this error: "Uncaught TypeError: Cannot read property 'length' of undefined". 
+<!--- 58614-->* You can now successfully reorder a product. Previously, if you tried to reorder a product, the checkout page did not load, and Magento displayed this error: "Uncaught TypeError: Cannot read property 'length' of undefined". 
 
 <!--- 57844-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple cart rules are applied. Previously, when you created two cart rules and applied them to a cart, the rule with a coupon was applied, but the second rule was not. <a href="https://github.com/magento/magento2/issues/6294" target="_blank">(GITHUB-6294)</a> 
 
@@ -101,7 +101,7 @@ We address the following functional issues in this release.
 
 <!--- 56859-->* The **Send Welcome Email From** field now accurately identifies the store that the customer is associated with. 
 
-<!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento would not save this information, and threw an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
+<!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento did not save this information, and you encountered an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
 
 ### General fixes
 {:.no_toc} 
@@ -111,7 +111,7 @@ We address the following functional issues in this release.
 
 <!--- 61106-->* The Product page now displays swatches based on the color swatch attribute. Previously, the Product page did not display swatches. 
 
-<!--- 57336-->* Magento no longer throws a "Wrong request parameters" error when you try to assign products to a category at the store view level. Previously, Magento threw a `levelWrong` request parameters error when you assigned products to a category.
+<!--- 57336-->* Magento no longer displays a "Wrong request parameters" error when you try to assign products to a category at the store view level. Previously, you encountered a `levelWrong` request parameters error when you assigned products to a category.
 
 <!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
 
@@ -129,15 +129,15 @@ We address the following functional issues in this release.
 
 
 
-<!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Admin after you did this.
+<!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Magento Admin after you ran the Web setup wizard.
 
  
 
 <!--- 59398-->* Custom themes now inherit parent XML configuration information as expected. 
 
-<!--- 57322-->* Magento no longer redirects users to the Checkout page after login. Now, if you set **Redirect Customer to Account Dashboard after Logging in**  value to Yes, users will be redirected to the Account Dashboard page. If you set this value to No, then users will stay on the home page after login. 
+<!--- 57322-->* Magento no longer redirects users to the Checkout page after login. Now, if you set **Redirect Customer to Account Dashboard after Logging in**  value to **Yes**, users will be redirected to the Account Dashboard page. If you set this value to **No**, then users will stay on the home page after login. 
 
-<!--- 59102-->* Customers can now continue shopping after selecting an unavailable bundle product. Previously, if a customer selected a bundle product that was no longer available, Magento threw a fatal error. 
+<!--- 59102-->* Customers can now continue shopping after selecting an unavailable bundle product. Previously, if a customer selected a bundle product that was no longer available, he would encounter a fatal error. 
 
 <!--- 57331-->* The Magento storefront now reflects changes in the swatch attribute properties as expected. 
 
@@ -182,7 +182,7 @@ We address the following functional issues in this release.
 <!--- 57491-->* Magento no longer randomly throws the following error during import after a file passes the data check: "Maximum error count has been reached or system error is occurred!". 
 
 
-<!--- 56803-->* We've fixed an issue with the representation of date and timezones of items in the product catalog during import or export. Previously, Magento converted all data into the default format (UTC-8), including values that you set to be displayed using another standard. 
+<!--- 56803-->* We've fixed an issue with the representation of date and time zones of items in the product catalog during import or export. Previously, Magento converted all data into the default format (UTC-8), including values that you set to be displayed using another standard. 
 
 
 
@@ -192,7 +192,7 @@ We address the following functional issues in this release.
 
 <!--- 57082-->* The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension. 
 
-<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the var/session directory. We skip that directory because the web server usually owns those files, causing the permissions check to fail.
+<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the `var/session` directory. We skip that directory because the web server usually owns those files, causing the permissions check to fail.
 
 <!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
 
@@ -220,7 +220,7 @@ We address the following functional issues in this release.
 
 <!--- 57099-->* You can now successfully place an order using the Payflow Pro payment method. 
 
-<!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and threw this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
+<!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and displayed this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
 
 
 
@@ -246,7 +246,7 @@ We address the following functional issues in this release.
 ### Scope
 {:.no_toc}
 
-<!--- 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento threw this error when you tried to assign products to a category: "Wrong request parameters". 
+<!--- 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento displayed this error when you tried to assign products to a category: "Wrong request parameters". 
 
 <!--- 57002-->* A restricted user can now change the store view- or website- level attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
 
@@ -295,24 +295,24 @@ We address the following functional issues in this release.
 ## Known issues
 
 
-* **Issue**: When editing a product, you cannot edit customizable options on the store view level. That is, a change to one option affects products on all stores. Also, the ‘Use Default Value’ checkbox for the option title does not work. Unchecking this box and then changing the title affects all store views. **Workaround**: None
+* **Issue**: When editing a product, you cannot edit customizable options on the store view level. That is, a change to one option affects products on all stores. Also, the ‘Use Default Value’ checkbox for the option title does not work. Unchecking this box and then changing the title affects all store views. 
 
 
-<!--- 57199-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. **Workaround**: Flush Varnish cache using the Varnish admin CLI. 
+<!--- 57199-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you purge the cache and re-index. **Workaround**: Purge the Varnish cache using the Varnish admin CLI. 
 
 
-* **Issue**: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. **Workaround**: **Workaround**: Upgrade CURL to a minimum version of 7.39.0.
+* **Issue**: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. **Workaround**: Upgrade CURL to a minimum version of 7.39.0.
 
 
 * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.
 
-* **Issue**: Gallery doesn't show all images added to configurable options. **Workaround**: None
+* **Issue**: Gallery doesn't show all images added to configurable options.
 
 
 * **Issue**: The Add Products Manually link is not available after removing all variations. **Workaround**: Retain at least one variation or use the **Choose a different product option** option.
 
 
-* **Issue**: When you log in to run a system upgrade, Magento throws an `Encountered end of file` error.  **Workaround**: Upgrade your SSL protocol to a minimum of TLS 1.0. 
+* **Issue**: When you log in to run a system upgrade, Magento displays this error: `Encountered end of file`.  **Workaround**: Upgrade your SSL protocol to a minimum of TLS 1.0. 
 
 
 
@@ -352,3 +352,7 @@ Our technology stack is built on PHP and MySQL. For more information, see
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+
+## Credits
+
+Dear community members, thank you for your suggestions and bug reports.
