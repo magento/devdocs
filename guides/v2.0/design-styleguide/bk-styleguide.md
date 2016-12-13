@@ -3,7 +3,7 @@ layout: default
 group: styleguide
 subgroup:
 title: Admin Style Guide
-landing-page: Adming Style Guide
+landing-page: Admin Style Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: 
