@@ -29,7 +29,7 @@ github_link: config-guide/varnish/config-varnish.md
 <h2 id="config-varnish-over">Overview of the Varnish solution</h2>
 <a href="https://www.varnish-cache.org/" target="_blank">Varnish Cache</a> is an open source web application accelerator (also referred to as an *HTTP accelerator* or *caching HTTP reverse proxy*). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike web servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.
 
-Magento 2 supports Varnish 4.x and 5.0.
+Magento 2 supports versions 3.0.5 or later or any Varnish 4.x version.
 
 <div class="bs-callout bs-callout-warning">
     <p>We <em>strongly recommend</em> you use Varnish in production. The built-in full-page caching (to either the file system or <a href="{{page.baseurl}}config-guide/database/database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
