@@ -14,20 +14,18 @@ github_link: release-notes/ReleaseNotes2.0.11EE.md
 We are pleased to present Magento Enterprise Edition 2.0.11. This release includes many functional fixes and enhancements. 
 
 
-Backward-incompatible changes are documented in <a href="{{ page.baseurl }}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
-
 
 ## Highlights
-Magento 2.0.11 contains more than 60 bug fixes and enhancements, including these highlights:
+Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these highlights:
 
 
 * **Management of configurable products with many variations** in the Admin interface without degrading performance.
 
 * **Upgrade to Magento 2.0.11 without issue** when using multiple master databases for checkout, order management, and product data.
 
-* **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
+* **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing, such as “,” or “|.”).
 
-* The Sales module provides two new web APIs that allow you to process refunds from an order or invoice. Previously, these actions could only be performed from Admin. After you install this patch, you can:
+* The Sales module provides two new web API endpoints that allow you to process refunds from an order or invoice. Previously, these actions could only be performed from Admin. After you install this patch, you can:
 
 	* Create a credit memo (complete or partial) for a particular invoice or order.
 
@@ -68,7 +66,7 @@ We address the following functional issues in this release.
 
 <!--- 58037-->* You can now reload a page during checkout without unintentionally changing shipping information. 
 
-<!--- 58614-->* You can now successfully reorder a product. Previously, if you tried to reorder a product, the checkout page would not load, and Magento would throw this error: "Uncaught TypeError: Cannot read property 'length' of undefined". 
+<!--- 58614-->* You can now successfully reorder a product. Previously, if you tried to reorder a product, the checkout page would not load, and Magento would display this error: "Uncaught TypeError: Cannot read property 'length' of undefined". 
 
 <!--- 57844-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple cart rules are applied. Previously, when you created two cart rules and applied them to a cart, the rule with a coupon was applied, but the second rule was not. <a href="https://github.com/magento/magento2/issues/6294" target="_blank">(GITHUB-6294)</a> 
 
@@ -132,7 +130,7 @@ We address the following functional issues in this release.
 
 <!--- 58894-->* The Compare Products page now works as expected. Previously, you were erroneously redirected to another page when you removed an item from the Compare Products sidebar. 
 
-<!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Admin after you did this.
+<!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Magento Admin after you ran the Web Setup Wizard.
 
 <!--- 59398-->* Custom themes now inherit parent XML configuration information as expected. 
 
@@ -224,7 +222,7 @@ We address the following functional issues in this release.
 
 <!--- 57082-->* The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension. 
 
-<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the `var/session` directory. We skip that directory because the web server usually owns those files, causing the permissions check to fail.
+<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the `var/session` directory. We skip that directory because the web server usually owns those files, which can cause the permissions check to fail.
 
 <!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
 
@@ -252,7 +250,7 @@ We address the following functional issues in this release.
 
 <!--- 57099-->* You can now successfully place an order using the Payflow Pro payment method. 
 
-<!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and threw this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
+<!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and displayed this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
 
 
 
@@ -277,7 +275,7 @@ We address the following functional issues in this release.
 ### Scope
 {:.no_toc}
 
-<!--- 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento threw this error when you tried to assign products to a category: "Wrong request parameters". 
+<!--- 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento displayed this error when you tried to assign products to a category: "Wrong request parameters". 
 
 <!--- 57002-->* A restricted user can now change the store view- or website- level attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
 
@@ -318,7 +316,7 @@ We address the following functional issues in this release.
 <!--- 57199-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you purge the cache and re-index. **Workaround**: Purge the Varnish cache using the Varnish admin CLI. 
 
 
-* **Issue**: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. **Workaround**: Upgrade CURL to a minimum version of 7.39.0.
+* **Issue**: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  **Workaround**: Upgrade your version of CURL to the latest possible version that will enable the use of TLS 1.2 by default. 
 
 
 * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.

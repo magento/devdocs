@@ -15,16 +15,16 @@ We are pleased to present Magento Community Edition 2.0.11.
 
 
 ## Highlights
-Magento 2.0.11 contains more than 60 bug fixes and enhancements, including these highlights:
+Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these highlights:
 
 
 * **Management of configurable products with many variations** in the Magento Admin interface without degrading performance.
 
 * **Upgrade to Magento 2.0.11 without issue** when using multiple master databases for checkout, order management, and product data.
 
-* **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
+* **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing, such as “,” or “|.”).
 
-* The Sales module provides two new web APIs that allow you to process refunds from an order or invoice. Previously, these actions could only be performed from Admin. After you install this patch, you can:
+* The Sales module provides two new web API endpoints that allow you to process refunds from an order or invoice. Previously, these actions could only be performed from Admin. After you install this patch, you can:
 
 	* Create a credit memo (complete or partial) for a particular invoice or order.
 
@@ -129,7 +129,7 @@ We address the following functional issues in this release.
 
 
 
-<!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Magento Admin after you ran the Web setup wizard.
+<!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Magento Admin after you ran the Web Setup Wizard.
 
  
 
@@ -179,7 +179,7 @@ We address the following functional issues in this release.
 
 <!--- 57162-->* Magento now prompts you to log in before attempting to upgrade. Previously, it was not clear that you needed to log in first before initiating an upgrade.  <a href="https://github.com/magento/magento2/issues/3059" target="_blank">(GITHUB-3059)</a> 
 
-<!--- 57491-->* Magento no longer randomly throws the following error during import after a file passes the data check: "Maximum error count has been reached or system error is occurred!". 
+<!--- 57491-->* Magento no longer randomly displays the following error during import after a file passes the data check: "Maximum error count has been reached or system error is occurred!". 
 
 
 <!--- 56803-->* We've fixed an issue with the representation of date and time zones of items in the product catalog during import or export. Previously, Magento converted all data into the default format (UTC-8), including values that you set to be displayed using another standard. 
@@ -192,7 +192,7 @@ We address the following functional issues in this release.
 
 <!--- 57082-->* The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension. 
 
-<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the `var/session` directory. We skip that directory because the web server usually owns those files, causing the permissions check to fail.
+<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the `var/session` directory. We skip that directory because the web server usually owns those files, which can cause the permissions check to fail.
 
 <!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
 
