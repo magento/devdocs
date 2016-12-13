@@ -555,12 +555,12 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
     "Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73". **Workaround**:  You can avoid this fatal error by taking one of these actions: 
 
-	* If your Magento base directory is `<magento_base>/pub`, use `http://<magento-host-or-ip>/setup` to start the Web Setup Wizard.
+	
+    -- If your Magento base directory is `<magento_base>/pub`, use `http://<magento-host-or-ip>/setup` to start the Web Setup Wizard.
 
 	or
 
-	* Install the Magento application using the [command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html).
-
+	-- Install the Magento application using the [command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html).
 
 
 
