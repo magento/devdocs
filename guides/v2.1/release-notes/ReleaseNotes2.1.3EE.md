@@ -558,7 +558,9 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 	* If your Magento base directory is `<magento_base>/pub`, use `http://<magento-host-or-ip>/setup` to start the Web Setup Wizard.
 
 	or
+
 	* Install the Magento application using the [command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html).
+
 
 
 
