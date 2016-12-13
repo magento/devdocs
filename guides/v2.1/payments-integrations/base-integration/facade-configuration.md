@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: integration
+subgroup: B_integration
 title: Payment method facade
 menu_title: Payment method facade
 menu_order: 3
@@ -77,3 +77,8 @@ configuration from database or payment config file.
 Other handlers contain some logic, for example, `can_cancel` option is the same as `can_void` and depends on whether the order has paid amount (invoiced). 
 
 Your custom handlers must implement the [Value Handler interface]({{site.mage2100url}}app/code/Magento/Payment/Gateway/Config/ValueHandlerInterface.php).
+
+## What's next
+
+- [Payment info rendering in Admin checkout]({{page.baseurl}}payments-integrations/base-integration/formblocktype.html)
+- [Add a gateway command]({{page.baseurl}}payments-integrations/base-integration/payment-action.html) 

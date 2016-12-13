@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: vault
+subgroup: C_vault
 title: Vault DI Configuration
 menu_title: Vault DI Configuration
 menu_order: 3

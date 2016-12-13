@@ -1,9 +1,9 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: p_gateway
-title: Magento payment provider gateway overview
-menu_title: Magento payment provider gateway overview
+subgroup: A_gateway
+title: Magento payment provider gateway
+menu_title: Magento payment provider gateway 
 menu_node: parent
 menu_order: 1
 version: 2.0

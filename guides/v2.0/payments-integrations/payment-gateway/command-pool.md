@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: p_gateway
+subgroup: A_gateway
 title: Gateway Command Pool
 menu_title:  Gateway Command Pool
 menu_node: 

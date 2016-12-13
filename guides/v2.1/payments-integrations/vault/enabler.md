@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: vault
+subgroup: C_vault
 title: Enable vault 
 menu_title: Enable vault 
 menu_order: 5
