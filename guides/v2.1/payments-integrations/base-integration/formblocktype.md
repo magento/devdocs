@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: integration
+subgroup: B_integration
 title: Payment info rendering in Admin checkout
 menu_title: Payment info rendering in Admin checkout
 menu_order: 4
@@ -85,3 +85,9 @@ The following example adds the Braintree-specific template [`app/code/Magento/Pa
     </body>
 </page>
 {% endhighlight %}
+
+
+## What's next
+
+- [Payment method facade]({{page.baseurl}}payments-integrations/base-integration/facade-configuration.html)
+- [Add a gateway command]({{page.baseurl}}payments-integrations/base-integration/payment-action.html) 

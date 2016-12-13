@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: p_gateway
+subgroup: A_gateway
 title: Payment provider gateway structure
 menu_title: Payment provider gateway structure
 menu_order: 1

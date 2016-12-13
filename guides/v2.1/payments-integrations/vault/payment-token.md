@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: vault
+subgroup: C_vault
 title: Payment Token
 menu_title: Payment Token
 menu_order: 10

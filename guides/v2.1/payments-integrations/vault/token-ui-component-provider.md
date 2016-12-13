@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: vault
+subgroup: C_vault
 title: Token UI Component Provider
 menu_title: Token UI Component Provider
 menu_order: 15
