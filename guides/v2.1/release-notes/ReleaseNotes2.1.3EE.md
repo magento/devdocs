@@ -53,7 +53,7 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 	* Update the status and state of an invoice or order after actions are performed.
 
-	* Notify a customer about refunded items or invoice/order.
+	* Notify a customer about refunded items or invoice or order.
 
 	REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
 
@@ -550,7 +550,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 ## Known issues
 
 
-<!---62083-->
+<<!---62083-->
 * **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
    
   > Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
