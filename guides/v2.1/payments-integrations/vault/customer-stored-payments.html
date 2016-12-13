@@ -287,7 +287,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-stucture.html">Payment provider gateway structure</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-structure.html">Payment provider gateway structure</a></li>
 
 									
 
@@ -689,7 +689,7 @@
 <p>First, you need to create a custom Renderer that provides functionality for displaying token details.
 The Renderer implementation depends on token type (card or account), but both renders
 implement the common interfaces <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/TokenRendererInterface.php">TokenRendererInterface</a>
-and <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/BLock/Customer/IconInterface.php">IconInterface</a>:</p>
+and <code>IconInterface</code>.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">interface</span> <span class="nx">TokenRendererInterface</span>
 <span class="p">{</span>
@@ -737,7 +737,7 @@ and <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getIconWidth</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>If you Vault integration uses card token type, then you need to extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/AbstractCardRenderer.php">AbstractCardRenderer</a>. In other case extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/AbstractTokenRenderer.php">AbstractTokenRenderer</a>.</p>
+<p>If you Vault integration uses card token type, then you need to extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/AbstractCardRenderer.php">AbstractCardRenderer</a>. In other case extend <code>AbstractTokenRenderer</code>.</p>
 
 <p><code>AbstractCardRenderer</code> implements <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/CardRendererInterface.php">CardRendererInterface</a> and
 has additional method to get card details.</p>

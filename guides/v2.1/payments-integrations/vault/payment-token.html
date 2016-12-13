@@ -287,7 +287,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-stucture.html">Payment provider gateway structure</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-structure.html">Payment provider gateway structure</a></li>
 
 									
 
@@ -744,8 +744,8 @@
 <p>There are two types of <code>paymentTokenFactory</code>:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/CreditCardTokenFactory.php">CreditCardTokenFactory</a>: used for credit cards</li>
-  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/AccountPaymentTokenFactory.php">AccountPaymentTokenFactory</a>: used for payment accounts, like PayPal</li>
+  <li>CreditCardTokenFactory: used for credit cards</li>
+  <li>AccountPaymentTokenFactory: used for payment accounts, like PayPal</li>
 </ul>
 
 <p>The important thing is <code>setGatewayToken()</code> method. This method retrieves Gateway Token,  a hashed value based on some credit card details. Different

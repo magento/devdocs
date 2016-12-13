@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Response Validator</title>
+	<title>Payment provider gateway structure</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/payments-integrations/payment-gateway/response-validator.html">
+	<link rel="canonical" href="//guides/v2.0/payments-integrations/payment-gateway/payment-gateway-structure.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -55,9 +55,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/payments-integrations/payment-gateway/response-validator.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/payments-integrations/payment-gateway/payment-gateway-structure.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/payments-integrations/payment-gateway/response-validator.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-structure.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -171,14 +171,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Response Validator</h1>
+		<h1 class="page-heading">Payment provider gateway structure</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/payments-integrations/payment-gateway/response-validator.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/payments-integrations/payment-gateway/payment-gateway-structure.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -341,7 +341,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/payments-integrations/payment-gateway/payment-gateway-structure.html">Payment provider gateway structure</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/payments-integrations/payment-gateway/payment-gateway-structure.html">Payment provider gateway structure</a></li>
 
 									
 
@@ -381,7 +381,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/payments-integrations/payment-gateway/response-validator.html">Response Validator</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/payments-integrations/payment-gateway/response-validator.html">Response Validator</a></li>
 
 									
 
@@ -488,89 +488,20 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <p>Response Validator is a component of the Magento payment provider gateway that performs gateway response verification. This may include low level data formatting, security verification, and even execution of some business logic required by the store configuration.</p>
+            <p>The following diagram shows the basic components of the Magento payment provider gateway:</p>
 
-<p>Response Validator returns a Result object, containing validation result as Boolean value and errors description as a list of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Phrase.php">Phrase</a>.</p>
+<p><img src="/common/images/payments-integrations/pg_structure.png" alt="Payment Gateway Structure" /></p>
 
-<h2 id="interfaces">Interfaces</h2>
-<p>Response Validator must implement <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Validator/ValidatorInterface.php"><code>Magento\Payment\Gateway\Validator\ValidatorInterface</code></a></p>
-
-<p>Result class must implement <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Validator/ResultInterface.php"><code>Magento\Payment\Gateway\Validator\ResultInterface</code></a></p>
-
-<p>A payment provider integration can have multiple response validators, that should be added to the provider’s validators’ pool using <a href="/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection</a>.</p>
-
-<h2 id="useful-implementations">Useful implementations</h2>
+<p>Each component from this scheme is described in the corresponding topic:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Validator/AbstractValidator.php">\Magento\Payment\Gateway\Validator\AbstractValidator</a>: an abstract class with ability to create a Result object. Can be inherited from by particular response validator implementations.</li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Validator/ValidatorComposite.php">\Magento\Payment\Gateway\Validator\ValidatorComposite</a>: a chain of Validator objects, which are executed one by one and the result gets aggregated into one Result object.</li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Validator/Result.php">\Magento\Payment\Gateway\Validator\Result</a>: base class for Result object. You still have an ability to create a Result of your own, but the default one covers the most amount of cases.</li>
+  <li><a href="/guides/v2.0/payments-integrations/payment-gateway/gateway-command.html">Gateway Command</a></li>
+  <li><a href="/guides/v2.0/payments-integrations/payment-gateway/command-pool.html">Gateway Command Pool</a></li>
+  <li><a href="/guides/v2.0/payments-integrations/payment-gateway/request-builder.html">Request Builder</a></li>
+  <li><a href="/guides/v2.0/payments-integrations/payment-gateway/gateway-client.html">Gateway Client</a></li>
+  <li><a href="/guides/v2.0/payments-integrations/payment-gateway/response-validator.html">Response Validator</a></li>
+  <li><a href="/guides/v2.0/payments-integrations/payment-gateway/response-handler.html">Response Handler</a></li>
 </ul>
-
-<h2 id="example">Example</h2>
-
-<p>In the following example the a response validator is implemented and added to the pool of the Braintree payment provider request validators.</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">AcceptValidator</span> <span class="k">extends</span> <span class="nx">AbstractValidator</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Performs domain-related validation for business object</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param array $validationSubject</span>
-<span class="sd">     * @return ResultInterface</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">validate</span><span class="p">(</span><span class="k">array</span> <span class="nv">$validationSubject</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$response</span> <span class="o">=</span> <span class="nx">SubjectReader</span><span class="o">::</span><span class="na">readResponse</span><span class="p">(</span><span class="nv">$validationSubject</span><span class="p">);</span>
-        <span class="nv">$paymentDO</span> <span class="o">=</span> <span class="nx">SubjectReader</span><span class="o">::</span><span class="na">readPayment</span><span class="p">(</span><span class="nv">$validationSubject</span><span class="p">);</span>
-
-        <span class="nv">$isValid</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
-        <span class="nv">$fails</span> <span class="o">=</span> <span class="p">[];</span>
-
-        <span class="nv">$statements</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="na">getOrder</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getCurrencyCode</span><span class="p">()</span> <span class="o">===</span> <span class="nv">$response</span><span class="p">[</span><span class="s1">&#39;authCurrency&#39;</span><span class="p">],</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Currency doesn\&#39;t match.&#39;</span><span class="p">)</span>
-            <span class="p">],</span>
-            <span class="p">[</span>
-                <span class="nb">sprintf</span><span class="p">(</span>
-                    <span class="s1">&#39;%.2F&#39;</span><span class="p">,</span>
-                    <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="na">getOrder</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getGrandTotalAmount</span><span class="p">())</span> <span class="o">===</span> <span class="nv">$response</span><span class="p">[</span><span class="s1">&#39;authCost&#39;</span><span class="p">],</span>
-                    <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Amount doesn\&#39;t match.&#39;</span>
-                <span class="p">)</span>
-            <span class="p">],</span>
-            <span class="p">[</span>
-                <span class="nb">in_array</span><span class="p">(</span><span class="nv">$response</span><span class="p">[</span><span class="s1">&#39;authMode&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]),</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Not supported response.&#39;</span><span class="p">)</span>
-            <span class="p">]</span>
-        <span class="p">];</span>
-
-        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$statements</span> <span class="k">as</span> <span class="nv">$statementResult</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$statementResult</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
-                <span class="nv">$isValid</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-                <span class="nv">$fails</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$statementResult</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createResult</span><span class="p">(</span><span class="nv">$isValid</span><span class="p">,</span> <span class="nv">$fails</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<h2 id="validators_pool">Pool of validators</h2>
-<p>The following sample demonstrates defining a validator’s pool and adding validators to this pool for the Braintree payment provider in <code>di.xml</code>:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
-<span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeValidatorPool&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Validator\ValidatorPool&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;validators&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;country&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Payment\Gateway\Validator\CountryValidator<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;accept&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>AcceptValidator<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/virtualType&gt;</span>
-...</code></pre></figure>
-
-<p>(This code sample was created for demonstration only, the real Braintree configuration is different).</p>
 
 
 		</div>

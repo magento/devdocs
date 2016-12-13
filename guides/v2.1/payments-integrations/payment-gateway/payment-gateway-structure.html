@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Vault Payment Configuration</title>
+	<title>Payment provider gateway structure</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.1/payments-integrations/vault/vault-payment-configuration.html">
+	<link rel="canonical" href="//guides/v2.1/payments-integrations/payment-gateway/payment-gateway-structure.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
@@ -55,9 +55,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/payments-integrations/vault/vault-payment-configuration.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/payments-integrations/payment-gateway/payment-gateway-structure.html">Version 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/payments-integrations/vault/vault-payment-configuration.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-structure.html">Version 2.1</a></li>
 	
   </ul>
 
@@ -173,14 +173,14 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Vault Payment Configuration</h1>
+		<h1 class="page-heading">Payment provider gateway structure</h1>
 
         
 
         <div class="topic-info">
 
             
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/payments-integrations/vault/vault-payment-configuration.md" target="_blank">Edit this page on GitHub</a></div>
+               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/payments-integrations/payment-gateway/payment-gateway-structure.md" target="_blank">Edit this page on GitHub</a></div>
             
             
 
@@ -287,7 +287,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-structure.html">Payment provider gateway structure</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-structure.html">Payment provider gateway structure</a></li>
 
 									
 
@@ -461,7 +461,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/payments-integrations/vault/vault-payment-configuration.html">Vault Payment Configuration</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/vault-payment-configuration.html">Vault Payment Configuration</a></li>
 
 									
 
@@ -684,35 +684,20 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <p>In <code>config.xml</code> file of your payment method module you need to configure the main parameters of the vault implementation:</p>
+            <p>The following diagram shows the basic components of the Magento payment provider gateway:</p>
+
+<p><img src="/common/images/payments-integrations/pg_structure.png" alt="Payment Gateway Structure" /></p>
+
+<p>Each component from this scheme is described in the corresponding topic:</p>
 
 <ul>
-  <li><code>model</code> - instance of Vault payment implementation, <a href="/guides/v2.1/payments-integrations/vault/vault-di.html">configured in <code>di.xml</code></a>.</li>
-  <li><code>title</code> - payment method title, can be overwritten in the store configuration.</li>
+  <li><a href="/guides/v2.1/payments-integrations/payment-gateway/gateway-command.html">Gateway Command</a></li>
+  <li><a href="/guides/v2.1/payments-integrations/payment-gateway/command-pool.html">Gateway Command Pool</a></li>
+  <li><a href="/guides/v2.1/payments-integrations/payment-gateway/request-builder.html">Request Builder</a></li>
+  <li><a href="/guides/v2.1/payments-integrations/payment-gateway/gateway-client.html">Gateway Client</a></li>
+  <li><a href="/guides/v2.1/payments-integrations/payment-gateway/response-validator.html">Response Validator</a></li>
+  <li><a href="/guides/v2.1/payments-integrations/payment-gateway/response-handler.html">Response Handler</a></li>
 </ul>
-
-<p>This parameters are specified in the section defined by the unique vault implementation code. They are the minimum required to create Vault payment. All other payment settings are inherited from payment provider.</p>
-
-<p>Additional configuration might be required depending on your implementation.</p>
-
-<p>The following example is the <code>config.xml</code> file of the Braintree payment method:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Store:etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;default&gt;</span>
-        <span class="nt">&lt;payment&gt;</span>
-            <span class="nt">&lt;braintree&gt;</span>
-                <span class="nt">&lt;model&gt;</span>BraintreeFacade<span class="nt">&lt;/model&gt;</span>
-                ...
-            <span class="nt">&lt;/braintree&gt;</span>
-            <span class="nt">&lt;braintree_cc_vault&gt;</span>
-                <span class="nt">&lt;model&gt;</span>BraintreeCreditCardVaultFacade<span class="nt">&lt;/model&gt;</span>
-                <span class="nt">&lt;title&gt;</span>Stored Cards (Braintree)<span class="nt">&lt;/title&gt;</span>
-            <span class="nt">&lt;/braintree_cc_vault&gt;</span>
-        <span class="nt">&lt;/payment&gt;</span>
-    <span class="nt">&lt;/default&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
-
-<p>In this example <code>braintree_cc_vault</code> is the unique payment code of the vault implementation for Braintree.</p>
 
 
 		</div>
