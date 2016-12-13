@@ -551,17 +551,16 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 <!---62083-->
 * **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
+   
+  > Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
+  
+  **Workaround**:  You can avoid this fatal error by taking one of these actions: 
 
-    "Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73". **Workaround**:  You can avoid this fatal error by taking one of these actions: 
+  1. If your DocumentRoot installed in `magento_folder/pub`,  then open Setup from `http://magento-host.com/setup` instead of from `http://magento-host.com`
 
-	
-    -- If your Magento base directory is `<magento_base>/pub`, use `http://<magento-host-or-ip>/setup` to start the Web Setup Wizard.
+     Or
 
-	or
-
-	-- Install the Magento application using the [command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html).
-
-
+  2. Install Magento from the console.
 
 <!---60680-->* **Issue**: You cannot successfully change and save your settings for gift cards. (<i>Settings</i> include "allow open amount" or "open amount minimum".) 
 
