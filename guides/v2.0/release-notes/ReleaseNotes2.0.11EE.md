@@ -37,13 +37,161 @@ Magento 2.0.11 contains more than 60 bug fixes and enhancements, including these
 
 	* Notify a customer about refunded items or order/invoice.
 
-REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
+	REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
 
 
 ## Functional fixes
 
 We address the following functional issues in this release.
 
+
+
+
+### Cart and checkout
+{:.no_toc} 
+
+<!--- 61232-->* You can now reload a page during checkout without unintentionally changing shipping information. 
+
+<!--- 61249-->* Magento no longer displays the spinning loader widget after you click the **Place Order** button. Previously, Magento displayed the spinning loader, even after you'd successfully placed an order. 
+
+<!--- 61127-->* Magento now indicates that a product is out-of-stock if you disable it. Previously, Magento did not display the name of an out-of-stock product at all. 
+
+<!--- 59211-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a> 
+
+<!--- 59374-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the **Ship to** field if you refreshed your browser page during this process. 
+
+<!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your shopping cart. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
+
+<!--- 55444-->* The Checkout page no longer freezes when you order a virtual gift card using the **Authorize.net Payment Action** value set to **Authorize and Capture**.
+
+<!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
+
+<!--- 58037-->* You can now reload a page during checkout without unintentionally changing shipping information. 
+
+<!--- 58614-->* You can now successfully reorder a product. Previously, if you tried to reorder a product, the checkout page would not load, and Magento would throw this error: "Uncaught TypeError: Cannot read property 'length' of undefined". 
+
+<!--- 57844-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple cart rules are applied. Previously, when you created two cart rules and applied them to a cart, the rule with a coupon was applied, but the second rule was not. <a href="https://github.com/magento/magento2/issues/6294" target="_blank">(GITHUB-6294)</a> 
+
+
+
+### Configurable products
+{:.no_toc} 
+
+<!--- 55791-->* We've improved the performance of the review step to create a configurable product.
+
+<!--- 59050-->* You can now successfully reorder a configurable product. Previously, if you created an order that includes multiple products, one of which is a reorder, options for these products were confused. <a href="https://github.com/magento/magento2/issues/3654" target="_blank">(GITHUB-3654)</a>, <a href="https://github.com/magento/magento2/issues/3820" target="_blank">(GITHUB-3820)</a>
+
+<!--- 58793-->* You can now successfully edit configuration options when creating a configurable product. Previously, the **Edit Configuration** button did not work as expected.
+
+<!--- 58917 -->* You can now successfully add a simple child product to a configurable product with advanced configurations. 
+
+<!--- 57000-->* We no longer apply one simple product's special price to another simple product of the same configurable product. Previously, when you set both a regular and a special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a> 
+
+<!--- 59415-->* Magento no longer displays the *as low as* price for a configurable product's simple options if the options are disabled.
+
+<!--- 58035-->* You can now edit a single product attribute and apply it to multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, then incorrectly tell you that the products had been edited.
+
+<!--- 58192-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products. <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>
+
+<!--- 59950-->* Configurable product option price is displayed  correctly per website.
+
+<!--- 57056-->* You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. <a href="https://github.com/magento/magento2/issues/4419" target="_blank">(GITHUB-4419)</a>
+
+
+
+### Email
+{:.no_toc} 
+
+<!--- 58243-->* Order emails now specify the amount of the gift card that you've purchased. 
+
+<!--- 56859-->* The **Send Welcome Email From** field now accurately identifies the store that the customer is associated with. 
+
+
+### General fixes
+{:.no_toc} 
+
+<!--- 61354-->* Categories are removed when admin with rights restricted to one store saves a product. 
+
+<!--- 59503-->* Magento now creates a URL rewrite for the new URL key of a product as expected. Previously, after you saved a change to the URL key of a product by selecting the **Create Permanent Redirect for old URL** option, Magento did not rewrite the old URL to the new URL.
+
+<!--- 61106-->* The Product page now displays swatches based on the color swatch attribute. Previously, the Product page did not display swatches. 
+
+<!--- 57336-->* Magento no longer throws a "Wrong request parameters" error when you try to assign products to a category at the storeview level. Previously, Magento threw a `levelWrong` request parameters error when you assigned products to a category.
+
+<!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
+
+<!--- 59449-->* Magento now decrements stock as expected in a multi-website environment. 
+
+<!--- 59409-->* Magento now correctly manages the maximum number of messages a message queue consumer can process. Previously, the consumer would stop processing messages before reaching the specified maximum number.
+
+<!--- 55682-->* The catalog category now retrieves prices from the price index update as expected. 
+
+<!--- 56001-->* The search field now works as expected on iOS devices using the Safari browser. Previously on these devices, the search box closed randomly. 
+
+<!--- 55664-->* We've removed the duplicate PHP settings from the sample web server configuration files.
+
+<!--- 58894-->* The Compare Products page now works as expected. Previously, you were erroneously redirected to another page when you removed an item from the Compare Products sidebar. 
+
+<!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Admin after you did this.
+
+<!--- 59398-->* Custom themes now inherit parent XML configuration information as expected. 
+
+<!--- 57322-->* Magento no longer redirects users to the Checkout page after login. Now, if you set **Redirect Customer to Account Dashboard after Logging in** value to Yes, users will be redirected to the Account Dashboard page. If you set this value to No, then users will stay on the home page after login. 
+
+<!--- 56875-->* We've eliminated difficulties saving product information when logged in as `admin`. Previously, the Product Save feature worked erratically for some Admin users. 
+
+<!--- 59102-->* Customers can now continue shopping after selecting an unavailable bundle product. Previously, if a customer selected a bundle product that was no longer available, Magento threw a fatal error. 
+
+<!--- 57331-->* The Magento storefront now reflects changes in the swatch attribute properties as expected. 
+
+
+<!--- 57326-->* The Sales Order object can now contain more than one `extension_attribute`.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a>
+
+<!--- 57352-->* We've removed the sample password from the Setup wizard.
+
+<!--- 57338-->* Customers are now redirected as expected to the destination URL identified in the **Redirect to My Account After Log-in** setting. Previously, customers were redirected to the My Account page, no matter which URL you identified in this setting.
+
+<!--- 58466-->* The order of products in a category display no longer changes when you add a new product to the category. 
+
+<!--- 57498-->* Lengthy Order Status tables are now paginated as expected.
+
+<!---57030 -->* We've fixed a problem with [custom zip code masks]({{ page.baseurl }}/howdoi/checkout/checkout_zip.html) in previous versions of Magento. <a href="https://github.com/magento/magento2/issues/4131" target="_blank">(GITHUB-4131)</a>
+
+<!--- 57103-->* We've fixed an issue with how the Customer Segments report calculate the same customer on two websites. 
+
+<!--- 57384, 39489 -->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**. 
+
+<!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 
+
+
+<!--- 62030-->* Users need view permission to the store to which the customers belong in order to see information about those customers. Previously, a user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view. 
+ 
+
+<!--- 61178-->* Inconsistent sales_order_item information after upgrade
+
+
+<!--- 62032-->* Empty default website error. 
+
+
+
+
+
+### Gift cards
+{:.no_toc} 
+
+<!--- 57513-->* You can now complete the purchase of a gift card in environments where you've set the Braintree payment method Payment Action to **Authorize and Capture**. Previously, any order made under these conditions would remain indefinitely in the processing stage.
+
+<!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento would not save this information, and threw an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
+
+
+
+
+### Images
+{:.no_toc} 
+
+<!--- 59829-->* We've added a new way to import images: You can now successfully import images when you set  your document root to  `<your Magento install dir>/pub`. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a> 
+
+<!--- 56171-->* You can now preview uploaded images. 
 
 
 
@@ -83,61 +231,6 @@ We address the following functional issues in this release.
 <!--- 57162-->* Magento now requires you to log in with your Magento Marketplace account credentials before attempting to upgrade. Previously, it was not clear that you needed to log in first before initiating an upgrade.  <a href="https://github.com/magento/magento2/issues/3059" target="_blank">(GITHUB-3059)</a> 
 
 
-
-
-### Performance
-{:.no_toc} 
-
-<!--- 60187, 55785,59394, 57894 -->* We’ve improved the performance of these tasks:
-
-	* Using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
-
-	* Loading the Configurable Product page.
-
-	* Calculating batch sizes while indexing categories.
-
-	* Compiling. (We’ve optimized compiler performance to run faster.)
- 
-<!--- 57509-->* We've also streamlined the JavaScript bundling process, which reduces the size of bundled files. <a href="https://github.com/magento/magento2/issues/4506" target="_blank">(GITHUB-4506)</a> 
-
-
-
-
-
-
-### Configurable products
-{:.no_toc} 
-
-<!--- 55791-->* We've improved the performance of the review step to create a configurable product.
-
-<!--- 59050-->* You can now successfully reorder a configurable product. Previously, if you created an order that includes multiple products, one of which is a reorder, options for these products were confused. <a href="https://github.com/magento/magento2/issues/3654" target="_blank">(GITHUB-3654)</a>, <a href="https://github.com/magento/magento2/issues/3820" target="_blank">(GITHUB-3820)</a>
-
-<!--- 58793-->* You can now successfully edit configuration options when creating a configurable product. Previously, the **Edit Configuration** button did not work as expected.
-
-<!--- 58917 -->* You can now successfully add a simple child product to a configurable product with advanced configurations. 
-
-<!--- 57000-->* We no longer apply one simple product's special price to another simple product of the same configurable product. Previously, when you set both a regular and a special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a> 
-
-<!--- 59415-->* Magento no longer displays the *as low as* price for a configurable product's simple options if the options are disabled.
-
-<!--- 58035-->* You can now edit a single product attribute and apply it to multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, then incorrectly tell you that the products had been edited.
-
-<!--- 58192-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products. <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>
-
-<!--- 59950-->* Configurable product option price is displayed  correctly per website.
-
-<!--- 57056-->* You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. <a href="https://github.com/magento/magento2/issues/4419" target="_blank">(GITHUB-4419)</a>
-
-
-### Payment methods
-{:.no_toc} 
-
-<!--- 57099-->* You can now successfully place an order using the Payflow Pro payment method. 
-
-<!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and threw this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
-
-
-
 ### Orders
 {:.no_toc} 
 
@@ -154,66 +247,31 @@ We address the following functional issues in this release.
 	* change order status after a credit memo has been created.
 
 
-### Web APIs
+### Payment methods
 {:.no_toc} 
 
-<!--- 57066-->* Swagger now correctly documents how to retrieve gift message data for a sales order using the API.
+<!--- 57099-->* You can now successfully place an order using the Payflow Pro payment method. 
+
+<!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and threw this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
 
 
 
-### Gift cards
+### Performance
 {:.no_toc} 
 
-<!--- 57513-->* You can now complete the purchase of a gift card in environments where you've set the Braintree payment method Payment Action to **Authorize and Capture**. Previously, any order made under these conditions would remain indefinitely in the processing stage.
+<!--- 60187, 55785,59394, 57894, 55300 -->* We’ve improved the performance of these tasks:
 
-<!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento would not save this information, and threw an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
+	* Using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
 
+	* Loading the Configurable Product page
 
+	* Creating many (2500 - 5000) product variations
 
-### Cart and checkout
-{:.no_toc} 
+	* Calculating batch sizes while indexing categories
 
-<!--- 61232-->* You can now reload a page during checkout without unintentionally changing shipping information. 
-
-<!--- 61249-->* Magento no longer displays the spinning loader widget after you click the **Place Order** button. Previously, Magento displayed the spinning loader, even after you'd successfully placed an order. 
-
-<!--- 61127-->* Magento now indicates that a product is out-of-stock if you disable it. Previously, Magento did not display the name of an out-of-stock product at all. 
-
-<!--- 59211-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a> 
-
-<!--- 59374-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the **Ship to** field if you refreshed your browser page during this process. 
-
-<!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your shopping cart. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
-
-<!--- 55444-->* The Checkout page no longer freezes when you order a virtual gift card using the **Authorize.net Payment Action** value set to **Authorize and Capture**.
-
-<!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
-
-<!--- 58037-->* You can now reload a page during checkout without unintentionally changing shipping information. 
-
-<!--- 58614-->* You can now successfully reorder a product. Previously, if you tried to reorder a product, the checkout page would not load, and Magento would throw this error: "Uncaught TypeError: Cannot read property 'length' of undefined". 
-
-<!--- 57844-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple cart rules are applied. Previously, when you created two cart rules and applied them to a cart, the rule with a coupon was applied, but the second rule was not. <a href="https://github.com/magento/magento2/issues/6294" target="_blank">(GITHUB-6294)</a> 
-
-
-
-### Images
-{:.no_toc} 
-
-<!--- 59829-->* We've added a new way to import images: You can now successfully import images when you set  your document root to  `<your Magento install dir>/pub`. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a> 
-
-<!--- 56171-->* You can now preview uploaded images. 
-
-
-
-
-### Email
-{:.no_toc} 
-
-<!--- 58243-->* Order emails now specify the amount of the gift card that you've purchased. 
-
-<!--- 56859-->* The **Send Welcome Email From** field now accurately identifies the store that the customer is associated with. 
-
+	* Compiling. (We’ve optimized compiler performance to run faster.)
+ 
+<!--- 57509-->* We've also streamlined the JavaScript bundling process, which reduces the size of bundled files. <a href="https://github.com/magento/magento2/issues/4506" target="_blank">(GITHUB-4506)</a> 
 
 
 ### Scope
@@ -233,67 +291,22 @@ We address the following functional issues in this release.
 <!--- 56076-->* Versioning of static files (including CSS, JS, fonts, and images) is now enabled by default.
 
 <!---59547-->* Static asset signing now works under nginx. For more information, see <a href="http://docs.magento.com/m2/ce/user_guide/system/static-file-signature.html" target="_blank">Using Static File Signatures</a>.
- 
 
 
-
-### General fixes
+### Web APIs
 {:.no_toc} 
 
-<!--- 61354-->* Categories are removed when admin with rights restricted to one store saves a product. 
-
-<!--- 59503-->* Magento now creates a URL rewrite for the new URL key of a product as expected. Previously, after you saved a change to the URL key of a product by selecting the **Create Permanent Redirect for old URL** option, Magento did not rewrite the old URL to the new URL.
-
-<!--- 61106-->* The Product page now displays swatches based on the color swatch attribute. Previously, the Product page did not display swatches. 
-
-<!--- 57336-->* Magento no longer throws a "Wrong request parameters" error when you try to assign products to a category at the storeview level. Previously, Magento threw a `levelWrong` request parameters error when you assigned products to a category.
-
-<!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
-
-<!--- 59449-->* Magento now decrements stock as expected in a multi-website environment. 
-
-<!--- 59409-->* Magento now correctly manages the maximum number of messages a message queue consumer can process. Previously, the consumer would stop processing messages before reaching the specified maximum number.
-
-<!--- 55682-->* The catalog category now retrieves prices from the price index update as expected. 
-
-<!--- 56001-->* The search field now works as expected on iOS devices using the Safari browser. Previously on these devices, the search box closed randomly. 
-
-<!--- 55664-->* We've removed the duplicate PHP settings from the sample web server configuration files.
-
-<!--- 58894-->* The Compare Products page now works as expected. Previously, you were erroneously redirected to another page when you removed an item from the Compare Products sidebar. 
+<!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to returned detailed information about a single object.
 
 
 
-<!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Admin after you did this.
-
-<!--- 59398-->* Custom themes now inherit parent XML configuration information as expected. 
-
-<!--- 57322-->* Magento no longer redirects users to the Checkout page after login. Now, if you set **Redirect Customer to Account Dashboard after Logging in** value to Yes, users will be redirected to the Account Dashboard page. If you set this value to No, then users will stay on the home page after login. 
-
-<!--- 56875-->* We've eliminated difficulties saving product information when logged in as `admin`. Previously, the Product Save feature worked erratically for some Admin users. 
-
-<!--- 59102-->* Customers can now continue shopping after selecting an unavailable bundle product. Previously, if a customer selected a bundle product that was no longer available, Magento threw a fatal error. 
-
-<!--- 57331-->* The Magento storefront now reflects changes in the swatch attribute properties as expected. 
 
 
-<!--- 57326-->* The Sales Order object can now contain more than one `extension_attribute`.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a>
 
-<!--- 57352-->* We've removed the sample password from the Setup wizard.
 
-<!--- 57338-->* Customers are now redirected as expected to the destination URL identified in the **Redirect to My Account After Log-in** setting. Previously, customers were redirected to the My Account page, no matter which URL you identified in this setting.
 
-<!--- 58466-->* The order of products in a category display no longer changes when you add a new product to the category. 
 
-<!--- 57498-->* Lengthy Order Status tables are now paginated as expected.
 
-<!---57030 -->* We've fixed a problem with [custom zip code masks]({{ page.baseurl }}/howdoi/checkout/checkout_zip.html) in previous versions of Magento. <a href="https://github.com/magento/magento2/issues/4131" target="_blank">(GITHUB-4131)</a>
-
-<!--- 57103-->* We've fixed an issue with how the Customer Segments report calculate the same customer on two websites. 
-
-<!--- 57384, 39489 -->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**. 
-
-<!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 
 
 
 ## Known issues
@@ -330,13 +343,13 @@ We address the following functional issues in this release.
 
 
 
-<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323 -->
+<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323, 61877, 61881 -->
 
 
-<!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803 -->
+<!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803, 61975 -->
 
 
-<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172 -->
+<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172, 61959 -->
 
 
 <!---  WON'T FIX 58853, 58798, 57105, 57802, 58083, 58900, 58611, 57311, 56916, 59370, 57510, 61242, 61339, 59414, 59408, 57330, 59411, 56958 -->

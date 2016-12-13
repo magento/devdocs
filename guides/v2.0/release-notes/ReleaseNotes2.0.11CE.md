@@ -44,57 +44,29 @@ REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{o
 We address the following functional issues in this release.
 
 
-
-### Import/Export
+### Cart and checkout
 {:.no_toc} 
 
-<!--- 55156-->* You can now export a bundle product that contains a custom text attribute. Previously, if you tried to export this type of bundle product, the export failed, and Magento displayed the message, "There is no data for the export". 
+<!--- 61232-->* You can now reload a page during checkout without unintentionally changing shipping information. 
 
-<!--- 59413-->* You can now successfully import multiselect attributes that contain special characters or delimiters. Previously, when you tried to import attributes that contained delimiters, data validation (and the import) failed. 
+<!--- 61249-->* Magento no longer displays the spinning loader widget after you click the **Place Order** button. Previously, Magento displayed the spinning loader, even after you'd successfully placed an order. 
 
-<!---58047 -->* Importing customer data no longer sets the Gender attribute to a blank field. 
+<!--- 61127-->* Magento now indicates that a product is out-of-stock if you disable it. Previously, Magento did not display the name of an out-of-stock product at all. 
 
-<!---57106-->* You can now import negative quantities.  
+<!--- 59211-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a> 
 
-<!--- 57162-->* Magento now prompts you to log in before attempting to upgrade. Previously, it was not clear that you needed to log in first before initiating an upgrade.  <a href="https://github.com/magento/magento2/issues/3059" target="_blank">(GITHUB-3059)</a> 
+<!--- 59374-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the **Ship to** field if you refreshed your browser page during this process. 
 
-<!--- 57491-->* Magento no longer randomly throws the following error during import after a file passes the data check: "Maximum error count has been reached or system error is occurred!". 
-
-
-<!--- 56803-->* We've fixed an issue with the representation of date and timezones of items in the product catalog during import or export. Previously, Magento converted all data into the default format (UTC-8), including values that you set to be displayed using another standard. 
+<!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your shopping cart. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
 
 
+<!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
 
+<!--- 58037-->* You can now reload a page during checkout without unintentionally changing shipping information. 
 
-### Installation, upgrade, and deployment
-{:.no_toc} 
+<!--- 58614-->* You can now successfully reorder a product. Previously, if you tried to reorder a product, the checkout page would not load, and Magento would throw this error: "Uncaught TypeError: Cannot read property 'length' of undefined". 
 
-
-
-<!--- 57082-->* The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension. 
-
-<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the var/session directory. We skip that directory because the web server usually owns those files, causing the permissions check to fail.
-
-<!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
-
-
-
-
-### Performance
-{:.no_toc} 
-
-<!--- 60187, 55785, 59394, 57894--> * We’ve improved the performance of these tasks:
-
-	* Using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
-
-	* Loading the Configurable Product page.
-
-	* Calculating batch sizes while indexing categories.
-
-	* Compiling. (We’ve optimized compiler performance to run faster.)
-
-
-<!--- 57509-->* We've also streamlined the JavaScript bundling process, which reduces the size of bundled files. <a href="https://github.com/magento/magento2/issues/4506" target="_blank">(GITHUB-4506)</a> 
+<!--- 57844-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple cart rules are applied. Previously, when you created two cart rules and applied them to a cart, the rule with a coupon was applied, but the second rule was not. <a href="https://github.com/magento/magento2/issues/6294" target="_blank">(GITHUB-6294)</a> 
 
 
 
@@ -122,81 +94,6 @@ We address the following functional issues in this release.
 <!--- 57056-->* You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. <a href="https://github.com/magento/magento2/issues/4419" target="_blank">(GITHUB-4419)</a>
 
 
-### Payment methods
-{:.no_toc} 
-
-<!--- 57099-->* You can now successfully place an order using the Payflow Pro payment method. 
-
-<!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and threw this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
-
-
-
-### Orders
-{:.no_toc} 
-
-<!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
-
-	* support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
-
-	* return the product to stock 
-
-	* change order status after a credit memo has been created.
-
-
-
-### Web APIs
-{:.no_toc} 
-
-
-<!--- 57066-->* Swagger now correctly documents how to retrieve gift message data for a sales order using the API.
-
-
-
-
-### Orders
-{:.no_toc} 
-
-<!--- 57681-->* You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a>
-
-<!--- 57715-->* A user can view orders only on stores to which they've been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website. 
-
-
-
-### Cart and checkout
-{:.no_toc} 
-
-<!--- 61232-->* You can now reload a page during checkout without unintentionally changing shipping information. 
-
-<!--- 61249-->* Magento no longer displays the spinning loader widget after you click the **Place Order** button. Previously, Magento displayed the spinning loader, even after you'd successfully placed an order. 
-
-<!--- 61127-->* Magento now indicates that a product is out-of-stock if you disable it. Previously, Magento did not display the name of an out-of-stock product at all. 
-
-<!--- 59211-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a> 
-
-<!--- 59374-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the **Ship to** field if you refreshed your browser page during this process. 
-
-<!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your shopping cart. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
-
-
-<!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
-
-<!--- 58037-->* You can now reload a page during checkout without unintentionally changing shipping information. 
-
-<!--- 58614-->* You can now successfully reorder a product. Previously, if you tried to reorder a product, the checkout page would not load, and Magento would throw this error: "Uncaught TypeError: Cannot read property 'length' of undefined". 
-
-<!--- 57844-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple cart rules are applied. Previously, when you created two cart rules and applied them to a cart, the rule with a coupon was applied, but the second rule was not. <a href="https://github.com/magento/magento2/issues/6294" target="_blank">(GITHUB-6294)</a> 
-
-
-
-
-### Images
-{:.no_toc} 
-
-<!--- 59829-->* We've added a new way to import images: You can now successfully import images when you set  your document root to  `<your Magento install dir>/pub`. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a> 
-
-<!--- 56171-->* You can now preview uploaded images. 
-
-
 
 
 ### Email
@@ -205,29 +102,6 @@ We address the following functional issues in this release.
 <!--- 56859-->* The **Send Welcome Email From** field now accurately identifies the store that the customer is associated with. 
 
 <!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento would not save this information, and threw an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
-
-
-### Static file processing
-{:.no_toc}
-
-<!--- 56076-->* Versioning of static files (including CSS, JS, fonts, and images) is now enabled by default.
-
-<!---59547-->* Static asset signing now works under nginx. For more information, see <a href="http://docs.magento.com/m2/ce/user_guide/system/static-file-signature.html" target="_blank">Using Static File Signatures</a>.
-
-
-### Scope
-{:.no_toc}
-
-<!--- 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento threw this error when you tried to assign products to a category: "Wrong request parameters". 
-
-<!--- 57002-->* A restricted user can now change the store view- or website- level attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
-
-<!--- 57004-->* The scope selector on the Product page now accurately displays all related websites for a restricted user. 
-
-
-
-
-
 
 ### General fixes
 {:.no_toc} 
@@ -280,6 +154,139 @@ We address the following functional issues in this release.
 
 
 <!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 
+
+<!--- 62030-->* Users need view permission to the store to which the customers belong in order to see information about those customers. Previously, a user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view. 
+
+
+### Images
+{:.no_toc} 
+
+<!--- 59829-->* We've added a new way to import images: You can now successfully import images when you set  your document root to  `<your Magento install dir>/pub`. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a> 
+
+<!--- 56171-->* You can now preview uploaded images. 
+
+
+### Import/Export
+{:.no_toc} 
+
+<!--- 55156-->* You can now export a bundle product that contains a custom text attribute. Previously, if you tried to export this type of bundle product, the export failed, and Magento displayed the message, "There is no data for the export". 
+
+<!--- 59413-->* You can now successfully import multiselect attributes that contain special characters or delimiters. Previously, when you tried to import attributes that contained delimiters, data validation (and the import) failed. 
+
+<!---58047 -->* Importing customer data no longer sets the Gender attribute to a blank field. 
+
+<!---57106-->* You can now import negative quantities.  
+
+<!--- 57162-->* Magento now prompts you to log in before attempting to upgrade. Previously, it was not clear that you needed to log in first before initiating an upgrade.  <a href="https://github.com/magento/magento2/issues/3059" target="_blank">(GITHUB-3059)</a> 
+
+<!--- 57491-->* Magento no longer randomly throws the following error during import after a file passes the data check: "Maximum error count has been reached or system error is occurred!". 
+
+
+<!--- 56803-->* We've fixed an issue with the representation of date and timezones of items in the product catalog during import or export. Previously, Magento converted all data into the default format (UTC-8), including values that you set to be displayed using another standard. 
+
+
+
+
+### Installation, upgrade, and deployment
+{:.no_toc} 
+
+<!--- 57082-->* The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension. 
+
+<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the var/session directory. We skip that directory because the web server usually owns those files, causing the permissions check to fail.
+
+<!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
+
+
+
+### Orders
+{:.no_toc} 
+
+<!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
+
+	* support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
+
+	* return the product to stock 
+
+	* change order status after a credit memo has been created.
+
+<!--- 57681-->* You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a>
+
+<!--- 57715-->* A user can view orders only on stores to which they've been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website. 
+
+
+
+### Payment methods
+{:.no_toc} 
+
+<!--- 57099-->* You can now successfully place an order using the Payflow Pro payment method. 
+
+<!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and threw this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
+
+
+
+### Performance
+{:.no_toc} 
+
+<!--- 60187, 55785,59394, 57894, 55300 -->* We’ve improved the performance of these tasks:
+
+	* Using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
+
+	* Loading the Configurable Product page
+
+	* Creating many (2500 - 5000) product variations
+
+	* Calculating batch sizes while indexing categories
+
+	* Compiling. (We’ve optimized compiler performance to run faster.)
+ 
+<!--- 57509-->* We've also streamlined the JavaScript bundling process, which reduces the size of bundled files. <a href="https://github.com/magento/magento2/issues/4506" target="_blank">(GITHUB-4506)</a> 
+
+
+
+### Scope
+{:.no_toc}
+
+<!--- 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento threw this error when you tried to assign products to a category: "Wrong request parameters". 
+
+<!--- 57002-->* A restricted user can now change the store view- or website- level attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
+
+<!--- 57004-->* The scope selector on the Product page now accurately displays all related websites for a restricted user. 
+
+
+### Static file processing
+{:.no_toc}
+
+<!--- 56076-->* Versioning of static files (including CSS, JS, fonts, and images) is now enabled by default.
+
+<!---59547-->* Static asset signing now works under nginx. For more information, see <a href="http://docs.magento.com/m2/ce/user_guide/system/static-file-signature.html" target="_blank">Using Static File Signatures</a>.
+
+
+
+
+### Web APIs
+{:.no_toc} 
+
+
+<!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to returned detailed information about a single object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
