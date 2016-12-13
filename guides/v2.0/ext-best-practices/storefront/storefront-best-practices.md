@@ -12,8 +12,6 @@ tablabel: Storefront
 tabweight: 40
 github_link: ext-best-practices/storefront/storefront-best-practices.md
 ---
-## {{page.menu_title}}
-{:.no_toc}
 
 The storefront theme is the front facing interface for a Magento application that can be customized through a [theme extension]({{page.baseurl}}frontend-dev-guide/themes/theme-general.html). We suggest adopting the following best practices to avoid common problems we have seen other developers make while making a theme extension.
 

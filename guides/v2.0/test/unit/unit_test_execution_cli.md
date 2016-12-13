@@ -11,11 +11,6 @@ version: 2.0
 github_link: test/unit/unit_test_execution_cli.md
 ---
 
-## Running unit tests on the CLI
-
-* TOC
-{:toc}
-
 ### Running all unit tests
 
 To run all tests, navigate to the Magento base directory and execute the following command:

@@ -10,12 +10,6 @@ version: 2.0
 github_link: config-guide/memcache/memcache.md
 ---
 
-#### Contents
-*	<a href="#config-memcache-over">Overview of memcached session storage</a>
-*	<a href="{{page.baseurl}}config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a>
-*   <a href="{{page.baseurl}}config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a>
-*	<a href="{{page.baseurl}}config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
-
 <h2 id="config-memcache-over">Overview of memcached session storage</h2>
 memcached is a general-purpose distributed memory caching system. It is often used to speed up dynamic database-driven websites by caching data and objects in RAM to reduce the number of times an external data source (such as a database or API) must be read. (Source: <a href="https://en.wikipedia.org/wiki/Memcached" target="_blank">Wikipedia</a>)
 

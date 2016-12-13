@@ -1,66 +1,32 @@
 
-		</div>
-		</div>
 	</div>
-
+	<!-- /.main-container -->
 
 </div>
-<!-- -->
-<!--Global footer-->
-<div id="footer-wrap">
-    <div id="copyright">
-        <div class="container">
-            <div class="copyright-date">&copy; {{ site.time | date: '%Y' }} Magento, Inc. All rights reserved.</div>
-            <div class="copyright-links">
-                <ul class="nav">
-                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
-                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
-                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
-                </ul>
-            </div>
-        </div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+				<li><a href="{{page.baseurl}}contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="{{page.baseurl}}release-notes/bk-release-notes.html">Release Notes</a></li>
+				<li><a href="{{site.baseurl}}magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
     </div>
+
+		<div class="copyright-date">&copy; {{ site.time | date: '%Y' }} Magento. All rights reserved.</div>
+
+  </div>
 </div>
+<!-- / #footer -->
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="{{ site.baseurl }}common/js/jsCookie.js"></script>
-<script src="{{ site.baseurl }}common/js/devdocs.js"></script>
-<script src="{{ site.baseurl }}common/js/jquery-ui.min.js"></script>
-
-<script type="text/javascript">
-    (function() {
-        var didInit = false;
-        function initMunchkin() {
-            if(didInit === false) {
-                didInit = true;
-                Munchkin.init('585-GGD-959', {cookieAnon: false});
-            }
-        }
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = '//munchkin.marketo.net/munchkin.js';
-        s.onreadystatechange = function() {
-            if (this.readyState == 'complete' || this.readyState == 'loaded') {
-                initMunchkin();
-            }
-        };
-        s.onload = initMunchkin;
-        document.getElementsByTagName('head')[0].appendChild(s);
-    })();
-</script>
-
-<script src="{{ site.baseurl }}js/app.js"></script>
-
-<!--Google Analytics-->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-66243208-1', 'auto');
-    ga('send', 'pageview');
-</script>
+{% include footer-scripts.html %}
 
 </body>
 </html>

@@ -11,19 +11,8 @@ github_link: pattern-library/templates/sign-in-form/sign-in-form.md
 redirect_from: /guides/v1.0/pattern-library/templates/sign-in-form/sign-in-form.html
 ---
 
-<h2> Sign In Form </h2>
-
-<h3> Contents </h3>
-
-* <a href="#overview">Overview</a>
-* <a href="#when-to-use">When to Use</a>
-* <a href="#interaction">Interaction and Behavior</a>
-* <a href="#style">Style</a>
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
-“Sign in” is used to log into the system, or to recover lost password.
+## Sign-in form
+"Sign in" is used to log into the system, or to recover a lost password.
 
 <h3 id="when-to-use">When to Use</h3>
 Use this pattern when user needs to sign into the system.

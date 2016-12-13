@@ -1,26 +1,131 @@
-.home-section {
-   padding: 40px 0 0 0;
+
+.home-intro {
+  padding: 30px 0 20px 0;
+  text-align: center;
+  background: $light-gray-color;
+  border-bottom: 1px solid $beige-color;
+
+  .search-form {
+    margin-top: 20px;
+    .input-group {
+      width: 100%;
+    }
+  }
+
 }
 
-.home-section .panel-separator {
-    margin-top: 50px
+
+.home-features {
+  text-align: center;
+  max-width: 1300px;
+  margin: 0 auto;
+
+  .feature {
+    vertical-align: top;
+    display: inline-block;
+    width: 32%;
+    padding: 20px 0 0;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 10px 0;
+  }
+
+  ul,li {
+    list-style: none;
+    margin: 0 0 5px 0;
+    padding: 0;
+  }
+
+  @media ( $small-screen ) {
+
+    .feature {
+      width: 100%;
+    }
+  }
+
+
 }
 
-.home-section h2 {
-    margin: 0 0 0.5em 0
-}
 
-.home-section h3 {
-    margin: 1.5em 0 0 0;
-    letter-spacing: 0.05em
-}
 
-.home-section h3 a {
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase
-}
 
-.home-section:last-child {
-    padding-bottom: 60px
+.home-contributors {
+
+  padding: 70px 0 0;
+  text-align: center;
+
+  .intro {
+    margin: 0 auto;
+    max-width: 50em;
+  }
+
+  .contributor {
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px 10px;
+    max-width: 210px;
+    min-width: 180px;
+    width: 33%;
+  }
+
+  .avatar {
+    display: inline-block;
+    max-width: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .name {
+    font-size: 16px;
+    line-height: 1.4em;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+  }
+
+  .role {
+    font-size: 14px;
+  }
+
+  /* there will be single contact link per person for now. this code is not needed
+  .contacts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      display: inline-block;
+      text-indent: -9999px;
+      width: 32px;
+      height: 32px;
+      background: #CCC;
+    }
+
+    .twitter {
+
+    }
+    .linkedin {
+
+    }
+    .github {
+
+    }
+    .web {
+
+    }
+    .mail {
+
+    }
+
+  }*/
+
 }

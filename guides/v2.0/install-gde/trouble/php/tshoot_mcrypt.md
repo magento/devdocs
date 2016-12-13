@@ -13,7 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/trouble/tshoot_mcrypt.html
 ---
 
-<h2 id="trouble-php-mycrypt">The PHP mcrypt extension is not installed properly</h2>
 
 ### Detail
 

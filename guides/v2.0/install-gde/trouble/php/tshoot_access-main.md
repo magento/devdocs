@@ -10,7 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/php/tshoot_access-main.md
 ---
 
-## Access issues
 *	[Cannot access Magento software in a web browser]({{ page.baseurl }}install-gde/trouble/tshoot_access-browser.html)
 *	[503 (Service Unavailable) errors accessing Magento software in a web browser]({{ page.baseurl }}install-gde/trouble/php/tshoot_mod_access_compat.html)
 *	[After installing, images and stylesheets do not load; only text displays, no graphics]({{ page.baseurl }}install-gde/trouble/tshoot_no-styles.html)

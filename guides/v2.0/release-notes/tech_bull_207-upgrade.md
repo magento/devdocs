@@ -1,17 +1,15 @@
 ---
 layout: default
 group: release-notes
-subgroup: Technical Bulletin
+subgroup: 05_techbull
 title: Technical Bulletin
 menu_title: Required patch for PHP 5.5.x and Setup Application environments (June 6, 2016)
 menu_node: 
 menu_order: 3
 version: 2.0
 github_link: release-notes/tech_bull_207-upgrade.md
-redirect_from: 
 ---
 
-<h2>Required patch for PHP 5.5.x and Setup application 10.0.1 environments (June 6, 2016)</h2>
 This bulletin informs you of a known issue updating from Magento EE and CE environments that run the following:   
 
 * PHP 5.5.x

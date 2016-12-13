@@ -10,15 +10,7 @@ github_link: frontend-dev-guide/css-topics/css-preprocess.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 ---
 
-## What's in this topic {#preproc_over}
-{:.no_toc}
-
 The topic describes how stylesheets are preprocessed and compiled to CSS in the Magento application. It provides the theoretical background a frontend developer needs to debug stylesheets effectively.
-
-**Contents**
-
-* TOC
-{:toc}
 
 ## Terms used {#css_preprocess_terms}
 
@@ -164,7 +156,7 @@ But in process of resolving the file path, Magento adds the `.less` extension fo
 @import (css) 'styles.less';
 {%endhighlight%}
 
-As a result, the processed files are different from the source files. So in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md), Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the `pub/static` directory. In case of importing CSS resources, this also results in not finding and not importing the required files. 
+As a result, the processed files are different from the source files. So in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md), Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the `pub/static` directory. In case of importing CSS resources, this also results in not finding and not importing the required files.
 
 ### Importing remote CSS files
 
@@ -252,5 +244,3 @@ Example of how <code>@magento_import</code> is used and processed in <code>&lt;M
       </tr>
    </tbody>
 </table>
-
-

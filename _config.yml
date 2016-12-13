@@ -11,14 +11,14 @@ baseurl: "/"
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-# Version Switcher
-version: 2.1
+# Version Switcher. Version numbers should be STRING
+version: "2.1"
 versions:
    -
-      name: 2.0
+      name: "2.0"
       url: guides/v2.0/
    -
-      name: 2.1
+      name: "2.1"
       url: guides/v2.1/
 
 # GitHub variables

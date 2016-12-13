@@ -41,7 +41,8 @@ If a module's check box is unavailable, some other module depends on it. In the 
 For example, `Magento_GoogleAnalytics` can be disabled only if `Magento_GoogleOptimizer` is disabled first. Conversely, if both modules are disabled, you must enable `Magento_GoogleAnalytics` first.
 
 The following figure shows an example of disabling the `Magento_GoogleAnalytics` and `Magento_GoogleOptimizer` modules.
-<img src="{{ site.baseurl }}common/images/install_wizard_disable-google.png">
+
+![Disabling a module]({{ site.baseurl }}common/images/install_wizard_disable-google.png)
 
 <h4 id="instgde-install-magento-web-step4-depend2">Module dependency errors</h4>
 A dependency error occurs when two inter-dependent modules are disabled at the same time. 

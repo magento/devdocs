@@ -1,7 +1,7 @@
 ---
 layout: default
 group: get-started
-subgroup: A_Concepts
+subgroup: Testing
 title: Web API functional testing
 menu_title: Web API functional testing
 menu_order: 1
@@ -15,8 +15,6 @@ redirect_from: /guides/v1.0/get-started/web-api-functional-testing.html
 
 The Web API testing framework allows you to test Magento Web API from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP adapter that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
 
-* TOC
-{:toc}
 
 <h2 id="details">Implementation Details</h2>
 

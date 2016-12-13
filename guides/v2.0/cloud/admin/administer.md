@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/admin/administer.md
 ---
 
-## Other administrative tasks
 These topics discuss various aspects of managing your project:
 
 *	[Manage users]({{page.baseurl}}cloud/admin/admin-user-admin.html)

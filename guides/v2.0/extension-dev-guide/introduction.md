@@ -1,7 +1,7 @@
 ---
 layout: default
-group: 
-subgroup: 
+group:
+subgroup:
 title: Introduction
 menu_title: Introduction
 menu_order: 1
@@ -10,10 +10,8 @@ github_link: extension-dev-guide/introduction.md
 redirect_from: /guides/v1.0/extension-dev-guide/introduction.html
 
 ---
-## {{page.menu_title}}
 
-
-This guide is for developers that are building a new *component* from scratch for custom extension of Magento functionality. 
+This guide is for developers that are building a new *component* from scratch for custom extension of Magento functionality.
 
 ## Magento is made up of the following types of components:
 
@@ -43,7 +41,7 @@ An *extension* is a component that are packaged for sale on Magento Marketplace.
 
 
 ## Magento module example
-Modules are declared in the `module.xml` file. Here is a minimal example: 
+Modules are declared in the `module.xml` file. Here is a minimal example:
 
 {% highlight XML %}
     <?xml version="1.0"?>
@@ -58,4 +56,3 @@ Modules are declared in the `module.xml` file. Here is a minimal example:
 Get your feet wet quickly and build <a href="{{page.baseurl}}extension-dev-guide/build_a_simple_module.html">a simple Magento module</a>.
 
 Or jump right in and use <a href="{{page.baseurl}}extension-dev-guide/worksheet.html">a worksheet</a> that steps you through a complete best practice method to build, test, and package a Magento module.
-

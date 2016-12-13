@@ -15,8 +15,6 @@ github_link: architecture/versioning.md
 redirect_from: /guides/v1.0/architecture/version_store.html
 ---
 
-## Where is version information stored? {#verpol}
-
 Both software version numbers and product version numbers are found in the `version` field of the component's or metapackage's `composer.json` file.
 
 For example, you can declare software version as a version of the component:

@@ -10,13 +10,6 @@ version: 2.0
 github_link: cloud/env/environments-start.md
 ---
 
-## Get started with an environment {#cloud-env-start}
-This topic shows how to get started working on an environment:
-
-*	[Connect to the environment using Secure Shell (SSH)](#env-start-ssh)
-*	[Common commands](#env-start-comm)
-*	[SSH to an environment](#env-start-ssh)
-
 ## Connect to the environment using Secure Shell (SSH) {#env-start-ssh}
 Before you can use SSH to connect to an environment, you must add your [SSH public key]({{page.baseurl}}cloud/before/before-workspace.html#cloud-ssh-cli-ssh) 
 to your account. For security reasons, in order to add your public key to a production or staging environment,

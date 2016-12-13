@@ -12,7 +12,6 @@ version: 2.0
 github_link: install-gde/system-requirements_repo-tls1-2.md
 ---
 
-## TLS 1.2 requirement for repo.magento.com
 {% include install/tls-repo.md %}
 
 ### Solution

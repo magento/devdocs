@@ -10,12 +10,6 @@ github_link: architecture/archi_perspectives/service_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/service_layer.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## What is a Service layer?
 
 The service layer provides a bridge between the presentation layer and the model layer of domain logic and resource-specific data. This is implemented using *service contracts*, which are defined using PHP interfaces.

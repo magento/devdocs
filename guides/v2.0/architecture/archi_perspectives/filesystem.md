@@ -10,6 +10,4 @@ github_link: architecture/archi_perspectives/filesystem.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/filesystem.html
 ---
 
-## Magento filesystem
-
 This document is not ready yet, but we are working on it.

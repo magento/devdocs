@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/project/projects.md
 ---
 
-## Manage your projects
 A Magento Enterprise Cloud Edition *project* is a container for your *applications*. Applications have *environments* and *services* that run on them. (Examples of services include database, web server, and caching server.)
 
 The project's `master` branch corresponds to your live Magento store; that is, you work in Git branches (each branch corresponds on an environment) and, when you're done, you merge with the `master` branch, which is deployed to the live cloud.

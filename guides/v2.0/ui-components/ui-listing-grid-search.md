@@ -11,8 +11,6 @@ github_link: ui-components/ui-listing-grid-search.md
 redirect_from: /guides/v2.0/ui-library/ui-listing-grid-search.html
 ---
 
-<h3 id="search">Grid search indexing</h3>
-
 You should index data for the performance reasons. Indexing is a process of "materializing" complex data in needed scopes to avoid problems of reading it.
 
 Index data can be always re-created from the original data using certain algorithm.

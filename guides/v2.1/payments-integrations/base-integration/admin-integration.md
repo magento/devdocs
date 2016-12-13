@@ -9,7 +9,7 @@ version: 2.1
 github_link: payments-integrations/base-integration/admin-integration.md
 ---
 
-You can define whether the payment method is available for the storefront and checkout in the [payment method configuration in `config.xml`]({{page.baseurl}}payments-integrations/base-integration/payment-options-config.html):
+You can define whether the payment method is available for the storefront and checkout in the [payment method configuration in `config.xml`]({{page.baseurl}}payments-integrations/base-integration/payment-option-config.html):
 
 - `can_use_checkout`: whether payment method is available in storefront checkout
 - `can_use_internal`: whether payment method is available in Admin order creation 

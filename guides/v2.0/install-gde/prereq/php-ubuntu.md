@@ -12,16 +12,6 @@ github_link: install-gde/prereq/php-ubuntu.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 ---
 
-#### Contents
-
-*	[PHP versions supported](#php-support)
-*	<a href="#php-ubuntu-help-beginner">Help if you're just starting out</a>
-*	<a href="#ubuntu-verify-php">Verify PHP is installed</a>
-*	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
-*	[PHP 5.6 on Ubuntu 14](#php-56-on-ubuntu-14)
-*	[PHP 5.5 on Ubuntu 14](#php-55-on-ubuntu-14)
-*	[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
-
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>If you must install both Apache and PHP, <a href="{{page.baseurl}}install-gde/prereq/apache.html">install Apache</a> first.</p></span>

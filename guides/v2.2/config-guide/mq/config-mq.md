@@ -8,8 +8,6 @@ menu_order: 2
 version: 2.2
 github_link: config-guide/mq/config-mq22.md
 ---
-## {{page.menu_title}}
-{:.no_toc}
 
 The message queue topology is an Enterprise Edition feature. It can be included as part of EE installation, or you can add it existing modules.
 

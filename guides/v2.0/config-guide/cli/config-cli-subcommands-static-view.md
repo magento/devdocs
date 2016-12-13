@@ -11,14 +11,6 @@ github_link: config-guide/cli/config-cli-subcommands-static-view.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
 ---
 
-
-#### Contents
-
-*	<a href="#config-cli-static-overview">Overview of static view files deployment</a>
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-xlate-dict">Deploy static view files</a>
-*	<a href="#view-file-trouble">Troubleshooting the static view files deployment tool</a>
-
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
 The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
 

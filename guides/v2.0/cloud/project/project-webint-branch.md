@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/project/project-webint-branch.md
 ---
 
-## Manage environments (branches) {#project-branch}
 A Magento Enterprise Cloud Edition *environment* is a Git *branch* and you can manage your environments using either the Web Interface, the Magento Enterprise Cloud Edition CLI, or Git commands.
 
 For more information about managing environments using the CLI, see [Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html).

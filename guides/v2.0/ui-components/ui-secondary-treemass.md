@@ -12,8 +12,6 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-treemass.html
 
 ---
 
-<h3 id="treemass">UI TreeMassAction Component</h3>
-
 TreeMassAction Component is extension to MassAction component that provides nested sub-menu. 
 
 The TreeMassAction JS component is used by the TwoStepMassAction component.

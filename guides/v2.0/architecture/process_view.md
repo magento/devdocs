@@ -10,12 +10,7 @@ github_link: architecture/process_view.md
 redirect_from: /guides/v1.0/architecture/process_view.html
 ---
 
-## Process view
-
 This page is a draft plan; please do not refere to it as a Magento Developer document.
-
-* TOC
-{:toc}
 
 ## Object connection overview
 

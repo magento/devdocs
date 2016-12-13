@@ -11,18 +11,6 @@ github_link: config-guide/cli/config-cli-subcommands.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands.html
 ---
 
-  
-#### Contents
-
-See one of the following sections:
-
-*	<a href="#config-install-cli-prereq">Before you configure the Magento application</a>
-*	<a href="#config-install-cli-first">First steps</a>
-*	<a href="#config-cli-summary">Command summary</a>
-*	<a href="#config-cli-help">Help commands</a>
-*	<a href="#config-cli-subcommands-common">Common arguments</a>
-*	<a href="#config-cli-subcommands">Commands</a>
-
 <h2 id="config-install-cli-prereq">Before you configure the Magento application</h2>
 {% include install/before-you-begin-cli.html %}
 

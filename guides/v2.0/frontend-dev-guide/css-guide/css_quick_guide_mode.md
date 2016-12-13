@@ -21,12 +21,6 @@ In our examples we will change the color and font of the primary buttons. The de
 
 <img src="{{site.baseurl}}common/images/extend_less_screenshot0.png" alt="Admin login page with the default view of the primary buttons">
 
-<h3>Contents</h3>
-- <a href="#first_step">First step: Create and apply a theme</a>
-- <a href="#server-side">Making simple style changes in server-side compilation mode</a>
-- <a href="#server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</a>
-- <a href="#client-side">Making simple style changes in client-side compilation mode</a>
-
 <h2 id="first_step">First step: Create and apply a theme</h2>
 
 1. Create a new theme as described in the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a> topic. In your `theme.xml` specify Magento Luma or Magento Blank as a parent theme.

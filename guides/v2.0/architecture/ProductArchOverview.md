@@ -10,13 +10,7 @@ github_link: architecture/ProductArchOverview.md
 redirect_from: /guides/v1.0/architecture/ProductArchOverview.html
 ---
 
-## Product Architecture Overview
-{:.no_toc}
-
 This page is a draft plan; please do not refere to it as a Magento Developer document.
-
-* TOC
-{:toc}
 
 ## Introduction
 

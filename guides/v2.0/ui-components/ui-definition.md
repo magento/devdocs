@@ -11,8 +11,6 @@ redirect_from: /guides/v2.0/ui-library/ui-definition.html
 
 ---
 
-<h2 id="example">definition.xml</h2>
-
 {% highlight XML %}
 <?xml version="1.0" encoding="UTF-8"?>
 <!--

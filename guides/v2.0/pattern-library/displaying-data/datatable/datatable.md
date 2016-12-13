@@ -10,28 +10,7 @@ version: 2.0
 github_link: pattern-library/displaying-data/datatable/datatable.md
 ---
 
-<h2>Data Table</h2>
-
-<h3>Contents</h3> 
-* <a href="#overview">Overview</a>
-* <a href="#datatable">Data-table</a>
-* <a href="#pagination">Pagination</a>
-* <a href="#massactions">Mass Actions</a>
-* <a href="#message">Messaging and Confirmation</a>
-* <a href="#tablecontrol">Table Control</a>
-* <a href="#stickyheaders">Sticky Headers and Controls</a>
-* <a href="#search">Search</a>
-* <a href="#filters">Filters</a>
-* <a href="#datatableviews">Data Table Views</a>
-* <a href="#selectall">Select All</a>
-* <a href="#editing">Editing</a>
-* <a href="#misc">Miscellaneous Features</a>
-* <a href="#interactions">Interactions</a>
-* <a href="#summary">Summary</a>
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
+## Data table
 The data-table organizes complex data into a tabular view. Each data record has its own row with data elements presented in columns with meaningful column headings. This allows users to quickly scan and understand complex data and perform actions against the data. 
 
 Data-table requirements for Magento 2 include:

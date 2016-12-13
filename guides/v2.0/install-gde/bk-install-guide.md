@@ -3,6 +3,7 @@ layout: default
 group: install2
 subgroup: Getting Started
 title: How to get the Magento software
+landing-page: Installation Guide
 menu_title: How to get the Magento software
 menu_node: 
 menu_order: 1

@@ -13,14 +13,6 @@ redirect_from:
   - /guides/v2.0/architecture/behavior/xlate.html
 ---
 
-#### Contents
-
-*	<a href="#m2devgde-xlate-intro">Overview of translations</a>
-*	<a href="#m2devgde-xlate-translating">Manually translate words and phrases</a>
-*	<a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a>
-*	<a href="#m2devgde-xlate-languagepack">Language packages</a>
-
-
 <h2 id="m2devgde-xlate-intro">Overview of translations</h2>
 The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.
 
