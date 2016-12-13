@@ -1,7 +1,7 @@
 ---
 layout: default
 group: get-started
-subgroup: E_Testing
+subgroup: Testing
 title: Web API functional testing
 menu_title: Web API functional testing
 menu_order: 1
