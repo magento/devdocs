@@ -11,11 +11,6 @@ github_link: config-guide/bootstrap/mage-dirs.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/mage-dirs.html
 ---
 
-#### Contents
-*	<a href="#dirs-introduction">Introduction to Magento base directory paths</a>
-*	<a href="#dirs-set">Set MAGE_DIRS</a>
-
-
 <h2 id="dirs-introduction">Introduction to Magento base directory paths</h2>
 The `MAGE_DIRS` environment variable enables you to specify custom base directory paths and fragments of base URLs that are used by the Magento application to build absolute paths to various files or for generating URLs. 
 

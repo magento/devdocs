@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/before/before-repos.md
 ---
 
-## Magento Enterprise Cloud Edition repositories {#cloud-repos}
 We use Git to manage your environments (branches) and to deploy them to branch-specific web sites as well as to your production site. Thus, you can use your already-established Git workflow with Magento Enterprise Cloud Edition or you can create a new workflow.
 
 Magento Enterprise Cloud Edition provides a Git server. This server is always available and it's used to deploy the `master` branch to your production site. However, this Git server lacks the GitHub interface and it's not very well suited for use with a development team.

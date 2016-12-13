@@ -10,12 +10,6 @@ version: 2.0
 github_link: install-gde/install/legacy-file-system-perms.md
 ---
 
-#### Contents 
-
-*	[Overview: Magento file system ownership and appendix (legacy)](#appendix-over)
-*	[Summary of file system permissions](#appendix-summary)
-*	[Set permissions before installing the Magento software](#appendix-install)
-
 ## Overview: Magento file system ownership and appendix (legacy) {#appendix-over}
 This topic is provided for convenience for anyone using Magento Community Edition (CE) or Magento Enterprise Edition (EE) versions 2.0.0&ndash;2.0.5. 
 

@@ -1,59 +1,70 @@
 
 .sidebar {
-   float: left;
-   width: 23%;
-   padding: 40px 0 40px 0
+  float: left;
+  width: 20%;
+  padding:0 0 40px 0;
+
+  .sidebar-wrapper {
+    background: $light-gray-color;
+    padding: 10px 0 20px;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+      list-style: none;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.3em
+    }
+
+    a, span {
+      color: $body-font-color;
+      display: block;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.3em;
+      font-weight: normal;
+    }
+  }
+
+  h4 {
+    color: #7b756b;
+  }
+
+  .has-children {
+    margin-top: 1em;
+  }
+
 }
 
 .toc-toggler {
-   display: none;
+  display: none;
 }
 
-.sidebar .sidebar-wrapper {
-   background: #f7f3eb;
-   padding: 20px 0;
-}
 
-.sidebar h4 {
-   color: #7b756b;
-}
 
-.sidebar ul {
-   list-style: none;
-   margin: 0;
-}
 
-.sidebar .sidebar-wrapper ul li {
-   margin: 0;
-   font-size: 14px;
-   line-height: 1.3em
-}
-
-.sidebar ul .has-children {
-   margin-top: 1em;
-}
-
-.sidebar ul a, .sidebar ul span {
-   display: block;
-   padding: 6px 12px;
-   font-size: 14px;
-   line-height: 1.3em;
-   font-weight: normal
-}
 
 .sidebar ul span {
-   color: #7b756b;
+  color: #7b756b;
 }
 
 .sidebar ul a:hover {
-   background: #f4efe4;
+  background: $dropdown-link-hover-bg;
 }
 
 .sidebar ul .nav-header {
-   text-transform: uppercase;
-   font-weight: 700;
-   letter-spacing: 0.06em;
-   margin-top: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-top: 12px;
 }
 
 .sidebar ul .nav-header > a, .sidebar ul .nav-header span {
@@ -62,13 +73,11 @@
 }
 
 .sidebar ul .active > a {
-   color: #31302b;
-   background: #f0e8d9;
+  color: $body-font-color;
+  background: darken( $dropdown-link-hover-bg, 5%);
 }
 
-.sidebar ul .level-2 {
-   list-style: none;
-}
+
 
 .sidebar ul .level-2 a, .sidebar ul .level-2 span {
    padding-left: 18px;
@@ -76,15 +85,14 @@
 
 /* Add style for TOC Header in sidebar.html include */
 .sidebar .sidebar-wrapper h4 {
-   margin: 10px 10px 5px 14px;
-   color: rgba(97, 57, 42, 0.99);
-   text-transform: capitalize;
+  margin: 10px 10px 5px 14px;
+  text-transform: capitalize;
 }
 
 // Toggler for level 3
 
 .sidebar ul li.level3Child {
-   display: none;
+  display: none;
 }
 
 .sidebar ul li.level3Child a {
@@ -116,4 +124,68 @@
 
 .sidebar ul li.level3Parent a {
    text-decoration: none;
+}
+
+
+@media ( $medium-screen ) {
+
+  .sidebar {
+    width: 100%;
+    padding: 0;
+    float: none;
+
+    .sidebar-wrapper {
+      max-height: 0;
+      overflow: hidden;
+      transition: all .2s;
+      padding: 0;
+    }
+
+  }
+
+  .sidebar ul a, .sidebar ul span {
+    padding: 10px 20px;
+  }
+
+  .sidebar-wrapper ul {
+    margin-bottom: 20px;
+  }
+
+  .expanded .sidebar-wrapper {
+    max-height: 9999px;
+  }
+
+  .toc-toggler {
+    position: relative;
+    display: block;
+    background: $light-gray-color;
+    padding: 12px 20px;
+
+    &, &:visited {
+      color: $body-font-color;
+    }
+  }
+
+  .toc-toggler:active, .toc-toggler:hover {
+    text-decoration: none;
+  }
+
+  .toc-toggler::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top:18px;
+    right: 18px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 6px 0 6px;
+    border-color: $body-font-color transparent transparent transparent;
+    transition: all .2s;
+  }
+
+  .expanded .toc-toggler::after {
+    transform: rotate(180deg);
+  }
+
 }

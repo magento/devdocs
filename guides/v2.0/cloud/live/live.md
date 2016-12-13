@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/live/live.md
 ---
 
-## Go live
 This section outlines the tasks you must perform before you can launch your live Magento store. 
 
 To go live:

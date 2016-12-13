@@ -1,54 +1,44 @@
 
 .bs-callout {
-   position: relative;
-   margin: 20px 0 20px 0;
-   padding: 20px;
-   background: #e4f0f5
+  position: relative;
+  margin: 20px 0 20px 0;
+  padding: 15px;
+  background: #e4f0f5
 }
 
 .bs-callout:before {
-   display: block;
-   position: absolute;
-   content: '';
-   width: 30px;
-   height: 30px;
-   top: 20px;
-   left: 16px;
-   background-size: cover
+  display: block;
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 30px;
+  top: 12px;
+  left: 15px;
+  background-repeat: no-repeat;
 }
 
 .bs-callout-info {
-   padding-left: 60px
+  padding-left: 60px
 }
 
 .bs-callout-info:before {
-   background-image: url(/i/icon_note.png)
+  background-image: url(../i/icons/info.svg);
 }
 
 .bs-callout-warning {
-   padding-left: 60px;
-   background: #fcebce
+  padding-left: 60px;
+  background: #fcebce
 }
 
 .bs-callout-warning:before {
-   background-image: url(/i/icon_important.png)
+  background-image: url(../i/icons/warning.svg);
 }
 
 .bs-callout-tip {
-   padding-left: 60px;
-   background: #e7eecd
+  padding-left: 60px;
+  background: #e7eecd
 }
 
 .bs-callout-tip:before {
-   background-image: url(/i/icon_tip.png)
-}
-
-.bs-callout-danger {
-   padding-left: 60px;
-   color: #cc0000;
-   background: #f6e9e3
-}
-
-.bs-callout-danger:before {
-   background-image: url(/i/icon_caution.png)
+  background-image: url(../i/icons/tip.svg);
 }

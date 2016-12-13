@@ -13,13 +13,6 @@ github_link: config-guide/cache/caching-cache-type.md
 redirect_from: /guides/v2.0/config-guide/config/caching-cache-type.html
 ---
 
-#### Contents  
-
-*	<a href="#m2devgde-cache-type">Create a cache type</a>
-* <a href="#m2devgde-cache-more">More information about caching</a>
-
-<h2 id="m2devgde-cache-type">Create a cache type</h2>
-
 A *cache type* enables you to specify what is cached and enables merchants to clear that cache type using the Cache Management page in the Magento Admin.
 
 The tag *scope* provides a mechanism for a cache type.

@@ -10,13 +10,6 @@ github_link: config-guide/config/config-files.md
 redirect_from: /guides/v1.0/config-guide/config/config-files.html
 ---
 
-
-#### Contents
-
-*  <a href="#config-files-overview">Overview of module configuration files</a>
-*  <a href="#config-files-loadmerge">Configuration load and merge</a>
-*  <a href="#config-files-classes">Configuration types, objects, and interfaces</a>
-
 <h2 id="config-files-overview">Overview of module configuration files</h2>
 The responsibilities of the `config.xml` configuration file used in earlier versions of Magento is now divided between several files, located in various module directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
 

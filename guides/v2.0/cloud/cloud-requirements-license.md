@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/cloud-requirements-license.md
 ---
 
-## License and authentication requirements
 You must have all of the following to use Magento Enterprise Cloud Edition:
 
 *	[An account]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct)

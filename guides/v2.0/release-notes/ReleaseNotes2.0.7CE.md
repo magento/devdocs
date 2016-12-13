@@ -1,15 +1,16 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
+subgroup: 02_rel-notes
 title: Magento CE 2.0.7 Release Notes 
 menu_title: Magento CE 2.0.7 Release Notes 
-menu_order: 13
+menu_order: 188
+level3_menu_node: level3child
+level3_subgroup: ce20-relnotes
 version: 2.0
 github_link: release-notes/ReleaseNotes2.0.7CE.md
 ---
 
-<h2>Magento Community Edition 2.0.7</h2>
 We are pleased to present Magento Community Edition 2.0.7. This release includes one functional fix. 
 
 

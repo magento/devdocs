@@ -10,12 +10,6 @@ github_link: architecture/view/xml-schema-layout.md
 redirect_from: /guides/v1.0/architecture/view/xml-schema-layout.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview {#m2devgde-xml-layout-intro}
 
 <p>In the Magento system, you define application page layouts in XML files, also known as <i>layouts</i>.</p>

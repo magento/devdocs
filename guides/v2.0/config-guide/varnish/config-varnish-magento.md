@@ -10,7 +10,6 @@ version: 2.0
 github_link: config-guide/varnish/config-varnish-magento.md
 ---
 
-<h2 id="config-varnish-magento">Configure Magento to use Varnish</h2>
 To configure Magento to use Varnish:
 
 1.	Log in to the Magento Admin as an administrator.

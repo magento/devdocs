@@ -9,12 +9,6 @@ version: 2.1
 github_link: ui_comp_guide/ui_comp_list_concept.md
 ---
 
-## {{page.menu_title}}  
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## What's in this topic
 This page will contain a list of all Magento UI components. This topic is being updated.
 

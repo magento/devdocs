@@ -2,6 +2,7 @@
 layout: default
 group: ext-best-practices
 title: Best Practices for Extension Developers
+landing-page: Best Practices for Extension Developers
 menu_title: Introduction
 menu_order: 1
 version: 2.0
@@ -11,8 +12,6 @@ tabgroup: best-practices
 tablabel: Home
 tabweight: 0
 ---
-
-## {{page.menu_title}}
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>DRAFT/PROPOSAL: This Best Practices Guide is a first draft! The guide combines Best Practices that we have heard the community ask for, along with guidelines that our Magento UX, Engineering, and Product teams are working on.

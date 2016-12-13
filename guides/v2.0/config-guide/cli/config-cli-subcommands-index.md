@@ -11,14 +11,6 @@ github_link: config-guide/cli/config-cli-subcommands-index.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-index.html
 ---
 
-
-#### Contents
-
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-index-status">View indexer status</a>
-*	<a href="#config-cli-subcommands-index-reindex">Reindex</a>
-*	<a href="#config-cli-subcommands-index-conf">Configure indexers</a>
-
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.

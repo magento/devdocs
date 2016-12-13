@@ -9,9 +9,6 @@ version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_architecture_concept.md
 ---
 
-##  {{page.menu_title}}
-{:.no_toc}
-
 A UI component instance is, basically, a JavaScript object.
 
 A UI component can be configured in `.xml` or `.phtml` or even in `.php`, or created dynamically inside another component. Typically, any UI component instance is bound to some `.html` template.

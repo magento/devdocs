@@ -14,8 +14,6 @@ redirect_from:
 ---
 
 
-<h2 id="install-trouble-cannot-clone">Cannot clone the Magento GitHub repository</h2>
-
 ### Detail
 
 Error is similar to the following:

@@ -10,7 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/tshoot_install-issues.md
 ---
 
-<h2 id="known-devbeta-xdebug">Known issue with xdebug</h2>
 If you use the optional PHP extension `xdebug`, you can encounter exceptions:
 
 *   During installation 

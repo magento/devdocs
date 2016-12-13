@@ -13,10 +13,6 @@ redirect_from:
   - guides/v2.1/config-guide/varnish/config-use-varnish.html
 ---
 
-#### Contents
-*	<a href="#use-varnish-magento-purge">Varnish purging</a>
-*	<a href="#use-varnish-magento-purge">Configure Magento to purge Varnish</a>
-
 This topic discusses the basics of using Varnish as a web caching accelerator for Magento.
 
 <h2 id="use-varnish-magento-purge">Varnish purging</h2>

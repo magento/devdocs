@@ -3,6 +3,7 @@ layout: default
 group: compman
 subgroup: 01_Introduction
 title: Upgrade the Magento application and components
+landing-page: System Upgrade Guide
 menu_title: Upgrade the Magento application and components
 menu_node: parent
 menu_order: 1
@@ -10,7 +11,6 @@ version: 2.0
 github_link: comp-mgr/bk-compman-upgrade-guide.md
 ---
 
-<h2>Upgrade the Magento application and components</h2>   
 This topic discusses the ways you can:
 
 *	Upgrade (that is, *patch*) the Magento software from version 2.0.0 to 2.0.1, for example

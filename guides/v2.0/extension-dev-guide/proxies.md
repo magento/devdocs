@@ -10,7 +10,6 @@ contributor_link: http://www.classyllama.com/
 version: 2.0
 github_link: extension-dev-guide/proxies.md
 ---
-## {{page.menu_title}}
 
 Magento's <a href="{{page.baseurl}}extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor injection pattern</a> enables you to flexibly manage your class dependencies. However, constructor injection also means that a chain reaction of object instantiation is often the result when you create an object. (The original object has dependencies that have dependencies, and those objects have dependencies, and so on.)
 

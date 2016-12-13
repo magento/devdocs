@@ -2,6 +2,7 @@
 layout: default
 group: jsdg
 title: JavaScript Developer Guide
+landing-page: JavaScript Developer Guide
 menu_title: Introduction
 menu_order: 1
 version: 2.0
@@ -24,7 +25,7 @@ Topics of this book describe the following:
 - [Magento jQuery widgets]({{page.baseurl}}javascript-dev-guide/widgets/jquery-widgets-about.html): Magento jQuery widget API documentation.
 - [Customizing JavaScript illustration]({{page.baseurl}}javascript-dev-guide/javascript/js_practice.html): practical illustration of custom widgets related tasks.
 
-
+JavaScript automatic testing is described in a separate [JavaScript unit testing]({{page.baseurl}}test/js/jasmine.html) topic.
 
 <h2 id="js_terms">Terms used</h2>
 

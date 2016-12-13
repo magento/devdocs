@@ -10,21 +10,8 @@ version: 2.0
 github_link: pattern-library/containers/staticContentContainer/contentContainer.md
 redirect_from: /guides/v1.0/pattern-library/containers/staticContentContainer/contentContainer.html
 ---
-<h2> Static Content Container </h2>
 
-<h3> Contents </h3>
-
-*	<a href="#overview">Overview</a>
-*	<a href="#when-to-use">When to Use</a>
-* <a href="#when-no-to-use">When Not to Use</a>
-* <a href="#rule">Rule</a>
-* <a href="#variations">Variations</a>
-* <a href="#assets">Assets</a>
-
-
-
-<h3 id="overview">Overview</h3>
-
+## Static Content Container 
 Within the Magento application, it is often necessary to display static information to the users. These static content are considered Content Container and should follow the guideline in this article.
 
 For solutions not described in this article or for further information, please contact the Magento UX Design Team.

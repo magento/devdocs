@@ -16,13 +16,6 @@ The alert widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view
 
 The widget can be used for implementing alert windows for both Admin and storefront. The design patterns for the pop-up modal windows in the Admin are described in the <a href="{{page.baseurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
-<h3>Contents</h3>
-
-- <a href="#alert_initialize">Initialize the alert widget</a>
-- <a href="#alert_options">Options</a>
-- <a href="#alert_events">Events</a>
-- <a href="#alert_key_navigation">Keyboard navigation</a>
-
 <h2 id="alert_initialize">Initialize the alert widget</h2>
 
 The alert widget can be initialized with or without binding to a certain element.

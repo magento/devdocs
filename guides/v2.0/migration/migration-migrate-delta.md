@@ -11,12 +11,6 @@ github_link: migration/migration-migrate-delta.md
 redirect_from: /guides/v1.0/migration/migration-migrate-delta.html
 ---
 
-## Migrate incremental changes
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 Incremental migration enables you to migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:

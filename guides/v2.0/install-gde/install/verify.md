@@ -11,15 +11,6 @@ github_link: install-gde/install/verify.md
 redirect_from: /guides/v1.0/install-gde/install/verify.html
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core -->
-
-#### Contents 
-
-*	<a href="#instgde-verify-front-sample">Verify the storefront (with optional sample data)</a>
-*	<a href="#instgde-verify-front">Verify the storefront (no sample data)</a>
-*	<a href="#instgde-verify-admin">Verify the Magento Admin</a>
-
 <h2 id="instgde-verify-front-sample">Verify the storefront (with optional sample data)</h2>
 Go to the storefront in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, enter it in your browser's address or location bar.
 

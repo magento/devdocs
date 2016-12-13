@@ -13,16 +13,6 @@ redirect_from:
   - /guides/v2.0/install-gde/install/install-cli-adminurl.html
 ---
 
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-install-cli-first">First steps</a>
-*	<a href="#instgde-cli-subcommands-store-prereq">Prerequisites</a>
-*	<a href="#instgde-cli-displayurl">Display the Admin URL</a>
-*	<a href="#instgde-cli-changeurl">Change the Admin URL</a>
-
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.

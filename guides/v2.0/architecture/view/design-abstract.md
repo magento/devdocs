@@ -10,12 +10,6 @@ github_link: architecture/view/design-abstract.md
 redirect_from: /guides/v1.0/architecture/view/design-abstract.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview {#m2devgde-design-abstract-intro}
 
 A *design abstraction* is a layout file (a set of layout instructions) that does not have its own implementation as a page rendered by a certain controller action (page type), but could be used by one or more of such pages to define the look and feel of a page. Design abstractions are used to qualify pages by type, providing business users the ability to customize designs for certain types of pages. In particular design abstractions are used in widget creation to define the types of pages where a widget can be displayed.

@@ -9,7 +9,6 @@ version: 2.0
 github_link: mtf/mtf_quickstart/mtf_quickstart_runtest.md
 redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html
 ---
-<h2 id="mtf_quickstart_testrun">Test run</h2>
 
 All tests classified by categories in corresponding directories in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento`.
 

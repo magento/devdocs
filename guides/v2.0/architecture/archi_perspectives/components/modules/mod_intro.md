@@ -14,12 +14,6 @@ redirect_from:
   - /guides/v2.0/architecture/modules/mod_intro.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## What is a Magento module? {#arch-modules-overview}
 
 A <i>module</i> is a logical group -- that is, a directory containing blocks, controllers, helpers, models -- that are related to a specific business feature. In keeping with Magento's commitment to optimal modularity, a module encapsulates one feature and has minimal dependencies on other modules.

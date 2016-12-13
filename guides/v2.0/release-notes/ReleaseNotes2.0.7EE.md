@@ -1,15 +1,16 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
+subgroup: 02_rel-notes
 title: Magento EE 2.0.7 Release Notes 
 menu_title: Magento EE 2.0.7 Release Notes 
-menu_order: 14
+menu_order: 288
+level3_menu_node: level3child
+level3_subgroup: ee20-relnotes
 version: 2.0
 github_link: release-notes/ReleaseNotes2.0.7EE.md
 ---
 
-<h2>Magento Enterprise Edition 2.0.7</h2>
 We are pleased to present Magento Enterprise Edition 2.0.7. This release includes  several functional fixes.
 
 

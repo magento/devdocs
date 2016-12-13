@@ -12,12 +12,6 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/composer-integration.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* This line is a placeholder to generate the table of contents
-{:toc}
-
 ## Overview
 [Composer](https://getcomposer.org/){:target="_blank"} is a dependency manager for PHP. Magento 2 uses Composer to package components and product editions.
 

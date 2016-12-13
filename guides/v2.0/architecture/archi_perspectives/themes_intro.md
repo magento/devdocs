@@ -12,8 +12,7 @@ github_link: architecture/archi_perspectives/themes_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/themes_intro.html
 ---
 
-
-## Magento themes
+## Overview
 
 A theme is a component of Magento application that provides a consistent look and feel (visual design) for entire application area (for example, storefront or Magento admin) using a combination of custom templates, layouts, styles or images.
 

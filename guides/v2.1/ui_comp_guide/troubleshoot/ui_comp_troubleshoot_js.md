@@ -9,10 +9,6 @@ version: 2.1
 github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.md
 ---
 
-## {{page.menu_title}}
-
-{:.no_toc}
-
 ## Overview
 
 This article describes how to define what UI components are used on a particular page, their JavaScript components and what data they use.
@@ -46,7 +42,7 @@ A simple example:
 
 ## Debugging using pure Knockout
 
-To retrieve the context within markup, you can also use the instance of Knockout: 
+To retrieve the context within markup, you can also use the instance of Knockout:
 
 At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJS ID]({{page.baseurl}} ui_comp_guide/concepts/ui_comp_requirejs_concept.html) `knockout`.
 

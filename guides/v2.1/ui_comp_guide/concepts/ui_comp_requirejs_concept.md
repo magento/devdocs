@@ -9,12 +9,6 @@ version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_requirejs_concept.md
 ---
 
-##  {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 This topic discusses JavaScript modules and describes the role which RequireJS plays in Magento.
@@ -32,7 +26,7 @@ Following is the conventional location of `requirejs-config.js` (RequireJS confi
 
 ## RequireJS configuration file
 
-`requirejs-config.js` is a valid JavaScript file. It should define the `config` variable, which is a configuration variable.  
+`requirejs-config.js` is a valid JavaScript file. It should define the `config` variable, which is a configuration variable.
 
 ### Example of usages
 
