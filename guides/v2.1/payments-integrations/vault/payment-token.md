@@ -70,8 +70,8 @@ class VaultDetailsHandler implements HandlerInterface
 
  There are two types of `paymentTokenFactory`:
 
- * [CreditCardTokenFactory]({{site.mage2100url}}app/code/Magento/Vault/Model/CreditCardTokenFactory.php): used for credit cards
- * [AccountPaymentTokenFactory]({{site.mage2100url}}app/code/Magento/Vault/Model/AccountPaymentTokenFactory.php): used for payment accounts, like PayPal
+ * CreditCardTokenFactory: used for credit cards
+ * AccountPaymentTokenFactory: used for payment accounts, like PayPal
 
 The important thing is `setGatewayToken()` method. This method retrieves Gateway Token,  a hashed value based on some credit card details. Different
 payment providers use different algorithms to create this hash. In most cases, exactly this token will be used to perform place order actions.
