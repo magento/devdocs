@@ -488,26 +488,17 @@ We've improved the performance of these tasks:
 
 
 
+
 ## Breaking changes
 
-We've introduced the following breaking changes in 2.1.3.
+We've introduced a backward-incompatible change to the `Magento_Vault` module. We've bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with Composer configuration.
 
 
-### New methods
-{:.no_toc}
-`Magento\Vault\Block\TokenRendererInterface::getToken` 
 
+### New method
+{:.no_toc} 
 
-### Removed methods
-{:.no_toc}
-
-`Magento\Vault\Block\CardRendererInterface::getIconUrl`
-
-`Magento\Vault\Block\CardRendererInterface::getIconHeight`
-
-`Magento\Vault\Block\CardRendererInterface::getIconWidth`
-
-`Magento\Vault\Block\CardRendererInterface::getToken`
+This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToken` method. This method provides details about payment tokens to renderer components, such as public hash (allows to place orders) and available card or account details. Third-party developers can use this method to implement this functionality in their payment integrations. 
 
 
 
@@ -555,30 +546,29 @@ We've introduced the following breaking changes in 2.1.3.
 ## Known issues
 
 
+
+<!---62083-->* **Issue**: You received the following fatal error while installing 2.1.3 from `repo.magento.com`. "Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73". 
+
+ **Workaround**:  You can avoid this fatal error by taking one of these actions: 
+ 	
+ 	*  If your DocumentRoot installed in `magento_folder/pub`,  then open Setup from `http://magento-host.com/setup` instead of from `http://magento-host.com`
+
+ 	or
+
+
+ 	* Install Magento from the console.
+
+ 	
 <!---60680-->* **Issue**: You cannot successfully change and save your settings for gift cards. (<i>Settings</i> include "allow open amount" or "open amount minimum".) 
 
 
 <!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. 
 
 
-
 <!---60781-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you flush the cache and re-index. 
 
 
-
-
 <!---60680-->* **Issue**: You cannot successfully edit and save a gift card product.
-
-
-
-
-
-<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. 
-
-
-
-
-
 
 
 <!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes.  

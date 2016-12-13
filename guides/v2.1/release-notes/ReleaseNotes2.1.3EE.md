@@ -474,7 +474,7 @@ We've improved the performance of these tasks:
 <!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. <a href="https://github.com/magento/magento2/issues/6401" target="_blank">(GITHUB-6401)</a>
 
 
-
+module 
 ### Web APIs
 {:.no_toc} 
 
@@ -490,25 +490,15 @@ We've improved the performance of these tasks:
 
 
 ## Breaking changes
-We've introduced the following breaking changes in 2.1.3.
+We've introduced a backward-incompatible change to the `Magento_Vault` module. We've bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with Composer configuration.
 
 
-### New methods
+
+### New method
 {:.no_toc} 
 
-`Magento\Vault\Block\TokenRendererInterface::getToken` 
+This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToken` method. This method provides details about payment tokens to renderer components, such as public hash (allows to place orders) and available card or account details. Third-party developers can use this method to implement this functionality in their payment integrations. 
 
-
-### Removed methods
-{:.no_toc} 
-
-`Magento\Vault\Block\CardRendererInterface::getIconUrl`
-
-`Magento\Vault\Block\CardRendererInterface::getIconHeight`
-
-`Magento\Vault\Block\CardRendererInterface::getIconWidth`
-
-`Magento\Vault\Block\CardRendererInterface::getToken`
 
 
 
@@ -558,6 +548,21 @@ We've introduced the following breaking changes in 2.1.3.
 
 
 ## Known issues
+
+
+<!---62083-->* **Issue**: You received the following fatal error while installing 2.1.3 from `repo.magento.com`. "Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73". 
+
+ **Workaround**:  You can avoid this fatal error by taking one of these actions: 
+ 	
+ 	*  If your DocumentRoot installed in `magento_folder/pub`,  then open Setup from `http://magento-host.com/setup` instead of from `http://magento-host.com`
+
+ 	or
+
+
+ 	* Install Magento from the console.
+
+
+
 
 <!---60680-->* **Issue**: You cannot successfully change and save your settings for gift cards. (<i>Settings</i> include "allow open amount" or "open amount minimum".) 
 
