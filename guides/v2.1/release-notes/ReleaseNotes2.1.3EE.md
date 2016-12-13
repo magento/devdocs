@@ -562,7 +562,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
      Or
 
   2. Install Magento from the console.
-  
+
 <!---60680-->* **Issue**: You cannot successfully change and save your settings for gift cards. (<i>Settings</i> include "allow open amount" or "open amount minimum".) 
 
 <!---60781-->* **Issue**: Installing with Varnish results in products not appearing on the frontend even after purging the cache. 

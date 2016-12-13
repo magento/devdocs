@@ -547,8 +547,6 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 ## Known issues
 
-
-
 <!---62083-->
 * **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
    
