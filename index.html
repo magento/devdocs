@@ -3,86 +3,74 @@ layout: home
 redirect_from: /guides/v2.1/index.html
 ---
 
-<section class="page-intro">
-   <div class="container">
-      <h2 class="page-heading">Magento 2 Developer Documentation</h2>
-   </div>
-</section>
-<!-- NEWS -->
-<section class="home-section">
-   <div class="container">
-      <h2 class="no-padding">Get Started with Magento</h2>
-      <h3><a href="{{ site.gdeurl21 }}architecture/bk-architecture.html">Magento Architecture</a></h3>
-      <p>What is Magento? How the Magento platform is organized, overview of modules, file system, and database.</p>
-      <h3><a href="{{ site.gdeurl21 }}release-notes/bk-release-notes.html">Release Information</a></h3>
-      <p>New features, enhancements, and behavior changes in Magento 2.</p>
-      <div class="panel-separator"></div>
-   </div>
-</section>
+{% include home/intro.html %}
 
-<!-- ADMINS -->
-<section class="home-section">
-   <div class="container">
-      <h2 class="no-padding">System Administrators</h2>
-     <!--  <p>Install and configure Magento.</p> -->
-      <h3><a href="{{ site.gdeurl21 }}install-gde/bk-install-guide.html">Installation Guide</a></h3>
-      <p>How to install the Magento software and components.</p>
-      <h3><a href="{{ site.gdeurl21 }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and Upgrade Guide</a></h3>
-      <p>How to manage Magento components (extensions, language packages, and themes).</p>
-      <h3><a href="{{ site.gdeurl21 }}config-guide/bk-config-guide.html">Configuration Guide</a></h3>
-      <p>Learn how to configure Magento and integrate third-party software with Magento.</p>
-      <h3><a href="{{ site.gdeurl21 }}migration/bk-migration-guide.html">Migration Guide</a></h3>
-      <p>Migrate data from Magento 1.x to Magento 2.0.</p>
-      <h3><a href="{{ site.gdeurl21 }}cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></h3>
-      <p>Spin up and maintain Magento Enterprise Edition in a cloud environment.</p>
-      <div class="panel-separator"></div>
-   </div>
-</section>
-<!-- DEVELOPERS -->
-<section class="home-section">
-   <div class="container">
-      <h2 class="no-padding">Developers</h2>
-      <h3><a href="{{ site.gdeurl21 }}contributor-guide/contributing.html">Contributor Guide</a></h3>
-      <p>How to contribute to the Magento 2 codebase and to Magento 2 documentation.</p>
-      <h3><a href="{{ site.gdeurl21 }}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></h3>
-      <p>Customize your storefront.</p>
-      <h3><a href="{{ site.gdeurl21 }}ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></h3>
-      <p>How to use grids, forms, and other elements of the Magento UI Components.</p>
-      <h3><a href="{{ site.gdeurl21 }}javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></h3>
-      <p>Everything you need to know about Magento and JavaScript.</p>
-      <h3><a href="{{ site.gdeurl21 }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></h3>
-      <p>What is Magento? How the Magento platform is organized, overview of modules, file system, and database.</p>
-      <p>What is an extension? A module service contract? Create or customize, and test and package extensions.</p>
-      <h3><a href="{{ site.gdeurl21 }}ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></h3>
-      <p>Learn how to design your component so it behaves correctly with the Magento-provided components and other third-party components.</p>
-<h3><a href="{{ site.gdeurl21 }}test/testing.html">Magento Testing Guide</a></h3>
-      <p>Start using the Magento testing frameworks: unit, integration, and functional.</p>
-      <h3><a href="{{ site.gdeurl21 }}coding-standards/bk-coding-standards.html">Coding Standards</a></h3>
-      <p>Which standards should I follow when I code extensions or customize my storefront?</p>
+<section class="home-features">
+  <div class="container">
 
-      <h3><a href="{{ site.gdeurl21 }}get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></h3>
-      <p>What are the web APIs? How can I call the REST and SOAP web APIs?</p>
+    <div class="feature">
+      <img src="{{ site.baseurl }}i/icons/install.svg" alt="" />
+      <h2 class="title">Setup and Deployment</h2>
+      <ul>
+        <li><a href="{{ site.baseurl }}magento-system-requirements.html">System Requirements</a></li>
+        <li><a href="{{page.baseurl}}install-gde/bk-install-guide.html">Installation Guide</a></li>
+        <li><a href="{{page.baseurl}}config-guide/bk-config-guide.html">Configuration Guide</a></li>
+      </ul>
+    </div>
 
-<h3><a href="{{ site.gdeurl21 }}rest/bk-rest.html">REST API Reference</a></h3>
-      <p>Provides reference information for REST.</p>
-      <h3><a href="{{ site.gdeurl21 }}soap/bk-soap.html">SOAP Reference</a></h3>
-      <p>Provides reference information for SOAP.</p>
-	        <h3><a href="{{ site.gdeurl21 }}payments-integrations/bk-payments-integrations.html">Payments Integration</a></h3>
-      <p>How the Magento payment provider gateway is implemented. </p>
-	   <p>How to add a new payment method.</p>
-	   <p>How to add vault functionality for a payment method.</p>
+    <div class="feature">
+      <img src="{{ site.baseurl }}i/icons/backend.svg" alt="" />
+      <h2 class="title">Development</h2>
+      <ul>
+        <li><a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+        <li><a href="{{ page.baseurl }}ext-best-practices/bk-ext-best-practices.html">Extensions Best Practices</a></li>
+        <li></li>
+        <li><a href="{{page.baseurl}}coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+      </ul>
+    </div>
+    <div class="feature">
+      <img src="{{ site.baseurl }}i/icons/frontend.svg" alt="" />
+      <h2 class="title">Frontend</h2>
+      <ul>
+        <li><a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+        <li><a href="{{page.baseurl}}ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+        <li><a href="{{page.baseurl}}javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+        <li><a href="{{page.baseurl}}pattern-library/bk-pattern.html">Admin Pattern Library</a></li>
+      </ul>
+    </div>
 
-      <div class="panel-separator"></div>
-   </div>
-</section>
-<!-- DESIGNERS -->
-<section class="home-section">
-   <div class="container">
-      <h2 class="no-padding">Designers</h2>
-      <h3><a href="{{ site.gdeurl21 }}pattern-library/bk-pattern.html">Admin Design Pattern Library</a></h3>
-      <p>Reusable design patterns provide definitions, instructions and specifications.</p>
-      <h3><a href="{{ site.gdeurl21 }}design-styleguide/bk-styleguide.html">Admin Style Guide</a></h3>
-      <p>Includes guidance for creators of Magento components.
-</p>
-   </div>
-</section>
+  <div class="feature">
+      <img src="{{ site.baseurl }}i/icons/release.svg" alt="" />
+      <h2 class="title">Release Information</h2>
+      <ul>
+        <li><a href="{{page.baseurl}}release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="{{page.baseurl}}magento-devdocs-whatsnew.html">What's New on DevDocs</a></li>
+        <li><a href="{{site.baseurl}}guides/v2.1/release-notes/backward-incompatible-changes-2.1.html">Backward Incompatible Changes</a></li>
+        <li><a href="{{ site.baseurl }}magento-techbull.html">Technical Bulletins</a></li>
+      </ul>
+    </div>
+
+    <div class="feature">
+      <img src="{{ site.baseurl }}i/icons/api.svg" alt="" />
+      <h2 class="title">Magento APIs</h2>
+      <ul>
+        <li><a href="{{page.baseurl}}get-started/bk-get-started-api.html">Get Started with Magento APIs</a></li>
+        <li><a href="{{page.baseurl}}rest/bk-rest.html">REST API Reference (Static)</a></li>
+        <li><a href="{{page.baseurl}}rest/generate-local.html">REST API Reference (Local)</a></li>
+      </ul>
+    </div>
+
+    <div class="feature">
+      <img src="{{ site.baseurl }}i/icons/community.svg" alt="" />
+      <h2 class="title">Community</h2>
+      <ul>
+          <li><a href="{{site.baseurl}}community/resources">Community Resources</a></li>
+        <li><a href="{{ page.baseurl }}contributor-guide/contributing_dod.html">Magento Definition of Done</a></li>
+        <li><a href="{{page.baseurl}}contributor-guide/contributing.html">Contributor Guide</a></li>
+      </ul>
+    </div>
+
+  </div>
+</section><!-- END home-features -->
+
+{% include home/contributors.html %}

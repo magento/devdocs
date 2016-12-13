@@ -13,13 +13,6 @@ github_link: mrg/ee/GoogleOptimizerStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-* TOC
-{:toc}
-
-## Magento_GoogleOptimizerStaging module
-
 ## Overview
 
 The Magento_GoogleOptimizerStaging module is a part of the staging functionality in Magento EE. It enables you to stage values of the product metadata.

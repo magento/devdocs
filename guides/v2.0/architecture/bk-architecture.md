@@ -3,6 +3,7 @@ layout: default
 group: arch-guide
 subgroup: 
 title: Architecture Guide
+landing-page: Architecture
 menu_title: Get Started
 menu_order: 2
 menu_node: parent

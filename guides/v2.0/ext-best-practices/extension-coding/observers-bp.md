@@ -10,12 +10,6 @@ github_link: ext-best-practices/extension-coding/observers-bp.md
 
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ### Overview
 [Observers]({{page.baseurl}}extension-dev-guide/events-and-observers.html) are capable of modifying the behavior of a Magento application because they are dynamically injected into the execution flow. Poorly designed and coded observers can cause issues, instabilities, or otherwise break the application.
 

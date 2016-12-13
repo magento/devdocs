@@ -10,13 +10,6 @@ github_link: architecture/view/view-lib.md
 redirect_from: /guides/v1.0/architecture/view/view-lib.html
 ---
 
-## The View library
-{:.no_toc}
-
-* TOC
-{:toc}
-
-
 ## Overview
 
 An independent view layer domain, the View component was created to eliminate

@@ -9,12 +9,6 @@ version: 2.0
 github_link: extension-dev-guide/prepare/lifecycle.md
 ---
 
-## {{page.title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ### Overview
 
 This article describes your module's lifecycle and how you can create executable classes that will run when it is initialized or uninstalled. During initialization or uninstallation, these classes can perform database setup tasks, upgrade tasks, clean up tasks, and so on.

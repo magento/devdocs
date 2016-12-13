@@ -10,7 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/php/tshoot_opcache.md
 ---
 
-## Resolve an illegal offset error
 In Magento 2.1 or later, when creating a new product in the Magento Admin, the following error might display:
 
 	Warning: Illegal string offset 'is_in_stock' in [...]/vendor/

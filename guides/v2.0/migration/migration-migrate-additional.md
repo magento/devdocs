@@ -11,8 +11,6 @@ github_link: migration/migration-migrate-additional.md
 
 ---
 
-## Additional Info
-
 Some existing behaviour and logic from Magento 1 was implemented in a different way in Magento 2. The Data Migration Tool takes care of it.
 
 1. All Group Prices were converted to Tier Prices.
@@ -38,6 +36,7 @@ Some existing behaviour and logic from Magento 1 was implemented in a different 
     </destination>
   </map>
   {% endhighlight %}
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Data Migration Tool doesn't support split database.</p>
 </div>

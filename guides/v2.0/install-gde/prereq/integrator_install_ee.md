@@ -10,8 +10,6 @@ version: 2.0
 github_link: install-gde/prereq/integrator_install_ee.md
 ---
 
-## Get the Magento EE metapackage {#integrator-first-composer-ee}
-
 To get the Magento EE metapackage:
 
 1.	See [(Integrator) Integrator installation]({{ page.baseurl }}install-gde/prereq/integrator_install.html) first.

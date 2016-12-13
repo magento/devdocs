@@ -10,12 +10,6 @@ github_link: architecture/back-compatibility.md
 redirect_from: /guides/v2.0/architecture/backward-compatibility.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.
@@ -23,7 +17,9 @@ Merchants and developers want the process of upgrading between revisions of Mage
 To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses Semantic Versioning 2.0.0 to indicate whether a change breaks backward compatibility. Version numbers are in the format MAJOR.MINOR.PATCH, where:
 
 * *MAJOR* indicates incompatible API changes
+
 * *MINOR* indicates backward-compatible functionality has been added
+
 * *PATCH* indicates backward-compatible bug fixes
 
 The backward compatibility policy applies to PHP code annotated with `@api`.

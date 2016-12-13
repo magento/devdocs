@@ -10,12 +10,6 @@ github_link: architecture/tech-stack.md
 redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 
-## Magento technology stack
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 This page summarizes the technologies we use. For more detailed information, see the System Requirements:

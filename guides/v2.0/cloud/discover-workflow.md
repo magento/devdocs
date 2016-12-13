@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/discover-workflow.md
 ---
 
-## Workflow
 Everything in Magento Enterprise Cloud Edition is Git-driven. Not only the code, but also the
 infrastructure. A project contains multiple *environments*, which are Git branches.
 

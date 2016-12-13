@@ -1,0 +1,62 @@
+.page-info {
+
+  font-size: 12px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  margin-left: -200px;
+
+
+  #markdown-toc {
+    display: block;
+  }
+}
+
+.page-contributor {
+
+  position: relative;
+  padding: 5px 5px 5px 25px;
+  margin: 0 0 10px 0;
+  background: #fdf4e1;
+
+  a {
+    color: #95360B;
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+
+  &:after {
+    display: block;
+    content: '';
+    background: url(../i/icons/star.svg) center center no-repeat;
+    position: absolute;
+    width: 16px;
+    height: 17px;
+    top: 5px;
+    left: 4px;
+  }
+}
+
+.new-issue {
+  margin: 0 0 5px 0;
+}
+
+.github-link {
+  margin: 0 0 5px 0;
+}
+
+
+@media ( $medium-screen ) {
+  .page-info {
+    border-top: 1px solid $light-gray-color;
+    margin: 20px 0 0 0;
+    width: auto;
+    position: relative;
+    padding: 15px 0 0 0;
+    font-size: 14px;
+  }
+  
+}

@@ -10,19 +10,7 @@ github_link: ext-best-practices/extension-coding/common-programming-bp.md
 
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
 You should do your best to adhere to common programming best practices to reduce the amount of bugs and improve the quality and maintainability of your extensions. The following list of best practices addresses commonly reported issues found in third party extensions.
-
-
-### Content
-{:.no_toc}
-
-* Table of Content
-{:toc}
-
----
 
 ### Follow a set of coding standards
 Coding standards are a set of guidelines that describe how code should be written. These standards define coding practices that determine the style of the code. Whether you are a solo developer or part of a team, following a set of coding standards will help make your code consistent and maintainable.

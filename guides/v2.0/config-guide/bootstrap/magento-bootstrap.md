@@ -11,13 +11,6 @@ github_link: config-guide/bootstrap/magento-bootstrap.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-bootstrap.html
 ---
 
-#### Contents
-*	<a href="#config-boot-overview">Overview of bootstrapping</a>
-*	<a href="#config-boot-logic">Bootstrap run logic</a>
-*	<a href="#config-boot-exception">Default exception handling</a>
-*	<a href="#config-boot-entry">Entry point applications</a>
-
-
 <h2 id="config-boot-overview">Overview of bootstrapping</h2>
 To run the Magento application, the following actions are implemented in <a href="{{ site.mage2000url }}index.php" target="_blank">index.php</a>:
 

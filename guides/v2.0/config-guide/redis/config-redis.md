@@ -10,13 +10,6 @@ version: 2.0
 github_link: config-guide/redis/config-redis.md
 ---
 
-#### Contents
-*	<a href="#config-redis-over">Overview of the Redis solution</a>
-*	<a href="#config-redis-install">Install Redis</a>
-*	<a href="{{page.baseurl}}config-guide/redis/redis-session.html">Redis for session storage</a>
-*	<a href="{{page.baseurl}}config-guide/redis/redis-pg-cache.html">Redis for page caching</a>
-*	<a href="#config-redis-info">For more information</a>
-
 <h2 id="config-redis-over">Overview of the Redis solution</h2>
 <a href="http://redis.io/" target="_blank">Redis</a> is an optional backend cache solution to replace <a href="http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html" target="_blank">Zend_Cache_Backend_File</a>, which is used in Magento 2 by default.
 

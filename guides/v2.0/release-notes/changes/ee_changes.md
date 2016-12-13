@@ -1,14 +1,12 @@
 ---
 layout: default
 group: release-notes
-subgroup: 05_BC
+subgroup: 03_BC
 title: Magento EE Backward Incompatible Changes
 menu_title: Magento EE changes between 2.0.0 and develop
 version: 2.0
 github_link: release-notes/changes/ee_changes.md
 ---
-
-## Preface
 
 This topic provides details about backward incompatible changes made in a Magento EE mainline after the Magento 2.0.0 release. The content is auto-generated.
 

@@ -10,21 +10,8 @@ version: 2.0
 github_link: pattern-library/getting-user-input/image_uploader/image_uploader.md
 ---
 
-<h2> Image Uploader </h2>
-
-<h3>Contents</h3> 
-
-* <a href="#overview">Overview</a>
-* <a href="#whentouse">When to Use</a>
-* <a href="#whennottouse">When Not to Use</a>
-* <a href="#variations">Variations</a>
-* <a href="#behavior">Behavior</a>
-* <a href="#style">Dimensions</a>
-* <a href="#accessibility">Accessibility</a>
-* <a href="#assets">Assets</a>
-
-<h3 id="overview">Overview</h3>
-The Image Uploader provides the ability for users to upload a single image, or group of images, to the application, most commonly images associated with Products (during the Product Creation process). These iamges may serve as thumbnail images, detailed Product images, images to within a product gallery, etc.  
+## Image uploader
+The Image uploader provides the ability for users to upload a single image, or group of images, to the application, most commonly images associated with Products (during the Product Creation process). These iamges may serve as thumbnail images, detailed Product images, images to within a product gallery, etc.  
 
 
 <h3 id="whentouse">When to Use</h3>

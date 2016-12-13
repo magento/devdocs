@@ -1,16 +1,15 @@
 ---
 layout: default 
 group: release-notes
-subgroup: Technical Bulletin
+subgroup: 05_techbull
 title: Technical Bulletin
 menu_title: Upgrade to Magento version 2.1 (June 22, 2016)
 menu_node: 
 menu_order: 3
-version: 2.0
+version: 2.1
 github_link: release-notes/tech_bull_21-upgrade.md
 ---
 
-## Upgrade to Magento version 2.1
 These instructions apply to anyone upgrading to Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.1 (including a Release Candidate). 
 
 See one of the following sections for more information:

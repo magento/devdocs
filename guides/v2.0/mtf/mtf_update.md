@@ -9,7 +9,6 @@ version: 2.0
 github_link: mtf/mtf_update.md
 redirect_from: /guides/v1.0/mtf/mtf_update.html
 ---
-<h2 id="mtf_update">How to update</h2>
 
 Two types of updates are available.
 

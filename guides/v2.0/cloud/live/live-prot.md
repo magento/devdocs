@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/live/live-prot.md
 ---
 
-## Protective block
 Magento Enterprise Cloud Edition has a protective blocking
 feature that, under certain circumstances, restricts access to web sites
 with security vulnerabilities. We use this partial blocking method to

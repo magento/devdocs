@@ -12,8 +12,6 @@ version: 2.0
 github_link: cloud/project/project-conf-files_services-solr.md
 ---
 
-## Set up the solr service
-
 Solr is highly reliable, scalable and fault tolerant, providing distributed 
 indexing, replication and load-balanced querying, automated failover and 
 recovery, centralized configuration, and more.

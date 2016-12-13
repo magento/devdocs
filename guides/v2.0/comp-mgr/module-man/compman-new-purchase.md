@@ -13,7 +13,6 @@ github_link: comp-mgr/module-man/compman-new-purchase.md
 redirect_from: /guides/v2.0/comp-mgr/compman-new-purchase.html
 ---
 
-## Step 3. Component Install
 When you're installing new purchases from Magento Marketplace, the page displays similar to the following:
 
 <img src="{{ site.baseurl }}common/images/compman_new-purchases-step3install.png" width="500px">

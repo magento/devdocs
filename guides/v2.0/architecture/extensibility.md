@@ -10,12 +10,6 @@ version: 2.0
 github_link: architecture/extensibility.md
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 Product <i>extensibility</i> describes how easy it is to expand a product's feature set. An extensible product has been designed from its earliest  stages for customization and enhancement. Extensible products are designed for ease in expanding your installation's feature set, enriching current features, and integrating with third-party software.

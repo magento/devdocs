@@ -17,14 +17,6 @@ The confirmation widget source is <a href="{{site.mage2000url}}app/code/Magento/
 
 The widget can be used for implementing confirmation windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{page.baseurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
-<h3>Contents</h3>
-
-- <a href="#confirm_initialize">Initialize the confirmation widget</a>
-- <a href="#confirm_options">Options</a>
-- <a href="#confirm_events">Events</a>
-- <a href="#confirm_key_navigation">Keyboard navigation</a>
-
-
 <h2 id="confirm_initialize">Initialize the confirmation widget</h2>
 
 The confirmation widget can be initialized with or without binding to a certain element.

@@ -13,13 +13,6 @@ github_link: mrg/ee/GiftMessageStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-* TOC
-{:toc}
-
-## Magento_GiftMessageStaging module
-
 ## Overview
 
 The Magento_GiftMessageStaging module is a part of the staging functionality in Magento EE. It extends the Magento_GiftMessage module functionality to be used in the Schedule Update form.

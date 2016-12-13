@@ -11,12 +11,6 @@ github_link: migration/migration-migrate.md
 redirect_from: /guides/v1.0/migration/migration-migrate.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## General rules for successful migration {#migration-command-gen}
 
 Before you start migration, stop all Magento 1 cron jobs.

@@ -23,8 +23,6 @@ The fallback order is slightly different for static assets (CSS, JavaScript, fon
 For comprehensive information about developing theme components, see
 subsequent chapters in this guide.
 
-* TOC
-{:toc}
 
 ## Set a parent theme
 

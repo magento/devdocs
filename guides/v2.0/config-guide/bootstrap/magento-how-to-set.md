@@ -11,11 +11,6 @@ github_link: config-guide/bootstrap/magento-how-to-set.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-how-to-set.html
 ---
 
-#### Contents
-*	<a href="#config-bootparam-overview">Overview of setting bootstrap parameter values</a>
-*	<a href="#mode-specify-var">Specifying a parameter value using an environment variable</a>
-*	<a href="#mode-specify-web">Specifying a parameter value using your web server environment</a>
-
 <h2 id="config-bootparam-overview">Overview of setting bootstrap parameter values</h2>
 This topic discusses how to set the values of Magento application bootstrap parameters. <a href="{{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html">More information about Magento application bootstrapping</a>.
 

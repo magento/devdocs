@@ -3,6 +3,7 @@ layout: default
 group: cloud
 subgroup: 01_welcome
 title: Welcome to Magento Enterprise Cloud Edition
+landing-page: Cloud
 menu_title: Welcome to Magento Enterprise Cloud Edition
 menu_order: 1
 menu_node: parent

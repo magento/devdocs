@@ -1,19 +1,16 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
+subgroup: 02_rel-notes
 title: Magento CE 2.0.8 Release Notes
 menu_title: Magento CE 2.0.8 Release Notes
-menu_order: 15
+menu_order: 180
 version: 2.0
-
+level3_menu_node: level3child
+level3_subgroup: ce20-relnotes
 github_link: release-notes/ReleaseNotes2.0.8CE.md
 ---
-*	TOC
-{:toc}
 
-
-## Magento Community Edition 2.0.8
 We are pleased to present Magento Community Edition 2.0.8. This release includes  several functional fixes.
 
 

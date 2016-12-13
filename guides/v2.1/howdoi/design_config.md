@@ -15,10 +15,6 @@ github_link: howdoi/design_config.md
 
 This topic describes how to customize (add, delete, change) the configuration options available in Magento Admin under **CONTENT** > **Design** > **Configuration**. These options define the various aspects of storefront design. In Magento 2.0.x and earlier these options were set under **STORES** > **Configuration** > **Design**. But starting from Magento 2.1.0 they were moved to the new location, and the configuration form was refactored.
 
-**Contents:**
-
-* TOC
-{:toc}
 
 ## Overview
 

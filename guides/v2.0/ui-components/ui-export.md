@@ -12,8 +12,6 @@ redirect_from: /guides/v2.0/ui-library/ui-export.html
 
 ---
 
-<h2 id="export">UI ExportButton Component</h2>
-
 ExportButton Component is responsible for export grid data to specified data format (cvs, xml, and so on).
 
 To enable ExportButton Component add exportButton element with specified selectProvider item to listing configuration file.

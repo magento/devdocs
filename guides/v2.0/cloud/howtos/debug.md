@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/howtos/debug.md
 ---
 
-## How to run a PHP debugger {#cloud-howto-debug}
 This topic discusses how to run a PHP debugger using Xdebug as an example.
 
 ### Get started

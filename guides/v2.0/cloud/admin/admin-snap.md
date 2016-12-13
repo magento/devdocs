@@ -10,11 +10,6 @@ version: 2.0
 github_link: cloud/admin/admin-snap.md
 ---
 
-#### Contents
-*	[Overview of snapshot and restore](#cloud-snap-over)
-*	[Create a snapshot](#cloud-snap-create)
-*	[Restore a snapshot](#cloud-snap-restore)
-
 ## Overview of snapshot and restore {#cloud-snap-over}
 A *snapshot* is a complete backup of an environment. It includes all
 persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files

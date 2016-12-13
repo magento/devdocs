@@ -14,8 +14,6 @@ level3_subgroup: Sales
 github_link: mrg/ce/Sales/services.md
 ---
 
-* TOC
-{:toc}
 
 ## InvoiceOrder
 

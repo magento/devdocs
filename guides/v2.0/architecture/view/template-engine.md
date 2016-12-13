@@ -10,12 +10,6 @@ github_link: architecture/view/template-engine.md
 redirect_from: /guides/v1.0/architecture/view/template-engine.html
 ---
 
-## Introduction to the Magento template engine
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview {#m2devgde-temp-eng-over}
 
 A template engine is a mechanism for rendering HTML output from templates associated with page layout blocks. The Magento template rendering subsystem can support multiple template engines, including the default PHP-based engine for processing PHTML templates.

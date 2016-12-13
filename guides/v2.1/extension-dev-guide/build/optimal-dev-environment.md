@@ -9,12 +9,6 @@ version: 2.1
 github_link: extension-dev-guide/build/optimal-dev-environment.md
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 A typical software development flow is as follows:
@@ -29,7 +23,7 @@ This article will guide you in setting up and optimizing your local development 
 Your local development machine is where you develop and deploy your code to test it against a running Magento application.
 Its configuration should be as close to a production server as possible.
 
-In your development machine, make sure you are running the Magento application in [developer mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). 
+In your development machine, make sure you are running the Magento application in [developer mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
 You can enable this mode with the command `bin/magento deploy:mode:set developer`.
 
 ### Installation

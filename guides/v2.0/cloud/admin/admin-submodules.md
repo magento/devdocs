@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/admin/admin-submodules.md
 ---
 
-## Reuse code across projects with Git submodules
 [Git *submodules*](https://git-scm.com/book/en/v2/Git-Tools-Submodules){:target="_blank"} provide an easy way to reuse code in multiple projects. Git submodules are typically
 listed in a `.gitmodules` file at the root of your Git repository. When you push to your project, 
 Magento Enterprise Cloud Edition clones the submodules automatically.

@@ -10,13 +10,6 @@ github_link: config-guide/config/config-create.md
 redirect_from: /guides/v1.0/config-guide/config/config-create.html
 ---
 
-
-#### Contents
-
-* <a href="#config-files-extend-create">Extend configuration types</a>
-* <a href="#config-files-extend-create-create">Create configuration types</a>
-* <a href="#config-files-validate">Validate a configuration type</a>
-
 <h2 id="config-files-extend-create">Extend configuration types</h2>
 To extend an existing configuration type, you need only create a configuration file in your module.
 

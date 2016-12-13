@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/get-help.md
 ---
 
-## Get help with your deployment {#help}
 To contact Support:
 
 1.	Log in to your Magento Cloud account.

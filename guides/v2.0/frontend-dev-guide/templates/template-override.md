@@ -12,14 +12,6 @@ redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-override.html
 
 <h2>What's in this topic</h2>
 This topic discusses the main concepts of how default templates work in the Magento application. 
-The following topics are covered:
-
-* <a href="#template-layout">How templates are initiated</a>
-* <a href="#root">Root template</a>
-* <a href="#template-convention">Conventional templates location</a>
-* <a href="#override">Templates overriding</a>
-* <a href="#getter">Getting argument values from layout</a>
-
 
 <h2 id="template-layout">How templates are initiated</h2>
 

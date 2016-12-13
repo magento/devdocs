@@ -36,7 +36,7 @@ We have a <a href="{{page.baseurl}}contributor-guide/basic_template.html" target
 
 The language we use in our documentation is [Markdown](http://daringfireball.net/projects/markdown/){:target="_blank"}, which is a simple markup language that gets converted to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html){:target="_blank"}. 
 
-We also have a <a href="{{page.baseurl}}contributor-guide/contributing_docs_suggested_topics.html" target="_blank">list of suggested topics</a>, if you want to peruse and pick one that appeals to you.
+We also have a [list of suggested topics]({{page.baseurl}}contributor-guide/contributing_docs_suggested.html), if you want to peruse and pick one that appeals to you.
 
 If you write and contribute a full topic, we'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{page.baseurl}}howdoi/howdoi_bios.html">ring of honor</a> as one of our featured contributors.
 

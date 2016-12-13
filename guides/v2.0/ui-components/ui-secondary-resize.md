@@ -12,8 +12,6 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-resize.html
 
 ---
 
-<h3 id="resize">UI Resize component</h3>
-
 The Resize Component is responsible for resizing listing columns. The Resize component is not defined in definition.xml, but can be added if needed.
 
 #### Integration

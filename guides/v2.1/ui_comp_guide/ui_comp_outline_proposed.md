@@ -9,7 +9,6 @@ version: 2.1
 github_link: ui_comp_guide/ui_comp_outline_proposed.md
 ---
 
-## Intended UI Components Guide outline
 Below is the proposed structure of the new UI Components Guide. The Frontend development and the DevDocs teams are writing as quickly as we can (linked topics are done!), but as you can see we sill have a lot of topics to write.
 If you would like to help us by writing any of the topics that we have not yet gotten do, we welcome your contributions! 
 

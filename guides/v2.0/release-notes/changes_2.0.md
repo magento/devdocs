@@ -1,16 +1,13 @@
 ---
 layout: default
 group: release-notes
-subgroup: 05_BC
+subgroup: 03_BC
 title: Magento 2.0 Backward Incompatible Changes
-menu_title: Backward incompatible changes
+menu_title: Magento 2.0 Backward incompatible changes
 menu_node: parent
 version: 2.0
 github_link: release-notes/changes_2.0.md
 ---
-
-## Preface
-{:.no_toc}
 
 This topic discusses the most important backward incompatible changes made after Magento 2.0.0 release in scope of 2.0 version.
 
@@ -22,12 +19,6 @@ To see all backward incompatible changes follow:
  - [Magento EE backward incompatible changes][]
 
 For more information about backward compatibility, see [Magento’s backward compatibility policy][].
-
-### Contents
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## Framework changes
 

@@ -12,12 +12,6 @@ github_link: config-guide/cli/config-cli-subcommands-spt-util.md
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
 
-#### Contents
-*	[Overview of the support utilities](#config-cli-spt-utils-over)
-*	[Create a code backup](#config-cli-spt-utils-code)
-*	[Create a database backup](#config-cli-spt-utils-db)
-*	[Troubleshooting: display utilities and paths](#config-cli-spt-utils-trouble)
-
 ## Overview of the support utilities {#config-cli-spt-utils-over}
 The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="_blank"}) enable Enterprise Edition (EE) users to gather troubleshooting information about your system that can be used by our Support team. 
 

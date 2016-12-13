@@ -1,8 +1,8 @@
 ---
 layout: default
-group:
+group: arch-guide
 subgroup:
-title:
+title: Magento areas
 menu_title:
 menu_order: 1
 menu_node: parent
@@ -11,7 +11,7 @@ github_link: architecture/areas/areas.md
 redirect_from: /guides/v1.0/architecture/areas/areas.html
 ---
 
-## Magento areas overview {#m2devgde-area-intro}
+## Overview {#m2devgde-area-intro}
 
 Magento uses *areas* to efficiently make web service calls, loading only the dependent code for that area. Examples of areas include the `storefront` (frontend), `Magento Admin` (adminhtml, the administration interface), and `web API REST` (webapi_rest).
 

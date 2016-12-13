@@ -9,7 +9,6 @@ version: 2.0
 github_link: extension-dev-guide/api-concepts.md
 redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
 ---
-## {{page.menu_title}}
 
 <h2 id="public-interface">What is a public interface?</h2>
 <p>A <i>public interface</i> is a set of code that third-party developers can call, implement, or build as a plug-in. Magento guarantees that this code will not change in subsequent releases without a major version change.</p>
@@ -34,7 +33,3 @@ redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
    <li>Provider API (SPI)</li>
 </ul>
 <p>Directory structure and configuration file structure are types of APIs because extension developers use them. Developers write configurations, and place their static files in specified folders; so if the configuration file structure or directory structure changes in subsequent releases, modules and extensions may break.</p>
-
-
-
-
