@@ -11,7 +11,7 @@ github_link: payments-integrations/vault/vault-payment-configuration.md
 
 In `config.xml` file of your payment method module you need to configure the main parameters of the vault implementation:
 
-* `model` - instance of Vault payment implementation, [configured in `di.xml`]({{page.baseurl}}payments-integrations/vault/vault-di.md).
+* `model` - instance of Vault payment implementation, [configured in `di.xml`]({{page.baseurl}}payments-integrations/vault/vault-di.html).
 * `title` - payment method title, can be overwritten in the store configuration.
 
 This parameters are specified in the section defined by the unique vault implementation code. They are the minimum required to create Vault payment. All other payment settings are inherited from payment provider. 

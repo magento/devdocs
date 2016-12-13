@@ -22,7 +22,7 @@ The following diagram shows a simplified interaction flow between Magento sales 
 
 The topics of this chapter are conceptual and describe the components of the Magento payment provider gateway:
  
-* [Payment provider gateway structure]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-stucture.html)
+* [Payment provider gateway structure]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-structure.html)
 * [Gateway Command]({{page.baseurl}}payments-integrations/payment-gateway/gateway-command.html)
 * [Gateway Command Pool]({{page.baseurl}}payments-integrations/payment-gateway/command-pool.html)
 * [Request Builder]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html)
@@ -75,4 +75,5 @@ Data used for a transaction. Might include the following:
 </td>
 </tr>
 </table>
+
 
