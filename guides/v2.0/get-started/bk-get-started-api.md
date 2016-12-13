@@ -45,7 +45,6 @@ The APIs can used to perform a wide array of tasks. For example:
 
 * Create JavaScript widgets in the Magento storefront or on the Admin panel. The widget makes AJAX calls to access services.
 
-
 <h2 id="procedure">How do I get started?</h2>
 
 You must register a web service on Magento Admin. Use the following general steps to set up Magento to enable web services.
