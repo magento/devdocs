@@ -16,11 +16,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 ## December 2016
 | Description  | Versions applied to  | New or Updated | Week ending |
 |--------------|--------------|----------------------|--------|
-|   |   |   |  
-|   |   |   |  
-|   |   |   |  
-|   |   |   |  
-|   |   |   |  
+| [Add custom integrations and vault payments to the Magento payment provider gateway]({{ page.baseurl }}payments-integrations/bk-payments-integrations.html)  |  2.1.x |  New |  
 
 {% collapsibleh2 November 2016 %}
 
