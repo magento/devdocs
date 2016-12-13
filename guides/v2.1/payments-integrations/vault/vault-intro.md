@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: vault
+subgroup: C_vault
 title: Vault Integration in Magento2
 menu_title: Vault Integration
 menu_order: 10

@@ -111,6 +111,8 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 		{"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
 
+## Configure Magento to use Elasticsearch {#elastic-m2-configure}
+
 {% include config/es-elasticsearch-magento.md %}
 
 ## Secure communication with Apache {#es-ws-secure-apache}

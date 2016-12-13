@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: integration
+subgroup: B_integration
 title: Add a payment action
 menu_title: Add a payment action
 menu_order: 5
@@ -19,7 +19,7 @@ For each payment action available for the payment method, you must implement the
 
 ## Configure the command
 
-The gateway command for the payment action must be configured in the `di.xml` file of your module. Conventionally its location must be `<your_module_dir>/etc/di.xml`
+The gateway command for the payment action must be configured in the `di.xml` file of your module. Conventionally, its location must be `<your_module_dir>/etc/di.xml`
 
 Configure the command as described in [Gateway Command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands).
 
