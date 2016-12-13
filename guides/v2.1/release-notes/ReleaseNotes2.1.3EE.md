@@ -45,7 +45,7 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 * **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
 
-* The Sales module provides **two new web APIs that allow you to process refunds from an order or invoice**. Previously, these actions could only be performed from Admin. After you install this patch, you can:
+* The Sales module provides **two new web API endpointss that allow you to process refunds from an order or invoice**. Previously, these actions could only be performed from Admin. After you install this patch, you can:
 
 	* Create a credit memo (complete or partial) for a particular invoice or order.
 
@@ -259,7 +259,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57470 -->* Magento no longer displayed an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  `mapper_parsing_exception`. 
 
-<!---58703-->* The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and displayed the following error:  `Error 1114: Table is full`.
+<!---58703-->* The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and displayed the following error:  "Error 1114: Table is full".
 
 
 
@@ -550,7 +550,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 ## Known issues
 
 
-<<!---62083-->
+<!---62083-->
 * **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
 
     "Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73". **Workaround**:  You can avoid this fatal error by taking one of these actions: 
@@ -578,7 +578,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 <!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes. 
 
 
-<!---61341-->* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  **Workaround**: Upgrade your version of TLS to at least 1.2. 
+<!---61341-->* **Issue**: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  **Workaround**: Upgrade your version of CURL to the latest possible version that will enable the use of TLS 1.2 by default. 
 
 
 <!---58433-->* **Issue**: Saving a category in a catalog that contains 20,000 or more products is very slow. 
