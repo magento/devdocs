@@ -14,9 +14,10 @@ github_link: magento-devdocs-whatsnew.md
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
 ## December 2016
+
 | Description  | Versions applied to  | New or Updated | Week ending |
 |--------------|--------------|----------------------|--------|
-| [Add custom integrations and vault payments to the Magento payment provider gateway]({{ page.baseurl }}payments-integrations/bk-payments-integrations.html)  |  2.1.x |  New |  
+| [Add custom integrations and vault payments to the Magento payment provider gateway]({{ page.baseurl }}payments-integrations/bk-payments-integrations.html){:target="_blank"}  |  2.1.x |  New |  
 
 {% collapsibleh2 November 2016 %}
 
