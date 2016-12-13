@@ -20,7 +20,7 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 ## Highlights
 
-Magento 2.1.3 contains more than 70 bug fixes and enhancements, including these highlights:
+Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these highlights:
 
 
 
@@ -550,7 +550,10 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 ## Known issues
 
 
-<!---62083-->* **Issue**: You received the following fatal error while installing 2.1.3 from `repo.magento.com`. "Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73".  **Workaround**:  You can avoid this fatal error by taking one of these actions: 
+<!---62083-->
+* **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
+
+    "Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73". **Workaround**:  You can avoid this fatal error by taking one of these actions: 
 
  	
  	*  If your DocumentRoot installed in `magento_folder/pub`,  then open Setup from `http://magento-host.com/setup` instead of from `http://magento-host.com`
@@ -562,7 +565,6 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
  	* Install Magento from the console.
 
- 	
 
 
 
