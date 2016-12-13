@@ -692,6 +692,7 @@
       <th>Option</th>
       <th>Description</th>
       <th>Value type</th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
@@ -699,91 +700,109 @@
       <td><code>active</code></td>
       <td>is payment active by default</td>
       <td>Boolean</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>debug</code></td>
       <td>enables debug mode by default, for example log for request/response</td>
       <td>Boolean</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>debugReplaceKeys</code></td>
       <td>request/response fields that are masked in log</td>
       <td>comma separtated list</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>can_authorize</code></td>
       <td>whether payment method supports authorization</td>
       <td>Boolean</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>can_capture</code></td>
       <td>whether payment method supports the capture operation</td>
       <td>Boolean</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>can_void</code></td>
       <td>whether payment method supports the void operation</td>
       <td>Boolean</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>can_use_checkout</code></td>
       <td>whether payment method is available in storefront checkout</td>
       <td>Boolean</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>can_use_internal</code></td>
       <td>whether payment method is available in Admin order creation</td>
       <td>Boolean</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>currency</code></td>
       <td>supported currency</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td><code>is_gateway</code></td>
       <td>is an integration with gateway</td>
       <td>Boolean</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>merchant_gateway_key</code></td>
       <td>encrypted merchant credential</td>
       <td>string</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>model</code></td>
       <td><a href="#facade">payment method facade</a> used for integration with Sales and Checkout modules</td>
       <td>string</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>order_status</code></td>
       <td>default order status</td>
       <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>paymentInfoKeys</code></td>
       <td>transaction request/response fields displayed on payment information block (can be any fields from payment additional information)</td>
+      <td>list of comma separated values</td>
       <td> </td>
     </tr>
     <tr>
       <td><code>privateInfoKeys</code></td>
       <td><code>paymentInfoKeys</code> fields which should not be displayed in customer payment information block (can be any fields from payment additional information)</td>
       <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>payment_action</code></td>
       <td>default action of payment for the payment method (authorize, sale)</td>
-      <td>what is the list of available actions</td>
+      <td> </td>
+      <td><code>authorize</code>,<code>authorize_capture</code></td>
     </tr>
     <tr>
       <td><code>sort_order</code></td>
       <td>payment method order position on checkout/system configuration pages</td>
       <td>integer</td>
+      <td> </td>
     </tr>
     <tr>
       <td><code>title</code></td>
       <td>default title for a payment method</td>
       <td>string</td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
