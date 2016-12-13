@@ -14,7 +14,7 @@ This topic describes how to display stored tokens in the customer account and gi
 First, you need to create a custom Renderer that provides functionality for displaying token details.
 The Renderer implementation depends on token type (card or account), but both renders
 implement the common interfaces [TokenRendererInterface]({{site.mage2100url}}app/code/Magento/Vault/Block/TokenRendererInterface.php)
-and [IconInterface]({{site.mage2100url}}app/code/Magento/Vault/BLock/Customer/IconInterface.php):
+and `IconInterface`.
 
 {% highlight php startinline=1 %}
 interface TokenRendererInterface
@@ -64,7 +64,7 @@ interface IconInterface
 }
 {% endhighlight %}
 
-If you Vault integration uses card token type, then you need to extend [AbstractCardRenderer]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractCardRenderer.php). In other case extend [AbstractTokenRenderer]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractTokenRenderer.php).
+If you Vault integration uses card token type, then you need to extend [AbstractCardRenderer]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractCardRenderer.php). In other case extend `AbstractTokenRenderer`.
 
 `AbstractCardRenderer` implements [CardRendererInterface]({{site.mage2100url}}app/code/Magento/Vault/Block/CardRendererInterface.php) and
 has additional method to get card details.
