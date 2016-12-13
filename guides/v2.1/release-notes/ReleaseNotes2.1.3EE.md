@@ -15,9 +15,6 @@ github_link: release-notes/ReleaseNotes2.1.3EE.md
 We are pleased to present Magento Enterprise Edition 2.1.3. This release includes many functional fixes and enhancements.
 
 
-Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
-
-
 ## Highlights
 
 Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these highlights:
@@ -45,7 +42,7 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 * **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
 
-* The Sales module provides **two new web API endpointss that allow you to process refunds from an order or invoice**. Previously, these actions could only be performed from Admin. After you install this patch, you can:
+* The Sales module provides **two new web API endpoints that allow you to process refunds from an order or invoice**. Previously, these actions could only be performed from Admin. After you install this patch, you can:
 
 	* Create a credit memo (complete or partial) for a particular invoice or order.
 
