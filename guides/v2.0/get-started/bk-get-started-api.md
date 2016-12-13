@@ -35,7 +35,6 @@ The Magento web API framework provides integrators and developers the means to u
 
 <h2 id="uses">What can I do with the Magento web APIs?</h2>
 
-
 The APIs can used to perform a wide array of tasks. For example:
 
 * Create a shopping app. This can be a traditional app that a user downloads on a mobile device. You could also create an app that an employee uses on a showroom floor to help customers make purchases.
