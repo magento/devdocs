@@ -75,6 +75,8 @@ This section discusses how to specify who can access the nginx server.
 
 4.	Continue with the next section.
 
+## Configure Magento to use Elasticsearch {#elastic-m2-configure}
+
 {% include config/es-elasticsearch-magento.md %}
 
 ## Secure communication with nginx {#es-ws-secure-nginx}
