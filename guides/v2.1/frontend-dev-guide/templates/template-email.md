@@ -33,7 +33,7 @@ This topic covers how to customize the content and design of email templates.
 * <a href="#newsletter-templates">Newsletter templates</a>
 
 <h2 id="customize-email-templates">Customize email templates</h2>
-Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="{{ site.mage2100url }}app/code/Magento/Sales/view/frontend/email/order_new.html"><code>&gt;Magento_Sales_module_dir&lt;/view/frontend/email/order_new.html</code></a>. 
+Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="{{ site.mage2100url }}app/code/Magento/Sales/view/frontend/email/order_new.html"><code>&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html</code></a>. 
 
 We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. 
 
@@ -62,18 +62,18 @@ Make note of this path because you will need it later when you configure this ne
 9. Now that you have created a template, you must configure that template to be used:
 
     1. If you haven't done so already, log in to the Magento Admin as an administrator.
-    1. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
-    2. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
+    2. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
+    3. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
     <br>For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
     <br><img src="{{site.baseurl}}common/images/email_choose-template.png" alt="Choosing a custom template" width="70%" height="70%"/>
-    3. Select your newly created template from the list.
-    4. Click **Save Config**.
+    4. Select your newly created template from the list.
+    5. Click **Save Config**.
 
 <h3 id="customize-header-footer">Customize header and footer templates</h3>
 Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
  
-  * [<Magento_Email_module_dir>/view/frontend/email/header.html]({{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/header.html")
- * [<Magento_Email_module_dir>/view/frontend/email/footer.html]({{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/footer.html)
+  * <a href="{{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/header.html"><code>&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code></a>
+  * <a href="{{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/footer.html"><code>&lt;Magento_Email_module_dir&gt;/view/frontend/email/footer.html</code></a>
 
 You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.
 
@@ -162,74 +162,74 @@ The styles for emails are split into several different files.
       <th>Description</th>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email.less</code></p>
       </td>
-      <td colspan="1">
+      <td>
           <p>Imports necessary files and then outputs styles to be included in <code>&lt;style&gt;</code> tag</p>
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code></p>
       </td>
-      <td colspan="1">
+      <td>
           <p>Contains <code>@font-face</code> declarations for custom fonts. This file is imported by the <code>_email-extend.less</code> file using an <code>@import</code> rule.</p>
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-inline.less</code></p>
       </td>
-      <td colspan="1">
+      <td>
           <p>Imports necessary files and then outputs styles to be inlined</p>
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-base.less</code></p>
       </td>
-      <td colspan="1">
+      <td>
           <p>Contains majority of styles for emails, including resets, layout, typography, and so on. Review the comments at the top of this file to understand how the styles in this file are split between the <code>email.less</code> and <code>email-inline.less</code> files.</p>
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></p>
       </td>
-      <td colspan="1">
+      <td>
           <p>This file is intended to be copied into your custom themes and edited directly. You can add new email styles or override existing ones. This should prevent having to copy the <code>_email-base.less</code> file into your custom theme. See the <code>&lt;Magento_Luma_theme_dir&gt;/web/css/source/_email-extend.less</code> file for example usage.</p>
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
       </td>
-      <td colspan="1">
+      <td>
           <p>The <code>_email-base.less</code> file uses a number mixins from the Magento UI library. If you want to change any of the styles output by those mixins, you can set the value of any of the variables those mixins uses in this file. See the <code>&lt;Magento_Luma_theme_dir&gt;/web/css/source/_email-variables.less</code> file for example usage.</p>
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
           <p><code>&lt;Magento_Blank_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/css/source/_email.less</code></p>
       </td>
-      <td colspan="1">
+      <td>
           <p>Styles that are specific to modules are stored in these files. This mechanism also allows third-party extensions to include styles that will get included in the inline/non-inline output.</p>
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
           <p><code>lib/web/css/source/_email-variables.less</code></p>
       </td>
-      <td colspan="1">
+      <td>
           <p>Same as <code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
           <p><code>lib/web/css/source/lib/variables/_email.less</code></p>
       </td>
-      <td colspan="1">
+      <td>
           <p>Contains new email-specific variables that can be overridden in a theme-specific <code>_email-variables.less</code> file. </p>
       </td>
     </tr>
