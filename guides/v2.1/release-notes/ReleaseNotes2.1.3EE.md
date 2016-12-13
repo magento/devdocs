@@ -474,11 +474,11 @@ We've improved the performance of these tasks:
 <!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. <a href="https://github.com/magento/magento2/issues/6401" target="_blank">(GITHUB-6401)</a>
 
 
-module 
+ 
 ### Web APIs
 {:.no_toc} 
 
-<!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to returned detailed information about a single object.
+<!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.
 
 <!---59874-->* We've improved the process of using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently.
 
@@ -571,7 +571,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 <!---60680-->* **Issue**: You cannot successfully change and save your settings for gift cards. (<i>Settings</i> include "allow open amount" or "open amount minimum".) 
 
-<!---60781-->* **Issue**: Installing with Varnish results in products not appearing on the frontend even after flushing the cache. 
+<!---60781-->* **Issue**: Installing with Varnish results in products not appearing on the frontend even after purging the cache. 
 
 <!---60680-->* **Issue**: You cannot successfully edit and save a gift card product. 
 
