@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: integration
+subgroup: B_integration
 title: Configure payment method by area
 menu_title: Configure payment method by area 
 menu_order: 10

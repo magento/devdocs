@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: integration
+subgroup: B_integration
 title: Add a payment action
 menu_title: Add a payment action
 menu_order: 5
