@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: p_gateway
+subgroup: A_gateway
 title: Gateway Client
 menu_title: Gateway Client
 menu_order: 5

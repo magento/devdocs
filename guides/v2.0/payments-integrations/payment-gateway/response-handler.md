@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: p_gateway
+subgroup: A_gateway
 title: Response Handler
 menu_title: Response Handler
 menu_node: 

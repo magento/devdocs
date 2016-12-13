@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: p_gateway
+subgroup: A_gateway
 title: Response Validator
 menu_title: Response Validator
 menu_node: 
