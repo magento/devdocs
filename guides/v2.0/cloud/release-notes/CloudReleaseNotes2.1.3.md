@@ -10,15 +10,19 @@ version: 2.1
 github_link: cloud/CloudReleaseNotes2.1.3.md
 ---
 
-## Magento Enterprise Cloud Edition 2.1.3 and 2.0.11 Release Notes
-{:.no_toc}
+These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition for versions 2.1.3 and 2.0.11.
+
 
 ## Required update to `.magento.app.yaml`
 Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11, you must add a rule to the `web` section of your `.magento.app.yaml` file. You must make the change in your local system, push it to your [integration server]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int), then, after upgrading, push the changes to [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod).
 
 ### Get started
 
+{% collapsible To get started: %}
+
 {% include cloud/cli-get-started.md %}
+
+{% endcollapsible %}
 
 ### Update `.magento.app.yaml`
 
