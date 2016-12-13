@@ -36,6 +36,104 @@ github_link: config-guide/cli/config-cli-subcommands-compiler.md
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
+<h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
+Run the command as follows (there are no options):
+
+	magento setup:di:compile
+
+The following message displays to confirm success:
+
+	Generated code and dependency injection configuration successfully.
+
+<div class="bs-callout bs-callout-warning">
+    <p>In Magento versions 2.0.5 and earlier, there is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you're preparing to deploy to production, you must use the multi-tenant compiler.</p>
+    <p>The issue was resolved in Magento versions 2.0.6 and later.</p>
+</div>
+
+<h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
+Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
+
+*	There is one Magento 2 code base instance
+*	There is one database instance per tenant
+*	Independent configurations in the Magento Admin per tenant
+*	The storefronts are independent of each other
+
+If you do not have multiple tenants, use the <a href="#config-cli-subcommands-single">single-tenant compiler</a> instead.
+
+Command options:
+
+	magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
+	filename>"] [--di="<path and filename>"] [--exclude-pattern="<regex>"]
+
+The following table discusses the meanings of this command's parameters and values. 
+
+<table>
+	<col width="25%">
+	<col width="65%">
+	<col width="10%">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Value</th>
+			<th>Required?</th>
+		</tr>
+		
+	<tr>
+		<td><p>--serializer</p></td>
+		<td><p>Specify either <code>serialize</code> or <a href="https://github.com/phadej/igbinary" target="_blank">igbinary</a>. Default is <code>serialize</code>.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--extra-classes-file</p></td>
+		<td><p>Specify the absolute file system path to proxies and factories that are not declared in the dependency injection or code..</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--generation</p></td>
+		<td><p>Absolute file system path to a directory for generated classes. Default is <code>&lt;your Magento install dir>/var/generation</code></p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--di</p></td>
+		<td><p>Absolute file system path to a directory to generate the object manager configuration. Default is <code>&lt;your Magento install dir>/var/di</code></p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--exclude-pattern</p></td>
+		<td><p>Regular expression that enables you to exclude paths from compilation. Default is <code>#[\\/]m1[\\/]#i)</code></p></td>
+		<td><p>No</p></td>
+	</tr>
+	
+	</tbody>
+</table>
+
+For example, to run the compiler and specify the `igbinary` serializer:
+
+	magento setup:di:compile-multi-tenant --serializer=igbinary
+
+Messages similar to the following display:
+
+	Generated classes:
+        Magento\Rss\Controller\Adminhtml\Feed\Interceptor
+        Magento\Quote\Model\Quote\Config\Interceptor
+        Magento\Checkout\Block\Cart\Shipping\Interceptor
+        Magento\Framework\View\Layout\Interceptor
+        Magento\Integration\Service\V1\Integration\Interceptor
+        Magento\Catalog\Block\Product\Compare\ListCompare\Interceptor
+        Magento\Framework\View\TemplateEngineFactory\Interceptor
+        Magento\Catalog\Model\Product\Attribute\Backend\Price\Interceptor
+        Magento\Catalog\Api\ProductRepositoryInterface\Interceptor
+        Magento\Catalog\Model\Product\Interceptor
+        Magento\Quote\Model\Quote\Item\ToOrderItem\Interceptor
+        Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper\Interceptor
+        Magento\Catalog\Model\Product\CartConfiguration\Interceptor
+        Magento\Catalog\Model\Product\TypeTransitionManager\Interceptor
+        Magento\Catalog\Model\Product\Type\Interceptor
+        ... more messages ...
+        On *nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory. 
+        For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user 
+        (example command: "chown -R www-data:www-data <MAGENTO_ROOT>/var" where MAGENTO_ROOT is the Magento root directory).
+
 ## Optional. Compile code before installing the Magento application {#config-cli-subcommands-single-before}
 In some cases, you might want to compile code before you install the Magento application. To do that, you must first enable modules; otherwise, the compiler has nothing to do. To compile code for only some modules, enable only those modules.
 
@@ -60,7 +158,8 @@ The following message displays to confirm success:
 
 ***Code compiling without DB***
  
-In orded to run compilation without DB, see the following topic: <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db">
+In order to run compilation without DB, see the following topic: <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db"></a>
+
 #### Related topics
 
 *	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>

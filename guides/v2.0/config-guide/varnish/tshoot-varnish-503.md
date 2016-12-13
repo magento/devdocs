@@ -20,7 +20,8 @@ To resolve this issue, increase the default value of `http_resp_hdr_len` in your
 
 1.	As a user with `root` privileges, open your Vanish configuration file in a text editor:
 
-	*	CentOS: `/etc/sysconfig/varnish`
+	*	CentOS 6: `/etc/sysconfig/varnish`
+	*	CentOS 7: `/etc/varnish/varnish.params`
 	*	Ubuntu: `/etc/default/varnish`
 
 2.	Search for the `http_resp_hdr_len` parameter.

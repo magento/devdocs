@@ -47,15 +47,7 @@ If you do not have a `routes.yaml` file, the following default is used:
 
 	"http://{default}/":
 	    type: upstream
-	    upstream: "php:php"
-	    cache:
-	        enabled: true
-	    ssi:
-	        enabled: false
-
-	"http://www.{default}/":
-	    type: redirect
-	    to: "http://{default}/"
+ 	   upstream: "mymagento:php"
 
 ## Route templates {#cloud-yaml-routes-temp}
 `routes.yaml` is a list of templated routes and their 

@@ -6,6 +6,7 @@ title: Admin Design Pattern Library
 menu_title: Image Uploader
 menu_order: 2
 menu_node:
+version: 2.0
 github_link: pattern-library/getting-user-input/image_uploader/image_uploader.md
 ---
 
