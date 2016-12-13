@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento EE 2.0.x Release Notes</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="2016-12-01 (PST)" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.0/release-notes/2.0-ee-release-notes-parent.html">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.0/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+            <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.0/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+          <li class="leaf"><a href="/guides/v2.0/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Magento 2.0
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/2.0-ee-release-notes.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/2.0-ee-release-notes.html">Magento 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Release Information</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/release-notes/bk-release-notes.html">2.0.x Release Information</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/release-notes/release-notes.html">Magento 2.0 Release Notes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="ce20-relnotes"><a href="#">Magento CE 2.0.x Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.10CE.html">Magento CE 2.0.10 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.9CE.html">Magento CE 2.0.9 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.8CE.html">Magento CE 2.0.8 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">Magento CE 2.0.7 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.6CE.html">Magento CE 2.0.6 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5CE.html">Magento CE 2.0.5 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4CE.html">Magento CE 2.0.4 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3CE.html">Magento CE 2.0.3 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent  active " id="ee20-relnotes"><a href="#">Magento EE 2.0.x Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee20-relnotes " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.10EE.html">Magento EE 2.0.10 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee20-relnotes " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.9EE.html">Magento EE 2.0.9 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee20-relnotes " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.8EE.html">Magento EE 2.0.8 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee20-relnotes " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7EE.html">Magento EE 2.0.7 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee20-relnotes " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.6EE.html">Magento EE 2.0.6 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee20-relnotes " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5EE.html">Magento EE 2.0.5 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee20-relnotes " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4EE.html">Magento EE 2.0.4 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee20-relnotes " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html">Magento EE 2.0.3 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="rc20-relnotes"><a href="#">Magento Release Candidate Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child rc20-relnotes " data-menunode="rc20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3CE.html">Magento CE 2.1 Release Candidate 3 (RC3) Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child rc20-relnotes " data-menunode="rc20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3EE.html">Magento EE 2.1 Release Candidate 3 (RC3) Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child rc20-relnotes " data-menunode="rc20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2CE.html">Magento CE 2.1 Release Candidate 2 (RC2) Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child rc20-relnotes " data-menunode="rc20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2EE.html">Magento EE 2.1 Release Candidate 2 (RC2) Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child rc20-relnotes " data-menunode="rc20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1CE.html">Magento CE 2.1 Release Candidate 1 (RC1) Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child rc20-relnotes " data-menunode="rc20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1EE.html">Magento EE 2.1 Release Candidate 1 (RC1) Release Notes</a>
+
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/release-notes/changes_2.0.html">Magento 2.0 Backward incompatible changes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/changes/ce_changes.html">Magento CE changes between 2.0.0 and develop</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/changes/ee_changes.html">Magento EE changes between 2.0.0 and develop</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/tech_bull_20-parent.html">Technical bulletins</a></li>
+									
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/release-notes/tech_bull_parent.html">Magento 2.0 technical bulletins</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_tls-repo.html">Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_207-upgrade.html">Required patch for PHP 5.5.x and Setup Application environments (June 6, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_201-upgrade.html">Magento upgrade issues (Jan. 28, 2016)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/release-notes/thirdparty_parent.html">Third-party licenses</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/thirdparty_ce.html">Magento CE third-party licenses</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/thirdparty_ee.html">Magento EE third-party licenses</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.0/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+        <span property="name">Magento EE 2.0.x Release Notes</span>
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    </ol>
+
+  </nav>
+
+
+	
+	<h1 class="page-heading">Magento EE 2.0.x Release Notes</h1>
+
+  
+
+
+</section>
+
+			
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+			
+
+			
+			 <div class="github-link">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/2.0-ee-release-notes.md" target="_blank">
+					 Edit this page on GitHub
+				 </a>
+			 </div>
+			
+
+			<div class="new-issue">
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/2.0-ee-release-notes-parent.html" target="_blank">Give us feedback</a>
+			</div>
+
+		</div>
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+				<li><a href="/guides/v2.0/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+				<li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2016 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

@@ -11,10 +11,6 @@ github_link: architecture/components/layout_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/layout_intro.html
 ---
 
-## Magento layouts {#m2arch_layout_overview}
-
 Layouts and customizing layouts are discussed extensively in the
 <h2 id="related">Related topics</h2>
 <a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
-
-Presentation Layer

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>What's new on DevDocs</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="2016-12-13 (PST)" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.0/magento-devdocs-whatsnew.html">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.0/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+            <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.0/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+          <li class="leaf"><a href="/guides/v2.0/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Magento 2.0
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/magento-devdocs-whatsnew.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/magento-devdocs-whatsnew.html">Magento 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+	<section class="full-width-content content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.0/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+        <a property="item" typeof="WebPage" href="/guides/v2.0/magento-devdocs-whatsnew.html"><span property="name">What's new on DevDocs</span></a>
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+        <span property="name">What's new on DevDocs</span>
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    </ol>
+
+  </nav>
+
+
+	
+	<h1 class="page-heading">What's new on DevDocs</h1>
+
+  
+
+
+</section>
+
+			<p>This page contains recent changes that we think you’d like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.</p>
+
+<h2 id="december-2016">December 2016</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Versions applied to</th>
+      <th>New or Updated</th>
+      <th>Week ending</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/guides/v2.0/payments-integrations/bk-payments-integrations.html" target="_blank">Add custom integrations and vault payments to the Magento payment provider gateway</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Dec 9</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">November 2016 </h2><div class="collapsible-content"><table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Versions applied to</th>
+      <th>New or Updated</th>
+      <th>Week ending</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/guides/v2.0/config-guide/multi-site/ms_over.html" target="_blank">Set up the Magento application to use multiple stores</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Dec 2</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/project/project-multi-sites.html" target="_blank">Set up multiple Magento stores on Magento Enterprise Cloud Edition</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Dec 2</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Magento data migration tool</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Dec 2</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/migration/migration-tool-upgrade.html" target="_blank">Upgrade the Magento data migration tool</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Dec 2</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/rest/list.html" target="_blank">Add REST APIs for Magento Enterprise Edition</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Dec 2</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/rest/rest_endpoints.html" target="_blank">Add REST API endoints for Magento EE</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Dec 2</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/test/js/jasmine.html" target="_blank">Use Jasmine for JavaScript unit testing</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Nov 25</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/extension-dev-guide/adapters.html" target="_blank">Use adapters with third-party libraries</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Nov 25</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/trouble/trouble_fastly.html" target="_blank">Debug the Fastly extension with Magento Enterprise Cloud Edition</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Nov 25</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/cloud-requirements.html" target="_blank">Magento Enterprise Cloud Edition requirements</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Nov 18</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/migration/migration-tool-internal-spec.html" target="_blank">Data migration toolkit directory structure</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Nov 18</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">Added information about the <code>@import</code> directive and usage</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Nov 18</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/extension-dev-guide/adapters.html" target="_blank">How to use adapters with third-party libraries</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Nov 11</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/discover-deploy.html" target="_blank">Added detail about Magento Enterprise Cloud Edition (MECE) deployment</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Nov 4</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/env/environments-logs.html">Where MECE logs are located</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Nov 4</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/config-guide/cron/custom-cron-tut.html" target="_blank">Tutorial on setting up a custom cron job and cron group</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Nov 4</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/install-gde/trouble/php/tshoot_opcache.html">Troubleshoot OPcache-related error</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Nov 4</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html" target="_blank">UI components linking properties</a></td>
+      <td>2.1.x</td>
+      <td>New</td>
+      <td>Nov 4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">October 2016 </h2><div class="collapsible-content"><table>
+  <thead>
+    <tr>
+      <th>Week ending</th>
+      <th>Description</th>
+      <th>Versions applied to</th>
+      <th>New or Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Magento Enterprise Cloud Edition (MECE) <a href="/guides/v2.0/cloud/discover-deploy.html" target="_blank">added descriptions of build and deployment scripts and other improvements to deployment</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Oct 28</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/env/environments-logs.html" target="_blank">MECE added description of build and deployment logs in staging and production</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Oct 28</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/howtos/patch-magento.html" target="_blank">MECE how to patch the Magento software</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 28</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/howtos/upgrade-magento.html" target="_blank">MECE how to upgrade the Magento software</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 28</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/mtf/features/reporting.html" target="_blank">Magento Functional Test Framework (FTF) create a report</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 28</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_data_source.html" target="_blank">DataSource UI component</a></td>
+      <td>2.1.x</td>
+      <td>New</td>
+      <td>Oct 28</td>
+    </tr>
+    <tr>
+      <td><a href="/magento-system-requirements.html" target="_blank">Home page for Magento 2.x system requirements</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 28</td>
+    </tr>
+    <tr>
+      <td><a href="/magento-techbull.html" target="_blank">Home page for Magento 2.x technical bulletins</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 28</td>
+    </tr>
+    <tr>
+      <td><a href="/magento-third-party.html" target="_blank">Home page for Magento 2.x third-party license agreements</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 28</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/coding-standards/code-standard-sniffers.html" target="_blank">Using code sniffers</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 28</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html" target="_blank">Updated cron group options</a> (<code>use_separate_process</code> applies to 2.1.x only)</td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Oct 21</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition (MECE) Release Notes home page</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 21</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.2.html" target="_blank">MECE 2.1.2 and 2.0.10 Release Notes</a></td>
+      <td>2.0.10, 2.1.2</td>
+      <td>New</td>
+      <td>Oct 21</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/get-started/gs-web-api-response.html" target="_blank">Added HTTP response codes to Web API topic</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Oct 21</td>
+    </tr>
+    <tr>
+      <td><a href="/magento-system-requirements.html" target="_blank">System requirements home page</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 21</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/m1x/other/ht_install-patches.html#apply-8788">How to apply the SUPEE-8788 security patch</a></td>
+      <td>1.x</td>
+      <td>Updated</td>
+      <td>Oct 21</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.10CE.html" target="_blank">Magento CE 2.0.10 release notes</a></td>
+      <td>2.0.x</td>
+      <td>New</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.10EE.html" target="_blank">Magento EE 2.0.10 release notes</a></td>
+      <td>2.0.x</td>
+      <td>New</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/release-notes/ReleaseNotes2.1.2CE.html" target="_blank">Magento CE 2.1.2 release notes</a></td>
+      <td>2.1.x</td>
+      <td>New</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/release-notes/ReleaseNotes2.1.2EE.html" target="_blank">Magento EE 2.1.2 release notes</a></td>
+      <td>2.1.x</td>
+      <td>New</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/ui_comp_guide/ui_comp_outline_proposed.html" target="_blank">Proposed outline for evolving UI Components guide</a></td>
+      <td>2.1.x</td>
+      <td>New</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/config-guide/secy/secy-headers.html" target="_blank">Preventing cache poisoning</a></td>
+      <td>See topic</td>
+      <td>New</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/install-gde/system-requirements-2-1.tech.html" target="_blank">Updated system requirements</a></td>
+      <td>2.1.2</td>
+      <td>Updated</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/install-gde/system-requirements-2.0-tech.html" target="_blank">Updated system requirements</a></td>
+      <td>2.0.x</td>
+      <td>Updated</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/m1x/api/rest/Resources/resource_customer_addresses.html" target="_blank">JSON responses added by Tim Reynolds</a></td>
+      <td>1.x</td>
+      <td>Updated</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/m1x/api/rest/Resources/resource_customers.html" target="_blank">JSON responses added by Tim Reynolds</a></td>
+      <td>1.x</td>
+      <td>Updated</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/m1x/ce19-ee114/ce1.9_release-notes.html" target="_blank">Magento CE 1.9.3 release notes</a></td>
+      <td>1.x</td>
+      <td>New</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/m1x/ce19-ee114/ee1.14_release-notes.html" target="_blank">Magento EE 1.14.3 release notes</a></td>
+      <td>1.x</td>
+      <td>New</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/m1x/system-requirements.html" target="_blank">Updated system requirements</a></td>
+      <td>1.x</td>
+      <td>Updated</td>
+      <td>Oct 14</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/extension-dev-guide/indexing-custom.html" target="_blank">Indexing</a> (add information about improving indexing performance)</td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Oct 7</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/access-acct/resources.html" target="_blank">Magento 2 documentation resources for Magento Enterprise Cloud Edition (MECE)</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 7</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/env/environment-vars_magento.html" target="_blank">MECE environment variables</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Oct 7</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.html" target="_blank">MECE add more information about project directory structure</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Oct 7</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/access-acct/set-up-env.html" target="_blank">MECE completely revise new environment setup</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Oct 7</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/before/before-project-owner.html" target="_blank">MECE responsibilities of the account owner</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 7</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html" target="_blank">MECE Magento file system owner for local development</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 7</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/before/before-workspace-php.html" target="_blank">MECE setting MySQL <code>auto_increment_increment=3</code></a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 7</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/cloud/live/stage-prod-over.html" target="_blank">MECE moving from integration to staging and production</a> (see also associated topics)</td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 7</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/get-started/authentication/gs-authentication-token.html" target="_blank">Added info about using tokens in authentication requests</a></td>
+      <td>2.x</td>
+      <td>Updated</td>
+      <td>Oct 7</td>
+    </tr>
+    <tr>
+      <td><a href="/guides/v2.0/rest/catalog-notes.html" target="_blank">How to programmatically create a category with custom attributes</a></td>
+      <td>2.x</td>
+      <td>New</td>
+      <td>Oct 7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+		</div>
+		<div class="page-info">
+		</div>
+	</section>
+<!-- /main content -->
+</div> <!-- container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+				<li><a href="/guides/v2.0/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+				<li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2016 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

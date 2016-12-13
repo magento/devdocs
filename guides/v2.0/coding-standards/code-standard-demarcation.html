@@ -8,17 +8,17 @@
 	<title>Code demarcation standard</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
+	<meta http-equiv="last-modified" content="2016-11-27 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="stylesheet" href="/css/print.css" media="print" />
 	<link rel="canonical" href="//guides/v2.0/coding-standards/code-standard-demarcation.html">
 
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script>
-        var baseUrl = "/";
-    </script>
+  <script>
+    var baseUrl = "/";
+  </script>
 
 	<!-- crazyegg -->
 	<script type="text/javascript">
@@ -33,161 +33,128 @@
 
 <header class="site-header">
 
-	<nav role="navigation">
+	<nav id="global-nav">
 
-		<div class="menu-btn">
-			<a class="menu-trigger menu-icon" href="#"></a>
-		</div>
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
 
-		<div id="global-nav">
-			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
-				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
-				</div>
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.0/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+            <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.0/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+          <li class="leaf"><a href="/guides/v2.0/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
 			</div>
-            
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+
+			
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
-		Version 2.0
+		Magento 2.0
 	</button>
-
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/coding-standards/code-standard-demarcation.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/coding-standards/code-standard-demarcation.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/coding-standards/code-standard-demarcation.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/coding-standards/code-standard-demarcation.html">Magento 2.1</a></li>
 	
   </ul>
 
 </div>
 
 
-		</div><!-- #global-nav -->
-	</nav>
 
-	<div class="search-btn">
-        <a class="search-trigger search-icon" href="/search.html"></a>
-	</div>
+
+		</div>
+
+	</nav><!-- #global-nav -->
 
 </header>
-
-<!--Sub Navigation-->
-<div id="subnav-wrap" class="nav-main">
-   <div id="subnav">
-      <ul class="menu nav">
-         <li class="first">
-            <a href="#">Get Started</a>
-            <ul class="menu nav">
-               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
-
-            </ul>
-         </li>
-         <li class="first">
-            <a href="#">System Administrator</a>
-            <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-               
-               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
-               
-               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
-            </ul>
-         </li>
-         <li class="first">
-            <a href="#">Developers</a>
-            <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-               
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
-               
-
-               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-               <li class="leaf"><a href="/guides/v2.0/mrg/intro.html">Module Reference Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
-               
-            </ul>
-         </li>
-         <li class="first">
-            <a href="#">Designers</a>
-            <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-               <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
-            </ul>
-         </li>
-         <li class="first">
-            <a href="#">Contributor</a>
-            <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
-            </ul>
-         </li>
-          <li class="first">
-              <a href="/guides/v2.0/test/testing.html">Testing</a>
-              <ul class="menu nav">
-                  <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/test/js/jasmine.html">JavaScript Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
-              </ul>
-          </li>
-         <li class="first">
-            <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Do I...?</a>
-         </li>
-      </ul>
-
-      <div class ="search">
-         <div class="search-icon"></div>
-         <form id="searchbox" name="gs" method="GET" action="/search.html">
-            <input type="text" name="q" id="searchtext" value="" placeholder="Search" autofocus>
-         </form>
-      </div><!-- END searchbox-->
-
-      <a href="#" class="nav-close">&times;</a>
-
-   </div> <!--End subnav -->
-</div><!--End subnav-wrap -->
 <div class="nav-main-fader"></div>
 
 
 <div id="gl-wrapper">
 
-	<!-- /.main-container -->
-	<div id="gl-container" class="main-container">
+	<!-- .main-container -->
+	<div class="main-container">
 		<a id="main-content"></a>
-		<div class="pane-content">
-			<div class="node node-panel">
-
-
-<!-- page-header -->
-<section class="page-intro">
-	<div class="container">
-		<h1 class="page-heading">Code demarcation standard</h1>
-
-        
-
-        <div class="topic-info">
-
-            
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/coding-standards/code-standard-demarcation.md" target="_blank">Edit this page on GitHub</a></div>
-            
-            
-
-        </div> 
-		        
-		
-        <div class="float-break"></div>
-	</div>
-</section>
 
 
 <div class="container">
@@ -205,9 +172,7 @@
 
 
 
-
-
-		<ul role="navigation">
+		<ul>
 
 		
 
@@ -516,6 +481,10 @@
 
 			
 
+				
+
+			
+
 		</ul>
 
 	</div>
@@ -525,7 +494,69 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <p>Magento core developers must follow the Magento code demarcation standard.</p>
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.0/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+        <a property="item" typeof="WebPage" href="/guides/v2.0/coding-standards/bk-coding-standards.html"><span property="name">Coding Standards</span></a>
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+        <span property="name">Code demarcation standard</span>
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    </ol>
+
+  </nav>
+
+
+	
+	<h1 class="page-heading">Code demarcation standard</h1>
+
+  
+
+
+</section>
+
+			<p>Magento core developers must follow the Magento code demarcation standard.</p>
 <p>This standard is recommended for third-party extension developers.</p>
 <p>Some parts of Magento code might not comply with the standard, but we are working to gradually improve this.</p>
 <p>The standard was developed in the scope of our efforts to ensure the following:</p>
@@ -536,38 +567,6 @@
    <li>Reinstate emphasis on decoupling HTML, CSS and JS from PHP classes.</li>
 </ul>
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.</p>
-
-<h2>Contents</h2>
-
-<ul id="markdown-toc">
-  <li><a href="#semantics" id="markdown-toc-semantics">Semantics</a>    <ul>
-      <li><a href="#for-attribute-names-and-values-you-must-use-meaningful-unabbreviated-lowercase-words-comprised-of-latin-characters-concatenated-with-a-hyphen--" id="markdown-toc-for-attribute-names-and-values-you-must-use-meaningful-unabbreviated-lowercase-words-comprised-of-latin-characters-concatenated-with-a-hyphen--">For attribute names and values you must use meaningful unabbreviated lowercase words comprised of Latin characters concatenated with a hyphen (<code>-</code>)</a></li>
-      <li><a href="#semantic-representation-may-rely-on-id-attribute" id="markdown-toc-semantic-representation-may-rely-on-id-attribute">Semantic representation may rely on ID attribute</a></li>
-      <li><a href="#you-must-follow-the-separation-of-presentation-and-content-methodology" id="markdown-toc-you-must-follow-the-separation-of-presentation-and-content-methodology">You must follow the separation of presentation and content methodology.</a></li>
-      <li><a href="#you-must-use-semantic-html-markup-only-and-must-not-use-presentation-markup" id="markdown-toc-you-must-use-semantic-html-markup-only-and-must-not-use-presentation-markup">You must use semantic HTML markup only, and must not use presentation markup.</a></li>
-    </ul>
-  </li>
-  <li><a href="#code-demarcation" id="markdown-toc-code-demarcation">Code demarcation</a>    <ul>
-      <li><a href="#visual-representation-must-rely-only-on-html-class-attributes-css-pseudo-classes-and-pseudo-elements-html-tags-and-form-elements-type-attribute-and-form-elements-state-attributes-example-disabled-checked" id="markdown-toc-visual-representation-must-rely-only-on-html-class-attributes-css-pseudo-classes-and-pseudo-elements-html-tags-and-form-elements-type-attribute-and-form-elements-state-attributes-example-disabled-checked">Visual representation must rely only on HTML <code>class</code> attributes, CSS pseudo-classes and pseudo-elements, HTML tags, and form element’s type attribute and form elements state attributes (example: <code>disabled</code>, <code>checked</code>).</a></li>
-      <li><a href="#you-must-not-hard-code-css-styles-in-javascript-files" id="markdown-toc-you-must-not-hard-code-css-styles-in-javascript-files">You must not hard-code CSS styles in JavaScript files</a></li>
-      <li><a href="#you-must-not-use-inline-css-styles-inside-html-tags" id="markdown-toc-you-must-not-use-inline-css-styles-inside-html-tags">You must not use inline CSS styles inside HTML tags</a></li>
-    </ul>
-  </li>
-  <li><a href="#business-logic-and-javascript" id="markdown-toc-business-logic-and-javascript">Business logic and JavaScript</a>    <ul>
-      <li><a href="#business-logic-must-rely-on-only-the-form-form-element-name-attributes-or-data-attributes" id="markdown-toc-business-logic-must-rely-on-only-the-form-form-element-name-attributes-or-data-attributes">Business logic must rely on only the form, form element name attributes, or data attributes</a></li>
-      <li><a href="#you-must-assign-html-helper-classes-in-javascript-to-modify-presentation-layer" id="markdown-toc-you-must-assign-html-helper-classes-in-javascript-to-modify-presentation-layer">You must assign HTML helper classes in JavaScript to modify presentation layer.</a></li>
-      <li><a href="#you-must-not-select-dom-elements-based-on-html-structure" id="markdown-toc-you-must-not-select-dom-elements-based-on-html-structure">You must not select DOM elements based on HTML structure</a></li>
-      <li><a href="#you-must-use-jquery-templates-to-insert-recurring-markup-into-dom-structure" id="markdown-toc-you-must-use-jquery-templates-to-insert-recurring-markup-into-dom-structure">You must use jQuery templates to insert recurring markup into DOM structure</a></li>
-      <li><a href="#you-must-not-hard-code-inline-javascript-in-php-classes" id="markdown-toc-you-must-not-hard-code-inline-javascript-in-php-classes">You must not hard-code inline JavaScript in PHP classes</a></li>
-    </ul>
-  </li>
-  <li><a href="#phtml-templates-and-php-files" id="markdown-toc-phtml-templates-and-php-files">PHTML templates and PHP files</a>    <ul>
-      <li><a href="#you-must-not-hard-code-inline-css-styles-in-php-classes" id="markdown-toc-you-must-not-hard-code-inline-css-styles-in-php-classes">You must not hard-code inline CSS styles in PHP classes</a></li>
-      <li><a href="#you-must-not-hard-code-inline-javascript-in-php-classes-1" id="markdown-toc-you-must-not-hard-code-inline-javascript-in-php-classes-1">You must not hard-code inline JavaScript in PHP classes</a></li>
-      <li><a href="#you-must-not-hard-code-html-markup-used-in-the-body-tag-in-php-classes" id="markdown-toc-you-must-not-hard-code-html-markup-used-in-the-body-tag-in-php-classes">You must not hard-code HTML markup (used in the <code>&lt;body&gt;</code> tag) in PHP classes</a></li>
-    </ul>
-  </li>
-</ul>
 
 <h2 id="semantics">Semantics</h2>
 
@@ -1002,40 +1001,62 @@ public function getAttributeId($element)
 
 
 		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+			
+
+			
+			 <div class="github-link">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/coding-standards/code-standard-demarcation.md" target="_blank">
+					 Edit this page on GitHub
+				 </a>
+			 </div>
+			
+
+			<div class="new-issue">
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/coding-standards/code-standard-demarcation.html" target="_blank">Give us feedback</a>
+			</div>
+
+		</div>
+
 	</section>
-<!-- /main content -->
+	<!-- /.content -->
+
+</div> <!-- /.container -->
 
 
-</div> <!-- container -->
-
-
-		</div>
-		</div>
 	</div>
-
+	<!-- /.main-container -->
 
 </div>
-<!-- -->
-<!--Global footer-->
-<div id="footer-wrap">
-    <div id="copyright">
-        <div class="container">
-            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
-            <div class="copyright-links">
-                <ul class="nav">
-                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
-                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
-                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
-                </ul>
-            </div>
-        </div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+				<li><a href="/guides/v2.0/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+				<li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
     </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
-<script src="/common/js/jquery-ui.min.js"></script>
+		<div class="copyright-date">&copy; 2016 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -1060,7 +1081,7 @@ public function getAttributeId($element)
     })();
 </script>
 
-<script src="/js/app.js"></script>
+
 
 <!--Google Analytics-->
 <script>
@@ -1071,6 +1092,7 @@ public function getAttributeId($element)
     ga('create', 'UA-66243208-1', 'auto');
     ga('send', 'pageview');
 </script>
+
 
 </body>
 </html>

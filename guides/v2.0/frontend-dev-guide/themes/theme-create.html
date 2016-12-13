@@ -8,17 +8,17 @@
 	<title>Create a storefront theme</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
+	<meta http-equiv="last-modified" content="2016-11-25 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="stylesheet" href="/css/print.css" media="print" />
 	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/themes/theme-create.html">
 
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script>
-        var baseUrl = "/";
-    </script>
+  <script>
+    var baseUrl = "/";
+  </script>
 
 	<!-- crazyegg -->
 	<script type="text/javascript">
@@ -33,161 +33,128 @@
 
 <header class="site-header">
 
-	<nav role="navigation">
+	<nav id="global-nav">
 
-		<div class="menu-btn">
-			<a class="menu-trigger menu-icon" href="#"></a>
-		</div>
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
 
-		<div id="global-nav">
-			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
-				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
-				</div>
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.0/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+            <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.0/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+          <li class="leaf"><a href="/guides/v2.0/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.0/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
 			</div>
-            
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+
+			
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
-		Version 2.0
+		Magento 2.0
 	</button>
-
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html">Version 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html">Version 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html">Magento 2.1</a></li>
 	
   </ul>
 
 </div>
 
 
-		</div><!-- #global-nav -->
-	</nav>
 
-	<div class="search-btn">
-        <a class="search-trigger search-icon" href="/search.html"></a>
-	</div>
+
+		</div>
+
+	</nav><!-- #global-nav -->
 
 </header>
-
-<!--Sub Navigation-->
-<div id="subnav-wrap" class="nav-main">
-   <div id="subnav">
-      <ul class="menu nav">
-         <li class="first">
-            <a href="#">Get Started</a>
-            <ul class="menu nav">
-               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Information</a></li>
-
-            </ul>
-         </li>
-         <li class="first">
-            <a href="#">System Administrator</a>
-            <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-               
-               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
-               
-               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
-            </ul>
-         </li>
-         <li class="first">
-            <a href="#">Developers</a>
-            <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-               
-               <li class="first leaf"><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
-               
-
-               <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices Guide</a></li>
-               <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
-               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-               <li class="leaf"><a href="/guides/v2.0/mrg/intro.html">Module Reference Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
-               
-            </ul>
-         </li>
-         <li class="first">
-            <a href="#">Designers</a>
-            <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-               <li class="leaf"><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
-            </ul>
-         </li>
-         <li class="first">
-            <a href="#">Contributor</a>
-            <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
-            </ul>
-         </li>
-          <li class="first">
-              <a href="/guides/v2.0/test/testing.html">Testing</a>
-              <ul class="menu nav">
-                  <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/test/js/jasmine.html">JavaScript Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
-                  <li class="leaf"><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
-              </ul>
-          </li>
-         <li class="first">
-            <a href="/guides/v2.0/howdoi/bk-how-do-i.html">How Do I...?</a>
-         </li>
-      </ul>
-
-      <div class ="search">
-         <div class="search-icon"></div>
-         <form id="searchbox" name="gs" method="GET" action="/search.html">
-            <input type="text" name="q" id="searchtext" value="" placeholder="Search" autofocus>
-         </form>
-      </div><!-- END searchbox-->
-
-      <a href="#" class="nav-close">&times;</a>
-
-   </div> <!--End subnav -->
-</div><!--End subnav-wrap -->
 <div class="nav-main-fader"></div>
 
 
 <div id="gl-wrapper">
 
-	<!-- /.main-container -->
-	<div id="gl-container" class="main-container">
+	<!-- .main-container -->
+	<div class="main-container">
 		<a id="main-content"></a>
-		<div class="pane-content">
-			<div class="node node-panel">
-
-
-<!-- page-header -->
-<section class="page-intro">
-	<div class="container">
-		<h1 class="page-heading">Create a storefront theme</h1>
-
-        
-
-        <div class="topic-info">
-
-            
-               <div class="github-link"><a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/themes/theme-create.md" target="_blank">Edit this page on GitHub</a></div>
-            
-            
-
-        </div> 
-		        
-		
-        <div class="float-break"></div>
-	</div>
-</section>
 
 
 <div class="container">
@@ -205,9 +172,7 @@
 
 
 
-
-
-		<ul role="navigation">
+		<ul>
 
 		
 
@@ -291,6 +256,14 @@
 
 									
 
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-overview.html">Themes overview</a></li>
+
+									
 
 								
 
@@ -908,6 +881,10 @@
 
 			
 
+				
+
+			
+
 		</ul>
 
 	</div>
@@ -917,28 +894,71 @@
 
 	<section class="content">
 		<div class="content-wrap">
-            <h2 id="layout_theme_how-to_overview">What's in this topic</h2>
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.0/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+        <a property="item" typeof="WebPage" href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html"><span property="name">Frontend Developer Guide</span></a>
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+        <span property="name">Create a storefront theme</span>
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    </ol>
+
+  </nav>
+
+
+	
+	<h1 class="page-heading">Create a storefront theme</h1>
+
+  
+
+
+</section>
+
+			<h2 id="layout_theme_how-to_overview">What's in this topic</h2>
 
 <p>This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.</p>
-
-<ul id="markdown-toc">
-  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
-  <li><a href="#layout_theme_how-to_dirs" id="markdown-toc-layout_theme_how-to_dirs">Create a theme directory</a></li>
-  <li><a href="#fedg_create_theme_how-to_declare" id="markdown-toc-fedg_create_theme_how-to_declare">Declare your theme</a></li>
-  <li><a href="#fedg_create_theme_composer" id="markdown-toc-fedg_create_theme_composer">Make your theme a Composer package (optional)</a></li>
-  <li><a href="#fedg_create_theme_reg" id="markdown-toc-fedg_create_theme_reg">Add registration.php</a></li>
-  <li><a href="#fedg_create_theme_how-to-images" id="markdown-toc-fedg_create_theme_how-to-images">Configure images</a></li>
-  <li><a href="#fedg_theme_how-to_static" id="markdown-toc-fedg_theme_how-to_static">Create directories for static files</a></li>
-  <li><a href="#fedg_theme_how-to_structure" id="markdown-toc-fedg_theme_how-to_structure">Your theme directory structure now</a></li>
-  <li><a href="#theme_logo" id="markdown-toc-theme_logo">Theme logo</a></li>
-  <li><a href="#logo_declare" id="markdown-toc-logo_declare">Declaring theme logo</a></li>
-  <li><a href="#next" id="markdown-toc-next">What’s next</a>    <ul>
-      <li><a href="#register_theme" id="markdown-toc-register_theme">Theme registration</a></li>
-      <li><a href="#applying-a-theme" id="markdown-toc-applying-a-theme">Applying a theme</a></li>
-    </ul>
-  </li>
-  <li><a href="#see-also" id="markdown-toc-see-also">See also</a></li>
-</ul>
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
@@ -950,6 +970,25 @@
   <li>For the sake of compatibility, upgradability, and easy maintenance, do not modify the out of the box Magento themes. To customize the design of your Magento store, create a new custom theme.</li>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set</a> your Magento application to the developer <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">mode</a>. The application mode influences the way static files are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.</li>
 </ol>
+
+<h2 id="theme-gen-walkthrough">Create a storefront theme: walkthrough</h2>
+<p>The high-level steps required to add a new theme in the Magento system are the following:</p>
+
+<ol>
+  <li>Create a directory for the theme under <code>app/design/frontend/&lt;your_vendor_name&gt;/&lt;your_theme_name&gt;</code>.</li>
+  <li>Add a declaration file <code>theme.xml</code> and optionally create <code>etc</code> directory and create a file named <code>view.xml</code> to the theme directory.</li>
+  <li>Add a <code>composer.json</code> file.</li>
+  <li>Add <code>registration.php</code>.</li>
+  <li>Create directories for CSS, JavaScript, images, and fonts.</li>
+  <li>Configure your theme in the Admin panel.</li>
+</ol>
+
+<h2 id="theme-gen-read">Recommended reading</h2>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento" target="_blank">Checklist of modules</a></li>
+  <li><a href="/guides/v2.0/architecture/view/static-process.html" target="_blank">Static view files processing</a></li>
+</ul>
 
 <h2 id="layout_theme_how-to_dirs">Create a theme directory</h2>
 
@@ -1186,40 +1225,62 @@ Your theme does not have a parent theme:
 </ul>
 
 		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+			
+
+			
+			 <div class="github-link">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/themes/theme-create.md" target="_blank">
+					 Edit this page on GitHub
+				 </a>
+			 </div>
+			
+
+			<div class="new-issue">
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/frontend-dev-guide/themes/theme-create.html" target="_blank">Give us feedback</a>
+			</div>
+
+		</div>
+
 	</section>
-<!-- /main content -->
+	<!-- /.content -->
+
+</div> <!-- /.container -->
 
 
-</div> <!-- container -->
-
-
-		</div>
-		</div>
 	</div>
-
+	<!-- /.main-container -->
 
 </div>
-<!-- -->
-<!--Global footer-->
-<div id="footer-wrap">
-    <div id="copyright">
-        <div class="container">
-            <div class="copyright-date">&copy; 2016 Magento, Inc. All rights reserved.</div>
-            <div class="copyright-links">
-                <ul class="nav">
-                    <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
-                    <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
-                    <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
-                </ul>
-            </div>
-        </div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+				<li><a href="/guides/v2.0/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+				<li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
     </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
-<script src="/common/js/jquery-ui.min.js"></script>
+		<div class="copyright-date">&copy; 2016 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -1244,7 +1305,7 @@ Your theme does not have a parent theme:
     })();
 </script>
 
-<script src="/js/app.js"></script>
+
 
 <!--Google Analytics-->
 <script>
@@ -1255,6 +1316,7 @@ Your theme does not have a parent theme:
     ga('create', 'UA-66243208-1', 'auto');
     ga('send', 'pageview');
 </script>
+
 
 </body>
 </html>
