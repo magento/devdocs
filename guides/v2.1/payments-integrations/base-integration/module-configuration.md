@@ -67,6 +67,6 @@ Your payment method implementation might require adding more dependencies.
 
 ## What's next
 
-[Payment method configuration]({{page.baseurl}}payments-integrations/base-integration/payment-options-config.html).
+[Payment method configuration]({{page.baseurl}}payments-integrations/base-integration/payment-option-config.html).
 
 
