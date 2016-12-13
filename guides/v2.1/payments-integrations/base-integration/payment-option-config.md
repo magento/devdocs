@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: integration
+subgroup: B_integration
 title: Payment method configuration
 menu_title: Payment method configuration
 menu_order: 2
@@ -65,3 +65,7 @@ Following is the illustration of such configuration (`config.xml` of the Braintr
 </config>
 {% endhighlight %}
 
+## What's next
+
+- [Payment  method facade]({{page.baseurl}}payments-integrations/base-integration/facade-configuration.html)
+- [Payment info rendering in Admin checkout]({{page.baseurl}}payments-integrations/base-integration/formblocktype.html)

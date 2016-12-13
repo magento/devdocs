@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: vault
+subgroup: C_vault
 title: Adding Vault module dependencies
 menu_title:  Adding Vault module dependencies
 menu_order: 1

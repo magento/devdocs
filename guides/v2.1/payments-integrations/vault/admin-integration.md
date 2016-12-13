@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: vault
+subgroup: C_vault
 title: Vault implementation for Admin
 menu_title: Vault implementation for Admin
 menu_order: 25

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: vault
+subgroup: C_vault
 title: Customer Stored Payments
 menu_title: Customer Stored Payments
 menu_order: 20

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: integration
+subgroup: B_integration
 title: Payment method module configuration
 menu_title: Payment method module configuration
 menu_order: 1
@@ -65,7 +65,8 @@ Add the same dependencies in `%Vendor_Module%/etc/module.xml` like in the follow
 
 Your payment method implementation might require adding more dependencies.
 
+## What's next
 
-
+[Payment method configuration]({{page.baseurl}}payments-integrations/base-integration/payment-options-config.html).
 
 

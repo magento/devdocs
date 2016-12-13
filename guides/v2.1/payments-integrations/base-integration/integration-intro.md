@@ -1,9 +1,9 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: integration
-title: Payment Integration in Magento2
-menu_title: Payment Integration
+subgroup: B_integration
+title: Adding a new payment integration (payment method)
+menu_title: Adding a new payment integration (payment method)
 menu_order: 5
 menu_node: parent
 version: 2.1
