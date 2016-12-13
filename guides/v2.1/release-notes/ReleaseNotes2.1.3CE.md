@@ -51,7 +51,7 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 	* Update the status and state of an invoice or order after actions are performed.
 
-	* Notify a customer about refunded items or invoice/order.
+	* Notify a customer about refunded items or invoice or order.
 
 	REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
 
