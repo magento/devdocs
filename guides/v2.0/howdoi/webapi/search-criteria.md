@@ -73,7 +73,7 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=finset
 
 The system creates an array, as shown in the following pseudo-code.
 
-<pre>
+<pre class="no-copy">
 searchCriteria => [
   'filterGroups' => [
     0 => [
@@ -115,7 +115,7 @@ searchCriteria[filter_groups][0][filters][1][condition_type]=like
 
 The system creates an array, as shown in the following pseudo-code.
 
-<pre>
+<pre class="no-copy">
 searchCriteria => [
   'filterGroups' => [
     0 => [
@@ -152,7 +152,7 @@ searchCriteria[filter_groups][1][filters][0][condition_type]=lt
 
 The system creates an array, as shown in the following pseudo-code.
 
-<pre>
+<pre class="no-copy">
 searchCriteria => [
   'filterGroups' => [
     0 => [

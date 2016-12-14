@@ -9,11 +9,6 @@ version: 2.0
 github_link: extension-dev-guide/depend-inj.md
 redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## Dependency injection overview
 

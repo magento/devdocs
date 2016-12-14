@@ -10,12 +10,6 @@ version: 2.0
 github_link: architecture/global_extensibility_features.md
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 Essential qualities foster extensibility throughout the entire set of Magento components. This discussion focuses on:

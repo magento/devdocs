@@ -15,8 +15,6 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images. 
 
 
-* TOC
-{:toc}
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
@@ -26,6 +24,23 @@ This topic discusses how to create the files that make up a theme, how to add a 
 
 1. For the sake of compatibility, upgradability, and easy maintenance, do not modify the out of the box Magento themes. To customize the design of your Magento store, create a new custom theme.
 2. [Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way static files are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
+
+## Create a storefront theme: walkthrough {#theme-gen-walkthrough}
+The high-level steps required to add a new theme in the Magento system are the following:
+
+1. Create a directory for the theme under `app/design/frontend/<your_vendor_name>/<your_theme_name>`.
+2. Add a declaration file `theme.xml` and optionally create `etc` directory and create a file named `view.xml` to the theme directory.
+3. Add a `composer.json` file.
+4. Add `registration.php`.
+3. Create directories for CSS, JavaScript, images, and fonts.
+4. Configure your theme in the Admin panel.
+
+<h2 id="theme-gen-read">Recommended reading</h2>
+
+* <a href="{{ site.mage2000url }}app/code/Magento" target="_blank">Checklist of modules</a>
+* <a href="{{page.baseurl}}architecture/view/static-process.html" target="_blank">Static view files processing</a>
+
+
 
 ## Create a theme directory {#layout_theme_how-to_dirs}
 

@@ -10,7 +10,6 @@ version: 2.0
 github_link: config-guide/cron/custom-cron-ref.md
 ---
 
-## Custom cron job and cron group reference
 This topic helps you set up crontabs and optionally cron groups for custom modules. If your custom module needs to schedule tasks periodically, you must set up a crontab for that module. A *crontab* is a cron job's configuration.
 
 You can optionally set up a custom group, which among other things enables you to run cron jobs defined in that group independently of other cron jobs.

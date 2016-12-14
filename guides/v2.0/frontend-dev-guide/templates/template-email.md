@@ -11,28 +11,6 @@ github_link: frontend-dev-guide/templates/template-email.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-email.html
 ---
 
-#### Contents
-
-This topic covers how to customize the content and design of email templates.
-
-* <a href="#customize-email-templates">Customize email templates</a>
-    * <a href="#customize-email-theme">Customize email templates using a theme</a>
-    * <a href="#customize-email-admin">Customize email templates using the Magento Admin</a>
-    * <a href="#customize-header-footer">Customize header and footer templates</a>
-    * <a href="#customize-content">Customize email content</a>
-* <a href="#email-styles">Email styles</a>
-    * <a href="#inline-styles">Inline styles</a>
-    * <a href="#non-inline-styles">Non-inline styles</a>
-    * <a href="#organization-email-styles">How email styles are organized</a>
-    * <a href="#custom-fonts">Custom fonts</a>
-* <a href="#email-logo">Email logo</a>
-    * <a href="#customize-logo-theme">Customize the logo using a theme</a>
-    * <a href="#customize-logo-admin">Customize the logo using the Admin</a>
-* <a href="#contact-information-emails">Use contact information in emails</a>
-* <a href="#localization">Localization</a>
-* <a href="#supported-clients">Supported email clients and devices</a>
-* <a href="#newsletter-templates">Newsletter templates</a>
-
 ## Customize email templates {#customize-email-templates}
 
 Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="{{ site.mage2000url }}app/code/Magento/Sales/view/frontend/email/order_new.html"><code>&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html</code></a>. 

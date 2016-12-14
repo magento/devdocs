@@ -15,15 +15,6 @@ github_link: install-gde/prereq/install-rabbitmq.md
   <p><a href="http://rabbitmq.com">RabbitMQ</a> must be installed and configured after Magento Community Edition and before Magento Enterprise Edition.</p>
 </div>
 
-#### Contents
-*	<a href="#overview">Overview</a>
-*	<a href="#ubuntu-install">Install on Ubuntu</a>
-*	<a href="#centos-install">Install on CentOS</a>
-*	<a href="#config">Configure RabbitMQ</a>
-*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message queue overview</a>
-*	<a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queues</a>
-
-
 <h2 id="overview">RabbitMQ Overview</h2>
 
 RabbitMQ is is an open source message broker that offers a reliable, highly available, scalable and portable messaging system.

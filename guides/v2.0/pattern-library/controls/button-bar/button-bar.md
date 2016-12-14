@@ -11,23 +11,7 @@ github_link: pattern-library/controls/button-bar/button-bar.md
 redirect_from: /guides/v1.0/pattern-library/controls/button-bar/button-bar.html
 ---
 
-
-<h2> Button Bar </h2>
-
-<h3> Contents </h3>
-
-* <a href="#overview">Overview</a>
-* <a href="#when-to-use">When to Use</a>
-* <a href="#when-not-to-use">When Not to Use</a>
-* <a href="#rules">Rules</a>
-* <a href="#style">Style</a>
-* <a href="#behavior">Behavior</a>
-* <a href="#accessibility">Accessibility</a>
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
-
+## Button bar
 Within Magento application, it is often necessary to provide users with page level actions. These actions should be contain in a button bar as described in this guideline.
 
 For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.

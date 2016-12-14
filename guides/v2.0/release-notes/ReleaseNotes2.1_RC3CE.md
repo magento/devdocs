@@ -1,15 +1,16 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
+subgroup: 02_rel-notes
 title: Magento CE 2.1 Release Candidate 3 (RC3) Release Notes 
 menu_title: Magento CE 2.1 Release Candidate 3 (RC3) Release Notes 
-menu_order: 25
+menu_order: 405
 version: 2.0
+level3_menu_node: level3child
+level3_subgroup: rc20-relnotes
 github_link: release-notes/ReleaseNotes2.1_RC3CE.md
 ---
 
-<h2>Magento Community Edition 2.1 Release Candidate 3 (RC3)</h2>
 We are pleased to present Magento 2.1 Release Candidate 3 (RC3). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
 
 * preview the new features and fixes that Magento 2.1 GA will contain

@@ -11,14 +11,6 @@ github_link: config-guide/cli/config-cli-subcommands-depen.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html
 ---
 
-
-#### Contents
-
-*	<a href="#config-cli-depend-rpt-overview">Overview of dependency reports</a>
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-depend-rpt-run">Run dependency reports</a>
-
-
 <h2 id="config-cli-depend-rpt-overview">Overview of dependency reports</h2>
 You can run the following types of reports:
 

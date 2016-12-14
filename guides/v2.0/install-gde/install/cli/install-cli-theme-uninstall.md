@@ -13,16 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-theme-uninstall.html
 ---
 
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-install-magento-prereq">Prerequisite</a>
-*	<a href="#instgde-install-uninst-theme-over">Overview of uninstalling themes</a>
-*	<a href="#instgde-cli-before">First steps</a>
-*	<a href="#instgde-install-uninst-theme-uninst">Uninstall themes</a>
-
 <h2 id="instgde-install-uninst-theme-prereq">Prerequisite</h2>
 Before you use this command, you must know the relative path to your theme. Themes are located in a subdirectory of `<your Magento install dir>/app/design/<area name>`. You must specify the path to the theme starting with the area, which is either `frontend` (for storefront themes) or `adminhtml` (for Magento Admin themes).
 

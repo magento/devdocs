@@ -13,13 +13,6 @@ github_link: mrg/ee/PaymentStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-* TOC
-{:toc}
-
-## Magento Magento_PaymentStaging Module
-
 ## Overview
 
 The Magento_PaymentStaging module is a part of the staging functionality in Magento EE. It extends the Magento_Payment module for the staging preview functionality.

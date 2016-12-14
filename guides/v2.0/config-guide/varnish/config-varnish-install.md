@@ -10,7 +10,6 @@ version: 2.0
 github_link: config-guide/varnish/config-varnish-install.md
 ---
 
-<h2 id="config-varnish-install">Install Varnish</h2>
 Installing the Varnish software is beyond the scope of this guide. For more information about installing Varnish, see:
 
 *	<a href="http://wiki.mikejung.biz/Varnish" target="_blank">installation wiki</a>

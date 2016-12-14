@@ -12,17 +12,6 @@ github_link: config-guide/multi-master/multi-master_manual.md
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
-#### Contents
-*   [Overview of manual split database configuration](#config-ee-multidb-manual-over)
-*   [Back up the Magento system](#config-ee-multidb-backup)
-*   [Set up additional master databases](#config-ee-multidb-master-masters)
-*   [Configure the sales database](#config-ee-multidb-oms)
-*   [Configure the quote database](#config-ee-multidb-checkout)
-*   [Drop sales and quote tables from the Magento database](#config-ee-multidb-drop)
-*   [Update your deployment configuration](#config-ee-multidb-config)
-*   [Reference scripts](#split-db-ref)
-*   [Verify split databases]({{page.baseurl}}config-guide/multi-master/multi-master_verify.html)
-
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
 If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. Before continuing, contact Magento Support to see if this is necessary in your case.
 

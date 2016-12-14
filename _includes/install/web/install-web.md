@@ -1,14 +1,5 @@
 <div markdown="1">
 
-<h4>Contents</h4>   
-
-See one of the following sections:
-
-*	<a href="#instgde-install-prereq">Before you start your installation</a>
-*	<a href="#instgde-install-magento-web">Running the Setup Wizard</a>
-*	<a href="#instgde-install-runagain">Running the Setup Wizard again</a>
-*	<a href="#instgde-install-reinstall">Updating or reinstalling the Magento software</a>
-
 This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>.
 
 <h2 id="instgde-install-prereq">Before you start your installation</h2>

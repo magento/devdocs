@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/upgrader/upgrade-readiness.md
 ---
 
-## Step 2. Readiness check
 The readiness check makes sure your server and environment are set up correctly for upgrading components. In the event of errors, you can consult troubleshooting suggestions in this guide.
 
 <h2 id="compman-readiness-start">Start the readiness check</h2>

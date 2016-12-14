@@ -13,12 +13,6 @@ github_link: config-guide/cache/caching_frontend-cache-types.md
 redirect_from: /guides/v2.0/config-guide/config/caching_frontend-cache-types.html
 ---
 
-#### Contents 
-
-*	<a href="#cache-mage-over">Overview of Magento caching</a>
-*	<a href="#cache-mage-frontend">Step 1: Define a cache frontend</a>
-*   <a href="#cache-mage-adv">Step 2: Configure the cache</a>
-
 <h2 id="cache-mage-over">Overview of Magento caching</h2>
 Magento enables you to configure alternatives to the default file system caching. This guide discusses some of those alternatives; namely,
 

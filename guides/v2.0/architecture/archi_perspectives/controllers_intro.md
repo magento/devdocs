@@ -10,12 +10,6 @@ github_link: architecture/archi_perspectives/controllers_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/controllers_intro.html
 ---
 
-## Magento Blocks and Controllers
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 Blocks hold presentation logic --- no business logic code that controls.

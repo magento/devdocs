@@ -9,12 +9,6 @@ version: 2.2
 github_link: extension-dev-guide/framework/serializer.md
 ---
 
-## {{page.title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 This library provides a secure way of serializing and unserializing strings, integers, floats, booleans, and arrays.
@@ -65,7 +59,7 @@ use Magento\Framework\Serialize\SerializerInterface;
 
 /**
  * @var SerializerInterface
- */ 
+ */
 private $serializer;
 
 ...
@@ -84,14 +78,14 @@ The following example shows how to use a serializer's `serialize()` and `unseria
 
 /**
  * @var string
- */ 
+ */
 private $cacheId = 'mySerializedData';
 
 ...
 
 /**
  * Save data to cache
- * @param array $data  
+ * @param array $data
  *
  * @return bool
  */

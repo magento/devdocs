@@ -20,7 +20,7 @@ This topic looks strange, since it may break the entire DevDocs hierarchy (try t
 Must be discussed with DevDocs team!
 -->
 
-<h2>Changes to classes and method versions</h2>
+## Changes to classes and method versions
 
 The following table identifies typical Major, Minor and Patch level changes to interfaces and classes.
 
@@ -51,9 +51,10 @@ The following table identifies typical Major, Minor and Patch level changes to i
 </tbody>
 </table>
 
-<h3>Related topics</h3>
-<a href="{{page.baseurl}}architecture/versioning_overview.html">Versioning policy overview</a>
+## Related topics
 
-<a href="{{page.baseurl}}architecture/software_versions.html">Magento 2.0 software versions</a>
+* <a href="{{page.baseurl}}architecture/versioning_overview.html">Versioning policy overview</a>
 
-<a href="{{page.baseurl}}architecture/version_store.html">Where is version information stored?</a>
+* <a href="{{page.baseurl}}architecture/software_versions.html">Magento 2.0 software versions</a>
+
+* <a href="{{page.baseurl}}architecture/version_store.html">Where is version information stored?</a>

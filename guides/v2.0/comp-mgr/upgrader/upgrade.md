@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/upgrader/upgrade.md
 ---
 
-## Step 4. Upgrade {#upgrade-finish}
 The components you're upgrading display. The following figure shows an example.
 
 <img src="{{ site.baseurl }}common/images/upgr_upgrade.png" width="550px" alt="Click upgrade to complete the task">

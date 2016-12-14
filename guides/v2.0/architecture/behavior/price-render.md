@@ -10,12 +10,6 @@ github_link: architecture/behavior/price-render.md
 redirect_from: /guides/v1.0/architecture/behavior/price-render.html
 ---
 
-## Introduction to Magento price rendering {#m2devgde-pricerend-intro}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 The Magento software renders prices using the Pricing library as follows:

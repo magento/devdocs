@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/live/stage-prod-live.md
 ---
 
-## From integration to live
 These topics discuss concepts you must understand and tasks you must perform when deploying your Magento site from integration to staging and finally to production.
 
 The Magento Enterprise Cloud Edition production environment is for your live store. Integration and staging are for customizing code and testing it before deploying it to production.

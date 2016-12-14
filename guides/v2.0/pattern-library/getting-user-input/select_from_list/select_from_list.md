@@ -10,18 +10,8 @@ version: 2.0
 github_link: pattern-library/getting-user-input/select_from_list/select_from_list.md
 ---
 
-<h2> Select From List </h2>
-
-<h3>Contents</h3> 
-
-* <a href="#overview">Overview</a>
-* <a href="#whentouse">When to Use</a>
-* <a href="#variations">Variations</a>
-* <a href="#accessibility">Accessibility</a>
-* <a href="#assets">Assets</a>
-
-<h3 id="overview">Overview</h3>
-In Magento Admin, user will often times need to select item(s) from a list of items. This pattern address the variations of list pattern.
+## Select from list
+In the Magento Admin, user will often times need to select item(s) from a list of items. This pattern address the variations of list pattern.
 
 
 <h3 id="whentouse">When to Use</h3>

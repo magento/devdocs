@@ -10,12 +10,6 @@ version: 2.0
 github_link: architecture/frontend_custom_strategies.md
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview {#m2arch-whatis-overview}
 
 The Magento frontend is designed to optimize storefront customization, with highly extensible <i>themes</i> being the central customization mechanism.

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: 02_ReleaseNotes
+subgroup: 02_rel-notes
 title: Magento 2.1 Release Notes 
 menu_title: Magento 2.1 Release Notes 
 menu_node: parent
@@ -10,8 +10,7 @@ version: 2.1
 github_link: release-notes/release-notes.md
 ---
 
-### Magento Community Edition (CE) Release Notes
-[Magento CE 2.1.0 Release Notes ]({{ page.baseurl }}release-notes/ReleaseNotes2.1.0CE.html)
+## Magento Community Edition (CE) and Enterprise Edition (EE) Release Notes
 
-### Magento Enteprise Edition (EE) Release Notes
-[Magento EE 2.1.0 Release Notes ]({{ page.baseurl }}release-notes/ReleaseNotes2.1.0CE.html)
+{% include install/releasenotes/21_release-notes-links.md %}
+

@@ -10,7 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/php/tshoot_nginx-port.md
 ---
 
-<h2 id="install-trouble-pdo">Cannot install using nginx</h2>
 If you use the nginx web server and you attempt to install the Magento software, the installation sometimes fails.
 
 ### Detail

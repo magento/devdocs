@@ -12,9 +12,6 @@ redirect_from: /guides/v1.0/architecture/logical_view.html
 
 This page is a draft plan; please do not refere to it as a Magento Developer document.
 
-* TOC
-{:toc}
-
 ## Magento components
 
 ### Modules

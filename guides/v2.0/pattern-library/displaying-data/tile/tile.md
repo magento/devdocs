@@ -10,24 +10,8 @@ version: 2.0
 github_link: pattern-library/displaying-data/tile/tile.md
 ---
 
-<h2>Tile</h2>
-
-<h3>Contents</h3> 
-* <a href="#overview"> Overview</a>
-* <a href="#tiles">Use of Tiles</a>
-* <a href="#draganddrop">Drag and Drop</a>
-* <a href="#remove">Removing Tiles</a>
-* <a href="#herocheckbox">Hero Product Checkbox and Link</a>
-* <a href="#position">Advancing Position</a>
-* <a href="#numerical">Numerical Input</a>
-* <a href="#selection">Multi-selection and Selection Indicators</a>
-* <a href="#heroproduct">Hero Product Section</a>
-* <a href="#styling">Styling and Spacing</a>
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
-This article contains examples of the Tile pattern used in the Admin with functions for single selection, multi selection, drag and drop, and editing inline position. For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
+## Tile pattern
+This topic contains examples of the Tile pattern used in the Admin with functions for single selection, multi selection, drag and drop, and editing inline position. For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
 
 <h4>Functional Behavior</h4>
 <ul>

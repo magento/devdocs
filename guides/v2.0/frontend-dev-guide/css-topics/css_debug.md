@@ -15,11 +15,6 @@ redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css_debug.html
 <p>
 The topic describes how to install, configure and use <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a> for compiling <code>.less</code> files in Magento 2. </p>
 
-**Contents**
-
-* TOC
-{:toc}
-
 ## Prerequisites 
 Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
 
@@ -30,7 +25,7 @@ Magento has built-in Grunt tasks configured, but there are still several prerequ
 
 <ol>
 <li>
-Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)" target="_blank">node.js</a> to any location on your machine.
+Install <a href="https://nodejs.org/en/download/package-manager/" target="_blank">node.js</a> to any location on your machine.
 </li>
 <li>Install Grunt CLI tool globally. To do this, run the following command in a command prompt:<br>
 <pre>

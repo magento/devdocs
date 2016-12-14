@@ -13,17 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-uninstall-mods.html
 ---
 
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-cli-uninst-prereq">Prerequisites</a>
-*	<a href="#instgde-cli-uninst-mod-over">Overview of uninstalling modules</a>
-*	<a href="#instgde-cli-before">First steps</a>
-*	<a href="#instgde-cli-uninst-mod-uninst">Uninstall modules</a>
-*	<a href="#instgde-cli-uninst-mod-roll">Roll back the file system, database, or media files</a>
-
 <h2 id="instgde-cli-uninst-prereq">Prerequisites</h2>
 Before you use this command, you must <a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
 

@@ -12,17 +12,6 @@ github_link: install-gde/prereq/php-centos.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 ---
 
-#### Contents
-
-*	<a href="#php-support">PHP versions supported</a>
-*	<a href="#php-centos-help-beginner">Help if you're just starting out</a>
-*	<a href="#centos-verify-php">Verify PHP is installed</a>
-*	[CentOS repositories](#centos-php-repos)
-*	[PHP 7 on CentOS 6 or 7](#php-centos-7)
-*	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a>
-*	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS 6</a>
-*	[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
-
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>If you must install both Apache and PHP, <a href="{{page.baseurl}}install-gde/prereq/apache.html">install Apache</a> first.</p></span>

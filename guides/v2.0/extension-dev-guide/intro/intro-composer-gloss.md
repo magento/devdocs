@@ -14,14 +14,6 @@ redirect_from:
   - /guides/v2.2/mktpl-quickstart/intro-composer-gloss.html
 ---
 
-## {{page.menu_title}}
-
-#### List of terms
-
-*	[Component](#gloss-component)
-*	[Metapackage](#gloss-meta)
-*	[Component Manager](#gloss-compman)
-
 ### Component {#gloss-component}
 We refer to what you're coding as *components*. (Composer refers to them as <a href="https://getcomposer.org/doc/05-repositories.md#packages" target="_blank">*packages*</a>; the terms component and package are equivalent.) A Magento component can be classified into the following *types*:
 

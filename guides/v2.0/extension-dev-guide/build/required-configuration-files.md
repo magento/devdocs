@@ -7,15 +7,13 @@ menu_title: Define your configuration files
 menu_order: 2000
 version: 2.0
 github_link: extension-dev-guide/build/required-configuration-files.md
-redirect_from: 
+redirect_from:
   - /guides/v1.0/extension-dev-guide/template_create_req_config_files.html
   - /guides/v2.0/extension-dev-guide/template_create_req_config_files.html
   - /guides/v2.0/extension-dev-guide/required-configuration-files.html
 ---
 
-## {{page.menu_title}}
-
-Each Magento 2 module has its own set of configuration files, gathered into the module's `etc` directory.  
+Each Magento 2 module has its own set of configuration files, gathered into the module's `etc` directory.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -26,7 +24,7 @@ Each Magento 2 module has its own set of configuration files, gathered into the 
 {% include php-dev/component-root.md %}
 
 
-## Use /etc for your configuration files  
+## Use /etc for your configuration files
 
 Magento 2 looks for configuration information for each module in that module's `etc` directory. Depending on the needs of your module, you might have the following configuration files at the top level of your module's `etc` directory:
 
