@@ -9,12 +9,7 @@ version: 2.0
 github_link: mtf/mtf_entities/mtf_fixture.md
 ---
 
-<h2>Fixture</h2>
-
-* TOC
-{:toc}
-
-## Fixture overview {#mtf_fixture_overview}
+## Overview {#mtf_fixture_overview}
 
 An FTF fixture is a list of properties of the Magento entity under test.
 

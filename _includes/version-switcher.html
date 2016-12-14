@@ -1,13 +1,12 @@
 {% if site.versions %}
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
-		Version {{ page.guide_version }}
+		Magento {{ page.guide_version }}
 	</button>
-
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	{%for version in site.versions %}
-		<li><a class="dropdown-item" href="{{ site.baseurl }}{{ version.url }}{{ page.github_link | replace: ".md",".html" }}">Version {{ version.name }}</a></li>
+		<li><a class="dropdown-item" href="{{ site.baseurl }}{{ version.url }}{{ page.github_link | replace: ".md",".html" }}">Magento {{ version.name }}</a></li>
 	{% endfor %}
   </ul>
 

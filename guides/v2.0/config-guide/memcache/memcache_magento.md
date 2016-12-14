@@ -10,7 +10,6 @@ version: 2.0
 github_link: config-guide/memcache/memcache_magento.md
 ---
 
-<h2 id="config-memcache-conf">Configure Magento to use memcached</h2>
 To configure Magento to use memcache:
 
 1.	Open `<your Magento install dir>/app/etc/env.php` in a text editor.

@@ -16,15 +16,6 @@ Then when a new language package is created and used to translate a store view, 
 
 This topic describes how to add theme strings in a way that they get collected by the i18n tool and are added to the dictionary.
 
-### Contents ###
-
-- [Strings added in `.phtml` templates](#add_strings_phtml)
-- [Strings added in email templates](#add_strings_email)
-- [Strings added in UI components' templates](#add_strings_ui_html)
-- [Strings added in UI components configuration files](#add_strings_ui_xml)
-- [Strings added in `.js` files](#add_strings_js)
-
-
 <h2 id="add_strings_phtml">Strings added in .phtml templates</h2>
 
 To ensure that your new string is added to the dictionary and translated, use the `__('<your_string>')` method when outputting a string in a <a href="{{page.baseurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">.phtml template</a>.

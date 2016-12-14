@@ -2,8 +2,8 @@
 layout: default
 group: payments-integrations
 subgroup: C_vault
-title: Customer Stored Payments
-menu_title: Customer Stored Payments
+title: Customer stored payments
+menu_title: Customer stored payments
 menu_order: 20
 version: 2.1
 github_link: payments-integrations/vault/customer-stored-payments.md

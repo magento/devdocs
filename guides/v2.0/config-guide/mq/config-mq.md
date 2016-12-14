@@ -8,6 +8,7 @@ menu_order: 2
 version: 2.0
 github_link: config-guide/mq/config-mq.md
 ---
+
 <div class="bs-callout bs-callout-warning">
   <p>The message queue topology can only be configured after Magento Community Edition has been installed and before Magento Enterprise Editions has been installed. </p>
 </div>

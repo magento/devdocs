@@ -22,12 +22,6 @@ redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 </ul>
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.</p>
 
-<h2>Contents</h2>
-
-* TOC
-{:toc}
-
-
 ## Semantics
 
 ### For attribute names and values you must use meaningful unabbreviated lowercase words comprised of Latin characters concatenated with a hyphen (`-`)

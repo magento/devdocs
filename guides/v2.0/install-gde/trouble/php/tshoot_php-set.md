@@ -10,14 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/php/tshoot_php-set.md
 ---
 
-<h2 id="trouble-php-set">PHP settings errors</h2>
-See one of the following sections:
-
-*	<a href="#trouble-php-always">always_populate_raw_post_data error</a>
-*	[PHP memory limit error](#trouble-php-memory)
-*   <a href="#trouble-php-xdebug">xdebug maximum function nesting level error</a>
-*   <a href="#trouble-php-asptags">Errors display when you access a PHTML template</a>
-
 <h3 id="trouble-php-always">always_populate_raw_post_data error</h3>
 If you're upgrading the Magento 2 software, the following error can display during the readiness check:
 

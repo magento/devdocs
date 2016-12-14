@@ -10,12 +10,6 @@ version: 2.0
 github_link: config-guide/prod/prod_file-sys-perms.md
 ---
 
-#### Contents
-*	[Overview of development and production file system ownership and permissions](#mage-owner)
-*	[Tasks for one Magento file system owner](#mage-owner-one)
-*	[Tasks for two Magento file system owners](#mage-owner-two)
-*	[Optionally set `magento_umask`](#mage-owner-umask)
-
 ## Overview of development and production file system ownership and permissions {#mage-owner}
 This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
 

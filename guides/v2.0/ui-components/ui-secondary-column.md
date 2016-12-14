@@ -12,8 +12,6 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-column.html
 
 ---
 
-<h3 id="column">UI Column Component</h3>
-
 The Column component is a collection of columns and it provides an interface for such actions as showing and hiding columns. The interface contains the following information:
 
 * Total number of all available columns in a grid

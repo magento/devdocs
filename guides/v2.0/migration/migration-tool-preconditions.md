@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: C_Data migration tool
+subgroup: C_DMTool
 title: Preconditions
 menu_title: Preconditions
 menu_node:
@@ -10,8 +10,6 @@ version: 2.0
 github_link: migration/migration-tool-preconditions.md
 redirect_from: /guides/v1.0/migration/migration-tool-preconditions.html
 ---
-
-## Preconditions
 
 Before starting migration, you must do the following:
 

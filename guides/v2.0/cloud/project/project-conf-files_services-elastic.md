@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/project/project-conf-files_services-elastic.md
 ---
 
-## Set up the elasticsearch service
 [Elasticsearch](https://www.elastic.co){:target="_blank"} is an open source product that enables you to take data from any source, any format, and search, and visualize it in real time.
 
 *   Elasticsearch performs quick and advanced searches on products in the catalog

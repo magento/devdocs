@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/project/project-webint-snap.md
 ---
 
-## Project backup and restore (snapshot) {#project-snap}
 You can back up and restore an environment at any time using a *snapshot*. Creating a snapshot backs up the environment and because an environment is deployed as a read-only file system, restoring a snapshot is very fast.
 
 ## Create a snapshot (back up)

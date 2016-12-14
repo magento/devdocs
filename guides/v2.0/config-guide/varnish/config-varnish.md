@@ -10,22 +10,6 @@ version: 2.0
 github_link: config-guide/varnish/config-varnish.md
 ---
 
-
-#### Contents
-*	<a href="#config-varnish-over">Overview of the Varnish solution</a>
-*	<a href="#varnish-arch">Varnish topology diagram</a>
-*	<a href="#config-varnish-process">Process overview</a>
-*	<a href="#config-varnish-issues">Known issues</a>
-*	Install Varnish and configure Magento to use it:
-	*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish-install.html">Install Varnish</a>
-	*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
-	*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>
-	*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a>
-*	Use Varnish:
-	*	<a href="{{page.baseurl}}config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
-	*	<a href="{{page.baseurl}}config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>
-*	[Troubleshooting 503 (Backend Fetch Failed) errors]({{page.baseurl}}config-guide/varnish/tshoot-varnish-503.html)
-
 <h2 id="config-varnish-over">Overview of the Varnish solution</h2>
 <a href="https://www.varnish-cache.org/" target="_blank">Varnish Cache</a> is an open source web application accelerator (also referred to as an *HTTP accelerator* or *caching HTTP reverse proxy*). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike web servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.
 

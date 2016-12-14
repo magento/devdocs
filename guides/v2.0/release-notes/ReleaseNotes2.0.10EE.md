@@ -1,18 +1,16 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
+subgroup: 02_rel-notes
 title: Magento EE 2.0.10 Release Notes
 menu_title: Magento EE 2.0.10 Release Notes
-menu_order: 20
+level3_menu_node: level3child
+level3_subgroup: ee20-relnotes
+menu_order: 270
 version: 2.0
 github_link: release-notes/ReleaseNotes2.0.10EE.md
 ---
-*	TOC
-{:toc}
 
-
-## Magento Enterprise Edition 2.0.10
 We are pleased to present Magento Enterprise Edition 2.0.10. This release includes multiple security and functional enhancements as well as enhancements to the Sales API. New Sales API methods allow third party solutions, such as shipping or ERP applications, to use APIs when they create an invoice or shipment. 
 
 

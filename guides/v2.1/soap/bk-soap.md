@@ -3,19 +3,13 @@ layout: default
 group: soap
 subgroup: A_soap
 title: SOAP Reference
+landing-page: SOAP API
 menu_title: Overview
 menu_order: 1
 menu_node: parent
 version: 2.1
 github_link: soap/bk-soap.md
 ---
-
-### Contents
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Soap WSDL Endpoint Format
 
 `http://<magento_host>/soap/<store_code>?wsdl&services=<serviceName1,serviceName2,..>`

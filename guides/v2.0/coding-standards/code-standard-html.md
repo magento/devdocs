@@ -13,12 +13,6 @@ This style guide defines Magento internal requirements for HTML code style for t
 
 The guide is based on the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.xml) with certain modifications that are described further.
 
-
-**Contents**
-
-* TOC
-{:toc}
-
 ## Indentations
 
 Use only spaces for indentation:

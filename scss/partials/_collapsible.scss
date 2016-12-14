@@ -8,22 +8,22 @@
     cursor: pointer;
     display: block;
 
-    text-decoration: none;
     background-repeat: no-repeat;
-    background-position: 0px center;
-    padding: 5px 0 5px 15px;
-    margin: 0px;
-
-    font-size: initial;
+    background-position: 0 center;
+    padding-left: 15px;
+    margin: 0;
 
     &:focus{
       outline: none;
     }
   }
 
+  &:hover .anchor {
+    display: none;
+  }
+
   .collapsible-content{
-    font-size: initial;
-    font-weight: normal;
+
   }
 
   .ui-accordion-header{
@@ -34,4 +34,10 @@
     background-image: url('../../common/css/caret_down.png');
   }
 
+}
+.collapsible-h2 {
+  margin: 15px 0 10px 0;
+}
+.collapsible-h3 {
+  margin: 15px 0 10px 0;
 }

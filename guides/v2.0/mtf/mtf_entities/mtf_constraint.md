@@ -9,12 +9,7 @@ version: 2.0
 github_link: mtf/mtf_entities/mtf_constraint.md
 ---
 
-<h2>Constraint</h2>
-
-* TOC
-{:toc}
-
-## Constraint overview {#mtf_constraint_overview}
+## Overview {#mtf_constraint_overview}
 
 The Functional Testing Framework (FTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
 Each constraint name must be globally unique in Magento application and must be placed in the module to which it belongs. Constraints run automatically after test flow has finished.

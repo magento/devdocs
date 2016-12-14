@@ -1,45 +1,41 @@
+//= include _vendor/jsCookie.js
+//= include _vendor/affix.js
+//= include _vendor/scrollspy.js
+//= include _vendor/clipboard.min.js
+
+//= include _includes/analytics.js
+
+// This is what happens on document.ready
 $(function() {
 
-	// Responsive menu trigger
-	$('.site-header .menu-trigger, .nav-main .nav-close, .nav-main-fader').on('click', function () {
-		$('body').toggleClass('offcanvas-active');
-	});
+  //= include _includes/toc.js
+  //= include _includes/copy.js
+  //= include _includes/collapsible.js
+  //= include _includes/responsive.js
+	//= include _includes/anchors.js
+	//= include _includes/menu.js
+  //= include _includes/search.js
 
-	// Responsive item expand/collapse
-	$('.nav-main a').each(function () {
-		var $this = $(this);
-		var $children = $this.closest('li').find('ul');
+});
+// END document ready
 
-		if ( $children.length ) {
-			$this.closest('li').append('<a href="#" class="children-toggle"></a>');
-			$this.closest('li').find('.children-toggle').on('click', function () {
-				$(this).closest('li').toggleClass('expanded');
-			});
-		}
-	});
+$(window).on('load', function(){
+  // Fix headers hiding behind nav when loading on anchor link
+  if(window.location.hash) {
+    $(document).scrollTop($(document).scrollTop() - 60);
+  }
+});
 
-	// Responsive table of contents
-	$('.toc-toggler').on('click', function (e) {
-		e.preventDefault();
-		$(this).parent().toggleClass('expanded');
-	});
+// Fix anchor jumps hiding headers
+/*
+$(window).on('hashchange',function(){
+	$(document).scrollTop($(document).scrollTop() - 60);
+});*/
 
-	$('.dropdown .dropdown-toggle').on('click', function () {
-		var $this = $(this),
-			$dropdown = $this.parent();
-		$dropdown.toggleClass('open');
-	});
-
-	// Responsite site - for version switcher
-	function responsiveSite() {
-		var $w = $( window ).width();
-		if ( $w < 767 ) {
-			$('.version-switcher').appendTo($('#subnav-wrap'));
-		} else {
-			//$('.version-switcher').insertBefore($('.updated'));
-		}
-	};
-	responsiveSite();
-	$( window ).on('resize', responsiveSite );
-
+//Allows for sticky menu
+$(document).on('scroll', function(){
+	if( $(document).scrollTop() > 10 )
+		$('#global-nav').addClass('sticky-nav-main');
+	else
+		$('#global-nav').removeClass('sticky-nav-main');
 });

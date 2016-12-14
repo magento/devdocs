@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/updater/update-updater.md
 ---
 
-## Update the updater application
 In some cases, you might need to update the updater application, which is responsible for updating components and the Magento application. You should do this only if instructed to do so.
 
 To update the updater application:

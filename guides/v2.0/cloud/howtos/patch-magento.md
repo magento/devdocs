@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/howtos/patch-magento.md
 ---
 
-## How to patch the Magento application {#cloud-howto-patch}
 This topic discusses how to apply patches to your Magento Enterprise Cloud Edition system. There are two types of patches:
 
 *   [General patches](#cloud-patch-gen)

@@ -12,11 +12,6 @@ github_link: config-guide/multi-master/multi-master_masterdb.md
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
-#### Contents
-*	<a href="#config-ee-multidb-master-over">Overview of master databases</a>
-*	<a href="#config-ee-multidb-master-install">Install the Magento EE software</a>
-*	<a href="#config-ee-multidb-master-masters">Set up additional master databases</a>
-
 <h2 id="config-ee-multidb-master-over">Overview of master databases</h2>
 This topic discusses how to get started with the split database solution by:
 

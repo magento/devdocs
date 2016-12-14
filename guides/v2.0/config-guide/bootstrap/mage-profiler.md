@@ -11,11 +11,6 @@ github_link: config-guide/bootstrap/mage-profiler.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/mage-profiler.html
 ---
 
-#### Contents
-*	<a href="#dirs-introduction">Introduction to Magento profiling</a>
-*	<a href="#dirs-set">Set MAGE_PROFILER</a>
-
-
 <h2 id="dirs-introduction">Introduction to Magento profiling</h2>
 Magento profiling enables you to:
 

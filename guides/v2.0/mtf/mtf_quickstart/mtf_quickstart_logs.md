@@ -10,8 +10,6 @@ github_link: mtf/mtf_quickstart/mtf_quickstart_logs.md
 redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_logs.html
 ---
 
-<h2 id="mtf_quickstart_logs">See logs for failed tests</h2>
-
 All failed tests are logged in `<magento2_root_dir>/dev/tests/functional/var/log`.
 
 <div class="bs-callout bs-callout-tip">

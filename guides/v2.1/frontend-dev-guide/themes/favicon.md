@@ -12,11 +12,6 @@ github_link: frontend-dev-guide/themes/favicon.md
 
 This topic describes how to add custom favicons.
 
-**Contents**
-
-* TOC
-{:toc}
-
 ## General overview
 
 Magento provides a default 16px x 16px favicon that you can override by uploading a custom icon in the Magento Admin, or by adding it manually in a specific location in a theme directory.

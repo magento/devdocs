@@ -10,13 +10,6 @@ github_link: install-gde/prereq/optional.md
 redirect_from: /guides/v1.0/install-gde/prereq/optional.html
 ---
 
-#### Contents
-
-*	<a href="#install-optional-intro">Magento optional software</a>
-*	<a href="#install-optional-ntp">Installing and Configuring Network Time Protocol (NTP)</a>
-*	<a href="#install-optional-phpinfo">Create phpinfo.php</a>
-*	<a href="#install-optional-phpmyadmin">Install phpmyadmin</a>
-
 <h2 id="install-optional-intro">Magento optional software</h2>
 We strongly recommend you install NTP because otherwise, cron-related tasks might not perform properly. (Server dates could be in the past or future, for example.)
 

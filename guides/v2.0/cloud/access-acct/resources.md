@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/access-acct/resources.md
 ---
 
-## Magento 2 resources
 For more information, or in the event of issues, you can find help and information as follows:
 
 ### Documentation

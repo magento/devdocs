@@ -14,14 +14,6 @@ redirect_from:
   - /guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html
 ---
 
-#### Contents
-
-*	<a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a>
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-single">Run the single-tenant compiler</a>
-*	<a href="#config-cli-subcommands-run">Run the multi-tenant compiler</a>
-
-
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
 <p>This section discusses the basics of code compilation.</p>
 <p>Code compilation consists of all of the following in no particular order:</p>

@@ -11,12 +11,8 @@ redirect_from: /guides/v1.0/architecture/behavior/pricing.html
 ---
 
 ## Magento Pricing library: implementation and usage {#m2devgde-pricelib-intro}
-{:.no_toc}
 
 This topic discusses how to use the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library in your module and how to add price rendering to page templates and layouts.
-
-* TOC
-{:toc}
 
 ## Use the pricing library in your module {#m2devgde-pricelib-integrate}
 

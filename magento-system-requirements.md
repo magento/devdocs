@@ -11,7 +11,6 @@ github_link: magento-system-requirements.md
 redirect_from: /guides/v2.0/install-gde/system-requirements.html
 ---
 
-## Magento system requirements
 This page lists system requirements for the Magento application.
 
 ## Magento 2.0.x

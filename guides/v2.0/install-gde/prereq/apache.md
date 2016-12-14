@@ -10,16 +10,6 @@ github_link: install-gde/prereq/apache.md
 redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 ---
 
-
-#### Contents
-
-*	<a href="#apache-support">Apache versions supported</a>
-*	<a href="#apache-help-beginner">Help if you're just starting out</a>
-*	<a href="#apache-help-rewrite">Important: Apache rewrites and .htaccess</a>
-*	<a href="#install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</a>
-*	<a href="#install-prereq-apache-centos">Installing Apache on CentOS 6 or 7</a>
-*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
-
 <h2 id="apache-support">Apache versions supported</h2>
 
 Magento requires Apache 2.2.x or 2.4.x.

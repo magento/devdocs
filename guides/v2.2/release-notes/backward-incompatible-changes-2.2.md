@@ -10,12 +10,6 @@ menu_order: 1
 github_link: release-notes/backward-incompatible-changes-2.2.md
 ---
 
-## {{page.title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ### Overview
 
 Magento 2.2 introduces several major changes that may affect the correct functionality of already released external modules. The purpose of this document is to highlight major changes between Magento 2.1 and 2.2.
@@ -25,14 +19,14 @@ Magento 2.2 introduces several major changes that may affect the correct functio
 Magento 2.2 introduces changes in several API classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
 
 #### Store Module
-The Store module management has been updated to allow retrieve store by website id. 
+The Store module management has been updated to allow retrieve store by website id.
 **Class:** [`Magento\Store\Api\StoreWebsiteRelationInterface`]({{site.mage2200url}}app/code/Magento/Store/Api/StoreWebsiteRelationInterface.php){:target="_blank"}<br/>
 **Action:** Added the interface [`Magento\Store\Api\StoreWebsiteRelationInterface`]<br/>
 **Action:** Added the method `getStoreByWebsiteId($websiteId)` to [`\Magento\Store\Model\StoreManager`]<br/>
 **Description:** Retrieve store by website id<br/>
 
 #### Customer Module
-Change was done in order to add default values to customer attributes. 
+Change was done in order to add default values to customer attributes.
 **Class:** [`Magento\Eav\Api\Data\AttributeDefaultValueInterface`]({{site.mage2200url}}app/code/Magento/Eav/Api/Data/AttributeDefaultValueInterface.php){:target="_blank"}<br/>
 **Action:** Added the interface [`Magento\Eav\Api\Data\AttributeDefaultValueInterface`]<br/>
 **Action:** Added the getter `getDefaultValue()` and setter `setDefaultValue($defaultValue)` to [`Magento\Customer\Model\Data\AttributeMetadata`]<br/>
@@ -98,11 +92,11 @@ In Magento 2.2 the behavior of repositories regarding the Filters added to Searc
 #### Affected EE repositories
 
 - `\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface `
-- `\Magento\GiftWrapping\Api\WrappingRepositoryInterface` 
+- `\Magento\GiftWrapping\Api\WrappingRepositoryInterface`
 - `\Magento\Rma\Api\CommentRepositoryInterface `
-- `\Magento\Rma\Model\RmaRepository` 
+- `\Magento\Rma\Model\RmaRepository`
 - `\Magento\Rma\Model\Service\RmaManagement `
-- `\Magento\Rma\Model\Rma\Status\HistoryRepository` 
+- `\Magento\Rma\Model\Rma\Status\HistoryRepository`
 - `\Magento\Rma\Api\RmaRepositoryInterface `
 - `\Magento\Staging\Api\UpdateRepositoryInterface `
 - `\Magento\VersionsCms\Api\HierarchyNodeRepositoryInterface`

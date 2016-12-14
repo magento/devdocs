@@ -1,64 +1,109 @@
 code, pre {
-   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-   color: #333;
-	font-size: 13px;
+  background-color: $light-gray-color;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	font-size: 14px;
 }
 
 code {
-   padding: 2px 4px;
+  padding: 2px 4px;
 	margin: 0;
-	border: 1px solid #ddd;
-	background-color: #f8f8f8;
-	font-size: .9em;
 	border-radius: 3px;
-   word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 pre {
-   display: block;
-   padding: 6px 10px;
-   margin: 0 0 10px;
+  display: block;
+  padding: 6px 10px;
+  margin: 0 0 10px;
 
-   line-height: 19px;
-   word-break: break-all;
-   word-wrap: break-word;
-   white-space: pre;
-
-	background-color: #f8f8f8;
-	border: 1px solid #ddd;
-	border-radius: 3px;
+  line-height: 19px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
 	overflow: auto;
 }
 
 pre code {
-   padding: 0;
-   color: inherit;
+  padding: 0;
+  color: inherit;
 	white-space: pre;
 	word-wrap: normal;
-   background-color: transparent;
-   border: none;
+  background-color: transparent;
+  border: none;
 }
 
 a code {
-   color: inherit;
-   font-size: .9em;
+  color: inherit;
+  font-size: .9em;
 }
 
 .pre-scrollable {
 	max-height: 340px;
-   overflow-y: scroll;
+  overflow-y: scroll;
 }
 
+.pre-wrap {
+  position: relative;
 
+  &:hover {
+    .btn-copy, .btn-no-copy  {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .btn-copy, .btn-no-copy {
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    font-family: $body-font-family;
+    font-size: 12px;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .btn-copy {
+    color: #fff;
+    background: $brand-color;
+    &:hover {
+      color: #fff;
+      background: darken($brand-color, 10%);
+    }
+    &:active {
+      color: #fff;
+      background: darken($brand-color, 20%);
+    }
+  }
+
+  .btn-no-copy {
+    cursor: default;
+    outline: none;
+    background: darken($light-gray-color, 5%);
+    &:active, &:hover {
+      background: darken($light-gray-color, 5%);
+    }
+  }
+}
 
 
 /* TDD code format in headers */
 
 h1 code, h2 code, h3 code, h4 code, h5 code {
-   padding: 2px 4px;
-   color: #000;
-   background-color: transparent;
-   border: 0px solid #e1e1e8;
-   white-space: nowrap;
-   font-size: 1em;
+  padding: 2px 4px;
+  color: $body-font-color;
+  background-color: transparent;
+  border: 0px solid transparent;
+  white-space: nowrap;
+  font-size: 1em;
+}
+
+
+// syntax highlighting
+.highlight {
+  position: relative;
+  border-radius: 3px;
+  margin: 0 0 20px;
 }

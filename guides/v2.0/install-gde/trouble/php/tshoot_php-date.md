@@ -13,8 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/trouble/tshoot_php-date.html
 ---
 
-<h2 id="install-trouble-php-date">During installation, PHP date warning</h2>
-
 ### Details
 
 During the installation, the following message displays: 

@@ -10,7 +10,6 @@ version: 2.0
 github_link: install-gde/install/hosted/hosted_start_php.md
 ---
 
-<h2 id="newbie-db">Configure PHP</h2>
 <a href="http://php.net/manual/en/faq.general.php" target="_blank">PHP Hypertext Preprocessor (PHP)</a> is a scripting language that Magento is authored in. Magento requires PHP version 5.5 or 5.6 to run.
 
 To configure PHP:

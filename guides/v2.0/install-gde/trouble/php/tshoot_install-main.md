@@ -10,7 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/php/tshoot_install-main.md
 ---
 
-## Errors during installation
 *	[Installation stops at about 70%]({{ page.baseurl }}install-gde/trouble/php/tshoot_70pct.html)
 *	[Cannot install using nginx]({{ page.baseurl }}install-gde/trouble/php/tshoot_nginx-port.html)
 *	[During installation, fatal PDO error displays]({{ page.baseurl }}install-gde/trouble/php/tshoot_pdo.html)

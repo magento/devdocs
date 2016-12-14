@@ -11,14 +11,6 @@ github_link: comp-mgr/module-man/compman-main-pg.md
 redirect_from: /guides/v2.0/comp-mgr/compman-main-pg.html
 ---
 
-
-<h4>Contents</h4>   
-
-*	<a href="#compman-access">Component Management options</a>
-*	<a href="#compman-access-sync">Update a component</a>
-*	<a href="#compman-endis">Enable or disable a component</a>
-*	<a href="#compman-access-types">Supported actions for each component type</a>
-
 <h2 id="compman-access">Component Management options</h2>
 To choose whether to upgrade or uninstall components:
 
