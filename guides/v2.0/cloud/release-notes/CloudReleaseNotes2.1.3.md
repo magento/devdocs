@@ -29,23 +29,24 @@ Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to ver
 {% collapsible To update `.magento.app.yaml`: %}
 
 1.	Open `<Magento root dir>/.magento.app.yaml` in a text editor.
-2.	Locate the `web:` section, and the `\static` location in it.
+2.	Locate the `web:` section, and the `/static` location in it.
 3.	Add the following to the `rules:` clause:
 
 		^/static/version\d+/(?<resource>.*)$:
              passthru: "/static/$resource"
     
-The `/static` location should look like this after the change:
+    The `/static` location should look like this after the change:
 
-        "/static":
-            root: "pub/static"
-            allow: true
-            scripts: false
-            passthru: "/front-static.php"
-            rules:
-                ^/static/version\d+/(?<resource>.*)$:
-                    passthru: "/static/$resource"
-
+    ~~~
+    "/static":
+        root: "pub/static"
+        allow: true
+        scripts: false
+        passthru: "/front-static.php"
+        rules:
+            ^/static/version\d+/(?<resource>.*)$:
+                passthru: "/static/$resource"
+    ~~~
 4.	Save your changes to `.magento.app.yaml` and exit the text editor.
 5.	You may not [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11.
 
