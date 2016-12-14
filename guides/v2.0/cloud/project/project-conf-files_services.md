@@ -12,13 +12,6 @@ version: 2.0
 github_link: cloud/project/project-conf-files_services.md
 ---
 
-#### Contents
-*	[`services.yaml` overview](#cloud-yaml-services-over)
-*	[Defaults](#cloud-yaml-services-default)
-*	[`name`](#cloud-yaml-services-name) 
-*	[`type`](#cloud-yaml-services-type)
-*	[`disk`](#cloud-yaml-services-disk)  
-
 ## `services.yaml` overview {#cloud-yaml-services-over}
 Magento Enterprise Cloud Edition provides [*services*](#cloud-yaml-services-type) such as MySQL, PHP, Redis, Solr, and so on. You don't need to subscribe to external service providers.
 

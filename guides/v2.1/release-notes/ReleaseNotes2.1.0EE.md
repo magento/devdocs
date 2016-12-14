@@ -1,20 +1,16 @@
 ---
 layout: default
 group: release-notes
-subgroup: 02_ReleaseNotes
+subgroup: 02_rel-notes
 title: Magento EE 2.1.0 Release Notes
 menu_title: Magento EE 2.1.0 Release Notes
-menu_order: 3
+menu_order: 299
+level3_menu_node: level3child
+level3_subgroup: ee21-relnotes
 version: 2.1
 github_link: release-notes/ReleaseNotes2.1.0EE.md
 ---
 
-*	TOC
-{:toc}
-
-## Magento Enterprise Edition 2.1.0
-
-  
 We are pleased to present Magento Enterprise Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 

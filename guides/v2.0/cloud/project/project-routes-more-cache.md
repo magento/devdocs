@@ -12,15 +12,6 @@ version: 2.0
 github_link: cloud/project/project-routes-more-cache.md
 ---
 
-#### Contents
-*	[Caching](#cloud-cache-over)
-*	[Set up caching](#cloud-cache-setup)
-*	[Route-based caching](#cloud-cache-route)
-*	[Cache duration](#cloud-cache-ttl) 
-*	[Cache key](#cloud-cache-key) 
-*	[Cache attributes](#cloud-cache-attrib) 
-
-## Caching {#cloud-cache-over}
 Magento Enterprise Cloud Edition enables you to use caching in your environment. If you disable caching, Magento Enterprise Cloud Edition directly serves the files. 
 
 ## Set up caching {#cloud-cache-setup}

@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/cloud-requirements-git.md
 ---
 
-## Git requirements {#cloud-require-git}
 This page lists detailed requirements for using Git with Magento Enterprise Cloud Edition.
 
 ### Source control with Git {#cloud-require-git}

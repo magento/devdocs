@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/trouble/cman/cron.md
 ---
 
-<h2 id="trouble-cron">Troubleshoot cron</h2>
 Following are symptoms of cron issues:
 
 *	Your update or upgrade never runs; it stays in a `pending` state

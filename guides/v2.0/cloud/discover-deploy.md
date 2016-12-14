@@ -10,14 +10,6 @@ version: 2.0
 github_link: cloud/discover-deploy.md
 ---
 
-#### Contents
-*	[Deployment process](#cloud-deploy-over)
-*	[GitHub and Bitbucket](#cloud-deploy-over-gh)
-*	[Project configuration](#cloud-deploy-conf)
-*	[Five phases of deployment](#cloud-deploy-over-phases)
-*	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
-
-## Deployment process {#cloud-deploy-over}
 Deploying Magento means simply pushing the source code to your Git repository. The Git repository is part of your projects cluster so it is totally isolated from
 other clients.
 

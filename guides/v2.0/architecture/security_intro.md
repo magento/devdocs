@@ -9,12 +9,6 @@ version: 2.0
 github_link: architecture/security_intro.md
 ---
 
-## {{page.title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Enhanced password management
 
 Magento has strengthened the hashing algorithms (SHA-256) used in password management.

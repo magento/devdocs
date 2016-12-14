@@ -12,7 +12,6 @@ version: 2.0
 github_link: cloud/project/project-conf-files_services-rabbit.md
 ---
 
-## Set up the rabbitmq service
 The Message Queue Framework (MQF) is a system within Magento Enterprise Edition that allows a module to publish messages to queues. It also defines the consumers that will receive the messages asynchronously. The MQF uses [RabbitMQ](http://www.rabbitmq.com){:target="_blank"} as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification. 
 
 We support RabbitMQ version 3.5.

@@ -1,9 +1,9 @@
 ---
 layout: default
 group: release-notes
-subgroup: Third Party Licenses
+subgroup: 99_third
 menu_title: Magento EE third-party licenses
-menu_order: 2
+menu_order: 3
 version: 2.0
 github_link: release-notes/thirdparty_ee.md
 ---

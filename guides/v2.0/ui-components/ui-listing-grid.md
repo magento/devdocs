@@ -10,8 +10,6 @@ github_link: ui-components/ui-listing-grid.md
 redirect_from: /guides/v2.0/ui-library/ui-listing-grid.html
 ---
 
-<h2 id="listing">UI Listing/Grid Component</h2>
-
 Listing is a basic component responsible for rendering grids, lists and tiles, providing filtering, pagination, sorting and other features.
 
 #### Integration

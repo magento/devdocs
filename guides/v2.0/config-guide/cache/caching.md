@@ -13,11 +13,6 @@ redirect_from:
   - /guides/v2.0/config-guide/config/caching.html
 ---
 
-#### Contents 
-
-*	<a href="#m2devgde-cache-explore">Overview of caching</a>
-* <a href="#m2devgde-cache-more">More information about caching</a>
-
 <h2 id="m2devgde-cache-explore">Overview of caching</h2>
 Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> to interact with the cache storage. However, Magento also has the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library for implementing Magento-specific caching. These topics discuss how to configure caching and cache types.
 

@@ -10,8 +10,6 @@ version: 2.0
 github_link: config-guide/varnish/config-varnish-final.md
 ---
 
-
-<h2 id="config-varnish-final-verify">Final verification</h2>
 Now that you're using the `default.vcl` generated for you by Magento, you can perform some final verifications to make sure Varnish is working.
 
 <h3 id="config-varnish-final-verify-headers">Verify HTTP response headers</h3>

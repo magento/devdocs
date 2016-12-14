@@ -13,12 +13,6 @@ level3_subgroup: versioning
 redirect_from: /guides/v1.0/architecture/software_versions.html
 ---
 
-## Magento 2.0 software versions {#verpol}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 Magento versioning policy addresses the concerns of two main types of users:

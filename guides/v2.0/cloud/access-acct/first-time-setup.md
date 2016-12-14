@@ -12,8 +12,6 @@ github_link: cloud/access-acct/first-time-setup.md
 
 ![This guide applies to Enterprise Cloud Edition only]({{ site.baseurl }}common/images/ee-only_large.png) 
 
-## First-time setup
-
 These topics are intended for developers who set up the Magento Enterprise Cloud Edition and customize Magento application code. To participate in a Magento Enterprise Cloud edition *project*, you must be invited by the owner of the account.
 
 After you receive an invitation, you can complete the following tasks:

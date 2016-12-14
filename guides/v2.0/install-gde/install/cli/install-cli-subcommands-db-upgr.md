@@ -9,14 +9,6 @@ menu_order: 16
 version: 2.0
 github_link: install-gde/install/cli/install-cli-subcommands-db-upgr.md
 ---
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-install-cli-first">First steps</a>
-*	<a href="#instgde-cli-subcommands-maint-prereq">Prerequisites</a>
-*	[Upgrade the Magento database schema and data](#instgde-cli-db-upgr)
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}

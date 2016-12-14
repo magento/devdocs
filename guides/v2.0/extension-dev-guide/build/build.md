@@ -11,14 +11,12 @@ github_link: extension-dev-guide/build/build.md
 redirect_from: /guides/v2.0/extension-dev-guide/build.html
 ---
 
-## {{page.menu_title}}
-
 Building your component involves laying out the file structure, creating the necessary configuration files, building out any needed API interfaces and services, and adding any frontend parts needed for your component.
 
 <h2 id="create-component-basics">Prerequisites</h2>
 Before you begin creating your new component, make sure that you have a working installation of Magento 2.0, and the Magento [System Requirements]({{page.baseurl}}install-gde/system-requirements.html).
 
-Also, Magento recommends that you disable caching while setting up the component file structure and adding configuration files. 
+Also, Magento recommends that you disable caching while setting up the component file structure and adding configuration files.
 
 The following details the component building process:
 
@@ -30,4 +28,3 @@ The following details the component building process:
 *	[Name your component]({{page.baseurl}}extension-dev-guide/build/create_component.html)
 *	[Component load order]({{page.baseurl}}extension-dev-guide/build/module-load-order.html)
 *	[Enable your component]({{page.baseurl}}extension-dev-guide/build/enable-module.html)
-

@@ -14,14 +14,6 @@ redirect_from:
 ---
 
   
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-cli-uninst-lgpk-over">Overview of uninstalling language packages</a>
-*	<a href="#instgde-cli-before">First steps</a>
-*	<a href="#instgde-cli-uninst-mod-lgpk">Uninstall language packages</a>
-
 <h2 id="instgde-cli-uninst-lgpk-over">Overview of uninstalling language packages</h2>
 This section discusses how to uninstall one or more language packages, optionally including the language packages' code from the file system. You can create backups first so you can restore the data at a later time.
 

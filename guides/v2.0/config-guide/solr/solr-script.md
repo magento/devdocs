@@ -12,7 +12,6 @@ github_link: config-guide/solr/solr-script.md
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
 
-<h2 id="solr-prod">Prepare Solr for production</h2>
 After you've tested the Solr solution, you should perform the following tasks to get it ready for production:
 
 *	See more Solr configuration options in the Magento EE User Guide (available with the Magento 2 EE release)

@@ -1,0 +1,82 @@
+.page-toc {
+  background: $light-gray-color;
+  padding: 10px 0;
+  margin: 20px 0 0 0;
+  font-size: 12px;
+
+  &.affix {
+    width: 200px;
+    top: $header-height;
+  }
+
+  &:before {
+    display: block;
+    content: "On this page";
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: #7b756b;
+    font-weight: bold;
+    padding: 0 10px 5px 10px;
+  }
+  ul {
+    margin: 0;
+  }
+  li {
+    font-size: 12px;
+    line-height: 1.4;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  .active > a {
+    background: $dropdown-link-hover-bg;
+    border-left: 2px solid darken($dropdown-link-hover-bg, 20%);
+  }
+
+
+  a {
+    color: $body-font-color;
+    font-size: 12px;
+    display: block;
+    padding: 5px 10px;
+    border-left: 2px solid transparent;
+
+    &:hover {
+      text-decoration: none;
+      background: $dropdown-link-hover-bg;
+    }
+  }
+
+  .h3 a {
+    padding-left: 16px;
+  }
+
+
+  @media ( $medium-screen ) {
+    display: none;
+  }
+
+}
+
+
+
+h2, h3, h4, h5, h6 {
+  position: relative;
+}
+
+.anchor {
+  width: 40px;
+  height: 100%;
+  background: url('../i/icons/link.svg') center center no-repeat;
+  background-size: 20px;
+  display: none;
+  position: absolute;
+  left: -36px;
+  opacity: .5;
+
+  h2:hover &, h3:hover &, h4:hover &, h5:hover &, h6:hover & {
+    display: block;
+  }
+}

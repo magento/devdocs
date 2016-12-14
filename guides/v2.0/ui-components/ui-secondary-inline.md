@@ -12,8 +12,6 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-inline.html
 
 ---
 
-<h3 id="inlineedit">Inline Edit component</h3>
-
 The Inline Edit component is used to provide the ability of inline editing. 
 
 #### Related UI Components

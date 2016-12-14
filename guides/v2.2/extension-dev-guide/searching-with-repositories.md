@@ -8,8 +8,6 @@ menu_order: 25
 version: 2.2
 github_link: extension-dev-guide/repositories.md
 ---
-* TOC
-{:toc}
 
 ### What is a repository? {#m2devgde-repository-intro}
 

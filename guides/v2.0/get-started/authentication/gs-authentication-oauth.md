@@ -10,14 +10,6 @@ github_link: get-started/authentication/gs-authentication-oauth.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.html
 ---
 
-## Contents
-* [OAuth overview](#overview)
-* [Activate an integration](#activate)
-* [2-legged OAuth handshake](#oauth-handshake)
-* [Access the web APIs](#web-api-access)
-* [Generating OAuth signatures](#oauth-signature)
-* [OAuth token exchange example](#oauth-example)
-
 Magento OAuth authentication is based on [OAuth 1.0a](https://tools.ietf.org/html/rfc5849), an open standard for secure API authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.
 
 In Magento, a third-party extension that uses OAuth for authentication is called an [_integration_]( {{page.baseurl}}/howdoi/webapi/integration.html ). An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.

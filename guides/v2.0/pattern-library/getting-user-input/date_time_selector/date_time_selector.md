@@ -10,20 +10,8 @@ version: 2.0
 github_link: pattern-library/getting-user-input/date_time_selector/date_time_selector.md
 ---
 
-<h2> Date and Time Selector </h2>
-
-<h3>Contents</h3> 
-
-* <a href="#overview">Overview</a>
-* <a href="#whentouse">When to Use</a>
-* <a href="#variations">Variations</a>
-* <a href="#style">Style</a>
-* <a href="#accessibility">Accessibility</a>
-* <a href="#assets">Assets</a>
-* <a href="#implementation">Implementation</a>
-
-<h3 id="overview">Overview</h3>
-This article will establish design standards and rules for date and time selection in Magento. This article is related to the Form Elements pattern. Please refer to <a href="../form_elements/form_elements.html">Form Elements</a> for general rules on form usage and placement.
+## Date and time selector
+This topic discusses design standards and rules for date and time selection in Magento. This article is related to the Form Elements pattern. Please refer to <a href="../form_elements/form_elements.html">Form Elements</a> for general rules on form usage and placement.
 
 <h3 id="whentouse">When to Use</h3>
 * Use this element whenever a date, date range, time or time range needs to be gathered from the user.

@@ -10,24 +10,8 @@ version: 2.0
 github_link: pattern-library/displaying-data/tree/tree.md
 ---
 
-<h2>Tree</h2>
-
-<h3>Contents</h3> 
-* <a href="#overview"> Overview</a>
-* <a href="#whentouse"> When to Use</a>
-* <a href="#treecomponents"> Components of Tree</a>
-* <a href="#funcbehavior">Basic Functional Behavior</a>
-* <a href="#variation1">Usage: Navigation</a>
-* <a href="#variation2">Usage: Multi-Select</a>
-* <a href="#variation4">Drag & Arrange</a>
-* <a href="#variation5">Action Menu</a>
-* <a href="#variation6">Add to Tree</a>
-* <a href="#style">Style</a>
-* <a href="#asset">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
-This article contains various types of Tree structures used in Admin with functions for navigating, multi-selecting, adding nodes, editing inline, and dragging items. 
+## Tree pattern
+This topic contains various types of Tree structures used in Admin with functions for navigating, multi-selecting, adding nodes, editing inline, and dragging items. 
 For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
 
 <h3 id="whentouse">When to Use</h3>

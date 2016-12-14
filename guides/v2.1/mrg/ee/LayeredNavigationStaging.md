@@ -13,13 +13,6 @@ github_link: mrg/ee/LayeredNavigationStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-* TOC
-{:toc}
-
-## Magento_LayeredNavigationStaging module
-
 ## Overview
 
 The Magento_LayeredNavigationStaging module is a part of the staging functionality in Magento EE.

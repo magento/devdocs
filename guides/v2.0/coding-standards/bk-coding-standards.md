@@ -3,6 +3,7 @@ layout: default
 group: coding-standards
 subgroup: A_intro
 title: Coding Standards
+landing-page: Coding Standards
 menu_title: Introduction
 menu_order: 1
 menu_node: parent

@@ -13,13 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html
 ---
 
-
-#### Contents
-
-*	<a href="#instgde-cli-before">First steps</a>
-*	<a href="#instgde-cli-subcommands-configphp-prereq">Prerequisites</a>
-*	<a href="#instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</a>
-
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.

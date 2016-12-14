@@ -9,18 +9,16 @@ version: 2.0
 github_link: extension-dev-guide/extension_attributes/adding-attributes.md
 ---
 
-## {{page.menu_title}}
-
-Third party developers cannot change API Data interface in the Magento Core, so the one way to affect interfaces 
-using configuration is to add extension attributes. 
+Third party developers cannot change API Data interface in the Magento Core, so the one way to affect interfaces
+using configuration is to add extension attributes.
 
 <div class="bs-callout bs-callout-info" id="other-component-types">
   <p>We will demonstrate this on Product entity, Product Repository and Web Api example. </p>
 </div>
 
 
-In order to get product or list of products by Magento API you need to do API request to appropriate service (Product Repository in our case). 
-In Response we got object with next structure: 
+In order to get product or list of products by Magento API you need to do API request to appropriate service (Product Repository in our case).
+In Response we got object with next structure:
 
 ### Product response:
 
@@ -53,11 +51,11 @@ In Response we got object with next structure:
 {% endhighlight %}
 
 ## Add plugin to product repository
- 
-In order to add attributes, we need to use after plugin on Product Repository. 
-Plugin should listen next methods: save, get, getList. 
 
-We can add scalar and non-scalar extension attributes. 
+In order to add attributes, we need to use after plugin on Product Repository.
+Plugin should listen next methods: save, get, getList.
+
+We can add scalar and non-scalar extension attributes.
 
 <div class="bs-callout bs-callout-info" id="other-component-types">
   <p>Scalar is simple attribute. </p>
@@ -65,45 +63,45 @@ We can add scalar and non-scalar extension attributes.
 </div>
 
 {% highlight php %}
-    <?php 
+    <?php
        public function afterGet
         (
             \Magento\Catalog\Api\ProductRepositoryInterface $subject,
             \Magento\Catalog\Api\Data\ProductInterface $entity
         ) {
             $ourCustomData = $this->customDataRepository->get($entity->getId());
-             
+
             $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
-            $extensionAttributes->setOurCustomData($ourCusomData); 
+            $extensionAttributes->setOurCustomData($ourCusomData);
             $entity->setExtensionAttributes($extensionAttributes);
-            
+
             return $entity;
         }
 
     ?>
 {% endhighlight %}
 
-It is the easiest way to add custom attributes. Because we need to know if entity already has extension attributes. 
-Also we need to check whether we already has our extension attribute. 
+It is the easiest way to add custom attributes. Because we need to know if entity already has extension attributes.
+Also we need to check whether we already has our extension attribute.
 
-AfterGetList is similar to afterGet. 
+AfterGetList is similar to afterGet.
 
-Likewise afterSave plugin should take data from entity and do some manipulations: 
+Likewise afterSave plugin should take data from entity and do some manipulations:
 
 {% highlight php %}
-    <?php 
+    <?php
            public function afterSave
             (
                 \Magento\Catalog\Api\ProductRepositoryInterface $subject,
                 \Magento\Catalog\Api\Data\ProductInterface $entity
             ) {
                 $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
-                $ourCustomData = $extensionAttributes->getOurCustomData(); 
+                $ourCustomData = $extensionAttributes->getOurCustomData();
                 $this-customDataRepository->save($ourCustomData);
-                
+
                 return $entity;
             }
-    
+
         ?>
 {% endhighlight %}
 
@@ -119,14 +117,14 @@ For scalar attributes we can use next configuration:
 </config>
 {% endhighlight %}
 
-For non-scalar attributes: 
+For non-scalar attributes:
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface[]" />
     </extension_attributes>
 </config>
 
-In first case we will get the next result: 
+In first case we will get the next result:
 
 {% highlight xml %}
 <product>
@@ -140,7 +138,7 @@ In first case we will get the next result:
 </product>
 {% endhighlight %}
 
-In second one: 
+In second one:
 {% highlight xml %}
 <product>
     <id>1</id>

@@ -8,8 +8,6 @@ version: 2.1
 github_link: ui_comp_guide/components/ui-form.md
 ---
 
-* TOC
-{:toc}
 
 ## Overview
 Form component allows performing [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on an entity. 

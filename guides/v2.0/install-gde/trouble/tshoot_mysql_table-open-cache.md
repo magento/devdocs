@@ -10,8 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/tshoot_mysql_table-open-cache.md
 ---
 
-<h2 id="install-trouble-mysql-gone-away">'MySQL server has gone away' during installation</h2>
-
 ### Details
 
 During installation, the following message displays: 

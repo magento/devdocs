@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/trouble/trouble_comp-deploy-fail.md
 ---
 
-## Component deployment failure
 This topic discusses how to recover from a failed component deployment. Typical examples are components that have dependencies that are not met by your environment; for example, incompatible PHP versions.
 
 You can recover from a failed deployment in any of the following ways:

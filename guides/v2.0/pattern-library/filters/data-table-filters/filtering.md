@@ -11,20 +11,7 @@ github_link: pattern-library/filters/data-table-filters/filtering.md
 redirect_from: /guides/v1.0/pattern-library/filters/data-table-filters/filtering.html
 ---
 
-<h2>Filters</h2>
-
-<h3>Contents</h3> 
-* <a href="#overview">Overview</a>
-* <a href="#search">Filter by Search</a>
-* <a href="#advanced">Advanced Filters</a>
-* <a href="#remove">Removing Filters</a>
-<h4>Future Capabilities</h4> 
-* <a href="#quick">Quick Filters</a>
-
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
+## Filters
 Filters allow users to customize the display of information in an associated data-table. By entering desired parameters (for example, a date range) in the available filter input sections table returns a modified view, making visible only the records meeting the user-determined criteria.
 
 <h3 id="search">Filter by Search</h3>

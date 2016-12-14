@@ -13,18 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-uninstall.html
 ---
 
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-cli-before">First steps</a>
-*	<a href="#instgde-install-magento-prereq">Prerequisites</a>
-*	<a href="#instgde-install-magento-update">Update the Magento software</a>
-*	<a href="#instgde-install-magento-reinstall">Reinstall the Magento software</a>
-*	<a href="#instgde-install-uninstall">Uninstall the Magento software</a>
-*	<a href="#instgde-install-keep">Optionally keeping generated files</a>
-
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.

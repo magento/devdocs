@@ -10,7 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/tshoot_composer-fail.md
 ---
 
-<h2 id="install-trouble-composer">Download fails because of changes in Composer</h2>
 
 ### Symptom
 During download, the following error displays:

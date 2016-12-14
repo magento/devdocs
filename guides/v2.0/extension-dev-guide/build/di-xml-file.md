@@ -9,12 +9,6 @@ version: 2.0
 github_link: extension-dev-guide/build/di-xml-file.md
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 The `di.xml` file configures which [dependencies]({{page.baseurl}}extension-dev-guide/depend-inj.html) to inject by the [object manager]({{page.baseurl}}extension-dev-guide/object-manager.html).
@@ -324,7 +318,7 @@ The `shared` property determines the lifestyle of both `argument` and `type` con
 {% endhighlight %}
 
 In this example `Magento\Filesystem` is not shared, so all clients will retrieve separate instances of `Magento\Filesystem`.
-Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.  
+Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
 
 **Related topics**
 

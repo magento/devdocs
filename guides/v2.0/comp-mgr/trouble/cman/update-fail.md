@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/trouble/cman/update-fail.md
 ---
 
-<h2 id="trouble-update-fail">Roll back after update failure</h2>
 If your component update fails, messages similar to the following display in the Console Log:
 
 	[2015-08-14 12:12:02 CDT] Job "update {"components":[{"name":"example/module","version":"1.1.0"}]}" has been started

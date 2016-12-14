@@ -10,12 +10,6 @@ version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes2.1.2.md
 ---
 
-## Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes
-{:.no_toc}
-
-*	TOC
-{:toc}
-
 ### Changes
 We made the following change in this release:
 

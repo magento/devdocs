@@ -9,12 +9,6 @@ version: 2.0
 github_link: extension-dev-guide/adapters.md
 ---
 
-## {{page.title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 Adapter classes follow the [adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern){:target="_blank"} and wrap around classes from third-party libraries.
@@ -65,7 +59,7 @@ interface AdapterInterface
 {
     /**
      * Converts markdown text into another format
-     * 
+     *
      * @param string $text
      * @return string
      */

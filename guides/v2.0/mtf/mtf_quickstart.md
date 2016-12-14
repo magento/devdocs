@@ -9,7 +9,7 @@ version: 2.0
 github_link: mtf/mtf_quickstart.md
 redirect_from: /guides/v1.0/mtf/mtf_quickstart.html
 ---
-<h2>Preface</h2>
+
 In this chapter you will learn how to:
 
 - <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration to set PHPUnit, the FTF, and credentials for Magento modules if required</a>

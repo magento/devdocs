@@ -12,19 +12,18 @@
 @import 'partials/layout';
 @import 'partials/modal';
 @import 'partials/nav-main';
-@import 'partials/page-intro';
+@import 'partials/page-info';
 @import 'partials/search';
+@import 'partials/quick-search';
 @import 'partials/sidebar';
 @import 'partials/site-header';
 @import 'partials/table';
 @import 'partials/typography';
 @import 'partials/version-switcher';
 @import 'partials/tabs';
-
-// TODO: Remove this:
-@import 'overrides';
-
+@import 'partials/breadcrumbs';
+@import 'partials/toc';
 
 .hide {
-   display: none;
+  display: none;
 }

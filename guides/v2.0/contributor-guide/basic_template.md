@@ -11,13 +11,6 @@ github_link: contributor-guide/basic_template.md
 ---
 <!-- Start with H2, not H1 -->
 
-## Main Content Heading
-{:.no_toc}
-
-<!-- Table of Content -->
-* Table of Content placeholder; required but will not be rendered
-{:toc}
-
 ### Overview
 Introductory text that gives an overview of the topic you will be writing about.
 

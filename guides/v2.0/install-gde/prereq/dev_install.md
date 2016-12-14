@@ -18,13 +18,6 @@ redirect_from:
   <p>Totally lost? Need a helping hand? Try our <a href="{{page.baseurl}}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{page.baseurl}}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
 
-#### Contents 
-
-*	<a href="#integrator-aud">Intended audience</a>
-*	<a href="#instgde-overview-composer">Composer and Magento</a>
-*	<a href="#instgde-prereq-compose-install">Install Composer</a>
-*	<a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>
-
 <h2 id="integrator-aud">Intended audience</h2>
 The audience for this topic is anyone who contributes to the Magento CE codebase. You should be highly technical, understand Composer and Git commands, and be able to upgrade the Magento system software and extensions using those commands. If that isn't you, go back and <a href="{{page.baseurl}}install-gde/bk-install-guide.html">choose another starting point</a>.
 

@@ -3,6 +3,7 @@ layout: default
 group: extension-dev-guide
 subgroup: 01_Introduction
 title: Introduction
+landing-page: PHP Developer Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
@@ -16,8 +17,6 @@ redirect_from:
   - /guides/v2.2/mktpl-quickstart/intro-moreinfo.html
   - /guides/v2.1/mktpl-quickstart/intro-moreinfo.html
 ---
-
-## {{page.menu_title}}
 
 The PHP Developer Guide contains information for developers who want to know more about developing or modifying Magento components. With this knowledge you can extend or customize any of the existing components in the Magento application. You can also create components that introduce new functionality and distribute them to merchants.
 

@@ -10,11 +10,6 @@ version: 2.0
 github_link: config-guide/memcache/memcache_ubuntu.md
 ---
 
-#### Contents
-*   <a href="#config-memcache-memcached">PHP memcache and memcached extensions</a>
-*   <a href="#config-memcache-install">Install and configure memcached on CentOS</a>
-*   <a href="#config-memcache-verify-its-cent">Verify memcached works before installing Magento</a>
-
 {% include config/php-memcache.md %}
 
 <h2 id="config-memcache-install">Install and configure memcached on CentOS</h2>
