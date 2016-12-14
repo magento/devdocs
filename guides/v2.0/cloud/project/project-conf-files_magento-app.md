@@ -10,21 +10,6 @@ version: 2.0
 github_link: cloud/project/project-conf-files_magento-app.md
 ---
 
-#### Contents
-*	[About `.magento.app.yaml`](#cloud-yaml-platform)
-*	[Defaults](#cloud-yaml-default)
-*	[`name`](#name)
-*	[`type` and `build`](#cloud-yaml-platform-type)
-*	[`access`](#cloud-yaml-platform-access)
-*	[`relationships`](#cloud-yaml-platform-rel)
-*	[`web`](#cloud-yaml-platform-web) 
-*	[`disk`](#cloud-yaml-platform-disk)
-*	[`mounts`](#cloud-yaml-platform-mounts)
-*	[`dependencies`](#cloud-yaml-platform-dep) 
-*	[`hooks`](#cloud-yaml-platform-hooks)
-*	[`crons`](#cloud-yaml-platform-cron) 
-*	[Configure PHP options](#cloud-yaml-platform-php)
-
 ## About `.magento.app.yaml` {#cloud-yaml-platform}
 Magento Enterprise Cloud Edition supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a `.magento.app.yaml` at the root of your repository.
 
@@ -266,7 +251,7 @@ hooks:
 `crons` describes processes that are triggered on a
 schedule.
 
-{% collapsible Click to show/hide content %}
+{% collapsible More information about crons: %}
 
 `crons` supports the following:
 
@@ -292,12 +277,10 @@ type: php:5.6
 
 We support PHP versions 5.5, 5.6, and 7.0. The default is 7.0.
 
-{% collapsible Configure PHP options: %}
-
 See one of the following sections for more information:
 
-*	[PHP extensions](#cloud-yaml-platform-php-ext)
-*	[Customize `php.ini` settings](#cloud-yaml-platform-php-set)
+*   [PHP extensions](#cloud-yaml-platform-php-ext)
+*   [Customize `php.ini` settings](#cloud-yaml-platform-php-set)
 
 ### PHP extensions {#cloud-yaml-platform-php-ext}
 You can define additional PHP extensions you want to enable or disable. Example:
@@ -316,6 +299,8 @@ runtime:
 To view the current list of PHP extensions, SSH into your environment and enter the following command:
 
 	php -m
+
+{% collapsible View PHP extensions: %}
 
 Magento requires the following PHP extensions that are enabled by default: 
 
@@ -368,6 +353,8 @@ Other PHP extensions you can optionally install:
 *	[xhprof](http://php.net/manual/en/book.xhprof.php){:target="_blank"}
 *	[xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="_blank"}
 
+{% endcollapsible %}
+
 ### Customize `php.ini` settings {#cloud-yaml-platform-php-set}
 You can also create and push a `php.ini` file that is appended to
 the configuration maintained by Magento Enterprise Cloud Edition.
@@ -390,7 +377,6 @@ has been added to your environment by SSHing into your environment and entering:
 
 	cat /etc/php5/fpm/php.ini
 
-{% endcollapsible %}
 
 #### Related topics
 *	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)

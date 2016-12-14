@@ -18,7 +18,7 @@ The REST APIs for Magento EE are available on EE installations only. EE installa
 ### Customer balance
     customerBalanceBalanceManagementV1
 
-### Gift carts
+### Gift cards
     giftCardAccountGiftCardAccountManagementV1
     giftCardAccountGuestGiftCardAccountManagementV1
     giftRegistryGuestCartShippingMethodManagementV1

@@ -9,14 +9,6 @@ version: 2.0
 github_link: install-gde/prereq/mysql_remote.md
 ---
 
-#### Contents
-
-*	<a href="#instgde-prereq-mysql-remote-over">When to set up a remote database connection</a>
-*	<a href="#instgde-prereq-mysql-remote-create">Create the remote connection</a>
-*	<a href="#instgde-prereq-mysql-remote-access">Grant access to a database user</a>
-*	<a href="#instgde-prereq-mysql-remote-verify">Verify database access</a>
-*	<a href="#instgde-prereq-mysql-remote-install">Install the Magento software</a>
-
 <h2 id="instgde-prereq-mysql-remote-over">When to set up a remote database connection</h2>
 This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software. (The Magento *web node* is the server on which you installed the Magento software and that runs your web server.)
 

@@ -19,10 +19,6 @@ You can add a custom checkout step, it should be implemented as a UI component. 
 
 This topic describes how to create the frontend part of the component, implementing a checkout step, and how to add it to the checkout flow.
 
-**Contents**
-
-* TOC
-{:toc}
 
 ## Create the view part of the checkout step component
 

@@ -3,6 +3,7 @@ layout: default
 group:  UI Library
 subgroup: A_Overview
 title: Overview
+landing-page: UI Components
 menu_title: Overview
 menu_node: parent
 version: 2.0

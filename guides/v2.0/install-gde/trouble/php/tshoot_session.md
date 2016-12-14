@@ -10,7 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/php/tshoot_session.md
 ---
 
-<h2>During installation, Exception - SessionHandler::read</h2>
 **Symptom**: At the last step of installing Magento 2, the following exception displays:
 
 {% highlight PHP %} 

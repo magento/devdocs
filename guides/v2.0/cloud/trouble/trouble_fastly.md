@@ -47,7 +47,7 @@ The URL format follows:
 	*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 	*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
-If you don't know your staging or production URLs, consult your Magento Enterprise Cloud Edition OneDrive account. Your account includes an onboarding document that contains your Git, SSH, and project URLs for staging and production.
+If you don't know your staging or production URLs, locate the Onboarding Spreadsheet in your Magento Enterprise Cloud Edition OneDrive account. Tab 3 (DNSSSLCDN) has access information for your staging and production systems. Use the values in the CNAME/Alias (No CDN) cell.
 
 Enter the following command to test your site:
 

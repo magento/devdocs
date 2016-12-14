@@ -1,18 +1,16 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
+subgroup: 02_rel-notes
 title: Magento EE 2.0.9 Release Notes
 menu_title: Magento EE 2.0.9 Release Notes
-menu_order: 18
+menu_order: 279
+level3_menu_node: level3child
+level3_subgroup: ee20-relnotes
 version: 2.0
 github_link: release-notes/ReleaseNotes2.0.9EE.md
 ---
-*	TOC
-{:toc}
 
-
-## Magento Enterprise Edition 2.0.9
 We are pleased to present Magento Enterprise Edition 2.0.9. This release includes several functional fixes.
 
 
@@ -75,18 +73,7 @@ You can run these operations from the Admin panel.
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports:
-
-* PHP 5.5.x, where x is 22 or greater
-
-* PHP 5.6.x
-
-* PHP 7.0.2 up to 7.1.0, except for 7.0.5
-
-* MySQL 5.6 
-
-For more information, see
-[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}

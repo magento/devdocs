@@ -1,19 +1,16 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
+subgroup: 02_rel-notes
 title: Magento CE 2.0.8 Release Notes
 menu_title: Magento CE 2.0.8 Release Notes
-menu_order: 15
+menu_order: 180
 version: 2.0
-
+level3_menu_node: level3child
+level3_subgroup: ce20-relnotes
 github_link: release-notes/ReleaseNotes2.0.8CE.md
 ---
-*	TOC
-{:toc}
 
-
-## Magento Community Edition 2.0.8
 We are pleased to present Magento Community Edition 2.0.8. This release includes  several functional fixes.
 
 
@@ -50,18 +47,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports:
-
-* PHP 5.5.x, where x is 22 or greater
-
-* PHP 5.6.x
-
-* PHP 7.0.2 up to 7.1.0, except for 7.0.5
-
-* MySQL 5.6 
-
-For more information, see
-[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html){:target="_blank"}.
 
 {% include install/releasenotes/ce_install_20.md %}
 

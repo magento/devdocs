@@ -9,8 +9,6 @@ version: 2.0
 github_link: architecture/stack-basics.md
 ---
 
-## Stack basics
-
 This document is not ready yet, but we're working on it.
 
 Meanwhile, you may want to read:

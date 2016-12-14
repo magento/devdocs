@@ -10,11 +10,6 @@ contributor_link: http://www.classyllama.com/
 version: 2.0
 github_link: extension-dev-guide/factories.md
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## Overview
 
@@ -39,7 +34,7 @@ class BaseFactory
    * @var \Magento\Framework\ObjectManagerInterface
    */
   private $objectManager;
-  
+
   /**
    * @param \Magento\Framework\ObjectManagerInterface $objectManager
    */
@@ -91,11 +86,11 @@ $block = $this->blockFactory->create();
 For classes that require parameters, the automatically generated `create()` function accepts an array of parameters that it passes on to the `ObjectManager` to create the target class.
 
 The example below shows the construction of a `Magento\Search\Model\Autocomplete\Item` object by passing in an array of parameters to a factory:
-{% highlight php startinline=true %} 
+{% highlight php startinline=true %}
 $resultItem = $this->itemFactory->create([
   'title' => $item->getQueryText(),
   'num_results' => $item->getNumResults(),
-]); 
+]);
 {%endhighlight%}
 
 ### Interfaces

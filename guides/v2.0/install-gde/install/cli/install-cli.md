@@ -21,14 +21,6 @@ redirect_from:
   <p>If you chose to enable SELinux, see <a href="{{page.baseurl}}install-gde/prereq/security.html">SELinux and iptables</a>.</p>
 </div>
   
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#new-cli-intro">Introducing the Magento command-line interface (CLI)</a>
-*	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
-*	<a href="#instgde-install-cli-first">First steps</a>
-
 <h2 id="new-cli-intro">Introducing the Magento command-line interface (CLI)</h2>
 {% include install/new-cli-intro.html %}
 

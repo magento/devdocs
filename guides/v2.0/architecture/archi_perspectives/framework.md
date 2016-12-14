@@ -10,13 +10,7 @@ github_link: architecture/archi_perspectives/framework.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/framework.html
 ---
 
-## Magento Framework
-{:.no_toc}
-
-* TOC
-{:toc}
-
-### Overview
+## Overview
 
 The Magento Framework controls how application components interact, including request flow, routing, indexing, caching, and exception handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies.
 
@@ -24,12 +18,12 @@ This primarily PHP software component is organized into logical groups called <i
 (Although the Magento Framework does not contain resource models, it does contain a library of code to help implement a resource model.)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Note: Don’t confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
+  <p>Don’t confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
 </div>
 
 You should never modify Framework files, although if you are extending Magento, you must know how to call Framework libraries. Modules you create will typically inherit from classes and interfaces defined in the Framework directories.  
 
-### Responsibilities
+## Responsibilities
 
 The Magento framework provides libraries that help reduce the effort of creating modules that contain business logic.
 
@@ -41,7 +35,7 @@ The framework is responsible for operations that are useful for potentially all 
 
 * rendering content
 
-### Organization
+## Organization
 
 Here is the Magento framework folder structure:
 
@@ -59,20 +53,18 @@ Lib/
 * `/lib/web` contains JavaScript and CSS/LESS files. These files reside  under `web` and not `internal` because they are accessible from a web browser, while the PHP code under `internal` is not. (Any code that a web browser must access should be under `web`, while everything else under `internal`.)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Note: The <code>lib/internal/Magento/Framework</code> directory maps to the <code>Magento\Framework</code> namespace.</p>
+  <p>The <code>lib/internal/Magento/Framework</code> directory maps to the <code>Magento\Framework</code> namespace.</p>
 </div>
 
-### Highlights of the Magento Framework
+## Highlights of Magento Framework
 
 The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust range of functionality. If you are an extension developer, you may be interested in this subset of Framework namespaces.
-
 
 <table>
    <tbody>
       <tr style="background-color: lightgray">
          <th>Namespace</th>
          <th>Purpose</th>
-
       </tr>
       <tr>
          <td><code>Magento\Framework\Object</code>

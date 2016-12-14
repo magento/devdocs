@@ -13,23 +13,16 @@ redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
 
 To configure a web API, developers define some of the elements of each API call in the `<module root dir>/vendor/<vendor-name>/<module-name>/etc/webapi.xml` file, where `<vendor-name>` is your vendor name (for example, `magento`) and `<module-name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<your Magento install dir>/vendor/magento/module-customer/etc/webapi.xml` configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.
 
-<p>To construct a web API request, read these topics:</p>
-<ul>
-<li><a href="#request-overview">Overview</a></li>
-<li><a href="#construct-request">Construct a request</a></li>
-<li><a href="#customers-search-api-request-example">Customers Search API Request Example</a></li>
-</ul>
+## Overview {#request-overview}
 
-<h2 id="request-overview">Overview</h2>
-
-<p>Each Magento web API call contains of a combination of these elements:</p>
+Each Magento web API call contains of a combination of these elements:
 <ul>
    <li><a href="#verbs">HTTP verb</a></li>
    <li><a href="#endpoints">Endpoint</a></li>
    <li><a href="#http-headers">HTTP headers</a></li>
    <li><a href="#payload">Call payload</a></li>
 </ul>
-<p>The following table and the sections that follow the table describe these API call elements:</p>
+The following table and the sections that follow the table describe these API call elements:
 <table style="width:75%">
    <tr bgcolor="lightgray">
       <th>Element</th>
@@ -74,8 +67,8 @@ To configure a web API, developers define some of the elements of each API call 
       </td>
    </tr>
 </table>
-<a name="verbs"></a>
-<h3>HTTP verb</h3>
+
+### HTTP verb {#verbs}
 <p>Specify one of these HTTP verbs in the request:</p>
 <ul>
    <li><code>GET</code>.
@@ -97,18 +90,16 @@ To configure a web API, developers define some of the elements of each API call 
       resource.
    </li>
 </ul>
-<a name="endpoints"></a>
-<h3>Endpoint</h3>
-<p>An endpoint is a combination of the <i>server</i> that fulfills a request, the web service, the <i>resource</i> against which the request is being made, and any template parameters.</p>
 
-<p>For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is <code>magento.ll/index.php/</code>, the web service is <code>rest</code>, the resource is <code>/V1/customerGroups</code>, and the template parameter is <code>id</code>.</p>
+### Endpoint {#endpoints}
+An endpoint is a combination of the _server_ that fulfills a request, the web service, the <i>resource</i> against which the request is being made, and any template parameters.
 
+For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is `magento.ll/index.php/`, the web service is `rest`, the resource is `/V1/customerGroups`, and the template parameter is `id`.
 
-<a name="http-headers"></a>
-<h3>HTTP headers</h3>
+### HTTP headers {#http-headers}
+
 <div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
-<p>Specify one or more of the following HTTP headers
-   in your web API calls:</p>
+Specify one or more of the following HTTP headers in your web API calls:
 <table style="width:100%">
    <tr bgcolor="lightgray">
       <th>HTTP header</th>
@@ -156,14 +147,12 @@ See <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">
    </tr>
 </table>
 
-<a name="payload"></a>
-<h3>Call payload</h3>
-<p>The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request.
-            API operations have both
-            <em>required</em> and
-            <em>optional</em> inputs.</p>
-<p>You specify input parameters in the URI. For example, in the <code>GET&nbsp;/V1/customers/:customerId</code> URI, you must specify the <code>customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
-<p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code>POST&nbsp;/V1/customers</code> call, you must specify a request body like this:</p>
+### Call payload {#payload}
+The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both _required_ and _optional_ inputs.
+
+You specify input parameters in the URI. For example, in the `GET/V1/customers/:customerId` URI, you must specify the `customerId` template parameter. This parameter filters the response by the specified customer ID.
+
+You specify input attributes in a JSON- or XML-formatted request body. For example, in the `POST /V1/customers` call, you must specify a request body like this:
 
 {% highlight json %}
 {
@@ -195,10 +184,10 @@ See <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">
 }
 {% endhighlight %}
 
-<p>This JSON-formatted request body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
+This JSON-formatted request body includes a `customer` object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.
 
-<h2 id="construct-request">Construct a request</h2>
-<p>This example shows you how to construct a REST web API call to create an account.</p>
+## Construct a request {#construct-request}
+This example shows you how to construct a REST web API call to create an account.
 
 <ol><li>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file.</li>
 <li><p>Find the route element that defines the <code>createAccount</code> call:</p>
@@ -226,8 +215,8 @@ See <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">
 <li><p>To pass the <code>customer</code> data object in the POST call payload, specify a <a href="http://www.json.com/" target="_blank">JSON</a> or XML request body on the call.</p></li>
 </ol>
 
-<h3 id="customers-search-api-request-example">Customers Search API Request Example</h3>
-<p>The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.</p>
+### Customers Search API request example {#customers-search-api-request-example}
+The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.
 <ol>
 <li><p>Prepare <code>Authorization</code>, <code>Accept</code> and <code>Content-Type</code> headers to be passed to a request object. Use the Authorization token returned by the Magento token service.</p></li>
 <pre>
@@ -240,7 +229,7 @@ $httpHeaders->addHeaders([
 ]);
 </pre>
 <li><p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
-<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="http://devdocs.magento.com/guides/v2.0/get-started/usage.html" target="_blank">searchCriteria usage</a>.</p></li>
+<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{page.baseurl}}get-started/usage.html" target="_blank">searchCriteria usage</a>.</p></li>
 <pre>
 $request = new \Zend\Http\Request();
 $request->setHeaders($httpHeaders);
@@ -268,5 +257,5 @@ $response = $client->send($request);
 <li><p>This request returns a list of all customers in JSON format. You can also specify XML format by changing <code>Accept</code> header of the request.</p></li>
 </ol>
 
-<h2>Next step</h2>
-<p>Run the web API call through a <a href="{{page.baseurl}}get-started/gs-curl.html">cURL command</a> or a REST client.</p>
+## Next step
+Run the web API call through a <a href="{{page.baseurl}}get-started/gs-curl.html">cURL command</a> or a REST client.

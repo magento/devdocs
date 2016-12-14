@@ -9,12 +9,7 @@ version: 2.0
 github_link: mtf/mtf_entities/mtf_dataset.md
 ---
 
-<h2>Data set</h2>
-
-* TOC
-{:toc}
-
-## Data set overview {#overview}
+## Overview {#overview}
 
 A data set contains data used by a [test case] and [constraints][constraint].
 A data set can have several variations.

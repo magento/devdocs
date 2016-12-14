@@ -12,11 +12,6 @@ version: 2.0
 github_link: cloud/project/project-routes-more-redir.md
 ---
 
-#### Contents
-*	[Overview of redirection](#cloud-route-redir)
-*	[Whole-route redirects](#cloud-route-whole)
-*	[Partial redirects](#cloud-route-partial)
-
 ## Overview of redirection {#cloud-route-redir}
 Managing redirection rules is a common requirement for web applications,
 especially in cases where you do not want to lose incoming links that have

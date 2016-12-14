@@ -12,13 +12,6 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_component.html
 ---
-## {{page.menu_title}}
-
-#### Contents
-*   [Overview of naming a component](#overview-naming)
-*   [Prerequisites](#prereq)
-*   [Add the component's `module.xml` file](#module-xml)
-*   [Add the components `composer.json` file](#add-composer-json)
 
 ## Overview of naming a component {#overview-naming}
 You give a name to your component in its `composer.json` and `module.xml` files. These files also contain other required configuration parameters, such as the module's schema version.

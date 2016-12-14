@@ -10,8 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/tshoot_segfault.md
 ---
 
-<h2 id="install-trouble-segfault">Segmentation fault during rollback</h2>
-
 ### Symptom
 When you attempt to roll back using the command line, the following error displays:
 

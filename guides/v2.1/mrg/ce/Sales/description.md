@@ -14,8 +14,6 @@ level3_subgroup: Sales
 github_link: mrg/ce/Sales/description.md
 ---
 
-## Magento_Sales module
-
 ## Overview
 
 Magento_Sales module is responsible for order processing and appearance in system.

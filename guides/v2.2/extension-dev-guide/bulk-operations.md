@@ -10,9 +10,6 @@ github_link: extension-dev-guide/bulk-operations.md
 
 ---
 
-## {{page.title}}
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This article applies to Enterprise Edition only">
-
 Bulk operations are actions that are performed on a large scale. Example bulk operations tasks include importing or exporting items, changing prices on a mass scale, and assigning products to a warehouse.
 
 For each indvidual task of a bulk operation, the system creates a message that is published in a [message queue]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html). A consumer runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the Admin panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.
@@ -68,7 +65,7 @@ See [Create a publisher]( {{page.baseurl}}extension-dev-guide/implement-bulk.htm
 
 ### Consume messages
 
-When a consumer processes a message, it must notify the system of its status. The status can be OPEN, COMPLETE, RETRIABLY_FAILED, and NOT_RETRIABLY_FAILED.  
+When a consumer processes a message, it must notify the system of its status. The status can be OPEN, COMPLETE, RETRIABLY_FAILED, and NOT_RETRIABLY_FAILED.
 
 To send this notification, use `OperationManagementInterface::changeOperationStatus($operationId, $status, $message = null, $data = null)`.
 

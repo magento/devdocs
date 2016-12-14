@@ -3,14 +3,13 @@ layout: default
 group: mtf-guide
 subgroup: 10_Introduction
 title: Introduction to the Functional Testing Framework
+landing-page: Functional Testing Framework Guide
 menu_title: INTRODUCTION
 menu_node: parent
 version: 2.0
 github_link: mtf/mtf_introduction.md
 redirect_from: /guides/v1.0/mtf/mtf_introduction.html
 ---
-
-<h2>Preface</h2>
 
 This guide provides instructions on installing and configuring the Functional Testing Framework (FTF). Using the FTF, you can create and run *functional* tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, and so on. This FTF guide is also applicable to the Magento 1 platform.
 

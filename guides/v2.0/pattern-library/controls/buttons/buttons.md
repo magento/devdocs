@@ -10,23 +10,11 @@ version: 2.0
 github_link: pattern-library/controls/buttons/buttons.md
 redirect_from: /guides/v1.0/pattern-library/controls/buttons/buttons.html
 ---
-<h2> Buttons </h2>
 
-<h3> Contents </h3>
-
-* <a href="#overview">Overview</a>
-* <a href="#when-to-use">When to Use</a>
-* <a href="#when-not-to-use">When Not to Use</a>
-* <a href="#variations">Variations</a>
-* <a href="#style_behavior">Styles and Behavior</a>
-* <a href="#accessibility">Accessibility</a>
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
-
+## Buttons 
 Buttons bring attention to actions on the screen. This article will cover the use of general buttons on Magento. 
-For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
+
+For solutions not described in this topic, please refer to other related patterns or contact the Magento UX Design team.
 
 
 <h3 id="when-to-use">When to Use</h3>

@@ -13,8 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html
 ---
 
-<h2 id="install-trouble-git">git pull origin develop fails when updating the Magento software</h2>
-
 ### Details
 
 One of the steps to updating the Magento 2 software is to update your local repository by running:

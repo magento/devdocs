@@ -1,19 +1,43 @@
 {% include header.html %}
 
-{% include page-header.html %}
-
 <div class="container">
 
 	{% include sidebar.html %}
 
 	<section class="content">
 		<div class="content-wrap">
-            {{ content }}
+			{% include page-header.html %}
+			{{ content }}
 		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+			{% if page.contributor_link %}
+				<div class="page-contributor">
+					<a href="{{ page.contributor_link }}" target="_blank">
+						Thanks to {{ page.contributor_name }} for contributing this topic
+					</a>
+				</div>
+			{% endif %}
+
+			{% if page.github_link %}
+			 <div class="github-link">
+				 <a class="improve-page" href="{{ site.github }}v{{page.version}}/{{ page.github_link }}" target="_blank">
+					 Edit this page on GitHub
+				 </a>
+			 </div>
+			{% endif %}
+
+			<div class="new-issue">
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: {{ page.url }}" target="_blank">Give us feedback</a>
+			</div>
+
+		</div>
+
 	</section>
-<!-- /main content -->
+	<!-- /.content -->
 
-
-</div> <!-- container -->
+</div> <!-- /.container -->
 
 {% include footer.html %}

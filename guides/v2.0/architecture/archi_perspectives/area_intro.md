@@ -10,12 +10,6 @@ github_link: architecture/archi_perspectives/area_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/area_intro.html
 ---
 
-## Magento area
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 A Magento Area contains user-oriented functionality, which is responsible for managing user interaction with the system. It consists of components that provide a bridge into the core business logic encapsulated in the Domain (business logic) layer.

@@ -10,14 +10,6 @@ version: 2.0
 github_link: cloud/discover-deploy.md
 ---
 
-#### Contents
-*	[Deployment process](#cloud-deploy-over)
-*	[GitHub and Bitbucket](#cloud-deploy-over-gh)
-*	[Project configuration](#cloud-deploy-conf)
-*	[Five phases of deployment](#cloud-deploy-over-phases)
-*	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
-
-## Deployment process {#cloud-deploy-over}
 Deploying Magento means simply pushing the source code to your Git repository. The Git repository is part of your projects cluster so it is totally isolated from
 other clients.
 
@@ -62,7 +54,7 @@ Magento Enterprise Cloud Edition builds the codebase. It runs hooks in the `buil
 The default Magento build hook is a CLI command called `magento-cloud:build`. It does the following:
 
 *   Applies patches located in vendor/magento/magento-cloud-configuration/patches, as well as optional project-specific patches in m2-hotfixes
-*	Enables all extensions
+*	Enables all modules
 *	Regenerates code and the dependency injection configuration (that is, the Magento `var/generation` and `var/di` directories) using `bin/magento setup:di:compile`.
 
 It is important to note that at this point the cluster has not been

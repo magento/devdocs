@@ -10,12 +10,6 @@ github_link: extension-dev-guide/plugins.md
 redirect_from:
 
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 
 ### Overview
 A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any class or *interface*.
@@ -103,7 +97,7 @@ class ProductPlugin
 ?>
 {% endhighlight %}
 
-After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method. 
+After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method.
 
 Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{site.mage2100url}}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
@@ -168,7 +162,7 @@ In the example, the `afterUpdateWebsites` function uses the variable `$websiteId
 #### Around methods
 Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with 'around' as the prefix.
 
-Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When your code executes the `callable`, Magento calls the next plugin or the observed function. 
+Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When your code executes the `callable`, Magento calls the next plugin or the observed function.
 
 <div class="bs-callout bs-callout-warning">
   <p>If the around method does not call the <code>callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
@@ -196,7 +190,7 @@ class ProductPlugin
 ?>
 {% endhighlight %}
 
-When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method. 
+When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method.
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
@@ -257,7 +251,7 @@ The prioritization rules for ordering plugins:
 
 * Before the execution of the observed method, Magento will execute plugins from lowest to greatest `sortOrder`.
 
-  * During each plugin execution, Magento executes the current plugin's before method. 
+  * During each plugin execution, Magento executes the current plugin's before method.
   * After the before plugin completes execution, the current plugin's around method will wrap and execute the next plugin or observed method.
 
 * Following the execution of the observed method, Magento will execute plugins from greatest to lowest `sortOrder`.
@@ -297,7 +291,7 @@ The execution flow will be as follows:
 
 ### Configuration inheritance
 
-Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class. 
+Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class.
 
 Magento uses plugins defined in the global scope when the system is in a specific area (i.e. frontend, backend, etc). You can also extend or override these global plugin configuration via an area's `di.xml`.
 

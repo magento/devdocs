@@ -10,7 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/php/tshoot_70pct.md
 ---
 
-<h2 id="install-trouble-pdo">Setup Wizard installation stops at about 70%</h2>
 During installation using the Setup Wizard, the process stops at about 70% (with or without sample data). No errors display on the screen.
 
 Common causes for this issue include:

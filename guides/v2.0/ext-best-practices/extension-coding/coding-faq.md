@@ -8,15 +8,8 @@ menu_order: 1000
 version: 2.0
 github_link: ext-best-practices/extension-coding/coding-faq.md
 ---
-## {{page.menu_title}}
-{:.no_toc}
 
 This page is a compilation of frequently asked coding questions by the Magento Community.
-
-## Frequently Asked Questions
-{:.no_toc}
-* Table of Content
-{:toc}
 
 ### What do I need to know to work with the framework?
 

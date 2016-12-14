@@ -1,20 +1,16 @@
 ---
 layout: default
 group: release-notes
-subgroup: 02_ReleaseNotes
+subgroup: 02_rel-notes
 title: Magento EE 2.1.0 Release Notes
 menu_title: Magento EE 2.1.0 Release Notes
-menu_order: 3
+menu_order: 299
+level3_menu_node: level3child
+level3_subgroup: ee21-relnotes
 version: 2.1
 github_link: release-notes/ReleaseNotes2.1.0EE.md
 ---
 
-*	TOC
-{:toc}
-
-## Magento Enterprise Edition 2.1.0
-
-  
 We are pleased to present Magento Enterprise Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 
@@ -1268,14 +1264,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. Magento 2.1.0 supports:
-
-* PHP 5.6
-	We do not support PHP 5.5.x
-* PHP 7.0.2, 7.0.6 up to 7.1
-* MySQL 5.6
-*	Apache 2.2 or 2.4
-*	nginx 1.8 (or <a href="http://nginx.org/en/linux_packages.html#mainline" target="_blank">latest mainline version</a>)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html)
 
 
 

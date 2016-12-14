@@ -12,8 +12,6 @@ redirect_from: /guides/v1.0/install-gde/trouble/tshoot_install_depend.html
 ---
 
 
-<h2 id="trouble-install-depend">Installation dependencies not met</h2>
-
 ### Details
 This topic applies to you *only* if you [cloned the Magento 2 GitHub repository]({{ page.baseurl }}install-gde/prereq/dev_install.html).
 

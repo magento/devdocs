@@ -15,8 +15,6 @@ github_link: mrg/ee/PaymentStaging.md
 
 <h2>Contents</h2>
 
-* TOC
-{:toc}
 
 ## Magento Magento_PaymentStaging Module
 

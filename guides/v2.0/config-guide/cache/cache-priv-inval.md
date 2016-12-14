@@ -12,10 +12,6 @@ version: 2.0
 github_link: config-guide/cache/cache-priv-inval.md
 ---
 
-#### Contents
-*   [Cache invalidation](#config-cache-inval)
-*   [Private content versioning](#config-priv-vers)
-
 ## Cache invalidation {#config-cache-inval}
 The Magento application enables you to clear cached content immediately after a entity changes. We use an `IdentityInterface` to link entities in the application with cached content and to know what cache to clear when an entity changes.
 

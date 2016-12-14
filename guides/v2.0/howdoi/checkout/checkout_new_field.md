@@ -8,24 +8,17 @@ menu_order: 9
 version: 2.0
 github_link: howdoi/checkout/checkout_new_field.md
 ---
-## What's in this topic
-{:.no_toc}
 
-This topic describes how to add new fields to default checkout forms: shipping address or billing address form. For illustration we use a case of adding a field to the shipping address form. 
+This topic describes how to add new fields to default checkout forms: shipping address or billing address form. For illustration we use a case of adding a field to the shipping address form.
 
-**Contents**
+## Add the field to layout and handle its value on the client side
 
-* TOC
-{:toc}
-
-## Add the field to layout and handle its value on the client side 
-
-To add your custom field to the checkout address form and access its value on the client side, 
+To add your custom field to the checkout address form and access its value on the client side,
 take the steps described further.
 
 **Step 1**
 
-Add the field to layout. Both shipping address and billing address forms are [generated dynamically]({{page.baseurl}}howdoi/checkout/checkout_form.html#dynamic_form). So to modify its layout, you need to create a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. 
+Add the field to layout. Both shipping address and billing address forms are [generated dynamically]({{page.baseurl}}howdoi/checkout/checkout_form.html#dynamic_form). So to modify its layout, you need to create a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
 
 Following is a sample logic for a plugin method adding a field named `Custom Attribute` to the shipping address form:
 
@@ -81,7 +74,7 @@ where `%unique_name%` and `%path\to\your\LayoutProcessor%` must be replaced by y
 
 **Step 2**
 
-Add a JS mixin to change the behavior of the component responsible for the data submission to the server side. For this, in your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the `<your_module_dir>/view/frontend/web` directory. There are no strict requirements for the mixin file naming. 
+Add a JS mixin to change the behavior of the component responsible for the data submission to the server side. For this, in your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the `<your_module_dir>/view/frontend/web` directory. There are no strict requirements for the mixin file naming.
 
 Following is a sample mixin modifying the behavior of `Magento_Checkout/js/action/set-shipping-information` (this component is responsible for data submission between shipping and billing checkout steps):
 {%highlight js%}
@@ -151,11 +144,11 @@ Following is a sample `extension_attributes.xml`:
 {%endhighlight%}
 
 ## Access the value of the custom field on server side
-If you took all the steps described in the previous paragraphs, 
+If you took all the steps described in the previous paragraphs,
 Magento will generate the interface that includes your custom attribute and you can access your field value like this:
 
     $value = $address->getExtensionAttributes()->getCustomField();
 
 ## Related reading
 
-- [EAV and extension attributes]({{page.baseurl}}extension-dev-guide/attributes.html) 
+- [EAV and extension attributes]({{page.baseurl}}extension-dev-guide/attributes.html)

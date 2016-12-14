@@ -10,11 +10,6 @@ version: 2.0
 github_link: comp-mgr/prereq/prereq_auth-token.md
 ---
 
-#### Contents
-
-*	<a href="#auth-overview">Overview of Magento Marketplace authentication</a>
-*	<a href="#auth-get">Get your authentication tokens</a>
-*	<a href="#compman-token-admin">Enter the tokens in the Admin</a>
 
 {% include install/auth-tokens-get.md %}
 

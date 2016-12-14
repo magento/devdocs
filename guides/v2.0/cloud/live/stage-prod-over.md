@@ -18,7 +18,6 @@ background: none!important;
 }
 </style>
 
-## Overview of staging and production
 As discussed in more detail in [Architecture]({{ page.baseurl }}cloud/discover-arch.html), Magento Enterprise Cloud Edition has three types of systems:
 
 *	*Integration*, used by a developer to write custom code and test it.

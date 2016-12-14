@@ -1,464 +1,56 @@
-.footer {
-   margin-top: 45px;
-   padding: 35px 0 36px;
-   border-top: 1px solid #E5E5E5;
-}
+#footer {
+  background: $footer-background-color;
+  color: $footer-color;
+  padding: 20px 0;
+  font-size: 13px;
 
 
-#footer-wrap {
-   text-align: left;
-}
-#footer-wrap .container {
-   box-sizing: content-box;
-   -moz-box-sizing: content-box;
-}
-#footer-wrap .copyright-links {
-   float: right;
-}
-#f-col-1 {
-   float: left;
-   width: 22%;
-}
-#f-col-2 {
-   float: left;
-   margin-left: 2%;
-   width: 50%;
-}
-#f-col-2-1 {
-  float: left;
-  margin-left: 0;
-  width: 47%;
-}
-#f-col-2-2 {
-  float: left;
-  margin-left: 6%;
-  width: 47%;
-}
-#f-col-3 {
-   float: left;
-   margin-left: 2%;
-   width: 24%;
-}
-#footer-wrap ul{
-   padding: 0;
-   margin: 0;
-   list-style: none;
-}
-#footer-wrap * {
-   box-sizing: border-box;
-   -moz-box-sizing: border-box;
-}
-#footer-wrap a {
-   text-decoration: none;
-}
-#footer-wrap .btn.copper {
-   border-radius: 3px;
-   border: none;
-   transition-duration: 0.7s;
-   -webkit-transition: 0.7s;
-   -moz-transition: 0.7s;
-   transition: 0.7s;
-   min-width: 200px;
-   text-shadow: none;
-   padding: 13px 20px;
-}
-#footer-wrap .btn.copper:hover {
-  color: #fff;
-}
-#footer-wrap {
-   width: 100%;
-   position: relative;
-   z-index: 99;
-   background-color: #31302b;
-   color: #cac3b4;
-   font: normal 12px 'Open Sans', sans-serif;
-   transition-duration: 0.3s;
-   -webkit-transition: 0.3s;
-}
-#footer-wrap a:hover {
-   text-decoration: none;
-}
-#footer-wrap .footer {
-   padding: 30px 0;
-   border: none;
-   margin-top: 0;
-   background: none;
-}
-#footer-wrap .intro-paragraph .container,
-#footer-wrap .footer-container {
-   padding: 0;
-}
-#footer-wrap .footer p {
-   color: #cac3b4;
-   margin: 0 0 13px;
-}
-#footer-wrap .footer h4 {
-   text-transform: uppercase;
-   color: #ffffff;
-   font: 700 14px 'Open Sans', sans-serif;
-   letter-spacing: 1px;
-   margin: 0 0 22px;
-}
+  a {
+    color: $footer-link-color;
 
-#magento-sites .nav {
-   margin: 0;
-}
-#magento-sites .nav li {
-   padding: 0 0 16px;
-   opacity: 1;
-}
-#magento-sites .nav li a {
-   text-transform: uppercase;
-   display: block;
-   font: 700 14px/24px 'Open Sans', sans-serif;
-   letter-spacing: 1px;
-   transition-duration: 0.3s;
-   -webkit-transition: 0.3s;
-   -moz-transition: 0.3s;
-}
-#magento-sites .nav li a:hover {
-   background: none;
-   text-decoration: none;
-}
-#magento-sites .description {
-   color: #cac3b4;
-   font: normal 13px 'Open Sans', sans-serif;
-   display: block;
-   text-transform: none;
-   cursor: pointer;
-}
-#magento-com .btn-outline {
-   font: 700 13px/36px 'Open Sans', sans-serif;
-   text-transform: uppercase;
-   color: #fff;
-   background: #31302b;
-   border-radius: 2px;
-   padding: 0 14px;
-   text-shadow: none;
-   display: inline-block;
-   box-sizing: border-box;
-   -moz-box-sizing: border-box;
-   border: 3px solid #fff;
-   box-shadow: inset 0 0 0 0 #fff;
-   transition: 0.7s;
-   -webkit-transition: 0.7s;
-   -moz-transition: 0.7s;
-}
-#magento-com .btn-outline:hover {
-   color: #31302b;
-   box-shadow: inset 0 100px 0 0 #fff;
-   background: #fff;
-}
-#magento-com .intro-paragraph {
-   overflow: hidden;
-   margin: 0 0 30px;
-   padding: 0 20px 25px 20px;
-   border-bottom: 1px solid #5a5955;
-   text-align: center;
-}
-#magento-com .intro-paragraph a {
-   display: inline-block;
-   outline: none !important;
-}
-#magento-com .intro-paragraph img {
-   margin: 0 40px 0 0;
-   border: none;
-   outline: none;
-}
-#magento-com .intro-paragraph h3 {
-   color: #cac3b4;
-   font: normal 15px/18px 'Open Sans', sans-serif;
-   position: relative;
-   top: 10px;
-   display: inline-block !important;
-   text-align: left;
-   margin: 0;
-}
-#footer-wrap .footer #magento-com h4 {
-   margin: 0 0 12px;
-}
-#footer-wrap .footer #magento-com .contact-us {
-   padding: 0;
-}
-#footer-wrap .footer #magento-com .contact-us,
-#footer-wrap .footer #magento-com #newsletter {
-   font-size: 12px;
-   line-height: 24px;
-   width: 100%;
-   position: relative;
-}
-#footer-wrap .footer #magento-com .contact-us p,
-#footer-wrap .footer #magento-com #newsletter p {
-   font-size: 13px;
-   line-height: 20px;
-   padding: 8px 0;
-}
-#footer-wrap .footer #magento-com .contact-us h4,
-#footer-wrap .footer #magento-com #newsletter h4 {
-   margin: 0 0 5px;
-}
-#footer-wrap .footer #magento-com .contact-us .outline,
-#footer-wrap .footer #magento-com #newsletter .outline {
-   letter-spacing: 0;
-   padding: 0 14px;
-   text-transform: uppercase;
-   border: 3px solid #fff;
-   display: inline-block;
-   text-decoration: none;
-   border-radius: 2px;
-   -webkit-transition: all 0.4s linear 0s;
-   -moz-transition: all 0.4s linear 0s;
-   -o-transition: all 0.4s linear 0s;
-   transition: all 0.4s linear 0s;
-   font: 700 12px/36px 'Open Sans', sans-serif;
-   background: #31302b;
-   color: #ffffff;
-   box-shadow: inset 0 0 0 0 #ffffff;
-   height: 42px;
-   cursor: pointer;
-   text-shadow: none;
-}
-#footer-wrap .footer #magento-com .contact-us .outline:hover,
-#footer-wrap .footer #magento-com #newsletter .outline:hover {
-   background: #ffffff;
-   color: #31302b;
-   box-shadow: inset 0 100px 0 0 #ffffff;
-}
-#footer-wrap .footer #magento-com #newsletter .hold-form {
-   position: relative;
-   padding: 13px 0 0;
-   width: 100%;
-}
-#footer-wrap .footer #magento-com #newsletter p {
-   margin: 0;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email {
-   position: relative;
-   width: 100%;
-   height: 42px;
-   float: left;
-   overflow: hidden;
-   -webkit-transition: width 0.3s;
-   -moz-transition: width 0.3s;
-   transition: width 0.3s;
-   -webkit-backface-visibility: hidden;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email .sb-email-input {
-   position: relative;
-   top: 0;
-   right: 0;
-   border: none;
-   outline: none;
-   background: #ffffff;
-   width: 55%;
-   height: 42px;
-   margin-right: 10px;
-   z-index: 10;
-   padding-left: 10px;
-   font: 13px/36px 'Open Sans', sans-serif;
-   text-transform: none;
-   color: #676056;
-   max-width: 200px;
-   border-radius: 2px;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email.sb-email.sb-email-open .sb-email-input {
-   visibility: visible;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email form {
-   display: block;
-   overflow: hidden;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email .sb-email-input::-webkit-input-placeholder {
-   color: #676056;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email .sb-email-input:-moz-placeholder {
-   color: #676056;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email .sb-email-input::-moz-placeholder {
-   color: #676056;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email .sb-email-input:-ms-input-placeholder {
-   color: #676056;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email .sb-icon-email,
-#footer-wrap .footer #magento-com #newsletter .sb-email .sb-email-submit {
-   display: block;
-   position: absolute;
-   right: 0;
-   top: 0;
-   left: 0;
-   padding: 0;
-   margin: 0;
-   text-align: center;
-   cursor: pointer;
-   overflow: hidden;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email .sb-icon-email:hover {
-   color: #31302b;
-   background: #ffffff;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email .sb-email-submit {
-   background: #31302b;
-   outline: none;
-   color: #ffffff;
-   z-index: -10;
-   width: 74px;
-   overflow: hidden;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email .sb-email-submit:hover {
-   color: #31302b;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email .sb-icon-email {
-   z-index: 100;
-   -webkit-font-smoothing: antialiased;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email.sb-email-open,
-#footer-wrap .footer #magento-com #newsletter .no-js .sb-email {
-   width: 100%;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email.sb-email-open .sb-email-submit,
-#footer-wrap .footer #magento-com #newsletter .no-js .sb-email .sb-email-submit {
-   float: left;
-   position: relative;
-   margin: 0 0 0 10px;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email.sb-email-open .sb-email-input,
-#footer-wrap .footer #magento-com #newsletter .no-js .sb-email .sb-email-input {
-   float: left;
-   position: relative;
-   width: 60%;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email.sb-email-open .sb-icon-email,
-#footer-wrap .footer #magento-com #newsletter .no-js .sb-email .sb-icon-email {
-   display: none;
-   overflow: hidden;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email.sb-email-open .sb-icon-email,
-#footer-wrap .footer #magento-com #newsletter .no-js .sb-email .sb-icon-email {
-   background: #31302b;
-   color: #ffffff;
-   z-index: 11;
-}
-#footer-wrap .footer #magento-com #newsletter .sb-email.sb-email-open .sb-email-submit,
-#footer-wrap .footer #magento-com #newsletter .no-js .sb-email .sb-email-submit {
-   z-index: 90;
-}
-#footer-wrap .footer #magento-com #newsletter #Emailemail_msg {
-   color: #ec4a24;
-   opacity: 1;
-   display: none;
-   visibility: visible;
-   position: absolute;
-   margin: 2px 0 0;
-   font-size: 11px;
-   line-height: 12px;
-   top: 53px;
-   font-weight: bold;
-}
-#footer-wrap .footer #magento-com .nav {
-   margin: 20px 0 0;
-}
-#footer-wrap .footer #magento-com .nav a {
-   font: 13px/28px 'Open Sans', sans-serif;
-   letter-spacing: 1px;
-   color: #ffffff;
-   text-transform: capitalize;
-}
-#footer-wrap .footer #magento-com .nav a:hover {
-   background: none;
-   color: #cac3b4;
-   transition-duration: 0.1s;
-   -webkit-transition: 0.1s;
-}
-#footer-wrap .footer #magento-com .email-invalid,
-#footer-wrap .footer #magento-com .email-ty {
-   position: absolute;
-   bottom: -25px;
-   width: 100%;
-}
-#footer-wrap .footer #magento-com .email-invalid p {
-   margin: 0;
-}
-#footer-wrap .footer #social-network {
-   padding: 0;
-}
-#footer-wrap .footer #social-network h4 {
-   margin: 0 0 15px;
-}
-#footer-wrap .footer #social-network ul {
-   margin-left: 0;
-   overflow: hidden;
-}
-#footer-wrap .footer #social-network ul li {
-   display: inline-block;
-   margin: 0 0 0 10px;
-   list-style: none;
-}
-#footer-wrap .footer #social-network ul li:first-child {
-   margin: 0;
-}
-#social-network ul li a {
-   width: 29px;
-   height: 30px;
-   text-indent: -9999px;
-   overflow: hidden;
-   float: left;
-   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJEAAAA8CAYAAABmWlgTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3RjA5QzE5MDFDMjA2ODExQjM2NzgxQkZEOUJFNzhENCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCRTUyMjM4MzE4QzIxMUU1OUNEQTg5NzM2RkRBMTE3MSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCRTUyMjM4MjE4QzIxMUU1OUNEQTg5NzM2RkRBMTE3MSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTkwNjIwQzcxNjIwNjgxMThDMTRGOEM5RDJBRjQxNTkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6N0YwOUMxOTAxQzIwNjgxMUIzNjc4MUJGRDlCRTc4RDQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5LP10DAAAUSklEQVR42uxcDbgXVZk/c71gpIIruguYblYS4Acstmp3MzGLSlpFpRbatSCTj+T2QGhXg57MYu2aloUGKvqwWS77qIlhlh/LcrdCwy+EzQx4+LBSUqQAAyFl9vfO/OZ/z5z/OTNn5j/3cnke3+d579yZOXPOzDnveb/O+f+CMAzVm/QmNULNN8/7RpnnjgT3Bb8G3gre+2ZX2mlK6xXd1lbJsRT6G3A/8KvgP4HfKCREnuXeCf5X8GjwCPAh2r3XwevBy8H3gJeB91XQJwPA/wx+H3gIBbcJvAu8Dvwk+EHwygrH4WDwB8GjwEP5DgEnyUbw0+CHwM+UG9iAxxD/BXLaF4ZgVBCoFulX/D84blOsQ7AFx7U4rsLJCpRZjvs7kuf1ujr/9yYZz09yPEeC36rdk2/9Dfh+8BL2c6a5ChZ895qs+8PAc8HnFXhTeYGrwf+V17iD3gOeA/4Y+CDP9q4Df58CXYYGgi8HTwIf7lF+NfgG8B3F2qwN/JEQovHonHH4/8z0/VjAQgoHhEfFHkfYgfO78c9i/L/VLkS53X0S+OucnL7jKd96FfheV4Emx/WD+KDMuLEFRV1m8H9SSwws8Nyh4FvAv6LQHlSgvduokUYUFB75rpngtTwe7vncyeDbwU+BTynY5ofBt4Ln1QsQ/gbprk5cVojTmbglz9zKOopanLl833MLjqd864/APwH/na8Qiam6D/yVAubORh+iKhzuUfYdFIJLMgQ7j/4B/Cj4Is/yosLvBH+LAlyGZGb/nKbBhyZCEG7gxLRoKBEa6qAgrV3kaixQwVhqwYmebR4GfgD8pQbH8xzw47ROmULUG/xj8JiKfAzRRA9TW2TZ546cMr70FvB/gCd7CNAj4PEVtNkH/AOaw0wBEm0AQRiiauYqLUKx3MQmLR01h5qmig6oI5zrIUi96dd8qKLxPIa+77uyhOha8AcKVvwkNcg/UiDEpHxCu38U7elhDq23FPy2Cp1j6ebv0Tl23RcN9F4tMBDT1EZh2FeyzXbwBS4TBnMk9Q9KPxJEGkcEKrAYmE6hSv5PCRfqCttyTNt3SoxnHh1FwXyrTYjOAH++aFQJPg28EPwEeAP9qIeMcu8G2+LPayvSQDaf7gcOMzWZPldCs8AX810uYlBQVnhvY0RnpkOmhrH2sDnAOAk+C+EYBn5bPCYiMkEfyEt/3J4MQQs7BSuomTr8J1ptKtuwuRNTuyibcALdnbrobCW1iS+tZWW26ERyDn82rr1BgVmn+RNPGw70XqrgPBKBlRdfQ2d4AriVdYn5PJv/i+BeaeRDNhgO9HBGIPpk+t8GOngRo7zENE2Pneh6HwiysJdhPTRyiMkXwGcJL8VxPo4H08yfmpg449nIR6I8teL/GzXhDPhNJxrvtos+3PPg7RwT6fO/GE54YjX6c1KcYgmS/go+Hrw5cbTOLihAiiH860Z0NYYC1MehHWZps+NKSwQ2jdHDeRntPsLwf4927XGaqFfoAI7m9UtpZhKBbrVEYB8zhKhRf/DfqM02xgnZYFwUtovZoilKBADnKBtsxn/34T7HIrgJxe8P44G+BNefiZ9LBCkd0rNKtBFIimOH9k0nWvrt45bJ7avZr2LqJaFejGhnNGlOX1HaYJzfHucwIhN3g+OZCRSwI8AXWu7/nP7UHY7n99H/2uPQTrs5q36hRSbjNdN9seW5r1EA5zDB1tagEDUn7UBYRsVhfKBCTUl0+jXBMmqPv1VhIliRaJxHn2mz7mDXzFhNC9UcKbQR6j7gpy3vdXlJAUqsyFfBL1gmTK8mdu5HS1RsLnUM8XimLzPQ5zjMVh/W+ykO/iZLYnFTRv3b4g6N2khorJbEPNaR5phAYRrj8c0i6JKVfzWj3PkM11vqb4V6+J5Mhjs7netIaM6i1mlOHHBN61AIdSc7KtOiCfFoo9E9hrY181Y+LoRYnV8b18TcndrEiKq/6j6CjVf/5Lh3rmEuj2fE80MVL638xSM3ZWrVFs3XsdGv+FzC/8frt2nXROifA4v/8n6a/0F03m00LO7TYITpz+hmDefv4NXFemJR07Sj0iF+ODIJRPSkJIVvhNa2GQlvzYg6W/nNPgnMly3XTmtmoq876V0OjSD0Lwz5n9Gk/16VkXK3aDpbsu1oRog22kp/IaFE5b9oXN8iTqR2vpMCezwjVFWvmcPB6YFOBCURrEDMdgt0CgYnOD2OagM4v6GY1hMgXHeFNeGLnn0JwvNalJCsX+EYrPWvzRxlkXzDz5iZnknH28f6CB3XRP/ElyZrs3NZxr1rM+rox1yDjeAgqt81IKCuCXFERptZvo1Oa2hizzAGx7X42B9DP0D3gxIzpDnHJ0MoVseaLRR/4zgcBzGKWqO5PSPx6Ik4eQXHnbHTHJ6YXr1I2rJOJF+6gBp3trIvO+229W2zKrbs/xg703WvpuJybKuLxtOBa8RUugSiV4Ma9AZGe0n08xP+v9yVLQ5TGWeVcpCT8BxHEfxHaOZOY6rl4FjKRPAirQVTHryOsntZ2YakjkRAO8+LbeOw0B9UvMbmW8++JqrzqundGff+RFNgoyvob5Shfsqd3t/Bdhuh87X/9Uhou+N7dmBctxjawuIYh3rE9hEK2Sbm4HbyPt4/FDM3EHWKVt2F8rs63aIgMbeqge8ULfNlpgZ+6ihjS91sbWLS0JeGMfF0isUM6vdOyqjjOeZQbCRrX/OZzyi6WPgZx0f+lb7M5gaF6BDH/8rhtG7AQK81w3NLovsa3BqO49vpkxxNqXgWhxPw3F5dANMOuqqZR62t33oOvk5L6LB/3ZE+yapnnQjR78k+tJj5mCeSWeO4l7UlYwUjIheJP3CfKrY3SDLRX3Lce5p1PdGNwcM25tFWpRONob5ksTGO8MJ23JsVxKmLNRwLrriHv8O96aoW/geP4vyp9PJJTbhW8ShR7EvG+xyZYc5nUMv6TLKjLdceTZKNP+qmzt3C7PJPM8oMZ7Lx8AL13qLs60dCD/D4PzmzrEp6iNpphbl1J8k+Q3eMYQR4l+TFklV9CpxohHnxabBSC/+PwaVj0+mA2nMrtAsPmOouw01Y7/lNsuB6snFNJsKqRIgWqnK7EIvSQnauvPgvM8p9gjPjepW/v+irjOqsTp/qzH5vL5AqaJS+rzndHbasM92IptiPS+8nisvIwmrQG6eHxuehMUSptbQOw8G/2fJO31bFl7ZqYTy/yYz8bmdGtBa+LjWSfVXTDpVeiJQ1rR87ysr7LNCEzkbJAutlGW3erdLLM9eravYQZdEa5lySb5Z3ODNdJBIUERBxZmU54psqlQ+KBORZRkiXxRGaKUgpH+lu1blulkTKDxuBxhBGftsYgb1Mzfyqw//rTaEZ4MjrST7tRjMXchkb7dNFnXu1YauX0sScxXPJD32FofNLOXWdxVzUezLKyC9RrjSuiV8kW3cnaNfeZ/hLSWQ50RiEQ4181qmOe5clI02tsxgyIaZkbFrjRCv9EkR8KzbxASZEeDoE5s/x9QACH05TtWUbc0N+LYu9hG2Y9AUV7/XqbcmZHVHBeH45SczqQiRbNGSV/XtdIEAPU52a9FnmJPrF9j5aavgFHesn6UPt4Yw4lom+j6r6FWpXumCD5fpMCuEALTVg2yc9QNXvDUroKEfy8nZVv5dqK4RpgexohEwN6czphDfheDKO7TiK5mjBLTi/YR9mkO+EkIzWNJeWW6oJ0HOymyfeuF9HspQxJyfxW5bEp73JlZWdzw+YWWGDqxmyW8NgFS+23sN3CSgoZzTYpvhB33Xc+yNn9zKV/qlMoyQRZ6vjnvxoAVFYtFl+UOfSh5pCVuntHprDHDnhtV98RMlHCuELdAkezHin6+jPTKt4PCfoDprNaf0CndUqHO1fctZvzygjftGFyp5SL0OLVLwpLMwZ8HMzkp5FSSKjc5ieyHivUJYTnktvdQ00H6f+lcO6e9FzooFm81uzSB66lCZTddV4uiKfq1S8LeL3JRuTBN+/s8FtHuVFkFqYiCxLu6kJJim/lP1/q3if9eoG2gypvc/2/M5F0CIzIARLkoSh9rsy1bntIx2bR5tlg+ResIS5nUUF3nEWrcGWkt8pCc+5rvFsyrF7Q+lAvVBAeH7IZONsnvvSKuaIZFNYkaWYN+gsD02ihQL0a4a9szyceduslG0hn6MT70tifi7B2LZCmDpUSkjSCclEAug0d8gz8bOZJiwrUh3KAOcVz2f2MLQ/if6VdTzzfgGbkGQ7P8hoZQSd3Db6MgmdwxCyirW4t9DcXMDoycyUvsqI6mcUoOcraLMP2/s4Q3JbsvO31GB3qPSCs5VSwhDqDnItTO8b70iUDWXRfqDBshpP7aT9jDqUpOVyHHdo20iMYyGSiG00eTjHsx/N8RZOLhHwJT4a1leI9jcdpkVDu5np7WoaSA44Izep7N2MVjpAAB0aolK/iETHpFBB8PJdjQqys0In2Jde7CZhrYxEYMsIEp5LoYKgjkLbSbw0ERophAqCl9hXQYd4oYKgrZUVDoIXKgjafKZcC2lUkMmtbX3ZVgv7dbCWmxKzspa+okR/y2+e156JCjKltc1LiDie3qggqLM8KggaawgVJK9xR5ulUUHQ3uslhac0KkixNmuDLRNCll/GqbolESd10DlejDa3lhEifGdpVBDUe28hIUJjBzEqm63KgwBIlvrTaPxFz4E8lPmMi1U5UAfREp9Be6sKCE/AcFmEvgyog6yTTUKbT/oKEQZaNsRPVXWgDt4k2mEBtNKDvkKE72xm7u+LDYznA+zfP+aG+GiwUlQQ1DfcYzArQwVBXRd5ClBlqCCo65N+bbZNpAYb20C/RqggrMvnOytFBaF1cgsRCnQJKgjqHZpjnytFBUGdkz0EqFJUENR5eU6bE+kaDKmgTaljbp4gcTwrRwVBvfsHFYQzwqb1ugQVBHWPyjBhXYIKgrovcLT5YdY/qMLvlLraWLeLugwVhBMxLUS4WBoVBHZyIfgJ8AZGLj0CFYR+lkl1qCB454vB14IbRgVhVGmmQ6ZmaCBxamQ3wzBOpib4OwE1XH++b5ihkabSUTcFt9tQQXRNdL0qBsMm4ef0AjmFKfiw441IYYpRxjffJNnqCxkSy76eb1OjhBRgeaejGRiY+RBTmJcb58sa6FyJ7K4xorHxGT6QfK+ssj/KKEjWKqdBKJJxkKWnW3LGZaxplqltbYuukh4Rh/xWRrSyC0B+Pn6FxnN4XXghQ31bcDQT7fx9LdmIk1KoIHp4y1nfbaggaDuFCoL2ragguN6Ost2KCoI2r0abG6fEeaBxWWWhdTaj3H2a0yv7dO7H88+jHnETfHJS41CHFyqI1hdFUiA9CxUEL9QH3BAqiCFAsV2FOVUZqCBo04kKIgIIngOuFBWEicSsPFAnKkiaiAri/TOnM1X6t3BWVJAyAsS+daKCoM96NbFzewwqiCyhgJ2oILi3KaP+HoUKojrBJFxUQwUxrhMVpFBI3qLlhLxRQcQxZxSXJ0gHHioIXrpHooLgvd4PzkUFwcD0V/mQyAl2wGKHcJkR5siMQCQTFSRjKSpCBcmJ8hI6MFBB8DFLk7UpSn/DqCCoMxMVBO08os3MGiqIcX0LzjdrQr6TuZ8MVJAaUoeL7kAdLajrZRyJChI5v2JaJQK6yygve55ce5caRgVBmxEqiPhjntZH6E1UkBzfRqc16OTxTIXovoITFUS5N/onJD8GXM3AhqggqoYKokVlI+koS+BAVJA6x7kyVBC8z2w60yZVgwqCjlvjsJmPabO2NCoI6unxqCD4PokOc1FBCgh+ovEk57aSuwn0sH49+62GCpJRXyWoIAVSNz0PFYSzsjDhuf2CCoLOdqKCqOJ7miN8g1tubN+kaqggtbpEOw2kVt2l6n8UUBkqCL6pECpIsyqICqJ58hvR2DZtEIdpjeShghziiFwiVBBRp+IHFdza0eNQQdi3x+XUew0d6+2a//YCvv1Z+kXrPbVao6ggM3Sfr4AQrWvCgz0SFaSIADET7UQFYV37CRXESUQFiTLDs5SBCiKhOt5b/MPp2jOS2X7KUV8mKojkcxzPifCc7yFAQgcWKgg++oBGBWFIvSKjzBjutYpQQYx7ESoIly/0nZvHZES2K2heC6GCoPx6z4nac1BBpHP54rmoIHjx65kMzfo4L1QQ+i77BRXEZX74bS4/birNmM9eJy9UELRXChUEzzlRQURom9nBEr72SFQQV5KMIWguKojsLNDOuxUVBG3vwHtaUEHi6O3mee27p7S2aaggKaqhgni0eTec8R2Tp7fVImW0a0UFwfUDGxUEH/eSpkaX4oOsqCB6OYcAlUIFkfU1PFuHCoJrVlQQbqdIKIUKgntOVJBkb3mCCkJTYq7kT4IAaagg0YQ4nYMznwI/TeXvgiQqSJ0h6XJUkGQtrlnr4HXomB6BCoL3qAQVxNBCCXUpKgjaTO2lgobYCg2xgJpAX1+8iT6GaOTHGK324iQmKkjdGpgt0l0Qb9yv83VkKaNbUEGajIbnOwa7EYpQQWxmiYP8KS0BmaCCXEdH+DdalCOm73JPAXKignCj+ViVDb5QhpyoIBCkByks5ir4FH7fa/Tf9lATPe4hQBEqSOeGfStdR61W9XhO0H/J02Tp5MpRQejUKsegdgkqSNbPlXCvS1BBUO8ud5vt8l6zVWOgFboGmo32FmUVYh9UjgpijmeTo/GrVEWoIHpCMkeQKkEFQV2TfFL2KFMpKojnd8qgz6AfU5aYGGxf5FNYBAlcGSqI7TubMhpvCBUEz8tM8UYF4e/FGkIFQR2FUEFQvmFUENTxObA3KghN2yU0fR0F2uvgM7IprzAqCJ5pCBUEz89xjafvz6itqCCo9B6tTIQKYnPySuQlCqGCZGxdKNJmIVQQfcHZRXmoIGiz4M+ov5GJCuL7W3wuXXmhgvho2P8XYACoEEKeUESl0QAAAABJRU5ErkJggg==');
-}
-#social-network ul li .btn-twitter {
-   background-position: -29px 0;
-}
-#social-network ul li .btn-twitter:hover {
-   background-position: -29px -30px;
-}
-#social-network ul li .btn-lnkdn {
-   background-position: -58px 0;
-}
-#social-network ul li .btn-lnkdn:hover {
-   background-position: -58px -30px;
-}
-#social-network ul li .btn-gplus {
-   background-position: -87px 0;
-}
-#social-network ul li .btn-gplus:hover {
-   background-position: -87px -30px;
-}
-#social-network ul li .btn-youtube {
-   background-position: -116px 0;
-}
-#social-network ul li .btn-youtube:hover {
-   background-position: -116px -30px;
-}
-#social-network ul li .btn-facebook:hover {
-   background-position: 0 -30px;
-}
-#copyright {
-   font: 13px/26px 'Open Sans', sans-serif;
-   text-transform: capitalize;
-   color: #7b756b;
-   border-top: 1px solid #5a5955;
-   padding: 30px 0;
-   overflow: hidden;
-}
-#copyright .copyright-date {
-   float: left;
-}
-#copyright .nav {
-   margin: 0;
-   padding: 0;
-}
-#copyright li {
-   display: inline-block;
-   margin: 0 0 0 20px;
-   line-height: 12px;
-}
-#copyright a {
-   color: #fff;
-   font-size: 13px;
-   line-height: 26px;
-}
-#copyright a:hover {
-   color: #cac3b4;
-   text-decoration: none;
-   background: none;
+    &:hover {
+      color: lighten( $footer-link-color, 10% );
+    }
+  }
+
+
+  .copyright-links {
+    text-align: center;
+    padding: 0 0 10px 0;
+  }
+
+
+  .nav {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 20px 0 0 ;
+  }
+
+  .copyright-date {
+    text-align: center;
+  }
+
+
+  @media ( $small-screen ) {
+
+    margin: 0;
+    padding: 10px 0;
+
+    .copyright-date {
+      text-align: left;
+    }
+    .copyright-links {
+      text-align: left;
+    }
+    li {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+
+
 }
