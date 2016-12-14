@@ -23,17 +23,17 @@ Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these
 
 * **Upgrade to Magento 2.0.11 without issue** when using multiple master databases for checkout, order management, and product data.
 
-* **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing, such as <i>,</i> or <i>|</i>).
+* **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing, such as , or |).
 
 * The Sales module provides two new web API endpoints that allow you to process refunds from an order or invoice. Previously, these actions could only be performed from Admin. After you install this patch, you can:
 
-	* Create a credit memo (complete or partial) for a particular invoice or order.
+	* Create a credit memo (complete or partial) for a particular order or invoice.
 
 	* Add details about refunded items to an order or invoice.
 
 	* Update the status and state of an order or invoice after actions are performed.
 
-	* Notify a customer about refunded items or order/invoice.
+	* Notify a customer about refunded items or order or invoice.
 
 	REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
 
@@ -91,7 +91,7 @@ We address the following functional issues in this release.
 
 <!--- 58192-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products. <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>
 
-<!--- 59950-->* Configurable product option price is displayed  correctly per website.
+<!--- 59950-->* Configurable product option price is displayed correctly per website.
 
 <!--- 57056-->* You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. <a href="https://github.com/magento/magento2/issues/4419" target="_blank">(GITHUB-4419)</a>
 
@@ -108,13 +108,13 @@ We address the following functional issues in this release.
 ### General fixes
 {:.no_toc} 
 
-<!--- 61354-->* Categories are removed when admin with rights restricted to one store saves a product. 
+<!--- 61354-->* We fixed an issue where Magento unexpectedly removed categories from a store when an Admin with rights restricted to only one store saves a product. 
 
 <!--- 59503-->* Magento now creates a URL rewrite for the new URL key of a product as expected. Previously, after you saved a change to the URL key of a product by selecting the **Create Permanent Redirect for old URL** option, Magento did not rewrite the old URL to the new URL.
 
 <!--- 61106-->* The Product page now displays swatches based on the color swatch attribute. Previously, the Product page did not display swatches. 
 
-<!--- 57336-->* Magento no longer throws a "Wrong request parameters" error when you try to assign products to a category at the storeview level. Previously, Magento threw a `levelWrong` request parameters error when you assigned products to a category.
+<!--- 57336-->* Magento no longer displays a "Wrong request parameters" error when you try to assign products to a category at the store view level. Previously, Magento displayed a `levelWrong` request parameters error when you assigned products to a category.
 
 <!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
 
@@ -134,11 +134,11 @@ We address the following functional issues in this release.
 
 <!--- 59398-->* Custom themes now inherit parent XML configuration information as expected. 
 
-<!--- 57322-->* Magento no longer redirects users to the Checkout page after login. Now, if you set **Redirect Customer to Account Dashboard after Logging in** value to Yes, users will be redirected to the Account Dashboard page. If you set this value to No, then users will stay on the home page after login. 
+<!--- 57322-->* Magento no longer redirects users to the Checkout page after login. Now, if you set **Redirect Customer to Account Dashboard after Logging in** value to **Yes**, users will be redirected to the Account Dashboard page. If you set this value to **No**, then users will stay on the home page after login. 
 
 <!--- 56875-->* We've eliminated difficulties saving product information when logged in as `admin`. Previously, the Product Save feature worked erratically for some Admin users. 
 
-<!--- 59102-->* Customers can now continue shopping after selecting an unavailable bundle product. Previously, if a customer selected a bundle product that was no longer available, Magento threw a fatal error. 
+<!--- 59102-->* Customers can now continue shopping after selecting an unavailable bundle product. Previously, if a customer selected a bundle product that was no longer available, he encountered a fatal error. 
 
 <!--- 57331-->* The Magento storefront now reflects changes in the swatch attribute properties as expected. 
 
@@ -155,7 +155,7 @@ We address the following functional issues in this release.
 
 <!---57030 -->* We've fixed a problem with [custom zip code masks]({{ page.baseurl }}/howdoi/checkout/checkout_zip.html) in previous versions of Magento. <a href="https://github.com/magento/magento2/issues/4131" target="_blank">(GITHUB-4131)</a>
 
-<!--- 57103-->* We've fixed an issue with how the Customer Segments report calculate the same customer on two websites. 
+<!--- 57103-->* We've fixed an issue with how the Customer Segments report calculates the same customer on two websites. 
 
 <!--- 57384, 39489 -->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**. 
 
@@ -165,10 +165,10 @@ We address the following functional issues in this release.
 <!--- 62030-->* Users need view permission to the store to which the customers belong in order to see information about those customers. Previously, a user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view. 
  
 
-<!--- 61178-->* Inconsistent sales_order_item information after upgrade
+<!--- 61178-->* We've fixed an issue with how information in the `sales_order_item` attribute is handled after upgrade.
 
 
-<!--- 62032-->* Empty default website error. 
+<!--- 62032-->* We've fixed an error with an unexpected empty default website during website creation.  
 
 
 
@@ -179,7 +179,7 @@ We address the following functional issues in this release.
 
 <!--- 57513-->* You can now complete the purchase of a gift card in environments where you've set the Braintree payment method Payment Action to **Authorize and Capture**. Previously, any order made under these conditions would remain indefinitely in the processing stage.
 
-<!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento would not save this information, and threw an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
+<!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento would not save this information, and displayed an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
 
 
 
@@ -206,10 +206,10 @@ We address the following functional issues in this release.
 <!---57106-->* You can now import negative quantities. 
 
 
-<!--- 57491-->* Magento no longer randomly throws this error during import after a file passes the data check: "Maximum error count has been reached or system error is occurred!". 
+<!--- 57491-->* Magento no longer randomly displays this error during import after a file passes the data check: "Maximum error count has been reached or system error is occurred!". 
 
 
-<!--- 56803-->* We've fixed an issue with the representation of date and timezones of items in the product catalog during import or export. Previously, Magento converted all data into the default format (UTC-8), including values that you set to be displayed using another standard. 
+<!--- 56803-->* We've fixed an issue with the representation of date and time zones of items in the product catalog during import or export. Previously, Magento converted all data into the default format (UTC-8), including values that you set to be displayed using another standard. 
 
 
 
@@ -222,7 +222,7 @@ We address the following functional issues in this release.
 
 <!--- 57082-->* The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension. 
 
-<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the `var/session` directory. We skip that directory because the web server usually owns those files, which can cause the permissions check to fail.
+<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the `var/session` directory. We skip that directory because the web server usually owns those files.
 
 <!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
 
@@ -259,13 +259,12 @@ We address the following functional issues in this release.
 
 <!--- 60187, 55785,59394, 57894, 55300 -->* We’ve improved the performance of these tasks:
 
-	* Using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
 
-	* Loading the Configurable Product page
+	* Loading the Configurable Product page.
 
-	* Creating many (2500 - 5000) product variations
+	* Creating many (2500 - 5000) product variations.
 
-	* Calculating batch sizes while indexing categories
+	* Calculating batch sizes while indexing categories.
 
 	* Compiling. (We’ve optimized compiler performance to run faster.)
  
@@ -277,7 +276,7 @@ We address the following functional issues in this release.
 
 <!--- 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento displayed this error when you tried to assign products to a category: "Wrong request parameters". 
 
-<!--- 57002-->* A restricted user can now change the store view- or website- level attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
+<!--- 57002-->* A restricted user can now change the attributes (either at the store view or website level) attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
 
 <!--- 57004-->* The scope selector on the Product page now accurately displays all related websites for a restricted user. 
 
@@ -286,7 +285,7 @@ We address the following functional issues in this release.
 {:.no_toc}
 
 
-<!--- 56076-->* Versioning of static files (including CSS, JS, fonts, and images) is now enabled by default.
+<!--- 56076-->* Versioning of static files (including CSS, JavaScript, fonts, and images) is now enabled by default.
 
 <!---59547-->* Static asset signing now works under nginx. For more information, see <a href="http://docs.magento.com/m2/ce/user_guide/system/static-file-signature.html" target="_blank">Using Static File Signatures</a>.
 
@@ -294,9 +293,9 @@ We address the following functional issues in this release.
 ### Web APIs
 {:.no_toc} 
 
-<!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to returned detailed information about a single object.
+<!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.
 
-
+<!--- 59315-->* We've fixed an issue where updating product stock did not persist correctly when saving products through either the web API or directly in the repository. 
 
 
 
@@ -316,10 +315,10 @@ We address the following functional issues in this release.
 <!--- 57199-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you purge the cache and re-index. **Workaround**: Purge the Varnish cache using the Varnish admin CLI. 
 
 
-* **Issue**: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  **Workaround**: Upgrade your version of CURL to the latest possible version that will enable the use of TLS 1.2 by default. 
+* **Issue**: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento displays this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  **Workaround**: Upgrade your version of CURL to the latest possible version that will enable the use of TLS 1.2 by default. 
 
 
-* **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.
+* **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try a mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.
 
 * **Issue**: Gallery doesn't show all images added to configurable options. 
 

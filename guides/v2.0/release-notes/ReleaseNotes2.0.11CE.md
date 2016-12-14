@@ -22,17 +22,17 @@ Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these
 
 * **Upgrade to Magento 2.0.11 without issue** when using multiple master databases for checkout, order management, and product data.
 
-* **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing, such as <i>,</i> or <i>|</i>).
+* **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing, such as , or |).
 
 * The Sales module provides two new web API endpoints that allow you to process refunds from an order or invoice. Previously, these actions could only be performed from Admin. After you install this patch, you can:
 
-	* Create a credit memo (complete or partial) for a particular invoice or order.
+	* Create a credit memo (complete or partial) for a particular order or invoice.
 
 	* Add details about refunded items to an order or invoice.
 
 	* Update the status and state of an order or invoice after actions are performed.
 
-	* Notify a customer about refunded items or order/invoice.
+	* Notify a customer about refunded items or order or invoice.
 
 
 	REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
@@ -155,6 +155,8 @@ We address the following functional issues in this release.
 
 <!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 
 
+
+
 <!--- 62030-->* Users need view permission to the store to which the customers belong in order to see information about those customers. Previously, a user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view. 
 
 
@@ -192,7 +194,7 @@ We address the following functional issues in this release.
 
 <!--- 57082-->* The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension. 
 
-<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the `var/session` directory. We skip that directory because the web server usually owns those files, which can cause the permissions check to fail.
+<!--- 57130-->* During upgrade, we now check directory permissions recursively except for the `var/session` directory. We skip that directory because the web server usually owns those files.
 
 <!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
 
@@ -229,7 +231,6 @@ We address the following functional issues in this release.
 
 <!--- 60187, 55785,59394, 57894, 55300 -->* We’ve improved the performance of these tasks:
 
-	* Using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
 
 	* Loading the Configurable Product page
 
@@ -248,7 +249,7 @@ We address the following functional issues in this release.
 
 <!--- 58205-->* You can now successfully assign products to a category on the store view level. Previously, Magento displayed this error when you tried to assign products to a category: "Wrong request parameters". 
 
-<!--- 57002-->* A restricted user can now change the store view- or website- level attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
+<!--- 57002-->* A restricted user can now change the attributes (either at the store view or website level) attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
 
 <!--- 57004-->* The scope selector on the Product page now accurately displays all related websites for a restricted user. 
 
@@ -256,7 +257,7 @@ We address the following functional issues in this release.
 ### Static file processing
 {:.no_toc}
 
-<!--- 56076-->* Versioning of static files (including CSS, JS, fonts, and images) is now enabled by default.
+<!--- 56076-->* Versioning of static files (including CSS, JavaScript, fonts, and images) is now enabled by default.
 
 <!---59547-->* Static asset signing now works under nginx. For more information, see <a href="http://docs.magento.com/m2/ce/user_guide/system/static-file-signature.html" target="_blank">Using Static File Signatures</a>.
 
@@ -267,8 +268,9 @@ We address the following functional issues in this release.
 {:.no_toc} 
 
 
-<!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to returned detailed information about a single object.
+<!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.
 
+<!--- 59315-->* We've fixed an issue where updating product stock did not persist correctly when saving products through either the web API or directly in the repository. 
 
 
 
@@ -301,10 +303,10 @@ We address the following functional issues in this release.
 <!--- 57199-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you purge the cache and re-index. **Workaround**: Purge the Varnish cache using the Varnish admin CLI. 
 
 
-* **Issue**: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. **Workaround**: Upgrade CURL to a minimum version of 7.39.0.
+* **Issue**: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn't, then Magento displays this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. **Workaround**: Upgrade CURL to a minimum version of 7.39.0.
 
 
-* **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.
+* **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try a mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.
 
 * **Issue**: Gallery doesn't show all images added to configurable options.
 
