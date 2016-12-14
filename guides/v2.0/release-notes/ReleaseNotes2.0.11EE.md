@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento EE 2.0.11 Release Notes
 menu_title: Magento EE 2.0.11 Release Notes
-menu_order: 21
+menu_order: 22
 github_link: release-notes/ReleaseNotes2.0.11EE.md
 ---
 *	TOC

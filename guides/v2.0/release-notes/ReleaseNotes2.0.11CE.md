@@ -4,8 +4,8 @@ group: release-notes
 subgroup: Release Notes
 title: Magento CE 2.0.11 Release Notes
 menu_title: Magento CE 2.0.11 Release Notes
-menu_order: 20
-github_link: release-notes/ReleaseNotes2.0.10CE.md
+menu_order: 21
+github_link: release-notes/ReleaseNotes2.0.11CE.md
 ---
 *	TOC
 {:toc}
