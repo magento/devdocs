@@ -24,7 +24,7 @@ Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these
 
 * **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing, such as <i>,</i> or <i>|</i>).
 
-* The Sales module provides **two new web API endpoints that allow you to process refunds from an order or invoice**. Previously, these actions could only be performed from Admin. After you install this patch, you can:
+* The Sales module provides **two new web API endpoints** that allow you to process refunds from an order or invoice. Previously, these actions could only be performed from Admin. After you install this patch, you can:
 
 	* Create a credit memo (complete or partial) for a particular order or invoice.
 
