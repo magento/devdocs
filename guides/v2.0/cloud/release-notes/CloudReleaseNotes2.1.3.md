@@ -29,20 +29,26 @@ Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to ver
 {% collapsible To update `.magento.app.yaml`: %}
 
 1.	Open `<Magento root dir>/.magento.app.yaml` in a text editor.
-2.	Locate the `web:` section.
+2.	Locate the `web:` section, and the `\static` location in it.
 3.	Add the following to the `rules:` clause:
 
 		^/static/version\d+/(?<resource>.*)$:
              passthru: "/static/$resource"
-4.	Save your changes to `.magento.app.yaml` and exit the text editor.
-5.	Enter the following commands to push the changes and redeploy:
+    
+The `/static` location should look like this after the change:
 
-		git add -A && git commit -m "Update .magento.app.yaml"
-		git push origin <branch name>
-6.	Wait for the project to deploy.
-7.	[Upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11.
-8.	Test the upgrade thoroughly in your integration environment.
-9.	If tests are successful, push the changes to your staging or production server.
+        "/static":
+            root: "pub/static"
+            allow: true
+            scripts: false
+            passthru: "/front-static.php"
+            rules:
+                ^/static/version\d+/(?<resource>.*)$:
+                    passthru: "/static/$resource"
+
+4.	Save your changes to `.magento.app.yaml` and exit the text editor.
+5.	You may not [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11.
+
 
 {% endcollapsible %}
 
