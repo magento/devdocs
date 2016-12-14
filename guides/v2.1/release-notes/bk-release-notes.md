@@ -12,8 +12,6 @@ github_link: release-notes/bk-release-notes.md
 
 ## Magento Community Edition (CE) and Enterprise Edition (EE) Release Notes
 
-<<<<<<< HEAD
-
 <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.3CE.html" target="_blank">Version 2.1.3</a>
 
 <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.2CE.html" target="_blank">Version 2.1.2</a>
