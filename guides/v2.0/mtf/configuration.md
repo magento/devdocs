@@ -9,14 +9,6 @@ version: 2.0
 github_link: mtf/configuration.md
 ---
 
-#### Contents
-
-* TOC
-{:toc}
-
-
-## Configuration files
-
 The Functional Testing Framework configuration setting are concentrated in two XML files:
 
 - `phpunit.xml`
