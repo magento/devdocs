@@ -48,7 +48,7 @@ Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to ver
                 passthru: "/static/$resource"
     ~~~
 4.	Save your changes to `.magento.app.yaml` and exit the text editor.
-5.	You may not [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11.
+5.	You may now [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11.
 
 
 {% endcollapsible %}
