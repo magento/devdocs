@@ -3,11 +3,10 @@
 //= include _vendor/scrollspy.js
 //= include _vendor/clipboard.min.js
 
-//= include _includes/analytics.js
-
 // This is what happens on document.ready
 $(function() {
 
+  //= include _includes/analytics.js
   //= include _includes/toc.js
   //= include _includes/copy.js
   //= include _includes/collapsible.js
