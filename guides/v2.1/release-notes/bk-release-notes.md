@@ -49,3 +49,5 @@ github_link: release-notes/bk-release-notes.md
 
 {% include install/releasenotes/21_release-notes-links.md %}
 
+Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-notes.html)?
+
