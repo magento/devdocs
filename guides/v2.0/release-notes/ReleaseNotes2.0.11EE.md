@@ -4,14 +4,11 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento EE 2.0.11 Release Notes
 menu_title: Magento EE 2.0.11 Release Notes
-menu_order: 22
+menu_order: 268
 level3_menu_node: level3child
-level3_subgroup: ce20-relnotes 
+level3_subgroup: ee20-relnotes 
 github_link: release-notes/ReleaseNotes2.0.11EE.md
 ---
-*	TOC
-{:toc}
-
 
 We are pleased to present Magento Enterprise Edition 2.0.11. This release includes many functional fixes and enhancements. 
 
