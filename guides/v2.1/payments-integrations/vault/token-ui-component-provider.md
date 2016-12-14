@@ -1,9 +1,9 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: vault
-title: Token UI Component Provider
-menu_title: Token UI Component Provider
+subgroup: C_vault
+title: Token UI component provider
+menu_title: Token UI component provider
 menu_order: 15
 version: 2.1
 github_link: payments-integrations/vault/token-ui-component-provider.md

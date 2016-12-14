@@ -1,7 +1,7 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: vault
+subgroup: C_vault
 title: Enable vault 
 menu_title: Enable vault 
 menu_order: 5
@@ -16,7 +16,7 @@ Magento has some mechanisms to provide this ability by default, but your still n
 
 First you need to add the Vault enabling controls to the payment form.
 
-Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{{{site.mage2100url}}}}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
+Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
 
 {% highlight html %}
 <form id="co-transparent-form-braintree" class="form" data-bind="" method="post" action="#" novalidate="novalidate">
@@ -43,7 +43,7 @@ Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{{{si
 {% endhighlight %}
 
 
-[The payment UI component]({{{{site.mage2100url}}}}app/code/Magento/Braintree/view/frontend/web/js/payment/method-renderer/hosted-fields.js):
+[The payment UI component]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/js/payment/method-renderer/hosted-fields.js):
 
 {% highlight javascript %}
 define([

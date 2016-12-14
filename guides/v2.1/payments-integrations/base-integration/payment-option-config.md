@@ -1,12 +1,12 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: integration
+subgroup: B_integration
 title: Payment method configuration
 menu_title: Payment method configuration
 menu_order: 2
 version: 2.1
-github_link: payments-integrations/base-integration/payment-options-config.md
+github_link: payments-integrations/base-integration/payment-option-config.md
 ---
 
 In the `config.xml` file in your `%Vendor_Module%` directory, configure the options of your payment method. The following table contains the default options available for any payment method.
@@ -21,14 +21,14 @@ In the `config.xml` file in your `%Vendor_Module%` directory, configure the opti
 | `can_void`             | whether payment method supports the void operation                                                                                                   | Boolean                               |
 | `can_use_checkout`     | whether payment method is available in storefront checkout                                                                                                      | Boolean 
 | `can_use_internal`     | whether payment method is available in Admin order creation                                                                                                     | Boolean                               |
-| `currency`             | supported currency                                                                                                                                   | comma separated list of what values?  |
+| `currency`             | supported currency                                                                                                                                   |  |
 | `is_gateway`           | is an integration with gateway                                                                                                                       | Boolean                               |
 | `merchant_gateway_key` | encrypted merchant credential                                                                                                                        | string                                |
-| `model`                | [payment method facade](#facade) used for integration with Sales and Checkout modules                                                                | string                                |
-| `order_status`         | default order status                                                                                                                                 | what are possible values?             |
-| `paymentInfoKeys`      | transaction request/response fields displayed on payment information block (can be any fields from payment additional information)                   | what is the list of fields?           |
-| `privateInfoKeys`      | `paymentInfoKeys` fields which should not be displayed in customer payment information block (can be any fields from payment additional information) | what is the list of fields?           |
-| `payment_action`       | default action of payment for the payment method (authorize, sale)                                                                                   | what is the list of available actions |
+| `model`                | [payment method facade]({{page.baseurl}}payments-integrations/base-integration/facade-configuration.html) used for integration with Sales and Checkout modules                                                                | string                                |
+| `order_status`         | default order status                                                                                                                                 |              |
+| `paymentInfoKeys`      | transaction request/response fields displayed on payment information block (can be any fields from payment additional information)                   | list of comma separated values           |
+| `privateInfoKeys`      | `paymentInfoKeys` fields which should not be displayed in customer payment information block (can be any fields from payment additional information) |           |
+| `payment_action`       | default action of payment for the payment method (authorize, sale)                                                                                   |  |`authorize`,`authorize_capture`
 | `sort_order`           | payment method order position on checkout/system configuration pages                                                                                 | integer                               |
 | `title`                | default title for a payment method                                                                                                                   | string                                |
 
@@ -65,3 +65,7 @@ Following is the illustration of such configuration (`config.xml` of the Braintr
 </config>
 {% endhighlight %}
 
+## What's next
+
+- [Payment  method facade]({{page.baseurl}}payments-integrations/base-integration/facade-configuration.html)
+- [Payment info rendering in Admin checkout]({{page.baseurl}}payments-integrations/base-integration/formblocktype.html)

@@ -13,7 +13,13 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## November 2016
+## December 2016
+
+| Description  | Versions applied to  | New or Updated | Week ending |
+|--------------|--------------|----------------------|--------|
+| [Add custom integrations and vault payments to the Magento payment provider gateway]({{ page.baseurl }}payments-integrations/bk-payments-integrations.html){:target="_blank"}  |  2.x |  New | Dec 9 |
+
+{% collapsibleh2 November 2016 %}
 
 | Description  | Versions applied to  | New or Updated | Week ending |
 |--------------|--------------|----------------------|--------|
@@ -36,6 +42,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Troubleshoot OPcache-related error]({{ page.baseurl }}install-gde/trouble/php/tshoot_opcache.html)  |  2.x  |  New  |Nov 4 |
 |[UI components linking properties]({{ site.gdeurl21 }}ui_comp_guide/concepts/ui_comp_linking_concept.html){:target="_blank"}  |  2.1.x  |  New  | Nov 4 |
 
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 October 2016 %}
 

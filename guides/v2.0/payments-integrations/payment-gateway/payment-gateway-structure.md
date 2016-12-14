@@ -1,12 +1,13 @@
 ---
 layout: default
 group: payments-integrations
-subgroup: p_gateway
+subgroup: A_gateway
 title: Payment provider gateway structure
 menu_title: Payment provider gateway structure
 menu_order: 1
 version: 2.0
 github_link: payments-integrations/payment-gateway/payment-gateway-structure.md
+redirect_from: guides/v2.0/payment-gateway/payment-gateway-stucture.html
 ---
 
 The following diagram shows the basic components of the Magento payment provider gateway:
