@@ -44,9 +44,9 @@ To configure Magento to use Varnish:
 	<tr>
 		<td>Grace period</td>
 		<td>The grace period determines how long Varnish serves stale content if the backend is not responsive. The default value is 86400 seconds (1 day).</td>
-</tr>
-</tbody>
-</table>
+		</tr>
+		</tbody>
+		</table>
 
 6.	Click **Save Config**.
 7.	Click one of the export buttons to create a <code>varnish.vcl</code> you can use with Varnish.
@@ -57,9 +57,10 @@ To configure Magento to use Varnish:
 	<img src="{{ site.baseurl }}common/images/config_varnish_admin_22.png" alt="Configure Magento to use Varnish in the Admin">
 
 8.	Back up your existing <code>default.vcl</code>. Then rename the <code>varnish.vcl</code> file you just exported to <code>default.vcl</code>. Then copy the file to the <code>/etc/varnish/</code>. directory.
+
 		cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak2
-		mv &lt;download_directory>/varnish.vcl default.vcl
-		cp &lt;download_directory>/default.vcl /etc/varnish/default.vcl
+		mv <download_directory>/varnish.vcl default.vcl
+		cp <download_directory>/default.vcl /etc/varnish/default.vcl
 9.	We recommend you open `default.vcl` and change the value of `acl purge` to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)
 
 	For example,
@@ -68,7 +69,7 @@ To configure Magento to use Varnish:
 		   "localhost";
 		}
 
-10. If you want to customize the Vagrant health checks or grace mode or saint mode configuration, see [Advanced Varnish configuration]({{page.baseurl}}config-guide/varnish/config-varnish-advanced.html)
+10. If you want to customize the Vagrant health checks or grace mode or saint mode configuration, see [Advanced Varnish configuration]({{page.baseurl}}config-guide/varnish/config-varnish-advanced.html).
 
 11.	Restart Varnish and your web server:
 
@@ -76,5 +77,5 @@ To configure Magento to use Varnish:
 		service httpd restart
 
 #### Next steps
-<a href="{{page.baseurl}}config-guide/varnish/config-varnish-advance.html">Advanced Varnish configuration</a>
-<a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a>
+<p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-advance.html">Advanced Varnish configuration</a></p>
+<p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a></p>
