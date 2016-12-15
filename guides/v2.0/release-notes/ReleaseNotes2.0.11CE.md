@@ -11,6 +11,8 @@ github_link: release-notes/ReleaseNotes2.0.11CE.md
 ---
 We are pleased to present Magento Community Edition 2.0.11. 
 
+We republished these Release Notes on December 15, 2016 to add a few clarifications. 
+
 
 ## Highlights
 Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these highlights:
@@ -112,6 +114,7 @@ We address the following functional issues in this release.
 
 <!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
 
+<!--- 59409-->* Magento now correctly manages the maximum number of messages a message queue consumer can process. Previously, the consumer would stop processing messages before reaching the specified maximum number.
 
 
 <!--- 59449-->* Magento now decrements stock as expected in a multi-website environment. 
@@ -152,9 +155,18 @@ We address the following functional issues in this release.
 
 <!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 
 
-
-
 <!--- 62030-->* Users need view permission to the store to which the customers belong in order to see information about those customers. Previously, a user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view. 
+
+
+<!--- 62032-->* We've fixed an error with an unexpected empty default website during website creation.  
+
+<!--- 59409-->*
+
+
+
+
+
+
 
 
 ### Images
@@ -195,6 +207,7 @@ We address the following functional issues in this release.
 
 <!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
 
+<!--- 61178-->* We've fixed an issue with how information in the `sales_order_item` attribute is handled after upgrade.
 
 
 ### Orders
@@ -221,6 +234,7 @@ We address the following functional issues in this release.
 
 <!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and displayed this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
 
+<!--- 61561-->* Magento now saves credit card information as expected after a customer checks out using a Braintree credit card with Vault. 
 
 
 ### Performance
@@ -321,7 +335,7 @@ We address the following functional issues in this release.
 
 
 
-<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323 -->
+<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323, 61877, 62020, 62019 -->
 
 
 <!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803 -->

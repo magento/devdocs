@@ -13,6 +13,8 @@ github_link: release-notes/ReleaseNotes2.0.11EE.md
 We are pleased to present Magento Enterprise Edition 2.0.11. This release includes many functional fixes and enhancements. 
 
 
+We republished these Release Notes on December 15, 2016 to add a few clarifications. 
+
 
 ## Highlights
 Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these highlights:
@@ -172,7 +174,6 @@ We address the following functional issues in this release.
 
 
 
-
 ### Gift cards
 {:.no_toc} 
 
@@ -251,6 +252,7 @@ We address the following functional issues in this release.
 
 <!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and displayed this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
 
+<!--- 61561-->* Magento now saves credit card information as expected after a customer checks out using a Braintree credit card with Vault. 
 
 
 ### Performance
@@ -339,7 +341,7 @@ We address the following functional issues in this release.
 
 
 
-<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323, 61877, 61881 -->
+<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323, 61877, 61881, 61887, 62019, 62020, 61927, 61889, 61163 -->
 
 
 <!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803, 61975 -->
