@@ -18,7 +18,6 @@ Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these
 
 * **Management of configurable products with many variations** in the Magento Admin interface without degrading performance.
 
-* **Upgrade to Magento 2.0.11 without issue** when using multiple master databases for checkout, order management, and product data.
 
 * **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing, such as <i>,</i> or <i>|</i>).
 
