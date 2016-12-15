@@ -14,7 +14,7 @@ We are pleased to present Magento Enterprise Edition 2.0.11. This release includ
 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>We republished these lightly re-edited Release Notes on December 15, 2016.</p>
+  <p>We republished these Release Notes with clarifications on on December 15th, 2016.</p>
 </div>
 
 
@@ -63,7 +63,6 @@ We address the following functional issues in this release.
 
 <!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your shopping cart. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
 
-<!--- 55444-->* The Checkout page no longer freezes when you order a virtual gift card using the **Authorize.net Payment Action** value set to **Authorize and Capture**.
 
 <!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
 
@@ -135,7 +134,6 @@ We address the following functional issues in this release.
 
 <!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Magento Admin after you ran the Web Setup Wizard.
 
-<!--- 59398-->* Custom themes now inherit parent XML configuration information as expected. 
 
 <!--- 57322-->* Magento no longer redirects users to the Checkout page after login. Now, if you set **Redirect Customer to Account Dashboard after Logging in** value to **Yes**, users will be redirected to the Account Dashboard page. If you set this value to **No**, then users will stay on the home page after login. 
 
@@ -148,7 +146,7 @@ We address the following functional issues in this release.
 
 <!--- 57326-->* The Sales Order object can now contain more than one `extension_attribute`.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a>
 
-<!--- 57352-->* We've removed the sample password from the Setup wizard.
+<!--- 57352-->* We've removed the sampassword from the Setup wizard.
 
 <!--- 57338-->* Customers are now redirected as expected to the destination URL identified in the **Redirect to My Account After Log-in** setting. Previously, customers were redirected to the My Account page, no matter which URL you identified in this setting.
 
@@ -220,7 +218,6 @@ We address the following functional issues in this release.
 {:.no_toc} 
 
 
-<!--- 58065-->* You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data. 
 
 <!--- 57082-->* The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension. 
 
@@ -298,11 +295,6 @@ We address the following functional issues in this release.
 
 <!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.
 
-<!--- 59315-->* We've fixed an issue where updating product stock did not persist correctly when saving products through either the web API or directly in the repository. 
-
-
-
-
 
 
 
@@ -346,13 +338,13 @@ We address the following functional issues in this release.
 <!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323, 61877, 61881, 61887, 62019, 62020, 61927, 61889, 61163 -->
 
 
-<!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803, 61975 -->
+<!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803, 61975, 55444 -->
 
 
-<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172, 61959 -->
+<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172, 61959, 59398 -->
 
 
-<!---  WON'T FIX 58853, 58798, 57105, 57802, 58083, 58900, 58611, 57311, 56916, 59370, 57510, 61242, 61339, 59414, 59408, 57330, 59411, 56958 -->
+<!---  WON'T FIX 58853, 58798, 57105, 57802, 58083, 58900, 58611, 57311, 56916, 59370, 57510, 61242, 61339, 59414, 59408, 57330, 59411, 56958, 58065 -->
 
 <!---  DUPLICATE 59410, 58085, 57095, 59558, 58095, 61149, 58095, 61254 -->
 

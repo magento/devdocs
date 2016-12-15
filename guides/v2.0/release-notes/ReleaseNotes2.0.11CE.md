@@ -12,7 +12,7 @@ github_link: release-notes/ReleaseNotes2.0.11CE.md
 We are pleased to present Magento Community Edition 2.0.11. 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>We republished these lightly re-edited Release Notes on December 15, 2016.</p>
+  <p>We republished these Release Notes with clarifications on on December 15th, 2016.</p>
 </div>
 
 
@@ -134,9 +134,6 @@ We address the following functional issues in this release.
 <!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Magento Admin after you ran the Web Setup Wizard.
 
  
-
-<!--- 59398-->* Custom themes now inherit parent XML configuration information as expected. 
-
 <!--- 57322-->* Magento no longer redirects users to the Checkout page after login. Now, if you set **Redirect Customer to Account Dashboard after Logging in**  value to **Yes**, users will be redirected to the Account Dashboard page. If you set this value to **No**, then users will stay on the home page after login. 
 
 <!--- 59102-->* Customers can now continue shopping after selecting an unavailable bundle product. Previously, if a customer selected a bundle product that was no longer available, he would encounter a fatal error. 
@@ -161,8 +158,6 @@ We address the following functional issues in this release.
 
 
 <!--- 62032-->* We've fixed an error with an unexpected empty default website during website creation.  
-
-<!--- 59409-->*
 
 
 
@@ -242,7 +237,7 @@ We address the following functional issues in this release.
 ### Performance
 {:.no_toc} 
 
-<!--- 60187, 55785,59394, 57894, 55300 -->* We’ve improved the performance of these tasks:
+<!--- 60187, 55785,59394, 57894 -->* We’ve improved the performance of these tasks:
 
 
 	* Loading the Configurable Product page
@@ -283,7 +278,6 @@ We address the following functional issues in this release.
 
 <!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.
 
-<!--- 59315-->* We've fixed an issue where updating product stock did not persist correctly when saving products through either the web API or directly in the repository. 
 
 
 
@@ -343,7 +337,7 @@ We address the following functional issues in this release.
 <!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803 -->
 
 
-<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172 -->
+<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172, 59398 -->
 
 
 <!---  WON'T FIX 58853, 58798, 57105, 57802, 58083, 58900, 58611, 57311, 56916, 59370, 57510, 61242, 61339, 59414, 59408, 57330, 59411, 56958 -->
