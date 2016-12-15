@@ -116,7 +116,6 @@ We address the following functional issues in this release.
 
 <!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
 
-<!--- 59409-->* Magento now correctly manages the maximum number of messages a message queue consumer can process. Previously, the consumer would stop processing messages before reaching the specified maximum number.
 
 
 <!--- 59449-->* Magento now decrements stock as expected in a multi-website environment. 
