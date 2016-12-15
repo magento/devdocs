@@ -49,7 +49,7 @@ For example, when you transform data from a Magento CE 1.8.0.0 database to Magen
 
 When differences are not declared in map files, then the Data Migration Tool displays an error and does not start.
 
-Mapping files are discussed in more detail in <a href="{{page.baseurl}}migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification.</a>
+Mapping files are discussed in more detail in <a href="{{page.baseurl}}migration/migration-tool-internal-spec.html"> Data Migration Tool Technical Specification.</a>
 
 ## Migration flow diagram
 
