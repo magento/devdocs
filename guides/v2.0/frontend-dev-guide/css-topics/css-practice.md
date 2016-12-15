@@ -75,6 +75,8 @@ To do this, they added an overriding <code>_theme.less</code> file in the <code>
 
 </pre>
 
+Next, you need to flush the static files cache. This can be done in the Admin panel under System->Cache Management->Flush Static Files Cache or via command line by deleting the contents of `<installation_directory>/pub/static` and using `php bin/magento setup:static-content:deploy`.
+
 After the Grey theme is applied, store pages will look like following:
 
 <img src="{{ site.baseurl }}common/images/css_practice.png" alt="product page when Grey applied">
