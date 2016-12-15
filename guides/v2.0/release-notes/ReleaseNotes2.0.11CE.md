@@ -11,7 +11,9 @@ github_link: release-notes/ReleaseNotes2.0.11CE.md
 ---
 We are pleased to present Magento Community Edition 2.0.11. 
 
-We republished these Release Notes on December 15, 2016 to add a few clarifications. 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We republished these lightly re-edited Release Notes on December 15, 2016.</p>
+</div>
 
 
 ## Highlights

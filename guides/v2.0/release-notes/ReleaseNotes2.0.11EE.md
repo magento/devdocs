@@ -13,7 +13,9 @@ github_link: release-notes/ReleaseNotes2.0.11EE.md
 We are pleased to present Magento Enterprise Edition 2.0.11. This release includes many functional fixes and enhancements. 
 
 
-We republished these Release Notes on December 15, 2016 to add a few clarifications. 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We republished these lightly re-edited Release Notes on December 15, 2016.</p>
+</div>
 
 
 ## Highlights
