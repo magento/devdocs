@@ -10,7 +10,7 @@ version: 2.1
 github_link: payments-integrations/vault/vault-intro.md
 ---
 
-Vault as a payment method provides store customers with ability to use the previously saved credit card information for checkout. This information is stored safely on the side of trusted payments gateways (Braintree, PayPal). Not storing the sensitive credit card information is one of the [PCI compliance] (https://www.pcisecuritystandards.org/)  requirements. 
+Vault as a payment method provides store customers with ability to use the previously saved credit card information for checkout. This information is stored safely on the side of trusted payments gateways (Braintree, PayPal). Not storing the sensitive credit card information is one of the [PCI compliance](https://www.pcisecuritystandards.org/)  requirements. 
 
 The [Magento Vault]({{site.mage2100url}}app/code/Magento/Vault) is implemented using the Magento [payment gateway]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.html). It is used in the out-of-the-box vault implementation for the Braintree payment method. Third party developers can use it to add vault to their custom payment provider integration.
 
@@ -34,7 +34,7 @@ The topics of this chapter describe how to add the vault functionality to a paym
 3. [Add vault and payment methods entities using dependency injection configuration]({{page.baseurl}}payments-integrations/vault/vault-di.html).
 4. [Implement the ability for customers to choose whether to use vault]({{page.baseurl}}payments-integrations/vault/enabler.html).
 5. [Storing and processing the payment related data]({{page.baseurl}}payments-integrations/vault/payment-token.html).
-6. [Adding and using  UI _Vault component to place orders on the storefront]({{page.baseurl}}payments-integrations/vault/token-ui-component-provider.html).
+6. [Adding and using  UI_Vault component to place orders on the storefront]({{page.baseurl}}payments-integrations/vault/token-ui-component-provider.html).
 7. [Display stored tokens for customer and process their deleting]({{page.baseurl}}payments-integrations/vault/customer-stored-payments.html).
 8. [Using stored tokens to place order from Admin panel]({{page.baseurl}}payments-integrations/vault/admin-integration.html).
 

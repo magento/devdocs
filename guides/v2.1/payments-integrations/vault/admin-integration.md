@@ -9,10 +9,11 @@ version: 2.1
 github_link: payments-integrations/vault/admin-integration.md
 ---
 
+## Token component provider
+To be able to use vault in Admin order creation, create a token component provider. It must implement the 
+[`TokenUiComponentProviderInterface`]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface and contain validation and order placement logic.
 
-To be able to use vault in Admin order creation, you first need to implement `TokenUiComponentProviderInterface`, similar to [Token UI Component Provider]({{site.gdeurl21/payments-integrations/vault/token-ui-component-provider.html#vault_token_ui_component_provider}}). But in that case your JS component has no default Vault implementation and you need to implement all logic for validation and order placement.
-
-In the most cases, it is enough to implement getting payment code and setting Public Hash. This implementation might look like following:
+In the most cases, it is enough to implement getting payment code and setting public hash. This implementation might look like following:
 
 {% highlight javascript %}
 define([
@@ -54,9 +55,11 @@ define([
 });
 {% endhighlight %}
 
-This component will set Public Hash to a hidden input when a user selects Payment Token as active.
+This component will set public hash to a hidden input, when a user sets payment token as active.
 
-Next you need create a template for displaying token details and specify it in the Config Provider:
+## Template
+
+Create a template for displaying token details and specify it in the config provider. Following is an example of such a config provider:
 
 {% highlight php startinline=1 %}
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface
@@ -85,7 +88,10 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 }
 {% endhighlight %}
 
-The billing form block for Admin layout (`Module_Name/view/adminhtml/layout/sales_order_create_index.xml`) might be like following:
+In the billing form block for Admin layout (`%module_dir%/view/adminhtml/layout/sales_order_create_index.xml`) 
+specify the payment method code and path to the template. 
+
+Following is an example of such layout:
 
 {% highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -100,12 +106,11 @@ The billing form block for Admin layout (`Module_Name/view/adminhtml/layout/sale
 </page>
 {% endhighlight %}
 
-You just need to specify the payment method code and path for the template. This configuration allow to render Vault payments by Vault module and create all depending JS components.
+This configuration allow to render vault payments by vault module and create all depending JS components.
 
-This way you vault can be used in Admin order creation as payment method.
+You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the `adminhtml` [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html) in `%module_dir%/etc/adminhtml/di.xml`. 
 
-If you have specific request builders, response handlers, and so on (for example, 3D Secure should not be available in the Admin panel),
-you need to create corresponds virtual types for adminhtml area in `Module_Name/etc/adminhtml/di.xml`. For example:
+Example from the `app/code/Magento/Braintree/etc/adminhtml/di.xml`:
 
 {% highlight xml %}
 <virtualType name="BraintreeVaultAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
@@ -122,3 +127,4 @@ you need to create corresponds virtual types for adminhtml area in `Module_Name/
 {% endhighlight %}
 
 This configuration will be applied only in Admin panel.
+For more information about area-specific configuration see the [Configure payment method by area]({{page.baseurl}}payments-integrations/base-integration/admin-integration.html) topic.
