@@ -9,8 +9,9 @@ version: 2.1
 github_link: payments-integrations/vault/token-ui-component-provider.md
 ---
 
+This topic describes how to display stored tokens on the payment step on checkout page, how to create UI components for custom vault payments, and how to use it to place order from storefront using vault.
 
-This topic describes how to display stored tokens on the payment step on checkout page, how to create UI components for custom Vault payments, and how to use it to place order from storefront using Vault.
+## Token component providers
 
 The main logic for displaying tokens on checkout page is located in
 [Vault TokensConfigProvider]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php). You just need to specify token component providers. They should implement the 
@@ -30,7 +31,7 @@ interface TokenUiComponentProviderInterface
 }
 {% endhighlight %}
 
-The basic implementation of Token UI component provider can be like following:
+The basic implementation of the token UI component provider can be like following:
 
 {% highlight php startinline=1 %}
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface
@@ -59,9 +60,11 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 }
 {% endhighlight %}
 
-This implementation allows to retrieve all available Payment Token details and specify the JS component for Storefront.
+This implementation allows to retrieve all available payment token details and specify the JS component for storefront.
 
-Having created the component provider, you need to add it to the list of available Vault config providers:
+Having created the component provider, you need to add it to the list of available vault config providers in `di.xml` - the DI configuration file. 
+
+In the following example the `Magento\Braintree\Model\Ui\TokenUiComponentProvider` component provider is added to this list:
 
 {% highlight xml %}
 <type name="Magento\Vault\Model\Ui\TokensConfigProvider">
@@ -73,7 +76,9 @@ Having created the component provider, you need to add it to the list of availab
 </type>
 {% endhighlight %}
 
-Custom Vault JS component should extend [vault.js]({{site.mage2100url}}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
+## JavaScript component for vault 
+
+Custom vault JS component should extend [vault.js]({{site.mage2100url}}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
 
 {% highlight javascript %}
 define([
@@ -90,4 +95,6 @@ define([
 });
 {% endhighlight %}
 
+## What's next
 
+[Display stored tokens for customer and process their deleting]({{page.baseurl}}payments-integrations/vault/customer-stored-payments.html).
