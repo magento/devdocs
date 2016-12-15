@@ -6,7 +6,7 @@ title: Configure Magento to use Varnish
 menu_title: Configure Magento to use Varnish
 menu_order: 15
 menu_node:
-version: 2.0
+version: 2.2
 github_link: config-guide/varnish/config-varnish-magento.md
 ---
 
@@ -65,10 +65,13 @@ To configure Magento to use Varnish:
 		   "localhost";
 		}
 
-9.	Restart Varnish and your web server:
+10. If you want to customize the Vagrant health checks or grace mode or saint mode configuration, see [Advanced Varnish configuration]({{page.baseurl}}config-guide/varnish/config-varnish-advanced.html)
+
+11.	Restart Varnish and your web server:
 
 		service varnish restart
 		service httpd restart
 
-#### Last step
+#### Next steps
+<a href="{{page.baseurl}}config-guide/varnish/config-varnish-advance.html">Advanced Varnish configuration</a>
 <a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a>
