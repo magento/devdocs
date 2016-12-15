@@ -2,16 +2,16 @@
 layout: default
 group: payments-integrations
 subgroup: C_vault
-title: Adding Vault module dependencies
-menu_title:  Adding Vault module dependencies
+title: Add vault to module dependencies
+menu_title: Add vault to module dependencies
 menu_order: 1
 version: 2.1
 github_link: payments-integrations/vault/module-configuration.md
 ---
 
-You need to add dependencies on the Magento_Vault module in the payment method's `composer.json` and `module.xml` file.
+You need to add dependencies on the Magento_Vault module in the payment method's `composer.json` and `module.xml` files.
 
-### Example: adding Vault module dependencies for the Braintree payment method
+## Example: adding Vault module dependencies for the Braintree payment method
 
 `app/code/Magento/Braintree/composer.json`:
 
@@ -41,5 +41,6 @@ You need to add dependencies on the Magento_Vault module in the payment method's
 </config>
 {% endhighlight %}
 
+## What's next
 
-
+[Configure vault general parameters]({{page.baseurl}}payments-integrations/vault/vault-payment-configuration.html).
