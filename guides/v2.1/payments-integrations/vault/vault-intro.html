@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Vault Integration in Magento2</title>
+	<title>Adding vault integration</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="2016-12-13 (PST)" />
+	<meta http-equiv="last-modified" content="2016-12-15 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
@@ -407,7 +407,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/payments-integrations/vault/vault-intro.html">Vault Integration</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/payments-integrations/vault/vault-intro.html">Adding vault integration</a></li>
 									
 								
 
@@ -418,7 +418,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/module-configuration.html">Adding Vault module dependencies</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/module-configuration.html">Add vault to module dependencies</a></li>
 
 									
 
@@ -683,7 +683,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Vault Integration in Magento2</span>
+        <span property="name">Adding vault integration</span>
         <meta property="position" content="1" />
       </li>
 
@@ -695,19 +695,16 @@
 
 
 	
-	<h1 class="page-heading">Vault Integration in Magento2</h1>
+	<h1 class="page-heading">Adding vault integration</h1>
 
   
 
 
 </section>
 
-			<p>A vault for payment methods is a mechanism providing ability to store customer credit cards information on the trusted payments gateways (Braintree, PayPal) instead of storing them on your server.</p>
+			<p>Vault as a payment method provides store customers with ability to use the previously saved credit card information for checkout. This information is stored safely on the side of trusted payments gateways (Braintree, PayPal). Not storing the sensitive credit card information is one of the [PCI compliance] (https://www.pcisecuritystandards.org/)  requirements.</p>
 
-<p>Magento is a <a href="https://www.pcisecuritystandards.org/">PCI compliant</a> application, thus it does not store card details like: number,
-CVV, expiration date or any other private data for Vault payments only data available from payment providers.</p>
-
-<p>The <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault">Magento Vault</a> is implemented using the Magento <a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-intro.html">payment gateway</a>. It is used in the out of the box vault implementations (for the Braintree payment method) and can be used by third party developers for adding vaults to other default or custom payment methods.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault">Magento Vault</a> is implemented using the Magento <a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-intro.html">payment gateway</a>. It is used in the out-of-the-box vault implementation for the Braintree payment method. Third party developers can use it to add vault to their custom payment provider integration.</p>
 
 <p>The following diagram shows a simplified interaction flow between Magento sales management, vault, payment integration and external payment service provider.</p>
 
@@ -715,14 +712,17 @@ CVV, expiration date or any other private data for Vault payments only data avai
 
 <p>The flow is similar to usual Magento <a href="/guides/v2.1/payment-integrations/payment-gateway/payment-gateway-intro.html">payment gateway interaction flow</a>.</p>
 
-<p>The main difference is that when Vault is used, it “decides” what command is required and when this command must be called.</p>
+<p>The main difference is that when vault is used, it defines what command is required and when it must be called.</p>
 
-<p>You don’t need to create a new module for Vault implementation, all required configuration and entities are added in the module of the payment method.</p>
+<h2 id="adding-vault-general-steps">Adding vault: general steps</h2>
+
+<p>Magento vault implementation provides that vault is available as a separate payment method during order creation (storefront or admin). But technically it is tightly related to the corresponding payment provider integration. <br />
+You do not need to create a new module for vault implementation. All required configuration and entities are added in the module of the payment provider integration.</p>
 
 <p>The topics of this chapter describe how to add the vault functionality to a payment method (the payment method must be implemented using Magento payment gateway):</p>
 
 <ol>
-  <li><a href="/guides/v2.1/payments-integrations/vault/module-configuration.html">Adding Vault module dependencies</a>.</li>
+  <li><a href="/guides/v2.1/payments-integrations/vault/module-configuration.html">Add vault to module dependencies</a>.</li>
   <li><a href="/guides/v2.1/payments-integrations/vault/vault-payment-configuration.html">Configure vault general parameters</a>.</li>
   <li><a href="/guides/v2.1/payments-integrations/vault/vault-di.html">Add vault and payment methods entities using dependency injection configuration</a>.</li>
   <li><a href="/guides/v2.1/payments-integrations/vault/enabler.html">Implement the ability for customers to choose whether to use vault</a>.</li>

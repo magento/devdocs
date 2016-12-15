@@ -407,7 +407,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/payments-integrations/vault/vault-intro.html">Vault Integration</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/payments-integrations/vault/vault-intro.html">Adding vault integration</a></li>
 									
 								
 
@@ -418,7 +418,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/module-configuration.html">Adding Vault module dependencies</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/module-configuration.html">Add vault to module dependencies</a></li>
 
 									
 
@@ -702,11 +702,11 @@
 
 </section>
 
-			<p>This section describes how to configure Vault payment method and create payment actions, like authorize, sale (authorize &amp; capture), capture and so on.</p>
+			<p>This section describes how to configure vault payment method and create payment actions, like authorize, sale (authorize &amp; capture), capture and so on.</p>
 
-<h2 id="add-vault-payment-facade">Add Vault payment facade</h2>
+<h2 id="add-vault-payment-facade">Add vault payment facade</h2>
 
-<p>First you need to create a <a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html#virtual-types">virtual type</a> for Vault payment method. In the most cases it will extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Method/Vault.php"><code>Magento\Vault\Model\Method\Vault</code></a> that is the default implementation of <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/VaultPaymentInterface.php"><code>Magento\Vault\Model\VaultPaymentInterface</code></a>:</p>
+<p>To add a payment facade for the vault payment, create a <a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html#virtual-types">virtual type</a>. In the most cases, it will extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Method/Vault.php"><code>Magento\Vault\Model\Method\Vault</code></a> that is the default implementation of <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/VaultPaymentInterface.php"><code>Magento\Vault\Model\VaultPaymentInterface</code></a>:</p>
 
 <p>Example of the vault payment facade configuration for Braintree:</p>
 
@@ -723,7 +723,9 @@
 
 <h2 id="extend-payment-method-configuration">Extend payment method configuration</h2>
 
-<p>You need to add the option for using vault to the <a href="/guides/v2.1/payments-integrations/base-integration/payment-option-config.html">payment method configuration</a>:</p>
+<p>To enable vault usage for the payment method, set the <code>can_authorize_vault</code> option in the <a href="/guides/v2.1/payments-integrations/base-integration/payment-option-config.html">method’s configuration</a>.</p>
+
+<p>Following is an example from Braintree configuration:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;payment&gt;</span>
     <span class="nt">&lt;braintree&gt;</span>
@@ -735,13 +737,13 @@
     <span class="nt">&lt;/braintree&gt;</span>
 <span class="nt">&lt;/payment&gt;</span></code></pre></figure>
 
-<h2 id="add-a-gateway-command-for-vault">Add a gateway command for Vault</h2>
+<h2 id="add-a-gateway-command-for-vault">Add a gateway command for vault</h2>
 
-<p>For payment actions, you need to create gateway commands for Vault, and update the payment provider pool.</p>
+<p>For payment actions, you need to create gateway commands for vault, and update the payment provider <a href="/guides/v2.1/payments-integrations/payment-gateway/command-pool.html">command pool</a>.</p>
 
 <p>All available commands you can find in the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/VaultPaymentInterface.php">VaultPaymentInterface</a></p>
 
-<p>Example: a gateway command for the authorize action is added for the Braintree Vault</p>
+<p>Example: a gateway command for the authorize action is added for the Braintree vault</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeVaultAuthorizeCommand&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Command\GatewayCommand&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -755,7 +757,7 @@
 
 <p>This command is similar to the payment provider authorize command. But it uses own <a href="/guides/v2.1/payments-integrations/payment-gateway/request-builder.html">request builders</a> and <a href="/guides/v2.1/payments-integrations/payment-gateway/response-handler.html">response handlers</a>.</p>
 
-<p>Now, need to add <code>authorize</code> payment action to command pool:</p>
+<p>The following sample from Braintree configuration illustrates how to add the <code>authorize</code> payment action to command pool:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeCommandPool&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Command\CommandPool&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -769,9 +771,9 @@
 
 <h2 id="add-command-manager">Add command manager</h2>
 
-<p>You also need to add a command manager for Vault, and add it to the command manager pool. This pool is available for Vault instance and enables performing payment provider actions.</p>
+<p>You also need to add a command manager for vault, and add it to the command manager pool. This pool is available for vault instance and enables performing payment provider actions.</p>
 
-<p>Example of adding a command manager for Braintree Vault:</p>
+<p>Example of adding a command manager for Braintree vault:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeCommandManager&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Command\CommandManager&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -779,7 +781,7 @@
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>There are two ways to add command manager to the pool.</p>
+<p>There are two ways to add command manager to the pool:</p>
 
 <ul>
   <li>Add to default <code>CommandManagerPool</code> implementation. Example:</li>
@@ -812,7 +814,7 @@
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>In the first case, payment provider will be available for all configured Vault payments.  In the second case, only for Vault payment related to their payment provider.</p>
+<p>In the first case, payment provider will be available for all configured vault payments.  In the second case, only for vault payment related to their payment provider.</p>
 
 
 		</div>

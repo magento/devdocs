@@ -407,7 +407,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/payments-integrations/vault/vault-intro.html">Vault Integration</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/payments-integrations/vault/vault-intro.html">Adding vault integration</a></li>
 									
 								
 
@@ -418,7 +418,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/module-configuration.html">Adding Vault module dependencies</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/module-configuration.html">Add vault to module dependencies</a></li>
 
 									
 
@@ -702,14 +702,14 @@
 
 </section>
 
-			<p>In <code>config.xml</code> file of your payment method module you need to configure the main parameters of the vault implementation:</p>
+			<p>You need to configure the main parameters of the vault implementation in the <code>config.xml</code> file of your payment method module:</p>
 
 <ul>
-  <li><code>model</code> - instance of Vault payment implementation, <a href="/guides/v2.1/payments-integrations/vault/vault-di.html">configured in <code>di.xml</code></a>.</li>
-  <li><code>title</code> - payment method title, can be overwritten in the store configuration.</li>
+  <li><code>model</code> - instance of the vault payment implementation, <a href="/guides/v2.1/payments-integrations/vault/vault-di.html">configured in <code>di.xml</code></a>.</li>
+  <li><code>title</code> - vault payment method title; can be overwritten in the store configuration.</li>
 </ul>
 
-<p>This parameters are specified in the section defined by the unique vault implementation code. They are the minimum required to create Vault payment. All other payment settings are inherited from payment provider.</p>
+<p>These parameters are specified in the section defined by the unique vault implementation code. They are the minimum required to create cault payment. All other payment settings are inherited from the payment provider integration.</p>
 
 <p>Additional configuration might be required depending on your implementation.</p>
 
@@ -732,6 +732,9 @@
 
 <p>In this example <code>braintree_cc_vault</code> is the unique payment code of the vault implementation for Braintree.</p>
 
+<h2 id="whats-next">What’s next</h2>
+
+<p><a href="/guides/v2.1/payments-integrations/vault/vault-di.html">Add vault and payment methods entities using dependency injection configuration</a>.</p>
 
 		</div>
 		<!-- /.content-wrap -->
