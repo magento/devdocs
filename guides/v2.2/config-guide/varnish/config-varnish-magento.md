@@ -44,19 +44,22 @@ To configure Magento to use Varnish:
 	<tr>
 		<td>Grace period</td>
 		<td>The grace period determines how long Varnish serves stale content if the backend is not responsive. The default value is 86400 seconds (1 day).</td>
-  </tr>
-	</tbody>
-	</table>
+</tr>
+</tbody>
+</table>
 
 6.	Click **Save Config**.
-7.	Click one of the export buttons to create a <code>default.vcl</code> you can use with Varnish.
+7.	Click one of the export buttons to create a <code>varnish.vcl</code> you can use with Varnish.
 
 	For example, if you have Varnish 4, click **Export VCL for Varnish 4**
 
 	The following figure shows an example.<br><br>
 	<img src="{{ site.baseurl }}common/images/config_varnish_admin_22.png" alt="Configure Magento to use Varnish in the Admin">
 
-8.	Replace your existing <code>default.vcl</code> with the one you just exported.
+8.	Back up your existing <code>default.vcl</code>. Then rename the <code>varnish.vcl</code> file you just exported to <code>default.vcl</code>. Then copy the file to the <code>/etc/varnish/</code>. directory.
+		cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak2
+		mv &lt;download_directory>/varnish.vcl default.vcl
+		cp &lt;download_directory>/default.vcl /etc/varnish/default.vcl
 9.	We recommend you open `default.vcl` and change the value of `acl purge` to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)
 
 	For example,
