@@ -9,12 +9,12 @@ version: 2.1
 github_link: payments-integrations/vault/enabler.md
 ---
 
-Store customers should have an ability to enable credit cards details storing.
-Magento has some mechanisms to provide this ability by default, but your still need to add certain modifications in our payment method implementation.
+Store customers must have the ability to enable and disable credit cards details storing.
+Magento out-of-the-box provides mechanisms for adding this ability, but your still need to add modifications in your payment method implementation.
 
 ## Checkbox on the payment form
 
-First you need to add the Vault enabling controls to the payment form.
+First, add the vault enabling controls to the payment form.
 
 Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
 
@@ -96,7 +96,7 @@ define([
 });
 {% endhighlight %}
 
-Magento has a default Vault enabler UI component (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call `visitAdditionalData` to update the `additional_data` property.
+Magento has a default vault enabler UI component (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call `visitAdditionalData` to update the `additional_data` property.
 
 The rest is done by the `\Magento\Vault\Observer\VaultEnableAssigner` observer:
 
@@ -121,10 +121,11 @@ public function execute(\Magento\Framework\Event\Observer $observer)
 }
 {% endhighlight %}
 
-## Request data builder
+## Add request data builder
 
-The payment must send this details to a payment processor.
-In the Braintree vault implementation, we just set `storeInVaultOnSuccess` in transaction request:
+Now when we have information about enabling or disabling vault, the payment must send these details to the payment processor. This is done in the [request builder]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html). 
+
+In the Braintree vault implementation in the request builder, to pass the data, we set `storeInVaultOnSuccess` in transaction request:
 
 {% highlight php startinline=1 %}
 class VaultDataBuilder implements BuilderInterface
@@ -154,7 +155,8 @@ class VaultDataBuilder implements BuilderInterface
 }
 {% endhighlight %}
 
-This builder must be added to payment authorize request:
+The builder must be added to the payment authorize request in the DI configuration. 
+Example from the Braintree `di.xml`:
 
 {% highlight xml %}
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
@@ -166,5 +168,9 @@ This builder must be added to payment authorize request:
     </arguments>
 </virtualType>
 {% endhighlight %}
+
+## What's next
+
+[Storing and processing the payment related data]({{page.baseurl}}payments-integrations/vault/payment-token.html)
 
 
