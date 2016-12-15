@@ -12,7 +12,7 @@ github_link: release-notes/ReleaseNotes2.0.11CE.md
 We are pleased to present Magento Community Edition 2.0.11. 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>We republished these Release Notes with clarifications on on December 15th, 2016.</p>
+  <p>We republished these Release Notes with clarifications on December 15th, 2016.</p>
 </div>
 
 
@@ -76,7 +76,7 @@ We address the following functional issues in this release.
 
 <!--- 55791-->* We've improved the performance of the review step to create a configurable product.
 
-<!--- 59050-->* You can now successfully reorder a configurable product. Previously, if you created an order that includes multiple products, one of which is a reorder, options for these products were confused. <a href="https://github.com/magento/magento2/issues/3654" target="_blank">(GITHUB-3654)</a>, <a href="https://github.com/magento/magento2/issues/3820" target="_blank">(GITHUB-3820)</a>
+<!--- 59050-->* You can now successf==ully reorder a configurable product. Previously, if you created an order that includes multiple products, one of which is a reorder, options for these products were confused. <a href="https://github.com/magento/magento2/issues/3654" target="_blank">(GITHUB-3654)</a>, <a href="https://github.com/magento/magento2/issues/3820" target="_blank">(GITHUB-3820)</a>
 
 <!--- 58793-->* You can now successfully edit configuration options when creating a configurable product. Previously, the **Edit Configuration** button did not work as expected.
 

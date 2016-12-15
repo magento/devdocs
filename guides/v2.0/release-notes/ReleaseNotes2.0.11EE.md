@@ -14,7 +14,7 @@ We are pleased to present Magento Enterprise Edition 2.0.11. This release includ
 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>We republished these Release Notes with clarifications on on December 15th, 2016.</p>
+  <p>We republished these Release Notes with clarifications on December 15th, 2016.</p>
 </div>
 
 
