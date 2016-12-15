@@ -2,74 +2,27 @@
 layout: default
 group: payments-integrations
 subgroup: C_vault
-title: Customer stored payments
-menu_title: Customer stored payments
+title: Display the stored information
+menu_title: Display the stored information
 menu_order: 20
 version: 2.1
 github_link: payments-integrations/vault/customer-stored-payments.md
 ---
 
-This topic describes how to display stored tokens in the customer account and give customers ability to remove stored tokens. 
+This topic describes how to display stored tokens in the customer account and give customers ability to remove the tokens. 
 
-First, you need to create a custom Renderer that provides functionality for displaying token details.
-The Renderer implementation depends on token type (card or account), but both renders
-implement the common interfaces [TokenRendererInterface]({{site.mage2100url}}app/code/Magento/Vault/Block/TokenRendererInterface.php)
-and `IconInterface`.
+## Token renderer
+To implement the displaying functionality, create a token renderer. Its
+implementation depends on token type (card or account). But both  types of renderers
+implement the common [`TokenRendererInterface`]({{site.mage2100url}}app/code/Magento/Vault/Block/TokenRendererInterface.php)
+and [`IconInterface`]({{site.mage2100url}}app/code/Magento/Vault/Block/Customer/IconInterface.php) interfaces.
 
-{% highlight php startinline=1 %}
-interface TokenRendererInterface
-{
-    /**
-     * Can render specified token
-     *
-     * @param PaymentTokenInterface $token
-     * @return boolean
-     */
-    public function canRender(PaymentTokenInterface $token);
-
-    /**
-     * Renders specified token
-     *
-     * @param PaymentTokenInterface $token
-     * @return string
-     */
-    public function render(PaymentTokenInterface $token);
-
-    /**
-     * Get payment token
-     * @return PaymentTokenInterface|null
-     */
-    public function getToken();
-}
-
-interface IconInterface
-{
-    /**
-     * Get url to icon
-     * @return string
-     */
-    public function getIconUrl();
-
-    /**
-     * Get width of icon
-     * @return int
-     */
-    public function getIconHeight();
-
-    /**
-     * Get height of icon
-     * @return int
-     */
-    public function getIconWidth();
-}
-{% endhighlight %}
-
-If you Vault integration uses card token type, then you need to extend [AbstractCardRenderer]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractCardRenderer.php). In other case extend `AbstractTokenRenderer`.
+If your vault integration uses card token type, then you need to extend [AbstractCardRenderer]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractCardRenderer.php). In other case extend [`AbstractTokenRenderer`]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractTokenRenderer.php).
 
 `AbstractCardRenderer` implements [CardRendererInterface]({{site.mage2100url}}app/code/Magento/Vault/Block/CardRendererInterface.php) and
 has additional method to get card details.
 
-The simple implementation might be like following:
+The simple card renderer implementation might be like following:
 
 {% highlight php startinline=1 %}
 class CardRenderer extends AbstractCardRenderer
@@ -127,7 +80,9 @@ class CardRenderer extends AbstractCardRenderer
 }
 {% endhighlight %}
 
-Next, you need to create the layout to be used for displaying token details. You have to specify the token renderer in this layout.
+## Layout and template
+
+Next, you need to create the layout to be used for displaying token details. In this layout, specify the previously created token renderer.
 
 Example ([vault_cards_listaction.xml]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml)):
 
@@ -143,5 +98,8 @@ Example ([vault_cards_listaction.xml]({{site.mage2100url}}app/code/Magento/Brain
 </page>
 {% endhighlight %}
 
-In this example the default vault template, `credit_card.phtml`, is used. But you can create and specify a custom template. 
+In this example the default `credit_card.phtml` vault template is used. But you can create and specify a custom template. Add the template in the payment method module.
+
+## What's next
+ [Using stored tokens to place order from Admin panel]({{page.baseurl}}payments-integrations/vault/admin-integration.html).
 
