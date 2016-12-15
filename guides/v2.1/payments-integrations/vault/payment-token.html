@@ -8,7 +8,7 @@
 	<title>Payment Token</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="2016-12-14 (PST)" />
+	<meta http-equiv="last-modified" content="2016-12-15 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
@@ -466,7 +466,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/customer-stored-payments.html">Customer stored payments</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/customer-stored-payments.html">Display the stored information</a></li>
 
 									
 
@@ -702,15 +702,15 @@
 
 </section>
 
-			<p>Magento does not store any private credit card details. It only stores the data received from the payment provider (payment processor token and credit card details without sensitive data).</p>
+			<p>Magento does not store any private credit card details. It only stores the data received from the payment provider: payment processor token and credit card details without sensitive data.</p>
 
-<p>This information is stored in the Payment Token.</p>
+<p>This information is stored in Payment Token.</p>
 
 <p>The basic interface for Payment Token is <a href="https://github.com/magento/magento2/blob/2.1//app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php">PaymentTokenInterface</a>.</p>
 
-<p>To retrieve and store token details you need to implement response handler in your payment integration, create a Payment Token entity, and store it in the payment extension attributes.</p>
+<p>To retrieve and store token details, you need to implement a <a href="/guides/v2.1/payments-integrations/payment-gateway/response-handler.html">response handler</a> in your payment integration, create a Payment Token entity, and store it in the payment extension attributes.</p>
 
-<p>Following sample shows how it might look:</p>
+<p>Following sample is an example of the response handler implementation:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">VaultDetailsHandler</span> <span class="k">implements</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
@@ -762,14 +762,16 @@
 <p>There are two types of <code>paymentTokenFactory</code>:</p>
 
 <ul>
-  <li>CreditCardTokenFactory: used for credit cards</li>
-  <li>AccountPaymentTokenFactory: used for payment accounts, like PayPal</li>
+  <li><code>CreditCardTokenFactory</code>: used for credit cards</li>
+  <li><code>AccountPaymentTokenFactory</code>: used for payment accounts, like PayPal</li>
 </ul>
 
-<p>The important thing is <code>setGatewayToken()</code> method. This method retrieves Gateway Token,  a hashed value based on some credit card details. Different
-payment providers use different algorithms to create this hash. In most cases, exactly this token will be used to perform place order actions.</p>
+<p>The important thing is the <code>setGatewayToken()</code> method. This method gets the gateway token: a hashed value based on some credit card details. Different
+payment providers use different algorithms to create this hash. In most cases, exactly this token is used to perform place order actions.</p>
 
-<p>The created response handler must be added to Handler Chain:</p>
+<p>The created response handler must be added to the handler chain in the DI configuration file <code>di.xml</code>.</p>
+
+<p>Example of the Braintriee <code>di.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeAuthorizationHandler&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Response\HandlerChain&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -783,7 +785,8 @@ payment providers use different algorithms to create this hash. In most cases, e
 
 <p>The persistence layer for Payment Token is implemented in the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault">Vault Module</a>.</p>
 
-<p><a href="/guides/v2.1/payments-integrations/vault/token-ui-component-provider.html">Next topic</a> will describe how to add and use  UI <em>Vault</em> component to place orders on the Storefront.</p>
+<h2 id="whats-next">What’s next</h2>
+<p><a href="/guides/v2.1/payments-integrations/vault/token-ui-component-provider.html">Adding and using  UI_Vault component to place orders on the storefront</a>.</p>
 
 		</div>
 		<!-- /.content-wrap -->

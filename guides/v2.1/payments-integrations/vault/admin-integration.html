@@ -8,7 +8,7 @@
 	<title>Vault implementation for Admin</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="2016-12-13 (PST)" />
+	<meta http-equiv="last-modified" content="2016-12-15 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
@@ -466,7 +466,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/customer-stored-payments.html">Customer stored payments</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/customer-stored-payments.html">Display the stored information</a></li>
 
 									
 
@@ -702,9 +702,11 @@
 
 </section>
 
-			<p>To be able to use vault in Admin order creation, you first need to implement <code>TokenUiComponentProviderInterface</code>, similar to <a href="">Token UI Component Provider</a>. But in that case your JS component has no default Vault implementation and you need to implement all logic for validation and order placement.</p>
+			<h2 id="token-component-provider">Token component provider</h2>
+<p>To be able to use vault in Admin order creation, create a token component provider. It must implement the 
+<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php"><code>TokenUiComponentProviderInterface</code></a> interface and contain validation and order placement logic.</p>
 
-<p>In the most cases, it is enough to implement getting payment code and setting Public Hash. This implementation might look like following:</p>
+<p>In the most cases, it is enough to implement getting payment code and setting public hash. This implementation might look like following:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
     <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
@@ -744,9 +746,11 @@
     <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>This component will set Public Hash to a hidden input when a user selects Payment Token as active.</p>
+<p>This component will set public hash to a hidden input, when a user sets payment token as active.</p>
 
-<p>Next you need create a template for displaying token details and specify it in the Config Provider:</p>
+<h2 id="template">Template</h2>
+
+<p>Create a template for displaying token details and specify it in the config provider. Following is an example of such a config provider:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">TokenUiComponentProvider</span> <span class="k">implements</span> <span class="nx">TokenUiComponentProviderInterface</span>
 <span class="p">{</span>
@@ -773,7 +777,10 @@
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>The billing form block for Admin layout (<code>Module_Name/view/adminhtml/layout/sales_order_create_index.xml</code>) might be like following:</p>
+<p>In the billing form block for Admin layout (<code>%module_dir%/view/adminhtml/layout/sales_order_create_index.xml</code>) 
+specify the payment method code and path to the template.</p>
+
+<p>Following is an example of such layout:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
@@ -786,12 +793,11 @@
     <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
-<p>You just need to specify the payment method code and path for the template. This configuration allow to render Vault payments by Vault module and create all depending JS components.</p>
+<p>This configuration allow to render vault payments by vault module and create all depending JS components.</p>
 
-<p>This way you vault can be used in Admin order creation as payment method.</p>
+<p>You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the <code>adminhtml</code> <a href="/guides/v2.1/architecture/archi_perspectives/components/modules/mod_and_areas.html">area</a> in <code>%module_dir%/etc/adminhtml/di.xml</code>.</p>
 
-<p>If you have specific request builders, response handlers, and so on (for example, 3D Secure should not be available in the Admin panel),
-you need to create corresponds virtual types for adminhtml area in <code>Module_Name/etc/adminhtml/di.xml</code>. For example:</p>
+<p>Example from the <code>app/code/Magento/Braintree/etc/adminhtml/di.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeVaultAuthorizeRequest&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Request\BuilderComposite&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -805,7 +811,8 @@ you need to create corresponds virtual types for adminhtml area in <code>Module_
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>This configuration will be applied only in Admin panel.</p>
+<p>This configuration will be applied only in Admin panel.
+For more information about area-specific configuration see the <a href="/guides/v2.1/payments-integrations/base-integration/admin-integration.html">Configure payment method by area</a> topic.</p>
 
 		</div>
 		<!-- /.content-wrap -->

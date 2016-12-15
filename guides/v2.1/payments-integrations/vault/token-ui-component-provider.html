@@ -8,7 +8,7 @@
 	<title>Token UI component provider</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="2016-12-14 (PST)" />
+	<meta http-equiv="last-modified" content="2016-12-15 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
@@ -466,7 +466,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/customer-stored-payments.html">Customer stored payments</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/payments-integrations/vault/customer-stored-payments.html">Display the stored information</a></li>
 
 									
 
@@ -702,7 +702,9 @@
 
 </section>
 
-			<p>This topic describes how to display stored tokens on the payment step on checkout page, how to create UI components for custom Vault payments, and how to use it to place order from storefront using Vault.</p>
+			<p>This topic describes how to display stored tokens on the payment step on checkout page, how to create UI components for custom vault payments, and how to use it to place order from storefront using vault.</p>
+
+<h2 id="token-component-providers">Token component providers</h2>
 
 <p>The main logic for displaying tokens on checkout page is located in
 <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php">Vault TokensConfigProvider</a>. You just need to specify token component providers. They should implement the 
@@ -720,7 +722,7 @@
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getComponentForToken</span><span class="p">(</span><span class="nx">PaymentTokenInterface</span> <span class="nv">$paymentToken</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>The basic implementation of Token UI component provider can be like following:</p>
+<p>The basic implementation of the token UI component provider can be like following:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">TokenUiComponentProvider</span> <span class="k">implements</span> <span class="nx">TokenUiComponentProviderInterface</span>
 <span class="p">{</span>
@@ -747,9 +749,11 @@
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>This implementation allows to retrieve all available Payment Token details and specify the JS component for Storefront.</p>
+<p>This implementation allows to retrieve all available payment token details and specify the JS component for storefront.</p>
 
-<p>Having created the component provider, you need to add it to the list of available Vault config providers:</p>
+<p>Having created the component provider, you need to add it to the list of available vault config providers in <code>di.xml</code> - the DI configuration file.</p>
+
+<p>In the following example the <code>Magento\Braintree\Model\Ui\TokenUiComponentProvider</code> component provider is added to this list:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Vault\Model\Ui\TokensConfigProvider&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -759,7 +763,9 @@
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
-<p>Custom Vault JS component should extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js">vault.js</a>:</p>
+<h2 id="javascript-component-for-vault">JavaScript component for vault</h2>
+
+<p>Custom vault JS component should extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js">vault.js</a>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
     <span class="s1">&#39;Magento_Vault/js/view/payment/method-renderer/vault&#39;</span><span class="p">,</span>
@@ -774,6 +780,9 @@
     <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
 
+<h2 id="whats-next">What’s next</h2>
+
+<p><a href="/guides/v2.1/payments-integrations/vault/customer-stored-payments.html">Display stored tokens for customer and process their deleting</a>.</p>
 
 		</div>
 		<!-- /.content-wrap -->
