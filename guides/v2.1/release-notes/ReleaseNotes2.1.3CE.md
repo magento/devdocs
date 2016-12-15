@@ -15,6 +15,10 @@ github_link: release-notes/ReleaseNotes2.1.3CE.md
 
 We are pleased to present Magento Community Edition 2.1.3. This release includes many functional enhancements and fixes.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We republished these Release Notes with clarifications on December 15th, 2016.</p>
+</div>
+
 
 ## Highlights
 
@@ -188,7 +192,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57197-->* We've eliminated difficulties saving product information when logged in as Admin. Previously, the Product Save feature worked erratically for Admin users. 
 
-<!---59874-->* Magento now successfully saves Product Stock Items whether you used the WebAPI to save or saved from the Admin interface. 
 
 <!---59397, 60696-->* Custom themes now inherit parent XML configuration information as expected.  
 
@@ -533,7 +536,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 60477, 59309, 60381, 58004, 59376, 59809
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 60477, 59309, 60381, 58004, 59376, 59809, 62013, 61850
 -->
 
 

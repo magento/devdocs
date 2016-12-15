@@ -14,6 +14,10 @@ github_link: release-notes/ReleaseNotes2.1.3EE.md
 
 We are pleased to present Magento Enterprise Edition 2.1.3. This release includes many functional fixes and enhancements.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We republished these Release Notes with clarifications on December 15th, 2016.</p>
+</div>
+
 
 ## Highlights
 
@@ -526,7 +530,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 60477, 59309, 60381, 58004, 59376, 59809
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 60477, 59309, 60381, 58004, 59376, 59809, 62013, 61850
 -->
 
 
