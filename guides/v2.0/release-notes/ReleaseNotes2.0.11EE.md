@@ -106,7 +106,7 @@ We address the following functional issues in this release.
 
 <!--- 56859-->* The **Send Welcome Email From** field now accurately identifies the store that the customer is associated with. 
 
-<!--- 59172-->*  The **Disable Email Communication** option of **Store > Configuration > Advanced > System > Email Sending Settings** now works as expected. Previously, Magento sent email, even if you disabled this feature. <a href="https://github.com/magento/magento2/issues/5988" target="_blank">(GITHUB-5988)</a>
+<!--- 59172-->*  The **Disable Email Communication** option of **Store > Configuration > Advanced > System > Email Sending Settings** now works as expected. Previously, Magento sent email even if you disabled this feature. <a href="https://github.com/magento/magento2/issues/5988" target="_blank">(GITHUB-5988)</a>
 
 
 ### General fixes

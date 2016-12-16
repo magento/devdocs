@@ -103,7 +103,7 @@ We address the following functional issues in this release.
 
 <!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento did not save this information, and you encountered an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
 
-<!--- 59172-->*  The **Disable Email Communication** option of **Store > Configuration > Advanced > System > Email Sending Settings** now works as expected. Previously, Magento sent email, even if you disabled this feature. <a href="https://github.com/magento/magento2/issues/5988" target="_blank">(GITHUB-5988)</a>
+<!--- 59172-->*  The **Disable Email Communication** option of **Store > Configuration > Advanced > System > Email Sending Settings** now works as expected. Previously, Magento sent email even if you disabled this feature. <a href="https://github.com/magento/magento2/issues/5988" target="_blank">(GITHUB-5988)</a>
 
 
 ### General fixes
