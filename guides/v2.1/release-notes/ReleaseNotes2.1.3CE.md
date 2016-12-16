@@ -97,7 +97,6 @@ We address the following functional issues in this release.
 
 <!---58090-->* We've corrected a problem with Magento throwing an HTTP ERROR 500 intermittently during checkout. 
 
-<!---60143-->* You can now successfully create a new checkout agreement. <a href="https://github.com/magento/magento2/issues/7171" target="_blank">(GITHUB-7171)</a> 
 
 <!---57168-->* We fixed a JavaScript error that occurred on the Checkout page after you changed the country in the **Estimate Shipping and Tax** field.
 
@@ -109,26 +108,17 @@ We address the following functional issues in this release.
 
 We've enhanced the performance of configurable products in several ways:
 
-<!---57055/52717-->*  You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. <a href="https://github.com/magento/magento2/issues/4419" target="_blank">(GITHUB-4419)</a>
-
+<!---57055-->*  You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. 
 
 
 <!---56998 -->* Magento no longer applies one simple product's special price to another simple product of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a>
 
 
-<!---58291-->* Magento no longer displays the "Invalid Form Key" message when you try to save a configurable product with more than fifty options.
 
 <!---54808 -->* You can now edit a product attribute for multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, and then incorrectly tell you that the products had been edited.
 
 
-
-<!---54808-->* You can now bulk-edit a product attribute for a configurable product. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, the process saved, completed, and indicated that the products had been edited even though they hadn't.
-
-
 <!---60605-->* Magento no longer throws an exception when you add a configurable product by SKU if an associated simple product is out-of-stock. 
-
-<!---60140-->* Magento now correctly displays the status of all child products of a configurable product, even disabled ones. Previously, Magento did not correctly display the status of a configurable product's child product if the child product were disabled. 
-
 
 
 <!---61055-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the category page failed to list the product at all, rather than listing it as out-of-stock. 
@@ -146,13 +136,14 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57204 -->* The **Send Welcome Email From** field now identifies the store that the customer is associated with. 
 
+
+
 ### General fixes
 {:.no_toc} 
 
 <!--- 60890 -->* Admin users with restricted permissions can now log in successfully as determined by those permissions. Previously, Magento displayed a fatal error upon login under these conditions.
 
 
-<!---57144-->* You can now assign a blank value to an attribute. <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/4910" target="_blank">(GITHUB-4910)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5485" target="_blank">(GITHUB-5485)</a>
 
 <!---55662-->* We've removed the duplicated PHP settings from the sample web server configuration files. 
 
@@ -169,8 +160,6 @@ We've enhanced the performance of configurable products in several ways:
 <!---57187-->*  When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when Layout is set to empty. 
 
 <!---57035-->* You can now upload changes to the `robots.txt` file from the Admin panel. 
-
-<!---58654-->* The `magento queue:consumers:start` command now works correctly when you provide the `max-messages` argument.
 
 
 <!---57351-->* We've removed the sample password from the Setup Wizard.
@@ -193,22 +182,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---57197-->* We've eliminated difficulties saving product information when logged in as Admin. Previously, the Product Save feature worked erratically for Admin users. 
 
 
-<!---59397, 60696-->* Custom themes now inherit parent XML configuration information as expected.  
-
-
-
-### Gift cards
-{:.no_toc} 
-
-<!---57054 -->* Order emails now specify the amount of the gift card that you've purchased. 
-
-<!---56932 -->* The Checkout page no longer freezes when you order a virtual gift card using the Authorize.net Payment Action value set to **Authorize and Capture**.
-
-<!---57512-->*  You can now complete the purchase of a gift card in environments where you have set the Braintree payment method Payment Action to **Authorize and Capture**. Previously, any order made under these conditions would remain indefinitely in the processing stage. 
-
-
-
-<!---57353-->* You can now add a gift card with an undefined amount to the Items Ordered table. Previously,  Magento did not permit you to add a gift card of an open value to this table.
+<!---59397-->* Custom themes now inherit parent XML configuration information as expected.  
 
 
 
@@ -294,24 +268,19 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento displayed this error, "Default website not defined" when upgrading because Magento read the list of websites from the database. It now reads from the config file. 
 
-<!---59142-->* Magento now loads initial data after it initializes all components. Previously, Magento indefinitely displayed the spinning widget after initializing all components. 
 
 
 ### Orders
 {:.no_toc} 
 
-<!--- 57681-->* You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a>
 
-<!--- 57715-->* A user can view orders only on stores to which they've been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website. 
-
-<!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
+<!--- 61268, 59424, 56433, 59422--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
 
 	* support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
 
 	* return the product to stock 
 
 	* change order status after a credit memo has been created.
-
 
 <!--- 57077-->* You can now set the customer group when creating a new order from the Admin interface. <a href="https://github.com/magento/magento2/issues/6162" target="_blank">(GITHUB-6162)</a> 
 
@@ -359,7 +328,7 @@ We've improved the performance of these tasks:
 <!---56927-->* Opening many products from the Admin interface
 
 
-<!---55300, 59708-->* Creating many (2500 - 5000) product variants, both simple and complex product types
+<!---59708-->* Creating many (2500 - 5000) product variants, both simple and complex product types
 
 
 <!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a> 
@@ -377,7 +346,7 @@ We've improved the performance of these tasks:
 <!---54704-->* Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the store view level overrode the price set in website scope. <a href="https://github.com/magento/magento2/issues/5133" target="_blank">(GITHUB-5133)
 
 
-<!---55351, 56936 -->*  The list of allowed countries is now configured as part of website scope, not store view scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
+<!---56936 -->*  The list of allowed countries is now configured as part of website scope, not store view scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
 
 
 <!---57001-->* A restricted user can now change storeview- or website- level attributes that are defined within his scope. 
@@ -386,7 +355,6 @@ We've improved the performance of these tasks:
 
 <!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.
 
-<!---60801-->* Magento now correctly applies the Catalog Price Scope attribute when it is set to Global. Previously, website scope values prevailed over global values. 
 
 
 ### Static file processing
@@ -434,6 +402,7 @@ We've improved the performance of these tasks:
 
 <!---59874-->* We've improved the process of using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently.
 
+<!---57039-->* You can now update a product's media gallery through the REST API. 
 
 
 
@@ -540,9 +509,9 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 -->
 
 
-<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346, 59835-->
+<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346, 59835, 58291, 55351 -->
 
-<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341, 60579, 57602 -->
+<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341, 60579, 57602, 57144, 60801 -->
 
 <!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736, 61827, 60780, 61024, 60744, 61731-->
 
