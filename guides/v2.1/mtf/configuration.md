@@ -2,14 +2,14 @@
 layout: default
 group: mtf-guide
 subgroup: 55_Config
-title: Functional Testing Framework Configuration and Structure
+title: Functional Testing Framework Configuration
 menu_title: Configuration
 menu_node: parent
 version: 2.1
 github_link: mtf/configuration.md
 ---
 
-The Functional Testing Framework configuration setting are concentrated in two XML files:
+The Functional Testing Framework configuration setting are located in two XML files:
 
 - `phpunit.xml`
 - `config.xml`
