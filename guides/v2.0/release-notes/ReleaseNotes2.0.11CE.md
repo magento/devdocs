@@ -103,6 +103,9 @@ We address the following functional issues in this release.
 
 <!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento did not save this information, and you encountered an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
 
+<!--- 59172-->*  The **Disable Email Communication** option of **Store > Configuration > Advanced > System > Email Sending Settings** now works as expected. Previously, Magento sent email, even if you disabled this feature. <a href="https://github.com/magento/magento2/issues/5988" target="_blank">(GITHUB-5988)</a>
+
+
 ### General fixes
 {:.no_toc} 
 
@@ -155,6 +158,7 @@ We address the following functional issues in this release.
 <!--- 62032-->* We've fixed an error with an unexpected empty default website during website creation.  
 
 
+<!--- 58498-->* The **Need to Confirm** option on **Stores > Configuration > Customers > Newsletter** now requires a customer to confirm his subsciption. 
 
 
 
@@ -215,6 +219,8 @@ We address the following functional issues in this release.
 
 <!--- 57681-->* You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a>
 
+<!--- 58833-->* We've removed redundancy in the orders comment history display. Previously, Magento would display the time at which the customer entered the comment twice.
+
 
 
 
@@ -226,6 +232,9 @@ We address the following functional issues in this release.
 <!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and displayed this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
 
 <!--- 61561-->* Magento now saves credit card information as expected after a customer checks out using a Braintree credit card with Vault. 
+
+<!--- 58377-->* PayPal Payflow Pro now uses the currency you've specified in your store. Previously, under some conditions, PayPal Payflow Pro defaulted to calculating charges in U.S. dollars, no matter which currency you specified. 
+
 
 
 ### Performance
@@ -254,6 +263,7 @@ We address the following functional issues in this release.
 <!--- 57002-->* A restricted user can now change the attributes (either at the store view or website level) attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
 
 
+ <!--- 60464-->* We've fixed an issue with the scope selector on the Catalog page. Previously, Magento did not display the scope selector when using Mass Actions, but now you can specify the scope of the action that will be applied to the products when using Mass Actions.
 
 ### Static file processing
 {:.no_toc}
