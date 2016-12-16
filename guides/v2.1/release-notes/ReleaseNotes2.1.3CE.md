@@ -16,7 +16,7 @@ github_link: release-notes/ReleaseNotes2.1.3CE.md
 We are pleased to present Magento Community Edition 2.1.3. This release includes many functional enhancements and fixes.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>We republished these Release Notes with clarifications on December 15th, 2016.</p>
+  <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
 </div>
 
 
