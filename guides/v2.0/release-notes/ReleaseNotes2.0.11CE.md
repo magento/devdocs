@@ -60,7 +60,7 @@ We address the following functional issues in this release.
 <!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your shopping cart. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
 
 
-<!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
+<!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you have successfully added a product to your cart.
 
 <!--- 58037-->* You can now reload a page during checkout without unintentionally changing shipping information. 
 
@@ -233,7 +233,7 @@ We address the following functional issues in this release.
 
 <!--- 61561-->* Magento now saves credit card information as expected after a customer checks out using a Braintree credit card with Vault. 
 
-<!--- 58377-->* PayPal Payflow Pro now uses the currency you've specified in your store. Previously, under some conditions, PayPal Payflow Pro defaulted to calculating charges in U.S. dollars, no matter which currency you specified. 
+<!--- 58377-->* PayPal Payflow Pro now uses the currency you have specified in your store. Previously, under some conditions, PayPal Payflow Pro defaulted to calculating charges in U.S. dollars, no matter which currency you specified. 
 
 
 
