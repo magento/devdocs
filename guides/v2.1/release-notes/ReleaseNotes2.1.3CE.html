@@ -8,7 +8,7 @@
 	<title>Magento CE 2.1.3 Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="2016-12-14 (PST)" />
+	<meta http-equiv="last-modified" content="2016-12-16 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
@@ -713,6 +713,10 @@
 
 <p>We are pleased to present Magento Community Edition 2.1.3. This release includes many functional enhancements and fixes.</p>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
+</div>
+
 <h2 id="highlights">Highlights</h2>
 
 <p>Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these highlights:</p>
@@ -744,9 +748,6 @@
   </li>
   <li>
     <p><strong>Management of configurable products with many variations</strong> in the Admin interface without degrading performance.</p>
-  </li>
-  <li>
-    <p><strong>Upgrade to Magento 2.1.3 without issue</strong> when using multiple master databases for checkout, order management, and product data.</p>
   </li>
   <li>
     <p><strong>Successful import or export CSV files with data that contains special symbols</strong> (that is, symbols that are not escaped during file processing).</p>
@@ -799,7 +800,7 @@
 
 <!---56956-->
 <ul>
-  <li>Magento now displays the product add validation message (“Product was added to the cart”) only after you’ve successfully added a product to your cart.</li>
+  <li>Magento now displays the product add validation message (“Product was added to the cart”) only after you have successfully added a product to your cart.</li>
 </ul>
 
 <!---58057-->
@@ -824,7 +825,7 @@
 
 <!---59024-->
 <ul>
-  <li>Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the Ship to field if you refreshed your browser page during this process.</li>
+  <li>Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the <strong>Ship to</strong> field if you refreshed your browser page during this process.</li>
 </ul>
 
 <!---60103-->
@@ -834,12 +835,7 @@
 
 <!---58090-->
 <ul>
-  <li>We’ve corrected a problem with Magento throwing an HTTP ERROR 500 intermittently during checkout.</li>
-</ul>
-
-<!---60143-->
-<ul>
-  <li>You can now successfully create a new checkout agreement. <a href="https://github.com/magento/magento2/issues/7171" target="_blank">(GITHUB-7171)</a></li>
+  <li>We’ve corrected a problem with Magento displaying an HTTP ERROR 500 intermittently during checkout.</li>
 </ul>
 
 <!---57168-->
@@ -851,9 +847,9 @@
 
 <p>We’ve enhanced the performance of configurable products in several ways:</p>
 
-<!---57055/52717-->
+<!---57055-->
 <ul>
-  <li>You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product’s lowest price even after you disabled that price. <a href="https://github.com/magento/magento2/issues/4419" target="_blank">(GITHUB-4419)</a></li>
+  <li>You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product’s lowest price even after you disabled that price.</li>
 </ul>
 
 <!---56998 -->
@@ -861,34 +857,19 @@
   <li>Magento no longer applies one simple product’s special price to another simple product of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a></li>
 </ul>
 
-<!---58291-->
-<ul>
-  <li>Magento no longer displays the “Invalid Form Key” message when you try to save a configurable product with more than fifty options.</li>
-</ul>
-
 <!---54808 -->
 <ul>
   <li>You can now edit a product attribute for multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, and then incorrectly tell you that the products had been edited.</li>
 </ul>
 
-<!---54808-->
-<ul>
-  <li>You can now bulk-edit a product attribute for a configurable product. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, the process saved, completed, and indicated that the products had been edited even though they hadn’t.</li>
-</ul>
-
 <!---60605-->
 <ul>
-  <li>Magento no longer throws an exception when you add a configurable product by SKU if an associated simple product is out-of-stock.</li>
-</ul>
-
-<!---60140-->
-<ul>
-  <li>Magento now correctly displays the status of all child products of a configurable product, even disabled ones. Previously, Magento did not correctly display the status of a configurable product’s child product if the child product were disabled.</li>
+  <li>Magento no longer displays an error when you add a configurable product by SKU if an associated simple product is out-of-stock.</li>
 </ul>
 
 <!---61055-->
 <ul>
-  <li>Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the category page failed to list the product at all, rather than listing it as out-of-stock.</li>
+  <li>Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the category page failed to list the product at all, rather than listing it as out of stock.</li>
 </ul>
 
 <!---57044-->
@@ -915,19 +896,9 @@
   <li>Admin users with restricted permissions can now log in successfully as determined by those permissions. Previously, Magento displayed a fatal error upon login under these conditions.</li>
 </ul>
 
-<!---57144-->
-<ul>
-  <li>You can now assign a blank value to an attribute. <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/4910" target="_blank">(GITHUB-4910)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5485" target="_blank">(GITHUB-5485)</a></li>
-</ul>
-
 <!---55662-->
 <ul>
   <li>We’ve removed the duplicated PHP settings from the sample web server configuration files.</li>
-</ul>
-
-<!---58465-->
-<ul>
-  <li>The order of products in a category display no longer changes when you add a new product to the category.</li>
 </ul>
 
 <!--- 59581-->
@@ -940,11 +911,6 @@
   <li>Magento now displays the <strong>State/Province</strong> field on the Add New Address page. <a href="https://github.com/magento/magento2/issues/5279" target="_blank">(GITHUB-5279)</a></li>
 </ul>
 
-<!---57383-->
-<ul>
-  <li>You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting <strong>Stores &gt; Configuration &gt; Sales &gt; RMA Settings &gt; Enable RMA on Storefront</strong>.</li>
-</ul>
-
 <!---57187-->
 <ul>
   <li>When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when Layout is set to empty.</li>
@@ -953,11 +919,6 @@
 <!---57035-->
 <ul>
   <li>You can now upload changes to the <code>robots.txt</code> file from the Admin panel.</li>
-</ul>
-
-<!---58654-->
-<ul>
-  <li>The <code>magento queue:consumers:start</code> command now works correctly when you provide the <code>max-messages</code> argument.</li>
 </ul>
 
 <!---57351-->
@@ -980,11 +941,6 @@
   <li>Magento now validates the uniqueness of product attribute values as you create or edit them. Previously, you could add identically named values to an attribute. <a href="https://github.com/magento/magento2/issues/4881" target="_blank">(GITHUB-4881)</a></li>
 </ul>
 
-<!---56973-->
-<ul>
-  <li>You can now assign open-ended start and complete dates for product rules. Previously, if you left the start and end date field blanks when creating a rule, Magento would supply the start and end dates based on the save date.</li>
-</ul>
-
 <!---59879-->
 <ul>
   <li>Magento no longer displays the “as low as” label for a disabled price on the Category page.</li>
@@ -995,48 +951,16 @@
   <li>The Magento Framework now makes its dependency upon the <code>zendframework/zend-stdlib</code> library explicit in <code>composer.json</code>.  <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a></li>
 </ul>
 
-<!---57197-->
-<ul>
-  <li>We’ve eliminated difficulties saving product information when logged in as Admin. Previously, the Product Save feature worked erratically for Admin users.</li>
-</ul>
-
-<!---59874-->
-<ul>
-  <li>Magento now successfully saves Product Stock Items whether you used the WebAPI to save or saved from the Admin interface.</li>
-</ul>
-
-<!---59397, 60696-->
+<!---59397-->
 <ul>
   <li>Custom themes now inherit parent XML configuration information as expected.</li>
-</ul>
-
-<h3 class="no_toc" id="gift-cards">Gift cards</h3>
-
-<!---57054 -->
-<ul>
-  <li>Order emails now specify the amount of the gift card that you’ve purchased.</li>
-</ul>
-
-<!---56932 -->
-<ul>
-  <li>The Checkout page no longer freezes when you order a virtual gift card using the Authorize.net Payment Action value set to <strong>Authorize and Capture</strong>.</li>
-</ul>
-
-<!---57512-->
-<ul>
-  <li>You can now complete the purchase of a gift card in environments where you have set the Braintree payment method Payment Action to <strong>Authorize and Capture</strong>. Previously, any order made under these conditions would remain indefinitely in the processing stage.</li>
-</ul>
-
-<!---57353-->
-<ul>
-  <li>You can now add a gift card with an undefined amount to the Items Ordered table. Previously,  Magento did not permit you to add a gift card of an open value to this table.</li>
 </ul>
 
 <h3 class="no_toc" id="images">Images</h3>
 
 <!---55447-->
 <ul>
-  <li>Magento no longer throws an exception when it cannot find a product image file. <a href="https://github.com/magento/magento2/issues/5184" target="_blank">(GITHUB-5184)</a>, <a href="https://github.com/magento/magento2/issues/5497" target="_blank">(GITHUB-5497)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5871" target="_blank">(GITHUB-5871)</a></li>
+  <li>Magento no longer displays an exception when it cannot find a product image file. <a href="https://github.com/magento/magento2/issues/5184" target="_blank">(GITHUB-5184)</a>, <a href="https://github.com/magento/magento2/issues/5497" target="_blank">(GITHUB-5497)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5871" target="_blank">(GITHUB-5871)</a></li>
 </ul>
 
 <!---56944-->
@@ -1083,7 +1007,7 @@
 
 <!---57438-->
 <ul>
-  <li>You can now successfully import images if you set document root to <code>/pub</code>. Previously, you needed to set document root to <code>/magento</code> to import images. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a></li>
+  <li>We’ve added a new way to import images: You can now successfully import images when you set your document root to <your Magento="" install="" dir="">/pub. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work.  <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a></your></li>
 </ul>
 
 <!---57490-->
@@ -1103,11 +1027,6 @@
   <li>We’ve improved the performance of the algorithm that Magento uses to calculate batch sizes while indexing categories.</li>
 </ul>
 
-<!---57470 -->
-<ul>
-  <li>Magento no longer encounters an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  <code>mapper_parsing_exception</code>.</li>
-</ul>
-
 <!---58703-->
 <ul>
   <li>The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and displayed the following error:  “Error 1114: Table is full”.</li>
@@ -1115,29 +1034,9 @@
 
 <h3 class="no_toc" id="installation-upgrade-and-deployment">Installation, upgrade, and deployment</h3>
 
-<!---56397, 58064-->
-<ul>
-  <li>You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data.</li>
-</ul>
-
-<!---58742-->
-<ul>
-  <li>We’ve resolved multiple issues with the upgrade process from 2.0.7 to 2.1.x (for example, editing a category post-upgrade no longer results in a 500 error).</li>
-</ul>
-
 <!---56977-->
 <ul>
   <li>We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete.</li>
-</ul>
-
-<!---60559-->
-<ul>
-  <li>Magento now successfully updates the queue table during upgrade. Previously, Magento omitted the  <code>catalog_product_removed_queue</code> row of the queue table during upgrade from Magento 2.0.x to 2.1.x.</li>
-</ul>
-
-<!---57343-->
-<ul>
-  <li>You can now deploy build processes on a different staging machine than the one you’re running your production environment on.</li>
 </ul>
 
 <!---58312-->
@@ -1155,24 +1054,9 @@
   <li>You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento displayed this error, “Default website not defined” when upgrading because Magento read the list of websites from the database. It now reads from the config file.</li>
 </ul>
 
-<!---59142-->
-<ul>
-  <li>Magento now loads initial data after it initializes all components. Previously, Magento indefinitely displayed the spinning widget after initializing all components.</li>
-</ul>
-
 <h3 class="no_toc" id="orders">Orders</h3>
 
-<!--- 57681-->
-<ul>
-  <li>You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a></li>
-</ul>
-
-<!--- 57715-->
-<ul>
-  <li>A user can view orders only on stores to which they’ve been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website.</li>
-</ul>
-
-<!--- 61268, 59424, 56433-->
+<!--- 61268, 59424, 56433, -->
 <ul>
   <li>
     <p>We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:</p>
@@ -1253,12 +1137,7 @@
 <h3 class="no_toc" id="performance">Performance</h3>
 <p>We’ve improved the performance of these tasks:</p>
 
-<!---56927-->
-<ul>
-  <li>Opening many products from the Admin interface</li>
-</ul>
-
-<!---55300, 59708-->
+<!---59708-->
 <ul>
   <li>Creating many (2500 - 5000) product variants, both simple and complex product types</li>
 </ul>
@@ -1279,12 +1158,8 @@
 </ul>
 
 <h3 class="no_toc" id="scope">Scope</h3>
-<!---54704-->
-<ul>
-  <li>Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the store view level overrode the price set in website scope. <a href="https://github.com/magento/magento2/issues/5133" target="_blank">(GITHUB-5133)</a></li>
-</ul>
 
-<!---55351, 56936 -->
+<!---56936 -->
 <ul>
   <li>The list of allowed countries is now configured as part of website scope, not store view scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a></li>
 </ul>
@@ -1302,11 +1177,6 @@
 <!---59953-->
 <ul>
   <li>The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.</li>
-</ul>
-
-<!---60801-->
-<ul>
-  <li>Magento now correctly applies the Catalog Price Scope attribute when it is set to Global. Previously, website scope values prevailed over global values.</li>
 </ul>
 
 <h3 class="no_toc" id="static-file-processing">Static file processing</h3>
@@ -1363,6 +1233,11 @@
   <li>We’ve improved the process of using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently.</li>
 </ul>
 
+<!---57039-->
+<ul>
+  <li>You can now update a product’s media gallery through the REST API.</li>
+</ul>
+
 <h2 id="breaking-changes">Breaking changes</h2>
 
 <p>We’ve introduced a backward-incompatible change to the <code>Magento_Vault</code> module. We’ve bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with Composer configuration.</p>
@@ -1371,12 +1246,12 @@
 
 <p>This release introduces the <code>Magento\Vault\Block\TokenRendererInterface::getToken</code> method. This method provides details about payment tokens to renderer components, such as public hash (allows to place orders) and available card or account details. Third-party developers can use this method to implement this functionality in their payment integrations.</p>
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 60477, 59309, 60381, 58004, 59376, 59809
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525,  60427, 60479, 60366, 60053,  60898, 60460,  59894, 56142, 61039, 62006,  59309, 60381, 58004, 59376,  62013, 61850
 -->
 
-<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346, 59835-->
+<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346, 59835, 58291, 55351 -->
 
-<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341, 60579, 57602 -->
+<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341, 60579, 57602, 57144, 60801 -->
 
 <!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736, 61827, 60780, 61024, 60744, 61731-->
 

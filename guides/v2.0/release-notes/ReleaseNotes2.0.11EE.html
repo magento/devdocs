@@ -8,7 +8,7 @@
 	<title>Magento EE 2.0.11 Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="2016-12-14 (PST)" />
+	<meta http-equiv="last-modified" content="2016-12-16 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
@@ -883,6 +883,10 @@
 
 			<p>We are pleased to present Magento Enterprise Edition 2.0.11. This release includes many functional fixes and enhancements.</p>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
+</div>
+
 <h2 id="highlights">Highlights</h2>
 <p>Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these highlights:</p>
 
@@ -952,11 +956,6 @@
 <!--- 58058-->
 <ul>
   <li>We’ve resolved an issue that prevented you from adding more than one product from the wishlist to your shopping cart. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a></li>
-</ul>
-
-<!--- 55444-->
-<ul>
-  <li>The Checkout page no longer freezes when you order a virtual gift card using the <strong>Authorize.net Payment Action</strong> value set to <strong>Authorize and Capture</strong>.</li>
 </ul>
 
 <!--- 56955-->
@@ -1043,6 +1042,11 @@
   <li>The <strong>Send Welcome Email From</strong> field now accurately identifies the store that the customer is associated with.</li>
 </ul>
 
+<!--- 59172-->
+<ul>
+  <li>The <strong>Disable Email Communication</strong> option of <strong>Store &gt; Configuration &gt; Advanced &gt; System &gt; Email Sending Settings</strong> now works as expected. Previously, Magento sent email even if you disabled this feature. <a href="https://github.com/magento/magento2/issues/5988" target="_blank">(GITHUB-5988)</a></li>
+</ul>
+
 <h3 class="no_toc" id="general-fixes">General fixes</h3>
 
 <!--- 61354-->
@@ -1105,11 +1109,6 @@
   <li>You can now return to the Magento Admin from the Web Setup Wizard (<strong>System &gt; Tools &gt; Web Setup Wizard</strong>). Previously, you had to log back in to the Magento Admin after you ran the Web Setup Wizard.</li>
 </ul>
 
-<!--- 59398-->
-<ul>
-  <li>Custom themes now inherit parent XML configuration information as expected.</li>
-</ul>
-
 <!--- 57322-->
 <ul>
   <li>Magento no longer redirects users to the Checkout page after login. Now, if you set <strong>Redirect Customer to Account Dashboard after Logging in</strong> value to <strong>Yes</strong>, users will be redirected to the Account Dashboard page. If you set this value to <strong>No</strong>, then users will stay on the home page after login.</li>
@@ -1137,7 +1136,7 @@
 
 <!--- 57352-->
 <ul>
-  <li>We’ve removed the sample password from the Setup wizard.</li>
+  <li>We’ve removed the sampassword from the Setup wizard.</li>
 </ul>
 
 <!--- 57338-->
@@ -1190,11 +1189,16 @@
   <li>We’ve fixed an error with an unexpected empty default website during website creation.</li>
 </ul>
 
+<!--- 58498-->
+<ul>
+  <li>The <strong>Need to Confirm</strong> option on <strong>Stores &gt; Configuration &gt; Customers &gt; Newsletter</strong> now works as expected.</li>
+</ul>
+
 <h3 class="no_toc" id="gift-cards">Gift cards</h3>
 
 <!--- 57513-->
 <ul>
-  <li>You can now complete the purchase of a gift card in environments where you’ve set the Braintree payment method Payment Action to <strong>Authorize and Capture</strong>. Previously, any order made under these conditions would remain indefinitely in the processing stage.</li>
+  <li>You can now complete the purchase of a gift card in environments where you have set the Braintree payment method Payment Action to <strong>Authorize and Capture</strong>. Previously, any order made under these conditions would remain indefinitely in the processing stage.</li>
 </ul>
 
 <!--- 57133-->
@@ -1248,11 +1252,6 @@
 
 <h3 class="no_toc" id="installation-upgrade-and-deployment">Installation, upgrade, and deployment</h3>
 
-<!--- 58065-->
-<ul>
-  <li>You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data.</li>
-</ul>
-
 <!--- 57082-->
 <ul>
   <li>The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension.</li>
@@ -1304,6 +1303,11 @@
   </li>
 </ul>
 
+<!--- 58833-->
+<ul>
+  <li>We’ve removed redundancy in the orders comment history display. Previously, Magento would display the time at which the customer entered the comment twice.</li>
+</ul>
+
 <h3 class="no_toc" id="payment-methods">Payment methods</h3>
 
 <!--- 57099-->
@@ -1314,6 +1318,16 @@
 <!--- 57172 -->
 <ul>
   <li>We’ve fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and displayed this error: “Please  enter a valid credit card expiration date”. <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a></li>
+</ul>
+
+<!--- 61561-->
+<ul>
+  <li>Magento now saves credit card information as expected after a customer checks out using a Braintree credit card with Vault.</li>
+</ul>
+
+<!--- 58377-->
+<ul>
+  <li>PayPal Payflow Pro now uses the currency you have specified in your store. Previously, under some conditions, PayPal Payflow Pro defaulted to calculating charges in U.S. dollars, no matter which currency you specified.</li>
 </ul>
 
 <h3 class="no_toc" id="performance">Performance</h3>
@@ -1362,6 +1376,8 @@
   <li>The scope selector on the Product page now accurately displays all related websites for a restricted user.</li>
 </ul>
 
+<p><!--- 60464-->* We’ve fixed an issue with the scope selector on the Catalog page. Previously, Magento did not display the scope selector when using Mass Actions, but now you can specify the scope of the action that will be applied to the products when using Mass Actions.</p>
+
 <h3 class="no_toc" id="static-file-processing">Static file processing</h3>
 
 <!--- 56076-->
@@ -1379,11 +1395,6 @@
 <!--- 57066-->
 <ul>
   <li>The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.</li>
-</ul>
-
-<!--- 59315-->
-<ul>
-  <li>We’ve fixed an issue where updating product stock did not persist correctly when saving products through either the web API or directly in the repository.</li>
 </ul>
 
 <h2 id="known-issues">Known issues</h2>
@@ -1414,13 +1425,13 @@
   </li>
 </ul>
 
-<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323, 61877, 61881 -->
+<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323, 61877, 61881, 61887, 62019, 62020, 61927, 61889, 61163 -->
 
-<!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803, 61975 -->
+<!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803, 61975, 55444 -->
 
-<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172, 61959 -->
+<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172, 61959, 59398 -->
 
-<!---  WON'T FIX 58853, 58798, 57105, 57802, 58083, 58900, 58611, 57311, 56916, 59370, 57510, 61242, 61339, 59414, 59408, 57330, 59411, 56958 -->
+<!---  WON'T FIX 58853, 58798, 57105, 57802, 58083, 58900, 58611, 57311, 56916, 59370, 57510, 61242, 61339, 59414, 59408, 57330, 59411, 56958, 58065 -->
 
 <!---  DUPLICATE 59410, 58085, 57095, 59558, 58095, 61149, 58095, 61254 -->
 

@@ -8,7 +8,7 @@
 	<title>Magento CE 2.0.11 Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="2016-12-14 (PST)" />
+	<meta http-equiv="last-modified" content="2016-12-16 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
@@ -883,15 +883,16 @@
 
 			<p>We are pleased to present Magento Community Edition 2.0.11.</p>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
+</div>
+
 <h2 id="highlights">Highlights</h2>
 <p>Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these highlights:</p>
 
 <ul>
   <li>
     <p><strong>Management of configurable products with many variations</strong> in the Magento Admin interface without degrading performance.</p>
-  </li>
-  <li>
-    <p><strong>Upgrade to Magento 2.0.11 without issue</strong> when using multiple master databases for checkout, order management, and product data.</p>
   </li>
   <li>
     <p><strong>Successful import or export CSV files with data that contains special symbols</strong> (that is, symbols that are not escaped during file processing, such as <i>,</i> or <i>|</i>).</p>
@@ -934,11 +935,6 @@
   <li>Magento no longer displays the spinning loader widget after you click the <strong>Place Order</strong> button. Previously, Magento displayed the spinning loader, even after you’d successfully placed an order.</li>
 </ul>
 
-<!--- 61127-->
-<ul>
-  <li>Magento now indicates that a product is out-of-stock if you disable it. Previously, Magento did not display the name of an out-of-stock product at all.</li>
-</ul>
-
 <!--- 59211-->
 <ul>
   <li>The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a></li>
@@ -956,7 +952,7 @@
 
 <!--- 56955-->
 <ul>
-  <li>Magento now displays the product add validation message (“Product was added to the cart”) only after you’ve successfully added a product to your cart.</li>
+  <li>Magento now displays the product add validation message (“Product was added to the cart”) only after you have successfully added a product to your cart.</li>
 </ul>
 
 <!--- 58037-->
@@ -983,7 +979,7 @@
 
 <!--- 59050-->
 <ul>
-  <li>You can now successfully reorder a configurable product. Previously, if you created an order that includes multiple products, one of which is a reorder, options for these products were confused. <a href="https://github.com/magento/magento2/issues/3654" target="_blank">(GITHUB-3654)</a>, <a href="https://github.com/magento/magento2/issues/3820" target="_blank">(GITHUB-3820)</a></li>
+  <li>You can now successf==ully reorder a configurable product. Previously, if you created an order that includes multiple products, one of which is a reorder, options for these products were confused. <a href="https://github.com/magento/magento2/issues/3654" target="_blank">(GITHUB-3654)</a>, <a href="https://github.com/magento/magento2/issues/3820" target="_blank">(GITHUB-3820)</a></li>
 </ul>
 
 <!--- 58793-->
@@ -1038,6 +1034,11 @@
   <li>You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento did not save this information, and you encountered an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a></li>
 </ul>
 
+<!--- 59172-->
+<ul>
+  <li>The <strong>Disable Email Communication</strong> option of <strong>Store &gt; Configuration &gt; Advanced &gt; System &gt; Email Sending Settings</strong> now works as expected. Previously, Magento sent email even if you disabled this feature. <a href="https://github.com/magento/magento2/issues/5988" target="_blank">(GITHUB-5988)</a></li>
+</ul>
+
 <h3 class="no_toc" id="general-fixes">General fixes</h3>
 
 <!--- 59503-->
@@ -1065,11 +1066,6 @@
   <li>Magento now decrements stock as expected in a multi-website environment.</li>
 </ul>
 
-<!--- 55682-->
-<ul>
-  <li>The catalog category now retrieves prices from the price index update as expected.</li>
-</ul>
-
 <!--- 56001-->
 <ul>
   <li>The search field now works as expected on iOS devices using the Safari browser. Previously on these devices, the search box closed randomly.</li>
@@ -1088,11 +1084,6 @@
 <!--- 57134-->
 <ul>
   <li>You can now return to the Magento Admin from the Web Setup Wizard (<strong>System &gt; Tools &gt; Web Setup Wizard</strong>). Previously, you had to log back in to the Magento Admin after you ran the Web Setup Wizard.</li>
-</ul>
-
-<!--- 59398-->
-<ul>
-  <li>Custom themes now inherit parent XML configuration information as expected.</li>
 </ul>
 
 <!--- 57322-->
@@ -1140,9 +1131,14 @@
   <li>You can now upload changes to the <code>robots.txt</code> file from the Magento Admin.</li>
 </ul>
 
-<!--- 62030-->
+<!--- 62032-->
 <ul>
-  <li>Users need view permission to the store to which the customers belong in order to see information about those customers. Previously, a user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view.</li>
+  <li>We’ve fixed an error with an unexpected empty default website during website creation.</li>
+</ul>
+
+<!--- 58498-->
+<ul>
+  <li>The <strong>Need to Confirm</strong> option on <strong>Stores &gt; Configuration &gt; Customers &gt; Newsletter</strong> now requires a customer to confirm his subsciption.</li>
 </ul>
 
 <h3 class="no_toc" id="images">Images</h3>
@@ -1211,9 +1207,14 @@
   <li>Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: “Duplicate key on write or update”. <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a></li>
 </ul>
 
+<!--- 61178-->
+<ul>
+  <li>We’ve fixed an issue with how information in the <code>sales_order_item</code> attribute is handled after upgrade.</li>
+</ul>
+
 <h3 class="no_toc" id="orders">Orders</h3>
 
-<!--- 61268, 59424, 56433-->
+<!--- 61268, 56433-->
 <ul>
   <li>
     <p>We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:</p>
@@ -1237,9 +1238,9 @@
   <li>You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a></li>
 </ul>
 
-<!--- 57715-->
+<!--- 58833-->
 <ul>
-  <li>A user can view orders only on stores to which they’ve been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website.</li>
+  <li>We’ve removed redundancy in the orders comment history display. Previously, Magento would display the time at which the customer entered the comment twice.</li>
 </ul>
 
 <h3 class="no_toc" id="payment-methods">Payment methods</h3>
@@ -1254,9 +1255,19 @@
   <li>We’ve fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and displayed this error: “Please  enter a valid credit card expiration date”. <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a></li>
 </ul>
 
+<!--- 61561-->
+<ul>
+  <li>Magento now saves credit card information as expected after a customer checks out using a Braintree credit card with Vault.</li>
+</ul>
+
+<!--- 58377-->
+<ul>
+  <li>PayPal Payflow Pro now uses the currency you have specified in your store. Previously, under some conditions, PayPal Payflow Pro defaulted to calculating charges in U.S. dollars, no matter which currency you specified.</li>
+</ul>
+
 <h3 class="no_toc" id="performance">Performance</h3>
 
-<!--- 60187, 55785,59394, 57894, 55300 -->
+<!--- 60187, 55785,59394, 57894 -->
 <ul>
   <li>
     <p>We’ve improved the performance of these tasks:</p>
@@ -1295,33 +1306,13 @@
   <li>A restricted user can now change the attributes (either at the store view or website level) attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set.</li>
 </ul>
 
-<!--- 57004-->
-<ul>
-  <li>The scope selector on the Product page now accurately displays all related websites for a restricted user.</li>
-</ul>
+<p><!--- 60464-->* We’ve fixed an issue with the scope selector on the Catalog page. Previously, Magento did not display the scope selector when using Mass Actions, but now you can specify the scope of the action that will be applied to the products when using Mass Actions.</p>
 
 <h3 class="no_toc" id="static-file-processing">Static file processing</h3>
-
-<!--- 56076-->
-<ul>
-  <li>Versioning of static files (including CSS, JavaScript, fonts, and images) is now enabled by default.</li>
-</ul>
 
 <!---59547-->
 <ul>
   <li>Static asset signing now works under nginx. For more information, see <a href="http://docs.magento.com/m2/ce/user_guide/system/static-file-signature.html" target="_blank">Using Static File Signatures</a>.</li>
-</ul>
-
-<h3 class="no_toc" id="web-apis">Web APIs</h3>
-
-<!--- 57066-->
-<ul>
-  <li>The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.</li>
-</ul>
-
-<!--- 59315-->
-<ul>
-  <li>We’ve fixed an issue where updating product stock did not persist correctly when saving products through either the web API or directly in the repository.</li>
 </ul>
 
 <h2 id="known-issues">Known issues</h2>
@@ -1352,11 +1343,11 @@
   </li>
 </ul>
 
-<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323 -->
+<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292,  57562, 59716, 58323, 61877, 62020, 62019 -->
 
 <!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803 -->
 
-<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172 -->
+<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172, 59398 -->
 
 <!---  WON'T FIX 58853, 58798, 57105, 57802, 58083, 58900, 58611, 57311, 56916, 59370, 57510, 61242, 61339, 59414, 59408, 57330, 59411, 56958 -->
 

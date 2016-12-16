@@ -8,7 +8,7 @@
 	<title>Magento EE 2.1.3 Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="2016-12-14 (PST)" />
+	<meta http-equiv="last-modified" content="2016-12-16 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
@@ -713,6 +713,10 @@
 
 <p>We are pleased to present Magento Enterprise Edition 2.1.3. This release includes many functional fixes and enhancements.</p>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
+</div>
+
 <h2 id="highlights">Highlights</h2>
 
 <p>Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these highlights:</p>
@@ -798,7 +802,7 @@
 
 <!---56956-->
 <ul>
-  <li>Magento now displays the product add validation message (“Product was added to the cart”) only after you’ve successfully added a product to your cart.</li>
+  <li>Magento now displays the product add validation message (“Product was added to the cart”) only after you have successfully added a product to your cart.</li>
 </ul>
 
 <!---58057-->
@@ -836,11 +840,6 @@
   <li>We’ve corrected a problem with Magento throwing an HTTP ERROR 500 intermittently during checkout.</li>
 </ul>
 
-<!---60143-->
-<ul>
-  <li>You can now successfully create a new checkout agreement. <a href="https://github.com/magento/magento2/issues/7171" target="_blank">(GITHUB-7171)</a></li>
-</ul>
-
 <!---57168-->
 <ul>
   <li>We fixed a JavaScript error that occurred on the Checkout page after you changed the country in the <strong>Estimate Shipping and Tax</strong> field.</li>
@@ -850,19 +849,14 @@
 
 <p>We’ve enhanced the performance of configurable products in several ways:</p>
 
-<!---57055/52717-->
+<!---57055-->
 <ul>
-  <li>You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product’s lowest price even after you disabled that price. <a href="https://github.com/magento/magento2/issues/4419" target="_blank">(GITHUB-4419)</a></li>
+  <li>You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product’s lowest price even after you disabled that price.</li>
 </ul>
 
 <!---56998 -->
 <ul>
   <li>Magento no longer applies one simple product’s special price to another simple product of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a></li>
-</ul>
-
-<!---58291-->
-<ul>
-  <li>Magento no longer displays the “Invalid Form Key” exception when you try to save a configurable product with more than fifty options.</li>
 </ul>
 
 <!---54808 -->
@@ -873,11 +867,6 @@
 <!---60605-->
 <ul>
   <li>Magento no longer throws an exception when you add a configurable product by SKU if an associated simple product is out-of-stock.</li>
-</ul>
-
-<!---60140-->
-<ul>
-  <li>Magento now correctly displays the status of all child products of a configurable product, even disabled ones. Previously, Magento did not correctly display the status of a configurable product’s child product if the child product were disabled.</li>
 </ul>
 
 <!---61055-->
@@ -912,11 +901,6 @@
 <!--- 55184 -->
 <ul>
   <li>You can now select and add a category to a Cart Price rule. Previously, Magento displayed this error: “Uncaught ReferenceError: sales_rule_form is not defined”, and did not add the selected category to the condition. <a href="https://github.com/magento/magento2/issues/5526" target="_blank">(GITHUB-5526)</a></li>
-</ul>
-
-<!---57144-->
-<ul>
-  <li>You can now assign a blank value to an attribute. <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/4910" target="_blank">(GITHUB-4910)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5485" target="_blank">(GITHUB-5485)</a></li>
 </ul>
 
 <!---55662-->
@@ -1004,7 +988,7 @@
   <li>We’ve eliminated difficulties saving product information when logged in as Admin. Previously, the Product Save feature worked erratically for Admin users.</li>
 </ul>
 
-<!---59397, 60696-->
+<!---59397-->
 <ul>
   <li>Custom themes now inherit parent XML configuration information as expected.</li>
 </ul>
@@ -1013,7 +997,7 @@
 
 <!---57054 -->
 <ul>
-  <li>Order emails now specify the amount of the gift card that you’ve purchased.</li>
+  <li>Order emails now specify the amount of the gift card that you have purchased.</li>
 </ul>
 
 <!---56932 -->
@@ -1082,7 +1066,7 @@
 
 <!---57438-->
 <ul>
-  <li>You can now successfully import images if you set document root to <code>/pub</code>. Previously, you needed to set document root to <code>/magento</code> to import images. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a></li>
+  <li>We’ve added a new way to import images: You can now successfully import images when you set your document root to <your Magento="" install="" dir="">/pub. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work.  <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a></your></li>
 </ul>
 
 <!---57490-->
@@ -1104,7 +1088,7 @@
 
 <!---57470 -->
 <ul>
-  <li>Magento no longer displayed an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  <code>mapper_parsing_exception</code>.</li>
+  <li>Magento no longer displays an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  <code>mapper_parsing_exception</code>.</li>
 </ul>
 
 <!---58703-->
@@ -1154,22 +1138,7 @@
   <li>You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento displayed this error, “Default website not defined” when upgrading because Magento read the list of websites from the database. It now reads from the config file.</li>
 </ul>
 
-<!---59142-->
-<ul>
-  <li>Magento now loads initial data after it initializes all components. Previously, Magento indefinitely displayed the spinning widget after initializing all components.</li>
-</ul>
-
 <h3 class="no_toc" id="orders">Orders</h3>
-
-<!--- 57681-->
-<ul>
-  <li>You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a></li>
-</ul>
-
-<!--- 57715-->
-<ul>
-  <li>A user can view orders only on stores to which they’ve been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website.</li>
-</ul>
 
 <!--- 61268, 59424, 56433, 59422-->
 <ul>
@@ -1257,7 +1226,7 @@
   <li>Opening many products from the Admin interface</li>
 </ul>
 
-<!---55300, 59708-->
+<!---59708-->
 <ul>
   <li>Creating many (2500 - 5000) product variants, both simple and complex product types</li>
 </ul>
@@ -1281,7 +1250,7 @@
   <li>Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the store view level overrode the price set in website scope. <a href="https://github.com/magento/magento2/issues/5133" target="_blank">(GITHUB-5133)</a></li>
 </ul>
 
-<!---55351, 56936 -->
+<!---56936 -->
 <ul>
   <li>The list of allowed countries is now configured as part of website scope, not store view scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a></li>
 </ul>
@@ -1301,17 +1270,7 @@
   <li>The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.</li>
 </ul>
 
-<!---60801-->
-<ul>
-  <li>Magento now correctly applies the Catalog Price Scope attribute when it is set to Global. Previously, website scope values prevailed over global values.</li>
-</ul>
-
 <h3 class="no_toc" id="staging">Staging</h3>
-
-<!---51776-->
-<ul>
-  <li>During Web Setup Wizard installation, in Step 4: Customize Your Store, you cannot use Advanced Modules Configuration to manually unselect Staging-related modules (for example, <code>Magento_CmsStaging</code>). (Note: Modules that have dependencies and should not be disabled are grayed out in the interface.)</li>
-</ul>
 
 <!---57346-->
 <ul>
@@ -1384,14 +1343,14 @@
 
 <p>This release introduces the <code>Magento\Vault\Block\TokenRendererInterface::getToken</code> method. This method provides details about payment tokens to renderer components, such as public hash and available card or account details. Third-party developers can use this method to implement this functionality in their payment integrations.</p>
 
-<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 60477, 59309, 60381, 58004, 59376, 59809
+<!---INTERNAL ONLY: 59791, 59678, 59645, 56585, 57593, 60536, 60060, 60062, 60064, 59873, 60348, 60471, 60561, 59675, 60289, 60525, 60554, 60427, 60479, 60366, 60053, 58359, 60898, 60460, 57375, 59894, 56142, 61039, 62006, 60477, 59309, 60381, 58004, 59376, 59809, 62013, 61850
 -->
 
-<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346, 59835-->
+<!---DUPLICATE: 55974, 55853, 56929, 57507, 58829, 60457, 61346, 59835, 58291-->
 
-<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341, 60579, 57602 -->
+<!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341, 60579, 57602, 57144, 60801 -->
 
-<!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736, 61827, 60780, 61024, 60744, 61731-->
+<!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736, 61827, 60780, 61024, 60744, 61731, 60696-->
 
 <h2 id="known-issues">Known issues</h2>
 
