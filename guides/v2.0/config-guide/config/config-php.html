@@ -1446,57 +1446,70 @@
 </section>
 
 			<h2 id="config-php-overview">Purpose of the deployment configuration</h2>
-<p>Magento's deployment configuration consists of the module and environmental configuration for your installation. Magento's deployment configuration is divided between:</p>
-<ul><li><code>&lt;base dir&gt;/app/etc/config.php</code>, which contains the list of installed modules</li>
-	<li><code>&lt;base dir&gt;/app/etc/env.php</code>, which contains environment settings, such as:
-		<ul><li>Database credentials and connection settings</li>
-			<li>Cache storage settings</li>
-			<li>Enabled cache types</li>
-			<li>Your encryption key</li>
-			<li>Web routing parameters (base URLs, URL path to Magento Admin)</li>
-			<li>File system paths</li></ul>
-		</li>
-	</ul>
+<div>
 
-<p>Together, they are referred to as Magento's <em>deployment configuration</em> because they are created during installation and are required to start Magento.</p>
+  <p>Magento’s deployment configuration consists of the module and environmental configuration for your installation. Magento’s deployment configuration is divided between:</p>
 
-<div class="bs-callout bs-callout-info" id="info">
+  <ul>
+    <li><code>&lt;Magento base dir&gt;/app/etc/config.php</code>, which contains the list of installed modules, themes, and language packages</li>
+    <li>
+      <p><code>&lt;Magento base dir&gt;/app/etc/env.php</code>, which contains environment settings, such as:</p>
+
+      <ul>
+        <li>Database credentials and connection settings</li>
+        <li>
+          <p>Cache storage settings</p>
+
+          <ul>
+            <li>Enabled cache types</li>
+            <li>Your encryption key</li>
+            <li>Web routing parameters (base URLs, Magento Admin URI)</li>
+            <li>File system paths</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>Together, <code>config.php</code> and <code>env.php</code> are referred to as Magento’s <em>deployment configuration</em> because they are created during installation and are required to start Magento.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
   <p>The Magento 2 deployment configuration replaces <code>local.xml</code> in Magento 1.x.</p>
 </div>
 
-<p>Unlike other <a href="/guides/v2.0/config-guide/config/config-files.html">module configuration files</a>, Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (<code>config.php</code> and <code>env.php</code> are merged with each other, however.)</p>
+  <p>Unlike other <a href="/guides/v2.0/config-guide/config/config-files.html">module configuration files</a>, Magento’s deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (<code>config.php</code> and <code>env.php</code> are merged with each other, however.)</p>
 
-<h2 id="config-php-contents">Details about the deployment configuration</h2>
-<p><code>config.php</code> and <code>env.php</code> are PHP files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.</p>
+  <h2 id="config-php-contents">Details about the deployment configuration</h2>
+  <p><code>config.php</code> and <code>env.php</code> are PHP files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.</p>
 
-<p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework.</p>
+  <p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework.</p>
 
-<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
+  <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
 
-<p>On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules’ configuration files, with the exception of disabled modules.</p>
+  <p>On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules’ configuration files, with the exception of disabled modules.</p>
 
-<p>The following sections discusses the structure and contents of the deployment configuration—<code>config.php</code> and <code>env.php</code>.</p>
+  <p>The following sections discusses the structure and contents of the deployment configuration—<code>config.php</code> and <code>env.php</code>.</p>
 
-<ul>
-  <li><a href="#config-php-contents-config-php">Manage installed modules</a></li>
-  <li><a href="#config-php-contents-env-php">Environmental configuration</a></li>
-</ul>
+  <ul>
+    <li><a href="#config-php-contents-config-php">Manage installed modules</a></li>
+    <li><a href="#config-php-contents-env-php">Environmental configuration</a></li>
+  </ul>
 
-<h3 id="config-php-contents-config-php">Manage installed modules</h3>
-<p><code>config.php</code> lists your installed components (modules, themes, and language packages). Magento provides both command-line and web-based utilities to manage components (install, uninstall, enable, disable, or upgrade).</p>
+  <h3 id="config-php-contents-config-php">Manage installed modules</h3>
+  <p><code>config.php</code> lists your installed components (modules, themes, and language packages). Magento provides both command-line and web-based utilities to manage components (install, uninstall, enable, disable, or upgrade).</p>
 
-<p>Examples:</p>
+  <p>Examples:</p>
 
-<ul>
-  <li>Uninstall components: <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a></li>
-  <li>Enable or disable components: <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.</li>
-  <li><a href="/guides/v2.0/comp-mgr/module-man/compman-main-pg.html">Component Manager</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">System Upgrade</a></li>
-</ul>
+  <ul>
+    <li>Uninstall components: <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a></li>
+    <li>Enable or disable components: <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.</li>
+    <li><a href="/guides/v2.0/comp-mgr/module-man/compman-main-pg.html">Component Manager</a></li>
+    <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">System Upgrade</a></li>
+  </ul>
 
-<p><code>config.php</code> snippet:</p>
+  <p><code>config.php</code> snippet:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
+  <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
   <span class="s1">&#39;modules&#39;</span> <span class="o">=&gt;</span>
   <span class="k">array</span> <span class="p">(</span>
     <span class="s1">&#39;Magento_Core&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
@@ -1512,16 +1525,16 @@
   <span class="p">),</span>
 <span class="p">);</span></code></pre></figure>
 
-<p>The value <code>1</code> or <code>0</code> indicates whether a module is enabled or disabled.</p>
+  <p>The value <code>1</code> or <code>0</code> indicates whether a module is enabled or disabled.</p>
 
-<p>Disabled modules are not recognized by the Magento application; in other words, they don’t participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the storefront or Admin and don’t affect routing.</p>
+  <p>Disabled modules are not recognized by the Magento application; in other words, they don’t participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the storefront or Admin and don’t affect routing.</p>
 
-<p>The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.</p>
+  <p>The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.</p>
 
-<h3 id="config-php-contents-env-php">Environmental configuration</h3>
-<p>The following table provides details about each <code>env.php</code> segment and its structure.</p>
+  <h3 id="config-php-contents-env-php">Environmental configuration</h3>
+  <p>The following table provides details about each <code>env.php</code> segment and its structure.</p>
 
-<table>
+  <table>
   <tbody>
     <tr>
       <th>Segment</th>
@@ -1591,8 +1604,9 @@
   </tbody>
 </table>
 
-<h4 id="related-topic">Related topic</h4>
-<p><a href="/guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></p>
+  <h4 id="related-topic">Related topic</h4>
+  <p><a href="/guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></p>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->
