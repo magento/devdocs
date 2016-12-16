@@ -468,7 +468,7 @@ The service returns an identifier of a created Credit Memo.
 {% collapsible Click to show/hide a code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Api/RefundInvoiceInterface.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Api/RefundInvoiceInterface.php %}
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -480,7 +480,7 @@ The service returns an identifier of a created Credit Memo.
 {% collapsible Click to show/hide a code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Model/RefundInvoice.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Model/RefundInvoice.php %}
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -749,7 +749,7 @@ The service returns an identifier of a created Credit Memo.
 {% collapsible Click to show/hide a code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Api/RefundOrderInterface.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Api/RefundOrderInterface.php %}
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -761,7 +761,7 @@ The service returns an identifier of a created Credit Memo.
 {% collapsible Click to show/hide a code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Model/RefundOrder.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Model/RefundOrder.php %}
 {% endhighlight %}
 
 {% endcollapsible %}
