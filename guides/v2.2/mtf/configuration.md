@@ -14,7 +14,7 @@ The Functional Testing Framework configuration setting are located in two XML fi
 - `phpunit.xml`
 - `config.xml`
 
-### `phpunit.xml` {#phpunit_xml}
+## `phpunit.xml` {#phpunit_xml}
 
 `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings for test execution. Blocks of settings are described in [PHPUnit documentation], except `<php>` that contains parameters described in the following table.
 
@@ -110,7 +110,7 @@ The Functional Testing Framework configuration setting are located in two XML fi
 </tbody>
 </table>
 
-### `config.xml` {#config_xml}
+## `config.xml` {#config_xml}
 
 The FTF configuration settings are declared and specified in two places:
 
@@ -155,7 +155,7 @@ Settings are grouped into the following blocks:
 - [`<handler>`]
 - [`<install>`] (set in Magento functional tests only)
 
-#### `<application>` {#application}
+### `<application>` {#application}
 
 **Description:** Application configuration settings.
 
@@ -167,7 +167,7 @@ Settings are grouped into the following blocks:
 |`<appBackendUrl>`|Base URL of the Magento Admin. Not applicable currently.|
 |`<backendLoginUrl>`|Relative path to the Magento Admin login page.|
 
-#### `<isolation>` {#isolation}
+### `<isolation>` {#isolation}
 
 **Description:** Settings of a script to be run during functional testing.
 
@@ -185,7 +185,7 @@ Values description:
 - `after` - run after the entity to which it concerns
 - `both` - run before and after the entity to which it concerns
 
-#### `<server>` {#server}
+### `<server>` {#server}
 
 **Description:** Selenium server settings. [Open settings declarations in Selenium repository][Open Selenium code]
 
@@ -199,12 +199,12 @@ Values description:
 |`seleniumServerRequestsTimeout`|A specified period of time to process a request.| |
 |`sessionStrategy`|Standard Selenium Server parameter that sets a session strategy. Recommended to use `"shared"` only.|`"shared"`, `"isolated"`|
 
-##### **&lt;desiredCapabilities&gt;**
+#### **&lt;desiredCapabilities&gt;**
 
 [Learn about desiredCapabilities in Selenium official documentation.][desiredCapabilities]
 
 
-#### **&lt;handler&gt;** {#handler}
+### **&lt;handler&gt;** {#handler}
 
 Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value 0. `token` contains access token (used by WebAPI handlers only). [Learn more about handlers.][handler]
 
@@ -214,7 +214,7 @@ Specifies priorities for different types of handler. The less the value, the hig
 |`<curl>`|`priority` value of a curl handler priority.|Integer|
 |`<ui>`|`priority` value of a UI handler priority.|Integer|
 
-#### **&lt;install&gt;** {#install}
+### **&lt;install&gt;** {#install}
 
 Set of parameters used for [installation test case].
 
