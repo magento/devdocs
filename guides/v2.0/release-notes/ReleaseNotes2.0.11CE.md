@@ -12,7 +12,7 @@ github_link: release-notes/ReleaseNotes2.0.11CE.md
 We are pleased to present Magento Community Edition 2.0.11. 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>We republished these Release Notes with clarifications on December 15th, 2016.</p>
+  <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
 </div>
 
 
@@ -52,7 +52,6 @@ We address the following functional issues in this release.
 
 <!--- 61249-->* Magento no longer displays the spinning loader widget after you click the **Place Order** button. Previously, Magento displayed the spinning loader, even after you'd successfully placed an order. 
 
-<!--- 61127-->* Magento now indicates that a product is out-of-stock if you disable it. Previously, Magento did not display the name of an out-of-stock product at all. 
 
 <!--- 59211-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a> 
 
@@ -120,7 +119,6 @@ We address the following functional issues in this release.
 
 <!--- 59449-->* Magento now decrements stock as expected in a multi-website environment. 
 
-<!--- 55682-->* The catalog category now retrieves prices from the price index update as expected. 
 
 <!--- 56001-->* The search field now works as expected on iOS devices using the Safari browser. Previously on these devices, the search box closed randomly. 
 
@@ -152,8 +150,6 @@ We address the following functional issues in this release.
 
 
 <!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 
-
-<!--- 62030-->* Users need view permission to the store to which the customers belong in order to see information about those customers. Previously, a user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view. 
 
 
 <!--- 62032-->* We've fixed an error with an unexpected empty default website during website creation.  
@@ -209,7 +205,7 @@ We address the following functional issues in this release.
 ### Orders
 {:.no_toc} 
 
-<!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
+<!--- 61268, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
 
 	* support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
 
@@ -219,7 +215,6 @@ We address the following functional issues in this release.
 
 <!--- 57681-->* You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a>
 
-<!--- 57715-->* A user can view orders only on stores to which they've been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website. 
 
 
 
@@ -258,24 +253,15 @@ We address the following functional issues in this release.
 
 <!--- 57002-->* A restricted user can now change the attributes (either at the store view or website level) attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
 
-<!--- 57004-->* The scope selector on the Product page now accurately displays all related websites for a restricted user. 
 
 
 ### Static file processing
 {:.no_toc}
 
-<!--- 56076-->* Versioning of static files (including CSS, JavaScript, fonts, and images) is now enabled by default.
 
 <!---59547-->* Static asset signing now works under nginx. For more information, see <a href="http://docs.magento.com/m2/ce/user_guide/system/static-file-signature.html" target="_blank">Using Static File Signatures</a>.
 
 
-
-
-### Web APIs
-{:.no_toc} 
-
-
-<!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.
 
 
 
@@ -330,7 +316,7 @@ We address the following functional issues in this release.
 
 
 
-<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323, 61877, 62020, 62019 -->
+<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292,  57562, 59716, 58323, 61877, 62020, 62019 -->
 
 
 <!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803 -->
