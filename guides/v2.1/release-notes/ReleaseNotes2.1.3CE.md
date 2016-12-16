@@ -79,7 +79,7 @@ We address the following functional issues in this release.
 
 <!---57497-->* Lengthy Order Status tables are now paginated as expected. 
 
-<!---56956-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
+<!---56956-->* Magento now displays the product add validation message ("Product was added to the cart") only after you have successfully added a product to your cart.
 
 <!---58057-->* We've resolved an issue that prevented you from adding more than one product to a shopping cart from a wishlist. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
 

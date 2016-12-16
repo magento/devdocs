@@ -78,7 +78,7 @@ We address the following functional fixes and enhancements in this release.
 
 <!---57497-->* Lengthy Order Status tables are now paginated as expected. 
 
-<!---56956-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
+<!---56956-->* Magento now displays the product add validation message ("Product was added to the cart") only after you have successfully added a product to your cart.
 
 <!---58057-->* We've resolved an issue that prevented you from adding more than one product to a shopping cart from a wishlist. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
 
@@ -189,7 +189,7 @@ We've enhanced the performance of configurable products in several ways:
 ### Gift cards
 {:.no_toc} 
 
-<!---57054 -->* Order emails now specify the amount of the gift card that you've purchased. 
+<!---57054 -->* Order emails now specify the amount of the gift card that you have purchased. 
 
 <!---56932 -->* The Checkout page no longer freezes when you order a virtual gift card using the Authorize.net Payment Action value set to **Authorize and Capture**.
 
