@@ -1,14 +1,14 @@
-config-varnish-configure.md
-<h2 id="config-varnish-config-var">Configure Varnish and your web server</h2>
-The following sections discuss how to configure your web server and Magento to use Varnish:
-
-*	<a href="#config-varnish-config-web">Configure your web server</a>
-*	<a href="#config-varnish-config-sysvcl">Modify the Varnish system configuration</a>
-*	<a href="#config-varnish-config-default">Modify <code>default.vcl</code></a>
-*	<a href="#config-varnish-verify">Verify Varnish is working</a>
-*	<a href="#config-varnish-install">Install the Magento 2 software</a>
-*	<a href="#config-varnish-verify-headers">Verify HTTP response headers</a>
-
+---
+layout: default
+group: config-guide
+subgroup: 09_Varnish
+title: Configure Varnish and your web server
+menu_title: Configure Varnish and your web server
+menu_order: 10
+menu_node:
+version: 2.2
+github_link: config-guide/varnish/config-varnish-configure.md
+---
 
 <h2 id="config-varnish-config-web">Configure your web server</h2>
 Configure your web server to listen on a port other than the default port 80 because Varnish responds directly to incoming HTTP requests, not the web server.

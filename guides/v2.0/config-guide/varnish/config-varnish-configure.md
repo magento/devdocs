@@ -5,13 +5,12 @@ subgroup: 09_Varnish
 title: Configure Varnish and your web server
 menu_title: Configure Varnish and your web server
 menu_order: 10
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/varnish/config-varnish-configure.md
 ---
-
 <h2 id="config-varnish-config-web">Configure your web server</h2>
-Configure your web server to listen on a port other than the default port 80 because Varnish responds directly to incoming HTTP requests, not the web server. 
+Configure your web server to listen on a port other than the default port 80 because Varnish responds directly to incoming HTTP requests, not the web server.
 
 In the sections that follow, we use port 8080 as an example.
 
@@ -66,9 +65,9 @@ To minimally configure Varnish:
 	      .port = "80";
 		}
 
-4.	Replace the value of `.host` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate. 
+4.	Replace the value of `.host` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate.
 
-	Typically, this is your web server. 
+	Typically, this is your web server.
 
 	<a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="_blank">More information</a>
 5.	Replace the value of `.port` with the web server's listen port (8080 in this example).
@@ -76,14 +75,14 @@ To minimally configure Varnish:
 	Example: Apache is installed on host 192.0.2.55 and Apache is listening on port 8080:
 
 		backend default {
-	      .host = "192.0.2.55"; 
+	      .host = "192.0.2.55";
 	      .port = "8080";
-		}		
+		}
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<p>If Varnish and Apache are running on the same host, we recommend you use an IP address or host name and not <code>localhost</code>.</p>
 	</div>
-		
+
 7.	Save your changes to `default.vcl` and exit the text editor.
 
 8.	Restart Varnish:
