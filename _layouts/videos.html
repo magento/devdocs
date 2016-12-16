@@ -1,0 +1,29 @@
+{% include header.html %}
+
+<div class="container">
+
+	<section class="content">
+
+			{% include page-header.html %}
+			{{ content }}
+
+			<div class="videos">
+
+			{% for video in site.videos %}
+				<div class="video">
+	  			<a href="{{ video.url }}">
+						<img class="thumbnail" src="https://img.youtube.com/vi/{{ video.youtube_id }}/0.jpg" />
+						<span class="title">{{ video.title }}</span>2
+					</a>
+	  			<div class="author">by {{ video.author }}</div>
+				</div>
+			{% endfor %}
+
+			</div>
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+{% include footer.html %}

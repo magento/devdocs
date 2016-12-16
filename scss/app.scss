@@ -1,5 +1,15 @@
 @import 'reset';
 @import 'variables';
+
+
+// Bootstrap components (run 'npm install' first)
+@import 'node_modules/bootstrap/scss/mixins';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/responsive-embed';
+@import 'node_modules/bootstrap/scss/tags';
+
+
+
 @import 'partials/buttons';
 @import 'partials/callouts';
 @import 'partials/code';
@@ -23,6 +33,11 @@
 @import 'partials/tabs';
 @import 'partials/breadcrumbs';
 @import 'partials/toc';
+@import 'partials/videos';
+
+
+
+
 
 .hide {
   display: none;

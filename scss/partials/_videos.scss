@@ -1,0 +1,21 @@
+.videos {
+
+  .video {
+    position: relative;
+    text-align: left;
+    max-width: 320px;
+    margin: 0 20px 20px 0;
+
+    .thumbnail {
+      display: block;
+      margin: 0 0 10px 0;
+    }
+    .title {
+      display: block;
+    }
+    .author {
+      font-size: $font-size-sm;
+    }
+
+  }
+}

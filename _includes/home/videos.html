@@ -1,0 +1,23 @@
+<section class="home-videos">
+  <div class="container">
+    <h2>Video Tutorials</h2>
+    <p class="intro">Seeing is believing! Our developers and community members sharing their knowledge of Magento. Subscribe to our <a href="https://www.youtube.com/watch?v=6qkFVWJWRUI">YouTube channell</a> and never miss new tutorial.</p>
+
+    <div class="videos">
+    {% for video in site.videos limit:3 %}
+      <div class="video">
+        <a href="{{ video.url }}">
+          <img class="thumbnail" src="https://img.youtube.com/vi/{{ video.youtube_id }}/0.jpg" />
+          <span class="title">{{ video.title }}</span>2
+        </a>
+        <div class="author">by {{ video.author }}</div>
+      </div>
+    {% endfor %}
+    </div>
+
+    <div>
+      <a href="{{ site.baseurl }}videos/" class="btn btn-large btn-primary">See all videos</a>
+    </div>
+
+  </div>
+</section><!-- END home-contributors -->
