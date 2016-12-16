@@ -5,7 +5,7 @@ subgroup: 55_Config
 title: Functional Testing Framework Configuration and Structure
 menu_title: Configuration
 menu_node: parent
-version: 2.0
+version: 2.1
 github_link: mtf/configuration.md
 ---
 
@@ -21,7 +21,7 @@ The Functional Testing Framework configuration setting are concentrated in two X
 {% collapsible Show/hide the default phpunit.xml code %}
 
 {% highlight xml %}
-{% remote_markdown  https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/phpunit.xml.dist %}
+{% remote_markdown  https://raw.githubusercontent.com/magento/magento2/2.1/dev/tests/functional/phpunit.xml.dist %}
 {% endhighlight %}
 {% endcollapsible %}
 
@@ -133,7 +133,7 @@ Figure 1. - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/m
 The file is located in `<magento2_root_dir>dev/tests/functional/`
 
 {% highlight xml %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/etc/config.xml.dist %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/dev/tests/functional/etc/config.xml.dist %}
 {% endhighlight %}
 
 ![image]({{site.baseurl}}common/images/ftf/ftf_config-xsd-dia.svg)
