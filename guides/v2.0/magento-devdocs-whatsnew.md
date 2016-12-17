@@ -46,7 +46,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 {% collapsibleh2 October 2016 %}
 
-| Week ending | Description  | Versions applied to  | New or Updated |
+| Description  | Versions applied to  | New or Updated | Week ending |
 |--------------|--------------|----------------------|--------|
 | Magento Enterprise Cloud Edition (MECE) [added descriptions of build and deployment scripts and other improvements to deployment]({{ page.baseurl }}cloud/discover-deploy.html){:target="_blank"} | 2.x | Updated |Oct 28 |
 |[MECE added description of build and deployment logs in staging and production]({{ page.baseurl }}cloud/env/environments-logs.html){:target="_blank"} | 2.x | Updated | Oct 28 |
