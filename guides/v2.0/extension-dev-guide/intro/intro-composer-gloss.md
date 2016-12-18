@@ -60,4 +60,4 @@ Merchants use the <a href="{{page.baseurl}}comp-mgr/compman-start.html">Componen
 
 If you package and upload your components as discussed in this guide and in the <em>Marketplace User Guide</em>, merchants can easily update your components after you publish them.
 
-For details, see <a href="{{page.baseurl}}comp-mgr/compman-main-pg.html#compman-access-types">Supported actions for each component type</a>.
+For details, see [Supported actions for each component type]({{ page.baseurl }}comp-mgr/module-man/compman-main-pg.html#compman-access-types)
