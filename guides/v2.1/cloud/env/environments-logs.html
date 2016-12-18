@@ -5,16 +5,16 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Pull code from a private Git repository</title>
+	<title>Viewing logs from your environment</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="2016-06-22 (PDT)" />
+	<meta http-equiv="last-modified" content="2016-12-18 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/project/project-priv-repos.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/env/environments-logs.html">
 
   <script>
     var baseUrl = "/";
@@ -133,9 +133,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-priv-repos.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/env/environments-logs.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-priv-repos.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/env/environments-logs.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -830,7 +830,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
 
@@ -873,7 +873,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/env/environments-logs.html">Viewing logs from your environment</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/env/environments-logs.html">Viewing logs from your environment</a></li>
 
 									
 
@@ -1488,7 +1488,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Pull code from a private Git repository</span>
+        <span property="name">Viewing logs from your environment</span>
         <meta property="position" content="2" />
       </li>
 
@@ -1500,106 +1500,57 @@
 
 
 	
-	<h1 class="page-heading">Pull code from a private Git repository</h1>
+	<h1 class="page-heading">Viewing logs from your environment</h1>
 
   
 
 
 </section>
 
-			<p>Your Magento Enterprise Cloud Edition project can include code located in a private Git repository (for example, a module or theme). To do so, you must add your project’s public SSH key to your private Git repository and update your project’s <code>composer.json</code>.</p>
+			<p>The <a href="/guides/v2.1/cloud/discover-deploy.html#cloud-deploy-over-phases-build">build hooks</a> and the <a href="/guides/v2.1/cloud/discover-deploy.html#cloud-deploy-over-phases-hook">deploy hooks</a> 
+produce logs that can be helpful in troubleshooting issues.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>To add a deployment key to your private GitHub or Bitbucket repository, you must be the administrator of that repository.</p>
-</div>
+<h2 id="build-logs">Build logs</h2>
 
-<p>GitHub and Bitbucket allow you to use a deploy key for one repository only.</p>
+<p>After pushing code to your environment, you can see the results of both hooks. Logs from the build hook are redirected to the output stream
+of <code>git push</code>, so you can observe them in the terminal or capture them (along with error messages) using the command <code>git push &gt; build.log 2&gt;&amp;1</code>.</p>
 
-<p>If your project needs to access multiple repositories, you can choose to
-attach an SSH key to an automated user account. Because this account won’t
-be used by a human, it’s referred to as a <a href="https://developer.github.com/guides/managing-deploy-keys/" target="_blank"><em>machine user</em></a>. You can then add the
-machine account as collaborator or add the machine user to a team with
-access to the repositories it needs to manipulate.</p>
+<h2 id="log-deploy-log">Deploy logs</h2>
 
-<h3 id="find-your-deploy-key">Find your deploy key</h3>
-<p>To find your project SSH public key (also referred to as a <em>deploy key</em>):</p>
+<p>Logs from the deployment hook are located on the server. The location depends on whether it is an integration environment or
+a staging/production environment.</p>
 
-<ol>
-  <li>Log in to your project using the Web Interface.</li>
-  <li>Click <strong>Configure Project</strong>.</li>
-  <li>
-    <p>Click <strong>Deploy Key</strong>.</p>
+<ul>
+  <li>Integration environments: <code>/tmp/log/deploy.log</code></li>
+  <li>Staging or production: <code>/var/log/platform/&lt;user&gt;/post_deploy.log</code></li>
+</ul>
 
-    <p>The following figure shows an example.</p>
+<p>The value of <code>&lt;user&gt;</code> depends on the project ID
+ and whether the environment is staging or production. For example, if the project ID is <code>yw18fW0Xjcawe</code>, the staging environment user
+is <code>yw18fW0Xjcawe_stg</code> and the production environment user is <code>yw18fW0Xjcawe</code>.</p>
 
-    <p><img src="/common/images/cloud_deploy-key.png" alt="Deploy Key" width="500px" /></p>
-  </li>
-  <li>Copy the deploy key to the clipboard.</li>
-  <li>
-    <p>See one of the following sections:</p>
+<p>On a staging
+ environment for project <code>yw18fW0Xjcawe</code>, the deploy log is located at <code>/var/log/platform/yw18fW0Xjcawe_stg/post_deploy.log</code>.</p>
 
-    <ul>
-      <li><a href="#cloud-deploykey-github">Enter your GitHub deploy key</a></li>
-      <li><a href="#cloud-deploykey-bb">Enter your Bitbucket deployment key</a></li>
-    </ul>
-  </li>
-</ol>
+<p>Logs for all deployments that have happened on this environment are appended to
+this file, so check the timestamps on log entries to verify that you’re seeing the logs that correspond to the deployment that
+you are interested in.</p>
 
-<h3 id="cloud-deploykey-github">Enter your GitHub deploy key</h3>
-<p>By default, on github, deploy keys are read-only,
-so you do not need to worry about anything from your Magento project pushing code to the private
-repository.</p>
+<p>Log output is highly verbose to allow troubleshooting. For example:</p>
 
-<p>To enter your project’s public key as a GitHub deploy key:</p>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">[2016-10-11 22:15:38] Starting pre-deploy.
+...
+[2016-10-11 22:15:39] Pre-deploy complete.
+[2016-10-11 22:15:42] Start deploy.
+[2016-10-11 22:15:42] Preparing environment specific data.
+[2016-10-11 22:15:42] Initializing routes.
 
-<ol>
-  <li>Log in to your GitHub repository as its administrator.</li>
-  <li>
-    <p>Click <strong>Settings</strong> as the following figure shows.</p>
+... more ...
 
-    <p><img src="/common/images/cloud_gh-settings.png" alt="GitHub settings" width="650px" /></p>
+[2016-10-11 22:15:46] Deployment complete.</code></pre></figure>
 
-    <div class="bs-callout bs-callout-info" id="info">
-  		<p>If you don't see this option, you're not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.</p>
-</div>
-  </li>
-  <li>
-    <p>On the Settings page, in the left navigation bar, click <strong>Deploy Keys</strong> as the following figure shows.</p>
-
-    <p><img src="/common/images/cloud_gh-deploy-key.png" alt="GitHub deploy key" width="200px" /></p>
-  </li>
-  <li>Click <strong>Add deploy key</strong>.</li>
-  <li>Follow the prompts on your screen to complete the task.</li>
-</ol>
-
-<h3 id="cloud-deploykey-bb">Enter your Bitbucket deployment key</h3>
-<p>To enter your project’s public key as a Bitbucket deploy key:</p>
-
-<ol>
-  <li>Log in to your Bitbucket repository as its administrator.</li>
-  <li>
-    <p>In the left navigation bar, click <strong>Settings</strong> as the following figure shows.</p>
-
-    <p><img src="/common/images/cloud_bb-settings.png" alt="Bitbucket settings" /></p>
-  </li>
-  <li>
-    <p>Click General &gt; <strong>Deployment Keys</strong> as the following figure shows.</p>
-
-    <p><img src="/common/images/cloud_bb-deploy-key.png" alt="Bitbucket deploy key" /></p>
-  </li>
-  <li>Click <strong>Add Key</strong>.</li>
-  <li>Follow the prompts on your screen to complete the task.</li>
-</ol>
-
-<!-- ## Update `composer.json`
-TBD -->
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In <code>composer.json</code>, use the <code>&lt;user&gt;@&lt;host&gt;:&lt;<path>.git&lt;/code&gt; format, or <code>ssh://&lt;user&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;.git</code> if using a non-standard port.&lt;/p&gt;
-&lt;/div&gt;
-
-
-</path></code></p></div>
+<p>The deploy log contains start and stop messages for each of the two hooks: 
+<code>Starting pre-deploy</code>, <code>Pre-deploy complete.</code>, <code>Start deploy.</code>, and <code>Deployment complete.</code>.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1610,14 +1561,14 @@ TBD -->
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-priv-repos.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/env/environments-logs.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/project/project-priv-repos.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/env/environments-logs.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
