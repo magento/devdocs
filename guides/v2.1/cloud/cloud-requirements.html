@@ -1516,10 +1516,10 @@
   <li>Must know how to use <a href="https://git-scm.com/docs/user-manual.html" target="_blank">Git</a></li>
   <li>Must know how to use <a href="https://getcomposer.org/doc" target="_blank">Composer</a></li>
   <li>Must be familiar with Magento 2</li>
-  <li>Must have familiarity with basic Continuous Integration Best Practices</li>
+  <li>Must have familiarity with <a href="https://lmgtfy.com/?q=Continuous+Integration+Best+Practices" target="_blank">Continuous Integration Best Practices</a></li>
   <li>Understand the three types of systems and how they’re used: <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration</a>, <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">staging</a>, <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a></li>
   <li>
-    <p>Must set up a <a href="/guides/v2.1/">local development environment</a></p>
+    <p>Must set up a <a href="/guides/v2.1/cloud/access-acct/set-up-env.html">local development environment</a></p>
 
     <p>The integration environment (sometimes referred to as <em>Platform as a Service (PaaS))</em> can help with integration testing but is not for developing for a production server. Among the differences are that, in integration, Magento is set for developer mode and not all directories are read-only.</p>
   </li>
@@ -1527,7 +1527,7 @@
 </ul>
 
 <h3 id="cloud-req-test">Required testing configurations</h3>
-<p>Before you test any custom code in any Magento Enterprise Cloud Edition environment, you must do all of the following:</p>
+<p>Before you test any custom code in your local Magento Enterprise Cloud Edition environment, you must do all of the following:</p>
 
 <ul>
   <li>Set the Magento application docroot to <code>pub/index.php</code></li>
@@ -1553,7 +1553,7 @@
 
     <p>You can enable and test individual features or extensions on different environments to make sure they are working before merging</p>
   </li>
-  <li>You must make sure that <code>composer:setup</code>  and <code>composer:install</code> work and that any extensions and customizations compile correctly in production mode</li>
+  <li>You must make sure that <a href="/guides/v2.1/install-gde/install/cli/install-cli-install.html"><code>magento setup:install</code></a>  and <a href="/guides/v2.1/comp-mgr/cli/cli-upgrade.html"><code>magento setup:upgrade</code></a> work and that any extensions and customizations compile correctly in production mode</li>
   <li>
     <p>You must test the application, including any extensions and customizations, against Varnish and/or Fastly well in advance of going live</p>
 
