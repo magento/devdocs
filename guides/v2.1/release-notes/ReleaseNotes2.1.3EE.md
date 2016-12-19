@@ -383,7 +383,7 @@ We've improved the performance of these tasks:
 
 <!---60041-->* Resizing images on the frontend
 
-<!---57905-->We've optimized compiler performance by adding several options to the `setup:di:compile` command. 
+<!---57905-->We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) command). 
 
 
 
