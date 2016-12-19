@@ -15,7 +15,7 @@ Varnish provides several features that prevent customers from experiencing long 
 See the [Varnish Reference Manual](https://www.varnish-cache.org/docs/4.1/reference/index.html) for details about using the Varnish Configuration Language.
 
 ## Health check {#health}
-Varnish's health check feature polls Magento to determine whether it is responding as expected. If it is responding normally,
+Varnish's health check feature polls the Magento backend to determine whether it is responding as expected. If it is responding normally,
 fresh content will be regenerated after TTL has expired. If not, Varnish always serves stale content.
 
 Magento defines the following default health check:
@@ -32,18 +32,18 @@ Magento defines the following default health check:
 
 Every 5 seconds, this health check calls the `pub/health_check.php` script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 500 milliseconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 8 out of 10 attempts, the backend is considered unhealthy.
 
-For more information, see <a href="https://www.varnish-cache.org/docs/4.1/users-guide/vcl-backends.html#health-checks" target="_blank">Varnish health checks</a> documentation.
+For more information, see the <a href="https://www.varnish-cache.org/docs/4.1/users-guide/vcl-backends.html#health-checks" target="_blank">Varnish health checks</a> documentation.
 
 ## Grace mode {#grace}
 
 Grace mode enables Varnish to keep an object in cache beyond its TTL (time to live) value. Varnish can then serve the expired (stale) content while it fetches a new version. This improves the flow of traffic and decreases load times. It's used in the following situations:
 
-* When Magento is healthy, but a request is taking longer than expected
-* When Magento is not healthy.
+* When the Magento backend is healthy, but a request is taking longer than expected
+* When the Magento backend is not healthy.
 
 The `vcl_hit` subroutine defines how Varnish responds to a request.
 
-### When Magento is healthy {#grace-healthy}
+### When the Magento backend is healthy {#grace-healthy}
 
 When the health checks determine that the Magento backend is healthy, Varnish checks whether the time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from Admin. If the grace period hasn't expired, Varnish delivers the stale content. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.
 
@@ -51,9 +51,9 @@ To change the default grace period, edit the following line in the `vcl_hit` sub
 
 `if (obj.ttl + 300s > 0s) {`
 
-### When Magento is not healthy {#grace-unhealthy}
+### When the Magento backend is not healthy {#grace-unhealthy}
 
-If Magento is not responsive, Varnish serves stale content from cache for 3 days, or as defined in `beresp.grace`, unless the cached content is manually purged. Varnish makes calls to update the cached content asynchronously.
+If the Magento backend is not responsive, Varnish serves stale content from cache for 3 days, or as defined in `beresp.grace`, unless the cached content is manually purged. Varnish makes calls to update the cached content asynchronously.
 
 ## Saint mode {#saint}
 
@@ -62,7 +62,7 @@ Saint mode blacklists unhealthy backends for a configurable amount of time. As a
 Saint mode can also be used when Magento instances are individually taken offline to perform maintenance and upgrade tasks without affecting the availability of the Magento site.
 
 ### Saint mode prerequisites {#saint-prereq}
-There are several ways to setup Magento for saint mode. In general, you should designate one machine as the primary. On this machine, install the main instance of Magento, mySQL database, and Varnish. On this installation of Magento, you must turn off static file versioning. From Admin, set **Stores > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files** to **No**.
+You should designate one machine as the primary installation. On this machine, install the main instance of Magento, mySQL database, and Varnish. On this installation of Magento, you must turn off static file versioning. From Admin, set **Stores > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files** to **No**.
 
 On all other machines, the Magento instance must have access the primary machine's mySQL database. On these instances, make sure **Sign Static Files** is set to **Yes**.
 
@@ -84,7 +84,7 @@ The main Varnish package must be installed before you can install any vmods. See
 
 The following example shows `.vcl` file in which saint mode is enabled. This example does not include grace mode, but the two modes can be configured at the same time.
 
-{% collapsible Click to expand %}
+{% collapsible Click to show/hide %}
 {% highlight cpp %}
 
 vcl 4.0;

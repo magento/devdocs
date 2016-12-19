@@ -43,7 +43,7 @@ To configure Magento to use Varnish:
 	</tr>
 	<tr>
 		<td>Grace period</td>
-		<td>The grace period determines how long Varnish serves stale content if the backend is not responsive. The default value is 86400 seconds (1 day).</td>
+		<td>The grace period determines how long Varnish serves stale content if the backend is not responsive. The default value is 300 seconds.</td>
 		</tr>
 		</tbody>
 		</table>
@@ -77,5 +77,5 @@ To configure Magento to use Varnish:
 		service httpd restart
 
 #### Next steps
-<p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-advance.html">Advanced Varnish configuration</a></p>
+<p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-advance.html">Advanced Varnish configuration</a> (Optional)</p>
 <p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a></p>
