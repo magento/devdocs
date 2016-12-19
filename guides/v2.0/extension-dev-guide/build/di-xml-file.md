@@ -323,4 +323,4 @@ Also, every instance of `Magento\Filesystem` will get separate instance of `$ada
 **Related topics**
 
 * [ObjectManager]({{page.baseurl}}extension-dev-guide/object-manager.html)
-* [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.md)
+* [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
