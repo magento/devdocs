@@ -5,7 +5,7 @@ subgroup: contributor
 title: Magento Definition of Done
 menu_title: Magento Definition of Done
 menu_order: 2
-menu_node: 
+menu_node:
 version: 2.0
 github_link: contributor-guide/contributing_dod.md
 redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
@@ -20,12 +20,12 @@ The "Definition of Done" (DoD) is a collective term for a set of acceptance crit
 
 At a high level, the criteria defined in our "definition of done" revolve around the principle of writing clean code that is reviewed and includes unit tests and solid documentation along with the code.
 
-The following sections provide additional details about each of these criteria: 
+The following sections provide additional details about each of these criteria:
 
 
 ### Functional Backward Compatibility
 
-Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the "business value". 
+Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the "business value".
 
 For more information, see [Magento's backward compatibility policy]({{page.baseurl}}architecture/back-compatibility.html)
 
@@ -35,21 +35,21 @@ All changes, additions, and extensions to the product should be documented by th
 
 Ideally, the information about the submitted code should be added to the official Magento DevDocs library. Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>.
 
-When submitting either code or documentation, a brief summary of the work should be included in the commit message. 
+When submitting either code or documentation, a brief summary of the work should be included in the commit message.
 
 Additionally, the code itself should contain high-quality comments/descriptions for all classes and methods.
 
 Any backwards-incompatible changes must also be recorded in the accompanying documentation, using the following format:
-		
+
 <table>
 <tr>
 <th><u>Change</u></th>
-<th><u>Was in Magento 1.x</u></th>	
+<th><u>Was in Magento 1.x</u></th>
 <th><u>Became in Magento 2.x</u></th>
 </tr>
 <tr>
 <td>description</td>
-<td>example</td>	
+<td>example</td>
 <td>example</td>
 </tr>
 </table>
@@ -92,7 +92,7 @@ Code to cover:
 
 #### Integrity Tests
 
-Code to cover: 
+Code to cover:
 
 * Must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.
 
@@ -105,7 +105,7 @@ Scan for declarations of templates and invoke "fallback" mechanism to ensure the
 
 **Static Code Analysis**
 
-Code to cover: 
+Code to cover:
 
 * must cover all new code files (or whatever qualifies as "new").
 
@@ -113,10 +113,10 @@ Expected code coverage: must cover all applicable files in entire code base.
 
 **Legacy Tests**
 
-Code to cover: 
+Code to cover:
 
-* Must cover any formal backwards-incompatible changes on code level. For more information, see 
-<a href="{{page.baseurl}}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
+* Must cover any formal backwards-incompatible changes on code level. For more information, see
+<a href="{{page.baseurl}}architecture/back-compatibility.html">Magento's backward compatibility policy</a>.
 
 A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.
 
@@ -134,8 +134,8 @@ Added/updated functionality should be covered by a functional Zephyr test(s) rel
 ### Review
 A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review. The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:
 
-* There are no unauthorized backward-incompatible functional changes 
-* All changes are documented properly 
+* There are no unauthorized backward-incompatible functional changes
+* All changes are documented properly
 * All changes are covered with automated tests
 * Determine if code changes caused any failure in continuous integration builds.
 
