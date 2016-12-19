@@ -18,7 +18,7 @@ To set permissions before you install the Magento software:
 
 	To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2`:
 
-		cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} \; && chmod u+x bin/magento
+		cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod u+w {} \; && find var vendor pub/static pub/media app/etc -type d -exec chmod u+w {} \; && chmod u+x bin/magento
 3.	If you haven't done so already, get the Magento software in one of the following ways:
 
 	*	[Compressed archive]({{ page.baseurl }}install-gde/prereq/zip_install.html)

@@ -7,6 +7,9 @@ menu_title: Community Resources
 menu_order: 100
 menu_node: parent
 github_link: /community/resources/index.md
+redirect_from: 
+  - /guides/v2.1/community/resources/index.html
+  - /guides/v2.0/community/resources/index.html
 ---
 
 Below are links to blog posts, podcasts, presentations, and books created by members of the Magento community and core developers separated into popular topics.

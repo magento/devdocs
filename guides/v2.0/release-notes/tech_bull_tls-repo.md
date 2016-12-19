@@ -15,7 +15,7 @@ github_link: release-notes/tech_bull_tls-repo.md
 ### Solution
 The solution to this issue depends on how your operating system packages TLS. See one of the following sections for more information:
 
-*	[Unbuntu](#solution-ubuntu)
+*	[Ubuntu](#solution-ubuntu)
 *	[CentOS](#solution-centos)
 *	[Mac OS](#solution-macos)
 
