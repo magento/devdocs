@@ -66,8 +66,8 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [How to apply the SUPEE-8788 security patch]({{ site.m1xgdeurl }}other/ht_install-patches.html#apply-8788) | 1.x  | Updated  |Oct 21 |
 |[Magento CE 2.0.10 release notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10CE.html){:target="_blank"}  | 2.0.x  | New| Oct 14 |
 |[Magento EE 2.0.10 release notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10EE.html){:target="_blank"} | 2.0.x  | New| Oct 14 |
-|[Magento CE 2.1.2 release notes]({{ page.baseurl }}release-notes/ReleaseNotes2.1.2CE.html){:target="_blank"} | 2.1.x  | New| Oct 14 |
-|[Magento EE 2.1.2 release notes]({{ page.baseurl }}release-notes/ReleaseNotes2.1.2EE.html){:target="_blank"}  | 2.1.x  | New| Oct 14 |
+|[Magento CE 2.1.2 release notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2CE.html){:target="_blank"} | 2.1.x  | New| Oct 14 |
+|[Magento EE 2.1.2 release notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2EE.html){:target="_blank"}  | 2.1.x  | New| Oct 14 |
 | [Proposed outline for evolving UI Components guide]({{ page.baseurl }}ui_comp_guide/ui_comp_outline_proposed.html){:target="_blank"} |2.1.x| New  |  Oct 14 |
 |[Preventing cache poisoning]({{ page.baseurl }}config-guide/secy/secy-headers.html){:target="_blank"}  | See topic  |New|  Oct 14 |
 |[Updated system requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html){:target="_blank"} | 2.x  |Updated| Oct 14 |

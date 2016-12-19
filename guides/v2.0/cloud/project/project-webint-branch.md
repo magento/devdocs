@@ -55,7 +55,7 @@ To add an environment:
 7.	Continue with one of the following:
 
 	*	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
-	*	[How tos and tutorials]({{ site.baseurl }}cloud/howto/how-to.html)
+	*	[How tos and tutorials]({{ page.baseurl }}cloud/howto/how-to.html)
 
 {% endcollapsible %}
 
