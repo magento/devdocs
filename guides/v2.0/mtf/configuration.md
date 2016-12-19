@@ -9,14 +9,14 @@ version: 2.0
 github_link: mtf/configuration.md
 ---
 
-The Functional Testing Framework configuration setting are located in two XML files:
+The Functional Testing Framework configuration settings are located in two XML files:
 
 - `phpunit.xml`
 - `config.xml`
 
 ## `phpunit.xml` {#phpunit_xml}
 
-`<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings for test execution. Blocks of settings are described in [PHPUnit documentation], except `<php>` that contains parameters described in the following table.
+The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings. Blocks of settings are described in [PHPUnit documentation], except `<php>` that contains parameters described in the following table.
 
 {% collapsible Show/hide the default phpunit.xml code %}
 
@@ -73,7 +73,7 @@ The Functional Testing Framework configuration setting are located in two XML fi
 </tr>
 <tr>
     <td><code>module_whitelist</code></td>
-    <td>List of special FTF modules which are present in functional tests but are not enabled in Magento application.</td>
+    <td>List of special FTF modules which are present in functional tests but are not enabled in the Magento application.</td>
     <td><code>"&lt;names of modules&gt;"</code></td>
     <td>Make listed modules (that are not enabled in Magento) visible for the FTF.</td>
 </tr>
@@ -87,23 +87,23 @@ The Functional Testing Framework configuration setting are located in two XML fi
     <td><code>credentials_file_path</code></td>
     <td>Path to the file with credentials required by services such as payment and shipment.</td>
     <td><code>"./credentials.xml.dist"</code></td>
-    <td><a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html" target="_blank">Edit credentials.xml to work with Magento modules that requires credentials</a></td>
+    <td><a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html" target="_blank">Edit <code>credentials.xml</code> to work with Magento modules that require credentials</a></td>
 </tr>
 <tr>
     <td><code>mage_mode</code></td>
     <td>Magento mode (<a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html" target="_blank">About Magento modes</a>).</td>
     <td><code>"default", "developer", "production"</code></td>
-    <td>This parameter is intended to be used directly in a test. The FTF doesn't use it. <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/PageCache/Test/TestCase/FlushAdditionalCachesTest.php">Open an example</a></td>
+    <td>This parameter is intended to be used directly in a test. The FTF doesn't use it.</td>
 </tr>
 <tr>
     <td><code>module_filter</code></td>
-    <td>Applicable for a <a href="{{page.baseurl}}mtf/features/test_suite.html">tests suite</a> only. Enables you to select test cases for specific modules. <a href="{{page.baseurl}}mtf/features/test_suite.html#scope-testsuite" target="_blank">Learn more about &lt;module&gt; filter in a test suite.</a></td>
+    <td>Applicable for <a href="{{page.baseurl}}mtf/features/test_suite.html">test suites</a> only. Enables you to select test cases for specific modules. <a href="{{page.baseurl}}mtf/features/test_suite.html#scope-testsuite" target="_blank">Learn more about the &lt;module&gt; filter in a test suite.</a></td>
     <td><code>"Magento_&lt;name_of_module&gt;"</code></td>
     <td>Use it when you don't want to modify the test suite. </td>
 </tr>
 <tr>
     <td><code>module_filter_strict</code></td>
-    <td>Applicable for a <a href="{{page.baseurl}}mtf/features/test_suite.html">tests suite</a> only. It makes same effect as <code>strict</code> in the <code>&lt;module&gt;</code>. <a href="{{page.baseurl}}mtf/features/test_suite.html#scope-testsuite" target="_blank">Learn more about <code>strict</code> parameter of the &lt;module&gt; filter in a test suite.</a></td>
+    <td>Applicable for a <a href="{{page.baseurl}}mtf/features/test_suite.html">tests suite</a> only. It has the same effect as <code>strict</code> in the <code>&lt;module&gt;</code>. <a href="{{page.baseurl}}mtf/features/test_suite.html#scope-testsuite" target="_blank">Learn more about <code>strict</code> parameter of the &lt;module&gt; filter in a test suite.</a></td>
     <td><code>"1"</code>, <code>"0"</code></td>
     <td>Use it when you don't want to modify the test suite.</td>
 </tr>
@@ -116,7 +116,7 @@ The FTF configuration settings are declared and specified in two places:
 
 {% collapsible in the Framework %}
 
-The file is located in `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc`.
+The file is located in `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc`
 
 {% highlight xml %}
 {% remote_markdown https://raw.githubusercontent.com/magento/mtf/2.0/etc/config.xml.dist%}
@@ -193,8 +193,8 @@ Values description:
 |---|---|---|
 |`name`|Name of an item.|`"selenium"`|
 |`type`|Required Selenium setting. The FTF doesn't use it.|`"default"`|
-|`browser`|A browser full name to be shown where you needed it. The FTF doesn't use it.| |
-|`browserName`|A browser being used for functional testing.|`android`, `chrome`, `firefox`, `htmlunit`, `internet explorer`, `iPhone`, `iPad`, `opera`, `safari`|
+|`browser`|A browser full name to be displayed where you needed it. The FTF doesn't use it.| |
+|`browserName`|A browser that can be used for functional testing.|`android`, `chrome`, `firefox`, `htmlunit`, `internet explorer`, `iPhone`, `iPad`, `opera`, `safari`|
 |`host` and `port`|Address of a Selenium Server.| |
 |`seleniumServerRequestsTimeout`|A specified period of time to process a request.| |
 |`sessionStrategy`|Standard Selenium Server parameter that sets a session strategy. Recommended to use `"shared"` only.|`"shared"`, `"isolated"`|
@@ -206,7 +206,7 @@ Values description:
 
 ### **&lt;handler&gt;** {#handler}
 
-Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value 0. `token` contains access token (used by WebAPI handlers only). [Learn more about handlers.][handler]
+Specifies priorities for different types of handlers. The lower the value, the higher the priority. The highest priority has value 0. `token` contains access token (used by WebAPI handlers only). [Learn more about handlers.][handler]
 
 |Parameter|Description |Values|
 |---|---|---|
@@ -216,16 +216,18 @@ Specifies priorities for different types of handler. The less the value, the hig
 
 ### **&lt;install&gt;** {#install}
 
-Set of parameters used for [installation test case].
+Set of parameters to be used for [installation test case].
 
 |Parameter|Description|
 |---|---|
-|`<host>`|Database host IP address required during Magento installation.|
-|`<user>`|Name of a database user.|
-|`<password>`| Password of a database user.|
+|`<host>`|Magento database host name or IP address.|
+|`<user>`|Magento database user name.|
+|`<password>`| Magento database user password.|
 |`<dbName>`|Name of a database.|
-|`<baseUrl>`|Magento installation base URL.|
-|`<backendName>`|Sets [`backend-frontname`] installation parameter.|
+|`<baseUrl>`|Magento application base URL, starting with the scheme (`http://` or `https://`) and ending with a slash character (`/`).|
+|`<backendName>`|Admin URI (following the base URL).|
+
+[Learn more about installation parameters][installation parameters]
 
 <!-- LINK DEFINITIONS -->
 
@@ -236,8 +238,8 @@ Set of parameters used for [installation test case].
 [installation test case]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Install/Test/TestCase/InstallTest.php#L60-L77
 
 <!-- Internal -->
-[`backend-frontname`]: {{page.baseurl}}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento
 [handler]: {{page.baseurl}}mtf/mtf_entities/mtf_handler.html
+[installation parameters]: {{page.baseurl}}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento
 [test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
 [test suite]: {{page.baseurl}}mtf/features/test_suite.html#configure
 
