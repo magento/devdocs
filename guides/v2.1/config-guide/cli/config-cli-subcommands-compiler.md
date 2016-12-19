@@ -45,24 +45,10 @@ The following message displays to confirm success:
 
 	Generated code and dependency injection configuration successfully.
 
-<div class="bs-callout bs-callout-warning">
-    <p>In Magento versions 2.0.5 and earlier, there is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you're preparing to deploy to production, you must use the multi-tenant compiler.</p>
-    <p>The issue was resolved in Magento versions 2.0.6 and later.</p>
-</div>
-
-<h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
-Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
-
-*	There is one Magento 2 code base instance
-*	There is one database instance per tenant
-*	Independent configurations in the Magento Admin per tenant
-*	The storefronts are independent of each other
-
-If you do not have multiple tenants, use the <a href="#config-cli-subcommands-single">single-tenant compiler</a> instead.
-
+<h2 id="config-cli-subcommands-run">Run the code compiler</h2>
 Command options:
 
-	magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
+	magento setup:di:compile [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
 	filename>"] [--di="<path and filename>"] [--exclude-pattern="<regex>"]
 
 The following table discusses the meanings of this command's parameters and values. 
@@ -109,7 +95,7 @@ The following table discusses the meanings of this command's parameters and valu
 
 For example, to run the compiler and specify the `igbinary` serializer:
 
-	magento setup:di:compile-multi-tenant --serializer=igbinary
+	magento setup:di:compile --serializer=igbinary
 
 Messages similar to the following display:
 
@@ -156,9 +142,9 @@ The following message displays to confirm success:
 
 	Generated code and dependency injection configuration successfully.
 
-***Code compiling without DB***
+***Code compiling without a database***
  
-In order to run compilation without DB, see the following topic: <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db"></a>
+In order to run compilation without a database, see the following topic: <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db"></a>
 
 #### Related topics
 

@@ -60,7 +60,7 @@ where
 
 `{mode}` is required; it can be either `developer` or `production`
 
-`--skip-compilation` is an optional parameter you can use to skip <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler-single.html#config-cli-subcommands-single-overview">code compilation</a> when you change to production mode.
+`--skip-compilation` is an optional parameter you can use to skip <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>You cannot currently change from either developer or production mode to <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>

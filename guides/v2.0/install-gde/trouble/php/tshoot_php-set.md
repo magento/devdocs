@@ -61,7 +61,7 @@ To increase your PHP memory limit:
 
 <h3 id="trouble-php-xdebug">xdebug maximum function nesting level error</h3>
 
-See <a href="{{page.baseurl}}install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>.
+See <a href="{{page.baseurl}}install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>.
 
 <h3 id="trouble-php-asptags">Errors display when you access a PHTML template</h3>
 Error text is typically:
