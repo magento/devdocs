@@ -41,7 +41,7 @@ You can also view the Admin URI in `<your Magento install dir>/app/etc/env.php`.
 {% endhighlight %}
 
 <h2 id="instgde-cli-changeurl">Change the Admin URL</h2>
-To change the Admin URI, use the <a href="{{page.baseurl}}/install-gde/install/install-cli-subcommands-deployment.html">magento setup:config:set</a> command.
+To change the Admin URI, use the <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-deployment.html">magento setup:config:set</a> command.
 
 #### Related topics
 

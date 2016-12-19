@@ -8,6 +8,9 @@ menu_node: parent
 menu_order:
 version: 2.0
 github_link: test/js/jasmine.md
+redirect_from:
+  - /guides/v2.0/extension-dev-guide/test/test_js-unit.html
+  - /guides/v2.1/extension-dev-guide/test/test_js-unit.html
 ---
 
 ## Preface

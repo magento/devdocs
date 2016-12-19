@@ -10,7 +10,9 @@ level3_menu_node: level3child
 level3_subgroup: cache-types
 version: 2.0
 github_link: config-guide/cache/caching_frontend-cache-types.md
-redirect_from: /guides/v2.0/config-guide/config/caching_frontend-cache-types.html
+redirect_from: 
+  - /guides/v2.0/config-guide/config/caching_frontend-cache-types.html
+  - /guides/v2.1/config-guide/config/caching_frontend-cache-types.html
 ---
 
 <h2 id="cache-mage-over">Overview of Magento caching</h2>
@@ -50,7 +52,7 @@ This topic discusses the following options for configuring caching:
 The Magento application has a `default` cache frontend you can use for any <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a cache frontend with a different name, which is preferable if you expect to customize your frontend.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>To use the <code>default</code> cache type, you don't need to modify <code>env.php</code> at all; you modify Magento's global <code>di.xml</code>. See the topics referenced in <a href="{{page.baseurl}}config-guide/config/caching_low-level.html">Low-level cache options</a>. </p>
+  <p>To use the <code>default</code> cache type, you don't need to modify <code>env.php</code> at all; you modify Magento's global <code>di.xml</code>. See the topics referenced in <a href="{{page.baseurl}}config-guide/cache/caching_low-level.html">Low-level cache options</a>. </p>
 </div>
  
 You must specify a custom cache frontend either `app/etc/env.php` or Magento's global `app/etc/di.xml`. 
