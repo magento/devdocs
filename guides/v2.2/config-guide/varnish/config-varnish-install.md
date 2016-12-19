@@ -18,7 +18,6 @@ Installing the Varnish software is beyond the scope of this guide. For more info
 *	<a href="http://www.tecmint.com/install-varnish-cache-web-accelerator" target="_blank">How to install Varnish (Tecmint)</a>
 
 <div class="bs-callout bs-callout-info" id="info" markdown=”1”>
-
 This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.
 
 If you intend to install Varnish modules (vmods), such as saint mode, you should install Varnish by compiling the code, rather than installing from a package. See [Saint mode]({{page.baseurl}}config-guide/varnish/config-varnish-advanced.html#saint) for more details.
