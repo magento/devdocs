@@ -1597,7 +1597,7 @@
 
 <p>You can omit <code>[--media]</code> if you have a large number of media files and if you don’t expect the upgrade to affect them.</p>
 
-<p>If the upgrade fails, you can roll back your backup using the <a href="/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll"><code>magento setup:rollback</code> command</a>.</p>
+<p>If the upgrade fails, you can roll back your backup using the <a href="/guides/v2.1/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll"><code>magento setup:rollback</code> command</a>.</p>
 </div></div>
 
 <h3 id="step-2-back-up-your-remote-integration-database">Step 2: Back up your remote integration database</h3>
@@ -1770,9 +1770,7 @@ git push origin &lt;branch name&gt;
     }
 </code></pre>
 
-<p>Move <code>app/NonComposerComponentRegistration.php</code> to <code>app/etc/NonComposerComponentRegistration.php</code>.
-Make sure the relative paths that point to locations in the app and lib directories reflect the 
-new location of the file. For an example that can be copied, see the <a href="app/etc/NonComposerComponentRegistration.php">copy in this project</a>.</p>
+<p>Move <code>app/NonComposerComponentRegistration.php</code> to <code>app/etc/NonComposerComponentRegistration.php</code>. Make sure the relative paths that point to locations in the <code>app</code> and <code>lib</code> directories reflect the  new location of the file.</p>
 
 <p>Update the <code>require</code> section as follows to:</p>
 

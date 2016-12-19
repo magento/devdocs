@@ -1854,7 +1854,7 @@ magento-cloud variable:list
 	</tr>
 	<tr>
 		<td><img src="/common/images/elastic_test-success.png" /></td>
-		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="/guides/v2.0/config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>.</td>
+		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="/guides/v2.0/config-guide/elasticsearch/es-config-apache.html">Configure Apache and Elasticsearch</a> or <a href="/guides/v2.0/config-guide/elasticsearch/es-config-nginx.html">Configure nginx and Elasticsearch</a>.</td>
 	</tr>
 	<tr>
 		<td><img src="/common/images/elastic_test-fail.png" /></td>
@@ -1864,7 +1864,7 @@ magento-cloud variable:list
 				<li>If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.</li>
 				<li>Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Elasticsearch as a user with <code>root</code> privileges.</li>
-<li>Make sure that <a href="/guides/v2.0/config-guide/elasticsearch/elasticsearch-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
+<li>Make sure that <a href="/guides/v2.0/config-guide/elasticsearch/es-overview.html#firewall-selinux">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
 	<li>Verify the value of the <strong>Elasticsearch Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
 	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Elasticsearch Server Port</strong> field is not being used by another process.<br />
 	For example, to see if Elasticsearch is running on its default port, use the following command:

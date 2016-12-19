@@ -8,7 +8,7 @@
 	<title>Code compiler</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="2016-12-08 (PST)" />
+	<meta http-equiv="last-modified" content="2016-12-18 (PST)" />
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
@@ -1601,26 +1601,10 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
   <pre><code>Generated code and dependency injection configuration successfully.
 </code></pre>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>In Magento versions 2.0.5 and earlier, there is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you're preparing to deploy to production, you must use the multi-tenant compiler.</p>
-    <p>The issue was resolved in Magento versions 2.0.6 and later.</p>
-</div>
-
-  <h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
-  <p>Use this command if you have multiple <em>tenants</em>, which means more than one independent Magento application. In other words:</p>
-
-  <ul>
-    <li>There is one Magento 2 code base instance</li>
-    <li>There is one database instance per tenant</li>
-    <li>Independent configurations in the Magento Admin per tenant</li>
-    <li>The storefronts are independent of each other</li>
-  </ul>
-
-  <p>If you do not have multiple tenants, use the <a href="#config-cli-subcommands-single">single-tenant compiler</a> instead.</p>
-
+  <h2 id="config-cli-subcommands-run">Run the code compiler</h2>
   <p>Command options:</p>
 
-  <pre><code>magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and 
+  <pre><code>magento setup:di:compile [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and 
 filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&gt;"]
 </code></pre>
 
@@ -1668,7 +1652,7 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 
   <p>For example, to run the compiler and specify the <code>igbinary</code> serializer:</p>
 
-  <pre><code>magento setup:di:compile-multi-tenant --serializer=igbinary
+  <pre><code>magento setup:di:compile --serializer=igbinary
 </code></pre>
 
   <p>Messages similar to the following display:</p>
@@ -1720,9 +1704,9 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
   <pre><code>Generated code and dependency injection configuration successfully.
 </code></pre>
 
-  <p><strong><em>Code compiling without DB</em></strong></p>
+  <p><strong><em>Code compiling without a database</em></strong></p>
 
-  <p>In order to run compilation without DB, see the following topic: <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db"></a></p>
+  <p>In order to run compilation without a database, see the following topic: <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db"></a></p>
 
   <h4 id="related-topics">Related topics</h4>
 
