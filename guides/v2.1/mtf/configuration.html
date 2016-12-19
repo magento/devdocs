@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Functional Testing Framework Configuration</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="2016-12-19 (PST)" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.1/mtf/configuration.html">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+            <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Enterprise Cloud Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/mtf/configuration.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/mtf/configuration.html">Magento 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Functional Testing Framework Guide</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_introduction.html">INTRODUCTION</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_installation.html">INSTALLATION</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_quickstart.html">QUICK START</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_magento.html">Prepare Magento application</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environment.html">Prepare environment for test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/create_test.html">CREATE A TEST</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/out-of-the-box.html">Out-of-the-box test</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/new_test.html">New functional test. Theory</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/create_test/create_new_test.html">New functional test. Practice</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/features.html">FEATURES</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/features/modularity.html">Modularity</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/features/parallel_execution.html">Parallel execution flow</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/features/test_suite.html">Test suite</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/features/webdriver.html">Web driver replacement</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_entities.html">ENTITIES</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">Fixture</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html">Fixture Repository</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_handler.html">Handler</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html">Block</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_typified-element.html">Typified element</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">Page</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">Constraint</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">Data set</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/mtf/configuration.html">Configuration</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_update.html">UPDATE</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/troubleshooting.html">TROUBLESHOOTING</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_changelog.html">CHANGELOG</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/mtf_overview.html">Functional testing overview</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+        <a property="item" typeof="WebPage" href="/guides/v2.1/mtf/mtf_introduction.html"><span property="name">Functional Testing Framework Guide</span></a>
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+        <span property="name">Functional Testing Framework Configuration</span>
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    </ol>
+
+  </nav>
+
+
+	
+	<h1 class="page-heading">Functional Testing Framework Configuration</h1>
+
+  
+
+
+</section>
+
+			<p>The Functional Testing Framework configuration settings are located in two XML files:</p>
+
+<ul>
+  <li><code>phpunit.xml</code></li>
+  <li><code>config.xml</code></li>
+</ul>
+
+<h2 id="phpunit_xml"><code>phpunit.xml</code></h2>
+
+<p>The <code>&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> contains PHPUnit configuration settings. Blocks of settings are described in <a href="https://phpunit.de/manual/current/en/appendixes.configuration.html">PHPUnit documentation</a>, except <code>&lt;php&gt;</code> that contains parameters described in the following table.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show/hide the default phpunit.xml code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2016 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;phpunit</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;http://schema.phpunit.de/4.1/phpunit.xsd&quot;</span>
+         <span class="na">colors=</span><span class="s">&quot;true&quot;</span>
+         <span class="na">bootstrap=</span><span class="s">&quot;bootstrap.php&quot;</span>
+         <span class="na">backupGlobals=</span><span class="s">&quot;false&quot;</span>
+         <span class="na">verbose=</span><span class="s">&quot;true&quot;</span>
+<span class="nt">&gt;</span>
+    <span class="nt">&lt;testsuites&gt;</span>
+        <span class="nt">&lt;testsuite</span> <span class="na">name=</span><span class="s">&quot;All Tests&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;directory</span> <span class="na">suffix=</span><span class="s">&quot;Test.php&quot;</span><span class="nt">&gt;</span>tests<span class="nt">&lt;/directory&gt;</span>
+        <span class="nt">&lt;/testsuite&gt;</span>
+    <span class="nt">&lt;/testsuites&gt;</span>
+
+    <span class="nt">&lt;listeners&gt;</span>
+        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Browser\Listener&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Isolation\Listener&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;arguments&gt;</span>
+                <span class="nt">&lt;object</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Isolation\Driver\Base&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/arguments&gt;</span>
+        <span class="nt">&lt;/listener&gt;</span>
+        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Event\StateListener&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/listeners&gt;</span>
+
+    <span class="nt">&lt;php&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://localhost/&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://localhost/backend/&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;testsuite_rule&quot;</span> <span class="na">value=</span><span class="s">&quot;basic&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;testsuite_rule_path&quot;</span> <span class="na">value=</span><span class="s">&quot;Magento/Mtf/TestSuite/InjectableTests&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;log_directory&quot;</span> <span class="na">value=</span><span class="s">&quot;var/log&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;events_preset&quot;</span> <span class="na">value=</span><span class="s">&quot;base&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;module_whitelist&quot;</span> <span class="na">value=</span><span class="s">&quot;Magento_Install,Magento_Upgrade&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;basedir&quot;</span> <span class="na">value=</span><span class="s">&quot;var/log&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;credentials_file_path&quot;</span> <span class="na">value=</span><span class="s">&quot;./credentials.xml.dist&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;mage_mode&quot;</span> <span class="na">value=</span><span class="s">&quot;developer&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/php&gt;</span>
+
+<span class="nt">&lt;/phpunit&gt;</span></code></pre></figure>
+</div></div>
+
+<table>
+<thead>
+<tr>
+    <th>Parameter</th>
+    <th>Description</th>
+    <th><code>value</code></th>
+    <th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td><code>app_frontend_url</code></td>
+    <td>URL to Magento storefront under test.</td>
+    <td><code>http://&lt;name&gt;.&lt;domain&gt;/</code></td>
+    <td><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_frontend" target="_blank">Set URL for Magento storefront under test</a></td>
+</tr>
+<tr>
+    <td><code>app_backend_url</code></td>
+    <td>URL to Magento Admin under test.</td>
+    <td><code>"http://&lt;name&gt;.&lt;domain&gt;/&lt;path to Admin&gt;/"</code></td>
+    <td><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_backend" target="_blank">Set URL for Magento Admin URL under test</a></td>
+</tr>
+<tr>
+    <td><code>testsuite_rule</code></td>
+    <td>Test suite name to be run.</td>
+    <td><code>"&lt;test suite name&gt;"</code></td>
+    <td><a href="/guides/v2.1/mtf/features/test_suite.html#configure" target="_blank">Set a test suite</a></td>
+</tr>
+<tr>
+    <td><code>testsuite_rule_path</code></td>
+    <td>Path to a test suite.</td>
+    <td><code>"&lt;path to test suite&gt;"</code></td>
+    <td><a href="/guides/v2.1/mtf/features/test_suite.html#configure" target="_blank">Set a path to test suite</a></td>
+</tr>
+<tr>
+    <td><code>log_directory</code></td>
+    <td>Path to a directory with testing reports.</td>
+    <td><code>"&lt;path to the reporting directory&gt;"</code></td>
+    <td><a href="http://localhost:4000/guides/v2.0/mtf/features/reporting.html#report-directory" target="_blank">Set a reporting directory</a></td>
+</tr>
+<tr>
+    <td><code>events_preset</code></td>
+    <td>Name of a reporting event preset.</td>
+    <td><code>"&lt;event preset name&gt;"</code></td>
+    <td><a href="/guides/v2.1/mtf/features/reporting.html#set-preset" target="_blank">Set a preset</a></td>
+</tr>
+<tr>
+    <td><code>module_whitelist</code></td>
+    <td>List of special <abbr title="Functional Testing Framework">FTF</abbr> modules which are present in functional tests but are not enabled in the Magento application.</td>
+    <td><code>"&lt;names of modules&gt;"</code></td>
+    <td>Make listed modules (that are not enabled in Magento) visible for the <abbr title="Functional Testing Framework">FTF</abbr>.</td>
+</tr>
+<tr>
+    <td><code>basedir</code></td>
+    <td>A directory where PHPUnit reports are stored.</td>
+    <td><code>"&lt;directory for PHPUnit reports&gt;"</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td><code>credentials_file_path</code></td>
+    <td>Path to the file with credentials required by services such as payment and shipment.</td>
+    <td><code>"./credentials.xml.dist"</code></td>
+    <td><a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html" target="_blank">Edit <code>credentials.xml</code> to work with Magento modules that require credentials</a></td>
+</tr>
+<tr>
+    <td><code>mage_mode</code></td>
+    <td>Magento mode (<a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html" target="_blank">About Magento modes</a>).</td>
+    <td><code>"default", "developer", "production"</code></td>
+    <td>This parameter is intended to be used directly in a test. The <abbr title="Functional Testing Framework">FTF</abbr> doesn't use it. <a href="https://github.com/magento/magento2/blob/2.1/dev/tests/functional/tests/app/Magento/PageCache/Test/TestCase/FlushAdditionalCachesTest.php">Open an example</a></td>
+</tr>
+<tr>
+    <td><code>module_filter</code></td>
+    <td>Applicable for <a href="/guides/v2.1/mtf/features/test_suite.html">test suites</a> only. Enables you to select test cases for specific modules. <a href="/guides/v2.1/mtf/features/test_suite.html#scope-testsuite" target="_blank">Learn more about the &lt;module&gt; filter in a test suite.</a></td>
+    <td><code>"Magento_&lt;name_of_module&gt;"</code></td>
+    <td>Use it when you don't want to modify the test suite. </td>
+</tr>
+<tr>
+    <td><code>module_filter_strict</code></td>
+    <td>Applicable for a <a href="/guides/v2.1/mtf/features/test_suite.html">tests suite</a> only. It has the same effect as <code>strict</code> in the <code>&lt;module&gt;</code>. <a href="/guides/v2.1/mtf/features/test_suite.html#scope-testsuite" target="_blank">Learn more about <code>strict</code> parameter of the &lt;module&gt; filter in a test suite.</a></td>
+    <td><code>"1"</code>, <code>"0"</code></td>
+    <td>Use it when you don't want to modify the test suite.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="config_xml"><code>config.xml</code></h2>
+
+<p>The <abbr title="Functional Testing Framework">FTF</abbr> configuration settings are declared and specified in two places:</p>
+
+<div class="collapsible"><b class="collapsible-title">in the Framework </b><div class="collapsible-content"><p>The file is located in <code>&lt;magento2_root_dir&gt;dev/tests/functional/vendor/magento/mtf/etc</code></p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2016 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;application&gt;</span>
+        <span class="nt">&lt;reopenBrowser&gt;</span>testCase<span class="nt">&lt;/reopenBrowser&gt;</span>
+        <span class="nt">&lt;backendLogin&gt;</span>admin<span class="nt">&lt;/backendLogin&gt;</span>
+        <span class="nt">&lt;backendPassword&gt;</span>123123q<span class="nt">&lt;/backendPassword&gt;</span>
+        <span class="nt">&lt;backendLoginUrl&gt;</span>admin/auth/login<span class="nt">&lt;/backendLoginUrl&gt;</span>
+    <span class="nt">&lt;/application&gt;</span>
+    <span class="nt">&lt;isolation&gt;</span>
+        <span class="nt">&lt;resetUrlPath&gt;</span>dev/tests/mtf/isolation.php<span class="nt">&lt;/resetUrlPath&gt;</span>
+        <span class="nt">&lt;testSuite&gt;</span>before<span class="nt">&lt;/testSuite&gt;</span>
+        <span class="nt">&lt;testCase&gt;</span>none<span class="nt">&lt;/testCase&gt;</span>
+        <span class="nt">&lt;test&gt;</span>none<span class="nt">&lt;/test&gt;</span>
+    <span class="nt">&lt;/isolation&gt;</span>
+    <span class="nt">&lt;server&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selenium&quot;</span> <span class="na">type=</span><span class="s">&quot;default&quot;</span> <span class="na">browser=</span><span class="s">&quot;Mozilla Firefox&quot;</span> <span class="na">browserName=</span><span class="s">&quot;firefox&quot;</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">port=</span><span class="s">&quot;4444&quot;</span> <span class="na">seleniumServerRequestsTimeout=</span><span class="s">&quot;90&quot;</span> <span class="na">sessionStrategy=</span><span class="s">&quot;shared&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;desiredCapabilities&gt;</span>
+                <span class="nt">&lt;platform&gt;</span>ANY<span class="nt">&lt;/platform&gt;</span>
+            <span class="nt">&lt;/desiredCapabilities&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/server&gt;</span>
+    <span class="nt">&lt;handler&gt;</span>
+        <span class="nt">&lt;curl</span> <span class="na">priority=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;ui</span> <span class="na">priority=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/handler&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p><img src="/common/images/ftf/ftf_mtf-config-xsd-dia.svg" alt="image" /></p>
+
+<p>Figure 1. - XML Schema for the <code>&lt;magento2_root_dir&gt;dev/tests/functional/vendor/magento/mtf/etc/config.xml</code>.</p>
+</div></div>
+
+<div class="collapsible"><b class="collapsible-title">in Magento functional tests </b><div class="collapsible-content"><p>The file is located in <code>&lt;magento2_root_dir&gt;dev/tests/functional/</code></p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2016 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;application&gt;</span>
+        <span class="nt">&lt;reopenBrowser&gt;</span>testCase<span class="nt">&lt;/reopenBrowser&gt;</span>
+        <span class="nt">&lt;backendLogin&gt;</span>admin<span class="nt">&lt;/backendLogin&gt;</span>
+        <span class="nt">&lt;backendPassword&gt;</span>123123q<span class="nt">&lt;/backendPassword&gt;</span>
+        <span class="nt">&lt;appBackendUrl&gt;</span>http://magento2ce.com/admin/<span class="nt">&lt;/appBackendUrl&gt;</span>
+        <span class="nt">&lt;backendLoginUrl&gt;</span>admin/auth/login<span class="nt">&lt;/backendLoginUrl&gt;</span>
+    <span class="nt">&lt;/application&gt;</span>
+    <span class="nt">&lt;isolation&gt;</span>
+        <span class="nt">&lt;resetUrlPath&gt;</span>dev/tests/functional/isolation.php<span class="nt">&lt;/resetUrlPath&gt;</span>
+        <span class="nt">&lt;testSuite&gt;</span>none<span class="nt">&lt;/testSuite&gt;</span>
+        <span class="nt">&lt;testCase&gt;</span>none<span class="nt">&lt;/testCase&gt;</span>
+        <span class="nt">&lt;test&gt;</span>none<span class="nt">&lt;/test&gt;</span>
+    <span class="nt">&lt;/isolation&gt;</span>
+    <span class="nt">&lt;install&gt;</span>
+        <span class="nt">&lt;host&gt;</span>127.0.0.1<span class="nt">&lt;/host&gt;</span>
+        <span class="nt">&lt;user&gt;</span>root<span class="nt">&lt;/user&gt;</span>
+        <span class="nt">&lt;password&gt;</span>123123q<span class="nt">&lt;/password&gt;</span>
+        <span class="nt">&lt;dbName&gt;</span>default<span class="nt">&lt;/dbName&gt;</span>
+        <span class="nt">&lt;baseUrl&gt;</span>http://magento2ce.com/<span class="nt">&lt;/baseUrl&gt;</span>
+        <span class="nt">&lt;backendName&gt;</span>backend<span class="nt">&lt;/backendName&gt;</span>
+    <span class="nt">&lt;/install&gt;</span>
+    <span class="nt">&lt;handler&gt;</span>
+        <span class="nt">&lt;webapi</span> <span class="na">priority=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;token&gt;</span>integration_token<span class="nt">&lt;/token&gt;</span>
+        <span class="nt">&lt;/webapi&gt;</span>
+        <span class="nt">&lt;curl</span> <span class="na">priority=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;ui</span> <span class="na">priority=</span><span class="s">&quot;2&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/handler&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p><img src="/common/images/ftf/ftf_config-xsd-dia.svg" alt="image" /></p>
+
+<p>Figure 2. - XML Schema for the <code>&lt;magento2_root_dir&gt;dev/tests/functional/vendor/magento/mtf/etc/config.xml</code>.</p>
+</div></div>
+
+<p>The <abbr title="Functional Testing Framework">FTF</abbr> merges settings from both files with the following priority:</p>
+
+<ul>
+  <li><code>config.xml</code> in Magento has higher priority then <code>config.xml</code> in the Framework</li>
+  <li><code>config.xml.dist</code> is omitted if <code>config.xml</code> exists</li>
+</ul>
+
+<p>Settings are grouped into the following blocks:</p>
+
+<ul>
+  <li><a href="#application"><code>&lt;application&gt;</code></a></li>
+  <li><a href="#isolation"><code>&lt;isolation&gt;</code></a></li>
+  <li><a href="#server"><code>&lt;server&gt;</code></a></li>
+  <li><a href="#handler"><code>&lt;handler&gt;</code></a></li>
+  <li><a href="#install"><code>&lt;install&gt;</code></a> (set in Magento functional tests only)</li>
+</ul>
+
+<h3 id="application"><code>&lt;application&gt;</code></h3>
+
+<p><strong>Description:</strong> Application configuration settings.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>&lt;reopenBrowser&gt;</code></td>
+      <td>Determines that a browser is to be restarted after each <code>test</code> or <code>testCase</code>.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;backendLogin&gt;</code></td>
+      <td>Magento Admin username that is used during functional testing.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;backendPassword&gt;</code></td>
+      <td>Magento Admin password that is used during functional testing.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;appBackendUrl&gt;</code></td>
+      <td>Base URL of the Magento Admin. Not applicable currently.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;backendLoginUrl&gt;</code></td>
+      <td>Relative path to the Magento Admin login page.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="isolation"><code>&lt;isolation&gt;</code></h3>
+
+<p><strong>Description:</strong> Settings of a script to be run during functional testing.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>&lt;resetUrlPath&gt;</code></td>
+      <td>Relative path of a script to be run. The URL is opened as usual web page in a browser, so that corresponding permissions must be set to the file.</td>
+      <td><code>&lt;resetUrlPath&gt;dev/tests/mtf/isolation.php&lt;/resetUrlPath&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>&lt;testSuite&gt;</code></td>
+      <td>When the script must be called relatively to <a href="/guides/v2.1/mtf/features/test_suite.html#configure">test suite</a> run.</td>
+      <td><code>none</code>, <code>before</code>, <code>after</code>, <code>both</code></td>
+    </tr>
+    <tr>
+      <td><code>&lt;testCase&gt;</code></td>
+      <td>When the script must be called relatively to <a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">test case</a> run.</td>
+      <td><code>none</code>, <code>before</code>, <code>after</code>, <code>both</code></td>
+    </tr>
+    <tr>
+      <td><code>&lt;test&gt;</code></td>
+      <td>When the script must be called relatively to test run.</td>
+      <td><code>none</code>, <code>before</code>, <code>after</code>, <code>both</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Values description:</p>
+
+<ul>
+  <li><code>none</code> - never run</li>
+  <li><code>before</code> - run before the entity to which it concerns</li>
+  <li><code>after</code> - run after the entity to which it concerns</li>
+  <li><code>both</code> - run before and after the entity to which it concerns</li>
+</ul>
+
+<h3 id="server"><code>&lt;server&gt;</code></h3>
+
+<p><strong>Description:</strong> Selenium server settings. <a href="https://github.com/giorgiosironi/phpunit-selenium/blob/master/PHPUnit/Extensions/Selenium2TestCase.php#L233-L238">Open settings declarations in Selenium repository</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>name</code></td>
+      <td>Name of an item.</td>
+      <td><code>"selenium"</code></td>
+    </tr>
+    <tr>
+      <td><code>type</code></td>
+      <td>Required Selenium setting. The <abbr title="Functional Testing Framework">FTF</abbr> doesn’t use it.</td>
+      <td><code>"default"</code></td>
+    </tr>
+    <tr>
+      <td><code>browser</code></td>
+      <td>A browser full name to be displayed where you needed it. The <abbr title="Functional Testing Framework">FTF</abbr> doesn’t use it.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>browserName</code></td>
+      <td>A browser that can be used for functional testing.</td>
+      <td><code>android</code>, <code>chrome</code>, <code>firefox</code>, <code>htmlunit</code>, <code>internet explorer</code>, <code>iPhone</code>, <code>iPad</code>, <code>opera</code>, <code>safari</code></td>
+    </tr>
+    <tr>
+      <td><code>host</code> and <code>port</code></td>
+      <td>Address of a Selenium Server.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>seleniumServerRequestsTimeout</code></td>
+      <td>A specified period of time to process a request.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>sessionStrategy</code></td>
+      <td>Standard Selenium Server parameter that sets a session strategy. Recommended to use <code>"shared"</code> only.</td>
+      <td><code>"shared"</code>, <code>"isolated"</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ltdesiredcapabilitiesgt"><strong>&lt;desiredCapabilities&gt;</strong></h4>
+
+<p><a href="https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities">Learn about desiredCapabilities in Selenium official documentation.</a></p>
+
+<h3 id="handler"><strong>&lt;handler&gt;</strong></h3>
+
+<p>Specifies priorities for different types of handlers. The lower the value, the higher the priority. The highest priority has value 0. <code>token</code> contains access token (used by WebAPI handlers only). <a href="/guides/v2.1/mtf/mtf_entities/mtf_handler.html">Learn more about handlers.</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>&lt;webapi&gt;</code></td>
+      <td><code>priority</code> value of a WebAPI handler.</td>
+      <td>Integer</td>
+    </tr>
+    <tr>
+      <td><code>&lt;curl&gt;</code></td>
+      <td><code>priority</code> value of a curl handler priority.</td>
+      <td>Integer</td>
+    </tr>
+    <tr>
+      <td><code>&lt;ui&gt;</code></td>
+      <td><code>priority</code> value of a UI handler priority.</td>
+      <td>Integer</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="install"><strong>&lt;install&gt;</strong></h3>
+
+<p>Set of parameters to be used for <a href="https://github.com/magento/magento2/blob/2.1/dev/tests/functional/tests/app/Magento/Install/Test/TestCase/InstallTest.php#L60-L77">installation test case</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>&lt;host&gt;</code></td>
+      <td>Magento database host name or IP address.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;user&gt;</code></td>
+      <td>Magento database user name.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;password&gt;</code></td>
+      <td>Magento database user password.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;dbName&gt;</code></td>
+      <td>Name of a database.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;baseUrl&gt;</code></td>
+      <td>Magento application base URL, starting with the scheme (<code>http://</code> or <code>https://</code>) and ending with a slash character (<code>/</code>).</td>
+    </tr>
+    <tr>
+      <td><code>&lt;backendName&gt;</code></td>
+      <td>Admin URI (following the base URL).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="/guides/v2.1/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Learn more about installation parameters</a></p>
+
+<!-- LINK DEFINITIONS -->
+
+<!-- External -->
+
+<!-- Internal -->
+
+<!-- ABBREVIATIONS -->
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+			
+
+			
+			 <div class="github-link">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/mtf/configuration.md" target="_blank">
+					 Edit this page on GitHub
+				 </a>
+			 </div>
+			
+
+			<div class="new-issue">
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/mtf/configuration.html" target="_blank">Give us feedback</a>
+			</div>
+
+		</div>
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+				<li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+				<li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2016 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
