@@ -498,7 +498,7 @@ $giftMessage = array (
   'message' =&gt; 'test'
 );
 
-$giftMessageSetForQuoteResult = $proxy-&gt;call($sessionId,“giftmessage.setForQuote”, array($shoppingCartId, $giftMessage, 'magento_store'));
+$giftMessageSetForQuoteResult = $proxy-&gt;call($sessionId,"giftmessage.setForQuote", array($shoppingCartId, $giftMessage, 'magento_store'));
 print_r( $giftMessageSetForQuoteResult );
 
 
@@ -528,7 +528,7 @@ $giftMessage = array (
 */
 $giftMessageSetForProductResult = $proxy-&gt;call(
   $sessionId,
-  “giftmessage.setForQuoteProduct”,
+  "giftmessage.setForQuoteProduct",
   array(
     $shoppingCartId,
     array(

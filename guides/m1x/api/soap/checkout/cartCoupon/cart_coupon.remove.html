@@ -503,7 +503,7 @@ $sessionId = $proxy-&gt;login('apiUser', 'apiKey');
 $shoppingCartId = $proxy-&gt;call( $sessionId, 'cart.create', array( 'magento_store' ) );
 $resultCartCouponRemove = $proxy-&gt;call(
 	$sessionId,
-	“cart_coupon.remove”,
+	"cart_coupon.remove",
 	array(
 		$shoppingCartId
 	)

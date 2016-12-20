@@ -556,8 +556,8 @@ $sessionId = $proxy-&gt;login('apiUser', 'apiKey');
 $quoteId = $proxy-&gt;call( $sessionId, 'cart.create', array( 'magento_store' ) );
 $arrProducts = array(
 	array(
-		“product_id” =&gt; “1”,
-		“qty” =&gt; 2
+		"product_id" =&gt; "1",
+		"qty" =&gt; 2
                 "options" =&gt; array(         
                     optionId_1 =&gt; optionValue_1,
                     ...,
@@ -565,13 +565,13 @@ $arrProducts = array(
                  )
 	),
 	array(
-		“sku” =&gt; “testSKU”,
-		“quantity” =&gt; 4
+		"sku" =&gt; "testSKU",
+		"quantity" =&gt; 4
 	)
 );
 $resultCartProductAdd = $proxy-&gt;call(
 	$sessionId,
-	“cart_product.add”,
+	"cart_product.add",
 	array(
 		$quoteId,
 		$arrProducts

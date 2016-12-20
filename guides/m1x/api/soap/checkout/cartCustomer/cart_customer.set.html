@@ -571,12 +571,12 @@ $sessionId = $proxy-&gt;login('apiUser', 'apiKey');
 
 $shoppingCartId = $proxy-&gt;call( $sessionId, 'cart.create', array( 'magento_store' ) );
 $customerAsGuest = array(
-	“firstname” =&gt; “testFirstname”,
-	“lastname” =&gt; “testLastName”,
-	“email” =&gt; “testEmail”,
-	“website_id” =&gt; “0”,
-	“store_id” =&gt; “0”,
-	“mode” =&gt; “guest”
+	"firstname" =&gt; "testFirstname",
+	"lastname" =&gt; "testLastName",
+	"email" =&gt; "testEmail",
+	"website_id" =&gt; "0",
+	"store_id" =&gt; "0",
+	"mode" =&gt; "guest"
 );
 $resultCustomerSet = $proxy-&gt;call($sessionId, 'cart_customer.set', array( $shoppingCartId, $customerAsGuest) );</pre>
 		</div>

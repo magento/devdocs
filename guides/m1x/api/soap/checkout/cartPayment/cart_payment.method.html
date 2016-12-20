@@ -559,12 +559,12 @@ $sessionId = $proxy-&gt;login('apiUser', 'apiKey');
 $shoppingCartId = $proxy-&gt;call( $sessionId, 'cart.create', array( 'magento_store' ) );
 
 $paymentMethod = array(
-	“method” =&gt; “checkmo”
+	"method" =&gt; "checkmo"
 );
 
 $resultPaymentMethod = $proxy-&gt;call(
 	$sessionId,
-	“cart_payment.method”,
+	"cart_payment.method",
 	array(
 		$shoppingCartId,
 		$paymentMethod
