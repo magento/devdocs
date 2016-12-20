@@ -26,11 +26,11 @@ Magento defines the following default health check:
     .timeout = 2s;
     .interval = 5s;
     .window = 10;
-    .threshold = 8;
+    .threshold = 5;
     }
 {% endhighlight %}
 
-Every 5 seconds, this health check calls the `pub/health_check.php` script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 5 out of 10 attempts, the backend is considered unhealthy.
+Every 5 seconds, this health check calls the `pub/health_check.php` script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the backend is considered unhealthy.
 
 For more information, see the <a href="https://www.varnish-cache.org/docs/4.1/users-guide/vcl-backends.html#health-checks" target="_blank">Varnish health checks</a> documentation.
 
