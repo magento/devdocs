@@ -131,7 +131,7 @@ We've enhanced the performance of configurable products in several ways:
 ### Email
 {:.no_toc}
 
-<!---57496-->* Magento now successfully loads the New Order Email templates. 
+<!---57496-->* Magento now successfully loads the New Order Email templates. <a href="https://github.com/magento/magento2/issues/5101" target="_blank">(GITHUB-5101)</a>
 
 <!---57204 -->* The **Send Welcome Email From** field now identifies the store that the customer is associated with. 
 
