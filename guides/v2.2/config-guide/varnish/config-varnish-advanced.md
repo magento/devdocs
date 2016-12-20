@@ -23,14 +23,14 @@ Magento defines the following default health check:
 {% highlight json %}
 .probe = {
     .url = "/pub/health_check.php";
-    .timeout = 500 ms;
+    .timeout = 2s;
     .interval = 5s;
     .window = 10;
     .threshold = 8;
     }
 {% endhighlight %}
 
-Every 5 seconds, this health check calls the `pub/health_check.php` script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 500 milliseconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 8 out of 10 attempts, the backend is considered unhealthy.
+Every 5 seconds, this health check calls the `pub/health_check.php` script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 5 out of 10 attempts, the backend is considered unhealthy.
 
 For more information, see the <a href="https://www.varnish-cache.org/docs/4.1/users-guide/vcl-backends.html#health-checks" target="_blank">Varnish health checks</a> documentation.
 
@@ -64,7 +64,7 @@ Saint mode can also be used when Magento instances are individually taken offlin
 ### Saint mode prerequisites {#saint-prereq}
 You should designate one machine as the primary installation. On this machine, install the main instance of Magento, mySQL database, and Varnish. On this installation of Magento, you must turn off static file versioning. From Admin, set **Stores > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files** to **No**.
 
-On all other machines, the Magento instance must have access the primary machine's mySQL database. On these instances, make sure **Sign Static Files** is set to **Yes**.
+On all other machines, the Magento instance must have access the primary machine's mySQL database. On these instances, make sure **Sign Static Files** is set to **No**.
 
 Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to **System > Cache Management** and click **Flush Magento Cache**. You can also run the following command to clear the cache:
 
