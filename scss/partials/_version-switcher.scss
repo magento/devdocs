@@ -1,13 +1,14 @@
 .version-switcher  {
   position: relative;
   z-index: 2;
-  float: right;
+  float: left;
   margin-top: 14px;
-  margin-right: 10px;
+  margin-right: 20px;
 
 
   .btn {
     background: transparent;
+    border: 1px solid darken( $light-gray-color, 15% );
   }
 
   &.version-switcher-mobile {
