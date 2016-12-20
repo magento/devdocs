@@ -57,4 +57,4 @@ Because Admin is accessed through Varnish, you cannot log in to Admin to enable 
 
 `magento setup:cache:enable`
 
-For more information about using the command line, see <a href="{{page.baseurl}}config-guide/cli/config-cli-commands.html">Get started with command-line configuration</a>
+For more information about using the command line, see <a href="{{page.baseurl}}config-guide/cli/config-cli-commands.html">Get started with command-line configuration</a>.
