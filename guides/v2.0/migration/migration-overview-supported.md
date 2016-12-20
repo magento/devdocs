@@ -35,8 +35,6 @@ The Data Migration Tool supports migration from the following versions:
 
     * 1.9.x
 
-### Migration from CE to EE
-
 If you migrate from CE to EE, the following versions are supported:
 
 * 1.6.x
