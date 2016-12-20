@@ -1,13 +1,13 @@
 ---
-youtube_id: dsQUzKoo6zs
+youtube_id: 7PJ4RB_TdQI
 tags:
 - Images
 - Themes
 group:
 subgroup:
-title: "Images in Themes part 1"
+title: "Getting Stuff Done with Magento 2: Kangaroo background image"
 author: "Alan Kent"
-menu_title: "Images in Themes part 1"
+menu_title: "Images in Themes part 2"
 menu_order: 0
 github_link:
 ---

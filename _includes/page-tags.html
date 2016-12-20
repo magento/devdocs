@@ -1,7 +1,7 @@
 {% if page.tags %}
 <div class="page-tags">
   {% for tag in page.tags %}
-    <a href="#" class="tag tag-default">{{tag}}</a>
+    <a href="{{ site.baseurl }}tag/{{ tag }}" class="tag tag-default">{{ tag }}</a>
   {% endfor %}
 </div>
 {% endif %}

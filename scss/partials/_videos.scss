@@ -1,10 +1,20 @@
 .videos {
+  clear: both;
+  padding: 10px 0;
+
+  &:after {
+    display: block;
+    content: '';
+    clear: both;
+  }
 
   .video {
+    display: inline-block;
+    vertical-align: top;
     position: relative;
     text-align: left;
-    max-width: 320px;
-    margin: 0 20px 20px 0;
+    max-width: 310px;
+    margin: 0 20px 40px 0;
 
     .thumbnail {
       display: block;
@@ -18,4 +28,44 @@
     }
 
   }
+}
+
+
+.home-videos {
+  .videos {
+    padding-top: 30px;
+  }
+}
+
+
+.videos-list {
+  .content-wrap {
+    margin-right: 0;
+  }
+}
+
+
+.video-page {
+  .sidebar ul li .video-duration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .sidebar ul li a {
+    padding-right: 45px;
+  }
+}
+
+
+
+.video-player.affix {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  width: 20%;
+  z-index: 9999;
+
+  box-shadow: 0 5px 16px rgba(0,0,0,.4);
 }

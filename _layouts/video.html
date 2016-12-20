@@ -1,17 +1,35 @@
 {% include header.html %}
 
-<div class="container">
+<div class="container video-page">
+
+	<aside class="sidebar">
+		<a href="#" class="toc-toggler">Table of Contents</a>
+		<div class="sidebar-wrapper">
+
+			<ul>
+				<li class=""><span class="nav-header">Getting Stuff Done with Magento 2</span></li>
+				<li class="level-1 active"><a href="">Part 1: Create Skeleton Theme <span class="video-duration">15:34</span></a></li>
+				<li class="level-1"><a href="">Part 2: Kangaroo background image  <span class="video-duration">9:55</span></a></li>
+				<li class="level-1"><a href="">Part 3: Add image to footer  <span class="video-duration">12:22</span></a></li>
+			</ul>
+
+		</div>
+	</aside>
 
 	<section class="content">
 		<div class="content-wrap">
 			{% include page-header.html %}
 
-			<div class="embed-responsive embed-responsive-16by9">
-      	<iframe class="embed-responsive-item" src='http://www.youtube.com/embed/{{ page.youtube_id }}'
-      		        itemprop='embedUrl'
-      		        frameborder='0'
-      	          allowfullscreen>
-      	</iframe>
+			<div id="video-player" class="video-player-wrap">
+				<div class="video-player">
+					<div class="embed-responsive embed-responsive-16by9">
+		      	<iframe class="embed-responsive-item" src='http://www.youtube.com/embed/{{ page.youtube_id }}'
+		      		        itemprop='embedUrl'
+		      		        frameborder='0'
+		      	          allowfullscreen>
+		      	</iframe>
+					</div>
+				</div>
 			</div>
 
 			{% include page-author.html %}

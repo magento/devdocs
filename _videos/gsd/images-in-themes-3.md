@@ -1,13 +1,13 @@
 ---
-youtube_id: dsQUzKoo6zs
+youtube_id: MFALT3UVHew
 tags:
 - Images
 - Themes
 group:
 subgroup:
-title: "Images in Themes part 1"
+title: "Getting Stuff Done with Magento 3: Add Image to Footer"
 author: "Alan Kent"
-menu_title: "Images in Themes part 1"
+menu_title: "Images in Themes part 3"
 menu_order: 0
 github_link:
 ---

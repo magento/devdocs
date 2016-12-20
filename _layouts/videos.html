@@ -1,11 +1,57 @@
 {% include header.html %}
 
-<div class="container">
+<div class="container videos-list">
+
+	<aside class="sidebar">
+		<a href="#" class="toc-toggler">Table of Contents</a>
+		<div class="sidebar-wrapper">
+
+			<ul>
+
+				<li class="level-1 active"><a href="{{ site.baseurl }}videos/">All Videos</a></li>
+
+				<li class=""><span class="nav-header">Playlists</span></li>
+				<li class="level-1"><a href="">Getting Things done with Magento 2</a></li>
+				<li class="level-1"><a href="">How-to scripts</a></li>
+				<li class="level-1"><a href="">Creating theme from skratch</a></li>
+
+
+				<li class=""><span class="nav-header">Tags</span></li>
+				<li class="level-1"><a href="">Frontend</a></li>
+				<li class="level-1"><a href="">Themes</a></li>
+				<li class="level-1"><a href="">Images</a></li>
+				<li class="level-1"><a href="">Database</a></li>
+
+
+
+
+
+				<li class=""><span class="nav-header">Authors</span></li>
+				<li class="level-1"><a href="">Alan Kent</a></li>
+				<li class="level-1"><a href="">Mangento</a></li>
+				<li class="level-1"><a href="">Random Dude</a></li>
+
+
+			</ul>
+
+		</div>
+	</aside>
+
+
 
 	<section class="content">
+		<div class="content-wrap">
 
 			{% include page-header.html %}
 			{{ content }}
+
+			<div class=" dropdown">
+				<button class="btn dropdown-toggle" data-toggle="dropdown">Most Popular</button>
+				<ul class="dropdown-menu dropdown-menu-left">
+					<li><a class="dropdown-item" href="/guides/v2.0/">Most Popular</a></li>
+					<li><a class="dropdown-item" href="/guides/v2.1/">Most Recent</a></li>
+				</ul>
+			</div>
 
 			<div class="videos">
 
@@ -13,7 +59,7 @@
 				<div class="video">
 	  			<a href="{{ video.url }}">
 						<img class="thumbnail" src="https://img.youtube.com/vi/{{ video.youtube_id }}/0.jpg" />
-						<span class="title">{{ video.title }}</span>2
+						<span class="title">{{ video.title }}</span>
 					</a>
 	  			<div class="author">by {{ video.author }}</div>
 				</div>
@@ -21,6 +67,7 @@
 
 			</div>
 
+		</div>
 	</section>
 	<!-- /.content -->
 
