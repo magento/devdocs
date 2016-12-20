@@ -87,7 +87,7 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html). 
 
 {% endcollapsible %}
 
