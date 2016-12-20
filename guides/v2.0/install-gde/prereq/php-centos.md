@@ -112,7 +112,7 @@ There is more than one way to install PHP 7.0.2 or later; the following is a sug
 	<span class="glyphicon-class">
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html</a>.
+3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
@@ -168,7 +168,7 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
 	<span class="glyphicon-class">
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html</a>.
+3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
@@ -202,7 +202,7 @@ There is more than one way to upgrade CentOS 6 to PHP 5.5; the following is a su
 		Zend Engine v2.5.0, Copyright (c) 1998-2015 Zend Technologies
 		with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2015, by Zend Technologies
 3.	Restart Apache: `service httpd restart`
-4.	Continue with the next section.
+4.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
