@@ -4,7 +4,7 @@ group: mrg
 subgroup: Community Edition
 title: Magento_Sales module API
 menu_title: Services/API
-menu_order:
+menu_order: 3
 version: 2.0
 tabgroup: sales-module
 tablabel: Services/APIs

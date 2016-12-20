@@ -4,7 +4,7 @@ group: mrg
 subgroup: Community Edition
 title: Magento_Sales module dependencies
 menu_title: Dependencies
-menu_order:
+menu_order: 2
 version: 2.1
 tabgroup: sales-module
 tablabel: Dependencies
