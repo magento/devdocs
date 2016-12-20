@@ -91,16 +91,16 @@ vcl 4.0;
 
 import std;
 
-# Begin saintmode-specific configuration
+# Begin saint mode configuration
 import saintmode;
 import directors;
-# End Saintmode-specific configuration
+# End saint mode configuration
 
 # The minimal Varnish version is 4.0
 # For SSL offloading, pass the following header in your proxy server or load balancer: 'X-Forwarded-Proto: https'
 # Sample configuration with saint mode
 
-# Begin Saintmode-specific configuration
+# Begin saint mode configuration
 backend default1 {
     .host = "192.168.0.1";
     .port = "8080";
@@ -126,7 +126,7 @@ backend default2 {
         .threshold = 2;
     }
 }
-# End Saintmode-specific configuration
+# End saint mode configuration
 
 acl purge {
     "192.168.0.1";
