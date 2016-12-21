@@ -24,7 +24,7 @@ Find `<php>` element.
 For `name="app_frontend_url"` set `value` that is your actual URL for Magento storefront under test.
 
 Example:
-`<env name="app_backend_url" value="http://example.com/magento2/"/>`
+`<env name="app_frontend_url" value="http://example.com/magento2/"/>`
 
 #### Set URL for Magento Admin URL under test {#mtf_quickstart_config_phpunitxml_backend}
 
