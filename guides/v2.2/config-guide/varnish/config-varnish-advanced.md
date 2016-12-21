@@ -31,7 +31,9 @@ Magento defines the following default health check:
 
 Every 5 seconds, this health check calls the `pub/health_check.php` script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the backend is considered unhealthy.
 
-For more information, see the <a href="https://www.varnish-cache.org/docs/4.1/users-guide/vcl-backends.html#health-checks" target="_blank">Varnish health checks</a> documentation.
+The `health_check.php` script is located in the `pub` directory. If your Magento root directory is `pub`, then be sure to change the path in the `url` parameter from `/pub/health_check.php` to `health_check.php`.
+
+For more information, see the <a href="https://www.varnish-cache.org/docs/4.1/usrs-guide/vcl-backends.html#health-checks" target="_blank">Varnish health checks</a> documentation.
 
 ## Grace mode {#grace}
 
@@ -44,9 +46,12 @@ The `vcl_hit` subroutine defines how Varnish responds to a request for objects t
 
 ### When the Magento backend is healthy {#grace-healthy}
 
-When the health checks determine that the Magento backend is healthy, Varnish checks whether the time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from Admin as described in []. If the grace period hasn't expired, Varnish delivers the stale content. If the grace period has not expired, Varnish serves the stale content and asynchronously refreshes the object from the Magento backend.
 
-To change the default grace period, edit the following line in [Configure Magento to use Varnish]({{page.baseurl}}config-guide/varnish/config-varnish-magento.html) the `vcl_hit` subroutine:
+When the health checks determine that the Magento backend is healthy, Varnish checks whether time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from Admin as described in [Configure Magento to use Varnish]({{page.baseurl}}config-guide/varnish/config-varnish-magento.html). If the grace period hasn't expired, Varnish delivers the stale content, and asynchronously refreshes the object from the Magento server. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.
+
+An object will be served from cache for a maximum for three days, or as defined in `beresp.grace`. When the Magento backend is healthy, Varnish requests a new object after it serves a stale object.
+
+To change the default grace period, edit the following line in the `vcl_hit` subroutine:
 
 `if (obj.ttl + 300s > 0s) {`
 
@@ -61,9 +66,11 @@ Saint mode blacklists unhealthy backends for a configurable amount of time. As a
 Saint mode can also be used when Magento instances are individually taken offline to perform maintenance and upgrade tasks without affecting the availability of the Magento site.
 
 ### Saint mode prerequisites {#saint-prereq}
-You should designate one machine as the primary installation. On this machine, install the main instance of Magento, mySQL database, and Varnish. On this installation of Magento, you must turn off static file versioning. From Admin, set **Stores > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files** to **No**.
+You should designate one machine as the primary installation. On this machine, install the main instance of Magento, mySQL database, and Varnish.
 
-On all other machines, the Magento instance must have access the primary machine's mySQL database. On these instances, make sure **Sign Static Files** is set to **No**.
+On all other machines, the Magento instance must have access the primary machine's mySQL database. The secondary machines should also have access to the files of the primary Magento instance.
+
+Alternatively, static files versioning can be turned off on all machines. This can be accessed from the Admin under **Stores > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files** = **No**. 
 
 Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to **System > Cache Management** and click **Flush Magento Cache**. You can also run the following command to clear the cache:
 
