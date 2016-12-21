@@ -26,7 +26,7 @@ Magento loads The configuration in the following stages:
 2. Global (`<moduleDir>/etc/di.xml`)
 3. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
 
-During [bootstrapping]({{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{page.baseurl}}architecture/modules/mod_and_areas.html).
+During [bootstrapping]({{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html).
 
 **Examples:**
 
@@ -323,4 +323,4 @@ Also, every instance of `Magento\Filesystem` will get separate instance of `$ada
 **Related topics**
 
 * [ObjectManager]({{page.baseurl}}extension-dev-guide/object-manager.html)
-* [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.md)
+* [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)

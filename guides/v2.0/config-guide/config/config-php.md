@@ -34,8 +34,8 @@ Examples:
 
 * Uninstall components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a>
 * Enable or disable components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
-* Component Manager: coming soon
-* System Upgrade: coming soon
+* [Component Manager]({{ page.baseurl }}comp-mgr/module-man/compman-main-pg.html)
+* [System Upgrade]({{ page.baseurl }}comp-mgr/upgrader/upgrade-start.html)
 
 `config.php` snippet:
 
@@ -113,7 +113,7 @@ The following table provides details about each `env.php` segment and its struct
       <td><code>cache</code></td>
       <td><pre>__/cache
  |__/frontend
-   |__/See <a href="{{page.baseurl}}config-guide/config/caching_frontend-cache-types.html">frontend options</a></pre></td>
+   |__/See <a href="{{page.baseurl}}config-guide/cache/caching_frontend-cache-types.html">frontend options</a></pre></td>
     </tr>
     <tr>
       <td>Installation date</td>

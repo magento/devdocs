@@ -40,6 +40,8 @@
 
 			<a class="logo" href="{% if page.guide_version == site.version or page.guide_version == nil %}{{site.baseurl}}{% else %}{{page.baseurl}}{% endif %}"><img src="{{site.baseurl}}i/m-logo.svg" alt=""><img src="{{site.baseurl}}i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="{{site.baseurl}}i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
 
+			{% include version-switcher.html %}
+
 			{% include navigation.html %}
 
 			<div class="search-btn">
@@ -52,7 +54,7 @@
 			</form>
 
 
-			{% include version-switcher.html %}
+
 
 
 		</div>

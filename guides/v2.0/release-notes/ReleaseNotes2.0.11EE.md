@@ -13,6 +13,10 @@ github_link: release-notes/ReleaseNotes2.0.11EE.md
 We are pleased to present Magento Enterprise Edition 2.0.11. This release includes many functional fixes and enhancements. 
 
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
+</div>
+
 
 ## Highlights
 Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these highlights:
@@ -59,7 +63,6 @@ We address the following functional issues in this release.
 
 <!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your shopping cart. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
 
-<!--- 55444-->* The Checkout page no longer freezes when you order a virtual gift card using the **Authorize.net Payment Action** value set to **Authorize and Capture**.
 
 <!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
 
@@ -103,6 +106,8 @@ We address the following functional issues in this release.
 
 <!--- 56859-->* The **Send Welcome Email From** field now accurately identifies the store that the customer is associated with. 
 
+<!--- 59172-->*  The **Disable Email Communication** option of **Store > Configuration > Advanced > System > Email Sending Settings** now works as expected. Previously, Magento sent email even if you disabled this feature. <a href="https://github.com/magento/magento2/issues/5988" target="_blank">(GITHUB-5988)</a>
+
 
 ### General fixes
 {:.no_toc} 
@@ -131,7 +136,6 @@ We address the following functional issues in this release.
 
 <!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Magento Admin after you ran the Web Setup Wizard.
 
-<!--- 59398-->* Custom themes now inherit parent XML configuration information as expected. 
 
 <!--- 57322-->* Magento no longer redirects users to the Checkout page after login. Now, if you set **Redirect Customer to Account Dashboard after Logging in** value to **Yes**, users will be redirected to the Account Dashboard page. If you set this value to **No**, then users will stay on the home page after login. 
 
@@ -144,7 +148,7 @@ We address the following functional issues in this release.
 
 <!--- 57326-->* The Sales Order object can now contain more than one `extension_attribute`.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a>
 
-<!--- 57352-->* We've removed the sample password from the Setup wizard.
+<!--- 57352-->* We've removed the sampassword from the Setup wizard.
 
 <!--- 57338-->* Customers are now redirected as expected to the destination URL identified in the **Redirect to My Account After Log-in** setting. Previously, customers were redirected to the My Account page, no matter which URL you identified in this setting.
 
@@ -169,14 +173,13 @@ We address the following functional issues in this release.
 
 <!--- 62032-->* We've fixed an error with an unexpected empty default website during website creation.  
 
-
-
+<!--- 58498-->* The **Need to Confirm** option on **Stores > Configuration > Customers > Newsletter** now works as expected. 
 
 
 ### Gift cards
 {:.no_toc} 
 
-<!--- 57513-->* You can now complete the purchase of a gift card in environments where you've set the Braintree payment method Payment Action to **Authorize and Capture**. Previously, any order made under these conditions would remain indefinitely in the processing stage.
+<!--- 57513-->* You can now complete the purchase of a gift card in environments where you have set the Braintree payment method Payment Action to **Authorize and Capture**. Previously, any order made under these conditions would remain indefinitely in the processing stage.
 
 <!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento would not save this information, and displayed an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
 
@@ -217,7 +220,6 @@ We address the following functional issues in this release.
 {:.no_toc} 
 
 
-<!--- 58065-->* You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data. 
 
 <!--- 57082-->* The Component Manager now shows a list of all available versions of an extension for installation. Previously, the Web Setup component manager showed only the latest version of the extension. 
 
@@ -243,6 +245,9 @@ We address the following functional issues in this release.
 
 	* change order status after a credit memo has been created.
 
+<!--- 58833-->* We've removed redundancy in the orders comment history display. Previously, Magento would display the time at which the customer entered the comment twice.
+
+
 
 ### Payment methods
 {:.no_toc} 
@@ -250,6 +255,10 @@ We address the following functional issues in this release.
 <!--- 57099-->* You can now successfully place an order using the Payflow Pro payment method. 
 
 <!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and displayed this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
+
+<!--- 61561-->* Magento now saves credit card information as expected after a customer checks out using a Braintree credit card with Vault. 
+
+<!--- 58377-->* PayPal Payflow Pro now uses the currency you have specified in your store. Previously, under some conditions, PayPal Payflow Pro defaulted to calculating charges in U.S. dollars, no matter which currency you specified. 
 
 
 
@@ -279,6 +288,8 @@ We address the following functional issues in this release.
 
 <!--- 57004-->* The scope selector on the Product page now accurately displays all related websites for a restricted user. 
 
+ <!--- 60464-->* We've fixed an issue with the scope selector on the Catalog page. Previously, Magento did not display the scope selector when using Mass Actions, but now you can specify the scope of the action that will be applied to the products when using Mass Actions.
+
 
 ### Static file processing
 {:.no_toc}
@@ -293,11 +304,6 @@ We address the following functional issues in this release.
 {:.no_toc} 
 
 <!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.
-
-<!--- 59315-->* We've fixed an issue where updating product stock did not persist correctly when saving products through either the web API or directly in the repository. 
-
-
-
 
 
 
@@ -339,16 +345,16 @@ We address the following functional issues in this release.
 
 
 
-<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323, 61877, 61881 -->
+<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323, 61877, 61881, 61887, 62019, 62020, 61927, 61889, 61163 -->
 
 
-<!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803, 61975 -->
+<!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803, 61975, 55444 -->
 
 
-<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172, 61959 -->
+<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172, 61959, 59398 -->
 
 
-<!---  WON'T FIX 58853, 58798, 57105, 57802, 58083, 58900, 58611, 57311, 56916, 59370, 57510, 61242, 61339, 59414, 59408, 57330, 59411, 56958 -->
+<!---  WON'T FIX 58853, 58798, 57105, 57802, 58083, 58900, 58611, 57311, 56916, 59370, 57510, 61242, 61339, 59414, 59408, 57330, 59411, 56958, 58065 -->
 
 <!---  DUPLICATE 59410, 58085, 57095, 59558, 58095, 61149, 58095, 61254 -->
 

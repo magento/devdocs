@@ -94,7 +94,7 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	<a href="{{ page.baseurl }}install-gde/prereq/php-settings.html">Required PHP settings</a>.
+3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html). 
 
 {% endcollapsible %}
 
@@ -125,6 +125,8 @@ If PHP is *not* installed, see one of the following sections:
   		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
 
+3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html). 
+
 {% endcollapsible %}
 
 #### Next
@@ -138,5 +140,4 @@ If PHP is *not* installed, see one of the following sections:
 *	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Ways to install the Magento software</a>
 

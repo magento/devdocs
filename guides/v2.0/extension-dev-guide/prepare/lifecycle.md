@@ -221,7 +221,7 @@ class \Magento\Cms\Setup\InstallData implements \Magento\Framework\Setup\Upgrade
 
 ### Uninstall event
 
-The uninstall event begins when you uninstall your module using the [Component Manager]({{page.baseurl}}comp-mgr/compman-uninst.html) or by running the command `bin/magento module:uninstall --remove-data <module_name>`.
+The uninstall event begins when you uninstall your module using the [Component Manager]({{page.baseurl}}comp-mgr/module-man/compman-uninst-final.html) or by running the command `bin/magento module:uninstall --remove-data <module_name>`.
 
 In this stage, your module should remove all traces of its existence in the database; e.g. dropping tables, deleting data, or restoring data.
 

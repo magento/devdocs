@@ -57,7 +57,7 @@ In default mode:
 
 *	Errors are logged to the file reports at server, and never shown to a user
 *	Static view files are cached
-*	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being dynamically generated rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
+*	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view){:target="_blank"}. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
