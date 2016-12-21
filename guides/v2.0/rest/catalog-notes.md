@@ -30,15 +30,15 @@ When you create a category from Admin, you have the option to configure display 
          },
          {
             "attribute_code":"meta_title",
-            "value”:”Women meta title"
+            "value":"Women meta title"
          },
          {
             "attribute_code":"meta_keywords",
-            "value”:”Women meta keywords"
+            "value":"Women meta keywords"
          },
          {
             "attribute_code":"meta_description",
-            "value”:”Women meta description"
+            "value":"Women meta description"
          },
          {
             "attribute_code":"url_key",
