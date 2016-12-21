@@ -77,7 +77,7 @@ Saint mode is not part of the main Varnish package. It is a separately-versioned
 * [Installing Varnish 4.1](https://www.varnish-cache.org/docs/4.1/installation/install.html)
 * [Installing Varnish 4.0](https://www.varnish-cache.org/docs/4.0/installation/install.html)
 
-After you've recompiled, you can install the Saint mode module. See [Varnish module collection](https://github.com/varnish/varnish-modules) for information about installing this module.
+After you've recompiled, you can install the Saint mode module. See [Varnish module collection](https://github.com/varnish/varnish-modules) for information about installing the Saint mode module.
 
 ### Sample `vcl` file {#saint-sample}
 
