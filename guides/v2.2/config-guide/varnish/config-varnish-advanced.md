@@ -49,9 +49,9 @@ The `vcl_hit` subroutine defines how Varnish responds to a request for objects t
 
 When the health checks determine that the Magento backend is healthy, Varnish checks whether time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from Admin as described in [Configure Magento to use Varnish]({{page.baseurl}}config-guide/varnish/config-varnish-magento.html). If the grace period hasn't expired, Varnish delivers the stale content, and asynchronously refreshes the object from the Magento server. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.
 
-An object will be served from cache for a maximum for three days, or as defined in `beresp.grace`. When the Magento backend is healthy, Varnish requests a new object after it serves a stale object.
+The maximum amount of time that Varnish serves a stale object is the sum of the grace period (300 seconds by default) and the TTL value (86400 seconds by default).
 
-To change the default grace period, edit the following line in the `vcl_hit` subroutine:
+To change the default grace period from within the `default.vcl` file, edit the following line in the `vcl_hit` subroutine:
 
 `if (obj.ttl + 300s > 0s) {`
 
@@ -70,7 +70,7 @@ You should designate one machine as the primary installation. On this machine, i
 
 On all other machines, the Magento instance must have access the primary machine's mySQL database. The secondary machines should also have access to the files of the primary Magento instance.
 
-Alternatively, static files versioning can be turned off on all machines. This can be accessed from the Admin under **Stores > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files** = **No**. 
+Alternatively, static files versioning can be turned off on all machines. This can be accessed from the Admin under **Stores > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files** = **No**.
 
 Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to **System > Cache Management** and click **Flush Magento Cache**. You can also run the following command to clear the cache:
 
@@ -84,7 +84,22 @@ Saint mode is not part of the main Varnish package. It is a separately-versioned
 * [Installing Varnish 4.1](https://www.varnish-cache.org/docs/4.1/installation/install.html)
 * [Installing Varnish 4.0](https://www.varnish-cache.org/docs/4.0/installation/install.html)
 
-After you've recompiled, you can install the Saint mode module. See [Varnish module collection](https://github.com/varnish/varnish-modules) for information about installing the Saint mode module.
+After you've recompiled, you can install the Saint mode module. In general, follow these steps:
+
+<ol>
+<li><p>Obtain the source code from <a href="https://github.com/varnish/varnish-modules">Varnish modules</a> . Clone the git version (master version) since the 0.9.x versions contain a source code error.</p></li>
+
+<li><p>Build the source code with autotools:</p>
+
+<p><code>sudo apt-get install libvarnishapi-dev || sudo yum install varnish-libs-devel</code></p>
+<p><code>./bootstrap   # If running from git.</code></p>
+<p><code>./configure</code></p>
+<p><code>make</code></p>
+<p><code>make check   # optional</code></p>
+<p><code>sudo make install</code></p>
+</li></ol>
+
+See [Varnish module collection](https://github.com/varnish/varnish-modules) for information about installing the Saint mode module.
 
 ### Sample `vcl` file {#saint-sample}
 
