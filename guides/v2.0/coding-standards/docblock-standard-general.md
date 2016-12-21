@@ -10,7 +10,7 @@ github_link: coding-standards/docblock-standard-general.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-general.html
 ---
 
-This standard defines Magento requirements and conventions for adding code inline documentation, known as <i>DocBlock</i>s.
+This standard defines Magento requirements and conventions for adding code inline documentation, known as *DocBlock*s.
 
 Some parts of Magento code might not comply with this standard, but we are working to gradually improve this.
 
@@ -22,10 +22,58 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 {:#scope}
 
 The goal of this standard is to unify usage of code DocBlocks for all files, not specific to a particular language.
+
 The following is assumed by default:
 
-* Formatting according phpDocumentor standard
+* Formatting according [phpDocumentor](https://www.phpdoc.org/docs/latest/guides/docblocks.html){:target="_blank"} standard
 * Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.
+
+## General principles
+
+The documentation should follow two simple principles:
+
+1. Be as short as possible.
+2. Include all necessary information.
+
+### Short documentation
+
+The documentation should be as short as possible, but it should not skip necessary details.  
+
+Below are ways of improving code to help simplify documentation:
+
+* Make code self-explanatory.
+* Put all possible information in the names of classes, methods, and variables. (e.g. use `$timeInSec` instead of `$time`)
+* Break down a method into smaller methods with descriptive names.
+  See example below:
+  
+  {% highlight php startinline=true %}
+  public function getPrice()
+  {
+      $price = 0;
+      $price += $this->getBasePrice();
+      $price -= $this->getDiscount();
+      return $price;
+  }
+
+  private function getBasePrice()
+  {
+      // calculate base price
+  }
+    
+  private function getDiscount()
+  {
+    if (it's discount time) {
+      return 10;
+    }
+    return 0;
+  } 
+  {% endhighlight %}
+
+### Include necessary details
+
+Identify the details a developer needs to work with your code.
+Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.
+Add any remaining information that a developer may need to the DocBlock.
 
 ## Files
 {:#files}
@@ -151,7 +199,15 @@ require_once __DIR__ . '/../../functions.php';
 ### Classes and interfaces
 {:#classes-interfaces}
 
-Classes and interfaces must have a short description.
+Classes and interfaces must have a short description that is a human-understandable intention of the class.
+
+**Good:**
+
+> Handler for PHP errors/warnings/notices that converts them to exceptions.
+
+**Bad:**
+
+> ErrorHandler -> ErrorHandler
 
 ### Short name form
 {:#short-name-form}
@@ -220,7 +276,33 @@ Functions and methods must have:
 * Declaration of possibly thrown exception using `@throws` tag, if the actual body of function triggers throwing an exception.
   All occurrences of `@throws` in a DocBlock must be after `@param` and `@return` (if any).
 
-It is encouraged to supply `@param` and `@throws` tags with additional description, which comes after the formal declaration of the tag.
+#### Things to include
+
+* An explanation of input arguments and return values if it is not obvious from their name and type.
+  
+  This is applicable in the following cases:
+
+  * There is more than one possible input/output type.
+
+    For example: `@return Config|null`.  
+    The DockBlock needs to explain what situations return `null`.
+
+    Another example: `@param FileInterface | null`.  
+    The DocBlock needs to explain what happens when the value of the parameter is `null`.
+
+    Ideally, implementations such as these should be avoided.
+
+  * The input/output type is a simple type and the format is not clear from the name.
+  * The input/output is an array with a specific structure.
+* The intent of the method along with when or where it can be used.
+* If an exception is thrown by a method, explain the cause or situation.
+* If the input is confusing or complicated, add examples of the method's usage in client code or examples of the argument.
+
+#### Things to avoid
+
+* Copying the algorithm. 
+  The algorithm must be self-explanatory and understood by reviewing the code and unit tests.
+* Information that is out of date or has the potential to become out of date.
 
 **Example of a Method DocBlock**
 
