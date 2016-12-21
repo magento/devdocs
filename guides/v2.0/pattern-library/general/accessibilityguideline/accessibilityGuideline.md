@@ -50,7 +50,7 @@ The reading order should match the visual order.
 
 Ensure keyboard users can visually identify a focused link.
 
-**7. Design a “skip to main content” link**
+**7. Design a "skip to main content" link**
 
 A link for keyboard users to skip navigation should be at the top of the page. It can be hidden, but should be visible when in keyboard focus.
 
@@ -132,7 +132,7 @@ True text enlarges better, loads faster, and is easier to translate. Use CSS to 
 
 Make sure keyboard users can always visually identify a focused link.
 
-**5. Support a “skip to main content” link**
+**5. Support a "skip to main content" link**
 
 A link for keyboard users to skip navigation should be at the top of the page. It can be hidden, but should be visible when in keyboard focus.
 

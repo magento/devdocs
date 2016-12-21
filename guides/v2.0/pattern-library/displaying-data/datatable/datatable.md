@@ -93,7 +93,7 @@ Pagination controls allow the user to easily page through and organize data. Pag
 	<li>The ‘Next’ button should be disabled when viewing the last page of results.</li>
 	<li>The ‘Skip to’ field will allow only numeric values.</li>
 	<li>‘Skip to’ will be instantiated once the value is changed and [Return] or [Tab] is clicked.</li>
-	<li>A custom number of items per page can be set by selecting the “Custom” link which will allow users to specify a number. This number can be edited.</li>
+	<li>A custom number of items per page can be set by selecting the "Custom" link which will allow users to specify a number. This number can be edited.</li>
 </ul>
 <br />
 <br />
@@ -117,7 +117,7 @@ A common theme across the existing Magento user experience includes mass actions
 <img src="img/datatable08.jpg">
 <br />
 <br />
-Actions will be positioned above the table . Each table  will have it’s own set of actions, some table s will have no actions. This new proposal removes the submit button which is currently visible next to the “Actions” drop down selector. In the event that any confirmations are needed for actions, modal dialogs will be used.
+Actions will be positioned above the table . Each table  will have it’s own set of actions, some table s will have no actions. This new proposal removes the submit button which is currently visible next to the "Actions" drop down selector. In the event that any confirmations are needed for actions, modal dialogs will be used.
 <br />
 <br />
 <br />
@@ -145,7 +145,7 @@ There are times when an action needs to be confirmed. In these cases, the user�
 <br />
 <br />
 
-Once an action is taken, success/fail messaging should appear as an overlay which fades away. Certain actions may  require that an Undo action be provided. This experience should be the same whether a single file is being deleted via the “actions” button for that record or 1 or more files have been selected via a checkbox and deleted via the mass actions delete.
+Once an action is taken, success/fail messaging should appear as an overlay which fades away. Certain actions may  require that an Undo action be provided. This experience should be the same whether a single file is being deleted via the "actions" button for that record or 1 or more files have been selected via a checkbox and deleted via the mass actions delete.
 <br />
 <br />
 <img src="img/datatable12.jpg">
@@ -233,7 +233,7 @@ If there are more columns than can be shown in one view, the vertical scroll bar
 <br />
 <br />
 <br />
-In the example below, the first column is “Name” rather than “Customer ID.”
+In the example below, the first column is "Name" rather than "Customer ID."
 This horizontal scroll should still work with page scroll and sticky header.
 <br />
 <br />
@@ -244,7 +244,7 @@ This horizontal scroll should still work with page scroll and sticky header.
 <br />
 
 <h2 id="search">Search</h2>
-When the user enters a keyword in the search field and submits the query (by clicking the spyglass icon), the table will display only records that contain the designated keyword. The search term is displayed as a “chip” below the search field (and inline with any additional filters that were applied). In this layout, additional search terms can be paired with the initial term to further refine the results. Each time a term is submitted, the data is filtered, the term is displayed as a “chip” and the search field returns to it’s initial state (it does not retain the term entered my the user).
+When the user enters a keyword in the search field and submits the query (by clicking the spyglass icon), the table will display only records that contain the designated keyword. The search term is displayed as a "chip" below the search field (and inline with any additional filters that were applied). In this layout, additional search terms can be paired with the initial term to further refine the results. Each time a term is submitted, the data is filtered, the term is displayed as a "chip" and the search field returns to it’s initial state (it does not retain the term entered my the user).
 <br />
 <br />
 <br />
@@ -269,7 +269,7 @@ As text is added to the search field, the system will suggest terms and phrases 
 <br />
 
 <h3>Search/Filter Tags</h3>
-Once a search term or filter is applied and results are loaded into the table, the terms or parameters used to filter by are displayed in the minified version of the “filter chip(s)”. If the user removes all the tags, the filters row would disappear.
+Once a search term or filter is applied and results are loaded into the table, the terms or parameters used to filter by are displayed in the minified version of the "filter chip(s)". If the user removes all the tags, the filters row would disappear.
 <br />
 <br />
 <br />
@@ -314,7 +314,7 @@ Custom views allow the user to save the state of a table. When a view is saved, 
 <br />
 
 <h3>Editing Saved Views</h3>
-Views can be named or deleted by clicking an edit icon. Refer to “Adding a custom value to drop down list” above for more detailed behavior.
+Views can be named or deleted by clicking an edit icon. Refer to "Adding a custom value to drop down list" above for more detailed behavior.
 <br />
 <br />
 <br />
@@ -357,7 +357,7 @@ Users may remove a filter setting by clicking/tapping the remove control next to
 
 <!---
 <h3>Quick Filters</h3>
-In some instances, pre-determined “quick filters” may be present in the form of links. These are filter shortcuts of common filtering attributes to assist users who may not readily consider filtering the table for results. Quick Filters are perhaps most useful for extracting ‘reports’ from tables.  These filters are elevated above the ‘advanced filters’.
+In some instances, pre-determined "quick filters" may be present in the form of links. These are filter shortcuts of common filtering attributes to assist users who may not readily consider filtering the table for results. Quick Filters are perhaps most useful for extracting ‘reports’ from tables.  These filters are elevated above the ‘advanced filters’.
 
 <strong>Step 1:</strong> Starting state. User click on a quick filter link.
 <br />
@@ -408,7 +408,7 @@ The following parameters will be saved:
 This will be handled by the ‘Reset’ function in the settings drop down button. A modal dialog should appear, allowing the user to confirm the reset.
 
 <h2 id="selectall">Select All</h2>
-This feature will allow users to make bulk selections to items within any given data-table. Because users may be dealing with many “pages” of data, this function needs to be specific in respect to what is being selected. Thus a drop down will be used to allow for multiple options for selecting records.
+This feature will allow users to make bulk selections to items within any given data-table. Because users may be dealing with many "pages" of data, this function needs to be specific in respect to what is being selected. Thus a drop down will be used to allow for multiple options for selecting records.
 <br />
 <br />
 <br />
@@ -461,7 +461,7 @@ For tables which require a select column:
 <br />
 
 <h3>Toggle Switches</h3>
-Some data-tables will be used to display “settings” content. In these instances a checkbox is not ideal for the experience, as it can be confusing to the user when pre-selected settings are displayed. Switches make the action and intent more clear to the user for these tasks. Therefore, if switches are present, checkboxes should not; the two should never be used in the same table. Since switches replace the functionality of checkboxes they should be the first column of the data-table. 
+Some data-tables will be used to display "settings" content. In these instances a checkbox is not ideal for the experience, as it can be confusing to the user when pre-selected settings are displayed. Switches make the action and intent more clear to the user for these tasks. Therefore, if switches are present, checkboxes should not; the two should never be used in the same table. Since switches replace the functionality of checkboxes they should be the first column of the data-table. 
 <br />
 <br />
 <br />
@@ -519,9 +519,9 @@ Some fields may allow for only a specific set of values. In these instances, a s
 This section will outline additional features which may be needed for some but not all tables in Magento.
 
 <h3>Drag and Drop Columns</h3>
-Some data-tables will allow users to arrange columns in a customized order. A user “picks up” a column by click and hold or touch and hold of the column header, then drags the column into the desired position. A highlight appears between columns in the table to indicate where this column will appear when “dropped”. Columns will not be allowed to precede the column of checkboxes in a table, likewise columns may not be positioned after the “Actions” column.  
+Some data-tables will allow users to arrange columns in a customized order. A user "picks up" a column by click and hold or touch and hold of the column header, then drags the column into the desired position. A highlight appears between columns in the table to indicate where this column will appear when "dropped". Columns will not be allowed to precede the column of checkboxes in a table, likewise columns may not be positioned after the "Actions" column.  
 
-When dropped on an area that is not highlighted (or off target of the highlighted area) the column will return to it’s original position. If the user wishes to maintain this position for future viewing, they must set a “Saved View”, otherwise the default column order will prevail for following sessions.
+When dropped on an area that is not highlighted (or off target of the highlighted area) the column will return to it’s original position. If the user wishes to maintain this position for future viewing, they must set a "Saved View", otherwise the default column order will prevail for following sessions.
 <br />
 <br />
 <br />

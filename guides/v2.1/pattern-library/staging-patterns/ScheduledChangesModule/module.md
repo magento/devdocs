@@ -46,7 +46,7 @@ When a single update is scheduled, the module’s default height is the same as 
 <img src="img/sc-Module-single update.jpg">
 
 #### Loading More Updates:
-The “Load More” button appears at the bottom of the list of scheduled updates. By default, 5 scheduled updates are displayed. To view more, users can click “Load More” to add the next set of scheduled updates.  
+The "Load More" button appears at the bottom of the list of scheduled updates. By default, 5 scheduled updates are displayed. To view more, users can click "Load More" to add the next set of scheduled updates.  
 <img src="img/sc-Module-load more.jpg">
 
 

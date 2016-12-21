@@ -72,7 +72,7 @@ Time:
 
 *	Month and Year will behave as drop selectors
 
-*	Clicking the “Done” button, clicking outside the widget, or clicking outside the text field completes the entry with the field still in focus
+*	Clicking the "Done" button, clicking outside the widget, or clicking outside the text field completes the entry with the field still in focus
 
 *	The user has the ability to edit date/time via text field
 
