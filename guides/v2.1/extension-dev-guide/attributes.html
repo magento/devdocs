@@ -1215,14 +1215,14 @@
 <p>In this example, the <code>stock_item</code> attribute is restricted to only the users who have the <code>Magento_CatalogInventory::cataloginventory</code> permission. As a result, an anonymous or unauthenticated user issuing a <code>GET http://&lt;magento_base_url&gt;/rest/V1/products/&lt;sku&gt;</code> request will receive product information similar to the following:</p>
 
 <pre><code>{
-  "sku": “tshirt1”,
-  “price”: “20.00”,
-  “description”: “New JSmith design”,
-  “extension_attributes”: {
-    “logo size”: “small”
+  "sku": "tshirt1",
+  "price": "20.00",
+  "description": "New JSmith design",
+  "extension_attributes": {
+    "logo size": "small"
   },
-  “custom_attributes”: {
-    “artist”: “James Smith”
+  "custom_attributes": {
+    "artist": "James Smith"
   }
 }
 </code></pre>
@@ -1230,18 +1230,18 @@
 <p>However, an authenticated user with the permission <code>Magento_CatalogInventory::cataloginventory</code> receives the additional <code>stock_item</code> field:</p>
 
 <pre><code>{
-  "sku": “tshirt1”,
-  “price”: “20.00”,
-  “description”: “New JSmith design”,
-  “extension_attributes”: {
-    “logo size”: “small”,
-    “stock_item” : {
-      “status” : “in_stock”
-      “quantity”: 70
+  "sku": "tshirt1",
+  "price": "20.00",
+  "description": "New JSmith design",
+  "extension_attributes": {
+    "logo size": "small",
+    "stock_item" : {
+      "status" : "in_stock"
+      "quantity": 70
     }
   },
-  “custom_attributes”: {
-    “artist”: “James Smith”
+  "custom_attributes": {
+    "artist": "James Smith"
   }
 }
 </code></pre>
@@ -1258,8 +1258,8 @@
 
 <p>However, if an extension similar to the following has been defined, the interface will not be empty.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">“Magento\Customer\Api\Data\CustomerInterface&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">“attributeName&quot;</span> <span class="na">type=</span><span class="s">“Magento\Some\Type[]&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Customer\Api\Data\CustomerInterface&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;attributeName&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Some\Type[]&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/extension_attributes&gt;</span></code></pre></figure>
 
 <h2 id="related">Related topics</h2>
