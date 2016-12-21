@@ -250,7 +250,7 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-<!---58312-->* Magento no longer incorrectly shows products as “out of stock” after you update your installation from 2.0.7 to 2.1.0. <a href="https://github.com/magento/magento2/issues/5222" target="_blank">(GITHUB-5222)</a> 
+<!---58312-->* Magento no longer incorrectly shows products as "out of stock" after you update your installation from 2.0.7 to 2.1.0. <a href="https://github.com/magento/magento2/issues/5222" target="_blank">(GITHUB-5222)</a> 
 
 <!---57943-->* Magento 2.0.x and 2.1.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error:   "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a> 
 
