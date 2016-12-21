@@ -4,7 +4,7 @@ group: mrg
 subgroup: Community Edition
 title: Magento_Sales module
 menu_title: Description
-menu_order:
+menu_order: 1
 version: 2.0
 tabgroup: sales-module
 tablabel: Description
