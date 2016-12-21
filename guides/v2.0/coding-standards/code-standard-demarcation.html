@@ -971,9 +971,9 @@ public function getAttributeId($element)
 
 <p><strong>Acceptable PHTML template</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">span</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;attribute-change-checkbox”&gt;</span>
-<span class="s2">&lt;label&gt;</span>
-<span class="s2">   &lt;input type=&quot;</span><span class="nx">checkbox”</span> 
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">span</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;attribute-change-checkbox&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> 
       <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAttributeName</span><span class="p">(</span><span class="nv">$element</span><span class="p">))</span> <span class="o">?</span> <span class="s1">&#39; name=&quot;&#39;</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAttributeName</span><span class="p">(</span><span class="nv">$element</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&quot;&#39;</span> <span class="o">:</span> <span class="k">NULL</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">      data-mage-init=&quot;{customToggleWidget: [elementSelector: &quot;input[name=&#39;someCustomName&#39;]&quot;]}&quot; /&gt;</span>
 <span class="x">   </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;Mage_Catalog_Helper_Data&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">&#39;Change&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
@@ -993,7 +993,7 @@ public function getAttributeId($element)
 
 <p><strong>Unacceptable PHTML template</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">&lt;span class=&quot;attribute-change-checkbox”&gt;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">&lt;span class=&quot;attribute-change-checkbox&quot;&gt;</span>
 <span class="x">	&lt;label&gt;</span>
 <span class="x">		</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCheckbox</span><span class="p">(</span><span class="nv">$element</span><span class="p">)</span><span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">		</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;Mage_Catalog_Helper_Data&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">&#39;Change&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
