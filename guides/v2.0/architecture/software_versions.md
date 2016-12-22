@@ -44,7 +44,7 @@ Schema and data version numbers are relevant only to developer-level discussions
 
 Some modules contain tables of data, and these tables are assigned a schema version number. Changes to the table structure must be reflected in this schema version number. (Table structure changes can include the addition or deletion of a column, for example.) Changes to table data are captured in the data version number.
 
-For information on the types of schema changes that affect a module’s schema version number, see section 2 of Introducing SchemaVer for semantic versioning of schemas.
+For information on the types of schema changes that affect a module's schema version number, see section 2 of Introducing SchemaVer for semantic versioning of schemas.
 
 If you are developing an extension, specify the schema version of each module in its `module.xml` file. Magento stores this schema version of each module within the read-only `setup_module` table of the Magento database.
 
