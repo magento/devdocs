@@ -52,7 +52,9 @@ Merchants do not need to understand that, under the covers, some packages are sh
 *	<a href="{{page.baseurl}}extension-dev-guide/build/composer-integration.html">component types in <code>composer.json</code></a>.
 
 ### Component Manager {#gloss-compman}
-Merchants use the <a href="{{page.baseurl}}comp-mgr/compman-start.html">Component Manager</a> (part of the Magento Admin) to do any of the following:
+Merchants use the [Component Manager](comp-mgr/module-man/compman-start.html)
+
+<a href="{{page.baseurl}}comp-mgr/compman-start.html">Component Manager</a> (part of the Magento Admin) to do any of the following:
 
 *	Install, uninstall
 *	Update
