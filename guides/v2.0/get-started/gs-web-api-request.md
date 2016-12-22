@@ -229,7 +229,7 @@ $httpHeaders->addHeaders([
 ]);
 </pre>
 <li><p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
-<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{page.baseurl}}get-started/usage.html" target="_blank">searchCriteria usage</a>.</p></li>
+<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{page.baseurl}}howdoi/webapi/search-criteria.html" target="_blank">searchCriteria usage</a>.</p></li>
 <pre>
 $request = new \Zend\Http\Request();
 $request->setHeaders($httpHeaders);
