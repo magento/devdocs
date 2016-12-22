@@ -8,7 +8,9 @@ menu_title: Overview
 menu_node: parent
 version: 2.0
 github_link: ui-components/ui-component.md
-redirect_from: /guides/v2.0/ui-library/ui-library-component.html
+redirect_from: 
+  - /guides/v2.0/ui-library/ui-library-component.html
+  - /guides/v2.0/ui_comp_guide/bk-ui_comps.html
 ---
 
 <h2 id="general">Overview of UI components</h2>
