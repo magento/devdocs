@@ -51,7 +51,7 @@ At a high level, there are three main steps for managing module dependencies:
 
 3. (*Optional*) Define the desired load order of config files and `.css` files in the `module.xml` file.
 
-Example: Module A declares a dependency upon Module B. Thus, in Module A's `module.xml` file, Module B is listed in the &lt;sequence> list, so that B’s files are loaded before A's. Additionally, you must declare a dependency upon Module B in A’s `composer.json` file. Furthermore, in the <a href="{{page.baseurl}}config-guide/config/config-php.html">deployment configuration</a>, Modules A and B must both be defined as enabled.
+Example: Module A declares a dependency upon Module B. Thus, in Module A's `module.xml` file, Module B is listed in the &lt;sequence> list, so that B's files are loaded before A's. Additionally, you must declare a dependency upon Module B in A's `composer.json` file. Furthermore, in the <a href="{{page.baseurl}}config-guide/config/config-php.html">deployment configuration</a>, Modules A and B must both be defined as enabled.
 
 ## Related topics {#m2arch-module-related}
 
