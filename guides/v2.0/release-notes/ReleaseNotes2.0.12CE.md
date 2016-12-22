@@ -71,8 +71,6 @@ We address the following functional issues in this release.
 
 
 
-9
-
 
 
 ## Known issues
