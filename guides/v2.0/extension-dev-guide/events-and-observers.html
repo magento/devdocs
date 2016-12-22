@@ -1014,7 +1014,7 @@
 <p>The following example shows you how to dispatch an event with and without an array of data.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule</span><span class="p">;</span>
-
+<span class="k">use</span> <span class="nx">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">MyClass</span><span class="p">{</span>
   <span class="sd">/**</span>
 <span class="sd">  * @var EventManager</span>
@@ -1054,6 +1054,8 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Observer</span><span class="p">;</span>
 
+<span class="k">use</span> <span class="nx">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
+
 <span class="k">class</span> <span class="nc">MyObserver</span> <span class="k">implements</span> <span class="nx">ObserverInterface</span>
 <span class="p">{</span>
   <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
@@ -1071,6 +1073,7 @@
 <p>One of the more powerful feature of observers is that they are able to use parameters passed into the event when it was dispatched. Below is an example of an observer obtaining data passed in when the event was dispatched.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Observer</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">AnotherObserver</span> <span class="k">implements</span> <span class="nx">ObserverInterface</span>
 <span class="p">{</span>

@@ -948,9 +948,9 @@
 
 <p>For search APIs that invoke a <code>*Repository::getList(SearchCriteriaInterface *)</code> call, the searchCriteria must be specified in the URL of the GET request. The basic pattern for specifying the criteria is</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][field=<span class="nt">&lt;field_name&gt;</span>]
-searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][value=<span class="nt">&lt;search_value&gt;</span>]
-searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][condition_type=<span class="nt">&lt;operator&gt;</span>]</code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][field]=<span class="nt">&lt;field_name&gt;</span>
+searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][value]=<span class="nt">&lt;search_value&gt;</span>
+searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][condition_type]=<span class="nt">&lt;operator&gt;</span></code></pre></figure>
 
 <p>where:</p>
 

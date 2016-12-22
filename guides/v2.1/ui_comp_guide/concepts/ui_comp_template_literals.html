@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>About the uiCollection class</title>
+	<title>Template Literals in UI Components</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">
+	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/concepts/ui_comp_template_literals.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/concepts/ui_comp_template_literals.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_template_literals.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -430,7 +430,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_template_literals.html">Template Literals</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_template_literals.html">Template Literals</a></li>
 
 									
 
@@ -454,7 +454,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">About the uiCollection class</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">About the uiCollection class</a></li>
 
 									
 
@@ -672,7 +672,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">About the uiCollection class</span>
+        <span property="name">Template Literals in UI Components</span>
         <meta property="position" content="2" />
       </li>
 
@@ -684,99 +684,102 @@
 
 
 	
-	<h1 class="page-heading">About the uiCollection class</h1>
+	<h1 class="page-heading">Template Literals in UI Components</h1>
 
   
 
 
 </section>
 
-			<h2 id="what-is-uicollection">What is <code>uiCollection</code></h2>
+			<h1 id="template-literals-in-magento">Template Literals in Magento</h1>
 
-<p>The <code>uiCollection</code> library class should be used as a base class by any components that contain a collection of child UI components.  <code>uiCollection</code> inherits from the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement class</a>.</p>
+<p>Magento provides for the use of template literals in UI components. Template literals are strings that can contain embedded expressions. They were introduced into Javascript with ES2015 and were called “template strings” in early editions of the ES2015 / ES6 specification. Since it is a relatively new part of Javascript, some browsers, such as Internet Explorer 11, do not support the specification. Per the specification standard, back-ticks (<code>`</code>) are used instead of a single quote (<code>'</code>) or double quote (<code>"</code>) to delineate a template string. Due to the lack of browser support, Magento has a Javascript class that will parse certain strings with a single quote (<code>'</code>) in the same way a browser that supports the specification would parse one with back-ticks.</p>
 
-<p><code>uiCollection</code> source code is <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/collection.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js">app/code/Magento/Ui/view/base/web/js/lib/core/collection.js</a>.</p>
+<p>Template literals can contain expressions which will be evaluated in the current KnockoutJS context. These expressions can contain nearly any valid Javascript. They must start with a dollar sign and be surrounded with curly braces. <strong>Anything inside the following will be evaluated as an expression</strong>: <code>${  }</code>. For example, they can be used—and often are—to access properties of the KnockoutJS context like this: <code>'${ $.submitUrl }'</code>. They can be used to call functions (<code>'${ $.loadForm($.formUrl) }'</code>), or whatever: <code>'${ 20 + 13 }'</code>. These expressions are parsed in <code>/lib/web/mage/utils/template.js</code>.</p>
 
-<h2 id="commonly-used-uicollection-methods">Commonly used <code>uiCollection</code> methods</h2>
+<p>Template literals allow UI Components to easily assign dynamic values to class properties. More specifically, they provide an integration layer between a particular KnockoutJS context and a Javascript class.</p>
 
-<p>The <code>uiCollection</code> class implements the following methods:</p>
+<h3 id="the-defaults-class-property">The <code>defaults</code> Class Property</h3>
 
-<ul>
-  <li>
-    <p>The <code>initElement()</code> method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The <code>initElement()</code> method gets the child UI component instance as a parameter.</p>
+<p>UI Components are <a href="http://devdocs.magento.com/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">associated with Javascript classes</a> to handle behavior on the client side. These should extend one of the core classes to provide a base level of functionality. Inside the child class, a <code>defaults</code> property can be provided.</p>
 
-    <p>Example:</p>
-  </li>
-</ul>
+<p>The <code>defaults</code> property should be an object and is handled in a special way. Each property of <code>defaults</code> becomes a class property upon initialization. This happens in the <code>initConfig()</code> method of <code>lib/core/class.js</code>. Every item in <code>defaults</code> is passed through a <code>template()</code> function which evaluates template literals.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="nx">initElement</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">childInstance</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">childInstance</span><span class="p">.</span><span class="o">%</span><span class="nx">customProperty</span><span class="o">%</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
-      <span class="k">this</span><span class="p">.</span><span class="o">%</span><span class="nx">currentComponentProperty</span><span class="o">%</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-  <span class="p">}</span>
-  </code></pre></figure>
+<p>As a result, every <code>defaults</code> child property is handled with what could be viewed as a two step process:</p>
 
-<ul>
-  <li>The <code>destroy()</code> method removes the following for the child components and itself:
-    <ul>
-      <li>link to the component in <code>uiRegistry</code></li>
-      <li>link to the component in the parent component</li>
-      <li>event listeners</li>
-    </ul>
+<ol>
+  <li>Evaluate the value of the property for expressions. For example: <code>'${ $.submitUrl }'</code> could become <code>'https://example.com/contact/form/submit/'</code> (more on that later).</li>
+  <li>Assign that property/value to the class itself. As a result <code>class.defaults.submitUrl</code> would become <code>class.submitUrl</code>.</li>
+</ol>
 
-    <p>Example:</p>
-  </li>
-</ul>
+<p>This part is important because it means that Javascript classes that extend <code>Class</code> (<code>magento/module-ui/view/base/web/js/lib/core/class.js</code>) can use the <code>defaults</code> property to assign properties to the class itself and leverage template literals during that process without any work on your part.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">    <span class="k">this</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span></code></pre></figure>
+<h4 id="the--separator">The <code>:</code> separator</h4>
+
+<p>Certain properties of the <code>defaults</code> object are processed by an additional core Javascript class: <code>links.js</code> (located: <code>magento/module-ui/view/base/web/js/lib/core/element/links.js</code>). The object keys in <code>defaults</code> are:</p>
 
 <ul>
-  <li>
-    <p>The <code>getChild()</code> method returns an element from the collection of child UI components.</p>
-
-    <p>Example:</p>
-  </li>
+  <li><code>links</code></li>
+  <li><code>imports</code></li>
+  <li><code>exports</code></li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">    <span class="k">this</span><span class="p">.</span><span class="nx">getChild</span><span class="p">(</span><span class="nx">childIndex</span><span class="p">)</span></code></pre></figure>
+<p>They can be used to interact with other UI Component Javascript classes. While the full use of them is a separate topic, those values can use a colon (<code>:</code>) to separate an expression, which should evaluate to a UI Component’s name, from the properties to be accessed in that class. Take this example: <code>'${ $.provider }:user.theme'</code>. If the <code>${ $.provider }</code> expression evaluates to the name of a UI Component that is currently in the registry, that component will be loaded and the value of its <code>user.theme</code> property returned.</p>
 
-<p>where <code>childIndex</code> is the value of the child element’s <code>index</code> property.</p>
+<p>As a result, a template literal used in the value of one the objects listed above can be used to succinctly access data from an <em>entirely different</em> UI Component Javascript class.</p>
 
-<h2 id="commonly-used-uicollection-properties">Commonly used <code>uiCollection</code> properties</h2>
+<h3 id="template-literal--context">Template Literal <code>$</code> context</h3>
 
-<ul>
-  <li>
-    <p><code>elems</code> is the observable property that contains the collection of child UI components.</p>
+<p>Perhaps the most important part of template literals in Magento is the <code>$</code> object that can be used inside expressions. (Remember an expression is anything within <code>${ }</code>.) The <code>$</code> provides access to the <code>this</code> context in the Javascript class where the template literals are. To take it a step further, <code>this</code> (and the related <code>$</code>) is the KnockoutJS context for the template that can be bound to the UI Component. This object should not be confused with the <code>$</code> that marks the beginning of an expression. The <code>$</code> object can only appear inside of an expression. Here is an example: <code>${ $.submitUrl }</code>: the <code>$</code> references the current KnockoutJS context, and <code>.submitUrl</code> will return the <code>provider</code> property from that object.</p>
 
-    <p>Example:</p>
-  </li>
-</ul>
+<h2 id="example">Example</h2>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">elems</span><span class="p">());</span>
+<p>Perhaps the most useful aspect of template literals is the ability to access other UI Component Javascript classes in the registry so we will use this as an example. First, there are a few things to explain.</p>
 
-<span class="c1">// [</span>
-<span class="c1">//   %uiComponentInstance 1 %,</span>
-<span class="c1">//   %uiComponentInstance 2 %,</span>
-<span class="c1">//   %uiComponentInstance 3 %,</span>
-<span class="c1">//   %uiComponentInstance 4 %</span>
-<span class="c1">// ]</span></code></pre></figure>
+<p>UI Components can have a <code>&lt;item name="config" xsi:type="array"&gt;...&lt;/item&gt;</code> node in the primary XML declaration file (<a href="http://devdocs.magento.com/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#example-of-a-top-level-configuration-file">see an example</a>). In that file, a <code>component</code> element can be added with a path reference to the RequireJS file. That file is loaded into the registry when it runs on the front end and other Javascript files can then access it by the <em>name</em> of the UI Component instead of the path to the file itself. The name often will look something like this: <code>example_component.example_component</code>.</p>
 
-<ul>
-  <li><code>childDefaults</code> can be used to set the children defaults: properties from <code>childDefaults</code> are set into child elements’ <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties"><code>defaults</code> property</a>.</li>
-</ul>
+<p>Names of other registered modules can be added to the server side configuration (XML or PHP) that is output through JSON. Those names can then be easily accessed in the Javascript on the front end. In the following example, the other UI Component’s name will be obtained with a template literal in the <code>imports</code> object. When this Javascript file is loaded, it will process the template literal and look up the name in the registry. If found, it will load that class. Because there is a colon (<code>:</code>), it will go on to find the property that is accessed in the other Javascript class.</p>
 
-<h2 id="uicollection_template">uiCollection template</h2>
+<pre><code class="language-javascript">return Element.extend({
+    defaults: {
+        template: 'Example_Component/message-list',
+        imports: {
+            messages: '${ $.messageHandler }:data.userMessages'
+        }
+    },
 
-<p>The <code>uiCollection</code> template is <code>&lt;UI_Module_dir&gt;/view/base/web/templates/collection.html</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/templates/collection.html"><code>app/code/Magento/Ui/view/base/web/templates/collection.html</code></a>.</p>
+    // ...
 
-<p>This template performs only one task: renders child templates if they exist.</p>
+    initialize: function() {
+        this._super();
+        this.addHtmlClassesToMessages();
+    },
 
-<p>It looks like following:</p>
+    addHtmlClassesToMessages: function() {
+        this.messages.forEach(function(currentValue) {
+            currentValue['htmlClass'] = 'message message--' + currentValue['type'];
+        });
+    }
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;each</span> <span class="na">args=</span><span class="s">&quot;data: elems, as: &#39;element&#39;&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;render</span> <span class="na">if=</span><span class="s">&quot;hasTemplate()&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/each&gt;</span></code></pre></figure>
+    // ...
+})
+</code></pre>
 
-<p>Here <code>elems</code> is the collection of the child elements of <code>uiCollection</code>. As far as <code>elems</code> is the observable property, the templates of the components added to <code>elems</code> in the runtime, are also rendered.</p>
+<p>Notice how the <code>addHtmlClassesToMessages()</code> method accesses the <code>messages</code> property of <code>this</code>. When the class was initialized, the <code>data.userMessages</code> array was obtained from the <code>$.messageHandler</code> UI Component and was then assigned to the primary object.</p>
+
+<p>In the template, the messages can be displayed like this:</p>
+
+<pre><code class="language-html">&lt;!-- File: app/code/Example/Component/view/frontend/web/template/message-list.html --&gt;
+&lt;div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../Ui/etc/ui_template.xsd"&gt;
+  &lt;ul data-bind="foreach: messages" class="message-list"&gt;
+      &lt;li data-bind="text: content, css: htmlClass"&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Template literals provide a simple and concise way to evaluate expressions. In Magento, they facilitate a great way to load data into a Javascript class. They also play a part in interacting with other classes to create a fully interactive front end framework.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -784,17 +787,23 @@
 		<div class="page-info">
 
 			
+				<div class="page-contributor">
+					<a href="https://swiftotter.com/" target="_blank">
+						Thanks to SwiftOtter Studios for contributing this topic
+					</a>
+				</div>
+			
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_template_literals.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/concepts/ui_comp_template_literals.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
