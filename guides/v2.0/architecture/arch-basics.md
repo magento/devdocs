@@ -13,7 +13,7 @@ github_link: extension-dev-guide/arch-basics
 
 ### Magento technology stack
 
-Magento’s highly modular structure includes the following open-source technologies:
+Magento's highly modular structure includes the following open-source technologies:
 
 Stack components include:
 
