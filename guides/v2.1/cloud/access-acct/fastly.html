@@ -1605,9 +1605,7 @@
 </div>
 </div></div>
 
-<h3 id="cloud-fastly-setup">Install Fastly in your new environment</h3>
-
-<div class="collapsible"><b class="collapsible-title">To install Fastly: </b><div class="collapsible-content"><ol>
+<p id="cloud-fastly-setup"><div class="collapsible collapsible-h3"><h3 class="collapsible-title">Install Fastly in your new environment </h3><div class="collapsible-content"><ol>
   <li>
     <p>In your local environment root directory, enter the following commands in the order shown:</p>
 
@@ -1632,8 +1630,7 @@ php bin/magento cache:clean
 </ol>
 </div></div>
 
-<h3 id="cloud-fastly-admin">Enable Fastly using the Magento Admin</h3>
-<div class="collapsible"><b class="collapsible-title">To enable Fastly using the Magento Admin: </b><div class="collapsible-content"><ol>
+<p id="cloud-fastly-admin"><div class="collapsible collapsible-h3"><h3 class="collapsible-title">Enable Fastly using the Magento Admin </h3><div class="collapsible-content"><ol>
   <li>Log in to the Magento Admin as an administrator.</li>
   <li>
     <p>Click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> as the following figure shows:</p>
@@ -1652,9 +1649,7 @@ php bin/magento cache:clean
 <p>After you receive a Magento VCL from Fastly, <a href="/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly">upload it to your staging or production system</a>.</p>
 </div></div>
 
-<h3 id="cloud-fastly-config">Configure Fastly</h3>
-
-<div class="collapsible"><b class="collapsible-title">To configure Fastly: </b><div class="collapsible-content"><p>Configure Fastly using the following:</p>
+<p id="cloud-fastly-config"><div class="collapsible collapsible-h3"><h3 class="collapsible-title">Configure Fastly </h3><div class="collapsible-content"><p>Configure Fastly using the following:</p>
 
 <ul>
   <li>We provide your Fastly service ID and API key.</li>
@@ -1682,27 +1677,31 @@ php bin/magento cache:clean
 <p>For advanced configuration options, download and customize the <a href="https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl" target="_blank">Fastly configuration</a>.</p>
 </div></div>
 
-<h3 id="cloud-fastly-merge">Merge your Fastly branch</h3>
-<p>When you’re done with development, <a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">merge your environment</a> with its parent environment.</p>
+<p id="cloud-fastly-merge"><div class="collapsible collapsible-h3"><h3 class="collapsible-title">Merge your Fastly branch </h3><div class="collapsible-content"><p>When you’re done with development, <a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">merge your environment</a> with its parent environment.</p>
 
 <p>For Fastly to be used in production, you must merge with the <code>master</code> environment.</p>
+</div></div>
 
-<h4 id="next-steps">Next steps</h4>
-<ul>
-  <li>If you have issues with the Fastly extension, see <a href="/guides/v2.1/">Troubleshoot Fastly</a></li>
-  <li><a href="/guides/v2.1/cloud/env/environments.html">Manage your environments</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Use the Project Web Interface</a></li>
-  <li>
-    <p>Configure your project:</p>
+<h2>Custom VCLs</h2>
+<p>You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
 
-    <ul>
-      <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-      <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
-      <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
-    </ul>
-  </li>
+<p>Failure to follow these guidelines means your customizations won't work as expected.</p>
+
+<h4>Next steps</h4>
+<ul><li>If you have issues with the Fastly extension, see <a href="/guides/v2.1/">Troubleshoot Fastly</a>.</li>
+	<li><a href="/guides/v2.1/cloud/env/environments.html">Manage your environments</a></li>
+	<li><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Use the Project Web Interface</a></li>
+	<li>Configure your project:
+		<ul><li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
+			<li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
+			<li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
+		</ul>
+	</li>
 </ul>
 
+
+
+</p></p></p></p></p>
 
 		</div>
 		<!-- /.content-wrap -->

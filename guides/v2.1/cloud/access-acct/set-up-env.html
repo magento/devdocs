@@ -1509,32 +1509,13 @@
 
 </section>
 
-			<h2 id="setup-env-setup">Step 1: Clone the master environment</h2>
-<p>This topic discusses how to clone the <code>master</code> environment, set up global Git environment variables, and to enable SSH if you haven’t done so already.</p>
+			
+<p>This topic discusses how to get started developing on Magento Enterprise Cloud Edition. All developers should perform the tasks discussed in this topic.</p>
+
+<h2 id="setup-env-setup">Step 1: Clone the master environment</h2>
+<p>This section discusses how to clone the <code class="highlighter-rouge">master</code> environment, set up global Git environment variables, and to enable SSH if you haven’t done so already.</p>
 
 <p>If you have already performed these tasks, you can skip this step and the next step and continue with <a href="#setenv-cron">Step 3: Set up cron</a>.</p>
-
-<ol>
-  <li>Log in to your local development machine as, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
-  <li>Change to the web server or virtual host docroot.</li>
-  <li>
-    <p>Log in to your project:</p>
-
-    <p>magento-cloud login</p>
-  </li>
-  <li>
-    <p>List your projects:</p>
-
-    <p>magento-cloud project:list</p>
-  </li>
-  <li>
-    <p>Clone a project.</p>
-
-    <p>magento-cloud project:get <project ID=""></project></p>
-
-    <p>When prompted for a directory name, enter <code>magento2</code>.</p>
-  </li>
-</ol>
 
 <h3 id="enable-ssh-to-the-environment">Enable SSH to the environment</h3>
 <p>This is a one-time setup that was covered previously in this guide; skip this section if you’ve already enabled SSH.</p>
@@ -1631,16 +1612,18 @@
     </li>
     <li>Follow the prompts on your screen to complete the task.</li>
   </ol>
+</div>
+</div></div>
 
-  <h3 id="set-global-git-variables">Set global Git variables</h3>
-  <p>To set global Git variables required to commit or push to an environment (that is, Git branch), enter the following commands:</p>
+<h3 id="set-global-git-variables">Set global Git variables</h3>
 
-  <pre><code>git config --global user.name "&lt;your name&gt;"
+<div class="collapsible"><b class="collapsible-title">To set global Git variables: </b><div class="collapsible-content"><p>To set global Git variables required to commit or push to an environment (that is, Git branch), enter the following commands:</p>
+
+<pre><code>git config --global user.name "&lt;your name&gt;"
 git config --global user.email &lt;your e-mail address&gt;
 </code></pre>
 
-  <p>For more information, see <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time" target="_blank">First-Time Git Setup</a></p>
-</div>
+<p>For more information, see <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time" target="_blank">First-Time Git Setup</a></p>
 </div></div>
 
 <h3 id="setenv-clone">Clone a project and environment</h3>
@@ -1680,8 +1663,8 @@ git config --global user.email &lt;your e-mail address&gt;
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
-  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
-</div>
+      <p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
+    </div>
   </li>
   <li>
     <p>Fetch origin branches:</p>
@@ -1698,17 +1681,16 @@ git config --global user.email &lt;your e-mail address&gt;
 </ol>
 </div></div>
 
-<h2 id="setup-env-adminurl">Step 2: Change the Admin URI, user name, and password in the master branch</h2>
-<p>This section discusses how to change Magento Admin parameters for security reasons. If you change the variables in the <code>master</code> branch, you have to do it only once because other environments inherit the variables from <code>master</code>.</p>
+<p id="setup-env-adminurl"><div class="collapsible collapsible-h2"><h2 class="collapsible-title">Step 2: Change the Admin URI, user name, and password in the master branch </h2><div class="collapsible-content"><p>This section discusses how to change Magento Admin parameters for security reasons. If you change the variables in the <code>master</code> branch, you have to do it only once because other environments inherit the variables from <code>master</code>.</p>
 
 <p>If your master branch is already configured, skip this section and continue with <a href="#setenv-new-env">Step 3: Clone or branch an environment</a>.</p>
 
 <p>If you’re not sure whether or not the master branch has been configured, enter the following command:</p>
 
-<pre><code>magento-cloud variable:get -e &lt;environment ID&gt;
+<pre><code>	magento-cloud variable:get -e &lt;environment ID&gt;
 </code></pre>
 
-<div class="collapsible"><b class="collapsible-title">To change the Admin URI, user name, and administrator password in the master branch: </b><div class="collapsible-content"><ol>
+<ol>
   <li>
     <p>Set the variable values.</p>
 
@@ -1741,30 +1723,28 @@ git config --global user.email &lt;your e-mail address&gt;
 
     <p>The simplest way to do that is to use the environment routes that display when you redeploy the <code>master</code> branch. An example follows:</p>
 
-    <pre><code>Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
-    Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
-    Slug already built for this tree id, skipping.
+    <pre><code>        Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
+                Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
+                Slug already built for this tree id, skipping.
 
-Re-deploying environment k4wtvm7ogzr5s-master.
-Environment configuration:
-    mymagento (type: php:7.0, size: S, disk: 2048)
-    mysql (type: mysql:10.0, size: S, disk: 2048)
-    redis (type: redis:3.0, size: S)
-    solr (type: solr:4.10, size: S, disk: 1024)
+        Re-deploying environment k4wtvm7ogzr5s-master.
+        Environment configuration:
+                mymagento (type: php:7.0, size: S, disk: 2048)
+                mysql (type: mysql:10.0, size: S, disk: 2048)
+                redis (type: redis:3.0, size: S)
+                solr (type: solr:4.10, size: S, disk: 1024)
 
-Environment routes:
-    http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
-    https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+        Environment routes:
+                http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+                https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+
+In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `meister_x2U8` and password `admin_A456`
 </code></pre>
-
-    <p>In the preceding example, go to <code>http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10</code> and log in using the user name <code>meister_x2U8</code> and password <code>admin_A456</code></p>
   </li>
 </ol>
 </div></div>
 
-<h2 id="setenv-cron">Step 3: Set up cron</h2>
-
-<div class="collapsible"><b class="collapsible-title">To set up cron: </b><div class="collapsible-content"><div>
+<p id="setenv-cron"><div class="collapsible collapsible-h2"><h2 class="collapsible-title">Step 3: Set up cron </h2><div class="collapsible-content"><div>
 
   <h3 id="prerequisites">Prerequisites</h3>
   <p>Magento uses cron for two sets of tasks, and for each, cron can run with a different configuration:</p>
@@ -1860,33 +1840,24 @@ For more information, see <a href="/guides/v2.1/install-gde/prereq/php-settings.
 </div>
 </div></div>
 
-<h2 id="setenv-new-env">Step 4: Clone or branch an environment</h2>
-<p>Now that you’ve change the Magento Admin variables, you should create a new environment for your development work; this new environment inherits the variable values from master.</p>
+<p id="setenv-new-env"><div class="collapsible collapsible-h2"><h2 class="collapsible-title">Step 4: Clone or branch an environment </h2><div class="collapsible-content"><p>Now that you’ve change the Magento Admin variables, you should create a new environment for your development work; this new environment inherits the variable values from master.</p>
 
 <p>After you create the branch, update project dependencies so you can install the Magento software locally.</p>
 
-<div class="collapsible"><b class="collapsible-title">To branch a new environment: </b><div class="collapsible-content"><ol>
+<ol>
   <li>
     <p>Do any of the following:</p>
 
-    <ul>
-      <li>
-        <p>To create a new environment, enter the following command:</p>
+    <pre><code>*   To create a new environment, enter the following command:
 
-        <pre><code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;
-</code></pre>
-      </li>
-      <li>
-        <p>To check out an existing environment, enter the following command:</p>
+        magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;
+*   To check out an existing environment, enter the following command:
 
-        <pre><code>magento-cloud environment:checkout
-</code></pre>
-      </li>
-    </ul>
+        magento-cloud environment:checkout
 
-    <p>For example, to create a new branch named <code>sprint1</code> from master, enter</p>
+For example, to create a new branch named `sprint1` from master, enter
 
-    <pre><code>magento-cloud environment:branch sprint1 master
+        magento-cloud environment:branch sprint1 master
 </code></pre>
   </li>
   <li>
@@ -1904,36 +1875,142 @@ For more information, see <a href="/guides/v2.1/install-gde/prereq/php-settings.
 </ol>
 </div></div>
 
-<h2 id="setenv-keys">Step 5: Add your authentication keys to auth.json</h2>
+<p id="setenv-projvar"><div class="collapsible collapsible-h2"><h2 class="collapsible-title">Step 5: Set up authentication keys in the project (project administrator) </h2><div class="collapsible-content"><p>This section discusses how to add authentication keys to the project, which means the keys don’t have to be stored in the Git repository. (Developers who need to update Magento dependencies or to install extension need authentication keys locally; this is discussed in the next section.)</p>
 
-<div class="collapsible"><b class="collapsible-title">To get your authentication keys and add them to auth.json: </b><div class="collapsible-content"><p>Before you can upgrade the Magento software or install extensions, you must have authentication keys in the <code>auth.json</code> file in the Magento root directory. The Magento Enterprise Cloud Edition account owner has your keys. Contact that person to get them.</p>
+<p><em>Only a <a href="/guides/v2.1/cloud/admin/admin-user-admin.html#cloud-role-project">project administrator</a> can perform this task.</em> The project administrator must have the public and private authentication keys for Magento Enterprise Cloud Edition. You should contact the Magento Enterprise Cloud Edition account owner to get the keys.</p>
 
-<p>The <em>account owner</em> is the person who purchased Magento Enterprise Cloud Edition.</p>
+<p>To set up authentication keys in the project:</p>
 
-<p>When you have your keys, add them to <code>auth.json</code>, which has the following contents:</p>
+<ol>
+  <li>Log in to your Magento Enterprise Cloud Edition account at <a href="https://accounts.magento.cloud" target="_blank">https://accounts.magento.cloud</a>.</li>
+  <li>If necessary, click the <strong>Projects</strong> tab.</li>
+  <li>Click the name of your project.</li>
+  <li>
+    <p>In the upper left corner of the page, next to the project name, click <img src="/common/images/cloud_configure-project-butt.png" alt="Configure Project button" /> (Configure Project) as the following figure shows.</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-   <span class="nt">&quot;http-basic&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;repo.magento.com&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your public key&gt;&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your private key&gt;&quot;</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    <p><img src="/common/images/cloud_project-configure2.png" alt="Configure your project" /></p>
+  </li>
+  <li>
+    <p>In the middle pane, click the <strong>Variables</strong> tab as the following figure shows.</p>
+
+    <p><img src="/common/images/cloud_project-vars1.png" alt="Add a project variable" width="400px" /></p>
+  </li>
+  <li>Click <strong>Add Variable</strong>.</li>
+  <li>In the <strong>Name</strong> field, enter <code>env:COMPOSER_AUTH</code>.</li>
+  <li>
+    <p>In the <strong>Value</strong> field, enter the following, replacing the sample values with your authentication keys.</p>
+
+    <pre><code>{
+   "http-basic": {
+      "repo.magento.com": {
+         "username": "&lt;public key&gt;",
+         "password": "&lt;private key&gt;"
+       }
+    }
+}
+</code></pre>
+  </li>
+  <li>
+    <p>Select the <strong>Visible during build</strong> check box. Clear the other check boxes.</p>
+
+    <p>The following figure shows an example.</p>
+
+    <p><img src="/common/images/cloud_project-vars2.png" alt="Set up authentication keys as project variables" /></p>
+  </li>
+  <li>Click <strong>Add Variable</strong>.</li>
+  <li>
+    <p>Remove <code>auth.json</code> from the Git repository from every environment currently configured for the project.</p>
+
+    <p>Use the following command to list currently configured environments:</p>
+
+    <pre><code>magento-cloud environment:list
+</code></pre>
+
+    <p>For every environment ID, check out the environment and delete <code>auth.json</code> as follows:</p>
+
+    <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+git rm auth.json
+git add -A &amp;&amp; git commit -m "Remove auth.json" &amp;&amp; git push origin &lt;branch name&gt;
+</code></pre>
+  </li>
+  <li>Wait for the project to build and deploy.</li>
+</ol>
 </div></div>
 
-<h2 id="setup-env-perms">Step 6: Set file system permissions and ownership</h2>
+<p id="setenv-keys"><div class="collapsible collapsible-h2"><h2 class="collapsible-title">Step 6: Add your local authentication keys </h2><div class="collapsible-content"><p>Before you can upgrade the Magento software or install extensions, you must have authentication keys in the <code>auth.json</code> file in the Magento root directory. However, the authentication keys don’t need to be in the Git repository so you can add <code>auth.json</code> to <code>.gitignore</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">To set ownership and permissions before you install the Magento software: </b><div class="collapsible-content"><ol>
-  <li>Log in to your Magento server as, or switch to, the Magento file system owner.</li>
+<div class="bs-callout bs-callout-warning">
+  <p>Make sure your project administrator has added authentication keys to the project as discussed in the preceding section. Typically, either the project administrator or the account owner has the authentication keys. Contact one of them before you continue.</p>
+</div>
+
+<p>To add your authentication keys:</p>
+
+<ol>
+  <li>
+    <p>If you haven’t done so already, log in to your Magento Enterprise Cloud Edition project, check out an environment, and pull updated code from the server.</p>
+
+    <p>Use the following commands:</p>
+
+    <pre><code>magento-cloud login
+magento-cloud environment:list
+magento-cloud environment:checkout &lt;env ID&gt;
+git pull origin &lt;branch name&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>Create a file named <code>auth.json</code> in the Magento project root directory and add your authentication keys to it.</p>
+
+    <div class="bs-callout bs-callout-info">
+      <p>If you have an <code>auth.json</code> file already, contact your project administrator to make sure a project variable has been defined. If there is no project variable that defines authentication keys, skip this step and continue with <a href="#setup-env-perms">Step 7: Set file system permissions and ownership</a>.</p>
+    </div>
+
+    <p>A sample <code>auth.json</code> follows. Replace the same values with your keys.</p>
+
+    <pre><code class="language-json">{
+   "http-basic": {
+      "repo.magento.com": {
+         "username": "&lt;your public key&gt;",
+         "password": "&lt;your private key&gt;"
+      }
+   }
+}
+</code></pre>
+  </li>
+  <li>Save your changes to <code>auth.json</code> and exit the text editor.</li>
+  <li>Open <code>.gitignore</code> in a text editor.</li>
+  <li>
+    <p>Add <code>auth.json</code> to it anywhere.</p>
+
+    <p>A snippet from <code>.gitignore</code> follows:</p>
+
+    <pre class="no-copy">
+/.buildpath
+/.cache
+/.metadata
+/.project
+/.settings
+atlassian*
+/nbproject
+/sitemap
+/.idea
+/.gitattributes
+auth.json
+</pre>
+  </li>
+  <li>Save your changes to <code>.gitignore</code> and exit the text editor.</li>
+</ol>
+</div></div>
+
+<p id="setup-env-perms"><div class="collapsible collapsible-h2"><h2 class="collapsible-title">Step 7: Set file system permissions and ownership </h2><div class="collapsible-content"><ol>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;
-find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-chown -R :&lt;web server group&gt; .
-chmod u+x bin/magento
+    <pre><code>        cd &lt;your Magento install dir&gt;
+        find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+        find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+        chown -R :&lt;web server group&gt; .
+        chmod u+x bin/magento
 </code></pre>
   </li>
 </ol>
@@ -1952,9 +2029,7 @@ chmod u+x bin/magento
 </div>
 </div></div>
 
-<h2 id="setup-env-install">Step 7: Install the Magento software</h2>
-
-<div class="collapsible"><b class="collapsible-title">To install the Magento software locally: </b><div class="collapsible-content"><p>To be able to customize the Magento software on your local machine, you should install it using the following information:</p>
+<p id="setup-env-install"><div class="collapsible collapsible-h2"><h2 class="collapsible-title">Step 8: Install the Magento software </h2><div class="collapsible-content"><p>To be able to customize the Magento software on your local machine, you should install it using the following information:</p>
 
 <ul>
   <li>Host name or IP address of your machine</li>
@@ -1976,17 +2051,16 @@ chmod u+x bin/magento
 | ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 +----------------+---------------+-----------+------+
 </code></pre>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.1/install-gde/install/web/install-web.html">Install the Magento software using the Web Setup Wizard</a></li>
-  <li><a href="/guides/v2.1/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li>
-</ul>
 </div></div>
 
-<h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.1/cloud/access-acct/fastly.html">Set up Fastly</a></p>
 
+<h4>Related topics</h4>
+<ul><li><a href="/guides/v2.1/install-gde/install/web/install-web.html">Install the Magento software using the Web Setup Wizard</a></li>
+	<li><a href="/guides/v2.1/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li></ul>
+
+<h4>Next step</h4>
+<a href="/guides/v2.1/cloud/access-acct/fastly.html">Set up Fastly</a>
+</p></p></p></p></p></p></p>
 
 		</div>
 		<!-- /.content-wrap -->
