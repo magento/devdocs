@@ -9,9 +9,6 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.3EE.md
 ---
 
-*	TOC
-{:toc}
-
 We are pleased to present Magento Enterprise Edition 2.1.3. This release includes many functional fixes and enhancements.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -539,6 +536,17 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 
 ## Known issues
+
+<!-- 62660 -->*	**Issue**: Deploying static content deployment for multiple locales at the same time causes JavaScript translations to fail. Example of a command that demonstrates this issue: 
+
+		bin/magento setup:static-content:deploy --theme=Magento/luma en_US de_DE
+
+	**Workaround**: Execute static content deployment command for every locale separately. For example:
+
+		bin/magento setup:static-content:deploy --theme=Magento/luma en_US
+		bin/magento setup:static-content:deploy --theme=Magento/luma de_D
+
+	[GITHUB 7862](https://github.com/magento/magento2/issues/7862){:target="_blank"}
 
 <!---62083-->
 * **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
