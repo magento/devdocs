@@ -1257,6 +1257,37 @@
 
 <h2 id="known-issues">Known issues</h2>
 
+<!-- 62669 -->
+<ul>
+  <li>
+    <p><strong>Issue</strong>: A payment method configuration is not displayed in the Magento Admin if the sort order for the group is not specified or is less than 5.</p>
+
+    <p><strong>Workaround</strong>: In <code>&lt;Payment module base dir&gt;/etc/adminhtml/system.xml</code>, file set group sortOrder greater than 5.</p>
+
+    <p><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/adminhtml/system.xml#L11" target="_blank">Example for the Braintree module</a>.</p>
+
+    <p><a href="https://github.com/magento/magento2/issues/7891" target="_blank">GITHUB-7891</a></p>
+  </li>
+</ul>
+
+<!-- 62660 -->
+<ul>
+  <li>
+    <p><strong>Issue</strong>: Deploying static content deployment for multiple locales at the same time causes JavaScript translations to fail. Example of a command that demonstrates this issue:</p>
+
+    <pre><code>bin/magento setup:static-content:deploy --theme=Magento/luma en_US de_DE
+</code></pre>
+
+    <p><strong>Workaround</strong>: Execute static content deployment command for every locale separately. For example:</p>
+
+    <pre><code>bin/magento setup:static-content:deploy --theme=Magento/luma en_US
+bin/magento setup:static-content:deploy --theme=Magento/luma de_D
+</code></pre>
+
+    <p><a href="https://github.com/magento/magento2/issues/7862" target="_blank">GITHUB-7862</a></p>
+  </li>
+</ul>
+
 <!---62083-->
 <ul>
   <li>
@@ -1281,11 +1312,6 @@
   </li>
 </ul>
 
-<!---60680-->
-<ul>
-  <li><strong>Issue</strong>: You cannot successfully change and save your settings for gift cards. (<i>Settings</i> include “allow open amount” or “open amount minimum”.)</li>
-</ul>
-
 <!---60553-->
 <ul>
   <li><strong>Issue</strong>: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  ‘Use Default Value’ checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews.</li>
@@ -1294,11 +1320,6 @@
 <!---60781-->
 <ul>
   <li><strong>Issue</strong>: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you purge the cache and re-index.</li>
-</ul>
-
-<!---60680-->
-<ul>
-  <li><strong>Issue</strong>: You cannot successfully edit and save a gift card product.</li>
 </ul>
 
 <!---60616-->
