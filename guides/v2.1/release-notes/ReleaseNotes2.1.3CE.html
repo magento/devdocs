@@ -1288,29 +1288,19 @@ bin/magento setup:static-content:deploy --theme=Magento/luma de_D
   </li>
 </ul>
 
-<!---62083-->
-<ul>
-  <li>
-    <p><strong>Issue</strong>: You receive the following fatal error while installing 2.1.3 from <code>repo.magento.com</code>.</p>
+<p>!—62083–&gt;
+* <strong>Issue</strong>: You receive the following fatal error while installing 2.1.3 from <code>repo.magento.com</code>.</p>
 
-    <blockquote>
-      <p>Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.</p>
-    </blockquote>
+<blockquote>
+  <p>Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.</p>
+</blockquote>
 
-    <p><strong>Workaround</strong>:  You can avoid this fatal error by taking one of these actions:</p>
+<p><strong>Workaround</strong>:  You can avoid this fatal error by taking one of these actions:</p>
 
-    <ol>
-      <li>
-        <p>If your DocumentRoot installed in <code>magento_folder/pub</code>,  then open Setup from <code>http://magento-host.com/setup</code> instead of from <code>http://magento-host.com</code></p>
+<pre><code>*	If your Magento root directory is `&lt;Magento install dir&gt;/pub`,  then start the Web Setup Wizard from `http://&lt;Magento host or IP&gt;/setup` instead of from `http://&lt;Magento host or IP&gt;`
 
-        <p>Or</p>
-      </li>
-      <li>
-        <p>Install Magento from the console.</p>
-      </li>
-    </ol>
-  </li>
-</ul>
+*	Install Magento using the [command line](/guides/v2.1/comp-mgr/cli/cli-upgrade.html).
+</code></pre>
 
 <!---60553-->
 <ul>
@@ -1329,12 +1319,22 @@ bin/magento setup:static-content:deploy --theme=Magento/luma de_D
 
 <!---61341-->
 <ul>
-  <li><strong>Issue</strong>: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn’t, then Magento throws this error: <code>curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)</code>.  <strong>Workaround</strong>: Upgrade your version of CURL to the latest possible version that will enable the use of TLS 1.2 by default.</li>
+  <li>
+    <p><strong>Issue</strong>: A Paypal SSL curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is <a href="/guides/v2.1/install-gde/system-requirements_tls1-2.html">TLS 1.2</a>.</p>
+
+    <p>If it isn’t, then Magento throws this error: <code>curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)</code>.</p>
+
+    <p><strong>Workaround</strong>: Upgrade your version of curl to the latest possible version that will enable the use of [TLS 1.2](/guides/v2.1/install-gde/system-requirements_tls1-2.html by default.</p>
+  </li>
 </ul>
 
 <!---59555 -->
 <ul>
-  <li><strong>Issue</strong>: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. <strong>Workaround</strong>: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.</li>
+  <li>
+    <p><strong>Issue</strong>: Mass actions can be slow and consume excessive memory unless you increase the PHP <code>memory_limit</code> setting. The default settings typically supports processing about 1,000 variables. If you try an mass action that involves 1,000 or more variables, the mass action might fail.</p>
+
+    <p><strong>Workaround</strong>: You can reduce processing time and performance by increasing your <a href="/guides/v2.1/install-gde/prereq/php-settings.html">PHP <code>memory_limit</code> setting</a> to 1 GB.</p>
+  </li>
 </ul>
 
 <h2 id="system-requirements">System requirements</h2>
