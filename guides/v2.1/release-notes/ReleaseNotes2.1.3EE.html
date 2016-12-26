@@ -701,19 +701,7 @@
 
 </section>
 
-			<ul id="markdown-toc">
-  <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
-  <li><a href="#functional-fixes-and-enhancements" id="markdown-toc-functional-fixes-and-enhancements">Functional fixes and enhancements</a></li>
-  <li><a href="#breaking-changes" id="markdown-toc-breaking-changes">Breaking changes</a></li>
-  <li><a href="#known-issues" id="markdown-toc-known-issues">Known issues</a></li>
-  <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
-  <li><a href="#install-the-magento-software" id="markdown-toc-install-the-magento-software">Install the Magento software</a></li>
-  <li><a href="#upgrade-from-an-earlier-version" id="markdown-toc-upgrade-from-an-earlier-version">Upgrade from an earlier version</a></li>
-  <li><a href="#migration-toolkits" id="markdown-toc-migration-toolkits">Migration toolkits</a></li>
-  <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
-</ul>
-
-<p>We are pleased to present Magento Enterprise Edition 2.1.3. This release includes many functional fixes and enhancements.</p>
+			<p>We are pleased to present Magento Enterprise Edition 2.1.3. This release includes many functional fixes and enhancements.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
@@ -1355,6 +1343,24 @@
 <!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736, 61827, 60780, 61024, 60744, 61731, 60696-->
 
 <h2 id="known-issues">Known issues</h2>
+
+<!-- 62660 -->
+<ul>
+  <li>
+    <p><strong>Issue</strong>: Deploying static content deployment for multiple locales at the same time causes JavaScript translations to fail. Example of a command that demonstrates this issue:</p>
+
+    <pre><code>bin/magento setup:static-content:deploy --theme=Magento/luma en_US de_DE
+</code></pre>
+
+    <p><strong>Workaround</strong>: Execute static content deployment command for every locale separately. For example:</p>
+
+    <pre><code>bin/magento setup:static-content:deploy --theme=Magento/luma en_US
+bin/magento setup:static-content:deploy --theme=Magento/luma de_D
+</code></pre>
+
+    <p><a href="https://github.com/magento/magento2/issues/7862" target="_blank">GITHUB 7862</a></p>
+  </li>
+</ul>
 
 <!---62083-->
 <ul>
