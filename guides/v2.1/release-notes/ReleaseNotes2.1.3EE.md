@@ -584,7 +584,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 	If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  
 
-*	**Workaround**: Upgrade your version of curl to the latest possible version that will enable the use of [TLS 1.2]({{ page.baseurl }}install-gde/system-requirements_tls1-2.html by default. 
+	**Workaround**: Upgrade your version of curl to the latest possible version that will enable the use of [TLS 1.2]({{ page.baseurl }}install-gde/system-requirements_tls1-2.html by default. 
 
 
 <!---58433-->* **Issue**: Saving a category in a catalog that contains 20,000 or more products is very slow. 
@@ -592,7 +592,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 <!---59555 --> * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the PHP `memory_limit` setting. The default settings typically supports processing about 1,000 variables. If you try an mass action that involves 1,000 or more variables, the mass action might fail. 
 
-*	**Workaround**: You can reduce processing time and performance by increasing your [PHP `memory_limit` setting]({{ page.baseurl }}install-gde/prereq/php-settings.html) to 1 GB. 
+	**Workaround**: You can reduce processing time and performance by increasing your [PHP `memory_limit` setting]({{ page.baseurl }}install-gde/prereq/php-settings.html) to 1 GB. 
 
 
 
