@@ -543,7 +543,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 	[Example for the Braintree module]({{ site.mage2100url }}app/code/Magento/Braintree/etc/adminhtml/system.xml#L11){:target="_blank"}.
 
-	[GITHUB 7891](https://github.com/magento/magento2/issues/7891){:target="_blank"}
+	[GITHUB-7891](https://github.com/magento/magento2/issues/7891){:target="_blank"}
 
 <!-- 62660 -->*	**Issue**: Deploying static content deployment for multiple locales at the same time causes JavaScript translations to fail. Example of a command that demonstrates this issue: 
 
@@ -554,7 +554,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 		bin/magento setup:static-content:deploy --theme=Magento/luma en_US
 		bin/magento setup:static-content:deploy --theme=Magento/luma de_D
 
-	[GITHUB 7862](https://github.com/magento/magento2/issues/7862){:target="_blank"}
+	[GITHUB-7862](https://github.com/magento/magento2/issues/7862){:target="_blank"}
 
 <!---62083-->
 * **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
