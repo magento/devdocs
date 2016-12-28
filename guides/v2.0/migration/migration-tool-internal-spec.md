@@ -5,7 +5,7 @@ subgroup: o_mapping
 title: Data Migration Tool Technical Specification
 menu_title: Data Migration Tool Technical Specification
 menu_node: parent
-menu_order: 7
+menu_order: 8
 version: 2.0
 github_link: migration/migration-tool-internal-spec.md
 redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
