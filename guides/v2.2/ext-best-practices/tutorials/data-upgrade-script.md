@@ -24,6 +24,10 @@ This tutorial uses the following framework API in the following ways:
 * `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This class provides the interface for a custom class that encapsulates the logic of converting data between different formats.
 * `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate converter implementation.
 * `\Magento\Framework\Module\Manager` - This class checks the status of a module.
+* `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
+  Query modifiers add a condition to the database query to target specific entries.
+
+  You can create your own query modifier or use any of the ones listed in the `app/etc/di.xml` file.
 
 ## Step 1: Create the basic upgrade script
 {:#step-1}
@@ -172,6 +176,7 @@ $fieldDataConverter->convert(
 {% endhighlight %}
 {% endcollapsible %}
 
+
 ### Step 3c: Convert a custom attribute with a dynamic name
 {:#step-3c}
 
@@ -238,12 +243,12 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
      * @var Serialize
      */ 
     private $serialize;
- 
+     
     /**
      * @var Json
      */
     private $json;
- 
+     
     /**
      * Constructor
      * @param Serialize $serialize
@@ -264,7 +269,10 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
      */
     public function convert($value)
     {
-        $valueUnserialized = $this->serialize->unserialize($value);
+        $isSerialized = $this->isSerialized($value);
+        $unserialized = $isSerialized
+          ? $this->serialize->unserialize($value)
+          : $this->json->unserialize($value);
         if (isset($unserialized['options'])) {
           foreach ($unserialized['options'] as $key => $option) {
             if ($option['option_type'] === 'my_custom_option') {
@@ -283,7 +291,19 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
             )
           );
         }
-        return $this->json->serialize($unserialized);
+        return $isSerialized
+          ? $this->serialize->serialize($unserialized)
+          : $this->json->serialize($unserialized);
+    }
+     
+    /**
+     * Check if value is serialized string
+     * @param string $value
+     * @return boolean
+     */
+    private function isSerialized($value)
+    {
+        return (boolean) preg_match('/^((s|i|d|b|a|O|C):|N;)/', $value);
     }
 }
 {% endhighlight %}

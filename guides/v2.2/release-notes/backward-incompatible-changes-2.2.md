@@ -125,7 +125,7 @@ The `bin/magento setup:config:set` command no longer has the `--definition-forma
 
 This release comes with upgrade scripts that convert data stored in the database from the PHP serialize format to JSON format.
 
-You need to create a data upgrade script to convert this data if your extensions does any of the following:
+You need to create a data upgrade script to convert this data if your extensions do any of the following:
 
 * Your custom extension stores or adds serialized data to Magento entities.
 * Your custom extension relies on Magento 2.1 logic of serializing/unserializing data.
