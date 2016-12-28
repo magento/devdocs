@@ -18,7 +18,7 @@ Maximizing extensibility has been our goal through all aspects of Magento develo
 
 ## What makes a product extensible?
 
-<i>Magento extensibility</i> describes the product's built-in ability for developers and merchants to routinely extend their storefront’s capabilities as their business grows.
+<i>Magento extensibility</i> describes the product's built-in ability for developers and merchants to routinely extend their storefront's capabilities as their business grows.
 
 Below are the main factors affect extensibility.
 

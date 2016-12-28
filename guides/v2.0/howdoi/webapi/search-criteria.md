@@ -18,9 +18,9 @@ POST, PUT, and DELETE requests to the REST Web API require the service method pa
 For search APIs that invoke a `*Repository::getList(SearchCriteriaInterface *)` call, the searchCriteria must be specified in the URL of the GET request. The basic pattern for specifying the criteria is
 
 {% highlight html %}
-searchCriteria[filter_groups][<index>][filters][<index>][field=<field_name>]
-searchCriteria[filter_groups][<index>][filters][<index>][value=<search_value>]
-searchCriteria[filter_groups][<index>][filters][<index>][condition_type=<operator>]
+searchCriteria[filter_groups][<index>][filters][<index>][field]=<field_name>
+searchCriteria[filter_groups][<index>][filters][<index>][value]=<search_value>
+searchCriteria[filter_groups][<index>][filters][<index>][condition_type]=<operator>
 {% endhighlight %}
 
 where:

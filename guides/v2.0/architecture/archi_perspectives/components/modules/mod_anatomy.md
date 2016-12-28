@@ -46,7 +46,7 @@ This directory contains the XML files that declare and configure behavior of all
 
 Optionally, this folder could have `adminhtml.xml` (grant permissions for your tabs/sections in server-side menus) and `system.xml` (creates this new section or specifies where it should be displayed in the existing one).
 
-Magento 2.x looks for configuration information for each module in that module’s '/etc' directory. Depending on the purpose of your module, it might contain the following configuration files in its `/etc` directory:
+Magento 2.x looks for configuration information for each module in that module's '/etc' directory. Depending on the purpose of your module, it might contain the following configuration files in its `/etc` directory:
 
 * acl.xml
 
@@ -58,7 +58,7 @@ Magento 2.x looks for configuration information for each module in that module�
 
 * webapi.xml
 
-Configuration files that are in the top level of that module’s `/etc` directory are global to that component. Configuration files placed in subdirectories (`adminhtml`, `frontend`, `webapi_rest`, `webapi_soap`) apply only to those respective functional areas.
+Configuration files that are in the top level of that module's `/etc` directory are global to that component. Configuration files placed in subdirectories (`adminhtml`, `frontend`, `webapi_rest`, `webapi_soap`) apply only to those respective functional areas.
 
 The specific set of configuration files that your module requires depends on the module's purpose and the Magento area in which it functions.
 

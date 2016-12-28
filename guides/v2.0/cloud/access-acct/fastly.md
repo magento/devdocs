@@ -38,9 +38,7 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 {% endcollapsible %}
 
-### Install Fastly in your new environment {#cloud-fastly-setup}
-
-{% collapsible To install Fastly: %}
+<p id="cloud-fastly-setup">{% collapsibleh3 Install Fastly in your new environment %}
 
 1.	In your local environment root directory, enter the following commands in the order shown:
 
@@ -56,10 +54,10 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
 
-{% endcollapsible %}
+{% endcollapsibleh3 %}
 
-### Enable Fastly using the Magento Admin {#cloud-fastly-admin}
-{% collapsible To enable Fastly using the Magento Admin: %}
+<p id="cloud-fastly-admin">{% collapsibleh3 Enable Fastly using the Magento Admin %}
+
 
 1.	Log in to the Magento Admin as an administrator. 
 2.	Click **Stores** > **Configuration** > **Advanced** > **System** as the following figure shows:
@@ -74,12 +72,9 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 After you receive a Magento VCL from Fastly, [upload it to your staging or production system]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly).
 
 
+{% endcollapsibleh3 %}
 
-{% endcollapsible %}
-
-### Configure Fastly {#cloud-fastly-config}
-
-{% collapsible To configure Fastly: %}
+<p id="cloud-fastly-config">{% collapsibleh3 Configure Fastly %}
 
 Configure Fastly using the following:
 
@@ -102,20 +97,32 @@ For details about Fastly configuration, see the [Fastly documentation](https://g
 #### Advanced configuration options
 For advanced configuration options, download and customize the [Fastly configuration](https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl){:target="_blank"}.
 
-{% endcollapsible %}
+{% endcollapsibleh3 %}
+
+<p id="cloud-fastly-merge">{% collapsibleh3 Merge your Fastly branch %}
 	
-### Merge your Fastly branch {#cloud-fastly-merge}
 When you're done with development, [merge your environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html) with its parent environment.
 
 For Fastly to be used in production, you must merge with the `master` environment.
 
-#### Next steps
-*	If you have issues with the Fastly extension, see [Troubleshoot Fastly]({{ page.baseurl cloud/trouble/trouble_fastly.html}})
-*   [Manage your environments]({{ page.baseurl }}cloud/env/environments.html)
-*   [Use the Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html)
-*   Configure your project:
+{% endcollapsibleh3 %}
 
-    *   [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
-    *   [`routes.yaml`]({{ page.baseurl}}cloud/project/project-conf-files_routes.html)
-    *   [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
+<h2>Custom VCLs</h2>
+<p>You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
+
+<p>Failure to follow these guidelines means your customizations won't work as expected.</p>
+
+<h4>Next steps</h4>
+<ul><li>If you have issues with the Fastly extension, see <a href="{{ page.baseurl cloud/trouble/trouble_fastly.html}}">Troubleshoot Fastly</a>.</li>
+	<li><a href="{{ page.baseurl }}cloud/env/environments.html">Manage your environments</a></li>
+	<li><a href="{{ page.baseurl }}cloud/project/project-webint-basic.html">Use the Project Web Interface</a></li>
+	<li>Configure your project:
+		<ul><li><a href="{{ page.baseurl }}cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
+			<li><a href="{{ page.baseurl}}cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
+			<li><a href="{{ page.baseurl }}cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
+		</ul>
+	</li>
+</ul>
+
+
 

@@ -20,7 +20,7 @@ This primarily PHP software component is organized into logical groups called <i
 (Although the Magento Framework does not contain resource models, it does contain a library of code to help implement a resource model.)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Don’t confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
+  <p>Don't confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
 </div>
 
 You should never modify the framework files, although if you are extending Magento, you must know how to call the framework libraries. Modules you create will typically inherit from classes and interfaces defined in the framework directories.  
@@ -205,7 +205,7 @@ In general, the service layer
 
 All calls from web service interfaces, or users working with your storefront (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic.
 
-External applications can make requests for business logic with simple SOAP and REST calls. With some simple XML or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.
+External applications can make requests for business logic with simple SOAP and REST calls. With some simple XML or JSON, you can expose the service layer's PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.
 
 Service contract clients include:
 
