@@ -29,7 +29,7 @@ With the Magento_Staging module you can:
     - Using APIs
 - Preview a future campaign in Admin
 
-Moreover, the Magento_Staging module is a framework for other [staging](#staging) modules. It declares basic scenarios over the content, while other staging modules perform them. (You can recognize a staging modules by name, each ends with “Staging” and starts with a name of a module, which it extends. For example, Magento_CatalogStaging module extends functionality of Magento_Catalog module.)
+Moreover, the Magento_Staging module is a framework for other [staging](#staging) modules. It declares basic scenarios over the content, while other staging modules perform them. (You can recognize a staging modules by name, each ends with "Staging" and starts with a name of a module, which it extends. For example, Magento_CatalogStaging module extends functionality of Magento_Catalog module.)
 
 You can work with the following entities out of the box:
 

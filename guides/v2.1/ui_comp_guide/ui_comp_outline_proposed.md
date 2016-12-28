@@ -51,15 +51,15 @@ If you would like to help us by writing any of the topics that we have not yet g
 			- `i18n` – analogue to _text_ binding. Has two features: replace text with translation lib, correctly handle behavior of InlineTranslate module.
 			- `keyboard` - attaches keypress handlers to element
 			- `mageInit` – has same format as data-mage-init attribute. In opposite to attribute binding handles situation with appear/removal of an element
-			- `optgroup` – same as building “option” binding. But allows you to render hierarchy options with the <optgroup> tag.
-			- `outerClick` – similar to “click” binding. Handles situation when a click is done outside of an element.
+			- `optgroup` – same as building "option" binding. But allows you to render hierarchy options with the <optgroup> tag.
+			- `outerClick` – similar to "click" binding. Handles situation when a click is done outside of an element.
 			- `range` – allows you to use the jQuery UI Slider widget.
 			- `resizable` – adds the jQuery UI Resizable widget.
 			- `scope` – allows you to bind an object from uiRegistry as the scope to particular element. Used in Ui components.
 			- `simpleChecked`
 			- `staticChecked` - Implements same functionality as a standard 'checked' binding, but with a difference that it wont' change values array if value of DOM element changes.
 			- `tooltip` – allows to create tooltip within inner content
-			- `template`(render) – inner content will be replaced with the external template. Builtin “template” binding expects that the templates are on the page already. Magento’s one expects to load template from separate external files.
+			- `template`(render) – inner content will be replaced with the external template. Builtin "template" binding expects that the templates are on the page already. Magento’s one expects to load template from separate external files.
 	- Provide simple table of all of UI сomponents
 - UI components usage: common use cases, advantages, links to the scenario-based topics
 - What changed since 2.0

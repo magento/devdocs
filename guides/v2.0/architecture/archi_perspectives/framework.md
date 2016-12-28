@@ -18,7 +18,7 @@ This primarily PHP software component is organized into logical groups called <i
 (Although the Magento Framework does not contain resource models, it does contain a library of code to help implement a resource model.)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Don’t confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
+  <p>Don't confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
 </div>
 
 You should never modify Framework files, although if you are extending Magento, you must know how to call Framework libraries. Modules you create will typically inherit from classes and interfaces defined in the Framework directories.  

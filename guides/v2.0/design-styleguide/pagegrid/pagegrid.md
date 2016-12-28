@@ -31,8 +31,8 @@ A Slide-out panel, similar to a modal window, breaks apart and simplifies a comp
 
 For example: 
 <ul>
-	<il>On a product details form page, a user clicks “Add Attribute”.</il>
-	<il>A panel slides over the parent page and shows “Add Attribute” functionality.</il>
+	<il>On a product details form page, a user clicks "Add Attribute".</il>
+	<il>A panel slides over the parent page and shows "Add Attribute" functionality.</il>
 	<il>When the user finishes adding attributes, the panel disappears, and the user returns the 		product details form page.</il>
 </ul>
 

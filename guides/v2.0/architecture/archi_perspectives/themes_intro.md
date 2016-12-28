@@ -55,7 +55,7 @@ Local: language related file. This will be used when you want to make your theme
 
 Process flow:
 
-In general Magento’s fallback technique for theme is as below:
+In general Magento's fallback technique for theme is as below:
 
 Your Custom Package >> Default Package >> Base Package >> Error Message
 
@@ -83,7 +83,7 @@ Themes live in two different directories:
 
 * /app/design/frontend: contains page templates and layouts
 
-Base package provides hooks to all of Magento’s core features.
+Base package provides hooks to all of Magento's core features.
 
 Add override features rather than edit default theme files.
 
