@@ -41,7 +41,7 @@ This section discusses how to use `curl` to get response headers from your stagi
 
 The URL format follows:
 
-*	Staging: `http[s]://staging.<your domain>.<project ID>.ent.magento.cloud`
+*	Staging: `http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud`
 *	Production: 
 
 	*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`

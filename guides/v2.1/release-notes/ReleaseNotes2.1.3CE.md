@@ -506,20 +506,35 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 ## Known issues
 
-<!---62083-->
+<!-- 62669 -->*	**Issue**: A payment method configuration is not displayed in the Magento Admin if the sort order for the group is not specified or is less than 5.
+
+	**Workaround**: In `<Payment module base dir>/etc/adminhtml/system.xml`, file set group sortOrder greater than 5.
+
+	[Example for the Braintree module]({{ site.mage2100url }}app/code/Magento/Braintree/etc/adminhtml/system.xml#L11){:target="_blank"}.
+
+	[GITHUB-7891](https://github.com/magento/magento2/issues/7891){:target="_blank"}
+
+<!-- 62660 -->*	**Issue**: Deploying static content deployment for multiple locales at the same time causes JavaScript translations to fail. Example of a command that demonstrates this issue: 
+
+		bin/magento setup:static-content:deploy --theme=Magento/luma en_US de_DE
+
+	**Workaround**: Execute static content deployment command for every locale separately. For example:
+
+		bin/magento setup:static-content:deploy --theme=Magento/luma en_US
+		bin/magento setup:static-content:deploy --theme=Magento/luma de_D
+
+	[GITHUB-7862](https://github.com/magento/magento2/issues/7862){:target="_blank"}
+
+!---62083-->
 * **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
    
   > Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
   
   **Workaround**:  You can avoid this fatal error by taking one of these actions: 
 
-  1. If your DocumentRoot installed in `magento_folder/pub`,  then open Setup from `http://magento-host.com/setup` instead of from `http://magento-host.com`
+	*	If your Magento root directory is `<Magento install dir>/pub`,  then start the Web Setup Wizard from `http://<Magento host or IP>/setup` instead of from `http://<Magento host or IP>`
 
-     Or
-
-  2. Install Magento from the console.
-
-<!---60680-->* **Issue**: You cannot successfully change and save your settings for gift cards. (<i>Settings</i> include "allow open amount" or "open amount minimum".) 
+	*	Install Magento using the [command line]({{ page.baseurl }}comp-mgr/cli/cli-upgrade.html).
 
 
 <!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the  'Use Default Value' checkbox for the option title does not work. Un-checking this box and then changing the title affects all storeviews. 
@@ -528,19 +543,21 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 <!---60781-->* **Issue**: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you purge the cache and re-index. 
 
 
-<!---60680-->* **Issue**: You cannot successfully edit and save a gift card product.
-
-
 <!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes.  
 
 
 
 
-<!---61341-->* **Issue**: A Paypal SSL Curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2.  If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  **Workaround**: Upgrade your version of CURL to the latest possible version that will enable the use of TLS 1.2 by default.  
+<!---61341-->* **Issue**: A Paypal SSL curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is [TLS 1.2]({{ page.baseurl }}install-gde/system-requirements_tls1-2.html).  
+
+	If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`. 
+
+	**Workaround**: Upgrade your version of curl to the latest possible version that will enable the use of [TLS 1.2]({{ page.baseurl }}install-gde/system-requirements_tls1-2.html by default. 
 
 
+<!---59555 --> * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the PHP `memory_limit` setting. The default settings typically supports processing about 1,000 variables. If you try an mass action that involves 1,000 or more variables, the mass action might fail. 
 
-<!---59555 --> * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try an mass action that involves 1000 or more variables, the mass action might fail. **Workaround**: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB. 
+	**Workaround**: You can reduce processing time and performance by increasing your [PHP `memory_limit` setting]({{ page.baseurl }}install-gde/prereq/php-settings.html) to 1 GB.
 
 
 

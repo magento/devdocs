@@ -41,7 +41,7 @@ Your Magento Enterprise Cloud Edition OneDrive account includes an onboarding do
 
 *	Web URL format: 
 
-	*	Staging: `http[s]://staging.<your domain>.<project ID>.ent.magento.cloud`
+	*	Staging: `http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud`
 	*	Production: 
 
 		*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
