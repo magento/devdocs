@@ -61,6 +61,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
  
   /**
    * Constructor
+   *
    * @param \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory
    * @param \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory
    * @param \Magento\Framework\DB\Query\Generator $queryGenerator
@@ -90,6 +91,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
   /**
    * Upgrade to version 2.0.1, convert data for the sales_order_item.product_options and quote_item_option.value
    * from serialized to JSON format
+   *
    * @param \Magento\Framework\Setup\ModuleDataSetupInterface $setup
    * @return void
    */ 
@@ -105,7 +107,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
 {:#step-2}
 
 Any module can disable or replace another module in Magento.
-Make sure the Magento application has enabled your module before executing the upgrade logic.
+If your extension stores data in the tables of another module, make sure the Magento application has enabled that module before executing the upgrade logic.
 
 Use the `\Magento\Framework\Module\Manager` class to check the status of your module.
 
@@ -149,6 +151,12 @@ If you store and retrieve your data using an identifier or unique code for a col
 
 The following code sample upgrades the data for options in the `value` column in the `quote_item_option` table with a static identifier code of `my_option`.
 
+| option_id | code           | value                         |
+| --- | --- | --- |
+| 1         | my_option      | a:1:{s:3:"foo";s:3:"bar";}    |
+| 2         | another_option | &lt;non-serialized string&gt; |
+| 3         | my_option      | a:1:{s:3:"foo";s:3:"bar";}    |
+
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 $fieldDataConverter = $this->fieldDataConverterFactory->create(
@@ -181,6 +189,13 @@ $fieldDataConverter->convert(
 {:#step-3c}
 
 If your identifier or unique code uses a dynamic naming system, you can convert the data using the following approach shown in the following code sample:
+
+| option_id | code                  | value                         |
+| --------- | --------------------- | ----------------------------- |
+| 1         | my_custom_option_1001 | a:1:{s:3:"foo";s:3:"bar";}    |
+| 2         | another_option        | &lt;non-serialized string&gt; |
+| 3         | my_custom_option_1002 | a:1:{s:3:"foo";s:3:"bar";}    |
+| 4         | my_custom_option_1003 | a:1:{s:3:"foo";s:3:"bar";}    |
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -251,6 +266,7 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
      
     /**
      * Constructor
+     *
      * @param Serialize $serialize
      * @param Json $json
      */
@@ -264,6 +280,7 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
      
     /**
      * Convert from serialized to JSON format
+     *
      * @param string $value
      * @return string
      */
@@ -331,9 +348,9 @@ $fieldDataConverter->convert(
 {:#step-3e}
 
 The Magento Enterprise Edition supports storing Quote, Sales and Inventory data in separate databases.
-Use a specific connection if your module stores data in the tables for these entities.
+Use the specific connections for each of these modules to update your extension's stored data for these entities.
 
-The following code sample shows a specific connection to convert 
+The following code sample gets the Sales module connection and uses it during data update.
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 /** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */
