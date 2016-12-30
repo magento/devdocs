@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>About PHP modifiers in UI components</title>
+	<title>UI component explained</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/concepts/ui_comp_modifier_concept.html">
+	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/ui_component_explained.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/concepts/ui_comp_modifier_concept.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/ui_component_explained.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_modifier_concept.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/ui_component_explained.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -303,7 +303,7 @@
 
 							
 
-								<li class="q "><a href="/guides/v2.1/ui_comp_guide/ui_component_explained.html">UI component explained</a></li>
+								<li class="q  active "><a href="/guides/v2.1/ui_comp_guide/ui_component_explained.html">UI component explained</a></li>
 
 							
 
@@ -426,7 +426,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_modifier_concept.html">About PHP modifiers in UI components</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_modifier_concept.html">About PHP modifiers in UI components</a></li>
 
 									
 
@@ -676,7 +676,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">About PHP modifiers in UI components</span>
+        <span property="name">UI component explained</span>
         <meta property="position" content="2" />
       </li>
 
@@ -688,119 +688,129 @@
 
 
 	
-	<h1 class="page-heading">About PHP modifiers in UI components</h1>
+	<h1 class="page-heading">UI component explained</h1>
 
   
 
 
 </section>
 
-			<h2 id="whats-in-this-topic">What’s in this topic</h2>
+			<h2 id="what-is-a-ui-component">What is a UI component?</h2>
 
-<p>This topic describes how to use PHP modifiers that are the server-side part of <a href="/guides/v2.1/ui_comp_guide/concepts//ui_comp_config_flow_concept.html">UI components configuration</a>. Using modifiers is optional and might be necessary when <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">static declaration in XML configuration files</a> is not suitable for the tasks. For example, in cases when additional data should be loaded from database. Or the other specific example is the <a href="/guides/v2.1/howdoi/customize_product.html">default product creation form</a>, for which the modifier is a place where validations are added to display only certain fields for certain product types.</p>
+<p>Magento UI components are used to represent distinct UI elements, such as tables, buttons, dialogs, and others.</p>
 
-<h2 id="general-implementation-overview">General implementation overview</h2>
+<p>UI Component is a combination of:</p>
 
-<p><code>DataProvider()</code> is a PHP part of a UI component, a class responsible for the component’s data and metadata preparation. The pool of modifiers (virtual type) is injected to this data provider using the <code>__construct()</code> method. The pool’s preference is defined in <code>di.xml</code>.</p>
+<ol>
+  <li>
+    <p><strong>XML declaration</strong> that specifies the component’s configuration settings and inner structure;</p>
+  </li>
+  <li>
+    <p><strong>JavaScript</strong> class inherited from one of the Magento JavaScript Framework UI Components base classes (such as <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">UIElement</a>, <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">UIClass</a> or <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">UICollection</a>)</p>
+  </li>
+  <li>
+    <p><strong>Related template(s)</strong></p>
+  </li>
+</ol>
 
-<p>So in runtime, the component structure set in the modifier is merged with the configuration that comes from the XML configuration.</p>
+<h3 id="xml-declaration">XML Declaration</h3>
 
-<h2 id="adding-a-custom-php-modifier">Adding a custom PHP modifier</h2>
+<p>XML is widely used in Magento 2, which allows developers to easily reuse existing functionalities and add customizations.</p>
 
-<p>To add a PHP modifier for a UI component, take the following steps:</p>
+<p>Comparing to XML Layouts, UI Components use more semantical approach to declare and configure User Interface.</p>
 
-<p><strong>Step 1</strong></p>
-
-<p>In your custom module, add a class that implements <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php"><code>\Magento\Ui\DataProvider\Modifier\ModifierInterface</code></a> with the following methods:</p>
-
-<ul>
-  <li><code>modifyData()</code>: for modifying UI component’s data (for example, the list of options for a select element)</li>
-  <li><code>modifyMeta()</code>: for modifying UI component’s metadata (for example, name, label, description, type)</li>
-</ul>
-
-<p>Sample modifier:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Example</span> <span class="k">extends</span> <span class="nx">AbstractModifier</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyMeta</span><span class="p">(</span><span class="k">array</span> <span class="nv">$meta</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$meta</span><span class="p">[</span><span class="s1">&#39;test_fieldset_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">&#39;arguments&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                    <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Label For Fieldset&#39;</span><span class="p">),</span>
-                        <span class="s1">&#39;sortOrder&#39;</span> <span class="o">=&gt;</span> <span class="mi">50</span><span class="p">,</span>
-                        <span class="s1">&#39;collapsible&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
-                    <span class="p">]</span>
-                <span class="p">]</span>
-            <span class="p">],</span>
-            <span class="s1">&#39;children&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="s1">&#39;test_field_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                    <span class="s1">&#39;arguments&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                        <span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                            <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                                <span class="s1">&#39;formElement&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;select&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;componentType&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;field&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_1&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 1&#39;</span><span class="p">],</span>
-                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_2&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 2&#39;</span><span class="p">],</span>
-                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_3&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 3&#39;</span><span class="p">],</span>
-                                <span class="p">],</span>
-                                <span class="s1">&#39;visible&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-                                <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-                                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Label For Element&#39;</span><span class="p">)</span>
-                            <span class="p">]</span>
-                        <span class="p">]</span>
-                    <span class="p">]</span>
-                <span class="p">]</span>
-            <span class="p">]</span>
-        <span class="p">];</span>
-
- <span class="k">return</span> <span class="nv">$meta</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="sd">/**</span>
-<span class="sd">     * {@inheritdoc}</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyData</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<p><strong>Step 2</strong></p>
-
-<p>Declare your modifier in your module Di configuration <code>&lt;Your_Module_dir&gt;/etc/adminhtml/di.xml</code>. This declaration looks like the following:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;%YourNamespace\YourModule\DataProvider\Modifier\Pool%&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Ui\DataProvider\Modifier\Pool&quot;</span><span class="nt">&gt;</span>
-     <span class="nt">&lt;arguments&gt;</span>
-         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;modifiers&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;modifier_name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%YourNamespce\YourModule\Modifier\YourModifierClass%<span class="nt">&lt;/item&gt;</span>
-                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/item&gt;</span>
-             <span class="nt">&lt;/item&gt;</span>
-         <span class="nt">&lt;/argument&gt;</span>
-     <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
-
-<p>, where <code>YourNamespace\YourModule\DataProvider\Modifier\Pool</code> is a <a href="/guides/v2.1/extension-dev-guide/depend-inj.html#configuring-a-type">virtual class</a>.</p>
-
-<p>(If you want to use this sample in your <code>di.xml</code>, replace the sample values with with the real names of your entities.)</p>
-
-<p><strong>Step 3</strong></p>
-
-<p>To use your modifier, add a dependency on <code>\Magento\Ui\DataProvider\Modifier\PoolInterface</code> to your UI component data provider. For illustration see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php"><code>\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider</code></a></p>
-
-<h2 id="related-reading">Related reading</h2>
+<p>An instance of UI component is usually based on the hierarchy of child UI components. For example:</p>
 
 <ul>
-  <li><a href="/guides/v2.1/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
-  <li><a href="/guides/v2.1/howdoi/customize_product.html#modifier">How Do I: Customize product creation form</a></li>
+  <li>
+    <p>the Form component has Fieldsets, Tabs, and inner fields</p>
+  </li>
+  <li>
+    <p>the Listing component has Filters, Columns, Bookmark component, and others</p>
+  </li>
 </ul>
+
+<h3 id="javascript-class">JavaScript class</h3>
+
+<p>The picture below shows how the JavaScript class of a UI component is implemented.</p>
+
+<p><img src="/common/images/ui_comp_js_class.png" alt="JavaScript class implementation of a UI component" /></p>
+
+<h3 id="templates">Templates</h3>
+
+<p>A UI component can be bound to one or more HTML templates using the KnockoutJS bindings.</p>
+
+<h2 id="when-to-use-ui-components">When to use UI components?</h2>
+
+<p>With Magento, you may apply different approaches to implementing a UI element, and use:</p>
+
+<ul>
+  <li>
+    <p>PHTML template with inline JavaScript</p>
+  </li>
+  <li>
+    <p>PHTML template with declaration of related JavaScript file via XML layout</p>
+  </li>
+  <li>
+    <p>jQuery widget</p>
+  </li>
+  <li>
+    <p>Magento 2 UI Component</p>
+  </li>
+</ul>
+
+<p>We recommend using UI components as much as possible, and here’s why.</p>
+
+<h3 id="interaction-with-other-ui-components">Interaction with other UI components</h3>
+
+<p>UI components work well together: they communicate with each other via the <a href="/guides/v2.1/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html#debugging-using-the-uiregistry">uiRegistry service</a> that tracks their asynchronous initialization. Therefore, if we need to:</p>
+
+<ul>
+  <li>
+    <p>extend something that has already been implemented as a hierarchy of UI components</p>
+  </li>
+  <li>
+    <p>add a new feature that should interact with other UI components</p>
+  </li>
+</ul>
+
+<p>it’s easier and more effective to use a UI component.</p>
+
+<!-- The Architect who reviewed the section below asked to remove it because "the words "easily added" can cause offensive reaction from developers, and we don't have a good cross-links for all items from the list"
+
+### UI components are easily added on a page
+
+Even when the target UI is generated from PHTML templates and doesn't contain UI components, you can still easily add a component on a page. For this, you may use:
+
+* XML declaration
+
+* `x-mage-init` JS script
+
+* `data-mage-init` attribute
+
+-->
+
+<h2 id="things-to-remember-working-with-ui-components">Things to remember working with UI components</h2>
+
+<p><strong>Read the docs</strong></p>
+
+<p>Creating new UI Component is not always intuitive, so we recommend to always read the documentation first.</p>
+
+<p><strong>UI components have different settings</strong></p>
+
+<p>Configuration settings (their list and names) are different among UI components; these settings contain constants, optional and required settings. Developers need to treat every UI component separately.</p>
+
+<p><strong>Beware of mistakes in XML config</strong></p>
+
+<p>Surprisingly, most issues occur because of the typos and other mistakes in the UI component’s XML configuration. Naming is critical because UI components are heavily cross-referenced.</p>
+
+<!--
+
+**Own designs often require new UI components**
+
+The out-of-the-box set of UI components may be not enough to implement the required design, so developers need to know how to create new UI components.
+
+-->
 
 		</div>
 		<!-- /.content-wrap -->
@@ -811,14 +821,14 @@
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_modifier_concept.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/ui_component_explained.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/concepts/ui_comp_modifier_concept.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/ui_component_explained.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
