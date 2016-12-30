@@ -25,7 +25,7 @@ UI Component is a combination of:
 
 XML is widely used in Magento 2, which allows developers to easily reuse existing functionalities and add customizations.
 
-Comparing to XML Layouts, UI Components use more semantical approach to declare and configure User Interface .
+Comparing to XML Layouts, UI Components use more semantical approach to declare and configure User Interface.
 
 An instance of UI component is usually based on the hierarchy of child UI components. For example:
 
@@ -41,11 +41,11 @@ The picture below shows how the JavaScript class of a UI component is implemente
 
 ### Templates
 
-A UI component can be bind to one or more HTML templates using the KnockoutJS bindings.
+A UI component can be bound to one or more HTML templates using the KnockoutJS bindings.
 
 ## When to use UI components?
 
-With Magento, you may apply different approaches to implement a UI element, and use:
+With Magento, you may apply different approaches to implementing a UI element, and use:
 
 * PHTML template with inline JavaScript
 
