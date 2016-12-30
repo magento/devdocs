@@ -17,7 +17,7 @@ UI Component is a combination of:
 
 1. **XML declaration** that specifies the component's configuration settings and inner structure;
 
-2. **JavaScript** class inherited from one of the Magento JavaScript Framework UI Components base classes (such as UIElement, UIClass or UICollection)
+2. **JavaScript** class inherited from one of the Magento JavaScript Framework UI Components base classes (such as [UIElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html), [UIClass]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html) or [UICollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html))
 
 3. **Related template(s)**
 
@@ -31,7 +31,7 @@ An instance of UI component is usually based on the hierarchy of child UI compon
 
 * the Form component has Fieldsets, Tabs, and inner fields
 
-* the Listing component has Filters, Columns, Bookmark components, and others
+* the Listing component has Filters, Columns, Bookmark component, and others
 
 ### JavaScript class
 
@@ -45,27 +45,29 @@ A UI component can be bind to one or more HTML templates using the KnockoutJS bi
 
 ## When to use UI components?
 
-With Magento, you may implement a UI element in several ways by adding:
+With Magento, you may apply different approaches to implement a UI element, and use:
 
-1. Markup and inline JavaScript to PHTML template
+* PHTML template with inline JavaScript
 
-2. JavaScript file via XML layout
+* PHTML template with declaration of related JavaScript file via XML layout
 
-3. jQuery widget
+* jQuery widget
 
-4. UI component
+* Magento 2 UI Component
 
 We recommend using UI components as much as possible, and here's why.
 
 ### Interaction with other UI components
 
-UI components work well together: they communicate with each other via the uiRegistry service that tracks their asynchronous initialization. Therefore, if we need to:
+UI components work well together: they communicate with each other via the [uiRegistry service]({{page.baseurl}}ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html#debugging-using-the-uiregistry) that tracks their asynchronous initialization. Therefore, if we need to:
 
 * extend something that has already been implemented as a hierarchy of UI components
 
 * add a new feature that should interact with other UI components
 
 it's easier and more effective to use a UI component.
+
+<!-- The Architect who reviewed the section below asked to remove it because "the words "easily added" can cause offensive reaction from developers, and we don't have a good cross-links for all items from the list"
 
 ### UI components are easily added on a page
 
@@ -76,6 +78,8 @@ Even when the target UI is generated from PHTML templates and doesn't contain UI
 * `x-mage-init` JS script
 
 * `data-mage-init` attribute
+
+-->
 
 ## Things to remember working with UI components
 
@@ -91,6 +95,10 @@ Configuration settings (their list and names) are different among UI components;
 
 Surprisingly, most issues occur because of the typos and other mistakes in the UI component's XML configuration. Naming is critical because UI components are heavily cross-referenced.
 
+<!--
+
 **Own designs often require new UI components**
 
 The out-of-the-box set of UI components may be not enough to implement the required design, so developers need to know how to create new UI components.
+
+-->
