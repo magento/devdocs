@@ -17,9 +17,10 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Week ending |
 |--------------|--------------|----------------------|--------|
+| [Magento UI component explained]({{ site.gdeurl21 }}ui_comp_guide/ui_component_explained.html){:target="_blank"} | 2.1.x | New | Dec 30 |
 | [Magento Community Edition (CE) 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3CE.html){:target="_blank"}   | 2.1.3  |  New | Dec 16  |
 | [Magento CE 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11CE.html){:target="_blank"}   | 2.0.11  |  New | Dec 16  |
-| [Magento Enterprise Edition (EE) 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3EE.html){:target="_blank"}   | 2.1.3  |   | Dec 16  |
+| [Magento Enterprise Edition (EE) 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3EE.html){:target="_blank"}   | 2.1.3  | New  | Dec 16  |
 | [Magento EE 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11EE.html){:target="_blank"}   |  2.0.11  |  New | Dec 16  |
 | [Configure the Magento functional testing framework]({{ page.baseurl }}mtf/configuration.html){:target="_blank"}   | 2.x | New  | Dec 16  |
 | [Add custom integrations and vault payments to the Magento payment provider gateway]({{ page.baseurl }}payments-integrations/bk-payments-integrations.html){:target="_blank"}  |  2.x |  New | Dec 9 |
@@ -95,4 +96,3 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 
 {% endcollapsibleh2 %}
-
