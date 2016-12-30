@@ -23,9 +23,9 @@ UI Component is a combination of:
 
 ### XML Declaration
 
-XML is widely used in Magento 2, which allows developers to reuse existing functionalities and add customizations easily.
+XML is widely used in Magento 2, which allows developers to easily reuse existing functionalities and add customizations.
 
-UI Components advertise using more semantical approach to declare and configure User Interface comparing to XML Layouts.
+Comparing to XML Layouts, UI Components use more semantical approach to declare and configure User Interface .
 
 An instance of UI component is usually based on the hierarchy of child UI components. For example:
 
@@ -72,23 +72,25 @@ it's easier and more effective to use a UI component.
 Even when the target UI is generated from PHTML templates and doesn't contain UI components, you can still easily add a component on a page. For this, you may use:
 
 * XML declaration
-* x-mage-init JS script
-* data-mage-init attribute
+
+* `x-mage-init` JS script
+
+* `data-mage-init` attribute
 
 ## Things to remember working with UI components
 
-### Read the docs
+**Read the docs**
 
 Creating new UI Component is not always intuitive, so we recommend to always read the documentation first.
 
-### UI components have different settings
+**UI components have different settings**
 
 Configuration settings (their list and names) are different among UI components; these settings contain constants, optional and required settings. Developers need to treat every UI component separately.
 
-### Beware of mistakes in XML config
+**Beware of mistakes in XML config**
 
 Surprisingly, most issues occur because of the typos and other mistakes in the UI component's XML configuration. Naming is critical because UI components are heavily cross-referenced.
 
-### Own designs often require new UI components
+**Own designs often require new UI components**
 
 The out-of-the-box set of UI components may be not enough to implement the required design, so developers need to know how to create new UI components.
