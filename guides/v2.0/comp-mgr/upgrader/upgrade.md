@@ -27,7 +27,14 @@ Messages similar to the following display in the Console Log:
 
 {% endcollapsible %}
 
-## After upgrading
+## Manually clear directories
+After the upgrade completes, manually clear `var` subdirectories:
+
+	rm -rf <Magento install dir>/var/cache/*
+	rm -rf <Magento install dir>/var/page_cache/*
+	rm -rf <Magento install dir>/var/generation/* 
+
+## Restart Varnish
 After the upgrade completes, restart Varnish if you use it for page caching.
 
 	service varnish restart
