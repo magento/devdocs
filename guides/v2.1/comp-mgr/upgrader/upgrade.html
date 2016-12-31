@@ -1002,7 +1002,15 @@
 <div class="collapsible"><b class="collapsible-title">Click to view the Console Log </b><div class="collapsible-content"><p><img src="/common/images/upgrade-success-consolelog.png" width="650px" /></p>
 </div></div>
 
-<h2 id="after-upgrading">After upgrading</h2>
+<h2 id="manually-clear-directories">Manually clear directories</h2>
+<p>After the upgrade completes, manually clear <code>var</code> subdirectories:</p>
+
+<pre><code>rm -rf &lt;Magento install dir&gt;/var/cache/*
+rm -rf &lt;Magento install dir&gt;/var/page_cache/*
+rm -rf &lt;Magento install dir&gt;/var/generation/* 
+</code></pre>
+
+<h2 id="restart-varnish">Restart Varnish</h2>
 <p>After the upgrade completes, restart Varnish if you use it for page caching.</p>
 
 <pre><code>service varnish restart

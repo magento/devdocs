@@ -1059,15 +1059,15 @@
 composer update
 </code></pre>
 
-    <p>For example, to upgrade to Magento CE version 2.0.6, enter:</p>
+    <p>For example, to upgrade to Magento CE version 2.0.11, enter:</p>
 
-    <pre><code>composer require magento/product-community-edition 2.0.6 --no-update
+    <pre><code>composer require magento/product-community-edition 2.0.11 --no-update
 composer update
 </code></pre>
 
-    <p>To upgrade to Magento EE version 2.0.6, enter:</p>
+    <p>To upgrade to Magento EE version 2.0.11, enter:</p>
 
-    <pre><code>composer require magento/product-enterprise-edition 2.0.6 --no-update
+    <pre><code>composer require magento/product-enterprise-edition 2.0.11 --no-update
 composer update
 </code></pre>
 
@@ -1076,6 +1076,14 @@ composer update
 </div>
   </li>
   <li>If prompted, enter your <a href="/guides/v2.1/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a>.</li>
+  <li>
+    <p>Manually clear <code>var</code> subdirectories:</p>
+
+    <pre><code>rm -rf &lt;Magento install dir&gt;/var/cache/*
+rm -rf &lt;Magento install dir&gt;/var/page_cache/*
+rm -rf &lt;Magento install dir&gt;/var/generation/* 
+</code></pre>
+  </li>
   <li>
     <p>Update the database schema and data:</p>
 
