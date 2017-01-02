@@ -59,7 +59,7 @@ Example:
 
 Component could be configured in two ways:
 
-* globally: using any module's `view//ui_component/etc/definition.xml` file. All settings declared in     this file will be applied to all component's instances
+* globally: using any module's `view/ui_component/etc/definition.xml` file. All settings declared in     this file will be applied to all component's instances
 * locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form`
 
 Create configuration file: `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form.xml`
