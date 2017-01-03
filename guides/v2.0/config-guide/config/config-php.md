@@ -28,7 +28,7 @@ The following sections discusses the structure and contents of the deployment co
 * <a href="#config-php-contents-env-php">Environmental configuration</a>
 
 <h3 id="config-php-contents-config-php">Manage installed modules</h3>
-`config.php` lists your installed components (modules, themes, and language packages). Magento provides both command-line and web-based utilities to manage components (install, uninstall, enable, disable, or upgrade).
+`config.php` lists your installed modules. Magento provides both command-line and web-based utilities to manage modules (install, uninstall, enable, disable, or upgrade).
 
 Examples:
 

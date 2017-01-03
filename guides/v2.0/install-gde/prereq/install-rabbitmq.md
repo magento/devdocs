@@ -38,9 +38,15 @@ The message queue system must be established before you install Magento. The bas
 
 Detailed installation instructions are beyond the scope of this document. See [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html) for more information.
 
-The RabbitMQ server is included on Ubuntu, but the version is often old. RabbitMQ recommends installing the package from their website.
+To install RabbitMQ on Ubuntu 16 enter the following command:
 
-1. Download [rabbitmq-server_3.5.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server_3.5.6-1_all.deb).
+    sudo apt install -y rabbitmq-server
+    
+This command also installs the required Erlang packages. 
+
+If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their website.
+
+1. Download [rabbitmq-server_3.6.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb).
 2. Install the package with `dpkg`.
 
 <h2 id ="centos-install">Install RabbitMQ on CentOS</h2>
