@@ -15,7 +15,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 ## Magento UI components
 
 {% collapsible Form %}
-- **UI Component**: [Form](http://devdocs.magento.com/guides/v2.1/ui-components/ui-form.html)
+- **UI Component**: [Form](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html)
 - **Link to constructor**: [form.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
 - **Node name in `definition.xml`**: `<form>`
 - **Is top-level**: Yes
@@ -27,7 +27,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 
 {% collapsible Listing %}
-- **UI Component**: [Listing](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html)
+- **UI Component**: [Listing](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html)
 - **Link to constructor**: [listing.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)
 - **Node name in `definition.xml`**: `<listing>`
 - **Is top-level**: Yes
@@ -123,7 +123,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 
 {% collapsible Modal %}
-- **UI Component**: [Modal](http://devdocs.magento.com/guides/v2.1/ui-components/ui-modal.html)
+- **UI Component**: [Modal](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/ui-modal.html)
 - **Link to constructor**: [modal-component.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
 - **Node name in `definition.xml`**: `<modal>`
 - **Is top-level**: No

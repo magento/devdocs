@@ -19,7 +19,7 @@ UI components are configured using primarily the following:
 
 1. `definition.xml` file: the structure with nodes, nested nodes, options and so on.
 2. UI component XML declaration (the instance).
-3. [Backend/PHP modifiers]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.md).
+3. [Backend/PHP modifiers]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.html).
 4. Configuration inside the JavaScript classes.
 
 ## Related reading
