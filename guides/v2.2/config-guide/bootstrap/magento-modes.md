@@ -84,6 +84,9 @@ In production mode:
 
 *	Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism. (Static view files are served from cache only.)
 *	Errors are logged to the file system and are never displayed to the user
+*	You can enable and disable cache types only using the [command line]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en)
+
+	You _cannot_ enable or disable cache types using the Magento Admin
 
 #### Next step
 To set a mode, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
