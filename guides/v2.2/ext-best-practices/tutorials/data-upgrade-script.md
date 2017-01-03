@@ -2,8 +2,8 @@
 layout: default
 group: ext-best-practices
 subgroup: Tutorials
-title: Data Upgrade Script
-menu_title: Data Upgrade Script
+title: Serialized to JSON data upgrade
+menu_title: Serialized to JSON data upgrade
 menu_order: 1000
 version: 2.2
 github_link: ext-best-practices/tutorials/data-upgrade-script.md
@@ -109,7 +109,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
 Any module can disable or replace another module in Magento.
 If your extension stores data in the tables of another module, make sure the Magento application has enabled that module before executing the upgrade logic.
 
-Use the `\Magento\Framework\Module\Manager` class to check the status of your module.
+Use the `\Magento\Framework\Module\Manager` class to check the status of the module your extension depends on.
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -147,15 +147,15 @@ $fieldDataConverter->convert(
 ### Step 3b: Convert a custom attribute with a static name
 {:#step-3b}
 
-If you store and retrieve your data using an identifier or unique code for a column, you can use a query modifier to update values using a condition.
-
-The following code sample upgrades the data for options in the `value` column in the `quote_item_option` table with a static identifier code of `my_option`.
-
 | option_id | code           | value                         |
-| --- | --- | --- |
+| --------- | -------------- | ----------------------------- |
 | 1         | my_option      | a:1:{s:3:"foo";s:3:"bar";}    |
 | 2         | another_option | &lt;non-serialized string&gt; |
 | 3         | my_option      | a:1:{s:3:"foo";s:3:"bar";}    |
+
+If you need to convert a column for a specific row, you can use a query modifier to update values using a condition.
+
+The following code sample upgrades the data for options in the `value` column in the `quote_item_option` table with a static identifier code of `my_option`.
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -188,14 +188,14 @@ $fieldDataConverter->convert(
 ### Step 3c: Convert a custom attribute with a dynamic name
 {:#step-3c}
 
-If your identifier or unique code uses a dynamic naming system, you can convert the data using the following approach shown in the following code sample:
-
 | option_id | code                  | value                         |
 | --------- | --------------------- | ----------------------------- |
 | 1         | my_custom_option_1001 | a:1:{s:3:"foo";s:3:"bar";}    |
 | 2         | another_option        | &lt;non-serialized string&gt; |
 | 3         | my_custom_option_1002 | a:1:{s:3:"foo";s:3:"bar";}    |
 | 4         | my_custom_option_1003 | a:1:{s:3:"foo";s:3:"bar";}    |
+
+If your identifier or unique code uses a dynamic naming system, you can convert the data using the following approach shown in the following code sample:
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -240,6 +240,9 @@ foreach ($iterator as $selectByRange) {
 If your module uses nested serialized data in the database, create a custom data converter to hold the logic for converting the data.
 
 The following example is a custom data converter class that converts data in the `product_options` column in the `sales_order_item` table.
+This field contains nested serialized data that needs conversion.
+
+Since you cannot assume the format of the data when it is initially converted, the following example also checks the format of the top level string and uses the appropriate methods to unserialize and serialize the data using the original format.
 
 
 {% collapsible Show code %}
