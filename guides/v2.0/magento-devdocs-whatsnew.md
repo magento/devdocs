@@ -17,6 +17,12 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Week ending |
 |--------------|--------------|----------------------|--------|
+| [Magento UI components explained]({{ site.gdeurl21 }}ui_comp_guide/ui_component_explained.html){:target="_blank"} | 2.1.x | New | Dec 30 (includes week ending Dec 23) |
+| [Magento Community Edition (CE) 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3CE.html){:target="_blank"}   | 2.1.3  |  New | Dec 16  |
+| [Magento CE 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11CE.html){:target="_blank"}   | 2.0.11  |  New | Dec 16  |
+| [Magento Enterprise Edition (EE) 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3EE.html){:target="_blank"}   | 2.1.3  | New  | Dec 16  |
+| [Magento EE 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11EE.html){:target="_blank"}   |  2.0.11  |  New | Dec 16  |
+| [Configure the Magento functional testing framework]({{ page.baseurl }}mtf/configuration.html){:target="_blank"}   | 2.x | New  | Dec 16  |
 | [Add custom integrations and vault payments to the Magento payment provider gateway]({{ page.baseurl }}payments-integrations/bk-payments-integrations.html){:target="_blank"}  |  2.x |  New | Dec 9 |
 
 {% collapsibleh2 November 2016 %}
@@ -46,7 +52,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 {% collapsibleh2 October 2016 %}
 
-| Week ending | Description  | Versions applied to  | New or Updated |
+| Description  | Versions applied to  | New or Updated | Week ending |
 |--------------|--------------|----------------------|--------|
 | Magento Enterprise Cloud Edition (MECE) [added descriptions of build and deployment scripts and other improvements to deployment]({{ page.baseurl }}cloud/discover-deploy.html){:target="_blank"} | 2.x | Updated |Oct 28 |
 |[MECE added description of build and deployment logs in staging and production]({{ page.baseurl }}cloud/env/environments-logs.html){:target="_blank"} | 2.x | Updated | Oct 28 |
@@ -66,12 +72,11 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [How to apply the SUPEE-8788 security patch]({{ site.m1xgdeurl }}other/ht_install-patches.html#apply-8788) | 1.x  | Updated  |Oct 21 |
 |[Magento CE 2.0.10 release notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10CE.html){:target="_blank"}  | 2.0.x  | New| Oct 14 |
 |[Magento EE 2.0.10 release notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10EE.html){:target="_blank"} | 2.0.x  | New| Oct 14 |
-|[Magento CE 2.1.2 release notes]({{ page.baseurl }}release-notes/ReleaseNotes2.1.2CE.html){:target="_blank"} | 2.1.x  | New| Oct 14 |
-|[Magento EE 2.1.2 release notes]({{ page.baseurl }}release-notes/ReleaseNotes2.1.2EE.html){:target="_blank"}  | 2.1.x  | New| Oct 14 |
+|[Magento CE 2.1.2 release notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2CE.html){:target="_blank"} | 2.1.x  | New| Oct 14 |
+|[Magento EE 2.1.2 release notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2EE.html){:target="_blank"}  | 2.1.x  | New| Oct 14 |
 | [Proposed outline for evolving UI Components guide]({{ page.baseurl }}ui_comp_guide/ui_comp_outline_proposed.html){:target="_blank"} |2.1.x| New  |  Oct 14 |
 |[Preventing cache poisoning]({{ page.baseurl }}config-guide/secy/secy-headers.html){:target="_blank"}  | See topic  |New|  Oct 14 |
-|[Updated system requirements]({{ site.gdeurl }}install-gde/system-requirements-2-1.tech.html){:target="_blank"}  |  2.1.2 |Updated| Oct 14 |
-|[Updated system requirements]({{ page.baseurl }}install-gde/system-requirements-2.0-tech.html){:target="_blank"} | 2.0.x  |Updated| Oct 14 |
+|[Updated system requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html){:target="_blank"} | 2.x  |Updated| Oct 14 |
 |[JSON responses added by Tim Reynolds]({{ site.m1xgdeurl }}api/rest/Resources/resource_customer_addresses.html){:target="_blank"}  |  1.x |Updated| Oct 14 |
 |[JSON responses added by Tim Reynolds]({{ site.m1xgdeurl }}api/rest/Resources/resource_customers.html){:target="_blank"}  |  1.x |Updated| Oct 14 |
 |[Magento CE 1.9.3 release notes]({{ site.m1xgdeurl }}ce19-ee114/ce1.9_release-notes.html){:target="_blank"} | 1.x  |New| Oct 14 |

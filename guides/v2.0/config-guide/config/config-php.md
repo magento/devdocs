@@ -28,14 +28,14 @@ The following sections discusses the structure and contents of the deployment co
 * <a href="#config-php-contents-env-php">Environmental configuration</a>
 
 <h3 id="config-php-contents-config-php">Manage installed modules</h3>
-`config.php` lists your installed components (modules, themes, and language packages). Magento provides both command-line and web-based utilities to manage components (install, uninstall, enable, disable, or upgrade).
+`config.php` lists your installed modules. Magento provides both command-line and web-based utilities to manage modules (install, uninstall, enable, disable, or upgrade).
 
 Examples:
 
 * Uninstall components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a>
 * Enable or disable components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
-* Component Manager: coming soon
-* System Upgrade: coming soon
+* [Component Manager]({{ page.baseurl }}comp-mgr/module-man/compman-main-pg.html)
+* [System Upgrade]({{ page.baseurl }}comp-mgr/upgrader/upgrade-start.html)
 
 `config.php` snippet:
 
@@ -113,7 +113,7 @@ The following table provides details about each `env.php` segment and its struct
       <td><code>cache</code></td>
       <td><pre>__/cache
  |__/frontend
-   |__/See <a href="{{page.baseurl}}config-guide/config/caching_frontend-cache-types.html">frontend options</a></pre></td>
+   |__/See <a href="{{page.baseurl}}config-guide/cache/caching_frontend-cache-types.html">frontend options</a></pre></td>
     </tr>
     <tr>
       <td>Installation date</td>

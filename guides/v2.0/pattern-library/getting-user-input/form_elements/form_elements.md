@@ -20,10 +20,10 @@ For solutions not described in this article, please refer to other form-related 
 Form elements will be needed anytime input is to be collected from the user. Consideration should be given to ensure the best* form element is presented as part of the particular user-task. When designing forms for Magento application care should be taken to ensure the overall experience promotes **clarity**, **efficiency** and **success** for the user.
 
 
-_* “best” is a relative term, but there are User Experience principles and best practices that should be followed when designing forms._
+_* "best" is a relative term, but there are User Experience principles and best practices that should be followed when designing forms._
 
 <h3 id="labels">Form Labels</h3>
-In most cases every text field, text box, radio button group, checkbox or checkbox group, drop down selector and multi-select box will have a label. There are two variations of form layout – “label-left” and “label-top”. Depending on the layout of the page and/or task-at-hand, either of these may be implemented, but whichever layout is deemed appropriate it should be used consistency throughout a given task.
+In most cases every text field, text box, radio button group, checkbox or checkbox group, drop down selector and multi-select box will have a label. There are two variations of form layout – "label-left" and "label-top". Depending on the layout of the page and/or task-at-hand, either of these may be implemented, but whichever layout is deemed appropriate it should be used consistency throughout a given task.
 
 <br />
 _**Example of label-top**_
@@ -45,7 +45,7 @@ As a matter of best practices, any input that is required in order to be success
 <img src="img/required.png">
 
 <h3 id="focus">Focus State</h3>
-To assist the user, the form element with `.focus()` will display a subtle blue stroke to indicate that the element is currently “active”. Focus can be re-directed by “tabbing” or
+To assist the user, the form element with `.focus()` will display a subtle blue stroke to indicate that the element is currently "active". Focus can be re-directed by "tabbing" or
 otherwise selecting outside the form element that has focus.
 
 <img src="img/focus.png">
@@ -76,28 +76,28 @@ for, a label may not be necessary for the additional field. However, as a rule e
 
 <img src="img/add_field.png">
 
-<h4>“Re-sizable” Text Field</h4>
-It may be advantageous to allow the text area to be ‘stretched’ by the user to accommodate the amount of data input. This is most useful when the amount of data or character-count is unlimited and/or the amount of text to be entered large or unpredictable (‘comments’ for instance). When presenting this a re-sizable area to the user it is crucial to include the “grabber” icon in the lower-right corner of the field to indicate this functionality to the user.
+<h4>"Re-sizable" Text Field</h4>
+It may be advantageous to allow the text area to be ‘stretched’ by the user to accommodate the amount of data input. This is most useful when the amount of data or character-count is unlimited and/or the amount of text to be entered large or unpredictable (‘comments’ for instance). When presenting this a re-sizable area to the user it is crucial to include the "grabber" icon in the lower-right corner of the field to indicate this functionality to the user.
 
 <img src="img/resize_field.png">
 
 In cases where a re-sizable text field is not desired, reasonable space should be provided to collect the data. If the text entered then exceeds the area, the text should flow upward, keeping the most recent text in view.
  
 <h4>Text Field with Associated Checkbox</h4>
-Often times a text field will be paired with a checkbox to enable some behavior associated with the data provided (“Keep me signed in” on a log in screen for example). In these instances, most often, including a label for the checkbox element is not required or needed. A slight indentation of the sub-elemental checkbox can help inform the user that the elements are related and not two distinct form elements.
+Often times a text field will be paired with a checkbox to enable some behavior associated with the data provided ("Keep me signed in" on a log in screen for example). In these instances, most often, including a label for the checkbox element is not required or needed. A slight indentation of the sub-elemental checkbox can help inform the user that the elements are related and not two distinct form elements.
 
 <img src="img/field_checkbox.png">
 
 <h4>Text Field with Icon Trigger or Button</h4>
-A control may be placed inside (overlaid on) a text field to “trigger” a more sophisticated
+A control may be placed inside (overlaid on) a text field to "trigger" a more sophisticated
 or robust interaction, as in the case of something like **date picker**. The icon should appear on the far right end of the field. Once a user has interacted with the control and a value is set, the value should display in the field, as well as the control (icon). This of course allows the user to edit the field if they so desire.
 
 
 <img src="img/date_pick.png">
 
-When an ancillary or sub-action must be performed using the data input (or selected from) a particular element a, “button” may be required to initiate the sub-action and should be located in close proximity to the form element. If the sub-action involves a single form field an icon should be used and should directly follow the form element.
+When an ancillary or sub-action must be performed using the data input (or selected from) a particular element a, "button" may be required to initiate the sub-action and should be located in close proximity to the form element. If the sub-action involves a single form field an icon should be used and should directly follow the form element.
 
-If the sub-action involves a set of form elements, as with **sign-in**, a more traditional “button” should follow the group. The button should follow the Magento UI style for buttons. A link may be substituted for a button, however doing so may reduce the ’find-ability’ of the call to
+If the sub-action involves a set of form elements, as with **sign-in**, a more traditional "button" should follow the group. The button should follow the Magento UI style for buttons. A link may be substituted for a button, however doing so may reduce the ’find-ability’ of the call to
 action.
 
 <img src="img/trigger.png">
@@ -151,27 +151,27 @@ Client-side validation should be used whenever possible to assist the user in co
 
 
 <h3 id="disabled">Disabled Form Field</h3>
-It may be necessary in some instances to display a form element but disable it so that the user cannot interact with it. Disabling can indicate a conflict with other related form elements, that an “opt in” is required to enable the feature, or that the proper level of authentication has not been obtained by the user.
+It may be necessary in some instances to display a form element but disable it so that the user cannot interact with it. Disabling can indicate a conflict with other related form elements, that an "opt in" is required to enable the feature, or that the proper level of authentication has not been obtained by the user.
 
 <img src="img/disabled.png">
 
 
 <h3 id="measures">Units and Measurement Indicators</h3>
-In some cases it may be beneficial to indicate to the user the “unit” of the data to be
-input, such as currency or weight. This is accomplished by including standard symbolic indicator of the “unit”, such as using €to denote the currency Euros. The indicator may either precede the input area or follow the input area.
+In some cases it may be beneficial to indicate to the user the "unit" of the data to be
+input, such as currency or weight. This is accomplished by including standard symbolic indicator of the "unit", such as using €to denote the currency Euros. The indicator may either precede the input area or follow the input area.
 
 <br />
 <img src="img/units.png">
 
 
 <h3 id="masking">Field Masking</h3>
-Some fields may benefit the user by providing an indication of the desired format of the data to be input. The mask should appear when the field gains “focus”.
+Some fields may benefit the user by providing an indication of the desired format of the data to be input. The mask should appear when the field gains "focus".
 
 <img src="img/masking.png">
 
 
 <h3 id="read">Read-only Form Data</h3>
-It may be necessary or advantageous to display form field data that cannot be changed or edited. In these cases the form label should appear to provide context for the “read-only” data, but not the field bounding-box so that it is clear to the user that the data cannot be edited.
+It may be necessary or advantageous to display form field data that cannot be changed or edited. In these cases the form label should appear to provide context for the "read-only" data, but not the field bounding-box so that it is clear to the user that the data cannot be edited.
 
 <img src="img/read.png">
 
@@ -182,12 +182,12 @@ In some instances rather than displaying a form element in a disabled state, it 
 <img src="img/disclosure.png">
 
 <h3 id="help_tip">Contextual Help tooltip</h3>
-Akin to progressive disclosure is “contextual help”. This may be used whenever it is likely the user will require or benefit from additional information regarding a form element. The advantage of “contextual help” over standard help text is that it provides more space for copy or when the majority of users would not need the information to complete the task. Its drawback is that it is hidden from 100% of the users and requires explicit action to reveal it. “Contextual help” should be used sparingly to minimize clutter. The user taps the icon to reveal the contextual help tooltip. Then taps again to close it.
+Akin to progressive disclosure is "contextual help". This may be used whenever it is likely the user will require or benefit from additional information regarding a form element. The advantage of "contextual help" over standard help text is that it provides more space for copy or when the majority of users would not need the information to complete the task. Its drawback is that it is hidden from 100% of the users and requires explicit action to reveal it. "Contextual help" should be used sparingly to minimize clutter. The user taps the icon to reveal the contextual help tooltip. Then taps again to close it.
 
 <img src="img/contextual_help.png">
 
 <h3 id="help_text">Help text</h3>
-“Help text” may be associated with individual form elements. This text is used to provide specific details, helpful hints, or cautionary messages relating to the particular form element with which it is associated. Help text is always visible so care should be taken to ensure that the text is **necessary**, **helpful**, **clear** and **concise**.  As with “Contextual Help”, help text should be used judiciously.
+"Help text" may be associated with individual form elements. This text is used to provide specific details, helpful hints, or cautionary messages relating to the particular form element with which it is associated. Help text is always visible so care should be taken to ensure that the text is **necessary**, **helpful**, **clear** and **concise**.  As with "Contextual Help", help text should be used judiciously.
 
 <img src="img/help_text.png">
 

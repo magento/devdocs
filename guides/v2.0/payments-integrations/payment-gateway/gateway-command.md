@@ -23,7 +23,7 @@ The `\Magento\Payment\Gateway\Command\GatewayCommand` class is the default `Comm
 ## Adding gateway commands
 For each particular integration with a payment provider, gateway commands are added using virtual types in [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration.
 
-In the following example the `BraintreeAuthorizeCommand` gateway command is added. The command implements the “authorize” operation for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml#131`]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L131)):
+In the following example the `BraintreeAuthorizeCommand` gateway command is added. The command implements the "authorize" operation for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml#131`]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L131)):
 
 {% highlight xml %}
 <virtualType name="BraintreeAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">

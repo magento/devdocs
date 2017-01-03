@@ -44,7 +44,7 @@ Classes should not ask for the `ObjectManager` itself as a constructor dependenc
 You do not call the object manager directly because the framework handles this automatically.
 Direct use of the `create` function prevents type validation and type hinting that a [factory]({{page.baseurl}}extension-dev-guide/factories.html) class provides.
 
-Object creation is also a separate responsibility that should be moved to a dedicated class such as a [factory]({{page.baseurl}}extension-dev-guide/factories.html) or [proxy]({{page.baseurl}}extension-dev-guide/proxies.html}}).
+Object creation is also a separate responsibility that should be moved to a dedicated class such as a [factory]({{page.baseurl}}extension-dev-guide/factories.html) or [proxy]({{page.baseurl}}extension-dev-guide/proxies.html).
 In most cases, the framework generates these classes automatically during code compilation.
 
 <div class="bs-callout bs-callout-warning" markdown="1">

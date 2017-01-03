@@ -19,15 +19,15 @@ Following are requirements you should already have:
 *	Must know how to use [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
 *	Must know how to use [Composer](https://getcomposer.org/doc){:target="_blank"}
 *	Must be familiar with Magento 2
-*	Must have familiarity with basic Continuous Integration Best Practices
+*	Must have familiarity with [Continuous Integration Best Practices](https://www.google.com/search?q=Continuous+Integration+Best+Practices){:target="_blank"}
 *	Understand the three types of systems and how they’re used: [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int), [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage), [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod)
-*	Must set up a [local development environment]({{ page.baseurl cloud/access-acct/set-up-env.html}})
+*	Must set up a [local development environment]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
 
     The integration environment (sometimes referred to as _Platform as a Service (PaaS))_ can help with integration testing but is not for developing for a production server. Among the differences are that, in integration, Magento is set for developer mode and not all directories are read-only.
 *	Must have working [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
 
 ### Required testing configurations {#cloud-req-test}
-Before you test any custom code in any Magento Enterprise Cloud Edition environment, you must do all of the following:
+Before you test any custom code in your local Magento Enterprise Cloud Edition environment, you must do all of the following:
 
 *	Set the Magento application docroot to `pub/index.php` 
 *	Set MySQL [`auto_increment_increment` to 3]({{ page.baseurl }}cloud/before/before-workspace-php.html#cloud-mysql)
@@ -46,7 +46,7 @@ For development and testing, we require the following:
 *	You should test using either the integration or the staging environment (or both) on a regular basis throughout the project
 
 	You can enable and test individual features or extensions on different environments to make sure they are working before merging
-*	You must make sure that `composer:setup`  and `composer:install` work and that any extensions and customizations compile correctly in production mode
+*	You must make sure that [`magento setup:install`]({{ page.baseurl }}install-gde/install/cli/install-cli-install.html)  and [`magento setup:upgrade`]({{ page.baseurl }}comp-mgr/cli/cli-upgrade.html) work and that any extensions and customizations compile correctly in production mode
 *	You must test the application, including any extensions and customizations, against Varnish and/or Fastly well in advance of going live
 
 	In particular, verify that content is being cached as expected 

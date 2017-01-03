@@ -16,7 +16,7 @@ In a REST call, a user could potentially specify one ID in the URL and another i
 
 For example:
 
-The REST URL to update a customer is `<route url="/V1/customers/:id" method="PUT">`.  If you specify a ID value of `1` in the URL (`http://magento.loc/customer/1`), and a body of `{ “id”: 2, “attr”: “value” }`, the customer with ID of `1` will be modified.
+The REST URL to update a customer is `<route url="/V1/customers/:id" method="PUT">`.  If you specify a ID value of `1` in the URL (`http://magento.loc/customer/1`), and a body of `{ "id": 2, "attr": "value" }`, the customer with ID of `1` will be modified.
 
 This applies to all REST APIs where a parameter is passed in the URL. Anything specified in the request body with the same parameter name as the URL will be ignored.
 

@@ -72,7 +72,10 @@
     border: $dropdown-border-width solid transparent;
     z-index: 2;
   }
+
   li.has-children > a{
+    position: relative;
+    z-index: 2;
     border-bottom: none;
     cursor: default;
   }

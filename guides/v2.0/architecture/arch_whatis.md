@@ -41,7 +41,7 @@ Magento uses dependency injection and service contracts to simplify the process 
 
 Dependency injection benefits include:
 
-* the client that uses a module or service can remain ignorant of the module’s or service’s  implementation details
+* the client that uses a module or service can remain ignorant of the module's or service's  implementation details
 
 * you can modify a module without altering the client from anywhere you use the dependency injection framework to wire application logic together.
 
@@ -49,11 +49,11 @@ Service Contracts provide a new way to access public API endpoints. These PHP in
 
 ## Modularity {#m2arch-modularity}
 
-A module is a basic functional unit of a Magento system. Magento modules contain the logic to execute required actions and functions. You extend the core feature set of Magento by writing and incorporating new modules into your installation. Use Magento themes and language packages to create your store’s visual design and language capabilities.
+A module is a basic functional unit of a Magento system. Magento modules contain the logic to execute required actions and functions. You extend the core feature set of Magento by writing and incorporating new modules into your installation. Use Magento themes and language packages to create your store's visual design and language capabilities.
 
 ## Highly customizable store branding {#m2arch-store-branding}
 
-Extend and customize the core components of your Magento store's PHP-, HTML5- and CSS3- based default themes and language packages to precisely control your site’s behavior and look-and-feel.
+Extend and customize the core components of your Magento store's PHP-, HTML5- and CSS3- based default themes and language packages to precisely control your site's behavior and look-and-feel.
 
 ## Strong stack of open-source technologies {#m2arch-open-source-stack}
 

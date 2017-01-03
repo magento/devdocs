@@ -13,7 +13,7 @@ github_link: config-guide/memcache/memcache_ubuntu.md
 {% include config/php-memcache.md %}
 
 <h2 id="config-memcache-install">Install and configure memcached on CentOS</h2>
-This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the <a href="https://code.google.com/p/memcached/wiki/NewStart" target="_blank">memcached wiki</a>.
+This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the <a href="https://github.com/memcached/old-wiki" target="_blank">memcached wiki</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">

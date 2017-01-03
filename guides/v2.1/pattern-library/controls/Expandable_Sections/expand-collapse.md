@@ -6,6 +6,7 @@ title: Admin Design Pattern Library
 menu_title: Expandable Sections
 menu_order: 3
 menu_node: 
+version: 2.1
 github_link: pattern-library/controls/Expandable_Sections/expand-collapse.md
 redirect_from: /guides/v1.0/pattern-library/controls/Expandable_Sections/expand-collapse.html
 ---
@@ -46,7 +47,7 @@ Required fields should not be located within a collapsed section as this increas
 _<sup>*</sup> The current design proposal accommodates 4 levels of nested expandable sections._
 
 **Visual Appearance**
-* A “Simple” expandable section is a container with a border, section header and a toggle arrow (right aligned) to control the showing / hiding of content.
+* A "Simple" expandable section is a container with a border, section header and a toggle arrow (right aligned) to control the showing / hiding of content.
 <img src="img/simple.png">
 * A "Nested" expandable section is in fact a sub-section within an expandable section. The nested expandable section has all the same features as the "simple" expandable section, HOWEVER the expand/collapse control is located on the left. This is to help the User more easily identify the expandable sub-sections within an expanded section.
 <img src="img/nested.png">
@@ -62,9 +63,9 @@ _<sup>*</sup> The current design proposal accommodates 4 levels of nested expand
 ..* If a section is collapsed, all "nested" expandabed sections within that section should be collapsed as well.
 
 <h3>Variations</h3>
-1.“Simple” – a section that contains a single level of expansion in a section (no nested expandable sub-sections).
+1."Simple" – a section that contains a single level of expansion in a section (no nested expandable sub-sections).
 <img src="img/simple_exp.png">
-2.“Nested” – a section that contains one or more expandable sub-sections.
+2."Nested" – a section that contains one or more expandable sub-sections.
 <img src="img/nested_exp.png">
 3. Single Expandable – a section that contains only one expandable section. Usually used to hide additional information.
 <img src="img/single_exp.png">

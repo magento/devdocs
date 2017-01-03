@@ -150,7 +150,7 @@ When `getList()` is called, it returns a list of `ProductInterface`s. When it do
 
 Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.
 
-The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a “third-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
+The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a "third-party extension". Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
 {% highlight XML %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
@@ -167,32 +167,32 @@ The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInvent
 In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET http://<magento_base_url>/rest/V1/products/<sku>` request will receive product information similar to the following:
 
     {
-      "sku": “tshirt1”,
-      “price”: “20.00”,
-      “description”: “New JSmith design”,
-      “extension_attributes”: {
-        “logo size”: “small”
+      "sku": "tshirt1",
+      "price": "20.00",
+      "description": "New JSmith design",
+      "extension_attributes": {
+        "logo size": "small"
       },
-      “custom_attributes”: {
-        “artist”: “James Smith”
+      "custom_attributes": {
+        "artist": "James Smith"
       }
     }
 
 However, an authenticated user with the permission `Magento_CatalogInventory::cataloginventory` receives the additional `stock_item` field:
 
     {
-      "sku": “tshirt1”,
-      “price”: “20.00”,
-      “description”: “New JSmith design”,
-      “extension_attributes”: {
-        “logo size”: “small”,
-        “stock_item” : {
-          “status” : “in_stock”
-          “quantity”: 70
+      "sku": "tshirt1",
+      "price": "20.00",
+      "description": "New JSmith design",
+      "extension_attributes": {
+        "logo size": "small",
+        "stock_item" : {
+          "status" : "in_stock"
+          "quantity": 70
         }
       },
-      “custom_attributes”: {
-        “artist”: “James Smith”
+      "custom_attributes": {
+        "artist": "James Smith"
       }
     }
 
@@ -210,8 +210,8 @@ An `ExtensionInterface` will be empty if no extension attributes have been added
 However, if an extension similar to the following has been defined, the interface will not be empty.
 
 {% highlight XML %}
-<extension_attributes for=“Magento\Customer\Api\Data\CustomerInterface">
-    <attribute code=“attributeName" type=“Magento\Some\Type[]" />
+<extension_attributes for="Magento\Customer\Api\Data\CustomerInterface">
+    <attribute code="attributeName" type="Magento\Some\Type[]" />
 </extension_attributes>
 {% endhighlight %}
 

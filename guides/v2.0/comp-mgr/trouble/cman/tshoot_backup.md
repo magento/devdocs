@@ -33,4 +33,4 @@ Unfortunately, we can't recommend anything specific because of the variety of er
 <h3 id="trouble-backup-all">Backup fails</h3>
 If the backup fails or if all backup tests fail, it's possible the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a> doesn't have sufficient privileges and ownership of the Magento file system. For example, another user might own the files or the files might be read-only.
 
-Pay particular attention to file system permissions and ownership of the `<your Magento install dir>/var` directory and subdirectories. For more information, see <a href="{{page.baseurl}}install-gde/install/file-system-perms.html">Set file system permissions and ownership</a>.
+Pay particular attention to file system permissions and ownership of the `<your Magento install dir>/var` directory and subdirectories. For more information, see [Set file system permissions and ownership]({{ page.baseurl }}install-gde/prereq/file-system-perms.html)

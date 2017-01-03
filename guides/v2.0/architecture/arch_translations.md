@@ -14,13 +14,13 @@ Any text that's presented to the user can have a variety of captions or labels o
 
 You can either use translation packages provided with the Magento application, create your own, or obtain packages from the community.
 
-For more information, refer to <a href="{{page.baseurl}}architecture/behavior/xlate.html">Translation</a>.
+For more information, refer to <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html">Translation</a>.
 
 ## Related topics {#m2arch-related}
 
 * <a href="{{page.baseurl}}architecture/arch_asmodsys.html">Magento as a modular system</a>
 
-* <a href="{{page.baseurl}}architecture/modules/mod_intro.html">Modules</a>
+* <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
 
 * <a href="{{page.baseurl}}architecture/arch_libraries.html">Libraries</a>
 
