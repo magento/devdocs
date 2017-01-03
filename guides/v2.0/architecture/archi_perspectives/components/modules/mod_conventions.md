@@ -26,7 +26,7 @@ The following table shows the *recommended* location within the Magento file sys
 
 (A module must include a `registration.php` file in its root folder.)
 
-We refer to a component’s root directory as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:
+We refer to a component's root directory as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:
 
 |Entity|Location|
 |---|---|

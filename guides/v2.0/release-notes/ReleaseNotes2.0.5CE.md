@@ -27,7 +27,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <h4>Import/Export</h4>
 
-<!-- 46245 --> * Product import now works successfully in a multi-store environment. Previously, Magento would display the following error message,  “URL key for specified store already exists”, when importing products into a multi-store configuration. 
+<!-- 46245 --> * Product import now works successfully in a multi-store environment. Previously, Magento would display the following error message,  "URL key for specified store already exists", when importing products into a multi-store configuration. 
 
 <!-- 48722 --> * Export performance has been enhanced.  Pages no longer hang randomly, and CPU usage is no longer pegged.  <a href="https://github.com/magento/magento2/issues/3217" target="_blank">(GITHUB-3217)</a>
 

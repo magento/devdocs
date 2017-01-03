@@ -140,7 +140,7 @@ To add an extending layout file:
 
 <u>Example</u>
 
-OrangeCo decided they should remove the “Report bugs” link from the footer, defined in `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`
+OrangeCo decided they should remove the "Report bugs" link from the footer, defined in `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`
 To do this, they added an extending layout in `app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml` :
 
 {%highlight xml%}
@@ -164,12 +164,4 @@ To override the instructions from an ancestor theme layout file:
 To override module layout instructions (base layout):
 
 * Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/base` directory.
-
-
-
-
-
-
-
-
 

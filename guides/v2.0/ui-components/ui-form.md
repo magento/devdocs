@@ -88,7 +88,7 @@ Nodes are optional and contain parameters required for component:
 
 * js_config -> config -> provider - specifies the name of the component data
 
-* layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator “.”
+* layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator "."
 
 Add a description of the fields in the form using components and Field Fieldset:
 

@@ -151,7 +151,7 @@ Use the following command to connect to the database:
 
 Using the preceding example, the command is:
 
-	mysql --host=atabase.internal --user='user' --pass='' --database='main' --port='3306'
+	mysql --host=database.internal --user='user' --pass='' --database='main' --port='3306'
 
 #### Related topics
 *	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)

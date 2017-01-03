@@ -484,9 +484,9 @@ public function getAttributeId($element)
 **Acceptable PHTML template**
 
 {% highlight php startinline=true %}
-<span class="attribute-change-checkbox”>
+<span class="attribute-change-checkbox">
 <label>
-   <input type="checkbox” 
+   <input type="checkbox" 
       <?php echo ($this->getAttributeName($element)) ? ' name="' . $this->getAttributeName($element) . '"' : NULL; ?>
       data-mage-init="{customToggleWidget: [elementSelector: "input[name='someCustomName']"]}" />
    <?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
@@ -511,7 +511,7 @@ public function getAttributeId($element)
 **Unacceptable PHTML template**
 
 {%highlight php%}
-<span class="attribute-change-checkbox”>
+<span class="attribute-change-checkbox">
 	<label>
 		<?php echo $this->getCheckbox($element)?>
 		<?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>

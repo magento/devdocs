@@ -39,7 +39,7 @@ Enter the following command:
 
 You can omit `[--media]` if you have a large number of media files and if you don't expect the upgrade to affect them. 
 
-If the upgrade fails, you can roll back your backup using the [`magento setup:rollback` command]({{ site.baseurl }}install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll).
+If the upgrade fails, you can roll back your backup using the [`magento setup:rollback` command]({{ page.baseurl }}install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll).
 
 {% endcollapsible %}
 
@@ -190,9 +190,7 @@ Open `composer.json` and update the `"files"` directive in the `autoload` sectio
     }
 ```
 
-Move `app/NonComposerComponentRegistration.php` to `app/etc/NonComposerComponentRegistration.php`.
-Make sure the relative paths that point to locations in the app and lib directories reflect the 
-new location of the file. For an example that can be copied, see the [copy in this project](app/etc/NonComposerComponentRegistration.php).
+Move `app/NonComposerComponentRegistration.php` to `app/etc/NonComposerComponentRegistration.php`. Make sure the relative paths that point to locations in the `app` and `lib` directories reflect the  new location of the file. 
 
 Update the `require` section as follows to:
 

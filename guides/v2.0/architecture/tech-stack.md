@@ -17,7 +17,7 @@ This page summarizes the technologies we use. For more detailed information, see
 *	[Version 2.0.x]({{ site.gdeurl }}install-gde/system-requirements.html)
 *	[Version 2.1.x]({{site.gdeurl21}}install-gde/system-requirements-tech.html)
 
-Magento’s highly modular structure includes the following open-source technologies.
+Magento's highly modular structure includes the following open-source technologies.
 
 ### Web servers
 

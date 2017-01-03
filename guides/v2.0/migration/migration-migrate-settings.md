@@ -14,7 +14,7 @@ redirect_from: /guides/v1.0/migration/migration-migrate-settings.html
 ## Overview
 
 The `Settings` mode migrates stores, websites, and system configuration like shipping, payment, tax settings, etc.
-According to our data migration [order]({{page.baseurl}}/migration/migration-migrate.html#migration_order), you should migrate settings first.
+According to our data migration [order]({{page.baseurl}}migration/migration-migrate.html#migration_order), you should migrate settings first.
 
 ## Before you start: routine preparations
 

@@ -28,7 +28,7 @@ In general, the service layer:
 
 All calls from web service interfaces, or users working with your storefront (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic.
 
-External applications can make requests for business logic with simple SOAP and REST calls. With some simple XML or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.
+External applications can make requests for business logic with simple SOAP and REST calls. With some simple XML or JSON, you can expose the service layer's PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.
 
 Service contract clients include:
 

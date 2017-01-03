@@ -170,10 +170,10 @@ To install Solr and Jetty:
 		Connecting to archive.apache.org|163.172.17.199|:80... connected.
 		HTTP request sent, awaiting response... 200 OK
 		Length: 150059757 (143M) [application/x-gzip]
-		Saving to: “solr-4.10.4.tgz”
+		Saving to: "solr-4.10.4.tgz"
 
 		100%[==========================================================>] 150,059,757 8.99M/s   in 4.5s
-		2016-10-01 15:55:23 (3.18 MB/s) - “solr-4.10.4.tgz” saved [150059757/150059757]
+		2016-10-01 15:55:23 (3.18 MB/s) - "solr-4.10.4.tgz" saved [150059757/150059757]
 
 2.  Unpack the Solr installation; an example follows.
 

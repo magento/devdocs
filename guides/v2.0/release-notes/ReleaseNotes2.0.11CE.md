@@ -5,11 +5,16 @@ subgroup: 02_rel-notes
 title: Magento CE 2.0.11 Release Notes
 menu_title: Magento CE 2.0.11 Release Notes
 menu_order: 168
+version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
 github_link: release-notes/ReleaseNotes2.0.11CE.md
 ---
 We are pleased to present Magento Community Edition 2.0.11. 
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
+</div>
 
 
 ## Highlights
@@ -18,7 +23,6 @@ Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these
 
 * **Management of configurable products with many variations** in the Magento Admin interface without degrading performance.
 
-* **Upgrade to Magento 2.0.11 without issue** when using multiple master databases for checkout, order management, and product data.
 
 * **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing, such as <i>,</i> or <i>|</i>).
 
@@ -49,7 +53,6 @@ We address the following functional issues in this release.
 
 <!--- 61249-->* Magento no longer displays the spinning loader widget after you click the **Place Order** button. Previously, Magento displayed the spinning loader, even after you'd successfully placed an order. 
 
-<!--- 61127-->* Magento now indicates that a product is out-of-stock if you disable it. Previously, Magento did not display the name of an out-of-stock product at all. 
 
 <!--- 59211-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a> 
 
@@ -58,7 +61,7 @@ We address the following functional issues in this release.
 <!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your shopping cart. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
 
 
-<!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
+<!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you have successfully added a product to your cart.
 
 <!--- 58037-->* You can now reload a page during checkout without unintentionally changing shipping information. 
 
@@ -73,7 +76,7 @@ We address the following functional issues in this release.
 
 <!--- 55791-->* We've improved the performance of the review step to create a configurable product.
 
-<!--- 59050-->* You can now successfully reorder a configurable product. Previously, if you created an order that includes multiple products, one of which is a reorder, options for these products were confused. <a href="https://github.com/magento/magento2/issues/3654" target="_blank">(GITHUB-3654)</a>, <a href="https://github.com/magento/magento2/issues/3820" target="_blank">(GITHUB-3820)</a>
+<!--- 59050-->* You can now successf==ully reorder a configurable product. Previously, if you created an order that includes multiple products, one of which is a reorder, options for these products were confused. <a href="https://github.com/magento/magento2/issues/3654" target="_blank">(GITHUB-3654)</a>, <a href="https://github.com/magento/magento2/issues/3820" target="_blank">(GITHUB-3820)</a>
 
 <!--- 58793-->* You can now successfully edit configuration options when creating a configurable product. Previously, the **Edit Configuration** button did not work as expected.
 
@@ -101,6 +104,9 @@ We address the following functional issues in this release.
 
 <!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento did not save this information, and you encountered an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
 
+<!--- 59172-->*  The **Disable Email Communication** option of **Store > Configuration > Advanced > System > Email Sending Settings** now works as expected. Previously, Magento sent email even if you disabled this feature. <a href="https://github.com/magento/magento2/issues/5988" target="_blank">(GITHUB-5988)</a>
+
+
 ### General fixes
 {:.no_toc} 
 
@@ -117,7 +123,6 @@ We address the following functional issues in this release.
 
 <!--- 59449-->* Magento now decrements stock as expected in a multi-website environment. 
 
-<!--- 55682-->* The catalog category now retrieves prices from the price index update as expected. 
 
 <!--- 56001-->* The search field now works as expected on iOS devices using the Safari browser. Previously on these devices, the search box closed randomly. 
 
@@ -130,9 +135,6 @@ We address the following functional issues in this release.
 <!--- 57134-->* You can now return to the Magento Admin from the Web Setup Wizard (**System > Tools > Web Setup Wizard**). Previously, you had to log back in to the Magento Admin after you ran the Web Setup Wizard.
 
  
-
-<!--- 59398-->* Custom themes now inherit parent XML configuration information as expected. 
-
 <!--- 57322-->* Magento no longer redirects users to the Checkout page after login. Now, if you set **Redirect Customer to Account Dashboard after Logging in**  value to **Yes**, users will be redirected to the Account Dashboard page. If you set this value to **No**, then users will stay on the home page after login. 
 
 <!--- 59102-->* Customers can now continue shopping after selecting an unavailable bundle product. Previously, if a customer selected a bundle product that was no longer available, he would encounter a fatal error. 
@@ -154,8 +156,14 @@ We address the following functional issues in this release.
 <!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 
 
 
+<!--- 62032-->* We've fixed an error with an unexpected empty default website during website creation.  
 
-<!--- 62030-->* Users need view permission to the store to which the customers belong in order to see information about those customers. Previously, a user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view. 
+
+<!--- 58498-->* The **Need to Confirm** option on **Stores > Configuration > Customers > Newsletter** now requires a customer to confirm his subsciption. 
+
+
+
+
 
 
 ### Images
@@ -196,12 +204,13 @@ We address the following functional issues in this release.
 
 <!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
 
+<!--- 61178-->* We've fixed an issue with how information in the `sales_order_item` attribute is handled after upgrade.
 
 
 ### Orders
 {:.no_toc} 
 
-<!--- 61268, 59424, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
+<!--- 61268, 56433--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
 
 	* support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
 
@@ -211,7 +220,8 @@ We address the following functional issues in this release.
 
 <!--- 57681-->* You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a>
 
-<!--- 57715-->* A user can view orders only on stores to which they've been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website. 
+<!--- 58833-->* We've removed redundancy in the orders comment history display. Previously, Magento would display the time at which the customer entered the comment twice.
+
 
 
 
@@ -222,12 +232,16 @@ We address the following functional issues in this release.
 
 <!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and displayed this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
 
+<!--- 61561-->* Magento now saves credit card information as expected after a customer checks out using a Braintree credit card with Vault. 
+
+<!--- 58377-->* PayPal Payflow Pro now uses the currency you have specified in your store. Previously, under some conditions, PayPal Payflow Pro defaulted to calculating charges in U.S. dollars, no matter which currency you specified. 
+
 
 
 ### Performance
 {:.no_toc} 
 
-<!--- 60187, 55785,59394, 57894, 55300 -->* We’ve improved the performance of these tasks:
+<!--- 60187, 55785,59394, 57894 -->* We’ve improved the performance of these tasks:
 
 
 	* Loading the Configurable Product page
@@ -249,26 +263,17 @@ We address the following functional issues in this release.
 
 <!--- 57002-->* A restricted user can now change the attributes (either at the store view or website level) attributes that are defined in his scope. Previously, Admin users with access to only one website could not edit a product, no matter how their scope was set. 
 
-<!--- 57004-->* The scope selector on the Product page now accurately displays all related websites for a restricted user. 
 
+ <!--- 60464-->* We've fixed an issue with the scope selector on the Catalog page. Previously, Magento did not display the scope selector when using Mass Actions, but now you can specify the scope of the action that will be applied to the products when using Mass Actions.
 
 ### Static file processing
 {:.no_toc}
 
-<!--- 56076-->* Versioning of static files (including CSS, JavaScript, fonts, and images) is now enabled by default.
 
 <!---59547-->* Static asset signing now works under nginx. For more information, see <a href="http://docs.magento.com/m2/ce/user_guide/system/static-file-signature.html" target="_blank">Using Static File Signatures</a>.
 
 
 
-
-### Web APIs
-{:.no_toc} 
-
-
-<!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.
-
-<!--- 59315-->* We've fixed an issue where updating product stock did not persist correctly when saving products through either the web API or directly in the repository. 
 
 
 
@@ -322,13 +327,13 @@ We address the following functional issues in this release.
 
 
 
-<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292, 58186, 57562, 59716, 58360, 58323 -->
+<!--- INTERNAL ONLY 59791, 59667, 59676, 59677, 59646, 61119, 55862, 60428, 60527, 60292,  57562, 59716, 58323, 61877, 62020, 62019 -->
 
 
 <!--- CANNOT REPRODUCE 57169, 59312, 57503, 57332, 56002, 57100, 61181, 61218, 61803 -->
 
 
-<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172 -->
+<!--- NOT A BUG 57471, 57145, 61177, 61192, 61121, 57016, 61160, 61343, 61172, 59398 -->
 
 
 <!---  WON'T FIX 58853, 58798, 57105, 57802, 58083, 58900, 58611, 57311, 56916, 59370, 57510, 61242, 61339, 59414, 59408, 57330, 59411, 56958 -->

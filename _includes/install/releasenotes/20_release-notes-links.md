@@ -13,7 +13,7 @@
 *	[Version 2.0.3]({{page.baseurl}}release-notes/ReleaseNotes2.0.3CE.html){:target="_blank"}
 *	[Version 2.0.2](http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.2.html){:target="_blank"}
 *	[Version 2.0.1](http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.1.html){:target="_blank"}
-*	[Version 2.0.0](ttp://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.html){:target="_blank"}
+*	[Version 2.0.0](http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.html){:target="_blank"}
 
 {% endcollapsibleh3 %}
 

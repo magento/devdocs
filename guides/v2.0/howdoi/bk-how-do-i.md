@@ -2,14 +2,15 @@
 layout: default
 group: howdoi
 subgroup: AA_Top
-title: How do I...?
-landing-page: How do I...?
-menu_title: How do I...?
+title: How To
+landing-page: How To
+menu_title: How To
 menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: howdoi/bk-how-do-i.md
 ---
+
 ## Tell me how
 
 This section documents some of the most commonly performed tasks and procedures in Magento 2. New sections are being added each sprint, but we could use your help!

@@ -64,7 +64,8 @@ $(".content-wrap :header:not(h1)").each(function(){
       var tag_name = $this.prop('tagName').toLowerCase();
 
       if ( tag_name == 'h2' || tag_name == 'h3' ) {
-        var $li = $('<li class="' + tag_name + '"><a href="#' + anchor_text + '">' + $this.text() + '</a></li>');
+        var $li = $('<li class="' + tag_name + '"><a href="#' + anchor_text + '"></a></li>');
+        $li.find('a').text( $this.text() );
         $toc.find('ul').append($li);
       }
       //console.log(anchor_text);
