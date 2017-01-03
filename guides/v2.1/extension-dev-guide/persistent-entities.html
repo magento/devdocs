@@ -436,7 +436,7 @@
 
 <h4 id="models">Models</h4>
 
-<p>Magento models extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Model/AbstractModel.php" target="_blank"><code>Magento\Framework\Mode\AbstractModel</code></a> class because it provides useful general functions. Models contain logic for validation, events, and caching. A model class might have a data interface implementation. To set or access data, they use <code>getData</code>, <code>setData</code> and magic methods. A model is not statically typed if it does not have a data interface implementation.</p>
+<p>Magento models extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Model/AbstractModel.php" target="_blank"><code>Magento\Framework\Model\AbstractModel</code></a> class because it provides useful general functions. Models contain logic for validation, events, and caching. A model class might have a data interface implementation. To set or access data, they use <code>getData</code>, <code>setData</code> and magic methods. A model is not statically typed if it does not have a data interface implementation.</p>
 
 <p>Model classes should posses logic that relates to those classes and should not contain logic that reveal anything about data storage in the underlying data layer.</p>
 
@@ -454,7 +454,7 @@
 
 <p>An example of a repository is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CatalogRule/Model/CatalogRuleRepository.php" target="_blank"><code>Magento\CatalogRule\Model\CatalogRuleRepository</code></a> class.</p>
 
-<p>Different parts of the application can use your repository to load entities. To prevent loading of the same data from the database more than once, use a registry inside the repository. For an example of this strategy, take a look at the  <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php" target="_blank"><code>Magento\Customer\Model\ResourceModelCustomerRepository</code></a> class.</p>
+<p>Different parts of the application can use your repository to load entities. To prevent loading of the same data from the database more than once, use a registry inside the repository. For an example of this strategy, take a look at the  <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php" target="_blank"><code>Magento\Customer\Model\ResourceModel\CustomerRepository</code></a> class.</p>
 
 <h4 id="resource-models">Resource Models</h4>
 
