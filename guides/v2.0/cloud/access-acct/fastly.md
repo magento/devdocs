@@ -19,7 +19,7 @@ See the following sections for more information:
 *	[Install Fastly in your new environment](#cloud-fastly-setup)
 *	[Enable Fastly using the Magento Admin](#cloud-fastly-admin)
 *	[Configure Fastly](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options){:target="_blank"}
-*	[Merge your Fastly branch](#cloud-fastly-merge})
+*	[Merge your Fastly branch](#cloud-fastly-merge)
 
 ### Get your Fastly credentials {#cloud-fastly-creds}
 To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/get-help.html). We'll provide you with the following information so you can enable Fastly:
@@ -46,11 +46,10 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 		composer require fastly/magento2
 
 2.	Wait for dependencies to be updated.
-3.	Enter the following commands:
+3.	Enter the following command:
 
-		php bin/magento setup:upgrade
-		php bin/magento cache:clean
-3.	Enter the following commands in the order shown:
+		php bin/magento setup:upgrade && php bin/magento cache:clean
+3.	Add, commit, and push the change:
 
 		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
 
@@ -59,8 +58,12 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 <p id="cloud-fastly-admin">{% collapsibleh3 Enable Fastly using the Magento Admin %}
 
 
-1.	Log in to the Magento Admin as an administrator. 
-2.	Click **Stores** > **Configuration** > **Advanced** > **System** as the following figure shows:
+1.	Log in to your local Magento Admin as an administrator. 
+
+	If you don't remember your login information, enter the following command:
+
+		magento-cloud var:list
+2.	Click **Stores** > Settings > **Configuration** > **Advanced** > **System** as the following figure shows:
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud_fastly_menu.png){:width="650px"}
 3.	In the right pane, expand **Full Page Cache**. 
@@ -68,9 +71,18 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 5.	From the **Caching Application** list, click **Fastly CDN** as the following figure shows.
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud-fastly_enable-admin.png){:width="650px"}
+6.	Expand **Fastly Configuration**.
+7.	In the provided fields, enter your Fastly service ID and API key.
+8.	Click **Test Credentials**.
+9.	Make sure your credentials are correct before continuing with the next step.
 
-After you receive a Magento VCL from Fastly, [upload it to your staging or production system]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly).
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+With Fastly version 1.2.0 and later, you no longer need to upload your VCL to Fastly. The **Upload VCL to Fastly** button enables you to upload [VCL snippets](https://docs.fastly.com/guides/vcl-snippets/about-vcl-snippets){:target="_blank"}, which is an advanced option you can consider in a staging or production system.
+</div>
 
+
+<!-- After you receive a Magento VCL from Fastly, [upload it to your staging or production system]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly).
+ -->
 
 {% endcollapsibleh3 %}
 
@@ -80,12 +92,12 @@ Configure Fastly using the following:
 
 *	We provide your Fastly service ID and API key.
 *	Set most other Fastly configuration options in the Magento Admin.
-*	Additional advanced options are in the Fastly configuration file, `fastly.vcl`.
+*	You can fine-tune the Fastly configuration as discussed in [Custom VCLs](#custom-vcl).
 
 To configure Fastly in the Admin:
 
 1.	Log in to the Magento Admin as an administrator.
-2.	Click **Stores** > **Configuration** > **Advanced** > **System**.
+2.	Click **Stores** > Settings > **Configuration** > **Advanced** > **System**.
 3.	In the right pane, expand **Full Page Cache**. 
 4.	Expand **Fastly Configuration**.
 
@@ -107,7 +119,7 @@ For Fastly to be used in production, you must merge with the `master` environmen
 
 {% endcollapsibleh3 %}
 
-<h2>Custom VCLs</h2>
+<h2 id="custom-vcl">Custom VCLs</h2>
 <p>You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
 
 <p>Failure to follow these guidelines means your customizations won't work as expected.</p>

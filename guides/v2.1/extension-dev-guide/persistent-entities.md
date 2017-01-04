@@ -33,7 +33,7 @@ An example of a data model is the [`\Magento\Customer\Model\Data\Customer`]({{ s
 
 #### Models
 
-Magento models extend the [`Magento\Framework\Mode\AbstractModel`]({{ site.mage2100url }}lib/internal/Magento/Framework/Model/AbstractModel.php){:target="_blank"} class because it provides useful general functions. Models contain logic for validation, events, and caching. A model class might have a data interface implementation. To set or access data, they use `getData`, `setData` and magic methods. A model is not statically typed if it does not have a data interface implementation.
+Magento models extend the [`Magento\Framework\Model\AbstractModel`]({{ site.mage2100url }}lib/internal/Magento/Framework/Model/AbstractModel.php){:target="_blank"} class because it provides useful general functions. Models contain logic for validation, events, and caching. A model class might have a data interface implementation. To set or access data, they use `getData`, `setData` and magic methods. A model is not statically typed if it does not have a data interface implementation.
 
  Model classes should posses logic that relates to those classes and should not contain logic that reveal anything about data storage in the underlying data layer.
 
@@ -51,7 +51,7 @@ Modules interact with other modules through their public API. For working with p
 
 An example of a repository is the [`Magento\CatalogRule\Model\CatalogRuleRepository`]({{ site.mage2100url }}app/code/Magento/CatalogRule/Model/CatalogRuleRepository.php){:target="_blank"} class.
 
-Different parts of the application can use your repository to load entities. To prevent loading of the same data from the database more than once, use a registry inside the repository. For an example of this strategy, take a look at the  [`Magento\Customer\Model\ResourceModelCustomerRepository`]({{ site.mage2100url }}app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php){:target="_blank"} class.
+Different parts of the application can use your repository to load entities. To prevent loading of the same data from the database more than once, use a registry inside the repository. For an example of this strategy, take a look at the  [`Magento\Customer\Model\ResourceModel\CustomerRepository`]({{ site.mage2100url }}app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php){:target="_blank"} class.
 
 #### Resource Models
 

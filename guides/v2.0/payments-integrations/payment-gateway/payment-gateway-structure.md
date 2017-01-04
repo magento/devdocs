@@ -16,7 +16,7 @@ The following diagram shows the basic components of the Magento payment provider
 
 The interaction between the payment gateway components looks like following:
 
-![Payment Gateway Structure]({{site.baseurl}}common/images/payments-integrations/pg_internal_flow.png)
+![Payment Gateway Structure]({{site.baseurl}}common/images/pg_internal_flow.png)
 
 Each component from this scheme is described in the corresponding topic:
 
