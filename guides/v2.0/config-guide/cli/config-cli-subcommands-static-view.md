@@ -38,6 +38,7 @@ You can clean generated static view files in any of the following ways:
   	To clear the `pub/static` directory of all files except `.htaccess` (which is a hidden file), enter the following command:
 
 		rm -R pub/static/*
+		
 *	Using the Magento command line. Several commands support an optional parameter `--clear-static-content`, which cleans generated static view files. 
 
 	These commands include:
