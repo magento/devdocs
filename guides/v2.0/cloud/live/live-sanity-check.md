@@ -44,7 +44,7 @@ Before you continue, make sure you push all current code to the remote Cloud ser
 
 {% endcollapsible %}
 
-## Build phase
+## Step 2: Build phase
 During the [build phase]({{ page.baseurl }}cloud/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
 *	Apply patches distributed to all Magento Enterprise Cloud Edition customers
@@ -117,7 +117,7 @@ We strongly recommend you do all your testing in an integration or staging envir
 
 {% endcollapsible %}
 
-## Deploy phase
+## Step 3: Deploy phase
 During the [deployment phase]({{ page.baseurl }}cloud/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
 
 *	Installs the Magento application if it isn't already
