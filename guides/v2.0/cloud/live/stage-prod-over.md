@@ -90,6 +90,3 @@ After you know these URLs, you can access them without further intervention. You
 <div class="bs-callout bs-callout-warning" markdown="1">
 You should always deploy code and data from the `master` branch of your integration environment to staging, and then from staging to production. If you need to fix issues, fix them in development and push them to staging before production.
 </div>
-
-#### Next step
-[Prepare to migrate data]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
