@@ -26,7 +26,7 @@ This tutorial uses the following framework API in the following ways:
 * `\Magento\Framework\Module\Manager` - This class checks the status of a module.
 * `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
 * `\Magento\Framework\DB\Select\QueryModifierInterface` - Interface for classes that add a condition to the database query to target specific entries.
-* `\Magento\Framework\DB\Select\InQueryModifier` - An instance of the `QueryModifierInterface` that adds an IN condition to a query.
+* `\Magento\Framework\DB\Select\InQueryModifier` - An implementation of the `QueryModifierInterface` that adds an IN condition to a query.
 
   You can create your own query modifier or use any of the ones listed in the `app/etc/di.xml` file.
 
@@ -36,7 +36,7 @@ This tutorial uses the following framework API in the following ways:
 The upgrade script is what gets run during the upgrade step of your extension's [lifecycle][1].
 Create the `UpgradeData.php` file in the `Setup` directory inside your extension's root directory.
 
-Inside the file, create an implementation of `\Magento\Framework\Setup\UpgradeDataInterface` and name it `UpgradeData`.
+Inside the file, create the class `UpgradeData` which implements `\Magento\Framework\Setup\UpgradeDataInterface`.
 
 The following is an example of the content for your upgrade script.
 
@@ -146,7 +146,7 @@ $fieldDataConverter->convert(
 {% endhighlight %}
 {% endcollapsible %}
 
-### Step 3b: Convert data in specific rows using a static condition
+### Step 3b: Convert data in specific rows for a field
 {:#step-3b}
 
 | option_id | code           | value                         |
@@ -187,8 +187,7 @@ $fieldDataConverter->convert(
 {% endcollapsible %}
 
 
-### Step 3c: Convert data in specific rows using a condition created with values from another table
-{:#step-3c}
+#### Using values from another table in the condition
 
 | option_id | code                  | value                         |
 | --------- | --------------------- | ----------------------------- |
@@ -236,8 +235,8 @@ foreach ($iterator as $selectByRange) {
 {% endhighlight %}
 {% endcollapsible %}
 
-### Step 3d: Convert nested serialized data
-{:#step-3d}
+### Step 3c: Convert nested serialized data
+{:#step-3c}
 
 If your module uses nested serialized data in the database, create a custom data converter to hold the logic for converting the data.
 
@@ -332,7 +331,7 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
 {% endhighlight %}
 {% endcollapsible %}
 
-Use a `FieldDataConverterFactory` to create a `FieldDataConverter` instance with the custom data converter.
+Use a `FieldDataConverterFactory` to create a `FieldDataConverter` instance with the appropriate data converter.
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -350,8 +349,8 @@ $fieldDataConverter->convert(
 {% endhighlight %}
 {% endcollapsible %}
 
-### Step 3e: Convert data in a multi-database setup
-{:#step-3e}
+### Step 3d: Convert data in a multi-database setup
+{:#step-3d}
 
 The Magento Enterprise Edition supports storing Quote, Sales and Inventory data in separate databases.
 Use the specific connections for each of these modules to update your extension's stored data for these entities.
