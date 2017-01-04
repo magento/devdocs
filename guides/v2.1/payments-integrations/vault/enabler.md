@@ -12,9 +12,17 @@ github_link: payments-integrations/vault/enabler.md
 Store customers must have the ability to enable and disable credit cards details storing.
 Magento out-of-the-box provides mechanisms for adding this ability, but your still need to add modifications in your payment method implementation.
 
-## Checkbox on the payment form
+These modifications are the following:
 
-First, add the vault enabling controls to the payment form.
+1. Adding vault enabling controls.
+2. Modifying the payment component (updating of the `additional_data` property must be added).
+3. Creating a request data builder.
+
+The following paragraphs describe these points in details.
+
+## Add vault enabling controls
+
+Add the vault enabling controls to the payment form. In the following example, a check box bound to the Vault enabler is added.
 
 Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
 
@@ -42,8 +50,13 @@ Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{site
 </form>
 {% endhighlight %}
 
+## Modifying the payment component
 
-[The payment UI component]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js):
+The payment component must process the state of the vault-enabling control and update payment `additional_data` before it is sent to the backend. 
+
+Magento has a default vault enabler UI component (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call its `visitAdditionalData` to update the `additional_data` property. The rest is done by the [`\Magento\Vault\Observer\VaultEnableAssigner`]({{site.mage2100url}}app/code/Magento/Vault/Observer/VaultEnableAssigner.php) observer.
+
+Example: [the Braintree payment UI component]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js)
 
 {% highlight javascript %}
 define([
@@ -94,31 +107,6 @@ define([
         }
     });
 });
-{% endhighlight %}
-
-Magento has a default vault enabler UI component (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call `visitAdditionalData` to update the `additional_data` property.
-
-The rest is done by the `\Magento\Vault\Observer\VaultEnableAssigner` observer:
-
-{% highlight php startinline=1 %}
-public function execute(\Magento\Framework\Event\Observer $observer)
-{
-    $data = $this->readDataArgument($observer);
-    
-    $additionalData = $data->getData(PaymentInterface::KEY_ADDITIONAL_DATA);
-
-    if (!is_array($additionalData)) {
-        return;
-    }
-
-    if (isset($additionalData[VaultConfigProvider::IS_ACTIVE_CODE])) {
-        $payment = $this->readPaymentModelArgument($observer);
-        $payment->setAdditionalInformation(
-            VaultConfigProvider::IS_ACTIVE_CODE,
-            filter_var($additionalData[VaultConfigProvider::IS_ACTIVE_CODE], FILTER_VALIDATE_BOOLEAN)
-        );
-    }
-}
 {% endhighlight %}
 
 ## Add request data builder

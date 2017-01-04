@@ -59,7 +59,7 @@ This component will set public hash to a hidden input, when a user sets payment 
 
 ## Template
 
-Create a template for displaying token details and specify it in the config provider. Following is an example of such a config provider:
+Create a template for displaying token details and specify it in the component provider. Following is an example of such a component provider:
 
 {% highlight php startinline=1 %}
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface
@@ -106,7 +106,7 @@ Following is an example of such layout:
 </page>
 {% endhighlight %}
 
-This configuration allow to render vault payments by vault module and create all depending JS components.
+According to this configuration the Magento_Vault module will render vault payments and all depending JS components will be created.
 
 You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the `adminhtml` [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html) in `%module_dir%/etc/adminhtml/di.xml`. 
 
