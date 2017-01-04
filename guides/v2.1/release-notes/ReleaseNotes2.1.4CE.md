@@ -104,10 +104,14 @@ We address the following functional issues in this release.
 ### Travis builds
 
 
-<!--- 62388-->* Fixed issue with Travis Builds. Previously, tests failed if you executed CatalogImportExport before running 
+<!--- 62388-->* We've fixed a fatal issue that occurred if you executed CatalogImportExport testbefore running a subsequent test. Previously, you'd receive this error: `Failed asserting that false is true`.
 
 
-<!--- 59680-->* We've fixed an issue running Travis builds on `imagettfbbox 2.1.2`. Previously, you'd receive this error: `PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php`. 
+
+
+<!--- 59680-->* We've fixed a fatal issue that occurred if you ran Travis builds on `imagettfbbox 2.1.2`. Previously, you'd receive this error: `PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php`. 
+
+
 
 
 
