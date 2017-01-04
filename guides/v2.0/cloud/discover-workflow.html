@@ -1118,6 +1118,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/cloud/live/stage-prod-over.html">Overview of staging and production</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/live/live-sanity-check.html">Build and deploy before pushing to staging or production</a></li>
 
 									
@@ -1126,17 +1134,7 @@
 
 									
 
-										<li class="level3Parent " id="stage-prod"><a href="#">Staging and production</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-over.html">Overview of staging and production</a>
+										<li class="level3Parent " id="stage-prod"><a href="#">Migrate to staging and production</a>
 
 
 									
@@ -1498,6 +1496,12 @@ infrastructure. A project contains multiple <em>environments</em>, which are Git
 
 <p>You can test every feature in isolation and put it into production with a 
 single click, or a single command on the command-line.</p>
+
+<p>The following figure shows how it works at a high level.</p>
+
+<p><img src="/common/images/cloud_code-flow.png" alt="High-level view of Magento Enterprise Cloud Edition" /></p>
+
+<p>You get Magento code from our repository, create a <a href="/guides/v2.0/cloud/project/projects.html"><em>project</em></a> which is based in Git, then do your customization in an <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-int">integration system</a>. You can use the Magento Cloud command line to configure your project and use an <a href="/guides/v2.0/cloud/discover-deploy.html">automated deployment process</a> to push code from integration to <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-stage">staging</a> and finally to <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
 
 <h3 id="use-any-methodology">Use any methodology</h3>
 <p>You can use any methodology you already have or you can invent new ones. For example, you can use a Development -&gt; Staging -&gt; Production workflow.</p>

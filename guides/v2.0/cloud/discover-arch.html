@@ -1118,6 +1118,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/cloud/live/stage-prod-over.html">Overview of staging and production</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/live/live-sanity-check.html">Build and deploy before pushing to staging or production</a></li>
 
 									
@@ -1126,17 +1134,7 @@
 
 									
 
-										<li class="level3Parent " id="stage-prod"><a href="#">Staging and production</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-over.html">Overview of staging and production</a>
+										<li class="level3Parent " id="stage-prod"><a href="#">Migrate to staging and production</a>
 
 
 									
@@ -1529,7 +1527,11 @@
 
 <p>The coordinating agent that monitors your production system detects failures at the service level (for example, MySQL), and for all cases where an automated recovery is possible, fully automates and coordinates that recovery.</p>
 
-<h2 id="cloud-arch-scale">Scalability</h2>
+<h2 id="magento-enterprise-cloud-edition-production-technology-stack">Magento Enterprise Cloud Edition production technology stack</h2>
+<p>The following figure shows the technology used in a Magento Enterprise Cloud Edition production system</p>
+
+<p><img src="/common/images/cloud_stack-diagram.png" alt="Magento Enterprise Cloud Edition technology stack" /></p>
+
 <p>Magento Enterprise Cloud Edition seamlessly scales from the smallest six CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means that upscaling can be conducted swiftly and without downtime: each of the three instances in the cluster is taken out of rotation in turn, upgraded to the new size and returned to rotation.</p>
 
 <p>In addition, extra web servers can be added to an existing cluster should the constriction be at the PHP level rather than the database level. This provides <a href="https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling" target="_blank"><em>horizontal scaling</em></a> to complement the vertical scaling provided by extra CPUs on the database level.</p>

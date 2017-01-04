@@ -1770,6 +1770,20 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 <p>While the exported configuration files reside in the <code>app/etc</code> directory, you cannot change the value of the corresponding configuration fields under <b>Store</b> -&gt; <b>Configuration</b> in the Admin Panel. The fields are displayed, but disabled. You need to remove the configuration files from <code>app/etc</code> to make the settings available.</p></span>
 </div>
 
+  <h3 id="environment-variables-filling">Environment variables filling</h3>
+
+  <p>To fill environment variables, having <code>config.local.php</code> file enter next command:</p>
+
+  <pre><code>magento config:sensitive:set -i
+</code></pre>
+
+  <p>It will iteratively ask to fill each sensitive variable.</p>
+
+  <p>To fill specific sensitive variable enter command:</p>
+
+  <pre><code>magento config:sensitive:set {path to config value i.e. default/carriers/fedex/account} {value}
+</code></pre>
+
   <h3 id="examples">Examples</h3>
   <p>Following are some example commands.</p>
 
